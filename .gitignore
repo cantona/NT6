@@ -1,1 +1,5 @@
 .DS_Store
+nitan/data/
+nitan/dump/
+nitan/log/
+nitan/www/
