@@ -2,41 +2,41 @@
 #define LONELY_IMPROVED
 #endif
 
-//����������δ���ߵ�δ�����û�
+//多少天後清除未上線的未交費用戶
 #define UNLOG_IDLE      90
 
-//֧�����紫��ѹ������
+//支持網絡傳輸壓縮功能
 #define MCCP_SUPPORT    1
 
-//֧��binary����
+//支持binary運行
 #undef BINARY_SUPPORT
 
-//��վ�Ƿ񲻽��������ע��
+//分站是否不接受新玩家注冊
 #undef REFUSE_NEW_PLAYER
 
-//�Ƿ�ʹ��MYSQL���ݿⴢ�û����ݣ���ʹ�����ݿ���#undef DB_SAVE��
+//是否使用MYSQL數據庫儲用戶數據，不使用數據庫則#undef DB_SAVE！
 #define DB_SAVE          1
 #undef  DB_SAVE
 
-//�Ƿ�洢�û����ݵ��ı��ļ�������� 1 �ͱ�ʾ�ǣ���������� 0 �ͱ�ʾ��
+//是否存儲用戶數據到文本文件裡，定義了 1 就表示是，如果定義了 0 就表示否！
 #define TX_SAVE         1
 
-//�Ƿ�ʱΪ��ұ��浵��!
+//是否定時為玩家保存檔案!
 #define AUTO_SAVE       1
 
-//��������Ʒ���������߱���!
+//對所有物品都允許下線保留!
 #undef NO_QUIT_DROP
 
-//��������Ʒ���������߱�������no_quit_drop����ͬʱ���ã�
+//對所有物品都允許下線保留，和no_quit_drop不能同時啟用！
 #undef QUIT_SAVE_ALL
 
-//�Դ���MYSQL���ַ�����ת��!
+//對存入MYSQL的字符串做轉換!
 #define DB_STR(x)    "'" + replace_string(x, "'", "''") + "'"
 
-//��������ж��ٸ�ͼ�����ʹ��!
+//定義最多有多少個圖標可以使用!
 #define MAX_ICONS 2159
 
-//�ͻ���Ҫ��汾��!
+//客戶端要求版本號!
 #define CURRENT_CLIENT_VERSION "2060"
 
 #define TMA ""
