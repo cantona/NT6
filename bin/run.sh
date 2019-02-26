@@ -1,5 +1,3 @@
-
-
 #!/bin/sh
 
 workdir=/home/nitan
@@ -34,4 +32,3 @@ $driver $config >> $logfile 2>&1
 sleep 10
 
 done
-

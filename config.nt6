@@ -21,10 +21,10 @@ address server ip : localhost
 address server port : 3990
 
 # absolute pathname of mudlib
-mudlib directory : /home/nitan/nitan
+mudlib directory : ./nitan
 
 # absolute pathname of driver/config dir
-binary directory : /home/nitan/bin
+binary directory : ./bin
 
 # debug.log and author/domain stats are stored here
 log directory : /log
