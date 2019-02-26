@@ -1,4 +1,4 @@
-MAKE=gmake
+MAKE=make
 SHELL=/bin/sh
 OBJDIR=obj
 DRIVER_BIN=driver
@@ -7,9 +7,9 @@ STRFUNCS=
 INSTALL=install -c
 INSTALL_DIR=../bin
 OPTIMIZE=-O3
-CPP=gcc -m64 -E
+CPP=gcc -m64 -flto -E
 CFLAGS=-D__USE_FIXED_PROTOTYPES__
-CC=gcc -m64
+CC=gcc -m64 -flto
 YACC=bison -d -y
 RANLIB=ranlib
 A=a

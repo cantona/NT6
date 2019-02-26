@@ -1,2 +1,1 @@
- -lresolv -lbsd -ly -lcrypt -lnsl -lm -lz -lpthread -L/usr/lib64/mysql -lmysqlclient
-
+-lssl -lcrypto -lresolv -ly -lcrypt -lnsl -lm -lz -lpthread -lmysqlclient

@@ -1,5 +1,5 @@
 #include <time.h>
-#include <openssl/md2.h>
+//#include <openssl/md2.h>
 #include <openssl/md4.h>
 #include <openssl/md5.h>
 #include <openssl/sha.h>
@@ -68,6 +68,7 @@ void f_hash(void){
 	char *res = NULL;
 	algo = (sp - 1)->u.string;
 	data = sp->u.string;
+#if 0
 	/* MD2 Digest */
 	if (strcasecmp(algo, (const char *) "md2") == 0)
 	{
@@ -76,7 +77,9 @@ void f_hash(void){
 		res = hexdump(md, MD2_DIGEST_LENGTH);
 	}
 	/* MD4 Digest */
-	else if (strcasecmp(algo, (const char *) "md4") == 0){
+	else
+#endif
+		if (strcasecmp(algo, (const char *) "md4") == 0){
 		unsigned char md[MD4_DIGEST_LENGTH];
 		MD4((unsigned char *) data, strlen(data), md);
 		res = hexdump(md, MD4_DIGEST_LENGTH);
