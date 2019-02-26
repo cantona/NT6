@@ -38,7 +38,7 @@ int main(object me, string arg)
                         inv = filter_array(inv, (: $1->name() == $(cname) :));
 
                 if (! sizeof(inv))
-                        return notify_fail("這裡沒有任何東西。\n");
+                        return notify_fail("這裏沒有任何東西。\n");
 
                 write("在這個房間中, 生物及物品的(英文)名稱如下：\n");
                 for(i = 0; i < sizeof(inv); i++)
@@ -62,7 +62,7 @@ int help(object me)
  
 這個指令可以讓你知道物品的英文名稱及名字. 只打 id 會顯示
 你身上所攜帶物品的名稱. 'id here' 則顯示所有跟你在同一個
-環境裡的物件名稱.
+環境裏的物件名稱.
  
 HELP );
         return 1;

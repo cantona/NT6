@@ -9,7 +9,7 @@ void create()
         set_name("老者", ({ "old man", "old" }));
         set("gender", "男性");
         set("age", 70);
-        set("long","他身高八尺有余，白發白須，滿面紅光，太陽穴高高隆起。看起來身負絕技。\n");
+        set("long","他身高八尺有餘，白髮白鬚，滿面紅光，太陽穴高高隆起。看起來身負絕技。\n");
         set("attitude", "friendly");
         set_skill("unarmed", 70);
         set_skill("dodge", 70);
@@ -30,15 +30,15 @@ void create()
         set("chat_msg",({
                 "老者將一口大鐵缸頂在頭上，走出數步，身子微擺，缸中忽然潑出些水來。\n",
                 "老者足不停步地從河面上走了過去，身形凝穩，河水只浸及小腿。\n",
-                "老者盤膝而坐，雙目微閉，嘴裡正噴出一縷縷的煙霧，連續不斷。\n",
+                "老者盤膝而坐，雙目微閉，嘴裏正噴出一縷縷的煙霧，連續不斷。\n",
         }));
         carry_object("/clone/misc/cloth")->wear();
 }
 
 int ask_me()
 {
-        say( "老者臉色大變：這麼說你都知道了？我求你千萬別告訴別人。我告訴你怎麼過河。\n");
-        write("老者說道：水下有暗樁，jump river即可過河。\n");
+        say( "老者臉色大變：這麼説你都知道了？我求你千萬別告訴別人。我告訴你怎麼過河。\n");
+        write("老者説道：水下有暗樁，jump river即可過河。\n");
         say("老者急急忙忙地離開了。\n");
         set_temp("guiyun_river", 1, this_player());
         destruct(this_object());

@@ -30,7 +30,7 @@ int main(object me, string arg)
 		return notify_fail(sprintf("房間的出口只能從以下方向種選擇：\n%s\n",vdirs));
 
 	if(env->query("exits/"+arg) || env->query("hide_exits/"+arg))
-		return notify_fail(sprintf("這裡已經有了 %s 出口。\n",arg));
+		return notify_fail(sprintf("這裏已經有了 %s 出口。\n",arg));
 
 	write("請輸入新建房間的名稱[2-6個漢字]('q'退出)：\n");
 	input_to( (: get_room_short :), me, env, arg);
@@ -92,9 +92,9 @@ protected void get_room_short(string sdesc, object who, object env, string dir)
 	}
 
 	tell_object(who, sprintf("新房間名稱為：%s\n請為%s設定描述：
-﹒為了房間的美觀，每一行請不要超過%s個中文字
-﹒第一行的內容長度比其它行的長度少兩個中文字寬才能對齊
-﹒描述內容不能超過%s行\n請輸入('.'結束輸入，'q'退出)：\n------------------------------------------------------\n",
+·為了房間的美觀，每一行請不要超過%s箇中文字
+·第一行的內容長度比其它行的長度少兩個中文字寬才能對齊
+·描述內容不能超過%s行\n請輸入('.'結束輸入，'q'退出)：\n------------------------------------------------------\n",
 		sdesc, sdesc, chinese_number(room_desc_l/2), chinese_number(room_desc_h)));
 
 	input_to( (: get_room_long :), who, env, dir, sdesc, "" );
@@ -128,11 +128,11 @@ protected void get_room_long(string str, object who, object env, string dir, str
 
 		if( sizeof(explode(ldesc, "\n")) > room_desc_h)
 		{
-			tell_object(who, sprintf(HBCYN HIG"﹒描述內容不能超過%s行\n房屋創建失敗。\n"NOR, chinese_number(room_desc_h)));
+			tell_object(who, sprintf(HBCYN HIG"·描述內容不能超過%s行\n房屋創建失敗。\n"NOR, chinese_number(room_desc_h)));
 			return;
 		}
 
-		tell_object(who,sprintf("%s是否為戶外房間？\n(戶外房間可以看到氣候變化的描述)\n請選擇[y/n](q退出)：", sdesc));
+		tell_object(who,sprintf("%s是否為户外房間？\n(户外房間可以看到氣候變化的描述)\n請選擇[y/n](q退出)：", sdesc));
 		input_to( (: get_room_outdoor :), who, env, dir, sdesc, ldesc );
 		return;
 	}
@@ -146,14 +146,14 @@ protected void get_room_long(string str, object who, object env, string dir, str
 		for(int i=0; i<n; i++)
 			if(strlen(tmp[i]) > room_desc_l)
 			{
-				tell_object(who, sprintf(HBCYN HIG"每一行不能超過%s個中文字，請重新輸入上一次輸入的內容：\n"NOR, chinese_number(room_desc_l/2)));
+				tell_object(who, sprintf(HBCYN HIG"每一行不能超過%s箇中文字，請重新輸入上一次輸入的內容：\n"NOR, chinese_number(room_desc_l/2)));
 				input_to( (: get_room_long :), who, env, dir, sdesc, ldesc );
 				return;
 			}
 
 		if((n + sizeof(explode(ldesc, "\n"))) > room_desc_h)
 		{
-			tell_object(who, sprintf(HBCYN HIG"﹒描述內容不能超過%s行\n房屋創建失敗。\n"NOR, chinese_number(room_desc_h)));
+			tell_object(who, sprintf(HBCYN HIG"·描述內容不能超過%s行\n房屋創建失敗。\n"NOR, chinese_number(room_desc_h)));
 			return;
 		}
 	}
@@ -162,14 +162,14 @@ protected void get_room_long(string str, object who, object env, string dir, str
 	{
 		if(strlen(str) > room_desc_l)
 		{
-			tell_object(who, sprintf(HBCYN HIG"每一行不能超過%s個中文字，請重新輸入上一次輸入的內容：\n"NOR, chinese_number(room_desc_l/2)));
+			tell_object(who, sprintf(HBCYN HIG"每一行不能超過%s箇中文字，請重新輸入上一次輸入的內容：\n"NOR, chinese_number(room_desc_l/2)));
 			input_to( (: get_room_long :), who, env, dir, sdesc, ldesc );
 			return;
 		}
 
 		if( sizeof(explode(ldesc, "\n")) > (room_desc_h -1) )
 		{
-			tell_object(who, sprintf(HBCYN HIG"﹒描述內容不能超過%s行\n房屋創建失敗。\n"NOR, chinese_number(room_desc_h)));
+			tell_object(who, sprintf(HBCYN HIG"·描述內容不能超過%s行\n房屋創建失敗。\n"NOR, chinese_number(room_desc_h)));
 			return;
 		}
 	}
@@ -337,7 +337,7 @@ protected void build_up(object who, object env, string dir, string sdesc, string
 	// 開出口
 	if(!add_exit(env, nname[0..<3], dir, room_dir))
 	{
-		tell_object(who, "無法開辟出口。\n創建房屋失敗。\n");
+		tell_object(who, "無法開闢出口。\n創建房屋失敗。\n");
 		return;
 	}
 

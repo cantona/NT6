@@ -27,9 +27,9 @@ mapping default_dirs = ([
         "up":           "上",
         "down":         "下",
         "out":          "外",
-        "enter":        "裡",
+        "enter":        "裏",
 ]);
-string *place = ({ "寺", "廟", "店", "樓", "舖", "閣", "祠", "屋", 
+string *place = ({ "寺", "廟", "店", "樓", "鋪", "閣", "祠", "屋", 
 "院", "門", "街", "莊", "齋", "橋", "社", "園", "館", "堂", "室", 
 "廳", "房", "寓", "庫", "殿", "營", "廄" ,"船","舟","坪"});
 
@@ -49,7 +49,7 @@ int main(object me, string arg)
         if( me->is_fighting() )
                 return notify_fail("一邊打架一邊挖掘？你真是活膩了！\n");
         if( me->is_busy() )
-                return notify_fail("你現在正忙著！\n");
+                return notify_fail("你現在正忙着！\n");
                 tool= present("shenlong qiao", me);
         if(!tool && !wizardp(me))
       return notify_fail("先得找把趁手的工具吧？\n");
@@ -87,9 +87,9 @@ int main(object me, string arg)
                 roomfrom = environment(me);
         else return notify_fail("你不能在陷阱之內再設陷阱！\n");
         if( !query("outdoors", roomfrom) )
-                return notify_fail("你不能這裡挖掘陷阱！\n");
+                return notify_fail("你不能這裏挖掘陷阱！\n");
         if( sizeof(query("exits", roomfrom)) >= 4 )
-                return notify_fail("這裡是通衢大道，你不能此亂挖陷阱！\n");
+                return notify_fail("這裏是通衢大道，你不能此亂挖陷阱！\n");
 /*
         if( query("cost", roomfrom) <= 1 )
                 return notify_fail("此處土質堅實，似乎難以挖掘陷阱！\n");
@@ -103,7 +103,7 @@ int main(object me, string arg)
         for (i=0; i<sizeof(place); i++)
                 if( strsrch(query("short", roomfrom),place[i]) >= 0 || 
                         strsrch(query("short", roomto),place[i]) >= 0 )
-                        return notify_fail("這裡的路面不適合挖陷阱！\n");
+                        return notify_fail("這裏的路面不適合挖陷阱！\n");
 
         depth = me->query_skill("digging", 1)*10
                 + me->query_str()*2 
@@ -150,7 +150,7 @@ int main(object me, string arg)
                 set("exits/jump"+query("to", roomtrap), file_name(roomfrom), roomto);
         }
 
-        message_vision(GRN "\n$N偷偷摸摸地舉起鐵鍬，朝著" + dir + "方猛挖一通。。。\n\n" NOR, me);
+        message_vision(GRN "\n$N偷偷摸摸地舉起鐵鍬，朝着" + dir + "方猛挖一通。。。\n\n" NOR, me);
         addn("dig_times", -1, tool);
         remove_call_out("digging");
         call_out("digging", depth/100, me, depth);
@@ -164,7 +164,7 @@ void digging(object me, int depth)
         if( me->is_busy() )
         {
                 call_out("digging", 3, me, depth);
-                if(random(5)==1) message_vision(GRN "\n$N起勁地往地下挖著挖著。。。\n" NOR, me);
+                if(random(5)==1) message_vision(GRN "\n$N起勁地往地下挖着挖着。。。\n" NOR, me);
         }
         else        
         {

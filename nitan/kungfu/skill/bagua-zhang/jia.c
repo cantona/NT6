@@ -24,7 +24,7 @@ int perform(object me, object target)
 
         if( !objectp(weapon=query_temp("handing", me)) || 
             query("skill_type", weapon) != "throwing" )
-                return notify_fail("你現在手中並沒有拿著暗器。\n");
+                return notify_fail("你現在手中並沒有拿着暗器。\n");
 
         if (me->query_skill_mapped("strike") != "bagua-zhang") 
                 return notify_fail("你沒有激發八卦掌，難以施展" JIA "。\n");
@@ -48,7 +48,7 @@ int perform(object me, object target)
                 return notify_fail("你現在真氣不足，難以施展" JIA "。\n");
 
         if (! living(target))
-                return notify_fail("對方都已經這樣了，用不著這麼費力吧？\n");
+                return notify_fail("對方都已經這樣了，用不着這麼費力吧？\n");
 
         addn("neili", -100, me);
         weapon->add_amount(-1);
@@ -83,7 +83,7 @@ int perform(object me, object target)
         } else
         {
                 msg += CYN "可是$p" CYN "早料得$P"
-                       CYN "有此一著，哈哈一笑，斜跳閃開。\n" NOR;
+                       CYN "有此一着，哈哈一笑，斜跳閃開。\n" NOR;
                 message_combatd(msg, me, target);
         }
         me->reset_action();

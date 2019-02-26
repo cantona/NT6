@@ -10,7 +10,7 @@ void create()
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("long", "從戰爭中獲得的戰爭勛章，可以用來兌換稀有的物品，也可以\n"
+                set("long", "從戰爭中獲得的戰爭勛章，可以用來兑換稀有的物品，也可以\n"
                             "使用(use)它重新進入戰場。\n");
                 set("unit", "堆");
                 set("base_unit", "枚");

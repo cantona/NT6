@@ -12,7 +12,7 @@ void create()
                 set_default_object(__FILE__);
         else {
                 set("unit", "盒");
-                set("long", "這是一盒用上好玫瑰花瓣層層疊熏細濾而成的胭脂，艷如雲霞，香氣襲人。這是女\n孩子化妝(makeup)的必備品。\n");
+                set("long", "這是一盒用上好玫瑰花瓣層層疊薰細濾而成的胭脂，豔如雲霞，香氣襲人。這是女\n孩子化粧(makeup)的必備品。\n");
                 set("value", 1);
         }
 }
@@ -31,7 +31,7 @@ int do_makeup()
         me = this_player();
         if( query_temp("makeuped", me) )
         {
-                write("你剛剛化過妝，不用再化了，妝化太濃效果會適得其反的。\n");
+                write("你剛剛化過粧，不用再化了，粧化太濃效果會適得其反的。\n");
                 return 0;
         }
         
@@ -40,12 +40,12 @@ int do_makeup()
         {
                 if(str == "男性")
                 {
-                        write("大男人化什麼妝！\n");
+                        write("大男人化什麼粧！\n");
                         return 0;
                 }
                 else
                 {
-                        write("你不可以化妝！\n");
+                        write("你不可以化粧！\n");
                         return 0;
                 }
         }
@@ -63,12 +63,12 @@ int do_makeup()
                 return 1;
         }
 
-        message_vision("$N用小鬃刷熬上點刨花油，理了理略顯凌亂的頭發。\n", me);
-        message_vision("$N拔下發間銀簪，小心的挑出些胭脂膏子放在手心，用右手小指沾了些點在唇上，\n更顯紅唇飽滿嬌艷欲滴。\n", me);
+        message_vision("$N用小鬃刷熬上點刨花油，理了理略顯凌亂的頭髮。\n", me);
+        message_vision("$N拔下發間銀簪，小心的挑出些胭脂膏子放在手心，用右手小指沾了些點在脣上，\n更顯紅脣飽滿嬌豔欲滴。\n", me);
         if((me->query_per()>25) && (str != "無性"))
                 message_vision(HIM"$N將剩下的胭脂小心地用兩掌暈開，輕輕拍在雙頰，攬鏡自照，但見面若芙蓉目似\n秋雨，不由嫣然一笑，真個是百媚千嬌。\n"NOR, me);
         else if(me->query_per()<15)
-                message_vision(BLU"$N將剩下的胭脂小心地用兩掌暈開，輕輕拍在雙頰，攬鏡自照，發現自己滿臉的白\n粉嗖嗖往下掉，化完妝後的樣子仍是不敢恭維。\n"NOR, me);
+                message_vision(BLU"$N將剩下的胭脂小心地用兩掌暈開，輕輕拍在雙頰，攬鏡自照，發現自己滿臉的白\n粉嗖嗖往下掉，化完粧後的樣子仍是不敢恭維。\n"NOR, me);
         else
                 message_vision(HIG"$N將剩下的胭脂小心地用兩掌暈開，輕輕拍在雙頰，攬鏡自照，似乎變漂亮了點。\n"NOR, me);
 
@@ -88,6 +88,6 @@ void remove_effect(object me)
         {
                 addn_temp("apply/per", -1, me);
                 delete_temp("makeuped", me);
-                tell_object(me, "忙碌了一天，你的妝全亂了，該找個地方梳洗一下了。\n");
+                tell_object(me, "忙碌了一天，你的粧全亂了，該找個地方梳洗一下了。\n");
         }
 }

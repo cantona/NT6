@@ -5,7 +5,7 @@ inherit ITEM;
 
 void create()
 {
-        set_name(HIB"□"HIY+"百變神通"HIB+"□"NOR, ({"book","shu"}));
+        set_name(HIB"〖"HIY+"百變神通"HIB+"〗"NOR, ({"book","shu"}));
         set_weight(600);
         if (clonep())
                 set_default_object(__FILE__);

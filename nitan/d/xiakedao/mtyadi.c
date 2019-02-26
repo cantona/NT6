@@ -7,8 +7,8 @@ void create()
 {
         set("short", "崖底");
         set("long", @TEXT
-你的面前是一座比直的山峰，高若千丈，峰頂在雲霧中隱約可
-見，山峰光禿禿的，更無置手足處，山峰垂下一條鐵鏈(lian)，仔
+你的面前是一座比直的山峯，高若千丈，峯頂在雲霧中隱約可
+見，山峯光禿禿的，更無置手足處，山峯垂下一條鐵鏈(lian)，仔
 細一看，鐵鏈並無鏽跡，似乎有人用它爬上爬下.
 TEXT );
         set("outdoors", "motianya");
@@ -35,9 +35,9 @@ int do_climb(string arg)
             write("你要爬什麼呀? \n");
             return 1;
         }
-message_vision("$N深吸了一口氣，慢慢沿著鐵鏈的向上爬。\n", this_player());
+message_vision("$N深吸了一口氣，慢慢沿着鐵鏈的向上爬。\n", this_player());
         if(n >80){
-message_vision("$N爬了半天，終于爬了上去，$N高興的不禁跳了起來。\n", this_player());
+message_vision("$N爬了半天，終於爬了上去，$N高興的不禁跳了起來。\n", this_player());
             this_player()->move(__DIR__"mtdating");
         }
         else

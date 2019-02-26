@@ -35,7 +35,7 @@ mapping default_dirs = ([
                   "up":           "上",
                   "down":         "下",
                   "out":          "外",
-                  "enter":        "裡",
+                  "enter":        "裏",
 ]);
 
 
@@ -60,7 +60,7 @@ void create()
         seteuid(getuid());
         set_name(HIW"鏢車"NOR, ({"biao che", "che"}));
         set("long",
-                "這是一輛非常結實的鏢車，由兩匹大騾子拉著，不知裝著什麼東西。鏢車上豎著一面大旗，上書“福威鏢局”四個大字。\n");
+                "這是一輛非常結實的鏢車，由兩匹大騾子拉着，不知裝着什麼東西。鏢車上豎着一面大旗，上書“福威鏢局”四個大字。\n");
         set("unit", "輛");
         set_weight(10000);
         set_max_encumbrance(5000);
@@ -196,7 +196,7 @@ void award2(object dest,object owner)
                 nGold=2+random(2+query("combat_exp", owner)/100000);
 
                 if (MONEY_D->player_job_pay(owner, dest, nGold * 10000))
-                        message_vision(HIY"$N"+HIY"遞給$n幾錠黃金，說：“一點小意思，"+RANK_D->query_respect(owner)+"請笑納！”\n"NOR,dest,owner);
+                        message_vision(HIY"$N"+HIY"遞給$n幾錠黃金，説：“一點小意思，"+RANK_D->query_respect(owner)+"請笑納！”\n"NOR,dest,owner);
 
                 delete("biao/dest", owner);
                 delete("biao/dest2", owner);
@@ -215,8 +215,8 @@ void award(object dest,object owner)
         {
                 message_vision(HIY"$N"+HIY"跳下了鏢車！\n"NOR,owner);
                 delete_temp("riding", owner);
-                message_vision("$N上前對著$n抱拳道：“這位"+RANK_D->query_respect(dest)+"請了。"+RANK_D->query_self(owner)+"總算不負所托，現將鏢貨原物奉上。請您清點！”\n",owner,dest);
-                message_vision("$N滿臉堆笑的說：“這位福威鏢局的"+RANK_D->query_respect(owner)+"果然英雄了得。"+RANK_D->query_self(dest)+"多謝了！”\n",dest);
+                message_vision("$N上前對着$n抱拳道：“這位"+RANK_D->query_respect(dest)+"請了。"+RANK_D->query_self(owner)+"總算不負所托，現將鏢貨原物奉上。請您清點！”\n",owner,dest);
+                message_vision("$N滿臉堆笑的説：“這位福威鏢局的"+RANK_D->query_respect(owner)+"果然英雄了得。"+RANK_D->query_self(dest)+"多謝了！”\n",dest);
                 call_out("award2",1,dest,owner);
                 remove_call_out("killer_show");
                 remove_call_out("auto_check");
@@ -361,9 +361,9 @@ void do_leave(object ob)
                         {
                                 message_vision("$N向後一跳，跳出戰圈！\n",ob);
                                 if( random(2)==0 )
-                                        message_vision("$N說道：沒想到福威鏢局的還真有兩下子。"+RANK_D->query_self(ob)+"今天暫且饒你一條狗命！\n",ob);
+                                        message_vision("$N説道：沒想到福威鏢局的還真有兩下子。"+RANK_D->query_self(ob)+"今天暫且饒你一條狗命！\n",ob);
                                 else
-                                        message_vision("$N說道：今天老子手氣不好，算你狠，改日再來陪你玩！\n",ob);
+                                        message_vision("$N説道：今天老子手氣不好，算你狠，改日再來陪你玩！\n",ob);
                         }
 
                         if(!living(ob))ob->revive(0);
@@ -577,7 +577,7 @@ void robber_rob(object me)
 
                          target->remove_enemy(me);
 
-                         CHANNEL_D->do_channel(this_object(), "rumor","聽說"+me->name()+"洗劫了"+target->name()+"的鏢車！" );
+                         CHANNEL_D->do_channel(this_object(), "rumor","聽説"+me->name()+"洗劫了"+target->name()+"的鏢車！" );
 
                          delete("biao", target);
 
@@ -587,7 +587,7 @@ void robber_rob(object me)
 
         else
 
-         CHANNEL_D->do_channel(this_object(), "rumor","聽說"+me->name()+"洗劫了"+ query("owner")+"的鏢車！" );
+         CHANNEL_D->do_channel(this_object(), "rumor","聽説"+me->name()+"洗劫了"+ query("owner")+"的鏢車！" );
 
   call_out("do_leave",1,me);
   call_out("destroy_me",3,this_object() );
@@ -881,7 +881,7 @@ int do_attack(string arg)
         here = environment(me);
 
         target = present(victim, here);
-        if (!target) return notify_fail("這裡並無此人！\n");
+        if (!target) return notify_fail("這裏並無此人！\n");
 
         if( query("race", target) != "人類" )
         {
@@ -890,7 +890,7 @@ int do_attack(string arg)
 
         obj = all_inventory(here);
 
-        message_vision(HIR "$N對著$n"+HIR"喝道："+RANK_D->query_rude(target)+HIR"也想劫鏢？弟兄們，給我狠狠地教訓$p！\n\n" NOR, me, target);
+        message_vision(HIR "$N對着$n"+HIR"喝道："+RANK_D->query_rude(target)+HIR"也想劫鏢？弟兄們，給我狠狠地教訓$p！\n\n" NOR, me, target);
 
         if( query("biao/dest", me) )
         {
@@ -913,7 +913,7 @@ int do_attack(string arg)
 
                                 {
 
-                                        message_vision(HIY "只見$N應聲沖著$n撲了過去！喝道："+RANK_D->query_rude(target)+HIY"拿命來吧！\n" NOR, obj[i], target);
+                                        message_vision(HIY "只見$N應聲衝着$n撲了過去！喝道："+RANK_D->query_rude(target)+HIY"拿命來吧！\n" NOR, obj[i], target);
 
                                         obj[i]->kill_ob(target);
 
@@ -923,7 +923,7 @@ int do_attack(string arg)
 
                                 {
 
-                                        message_vision(HIG "只見$N對著$n不屑地哼了一聲：這個不知天高地厚的"+RANK_D->query_rude(target)+HIG"就交給你們去收拾了！\n" NOR, obj[i], target);
+                                        message_vision(HIG "只見$N對着$n不屑地哼了一聲：這個不知天高地厚的"+RANK_D->query_rude(target)+HIG"就交給你們去收拾了！\n" NOR, obj[i], target);
 
                                 }
 
@@ -941,8 +941,8 @@ int do_attack(string arg)
 
                 if(random(2)==0)
 
-                        message_vision( HIR "\n$N對著$n"+HIR"冷笑一聲：狗腿子便是全上，俺又有何懼，看招！\n\n" NOR, target,me );
-                else message_vision( HIR "\n$N對著$n"+HIR"冷笑一聲：想倚多為勝？看招！\n\n" NOR, target,me );
+                        message_vision( HIR "\n$N對着$n"+HIR"冷笑一聲：狗腿子便是全上，俺又有何懼，看招！\n\n" NOR, target,me );
+                else message_vision( HIR "\n$N對着$n"+HIR"冷笑一聲：想倚多為勝？看招！\n\n" NOR, target,me );
                 target->kill_ob(me);
         }
 
@@ -956,10 +956,10 @@ int do_check()
         object obj = this_object();
 
         if( query_temp("biao/dest", obj) == "daobaifeng")write("這是由"+query("owner", obj)+"壓運的大理王妃刀白鳳的鏢貨。\n");
-        else if( query_temp("biao/dest", obj) == "hulaoye")write("這是由"+query("owner", obj)+"壓運的北疆小鎮巴依托送的重鏢，要盡快送到。\n");
-        else if( query_temp("biao/dest", obj) == "yeerniang")write("這是西夏葉二娘托送的重鏢，由"+query("owner", obj)+"壓運，要盡快送到。\n");
+        else if( query_temp("biao/dest", obj) == "hulaoye")write("這是由"+query("owner", obj)+"壓運的北疆小鎮巴依託送的重鏢，要儘快送到。\n");
+        else if( query_temp("biao/dest", obj) == "yeerniang")write("這是西夏葉二孃託送的重鏢，由"+query("owner", obj)+"壓運，要儘快送到。\n");
         else if( query_temp("biao/dest", obj) == "fengyiming")write("這是佛山英雄會館鳳一鳴的重鏢，由"+query("owner", obj)+"壓運。\n");
-        else if( query_temp("biao/dest", obj) == "wangtongzhi")write("這是泉州濟世堂老店的重鏢，由"+query("owner", obj)+"壓運，務必交到藥舖掌櫃王通治手裡。\n");
+        else if( query_temp("biao/dest", obj) == "wangtongzhi")write("這是泉州濟世堂老店的重鏢，由"+query("owner", obj)+"壓運，務必交到藥鋪掌櫃王通治手裏。\n");
 
         return 1;
 }
@@ -995,10 +995,10 @@ void destroy_it( object obj)
         {
                 if( userp(ppl) && query_temp("riding", ppl) )
                 {
-                        message_vision( HIR"騾子突然發瘋似的拉著$N"+HIR"就跑，把$n"+HIR"一屁股甩在地上，轉眼就跑沒影了。！\n",obj,ppl);
+                        message_vision( HIR"騾子突然發瘋似的拉着$N"+HIR"就跑，把$n"+HIR"一屁股甩在地上，轉眼就跑沒影了。！\n",obj,ppl);
                 }
                 else
-                        message_vision( HIR"騾子突然發瘋似的拉著$N"+HIR"跑，轉眼就跑沒影了。！\n",obj );
+                        message_vision( HIR"騾子突然發瘋似的拉着$N"+HIR"跑，轉眼就跑沒影了。！\n",obj );
                 destruct(obj);
         }
 }
@@ -1097,7 +1097,7 @@ int do_rob()
 
                          target->remove_enemy(me);
 
-                         CHANNEL_D->do_channel(this_object(), "rumor","聽說"+me->name()+"洗劫了"+target->name()+"的鏢車！" );
+                         CHANNEL_D->do_channel(this_object(), "rumor","聽説"+me->name()+"洗劫了"+target->name()+"的鏢車！" );
 
                          delete("biao", target);
 
@@ -1107,7 +1107,7 @@ int do_rob()
 
                  else
 
-                         CHANNEL_D->do_channel(this_object(),"rumor","聽說"+me->name()+"洗劫了"+query("xbiao/owner", me)+"的鏢車！");
+                         CHANNEL_D->do_channel(this_object(),"rumor","聽説"+me->name()+"洗劫了"+query("xbiao/owner", me)+"的鏢車！");
                  call_out("destroy_me",1,this_object() );
          }
 
@@ -1138,9 +1138,9 @@ int do_drive(string arg)
 
         ob = present(victim, environment(me));
 
-        if (!ob) return notify_fail("這裡並無此人！\n");
+        if (!ob) return notify_fail("這裏並無此人！\n");
 
-        if ( me->is_busy() ) return notify_fail("你在忙著呢！\n");
+        if ( me->is_busy() ) return notify_fail("你在忙着呢！\n");
 
         env = environment(me);
         if( !mapp(exit=query("exits", env)) || undefinedp(exit[dir]) )
@@ -1160,7 +1160,7 @@ int do_drive(string arg)
                   else
                                          target_dir = dir;
 
-        message_vision( HIG"$N"+HIG"揚了揚鞭子，高聲驅趕騾子駕著$n"+HIG"朝"+target_dir+"駛去。\n" , me, ob);
+        message_vision( HIG"$N"+HIG"揚了揚鞭子，高聲驅趕騾子駕着$n"+HIG"朝"+target_dir+"駛去。\n" , me, ob);
 
         if( robber && (query("owner", robber) == query("id", me) || query("owner2", robber) == query("id", me)) )
         {

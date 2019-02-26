@@ -8,7 +8,7 @@ void create()
         set("long", @LONG
 你走在兩山相夾的峽谷中，山上山下全是無邊的野桃樹，一陣山
 風吹來，落英繽紛。數百年落下的桃花，桃枝都堆積在地上，人走在
-上面軟軟的。日近正午了，遠處的山林之間似乎飄盪著一股輕霧，越
+上面軟軟的。日近正午了，遠處的山林之間似乎飄蕩着一股輕霧，越
 來越濃。
 LONG);
         set("outdoors", "wudujiao");
@@ -33,7 +33,7 @@ int valid_leave (object who, string dir)
                         if (! (present("xingjun san", who))
                             && query("max_neili", who)<1000 )
                         {
-                                message_vision (HIM "只聞一陣濃鬱的香氣襲來……$N"
+                                message_vision (HIM "只聞一陣濃郁的香氣襲來……$N"
                                                 HIM "頓時覺得頭重腳輕。\n" NOR, who);
                                 who->receive_damage("qi", 50);
                                 remove_call_out ("fall_down");

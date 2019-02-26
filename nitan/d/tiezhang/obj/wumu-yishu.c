@@ -19,7 +19,7 @@ void create()
                 set("unit", "本");
                 set("long",
                         GRN
-                        "\n這就是岳武穆臨死前留下的“破金要訣”。\n"
+                        "\n這就是嶽武穆臨死前留下的“破金要訣”。\n"
                         "只見第一頁上寫了十八個大字：\n"
                         "“重搜選，謹訓習”\n"
                         "“公賞罰，明號令”\n"
@@ -51,7 +51,7 @@ if( query("mark/+int", this_player()) )
         else
         {
         addn("int", 1, me);
-        write(HIY"你隨手翻閱，但見一字一句之間，無不闡明臨陣對敵的妙法，不禁大聲讚嘆！\n"NOR);
+        write(HIY"你隨手翻閲，但見一字一句之間，無不闡明臨陣對敵的妙法，不禁大聲讚歎！\n"NOR);
         write(HIR"你的悟性提高了！\n"NOR);
         set("mark/+int", 1, this_player());
         }

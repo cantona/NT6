@@ -50,13 +50,13 @@ int do_open(string arg)
     {
           ob=unew(__DIR__"jiaxin");
           if (random(20)> 20) {
-                        write("你打開鐵盒，發現裡面空空的什麼也沒有。\n");
-                        write(HIG"看來有人已經取走了裡面的東西,你還是改天再來吧.\n"NOR);
+                        write("你打開鐵盒，發現裏面空空的什麼也沒有。\n");
+                        write(HIG"看來有人已經取走了裏面的東西,你還是改天再來吧.\n"NOR);
         set_temp("open", 1, me);
                   return 1;
                  }
         ob->move(me);
-        write(HIC"你輕開鐵匣，發現裡面平平整整放著一封書信,你連忙揀了起來。\n"NOR);
+        write(HIC"你輕開鐵匣，發現裏面平平整整放着一封書信,你連忙揀了起來。\n"NOR);
         
         set_temp("open", 1, me);
         return 1;       
@@ -70,7 +70,7 @@ int do_open(string arg)
         ob->move(me);
         return 1;
        }
-        write("你打開鐵盒，發現裡面空空的什麼也沒有。\n");
+        write("你打開鐵盒，發現裏面空空的什麼也沒有。\n");
         return 1;
     }
 }
@@ -90,7 +90,7 @@ int do_move(string arg)
                                                          ob->move(me);
                                                          delete_temp("mark/open", me);
                                                          delete_temp("mark/xin", me);
-                                                         write(HIY"赫然發現,一柄金光閃閃的蛇型錐放在裡面,看起來很值錢的樣子,你開心極了,連忙把它揣進懷裡\n"NOR);
+                                                         write(HIY"赫然發現,一柄金光閃閃的蛇型錐放在裏面,看起來很值錢的樣子,你開心極了,連忙把它揣進懷裏\n"NOR);
        set_temp("quest/金蛇劍法/金蛇錐", 1, this_player());
        set_temp("quest/金蛇掌法/start", 1, this_player());//開始標記bydaidai
                                                      return 1;

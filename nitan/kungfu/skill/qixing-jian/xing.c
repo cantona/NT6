@@ -1,7 +1,7 @@
 #include <ansi.h>
 #include <combat.h>
 
-#define XING "「" HIY "群星璀璨" NOR "」"
+#define XING "「" HIY "羣星璀璨" NOR "」"
 
 inherit F_SSERVER;
 
@@ -37,7 +37,7 @@ int perform(object me, object target)
                 return notify_fail("你現在的真氣不足，難以施展" XING "。\n");
 
         if (! living(target))
-                return notify_fail("對方都已經這樣了，用不著這麼費力吧？\n");
+                return notify_fail("對方都已經這樣了，用不着這麼費力吧？\n");
 
         msg = HIY "$N" HIY "手中" + weapon->name() + HIY "一振，電光火石間"
               "連刺數劍，劍尖閃爍，化作點點繁星罩向$n" HIY "。\n" NOR;

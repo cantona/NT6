@@ -24,7 +24,7 @@ void create()
 {
         set("short", "巨石");
         set("long", @LONG
-你站在懸崖上的巨石上，四周山風陣陣，你頭發凌亂。巨石搖搖晃
+你站在懸崖上的巨石上，四周山風陣陣，你頭髮凌亂。巨石搖搖晃
 晃，你凝氣守中，雙足穩穩站定。環顧四周，一片寂靜，巨石底下是萬
 丈深淵，似乎在此很適宜練功。
 LONG
@@ -61,7 +61,7 @@ int do_practice(string arg)
 
         if( me->is_busy() )
         {
-                tell_object(me, "你現在正忙著呢。\n");
+                tell_object(me, "你現在正忙着呢。\n");
                 return 1;
         }
 
@@ -111,7 +111,7 @@ int do_practice(string arg)
                 times = 1;
                 multiple="";
         }
-        else    multiple="反復";
+        else    multiple="反覆";
         switch(skillarg)
         {
                 case "blade" :
@@ -125,7 +125,7 @@ int do_practice(string arg)
                 case "parry" : str = "奮力拚博"; break;
                 case "dodge" : str = "縱閃跳躍"; break;
         }                
-        message_vision("$N在狂風中" + str + multiple + "練習著" + to_chinese(skillarg) + "。\n", me);
+        message_vision("$N在狂風中" + str + multiple + "練習着" + to_chinese(skillarg) + "。\n", me);
 
         for(times; times > 0; times--)
         {
@@ -158,22 +158,22 @@ int do_jump(string arg)
                 return notify_fail("你要幹什麼？\n");
 
         tell_object(me, "奮力一跳，身子隨即直落下去。\n");
-        message("vision", me->name() + "奮力一跳，便直落海裡。\n", environment(me), ({me}));
+        message("vision", me->name() + "奮力一跳，便直落海里。\n", environment(me), ({me}));
       
         if( random(mydodge - 30 ) < 10 )
         {
                 for(int i = 0; i < sizeof(inv); i++)
                         if( userp(inv[i]) )
-                                inv[i]->receive_wound("qi",50+query("max_qi", inv[i]),"掉進海裡淹死了");
+                                inv[i]->receive_wound("qi",50+query("max_qi", inv[i]),"掉進海里淹死了");
                         else    destruct(inv[i]);
                 me->unconcious();
                 me->move("/d/shenlong/beach");
-                message("vision","你發現一個渾身水淋淋的家伙被海水沖上岸來，不由得走近一看，原來是" + me->name() + "\241\243\n", environment(me), ({me}));
+                message("vision","你發現一個渾身水淋淋的傢伙被海水衝上岸來，不由得走近一看，原來是" + me->name() + "\241\243\n", environment(me), ({me}));
                 return 1;
         }
 
         me->move("/d/shenlong/sea");
-        tell_object(me, "你一掙眼便發覺已站定在海水裡。\n");
+        tell_object(me, "你一掙眼便發覺已站定在海水裏。\n");
         message("vision", "只見" + me->name() + "從高處跳了下來。\n", environment(me), ({me}));
         return 1;
 }
@@ -182,18 +182,18 @@ void dropoff(object me)
 {
         object *inv = all_inventory(me);
 
-        tell_object(me, "巨石一晃你立足不穩掉下海裡了。\n");
+        tell_object(me, "巨石一晃你立足不穩掉下海里了。\n");
         message("vision", me->name()+"失足掉了下去。\n",environment(me),({me}));
         for(int i = 0; i < sizeof(inv); i++)
                 if( userp(inv[i]) )
-                        inv[i]->receive_wound("qi",50+query("max_qi", inv[i]),"掉進海裡淹死了");
+                        inv[i]->receive_wound("qi",50+query("max_qi", inv[i]),"掉進海里淹死了");
                 else    destruct(inv[i]);
 
         me->move("/d/shenlong/sea");
         me->unconcious();
         me->move("/d/shenlong/beach");
 
-        message("vision","你發現一個渾身水淋淋的家伙被海水沖上岸來，不由得走近一看，原來是" + me->name() + "\241\243\n", environment(me), ({me}));
+        message("vision","你發現一個渾身水淋淋的傢伙被海水衝上岸來，不由得走近一看，原來是" + me->name() + "\241\243\n", environment(me), ({me}));
 }
 
 int *cost(object ob, string skill)

@@ -17,7 +17,7 @@ LONG );
         ]));
 
         set("outdoors", "xiyu");
-        set("no_map", "這裡的地形令人困惑，你無從下手繪制地圖。\n");
+        set("no_map", "這裏的地形令人困惑，你無從下手繪製地圖。\n");
 
         setup();
 }
@@ -62,15 +62,15 @@ int valid_leave(object me, string dir)
         switch (random(3))
         {
         case 0:
-                write("你頂著風沙走啊走，還是沒有走出沙漠。\n");
+                write("你頂着風沙走啊走，還是沒有走出沙漠。\n");
                 break;
 
         case 1:
-                write("你望著漫天遍野的黃沙，嘆了口氣，無精打採的走著。\n");
+                write("你望着漫天遍野的黃沙，歎了口氣，無精打采的走着。\n");
                 break;
 
         case 2:
-                write("你一步步的往前挪著，早已分不出方向。\n");
+                write("你一步步的往前挪着，早已分不出方向。\n");
                 break;
         }
         return -1;

@@ -11,10 +11,10 @@ void create()
 {
         set_name(HIG "劍靈" NOR, ({ "jian ling", "jian", "ling" }) );
         set("title", HIC "虛空之痕" NOR);
-        set("long", HIG "在你的面前站立著一位高大的青年，他雙手交叉于胸前，雪\n"
-                        "白的長發隨風飄洒。背上背負著一柄巨大的寶劍，散發著藍\n"
+        set("long", HIG "在你的面前站立着一位高大的青年，他雙手交叉於胸前，雪\n"
+                        "白的長髮隨風飄灑。背上揹負着一柄巨大的寶劍，散發着藍\n"
                         "色的劍芒。這位青年看上去十分憂傷，空洞的眼神中似乎藏\n"
-                        "著世俗人間永遠無法看透的悲傷。\n" NOR);
+                        "着世俗人間永遠無法看透的悲傷。\n" NOR);
 
         set("gender", "男性");
         set("age", 35);
@@ -123,7 +123,7 @@ void create()
         }));
  
 
-        set("my_life", 1); // 當氣血低于10%的時候補滿一次，設置該參數為0
+        set("my_life", 1); // 當氣血低於10%的時候補滿一次，設置該參數為0
         set("end_time", 1800);
         set("clear_fuben", 1);
 
@@ -142,13 +142,13 @@ void create()
 // 全屏傷害 毀滅一擊
 /*
 東方不敗具備毀滅一擊，隨機發動，全場100%命中，傷血及上限80%
--- 套裝對其具備克制作用，如下：$HIG$
-   -= 通玄套裝: 50%幾率抵御毀滅一擊，同時毀滅一擊若抵御失敗，傷血及上限50%$HIM$
+-- 套裝對其具備剋制作用，如下：$HIG$
+   -= 通玄套裝: 50%機率抵禦毀滅一擊，同時毀滅一擊若抵禦失敗，傷血及上限50%$HIM$
    -= 鴻鈞套裝: 具備通玄套裝的特性。同時，命中東方不敗後對其追加一次傷害和
                 忙亂效果。
                 例如本次命中東方不敗傷害為10萬，則再追加10萬傷害，同時令其
                 忙亂5至10秒。$HIR$
-   -= 造化套裝:90%幾率抵御毀滅一擊，同時毀滅一擊若抵御失敗，傷血及上限30%
+   -= 造化套裝:90%機率抵禦毀滅一擊，同時毀滅一擊若抵禦失敗，傷血及上限30%
                命中東方不敗後對其追加二次傷害和忙亂效果。例如本次命中東方不
                敗傷害為10萬，則再追加20萬傷害，同時令其忙亂5至10秒。
                命中東方不敗後70%追加封招10秒。$NOR$
@@ -164,7 +164,7 @@ void damage_all()
                 set_heart_beat(0);
                 return;
         }
-        msg = HIM "$N" HIM "一聲長嘆，手中的藍蝶寶劍化作萬千藍色光芒的彩蝶，舖天蓋地般卷來，剎那間，"
+        msg = HIM "$N" HIM "一聲長歎，手中的藍蝶寶劍化作萬千藍色光芒的彩蝶，鋪天蓋地般捲來，剎那間，"
                   "萬千光芒迸發出刺眼的光芒，竟變成道道劍芒從四面八方激射而來 ……\n" NOR;
         
         message_vision(sort_msg(msg), this_object());
@@ -177,7 +177,7 @@ void damage_all()
                 if (! obs[i]->is_character() || obs[i] == this_object())
                         continue;
                         
-                // 特殊標志的ID不會被受招
+                // 特殊標誌的ID不會被受招
                 if( query("jianling-summon", obs[i]))continue;
                 
                 tzlv = to_int(query_temp("modequip_itemmake_level", obs[i]));
@@ -193,11 +193,11 @@ void damage_all()
                 }
                 else if (tzlv == 2)
                 {
-                        // 50%抵御，若未成功，則傷害為50%
+                        // 50%抵禦，若未成功，則傷害為50%
                         if (random(2))
                         {
                                 message_vision("$N" HIG "驚恐萬分，已經毫無招架之力，突然全身一道欄光籠罩，其"
-                                                   "身穿的【通玄套裝】將所有傷害全部抵御！\n" NOR, obs[i]);
+                                                   "身穿的【通玄套裝】將所有傷害全部抵禦！\n" NOR, obs[i]);
                         }
                         else
                         {
@@ -213,7 +213,7 @@ void damage_all()
                         if (random(2))
                         {
                                 message_vision("$N" HIC "驚恐萬分，已經毫無招架之力，突然全身一道青光籠罩，其"
-                                                   "身穿的【鴻鈞套裝】將所有傷害全部抵御！\n" NOR, obs[i]);
+                                                   "身穿的【鴻鈞套裝】將所有傷害全部抵禦！\n" NOR, obs[i]);
                         }
                         else
                         {
@@ -228,8 +228,8 @@ void damage_all()
                 {
                         if (1)
                         {
-                                message_vision(HIM "$N" HIM "凝神抵御，一道紫色的光芒纏繞在其周圍，【造化套裝】"
-                                                    "叮叮作響，竟將所有傷害化解于無形！\n" NOR, obs[i]);
+                                message_vision(HIM "$N" HIM "凝神抵禦，一道紫色的光芒纏繞在其周圍，【造化套裝】"
+                                                    "叮叮作響，竟將所有傷害化解於無形！\n" NOR, obs[i]);
                         }
                 }
         }
@@ -311,7 +311,7 @@ void check_weapon()
                 me->clear_condition();
         }
 
-        // 很小幾率恢復氣血
+        // 很小几率恢復氣血
         if (random(800) == 1)
         {
                 //log_file("qilin", ctime(time()) + " 成功恢復氣血。\n");
@@ -383,7 +383,7 @@ void new_life()
         set_temp("apply/fy", 70);  // 福緣              
         delete("my_life", me);
 
-        message_vision(HIG "\n$N" HIG "長嘆一聲，一只藍色光芒的蝴蝶從身體內升起！\n\n" NOR, me);
+        message_vision(HIG "\n$N" HIG "長歎一聲，一隻藍色光芒的蝴蝶從身體內升起！\n\n" NOR, me);
         
         return; 
 }
@@ -400,7 +400,7 @@ int receive_wound(string type, int damage, object who)
         landie=query("mylandie", me);
         if (objectp(landie))
         {
-                message_vision(HIC "$N" HIC "輕嘆一聲，對$n" HIC "的攻勢毫無理會。\n" NOR, me, who);
+                message_vision(HIC "$N" HIC "輕歎一聲，對$n" HIC "的攻勢毫無理會。\n" NOR, me, who);
                 return 0;
         }
         
@@ -421,7 +421,7 @@ int receive_damage(string type, int damage, object who)
         landie=query("mylandie", me);
         if (objectp(landie))
         {
-                message_vision(HIC "$N" HIC "輕嘆一聲，對$n" HIC "的攻勢毫無理會。\n" NOR, me, who);
+                message_vision(HIC "$N" HIC "輕歎一聲，對$n" HIC "的攻勢毫無理會。\n" NOR, me, who);
                 return 0;
         }
 
@@ -475,7 +475,7 @@ void check_life()
         // 如果life<=1則死亡
         if (1)
         {
-                message_vision(HIR "\n$N" HIR "一聲悲涼的長嘆，竟化作一直藍蝶飛走了。\n" NOR, this_object());
+                message_vision(HIR "\n$N" HIR "一聲悲涼的長歎，竟化作一直藍蝶飛走了。\n" NOR, this_object());
 
                 destruct(this_object());
         }
@@ -488,7 +488,7 @@ void die(object killer)
         int exp;                // 需要瓜分的經驗
         int pot;                // 需要瓜分的潛能                                                                                        
         int weiwang;            // 需要瓜分的威望
-        int score;              // 需要瓜分的閱歷
+        int score;              // 需要瓜分的閲歷
         object *t;              // 殺死我的人的隊伍列表                                                                                  
         object tob;       
         object ob;
@@ -496,7 +496,7 @@ void die(object killer)
         int i;
 
         // 定義獎勵物品列表
-        // 幾率  X / 百分之
+        // 機率  X / 百分之
         mixed oblist = ([
                 "/clone/armor/jianling/jianling-zhili"   : 1,
                 "/clone/armor/jianling/jianling-zhili2"  : 1,
@@ -666,7 +666,7 @@ void die(object killer)
                         }
                 }
                 
-                // 1%幾率再追加一件物品
+                // 1%機率再追加一件物品
                 if (random(100) < 1)
                 {
                         s_gift = key_s_gift[random(sizeof(key_s_gift))];
@@ -684,7 +684,7 @@ void die(object killer)
                                 log_file("gift-none", s_gift + " from " + __FILE__ + "\n");
                         }                       
                 }
-                // 0.01%幾率再追加一件
+                // 0.01%機率再追加一件
                 if (random(10000) == 1)
                 {
                         s_gift = key_s_gift[random(sizeof(key_s_gift))];
@@ -703,7 +703,7 @@ void die(object killer)
                         }
                 }
 /*
-                // 25%的幾率掉東西
+                // 25%的機率掉東西
                 if (random(4) == 1) 
                 {
                         ran = random(100);
@@ -747,7 +747,7 @@ void die(object killer)
                                 }
                         }
 
-                        if (random(100) < 5)// 魅影劍法或天擎秘氣 5% 隨機一件
+                        if (random(100) < 5)// 魅影劍法或天擎祕氣 5% 隨機一件
                         {
                                 switch(random(3))
                                 {
@@ -776,7 +776,7 @@ void die(object killer)
                 */
         }
         
-        // 5/100幾率掉出無名銅人
+        // 5/100機率掉出無名銅人
         if (random(100) < (5+5*query_temp("apply/magic_find", dob)/100))
         {
                 object ob_tongren;
@@ -790,8 +790,8 @@ void die(object killer)
         // 特殊活動爆物品，統一調用giftd接口
         GIFT_D->fuben_boss_gift(this_object()); 
                                 
-        // 20%幾率掉出特殊物品
-        // 同時有50%幾率掉出2件
+        // 20%機率掉出特殊物品
+        // 同時有50%機率掉出2件
         if (random(100) < (2+2*query_temp("apply/magic_find", dob)/100))
         {       
                 object gift_huoyan;

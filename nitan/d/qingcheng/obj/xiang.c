@@ -10,7 +10,7 @@ void create()
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("long", "這是一只大鐵箱，好象有些什麼東西在裡頭。\n");
+                set("long", "這是一隻大鐵箱，好像有些什麼東西在裏頭。\n");
                 set("unit", "只");
                 set("open_count", 1);
                 set("no_get",1);
@@ -33,7 +33,7 @@ int do_open(string arg)
         if( !present("tie key", me))
                 return notify_fail("你撬不開大鐵箱的鎖。\n");
   if (me->is_busy())
-          return notify_fail("你現在正忙著呢。\n");
+          return notify_fail("你現在正忙着呢。\n");
         if (query("open_count") > 0)
         {
                 message_vision("$N用一把鑰匙打開了大鐵箱。\n", me);

@@ -20,7 +20,7 @@ LONG );
                 "/clone/npc/walker" : 1,
         ]));
         set("item_desc", ([
-                "door" : "厚厚的木門緊關著，有些年歲了。\n" ,
+                "door" : "厚厚的木門緊關着，有些年歲了。\n" ,
         ]));        
         set("no_clean_up", 0);
         set("coor/x", -15250);
@@ -55,12 +55,12 @@ void letter(object me)
         if( !query_temp("want_leave", me) )
                 return;
 
-        tell_object(me, WHT "  □□□□□□□□\n"
-                            "  □觀旁樹林內有□\n"
-                            "  □本派密道能夠□\n"
-                            "  □直通(" HIY "back" NOR + WHT ")峨□\n"
-                            "  □嵋華藏庵大殿□\n"
-                            "  □□□□□□□□\n" NOR);
+        tell_object(me, WHT "  ┏━━━━━━┓\n"
+                            "  ┃觀旁樹林內有┃\n"
+                            "  ┃本派密道能夠┃\n"
+                            "  ┃直通(" HIY "back" NOR + WHT ")峨┃\n"
+                            "  ┃嵋華藏庵大殿┃\n"
+                            "  ┗━━━━━━┛\n" NOR);
 }
 
 int do_back()
@@ -97,18 +97,18 @@ int do_knock(string arg)
                 message_vision("$N試著敲了敲木門。\n", me);
                 if( query("bunch/bunch_name", me) != "修羅門" && query("shen", me) <= 0 )
                 {
-                        message_vision(HIB"木門吱呀一聲開了，從裡面探出個頭來，看了$N兩眼說道：“是來投靠咱們修羅門的吧！”，
-說完一把把$N拉了進去。\n"NOR, me);
+                        message_vision(HIB"木門吱呀一聲開了，從裏面探出個頭來，看了$N兩眼説道：“是來投靠咱們修羅門的吧！”，
+説完一把把$N拉了進去。\n"NOR, me);
                         me->move(__DIR__"xlm_cdfb");
                         return 1;
                 }
                 if( good_bunch(me) || (query("bunch/bunch_name", me) != "修羅門" && query("shen", me)>0) )
                 { 
-                                command("say 哪裡來的邪魔歪道，找打麼？\n"); 
+                                command("say 哪裏來的邪魔歪道，找打麼？\n"); 
                         return 1; 
                 } 
-                message_vision("木門吱呀一聲開了，從裡面探出個頭來，看了$N兩眼說道：“既然是本門的兄弟，就進來吧！”，
-說完一把把$N拉了進去。\n",me);
+                message_vision("木門吱呀一聲開了，從裏面探出個頭來，看了$N兩眼説道：“既然是本門的兄弟，就進來吧！”，
+説完一把把$N拉了進去。\n",me);
                 me->move(__DIR__"xlm_cdfb"); 
                 return 1; 
         }

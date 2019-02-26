@@ -5,9 +5,9 @@ void create()
 {
         set("short", "廚房");
         set("long", @LONG
-這裡是村長家的廚房，平常弟子們餓了可以到這裡要 （輸入指
+這裏是村長家的廚房，平常弟子們餓了可以到這裏要 （輸入指
 令 yao）些食物。房中灶火正旺，一個大廚師正忙的滿頭大汗。屋角
-放著一個大水缸。  
+放着一個大水缸。  
 LONG);
 
         set("exits", ([
@@ -37,13 +37,13 @@ int do_yao()
         me = this_player();
 
         if (present("man tou", this_player())) 
-                return notify_fail(CYN "廚師眉頭一皺，說道：吃完了再拿，別浪費食物。\n" NOR);
+                return notify_fail(CYN "廚師眉頭一皺，説道：吃完了再拿，別浪費食物。\n" NOR);
 
         if (present("water", this_object())) 
-                return notify_fail(CYN "廚師眉頭一皺，說道：吃完了再拿，別浪費食物。\n" NOR);
+                return notify_fail(CYN "廚師眉頭一皺，説道：吃完了再拿，別浪費食物。\n" NOR);
 
         if( time()-query_temp("last_yao_food", me)<30 )
-                return notify_fail(CYN "廚師眉頭一皺，說道：你剛要過食物了，留點口糧給別人吧！\n" NOR);
+                return notify_fail(CYN "廚師眉頭一皺，説道：你剛要過食物了，留點口糧給別人吧！\n" NOR);
 
         if (query("ricewater") > 0)
         {

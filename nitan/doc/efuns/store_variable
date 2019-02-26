@@ -9,12 +9,12 @@
                 void store_variable(string, mixed);
                 無傳回值 store_variable( 字符串 , 混合 )
 
-        說明：
+        説明：
                 設定第一個參數所指定的變量的值。
                 注意：此變量必須已經定義，並且是在 this_object()
                 中定義的。
 
-        此函數需要編譯 MudOS 時在配置文件裡定義了 PACKAGE_CONTRIB。
+        此函數需要編譯 MudOS 時在配置文件裏定義了 PACKAGE_CONTRIB。
 
         參考：
                 restore_variable,

@@ -8,7 +8,7 @@ inherit SKILL;
 
 mapping *action = ({ 
 ([      "action" :
-       "$N手中的棍梢由下往上一撩,緊接著一招[順風打旗],那棍尾直 往$n的$l打去",     
+       "$N手中的棍梢由下往上一撩,緊接着一招[順風打旗],那棍尾直 往$n的$l打去",     
        "force"  : 350, 
        "attack" : 220, 
        "dodge"  : -10, 
@@ -16,7 +16,7 @@ mapping *action = ({
        "damage" : 230, 
        "damage_type": "淤傷" 
 ]), 
-([      "action" :"$N單腿點地，向上拔出丈余，$w飛舞幻出無數幻影將
+([      "action" :"$N單腿點地，向上拔出丈餘，$w飛舞幻出無數幻影將
 $n罩住，口中大喝一聲[雪花蓋頂]，只聽棍帶風聲嗚嗚作響向$n的$1劈去",     
        "force"  : 380, 
        "attack" : 200, 
@@ -26,7 +26,7 @@ $n罩住，口中大喝一聲[雪花蓋頂]，只聽棍帶風聲嗚嗚作響向$
        "damage_type": "淤傷" 
 ]), 
 ([      "action" : "$N把$w一架，擋住了$n的去路，$N手中的$w一振，帶起了萬丈金光，
-　　　從這片光芒中沖出一道清煙，直向$n的$1奔去，正是一招﹝撥雲見日﹞",
+　　　從這片光芒中衝出一道清煙，直向$n的$1奔去，正是一招［撥雲見日］",
        "force"  : 400, 
        "attack" : 200, 
        "dodge"  : -40, 
@@ -77,7 +77,7 @@ $n罩住，口中大喝一聲[雪花蓋頂]，只聽棍帶風聲嗚嗚作響向$
        "damage" : 320, 
        "damage_type": "淤傷" 
 ]), 
-([      "action" : "$N腰一擺，雙腿順勢盤腿坐下，手中$w一抖，一式﹝犀牛望月],
+([      "action" : "$N腰一擺，雙腿順勢盤腿坐下，手中$w一抖，一式［犀牛望月],
        手中的$w勢如長虹，由下往$n的$1刺去",    
        "force"  : 500, 
        "attack" : 150, 
@@ -86,7 +86,7 @@ $n罩住，口中大喝一聲[雪花蓋頂]，只聽棍帶風聲嗚嗚作響向$
        "damage" : 340, 
        "damage_type": "刺傷" 
 ]), 
-([      "action" : "$N手中的$w左右攔掃，一把把$n圈住,緊接著，$N用$w把$n一挑□      
+([      "action" : "$N手中的$w左右攔掃，一把把$n圈住,緊接着，$N用$w把$n一挑       
         長嘯一聲:[羅漢搏虎],棍梢徑直向$n的$1劈去",           
        "dodge"  : -25, 
        "force"  : 500, 
@@ -96,7 +96,7 @@ $n罩住，口中大喝一聲[雪花蓋頂]，只聽棍帶風聲嗚嗚作響向$
        "damage" : 350, 
        "damage_type": "淤傷" 
 ]), 
-([      "action" : "$N使出一招[天馬行空],手中的$w輕盈自如地揮洒，向$n的$1點擊過去",
+([      "action" : "$N使出一招[天馬行空],手中的$w輕盈自如地揮灑，向$n的$1點擊過去",
        "force" : 510, 
        "attack" : 185, 
        "dodge"  : -30, 
@@ -152,7 +152,7 @@ int get_finish(object me)
 { 
        if( query("str", me)<25 || me->query_str()<45 )
        { 
-               tell_object(me, "你演練完畢，整個身體幾乎完全虛脫了，軟綿綿的提不起一點勁。\n"); 
+               tell_object(me, "你演練完畢，整個身體幾乎完全虛脱了，軟綿綿的提不起一點勁。\n"); 
                return 0; 
        } 
 
@@ -164,13 +164,13 @@ int get_finish(object me)
 
        if ((int)me->query_skill("force") < 200) 
        { 
-               tell_object(me, "你演練完畢，幾乎虛脫，自己的內功水平看來還有待提高。\n"); 
+               tell_object(me, "你演練完畢，幾乎虛脱，自己的內功水平看來還有待提高。\n"); 
                return 0; 
        } 
 
        if( query("max_neili", me)<1500 )
        { 
-               tell_object(me, "你演練完畢，丹田提不起半點力來，看來應該繼續鍛煉內力。\n"); 
+               tell_object(me, "你演練完畢，丹田提不起半點力來，看來應該繼續鍛鍊內力。\n"); 
                return 0; 
        } 
 
@@ -211,7 +211,7 @@ int valid_learn(object me)
        if((int)me->query_skill("zui-gun") < 200) 
                return notify_fail("你的醉棍火候不夠，無法學習緊那羅王棍。\n"); 
        if ((int)me->query_skill("buddhism") < 200) 
-               return notify_fail("你的禪宗心法火候不夠，無法學習于禪宗息息相關緊那羅王棍。\n"); 
+               return notify_fail("你的禪宗心法火候不夠，無法學習於禪宗息息相關緊那羅王棍。\n"); 
        if( query("max_neili", me)<2000 )
                return notify_fail("你的內力這麼差，怎能融會貫通緊那羅王棍？\n"); 
 
@@ -237,7 +237,7 @@ mapping query_action(object me, object weapon)
        a_action["force"] += level / 10;
        a_action["damage"] += level / 10;
        if( query_temp("action_flag", me) )
-                set_temp("action_msg", "緊跟著", me);
+                set_temp("action_msg", "緊跟着", me);
        return a_action;
 } 
 
@@ -263,7 +263,7 @@ mixed hit_ob(object me, object victim, int damage_bonus)
        { 
                victim->receive_wound("qi", damage_bonus); 
                victim->receive_wound("jing", damage_bonus); 
-               return HIR "隨著一聲沉悶的哼聲傳來，$n的口中咳出了幾口鮮血！\n" NOR; 
+               return HIR "隨着一聲沉悶的哼聲傳來，$n的口中咳出了幾口鮮血！\n" NOR; 
        } 
 } 
 

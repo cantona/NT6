@@ -15,5 +15,5 @@ string update_msg_others()
 
 string update_msg_self()
 {
-        return HIB "忽然一股寒流夾著一陣灼熱湧上心來，你中的生死符發作了！\n" NOR;
+        return HIB "忽然一股寒流夾着一陣灼熱湧上心來，你中的生死符發作了！\n" NOR;
 }

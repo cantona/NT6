@@ -7,7 +7,7 @@ void create()
         set("short", "竹林");
         set("long",@LONG
 這是蓬萊仙島中的竹林，四周霧氣茫茫，梵音了了，真乃仙境。
-不知這裡的仙氣是從何而來，竟覺得越來越多。
+不知這裏的仙氣是從何而來，竟覺得越來越多。
 LONG);
 
         set("exits", ([
@@ -15,7 +15,7 @@ LONG);
                 "east"    : __DIR__"xianqimen",
         ]));
         set("no_rideto", 1);         // 設置不能騎馬到其他地方
-        set("no_flyto", 1);          // 設置不能從起來地方騎馬來這裡
+        set("no_flyto", 1);          // 設置不能從起來地方騎馬來這裏
         set("no_die", 1);            // 死亡後移動到扁鵲居
         set("penglai", 1);           // 表示在蓬萊島
 

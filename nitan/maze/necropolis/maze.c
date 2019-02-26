@@ -22,7 +22,7 @@ void create()
                 "/maze/necropolis/unique_room/quest_room",
         }) ); 
 
-        //迷宮房間裡的怪物。 
+        //迷宮房間裏的怪物。 
 /*
         set_maze_npcs( ([
                 "/maze/necropolis/npc/skeleton": !random(3),  
@@ -70,7 +70,7 @@ void create()
         //出口與區域的連接檔案名 
         set_link_exit_room(__DIR__"leave"); 
                         
-        //以下是入口坐標
+        //以下是入口座標
         set_link_entry_room_x(ENTER_ROOM_X);
         set_link_entry_room_y(ENTER_ROOM_Y);
         set_link_entry_room_z(ENTER_ROOM_Z);
@@ -79,8 +79,8 @@ void create()
         set_maze_room_short(RED "詭異墓園" NOR);
                         
         set_maze_room_desc(@LONG
-墓園裡沒有一點生氣，地上到處是枯枝敗葉，偶爾看到一些
-幹枯的動物屍骸，讓人不寒而栗，到處散發著一股屍首腐爛的
+墓園裏沒有一點生氣，地上到處是枯枝敗葉，偶爾看到一些
+乾枯的動物屍骸，讓人不寒而慄，到處散發着一股屍首腐爛的
 味道，看不到一絲活物存在。
 LONG); 
                         
@@ -89,8 +89,8 @@ LONG);
                         
         //入口房間描述 
         set_entry_desc(@LONG
-墓園裡沒有一點生氣，地上到處是枯枝敗葉，偶爾看到一些
-幹枯的動物屍骸，讓人不寒而栗，到處散發著一股屍首腐爛的
+墓園裏沒有一點生氣，地上到處是枯枝敗葉，偶爾看到一些
+乾枯的動物屍骸，讓人不寒而慄，到處散發着一股屍首腐爛的
 味道，看不到一絲活物存在。
 LONG); 
                         
@@ -99,12 +99,12 @@ LONG);
                         
         //出口房間描述 
         set_exit_desc(@LONG
-墓園裡沒有一點生氣，地上到處是枯枝敗葉，偶爾看到一些
-幹枯的動物屍骸，讓人不寒而栗，到處散發著一股屍首腐爛的
+墓園裏沒有一點生氣，地上到處是枯枝敗葉，偶爾看到一些
+乾枯的動物屍骸，讓人不寒而慄，到處散發着一股屍首腐爛的
 味道，看不到一絲活物存在。
 LONG); 
 
-        // 迷宮房間是否為戶外房間？ 
+        // 迷宮房間是否為户外房間？ 
         set_outdoors(1); 
         
         set_maze_refresh(600); 

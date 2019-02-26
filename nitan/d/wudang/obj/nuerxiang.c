@@ -81,7 +81,7 @@ int do_drink(string arg)
                 "一股香氣直入心脾，$N覺得精神好多了。\n", this_player());
         } else 
         { 
-                 message_vision("$N端起雕花小杯，把裡面的「女兒香」一飲而盡。\n"+
+                 message_vision("$N端起雕花小杯，把裏面的「女兒香」一飲而盡。\n"+
                 "一股幽香直入心脾，$N頓時覺得精神大振。\n", this_player());
                 destruct(this_object());
         }

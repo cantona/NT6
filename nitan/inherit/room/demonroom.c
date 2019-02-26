@@ -30,13 +30,13 @@ void setup()
 
         //set("no_clean_up", 1);
                 set("no_roar", 1);
-                //set("no_flyto", 1); // 不能騎馬或MISS到這裡，已經在horse.c做限制
+                //set("no_flyto", 1); // 不能騎馬或MISS到這裏，已經在horse.c做限制
 
                 // 設置房間怪物屬性
                 if (! query("n_time"))set("n_time", 60);                                // 默認怪物45秒刷新一次
                 if (! query("n_npc"))set("n_npc", 1);                                        // 默認怪物每次刷新一個
                 if (! query("n_max_npc"))set("n_max_npc", 1);                                //默認為1，房間容納最多怪物數量，即一次最多刷新多少個怪物
-                if (! query("s_npc"))set("s_npc", "/clone/quarry/zhu");                 // 默認怪物為野獸─豬
+                if (! query("s_npc"))set("s_npc", "/clone/quarry/zhu");                 // 默認怪物為野獸—豬
 
                 set("n_die", 0);                    // 單位時間內怪物死亡數量
                 if (query("last_refresh_time"))     // 上次刷新時間

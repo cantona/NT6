@@ -1,7 +1,7 @@
 #include <ansi.h>
 #include <combat.h>
 
-#define KAI "「" HIY "開天辟地" NOR "」"
+#define KAI "「" HIY "開天闢地" NOR "」"
 
 inherit F_SSERVER;
 
@@ -37,10 +37,10 @@ int perform(object me, object target)
                 return notify_fail("你沒有激發盤古七勢，難以施展" KAI "。\n");
 
         if (! living(target))
-                return notify_fail("對方都已經這樣了，用不著這麼費力吧？\n");
+                return notify_fail("對方都已經這樣了，用不着這麼費力吧？\n");
 
         msg = WHT "$N" WHT "一聲斷喝，手中" + weapon->name() +
-              WHT "如山岳巍峙，攜著開天辟地之勢向$n" WHT "猛劈而下！\n" NOR;
+              WHT "如山嶽巍峙，攜着開天闢地之勢向$n" WHT "猛劈而下！\n" NOR;
 
         ap=me->query_skill("hammer")+query("str", me)*10;
         dp=target->query_skill("force")+query("con", target)*10;
@@ -59,7 +59,7 @@ int perform(object me, object target)
                 addn("neili", -300, me);
                 me->start_busy(6);
                 msg += HIC "可是$n" HIC "真氣鼓盪，$N" HIC "雷霆般"
-                       "的勁力竟如中敗絮，登時被解于無形。\n"NOR;
+                       "的勁力竟如中敗絮，登時被解於無形。\n"NOR;
         }
         message_combatd(msg, me, target);
 

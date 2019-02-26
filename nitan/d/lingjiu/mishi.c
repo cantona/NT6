@@ -35,7 +35,7 @@ int valid_leave(object me, string dir)
                 (!present("shoufa tu1", this_object())) ||
                 (!present("shoufa tu2", this_object())) ||
                 (!present("pu", this_object())) )
-                        return notify_fail("這的秘輯不見了你怎能就走呢！\n");
+                        return notify_fail("這的祕輯不見了你怎能就走呢！\n");
 
         return ::valid_leave(me, dir);
 }

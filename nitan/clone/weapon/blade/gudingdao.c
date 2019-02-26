@@ -19,7 +19,7 @@ void create()
                  set("no_put", 1);
                  set("material", "steel");
                  set("long", "一把鏽跡斑駁的長刀，份量相當的沉重。\n");
-                 set("wield_msg", "$N抹了抹$n上的灰塵，握在手裡。\n");
+                 set("wield_msg", "$N抹了抹$n上的灰塵，握在手裏。\n");
                  set("unequip_msg", "$N將$n綁到身後。\n");
          }
          init_blade(60);

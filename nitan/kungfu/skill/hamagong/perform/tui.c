@@ -33,7 +33,7 @@ int perform(object me, object target)
                 return notify_fail("你的真氣不夠，無法運用「推天式」！\n");
 
        if (! living(target))
-              return notify_fail("對方都已經這樣了，用不著這麼費力吧？\n");
+              return notify_fail("對方都已經這樣了，用不着這麼費力吧？\n");
 
         msg = HIY "$N" HIY "蹲在地上，“嗝”的一聲大叫，雙手彎"
               "與肩齊，平推而出，一股極大的力道如同"

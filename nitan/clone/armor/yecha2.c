@@ -13,7 +13,7 @@ void create()
         else {
                 set("material", "paper");
                 set("unit", "張");
-                set("long", HIR "這是一張道符，上面畫著一個奇特的鬼怪，名曰：夜叉。\n" NOR);
+                set("long", HIR "這是一張道符，上面畫着一個奇特的鬼怪，名曰：夜叉。\n" NOR);
                 set("value", 95000);
                 set("limit", ([
                         "exp"    :   2000000,

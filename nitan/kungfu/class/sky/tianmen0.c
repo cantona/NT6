@@ -7,8 +7,8 @@ void create()
 {
         set("short", NOR + WHT "【通天門外】" NOR);
         set("long", HIW @LONG
-你來到這裡，發現這裡茫茫一片雲海。不遠處有一道大門，門前站
-著一個老者，似乎正注視著你。大門的正中央懸掛著一盞金黃色的長明
+你來到這裏，發現這裏茫茫一片雲海。不遠處有一道大門，門前站
+着一個老者，似乎正注視着你。大門的正中央懸掛着一盞金黃色的長明
 燈（changmingdeng for xueyi）。
 LONG NOR );
         set("exits", ([
@@ -47,11 +47,11 @@ int valid_leave(object me, string dir)
         {
                ob = present("xingjun yan", environment(me));
                if (! objectp(ob))return notify_fail("物件出錯！\n");
-               message_vision(HIC "星君眼仔細的看著$N" HIC " ……\n" NOR, me);
+               message_vision(HIC "星君眼仔細的看着$N" HIC " ……\n" NOR, me);
 
                if (! SCBORN_D->check_data(me))
                {
-                            message_vision(HIW "星君眼冷冷地對$N" HIW "說道：你的條件還不"
+                            message_vision(HIW "星君眼冷冷地對$N" HIW "説道：你的條件還不"
                                            "夠闖天界十二重天。\n" NOR, me);
                                          
                             return notify_fail("\n");  
@@ -66,9 +66,9 @@ int valid_leave(object me, string dir)
                 {
                         if (! playerp(inv[i])) continue;
         
-                        // 被人背起的用戶
-                        return notify_fail(HIW "星君眼冷冷地對$N" HIW "說道：“我看你還是先把" + inv[i]->name() + 
-                                           HIW "放下再說吧！\n" NOR);                
+                        // 被人揹起的用户
+                        return notify_fail(HIW "星君眼冷冷地對$N" HIW "説道：“我看你還是先把" + inv[i]->name() + 
+                                           HIW "放下再説吧！\n" NOR);                
                 }                
         }
 

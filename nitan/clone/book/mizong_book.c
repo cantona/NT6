@@ -10,7 +10,7 @@ void create()
                 set_default_object(__FILE__);
         else {
                 set("unit", "本");
-                set("long", "這是一冊密宗心經,記載著佛學的要旨。\n");
+                set("long", "這是一冊密宗心經,記載着佛學的要旨。\n");
                 set("value", 0);
                 set("material", "paper");
                 set("skill", ([

@@ -1,8 +1,8 @@
 inherit ROOM;
 
 protected int nut = 3;
-protected string ll = "這裡是一片低矮的灌木叢，空氣中有一種淡淡的幽香，身臨
-空谷，聞著淡淡的芬芳之氣，讓人心曠神怡。";
+protected string ll = "這裏是一片低矮的灌木叢，空氣中有一種淡淡的幽香，身臨
+空谷，聞着淡淡的芬芳之氣，讓人心曠神怡。";
 
 string query_long();
 string query_item_desc();
@@ -11,7 +11,7 @@ string query_long()
 {
         if(nut <= 0)
                 return ll+"\n";
-        return ll+"叢中還結著幾顆棕\n色的[小果子]。\n";
+        return ll+"叢中還結着幾顆棕\n色的[小果子]。\n";
 }
 
 string query_item_desc()
@@ -44,9 +44,9 @@ int do_pick(string arg)
                 return notify_fail("你要摘什麼？\n");
 
         if(nut <= 0)
-                return notify_fail(sprintf("這裡沒有%s。\n", arg));
+                return notify_fail(sprintf("這裏沒有%s。\n", arg));
 
-        if( !mapp(q=query("quest/yaowang_quest", me)) || (q["name"] != "海鬆子") || q["get_nut"] )
+        if( !mapp(q=query("quest/yaowang_quest", me)) || (q["name"] != "海松子") || q["get_nut"] )
                 return notify_fail("你沒小心被灌木上的小刺紮了一下，疼得趕緊縮回了手。\n");
 
         nut--;

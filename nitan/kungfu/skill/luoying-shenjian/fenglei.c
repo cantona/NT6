@@ -40,7 +40,7 @@ int perform(object me, object target)
 
         i = (me->query_skill("luoying-shenjian", 1) / 4);
 
-        msg = HIG "$N高聲長吟：“桃花影裡飛神劍”，如風如雷般的發出數劍! \n" NOR;
+        msg = HIG "$N高聲長吟：“桃花影裏飛神劍”，如風如雷般的發出數劍! \n" NOR;
 
         count = attack_power(me, "sword")/10;
         addn_temp("apply/damage", count, me);

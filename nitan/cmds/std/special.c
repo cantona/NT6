@@ -34,7 +34,7 @@ int main(object me, string arg)
         {
                 // 有參數，運用特技。
                 if (me->is_busy())
-                        return notify_fail("你現在忙著呢，不能使用特技。\n");
+                        return notify_fail("你現在忙着呢，不能使用特技。\n");
 
                 if (sscanf(arg, "%s %s", skill, arg) != 2)
                         skill = arg;
@@ -62,7 +62,7 @@ int main(object me, string arg)
                         write("不存在技能：" + skill + "\n");
                         continue;
                 }
-                // 如果大于7個則每行顯示四個                                
+                // 如果大於7個則每行顯示四個                                
                 if (file_size("/kungfu/special2/" + skill + ".c") != -1)
                 {
                         if( sizeof(query("special_skill", ob)) >= 7 )

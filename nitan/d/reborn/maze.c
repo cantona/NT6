@@ -11,7 +11,7 @@ void create()
         // 唯一房間
         set_unique_room("/d/reborn/unique_room/xinmo_room"); 
 
-        // 迷宮房間裡的怪物。 
+        // 迷宮房間裏的怪物。 
         set_maze_npcs( ([
                 "/d/reborn/npc/shadow": random(2),  
         ]) );   
@@ -38,7 +38,7 @@ void create()
         set_maze_room_short(RED "幻境" NOR);
                         
         set_maze_room_desc(@LONG
-幻境裡到處是迷霧彌漫，周邊的景物似有似無，虛無縹緲。
+幻境裏到處是迷霧瀰漫，周邊的景物似有似無，虛無縹緲。
 LONG); 
                         
         // 入口房間短描述 
@@ -46,7 +46,7 @@ LONG);
                         
         // 入口房間描述 
         set_entry_desc(@LONG
-幻境裡到處是迷霧彌漫，周邊的景物似有似無，虛無縹緲。
+幻境裏到處是迷霧瀰漫，周邊的景物似有似無，虛無縹緲。
 LONG); 
                         
         // 出口房間短描述 
@@ -54,10 +54,10 @@ LONG);
                         
         // 出口房間描述 
         set_exit_desc(@LONG
-幻境裡到處是迷霧彌漫，周邊的景物似有似無，虛無縹緲。
+幻境裏到處是迷霧瀰漫，周邊的景物似有似無，虛無縹緲。
 LONG); 
 
-        // 迷宮房間是否為戶外房間？ 
+        // 迷宮房間是否為户外房間？ 
         set_outdoors(1); 
         
         set_remove_time(420);

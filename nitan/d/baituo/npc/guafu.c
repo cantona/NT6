@@ -16,7 +16,7 @@ void create()
         set("attitude", "friendly");
         set("chat_chance", 2);
         set("chat_msg", ({
-                CYN "小寡婦哭著：我苦命的夫哇，你怎麼撇下我不管了喲。\n" NOR,
+                CYN "小寡婦哭着：我苦命的夫哇，你怎麼撇下我不管了喲。\n" NOR,
                 CYN "小寡婦抹了把眼淚，暗暗瞟了你一眼。\n" NOR,
         }));
         setup();

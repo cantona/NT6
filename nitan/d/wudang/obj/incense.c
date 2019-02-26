@@ -13,7 +13,7 @@ void create()
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("long", "這是一枝剛造出來的香火，還帶著鬆枝的香氣。\n");
+                set("long", "這是一枝剛造出來的香火，還帶着松枝的香氣。\n");
                 set("unit", "枝");
                 set("value", 100);
                 set("no_drop", 1);

@@ -41,7 +41,7 @@ void init_quest(string qob_name)
         {
                 if( objectp(query_temp("quest_ob", qob)) )
                 {
-                        // 該物品已經存在並用于其他任務，這個任務不能進行
+                        // 該物品已經存在並用於其他任務，這個任務不能進行
                         destruct(this_object());
                         return;
                 }
@@ -96,8 +96,8 @@ void init_quest(string qob_name)
                 QOB_ID    : "其實它並不值錢，但是對我卻很重要啊！",
                 NPC1_NAME : "那就是鄙人我了！",
                 NPC1_ID   : "那就是鄙人我了！",
-                NPC2_NAME : "我也曾聽說這人了，但是沒有真憑實據啊！",
-                NPC2_ID   : "我也曾聽說這人了，但是沒有真憑實據啊！" ]));
+                NPC2_NAME : "我也曾聽説這人了，但是沒有真憑實據啊！",
+                NPC2_ID   : "我也曾聽説這人了，但是沒有真憑實據啊！" ]));
 
         npc2->set("inquiry",([
                 name      : "全是瞎鬧！哪兒的事兒啊！",
@@ -108,7 +108,7 @@ void init_quest(string qob_name)
                 NPC2_NAME : "正是區區，有何貴幹？",
                 NPC2_ID   : "正是區區，有何貴幹？" ]));
 
-        // 設置接收物品的信息：由于NPC存在的時候該任務對象必
+        // 設置接收物品的信息：由於NPC存在的時候該任務對象必
         // 定會存在（因為任務析構的時候會清除NPC），所以可以
         // 讓NPC引用本地的"npc_accept_object"函數。
         set_temp("override/accept_object", (:npc_accept_object:), npc1);
@@ -151,10 +151,10 @@ mixed ask_for_qob(object npc2, object qob, string qob_name)
         me = this_player();
         if( query("special_skill/trick", me) )
         {
-                message_vision(HIM "$N" HIM "瞥了$n" HIM "一眼，咳嗽兩聲，對著"
+                message_vision(HIM "$N" HIM "瞥了$n" HIM "一眼，咳嗽兩聲，對着"
                                "$n" HIM "就聊了開來。\n" NOR, me, npc2);
 
-                tell_object(me, HIC "你勸說" + npc2->name() +
+                tell_object(me, HIC "你勸説" + npc2->name() +
                                 HIC "將" + qob_name +
                                 HIC "交出來，大家都了事。\n" NOR);
                 if (me->query_int() > random(40))
@@ -162,8 +162,8 @@ mixed ask_for_qob(object npc2, object qob, string qob_name)
                         // 成功了！
                         if (objectp(qob) && environment(qob) == npc2)
                         {
-                                message_vision(CYN "$N" CYN "嘆了一口氣，對$n"
-                                               CYN "道：好了好了，你就別多說"
+                                message_vision(CYN "$N" CYN "歎了一口氣，對$n"
+                                               CYN "道：好了好了，你就別多説"
                                                "了！\n" NOR, npc2, me);
 
                                 tell_object(me, HIY + npc2->name() + HIY "把" +
@@ -172,17 +172,17 @@ mixed ask_for_qob(object npc2, object qob, string qob_name)
                                 qob->move(me, 1);
                         } else
                         {
-                                message_vision(CYN "$N" CYN "嘆了口氣，對$n" CYN
-                                               "說：你就別說了，那東西真的不在我"
+                                message_vision(CYN "$N" CYN "歎了口氣，對$n" CYN
+                                               "説：你就別説了，那東西真的不在我"
                                                "身上！\n" NOR, npc2, me);
                         }
                 } else
-                        message_vision(CYN "$N" CYN "眼睛一瞪，對著$n" CYN "罵道"
+                        message_vision(CYN "$N" CYN "眼睛一瞪，對着$n" CYN "罵道"
                                        "：滾開！少來給我廢話！\n" NOR, npc2, me);
                 return 1;
         }
 
-        return "什麼破玩藝，我可沒有聽說過！";
+        return "什麼破玩藝，我可沒有聽説過！";
 }
 
 // 詢問NPC1 - 丟物品的人
@@ -191,11 +191,11 @@ string ask_npc1(object knower, object me)
         mapping my = query_entire_dbase();
 
         if (! objectp(NPC1))
-                return CYN "嘿，據說" HIY + NPC1_NAME + NOR CYN
-                       "倒了大霉，先丟" HIY + QOB_NAME + NOR CYN
-                       "再丟命，你說人要這麼多東西幹什麼呢？" NOR;
+                return CYN "嘿，據説" HIY + NPC1_NAME + NOR CYN
+                       "倒了大黴，先丟" HIY + QOB_NAME + NOR CYN
+                       "再丟命，你説人要這麼多東西幹什麼呢？" NOR;
 
-        return CYN "哦，他呀，據說正在" + PLACE1 + "，找他的" +
+        return CYN "哦，他呀，據説正在" + PLACE1 + "，找他的" +
                HIY + QOB_NAME + NOR CYN "呢！" NOR;
 }
 
@@ -205,7 +205,7 @@ string ask_npc2(object knower, object me)
         mapping my = query_entire_dbase();
 
         if (! objectp(NPC2))
-                return CYN "聽人說" HIY + NPC2_NAME + NOR CYN
+                return CYN "聽人説" HIY + NPC2_NAME + NOR CYN
                        "已經被人殺了，嘖嘖，你看看，惹禍上身吧！" NOR;
 
         if( query("combat_exp", me)<query("combat_exp", NPC2)/2 )
@@ -214,7 +214,7 @@ string ask_npc2(object knower, object me)
                 call_out("whisper_to", 0, knower, me);
         }
 
-        return CYN "哦，他呀，據說正在" + PLACE2 + "，大家" +
+        return CYN "哦，他呀，據説正在" + PLACE2 + "，大家" +
                "都奔他去了，看來他不妙噢！" NOR;
 }
 
@@ -227,7 +227,7 @@ string ask_qob(object knower, object me)
                 return CYN "不就是你爭我奪鬧的？現在已經沒人"
                        "知道那" HIY + QOB_NAME + NOR CYN "的下落了。" NOR;
 
-        return CYN "你說這" HIY + QOB_NAME + NOR CYN
+        return CYN "你説這" HIY + QOB_NAME + NOR CYN
                "究竟是啥？還能比命值錢？真是的！" NOR;
 }
 
@@ -239,11 +239,11 @@ void whisper_to(object knower, object me)
                 return;
 
         message("vision", knower->name() + "悄悄的在" +
-                me->name() + "耳邊說了些什麼。\n",
+                me->name() + "耳邊説了些什麼。\n",
                 environment(me), ({ me }));
-        tell_object(me, WHT + knower->name() + WHT "悄悄的和你說：" +
+        tell_object(me, WHT + knower->name() + WHT "悄悄的和你説：" +
                     RANK_D->query_respect(me) + "，我看你就別淌"
-                    "這渾水了，" + NPC2_NAME + WHT "厲害著呢！\n" NOR);
+                    "這渾水了，" + NPC2_NAME + WHT "厲害着呢！\n" NOR);
 }
 
 // 任務介紹
@@ -257,8 +257,8 @@ string query_introduce(object knower)
                 call_out("do_say", 1, knower);
         }
 
-        return CYN "聽說" HIY + NPC1_NAME + NOR CYN "丟了" +
-               HIY + QOB_NAME + NOR CYN "，有人說不知怎麼的就落到了"
+        return CYN "聽説" HIY + NPC1_NAME + NOR CYN "丟了" +
+               HIY + QOB_NAME + NOR CYN "，有人説不知怎麼的就落到了"
                HIY + NPC2_NAME + NOR CYN "手中了。" NOR;
 }
 
@@ -280,12 +280,12 @@ int npc_accept_object(object me, object who, object ob)
 
         if (ob != QOB)
         {
-                message_vision(CYN "$N" CYN "瞪著$n" CYN "，看了半天"
+                message_vision(CYN "$N" CYN "瞪着$n" CYN "，看了半天"
                                "才道：這是什麼？\n" NOR, me, who);
                 return 0;
         }
 
-        message_vision(HIY "$N" HIY "大喜過望，對$n" HIY "說道：這位"
+        message_vision(HIY "$N" HIY "大喜過望，對$n" HIY "説道：這位"
                        + RANK_D->query_respect(who) + "，太感謝了，"
                        + RANK_D->query_self(me) + "實在不知道該怎麼"
                        "報答你！\n" NOR, me, who);
@@ -309,7 +309,7 @@ int npc_accept_object(object me, object who, object ob)
 
 /*
         CHANNEL_D->do_channel(find_object(QUEST_D), "rumor",
-                              "聽說" + who->name(1) + "(" +
+                              "聽説" + who->name(1) + "(" +
                               query("id", who)+")替"+
                               me->name() + HIM "找到了" + ob->name() +
                               HIM "，平息了一場武林風波。" NOR);
@@ -325,10 +325,10 @@ int npc_accept_object(object me, object who, object ob)
         return -1;
 }
 
-// 這個消息能夠被散布嗎？
+// 這個消息能夠被散佈嗎？
 int can_rumor_by(object knower)
 {
-        // 20%的幾率被散布
+        // 20%的機率被散佈
         return (random(10) < 2);
 }
 

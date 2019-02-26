@@ -5,8 +5,8 @@ void create()
 {
         set("short", "地底");
         set("long", @LONG 
-這裡按地勢而言，早已深入地底，乃是大雪山的山腹之中了。
-四周土地潮濕，充滿了一股濃濃的泥土味。牆上依然插著幾支火
+這裏按地勢而言，早已深入地底，乃是大雪山的山腹之中了。
+四周土地潮濕，充滿了一股濃濃的泥土味。牆上依然插着幾支火
 把，照得四周亮堂堂的。一個腰懸利劍，神情警惕的劍士，正守
 在一扇巨大的石門(men)旁。
 LONG);
@@ -34,7 +34,7 @@ int do_push(string arg)
 {
             object me = this_player();
 
-            message_vision(HIY "只見$N" HIY "氣沉丹田，凝勁于腰，大喝一"
+            message_vision(HIY "只見$N" HIY "氣沉丹田，凝勁於腰，大喝一"
                        "聲，運勁向石門推去。\n" NOR, me);
 
             if( query("max_neili", me)<500 )
@@ -60,7 +60,7 @@ void close_out()
 
 void close(object room)
 {
-            message("vision", HIW "只聽裡面有人大喝一聲：“小王八蛋，你不進來，就給爺爺滾吧！”\n"
+            message("vision", HIW "只聽裏面有人大喝一聲：“小王八蛋，你不進來，就給爺爺滾吧！”\n"
                           "話音剛落，一陣勁風擊到，石門被砰地一下關了。\n" NOR, room);
             delete("exits/enter", room);
 }

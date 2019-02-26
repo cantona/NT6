@@ -39,7 +39,7 @@ int do_shot(string arg)
         me = this_player();
 
         if( query("no_fight", environment(me)) )
-                return notify_fail ("這裡不準戰鬥！\n");
+                return notify_fail ("這裏不準戰鬥！\n");
 
         if( query_temp("armor/waist", me) != this_object() )
                 return notify_fail("你首先得將含沙射影裝備在腰間。\n");
@@ -48,7 +48,7 @@ int do_shot(string arg)
                 return notify_fail("你想對誰發射含沙射影？\n");
 
         if (! objectp(target = present(arg, environment(me))))
-                return notify_fail("這裡沒有這個人。\n");
+                return notify_fail("這裏沒有這個人。\n");
 
         if( query("id", target) == query("id", me) )
                 return notify_fail("你想殺自己嗎？\n");
@@ -60,7 +60,7 @@ int do_shot(string arg)
                 return notify_fail("看清楚一點，那並不是活物。\n");
 
         if (me->is_busy())
-                return notify_fail("你正忙著哪。\n");
+                return notify_fail("你正忙着哪。\n");
 
         if( query("zhen", this_object())<1 )
                 return notify_fail("鐵盒中的毒針已經射光了。\n");
@@ -82,8 +82,8 @@ int do_shot(string arg)
 
         if (random(myskill) < tgskill)
         {
-                message_vision(HIY "$n" HIY "大叫一聲，猛的一個旱地拔蔥身行"
-                        "沖起數丈來高，躲開了$N" HIY "的毒針！\n\n" NOR,
+                message_vision(HIY "$n" HIY "大叫一聲，猛的一個旱地拔葱身行"
+                        "衝起數丈來高，躲開了$N" HIY "的毒針！\n\n" NOR,
                         me, target);
         } else
         {

@@ -18,7 +18,7 @@ void create()
         "他天生神力，手中的兩頭狼牙棒有萬夫不當之勇，真是一條威風凜凜的漢子。\n"
         );
 
-        set("title", HIG "明教" HIW "銳金旗" NOR "掌旗使");
+        set("title", HIG "明教" HIW "鋭金旗" NOR "掌旗使");
         set("gender", "男性");
         set("attitude", "friendly");
         set("class", "fighter");
@@ -64,11 +64,11 @@ void create()
         prepare_skill("cuff", "shenghuo-quan");
         prepare_skill("strike", "guangming-zhang");
 
-        create_family("明教", 37, "銳金旗掌旗使");
-        set("inherit_title",HIG"明教"NOR"銳金旗教眾"NOR);
+        create_family("明教", 37, "鋭金旗掌旗使");
+        set("inherit_title",HIG"明教"NOR"鋭金旗教眾"NOR);
 
         set("inquiry", ([
-                "name" : "在下就是明教銳金旗掌旗使莊錚，不知閣下有何指教。",
+                "name" : "在下就是明教鋭金旗掌旗使莊錚，不知閣下有何指教。",
                 "任務" : (: ask_job :),
                 "job"  : (: ask_job :),
                 "放棄" : (: ask_abandon :),
@@ -109,7 +109,7 @@ string ask_job()
         qiao->move(player);
         tell_object(player,"莊錚給你一把鐵鍬。\n");
 
-        return "我銳金旗在教內負責採礦煉鐵，最近上等精鐵快用完了，你去\n"
-                "附近的山上找些鐵礦，然後到精練場將礦石煉制成精鐵。\n"
+        return "我鋭金旗在教內負責採礦鍊鐵，最近上等精鐵快用完了，你去\n"
+                "附近的山上找些鐵礦，然後到精練場將礦石煉製成精鐵。\n"
                 "附近山上常有猛獸出沒，你自己多加小心。\n";
 }

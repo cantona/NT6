@@ -5,7 +5,7 @@ void create()
 {
         set("short", "儲藏室");
         set("long", @LONG
-這裡是個儲藏室，四周密不透風，只有一扇關閉著的大門。
+這裏是個儲藏室，四周密不透風，只有一扇關閉着的大門。
 LONG );
         set("exits", ([
                 "west" : __DIR__"yuanzi",

@@ -64,17 +64,17 @@ mixed ask_caiyao()
                 return "藥材已經準備好，可以去了。";
 
         case 3:
-                return "你不是在裡面煉藥嗎？怎麼出來了。";
+                return "你不是在裏面煉藥嗎？怎麼出來了。";
 
         case 4:
-                return "還是先去復命吧。";
+                return "還是先去覆命吧。";
 
         default:
                 return "你又不煉藥，要藥材幹什麼？";
         }
 
-        message_vision(CYN "小童對$N" CYN "說道：好吧，那你"
-                       "去城西的林子裡挖幾樣新鮮的草藥來。\n" NOR, me);
+        message_vision(CYN "小童對$N" CYN "説道：好吧，那你"
+                       "去城西的林子裏挖幾樣新鮮的草藥來。\n" NOR, me);
         set_temp("caiyao", 1, me);
         addn("caiyao", -1);
         return 1;

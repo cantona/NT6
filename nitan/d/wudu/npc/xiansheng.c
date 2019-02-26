@@ -7,7 +7,7 @@ void create()
         set("gender", "男性" );
         set("age", 40);
         set("per", 30);
-        set("long", "一位白面無須的中年文士，正搖頭晃腦的在教學生念書。\n");
+        set("long", "一位白面無鬚的中年文士，正搖頭晃腦的在教學生唸書。\n");
         set("combat_exp", 1000);
         set("attitude", "friendly");
         set_skill("dodge", 15);

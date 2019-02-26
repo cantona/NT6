@@ -12,8 +12,8 @@ void create()
         set("str", 25);
         set("dex", 16);
         set("per", 21);
-        set("long", "此人長得又高又瘦象一桿大竹竿，說話聲音忽尖忽粗，十分難
-聽，穿著一身青衫，一副色迷迷模樣。\n");
+        set("long", "此人長得又高又瘦象一杆大竹竿，説話聲音忽尖忽粗，十分難
+聽，穿着一身青衫，一副色迷迷模樣。\n");
         set("combat_exp", 3000000+ random(1000000));
         set("attitude", "peaceful");
         set("neili", 2000);

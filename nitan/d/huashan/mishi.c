@@ -10,8 +10,8 @@ void create()
 {
         set("short", "密室");
         set("long",
-"密室內的石牆(wall)上由大青石砌成，裡頭空空盪盪的甚麼也沒有。\n"
-"周圍放著幾個數人才能合抱的大油缸，供應著燈火的燃料，把密室照得相\n"
+"密室內的石牆(wall)上由大青石砌成，裏頭空空蕩蕩的甚麼也沒有。\n"
+"周圍放着幾個數人才能合抱的大油缸，供應着燈火的燃料，把密室照得相\n"
 "當明亮。\n"
 );
 
@@ -69,7 +69,7 @@ int do_biguan(string arg)
 
         if ( sum != 4 ) return notify_fail("所增各項天賦值的總和須為四點！\n");
 
-        message_vision("$N盤膝坐下，凝神定意，倚著心法緩吐深納地打坐。\n", me);
+        message_vision("$N盤膝坐下，凝神定意，倚着心法緩吐深納地打坐。\n", me);
         me->start_busy(12);
 
         remove_call_out("stage1");
@@ -104,8 +104,8 @@ int stage3(object me, int bili, int wuxing, int gengu, int shenfa)
         object env, link_ob, obj, place;
 
         if ( !me->query_skill("ziyin-yin") || !me->query_skill("zhengqi-jue") || !me->query_skill("zixia-gong") ) {
-                tell_object(me, "突然一股真氣沖抵心口，似乎砰上了阻擾，你連連加力，卻三番四次都沖不過去。\n");
-                tell_object(me, "你覺得胸口逐漸麻木，而且麻處不斷向周圍擴散，四周也似乎癒來癒冷！\n");
+                tell_object(me, "突然一股真氣衝抵心口，似乎砰上了阻擾，你連連加力，卻三番四次都衝不過去。\n");
+                tell_object(me, "你覺得胸口逐漸麻木，而且麻處不斷向周圍擴散，四周也似乎愈來愈冷！\n");
                 tell_object(me, "你張口欲呼卻啞然無聲，但耳邊可聞陣陣焦雷在頭頂上炸開！全身血氣似乎湧在喉頭！\n");
                 message_vision("$N突然噴出一口紫紅的鮮血！驚慌萬狀，不由得揮動雙手，在地下激烈翻滾！\n", me);
                 addn("max_neili", -300, me);
@@ -117,20 +117,20 @@ int stage3(object me, int bili, int wuxing, int gengu, int shenfa)
         }
         else if ( me->query_skill("ziyin-yin", 1) < 80 || me->query_skill("zhengqi-jue", 1) < 80
         || me->query_skill("zixia-gong", 1) < 100 ) {
-                tell_object(me, "突然一股真氣沖抵心口，似乎砰上了阻擾，你連連加力，卻三番四次都沖不過去。\n");
-                tell_object(me, "你覺得胸口逐漸麻木，而且麻處不斷向周圍擴散，四周也似乎癒來癒冷！\n");
+                tell_object(me, "突然一股真氣衝抵心口，似乎砰上了阻擾，你連連加力，卻三番四次都衝不過去。\n");
+                tell_object(me, "你覺得胸口逐漸麻木，而且麻處不斷向周圍擴散，四周也似乎愈來愈冷！\n");
                 tell_object(me, "你張口欲呼卻啞然無聲，但耳邊可聞陣陣焦雷在頭頂上炸開！全身血氣似乎湧在喉頭！\n");
                 message_vision("$N噴出一口紫紅的鮮血！無奈之下，只好倒在地下照紫氤正氣心法緩緩收斂真氣。\n", me);
                 addn("max_neili", -150, me);
                 addn("max_jingli", -150, me);
                 me->receive_wound("qi",query("max_qi", me)/2,"打坐走火入魔死了");
-                tell_object(me, "過了良久，你覺得麻痹漸止，慢慢能動了。\n");
+                tell_object(me, "過了良久，你覺得麻痺漸止，慢慢能動了。\n");
                 message_vision("$N雙手撐地，緩緩坐了起來，顯得功力大損，體虛力弱，神情極之萎靡！\n", me);
         }
         else if ( me->query_skill("ziyin-yin", 1) < 120 || me->query_skill("zhengqi-jue", 1) < 120
         || me->query_skill("zixia-gong", 1) < 150 ) {
-                tell_object(me, "突然一股真氣沖抵心口，似乎砰上了阻擾，你連連加力，卻三番四次都沖不過去。\n");
-                tell_object(me, "你覺得胸口逐漸麻木，而且麻處不斷向周圍擴散，四周也似乎癒來癒冷！\n");
+                tell_object(me, "突然一股真氣衝抵心口，似乎砰上了阻擾，你連連加力，卻三番四次都衝不過去。\n");
+                tell_object(me, "你覺得胸口逐漸麻木，而且麻處不斷向周圍擴散，四周也似乎愈來愈冷！\n");
                 tell_object(me, "你連忙依照紫氤氤和正氣訣的心法凝神思定，緩緩收斂散亂了的內力將其導入內腑。\n");
         }
         else {

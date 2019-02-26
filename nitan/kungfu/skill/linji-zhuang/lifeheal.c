@@ -14,10 +14,10 @@ int exert(object me, object target)
         if (!userp(target) && !target->accept_hit(me)) return 0;
 
         if( me->is_busy() )
-                return notify_fail("你現在正忙著呢，哪有空運功？\n");
+                return notify_fail("你現在正忙着呢，哪有空運功？\n");
 
         if( target->is_busy())
-                return notify_fail(target->name()+"現在正忙著呢！\n");
+                return notify_fail(target->name()+"現在正忙着呢！\n");
 
         if( (int)me->query_skill("linji-zhuang",1) < 20 )
                 return notify_fail("你的臨濟十二莊修為不夠。\n");

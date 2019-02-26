@@ -9,7 +9,7 @@ void create()
         else {
                 set("unit", "本");
                 set("long",
-            "這是一本傳自岳武穆的兵法手冊，內文均是行軍打仗、布陣用兵的精義要訣。\n");
+            "這是一本傳自嶽武穆的兵法手冊，內文均是行軍打仗、佈陣用兵的精義要訣。\n");
                 set("material", "paper");
                 set("skill", ([
                         "name":         "strategy",             

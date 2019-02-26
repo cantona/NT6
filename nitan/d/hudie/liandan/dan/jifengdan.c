@@ -35,7 +35,7 @@ int do_eat(string arg)
 		return notify_fail("你現在沒有在戰鬥中，吃了也沒什麼用。\n");
 
 	me->start_busy(0);
-  	message_vision(HIG"$N吞下一顆疾風驟雨丹，身如疾風，脫離了忙亂狀態，轉身一招又攻了過來！\n"NOR,me);
+  	message_vision(HIG"$N吞下一顆疾風驟雨丹，身如疾風，脱離了忙亂狀態，轉身一招又攻了過來！\n"NOR,me);
       	destruct(this_object());
       	return 1;
 }

@@ -6,7 +6,7 @@ int main(object me,string arg)
                 "觀察=look","物品=i","評價ＳＣ=score","狀態ＨＰ=hp",
                 "功夫ＳＫ=cha","設置頭像=face ...","查詢費用=fee",
                 "設置頻道=chann","搜索=search","在線=who",
-                "幫助=help ...","說話=say ...","閒聊=chat ...",});
+                "幫助=help ...","説話=say ...","閒聊=chat ...",});
 
         
         cmdbar=query("cmdbar", me);

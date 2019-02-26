@@ -121,7 +121,7 @@ mapping *drug_list = ({
                 "n": 0,
         ]),
         ([
-                "name": "人參養榮丸",
+                "name": "人蔘養榮丸",
                 "file": "yangrong-wan",
                 "time": 40,
                 "s": 185,

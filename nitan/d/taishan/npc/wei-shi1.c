@@ -1,4 +1,4 @@
-// wu-shi1.c 盟主衛士
+// wu-shi1.c 盟主衞士
 
 #include <ansi.h>
 
@@ -10,7 +10,7 @@ void create()
         set("gender", "男性");
         set("age", 35);
         set("long",
-                "這是位白衣武士，身披鋼甲，手執長劍，雙目精光炯炯，警惕地巡視著四周的情形。\n");
+                "這是位白衣武士，身披鋼甲，手執長劍，雙目精光炯炯，警惕地巡視着四周的情形。\n");
         set("combat_exp", 100000);
         set("shen_type", 1);
         set("attitude", "heroism");

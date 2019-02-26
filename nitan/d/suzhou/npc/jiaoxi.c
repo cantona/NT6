@@ -7,7 +7,7 @@ void create()
 {
         set_name("老夫子", ({ "lao fuzi", "lao", "fuzi" }));
         set("long",
-"一個唯利是圖的蘇州老教習，肚子裡有墨水，可你還要有錢。\n");
+"一個唯利是圖的蘇州老教習，肚子裏有墨水，可你還要有錢。\n");
         set("gender", "男性");
         set("age", 65);
         set_skill("literate", 200);
@@ -23,7 +23,7 @@ void create()
         set("shen_type", 1);
         set("inquiry", ([
             "書"   : "唉！書到用時方恨少。",
-            "借書" : "借？你不還我到哪裡找你？哼！",
+            "借書" : "借？你不還我到哪裏找你？哼！",
         ]));
         setup();
 }

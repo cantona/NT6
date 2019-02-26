@@ -1,15 +1,15 @@
-# falg 為 0 說明以下定時是依照現實生活中的時間
-# falg 為 1 說明以下定時是依照遊戲中的時間
+# falg 為 0 説明以下定時是依照現實生活中的時間
+# falg 為 1 説明以下定時是依照遊戲中的時間
 #
-# day_in_month 一個月中的第幾天，范圍 1-31
+# day_in_month 一個月中的第幾天，範圍 1-31
 #
-# day_in_week  星期幾 范圍 0-6 ( 0 為星期日 )
+# day_in_week  星期幾 範圍 0-6 ( 0 為星期日 )
 #
-# month_in_year 月份 范圍 0-11
+# month_in_year 月份 範圍 0-11
 #
-# hour  小時    范圍 0-23
+# hour  小時    範圍 0-23
 #
-# minute 分鐘   范圍 0-59
+# minute 分鐘   範圍 0-59
 #
 # object、function 是條件滿足時觸發 object->function
 #

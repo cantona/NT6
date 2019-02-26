@@ -8,7 +8,7 @@ void create()
                 set_default_object(__FILE__);
         else {
                 set("unit", "只");
-                set("long", "一只精工制造的羅盤，可以定位(dingwei)，是航海者的必備物品。\n" NOR);
+                set("long", "一隻精工製造的羅盤，可以定位(dingwei)，是航海者的必備物品。\n" NOR);
                 set("value", 5000);
         }
         setup();
@@ -30,8 +30,8 @@ int do_dingwei()
         return notify_fail("你又沒出海，用羅盤幹嘛？\n");
     if( query("exits/out", where) || query("boat_of", where) )
            return notify_fail("船還沒開呢。\n");     
-    message_vision("$N將$n托在掌心，仔細地察看著現在的方位。\n",me,this_object());
-    msg = "\n羅盤顯示你現在的位于黃道帶";
+    message_vision("$N將$n託在掌心，仔細地察看着現在的方位。\n",me,this_object());
+    msg = "\n羅盤顯示你現在的位於黃道帶";
     stepe=query_temp("stepe", where);
     stepw=query_temp("stepw", where);
     steps=query_temp("steps", where);

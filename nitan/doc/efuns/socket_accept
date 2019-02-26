@@ -29,7 +29,7 @@
 
                void read_callback(int fd)
 
-          這裡的 fd 是準備接收資料的 socket。
+          這裏的 fd 是準備接收資料的 socket。
 
           write_callback 這個參數是給驅動程式在新的 socket（不是正要
           接受的 socket）準備好寫入時呼叫的函式名稱。這個寫入回呼函式
@@ -37,7 +37,7 @@
 
                void write_callback(int fd)
 
-          這裡的 fd 是準備好寫入的 socket。
+          這裏的 fd 是準備好寫入的 socket。
 
           注意：如果新 socket 不正常關閉，譬如和 socket_close(3) 的呼
           叫結果不同的話，則會呼叫正要接受的 socket（不是新的 socket）
@@ -45,12 +45,12 @@
 
                void close_callback(int fd)
 
-          這裡的 fd 是已關閉的 socket。
+          這裏的 fd 是已關閉的 socket。
 
      傳回值：
           socket_accept() 在成功時會傳回一個對於已接受 socket 的非
           負數描述值。失敗時，它傳回一個負值。socket_error(3) 可以
-          用來得到這個錯誤碼的文字敘述。
+          用來得到這個錯誤碼的文字敍述。
 
      錯誤值：
           EEFDRANGE      描述值超出□圍。

@@ -7,7 +7,7 @@ void create()
         set_name("小猴",({ "little monkey", "monkey"}) );
         set("gender", "男性" );
         set("age", 7);
-        set("long", "這是一只調皮的小猴子，雖是畜牲，卻喜歡模仿人樣。\n");
+        set("long", "這是一隻調皮的小猴子，雖是畜牲，卻喜歡模仿人樣。\n");
         set("combat_exp", 50);
 //        set("shen", 50);
         set("shen_type", -1);

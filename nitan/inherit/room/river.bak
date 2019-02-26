@@ -21,12 +21,12 @@ long
         set("yell_about", "船家");             // yell 船家
         set("river_type", "江");               // 江面上傳來回響
   set("need_dodge",300);                 // 需要多少輕功
-  set("busy_msg",                                "只聽得江面上隱隱傳來：“別急嘛，這兒正忙著吶……\n");
+  set("busy_msg",                                "只聽得江面上隱隱傳來：“別急嘛，這兒正忙着吶……\n");
   set("come_msg_out",                "一葉扁舟緩緩地駛了過來，艄公將一塊踏腳板搭上堤岸，以便乘客上下。\n");
-        set("come_msg_in",                "艄公說“到啦，上岸吧”，隨即把一塊踏腳板搭上堤岸。\n");
-        set("wait_msg",                                "岸邊一只渡船上的老艄公說道：正等著你呢，上來吧。\n");
+        set("come_msg_in",                "艄公説“到啦，上岸吧”，隨即把一塊踏腳板搭上堤岸。\n");
+        set("wait_msg",                                "岸邊一隻渡船上的老艄公説道：正等着你呢，上來吧。\n");
         set("leave_msg_out",        "艄公把踏腳板收了起來，竹篙一點，扁舟向江心駛去。\n");
-        set("leave_msg_in",                "艄公把踏腳板收起來，說了一聲“坐穩嘍”，竹篙一點，扁舟向江心駛去。\n");
+        set("leave_msg_in",                "艄公把踏腳板收起來，説了一聲“坐穩嘍”，竹篙一點，扁舟向江心駛去。\n");
   set("item_desc/river", HIC "\n只見近岸處有一葉小舟，也許大聲喊("
                          HIY "yell" HIC ")一聲船家(" HIY "boat" HIC
                         ")就\n能聽見。倘若你自負輕功絕佳,也可直接"
@@ -34,7 +34,7 @@ long
         set("boat_short", "渡船");                
         set("boat_desc",  @LONG
 一葉小舟，最多也就能載七、八個人。一名六十多歲的老艄公手持
-長竹篙，正在船尾吃力地撐著船。
+長竹篙，正在船尾吃力地撐着船。
 LONG);                                                                                                                                         // 渡船上的描述
         set("from",       file_name(this_object()));      // 這趟船的起點
         set("to",         __DIR__"hanshui2");  // 船的終點 /*   必選   */
@@ -102,7 +102,7 @@ int do_cross()
         if (!stringp(go_msg))
                 go_msg = HIW "\n只見$N" HIW "身形微微一晃，已然飄出丈許，以"
                 "足尖輕點水面向對岸踏波掠去，漾起層層微瀾。\n身形洋洋"
-                  "洒洒，若彩蝶飛揚，甚是逍遙。便在眾人驚嘆輕功絕妙間"
+                  "灑灑，若彩蝶飛揚，甚是逍遙。便在眾人驚歎輕功絕妙間"
                  "，早已沒了蹤影。\n\n" NOR;
         if (!stringp(come_msg))
           come_msg = HIW "\n忽見水面上霧氣散開，一人踏波"
@@ -154,7 +154,7 @@ void check_trigger()
                                 call_out("on_board", 15 , boat, file_name(this_object()),query("to"));
                 }
                 else
-                        message("vision","只聽得"+query("river_type")+"面上隱隱傳來：“別急嘛，這兒正忙著吶……”\n",this_object() );
+                        message("vision","只聽得"+query("river_type")+"面上隱隱傳來：“別急嘛，這兒正忙着吶……”\n",this_object() );
         }
         else 
                 message("vision",query("wait_msg"), this_object() );

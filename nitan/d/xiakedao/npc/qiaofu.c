@@ -8,7 +8,7 @@ void create()
         set_name("樵夫", ({ "qiao fu","fu" }) );
         set("gender", "男性" );
         set("age", 50);
-        set("long", "一個一輩子以砍材為生的老樵夫，由于飽受風霜，顯出與年齡不相稱的衰老。\n");
+        set("long", "一個一輩子以砍材為生的老樵夫，由於飽受風霜，顯出與年齡不相稱的衰老。\n");
         set("shen_type",1);
         set("combat_exp", 10000);
         set("str", 17);
@@ -47,7 +47,7 @@ int inquiry_dao()
         }
         if( query_temp("buyed")==0 )
         {
-            message_vision("這位大爺，實在不是我舍不得這刀，小人一家就全靠它過\n"
+            message_vision("這位大爺，實在不是我捨不得這刀，小人一家就全靠它過\n"
                   "日子了，給了你，叫我怎麼過活啊！\n", me);
             return 1;
         }

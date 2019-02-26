@@ -36,7 +36,7 @@ mapping *action = ({
         "skill_name":   "劍發琴音",
 ]),
 ([      
-        "action" : "$N飛身躍起，一式「歲歲青蒼」，$w發出一聲長嘯從半空中洒向$n的$l",
+        "action" : "$N飛身躍起，一式「歲歲青蒼」，$w發出一聲長嘯從半空中灑向$n的$l",
         "force"  :  160,
         "dodge"  :  38,
         "damage" :  45,

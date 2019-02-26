@@ -34,7 +34,7 @@ int do_effect(object me)
 
         set_temp("last_eat/dan(A)", time(), me);
 
-        message_vision(HIY "$N吃下一粒九皇補心丹，精神一振，神採奕奕。\n" NOR, me);
+        message_vision(HIY "$N吃下一粒九皇補心丹，精神一振，神采奕奕。\n" NOR, me);
         me->receive_curing("jing", 800);
         me->receive_heal("jing", 800);
 

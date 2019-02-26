@@ -24,12 +24,12 @@ int main(object me, string arg)
         {
                 if (sscanf(arg, "%s %s", target, arg) != 2)
                 {
-                        write("你必須指明清除用戶的什麼數據。\n");
+                        write("你必須指明清除用户的什麼數據。\n");
                         return 1;
                 }
 
                 // clear the user data
-                write ("清除用戶(" + target + ")的數據：" +
+                write ("清除用户(" + target + ")的數據：" +
                        UPDATE_D->clear_user_data(target, arg));
                 return 1;
         }
@@ -99,12 +99,12 @@ int help(object me)
                  [-remove] <物件之名稱或檔名>
 
 利用此一指令可將一個物件(object)連同它的存盤記錄一起清除，注
-意：這裡的存盤記錄指的是數據保存在 DBASE_D 中的那些對象， 如
+意：這裏的存盤記錄指的是數據保存在 DBASE_D 中的那些對象， 如
 果記錄是保存成單獨的文件，則它們的存盤記錄不會受到任何影響，
 這個命令是提供給巫師對受到損傷的對象進行數據修復時使用的。
 
 如果使用參數 -u，則表示是要清除一個玩家對 MUD 中的對象數據，
-比如說住房的信息就可以通過該命令清除。即將指定的玩家的住房拆
+比如説住房的信息就可以通過該命令清除。即將指定的玩家的住房拆
 毀。
 
 分項包括：all      所有數據

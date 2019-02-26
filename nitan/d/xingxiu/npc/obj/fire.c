@@ -10,7 +10,7 @@ void create()
         if (clonep())
                 set_default_object(__FILE__);
         else {
-         set("long", "這是一支用于引火的火折，到了黑暗的地方就用(use)得著了。\n");
+         set("long", "這是一支用於引火的火折，到了黑暗的地方就用(use)得着了。\n");
                 set("unit", "支");
                 set("value", 100);
         }

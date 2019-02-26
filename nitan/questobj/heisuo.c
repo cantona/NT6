@@ -1,4 +1,5 @@
-// heisuo.c  黑索□
+// heisuo.c  黑索
+
 #include <ansi.h>
 #include <weapon.h>
 inherit WHIP;
@@ -16,7 +17,7 @@ void create()
                 set("value", 0);
                 set("material", "leather");
                 set("wield_msg", "$N「唰」的一聲抖出一條$n握在手中。\n");
-                set("unwield_msg", "$N將手中的$n卷回腰間。\n");
+                set("unwield_msg", "$N將手中的$n捲回腰間。\n");
         }
         setup();
 }

@@ -51,10 +51,10 @@ int do_search(string arg)
         me = this_player();
 
         if( me->is_fighting() || me->is_busy() )
-                return notify_fail("你正忙著。\n");
+                return notify_fail("你正忙着。\n");
 
         if( query_temp("herb/got", me) )
-                return notify_fail("這裡已經找過了，再找也找不出什麼了！\n");
+                return notify_fail("這裏已經找過了，再找也找不出什麼了！\n");
 
         if( !present("yao chu", me) )
                 return notify_fail("你沒有工具，無法撥開灌木山草尋找草藥！\n");
@@ -67,16 +67,16 @@ int do_search(string arg)
         me->start_busy(1+random(2));
 
         if( query("count")<1 && query_temp("herb/times", me)>30 )
-                return notify_fail("你把四周的灌木雜草都翻遍了，可是沒發現什麼，看來這裡沒指望了！\n");
+                return notify_fail("你把四周的灌木雜草都翻遍了，可是沒發現什麼，看來這裏沒指望了！\n");
 
-        message_vision("$N用藥鋤撥動著四周的灌木雜草，仔細地看有沒有草藥！\n", me);
+        message_vision("$N用藥鋤撥動着四周的灌木雜草，仔細地看有沒有草藥！\n", me);
 
         power=query_temp("herb/times", me)*(query("kar", me)+query("int", me)+query("str", me))/3;
         power *= query("count");
 
         if( power/2 + random(power/2) > 100 ) {
                 set_temp("herb/found", 1, me);
-                message_vision(HIG"\n$N用藥鋤不斷的撥動著四周的山草，忽然發現雜草之中有一株特別的草！\n"NOR, me);
+                message_vision(HIG"\n$N用藥鋤不斷的撥動着四周的山草，忽然發現雜草之中有一株特別的草！\n"NOR, me);
                 return 1;
         }
 
@@ -85,7 +85,7 @@ int do_search(string arg)
           {
                 ob=new(beasts[random(sizeof(beasts))]);
                 ob->move(environment(me));
-                message_vision(HIR"突然從草叢中驚起一只$N，它大概受了驚嚇，發瘋似地向$n發起進攻！\n"NOR, ob,me);
+                message_vision(HIR"突然從草叢中驚起一隻$N，它大概受了驚嚇，發瘋似地向$n發起進攻！\n"NOR, ob,me);
 
                 if( query("id", ob) == "xiaobaozi")setup_ob(ob,me);
                 ob->kill_ob(me);
@@ -161,7 +161,7 @@ int do_dig(string arg)
         me = this_player();
 
         if( me->is_fighting() || me->is_busy() )
-                return notify_fail("你正忙著。\n");
+                return notify_fail("你正忙着。\n");
         if( !(ob = present("yao chu", me)) )
                 return notify_fail("你沒有藥鋤，怎麼挖？\n");
 
@@ -172,7 +172,7 @@ int do_dig(string arg)
         me->start_busy(1);
 
         if( !query_temp("herb/found", me)){
-                message_vision("$N拿著藥鋤使勁的挖著土，忽聽嘎巴一聲，藥鋤斷為兩截！\n", me);
+                message_vision("$N拿着藥鋤使勁的挖着土，忽聽嘎巴一聲，藥鋤斷為兩截！\n", me);
                 destruct(ob);
                 return 1;
         }

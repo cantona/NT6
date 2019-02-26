@@ -20,7 +20,7 @@
                 (["wayfarer" : "erik", "jacques" : "dwayne"])
                 在 map_delete( names, "truilkan" ) 之後, key(names)
                 就不會包含 truilkan (除非後來又用 ("truilkan", *)
-                把 truilkan 加回映射變數裡)
+                把 truilkan 加回映射變數裏)
         參考函數:
                 allocate_mapping(3)
         手冊翻譯:

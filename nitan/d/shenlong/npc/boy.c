@@ -9,7 +9,7 @@ void create()
 	set_name("年輕弟子", ({"young boy", "boy", "young"}));
 	set("title", HIY "神龍教" HIY "黃龍使" NOR "座下弟子");
 	set("long",
-	        "這是一個神龍教弟子，一襲黃衣，混身透著一股邪氣。\n"
+	        "這是一個神龍教弟子，一襲黃衣，混身透着一股邪氣。\n"
 	);
 
 	set("gender", "男性");

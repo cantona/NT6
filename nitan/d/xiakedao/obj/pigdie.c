@@ -10,7 +10,7 @@ void init()
 void create()
 {
         set_name("死豬", ({ "pig", "pigdie" }) );
-        set("long", "這是一只死去的野豬，頭部(zhutou)、前腿(forleg)、後腿(backleg)都
+        set("long", "這是一隻死去的野豬，頭部(zhutou)、前腿(forleg)、後腿(backleg)都
 長得極為粗壯。\n");
         set_temp("zhutou", 1);
         set_temp("forleg", 1);
@@ -35,10 +35,10 @@ int do_get(string arg)
         {
                 if( query("str", me)<25 )
                 {
-                        message_vision("這只野豬太沉了，你拿不動。\n", me);
+                        message_vision("這隻野豬太沉了，你拿不動。\n", me);
                         return 1;
                 }
-                message_vision("你扛起一整只豬，太沉了，真是受不了。\n", me);
+                message_vision("你扛起一整隻豬，太沉了，真是受不了。\n", me);
                 ob->move(me);
                 return 0;
         }

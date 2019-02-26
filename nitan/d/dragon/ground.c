@@ -16,7 +16,7 @@ void create()
           "east"  : __DIR__"hole",
       ]));
       set("item_desc",([
-                 "tree" :"紫色的樹身，堅硬無比，正是傳說中的人參果樹。\n"
+                 "tree" :"紫色的樹身，堅硬無比，正是傳説中的人蔘果樹。\n"
       ]));
       set("objects", ([
   //       "/d/shenlong/obj/hua4" : 2,
@@ -48,7 +48,7 @@ int do_climb(string arg)
          return 1;
 }
 else
-          message_vision("$N脫掉鞋子，三下兩下就爬上了樹去。\n\n",me);
+          message_vision("$N脱掉鞋子，三下兩下就爬上了樹去。\n\n",me);
             me->receive_damage("qi",60);
                   me->move(__DIR__"tree");
        return 1;

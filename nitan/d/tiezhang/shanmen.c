@@ -6,9 +6,9 @@ void create()
 {
         set("short", "山門");
         set("long", @LONG
-這裡就是江湖上聞風喪膽的“鐵掌幫”。自從“鐵掌殲衡山”一役將衡
-山派打得一蹶不振之後，幫主鐵掌水上漂的名頭威震江湖。這裡是進山的必
-經之路，曲的小路通向山裡。路的一側立著一塊牌子(paizi) 。兩旁的樹林
+這裏就是江湖上聞風喪膽的“鐵掌幫”。自從“鐵掌殲衡山”一役將衡
+山派打得一蹶不振之後，幫主鐵掌水上漂的名頭威震江湖。這裏是進山的必
+經之路，曲的小路通向山裏。路的一側立着一塊牌子(paizi) 。兩旁的樹林
 內不時傳出一些響聲，似乎有人在暗中監視。
 LONG        );
     set("outdoors", "tiezhang");
@@ -36,7 +36,7 @@ int valid_leave(object me, string dir)
 
         if( (!myfam || myfam["family_name"] != "鐵掌幫") && dir == "northup" && query("combat_exp", me) >= 10000 && 
                 objectp(present("heiyi bangzhong", environment(me))))
-        return notify_fail(CYN "黑衣幫眾抽刀攔住你的去路，說道：“你不是鐵掌幫弟子，不能上山！\n" NOR);
+        return notify_fail(CYN "黑衣幫眾抽刀攔住你的去路，説道：“你不是鐵掌幫弟子，不能上山！\n" NOR);
 
         return ::valid_leave(me, dir);
 }

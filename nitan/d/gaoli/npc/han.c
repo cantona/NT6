@@ -1,15 +1,15 @@
 // 大唐雙龍傳
  
-// han.c 韓老板
+// han.c 韓老闆
 
 inherit NPC;
 inherit F_DEALER;
 
 void create()
 {
-       set_name("韓老板", ({"han baoban","han","laoban"}));
+       set_name("韓老闆", ({"han baoban","han","laoban"}));
        set("shop_id",({"han baoban","han","laoban"}));
-       set("shop_title","太白酒樓老板");
+       set("shop_title","太白酒樓老闆");
        set("gender", "男性");
         set("combat_exp", 100000);
        set("age", 26);

@@ -34,9 +34,9 @@ int perform(object me, object target)
                 return notify_fail("你沒有準備使用九陰神功，無法施展" ZHANG "。\n");
 
         if (! living(target))
-              return notify_fail("對方都已經這樣了，用不著這麼費力吧？\n");
+              return notify_fail("對方都已經這樣了，用不着這麼費力吧？\n");
 
-        msg = HIY "$N" HIY "雙掌一錯，幻化出無數掌影，層層疊盪向$n"
+        msg = HIY "$N" HIY "雙掌一錯，幻化出無數掌影，層層疊蕩向$n"
               HIY "逼去！\n" NOR;
 
         ap = me->query_skill("jiujin-shengong", 1);

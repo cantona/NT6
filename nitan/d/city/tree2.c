@@ -4,7 +4,7 @@ void create()
 {
         set("short", "大榕樹上");
         set("long", @LONG
-人說大樹底下好乘涼，沒想到大樹上更涼快。這棵大榕樹真不愧
+人説大樹底下好乘涼，沒想到大樹上更涼快。這棵大榕樹真不愧
 為千年神木，至今仍綠葉繁茂。當你抬頭往上看的時候似乎有個影在
 樹梢之間移動，不過也許是風吹動所造成的錯覺。
 LONG
@@ -69,7 +69,7 @@ int do_jump(string arg)
 int valid_leave(object me, string dir)
 {
         if ( dir=="down" && !wizardp(me))
-                return notify_fail("這裡沒法直接走，看來你只能爬(climb)下去！\n");
+                return notify_fail("這裏沒法直接走，看來你只能爬(climb)下去！\n");
 
         return 1;
 }

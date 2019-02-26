@@ -95,10 +95,10 @@ int valid_learn(object me)
                 return notify_fail("你的內力修為不足，不能學神照經神功。\n");
 
         if (me->query_skill("force", 1) < me->query_skill("shenzhaojing", 1))
-                return notify_fail("你的基本內功水平不夠，難以鍛煉更深厚的神照經神功。\n");
+                return notify_fail("你的基本內功水平不夠，難以鍛鍊更深厚的神照經神功。\n");
 
         if (me->query_skill("unarmed", 1) < me->query_skill("shenzhaojing", 1))
-                return notify_fail("你的基本拳腳水平不夠，難以鍛煉更深厚的神照經神功。\n");
+                return notify_fail("你的基本拳腳水平不夠，難以鍛鍊更深厚的神照經神功。\n");
 
         return ::valid_learn(me);
 }
@@ -150,7 +150,7 @@ mixed hit_ob(object me, object victim, int damage_bonus)
 
         // 神照經神功所具有的既添設額外傷害又使對手中
         // 毒的max_hit 在所有武功中是絕無僅有的，但是
-        // 它出現的幾率以及傷害值又及毒性傷害相對于其
+        // 它出現的機率以及傷害值又及毒性傷害相對於其
         // 他武功大大減弱。
         if (damage_bonus > victim->query_con()/10)
         {
@@ -190,13 +190,13 @@ int help(object me)
         write(HIC"\n神照經："NOR"\n");
         write(@HELP
 
-    丁典是荊門人，出生于武林世家。父母雙亡，家財不少，卻不
-想結親，只是勤于練武，結交江湖上的朋友。
+    丁典是荊門人，出生於武林世家。父母雙亡，家財不少，卻不
+想結親，只是勤於練武，結交江湖上的朋友。
     某次他乘船從四川下來，出了三峽後，船泊在三鬥坪。晚上，
 在船中聽得岸上有打鬥的聲音。從窗中向外張望。那晚月光明亮，
 看得清清楚楚，是三個人在圍攻一個老者。一個是五雲手萬震山。
 另一個是陸地神龍言達平。第三個人使一口長劍，身手甚是矯捷，
-那是鐵鎖橫江戚長發。老者便是鐵骨墨萼梅念笙。他們的師父。梅
+那是鐵鎖橫江戚長髮。老者便是鐵骨墨萼梅念笙。他們的師父。梅
 念笙受傷在先，抵敵不住三個徒弟的毒招，跳江而逃。
     丁典身邊帶得有金創藥，救起梅念笙後，便替他治傷。可是他
 背上那一劍刺得好深，穿通了肺，這傷是治不好的了。這麼治了三

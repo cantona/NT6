@@ -56,7 +56,7 @@ int perform(object me, object target)
                 return notify_fail("你現在的真氣不夠，難以施展" + name() + "。\n");
 
         if (! living(target))
-                return notify_fail("對方都已經這樣了，用不著這麼費力吧？\n");
+                return notify_fail("對方都已經這樣了，用不着這麼費力吧？\n");
 
         msg = HIW "'$N先天罡氣運轉由心，周身罡氣大作化為無上利器，雙手隨意推向$n。。" + "\n" + NOR;
 
@@ -66,7 +66,7 @@ int perform(object me, object target)
         if (ap / 2 + random(ap) > dp)
         {
                 damage = damage_power(me, "unarmed");
-                msg += COMBAT_D->do_damage(me, target, attack, damage, 80, HIM "$n避無可避，$N的先天罡氣沖入體內，口中鮮血狂噴，側飛而出！" + "\n" NOR);
+                msg += COMBAT_D->do_damage(me, target, attack, damage, 80, HIM "$n避無可避，$N的先天罡氣衝入體內，口中鮮血狂噴，側飛而出！" + "\n" NOR);
                 addn("neili", -200, me);
 
                 /*
@@ -81,7 +81,7 @@ int perform(object me, object target)
 
         message_sort(msg, me, target);
 
-        msg = HIW "$N" HIW "余勢未盡，招式陡然變得凌厲無比，一轉念間已然攻出數招。\n" NOR;
+        msg = HIW "$N" HIW "餘勢未盡，招式陡然變得凌厲無比，一轉念間已然攻出數招。\n" NOR;
         if (ap / 2 + random(ap) > dp)
         {
                 count = ap / 20;

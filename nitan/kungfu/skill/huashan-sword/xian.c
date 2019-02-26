@@ -27,7 +27,7 @@ int perform(object me, object target)
         if( query_temp("perform", me) == 1 ||
             query_temp("perform2", me) == 1 ||
             query_temp("perform3", me) == 1 )
-                return notify_fail("你現在正用著「劍芒」呢。\n");
+                return notify_fail("你現在正用着「劍芒」呢。\n");
 
 
         if ((int)me->query_skill("huashan-sword", 1) < 160)
@@ -43,7 +43,7 @@ int perform(object me, object target)
                 return notify_fail("你沒有激發華山劍法，無法使用" + name() + "。\n");
 
         if (! living(target))
-               return notify_fail("對方都已經這樣了，用不著這麼費力吧？\n");
+               return notify_fail("對方都已經這樣了，用不着這麼費力吧？\n");
 
         addn("neili", -280, me);
 
@@ -73,7 +73,7 @@ int perform(object me, object target)
         else
         {
                 msg += COMBAT_D->do_damage(me, target, WEAPON_ATTACK, damage, 40 + random(20),
-                                           HIR "此招來勢當真快及，$n" HIR "哪裡來得及閃"
+                                           HIR "此招來勢當真快及，$n" HIR "哪裏來得及閃"
                                            "避招架？只見$N" HIR "劍光閃過，$n"
                                            HIR "腰間霎時鮮血淋漓！\n" NOR);
         }
@@ -85,7 +85,7 @@ int perform(object me, object target)
         else
         {
                 msg += COMBAT_D->do_damage(me, target, WEAPON_ATTACK, damage, 50 + random(20),
-                                           HIR "$n" HIR "身在空中，哪裡來得及變招？只見$N"
+                                           HIR "$n" HIR "身在空中，哪裏來得及變招？只見$N"
                                            HIR "此劍掠過，$n" HIR "大聲慘呼，鮮血四下飛濺！\n" NOR);
         }
 

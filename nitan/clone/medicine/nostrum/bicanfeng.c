@@ -31,7 +31,7 @@ int do_eat(string arg)
         if(!present(this_object(), me))
                 return notify_fail("你要吃什麼？\n");
         if( me->is_busy() )
-                return notify_fail("別急，慢慢吃，小心別噎著了。\n");
+                return notify_fail("別急，慢慢吃，小心別噎着了。\n");
 
         message_vision("$N仰頭把一小袋" + name() + "都嚥了下去。\n", me);
         set_temp("die_reason", "服下碧蠶粉，自殺身亡了", me);

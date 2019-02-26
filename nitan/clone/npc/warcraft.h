@@ -2,27 +2,27 @@
 // Written by Lonely@nitan.org
 // warcraft.c
 // 魔獸系統
-        // 智慧型（青龍.木）     可增加主人回避率及冥思速度
+        // 智慧型（青龍.木）     可增加主人迴避率及冥思速度
         // 攻擊型（白虎.金）     可增加主人命中率及體會上限
-        // 防御型（玄武.水）     可增加主人防御力及內力上限
+        // 防禦型（玄武.水）     可增加主人防禦力及內力上限
         // 靈動型（朱雀.火）     可增加主人攻擊力及潛能上限
         // 均衡型（麒麟.土）     可增加主人攻擊力及精力上限
 
 // 金的明亮、木的深沉、水的清冷、火的炙熱、土的厚實。
 /*
-金  系  中級防御（描述：你的身上金光亂舞，使對手攻擊無處著手
+金  系  中級防禦（描述：你的身上金光亂舞，使對手攻擊無處着手
         。）
-木  系  中級防御（描述：眼見就要打在你的身上，卻發現象打在木
+木  系  中級防禦（描述：眼見就要打在你的身上，卻發現象打在木
         頭上，被強大的彈力震的身形不穩，在原地打了幾個圈。）
-水  系  中級防御（描述：對手的攻擊打在身上就象石牛入海，不知
+水  系  中級防禦（描述：對手的攻擊打在身上就象石牛入海，不知
         所終。）
-火  系  中級防御（描述：熊熊的火燄使對手渾身灼熱，攻擊還未遞
+火  系  中級防禦（描述：熊熊的火焰使對手渾身灼熱，攻擊還未遞
         到身前就自己縮了回去。）
-土  系  中級防御（描述：對手的攻擊打在身上，卻象以卵擊石般攻
+土  系  中級防禦（描述：對手的攻擊打在身上，卻象以卵擊石般攻
         擊到厚實的大地上軟弱無力。）
-神  獸  高級防御（有戰鬥中自動氣血恢復功能，對手無從攻擊。）
-獸  王  太初、太始，太初是攻擊系，在防御的同時有自動攻擊功能，
-        太始是防御系，可防護任何屬性的攻擊。
+神  獸  高級防禦（有戰鬥中自動氣血恢復功能，對手無從攻擊。）
+獸  王  太初、太始，太初是攻擊系，在防禦的同時有自動攻擊功能，
+        太始是防禦系，可防護任何屬性的攻擊。
 */
 
 #include <ansi.h>
@@ -114,7 +114,7 @@ varargs string short(int raw)
         string str;
 
         str = ::short();
-        str += " ≒" + query("race_type") + "≒";
+        str += " ≈" + query("race_type") + "≈";
         return str;
 }
 
@@ -194,7 +194,7 @@ void heart_beat()
 
         ob = this_object();
 
-        // 自動回復狀態
+        // 自動回覆狀態
         if( !is_fighting() && (query("qi") < query("max_qi") ||
             query("jing") < query("max_jing") ||
             query("eff_qi") < query("max_qi") ||
@@ -216,7 +216,7 @@ void heart_beat()
             env1 != env2 && env1 != owner && !query("no_magic", env2) ) {
                 if( is_fighting() ) remove_all_enemy(1);
                 ob->move(env2);
-                message_vision("忽然一陣旋風襲過，$n" NOR "已出現在這裡。\n", owner, ob);
+                message_vision("忽然一陣旋風襲過，$n" NOR "已出現在這裏。\n", owner, ob);
 
                 // 自動跟隨
                 ob->set_leader(owner);
@@ -232,7 +232,7 @@ void heart_beat()
                 ;
         else {
 
-        // 氣血小于保護限制則隱藏
+        // 氣血小於保護限制則隱藏
         if( query("env/wimpy") > 0 ) {
                 if (query("qi") * 100 / query("max_qi") <= query("env/wimpy") ) {
                         if( env == owner ) {
@@ -251,7 +251,7 @@ void heart_beat()
         // 同伴技能=========
         // 療傷，擾亂，清醒，震懾，防護
         // 加生命、加殺氣、加命中閃避
-        // A、護衛戰鬥B、減少傷害C、增加傷害D、傷害豁免E、虛弱狀態
+        // A、護衞戰鬥B、減少傷害C、增加傷害D、傷害豁免E、虛弱狀態
 
         // 麒麟--治療
         if( (query("max_qi", owner) > query("qi", owner) || query("max_qi", owner) > query("eff_qi", owner))
@@ -282,7 +282,7 @@ void heart_beat()
         if( query("race_type") == "朱雀" && owner->is_fighting() ) {
                 int int_busy;
                 if( owner->is_busy() && random(15) < query("level")/10 ) {
-                        tell_object(owner, HIM + ob->name() + HIM "扇動著巨大的翅膀，狂風四起，你感覺突然見輕鬆了許多。\n" NOR);
+                        tell_object(owner, HIM + ob->name() + HIM "扇動着巨大的翅膀，狂風四起，你感覺突然見輕鬆了許多。\n" NOR);
 
                         int_busy = 1 + random(1 + query("level")/10);
                         owner->interrupt_me(owner, int_busy);
@@ -293,7 +293,7 @@ void heart_beat()
         if( query("race_type") == "青龍" && owner->is_fighting() ) {
                 target = offensive_target(owner);
                 if( objectp(target) && random(15) < query("level")/10 && !query_temp("hiding_kuihua", owner) ) {
-                        message_vision(HIR "$N" HIR "對著$n" HIR"一聲長嘯，$n" HIR "突覺心神俱裂，難受無比。\n" NOR,
+                        message_vision(HIR "$N" HIR "對着$n" HIR"一聲長嘯，$n" HIR "突覺心神俱裂，難受無比。\n" NOR,
                                        ob, target);
 
                         set_temp("hiding_kuihua", 1, owner);
@@ -407,14 +407,14 @@ int do_teach(string arg)
         me = this_player();
 
         if( !myskill = me->query_skill(arg, 1) )
-                return notify_fail("這項技能你好象還不會呢！\n");
+                return notify_fail("這項技能你好像還不會呢！\n");
 
         if( arg != "unarmed" && arg != "parry" && arg != "dodge" && arg != "force" )
                 return notify_fail("它學不會這項技能的！\n");
 
         itskill = query_skill(arg,1);
         if( myskill <= itskill )
-                return notify_fail(name()+"以嘲笑的目光望著你。\n");
+                return notify_fail(name()+"以嘲笑的目光望着你。\n");
 
         if( query("potential", me) - query("learned_points", me) < 1 )
                 return notify_fail("你的潛能不夠！\n");
@@ -485,7 +485,7 @@ int do_shape(string arg)
         at_pt= COMBAT_D->skill_power(this_object(), "unarmed", SKILL_USAGE_ATTACK);
         pa_pt= COMBAT_D->skill_power(this_object(), "parry", SKILL_USAGE_DEFENSE);
         do_pt= COMBAT_D->skill_power(this_object(), "dodge", SKILL_USAGE_DEFENSE);
-        printf("攻擊： %d\t\t防御： %d\n\n",
+        printf("攻擊： %d\t\t防禦： %d\n\n",
         at_pt+1, pa_pt/2+do_pt/2+1
         );
         return 1;
@@ -532,7 +532,7 @@ int do_shape(string arg)
         do_pt= COMBAT_D->skill_power(this_object(), "dodge", SKILL_USAGE_DEFENSE);
 
         str += HIM "攻擊：" + sprintf("%d", at_pt+1) + "\n" NOR;
-        str += HIM "防御：" + sprintf("%d", pa_pt/2+do_pt/2+1) + "\n" NOR;
+        str += HIM "防禦：" + sprintf("%d", pa_pt/2+do_pt/2+1) + "\n" NOR;
 
         str+= line;
 
@@ -617,7 +617,7 @@ int receive_whistle(object me)
 
         if( (env = environment()) && env == me )
         {
-                write(name() + "你不是正騎著嗎？你召喚個什麼勁？\n");
+                write(name() + "你不是正騎着嗎？你召喚個什麼勁？\n");
                 return 1;
         }
 
@@ -660,7 +660,7 @@ int receive_whistle(object me)
                                 }
                         }
                 }
-                message_vision(HIG "$n" HIG "不知從哪裡竄到$N" HIG "面前！\n\n" NOR,
+                message_vision(HIG "$n" HIG "不知從哪裏竄到$N" HIG "面前！\n\n" NOR,
                         me, this_object());
         }
 
@@ -683,8 +683,8 @@ varargs void die(object killer)
         if( !objectp(owner) )
                 return ::die(killer);
 
-        message_vision(HIR "$N" HIR "哀傷地說道：對不起，主人，我不能再保護你了，珍重！\n" NOR, this_object());
-        tell_object(owner, HIG "你的魔獸死亡了，請到張天師處﹝ask zhang about 魔獸復活﹞來復活你的魔獸！\n" NOR);
+        message_vision(HIR "$N" HIR "哀傷地説道：對不起，主人，我不能再保護你了，珍重！\n" NOR, this_object());
+        tell_object(owner, HIG "你的魔獸死亡了，請到張天師處［ask zhang about 魔獸復活］來複活你的魔獸！\n" NOR);
         set("warcraft/status", "died", owner);
 
         UPDATE_D->global_destruct_player(owner, 1);
@@ -724,7 +724,7 @@ mixed hit_ob(object me, object ob, int damage_bouns)
 
         ob->receive_wound("qi", 200 + query("magic/power"), me);
 
-        return sort_msg(HIR "$N" HIR "張嘴朝著$n，" HIR "喉嚨深處微"
+        return sort_msg(HIR "$N" HIR "張嘴朝着$n，" HIR "喉嚨深處微"
                "微閃出光芒，一團約十公分大小的火球，自$N"
                HIR "嘴中射出，飛快的擊中$n" HIR "的胸口，"
                "$n" HIR "蹬蹬蹬的倒退了幾步，跪了下來。\n" NOR);

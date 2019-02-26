@@ -38,9 +38,9 @@ int perform(object me, object target)
                 return notify_fail("你沒有準備美女拳法，難以施展" + name() + "。\n");
 
        if (! living(target))
-              return notify_fail("對方都已經這樣了，用不著這麼費力吧？\n");
+              return notify_fail("對方都已經這樣了，用不着這麼費力吧？\n");
 
-        msg = HIW "\n$N" HIW "右手支頤，左袖輕輕揮出，長嘆一聲，使"
+        msg = HIW "\n$N" HIW "右手支頤，左袖輕輕揮出，長歎一聲，使"
               "出古墓派絕學「古墓幽居」，一臉盡現寂寥之意。\n" NOR;
 
         ap = attack_power(me, "unarmed");
@@ -70,7 +70,7 @@ int perform(object me, object target)
                                "竟如身入洪爐一般！\n" NOR;
                 else
                         pmsg = HIR "但見$N" HIR "雙拳襲來，柔中帶剛，迅"
-                               "猛無比，其間仿佛蘊藏著無窮的威力，$n" HIR
+                               "猛無比，其間彷彿藴藏着無窮的威力，$n" HIR
                                "正遲疑間，卻已中拳，悶哼一聲，倒"
                                "退幾步，一口鮮血噴出。\n" NOR;
 

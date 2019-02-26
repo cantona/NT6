@@ -9,7 +9,7 @@ void create()
         set("age", random(10) + 30);
         set("str", 25);
         set("dex", 16);
-        set("long", "他站在那裡，的確有說不出的威風。\n");
+        set("long", "他站在那裏，的確有説不出的威風。\n");
         set("combat_exp", 75000);
         set("shen_type", 1);
         set("attitude", "peaceful");

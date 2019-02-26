@@ -5,7 +5,7 @@
 
 void create()
 {
-        set_name(CYN "跌打傷癒膏" NOR, ({"dieda gao", "gao"}));
+        set_name(CYN "跌打傷愈膏" NOR, ({"dieda gao", "gao"}));
         if (clonep())
                 set_default_object(__FILE__);
         else {

@@ -23,8 +23,8 @@ int exert(object me, object target)
                 drop = 200 * 150 / lv;
                 dur = (dur - drop)/drop;
                 str = HIR + me->name() + "騎馬蹲襠，氣存丹田，暴喝一聲：來！\n"
-                + HIG + "一道金光飛來，半空中突然落下一只黃金大鐘把" +
-                me->name() + "罩在裡面。\n" + NOR;
+                + HIG + "一道金光飛來，半空中突然落下一隻黃金大鐘把" +
+                me->name() + "罩在裏面。\n" + NOR;
         }
         if (dur < 1)
                 return notify_fail("你的內力不夠運用金鐘罩。\n");

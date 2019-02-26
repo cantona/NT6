@@ -1,7 +1,7 @@
 // heal.c
 // Updated by Lonely
 
-// 參考于俠客行
+// 參考於俠客行
 /* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * **\
  * heal.c 內功治療內傷功能                                              *
  *                                                                      *
@@ -10,15 +10,15 @@
  * 功能。                                                               *
  * 泥潭現有的傷害系統，在內傷和外傷完全沒有區別。內傷外傷是兩碼子事，當 *
  * 內功高，內傷自然容易好。外傷卻未必，又不是神功一運，立即鎮傷生肌，那 *
- * 變成生化人了。所以外傷在大部份情況下只能借助于外界藥物的輔助來治療。 *
+ * 變成生化人了。所以外傷在大部份情況下只能藉助於外界藥物的輔助來治療。 *
  * 基本上普通內傷都可以通過運轉內息來治療，所差者不過於不同內功在於治療 *
  * 方面效果的好壞，而且如果傷勢越重，效果越小，不像以前俠客行一次多少內 *
- * 力、就固定恢復多少。通過內傷的康復，慢慢會加快治癒速度。而外傷的康癒 *
- * 速度，多半則取決于其傷勢的程度，所用藥物的藥性，以及本身的肌肉構造， *
- * 也就是泥潭裡面的con。                                       *
- * 至于如何體現出內外傷的不同，而將這泥潭的傷害系統做得更合理性，這些是 *
- * 以後所要改變的，這裡所要說明的只是以下功能只是以內傷作為前提考慮，所 *
- * 以或許對于泥潭現有的傷害系統會有少許的不合理性。                     *
+ * 力、就固定恢復多少。通過內傷的康復，慢慢會加快治癒速度。而外傷的康愈 *
+ * 速度，多半則取決於其傷勢的程度，所用藥物的藥性，以及本身的肌肉構造， *
+ * 也就是泥潭裏面的con。                                       *
+ * 至於如何體現出內外傷的不同，而將這泥潭的傷害系統做得更合理性，這些是 *
+ * 以後所要改變的，這裏所要説明的只是以下功能只是以內傷作為前提考慮，所 *
+ * 以或許對於泥潭現有的傷害系統會有少許的不合理性。                     *
  *                                                                      *
 \* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * **/
 
@@ -34,9 +34,9 @@ mapping eff_heal = ([
         "jiuyang-shengong"      : 9,    // 九陽神功在療傷方面的效果無可置疑。
         "taixuan-gong"          : 9,    // 參考九陽神功。
         "yijinjing"             : 9,
-        "hunyuan-yiqi"          : 8,    // 鑒於易筋經以及九陽神功在療傷方面的效果。
-        "zixia-shengong"        : 8,    // 紫霞神功及混元功在自療方面沒有什麼提及，但是有鑒
-                                        // 於其療人的效果，以及岳不群曾經想讓令狐沖自習紫霞
+        "hunyuan-yiqi"          : 8,    // 鑑於易筋經以及九陽神功在療傷方面的效果。
+        "zixia-shengong"        : 8,    // 紫霞神功及混元功在自療方面沒有什麼提及，但是有鑑
+                                        // 於其療人的效果，以及嶽不羣曾經想讓令狐沖自習紫霞
                                         // 神功來治療內傷，可見於自療方面的效果，或許可以與
                                         // 易筋經相媲美。就算是有所不及，考慮到當今紫霞神功
                                         // 沒有什麼特別的 exert，也應當讓紫霞神功在治療方面
@@ -71,7 +71,7 @@ int exert(object me, object target)
                 return notify_fail("戰鬥中運功療傷？找死嗎？\n");
 
         if (me->is_busy())
-                return notify_fail("等你忙完了手頭的事情再說！\n");
+                return notify_fail("等你忙完了手頭的事情再説！\n");
 
         force = me->query_skill_mapped("force");
         if (! stringp(force))
@@ -128,7 +128,7 @@ int healing(object me)
                 tell_object(me, "你一時難以定奪如何運用內力，只好先暫停療傷。\n");
                 set_temp("pending/healing", 0, me);
                 me->set_short_desc(0);
-                message_vision("$N嘆了口氣，搖搖晃晃的站了起來。\n", me);
+                message_vision("$N歎了口氣，搖搖晃晃的站了起來。\n", me);
                 return 0;
         }
         
@@ -148,7 +148,7 @@ int healing(object me)
                         me->set_short_desc(0);
                         
                         if (! msg || undefinedp(msg["unfinish_other"]))
-                                tell_room(environment(me), me->name() + "嘆了口氣，搖搖晃晃的站了起來。\n", me);
+                                tell_room(environment(me), me->name() + "歎了口氣，搖搖晃晃的站了起來。\n", me);
                         else    
                                 tell_room(environment(me), msg["unfinish_other"], me);
                                 
@@ -173,11 +173,11 @@ int healing(object me)
                         switch (random(10))
                         {
                         case 0:
-                                tell_object(me, "你運用" + to_chinese(force) + "沿著"
+                                tell_object(me, "你運用" + to_chinese(force) + "沿着"
                                                 "諸大穴慢慢運轉，療解傷痛。\n");
                                 break;
                         case 1:
-                                tell_object(me, "你將內力納入丹田，再上行沖頂，透泥宮"
+                                tell_object(me, "你將內力納入丹田，再上行衝頂，透泥宮"
                                                 "，頓覺精神爽快。\n");
                                 break;
                         case 2:

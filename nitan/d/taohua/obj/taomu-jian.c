@@ -17,7 +17,7 @@ void create()
                 set("unit", "把");
                 set("value", 0);
                 set("material", "wood");
-                set("long", "這是一柄三尺來長，手工制成的桃木劍，似乎不是一件好兵器。\n");
+                set("long", "這是一柄三尺來長，手工製成的桃木劍，似乎不是一件好兵器。\n");
                 set("wield_msg", "$N拿出一把$n，握在手中。\n");
                 set("unequip_msg", "$N放下手中的$n。\n");
         }

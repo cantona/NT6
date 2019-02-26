@@ -8,7 +8,7 @@ void create()
                 set_default_object(__FILE__);
         else {
                 set("unit", "本");
-                set("long", "這是六陽掌法下冊，上面畫著一些紛繁復雜的招式及修練法門。\n");
+                set("long", "這是六陽掌法下冊，上面畫着一些紛繁複雜的招式及修練法門。\n");
                 set("value", 500);
                 set("no_put", 1);
                 set("material", "paper");

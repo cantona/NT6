@@ -7,7 +7,7 @@ void create()
 {
         set("short", "荒路");
         set("long", @LONG
-這是條連接關內外的荒路，由于遠離城鎮，人煙稀少。
+這是條連接關內外的荒路，由於遠離城鎮，人煙稀少。
 LONG
         );
         set("no_clean_up", 0);

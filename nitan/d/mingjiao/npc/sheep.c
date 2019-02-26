@@ -9,7 +9,7 @@ void create()
     set("race", "家畜");
     set("age", 2);
     set("long",
-        "這只野羊在低頭吃草，見了人也不驚避。\n");
+        "這隻野羊在低頭吃草，見了人也不驚避。\n");
     set("combat_exp", 5000);
     set("shen_type", -1);
     set("attitude", "peaceful");

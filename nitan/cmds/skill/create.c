@@ -49,16 +49,16 @@ string *msga = ({
         "$N靈台一片清明，想起",
         "$N苦思以前練功時的點點滴滴，似乎想起",
         "突然，$N腦海靈光一現，發現",
-        "$N反復比劃，發現",
+        "$N反覆比劃，發現",
 });
 
 string *msgb = ({ 
         "似有相通之處，不禁心中一亮。",
-        "頗有一一印証之功，隨手演練，似有所悟。",
+        "頗有一一印證之功，隨手演練，似有所悟。",
         "似乎可以融合貫通，頓時心內一陣狂喜！",
-        "可以相互取長補短，開辟一種全新的境界。",
+        "可以相互取長補短，開闢一種全新的境界。",
         "如果連續使出，似乎可以將威力發揮至極限。",
-        "如果詳加修正，可以相互彌補個中不足，創造出更完美的絕招。"
+        "如果詳加修正，可以相互彌補箇中不足，創造出更完美的絕招。"
 });
 
 string *banned_name = ({
@@ -147,22 +147,22 @@ int main(object me, string arg)
         }
                 
         if( me->is_busy() )
-                return notify_fail("你還是先忙完手頭的事再說吧！\n");         
+                return notify_fail("你還是先忙完手頭的事再説吧！\n");         
     
         if( query("pigging", where) )
                 return notify_fail("你還是專心拱豬吧！\n");
                 
         if( !query("no_fight", where) )
-                return notify_fail("在這裡閉關？不太安全吧？\n");
+                return notify_fail("在這裏閉關？不太安全吧？\n");
 
         if( !query("sleep_room", where) )
                 return notify_fail("你得找一個能夠休息的地方閉關。\n");
                 
         if( !ultrap(me) )
-                return notify_fail("你還沒有到大宗師的境界，還是好好學習鍛煉吧。\n");
+                return notify_fail("你還沒有到大宗師的境界，還是好好學習鍛鍊吧。\n");
 
         if( query("reborn/times", me)<1 )
-                return notify_fail("你還沒有經過轉世，還是好好學習鍛煉吧。\n");
+                return notify_fail("你還沒有經過轉世，還是好好學習鍛鍊吧。\n");
 
         if( query("potential", me)-query("learned_points", me)<1000000 )
                 return notify_fail("你的潛能不夠，沒法閉關修行。\n");
@@ -558,7 +558,7 @@ void get_perform_name(string arg, object me, string base_skill, string skill, st
                         
         tell_object(me, HIC "\n注意問題: $N 代表你 $n 代表敵人 $w 代表你的武器 \n\n" NOR);
         tell_object(me, HIC "例如：(拳腳類) \n" NOR);
-        tell_object(me, HIM "$N" HIM "一聲怒嚎，將戰神心經提運極至，雙拳頓時攜著雷霆萬鈞之勢猛貫向$n" HIM "。\n" NOR);
+        tell_object(me, HIM "$N" HIM "一聲怒嚎，將戰神心經提運極至，雙拳頓時攜着雷霆萬鈞之勢猛貫向$n" HIM "。\n" NOR);
         tell_object(me, HIC "例如：(武器類)\n" NOR); 
         tell_object(me, HIM "$N" HIM "手中$w寒氣逼人，刀身撕裂空氣，片片雪花飄落，刀未至氣先及，$n" HIM "眉毛都蒙上了薄薄白霜！\n\n" NOR);
         tell_object(me, HIC "請輸入發招時描述：（長度不超過200個漢字）\n" NOR);                         
@@ -680,7 +680,7 @@ void decide_input_perform(string arg, object me, string base_skill, string skill
                 
         if( arg == "y" || arg == "Y" ) {
                 if( objectp( ob = get_object(SKILL_D(skill) + "/" + e_name) ) ) {
-                        tell_object(me, "BUG！請聯系巫師！\n");
+                        tell_object(me, "BUG！請聯繫巫師！\n");
                         return;
                 }
                 finish_write_perform(me, base_skill, skill, model, c_name, e_name, pfm_attack_msg, pfm_succeed_msg, pfm_fail_msg);

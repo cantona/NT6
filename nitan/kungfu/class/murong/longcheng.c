@@ -12,7 +12,7 @@ void create()
 {
         set_name("慕容龍城", ({ "murong longcheng", "murong", "longcheng" }));
         set("long", @LONG
-他是姑蘇慕容的傳人，一手創造了絕世武功鬥轉星移，從而
+他是姑蘇慕容的傳人，一手創造了絕世武功斗轉星移，從而
 使慕容家躋身為武林世家地位。
 LONG );
         set("gender", "男性");

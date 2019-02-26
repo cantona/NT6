@@ -7,7 +7,7 @@ void create()
 {
         set_name("阿二", ({ "a er", "a", "er" }));
         set("long", "阿二乃阿三的同門師兄，也是西域少林派一\n"
-                    "等一的高手，被汝陽王一重金安置于麾下，\n"
+                    "等一的高手，被汝陽王一重金安置於麾下，\n"
                     "非常得汝陽王的賞識。\n");
         set("title", HIR "西域少林派高手" NOR);
         set("gender", "男性");
@@ -83,7 +83,7 @@ int accept_kill(object who)
 
 int accept_ansuan(object who)
 {
-        return notify_fail("你剛想暗算，可是只見樓上人影晃動，根本看不清楚。\n");
+        return notify_fail("你剛想暗算，可是隻見樓上人影晃動，根本看不清楚。\n");
 }
 
 int begin()
@@ -105,13 +105,13 @@ int begin()
         if( objectp(weapon=query_temp("weapon", me)) )
         {
                 command("shake");
-                command("say 我也和你比空手，放下你的" + weapon->name() + "再說。");
+                command("say 我也和你比空手，放下你的" + weapon->name() + "再説。");
                 return notify_fail("看起來阿二並不想跟你較量。\n");
         }
 
         command("nod");
         command("say 我出招了。");
-        message_vision( HIW "$N雙手合十，對著$n" HIW 
+        message_vision( HIW "$N雙手合十，對着$n" HIW 
                             "微微一揖，雙掌平推，掌勁如巨浪般洶湧而出！\n" NOR,
                             obj,this_player());
 
@@ -131,7 +131,7 @@ void die()
                                     "一樣直飛了出去，倒在地上動也不動一下。\n\n" NOR,
                                     this_object(),query("anti"));
 
-                message_vision( CYN "趙敏頗為驚訝，可還是不露聲色，只是向親兵淡淡揮手說"
+                message_vision( CYN "趙敏頗為驚訝，可還是不露聲色，只是向親兵淡淡揮手説"
                                     "道：“抬下去。”\n" NOR,
                                     this_object());
 

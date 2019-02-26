@@ -46,7 +46,7 @@ int valid_leave(object me, string dir)
         {
                          me->move(__DIR__"tao_in");
                     delete_temp("taohua/steps", me);
-                    write(HIC "\n你走了半天，終于走出了桃花迷陣。\n\n" NOR);
+                    write(HIC "\n你走了半天，終於走出了桃花迷陣。\n\n" NOR);
                    return -1;
         }  
 
@@ -54,7 +54,7 @@ int valid_leave(object me, string dir)
         {  
                 me->move(__DIR__"tao_out");
                     delete_temp("taohua/steps", me);
-                    write(HIC "\n你走了半天，終于走出了桃花迷陣。\n\n" NOR);
+                    write(HIC "\n你走了半天，終於走出了桃花迷陣。\n\n" NOR);
                 return -1;
              }
 

@@ -9,7 +9,7 @@ string family_name() { return "峨嵋派"; }
 int valid_learn(object me)
 {        
         if (me->query_skill("huifeng-jian", 1) < 30)
-                return notify_fail("你回風拂柳劍火候不足，無法研習靜心。\n");        
+                return notify_fail("你迴風拂柳劍火候不足，無法研習靜心。\n");        
         
         if( query("family/family_name", me) != family_name() )
                 return notify_fail("靜心只能峨嵋派弟子方可研習。\n");

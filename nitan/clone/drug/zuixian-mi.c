@@ -13,7 +13,7 @@ void create()
                 set_default_object(__FILE__);
         else {
                 set("long",
-                        "這是一包石樑派溫家祖傳的迷藥。\n" );
+                        "這是一包石樑派温家祖傳的迷藥。\n" );
                 set("unit", "包");
                 set("value", 1000);
                 set("no_sell", 1);
@@ -43,7 +43,7 @@ int do_pour(string arg)
         if( !ob )
                 return notify_fail("你身上沒有" + what + "這樣東西。\n");
         if( !query("liquid/remaining", ob) )
-                return notify_fail(ob->name() + "裡什麼也沒有，先裝些酒水才能溶化藥粉\n");
+                return notify_fail(ob->name() + "裏什麼也沒有，先裝些酒水才能溶化藥粉\n");
         da=query("liquid/drunk_apply", ob);
 
         if (da > 8 )da = 8; // must set uplimit, otherwise pour in jiuping with guiyuan dan can add nieli 100M

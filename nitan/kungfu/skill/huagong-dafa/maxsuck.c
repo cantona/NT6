@@ -20,7 +20,7 @@ int exert(object me, object target)
         if( query("race", target) != "人類" )
                 return notify_fail("搞錯了！只有人才能有精元！\n");
 
-        if (me->is_busy()) return notify_fail("你正忙著呢。\n");
+        if (me->is_busy()) return notify_fail("你正忙着呢。\n");
 
         if( query_temp("sucked", me) )
                 return notify_fail("你剛剛吸取過精力！\n");

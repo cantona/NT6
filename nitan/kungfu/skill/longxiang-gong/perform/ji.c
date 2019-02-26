@@ -40,15 +40,15 @@ int perform(object me, object target)
                 return notify_fail("你現在的真氣不足，難以施展" + name() + "。\n");
 
         if (! living(target))
-                return notify_fail("對方都已經這樣了，用不著這麼費力吧？\n");
+                return notify_fail("對方都已經這樣了，用不着這麼費力吧？\n");
 
         layer = me->query_skill("longxiang-gong", 1) / 30;
 
         if (layer > 13) layer = 13;
 
         msg = HIY "$N" HIY "運轉龍象般若功第" + chinese_number(layer) + "層"
-              "功力，雙拳攜著『" HIR "十龍十象" HIY "』之力朝$n" HIY "崩擊"
-              "\n而出，拳鋒過處，竟卷起萬裡塵埃，正是密宗絕學「" HIW "般若"
+              "功力，雙拳攜着『" HIR "十龍十象" HIY "』之力朝$n" HIY "崩擊"
+              "\n而出，拳鋒過處，竟捲起萬里塵埃，正是密宗絕學「" HIW "般若"
               "極" HIY "」。\n" NOR;
 
         ap = attack_power(me, "unarmed") + me->query_skill("force");
@@ -64,7 +64,7 @@ int perform(object me, object target)
                         delete_temp("shield", target);
 
                         msg += HIW "$N" HIW "罡氣湧至，竟然激起層層氣浪，頓時將$n"
-                               HIW "的護體真氣摧毀得盪然無存！\n" NOR;
+                               HIW "的護體真氣摧毀得蕩然無存！\n" NOR;
                 }
                 jia=query("jiali", me);
                 damage = damage_power(me, "unarmed");

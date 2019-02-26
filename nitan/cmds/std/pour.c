@@ -22,10 +22,10 @@ int main(object me, string arg)
                 return notify_fail("你現在正在打架，沒時間做這些事情。\n");
 
         if (sscanf(arg, "%s in %s", item, target) != 2)
-                return notify_fail("你要往哪裡下毒？\n");
+                return notify_fail("你要往哪裏下毒？\n");
 
         dest = present(target, me);
-        if (! dest) return notify_fail("這裡沒有這樣東西。\n");
+        if (! dest) return notify_fail("這裏沒有這樣東西。\n");
 
         if (! objectp(obj = present(item, me)))
                 return notify_fail("你身上沒有這樣東西。\n");
@@ -34,11 +34,11 @@ int main(object me, string arg)
                 return notify_fail("這不是毒藥啊。\n");
 
         if( !query("can_pour", obj) )
-                return notify_fail("這種毒藥不能溶在水裡。\n");
+                return notify_fail("這種毒藥不能溶在水裏。\n");
 
         if( query("liquid/remaining", dest)<1 )
         {
-                tell_object(me, "裡面一點喝的都沒有是不能下毒的。\n");
+                tell_object(me, "裏面一點喝的都沒有是不能下毒的。\n");
                 return 1;
         }
 
@@ -95,7 +95,7 @@ write(@HELP
 指令格式 : pour <毒藥> in <容器>
  
 這個指令可以讓你將某樣毒品放進一個容器，當然，首先你要擁有這樣物品。
-容器裡有喝的東西。
+容器裏有喝的東西。
 HELP
     );
     return 1;

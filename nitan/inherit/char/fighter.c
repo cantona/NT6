@@ -19,7 +19,7 @@ void setup()
 
 void unconcious()
 {
-        message_vision(HIY "□喇一聲，" + name() +
+        message_vision(HIY "咔喇一聲，" + name() +
                        "壞了。\n\n" NOR, this_object());
         set("jing", 0);
         set("eff_jing", 0);
@@ -50,7 +50,7 @@ int accept_fight(object ob)
         if( stringp(query("for_family", env)) &&
             query("for_family", env) == query("family/family_name", ob) &&
             query("out_family", ob) )
-                return notify_fail("你還是外出歷練吧，不能總呆在這裡。\n");
+                return notify_fail("你還是外出歷練吧，不能總呆在這裏。\n");
 
         if( query("combat_exp", ob) < 12000 )
                 return notify_fail("你這點身手還不足以和" + name() + "練功。\n");

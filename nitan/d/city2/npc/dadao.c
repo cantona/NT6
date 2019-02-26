@@ -6,7 +6,7 @@ void create()
         set_name("江洋大盜",({ "jiangyang dadao","dadao" }) );
         set("title",HIB"專殺官府"NOR);
         set("gender", "男性" );
-        set("long","這是一伙土匪大盜，專門與官府作對，實在不好惹。\n");  
+        set("long","這是一夥土匪大盜，專門與官府作對，實在不好惹。\n");  
 
         set("int", 30);
         set("str", 25);
@@ -103,7 +103,7 @@ varargs void die(object killer)
 {
         object ob=this_object();
 
-        message_vision(HIR"江陽大盜大呼一聲：點子硬，快撤！轉眼間一伙人馬消失得"
+        message_vision(HIR"江陽大盜大呼一聲：點子硬，快撤！轉眼間一夥人馬消失得"
                  +"無影無蹤！\n"NOR,ob);    
         remove_call_out("check_me"); 
         if( !killer ) killer = query_last_damage_from(); 

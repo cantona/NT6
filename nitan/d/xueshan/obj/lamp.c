@@ -19,7 +19,7 @@ void create()
                 set_default_object(__FILE__);
         else {
                 set("unit", "盞");
-                set("long", "一盞純金打制的酥油燈，做的十分精巧別致，看上去價值不菲。\n");
+                set("long", "一盞純金打製的酥油燈，做的十分精巧別緻，看上去價值不菲。\n");
                 set("value", 100000);
                                 set("no_get",1);
         }
@@ -54,11 +54,11 @@ int do_light(string arg)
         if (arg != "lamp")
                 return notify_fail("你要點燃什麼？\n");
                 if (ob->query_current_liquid() < 5)
-                                return notify_fail("燈裡的酥油不夠啦。\n");
+                                return notify_fail("燈裏的酥油不夠啦。\n");
                 if( query("burning", ob) )
-                                return notify_fail("酥油燈已經點著啦。\n");
-        message_vision(HIR"$N點燃了燈中的酥油，燈頭冒出小小的一股火燄，散發出淡淡的酥油香。\n"NOR, me);
-        set("long", query("long") + HIR"裡面燃著小小的一股火燄。\n"NOR);
+                                return notify_fail("酥油燈已經點着啦。\n");
+        message_vision(HIR"$N點燃了燈中的酥油，燈頭冒出小小的一股火焰，散發出淡淡的酥油香。\n"NOR, me);
+        set("long", query("long") + HIR"裏面燃着小小的一股火焰。\n"NOR);
         set_temp("marks/油", 1, me);
         set("burning", 1);
         remove_call_out("finish_burn");
@@ -80,8 +80,8 @@ void finish_burn(object me)
                 }
                 ob->set_current_liquid(0);
                 set("burning", 0);
-        message_vision(HIR"$N中的火燄隨風晃了兩下，終于熄滅了，冒出一股青煙。\n"NOR, ob);
-        set("long", "一盞純金打制的酥油燈，做的十分精巧別致，看上去價值不菲。\n");
+        message_vision(HIR"$N中的火焰隨風晃了兩下，終於熄滅了，冒出一股青煙。\n"NOR, ob);
+        set("long", "一盞純金打製的酥油燈，做的十分精巧別緻，看上去價值不菲。\n");
 
 }
 

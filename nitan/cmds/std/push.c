@@ -42,7 +42,7 @@ mapping default_dirs = ([
         "southwest":        "西南",
         "up":                "上面",
         "down":                "下面",
-        "enter":        "裡面",
+        "enter":        "裏面",
         "out":                "外面",
 ]);
 
@@ -65,7 +65,7 @@ mapping default_undirs = ([
         "northeast":        "西南",
         "down":                "上面",
         "up":                "下面",
-        "out":                "裡面",
+        "out":                "裏面",
         "enter":        "外面",
 ]);
 
@@ -83,7 +83,7 @@ int main(object me, string arg)
 
         env = environment(me);
         if( !env || query("no_fight", env) )
-                return notify_fail("這裡不是你囂張的地方。\n");
+                return notify_fail("這裏不是你囂張的地方。\n");
 
         if (! objectp(target = present(who, env)))
                 return notify_fail("你要推開誰？\n");
@@ -98,7 +98,7 @@ int main(object me, string arg)
                 return notify_fail("人家現在正在冥神用功，不太好打擾別人吧。\n");
 
         if (! living(target))
-                return notify_fail("這人現在沒有知覺，你還是扶著人家走吧。\n");
+                return notify_fail("這人現在沒有知覺，你還是扶着人家走吧。\n");
 
         if (! playerp(target))
                 return notify_fail("你看了看這個人，沒敢動。\n");
@@ -154,7 +154,7 @@ int main(object me, string arg)
                 break;
 
         default:
-                msg = "$N雙目一瞪，喝道：“還不快快給我閃開？”，說罷把$n往" +
+                msg = "$N雙目一瞪，喝道：“還不快快給我閃開？”，説罷把$n往" +
                       dir + "推去。\n";
                 break;
         }
@@ -166,7 +166,7 @@ int main(object me, string arg)
         }
 
         if (wiz_level(me) < wiz_level(target))
-                msg += "$N用力推了推，只覺得好象撞到了一堵牆一樣。\n";
+                msg += "$N用力推了推，只覺得好像撞到了一堵牆一樣。\n";
         else
         if (! wiz_push && target->query_skill("force") >= 150)
                 msg += "$N默運內力，卻覺得$n內功根基頗為紮實，這一下竟然沒有撼動對方，不由得一愣。\n";

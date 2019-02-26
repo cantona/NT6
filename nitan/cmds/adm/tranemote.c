@@ -80,7 +80,7 @@ e進入當前Emote中。
         ee=lower_case(ee);
         if(member_array(ee,key)==-1)
         {
-                return notify_fail(ee+" 不存在于 "+file+"。\n");
+                return notify_fail(ee+" 不存在於 "+file+"。\n");
         }
         if(!mapp(old_emote[ee]))
         {
@@ -88,7 +88,7 @@ e進入當前Emote中。
         }
         if(!undefinedp(emote[ee]))
         {
-                return notify_fail(ee+" 存在于目標emote文件中，不能覆蓋。\n");
+                return notify_fail(ee+" 存在於目標emote文件中，不能覆蓋。\n");
         }
         EMOTE_D->set_emote(ee,old_emote[ee]);
         write("Emote轉換 "+ee+" 成功。\n");

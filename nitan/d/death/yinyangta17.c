@@ -5,7 +5,7 @@ void create()
 {
         set("short", HIB "陰陽塔" NOR);
         set("long", HIB @LONG
-這是地獄中最高的一座塔，高約三百余尺，共有十八級。相傳塔頂
+這是地獄中最高的一座塔，高約三百餘尺，共有十八級。相傳塔頂
 住有神獸朱雀，這個傳言也不知是真是假。
 LONG NOR
         );
@@ -32,7 +32,7 @@ int valid_leave(object me, string dir)
         {
                 if (objectp(present("ma mian", environment(me))))
                         return notify_fail(CYN "馬面看了你一眼，喝道：你還不滾"
-                                           "回去還陽，來這裡湊什麼熱鬧！\n" NOR);
+                                           "回去還陽，來這裏湊什麼熱鬧！\n" NOR);
         }
         return ::valid_leave(me, dir);
 }

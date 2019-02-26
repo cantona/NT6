@@ -33,7 +33,7 @@ int do_eat(string arg)
                 return notify_fail("你現在不需要用再生丸。\n");
         else {
                 addn("potential", 1, this_player());
-                message_vision("$N吃下一顆再生丸，感到身體裡產生了一種微妙的變化 !\n", this_player());
+                message_vision("$N吃下一顆再生丸，感到身體裏產生了一種微妙的變化 !\n", this_player());
                 destruct(this_object());
                 return 1;
         }

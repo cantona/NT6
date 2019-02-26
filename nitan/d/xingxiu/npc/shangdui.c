@@ -12,8 +12,8 @@ void create()
         set("location", 1);
         set_weight(900000);
         set("long", "
-一只遠道而來的駱駝商隊，駱駝背上堆滿了貨物。商人們
-手中提著一些布袋，看來是比較重要的東西。。。\n");
+一隻遠道而來的駱駝商隊，駱駝背上堆滿了貨物。商人們
+手中提着一些布袋，看來是比較重要的東西。。。\n");
         set("no_get", 1);
         set("no_drop", 1);
         seteuid(getuid());
@@ -39,10 +39,10 @@ int do_rob()
 
         if(!living(me)) return 0;
         if( !query_temp("xx_job2", me) || !query_temp("rob_start", me) )
-                return notify_fail("你這姦賊，竟敢光天化日之下攔截商隊，不怕被打入天牢嗎？\n");
+                return notify_fail("你這奸賊，竟敢光天化日之下攔截商隊，不怕被打入天牢嗎？\n");
         if(objectp(present("hubiao biaoshi", environment(me))))
-                return notify_fail("護鏢鏢師看來武功不弱，你還是先打發了面前這個再說吧！\n");  
-        message_vision(HIY "$N對著$n大吼一聲：星宿"+me->name()+"在此！留下你們的錢財來！\n"NOR, me, ob);
+                return notify_fail("護鏢鏢師看來武功不弱，你還是先打發了面前這個再説吧！\n");  
+        message_vision(HIY "$N對着$n大吼一聲：星宿"+me->name()+"在此！留下你們的錢財來！\n"NOR, me, ob);
         set_temp("xx_rob", 1, me);
         if( !query("going", ob) )
         {
@@ -86,7 +86,7 @@ void make_bs(object me, object ob)
                 delete_temp("xx_rob", me);
                 delete_temp("xx_job2", me);
                 delete_temp("j", me);
-                message_vision("$N帶著駱駝，轉過幾個小山丘就不見了。\n", ob);
+                message_vision("$N帶着駱駝，轉過幾個小山丘就不見了。\n", ob);
                 destruct(ob);
         }        
 }
@@ -101,7 +101,7 @@ void go_stage(object me, int stage, int i, int size, object player)
                 me->move(dest[i]["context"][stage]);
                 message_vision(HIY"$N匆匆忙忙地奔了過來。\n"NOR, me);
                 where = environment(me); 
-                tell_object(player,HIM+query("name", me)+"好象逃往了"+query("short", where)+"一帶。\n"NOR);
+                tell_object(player,HIM+query("name", me)+"好像逃往了"+query("short", where)+"一帶。\n"NOR);
                 call_out("go_stage", f, me, ++stage, i, size, player);
         }
         else
@@ -120,7 +120,7 @@ void destroying(object me)
 {
         if( !query("going", me) )
         {
-                message_vision("$N帶著駱駝，轉過幾個小山丘就不見了。\n", me);        
+                message_vision("$N帶着駱駝，轉過幾個小山丘就不見了。\n", me);        
                 destruct(me);
                 return;
         }
@@ -130,7 +130,7 @@ void destroying(object me)
 
 void destroying2(object me)
 {
-        message_vision("$N帶著駱駝，轉過幾個小山丘就不見了。\n", me);        
+        message_vision("$N帶着駱駝，轉過幾個小山丘就不見了。\n", me);        
         destruct(me);
         return;
 }

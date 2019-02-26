@@ -41,7 +41,7 @@ int perform(object me)
                 return notify_fail("你的真氣不夠，難以施展" TAN "。\n");
 
         if (! living(target))
-                return notify_fail("對方都已經這樣了，用不著這麼費力吧？\n");
+                return notify_fail("對方都已經這樣了，用不着這麼費力吧？\n");
 
         msg = HIW "$N" HIW "伸出兩掌，朝$n" HIW "拍去，待掌至中途，卻變掌為爪，幻作兩"
               "道金光襲向$n" HIW "各處要脈！\n" NOR;

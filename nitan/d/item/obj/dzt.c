@@ -15,7 +15,7 @@ void create()
 鑲嵌物品              enchase
 附魔屬性              enchant
 裝備打孔              notch
-寶石合並              combine
+寶石合併              combine
 洗 裝 備              melt
 裝備強化              steady
 裝備改造              increase

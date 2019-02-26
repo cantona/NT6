@@ -51,31 +51,31 @@ void create()
 
         /*
         set("inquiry", ([
-                "香火" : "香火練制不易，不能隨便于人，虔誠奉獻者方能得之。\n",
-                "進香" : "進香？童言無忌！童言無忌！要說敬香才是！\n",
+                "香火" : "香火練制不易，不能隨便於人，虔誠奉獻者方能得之。\n",
+                "進香" : "進香？童言無忌！童言無忌！要説敬香才是！\n",
                 "敬香" : "殿堂的香火能綿延不斷，都因為我武當弟子和山外香客及時敬奉。\n",
                 "虔誠奉獻" : "虔誠奉獻就是主動多捐獻香火錢，多作義工。\n",
                 "敬奉" : "敬奉就是主動多捐獻香火錢，多作義工。\n",
-                "鬆林" : "武當鬆林在山門附近。\n",
+                "松林" : "武當松林在山門附近。\n",
                 "柏林" : "武當柏林就在遇真宮後。\n",
-                "材料" : "材料就是紅鬆和青柏，我每天都要派人去砍伐。\n",
+                "材料" : "材料就是紅松和青柏，我每天都要派人去砍伐。\n",
                 "砍樹" : (: ask_job :),
                 "伐木" : (: ask_job :),
                 "job"  : (: ask_job :),
                 "wook" : (: ask_job :),
-                "工作" : "我這裡每天都需要人去砍樹，如果你能主動送些過來，那更好。\n",
-                "幹活" : "我這裡每天都需要人去砍樹，如果你能主動送些過來，那更好。\n",
+                "工作" : "我這裏每天都需要人去砍樹，如果你能主動送些過來，那更好。\n",
+                "幹活" : "我這裏每天都需要人去砍樹，如果你能主動送些過來，那更好。\n",
         ]));
         set("chat_chance", 5);
         set("chat_msg", ({
-                "凌虛道長說道：香火練制不易，不能隨便于人，虔誠奉獻者方能得之。\n",
-                "凌虛道長說道：紅鬆和青柏都是煉制香火的好材料。\n",
-                "凌虛道長說道：制香材料是從林子裡砍伐而來。\n",
-                "凌虛道長說道：武當的鬆林和柏林都長了幾百年了，還沒有人走通過。\n",
-                "凌虛道長說道：砍樹的時候要多加小心，我派出砍樹的道士，有些就有去無回。\n",
+                "凌虛道長説道：香火練制不易，不能隨便於人，虔誠奉獻者方能得之。\n",
+                "凌虛道長説道：紅松和青柏都是煉製香火的好材料。\n",
+                "凌虛道長説道：制香材料是從林子裏砍伐而來。\n",
+                "凌虛道長説道：武當的松林和柏林都長了幾百年了，還沒有人走通過。\n",
+                "凌虛道長説道：砍樹的時候要多加小心，我派出砍樹的道士，有些就有去無回。\n",
         }) );
 
-        set("wanted", ({ HIR"紅鬆樹幹"NOR, HIG"青柏樹幹"NOR }));
+        set("wanted", ({ HIR"紅松樹幹"NOR, HIG"青柏樹幹"NOR }));
         */
         create_family("武當派", 4, "弟子");
 
@@ -114,31 +114,31 @@ void greeting(object me)
         {
                 me->set_temp("apply/short",
                         (query("id", {HIW"武當伐木　"NOR+query("name", me)+"("+capitalize(me))+")"}));
-                message_vision("凌虛道長盯住$N：我托你去找的"+query("wdjob/object", me)+"可有著落了？\n",me);
+                message_vision("凌虛道長盯住$N：我託你去找的"+query("wdjob/object", me)+"可有着落了？\n",me);
         }
         else
                 if ( myfam && myfam["family_name"] == "武當派" )
                 {
                         if( query("wudang/offerring", me)<query("age", me) )
-                                message_vision("凌虛道長對著$N怒斥道：你疏于敬奉，離被逐出山門不遠了！\n", me);
+                                message_vision("凌虛道長對着$N怒斥道：你疏於敬奉，離被逐出山門不遠了！\n", me);
                         else if( query("wudang/offerring", me)<
                                         query("age", me)*4/3 )
-                                message_vision("凌虛道長對著$N語重心長：凡我武當弟子，都應勤勉奉獻，"+RANK_D->query_respect(me)+ "要加強努力啊！\n",me);
+                                message_vision("凌虛道長對着$N語重心長：凡我武當弟子，都應勤勉奉獻，"+RANK_D->query_respect(me)+ "要加強努力啊！\n",me);
                         else if( query("wudang/offerring", me)<
                                         query("age", me)*2 )
-                                message_vision("凌虛道長對$N說道：" + RANK_D->query_respect(me) + "能盡職貢奉，眾道長對你很滿意。\n", me);
-                        else message_vision("凌虛道長指著$N讚嘆道：" + RANK_D->query_respect(me) + "勤于敬奉，真乃我輩楷模也！\n", me);
+                                message_vision("凌虛道長對$N説道：" + RANK_D->query_respect(me) + "能盡職貢奉，眾道長對你很滿意。\n", me);
+                        else message_vision("凌虛道長指着$N讚歎道：" + RANK_D->query_respect(me) + "勤於敬奉，真乃我輩楷模也！\n", me);
                 }
                 else if( query("title", me) == "武當道童" )
-                        message_vision("凌虛道長對著$N說道：繼續努力，爭取早日入我山門。\n", me);
+                        message_vision("凌虛道長對着$N説道：繼續努力，爭取早日入我山門。\n", me);
                 else if( query("wudang/offerring", me)>query("age", me)*2 )
-                        message_vision("凌虛道長對著$N問候道：原來是大香客到了！失迎、失迎！\n", me);
+                        message_vision("凌虛道長對着$N問候道：原來是大香客到了！失迎、失迎！\n", me);
                 else if( query("wudang/offerring", me)>query("age", me) )
-                        message_vision("凌虛道長對著$N問候道：這位香客請了！\n", me);
+                        message_vision("凌虛道長對着$N問候道：這位香客請了！\n", me);
                 else
                 {
                         set("wudang/yuzhen_block", 1, me);
-                        say("凌虛道長說道：如不是敬香，請勿上山！\n");
+                        say("凌虛道長説道：如不是敬香，請勿上山！\n");
                 }
 }
 
@@ -156,7 +156,7 @@ string ask_job()
                 if( query("wdjob/supervisor", ob) == "凌虛道長" )
                 {
                         add_action("do_say", "say");
-                        return("如果你幹不了我派給你的活，可以直接跟我說你幹不了。");
+                        return("如果你幹不了我派給你的活，可以直接跟我説你幹不了。");
                 }
                 return ("如果你幹不了，可以直接去告訴"+query("wdjob/supervisor", ob));
         }
@@ -171,7 +171,7 @@ string ask_job()
         set("wdjob/description", what, ob);
         set("wdjob/wage", 3, ob);
         set_temp(query("id", "apply/short", ({HIW"武當伐木　"NOR+query("name", ob)+"("+capitalize(ob))+")"}), ob);
-        message_vision("凌虛道長高興對$N說道：來得正好，這裡正缺人手！\n", ob);
+        message_vision("凌虛道長高興對$N説道：來得正好，這裏正缺人手！\n", ob);
         return ("我需要"+ what +CYN"造香用，你去給我砍些來吧！\n");
 }
 
@@ -187,13 +187,13 @@ int accept_kill(object obj)
         }
         else if( query("family/family_name", obj) == "武當派" )
         {
-                message_vision("$N想殺掉$n。\n$n厲聲對$N道：你我本同門，卻為何想相害于我！\n$n對$N很不滿意！\n", obj, ob);
+                message_vision("$N想殺掉$n。\n$n厲聲對$N道：你我本同門，卻為何想相害於我！\n$n對$N很不滿意！\n", obj, ob);
                 addn("wudang/offerring", -20, obj);
                 return 0;
         }
         else
         {
-                command("family 各位武當同門，" + obj->name() + "這個" + RANK_D->query_rude(obj) + "膽敢在武當撒野，大伙兒一起跟我上！");
+                command("family 各位武當同門，" + obj->name() + "這個" + RANK_D->query_rude(obj) + "膽敢在武當撒野，大夥兒一起跟我上！");
           return 1;
         }
 }
@@ -220,9 +220,9 @@ int accept_object(object who, object ob)
                 if( query("money_id", ob) )
                 {
                         if( (query("family/family_name", who)) == "武當派" )
-                                tell_object(who,"凌虛道長對你讚嘆道：武當山香火鼎盛，全靠象道"+((query("gender", who) == "女性")?"姑":"兄")+"你這樣捐獻香火啊！\n");
+                                tell_object(who,"凌虛道長對你讚歎道：武當山香火鼎盛，全靠象道"+((query("gender", who) == "女性")?"姑":"兄")+"你這樣捐獻香火啊！\n");
                         else
-                                tell_object(who, "凌虛道長對你讚嘆道：武當山香火鼎盛，全靠象您這樣的虔誠香客啊！\n");
+                                tell_object(who, "凌虛道長對你讚歎道：武當山香火鼎盛，全靠象您這樣的虔誠香客啊！\n");
 
                         return 1;
                 }
@@ -256,10 +256,10 @@ int accept_object(object who, object ob)
                 {
                         if ( query_temp("stock") > 10 )
                         {
-                                say("凌虛道長搖搖頭說：多謝這位" +RANK_D->query_respect(who)+"，可是我要的材料都已經有著落了。\n");
+                                say("凌虛道長搖搖頭説：多謝這位" +RANK_D->query_respect(who)+"，可是我要的材料都已經有着落了。\n");
                                 return 1;
                         }
-                        message_vision("凌虛道長高興對$N說道：來得正好，這正是我所需要的！\n", who);
+                        message_vision("凌虛道長高興對$N説道：來得正好，這正是我所需要的！\n", who);
                         add_temp("stock", 1);
                         addn("wudang/offerring", random(1), who);
                         i=query("wdjob/wage", who);
@@ -304,9 +304,9 @@ int do_say(string arg)
         if ( (string)arg != "幹不了") return 0;
         if( query("wdjob/supervisor", who) != query("name", ob))return 0;
 
-        message_vision("$N低聲說道：道長分派的活我幹不了…\n", who);
+        message_vision("$N低聲説道：道長分派的活我幹不了…\n", who);
         command("pat"+query("id", who));
-        command("say 沒關系，下次好好幹！");
+        command("say 沒關係，下次好好幹！");
 
         addn_temp("stock", -1, this_object());
         delete_temp("apply/short", who);

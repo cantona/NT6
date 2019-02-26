@@ -6,7 +6,7 @@ inherit SWORD;
 
 void create()
 {
-        set_name("風回雪舞劍", ({ "snowsword", "xue jian", "sword" }) );
+        set_name("風迴雪舞劍", ({ "snowsword", "xue jian", "sword" }) );
         set_weight(400);
         if( clonep() )
                 set_default_object(__FILE__);

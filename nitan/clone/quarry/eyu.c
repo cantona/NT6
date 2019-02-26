@@ -4,7 +4,7 @@ inherit QUARRY;
 void create()
 {
         set_name(NOR + CYN "鱷魚" NOR, ({ "e yu", "e", "yu" }));
-        set("long", CYN "這是一只體形龐大的鱷魚，相當的兇猛。\n" NOR);
+        set("long", CYN "這是一隻體形龐大的鱷魚，相當的兇猛。\n" NOR);
 
         set("age", 3);
         set("str", 35);

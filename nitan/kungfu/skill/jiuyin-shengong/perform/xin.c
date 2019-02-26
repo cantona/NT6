@@ -35,7 +35,7 @@ int perform(object me, object target)
                 return notify_fail("你現在的真氣不夠，難以施展" XIN "。\n");
 
         if (! living(target))
-                return notify_fail("對方都已經這樣了，用不著這麼費力吧？\n");
+                return notify_fail("對方都已經這樣了，用不着這麼費力吧？\n");
                             
         msg = HIM "\n$N" HIM "猛然間尖嘯一聲，施展出九陰神功中的「" HIR "攝心大法" HIM"」。"
               "只見$N" HIM "各種招式千奇百怪、變化多端，臉上喜怒哀樂，怪狀百出。\n" NOR;
@@ -45,7 +45,7 @@ int perform(object me, object target)
 
         if (ap / 2 + random(ap) > dp)
         {
-             msg += HIG "$n" HIG "登時覺得胸口苦悶之極，心神難以自制，喜怒哀樂竟全隨著$N" HIG
+             msg += HIG "$n" HIG "登時覺得胸口苦悶之極，心神難以自制，喜怒哀樂竟全隨着$N" HIG
                     "而變。頃刻之間，$n" HIG "頓覺精力不濟，頭暈目眩。\n" NOR; 
 
              me->start_busy(2 + random(4));
@@ -84,6 +84,6 @@ void remove_effs(object target)
 {
         if( !objectp(target) || !query_temp("eff/jiuyin-shengong/xin", target))return ;
         delete_temp("eff/jiuyin-shengong/xin", target);
-        tell_object(target, HIW "猛然間你氣血上沖，頭昏脹痛之感頓然消去，精力逐漸集中起來。\n" NOR);
+        tell_object(target, HIW "猛然間你氣血上衝，頭昏脹痛之感頓然消去，精力逐漸集中起來。\n" NOR);
         return;      
 }

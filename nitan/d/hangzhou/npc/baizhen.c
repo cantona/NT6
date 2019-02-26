@@ -7,8 +7,8 @@ inherit NPC;
 void create()
 {
         set_name("白振", ({ "bai zhen", "bai", "zhen"}) );
-        set("title", "御前侍衛");
-        set("nickname", HIY"金爪"HIB"鐵鉤"NOR);
+        set("title", "御前侍衞");
+        set("nickname", HIY"金爪"HIB"鐵鈎"NOR);
         set("gender", "男性");
         set("age", 64);
         set("long",

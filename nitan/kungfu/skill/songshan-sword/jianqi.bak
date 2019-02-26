@@ -111,7 +111,7 @@ void remove_effect1(object me, object weapon, int damage)
         addn("jianqi", 1, weapon);
         if( weapon && query("jianqi", weapon) >= (3+query("rigidity", weapon)) )
         {
-                message_combatd(HIW"\n只聽“嚓”的一聲，$N手中的$n"HIW"被內力沖擊，裂成了碎片！\n"NOR,me,weapon);
+                message_combatd(HIW"\n只聽“嚓”的一聲，$N手中的$n"HIW"被內力衝擊，裂成了碎片！\n"NOR,me,weapon);
                 weapon->unequip();
               seteuid(getuid());
               piece = new("/clone/misc/piece");

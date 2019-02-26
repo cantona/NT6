@@ -5,9 +5,9 @@ void create()
 {
         set("short", "墓地");
         set("long", @LONG
-這裡是桃花島島主夫人的墓地。墓地周圍種了一些矮矮的
+這裏是桃花島島主夫人的墓地。墓地周圍種了一些矮矮的
 花樹。樹上的白花星星點點。白花中間是塊石碑 (bei)，碑後
-是兩扇堅固的石門。墓地幹幹凈凈，顯然天天有人打掃。
+是兩扇堅固的石門。墓地乾乾淨淨，顯然天天有人打掃。
 LONG);
         set("outdoors", "taohua");
         set("exits", ([
@@ -16,7 +16,7 @@ LONG);
                 "north" : __DIR__"road1",
         ]));
         set("item_desc", ([
-                "bei": WHT "\n石碑上刻著：「" HIR "桃花島女主馮氏"
+                "bei": WHT "\n石碑上刻着：「" HIR "桃花島女主馮氏"
                        "埋香之墓" NOR + WHT "」\n" NOR
         ]) );
         set("no_clean_up", 0);

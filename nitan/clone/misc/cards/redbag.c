@@ -11,7 +11,7 @@ void create()
                 set_default_object(__FILE__);
         else {
                 set("unit", "個");
-                set("long", "一個裝著壓歲錢的紅包，鼓鼓囊囊地不知包著什麼好東西。\n\n    "HIR"過年好！！\n\n"NOR); 
+                set("long", "一個裝着壓歲錢的紅包，鼓鼓囊囊地不知包着什麼好東西。\n\n    "HIR"過年好！！\n\n"NOR); 
                 set("value", 0);
         }
 }

@@ -3,7 +3,7 @@ int permit_recruit(object ob)
         if( query("detach/中原苗家", ob) || query("betrayer/中原苗家", ob) )
         {
                 command("heng");
-                command("say 你反復無常，我不能收你為徒！");
+                command("say 你反覆無常，我不能收你為徒！");
                 return 0;
         }
 

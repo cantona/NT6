@@ -45,7 +45,7 @@ int perform(object me)
                 target->receive_wound("jing", damage/5, me);
                 msg += COMBAT_D->do_damage(me, target, UNARMED_ATTACK, damage, 60,
                                            HIR "$n" HIR "正自驚疑，不及閃避，登時被"
-                                           "拍個正著。頓感精神不濟，搖搖欲倒！\n" NOR);
+                                           "拍個正着。頓感精神不濟，搖搖欲倒！\n" NOR);
                 me->start_busy(1 + random(3));
         } else
         {

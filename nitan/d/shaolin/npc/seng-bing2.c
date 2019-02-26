@@ -76,7 +76,7 @@ void init()
                 if( query("guilty", ob) == 1 )
                 {
                         if ( random(2) ==1 )
-                        command("say 你這佛門敗類，哪裡逃！ 還不速到戒律院領罪！\n");
+                        command("say 你這佛門敗類，哪裏逃！ 還不速到戒律院領罪！\n");
                         me->set_leader(ob);
                         remove_call_out("fight_ob");
                         call_out("fight_ob", 1, ob); 

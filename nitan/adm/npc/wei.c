@@ -18,7 +18,7 @@ void create()
         set("long", 
 "這位少年將軍頭戴紅頂子，身穿黃馬褂，眉花眼笑，賊忒兮
 兮，左手輕搖羽扇，宛若諸葛之亮，右手倒拖大刀，儼然關
-雲之長，正乃韋公小寶是也。見你看著他，“哈哈哈”，仰
+雲之長，正乃韋公小寶是也。見你看着他，“哈哈哈”，仰
 天大笑三聲，學足了戲文中曹操的模樣，你頓時忍不住湊個
 趣，問一句：“將軍為何發笑？”\n");
         set("combat_exp", 50000);
@@ -54,12 +54,12 @@ void create()
             "小桂子"  : "別提這個名字了，我怕怕！\n",
             "阿珂"    : "她是我明媒正娶的大老婆！\n",
             "雙兒"    : "你認識她？大功告成，親個嘴兒！\n",
-            "曾柔"    : "我老婆你問那麼多幹嘛？皇上洪福齊天，我艷福齊天！\n",
-            "方怡"    : "我老婆你問那麼多幹嘛？皇上洪福齊天，我艷福齊天！\n",
-            "蘇荃"    : "我老婆你問那麼多幹嘛？皇上洪福齊天，我艷福齊天！\n",
-            "沐劍屏"  : "我老婆你問那麼多幹嘛？皇上洪福齊天，我艷福齊天！\n",
+            "曾柔"    : "我老婆你問那麼多幹嘛？皇上洪福齊天，我豔福齊天！\n",
+            "方怡"    : "我老婆你問那麼多幹嘛？皇上洪福齊天，我豔福齊天！\n",
+            "蘇荃"    : "我老婆你問那麼多幹嘛？皇上洪福齊天，我豔福齊天！\n",
+            "沐劍屏"  : "我老婆你問那麼多幹嘛？皇上洪福齊天，我豔福齊天！\n",
             "建寧公主": "這個騷娘皮，親厚不及雙兒、美貌不及阿珂、武功不
-及蘇荃、機巧不及方怡、天真純善不及沐劍屏、溫柔斯文不及曾柔，
+及蘇荃、機巧不及方怡、天真純善不及沐劍屏、温柔斯文不及曾柔，
 差有一日之長者，不過橫蠻潑辣而已！\n",
         ]) );
 
@@ -98,7 +98,7 @@ mixed accept_ask(object ob, string topic)
                 {
                         obs = 0;
                         message_vision(CYN "$N" CYN "憤聲暗罵，對$n"
-                                CYN "瞪著眼睛道：『叫" + topic + "的人滿大街都是，"
+                                CYN "瞪着眼睛道：『叫" + topic + "的人滿大街都是，"
                                 "自己不會找？』\n" NOR, this_object(), ob);
                         return 1;
                 } else
@@ -107,11 +107,11 @@ mixed accept_ask(object ob, string topic)
                         obs = 0;
                         set_temp("pending/ask_wei", topic, ob);
                         /*
-                        message_vision(CYN "$N" CYN "嘿嘿姦笑兩聲，對$n"
+                        message_vision(CYN "$N" CYN "嘿嘿奸笑兩聲，對$n"
                                 CYN "小聲道：『沒有問題，不過得要一兩黃"
                                 "金，不二價！』\n" NOR, this_object(), ob);
                         */
-                        tell_object(ob, CYN "韋小寶嘿嘿姦笑兩聲，對你"
+                        tell_object(ob, CYN "韋小寶嘿嘿奸笑兩聲，對你"
                                         CYN "小聲道：『沒有問題，不過得要一兩黃"
                                         "金，不二價！』\n" NOR);
                         return 1;
@@ -126,11 +126,11 @@ mixed accept_ask(object ob, string topic)
 
         set_temp("pending/ask_wei", topic, ob);
         /*
-        message_vision(CYN "$N" CYN "嘿嘿姦笑兩聲，對$n"
+        message_vision(CYN "$N" CYN "嘿嘿奸笑兩聲，對$n"
                        CYN "小聲道：“沒有問題，不過得要10兩"
                        "白銀，不二價！”\n" NOR, this_object(), ob);
         */
-        tell_object(ob, CYN "韋小寶嘿嘿姦笑兩聲，對你"
+        tell_object(ob, CYN "韋小寶嘿嘿奸笑兩聲，對你"
                         CYN "小聲道：“沒有問題，不過得要10兩"
                         "白銀，不二價！”\n" NOR);
         return 1;
@@ -153,7 +153,7 @@ int accept_object(object me, object ob)
                 {
                 case 0:
                         command("heihei");
-                        command("say 這種破爛你留著吧。");
+                        command("say 這種破爛你留着吧。");
                         set_temp("wei_refused", 1, me);
                         return 0;
 

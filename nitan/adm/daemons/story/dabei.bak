@@ -58,11 +58,11 @@ void start_fight(string result, object who)
         switch (result)
         {
         case "dabei":
-                msg = "聽說$N出手和長樂幫眾一起圍攻大悲老人。";
+                msg = "聽説$N出手和長樂幫眾一起圍攻大悲老人。";
                 break;
 
         case "mi":
-                msg = "聽說$N挺身而出，和大悲老人一同反擊長樂幫眾。";
+                msg = "聽説$N挺身而出，和大悲老人一同反擊長樂幫眾。";
                 break;
 
         default:
@@ -91,7 +91,7 @@ void stop_story(string result)
                 break;
         default:
                 CHANNEL_D->do_channel(this_object(), "rumor",
-                        "聽說長樂幫眾擊斃了白鯨島主大悲老人，又做下一場武林血案。");
+                        "聽説長樂幫眾擊斃了白鯨島主大悲老人，又做下一場武林血案。");
                 break;
         }
 

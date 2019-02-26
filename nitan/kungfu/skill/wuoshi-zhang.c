@@ -1,9 +1,9 @@
-// wenjia-quan 溫家拳 (npc 功夫)
+// wenjia-quan 温家拳 (npc 功夫)
 
 inherit SKILL;
 
 mapping *action = ({
-([     "action" : "$N一式「兔戲蒼鷹」，側身揮拳，帶著呼呼的風聲打向$n的$l",
+([     "action" : "$N一式「兔戲蒼鷹」，側身揮拳，帶着呼呼的風聲打向$n的$l",
        "force" : 180,
         "dodge" : 20,
         "parry" : 50,
@@ -44,7 +44,7 @@ int valid_enable(string usage) { return usage=="cuff" || usage=="parry"; }
 int valid_learn(object me)
 {
        if( query_temp("weapon", me) || query_temp("secondary_weapon", me) )
-               return notify_fail("溫家拳拳必須空手。\n");
+               return notify_fail("温家拳拳必須空手。\n");
       
        if( query("max_neili", me)<100 )
                return notify_fail("你的內力太弱，無法練功。\n");
@@ -73,7 +73,7 @@ int practice_skill(object me)
        if( query("jingli", me)<30 )
                return notify_fail("你的體力太低了。\n");
        if( query("neili", me)<20 )
-               return notify_fail("你的內力不夠練溫家拳。\n");
+               return notify_fail("你的內力不夠練温家拳。\n");
        me->receive_damage("jingli", 30);
        addn("neili", -10, me);
        return 1;

@@ -1,10 +1,10 @@
-// shiwei.c 帶刀侍衛
+// shiwei.c 帶刀侍衞
 
 inherit NPC;
 
 void create()
 {
-        set_name("侍衛", ({ "shi wei", "shi", "wei" }));
+        set_name("侍衞", ({ "shi wei", "shi", "wei" }));
         set("gender", "男性");
         set("age", random(20) + 30);
         set("str", 25);
@@ -45,7 +45,7 @@ void init()
         switch(random(10))
         {   
         case 1:
-        message_vision("\n侍衛忽然對$N大喝一聲：何方刁民，竟敢在此撒野！看刀！\n",this_player());
+        message_vision("\n侍衞忽然對$N大喝一聲：何方刁民，竟敢在此撒野！看刀！\n",this_player());
         remove_call_out("kill_ob");
         call_out("kill_ob", 1, ob);
         break;

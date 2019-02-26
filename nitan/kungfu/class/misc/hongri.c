@@ -7,7 +7,7 @@ inherit "/inherit/char/punisher";
 void create()
 {
         set_name("紅日法王", ({ "hongri fawang", "fawang" }));
-        set("long",  "他看上去是一個藏僧，胸前繡著一個大大的太陽。\n");
+        set("long",  "他看上去是一個藏僧，胸前繡着一個大大的太陽。\n");
         set("gender", "男性");
         set("age", 62);
         set("attitude", "peaceful");

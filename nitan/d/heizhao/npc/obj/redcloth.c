@@ -10,7 +10,7 @@ void create()
                 set_default_object(__FILE__);
         else {
                 set("long", 
-"這是一塊紅布，上面寫著一行字道：“把此布交給漁翁。
+"這是一塊紅布，上面寫着一行字道：“把此布交給漁翁。
 上山之後將黃色布囊交給小沙彌。”\n");
                 set("unit", "塊");
                 set("value", 1);

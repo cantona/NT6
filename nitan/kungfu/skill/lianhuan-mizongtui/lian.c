@@ -42,7 +42,7 @@ int perform(object me, object target)
                 return notify_fail("你現在真氣太弱，難以施展" LIAN "。\n");
 
         if (! living(target))
-                return notify_fail("對方都已經這樣了，用不著這麼費力吧？\n");
+                return notify_fail("對方都已經這樣了，用不着這麼費力吧？\n");
 
         msg = HIW "陡見$N" HIW "全身飛速旋轉，雙腿忽前忽後，接連貫出數腿，流星般疾射$n"
               HIW "胸口。\n" NOR;
@@ -59,7 +59,7 @@ int perform(object me, object target)
         } else
         {
                 msg += HIC "可是$n" HIC "凝神頓氣，奮力抵擋，絲"
-                       "毫不受腿影的幹擾，。\n" NOR;
+                       "毫不受腿影的干擾，。\n" NOR;
                 count = 0;
         }
         message_combatd(msg, me, target);

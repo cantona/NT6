@@ -22,7 +22,7 @@ void show_msg(object me)
         if( ((n=query("qi", me)) <= 5) || (sk<40) || (random(10)>(sk-35)) )
         {
                 if(n>25) n=25;
-                message_vision("$N一個沒站穩，倒栽沖摔了下去。\n", me);
+                message_vision("$N一個沒站穩，倒栽衝摔了下去。\n", me);
                 me->receive_damage("qi",n);
                 me->move(__DIR__"lianwu");
                 tell_room(environment(me), me->name()+"摔了下來。\n", ({me}));

@@ -1,4 +1,4 @@
-// 神話世界﹒西遊記﹒版本４．５０
+// 神話世界·西遊記·版本４．５０
 /* <SecCrypt CPL V3R05> */
  
 // hulu.c 
@@ -13,7 +13,7 @@ void create()
    if (clonep())
      set_default_object(__FILE__);
    else {
-     set("long", "一個用葫蘆制成的水壺。\n");
+     set("long", "一個用葫蘆製成的水壺。\n");
      set("unit", "個");
      set("value", 100);
      set("max_liquid", 10);

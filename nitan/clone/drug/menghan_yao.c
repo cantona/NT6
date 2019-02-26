@@ -42,7 +42,7 @@ int do_pour(string arg)
         if( !ob )
                 return notify_fail("你身上沒有" + what + "這樣東西。\n");
         if( !query("liquid/remaining", ob) )
-                return notify_fail(ob->name() + "裡什麼也沒有，先裝些酒水才能溶化藥粉\n");
+                return notify_fail(ob->name() + "裏什麼也沒有，先裝些酒水才能溶化藥粉\n");
         f = (: call_other, __FILE__, "drink_drug" :);
         set("liquid/drink_func", bind(f,ob), ob);
         addn("liquid/slumber_effect", 100, ob);

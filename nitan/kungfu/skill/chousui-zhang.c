@@ -10,7 +10,7 @@ mapping *action = ({
         "lvl"   : 0,
         "skill_name" : "抽髓掌"
 ]),
-([        "action": ""BLU"$N突然身形旋轉起來撲向$n，雙掌飛舞著拍向$n的$l"NOR"",
+([        "action": ""BLU"$N突然身形旋轉起來撲向$n，雙掌飛舞着拍向$n的$l"NOR"",
         "lvl"   : 10,
         "skill_name" : "抽髓掌"
 ]),
@@ -18,7 +18,7 @@ mapping *action = ({
         "lvl"   : 20,
         "skill_name" : "抽髓掌"
 ]),
-([        "action": ""BLU"$N雙掌挾著一股腥臭之氣拍向$n的$l"NOR"",
+([        "action": ""BLU"$N雙掌挾着一股腥臭之氣拍向$n的$l"NOR"",
         "lvl"   : 30,
         "skill_name" : "抽髓掌"
 ]),
@@ -78,7 +78,7 @@ mixed hit_ob(object me, object victim, int damage_bonus)
                                  "id":query("id", me),
                                  "duration" : lvl / 50 + random(lvl / 10) ])))
         {
-                // 以下是抽髓掌的 perform sandu 中的散毒功能轉到這裡。
+                // 以下是抽髓掌的 perform sandu 中的散毒功能轉到這裏。
                 if (me->query_skill("poison", 1) < 101)
                         set("body_poison", me->query_skill("poison",1)+1, me);
                 if (me->query_skill("poison", 1) > 100)
@@ -112,13 +112,13 @@ mapping query_action(object me, object weapon)
                 {
                         addn("neili", -100, me);
                         return ([
-                                "action": BLU "$N神色慘淡，伸手打開發髻，長發下垂，覆在臉上，跟著力咬舌尖，" HIR "一口鮮"
-                                "血向火燄中噴去。\n那火燄忽地一暗，" HIW "隨即大為明亮，$N猛地身子急旋，如陀"
-                                "螺般連轉了十多個圈子，\n" HIR "大袖拂動，整個火燄堆陡地撥起，便如一座火牆般向$n壓過去" NOR,
+                                "action": BLU "$N神色慘淡，伸手打開發髻，長髮下垂，覆在臉上，跟着力咬舌尖，" HIR "一口鮮"
+                                "血向火焰中噴去。\n那火焰忽地一暗，" HIW "隨即大為明亮，$N猛地身子急旋，如陀"
+                                "螺般連轉了十多個圈子，\n" HIR "大袖拂動，整個火焰堆陡地撥起，便如一座火牆般向$n壓過去" NOR,
                                 "force" : 450,
                                 "dodge" : -100,
                                 "parry" : -100,
-                                "weapon": "火燄",
+                                "weapon": "火焰",
                                 "damage_type": "燒傷"]);
                 }
                 if (random(me->query_skill("strike")) > 215 &&
@@ -127,7 +127,7 @@ mapping query_action(object me, object weapon)
                         addn("neili", -75, me);
                         return ([
                                 "action": HIG "$N厲聲大喝，掌力加盛，綠火突然化作一個"
-                                          HIR "鬥大的火球，向$n疾沖過來。\n使力極猛，去勢奇快，"
+                                          HIR "斗大的火球，向$n疾衝過來。\n使力極猛，去勢奇快，"
                                           HIG "只見一碧綠的火球在空中骨碌碌的迅速轉動" NOR,
                                 "force" : 420,
                                 "dodge" : -90,
@@ -140,7 +140,7 @@ mapping query_action(object me, object weapon)
                 {
                         addn("neili", -50, me);
                         return ([
-                                "action": HIR "$N衣袖一拂，一股勁氣直射入火燄之中，"+HIG+"火燄中又分出一道細細的綠火，便如一根水線般，\n"
+                                "action": HIR "$N衣袖一拂，一股勁氣直射入火焰之中，"+HIG+"火焰中又分出一道細細的綠火，便如一根水線般，\n"
                                           HIW "$N衣袖揮動，兩股勁風分襲$n左右" NOR,
                                 "force" : 400,
                                 "dodge" : -80,
@@ -153,8 +153,8 @@ mapping query_action(object me, object weapon)
                 {
                         addn("neili", -20, me);
                         return ([
-                                "action": HIR "$N隨即左掌斜拍出一道"+HIG+"綠火"+HIR+"向$n射去，聲勢洶洶，"+HIG+"便似一條綠色長蛇橫臥空際，輕輕擺動，\n"
-                                          HIR "顏色又是鮮艷，"+BLU+"又是詭異，光芒閃爍不定"+HIG+"照映得$n頭臉皆碧"NOR,
+                                "action": HIR "$N隨即左掌斜拍出一道"+HIG+"綠火"+HIR+"向$n射去，聲勢洶洶，"+HIG+"便似一條綠色長蛇橫卧空際，輕輕擺動，\n"
+                                          HIR "顏色又是鮮豔，"+BLU+"又是詭異，光芒閃爍不定"+HIG+"照映得$n頭臉皆碧"NOR,
                                 "force" : 400,
                                 "dodge" : -80,
                                 "parry" : -80,
@@ -166,7 +166,7 @@ mapping query_action(object me, object weapon)
                         query("neili", me)>400){
                         addn("neili", -10, me);
                         return ([
-                                "action": HIR "$N突然間雙眉往上一豎，右手食指點兩點，火燄堆中嗤嗤兩聲輕響，"+HIG+"爆出幾朵火花，猶如流星一般，\n"
+                                "action": HIR "$N突然間雙眉往上一豎，右手食指點兩點，火焰堆中嗤嗤兩聲輕響，"+HIG+"爆出幾朵火花，猶如流星一般，\n"
                                           "在$N內力摧迫下，分從左右襲向$n，來勢迅速之極" NOR,
                                 "force" : 400,
                                 "dodge" : -80,

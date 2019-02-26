@@ -39,10 +39,10 @@ int do_catch(string arg)
 
         if (me->is_busy()
          || query_temp("pending/exercising", me) )
-                return notify_fail("你現在正忙著呢。\n");
+                return notify_fail("你現在正忙着呢。\n");
 
         if(me->is_fighting())
-                return notify_fail("先解決眼前的敵人再說吧。\n");
+                return notify_fail("先解決眼前的敵人再説吧。\n");
 
         if ( !arg )
                 return notify_fail("你要捕捉什麼？\n" );
@@ -92,7 +92,7 @@ int do_free(string arg)
                 return notify_fail("你想把什麼放出竹簍？\n");
 
         if( me->is_busy() )
-                return notify_fail("你正忙著呢。\n");
+                return notify_fail("你正忙着呢。\n");
 
         if( query("keeper", obj) != query("id", me) )
                 return notify_fail("這不是你的竹簍，還是別亂動的好。\n");
@@ -104,20 +104,20 @@ int do_free(string arg)
 
                 inv = all_inventory(obj);
                 if( !sizeof(inv) )
-                        return notify_fail("那裡面沒有任何東西。\n");
+                        return notify_fail("那裏面沒有任何東西。\n");
 
                 for(i=0; i<sizeof(inv); i++) {
                         if( query("race", inv[i]) != "蛇類")continue;
                         inv[i]->move(environment(me));
                         message_vision("$N將一條$n放出竹簍。\n"NOR, me, inv[i]);
                 }
-                write("竹簍裡的蛇全被放出來了。\n");
+                write("竹簍裏的蛇全被放出來了。\n");
                 return 1;
 
         }
 
         if( !objectp(snake = present(arg, obj)) )
-                return notify_fail("竹簍裡沒有這個生物。\n");
+                return notify_fail("竹簍裏沒有這個生物。\n");
 
         if( !snake->is_character() || snake->is_corpse() )
                 return notify_fail("那並不是活物，直接用拿的就可以了。\n");

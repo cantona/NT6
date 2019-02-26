@@ -35,7 +35,7 @@ int do_yun(string arg)
         obj=this_object();
         if (arg == "roar" )
         {
-                message_vision(CYN "\n殷素素喝道：賊子，要想行兇麼？在這裡恐怕由不得你！\n" NOR,
+                message_vision(CYN "\n殷素素喝道：賊子，要想行兇麼？在這裏恐怕由不得你！\n" NOR,
                                    obj);
                 return 1;
         }
@@ -57,13 +57,13 @@ int accept_hit(object who)
 
 int accept_kill(object who)
 {
-        command("say 怎麼，要行兇麼？在這裡恐怕由不得你！");
+        command("say 怎麼，要行兇麼？在這裏恐怕由不得你！");
         return 1;
 }
 
 int accept_ansuan(object who)
 {
-        return notify_fail("你剛想暗算，可是只見會場裡黑壓壓的擠滿了人，根本看不清楚。\n");
+        return notify_fail("你剛想暗算，可是隻見會場裏黑壓壓的擠滿了人，根本看不清楚。\n");
 }
 
 void receive_damage(string type, int n)

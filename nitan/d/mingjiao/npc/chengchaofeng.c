@@ -13,7 +13,7 @@ void create()
         set_name("程嘲風", ({ "cheng chaofeng", "cheng", "chaofeng", }));
         set("long",
         "他是一位身寬體胖的老者，身穿一件白布長袍。\n"
-        "他正笑嘻嘻地看著你，好象對你頗有好感。\n"
+        "他正笑嘻嘻地看着你，好像對你頗有好感。\n"
         );
 
             set("title",HIG "明教" HIC "青龍壇" NOR "壇主");

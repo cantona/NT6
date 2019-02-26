@@ -15,7 +15,7 @@ void create()
         set("class", "swordsman");
         set("title", "華山劍宗第十三代弟子");
         set("age", 41);
-        set("long", "一個白凈面皮的矮子，眼神卻異常銳利。\n");
+        set("long", "一個白淨面皮的矮子，眼神卻異常鋭利。\n");
         set("attitude", "peaceful");
         set("str", 26);
         set("int", 24);
@@ -70,7 +70,7 @@ void create()
         create_family("華山劍宗", 13, "弟子");
 
         set("inquiry", ([
-                "岳不群"         : "哼，手下敗將還敢自稱什麼君子劍！\n",
+                "嶽不羣"         : "哼，手下敗將還敢自稱什麼君子劍！\n",
                 "奪命連環三仙劍" : "如果你想學的話可以找我封師哥。\n",
                 "劍宗"           : "我就是華山劍宗傳人！\n",
                 "狂風快劍"       : (: learn_kuangfeng :),
@@ -104,7 +104,7 @@ void greeting(object ob)
 {
         if (!ob) return;
         if( !ob->query_family() || query("family/master_id", ob) != "yuebuqun" )
-              say ("成不憂說：這位" + RANK_D->query_respect(ob) + "，來投我劍宗吧。\n");
+              say ("成不憂説：這位" + RANK_D->query_respect(ob) + "，來投我劍宗吧。\n");
         else
         {
               message_vision("成不憂一見$N就大怒：我最討厭偽君子的徒弟了。\n", ob);

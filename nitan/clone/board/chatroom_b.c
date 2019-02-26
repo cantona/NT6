@@ -5,7 +5,7 @@ inherit BULLETIN_BOARD;
 void create()
 {
         set_name("聊天室留言板", ({ "board" }));
-        set("long", "大家都來灌灌水，一起說廢話。\n" );
+        set("long", "大家都來灌灌水，一起説廢話。\n" );
         set("capacity", 100);
         // not setup now
         // I will call setup after set from me

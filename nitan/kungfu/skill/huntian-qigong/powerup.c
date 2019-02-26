@@ -24,7 +24,7 @@ int exert(object me, object target)
         me->receive_damage("qi", 0);
 
         message_combatd(
-                HIR "$N微一凝神，運起混天氣功，全身骨節發出一陣爆豆般的聲響□\n" NOR, me);
+                HIR "$N微一凝神，運起混天氣功，全身骨節發出一陣爆豆般的聲響ⅵ\n" NOR, me);
 
         addn_temp("apply/attack", skill*2/5, me);
         set_temp("powerup", 1, me);

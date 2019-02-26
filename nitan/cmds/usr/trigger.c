@@ -109,23 +109,23 @@ int main(object me, string arg)
                         return notify_fail(HIY"你並沒有關閉觸發功能，不需要再開啟。\n"NOR);
 
                 if( query("doing", me) )
-                        return notify_fail("你現在正在忙于鍛煉，不能開展新觸發。\n");
+                        return notify_fail("你現在正在忙於鍛鍊，不能開展新觸發。\n");
 
                 env = environment(me);
                 if( !env )
                         return notify_fail("你現在什麼都做不了。\n");
 
                 if( env->is_chat_room() )
-                        return notify_fail("你不能在聊天室裡面執行計劃。\n");
+                        return notify_fail("你不能在聊天室裏面執行計劃。\n");
 
                 if( query("combat_exp", me)<5000 )
-                        return notify_fail("你的實戰經驗太淺薄，還是先好好鍛煉鍛煉再說吧。\n");
+                        return notify_fail("你的實戰經驗太淺薄，還是先好好鍛鍊鍛鍊再説吧。\n");
 
                 if( query("potential", me)-query("learned_points", me)<100 )
                         return notify_fail("你的潛能太少，難以開展觸發。\n");
 
                 if( sizeof(filter_array(all_inventory(env), (: userp :))) > 12 )
-                        return notify_fail("這裡的人實在太多了，你難以靜心開展觸發。\n");
+                        return notify_fail("這裏的人實在太多了，你難以靜心開展觸發。\n");
 
                 addn("learned_points", 100, me);
 
@@ -289,7 +289,7 @@ int help (object me)
       當然也同離線計劃練功一樣也是支持 alias 簡化指令的。
 [二]：查看設置的所有觸發：trigger
 [三]：刪除一條觸發：trigger rm 數字
-      說明：這個數字就是你要刪除的那條觸發的位置，可以通過查看你要刪
+      説明：這個數字就是你要刪除的那條觸發的位置，可以通過查看你要刪
       除的那條觸發的位置。
 [四]：刪除所有觸發：trigger clear
 [五]：關閉觸發：halt

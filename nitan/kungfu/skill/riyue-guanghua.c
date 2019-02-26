@@ -24,7 +24,7 @@ int valid_learn(object me)
         if( !query("special_skill/ghost", me)){
     if( query("gender", me) == "男性" && 
          (int)me->query_skill("riyue-guanghua", 1) > 49 )
-            return notify_fail("你六根未凈，難以領會更高深的「日月光華」。\n");
+            return notify_fail("你六根未淨，難以領會更高深的「日月光華」。\n");
 
     if( query("gender", me) == "女性" )
             return notify_fail("你無法領會「日月光華」這門絕學。\n");
@@ -37,7 +37,7 @@ int valid_learn(object me)
             return notify_fail("你已學了吸星大法，不能修煉日月光華。\n");
 
     if( query("dex", me)<25 )
-            return notify_fail("你的身手不夠靈活，無法領會日月光華的秘要。\n");
+            return notify_fail("你的身手不夠靈活，無法領會日月光華的祕要。\n");
 
     if ((int)me->query_skill("riyue-xinfa", 1) < 100)
             return notify_fail("你的日月心法火候還不夠，難以領會日月光華。\n");

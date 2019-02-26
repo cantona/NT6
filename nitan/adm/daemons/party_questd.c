@@ -16,7 +16,7 @@ inherit F_DBASE;
 #include <npc/indian.c>
 
 #define MIN_IDLE        30              // 殺手任務最小時間間隔
-#define MAX_MOVED       5               // NPC隨機走動的范圍
+#define MAX_MOVED       5               // NPC隨機走動的範圍
 #define WAIT_TIME       600             // 任務保留時間
 #define HEARTBEAT       10              // 任務系統心跳
 #define QUEST_NUM       5               // 每個任務列表的任務數量
@@ -47,26 +47,26 @@ string *need_send_msg = ({
         "注意一下段氏皇族弟子的舉動！",
         "注意一下慕容世家的舉動！",
         "注意一下關外胡家的舉動！",
-        "刺探一下胡不歸最近在哪裡。",
+        "刺探一下胡不歸最近在哪裏。",
         "注意一下桃花島弟子的舉動！",
-        "白道聯盟的行動近日有點神秘，你好好觀察。",
+        "白道聯盟的行動近日有點神祕，你好好觀察。",
 });
 
 string *bad_msg1 = ({
         "name老是跟我們黑道作對，",
         "早就想宰掉name這個偽君子了，",
-        "早就看name這個家伙不順眼，",
+        "早就看name這個傢伙不順眼，",
         "name上次殺了我們一個黑道兄弟逃匿至今，",
         "name雙手沾滿了我們黑道兄弟的鮮血，",
-        "自從name出賣了我們兄弟，一直躲著不露面，",
+        "自從name出賣了我們兄弟，一直躲着不露面，",
         "name違背道上的規矩，",
-        "聽說過name出賣兄弟的事情吧？",
+        "聽説過name出賣兄弟的事情吧？",
         "記得去年name投奔白道的事情吧？",
         "name這個所謂正人君子殺害了我們很多弟兄，",
         "最近黑白道紛爭又起，總盟主決定借name的人頭來立威，",
         "最近黑道勢力疲軟，得借name的人頭來鼓舞下士氣，",
         "近來name對我們黑道總盟主出言不遜，",
-        "name昨日竟然揚言要鏟平我們黑道總舵，",
+        "name昨日竟然揚言要剷平我們黑道總舵，",
         "name這個小子所作所為丟盡了我們黑道的臉，",
         "總舵主的小老婆給name勾搭走了，",
 });
@@ -78,15 +78,15 @@ string *bad_msg2 = ({
         "昨晚他曾在place的一家客店出現，",
         "今日清晨他從place北門混入城中，",
         "昨晚他就到達了place，可能還未溜走，",
-        "place的一家客店最近來了一個神秘人物，",
+        "place的一家客店最近來了一個神祕人物，",
         "有人喬裝打扮出現在place，",
         "place來了個陌生人舉止詭異，",
-        "place又有弟兄給這個家伙欺負了，",
-        "place黑道兄弟說前不久遇到一個家伙很象他，",
+        "place又有弟兄給這個傢伙欺負了，",
+        "place黑道兄弟説前不久遇到一個傢伙很象他，",
         "他最近很可能在place一帶，",
         "他可能正前往place一帶，",
-        "他有一個好友在place，可能他會去躲他朋友那裡，",
-        "place有他一處秘密窩點，不知道他是否潛伏在那裡，",
+        "他有一個好友在place，可能他會去躲他朋友那裏，",
+        "place有他一處祕密窩點，不知道他是否潛伏在那裏，",
         "幾乎所有地方都搜索過了，只剩下place還沒全部搜索，",
 });
 
@@ -103,19 +103,19 @@ string *bad_msg3 = ({
 
 string *good_msg1 = ({
         "name作惡多端，",
-        "早就想鏟除name這個惡賊了，",
+        "早就想剷除name這個惡賊了，",
         "對name這惡魔我們白道人士過去太放縱了點，",
         "name上次殺了我們一個同道逃匿至今，",
         "name雙手沾滿了我們正道人士的鮮血，",
-        "自從name出賣了他的兄弟，一直躲著不露面，",
-        "name違背我們正派人士的行事準則，",
-        "聽說過name出賣兄弟的事情吧？",
+        "自從name出賣了他的兄弟，一直躲着不露面，",
+        "name違揹我們正派人士的行事準則，",
+        "聽説過name出賣兄弟的事情吧？",
         "記得去年name投奔魔教的事情吧？",
         "name這個色狼為禍江湖已久，",
         "最近黑白道紛爭又起，不取了name的人頭不足以弘揚正氣，",
         "最近我們正派人士連連給黑道欺壓，name的人頭正好用來鼓舞士氣，",
         "近來name對我們正派出言不遜，",
-        "name昨日竟然揚言要鏟平我們白道總部，",
+        "name昨日竟然揚言要剷平我們白道總部，",
         "name這個小子所作所為丟盡了我們正派人士的臉，",
         "name吃喝嫖賭，無惡不作，",
 });
@@ -130,17 +130,17 @@ string *good_msg2 = ({
         "place的一家客店最近來了一個陌生人，",
         "有人喬裝打扮出現在place，",
         "place來了個陌生人舉止詭異，",
-        "place又有弟兄給這個家伙欺負了，",
-        "place有兄弟說前不久遇到一個家伙很象他，",
+        "place又有弟兄給這個傢伙欺負了，",
+        "place有兄弟説前不久遇到一個傢伙很象他，",
         "他最近很可能在place一帶，",
         "他可能正前往place一帶，",
-        "他有一個小妾在place，可能他會躲在那裡，",
-        "place有他一處秘密窩點，不知道他是否潛伏在那裡，",
+        "他有一個小妾在place，可能他會躲在那裏，",
+        "place有他一處祕密窩點，不知道他是否潛伏在那裏，",
         "幾乎所有地方都搜索過了，只剩下place還沒全部搜索，",
 });
 
 string *good_msg3 = ({
-        "弟兄們趕快去把他鏟除了。",
+        "弟兄們趕快去把他剷除了。",
         "弟兄們去看看，發現他就不要手下留情。",
         "不要讓他再為禍江湖了。",
         "總算有線索送他上西天了。",
@@ -1052,7 +1052,7 @@ varargs mixed query_zhuisha_quest(string type, string bh)
         return 0;
 }
 
-// 用于產生幫派特定任務，該任務是以幫派通知的形式發送給玩家
+// 用於產生幫派特定任務，該任務是以幫派通知的形式發送給玩家
 // 特殊任務分為兩種
 // 第一種，只發送給一個玩家，只能該玩家去完成
 // 第二種，發送給所有的玩家，誰搶先完成誰得到獎勵
@@ -1208,10 +1208,10 @@ void start_quest()
                 if (sizeof(all_user))
                         for (i = 0;i < sizeof(all_user);i++)
                         {
-                                tell_object(all_user[i],HIB"迎面急步過來一位□"+query("bunch/bunch_name", all_user[i])+
-                                            "□兄弟朝你急急忙忙地說：“黑道同盟發下追殺令了！\n" NOR +
+                                tell_object(all_user[i],HIB"迎面急步過來一位〖"+query("bunch/bunch_name", all_user[i])+
+                                            "〗兄弟朝你急急忙忙地説：“黑道同盟發下追殺令了！\n" NOR +
                                             bunch_quest["msg"] + "”\n");
-                                tell_object(all_user[i], "說完又是一抱拳道：“兄弟還有要務在身，先行告辭！\n");
+                                tell_object(all_user[i], "説完又是一抱拳道：“兄弟還有要務在身，先行告辭！\n");
                         }
                 else destruct(ob);
         }
@@ -1224,11 +1224,11 @@ void start_quest()
                 if (sizeof(all_user))
                         for (i = 0;i < sizeof(all_user);i++)
                         {
-                                tell_object(all_user[i],HIW"迎面奔來一位□"+query("bunch/bunch_name", all_user[i])+
-                                            "□弟兄朝你猛招手並擦著滿臉的汗水悄聲道：“白道聯盟"+
+                                tell_object(all_user[i],HIW"迎面奔來一位〖"+query("bunch/bunch_name", all_user[i])+
+                                            "〗弟兄朝你猛招手並擦着滿臉的汗水悄聲道：“白道聯盟"+
                                             "發下通緝令啦！\n"NOR+
                                             bunch_quest["msg"] + "”\n");
-                                tell_object(all_user[i],"說完又是一抱拳道：“在下還有要務在身，先行告辭！\n");
+                                tell_object(all_user[i],"説完又是一抱拳道：“在下還有要務在身，先行告辭！\n");
                         }
                 else destruct(ob);
         }
@@ -1456,7 +1456,7 @@ string bad_zhuisha_msg(string name,string place,string difficult)
         msg2 = search_msg[random(sizeof(search_msg))];
         msg3 = replace_string(bad_msg2[random(sizeof(bad_msg2))],"place",place);
         msg4 = bad_msg3[random(sizeof(bad_msg3))];
-        msg5 = "這個任務難度據其他兄弟說是" + difficult + "，這是你立功的機會啊！";
+        msg5 = "這個任務難度據其他兄弟説是" + difficult + "，這是你立功的機會啊！";
         return msg1 + msg2 + "\n" + msg3 + msg4 + "\n" + msg5;
 }
 
@@ -1467,7 +1467,7 @@ string good_zhuisha_msg(string name,string place,string difficult)
         msg2 = search_msg[random(sizeof(search_msg))];
         msg3 = replace_string(good_msg2[random(sizeof(good_msg2))],"place",place);
         msg4 = good_msg3[random(sizeof(good_msg3))];
-        msg5 = "這個任務難度據其他同道說是" + difficult + "，你自己看著辦！";
+        msg5 = "這個任務難度據其他同道説是" + difficult + "，你自己看着辦！";
         return msg1 + msg2 + "\n" + msg3 + msg4 + "\n" + msg5;
 }
 
@@ -1564,10 +1564,10 @@ void check_city_quest()
                 if (sizeof(bunch_quest))
                         for (j=0;j<sizeof(bunch_quest);j++)
                                 if (time() - bunch_quest[j]["time"] > WAIT_TIME ||
-                                    (bunch_quest[j]["type"] == "鏟除外敵" && !objectp(bunch_quest[j]["ob"])) ||
+                                    (bunch_quest[j]["type"] == "剷除外敵" && !objectp(bunch_quest[j]["ob"])) ||
                                     (bunch_quest[j]["type"] == "調解糾紛" && !objectp(bunch_quest[j]["ob"])))
                                 {
-                                        if ((bunch_quest[j]["type"] == "鏟除外敵" || bunch_quest[j]["type"] == "調解糾紛") &&
+                                        if ((bunch_quest[j]["type"] == "剷除外敵" || bunch_quest[j]["type"] == "調解糾紛") &&
                                             objectp(bunch_quest[j]["ob"]))
                                                 bunch_quest[j]["ob"]->destruct_me();
                                         bunch_quest[j]=0;
@@ -1729,14 +1729,14 @@ varargs mixed create_quest(string the_city,string bunch_type,object player)
 
                                 new_quest = ([]);
 
-                                new_quest["type"]="鏟除外敵";
+                                new_quest["type"]="剷除外敵";
                                 new_quest["ob"]=npc;
                                 new_quest["time"]=time();
                                 new_quest["bunch_type"]="good";
                                 new_quest["num"]=get_bianhao(the_city);
                                 new_quest["id"]=the_city+(string)new_quest["num"];
                                 new_quest["bonus"]=query("bonus", npc);
-                                new_quest["name"]="鏟除來我們" + city[the_city] +
+                                new_quest["name"]="剷除來我們" + city[the_city] +
                                                   "作惡的" + npc->name();
                                 new_quest["place"]=query("place", npc);
                                 new_quest["difficult"]=check_difficult(query("lvl", npc));
@@ -1744,7 +1744,7 @@ varargs mixed create_quest(string the_city,string bunch_type,object player)
                                 new_quest["msg"]=npc->name() + "危害江湖日久，今日來到了我們" +
                                                  city[the_city] + "地界，不知道意圖何為。\n想來不是" +
                                                  "來幹什麼好事的，根據最新消息他在" + new_quest["place"] +
-                                                 "附近出現。\n找到他，把他給鏟除了！";
+                                                 "附近出現。\n找到他，把他給剷除了！";
                                 return new_quest;
                                 break;
                         case 2:
@@ -1864,12 +1864,12 @@ varargs mixed create_quest(string the_city,string bunch_type,object player)
                                         jiufen_npc = new(CLASS_D("generate") + "/jiufen_npc");
                                         NPC_D->generate_cn_name(jiufen_npc);
                                         jiufen_npc->move(env);
-                                        message_vision("$N走了過來，看見$n，又喜又怒：原來你躲在這裡啊！\n",jiufen_npc,npc);
+                                        message_vision("$N走了過來，看見$n，又喜又怒：原來你躲在這裏啊！\n",jiufen_npc,npc);
                                         jiufen_npc->set_leader(npc);
                                         jiufen_npc->set_jiufen_object(npc);
                                         jiufen_npc->set_quest_ob(new_quest["obj_name"]);
                                         jiufen_npc->set("inquiry/糾紛","TNND,"+npc->name()+
-                                                    "去年從我這裡拿走了" + new_quest["obj_name"] +
+                                                    "去年從我這裏拿走了" + new_quest["obj_name"] +
                                                     "到現在還沒有還給我！");
                                         new_quest["ob"]=jiufen_npc;
                                         new_quest["name"]="幫" + room->short() + "的" + npc->name() +
@@ -1966,15 +1966,15 @@ varargs mixed create_quest(string the_city,string bunch_type,object player)
 
                                 new_quest = ([]);
 
-                                new_quest["type"]="鏟除外敵";
+                                new_quest["type"]="剷除外敵";
                                 new_quest["ob"]=npc;
                                 new_quest["time"]=time();
                                 new_quest["bunch_type"]="bad";
                                 new_quest["num"]=get_bianhao(the_city);
                                 new_quest["id"]=the_city+(string)new_quest["num"];
                                 new_quest["bonus"]=query("bonus", npc);
-                                new_quest["name"]="鏟除來我們" + city[the_city] +
-                                                  "挑舋的" + npc->name();
+                                new_quest["name"]="剷除來我們" + city[the_city] +
+                                                  "挑釁的" + npc->name();
                                 new_quest["place"]=query("place", npc);
                                 new_quest["difficult"]=check_difficult(query("lvl", npc));
                                 new_quest["reward"]=check_reward(query("lvl", npc));
@@ -2082,12 +2082,12 @@ varargs mixed create_quest(string the_city,string bunch_type,object player)
                                         jiufen_npc = new(CLASS_D("generate") + "/jiufen_npc");
                                         NPC_D->generate_cn_name(jiufen_npc);
                                         jiufen_npc->move(env);
-                                        message_vision("$N走了過來，看見$n，又喜又怒：原來你躲在這裡啊！\n",jiufen_npc,npc);
+                                        message_vision("$N走了過來，看見$n，又喜又怒：原來你躲在這裏啊！\n",jiufen_npc,npc);
                                         jiufen_npc->set_leader(npc);
                                         jiufen_npc->set_jiufen_object(npc);
                                         jiufen_npc->set_quest_ob(new_quest["obj_name"]);
                                         jiufen_npc->set("inquiry/糾紛","氣死我了,"+npc->name()+
-                                                    "去年從我這裡拿走了" + new_quest["obj_name"] +
+                                                    "去年從我這裏拿走了" + new_quest["obj_name"] +
                                                     "到現在還沒有還給我！");
                                         new_quest["ob"]=jiufen_npc;
                                         new_quest["name"]="幫" + room->short() + "的" + npc->name() +
@@ -2103,7 +2103,7 @@ varargs mixed create_quest(string the_city,string bunch_type,object player)
         return 0;
 }
 
-//本函數用于查找地點列表的錯誤
+//本函數用於查找地點列表的錯誤
 void check_all_place()
 {
         int i,j;

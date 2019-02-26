@@ -40,7 +40,7 @@ int do_effect(object me)
                 addn("max_neili", 1, me);
                 message_vision(HIG "$N" HIG "吃下一顆大還丹，只覺得體內"
                                "真力源源滋生，過紫宮，入泥丸透十二重樓，"
-                               "遍布奇筋八脈，全身功力頓然提高！\n" NOR, me);
+                               "遍佈奇筋八脈，全身功力頓然提高！\n" NOR, me);
         }
 
         me->apply_condition("bonze_drug", 60);

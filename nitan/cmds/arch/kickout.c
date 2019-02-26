@@ -30,7 +30,7 @@ int main(object me, string arg)
                 return notify_fail("你的大腦是不是進了水？\n");
 
         if (wiz_level(me) < wiz_level(ob))
-                return notify_fail("“當啷”的一聲，你踢到鐵板。\n");
+                return notify_fail("“噹啷”的一聲，你踢到鐵板。\n");
 
         this_object()->kickout_player(me, ob);
         return 1;

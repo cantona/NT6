@@ -10,10 +10,10 @@ void create()
 {
 	set("short", HIW"白石路"NOR);
 	set("long", @LONG
-走進大門，只見紅磚圍牆，白石舖路，從這裡一直通往天王殿，抬頭
-望去，寺中亭台樓閣規模宏大，構築精麗，宅地連雲，其氣勢之盛更勝于
+走進大門，只見紅磚圍牆，白石鋪路，從這裏一直通往天王殿，抬頭
+望去，寺中亭台樓閣規模宏大，構築精麗，宅地連雲，其氣勢之盛更勝於
 五台，普陀等諸處佛門勝地的名山大寺。路旁立滿了無量功德碑，兩邊各
-有一小院，院中滿種著鬆竹。
+有一小院，院中滿種着松竹。
 LONG);
 	set("outdoors", "天龍寺");
   set("quest",1);
@@ -53,9 +53,9 @@ void killme(object me)
   if(!me) return;
   if(!present(me,this_object())) 
   {
-    tell_object(me,HIG"你竟然不在白石路，也算你臨陣逃脫，逃過一劫。只是你的江湖名望大幅下降。\n"NOR); 
+    tell_object(me,HIG"你竟然不在白石路，也算你臨陣逃脱，逃過一劫。只是你的江湖名望大幅下降。\n"NOR); 
     me->delete_temp("quest/天龍八部");
-	me->delete_temp("quest/busy");//任務沖突標志取消 
+	me->delete_temp("quest/busy");//任務衝突標誌取消 
     me->delete(QUESTDIR2+"start");
     me->add("mana",-random(300)-200);
     if(me->query("mana")<0) me->set("mana",0);
@@ -68,7 +68,7 @@ void killme(object me)
     tell_object(me,HIG"這段時間內，你竟然不專心看守白石路，本因不再放心你了，另外你的江湖名望大幅下降。\n"NOR); 
     me->delete_temp("quest/天龍八部");
     me->delete(QUESTDIR2+"start");
-	me->delete_temp("quest/busy");//任務沖突標志取消 
+	me->delete_temp("quest/busy");//任務衝突標誌取消 
     me->add("mana",-random(300)-200);
     if(me->query("mana")<0) me->set("mana",0);
     this_object()->delete("busy_id");
@@ -91,7 +91,7 @@ void killme(object me)
      obj->move(environment(me)); 
      obj->set_leader(me);
 
-     //玩家之間避免沖突
+     //玩家之間避免衝突
      remove_call_out("busy");
      call_out("busy", 1); 
 	 return;
@@ -118,6 +118,6 @@ int valid_leave(object me, string dir)
 	 && dir != "out" 
 	 && me->query("shen") < 0
 	 && objectp(present("wu seng", environment(me))))
-		return notify_fail("武僧攔住你，說道：天龍寺內不得隨意進出。\n");
+		return notify_fail("武僧攔住你，説道：天龍寺內不得隨意進出。\n");
 	return ::valid_leave(me, dir);
 }

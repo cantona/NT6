@@ -23,7 +23,7 @@ void set_bang(object owner)
 
         owner->set("follower", obj);
         message("vision", ob->name() + "走了過來。\n", room, ({ob}));
-        message_vision("$N對著$n作了個揖，道：幫主老人家辛苦了。\n", ob, owner);
+        message_vision("$N對着$n作了個揖，道：幫主老人家辛苦了。\n", ob, owner);
         message_vision("$N點了點頭，道：弟兄們辛苦了。\n", owner);
 }
 
@@ -79,8 +79,8 @@ void set_follower(object ob, object owner)
 
         ob->set("inquiry/" + fam, fam + "威震江湖，指日可待！！！");
         name = (string)owner->query("name");
-        ob->set("inquiry/" + "幫主", "我對我們" + name[0..01] + "幫主的景仰之情□腥縑咸轄□□□嗖瘓□□);
-        ob->set("inquiry/" + name, "這幾個字是你說的嗎？");
-        ob->set("inquiry/" + name[0..01] + "幫主", "我對我們" + name[0..01] + "鎦韉木把鮒□椋□腥縑咸轄□□□嗖瘓□□);
+        ob->set("inquiry/" + "幫主", "我對我們" + name[0..01] + "幫主的景仰之情腥縑鹹轄嗖瘓");
+        ob->set("inquiry/" + name, "這幾個字是你説的嗎？");
+        ob->set("inquiry/" + name[0..01] + "幫主", "我對我們" + name[0..01] + "鎦韉木把鮒椋腥縑鹹轄嗖瘓");
 }
 

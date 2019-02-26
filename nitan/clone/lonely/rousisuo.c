@@ -43,7 +43,7 @@ mixed hit_ob(object me, object victim, int damage_bonus)
                 n = me->query_skill("whip");
                 victim->receive_damage("qi", n * 3 / 4, me);
                 victim->receive_wound("qi", n * 3 / 4, me);
-                return  HIW "$N" HIW "飛身而起，柔絲索自天而下，時若驚鴻，時若遊龍，竟攻向$n" HIW 
+                return  HIW "$N" HIW "飛身而起，柔絲索自天而下，時若驚鴻，時若游龍，竟攻向$n" HIW 
                         "周身各處大穴！\n" NOR;
 
         }

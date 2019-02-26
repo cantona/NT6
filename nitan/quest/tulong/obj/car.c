@@ -21,7 +21,7 @@ mapping chinese_dirs = ([
   "southwest":    "西南",
   "up":           "上",
   "down":         "下",
-  "enter":        "裡",
+  "enter":        "裏",
   "out":          "外",
   ]);
 
@@ -62,7 +62,7 @@ void create()
     set_default_object(__FILE__);
   else {
     set("short", name+"(Biaoche)");
-    set("long", "一輛紅木鏢車，扯出一個幡子，上面寫著“福威鏢局”四個大字。\n");
+    set("long", "一輛紅木鏢車，扯出一個幡子，上面寫着“福威鏢局”四個大字。\n");
     set("unit", "輛");
     set("material", "metal");
     set("value", 1000000);
@@ -162,7 +162,7 @@ int report_inside_objects ()
   if (sizeof(inv) == 0)
     return 1;
 
-  tell_object (who,"車裡有：");  
+  tell_object (who,"車裏有：");  
   for (i=0; i < sizeof(inv); i++)
   {
     tell_object(who,query("name", inv[i])+"("+query("id", inv[i])+")");
@@ -202,7 +202,7 @@ int report_view ()
   object where = environment(me);
 
   tell_object (who,"≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡\n");  
-  tell_object (who,"從車窗裡可以看到：");  
+  tell_object (who,"從車窗裏可以看到：");  
   tell_object(who,query("short", where)+"\n");
   tell_object(who,query("long", where)+"\n");
   report_outside_objects();
@@ -275,7 +275,7 @@ int do_enter (string arg)
     message_vision ("$N坐在車頭上。\n",who);
   }
   else
-    message_vision ("$N坐在車廂裡。\n",who);
+    message_vision ("$N坐在車廂裏。\n",who);
   return 1;
 }
 
@@ -506,9 +506,9 @@ int do_stop (string arg)
   else if (s < 100)
   {
     s -= 40+random(40);
-    tell_object (who,"你瘋狂地拉著韁繩！\n");  
+    tell_object (who,"你瘋狂地拉着韁繩！\n");  
     message_vision(query("name", me)+"突然急劇地減速！\n",me);
-    message_vision(query("name", me)+"劇烈地震動著！\n",me);
+    message_vision(query("name", me)+"劇烈地震動着！\n",me);
     tell_object (who,"你一陣頭暈，差一點吐了出來！\n");  
   }
   else 
@@ -516,7 +516,7 @@ int do_stop (string arg)
     s -= 60+random(60);
     tell_object (who,"你不顧一切地拉緊韁繩！\n");  
     message_vision(query("name", me)+"突然急劇地減速！\n",me);
-    message_vision(query("name", me)+"可怕地震動著，馬匹口角溢出血來！\n",me);
+    message_vision(query("name", me)+"可怕地震動着，馬匹口角溢出血來！\n",me);
     tell_object (who,"強烈的震動中你一陣劇烈頭痛！\n");  
     who->unconcious();
   }
@@ -533,12 +533,12 @@ void collision ()
   object who=query("driver", me);
   int s=query("speed", me);
   string *hits = ({
-    "沖出了路",
+    "衝出了路",
     "滑進路邊的草叢中",
     "撞進一個大土堆",
     "滑進一灘爛泥",
     "闖進一個小木棚",
-    "沖向一大叢灌木叢",
+    "衝向一大叢灌木叢",
     "撞向一片小樹",
   });
   string how;
@@ -546,7 +546,7 @@ void collision ()
   if (s == 0)
     how = "極輕地";
   else if (s < 20)
-    how = "□當一聲";
+    how = "咣噹一聲";
   else if (s < 40)
     how = "嘩啦一聲";
   else if (s < 60)
@@ -554,7 +554,7 @@ void collision ()
   else if (s < 80)
     how = "轟地一聲";
   else if (s < 100)
-    how = "象脫韁野馬一樣地";
+    how = "象脱韁野馬一樣地";
   else if (s < 150)
     how = "極瘋狂地";
   else 
@@ -599,22 +599,22 @@ void display_me ()
   else if (s < 30)
   {
     set("short", "慢慢行駛的"+name+"(biaoche)");
-    msg = name+"慢慢地駛著。\n";
+    msg = name+"慢慢地駛着。\n";
   }
   else if (s < 50)
   {
     set("short", "行駛中的"+name+"(biaoche)");
-    msg = name+"正在行駛著。\n";
+    msg = name+"正在行駛着。\n";
   }
   else if (s < 110)
   {
     set("short", "飛駛的"+name+"(biaoche)");
-    msg = name+"飛快地行駛著。\n";
+    msg = name+"飛快地行駛着。\n";
   }
   else 
   {
     set("short", "狂駛中的"+name+"(biaoche)");
-    msg = name+"發瘋似地狂駛著。\n";
+    msg = name+"發瘋似地狂駛着。\n";
   }
   if (msg && 
       random(10) == 0)
@@ -657,7 +657,7 @@ object find_exit ()
 
   if( !mapp(dirs=query("exits", where)) )
   {
-    tell_object (who,"這裡好象沒有什麼路可行了。\n");
+    tell_object (who,"這裏好像沒有什麼路可行了。\n");
     return 0;  
   }
 

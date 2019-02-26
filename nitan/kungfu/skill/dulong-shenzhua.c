@@ -25,7 +25,7 @@ mapping *action = ({
         "skills_name" : "蛟龍爪",
         "damage_type" : "內傷"
 ]),
-([      "action": "$N一式「毒龍爪」，全身向斜裡平飛，右腿一繃，雙爪搭向$n的肩頭",
+([      "action": "$N一式「毒龍爪」，全身向斜裏平飛，右腿一繃，雙爪搭向$n的肩頭",
         "force" : 150,
         "attack": 50,
         "dodge" : 10,
@@ -75,14 +75,14 @@ mapping *action = ({
         "skills_name" : "劃長空",
         "damage_type" : "內傷"
 ]),
-([      "action": "$N騰空而起，一式「萬裡神爪」，天空中頓時顯出一個巨靈爪影，罩向$n",
+([      "action": "$N騰空而起，一式「萬里神爪」，天空中頓時顯出一個巨靈爪影，罩向$n",
         "force" : 320,
         "attack": 80,
         "dodge" : 40,
         "parry" : 60,
         "damage": 80,
         "lvl" : 160,
-        "skills_name" : "萬裡神爪",
+        "skills_name" : "萬里神爪",
         "damage_type" : "內傷"
 ])
 });

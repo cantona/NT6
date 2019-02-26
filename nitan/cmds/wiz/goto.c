@@ -18,7 +18,7 @@ int main(object me, string arg)
 
         if (sscanf(arg, "-i %s", arg)) goto_inventory = 1;
 
-        if (! arg) return notify_fail("你要去哪裡？\n");
+        if (! arg) return notify_fail("你要去哪裏？\n");
 
         obj = find_player(arg);
         if (! obj) obj = MESSAGE_D->find_user(arg);
@@ -59,7 +59,7 @@ int main(object me, string arg)
                 return notify_fail("你在原地亂蹦什麼？\n");
 
         if (obj == me)
-                return notify_fail("好厲害！你想鑽到自己身體裡面？\n");
+                return notify_fail("好厲害！你想鑽到自己身體裏面？\n");
 
         if( query("gender", me) == "女性" )
                 tell_object(me, HIG "你化作清風而去。\n" NOR);

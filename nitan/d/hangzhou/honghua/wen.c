@@ -10,8 +10,8 @@ void create()
         set_name("文泰來", ({ "wen tailai", "wen","tailai" }));
         set("title", HIR "紅花會"HIG"四當家" NOR);
         set("nickname", HIW "奔雷手" NOR);
-        set("long", "文泰來號稱“奔雷手”，十五歲起浪盪江湖，手掌下不知擊斃
-過多少神姦巨憝、兇徒惡霸。\n");
+        set("long", "文泰來號稱“奔雷手”，十五歲起浪蕩江湖，手掌下不知擊斃
+過多少神奸巨憝、兇徒惡霸。\n");
         set("gender", "男性");
         set("class", "fighter");
         set("age", 32);

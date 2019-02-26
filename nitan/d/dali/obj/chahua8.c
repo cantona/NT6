@@ -5,7 +5,7 @@ inherit HEAD;
 
 void create()
 {
-        set_name(HIG"八寶妝"NOR, ({"cha hua", "hua"}));
+        set_name(HIG"八寶粧"NOR, ({"cha hua", "hua"}));
         if( clonep() )
                 set_default_object(__FILE__);
         else {

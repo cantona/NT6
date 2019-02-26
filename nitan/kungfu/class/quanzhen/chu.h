@@ -58,7 +58,7 @@ void attempt_apprentice(object ob)
         }
         if ( ob_fam["generation"] <= my_fam["generation"] )
         {
-                command("say "+RANK_D->query_respect(ob)+"，貧道哪裡敢當！");
+                command("say "+RANK_D->query_respect(ob)+"，貧道哪裏敢當！");
                 return;
         }
         if ( ob_fam["generation"] == (my_fam["generation"] + 1))

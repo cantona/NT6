@@ -11,7 +11,7 @@ void create()
         else {
                 set("unit", "張");
                 set("unique", 1);
-                set("long", "這是一張羊皮，上面寫著密密麻麻的文字，好象很難看(read)懂。\n");
+                set("long", "這是一張羊皮，上面寫着密密麻麻的文字，好像很難看(read)懂。\n");
                 set("value", 2000);
                 set("material", "paper");
                 set("no_drop", "這樣東西不能離開你。\n");
@@ -42,7 +42,7 @@ int do_du(string arg)
         if( query("pigging", where) )
              return notify_fail("你還是專心拱豬吧！\n");
         if(me->is_busy())
-             return notify_fail("你現在正忙著呢。\n");
+             return notify_fail("你現在正忙着呢。\n");
         if(me->is_fighting())
              return notify_fail("你無法在戰鬥中專心下來研讀新知！\n");
         if(!id(arg))
@@ -62,9 +62,9 @@ int do_du(string arg)
            !me->query_skill("jiuyin-zhengong",1))
              return notify_fail("你發覺你的內功路子和乾坤大挪移走的路子不同，再練下去沒有多大的好處。\n");
         if( query("jing", me)<30 )
-             return notify_fail("你現在過于疲倦，無法專心下來研讀新知。\n");
+             return notify_fail("你現在過於疲倦，無法專心下來研讀新知。\n");
         if(me->query_skill("qiankun-danuoyi",1) > (me->query_skill("force",1)+10))
-             return notify_fail("由于你的內功的火侯不夠，不能再進行更高一層的提高。\n");
+             return notify_fail("由於你的內功的火侯不夠，不能再進行更高一層的提高。\n");
         if( query("neili", me)<neili_lost )
             return notify_fail("你內力不夠，無法鑽研這麼高深的武功。\n");
         if( query("combat_exp", me)<qklevel*qklevel*qklevel/10 )

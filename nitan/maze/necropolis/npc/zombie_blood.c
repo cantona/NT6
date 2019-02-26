@@ -4,11 +4,11 @@ inherit "/maze/necropolis/necropolis_npc";
 void do_bite();
 void create()
 {
-        string *names = ({"血僵屍"}); 
+        string *names = ({"血殭屍"}); 
         // set_name( names[random(sizeof(names))], ({ "blood zombie","zombie"}));
         set_name( names[random(sizeof(names))], ({ "blood zombie" }));
         set("vendetta_mark","zombie");
-        set("long", "這是一個腐爛的僵屍。\n");
+        set("long", "這是一個腐爛的殭屍。\n");
         set("title", HIB "(鬼氣)" NOR); 
 
         set("str", 50);
@@ -24,7 +24,7 @@ void create()
         //set("shen_type", -1);      
         //set("chat_chance", 2);
         //set("chat_msg", ({
-        //                "骷髏空洞的眼眶裡閃爍著可怕的熒光。\n"
+        //                "骷髏空洞的眼眶裏閃爍着可怕的熒光。\n"
         //}) ); 
 
         set("chat_chance_combat", 100);

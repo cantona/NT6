@@ -18,7 +18,7 @@ void create()
                 set("unit", "柄");
                 set("value", 0);
                 set("material", "iron");
-                set("wield_msg", HIC"$N"+HIC"右手結印，垂目默念咒語。一點光芒在$N"+HIC"掌中逐漸亮起，$n"NOR+HIC"漸漸成形。\n"NOR);
+                set("wield_msg", HIC"$N"+HIC"右手結印，垂目默唸咒語。一點光芒在$N"+HIC"掌中逐漸亮起，$n"NOR+HIC"漸漸成形。\n"NOR);
                 set("unwield_msg", "$n"+HIC"從$N"+HIC"手中一躍而起，化為一道清風。\n"NOR); 
             set("skill", ([
                 "name": "spirit-blade",    // name of the skill
@@ -34,13 +34,13 @@ void create()
 
 void owner_is_killed()
 {
-        write(HIY"只覺一陣清風吹過，好象是……\n"NOR);
+        write(HIY"只覺一陣清風吹過，好像是……\n"NOR);
        destruct(this_object());
 }
 /*
 int query_autoload()
 {
-        write(HIG"一陣清風拂過身側，仿佛在呢喃什麼咒語。\n"NOR);
+        write(HIG"一陣清風拂過身側，彷彿在呢喃什麼咒語。\n"NOR);
        return 1;
 }
 */
@@ -57,11 +57,11 @@ int do_back(string arg)
     name=query("name", this_player());
     if( query("jing", this_player())<20 )
                 return notify_fail("你的精神無法集中！\n");
-    if( !arg ) return notify_fail("你要回哪裡? \n");
+    if( !arg ) return notify_fail("你要回哪裏? \n");
     {
         if ( arg == "spirit" )
         {
-            message_vision(HIG"$N默念咒語，手中"NOR+HIY"精靈刀"NOR+HIG"化為一陣清風，盤旋飛舞。\n"NOR,this_player() );
+            message_vision(HIG"$N默唸咒語，手中"NOR+HIY"精靈刀"NOR+HIG"化為一陣清風，盤旋飛舞。\n"NOR,this_player() );
             this_player()->receive_damage("jing",10);
             tell_room(environment(this_player()),
                  name+"的身影消失在清風中。\n",this_player() );
@@ -83,7 +83,7 @@ int do_nopoison(string arg)
                 return notify_fail("你要為誰療毒？\n");
         if ( arg == "spirit" )
           {        me->receive_damage("jing",10);
-                        message_vision(HIC"$N雙掌合十，捧著"NOR+HIY"精靈刀"NOR+HIC"，默念咒語。\n"NOR, me);
+                        message_vision(HIC"$N雙掌合十，捧着"NOR+HIY"精靈刀"NOR+HIC"，默唸咒語。\n"NOR, me);
         me->clear_condition();  
                write("你成功驅除了體內毒素！\n");
         return 1;  

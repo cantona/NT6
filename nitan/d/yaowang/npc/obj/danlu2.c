@@ -33,7 +33,7 @@ int do_fang(string arg)
 
         if( query("family/family_name", me) != "藥王谷"
                 || (int)me->query_skill("medical",1)<80 ) {
-                return notify_fail("你還不能在這裡煉丹！\n");
+                return notify_fail("你還不能在這裏煉丹！\n");
         }
 
         if( query("shen", me)>0){
@@ -44,7 +44,7 @@ int do_fang(string arg)
                 return notify_fail("你要把什麼放進煉丹爐中\n");
 
         if( me->is_fighting() || me->is_busy() )
-                return notify_fail("你正忙著呢！\n");
+                return notify_fail("你正忙着呢！\n");
 
         message_vision(YEL"\n$N把一"+query("unit", ob)+query("name", ob )
                 +"放進煉丹爐中\n\n"NOR, me);
@@ -63,7 +63,7 @@ int do_lian(string arg)
 
         if( query("family/family_name", me) != "藥王谷"
                 || (int)me->query_skill("medical",1)<80) {
-                return notify_fail("你還不能在這裡煉丹！\n");
+                return notify_fail("你還不能在這裏煉丹！\n");
         }
 
         if( query("shen", me)>0){
@@ -75,7 +75,7 @@ int do_lian(string arg)
                 "        可以練的丹藥有： 軟骨散(ruangu san)\n");
 
         if( me->is_fighting() || me->is_busy() )
-                return notify_fail("你正忙著呢！\n");
+                return notify_fail("你正忙着呢！\n");
 
         if( !query_temp("liandan", me) )
                 return notify_fail("丹爐還沒有點燃，怎麼煉丹！\n");
@@ -105,10 +105,10 @@ int lian_over(object me)
         lvl = me->query_skill("poison",1);
         if (random(lvl) > 80)
         {
-        message_vision(HIR"一會兒爐膛內的火燄漸漸熄滅。\n\n"NOR, me);
+        message_vision(HIR"一會兒爐膛內的火焰漸漸熄滅。\n\n"NOR, me);
         message_vision(HIR"$N的丹藥練成了。\n"NOR, me);
         message_vision(HIR"爐火漸漸熄滅了！\n"NOR, me);
-        message_vision(HIR"$N你從爐裡拿出一包軟骨散\n"NOR, me);
+        message_vision(HIR"$N你從爐裏拿出一包軟骨散\n"NOR, me);
         me->improve_skill("poison", ((int)me->query_skill("poison",1)/10));
         obj=new(__DIR__"ruan");
         obj->move(me);
@@ -131,7 +131,7 @@ int do_ran(string arg)
 
         if( query("family/family_name", me) != "藥王谷"
                 || (int)me->query_skill("medical",1)<80
-          || query("shen", me)>0){return notify_fail("不許亂碰這裡的東西！\n");
+          || query("shen", me)>0){return notify_fail("不許亂碰這裏的東西！\n");
         }
 
         if( query_temp("liandan", me) )

@@ -1,5 +1,5 @@
 // eff_msg.h
-/*  在相應的perform裡加上：
+/*  在相應的perform里加上：
         #include "/kungfu/skill/eff_msg.h";
         int p;
         p=query("qi", target)*100/query("max_qi", target);
@@ -15,8 +15,8 @@ string eff_status_msg(int ratio)
         if (ratio > 90) return HIY"看起來可能受了點輕傷。"NOR;
         if (ratio > 80) return HIY"受了幾處傷，不過似乎並不礙事。"NOR;
         if (ratio > 60) return HIY"受傷不輕，看起來狀況並不太好。"NOR;
-        if (ratio > 40) return HIR"氣息粗重，動作開始散亂，看來所受的傷著實不輕。" NOR;
-        if (ratio > 30) return HIR"已經傷痕累累，正在勉力支撐著不倒下去。"NOR;
+        if (ratio > 40) return HIR"氣息粗重，動作開始散亂，看來所受的傷着實不輕。" NOR;
+        if (ratio > 30) return HIR"已經傷痕累累，正在勉力支撐着不倒下去。"NOR;
         if (ratio > 20) return HIR"受了相當重的傷，只怕會有生命危險。"NOR;
         if (ratio > 10) return RED"傷重之下已經難以支撐，眼看就要倒在地上。"NOR;
         if (ratio > 5 ) return RED "受傷過重，已經奄奄一息，命在旦夕了。"NOR;
@@ -31,7 +31,7 @@ string status_msg(int ratio)
         if( ratio > 80 ) return HIY"動作似乎開始有點不太靈光，但是仍然有條不紊。"NOR;
         if( ratio > 60 ) return HIY"氣喘噓噓，看起來狀況並不太好。"NOR;
         if( ratio > 40 ) return HIR"似乎十分疲憊，看來需要好好休息了。"NOR;
-        if( ratio > 30 ) return HIR"已經一副頭重腳輕的模樣，正在勉力支撐著不倒下去。"NOR;
+        if( ratio > 30 ) return HIR"已經一副頭重腳輕的模樣，正在勉力支撐着不倒下去。"NOR;
         if( ratio > 20 ) return HIR"看起來已經力不從心了。"NOR;
         if( ratio > 10 ) return RED"搖頭晃腦、歪歪斜斜地站都站不穩，眼看就要倒在地上。"NOR;
         return RED"已經陷入半昏迷狀態，隨時都可能摔倒暈去。"NOR;
@@ -81,7 +81,7 @@ string damage_msg(int damage, string type)
                 return "只聽見$n一聲慘叫，整個身體象斷了線的風箏一樣飛了出去！！\n";
                 break;
         case "內傷":
-                if( damage < 10 ) return "結果只是把$n打得退了半步，毫發無損。\n";
+                if( damage < 10 ) return "結果只是把$n打得退了半步，毫髮無損。\n";
                 if( damage < 20 ) return "結果$n痛哼一聲，在$p的$l造成一處瘀傷。\n";
                 if( damage < 50 ) return "結果一擊命中，把$n打得痛得彎下腰去！\n";
                 if( damage < 100 ) return "結果$n悶哼了一聲，臉上一陣青一陣白，顯然受了點內傷！\n";
@@ -104,7 +104,7 @@ string damage_msg(int damage, string type)
                 if( damage < 200 ) return "結果$n疼得大叫一聲，$p$l上被抓出了幾道深深的血溝，鮮血直流！\n";
                 if( damage < 300 ) return "結果只聽見$n一聲慘嚎，$N的手抓已在$p的$l處刺出了五個血肉模糊的窟窿！\n";
                 if( damage < 400 ) return "結果「啊」地一聲慘叫，$n身上$p處被$N抓下了一大片皮肉，鮮血橫飛滿地！！\n";
-                return "結果伴隨著$n一聲凄慘的嚎叫，直透$p$l處，連皮帶肉扯下一大塊，露出了血淋淋的骨頭！！\n";
+                return "結果伴隨着$n一聲悽慘的嚎叫，直透$p$l處，連皮帶肉扯下一大塊，露出了血淋淋的骨頭！！\n";
                 break;       
         default:
                 if( !type ) type = "傷害";

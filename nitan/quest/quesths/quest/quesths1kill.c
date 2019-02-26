@@ -75,7 +75,7 @@ mapping *quest = ({
         ]),
         ([
                 "id":          "zhong sisao",
-                "name":        "鐘四嫂",
+                "name":        "鍾四嫂",
                 "type":        "殺",
                 "bonus":       92,
                 "msg":        "",
@@ -419,7 +419,7 @@ mapping *quest = ({
         ]),
         ([
                 "id":          "wei shi",
-                "name":        "黃衣衛士",
+                "name":        "黃衣衞士",
                 "type":        "殺",
                 "bonus":       69,
                 "msg":        "",
@@ -427,7 +427,7 @@ mapping *quest = ({
         ]),
         ([
                 "id":          "wei shi",
-                "name":        "素衣衛士",
+                "name":        "素衣衞士",
                 "type":        "殺",
                 "bonus":       69,
                 "msg":        "",
@@ -635,7 +635,7 @@ mapping *quest = ({
         ]),
         ([
                 "id":          "shuoshu laoren",
-                "name":        "說書老人",
+                "name":        "説書老人",
                 "type":        "殺",
                 "bonus":       59,
                 "msg":        "",
@@ -643,7 +643,7 @@ mapping *quest = ({
         ]),
         ([
                 "id":          "huo ji",
-                "name":        "小伙計",
+                "name":        "小夥計",
                 "type":        "殺",
                 "bonus":       69,
                 "msg":        "",
@@ -739,7 +739,7 @@ mapping *quest = ({
         ]),
         ([
                 "id":          "tuobo seng",
-                "name":        "托砵僧",
+                "name":        "托缽僧",
                 "type":        "殺",
                 "bonus":       69,
                 "msg":        "",

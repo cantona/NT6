@@ -55,9 +55,9 @@ int main(object me, string arg)
 
                         ob->move(pob);
 
-                        tell_object(pob, HIW "\n\n忽然從極高極遠的天空中極速降下一只渾身烈燄的"HIR"火鳳"HIW"，周身閃耀七彩光芒。\n" NOR);
-                        tell_object(pob, HIC "它爪下似乎抓著什麼東西，突然"HIC"火鳳"HIW"鬆開腳爪，有個東西直向你掉落下來。\n" NOR);
-                        tell_object(pob, HIG "你猛一提氣縱身一躍丈高將此物抓在手中，又瀟洒的飄落地面。\n\n" NOR);
+                        tell_object(pob, HIW "\n\n忽然從極高極遠的天空中極速降下一隻渾身烈焰的"HIR"火鳳"HIW"，周身閃耀七彩光芒。\n" NOR);
+                        tell_object(pob, HIC "它爪下似乎抓着什麼東西，突然"HIC"火鳳"HIW"鬆開腳爪，有個東西直向你掉落下來。\n" NOR);
+                        tell_object(pob, HIG "你猛一提氣縱身一躍丈高將此物抓在手中，又瀟灑的飄落地面。\n\n" NOR);
 
                 }
                 str=sprintf("共有%d位玩家得到了%s。\n\n",sizeof(ks),query("name", get_object(target)));

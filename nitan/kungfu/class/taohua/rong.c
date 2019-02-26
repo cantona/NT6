@@ -18,8 +18,8 @@ void create()
         set("nickname", HIY "丐幫前任幫主" NOR);
         set("gender", "女性");
         set("age", 28);
-        set("long", "這便是桃花島島主的獨生女兒。由于島主夫人\n"
-                    "早死，島主對這個女兒備加疼愛。她生性跳脫\n"
+        set("long", "這便是桃花島島主的獨生女兒。由於島主夫人\n"
+                    "早死，島主對這個女兒備加疼愛。她生性跳脱\n"
                     "飛揚，喜歡四處亂跑。\n");
         set("attitude", "peaceful");
         set("class", "scholar");
@@ -105,18 +105,18 @@ void create()
 
 void attempt_apprentice(object ob)
 {
-        command("say 現在國難當頭，我哪裡有時間收徒啊。");
+        command("say 現在國難當頭，我哪裏有時間收徒啊。");
         return;
 }
 
 string ask_chicken()
 {
         if( query_temp("marks/雞", this_player()) )
-                return "你這個人怎麼這麼煩？老說車□轆話！\n";
+                return "你這個人怎麼這麼煩？老説車軲轆話！\n";
         else
         {
-                say("蓉兒神往地說：叫化雞可是杭州著名特產，我爹當年費了好大的勁才搞到了制作\n"
-                    "它的秘方。你問它來幹什麼？\n");
+                say("蓉兒神往地説：叫化雞可是杭州著名特產，我爹當年費了好大的勁才搞到了製作\n"
+                    "它的祕方。你問它來幹什麼？\n");
 
                 set_temp("marks/雞", 1, this_player());
 
@@ -133,11 +133,11 @@ int ask_jiuyin()
                 if( query("combat_exp", me)>500000 && present("mask_jiuyin",me) )
                 {
                         destruct( present("mask_jiuyin", me) );
-                        message_vision(HIY "黃蓉眼中閃過一絲狡黠的神色：“你想知道真經的解釋麼？好吧，我說給你聽便是。”\n", me);
-                        message_vision("說罷，接過$N手中的經書，輕輕念了起來：\n", me);
+                        message_vision(HIY "黃蓉眼中閃過一絲狡黠的神色：“你想知道真經的解釋麼？好吧，我説給你聽便是。”\n", me);
+                        message_vision("説罷，接過$N手中的經書，輕輕唸了起來：\n", me);
                         message_vision("“「忽不爾，肯星多得，斯根六補」這是「善用觀相，運作十二種息」的意思。\n", me);
-                        message_vision("「吉爾文花思，哈虎」嗯....這個該作「能癒諸患，漸入神通」解...”\n", me);
-                        message_vision(HIG "$N大為興奮，忙凝神傾聽，內息早于不知不覺中按照黃蓉所解之法四處遊走......\n", me);
+                        message_vision("「吉爾文花思，哈虎」嗯....這個該作「能愈諸患，漸入神通」解...”\n", me);
+                        message_vision(HIG "$N大為興奮，忙凝神傾聽，內息早於不知不覺中按照黃蓉所解之法四處遊走......\n", me);
                         message_vision("$N的神智漸漸迷糊起來，忽而抓耳撓腮，忽而側頭苦思，種種怪狀，令人不解。\n", me);
                         message_vision("突然間，$N反手啪啪啪連打自己三個耳光，雙手撐地，倒立了起來，全身真氣逆遊亂走 \n"NOR, me);
                         if (random(5) == 3)
@@ -168,14 +168,14 @@ int ask_game()
                 return 1;
         }
 /*if( query_temp("match_game/lost", me)){
-                message_vision( "$n仰起頭不屑的對$N說道：你太笨了，我才不跟你玩呢。\n", me, ob );
+                message_vision( "$n仰起頭不屑的對$N説道：你太笨了，我才不跟你玩呢。\n", me, ob );
                 return 1;
         }*/
         if( query_temp("match_game/win", me)){
-                message_vision( "$n點了點頭道：好吧！上次僥幸讓你贏了，這回你就沒這麼好運氣了。\n", me, ob );
+                message_vision( "$n點了點頭道：好吧！上次僥倖讓你贏了，這回你就沒這麼好運氣了。\n", me, ob );
                 delete_temp("match_game/win", me);
         }
         else
-                message_vision( "$n眉頭一揚，對$N說到：好啊，看看你到底有多聰明。\n", me, ob );
+                message_vision( "$n眉頭一揚，對$N説到：好啊，看看你到底有多聰明。\n", me, ob );
         return play_game(me,ob);
 }

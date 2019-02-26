@@ -4,7 +4,7 @@ inherit SKILL;
 #include <ansi.h>
 
 mapping *action = ({
-([      "action" : "$N使出一招「雪海茫茫」，雙掌陡然攻出，帶著絲絲陰風擊向$n的$l",
+([      "action" : "$N使出一招「雪海茫茫」，雙掌陡然攻出，帶着絲絲陰風擊向$n的$l",
         "force" : 100,
         "attack": 25,
         "dodge" : 15,
@@ -14,7 +14,7 @@ mapping *action = ({
         "skill_name" : "雪海茫茫",
         "damage_type" : "瘀傷"
 ]),
-([      "action" : "$N使出一招「幽冥寒山」，左掌護胸，右掌掌心帶著極寒之氣拍向$n的$l",
+([      "action" : "$N使出一招「幽冥寒山」，左掌護胸，右掌掌心帶着極寒之氣拍向$n的$l",
         "force" : 130,
         "attack": 30,
         "dodge" : 10,
@@ -24,7 +24,7 @@ mapping *action = ({
         "skill_name" : "幽冥寒山",
         "damage_type" : "瘀傷"
 ]),
-([      "action" : "$N怪叫一聲，一招「陰風怒號」，雙掌舖天蓋地般拍向$n的$l",
+([      "action" : "$N怪叫一聲，一招「陰風怒號」，雙掌鋪天蓋地般拍向$n的$l",
         "force" : 160,
         "attack": 45,
         "dodge" : 20,
@@ -34,14 +34,14 @@ mapping *action = ({
         "skill_name" : "陰風怒號",
         "damage_type" : "瘀傷"
 ]),
-([      "action" : "$N一照「凄雨冷風」，雙掌拍出滿天陰風，忽然右掌悄無聲息的拍向$n的$l",
+([      "action" : "$N一照「淒雨冷風」，雙掌拍出滿天陰風，忽然右掌悄無聲息的拍向$n的$l",
         "force" : 180,
         "attack": 50,
         "dodge" : 20,
         "parry" : 30,
         "damage": 30,
         "lvl"   : 80,
-        "skill_name" : "凄雨冷風",
+        "skill_name" : "淒雨冷風",
         "damage_type" : "瘀傷"
 ]),
 ([      "action" : "$N身形一躍，一招「亡命冰原」，左掌快若疾電般擊向$n的$l",
@@ -64,7 +64,7 @@ mapping *action = ({
         "skill_name" : "孤山絕寒",
         "damage_type" : "瘀傷"
 ]),
-([      "action" : "$N一招「雪原孤月」，身形急晃，一躍而至$n跟前，右掌帶著沖天寒氣擊向$n的$l",
+([      "action" : "$N一招「雪原孤月」，身形急晃，一躍而至$n跟前，右掌帶着沖天寒氣擊向$n的$l",
         "force" : 320,
         "attack": 110,
         "dodge" : 30,
@@ -94,7 +94,7 @@ mapping *action = ({
         "skill_name" : "幽玄冥冥",
         "damage_type" : "瘀傷"
 ]),
-([      "action" : "$N仰天一聲狂嘯，一式「冰堅地獄」，雙掌攜帶著萬古冰堅直直貫向$n",
+([      "action" : "$N仰天一聲狂嘯，一式「冰堅地獄」，雙掌攜帶着萬古冰堅直直貫向$n",
         "force" : 450,
         "attack": 185,
         "dodge" : 40,
@@ -192,7 +192,7 @@ mixed hit_ob(object me, object victim, int damage_bonus, int factor)
                                  "duration" : lvl / 40 + random(lvl / 20) ])))
         {
                 addn("neili", -100, me);
-                return HIW "$n" HIW "忽然感到一股莫名的惡心，陰寒的冷氣攻心，全身癱軟，嘴皮烏紫。\n" NOR;
+                return HIW "$n" HIW "忽然感到一股莫名的噁心，陰寒的冷氣攻心，全身癱軟，嘴皮烏紫。\n" NOR;
         }
 }
 

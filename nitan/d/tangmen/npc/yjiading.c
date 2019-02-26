@@ -53,7 +53,7 @@ int do_give(string arg)
                         return notify_fail("你要給誰什麼東西？\n");
 
         if(!objectp(who = present("jia ding", environment(me))) || !living(who))
-                return notify_fail("這裡沒有這個人。\n");
+                return notify_fail("這裏沒有這個人。\n");
 
         if(sscanf(item, "%d %s", amount, item)==2)
         {
@@ -103,19 +103,19 @@ int do_giveto(object me, object obj)
 {
         if( !environment() || base_name(environment()) != query("startroom") )
         {
-                write("家丁說道：真是抱歉，請您等一下到儲料房來找我吧。\n");
+                write("家丁説道：真是抱歉，請您等一下到儲料房來找我吧。\n");
                 return 0;
         }
 
         if( !query_temp("yao", me) || !query_temp("tangmen", me) )
         {
-                message_vision("家丁很怪異的看著$N，欠身說道：“您應該沒有做這裡的工作吧！”\n", me);
+                message_vision("家丁很怪異的看着$N，欠身説道：“您應該沒有做這裏的工作吧！”\n", me);
                 return 0;
         }        
 
         if( query("id", obj) == "caoyao" && !userp(obj) )
         {
-                message_vision("家丁沖著$N一恭身，說道：“辛苦您了，東西就交給我吧！”\n", me);
+                message_vision("家丁衝着$N一恭身，説道：“辛苦您了，東西就交給我吧！”\n", me);
                 destruct(obj);
                 delete_temp("tangmen", me);
                 delete_temp("yao", me);
@@ -126,7 +126,7 @@ int do_giveto(object me, object obj)
         }
         else
         {
-                message_vision("家丁很為難的看著$N，欠身說道：“這不是你應該找到的東西吧！”\n", me);
+                message_vision("家丁很為難的看着$N，欠身説道：“這不是你應該找到的東西吧！”\n", me);
                 return 0;
         }
 }

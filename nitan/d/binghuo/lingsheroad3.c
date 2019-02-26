@@ -25,7 +25,7 @@ int valid_leave(object me, string dir)
         {
                 me->receive_damage("qi", 10);
 tell_object(me, HIR"忽然一陣刺痛，"NOR"你一腳踩在鋼針上了，不禁破口大罵：
-“他媽的！哪個王八蛋幹的？！”\n");
+“他媽的！哪個王八蛋乾的？！”\n");
         }
         return ::valid_leave(me, dir);
 }

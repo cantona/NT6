@@ -75,10 +75,10 @@ void register_information()
                 return;
 
         if (! mapp(rumor = query("rumor")))
-                // 沒有可以散布的消息
+                // 沒有可以散佈的消息
                 return;
 
-        // 登記所有可以散布的消息
+        // 登記所有可以散佈的消息
         foreach (key in keys(rumor))
         {
                 if (! stringp(key))
@@ -88,7 +88,7 @@ void register_information()
         }
 }
 
-// 這個任務可以被某人散布嗎？
+// 這個任務可以被某人散佈嗎？
 int can_know_by(object knower)
 {
         mapping my = query_entire_dbase();
@@ -103,7 +103,7 @@ int can_know_by(object knower)
         return 0;
 }
 
-// 不能被散布
+// 不能被散佈
 int can_rumor_by()
 {
         return 0;

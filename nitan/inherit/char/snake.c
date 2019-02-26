@@ -132,7 +132,7 @@ void die(object killer)
         int power, skill;
         string msg;
 
-        message_vision(HIR "\n只見$N" HIR "卷著身子在地上撲騰了"
+        message_vision(HIR "\n只見$N" HIR "卷着身子在地上撲騰了"
                        "幾下，死了。\n\n" NOR, ob);
 
         if (objectp(me = killer)
@@ -170,7 +170,7 @@ void die(object killer)
                               query("base_unit", item) +
                               item->name() + HIC;
 
-                        // 一定幾率獲得高級物品
+                        // 一定機率獲得高級物品
                         if (query("item3") && random(skill) > 60
                            && random(5) > 3)
                         {

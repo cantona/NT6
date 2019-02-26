@@ -28,12 +28,12 @@ mapping default_dirs = ([
                   "up":           "上",
                   "down":         "下",
                   "out":          "外",
-                  "enter":        "裡",
+                  "enter":        "裏",
 ]);
 
 void create()
 {
-                  set_name("純陽神通功秘訣", ({"shentong mijue", "mijue"}));
+                  set_name("純陽神通功祕訣", ({"shentong mijue", "mijue"}));
                   set_weight(100);
                   if( clonep() )
                                          set_default_object(__FILE__);
@@ -54,28 +54,28 @@ string long_desc()
         {
           desc ="
 
-純陽神通功秘訣
+純陽神通功祕訣
 
-純陽神通功系本山人晚年悟得。吾青壯年獻身于抗金大業，大小百余戰，
-殺金賊無數。無奈朝廷姦賊當道，忠義之士俱被殺戳，有功之臣慘遭滅門。
-余雖有心回天，奈我朝氣數已盡，非人力所能為。為免我華夏遭滅門之厄，
-余慨嘆之余，網羅天下同道之士，修活死人墓，集數萬金，以為日後東山
-再起之備。余手創全真教，廣傳門徒，授防身之術，盼我教眾徒能成為我
-大宋之中流砥拄。我大宋中興，全系于諸人。余閉關多年，並與諍友林氏
-朝英切磋多次，兼參讀九陰真經，終大徹大悟，得成大道。余戎馬生涯，
+純陽神通功系本山人晚年悟得。吾青壯年獻身於抗金大業，大小百餘戰，
+殺金賊無數。無奈朝廷奸賊當道，忠義之士俱被殺戳，有功之臣慘遭滅門。
+餘雖有心迴天，奈我朝氣數已盡，非人力所能為。為免我華夏遭滅門之厄，
+餘慨歎之餘，網羅天下同道之士，修活死人墓，集數萬金，以為日後東山
+再起之備。餘手創全真教，廣傳門徒，授防身之術，盼我教眾徒能成為我
+大宋之中流砥拄。我大宋中興，全繫於諸人。餘閉關多年，並與諍友林氏
+朝英切磋多次，兼參讀九陰真經，終大徹大悟，得成大道。餘戎馬生涯，
 行走江湖多年，身受巨創多次，又與西毒歐陽鋒大戰數次，雖破其哈蟆功，
-余亦深受劇毒，元氣大傷，恐不日就要歸天。惜眾徒皆資質一般，無人能
-授予奇功。師弟伯通雖資質奇佳，但已非純陽之身，且不通事理。余去之
-後，恐重陽宮不日就要遭厄運，此也是天數。余特留此秘訣，藏于極密之
+餘亦深受劇毒，元氣大傷，恐不日就要歸天。惜眾徒皆資質一般，無人能
+授予奇功。師弟伯通雖資質奇佳，但已非純陽之身，且不通事理。餘去之
+後，恐重陽宮不日就要遭厄運，此也是天數。餘特留此祕訣，藏於極密之
 處，日後有緣者自能獲得此訣。爾既能得此訣，當是極為有緣。中興華夏，
-全賴于汝，望汝不負吾望。汝若能習成此功，可進列為吾徒，日後須行俠
+全賴於汝，望汝不負吾望。汝若能習成此功，可進列為吾徒，日後須行俠
 仗義，替天行道。
 
 終南山王重陽
 \n";
         }
         else desc="
-練功秘訣：須于無人僻靜之處，持此秘訣，靜讀潛心修練(xiulian)。
+練功祕訣：須於無人僻靜之處，持此祕訣，靜讀潛心修練(xiulian)。
 已婚者須當心走火入魔。此功光練無用，須常常和高手切磋(qiecuo)。\n";
 
 
@@ -99,7 +99,7 @@ int do_xiulian(string arg)
                 seteuid(getuid());
         where = environment(me);
 
-        if(me->is_busy())return notify_fail("你正忙著呢。\n");
+        if(me->is_busy())return notify_fail("你正忙着呢。\n");
                 if( query("no_fight", where) )
                 return notify_fail("你只覺渾身懶懶地，無法凝神聚氣。\n");
         if( query("neili", me)<1000)return notify_fail("你內力不足，無法修練。\n");
@@ -116,7 +116,7 @@ int do_xiulian(string arg)
         }
 
         message_vision(
-HIG"$N按照純陽神通功秘訣，運起玄門先天功，聚天地之精氣，過紫宮，入泥丸，
+HIG"$N按照純陽神通功祕訣，運起玄門先天功，聚天地之精氣，過紫宮，入泥丸，
 透十二重樓，開玄關，通任督，勁隨意到，勁到力至。\n"NOR,me);
 
         me->start_busy( 1+random(5) );
@@ -189,7 +189,7 @@ int do_qiecuo(string arg)
                 seteuid(getuid());
         where = environment(me);
 
-        if(me->is_busy())return notify_fail("你正忙著呢。\n");
+        if(me->is_busy())return notify_fail("你正忙着呢。\n");
                 if( query("no_fight", where) )
                 return notify_fail("比試的念頭剛在腦中一閃，四周就凝結了一層殺氣。\n");
         if(!arg)return notify_fail("你想和誰切磋？\n");
@@ -201,7 +201,7 @@ int do_qiecuo(string arg)
                 return notify_fail("此人武功太差，無法和你切磋。\n");
 
         if(!living(target)) return notify_fail("你得等人家醒了才行。\n");
-        if(target->is_busy())return notify_fail("人家正忙著呢。\n");
+        if(target->is_busy())return notify_fail("人家正忙着呢。\n");
 
         if( query("neili", me)<1000)return notify_fail("你內力不足，無法切磋。\n");
         if( query("jingli", me)<1000)return notify_fail("你精力不足，無法切磋。\n");
@@ -212,13 +212,13 @@ int do_qiecuo(string arg)
         if( query("quanzhen/shentong_times", me)<1)return notify_fail("你純陽神通未練已久，該去修練一下了。\n");
 
         message_vision(
-HIG"$N按照純陽神通功秘訣，運起玄門先天功，聚天地之精氣，過紫宮，入泥丸，
+HIG"$N按照純陽神通功祕訣，運起玄門先天功，聚天地之精氣，過紫宮，入泥丸，
 透十二重樓，開玄關，通任督，勁隨意到，勁到力至。\n"NOR,me);
         message_vision(
-HIW"$N緊跟著將內力偏布全身，只見白氣逐漸籠罩全身，雙眼精光四射，與平時判若兩人。\n" NOR, me);
+HIW"$N緊跟着將內力偏布全身，只見白氣逐漸籠罩全身，雙眼精光四射，與平時判若兩人。\n" NOR, me);
 
         message_vision(
-HIR"$N接著突然出掌攻向$n，當真是無聲無息，卻迅如閃電。\n" NOR, me,target);
+HIR"$N接着突然出掌攻向$n，當真是無聲無息，卻迅如閃電。\n" NOR, me,target);
 
                   skill = me->query_skill("force");
                   addn("neili", -skill*2, me);
@@ -244,7 +244,7 @@ HIR"$N接著突然出掌攻向$n，當真是無聲無息，卻迅如閃電。\n"
 void destroy_me(object ob)
 {
         message_vision(HIR"$N被純陽神通功驚人內力所驚，不由得向後連連退步，口道：“佩服！佩服！”。
-說完轉身撒腿就跑，比兔子還快，轉眼就不見了。\n"NOR,ob);
+説完轉身撒腿就跑，比兔子還快，轉眼就不見了。\n"NOR,ob);
         destruct(ob);
 }
 

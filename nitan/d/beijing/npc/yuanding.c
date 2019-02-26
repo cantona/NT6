@@ -18,7 +18,7 @@ void create()
        set_skill("unarmed",20);
        set("chat_chance", 1);
        set("chat_msg", ({
-                "園丁弓著腰整理著花草。\n",
+                "園丁弓着腰整理着花草。\n",
         }) );       
 
         setup();

@@ -21,7 +21,7 @@ int perform(object me, object target)
         if( (int)me->query_skill("dabei-zhang", 1) < 100 )
                 return notify_fail("你的大悲掌不夠嫻熟，不會使用「悲痛莫明」。\n");
 
-        msg = HIB "$N臉上露出一絲悲痛的神情，和手念了一聲阿彌陀佛,\n"NOR;
+        msg = HIB "$N臉上露出一絲悲痛的神情，和手唸了一聲阿彌陀佛,\n"NOR;
         msg += HIB "雙手緩緩的推出，看似平常的一招，可是看不出一絲\n"NOR;
         msg += HIW "破綻，次招正是大悲掌最後絕技「悲痛莫明」。\n"NOR;
         
@@ -31,7 +31,7 @@ int perform(object me, object target)
              
         if (ap / 2 + random(ap) > dp)
         {
-                msg += HIW "$p企圖突破$N的攻擊范圍，但是被$N的掌風避的毫無退路。\n" NOR;
+                msg += HIW "$p企圖突破$N的攻擊範圍，但是被$N的掌風避的毫無退路。\n" NOR;
                 target->start_busy(3 +random(4));
                 addn("neili", -500, me);
         } else 

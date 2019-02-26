@@ -8,7 +8,7 @@ void create()
         set("short", "煙雨樓");
         set("long", @LONG
 煙雨樓建在南湖中心的一個小島上。南湖終年不斷的水氣把它籠罩
-得迷迷蒙蒙的。樓內是家飯店。
+得迷迷濛濛的。樓內是家飯店。
 LONG );
         set("outdoors", "jiaxing");
         set("exits", ([

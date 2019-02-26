@@ -10,13 +10,13 @@ string ask_me();
 
 void create()
 {
-        set_name("喬峰", ({"qiao feng", "feng", "qiao"}));
-        set("nickname", "北喬峰");
+        set_name("喬峯", ({"qiao feng", "feng", "qiao"}));
+        set("nickname", "北喬峯");
         set("gender", "男性");
         set("age", 29);
         set("long",
-"他就是丐幫第十任幫主，在江湖上與燕子塢的慕容復並稱為「北喬峰，南慕容」。
-他身穿一件普通的粗布褂子，腰間用一條麻繩隨便一系。他身高六尺有余，體格
+"他就是丐幫第十任幫主，在江湖上與燕子塢的慕容復並稱為「北喬峯，南慕容」。
+他身穿一件普通的粗布褂子，腰間用一條麻繩隨便一系。他身高六尺有餘，體格
 十分魁梧，長有一張線條粗曠、十分男性化的臉龐，雙目如電，炯炯有神。\n");
         set("attitude", "peaceful");
         set("class", "beggar");
@@ -56,7 +56,7 @@ void create()
         set_skill("stick", 200);             // 基本棒法
         set_skill("dagou-bang", 300);        // 打狗棒法
         set_skill("begging", 100);           // 叫化絕活
-        set_skill("checking", 100);          // 道聽途說
+        set_skill("checking", 100);          // 道聽途説
         set_skill("training", 100);          // 馭獸術
         set_skill("lianhua-zhang",85); // 蓮花掌
 
@@ -72,7 +72,7 @@ void create()
         prepare_skill("strike", "dragon-strike");
 
         set("inquiry",([
-                "秘籍"     : (: ask_me :),
+                "祕籍"     : (: ask_me :),
                 "棒法入門" : (: ask_me :),
         ]));
         set("book_count", 1);
@@ -110,7 +110,7 @@ void greeting(object me)
         myfam=query("family", me);
         if( (myfam["family_name"] == "丐幫") && (!me->query_skill("huntian-qigong",1)) && (query("combat_exp", me)>500000) )
         {
-                command("say 你竟敢放棄本門心法！從我這裡滾出去吧！");
+                command("say 你竟敢放棄本門心法！從我這裏滾出去吧！");
                 command("expell"+query("id", me));
         }
 
@@ -181,7 +181,7 @@ string ask_me()
                 fam["family_name"] != "丐幫")
                 return RANK_D->query_respect(this_player()) +"與本派毫無瓜葛，我派的武功典籍可不能交給你。";
         if (query("book_count") < 1)
-                return "你來晚了，本派的秘籍不在此處。";
+                return "你來晚了，本派的祕籍不在此處。";
         addn("book_count", -1);
         ob = new("/clone/book/stick_book.c");
         ob->move(this_player());

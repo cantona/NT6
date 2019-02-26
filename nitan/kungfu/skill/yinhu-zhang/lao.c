@@ -37,7 +37,7 @@ int perform(object me, object target)
                 return notify_fail("你沒有激發銀瑚杖法，難以施展" + name() + "。\n");
 
         if (! living(target))
-                return notify_fail("對方都已經這樣了，用不著這麼費力吧？\n");
+                return notify_fail("對方都已經這樣了，用不着這麼費力吧？\n");
 
         msg = HIM "\n$N" HIM "一聲暴喝，猛然間騰空而起，施出絕招「" HIW "大海撈"
               "針" HIM "」，手中" + weapon->name() + HIM "從天而降，氣勢驚人地"
@@ -54,7 +54,7 @@ int perform(object me, object target)
 
                 msg = COMBAT_D->do_damage(me, target, WEAPON_ATTACK, damage, 75,
                                            HIR "$n" HIR "完全無法看清招中虛實，只"
-                                           "聽「□」地一聲，已被$N" HIR "擊中肩膀。\n" NOR);
+                                           "聽「嘭」地一聲，已被$N" HIR "擊中肩膀。\n" NOR);
                 me->start_busy(3);
                 addn("neili", -180, me);
         } else

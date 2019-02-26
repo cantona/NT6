@@ -9,7 +9,7 @@ void create()
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("long", HIB "這是一粒集百毒之精華煉制而成的毒藥，毒性猛烈之極。經過孔雀膽、鶴頂紅練制後無色無味，唯見效較緩!\n" NOR);
+                set("long", HIB "這是一粒集百毒之精華煉製而成的毒藥，毒性猛烈之極。經過孔雀膽、鶴頂紅練制後無色無味，唯見效較緩!\n" NOR);
                 set("base_unit", "粒");
                 set("base_value", 200000);
                 set("base_weight", 10);

@@ -27,7 +27,7 @@ int exert(object me, object target)
         addn("neili", -100, me);
         me->receive_damage("qi",0);
 
-        message_combatd(HIW"$N長嘯一聲，真氣激發，周身一層青氣氤氳，隱隱透體而出，彌漫四周。\n" NOR, me);
+        message_combatd(HIW"$N長嘯一聲，真氣激發，周身一層青氣氤氲，隱隱透體而出，瀰漫四周。\n" NOR, me);
         addn_temp("apply/attack", skill/3, me);
         addn_temp("apply/dodge", skill/3, me);
         set_temp("powerup", 1, me);
@@ -50,7 +50,7 @@ int help(object me)
         write(@HELP
 
         使用功效：
-                提升自己的攻擊防御能力
+                提升自己的攻擊防禦能力
 
         出手要求：
                 內力100

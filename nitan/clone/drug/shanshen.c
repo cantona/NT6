@@ -1,5 +1,5 @@
 // Code of ShenZhou
-// shanshen.c 老山三
+// shanshen.c 老山叁
 
 inherit ITEM;
 #include <ansi.h>
@@ -33,7 +33,7 @@ int cure_ob(object me)
         }
         if( random(2) == 1)
         {
-        message_vision("$N吃下一株老山參，嘴裡覺得甜甜的。\n", me);
+        message_vision("$N吃下一株老山參，嘴裏覺得甜甜的。\n", me);
         destruct(this_object());
         return 1;
         }

@@ -8,7 +8,7 @@ int do_pretend ( string arg );
 void create()
 {
         set_name("海公公", ({"hai gonggong", "hai", "gonggong"}));
-        set("title", "東廠千戶");
+        set("title", "東廠千户");
         set("long",
                 "他是東廠大太監海大富，喬裝改扮成商人模樣出京尋歡作樂，長得既像老頭又像老太太。\n"
         );
@@ -80,7 +80,7 @@ string ask_for_zigong()
         if( query("gender", me) == "女性" )
                 return "我雖已廢，但一樣可以給你這個小美人帶來快樂，要不要試試？\n";
         if ((int)me->query_str() > 28 )
-                return "這位好漢過于粗壯，自宮有礙觀瞻，不妥，不妥。\n";
+                return "這位好漢過於粗壯，自宮有礙觀瞻，不妥，不妥。\n";
 
         set_temp("pending/zigong", 1, me);
         return "自宮？這位公子相貌堂堂，何必... 我真希望能有你的那個。自宮之後，不可後悔，你若決心已定(decide)，告訴我。\n";
@@ -93,12 +93,12 @@ string ask_for_jingong()
         me = this_player();
 
         if( query("gender", me) == "無性" )
-        return("海公公笑吟吟地說道：您既已是公公了，自然可以進宮。\n");          
+        return("海公公笑吟吟地説道：您既已是公公了，自然可以進宮。\n");          
 
         if( query("gender", me) == "男性" )
         {
         set_temp("pending/zigong", 1, me);
-        return("海公公笑吟吟地說道：並不是一定要自宮才可以進皇宮的；\n"+"不過，你若決心已定(decide)，我就成全了你。\n");
+        return("海公公笑吟吟地説道：並不是一定要自宮才可以進皇宮的；\n"+"不過，你若決心已定(decide)，我就成全了你。\n");
         }
 
         if( query("gender", me) == "女性" )
@@ -136,7 +136,7 @@ int accept_object(object me, object ob)
         if( query("name", ob) == "藥粉" )
         {
          write(HIC "海公公打開藥包，伸出小指，用指甲挑了一點粉末，\n"
-         +"就著酒泯了，仍是不住咳嗽。\n" NOR);
+         +"就着酒泯了，仍是不住咳嗽。\n" NOR);
                if(objectp(present("xiao", environment(me))))
                 {
                 command("say 奇怪，你怎麼也有這種藥。");   
@@ -182,7 +182,7 @@ if( query("gender", ob) == "男性" )
 {
 set_temp("haspretend", 1, ob);
 message_vision("\n$N裝成了小桂子，$n沒吭聲。\n",this_player(),this_object());
-message_vision("\n海公公看了$N一眼，說“唉，是不是又該吃藥了？”\n",this_player());
+message_vision("\n海公公看了$N一眼，説“唉，是不是又該吃藥了？”\n",this_player());
 return 1;
 }
 }
@@ -190,7 +190,7 @@ return 1;
 
 void die()
 {
-        say("海公公掙紮著嘆道：唉，老皇爺的事兒我沒辦成啊！\n");                 
+        say("海公公掙扎着歎道：唉，老皇爺的事兒我沒辦成啊！\n");                 
         message_vision("$N慘嚎一聲，死了！\n", this_object());
         ::die();
 }

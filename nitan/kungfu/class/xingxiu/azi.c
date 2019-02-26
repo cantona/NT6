@@ -72,7 +72,7 @@ void create()
 
         set("swmuding", 1);
         set("inquiry", ([
-                "木鼎" : "倉庫裡面一大堆，你自己去找吧！",
+                "木鼎" : "倉庫裏面一大堆，你自己去找吧！",
                 "神木王鼎" : (: ask_ding :),
         ]));
 
@@ -99,7 +99,7 @@ int ask_ding(object me)
         
         if( query("family/family_name", me) != "星宿派" )
         {  
-                say("阿紫說道：“這東西可不是給你用的。”\n");
+                say("阿紫説道：“這東西可不是給你用的。”\n");
                 return 0;
         }  
         
@@ -109,12 +109,12 @@ int ask_ding(object me)
         addn_temp("mark/ding", 1, me);
         if( query_temp("mark/ding", me) >= 5+random(5) )
         {
-                say("阿紫說道：你這個人怎麼這麼煩？神木王鼎就是不在我身上，不信你搜（sou）我好了。\n");
+                say("阿紫説道：你這個人怎麼這麼煩？神木王鼎就是不在我身上，不信你搜（sou）我好了。\n");
                 add_action("do_sou","sou");
                 return 1;
         }
         else
-                say("阿紫說道：什麼神木王鼎，我可沒拿……，你別冤枉好人！\n");
+                say("阿紫説道：什麼神木王鼎，我可沒拿……，你別冤枉好人！\n");
         return 1;
 }
 
@@ -129,7 +129,7 @@ int do_sou(string arg)
     if( arg=="a zi" ) 
     {
         message("vision",
-            me->name() + "獰笑著說道：“好，那我就不客氣了。”\n",
+            me->name() + "獰笑着説道：“好，那我就不客氣了。”\n",
             environment(me),({me}));
         ob2->kill_ob(me);
         set_temp("last_damage_from", me, ob2);
@@ -188,7 +188,7 @@ void accept_kill(object me)
                 ob1->move(environment());
                 ob1->kill_ob(me);
                 me->fight_ob(ob1);
-                message_vision("蕭峰大喝一聲，擋住了你的去路！\n",me);
+                message_vision("蕭峯大喝一聲，擋住了你的去路！\n",me);
         }
         return;
 }
@@ -203,7 +203,7 @@ int accept_kill(object who)
 
         if (! query("swmuding"))
         {
-                command("say 神王木鼎原來的確在我這裡，可是後來被人搶走啦！");
+                command("say 神王木鼎原來的確在我這裏，可是後來被人搶走啦！");
                 command("inn"+query("id", who));
                 tell_object(who, "你看到阿紫一副楚楚可憐的樣子，不禁心頭一軟。\n");
                 return -1;
@@ -218,7 +218,7 @@ int accept_kill(object who)
         if (sizeof(obs))
         {
                 command("say 嗚嗚，神王木鼎真的被人搶走啦！");
-                tell_object(who, "你看阿紫神情不象是作偽，不由得嘆了一口氣。\n");
+                tell_object(who, "你看阿紫神情不象是作偽，不由得歎了一口氣。\n");
                 return -1;
         }
 
@@ -234,7 +234,7 @@ int accept_kill(object who)
                 return -1;
         }
 
-        command("say 我說了沒有木鼎了，你怎麼不信！");
+        command("say 我説了沒有木鼎了，你怎麼不信！");
         return 1;
 }
 */

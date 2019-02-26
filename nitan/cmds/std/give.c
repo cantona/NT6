@@ -29,15 +29,15 @@ int main(object me, string arg)
 
                 if (sscanf(arg, "%s %s %s", ext, target, item) != 3 ||
                     ! objectp(who = present(ext + " " + target, environment(me))))
-                        return notify_fail("這裡沒有這個人。\n");
+                        return notify_fail("這裏沒有這個人。\n");
         }
 
 
         if (me == who) return notify_fail("毛病！你自己給自己東西幹嗎？\n");
         if (in_input(who))
-                return notify_fail("你還是得等人家忙完了再說吧。\n");
+                return notify_fail("你還是得等人家忙完了再説吧。\n");
         if (! living(who))
-                return notify_fail("你還是得等人家醒了再說吧。\n");
+                return notify_fail("你還是得等人家醒了再説吧。\n");
 
         if( playerp(me) && !wizardp(me) && stringp(no_accept=query("env/no_accept", who)) )
         {
@@ -67,7 +67,7 @@ int main(object me, string arg)
                         return notify_fail("你身上沒有這樣東西。\n");
 
                 if( query_temp("is_riding", me) == obj )
-                        return notify_fail("你正騎著它呢。\n");
+                        return notify_fail("你正騎着它呢。\n");
 
                 if (! obj->query_amount())
                         return notify_fail( obj->name() + "不能被分開給人。\n");
@@ -135,7 +135,7 @@ int main(object me, string arg)
                 return notify_fail("你身上沒有這樣東西。\n");
 
         if( query_temp("is_riding", me) == obj )
-                return notify_fail("你正騎著它呢。\n");
+                return notify_fail("你正騎着它呢。\n");
 
         do_give(me, obj, who, 1);
         return 1;
@@ -178,7 +178,7 @@ int do_give(object me, object obj, object who,int info)
         switch(query("equipped", obj) )
         {
         case "worn":
-                tell_object(me, obj->name() + "必須脫下來才能給別人。\n");
+                tell_object(me, obj->name() + "必須脱下來才能給別人。\n");
                 return 0;
 
         case "wielded":
@@ -316,7 +316,7 @@ int accept_object(object me, object who, object ob)
                "score" : score,
                "weiwang" : weiwang,
                "prompt": "在幫助" + who->name() + "尋找" + bunch_quest["obj_name"] +
-                         HIG "的過程中，經過鍛煉" ]);
+                         HIG "的過程中，經過鍛鍊" ]);
 
         GIFT_D->delay_bonus(me, b);
 

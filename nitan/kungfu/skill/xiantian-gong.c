@@ -17,7 +17,7 @@ int valid_force(string force)
 }
 
 mapping *action = ({
-([      "action" : "$N單掌一抖，運聚先天功功力，呼嘯著向$n的$l處拍去",
+([      "action" : "$N單掌一抖，運聚先天功功力，呼嘯着向$n的$l處拍去",
         "dodge"  : -87,
         "force"  : 430,
         "attack" : 163,
@@ -41,7 +41,7 @@ mapping *action = ({
         "damage" : 93,
         "damage_type": "內傷"
 ]),
-([      "action" : "$N運轉先天真氣，雙掌回圈，頓時一波澎湃的氣勁直襲$n",
+([      "action" : "$N運轉先天真氣，雙掌迴圈，頓時一波澎湃的氣勁直襲$n",
         "dodge"  : -87,
         "force"  : 480,
         "attack" : 183,
@@ -94,13 +94,13 @@ int valid_learn(object me)
 
         if (me->query_skill("taoism", 1) < 320
            && me->query_skill("taoism", 1) < me->query_skill("xiantian-gong", 1))
-                return notify_fail("你對道學心法的理解不夠，難以鍛煉更深厚的先天功。\n");
+                return notify_fail("你對道學心法的理解不夠，難以鍛鍊更深厚的先天功。\n");
 
         if (me->query_skill("force", 1) < me->query_skill("xiantian-gong", 1))
-                return notify_fail("你的基本內功水平不夠，難以鍛煉更深厚的先天功。\n");
+                return notify_fail("你的基本內功水平不夠，難以鍛鍊更深厚的先天功。\n");
 
         if (me->query_skill("unarmed", 1) < me->query_skill("xiantian-gong", 1))
-                return notify_fail("你的基本拳腳水平不夠，難以鍛煉更深厚的先天功。\n");
+                return notify_fail("你的基本拳腳水平不夠，難以鍛鍊更深厚的先天功。\n");
 
         return ::valid_learn(me);
 }
@@ -124,7 +124,7 @@ mixed hit_ob(object me, object victim, int damage_bonus)
         {
                 addn("neili", -30, me);
                 victim->receive_wound("qi", damage_bonus / 2, me);
-                return HIR"隨著""$N""的攻擊,一股先天純陽真力瞬間爆發了出來，$n"  //return HIW "$N" HIW "先天功的潛力發揮了出來，突然間$n"
+                return HIR"隨着""$N""的攻擊,一股先天純陽真力瞬間爆發了出來，$n"  //return HIW "$N" HIW "先天功的潛力發揮了出來，突然間$n"
                        HIR "只感五內俱焚，喉嚨沙啞無比，不禁咳一口鮮血！\n" NOR;// HIW "只感喉嚨一甜，噴出一口鮮血！\n" NOR;
         }
 }
@@ -170,7 +170,7 @@ void skill_improved(object me)
                 } else
                 {
                         tell_object(me, HIC "你通曉了先天功「" HIW "純陽神通功"
-                                        HIC "」的奧秘。\n" NOR);
+                                        HIC "」的奧祕。\n" NOR);
                         me->improve_skill("martial-cognize", 1500000);
                         me->improve_skill("martial-cognize", 1500000);
                         me->improve_skill("martial-cognize", 1500000);

@@ -10,7 +10,7 @@ void create()
         else {
                 set("unit", "塊");
                 set("long",
-"這是一塊精美的藍田玉，入手溫潤無比。\n");
+"這是一塊精美的藍田玉，入手温潤無比。\n");
         set("value", 80000);
                 set("material", "stone");
         }

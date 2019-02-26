@@ -18,7 +18,7 @@ void create()
         set("title", "日月神教前輩長老");
         set("long", @LONG
 金猴神魔張乘風是日月神教的前輩長老，武功
-高強，位尊無比。曾一度掃除五岳劍派聯盟。
+高強，位尊無比。曾一度掃除五嶽劍派聯盟。
 LONG);
         set("gender", "男性");
         set("class", "scholar");
@@ -123,7 +123,7 @@ int recognize_apprentice(object ob, string skill)
         if( query("family/family_name", ob) != "日月神教" )
         {
                 command("killair");
-                command("say 給我滾開，少在老夫面前說三道四！");
+                command("say 給我滾開，少在老夫面前説三道四！");
                 return -1;
         }
 
@@ -145,7 +145,7 @@ int recognize_apprentice(object ob, string skill)
         if (skill != "club" && skill != "jinyuan-gun")
         {
                 command("hmm");
-                command("say 我只傳授你這套棍法，其余的找你師父學去。");
+                command("say 我只傳授你這套棍法，其餘的找你師父學去。");
                 return -1;
         }
 
@@ -196,7 +196,7 @@ mixed ask_gun()
         }
 
         if (owner == me)
-                return "南海神木現在不就在你手裡嗎？";
+                return "南海神木現在不就在你手裏嗎？";
 
         if (objectp(owner) && owner != this_object())
         {
@@ -250,7 +250,7 @@ mixed ask_skill1()
                 return "你的金猿棍法還練得不到家，自己下去練練再來吧！";
 
         message_sort(HIY "\n$n" HIY "咳嗽一聲，對$N" HIY "點了點頭道：“看"
-                     "好了！”說完便大步上前，怒吼一聲，手中熟銅棍急速舞動"
+                     "好了！”説完便大步上前，怒吼一聲，手中熟銅棍急速舞動"
                      "，霎時間飛沙走石，罡氣激盪。便在那狂沙颶風中，$n" HIY
                      "忽然高高躍起，迎頭一棒猛然劈落。數招一氣呵成，連貫之"
                      "極，煞為壯觀。\n\n" NOR, me, this_object()); 
@@ -275,14 +275,14 @@ mixed ask_back()
             me = this_player();
 
         if (find_object(query("startroom")) != environment())
-                return "咦？…嗯…這個…這…你還是自己看著辦吧。";
+                return "咦？…嗯…這個…這…你還是自己看着辦吧。";
 
         if( query("family/family_name", me) != query("family/family_name") )
                 return "他奶奶的，你找死麼？";
 
         command("nod");
-        message_vision(HIW "張乘風咳嗽一聲，陡然縱聲長嘯，崖上頓時落下一個大吊籃。\n\n"
-                       NOR + HIY "$N" HIY "一彎腰進了吊籃，吊籃緩緩地鉸上崖去……\n\n", me);
+        message_vision(HIW "張乘風咳嗽一聲，陡然縱聲長嘯，崖上頓時落下一個大弔籃。\n\n"
+                       NOR + HIY "$N" HIY "一彎腰進了弔籃，弔籃緩緩地鉸上崖去……\n\n", me);
         myenv = environment(me);
         me->move ("/d/heimuya/basket");
         me->start_call_out((: call_other, __FILE__, "up1", me :), 5);
@@ -291,7 +291,7 @@ mixed ask_back()
 
 void up1(object me)
 {
-            tell_object(me, HIW "\n你乘座的吊籃急速上升，籃外的朵朵白雲向下沖去。\n\n" NOR);
+            tell_object(me, HIW "\n你乘座的弔籃急速上升，籃外的朵朵白雲向下衝去。\n\n" NOR);
         me->start_call_out((: call_other, __FILE__, "up2", me :), 5);
 }
 
@@ -299,5 +299,5 @@ void up2(object me)
 {
             tell_object(me, HIW "\n你眼前一亮，一幢幢白色建築屹立眼前，霎是輝煌。\n\n" NOR);
         me->move("/d/heimuya/shanya3");
-        message_vision(HIC "\n$N" HIC "乘坐吊籃上了黑木崖。\n\n" NOR, me);
+        message_vision(HIC "\n$N" HIC "乘坐弔籃上了黑木崖。\n\n" NOR, me);
 }

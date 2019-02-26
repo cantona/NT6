@@ -21,9 +21,9 @@ mapping *action = ({
           "lvl"        : 30,
           "skill_name" : "見龍在田",
 ]),
-([        "action" : "$N雙掌施出一招"+(order[random(13)])+"「鴻漸于陸」"NOR"，隱隱帶著風聲拍向$n的$l",
+([        "action" : "$N雙掌施出一招"+(order[random(13)])+"「鴻漸於陸」"NOR"，隱隱帶着風聲拍向$n的$l",
           "lvl"        : 40,
-          "skill_name" : "鴻漸于陸",
+          "skill_name" : "鴻漸於陸",
 ]),
 ([        "action" : "$N左掌聚成拳狀，右掌一招"+(order[random(13)])+"「潛龍勿用」"NOR"緩緩推向$n的$l",
           "lvl"        : 50,
@@ -37,9 +37,9 @@ mapping *action = ({
           "lvl"        : 70,
           "skill_name" : "突如其來",
 ]),
-([        "action" : "$N大吼一聲，雙掌使出"+(order[random(13)])+"「震驚百裡」"NOR"，不顧一切般擊向$n",
+([        "action" : "$N大吼一聲，雙掌使出"+(order[random(13)])+"「震驚百里」"NOR"，不顧一切般擊向$n",
           "lvl"        : 80,
-          "skill_name" : "震驚百裡",
+          "skill_name" : "震驚百里",
 ]),
 ([        "action" : "$N使出"+(order[random(13)])+"「或躍在淵」"NOR"，向$n的$l連拍數掌",
           "lvl"        : 90,
@@ -49,9 +49,9 @@ mapping *action = ({
           "lvl"        : 100,
           "skill_name" : "雙龍取水",
 ]),
-([        "action" : "$N使出"+(order[random(13)])+"「魚躍于淵」"NOR"，身形飛起，雙掌並在一起向$n的$l劈下",
+([        "action" : "$N使出"+(order[random(13)])+"「魚躍於淵」"NOR"，身形飛起，雙掌並在一起向$n的$l劈下",
           "lvl"        : 110,
-          "skill_name" : "魚躍于淵",
+          "skill_name" : "魚躍於淵",
 ]),
 ([        "action" : "$N雙掌立起，使出"+(order[random(13)])+"「時乘六龍」"NOR"向$n連砍六下",
           "lvl"        : 120,
@@ -65,11 +65,11 @@ mapping *action = ({
           "lvl"        : 140,
           "skill_name" : "損則有孚",
 ]),
-([        "action" : "$N腳下一轉，突然欺到$n身前，一招"+(order[random(13)])+"「龍戰于野」"NOR"拍向$n的$l",
+([        "action" : "$N腳下一轉，突然欺到$n身前，一招"+(order[random(13)])+"「龍戰於野」"NOR"拍向$n的$l",
           "lvl"        : 150,
-          "skill_name" : "龍戰于野",
+          "skill_name" : "龍戰於野",
 ]),
-([        "action" : "$N門戶大開，一招"+(order[random(13)])+"「履霜冰至」"NOR"向$n的$l劈去",
+([        "action" : "$N門户大開，一招"+(order[random(13)])+"「履霜冰至」"NOR"向$n的$l劈去",
           "lvl"        : 160,
           "skill_name" : "履霜冰至",
 ]),
@@ -77,7 +77,7 @@ mapping *action = ({
           "lvl"        : 170,
           "skill_name" : "羝羊觸蕃",
 ]),
-([        "action" : "$N左掌護胸，右掌使一招"+(order[random(13)])+"「神龍擺尾」"NOR"上下晃動著擊向$n的$l",
+([        "action" : "$N左掌護胸，右掌使一招"+(order[random(13)])+"「神龍擺尾」"NOR"上下晃動着擊向$n的$l",
           "lvl"        : 180,
           "skill_name" : "神龍擺尾",
 ]),
@@ -127,13 +127,13 @@ int get_finish(object me)
 
        if ((int)me->query_skill("force") < 150)
        {
-               tell_object(me, "你演練完畢，幾乎虛脫，自己的內功水平看來還有待提高。\n");
+               tell_object(me, "你演練完畢，幾乎虛脱，自己的內功水平看來還有待提高。\n");
                return 0;
        }
 
        if( query("max_neili", me)<1500 )
        {
-               tell_object(me, "你演練完畢，丹田提不起半點力來，看來應該繼續鍛煉內力。\n");
+               tell_object(me, "你演練完畢，丹田提不起半點力來，看來應該繼續鍛鍊內力。\n");
                return 0;
        }
 
@@ -162,7 +162,7 @@ int valid_learn(object me)
                return notify_fail("就你這身子骨還練降龍十八掌？小心弄折了胳膊。\n");
 
        if( query("con", me)<24 )
-               return notify_fail("算了吧，你先天根骨不好，別強學了。\n");
+               return notify_fail("算了吧，你先天根骨不好，彆強學了。\n");
 
        if ((int)me->query_skill("force") < 150)
                return notify_fail("你的內功火候不夠，無法學習降龍十八掌。\n");
@@ -270,9 +270,9 @@ mixed hit_ob(object me, object victim, int damage)
         else
         {
                 victim->receive_wound("qi", damage, me);
-                msg = random(2) ? HIR "$n" HIR "一聲慘叫，胸前「□嚓□嚓」幾聲脆"
+                msg = random(2) ? HIR "$n" HIR "一聲慘叫，胸前「咔嚓咔嚓」幾聲脆"
                                   "響，口中鮮血狂噴。\n" NOR :
-                                  HIR "只聽$n" HIR "前胸「□嚓」一聲脆響，竟像是"
+                                  HIR "只聽$n" HIR "前胸「咔嚓」一聲脆響，竟像是"
                                   "肋骨斷折的聲音。\n" NOR;
                 result = ([ "msg" : msg ]);
         }
@@ -330,11 +330,11 @@ mixed valid_damage(object ob, object me, int damage, object weapon)
                         break;
                 case 1:
                         result += (["msg" : HIC "只見$n" HIC "左掌圓勁，右掌直勢，使招「見龍在田」，擋在身前。\n"
-                                    "這一招純是防御，卻是在雙方之間布了一道堅壁。\n" NOR]);
+                                    "這一招純是防禦，卻是在雙方之間布了一道堅壁。\n" NOR]);
                         break;
                 default:
                         result += (["msg" : HIC "$n" HIC "當下不敢怠慢，雙掌飛舞，將自己全身籠罩在掌力之下。\n"
-                                    "這一守當真是穩若淵停岳峙，直無半點破綻。\n" NOR]);
+                                    "這一守當真是穩若淵停嶽峙，直無半點破綻。\n" NOR]);
                         break;
                 }
                 return result;
@@ -370,8 +370,8 @@ string query_description()
 {
         return
         "降龍十八掌勇往直前，它的威力甚至超過了六脈神劍，當然"
-        "綜合起來與六脈神劍相差還頗有距離。關于降龍十八掌的"
-        "定位問題頗有爭議，這裡是依據蕭峰手下的功夫定位的。"
+        "綜合起來與六脈神劍相差還頗有距離。關於降龍十八掌的"
+        "定位問題頗有爭議，這裏是依據蕭峯手下的功夫定位的。"
         "當然學習還是要找洪七公，降龍十八掌乃是丐幫專用武功，"
         "其它門派的人物不可學習，丐幫學習的條件是你的妻子或"
         "女友能夠拿得出像樣的叫化雞給洪七公吃，如何作菜這就靠自"
@@ -394,7 +394,7 @@ int help(object me)
                 先天臂力25
                 先天根骨20
                 基本掌法180
-                基本掌法不低于降龍掌
+                基本掌法不低於降龍掌
 HELP
         );
         return 1;

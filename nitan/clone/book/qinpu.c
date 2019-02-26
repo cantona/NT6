@@ -9,9 +9,9 @@ void create()
                 set_default_object(__FILE__);
         else {
                 set("unit", "本");
-                set("long", "這是一本琴譜，你讀著讀著，似
-乎可以從裡面發現一些其他的東西。\n"
-                        "原來這是一本藏著劍法的琴譜。\n");
+                set("long", "這是一本琴譜，你讀着讀着，似
+乎可以從裏面發現一些其他的東西。\n"
+                        "原來這是一本藏着劍法的琴譜。\n");
                 set("value", 1000);
                 set("material", "paper");
                 set("skill", ([

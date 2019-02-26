@@ -17,7 +17,7 @@ void create()
                 "mail <某人>               寄信給別人。\n"
                 "forward <信件編號> <某人> 將某封信轉寄給別人。\n"
                 "from                      查看信箱中的信件。\n"
-                "read <信件編號>           閱讀一封信件。\n"
+                "read <信件編號>           閲讀一封信件。\n"
                 "discard <信件編號>        丟棄一封信件。\n"
         );
         set("unit", "個");
@@ -201,7 +201,7 @@ void confirm_copy(string yn, mapping mail)
         if (mail["net"])
         {
                 GMAIL->send_gmail(mail["mud"], mail["to"], this_player(), mail);
-                write("\n網路訊息已送出，可能要稍候才能得到回應。\n");
+                write("\n網路訊息已送出，可能要稍候才能得到迴應。\n");
         }
         else
         {
@@ -230,7 +230,7 @@ int do_from()
                 printf("%2d %-36s  寄信人：%s %s\n",
                         i+1, mails[i]["title"], mails[i]["from"],mails[i]["read"]? "": HIR"新"NOR,);
     if(sizeof(mails)>30)
-        write("\n提醒：信箱郵件超過30封將無法收到新郵件，請盡快將舊郵件刪除掉。\n");
+        write("\n提醒：信箱郵件超過30封將無法收到新郵件，請儘快將舊郵件刪除掉。\n");
         write("\n");
 
         return 1;
@@ -309,7 +309,7 @@ int do_forward(string arg)
                 "text": mails[num]["text"],
             ]);
            GMAIL->send_gmail(mud, dest, this_player(), m);
-           write("網路訊息已送出，可能要稍候才能得到回應。\n");
+           write("網路訊息已送出，可能要稍候才能得到迴應。\n");
            return 1;
         }
     }

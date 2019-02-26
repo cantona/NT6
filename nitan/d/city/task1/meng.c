@@ -8,7 +8,7 @@ void create()
         set_name("孟正鵬", ({ "meng  zhengpeng"}));
         set("nickname", "五鳳刀掌門");
         set("long",
-        "五鳳刀的掌門，一身刀法傳說甚為了得。\n");
+        "五鳳刀的掌門，一身刀法傳説甚為了得。\n");
         set("gender", "男性");
         set("age", 52);
         set("attitude", "peaceful");

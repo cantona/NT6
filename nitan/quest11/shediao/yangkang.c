@@ -46,7 +46,7 @@ void create()
         set("max_neili", 100000);
         set("jiali", 200);
         set("quest/jiuyin2/pass",1);
-        set("quest/射雕英雄傳/yangjiaqiang/pass",1);
+        set("quest/射鵰英雄傳/yangjiaqiang/pass",1);
 
         set("combat_exp", 4300000);
 

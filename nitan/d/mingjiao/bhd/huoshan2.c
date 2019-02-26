@@ -6,7 +6,7 @@ void create()
 {
 	set("short", HIR"火山口"NOR);
         set("long", @LONG
-到了這裡就等于到了地獄了。
+到了這裏就等於到了地獄了。
 LONG );
 	set("exits",([
 		"southdown" : __DIR__"huoshan1",

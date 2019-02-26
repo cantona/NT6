@@ -38,7 +38,7 @@ int do_du(string arg)
 
         if (me->is_busy())
         {
-                write("你現在正忙著呢。\n");
+                write("你現在正忙着呢。\n");
                 return 1;
         }
         if( me->is_fighting() )
@@ -53,20 +53,20 @@ int do_du(string arg)
         }
         if (arg=="xianzhuang shu" || arg=="shu")
         {
-                write( "白駝秘要，分制藥(zhiyao)、練功(liangong)、圖解(tujie) 和功夫(gongfu)。\n");
+                write( "白駝祕要，分製藥(zhiyao)、練功(liangong)、圖解(tujie) 和功夫(gongfu)。\n");
                 set_temp("baituo_book", 1, me);
                 return 1;
         }
         if( arg == "zhiyao" && query_temp("baituo_book", me) )
         {
                 tell_object(me, "\n
-制藥：
-  汝可于我藥房之中找到各種制藥器具及草藥，
-  而要制成絕世之藥，非得另找原料。
+製藥：
+  汝可於我藥房之中找到各種製藥器具及草藥，
+  而要製成絕世之藥，非得另找原料。
 
   鶴紅丹：以毒攻毒可克我白駝怪蛇之奇毒。雖是如此，也將消耗內力真元。
           原料：新鮮鶴頂紅一個，腹蛇膽五個，斷腸草三株。
-          制法：。。。待定。。。
+          製法：。。。待定。。。
 \n
     白駝山莊莊主 歐陽鋒字\n\n" NOR);  
                 return 1;
@@ -74,9 +74,9 @@ int do_du(string arg)
         if( arg == "tujie" && query_temp("baituo_book", me) )
         {
                 tell_object(me, "\n
-汝可推開後院鐵門，于院中找到藍、紅、彩三塊石塊。將之順序
-推下(push)之後于其中一院內等待一刻便可入白駝秘道。秘道可
-直達山後亂石堆。秘道中之丹頂仙鶴乃是神物，如非性命悠關不
+汝可推開後院鐵門，於院中找到藍、紅、彩三塊石塊。將之順序
+推下(push)之後於其中一院內等待一刻便可入白駝祕道。祕道可
+直達山後亂石堆。祕道中之丹頂仙鶴乃是神物，如非性命悠關不
 可取它紅頂，切記！
 \n
     白駝山莊莊主 歐陽鋒字\n\n" NOR); 
@@ -86,7 +86,7 @@ int do_du(string arg)
         {
                 tell_object(me, "\n
 蛤蟆神功是由當日捕捉玄冰蟾蜍時由此畜生身上習得。現我將玄
-冰蟾蜍封閉在後院巨石堆裡，沒有一定的西毒毒技修為不得冒然
+冰蟾蜍封閉在後院巨石堆裏，沒有一定的西毒毒技修為不得冒然
 進入，切記！
 \n
     白駝山莊莊主 歐陽鋒字\n\n" NOR);    
@@ -99,7 +99,7 @@ int do_du(string arg)
                 tell_object(me, "\n
 白駝功夫分內外兩種，內功便是蛤蟆功，汝可每日去後院亂石堆
 練習(strike stone)。外功則是我集多年經驗觀察蛇蟒搏鬥而從
-中變化出來的《白駝蛇杖》。蛇杖功夫要點在于靈、狠、毒三字。
+中變化出來的《白駝蛇杖》。蛇杖功夫要點在於靈、狠、毒三字。
 汝可從此書中學得(read book)。
 
 \n
@@ -112,7 +112,7 @@ int do_du(string arg)
         {
                 if( query("jing", me)<25 )
                 {
-                        write("你現在過于疲倦，無法專心下來研讀新知。\n");
+                        write("你現在過於疲倦，無法專心下來研讀新知。\n");
                         return 1;
                 }        
                 if( query("neili", me)<50 )
@@ -128,7 +128,7 @@ int do_du(string arg)
                 }        
                 if( me->query_skill("lingshe-zhangfa", 1) > 50)
                 {
-                        write( "你研讀了一會兒，但是發現上面所說的對你而言都太淺了，沒有學到任何東西。\n");
+                        write( "你研讀了一會兒，但是發現上面所説的對你而言都太淺了，沒有學到任何東西。\n");
                         return 1;
                 }
                 me->receive_damage("jing", 15);

@@ -27,7 +27,7 @@ int perform(object me, object target)
                 return notify_fail("你的內力不夠，不能使用誅仙決！\n");
  
        if (! living(target))
-              return notify_fail("對方都已經這樣了，用不著這麼費力吧？\n");
+              return notify_fail("對方都已經這樣了，用不着這麼費力吧？\n");
 
         msg = HIC "$N" HIC "隨手拍出一掌，疾若奔馬，如箭一般飛向$n"
               HIC "速度快的不可思議！\n" NOR;

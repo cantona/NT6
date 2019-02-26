@@ -32,9 +32,9 @@ int perform(object me, object target)
                 return notify_fail("你還沒有激發葵花魔功為輕功，無法施展" XI "。\n");            
 
        if (! living(target))
-              return notify_fail("對方都已經這樣了，用不著這麼費力吧？\n");
+              return notify_fail("對方都已經這樣了，用不着這麼費力吧？\n");
 
-        msg = HIR "$N" HIR "身子忽進忽退，身形詭秘異常，在$n"
+        msg = HIR "$N" HIR "身子忽進忽退，身形詭祕異常，在$n"
               HIR "身邊飄忽不定。\n" NOR;
 
         ap = attack_power(me, "dodge");
@@ -42,7 +42,7 @@ int perform(object me, object target)
 
         if (ap / 2 + random(ap) > dp)
         {
-                msg += HIR "結果$p" HIR "只能緊守門戶，不敢妄自出擊！\n" NOR;
+                msg += HIR "結果$p" HIR "只能緊守門户，不敢妄自出擊！\n" NOR;
                 target->start_busy(ap / 120 + 2);
                 addn("neili", -120, me);
                 me->start_busy(1);

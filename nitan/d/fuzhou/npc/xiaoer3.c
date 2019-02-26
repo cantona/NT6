@@ -56,10 +56,10 @@ void greeting(object ob)
         if( !ob || environment(ob) != environment() ) return;
         switch( random(2) ) {
                 case 0:
-                        say( "店小二笑咪咪地說道：這位" + RANK_D->query_respect(ob) + "，進來喝杯茶，歇歇腿吧。\n");
+                        say( "店小二笑咪咪地説道：這位" + RANK_D->query_respect(ob) + "，進來喝杯茶，歇歇腿吧。\n");
                         break;
                 case 1:
-                        say( "店小二用脖子上的毛巾抹了抹手，說道：這位" + RANK_D->query_respect(ob) + "，請進請進。\n");
+                        say( "店小二用脖子上的毛巾抹了抹手，説道：這位" + RANK_D->query_respect(ob) + "，請進請進。\n");
                         break;
         }
 }
@@ -79,5 +79,5 @@ void kicking(object ob)
         if (!ob || environment(ob) != environment()) return;
 
         ob->move("/d/fuzhou/nandajie");
-        message("vision","只聽“乒”地一聲，"+query("name", ob)+"被人從味中味裡一腳踢了出來，狼狽萬狀的逃開了。\n",environment(ob),ob);
+        message("vision","只聽“乒”地一聲，"+query("name", ob)+"被人從味中味裏一腳踢了出來，狼狽萬狀的逃開了。\n",environment(ob),ob);
 }

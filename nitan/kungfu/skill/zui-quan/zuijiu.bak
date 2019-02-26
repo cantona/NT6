@@ -29,14 +29,14 @@ int perform(object me, object target)
                 return notify_fail("你現在內力不足！\n");     
 
         if( target->is_busy() )
-                return notify_fail(target->name() + "目前正自顧不暇，放膽攻擊吧□\n");
+                return notify_fail(target->name() + "目前正自顧不暇，放膽攻擊吧ⅵ\n");
         if( drunk <= limit/4 ) 
                 return notify_fail("你沒有一點醉意，怎麼使得出八仙醉酒？\n");
         if( drunk >= limit ) 
                 return notify_fail("你現在是真正的爛醉如泥，酒鬼。\n");
 
         message_combatd(
-    GRN "只見$N噴出一口酒氣，一式「八仙醉酒」，圍著$n一搖一擺地走動著。\n" NOR, me, target);
+    GRN "只見$N噴出一口酒氣，一式「八仙醉酒」，圍着$n一搖一擺地走動着。\n" NOR, me, target);
 
         me->start_busy(random(1));
         addn("neili", -200, me);

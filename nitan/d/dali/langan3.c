@@ -4,9 +4,9 @@
 inherit ROOM;
 void create()
 {
-        set("short","小桿欄");
+        set("short","小杆欄");
         set("long",@LONG
-一間擺夷族的桿欄民居，此間下層沒有牛羊，卻用竹席圍成一個養
+一間擺夷族的杆欄民居，此間下層沒有牛羊，卻用竹蓆圍成一個養
 桑蠶的小棚屋，有竹架竹盤。樓上傳來陣陣紡紗機的梭飛聲。
 LONG);
         set("objects",([

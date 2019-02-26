@@ -42,7 +42,7 @@ int perform(object me, object target)
                 return notify_fail("你現在真氣不夠，難以施展" HUI "。\n");
 
         if (! living(target))
-                return notify_fail("對方都已經這樣了，用不著這麼費力吧？\n");
+                return notify_fail("對方都已經這樣了，用不着這麼費力吧？\n");
 
         // 第一掌
         ap=me->query_skill("strike")+query("str", me)*5;
@@ -50,7 +50,7 @@ int perform(object me, object target)
 
         message_sort(HIW "\n忽然$N" HIW "身形激進，左手一劃，右手呼的一掌"
                      "拍向$n" HIW "，正是降龍十八掌" HUIP "。力自掌生之際"
-                     "說到便到，以排山倒海之勢向$n" HIW "狂湧而去，當真石"
+                     "説到便到，以排山倒海之勢向$n" HIW "狂湧而去，當真石"
                      "破天驚，威力無比。\n" NOR, me, target);
 
         if (ap * 3 / 5 + random(ap) > dp)
@@ -71,7 +71,7 @@ int perform(object me, object target)
         dp=target->query_skill("parry")+query("int", target)*5;
 
         message_sort(HIW "\n$N" HIW "一掌既出，身子已然搶到離$n" HIW "三"
-                     "四丈之外，後掌推前掌兩股掌力道合並，又是一招" HUIP
+                     "四丈之外，後掌推前掌兩股掌力道合併，又是一招" HUIP
                      "攻出，掌力猶如怒潮狂湧，勢不可當。霎時$p便覺氣息窒"
                      "滯，立足不穩。\n" NOR, me, target);
 
@@ -84,7 +84,7 @@ int perform(object me, object target)
         } else
         {
                 msg = HIC "可是$p全力抵擋招架，竟似遊刃有"
-                      "余，將$P的掌力卸于無形。\n" NOR;
+                      "餘，將$P的掌力卸於無形。\n" NOR;
         }
         message_vision(msg, me, target);
 
@@ -92,9 +92,9 @@ int perform(object me, object target)
         ap=me->query_skill("strike")+query("str", me)*5;
         dp=target->query_skill("force")+query("con", target)*5;
 
-        message_sort(HIW "\n緊跟著$N" HIW "右掌斜揮，前招掌力未消，此招掌"
+        message_sort(HIW "\n緊跟着$N" HIW "右掌斜揮，前招掌力未消，此招掌"
                      "力又到，竟然又攻出一招" HUIP "，掌夾風勢，勢如破竹，"
-                     "便如一堵無形氣牆，向前疾沖而去。$n" HIW "只覺氣血翻"
+                     "便如一堵無形氣牆，向前疾衝而去。$n" HIW "只覺氣血翻"
                      "湧，氣息沉濁。\n" NOR, me, target);
 
         if (ap *11 / 20 + random(ap) > dp)
@@ -106,7 +106,7 @@ int perform(object me, object target)
         } else
         {
                 msg = HIC "$p眼見來勢兇猛，身形疾退，瞬間"
-                      "飄出三丈，脫出掌力之外。\n" NOR;
+                      "飄出三丈，脱出掌力之外。\n" NOR;
         }
         message_vision(msg, me, target);
         me->start_busy(3 + random(4));

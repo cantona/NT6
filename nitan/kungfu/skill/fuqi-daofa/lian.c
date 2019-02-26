@@ -46,7 +46,7 @@ int perform(object me, object target)
         else
         {
         msg = HIC "$N淡然一笑，刀勢驟然加快，招數首尾相銜，連綿不絕的攻向$n！\n" NOR;
-        msg += HIY"可是$n早有防備，見招拆招，守御得水潑不進，將來招一一化解。\n" NOR;
+        msg += HIY"可是$n早有防備，見招拆招，守禦得水潑不進，將來招一一化解。\n" NOR;
                 message_combatd(msg, me, target);
                 me->start_busy(3);
         }

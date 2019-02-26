@@ -138,7 +138,7 @@ int update_file(object me, string file)
                 if (obj == environment(me))
                 {
                         if (file_name(obj) == VOID_OB)
-                                return notify_fail("\n你不能在 VOID_OB 裡重新編譯 VOID_OB。\n");
+                                return notify_fail("\n你不能在 VOID_OB 裏重新編譯 VOID_OB。\n");
 
                         inv = all_inventory(obj);
                         i = sizeof(inv);
@@ -176,7 +176,7 @@ int help(object me)
 指令格式 : updateall <路徑名> [1]
  
 這個指令可以更新某個路徑下的全部檔案, 並將新檔的內容載入記
-憶體內. 如果後面尾隨標志1， 則編譯遇到錯誤時將不會中止。
+憶體內. 如果後面尾隨標誌1， 則編譯遇到錯誤時將不會中止。
 HELP
     );
     return 1;

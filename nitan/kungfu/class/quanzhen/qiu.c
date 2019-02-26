@@ -133,7 +133,7 @@ void greeting(object ob)
                 if( !(fam=query("family", ob)) || fam["family_name"] != "全真教" )
                 {
                         if (ob->is_not_bad())
-                                command("say 這裡是本教重地，你走動小心些。");
+                                command("say 這裏是本教重地，你走動小心些。");
                         else
                         {
                                 command("say 你這魔頭，竟敢闖入我全真重地，我一定要殺了你！");
@@ -187,7 +187,7 @@ string ask_job()
         }
 
         command("nod");
-        command("say 好，最近煉丹用的草藥都用完了，你去山下樹林裡去採一些回來。");
+        command("say 好，最近煉丹用的草藥都用完了，你去山下樹林裏去採一些回來。");
 
         if (objectp(yaochu = present("yao chu", ob)))
                 destruct(yaochu);
@@ -248,7 +248,7 @@ void reward_dest(object obj, object ob)
                 destruct(yaochu);
 
         command("pat "+query("id", ob));
-        command("say "+query("name", ob)+"幹的不錯，下去休息一下吧！\n");
+        command("say "+query("name", ob)+"乾的不錯，下去休息一下吧！\n");
 
         if( query_temp("qz/caiyao", ob) )
         {

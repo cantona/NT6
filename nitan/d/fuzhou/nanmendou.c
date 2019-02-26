@@ -46,11 +46,11 @@ int do_enter(string arg)
            if( (fam=query("family", me)) && fam["family_name"] == "丐幫" )
            {
                message("vision",
-                        me->name() + "運起丐幫縮骨功，一彎腰往洞裡鑽了進去。\n",
+                        me->name() + "運起丐幫縮骨功，一彎腰往洞裏鑽了進去。\n",
                         environment(me), ({me}) );
                me->move("/d/gaibang/underfz");
                message("vision",
-                        me->name() + "從洞裡走了進來。\n",
+                        me->name() + "從洞裏走了進來。\n",
                         environment(me), ({me}) );
                         return 1;
            }

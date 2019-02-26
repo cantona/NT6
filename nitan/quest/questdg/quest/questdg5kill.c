@@ -27,7 +27,7 @@ mapping *quest = ({
         ]),
         ([
                 "id":          "yu canghai",
-                "name":        "余滄海",
+                "name":        "餘滄海",
                 "type":        "殺",
                 "bonus":       105,
                 "msg":        "",
@@ -147,7 +147,7 @@ mapping *quest = ({
         ]),
         ([
                 "id":          "yu hongxing",
-                "name":        "余洪興",
+                "name":        "餘洪興",
                 "type":        "殺",
                 "bonus":       80,
                 "msg":        "",

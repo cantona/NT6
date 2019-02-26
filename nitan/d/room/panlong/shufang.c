@@ -9,13 +9,13 @@ void create()
 {
         set("short", "書房");
         set("long", @LONG
-這裡是盤龍居的主人讀書寫字的地方，幹凈明亮。文房四寶整整齊齊
-的擺在桌子上面。有時主人也在這裡簽發一些邀請客人的請柬。
+這裏是盤龍居的主人讀書寫字的地方，乾淨明亮。文房四寶整整齊齊
+的擺在桌子上面。有時主人也在這裏簽發一些邀請客人的請柬。
 LONG );
 
-        set("default_long", "這裡是ROOM_NAME的主人ROOM_OWNER讀書寫字的"/* EXAMPLE */
-                            "地方，幹凈明亮。文房四寶整整齊齊的擺在桌" /* EXAMPLE */
-                            "子上面。有時ROOM_OWNER也在這裡簽發(sign"/* EXAMPLE */
+        set("default_long", "這裏是ROOM_NAME的主人ROOM_OWNER讀書寫字的"/* EXAMPLE */
+                            "地方，乾淨明亮。文房四寶整整齊齊的擺在桌" /* EXAMPLE */
+                            "子上面。有時ROOM_OWNER也在這裏簽發(sign"/* EXAMPLE */
                             ")一些邀請客人的請柬。");                  /* EXAMPLE */
                                                                        /* EXAMPLE */
 
@@ -50,7 +50,7 @@ int do_sign()
 //**                                   "什麼？\n");
 
         if (me->is_busy())
-                return notify_fail("你現在還忙著呢。\n");
+                return notify_fail("你現在還忙着呢。\n");
 
         message_vision("$N抽過一張紙，拿起筆來，在上面畫符似"
                        "的寫了些東西。\n", me);
@@ -60,7 +60,7 @@ int do_sign()
         ob->set_name(HIW+query("name", me)+"手諭"NOR,
                      ({ "pass", query("room_owner_id") + " pass" }));
         ob->set("long","一張由"+query("name",me)+"親筆簽發的"+
-                     "手諭，憑借它你可以進出" + query("room_name") +
+                     "手諭，憑藉它你可以進出" + query("room_name") +
                      "。\n");
         ob->move(me);
         me->start_busy(4 + random(4));

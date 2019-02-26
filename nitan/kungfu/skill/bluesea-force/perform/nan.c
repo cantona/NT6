@@ -35,7 +35,7 @@ int perform(object me, object target)
                 return notify_fail("你沒有激發杖法為南海玄功，無法施展南海無影杖！\n");
 
         if (! living(target))
-               return notify_fail("對方都已經這樣了，用不著這麼費力吧？\n");
+               return notify_fail("對方都已經這樣了，用不着這麼費力吧？\n");
 
         msg = HIC "$N" HIC "一圈手腕，將" + weapon->name() +
               HIC "舞成一團光芒，進退間身形忽然變快，霎時合數招為一擊攻向$n"

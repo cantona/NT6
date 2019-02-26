@@ -161,10 +161,10 @@ int valid_learn(object me)
                                    "憑自己的戰鬥經驗一時間難以領會。\n");
 
         if ((int)me->query_skill("martial-cognize", 1) < 150)
-                return notify_fail("你覺得葵花魔功過于深奧之極，以"
+                return notify_fail("你覺得葵花魔功過於深奧之極，以"
                                    "自己的武學修養全然無法明白。\n");
 
-        if( query("character", me) != "陰險姦詐" && query("character", me) != "國士無雙"
+        if( query("character", me) != "陰險奸詐" && query("character", me) != "國士無雙"
             && query("character", me) != "心狠手辣" )
                 return notify_fail("你看了葵花魔功這些陰險毒辣的武功，不"
                                    "由的心驚肉跳，難以領會。\n");
@@ -262,7 +262,7 @@ mixed valid_damage(object ob, object me, int damage, object weapon)
                 {
                 case 0:
                         result = HIY "$N" HIY "眼睛一花，$n" HIY "已沒了蹤影"
-                                 "。可是$N" HIY "精通易理，絲毫不為所亂，盡自"
+                                 "。可是$N" HIY "精通易理，絲毫不為所亂，儘自"
                                  "出招。\n" NOR;
                         break;
                 case 1:
@@ -313,7 +313,7 @@ mixed hit_ob(object me, object victim, int damage_bonus, int i, int attack_time)
            || me->query_skill("kuihua-mogong", 1) < 200)
                 return 0;
 
-        // 避免在使用Pfm時訊息重復
+        // 避免在使用Pfm時訊息重複
         if( !query_temp("kuihua-mogong/hit_msg", me) )
                 message_vision(HIW "\n霎時間只見$N" HIW "身子猛擺，頓時化分為無數身影，" + name +
                                HIW "宛若流星般分從不同的方位同時刺向$n" HIW "！\n"

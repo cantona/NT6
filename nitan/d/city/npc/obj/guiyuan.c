@@ -32,7 +32,7 @@ int do_eat(string arg)
         if(!present(this_object(), me))
                 return notify_fail("你要吃什麼？\n");
         if( me->is_busy() )
-                return notify_fail("別急，慢慢吃，小心別噎著了。\n");
+                return notify_fail("別急，慢慢吃，小心別噎着了。\n");
 
         addn("neili", 200, this_player());
         message_vision("$N吃下一顆歸元丹，只覺得四肢百骸真氣充盈無比！\n", this_player());

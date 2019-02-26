@@ -7,7 +7,7 @@ void create()
 {
         set("short", "街道");
         set("long", @LONG
-這是泉州的一條幹道，兩邊種著鳳凰木，人馬川流不息。南去可達
+這是泉州的一條幹道，兩邊種着鳳凰木，人馬川流不息。南去可達
 海外交通使節府，東面是萬國煙雨樓。
 LONG );
         set("outdoors", "quanzhou");

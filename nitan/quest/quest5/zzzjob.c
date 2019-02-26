@@ -7,16 +7,16 @@ mixed names = ({
         "靈州南門","諸葛亮殿","煙雨樓","南陽城","佛山南門",                
         "蛇骨塔","長安樂坊","衡陽西街","喜州城","葛魯城", 
         "北疆小鎮","山海關","老龍頭","長白天池","天山腳下",
-        "麗春院","湧泉寺","聽雨軒","五老峰","紫金城",
-        "鬆風觀","終南山腳","抱子巖","白馬潭","升仙坊",                
+        "麗春院","湧泉寺","聽雨軒","五老峯","紫金城",
+        "松風觀","終南山腳","抱子巖","白馬潭","昇仙坊",                
         "嘉應門","懸空寺","峻極禪院","俠義廳","蕭家橋", 
         }),
         ({
          "宋兵","流氓","偏將","裨將","佐將","小販","男孩","郭芙","老先生",
-                 "小孩","書店老板","武三通","窮漢","鐵匠","朱子柳","店小二","宋兵",
-                 "靜玄師太","靜照師太","宋遠橋","莫聲谷","陸乘風","韓寶駒","黃藥師","余滄海",
+                 "小孩","書店老闆","武三通","窮漢","鐵匠","朱子柳","店小二","宋兵",
+                 "靜玄師太","靜照師太","宋遠橋","莫聲谷","陸乘風","韓寶駒","黃藥師","餘滄海",
                  "殷野王","鄧百川","尹志平","小龍女","劉承風","歐陽鋒","白衣少女","九翼道人",
-                 "阿紫","玉磬子","玉音子","岳夫人","岳不群","令狐沖","玄苦大師","清善比丘",
+                 "阿紫","玉磬子","玉音子","嶽夫人","嶽不羣","令狐沖","玄苦大師","清善比丘",
                  "獨臂神尼","莊夫人","雙兒","吳六奇","木婉清","蕭遠山","李沅芷","向問天",
                  "曲洋","黑白子","程瑤迦","程瑤迦","沐劍屏","天柏道人","本塵","本觀",
                  "天山童姥","韋一笑","謝遜","澄堅","陸乘風","張翠山","宋青書","玄貞道長",
@@ -60,7 +60,7 @@ string ask_job()
         {target = names[1][random(sizeof(names[1]))];
     ob->apply_condition("zzz_mission",30);    
         set_temp("zzz_job_target", target, ob);
-    message_vision(CYN"$N點了點頭，對$n說道:蒙古人收買了一批武林敗類,好象要暗殺"+target+"，你去保護他一下。\n"NOR , me,ob);
+    message_vision(CYN"$N點了點頭，對$n説道:蒙古人收買了一批武林敗類,好像要暗殺"+target+"，你去保護他一下。\n"NOR , me,ob);
     call_out("begin_kill",30,ob,target);
         return "多加小心。";
         }
@@ -107,7 +107,7 @@ void ok(object who)
         int exp,pot,i;
         if (!who) return;
         command("pat"+query("id", who));
-        command("say 幹的好，你辦事幹凈利落,將來必成大器!");
+        command("say 乾的好，你辦事幹淨利落,將來必成大器!");
         if( !query("zzz_job_count", who) )
                 set("zzz_job_count", 1, who);
         else
@@ -148,13 +148,13 @@ string ask_fangqi()
          object me;
          me = this_player();
          if(me->query_condition("zzz_mission")<=1)
-         return "你沒有領任務,跑這裡瞎嚷嚷什麼?";
+         return "你沒有領任務,跑這裏瞎嚷嚷什麼?";
          me->clear_condition("zzz_mission");
          addn("combat_exp", -100+random(20), me);
           me->apply_condition("zzz_busy",4+random(10));
          delete_temp("zzz_job_target", me);
                  delete_temp("zzz_job_type", me);
-         return "沒關系,下次繼續努力 。";
+         return "沒關係,下次繼續努力 。";
 }
 
 
@@ -188,7 +188,7 @@ void begin_kill(object me,string target)
         else
         obj->do_copy(me,0);
         set_temp("must_killby",query("id",  me), obj);
-        message_vision(GRN"\n$N對著"+target+"發出一陣陰笑聲，令"+target+"全身上下的寒毛根根豎起，不寒而栗。\n"NOR,obj); 
+        message_vision(GRN"\n$N對着"+target+"發出一陣陰笑聲，令"+target+"全身上下的寒毛根根豎起，不寒而慄。\n"NOR,obj); 
         message_vision(HIY"$N對$n喝道:大膽狂徒,竟敢在這撒野！！\n"NOR,me,obj);    
     message_vision(HIY"$N陰陰一笑:要你多管閒事,去死吧！！\n"NOR,obj);
     obj->kill_ob(me);
@@ -204,6 +204,6 @@ string ask_gonglao(object who)
   i=0;
   else 
   i=query("zzz_job_count", me);
-  message_vision(CYN"$N對$n說道:你已經完成了" + chinese_number(i) + "次任務。\n"NOR,who,me);
+  message_vision(CYN"$N對$n説道:你已經完成了" + chinese_number(i) + "次任務。\n"NOR,who,me);
   return "繼續努力吧！";
 }

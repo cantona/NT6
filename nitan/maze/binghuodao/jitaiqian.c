@@ -12,12 +12,12 @@ void create()
         set("long",@LONG
 這是一處寬闊的洞穴，明亮開朗。洞穴四周插滿了各種旗
 幟，石壁上也掛有各種祭祀的牲口，但早已化為白骨。洞穴正
-中擺放著一個玉石做成的祭台（jitai）， 上面插著一面鮮紅
+中擺放着一個玉石做成的祭台（jitai）， 上面插着一面鮮紅
 的旗幟。
 LONG);
 
         set("no_rideto", 1);         // 設置不能騎馬到其他地方
-        set("no_flyto", 1);          // 設置不能從起來地方騎馬來這裡
+        set("no_flyto", 1);          // 設置不能從起來地方騎馬來這裏
         set("binghuo", 1);           // 表示在冰火島
 
 
@@ -44,23 +44,23 @@ int do_jump(string arg)
         object me = this_player();
         
         if (! arg || arg != "jitai")
-                return notify_fail("你要往哪裡跳。\n");
+                return notify_fail("你要往哪裏跳。\n");
                 
         // 有隱身符或保護的不增加幫派時間
         if( query_temp("apply/invisible", me) )
         {
-                tell_object(me, HIG "你處于隱身狀態，不能上祭台！\n" NOR);
+                tell_object(me, HIG "你處於隱身狀態，不能上祭台！\n" NOR);
                 return 1;
         }
         if (me->query_condition("die_guard"))
         {
-                tell_object(me, HIG "你處于被保護狀態，不能上祭台！\n" NOR);
+                tell_object(me, HIG "你處於被保護狀態，不能上祭台！\n" NOR);
                 return 1;
         }
         
         if( query("age", me) < 5 && query("reborn/times", me) )
         {
-                tell_object(me, HIG "你處于被保護狀態，不能上祭台！\n" NOR);
+                tell_object(me, HIG "你處於被保護狀態，不能上祭台！\n" NOR);
                 return 1;
         }
 

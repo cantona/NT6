@@ -47,7 +47,7 @@ mapping *action = ({
         "lvl" : 40
 ]),
 ([        "action" : "$N雙掌縮入袖中，雙袖飛起掃向$n的$l，卻是一招"+(order[random(13)])+"「長江流水」"NOR"，儀
-態瀟洒",
+態瀟灑",
         "skill_name" : "長江流水",
         "lvl" : 45
 ]),
@@ -59,12 +59,12 @@ mapping *action = ({
         "skill_name" : "青楓浦上",
         "lvl" : 55
 ]),
-([        "action" : "$N左手虛劃，右手變掌為鉤一記"+(order[random(13)])+"「樓月蜚回」"NOR"擊向$n的$l",
+([        "action" : "$N左手虛劃，右手變掌為鈎一記"+(order[random(13)])+"「樓月蜚回」"NOR"擊向$n的$l",
         "skill_name" : "樓月蜚回",
         "lvl" : 60
 ]),
-([        "action" : "$N施出"+(order[random(13)])+"「玉戶簾中」"NOR"，右掌向外揮出，左掌同時攻向$n",
-        "skill_name" : "玉戶簾中",
+([        "action" : "$N施出"+(order[random(13)])+"「玉户簾中」"NOR"，右掌向外揮出，左掌同時攻向$n",
+        "skill_name" : "玉户簾中",
         "lvl" : 65
 ]),
 ([        "action" : "$N由臂帶手，在面前緩緩劃過，使一招"+(order[random(13)])+"「鴻雁長飛」"NOR"，揮向$n的$l",
@@ -75,11 +75,11 @@ mapping *action = ({
         "skill_name" : "魚龍潛躍",
         "lvl" : 75
 ]),
-([        "action" : "$N右手由鉤變掌，雙手掌心向上，右掌向前推出一招"+(order[random(13)])+"「月華流照」"NOR"",
+([        "action" : "$N右手由鈎變掌，雙手掌心向上，右掌向前推出一招"+(order[random(13)])+"「月華流照」"NOR"",
         "skill_name" : "月華流照",
         "lvl" : 80
 ]),
-([        "action" : "$N右掌不住向外掃出，是一式"+(order[random(13)])+"「閒潭落花」"NOR"，左掌旋轉著向$n攻去",
+([        "action" : "$N右掌不住向外掃出，是一式"+(order[random(13)])+"「閒潭落花」"NOR"，左掌旋轉着向$n攻去",
         "skill_name" : "閒潭落花",
         "lvl" : 85
 ]),

@@ -26,6 +26,6 @@ void create()
         set("core", "李子核");         //name
         set("core_id", ({"lizi hu", "plum core", "core", "hu"}) ); //id
         set("core_unit", "個");        //unit
-        set("core_long", "一個啃得幹幹凈凈的李子核。\n"); //long
+        set("core_long", "一個啃得乾乾淨淨的李子核。\n"); //long
         setup();
 }

@@ -22,14 +22,14 @@ mapping *action = ({
         "skill_name" : "吞金勢",
         "damage_type": "抽傷"
 ]),
-([      "action": "$N力貫鞭梢，一招「盪妖勢」，手中$w舞出滿天鞭影，排山倒海般掃向$n全身",
+([      "action": "$N力貫鞭梢，一招「蕩妖勢」，手中$w舞出滿天鞭影，排山倒海般掃向$n全身",
         "force" : 210,
         "attack": 35,
         "dodge" : 2,
         "parry" : 5,
         "damage": 73,
         "lvl"   : 60,
-        "skill_name" : "盪妖勢",
+        "skill_name" : "蕩妖勢",
         "damage_type": "抽傷"
 ]),
 ([      "action":"$N力貫鞭梢，一招「伏魔勢」，手中$w舞出滿天鞭影，排山倒海般掃向$n全身",

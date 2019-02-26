@@ -34,7 +34,7 @@ int perform(object me, object target)
                 return notify_fail("你目前的真氣不夠，難以施展" + name() + "。\n");
 
         if (! living(target))
-                return notify_fail("對方都已經這樣了，用不著這麼費力吧？\n");
+                return notify_fail("對方都已經這樣了，用不着這麼費力吧？\n");
 
         msg = HIC "$N" HIC "大喝一聲，施出絕招「" HIW "風雨交加" HIC "」手"
               "中的" + weapon->name() + HIC "如雨點\n一般向$n" HIC "打去，$n" HIC

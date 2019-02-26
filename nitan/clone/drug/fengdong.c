@@ -15,7 +15,7 @@ void create()
 
                   set("long",@LONG
 這個大洞又高又寬，由兩大花崗巖夾峙而成。洞內清風習習，涼氣颼颼，
-故稱風洞。聽說有時會狂風大作，看來要小心一些。
+故稱風洞。聽説有時會狂風大作，看來要小心一些。
 LONG);
 
                   set("exits",([
@@ -87,7 +87,7 @@ private int blow_result(object victim)
         {
                 ob2=new("/d/zhongnan/npc/bigbear");
                 ob2->move(environment(victim));
-                message_vision(HIR"突然從洞口中走進一只$N，它看到有人，大概受了驚嚇，發瘋似地向$n發起進攻！\n"NOR, ob2,victim);
+                message_vision(HIR"突然從洞口中走進一隻$N，它看到有人，大概受了驚嚇，發瘋似地向$n發起進攻！\n"NOR, ob2,victim);
                 setup_ob(ob2,victim);
                 ob2->kill_ob(victim);
                 addn_temp("offenders/"+query("id", victim), 1, ob2);
@@ -115,7 +115,7 @@ private int blow_result(object victim)
         }
         else if ( ap < dp/7 && ob->query_weight() < 7000
                  && query("race", victim) == "人類"){
-                message_vision(CYN"不料$N眼明手快，身子一側，把$n"+CYN+"輕輕地接在手裡。\n\n"NOR, victim, ob);
+                message_vision(CYN"不料$N眼明手快，身子一側，把$n"+CYN+"輕輕地接在手裏。\n\n"NOR, victim, ob);
 
                 ob->move(victim);
 

@@ -5,7 +5,7 @@ inherit CLOTH;
 
 void create()
 {
-        set_name(NOR + CYN "軟□甲" NOR, ({ "ruanwei jia", "ruanwei", "jia" }));
+        set_name(NOR + CYN "軟蝟甲" NOR, ({ "ruanwei jia", "ruanwei", "jia" }));
         set_weight(8000);
         if (clonep())
                 destruct(this_object());
@@ -13,7 +13,7 @@ void create()
                 set("unit", "件");
                 set("long", NOR + CYN "
 這是一件黑黝黝的軟甲，粗看下毫不起眼。這便是桃花島至寶
-軟□甲，只見整個甲身烏黑亮澤，著手柔軟，卻又是堅硬勝鐵，
+軟蝟甲，只見整個甲身烏黑亮澤，着手柔軟，卻又是堅硬勝鐵，
 寶甲外圍還生滿了倒刺，尖利無比。\n" NOR);
                 set("value", 100000);
                 set("no_sell", "這是啥？黑不溜秋的。");

@@ -7,7 +7,7 @@ void create()
         set("short","山路");
         set("long", @LONG
 一條山路，兩邊是茂密的樹林，西面是延綿不絕的大山，道路兩
-旁間或可見一些夷族的村鎮。山路向南蜿蜒著。
+旁間或可見一些夷族的村鎮。山路向南蜿蜒着。
 LONG );
         set("objects", ([
            "/d/dali/npc/wuliangdizi": 1,

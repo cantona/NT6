@@ -15,7 +15,7 @@ void create()
         {
                 set("unit", "封");
                 set("long",
-                        "這是一封信件，信封的很嚴實，封口蓋著紅漆印戳。\n");
+                        "這是一封信件，信封的很嚴實，封口蓋着紅漆印戳。\n");
                 set("value", 0);
                 set("material", "paper");
                 set("no_drop",1);
@@ -53,7 +53,7 @@ int do_look(string arg)
         if(!arg) return 0;
         if( (arg == "letter" || arg == "xin") && query_temp("gb_songxin", me) )
         {
-                write("\n這是一封由丐幫九袋長老魯有腳發出的信件，上面寫著"
+                write("\n這是一封由丐幫九袋長老魯有腳發出的信件，上面寫着"
                         HIR"「"+query_temp("songxin_target_name", me)+"」親啟。\n"NOR);
                 if(now_time > time*3/4) write("你現在有充足的時間去送信。\n");
                 if(now_time > time/2 && now_time <= time*3/4)
@@ -68,7 +68,7 @@ int do_look(string arg)
         else
         {
                 if( (arg == "letter" || arg == "xin") && !query_temp("gb_songxin", me) )
-                        write("這是一封密函，信封的很嚴實，封口蓋著紅漆印戳。\n");
+                        write("這是一封密函，信封的很嚴實，封口蓋着紅漆印戳。\n");
         }
         return 1;
 }
@@ -85,12 +85,12 @@ int do_send(string arg)
         me=this_player();
         if(!arg) return notify_fail("你要送給誰？\n");
         if(!objectp(target = present(arg, environment(me))))
-                return notify_fail("看清楚點，你要送信的人不在這裡！\n");
+                return notify_fail("看清楚點，你要送信的人不在這裏！\n");
         t_name=query("name", target);
         job_time=query_temp("songxin_time", me);
         i = random((int)(target->query_skill("force",1)/5));
 
-               if(!target) return notify_fail("看清楚點，你要送信的人不在這裡！\n");
+               if(!target) return notify_fail("看清楚點，你要送信的人不在這裏！\n");
         if(userp(target)) return notify_fail("嘿嘿，想作弊？！\n");
         if( query_temp("gb_songxin_late", me) )
                 return notify_fail("你任務已經失敗了，重新再領一個吧。\n");
@@ -101,17 +101,17 @@ int do_send(string arg)
                 return notify_fail(RANK_D->query_respect(me) + "與丐幫素無來往，怎麼會送信給我？");
 */
         if( !query_temp("gb_songxin", me) )
-                return notify_fail(t_name+"道：這是丐幫親自交給你，要你送的？你是不是從別人那裡搶來的？");
+                return notify_fail(t_name+"道：這是丐幫親自交給你，要你送的？你是不是從別人那裏搶來的？");
         if( query_temp("songxin_target_name", me) != t_name )
                 return notify_fail(t_name+"道：這封信不是給我的，你是不是送錯了？");
 
-        message_vision(HIY"$N擦了一把額頭的汗，從懷中掏出信交給$n說道，這是丐幫魯長老讓在下送給您的信，請您收好。\n"NOR, me, target);
+        message_vision(HIY"$N擦了一把額頭的汗，從懷中掏出信交給$n説道，這是丐幫魯長老讓在下送給您的信，請您收好。\n"NOR, me, target);
         message_vision("$N交給了$n一封信。\n",me, target);
-        message_vision(t_name+"點了點頭說道：辛苦你了,這辛苦費你就收下吧! \n",me);
+        message_vision(t_name+"點了點頭説道：辛苦你了,這辛苦費你就收下吧! \n",me);
         target->add_money("silver",(int)(target->query_skill("force",1)/5)+1);
         command("give"+query("id", me)+""+((target->query_skill("force",1)/5)+1)+"silver");
 
-        message_vision(HIY "$N接過信看了看，點了點頭說道：這位"+RANK_D->query_respect(me)+"辛苦你了。\n"NOR, target, me);
+        message_vision(HIY "$N接過信看了看，點了點頭説道：這位"+RANK_D->query_respect(me)+"辛苦你了。\n"NOR, target, me);
  
 
         if( query("combat_exp", me) <= 5000 )
@@ -186,7 +186,7 @@ int do_send(string arg)
                 chinese_number(exp) + "點實戰經驗\n" +
                 chinese_number(pot) + "點潛能\n"+
                 chinese_number(score) + "點忠誠度\n"+
-                chinese_number(s_bonus) + "點江湖閱歷\n" +
+                chinese_number(s_bonus) + "點江湖閲歷\n" +
                 chinese_number(i)+"兩白銀\n"+
                 "你為丐幫做了"+query("gb_job", me)+"次工作。\n"NOR);
                 me->apply_condition("gb_songxin", me->query_condition("gb_songxin")/2);

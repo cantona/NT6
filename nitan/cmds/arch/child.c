@@ -67,7 +67,7 @@ int help(object me)
 指令格式: child [-r] filename
 
 列出一個文檔所有副本。
-如果用-r參數，則銷毀所有不在活物身上的該文檔副本。
+如果用-r參數，則銷燬所有不在活物身上的該文檔副本。
 
 HELP );
         return 1;

@@ -10,7 +10,7 @@
                 混合型 db_connect(字符串 host, 字符串 database,
                         字符串 user, 整數 type|空)
 
-        說明：
+        説明：
                 進行數據庫連接。
 
                 host 為要連接的數據庫所在的主機名，
@@ -18,14 +18,14 @@
 
                 database 為操作的數據庫名稱。
 
-                user 操作數據庫賬號的用戶名。
+                user 操作數據庫賬號的用户名。
 
                 type 數據庫服務器的類型
                 在你編譯 driver 的時候如果定義了
                 多種數據庫支持，例如：
                         #define USE_MSQL 1
                         #undef USE_MYSQL 2
-                在這裡就可以選擇：1 或者 2。
+                在這裏就可以選擇：1 或者 2。
                 如果不傳入此參數，默認的是你定義
                 的 DEFAULT_DB。
 

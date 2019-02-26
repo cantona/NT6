@@ -2,7 +2,7 @@
 // 數據庫中的路徑以dbase為根、文件路徑為途徑。
 // 比如/d/city/kedian這個對象保存在數據庫中的將是：
 // /dbase/d/city/kedian，保存的內容是一個mixed類型，當對象的
-// restore函數被調用的時候，對象必須保証有receive_dbase_data
+// restore函數被調用的時候，對象必須保證有receive_dbase_data
 // 函數用來接收保存在數據庫中的數據。 當對象保存的時候，則必
 // 須有save_dbase_data函數返回需要保存的數據。
 // Write by Doing
@@ -21,7 +21,7 @@ inherit F_DBASE;
 // 保存數據的映射變量
 mapping save_dbase;
 
-// 調用函數announec_all_save_object時候的標志
+// 調用函數announec_all_save_object時候的標誌
 #define ONLY_SAVE               0
 #define DESTRUCT_OBJECT         1
 nosave  int save_flag = ONLY_SAVE;
@@ -231,7 +231,7 @@ mapping query_save_dbase()
         return save_dbase;
 }
 
-// 查閱保存了數據的所有對象
+// 查閲保存了數據的所有對象
 string *query_saved_object()
 {
         return keys(save_dbase);
@@ -243,7 +243,7 @@ int clear_object(mixed ob)
         string index;
         object xob;
 
-        // 由于一個對象在清除前一般會保存自己的數據，所以一旦數據受到
+        // 由於一個對象在清除前一般會保存自己的數據，所以一旦數據受到
         // 損傷需要恢復對象為原始狀態的時候就必須先清除對象本身，然後
         // 清空它的數據。
 

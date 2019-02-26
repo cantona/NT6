@@ -106,7 +106,7 @@ int ask_job()
 
         if(random(2)==0)
         {
-                command("whisper "+me->query("id")+" "+ RANK_D->query_respect(me) +"來得正好，我有一宗鏢要運到「福威鏢局 ── 總鏢頭」林震南手中。");
+                command("whisper "+me->query("id")+" "+ RANK_D->query_respect(me) +"來得正好，我有一宗鏢要運到「福威鏢局 —— 總鏢頭」林震南手中。");
                 ob->set_temp("fuzhou",1);
         }  else
         {

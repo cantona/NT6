@@ -56,7 +56,7 @@ int main(object me, string arg)
                                 addn("combat_exp", reward, bh[k]);
                                 addn("potential", reward/3, bh[k]);
                                 addn("score", reward/50, bh[k]);
-                                tell_object(bh[k], HIG"由于你積極為幫會振興"
+                                tell_object(bh[k], HIG"由於你積極為幫會振興"
                                             + "做貢獻，「" + banghui + "」" + "獎勵你\n"
                                             + chinese_number(reward) + "點經驗、"
                                             + chinese_number(reward / 3) + "點潛能和"
@@ -91,7 +91,7 @@ int help(object me)
 
 指令格式：faxiang [黃金數量] 
 
-用于在本幫內發餉，所有在線幫會成員將獲得一定的幫會收入。
+用於在本幫內發餉，所有在線幫會成員將獲得一定的幫會收入。
 
 HELP
         );

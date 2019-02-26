@@ -7,7 +7,7 @@ void create()
         set("long", "這個胖大和尚露出好一身花繡，正是五台山來的僧人。\n");
         set("gender", "男性");
         set("nickname", HIM "花和尚" NOR);
-        set("title", "樑山好漢");
+        set("title", "梁山好漢");
         set("age", 42);
         set("shen_type", 1);
         set("str", 35);
@@ -47,8 +47,8 @@ void create()
         set("chat_chance", 5);
         set("chat_msg", ({
                 CYN "魯智深喝道：你這廝，賊眉賊眼的看老爺作什麼？\n" NOR,
-                CYN "魯智深憤憤的道：幾個破落戶敢打洒家菜園子的主意，哼，哼！\n" NOR,
-                CYN "魯智深說道：方丈說過上一年就讓我當個閣主，院主什麼的。\n" NOR,
+                CYN "魯智深憤憤的道：幾個破落户敢打灑家菜園子的主意，哼，哼！\n" NOR,
+                CYN "魯智深説道：方丈説過上一年就讓我當個閣主，院主什麼的。\n" NOR,
         }));
         setup();
 

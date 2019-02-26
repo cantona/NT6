@@ -1,6 +1,6 @@
 
 // jianzhi.c 劍指相配攻擊
-// 神雕俠侶(20)：玉簫劍法與彈指功夫均以攻敵穴道為主，劍指相配，精微奧妙
+// 神鵰俠侶(20)：玉簫劍法與彈指功夫均以攻敵穴道為主，劍指相配，精微奧妙
 
 #include <ansi.h>
 
@@ -28,7 +28,7 @@ int perform(object me, object target)
                 return notify_fail("你手中無劍，如何談得上「劍指相配」？\n");
 
         if( query_temp("secondary_weapon", me) )
-                return notify_fail("你正握著短兵，沒有手能空出來「劍指相配」了。\n");
+                return notify_fail("你正握着短兵，沒有手能空出來「劍指相配」了。\n");
 
         if( query_temp("th_jianmang", me) )
                 return notify_fail("你正凝神使動「劍芒」，不能再分心了！\n");
@@ -77,7 +77,7 @@ int perform(object me, object target)
 
         COMBAT_D->do_attack(me,target,query_temp("weapon", me));
 
-        message_combatd(HIG"$N手中"+weapon->name()+HIG"一騰，飛舞來去，瀟洒自如，著著都是攻勢，一招不待$n化解開去，第二招第三招已連綿而至！\n"NOR, me,target);
+        message_combatd(HIG"$N手中"+weapon->name()+HIG"一騰，飛舞來去，瀟灑自如，著著都是攻勢，一招不待$n化解開去，第二招第三招已連綿而至！\n"NOR, me,target);
 
         //第二劍稍快
         addn_temp("apply/attack", damage/3, me);
@@ -85,7 +85,7 @@ int perform(object me, object target)
         addn_temp("apply/attack", -damage/3, me);
 
         if(me->is_fighting(target) ){
-        message_combatd(HIG"$N劍勢未止，左手指力已蘊勁彈出，點向$n各路穴道，"+HIW"「玉簫劍法」"NOR+HIG"與"+HIW"「彈指神通」"NOR+HIG"互相為用，越發精微奧妙，變化無窮！\n"NOR, me,target);
+        message_combatd(HIG"$N劍勢未止，左手指力已藴勁彈出，點向$n各路穴道，"+HIW"「玉簫劍法」"NOR+HIG"與"+HIW"「彈指神通」"NOR+HIG"互相為用，越發精微奧妙，變化無窮！\n"NOR, me,target);
 
         weapon->unequip();
         COMBAT_D->do_attack(me,target,query_temp("weapon", me));

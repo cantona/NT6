@@ -8,7 +8,7 @@ void create()
         set_name("雄獅", ({ "lion", "xiongshi", "shi" }) );
         set("race", "野獸");
         set("age", 15);
-        set("long", "一只矯健的雄獅，十分威風。\n");
+        set("long", "一隻矯健的雄獅，十分威風。\n");
 //        set("attitude", "aggressive");
         set("attitude", "peace");
         set("shen_type", -1);

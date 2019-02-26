@@ -12,7 +12,7 @@ void create()
         set("short","練武場");
         set("long",@LONG
 這是供歸雲莊內弟子們練功的場子。場邊擺了兩排兵器架，上面插
-著各種兵器，最多的還是各式各樣的劍。在場子的一個角落裡並排豎著
+着各種兵器，最多的還是各式各樣的劍。在場子的一個角落裏並排豎着
 兩根半高的木樁(zhuang)，相距約一米，看起來是練功用的。西邊是男
 弟子休息室，而東邊則是女弟子休息室。南邊是吃飯和喝茶的地方。
 LONG
@@ -79,7 +79,7 @@ int do_jump(string arg)
                 me->receive_damage("qi", qicost);
                 if (level < 60)
                 {
-                        message_vision("$N吸了口氣，縱上了木樁，這似乎是鍛煉輕功的好方法。\n", me);
+                        message_vision("$N吸了口氣，縱上了木樁，這似乎是鍛鍊輕功的好方法。\n", me);
                         if (level * level * level / 10 < exp)
                                 me->improve_skill("dodge", me->query_int() / 2);
                 }
@@ -93,7 +93,7 @@ int do_jump(string arg)
         {
                 if( !query_temp("thd_zhuang", me) )
                 {
-                        message_vision("$N想挖個坑跳進去，四處比劃了一番，卻發現周圍的人都用異樣的眼光看著自己。\n", me);
+                        message_vision("$N想挖個坑跳進去，四處比劃了一番，卻發現周圍的人都用異樣的眼光看着自己。\n", me);
                         return 1;
                 }
                 qicost = level / 4 + random(level / 4);
@@ -115,7 +115,7 @@ int do_jump(string arg)
                 delete_temp("thd_zhuang", me);
                 return 1;
         }
-        return notify_fail("你要往哪裡跳？\n");
+        return notify_fail("你要往哪裏跳？\n");
 }
         
 int do_squat()
@@ -140,7 +140,7 @@ int do_squat()
         }
         if (level < 30)
         {
-                write("你試著蹲下來，卻覺得兩腿發軟，隨時有跌下去的危險，連忙又站直了身子。\n");
+                write("你試着蹲下來，卻覺得兩腿發軟，隨時有跌下去的危險，連忙又站直了身子。\n");
                 return 1;
         }
         if (level < 100)
@@ -162,7 +162,7 @@ int do_squat()
 string look_zhuang()
 {
         if( query_temp("thd_zhuang", this_player()) )
-                return "你往腳下的木樁看去，覺得有點暈眩，剛才在地上看時好象沒有這麼高！\n";
+                return "你往腳下的木樁看去，覺得有點暈眩，剛才在地上看時好像沒有這麼高！\n";
         else
                 return "木樁離地大概一米左右，普通人難以跳上去。\n";
 }
@@ -170,12 +170,12 @@ string look_zhuang()
 int valid_leave(object me, string dir)
 {
         if( query_temp("thd_zhuang", me) )
-                return notify_fail("先從木樁上跳下來(down)再說吧！\n");
+                return notify_fail("先從木樁上跳下來(down)再説吧！\n");
 
         if( dir == "west" && query("gender", me) != "男性" )
-                return notify_fail("你打開門正要往裡走，忽然發現裡面都是光膀子的男弟子，你趕忙捂著臉退了出來。\n");
+                return notify_fail("你打開門正要往裏走，忽然發現裏面都是光膀子的男弟子，你趕忙捂着臉退了出來。\n");
 
         if( dir == "east" && query("gender", me) != "女性" )
-                return notify_fail("你打開門正要往裡走，卻聽到裡面傳來一陣女弟子的尖叫聲，你嚇得趕忙退了出來。\n");
+                return notify_fail("你打開門正要往裏走，卻聽到裏面傳來一陣女弟子的尖叫聲，你嚇得趕忙退了出來。\n");
         return ::valid_leave(me, dir);
 }

@@ -10,7 +10,7 @@ void create()
 
         set("combat_exp", 500000);
         set("long", 
-                "一匹蒙古高頭大馬，全身毛發黝黑發亮，煞是威風神俊。\n");
+                "一匹蒙古高頭大馬，全身毛髮黝黑髮亮，煞是威風神俊。\n");
 
         set("limbs", ({ "頭部", "身體", "蹄子", "尾巴" }) );
         set("verbs", ({ "bite", "hoof" }) );
@@ -35,7 +35,7 @@ void create()
 
         set("chat_chance", 5);
         set("chat_msg", ({
-              CYN"蒙古馬呼哧呼哧，蹄子不停地刨著地。\n"NOR,
+              CYN"蒙古馬呼哧呼哧，蹄子不停地刨着地。\n"NOR,
         }) );
 
         setup();

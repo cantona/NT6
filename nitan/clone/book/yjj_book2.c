@@ -50,18 +50,18 @@ int do_xiulian()
                 return 0;
                 
         if( me->is_busy() )
-             return notify_fail("你正忙著呢！\n");       
+             return notify_fail("你正忙着呢！\n");       
         if( query("pigging", where_1) )
                 return notify_fail("你還是專心拱豬吧！\n");
 
         if( query("sleep_room", where_1) )
-                return notify_fail("不能在睡房裡修煉，這會影響他人。\n");
+                return notify_fail("不能在睡房裏修煉，這會影響他人。\n");
 
         if( query("no_fight", where_1) )
-                return notify_fail("這裡空氣不好，還是找別處吧！\n");
+                return notify_fail("這裏空氣不好，還是找別處吧！\n");
 
-        if( query("name", where_1) == "大車裡" )
-                return notify_fail("車裡太顛簸, 修練會走火入魔. \n");
+        if( query("name", where_1) == "大車裏" )
+                return notify_fail("車裏太顛簸, 修練會走火入魔. \n");
 
         if( me->is_busy() || query_temp("pending/exercising", me) )
         if( me->is_fighting() )
@@ -83,7 +83,7 @@ int do_xiulian()
         {
                 write("你開始按照定春秋教你的獨特練功方法調息打坐。\n");
                 if(random(4)==1){
-                        write("沒有神木王鼎的幫助，你根本無法控制住自己的氣，你只覺得體內橫沖直撞，你有些神智不清了！\n");
+                        write("沒有神木王鼎的幫助，你根本無法控制住自己的氣，你只覺得體內橫衝直撞，你有些神智不清了！\n");
                         write("你哇的吐出一口鮮血，你只覺得意識在慢慢的消失！\n");
                         set_temp("die_reason", "修煉易筋經殘扁，走火入魔死了", me);
                         me->receive_damage("qi",query("eff_qi", me)+200);
@@ -105,7 +105,7 @@ int do_xiulian()
         write("神木王鼎也冒出了裊裊的清煙，一切都讓你你覺得和諧極了，慢慢的甚至忘記了自我的存在。\n");
         if( random((200/query("int", me)))>3 )
         {
-                write("忽然你覺得腦子裡面有些混亂，好象哪個地方不對了！\n");
+                write("忽然你覺得腦子裏面有些混亂，好像哪個地方不對了！\n");
                 write("你哇的吐出一口鮮血，你只覺得意識在慢慢的消失！\n");
                 me->receive_damage("jing",30);
                 me->receive_damage("qi",100);
@@ -123,7 +123,7 @@ int do_xiulian()
 int finish(object me)
 {
         me=this_player();
-        write("你只覺得渾身上下舒暢無比，不由暗自嘆道：“真不愧是易筋經！”\n");
+        write("你只覺得渾身上下舒暢無比，不由暗自歎道：“真不愧是易筋經！”\n");
         me->clear_condition("bingcan_poison",5);
         if( query("yijinjing", me)<1 )
         {

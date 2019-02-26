@@ -5,7 +5,7 @@ void create()
 {
         set("short", "山道");
         set("long", @LONG
-這裡已經看不到襄陽了，滿眼望去，盡是曲曲折折的山道，大軍
+這裏已經看不到襄陽了，滿眼望去，盡是曲曲折折的山道，大軍
 行到此處，人畜都開始有些吃力起來。
 LONG );
         set("outdoors", "xiangyang");
@@ -42,7 +42,7 @@ void init()
             return;
         }
 
-        tell_object(me,YEL"你指揮著大軍，行進在曲折的山道上......\n"NOR);
+        tell_object(me,YEL"你指揮着大軍，行進在曲折的山道上......\n"NOR);
 }
 
 int valid_leave(object me,string dir)

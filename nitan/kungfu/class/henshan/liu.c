@@ -117,7 +117,7 @@ void attempt_apprentice(object ob)
 
         if ((int)ob->query_skill("henshan-jian", 1) < 120)
         {
-                command("say 我衡山乃五岳劍派之一，最為重視劍法。");
+                command("say 我衡山乃五嶽劍派之一，最為重視劍法。");
                 command("say 你的衡山劍法還不夠熟練，下去練練再來吧。");
                 return;
         }
@@ -145,8 +145,8 @@ int accept_ask(object me, string topic)
                            "name"    : "亂劍覆花",
                            "msg1"    : "$N點了點頭，忽然一聲輕嘯，騰"
                                        "空而起，驀地挽出一個劍花，頃"
-                                       "刻間只見得劍花四散，洋洋洒洒"
-                                       "，猶如無數花瓣從半空洒下，招"
+                                       "刻間只見得劍花四散，洋洋灑灑"
+                                       "，猶如無數花瓣從半空灑下，招"
                                        "式當真精奇無比。",
                            "sk1"     : "furong-jian",
                            "lv1"     : 100,
@@ -189,7 +189,7 @@ void init(object ob)
                         command("play xiaoao-jianghu");
                 else
                         say(CYN + this_object()->name() +
-                            CYN "深深地嘆了口氣。\n" NOR);
+                            CYN "深深地歎了口氣。\n" NOR);
         }
         return;
 }

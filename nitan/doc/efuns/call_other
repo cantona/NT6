@@ -22,7 +22,7 @@
                 是一個字串 (即要呼叫的函式) , 而其他的元素就會被當
                 成要傳入此函式的參數.
 
-                這裡有個使用 call_other() 更好的方法:
+                這裏有個使用 call_other() 更好的方法:
 
                         object ob 或 object *obs -> func( ... );
 
@@ -35,7 +35,7 @@
                 上例寫成:
                         call_other( ob, ({ "query", "name" }));
 
-                這裡有一個使用陣列的□例:
+                這裏有一個使用陣列的□例:
                         users()->quit();
         翻譯:
                 Spock @ FF      96.Oct.16.              (printed 3/16/95)

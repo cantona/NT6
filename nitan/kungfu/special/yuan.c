@@ -14,7 +14,7 @@ int perform(object me, string skill)
         mapping my;
 
         if (me->query_condition("pk"))
-                return notify_fail("你正處于 PK 懲罰階段，無法使用該特技。\n");
+                return notify_fail("你正處於 PK 懲罰階段，無法使用該特技。\n");
 
         if (time() - me->query("special2/yuan") < 86400 / 2)
                 return notify_fail("破元大法12小時只能施展一次！\n");

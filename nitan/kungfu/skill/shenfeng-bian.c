@@ -23,7 +23,7 @@ mapping *action = ({
    "damage_type":  "拉傷"
 ]),
 
-([ "action": "$N一聲清嘯，手中$w一招「回首」，劃出漫天鞭影舖天蓋地地向$n卷來，勢道猛烈之極",
+([ "action": "$N一聲清嘯，手中$w一招「回首」，劃出漫天鞭影鋪天蓋地地向$n捲來，勢道猛烈之極",
    "skill_name" : "回首",
    "damage_type":  "拉傷"
 ]),
@@ -102,10 +102,10 @@ mapping query_action(object me, object weapon)
         weapon=query_temp("weapon", me);
         if( query_temp("chb", me)){
           switch(query_temp("chb", me)){
-             case 3: msg = MAG"但見$N身形朝前一沖， 手中"+ weapon->name()+MAG"抽向$n的小腹" NOR; break;
-             case 2: msg =HIY"緊跟著$N把內力運在"+ weapon->name()+ "，"+ weapon->name()+HIY"如判官筆般點向$n的前心" NOR;break;
-             case 1: msg = HIW"最後$N向上高高一躍，發了瘋般揮舞"+ weapon->name()+HIW "向著$n發起攻擊" NOR; break;
-             default: msg = HIW"最後$N向上高高一躍，發了瘋般揮舞"+ weapon->name()+HIW"向著$n發起攻擊" NOR; break;
+             case 3: msg = MAG"但見$N身形朝前一衝， 手中"+ weapon->name()+MAG"抽向$n的小腹" NOR; break;
+             case 2: msg =HIY"緊跟着$N把內力運在"+ weapon->name()+ "，"+ weapon->name()+HIY"如判官筆般點向$n的前心" NOR;break;
+             case 1: msg = HIW"最後$N向上高高一躍，發了瘋般揮舞"+ weapon->name()+HIW "向着$n發起攻擊" NOR; break;
+             default: msg = HIW"最後$N向上高高一躍，發了瘋般揮舞"+ weapon->name()+HIW"向着$n發起攻擊" NOR; break;
           }
           addn_temp("chb", -1, me);
               return ([
@@ -170,13 +170,13 @@ mixed hit_ob(object me, object victim, int damage_bonus, int factor)
                victim->start_busy(1);
                if (random(me->query_skill("parry", 1)) > victim->query_skill("parry", 1)/3 ){       
                  message_vision(HIY "$N氣運手臂用力一拽，" + weap->name()
-                                + HIY"卻無法從"+weap1->name()+HIY"的纏繞中脫開，情急之下只好放棄了手中的兵刃。\n" NOR, victim );
+                                + HIY"卻無法從"+weap1->name()+HIY"的纏繞中脱開，情急之下只好放棄了手中的兵刃。\n" NOR, victim );
                  weap->move(environment(me));
                  victim->reset_action();
                }
                else {
                  message_vision(HIY "$N暗運巧勁，" + weap->name()
-                                + HIY"順著方向快速旋轉數下，解開了"+weap1->name()+HIY"的纏繞。\n" NOR, victim );
+                                + HIY"順着方向快速旋轉數下，解開了"+weap1->name()+HIY"的纏繞。\n" NOR, victim );
                  addn("neili", -50, victim);
                }
                addn("neili", -30, me);

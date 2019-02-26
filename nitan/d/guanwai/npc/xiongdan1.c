@@ -29,7 +29,7 @@ int do_eat(string arg)
         if (!id(arg))
         return notify_fail("你要吃什麼？\n");
         if (me->is_fighting()) return notify_fail("戰鬥中不能吃東西！\n");
-        if (me->is_busy()) return notify_fail("你正忙著呢！\n");
+        if (me->is_busy()) return notify_fail("你正忙着呢！\n");
 
         set("eff_qi",query("max_qi",  this_player()), this_player());
         message_vision("$N吃下一副熊膽幹，覺得精神好多了。\n", this_player());

@@ -29,8 +29,8 @@ private void do_bonus(object room)
         if (r == 0)
         { 
                 msg = HIR "只聽轟隆隆聲音大做，發耳欲聵，令人心神俱搖！你抬頭看去，只見\n"
-                          "晨曦中黃果樹瀑布籠罩著層層霧氣，分外要人。水流飛瀉，氣勢驚人！\n" NOR;
-                msg += HIG "你望著湍急的瀑布飛練，為這世間美景驚嘆不已，從"
+                          "晨曦中黃果樹瀑布籠罩着層層霧氣，分外要人。水流飛瀉，氣勢驚人！\n" NOR;
+                msg += HIG "你望着湍急的瀑布飛練，為這世間美景驚歎不已，從"
                            "中不禁領悟到了武學的道理。\n" NOR; 
 
                 for( int i=0; i<sizeof(obs); i++ )
@@ -45,7 +45,7 @@ private void do_bonus(object room)
                 MAP_D->record_rumor(obs, "黃果樹激流", this_object());
 
                 CHANNEL_D->do_channel(this_object(), "rumor",
-                                      "聽說黃果樹激流澎湃，奇景非凡，無數遊人嘆羨不已。");
+                                      "聽説黃果樹激流澎湃，奇景非凡，無數遊人歎羨不已。");
         } else 
         if (r < 250) 
         {
@@ -53,7 +53,7 @@ private void do_bonus(object room)
                 switch (random(3)) 
                 { 
                 case 0: 
-                        msg += HIY "看著這壯麗的瀑流，你不禁感嘆，正所謂「飛流直"
+                        msg += HIY "看着這壯麗的瀑流，你不禁感歎，正所謂「飛流直"
                                     "下三千尺，疑是銀河落九天」啊。\n" NOR; 
                         break; 
                 case 1: 
@@ -64,7 +64,7 @@ private void do_bonus(object room)
                         msg += HIY "瀑流直如水銀泄地一般，水花四濺。\n" NOR; 
                         break; 
                 } 
-                msg += HIG "觀賞著飛流直下的水瀑，你不由得感嘆自然造化的奇妙，隱"
+                msg += HIG "觀賞着飛流直下的水瀑，你不由得感歎自然造化的奇妙，隱"
                            "隱然對武學也有了一點領會。\n" NOR; 
 
                 for( int i=0; i<sizeof(obs); i++ )

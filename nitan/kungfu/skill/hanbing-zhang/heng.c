@@ -37,7 +37,7 @@ int perform(object me, object target)
                 return notify_fail("你現在的真氣不夠，難以施展" HENG "。\n");
 
         if (! living(target))
-                return notify_fail("對方都已經這樣了，用不著這麼費力吧？\n");
+                return notify_fail("對方都已經這樣了，用不着這麼費力吧？\n");
 
         ap = me->query_skill("hanbing-zhang", 1) +
              me->query_skill("dodge", 1) / 2;
@@ -45,7 +45,7 @@ int perform(object me, object target)
         dp = target->query_skill("dodge");
 
         msg = HIC "\n$N" HIC "怒喝一聲，施出絕招「" HIG "踏雪無痕" HIC 
-              "」剎時間，寒意襲卷漫天，但見$N" HIC "雙掌連續反轉，不斷"
+              "」剎時間，寒意襲捲漫天，但見$N" HIC "雙掌連續反轉，不斷"
               "拍向$n" HIC "，竟將$n" HIC "困在掌風之下。\n" NOR;
         message_sort(msg, me, target);
         
@@ -59,7 +59,7 @@ int perform(object me, object target)
                 addn("neili", -100, me);
         } else
         {
-                msg = CYN "$n" CYN "看破$N" CYN "毫無攻擊之意，于"
+                msg = CYN "$n" CYN "看破$N" CYN "毫無攻擊之意，於"
                       "是大膽反攻，將$N" CYN "這招盡數化解。\n" NOR;
 
                 me->start_busy(2);

@@ -10,7 +10,7 @@ string *dodge_msg = ({
 });
 
 mapping *action = ({
-([      "action" : "$N雙手虛晃，左腳猛地飛起，一式「盪寇金湯」，腳尖晃動，踢向$n的$l",
+([      "action" : "$N雙手虛晃，左腳猛地飛起，一式「蕩寇金湯」，腳尖晃動，踢向$n的$l",
         "force" : 80,
         "attack": 10,
         "dodge" : 45,
@@ -18,7 +18,7 @@ mapping *action = ({
         "damage": 10,
         "lvl"   : 0,
         "damage_type" : "瘀傷",
-        "skill_name"  : "盪寇金湯"
+        "skill_name"  : "蕩寇金湯"
 ]),
 ([      "action" : "$N左腳頓地，別轉身來抽身欲走，只一剎那間一回身，右腳一式「幻影腿」，猛踹$n的$l",
         "force" : 100,

@@ -5,7 +5,7 @@ void create()
         set_name("計老人", ({ "ji laoren", "ji" , "laoren" }));
         set("gender", "男性");
         set("age", 70);
-        set("long", "他滿頭白發，竟無一根是黑的。身材甚是高大，只\n"
+        set("long", "他滿頭白髮，竟無一根是黑的。身材甚是高大，只\n"
                     "是弓腰曲背衰老已極。\n");
         set("attitude", "friendly");
         set("combat_exp", 10000);

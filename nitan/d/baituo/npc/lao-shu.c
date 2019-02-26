@@ -7,7 +7,7 @@ void create()
         set_name("老鼠", ({ "lao shu", "shu", "mouse" }) );
         set("race", "野獸");
         set("age", 2);
-        set("long", "一只贓兮兮的小老鼠。\n");
+        set("long", "一隻贓兮兮的小老鼠。\n");
         set("attitude", "peaceful");
         
         set("limbs", ({ "頭部", "身體", "前腳", "後腳", "尾巴" }) );
@@ -48,7 +48,7 @@ int random_move()
 void die()
 {
         object ob;
-        message_vision("$N凄慘的嚎了幾聲，死了。\n", this_object());
+        message_vision("$N悽慘的嚎了幾聲，死了。\n", this_object());
         ob = new("/d/shaolin/npc/shurou");
         ob->move(environment(this_object()));
         destruct(this_object());

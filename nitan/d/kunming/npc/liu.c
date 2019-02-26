@@ -8,7 +8,7 @@ int redeem(string arg);
 void create()
 {
         set_name("劉通", ({ "liu tong", "liu" }));
-        set("title", "當舖老板");
+        set("title", "當鋪老闆");
         set("shen_type", 0);
 
         set("gender", "男性");

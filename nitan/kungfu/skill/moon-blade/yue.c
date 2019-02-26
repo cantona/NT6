@@ -38,7 +38,7 @@ int perform(object me, object target)
                 return notify_fail("你的真氣不夠，難以施展" + name() + "。\n");
 
         if (! living(target))
-                return notify_fail("對方都已經這樣了，用不著這麼費力吧？\n");
+                return notify_fail("對方都已經這樣了，用不着這麼費力吧？\n");
 
         msg = HIY "$N" HIY "刀氣橫空，刀光爍閃，連環七刀，每刀均令$n" HIY "不得不全神應付，\n"
               "每刀均是樸實古拙，偏又有，明月當空的感覺。\n"

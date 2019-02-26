@@ -1,6 +1,6 @@
 //                標準描述長度示例                                   |
 // 幻境內人物  殺戮型 （並且會攜帶玩家必須尋找的寶物）
-// by naihe  2002-10-27  于茂名
+// by naihe  2002-10-27  於茂名
 // naihe 05-9-4 15:43 優化一下，同時增加2個類型
 // naihe 05-9-5 11:02 再次優化
 
@@ -13,7 +13,7 @@ inherit NPC;
 #include "hj_settings/get_hj_dir.h"
 #include "hj_settings/hj_msg.h"
 
-#define     NPC_NORMAL_SIZE         6       // 普通NPC的范圍，從 0~ SIZE-1
+#define     NPC_NORMAL_SIZE         6       // 普通NPC的範圍，從 0~ SIZE-1
 #define     NPC_ZUREN_INDEX         5       // 族人NPC的索引號
 #define     NPC_ZUZHANG_INDEX       6       // 族長NPC的索引號
 #define     NPC_YL_WUSHI_INDEX      10      // 幽靈 -- 武士
@@ -78,8 +78,8 @@ varargs void setme( int npc_class, int npc_level )
             "peaceful": 3, // 越大越不愛主動攻擊
             //"hit_busy": 1, // 攻擊會造成忙時
             "dead_reward_score" : 150,    // NPC死亡時會給予獎勵
-            "max_busy_limit" : 3,  // 本NPC最大只能接受的 busy time，超過時會強制恢復自由
-            "del_msg" : "$N忽地發出一陣凄厲長嘯，隨後「□」地一聲消失不見了。\n",
+            "max_busy_limit" : 3,  // 本NPC最大隻能接受的 busy time，超過時會強制恢復自由
+            "del_msg" : "$N忽地發出一陣淒厲長嘯，隨後「嘭」地一聲消失不見了。\n",
         ]),
 
         ([ "special_name": HIB"幽靈族"HIR"殺神"NOR,
@@ -89,14 +89,14 @@ varargs void setme( int npc_class, int npc_level )
             "peaceful": 3, // 越大越不愛主動攻擊
             "hit_busy": 1, // 攻擊會造成忙時
             "dead_reward_score" : 1500,    // NPC死亡時會給予獎勵
-            "del_msg" : "$N忽地發出一陣凄厲長嘯，隨後「□」地一聲消失不見了。\n",
+            "del_msg" : "$N忽地發出一陣淒厲長嘯，隨後「嘭」地一聲消失不見了。\n",
         ]),
         ([ "special_name":HIB"幽靈族"HIM"隱士"NOR,
-            "special_long" : "這是一個幽靈族的隱士，全身散發著一股莫名的壓迫之氣，讓人不敢靠近。\n",
+            "special_long" : "這是一個幽靈族的隱士，全身散發着一股莫名的壓迫之氣，讓人不敢靠近。\n",
             "id":({ "youling yinshi", "yinshi", }),
             "hit_busy": 1, // 攻擊會造成忙時
             "dead_reward_score" : 800,    // NPC死亡時會給予獎勵
-            "del_msg" : "$N忽地發出一陣凄厲長嘯，隨後「□」地一聲消失不見了。\n",
+            "del_msg" : "$N忽地發出一陣淒厲長嘯，隨後「嘭」地一聲消失不見了。\n",
         ]),
         ([ "special_name": HIB"幽靈族武士"NOR,
             "special_long" : "這是一個幽靈族的武士，陰森詭異。\n",
@@ -132,7 +132,7 @@ varargs void setme( int npc_class, int npc_level )
         YEL"巨人族",
     });
     i = sizeof( npc_info2 );
-    if( npc_class == 88 )  // 指定“族”為任務NPC  (僅由 hj_room1.c 裡調用)
+    if( npc_class == 88 )  // 指定“族”為任務NPC  (僅由 hj_room1.c 裏調用)
     {
         npc_class = -1;
         npc_level = NPC_YL_WUSHI_INDEX;    // 則指定為 幽靈武士
@@ -187,7 +187,7 @@ varargs void setme( int npc_class, int npc_level )
     }
     else
     {
-        set( "long", "這是一個"+class_list[ npc_class ]+NOR"的族民，十分好戰，可以說是兇殘成性。\n");
+        set( "long", "這是一個"+class_list[ npc_class ]+NOR"的族民，十分好戰，可以説是兇殘成性。\n");
     }
     set("auto_kill", info[ "auto_kill" ] );
     set("peaceful", info[ "peaceful"] );
@@ -211,7 +211,7 @@ varargs void setme( int npc_class, int npc_level )
     set_temp( "hj_hp_max", info[ "hpmax" ] );
     set_temp( "hj_hp",     info[ "hpmax" ] );
     set( "attack_busy", 0 );
-    set("msg","只聽得一陣響聲傳來，旁邊走過來一個面目猙獰的家伙！\n");
+    set("msg","只聽得一陣響聲傳來，旁邊走過來一個面目猙獰的傢伙！\n");
     set("gender","男性");
     set("age",30+random(30));
     set("no_refresh",1);
@@ -232,13 +232,13 @@ varargs void setme( int npc_class, int npc_level )
     remove_call_out("delete_me");
     call_out("checking", 3 );
     if( id == "youling yinshi" || id == "youling shashen" )
-        hj_shout( HIM"□幻境傳聞□聽說"+query("name")+HIM"在幻境密林中出現了！\n"NOR );
+        hj_shout( HIM"〖幻境傳聞〗聽説"+query("name")+HIM"在幻境密林中出現了！\n"NOR );
 }
 
 void create()
 {
     set("delete_time_max",300+random(180) );
-    // 每個NPC出場時間最多 8 分鐘(若是玩家寶物目標，則以 fyld_npc.h 裡設置為準。
+    // 每個NPC出場時間最多 8 分鐘(若是玩家寶物目標，則以 fyld_npc.h 裏設置為準。
     setme( 99 );
     setup();
 }
@@ -258,7 +258,7 @@ void delete_me()
     if( stringp( query("del_msg") ) )
         message_vision( query("del_msg"), ob );
     else
-        message_vision( "只聽得一聲怪叫，$N「□」地一聲消失不見了。\n", ob);
+        message_vision( "只聽得一聲怪叫，$N「嘭」地一聲消失不見了。\n", ob);
     // 這兩個特別的 NPC 要通告一下。幽靈刺客不必通告；幽靈武士是 JOB NPC，也不必。
     if( query("id") == "youling yinshi" || query("id") == "youling shashen" )
     {
@@ -269,13 +269,13 @@ void delete_me()
                 object who;
                 who = find_player( query("killme_by") );
                 if( objectp(who) && environment(who) == environment(ob) )
-                    hj_shout(HIM"□幻境傳聞□聽說"+query("name")+HIM"被"+query("name", who)+HIM"殺死了！\n"NOR);
+                    hj_shout(HIM"〖幻境傳聞〗聽説"+query("name")+HIM"被"+query("name", who)+HIM"殺死了！\n"NOR);
                 else
-                    hj_shout( HIM"□幻境傳聞□聽說"+query("name")+HIM"被殺死了！\n"NOR );
+                    hj_shout( HIM"〖幻境傳聞〗聽説"+query("name")+HIM"被殺死了！\n"NOR );
             }
         }
         else
-            hj_shout( HIM"□幻境傳聞□聽說"+query("name")+HIM"離開了幻境密林。\n"NOR );
+            hj_shout( HIM"〖幻境傳聞〗聽説"+query("name")+HIM"離開了幻境密林。\n"NOR );
     }
     destruct(this_object());
 }
@@ -325,7 +325,7 @@ void checking()
         message_vision( "\n$N忽地使勁一掙，身體似乎恢復了自由！\n\n", ob );
     }
     // 本NPC仍在生，下面開始進入攻擊程序。
-    // 攻擊等待時間仍未到，或偶爾得到小幾率的隨機數，跳過。
+    // 攻擊等待時間仍未到，或偶爾得到小几率的隨機數，跳過。
     addn("attack_busy", -1 );
     if( query("attack_busy") < 0 )
         set("attack_busy", 0 );
@@ -395,10 +395,10 @@ void checking()
             // 攜帶神人令、或攜帶臨時離開器(臨時離開遊戲)者，不會被攻擊。
             if( present("shenren ling",temp) || present( "hj temp leave obj", temp ) )
                 continue;
-            // 還有4個以上的燈亮著時，族長不會主動進行攻擊。
+            // 還有4個以上的燈亮着時，族長不會主動進行攻擊。
             if( id == "zu zhang" && query("last_deng", qxd)>4 )
                 continue;
-            // 還有6個以上的燈亮著時，小頭領不會主動進行攻擊。
+            // 還有6個以上的燈亮着時，小頭領不會主動進行攻擊。
             if( id == "tou ling" && query("last_deng", qxd)>6 )
                 continue;
             // 那麼，開始攻擊目標！
@@ -454,15 +454,15 @@ void att_target( object target )
     switch( random(12) )
     {
     case 0 .. 3 : temp_msg=NOR+CYN"狠狠地揮出一拳，把$N"NOR+CYN"打個正中！";break;
-    case 4 .. 7 : temp_msg=NOR+CYN"狠狠地踢出一腳，$N"NOR+CYN"躲閃不及，吃個正著！"; break;
+    case 4 .. 7 : temp_msg=NOR+CYN"狠狠地踢出一腳，$N"NOR+CYN"躲閃不及，吃個正着！"; break;
 
-    case 8: temp_msg=NOR+CYN"口中「□□」怪叫，雙手亂揮，卻也讓$N"NOR+CYN"中了招！";
+    case 8: temp_msg=NOR+CYN"口中「嗬嗬」怪叫，雙手亂揮，卻也讓$N"NOR+CYN"中了招！";
         power -= ( power /3 ); break;
     case 9:    temp_msg=NOR+CYN"手腳亂揮，完全不成章法，卻也讓$N"NOR+CYN"中了招！";
         power -= ( power /3 ); break;
-    case 10:temp_msg=NOR+CYN"使盡了力氣向著$N"NOR+CYN"一撞，把$N"NOR+CYN"撞得飛了開去！";
+    case 10:temp_msg=NOR+CYN"使盡了力氣向着$N"NOR+CYN"一撞，把$N"NOR+CYN"撞得飛了開去！";
         power += ( power / 2 ); break;
-    case 11: temp_msg=NOR+CYN"向著$N"NOR+CYN"一抓！$N"NOR+CYN"閃身躲過，只受了點輕傷。";
+    case 11: temp_msg=NOR+CYN"向着$N"NOR+CYN"一抓！$N"NOR+CYN"閃身躲過，只受了點輕傷。";
         power = power / 5 + random( power / 5 );
         if( power < 1 ) power = 1;
         break;
@@ -471,7 +471,7 @@ void att_target( object target )
     if( (id=query("id")) == "fa shi" )
     {
         power = query("mepower") * 4 / 5 + random( query("mepower") / 5 ) + 1;
-        message_vision( sprintf( HIY"\n$n"HIY"對著$N"HIY"指手劃腳地施著法，$N"HIY
+        message_vision( sprintf( HIY"\n$n"HIY"對着$N"HIY"指手劃腳地施着法，$N"HIY
             + "竟覺全身氣息傾泄而出！結果造成 "HIR"%d"HIY" 點的傷害。\n"NOR, power ),
             target, this_object()
         );
@@ -536,13 +536,13 @@ void npc_dead_reward()
     if( query("take_gem_npc") =="yes" )
     {
         temp = new(__DIR__"hj_obj_gem");
-        temp -> setme( query("npc_class") );    // 如果 class 超出允許范圍，則會隨機設置寶物
+        temp -> setme( query("npc_class") );    // 如果 class 超出允許範圍，則會隨機設置寶物
     }
     // 否則如果是族長，掉下本族的權杖。加入隨機數，否則JOB變得相當的容易了。
     else if( id == "zu zhang" && random(3) )
     {
         temp = new( __DIR__"hj_obj_gem_qz" );
-        temp -> setme( query("npc_class") );    // 如果 class 超出允許范圍，則會隨機設置權杖
+        temp -> setme( query("npc_class") );    // 如果 class 超出允許範圍，則會隨機設置權杖
     }
     // 否則如果不是幽靈武士、並且不是有特殊獎勵的，就有機會掉下技能石或果品或購物寶石。
     else if( !random(3) && id != "youling wushi" && !query("dead_reward_score") )
@@ -579,7 +579,7 @@ void npc_dead_reward()
 
 
 // 幽靈武士死亡後給予獎勵。
-// (1) query("job_master_obj")  object 型，JOB是屬于此人的
+// (1) query("job_master_obj")  object 型，JOB是屬於此人的
 // (2) query("job_award_score") int 型，獎勵的得分
 // (3) query("job_award_skills") int 型，獎勵的技能
 // query("killme_by")  最後一擊

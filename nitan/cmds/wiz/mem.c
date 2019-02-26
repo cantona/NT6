@@ -124,7 +124,7 @@ protected varargs void check_memory_info(object me, string file)
         // write(sprintf("%|50s  %8s  %s    %14s / %14s\n",
         write(sprintf("%-48s  %8s  %s    %14s / %14s\n",
                       "文件名        ",
-                      "復制件數量    ",
+                      "複製件數量    ",
                       "內存佔用總額  ",
                       "單一佔用(參考)",
                       "平均每件佔用  "));

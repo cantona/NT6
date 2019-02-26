@@ -35,7 +35,7 @@ int perform(object me, object target)
                 return notify_fail("你沒有激發金蛇劍法，難以施展" QIAN "。\n");
 
         if (! living(target))
-                return notify_fail("對方都已經這樣了，用不著這麼費力吧？\n");
+                return notify_fail("對方都已經這樣了，用不着這麼費力吧？\n");
 
         msg = HIW "\n$N" HIW "一聲長吟，手中" + weapon->name() + HIW "頓時化做無數條靈蛇，"
               "從四面八方同時向$n" HIW "襲去。\n" NOR;

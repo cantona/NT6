@@ -28,7 +28,7 @@ int do_enter(string arg)
 {
         object room, me = this_player();
         if( !arg || arg!="jiao" ) return 0;
-        message_vision("$N一哈腰掀開轎簾往轎裡鑽進去。\n\n", me ) ;
+        message_vision("$N一哈腰掀開轎簾往轎裏鑽進去。\n\n", me ) ;
         if( !(room = find_object("/d/city/obj/jiaonei")) )
             room = load_object("/d/city/obj/jiaonei");
         if( room = find_object("/d/city/obj/jiaonei") ) 
@@ -41,6 +41,6 @@ int do_enter(string arg)
 
 void reach(object me)
 {
-        tell_object(me, "突然，轎子頓了一下停了下來，然後有人說: 到了，落轎。\n");
+        tell_object(me, "突然，轎子頓了一下停了下來，然後有人説: 到了，落轎。\n");
         me->move("/d/city3/eastroad1");
 }

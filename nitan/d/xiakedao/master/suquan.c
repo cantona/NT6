@@ -10,7 +10,7 @@ int do_join(string arg);
 void create()
 {
         set_name("蘇荃", ({ "su-quan", "su" }));
-        set("long", "一個千嬌百媚、明艷不可方物的少婦。\n");
+        set("long", "一個千嬌百媚、明豔不可方物的少婦。\n");
         set("gender", "女性");
         set("age", 25);
         set("attitude", "friendly");

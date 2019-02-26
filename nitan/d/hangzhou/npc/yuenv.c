@@ -10,7 +10,7 @@ void create()
 {
         set_name("越女", ({ "yue nv", "yuenv" }));
         set("long", @LONG
-她是一位年輕的牧羊女，臉上掛著一絲與年齡不相稱的哀思。
+她是一位年輕的牧羊女，臉上掛着一絲與年齡不相稱的哀思。
 LONG );
         set("gender", "女性");
         set("class", "swordsman");
@@ -104,11 +104,11 @@ int ask_me()
         } else
         if( query("gender", me) != "女性" )
         {
-                command("say 你們男人沒有什麼好東西，還是別說什麼花言巧語了。");
+                command("say 你們男人沒有什麼好東西，還是別説什麼花言巧語了。");
         } else
         if( query("per", me) >= 30 )
         {
-                message_vision("$N看著$n，幽幽的嘆了一口氣，似乎想起了什麼。\n",
+                message_vision("$N看着$n，幽幽的歎了一口氣，似乎想起了什麼。\n",
                                this_object(), me);
         } else
         if (me->query_skill("force") < 120)
@@ -118,13 +118,13 @@ int ask_me()
         } else
         if (me->query_skill("yuenv-jian", 1) < 100)
         {
-                command("say 你還是練好我的劍術再說吧，不要好高鶩遠，反而一事無成。");
+                command("say 你還是練好我的劍術再説吧，不要好高鶩遠，反而一事無成。");
                 return 1;
         } else
         {
                 command("nod");
                 command("say 好吧，我就叫你這一招“西子捧心”，以後你若見到... 還是算了吧。");
-                tell_object(me, "你聽了越女的指點，明白了如何運用這一絕技。\n");
+                tell_object(me, "你聽了越女的指點，明白瞭如何運用這一絕技。\n");
                 set("can_perform/yuenv-jian/pengxin", 1, me);
         }
         return 1;

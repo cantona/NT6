@@ -91,21 +91,21 @@ void setup_insect(object ob)
                 set("dead_message",       "\n$N四腳朝天地翻了過來，死了。\n\n"        );
                 set("unconcious_message", "\n$N四腳朝天地翻了過來，不動了。\n\n"      );
                 set("revive_message",     "\n$N一下翻過身，又敏捷地四處爬動起來。\n\n");
-                set("leave_msg",          "的草叢裡鑽了出去"            );
+                set("leave_msg",          "的草叢裏鑽了出去"            );
                 set("arrive_msg",         "爬了過來"                              );
-                set("fleeout_message",    "的草叢裡鑽了出去"            );
+                set("fleeout_message",    "的草叢裏鑽了出去"            );
                 set("fleein_message",     "緩緩爬了過來，動作有些遲滯"            );
 
                 set("limbs", ({"頭部",        "背部",        "腹部", "觸角", "前腿",        "後腿", "尾巴"}) );
         }
 
         if( query("subrace", ob) == "飛蟲"){
-                set("dead_message",       "\n$N掉在地上，掙紮了幾下就死了。\n\n"      );
+                set("dead_message",       "\n$N掉在地上，掙扎了幾下就死了。\n\n"      );
                 set("unconcious_message", "\n$N撲的跌在地上，昏了過去。\n\n"          );
                 set("revive_message",     "\n$N張開翅膀撲騰了一下，又飛了起來。\n\n"  );
-                set("leave_msg",          "嗡嗡嗡地叫著飛了出去"              );
-                set("arrive_msg",         "嗡嗡地叫著飛了過來"                    );
-                set("fleeout_message",    "嗡嗡地叫著飛了出去"                );
+                set("leave_msg",          "嗡嗡嗡地叫着飛了出去"              );
+                set("arrive_msg",         "嗡嗡地叫着飛了過來"                    );
+                set("fleeout_message",    "嗡嗡地叫着飛了出去"                );
                 set("fleein_message",     "緩緩飛了過來，動作有些遲滯"            );
 
                 set("limbs", ({"頭部",        "背部",        "腹部",        "翅膀", "前腿",        "後腿", "尾巴"}) );

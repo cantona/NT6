@@ -101,7 +101,7 @@ string ask_me_2(string name)
 int accept_kill(object me)
 {
         if( query("family/family_name", me) == "桃花島"){
-        command("say 你我本是同門，如何要加害于我！\n");
+        command("say 你我本是同門，如何要加害於我！\n");
         set("th_killer", 1, me);
         kill_ob(me);
         return 1;

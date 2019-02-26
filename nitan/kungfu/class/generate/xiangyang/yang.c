@@ -11,7 +11,7 @@ void create()
         set("age", 26);
         set("long", @LONG
 他看上去眉目之間有一股清秀之氣，然而隱隱約約卻讓人感到一陣哀傷之情，
-左袖空盪盪的，顯然已是殘疾。
+左袖空蕩蕩的，顯然已是殘疾。
 LONG );
         set("attitude", "friendly");
 
@@ -71,7 +71,7 @@ LONG );
         set("inquiry", ([
                 "王重陽" : "嘿...嘿！",
                 "郭靖"   : "他可真是真正的大俠。",
-                "黃蓉"   : "黃師叔麼...真不好說啊。",
+                "黃蓉"   : "黃師叔麼...真不好説啊。",
                 "小龍女" : "你打聽我妻子幹什麼？",
         ]));
         set("chat_msg", ({ (: random_move :) }));
@@ -119,10 +119,10 @@ mixed teach_sad()
                 return 1;
         }
 
-        if (ob->query("character") == "陰險姦詐" || 
+        if (ob->query("character") == "陰險奸詐" || 
             ob->query("character") == "心狠手辣")
         {
-                command("say 你一心想著去害人，無法領悟黯然銷魂的境界！");
+                command("say 你一心想着去害人，無法領悟黯然銷魂的境界！");
                 return 1;
         }
 

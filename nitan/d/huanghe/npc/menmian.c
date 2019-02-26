@@ -10,7 +10,7 @@ void create()
         set("str", 25);
         set("dex", 16);
         set("per", 20);
-        set("long", "一個黑布蒙面，神秘兮兮的家伙。\n");
+        set("long", "一個黑布蒙面，神祕兮兮的傢伙。\n");
         set("combat_exp", 20000);
         set("shen_type", -1);
         set("attitude", "peaceful");

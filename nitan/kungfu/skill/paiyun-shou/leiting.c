@@ -31,7 +31,7 @@ int perform(object me, object target)
         if( query("neili", me)<500 )
                 return notify_fail("你現在內力不夠，無法使用「雷霆一擊」。\n");
 
-        msg = HIG "$N" HIG "將真氣凝于雙掌，一聲怒喝，雙臂猛然發勁，向$n" HIG "推出。\n" NOR;
+        msg = HIG "$N" HIG "將真氣凝於雙掌，一聲怒喝，雙臂猛然發勁，向$n" HIG "推出。\n" NOR;
 
         ap = attack_power(me, "hand") +
              me->query_str()*20;
@@ -47,7 +47,7 @@ int perform(object me, object target)
 
                 msg += COMBAT_D->do_damage(me, target, UNARMED_ATTACK, damage, 50,
                                            HIR "$n" HIR "閃避不及，正中前胸，"
-                                           HIR "只聽“□”的一聲，$n"
+                                           HIR "只聽“嘭”的一聲，$n"
                                            HIR "狂吐一口鮮血，身子如紙鶴般向後飛出。\n" NOR);
                 me->start_busy(2);
         } else

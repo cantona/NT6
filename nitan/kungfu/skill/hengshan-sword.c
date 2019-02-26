@@ -10,7 +10,7 @@ string martialtype() { return "skill"; }
 
 mapping *action = ({
 ([      "skill_name" :"衡山雲霧",
-        "action":  "$N右手$w慢慢指出，突然間在空中一顫，發出嗡嗡之聲，跟著便是嗡嗡兩劍，一招"HIW"「衡山雲霧」"NOR"手中$w劍光暴長，向$n的$l刺去",
+        "action":  "$N右手$w慢慢指出，突然間在空中一顫，發出嗡嗡之聲，跟着便是嗡嗡兩劍，一招"HIW"「衡山雲霧」"NOR"手中$w劍光暴長，向$n的$l刺去",
         "lvl" : 0
 ]),
 ([      "skill_name" :"百變千幻",
@@ -26,7 +26,7 @@ mapping *action = ({
         "lvl" : 30
 ]),
 ([      "skill_name":    "石廩書聲",
-        "action":  "$N手中$w倏地刺出，劍勢穿插迂回，如夢如幻，正是一招" HIG"「石廩書聲」"NOR"，向$n$l刺去",
+        "action":  "$N手中$w倏地刺出，劍勢穿插迂迴，如夢如幻，正是一招" HIG"「石廩書聲」"NOR"，向$n$l刺去",
         "lvl" : 40
 ]),
 ([      "skill_name":    "天柱雲氣",
@@ -34,7 +34,7 @@ mapping *action = ({
         "lvl" : 50
 ]),
 ([      "skill_name":    "雁回祝融",
-        "action" : "$N飛身躍起，"HIR"『雁回祝融』"NOR"！，$w發出一聲龍吟從半空中洒向$n的$l",
+        "action" : "$N飛身躍起，"HIR"『雁回祝融』"NOR"！，$w發出一聲龍吟從半空中灑向$n的$l",
         "lvl" : 60
 ]),
 });

@@ -9,7 +9,7 @@ void create()
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("long", HIW "上面寫著「" HIY "今年我家不收禮，收禮只"
+                set("long", HIW "上面寫着「" HIY "今年我家不收禮，收禮只"
                             "收腦白金" HIW "」看樣子是高級貨。\n" NOR);
                 set("value", 500000);
                 set("no_sell", 1);

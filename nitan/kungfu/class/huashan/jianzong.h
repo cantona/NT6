@@ -4,7 +4,7 @@ int permit_recruit(object ob)
 {
         if( query("family/family_name", ob) == "華山派" )
         {
-                command("say 哼，你還是跟著偽君子他們學習什麼"
+                command("say 哼，你還是跟着偽君子他們學習什麼"
                         "氣宗的武功吧。");
                 return 0;
         }

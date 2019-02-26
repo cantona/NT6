@@ -14,11 +14,11 @@
 void create() { seteuid(getuid()); }
 void reduce_consistence(object item, object me, object victim, int damage);
 
-// 返回爆物品幾率
+// 返回爆物品機率
 // 1 為正常，2 為雙倍
 int gift_point(){ return GIFT_POINT; }
 
-// 返回項鏈內功加成點及內力加成點
+// 返回項鍊內功加成點及內力加成點
 // 1 為內功加成 ， 2為內力加成
 int neck_add_damage(object me, int k)
 {
@@ -29,11 +29,11 @@ int neck_add_damage(object me, int k)
 			"聖龍之魂"   :     ({ 15, 40 }),
 			"神龍夢幻"   :     ({ 50, 30 }),
 			"神龍無邊"   :     ({ 40, 40 }),
-			"妖靈﹒魂"    :     ({ 50, 60 }),
-			"妖靈﹒魄"    :     ({ 60, 50 }),	
+			"妖靈·魂"    :     ({ 50, 60 }),
+			"妖靈·魄"    :     ({ 60, 50 }),	
 		]);
 
-		object ob; // 項鏈
+		object ob; // 項鍊
 		int total_force, total_neili, i, count;
 		string *key_enchase, *key_neck_point;
 		mapping enchase;
@@ -76,12 +76,12 @@ int neck_add_damage(object me, int k)
 						
 }
 
-// 檢查項鏈中是否鑲嵌著某兩種物品
-// 用于檢測是否出特效
-// 返回0則沒有鑲嵌，返回正整數為計算出特效的幾率
+// 檢查項鍊中是否鑲嵌着某兩種物品
+// 用於檢測是否出特效
+// 返回0則沒有鑲嵌，返回正整數為計算出特效的機率
 int neck_enchase_item(object me, string item1, string item2)
 {
-		object ob; // 項鏈
+		object ob; // 項鍊
 		string *key_enchase;
 		mapping enchase;
 		int count, i, i1, i2, result;
@@ -117,7 +117,7 @@ int neck_enchase_item(object me, string item1, string item2)
 
 		if (i1 == 0 || i2 == 0)return 0;
 		
-		// 計算幾率
+		// 計算機率
 		result = i1 < i2 ? i1 : i2;
 
 		if (COMBAT_D->enchased_neck_item(me, "七彩神珠"))result += 2;
@@ -128,11 +128,11 @@ int neck_enchase_item(object me, string item1, string item2)
 		if (COMBAT_D->enchased_neck_item(me, "水靈") &&
 			item1 == "聖龍之眼" || item1 == "聖龍之魂")result += 5;
 
-		if (COMBAT_D->enchased_neck_item(me, "百煉寒精") &&
+		if (COMBAT_D->enchased_neck_item(me, "百鍊寒精") &&
 			item1 == "神龍夢幻" || item1 == "神龍無邊")result += 5;
 		
 		if (COMBAT_D->enchased_neck_item(me, "妖靈之翼") &&
-			item1 == "妖靈﹒魂" || item1 == "妖靈﹒魄")result += 5;
+			item1 == "妖靈·魂" || item1 == "妖靈·魄")result += 5;
 		
 		if (have10kOB)result += 5;
 		
@@ -140,14 +140,14 @@ int neck_enchase_item(object me, string item1, string item2)
 
 }
 
-// 發揮項鏈特殊攻擊
+// 發揮項鍊特殊攻擊
 int do_neck_attack(object me, object target)
 {
 		mapping special_attack = ([
 			"無雙合擊"    :  ({"藍寶石", "紅寶石"}),
 			"聖龍之怒"    :  ({"聖龍之眼", "聖龍之魂"}),
 			"龍咆哮"      :  ({"神龍夢幻", "神龍無邊"}),
-			"妖靈合擊"    :  ({"妖靈﹒魂", "妖靈﹒魄"}),
+			"妖靈合擊"    :  ({"妖靈·魂", "妖靈·魄"}),
 		]);
 
 		string *key_special_attack, *need_item, msg;
@@ -160,7 +160,7 @@ int do_neck_attack(object me, object target)
 
 		skill = key_special_attack[random(count)];
 
-		// 該技能出現幾率
+		// 該技能出現機率
 		need_item = special_attack[skill];
 		point = neck_enchase_item(me, need_item[0], need_item[1]);
 
@@ -170,19 +170,19 @@ int do_neck_attack(object me, object target)
 		
 		if (! objectp(me) || ! objectp(target))return 0;		
 
-		// 滿足幾率
+		// 滿足機率
 		if (1 + random(100) <= point)
 		{
 			if (skill == "無雙合擊")
 			{
-				msg = HIY "$N胸前數道光芒閃過，猛然間猶如著魔一般，竟然施展出「無雙合擊」，連連攻向$n" HIY "。\n" NOR;
+				msg = HIY "$N胸前數道光芒閃過，猛然間猶如着魔一般，竟然施展出「無雙合擊」，連連攻向$n" HIY "。\n" NOR;
 				message_combatd(msg, me, target);
 				COMBAT_D->do_attack(me, target, 0, 0);
 				COMBAT_D->do_attack(me, target, 0, 0);
 			}
 			if (skill == "聖龍之怒")
 			{
-				msg = HIC "剎那間，$N胸前項鏈發出刺眼的藍光，並不停的顫抖，神技「聖龍之怒」已然發出，頃刻間，一道藍芒已射向$n" HIC "！\n" NOR;
+				msg = HIC "剎那間，$N胸前項鍊發出刺眼的藍光，並不停的顫抖，神技「聖龍之怒」已然發出，頃刻間，一道藍芒已射向$n" HIC "！\n" NOR;
 				message_combatd(msg, me, target);
 				if (target->query("neili") > 0)								
 					target->add("neili", -1 * target->query("neili") / 10 );
@@ -197,7 +197,7 @@ int do_neck_attack(object me, object target)
 			}
 			if (skill == "龍咆哮")
 			{
-				msg = HIM "突然，$N胸前項鏈發出震天巨響，猶如千萬條巨龍咆哮，「龍咆哮」已奔嘯而出，響徹天地！\n" NOR;
+				msg = HIM "突然，$N胸前項鍊發出震天巨響，猶如千萬條巨龍咆哮，「龍咆哮」已奔嘯而出，響徹天地！\n" NOR;
 				message_combatd(msg, me, target);
 				if (userp(target))
 					target->receive_wound("qi", me->query("jiali") * 2 + random(me->query("jiali") * 3));
@@ -239,7 +239,7 @@ int do_neck_attack(object me, object target)
 // huya
 void huya_remove_effect(object me, int ef_point, int en_heishuijing)
 {
-		me->delete_temp("enchase/special/huya", 1); // 取消標志
+		me->delete_temp("enchase/special/huya", 1); // 取消標誌
 		me->add_temp("apply/damage", -1 * (ef_point + ef_point / 2 * en_heishuijing));
 		me->add_temp("apply/str", -1 * (ef_point / 20 + ef_point / 40 *  en_heishuijing));
 		me->add_temp("apply/force", -1 * (ef_point / 20 + ef_point / 20 * en_heishuijing));
@@ -254,7 +254,7 @@ void huya_remove_effect(object me, int ef_point, int en_heishuijing)
 // yingyan
 void yingyan_remove_effect(object me, int ef_point, int en_heishuijing)
 {
-		me->delete_temp("enchase/special/yingyan", 1); // 取消標志
+		me->delete_temp("enchase/special/yingyan", 1); // 取消標誌
 		me->add_temp("apply/damage", -1 * (ef_point + ef_point / 2 * en_heishuijing));
 		me->add_temp("apply/dex", -1 * (ef_point / 20 + ef_point / 40 *  en_heishuijing));
 		me->add_temp("apply/finger", -1 * (ef_point / 10 + ef_point / 20 * en_heishuijing));
@@ -270,7 +270,7 @@ void yingyan_remove_effect(object me, int ef_point, int en_heishuijing)
 // xuejingling
 void xuejingling_remove_effect(object me, int ef_point, int en_heishuijing)
 {
-		me->delete_temp("enchase/special/xuejingling", 1); // 取消標志
+		me->delete_temp("enchase/special/xuejingling", 1); // 取消標誌
 		me->add_temp("apply/con",  -1 * (ef_point / 20 + ef_point / 40 *  en_heishuijing));
 		me->add_temp("apply/dex",  -1 * (ef_point / 20 + ef_point / 40 *  en_heishuijing));
 		me->add_temp("apply/str",  -1 * (ef_point / 20 + ef_point / 40 *  en_heishuijing));
@@ -285,7 +285,7 @@ void xuejingling_remove_effect(object me, int ef_point, int en_heishuijing)
 void fenshen_remove_effect(object me)
 {
 		me->delete_temp("hiding_kuihua");	    
-		tell_object(me, HIG "「雪地聖音」﹒分身的效果消失了。\n" NOR);
+		tell_object(me, HIG "「雪地聖音」·分身的效果消失了。\n" NOR);
 }
 
 // 發揮護腕特殊攻擊
@@ -340,7 +340,7 @@ int do_wrists_attack(object me, object victim, string en9)
 	i_en = sizeof(enchase);
 	if (! i_en)return 0;
 
-	// 幾率計算 平均?% + 幾個累加%
+	// 機率計算 平均?% + 幾個累加%
 	// 同一時間隨機選取一種特效
 	k_enchase = keys(enchase);
 
@@ -358,15 +358,15 @@ int do_wrists_attack(object me, object victim, string en9)
 
 	ran_affect = k_affect_list[random(i_ef)];
 
-	// 特效選取好後則計算特效幾率及威力（時間等）
-	// 幾率計算 平均?% + 幾個累加%
+	// 特效選取好後則計算特效機率及威力（時間等）
+	// 機率計算 平均?% + 幾個累加%
 	// 威力計算，當前獲取的隨機鑲嵌物品的該特效威力
 	
 	// 先計算威力
 	ef_point = list[ran_item_enchase][ran_affect]["point"];
 
-	// 計算幾率
-	// 先計算幾率總和及該特效個數
+	// 計算機率
+	// 先計算機率總和及該特效個數
 	n_ef = 0;
 	ef_ran = 0;
 	for (i = 0; i < i_en; i ++)
@@ -385,7 +385,7 @@ int do_wrists_attack(object me, object victim, string en9)
 		}
 	}
 
-	// 得到最後計算的幾率
+	// 得到最後計算的機率
 	if (n_ef <= 0)ran_result = 2;  //以防萬一
 	else
 		ran_result = ef_ran / n_ef + n_ef - 1;
@@ -430,7 +430,7 @@ int do_wrists_attack(object me, object victim, string en9)
 				  HIR "\n包圍，然後漸漸侵入其體內，令人匪夷所思。\n" NOR;
 			tell_object(me, msg);
 			
-			me->set_temp("enchase/special/yingyan", 1); // 設置標志，以免重復累加效果
+			me->set_temp("enchase/special/yingyan", 1); // 設置標誌，以免重複累加效果
 			me->add_temp("apply/damage", ef_point + ef_point / 2 * en_heishuijing);
 			me->add_temp("apply/dex", ef_point / 20 + ef_point / 40 *  en_heishuijing);
 			me->add_temp("apply/finger", ef_point / 10 + ef_point / 20 * en_heishuijing);
@@ -449,11 +449,11 @@ int do_wrists_attack(object me, object victim, string en9)
 
 			message_combatd(HIG + "$N" HIG "的「" + ran_item_enchase + "」發出一道奇異的光芒！\n" NOR, me);
 
-			msg = HIY "猛然間，一聲凄厲的嚎叫由" + item->name() + HIY "震天般傳出，攝人心魄，但見" + me->name() + HIY
+			msg = HIY "猛然間，一聲淒厲的嚎叫由" + item->name() + HIY "震天般傳出，攝人心魄，但見" + me->name() + HIY
 				  "\n仰天望月，一道金黃色的光芒將其全身籠罩，剎那間威風無比，猶如猛虎。\n" NOR;
 			tell_object(me, msg);
 
-			me->set_temp("enchase/special/huya", 1); // 設置標志，以免重復累加效果
+			me->set_temp("enchase/special/huya", 1); // 設置標誌，以免重複累加效果
 			me->add_temp("apply/damage", ef_point + ef_point / 2 * en_heishuijing);
 			me->add_temp("apply/str", ef_point / 20 + ef_point / 40 *  en_heishuijing);
 			me->add_temp("apply/force", ef_point / 20 + ef_point / 20 * en_heishuijing);
@@ -477,7 +477,7 @@ int do_wrists_attack(object me, object victim, string en9)
 				  HIW "\n四肢，慢慢消失。\n" NOR;
 			tell_object(me, msg);
 
-			me->set_temp("enchase/special/xuejingling", 1); // 設置標志，以免重復累加效果
+			me->set_temp("enchase/special/xuejingling", 1); // 設置標誌，以免重複累加效果
 			me->add_temp("apply/con", ef_point / 20 + ef_point / 40 *  en_heishuijing);
 			me->add_temp("apply/dex", ef_point / 20 + ef_point / 40 *  en_heishuijing);
 			me->add_temp("apply/str", ef_point / 20 + ef_point / 40 *  en_heishuijing);
@@ -501,7 +501,7 @@ int do_wrists_attack(object me, object victim, string en9)
 
 			message_combatd(HIG + "$N" HIG "的「" + ran_item_enchase + "」發出一道奇異的光芒！\n" NOR, me);
 
-			msg = HIG "一道綠光閃過，" + victim->name() + HIG "似乎中了邪一般，痴痴地望著前方，綠光卻毫無忌憚地穿過" + 
+			msg = HIG "一道綠光閃過，" + victim->name() + HIG "似乎中了邪一般，痴痴地望着前方，綠光卻毫無忌憚地穿過" + 
 				  victim->name() + HIG "身體，令其苦不堪言。\n" NOR;
 			tell_object(me, msg);
 
@@ -531,7 +531,7 @@ string *imbue_list = ({
 });
 
 // 浸入的次數的隨機界限：如果每次IMBUE以後取0-IMBUE次數的隨機
-// 數大于這個數值，則IMBUE最終成功。
+// 數大於這個數值，則IMBUE最終成功。
 #define RANDOM_IMBUE_OK         105
 
 // 每次浸入需要聖化的次數
@@ -620,14 +620,14 @@ int receive_summon(object me, object item)
 
         if (item->query("id") == "qingtian")
         {
-              message_sort(HIM "\n只見四周金光散布，祥雲朵朵，遠處有鳳凰盤繞，麒麟逐戲。耳邊"
+              message_sort(HIM "\n只見四周金光散佈，祥雲朵朵，遠處有鳳凰盤繞，麒麟逐戲。耳邊"
                            "傳來陣陣梵音。$N" HIM "一聲長嘯，" + item->query("name") + HIM
                            "破空而來 ……。\n\n" NOR, me); 
         }
         else
 
               message_vision(HIW "$N" HIW "突然大喝一聲，伸出右手凌空"
-                             "一抓，忽然烏雲密布，雷聲隱隱。\n\n" NOR, me);
+                             "一抓，忽然烏雲密佈，雷聲隱隱。\n\n" NOR, me);
 
         if (env == environment(me))
         {
@@ -657,7 +657,7 @@ int receive_summon(object me, object item)
 					"走。\n\n" NOR, env);
                                 break;
                         default:
-                                message("vision", HIY "忽然間麝香遍地，氤氳彌漫，" +
+                                message("vision", HIY "忽然間麝香遍地，氤氲瀰漫，" +
                                         item->name() + HIY "叮呤呤的抖動數下，化作一"
 					"道金光轉瞬不見！\n\n" NOR, env);
                                 break;
@@ -749,13 +749,13 @@ int receive_miss(object me, object item)
 
         if (env == environment(me))
         {
-                write("你瞪著" + item->name() + "，看啥？\n");
+                write("你瞪着" + item->name() + "，看啥？\n");
                 return 0;
         }
 
         if (env == me)
         {
-                write("你摸著" + item->name() + "，發了半天的呆。\n");
+                write("你摸着" + item->name() + "，發了半天的呆。\n");
                 return 0;
         }
 
@@ -767,7 +767,7 @@ int receive_miss(object me, object item)
 
         if (! wizardp(me) && ! env->query("outdoors"))
         {
-                write("冥冥中你感應到" + item->name() + "，但是似乎難以到達那裡。\n");
+                write("冥冥中你感應到" + item->name() + "，但是似乎難以到達那裏。\n");
                 return 0;
         }
 
@@ -784,12 +784,12 @@ int receive_miss(object me, object item)
 	me_env = environment(me);
 	if (sscanf(bn, "/kungfu/class/sky%s", bn2) == 1)
 	{
-		write("你感覺 " + item->name() + NOR " 似乎不存在于人界！\n" NOR);
+		write("你感覺 " + item->name() + NOR " 似乎不存在於人界！\n" NOR);
 		return 0;
 	}
 	if (sscanf(bn, "/d/newbie/%s", bn2) == 1)	
 	{
-		log_file("horse", me->query("id") + "于" + ctime(time()) + " 試圖利用兵器回到新手村。\n");
+		log_file("horse", me->query("id") + "於" + ctime(time()) + " 試圖利用兵器回到新手村。\n");
 		return notify_fail("你感覺 " + item->name() + NOR " 似乎不能感應到你的呼喚！\n" NOR);
 	}
 	if (bn->query("no_flyto"))
@@ -820,7 +820,7 @@ int receive_miss(object me, object item)
 
         // 消耗精力
         me->add("jingli", -300 - random(100));
-        message_vision(HIM "$N" HIM "口中念念有詞，轉瞬天際一道長虹劃"
+        message_vision(HIM "$N" HIM "口中唸唸有詞，轉瞬天際一道長虹劃"
                        "過，$N" HIM "駕彩虹而走。\n" NOR, me);
         tell_object(me, "你追尋" + item->name() + "而去。\n");
         me->move(environment(item));
@@ -839,7 +839,7 @@ int do_stab(object me, object item)
 
         if (! environment(me)->query("outdoors") &&
             ! wizardp(me))
-                return notify_fail("在這裡亂弄什麼！\n");
+                return notify_fail("在這裏亂弄什麼！\n");
 
         item->set("no_get", bind((: call_other, __FILE__, "do_get_item", item :), item));
         item->set_temp("stab_by", me->query("id"));
@@ -861,7 +861,7 @@ mixed do_get_item(object item)
         if (me->query("id") != item->query_temp("stab_by") &&
             me->query("id") != item->item_owner())
                 return "你試圖將" + item->name() + "拔起，卻"
-                       "發現它仿佛是生長在這裡一般，無法撼動。\n";
+                       "發現它彷彿是生長在這裏一般，無法撼動。\n";
 
         message_vision(HIW "\n$N" HIW "隨手拂過" + item->name() +
                        HIW "脊處，頓時只聽「嗤」的一聲，揚起一陣"
@@ -896,7 +896,7 @@ mixed do_touch(object me, object item)
         {
                 me->set("jingli", 1);
                 return notify_fail(CYN "\n你凝視" + item->name() +
-                                   CYN "許久，悠悠一聲長嘆。\n" NOR);
+                                   CYN "許久，悠悠一聲長歎。\n" NOR);
         }
 		else
                 me->add("jingli", -150);
@@ -912,7 +912,7 @@ mixed do_touch(object me, object item)
                       "風一首，$n" CYN "鈴鈴作響，似以和之。\n" NOR;
                 break;
         default:
-                msg = CYN "\n$N" CYN "悠然一聲長嘆，輕撫$n"
+                msg = CYN "\n$N" CYN "悠然一聲長歎，輕撫$n"
                       CYN "，沉思良久，不禁感慨萬千。\n" NOR;
                 break;
         }
@@ -928,7 +928,7 @@ mixed do_touch(object me, object item)
                        "，直沁入到你的心肺中去。\n" NOR;
                 break;
         default:
-                msg += HIM "霎時間$n" HIM "光芒四射，如蘊琉"
+                msg += HIM "霎時間$n" HIM "光芒四射，如藴琉"
                        "璃異彩，逼得你難以目視。\n" NOR;
                 break;
         }
@@ -951,7 +951,7 @@ mixed do_touch(object me, object item)
                         my["jingli"] = my["max_jingli"];
                         ob->set_temp("nopoison", 1);
                 }
-                tell_object(obs, HIC "你感到一股溫和的熱浪襲來，便似"
+                tell_object(obs, HIC "你感到一股温和的熱浪襲來，便似"
                                 "獲得重生一般。\n" NOR);
         } else
         if (me->query("neili") < me->query("max_neili") || item->query("enchase_all") >= 9 )
@@ -970,7 +970,7 @@ mixed do_touch(object me, object item)
 
                 me->set("neili", me->query("max_neili"));
                 tell_object(me, HIC "你只覺一股熱氣至丹田冉冉升起，"
-                                "說不出的舒服。\n" NOR);
+                                "説不出的舒服。\n" NOR);
         }
         return 1;
 }
@@ -1042,10 +1042,10 @@ int do_san(object me, object item)
         if (me->query("max_jingli") < 1000)
                 return notify_fail("你試圖凝神運用精力，但是感覺尚有欠缺。\n");
 
-        message_sort(HIM "\n$N" HIM "輕輕撫過$n" HIM "，兩指點于其上，同"
+        message_sort(HIM "\n$N" HIM "輕輕撫過$n" HIM "，兩指點於其上，同"
                      "時運轉丹田內力，經由奇經八脈源源由體內流出，注"
-                     "入$n" HIM "。忽的只見氤氳紫氣從$n" HIM
-                     "上騰然升起，彌漫在四周。\n" NOR, me, item);
+                     "入$n" HIM "。忽的只見氤氲紫氣從$n" HIM
+                     "上騰然升起，瀰漫在四周。\n" NOR, me, item);
 
         if (me->query("max_neili") < me->query_neili_limit() - 400)
         {
@@ -1059,7 +1059,7 @@ int do_san(object me, object item)
                 {
                         message_vision(HIR "$N" HIR "忽然悶哼一聲，臉"
                                        "上剎時大汗淋漓！\n" NOR, me);
-                        tell_object(me, HIC "你感到可能是你的內力尚未鍛煉"
+                        tell_object(me, HIC "你感到可能是你的內力尚未鍛鍊"
                                     "到極至，結果損傷了你的內功根基。\n" NOR);
                         tell_object(me, HIC "你的基本內功下降了。\n");
                         me->set_skill("force", me->query_skill("force", 1) - 10 - random(5));
@@ -1110,10 +1110,10 @@ int do_imbue(object me, object item, object imbue)
                 return notify_fail(item->name() + "現在不需要用" +
                                    imbue->name() + "來浸入。\n");
 
-        message_sort(HIM "$N" HIM "深吸一口氣，面上籠罩了一層白霜，只手握住$n" +
+        message_sort(HIM "$N" HIM "深吸一口氣，面上籠罩了一層白霜，隻手握住$n" +
                      imbue->name() +
                      HIM "，忽然間融化在掌心，晶瑩欲透！$N"
-                     HIM "隨手一揮，將一汪清液洒在$n" HIM
+                     HIM "隨手一揮，將一汪清液灑在$n" HIM
                      "上，登時化做霧氣，須臾成五彩，奇光閃爍。\n" NOR,
                      me, item);
 
@@ -1132,7 +1132,7 @@ int do_imbue(object me, object item, object imbue)
         {
                 // 浸透完成
                 tell_object(me, HIG "你忽然發現手中的" + item->name() +
-                            HIG "有一種躍躍欲試的感覺，似乎期待著什麼。\n" NOR);
+                            HIG "有一種躍躍欲試的感覺，似乎期待着什麼。\n" NOR);
                 item->set("magic/imbue_ok", 1);
         }
 
@@ -1151,7 +1151,7 @@ int do_enchase(object me, object item, object tessera)
                                    "還沒有充分的激發，未到鑲嵌的時候。\n");
 
         if (! tessera->query("can_be_enchased"))
-                return notify_fail(tessera->name() + "好象沒"
+                return notify_fail(tessera->name() + "好像沒"
                                    "法用來鑲嵌吧。\n");
 
         if (! mapp(tessera->query("magic")))
@@ -1165,7 +1165,7 @@ int do_enchase(object me, object item, object tessera)
         message_sort(HIM "“喀啦”一聲，$N" HIM "將" + tessera->name() +
                      HIM "鑲嵌到了$n" HIM "上面，只見$n" HIM
                      "上面隱隱的顯過了一道奇異的光芒，隨"
-                     "即變得平靜，說不出的平凡。\n" NOR, me, item);
+                     "即變得平靜，説不出的平凡。\n" NOR, me, item);
         tell_object(me, HIC "你感受" + item->name() + HIC "發生了"
                     "不可言喻的變化。\n" NOR);
         item->set("magic/power", tessera->query("magic/power"));
@@ -1174,9 +1174,9 @@ int do_enchase(object me, object item, object tessera)
         item->save();
         destruct(tessera);
 
-        // 發布消息
+        // 發佈消息
         CHANNEL_D->do_channel(this_object(), "rumor",
-                              "聽說神品" + item->name() + HIM +
+                              "聽説神品" + item->name() + HIM +
                               "來到了人間。");
 
         me->start_busy(1);
@@ -1197,7 +1197,7 @@ int do_enchase2(object me, object item, object tessera)
 		int i;
 	
         if (! tessera->query("enchase/point"))
-                return notify_fail(tessera->name() + "好象沒"
+                return notify_fail(tessera->name() + "好像沒"
                                    "法用來鑲嵌吧。\n");
 
         if (me->query_skill("certosina", 1) < 100)
@@ -1228,7 +1228,7 @@ int do_enchase2(object me, object item, object tessera)
 				{
 					return notify_fail("不能在一把兵器上同時鑲嵌兩個九孔寶石。\n");
 				}
-				if (enchases[k_enchases[i]]["name"] == "古鬆殘□" ||
+				if (enchases[k_enchases[i]]["name"] == "古鬆殘钁" ||
 					enchases[k_enchases[i]]["name"] == "龍凰紫珠")
 				{
 					return notify_fail("不能在一把兵器上同時鑲嵌兩個九孔寶石。\n");
@@ -1251,7 +1251,7 @@ int do_enchase2(object me, object item, object tessera)
         message_sort(HIG "“喀啦”一聲，$N" HIG "將" + tessera->name() +
                      HIG "鑲嵌到了$n" HIG "上面，只見$n" HIG
                      "上面隱隱的顯過了一道奇異的光芒，隨"
-                     "即變得平靜，說不出的平凡。\n" NOR, me, item);
+                     "即變得平靜，説不出的平凡。\n" NOR, me, item);
         tell_object(me, HIC "你感受" + item->name() + HIC "發生了"
                     "不可言喻的變化。\n" NOR);
 
@@ -1360,9 +1360,9 @@ mixed weapon10lv_hit_ob(object me, object victim, object weapon, int damage_bonu
                               "變得耀眼奪目，令$n" HIY "無法正視，心神俱廢。\n" NOR;
                         break;
                 default:
-                        msg = HIY "天際隱隱響起幾聲悶雷，緊接著一道霹靂直下，" +
+                        msg = HIY "天際隱隱響起幾聲悶雷，緊接着一道霹靂直下，" +
                               weapon->name() + HIY "忽明忽暗，五彩繽紛，震得$n"
-                              HIY "酸軟無力。\n" NOR;
+                              HIY "痠軟無力。\n" NOR;
                         break;
                 }
 
@@ -1387,7 +1387,7 @@ mixed weapon10lv_hit_ob(object me, object victim, object weapon, int damage_bonu
                 {
                 case 0:
                         msg = HIB + weapon->name() + HIB "閃過一道冷澀的藍光，讓$n"
-                              HIB "不寒而栗。\n" NOR;
+                              HIB "不寒而慄。\n" NOR;
                         break;
                 case 1:
                         msg = HIB "忽然間" + weapon->name() + HIB
@@ -1402,7 +1402,7 @@ mixed weapon10lv_hit_ob(object me, object victim, object weapon, int damage_bonu
                 break;
 
         case "fire":
-                // 火燄攻擊：傷害精+和氣++
+                // 火焰攻擊：傷害精+和氣++
                 resistance = victim->query_temp("apply/resistance/fire");
                 damage = (power + jingjia) * 300 / (100 + resistance);
                 victim->receive_damage("jing", damage / 5);
@@ -1412,7 +1412,7 @@ mixed weapon10lv_hit_ob(object me, object victim, object weapon, int damage_bonu
                 switch (random(3))
                 {
                 case 0:
-                        msg = HIR + weapon->name() + HIR "驀的騰起一串火燄，將$n"
+                        msg = HIR + weapon->name() + HIR "驀的騰起一串火焰，將$n"
                               HIR "接連逼退了數步，慘叫連連。\n" NOR;
                         break;
                 case 1:
@@ -1420,7 +1420,7 @@ mixed weapon10lv_hit_ob(object me, object victim, object weapon, int damage_bonu
                               "上迸出，迅捷無倫的擊中$n" HIR "，令人避無可避！\n" NOR;
                         break;
                 default:
-                        msg = HIR "一串串火燄從" + weapon->name() + HIR "上飛濺射出，"
+                        msg = HIR "一串串火焰從" + weapon->name() + HIR "上飛濺射出，"
                               "四下散開，接連擊中$n" HIR "！\n" NOR;
                         break;
                 }
@@ -1474,7 +1474,7 @@ mixed weapon10lv_hit_ob(object me, object victim, object weapon, int damage_bonu
         case 1:
                 victim->receive_wound("jing", damage / 5 + random(damage / 5), me);
                 return msg + HIC "$N" HIC "手中的" + weapon->name() + HIC "射出各種光芒，"
-                       "眩目奪人，一道道神採映射得天地盡情失色，讓$n"
+                       "眩目奪人，一道道神采映射得天地盡情失色，讓$n"
                        HIC "目瞪口呆！\n" NOR;
         case 2:
                 victim->receive_wound("qi", damage / 4 + random(damage / 4), me);
@@ -1483,12 +1483,12 @@ mixed weapon10lv_hit_ob(object me, object victim, object weapon, int damage_bonu
 
         case 3:
                 victim->receive_wound("qi", damage / 3 + random(damage / 3), me);
-                return msg + HIG "$N" HIG "隨手劃動" + weapon->name() + HIG "，一圈圈碧芒"
+                return msg + HIG "$N" HIG "隨手划動" + weapon->name() + HIG "，一圈圈碧芒"
                        "圍向$n" HIG "，震得$n吐血連連！\n" NOR;
 
         case 4:
                 victim->receive_wound("qi", damage / 2 + random(damage / 2), me);
-                return msg + HIW "$N" HIW "一聲長嘆，" + weapon->name() + HIW "輕輕遞出，"
+                return msg + HIW "$N" HIW "一聲長歎，" + weapon->name() + HIW "輕輕遞出，"
                        "霎時萬籟俱靜，$n" HIW "只覺得整個人都跌進了地獄中去！\n" NOR;
 
         default:
@@ -1535,7 +1535,7 @@ mixed weapon_hit_ob(object me, object victim, object weapon, int damage_bonus)
         case 2:
                 victim->receive_wound("qi", damage / 6 + random(damage / 6), me);
                 victim->receive_wound("jing", damage / 10 + random(damage / 10), me);
-                return HIG "$N" HIG "驀地回轉" + weapon->name() + HIG
+                return HIG "$N" HIG "驀地迴轉" + weapon->name() + HIG
                        "，漾起層層碧波，宛若" NOR + HIB "星河" HIG "氣"
                        "旋，將$n" HIG "圈裹其中。\n" NOR;
         case 3:
@@ -1617,10 +1617,10 @@ public int chuantou_point(object me, object item)
 
 		mapping chuantou_item = ([
 			"炎黃之星"       : 100,
-			"炎黃﹒戰神"      : 100,
-			"炎黃﹒君臨天下"  : 100,
-			"龍女﹒曙光"      : 100,
-			"龍女﹒蝕"        : 200,
+			"炎黃·戰神"      : 100,
+			"炎黃·君臨天下"  : 100,
+			"龍女·曙光"      : 100,
+			"龍女·蝕"        : 200,
 		]);
 
 		total = 0;
@@ -1668,106 +1668,106 @@ public void do_enchase_attack(object item, object me, object victim, int damage)
 	object shenlong; // 碧海神龍
 
 	mapping list = ([
-		"天魔﹒幽靈"   :  ([
+		"天魔·幽靈"   :  ([
 					"suck_neili" : (["ran"    :  1 + random(3),
                                      "point"  :  30 + random(21)]),
 		]),
-		"天魔﹒夢幻"   :  ([
+		"天魔·夢幻"   :  ([
 					"add_damage" : (["ran"    :  1 + random(3),
                                      "point"  :  30 + random(21)]),
 		]),
-		"天魔﹒鬼煞"   :  ([
+		"天魔·鬼煞"   :  ([
 					"suck_qi"    : (["ran"    :  1 + random(3),
                                      "point"  :  10 + random(21)]),
 		]),
-		"天魔﹒妖晶"   :  ([
+		"天魔·妖晶"   :  ([
 					"add_wound"  : (["ran"    :  1 + random(3),
                                      "point"  :  30 + random(21)]),
 		]),
-		"陰月﹒亂世"   :  ([
+		"陰月·亂世"   :  ([
 					"busy"  :      (["ran"    :  2 + random(2),
                                      "point"  :  2 + random(2)]),
 		]),
-		"陰月﹒沖天"   :  ([
+		"陰月·沖天"   :  ([
 					"add_damage"  : (["ran"   :  2 + random(2),
                                       "point" :  30 + random(21)]),
 		]),
-		"陰月﹒落霞"   :  ([
+		"陰月·落霞"   :  ([
 					"jing_wound"  : (["ran"   :  1 + random(3),
                                       "point" :  10 + random(11)]),
 		]),
-		"陰月﹒聖光"   :  ([
+		"陰月·聖光"   :  ([
 					"suck_neili"  : (["ran"   :  2 + random(2),
                                       "point" :  50]),
 		]),
-		"天嬌﹒伏魔"   :  ([
+		"天嬌·伏魔"   :  ([
 					"add_wound"  : (["ran"    :  2 + random(2),
                                      "point"  :  50]),
 		]),
-		"天嬌﹒沉淪"   :  ([
+		"天嬌·沉淪"   :  ([
 					"add_damage"  : (["ran"   :  3 + random(3),
                                       "point" :  50]),
 		]),
-		"天嬌﹒神泣"   :  ([
+		"天嬌·神泣"   :  ([
 					"jing_wound"  : (["ran"   :  2 + random(2),
                                       "point" :  15 + random(6)]),
 		]),
-		"天轎﹒覺醒"   :  ([
+		"天轎·覺醒"   :  ([
 					"suck_qi"    : (["ran"    :  2 + random(2),
                                      "point"  :  30]),
 		]),
-		"輪回﹒煉獄"   :  ([
+		"輪迴·煉獄"   :  ([
 					"poison_lianyu"    : ([ "ran"    :  2 + random(2),
                                             "point"  :  me->query_temp("apply/damage")]),
 		]),
-		"輪回﹒餓鬼"   :  ([
+		"輪迴·餓鬼"   :  ([
 					"suck_neili" : (["ran"    :  3 + random(3),
                                      "point"  :  50 + random(31)]),
 		]),
-		"輪回﹒修羅"   :  ([
+		"輪迴·修羅"   :  ([
 					"add_wound"  : (["ran"    :  3 + random(3),
                                      "point"  :  50 + random(31)]),
 		]),
-		"輪回﹒烈火"   :  ([
+		"輪迴·烈火"   :  ([
 					"no_exert"   : (["ran"    :  2 + random(2),
                                      "point"  :  10 + random(6)]),
 		]),
-		"輪回﹒裁決"   :  ([
+		"輪迴·裁決"   :  ([
 					"no_perform"   : (["ran"    :  2 + random(2),
                                        "point"  :  10 + random(6)]),
 		]),
-		"輪回﹒重生"   :  ([ // 特別地
+		"輪迴·重生"   :  ([ // 特別地
 					"lunhui-chongsheng" : (["ran"    :  3 + random(3),
                                             "point"  :  0]),
 		]),
-		"輪回﹒滅世"   :  ([ // 特別地 ：致命攻擊
+		"輪迴·滅世"   :  ([ // 特別地 ：致命攻擊
 					"unconcious" : (["ran"    :  1,
                                      "point"  :  0]),
 		]),
 		
-		"炎黃之星"   :   ([ // 多種復合特效
+		"炎黃之星"   :   ([ // 多種複合特效
 					"suck_neili" : (["ran"    :  5,
                                      "point"  :  150]),
 					"suck_qi"    : (["ran"    :  5,
                                      "point"  :  150]),
 		]),
-		"龍女之淚"   :   ([ // 多種復合特效
+		"龍女之淚"   :   ([ // 多種複合特效
 					"suck_neili" : (["ran"    :  5,
                                      "point"  :  100]),
 					"suck_qi"    : (["ran"    :  5,
                                      "point"  :  100]),
-					"reduce_def" :(["ran"   :  5, // 化解對方防御等級1
+					"reduce_def" :(["ran"   :  5, // 化解對方防禦等級1
 						            "point" :  100]),
 					"reduce_dam" :(["ran"   :  5, // 化解對方傷害等級1
 						            "point" :  100]),
 		]),
-		"炎黃﹒君臨天下":  ([
+		"炎黃·君臨天下":  ([
 					"jing_wound"  : (["ran"   :  3 + random(3),
                                       "point" :  50 + random(31)]),
 					"busy"  :       (["ran"    :  5,
                                       "point"  :  5]),
 		]),		
-		"炎黃﹒國色天香":   ([ // 多種復合特效
+		"炎黃·國色天香":   ([ // 多種複合特效
 					"suck_neili" : (["ran"    :  5,
                                      "point"  :  100]),
 					"suck_qi"    : (["ran"    :  5,
@@ -1779,32 +1779,32 @@ public void do_enchase_attack(object item, object me, object victim, int damage)
 					"no_perform"   : (["ran"    :  3,
                                        "point"  :  15]),
 		]),		
-		"炎黃﹒戰神":  ([ // 特別地 ：致命攻擊
+		"炎黃·戰神":  ([ // 特別地 ：致命攻擊
 					"unconcious" : (["ran"    :  2,
                                      "point"  :  0]),
 					"add_damage"  : (["ran"   :  5,
                                       "point" :  200]),
 		]),		
-		"龍女﹒碧海神龍":  ([ // 特別地 ：召喚神龍
+		"龍女·碧海神龍":  ([ // 特別地 ：召喚神龍
 					"summon_shenlong": (["ran"   :  5,
                                          "point" :  0]),
 					"add_damage"  : (["ran"   :  5,
                                       "point" :  200]),					
 		]),
-		"龍女﹒曙光"   :  ([
+		"龍女·曙光"   :  ([
 					"add_wound"  : (["ran"   :  3 + random(3),
                                       "point" :  100 + random(101)]),
 					"jing_wound" : (["ran"   :  3 + random(3),
                                       "point" :  35 + random(26)]),
 		]),
-		"龍女﹒蝕":       ([
+		"龍女·蝕":       ([
 					"add_damage"  : (["ran"   :  3,
                                       "point" :  300]),					
 		]),
 	]);
 
 
-    // 發揮項鏈的特殊攻擊技能
+    // 發揮項鍊的特殊攻擊技能
 	do_neck_attack(me, victim);
 
 	// 發揮護腕特殊攻擊效果
@@ -1826,7 +1826,7 @@ public void do_enchase_attack(object item, object me, object victim, int damage)
 	i_en = sizeof(enchase);
 	if (! i_en)return;
 
-	// 幾率計算 平均?% + 幾個累加%
+	// 機率計算 平均?% + 幾個累加%
 	// 同一時間隨機選取一種特效
 	k_enchase = keys(enchase);
 
@@ -1847,15 +1847,15 @@ public void do_enchase_attack(object item, object me, object victim, int damage)
 
 	ran_affect = k_affect_list[random(i_ef)];
 
-	// 特效選取好後則計算特效幾率及威力（時間等）
-	// 幾率計算 平均?% + 幾個累加%
+	// 特效選取好後則計算特效機率及威力（時間等）
+	// 機率計算 平均?% + 幾個累加%
 	// 威力計算，當前獲取的隨機鑲嵌物品的該特效威力
 	
 	// 先計算威力
 	ef_point = list[ran_item_enchase][ran_affect]["point"];
 
-	// 計算幾率
-	// 先計算幾率總和及該特效個數
+	// 計算機率
+	// 先計算機率總和及該特效個數
 	n_ef = 0;
 	ef_ran = 0;
 	for (i = 0; i < i_en; i ++)
@@ -1874,12 +1874,12 @@ public void do_enchase_attack(object item, object me, object victim, int damage)
 		}
 	}
 
-	// 得到最後計算的幾率
+	// 得到最後計算的機率
 	if (n_ef <= 0)ran_result = 3;  //以防萬一
 	else
 		ran_result = ef_ran / n_ef + n_ef - 1;
 
-	// 如果鑲嵌了寶石--紅眼惡魔則提高1%～2%的幾率
+	// 如果鑲嵌了寶石--紅眼惡魔則提高1%～2%的機率
 	for (j = 0; j < sizeof(k_enchase); j ++ )
 	{
 		if (enchase[k_enchase[j]]["name"] == "紅眼惡魔")
@@ -1970,13 +1970,13 @@ public void do_enchase_attack(object item, object me, object victim, int damage)
 			call_out("remove_effect", ef_point, victim, "力道渙散");
 			return;		
 
-        // 輪回﹒重生的特殊效果
+        // 輪迴·重生的特殊效果
 		// 削弱戰力
 		case "lunhui-chongsheng":
 			if (victim->query_temp("lunhui-chongsheng/xueruo"))return;
 
 			msg = HIR "「" + ran_item_enchase + "」追加「" + victim->name() + HIY +
-                              "」削弱戰力：削弱攻、防、回避、命中各30%。\n" NOR;
+                              "」削弱戰力：削弱攻、防、迴避、命中各30%。\n" NOR;
 			
 			tell_object(me, msg);
 			
@@ -2046,7 +2046,7 @@ public void do_enchase_attack(object item, object me, object victim, int damage)
 
 			if (! victim)return;
 
-			msg = HIG "「" + ran_item_enchase + "」光芒萬丈，一條神龍伴隨著光芒從天而降。\n" NOR;
+			msg = HIG "「" + ran_item_enchase + "」光芒萬丈，一條神龍伴隨着光芒從天而降。\n" NOR;
 			message_combatd(msg, me);
 			
 			shenlong = new("/kungfu/class/misc/shenlong");
@@ -2056,7 +2056,7 @@ public void do_enchase_attack(object item, object me, object victim, int damage)
 			me->set_temp("last_summon_shenlong", time());
 
 			shenlong->move(environment(me));
-			shenlong->set("long", HIC + me->name() + "的寶物龍女﹒碧海神龍的力量所召喚的神龍，威風無比。\n" NOR);
+			shenlong->set("long", HIC + me->name() + "的寶物龍女·碧海神龍的力量所召喚的神龍，威風無比。\n" NOR);
 			shenlong->kill_ob(victim);
 			shenlong->force_me("guard " + me->query("id") );
 
@@ -2141,7 +2141,7 @@ void reduce_consistence(object item, object me, object victim, int damage)
 		}
 	}
 
-        // 寰宇天晶煉制的武器永不磨損
+        // 寰宇天晶煉製的武器永不磨損
         if (item->query("material") == "tian jing")
                 return;
 
@@ -2351,7 +2351,7 @@ public int extern_write_file(string str_file, string msg, int flag)
 2489     
 2490            // 開始強化 
 2491            str_log += " " + obj->name() + "(" + obj->query("id") + ") of " + obj->item_owner() + NOR " 強化："; 
-2492            // 計算成功幾率suc_points 
+2492            // 計算成功機率suc_points 
 2493            suc_points = suc_points_list[sprintf("%d", qh_level)]; 
 2494            str_log += sprintf("基礎成功率：%d，", suc_points); 
 2495            // 如果裝備有成功率加成則增加 
@@ -2369,7 +2369,7 @@ public int extern_write_file(string str_file, string msg, int flag)
 2507                    obj->save(); 
 2508            } 
 2509             
-2510            // 等級大于6時，成功率降低5% 
+2510            // 等級大於6時，成功率降低5% 
 2511            if (qh_level > 6)suc_points -= 5; 
 2512            // 9級時候再減2% 
 2513            if (qh_level == 9)suc_points -= 2; 
@@ -2421,7 +2421,7 @@ public int extern_write_file(string str_file, string msg, int flag)
 2559                    if (obj->query("qh_level") >= 6) 
 2560                    { 
 2561                            CHANNEL_D->do_channel(this_object(), "chat",  
-2562                                                  "聽說" + HIY + me->name() + HIM "的" + obj->name() +  
+2562                                                  "聽説" + HIY + me->name() + HIM "的" + obj->name() +  
 2563                                                  HIM "強化至" HIR + sprintf("%d", obj->query("qh_level")) +  
 2564                                                  HIM "級。\n" NOR); 
 2565     
@@ -2439,7 +2439,7 @@ public int extern_write_file(string str_file, string msg, int flag)
 2577    } 
 2578     
 2579    // 來自/inherit/char/dream_npc調用 
-2580    // 判斷是否掉出鐵英石，外部控制幾率，方便隨時調整 
+2580    // 判斷是否掉出鐵英石，外部控制機率，方便隨時調整 
 2581    public int drop_tieyingshi(object me) 
 2582    { 
 2583            int ran; 

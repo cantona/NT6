@@ -35,7 +35,7 @@ int perform(object me, object target)
                 return notify_fail("你真氣不足，無法施展" + name() + "。\n");
 
         if (! living(target))
-                return notify_fail("對方都已經這樣了，用不著這麼費力吧？\n");
+                return notify_fail("對方都已經這樣了，用不着這麼費力吧？\n");
 
         msg = HIR "$N" HIR "突然一聲怪叫，驀的面赤如血，隨即手腕一抖，抓向$n"
               HIR "的要害。\n" NOR;

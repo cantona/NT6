@@ -11,7 +11,7 @@
                 混合 *filter_array( 混合 *arr, 函式 f, 
                         混合 extra, ... );
         函數用法:
-                filter_array()  傳回一個陣列, 這個陣列裡保留 arr 經過
+                filter_array()  傳回一個陣列, 這個陣列裏保留 arr 經過
                 物件 ob 中的函式 fun  過濾之後的結果. 每一個在陣列 arr
                 中的元素 (element)  會呼叫函式 fun  一次, 並且當成 fun
                 的參數 (parameter). 如果指定參數 extra  與之後的參數, 

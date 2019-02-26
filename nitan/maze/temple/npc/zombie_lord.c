@@ -4,9 +4,9 @@ inherit BOSS;
 void do_summon();
 void create()
 {
-        set_name( "僵屍王", ({ "lord zombie" }));
+        set_name( "殭屍王", ({ "lord zombie" }));
         set("vendetta_mark","zombie");
-        set("long", "這是一個腐爛的僵屍王，看起來好可怕。。\n");
+        set("long", "這是一個腐爛的殭屍王，看起來好可怕。。\n");
         set("title", HIB "(鬼氣)" NOR); 
 
         set("str", 50);
@@ -80,7 +80,7 @@ void do_summon()
         obs = all_inventory(environment(me));
         obs=filter_array(obs,(:query("id", $1) == "zombie":));
         if( sizeof(obs) > 10 ) return;
-        message_vision(HIM "\n$N□□幹嚎，周圍的僵屍應聲而來。\n" NOR, me); 
+        message_vision(HIM "\n$N嗬嗬乾嚎，周圍的殭屍應聲而來。\n" NOR, me); 
         zombie = new(__DIR__"zombie");
         zombie->move(environment(me));
         enemies = me->query_enemy();

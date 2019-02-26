@@ -158,7 +158,7 @@ int chunyangwuji(object me, object victim, object weapon, int damage)
                 }
         }
         if( cyq_wuji >= query_temp("cyq-wuji/max_times", me)){
-                msg = HIY"\n\t$N一口氣向$n連續攻出"+chinese_number(cyq_wuji)+"招，純陽拳的威力著實不可被輕視！\n"NOR;
+                msg = HIY"\n\t$N一口氣向$n連續攻出"+chinese_number(cyq_wuji)+"招，純陽拳的威力着實不可被輕視！\n"NOR;
                 message_combatd(msg , me, victim);
                 finish_chunyangwuji(me, skill_lvl);
                 return 1;

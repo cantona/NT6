@@ -40,7 +40,7 @@ int perform(object me, object target)
                 return notify_fail("你沒有激發八十一路潑水杖，難以施展" TAI "。\n");
 
         if (! living(target))
-                return notify_fail("對方都已經這樣了，用不著這麼費力吧？\n");
+                return notify_fail("對方都已經這樣了，用不着這麼費力吧？\n");
 
         msg = HIW "\n$N" HIW "一聲暴喝，猛然間騰空而起，手中" 
               + weapon->name() + HIW "從天而降，氣勢驚人，"

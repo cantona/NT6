@@ -4,7 +4,7 @@ void create()
 { 
         set("short", "弒神大殿"); 
         set("long", @LONG 
-這裡是30級BOSS挑戰區。
+這裏是30級BOSS挑戰區。
 
 LONG
 ); 

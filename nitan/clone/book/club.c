@@ -10,7 +10,7 @@ void create()
                 set_default_object(__FILE__);
         else {
                 set("unit", "本");
-                set("long","這是一本修習棍法的武經。\n裡面記載著少林派弟子數百年的練功心得，上面畫著各式舞棍的小人。\n");
+                set("long","這是一本修習棍法的武經。\n裏面記載着少林派弟子數百年的練功心得，上面畫着各式舞棍的小人。\n");
                 set("value", 500);
                 set("material", "book");
                 set("skill", ([

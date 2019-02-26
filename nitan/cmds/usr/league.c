@@ -55,11 +55,11 @@ int main(object me, string arg)
                         // 同盟的聲望下降
                         LEAGUE_D->add_league_fame(fname, -LEAGUE_D->query_league_fame(fname) / 10);
                         CHANNEL_D->do_channel(this_object(), "rumor",
-                                "聽說"+me->name(1)+"("+query("id", me)+
+                                "聽説"+me->name(1)+"("+query("id", me)+
                                 ")義無反顧，已經背離" + fname + "而去。");
                         delete_temp("pending/out_league", me);
 
-                        // 清除該用戶在同盟中的信息
+                        // 清除該用户在同盟中的信息
                         UPDATE_D->clear_user_data(query("id", me),"league");
                         return 1;
                 }
@@ -101,7 +101,7 @@ mixed select_league(object me, string arg)
                 }
 
                 if (! stringp(fam))
-                        return notify_fail("沒有這個玩家，不能查閱相關的同盟。\n");
+                        return notify_fail("沒有這個玩家，不能查閲相關的同盟。\n");
         }
 
         if (! fam)
@@ -255,7 +255,7 @@ int show_league_info(object me, string arg)
                 if (objectp(ob = find_player(id)))
                         msg += sprintf(HIY "在線   "
                                         NOR WHT "經驗：" HIC "%-9d "
-                                       NOR WHT "閱歷：" HIW "%-8d "
+                                       NOR WHT "閲歷：" HIW "%-8d "
                                        NOR WHT "威望：" HIY "%-8d\n" NOR,
                                        query("combat_exp", ob),
                                        query("score", ob),

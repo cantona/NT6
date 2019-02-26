@@ -19,7 +19,7 @@ void create()
     set("dex", 240);
     set("chat_chance", 1);
     set("chat_msg", ({
-        "步驚雲嘆了口氣道：“唉 …… 我的令牌哪裡去了 ……”\n",
+        "步驚雲歎了口氣道：“唉 …… 我的令牌哪裏去了 ……”\n",
         "步驚雲低頭沉思，悠然不語。\n",
     }));
     set("inquiry", ([
@@ -78,9 +78,9 @@ int accept_object(object who, object ob)
         if(ob->query("owner") == who->query("id") )
         {
             if (!(int)who->query_temp("tmark/ling")) who->set_temp("tmark/ling", 0);
-            message_vision("步驚雲看了看$N送來的令牌，點了點頭，說道：\n"
+            message_vision("步驚雲看了看$N送來的令牌，點了點頭，説道：\n"
                                    "難得你將令牌送回。你送我的東西我就收下了。\n"
-                                   "作為補償,我可以告訴你點秘密。\n", who);
+                                   "作為補償,我可以告訴你點祕密。\n", who);
            who->set_temp("tmark/ling", 1);
             return 1;
         }
@@ -91,11 +91,11 @@ int ask_baojian()
 {
   int p1, p2;
   if ((int)this_player()->query("_passwd")) {
- say("步驚雲不悅地說道：我不是都告訴你了嗎？我不知道。\n");
+ say("步驚雲不悦地説道：我不是都告訴你了嗎？我不知道。\n");
   }
 if ((int)this_player()->query_temp("tmark/ling")) {
- say("步驚雲一驚，說道：你怎麼知道的？\n");
- write("步驚雲頓一頓，接著對你低聲說：那我就告訴你算了");
+ say("步驚雲一驚，説道：你怎麼知道的？\n");
+ write("步驚雲頓一頓，接着對你低聲説：那我就告訴你算了");
 // p1=random(4)+1;
 // p2=random(4)+1;
 
@@ -120,12 +120,12 @@ int ask_jian()
             object me,obj;
             me = this_player();
                 if (me->query("tmark/ling")) {
- say("步驚雲一臉譏笑的樣子，說：我憑什麼告訴你？\n");
+ say("步驚雲一臉譏笑的樣子，説：我憑什麼告訴你？\n");
   }
 
     if ((int)this_player()->query("_passwd")) {
-        say("步驚雲一驚，說道：你怎麼知道的？寶劍的秘密就我知道。\n");
-        write("步驚雲想了下低聲說：好吧，看在你幫我過，我就告訴你：");
+        say("步驚雲一驚，説道：你怎麼知道的？寶劍的祕密就我知道。\n");
+        write("步驚雲想了下低聲説：好吧，看在你幫我過，我就告訴你：");
 
         //p2=(int)p1/10;
         // 這句的p1沒有初始化。這樣導致p2和p1總是為0

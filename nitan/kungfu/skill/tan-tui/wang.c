@@ -43,7 +43,7 @@ int perform(object me, object target)
                 return notify_fail("你的真氣不夠，難以施展" WANG "。\n");
 
         if (! living(target))
-                return notify_fail("對方都已經這樣了，用不著這麼費力吧？\n");
+                return notify_fail("對方都已經這樣了，用不着這麼費力吧？\n");
 
         msg = HIY "只見$N" HIY "拔地躍起，凌空一個翻滾，陡然間雙腿便如"
               "流星般向$n" HIY "連續踢至。\n" NOR;
@@ -64,7 +64,7 @@ int perform(object me, object target)
                 me->start_busy(3);
         } else
         {
-                msg += CYN "可是$p" CYN "奮力招架，終于將$P"
+                msg += CYN "可是$p" CYN "奮力招架，終於將$P"
                        CYN "的雙腿架開，沒有受到任何傷害。\n"NOR;
                 me->start_busy(4);
         }

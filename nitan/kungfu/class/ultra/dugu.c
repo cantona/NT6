@@ -27,32 +27,32 @@ string  *my_opinions = ({ "sword", "blade", "staff", "hammer",
                           "club", "whip",  "dagger", });
 
 string *dg_msg = ({
-        "獨孤求敗笑呵呵的說：“",
-        "獨孤求敗慢慢踱著方步道：“",
-        "獨孤求敗低頭想了想，說道：“",
-        "獨孤求敗滿臉期待的說道：“",
-        "獨孤求敗微笑著道：“",
+        "獨孤求敗笑呵呵的説：“",
+        "獨孤求敗慢慢踱着方步道：“",
+        "獨孤求敗低頭想了想，説道：“",
+        "獨孤求敗滿臉期待的説道：“",
+        "獨孤求敗微笑着道：“",
 });
 
 string* qin_msg1 = ({
         "動物是人們的朋友，就算name嚴重影響了生態環境，關起來也就可以了，",
-        "我聽說name過多的繁殖，影響了當地的生態，不過還是不應該隨便殺動物，",
+        "我聽説name過多的繁殖，影響了當地的生態，不過還是不應該隨便殺動物，",
         "難道name也會給人類帶來麻煩？真是稀奇，我倒是想看看它，",
-        "我這裡的花園養著很多的動物，就是沒有name，",
+        "我這裏的花園養着很多的動物，就是沒有name，",
         "在空閒的時候，看看動物的生活能夠放鬆情緒，name其實挺可愛的，",
         "南海神尼是一個很喜歡動物的人，尤其是name，用來送給她做禮物最好不過，",
         "江湖上打打殺殺的，少不了讓name也遭受無辜連累，我有心保護它，",
 });
 
 string* qin_msg2 = ({
-        "你去把它帶到這裡來吧。”",
+        "你去把它帶到這裏來吧。”",
         "去找到它，把它帶來。”",
-        "你能把它帶我這裡來麼？”",
+        "你能把它帶我這裏來麼？”",
         "你就辛苦一趟去幫我把它找來吧。”",
         "把它弄來給我。”",
 });
 
-// 該頭文件必須在這裡嵌入
+// 該頭文件必須在這裏嵌入
 #include <ultra.h>
 
 void check_weapon();
@@ -65,7 +65,7 @@ void create()
         set("age", 48);
         set("long",
 "這是一個普普通通的老者，一襲粗布衣裳，\n"
-"頦下一縷白須，神情詳和。目光轉動之間，\n"
+"頦下一縷白鬚，神情詳和。目光轉動之間，\n"
 "隱隱流露出一絲王者之氣。\n");
         set("attitude", "peaceful");
         set("no_get", 1);
@@ -84,23 +84,23 @@ void create()
 
         set("inquiry", ([
                 "獨孤九劍" : "我把天下武功的變化歸結在九劍之中，算不得是劍法，若拘\n"
-                             "泥于形勢就無法理解其中奧妙。\n"
-                             "獨孤九劍真正的精妙之處不在于其劍招，而是其" HIY "劍意" NOR + CYN "。",
-                "劍意"     : "劍招乃其形，而劍意乃其神，吾花費畢生經歷于華山一山洞\n"
+                             "泥於形勢就無法理解其中奧妙。\n"
+                             "獨孤九劍真正的精妙之處不在於其劍招，而是其" HIY "劍意" NOR + CYN "。",
+                "劍意"     : "劍招乃其形，而劍意乃其神，吾花費畢生經歷於華山一山洞\n"
                              HIY"空室" NOR + CYN"中參悟出獨孤九劍之劍意，並將其筆錄在「" HIY "獨孤九劍殘"
                              "本" NOR + CYN"」" NOR + CYN "內。\n" NOR,
-                "空室"     : "穿過我身後的山洞就會發現一個峭壁，我將殘本藏于其間的\n"
+                "空室"     : "穿過我身後的山洞就會發現一個峭壁，我將殘本藏於其間的\n"
                              "山洞內，並請高手匠人設計出六把不同鎖將其鎖住，每把瑣"
-                             "連接著一個開鎖\n的機關，機關藏于六個不同的石室內，須得"
+                             "連接着一個開鎖\n的機關，機關藏於六個不同的石室內，須得"
                              "將所有" HIY "鎖" NOR + CYN "打開方能進入空室。\n" NOR,
                 "鎖"       : "年深日久，開鎖的方法我已不記得了。我只記得如果石門\n"
                              "上的六把火炬都點燃了，石門上的鎖也就開了。\n",
                 "無招勝有招" : "那就是獨孤九劍的最高境界！\n",
-                "獨孤九劍殘本" : "如果你能拿來給話我到是可以把獨孤九劍中的精妙之處傳\n授于你。\n",
+                "獨孤九劍殘本" : "如果你能拿來給話我到是可以把獨孤九劍中的精妙之處傳\n授於你。\n",
                 "評價"     : (: ask_opinion :),
                 "opinion"  : (: ask_opinion :),
                 "武學修養" : "武學修養(martial-cognize)乃武術大義，可謂是以一通通百通！",
-                "任務"     : "獨孤求敗嘆了口氣，道：“如今江湖上危機四伏，我正道人士還有很多事情要去做啊！”\n",
+                "任務"     : "獨孤求敗歎了口氣，道：“如今江湖上危機四伏，我正道人士還有很多事情要去做啊！”\n",
                 "maze"     : (: ask_maze :),
                 "迷宮"     : (: ask_maze :),
         ]));
@@ -190,9 +190,9 @@ mixed ask_maze()
         if ( !mapp(maze) || undefinedp(maze["entry"]) )
         */
         if( !(find_object("/f/ultra/"+query("id", me)+"/maze/exit")) )
-                return "你的任務看來是無法完成啦，那個迷宮據說已經消失了。";
+                return "你的任務看來是無法完成啦，那個迷宮據説已經消失了。";
 
-        message_vision("$N對$n點頭道：“既然你已經準備好要去那裡，那就祝你一切順利！”\n", ob, me);
+        message_vision("$N對$n點頭道：“既然你已經準備好要去那裏，那就祝你一切順利！”\n", ob, me);
         FUBEN_D->enter_fuben(me, "ultra");
 
         return 1;
@@ -204,7 +204,7 @@ void check_weapon()
                 return;
 
 /*
-        message_vision(CYN "$N" CYN "長嘆一口氣道：我$N"
+        message_vision(CYN "$N" CYN "長歎一口氣道：我$N"
                        CYN "多年來兵器還從未離過手，罷！罷"
                        "了！我去也！\n" NOR, this_object());
         destruct(this_object());
@@ -234,7 +234,7 @@ mixed ask_opinion()
         {
                 if (ob == me)
                 {
-                        command("say 你著什麼急？不要煩我。");
+                        command("say 你着什麼急？不要煩我。");
                         return 1;
                 }
 
@@ -251,7 +251,7 @@ mixed ask_opinion()
                 command("say 好吧，你用兵器攻我一招，我看看你的水平如何。");
                 break;
         case 1:
-                command("say 不是說讓你來一招我看看嗎？");
+                command("say 不是説讓你來一招我看看嗎？");
                 break;
         case 2:
                 message_vision(CYN "$N" CYN "皺眉對$n" CYN
@@ -302,7 +302,7 @@ int accept_hit(object me)
 
         command("shake");
         command("say 這位" + RANK_D->query_respect(me) + "，"
-                "練武之人切忌貿然挑舋。");
+                "練武之人切忌貿然挑釁。");
         addn_temp("want_hit/dugu", 1, me);
         return 0;
 }
@@ -335,7 +335,7 @@ int accept_fight(object me)
         if( query("qi", me)*100/query("max_qi", me)<80 ||
             query("jing", me)*100/query("max_jing", me)<80 )
         {
-                command("say 你現在狀態不佳，等休息好了再說吧！");
+                command("say 你現在狀態不佳，等休息好了再説吧！");
                 return 0;
         }
 
@@ -366,7 +366,7 @@ int accept_kill(object me)
         if( query("combat_exp", me)<500000000 )
         {
                 message_vision(CYN "$N" CYN "大怒道：“無名小輩搗"
-                               "什麼亂？給我滾！”說罷一掌把$n" CYN
+                               "什麼亂？給我滾！”説罷一掌把$n" CYN
                                "劈倒在地。\n" NOR, this_object(), me);
                 me->unconcious();
                 return -1;
@@ -392,13 +392,13 @@ int recognize_apprentice(object me, string skill)
         if (! ultrap(me))
         {
                 command("say 想學我的不敗神功？你還不夠資格，"
-                        "等你成了大宗師再說吧！");
+                        "等你成了大宗師再説吧！");
                 return -1;
         }
 
         if (me->query_skill(skill, 1) >= 180)
         {
-                command("say 夠了！我就教你到這裡吧，武功還是"
+                command("say 夠了！我就教你到這裏吧，武功還是"
                         "要靠自己多研究才是！");
                 return -1;
         }
@@ -474,19 +474,19 @@ int give_quest()
         */
         if (exp < 500000)
         {
-                write("獨孤求敗看了看你，輕撫白須，道：“江湖險惡，你還是先練好基本功吧。”\n");
+                write("獨孤求敗看了看你，輕撫白鬚，道：“江湖險惡，你還是先練好基本功吧。”\n");
                 return 1;
         }
 
         if( mapp(query("quest_dg", ob)) )
         {
-                write("獨孤求敗拍了拍你的肩膀，呵呵笑道：“不要急，先將手頭的做完再說。”\n");
+                write("獨孤求敗拍了拍你的肩膀，呵呵笑道：“不要急，先將手頭的做完再説。”\n");
                 return 1;
         }
 
         if( mapp(query("quest_hs", ob)) )
         {
-                write("獨孤求敗拍了拍你的肩膀，呵呵笑道：“黃裳那老家伙給你任務了？先去把它完成吧！”\n");
+                write("獨孤求敗拍了拍你的肩膀，呵呵笑道：“黃裳那老傢伙給你任務了？先去把它完成吧！”\n");
                 return 1;
         }
 
@@ -695,7 +695,7 @@ int give_quest()
         if (questdg["type"] == "殺" && (random(6) == 2 || wizardp(ob)))
         {
                 robot_quest = ANTI_ROBOT->get_question();
-                msg = "獨孤求敗鄭重說道：“我剛將我們組織的口令更改了一下，你去通知一下" + questdg["name"] + NOR"，新口令是：\n";
+                msg = "獨孤求敗鄭重説道：“我剛將我們組織的口令更改了一下，你去通知一下" + questdg["name"] + NOR"，新口令是：\n";
                 msg += robot_quest["question"];
                 msg += "你只需要將口令用"HIR"普通的數字形式"NOR"傳送過去就行了，傳送的指令是：whisper。\n";
                 questdg["type"]   = "傳";
@@ -750,9 +750,9 @@ int accept_object(object who, object ob)
 
                 // 開始傳授獨孤九劍之無招
                 command("nod");
-                command("say 不錯，不錯！既然如此，我就將獨孤九劍之精髓傳授于你。");
+                command("say 不錯，不錯！既然如此，我就將獨孤九劍之精髓傳授於你。");
                 command("say 獨孤九劍最精妙之處已經不是招式，而是一種" HIY "境界" NOR + CYN "！");
-                command("say 獨孤九劍講究後發制人，不拘泥于任何招式，隨心而發，隨心而收，達到一\n"
+                command("say 獨孤九劍講究後發制人，不拘泥於任何招式，隨心而發，隨心而收，達到一\n"
                         "種" HIY "無招勝有招" NOR + CYN "的境界！");
                 command("say 明白了？");
 
@@ -790,11 +790,11 @@ int accept_object(object who, object ob)
         {
                 if (ob->value() < 1000000)
                 {
-                        tell_object(who,"獨孤求敗對你語重心長的說：你拿這麼點錢來幹什麼呢？我又不是缺錢花。\n");
+                        tell_object(who,"獨孤求敗對你語重心長的説：你拿這麼點錢來幹什麼呢？我又不是缺錢花。\n");
                         return notify_fail("獨孤求敗搖搖頭：如果給個100兩黃金，或許我就消除了你的任務。\n");
                 }
                 delete("quest_dg", who);
-                tell_object(who,"獨孤求敗盯著" + ob->name(1) + "注視良久，嘆氣道：那你這個任務不做就算了吧。\n");
+                tell_object(who,"獨孤求敗盯着" + ob->name(1) + "注視良久，歎氣道：那你這個任務不做就算了吧。\n");
                 destruct(ob);
                 return 1;
         }
@@ -807,25 +807,25 @@ int accept_object(object who, object ob)
 
         if( ob->name(1) != questdg["name"] || userp(ob))
         {
-                tell_object(who,"獨孤求敗嘆了口氣，道：這並不是我想要的。\n");
-                return notify_fail("獨孤求敗看著你，道：“你是不是再去找找看啊？”\n");
+                tell_object(who,"獨孤求敗歎了口氣，道：這並不是我想要的。\n");
+                return notify_fail("獨孤求敗看着你，道：“你是不是再去找找看啊？”\n");
         }
 
         if(questdg["type"]=="送")
         {
                 if( !ob->is_receipt() || query("reply_to", ob) != query("id", this_object()) )
                 {
-                        write("獨孤求敗接過來一看，驚訝的說：“我不是叫你幫我送東西了麼，你是不是記錯了？”\n");
+                        write("獨孤求敗接過來一看，驚訝的説：“我不是叫你幫我送東西了麼，你是不是記錯了？”\n");
                         return 0;
                 }
                 if( query("reply_by", ob) != questdg["send_to"] )
                 {
-                        write("獨孤求敗接過來一看，生氣的說：“這張回執是誰給你的？別想來糊弄我！”\n");
+                        write("獨孤求敗接過來一看，生氣的説：“這張回執是誰給你的？別想來糊弄我！”\n");
                         return 0;
                 }
                 if( query("receive_from", ob) != query("id", who) )
                 {
-                        write("獨孤求敗接過來一看，生氣的說：“這張回執是你自己得到的麼？別想來糊弄我！”\n");
+                        write("獨孤求敗接過來一看，生氣的説：“這張回執是你自己得到的麼？別想來糊弄我！”\n");
                         return 0;
                 }
         }
@@ -834,14 +834,14 @@ int accept_object(object who, object ob)
             ob->is_item_make() ||
             ob->query_save_file())
         {
-                write("獨孤求敗大怒道：“好你個小子，竟然想蒙騙本宗師！來人！把他給我抓起來！”\n");
+                write("獨孤求敗大怒道：“好你個小子，竟然想矇騙本宗師！來人！把他給我抓起來！”\n");
                 who->get_into_prison(this_object(), 0, 30);
-                log_file("static/QUEST_DIJIAO",sprintf("%s(%s)(獨孤任務)制造%s(%s)(%s)作弊\n",query("name", who),
+                log_file("static/QUEST_DIJIAO",sprintf("%s(%s)(獨孤任務)製造%s(%s)(%s)作弊\n",query("name", who),
                 query("id", who),ob->name(),query("id", ob),ctime(time())));
                 return 1;
         }
 
-        // message_vision("$N將$n交給獨孤求敗。\n",who,ob); 與give信息重復
+        // message_vision("$N將$n交給獨孤求敗。\n",who,ob); 與give信息重複
         tell_object(who,"獨孤求敗點頭微笑，其意頗為嘉許，道：“不錯！不錯！”\n");
         delete("quest_dg", who);
         if( ob->is_character() && query("startroom", ob) )
@@ -887,7 +887,7 @@ int accept_object(object who, object ob)
                 if(i>30) i=30;
                 gold=new("/clone/money/gold");
                 gold->set_amount(i);
-                tell_object(who,"接著說道：“整日行走江湖，手頭有點緊吧？！喏，拿點黃金做盤纏吧！”\n"
+                tell_object(who,"接着説道：“整日行走江湖，手頭有點緊吧？！喏，拿點黃金做盤纏吧！”\n"
                         HIW"\n你被獎勵了 "+i+" 兩黃金。\n");
                 if(!gold->move(who))
                 {
@@ -910,38 +910,38 @@ int accept_object(object who, object ob)
         total_count = quest_count % 500;
         if (total_count == 50)
         {
-                msg = "$N呵呵笑了兩聲道：“你還可以，連著"+chinese_number(quest_count)+
+                msg = "$N呵呵笑了兩聲道：“你還可以，連着"+chinese_number(quest_count)+
                       "次任務都完成的漂漂亮亮，繼續努力！”\n";
                 special = 1;
         } else
         if (total_count == 100)
         {
                 msg = "$N笑的合不攏嘴，看了你一眼道：“有志氣！"+chinese_number(quest_count)+
-                      "次任務幹得幹凈利索！”\n";
+                      "次任務幹得乾淨利索！”\n";
                 special = "/clone/gift/puti-zi";
         } else
         if (total_count == 150)
         {
-                msg = "$N嘆道：“真是長江後浪推前浪，想不到你接連"+chinese_number(quest_count)+
+                msg = "$N歎道：“真是長江後浪推前浪，想不到你接連"+chinese_number(quest_count)+
                       "次任務都無一疏漏，不易，不易！”\n";
                 money = 1;
         } else
         if (total_count == 200)
         {
-                msg = "$N嘆道：“真是長江後浪推前浪，想不到你接連"+chinese_number(quest_count)+
+                msg = "$N歎道：“真是長江後浪推前浪，想不到你接連"+chinese_number(quest_count)+
                       "次任務都無一疏漏，不易，不易！”\n";
                 money = 1;
         } else
         if (total_count == 250)
         {
-                msg = "$N嘆道：“真是長江後浪推前浪，想不到你接連"+chinese_number(quest_count)+
+                msg = "$N歎道：“真是長江後浪推前浪，想不到你接連"+chinese_number(quest_count)+
                       "次任務都無一疏漏，不易，不易！”\n";
                 money = 1;
         } else
 
         if (total_count == 300)
         {
-                msg = "$N嘆道：“真是長江後浪推前浪，想不到你接連"+chinese_number(quest_count)+
+                msg = "$N歎道：“真是長江後浪推前浪，想不到你接連"+chinese_number(quest_count)+
                       "次任務都無一疏漏，不易，不易！”\n";
                 special = "/clone/gift/tianxiang";
         } else
@@ -953,7 +953,7 @@ int accept_object(object who, object ob)
         } else
         if (total_count == 400)
         {
-                msg = "$N嘆道：“真是一個武學天才啊，想不到你接連"+chinese_number(quest_count)+
+                msg = "$N歎道：“真是一個武學天才啊，想不到你接連"+chinese_number(quest_count)+
                       "次任務都無一疏漏，不易，不易！”\n";
                 special = "/clone/gift/jiuzhuan";
         } else
@@ -965,7 +965,7 @@ int accept_object(object who, object ob)
         } else
         if (total_count == 0)
         {
-                msg = "$N深深嘆了口氣，道：“沒想到你連著"+chinese_number(quest_count)+
+                msg = "$N深深歎了口氣，道：“沒想到你連着"+chinese_number(quest_count)+
                       "次任務無一失手，看來以後就是你們這些人挑大樑啦！”\n";
                 special = "/clone/gift/jiuzhuan";
 #ifdef DB_SAVE
@@ -990,9 +990,9 @@ int accept_object(object who, object ob)
         } else
         if ((total_count % 10) == 0)
         {
-                msg = "$N呵呵笑著：“你表現很不錯啊，居然連著" +
+                msg = "$N呵呵笑着：“你表現很不錯啊，居然連着" +
                       chinese_number(quest_count) +
-                      "次都沒有失手，別忙著練，慢慢來。”\n";
+                      "次都沒有失手，別忙着練，慢慢來。”\n";
         }
 
         set("questdg_times", quest_count, who);
@@ -1015,7 +1015,7 @@ int accept_object(object who, object ob)
         if (all_quest_dg == 1000)
         {
                 obj = new("/clone/tessera/gem.c");
-                tell_object(who,this_object()->name() + "又對你點了點頭：你已經從我這裡接了一千個任務，我這裡正好\n" +
+                tell_object(who,this_object()->name() + "又對你點了點頭：你已經從我這裏接了一千個任務，我這裏正好\n" +
                         "有個"+query("name", obj)+"，就獎給你了！\n");
                 if (!obj->move(who))
                         obj->move(environment());
@@ -1040,11 +1040,11 @@ int give_up()
                 /*
                 if (questdg["type"] == "傳")
                 {
-                        message_vision("$N驚訝地對$n笑笑：『傳口令，這個是很簡單的任務啊！不要著急，回頭再好好想想，努力把它完成！\n",this_object(),ob);
+                        message_vision("$N驚訝地對$n笑笑：『傳口令，這個是很簡單的任務啊！不要着急，回頭再好好想想，努力把它完成！\n",this_object(),ob);
                         return 1;
                 }
                 */
-                write("獨孤求敗和顏悅色地拍拍你的腦袋，道：“沒關系，要繼續努力啊！”\n");
+                write("獨孤求敗和顏悦色地拍拍你的腦袋，道：“沒關係，要繼續努力啊！”\n");
                 if(questdg["type"] == "送")
                 {
                         if( query("questdg_times", ob)>0 )
@@ -1098,7 +1098,7 @@ int give_up()
         }
         */
         else
-                write("獨孤求敗和顏悅色地看著你，道：“沒關系，你現在根本就沒有任務啊！”\n");
+                write("獨孤求敗和顏悦色地看着你，道：“沒關係，你現在根本就沒有任務啊！”\n");
         delete("quest_dg", ob);
         set("questdg_giveup_time", time(), ob);
         return 1;
@@ -1194,10 +1194,10 @@ int accept_ask(object me, string topic)
                            "free"    : 1,
                            "shen"    : 38000, ]));
                 break;
-        case "晴空萬裡" :
+        case "晴空萬里" :
                 return MASTER_D->teach_pfm(me, this_object(),
                         ([ "perform" : "can_perform/never-defeated/wanli",
-                           "name"    : "晴空萬裡",
+                           "name"    : "晴空萬里",
                            "sk1"     : "never-defeated",
                            "lv1"     : 120,
                            "sword"   : 120,

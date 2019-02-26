@@ -3,7 +3,7 @@
 // cool980724
 // Modify By River 98/12
 // Modify by tangfeng@SJ
-// 主要修改了標志的紀錄方式；其他無修改
+// 主要修改了標誌的紀錄方式；其他無修改
 
 inherit NPC;
 #include <ansi.h>
@@ -32,7 +32,7 @@ void create()
         set("neili", 12000);
 	set("jiali", 150);
         
-        set("long","這人是個老者，長須垂胸，面目漆黑。\n",);
+        set("long","這人是個老者，長鬚垂胸，面目漆黑。\n",);
 	set("env/一陽指","三疊");
         set("combat_exp", 1200000+random(500000));
         set("shen", -8000);
@@ -129,7 +129,7 @@ void checking(object me, object ob)
 		|| me->query("eff_qi")*10/me->query("max_qi") < 5 ){
 			ob->set_temp(QUESTDIR1+"kill",1);
 			message_vision(HIR"$n看見$N向後一跳，逃向一片大樹林。\n"NOR, me, ob);
-			message_vision(HIG"$n大聲喝道：哪裡跑！$n緊緊追了過去。\n"NOR, me, ob);
+			message_vision(HIG"$n大聲喝道：哪裏跑！$n緊緊追了過去。\n"NOR, me, ob);
 			ob->move("/d/dali/wuliang/shanlin-1");
 			destruct(me);
 		}
@@ -154,7 +154,7 @@ void die()
 		log_file("quest/TLBB", sprintf("%s(%s) 砍死段延慶，失敗。經驗：%d。\n", me->name(1),me->query("id"), me->query("combat_exp")) );
 		command("sneer");
 		message_vision(HIR"\n$N慘笑道：你殺了我，這輩子別想找到段譽了。\n"NOR, this_object());
-		tell_object(me,HIG"\n看來，營救的事情只能由其他人完成，你還是暫時回避一下。\n"NOR);
+		tell_object(me,HIG"\n看來，營救的事情只能由其他人完成，你還是暫時迴避一下。\n"NOR);
 	}
 	::die();
 }

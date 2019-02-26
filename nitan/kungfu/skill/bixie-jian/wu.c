@@ -3,7 +3,7 @@
 
 #include <ansi.h>
 
-#define PNAME "「群魔亂舞」"
+#define PNAME "「羣魔亂舞」"
 inherit F_SSERVER;
  
 int perform(object me, object target)
@@ -32,8 +32,8 @@ int perform(object me, object target)
                 return notify_fail(PNAME"只能對戰鬥中的對手使用。\n");
   if( !objectp(weapon=query_temp("weapon", me)) || 
     query("skill_type", weapon) != "sword" )
-    return notify_fail(PNAME"必須拿著劍才能出！\n");
-  if (!userp(me)) return notify_fail("npc不在這裡使用這招。\n");
+    return notify_fail(PNAME"必須拿着劍才能出！\n");
+  if (!userp(me)) return notify_fail("npc不在這裏使用這招。\n");
         fskill = "kuihua-xinfa";
         bskill = "sword";
         if (SCBORN_D->valid_perform(me,sskill,pfname))

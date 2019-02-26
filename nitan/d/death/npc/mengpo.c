@@ -17,9 +17,9 @@ void create()
 
         set("chat_chance", 1);
         set("chat_msg",({
-                CYN "孟婆說道：孩子，喝碗湯吧。\n" NOR,
-                CYN "孟婆說道：過了奈河橋，前途就艱難了。\n" NOR,
-                CYN "孟婆弓著腰煮著孟婆湯。\n" NOR,
+                CYN "孟婆説道：孩子，喝碗湯吧。\n" NOR,
+                CYN "孟婆説道：過了奈河橋，前途就艱難了。\n" NOR,
+                CYN "孟婆弓着腰煮着孟婆湯。\n" NOR,
                 CYN "孟婆輕輕咳嗽了幾聲。\n" NOR,
         }));
 

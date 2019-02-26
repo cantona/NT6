@@ -9,7 +9,7 @@ void create()
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("long", "這是一只白布小囊，好象可以打開的。\n");
+                set("long", "這是一隻白布小囊，好像可以打開的。\n");
                 set("unit", "只");
                 set("value", 1);
         }

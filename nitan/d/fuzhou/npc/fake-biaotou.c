@@ -12,7 +12,7 @@ void create()
         set("title", HIR"福"HIC"威"YEL"鏢局"HIY"鏢頭"NOR);
         set("gender", random(2)>0 ? "女性" : "男性" );
         set("age", 30 + random(20) );
-        set("long","一個普通的人，放在人群中沒有一點突出之處。\n");
+        set("long","一個普通的人，放在人羣中沒有一點突出之處。\n");
 
         weapon = weapon_msg[random(sizeof(weapon_msg))];
         set("combat_exp",100000 +random(50000));

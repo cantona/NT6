@@ -4,15 +4,15 @@ string type() { return "martial"; }
 string martialtype() { return "skill"; }
 
 string *action_msg = ({
-        "$N左手揚起，右手伸出，五指曲張，對著$n的頸部便抓",
-        "只見一陣勁風直逼向前$N單臂伸出，手指直取$n的哽嗓嚥喉",
+        "$N左手揚起，右手伸出，五指曲張，對着$n的頸部便抓",
+        "只見一陣勁風直逼向前$N單臂伸出，手指直取$n的哽嗓咽喉",
         "$N左手一掠，將$n防守招數盡格在外門，右手疾探而出對$n的喉頭抓到",
         "$N身形急跳，早落到$n的身後，一雙冰冷的大手抓向$n的後頸",
         "$N雙臂彎出，柔若無骨，如兩條軟鞭一般，緊緊纏住$n的脖子不放",
 });
 
 mapping *action = ({
-([      "action": "$N一聲暴喝，雙手如鉤如戢，插向$n的$l",
+([      "action": "$N一聲暴喝，雙手如鈎如戢，插向$n的$l",
         "force" : 100,
         "attack": 28,
         "dodge" : 17,
@@ -140,7 +140,7 @@ mapping query_action(object me, object weapon)
                 {
                         addn("neili", -50, me);
                         return ([
-                                "action":"$N右手一抬，勢做陰柔，無聲無息襲向$n，跟著左爪突然而出，以陽剛\n之力，左右合擊直取$n的喉嚨。",
+                                "action":"$N右手一抬，勢做陰柔，無聲無息襲向$n，跟着左爪突然而出，以陽剛\n之力，左右合擊直取$n的喉嚨。",
                                 "damage_type": "內傷",
                                 "dodge": -35+random(20),
                                 "parry": 25+random(30),

@@ -22,7 +22,7 @@ int main(object me, string arg)
         //string tell_out;
         m=me->query_entire_dbase();
         if(m["chblk_on"]&&!wizardp(me))
-                return write(ALERT("你的頻道被關閉了，在你試圖發出任何信息前請先與江湖小豬聯系。\n"));
+                return write(ALERT("你的頻道被關閉了，在你試圖發出任何信息前請先與江湖小豬聯繫。\n"));
         if (! arg || sscanf(arg, "%s %s", target, msg) != 2)
                 return help(me);
 
@@ -30,7 +30,7 @@ int main(object me, string arg)
         {
                 if (GTELL->send_gtell(mud, target, me, msg))
                 {
-                        write(MTEXT("網路訊息已送出，可能要稍候才能得到回應。\n"));
+                        write(MTEXT("網路訊息已送出，可能要稍候才能得到迴應。\n"));
                         return 1;
                 }
         }
@@ -56,7 +56,7 @@ int main(object me, string arg)
                 return notify_fail(ALERT("此人現在不在線上，聽不到你的話。\n"));
 
         if (! living(obj))
-                return notify_fail(ALERT("這人現在恐怕聽不到你說的話了...\n"));
+                return notify_fail(ALERT("這人現在恐怕聽不到你説的話了...\n"));
 
         if (me->ban_say(1))
                 return 0;
@@ -181,7 +181,7 @@ int notice_user(string my_name, string my_id, object obj, string tell_out)
                                         if (strlen(piece[2]) > 32768)
                                         {
                                                 // 歷史信息已經過了32K了
-                                                write(MTEXT("你已經說了好多話了，先等別人聽完吧。\n"));
+                                                write(MTEXT("你已經説了好多話了，先等別人聽完吧。\n"));
                                                 return 0;
                                         }
 
@@ -198,7 +198,7 @@ int notice_user(string my_name, string my_id, object obj, string tell_out)
                                 if (sizeof(list) > 12)
                                 {
                                         write(MTEXT(obj->name(1) + "耳邊已經有太多"
-                                              "的話了，你還是等會兒再說吧。\n"));
+                                              "的話了，你還是等會兒再説吧。\n"));
                                         return 0;
                                 }
 
@@ -224,8 +224,8 @@ int help(object me)
         write(@HELP
 指令格式：tell <某人> <訊息>
 
-你可以用這個指令和其他地方的使用者說話。如果對方選擇阻塞式交
-談，那麼他可能不會立刻聽到你說的話。
+你可以用這個指令和其他地方的使用者説話。如果對方選擇阻塞式交
+談，那麼他可能不會立刻聽到你説的話。
 
 其他相關指令：reply、skip
 HELP );

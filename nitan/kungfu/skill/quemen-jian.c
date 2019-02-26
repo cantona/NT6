@@ -23,7 +23,7 @@ mapping *action = ({
         "skill_name" : "破字訣",
         "damage_type" : "刺傷"
 ]),
-([      "action" : "$N輕吁一聲，飛身一躍而起，一招「戮」字訣，連續向$n刺出數劍",
+([      "action" : "$N輕籲一聲，飛身一躍而起，一招「戮」字訣，連續向$n刺出數劍",
         "force"  : 120,
         "attack" : 51,
         "parry"  : 18,

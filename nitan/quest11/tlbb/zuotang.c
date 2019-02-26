@@ -7,7 +7,7 @@ void create()
 {
 	set("short", "左營");
 	set("long", @long
-這裡是南院左營，眾多會議和軍事部署都是這裡進行的，是契丹的核
+這裏是南院左營，眾多會議和軍事部署都是這裏進行的，是契丹的核
 心地帶，有重兵把守。
 long);
 	set("exits", ([
@@ -23,8 +23,8 @@ void init()
   me = this_player();
  if(me->query_condition("killer"))
   {
-   message_vision(HIC"\n突然$N似乎氣血有些不順，跟著一個趔趄倒了下去。\n"NOR,me); 
-   tell_object(me,HIR"你突然感到一股力量吸引著你，瞬間你失去知覺。\n"NOR);
+   message_vision(HIC"\n突然$N似乎氣血有些不順，跟着一個趔趄倒了下去。\n"NOR,me); 
+   tell_object(me,HIR"你突然感到一股力量吸引着你，瞬間你失去知覺。\n"NOR);
    tell_room(environment(me),HIR"\n只見，地上突然出現一個裂洞，"+ me->name()+ "一頭紮了下去，瞬間消失。\n"NOR, ({  }));
    me->move(__DIR__"shanlu1"); 
    tell_room(environment(me), HIR"\n半空中，似乎一個人掉了下來，你定眼一看竟然是"+ me->name()+ "。\n"NOR, ({  }));
@@ -94,12 +94,12 @@ int do_push(string arg)
 void close_path()
 {
         if(!query("exits/west")) return;
-        message("vision","一會會，□的一聲，牆又恢復原樣。\n", this_object() );
+        message("vision","一會會，嗵的一聲，牆又恢復原樣。\n", this_object() );
         delete("exits/west");      
 }
 
 int valid_leave(object me, string dir)
 {
-  if(present("liao bing",environment(me)))  return notify_fail("遼兵一把將你攔住：哪裡跑！\n" );
+  if(present("liao bing",environment(me)))  return notify_fail("遼兵一把將你攔住：哪裏跑！\n" );
   return ::valid_leave(me, dir);
 }

@@ -48,7 +48,7 @@ mapping *action = ({
          "damage_type":"刺傷"
 ]),
 ([
-"action":"$N一招「九蓮寶燈」，身形如電，繞著$n飛快奔跑，手中$w一招快似一招，剎那間向$n連打出三十六槍",
+"action":"$N一招「九蓮寶燈」，身形如電，繞着$n飛快奔跑，手中$w一招快似一招，剎那間向$n連打出三十六槍",
          "force" : 280,
          "dodge" : 30,
          "parry" : 30,
@@ -69,7 +69,7 @@ mapping *action = ({
          "damage_type":"刺傷"
 ]),
 ([
-"action":"$N大喝一聲，一招「飛龍在天」，$w脫手飛出，夾著勁風射向$n的前心，隨即搶到$n的身後，伸手又把$w抄在手中",
+"action":"$N大喝一聲，一招「飛龍在天」，$w脱手飛出，夾着勁風射向$n的前心，隨即搶到$n的身後，伸手又把$w抄在手中",
          "force" : 300,
          "dodge" : 20,
          "parry" : 30,
@@ -120,11 +120,11 @@ string *parry_msg = ({
 });
 
 string *msg = ({
-HIG"$N神情蕭索，一式「野火燎原」右手長槍揚手揮洒，虛實不定"NOR,
+HIG"$N神情蕭索，一式「野火燎原」右手長槍揚手揮灑，虛實不定"NOR,
 MAG"但見$N槍法吞吐開合、陰陽動靜，實已到了草木為兵的絕詣"NOR,
-HIW"$N手中$w"HIW"雖使得極快，卻絲毫聽不到金刃劈風之聲，足見槍勁之柔韌已達于化境"NOR,
+HIW"$N手中$w"HIW"雖使得極快，卻絲毫聽不到金刃劈風之聲，足見槍勁之柔韌已達於化境"NOR,
 HIC"$N不疾不徐的漫步揚長而步，遇到$n招數，$N$w"HIC"一顫，便是一縷金光閃出"NOR,
-HIC"$N凝望$n招式，出槍以蜿蜒之勢、身處莊穩之形，宛如旭日東升，如金蛇萬道，閃爍不定"NOR,
+HIC"$N凝望$n招式，出槍以蜿蜒之勢、身處莊穩之形，宛如旭日東昇，如金蛇萬道，閃爍不定"NOR,
 HIB"$N槍法突變，招式凌厲狠辣，以極渾厚內力，出極精妙招數，青光盪漾"NOR,
 CYN"$N$w隨手一招打出，以己之鈍，擋敵之無鋒"NOR,
 HIC"$N猛然攻出招，招招都未曾使老，走勢猶如浪潮一般，緩緩湧向$n"NOR,
@@ -132,7 +132,7 @@ MAG"$N$w"MAG"在空中劃成大圈，右手戳出，竟似也發出嗤嗤微聲"
 HIW"$N一槍刺到，青光閃閃，發出嗤嗤聲響，內力極強"NOR,
 HIW"$N左手$w"HIW"不住的抖動，罩向$n上盤七大要穴，槍尖急顫，看不出攻向何處"NOR,
 MAG"$N功勁一加運開，手中$w"MAG"槍勢綿綿不絕，絕無破綻"NOR,
-CYN"$N手裡$w"CYN"使得心應手，熟極而流，招數精奇，輕翔靈動，變幻不測，突然抖腕直向$n的$l刺到"NOR,
+CYN"$N手裏$w"CYN"使得心應手，熟極而流，招數精奇，輕翔靈動，變幻不測，突然抖腕直向$n的$l刺到"NOR,
 HIW"$N以意馭槍，千變萬化，無窮無盡，每一招都看似平淡，實則蓄勢以待，深藏不露"NOR,
 HIB"$N以意馭槍，綿綿不絕，看似柔軟無力，實則千變萬化，無窮無盡"NOR,
 HIB"$N朗聲長嘯，槍法縱橫變化，奇幻無方，$w"HIB"在其內力運使之下青光閃閃，威不可擋"NOR,
@@ -210,9 +210,9 @@ mapping query_action(object me, object weapon)
 			{
 				switch(me->query_temp("canyun"))
 				{
-				case 2: msg1 = HIY"$N出招穩凝如山，似乎其中破綻百出，手忙腳亂，其實似守實攻，大巧若拙，每一處破綻中都隱伏著厲害無比的陷阱。"NOR; break;
+				case 2: msg1 = HIY"$N出招穩凝如山，似乎其中破綻百出，手忙腳亂，其實似守實攻，大巧若拙，每一處破綻中都隱伏着厲害無比的陷阱。"NOR; break;
 				case 1: msg1 = HIR"$N眼見對方已陷入重圍，再也不能全身而退，當下持槍回擊，陡然圈轉，呼的一響，往$n$l上擊了下去。"NOR; break;
-				default: msg1 = HIW"$N突然大喝一聲，縱身而上，手中$w"HIW"猶如狂風驟雨，使出「風卷殘雲」，漫天槍影帶著氣浪有如怒海狂滔一般！"NOR;break;
+				default: msg1 = HIW"$N突然大喝一聲，縱身而上，手中$w"HIW"猶如狂風驟雨，使出「風捲殘雲」，漫天槍影帶着氣浪有如怒海狂滔一般！"NOR;break;
 				}
 				me->add_temp("canyun", -1);      
 				return ([
@@ -228,7 +228,7 @@ mapping query_action(object me, object weapon)
         if (me->query_temp("slbw")) { 
   me->delete_temp("slbw");             
                 return ([  
-                        "action" : HIC"但見$N硬接了$n這一招，執槍緊接著向後一擺，一招「神龍擺尾」出其不意地點在了$n的$l上！"NOR,
+                        "action" : HIC"但見$N硬接了$n這一招，執槍緊接着向後一擺，一招「神龍擺尾」出其不意地點在了$n的$l上！"NOR,
                         "force":level+level/2,
                         "dodge": level/2,
   "damage":level+level/2 ,
@@ -318,12 +318,12 @@ mixed hit_ob(object me, object victim, int damage_bonus, int factor)
       		message_vision(HIM"$N持槍斜引，"+weapon->name()+HIM"平搭在$n"+weapon1->name()+HIM"背脊上，勁力傳出，"+weapon1->name()+HIM"登時一沉！\n"NOR, me,victim);
       		if(random(me->query("str")) > victim->query("str")/3){           
            		me->add("neili", -50);
-           		message_vision(HIR"$N招式漸見澀滯，只覺得手中"+weapon1->name()+HIR"不斷的在增加重量，一個把持不定，脫手飛出！\n"NOR, victim);
+           		message_vision(HIR"$N招式漸見澀滯，只覺得手中"+weapon1->name()+HIR"不斷的在增加重量，一個把持不定，脱手飛出！\n"NOR, victim);
            		weapon1->unequip();
            		weapon1->move(environment(victim));
            	}
       		else {
-           		message_vision(HIY"$N一招使出，真力運得不足，被"+weapon->name()+HIY"帶著連轉幾個圈子，手中"+weapon1->name()+HIY"一震，險些脫手！\n"NOR, victim);
+           		message_vision(HIY"$N一招使出，真力運得不足，被"+weapon->name()+HIY"帶着連轉幾個圈子，手中"+weapon1->name()+HIY"一震，險些脱手！\n"NOR, victim);
            		victim->add_busy(3);
            	}
     	}
@@ -450,8 +450,8 @@ int help(object me)
 	write(HIC"\n燎原槍法："NOR"\n");
 	write(@HELP
 	燎原槍法為三國時五虎將之趙雲所創。此槍法乃趙雲集百家之常，另
-	辟捷徑，常使人防不勝防！趙雲爭戰數十年後，遇見各路槍法高手，不斷總
-	結，終于在晚年創出了此槍法，可以稱的上天下第一槍法！不過後來不知流
+	闢捷徑，常使人防不勝防！趙雲爭戰數十年後，遇見各路槍法高手，不斷總
+	結，終於在晚年創出了此槍法，可以稱的上天下第一槍法！不過後來不知流
 	路何處，竟被上官劍南晚年在被囚山洞中所得！
 	
 HELP

@@ -11,14 +11,14 @@ void create()
         if (clonep())
                 destruct(this_object());
         else {
-                set("long", HIW "一根銀色的長索，隱隱流動著金屬的光"
-                            "澤，看上去很是堅韌。長索的一端系著兩個"
+                set("long", HIW "一根銀色的長索，隱隱流動着金屬的光"
+                            "澤，看上去很是堅韌。長索的一端繫着兩個"
                             "金鈴。\n" NOR);
                 set("unit", "把");
                 set("value", 800000);
                 set("no_sell", 1);
                 set("material", "steel");
-                set("wield_msg", HIW "$N" HIW "輕輕的從懷裡取出一根"
+                set("wield_msg", HIW "$N" HIW "輕輕的從懷裏取出一根"
                                  "銀色的長索握在手中。\n" NOR); 
                 set("unwield_msg", HIW "$N將手中銀索" NOR + HIY "金"
                                  "鈴" NOR + HIW "回腰間，天地又漸漸"
@@ -52,7 +52,7 @@ mixed hit_ob(object me, object victim, int damage_bonus)
                 victim->receive_damage("qi", n * 3 / 4, me);
                 victim->receive_wound("qi", n * 3 / 4, me);
                 return  HIY "$N" HIY "一聲清嘯，手中" NOR + HIW "銀索"
-                        NOR + HIY "金鈴宛如蛟龍通天，舖天蓋地襲向$n"
+                        NOR + HIY "金鈴宛如蛟龍通天，鋪天蓋地襲向$n"
                         HIY "！\n" NOR;
         }
         return damage_bonus;

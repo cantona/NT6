@@ -19,7 +19,7 @@ void create()
                 set("poison_applied", 300);
                 set("material", "leather");
                 set("long", 
-                "這是一條爛銀也似的銀色軟鞭，長達四丈有余，鞭頭裝著十多只明晃晃的尖利倒鉤。\n");
+                "這是一條爛銀也似的銀色軟鞭，長達四丈有餘，鞭頭裝着十多隻明晃晃的尖利倒鈎。\n");
                 set("wield_msg", "$N「唰」的一聲從腰後抽出一柄$n握在手中。\n");
                 set("unwield_msg", "$N將手中的$n別回腰後。\n");
         }

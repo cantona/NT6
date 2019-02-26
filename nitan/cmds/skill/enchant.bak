@@ -60,11 +60,11 @@ int main(object me, string arg)
                         return notify_fail("只有黑水晶或超級黑水晶才可以用來附魔裝備屬性。\n");
 
                 if( i > 0 && member_array(ob_list[i], ob_list[0..i - 1]) != -1 )
-                        return notify_fail("抽取物品需要指明不同的物品，不要重復指"
+                        return notify_fail("抽取物品需要指明不同的物品，不要重複指"
                                            "明一件物品。\n");
         }
 
-        tell_object(me, HIW "\n你雙目微閉，將數樣物品凝于身前，運轉內勁迫"
+        tell_object(me, HIW "\n你雙目微閉，將數樣物品凝於身前，運轉內勁迫"
                         "使它們空中旋轉交融。\n" NOR);
 
         me->start_busy(1);
@@ -95,7 +95,7 @@ int main(object me, string arg)
                         "事情。\n\n" NOR, environment(me), ({me}));
 
                 tell_object(me, HIW "霎時間只見萬道光華疾閃而過，你急忙伸出雙手將黑水接住，"
-                        "發現掌心\n黑水蘊漾著七色霞光。\n\n" NOR);
+                        "發現掌心\n黑水藴漾着七色霞光。\n\n" NOR);
 
                 addn("max_jingli", -1, me);
 
@@ -103,7 +103,7 @@ int main(object me, string arg)
 
         }
         tell_object(me, HIR "可是過了半天，似乎沒有任何變化，你不禁一聲"
-                        "長嘆。\n" NOR);
+                        "長歎。\n" NOR);
 
         return 1;
 }

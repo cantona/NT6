@@ -11,7 +11,7 @@ void create()
                 set_default_object(__FILE__);
         else {
                 set("unit", "只");
-                set("long", "這是一只金光閃亮的銅鼓。\n");
+                set("long", "這是一隻金光閃亮的銅鼓。\n");
                 set("value", 70);
         }
         setup();

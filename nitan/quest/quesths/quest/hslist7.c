@@ -17,7 +17,7 @@ mapping *quest = ({
                 "id" :    "cloth",
                 "name" :  "布衣",
                 "bonus":  60,
-                "type":   "征",
+                "type":   "徵",
                 "object": "/d/city/obj/cloth.c",
         ]),
         ([

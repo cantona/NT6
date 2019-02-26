@@ -7,19 +7,19 @@ string type() { return "martial"; }
 string martialtype() { return "skill"; }
 
 mapping *action = ({
-([        "action" : "$N使一招"HIM"「群邪辟易」"NOR"，手中$w圈起，倏地刺出，銀星點點，劍尖直向$n的$l刺去",
+([        "action" : "$N使一招"HIM"「羣邪辟易」"NOR"，手中$w圈起，倏地刺出，銀星點點，劍尖直向$n的$l刺去",
         "lvl"    : 0,
-        "skill_name" : "群邪辟易"
+        "skill_name" : "羣邪辟易"
 ]),
-([        "action" : "$N一招"HIB"「鐘馗抉目」"NOR"，劍隨身轉，圍著$n身圍疾刺，劍光霍霍罩向$n的$l",
+([        "action" : "$N一招"HIB"「鍾馗抉目」"NOR"，劍隨身轉，圍着$n身圍疾刺，劍光霍霍罩向$n的$l",
         "lvl"    : 10,
-        "skill_name" : "鐘馗抉目"
+        "skill_name" : "鍾馗抉目"
 ]),
 ([        "action" : "$N舞動$w，一招"MAG"「花開見佛」"NOR"挾著無數劍光刺向$n的$l",
         "lvl"    : 20,
         "skill_name": "花開見佛"
 ]),
-([        "action" : "$N手中$w一聲清嘯，祭出"HIW"「流星趕月」"NOR"劍鋒閃爍不定，銀光飛舞，猛地裡一劍挺出，直刺$n$l",
+([        "action" : "$N手中$w一聲清嘯，祭出"HIW"「流星趕月」"NOR"劍鋒閃爍不定，銀光飛舞，猛地裏一劍挺出，直刺$n$l",
         "lvl"    : 30,
         "skill_name": "流星趕月"
 ]),
@@ -113,7 +113,7 @@ int help(object me)
         write(@HELP
 
     辟邪劍法原自《葵花寶典》。請help bixie-jian。
-    這套辟邪劍法是林震南傳下的，由于祖訓，且缺少練功的真正
+    這套辟邪劍法是林震南傳下的，由於祖訓，且缺少練功的真正
 法門，沒有自宮，威力就大不如了。
 
         學習要求：

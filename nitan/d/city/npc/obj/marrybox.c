@@ -14,7 +14,7 @@ void create()
         set("value", 50000);
         set("long", 
 "這是「俠客行一百」飛雪堂專為新婚夫婦定做的禮盒，
-楠木制的盒身，雕著精致的花紋，古色古香。\n");
+楠木製的盒身，雕着精緻的花紋，古色古香。\n");
         set("gift", 1);
 
         setup();
@@ -36,7 +36,7 @@ int do_open(string arg)
                         set("gift", 0);
                         me->start_busy(1);
                 }
-                else message("vision",HIC"禮盒已經被人打開過了，裡面空空的什麼也沒有。\n" NOR,me);
+                else message("vision",HIC"禮盒已經被人打開過了，裏面空空的什麼也沒有。\n" NOR,me);
                 return 1;
         }
 }

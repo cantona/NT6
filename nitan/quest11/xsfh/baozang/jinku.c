@@ -9,8 +9,8 @@ void create()
 {
         set("short",YEL"金庫"NOR);
         set("long", @long
-這裡是金庫，你可以看見偶爾失落的寶玉黃金，只是傳說中的那無數的
-寶藏，似乎並沒有發現。這裡明顯有一些打鬥的痕跡，怕是早有人來過。
+這裏是金庫，你可以看見偶爾失落的寶玉黃金，只是傳説中的那無數的
+寶藏，似乎並沒有發現。這裏明顯有一些打鬥的痕跡，怕是早有人來過。
 long);
         set("exits", ([
                 "north" : __DIR__"tiantan",
@@ -69,6 +69,6 @@ void greeting(object me)
 
 	tell_object(me,HIR"\n你四處轉了一圈，果然找到很多玉器黃金，還有一些值錢的名跡，看來這次不虛此行啊。\n"NOR);
 	tell_object(me,HIG"突然發現地上一疊不起眼的石板。你伸手撿了起來，竟然是高昌的名物！\n"NOR);
-	message("channel:rumor", HIM"【謠言】傳說在闖王寶藏的"+environment(me)->query("short")+HIM"裡，有人找到大量寶物黃金！\n"NOR,users() );
+	message("channel:rumor", HIM"【謠言】傳説在闖王寶藏的"+environment(me)->query("short")+HIM"裏，有人找到大量寶物黃金！\n"NOR,users() );
 	log_file("quest/FEIHU", sprintf("%s(%s)從寶藏中獲得無數的黃金玉器和名畫。經驗%d。", me->name(1),me->query("id"), me->query("combat_exp")) );
 }

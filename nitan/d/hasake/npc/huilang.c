@@ -15,7 +15,7 @@ void create()
         set("chat_chance", 5);
         set("chat_msg", ({
                 "「嗥~~~~」大灰狼發出一聲嗥叫。\n",
-                "大灰狼發出一聲嗥叫，好象隨時都要撲上來！\n",
+                "大灰狼發出一聲嗥叫，好像隨時都要撲上來！\n",
         }) );
         set_temp("apply/attack", 10);
         set_temp("apply/defense", 8);

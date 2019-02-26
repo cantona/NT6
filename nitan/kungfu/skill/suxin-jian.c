@@ -26,7 +26,7 @@ mapping *action = ({
         "lvl"    : 9,
         "damage_type" : "內傷"
 ]),
-([      "action" : "$N使「花前月下」一招自上而下搏擊，模擬冰輪橫空、清光舖地的光景",
+([      "action" : "$N使「花前月下」一招自上而下搏擊，模擬冰輪橫空、清光鋪地的光景",
         "force"  : 6,
         "attack" : 2,
         "dodge"  : 15,
@@ -71,7 +71,7 @@ mapping *action = ({
         "lvl"    : 34,
         "damage_type" : "刺傷"
 ]),
-([      "action" : "$N一招「鬆下對弈」，$w自右向左揮一個大弧，刺向$n的$l",
+([      "action" : "$N一招「松下對弈」，$w自右向左揮一個大弧，刺向$n的$l",
         "force"  : 40,
         "attack" : 11,
         "dodge"  : 15,
@@ -80,7 +80,7 @@ mapping *action = ({
         "lvl"    : 39,
         "damage_type" : "刺傷"
 ]),
-([      "action" : "$N左手如拂五弦，竟以掌為劍攻向$n，卻是一招「池邊調鶴」",
+([      "action" : "$N左手如拂五絃，竟以掌為劍攻向$n，卻是一招「池邊調鶴」",
         "force"  : 50,
         "attack" : 14,
         "dodge"  : 10,
@@ -125,7 +125,7 @@ mapping *action = ({
         "lvl"    : 64,
         "damage_type" : "內傷"
 ]),
-([      "action" : "$N手中$w由下而上卷起，猶如打起竹簾一般，卻是「竹簾臨池」",
+([      "action" : "$N手中$w由下而上捲起，猶如打起竹簾一般，卻是「竹簾臨池」",
         "force"  : 100,
         "attack" : 30,
         "dodge"  : 15,
@@ -224,7 +224,7 @@ mapping *action = ({
         "lvl"    : 124,
         "damage_type" : "刺傷"
 ]),
-([      "action" : "$N一招「牡丹含淚」，$w繞出數個銀圈，平平地向$n的$l卷去",
+([      "action" : "$N一招「牡丹含淚」，$w繞出數個銀圈，平平地向$n的$l捲去",
         "force"  : 270,
         "attack" : 57,
         "dodge"  : 45,
@@ -233,7 +233,7 @@ mapping *action = ({
         "lvl"    : 131,
         "damage_type" : "刺傷"
 ]),
-([      "action" : "$N左腳輕點地面，身形往前一撲，一招「芍藥蘊珠」，$w向$n的$l刺去",
+([      "action" : "$N左腳輕點地面，身形往前一撲，一招「芍藥藴珠」，$w向$n的$l刺去",
         "force"  : 290,
         "attack" : 52,
         "dodge"  : 45,

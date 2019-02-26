@@ -7,7 +7,7 @@ string type() { return "martial"; }
 string martialtype() { return "skill"; }
 
 mapping *action = ({
-([        "action" : "$N雙指並攏，一式"HIY"「佛恩濟世」"NOR"，和身而上，左右手一前一後戳向$n的胸腹間",
+([        "action" : "$N雙指併攏，一式"HIY"「佛恩濟世」"NOR"，和身而上，左右手一前一後戳向$n的胸腹間",
         "lvl" : 0,
         "skill_name" : "佛恩濟世"
 ]),
@@ -19,7 +19,7 @@ mapping *action = ({
         "lvl" : 40,
         "skill_name" : "佛門廣渡"
 ]),
-([        "action" : "$N盤膝跌坐，一式"HIY"「佛法無邊」"NOR"，左手握拳托肘，右手拇指直立，遙遙對著$n一捺",
+([        "action" : "$N盤膝跌坐，一式"HIY"「佛法無邊」"NOR"，左手握拳託肘，右手拇指直立，遙遙對着$n一捺",
         "lvl" : 60,
         "skill_name" : "佛法無邊"
 ])

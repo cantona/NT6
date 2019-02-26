@@ -8,7 +8,7 @@ void create()
         set("short", "山洞");
         set("long", @LONG
 山洞內有塊光溜溜的大石，不知道曾有多少華山派的前輩在此思
-過面壁，以致這塊大石竟被坐得滑溜。石壁(wall)左側刻著「風清揚
+過面壁，以致這塊大石竟被坐得滑溜。石壁(wall)左側刻着「風清揚
 」三個大字，是以利器所刻，筆劃蒼勁，深有半寸。這三字刻得勁力
 非凡，想必其人武功一定十分了得。
 LONG );
@@ -49,7 +49,7 @@ int do_break(string arg)
                 return 1;
         }
 
-        message_vision(HIC "$N只聽一聲轟響，石壁竟然被捅穿了，原來裡面有一個大洞！\n"NOR, me);
+        message_vision(HIC "$N只聽一聲轟響，石壁竟然被捅穿了，原來裏面有一個大洞！\n"NOR, me);
         set("exits/enter",__DIR__"sgyhole");
         addn("neili", -200, me);
         remove_call_out("close");

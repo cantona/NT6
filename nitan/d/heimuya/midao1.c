@@ -6,9 +6,9 @@ inherit ROOM;
 
 void create()
 {
-     set("short", "秘道");
+     set("short", "祕道");
         set("long", @LONG
-這是日月神教極其秘密的通道。是黑木崖與中原教眾取得聯系的
+這是日月神教極其祕密的通道。是黑木崖與中原教眾取得聯繫的
 捷徑。
 LONG );
      set("exits", ([

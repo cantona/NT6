@@ -9,7 +9,7 @@ void create()
             set_default_object(__FILE__);
         else {
         set("long",
-"這是一杯顏色碧綠、香味濃鬱上等好茶。是招待桃花島來客的。!\n");
+"這是一杯顏色碧綠、香味濃郁上等好茶。是招待桃花島來客的。!\n");
                 set("unit", "杯");
                 set("value", 20);
                 set("max_liquid", 10);

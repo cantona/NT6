@@ -10,7 +10,7 @@ void create()
 {
         set_name("武三通", ({ "wu santong", "nong", "farmer", "wu" }));
         set("long",
-                        "一個中年農夫。\n");
+                        "一箇中年農夫。\n");
         set("gender", "男性");
         set("age", 35);
         set("attitude", "peaceful");

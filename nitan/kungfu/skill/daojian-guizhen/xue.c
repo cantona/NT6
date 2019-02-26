@@ -47,12 +47,12 @@ int perform(object me, object target)
                 return notify_fail("你現在的真氣不夠，難以施展" + name() + "。\n");
 
         if (! living(target))
-                return notify_fail("對方都已經這樣了，用不著這麼費力吧？\n");
+                return notify_fail("對方都已經這樣了，用不着這麼費力吧？\n");
 
         msg = HIW "$N" HIW "手中" + weapon->name() + HIW "驀地一抖"
               "，將「" NOR + WHT "胡家刀法" HIW "」並「" NOR + WHT
               "苗家劍法" HIW "」連環施出。霎時寒\n光點點，猶如夜隕"
-              "劃空，舖天蓋地罩向$n" HIW "，正是一招「" HIW "天下"
+              "劃空，鋪天蓋地罩向$n" HIW "，正是一招「" HIW "天下"
               "有" HIR "血" HIW "」。\n" NOR;
 
         ap = attack_power(me, "blade");

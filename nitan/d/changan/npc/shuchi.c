@@ -8,7 +8,7 @@ void create()
         set_name("書痴", ({ "shu chi", "chi", }) );
         set("gender", "男性" );
         set("age", 40);
-        set("title", "匯文閣老板");
+        set("title", "匯文閣老闆");
         set("combat_exp", 50000);
         set_skill("dodge", 50);
         set_skill("parry", 50);

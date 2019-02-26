@@ -2,7 +2,7 @@ inherit COMBINED_ITEM;
 
 void create()
 {
-        set_name("僵屍血", ({"zombie blood"}) );
+        set_name("殭屍血", ({"zombie blood"}) );
         set("long", name()+"\n");
         set("unit", "些");
         set("base_unit", "滴");

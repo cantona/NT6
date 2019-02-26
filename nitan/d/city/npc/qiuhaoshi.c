@@ -17,7 +17,7 @@ void create()
     set( "attribute", "peaceful" );
 
     set( "long", @LONG
-仇好石是揚州的治園名家，據說幾個著名的園子都出自他的手小。
+仇好石是揚州的治園名家，據説幾個著名的園子都出自他的手小。
 他個子不高，腦袋卻是極大，如墨刷的眉毛，小小的眼睛，大大
 的鼻子，生就一副奇相。
 LONG
@@ -37,10 +37,10 @@ LONG
     ]) );
         set("chat_chance", 3);
         set("chat_msg", ({
-        "。。。仇好石看了你一眼，卻什麼也不說。",
+        "。。。仇好石看了你一眼，卻什麼也不説。",
         "你為何來煩我？",
         "何必把時間浪費在我這樣一個老頭子身上呢？",
-        "唉。。仇好石長嘆一聲，轉身又開始喝酒了。"
+        "唉。。仇好石長歎一聲，轉身又開始喝酒了。"
     }) );
     setup();
     carry_object(CLOTH_DIR"jinduan")->wear();
@@ -62,7 +62,7 @@ void accepted(object me)
     command( "haha" );
     command("tell"+query("id", me)+"你是任何得知我最好此酒？\n");
     command( "en" );
-    command("tell"+query("id", me)+"對于你的疑惑，我當知無不言。\n");
+    command("tell"+query("id", me)+"對於你的疑惑，我當知無不言。\n");
     command("haha"+query("id", me));
     command( "drink skin" );
     me->set_temp("can_ask_qiu");
@@ -72,8 +72,8 @@ string ask_room1()
 {
     if( query("can_ask_qiu", this_player()) )
     {
-        command( "say 小玲瓏山館最有意思的地方就是疏峰館了，不過\n"
-         + "在我設計好後據說楊先生有改了一下，我卻沒看出來。\n"  );
+        command( "say 小玲瓏山館最有意思的地方就是疏峯館了，不過\n"
+         + "在我設計好後據説楊先生有改了一下，我卻沒看出來。\n"  );
         return "別的地方，你可以去看看，看看老夫我的治園手藝如何。";
     }
     else
@@ -89,6 +89,6 @@ string ask_room2()
         return "郡圃一般人可都進不去的。\n";
     }
     else
-        return "郡圃乃是前任知州大人托我設計的。\n";
+        return "郡圃乃是前任知州大人託我設計的。\n";
 }
 

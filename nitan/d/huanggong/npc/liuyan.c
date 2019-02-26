@@ -8,7 +8,7 @@ void create()
         set("title",HIY"神龍教"HIR"赤龍使"NOR"座下弟子");
         set("nickname",HIY"身輕如燕"NOR);
         set("long","一個三十五六歲年紀的宮女，體態極肥，腳步卻甚輕盈，臉如
-滿月，眼小嘴大，笑嘻嘻的看著你。\n");
+滿月，眼小嘴大，笑嘻嘻的看着你。\n");
         set("gender", "女性");
         set("attitude", "peaceful"); 
         set("age", 35);

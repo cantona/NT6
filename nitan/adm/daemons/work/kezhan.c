@@ -4,7 +4,7 @@
 
 
 
-// 獲準工作(老板)
+// 獲准工作(老闆)
 
 //     |
 
@@ -100,7 +100,7 @@ public int request_work(object me, object ob)
 
         if (playerp(ob) || ob->query("work/name") != NAME)
 
-                return fail_msg(ob->name() + "望著你呵呵傻笑。\n");
+                return fail_msg(ob->name() + "望着你呵呵傻笑。\n");
 
 
 
@@ -108,7 +108,7 @@ public int request_work(object me, object ob)
 
                 return fail_msg(ob->name() + "一皺眉道：“現在我們"
 
-                                "這裡不缺人手，你等人少的時候再來吧"
+                                "這裏不缺人手，你等人少的時候再來吧"
 
                                 "。”\n");
 
@@ -170,7 +170,7 @@ public int request_work(object me, object ob)
 
         case 2:
 
-                message_vision(CYN "$N" NOR CYN "皺著眉頭對$n" NOR CYN
+                message_vision(CYN "$N" NOR CYN "皺着眉頭對$n" NOR CYN
 
                                "道：“你不是正在做事嘛？快回去，做完再"
 
@@ -234,9 +234,9 @@ public string assign_work(object me)
 
                 dish->move(me);
 
-                msg = "喏，這裡有" + chinese_number(i) + "個盤子(dish)，"
+                msg = "喏，這裏有" + chinese_number(i) + "個盤子(dish)，"
 
-                      "快幫我洗洗(wash)，急著用呢。";
+                      "快幫我洗洗(wash)，急着用呢。";
 
                 me->set_temp("work/" + NAME + "/type", "wash");
 
@@ -252,7 +252,7 @@ public string assign_work(object me)
 
                 besom->move(me);
 
-                msg = "唔，這裡的地(floor)也夠臟的了，你把這裡四周給掃掃"
+                msg = "唔，這裏的地(floor)也夠髒的了，你把這裏四周給掃掃"
 
                       "(sweep)，手腳麻利些。";
 
@@ -304,7 +304,7 @@ public int start_work(object me)
 
         if (me->is_busy())
 
-                return fail_msg("你忙完手裡的事情再工作吧。\n");
+                return fail_msg("你忙完手裏的事情再工作吧。\n");
 
 
 
@@ -316,13 +316,13 @@ public int start_work(object me)
 
                 if (! objectp(ob = present("dirty dish", me)))
 
-                        return fail_msg("你的身上已經沒有臟盤子了。\n");
+                        return fail_msg("你的身上已經沒有髒盤子了。\n");
 
 
 
                 if (! environment(me)->query("resource/water"))
 
-                        return fail_msg("這裡沒有水，怎麼洗呢？\n");
+                        return fail_msg("這裏沒有水，怎麼洗呢？\n");
 
 
 
@@ -364,7 +364,7 @@ public int start_work(object me)
 
                     me->query_temp("work/" + NAME + "/zone") != query_zone(environment(me)))
 
-                        return fail_msg("這裡可不是店小二叫你掃的地方呀。\n");
+                        return fail_msg("這裏可不是店小二叫你掃的地方呀。\n");
 
 
 
@@ -372,7 +372,7 @@ public int start_work(object me)
 
                     member_array(file_name(environment(me)), place) != -1)
 
-                        return fail_msg("這個地方你已經掃過了，不必再重復一次。\n");
+                        return fail_msg("這個地方你已經掃過了，不必再重複一次。\n");
 
 
 
@@ -456,19 +456,19 @@ int continue_working(object me)
 
                 case 1:
 
-                        msg = "$N抓起一個臟盤子，浸入水盆。";
+                        msg = "$N抓起一個髒盤子，浸入水盆。";
 
                         break;
 
                 case 2:
 
-                        msg = "$N往盆子裡倒了一些皂角液。";
+                        msg = "$N往盆子裏倒了一些皂角液。";
 
                         break;
 
                 case 3:
 
-                        msg = "$N左手捏著盤子，右手拿著抹布，開始擦抹。";
+                        msg = "$N左手捏着盤子，右手拿着抹布，開始擦抹。";
 
                         break;
 
@@ -488,13 +488,13 @@ int continue_working(object me)
 
                 case 7:
 
-                        msg = "$N不斷擦抹著盤子，盤子上的污垢漸漸除去。";
+                        msg = "$N不斷擦抹着盤子，盤子上的污垢漸漸除去。";
 
                         break;
 
                 default:
 
-                        msg = "$N洗好以後，將盤子透幹，用抹布一抹，放在旁邊晾幹。";
+                        msg = "$N洗好以後，將盤子透幹，用抹布一抹，放在旁邊晾乾。";
 
                         finish = 1;
 
@@ -518,7 +518,7 @@ int continue_working(object me)
 
                 case 2:
 
-                        msg = "$N往地上洒了點水。";
+                        msg = "$N往地上灑了點水。";
 
                         break;
 
@@ -538,13 +538,13 @@ int continue_working(object me)
 
                 case 5:
 
-                        msg = "$N鏟起腳邊的垃圾，繼續仔細地掃地。";
+                        msg = "$N剷起腳邊的垃圾，繼續仔細地掃地。";
 
                         break;
 
                 case 7:
 
-                        msg = "$N不斷掃拭著地面，地面漸漸變得光可鑒人。";
+                        msg = "$N不斷掃拭着地面，地面漸漸變得光可鑑人。";
 
                         break;
 
@@ -644,7 +644,7 @@ int continue_working(object me)
 
                                 me->set_temp("work/" + NAME + "/state", 3);
 
-                        msg += "你洗好了一個幹凈的盤子。\n";
+                        msg += "你洗好了一個乾淨的盤子。\n";
 
                 }
 
@@ -658,7 +658,7 @@ int continue_working(object me)
 
                         me->set_temp("work/" + NAME + "/state", 3);
 
-                        msg += "你把這個地方掃幹凈了。\n";
+                        msg += "你把這個地方掃乾淨了。\n";
 
                 }
 
@@ -808,7 +808,7 @@ public int finish_work(object me, object ob, object obj)
 
                 write(sort_msg(CYN + ob->name() + "看了看" + obj->name() +
 
-                               "，點點頭道：“嗯，還不錯，這裡是你的工錢，"
+                               "，點點頭道：“嗯，還不錯，這裏是你的工錢，"
 
                                "收好了。”\n" NOR));
 
@@ -840,9 +840,9 @@ public int finish_work(object me, object ob, object obj)
 
                 {
 
-                        write(CYN + ob->name() + "瞪大眼睛望著你道：“你哪"
+                        write(CYN + ob->name() + "瞪大眼睛望着你道：“你哪"
 
-                              "裡也沒掃呀？”\n" NOR);
+                              "裏也沒掃呀？”\n" NOR);
 
                         return 0;
 
@@ -852,7 +852,7 @@ public int finish_work(object me, object ob, object obj)
 
                 write(sort_msg(CYN + ob->name() + "收起" + obj->name() +
 
-                               "，點點頭道：“嗯，還不錯，這裡是你的工錢，"
+                               "，點點頭道：“嗯，還不錯，這裏是你的工錢，"
 
                                "收好了。”\n" NOR));
 
@@ -868,7 +868,7 @@ public int finish_work(object me, object ob, object obj)
 
         default:
 
-                write(CYN + ob->name() + "抓了抓腦袋道：“你幹的這是什"
+                write(CYN + ob->name() + "抓了抓腦袋道：“你乾的這是什"
 
                       "麼呢？我怎麼不知道呀。”\n" NOR);
 

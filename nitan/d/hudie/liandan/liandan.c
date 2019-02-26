@@ -8,8 +8,8 @@ void create()
 {
         set("short", HIY"煉丹房"NOR);
         set("long", @LONG
-這裡是華佗的煉丹室,房間中央放著一個煉丹爐,
-玩家們可以拿著自己挖掘來的草藥練出自己所需的丹丹藥!
+這裏是華佗的煉丹室,房間中央放着一個煉丹爐,
+玩家們可以拿着自己挖掘來的草藥練出自己所需的丹丹藥!
 LONG
         );
         set("exits", ([
@@ -95,7 +95,7 @@ int do_liandan(string arg)
     addn("combat_exp", zjb*1000+random(1000), me);
     addn("potential", zjb*100+random(500), me);
     me->start_busy(5);
-    write(HIR"你在煉丹的時候不知不覺經驗也隨著上去了!\n"NOR);
+    write(HIR"你在煉丹的時候不知不覺經驗也隨着上去了!\n"NOR);
 
     if (shoubi==32 && zhuyao==1) {
     delete_temp("liandan", me);
@@ -130,7 +130,7 @@ int do_liandan(string arg)
     dan = new("/d/zjb/yao/shoubi4");
     set("zhuren", ""+query("id", me)+"", dan);
     dan->move(me);
-    return notify_fail(HIG"你練出了治療臂傷的良藥復方血竭酊!\n"NOR);
+    return notify_fail(HIG"你練出了治療臂傷的良藥複方血竭酊!\n"NOR);
     }
 
     delete_temp("liandan", me);
@@ -139,7 +139,7 @@ int do_liandan(string arg)
     dan = new("/d/zjb/yao/chayao");
     set("zhuren", ""+query("id", me)+"", dan);
     dan->move(me);
-    return notify_fail(HIW"你的配方好象不對,練出一個無名藥品!\n"NOR);
+    return notify_fail(HIW"你的配方好像不對,練出一個無名藥品!\n"NOR);
     }
 
     if (arg == "tui") {
@@ -151,7 +151,7 @@ int do_liandan(string arg)
     addn("combat_exp", zjb*1000+random(1000), me);
     addn("potential", zjb*100+random(500), me);
     me->start_busy(5);
-    write(HIR"你在煉丹的時候不知不覺經驗也隨著上去了!\n"NOR);
+    write(HIR"你在煉丹的時候不知不覺經驗也隨着上去了!\n"NOR);
 
     if (tui==74 && zhuyao==11) {
     delete_temp("liandan", me);
@@ -178,7 +178,7 @@ int do_liandan(string arg)
     dan = new("/d/zjb/yao/chayao");
     set("zhuren", ""+query("id", me)+"", dan);
     dan->move(me);
-    return notify_fail(HIW"你的配方好象不對,練出一個無名藥品!\n"NOR);
+    return notify_fail(HIW"你的配方好像不對,練出一個無名藥品!\n"NOR);
     }
     
     if (arg == "all") {
@@ -190,7 +190,7 @@ int do_liandan(string arg)
     addn("combat_exp", zjb*1000+random(1000), me);
     addn("potential", zjb*100+random(500), me);
     me->start_busy(5);
-    write(HIR"你在煉丹的時候不知不覺經驗也隨著上去了!\n"NOR);
+    write(HIR"你在煉丹的時候不知不覺經驗也隨着上去了!\n"NOR);
 
     if (all==51 && zhuyao==21) {
     delete_temp("liandan", me);
@@ -199,7 +199,7 @@ int do_liandan(string arg)
     dan = new("/d/zjb/yao/all1");
     set("zhuren", ""+query("id", me)+"", dan);
     dan->move(me);
-    return notify_fail(HIG"你練出了療傷聖藥--袪腐生肌散!\n"NOR);
+    return notify_fail(HIG"你練出了療傷聖藥--祛腐生肌散!\n"NOR);
     }
     if (all==64 && zhuyao==22) {
     delete_temp("liandan", me);
@@ -208,7 +208,7 @@ int do_liandan(string arg)
     dan = new("/d/zjb/yao/all2");
     set("zhuren", ""+query("id", me)+"", dan);
     dan->move(me);
-    return notify_fail(HIG"你練出了療傷聖藥--七厘丹!\n"NOR);
+    return notify_fail(HIG"你練出了療傷聖藥--七釐丹!\n"NOR);
     }
     if (all==40 && zhuyao==23) {
     delete_temp("liandan", me);
@@ -226,7 +226,7 @@ int do_liandan(string arg)
     dan = new("/d/zjb/yao/all4");
     set("zhuren", ""+query("id", me)+"", dan);
     dan->move(me);
-    return notify_fail(HIG"你練出了療傷聖藥--朱砂沒藥散!\n"NOR);
+    return notify_fail(HIG"你練出了療傷聖藥--硃砂沒藥散!\n"NOR);
     }
     
     delete_temp("liandan", me);
@@ -235,7 +235,7 @@ int do_liandan(string arg)
     dan = new("/d/zjb/yao/chayao");
     set("zhuren", ""+query("id", me)+"", dan);
     dan->move(me);
-    return notify_fail(HIW"你的配方好象不對,練出一個無名藥品!\n"NOR);
+    return notify_fail(HIW"你的配方好像不對,練出一個無名藥品!\n"NOR);
     }
 
 // By zjb@ty 以下是隨機煉丹的程序!    
@@ -249,7 +249,7 @@ int do_liandan(string arg)
     addn("combat_exp", zjb*1000+random(1000), me);
     addn("potential", zjb*100+random(500), me);
     me->start_busy(5);
-    write(HIR"你在煉丹的時候不知不覺經驗也隨著上去了!\n"NOR);
+    write(HIR"你在煉丹的時候不知不覺經驗也隨着上去了!\n"NOR);
 
     if ( liandan > 500 && zjb > 15) {
     if ( zjb>15 && zjb<20 && all2 < 211 &&all2 > 100 
@@ -385,7 +385,7 @@ int do_liandan(string arg)
     dan = new("/d/zjb/yao/dan2");
     set("zhuren", ""+query("id", me)+"", dan);
     dan->move(me);
-    return notify_fail(HIG"你練出了可使自己使自己脫離busy的疾風丹\n"NOR);
+    return notify_fail(HIG"你練出了可使自己使自己脱離busy的疾風丹\n"NOR);
     }
     
     if ( zjb < 6 && zjb > 3 && all2 < 100 && all2 > 20 

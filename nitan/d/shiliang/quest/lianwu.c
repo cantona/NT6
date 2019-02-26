@@ -8,7 +8,7 @@ void create()
 {
         set("short",HIG "練武場" NOR);
         set("long", @LONG
-這是溫家堡的練武場，一塊空盪盪的場地。
+這是温家堡的練武場，一塊空蕩蕩的場地。
 LONG);
         set("exits", ([ 
           "out" : "/d/xiangyang/wen/damen",
@@ -61,11 +61,11 @@ void killme(object me)
 int valid_leave(object me, string dir)
 {
        if (me->is_fighting())
-                return notify_fail(RED"\n溫家五老大聲喝道：哪裡走。一把攔住你，你竟然無法離開。\n"NOR);
+                return notify_fail(RED"\n温家五老大聲喝道：哪裏走。一把攔住你，你竟然無法離開。\n"NOR);
        if (present("heiyi ren",this_object()))
-                return notify_fail(RED"\n溫家五老大聲喝道：哪裡走。一把攔住你，你竟然無法離開。\n"NOR);
+                return notify_fail(RED"\n温家五老大聲喝道：哪裏走。一把攔住你，你竟然無法離開。\n"NOR);
                 if(me->query_condition("killer")) 
-                          return notify_fail(RED"\n怎麼進來的？？這裡等wiz吧。\n"NOR);
+                          return notify_fail(RED"\n怎麼進來的？？這裏等wiz吧。\n"NOR);
            if( query_temp(QUESTJINSHE+"kill", me )
                 && query_temp(QUESTJINSHE+"have_kill", me)){
               delete_temp(QUESTJINSHE+"start_kill", me);

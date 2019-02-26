@@ -32,7 +32,7 @@ I@@L I@@@_____@@@L   @@@  I@@M~~@@@@~~     I@@P I@@ I@@II@@I ~~~~@@@@~~~-@@@~~~~
 I@@@  I@@ I@@ @@@ .  @@@  I@@I  I@@I  _    I@@I '~~'I@@I~~'  ~~~~~~~~@@@@~~~~~~~
 I@@I  a@@ I@@ @@@_%  ~-@bz`@@@zz-I@@zd~    I@@I     I@@I        I-z_z@@@P       \n"NOR;
 
-        msg += HIY"\n跟著拳隨聲至，勢如急風驟雨一般，逕直擊往$n的胸腹要害！！！\n"NOR;  
+        msg += HIY"\n跟着拳隨聲至，勢如急風驟雨一般，逕直擊往$n的胸腹要害！！！\n"NOR;  
 
         if( random(query("combat_exp", me))>query("combat_exp", target)/2 )
         { 

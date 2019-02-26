@@ -37,7 +37,7 @@ int perform(object me, object target)
                 return notify_fail("你沒有激發金猿棍法，難以施展" QIAN "。\n");
 
         if (! living(target))
-                return notify_fail("對方都已經這樣了，用不著這麼費力吧？\n");
+                return notify_fail("對方都已經這樣了，用不着這麼費力吧？\n");
 
         msg = HIY "$N" HIY "大步上前，怒吼一聲，手中" + weapon->name() +
               HIY "急速舞動，霎時間飛沙走石，罡氣激盪。\n便在狂沙颶風中"

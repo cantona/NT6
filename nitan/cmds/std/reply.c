@@ -19,12 +19,12 @@ int main(object me, string arg)
                 return notify_fail("你要回答什麼？\n");
 
         if( !stringp(target=query_temp("reply", me)) )
-                return notify_fail("剛才沒有人和你說過話。\n");
+                return notify_fail("剛才沒有人和你説過話。\n");
 
         if (sscanf(target, "%s@%s", target, mud) == 2)
         {
                 GTELL->send_gtell(lower_case(mud), lower_case(target), me, arg);
-                write("網路訊息已送出，可能要稍候才能得到回應。\n");
+                write("網路訊息已送出，可能要稍候才能得到迴應。\n");
                 return 1;
         }
 
@@ -33,7 +33,7 @@ int main(object me, string arg)
         {
                 if (MESSAGE_D->send_msg_to(me, target, arg))
                         return 1;
-                return notify_fail("剛才和你說話的人現在已經離開遊戲了。\n");
+                return notify_fail("剛才和你説話的人現在已經離開遊戲了。\n");
         }
 
         no_tell=query("env/no_tell", obj);
@@ -49,7 +49,7 @@ int main(object me, string arg)
                 return notify_fail("這個人現在不在線上，聽不到你的話。\n");
 
         if (! living(obj))
-                return notify_fail("這人現在恐怕聽不到你說的話了...\n");
+                return notify_fail("這人現在恐怕聽不到你説的話了...\n");
 
         reply_out = sprintf(HIG "%s回答你：%s\n" NOR,
                             me->name(1)+HIG"("+query("id", me)+")",arg);
@@ -80,7 +80,7 @@ int help(object me)
         write(@HELP
 指令格式：reply <訊息>
 
-你可以用這個指令和剛才用 tell 和你說話的使用者說話。在多人和
+你可以用這個指令和剛才用 tell 和你説話的使用者説話。在多人和
 你交談的時候，這個命令通常不會那麼好用，因為有可能在你 reply
 的時候又有人向你發送信息而導致你應答錯誤，在這種情況下你可以
 設置參數jam_talk，選擇阻塞式交談。當你的提示符 >  的顏色變成

@@ -52,7 +52,7 @@ int perform(object me, object target)
 
 
         msg = HIM "\n$N" HIM "傲然一笑，手中"+ weapon->name() + HIM "挽出一個完美的滿月，周圍點點星光燦爛閃爍，儼然一幅「眾星捧月」的美景。\n"
-              HIM "忽然間星圖變幻，萬千星光護著一道朦朧華麗的月光向" HIM "$n" HIM "不斷電射而去。\n" NOR;
+              HIM "忽然間星圖變幻，萬千星光護着一道朦朧華麗的月光向" HIM "$n" HIM "不斷電射而去。\n" NOR;
 
         message_combatd(msg, me, target);
 

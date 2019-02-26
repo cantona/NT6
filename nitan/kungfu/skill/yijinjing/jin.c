@@ -26,7 +26,7 @@ int exert(object me)
                 return notify_fail("你的內力修為這麼差，還想使用「金剛不壞體神功」？\n");
 
         if( query_temp("jin", me) )
-                return notify_fail("你正在運用著呢！\n");
+                return notify_fail("你正在運用着呢！\n");
 
         if( query_temp("sl/jiuyang", me) )
                 return notify_fail("你正在運用「少林九陽神功」！\n");
@@ -52,7 +52,7 @@ void remove_effect(object me, int count)
                 delete_temp("nopoison", me);
                 delete_temp("jin", me);
                 addn_temp("apply/armor", -me->query_skill("yijinjing",1), me);
-                message_vision(HIR"\n$N雙手合十，散去了凝聚于全身上下的「金剛不壞體神功」。\n"NOR, me);
+                message_vision(HIR"\n$N雙手合十，散去了凝聚於全身上下的「金剛不壞體神功」。\n"NOR, me);
                 return;
         }
         else {
@@ -66,7 +66,7 @@ int help(object me)
         write(@HELP
         金剛，堅利之意，歷百劫千生，流轉六道，而覺性不壞。即以金剛之堅，喻
         般若體；以金剛之利，喻般若用。金剛不壞體神功為少林第一大絕技，以易
-        筋經為本，使神、體、氣三者相融，循序漸進，持之以恆，便能抵御心魔，
+        筋經為本，使神、體、氣三者相融，循序漸進，持之以恆，便能抵禦心魔，
         抗擊外力。
 
         要求：  易筋經等級 200 以上；

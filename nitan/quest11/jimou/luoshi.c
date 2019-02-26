@@ -39,7 +39,7 @@ void main(object ob, string who)
 
 	x2 = TROOP_D->get_troop_position(e_id)[0];
                 y2 = TROOP_D->get_troop_position(e_id)[1];
-	if (MAP_D->get_map_cell(where,y2,x2,"m") != "Λ")
+	if (MAP_D->get_map_cell(where,y2,x2,"m") != "∧")
 		{
 		write("對方不在山區，無法施計。\n");
 		return;}
@@ -54,7 +54,7 @@ void main(object ob, string who)
                 // ablility of general, zhenxing, dixing, etc.
                 // Now the damage depends only on the No of bowman
 	ob->simple_action(SG_SKILL_D->query_use("luoshi"));
-	ob->start_busy(10, "你正忙于施計呢。\n");
+	ob->start_busy(10, "你正忙於施計呢。\n");
 	load_object("/daemons/cast_d.c")->reg_player(ob->query_primary_id(),"luoshi");
         ob->award_exp(ob->query_sk_level("sk_zhimou")/2+random(20), "luoshi");
 	call_out("show_result", 10+random(5), ob, who, p_skill, p_id, e_id);

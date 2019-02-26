@@ -8,8 +8,8 @@ void create()
 {
             set("short",HIW"大廳"NOR);
             set("long",@LONG
-這裡是寶藏圖標志的天壇，巨大的廣場難以想象當初如何建造。中間堆落
-著一個巨大的天壇，看來是祭祀所用，可能因為年代的久遠，已經有些塌陷。
+這裏是寶藏圖標誌的天壇，巨大的廣場難以想象當初如何建造。中間堆落
+着一個巨大的天壇，看來是祭祀所用，可能因為年代的久遠，已經有些塌陷。
 但不影響其宏大的氣勢。
 LONG
        );
@@ -44,18 +44,18 @@ int i;
      me->delete_temp("out");
      me->delete_temp(QUESTDIR5+"search_ok");
      me->delete_temp(QUESTDIR5+"search");
-          message_vision(YEL"突然$N聽到一個聲音道：“這裡不歡迎$N！”\n"NOR,me);
+          message_vision(YEL"突然$N聽到一個聲音道：“這裏不歡迎$N！”\n"NOR,me);
     if(!wizardp(me)) 
       {
              me->move("/d/xiangyang/damen");  
-           tell_object(me,YEL"你抬眼一看，這裡竟然是武館大門，剛才的一切像夢一樣虛幻。\n"NOR); 
+           tell_object(me,YEL"你抬眼一看，這裏竟然是武館大門，剛才的一切像夢一樣虛幻。\n"NOR); 
     }
     else 
      {
           if(random(2)) message_vision(YEL"$N似乎有些氣憤，張口罵道：“沒看出我是誰啊？我是巫師"+me->query("name")+"”\n\n"NOR,me);
           else message_vision(YEL"$N哼了一聲，突然渾身散發出神才有的氣勢，額頭隱隱約約顯出幾個金字："NOR+HIY+me->query("name")+NOR+YEL"！\n\n"NOR,me);
           message_vision(YEL"剛才鳥叫的聲音好像也似乎因為$N的氣勢萎了回去。$N不由地得意地一笑。\n"NOR,me);
-          message_vision(YEL"突然一個角落裡飛出一只鞋子，砰的一聲砸到$N頭上，接著一個聲音道：“管你是誰，TMD”\n"NOR ,me);
+          message_vision(YEL"突然一個角落裏飛出一隻鞋子，砰的一聲砸到$N頭上，接着一個聲音道：“管你是誰，TMD”\n"NOR ,me);
           me->unconcious();
     }
      return;   
@@ -66,7 +66,7 @@ int i;
      me->move("/d/xiangyang/damen");  
      me->delete_temp(QUESTDIR5+"search_ok");
       me->delete_temp(QUESTDIR5+"search");
-     tell_object(me,YEL"你抬眼一看，這裡竟然是武館大門，剛才的一切像夢一樣虛幻。\n"NOR); 
+     tell_object(me,YEL"你抬眼一看，這裏竟然是武館大門，剛才的一切像夢一樣虛幻。\n"NOR); 
      return;   
    }
   ob->set("exits/up",me->query_temp(QUESTDIR5+"map_where"));

@@ -44,7 +44,7 @@ void dest(object ob)
 {
 	if (!ob) return;
 	if (!environment(ob)) return;
-	message_vision("$N好象突然想起什麼事，急急忙忙的走開了。\n", ob);
+	message_vision("$N好像突然想起什麼事，急急忙忙的走開了。\n", ob);
 	destruct(ob);
 }
 

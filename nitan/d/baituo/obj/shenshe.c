@@ -33,7 +33,7 @@ int do_home()
         if( query("family/family_name", me) != "歐陽世家" )
                 return notify_fail("你撓撓腦袋，不知道怎麼使用「引路神蛇」。\n");
 
-        message_vision("$N從懷中掏出「引路神蛇」，口裡不知念了些什麼，\n"
+        message_vision("$N從懷中掏出「引路神蛇」，口裏不知唸了些什麼，\n"
                        "就見「引路神蛇」吐吐芯子，搖頭擺尾地把$N往白駝山帶去～～～\n",me);
         me->move("/d/baituo/damen");
         return 1;

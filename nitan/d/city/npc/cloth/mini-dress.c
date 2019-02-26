@@ -6,7 +6,7 @@ inherit EQUIP;
 
 void create()
 {
-        set_name( BLU "彩緞緊身襖" NOR, ({ "jinshen ao", "jinshen", "ao" }) );
+        set_name( BLU "綵緞緊身襖" NOR, ({ "jinshen ao", "jinshen", "ao" }) );
         set_weight(700);
         if( clonep() )
                 set_default_object(__FILE__);
@@ -18,7 +18,7 @@ void create()
                 set("armor_prop/armor", 3);
                 set("female_only", 1);
                 set("wear_msg","$N穿上一件$n。\n");
-                set("remove_msg","$N將$n脫了下來。\n");
+                set("remove_msg","$N將$n脱了下來。\n");
         }
 
         setup();

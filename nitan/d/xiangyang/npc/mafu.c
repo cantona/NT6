@@ -1,4 +1,4 @@
-// mafu.c 馬夫
+// mafu.c 馬伕
 
 inherit NPC;
 #include <ansi.h>
@@ -6,10 +6,10 @@ int do_ride();
 
 void create()
 {
-        set_name("馬夫", ({ "ma fu", "mafu", "ma" }));
+        set_name("馬伕", ({ "ma fu", "mafu", "ma" }));
         set("age", 32);
         set("gender", "男性");
-        set("long","馴馬和租馬的小販，給他租金就可以雇到馬。\n");
+        set("long","馴馬和租馬的小販，給他租金就可以僱到馬。\n");
         set("attitude", "peaceful");
         set("str", 24);
         set("dex", 16);
@@ -41,7 +41,7 @@ void init()
 void greeting(object ob)
 {
         if( !ob || environment(ob) != environment() ) return;
-        say( "馬夫點頭哈腰地說道：這位客官，是想到這裡挑一匹好馬吧？\n");
+        say( "馬伕點頭哈腰地説道：這位客官，是想到這裏挑一匹好馬吧？\n");
 }
 
 int accept_object(object who, object ob)
@@ -49,13 +49,13 @@ int accept_object(object who, object ob)
         object myenv ;
         if( query("money_id", ob) && ob->value() >= 100 )
         {
-        message_vision("馬夫對$N說：好！這位"+RANK_D->query_respect(who) +
+        message_vision("馬伕對$N説：好！這位"+RANK_D->query_respect(who) +
                 "現在就出發馬? 那就上馬吧。\n", who);
                 set_temp("marks/horserent", 1, this_player());
                        return 1;
         }
         else  
-                message_vision("馬夫皺眉對$N說：您給的也太少了吧？\n", who);
+                message_vision("馬伕皺眉對$N説：您給的也太少了吧？\n", who);
         return 1;
 }
 

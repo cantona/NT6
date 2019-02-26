@@ -19,7 +19,7 @@ mapping *action = ({
         "lvl"   : 30,
         "damage_type":"挫傷"
 ]),
-([      "action":"$N快步跨出，左手平托$w，右掌猛推杖端，頂向$n的胸口",
+([      "action":"$N快步跨出，左手平託$w，右掌猛推杖端，頂向$n的胸口",
         "force" : 128,
         "attack": 35,
         "dodge" : -5,

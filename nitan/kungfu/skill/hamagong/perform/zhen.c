@@ -33,7 +33,7 @@ int perform(object me, object target)
 
         if (me->query_skill_prepared("strike") != "hamagong" ||
             me->query_skill_mapped("strike") != "hamagong")
-                return notify_fail("你必須先將蛤蟆功運用于掌法之中才行。\n");
+                return notify_fail("你必須先將蛤蟆功運用於掌法之中才行。\n");
 
         if( query("max_neili", me)<1500 )
                 return notify_fail("你現在內力不足，使不出蛤蟆功的絕招蟾震九天！\n");
@@ -101,7 +101,7 @@ int perform2(object me, object target, int p, int damage)
         if( query("neili", me)<500 )
                 return notify_fail("你待要再發一掌，卻發現自己的內力不夠了！\n");
 
-        msg = BLU "\n$N左掌勁力未消，右掌也跟著推出，功力相疊，「蟾震九天」掌風排山倒海般湧向$n！\n"NOR;
+        msg = BLU "\n$N左掌勁力未消，右掌也跟着推出，功力相疊，「蟾震九天」掌風排山倒海般湧向$n！\n"NOR;
 
         ap = attack_power(me, "force");
         dp = defense_power(target, "dodge");
@@ -151,7 +151,7 @@ int perform3(object me, object target, int p, int damage)
         if( query("neili", me)<700 )
                 return notify_fail("你待要再發一掌，卻發現自己的內力不夠了！\n");
 
-        msg = BLU "\n$N雙腿一登，雙掌相並向前猛力推出，$n連同身前方圓三丈全在「蟾震九天」勁力籠罩之下！\n"NOR;
+        msg = BLU "\n$N雙腿一登，雙掌相併向前猛力推出，$n連同身前方圓三丈全在「蟾震九天」勁力籠罩之下！\n"NOR;
 
         ap = attack_power(me, "force");
         dp = defense_power(target, "parry");

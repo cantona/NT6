@@ -16,7 +16,7 @@ void create()
         else
         {
                 set("unit", "把");
-                set("long", NOR + MAG "這是一把看似普通的古琴，傳說乃上古伏羲氏\n"
+                set("long", NOR + MAG "這是一把看似普通的古琴，傳説乃上古伏羲氏\n"
                                       "所用。\n"
                                       "彈奏(tan)後可恢復所有精、氣、內力和異常狀態。\n" 
                                       "需要彈琴技法一百級，tan ? 查看使用次數。\n" NOR);
@@ -48,8 +48,8 @@ int do_tan(string arg)
         if (me->is_fighting() || me->is_busy())
                  return notify_fail("你正忙呢！\n");
 
-        message_sort(NOR + MAG + "\n$N" NOR + MAG "盤膝而坐，輕輕地撥弄著伏羲琴，"
-                                 "伴隨著令人心醉的琴聲，$N" NOR + MAG "只覺得周身"
+        message_sort(NOR + MAG + "\n$N" NOR + MAG "盤膝而坐，輕輕地撥弄着伏羲琴，"
+                                 "伴隨着令人心醉的琴聲，$N" NOR + MAG "只覺得周身"
                                  "舒泰之極。\n" NOR, me);
 
         my = me->query_entire_dbase();

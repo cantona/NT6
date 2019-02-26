@@ -24,7 +24,7 @@ void create()
 {
         set_name(NOR + YEL "神木王鼎" NOR, ({"shenmuwang ding", "shenmuwang", "ding"}) );
         set_weight(1200);
-        set("long", NOR + YEL "一只黃燦燦的木制的鼎，看上去有感覺有些詭秘，細聞下卻有一股腥味夾雜在香味中。\n" NOR);
+        set("long", NOR + YEL "一隻黃燦燦的木製的鼎，看上去有感覺有些詭祕，細聞下卻有一股腥味夾雜在香味中。\n" NOR);
         set("unit", "只");
         set("value", 50);
         set("no_sell", 1);

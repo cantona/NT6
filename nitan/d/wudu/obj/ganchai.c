@@ -3,7 +3,7 @@ inherit ITEM;
 
 void create()
 {
-        set_name(NOR + WHT "幹柴" NOR, ({ "gan chai", "gan", "chai" }));
+        set_name(NOR + WHT "乾柴" NOR, ({ "gan chai", "gan", "chai" }));
         set_weight(10000);
         if (clonep())
                 set_default_object(__FILE__);
@@ -20,7 +20,7 @@ int fire(object me, object ob)
         object fire;
 
         if( query_temp("warm", environment()) >= 40 )
-                return notify_fail("這裡已經夠熱的了，你還是換個"
+                return notify_fail("這裏已經夠熱的了，你還是換個"
                                    "地方點火吧。\n");
 
         message_vision("$N用" + ob->name() + "點燃了" + name() +

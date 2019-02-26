@@ -11,7 +11,7 @@ void create()
         else {
                 set("unit", "張");
                 set("long", "
-一張薄紙，上面密密麻麻寫滿了蠅頭小楷，旁邊似乎有些批注。\n");
+一張薄紙，上面密密麻麻寫滿了蠅頭小楷，旁邊似乎有些批註。\n");
                 set("value", 200);
                 set("material", "paper");
                 set("skill", ([

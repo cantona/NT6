@@ -6,7 +6,7 @@ void create()
 {
         set("short", "樹林");
         set("long", @LONG
-這是一片茂密的樹林，好象被人設計了一種陣，一走進來，你仿佛迷失了方向。
+這是一片茂密的樹林，好像被人設計了一種陣，一走進來，你彷彿迷失了方向。
 LONG );
         set("outdoors", "xiakedao");
         set("exits", ([

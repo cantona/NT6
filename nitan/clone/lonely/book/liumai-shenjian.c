@@ -12,7 +12,7 @@ void create()
                 set("material", "paper");
                 set("no_sell", 1);
                 set("long", HIW "\n這是一本用薄紙寫成的書，封皮上寫有「六脈神"
-                            "劍譜」四\n字。你可以試著讀讀(read)看。\n\n" NOR, );
+                            "劍譜」四\n字。你可以試着讀讀(read)看。\n\n" NOR, );
         }
 }
 
@@ -44,7 +44,7 @@ int do_du(string arg)
 
         if (me->is_busy())
         {
-                write("你現在正忙著呢。\n");
+                write("你現在正忙着呢。\n");
                 return 1;
         }
 
@@ -57,7 +57,7 @@ int do_du(string arg)
         if( query("no_fight", where )
             && query("doing", me) != "scheme" )
         {
-                write("你無法在這裡靜下心來研讀六脈神劍譜。\n");
+                write("你無法在這裏靜下心來研讀六脈神劍譜。\n");
                 return 1;
         }
 
@@ -69,14 +69,14 @@ int do_du(string arg)
 
         if (! id(book))
         {
-                write("這裡沒有這本書。\n");
+                write("這裏沒有這本書。\n");
                 return 1;
         }
 
-        if (skill != "shaochong-sword" && skill != "少沖劍"
-           && skill != "guanchong-sword" && skill != "關沖劍"
+        if (skill != "shaochong-sword" && skill != "少衝劍"
+           && skill != "guanchong-sword" && skill != "關衝劍"
            && skill != "shaoze-sword" && skill != "少澤劍"
-           && skill != "zhongchong-sword" && skill != "中沖劍"
+           && skill != "zhongchong-sword" && skill != "中衝劍"
            && skill != "shangyang-sword" && skill != "商陽劍"
            && skill != "shaoshang-sword" && skill != "少商劍"
            && skill != "無形劍氣" && skill != "六脈劍氣"
@@ -96,7 +96,7 @@ int do_du(string arg)
             || query("qi", me)<100
             || query("neili", me)<200 )
         {
-                write("你現在過于疲倦，無法專心下來研讀新知。\n");
+                write("你現在過於疲倦，無法專心下來研讀新知。\n");
                 return 1;
         }
 
@@ -123,7 +123,7 @@ int do_du(string arg)
            msg = HIG "$N" HIG "翻看劍譜，仔細研究上面所記載的武學，霎那間忽有所悟"
                      "……\n" NOR;
            msg += HIG "$N" HIG "中指一按，一股凌厲無倫的無形劍氣直奔天際。\n" NOR;
-           msg += HIG "$N" HIG "長嘆一聲，感慨萬千，將內力收回丹田。\n" NOR; 
+           msg += HIG "$N" HIG "長歎一聲，感慨萬千，將內力收回丹田。\n" NOR; 
            message_vision(msg, me); 
 
            if (me->can_improve_skill("finger"))
@@ -164,8 +164,8 @@ int do_du(string arg)
            msg = HIG "$N" HIG "翻看劍譜，仔細研究上面所記載的武學，霎那間忽有所悟"
                      "……\n" NOR;
            msg += HIW "$N" HIW "攤開雙手，手指連彈，霎時間空氣炙熱，幾"
-                  "欲沸騰，六道劍氣分自六穴，一起沖向天際" HIW "！\n" NOR;
-           msg += HIG "$N" HIG "長嘆一聲，感慨萬千，將內力收回丹田。\n" NOR; 
+                  "欲沸騰，六道劍氣分自六穴，一起衝向天際" HIW "！\n" NOR;
+           msg += HIG "$N" HIG "長歎一聲，感慨萬千，將內力收回丹田。\n" NOR; 
            message_vision(msg, me); 
 
            if (me->can_improve_skill("finger"))
@@ -213,7 +213,7 @@ int do_du(string arg)
            msg += HIM "$N" HIM "一聲清嘯，十指紛彈，頓覺六脈劍譜已湧上心頭，此起"
                   "彼伏、連綿不絕。霎時劍氣如奔，連綿無盡的萬道劍氣豁然貫向虛空" HIM 
                   "！\n" NOR;
-           msg += HIG "$N" HIG "長嘆一聲，感慨萬千，將內力收回丹田。\n" NOR; 
+           msg += HIG "$N" HIG "長歎一聲，感慨萬千，將內力收回丹田。\n" NOR; 
            message_sort(msg, me); 
 
            if (me->can_improve_skill("finger"))
@@ -239,7 +239,7 @@ int do_du(string arg)
 
         else 
  
-        if (skill == "shaochong-sword" || skill == "少沖劍")
+        if (skill == "shaochong-sword" || skill == "少衝劍")
                 skill = "shaochong-sword";
         else
 
@@ -251,11 +251,11 @@ int do_du(string arg)
                 skill = "shaoshang-sword";
         else
 
-        if (skill == "zhongchong-sword" || skill == "中沖劍")
+        if (skill == "zhongchong-sword" || skill == "中衝劍")
                 skill = "zhongchong-sword";
         else
 
-        if (skill == "guanchong-sword" || skill == "關沖劍")
+        if (skill == "guanchong-sword" || skill == "關衝劍")
                 skill = "guanchong-sword";
         else
 
@@ -275,7 +275,7 @@ int do_du(string arg)
 
         if (lv >= 1)
         {
-                write("你研讀了一會兒，但是發現上面所說的實在有限。\n");
+                write("你研讀了一會兒，但是發現上面所説的實在有限。\n");
                 return 1;
         }
 

@@ -34,7 +34,7 @@ int perform(object me, object target)
                 return notify_fail("你現在內力太弱，不能使用九陰神抓。\n");
 
        if (! living(target))
-              return notify_fail("對方都已經這樣了，用不著這麼費力吧？\n");
+              return notify_fail("對方都已經這樣了，用不着這麼費力吧？\n");
 
         msg = HIR "$N" HIR "冷笑一聲，眼露兇光，右手成爪，三盤兩旋虛虛"
               "實實的向$n" HIR "的頭頂抓了下來。\n" NOR;

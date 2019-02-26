@@ -4,10 +4,10 @@ inherit NPC;
 
 void create()
 {
-        set_name("余人彥", ({ "yu renyan", "yu", "renyan" }));
+        set_name("餘人彥", ({ "yu renyan", "yu", "renyan" }));
         set("gender", "男性");
         set("age", 20);
-        set("long", "他就是「青城派」掌門人余滄海的獨生愛子。可是他實在很不爭氣。\n");
+        set("long", "他就是「青城派」掌門人餘滄海的獨生愛子。可是他實在很不爭氣。\n");
 
         set("combat_exp", 40000);
         set("shen_type", -1);

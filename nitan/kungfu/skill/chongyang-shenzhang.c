@@ -31,8 +31,8 @@ mapping *action = ({
         "lvl"   : 30,
         "damage_type": "瘀傷"
 ]),
-([      "skill_name": "萬物復蘇",
-        "action": "$N按北鬥方位急走，一招「萬物復蘇」，陣陣掌風無孔不入般地擊向$n的$l",
+([      "skill_name": "萬物復甦",
+        "action": "$N按北斗方位急走，一招「萬物復甦」，陣陣掌風無孔不入般地擊向$n的$l",
         "force" : 140,
         "attack": 30,
         "dodge" : 30,
@@ -52,7 +52,7 @@ mapping *action = ({
         "damage_type": "瘀傷"
 ]),
 ([      "skill_name": "神光乍現",
-        "action": "$N左掌立于胸前，右掌推出，一招「神光乍現」迅然擊向$n$l",
+        "action": "$N左掌立於胸前，右掌推出，一招「神光乍現」迅然擊向$n$l",
         "force" : 190,
         "attack": 40,
         "dodge" : 50,
@@ -61,8 +61,8 @@ mapping *action = ({
         "lvl"   : 90,
         "damage_type": "瘀傷"
 ]),
-([      "skill_name": "百裡千長",
-        "action": "$N使出「百裡千長」，身形急進，快速向$n出掌攻擊",
+([      "skill_name": "百里千長",
+        "action": "$N使出「百里千長」，身形急進，快速向$n出掌攻擊",
         "force" : 220,
         "attack": 40,
         "dodge" : 65,
@@ -81,8 +81,8 @@ mapping *action = ({
         "lvl"   : 130,
         "damage_type": "瘀傷"
 ]),
-([      "skill_name": "北鬥易位",
-        "action": "$N左掌畫了個圈圈，右掌推出，一招「北鬥易位」擊向$n$l",
+([      "skill_name": "北斗易位",
+        "action": "$N左掌畫了個圈圈，右掌推出，一招「北斗易位」擊向$n$l",
         "force" : 270,
         "attack": 50,
         "dodge" : 68,

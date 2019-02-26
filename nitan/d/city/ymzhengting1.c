@@ -6,9 +6,9 @@ void create()
 {
         set("short", "衙門正廳");
         set("long", @LONG
-    堂上東西有兩根楹住，掛著一幅對聯，但是你無心細看。正
+    堂上東西有兩根楹住，掛着一幅對聯，但是你無心細看。正
 牆上懸掛一個橫匾，上書四個金光閃閃的大字。知府正坐在文案後批
-閱文書，師爺隨侍在後。大堂正中高懸一匾：[1；31m               明   
+閲文書，師爺隨侍在後。大堂正中高懸一匾：[1；31m               明   
  鏡    高    懸[2；37；0m
 LONG );
         set("valid_startroom",1);
@@ -44,7 +44,7 @@ int do_work (string arg)
         string kf_name,kf_name1,kf_where,titles;
         object me = this_player();
         if( query("kf_jiangli", me) )
-                return notify_fail("程藥發說道：神捕大人還沒進京面聖啊？\n");
+                return notify_fail("程藥發説道：神捕大人還沒進京面聖啊？\n");
 
         if( !query("kaifengfu", me) )
                 return notify_fail("兩旁衙役大聲喝道：大膽刁民，不得咆哮公堂！\n");
@@ -79,8 +79,8 @@ int do_work (string arg)
         if(kf_whatnpc==2){ kf_name = "無影神偷"; kf_name1 = "四處盜竊財物";}
         if(kf_whatnpc==3){ kf_name = "惡人裴風蕭"; kf_name1 = "經常劫掠民女，無惡不做";}
         if(kf_whatnpc==4){ kf_name = "魔教細作"; kf_name1 = "四處活動";}
-        if(kf_whatnpc==5){ kf_name = "天宗姦細"; kf_name1 = "四處造謠破壞";}
-        if(kf_whatnpc==6){ kf_name = "神秘人"; kf_name1 = "刺殺朝廷命官";}
+        if(kf_whatnpc==5){ kf_name = "天宗奸細"; kf_name1 = "四處造謠破壞";}
+        if(kf_whatnpc==6){ kf_name = "神祕人"; kf_name1 = "刺殺朝廷命官";}
         if(kf_whatnpc==7){ kf_name = "李元奎"; kf_name1 = "大家劫舍";}
         if(kf_whatnpc==8){ kf_name = "古毅"; kf_name1 = "傷人無數";}
 
@@ -129,7 +129,7 @@ int do_finish (string arg)
                 addn("shen", 3000, me);
                 message_vision(HIC "$N的正氣提高了！\n" NOR,me);
                 tell_object(me,"你現在的正氣是"+chinese_number((query("shen", me)))+"。\n"NOR);
-                message_vision(WHT"程藥發微笑著說道："+query("name", me)+"連破大案，天下聞名，本府已經奏明皇上。\n昨日朝旨已下，獎你黃金五千兩。你可以到錢莊領取。"NOR,me);
+                message_vision(WHT"程藥發微笑着説道："+query("name", me)+"連破大案，天下聞名，本府已經奏明皇上。\n昨日朝旨已下，獎你黃金五千兩。你可以到錢莊領取。"NOR,me);
                  addn("balance", 10000000, me);
                set("kf_jiangli", 1, me);
 
@@ -139,7 +139,7 @@ int do_finish (string arg)
                 set("kainame", 9, me);
                 message_vision(HIC "$N的正氣提高了！\n" NOR,me);
                 tell_object(me,"你現在的正氣是"+chinese_number((query("shen", me)))+"。\n"NOR);
-                message_vision(WHT"程藥發微笑著說道："+query("name", me)+"連破大案，天下聞名,繼續加油！！"NOR,me);
+                message_vision(WHT"程藥發微笑着説道："+query("name", me)+"連破大案，天下聞名,繼續加油！！"NOR,me);
       }
         if( query("kf_worked", me) == 1600){
                 set("kainame", 8, me);

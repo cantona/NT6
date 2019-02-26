@@ -1,5 +1,5 @@
 // modify by xiha@wmkj
-// 神話世界﹒西遊記﹒版本４．５０
+// 神話世界·西遊記·版本４．５０
 /* <SecCrypt CPL V3R05> */
  
 #include <ansi.h>
@@ -35,7 +35,7 @@ if( !weapon || query("skill_type", weapon) != "blade" )
         return notify_fail("你的冰魄寒刀等級還不夠!\n");
 
     msg = MAG
-"\n$N陰陰一笑,手中的"+weapon->name()+""+MAG"輕輕一揮,登時飛沙走石,妖霧直沖天際!!\n"NOR;
+"\n$N陰陰一笑,手中的"+weapon->name()+""+MAG"輕輕一揮,登時飛沙走石,妖霧直衝天際!!\n"NOR;
 message_vision(msg, me, target);
    delete("env/brief_message", me);
    delete("env/brief_message", target);

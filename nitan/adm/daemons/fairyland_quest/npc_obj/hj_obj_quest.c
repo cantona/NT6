@@ -1,6 +1,6 @@
 //                標準描述長度示例                                   |
 // 幻境內物品  迷題型（包括學習技能的類型）
-// by naihe  2002-10-23  于茂名
+// by naihe  2002-10-23  於茂名
 // 本物件只作為學習技能型的物品使用。 21:42 02-10-28 by naihe
 // naihe 05-9-7 9:15 v1.7 繼續調整。
 
@@ -33,15 +33,15 @@ string *ids=({
 });
 
 string *longs=({
-    "這是一顆呼風之石，它似乎給你一種神秘的感覺。\n你不妨仔細領會(linghui)一下這種感覺。\n",
-    "這是一顆喚雨之石，它似乎給你一種神秘的感覺。\n你不妨仔細領會(linghui)一下這種感覺。\n",
-    "這是一顆落雷之石，它似乎給你一種神秘的感覺。\n你不妨仔細領會(linghui)一下這種感覺。\n",
-    "這是一顆引電之石，它似乎給你一種神秘的感覺。\n你不妨仔細領會(linghui)一下這種感覺。\n",
-    "這是一顆滾石之石，它似乎給你一種神秘的感覺。\n你不妨仔細領會(linghui)一下這種感覺。\n",
-    "這是一顆飛火之石，它似乎給你一種神秘的感覺。\n你不妨仔細領會(linghui)一下這種感覺。\n",
-    "這是一顆奪魂之石，它似乎給你一種神秘的感覺。\n你不妨仔細領會(linghui)一下這種感覺。\n",
-    "這是一顆復活之石，它似乎給你一種神秘的感覺。\n你不妨仔細領會(linghui)一下這種感覺。\n",
-    "這是一顆復活之石，它似乎給你一種神秘的感覺。\n你不妨仔細領會(linghui)一下這種感覺。\n",
+    "這是一顆呼風之石，它似乎給你一種神祕的感覺。\n你不妨仔細領會(linghui)一下這種感覺。\n",
+    "這是一顆喚雨之石，它似乎給你一種神祕的感覺。\n你不妨仔細領會(linghui)一下這種感覺。\n",
+    "這是一顆落雷之石，它似乎給你一種神祕的感覺。\n你不妨仔細領會(linghui)一下這種感覺。\n",
+    "這是一顆引電之石，它似乎給你一種神祕的感覺。\n你不妨仔細領會(linghui)一下這種感覺。\n",
+    "這是一顆滾石之石，它似乎給你一種神祕的感覺。\n你不妨仔細領會(linghui)一下這種感覺。\n",
+    "這是一顆飛火之石，它似乎給你一種神祕的感覺。\n你不妨仔細領會(linghui)一下這種感覺。\n",
+    "這是一顆奪魂之石，它似乎給你一種神祕的感覺。\n你不妨仔細領會(linghui)一下這種感覺。\n",
+    "這是一顆復活之石，它似乎給你一種神祕的感覺。\n你不妨仔細領會(linghui)一下這種感覺。\n",
+    "這是一顆復活之石，它似乎給你一種神祕的感覺。\n你不妨仔細領會(linghui)一下這種感覺。\n",
 });
 
 string *units=({
@@ -124,7 +124,7 @@ void init()
 
 void delete_me()
 {
-    message_vision("$N靈氣已盡，「□」地一聲消失了。\n"NOR,this_object());
+    message_vision("$N靈氣已盡，「嘭」地一聲消失了。\n"NOR,this_object());
     destruct(this_object());
 }
 
@@ -151,16 +151,16 @@ int do_linghui(string arg)
         !query_temp("hj_hp", me) || query_temp("hj_hp", me)<1 )
         return 0;
     if( me->is_busy() || query_temp("hj_need_waiting", me) )
-        return notify_fail("你還忙著呢。\n");
+        return notify_fail("你還忙着呢。\n");
 
     if( query_temp("hj_hp", me)<50 )
         return notify_fail("你已經頭昏眼花了，還是先休息休息吧。\n");
 
-    message_vision(CYN"$N"NOR+CYN"拿起$n"NOR+CYN"仔細端詳著，領會著它所帶來的神秘氣息。\n"NOR,me, ob);
+    message_vision(CYN"$N"NOR+CYN"拿起$n"NOR+CYN"仔細端詳着，領會着它所帶來的神祕氣息。\n"NOR,me, ob);
     addn_temp("hj_hp", -(5+random(6)), me);
 
     lh_fail = random(3);  // 0, 1, 2.  0 時才是成功的
-    // 雨之國度被動技能效果  領會神秘石的技能時，成功幾率上漲。
+    // 雨之國度被動技能效果  領會神祕石的技能時，成功機率上漲。
     // 失敗了的話，還有一次機會
     if( lh_fail && query_temp("hj_special/cm", me) )
         lh_fail = random(3);    // 0, 1, 2.  0 時才是成功的

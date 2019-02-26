@@ -27,7 +27,7 @@ int main(object me, string arg)
                 message_vision("$N大喝一聲道：“" + ob->name() + "，住手！”\n",
                                me);
         else
-                message_vision("只見$N沖著$n口中一聲呼哨，$n向後一竄，不咬了！\n",
+                message_vision("只見$N衝着$n口中一聲呼哨，$n向後一竄，不咬了！\n",
                                me, ob);
 
         ob->force_me("halt");
@@ -39,7 +39,7 @@ int help(object me)
         write(@HELP
 指令格式 : stop <對象>
 
-此指令可用于讓你的跟隨者或是馴養的動物停止攻擊他人。
+此指令可用於讓你的跟隨者或是馴養的動物停止攻擊他人。
 HELP );
         return 1;
 }

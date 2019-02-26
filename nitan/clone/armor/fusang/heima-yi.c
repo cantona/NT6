@@ -14,7 +14,7 @@ void create()
                 set_default_object(__FILE__);
         else {
                 set("unit", "件");
-                set("long", HIB "這是一件用扶桑黑麻制成的勁衣，多為扶桑武士穿戴。\n" NOR);
+                set("long", HIB "這是一件用扶桑黑麻製成的勁衣，多為扶桑武士穿戴。\n" NOR);
                 set("material", "steel");
                 set("value", 800000);
                 set("armor_prop/armor", 300);

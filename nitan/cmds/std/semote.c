@@ -15,8 +15,8 @@ string help = @HELP
 
 指令格式:
 semote
-semote -t               查看表情指令的使用排行表
-semote -l               查看表情指令的簡易說明
+semote -t               查看錶情指令的使用排行表
+semote -l               查看錶情指令的簡易説明
 semote <表情代號>       查看 <表情代號> 的詳細表情訊息
 
 
@@ -74,7 +74,7 @@ int main(object me, string arg)
 
                 emotions = sort_array(emotions, (: strcmp($1, $2) :));
 
-                msg = "表情指令簡介說明\n";
+                msg = "表情指令簡介説明\n";
                 foreach( string e in emotions )
                 {
                         msg += sprintf("%4s %-20s %-10s\n", HIW+(++i)+"."NOR, e, emotion_sort[e]||WHT"無簡介"NOR);
@@ -89,7 +89,7 @@ int main(object me, string arg)
                 if( undefinedp(emotion) )
                         return tell(me, "沒有 " + arg + " 這個表情指令。\n", "CMDMSG");
 
-                msg = "表情 "+arg+" 之詳細敘述如下：\n"BAR;
+                msg = "表情 "+arg+" 之詳細敍述如下：\n"BAR;
 
                 msg += NOR WHT"1.無對象無附加文字    ："NOR+replace_keys(emotion[NONE_ALL])+"\n";
                 msg += NOR WHT"2.無對象有附加文字    ："NOR+replace_keys(emotion[NONE_ALL_ARG])+"\n";
@@ -97,7 +97,7 @@ int main(object me, string arg)
                 msg += NOR WHT"4.對象為自己有附加文字："NOR+replace_keys(emotion[ME_ALL_ARG])+"\n";
                 msg += NOR WHT"5.對象為某人無附加文字："NOR+replace_keys(emotion[YOU_ALL])+"\n";
                 msg += NOR WHT"6.對象為某人有附加文字："NOR+replace_keys(emotion[YOU_ALL_ARG])+"\n";
-                msg += NOR WHT"7.表情注解            ："NOR+(emotion[NOTE] || "無注解")+"\n";
+                msg += NOR WHT"7.表情註解            ："NOR+(emotion[NOTE] || "無註解")+"\n";
                 msg += NOR WHT"8.使用次數            ："NOR+emotion[USE]+" 次\n";
         }
         else
@@ -109,7 +109,7 @@ int main(object me, string arg)
                 msg = "目前共有 "+size+" 種表情指令可以使用，列表如下：\n"BAR;
 
                 msg += sprintf("%-=80s", sprintf("%@-:10s", emotions)) + "\n";
-                msg += "\n請輸入 semote <表情代號> 觀看詳細敘述。\n";
+                msg += "\n請輸入 semote <表情代號> 觀看詳細敍述。\n";
         }
 
         me->start_more(msg + BAR);

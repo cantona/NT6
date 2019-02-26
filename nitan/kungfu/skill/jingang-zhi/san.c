@@ -29,7 +29,7 @@ int perform(object me, object target)
                 return notify_fail("你大力金剛指不夠嫻熟，難以施展" + name() + "。\n");
 
         if ((int)me->query_skill("jingluo-xue", 1) < 200)
-                return notify_fail("你對經絡學了解不夠，難以施展" + name() + "。\n");
+                return notify_fail("你對經絡學瞭解不夠，難以施展" + name() + "。\n");
 
         if (me->query_skill_mapped("finger") != "jingang-zhi")
                 return notify_fail("你沒有激發大力金剛指，難以施展" + name() + "。\n");
@@ -47,7 +47,7 @@ int perform(object me, object target)
                 return notify_fail("你現在的真氣不夠，難以施展" + name() + "。\n");
 
         if (! living(target))
-                return notify_fail("對方都已經這樣了，用不著這麼費力吧？\n");
+                return notify_fail("對方都已經這樣了，用不着這麼費力吧？\n");
 
         damage = damage_power(me, "finger");
         //lvl = (int)me->query_skill("jingang-zhi", 1);
@@ -56,7 +56,7 @@ int perform(object me, object target)
 
         msg = HIW "突然間";
 
-        msg += "$N" HIW "凝氣于指，「" HIR "一指點三脈" HIW "」點出，頓時一股"
+        msg += "$N" HIW "凝氣於指，「" HIR "一指點三脈" HIW "」點出，頓時一股"
                "純陽的內力直襲$n" HIW "胸口！\n" NOR;
         if (ap / 2 + random(ap) > dp)
         {

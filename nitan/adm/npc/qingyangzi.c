@@ -1,4 +1,4 @@
-// qingyangzi.c  青□子
+// qingyangzi.c  青陽子
 // Written by Vin  2002/4/28
 
 #include <ansi.h>
@@ -16,8 +16,8 @@ mapping body_type = ([ "臉部" : ({ "face" }),
 
 void create()
 {
-        set_name("青□子", ({ "qingyang zi", "qingyang", "zi" }));
-        set("long", "他便是天下第一刺青師青□子。\n" );
+        set_name("青陽子", ({ "qingyang zi", "qingyang", "zi" }));
+        set("long", "他便是天下第一刺青師青陽子。\n" );
 
         set("nickname", HIB "刺青師" NOR);
         set("gender", "男性");
@@ -39,7 +39,7 @@ void create()
         {
                 move("/d/luoyang/suanming");
                 message_vision(CYN "\n$N" CYN "走了過來，環顧四周，幽"
-                               "幽一聲長嘆。\n" NOR, this_object());
+                               "幽一聲長歎。\n" NOR, this_object());
                 set("startroom", "/d/luoyang/suanming");
         }
 
@@ -93,15 +93,15 @@ int do_show(string arg)
 
         if (status == "look_working")
         {
-                message_vision(CYN "$N" CYN "頭也不抬，對$n" CYN "說道："
-                               "我這正忙，你的事等會再說。\n" NOR,
+                message_vision(CYN "$N" CYN "頭也不抬，對$n" CYN "説道："
+                               "我這正忙，你的事等會再説。\n" NOR,
                                this_object(), me);
                 return 1;
         }
 
         if( !query("can_tattoo", ob) )
         {
-                message_vision(CYN "$N" CYN "眉頭一皺，對$n" CYN "說道："
+                message_vision(CYN "$N" CYN "眉頭一皺，對$n" CYN "説道："
                                "我只對圖騰感興趣，沒事別來煩我。\n" NOR,
                                this_object(), me);
                 return 1;
@@ -109,7 +109,7 @@ int do_show(string arg)
 
         if( query("value", ob) >= 12000 )
                 msg = sprintf(CYN "$N" CYN "接過$n" CYN "拿出的圖樣，凝視良久"
-                              "之後，幽幽一聲長嘆。\n" NOR);
+                              "之後，幽幽一聲長歎。\n" NOR);
         else
         if( query("value", ob) >= 5000 )
                 msg = sprintf(CYN "$N" CYN "接過$n" CYN "拿出的圖樣，看了一會"
@@ -117,9 +117,9 @@ int do_show(string arg)
         else
         if( query("value", ob) >= 2000 )
                 msg = sprintf(CYN "$N" CYN "接過$n" CYN "拿出的圖樣，皺了皺眉"
-                              "，似乎想說些什麼。\n" NOR);
+                              "，似乎想説些什麼。\n" NOR);
         else
-                msg = sprintf(CYN "$N" CYN "望著$n" CYN "遞來的圖樣，冷笑一聲"
+                msg = sprintf(CYN "$N" CYN "望着$n" CYN "遞來的圖樣，冷笑一聲"
                               "，臉上露出不屑的神色。\n" NOR);
 
         value=query("value", ob)/50+20;
@@ -149,8 +149,8 @@ int accept_object(object me, object ob)
         status = query_temp("item/status");
         if (status == "look_working")
         {
-                message_vision(CYN "$N" CYN "頭也不抬，對$n" CYN "說道："
-                               "我這正忙，你的事等會再說。\n" NOR,
+                message_vision(CYN "$N" CYN "頭也不抬，對$n" CYN "説道："
+                               "我這正忙，你的事等會再説。\n" NOR,
                                this_object(), me);
                 return 0;
         }
@@ -163,8 +163,8 @@ int accept_object(object me, object ob)
                         return 0;
                 }
 
-                message_vision(CYN "$N" CYN "頭也不抬，對$n" CYN "說道："
-                               "我這正忙，你的事等會再說。\n" NOR,
+                message_vision(CYN "$N" CYN "頭也不抬，對$n" CYN "説道："
+                               "我這正忙，你的事等會再説。\n" NOR,
                                this_object(), me);
                 return 0;
         }
@@ -259,7 +259,7 @@ int accept_object(object me, object ob)
                 if( query_temp("item/status", me) == "answer_type" )
                 {
                         message_vision(CYN "$N" CYN "搖搖頭，對$n" CYN "道：別急"
-                                       "著給錢，先說說你要幹什麼？\n" NOR,
+                                       "着給錢，先説説你要幹什麼？\n" NOR,
                                        this_object(), me);
                         return 0;
                 }
@@ -275,7 +275,7 @@ int accept_object(object me, object ob)
                 if( ob->value()<query_temp("item/value", me) )
                 {
                         message_vision(CYN "$N" CYN "冷笑道：江湖上誰不知道我青"
-                                       "□子說一不二，難道能為你破例？\n" NOR,
+                                       "陽子説一不二，難道能為你破例？\n" NOR,
                                        this_object(), me);
                         return 0;
                 }
@@ -312,7 +312,7 @@ int accept_object(object me, object ob)
 
                 ob->move(this_object());
 
-                message_vision(CYN "$N" CYN "對$n" CYN "說道：你打算在什"
+                message_vision(CYN "$N" CYN "對$n" CYN "説道：你打算在什"
                                "麼地方刺青？請告訴(" HIY "answer" NOR +
                                CYN ")我具體部位。\n" NOR, this_object(), me);
                 tell_object(me, HIC "你還可以在" HIY + implode(types, "、" )
@@ -322,7 +322,7 @@ int accept_object(object me, object ob)
                 return -1;
         }
 
-        message_vision(CYN "青□子對$N" CYN "皺眉道：好象有點問題，你讓巫"
+        message_vision(CYN "青陽子對$N" CYN "皺眉道：好像有點問題，你讓巫"
                        "師來幫你看看。\n" NOR, me);
         return 0;
 }
@@ -341,7 +341,7 @@ int do_answer(string arg)
         if (! arg)
                 return notify_fail("你要回答什麼？\n");
 
-        message_vision(CYN "$n" CYN "歪著頭想了一會，對$N" CYN "道：那"
+        message_vision(CYN "$n" CYN "歪着頭想了一會，對$N" CYN "道：那"
                        "就勞駕你把刺青紋在我的" + arg + "上吧！\n" NOR,
                        this_object(), me);
 
@@ -361,9 +361,9 @@ int do_answer(string arg)
 
         ob = query_temp("item/accept");
 
-        message_sort(HIC "\n$N" CYN "點了點頭，對$n" CYN "說道：我們"
-                     "這就開始吧，你躺到那邊的床上去，別亂動。$N"
-                     HIC "說完便轉過身去，隨手將" + ob->name() + HIC
+        message_sort(HIC "\n$N" CYN "點了點頭，對$n" CYN "説道：我們"
+                     "這就開始吧，你躺到那邊的牀上去，別亂動。$N"
+                     HIC "説完便轉過身去，隨手將" + ob->name() + HIC
                      "浸入身後的水盆，待" + ob->name() + HIC "完全濕"
                      "透後，再小心翼翼地從水中取出，輕輕蒙在$n" HIC
                      "的" + arg + "之上。\n\n" NOR, this_object(), me);
@@ -448,43 +448,43 @@ int tattoo(object me)
         switch(query_temp("tattoo/step", me) )
         {
         case 1:
-                msg = "青□子走進內堂，端出一個檀木沉香盒，輕輕拈出一根銀針。";
+                msg = "青陽子走進內堂，端出一個檀木沉香盒，輕輕拈出一根銀針。";
                 break;
         case 2:
-                msg = "接著青□子將$N的身體擺放端正，再沿著圖騰中的紋樣施針。";
+                msg = "接着青陽子將$N的身體擺放端正，再沿着圖騰中的紋樣施針。";
                 break;
         case 3:
-                msg = "只見青□子掌出如風，每一針皆是一沾即過，來去極為迅捷。";
+                msg = "只見青陽子掌出如風，每一針皆是一沾即過，來去極為迅捷。";
                 break;
         case 4:
-                msg = "不多時，紋樣的輪廓已被青□子勾勒出來，和圖騰分毫不差。";
+                msg = "不多時，紋樣的輪廓已被青陽子勾勒出來，和圖騰分毫不差。";
                 break;
         case 5:
                 msg = "又一會，$N刺青上的紋樣漸漸清晰了起來，與肌膚融為一體。";
                 break;
         case 6:
-                msg = "你不禁感嘆青□子的針法精奇，刺下千多針竟不見有血湧出。";
+                msg = "你不禁感歎青陽子的針法精奇，刺下千多針竟不見有血湧出。";
                 break;
         case 7:
-                msg = "青□子接著從盒子裡取出十八色瓷瓶，分取粉末放入色盤中。";
+                msg = "青陽子接着從盒子裏取出十八色瓷瓶，分取粉末放入色盤中。";
                 break;
         case 8:
-                msg = "青□子用指甲尖輕輕挑出各色粉末，再分別彈入$N刺青之上。";
+                msg = "青陽子用指甲尖輕輕挑出各色粉末，再分別彈入$N刺青之上。";
                 break;
         case 9:
                 msg = "過得良久，彈在刺青上的各色粉末已經漸漸滲入了$N的肌膚。";
                 break;
         case 10:
-                msg = "刺青上的顏色慢慢顯露了出來，色彩明艷，與圖騰更無二致。";
+                msg = "刺青上的顏色慢慢顯露了出來，色彩明豔，與圖騰更無二致。";
                 break;
         case 11:
-                msg = "只見刺青上的紋樣精雕細琢，栩栩如生，似要沖關欲出一般。";
+                msg = "只見刺青上的紋樣精雕細琢，栩栩如生，似要衝關欲出一般。";
                 break;
         case 12:
-                msg = "青□子凝視許久，點了點頭，輕輕拂去了刺青上剩余的粉末。";
+                msg = "青陽子凝視許久，點了點頭，輕輕拂去了刺青上剩餘的粉末。";
                 break;
         default:
-                msg = "青□子對$N說道：圖騰上的紋樣已經都幫你刺好了，起身吧。";
+                msg = "青陽子對$N説道：圖騰上的紋樣已經都幫你刺好了，起身吧。";
                 finish = 1;
                 break;
         }
@@ -499,7 +499,7 @@ int tattoo(object me)
                 if (objectp(ob = present("qingyang zi", environment(me))))
                 {
                         delete_temp("item", ob);
-                        message_vision(HIC "\n$N" HIC "對$n" HIC "說道："
+                        message_vision(HIC "\n$N" HIC "對$n" HIC "説道："
                                        "錢我收了，刺青則幫你紋了，從此你"
                                        "我兩無相欠。\n" NOR, ob, me);
                 }
@@ -530,7 +530,7 @@ void time_out(object me, object ob)
                 at_present = 0;
         } else
         {
-                command("say 你慢慢猶豫吧，我可不能跟你耗著！想好再來吧！");
+                command("say 你慢慢猶豫吧，我可不能跟你耗着！想好再來吧！");
                 at_present = 1;
         }
 

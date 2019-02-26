@@ -68,10 +68,10 @@ int do_invite(string arg)
                 return notify_fail("這人你還是別邀請了。\n");
 
         me = this_player();
-        message_vision("$N指著" + ob->name() + "對$n道：“這是我請來的"
+        message_vision("$N指着" + ob->name() + "對$n道：“這是我請來的"
                        "客人，你可不要怠慢了！”\n$n連忙點頭哈腰道：“"
                        "知道了！知道了！這位" + RANK_D->query_respect(ob) +
-                       "，小的哪有不周盡管提！”\n", me, this_object());
+                       "，小的哪有不周儘管提！”\n", me, this_object());
         set_temp("permit_enter/"+query("id", me), 1, ob);
         return 1;
 }
@@ -160,22 +160,22 @@ int do_vip(string arg)
         if (sscanf(arg,"%s -c",arg) == 1)
         {
                 if (member_array(arg,vip) == -1)
-                        return notify_fail(ob->name(1) + "賠著笑臉說：" + arg + "本來就不是您的貴賓啊！\n");
+                        return notify_fail(ob->name(1) + "賠着笑臉説：" + arg + "本來就不是您的貴賓啊！\n");
                 vip -= ({arg});
                 set("vip", vip, ob);
                 ob->save();
-                write(ob->name(1) + "點頭哈腰對你說：收到！收到！！以後" + arg + "不是您的貴賓了。\n");
+                write(ob->name(1) + "點頭哈腰對你説：收到！收到！！以後" + arg + "不是您的貴賓了。\n");
                 return 1;
         }
 
         if( sizeof(vip) >= query("max_vip", ob) )
-                return notify_fail(ob->name(1) + "苦著臉說：您定的貴賓太多了，老奴我實在是記不住啊！\n");
+                return notify_fail(ob->name(1) + "苦着臉説：您定的貴賓太多了，老奴我實在是記不住啊！\n");
 
         if( arg == query("id", me) )
-                return notify_fail(ob->name(1) + "一個哆嗦，戰戰兢兢的說：您是主人啊，老奴不敢當您是客人！\n");
+                return notify_fail(ob->name(1) + "一個哆嗦，戰戰兢兢的説：您是主人啊，老奴不敢當您是客人！\n");
 
         if (member_array(arg,vip) != -1)
-                return notify_fail(ob->name(1) + "賠著笑臉說：" + arg + "本來就已經是您的貴賓啦！\n");
+                return notify_fail(ob->name(1) + "賠着笑臉説：" + arg + "本來就已經是您的貴賓啦！\n");
 
         vip += ({ arg });
         set("vip", vip, ob);

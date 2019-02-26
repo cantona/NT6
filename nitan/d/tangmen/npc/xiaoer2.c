@@ -53,11 +53,11 @@ void greeting(object ob)
         switch( random(3) ) 
         {
                 case 0:
-                        say( "唐小一笑咪咪地說道：這位" + RANK_D->query_respect(ob)
+                        say( "唐小一笑咪咪地説道：這位" + RANK_D->query_respect(ob)
                                 + "，進來喝杯茶，歇歇腿吧。\n");
                         break;
                 case 1:
-                        say( "唐小一用脖子上的毛巾抹了抹手，說道：這位" + RANK_D->query_respect(ob)
+                        say( "唐小一用脖子上的毛巾抹了抹手，説道：這位" + RANK_D->query_respect(ob)
                                 + "，請進請進。\n");
                         break;
                 case 2:
@@ -74,10 +74,10 @@ mixed do_ask(string arg)
         me=this_player();
         myfam=query("family", me);
         
-        // say(HIC"來啦，有事你盡管問吧！\n"NOR);
+        // say(HIC"來啦，有事你儘管問吧！\n"NOR);
                 
         if( query_temp("yiwen", me) )
-                return "你煩不煩啊，都和你說過了，你還來問我，我現有什麼都不知道了! \n";
+                return "你煩不煩啊，都和你説過了，你還來問我，我現有什麼都不知道了! \n";
          
         if ( !myfam || myfam["family_name"] != "唐門世家")
                 return "這位"+RANK_D->query_respect(me)+"，你與本門素無來往，此話從何談起！\n";
@@ -88,17 +88,17 @@ mixed do_ask(string arg)
                 switch( random(2) )
                 {
                    case 0:
-                        tell_object(me, HIG"原來是自己人啊，請上樓，唐老板正好回來了！\n"NOR);
+                        tell_object(me, HIG"原來是自己人啊，請上樓，唐老闆正好回來了！\n"NOR);
                         me->move("/d/tangmen/jiulou2");
                         set_temp("askxiao", 1, me);
                         break;
                    case 1:
-                        tell_object(me, HIR"不巧啊，唐老板正好出門了，你過一陣再來吧！\n"NOR);
+                        tell_object(me, HIR"不巧啊，唐老闆正好出門了，你過一陣再來吧！\n"NOR);
                         break;
                  }            
                         
         }
           
         set_temp("yiwen", 1, me);
-        return "不知這位"+RANK_D->query_respect(me)+"問我家老板有什麼事! \n";
+        return "不知這位"+RANK_D->query_respect(me)+"問我家老闆有什麼事! \n";
 }

@@ -5,8 +5,8 @@ void create()
         set("short", "三清湖");
         set("long",
 "[1;32m湖水清澈透明，不時可以看到幾尾魚跳上水面。湖水盡頭是\n"
-"一個大瀑布。在這裡可以聽到瀑布從山上直沖而下，發出的轟轟雷聲。湖\n"
-"邊一塊巨石，上寫〝三清湖〝，湖中有一葉扁舟。\n"
+"一個大瀑布。在這裏可以聽到瀑布從山上直衝而下，發出的轟轟雷聲。湖\n"
+"邊一塊巨石，上寫＂三清湖＂，湖中有一葉扁舟。\n"
 );
         set("exits", ([ 
   "south" : __DIR__"mountain",
@@ -40,13 +40,13 @@ void check_trigger()
             }
             else
                 message("vision", "只聽得湖面上隱隱傳來：“別急嘛，"
-                    "這兒正忙著吶……”\n",this_object() );
+                    "這兒正忙着吶……”\n",this_object() );
         }
         else
             message("vision", "ERROR: boat not found\n", this_object() );
     }
     else 
-        message("vision", "岸邊一只渡船上的老艄公說道：正等著你呢，上來吧。\n",
+        message("vision", "岸邊一隻渡船上的老艄公説道：正等着你呢，上來吧。\n",
             this_object() );
 }
 void on_board()
@@ -61,7 +61,7 @@ void on_board()
     if( room = find_object(__DIR__"duchuan") )
     {
         delete("exits/out", room);
-        message("vision", "艄公把踏腳板收起來，說了一聲“坐穩嘍”，"
+        message("vision", "艄公把踏腳板收起來，説了一聲“坐穩嘍”，"
             "竹篙一點，扁舟向\n湖心駛去。\n", room );
     }
     delete("exits/enter");
@@ -75,7 +75,7 @@ void arrive()
     if( room = find_object(__DIR__"duchuan") )
     {
         set("exits/out", __DIR__"lake", room);
-        message("vision", "艄公說“到啦，上岸吧”，隨即把一塊踏腳板"
+        message("vision", "艄公説“到啦，上岸吧”，隨即把一塊踏腳板"
             "搭上堤岸。\n",room );
     }
     remove_call_out("close_passage");

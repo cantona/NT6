@@ -61,7 +61,7 @@ void greeting(object ob)
 {
         if (! ob || environment(ob) != environment()) return;
 
-        say("素素笑吟吟地說道：這位" + RANK_D->query_respect(ob)
+        say("素素笑吟吟地説道：這位" + RANK_D->query_respect(ob)
              + "請先入座，" + "我這就給您上茶。\n");
 }
 
@@ -90,7 +90,7 @@ void serve_tea(object who)
 
         obn = new("/d/yanziwu/obj/gao");
         obn->move(room);
-        message_vision("素素拿出一碟精致的四色點心，放在桌上．\n", who);
+        message_vision("素素拿出一碟精緻的四色點心，放在桌上．\n", who);
 
         return;
 }

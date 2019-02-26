@@ -11,7 +11,7 @@ void create()
                 destruct(this_object());
         else {
                 set("long", YEL "這是一柄厚背薄刃，紫金所鑄的八卦刀，刀柄上"
-                            "刻著一個“商”字。\n" NOR);
+                            "刻着一個“商”字。\n" NOR);
                 set("unit", "柄");
                 set("value", 800000);
                 set("no_sell", "這不是商劍…商爺的東西嗎？小的還想多活幾年"

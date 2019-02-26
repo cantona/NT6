@@ -7,10 +7,10 @@ inherit F_MASTER;
 int ask_shi();
 void create()
 {
-        set_name("慕容景岳", ({ "murong jingyue", "murong", "jingyue" }));
+        set_name("慕容景嶽", ({ "murong jingyue", "murong", "jingyue" }));
         set("nickname", HIC "大弟子" NOR);
         set("long",@LONG
-藥王谷第二代弟子大師兄慕容景岳。
+藥王谷第二代弟子大師兄慕容景嶽。
 LONG );
 
         set("gender", "男性");

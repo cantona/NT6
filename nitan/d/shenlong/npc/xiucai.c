@@ -55,7 +55,7 @@ int accept_object(object who, object ob)
         if( ob->value() >= 10000 && query_temp("cbs_落第/b", who) )
         {
                 delete_temp("cbs_落第", who);
-                say("落第秀才笑嘻嘻說道：這幅頌詞保証錯不了。\n");
+                say("落第秀才笑嘻嘻説道：這幅頌詞保證錯不了。\n");
 
                 obj = new("/d/shenlong/obj/songci");
                 obj->move(who);

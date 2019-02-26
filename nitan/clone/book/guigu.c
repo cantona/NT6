@@ -1,4 +1,4 @@
-// guigu.c 鬼谷神算
+// guigu.c 鬼穀神算
 
 #include <ansi.h>
 
@@ -6,7 +6,7 @@ inherit BOOK;
 
 void create()
 {
-        set_name(WHT "鬼谷神算" NOR, ({ "guigu book", "book", "shu" }));
+        set_name(WHT "鬼穀神算" NOR, ({ "guigu book", "book", "shu" }));
         set_weight(300);
 
         if (clonep())
@@ -14,7 +14,7 @@ void create()
         else
         {
                 set("unit", "本");
-                set("long", "傳說是當年鬼谷子所著的奇書。\n");
+                set("long", "傳説是當年鬼谷子所著的奇書。\n");
                 set("value", 100);
                 set("no_sell", "這...這值什麼錢？\n");
                 set("material", "silk");

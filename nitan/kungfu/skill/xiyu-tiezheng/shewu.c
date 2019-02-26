@@ -27,16 +27,16 @@ int perform(object me)
         return notify_fail("你不拿出箏來，怎麼彈奏？\n"); 
 
 //    if(!environment(me)->query("can_perform_shewu"))  
-//        return notify_fail("在這裡彈奏似乎不太適合吧。\n"); 
+//        return notify_fail("在這裏彈奏似乎不太適合吧。\n"); 
 
     if( query("sleep_room", environment(me)) )
-        return notify_fail("在這裡彈奏似乎不太適合吧。\n");  
+        return notify_fail("在這裏彈奏似乎不太適合吧。\n");  
 
     if( query("no_fight", environment(me)) )
-        return notify_fail("在這裡彈奏似乎不太適合吧。\n");  
+        return notify_fail("在這裏彈奏似乎不太適合吧。\n");  
 
     if(me->is_busy())
-        return notify_fail("你現在正忙著呢！\n");
+        return notify_fail("你現在正忙着呢！\n");
 
 
     message_vision(HIB"$N盤膝而坐，雙手拂琴，時而快疾，時而緩慢，可似乎並未彈出聲音。\n"NOR,me); 
@@ -52,25 +52,25 @@ int perform(object me)
         switch(random(4))
         {
             case 0:
-            message_vision("突然，$N感覺身邊黑影閃動，只見一條毒蛇正吐著信子，昂首隨著$N雙手的節奏舞動。\n",me); 
+            message_vision("突然，$N感覺身邊黑影閃動，只見一條毒蛇正吐着信子，昂首隨着$N雙手的節奏舞動。\n",me); 
             snake=new("/clone/beast/dushe");
             snake->move(environment(me));
             break;
         
             case 1:
-            message_vision("突然，$N感覺身邊黑影閃動，只見一條金環蛇正吐著信子，昂首隨著$N雙手的節奏舞動。\n",me);
+            message_vision("突然，$N感覺身邊黑影閃動，只見一條金環蛇正吐着信子，昂首隨着$N雙手的節奏舞動。\n",me);
             snake=new("/clone/beast/jinshe");
             snake->move(environment(me));
             break;
         
             case 2:
-            message_vision("突然，$N感覺身邊黑影閃動，只見一條五步蛇正吐著信子，昂首隨著$N雙手的節奏舞動。\n",me);
+            message_vision("突然，$N感覺身邊黑影閃動，只見一條五步蛇正吐着信子，昂首隨着$N雙手的節奏舞動。\n",me);
             snake=new("/clone/beast/wubushe");        
             snake->move(environment(me));
             break;
         
             case 3:
-            message_vision("突然，$N感覺身邊黑影閃動，只見一條竹葉青蛇正吐著信子，昂首隨著$N雙手的節奏舞動。\n",me);
+            message_vision("突然，$N感覺身邊黑影閃動，只見一條竹葉青蛇正吐着信子，昂首隨着$N雙手的節奏舞動。\n",me);
             snake=new("/clone/beast/qingshe");        
             snake->move(environment(me));
             break;

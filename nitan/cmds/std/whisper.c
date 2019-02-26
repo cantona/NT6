@@ -36,10 +36,10 @@ int main(object me, string arg)
                 addn("jing", -50, me);
         }
 
-        write(WHT "你在" + ob->name() + WHT "的耳邊悄聲說道：" +
+        write(WHT "你在" + ob->name() + WHT "的耳邊悄聲説道：" +
               msg + "\n" NOR);
         tell_room(environment(me), me->name() + "在" + ob->name()
-                + "耳邊小聲地說了些話。\n", ({ me, ob }));
+                + "耳邊小聲地説了些話。\n", ({ me, ob }));
         if (! userp(ob)) 
         {
               r = 0;
@@ -57,7 +57,7 @@ int main(object me, string arg)
        }
         else
                 tell_object(ob, WHT + me->name() +
-                                WHT "在你的耳邊悄聲說道：" + msg + "\n" NOR);
+                                WHT "在你的耳邊悄聲説道：" + msg + "\n" NOR);
         return 1;
 }
 
@@ -80,7 +80,7 @@ int reply_whisper(object me, object who, string msg)
         if (msg != bunch_quest["send_msg"])
                 return 0;
 
-        message_sort("$N面色凝重，一邊聽著一邊對$n使勁的點頭：“這位" +
+        message_sort("$N面色凝重，一邊聽着一邊對$n使勁的點頭：“這位" +
                      RANK_D->query_respect(me) +
                      "，多謝你把話帶到！”\n", who, me);
 
@@ -100,7 +100,7 @@ int reply_whisper(object me, object who, string msg)
                "score" : score,
                "weiwang" : weiwang,
                "prompt": "在把口信傳給" + who->name() +
-                         HIG "的過程中，經過鍛煉" ]);
+                         HIG "的過程中，經過鍛鍊" ]);
 
         GIFT_D->delay_bonus(me, b);
 
@@ -155,7 +155,7 @@ int ultra_whisper(object me, object who, string msg)
         if (msg != quest["answer"])
                 return 0;
 
-        message_sort("$N面色凝重，一邊聽著一邊對$n使勁的點頭：“這位" +
+        message_sort("$N面色凝重，一邊聽着一邊對$n使勁的點頭：“這位" +
                      RANK_D->query_respect(me) +
                      "，多謝你把口令帶到！”\n", who, me);
 

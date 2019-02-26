@@ -10,7 +10,7 @@ void create()
                 set_default_object(__FILE__);
         else {
                 set("unit", "只");
-                set("long", "這是一做鐵制觀音雕像，黑黝黝的，並不美麗。\n");
+                set("long", "這是一做鐵製觀音雕像，黑黝黝的，並不美麗。\n");
                 set("value", 1000);
                 set("material", "iron");
         }

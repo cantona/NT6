@@ -38,7 +38,7 @@ int perform(object me, object target)
                 return notify_fail("你現在真氣不夠，難以施展" SHENG "。\n"); 
 
         if (! living(target)) 
-                return notify_fail("對方都已經這樣了，用不著這麼費力吧？\n"); 
+                return notify_fail("對方都已經這樣了，用不着這麼費力吧？\n"); 
 
         msg = HIW "$N" HIW "一抖手中" + weapon->name() + HIW "閃出無數個劍花，同時向$n" HIW "刺去。\n" NOR; 
         ap = me->query_skill("sword"); 

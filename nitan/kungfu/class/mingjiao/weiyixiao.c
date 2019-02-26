@@ -12,7 +12,7 @@ void create()
 {
         set_name("韋一笑", ({"wei yixiao", "wei", "yixiao",}));
         set("long",
-                "他長得活象是一只青翼大蝙蝠。\n"
+                "他長得活象是一隻青翼大蝙蝠。\n"
                 "他的臉色灰撲撲的。\n"
         );
 

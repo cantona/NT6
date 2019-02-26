@@ -3,7 +3,7 @@
 inherit SKILL;
 
 mapping *action = ({
-([        "action" : "$N一招「無對」，左掌疊于右掌之上，劈向$n",
+([        "action" : "$N一招「無對」，左掌疊於右掌之上，劈向$n",
         "force" : 130,
         "dodge" : 20,
         "damage" : 10,
@@ -19,7 +19,7 @@ mapping *action = ({
         "skill_name" : "無雙",
         "damage_type" : "內傷"
 ]),
-([        "action" : "$N一招「無拘」，雙掌幻化一片幻影，將$n籠罩于內。",
+([        "action" : "$N一招「無拘」，雙掌幻化一片幻影，將$n籠罩於內。",
         "force" : 150,
         "dodge" : 30,
         "damage" : 35,

@@ -12,7 +12,7 @@ void create()
                 set_default_object(__FILE__);
         else {
                 set("unit", "件");
-                set("long", "這是一件織著紅花綠草的襖裙, 哈薩克女孩常穿的衣著。\n");
+                set("long", "這是一件織著紅花綠草的襖裙, 哈薩克女孩常穿的衣着。\n");
                 set("material", "cloth");
                 set("armor_prop/armor", 3);
                 set("value", 1000);

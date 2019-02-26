@@ -9,7 +9,7 @@ int valid_enable(string usage) { return usage == "guzheng-jifa"; }
 int valid_learn(object me)
 {
         if (me->query_skill("guzheng-jifa", 1) < 100)
-                return notify_fail("你的古箏技法水平不夠，還是先練好再說吧！\n");
+                return notify_fail("你的古箏技法水平不夠，還是先練好再説吧！\n");
 
         if (me->query_skill("guzheng-jifa", 1) < me->query_skill("xiyu-tiezheng", 1))
                 return notify_fail("你的古箏技法水平有限，無法領會更精妙的西域鐵箏音。\n");

@@ -427,7 +427,7 @@ mapping *quest = ({
         ]),
         ([
                 "id":          "shuoshu laoren",
-                "name":        "說書老人",
+                "name":        "説書老人",
                 "type":        "殺",
                 "bonus":       54,
                 "msg":        "",
@@ -483,7 +483,7 @@ mapping *quest = ({
         ]),
         ([
                 "id":          "fox",
-                "name":        "狐貍",
+                "name":        "狐狸",
                 "type":        "殺",
                 "bonus":       64,
                 "msg":        "",

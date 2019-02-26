@@ -63,8 +63,8 @@ int perform(object me, object target)
 
         skill = (int)me->query_skill("youming-guizhao", 1);
 
-        message_combatd(HIB "\n突然$N" HIB "將雙掌變爪合于胸前，象風車般急轉數圈，而後雙爪向外一翻\n"
-                        "繞著$n" HIB "疾轉數圈，五根手指向著$n頂門直下插落。\n\n" NOR, me, target);
+        message_combatd(HIB "\n突然$N" HIB "將雙掌變爪合於胸前，象風車般急轉數圈，而後雙爪向外一翻\n"
+                        "繞着$n" HIB "疾轉數圈，五根手指向着$n頂門直下插落。\n\n" NOR, me, target);
 
         addn("neili", -400, me);
         set_temp("gz_pfmed", 1, me);

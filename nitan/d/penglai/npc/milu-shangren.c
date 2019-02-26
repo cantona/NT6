@@ -14,7 +14,7 @@ void create()
         
         set("inquiry", ([
                 "蟠桃"       :   "我就是為了蟠桃而來，可惜蟠桃沒找到，卻迷路了，哎 ……。\n",
-                "蓬萊仙島"   :   "我為了尋找傳說中的蟠桃，來到這裡，卻迷路了 ……。\n",
+                "蓬萊仙島"   :   "我為了尋找傳説中的蟠桃，來到這裏，卻迷路了 ……。\n",
         ]));
                 
         set("vendor_goods", ({
@@ -52,12 +52,12 @@ void greeting(object ob)
         switch(random(2))
         {
         case 0:
-                say(CYN "迷路商人笑咪咪地說道：這位" + RANK_D->query_respect(ob) +
-                    CYN "，看看有什麼需要的，盡管選。\n" NOR);
+                say(CYN "迷路商人笑咪咪地説道：這位" + RANK_D->query_respect(ob) +
+                    CYN "，看看有什麼需要的，儘管選。\n" NOR);
                 break;
         case 1:
                 say(CYN "迷路商人吆喝道：這位" +
-                    RANK_D->query_respect(ob) + CYN "，需要什麼盡管說，我這裡價格公道。\n" NOR);
+                    RANK_D->query_respect(ob) + CYN "，需要什麼儘管説，我這裏價格公道。\n" NOR);
                 break;
         }
 }

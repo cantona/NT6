@@ -58,16 +58,16 @@ mapping *action = ({
         "skill_name" : "霹靂雨",
         "damage_type" : "瘀傷"
 ]),
-([        "action" : "$N使一式「晴空萬裡」，雙掌一分，猛地劈向$n的$l",
+([        "action" : "$N使一式「晴空萬里」，雙掌一分，猛地劈向$n的$l",
         "force" : 290,
         "dodge" : -30,
         "parry" : -30,
         "damage": 55,
         "lvl"   : 140,
-        "skill_name" : "晴空萬裡",
+        "skill_name" : "晴空萬里",
         "damage_type" : "瘀傷"
 ]),
-([        "action" : "$N一招「烈炎飛空」，雙掌帶著蕭瑟的烈炎之氣，拍向$n的$l",
+([        "action" : "$N一招「烈炎飛空」，雙掌帶着蕭瑟的烈炎之氣，拍向$n的$l",
         "force" : 330,
         "dodge" : -30,
         "parry" : -35,
@@ -85,13 +85,13 @@ mapping *action = ({
         "skill_name" : "混陽式",
         "damage_type" : "瘀傷"
 ]),
-([        "action" : "$N清嘯一聲，一式「雄心萬裡」，雙掌揮舞，氣勢非凡，擊向$n的$l",
+([        "action" : "$N清嘯一聲，一式「雄心萬里」，雙掌揮舞，氣勢非凡，擊向$n的$l",
         "force" : 380,
         "dodge" : -45,
         "parry" : -50,
         "damage": 130,
         "lvl"   : 180,
-        "skill_name" : "雄心萬裡",
+        "skill_name" : "雄心萬里",
         "damage_type" : "瘀傷"
 ])
 });

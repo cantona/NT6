@@ -15,13 +15,13 @@ void create()
         set("short", HIY "祭台" NOR);
         set("long",@LONG
 你站在祭台上，感覺腳下異常冰冷。祭台上雜亂不堪，正
-中插著一面祭旗（jiqi），上面似乎已經染滿了鮮血。這裡似
+中插着一面祭旗（jiqi），上面似乎已經染滿了鮮血。這裏似
 乎發生過激烈的打鬥，不知道是為了爭奪什麼。你不由思緒萬
 千，“塵歸塵，土歸土 …… 世人究竟為了哪般？”
 LONG);
 
         set("no_rideto", 1);         // 設置不能騎馬到其他地方
-        set("no_flyto", 1);          // 設置不能從起來地方騎馬來這裡
+        set("no_flyto", 1);          // 設置不能從起來地方騎馬來這裏
         set("binghuo", 1);           // 表示在冰火島
         
         set("no_die", 1);
@@ -110,7 +110,7 @@ int do_duoqu(string arg)
 
         // 非幫戰期間不能奪取
         if (! BUNCH_D->is_battle_start() && ! TEST_FLAG)
-                return notify_fail("現在不處于幫戰期間，你奪取祭旗幹什麼！\n");
+                return notify_fail("現在不處於幫戰期間，你奪取祭旗幹什麼！\n");
         
         // 奪取
         set("jiqi_owner", me);

@@ -14,7 +14,7 @@ int perform(object me, object target)
         if( !target || !me->is_fighting(target) )
                 return notify_fail("「奪命鐵爪」只能在戰鬥中使用。\n");
         if( me->query_temp("weapon"))
-                return notify_fail("你拿著武器怎麼能使用「奪命鐵爪」！\n");   
+                return notify_fail("你拿着武器怎麼能使用「奪命鐵爪」！\n");   
    if(me->query_skill("force",1) < 200 )
                 return notify_fail("你的歸元吐吶法不夠嫻熟，使不出「奪命鐵爪」。\n");
         if(me->query_skill_mapped("strike") != "super-strike" )

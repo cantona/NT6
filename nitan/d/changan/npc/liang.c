@@ -5,7 +5,7 @@ inherit NPC;
 void create()
 {
         set_name("樑喜祿", ({"liang xilu", "liang", "boss"}));
-        set("title", "貨棧老板");
+        set("title", "貨棧老闆");
         set("gender", "男性");
         set("age", 35);
         set("kee", 350); 

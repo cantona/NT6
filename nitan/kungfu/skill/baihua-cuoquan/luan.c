@@ -41,7 +41,7 @@ int perform(object me, object target)
                 return notify_fail(target->name() + "目前正自顧不暇，放膽攻擊吧。\n");
 
         if (! living(target))
-                return notify_fail("對方都已經這樣了，用不著這麼費力吧？\n");
+                return notify_fail("對方都已經這樣了，用不着這麼費力吧？\n");
 
         msg = HIW "$N" HIW "頓步沉身，雙掌朝$n" HIW "交錯打出，掌鋒拳影重"
               "重疊疊，正是一招「百花錯亂」。\n" NOR;
@@ -55,7 +55,7 @@ int perform(object me, object target)
                 damage = damage_power(me, "unarmed");
                 msg += COMBAT_D->do_damage(me, target, UNARMED_ATTACK, damage, 50,
                                            HIW "$n只感到頭暈目眩，只見$N或掌、或爪、"
-                                           "或拳、或指舖天蓋地的向自己各個部位襲來！\n"
+                                           "或拳、或指鋪天蓋地的向自己各個部位襲來！\n"
                                            "只一瞬間，全身竟已多了數十出傷痕，" 
                                            HIR "鮮血" HIW "狂瀉不止！\n" NOR);
                 me->start_busy(1);

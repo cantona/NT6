@@ -17,12 +17,12 @@ string update_msg_others()
 string update_msg_self()
 {
         return HIR "忽然覺得一陣難受，心虛氣短，看來是受到達"
-               "摩亂氣劍的幹擾。\n" NOR;
+               "摩亂氣劍的干擾。\n" NOR;
 }
 
 string die_msg_others()
 {
-        return HIR "$N" HIR "倒在地上呻吟了半天，最後終于漸"
+        return HIR "$N" HIR "倒在地上呻吟了半天，最後終於漸"
                "漸沒有了聲音。\n" NOR;
 }
 

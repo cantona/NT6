@@ -7,7 +7,7 @@ void create()
 {
 	set("short", "神龍教");
         set("long", @LONG
-shen long需要更多的說明……
+shen long需要更多的説明……
 LONG );
 
 	set("exits", ([

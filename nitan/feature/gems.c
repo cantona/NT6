@@ -27,7 +27,7 @@ string query_gem_id(string socket, int level)
 
 string query_all_effect(string socket)
 {
-        string msg = gems_color[socket] + "這是一顆寶石，上面似乎附著某種神奇的魔力：\n"NOR;
+        string msg = gems_color[socket] + "這是一顆寶石，上面似乎附着某種神奇的魔力：\n"NOR;
         msg += sprintf("\t兵器 - %s\n", weapon_effect[socket]);
         msg += sprintf("\t防具 - %s\n", armor_effect[socket]);
         msg += sprintf("\t戒指 - %s\n", ring_effect[socket]);
@@ -49,7 +49,7 @@ void set_weapon_desc()
         if (sockets < 1) return;
 
         if (!stringp(desc)) desc = "";
-        desc += sprintf("上面似乎可以鑲嵌著%d顆魔法石！\n", sockets);
+        desc += sprintf("上面似乎可以鑲嵌着%d顆魔法石！\n", sockets);
         for (i = 1; i <= sockets; i++) {
                 socket = query(sprintf("sockets/socket%d", i));
                 level = query(sprintf("sockets/socket%d_level", i));
@@ -73,7 +73,7 @@ void set_armor_desc()
 //
         if (sockets < 1) return;
         if (!stringp(desc)) desc = "";
-        desc += sprintf("上面似乎可以鑲嵌著%d顆魔法石！\n", sockets);
+        desc += sprintf("上面似乎可以鑲嵌着%d顆魔法石！\n", sockets);
         for (i = 1; i <= sockets; i++) {
                 socket = query(sprintf("sockets/socket%d", i));
                 level = query(sprintf("sockets/socket%d_level", i));
@@ -99,7 +99,7 @@ void set_ring_desc()
         if (sockets < 1) return;
 
         if (!stringp(desc)) desc = "";
-        desc += sprintf("上面似乎可以鑲嵌著%d顆魔法石！\n", sockets);
+        desc += sprintf("上面似乎可以鑲嵌着%d顆魔法石！\n", sockets);
         for (i = 1; i <= sockets; i++) {
                 socket = query(sprintf("sockets/socket%d", i));
                 level = query(sprintf("sockets/socket%d_level", i));

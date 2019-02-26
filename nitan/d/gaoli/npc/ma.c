@@ -1,13 +1,13 @@
 // 大唐雙龍傳
  
-// ma.c 馬夫子
+// ma.c 馬伕子
 
 inherit NPC;
 
 void create()
 {
 //  reload("gaoli_ma");
-  set_name("馬夫子", ({"ma fuzhi", "ma", "fuzhi"}));
+  set_name("馬伕子", ({"ma fuzhi", "ma", "fuzhi"}));
   set("gender", "男性");
   set("combat_exp", 3000);
   set("age", 38);

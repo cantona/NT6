@@ -6,7 +6,7 @@ void create()
 {
         set_name("值日喇嘛", ({ "zhiri lama", "lama" }));
         set("long", 
-"這個值日喇嘛拿著一本賬簿，他是專門負責管理捐納箱的。\n");
+"這個值日喇嘛拿着一本賬簿，他是專門負責管理捐納箱的。\n");
         set("gender", "男性");
         set("age", 20);
         set("attitude", "peaceful");

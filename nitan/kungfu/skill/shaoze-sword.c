@@ -4,7 +4,7 @@ inherit SKILL;
 
 mapping *action = ({
         ([ "name":   "少澤劍",
-           "action": "$N左手小指一伸，一條氣流從少沖穴中激射而出，“少澤劍”"
+           "action": "$N左手小指一伸，一條氣流從少衝穴中激射而出，“少澤劍”"
                      "出手入風，指向$n的$l",
            "force":  320,
            "dodge":  60,

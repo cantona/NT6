@@ -15,7 +15,7 @@ LONG );
         set("outdoors", "shouxihu");
         set("item_desc", ([
                 "lian" : "
-勝地重彩在紅藕花中綠楊蔭裡
+勝地重彩在紅藕花中綠楊蔭裏
 簫聲依舊看長天一色朗月當空
 \n",
                 "lian1" : "

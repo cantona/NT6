@@ -71,7 +71,7 @@ void heart_beat()
         // message("story", STORY_DIR + "yanmen1.c"->prompt() + WHT +
         message("story", HIY "【武林傳奇】" NOR + WHT +
                          (random(2) ? "只聽得的的馬蹄之聲，一隊契丹武士手執長矛"
-                                    : "只見一隊契丹武士揮舞著長矛，指指點點，") +
+                                    : "只見一隊契丹武士揮舞着長矛，指指點點，") +
                          "來到了雁門關外。\n" + NOR, listeners);
 }
 
@@ -80,11 +80,11 @@ int create_attacker(int num)
         int i;
         int count;
         object aob;
-        string *msg = ({ "揮舞著長矛，大搖大擺的走了過來。\n",
-                         "騎著在一匹馬上走了過來。\n",
-                         "耀武揚威的舉著長矛走了過來。\n",
-                         "嘴裡嘟囔著什麼走了過來。\n",
-                         "臉上帶著姦笑，走了過來。\n", });
+        string *msg = ({ "揮舞着長矛，大搖大擺的走了過來。\n",
+                         "騎着在一匹馬上走了過來。\n",
+                         "耀武揚威的舉着長矛走了過來。\n",
+                         "嘴裏嘟囔着什麼走了過來。\n",
+                         "臉上帶着奸笑，走了過來。\n", });
 
         for (i = 0; i < num + 1; i++)
         {

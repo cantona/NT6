@@ -6,7 +6,7 @@ void create()
         set_name("老鴇婆", ({ "laobao po", "laobao", "po" }) );
         set("gender", "女性" );
         set("age", 42);
-        set("title", HIC "春月樓老板娘" NOR);
+        set("title", HIC "春月樓老闆娘" NOR);
         set("long", "這老鴇婆雖是徐娘半老，但仍風韻尤存，只不\n"
                     "過臉上的粉太厚了。\n");
         set("str", 25);
@@ -53,7 +53,7 @@ void greeting(object me)
                                   environment(me), ({me}));
                        me->move("/d/luoyang/sroad5");
 
-                       message("vision", me->name() + "被人從春月樓裡踢了出來，"
+                       message("vision", me->name() + "被人從春月樓裏踢了出來，"
                                   "栽倒在地上，磕掉兩顆門牙。\n", 
                                   environment(me), ({me}));
         } else
@@ -62,8 +62,8 @@ void greeting(object me)
                 {
                                command("say 呦，" + RANK_D->query_respect(me) 
                                 + "也來光顧我們春月樓啊。");
-                               command("say 想當年我接過一個西藏喇嘛，他上床前一"
-                                "定要念經，一面念經，眼珠子就骨溜溜的瞧著"
+                               command("say 想當年我接過一個西藏喇嘛，他上牀前一"
+                                "定要念經，一面唸經，眼珠子就骨溜溜的瞧着"
                                 "我。");
                     }
                 if( query("gender", me) == "女性" )

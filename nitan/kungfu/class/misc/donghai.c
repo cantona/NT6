@@ -11,7 +11,7 @@ void create()
         set("gender", "男性");
         set("age", 23);
         set("long", @LONG
-這是一個神採奕奕的年輕人，風度翩翩，氣宇軒昂。
+這是一個神采奕奕的年輕人，風度翩翩，氣宇軒昂。
 LONG );
         set("combat_exp", 10000000);
         set("shen_type", 0);
@@ -88,7 +88,7 @@ mixed hit_ob(object me, object ob, int damage_bouns)
         ob->receive_wound("qi", 200 + random(200), me);
         set("neili",query("max_neili",  me), me);
         return HIY "$N" HIY "身上閃過一道電光，登時令$n"
-               HIY "渾身麻木，手腳酸軟。\n" NOR;
+               HIY "渾身麻木，手腳痠軟。\n" NOR;
 }
 
 void unconcious()
@@ -132,7 +132,7 @@ varargs void die(object killer)
                 }
         }
 
-        // 1/600幾率掉出無名銅人
+        // 1/600機率掉出無名銅人
         if (random(600) < 1)
         {
                 object ob_tongren;
@@ -151,7 +151,7 @@ void random_move()
         {
                 message_vision("$N急急忙忙的走了。\n", this_object());
                 CHANNEL_D->channel_broadcast("rumor",
-                        "聽說" + name() + HIM "修煉良久，元氣恢復，"
+                        "聽説" + name() + HIM "修煉良久，元氣恢復，"
                         "已經安然返回神界。" NOR);
                 destruct(this_object());
                 return;

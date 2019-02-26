@@ -42,7 +42,7 @@ int perform(object me, object target)
                 return notify_fail("你現在的真氣不夠，難以施展" HUA "。\n");
 
         if (! living(target))
-                return notify_fail("對方都已經這樣了，用不著這麼費力吧？\n");
+                return notify_fail("對方都已經這樣了，用不着這麼費力吧？\n");
 
 
         msg = HIG "\n$N" HIG "使出陰陽刃法「" HIY "日月無華" HIG "」，手"

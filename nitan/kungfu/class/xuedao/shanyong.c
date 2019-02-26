@@ -16,7 +16,7 @@ void create()
 {
         set_name("善勇", ({ "shan yong", "shan", "yong" }));
         set("long", @LONG
-一個胖胖的西藏僧人，面帶笑容，卻常幹笑裡藏刀的事。
+一個胖胖的西藏僧人，面帶笑容，卻常乾笑裏藏刀的事。
 LONG);
         set("gender", "男性");
         set("age", 35);
@@ -146,7 +146,7 @@ int do_kneel()
 
         message_vision(HIY "$N" HIY "雙手合十，恭恭敬敬地跪了下來。\n\n"
                        "$n" HIY "伸出手掌，在$N" HIY "頭頂輕輕地摩挲了幾"
-                       "下，將$N" HIY "的頭發盡數剃去。\n\n" NOR, me,
+                       "下，將$N" HIY "的頭髮盡數剃去。\n\n" NOR, me,
                        this_object());
 
         command("ke");

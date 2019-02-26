@@ -20,7 +20,7 @@ int main(object me, string arg)
               return 0;
 
         seteuid(geteuid(me));
-        write("guilei 命令 v1.0  \n小魚兒(smallfish)于2002年1月8號編寫。\n"+"主頁：http://www.jdmr.com\n郵件：cunsun@sina.com\n");
+        write("guilei 命令 v1.0  \n小魚兒(smallfish)於2002年1月8號編寫。\n"+"主頁：http://www.jdmr.com\n郵件：cunsun@sina.com\n");
 
         continueable = 1;
          if (!arg || !(sscanf(arg,"%s %s",dir,type) == 2))
@@ -446,7 +446,7 @@ int help (object me)
 
 這個指令讓你指定對一個文件或者一個目錄下的房間、人物、物品的
 屬性進行歸類。
-room參數表示歸類房間文件，信息包括文件名、房間名、房間裡的物
+room參數表示歸類房間文件，信息包括文件名、房間名、房間裏的物
 品文件名、物品中文名、物品英文名；
 npc 參數表示歸類人物文件，信息包括文件名、中文名、英文名、門
 派ID、門派中文名、身上物品的文件名、物品ID、物品中文名、人物

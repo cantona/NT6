@@ -121,14 +121,14 @@ void attempt_apprentice(object ob)
                 
         if( query("gender", ob) == "女性" )
         {
-                message_vision("馮婆婆垂目沉思片刻, 說道：“好吧, 我就收下你了。”\n",ob);
+                message_vision("馮婆婆垂目沉思片刻, 説道：“好吧, 我就收下你了。”\n",ob);
                 command("recruit "+query("id", ob));
                 if( query("class", ob) != "dancer" )
                         set("class", "dancer", ob);
                 return;
         } else
         {
-                message_vision("馮婆婆瞪著你看了半天,說道：“本宮只收女弟子！”\n",ob);
+                message_vision("馮婆婆瞪着你看了半天,説道：“本宮只收女弟子！”\n",ob);
                 return;
         }
 }

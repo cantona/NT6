@@ -3,7 +3,7 @@
 inherit SKILL;
 
 mapping *action = ({
-([      "action" : "$N身形急晃，一躍而至$n跟前，右掌帶著切骨之勁砍向$n的$l",
+([      "action" : "$N身形急晃，一躍而至$n跟前，右掌帶着切骨之勁砍向$n的$l",
         "force" : 180,
         "attack": 23,
         "dodge" : 25,
@@ -12,7 +12,7 @@ mapping *action = ({
         "lvl"   : 0,
         "damage_type" : "割傷"
 ]),
-([      "action" : "$N飛身躍起，雙掌至上而下斜砍而出，頓時萬千道掌寒勁從四面八方席卷$n",
+([      "action" : "$N飛身躍起，雙掌至上而下斜砍而出，頓時萬千道掌寒勁從四面八方席捲$n",
         "force" : 240,
         "attack": 41,
         "dodge" : 25,

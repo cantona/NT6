@@ -1,4 +1,4 @@
-// dragon-strike.c 降龍十八掌之震驚百裡
+// dragon-strike.c 降龍十八掌之震驚百里
 // Last Modified by sega on Mar. 10 2000
 
 #include <ansi.h>;
@@ -16,8 +16,8 @@ int ttl = 17;
 int seq = 7;
 mapping *action = ({
         ([
-                "action"      : "$N大吼一聲，雙掌使出"+(order[random(13)])+"「震驚百裡」"NOR"，不顧一切般擊向$n",
-                "skill_name" : "震驚百裡",
+                "action"      : "$N大吼一聲，雙掌使出"+(order[random(13)])+"「震驚百里」"NOR"，不顧一切般擊向$n",
+                "skill_name" : "震驚百里",
                 "dodge"       : d_e1 + (d_e2 - d_e1) * seq / ttl,
                 "parry"       : p_e1 + (p_e2 - p_e1) * seq / ttl,
                 "force"       : f_e1 + (f_e2 - f_e1) * seq / ttl,
@@ -85,7 +85,7 @@ int power_point(object me) {
 
 int help(object me)
 {
-        write(HIC"\n降龍十八掌之震驚百裡："NOR"\n");
+        write(HIC"\n降龍十八掌之震驚百里："NOR"\n");
         write(@HELP
 
     降龍十八掌是丐幫鎮幫之寶，是天下最剛猛的武功。

@@ -44,7 +44,7 @@ int perform(object me, object target)
                 return notify_fail("你現在的真氣不足，難以施展" ZHEN "。\n");
 
         if (! living(target))
-                return notify_fail("對方都已經這樣了，用不著這麼費力吧？\n");
+                return notify_fail("對方都已經這樣了，用不着這麼費力吧？\n");
 
         msg = HIY "$N" HIY "突然伏地低嘶，心中暗念九陰蛤蟆功心法。口中冒出絲絲白氣，少傾，一股真氣\n"        
                   "由丹田直湧而上，$N隨即猛然躍至半空，使出「 "HIY "蟾震九天" HIY "」，雙掌將全身真氣不停\n"

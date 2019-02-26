@@ -12,7 +12,7 @@ void create()
                 set_default_object(__FILE__);
         else {
                 set("unit", "柄");
-                set("long", "這是一柄閃著亮麗銀光的匕首，十分鋒利。\n");
+                set("long", "這是一柄閃着亮麗銀光的匕首，十分鋒利。\n");
                 set("value", 5000);
                 set("material", "silver");
                 set("wield_msg", "$N手指輕擺，彈出一柄$n握在手中。\n");

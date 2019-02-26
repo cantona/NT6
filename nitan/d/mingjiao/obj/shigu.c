@@ -13,7 +13,7 @@ void create()
                 set("unit", "只");
                 set("value", 50);
                 set("material", "wood");
-                set("long", "這是一只白森森的屍骨。\n");
+                set("long", "這是一隻白森森的屍骨。\n");
                 set("wield_msg","$N手中握住一把$n，眼中露出陰邪的笑意。\n");
                 set("unwield_msg", "$N將$n插回腰間，臉色頓時也恢復了正常。\n");
         }

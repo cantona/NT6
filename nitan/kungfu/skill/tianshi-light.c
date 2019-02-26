@@ -4,7 +4,7 @@ string *dodge_msg = ({
         HIW "$n端坐微笑，像一位下凡的天使，$N立刻匍匐在地，虔誠膜拜。\n" NOR ,
 });
 mapping *action = ({
-([      "action": MAG "$N張開那美麗的翅膀，一陣狂風向$n席卷去。" NOR ,
+([      "action": MAG "$N張開那美麗的翅膀，一陣狂風向$n席捲去。" NOR ,
         "force" : 0,
         "dodge" : 0,
         "damage": 0,
@@ -36,7 +36,7 @@ string query_dodge_msg(string limb)
 int valid_learn(object me)
 {   
     if ( ! wizardp(me))
-        return notify_fail("﹝天使之光﹞神功只能向月兒學習。\n");
+        return notify_fail("［天使之光］神功只能向月兒學習。\n");
 }
 string perform_action_file(string action)
 {

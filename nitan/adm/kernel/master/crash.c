@@ -20,7 +20,7 @@ protected void crash(string error, object command_giver, object current_object)
         mixed cmds;
         int i;
 
-        efun::shout("系統核心發出一聲慘叫：哇─哩─咧─\n");
+        efun::shout("系統核心發出一聲慘叫：哇—哩—咧—\n");
         efun::shout("系統核心告訴你：要當機了，自己保重吧！\n");
 
         log_file("static/CRASHES", MUD_NAME + " crashed on: " + ctime(time()) +", error: " + error + "\n");

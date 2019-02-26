@@ -17,11 +17,11 @@ void create()
                 set("value", 1);
                 set("long", @LONG
 這是一葉小舟，最多也就能載七、八個人。小舟上有位六
-十多歲的老艄公手持長竹篙，正在船尾吃力地撐著船。
+十多歲的老艄公手持長竹篙，正在船尾吃力地撐着船。
 LONG);
                 set("unit", "艘");
                 set("material", "wood");
-                set("no_get", "好家伙，船你也想扛在肩上？\n");
+                set("no_get", "好傢伙，船你也想扛在肩上？\n");
         }
         setup();
 }

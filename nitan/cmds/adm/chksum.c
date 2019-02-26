@@ -41,7 +41,7 @@ int main(object me, string str)
         { 
                 file = (string) ol[item]; 
                 if (file_size(file + ".c") < 0 && file_size(file) < 0) 
-                        nitem = HIR"<不存在的武器ID，請與巫師聯系>"NOR; 
+                        nitem = HIR"<不存在的武器ID，請與巫師聯繫>"NOR; 
                 else 
                 { 
                         call_other(file, "???"); 

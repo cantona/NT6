@@ -35,7 +35,7 @@ int perform(object me)
                 return notify_fail("你沒有激發龍爪功，無法使用「神龍抓」！\n");
 
        if (! living(target))
-              return notify_fail("對方都已經這樣了，用不著這麼費力吧？\n");
+              return notify_fail("對方都已經這樣了，用不着這麼費力吧？\n");
 
         msg = HIY "$N" HIY "大喝一聲，飛身撲至$n" HIY "面前，隨即伸手抓向"
               "$p" HIY "的要害！\n" NOR;

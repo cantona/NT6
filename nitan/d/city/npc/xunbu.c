@@ -48,15 +48,15 @@ LONG );
         set("attitude", "heroism");
         set("chat_chance", 3);
         set("chat_msg", ({
-                "巡捕說道：你想幹什麼？還不跟我去府衙受審！？\n",
-                "巡捕說道：大膽！居然敢當街拒捕！想造反？\n",
-                "巡捕說道：別胡鬧了，還是乖乖的跟我走吧。\n"
+                "巡捕説道：你想幹什麼？還不跟我去府衙受審！？\n",
+                "巡捕説道：大膽！居然敢當街拒捕！想造反？\n",
+                "巡捕説道：別胡鬧了，還是乖乖的跟我走吧。\n"
         }) );
         set ("inquiry",([
                 "bribery":
-                        "說哪裡話來，府太爺清貧廉正，我們作手下的豈能辱沒他的名聲？\n收起你的錢吧！\n",
+                        "説哪裏話來，府太爺清貧廉正，我們作手下的豈能辱沒他的名聲？\n收起你的錢吧！\n",
                 "salary": "哎，老爺俸銀微薄，我們的年餉自然更少了......\n",
-                "money": "說實在的，我也想要錢。但要是讓老爺知道了我收受賄賂(bribery)，\n不死也得扒層皮\n",
+                "money": "説實在的，我也想要錢。但要是讓老爺知道了我收受賄賂(bribery)，\n不死也得扒層皮\n",
         ]));
          set("pursuer",1);
          set_skill("blade", 100);
@@ -75,7 +75,7 @@ void init()
         ::init();
         if (interactive(ob = this_player()) && 
                 (int)ob->query_condition("killer")) {
-        message_vision( "巡捕對著$N大喝一聲：“大膽刁民，竟敢殺人放火，想置我們與何地？！！” \n", ob );
+        message_vision( "巡捕對着$N大喝一聲：“大膽刁民，竟敢殺人放火，想置我們與何地？！！” \n", ob );
                 remove_call_out("kill_ob");
                 call_out("kill_ob", 1, ob);
         }

@@ -79,9 +79,9 @@ int ask_kill()
    object ob,me = this_player();
 
    command("tell"+query("id", this_player())+"你要去殺東方不敗？\n");
-   message_vision(HIC "向問天對$N點了點頭說：我助你一臂之力。\n" NOR,this_player());
+   message_vision(HIC "向問天對$N點了點頭説：我助你一臂之力。\n" NOR,this_player());
    ob=new("/d/heimuya/npc/obj/card4");
    ob->move(me);
-   tell_object(me,"向問天從懷裡摸出一塊令牌塞到你的手上。\n");
+   tell_object(me,"向問天從懷裏摸出一塊令牌塞到你的手上。\n");
    return 1;
 }

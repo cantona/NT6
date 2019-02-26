@@ -8,7 +8,7 @@ void create()
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("long", HIM "附魔卷軸用來輔助日魂月魄附魔屬性用的，可確保附魔時裝備不會銷毀。\n" NOR);
+                set("long", HIM "附魔卷軸用來輔助日魂月魄附魔屬性用的，可確保附魔時裝備不會銷燬。\n" NOR);
                 set("unit", "張");
                 set("value", 500000);
                 set("no_sell", 1);

@@ -14,7 +14,7 @@ void create()
                 set("unit", "根");
                 set("value", 250000);
                 set("material", "steel");
-                set("long", "一根沉甸甸雕著盤龍的長棍。\n");
+                set("long", "一根沉甸甸雕着盤龍的長棍。\n");
         }
         init_club(50);
         setup();

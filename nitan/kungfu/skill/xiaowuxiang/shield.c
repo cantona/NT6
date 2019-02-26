@@ -24,7 +24,7 @@ int exert(object me, object target)
         me->receive_damage("qi", 0);
 
         message_combatd(
-        MAG "$N長吸一口氣，運起護體神功，身上衣衫緩緩漲起。□\n" NOR, me);
+        MAG "$N長吸一口氣，運起護體神功，身上衣衫緩緩漲起。ⅵ\n" NOR, me);
 
         addn_temp("apply/armor", skill/2, me);
         // me->addn_temp("apply/defense",  skill / 2);

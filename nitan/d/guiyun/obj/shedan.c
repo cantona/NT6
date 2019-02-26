@@ -12,7 +12,7 @@ void create()
 {
         set_name("毒蛇膽", ({"shedan", "dan"}));
         set("unit", "只");
-        set("long", "這是一只綠瑩瑩的毒蛇膽，是制備毒藥的原料。\n");
+        set("long", "這是一隻綠瑩瑩的毒蛇膽，是製備毒藥的原料。\n");
         set("value", 800);
         setup();
 }

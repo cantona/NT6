@@ -11,7 +11,7 @@ void create()
                 set_default_object(__FILE__);
         else {
                 set("unit", "個");
-                set("long", "這是一個廟裡常見的香爐，用來讓善男信女們插香(pushin)進願。\n");
+                set("long", "這是一個廟裏常見的香爐，用來讓善男信女們插香(pushin)進願。\n");
                 set("value", 1000);
                 set("material", "gold");
                 set("no_get",1);

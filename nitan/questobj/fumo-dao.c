@@ -19,8 +19,8 @@ void create()
 乃是佛家無上降魔法寶。\n");
                 set("value", 0);
                 set("material", "steel");
-                set("wield_msg", HIY "只聽「錚」的一聲，伏魔刀脫鞘飛出，自行躍入$N掌中。
-瞬時天際間風雲變色，電閃雷鳴，彌漫著一片無邊殺意。\n" NOR);
+                set("wield_msg", HIY "只聽「錚」的一聲，伏魔刀脱鞘飛出，自行躍入$N掌中。
+瞬時天際間風雲變色，電閃雷鳴，瀰漫着一片無邊殺意。\n" NOR);
                 set("unwield_msg", HIY "伏魔刀自$N掌中飛起，在半空中一轉，「唰」地躍入刀鞘。\n" NOR);
         }
         setup();

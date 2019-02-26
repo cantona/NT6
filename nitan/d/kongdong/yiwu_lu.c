@@ -10,8 +10,8 @@ void create()
 	set("short","疑無路");
 	set("long",@LONG
 在光滑的崖壁上，垂下來一條三丈餘長的鐵索梯，黑黝黝，山風吹起不時地
-擺動，撞在石壁上發出錚錚鏘鏘的響聲，令人不寒而栗。崖頂又是一條長長的天
-橋棧道，一面臨崖，一面懸空，用鋼□釘入崖壁，其上架些木板，十分險峻，下
+擺動，撞在石壁上發出錚錚鏘鏘的響聲，令人不寒而慄。崖頂又是一條長長的天
+橋棧道，一面臨崖，一面懸空，用鋼釺釘入崖壁，其上架些木板，十分險峻，下
 腳稍重，木板另一頭就翹起，把人嚇得喪魂失魄。所以除了修為很深的真人，誰
 也不敢爬上崖壁去。
 LONG);
@@ -42,7 +42,7 @@ int do_climb(string arg)
 	object me =this_player();
 	
 	if(!arg||arg!="棧道")
-	return notify_fail("你要往哪裡去？可不是鬧著玩的！\n");
+	return notify_fail("你要往哪裏去？可不是鬧着玩的！\n");
 	if(me->query_temp("climbing"))
 	return notify_fail("你正在戰戰兢兢地過棧道呢！\n");
 
@@ -55,7 +55,7 @@ int do_climb(string arg)
     me->start_busy(30,"性命攸關哪\n");
 	call_out("pashan", 5, me, 0);
 	me->set_temp("climbing",1);
-        message_vision( HIG"$N深深吸了幾口氣，沿著顫顫悠悠的棧道走了過去......\n"NOR ,me);
+        message_vision( HIG"$N深深吸了幾口氣，沿着顫顫悠悠的棧道走了過去......\n"NOR ,me);
 	return 1;
 
 }
@@ -85,7 +85,7 @@ break;
 default:
 if( !random(7)&&me->query("id")=="zhou zhenren" && !present("zhou zhenren",dong))
 {
-message_vision( HIG"終于，$N到達了對面的石壁....好險呀！\n",me);
+message_vision( HIG"終於，$N到達了對面的石壁....好險呀！\n",me);
 me->move("/d/menpai/kongdong/xuanhe_dong");
 inv = all_inventory(this_object());
 for (j = 0; j < sizeof(inv); j++)

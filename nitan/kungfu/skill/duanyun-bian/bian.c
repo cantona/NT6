@@ -38,7 +38,7 @@ int perform(object me, object target)
         if( query("neili", me) <= 200+power*2 )
                 return notify_fail("你的內力不夠使用風雲變色！\n");
 
-        message_combatd(HIW"$N運足內力，猛地一揚"NOR+"$n"+HIW"卷起無邊風雲遮月掩日，一股"NOR+HIM"罡風"NOR+HIW"隨著漫天鞭影撲天蓋地的向敵人襲來。\n\n"NOR,me,query_temp("weapon", me));
+        message_combatd(HIW"$N運足內力，猛地一揚"NOR+"$n"+HIW"捲起無邊風雲遮月掩日，一股"NOR+HIM"罡風"NOR+HIW"隨著漫天鞭影撲天蓋地的向敵人襲來。\n\n"NOR,me,query_temp("weapon", me));
 
         addn_temp("apply/attack", power/2, me);
         addn_temp("apply/damage", power/5, me);

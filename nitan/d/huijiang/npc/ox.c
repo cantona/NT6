@@ -5,10 +5,10 @@ inherit NPC;
 
 void create()
 {
-        set_name("□牛", ({ "mao niu","niu" }) );
+        set_name("犛牛", ({ "mao niu","niu" }) );
         set("race", "走畜");
         set("age", 12);
-        set("long", "一頭發怒的公牛，兩個角上微微閃著金光。\n");
+        set("long", "一頭髮怒的公牛，兩個角上微微閃着金光。\n");
 
         set("str", 25);
         set("cor", 24);
@@ -19,8 +19,8 @@ void create()
    
         set("chat_chance",5);
         set("chat_msg",({
-                "□牛瞪著碗大的眼睛，仔細研究著你。\n",
-                "□牛張嘴對天叫了兩聲，你卻沒聽到一點聲音。\n",
+                "犛牛瞪着碗大的眼睛，仔細研究着你。\n",
+                "犛牛張嘴對天叫了兩聲，你卻沒聽到一點聲音。\n",
         }));
         setup();
 }

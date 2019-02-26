@@ -17,19 +17,19 @@ int exert(object me, object target)
         if (me->is_busy()
          || query_temp("pending/exercising", me )
          || query_temp("exit_blocked", me) )
-                return notify_fail("你現在正忙著呢。\n");
+                return notify_fail("你現在正忙着呢。\n");
 
         env = environment(me);
         exit=query("exits", env);
 
         if( !env )
-                return notify_fail("這裡什麼地方也不是！\n");
+                return notify_fail("這裏什麼地方也不是！\n");
 
         if( !query("outdoors", env) )
                 return notify_fail("室內空間太小，陣法施展不開。\n");
 
         if( query("th_buzhen", env) )
-                return notify_fail("這裡已布有奇門陣法。\n");
+                return notify_fail("這裏已布有奇門陣法。\n");
 
         if( me->query_skill_mapped("force") != "bibo-shengong")
                 return notify_fail("你所用的內功與「奇門陣法」心法相悖！\n");
@@ -50,9 +50,9 @@ int exert(object me, object target)
         set("jingli",query("max_jingli",  me)/2, me);
 
         msg = HIG"$N身形飄舞，袖袍飛揚，頓時煙塵四起，砂石亂飛，聲勢煞時驚人！\n";
-        msg += GRN"不一刻，$N收勢凝形，負手而立，四下裡從寂靜中隱隱透出一股肅殺之氣！\n"NOR;
+        msg += GRN"不一刻，$N收勢凝形，負手而立，四下裏從寂靜中隱隱透出一股肅殺之氣！\n"NOR;
 
-        desc=query("long", env)+HIB"四下景況非常詭異，青色霧氣彌漫在空氣中，透出森森鬼氣。\n"NOR;
+        desc=query("long", env)+HIB"四下景況非常詭異，青色霧氣瀰漫在空氣中，透出森森鬼氣。\n"NOR;
 
         set("org_desc",query("long",  env), env);
         set("org_exits",query("exits",  env), env);
@@ -145,5 +145,5 @@ void remove_effect(object env)
         delete("th_pozhen", env);
         delete("th_zhen_owner", env);
 
-        tell_object(env, CYN"一陣青霧升騰而起又四散而去，四面景致猛然一變。\n"NOR);
+        tell_object(env, CYN"一陣青霧升騰而起又四散而去，四面景緻猛然一變。\n"NOR);
 }

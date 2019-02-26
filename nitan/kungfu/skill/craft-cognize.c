@@ -20,7 +20,7 @@ void skill_improved(object me)
         {
                 set("craft/infantry/fenzhan", 1, me);
                 tell_object(me, HIC "你通曉了「" HIW "兵法" HIC "」之「" HIW
-                        "步兵系兵法" HIC "」中「" HIW "奮戰" HIC "」的奧秘。\n" NOR);
+                        "步兵系兵法" HIC "」中「" HIW "奮戰" HIC "」的奧祕。\n" NOR);
         }
 
         if (lvl > 110
@@ -28,7 +28,7 @@ void skill_improved(object me)
         {
                 set("craft/infantry/fendou", 1, me);
                 tell_object(me, HIC "你通曉了「" HIW "兵法" HIC "」之「" HIW
-                        "步兵系兵法" HIC "」中「" HIW "奮鬥" HIC "」的奧秘。\n" NOR);
+                        "步兵系兵法" HIC "」中「" HIW "奮鬥" HIC "」的奧祕。\n" NOR);
         }
 
         if (lvl > 120
@@ -36,7 +36,7 @@ void skill_improved(object me)
         {
                 set("craft/infantry/fenxun", 1, me);
                 tell_object(me, HIC "你通曉了「" HIW "兵法" HIC "」之「" HIW
-                        "步兵系兵法" HIC "」中「" HIW "奮迅" HIC "」的奧秘。\n" NOR);
+                        "步兵系兵法" HIC "」中「" HIW "奮迅" HIC "」的奧祕。\n" NOR);
         }
 
         if (lvl > 130
@@ -44,7 +44,7 @@ void skill_improved(object me)
         {
                 set("craft/archer/qishe", 1, me);
                 tell_object(me, HIC "你通曉了「" HIW "兵法" HIC "」之「" HIW
-                        "弓騎系兵法" HIC "」中「" HIW "騎射" HIC "」的奧秘。\n" NOR);
+                        "弓騎系兵法" HIC "」中「" HIW "騎射" HIC "」的奧祕。\n" NOR);
         }
 
         if (lvl > 140
@@ -52,7 +52,7 @@ void skill_improved(object me)
         {
                 set("craft/archer/benshe", 1, me);
                 tell_object(me, HIC "你通曉了「" HIW "兵法" HIC "」之「" HIW
-                        "弓騎系兵法" HIC "」中「" HIW "奔射" HIC "」的奧秘。\n" NOR);
+                        "弓騎系兵法" HIC "」中「" HIW "奔射" HIC "」的奧祕。\n" NOR);
         }
 
         if (lvl > 150
@@ -60,7 +60,7 @@ void skill_improved(object me)
         {
                 set("craft/archer/feishe", 1, me);
                 tell_object(me, HIC "你通曉了「" HIW "兵法" HIC "」之「" HIW
-                        "弓騎系兵法" HIC "」中「" HIW "飛射" HIC "」的奧秘。\n" NOR);
+                        "弓騎系兵法" HIC "」中「" HIW "飛射" HIC "」的奧祕。\n" NOR);
         }
 
         if (lvl > 160
@@ -68,7 +68,7 @@ void skill_improved(object me)
         {
                 set("craft/crossbow/qishe", 1, me);
                 tell_object(me, HIC "你通曉了「" HIW "兵法" HIC "」之「" HIW
-                        "弓弩系兵法" HIC "」中「" HIW "齊射" HIC "」的奧秘。\n" NOR);
+                        "弓弩系兵法" HIC "」中「" HIW "齊射" HIC "」的奧祕。\n" NOR);
         }
 
         if (lvl > 170
@@ -76,7 +76,7 @@ void skill_improved(object me)
         {
                 set("craft/crossbow/lianshe", 1, me);
                 tell_object(me, HIC "你通曉了「" HIW "兵法" HIC "」之「" HIW
-                        "弓弩系兵法" HIC "」中「" HIW "連射" HIC "」的奧秘。\n" NOR);
+                        "弓弩系兵法" HIC "」中「" HIW "連射" HIC "」的奧祕。\n" NOR);
         }
 
         if (lvl > 180
@@ -84,7 +84,7 @@ void skill_improved(object me)
         {
                 set("craft/crossbow/liannu", 1, me);
                 tell_object(me, HIC "你通曉了「" HIW "兵法" HIC "」之「" HIW
-                        "弓弩系兵法" HIC "」中「" HIW "連弩" HIC "」的奧秘。\n" NOR);
+                        "弓弩系兵法" HIC "」中「" HIW "連弩" HIC "」的奧祕。\n" NOR);
         }
 
         if (lvl > 190
@@ -92,7 +92,7 @@ void skill_improved(object me)
         {
                 set("craft/cavalry/tupo", 1, me);
                 tell_object(me, HIC "你通曉了「" HIW "兵法" HIC "」之「" HIW
-                        "騎兵系兵法" HIC "」中「" HIW "突破" HIC "」的奧秘。\n" NOR);
+                        "騎兵系兵法" HIC "」中「" HIW "突破" HIC "」的奧祕。\n" NOR);
         }
 
         if (lvl > 200
@@ -100,7 +100,7 @@ void skill_improved(object me)
         {
                 set("craft/cavalry/tujin", 1, me);
                 tell_object(me, HIC "你通曉了「" HIW "兵法" HIC "」之「" HIW
-                        "騎兵系兵法" HIC "」中「" HIW "突進" HIC "」的奧秘。\n" NOR);
+                        "騎兵系兵法" HIC "」中「" HIW "突進" HIC "」的奧祕。\n" NOR);
         }
 
         if (lvl > 210
@@ -108,7 +108,7 @@ void skill_improved(object me)
         {
                 set("craft/cavalry/tuji", 1, me);
                 tell_object(me, HIC "你通曉了「" HIW "兵法" HIC "」之「" HIW
-                        "騎兵系兵法" HIC "」中「" HIW "突擊" HIC "」的奧秘。\n" NOR);
+                        "騎兵系兵法" HIC "」中「" HIW "突擊" HIC "」的奧祕。\n" NOR);
         }
 
         if (lvl > 220
@@ -116,7 +116,7 @@ void skill_improved(object me)
         {
                 set("craft/siegecity/jinglan", 1, me);
                 tell_object(me, HIC "你通曉了「" HIW "兵法" HIC "」之「" HIW
-                        "攻城系兵法" HIC "」中「" HIW "井闌" HIC "」的奧秘。\n" NOR);
+                        "攻城系兵法" HIC "」中「" HIW "井闌" HIC "」的奧祕。\n" NOR);
         }
 
         if (lvl > 230
@@ -124,7 +124,7 @@ void skill_improved(object me)
         {
                 set("craft/siegecity/chongche", 1, me);
                 tell_object(me, HIC "你通曉了「" HIW "兵法" HIC "」之「" HIW
-                        "攻城系兵法" HIC "」中「" HIW "沖車" HIC "」的奧秘。\n" NOR);
+                        "攻城系兵法" HIC "」中「" HIW "衝車" HIC "」的奧祕。\n" NOR);
         }
 
         if (lvl > 240
@@ -132,7 +132,7 @@ void skill_improved(object me)
         {
                 set("craft/siegecity/fashi", 1, me);
                 tell_object(me, HIC "你通曉了「" HIW "兵法" HIC "」之「" HIW
-                        "攻城系兵法" HIC "」中「" HIW "發石" HIC "」的奧秘。\n" NOR);
+                        "攻城系兵法" HIC "」中「" HIW "發石" HIC "」的奧祕。\n" NOR);
         }
 
         if (lvl > 250
@@ -140,7 +140,7 @@ void skill_improved(object me)
         {
                 set("craft/siegecity/xiangbing", 1, me);
                 tell_object(me, HIC "你通曉了「" HIW "兵法" HIC "」之「" HIW
-                        "攻城系兵法" HIC "」中「" HIW "象兵" HIC "」的奧秘。\n" NOR);
+                        "攻城系兵法" HIC "」中「" HIW "象兵" HIC "」的奧祕。\n" NOR);
         }
 
         if (lvl > 260
@@ -148,7 +148,7 @@ void skill_improved(object me)
         {
                 set("craft/siegecity/luoshi", 1, me);
                 tell_object(me, HIC "你通曉了「" HIW "兵法" HIC "」之「" HIW
-                        "守城系兵法" HIC "」中「" HIW "落石" HIC "」的奧秘。\n" NOR);
+                        "守城系兵法" HIC "」中「" HIW "落石" HIC "」的奧祕。\n" NOR);
         }
 
         if (lvl > 270
@@ -156,7 +156,7 @@ void skill_improved(object me)
         {
                 set("craft/siegecity/shetai", 1, me);
                 tell_object(me, HIC "你通曉了「" HIW "兵法" HIC "」之「" HIW
-                        "守城系兵法" HIC "」中「" HIW "射台" HIC "」的奧秘。\n" NOR);
+                        "守城系兵法" HIC "」中「" HIW "射台" HIC "」的奧祕。\n" NOR);
         }
 
         if (lvl > 280
@@ -164,7 +164,7 @@ void skill_improved(object me)
         {
                 set("craft/ruse/hunluan", 1, me);
                 tell_object(me, HIC "你通曉了「" HIW "兵法" HIC "」之「" HIW
-                        "謀略系兵法" HIC "」中「" HIW "混亂" HIC "」的奧秘。\n" NOR);
+                        "謀略系兵法" HIC "」中「" HIW "混亂" HIC "」的奧祕。\n" NOR);
         }
 
         if (lvl > 290
@@ -172,7 +172,7 @@ void skill_improved(object me)
         {
                 set("craft/ruse/xianjing", 1, me);
                 tell_object(me, HIC "你通曉了「" HIW "兵法" HIC "」之「" HIW
-                        "謀略系兵法" HIC "」中「" HIW "陷阱" HIC "」的奧秘。\n" NOR);
+                        "謀略系兵法" HIC "」中「" HIW "陷阱" HIC "」的奧祕。\n" NOR);
         }
 
         if (lvl > 300
@@ -180,7 +180,7 @@ void skill_improved(object me)
         {
                 set("craft/ruse/gongxin", 1, me);
                 tell_object(me, HIC "你通曉了「" HIW "兵法" HIC "」之「" HIW
-                        "謀略系兵法" HIC "」中「" HIW "攻心" HIC "」的奧秘。\n" NOR);
+                        "謀略系兵法" HIC "」中「" HIW "攻心" HIC "」的奧祕。\n" NOR);
         }
 
         if (lvl > 310
@@ -188,7 +188,7 @@ void skill_improved(object me)
         {
                 set("craft/ruse/huanshu", 1, me);
                 tell_object(me, HIC "你通曉了「" HIW "兵法" HIC "」之「" HIW
-                        "謀略系兵法" HIC "」中「" HIW "幻術" HIC "」的奧秘。\n" NOR);
+                        "謀略系兵法" HIC "」中「" HIW "幻術" HIC "」的奧祕。\n" NOR);
         }
         
         if (lvl > 320
@@ -196,7 +196,7 @@ void skill_improved(object me)
         {
                 set("craft/brightness/yingzao", 1, me);
                 tell_object(me, HIC "你通曉了「" HIW "兵法" HIC "」之「" HIW
-                        "智略系兵法" HIC "」中「" HIW "營造" HIC "」的奧秘。\n" NOR);
+                        "智略系兵法" HIC "」中「" HIW "營造" HIC "」的奧祕。\n" NOR);
         }
         
         if (lvl > 330
@@ -204,7 +204,7 @@ void skill_improved(object me)
         {
                 set("craft/brightness/poxian", 1, me);
                 tell_object(me, HIC "你通曉了「" HIW "兵法" HIC "」之「" HIW
-                        "智略系兵法" HIC "」中「" HIW "破陷" HIC "」的奧秘。\n" NOR);
+                        "智略系兵法" HIC "」中「" HIW "破陷" HIC "」的奧祕。\n" NOR);
         }
 
         if (lvl > 340
@@ -212,7 +212,7 @@ void skill_improved(object me)
         {
                 set("craft/brightness/jiaoyu", 1, me);
                 tell_object(me, HIC "你通曉了「" HIW "兵法" HIC "」之「" HIW
-                        "智略系兵法" HIC "」中「" HIW "教諭" HIC "」的奧秘。\n" NOR);
+                        "智略系兵法" HIC "」中「" HIW "教諭" HIC "」的奧祕。\n" NOR);
         }
 
         if (lvl > 350
@@ -220,7 +220,7 @@ void skill_improved(object me)
         {
                 set("craft/resource/ruma", 1, me);
                 tell_object(me, HIC "你通曉了「" HIW "兵法" HIC "」之「" HIW
-                        "策略系兵法" HIC "」中「" HIW "辱罵" HIC "」的奧秘。\n" NOR);
+                        "策略系兵法" HIC "」中「" HIW "辱罵" HIC "」的奧祕。\n" NOR);
         }
 
         if (lvl > 360
@@ -228,7 +228,7 @@ void skill_improved(object me)
         {
                 set("craft/resource/guwu", 1, me);
                 tell_object(me, HIC "你通曉了「" HIW "兵法" HIC "」之「" HIW
-                        "策略系兵法" HIC "」中「" HIW "鼓舞" HIC "」的奧秘。\n" NOR);
+                        "策略系兵法" HIC "」中「" HIW "鼓舞" HIC "」的奧祕。\n" NOR);
         }
 
         if (lvl > 370
@@ -236,7 +236,7 @@ void skill_improved(object me)
         {
                 set("craft/resource/zhiliao", 1, me);
                 tell_object(me, HIC "你通曉了「" HIW "兵法" HIC "」之「" HIW
-                        "策略系兵法" HIC "」中「" HIW "治療" HIC "」的奧秘。\n" NOR);
+                        "策略系兵法" HIC "」中「" HIW "治療" HIC "」的奧祕。\n" NOR);
         }
 
         if (lvl > 380
@@ -244,7 +244,7 @@ void skill_improved(object me)
         {
                 set("craft/resource/yaoshu", 1, me);
                 tell_object(me, HIC "你通曉了「" HIW "兵法" HIC "」之「" HIW
-                        "策略系兵法" HIC "」中「" HIW "妖術" HIC "」的奧秘。\n" NOR);
+                        "策略系兵法" HIC "」中「" HIW "妖術" HIC "」的奧祕。\n" NOR);
         }
 }
 

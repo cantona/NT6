@@ -14,7 +14,7 @@ void create()
                 set_default_object(__FILE__);
         else {
                 set("unit", "個");
-                set("long", "一個位于桃花峰上的小木亭。
+                set("long", "一個位於桃花峯上的小木亭。
 \n");
                 set("value", 1);
         }

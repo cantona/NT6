@@ -35,10 +35,10 @@ int perform(object me, object target)
                 return notify_fail("你現在沒有準備使用凌霄拳法，難以施展" + name() + "。\n");
 
         if (! living(target))
-                return notify_fail("對方都已經這樣了，用不著這麼費力吧？\n");
+                return notify_fail("對方都已經這樣了，用不着這麼費力吧？\n");
 
         msg = HIW "只聽$N" HIW "一聲斷喝，雙拳聚力齊發，一式「凌霄總決」攜"
-              "著風雷之勢轟向$n" HIW "！\n" NOR;
+              "着風雷之勢轟向$n" HIW "！\n" NOR;
 
         ap = attack_power(me, "cuff");
         dp = defense_power(target, "dodge");

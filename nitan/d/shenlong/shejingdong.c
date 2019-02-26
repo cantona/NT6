@@ -9,7 +9,7 @@ void create()
         set("long",@LONG
 此處乃蛇精洞，洞內幽深恐怖，四處可見黑色的骸骨，周圍盡是
 毒蛇，洞頂不時地滴下發臭的液體，置身此地，心中有一種莫名的恐
-懼，據說，九頭蛇精就藏在此洞深處。
+懼，據説，九頭蛇精就藏在此洞深處。
 
 LONG);
 
@@ -56,7 +56,7 @@ void start_move()
 
         ob = all_inventory(this_object());
 
-        // 清出清場標志
+        // 清出清場標誌
         delete("doing");
 
         if (! sizeof(ob))return;

@@ -47,7 +47,7 @@ int perform(object me)
                 return notify_fail("你沒有激發石鼓打穴筆法，難以施展" FENG "。\n");
 
         if (! living(target))
-                return notify_fail("對方都已經這樣了，用不著這麼費力吧？\n");
+                return notify_fail("對方都已經這樣了，用不着這麼費力吧？\n");
 
         msg = HIR "$N" HIR "飛身一躍而起，貼至$n" HIR "跟前，手中" +
               weapon->name() + HIR "大起大落，氣勢恢弘，幻出一道閃電"

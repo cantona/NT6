@@ -10,7 +10,7 @@ mapping *action = ({
         "lvl"   : 0,
         "damage_type":"挫傷"
 ]),
-([      "action":"$N快步跨出，左手平托$w，右掌猛推杖端，頂向$n的胸口",
+([      "action":"$N快步跨出，左手平託$w，右掌猛推杖端，頂向$n的胸口",
         "force" : 80,
         "attack": 36,
         "dodge" : -10,
@@ -19,7 +19,7 @@ mapping *action = ({
         "lvl"   : 30,
         "damage_type":"挫傷"
 ]),
-([      "action":"$N高舉$w，全身躍起，手中$w朝著$n頭蓋天靈蓋猛然擊落下去",
+([      "action":"$N高舉$w，全身躍起，手中$w朝着$n頭蓋天靈蓋猛然擊落下去",
         "force" : 93,
         "attack": 42,
         "dodge" : -5,
@@ -28,7 +28,7 @@ mapping *action = ({
         "lvl"   : 60,
         "damage_type":"挫傷"
 ]),
-([      "action":"$N雙手持杖如櫓，對準$n猛地一攪，如同平地刮起一陣旋風",
+([      "action":"$N雙手持杖如櫓，對準$n猛地一攪，如同平地颳起一陣旋風",
         "force" : 107,
         "attack": 51,
         "dodge" : -5,

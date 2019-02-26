@@ -19,7 +19,7 @@ void create()
                 set("armor_prop/armor", 65);
                 set("value", 100);
                 set("wear_msg","$N迎風一展，[唰]的一聲，披上一件$n。\n");
-                set("remove_msg","$N解開$n,把$n從身上脫了下來。\n");
+                set("remove_msg","$N解開$n,把$n從身上脱了下來。\n");
         }
         setup();
 }

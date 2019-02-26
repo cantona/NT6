@@ -15,7 +15,7 @@ void create()
                 set("material", "wood");
                 set("wield_msg", HIM "$N" HIM "「唰」的抽出$n" HIM "，頓時聞"
                                  "到一股奇異的香味。\n仔細一看，原來這柄倚天"
-                                 "劍竟是木頭制成的。\n" NOR);
+                                 "劍竟是木頭製成的。\n" NOR);
         }
         init_sword(10);
         setup();

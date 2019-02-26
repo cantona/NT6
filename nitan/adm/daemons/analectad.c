@@ -96,7 +96,7 @@ void collect_all_analecta()
 // file : /data/analecta/2002/10000000.txt -> 保存文件
 // add_time : 1012137565                   -> 添加時間
 // content :
-// 這裡是內容。                            -> 文選內容
+// 這裏是內容。                            -> 文選內容
 mapping parse_analecta(string file_name)
 {
         mapping data;
@@ -258,7 +258,7 @@ int clear_analecta_list(int year)
         return 1;
 }
 
-// 提示用戶
+// 提示用户
 void prompt_user(object me)
 {
         int num;
@@ -276,7 +276,7 @@ void prompt_user(object me)
         if( !sizeof(query("analecta_last_read", me)) )
         {
                 tell_object(me, HIM "歡迎您進入" + LOCAL_MUD_NAME() + "，今後請使用" HIY " wenxuan " HIM
-                                "命令查閱遊戲的文章選集。\n" NOR);
+                                "命令查閲遊戲的文章選集。\n" NOR);
 
                 set("analecta_last_read/"+year, time(), me);
                 return;
@@ -287,7 +287,7 @@ void prompt_user(object me)
         analectas = analecta_list[sprintf("%d", year)];
 
         if (! arrayp(analectas) || ! sizeof(analectas)) {
-                tell_object(me, HIM "你目前沒有未曾閱讀過的文章選集。\n" NOR);
+                tell_object(me, HIM "你目前沒有未曾閲讀過的文章選集。\n" NOR);
                 return;
         }
 
@@ -301,10 +301,10 @@ void prompt_user(object me)
 
         if (total)
                 tell_object(me, sprintf(WHT "你目前一共有 " HIY "%d" NOR
-                                        WHT " 篇文選還沒有閱讀，請使用 "
-                                        HIY "wenxuan" NOR WHT " 命令閱讀。\n" NOR, total));
+                                        WHT " 篇文選還沒有閲讀，請使用 "
+                                        HIY "wenxuan" NOR WHT " 命令閲讀。\n" NOR, total));
         else
-                tell_object(me, HIM "你目前沒有未曾閱讀過的文章選集。\n" NOR);
+                tell_object(me, HIM "你目前沒有未曾閲讀過的文章選集。\n" NOR);
 }
 
 string query_name()

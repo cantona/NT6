@@ -5,9 +5,9 @@ void create()
 {
         set_name("韓雲", ({ "han yun", "han", "yun" }) );
         set("gender", "男性" );
-        set("title", "瓷器店老板" );
+        set("title", "瓷器店老闆" );
         set("age", 32);
-        set("long", "洛陽城瓷器店的老板，他的貨都是直接從唐三彩進的。\n");
+        set("long", "洛陽城瓷器店的老闆，他的貨都是直接從唐三彩進的。\n");
         set("shen_type", 1);
         set("combat_exp", 10000);
         set("str", 17);

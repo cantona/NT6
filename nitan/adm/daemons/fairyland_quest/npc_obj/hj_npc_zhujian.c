@@ -1,11 +1,11 @@
 //                標準描述長度示例                                   |
 // 幻境新添 NPC，鑄劍師
-// by naihe  2003-11-05  于茂名
+// by naihe  2003-11-05  於茂名
 // 寶石的要求太高，降低點 05-9-1 14:43
 
 #include <ansi.h>
 #include <errs_func.h>
-// 裡面有個 errs() 代替 notify_fail() ，即 write(msg), return 1;
+// 裏面有個 errs() 代替 notify_fail() ，即 write(msg), return 1;
 inherit NPC;
 
 
@@ -62,7 +62,7 @@ int do_zhujian( string arg )
 
     if( !ob_ok() || !me_ok(me) ) return 0;
     if( me->is_busy() || query_temp("hj_need_waiting", me) )
-        return errs("你還忙著呢。\n");
+        return errs("你還忙着呢。\n");
 
     if( !arg || sscanf( arg, "%s %s", type, sword_id ) != 2 )
         return errs("你是想鑄劍嗎(look zhujian shi)？\n");
@@ -71,21 +71,21 @@ int do_zhujian( string arg )
         return errs("我這還有點工作沒完成，請稍等一會兒吧。\n");
 
     list = ({ "qtj","lqj","byj","ydj","hjj","nlj","xyj","dhj","bsj"});
-    // 這裡的順序和 hj_obj_weapon.c 裡的順序是一樣的。
+    // 這裏的順序和 hj_obj_weapon.c 裏的順序是一樣的。
 
     set = member_array( type, list );
     if( set == -1 && type != "up" )
-        return errs("我這裡可造不了 \""+type+"\" 這種劍，你還是另請高明吧。\n");
+        return errs("我這裏可造不了 \""+type+"\" 這種劍，你還是另請高明吧。\n");
 
     sword = present( sword_id, me );
-    if( !sword ) return errs("你可沒帶著這樣的劍，你以為我是那個什麼奈何啊，懂得憑空變把劍給你？\n");
+    if( !sword ) return errs("你可沒帶着這樣的劍，你以為我是那個什麼奈何啊，懂得憑空變把劍給你？\n");
     if( query("hj_game/obj", sword) != "sword" )
         return errs(query("name", sword)+"不是可以鑄造的劍器。\n");
     // 如果是“神力之劍”拿來改，那……哈哈哈，不認識
 
     score_need = (type == "up" ? SXF/2 : SXF);
     if( query_temp("hj_score", me)<score_need+1 )
-        return errs("閣下身無分文，還是不要諸多要求的好，有什麼劍就將就著用吧。\n");
+        return errs("閣下身無分文，還是不要諸多要求的好，有什麼劍就將就着用吧。\n");
 
     // ok. up 劍
     if( type == "up" )
@@ -108,7 +108,7 @@ int do_zhujian( string arg )
             }
         }
         if( !bs1 || !bs2 || !bs3 )
-            return errs("這……這需要三顆寶石，你好象不夠吧。\n");
+            return errs("這……這需要三顆寶石，你好像不夠吧。\n");
         destruct( bs1 );
         destruct( bs2 );
         destruct( bs3 );
@@ -125,7 +125,7 @@ int do_zhujian( string arg )
             }
         }
         if( !bs1 )
-            return errs("這需要一顆寶石，你好象沒有吧。\n");
+            return errs("這需要一顆寶石，你好像沒有吧。\n");
         destruct( bs1 );
         // 全部OK，進行設置及描述等
         addn_temp("hj_score", -score_need, me);
@@ -134,10 +134,10 @@ int do_zhujian( string arg )
         if( query("use_times", sword)<1)set("use_times", 1, sword);
         t = NOR+CYN;
         message_vision( sprintf(
-            CYN"$N%s拿出一%s%s%s遞給了$n%s，說道：“麻煩你幫我修修這劍。”\n"
-            "$N%s說罷，又拿出了一顆寶石，還夾了點什麼，一並塞給了$n%s。\n"
+            CYN"$N%s拿出一%s%s%s遞給了$n%s，説道：“麻煩你幫我修修這劍。”\n"
+            "$N%s説罷，又拿出了一顆寶石，還夾了點什麼，一併塞給了$n%s。\n"
             "只見$n%s接過了劍，敲敲摸摸只弄了幾下，就把它遞給了$N%s。\n"
-            "$n%s說道：“好啦，這劍已經修好了，保証好用。”\n"NOR,
+            "$n%s説道：“好啦，這劍已經修好了，保證好用。”\n"NOR,
                 t,query("unit", sword),query("name", sword),t,t,
                 t, t,
                 t, t,
@@ -147,7 +147,7 @@ int do_zhujian( string arg )
     // 那麼就是換劍嘍
     // 太爛的不行(使用了很多次的)
     if( query("use_times", sword)<query("real_use_times", sword)/2 )
-        return errs("這劍刃口都卷了，你還是另請高明吧。\n");
+        return errs("這劍刃口都捲了，你還是另請高明吧。\n");
     /*
     bs1 = present( "red baoshi", me );
     bs2 = present( "green baoshi", me );
@@ -156,7 +156,7 @@ int do_zhujian( string arg )
        || !bs2 || query("hj_game/obj", bs2) != "other"
        || !bs3 || query("hj_game/obj", bs3) != "other"
     )
-        return errs("這……這需要各色寶石各一顆，你好象不夠吧。\n");
+        return errs("這……這需要各色寶石各一顆，你好像不夠吧。\n");
     destruct( bs1 );
     destruct( bs2 );
     destruct( bs3 );
@@ -179,7 +179,7 @@ int do_zhujian( string arg )
         }
     }
     if( !bs1 || !bs2)
-        return errs("這需要兩顆寶石，你好象不夠吧。\n");
+        return errs("這需要兩顆寶石，你好像不夠吧。\n");
     destruct( bs1 );
     destruct( bs2 );
     // 那麼就OK嘍
@@ -188,17 +188,17 @@ int do_zhujian( string arg )
     t = NOR+CYN;
     /*
     message_vision( sprintf(
-        CYN"$N%s拿出一%s%s%s遞給了$n%s，說道：“麻煩你，我想把它改成 \"%s\" 。”\n"
-        "$N%s說罷，又拿出了"HIR"紅%s、"HIG"綠%s、"HIB"藍%s共三顆寶石，還夾了點什麼，一並塞給了$n%s。\n"
-        "$n%s接過了劍，說道：“好罷，稍後我就送去給你，放心即可。”\n"NOR,
+        CYN"$N%s拿出一%s%s%s遞給了$n%s，説道：“麻煩你，我想把它改成 \"%s\" 。”\n"
+        "$N%s説罷，又拿出了"HIR"紅%s、"HIG"綠%s、"HIB"藍%s共三顆寶石，還夾了點什麼，一併塞給了$n%s。\n"
+        "$n%s接過了劍，説道：“好罷，稍後我就送去給你，放心即可。”\n"NOR,
             t,query("unit", sword),query("name", sword),t,t,type,
             t, t, t, t, t,
             t, t), me, this_object() );
     */
     message_vision( sprintf(
-        CYN"$N%s拿出一%s%s%s遞給了$n%s，說道：“麻煩你，我想把它改成 \"%s\" 。”\n"
-        "$N%s說罷，又拿出了兩顆寶石，還夾了點什麼，一並塞給了$n%s。\n"
-        "$n%s接過了劍，說道：“好罷，稍後我就送去給你，放心即可。”\n"NOR,
+        CYN"$N%s拿出一%s%s%s遞給了$n%s，説道：“麻煩你，我想把它改成 \"%s\" 。”\n"
+        "$N%s説罷，又拿出了兩顆寶石，還夾了點什麼，一併塞給了$n%s。\n"
+        "$n%s接過了劍，説道：“好罷，稍後我就送去給你，放心即可。”\n"NOR,
             t,query("unit", sword),query("name", sword),t,t,type,
             t, t, t, t, t,
             t, t), me, this_object() );
@@ -224,11 +224,11 @@ void send_sword( object me, int me_mark, int set )
 
     if( environment(me) == environment(this_object()) )
         message_vision( sprintf(
-        CYN"$n%s把一%s%s%s遞給了$N%s，說道：“你要改的劍已經改好了，保証好用。”\n"NOR,
+        CYN"$n%s把一%s%s%s遞給了$N%s，説道：“你要改的劍已經改好了，保證好用。”\n"NOR,
         t,query("unit", s),query("name", s),t,t),me,this_object());
     else message_vision( sprintf(
         CYN"只見一位%s%s匆匆地走了過來，拿出一%s%s%s交給了$N%s。\n"
-        "%s%s說道：“你要改的劍已經改好了，保証好用。”說完，%s%s又匆匆地離開了。\n"NOR,
+        "%s%s説道：“你要改的劍已經改好了，保證好用。”説完，%s%s又匆匆地離開了。\n"NOR,
         query("name"),t,query("unit", s),query("name", s),t,t,
         query("name"), t, query("name"), t ), me );
 

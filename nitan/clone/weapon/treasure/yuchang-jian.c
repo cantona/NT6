@@ -24,7 +24,7 @@ void create()
                 set_default_object(__FILE__);
         else{
                 set("unit", "柄");
-                set("long", "這就是傳說中的魚腸劍，沒想到會在這裡出現！\n"
+                set("long", "這就是傳説中的魚腸劍，沒想到會在這裏出現！\n"
                 "你忍不住想把它撿(jian)起來！！！\n");
                 set("material", "steel");
                 set("no_get",1);
@@ -55,7 +55,7 @@ int do_jian(string arg)
                 message_vision( HIR"$N輕輕地撿起魚腸劍，突然從劍後射出一枚鋼針。但是$N早有防備，馬上躲了開去。\n"NOR, me);
                 message("channel:rumor",MAG"【謠言】某人："+query("name", this_player())+"拿到"+query("name", this_object())+MAG+"啦。\n"NOR,users());
                 tell_object(me,"你撿起一把"+query("name", this_object())+"。\n");
-                set("long", "這是春秋名匠歐冶子所鑄的五口寶劍之魚腸劍。\n劍身長僅寸余，細看之下隱隱有血光浮現。\n");
+                set("long", "這是春秋名匠歐冶子所鑄的五口寶劍之魚腸劍。\n劍身長僅寸餘，細看之下隱隱有血光浮現。\n");
 //                remove_action(me,"jian");
                 set("got",1);
                 set("weapon_prop/damage",300);

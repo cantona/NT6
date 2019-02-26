@@ -33,10 +33,10 @@ int main(object me, string arg)
                 str += "\n" NOR;
         } else
         {
-                str = HIW + LOCAL_MUD_NAME() + "表情動作總匯\n" NOR;
+                str = HIW + LOCAL_MUD_NAME() + "表情動作總彙\n" NOR;
                 e = sort_array(EMOTE_D->query_all_emote(), 1);
         }
-        str += "─────────────────────────────────────\n";
+        str += "—————————————————————————————————————\n";
         for(i=0; i<sizeof(e); i++)
                 str += sprintf("%-15s%s", e[i], (i%5==4)?"\n": "");
         me->start_more(str);

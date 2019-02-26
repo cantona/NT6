@@ -95,7 +95,7 @@ int repairing_1(object me, object ob)
 {
         if ( !present(ob, environment()) ) return 1; 
 
-        command("say 是這個木人吧？ 唔，我來瞧瞧！ 你在邊上呆著，看能幫我什麼忙。");
+        command("say 是這個木人吧？ 唔，我來瞧瞧！ 你在邊上呆着，看能幫我什麼忙。");
         
         remove_call_out("repairing_2");
         call_out("repairing_2", 2+random(3), me, ob);
@@ -109,13 +109,13 @@ int repairing_2(object me, object ob)
 
         if( query("damaged", ob) )
         {
-                message_vision(GRN "\n道果禪師對著木人瞧了一會，又試著扳動木人的四肢和腦袋，嘴裡喃喃念叨著什麼。\n\n" NOR, me);
+                message_vision(GRN "\n道果禪師對着木人瞧了一會，又試着扳動木人的四肢和腦袋，嘴裏喃喃唸叨着什麼。\n\n" NOR, me);
                 remove_call_out("repairing_3");
                 call_out("repairing_3", 2+random(2), me, ob);
         }
         else
         {
-                command("say 這木人好端端地又沒壞！ 還大老遠地拖著我過來！");
+                command("say 這木人好端端地又沒壞！ 還大老遠地拖着我過來！");
                 command("follow none");
 
                 message_vision(GRN "\n道果禪師氣鼓鼓地走了。\n" NOR, me);
@@ -131,7 +131,7 @@ int repairing_2(object me, object ob)
 int repairing_3(object me, object ob)
 {
         command("say 唔，原來如此，我來修修看吧！");
-        message_vision(GRN "\n他接著從懷裡掏出一大堆工具來，打開木人的身體，擺弄了幾下。\n\n" NOR, me);
+        message_vision(GRN "\n他接着從懷裏掏出一大堆工具來，打開木人的身體，擺弄了幾下。\n\n" NOR, me);
 
         remove_call_out("repairing_4");
         call_out("repairing_4", 3+random(3), me, ob);
@@ -149,7 +149,7 @@ int repairing_4(object me, object ob)
                 message_vision(GRN "\n木人的身體吱吱地扭動了幾下，恢復了正常站立的姿態。\n\n" NOR, me);
         }
         else 
-                message_vision(GRN "\n道果禪師嘆了口氣，說道：看來不行，這木人損壞得太厲害了，沒法子修了！\n" NOR, me);
+                message_vision(GRN "\n道果禪師歎了口氣，説道：看來不行，這木人損壞得太厲害了，沒法子修了！\n" NOR, me);
 
         command("say 好，那我走了！");
         command("wave");

@@ -6,10 +6,10 @@ void create()
 {
 	set("short",HIW"冰山"NOR);
         set("long", @LONG
-這是一塊很大浮動冰山，是由萬年玄冰組成。由于前面的冰山受
-到火山之熱，不斷的熔化，這時反而隨著冰山熔化成暖水一沖又向南
+這是一塊很大浮動冰山，是由萬年玄冰組成。由於前面的冰山受
+到火山之熱，不斷的熔化，這時反而隨着冰山熔化成暖水一衝又向南
 飄，這時你看到不遠之處有一塊小基塊(bing)，可能可以當船用，向
-島劃動。
+島划動。
 LONG );
         set("no_fight", 1);
         set("no_get_from", 1); 
@@ -46,7 +46,7 @@ void run()
      int i;
      obj = all_inventory(this_object());
      for(i=0; i<sizeof(obj); i++){ 
-        tell_object(obj[i],HIW"\n冰山隨著海水暖流向南飄離。\n\n"NOR);
+        tell_object(obj[i],HIW"\n冰山隨着海水暖流向南飄離。\n\n"NOR);
        	obj[i]->move(__DIR__"dbshan");
      }
 }

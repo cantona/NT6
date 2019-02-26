@@ -16,8 +16,8 @@ void create()
 {
         set("short", "還施水閣");
         set("long", @LONG
-閣中滿是書架(jia)， 架上擺著許多頗古舊的書籍，架上均貼有
-標簽(sign)。這就是慕容世家歷經數代才收集積累而成的武學寶庫。
+閣中滿是書架(jia)， 架上擺着許多頗古舊的書籍，架上均貼有
+標籤(sign)。這就是慕容世家歷經數代才收集積累而成的武學寶庫。
 LONG );
         set("exits", ([
             "out": __DIR__"lanyue",
@@ -32,14 +32,14 @@ LONG );
         
         set("item_desc",([
             "sign" : HIR "缺大理段氏六脈神劍，丐幫降龍十八掌、打狗棍法…\n" NOR,
-              "jia"  : HIC "上面放著各種武學書籍，卻發現沒什麼有價值的秘籍。\n" NOR,
+              "jia"  : HIC "上面放着各種武學書籍，卻發現沒什麼有價值的祕籍。\n" NOR,
         ]));
         
-        // 每次更新時隨機選出一種可以產生的秘籍，並等待判斷 ...
+        // 每次更新時隨機選出一種可以產生的祕籍，並等待判斷 ...
         ran = random(sizeof(books));
 
-        // 每次更新有1/5的幾率可以隨機產生出一種秘籍，
-        // 則產生特定秘籍的幾率為1/15，並等待判斷 ...
+        // 每次更新有1/5的機率可以隨機產生出一種祕籍，
+        // 則產生特定祕籍的機率為1/15，並等待判斷 ...
         if (random(5) == 0)can_creat_book = 1;
 
         setup();
@@ -66,7 +66,7 @@ int do_move(string arg)
         if (! here = find_object(__FILE__))
                   here = load_object(__FILE__);
 
-        // 更新前已有人取得過秘籍，只有更新後才可能第二次產生秘籍
+        // 更新前已有人取得過祕籍，只有更新後才可能第二次產生祕籍
         if( query("marks/move", here) || !can_creat_book )
                   return notify_fail(HIC "你輕輕地將書架推了開，但什麼也沒發現。\n" NOR);
 
@@ -86,7 +86,7 @@ int do_move(string arg)
         return 1;
 }
 
-// 保証只有每次更新後才會有機會出現秘籍
+// 保證只有每次更新後才會有機會出現祕籍
 void reset()
 {
        object here;

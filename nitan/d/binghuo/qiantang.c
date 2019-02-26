@@ -9,8 +9,8 @@ void create()
         set("short", "錢塘江畔");
         set("long", @LONG
 錢塘江到了六和塔下轉一個大彎，然後直向東流。該處和府城相
-距不近，塔東三株大柳樹下系著一艘扁舟(zhou)。江船張有風帆，船
-頭掛著兩盞碧紗燈籠。碧紗燈下，一個少女獨坐船頭，身穿淡綠衫子。
+距不近，塔東三株大柳樹下繫着一艘扁舟(zhou)。江船張有風帆，船
+頭掛着兩盞碧紗燈籠。碧紗燈下，一個少女獨坐船頭，身穿淡綠衫子。
 LONG );
         set("outdoors", "wangpan");
         set("no_clean_up", 0);
@@ -69,7 +69,7 @@ void init()
         {
                 room = get_object("/d/binghuo/wangpanshan");
                 bai = present("bai guishou",room);
-                if (objectp(bai)) tell_object(me, HIC "\n只見岸邊上泊滿了海船，所有的海船全部標記著天鷹教的標志。\n" NOR);
+                if (objectp(bai)) tell_object(me, HIC "\n只見岸邊上泊滿了海船，所有的海船全部標記着天鷹教的標誌。\n" NOR);
 
                 if (objectp(bai)
                     && !query_temp("broadcast", bai )

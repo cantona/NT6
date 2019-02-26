@@ -44,7 +44,7 @@ void create()
         set_skill("blade", 150);             // 基本刀法
         set_skill("liuhe-dao", 150);       // 四象六合刀
         set_skill("begging", 100);           // 叫化絕活
-        set_skill("checking", 100);          // 道聽途說
+        set_skill("checking", 100);          // 道聽途説
         set_skill("training", 100);          // 馭獸術
         set_skill("strike",85);  // 基本掌法
         set_skill("lianhua-zhang",85); // 蓮花掌

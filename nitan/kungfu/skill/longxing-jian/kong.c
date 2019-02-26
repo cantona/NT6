@@ -35,10 +35,10 @@ int perform(object me, object target)
                 return notify_fail("你沒有激發龍形劍法，難以施展" ZHUAN "。\n");
 
         if (! living(target))
-                return notify_fail("對方都已經這樣了，用不著這麼費力吧？\n");
+                return notify_fail("對方都已經這樣了，用不着這麼費力吧？\n");
 
         msg = HIY "$N" HIY "一聲清嘯，手中" + weapon->name() +
-              HIY "龍吟不定，劃向虛空，剎那間，一道金光疾射，"
+              HIY "龍吟不定，划向虛空，剎那間，一道金光疾射，"
               HIY "猶如一條金龍騰越在半空，猛地射向$n" HIY "。\n" NOR;
 
         ap = me->query_skill("sword");

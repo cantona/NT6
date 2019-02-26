@@ -42,9 +42,9 @@ mapping *action = ({
         "lvl" : 120,
         "skill_name" : "冰谷初虹"
 ]),
-([        "action": "$N一招"GRN"「峰回路轉」"NOR"，$w左右迂回向$n的$l點去",
+([        "action": "$N一招"GRN"「峯迴路轉」"NOR"，$w左右迂迴向$n的$l點去",
         "lvl" : 145,
-        "skill_name" : "峰回路轉"
+        "skill_name" : "峯迴路轉"
 ]),
 });
 
@@ -142,7 +142,7 @@ mixed hit_ob(object me, object victim, int damage)
         {
                 if (random(ap + dp) > ap)
                 {
-                        msg=HIW"\n$N一聲怒喝，手中"+query("name", weapon)+HIW"舞地風聲大作，本以復雜的招數更是難辨。\n"NOR;
+                        msg=HIW"\n$N一聲怒喝，手中"+query("name", weapon)+HIW"舞地風聲大作，本以複雜的招數更是難辨。\n"NOR;
                         if (! victim->is_busy())
                                 victim->start_busy(1);
 

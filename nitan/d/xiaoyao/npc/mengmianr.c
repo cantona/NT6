@@ -7,7 +7,7 @@ void create()
 {
         set_name("蒙面人", ({ "mengmian ren", "ren" }));
         set("long", 
-                "一個蒙著面部，身穿黑色夜行衣服的神秘人。\n");
+                "一個蒙着面部，身穿黑色夜行衣服的神祕人。\n");
         set("gender", "男性");
         set("age", 25);
         set("attitude", "peaceful");

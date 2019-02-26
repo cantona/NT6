@@ -7,7 +7,7 @@ void create()
         set_name("砍竹人",({ "kanzhu ren", "ren" }) );
         set("gender", "男性" );
         set("age", 22);
-        set("long", "一個壯年村民，住在山下的村落裡，是上山來砍伐竹子的。\n");
+        set("long", "一個壯年村民，住在山下的村落裏，是上山來砍伐竹子的。\n");
         set_temp("apply/defense", 15);
         set("combat_exp", 1700);
         set("shen_type", 1);

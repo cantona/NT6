@@ -7,8 +7,8 @@ void create()
 {
         set("short", "通元谷");
         set("long", @LONG
-通元谷孤處見性峰下，相傳為張果老成仙前修道之所，由于他道號
-“通元”，這裡也就成了通元谷。
+通元谷孤處見性峯下，相傳為張果老成仙前修道之所，由於他道號
+“通元”，這裏也就成了通元谷。
 LONG);
         set("exits", ([ /* sizeof() == 4 */
                 "eastup"  : __DIR__"guolaoling",

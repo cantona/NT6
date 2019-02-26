@@ -28,7 +28,7 @@ void create()
                 set("force_point", 1);
                                                                 
                                                                 //加武功成功的描述
-                set("pill_msg1", HIR "你只覺一股暖氣散布全身，說不出的舒服受用。\n" NOR);
+                set("pill_msg1", HIR "你只覺一股暖氣散佈全身，説不出的舒服受用。\n" NOR);
                 //加武功失敗的描述  這兩項僅當pill_point定義時
                 set("pill_msg2", HIY "你只覺一股熱流湧上，內息得到了完全的補充。\n" NOR);
                 
@@ -63,12 +63,12 @@ int do_eat(string arg)
                 return 0;
         if ((int)me->query_condition("pill_drug") > 0)
   {
-    write("你覺得現在內息未定，經脈隱隱還能感到真氣沖盪，不敢貿然服食。\n");
+    write("你覺得現在內息未定，經脈隱隱還能感到真氣衝蕩，不敢貿然服食。\n");
     return 1;
   }
   if (me->is_busy())
   {
-          write("你正忙著呢。\n");
+          write("你正忙着呢。\n");
           return 1;
           }
         me->apply_condition("pill_drug", time);

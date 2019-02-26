@@ -12,7 +12,7 @@ int exert(object me, object target)
         string msg;
 
         if( query("no_fight", environment(me)) )
-                return notify_fail("這裡不能戰鬥，你不可以使用毒技傷人。\n");
+                return notify_fail("這裏不能戰鬥，你不可以使用毒技傷人。\n");
 
         if (! target || me == target)
                 return notify_fail("你想攻擊誰？\n");
@@ -30,7 +30,7 @@ int exert(object me, object target)
                 return notify_fail("你現在內力不足，不能彈射毒藥。\n");
 
         if( !objectp(du=query_temp("handing", me)) )
-                return notify_fail("你得先準備(hand)好毒藥再說。\n");
+                return notify_fail("你得先準備(hand)好毒藥再説。\n");
 
         if( !mapp(query("poison", du)) )
                 return notify_fail(du->name() + "又不是毒藥，你亂彈什麼？\n");
@@ -55,7 +55,7 @@ int exert(object me, object target)
                         target->start_busy(1);
                 } else
                 {
-                        msg += GRN "$n連忙躲閃，結果仍然覺得微微一陣酸麻。\n" NOR;
+                        msg += GRN "$n連忙躲閃，結果仍然覺得微微一陣痠麻。\n" NOR;
                         target->affect_by(query("poison_type", du),query("poison", du));
                         target->start_busy(1);
                 }

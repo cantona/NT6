@@ -6,7 +6,7 @@ int update_condition(object me, int duration)
 {                                  
         if (duration < 1)
         {
-                tell_object(me,HIW"大宋汴樑不再通緝你了！\n"NOR);
+                tell_object(me,HIW"大宋汴梁不再通緝你了！\n"NOR);
                 return 0;
         }
 

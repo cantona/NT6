@@ -1,7 +1,7 @@
 #include <ansi.h>
 #include <combat.h>
 
-string name() { return HIM "鶴沖九霄" NOR; }
+string name() { return HIM "鶴衝九霄" NOR; }
 
 inherit F_SSERVER;
 
@@ -34,7 +34,7 @@ int perform(object me, object target)
                 return notify_fail("你沒有激發雲鶴七劍，難以施展" + name() + "。\n");
 
         if (! living(target))
-                return notify_fail("對方都已經這樣了，用不著這麼費力吧？\n");
+                return notify_fail("對方都已經這樣了，用不着這麼費力吧？\n");
 
         msg = HIM "$N" HIM "陡然一聲長嘯，手中" + weapon->name() +
               HIM "疾射而出，勾勒出一道絢麗的劍芒，直劃$n" HIM "前胸！\n" NOR;

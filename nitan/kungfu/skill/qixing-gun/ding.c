@@ -28,7 +28,7 @@ int perform(object me, object target)
         if( query("neili", me)<150 )
                 return notify_fail("你現在內力太弱，不能使用定陽針。\n");
 
-        msg = HIC "$N腳下左弓右箭，神氣完足如雷霆五岳，一式「定陽針」斜斜刺出。\n"NOR;
+        msg = HIC "$N腳下左弓右箭，神氣完足如雷霆五嶽，一式「定陽針」斜斜刺出。\n"NOR;
 
         //if( !target->is_killing(me) ) target->kill_ob(me);
 

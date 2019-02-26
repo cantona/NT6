@@ -23,7 +23,7 @@ void create()
         //set("shen_type", -1);        
         //set("chat_chance", 2);
         //set("chat_msg", ({
-        //      "骷髏空洞的眼眶裡閃爍著可怕的熒光。\n"
+        //      "骷髏空洞的眼眶裏閃爍着可怕的熒光。\n"
         //}) ); 
 
         //set("chat_chance_combat", 50);

@@ -33,5 +33,5 @@ int do_open(string arg)
         object where;
 
         if ( !arg ) return 0;
-        return notify_fail("油布包裡面什麼也沒有了。\n");
+        return notify_fail("油布包裏面什麼也沒有了。\n");
 }

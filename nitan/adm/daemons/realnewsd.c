@@ -153,7 +153,7 @@ public string read_news(string num)
                         data[NEWS_URL] + NOR + data[NEWS_DATA];
 
         return "\n" + HIY + sprintf("%|64s", title) + HIW + "\n" +
-                        data[NEWS_URL] + NOR + "\n\n新聞內容沒有讀取成功,請查看上面網址了解詳情.\n\n";
+                        data[NEWS_URL] + NOR + "\n\n新聞內容沒有讀取成功,請查看上面網址瞭解詳情.\n\n";
 
 }
 
@@ -333,7 +333,7 @@ void get_each_news_close(int fd)
         news_html_page = parse_news_data(news_html_page);
         news_info += ({ news_html_page });
 
-        // 將新聞內容加到news_data裡
+        // 將新聞內容加到news_data裏
         // news_data[group_name][title] = news_info;
         mb_set(group_name + "/" + title, news_info, news_data);
         mb_delete("temp/" + fd, news_data);

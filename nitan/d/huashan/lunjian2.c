@@ -5,7 +5,7 @@ void create()
 {
         set("short", RED "浴血殘陽" NOR);
         set("long", HIR "                夕     陽\n" + NOR + RED +
-                "已將整個絕頂染成血紅色，你仿佛已嗅到一股血腥之氣。" + NOR + "\n ");
+                "已將整個絕頂染成血紅色，你彷彿已嗅到一股血腥之氣。" + NOR + "\n ");
         set("exits", ([ /* sizeof() == 1 */
         ]));
         set("no_magic", 1);

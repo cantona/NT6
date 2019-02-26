@@ -1,7 +1,7 @@
 #include <ansi.h>
 #include <combat.h>
 
-#define PAN "「" HIR "□蟒盤身" NOR "」"
+#define PAN "「" HIR "蝰蟒盤身" NOR "」"
 
 inherit F_SSERVER;
 
@@ -32,16 +32,16 @@ int perform(object me, object target)
                 return notify_fail("你的內功火候不夠，難以施展" PAN "。\n");
 
         if ((int)me->query_skill("kuimang-dao", 1) < 40)
-                return notify_fail("你的□蟒刀法還不到家，難以施展" PAN "。\n");
+                return notify_fail("你的蝰蟒刀法還不到家，難以施展" PAN "。\n");
 
         if (me->query_skill_mapped("blade") != "kuimang-dao")
-                return notify_fail("你沒有激發□蟒刀法，難以施展" PAN "。\n");
+                return notify_fail("你沒有激發蝰蟒刀法，難以施展" PAN "。\n");
 
         if( query("neili", me)<50 )
                 return notify_fail("你的真氣不夠，難以施展" PAN "。\n");
 
         if (! living(target))
-                return notify_fail("對方都已經這樣了，用不著這麼費力吧？\n");
+                return notify_fail("對方都已經這樣了，用不着這麼費力吧？\n");
 
         msg = HIR "$N" HIR "手中" + weapon->name() +  HIR "翻轉不定，忽然只見刀"
               "光一閃，刀鋒已向$n" HIR "斜斜撩去。\n" NOR;

@@ -11,7 +11,7 @@ void create()
 
         set("gender", "男性");
         set("age", 62);
-        set("long", "他體態魁梧，相貌威嚴，長的一副童顏鶴發。\n");
+        set("long", "他體態魁梧，相貌威嚴，長的一副童顏鶴髮。\n");
         set("attitude", "peaceful");
         
         set("nickname", HIR "鐵面判官" NOR);
@@ -32,8 +32,8 @@ void create()
         set("inquiry", ([
                 "鐵面判官" : "這是江湖好友給在下的稱號，見笑了。",
                 "單正" : "沒錯，就是我了，怎麼，找我有事？",
-                "審案" : "哪裡的案子？",
-                "判案" : "哪裡的案子？",
+                "審案" : "哪裏的案子？",
+                "判案" : "哪裏的案子？",
         ]));
 
         set("shen_type", 1);
@@ -116,7 +116,7 @@ mixed accept_ask(object who, string topic)
                                 // 跟隨的就是目前發問的人
                                 if (! objectp(run_ob))
                                 {
-                                        // 由于原先的事情取消了，所以
+                                        // 由於原先的事情取消了，所以
                                         // 可以更換一件事情
                                         set_temp("run_ob", obs[0]);
 
@@ -127,7 +127,7 @@ mixed accept_ask(object who, string topic)
                                         // 四分鐘以後解除跟隨狀態
                                         remove_call_out("cancel_follow");
                                         call_out("cancel_follow", 240);
-                                        return "好吧，剛才那件事情聽說也了了，咱們就換換吧！";
+                                        return "好吧，剛才那件事情聽説也了了，咱們就換換吧！";
                                 }
 
                                 // 跟隨的就是發話的人
@@ -145,7 +145,7 @@ mixed accept_ask(object who, string topic)
                                 return "我現在要和" + follow->name() +
                                        "去辦" + run_ob->name() + "，你先等等吧。";
 
-                        message_vision("$N回頭對$n道：“我聽說你那件事情"
+                        message_vision("$N回頭對$n道：“我聽説你那件事情"
                                        "已經了了，我先走了。”\n",
                                        this_object(), follow);
                 }
@@ -170,13 +170,13 @@ mixed accept_ask(object who, string topic)
         switch (random(3))
         {
         case 0:
-                return "要是聽說哪兒有不公之事，盡可以告訴我，"
-                       "不過你說的這個我實在不太清楚。";
+                return "要是聽説哪兒有不公之事，儘可以告訴我，"
+                       "不過你説的這個我實在不太清楚。";
         case 1:
-                return RANK_D->query_respect(who) + "，你說的"
+                return RANK_D->query_respect(who) + "，你説的"
                        "這個事我不太清楚啊。";
         default:
-                return "我只幫人斷案排憂，你說的這個究竟是啥事情？";
+                return "我只幫人斷案排憂，你説的這個究竟是啥事情？";
         }
 }
 
@@ -230,7 +230,7 @@ void give_intercession()
                 "和" + npc2->name() + "，搖搖頭，喝道：“大家"
                 "都是武林人士，何苦為了一些小事爭執不休？沒得"
                 "失了顏面！”\n"), environment());
-        message("vision", HIG + name() + HIG "開始勸說調解二人，聽"
+        message("vision", HIG + name() + HIG "開始勸説調解二人，聽"
                 "得兩人連連點頭，不敢放肆。\n" NOR, environment());
         if (objectp(me))
         {
@@ -238,7 +238,7 @@ void give_intercession()
                             "調解二人的話語，甚是得理，眼見"
                             "二人心服口服，不由得暗自欣慰。\n" NOR);
                 CHANNEL_D->do_channel(find_object(QUEST_D), "task",
-                        "聽說"+me->name(1)+"("+query("id", me)+
+                        "聽説"+me->name(1)+"("+query("id", me)+
                         ")請到鐵面判官" + name() + WHT "為" +
                         npc1->name() + WHT "和" + npc2->name() +
                         WHT "成功的調解了糾紛。");
@@ -278,8 +278,8 @@ void cancel_follow()
 
         // 不再跟隨
         set_leader(0);
-        message_vision("$N嘆道：“我看你也是迷迷糊糊的，算"
-                       "了，我還是先走了吧！以後有事再說！”\n",
+        message_vision("$N歎道：“我看你也是迷迷糊糊的，算"
+                       "了，我還是先走了吧！以後有事再説！”\n",
                        this_object());
         call_out("do_back", 1);
 }
@@ -304,7 +304,7 @@ void do_back()
                                "話音剛落，$N就急急忙忙的走了，你不由的一愣神。\n",
                                this_object());
         } else
-                message_vision("$N嘆了口氣，頭也不回的走了。\n",
+                message_vision("$N歎了口氣，頭也不回的走了。\n",
                                this_object());
 
         // 返回故地

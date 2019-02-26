@@ -5,7 +5,7 @@ void create()
 {
         set("short","樹林");
         set("long", @LONG
-這裡是衡山半山腰的一片樹林，據說這裡經常有野獸出沒。
+這裏是衡山半山腰的一片樹林，據説這裏經常有野獸出沒。
 LONG );
 
         set("objects",([

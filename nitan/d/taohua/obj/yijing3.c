@@ -11,10 +11,10 @@ void create()
                 set_default_object(__FILE__);
         else {
                 set("unit", "本");
-                set("long", "這是一冊易經。上面寫著：\n
+                set("long", "這是一冊易經。上面寫着：\n
 　　乾剛，坤柔。
 　　震起也，艮止也。
-　　兌見，而巽伏也。
+　　兑見，而巽伏也。
 　　離上，而坎下也。 
 \n");
                 set("value", 200);

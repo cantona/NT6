@@ -12,7 +12,7 @@ void create()
         else {
                 set("material", "cloth");
                 set("unit", "雙");
-                set("long", "一雙女人穿的縫制得很精美的繡花鞋。\n");
+                set("long", "一雙女人穿的縫製得很精美的繡花鞋。\n");
                 set("value", 0);
                 set("armor_prop/armor", 1 );
                 set("female_only", 1);

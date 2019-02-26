@@ -13,7 +13,7 @@ void init()
 void destdan()
 {
         object ob;
-        message_vision("$N慢慢被風吹著，一會就不再新鮮了。\n",this_object());
+        message_vision("$N慢慢被風吹着，一會就不再新鮮了。\n",this_object());
         ob = new("/clone/medicine/vegetable/xiongdan");
         ob->move(environment(this_object()));
         destruct(this_object());
@@ -40,7 +40,7 @@ int do_eat(string arg)
         if(!present(this_object(), me))
                 return notify_fail("你要吃什麼？\n");
         if( me->is_busy() )
-                return notify_fail("別急，慢慢吃，小心別噎著了。\n");
+                return notify_fail("別急，慢慢吃，小心別噎着了。\n");
 
         if( neili_limit <= force_limit)addn("max_neili", 2, me);
         set("neili",query("max_neili",  me), me);

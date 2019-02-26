@@ -138,7 +138,7 @@ int accept_object(object me, object obj)
         if( query("owner", obj) != query("id", me) )
         {
                 command("hehe"+query("id", me));
-                command("say 不錯啊，但這活可不是你幹的。");
+                command("say 不錯啊，但這活可不是你乾的。");
                 return 1;
         }
         else return 0;
@@ -155,7 +155,7 @@ void destroying(object obj, object ob, object me)
                 return;
         }
         command("pat"+query("id", me));
-        message_vision(HIY "$N對$n說道：你這次做得極為出色，這是你該得的部分，拿去吧！\n"NOR,ob, me);
+        message_vision(HIY "$N對$n説道：你這次做得極為出色，這是你該得的部分，拿去吧！\n"NOR,ob, me);
         n_money = new("/clone/money/gold");
         n_money->move(me);
         n_money->add_amount(1);
@@ -168,7 +168,7 @@ void destroying(object obj, object ob, object me)
         set_temp("can_give_prize", 1, me);
         set_temp("prize_exp", exp, me);
         set_temp("prize_pot", pot, me);
-        tell_room(environment(me),me->name()+"數著錢袋裡的金子，臉上的肌肉不住地顫動，眼睛散發著一種奇怪的光芒。\n" NOR, ({ me }));
+        tell_room(environment(me),me->name()+"數着錢袋裏的金子，臉上的肌肉不住地顫動，眼睛散發着一種奇怪的光芒。\n" NOR, ({ me }));
         tell_object(me,"嘿嘿，發了！得到"+chinese_number(query_temp("job2_exp", me))+"點經驗。\n");
         log_file("mission/ms_shangdui",sprintf("%20s做搶劫任務，殺了%2i個鏢師，得到：%4i點EXP和%4i點潛能。\n",
         me->name(1)+"("+getuid(me)+")",query_temp("biaoshi", me),query_temp("job2_exp", me),query_temp("biaoshi", me)*20));
@@ -189,7 +189,7 @@ string ask_job()
         exp=query("combat_exp", me);
 
         if(ob->is_busy() || ob->is_fighting())
-                return "沒看見我正忙著嗎？一邊等著去！";
+                return "沒看見我正忙着嗎？一邊等着去！";
         if( !query("family", me) )
                 return "看得出你對老仙態度恭敬，何不加入我星宿派呢？";
         if( query("family/family_name", me) != "星宿派" && 
@@ -202,7 +202,7 @@ string ask_job()
 //        if(me->query_condition("job_busy"))
   //              return "你現在還有任務在身，等會兒再來吧。";
         if( query_temp("job_asked", ob) == query("id", me) )
-                return "不是叫你先去那裡等我嗎？怎麼還賴在這裡？";
+                return "不是叫你先去那裏等我嗎？怎麼還賴在這裏？";
         if( query_temp("job_asked", ob) )
                 return "嘿嘿，你來晚了，等下一次吧。";
         if(exp<200000)
@@ -219,7 +219,7 @@ string ask_job()
 
         set_temp("xx_job2", 1, me);
         delete_temp("biaoshi", me);
-        message_vision(CYN "\n$N陰陰一笑，說道：這兩天會有一隊駱駝商隊經過，你夠膽就和我一起去看看吧。\n"NOR, ob, me);
+        message_vision(CYN "\n$N陰陰一笑，説道：這兩天會有一隊駱駝商隊經過，你夠膽就和我一起去看看吧。\n"NOR, ob, me);
         set_temp("job_asked",query("id",  me), ob);
         set_temp("dest", aquest["name"], ob);
         set_temp("start_place", aquest["start"], ob);
@@ -264,7 +264,7 @@ void waiting(object ob, object me)
 {
         if(!ob || !living(me)) return;
         command("nod"+query("id", me));
-        command("say 好，我們就在這裡等著他們來吧。");
+        command("say 好，我們就在這裏等着他們來吧。");
         set_temp("wait_target", 1, ob);
         set_temp("wait_target", 1, me);
         remove_call_out("wait_target");
@@ -290,7 +290,7 @@ int wait_target(object ob, object me)
         object obj;
         if(!objectp(present(me, environment(ob))))
         {
-                message_vision("$N說道：耶？那家伙怎麼不見了？\n", ob);
+                message_vision("$N説道：耶？那傢伙怎麼不見了？\n", ob);
                 remove_call_out("do_back");
                 do_back(ob);
                 return 1;
@@ -307,10 +307,10 @@ int wait_target(object ob, object me)
         obj = new("/d/xingxiu/npc/shangdui");
         obj->move(environment(me));
         set("arg",query_temp("dest",  ob), obj);
-        message_vision(HIY"\n只聽一陣駱駝風鈴聲傳來，一只駱駝商隊出現在眼前！\n\n"NOR, ob);
-        tell_object(me,"獵物終于出現了！\n");
-        message_vision(HIY"$N對著$n大聲命令道：你快搶(qiang)商隊，我來對付其他人！\n"NOR, ob, me);
-        message_vision("說完$N就沖上前去，和幾個護鏢鏢師打鬥追逐開了。\n", ob);
+        message_vision(HIY"\n只聽一陣駱駝風鈴聲傳來，一隻駱駝商隊出現在眼前！\n\n"NOR, ob);
+        tell_object(me,"獵物終於出現了！\n");
+        message_vision(HIY"$N對着$n大聲命令道：你快搶(qiang)商隊，我來對付其他人！\n"NOR, ob, me);
+        message_vision("説完$N就衝上前去，和幾個護鏢鏢師打鬥追逐開了。\n", ob);
         remove_call_out("do_back");
         do_back(ob);
         delete_temp("wait_target", me);

@@ -8,7 +8,7 @@ void create()
         set_name("採花子", ({ "caihua zi", "caihua" }) );
         set("gender", "男性" );
 //        set("title", "星宿淫賊");
-        set("nickname", "賽昆侖");
+        set("nickname", "賽崑崙");
         set("age", 38);
         set("long", 
              "採花子是星宿派的一個小嘍羅，武功雖不好，但生性淫邪，"
@@ -62,7 +62,7 @@ void greeting(object me)
         myfam=query("family", me);
 
         if (myfam && myfam["family_name"] == "星宿派") 
-          command("say 我昨天從山下捉了個小妞來，水靈極了，就關在我的逍遙洞裡"
+          command("say 我昨天從山下捉了個小妞來，水靈極了，就關在我的逍遙洞裏"
                 +"，你要不要進去試試？");
         set_temp("marks/花", 0, me);
 

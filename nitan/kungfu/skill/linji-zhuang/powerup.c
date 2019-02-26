@@ -30,7 +30,7 @@ int exert(object me, object target)
         if (di > 1000) di = 1000;
 
         message_combatd(MAG "$N" MAG "微一凝神，運起臨濟莊，一聲嬌喝，"
-                        "四周的空氣仿佛都凝固了！\n" NOR, me);
+                        "四周的空氣彷彿都凝固了！\n" NOR, me);
 
         if (objectp(weapon = query_temp("weapon", me)))
         {

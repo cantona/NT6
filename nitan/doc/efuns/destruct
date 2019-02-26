@@ -1,6 +1,6 @@
         destruct(3)                LP MudOSv21c7                (7 Jul 1996)
         函數名稱:
-                destruct() - 從遊戲中銷毀一個物件.
+                destruct() - 從遊戲中銷燬一個物件.
         函數語法:
                 void destruct( object ob );
                 無傳回值 destruct( 物件 ob );

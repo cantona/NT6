@@ -4,7 +4,7 @@ inherit ITEM;
 #include <ansi.h>;
 void create()
 {
-        set_name(GRN"駝峰柏"NOR, ({"tuofeng bai"}));
+        set_name(GRN"駝峯柏"NOR, ({"tuofeng bai"}));
         set_weight(700000);
         if (clonep())
                 set_default_object(__FILE__);

@@ -7,7 +7,7 @@ inherit MEDAL2;
 void create()
 {
         set_name(HIY "轉世勛章（乾坤）" NOR, ({ "qiankun xunzhang", "qiankun", "xunzhang" }));
-        set("long", HIY "轉世後獲得的勛章，上繪乾坤圖，閃閃發亮，甚是精致。\n" NOR);
+        set("long", HIY "轉世後獲得的勛章，上繪乾坤圖，閃閃發亮，甚是精緻。\n" NOR);
         set_weight(500);
         if (clonep())
                 set_default_object(__FILE__);

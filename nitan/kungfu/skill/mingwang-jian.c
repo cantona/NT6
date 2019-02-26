@@ -22,7 +22,7 @@ mapping *action = ({
         "skill_name" : "千旋轉",
         "lvl" : 30
 ]),
-([        "action" : "$N使出一招"HIM"「降魔舞」"NOR"，全身勁氣貫于$w中，劍氣直指$n的$l",
+([        "action" : "$N使出一招"HIM"「降魔舞」"NOR"，全身勁氣貫於$w中，劍氣直指$n的$l",
         "skill_name" : "降魔舞",
         "lvl" : 40
 ]),
@@ -30,7 +30,7 @@ mapping *action = ({
         "skill_name" : "鶴舞",
         "lvl" : 50
 ]),
-([        "action" : "$N使出一招"GRN"「龍騰」"NOR"，手中$w如遊龍般撲向$n的$l",
+([        "action" : "$N使出一招"GRN"「龍騰」"NOR"，手中$w如游龍般撲向$n的$l",
         "skill_name" : "龍騰",
         "lvl" : 60
 ]),

@@ -15,7 +15,7 @@ void create()
                 set_default_object(__FILE__);
         else {
                 set("unit", "本");
-                set("long", "這就是記載著金蛇郎君一生心血的金蛇劍譜。\n");
+                set("long", "這就是記載着金蛇郎君一生心血的金蛇劍譜。\n");
                 set("value", 50000);
                 set("material", "paper");
                 set("no_drop", "這樣東西不能離開你。\n");
@@ -38,7 +38,7 @@ int do_du(string arg)
                 return 1;
         }
         if (me->is_busy()) {
-                write("你現在正忙著呢。\n");
+                write("你現在正忙着呢。\n");
                 return 1;
         }
         if( me->is_fighting() ) {
@@ -63,14 +63,14 @@ int do_du(string arg)
         message("vision", me->name() + "專心地研讀金蛇劍譜。\n", environment(me), me);
               break;
           case 1:
-        message("vision", me->name() + "看著金蛇劍譜，眼中好象發著陣陣金光。\n", environment(me), me);
+        message("vision", me->name() + "看着金蛇劍譜，眼中好像發着陣陣金光。\n", environment(me), me);
               break;
           case 2:
         message("vision", me->name() + "突然放下劍譜，站起身來比劃了幾下。\n", environment(me), me);
               break;
         }
         if( query("jing", me)<15){
-                write("你現在過于疲倦，無法專心下來研讀新知。\n");
+                write("你現在過於疲倦，無法專心下來研讀新知。\n");
                 return 1;
         }
         if ( me->query_skill("jinshe-jian", 1) > 84) neili_lost = 55;
@@ -87,12 +87,12 @@ int do_du(string arg)
                 return 1;
         } 
         if( me->query_skill("jinshe-jian", 1) > 200){
-                write("你研讀了一會兒，但是發現上面所說的對你而言都太淺了，沒有學到任何東西。\n");
+                write("你研讀了一會兒，但是發現上面所説的對你而言都太淺了，沒有學到任何東西。\n");
                 return 1;
         }
         me->receive_damage("jing", 45);
         set("neili",query("neili",  me)-neili_lost, me);
         me->improve_skill("jinshe-jian", (int)me->query_skill("literate", 1)/3+1);
-        write("你研讀《金蛇劍譜》的秘訣，眼中發出陣陣金光，頗有心得。\n");
+        write("你研讀《金蛇劍譜》的祕訣，眼中發出陣陣金光，頗有心得。\n");
         return 1;
 }

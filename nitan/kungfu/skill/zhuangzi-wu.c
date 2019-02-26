@@ -132,7 +132,7 @@ int practice_skill(object me)
 {
         if (me->query_skill("zhuangzi-wu", 1) < 180
             && query("family/family_name", me) != "紅花會" )
-                return notify_fail("你對莊子舞了解不夠，還不足以自行鍛煉。\n");
+                return notify_fail("你對莊子舞瞭解不夠，還不足以自行鍛鍊。\n");
 
         if( query("qi", me)<70 )
                 return notify_fail("你的體力太差了，難以練習莊子舞。\n");

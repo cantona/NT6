@@ -8,7 +8,7 @@ void create()
         // set_name( names[random(sizeof(names))], ({ "skeleton mage","skeleton"}));
         set_name( names[random(sizeof(names))], ({ "skeleton mage" }));
         set("vendetta_mark","skeleton");
-        set("long", "這是一只骨頭架子。\n");
+        set("long", "這是一隻骨頭架子。\n");
         set("title", HIB "(鬼氣)" NOR); 
 
         set("str", 50);
@@ -24,7 +24,7 @@ void create()
 /*
         set("chat_chance", 1);
         set("chat_msg", ({
-                "骷髏空洞的眼眶裡閃爍著可怕的熒光。\n"
+                "骷髏空洞的眼眶裏閃爍着可怕的熒光。\n"
         }) ); 
 */
         set("death_msg",BLU"\n$N散成了一堆碎骨頭。\n\n"NOR);
@@ -66,7 +66,7 @@ void do_bone_spear() {
         enemy = enemies[random(sizeof(enemies))];
                 if(!present(enemy, environment(this_object())))
                 return; 
-        message_vision(HIW"\n$N沙啞的聲音念誦著咒語，一根骨頭突然化作一只長矛射向$n！\n"NOR,this_object(),enemy);
+        message_vision(HIW"\n$N沙啞的聲音唸誦着咒語，一根骨頭突然化作一隻長矛射向$n！\n"NOR,this_object(),enemy);
         enemy->receive_damage("qi",3000+random(3000),this_object());
         COMBAT_D->report_status(enemy);
         if (! this_object()->is_busy())

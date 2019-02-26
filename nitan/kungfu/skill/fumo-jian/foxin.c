@@ -36,7 +36,7 @@ int perform(object me, object target)
                 return notify_fail("你沒有激發伏摩劍，不能使用佛心劍！\n");
 
        if (! living(target))
-              return notify_fail("對方都已經這樣了，用不著這麼費力吧？\n");
+              return notify_fail("對方都已經這樣了，用不着這麼費力吧？\n");
 
         msg = HIC "$N" HIC "手中" + weapon->name() +
               HIC "緩緩伸出，封住了$n" + HIC "的退路，隨"

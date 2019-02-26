@@ -127,7 +127,7 @@ void do_summon()
         obs = all_inventory(environment(me));
         obs=filter_array(obs,(:query("id", $1) == "lord zombie":));
         if( sizeof(obs) > 3 ) return;
-        message_vision(HIM "\n$N□□幹嚎，周圍的僵屍王應聲而來。\n" NOR, me);
+        message_vision(HIM "\n$N嗬嗬乾嚎，周圍的殭屍王應聲而來。\n" NOR, me);
         zombie = new(__DIR__"zombie_lord");
         zombie->move(environment(me));
         enemies = me->query_enemy();

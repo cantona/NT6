@@ -27,10 +27,10 @@ void create()
         set("location", 1);
         set("shen", -50000);
         set("long",@LONG
-這人身材高挑，相貌出眾。他幼時全家不幸被溫家五
+這人身材高挑，相貌出眾。他幼時全家不幸被温家五
 老劫掠滅門，立志報仇。此人性情古怪，為人陰狠，
 武功便正如其人般詭異難測。江湖上人人聞其名而為
-之色變，乃是出名的難纏人物。□
+之色變，乃是出名的難纏人物。
 LONG);
         set("combat_exp", 2500000);
         set("attitude", "heroism");
@@ -70,7 +70,7 @@ LONG);
             "復仇" : (: ask_fuchou :),
              "心得" : (: ask_jinshe :),
             "金蛇劍法" : (: ask_jinshe :),
-             "秘訣" : (: ask_jinshe :),
+             "祕訣" : (: ask_jinshe :),
                 ]));
  
         map_skill("force", "hunyuan-yiqi");
@@ -305,9 +305,9 @@ int ask_weapon()
        set("no_give", 1, obj);
        obj->move(me);
        message_vision("$N給$n一些"+obj->name()+NOR"。\n",this_object(),me);
-          set_temp("quest/金蛇掌法/start", 1, me);//金蛇掌法開始標記憑此可以向溫儀詢問
+          set_temp("quest/金蛇掌法/start", 1, me);//金蛇掌法開始標記憑此可以向温儀詢問
           addn_temp(QUESTDIR+"金蛇錐", 1, me);
-          command("say 這金蛇錐可是我的獨門暗器，以此為信物，你可去溫家堡找溫儀索要我遺留的寶物。");
+          command("say 這金蛇錐可是我的獨門暗器，以此為信物，你可去温家堡找温儀索要我遺留的寶物。");
             return 1; 
 }
 
@@ -329,20 +329,20 @@ int ask_fuchou()
         if( query_temp(QUESTDIR+"start", me) )
   {
           command("shake"+query("id", me));
-          command("say 你不是說要幫我復仇的嗎，怎麼還在這裡？");
+          command("say 你不是説要幫我復仇的嗎，怎麼還在這裏？");
           return 1;
   } 
         if( query(QUESTDIR+"over", me) )
   {
           command("thank"+query("id", me));
-          command("say 你已經殺了溫家五老幫我復仇了，真是太感謝了！");
+          command("say 你已經殺了温家五老幫我復仇了，真是太感謝了！");
           return 1;
   } 
   //非vip玩家，只能失敗三次
   if( query(QUESTDIR+"fail", me) >= 3 && query("registered", me)<3 )
   {
           command("shake"+query("id", me));
-          command("say 現在時間緊急，這復仇的事情還是以後再說吧。");
+          command("say 現在時間緊急，這復仇的事情還是以後再説吧。");
           return 1;
         }
         //需要間隔一天，經驗需要間隔500k
@@ -350,7 +350,7 @@ int ask_fuchou()
         if( query(QUESTDIR+"start/time", me) && time()-query(QUESTDIR+"start/time", me)<86400 )
         {
           command("shake"+query("id", me));
-          command("say 今天先這裡吧，有什麼事情明天再說吧。");
+          command("say 今天先這裏吧，有什麼事情明天再説吧。");
           return 1;
   }
         if( query(QUESTDIR+"start/combat_exp", me) && query("combat_exp", me)-query(QUESTDIR+"start/combat_exp", me)<500000 )
@@ -361,10 +361,10 @@ int ask_fuchou()
   }
         
           command("look"+query("id", me));
-          command("say 好吧，你去幫我殺掉溫家五老，我定有重謝。");
-          command("say 你只要和溫家五老的老大提起“金蛇郎君”即可。");
+          command("say 好吧，你去幫我殺掉温家五老，我定有重謝。");
+          command("say 你只要和温家五老的老大提起“金蛇郎君”即可。");
 
-          set_temp(QUESTDIR+"start", 1, me);//開始標志
+          set_temp(QUESTDIR+"start", 1, me);//開始標誌
          //標記開始時間和經驗
          set(QUESTDIR+"start/time", time(), me);
          set(QUESTDIR+"start/combat_exp",query("combat_exp",  me), me);
@@ -381,7 +381,7 @@ int ask_jinshe()
                    return 1;
         if(me->query_skill("jinshe-zhangfa",1) <250 )
                    return 1;
-          //必須殺死過溫家五老
+          //必須殺死過温家五老
         if( !query(QUESTDIR+"over", me) )
                    return 1;
 
@@ -404,7 +404,7 @@ int ask_jinshe()
         if( query(QUESTDIR+"time", me) && time()-query(QUESTDIR+"time", me)<86400 )
         {
           command("shake"+query("id", me));
-          command("say 今天先這裡吧，有什麼事情明天再說吧。");
+          command("say 今天先這裏吧，有什麼事情明天再説吧。");
           return 1;
   }
         if( query(QUESTDIR+"combat_exp", me) && query("combat_exp", me)-query(QUESTDIR+"combat_exp", me)<500000 )
@@ -416,18 +416,18 @@ int ask_jinshe()
          exp=700+random(300);
          neili=20+random(30);
           command("look"+query("id", me));
-          command("say 既然你幫我報了大仇，我就將我對金蛇秘籍的研究心得告訴你吧。");
-         //標記武功的時間和標志
+          command("say 既然你幫我報了大仇，我就將我對金蛇祕籍的研究心得告訴你吧。");
+         //標記武功的時間和標誌
          set(QUESTDIR+"time", time(), me);
          set(QUESTDIR+"combat_exp",query("combat_exp",  me), me);
       if( random(query("kar", me))>22){
            set(QUESTDIR+"pass", 1, me);
-         tell_object(me,HIG"\n你聽了夏雪宜的指點，再與金蛇秘笈中不解之處一加參照，登時豁然貫通，果然妙用無窮。\n\n"NOR);
-        tell_object(me,HIC"\n你閉目冥思，《金蛇秘笈》中種種武功秘奧，有如一道澄澈的小溪，緩緩在心中流過，\n"NOR);
+         tell_object(me,HIG"\n你聽了夏雪宜的指點，再與金蛇祕笈中不解之處一加參照，登時豁然貫通，果然妙用無窮。\n\n"NOR);
+        tell_object(me,HIC"\n你閉目冥思，《金蛇祕笈》中種種武功祕奧，有如一道澄澈的小溪，緩緩在心中流過，\n"NOR);
         tell_object(me,HIC"清可見底，更先半分渣滓，直到許久才醒覺。經此一陣苦思，不但通解了金蛇郎君的\n"NOR);
-        tell_object(me,HIC"\n武學秘訣，對師父所授諸般上乘武功，也有更深一層體會。\n"NOR);
+        tell_object(me,HIC"\n武學祕訣，對師父所授諸般上乘武功，也有更深一層體會。\n"NOR);
           command("wa2"+query("id", me));
-              tell_object(me,HBYEL"\n你于"+NATURE_D->game_time()+"得到夏雪宜的指點，武學修為精進，獲得"+exp+"點經驗獎勵、"+neili+"點最大內力。\n"NOR);
+              tell_object(me,HBYEL"\n你於"+NATURE_D->game_time()+"得到夏雪宜的指點，武學修為精進，獲得"+exp+"點經驗獎勵、"+neili+"點最大內力。\n"NOR);
                 addn("combat_exp", exp, me);
                 addn("max_neili", neili, me);
                 me->set_skill("wudu-yanluobu", 1);
@@ -435,7 +435,7 @@ int ask_jinshe()
 
                   return 1;
             }
-        tell_object(me,HIR"\n苦思冥想，發現自己依然無法理解夏雪宜所傳秘訣。\n\n"NOR);
+        tell_object(me,HIR"\n苦思冥想，發現自己依然無法理解夏雪宜所傳祕訣。\n\n"NOR);
           command("sigh"+query("id", me));
            addn(QUESTDIR+"fail", 1, me);
        log_file("quest/jinshequest",sprintf("%s(%s)第%d次向夏雪宜求教，但是依然無法理解其中訣竅。\n",me->name(1),query("id", me),query("quest/金蛇劍法/fail", me)));

@@ -5,8 +5,8 @@ void create()
 {
         set("short", "藏經樓");
         set("long", @LONG
-這裡是報國寺藏經樓。閣樓上密密麻麻排了好多書架，架上擺滿
-了經書。有兩個身穿白衣的小師太正在一角靜靜地讀著經書。
+這裏是報國寺藏經樓。閣樓上密密麻麻排了好多書架，架上擺滿
+了經書。有兩個身穿白衣的小師太正在一角靜靜地讀着經書。
 LONG );
         set("objects", ([
                 CLASS_D("emei") + "/daoming" : 1,
@@ -27,7 +27,7 @@ int valid_leave(object me, string dir)
            && present("shu", me)
            && objectp(present("dao ming", environment(me))))
                 return notify_fail(CYN "道明小師父見你想把經書拿走，上前輕"
-                                   "聲說道：本閣經書恕不外借。\n" NOR);
+                                   "聲説道：本閣經書恕不外借。\n" NOR);
 
         return ::valid_leave(me, dir);
 }

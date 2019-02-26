@@ -9,7 +9,7 @@ mapping *action = ({
         "skill_name" : "青蛇挺身",
         "damage_type" : "刺傷"
 ]),
-([      "action" : "$N全身之力聚于一指，一式「銀蛇吐信」，指向$n的胸前",
+([      "action" : "$N全身之力聚於一指，一式「銀蛇吐信」，指向$n的胸前",
         "force" : 100,
         "dodge" : 5,
         "lvl" : 15,
@@ -17,7 +17,7 @@ mapping *action = ({
         "skill_name" : "銀蛇吐信",
         "damage_type" : "刺傷"
 ]),
-([      "action" : "$N左掌貼于神道穴，右手一式「金蛇擺尾」，向$n的$l劃過",
+([      "action" : "$N左掌貼於神道穴，右手一式「金蛇擺尾」，向$n的$l劃過",
         "force" : 120,
         "dodge" : 8,
         "lvl" : 25,

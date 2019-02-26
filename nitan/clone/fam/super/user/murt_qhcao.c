@@ -7,7 +7,7 @@ void create()
         if (clonep())
                 set_default_object(__FILE__);
         else {  
-        	set("long", HIG "七魂草生長于雲南高原一帶，吸食了七種不同生物的魂魄而成！\n" + 
+        	set("long", HIG "七魂草生長於雲南高原一帶，吸食了七種不同生物的魂魄而成！\n" + 
         	                "服食(fushi qihuncao)後可永久提升基本招架1級。\n" HIC
         	                "擁有者：murt\n" NOR);
                 set("unit", "束");
@@ -35,7 +35,7 @@ int do_use(string arg)
 		return notify_fail("你身上沒有這個東西！\n");
 
 	if (ob->query("owner") != me->query("id"))
-		return notify_fail(ob->name() + NOR "已經于其他玩家綁定！\n");
+		return notify_fail(ob->name() + NOR "已經於其他玩家綁定！\n");
 	
 	me->set_skill("parry", me->query_skill("parry", 1) + 1);
 

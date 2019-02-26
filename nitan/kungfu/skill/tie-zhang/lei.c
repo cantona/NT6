@@ -38,7 +38,7 @@ int perform(object me, object target)
                 return notify_fail("你現在的真氣不足，難以施展" + name() + "。\n");
 
         if (! living(target))
-                return notify_fail("對方都已經這樣了，用不著這麼費力吧？\n");
+                return notify_fail("對方都已經這樣了，用不着這麼費力吧？\n");
 
         msg = WHT "$N" WHT "運轉真氣施出「" HIR "掌心雷" NOR +
               WHT "」絕技，雙掌翻紅，有如火燒，朝$n" WHT "猛"
@@ -53,7 +53,7 @@ int perform(object me, object target)
                 damage+= query("jiali", me);
                 msg += COMBAT_D->do_damage(me, target, UNARMED_ATTACK, damage, 85,
                                            HIR "結果只聽$n" HIR "一聲悶哼，被$N"
-                                           HIR "一掌劈個正著，口中鮮血狂噴而出。"
+                                           HIR "一掌劈個正着，口中鮮血狂噴而出。"
                                            "\n" NOR);
                 addn("neili", -250, me);
                 me->start_busy(2);

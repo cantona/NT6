@@ -103,7 +103,7 @@ void dest()
 		return;
 	}
 	message("chat",HIY+"【閒聊】雅典娜(Yadian na):"+ob->name()+"魔界無敵。。試問誰還敢來！\n"NOR,users()); 
-	message_vision("$N口中念念有詞，騰雲駕舞而去。\n",this_object());
+	message_vision("$N口中唸唸有詞，騰雲駕舞而去。\n",this_object());
 	destruct(ob);
 }
 void die()

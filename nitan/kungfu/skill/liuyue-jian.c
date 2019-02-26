@@ -10,13 +10,13 @@ mapping *action = ({
         "skill_name" : "劍氣封喉",
         "damage_type":  "刺傷"
 ]),
-([      "action": "$N錯步上前，一招「明月千裡」，劍意若有若無，$w淡淡地向$n的$l揮去",
+([      "action": "$N錯步上前，一招「明月千里」，劍意若有若無，$w淡淡地向$n的$l揮去",
         "force" : 149,
         "parry" : 13,
         "dodge" : 10,
         "damage": 25,
         "lvl"   : 30,
-        "skill_name" : "明月千裡",
+        "skill_name" : "明月千里",
         "damage_type":  "割傷"
 ]),
 ([      "action": "$N一式「懷中抱月」，縱身飄開數尺，運發劍氣，手中$w遙搖指向$n的$l",
@@ -28,7 +28,7 @@ mapping *action = ({
         "skill_name" : "懷中抱月",
         "damage_type":  "刺傷"
 ]),
-([      "action": "$N縱身輕輕躍起，一式「大風起兮」，劍光如水，一瀉千裡，洒向$n全身",
+([      "action": "$N縱身輕輕躍起，一式「大風起兮」，劍光如水，一瀉千里，灑向$n全身",
         "force" : 187,
         "parry" : 23,
         "dodge" : 19,
@@ -37,13 +37,13 @@ mapping *action = ({
         "skill_name" : "大風起兮",
         "damage_type":  "割傷"
 ]),
-([      "action":"$N錯步上前，一招「明月千裡」，劍意若有若無，$w淡淡地向$n的$l揮去",
+([      "action":"$N錯步上前，一招「明月千里」，劍意若有若無，$w淡淡地向$n的$l揮去",
         "force" : 197,
         "parry" : 31,
         "dodge" : 27,
         "damage": 56,
         "lvl"   : 90,
-        "skill_name" : "明月千裡",
+        "skill_name" : "明月千里",
         "damage_type":  "割傷"
 ]),
 ([      "action":"$N手中$w中宮直進，一式「定天一針」，無聲無息地對準$n的$l刺出一劍",
@@ -73,7 +73,7 @@ mapping *action = ({
         "skill_name" : "映月無聲",
         "damage_type":  "刺傷"
 ]),
-([      "action":"$N左指凌空虛點，右手$w逼出丈許雪亮劍芒，一式「情連航慈」刺向$n的嚥喉",
+([      "action":"$N左指凌空虛點，右手$w逼出丈許雪亮劍芒，一式「情連航慈」刺向$n的咽喉",
         "force" : 282,
         "parry" : 63,
         "dodge" : 55,

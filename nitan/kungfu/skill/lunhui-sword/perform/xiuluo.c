@@ -23,22 +23,22 @@ int perform(object me, object target)
                 return notify_fail("你使用的武器不對，難以施展" + name() + "。\n");
 
         if (me->query_skill("lunhui-sword", 1) < 500)
-                return notify_fail("你的六道輪回劍修為不夠，難以施展" + name() + "。\n");
+                return notify_fail("你的六道輪迴劍修為不夠，難以施展" + name() + "。\n");
 
         if (me->query_skill_mapped("sword") != "lunhui-sword")
-                return notify_fail("你沒有激發六道輪回劍，難以施展" + name() + "。\n");
+                return notify_fail("你沒有激發六道輪迴劍，難以施展" + name() + "。\n");
 
         if (me->query_skill_mapped("sword") != "lunhui-sword")
-                return notify_fail("你沒有激發六道輪回劍，難以施展" + name() + "。\n");
+                return notify_fail("你沒有激發六道輪迴劍，難以施展" + name() + "。\n");
 
         if( query("neili", me)<2000 )
                 return notify_fail("你的真氣不夠，難以施展" + name() + "。\n");
 
         if (! living(target))
-               return notify_fail("對方都已經這樣了，用不著這麼費力吧？\n");
+               return notify_fail("對方都已經這樣了，用不着這麼費力吧？\n");
 
         sexs=query("gender", me) == "男性"?"修羅神般威武":"修羅女神般曼妙多姿";
-        msg = HIR "$N" HIR "負劍而立，剎那間，劍氣環繞，形態飄逸之極，猶如傳說中的" + sexs + "。猛然間，$N" HIR 
+        msg = HIR "$N" HIR "負劍而立，剎那間，劍氣環繞，形態飄逸之極，猶如傳説中的" + sexs + "。猛然間，$N" HIR 
               "手中" + weapon->name() + HIR "化出一道劍光，但見一道無形劍氣奔向$n" HIR "，竟無一絲預兆。\n" NOR;
 
         ap = attack_power(me, "sword"); 

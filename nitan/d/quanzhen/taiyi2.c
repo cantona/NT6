@@ -7,9 +7,9 @@ void create()
 {
         set("short", "太乙池");
         set("long", @LONG
-你身在湖水裡，只覺得湖水冰涼透骨。但見四周高峰環列，池面
-碧波盪漾，山光水影，風景貽人。這裡原來是太乙池的東岸，太累的
-話，你可以爬(climb) 上岸。遠遠望去，西邊的山峰之間似乎有一個
+你身在湖水裏，只覺得湖水冰涼透骨。但見四周高峯環列，池面
+碧波盪漾，山光水影，風景貽人。這裏原來是太乙池的東岸，太累的
+話，你可以爬(climb) 上岸。遠遠望去，西邊的山峯之間似乎有一個
 大洞。想不想遊(swim)過去看？
 LONG
         );
@@ -54,7 +54,7 @@ int do_swim()
                 me->receive_damage("qi",10);
                 if (((c_skill*c_skill*c_skill/10)< c_exp) && (c_skill < 51))
                         me->improve_skill("jinyan-gong", (int)me->query_skill("jinyan-gong", 1));
-                message_vision("$N在太乙池中劃了劃水，用力遊了起來。\n", me);
+                message_vision("$N在太乙池中劃了划水，用力遊了起來。\n", me);
         }
         return 1;
 }

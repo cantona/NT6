@@ -40,7 +40,7 @@ int perform(object me, object target)
                 return notify_fail("你現在的真氣不足，難以施展" + name() + "。\n");
 
         if (! living(target))
-                return notify_fail("對方都已經這樣了，用不著這麼費力吧？\n");
+                return notify_fail("對方都已經這樣了，用不着這麼費力吧？\n");
 
         msg = HIW "$N" HIW "體內先天真氣急速運轉，單掌一抖，掌心頓時升起一個氣"
               "團，朝$n" HIW "猛拍而去。\n" NOR;

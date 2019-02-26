@@ -16,7 +16,7 @@ int perform(object me, object target)
         int poi_amount, level, exp1, exp2;
 
         if( query("no_fight", environment(me)) )
-                return notify_fail("這裡不能發射暗器。\n");
+                return notify_fail("這裏不能發射暗器。\n");
 
         if( !target && me->is_fighting()) target = offensive_target(me);
 
@@ -104,5 +104,5 @@ void remove_shoot(object me)
         if( !me || !query_temp("baituo/shoot", me))return ;
 
         delete_temp("baituo/shoot", me);
-        tell_object(me, "你的蛇杖裡的暗器準備好了。\n");
+        tell_object(me, "你的蛇杖裏的暗器準備好了。\n");
 }

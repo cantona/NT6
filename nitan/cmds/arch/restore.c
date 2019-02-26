@@ -107,7 +107,7 @@ int main(object me, string arg)
                 if (file_size(TEMP_DIR + flogin) >= 0 ||
                     file_size(TEMP_DIR + fuser) >= 0)
                 {
-                        msg += "由于暫存區(/temp/)下面已經存放了玩家"
+                        msg += "由於暫存區(/temp/)下面已經存放了玩家"
                                "的數據，因此本次不作暫存。\n";
                 } else
                 {
@@ -128,7 +128,7 @@ int main(object me, string arg)
             file_size(DATA_DIR + fuser) >= 0)
         {
                 write(sprintf("%s沒有能夠成功的刪除玩家現在的檔案(%s)和(%s)。\n"
-                       "請先查証然後再執行備份操作。\n",
+                       "請先查證然後再執行備份操作。\n",
                        msg, DATA_DIR + flogin, DATA_DIR + fuser));
                 return 1;
         }
@@ -138,17 +138,17 @@ int main(object me, string arg)
         assure_file(DATA_DIR + fuser);
         cp(dir + flogin, DATA_DIR + flogin);
         cp(dir + fuser,  DATA_DIR + fuser);
-        msg += sprintf("從(%s)中復制玩家的檔案數據。\n", dir);
+        msg += sprintf("從(%s)中複製玩家的檔案數據。\n", dir);
 
         // success ?
         if (file_size(DATA_DIR + flogin) < 0 ||
             file_size(DATA_DIR + fuser) < 0)
         {
-                write(sprintf("%s沒有能夠成功的從(%s)中復制玩家的檔案。\n",
+                write(sprintf("%s沒有能夠成功的從(%s)中複製玩家的檔案。\n",
                        msg, dir));
                 return 1;
         }
-        msg += sprintf("檔案復制成功。\n");
+        msg += sprintf("檔案複製成功。\n");
         log_file("backup", sprintf("user %s has been restore by %s from %s.\n",
                                    user, geteuid(me), dir));
 
@@ -174,7 +174,7 @@ int main(object me, string arg)
         set_temp("restore_mysql", 1, ob);
         if (! ob->restore())
         {
-                write(sprintf("%s該用戶無法讀取備份的數據。\n", msg));
+                write(sprintf("%s該用户無法讀取備份的數據。\n", msg));
                 return 1;
         }
 
@@ -211,7 +211,7 @@ int main(object me, string arg)
                 if (item->is_character())
                 {
                         tell_object(me, item->name(1) + "從玩家" +
-                                        ob->name(1) + "身上脫離。\n");
+                                        ob->name(1) + "身上脱離。\n");
                         item->move(environment(me), 1);
                 } else
                         destruct(item);
@@ -221,7 +221,7 @@ int main(object me, string arg)
         ob->setup();
         if (! environment(ob))
         {
-                tell_object(ob, HIC "\n由于你現在所處的環境不正常，需"
+                tell_object(ob, HIC "\n由於你現在所處的環境不正常，需"
                                 "要移動到巫師會客室。\n" NOR);
                 ob->move("/d/wizard/guest_room");
                 set("startroom", "/d/wizard/guest_room", ob);
@@ -318,7 +318,7 @@ int help(object me)
         write(@HELP
 指令格式：restore [-c] <玩家ID> from <last | 1..7 | temp | dump>
 
-從備份區恢復一個玩家的數據。其中 last 等效于１，表示從最近一
+從備份區恢復一個玩家的數據。其中 last 等效於１，表示從最近一
 次的備份中恢復。玩家數據恢復時，當前的數據將被保存到一個暫存
 區(如果暫存區空)，如果對玩家恢復的備份不滿意，可以從 temp 中
 恢復。玩家的數據恢復時，如果玩家在線上，將執行 restore 操作，
@@ -333,7 +333,7 @@ int help(object me)
 據受到損失，因此也可以從 dump 中恢復數據。
 
 使用 -c 參數可以在恢復玩家數據以後清除玩家所有相關性的數據。
-這是針對那些自殺以後恢復得玩家而言的，由于他們自殺所以所有的
+這是針對那些自殺以後恢復得玩家而言的，由於他們自殺所以所有的
 相關性數據都會被清除，恢復以後應該清除他們自身的這些數據，避
 免數據不一致。
 

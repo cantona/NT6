@@ -34,7 +34,7 @@ int do_unlock()
         if( !query("home", me) )
                 return notify_fail("你沒私宅呀，在這開什麼開！\n");
         if( query("short", environment(me)) != "桃花坪" )
-                return notify_fail("你的私宅在桃花谷裡桃花坪上！\n");
+                return notify_fail("你的私宅在桃花谷裏桃花坪上！\n");
         rooms = children("/d/taohuacun/obj/player");
         for (i=0;i < sizeof(rooms);i++)
         {
@@ -75,7 +75,7 @@ int do_lock()
     return 0;
         if( query("owner", environment(me)) != query("id", me )
           && query("short", environment(me)) != "桃花坪" )
-                return notify_fail("你的私宅在桃花谷裡桃花坪上！\n");
+                return notify_fail("你的私宅在桃花谷裏桃花坪上！\n");
 
         if(!( here = find_object("/d/taohuacun/taohua5")) )
                 here = load_object("/d/taohuacun/taohua5");
@@ -94,7 +94,7 @@ int do_lock()
         message_vision(HIG "只聽得碰的一聲響，$N把房門關上了。\n" NOR, this_player());
         }
         else
-        {return notify_fail("門沒有開著啊。\n");}
+        {return notify_fail("門沒有開着啊。\n");}
         return 1;
 }
 void owner_is_killed()

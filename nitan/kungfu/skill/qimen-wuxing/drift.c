@@ -14,7 +14,7 @@ int conjure(object me, object target)
 
         if ( me->is_fighting() ) return notify_fail("戰鬥中你沒有時間打洞,呵呵！\n");
           
-        if ( !query("outdoors", environment(me)) ) return notify_fail("□！□！□！這裡的地板，似乎好硬喲！\n");
+        if ( !query("outdoors", environment(me)) ) return notify_fail("嘣！嘣！嘣！這裏的地板，似乎好硬喲！\n");
 
         ob = first_inventory(me);
         while ( ob )
@@ -26,7 +26,7 @@ int conjure(object me, object target)
         if ( query("jing", me) < 30 ) return notify_fail("你的精力不夠！\n");
         if ( target ) return notify_fail("奇門遁術只能自己使用！\n");
 
-        if ( virtualp(environment(me)) ) return notify_fail("這裡無法使用神通!\n");
+        if ( virtualp(environment(me)) ) return notify_fail("這裏無法使用神通!\n");
         write("你要鑽到哪一個人身邊？");
         input_to( (: call_other, __FILE__, "select_target", me :));
         return 1;
@@ -82,7 +82,7 @@ void select_target(object me, string name)
         {
                 message_vision( HIY "$N飛快地在地上扒了個洞，鑽了進去 ....\n" NOR, me);
                 write("咚咚幾聲，你挖到幾塊大石頭，哇，沒門！\n");
-                message( "vision",HIY+me->name()+"一臉氣急敗壞，灰頭灰臉地從洞裡又鑽了回來。\n" NOR, environment(me),({me}));
+                message( "vision",HIY+me->name()+"一臉氣急敗壞，灰頭灰臉地從洞裏又鑽了回來。\n" NOR, environment(me),({me}));
                 return;
         }
         set_temp("do_flee",time(),me);
@@ -91,14 +91,14 @@ void select_target(object me, string name)
                 || random(me->query_skill("qimen-wuxing",1)) < 30 ) 
         {
                 write("你手指都磨破了，才挖出個老鼠洞，MY GOD，怎麼鑽呀！\n");
-                message( "vision",HIY+me->name()+"使勁把臉往土裡蹭了幾下，真無聊。\n" NOR, environment(me),({me}));
+                message( "vision",HIY+me->name()+"使勁把臉往土裏蹭了幾下，真無聊。\n" NOR, environment(me),({me}));
                 return;
         }
         exits=query("exits", environment(ob));
         if (!mapp(exits) || !sizeof(exits) )
         {
                 write("你挖到一堵石牆，不得不退了回來！\n");
-                message( "vision",HIY+me->name()+"一臉氣急敗壞，灰頭灰臉地從洞裡又鑽了回來。\n" NOR, environment(me),({me}));
+                message( "vision",HIY+me->name()+"一臉氣急敗壞，灰頭灰臉地從洞裏又鑽了回來。\n" NOR, environment(me),({me}));
                 return;
         }
         if ( domain_file(base_name(environment(ob)))=="shaolin" 
@@ -107,14 +107,14 @@ void select_target(object me, string name)
                 || domain_file(base_name(environment(ob)))=="shenlong" 
                 || domain_file(base_name(environment(ob)))=="wizard" 
                 || domain_file(base_name(environment(ob)))=="death" ){
-                write("那裡佛氣好重，非道術所能及！\n");
-                message( "vision",HIY+me->name()+"一臉氣急敗壞，灰頭灰臉地從洞裡又鑽了回來。\n" NOR, environment(me),({me}));           
+                write("那裏佛氣好重，非道術所能及！\n");
+                message( "vision",HIY+me->name()+"一臉氣急敗壞，灰頭灰臉地從洞裏又鑽了回來。\n" NOR, environment(me),({me}));           
                 return;         
         }               
 
         if ( domain_file(base_name(environment(ob)))=="taohua" || domain_file(base_name(environment(ob)))=="binghuo"){
                 write("恭喜你，你挖到了泉水哩！\n");
-                message( "vision",HIY+me->name()+"從口了吐出幾口水大叫：好咸呀！\n" NOR, environment(me),({me}));
+                message( "vision",HIY+me->name()+"從口了吐出幾口水大叫：好鹹呀！\n" NOR, environment(me),({me}));
                 return;
         }
 
@@ -125,21 +125,21 @@ void select_target(object me, string name)
         }
 
         if ( domain_file(base_name(environment(ob)))=="gaochang" ) {
-                write("那裡太遙遠了。\n");
+                write("那裏太遙遠了。\n");
                 message( 
-                        "vision",HIY+me->name()+"一臉氣急敗壞，灰頭灰臉地從洞裡又鑽了回來。\n" NOR, environment(me),({me}));
+                        "vision",HIY+me->name()+"一臉氣急敗壞，灰頭灰臉地從洞裏又鑽了回來。\n" NOR, environment(me),({me}));
                 return;
         }
 
         if ( sscanf(base_name(environment(ob)), "/data/%*s") ){
-                write(HIM "那裡是人家的私宅，想進去偷東西啊?\n" NOR);
-                message( "vision",HIY+me->name()+"一臉氣急敗壞，灰頭灰臉地從洞裡又鑽了回來。\n" NOR, environment(me),({me}));
+                write(HIM "那裏是人家的私宅，想進去偷東西啊?\n" NOR);
+                message( "vision",HIY+me->name()+"一臉氣急敗壞，灰頭灰臉地從洞裏又鑽了回來。\n" NOR, environment(me),({me}));
         }
 
         if ( !environment(ob) || wizardp(ob) ){
                  message_vision( HIY "$N飛快地在地上扒了個洞，鑽了進去 ....\n" NOR, me);
                 write("你在地底鑽了半天，發現"+ob->name()+"似乎在天上 ....\n");
-                message( "vision",HIY+me->name()+"一臉氣急敗壞，灰頭灰臉地從洞裡又鑽了回來。\n" NOR, environment(me),({me}));
+                message( "vision",HIY+me->name()+"一臉氣急敗壞，灰頭灰臉地從洞裏又鑽了回來。\n" NOR, environment(me),({me}));
                 return;
         }
         
@@ -147,8 +147,8 @@ void select_target(object me, string name)
         if( userp(ob) )
         {
                 message_vision( HIY "$N飛快地在地上扒了個洞，鑽了進去 ....\n" NOR, me);
-                write("你在地底鑽了半天，發現似乎不著邊際 ....\n");
-                message( "vision",HIY+me->name()+"一臉氣急敗壞，灰頭灰臉地從洞裡又鑽了回來。\n" NOR, environment(me),({me}));
+                write("你在地底鑽了半天，發現似乎不着邊際 ....\n");
+                message( "vision",HIY+me->name()+"一臉氣急敗壞，灰頭灰臉地從洞裏又鑽了回來。\n" NOR, environment(me),({me}));
                 return;
         }
         */
@@ -158,7 +158,7 @@ void select_target(object me, string name)
 
         if( file_size(file_name(environment(ob))+".c")<=0 )
         {
-                write(HIY"但是，很快地你發現那裡似乎並不存在，于是又灰頭土臉地退了回來。\n"NOR);        
+                write(HIY"但是，很快地你發現那裏似乎並不存在，於是又灰頭土臉地退了回來。\n"NOR);        
                 return;
         } else 
                 me->move(environment(ob));

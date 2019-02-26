@@ -14,12 +14,12 @@ void create()
 		"luohan",
 	}));
 	set("long",
-		"他是一位須發花白的老僧，身穿一襲金邊黑布袈裟。他身材瘦高，\n"
+		"他是一位鬚髮花白的老僧，身穿一襲金邊黑布袈裟。他身材瘦高，\n"
 		"太陽穴高高鼓起，似乎身懷絕世武功。\n"
 	);
 
 
-	set("nickname", "清凈羅漢");
+	set("nickname", "清淨羅漢");
 	set("gender", "男性");
 	set("attitude", "friendly");
 	set("class", "bonze");

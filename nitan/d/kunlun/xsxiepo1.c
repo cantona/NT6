@@ -7,7 +7,7 @@ void create()
 {
         set("short", "雪山斜坡");
         set("long", @LONG
-你手腳著地，沿著雪山斜坡，一步一步向著有陽沅之處爬去，但此
+你手腳着地，沿着雪山斜坡，一步一步向着有陽沅之處爬去，但此
 峭壁本就極陡，加上凍結冰雪，更是滑溜無比，一不小心則會滑跌。
 LONG        );
         set("outdoors", "hongmei");
@@ -28,7 +28,7 @@ int do_pa(string arg)
         if (!(arg||arg=="east"||arg=="west")) return 0;
         if (arg=="east")
         {
-                message("vision",me->name()+"向著太陽升起的地方爬去。\n",environment(me),me);
+                message("vision",me->name()+"向着太陽升起的地方爬去。\n",environment(me),me);
                 write("你向東面的雪山斜坡爬去。\n");
                 me->move(__DIR__"xsxiepo2");
                 message("vision",me->name()+"爬了過來。\n",environment(me),me);
@@ -36,10 +36,10 @@ int do_pa(string arg)
         }
         if (arg=="west")
         {
-                message("vision",me->name()+"向西邊的鬆樹爬去。\n",environment(me),me);
-                write("你向西面的鬆樹爬去。\n");
+                message("vision",me->name()+"向西邊的松樹爬去。\n",environment(me),me);
+                write("你向西面的松樹爬去。\n");
                 me->move(__DIR__"songshu");
-                message("vision",me->name()+"從鬆樹爬了過來。\n",environment(me),me);
+                message("vision",me->name()+"從松樹爬了過來。\n",environment(me),me);
                 return 1;
         }
         return 1;

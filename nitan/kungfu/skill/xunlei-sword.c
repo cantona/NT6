@@ -7,7 +7,7 @@ string type() { return "martial"; }
 string martialtype() { return "skill"; }
 
 mapping *action = ({
-([        "action" : "$N劍尖向右，繞身一周，一式"HIC"「仙人指路」"NOR"，$w突然向$n的$l刺去，",
+([        "action" : "$N劍尖向右，繞身一週，一式"HIC"「仙人指路」"NOR"，$w突然向$n的$l刺去，",
         "lvl" : 0,
         "skill_name"  : "仙人指路"
 ]),
@@ -19,7 +19,7 @@ mapping *action = ({
         "lvl" : 10,
         "skill_name"  : "海底尋針"
 ]),
-([        "action" : "$N撤步縮身，$w按藏于臂下，一招"GRN"「靈猿探洞」"NOR"，快如閃電般刺向$n的$l",
+([        "action" : "$N撤步縮身，$w按藏於臂下，一招"GRN"「靈猿探洞」"NOR"，快如閃電般刺向$n的$l",
         "lvl" : 15,
         "skill_name"  :"靈猿探洞"
 ]),
@@ -31,7 +31,7 @@ mapping *action = ({
         "lvl" : 25,
         "skill_name"  : "斜插神枝"
 ]),
-([        "action" : "$N一式"HIC"「電閃雷動」"NOR"，劍走中鋒，氣勢威嚴，將$n籠罩于重重劍氣之中",
+([        "action" : "$N一式"HIC"「電閃雷動」"NOR"，劍走中鋒，氣勢威嚴，將$n籠罩於重重劍氣之中",
         "lvl" : 30,
         "skill_name"  : "電閃雷動"
 ]),
@@ -145,7 +145,7 @@ int help(object me)
         write(HIC"\n迅雷十六劍："NOR"\n");
         write(@HELP
 
-    迅雷十六劍是昆侖派的劍法。
+    迅雷十六劍是崑崙派的劍法。
 
         學習要求：
                 玄天無極功10級

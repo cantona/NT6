@@ -41,14 +41,14 @@ mapping *action = ({
         "skill_name"  : "驚神劍",
         "damage_type" : "刺傷"
 ]),
-([      "action": "$N左手劍指劃轉，腰部一扭，右手$w一記「辟塵劍」自下而上刺向$n的$l",
+([      "action": "$N左手劍指劃轉，腰部一扭，右手$w一記「闢塵劍」自下而上刺向$n的$l",
         "force" : 225,
         "attack": 35,
         "dodge" : 5,
         "parry" : 7,
         "damage": 93,
         "lvl"   : 150,
-        "skill_name"  : "辟塵劍",
+        "skill_name"  : "闢塵劍",
         "damage_type" : "刺傷"
 ]),
 });
@@ -70,7 +70,7 @@ int valid_learn(object me)
                 return notify_fail("你的基本劍法火候太淺。\n");
 
         if (me->query_skill("sword", 1) < me->query_skill("pichen-jian", 1))
-                return notify_fail("你的基本劍法水平有限，無法領會更高深的辟塵劍法。\n");
+                return notify_fail("你的基本劍法水平有限，無法領會更高深的闢塵劍法。\n");
 
         return 1;
 }
@@ -103,10 +103,10 @@ int practice_skill(object me)
                 return notify_fail("你使用的武器不對。\n");
 
         if( query("qi", me)<60 )
-                return notify_fail("你的體力不夠練辟塵劍法。\n");
+                return notify_fail("你的體力不夠練闢塵劍法。\n");
 
         if( query("neili", me)<60 )
-                return notify_fail("你的內力不夠練辟塵劍法。\n");
+                return notify_fail("你的內力不夠練闢塵劍法。\n");
 
         me->receive_damage("qi", 50);
         addn("neili", -55, me);

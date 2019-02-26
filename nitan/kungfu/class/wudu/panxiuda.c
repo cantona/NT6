@@ -10,7 +10,7 @@ void create()
         set("nickname", HIY "笑面閻羅" NOR);
         set("long", @LONG
 他就是五毒教的左護法，人稱笑面閻羅的潘秀
-達。別看他一臉笑眯眯的，但是常常殺人于彈
+達。別看他一臉笑眯眯的，但是常常殺人於彈
 指之間。
 LONG);
         set("title","五毒教護法");

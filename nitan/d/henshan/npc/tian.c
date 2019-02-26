@@ -7,7 +7,7 @@ void create()
         seteuid(getuid());
         set_name("田伯光", ({ "tian boguang", "tian","boguang" }));
         set("long", "他一身飄逸的白色長衫，風流儒雅。\n");
-        set("nickname", HIM "萬裡獨行" NOR);
+        set("nickname", HIM "萬里獨行" NOR);
         set("gender", "男性");
         set("age", 37);
         set("attitude", "friendly");
@@ -47,7 +47,7 @@ void create()
         }) );
         set("chat_chance", 10);
         set("chat_msg", ({
-                CYN "田伯光笑道：尼姑也沒關系嘛，蓄起頭發，兩個月就是小美人了。\n" NOR,
+                CYN "田伯光笑道：尼姑也沒關係嘛，蓄起頭髮，兩個月就是小美人了。\n" NOR,
         }) );
 
         setup();
@@ -79,8 +79,8 @@ void greeting(object ob)
                 say(CYN "田伯光笑道：妙極，妙極，可惜太老了點，我可沒胃口。\n" NOR);     
         }
         else 
-                say(CYN "田伯光笑著招招手：這位"+RANK_D->query_respect(ob) + "來喝"
-                    "兩杯，這個小尼姑嘛，反正也沒什麼事，就讓她坐著就是。\n" NOR);
+                say(CYN "田伯光笑着招招手：這位"+RANK_D->query_respect(ob) + "來喝"
+                    "兩杯，這個小尼姑嘛，反正也沒什麼事，就讓她坐着就是。\n" NOR);
         return;
 }
 

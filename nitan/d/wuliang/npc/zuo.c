@@ -6,7 +6,7 @@ void create()
 {
         set_name("左子穆", ({ "zuo zimu", "zuo", "zimu"}));
         set("long",
-                "他是一位的五十多歲的老者，右手捻著長須，神情甚是得意。\n");
+                "他是一位的五十多歲的老者，右手捻着長鬚，神情甚是得意。\n");
 
         set("gender", "男性");
         set("attitude", "friendly");
@@ -40,7 +40,7 @@ void create()
         map_skill("parry", "damo-jian");
 
         set("inquiry", ([
-                "無量玉壁"  : "那是本派禁地，任何外人不得擅入。幹犯禁忌，可叫你死葬身之地。",
+                "無量玉壁"  : "那是本派禁地，任何外人不得擅入。干犯禁忌，可叫你死葬身之地。",
         ]));
 
         create_family("無量劍東宗", 4, "掌門");

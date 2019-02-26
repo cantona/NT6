@@ -9,7 +9,7 @@ int ask_me();
 void create()
 {
         set_name("薛慕華", ({ "xue muhua", "xue", "muhua" }));
-        set("long", "他就是號稱閻王敵的神醫薛慕華，據說他\n"
+        set("long", "他就是號稱閻王敵的神醫薛慕華，據説他\n"
                     "精通醫理，可以起死回生。\n");
         set("gender", "男性");
         set("title", "逍遙派函谷八友");
@@ -108,7 +108,7 @@ int ask_me()
         }
         else
         {
-                message_vision("薛慕華喂$N服下一顆藥丸，然後盤膝坐下，雙掌貼著$N的背心。\n", azhu);
+                message_vision("薛慕華喂$N服下一顆藥丸，然後盤膝坐下，雙掌貼着$N的背心。\n", azhu);
 
                 ob->delete_temp("juxianzhuang_step");
                 FUBEN_D->delay_clear_fuben(quest, userid);

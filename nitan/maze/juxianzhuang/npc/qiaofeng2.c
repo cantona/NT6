@@ -1,6 +1,6 @@
 
 // Written by Lonely@nitan.org
-// xiaofeng.c 蕭峰(喬峰)
+// xiaofeng.c 蕭峯(喬峯)
 
 #include <ansi.h>
 inherit NPC;
@@ -9,15 +9,15 @@ int check_out(object ob, object me);
 
 void create()
 {
-        set_name("喬峰", ({"qiao feng", "qiao", "feng"}));
+        set_name("喬峯", ({"qiao feng", "qiao", "feng"}));
         set("gender", "男性");
         set("nickname",HIB"鐵掌降龍"NOR);
         set("age", 28);
         set("long",
                 "他就是丐幫前任幫主，因被發現是契丹人而眾叛親離。\n"
-                "在江湖上與燕子塢的慕榮復並稱為「北喬峰，南慕榮」。\n"
+                "在江湖上與燕子塢的慕榮復並稱為「北喬峯，南慕榮」。\n"
                 "他身穿一件普通的粗布褂子，腰間用一條麻繩隨便一系。\n"
-                "他身高六尺有余，體格十分魁梧，長有一張線條粗曠、十\n"
+                "他身高六尺有餘，體格十分魁梧，長有一張線條粗曠、十\n"
                 "分男性化的臉龐，雙目如電，炯炯有神。\n");
         set("attitude", "peaceful");
 
@@ -28,7 +28,7 @@ void create()
         set("dex", 30);
         set("chat_chance", 1);
         set("chat_msg", ({
-                "蕭峰嘆了口氣道：“唉……想不到我蕭峰大好男兒，居然保護不了一個阿朱！\n",
+                "蕭峯歎了口氣道：“唉……想不到我蕭峯大好男兒，居然保護不了一個阿朱！\n",
         }));
 
         set("qi", 4000000);
@@ -50,7 +50,7 @@ void create()
         set_skill("xiaoyaoyou", 1200);        // 逍遙遊
         set_skill("parry", 1200);             // 基本招架
         set_skill("begging", 500);            // 叫化絕活
-        set_skill("checking", 500);           // 道聽途說
+        set_skill("checking", 500);           // 道聽途説
 
         map_skill("force", "huntian-qigong");
         map_skill("strike", "dragon-strike");

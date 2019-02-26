@@ -22,7 +22,7 @@ int do_pour(string arg)
         if( !ob )
                 return notify_fail("你身上沒有 " + what + " 這樣東西。\n");
         if( !query("liquid/remaining", ob) )
-                return notify_fail(ob->name() + "裡什麼也沒有，先裝些水酒才能溶化藥粉。\n");
+                return notify_fail(ob->name() + "裏什麼也沒有，先裝些水酒才能溶化藥粉。\n");
         // We let call other to call the "master copy" of the object in case the
         // powder object got destructed after used up.
         f = (: call_other, base_name(this_object()), "effect_in_liquid" :);

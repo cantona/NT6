@@ -30,7 +30,7 @@ int do_effect(object me)
 
         if( query("food", me)<limit1*3 || query("water", me)<limit2*3 )
         {
-                       tell_object(me, HIY "你只感疲勞一掃而空，再也不覺得饑餓。\n" NOR);
+                       tell_object(me, HIY "你只感疲勞一掃而空，再也不覺得飢餓。\n" NOR);
 
                 if( query("food", me)<limit1*3 )
                         set("food", limit1*3, me);

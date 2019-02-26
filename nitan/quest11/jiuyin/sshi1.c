@@ -7,7 +7,7 @@ void create()
        set("long", @LONG
 室中也無特異之處，你抬頭仰望，但見室頂密密麻麻的寫滿了字跡符號，
 你看了一會，但覺奧妙難解。室頂西南角繪著一幅圖，似與武功無關，凝神細
-看，倒像是幅地圖。石室右下方好象可以往下(down)走。
+看，倒像是幅地圖。石室右下方好像可以往下(down)走。
 LONG
      );
         set("item_desc", ([
@@ -47,13 +47,13 @@ int do_look(string arg)
 	object me=this_player();
 	int i, time;
 	if ( arg =="map") {
-		write(HIY"你凝望著那幅圖，心中不由大喜，原來那繪的正是出墓的秘道。\n"NOR);
+		write(HIY"你凝望著那幅圖，心中不由大喜，原來那繪的正是出墓的祕道。\n"NOR);
 		me->set_temp("map", 1);
 		me->start_busy(1);
 		return 1;         
 	}
 	if ( arg =="ceiling") {
-		write(HIY"你看著室頂，滿滿的都是密密麻麻的小字。\n"NOR);
+		write(HIY"你看着室頂，滿滿的都是密密麻麻的小字。\n"NOR);
 		me->set_temp("ceiling", 1);
 		me->start_busy(1);
 		return 1;
@@ -118,7 +118,7 @@ int do_walk(string arg)
 { 
         object me=this_player();
         if (me->is_busy() || me->is_fighting())
-              return notify_fail("你正忙著哪！\n");
+              return notify_fail("你正忙着哪！\n");
         if ( arg =="down"){ 
              if(!me->query_temp("map") || me->query_skill("yunu-xinjing")<120 )
 //                   return notify_fail("你伸腳想往下走，但是猶豫再三，又伸回了腳。\n");      
@@ -131,7 +131,7 @@ int do_walk(string arg)
            tell_room(environment(me), me->name() + "從"HIC"石室"NOR"快步走了過來。\n", ({ me }));
            return 1;
         }
-        return notify_fail("你在石室裡踱來踱去，不知如何是好？\n");
+        return notify_fail("你在石室裏踱來踱去，不知如何是好？\n");
 }
 
 int do_study(string arg)
@@ -145,7 +145,7 @@ int do_study(string arg)
 		return 0;
 
 	if(me->is_busy())
-		return notify_fail("你現在正忙著呢。\n");
+		return notify_fail("你現在正忙着呢。\n");
 
 	if( me->is_fighting() )
 		return notify_fail("你無法在戰鬥中專心下來研讀新知！\n");
@@ -176,7 +176,7 @@ int do_study(string arg)
 			if( my_skill * my_skill * my_skill / 10 > (int)me->query("combat_exp") ) 
 				return notify_fail("也許是缺乏實戰經驗，你對洞壁上所刻總是無法領會。\n");
 			else
-				write("你研讀著有關九陰真功的技巧，似乎有些心得。\n");
+				write("你研讀着有關九陰真功的技巧，似乎有些心得。\n");
 			me->improve_skill("jiuyin-zhengong", ((int)me->query_skill("literate", 1)/5 + 1));
 			me->receive_damage("jing", cost );
 			me->add("neili", -cost * 2);
@@ -189,7 +189,7 @@ int do_study(string arg)
 			if( my_skill * my_skill * my_skill / 10 > (int)me->query("combat_exp") ) 
 				return notify_fail("也許是缺乏實戰經驗，你對洞壁上所刻總是無法領會。\n");
 			else
-				write("你研讀著道德經，覺得心性修為大有長進。\n");
+				write("你研讀着道德經，覺得心性修為大有長進。\n");
 			me->improve_skill("daode-jing", ((int)me->query_skill("literate", 1)/5 + 1));
 			me->receive_damage("jing", cost );
 			me->add("neili", -cost * 2);
@@ -202,7 +202,7 @@ int do_study(string arg)
 			if( my_skill * my_skill * my_skill / 10 > (int)me->query("combat_exp") ) 
 				return notify_fail("也許是缺乏實戰經驗，你對洞壁上所刻總是無法領會。\n");
 			else
-				write("你研讀著有關九陰身法的技巧，似乎有些心得。\n");
+				write("你研讀着有關九陰身法的技巧，似乎有些心得。\n");
 			me->improve_skill("jiuyin-shenfa", ((int)me->query_skill("literate", 1)/5+1));
 			me->receive_damage("jing", cost );
 			me->add("neili", -cost * 2);
@@ -215,7 +215,7 @@ int do_study(string arg)
 			if( my_skill * my_skill * my_skill / 10 > (int)me->query("combat_exp") ) 
 				return notify_fail("也許是缺乏實戰經驗，你對洞壁上所刻總是無法領會。\n");
 			else
-				write("你研讀著有關九陰銀龍鞭的技巧，似乎有些心得。\n");
+				write("你研讀着有關九陰銀龍鞭的技巧，似乎有些心得。\n");
 			me->improve_skill("yinlong-bian", ((int)me->query_skill("literate", 1)/5+1));
 			me->receive_damage("jing", cost );
 			me->add("neili", -cost * 2);
@@ -228,7 +228,7 @@ int do_study(string arg)
 			if( my_skill * my_skill * my_skill / 10 > (int)me->query("combat_exp") ) 
 				return notify_fail("也許是缺乏實戰經驗，你對洞壁上所刻總是無法領會。\n");
 			else
-				write("你研讀著有關九陰神爪的技巧，似乎有些心得。\n");
+				write("你研讀着有關九陰神爪的技巧，似乎有些心得。\n");
 			me->improve_skill("jiuyin-shenzhua", ((int)me->query_skill("literate", 1)/5+1));
 			me->receive_damage("jing", cost );
 			me->add("neili", -cost * 2);

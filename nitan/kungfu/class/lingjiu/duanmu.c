@@ -11,12 +11,12 @@ void create()
 {
         set_name("端木元", ({ "duanmu yuan", "duanmu", "yuan"}));
         set("gender", "男性");
-        set("title", "海南島赤燄洞洞主");
+        set("title", "海南島赤焰洞洞主");
         set("nickname", HIR "歸去來兮" NOR);
         set("age", 54);
         set("long", @LONG
-這大頭老者就是海南島五指山赤燄洞洞主端木
-元。只見他一顆大腦袋光禿禿地，半根頭發也
+這大頭老者就是海南島五指山赤焰洞洞主端木
+元。只見他一顆大腦袋光禿禿地，半根頭髮也
 無，臉上巽血，遠遠望去，便如大血球般。
 LONG );
         set("attitude", "peaceful");
@@ -52,13 +52,13 @@ LONG );
 
         set("inquiry", ([
                 "歸去來兮"   : (: ask_me :),
-                "五鬥米神功" : "這…這個……這是由地火功演化而來的一門功夫。",
-                "地火功"     : "地火功是我海南島五指山赤燄洞一派的基本功夫。",
+                "五斗米神功" : "這…這個……這是由地火功演化而來的一門功夫。",
+                "地火功"     : "地火功是我海南島五指山赤焰洞一派的基本功夫。",
                 "虛竹子"     : "他是我們靈鷲宮新的主公，我們全部聽他號令。",
                 "虛竹"       : "他是我們靈鷲宮新的主公，我們全部聽他號令。",
         ]));
 
-        create_family("赤燄洞", 14, "洞主");
+        create_family("赤焰洞", 14, "洞主");
 
         set("chat_chance_combat", 120);
         set("chat_msg_combat", ({
@@ -77,21 +77,21 @@ int recognize_apprentice(object ob, string skill)
         if( query("family/family_name", ob) != "靈鷲宮" )
         {
                 command("?");
-                command("say 你是哪裡鑽來的鬼東西？");
+                command("say 你是哪裏鑽來的鬼東西？");
                 return -1;
         }
 
         if( query("family/master_id", ob) != "xuzhu zi" )
         {
                 command("grin");
-                command("say 恐怕這靈鷲宮裡，還輪不到你說話吧？");
+                command("say 恐怕這靈鷲宮裏，還輪不到你説話吧？");
                 return -1; 
 
         }
 
         if (skill != "wudoumi-shengong" && skill != "unarmed")
         {
-                command("say 我只傳授你五鬥米神功和一些拳腳知識，不學就算了。");
+                command("say 我只傳授你五斗米神功和一些拳腳知識，不學就算了。");
                 return -1;
         }
 
@@ -117,18 +117,18 @@ mixed ask_me()
 
         me = this_player();
         if( query("can_perform/wudoumi-shengong/gui", me) )
-                return "本洞主已經說得夠多了，自己下去練吧。";
+                return "本洞主已經説得夠多了，自己下去練吧。";
 
         if( query("family/family_name", me) != "靈鷲宮" && 
-           query("family/family_name", me) != "赤燄洞" )
-                return "哪裡鑽來的鬼東西，快給本洞主滾開！";
+           query("family/family_name", me) != "赤焰洞" )
+                return "哪裏鑽來的鬼東西，快給本洞主滾開！";
 
         if (me->query_skill("wudoumi-shengong", 1) < 1)
-                return "嘿！你學過本洞主的五鬥米神功嗎？";
+                return "嘿！你學過本洞主的五斗米神功嗎？";
 
         if( query("family/family_name", me) == "靈鷲宮" && 
            query("family/gongji", me)<1500 )
-                return "嗯，主公說過了，不得傳功給無功勞的弟子。";
+                return "嗯，主公説過了，不得傳功給無功勞的弟子。";
 
         if (me->query_skill("force") < 200)
                 return "你看你，內功練成這樣，像什麼話！";
@@ -137,9 +137,9 @@ mixed ask_me()
                 return "你的內力弱成這樣，怎麼學習歸去來兮？";
 
         if (me->query_skill("wudoumi-shengong", 1) < 140)
-                return "你的五鬥米神功火候還差得遠，再回去練練！";
+                return "你的五斗米神功火候還差得遠，再回去練練！";
 
-        message_vision(HIY "$n" HIY "點了點頭，一聲咳嗽，朝著$N" HIY "吐出"
+        message_vision(HIY "$n" HIY "點了點頭，一聲咳嗽，朝着$N" HIY "吐出"
                        "一口濃痰，$N" HIY "不明\n其理，當即側身躲過。可霎時"
                        "卻見那口濃痰在$N" HIY "身後轉了個\n彎，又飛了回來，"
                        "正直打在$N" HIY "的後腦上。\n" NOR, me,
@@ -148,7 +148,7 @@ mixed ask_me()
         command("say 看懂了嗎？這東西難練得緊，可要多花些功夫。");
         command("say 還有就是，施功前要將全身功力盡數提起，這樣才得心應手。");
         tell_object(me, HIC "你學會了「歸去來兮」。\n" NOR);
-        tell_object(me, HIC "你學會了如何將五鬥米神功作為拳腳施展。\n" NOR);
+        tell_object(me, HIC "你學會了如何將五斗米神功作為拳腳施展。\n" NOR);
         if (me->can_improve_skill("force"))
                 me->improve_skill("force", 1500000);
         if (me->can_improve_skill("force"))
@@ -181,7 +181,7 @@ void attempt_apprentice(object ob)
                 return;
 
         command("@@");
-        command("say 你…你沒搞錯吧？既然這樣，那你跟著我好了。");
+        command("say 你…你沒搞錯吧？既然這樣，那你跟着我好了。");
         command("recruit "+query("id", ob));
 }
 

@@ -10,8 +10,8 @@ void create()
 {
         set("short", "石洞");
         set("long", @LONG
-這是一個石洞，四周點著八盞油燈，使得整個房間非常明
-亮。山洞四周石壁(bi)上像是刻畫著什麼東西，你禁不住想看
+這是一個石洞，四周點着八盞油燈，使得整個房間非常明
+亮。山洞四周石壁(bi)上像是刻畫着什麼東西，你禁不住想看
 看。
 LONG );
         set("exits", ([
@@ -42,16 +42,16 @@ string look_bi()
 
         if( me->query_skill("literate", 1)
          || query("learned_literate", me)){
-                msg = HIC "\n你走到石壁前，仔細觀看石壁上的內容，發現石壁布滿\n"
+                msg = HIC "\n你走到石壁前，仔細觀看石壁上的內容，發現石壁佈滿\n"
                         "蝌蚪形狀的文字。你仔細推敲這些文字卻一無所獲。\n" NOR;
         } else {
-                msg = HIC "\n你走到石壁前，仔細觀看石壁上的內容，發現石壁布滿\n"
-                        "蝌蚪形狀的文字，由于你從未讀過書，所以你並沒有在\n"
+                msg = HIC "\n你走到石壁前，仔細觀看石壁上的內容，發現石壁佈滿\n"
+                        "蝌蚪形狀的文字，由於你從未讀過書，所以你並沒有在\n"
                         "意那些文字。你猛然看到文字下面有很多圖畫，是用利\n"
-                        "器所刻。上面畫著各式各樣的人物，有的站成馬步，有\n"
+                        "器所刻。上面畫着各式各樣的人物，有的站成馬步，有\n"
                         "的手成掌狀，劈空而出……  但是上面人物卻仍舊裸露\n"
-                        "全身，其周身經脈走向清晰無比，配合著各種招式，更\n"
-                        "是精妙無比，你忍不住想跟著學(think)起來了。\n" NOR;
+                        "全身，其周身經脈走向清晰無比，配合着各種招式，更\n"
+                        "是精妙無比，你忍不住想跟着學(think)起來了。\n" NOR;
         }
 
         return msg;
@@ -71,7 +71,7 @@ int do_think(string arg)
                 return notify_fail("你要參悟什麼？\n");
 
         if (me->is_busy() || me->is_fighting())
-                return notify_fail("你現在正忙著呢。\n");
+                return notify_fail("你現在正忙着呢。\n");
 
         if( me->query_skill("literate",1) || query("learned_literate", me) )
                 return notify_fail("你發現石壁上的武功深奧之極，一時難以體會！\n");
@@ -90,15 +90,15 @@ int do_think(string arg)
                 return notify_fail("你的內力修為不足，無法學習石壁上的武功。\n");
 
         if( query("jing", me)<85 )
-                return notify_fail("你現在精神不濟，過于疲倦，還是休息"
+                return notify_fail("你現在精神不濟，過於疲倦，還是休息"
                                    "一會吧。\n");
 
         if ((int)me->query_skill("taixuan-gong", 1) < 60)
-                return notify_fail("你覺得石壁上記載的武功對你來說過于復雜，一"
+                return notify_fail("你覺得石壁上記載的武功對你來説過於複雜，一"
                                    "時難以領悟。\n");
 
         if ((int)me->query_skill("taixuan-gong", 1) >= 120)
-                return notify_fail("你覺得石壁上記載的武功對你來說太淺了，結果你"
+                return notify_fail("你覺得石壁上記載的武功對你來説太淺了，結果你"
                                    "什麼也沒學到。\n");
 
         me->receive_damage("jing", 75);

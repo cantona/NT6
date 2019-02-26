@@ -1,7 +1,7 @@
 #include <ansi.h>
 #include <combat.h>
 
-string name() { return HIM "孤雁出群" NOR; }
+string name() { return HIM "孤雁出羣" NOR; }
 
 inherit F_SSERVER;
 
@@ -32,13 +32,13 @@ int perform(object me, object target)
                 return notify_fail("你現在的真氣不夠，難以施展" + name() + "。\n");
 
         if (! living(target))
-                return notify_fail("對方都已經這樣了，用不著這麼費力吧？\n");
+                return notify_fail("對方都已經這樣了，用不着這麼費力吧？\n");
 
         ap = attack_power(me, "strike");
         dp = defense_power(target, "parry");
 
-        msg = HIC "\n$N" HIC "騰空而起，施展出絕招「" HIM "孤雁出群" HIC "」，"
-              "猶如一只大雁臨空而下，雙掌猛地拍向$n" HIC "。\n" NOR;
+        msg = HIC "\n$N" HIC "騰空而起，施展出絕招「" HIM "孤雁出羣" HIC "」，"
+              "猶如一隻大雁臨空而下，雙掌猛地拍向$n" HIC "。\n" NOR;
         message_combatd(msg, me, target);
 
         if (ap / 2 + random(ap) > dp)

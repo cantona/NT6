@@ -1,4 +1,4 @@
-// suo.c 金鉤鎖魂
+// suo.c 金鈎鎖魂
 // Last Modified by winder on Mar. 10 2000
 
 #include <ansi.h>
@@ -7,7 +7,7 @@
 #include <combat.h>
 
 inherit F_SSERVER;
-#define PNAME "金鉤鎖魂"
+#define PNAME "金鈎鎖魂"
 int perform(object me, object target)
 {
         object ob,weapon,myweapon;
@@ -34,7 +34,7 @@ int perform(object me, object target)
                 
         if( !objectp(weapon=query_temp("weapon", me) )
          || query("skill_type", weapon) != "hook" )
-                return notify_fail(PNAME"開始時必須拿著一把鉤！\n");
+                return notify_fail(PNAME"開始時必須拿着一把鈎！\n");
 
         if( !objectp(weapon=query_temp("weapon", target)) )
                 return notify_fail("對方手中並沒有兵器！\n");
@@ -64,7 +64,7 @@ int perform(object me, object target)
 
         weapon=query_temp("weapon", target);
         myweapon=query_temp("weapon", me);
-        message_combatd(HIR"\n$N虛晃一招，手中"+query("name", myweapon)+HIR"忽的一聲，鉤尖已搭在$n的"+query("name", weapon)+HIR"上！\n"NOR,me,target);
+        message_combatd(HIR"\n$N虛晃一招，手中"+query("name", myweapon)+HIR"忽的一聲，鈎尖已搭在$n的"+query("name", weapon)+HIR"上！\n"NOR,me,target);
         skill = target->query_skill("parry", 1);
         myskill = me->query_skill(bskill, 1);
             if(random(myskill) < random(skill)||query("max_neili",me) <random(query("max_neili",target))) 
@@ -76,7 +76,7 @@ int perform(object me, object target)
                 return 1;
         }
 
-        msg=HIR"只見$N順勢一絞，低喝一聲：“撒手！”$n只覺得虎口一陣巨痛，\n手中"+query("name", weapon)+HIR"當啷一聲掉在地上！\n"NOR;
+        msg=HIR"只見$N順勢一絞，低喝一聲：“撒手！”$n只覺得虎口一陣巨痛，\n手中"+query("name", weapon)+HIR"噹啷一聲掉在地上！\n"NOR;
         msg += "$N哈哈一笑，得理不饒人，招招進逼！\n" NOR;
         message_combatd(msg, me,target);
         weapon->move(environment(me));
@@ -98,15 +98,15 @@ int help(object me)
         write(@HELP
 
         使用功效：
-                連續出手五鉤
+                連續出手五鈎
                 擊落對方兵刃
 
         出手要求：
                 五毒神功50級
-                基本鉤法50級
-                五毒鉤法50級
+                基本鈎法50級
+                五毒鈎法50級
                 內力500
-                使用五毒教的鉤
+                使用五毒教的鈎
 HELP
         );
         return 1;

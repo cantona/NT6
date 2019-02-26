@@ -2,7 +2,7 @@
 inherit SKILL;
 
 mapping *action = ({
-([      "action": "在呼呼風聲中，$N使一招「陰風怒號」，雙手如鉤如戢，插向$n的$l",
+([      "action": "在呼呼風聲中，$N使一招「陰風怒號」，雙手如鈎如戢，插向$n的$l",
         "force" : 100,
         "attack": 28,
         "dodge" : 17,

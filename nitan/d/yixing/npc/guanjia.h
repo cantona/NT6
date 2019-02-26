@@ -32,7 +32,7 @@ string ask_job()
         myfam = (string)query("party/party_name");
 //        if( (string)me->query_temp("bangs/fam") != myfam )
         if( query("party/party_name", me) != myfam )
-                return RANK_D->query_rude(me) + "莫非是想打聽我幫的秘密吧。";  
+                return RANK_D->query_rude(me) + "莫非是想打聽我幫的祕密吧。";  
 
         if( time()<query("bangs/asktime", me)+60 )
                 return RANK_D->query_rude(me) + "不是剛問過我嗎？";
@@ -102,7 +102,7 @@ string ask_job()
                         ob->move(file);
                         dest = environment(ob);            
                         message("vision",
-                        ob->name() + "押著鏢車走了過來。\n",
+                        ob->name() + "押着鏢車走了過來。\n",
                         dest, ({ob}));
                         region = explode(file, "/")[1];
                         set("job/name",query("nickname",  ob), ling);
@@ -120,7 +120,7 @@ string ask_job()
                         if( !dest || !biaoju ) {
                                 destruct(ob);
                                 command("shake");
-                                return "你歇著吧，最近沒有要緊的幫務。";
+                                return "你歇着吧，最近沒有要緊的幫務。";
                         }
 
                         file = base_name(dest);
@@ -128,7 +128,7 @@ string ask_job()
                          || !mapp(query("exits", dest))){
                                 destruct(ob);
                                 command("shake");
-                                return "你歇著吧，最近沒有要緊的幫務。";
+                                return "你歇着吧，最近沒有要緊的幫務。";
                         }
 
                         command("nod");
@@ -180,7 +180,7 @@ string ask_job()
                 files = get_dir(BANGGOOD);
                 if( !sizeof(files) ) {
                          command("shake");
-                         return "你歇著吧，最近沒有要緊的幫務。";
+                         return "你歇着吧，最近沒有要緊的幫務。";
                 }
                 file = BANGGOOD + files[random(sizeof(files))];
                 ob = new(file);
@@ -192,15 +192,15 @@ string ask_job()
                 return "你把這"+query("unit", ob)+ob->name()+"拿去賣個好價錢。";
                 break;
 
-        case "伙計":
+        case "夥計":
                 command("nod");
-                set("job/name", "伙計", ling);
+                set("job/name", "夥計", ling);
                 return "你去天寶閣當差吧。";
                 break;
         }
 
         command("shake");
-        return "你歇著吧，最近沒有要緊的幫務。";
+        return "你歇着吧，最近沒有要緊的幫務。";
 }
 
 void do_start(object me, object ob)
@@ -235,7 +235,7 @@ int accept_object(object who, object ob)
                         return notify_fail(name() + "大怒道：沒有用的東西，連自己的幫務都記不住？！\n");
                 bonus=job["bonus"]*job["max"]/(query("combat_exp", who)+1000);
                 record = bonus / 2 + random(bonus);
-                log_file("test/BangJob",sprintf("%s于%s時找到%s得%s經驗點\n",query("name", who),ctime(time()),chname,chinese_number(record)));
+                log_file("test/BangJob",sprintf("%s於%s時找到%s得%s經驗點\n",query("name", who),ctime(time()),chname,chinese_number(record)));
                 bonus = job["score"];
                 break;
 

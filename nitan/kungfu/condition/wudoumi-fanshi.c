@@ -1,5 +1,5 @@
 // wudoumi-fanshi.c
-// 五鬥米神功反噬
+// 五斗米神功反噬
 
 #include <ansi.h>
 inherit F_CLEAN_UP;
@@ -56,7 +56,7 @@ int update_condition(object me, int duration)
 
         if (! living(me) && (me->query("eff_qi") < 20 || me->query("eff_jing") < 10))
         {
-                me->set_temp("修習五鬥米神功不慎，被內力反噬吐血而亡");
+                me->set_temp("修習五斗米神功不慎，被內力反噬吐血而亡");
                 me->die();
                 return 0;
         } else
@@ -69,8 +69,8 @@ int update_condition(object me, int duration)
 
                 tell_object(me, HIR "你覺得丹田處如同火燒，全身真氣鼓盪"
                                 "不止，便似要破體而出一般。\n" NOR);
-                message("vision", HIR + me->name() + HIR "臉色赤紅，須發"
-                                  "焦卷，全身散發著滾滾熱氣，不住的顫抖。\n",
+                message("vision", HIR + me->name() + HIR "臉色赤紅，鬚髮"
+                                  "焦卷，全身散發着滾滾熱氣，不住的顫抖。\n",
                                   environment(me), me);
         }
 

@@ -11,7 +11,7 @@ mapping *action=({
         "skill_name" : "乾字決",
         "damage_type" : "瘀傷"
 ]),
-([        "action" : "$N繞著$n一轉，滿場遊走，拳出如風，連綿不絕地擊向$n，正是八卦拳中的「坤字決」",
+([        "action" : "$N繞着$n一轉，滿場遊走，拳出如風，連綿不絕地擊向$n，正是八卦拳中的「坤字決」",
         "force" : 80,
         "attack": 25,
         "dodge" : 43,
@@ -51,17 +51,17 @@ mapping *action=({
         "skill_name" : "震字決",
         "damage_type" : "瘀傷"
 ]),
-([        "action" : "$N左拳突然張開，拳開變掌，直擊化為橫掃，一招「兌字決」便往$n的$l招呼過去",
+([        "action" : "$N左拳突然張開，拳開變掌，直擊化為橫掃，一招「兑字決」便往$n的$l招呼過去",
         "force" : 200,
         "attack": 48,
         "dodge" : 54,
         "parry" : 18,
         "damage": 28,
         "lvl"   : 120,
-        "skill_name" : "兌字決",
+        "skill_name" : "兑字決",
         "damage_type" : "瘀傷"
 ]),
-([        "action" : "$N一招「離字決」，頓時幻出重重拳影，氣勢如虹，舖天蓋地襲向$n全身",
+([        "action" : "$N一招「離字決」，頓時幻出重重拳影，氣勢如虹，鋪天蓋地襲向$n全身",
         "force" : 280,
         "attack": 60,
         "dodge" : 63,
@@ -72,7 +72,7 @@ mapping *action=({
         "damage_type" : "內傷"
 ]),
 ([        "action" : "$N微微一笑，手捏「艮字決」，飛身躍起，半空中一腳踢向$n面門，卻是個虛招。\n"
-                   "說時遲那時快，只見$N一個倒翻，雙拳已到了$n的$l",
+                   "説時遲那時快，只見$N一個倒翻，雙拳已到了$n的$l",
         "force" : 290,
         "attack": 62,
         "dodge" : 65,
@@ -128,7 +128,7 @@ mapping query_action(object me, object weapon)
 int practice_skill(object me)
 {
         if( query("qi", me)<70 )
-                return notify_fail("你現在手足酸軟，休息一下再練吧。\n");
+                return notify_fail("你現在手足痠軟，休息一下再練吧。\n");
 
         if( query("neili", me)<60 )
                 return notify_fail("你的內力不夠了。\n");

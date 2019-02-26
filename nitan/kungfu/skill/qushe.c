@@ -15,7 +15,7 @@ int valid_learn(object me)
                 return notify_fail("驅蛇只能歐陽世家弟子方可研習。\n");
 
         if (me->query_skill("baituo-michuan", 1) < 150)
-                return notify_fail("你白駝秘傳等級不足，無法繼續研習驅蛇。\n");
+                return notify_fail("你白駝祕傳等級不足，無法繼續研習驅蛇。\n");
 
         if (me->query_skill("training", 1) < 150)
                 return notify_fail("你馭獸術等級不足，無法繼續研習驅蛇。\n");

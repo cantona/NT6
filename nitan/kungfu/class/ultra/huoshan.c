@@ -14,7 +14,7 @@ mixed ask_opinion();
 
 string  *my_opinions = ({ "force" });
 
-// 該頭文件必須在這裡嵌入
+// 該頭文件必須在這裏嵌入
 #include <ultra.h>
 
 void create()
@@ -23,7 +23,7 @@ void create()
         set("title", HIW "大宗師" NOR);
         set("gender", "男性");
         set("age", 91);
-        set("long", "他身著奇裝異服，相貌平平，便似一般的西域人士。\n");
+        set("long", "他身着奇裝異服，相貌平平，便似一般的西域人士。\n");
         set("attitude", "peaceful");
         set("class", "fighter");
         set("str", 30);
@@ -112,12 +112,12 @@ mixed ask_opinion()
         {
                 if (ob == me)
                 {
-                        command("say 你著什麼急？不要煩我。");
+                        command("say 你着什麼急？不要煩我。");
                         return 1;
                 }
 
                 message_vision(CYN "$N" CYN "頗為惱怒的對$n" CYN
-                               "道：“沒看我正忙著嗎？”\n" NOR,
+                               "道：“沒看我正忙着嗎？”\n" NOR,
                                this_object(), me);
                 return 1;
         }
@@ -215,7 +215,7 @@ int accept_fight(object me)
                                "道：“適才你內力不足，我難以衡"
                                "量，待你將內力修煉好了再來吧！"
                                "”\n" NOR, this_object(), me);
-                return notify_fail("看來還是回去鍛煉一下內力吧！\n");
+                return notify_fail("看來還是回去鍛鍊一下內力吧！\n");
         }
         set("neili", 0, me);
 
@@ -233,7 +233,7 @@ int accept_kill(object me)
         if( query("combat_exp", me)<500000 )
         {
                 message_vision(CYN "$N" CYN "大怒道：“無名小輩搗"
-                               "什麼亂？給我滾！”說罷一掌把$n" CYN
+                               "什麼亂？給我滾！”説罷一掌把$n" CYN
                                "劈倒在地。\n" NOR, this_object(), me);
                 me->unconcious();
                 return -1;

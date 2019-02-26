@@ -36,13 +36,13 @@ int main(object me, string arg)
                 return notify_fail("你還是專心拱豬吧！\n");
 
         if( !query("no_fight", where) )
-                return notify_fail("在這裡閉關鑽研？不太安全吧？\n");
+                return notify_fail("在這裏閉關鑽研？不太安全吧？\n");
 
         if( !query("sleep_room", where) )
                 return notify_fail("你得找一個能夠休息的地方閉關鑽研。\n");
 
         if (me->is_busy())
-                return notify_fail("你現在正忙著呢。\n");
+                return notify_fail("你現在正忙着呢。\n");
                         
         if( query("potential", me)-query("learned_points", me)<1000000 )
                 return notify_fail("你的潛能不夠，沒法閉關鑽研。\n");
@@ -117,7 +117,7 @@ int closing(object me)
                 message_vision("$N睜開雙目，緩緩吐了一口氣，站了起來。\n", me);
                 CLOSE_D->user_opened(me);
                 CHANNEL_D->do_channel(this_object(), "rumor",
-                                      sprintf("聽說%s(%s)修煉鑽研%s功德圓滿。",
+                                      sprintf("聽説%s(%s)修煉鑽研%s功德圓滿。",
                                       me->name(1),query("id", me),to_chinese(skill)));
                 if (! interactive(me))
                 {
@@ -178,7 +178,7 @@ int closing(object me)
         SKILLS_D->upgrade_skill_power(skill); 
         CHANNEL_D->do_channel(find_object(SKILLS_D), "rumor", 
                               "江湖傳言，武學大宗師" + me->name(1) + "閉關修煉鑽研" + 
-                              to_chinese(skill) + "，終于完善其破綻之處，並廣為流傳。"); 
+                              to_chinese(skill) + "，終於完善其破綻之處，並廣為流傳。"); 
 
         return 1;
 }
@@ -190,7 +190,7 @@ int halt_closing(object me)
         message_vision(HIY "$N" HIY "大喝一聲，睜開眼來，一股氣流登時"
                        "將眾人迫退四步。\n\n" NOR, me);
 
-        CHANNEL_D->do_channel(this_object(), "rumor", "聽說" + me->name(1) +
+        CHANNEL_D->do_channel(this_object(), "rumor", "聽説" + me->name(1) +
                               "修煉"+to_chinese(query("upgrade", me))+"中途突然復出。");
         return 1;
 }

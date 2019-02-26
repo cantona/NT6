@@ -36,7 +36,7 @@ int perform(object me, object target)
                 return notify_fail("你現在的真氣不夠，難以施展" + name() + "。\n");
 
         if (! living(target))
-                return notify_fail("對方都已經這樣了，用不著這麼費力吧？\n");
+                return notify_fail("對方都已經這樣了，用不着這麼費力吧？\n");
 
         msg = HIG "突然間$N" HIG "指鋒一轉，力聚指尖“嗤”的彈出一道紫芒，直襲$n"
               HIG "氣海大穴。\n" NOR;
@@ -61,7 +61,7 @@ int perform(object me, object target)
                 me->start_busy(2);
         } else
         {
-                msg += CYN "可是$p" CYN "防守嚴密，緊守門戶，頓時令$P"
+                msg += CYN "可是$p" CYN "防守嚴密，緊守門户，頓時令$P"
                        CYN "的攻勢化為烏有。\n" NOR;
                 me->start_busy(3);
         }

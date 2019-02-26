@@ -38,7 +38,7 @@ int perform(object me, object target)
                 return notify_fail("你的真氣不夠，難以施展" + name() + "。\n");
 
         if (! living(target))
-                return notify_fail("對方都已經這樣了，用不著這麼費力吧？\n");
+                return notify_fail("對方都已經這樣了，用不着這麼費力吧？\n");
 
         damage = damage_power(me, "finger");
         slv = target->query_skill("six-finger", 1);
@@ -116,7 +116,7 @@ int perform(object me, object target)
             && target->query_skill_prepared("finger") == "six-finger")
         {
                 msg += HIY "\n可電光火石之間，$n" HIY "猛然翻掌，右手陡然探出，中"
-                       "指「中沖劍」向$N" HIY "一豎，登將參合劍氣化于無形！\n" NOR
+                       "指「中衝劍」向$N" HIY "一豎，登將參合劍氣化於無形！\n" NOR
                        + HIR "你聽到「嗤啦」一聲輕響，臉上竟濺到一些血滴！\n" NOR;
 
                 me->receive_wound("qi", slv / 2 + random(slv / 2), target);

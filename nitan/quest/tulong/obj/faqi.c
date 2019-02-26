@@ -1,4 +1,4 @@
-// 神話世界﹒西遊記﹒版本（世紀）
+// 神話世界·西遊記·版本（世紀）
 /* <SecCrypt CPL V3R05> */
 
 //by night 
@@ -47,7 +47,7 @@ void create()
         else {      
                 set("no_drop","這是佛家法器，不可隨便丟棄。\n");
                 set("no_put",1);
-                set("long", "這是佛家法器，你可以用它來布道（budao）。\n");
+                set("long", "這是佛家法器，你可以用它來佈道（budao）。\n");
                 set("value", 0);
              }
         setup();
@@ -85,19 +85,19 @@ int do_budao(string arg)
 
         if( query_temp("obj/done", me) >= 1 )
         {
-          tell_object(me,"你已經完成布道了，回去報告吧。\n");
+          tell_object(me,"你已經完成佈道了，回去報告吧。\n");
           return 1;
         }
         else
         if( query_temp("obj/budao", me)<1 )
         {
-          tell_object(me,"現在好像沒有輪到你去布道？\n");
+          tell_object(me,"現在好像沒有輪到你去佈道？\n");
           return 1;
         }
         else
         if( query_temp("obj/where", me) != test_name(base_name(environment(me))) )
         {
-          tell_object(me,"你布道的地方不是這裡吧？\n");
+          tell_object(me,"你佈道的地方不是這裏吧？\n");
           return 1;
         }
         else
@@ -109,13 +109,13 @@ int do_budao(string arg)
         else          
         if( (query("sen", me)<20) )
         {  
-          tell_object(me,"你的精力不能集中，不可以布道！\n");
+          tell_object(me,"你的精力不能集中，不可以佈道！\n");
           return 1;
         }
         else
         if( (query("kee", me)<30) )
         {
-          tell_object(me,"你的身體狀態太差，不能傳經布道！\n");
+          tell_object(me,"你的身體狀態太差，不能傳經佈道！\n");
           return 1;
         }
         else          
@@ -127,13 +127,13 @@ int do_budao(string arg)
         else
         if (me->is_busy())
         {
-          tell_object(me,"你現在正忙著呢，沒法布道。\n");
+          tell_object(me,"你現在正忙着呢，沒法佈道。\n");
           return 1;
         }
         else
         if (!arg || arg == "" )
         { 
-          tell_object(me,"你要用什麼道具進行布道？\n");
+          tell_object(me,"你要用什麼道具進行佈道？\n");
           return 1;
         }
         else
@@ -159,7 +159,7 @@ int do_budao(string arg)
           if( nmana<30 || (query("mana", me)<nmana) )
             return notify_fail("講經必須法力充盈，你法力不足，神思難以集中。\n");
             
-          message_vision(HIW"$N垂目低首，合什于胸，講起了《法華經》。\n"NOR,me);          
+          message_vision(HIW"$N垂目低首，合什於胸，講起了《法華經》。\n"NOR,me);          
           me->start_busy(skl);
           addn("mana", -nmana, me);
         remove_call_out ("reacting");
@@ -189,7 +189,7 @@ int do_budao(string arg)
 
 int fanchang(object me)
 {
-        message_vision(HIY"$N聲音漸微，曲意不散，圍觀的群眾似乎有所領悟。\n"NOR,me);
+        message_vision(HIY"$N聲音漸微，曲意不散，圍觀的羣眾似乎有所領悟。\n"NOR,me);
         set_temp("obj/done", 1, me);
         set_temp("budao", 1, environment(me));
         return 1;
@@ -197,7 +197,7 @@ int fanchang(object me)
 
 int jiangjing(object me)
 {
-        message_vision(HIY"$N舌綻蓮花，天花亂墜。周圍的群眾聽得嘖嘖不已。\n"NOR,me);
+        message_vision(HIY"$N舌綻蓮花，天花亂墜。周圍的羣眾聽得嘖嘖不已。\n"NOR,me);
         set_temp("obj/done", 1, me);
         set_temp("budao", 1, environment(me));
         return 1;
@@ -205,7 +205,7 @@ int jiangjing(object me)
 
 int kaitan(object me)
 {
-        message_vision(HIY"$N慈悲普渡，寶像莊嚴。周圍的群眾都看得目瞪口呆。\n"NOR,me);
+        message_vision(HIY"$N慈悲普渡，寶像莊嚴。周圍的羣眾都看得目瞪口呆。\n"NOR,me);
         set_temp("obj/done", 1, me);
         set_temp("budao", 1, environment(me));
         return 1;
@@ -227,13 +227,13 @@ int do_check(string arg)
         if(!arg) return 0;
         if( (arg == "faqi" || arg == "faqi") && query_temp("obj/budao", me)){
                 write(
-                        "這是一件法器，你布道的目的地是："
+                        "這是一件法器，你佈道的目的地是："
                         HIG"「"+query_temp("obj/budaowhere", me)+"」"NOR"。\n"NOR);
         }
         else
         {
         if( (arg == "faqi" || arg == "faqi") && !query_temp("obj/budao", me) )
-        write("這是一件法器，隱蘊無上法力。\n");
+        write("這是一件法器，隱藴無上法力。\n");
          }
         return 1;
 }
@@ -244,7 +244,7 @@ void reacting (object me, string people, int j)
     return;
 
   if (j == 1)
-    message_vision (people+"看見有人在此布道，不禁停了下來，看個究竟。\n",me);
+    message_vision (people+"看見有人在此佈道，不禁停了下來，看個究竟。\n",me);
   else
-    message_vision (people+"等人見有人在此布道，都圍了過去，看個究竟。\n",me);
+    message_vision (people+"等人見有人在此佈道，都圍了過去，看個究竟。\n",me);
 }

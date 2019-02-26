@@ -38,7 +38,7 @@ int perform(object me, object target)
                 return notify_fail("你沒有激發苗家劍法，難以施展" + name() + "。\n");
 
         if (! living(target))
-                return notify_fail("對方都已經這樣了，用不著這麼費力吧？\n");
+                return notify_fail("對方都已經這樣了，用不着這麼費力吧？\n");
 
         msg = HIY "$N" HIY "手中" + weapon->name() + HIY "一聲龍吟，三十七勢苗"
               "家劍連環施出，將$n" HIY "罩在劍光之中。\n" NOR;

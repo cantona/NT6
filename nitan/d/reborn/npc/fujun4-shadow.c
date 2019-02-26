@@ -6,7 +6,7 @@ void create()
 {
         set_name(BLU "恆山府君--幻" NOR, ({ "hengshan fujun-shadow", "shadow" }));
         set("long", "他就是恆山府君。\n");
-        set("title", HIW "北岳" NOR);
+        set("title", HIW "北嶽" NOR);
         set("gender", "男性");
         set("age", 50);
         set("str", 91);

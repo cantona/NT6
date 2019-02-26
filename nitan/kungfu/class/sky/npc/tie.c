@@ -5,7 +5,7 @@ void create()
 {
         set_name("鐵傳甲", ({ "tie chuanjia", "tie", "chuanjia" }) );
         set("nickname", WHT "鐵甲金剛" NOR);
-        set("title", "忠心護衛");
+        set("title", "忠心護衞");
         set("gender", "男性");
         set("age", 42);
         set("long", "一個身材魁梧的漢子。\n");
@@ -115,7 +115,7 @@ void die()
 
         return;
 }
-// 氣血小于1000則死亡，避免他人協助幫忙轉世
+// 氣血小於1000則死亡，避免他人協助幫忙轉世
 void heart_beat()
 {
         if (this_object()->query("qi") < 1000 || this_object()->query("eff_qi") < 1000)

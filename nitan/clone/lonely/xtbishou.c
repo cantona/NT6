@@ -20,7 +20,7 @@ void create()
                 set_default_object(__FILE__);
         else {
                 set("unit", "柄");
-                set("no_sell", "這柄爛劍你自個留著吧。\n");
+                set("no_sell", "這柄爛劍你自個留着吧。\n");
                 set("value", 100000);
                 set("material", "xuantie");
                 set("wield_msg", HIR "$N" HIR "抽出一柄黑黝黝的"
@@ -67,7 +67,7 @@ void return_to_aobai()
              message_vision("忽然$N覺得身上少了件什麼東西似的。\n", me); 
      } else 
      { 
-             message("vision", "忽然一個人走了過來，撿起"+name()+"，嘆了口氣，搖搖頭走了。\n", me); 
+             message("vision", "忽然一個人走了過來，撿起"+name()+"，歎了口氣，搖搖頭走了。\n", me); 
      } 
 
         move("/clone/misc/void");

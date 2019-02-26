@@ -8,7 +8,7 @@ string martialtype() { return "skill"; }
 
 mapping *action = ({
 ([      "action" : "$N踏上一步，忽地在地上一坐，已抱住了$n小腿。十指扣住了$n小腿上的
-‘中都’‘築賓’兩穴，$n只覺下半身酸麻難動，大吃一驚",
+‘中都’‘築賓’兩穴，$n只覺下半身痠麻難動，大吃一驚",
          "lvl" : 0
 ]),
 ([      "action" : "突然之間，$N身形晃動，同時欺近，手中$w往$n身上劃去。腳下不知如何
@@ -26,7 +26,7 @@ mapping *action = ({
 一痛，已被$N手肘撞中",
         "lvl" : 40
 ]),
-([      "action" : "$N手中$w急揮橫掃，突然連翻三個空心筋鬥。$n不知對方是何用意，心想還是避之
+([      "action" : "$N手中$w急揮橫掃，突然連翻三個空心筋斗。$n不知對方是何用意，心想還是避之
 為妙，剛向左踏開一步，眼前白光急閃，$N的$w已到右肩",
         "lvl" : 50
 ]),
@@ -88,7 +88,7 @@ int practice_skill(object me)
 
         if (me->query_skill("shenghuo-ling", 1) < 180)
                 return notify_fail("你還沒有掌握聖火令法中所有的奧妙，無法"
-                                   "通過鍛煉獲得提升。\n");
+                                   "通過鍛鍊獲得提升。\n");
 
         if ((int)query("qi", me) < 80)
                 return notify_fail("你的體力不夠練聖火令法。\n");

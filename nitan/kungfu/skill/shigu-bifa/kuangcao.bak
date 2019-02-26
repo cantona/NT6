@@ -110,7 +110,7 @@ int perform3(object me, object target)
     return notify_fail("你現在沒有使劍，無法進一步攻擊。\n");
         addn("neili", -300, me);
         addn("jingli", -100, me);
-        message_vision(HBBLU "\n$N筆法又變，大書《懷素自敘帖》中的草書，縱橫飄忽，流轉無方，草中加草,勁力充沛，令人眼花繚亂！\n" NOR,me, target);
+        message_vision(HBBLU "\n$N筆法又變，大書《懷素自敍帖》中的草書，縱橫飄忽，流轉無方，草中加草,勁力充沛，令人眼花繚亂！\n" NOR,me, target);
 
         addn_temp("apply/damage", 50, me);
         COMBAT_D->do_attack(me,target,query_temp("weapon", me),1);

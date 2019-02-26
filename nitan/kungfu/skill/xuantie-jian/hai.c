@@ -73,7 +73,7 @@ int perform(object me, object target)
 
         if (ap / 2 + random(ap) > dp)
         {
-                message_combatd(HIR "結果$n全身被劍氣所形成的氣渦所籠罩著，只覺得猶如身陷洪濤巨浪，跌跌撞撞。\n" NOR,
+                message_combatd(HIR "結果$n全身被劍氣所形成的氣渦所籠罩着，只覺得猶如身陷洪濤巨浪，跌跌撞撞。\n" NOR,
                                 me, target);
 
                 if( !target->is_busy() )
@@ -94,7 +94,7 @@ int perform(object me, object target)
                 &&  me->is_fighting(target))
                 {
                         message_combatd(HIB"\n$N微笑不語，趁勢將手中的"+query("name", weapon)+
-                                        HIB "從輕而響，從響而輕，忽寂然無聲，忽轟轟之聲，向$n席卷而去。\n" NOR,
+                                        HIB "從輕而響，從響而輕，忽寂然無聲，忽轟轟之聲，向$n席捲而去。\n" NOR,
                                         me, target);
 
                         if (random(me->query_skill("sword", 1)) > target->query_skill("parry", 1) / 3
@@ -240,7 +240,7 @@ void check_fight(object me,object target,object weapon, int p)
                 if( query_temp("xtjf/exert", target) )
                         target->clear_condition("no_exert");
                 delete_temp("xtjf", target);
-                message_combatd(HIW"\n$N竭力掙脫了糾纏，身形恢復了原先的矯捷。\n"NOR, target);
+                message_combatd(HIW"\n$N竭力掙脱了糾纏，身形恢復了原先的矯捷。\n"NOR, target);
                 return ;
         }
         call_out("check_fight", 1, me, target, weapon, p );

@@ -14,9 +14,9 @@ void create()
 {
         set("short", "花叢中");
         set("long", @LONG
-這裡是終南山後山的花叢中，這叢紅花排開來長達數丈，密密層
+這裏是終南山後山的花叢中，這叢紅花排開來長達數丈，密密層
 層，奇香撲鼻。但見花叢有如一面大屏風，紅瓣綠枝，煞是好看，四
-下裡樹蔭垂蓋，便似天然結成的一座花房樹屋。這些紅花(flowers)似
+下里樹蔭垂蓋，便似天然結成的一座花房樹屋。這些紅花(flowers)似
 乎可以推開。
 LONG );
 
@@ -46,7 +46,7 @@ int do_hide(){
 
         object me=this_player();
         if (me->is_busy())
-                return notify_fail("你現在正忙著哪！\n");
+                return notify_fail("你現在正忙着哪！\n");
 
         if( query_temp("hiding", me) )
                 return notify_fail("你已經藏好了。\n");
@@ -70,7 +70,7 @@ int do_push(){
         object me=this_player();
         
         if (me->is_busy())
-                return notify_fail("你現在正忙著哪！\n");
+                return notify_fail("你現在正忙着哪！\n");
 
         tell_object(me, "你輕輕地推開花木，向外走了出去。\n");
         
@@ -91,7 +91,7 @@ int event_one(object me){
         
         if( query_temp("hiding", me)){
         
-                tell_object(me, HIG"突然間山後傳來腳步聲響，兩個人一面說話，一面走近。原來竟是尹志平和趙志敬。兩個人越說越大聲，竟似在互相爭辯。\n"NOR);
+                tell_object(me, HIG"突然間山後傳來腳步聲響，兩個人一面説話，一面走近。原來竟是尹志平和趙志敬。兩個人越説越大聲，竟似在互相爭辯。\n"NOR);
                 
                 remove_call_out("event_one");
                 call_out("event_two", 5, me);
@@ -104,7 +104,7 @@ int event_two(object me){
         
         if( query_temp("hiding", me)){
         
-                tell_object(me, HIG"只聽見趙志凈冷笑到：“你不守清規，犯了我教的大戒，怎能再做首座弟子？”你心下納悶，不知趙志敬什麼意思。\n"NOR);
+                tell_object(me, HIG"只聽見趙志淨冷笑到：“你不守清規，犯了我教的大戒，怎能再做首座弟子？”你心下納悶，不知趙志敬什麼意思。\n"NOR);
                 tell_object(me, HIG"你心中嘀咕中，尹趙兩人已越吵越兇。突然間，趙志敬喊道：“你還敢抵賴？咱們招丘師伯評理去！\n"NOR);
                 tell_object(me, HIG"尹志平再也忍耐不住，唰地一聲，長劍出鞘，分心便刺，趙志敬側身避開，抽劍出匣，兩人打到一起。\n"NOR);
                 

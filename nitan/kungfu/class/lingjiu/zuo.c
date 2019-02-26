@@ -19,8 +19,8 @@ void create()
         set("age", 54);
         set("long", @LONG
 這就是無量劍派東宗掌門左子穆，只見他五十
-多歲年紀，身著青衫，作儒生打扮。他腰間佩
-有一柄長劍，想必劍法著實了得。
+多歲年紀，身着青衫，作儒生打扮。他腰間佩
+有一柄長劍，想必劍法着實了得。
 LONG );
         set("attitude", "peaceful");
         set("str", 30);
@@ -140,7 +140,7 @@ mixed ask_me()
                 return "你的無量劍法火候未到，練不成這招。";
 
         message_sort(HIY "$n" HIY "點了點頭，拔出腰間佩帶的長"
-                     "劍，手臂一振，當即朝著$N" HIY "“唰唰"
+                     "劍，手臂一振，當即朝着$N" HIY "“唰唰"
                      "唰唰”連攻四劍，這四劍一氣呵成，去勢極"
                      "快，全然籠罩$N" HIY "的周身要穴。\n" NOR,
                      me, this_object());
@@ -165,7 +165,7 @@ void attempt_apprentice(object ob)
                 return;
 
         command("nod2");
-        command("say 那你以後就跟著我好了。");
+        command("say 那你以後就跟着我好了。");
         command("recruit "+query("id", ob));
 }
 */

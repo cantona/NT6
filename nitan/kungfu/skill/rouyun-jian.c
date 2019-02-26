@@ -3,7 +3,7 @@
 inherit SKILL;
 
 mapping *action = ({
-([   "action" : "$N面露微笑，手中$w一抖，一招「杏花春雨」，劍光頓時暴長，洒向$n的$l",
+([   "action" : "$N面露微笑，手中$w一抖，一招「杏花春雨」，劍光頓時暴長，灑向$n的$l",
      "force"  : 50,
      "attack" : 15,
      "dodge"  : 10,
@@ -43,7 +43,7 @@ mapping *action = ({
      "skill_name" : "白雲蒼狗",
      "damage_type":  "刺傷"
 ]),
-([   "action" : "$N神色微變，一招「滿天花雨」，劍招頓時變得凌厲無比，手中$w如匹鏈般洒向$n的$l",
+([   "action" : "$N神色微變，一招「滿天花雨」，劍招頓時變得凌厲無比，手中$w如匹鏈般灑向$n的$l",
      "force"  : 180,
      "attack" : 71,
      "dodge"  : 30,
@@ -53,7 +53,7 @@ mapping *action = ({
      "skill_name" : "滿天花雨",
      "damage_type":  "刺傷"
 ]),
-([   "action" : "$N緩緩低首，接著一招「秋風襲人」，手中$w中宮直進，迅捷無比地往$n的$l刺去",
+([   "action" : "$N緩緩低首，接着一招「秋風襲人」，手中$w中宮直進，迅捷無比地往$n的$l刺去",
      "force"  : 200,
      "attack" : 85,
      "dodge"  : 20,
@@ -73,7 +73,7 @@ mapping *action = ({
      "skill_name" : "寒月當空照",
      "damage_type":  "刺傷"
 ]),
-([   "action" : "$N驀地疾退一步，又沖前三步，一招「辰星點綴」，手中$w化為一道弧光往$n的$l刺去",
+([   "action" : "$N驀地疾退一步，又衝前三步，一招「辰星點綴」，手中$w化為一道弧光往$n的$l刺去",
      "force"  : 265,
      "attack" : 93,
      "dodge"  : 40,
@@ -83,7 +83,7 @@ mapping *action = ({
      "skill_name" : "辰星點綴",
      "damage_type":  "刺傷"
 ]),
-([   "action" : "$N縱身躍起，一招「雲湧四方」，不見蹤影，接著卻又從半空中穿下，$w直逼$n的$l",
+([   "action" : "$N縱身躍起，一招「雲湧四方」，不見蹤影，接着卻又從半空中穿下，$w直逼$n的$l",
      "force"  : 290,
      "attack" : 97,
      "dodge"  : 60,

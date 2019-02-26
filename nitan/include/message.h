@@ -12,7 +12,7 @@
 #define CMDMSG          "CMDMSG"                // 指令訊息
 #define CHNMSG          "CHNMSG"                // 頻道訊息
 #define EMTMSG          "EMTMSG"                // 表情訊息
-#define SAYMSG          "SAYMSG"                // 說話訊息
+#define SAYMSG          "SAYMSG"                // 説話訊息
 #define TELLMSG         "TELLMSG"               // 交談訊息
 #define ERRMSG          "ERRMSG"                // 錯誤訊息
 #define ETCMSG          "ETCMSG"                // 其他訊息

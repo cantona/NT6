@@ -32,7 +32,7 @@ int:120
 <type>armor/armor</type>
 <name>$HIW$文曲星甲$NOR$</name>
 <id>wisdom armor</id>
-<long>蘊含了文曲星的精元和無上智慧(上)。</long>
+<long>藴含了文曲星的精元和無上智慧(上)。</long>
 <value>2000000</value>
 <mod_level>M1000</mod_level>
 <mod_name>$HIW$文曲星學習套裝(上)$NOR$</mod_name>
@@ -72,7 +72,7 @@ apply_prop/practice_effect:8
 <type>armor/surcoat</type>
 <name>$HIW$文曲星披風$NOR$</name>
 <id>wisdom surcoat</id>
-<long>蘊含了文曲星的精元和無上智慧(上)。</long>
+<long>藴含了文曲星的精元和無上智慧(上)。</long>
 <value>2000000</value>
 <mod_level>M1000</mod_level>
 <mod_name>$HIW$文曲星學習套裝(上)$NOR$</mod_name>
@@ -112,7 +112,7 @@ apply_prop/derive_effect:8
 <type>armor/waist</type>
 <name>$HIW$文曲星束帶$NOR$</name>
 <id>wisdom waist</id>
-<long>蘊含了文曲星的精元和無上智慧(上)。</long>
+<long>藴含了文曲星的精元和無上智慧(上)。</long>
 <value>2000000</value>
 <mod_level>M1000</mod_level>
 <mod_name>$HIW$文曲星學習套裝(上)$NOR$</mod_name>
@@ -152,7 +152,7 @@ apply_prop/derive_effect:8
 <type>armor/head</type>
 <name>$HIW$文曲星頭盔$NOR$</name>
 <id>wisdom head</id>
-<long>蘊含了文曲星的精元和無上智慧(上)。</long>
+<long>藴含了文曲星的精元和無上智慧(上)。</long>
 <value>2000000</value>
 <mod_level>M1000</mod_level>
 <mod_name>$HIW$文曲星學習套裝(上)$NOR$</mod_name>
@@ -192,7 +192,7 @@ apply_prop/research_effect:8
 <type>armor/boots</type>
 <name>$HIW$文曲星靴$NOR$</name>
 <id>wisdom boots</id>
-<long>蘊含了文曲星的精元和無上智慧(上)。</long>
+<long>藴含了文曲星的精元和無上智慧(上)。</long>
 <value>2000000</value>
 <mod_level>M1000</mod_level>
 <mod_name>$HIW$文曲星學習套裝(上)$NOR$</mod_name>
@@ -232,7 +232,7 @@ apply_prop/practice_effect:8
 <type>armor/wrists</type>
 <name>$HIW$文曲星護腕$NOR$</name>
 <id>wisdom wrists</id>
-<long>蘊含了文曲星的精元和無上智慧(上)。</long>
+<long>藴含了文曲星的精元和無上智慧(上)。</long>
 <value>2000000</value>
 <mod_level>M1000</mod_level>
 <mod_name>$HIW$文曲星學習套裝(上)$NOR$</mod_name>

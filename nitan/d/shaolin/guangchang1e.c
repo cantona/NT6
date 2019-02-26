@@ -7,10 +7,10 @@ void create()
 {
         set("short", "廣場");
         set("long", @LONG
-這裡是少林寺前的廣場，整個廣場由大塊的青石舖成，極為平坦。
+這裏是少林寺前的廣場，整個廣場由大塊的青石鋪成，極為平坦。
 但因年代久遠，都有些破損。叢叢小草從石板的縫隙中長了出來。廣
-場周圍都是密密的鬆樹林，四角上各放了幾塊石碑，字跡都甚為模糊。
-邊上立了塊木牌(mupai)，寺前三三兩兩的站著幾個僧人。
+場周圍都是密密的松樹林，四角上各放了幾塊石碑，字跡都甚為模糊。
+邊上立了塊木牌(mupai)，寺前三三兩兩的站着幾個僧人。
 LONG );
         set("exits", ([
                 "east" : __DIR__"shulin1",
@@ -18,7 +18,7 @@ LONG );
                 "west" : __DIR__"guangchang1",
         ]));
         set("item_desc",([
-                "mupai"        :   "少林寺護法鬆林，違令擅入者殺無赦！\n",
+                "mupai"        :   "少林寺護法松林，違令擅入者殺無赦！\n",
         ]));
         set("outdoors", "shaolin");
         set("objects",([
@@ -35,7 +35,7 @@ int valid_leave(object me, string dir)
         && me->query_skill("dodge",1) <= 20 
         && (present("qingwu biqiu", environment(me))))
 
-        return notify_fail("清無攔住勸你: 東邊是本寺護法鬆林，向來有進無出，\n"
+        return notify_fail("清無攔住勸你: 東邊是本寺護法松林，向來有進無出，\n"
                     + RANK_D->query_respect(me) + "輕功不佳，最好先看看木牌，不要隨便進去！\n");
 
         return ::valid_leave(me, dir);

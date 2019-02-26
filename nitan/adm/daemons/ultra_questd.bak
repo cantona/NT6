@@ -66,7 +66,7 @@ private void special_bonus(object me)
                 un=query("unit", ob);
 
         // 保持與正常的 give 信息一致
-        message_vision("說完拿出一" +
+        message_vision("説完拿出一" +
                        un+query("id", name(, ob)+NOR"("+ob)+
                        ")給$N" NOR "。\n\n" NOR, me);
 
@@ -87,7 +87,7 @@ public mixed accept_ask(object me, object who, string topic)
                 message_vision("$n向$N打聽有關宗師任務的情況。\n", me, who);
                 if (! ultrap(who))
                 {
-                        message_vision("$N瞪大眼睛看著$n，道：“你還沒有成為武學大宗師，還幫不了"
+                        message_vision("$N瞪大眼睛看着$n，道：“你還沒有成為武學大宗師，還幫不了"
                                        "我什麼忙！”\n", me, who);
                         return 1;
                 }
@@ -127,21 +127,21 @@ public mixed accept_ask(object me, object who, string topic)
 
                 if( query("combat_exp", who)<20000000 )
                 {
-                        message_vision(CYN "$N" CYN "嘆了一口氣，對$n" CYN "道：就你那點水平，"
+                        message_vision(CYN "$N" CYN "歎了一口氣，對$n" CYN "道：就你那點水平，"
                                        "我實在沒法給你派任務。\n" NOR, me, who);
                         return 1;
                 }
 
                 if( query("score", who)<200000 )
                 {
-                        message_vision(CYN "$N" CYN "嘆了一口氣，對$n" CYN "道：你這人閱歷太低，"
+                        message_vision(CYN "$N" CYN "歎了一口氣，對$n" CYN "道：你這人閲歷太低，"
                                        "不通世道，幫不了我什麼忙。\n" NOR, me, who);
                         return 1;
                 }
 
                 if( query("weiwang", who)<200 )
                 {
-                        message_sort(CYN "$N" CYN "看了看$n" CYN "，嘆氣道：你在"
+                        message_sort(CYN "$N" CYN "看了看$n" CYN "，歎氣道：你在"
                                      "江湖上一點名頭都沒有，我沒法放心把任務交給"
                                      "你。\n" NOR, me, who);
                         tell_object(who, HIY "看來還是的加強自己的江湖威望才行。\n" NOR);
@@ -170,7 +170,7 @@ public mixed accept_ask(object me, object who, string topic)
                 {
                 case 0:
                         message_sort(CYN "$N" CYN "凝視了$n" CYN "許久，方才點頭道：現在江"
-                                     "湖正義不伸，邪道橫行，腥風血雨不斷，聽說這一切都是有"
+                                     "湖正義不伸，邪道橫行，腥風血雨不斷，聽説這一切都是有"
                                      "人在操縱，你給我去查出這個主謀是誰，提他的頭顱來見我"
                                      "。\n" NOR, me, who);
                         break;
@@ -180,7 +180,7 @@ public mixed accept_ask(object me, object who, string topic)
                                      "幕後主謀，提他的頭顱來見我。\n" NOR, me, who);
                         break;
                 case 2:
-                        message_sort(CYN "$N" CYN "對$n" CYN "道：聽說有一股勢力正在策劃在"
+                        message_sort(CYN "$N" CYN "對$n" CYN "道：聽説有一股勢力正在策劃在"
                                      "江湖上掀起腥風血雨，妄圖顛覆武林，你給我去查出幕後主"
                                      "謀是誰，提他的人頭來見我。\n" NOR, me, who);
 
@@ -216,12 +216,12 @@ public mixed accept_ask(object me, object who, string topic)
         if (topic == "線索" || topic == "clue")
         {
                 if( !query("ultraquest/type", who) )
-                        return "你要問什麼事？說話不明不白的。";
+                        return "你要問什麼事？説話不明不白的。";
 
                 if( query("ultraquest/finish", who) == 4 )
                         return "任務不是已經快完成了嗎？還需要什麼線索。";
 
-                // 最多只能重新提供三次線索
+                // 最多隻能重新提供三次線索
                 if( query("ultraquest/begin", who) >= 3 )
                         return "事不過三，剩下的事情你自己想辦法解決。";
 
@@ -241,7 +241,7 @@ public mixed accept_ask(object me, object who, string topic)
                 }
 
                 message_sort(WHT "\n$N" WHT "皺了皺眉，對$n" WHT "道：我所交給你的"
-                             "任務其實是一個歷練的過程，很多地方必須經過磨練，憑借"
+                             "任務其實是一個歷練的過程，很多地方必須經過磨練，憑藉"
                              "自身的睿智與勇氣才能辦到。在這個過程中我最多可以幫你"
                              "三次。" + msg + "\n\n" NOR, me, who);
 
@@ -290,9 +290,9 @@ public mixed accept_ask(object me, object who, string topic)
 
                 delete("ultraquest", who);
                 delete("ultra_count", who);
-                message_vision(CYN "$N" CYN "嘆口氣，看了看$n" CYN "道：連這點小事都幹不了？算了吧。\n" NOR,
+                message_vision(CYN "$N" CYN "歎口氣，看了看$n" CYN "道：連這點小事都幹不了？算了吧。\n" NOR,
                                me, who);
-                tell_object(who, HIR "你的江湖威望和江湖閱歷受到了損失。\n" NOR);
+                tell_object(who, HIR "你的江湖威望和江湖閲歷受到了損失。\n" NOR);
                 return 1;
         }
 
@@ -332,7 +332,7 @@ public mixed ask_information(object me, object who, string topic)
                                 break;
                         /*
                         case "find" :
-                                msg = "說起來那東西也不難找，你自己多留意吧。";
+                                msg = "説起來那東西也不難找，你自己多留意吧。";
                                 break;
                         */
                         case "send" :
@@ -344,7 +344,7 @@ public mixed ask_information(object me, object who, string topic)
                                 break;
 
                         case "going" :
-                                msg = "我給你說得很清楚了啊，莫非你也不識路？";
+                                msg = "我給你説得很清楚了啊，莫非你也不識路？";
                                 break;
                         }
                         return msg;
@@ -390,7 +390,7 @@ public mixed ask_information(object me, object who, string topic)
                         break;
 
                 case 1:
-                        msg = "我這裡確實多多少少知道點眉目，不過"
+                        msg = "我這裏確實多多少少知道點眉目，不過"
                               "消息可不能白給。";
                         break;
 
@@ -400,7 +400,7 @@ public mixed ask_information(object me, object who, string topic)
                         break;
 
                 default:
-                        msg = "我自己的事情都忙不過來，哪裡還顧得"
+                        msg = "我自己的事情都忙不過來，哪裏還顧得"
                               "了你，不過…除非…";
                         break;
                 }
@@ -447,7 +447,7 @@ public mixed ask_information(object me, object who, string topic)
         }
 }
 
-// 技術性任務的發布
+// 技術性任務的發佈
 public void give_accede(object me, object who)
 {
         string msg, type, quest_msg;
@@ -473,7 +473,7 @@ public void give_accede(object me, object who)
                                   wa + "來得正好，" + mb + "正愁沒事做。"
                                   "來來來，你陪我比試" + ac + "一盤" HIW
                                   "算術" NOR + WHT "，倘若你能勝過我手中"
-                                  "的竹簽與算盤，我把我知道的一切都告訴你";
+                                  "的竹籤與算盤，我把我知道的一切都告訴你";
 
                 quest_msg = "跟我比試算術";
                 type = "mathematics";
@@ -505,7 +505,7 @@ public void give_accede(object me, object who)
 
                                   wa + "你過來，我看你也沒甚要緊事做。幹"
                                   "脆來陪我殺" + ac + "一局" HIW "棋" NOR +
-                                  WHT "，省得無聊。倘若你真能勝我幾子，我"
+                                  WHT "，省得無聊。倘若你真能勝我几子，我"
                                   "便把知道的全都告訴你也無妨";
 
                 quest_msg = "陪我下一局棋";
@@ -521,7 +521,7 @@ public void give_accede(object me, object who)
                                   "盡，線索也當無條件奉告":
 
                                   wa + "來得正是時候，" + ma + "正為一事"
-                                  "發愁。唉…說起來…前日我一位摯友為姦賊"
+                                  "發愁。唉…説起來…前日我一位摯友為奸賊"
                                   "所害，不幸慘死。今趟" + ma + "打算尋求"
                                   "一位" HIW "書法" NOR + WHT "名家為其書"
                                   "寫悼詞，卻不知" + wa + "能否幫" + ac +
@@ -572,10 +572,10 @@ public void give_accede(object me, object who)
 
         // 提供出任務的描述信息
         msg = WHT "\n" + me->name() + WHT "沉思片刻，對你"
-              "說道：" + msg + "。\n\n" NOR;
+              "説道：" + msg + "。\n\n" NOR;
 
         message("vision", me->name() + "在" + who->name() +
-                "耳邊小聲說了些什麼。\n",
+                "耳邊小聲説了些什麼。\n",
                 environment(who), ({ who }));
 
         tell_object(who, sort_msg(msg));
@@ -606,20 +606,20 @@ public void give_accede(object me, object who)
                          HIW " 等級：" HIC + lvl + "\n\n" NOR);
         */
 
-        // 注冊任務屬性
+        // 註冊任務屬性
         set("ultraquest/quest/type", type, who);
         set("ultraquest/quest/name",query("name",  me), who);
         set("ultraquest/quest/id",query("id",  me), who);
         set("ultraquest/quest/msg", quest_msg, who);
 
-        // 人物注冊接受玩家
+        // 人物註冊接受玩家
         set_temp("need_accede/user",query("id",  who), me);
         set_temp("need_accede/lvl", lvl, me);
 
         return;
 }
 
-// 系統預設任務的發布
+// 系統預設任務的發佈
 public void give_quest(object me)
 {
         string *lines;
@@ -679,10 +679,10 @@ public void give_quest(object me)
                 place=query("place", ob);
 
                 msg = random(2) ? "你幫我殺了" HIR + next_name + "(" + next_npc + ")" + NOR +
-                                  WHT "那廝，再提他的頭來見我。\n聽說他最近在" + place + "，你快去吧！":
+                                  WHT "那廝，再提他的頭來見我。\n聽説他最近在" + place + "，你快去吧！":
 
                                   "你去把" HIR + next_name + "(" + next_npc + ")" + NOR + WHT
-                                  "給我做了，提他項上的頭來見我。\n聽說他最近在" + place + "，你快去吧！";
+                                  "給我做了，提他項上的頭來見我。\n聽説他最近在" + place + "，你快去吧！";
 
                 quest_msg = "幫我殺了" + next_name + "(" + next_npc + ")";
                 break;
@@ -712,11 +712,11 @@ public void give_quest(object me)
 
                 msg = random(2) ? "你幫我把這封信送到" HIY + next_name + "(" + next_npc + ")"
                                   + NOR + WHT "手中，然後拿" HIW
-                                  "回執" NOR + WHT "來見我。\n聽說他最近在" + place + "，你快去吧！":
+                                  "回執" NOR + WHT "來見我。\n聽説他最近在" + place + "，你快去吧！":
 
                                   "我有封信要立刻送到" HIY + next_name + "(" + next_npc + ")"
                                   + NOR + WHT "處，這件事你幫我"
-                                  "辦辦吧。\n聽說他最近在" + place + "，你快去吧！";
+                                  "辦辦吧。\n聽説他最近在" + place + "，你快去吧！";
 
                 quest_msg = "幫我把信送到" + next_name + "(" + next_npc + ")" + "處";
                 item = new("/clone/misc/letter");
@@ -736,12 +736,12 @@ public void give_quest(object me)
                 place=query("place", ob);
 
                 msg = random(2) ? "你幫我把這個包裹送到" HIY +
-                                  next_name + "(" + next_npc + ")" + NOR + WHT "那裡，看看他"
-                                  "有什麼反應。\n聽說他最近在" + place + "，你快去吧！":
+                                  next_name + "(" + next_npc + ")" + NOR + WHT "那裏，看看他"
+                                  "有什麼反應。\n聽説他最近在" + place + "，你快去吧！":
 
                                   "勞煩將此包裹轉交給" HIY + next_name + "(" + next_npc + ")"
                                   + NOR + WHT "，中途切莫私自打"
-                                  "開。\n聽說他最近在" + place + "，你快去吧！";
+                                  "開。\n聽説他最近在" + place + "，你快去吧！";
 
                 quest_msg = "幫我把包裹轉交給" + next_name + "(" + next_npc + ")";
                 item = new("/clone/misc/baoguo");
@@ -750,19 +750,19 @@ public void give_quest(object me)
 
         // 提供出線索信息
         message("vision", name + "悄悄在" + me->name() + "耳"
-                          "邊說了些什麼。\n", environment(me),
+                          "邊説了些什麼。\n", environment(me),
                           ({ me }));
 
-        tell_object(me, WHT + name + WHT "悄悄對你說道：" +
+        tell_object(me, WHT + name + WHT "悄悄對你説道：" +
                         msg + "。\n" NOR);
 
-        // 注冊任務屬性
+        // 註冊任務屬性
         set("ultraquest/quest/type", type, me);
         set("ultraquest/quest/name", next_name, me);
         set("ultraquest/quest/id", next_npc, me);
         set("ultraquest/quest/msg", quest_msg, me);
 
-        // 如果存在任務道具，則注冊物件屬性
+        // 如果存在任務道具，則註冊物件屬性
         if (objectp(item))
         {
                 set("send/from", name, item);
@@ -781,13 +781,13 @@ public void give_quest(object me)
         return;
 }
 
-// 保護任務的發布
+// 保護任務的發佈
 public void quest_guard(object me, object who)
 {
         string msg;
 
         message("vision", me->name() + "在" + who->name() +
-                          "耳邊小聲說了些什麼。\n",
+                          "耳邊小聲説了些什麼。\n",
                           environment(who), ({ who }));
 
         switch (random(3))
@@ -797,32 +797,32 @@ public void quest_guard(object me, object who)
                 break;
 
         case 1:
-                msg = "昨日有個家伙放言要做了我";
+                msg = "昨日有個傢伙放言要做了我";
                 break;
 
         default:
-                msg = "我聽說有人準備對我不利";
+                msg = "我聽説有人準備對我不利";
                 break;
         }
 
         tell_object(who, WHT + me->name() + WHT "悄悄對你"
-                         "說道：" + msg + "，你" HIW "留在"
-                         "這裡" NOR + WHT "保護我一下。\n" NOR);
+                         "説道：" + msg + "，你" HIW "留在"
+                         "這裏" NOR + WHT "保護我一下。\n" NOR);
 
-        // 為了防止任務沖突，目標設置被保護屬性
+        // 為了防止任務衝突，目標設置被保護屬性
         set_temp("start_guard", 1, me);
 
-        // 注冊保護任務屬性
+        // 註冊保護任務屬性
         set("ultraquest/quest/type", "guard", who);
         set("ultraquest/quest/name",query("name",  me), who);
         set("ultraquest/quest/id",query("id",  me), who);
-        set("ultraquest/quest/msg", "留在這裡保護我", who);
+        set("ultraquest/quest/msg", "留在這裏保護我", who);
         who->start_call_out((: call_other, __FILE__, "start_guard",
                             me, who :), 5);
         return;
 }
 
-// 護送任務的發布
+// 護送任務的發佈
 public void quest_going(object me, object who)
 {
         string *lines;
@@ -837,7 +837,7 @@ public void quest_going(object me, object who)
         if (sscanf(where, "%s/%s", area, place) != 2)
                 return;
 
-        // 如果系統調用的地名與起始地重復，則直接執行
+        // 如果系統調用的地名與起始地重複，則直接執行
         // 系統預設的任務程序
 
         if( place == query("short", environment(me)) )
@@ -847,11 +847,11 @@ public void quest_going(object me, object who)
         }
 
         message("vision", me->name() + "在" + who->name() +
-                          "耳邊小聲說了些什麼。\n",
+                          "耳邊小聲説了些什麼。\n",
                           environment(who), ({ who }));
 
         tell_object(who, WHT + me->name() + WHT "悄悄對你"
-                         "說道：我現在有點事要到" + HIW +
+                         "説道：我現在有點事要到" + HIW +
                          area + NOR + WHT "的" HIW + place +
                          NOR + WHT "處理，勞駕你送我過去。"
                          "\n" NOR);
@@ -860,10 +860,10 @@ public void quest_going(object me, object who)
         me->set_leader(who);
         message_vision("$N決定開始跟隨$n一起行動。\n", me, who);
 
-        // 為了防止任務沖突，目標設置被保護屬性
+        // 為了防止任務衝突，目標設置被保護屬性
         set_temp("start_guard", 1, me);
 
-        // 注冊護送任務屬性
+        // 註冊護送任務屬性
         set("ultraquest/quest/type", "going", who);
         set("ultraquest/quest/obj", place, who);
         set("ultraquest/quest/name",query("name",  me), who);
@@ -887,12 +887,12 @@ void start_guard(object me, object who)
         if (random(5) == 1)
         {
                 message_vision(CYN "\n$N" CYN "撓了撓頭，頗為"
-                               "尷尬的說道：咦？難道傳聞有錯？"
+                               "尷尬的説道：咦？難道傳聞有錯？"
                                "\n" NOR, me);
 
                 if (random(3) == 1)
                 {
-                        message_vision(CYN "$N" CYN "幹笑了兩"
+                        message_vision(CYN "$N" CYN "乾笑了兩"
                                        "聲，對$n" CYN "道：看"
                                        "樣子沒人來了，你也算辛"
                                        "苦了一場，我就告訴你吧"
@@ -901,7 +901,7 @@ void start_guard(object me, object who)
                         // 目標取消被保護的屬性
                         delete_temp("start_guard", me);
 
-                        // 任務完成，注冊獎勵屬性
+                        // 任務完成，註冊獎勵屬性
                         set("ultraquest/name1", me->name(), //who);
                         set("ultraquest/gift/point", 120, who);
                         who->set("ultraquest/gift/msg","你通過保護"+
@@ -911,7 +911,7 @@ void start_guard(object me, object who)
                         give_gift(who);
                 } else
                 {
-                        message_vision(CYN "$N" CYN "嘆了口氣"
+                        message_vision(CYN "$N" CYN "歎了口氣"
                                        "，對$n" CYN "道：看樣"
                                        "子沒人來了，我還是重新"
                                        "給你個事情做做吧。\n"
@@ -925,7 +925,7 @@ void start_guard(object me, object who)
                 }
                 return;
         }
-        message_vision(CYN "\n突然間$N" CYN "對$n" CYN "顫聲說道"
+        message_vision(CYN "\n突然間$N" CYN "對$n" CYN "顫聲説道"
                        "：來了，殺我的人來了。\n\n" NOR, me, who);
 
         killer = new(CLASS_D("generate") + "/killer");
@@ -933,7 +933,7 @@ void start_guard(object me, object who)
         killer->move(environment(me));
 
         message_vision(HIW "$n" HIW "走了過來，對$N" HIW "獰笑"
-                       "道：原來你躲在這裡，受死吧！\n" NOR, me,
+                       "道：原來你躲在這裏，受死吧！\n" NOR, me,
                        killer);
 
         killer->set_leader(me);
@@ -981,14 +981,14 @@ void check_guard(object me, object who, object killer)
                         me->revive();
 
                 message_vision(CYN "$N" CYN "擦了擦汗，對$n" CYN "道：天幸"
-                               "今天有你幫忙，感激不盡。\n$N" CYN "接著道："
+                               "今天有你幫忙，感激不盡。\n$N" CYN "接着道："
                                "救命之恩難以回報，我一定把我知道的都告訴你"
                                "。\n" NOR, me, who);
 
                 // 目標取消被保護的屬性
                 delete_temp("start_guard", me);
 
-                // 任務完成，注冊獎勵屬性
+                // 任務完成，註冊獎勵屬性
                 set("ultraquest/name1", me->name(), //who);
                 set("ultraquest/gift/point", 250, who);
                 who->set("ultraquest/gift/msg","你通過保護"+
@@ -1012,7 +1012,7 @@ void check_going(object me, object who)
         if( query("ultraquest/fail", who) )
         {
                 delete_temp("dest_npc", who);
-                destruct(me); // 銷毀線索人物
+                destruct(me); // 銷燬線索人物
                 return;
         }
 
@@ -1035,7 +1035,7 @@ void check_going(object me, object who)
 
                 case 1:
                         msg = "你心中頗為焦急：咦？" + me->name()
-                              + "那家伙到底上哪去了。";
+                              + "那傢伙到底上哪去了。";
                         break;
 
                 case 2:
@@ -1044,7 +1044,7 @@ void check_going(object me, object who)
                         break;
 
                 default:
-                        msg = "你心中連連嘆息：唉…到底還是把人給"
+                        msg = "你心中連連歎息：唉…到底還是把人給"
                               "跟丟了。這線索…唉…";
 
                         // 記錄下失敗記錄
@@ -1077,7 +1077,7 @@ void check_going(object me, object who)
 
                 message_vision(CYN "$N" CYN "擦了擦汗，對$n" CYN "道：謝謝"
                                "你將我送到" + place + "，路上真是麻煩你了。"
-                               "\n$N" CYN "接著道：看在你這番辛苦的份上，我"
+                               "\n$N" CYN "接着道：看在你這番辛苦的份上，我"
                                "就告訴你一些線索吧。\n" NOR, me, who);
 
                 // 目標取消被保護的屬性
@@ -1086,7 +1086,7 @@ void check_going(object me, object who)
                 // 目標不再跟隨
                 me->set_leader(0);
 
-                // 任務完成，注冊獎勵屬性
+                // 任務完成，註冊獎勵屬性
                 set("ultraquest/name1", me->name(), //who);
                 set("ultraquest/gift/point", 220, who);
                 who->set("ultraquest/gift/msg","你通過護送"+
@@ -1110,7 +1110,7 @@ void check_going(object me, object who)
                         switch (random(5))
                         {
                         case 0:
-                                msg = "突然間$N" HIW "跑得急了，一個筋鬥"
+                                msg = "突然間$N" HIW "跑得急了，一個筋斗"
                                       "栽到路邊，咿咿呀呀叫個不停。";
                                 break;
 
@@ -1151,7 +1151,7 @@ void check_going(object me, object who)
         return;
 }
 
-// 針對任務人物提出的技術性任務給予答復
+// 針對任務人物提出的技術性任務給予答覆
 int need_accede(object me, object who)
 {
         string skill, ma, wa;
@@ -1170,15 +1170,15 @@ int need_accede(object me, object who)
         {
         case "mathematics" :
                 suc_msg = me->name() + "點了點頭，隨即蹲下身來，在地面畫"
-                          "了些橫直符號與圓圈接著又寫下「太、天元、地元、"
+                          "了些橫直符號與圓圈接着又寫下「太、天元、地元、"
                           "人元、物元」等字。你在一旁默默細觀，掐指間便已"
                           "將幾道算題的答案算出，隨口告之" + me->name() +
-                          "。" + me->name() + "聽後一驚，嘆道：我原以為…"
+                          "。" + me->name() + "聽後一驚，歎道：我原以為…"
                           "唉…罷了，罷了。";
 
                 fai_msg = me->name() + "點了點頭，隨即蹲下身來，在地面畫"
-                          "了些橫直符號與圓圈接著又寫下「太、天元、地元、"
-                          "人元、物元」等字。你在一旁看得不知所雲，全然不"
+                          "了些橫直符號與圓圈接着又寫下「太、天元、地元、"
+                          "人元、物元」等字。你在一旁看得不知所云，全然不"
                           "知該如何下手。" + me->name() + "等了半天，見你"
                           "毫無動靜，不由得滿意的一笑。";
                 break;
@@ -1199,7 +1199,7 @@ int need_accede(object me, object who)
         case "chess" :
                 suc_msg = "你當即走上前去，與" + me->name() + "擺開棋局"
                           "對弈起來。不過多時，卻見" + me->name() + "已"
-                          "是大汗淋漓。緊接著你又落下一子，" + me->name() +
+                          "是大汗淋漓。緊接着你又落下一子，" + me->name() +
                           "頓時臉色鐵青，頹然道：不下了，不下了。我認輸"
                           "便是。";
 
@@ -1212,8 +1212,8 @@ int need_accede(object me, object who)
 
         case "calligraphy" :
                 suc_msg = "你微微一笑，當即走上前去，接過毛筆便開始書寫"
-                          "起來。霎時只見你隨意揮洒手中筆墨，騰蛟起鳳，"
-                          "洋洋洒洒；字跡宛若行雲流水，當真將書法的意境"
+                          "起來。霎時只見你隨意揮灑手中筆墨，騰蛟起鳳，"
+                          "洋洋灑灑；字跡宛若行雲流水，當真將書法的意境"
                           "發揮得淋漓盡致。" + me->name() + "在一旁看得"
                           "目瞪口呆，連聲稱讚。";
 
@@ -1225,8 +1225,8 @@ int need_accede(object me, object who)
                 break;
 
         case "drawing" :
-                suc_msg = "你微微一笑，當即接過畫筆，隨意揮洒筆墨。但見"
-                          "你墨意淋漓，筆力雄健，雖只寥寥數筆，氣勢可著"
+                suc_msg = "你微微一笑，當即接過畫筆，隨意揮灑筆墨。但見"
+                          "你墨意淋漓，筆力雄健，雖只寥寥數筆，氣勢可着"
                           "實不凡。" + me->name() + "在一旁越看越是心喜"
                           "，連聲稱讚。";
 
@@ -1247,7 +1247,7 @@ int need_accede(object me, object who)
                 fai_msg = "你愣了愣，走上前去給" + me->name() + "搭脈，"
                           "探了半天，卻發現" + me->name() + "脈象異常絮"
                           "亂，遠超自己所識。" + me->name() + "見你愁眉"
-                          "不展，不由得長嘆道：唉…我這傷本非一般庸醫能"
+                          "不展，不由得長歎道：唉…我這傷本非一般庸醫能"
                           "治，也不難為你了。";
                 break;
         }
@@ -1261,7 +1261,7 @@ int need_accede(object me, object who)
                 // 提交成功的描述信息
                 tell_object(who, sort_msg(WHT + suc_msg + "\n\n" NOR));
 
-                // 任務完成，注冊獎勵屬性
+                // 任務完成，註冊獎勵屬性
                 set("ultraquest/name1", me->name(), //who);
                 set("ultraquest/gift/point", 350, who);
                 who->set("ultraquest/gift/msg","你通過此番幫助"+
@@ -1294,7 +1294,7 @@ int need_accede(object me, object who)
                 // 任務中斷，系統重新分配的任務
                 give_quest(who);
         }
-        // 注銷掉人物的任務對象屬性
+        // 註銷掉人物的任務對象屬性
         delete_temp("need_accede", me);
 
         return 1;
@@ -1310,7 +1310,7 @@ int accept_object(object me, object who, object ob)
         int pot;                // 獲得的潛能
         int mar;                // 獲得的實戰體會
         int weiwang;            // 獲得的威望
-        int score;              // 獲得的江湖閱歷
+        int score;              // 獲得的江湖閲歷
         int lvl;                // 人物的等級
         mixed special = 0;      // 是否有特殊獎勵
         object ob1, rob;
@@ -1346,7 +1346,7 @@ int accept_object(object me, object who, object ob)
                         }
 
                         message_vision(CYN "$N" CYN "接過" + ob->name() + NOR + CYN
-                                       "，仔細看了看，滿意的說：很好。\n" NOR, me);
+                                       "，仔細看了看，滿意的説：很好。\n" NOR, me);
                         // destruct(ob);
                         break;
 
@@ -1356,7 +1356,7 @@ int accept_object(object me, object who, object ob)
 
                         if( !query("owner_id", stringp(ob)) )
                         {
-                                message_vision(CYN "$N" CYN "捂著鼻子看了看" + ob->name()
+                                message_vision(CYN "$N" CYN "捂着鼻子看了看" + ob->name()
                                                + NOR + CYN "，道：什麼臭烘烘的？快給我"
                                                "拿走。\n" NOR, me);
                                 return 0;
@@ -1375,9 +1375,9 @@ int accept_object(object me, object who, object ob)
                 }
 
                 msg = CYN "$N" CYN "接過" + ob->name() + NOR + CYN"，仔細看了"
-                      "看，滿意的說：很好。\n" NOR;
+                      "看，滿意的説：很好。\n" NOR;
 
-                // 這裡要定義完成任務獎勵
+                // 這裏要定義完成任務獎勵
                 addn("ultra_count", 1, who);
 
                 ultra_count=query("ultra_count", who);
@@ -1428,34 +1428,34 @@ int accept_object(object me, object who, object ob)
 
                 if (ultra_count == 10)
                 {
-                        msg += CYN "$N" CYN "哈哈大笑兩聲道：“真有你的，連著上十"
+                        msg += CYN "$N" CYN "哈哈大笑兩聲道：“真有你的，連着上十"
                                "次任務都完成的漂漂亮亮，很好，很好。”\n" NOR;
                         special = 1;
                 } else
                 if (ultra_count == 25)
                 {
                         msg += CYN "$N" CYN "大喜道：“不錯不錯，真實不錯，二十五"
-                               "次任務幹得很好。”\n NOR";
+                               "次任務乾得很好。”\n NOR";
                         special = "/clone/gift/jiuzhuan";
                 } else
                 if (ultra_count == 50)
                 {
-                        msg += CYN "$N" CYN "嘆道：“真是長江後浪推前浪，想不到你接連五十"
+                        msg += CYN "$N" CYN "歎道：“真是長江後浪推前浪，想不到你接連五十"
                                "次任務都無一疏漏，不易，不易！”\n" NOR;
                         special = "/clone/gift/tianxiang";
                 } else
                 if (ultra_count >= 100)
                 {
-                        msg += CYN "$N" CYN "深深嘆了口氣，道：“想不到你連著上百次"
+                        msg += CYN "$N" CYN "深深歎了口氣，道：“想不到你連着上百次"
                                "任務無一失手，看來我們泥潭真是後繼有人啊！”\n" NOR;
                         special = "/clone/gift/xuanhuang";
                         ultra_count = 0;
                 } else
                 if ((ultra_count % 10) == 0)
                 {
-                        msg += CYN "$N" CYN "喜道：“真是不賴，居然連著" +
+                        msg += CYN "$N" CYN "喜道：“真是不賴，居然連着" +
                                chinese_number(ultra_count) +
-                               "次都沒有失手，幹的好！”\n" NOR ;
+                               "次都沒有失手，乾的好！”\n" NOR ;
                 }
 
                 if (stringp(special))
@@ -1536,7 +1536,7 @@ int accept_object(object me, object who, object ob)
                         if( query("send/user", ob) != who->name() )
                         {
                                 message_vision(CYN "$N" CYN "皺眉道：這包裹是誰給你"
-                                               "的？還是你自己留著吧。\n" NOR, me);
+                                               "的？還是你自己留着吧。\n" NOR, me);
                                 return 0;
                         }
 
@@ -1557,11 +1557,11 @@ int accept_object(object me, object who, object ob)
                 who->set("ultraquest/gift/msg","你通過此番幫助"+
                                                  me->name() + "的經歷");
                 // give_gift(who);
-                me->destruct_me(); // 銷毀接受物品任務NPC
+                me->destruct_me(); // 銷燬接受物品任務NPC
                 return 1;
         }
 
-        // 如果對象為發布任務的NPC
+        // 如果對象為發佈任務的NPC
         if( query("ultraquest/npc5", who) )
         {
                 npc=query("ultraquest/npc5", who);
@@ -1589,7 +1589,7 @@ int accept_object(object me, object who, object ob)
 
                         if( !query("owner_id", stringp(ob)) )
                         {
-                                message_vision(CYN "$N" CYN "捂著鼻子看了看" + ob->name()
+                                message_vision(CYN "$N" CYN "捂着鼻子看了看" + ob->name()
                                                + NOR + CYN "，道：什麼臭烘烘的？快給我"
                                                "拿走。\n" NOR, me);
                                 return 0;
@@ -1677,7 +1677,7 @@ public void give_gift(object me)
 {
         int gift;
 
-        // 如果沒有注冊獎勵參數，則中斷
+        // 如果沒有註冊獎勵參數，則中斷
         if( !query("ultraquest/gift/msg", me )
                  || !query("ultraquest/gift/point", me) )
                 return;
@@ -1746,9 +1746,9 @@ public void generate_information(object me)
 
                         place=query("place", ob);
 
-                        tell_object(me,query("ultraquest/name5", CYN+me)+CYN"小聲對你說道："
+                        tell_object(me,query("ultraquest/name5", CYN+me)+CYN"小聲對你説道："
                                         NOR+HIR+query("id", name(, ob)+"("+ob)+")"+NOR+CYN
-                                        "就是幕後主人，可千萬不要說是我說。\n聽說他最近在" + place + "，你快去吧！\n" NOR);
+                                        "就是幕後主人，可千萬不要説是我説。\n聽説他最近在" + place + "，你快去吧！\n" NOR);
                         break;
                 case "send":
                         break;
@@ -1757,7 +1757,7 @@ public void generate_information(object me)
                 case "find":
                         break;
                 }
-                who->destruct_me(); // 銷毀線索人物
+                who->destruct_me(); // 銷燬線索人物
                 return;
         }
 
@@ -1842,19 +1842,19 @@ public void generate_information(object me)
         // 把人稱做簡單化
         ma = RANK_D->query_respect(me);
 
-        // 這裡增加情節描述
+        // 這裏增加情節描述
         finish=query("ultraquest/finish", me);
         switch (finish)
         {
         case 1:
-                msg = "聽說，這個幕後黑手曾遺失過一個重要物品，通過這個物品可以知"
-                      "道他是誰。\n好象" + npc_place + "的" + next_name + "就知道這"
+                msg = "聽説，這個幕後黑手曾遺失過一個重要物品，通過這個物品可以知"
+                      "道他是誰。\n好像" + npc_place + "的" + next_name + "就知道這"
                       "個物品的下落。\n" + ma + "可去找他問問，但也不知是真是假";
                 break;
 
         case 2:
-                msg = "那物品我到是聽說點線索，" + ma + "知道" + npc_place + "嗎？\n"
-                      "那裡有個" + next_name + "，傳聞你要找的那東西就在他身上";
+                msg = "那物品我到是聽説點線索，" + ma + "知道" + npc_place + "嗎？\n"
+                      "那裏有個" + next_name + "，傳聞你要找的那東西就在他身上";
                 break;
 
         case 3:
@@ -1864,14 +1864,14 @@ public void generate_information(object me)
 
         case 4:
                 msg = "很遺憾，你要的東西我前幾天搞丟了，不清楚" + ma + "是否認識"
-                      + npc_place + "的" + next_name + "。\n他見過此東西，而且好象知"
+                      + npc_place + "的" + next_name + "。\n他見過此東西，而且好像知"
                       "道那個物品的主人是誰";
                 break;
 
         default:
                 msg = "我想想…" + ma + "去找" + npc_place +
                       "的" + next_name + "問問看吧。\n去年我聽"
-                      "他說起過這件事";
+                      "他説起過這件事";
                 break;
         }
 
@@ -1888,7 +1888,7 @@ public void generate_information(object me)
                               "那似乎有些線索";
         }
 
-        // 客店的北醜，只要有錢就好說話
+        // 客店的北醜，只要有錢就好説話
         if (name == LURCHER)
         {
                 switch (random(3))
@@ -1901,29 +1901,29 @@ public void generate_information(object me)
 
                 case 1:
                         msg = "…這樣吧…你去找" + next_name +
-                              "問問看，那家伙就在" + npc_place +
+                              "問問看，那傢伙就在" + npc_place +
                               "，可別走丟了";
                         break;
 
                 default:
                         msg = "你到" + npc_place + "瞅瞅，如"
-                              "果碰到" + next_name + "那廝，說"
-                              "不定…嘿嘿…能有啥收獲";
+                              "果碰到" + next_name + "那廝，説"
+                              "不定…嘿嘿…能有啥收穫";
                         break;
                 }
         }
 
         // 提供出線索信息
         message("vision", name + "悄悄在" + me->name() + "耳"
-                "邊說了些什麼。\n", environment(me),
+                "邊説了些什麼。\n", environment(me),
                 ({ me }));
 
         // 提供出任務的描述信息
-        msg = WHT + name + WHT "悄悄對你說道：" + msg + "。\n" NOR;
+        msg = WHT + name + WHT "悄悄對你説道：" + msg + "。\n" NOR;
 
         // tell_object(me, sort_msg(msg));
         tell_object(me, msg);
-        who->destruct_me(); // 銷毀線索人物
+        who->destruct_me(); // 銷燬線索人物
 
         return;
 }

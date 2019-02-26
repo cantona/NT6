@@ -1,7 +1,7 @@
 Zmud 使用指南                          一刀(Tue Jul 21)
 ----------------------------------------------------------------------
 首先從上面八個按鍵開始：
-１． Aliases：把所有復雜的指令用簡單的代號代替。
+１． Aliases：把所有複雜的指令用簡單的代號代替。
      舉例：(1)我的monk有帶加dr和hr的eq，
    首先按New，
               Alias Name打dr，
@@ -22,7 +22,7 @@ collar;rem whip;wear knife;rem brass;wear power，
 ２．Variables：跟Aliases類似，不過我沒用過，也不會用。:p
 ３．Paths：以簡單的指令走到要走的地方。
     舉例：我們可以在帝國買到舊卷軸，
-          由于冥駕城門會關起來，
+          由於冥駕城門會關起來，
           所以由門東邊的十字路口走起，
           按New，
           Path Name打scroll，
@@ -34,7 +34,7 @@ collar;rem whip;wear knife;rem brass;wear power，
 ４．Trigger：當畫面出現什麼字，就會執行動作。
     舉例：(1)你應該有看到兩個autolog，
              這就是當初一進來設的記id和password，
-          (2)打mobs會被mobs給disarm以致于掉武器，
+          (2)打mobs會被mobs給disarm以致於掉武器，
              按New，
              Class打get（隨便你分類），
              Pattern打disarms you，
@@ -48,11 +48,11 @@ collar;rem whip;wear knife;rem brass;wear power，
           (3)常會有人向牧師求救要Full heal，
              按New，
              Class打help，
-             Pattern打(%w) 說 'ful'
-   ***切記，"說"的前後均要空一格，%w要用小括號，%1不用。***
+             Pattern打(%w) 説 'ful'
+   ***切記，"説"的前後均要空一格，%w要用小括號，%1不用。***
 
 %w代表字元，另外還有代表字串和數字的，我已經忘了，%1是變數符號，在此%w=%1。
-５．Keys：熱鍵。不用我多做說明了。
+５．Keys：熱鍵。不用我多做説明了。
 ６．General：基本設定。原則上我只把Auto Clear Input勾選起來。
 ７．Color：設定色彩。下面是我設的。
     舉例：(1)System Colors：
@@ -71,7 +71,7 @@ collar;rem whip;wear knife;rem brass;wear power，
 ２．Setting--Save：設定好了要存起來喔！
 ３．Setting--Save as：最好每一個char都有他自己的設定，並且備份到磁片上。
 ４．Setting--Import：可以把其他char的設定抓過來。
-５．Action：有的包含在按鈕上，至于其他的我不會。
+５．Action：有的包含在按鈕上，至於其他的我不會。
 ６．Windows--Tile：你可以開兩的視窗，選擇這個可以使兩視窗在上下兩端。
 
 
@@ -82,7 +82,7 @@ ansi輸入法：新發現！！
 功能表上有Options--Color，
 選你要的顏色，
 然後File--Send即可。
-常用于Title和de的更改。
+常用於Title和de的更改。
 
 另外，輸入區有DOSKEY的功能，!也就不適用了。
 
@@ -90,9 +90,9 @@ ansi輸入法：新發現！！
 zMud 有以下功能:
 
 1.      Macro keys: 熱鍵;
-2.      Alias:  簡化命令;(可用分號將若幹條命令做在一起)
+2.      Alias:  簡化命令;(可用分號將若干條命令做在一起)
 3.      Trigers:        接收激發;
-4.      Variables:      變量,可用于函數,可以用于"編程";
+4.      Variables:      變量,可用於函數,可以用於"編程";
 5.      Buttons:        和keys類似,且更直觀;
 6.      Paths:  可以記憶走過的路,且可反向;
 7.      Timer:  時間循環,自動化的基本條件.
@@ -126,13 +126,13 @@ ZMUD使用簡介:
         在激烈的戰鬥中很難看到chat和別人tell你,這時用
         pattern:告訴你
         Command:#beep;#capture chat
-        這樣當有人和你說話時,就會發出聲音,而且會把這行消息傳到chat這個
+        這樣當有人和你説話時,就會發出聲音,而且會把這行消息傳到chat這個
 窗口去.
         同樣
         pattern:閒聊
         Command:#capture chat
-這樣只要經常用ctrl-tab到另外的chat窗口看就知道大家在說些什麼了.
-        在路上說不定就會遇上哪個殺氣高的大爺,可要小心!
+這樣只要經常用ctrl-tab到另外的chat窗口看就知道大家在説些什麼了.
+        在路上説不定就會遇上哪個殺氣高的大爺,可要小心!
         pattern:想殺死你！
         Command:#beep;#beep;#beep;
         保持警惕才能爭取更大勝利.
@@ -150,7 +150,7 @@ ZMUD使用簡介:
 
 用好zmud不僅僅是設幾個trigger就可以，zmud中
 可以使用變量，函數，內部命令等等。如果要詳細
-了解，要仔細讀一下HELP文件。基本的用法是：
+瞭解，要仔細讀一下HELP文件。基本的用法是：
 引用內部命令用 #
 引用內部變量和函數用 %
 引用自定義變量和函數用 @,命令行引用加 < >
@@ -177,7 +177,7 @@ pattern中可以用一些通配符：主要有
 
    pattern=(*)~((%x)~)告訴你：(*)
    commands=#if !(%1=你) {get gold}
-關于ZMUD的ALIAS
+關於ZMUD的ALIAS
 
 ALIAS用來簡化命令，相信每個人都在用ALIAS。
 實際上ZMUD的ALIAS系統是相當優秀的，比風雲本身提供的
@@ -193,7 +193,7 @@ ALIAS命令更方便更靈活。按窗口上方的ALIASES按鈕可以
 這一點和風雲的系統不同（風雲中必須用$*)
 如果要用參數的話，用%1,%2,%3...代表第1，2，3個單詞...
 
-（另外告訴你個秘密，可以用%-1代替全部，就像$*的作用一樣哦）
+（另外告訴你個祕密，可以用%-1代替全部，就像$*的作用一樣哦）
 
 可以用；來分開多條命令，這是風雲ALIAS系統做不到的
 比如：gp = get all;put all in oilbag
@@ -209,7 +209,7 @@ ALIAS命令更方便更靈活。按窗口上方的ALIASES按鈕可以
 
       g = get %if(%null(%1),all,%-1)
       ga = get all from %if(%null(%1),corpse,%-1)
-關于button
+關於button
 
 在zmud中可以設button,看起來就是一排按鈕，可以用鼠標來按
 button可以設定放在窗口的上邊或右邊（你願意放左邊下邊也沒意見）

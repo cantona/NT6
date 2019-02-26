@@ -15,7 +15,7 @@ void create()
 	set("gender", "男性");
 	set("age", 28);
 	set("long", @LONG
-此人乃華山派弟子，由于偷學紫霞神功觸犯了門規，被華山派逐出師門。
+此人乃華山派弟子，由於偷學紫霞神功觸犯了門規，被華山派逐出師門。
 LONG );
 	set("combat_exp", 600000);
 	set("shen_type", 0);
@@ -154,8 +154,8 @@ void random_move()
 
 void death_msg()
 {
-        command("chat 不想我竟不容于天下武林，今日遭此一劫，悔恨終身 ...");
-	CHANNEL_D->channel_broadcast("rumor", "聽說" + name() + HIM "被江湖人士所殺。" NOR);
+        command("chat 不想我竟不容於天下武林，今日遭此一劫，悔恨終身 ...");
+	CHANNEL_D->channel_broadcast("rumor", "聽説" + name() + HIM "被江湖人士所殺。" NOR);
 }
 
 varargs void die(object killer) 
@@ -178,7 +178,7 @@ varargs void die(object killer)
                 if( query("qi") > query("max_qi") ) set("qi", query("max_qi"));
                 addn("eff_qi", query("max_qi") / 10);
                 if( query("eff_qi") > query("max_qi") ) set("eff_qi", query("max_qi"));
-                message_vision(HIR "\n$N" HIR "大喝一聲，運用秘法，氣血有所回升！\n\n" NOR, this_object());
+                message_vision(HIR "\n$N" HIR "大喝一聲，運用祕法，氣血有所回升！\n\n" NOR, this_object());
                 return;
         }
 

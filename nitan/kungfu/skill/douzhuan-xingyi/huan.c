@@ -13,7 +13,7 @@ int perform(object me, object target)
         int level;
 
         if( (level = me->query_skill("douzhuan-xingyi", 1)) < 1000 )
-                return notify_fail("你的鬥轉星移還不夠熟練，難以施展" + name() + "。\n" NOR);
+                return notify_fail("你的斗轉星移還不夠熟練，難以施展" + name() + "。\n" NOR);
 
         if( (int)query("jingli", me) < 2000 )
                 return notify_fail("你現在真氣不足，難以施展" + name() + "。\n" NOR);
@@ -27,7 +27,7 @@ int perform(object me, object target)
         addn("neili", -1000, me);
         me->receive_damage("qi", 0);
         set_temp("yixinghuanyue", 1, me);
-        msg = MAG "\n$N" MAG "提起真氣，默念" + name() + "心法，心中以彼之道還彼之身的法門已達發乎自然之境。\n" NOR;
+        msg = MAG "\n$N" MAG "提起真氣，默唸" + name() + "心法，心中以彼之道還彼之身的法門已達發乎自然之境。\n" NOR;
 
         message_combatd(msg, me);
 

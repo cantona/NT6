@@ -3,11 +3,11 @@
 
 mapping quest_name = ([
                 "wei"        :        "收羅物品",
-                "book"        :        "查找秘籍",
-                "shan"        :        "鋤姦殺邪",
+                "book"        :        "查找祕籍",
+                "shan"        :        "鋤奸殺邪",
                 "helian":        "一品堂",
                 "betrayer":        "斬殺叛徒",
-                "thief"        :        "捉捕姦細",
+                "thief"        :        "捉捕奸細",
                 "baobiao":        "護送人質",
                 "bt"        :        "揚州捕快",
                 "kill" : "江湖仇殺",

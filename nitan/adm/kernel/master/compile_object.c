@@ -12,8 +12,8 @@
 
         物件 compile_object( 字串 路徑名 );
 用法：
-        當 mudlib 指示驅動程式載入一個不存在于記憶體中的檔案，驅動程式會呼
-        叫 compile_object 函式。舉例來說，如果 mudlib 呼叫
+        當 mudlib 指示驅動程式載入一個不存在於記憶體中的檔案，驅動程式會呼
+        叫 compile_object 函式。舉例來説，如果 mudlib 呼叫
         call_other("/obj/file.r", "some_function") 或 new("/obj/file.r") 時
         ，記憶體中沒有叫做 /obj/file.r.c 的東西，驅動程式就呼叫主宰物件
          (master object) 的 compile_object("/obj/file.r")。如果 mudlib 不希

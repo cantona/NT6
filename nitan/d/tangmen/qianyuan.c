@@ -17,7 +17,7 @@ void create()
                 "north" : __DIR__"shuige1",
         ]));
         set("item_desc", ([
-                "sign" : (HIG"路邊的野花不要採，家裡花兒也不要摘\n"NOR),
+                "sign" : (HIG"路邊的野花不要採，家裏花兒也不要摘\n"NOR),
         ]));        
         set("outdoors", "tangmen");
         setup();

@@ -5,7 +5,7 @@
 inherit BOOTS;
 void create()
 {
-    set_name(GRN "蔥綠繡花鞋" NOR, ({"xiuhua xie", "xie", "shoes"}));
+    set_name(GRN "葱綠繡花鞋" NOR, ({"xiuhua xie", "xie", "shoes"}));
     set_weight(1000);
     if ( clonep() )
         set_default_object(__FILE__);

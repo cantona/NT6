@@ -8,7 +8,7 @@ void create()
         set_weight(10000000);
         set("nickname", "惡貫滿盈");
         set("long", 
-"此人身形修長，其胸凸出，由如一鼓。長髯垂胸，根根漆黑。但是瘸了雙腿，拄著根鋼制拐杖。\n");
+"此人身形修長，其胸凸出，由如一鼓。長髯垂胸，根根漆黑。但是瘸了雙腿，拄着根鋼製枴杖。\n");
         set("gender", "男性");
         set("age", 55);
         set("attitude", "aggressive");

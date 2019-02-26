@@ -5,9 +5,9 @@ void create()
 {
         set("short", "後院");
         set("long", @LONG
-你走進後院，迎面是一個大花園，很是美觀。池中立著塊
-巨大無比的假山 (jiashan)。水池的兩旁種滿了花草，鬱鬱蔥
-蔥，樹木枝葉茂密，遮蓋了大半個院子。南邊一條長長的木制
+你走進後院，迎面是一個大花園，很是美觀。池中立着塊
+巨大無比的假山 (jiashan)。水池的兩旁種滿了花草，鬱郁葱
+葱，樹木枝葉茂密，遮蓋了大半個院子。南邊一條長長的木製
 長廊，通往苗家的後廳。
 LONG);
         set("exits", ([
@@ -43,18 +43,18 @@ int do_think(string arg)
                 return notify_fail("你要參悟什麼？\n");
 
         if (me->is_busy())
-                return notify_fail("你現在正忙著呢。\n");
+                return notify_fail("你現在正忙着呢。\n");
 
         if ((int)me->query_skill("miaojia-neigong", 1) < 1)
                 return notify_fail("你發現假山上所記載的東西與自己所學"
-                                   "毫無幹系，看不出究竟。\n");
+                                   "毫無干系，看不出究竟。\n");
 
         if ((int)me->query_skill("miaojia-neigong", 1) < 100)
-                return notify_fail("你發現假山上所記載的內功心法過于深"
+                return notify_fail("你發現假山上所記載的內功心法過於深"
                                    "奧，自己全然無法看懂。\n");
 
         if ((int)me->query_skill("miaojia-neigong", 1) > 180)
-                return notify_fail("你發現假山上所記載的內功心法過于膚"
+                return notify_fail("你發現假山上所記載的內功心法過於膚"
                                    "淺，對自己已毫無幫助。\n");
 
         if (! me->can_improve_skill("miaojia-neigong"))
@@ -62,7 +62,7 @@ int do_think(string arg)
                                    "領會假山上記載的內容。\n");
 
         if( query("jing", me)<80 )
-                return notify_fail("你現在精神不濟，過于疲倦，還是休息"
+                return notify_fail("你現在精神不濟，過於疲倦，還是休息"
                                    "一會吧。\n");
 
         me->receive_damage("jing", 60);

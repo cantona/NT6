@@ -58,7 +58,7 @@ int perform(object me,object target)
         if( query("max_neili", me)<500 )
                 return notify_fail("你的內力修為不夠，無法運用岱宗如何！\n");
 
-        message_combatd( HIY"$N右手"+weapon->name()+HIY"斜指而下，左手五指正在屈指而數，從一數到五，握而成拳，又將拇指伸出，次而食指，終至五指全展，跟著又屈拇指而屈食指，再屈中指，然後手中"+weapon->name()+HIY"劍光暴長，向$n疾刺而去。\n"NOR,me,target);
+        message_combatd( HIY"$N右手"+weapon->name()+HIY"斜指而下，左手五指正在屈指而數，從一數到五，握而成拳，又將拇指伸出，次而食指，終至五指全展，跟着又屈拇指而屈食指，再屈中指，然後手中"+weapon->name()+HIY"劍光暴長，向$n疾刺而去。\n"NOR,me,target);
 
         addn("neili", -250, me);
         me->start_call_out( (: call_other, __FILE__, "hit_him", me, target :), /*random(5)+*/3);

@@ -9,11 +9,11 @@ void create()
 {
     set("short", HIY"休息室"NOR);
         set("long", @LONG
-這是一個裝飾豪華，色調溫暖的小房間，到處擺放著各種珍奇古
-玩。寬大的真皮沙發柔軟舒適，大款們來到這裡都會坐下來，討論一
+這是一個裝飾豪華，色調温暖的小房間，到處擺放着各種珍奇古
+玩。寬大的真皮沙發柔軟舒適，大款們來到這裏都會坐下來，討論一
 下泥巴商業運作情況。休息室大門通向金色走廊，另一面牆壁有一道
-小門，平常緊閉著，只有在每兩月一次的泥巴黑店拍賣時，巫師才會
-將之打開。一塊小小的牌子 (paizi)掛在東面牆上，這是巫師宣布黑
+小門，平常緊閉着，只有在每兩月一次的泥巴黑店拍賣時，巫師才會
+將之打開。一塊小小的牌子 (paizi)掛在東面牆上，這是巫師宣佈黑
 店拍賣底價用的。
 LONG );
 
@@ -42,18 +42,18 @@ void init()
 int do_open()
 {
     if (query("exits/north"))
-        return notify_fail("門已經是開著的了。\n");
+        return notify_fail("門已經是開着的了。\n");
     set("exits/north","/clone/SHOP/pmc");
     message_vision(HIY"$N輕輕一推，將通向拍賣大廳的小門開啟了。\n"NOR,this_player());
-    shout(HIY + this_player()->name() +  "開啟了拍賣休息室裡那扇通往拍賣大廳的金色小門！\n" NOR);
-    write(HIY + "你開啟了拍賣休息室裡那扇通往拍賣大廳的金色小門！\n" NOR);
+    shout(HIY + this_player()->name() +  "開啟了拍賣休息室裏那扇通往拍賣大廳的金色小門！\n" NOR);
+    write(HIY + "你開啟了拍賣休息室裏那扇通往拍賣大廳的金色小門！\n" NOR);
     return 1;
 }
 
 int do_close()
 {
     if (!query("exits/north"))
-        return notify_fail("門已經是關著的了。\n");
+        return notify_fail("門已經是關着的了。\n");
     delete("exits/north");
     message_vision(HIY"$N順手一帶，將通向拍賣大廳的小門關閉了。\n"NOR,this_player());
     return 1;

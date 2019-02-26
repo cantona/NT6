@@ -17,8 +17,8 @@ void create()
                 set("material","steel");
                 set("long","相傳這便是當年蔡文姬從火中所救出的焦木做成的美琴，琴的尾端仍可見焦黑色。\n");
                 set("wield_msg",HIY"$N伸手輕輕一揮,一張焦尾琴便已出現在$N手中.\n"NOR);
-                set("unwield_msg",HIY"$N十指一拂，琴聲曳然而止。$N收起焦尾琴，放進背著的包袱裡。\n"NOR);
-//                set("unequip_msg",HIY"你十指一拂，琴聲曳然而止。你收起焦尾琴，放進背著的包袱裡。.\n"NOR);
+                set("unwield_msg",HIY"$N十指一拂，琴聲曳然而止。$N收起焦尾琴，放進揹着的包袱裏。\n"NOR);
+//                set("unequip_msg",HIY"你十指一拂，琴聲曳然而止。你收起焦尾琴，放進揹着的包袱裏。.\n"NOR);
         }
         init_sword(150);
         setup();
@@ -60,15 +60,15 @@ mixed weapon_hit_ob(object me, object victim, int damage_bonus)
                 if (! victim->is_busy())
                 {
                         victim->start_busy(me->query_skill("sword") / 50 + 1);
-                  return WHT "$N" WHT "一聲斷喝，單手猛然拂過手中焦尾琴，焦尾琴頓時發出一股尖銳的"
+                  return WHT "$N" WHT "一聲斷喝，單手猛然拂過手中焦尾琴，焦尾琴頓時發出一股尖鋭的"
                        "琴音，$n" WHT "只覺頭暈目眩，幾欲昏厥！\n" NOR;
                 }
         case 1:
                 n = me->query_skill("sword");
                 victim->receive_damage("qi", n * 3 / 4, me);
                 victim->receive_wound("qi", n * 3 / 4, me);
-                return WHT "$N" WHT "一聲冷哼，手中焦尾琴一振，霎時龍吟驟起，一道劍氣攜著尖"
-                       "銳的琴音直射$n" WHT "而去！\n" NOR;
+                return WHT "$N" WHT "一聲冷哼，手中焦尾琴一振，霎時龍吟驟起，一道劍氣攜着尖"
+                       "鋭的琴音直射$n" WHT "而去！\n" NOR;
         }
         return damage_bonus;
 }

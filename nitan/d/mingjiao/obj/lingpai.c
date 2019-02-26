@@ -8,7 +8,7 @@ void create()
                set_default_object(__FILE__);
        else {
                set("unit", "片");
-               set("long", "這是一片用竹片所制的令牌，是明教巡邏弟子的身份証明。\n");
+               set("long", "這是一片用竹片所制的令牌，是明教巡邏弟子的身份證明。\n");
                set("value", 20);
                set("material", "bamboo");          
        }

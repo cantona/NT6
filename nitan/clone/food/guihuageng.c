@@ -1,4 +1,4 @@
-// 神話世界﹒西遊記﹒版本４．５０
+// 神話世界·西遊記·版本４．５０
 /* <SecCrypt CPL V3R05> */
  
 // guihuageng.c 桂花雪蓮羹
@@ -15,7 +15,7 @@ void create()
    if (clonep())
      set_default_object(__FILE__);
    else {
-     set("long", "以昆侖山玉女峰頂的桂花與雪蓮制成，對精神大有裨益。\n");
+     set("long", "以崑崙山玉女峯頂的桂花與雪蓮製成，對精神大有裨益。\n");
      set("unit", "碗");
      set("value", 800);
         set("remaining", 5);
@@ -83,7 +83,7 @@ int do_chi(string arg)
          message_vision("$N拿起一碗桂花雪蓮羹吃了幾口。一股清香直入心脾，$N覺得精神好多了。\n", this_player());
    } else 
    { 
-         message_vision("$N把碗裡的桂花雪蓮羹舔得幹幹凈凈，仍是意尤未盡。\n", this_player());
+         message_vision("$N把碗裏的桂花雪蓮羹舔得乾乾淨淨，仍是意尤未盡。\n", this_player());
      
      destruct(this_object());
    }

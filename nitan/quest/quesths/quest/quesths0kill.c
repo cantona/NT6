@@ -155,7 +155,7 @@ mapping *quest = ({
         ]),
         ([
                 "id":          "huoji",
-                "name":        "伙計",
+                "name":        "夥計",
                 "type":        "殺",
                 "bonus":       50,
                 "msg":        "",
@@ -235,7 +235,7 @@ mapping *quest = ({
         ]),
         ([
                 "id":          "yaopu huoji",
-                "name":        "藥舖伙計",
+                "name":        "藥鋪夥計",
                 "type":        "殺",
                 "bonus":       50,
                 "msg":        "",
@@ -339,7 +339,7 @@ mapping *quest = ({
         ]),
         ([
                 "id":          "shudian laoban",
-                "name":        "書店老板",
+                "name":        "書店老闆",
                 "type":        "殺",
                 "bonus":       70,
                 "msg":        "",
@@ -355,7 +355,7 @@ mapping *quest = ({
         ]),
         ([
                 "id":          "zhong ling",
-                "name":        "鐘靈",
+                "name":        "鍾靈",
                 "type":        "殺",
                 "bonus":       75,
                 "msg":        "",
@@ -555,7 +555,7 @@ mapping *quest = ({
         ]),
         ([
                 "id":          "xiao huoji",
-                "name":        "小伙計",
+                "name":        "小夥計",
                 "type":        "殺",
                 "bonus":       50,
                 "msg":        "",
@@ -659,7 +659,7 @@ mapping *quest = ({
         ]),
         ([
                 "id":          "lao ban",
-                "name":        "酒館老板",
+                "name":        "酒館老闆",
                 "type":        "殺",
                 "bonus":       50,
                 "msg":        "",
@@ -683,7 +683,7 @@ mapping *quest = ({
         ]),
         ([
                 "id":          "zhong xiaoer",
-                "name":        "鐘小二",
+                "name":        "鍾小二",
                 "type":        "殺",
                 "bonus":       50,
                 "msg":        "",
@@ -1251,7 +1251,7 @@ mapping *quest = ({
         ]),
         ([
                 "id":          "xue laoban",
-                "name":        "薛老板",
+                "name":        "薛老闆",
                 "type":        "殺",
                 "bonus":       50,
                 "msg":        "",
@@ -1491,7 +1491,7 @@ mapping *quest = ({
         ]),
         ([
                 "id":          "yaodian huoji",
-                "name":        "藥店伙計",
+                "name":        "藥店夥計",
                 "type":        "殺",
                 "bonus":       50,
                 "msg":        "",
@@ -1531,7 +1531,7 @@ mapping *quest = ({
         ]),
         ([
                 "id":          "yaopu huoji",
-                "name":        "藥舖伙計",
+                "name":        "藥鋪夥計",
                 "type":        "殺",
                 "bonus":       65,
                 "msg":        "",
@@ -1539,7 +1539,7 @@ mapping *quest = ({
         ]),
         ([
                 "id":          "yaopu huoji",
-                "name":        "藥舖伙計",
+                "name":        "藥鋪夥計",
                 "type":        "殺",
                 "bonus":       50,
                 "msg":        "",

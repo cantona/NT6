@@ -14,9 +14,9 @@ mapping *action = ({
         "lvl":10,
         "skill_name": "空碗盛飯"
 ]),
-([        "action": "$N身形繞$n一轉，雙手上撩,一招"HIW"「空砵裝水」"NOR"擊向$n$l",
+([        "action": "$N身形繞$n一轉，雙手上撩,一招"HIW"「空缽裝水」"NOR"擊向$n$l",
         "lvl":20,
-        "skill_name": "空砵裝水"
+        "skill_name": "空缽裝水"
 ]),
 ([        "action": "$N左掌一按,右掌一揮,一招"HIW"「虛懷若谷」"NOR"拍向$n的$l",
         "lvl":30,
@@ -131,7 +131,7 @@ mixed valid_damage(object ob, object me, int damage, object weapon)
                         break;
                 default:
                         result += (["msg" : HIG "$n" HIG "慢慢出拳左擋右格，讓"
-                                            "$N" HIG "只覺得力道無處可使，說不"
+                                            "$N" HIG "只覺得力道無處可使，説不"
                                             "出的難受。\n" NOR]);
                         break;
                 }
@@ -179,7 +179,7 @@ mixed valid_damage(object ob, object me, int damage, object weapon)
                         result += (["msg" : HIC "$n" HIC "運起空明拳的“空”字決，$N" HIC "的攻擊忽然落空。\n" NOR]);
                         break;
                 default:
-                        result += (["msg" : HIC "$n" HIC "運起空明拳的“柔”字決，身形如蛇般纏著$N。\n"
+                        result += (["msg" : HIC "$n" HIC "運起空明拳的“柔”字決，身形如蛇般纏着$N。\n"
                                     HIC "$N" HIC "根本無計可施，只得收回攻勢。\n" NOR]);
                         break;
                 }
@@ -199,14 +199,14 @@ int help(object me)
         write(@HELP
 
     空明拳是老頑童周伯通在桃花島囚洞中悟出來的武功。
-    老子《道德經》裡有句話道：“埏埴以為器，當其無，有器之
-用。鑿戶牖以為室，當其無，有室之用。”就是說，碗只因為中間
+    老子《道德經》裏有句話道：“埏埴以為器，當其無，有器之
+用。鑿户牖以為室，當其無，有室之用。”就是説，碗只因為中間
 是空的，才有盛飯的功用，倘若它是實心的一塊瓷土，還能裝甚麼
 飯？建造房屋，開設門窗，只因為有了四壁中間的空隙，房子才能
 住人。倘若房屋是實心的，倘若門窗不是有空，磚頭木材四四方方
 的砌上這麼一大堆，那就一點用處也沒有了。全真派最上乘的武功，
 要旨就在“空、柔”二字，那就是所謂“大成若缺，其用不弊。大
-盈若沖，其用不窮”。空明拳乃是天下至柔的武功，能增強招架。
+盈若衝，其用不窮”。空明拳乃是天下至柔的武功，能增強招架。
 
         學習要求：
                 內力100

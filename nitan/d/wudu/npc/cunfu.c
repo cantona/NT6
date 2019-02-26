@@ -15,7 +15,7 @@ void create()
         set_name(name,({"cun fu"}));
         set("gender", "女性" );
         set("age", 32);
-        set("long", "這是個普普通通的農家婦女，臉上擦著厚厚的白粉。\n");
+        set("long", "這是個普普通通的農家婦女，臉上擦着厚厚的白粉。\n");
 
         set("max_qi", 200);
         set("shen_type", 1);

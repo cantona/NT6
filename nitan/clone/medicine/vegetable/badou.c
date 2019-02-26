@@ -30,7 +30,7 @@ int do_eat(string arg)
         if(!present(this_object(), me))
                 return notify_fail("你要吃什麼？\n");
         if( me->is_busy() )
-                return notify_fail("別急，慢慢吃，小心別噎著了。\n");
+                return notify_fail("別急，慢慢吃，小心別噎着了。\n");
 
         write("你一口就把巴豆吃了下去。結果蹲下就拉，拉得頭暈眼花。\n");
         set("qi", 1, me);

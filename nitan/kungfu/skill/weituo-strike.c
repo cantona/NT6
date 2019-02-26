@@ -7,9 +7,9 @@ string type() { return "martial"; }
 string martialtype() { return "skill"; }
 
 mapping *action = ({
-([        "action" : "$N雙眼微睜，袍袖微微鼓氣，雙掌齊推，一招"HIC"「開天辟地」"NOR"，一股排山之勢壓向$n",
+([        "action" : "$N雙眼微睜，袍袖微微鼓氣，雙掌齊推，一招"HIC"「開天闢地」"NOR"，一股排山之勢壓向$n",
         "lvl"   : 0,
-        "skill_name" : "開天辟地"
+        "skill_name" : "開天闢地"
 ]),
 ([        "action" : "$N口中阿彌陀佛，一招"HIW"「即世即空」"NOR"，左掌擊向$n面門，另一掌卻按向$n的小腹",
         "lvl"   : 15,
@@ -19,19 +19,19 @@ mapping *action = ({
         "lvl"   : 30,
         "skill_name" : "無相無色"
 ]),
-([        "action" : "$N呼的一掌，沒有半點征兆，一招"HIY"「佛法無邊」"NOR"，猛地向$n的$l擊打過去",
+([        "action" : "$N呼的一掌，沒有半點徵兆，一招"HIY"「佛法無邊」"NOR"，猛地向$n的$l擊打過去",
         "lvl"   : 40,
         "skill_name" : "佛法無邊"
 ]),
-([        "action" : "$N雙掌交錯，若有若無，一招"HIB"「誰入地獄」"NOR"，帶著勁風拍向$n的肩頭和前胸",
+([        "action" : "$N雙掌交錯，若有若無，一招"HIB"「誰入地獄」"NOR"，帶着勁風拍向$n的肩頭和前胸",
         "lvl"   : 50,
         "skill_name" : "誰入地獄"
 ]),
-([        "action" : "$N一招"HIM"「禪心永明」"NOR"，右手一掌擊出，緊接著右掌上一搭，擊向$n的$l",
+([        "action" : "$N一招"HIM"「禪心永明」"NOR"，右手一掌擊出，緊接着右掌上一搭，擊向$n的$l",
         "lvl"   : 60,
         "skill_name" : "禪心永明"
 ]),
-([        "action" : "$N雙手在空中齊劃，跟著雙掌齊推，一招"HIR"「我佛慈悲」"NOR"，一股排山倒海的掌力，直撲$n面門",
+([        "action" : "$N雙手在空中齊劃，跟着雙掌齊推，一招"HIR"「我佛慈悲」"NOR"，一股排山倒海的掌力，直撲$n面門",
         "lvl"   : 70,
         "skill_name" : "我佛慈悲"
 ]),

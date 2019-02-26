@@ -22,7 +22,7 @@ void create()
         set("gender", "男性" );
         set("nickname", HIW "聰辯老人" NOR);
         set("long", @LONG
-此人就是號稱聰辯老人的蘇星河，據說他能言
+此人就是號稱聰辯老人的蘇星河，據説他能言
 善辯，是武林中頗為傳神的一位智者，而他的
 武功也是無人能知。
 LONG );
@@ -89,8 +89,8 @@ LONG );
                 "捕風捉影" : (: ask_skill1 :),
                 // "攀陽邀月" : (: ask_skill2 :),
                 "如意六刀" : (: ask_skill3 :),
-                "秘密地道" : (: ask_me :),
-                "秘籍"     : (: ask_book :),
+                "祕密地道" : (: ask_me :),
+                "祕籍"     : (: ask_book :),
                 "任務" : (: ask_job() :),
                 "job" : (: ask_job() :),
                 "失敗" : (: ask_fail() :),
@@ -117,7 +117,7 @@ LONG );
                                 "閣下請留步，此處乃本門禁地，旁人"
                                 "不得入內。" NOR,
                 "refuse_carry": CYN "$N" CYN "對$n" CYN "喝道：你"
-                                "背負的是什麼人，還不快快給我放下"
+                                "揹負的是什麼人，還不快快給我放下"
                                 "！" NOR,
         ]));
 
@@ -141,7 +141,7 @@ void attempt_apprentice(object ob)
 
         if( query("combat_exp", ob)<200000 )
         {
-                command("say 你現在經驗尚淺，不能領會高深的武功，先鍛煉要緊。");
+                command("say 你現在經驗尚淺，不能領會高深的武功，先鍛鍊要緊。");
                 return;
         }
 
@@ -175,7 +175,7 @@ int permit_pass(object me, string dir)
 
         if( query("combat_exp", me)<300000 )
         {
-                command("say 你這種身手不要去那裡，好好學我們逍遙派武功。");
+                command("say 你這種身手不要去那裏，好好學我們逍遙派武功。");
                 return 0;
         }
 
@@ -215,7 +215,7 @@ mixed ask_skill1()
                 return "你的青雲手火候未到，還得多練習練習。";
 
         message_vision(HIY "$n" HIY "點了點頭，伸手將$N" HIY "招至"
-                       "身邊，在耳旁低聲細說良久，$N" HIY "聽"
+                       "身邊，在耳旁低聲細説良久，$N" HIY "聽"
                        "後會\n心的一笑，看來大有所悟。\n" NOR, me,
                        this_object());
 
@@ -257,7 +257,7 @@ mixed ask_skill2()
         if (me->query_skill("panyang-zhang", 1) < 60)
                 return "你的攀陽掌火候未到，還得多練習練習。";
 
-        message_vision(HIY "$n" HIY "略微點了點頭，說道：“我給你演示"
+        message_vision(HIY "$n" HIY "略微點了點頭，説道：“我給你演示"
                       "一遍，可瞧仔細了！”隨即\n一聲清嘯，雙掌紛飛貫"
                       "出，掌影重重疊疊虛實難辨，全全籠罩$N" HIY "全身"
                       "。\n" NOR, me, this_object());
@@ -300,7 +300,7 @@ mixed ask_skill3()
         if (me->query_skill("ruyi-dao", 1) < 100)
                 return "你的如意刀法火候未到，還得多練習練習。";
 
-        message_vision(HIY "$n" HIY "點點頭，微笑著示意讚許，伸手將$N"
+        message_vision(HIY "$n" HIY "點點頭，微笑着示意讚許，伸手將$N"
                        HIY "招到身前，低聲在$N" HIY "耳旁嘀\n咕了半天"
                        "。不時還拔出腰刀揮舞幾下，似乎是一種頗為神妙的"
                        "刀訣。\n" NOR, me, this_object());
@@ -328,11 +328,11 @@ string ask_book()
         if( !(fam=query("family", ob) )
                 || fam["family_name"] != "逍遙派")
         {
-                return "想要秘籍就得加入逍遙派。";
+                return "想要祕籍就得加入逍遙派。";
         }
 
         command("sigh");
-        return "本派的武功秘籍藏在一個很秘密的地方，我也沒去過。";
+        return "本派的武功祕籍藏在一個很祕密的地方，我也沒去過。";
 }
 string ask_me()
 {
@@ -377,7 +377,7 @@ int ask_job()
 
         if( query("family/family_name", me) != "逍遙派" )
            {
-                      message_vision("$N對著$n大喝一聲：本派弟子才能做任務。你是哪來的姦細？\n", this_object(), me);
+                      message_vision("$N對着$n大喝一聲：本派弟子才能做任務。你是哪來的奸細？\n", this_object(), me);
                       return 1;
             }
 
@@ -387,7 +387,7 @@ int ask_job()
 }
         if ((int)me->query_condition("menpai_busy"))
             {
-                      message_vision("$N對著$n搖了搖頭說：你辦事不利,等會再來!\n", this_object(), me);
+                      message_vision("$N對着$n搖了搖頭説：你辦事不利,等會再來!\n", this_object(), me);
                       return 1;
             }
 
@@ -499,8 +499,8 @@ void destroying(object obj, object ob, object me)
       return;
       }
    command("pat"+query("id", me));
-   message_vision(HIY"$N對$n說道：你這次做得極為出色！我就指點你兩手功夫吧.\n"NOR,ob, me);
-                  message_vision(HIC "\n由于$N成功的找回七寶指環，被獎勵：\n"
+   message_vision(HIY"$N對$n説道：你這次做得極為出色！我就指點你兩手功夫吧.\n"NOR,ob, me);
+                  message_vision(HIC "\n由於$N成功的找回七寶指環，被獎勵：\n"
                 + chinese_number(exp / 3) + "點實戰經驗，\n"
                + chinese_number(pot / 2) + "點潛能，\n"
                 + chinese_number(gj) + "點功績作為答謝。\n" NOR, me);

@@ -41,7 +41,7 @@ int perform(object me, object target)
                 return notify_fail("你現在的真氣不足，難以施展" PO "。\n");
 
         if (! living(target))
-                return notify_fail("對方都已經這樣了，用不著這麼費力吧？\n");
+                return notify_fail("對方都已經這樣了，用不着這麼費力吧？\n");
 
         msg = HIG "$N" HIG "身形急轉，宛若鬼魅，悄然施出藍砂手絕技「" NOR +
               HIB "破靛神砂" NOR + HIG "」，朝$n" HIG "胸前大穴抓落！\n" NOR;
@@ -62,7 +62,7 @@ int perform(object me, object target)
         } else
         {
                 msg += CYN "$n" CYN "見$N"
-                       CYN "來勢洶湧，奮力格擋，終于化解開來。\n" NOR;
+                       CYN "來勢洶湧，奮力格擋，終於化解開來。\n" NOR;
         }
         message_combatd(msg, me, target);
 
@@ -80,5 +80,5 @@ string final(object me, object target, int damage)
 
         return HIR "$n" HIR "閃避不及，登被$N" HIR
                "抓出五道血痕，傷口竟滲出黑血，隱隱"
-               "發著磷光。\n" NOR;
+               "發着磷光。\n" NOR;
 }

@@ -24,8 +24,8 @@ void create()
 {
         set("short","大海");
         set("long", @LONG
-這是遼闊的海面，海風「呼呼」在你耳邊吹過，海浪一個接著一個
-向你潑打過來，突然一個巨浪打來幾乎把你陷入旋渦中，你還是盡快離
+這是遼闊的海面，海風「呼呼」在你耳邊吹過，海浪一個接着一個
+向你潑打過來，突然一個巨浪打來幾乎把你陷入旋渦中，你還是儘快離
 開這兒吧。
 LONG
         );
@@ -76,7 +76,7 @@ int do_practice(string arg)
 
         if( me->is_busy() )
         {
-                tell_object(me, "你現在正忙著呢。\n");
+                tell_object(me, "你現在正忙着呢。\n");
                 return 1;
         }
         if( me->is_fighting() )
@@ -116,7 +116,7 @@ int do_practice(string arg)
                 times = 1;
                 multiple="";
         }
-        else multiple="反復";
+        else multiple="反覆";
         switch(skillarg) {
                 case "blade" :
                 case "club"  :
@@ -129,7 +129,7 @@ int do_practice(string arg)
                 case "parry" : str = "奮力拚博"; break;
                 case "dodge" : str = "縱閃跳躍"; break;
         }                
-        message_vision("$N在海浪中" + str + multiple + "練習著" + to_chinese(skillarg) + "。\n", me);
+        message_vision("$N在海浪中" + str + multiple + "練習着" + to_chinese(skillarg) + "。\n", me);
 
         for(times; times > 0; times--)
         {
@@ -151,13 +151,13 @@ int do_practice(string arg)
                         for(int i = 0; i < sizeof(inv); i++)
                         {
                                 if( userp(inv[i]) )
-                                        inv[i]->receive_wound("qi",50+query("max_qi", inv[i]),"掉進海裡淹死了");
+                                        inv[i]->receive_wound("qi",50+query("max_qi", inv[i]),"掉進海里淹死了");
                                 else destruct(inv[i]);
                         }
 
                         me->unconcious();
                         me->move("/d/shenlong/beach");
-                        message("vision","你發現一個渾身水淋淋的家伙被海水沖上岸來，不由得走近一看，原來是"+me->name()+"\241\243\n", environment(me), ({me}));
+                        message("vision","你發現一個渾身水淋淋的傢伙被海水衝上岸來，不由得走近一看，原來是"+me->name()+"\241\243\n", environment(me), ({me}));
                         return 1;
                 }
         }

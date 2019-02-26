@@ -3,7 +3,7 @@
 inherit NPC;
 #include <ansi.h>
 int ask_jiuyuan();
-#define QUESTDIR "quest/射雕英雄傳/"
+#define QUESTDIR "quest/射鵰英雄傳/"
 
 void greeting(object me);
 
@@ -12,11 +12,11 @@ void create()
 	set_name("郭嘯天", ({ "guo xiaotian", "guo", "xiaotian" }) );
 	set("gender", "男性" );
 	set("title", HIC"大俠"NOR);
-	set("nickname", HIC"北□郭靖之父"NOR);
+	set("nickname", HIC"北俠郭靖之父"NOR);
 	set("age", 28);
 	set("long",
 "他身材魁梧，濃眉大眼。\n"
-"他是樑山泊好漢地佑星賽仁貴郭盛的後代。\n");
+"他是梁山泊好漢地佑星賽仁貴郭盛的後代。\n");
 	set("str", 25);
 	set("dex", 25);
 	set("con", 25);
@@ -58,7 +58,7 @@ void create()
 	]));
 	set("chat_chance", 10);
         set("chat_msg", ({
-		"村裡不怎麼的出現大批金兵，這到底是發生了什麼事情、、、\n",
+		"村裏不怎麼的出現大批金兵，這到底是發生了什麼事情、、、\n",
 		"內子和弟媳快要生了，這節骨眼上怎麼會發生這種事情呢、、、\n",
         }) );
      setup();
@@ -91,7 +91,7 @@ int ask_jiuyuan()
   if(me->query(QUESTDIR+"time") && time()-me->query(QUESTDIR+"time")<86400)
 	{
 	  command("shake "+me->query("id"));
-	  command("say 今天先幫到這裡吧，明天吧。");
+	  command("say 今天先幫到這裏吧，明天吧。");
 	  return 1;
   }
    if(me->query(QUESTDIR+"combat_exp") && me->query("combat_exp")-me->query(QUESTDIR+"combat_exp")<100000)

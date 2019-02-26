@@ -10,15 +10,15 @@ void create()
 {
         set("short","山洪瀑布");
         set("long", @LONG
-這裡是一處峽谷，每年雨季山洪爆發時就形成了一處蔚為壯觀的
-瀑布。傳說當年神雕俠楊過就是在這裡練成絕世的玄鐵劍法的。現在
+這裏是一處峽谷，每年雨季山洪爆發時就形成了一處蔚為壯觀的
+瀑布。傳説當年神鵰俠楊過就是在這裏練成絕世的玄鐵劍法的。現在
 人去谷空，只剩下空寥的山谷和奔騰的洪水(hongshui)。看來倒是個
 隱居的好去處。
 LONG );
         set("outdoors", "huashan");
         set("item_desc", ([
                 "hongshui" : (: look_hongshui :),
-                "stone"    : NOR + WHT "一塊天然的巨石，被洪水無情地沖蝕著。\n" NOR,
+                "stone"    : NOR + WHT "一塊天然的巨石，被洪水無情地衝蝕着。\n" NOR,
         ]));
         set("exits",([ /* sizeof() == 1 */
                 "southwest"     : __DIR__"shaluo",
@@ -36,8 +36,8 @@ string look_hongshui()
 {
         return @DESC
 這是一股奔騰不息的洪水，水中隱隱有個東西在發光，但你定睛
-仔細一看，發現那只不過是水面反射的日光罷了。順著洪水俯視，
-只見瀑布底矗立著一塊天然的巨石（stone）， 這個瀑布似乎可
+仔細一看，發現那隻不過是水面反射的日光罷了。順着洪水俯視，
+只見瀑布底矗立着一塊天然的巨石（stone）， 這個瀑布似乎可
 以穿(cross)過去。
 DESC ;
 }
@@ -47,7 +47,7 @@ int do_jump(string arg)
         object me = this_player();
 
         if (me->is_busy() || me->is_fighting())
-              return notify_fail("你忙完了再說吧！\n");
+              return notify_fail("你忙完了再説吧！\n");
     
         if (! arg || arg != "stone")
               return notify_fail("你要往哪兒跳？\n");

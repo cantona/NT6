@@ -6,7 +6,7 @@ void create()
         set_name(HIB"黑熊"NOR, ({ "hei xiong", "xiong" }) );
         set("race", "野獸");
         set("age", 4);
-        set("long", "一只高大的黑熊，非常雄壯。\n");
+        set("long", "一隻高大的黑熊，非常雄壯。\n");
         set("attitude", "peaceful");
  
         set("str", 30);

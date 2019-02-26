@@ -4,7 +4,7 @@ void create()
 {
         set("short", "練武場");
         set("long", @LONG
-這裡就是藥王谷的弟子平時練功的地方，不少弟子在這裡打拳
+這裏就是藥王谷的弟子平時練功的地方，不少弟子在這裏打拳
 踢腿。正中是一副一人多高的梅花樁(zhuang)，你可以跳(jump)
 上去走樁練習輕功。
 LONG
@@ -30,7 +30,7 @@ int do_jump(string arg)
 
         if(arg != "zhuang" && arg != "梅花樁")
         {
-                write("你要跳到哪裡？\n");
+                write("你要跳到哪裏？\n");
                 return 1;
         }
 

@@ -9,7 +9,7 @@ int main(object me, string str)
                 return notify_fail("你現在正忙。\n");
 
         if( !wizardp(me) && (time()-query_temp("last_tasks", me)<5) )
-                return notify_fail("系統氣喘噓地嘆道：慢慢來 ....\n");  
+                return notify_fail("系統氣喘噓地歎道：慢慢來 ....\n");  
 
         if( query("jing", me)<2 )
                 return notify_fail("你現在精神狀態不佳，還是等會再查吧。\n");

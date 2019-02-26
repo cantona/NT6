@@ -7,7 +7,7 @@ void create()
         set_name("侍者", ({ "waiter","zhe"}) );
         set("gender", "男性" );
         set("age", 14);
-        set("long", "一個身著黃衣的漢子。\n");
+        set("long", "一個身着黃衣的漢子。\n");
         set("shen_type", 1);
         set("combat_exp", 3000);
         set("str", 20);

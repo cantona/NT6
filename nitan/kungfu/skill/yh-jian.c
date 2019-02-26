@@ -2,7 +2,7 @@
 inherit SKILL;
 
 string *dodge_msg = ({
-        "突然之間，微風吹過，$n身影一花，仿佛沒有任何動作，卻躲過了$N這一招。\n",
+        "突然之間，微風吹過，$n身影一花，彷彿沒有任何動作，卻躲過了$N這一招。\n",
         "$n手掌一豎，$N覺得一股勁風撲面而來不禁眨了一下眼，再看時，$n已經換了個位置。\n",
         "$n手指一點，$N全身一麻，$n慢慢踱到一旁。\n",
         "$n身形飄忽，有如風中柳絮，飄了起來，飄到$N的身後，躲過了$N這一招。\n",
@@ -15,7 +15,7 @@ string *finger_name = ({ "左手中指", "左手無名指", "左手食指",
                          "右手中指", "右手無名指", "右手食指", }); 
 
 mapping *action = ({
-([          "action":"突然之間，微風輕拂，$N向後滑出丈余，立時又回到了原地", // 描述
+([          "action":"突然之間，微風輕拂，$N向後滑出丈餘，立時又回到了原地", // 描述
             "force" : 1600,                                                   // 攻擊力
             "attack": 400,                                                    // 命中點
             "parry" : 300,                                                         // 如果該找可以做招架則招架點數
@@ -35,7 +35,7 @@ mapping *action = ({
             "skill_name" : "黯然神傷",
             "damage_type":  "刺傷"
 ]),
-([          "action":"驀地裡$N猱身而上，躥到$n的身後，又躍回原地",
+([          "action":"驀地裏$N猱身而上，躥到$n的身後，又躍回原地",
             "force" : 2250,
             "attack": 600,
             "parry" : 350,
@@ -65,7 +65,7 @@ mapping *action = ({
             "skill_name" : "風中飄絮",
             "damage_type":  "刺傷"
 ]),
-([          "action":"$N一聲冷笑，驀地裡疾沖上前，一瞬之間，與$n相距已不到一尺，$w隨即遞出",
+([          "action":"$N一聲冷笑，驀地裏疾衝上前，一瞬之間，與$n相距已不到一尺，$w隨即遞出",
             "force" : 2600,
             "attack": 700,
             "parry" : 400,
@@ -75,7 +75,7 @@ mapping *action = ({
             "skill_name" : "迎風而上",
             "damage_type":  "刺傷"
 ]),
-([          "action":"$N喝道：“好！”，便即拔出$w，反手刺出，跟著轉身離去",
+([          "action":"$N喝道：“好！”，便即拔出$w，反手刺出，跟着轉身離去",
             "force" : 3000,
             "attack": 900,
             "parry" : 450,
@@ -105,7 +105,7 @@ mapping *action = ({
             "skill_name" : "進退兩難",
             "damage_type":  "刺傷"
 ]),
-([          "action":"$N驀地沖到$n面前，手中$w直刺$n右眼！$n慌忙招架，不想$N的$w突然轉向",
+([          "action":"$N驀地衝到$n面前，手中$w直刺$n右眼！$n慌忙招架，不想$N的$w突然轉向",
             "force" : 4100,
             "attack": 1300,
             "parry" : 550,
@@ -125,7 +125,7 @@ mapping *action = ({
             "skill_name" : "天外飛仙",
             "damage_type":  "刺傷"
 ]),
-([          "action":"$N腰枝猛擺，$n眼前仿佛突然出現了七八個$N，七八只$w一起刺向$n",
+([          "action":"$N腰枝猛擺，$n眼前彷彿突然出現了七八個$N，七八隻$w一起刺向$n",
             "force" : 4800,
             "attack": 1400,
             "parry" : 600,
@@ -149,7 +149,7 @@ int valid_enable(string usage)
 // 返回1表示該找可以一招兩式
 int double_attack() { return 1; }
 
-// 這個不用說了吧，是yanjiu和learn的時候調用的函數
+// 這個不用説了吧，是yanjiu和learn的時候調用的函數
 int valid_learn(object me)
 {
         if (wiz_level(me)==0)
@@ -242,12 +242,12 @@ mixed valid_damage(object ob, object me, int damage, object weapon)
                                             "從未離開。\n" NOR]);
                         break;
                 case 2:
-                        result += (["msg" : HIR "$n" HIR "身形飄忽，有如柳絮，隨風飄盪"
+                        result += (["msg" : HIR "$n" HIR "身形飄忽，有如柳絮，隨風飄蕩"
                                             "，飄到$N" HIR "的身後，躲過了$N" HIR "這"
                                             "一招。\n" NOR]);
                         break;
                 default:
-                        result += (["msg" : HIR "突然間白影急晃，$n" HIR "向後滑出丈余"
+                        result += (["msg" : HIR "突然間白影急晃，$n" HIR "向後滑出丈餘"
                                             "，立時又回到了原地，躲過了$N" HIR "這一招"
                                             "。\n" NOR]);
                         break;
@@ -260,7 +260,7 @@ mixed valid_damage(object ob, object me, int damage, object weapon)
                 {
                 case 0:
                         result = HIY "$N" HIY "眼睛一花，$n" HIY "已沒了蹤影"
-                                 "。可是$N" HIY "精通易理，絲毫不為所亂，盡自"
+                                 "。可是$N" HIY "精通易理，絲毫不為所亂，儘自"
                                  "出招。\n" NOR;
                         break;
                 case 1:
@@ -269,12 +269,12 @@ mixed valid_damage(object ob, object me, int damage, object weapon)
                                  "實。\n" NOR;
                         break;
                 case 2:
-                        result = HIY "$n" HIY "身形飄忽，有如柳絮，隨風飄盪，"
+                        result = HIY "$n" HIY "身形飄忽，有如柳絮，隨風飄蕩，"
                                  "可是$N" HIY "理也不理，連續數招徑直攻出。\n"
                                  NOR;
                         break;
                 default:
-                        result = HIY "突然間白影急晃，$n" HIY "向後滑出丈余，"
+                        result = HIY "突然間白影急晃，$n" HIY "向後滑出丈餘，"
                                  "可是$N" HIY "不假思索，追身攻上，更是巧妙無"
                                  "方。\n" NOR;
                         break;
@@ -327,9 +327,9 @@ mixed hit_ob(object me, object victim, int damage_bonus, int i, int attack_time)
            || me->query_skill("yh-jian", 1) < 120)
                 return 0;
 
-        // 避免在使用Pfm時訊息重復
+        // 避免在使用Pfm時訊息重複
         if( !query_temp("yh-jian/hit_msg", me) )
-                message_vision(HIW "\n霎時間只見$N" HIW "鬼魅般揉身沖上，" + name +
+                message_vision(HIW "\n霎時間只見$N" HIW "鬼魅般揉身衝上，" + name +
                                HIW "指指點點，宛如夜雨流星，連續刺向$n" HIW "！\n"
                                NOR, me, victim);
 

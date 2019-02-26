@@ -5,7 +5,7 @@ void create()
 {
         set("short", "山崖");
         set("long", @LONG
-這裡是玉女祠山下的陡峭山崖，離前邊的山崖比較遠，看來想要
+這裏是玉女祠山下的陡峭山崖，離前邊的山崖比較遠，看來想要
 爬過去並不容易。
 LONG );
         set("outdoors", "huashan");
@@ -22,12 +22,12 @@ int do_climb()
         object me = this_player();
         int n = me->query_skill("dodge", 1);
 
-        message_vision( HIY "$N" HIY "深吸了一口氣，慢慢沿著山壁向上"
+        message_vision( HIY "$N" HIY "深吸了一口氣，慢慢沿着山壁向上"
                         "爬。\n" NOR, this_player());
         if (n > 100)
         {
                 message_vision(HIC "$N" HIC "爬了半天，手肘膝蓋都已"
-                               "被堅石割得鮮血淋漓，終于爬上了上面的"
+                               "被堅石割得鮮血淋漓，終於爬上了上面的"
                                "山崖。\n" NOR, this_player());
 
                 me->move(__DIR__"kuihua_1");

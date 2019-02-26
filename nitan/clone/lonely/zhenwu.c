@@ -14,8 +14,8 @@ void create()
                 destruct(this_object());
         else {
                 set("long", @LONG
-這是一柄寒光閃閃的寶劍，昔年武當張真人持此劍盪妖除魔，掃盡群醜。
-江湖宵小，見此劍無不心盪神搖。
+這是一柄寒光閃閃的寶劍，昔年武當張真人持此劍蕩妖除魔，掃盡羣醜。
+江湖宵小，見此劍無不心蕩神搖。
 LONG );
                 set("unit", "把");
                 set("value", 800000);
@@ -115,7 +115,7 @@ void check_npc(object me, object env)
                 if( query("shen", ob[i])>10000 && !userp(ob[i]) )
                 {
                         message_vision(random(2) ? "$N讚道：好劍，好劍！\n" :
-                                                   "$N嘆道：見此劍真是如見張真人啊！\n",
+                                                   "$N歎道：見此劍真是如見張真人啊！\n",
                                        ob[i]);
                 } else
                 if( query("shen", ob[i])<-10 && !userp(ob[i]) )
@@ -126,7 +126,7 @@ void check_npc(object me, object env)
                         if (ob_exp > my_exp * 2 || ob_exp > 1500000)
                         {
                                 message_vision(random(2) ? "$N對$n冷冷道：滾開！少在我面前賣弄。\n" :
-                                                           "$N一聲冷笑，對$n道：你以為你是誰？張三豐？哈哈哈哈！\n",
+                                                           "$N一聲冷笑，對$n道：你以為你是誰？張三丰？哈哈哈哈！\n",
                                                ob[i], me);
                         } else
                         if (ob_exp > 20000)
@@ -143,7 +143,7 @@ void check_npc(object me, object env)
                         } else
                         {
                                 message_vision(random(2) ? "$N撲通一聲，癱倒在地，雙手急搖道：“不是我！真的不是我！”\n" :
-                                                           "$N一個哆嗦，結結巴巴的什麼也說不上來。\n",
+                                                           "$N一個哆嗦，結結巴巴的什麼也説不上來。\n",
                                                ob[i], me);
                                 if( !query("no_fight", env) )
                                         ob[i]->unconcious();
@@ -225,7 +225,7 @@ void return_to_zhang()
                                "$N將劍交給武當弟子帶走。\n", me);
         } else
         {
-                message("visoin", "忽然一個武當弟子走了過來，撿起真武劍，嘆了口氣，搖搖頭走了。\n",
+                message("visoin", "忽然一個武當弟子走了過來，撿起真武劍，歎了口氣，搖搖頭走了。\n",
                         me);
         }
 

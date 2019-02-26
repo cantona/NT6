@@ -35,14 +35,14 @@ int main(object me, string arg)
                 return notify_fail("你還是專心拱豬吧！\n");
 
         if (me->is_busy())
-                return notify_fail("你現在正忙著呢。\n");
+                return notify_fail("你現在正忙着呢。\n");
 
         if( t == query_temp("time/research", me) )
                 return notify_fail("你剛剛才研究過（如果你要連續研究，可以指明"
                                    "研究的次數）。\n");
 
         if( query("no_fight", where) && query("doing", me) != "scheme" )
-                return notify_fail("這裡太紛雜，你沒法作研究。\n");
+                return notify_fail("這裏太紛雜，你沒法作研究。\n");
 
         if (! arg)
                 return notify_fail("research|yanjiu <技能> <次數>\n");
@@ -112,7 +112,7 @@ int main(object me, string arg)
         // Lookup skills for relation skills
 
         write(HIG "你開始研究" + chinese_number(times) + "次有關「" +
-              to_chinese(skill) + HIG "」的奧秘。\n" NOR);
+              to_chinese(skill) + HIG "」的奧祕。\n" NOR);
         message("vision", me->name() + "在冥神思索。\n", where, ({ me }));
 
         // calculate the basic effect
@@ -201,7 +201,7 @@ int main(object me, string arg)
         if( query("special_skill/wisdom", me) )
                 improve += improve * 50 / 100;
 
-        // 轉世技能群邪辟易提升研究效果
+        // 轉世技能羣邪辟易提升研究效果
         if( query("special_skill/nopoison", me) )
                 improve += improve * 50 / 100;
 
@@ -338,7 +338,7 @@ int help(object me)
 這個指令可以讓你研究一種技能的疑難問題，當你師傅這項技能的級
 別不如你的時候，可以通過研究自己來提高，進度的速度要和你對這
 項技能的掌握程度和相關技能的熟悉情況相關，當然悟性也會起的一
-定的作用，但是關鍵還是看技能的水平。一般來說相關的技能越多越
+定的作用，但是關鍵還是看技能的水平。一般來説相關的技能越多越
 好，研究起來可能會事半功倍，如果會得太少，可能恰恰相反。
 
 其他相關指令：apprentice, practice, skills, study, learn

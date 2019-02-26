@@ -3,7 +3,7 @@
 inherit SKILL;
 
 mapping *action = ({
-([      "action": "$N右手微抬，一招「長空萬裡」，手中$w筆直刺向$n",
+([      "action": "$N右手微抬，一招「長空萬里」，手中$w筆直刺向$n",
         "force" : 45,
         "dodge" : 35,
         "parry" : 12,
@@ -35,7 +35,7 @@ mapping *action = ({
         "lvl"   : 80,
         "damage_type": "抽傷"
 ]),
-([      "action":"$N飛身一躍而起，$w宛如遊龍，破空而下，攻向$n",
+([      "action":"$N飛身一躍而起，$w宛如游龍，破空而下，攻向$n",
         "force" : 210,
         "dodge" : 65,
         "parry" : 36,

@@ -27,7 +27,7 @@ int perform(object me, object target)
         
         //By Dumbness, 設置了no_drift屬性的房間禁止飛入與飛出
         if( query("no_drift", environment(me)) )
-                return notify_fail("這裡禁止使用天龍之翼。\n");
+                return notify_fail("這裏禁止使用天龍之翼。\n");
 
         if( query("jing", me)<300 )
                 return notify_fail("你的精神不好！\n");
@@ -42,10 +42,10 @@ int perform(object me, object target)
                 return notify_fail("鬼魂無法使用天龍之翼！\n");
 
         if( me->in_prison())
-                return notify_fail("監獄裡無法使用天龍之翼！\n");
+                return notify_fail("監獄裏無法使用天龍之翼！\n");
 
         if( query("trds", environment(me)) )
-                return notify_fail("屠人場裡無法使用天龍之翼！\n");     
+                return notify_fail("屠人場裏無法使用天龍之翼！\n");     
         
         if((int) me->query_skill("martial-cognize",1) < 300)
                 return notify_fail("你的武學修養不夠高深！\n");
@@ -57,7 +57,7 @@ int perform(object me, object target)
                 if (userp(inv[i]))
                         return notify_fail("你背的是誰？背一個大活人還怎麼飛？\n");
                 if (inv[i]->is_muxiang())
-                        return notify_fail("你又不是飛機，背著這麼大一個木箱，能飛得動麼？\n");
+                        return notify_fail("你又不是飛機，揹着這麼大一個木箱，能飛得動麼？\n");
         }
 
         inv = 0;
@@ -103,7 +103,7 @@ void select_target(object me, string name)
         //By Dumbness, 設置了no_drift屬性的房間禁止飛入與飛出
         if( query("no_drift", environment(me)) )
         {
-                write("這裡禁止使用太龍之翼。\n");
+                write("這裏禁止使用太龍之翼。\n");
                 return;
         }
 
@@ -120,10 +120,10 @@ void select_target(object me, string name)
                 write("鬼魂不能使用天龍之翼！\n");
                 return;
         } else if( me->in_prison()) {
-                write("監獄裡不能使用天龍之翼！\n");
+                write("監獄裏不能使用天龍之翼！\n");
                 return;
         }else if( query("trds", environment(me))){
-                write("屠人場裡不能使用天龍之翼！\n");
+                write("屠人場裏不能使用天龍之翼！\n");
                 return;
         }
 
@@ -153,7 +153,7 @@ void select_target(object me, string name)
                 return;
         }
 
-        message_vision( HIY "$N一陣長嘯，渾身彌漫一陣金色雲霧，逐漸在後背匯聚，形成一對金色翅膀，似乎要振翅高飛 ....\n" NOR, me);
+        message_vision( HIY "$N一陣長嘯，渾身瀰漫一陣金色雲霧，逐漸在後背匯聚，形成一對金色翅膀，似乎要振翅高飛 ....\n" NOR, me);
 
         //if( random(ob->query("max_jingli")) > me->query("max_jingli")) {
         //Modified by Dumbness for use effect jingli as conform condition
@@ -162,9 +162,9 @@ void select_target(object me, string name)
                 return;
         }
 
-        /* Sigh, 失敗。鑒于目前華夏已經是一個運行“穩定”地MUD，就算是設計上的失敗，也已經難以
-        從本質上作出有效的控制，多次討論並參考一些玩家意見後對天龍之翼地控制嘗試迫于阻力取消，
-        原因很大程度上源于玩家的習慣性思維方式很難改變。至此宣布所有有關解體的設想與構思也一並
+        /* Sigh, 失敗。鑑於目前華夏已經是一個運行“穩定”地MUD，就算是設計上的失敗，也已經難以
+        從本質上作出有效的控制，多次討論並參考一些玩家意見後對天龍之翼地控制嘗試迫於阻力取消，
+        原因很大程度上源於玩家的習慣性思維方式很難改變。至此宣佈所有有關解體的設想與構思也一併
         取消，本巫師不再對此作任何嘗試。
         //Added by Dumbness for contract with level of skill which named 'martial-cognize'
         if( (random(( (int) me->query_skill("martial-cognize",1)-250)) > 50) 
@@ -176,7 +176,7 @@ void select_target(object me, string name)
         delete_temp("drift_fail_times", me);
         */
         
-        message( "vision", HIY "\n" + me->name() + "輕輕展開雙臂，背後的金色翅膀溫柔的卷起一陣暖風"
+        message( "vision", HIY "\n" + me->name() + "輕輕展開雙臂，背後的金色翅膀温柔的捲起一陣暖風"
                 + "，只見" + me->name() + "緩緩升空，瞬間消失得無影無蹤！\n\n" NOR, environment(me), ({ me }) );
         me->move(environment(ob));
         message( "vision", HIY "\n一陣微風吹過，" + me->name() + "宛若天神般緩緩而降，金色的翅膀光芒四射。\n\n" NOR,

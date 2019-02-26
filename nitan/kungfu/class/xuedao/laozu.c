@@ -31,7 +31,7 @@ void create()
         object ob;
         set_name("血刀老祖", ({ "xuedao laozu", "xuedao", "laozu", "xue", "lao" }));
         set("long", @LONG
-這喇嘛身著黃袍，年紀極老，尖頭削耳，臉上都是
+這喇嘛身着黃袍，年紀極老，尖頭削耳，臉上都是
 皺紋。他就是血刀門第四代掌門。
 LONG);
         set("gender", "男性");
@@ -121,7 +121,7 @@ LONG);
                 "血刀"      : (: ask_dao :),
                 "血刀經"    : (: ask_book :),
                 "密道"      : (: ask_midao :),
-                "秘道"      : (: ask_midao :),
+                "祕道"      : (: ask_midao :),
                 // "浴血重生"  : (: ask_skill1 :),
                 "金剛印"    : (: ask_skill2 :),
                 "修羅降世"  : (: ask_skill3 :),
@@ -196,13 +196,13 @@ void attempt_apprentice(object ob)
 
         if( query("shen", ob)>-50000 )
         {
-                command("say 你是不是向著俠義道，連殺人都不會！\n");
+                command("say 你是不是向着俠義道，連殺人都不會！\n");
                 return;
         }
 
         if ((int)ob->query_skill("lamaism", 1) < 140)
         {
-                command("say 雖說咋們平時燒殺搶掠，但總歸也算是佛門弟子。\n");
+                command("say 雖説咋們平時燒殺搶掠，但總歸也算是佛門弟子。\n");
                 command("say 待你的密宗佛法提高後再來找我吧。\n");
                 return;
         }
@@ -221,7 +221,7 @@ void attempt_apprentice(object ob)
         }
 
         command("sneer");
-        command("say 那你以後就跟著老夫好了。");
+        command("say 那你以後就跟着老夫好了。");
         command("recruit "+query("id", ob));
 }
 
@@ -255,7 +255,7 @@ mixed ask_skill1()
         message_vision(HIY "$n" HIY "微微一笑，當下也不答話，只是伸出右手，輕輕放"
                        "在\n$N" HIY "胸口。正當$N" HIY "疑惑間，卻見$n" HIY "掌勁"
                        "輕吐，$N" HIY "頓時全身\n一震，如遭電擊，各處經脈無不舒暢"
-                       "，說不出的受用。\n" NOR, me, this_object());
+                       "，説不出的受用。\n" NOR, me, this_object());
 
         command("sneer");
         command("say 明白了麼？");
@@ -303,10 +303,10 @@ mixed ask_skill2()
                 return "等你把大手印練熟了再來找老夫。";
 
         message_vision(HIY "$n" HIY "冷笑一聲，上下打量了$N" HIY "一番，點了點頭"
-                       "。當下凝神\n沉履，面容莊重，雙手攜著勁風奮力向$N" HIY "面前"
+                       "。當下凝神\n沉履，面容莊重，雙手攜着勁風奮力向$N" HIY "面前"
                        "的一座舍利佛塔\n拍落，頓時只聽轟然一聲悶響，佛塔內的香灰"
-                       "被$n" HIY "的掌\n力激盪得四處飛揚，塵煙彌漫，待得煙消雲散"
-                       "後，$N" HIY "這才發現\n那座舍利佛塔上豁然嵌著一雙掌印。\n"
+                       "被$n" HIY "的掌\n力激盪得四處飛揚，塵煙瀰漫，待得煙消雲散"
+                       "後，$N" HIY "這才發現\n那座舍利佛塔上豁然嵌着一雙掌印。\n"
                        NOR, me, this_object());
 
         command("nod");
@@ -455,7 +455,7 @@ mixed ask_skill5()
                 return "等你把不動明王劍練熟了再來找老夫。";
 
         message_vision(HIY "$n" HIY "對$N" HIY "微微一笑，隨即伸出右手，中食二指"
-                       "並攏，捏作\n劍訣，“嗤”的一聲空點而出，霎時破空之聲驟響"
+                       "併攏，捏作\n劍訣，“嗤”的一聲空點而出，霎時破空之聲驟響"
                        "，一股氣勁\n從指尖迸發，將$N" HIY "所穿戴的僧袍刺透出一個"
                        "小孔。\n" NOR, me, this_object());
 
@@ -504,8 +504,8 @@ mixed ask_skill6()
         if (me->query_skill("xuedao-daofa", 1) < 120)
                 return "等你把血刀大法練熟了再來找老夫。";
 
-        message_vision(HIY "$n" HIY "獰笑一聲，對$N" HIY "說道：“乖徒兒，老夫這"
-                       "就給你演示\n一遍，看好了！”$n" HIY "說完便抽出腰間血刀，"
+        message_vision(HIY "$n" HIY "獰笑一聲，對$N" HIY "説道：“乖徒兒，老夫這"
+                       "就給你演示\n一遍，看好了！”$n" HIY "説完便抽出腰間血刀，"
                        "陡然一聲大\n喝，將手中的血刀舞動如輪，頓時刀鋒激起層層血"
                        "浪逼向$N" HIY "而\n去，直將看得$N" HIY "目瞪口呆。\n" NOR,
                        me, this_object());
@@ -661,7 +661,7 @@ mixed ask_skill9()
         if (me->query_skill("xuedao-daofa", 1) < 180)
                 return "等你把血刀大法練熟了再來找老夫。";
 
-        message_vision(HIY "$n" HIY "望著$N" HIY "幹笑了數聲，說道：“想不到居然那麼"
+        message_vision(HIY "$n" HIY "望着$N" HIY "乾笑了數聲，説道：“想不到居然那麼"
                        "快就有\n人能夠繼承我這一招，我血刀門真是後繼有人啊。今日我便"
                        "傳\n你這式「噬血穹蒼」絕技。”話音剛落，隨即只見$n" HIY "仰\n"
                        "天一聲狂哮，手中血刀一振，頓時迸發出漫天血光，騰起無邊\n殺意"
@@ -709,14 +709,14 @@ mixed ask_midao()
 
         me = this_player();
         if( query("family/family_name", me) != "血刀門" )
-                return "你他奶奶的，嘀嘀咕咕到底要說什麼？";
+                return "你他奶奶的，嘀嘀咕咕到底要説什麼？";
 
         command("whisper"+query("id", me)+"你既然已經入我門來，以"
                 "後若\n要去中原辦事，即可用我門血刀先輩們留下的密道，你"
                 "可到山\n外雜物堆處進入(" NOR + HIY "enter mash" NOR + WHT
                 ")，然後便能到達中原揚州。回來\n是找我血刀伏在中原的鐵匠"
                 "，接口密語是" NOR + HIR "血海無邊" NOR + WHT "。\n");
-        return "此秘密不可泄露于他人，否則天誅地滅！";
+        return "此祕密不可泄露於他人，否則天誅地滅！";
 }
 
 mixed ask_dao()
@@ -751,7 +751,7 @@ int cost;
    if( query("family/first", me) ) cost = 250; 
              else cost = 500; 
              if( query("family/gongji", me) < cost ) 
-                     return "你為我血刀門效力還不夠，等你擁有足夠的師門功績再來兌換血刀使用時間吧。";
+                     return "你為我血刀門效力還不夠，等你擁有足夠的師門功績再來兑換血刀使用時間吧。";
         if( query("shen", me)>-50000 )
                 return "你邪氣不重，使用不了血刀。";
 
@@ -766,7 +766,7 @@ int cost;
         }
 
         if (owner == me)
-                return "他奶奶的，本門的血刀現在不是你拿著在用嗎？";
+                return "他奶奶的，本門的血刀現在不是你拿着在用嗎？";
 
         if (objectp(owner) && owner != this_object())
         {
@@ -800,7 +800,7 @@ mixed ask_book()
         me = this_player();
 
         if( query("family/family_name", me) != "血刀門" )
-                return "哪裡來的野種，竟敢打我血刀門的主意？";
+                return "哪裏來的野種，竟敢打我血刀門的主意？";
 
         if( query("family/master_id", me) != query("id") )
                 return "你又不是老夫的弟子，跟老夫羅嗦些什麼？";
@@ -825,12 +825,12 @@ mixed ask_book()
         }
 
         if (owner == me)
-                return "我血刀門的寶經不就是你拿著在看嗎？";
+                return "我血刀門的寶經不就是你拿着在看嗎？";
 
         if (objectp(owner) && owner != this_object())
         {
                 if (! owner->is_character())
-                        return "…嗯…血刀經現在不在我手裡。";
+                        return "…嗯…血刀經現在不在我手裏。";
 
                 if( query("family/family_name", owner) == "血刀門" )
                         return "血刀經現在暫時被你同門的"+query("name", owner)+
@@ -840,7 +840,7 @@ mixed ask_book()
                                "手中，你去把它奪回來吧！";
         }
         ob->move(this_object());
-        message_vision(CYN "$N" CYN "點頭道：這本血刀經你就拿去看吧，可要仔細閱讀。\n" NOR,
+        message_vision(CYN "$N" CYN "點頭道：這本血刀經你就拿去看吧，可要仔細閲讀。\n" NOR,
                        this_object(), me);
         // command("give xuedao book to " + me->query("id"));
         ob->move(me, 1);
@@ -873,7 +873,7 @@ int accept_ask(object me, string topic)
         {
         case "歷練" :
         case "歷煉" :
-        case "鍛煉" :
+        case "鍛鍊" :
                 return QUEST_D->accept_ask(this_object(), me, topic);
                 break;
 

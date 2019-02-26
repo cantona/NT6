@@ -39,7 +39,7 @@ void create()
         set("chat_msg", ({
                 "監工喝道：快！快給我幹！\n",
                 "監工一揚鞭子，罵道：他奶奶的，你給我放老實點。\n",
-                "監工打量著四周，不知道在打什麼主意。 \n",
+                "監工打量着四周，不知道在打什麼主意。 \n",
                 "監工狠狠的抽了一個人幾下，罵道：怎麼把石頭掉到地上了，你這笨蛋。\n",
         }));
 }
@@ -69,7 +69,7 @@ mixed ask_mine()
                 return "我看你上氣不接下氣了嘛，還是算了吧，我可不想鬧出人命來。";
 
         if (me->query_str() < 25)
-                return "我說你有多點力氣，也來湊熱鬧？";
+                return "我説你有多點力氣，也來湊熱鬧？";
 
         if (! interactive(me))
                 return "...";
@@ -80,7 +80,7 @@ mixed ask_mine()
                               query_temp("job/move", $1) && 
                               query_ip_number($1) == query_ip_number($(me)) :));
         if (sizeof(obs) > 0)
-                return "現在已經有" + obs[0]->name() + "幹活呢，你歇著吧。";
+                return "現在已經有" + obs[0]->name() + "幹活呢，你歇着吧。";
 
         set_temp("job/move", 1, me);
         return "好，你就去山上搬石料下來(move)，我這工資可不菲哦。";
@@ -92,7 +92,7 @@ int do_mine(string arg)
 
         me = this_player();
         if (me->is_busy())
-                return notify_fail("你正忙著呢，別著急。\n");
+                return notify_fail("你正忙着呢，彆着急。\n");
 
         if( !query_temp("job/move", me) )
                 return notify_fail("你又沒領活，瞎忙活啥？\n");
@@ -143,7 +143,7 @@ int working(object me)
         case 7:
         case 9:
                 me->receive_damage("qi", 8);
-                msg = "$N扛著石料，一步一步往山下挨。";
+                msg = "$N扛着石料，一步一步往山下挨。";
                 break;
         case 6:
                 me->receive_damage("qi", 9);
@@ -155,7 +155,7 @@ int working(object me)
                 break;
         default:
                 me->receive_damage("qi", 5);
-                msg = "$N把石料扛到$n那裡，把石料裝上車子，總算鬆了口氣。";
+                msg = "$N把石料扛到$n那裏，把石料裝上車子，總算鬆了口氣。";
                 finish = 1;
                 break;
         }
@@ -203,10 +203,10 @@ int halt_working(object me)
         if( query_temp("job/step", me) >= 4 )
         {
                 message_vision("$N把肩頭的石料一仍，罵罵咧咧道："
-                               "累死我了，真不是人幹的活！\n", me);
+                               "累死我了，真不是人乾的活！\n", me);
         } else
         {
-                message_vision("$N嘆了口氣，道：今天不幹了！\n", me);
+                message_vision("$N歎了口氣，道：今天不幹了！\n", me);
         }
 
         delete_temp("job/move", me);
@@ -230,7 +230,7 @@ mixed ask_transit()
         me = this_player();
 
         if( query("score", me)<1000 )
-                return "你這人閱歷這些淺，也敢接這差使？";
+                return "你這人閲歷這些淺，也敢接這差使？";
 
         if( query("combat_exp", me)<30000 )
                 return "一邊兒去！你這人本事太差，我可不放心讓你押貨！";
@@ -247,7 +247,7 @@ mixed ask_transit()
                              "低微，這次我不多加追究了，可是"
                              "那一車石料豈能就這樣白白的丟了"
                              "？你先賠了" + chinese_number(amount) +
-                             "兩白銀再說！”\n",
+                             "兩白銀再説！”\n",
                              this_object(), me);
                 return 1;
         }
@@ -267,16 +267,16 @@ mixed ask_transit()
                                this_object(), me);
         if (c < 10000)
                 message_vision("$N看到$n，招呼道：“正好，正"
-                               "打算發車呢，就你來吧！”\n",
+                               "打算髮車呢，就你來吧！”\n",
                                this_object(), me);
         else
         if (c < 30000)
-                message_vision("$N連忙道：“快準備吧，這裡已"
+                message_vision("$N連忙道：“快準備吧，這裏已"
                                "經有好幾車了！”\n",
                                this_object(), me);
         else
                 message_vision("$N看到$n，大喜道：“正好！眼"
-                               "看這庫裡就要滿了，你來的正好！”\n",
+                               "看這庫裏就要滿了，你來的正好！”\n",
                                this_object(), me);
 
         if (c > 3000) c = 3000;

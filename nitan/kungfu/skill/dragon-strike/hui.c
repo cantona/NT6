@@ -40,7 +40,7 @@ int perform(object me, object target)
                 return notify_fail("你現在真氣不夠，難以施展" + name() + "。\n");
 
         if (! living(target))
-                return notify_fail("對方都已經這樣了，用不著這麼費力吧？\n");
+                return notify_fail("對方都已經這樣了，用不着這麼費力吧？\n");
 
         // 第一掌
         ap = attack_power(me, "strike") + me->query_str()*10;
@@ -50,7 +50,7 @@ int perform(object me, object target)
 
         message_combatd(sort_msg(HIW "\n忽然間$N" HIW "身形激進，左手一劃，右手呼的一掌，便"
                      "向$n" HIW "擊去，正是降龍十八掌「" NOR + HIY "亢龍有悔" NOR
-                     + HIW "」一招，力自掌生之際說到便到，以排山倒海之勢向$n" HIW
+                     + HIW "」一招，力自掌生之際説到便到，以排山倒海之勢向$n" HIW
                      "狂湧而去，當真石破天驚，威力無比。\n" NOR), me, target);
         if (ap / 2 + random(ap) > dp)
         {
@@ -63,7 +63,7 @@ int perform(object me, object target)
 
         } else
         {
-                msg = HIC "$p" HIC "氣貫雙臂，凝神應對，遊刃有余，$P"
+                msg = HIC "$p" HIC "氣貫雙臂，凝神應對，遊刃有餘，$P"
                       HIC "掌力如泥牛入海，盡數卸去。\n" NOR;
                 message_combatd(msg, me, target);
         }
@@ -73,7 +73,7 @@ int perform(object me, object target)
         dp = defense_power(target, "parry") + target->query_int()*10;
 
         message_combatd(sort_msg(HIW "\n$N" HIW "一掌既出，身子已然搶到離$n" HIW "三四丈之外"
-                     "，後掌推前掌，兩股掌力道合並，又是一招「" NOR + HIY "亢龍有"
+                     "，後掌推前掌，兩股掌力道合併，又是一招「" NOR + HIY "亢龍有"
                      "悔" NOR + HIW "」攻出，掌力猶如怒潮狂湧，勢不可當。霎時$n"
                      HIW "便覺氣息窒滯，立足不穩。\n" NOR), me, target);
         if (ap / 2 + random(ap) > dp)
@@ -86,7 +86,7 @@ int perform(object me, object target)
                 message_combatd(msg, me, target);
         } else
         {
-                msg = HIC "$p" HIC "氣貫雙臂，凝神應對，遊刃有余，$P"
+                msg = HIC "$p" HIC "氣貫雙臂，凝神應對，遊刃有餘，$P"
                       HIC "掌力如泥牛入海，盡數卸去。\n" NOR;
                 message_combatd(msg, me, target);
         }
@@ -95,9 +95,9 @@ int perform(object me, object target)
         ap = attack_power(me, "strike") + me->query_str()*10;
         dp = defense_power(target, "force") + target->query_con()*10;
 
-        message_combatd(sort_msg(HIW "\n緊跟著$N" HIW "一聲暴喝，右掌斜斜揮出，前招掌力未消"
+        message_combatd(sort_msg(HIW "\n緊跟着$N" HIW "一聲暴喝，右掌斜斜揮出，前招掌力未消"
                      "，此招掌力又到，竟然又攻出一招「" NOR + HIY "亢龍有悔" NOR
-                     + HIW "」，掌夾風勢，勢如破竹，便如一堵無形氣牆，向前疾沖而"
+                     + HIW "」，掌夾風勢，勢如破竹，便如一堵無形氣牆，向前疾衝而"
                      "去。$n" HIW "只覺氣血翻湧，氣息沉濁。\n" NOR), me, target);
 
         if (ap / 2 + random(ap) > dp)
@@ -114,7 +114,7 @@ int perform(object me, object target)
         } else
         {
                 msg = HIC "$p" HIC "見這招來勢兇猛，身形疾退，瞬間飄出三"
-                      "丈，脫出$P" HIC "掌力之外。\n" NOR;
+                      "丈，脱出$P" HIC "掌力之外。\n" NOR;
                 message_combatd(msg, me, target);
                 me->start_busy(1 + random(3));
                 addn("neili", -400-random(600), me);

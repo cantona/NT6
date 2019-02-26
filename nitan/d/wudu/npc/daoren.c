@@ -9,7 +9,7 @@ void create()
         set("gender", "男性" );
         set("age", 35);
         set("per", 20);
-        set("long", "一位身穿道服，幹癟黑瘦的中年道人．\n");
+        set("long", "一位身穿道服，乾癟黑瘦的中年道人．\n");
         set("combat_exp", 200000);
         set("attitude", "friendly");
         set("book_count", 1);
@@ -35,18 +35,18 @@ void create()
         set("chat_msg",({
                 CYN "毒道人冷笑道：江湖中人誰敢和我們五毒教作對，管叫"
                 "他死的不明不白。\n" NOR,
-                CYN "毒道人幹笑一聲道：貧道專管練制各種毒藥，保証藥到"
+                CYN "毒道人乾笑一聲道：貧道專管練制各種毒藥，保證藥到"
                 "命除。\n" NOR,
         }));
 
         setup();
         add_money("silver", 20);
         set("inquiry", ([
-                "here"     : "此乃煉丹房，可以在這裡練制(lianzhi)各種毒藥。",
-                "毒藥"     : "閣下可以在這裡練制(lianzhi)各種毒藥。",
+                "here"     : "此乃煉丹房，可以在這裏練制(lianzhi)各種毒藥。",
+                "毒藥"     : "閣下可以在這裏練制(lianzhi)各種毒藥。",
                 "原料"     : (: ask_me :),
                 "練毒"     : (: ask_me :),
-                "毒經"     : "你打算煉毒麼？可惜我這裡只有毒經上篇。",
+                "毒經"     : "你打算煉毒麼？可惜我這裏只有毒經上篇。",
                 "上篇"     : (: ask_me :),
                 "毒經上篇" : (: ask_me :),
                 "配方"     : (: ask_me :),

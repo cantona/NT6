@@ -7,7 +7,7 @@ string type() { return "martial"; }
 string martialtype() { return "skill"; }
 
 mapping *action = ({
-([        "action" : "$N一式"HIC"「風滿長空」"NOR"，以掌化爪，五指如鉤，直逼$n的膻中要穴",
+([        "action" : "$N一式"HIC"「風滿長空」"NOR"，以掌化爪，五指如鈎，直逼$n的膻中要穴",
         "lvl" : 0,
         "skill_name" : "風滿長空"
 ]),
@@ -36,7 +36,7 @@ mapping *action = ({
         "lvl" : 54,
         "skill_name" : "山高林密"
 ]),
-([        "action" : "$N岳立霆峙，一式"HIY"「地老天荒」"NOR"，在一陣暴雷聲中，雙手同時拍中$n的七道死穴",
+([        "action" : "$N嶽立霆峙，一式"HIY"「地老天荒」"NOR"，在一陣暴雷聲中，雙手同時拍中$n的七道死穴",
         "lvl" : 60,
         "skill_name" : "地老天荒"
 ])

@@ -4,10 +4,10 @@ inherit NPC;
 void create()
 {
         set_name("多隆", ({ "duo long", "duo", "long" }));
-        set("title", HIY "御前侍衛總管" NOR);
+        set("title", HIY "御前侍衞總管" NOR);
         set("age", 32);
         set("gender", "男性");
-    set("long", "多隆乃御前侍衛的總管，身材高大魁梧，一身外家功夫很是了得。\n");
+    set("long", "多隆乃御前侍衞的總管，身材高大魁梧，一身外家功夫很是了得。\n");
         set("attitude", "peaceful");
 
         set("str", 30);

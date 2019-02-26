@@ -35,7 +35,7 @@ mapping *action = ({
         "lvl" : 60,
         "skill_name" : "風雪江山"
 ]),
-([        "action" : "$N一招"HIW"「霜華滿地」"NOR"，雙掌帶著蕭瑟的秋氣，拍向$n的$l",
+([        "action" : "$N一招"HIW"「霜華滿地」"NOR"，雙掌帶着蕭瑟的秋氣，拍向$n的$l",
         "lvl" : 70,
         "skill_name" : "霜華滿地"
 ]),

@@ -42,11 +42,11 @@ int perform(object me, object target)
                 return notify_fail("你沒有激發乾坤神劍，難以施展" RIYUE "。\n");
 
         if (! living(target))
-                return notify_fail("對方都已經這樣了，用不著這麼費力吧？\n");
+                return notify_fail("對方都已經這樣了，用不着這麼費力吧？\n");
 
         msg = HIY "只見$N" HIY "手中" + weapon->name() + HIY
               "一顫，將乾坤劍法連環施出，頓時幻出無數劍影，"
-              "舖天蓋地向$n" HIY "席卷而去！\n" NOR;
+              "鋪天蓋地向$n" HIY "席捲而去！\n" NOR;
 
         ap = me->query_skill("sword");
         dp = target->query_skill("parry");
@@ -55,7 +55,7 @@ int perform(object me, object target)
         if (ap / 2 + random(ap * 2) > dp)
         {
                 msg += HIR "$n" HIR "只覺劍影重重，登時眼花繚"
-                       "亂，被攻了個措手不及，疲于奔命。\n" NOR;
+                       "亂，被攻了個措手不及，疲於奔命。\n" NOR;
                 count = ap / 10;
                 addn_temp("apply/attack", count, me);
                 attack_time += random(ap / 45);

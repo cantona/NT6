@@ -56,14 +56,14 @@ int perform(object me, object target)
       damage = me->query_skill("dacidabei-shou", 1)/40 * jiali;
       if(damage > 1500) damage = 1500;
       
-      message_vision(HIR "\n$N突然面色通紅，低聲默念禪宗真言，雙臂骨節一陣爆響，猛然"
+      message_vision(HIR "\n$N突然面色通紅，低聲默唸禪宗真言，雙臂骨節一陣爆響，猛然"
                      "騰空而起，伸手向$n胸前按去，好一式「大手印」！\n"NOR,me,target);
  
       if( attack > defense ) { 
                if( objectp(armor=query_temp("armor/cloth", target) )
                    && query("armor_prop/armor", armor)<200
                   && damage > 500){
-                        message_vision(HIY"只見這鬥大的手印正好印在$N的$n"HIY"上，越變越"
+                        message_vision(HIY"只見這斗大的手印正好印在$N的$n"HIY"上，越變越"
                                        "大，竟將它震得粉碎，裂成一塊塊掉在地上！\n"NOR, target, armor);
                         armor->unequip();
                         armor->move(environment(target));

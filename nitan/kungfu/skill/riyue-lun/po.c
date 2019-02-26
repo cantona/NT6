@@ -44,7 +44,7 @@ int perform(object me, object target)
                 return notify_fail("你現在的真氣不足，難以施展" + name() + "。\n");
 
         if (! living(target))
-                return notify_fail("對方都已經這樣了，用不著這麼費力吧？\n");
+                return notify_fail("對方都已經這樣了，用不着這麼費力吧？\n");
 
         wp = weapon->name();
 
@@ -63,7 +63,7 @@ int perform(object me, object target)
                 damage = damage_power(me, "hammer");
                 msg += COMBAT_D->do_damage(me, target, WEAPON_ATTACK, damage, 50,
                                            HIR "$n" HIR "被$N" HIR "這強悍無比的"
-                                           "內勁沖擊得左搖右晃，接連中招，狂噴鮮"
+                                           "內勁衝擊得左搖右晃，接連中招，狂噴鮮"
                                            "血。\n" NOR);
                 me->start_busy(2);
 

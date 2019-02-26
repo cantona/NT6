@@ -122,9 +122,9 @@ void saying(object ob)
         if (! ob || environment(ob) != environment())
                 return;
 
-        message_sort("\n\n$n看了$N一眼，冷冷地說到：“洪幫主他老人家說我不該"
+        message_sort("\n\n$n看了$N一眼，冷冷地説到：“洪幫主他老人家説我不該"
                      "隨意責打丐幫弟子，你又不屬我丐幫，我打你總可以吧？”"
-                     "說完右腿一抬，$N順勢應了一招青城派的「屁股向後，平沙落雁式」"
+                     "説完右腿一抬，$N順勢應了一招青城派的「屁股向後，平沙落雁式」"
                      "－－叭嘰\n\n", ob, this_object());
         remove_call_out("kicking");
         call_out("kicking", 1, ob);
@@ -137,8 +137,8 @@ void kicking(object ob)
                 return;
 
         ob->move("/d/gaibang/pomiao");
-        message("vision","只聽“□”地一聲，緊接著"+query("name", ob)+
-                "從小門裡飛了出來，屁股上有一個清楚的鞋印。\n", environment(ob), ob);
+        message("vision","只聽“嘭”地一聲，緊接着"+query("name", ob)+
+                "從小門裏飛了出來，屁股上有一個清楚的鞋印。\n", environment(ob), ob);
 }
 
 void attempt_apprentice(object ob)
@@ -206,13 +206,13 @@ int accept_object(object ob, object obj)
 
         if( query("owner", obj) != ob->name() )
         {
-                command("say 你這快破布是從哪裡偷來的？");
+                command("say 你這快破布是從哪裏偷來的？");
                 return 0;
         }
 
         if( query_temp("have_cloth", ob)<1 )
         {
-                command("say 你真的挑勝了麼？我怎麼就沒聽說？");
+                command("say 你真的挑勝了麼？我怎麼就沒聽説？");
                 return 0;
         }
 
@@ -261,7 +261,7 @@ int accept_object(object ob, object obj)
         msg = HIC "\n通過升袋的經歷，你獲得了" +
               chinese_number(exp) + "點經驗、" +
               chinese_number(pot) + "點潛能、" +
-              chinese_number(sc) + "點江湖閱歷以及" +
+              chinese_number(sc) + "點江湖閲歷以及" +
               chinese_number(ww) + "點江湖威望，同時"
               "消耗了" + chinese_number(gx) + "點門"
               "派貢獻，武學得到了精進。\n\n" NOR;

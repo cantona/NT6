@@ -6,11 +6,11 @@ inherit NPC;
 
 void create()
 {
-        set_name(NOR + YEL "神雕" NOR, ({ "shen diao", "shen", "diao" }) );
+        set_name(NOR + YEL "神鵰" NOR, ({ "shen diao", "shen", "diao" }) );
         set("title", HIG "獨孤無畏" NOR);
         set("gender", "男性");
         set("age", 120);
-        set("long", HIY "這是獨孤求敗生前所養大雕，後來被「神雕大俠」楊過收養。\n"
+        set("long", HIY "這是獨孤求敗生前所養大雕，後來被「神鵰大俠」楊過收養。\n"
                         "此雕天神神力，常人難敵。\n" NOR);
 
         set("combat_exp", 90000000);
@@ -206,7 +206,7 @@ int receive_damage(string type, int damage, object who)
                                 if( query("id", money) == "coin")amount=100+random(300);
                                 money->set_amount(amount);
                                 money->move(who, 1);
-                                tell_object(who, HIG "你從神雕身上獲得了" + sprintf("%d", amount) + 
+                                tell_object(who, HIG "你從神鵰身上獲得了" + sprintf("%d", amount) + 
                                                  query("base_unit", money)+money->name()+"。\n"NOR);                                
                         }                                               
                 }
@@ -218,7 +218,7 @@ int receive_damage(string type, int damage, object who)
                         if (objectp(ob))
                         {
                                 ob->move(who, 1);
-                                tell_object(who,HIR"你從神雕身上獲得了一"+query("base_unit", ob)+ob->name()+"。\n"NOR);                         
+                                tell_object(who,HIR"你從神鵰身上獲得了一"+query("base_unit", ob)+ob->name()+"。\n"NOR);                         
                         }
                 }
                 if (random(100000) == 1 && random(3) == 1)
@@ -228,7 +228,7 @@ int receive_damage(string type, int damage, object who)
                         if (objectp(weapon))
                         {
                                 weapon->move(who, 1);
-                                tell_object(who,HIR"你從神雕身上獲得了一"+query("base_unit", weapon)+weapon->name()+"。\n"NOR);                         
+                                tell_object(who,HIR"你從神鵰身上獲得了一"+query("base_unit", weapon)+weapon->name()+"。\n"NOR);                         
                         }
                 }
                 if (random(300000) == 1 && random(3) == 1)
@@ -238,7 +238,7 @@ int receive_damage(string type, int damage, object who)
                         if (objectp(armor))
                         {
                                 armor->move(who, 1);
-                                tell_object(who,HIR"你從神雕身上獲得了一"+query("base_unit", armor)+armor->name()+"。\n"NOR);                           
+                                tell_object(who,HIR"你從神鵰身上獲得了一"+query("base_unit", armor)+armor->name()+"。\n"NOR);                           
                         }
                 }
                 if (random(500000) == 1 && random(4) == 1)
@@ -248,12 +248,12 @@ int receive_damage(string type, int damage, object who)
                         if (objectp(armor2))
                         {
                                 armor2->move(who, 1);
-                                tell_object(who,HIR"你從神雕身上獲得了一"+query("base_unit", armor2)+armor2->name()+"。\n"NOR);                         
+                                tell_object(who,HIR"你從神鵰身上獲得了一"+query("base_unit", armor2)+armor2->name()+"。\n"NOR);                         
                         }
                 }
         }       
 
-        // 經驗不符合要求也可獲得獎勵，但幾率更低
+        // 經驗不符合要求也可獲得獎勵，但機率更低
         else
         {
                 // 獲得錢
@@ -267,7 +267,7 @@ int receive_damage(string type, int damage, object who)
                         if( query("id", money) == "coin")amount=100+random(300);
                         money->set_amount(amount);
                         money->move(who, 1);
-                        tell_object(who, HIG "你從神雕身上獲得了" + sprintf("%d", amount) + 
+                        tell_object(who, HIG "你從神鵰身上獲得了" + sprintf("%d", amount) + 
                                          query("base_unit", money)+money->name()+"。\n"NOR);
                 }
 
@@ -279,7 +279,7 @@ int receive_damage(string type, int damage, object who)
                         if (objectp(ob))
                         {
                                 ob->move(who, 1);
-                                tell_object(who,HIR"你從神雕身上獲得了一"+query("base_unit", ob)+ob->name()+"。\n"NOR);                         
+                                tell_object(who,HIR"你從神鵰身上獲得了一"+query("base_unit", ob)+ob->name()+"。\n"NOR);                         
                         }
                 }
                 if (random(600000) == 1 && random(4) == 1)
@@ -289,7 +289,7 @@ int receive_damage(string type, int damage, object who)
                         if (objectp(weapon))
                         {
                                 weapon->move(who, 1);
-                                tell_object(who,HIR"你從神雕身上獲得了一"+query("base_unit", weapon)+weapon->name()+"。\n"NOR); 
+                                tell_object(who,HIR"你從神鵰身上獲得了一"+query("base_unit", weapon)+weapon->name()+"。\n"NOR); 
                         }
                 }
                 if (random(800000) == 1 && random(5) == 1)
@@ -299,7 +299,7 @@ int receive_damage(string type, int damage, object who)
                         if (objectp(armor))
                         {
                                 armor->move(who, 1);
-                                tell_object(who,HIR"你從神雕身上獲得了一"+query("base_unit", armor)+armor->name()+"。\n"NOR);            
+                                tell_object(who,HIR"你從神鵰身上獲得了一"+query("base_unit", armor)+armor->name()+"。\n"NOR);            
                         }
                 }
                 if (random(1000000) == 1 && random(8) == 1)
@@ -309,7 +309,7 @@ int receive_damage(string type, int damage, object who)
                         if (objectp(armor2))
                         {
                                 armor2->move(who, 1);
-                                tell_object(who,HIR"你從神雕身上獲得了一"+query("base_unit", armor2)+armor2->name()+"。\n"NOR);   
+                                tell_object(who,HIR"你從神鵰身上獲得了一"+query("base_unit", armor2)+armor2->name()+"。\n"NOR);   
                         }
                 }       
         }

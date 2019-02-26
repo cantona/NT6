@@ -32,7 +32,7 @@ mapping *action = ({
         "dodge"  : 15,
         "damage" : 35,
         "lvl"    : 30,
-        "skill_name" : "玉女脫衣",
+        "skill_name" : "玉女脱衣",
         "damage_type": "刺傷"
 ]),
 });

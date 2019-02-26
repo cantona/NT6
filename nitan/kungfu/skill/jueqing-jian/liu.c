@@ -39,11 +39,11 @@ int perform(object me, object target)
                 return notify_fail("你現在的真氣不夠，難以施展" LIU "。\n");
 
         if (! living(target))
-                return notify_fail("對方都已經這樣了，用不著這麼費力吧？\n");
+                return notify_fail("對方都已經這樣了，用不着這麼費力吧？\n");
 
         wn = weapon->name();
 
-        msg = HIY "\n$N" HIY "長嘆一聲，一股悲切之情湧上心頭，手中" + wn +
+        msg = HIY "\n$N" HIY "長歎一聲，一股悲切之情湧上心頭，手中" + wn +
               HIY "迅猛無比地刺出，風聲嗖嗖，完全不理會$n" HIY "的攻勢，"
               "將自己的生死置之度外，這正是絕情谷絕學「" HIR "流水無情" HIY
               "」。" NOR; 

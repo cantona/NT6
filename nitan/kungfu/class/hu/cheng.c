@@ -15,7 +15,7 @@ void create()
         set("age", 24);
         set("long", @long
 她看上去雙眉緊縮，不知道有什麼心事，長得相貌平平，並不出眾。
-身材瘦小，穿著粗布衣衫。
+身材瘦小，穿着粗布衣衫。
 long);
         set("attitude", "peaceful");
         set("str", 22);
@@ -24,7 +24,7 @@ long);
         set("dex", 27);
         set("chat_chance", 10);
         set("chat_msg", ({
-                "程靈素哀哀的嘆了口氣。\n",
+                "程靈素哀哀的歎了口氣。\n",
         }));
 
         set("qi", 2500);
@@ -97,11 +97,11 @@ mixed ask_shenpian()
                 if( query("family/family_name", me) == "關外胡家" )
                         message_vision(CYN "$N" CYN "冷哼一聲，對$n" CYN "道："
                                        "“你難道忘記了你師傅是怎麼教你的嗎？現在居"
-                                       "然和那三個家伙一樣走上了邪道，我如何能"
+                                       "然和那三個傢伙一樣走上了邪道，我如何能"
                                        "將《藥王神篇》交予你？”\n" NOR,
                                        this_object(), me);
                 else
-                        message_vision(CYN "$N" CYN "冷笑一聲，對$n" CYN "說道"
+                        message_vision(CYN "$N" CYN "冷笑一聲，對$n" CYN "説道"
                                        "：“好一個邪派妖徒，竟敢貪圖本派寶物！"
                                        "”\n" NOR,
                                        this_object(), me);
@@ -128,7 +128,7 @@ mixed ask_shenpian()
         }
 
         if (owner == me)
-                return "我這《藥王神篇》現在不就在你手裡嗎？";
+                return "我這《藥王神篇》現在不就在你手裏嗎？";
 
         if (objectp(owner) && owner != this_object())
         {
@@ -137,7 +137,7 @@ mixed ask_shenpian()
 
                 if( query("family/master_id", owner) == query("id") )
                         return "嗯，《藥王神篇》現在在你同門師兄弟"+query("name", owner)+
-                               "手裡，你去找他吧。";
+                               "手裏，你去找他吧。";
                 else
                         return "本門的《藥王神篇》現在落入了"+query("name", owner)+
                                "之手，你去把它取回來吧！";

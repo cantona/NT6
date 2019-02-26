@@ -12,7 +12,7 @@ void create()
         else
                 set_name(HIM "彩蝶仙子" NOR, ({ "caidie xianzi", "caidie", "xianzi" }));
                 
-        set("long", HIM "這便是傳說中的蝶仙，一身彩衣打扮，背上還有一對彩色的翅膀，樣貌比天仙更勝三分。\n" NOR);
+        set("long", HIM "這便是傳説中的蝶仙，一身綵衣打扮，背上還有一對彩色的翅膀，樣貌比天仙更勝三分。\n" NOR);
 
         set("gender", "女性");
         set("age", 9999);

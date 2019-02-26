@@ -147,10 +147,10 @@ mixed ask_skill1()
                 return "這招我不是已經教會你了嗎？";
 
         if( query("family/family_name", me) != query("family/family_name") )
-                return "閣下與在下素不相識，不知此話從何說起？";
+                return "閣下與在下素不相識，不知此話從何説起？";
 
         if (me->query_skill("liuhe-zhang", 1) < 1)
-                return "你連六合掌法都未曾學過，哪裡來絕招？";
+                return "你連六合掌法都未曾學過，哪裏來絕招？";
 
         if( query("family/gongji", me)<50 )
                 return "你在我們丐幫內甚無作為，這招我暫時還不能傳你。";
@@ -200,10 +200,10 @@ mixed ask_skill2()
                 return "這招我不是已經教會你了嗎？";
 
         if( query("family/family_name", me) != query("family/family_name") )
-                return "閣下與在下素不相識，不知此話從何說起？";
+                return "閣下與在下素不相識，不知此話從何説起？";
 
         if (me->query_skill("liuhe-dao", 1) < 1)
-                return "你連六合刀法都未曾學過，哪裡來絕招？";
+                return "你連六合刀法都未曾學過，哪裏來絕招？";
 
         if( query("family/gongji", me)<200 )
                 return "你在我們丐幫內甚無作為，這招我暫時還不能傳你。";
@@ -218,9 +218,9 @@ mixed ask_skill2()
                 return "你的六合刀法火候未到，還得多練習練習。";
 
         message_sort(HIY "\n$n" HIY "對$N" HIY "笑了笑，拔出腰間佩刀"
-                     "握在手中，說道：“這六合刀法的要訣不過是展、抹"
-                     "、鉤、剁、砍、劈六勢，看好了。”說完便只見$n" HIY
-                     "手中鋼刀吞吐不定，形若遊龍，勢如猛虎。接連變換"
+                     "握在手中，説道：“這六合刀法的要訣不過是展、抹"
+                     "、鈎、剁、砍、劈六勢，看好了。”説完便只見$n" HIY
+                     "手中鋼刀吞吐不定，形若游龍，勢如猛虎。接連變換"
                      "了數種方位，最後只聽哧的一聲砍落，刀身震得嗡嗡"
                      "直響。\n" NOR, me, this_object());
 

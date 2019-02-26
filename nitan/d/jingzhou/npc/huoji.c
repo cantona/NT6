@@ -1,11 +1,11 @@
-// huoji. 藥舖伙計
+// huoji. 藥鋪夥計
 
 inherit NPC;
 inherit F_DEALER;
 
 void create()
 {
-        set_name("藥舖伙計", ({ "yaopu huoji", "huoji" }));
+        set_name("藥鋪夥計", ({ "yaopu huoji", "huoji" }));
         set("str", 20);
         set("gender", "男性");
         set("age", 18);

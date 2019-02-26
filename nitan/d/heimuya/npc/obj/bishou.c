@@ -11,7 +11,7 @@ void create()
                 set_default_object(__FILE__);
         else {
                 set("unit", "柄");
-                set("long", HIC "一柄做工精細的玉制匕首。\n" NOR);
+                set("long", HIC "一柄做工精細的玉製匕首。\n" NOR);
                 set("value", 10000);
                 set("material", "stone");
         }

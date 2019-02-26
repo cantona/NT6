@@ -10,10 +10,10 @@ void create()
 {
 	set("short", HIW"白石路"NOR);
 	set("long", @LONG
-走進大門，只見紅磚圍牆，白石舖路，從這裡一直通往天王殿，抬頭
-望去，寺中亭台樓閣規模宏大，構築精麗，宅地連雲，其氣勢之盛更勝于
+走進大門，只見紅磚圍牆，白石鋪路，從這裏一直通往天王殿，抬頭
+望去，寺中亭台樓閣規模宏大，構築精麗，宅地連雲，其氣勢之盛更勝於
 五台，普陀等諸處佛門勝地的名山大寺。路旁立滿了無量功德碑，兩邊各
-有一小院，院中滿種著鬆竹。
+有一小院，院中滿種着松竹。
 LONG);
 	set("outdoors", "天龍寺");
    set("quest",1);
@@ -51,7 +51,7 @@ void init()
 		if(!room)
 		{
 			me->delete_temp("quest/天龍八部");
-			me->delete_temp("quest/busy");//任務沖突標志取消 
+			me->delete_temp("quest/busy");//任務衝突標誌取消 
 			//補償玩家機會
 			me->delete("quest/天龍八部/time");
 			me->delete("quest/天龍八部/combat_exp");  
@@ -66,8 +66,8 @@ void init()
 			else message_vision(HIR"\n遠處的山路傳來一陣輕嘯，$N隱約聽得有打鬥的聲音。原來是"+obj->query("family/family_name")+HIR"弟子"+obj->query("name")+HIR"。\n",me);
 			tell_object(me,HIY"有"+obj->query("family/master_name")+HIY"座下高徒"+obj->query("name")+HIY"來保護天龍寺，也不犯你出手了。"NOR);
 			me->delete_temp("quest/天龍八部");
-			me->delete_temp("quest/busy");//任務沖突標志取消 
-			log_file("quest/TLBB", sprintf("%s(%s)因為%s(%s)沖突，天龍寺失敗。\n", me->name(1),me->query("id"),obj->name(1),obj->query("id")) );
+			me->delete_temp("quest/busy");//任務衝突標誌取消 
+			log_file("quest/TLBB", sprintf("%s(%s)因為%s(%s)衝突，天龍寺失敗。\n", me->name(1),me->query("id"),obj->name(1),obj->query("id")) );
 			//補償玩家機會
 			me->delete("quest/天龍八部/time");
 			me->delete("quest/天龍八部/combat_exp");  
@@ -96,7 +96,7 @@ void go(object me)
 	  tell_object(me,HIY"\n讓你保護天龍寺，為何四處亂走？\n"NOR);
 	  tell_object(me,HIY"站位錯誤；任務失敗！！\n"NOR);
 	  me->delete_temp("quest/天龍八部");
-	  me->delete_temp("quest/busy");//任務沖突標志取消 
+	  me->delete_temp("quest/busy");//任務衝突標誌取消 
 	  log_file("quest/TLBB", sprintf("%s(%s)天龍寺站位不對，失敗。\n", me->name(1),me->query("id")) );
 	  me->delete(QUESTDIR2+"start");
 	  ob->delete("busy_id");
@@ -109,7 +109,7 @@ void go(object me)
 	  tell_object(me,HIY"\n遠處的山路傳來一陣輕嘯，隱約聽得有打鬥的聲音。\n"NOR);
 	  tell_object(me,HIY"但是你總是無法找到正確的地點。可以詢問巫師。\n"NOR);
 	  me->delete_temp("quest/天龍八部");
-	  me->delete_temp("quest/busy");//任務沖突標志取消 
+	  me->delete_temp("quest/busy");//任務衝突標誌取消 
       ob->delete("busy_id");
 	  //補償玩家機會
  	  me->delete("quest/天龍八部/time");
@@ -127,7 +127,7 @@ void go(object me)
   {
   	me->move(room);
 	ob->delete("busy_id");
-  	log_file("quest/TLBB", sprintf("%s(%s)天龍寺防御站開始戰鬥。經驗：%d。\n", me->name(1),me->query("id"), me->query("combat_exp")) );
+  	log_file("quest/TLBB", sprintf("%s(%s)天龍寺防禦站開始戰鬥。經驗：%d。\n", me->name(1),me->query("id"), me->query("combat_exp")) );
   }
 }
 int valid_leave(object me, string dir)
@@ -137,12 +137,12 @@ int valid_leave(object me, string dir)
 	 && dir != "out" 
 	 && me->query("shen") < 0
 	 && objectp(present("liaohuo chanshi", environment(me))))
-		return notify_fail("了惑禪師攔住你，說道：天龍寺內不得隨意進出。\n");
+		return notify_fail("了惑禪師攔住你，説道：天龍寺內不得隨意進出。\n");
 
 	if ( me->query("family/family_name") != "天龍寺" 
 	 && dir != "out" 
 	 && me->query("shen") < 0
 	 && objectp(present("wu seng", environment(me))))
-		return notify_fail("武僧攔住你，說道：天龍寺內不得隨意進出。\n");
+		return notify_fail("武僧攔住你，説道：天龍寺內不得隨意進出。\n");
 	return ::valid_leave(me, dir);
 }

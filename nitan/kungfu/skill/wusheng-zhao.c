@@ -2,7 +2,7 @@
 inherit SKILL;
 
 mapping *action = ({
-([     "action" : "$N左爪前伸，帶著絲絲藍陰鬼氣，一式「元神出竅」，猛得向$n的頂門插下",
+([     "action" : "$N左爪前伸，帶着絲絲藍陰鬼氣，一式「元神出竅」，猛得向$n的頂門插下",
        "force" : 150,
        "damage" : 30,
        "dodge" : 5,
@@ -10,7 +10,7 @@ mapping *action = ({
        "weapon" : "五指",
        "damage_type" : "抓傷"
 ]),
-([     "action" : "$N雙掌連拍，築起一道氣牆推向$n，忽然一爪「鬼魅穿心」沖破氣牆直插$n的$l",
+([     "action" : "$N雙掌連拍，築起一道氣牆推向$n，忽然一爪「鬼魅穿心」衝破氣牆直插$n的$l",
        "force" : 160,
        "dodge" : 10,
        "damage": 30,
@@ -49,7 +49,7 @@ mapping *action = ({
        "lvl" : 50,
        "damage_type" : "抓傷"
 ]),
-([     "action" : "$N探手上前，順著$n的手臂攀緣直上，變手為爪，一招「孤魂馭魔」抓向$n的$l",
+([     "action" : "$N探手上前，順着$n的手臂攀緣直上，變手為爪，一招「孤魂馭魔」抓向$n的$l",
        "force" : 260,
        "dodge" : 5,
        "damage": 70,

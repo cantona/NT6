@@ -27,7 +27,7 @@ int perform(object me)
             return notify_fail("你使用的武器不對。\n");
 
         if( objectp(weapon2=query_temp("weapon", target)) )
-            return notify_fail("對方手裡拿了武器，你用不了「破掌式」。\n");
+            return notify_fail("對方手裏拿了武器，你用不了「破掌式」。\n");
 
         if( skill < 70)
             return notify_fail("你的獨孤九劍等級不夠, 不能使用「破掌式」！\n");

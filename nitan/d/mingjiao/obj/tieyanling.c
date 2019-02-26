@@ -1,10 +1,10 @@
-// tieyanling.c 鐵燄令
+// tieyanling.c 鐵焰令
 
 inherit ITEM;
 
 void create()
 {
-        set_name("鐵燄令", ({"tieyan ling", "tieyan", "ling"}));
+        set_name("鐵焰令", ({"tieyan ling", "tieyan", "ling"}));
         set_weight(500);
         if( clonep() )
                 set_default_object(__FILE__);

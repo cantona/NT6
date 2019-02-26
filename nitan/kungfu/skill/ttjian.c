@@ -15,7 +15,7 @@ mapping *action = ({
                 "damage"      : 1,
         "skill_name" : "悠悠順自然"
 ]),
-([        "action" : "$N募的使一招"HIR"「第二招」"NOR"，頓時劍光中幾朵血花洒向$n全身",
+([        "action" : "$N募的使一招"HIR"「第二招」"NOR"，頓時劍光中幾朵血花灑向$n全身",
                 "dodge"       : 100000,
                 "parry"       : 100000,
                 "force"       : 1,
@@ -23,7 +23,7 @@ mapping *action = ({
         "lvl" : 0,
         "skill_name" : "紅葉舞秋山"
 ]),
-([        "action" : "$N募的使一招"HIR"「第三招」"NOR"，頓時劍光中幾朵血花洒向$n全身",
+([        "action" : "$N募的使一招"HIR"「第三招」"NOR"，頓時劍光中幾朵血花灑向$n全身",
                 "dodge"       : -100000,
                 "parry"       : 100000,
                 "force"       : 1,
@@ -31,7 +31,7 @@ mapping *action = ({
         "lvl" : 0,
         "skill_name" : "紅葉舞秋山"
 ]),
-([        "action" : "$N募的使一招"HIR"「第四招」"NOR"，頓時劍光中幾朵血花洒向$n全身",
+([        "action" : "$N募的使一招"HIR"「第四招」"NOR"，頓時劍光中幾朵血花灑向$n全身",
                 "dodge"       : 100000,
                 "parry"       : -100000,
                 "force"       : 1,

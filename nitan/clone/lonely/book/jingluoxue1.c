@@ -11,7 +11,7 @@ void create()
         else {
                 set("unit", "本");
                 set("long", HIY "這是一本精裝書冊，書頁已然發黃，書"
-                            "皮上寫著「王叔和脈經」五個字。\n" NOR);
+                            "皮上寫着「王叔和脈經」五個字。\n" NOR);
                 set("value", 1);
                 set("no_sell", "奶奶的，這本破書也能賣錢？");
                 set("material", "paper");

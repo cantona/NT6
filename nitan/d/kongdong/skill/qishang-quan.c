@@ -28,16 +28,16 @@ mapping *action = ({
         "damage_type":  "瘀傷"
     ]),
     ([  "action":"$N使出一招「大落墨」，身形騰空躍起，對準$n的$l連續拍出三掌",
-        "lian"  :"$N使出一招「大落墨」，身形騰空躍起，對著空氣亂拍一通。",
+        "lian"  :"$N使出一招「大落墨」，身形騰空躍起，對着空氣亂拍一通。",
         "zhaoshi" : "「大落墨」",
         "jibie" : 30,
         "sen" : 20,
         "damage" : 20,
         "damage_type":  "瘀傷"
     ]),
-    ([  "action":"$N左掌揚起，右掌五指一伸一劃，一招「倒卷簾」擊向$n的$l",
-        "lian"  :"$N左掌揚起，右掌五指一伸一劃，使出一招「倒卷簾」，好象在捏蒼蠅。",
-        "zhaoshi" : "「倒卷簾」",
+    ([  "action":"$N左掌揚起，右掌五指一伸一劃，一招「倒捲簾」擊向$n的$l",
+        "lian"  :"$N左掌揚起，右掌五指一伸一劃，使出一招「倒捲簾」，好像在捏蒼蠅。",
+        "zhaoshi" : "「倒捲簾」",
         "jibie" : 35,
         "sen" : 30,
         "damage" : 30,
@@ -63,7 +63,7 @@ mapping *action = ({
 
 string *parry_msg = ({
     "$n雙手輕點，一招「撥雲見日」，輕而易舉的擋開了$N的一擊。\n",
-    "只見$n足不點地，一招「順水推舟」，將$N的攻勢化于無形。\n",
+    "只見$n足不點地，一招「順水推舟」，將$N的攻勢化於無形。\n",
     "但見$n不退反進，雙手一揚，使出一招「葉底摘花」，立刻化險為夷。\n",
 });
     
@@ -83,7 +83,7 @@ int valid_lian(object me)
 int valid_learn(object me)
 {
     if ( me->query_temp("weapon") || me->query_temp("secondary_weapon") )
-            return notify_fail("師父說道：“你先把手中兵器放下。”\n");
+            return notify_fail("師父説道：“你先把手中兵器放下。”\n");
     if ( (int)me->query("max_force") < 100 )
             return notify_fail("你的內力太弱，練七傷拳會走火入魔。\n");
     return 1;

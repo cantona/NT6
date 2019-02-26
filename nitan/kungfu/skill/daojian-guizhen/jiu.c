@@ -24,7 +24,7 @@ int perform(object me, object target)
                 return notify_fail(name() + "只能對戰鬥中的對手使用。\n");
         
         if( me->is_busy() )
-                return notify_fail("你正忙著呢。\n");
+                return notify_fail("你正忙着呢。\n");
 
         if( !query("reborn/times", me) ) 
                 return notify_fail("你尚未轉世重生，無法使用" + name() + "。\n"); 
@@ -61,7 +61,7 @@ int perform(object me, object target)
                 return notify_fail("你現在的真氣不夠，難以施展" + name() + "。\n");
 
         if (! living(target))
-                return notify_fail("對方都已經這樣了，用不著這麼費力吧？\n");
+                return notify_fail("對方都已經這樣了，用不着這麼費力吧？\n");
 
         fmsk = me->query_skill("daojian-xiaotianwai", 1);
         ap = attack_power(me, "blade") + me->query_skill("sword-cognize", 1);
@@ -72,16 +72,16 @@ int perform(object me, object target)
         damage+= query("jiali", me);
 
         msg = HIY "$N" HIY "將" + weapon1->name() + HIY "與" +
-              weapon2->name() + HIY "橫置于胸前，運轉出" + name() + HIY "功力，內勁如海嘯般爆發。\n" NOR;
+              weapon2->name() + HIY "橫置於胸前，運轉出" + name() + HIY "功力，內勁如海嘯般爆發。\n" NOR;
 
         msg += HIY "空氣、雲都變成了暗紅色，整個天地靈氣，一草一木上散發出來的生機，包括" HIY "$N" HIY "強大的殺氣、刀魂、劍意，\n"
-                   "在瞬間全部凝聚在了一起，隨著手中" + weapon1->name() + HIY "和" + weapon2->name() + HIY "的共鳴，所有阻擋在\n"
+                   "在瞬間全部凝聚在了一起，隨着手中" + weapon1->name() + HIY "和" + weapon2->name() + HIY "的共鳴，所有阻擋在\n"
                    HIY"$N" HIY "面前的東西，好像全部在一瞬間被擊碎，迫開。整個天空，似乎被斬成了兩半，捅出了一個窟窿。\n"
                    "這一人、一刀、一劍毫不留情的，狠狠的飛向了"HIY "$n"HIY"。\n" NOR;
 
         if (ap / 2 + random(ap) > dp)
         {
-                msg += HIR "$n" HIR "哪裡見過$N" HIR "這樣的氣勢，這樣的武功，不禁心"
+                msg += HIR "$n" HIR "哪裏見過$N" HIR "這樣的氣勢，這樣的武功，不禁心"
                        "生懼意，招架頓時散亂，全然不成章理。\n" NOR;
 
                 target->receive_damage("jing", damage / 2);
@@ -96,7 +96,7 @@ int perform(object me, object target)
         } else
         {
                 msg += HIG "$n" HIG "見$N" HIG "殺氣大漲，絲毫不"
-                       "敢大意，急忙收斂心神，努力不受幹擾。\n" NOR;
+                       "敢大意，急忙收斂心神，努力不受干擾。\n" NOR;
         }
 
         msg += HIW "\n突然間$N" HIW "身形一展，右手" + weapon1->name() +
@@ -112,7 +112,7 @@ int perform(object me, object target)
         {
 
                 msg += COMBAT_D->do_damage(me, target, WEAPON_ATTACK, damage, da_add,
-                                           HIR "$n" HIR "奮力抵擋，卻哪裡招架得住"
+                                           HIR "$n" HIR "奮力抵擋，卻哪裏招架得住"
                                            "，被$N" HIR "一招劃中要脈，鮮血四處飛"
                                            "濺。\n" NOR);
         } else
@@ -121,9 +121,9 @@ int perform(object me, object target)
                        "聚氣，小心拆招，絲毫無損。\n" NOR;
         }
 
-        msg += HIW "\n接著$N" HIW "又將左手" + weapon2->name() +
-               HIW "朝$n" HIW "平平遞出，招式看似簡單，卻蘊藏著"
-               "極大的殺著。\n" NOR;
+        msg += HIW "\n接着$N" HIW "又將左手" + weapon2->name() +
+               HIW "朝$n" HIW "平平遞出，招式看似簡單，卻藴藏着"
+               "極大的殺着。\n" NOR;
 
         if (ap / 2 + random(ap) > dp)
         {
@@ -151,7 +151,7 @@ int perform(object me, object target)
         {
                 msg += HIC "\n====================" HIY" 刀" HIR "  劍" HIG "  嘯" HIW "  天  外" HIC " ====================" NOR;
                 msg += HIC "\n猛然間，$N" HIC "手中" + weapon1->name() + HIC "和" + weapon2->name() + HIC +
-                           "發出震天般的長嘯，伴隨著兩道光華飛至天際，但見天雲突變，\n轉眼間，數道金光從天邊劃過，飛向$n" HIC "。\n" NOR;
+                           "發出震天般的長嘯，伴隨着兩道光華飛至天際，但見天雲突變，\n轉眼間，數道金光從天邊劃過，飛向$n" HIC "。\n" NOR;
 
                 if (ap / 2 + random(ap)  + fmsk / 2 > dp)
                 {

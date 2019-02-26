@@ -35,7 +35,7 @@ string ask_shenlong()
                 fam["family_name"] != "神龍教")
         {
                 set_temp("marks/shenlong", 1, this_player());
-                write("漁夫對你說：神龍島可是個好去處，你想去就喊小人一聲。\n");
+                write("漁夫對你説：神龍島可是個好去處，你想去就喊小人一聲。\n");
                 return "快上船，走吧。\n";
         }
         else

@@ -3,7 +3,7 @@
 
 #define need(x) badness += x+"\n"
 
-#define FOOTER "≒≒≒≒≒≒≒≒≒≒≒≒≒≒≒≒≒≒≒≒≒≒≒≒≒≒≒≒≒\n"
+#define FOOTER "≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈\n"
 #define IMPOSSIBLE_TO_MISS_HEADER \
                FOOTER \
                "『 你現在運行的 MudOS driver 的設置參數並不適合 』\n" \

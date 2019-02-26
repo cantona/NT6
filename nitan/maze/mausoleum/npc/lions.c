@@ -90,7 +90,7 @@ void do_swing()
         message_vision(msg,this_object());
 
         foreach( enemy in enemies ) {
-                msg = HIW"鋼針既細，為數又多，$n大驚之下，不及躲閃，被打了個正著！\n"NOR;
+                msg = HIW"鋼針既細，為數又多，$n大驚之下，不及躲閃，被打了個正着！\n"NOR;
                 message_vision(msg,this_object(), enemy);
                 enemy->receive_damage("qi",8000+random(8000),this_object());
                 COMBAT_D->report_status(enemy);

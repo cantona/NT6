@@ -81,7 +81,7 @@ mixed hit_ob(object me, object victim)
                 victim->receive_wound("qi", damage_bonus * 2 / 3, me);
 
                 return HIW "$N" HIW "手中" + wn + HIW "忽的一振，將玉"
-                       "女心經功力運于劍端，漫出無邊寒意。\n" NOR;
+                       "女心經功力運於劍端，漫出無邊寒意。\n" NOR;
         } else
         if( query("skill_type", weapon) == "whip"
             && me->query_skill_mapped("whip") == "yinsuo-jinling")
@@ -111,9 +111,9 @@ int help(object me)
         write(HIC"\n玉女心法："NOR"\n");
         write(@HELP
 
-    古墓內功講究一個“靜”字，唯有平心靜氣、擺脫世俗之擾才
+    古墓內功講究一個“靜”字，唯有平心靜氣、擺脱世俗之擾才
 能修習上乘武功。玉女心經修煉難度很大，學習者要不急不躁，循
-序漸進方有成功之望。可以尋覓本門秘籍《玉女心經》上下冊研讀。
+序漸進方有成功之望。可以尋覓本門祕籍《玉女心經》上下冊研讀。
 
         學習要求：
                 基本內功10級

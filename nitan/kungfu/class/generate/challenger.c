@@ -87,7 +87,7 @@ void lost()
         if (! msg) msg = "豈有此理！怎麼... 怎麼可能會這樣？";
         command("chat " + msg);
         CHANNEL_D->do_channel(this_object(), "rumor",
-                "聽說" + ob->name() + "打敗了" + name() + "，捍衛了中原武林的尊嚴。");
+                "聽説" + ob->name() + "打敗了" + name() + "，捍衞了中原武林的尊嚴。");
         scorei = random(query("combat_exp")/500) + 10;
         weiwangi = random(query("combat_exp")/200) + 10;
         expi = random(NPC_D->check_level(this_object()) * 1000) + 10;
@@ -98,7 +98,7 @@ void lost()
         addn("potential", poti, ob);
         addn("family/gongji", poti, ob);
         tell_object(ob, sprintf(HIG "你獲得了%s點經驗、%s點潛能，並增"
-                                "加了%s點威望、%s點江湖閱歷和%s點門派功績。\n" NOR,
+                                "加了%s點威望、%s點江湖閲歷和%s點門派功績。\n" NOR,
                         chinese_number(expi),
                         chinese_number(poti),
                         chinese_number(weiwangi),
@@ -128,7 +128,7 @@ void win()
         if (! msg) msg = "中原武林，不堪一擊！";
         command("chat " + msg);
         CHANNEL_D->do_channel(this_object(), "rumor",
-                "聽說" + ob->name() + "輸給了" + name() + "，丟盡了中原武林的臉面。");
+                "聽説" + ob->name() + "輸給了" + name() + "，丟盡了中原武林的臉面。");
         set("finished", 1);
         call_out("destruct", 0, this_object());
         ::win();

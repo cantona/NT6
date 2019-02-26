@@ -33,7 +33,7 @@ void local_input(string str)
 {
         if (str == "CLOSE")
         {
-                write("用戶斷開了連接。\n");
+                write("用户斷開了連接。\n");
                 destruct(this_object());
                 return;
         }

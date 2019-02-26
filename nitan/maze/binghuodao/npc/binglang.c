@@ -4,7 +4,7 @@ inherit __DIR__"bhd_npc.c";
 void create()
 {
         set_name(HIW "冰狼" NOR, ({ "bing lang", "bing", "lang" }));
-        set("long", HIW "渾身被冰雪包裹的巨狼，在冰峰谷的進化了數萬年，似乎已經擁有無窮的力量。\n" NOR);
+        set("long", HIW "渾身被冰雪包裹的巨狼，在冰峯谷的進化了數萬年，似乎已經擁有無窮的力量。\n" NOR);
 
         set("age", 99999);
         set("str",121);

@@ -8,7 +8,7 @@ void create()
         set_name("趙敏", ({ "zhao min", "min", "zhao"}));
         set("title", HIY "大元紹敏郡主" NOR);
         set("long",
-"她臉泛紅霞，容色麗都。十分美麗之中，更帶著三分英氣，三分豪態，同
+"她臉泛紅霞，容色麗都。十分美麗之中，更帶着三分英氣，三分豪態，同
 時雍容華貴，自有一副端嚴之姿，令人肅然起敬，不敢逼視。\n");
         set("gender", "女性");
         set("age", 15);
@@ -47,7 +47,7 @@ void create()
         map_skill("unarmed", "changquan");
 
         set("inquiry", ([
-            "張無忌" :  "張公子遠在昆侖，不知他近來可好？秋冷春寒，可有寒衣？\n",
+            "張無忌" :  "張公子遠在崑崙，不知他近來可好？秋冷春寒，可有寒衣？\n",
             "倚天劍" :  "倚天為天下神兵，怎麼，你想要？\n",
         ]));
 
@@ -129,7 +129,7 @@ int accept_kill(object who)
 
 int accept_ansuan(object who)
 {
-        return notify_fail("你剛想暗算，可是只見樓上人影晃動，根本看不清楚。\n");
+        return notify_fail("你剛想暗算，可是隻見樓上人影晃動，根本看不清楚。\n");
 }
 
 void receive_damage(string type, int n)
@@ -150,13 +150,13 @@ void greeting(object ob)
         if( !userp(ob))
         return;
 
-        message_vision( HIW "$N一上樓來，只見一位明艷少女正座中堂，臉泛紅霞，容色麗都。十分美麗\n"+
-                            "之中，更帶著三分英氣，三分豪態，同時雍容華貴，自有一副端嚴之致，令\n"+
-                            "人肅然起敬，不敢逼視。少女身旁地站著幾人，衣著各異，但從幾人的神態\n"+
-                            "和氣度看來，無一不是武林高手。中堂擺著一個名貴的紅木制劍架，劍架上\n"+
-                            "橫放著一柄長劍，長劍的劍鞘上赫然寫著“" NOR+HIY "倚天" NOR+HIW "”二字。\n" NOR,
+        message_vision( HIW "$N一上樓來，只見一位明豔少女正座中堂，臉泛紅霞，容色麗都。十分美麗\n"+
+                            "之中，更帶着三分英氣，三分豪態，同時雍容華貴，自有一副端嚴之致，令\n"+
+                            "人肅然起敬，不敢逼視。少女身旁地站着幾人，衣着各異，但從幾人的神態\n"+
+                            "和氣度看來，無一不是武林高手。中堂擺着一個名貴的紅木製劍架，劍架上\n"+
+                            "橫放着一柄長劍，長劍的劍鞘上赫然寫着“" NOR+HIY "倚天" NOR+HIW "”二字。\n" NOR,
                             ob,this_object());
 
         command("yi");
-        command("say 哼，今天來我這裡添亂的人還真不少！");
+        command("say 哼，今天來我這裏添亂的人還真不少！");
 }

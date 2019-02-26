@@ -2,7 +2,7 @@
 inherit TASK;
 void create()
 {
-    set_name(MAG"祖傳秘方"NOR, ({ "zuchuan mifang" }) );
+    set_name(MAG"祖傳祕方"NOR, ({ "zuchuan mifang" }) );
     set_weight(10);
     if( clonep() )
             destruct(this_object());

@@ -44,7 +44,7 @@ int perform(object me, object target)
                 return notify_fail("你現在的真氣不夠，難以施展" HUAN "。\n");
 
         if (! living(target))
-                return notify_fail("對方都已經這樣了，用不著這麼費力吧？\n");
+                return notify_fail("對方都已經這樣了，用不着這麼費力吧？\n");
 
         wn = weapon->name();
 
@@ -68,8 +68,8 @@ int perform(object me, object target)
                 me->start_busy(2);
         } else
         {
-                msg = CYN "$n" CYN "大驚之下急忙躍開數步，方才擺脫$N"
-                      CYN "棍影的范圍。\n" NOR;
+                msg = CYN "$n" CYN "大驚之下急忙躍開數步，方才擺脱$N"
+                      CYN "棍影的範圍。\n" NOR;
                 addn("neili", -50, me);
                 me->start_busy(3);
         }

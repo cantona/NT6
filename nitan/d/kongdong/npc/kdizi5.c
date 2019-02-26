@@ -45,18 +45,18 @@ int do_yao()
 
     if( who->query("family/family_name")!="崆峒派" || query("food_apply") < 0 )
         {
-               message_vision("小道士對著$N搖了搖頭說：這位施主，實在對不起，\n"
+               message_vision("小道士對着$N搖了搖頭説：這位施主，實在對不起，\n"
                         "齋飯還沒有做好，煩請多等一會兒。\n",who);  
                return 1;
         }
     if ( (who->query("water") >= who->max_water_capacity()/2)
         &&(who->query("food") >= who->max_food_capacity()/2) ){
-        return notify_fail("你吃得飽飽的，喝得足足來這裡添什麼亂？！\n");
+        return notify_fail("你吃得飽飽的，喝得足足來這裏添什麼亂？！\n");
         }
 
-    message_vision("$N揉著肚子可憐兮兮得對$n說：\n"
+    message_vision("$N揉着肚子可憐兮兮得對$n説：\n"
         "“小師兄，還有剩飯嗎？實在是餓得不行了。”\n\n",who,me);
-        printf("小道士忙說：這位%s，飯還沒好，我先找給你點東西充饑吧。\n",
+        printf("小道士忙説：這位%s，飯還沒好，我先找給你點東西充飢吧。\n",
                 (who->query("gender")=="男性") ? "師兄" : "師姐" );
     who->set("food" ,who->max_food_capacity());
     who->set("water",who->max_water_capacity());
@@ -68,10 +68,10 @@ int accept_object(object who, object ob)
 {
         if(ob->value() >= 1000)
         {
-                message_vision("小道士遲疑地看著"+ob->name()+"，嘴裡嘟囔著：\n"
+                message_vision("小道士遲疑地看着"+ob->name()+"，嘴裏嘟囔着：\n"
                 "這怎麼好意思呢？\n",who);
-                message_vision("小道士想了想，從食櫥裡拿給$N一塊素餅和一個葫"
-                        "蘆，\n說：要有人問起，你可別說是我拿給你的。\n",who);
+                message_vision("小道士想了想，從食櫥裏拿給$N一塊素餅和一個葫"
+                        "蘆，\n説：要有人問起，你可別説是我拿給你的。\n",who);
                 message_vision("小道士轉過身去，繼續引火。\n",who);
                 new(__DIR__"obj/subing")->move(who);
                 new(__DIR__"obj/hulu")->move(who);
@@ -79,7 +79,7 @@ int accept_object(object who, object ob)
         }
         else 
         {
-                message_vision("小道士搖搖頭：師傅說過，不能隨便要別人的東西。\n",who);
+                message_vision("小道士搖搖頭：師傅説過，不能隨便要別人的東西。\n",who);
                 return 0;
         }
 }

@@ -12,7 +12,7 @@ void create()
 {
         set_name("周婆婆", ({ "zhou popo", "zhou", "popo" }));
         set("long", @LONG
-余婆婆是縹緲峰靈鷲宮中九天九部中鸞天部的
+餘婆婆是縹緲峯靈鷲宮中九天九部中鸞天部的
 首領。她如今年過半百，跟隨童姥多年，出生
 入死，飽經風霜。
 LONG);
@@ -130,7 +130,7 @@ void attempt_apprentice(object ob)
         }
 
         command("nod2");
-        command("say 那你以後就跟著我吧。");
+        command("say 那你以後就跟着我吧。");
         command("recruit "+query("id", ob));
 
         if( query("class", ob) != "dancer" )

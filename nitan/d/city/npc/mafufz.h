@@ -17,7 +17,7 @@ int do_ridefz()
                 HIC"山路"NOR,
                 HIC"山路"NOR,
                 HIC"仙霞嶺"NOR,
-                HIC"廿八舖"NOR,
+                HIC"廿八鋪"NOR,
                 HIC"武夷山道"NOR,
                 HIC"閩浙古道"NOR,
                 HIC"延平府"NOR,
@@ -46,13 +46,13 @@ int do_ridefz()
                         break;
         }
         message_vision(
-"馬夫隨手給$N牽來一匹"+hname+"。$N翻身躍上馬背。動作瀟洒利索。路邊行人一陣
-起哄: 喔噢喔噢。\n"NOR , ob );
+"馬伕隨手給$N牽來一匹"+hname+"。$N翻身躍上馬背。動作瀟灑利索。路邊行人一陣
+起鬨: 喔噢喔噢。\n"NOR , ob );
         message_vision("\n只見$N騎兩腿一夾，"+hname+"穿過客店而去。\n",ob);
         for (i = 0;i < sizeof(yz_fz);i++)
                 tell_object(ob,yz_fz[i] + "\n");
         ob->move("/d/fuzhou/majiu");
-        tell_room(environment(ob),query("name", ob)+"騎著"+hname+"一路順利到達福州。\n");
+        tell_room(environment(ob),query("name", ob)+"騎着"+hname+"一路順利到達福州。\n");
         message_vision("\n$N身形一轉，躍下馬來，姿態十分優美。閒人也給$N一大哄 !\n" ,ob);
         delete_temp("marks/horserent", ob);
         return 1;

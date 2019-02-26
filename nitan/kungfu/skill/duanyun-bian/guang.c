@@ -35,7 +35,7 @@ int perform(object me, object target)
         if( query("neili", me)<600 )
                 return notify_fail(HIC"你現在內力不夠，沒能將"+name()+"使完！\n"NOR);
 
-        msg=HIC"$N"HIC"一聲大喝，右手一振，手中"+query("name", weapon)+HIC"脫手飛出。只見滿天鞭影，盤旋繚繞，遮閉天日，劈頭蓋腦向$n"HIC"砸了下去！\n"NOR;
+        msg=HIC"$N"HIC"一聲大喝，右手一振，手中"+query("name", weapon)+HIC"脱手飛出。只見滿天鞭影，盤旋繚繞，遮閉天日，劈頭蓋腦向$n"HIC"砸了下去！\n"NOR;
         ap = attack_power(me, "whip");
         dp = defense_power(target, "force");
         if( ap / 2 + random(ap) > dp )
@@ -56,7 +56,7 @@ int perform(object me, object target)
                 target->receive_wound("qi", damage/2,me);
                 target->receive_damage("jing", damage/4,me);
                 msg += HIR"$n疾忙返身後躍，但鞭勢疾如電閃，但見黑影如壓城之勢而來，全身如遭"
-                       "雷擊，一時不知挨了多少鞭，不禁慘聲連連！\n"NOR;
+                       "雷擊，一時不知捱了多少鞭，不禁慘聲連連！\n"NOR;
         } else
         {
                 me->start_busy(2);

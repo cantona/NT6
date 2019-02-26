@@ -12,8 +12,8 @@ void create()
                 set_default_object(__FILE__);
         else {
                 set("unit", "柄");
-                set("long", "這是一柄的短劍，據說劍裡藏著一個極大秘密，幾
-百年來輾轉相傳，始終無人參詳得出。\n");
+                set("long", "這是一柄的短劍，據説劍裏藏着一個極大祕密，幾
+百年來輾轉相傳，始終無人蔘詳得出。\n");
                 set("value", 100);
                 set("material", "steel");
                 set("wield_msg", "$N「唰」的一聲抽出一柄$n握在手中。\n");

@@ -40,7 +40,7 @@ int main(object me, string str)
         }
 
         if (me->is_busy())
-                return notify_fail("你現在正忙，等你有空了再說吧。\n");
+                return notify_fail("你現在正忙，等你有空了再説吧。\n");
 
         if( !stringp(file=query("can_summon/"+str, me)) )
                 return notify_fail("你不知道如何召喚這個物品。\n");
@@ -55,7 +55,7 @@ int main(object me, string str)
                 return notify_fail("你暫時無法感應到你的物品。\n");
 
         if( query("no_magic", environment(me)) )
-                return notify_fail("你在這裡無法感應到你的物品。\n");
+                return notify_fail("你在這裏無法感應到你的物品。\n");
 
         call_other(file, "???");
         ob = find_object(file);

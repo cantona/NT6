@@ -9,7 +9,7 @@ void create()
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("long", NOR + CYN "世間極為罕見的玄鐵，採至天山，著手極為沉重。\n" NOR);
+                set("long", NOR + CYN "世間極為罕見的玄鐵，採至天山，着手極為沉重。\n" NOR);
                 set("unit", "塊");
                 set("value", 30000);
                 set("item_origin", 1);

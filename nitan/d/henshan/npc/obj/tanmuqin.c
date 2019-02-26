@@ -13,7 +13,7 @@ void create()
                 set_default_object(__FILE__);
         else {
                 set("unit", "把");
-                set("long", NOR + YEL "一把檀木所制的木琴，古典雅致。\n" NOR);
+                set("long", NOR + YEL "一把檀木所制的木琴，古典雅緻。\n" NOR);
                 set("value", 50);
                 set("material", "wood");
         }

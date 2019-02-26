@@ -25,7 +25,7 @@ void die()
         }
 
         message("vision", name() + "彎了彎身子，死了。\n", environment());
-        set("long", "這是一只" + name() + "，它已經死了。\n");
+        set("long", "這是一隻" + name() + "，它已經死了。\n");
         set_name("死" + name(), ({ "si xia", "sixia" }));
         has_died = 1;
         call_out("decay", 30 + random(30));
@@ -43,7 +43,7 @@ void decay()
         }
 
         message("vision", name() + "腐爛了，發出一陣陣臭味。\n", environment());
-        set("long", "這是一只" + name() + "，它已經開始腐爛了。\n");
+        set("long", "這是一隻" + name() + "，它已經開始腐爛了。\n");
         set_name("爛蝦", ({ "lan xia", "lanxa" }));
         set("value", 0);
         call_out("vanish", 20 + random(20));
@@ -78,12 +78,12 @@ int broil(object me, object ob)
         me = this_player();
         if (me->is_busy())
         {
-                write("你現在忙著呢，過會兒再烤吧。\n");
+                write("你現在忙着呢，過會兒再烤吧。\n");
                 return 1;
         }
 
         message_vision("$N把" + name() + "放在" + ob->name() +
-                       "上細細的烤著，只聽畢啵畢啵的聲音，" + name() +
+                       "上細細的烤着，只聽畢啵畢啵的聲音，" + name() +
                        "慢慢的變成了紅色，散發出陣陣誘人的香味。\n", me);
 
         write(HIY "你把蝦烤好了！\n" NOR);

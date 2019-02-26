@@ -5,13 +5,13 @@ inherit BOOTS;
 
 void create()
 {
-        set_name( HIR "火麒麟﹒疾行" NOR, ({ "jixing xue", "jixing", "xue" }) );
+        set_name( HIR "火麒麟·疾行" NOR, ({ "jixing xue", "jixing", "xue" }) );
         set_weight(10);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
                 set("unit", "雙");
-                set("long", HIR "這是一雙通體火紅的靴子，散發著令人窒息的光芒。\n");
+                set("long", HIR "這是一雙通體火紅的靴子，散發着令人窒息的光芒。\n");
                 set("value", 2000000);
                 
                 set("armor_prop/dex", 60); //後天身法+60

@@ -5,8 +5,8 @@ inherit NPC;
 void create()
 {
         set_name("諸葛亮", ({ "zhuge liang", "zhuge", "liang"}));
-        set("long", "    此人便是傳說中有通天徹底的三國時代蜀國\n"
-                    "軍師諸葛亮，據說他上知天文，下通地理，無一\n"
+        set("long", "    此人便是傳説中有通天徹底的三國時代蜀國\n"
+                    "軍師諸葛亮，據説他上知天文，下通地理，無一\n"
                     "不精，無一不曉，真乃神人也。\n");
 
         set("nickname", HIG "智囊" NOR);
@@ -98,7 +98,7 @@ void die()
         return;
 }
 
-// 氣血小于1000則死亡，避免他人協助幫忙轉世
+// 氣血小於1000則死亡，避免他人協助幫忙轉世
 void heart_beat()
 {
         if (this_object()->query("qi") < 1000 || this_object()->query("eff_qi") < 1000)

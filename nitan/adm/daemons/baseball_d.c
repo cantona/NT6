@@ -63,7 +63,7 @@ private nosave mapping pitch_ball_types_name =
 	"sinker":"伸卡球",
 ]);
 
-// 調整能力數值，可控制變化率並限制在一定范圍內
+// 調整能力數值，可控制變化率並限制在一定範圍內
 int calculate(int value, float decay, int value_max, int to_min, int to_max)
 {
 	float ratio = (to_max - to_min) / pow(to_float(value_max), decay);
@@ -730,8 +730,8 @@ private varargs string *game_finish(int gameindex, string stopid)
 					user->add_title(sprintf(HIC+"%-4d"+HIY"總"NOR YEL"冠"NOR YEL"軍"NOR, year));
 					user->save();				
 					
-					tell(user, pnoun(2, user)+"獲得一只“"+ring->query_idname()+"”。\n");
-					CHANNEL_D->channel_broadcast("sport", user->query_idname()+"獲得一只“"+ring->query_idname()+"”。");
+					tell(user, pnoun(2, user)+"獲得一隻“"+ring->query_idname()+"”。\n");
+					CHANNEL_D->channel_broadcast("sport", user->query_idname()+"獲得一隻“"+ring->query_idname()+"”。");
 					
 					ring->set_keep();
 					ring->move(user);
@@ -809,10 +809,10 @@ private string *new_score(int gameindex, string attacker, string defender, int s
 	{
 		switch(scoretype)
 		{
-			case SCORETYPE_HOMERUN:		msg += ({ "這是一只再見全壘打！！" }); 	break;
+			case SCORETYPE_HOMERUN:		msg += ({ "這是一隻再見全壘打！！" }); 	break;
 			case SCORETYPE_FOURBALL:	msg += ({ "這是一個再見四壞！！" }); 	break;
-			case SCORETYPE_SACRIFICE:	msg += ({ "這是一只再見犧牲打！！" });	break;
-			case SCORETYPE_HIT:		msg += ({ "這是一只再見安打！！" }); 	break;
+			case SCORETYPE_SACRIFICE:	msg += ({ "這是一隻再見犧牲打！！" });	break;
+			case SCORETYPE_HIT:		msg += ({ "這是一隻再見安打！！" }); 	break;
 			default: error("error scoretype");
 		}
 
@@ -893,7 +893,7 @@ private string *new_out(int gameindex, string attacker, string defender, int out
 		{
 			if( game[RUNNER3RD] > 0 )
 			{
-				msg += ({ "“"+setup[attacker]["name"]+"”三壘跑者沖回本壘得分！" });
+				msg += ({ "“"+setup[attacker]["name"]+"”三壘跑者衝回本壘得分！" });
 				msg += new_score(gameindex, attacker, defender, 1, SCORETYPE_SACRIFICE);
 				
 				if( !games[gameindex] )
@@ -918,7 +918,7 @@ private string *new_out(int gameindex, string attacker, string defender, int out
 		//else if( outtype == BASETYPE_TRIPLEPLAY ) { }
 		
 		if( game[RUNNER3RD] > 0 || game[RUNNER2ND] > 0 || game[RUNNER1ST] > 0 )
-			msg += ({ "“"+setup[attacker]["name"]+"”目前壘上的跑者情形為 [ "+(game[RUNNER3RD] > 0?HIW"○"NOR:WHT"□"NOR)+" "+(game[RUNNER2ND] > 0?HIW"○"NOR:WHT"□"NOR)+" "+(game[RUNNER1ST] > 0?HIW"○"NOR:WHT"□"NOR)+" ] "HIW+game[OUT]+NOR WHT"out"NOR });
+			msg += ({ "“"+setup[attacker]["name"]+"”目前壘上的跑者情形為 [ "+(game[RUNNER3RD] > 0?HIW"○"NOR:WHT"╳"NOR)+" "+(game[RUNNER2ND] > 0?HIW"○"NOR:WHT"╳"NOR)+" "+(game[RUNNER1ST] > 0?HIW"○"NOR:WHT"╳"NOR)+" ] "HIW+game[OUT]+NOR WHT"out"NOR });
 	}
 
 	// 輪下一棒
@@ -1101,7 +1101,7 @@ private string *new_base(int gameindex, string attacker, string defender, int ba
 	setup[defender]["hint"] = 0;
 	
 	if( game[RUNNER3RD] > 0 || game[RUNNER2ND] > 0 || game[RUNNER1ST] > 0 )
-		msg += ({ "“"+setup[attacker]["name"]+"”目前壘上的跑者情形為 [ "+(game[RUNNER3RD] > 0?HIW"○"NOR:WHT"□"NOR)+" "+(game[RUNNER2ND] > 0?HIW"○"NOR:WHT"□"NOR)+" "+(game[RUNNER1ST] > 0?HIW"○"NOR:WHT"□"NOR)+" ] "HIW+game[OUT]+NOR WHT"out"NOR });
+		msg += ({ "“"+setup[attacker]["name"]+"”目前壘上的跑者情形為 [ "+(game[RUNNER3RD] > 0?HIW"○"NOR:WHT"╳"NOR)+" "+(game[RUNNER2ND] > 0?HIW"○"NOR:WHT"╳"NOR)+" "+(game[RUNNER1ST] > 0?HIW"○"NOR:WHT"╳"NOR)+" ] "HIW+game[OUT]+NOR WHT"out"NOR });
 		
 	games[gameindex] = game;
 
@@ -1286,8 +1286,8 @@ void play_game()
 			string defend_msg="", attack_msg="", info_msg="", *special_msg = allocate(0);
 			string pitcherballtype;
 			
-			int pitcherbase = get_handside_level(pitcher) + pitcher->query_str() * 2;		// 投手基本能力(預估范圍 10~1500 之間)
-			int batterbase = get_handside_level(batter) + batter->query_str() * 2;			// 打者基本能力(預估范圍 10~1500 之間)
+			int pitcherbase = get_handside_level(pitcher) + pitcher->query_str() * 2;		// 投手基本能力(預估範圍 10~1500 之間)
+			int batterbase = get_handside_level(batter) + batter->query_str() * 2;			// 打者基本能力(預估範圍 10~1500 之間)
 			
 			string *availableballtypes;
 			int pitchballpower;
@@ -1347,7 +1347,7 @@ void play_game()
 						break;
 				}
 				
-				// 球種癒多，威力癒強
+				// 球種愈多，威力愈強
 				if( sizeof(availableballtypes) == 1 )
 					pitchballpower -= 200;
 				else
@@ -1534,7 +1534,7 @@ void play_game()
 									else
 										distance = range_random(160, 170);
 										
-									attack_msg += "轟出了一只超大號"+( game[RUNNER1ST] > 0 && game[RUNNER2ND] > 0 && game[RUNNER3RD] > 0 ? "滿貫" : "" )+"全壘打("+distance+"m)！！";
+									attack_msg += "轟出了一隻超大號"+( game[RUNNER1ST] > 0 && game[RUNNER2ND] > 0 && game[RUNNER3RD] > 0 ? "滿貫" : "" )+"全壘打("+distance+"m)！！";
 								}
 								else
 								{
@@ -1684,7 +1684,7 @@ void play_game()
 					{					
 						defender == game[TEAM1] ? game[TEAM1K]++ : game[TEAM2K]++;
 
-						attack_msg += "站著發呆遭到三振出局";
+						attack_msg += "站着發呆遭到三振出局";
 
 						info_msg = " "HIW+(game[OUT]+1)+NOR WHT"out "HIY + (defender == game[TEAM1] ? game[TEAM1K] : game[TEAM2K]) +NOR YEL"K!"NOR;
 
@@ -1692,7 +1692,7 @@ void play_game()
 					}
 					else
 					{
-						attack_msg += "站著發呆";
+						attack_msg += "站着發呆";
 
 						info_msg = " "HIR+game[STRIKE]+NOR" "HIG+game[BALL]+" "HIW+game[OUT]+NOR;
 					}
@@ -2051,7 +2051,7 @@ void heart_beat()
 					}
 		
 					CHANNEL_D->channel_broadcast("sport", HIR"季後"NOR RED"賽"NOR" 以上八隊勁旅將參加本球季的最終決賽，爭取棒球界最高榮耀“"HIY"世"NOR YEL"界"HIY"冠"NOR YEL"軍"NOR"”。");
-					CHANNEL_D->channel_broadcast("sport", HIR"季後"NOR RED"賽"NOR" 季後賽所有賽事皆一戰定勝負，總共 7 場比賽將于運動頻道全世界同步實況轉播。");
+					CHANNEL_D->channel_broadcast("sport", HIR"季後"NOR RED"賽"NOR" 季後賽所有賽事皆一戰定勝負，總共 7 場比賽將於運動頻道全世界同步實況轉播。");
 					CHANNEL_D->channel_broadcast("sport", HIR"季後"NOR RED"賽"NOR" 季後賽的比賽過程中將可擁有 2 倍的暗號使用次數，同時將擁有 20 倍的票房收入。");
 					CHANNEL_D->channel_broadcast("sport", HIR"季後"NOR RED"賽"NOR" 首先進行 "HIC"A 組八強賽"NOR"的是排名第 1 的“"+setup[post_season_team_8[0]]["name"]+"”對上排名第 8 的“"+setup[post_season_team_8[7]]["name"]+"”，比賽將在 2 分鐘後開始。");
 				
@@ -2062,7 +2062,7 @@ void heart_beat()
 				}
 				case 1:
 				{
-					CHANNEL_D->channel_broadcast("sport", HIR"季後"NOR RED"賽"NOR" 接著進行 "HIC"B 組八強賽"NOR"的是排名第 2 的“"+setup[post_season_team_8[1]]["name"]+"”對上排名第 7 的“"+setup[post_season_team_8[6]]["name"]+"”，比賽將在 2 分鐘後開始。");
+					CHANNEL_D->channel_broadcast("sport", HIR"季後"NOR RED"賽"NOR" 接着進行 "HIC"B 組八強賽"NOR"的是排名第 2 的“"+setup[post_season_team_8[1]]["name"]+"”對上排名第 7 的“"+setup[post_season_team_8[6]]["name"]+"”，比賽將在 2 分鐘後開始。");
 					
 					post_season_level++;
 					new_game(post_season_team_8[1], post_season_team_8[6]);
@@ -2071,7 +2071,7 @@ void heart_beat()
 				}
 				case 2:
 				{
-					CHANNEL_D->channel_broadcast("sport", HIR"季後"NOR RED"賽"NOR" 接著進行 "HIC"C 組八強賽"NOR"的是排名第 3 的“"+setup[post_season_team_8[2]]["name"]+"”對上排名第 6 的“"+setup[post_season_team_8[5]]["name"]+"”，比賽將在 2 分鐘後開始。");
+					CHANNEL_D->channel_broadcast("sport", HIR"季後"NOR RED"賽"NOR" 接着進行 "HIC"C 組八強賽"NOR"的是排名第 3 的“"+setup[post_season_team_8[2]]["name"]+"”對上排名第 6 的“"+setup[post_season_team_8[5]]["name"]+"”，比賽將在 2 分鐘後開始。");
 					
 					post_season_level++;
 					new_game(post_season_team_8[2], post_season_team_8[5]);
@@ -2080,7 +2080,7 @@ void heart_beat()
 				}
 				case 3:
 				{
-					CHANNEL_D->channel_broadcast("sport", HIR"季後"NOR RED"賽"NOR" 接著進行 "HIC"D 組八強賽"NOR"的是排名第 4 的“"+setup[post_season_team_8[3]]["name"]+"”對上排名第 5 的“"+setup[post_season_team_8[4]]["name"]+"”，比賽將在 2 分鐘後開始。");
+					CHANNEL_D->channel_broadcast("sport", HIR"季後"NOR RED"賽"NOR" 接着進行 "HIC"D 組八強賽"NOR"的是排名第 4 的“"+setup[post_season_team_8[3]]["name"]+"”對上排名第 5 的“"+setup[post_season_team_8[4]]["name"]+"”，比賽將在 2 分鐘後開始。");
 					
 					post_season_level++;
 					new_game(post_season_team_8[3], post_season_team_8[4]);
@@ -2089,7 +2089,7 @@ void heart_beat()
 				}
 				case 4:
 				{
-					CHANNEL_D->channel_broadcast("sport", HIR"季後"NOR RED"賽"NOR" 接著進行"HIY"四強準決賽"NOR"的是 A 組晉級隊伍“"+setup[post_season_team_4[0]]["name"]+"”對上 D 組晉級隊伍“"+setup[post_season_team_4[3]]["name"]+"”，比賽將在 2 分鐘後開始。");
+					CHANNEL_D->channel_broadcast("sport", HIR"季後"NOR RED"賽"NOR" 接着進行"HIY"四強準決賽"NOR"的是 A 組晉級隊伍“"+setup[post_season_team_4[0]]["name"]+"”對上 D 組晉級隊伍“"+setup[post_season_team_4[3]]["name"]+"”，比賽將在 2 分鐘後開始。");
 					
 					post_season_level++;
 					new_game(post_season_team_4[0], post_season_team_4[3]);
@@ -2098,7 +2098,7 @@ void heart_beat()
 				}
 				case 5:
 				{
-					CHANNEL_D->channel_broadcast("sport", HIR"季後"NOR RED"賽"NOR" 接著進行"HIY"四強準決賽"NOR"的是 B 組晉級隊伍“"+setup[post_season_team_4[1]]["name"]+"”對上 C 組晉級隊伍“"+setup[post_season_team_4[2]]["name"]+"”，比賽將在 2 分鐘後開始。");
+					CHANNEL_D->channel_broadcast("sport", HIR"季後"NOR RED"賽"NOR" 接着進行"HIY"四強準決賽"NOR"的是 B 組晉級隊伍“"+setup[post_season_team_4[1]]["name"]+"”對上 C 組晉級隊伍“"+setup[post_season_team_4[2]]["name"]+"”，比賽將在 2 分鐘後開始。");
 					
 					post_season_level++;
 					new_game(post_season_team_4[1], post_season_team_4[2]);
@@ -2107,7 +2107,7 @@ void heart_beat()
 				}
 				case 6:
 				{
-				CHANNEL_D->channel_broadcast("sport", HIR"季後"NOR RED"賽"NOR" 接著進行第 "HIC+season_year+NOR" 球季"HIY"總"NOR YEL"冠軍賽"NOR"的是“"+setup[post_season_team_2[0]]["name"]+"”對上“"+setup[post_season_team_2[1]]["name"]+"”，比賽將在 2 分鐘後開始。");
+				CHANNEL_D->channel_broadcast("sport", HIR"季後"NOR RED"賽"NOR" 接着進行第 "HIC+season_year+NOR" 球季"HIY"總"NOR YEL"冠軍賽"NOR"的是“"+setup[post_season_team_2[0]]["name"]+"”對上“"+setup[post_season_team_2[1]]["name"]+"”，比賽將在 2 分鐘後開始。");
 					
 					post_season_level++;
 					new_game(post_season_team_2[0], post_season_team_2[1]);
@@ -2208,12 +2208,12 @@ void heart_beat()
 					// 隨機決定主客場
 					if( !random(2) )
 					{
-						//CHANNEL_D->channel_broadcast("sport", HIC+"季賽"NOR CYN"配對 "NOR+setup[id]["username"]+"的“"+setup[id]["name"]+"”與"+setup[opponent_id]["username"]+"的“"+setup[opponent_id]["name"]+"”將于 "+(PREPARETIME/60)+" 分鐘後進行球賽。");
+						//CHANNEL_D->channel_broadcast("sport", HIC+"季賽"NOR CYN"配對 "NOR+setup[id]["username"]+"的“"+setup[id]["name"]+"”與"+setup[opponent_id]["username"]+"的“"+setup[opponent_id]["name"]+"”將於 "+(PREPARETIME/60)+" 分鐘後進行球賽。");
 						new_game(id, opponent_id);
 					}
 					else
 					{
-						//CHANNEL_D->channel_broadcast("sport", HIC+"季賽"NOR CYN"配對 "NOR+setup[opponent_id]["username"]+"的“"+setup[opponent_id]["name"]+"”與"+setup[id]["username"]+"的“"+setup[id]["name"]+"”將于 "+(PREPARETIME/60)+" 分鐘後進行球賽。");
+						//CHANNEL_D->channel_broadcast("sport", HIC+"季賽"NOR CYN"配對 "NOR+setup[opponent_id]["username"]+"的“"+setup[opponent_id]["name"]+"”與"+setup[id]["username"]+"的“"+setup[id]["name"]+"”將於 "+(PREPARETIME/60)+" 分鐘後進行球賽。");
 						new_game(opponent_id, id);
 					}
 				}

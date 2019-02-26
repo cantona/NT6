@@ -41,7 +41,7 @@ int do_eat(string arg)
         if (!present(this_object(), this_player()))
                 return notify_fail("你要吃什麼？\n");
         if( me->is_busy() )
-                return notify_fail("別急，慢慢吃，小心別噎著了。\n");
+                return notify_fail("別急，慢慢吃，小心別噎着了。\n");
 
         if ( (int)me->query_condition("quanzhen_drug" ) > 0 )
                 return notify_fail("你是否才煉丹藥或才服食了丹藥？你的全身氣血未歸位，不宜吃丹藥。\n");

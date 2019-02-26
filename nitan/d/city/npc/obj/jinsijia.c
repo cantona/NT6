@@ -33,6 +33,6 @@ int query_autoload()
 }
 void owner_is_killed()
 {
-        write(HIY"只見眼前金光一閃...好象是.....\n"NOR);
+        write(HIY"只見眼前金光一閃...好像是.....\n"NOR);
         destruct(this_object());
 } 

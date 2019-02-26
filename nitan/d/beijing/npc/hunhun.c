@@ -6,7 +6,7 @@ void create()
         set("gender", "男性" );
         set("age", 22);
         set("long",
-                "一個京城裡的混混。\n");
+                "一個京城裏的混混。\n");
         set("shen_type", 1);
         set("combat_exp", 10000);
        set("str", 10);

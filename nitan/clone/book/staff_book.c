@@ -10,7 +10,7 @@ void create()
                 set_default_object(__FILE__);
         else {
                 set("unit", "本");
-                set("long", "這是一本破紙片，上面畫著舞杖的小人。\n");
+                set("long", "這是一本破紙片，上面畫着舞杖的小人。\n");
                 set("value", 100);
                 set("material", "paper");
                 set("skill", ([

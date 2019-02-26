@@ -5,10 +5,10 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "胡同");
+        set("short", "衚衕");
         set("long", @LONG
-這裡是襄陽城內老百姓的居住區。只見胡同兩邊是有些小店面，
-有米行、小雜貨舖等。一些居民從這裡進進出出。
+這裏是襄陽城內老百姓的居住區。只見衚衕兩邊是有些小店面，
+有米行、小雜貨鋪等。一些居民從這裏進進出出。
 LONG );
         set("outdoors", "xiangyang");
 

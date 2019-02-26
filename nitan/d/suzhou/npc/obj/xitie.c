@@ -12,7 +12,7 @@ void create()
         else
    {
                 set("unit", "張");
-                set("long","一張大紅的帖子，上面寫著：\n"
+                set("long","一張大紅的帖子，上面寫着：\n"
                         "誠邀閣下參加我們的在汝州紅娘莊的婚禮和汝州迎賓樓的婚宴。\n");
       set("material", "paper");
         }

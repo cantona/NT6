@@ -16,8 +16,8 @@ void create()
         set("age", 58);
         set("long", @LONG
 這便是川西碧磷洞洞主端桑土公，只見他身材
-矮小，須發皆白。手持一個大銅鼎，鼎足上鑄
-著一個“桑”字，乃是幾條小蛇、蜈蚣之形盤
+矮小，鬚髮皆白。手持一個大銅鼎，鼎足上鑄
+着一個“桑”字，乃是幾條小蛇、蜈蚣之形盤
 成，銅綠斑斕，宛是一件古物。
 LONG );
         set("attitude", "peaceful");
@@ -101,7 +101,7 @@ int recognize_apprentice(object ob, string skill)
         if( query("family/master_id", ob) != "xuzhu zi" )
         {
                 command("heng");
-                command("say 你算什麼東西？就是你師父我也不放在眼裡。");
+                command("say 你算什麼東西？就是你師父我也不放在眼裏。");
                 return -1; 
 
         }
@@ -140,20 +140,20 @@ mixed ask_skill()
                 return "快給我滾開！我可沒時間和你耗。";
 
         if (me->query_skill("pidi-shenzhen", 1) < 1)
-                return "你辟地神針都沒學，還談什麼絕招。";
+                return "你闢地神針都沒學，還談什麼絕招。";
 
         if( query("family/family_name", me) == "靈鷲宮" && 
            query("family/gongji", me)<600 )
-                return "嗯，主公說過了，不得傳功給無功勞的弟子。";
+                return "嗯，主公説過了，不得傳功給無功勞的弟子。";
 
         if (me->query_skill("force") < 200)
                 return "你的內功差成這樣，怎麼學絕技？";
 
         if (me->query_skill("pidi-shenzhen", 1) < 140)
-                return "你的辟地神針火候還差得遠，再回去練練！";
+                return "你的闢地神針火候還差得遠，再回去練練！";
 
         message_vision(HIY "$n" HIY "陰陰一笑，將$N" HIY "招至跟前，輕"
-                       "聲在耳旁秘密說了些什麼。隨後又伸出右\n手，十指"
+                       "聲在耳旁祕密説了些什麼。隨後又伸出右\n手，十指"
                        "箕張，一伸一縮，看樣子是一種很特別的暗器法門。\n"
                        NOR, me, this_object());
 
@@ -186,10 +186,10 @@ mixed ask_me()
                 return "讓你師父來拿，這寶貝可不能亂送人。";
 
         if (me->query_skill("pidi-shenzhen", 1) < 100)
-                return "你辟地神針的手法還不到家，拿了這針也沒什麼用。";
+                return "你闢地神針的手法還不到家，拿了這針也沒什麼用。";
 
         if (query("zhen_count") < 1)
-                return "沒了，沒了！我老底都被你掀幹凈了。";
+                return "沒了，沒了！我老底都被你掀乾淨了。";
 
         addn("zhen_count", -1);
         ob = new("/d/lingjiu/npc/obj/jinzhen");
@@ -206,7 +206,7 @@ void attempt_apprentice(object ob)
                 return;
 
         command("sigh2");
-        command("say 這個世道真是什麼人都有，擺著那麼多門派不拜，卻跑來拜我。");
+        command("say 這個世道真是什麼人都有，擺着那麼多門派不拜，卻跑來拜我。");
         command("say 虧你也想得出來，既然來了，我就收下你吧。");
         command("recruit "+query("id", ob));
 } 

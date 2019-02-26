@@ -22,7 +22,7 @@ int perform(object me, object target)
                 return notify_fail("你臂力不夠,不能使用這一絕技!\n");
 
         if ((int)me->query_skill("yinyun-ziqi", 1) < 100)
-                return notify_fail("你氤氳紫氣的功力不夠不能使用倚天屠龍絕技!\n");
+                return notify_fail("你氤氲紫氣的功力不夠不能使用倚天屠龍絕技!\n");
 
         if( query("neili", me)<800 )
                 return notify_fail("你內力現在不夠, 不能使用倚天屠龍! \n");

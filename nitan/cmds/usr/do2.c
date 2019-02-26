@@ -53,7 +53,7 @@ int help(object me)
 
 這個指令可以讓你一次把一串指令交給伺服器處理，如此網路
 封包將從多封包被壓縮成單封包。
-串連指令范例：
+串連指令範例：
 (六封包)原 ZMUD 多封包: e;s;s;enter door;kill liu mang;perform cuff.ji
 (一封包)使用 do 單封包: do e,s,s,enter door,kill liu mang,perform cuff.ji
 

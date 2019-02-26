@@ -8,7 +8,7 @@ void create()
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("long", HIW "露華之晶乃是昆侖仙境之顛的露珠，吸取宇宙大地之塵埃結晶而成，蘊涵宇宙萬物之精華。\n" NOR);
+                set("long", HIW "露華之晶乃是崑崙仙境之顛的露珠，吸取宇宙大地之塵埃結晶而成，藴涵宇宙萬物之精華。\n" NOR);
                 set("unit", "塊");
                 set("value", 5000);
                 set("enchase/name", "露華之晶");

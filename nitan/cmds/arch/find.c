@@ -55,11 +55,11 @@ int main(object me, string arg)
         if (file_size(dir) != -2)
                 return notify_fail(dir + " 並不是一個目錄。\n");
 
-        // 給一點提示，因為玩家可能會過于遲滯
+        // 給一點提示，因為玩家可能會過於遲滯
         message_system("系統進行數據處理中，請耐心等候...");
 
 #if ENABLE_BAR
-        write(HIR "\n現在系統正在搜索 " + dir + " 目錄，稍後匯報。\n\n" NOR
+        write(HIR "\n現在系統正在搜索 " + dir + " 目錄，稍後彙報。\n\n" NOR
               HIW "進度：" + process_bar(0) + "\n");
         if (me)
         {

@@ -20,7 +20,7 @@ int perform(object me, object target)
                 return notify_fail("「日月同輝」只能在戰鬥中對對手使用。\n");
 
         if( objectp(query_temp("weapon", me)) )
-                return notify_fail("使用「日月同輝」時雙手必須空著！\n");
+                return notify_fail("使用「日月同輝」時雙手必須空着！\n");
 
         if( (int)me->query_skill("xingyi-zhang", 1) < 180 )
                 return notify_fail("你的星移掌不夠嫻熟，不會使用「日月同輝」。\n");
@@ -56,7 +56,7 @@ int perform(object me, object target)
                 message_combatd(msg, me, target);
                 COMBAT_D->do_attack(me,target,query_temp("weapon", me),TYPE_QUICK);
 
-                msg = HIG"緊接著$N抽出左掌，身形一矮，由下而上猛襲向$n的小腹！"NOR;
+                msg = HIG"緊接着$N抽出左掌，身形一矮，由下而上猛襲向$n的小腹！"NOR;
                 message_combatd(msg, me, target);
                 COMBAT_D->do_attack(me,target,query_temp("weapon", me),TYPE_QUICK);
 
@@ -64,7 +64,7 @@ int perform(object me, object target)
                 message_combatd(msg, me, target);
                 COMBAT_D->do_attack(me,target,query_temp("weapon", me),TYPE_QUICK);
 
-                msg = HIY"$N在空中一個回轉，攜「"HIR"日月之光"HIY"」, 雙掌按向$n的丹田！"NOR;
+                msg = HIY"$N在空中一個迴轉，攜「"HIR"日月之光"HIY"」, 雙掌按向$n的丹田！"NOR;
                 message_combatd(msg, me, target);
                 COMBAT_D->do_attack(me,target,query_temp("weapon", me),TYPE_QUICK);
 
@@ -74,7 +74,7 @@ int perform(object me, object target)
                 message_combatd(msg, me, target);
                 COMBAT_D->do_attack(me,target,query_temp("weapon", me),TYPE_QUICK);
 
-                msg = HIG"緊接著$N抽出左掌，身形一矮，由下而上猛襲向$n的小腹！"NOR;
+                msg = HIG"緊接着$N抽出左掌，身形一矮，由下而上猛襲向$n的小腹！"NOR;
                 message_combatd(msg, me, target);
                 COMBAT_D->do_attack(me,target,query_temp("weapon", me),TYPE_QUICK);
 
@@ -111,7 +111,7 @@ int perform2(object me, object target)
         addn_temp("apply/dex", i, me);
         addn_temp("apply/attack", i, me);
         addn_temp("apply/unarmed_damage", i, me);
-        msg = HIY"$N在空中一個回轉，攜「"HIR"日月之光"HIY"」, 雙掌按向$n的丹田！"NOR;
+        msg = HIY"$N在空中一個迴轉，攜「"HIR"日月之光"HIY"」, 雙掌按向$n的丹田！"NOR;
         message_combatd(msg, me, target);
         COMBAT_D->do_attack(me,target,query_temp("weapon", me),TYPE_QUICK);
 

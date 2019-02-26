@@ -29,7 +29,7 @@ int do_eat(string arg)
         if(!present(this_object(), me))
                 return notify_fail("你要吃什麼？\n");
         if( me->is_busy() )
-                return notify_fail("別急，慢慢吃，小心別噎著了。\n");
+                return notify_fail("別急，慢慢吃，小心別噎着了。\n");
 
         if( query("max_jingli", me) <= 200 )
         {
@@ -38,7 +38,7 @@ int do_eat(string arg)
                 addn("jingli", 2, me);
         }
         else {
-                write("你吃下了一支何首烏，但是好象沒什麼用。\n");
+                write("你吃下了一支何首烏，但是好像沒什麼用。\n");
         }
         destruct(this_object());
         return 1;

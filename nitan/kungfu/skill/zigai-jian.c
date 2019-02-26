@@ -2,7 +2,7 @@
 inherit SKILL;
 
 mapping *action = ({
-([      "action" :  "$N左晃右躥，手中$w突然刺向$n$l，正是一招「峰回路轉」",
+([      "action" :  "$N左晃右躥，手中$w突然刺向$n$l，正是一招「峯迴路轉」",
         "force"  :  45,
         "dodge"  :  20,
         "parry"  :  20,
@@ -10,9 +10,9 @@ mapping *action = ({
         "damage" :  20,
         "lvl"    :  0,
         "damage_type" :  "刺傷",
-        "skill_name"  :  "峰回路轉",
+        "skill_name"  :  "峯迴路轉",
 ]),
-([      "action" :  "$N越攻越猛，突然間手中$w劍光暴漲，一招「□紫嫣紅」已然使出\n"
+([      "action" :  "$N越攻越猛，突然間手中$w劍光暴漲，一招「奼紫嫣紅」已然使出\n"
                     "$n只覺眼前劍光耀眼，不由得心中一驚",
         "force"  :  90,
         "dodge"  :  26,
@@ -21,7 +21,7 @@ mapping *action = ({
         "damage" :  35,
         "lvl"    :  25,
         "damage_type" :  "刺傷",
-        "skill_name"  :  "□紫嫣紅",
+        "skill_name"  :  "奼紫嫣紅",
 ]),
 ([     
         "action" :  "$N以攻為守，以進為退，手中$w刷的一劍「蜻蜓點水」，向$n$l刺去",
@@ -148,7 +148,7 @@ void skill_improved(object me)
         if( lvl > 120 &&
             !query("can_perform/zigai-jian/hui", me) ) 
         {
-                tell_object(me, WHT "你通曉了紫蓋劍法「" HIC "紫蓋回翔" WHT "」的奧秘。\n" NOR);    
+                tell_object(me, WHT "你通曉了紫蓋劍法「" HIC "紫蓋迴翔" WHT "」的奧祕。\n" NOR);    
                 set("can_perform/zigai-jian/hui", 1, me);
                 me->improve_skill("martial-cognize", 1500000);  
                 me->improve_skill("martial-cognize", 1500000); 

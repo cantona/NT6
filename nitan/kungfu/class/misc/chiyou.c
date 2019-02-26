@@ -10,7 +10,7 @@ void create()
         set("gender", "男性");
         set("age", 21);
         set("shen_type", -1);
-        set("long", "他穿著一身淡青色的衣服。");
+        set("long", "他穿着一身淡青色的衣服。");
 
         set("attitude", "peaceful");
 

@@ -5,9 +5,9 @@ void create()
 {
         set("short", "東海之濱");
         set("long", @LONG
-這裡就是大海之濱，浪花拍打著礁石，發出陣陣響聲，海
-面上一群群海鷗歐歐地叫著，不時有魚兒躍出海面，濺起層層
-浪花。邊上有艘大船(boat)，船上坐著幾個漁夫打扮的人，乘
+這裏就是大海之濱，浪花拍打着礁石，發出陣陣響聲，海
+面上一羣羣海鷗歐歐地叫着，不時有魚兒躍出海面，濺起層層
+浪花。邊上有艘大船(boat)，船上坐着幾個漁夫打扮的人，乘
 船可渡過大海到達海的另一端。西面一直走就是燕京了，東面
 是一望無際的大海。極目眺望不禁讓人心胸開擴神舒意暢，的
 確是一個好居處。
@@ -45,8 +45,8 @@ void init()
                 room = load_object("/d/tulong/tulong/daobian");
                 bai = present("bai guishou", room);
 
-                tell_object(me, HIC "\n只見岸邊上泊滿了海船，所有的海船全部標記著天"
-                               "鷹教的標志。\n" NOR);
+                tell_object(me, HIC "\n只見岸邊上泊滿了海船，所有的海船全部標記着天"
+                               "鷹教的標誌。\n" NOR);
 
                 if (objectp(bai)
                     && !query_temp("go", bai )
@@ -54,7 +54,7 @@ void init()
                     && query("combat_exp", me)>1000000
                     && query("weiwang", me)>100000 )
                 {
-                              tell_object(me, CYN "\n白龜壽對你說道：此次我天鷹教得到了屠"
+                              tell_object(me, CYN "\n白龜壽對你説道：此次我天鷹教得到了屠"
                                         "龍寶刀，這位武林同\n道可願意參加揚刀立威大"
                                         "會，選出此刀該為何人所有？\n" NOR);
                         tell_object(me, HIR "\n你願意參加(" HIY "accept" HIR ")王盤"
@@ -103,7 +103,7 @@ int moveto(object me)
 
 int arrive1(object me)
 {
-        message_vision(HIB "\n天鷹教的大船在大海上慢慢的漂著……$N"
+        message_vision(HIB "\n天鷹教的大船在大海上慢慢的漂着……$N"
                        HIB "不禁感到睡意朦朧。\n" NOR, me);
 
         remove_call_out("arrive2");
@@ -114,7 +114,7 @@ int arrive1(object me)
 int arrive2(object me)
 {
         message_vision(HIY "\n$N" HIY "突然聽到一聲驚喝：“到了，下"
-                       "船吧！”$N" HIY "頓時提起精神跟\n著天鷹教教"
+                       "船吧！”$N" HIY "頓時提起精神跟\n着天鷹教教"
                        "眾下了船。\n\n" NOR, me);
         me->move("/d/tulong/tulong/boat2");
         tell_object(me, HIC "\n你跟隨天鷹教到達了王盤山島邊。\n\n" NOR);

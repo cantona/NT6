@@ -11,7 +11,7 @@ void create()
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("long", "一只黃澄澄的金元寶。\n");
+                set("long", "一隻黃澄澄的金元寶。\n");
                 set("value", 2000000);
                 set("unit", "只");
         }

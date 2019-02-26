@@ -15,7 +15,7 @@ int perform(object me, object target)
         if( !target || !me->is_fighting(target) )
                 return notify_fail("入白刃只能在戰鬥中使用。\n");
         if( me->query_temp("weapon"))
-                return notify_fail("你拿著武器怎麼能使用「入白刃」！\n");   
+                return notify_fail("你拿着武器怎麼能使用「入白刃」！\n");   
         if( skill < 150 )
                 return notify_fail("你的鐵掌掌法不夠嫻熟，使不出「入白刃」。\n");
         if(me->query_skill("force",1) < 150 )
@@ -33,7 +33,7 @@ int perform(object me, object target)
         message_vision(HBBLU"\n$N左掌向他臉上拍去。$n忙舉起"NOR+weapon->name()+HBBLU"擋格。\n"NOR,me,target);
         if (random(me->query_str()) > target->query_str()/2) {
            message_vision(HIR"\n$N變招快極，左手下壓，已抓住"+weapon->name()+HIR"！\n"NOR,me,target);
-           message_vision(HIR"$N掌緣甫觸"+weapon->name()+HIR"，尚未抓緊，已向裡奪！\n"NOR,me,target);
+           message_vision(HIR"$N掌緣甫觸"+weapon->name()+HIR"，尚未抓緊，已向裏奪！\n"NOR,me,target);
            if (random(me->query_str()) > target->query_str()/4) {
               message_vision(HIR"$n手中的"+weapon->name()+HIR"已被$N硬生生的奪去了！\n"NOR,me,target);
               weapon->move(me);

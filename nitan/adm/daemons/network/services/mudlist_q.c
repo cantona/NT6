@@ -111,7 +111,7 @@ void incoming_request(mapping info)
                                 "@@@" + DNS_MUDLIST_A + bits[i]+ "@@@\n");
         }
 
-        // 同時發布本站點信息
+        // 同時發佈本站點信息
         DNS_MASTER->send_udp(info["HOSTADDRESS"], info["PORTUDP"],
                 "@@@" + DNS_PING_A + (string)DNS_MASTER->start_message() + "@@@\n");
 }

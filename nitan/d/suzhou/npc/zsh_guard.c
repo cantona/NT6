@@ -7,7 +7,7 @@ inherit NPC;
 int ask_zsh(object me, object ob); 
 void create() 
 { 
-     set_name("守衛",({"shou wei","guard"}) ); 
+     set_name("守衞",({"shou wei","guard"}) ); 
      set("long","這是一位長的英姿勃勃的年輕人。\n"); 
      set("title","紫衫會會眾"); 
      set("gender","男性"); 
@@ -27,8 +27,8 @@ int ask_zsh(object me, object ob)
      ob=this_object(); 
      if( query("bunch/bunch_name", me) != "紫衫會" && query("shen", me) >= 0 )
      { 
-           tell_object(me,"守衛上上下下看了看你，嗯了一聲。\n"); 
-           tell_object(me,"守衛對你說道：“想加入紫衫會？當家的在裡面，你自己進去吧。”\n"); 
+           tell_object(me,"守衞上上下下看了看你，嗯了一聲。\n"); 
+           tell_object(me,"守衞對你説道：“想加入紫衫會？當家的在裏面，你自己進去吧。”\n"); 
            set_temp("good_zsh", 1, me);
            return 1; 
      } 
@@ -38,6 +38,6 @@ int ask_zsh(object me, object ob)
            return 1; 
      } 
 
-     tell_object(me,"守衛奇怪道：“大家都是會內兄弟，你何出此言啊？”\n"); 
+     tell_object(me,"守衞奇怪道：“大家都是會內兄弟，你何出此言啊？”\n"); 
      return 1; 
 } 

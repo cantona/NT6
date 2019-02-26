@@ -16,7 +16,7 @@ int main(object me, string arg)
         seteuid(getuid());
 
         if (! VERSION_D->is_release_server())
-                return notify_fail("只有版本發布站點才能修改表情動詞。\n");
+                return notify_fail("只有版本發佈站點才能修改表情動詞。\n");
 
         if (! arg) return notify_fail("你要編輯什麼 emote？\n");
 
@@ -37,7 +37,7 @@ int main(object me, string arg)
                 }
 
                 write(sprintf("上次修改：%s(%s)\n", emote["updated"], ctime(emote["time"])));
-                write(sprintf("─────────────────────\n%s\n%s\n%s\n%s\n%s\n%s\n%s\n",
+                write(sprintf("—————————————————————\n%s\n%s\n%s\n%s\n%s\n%s\n%s\n",
                       emote["myself"], emote["others"], emote["myself_self"],
                       emote["others_self"], emote["myself_target"], emote["target"],
                       emote["others_target"]));
@@ -68,7 +68,7 @@ int main(object me, string arg)
         write("  $c  對別人的呢稱。\n");
         write("  $R  對別人的尊稱。\n");
         write("  $r  對別人的粗魯稱呼。\n");
-        write("────────────────────────────────────\n");
+        write("————————————————————————————————————\n");
         write("不指定對象使用這個 emote 時，你自己看到的訊息：\n->");
         input_to("get_msg_myself", emote, arg);
         return 1;
@@ -265,7 +265,7 @@ $c : 對別人的呢稱。
 $R : 對別人的尊稱。
 $r : 對別人的粗魯稱呼。
 
-由于表情動詞會在版本同步時更新，因此只有版本發布站點才能夠使
+由於表情動詞會在版本同步時更新，因此只有版本發佈站點才能夠使
 用這個命令。
 
 see also：edemote、rnemote

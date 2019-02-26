@@ -74,7 +74,7 @@ int main(object me, string arg)
         {
                 if (clonep(obj))
                 {
-                        write("該對象是復制對象，沒有派生對象，無法執行 -c 選項。\n");
+                        write("該對象是複製對象，沒有派生對象，無法執行 -c 選項。\n");
                         return 1;
                 }
 

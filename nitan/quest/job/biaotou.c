@@ -27,7 +27,7 @@ mapping default_dirs = ([ //root:在此定義移動方向。
         "southwest":            "西南",
         "up":                   "上",
         "down":                 "下",
-        "enter":                "裡",
+        "enter":                "裏",
         "out":                  "外",
 ]);
 
@@ -88,7 +88,7 @@ int do_move(string arg)
         kar = 20 + random(10);
 
         if( !living(ob) )
-              return notify_fail("嗯....你得先把" + ob->name() + "弄醒再說。\n");
+              return notify_fail("嗯....你得先把" + ob->name() + "弄醒再説。\n");
 
         if (ob->query_temp("owner/id") != me->query("id")) {
                 command("? " + me->query("id"));
@@ -108,7 +108,7 @@ int do_move(string arg)
                 }
 
         if (ob->is_busy()) {
-                command("say 我這兒正忙著呢！");
+                command("say 我這兒正忙着呢！");
                 return notify_fail("\n");
                 }
 
@@ -125,7 +125,7 @@ int do_move(string arg)
         command("go " + arg); 
         ob->start_busy(2 + random(2));
         me->move(environment(ob));
-        message_vision(HIC "鏢頭用警惕的眼光觀察著四周。\n" NOR,me);
+        message_vision(HIC "鏢頭用警惕的眼光觀察着四周。\n" NOR,me);
         busy = 2 + random(30 - kar);
         if (busy > 3) busy = 3;
         me->start_busy(busy);
@@ -185,7 +185,7 @@ int ask_arrived()
                 }
 
         if (ob->is_busy()) {
-                command("say 我這兒正忙著呢！");
+                command("say 我這兒正忙着呢！");
                 return notify_fail("\n");
                 }
 
@@ -213,7 +213,7 @@ int ask_arrived()
                 }
 
                 if (!present("qian yankai", environment(ob))) {
-                        command("say 錢老板不在，不好交差啊！");
+                        command("say 錢老闆不在，不好交差啊！");
                         return 1;
                            }
         }
@@ -232,7 +232,7 @@ int ask_arrived()
         me->add("balance",(exp * pot/50));
         me->add("weiwang",ww);
 
-        message_vision(CYN "鏢師往錢莊裡間離去了。\n" NOR,me);
+        message_vision(CYN "鏢師往錢莊裏間離去了。\n" NOR,me);
         destruct(ob);
 
         return 1;

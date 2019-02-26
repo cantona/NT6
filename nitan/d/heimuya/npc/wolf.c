@@ -7,7 +7,7 @@ void create()
         set_name("狼", ({ "wolf2", "lang" }) );
         set("race", "野獸");
         set("age", 5);
-        set("long", "一匹昂首直立，兩眼放著綠光的狼。\n");
+        set("long", "一匹昂首直立，兩眼放着綠光的狼。\n");
         set("attitude", "aggressive");
 
         set("str", 26);

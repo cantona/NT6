@@ -2,10 +2,10 @@ inherit NPC;
 
 void create()
 {
-        set_name("王老板", ({ "wang laobang", "publisher", "wang"}));
+        set_name("王老闆", ({ "wang laobang", "publisher", "wang"}));
         set("long", "這是一位白白胖胖的中年人，身子微微發福，是個富商豪紳模樣。\n"
-                "他手中提著一個小箱子，正笑眯眯地上下打量著你。\n"
-                "據說他曾經試過科舉，但幾次不中後便改行以販書為業了。\n");
+                "他手中提着一個小箱子，正笑眯眯地上下打量着你。\n"
+                "據説他曾經試過科舉，但幾次不中後便改行以販書為業了。\n");
         set("gender", "男性");
         set("age", 45);
         set("str", 25);

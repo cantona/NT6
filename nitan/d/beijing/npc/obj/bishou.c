@@ -17,7 +17,7 @@ void create()
                 set("no_steal", "這樣東西不能離開那兒。\n");
                 set("no_beg", "這樣東西不能離開那兒。\n");
                 */
-                set("no_sell", "凡人哪裡知道這神劍的厲害。\n");
+                set("no_sell", "凡人哪裏知道這神劍的厲害。\n");
                 set("unique", 1);
                 set("value", 100000);
                 set("material", "gold");

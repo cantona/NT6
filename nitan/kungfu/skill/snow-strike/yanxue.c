@@ -52,7 +52,7 @@ int perform(object me, object target)
         if( query("neili", me)<400 )
                 return notify_fail("你的內力不夠。\n");
 
-        msg = HIW"$N"HIW"冰雪心法運轉一周天，全身只覺一股寒氣蒸騰欲出，清嘯一聲，\n飛身而上,施展出「"+HIW"煙雪春梅」，雙手一搓一放,一股凝人氣血的\n狂飆向$n"HIW"舖天蓋地席卷而去。\n"NOR;
+        msg = HIW"$N"HIW"冰雪心法運轉一週天，全身只覺一股寒氣蒸騰欲出，清嘯一聲，\n飛身而上,施展出「"+HIW"煙雪春梅」，雙手一搓一放,一股凝人氣血的\n狂飆向$n"HIW"鋪天蓋地席捲而去。\n"NOR;
         if(random(me->query_skill(bskill, 1)) > target->query_skill("parry",1)/3)
         { 
                 me->start_busy(1+random(1));
@@ -62,7 +62,7 @@ int perform(object me, object target)
                 target->receive_damage("qi", damage,me);
                 target->receive_wound("qi", damage/2,me);
                 addn("neili", -300, me);
-                msg +=HIC"$n只見漫天青氣席卷而來，躲無可躲，卒一接觸，便被震得七竅流血，如斷線風箏向後飄去。\n"NOR;
+                msg +=HIC"$n只見漫天青氣席捲而來，躲無可躲，卒一接觸，便被震得七竅流血，如斷線風箏向後飄去。\n"NOR;
         } else
         {
                 me->start_busy(2+random(1));

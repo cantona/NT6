@@ -19,8 +19,8 @@ void create()
                 set("material", "paper");
                 set("no_sell", 1);
                 set("long", HIW
-        "這是一本用薄紙寫成的書。書面上寫著《九陰真經》。書皮泛黃，看來已經保存很久了。\n"
-        "真經裡記載了催心掌、九陰白骨爪、易筋鍛骨和蛇行貍翻，你可以試著研究研究。\n\n" NOR, );
+        "這是一本用薄紙寫成的書。書面上寫着《九陰真經》。書皮泛黃，看來已經保存很久了。\n"
+        "真經裏記載了催心掌、九陰白骨爪、易筋鍛骨和蛇行狸翻，你可以試着研究研究。\n\n" NOR, );
         }
 }
 int do_du(string arg)
@@ -51,7 +51,7 @@ int do_du(string arg)
         return 0;
         if( me->is_busy())
         {
-                write("你現在正忙著呢。\n");
+                write("你現在正忙着呢。\n");
                 return 1;
         }
         if( me->is_fighting())
@@ -66,20 +66,20 @@ int do_du(string arg)
         }
         if (! id(book))
         {
-                write("這裡沒有這本書。\n");
+                write("這裏沒有這本書。\n");
                 return 1;
         }
         if ( skill != "yijin-duangu" && skill != "shexing-lifan"  
           && skill != "cuixin-zhang" && skill != "jiuyin-baiguzhao"
           && skill != "yinlong-bian" )
         {
-                write(HIW "你可以從九陰真經裡研究到易筋鍛骨（yijin-duangu），蛇行貍翻（shexing-lifan），\n"
+                write(HIW "你可以從九陰真經裏研究到易筋鍛骨（yijin-duangu），蛇行狸翻（shexing-lifan），\n"
                           "催心掌（cuixin-zhang），銀龍鞭法 (yinlong-bian) 以及九陰白骨爪（jiuyin-baiguzhao）。\n\n" NOR,);
                 return 1;
         }
         if( me->query_skill("sanscrit", 1) < 199)
         {
-                write("你的梵文水平太低，無法看懂真經裡所記載的內容。\n");        
+                write("你的梵文水平太低，無法看懂真經裏所記載的內容。\n");        
                 return 1;
         }
         if( query("combat_exp", me)<500000 )
@@ -89,7 +89,7 @@ int do_du(string arg)
         }
         if( query("jing", me)<101 || query("qi", me)<101 )
         {
-                write("你現在過于疲倦，無法專心下來研讀新知。\n");
+                write("你現在過於疲倦，無法專心下來研讀新知。\n");
                 return 1;
         }
         if ( skill == "yijin-duangu" )
@@ -106,14 +106,14 @@ int do_du(string arg)
                         return 1;
                 }
                 if( lv > 199) {
-                        write("你研讀了一會兒，但是發現上面所說的對你而言都太淺了，沒有學到任何東西。\n");
+                        write("你研讀了一會兒，但是發現上面所説的對你而言都太淺了，沒有學到任何東西。\n");
                         return 1;
                 }
                 message("vision", me->name() + "正專心地研讀九陰真經。\n", environment(me), me);
                 me->receive_damage("qi", 100);
                 me->receive_damage("jing", 100);
                 me->improve_skill("yijin-duangu",query("int", me)/4+1);
-                write("你仔細研讀九陰真經，對真經裡所記載的易筋鍛骨頗有心得。\n");
+                write("你仔細研讀九陰真經，對真經裏所記載的易筋鍛骨頗有心得。\n");
                 return 1;
         }
         if ( skill == "shexing-lifan" )
@@ -124,14 +124,14 @@ int do_du(string arg)
                         return 1;
                 }
                 if( lv > 199) {
-                        write("你研讀了一會兒，但是發現上面所說的對你而言都太淺了，沒有學到任何東西。\n");
+                        write("你研讀了一會兒，但是發現上面所説的對你而言都太淺了，沒有學到任何東西。\n");
                         return 1;
                 }
                 message("vision", me->name() + "正專心地研讀九陰真經。\n", environment(me), me);
                 me->receive_damage("qi", 100);
                 me->receive_damage("jing", 100);
                 me->improve_skill("shexing-lifan",query("int", me)/4+1);
-                write("你仔細研讀九陰真經，對真經裡所記載的蛇行貍翻輕功頗有心得。\n");
+                write("你仔細研讀九陰真經，對真經裏所記載的蛇行狸翻輕功頗有心得。\n");
                 return 1;
         }
         if ( skill == "cuixin-zhang" )
@@ -142,14 +142,14 @@ int do_du(string arg)
                         return 1;
                 }
                 if( lv > 199) {
-                        write("你研讀了一會兒，但是發現上面所說的對你而言都太淺了，沒有學到任何東西。\n");
+                        write("你研讀了一會兒，但是發現上面所説的對你而言都太淺了，沒有學到任何東西。\n");
                         return 1;
                 }
                 message("vision", me->name() + "正專心地研讀九陰真經。\n", environment(me), me);
                 me->receive_damage("qi", 100);
                 me->receive_damage("jing", 100);
                 me->improve_skill("cuixin-zhang",query("int", me)/4+1);
-                write("你仔細研讀九陰真經，對真經裡所記載的催心掌頗有心得。\n");
+                write("你仔細研讀九陰真經，對真經裏所記載的催心掌頗有心得。\n");
                 return 1;
         }
         if ( skill == "jiuyin-baiguzhao" )
@@ -160,14 +160,14 @@ int do_du(string arg)
                         return 1;
                 }
                 if( lv > 199) {
-                        write("你研讀了一會兒，但是發現上面所說的對你而言都太淺了，沒有學到任何東西。\n");
+                        write("你研讀了一會兒，但是發現上面所説的對你而言都太淺了，沒有學到任何東西。\n");
                         return 1;
                 }
                 message("vision", me->name() + "正專心地研讀九陰真經。\n", environment(me), me);
                 me->receive_damage("qi", 100);
                 me->receive_damage("jing", 100);
                 me->improve_skill("jiuyin-baiguzhao",query("int", me)/4+1);
-                write("你仔細研讀九陰真經，對真經裡所記載的九陰白骨爪頗有心得。\n");
+                write("你仔細研讀九陰真經，對真經裏所記載的九陰白骨爪頗有心得。\n");
                 return 1;
         }
         if ( skill == "yinlong-bian" )
@@ -178,14 +178,14 @@ int do_du(string arg)
                         return 1;
                 }
                 if( lv > 199) {
-                        write("你研讀了一會兒，但是發現上面所說的對你而言都太淺了，沒有學到任何東西。\n");
+                        write("你研讀了一會兒，但是發現上面所説的對你而言都太淺了，沒有學到任何東西。\n");
                         return 1;
                 }
                 message("vision", me->name() + "正專心地研讀九陰真經。\n", environment(me), me);
                 me->receive_damage("qi", 100);
                 me->receive_damage("jing", 100);
                 me->improve_skill("yinlong-bian",query("int", me)/4+1);
-                write("你仔細研讀九陰真經，對真經裡所記載的銀龍鞭法頗有心得。\n");
+                write("你仔細研讀九陰真經，對真經裏所記載的銀龍鞭法頗有心得。\n");
                 return 1;
         }
 }

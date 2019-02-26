@@ -25,13 +25,13 @@ int main(object me, mapping info)
         if (! stringp(arg))
         {
                 send_exits(me, env);
-                return MESSAGE_D->error_msg("你要去哪裡？\n");
+                return MESSAGE_D->error_msg("你要去哪裏？\n");
         }
 
         if( !mapp(exits=query("exits", env)) )
         {
                 send_exits(me, env);
-                return MESSAGE_D->error_msg("這裡四周都沒有出口，你無路可走。\n");
+                return MESSAGE_D->error_msg("這裏四周都沒有出口，你無路可走。\n");
         }
 
         if (! exits[arg])
@@ -52,9 +52,9 @@ int main(object me, mapping info)
 
         if( !wizardp(me) || !query("env/invisible", me) )
         {
-                message("vision", me->name() + "飄飄忽忽的離開這裡。\n",
+                message("vision", me->name() + "飄飄忽忽的離開這裏。\n",
                         environment(me), ({ me }));
-                message("vision", me->name() + "飄飄忽忽的遊盪了過來。\n",
+                message("vision", me->name() + "飄飄忽忽的遊蕩了過來。\n",
                         ob, ({ me }));
         }
 

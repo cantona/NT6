@@ -69,8 +69,8 @@ void check_me(object me)
                         if( query_temp("warequest/party", obb) != "meng" )
                         {
                                 message_vision(HIC "$N大聲下令道：騎兵準備！一排排騎兵列出整齊"
-                                        + "的方陣，\n陽光下的蒙古軍刀閃閃發光──突擊！！"
-                                        + "$N一聲令下，\n萬馬齊鳴，蒙古騎兵開始了可怕的沖鋒！！\n" NOR,
+                                        + "的方陣，\n陽光下的蒙古軍刀閃閃發光——突擊！！"
+                                        + "$N一聲令下，\n萬馬齊鳴，蒙古騎兵開始了可怕的衝鋒！！\n" NOR,
                                         me);
 
                                 set_temp("warequest/attack", 1, me);
@@ -78,9 +78,9 @@ void check_me(object me)
 
                                 remove_call_out("attack_over");
                                 call_out("attack_over", 10, me);
-                                dir = "south"; // 這裡的這個數值絲毫作用都沒有，所以隨便賦值了
+                                dir = "south"; // 這裏的這個數值絲毫作用都沒有，所以隨便賦值了
                                                // 奇怪的是後面的 attack_begin() 加了 varargs ，
-                                               // 這裡取消 dir ，卻報錯，懷疑是用 include 原因。
+                                               // 這裏取消 dir ，卻報錯，懷疑是用 include 原因。
                                 attack_begin(me, obb, env, env, dir);
                                 break;
                         }
@@ -115,7 +115,7 @@ void check_me(object me)
                                         if( query_temp("warequest/party", obb) != "meng" )
                                         {
                                                 message_vision(HIC "$N大聲下令道：弓箭手準備！一排排利箭在陽"
-                                                        + "光下閃閃發光──射擊！！\n$N一聲令下，萬弩齊發！\n" NOR, me);
+                                                        + "光下閃閃發光——射擊！！\n$N一聲令下，萬弩齊發！\n" NOR, me);
                                                 set_temp("warequest/attack", 1, me);
                                                 set_temp("warequest/attacking", 1, me);
 
@@ -179,7 +179,7 @@ varargs void attack_begin(object me, object target, object room, object env, str
                 if (room == env && objectp(target))
                 {
                         message_vision(HIC "$N指揮的蒙古鐵騎，萬馬奔騰，"
-                                       + "如狂風驟雨般朝$n發起了沖擊！！\n" NOR,
+                                       + "如狂風驟雨般朝$n發起了衝擊！！\n" NOR,
                                        me, target);
                         // COMBAT_D->do_attack(me, target, me->query_temp("weapon"), 0);
 
@@ -200,7 +200,7 @@ void attack_over(object me)
         if (objectp(me))
         {
                 message_vision(HIB"$N手中軍刀一揮，蒙古騎兵攻勢一緩，重新"
-                                + "開始列陣，準備發起新一輪的沖擊！！\n"NOR,
+                                + "開始列陣，準備發起新一輪的衝擊！！\n"NOR,
                                 me);
                 delete_temp("warequest/attack", me);
         }

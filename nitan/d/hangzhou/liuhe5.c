@@ -6,7 +6,7 @@ void create()
 {
         set("short", "六和塔");
         set("long", @LONG
-這裡是六和塔的五層。窗(window)外是濃妝淡抹的西子湖，塔
+這裏是六和塔的五層。窗(window)外是濃粧淡抹的西子湖，塔
 中玲瓏八角，青磚砌地，雕欄飛檐間粘連了些許蛛網。
 LONG);
         set("exits", ([
@@ -29,6 +29,6 @@ int valid_leave(object me, string dir)
 {
         if (dir == "up" &&
             objectp(present("wei chunhua", environment(me))))
-            return notify_fail("衛春華大吼一聲：我有九條命，你有幾條？放馬過來！\n");
+            return notify_fail("衞春華大吼一聲：我有九條命，你有幾條？放馬過來！\n");
         return ::valid_leave(me, dir);
 }

@@ -8,7 +8,7 @@ string extra_long()
 {
         string str;
         
-        str  = sprintf("\n物品屬性 : 書本<秘籍>，下線%s丟失\n", 
+        str  = sprintf("\n物品屬性 : 書本<祕籍>，下線%s丟失\n", 
                        (this_object()->query_autoload() || query("autoload")) ? "不" : "" );
         str += sprintf("記載內容 : %s\n", to_chinese(query("skill/name")));
         str += sprintf("經驗要求 : %d\n", query("skill/exp_required"));

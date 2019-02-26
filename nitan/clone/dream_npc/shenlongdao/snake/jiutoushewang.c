@@ -6,7 +6,7 @@ int is_snake(){return 1;}
 void create()
 {
         set_name(HIM "九頭蛇王" NOR, ({ "jiutou shewang", "jiutou", "shewang" }));
-        set("long", HIR "這是一只巨大的毒蛇，長有九個似人形的頭，形狀十分可怕，看來它還沒有修煉成人形。\n" NOR);
+        set("long", HIR "這是一隻巨大的毒蛇，長有九個似人形的頭，形狀十分可怕，看來它還沒有修煉成人形。\n" NOR);
 
         set("age", 90);
         set("str", 300);

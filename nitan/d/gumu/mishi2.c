@@ -8,9 +8,9 @@ void create()
 {
         set("short", "密室");
         set("long", @LONG
-這裡是古墓中的密室，四周密不透風，你只能借著牆上昏暗的燈光
+這裏是古墓中的密室，四周密不透風，你只能藉着牆上昏暗的燈光
 來勉強分辨方向。牆是用整塊的青石砌合起來的，接合的甚是完美，你
-難以從中找出一絲縫隙。牆上(wall)好象雕有一些文字。
+難以從中找出一絲縫隙。牆上(wall)好像雕有一些文字。
 LONG        );
         set("exits", ([
                 "east"  : __DIR__"mishi3",
@@ -49,7 +49,7 @@ int do_think(string arg)
                 return notify_fail("你要參悟什麼？\n");
 
         if (me->is_busy() || me->is_fighting())
-                return notify_fail("你現在正忙著呢。\n");
+                return notify_fail("你現在正忙着呢。\n");
 
         if ((int)me->query_skill("sword", 1) < 30)
                 return notify_fail("你的內功修為不夠，無法領悟牆"
@@ -60,15 +60,15 @@ int do_think(string arg)
                                    "甚難領悟。\n");
 
         if ((int)me->query_skill("yunv-xinfa", 1) < 180)
-                return notify_fail("你發現牆上所記載的心法過于深奧，自"
+                return notify_fail("你發現牆上所記載的心法過於深奧，自"
                                    "己一時難以領悟。\n");
 
         if ((int)me->query_skill("yunv-xinfa", 1) > 240)
-                return notify_fail("你發現牆上所記載的心法過于膚淺，自"
+                return notify_fail("你發現牆上所記載的心法過於膚淺，自"
                                    "己無法領會到任何東西。\n");
 
         if( query("jing", me)<35 )
-                return notify_fail("你現在精神不濟，過于疲倦，還是休息"
+                return notify_fail("你現在精神不濟，過於疲倦，還是休息"
                                    "一會吧。\n");
 
         me->receive_damage("jing", 30);

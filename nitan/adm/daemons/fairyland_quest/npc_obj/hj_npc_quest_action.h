@@ -17,7 +17,7 @@ void delete_me()
                 message_vision("$N滿臉迷茫地走了開去……又多了一個迷失兒童……\n",ob);
             else
             {
-                message_vision("$N大聲哭道：“"+query("following_name")+"你又說帶我去，那麼久了都沒去到！”\n",ob);
+                message_vision("$N大聲哭道：“"+query("following_name")+"你又説帶我去，那麼久了都沒去到！”\n",ob);
                 message_vision("只見$N傷心地往旁邊的路上走去……又多了一個迷失兒童……\n",ob);
                 temp_obj=find_player(query("following_id"));
                 if( temp_obj && query_temp("huanjing", temp_obj) == "start" && 
@@ -25,44 +25,44 @@ void delete_me()
                 {
                     award_score = 30 + random(21);
                     addn_temp("hj_score", -award_score, temp_obj);
-                    tell_object(temp_obj,"過了許久，你才想起來你曾答應過帶一個迷路的小精靈找什麼地方的！\n你覺得心裡掠過一絲內疚。\n"HIR"遊戲提示：你的得分減少了 "+award_score+" 點。\n"NOR);
+                    tell_object(temp_obj,"過了許久，你才想起來你曾答應過帶一個迷路的小精靈找什麼地方的！\n你覺得心裏掠過一絲內疚。\n"HIR"遊戲提示：你的得分減少了 "+award_score+" 點。\n"NOR);
                 }
             }
         }
         else
         {
-            message_vision("$N高興極了，甜甜地說道：“謝謝你，"+query("following_name")+"！”\n",ob);
+            message_vision("$N高興極了，甜甜地説道：“謝謝你，"+query("following_name")+"！”\n",ob);
             message_vision("$N揮了揮手，走了開去。\n",ob);
         }
     }
     if( q_iii == 2)
-        message_vision("只見$N一拍腦袋，說道：“哎呀，忘記了家裡的小魚還沒喂！”\n$N急急忙忙地離開了。\n",ob);
+        message_vision("只見$N一拍腦袋，説道：“哎呀，忘記了家裏的小魚還沒喂！”\n$N急急忙忙地離開了。\n",ob);
     if( q_iii == 3)
     {
         if(!query("asking") )
-            message_vision("$N輕嘆一聲，說道：“罷了，罷了！”，竟爾就此離去。\n",ob);
+            message_vision("$N輕歎一聲，説道：“罷了，罷了！”，竟爾就此離去。\n",ob);
         else
         {
             if(query("asking") == "ok")
             {
                 message_vision("只見$N自言自語道：“想不到除了老頭子我，還有人對武林人士都那麼熟悉！”\n",ob);
-                message_vision("$N一邊說著，一邊踱步前行，就此離去了。\n",ob);
+                message_vision("$N一邊説着，一邊踱步前行，就此離去了。\n",ob);
             }
             if(query("asking") == "fail")
             {
-                message_vision("$N搖頭嘆道：“難道就再沒有人，能夠把這武林之人事熟知于心？”說罷，竟爾就此離去。\n",ob);
+                message_vision("$N搖頭歎道：“難道就再沒有人，能夠把這武林之人事熟知於心？”説罷，竟爾就此離去。\n",ob);
             }
             if(query("asking") == "waiting" && query("asking_for_id") )
             {
                 temp_obj = present(query("asking_for_id"),environment(ob));
                 if(temp_obj)
                 {
-                    message_vision("$N長嘆一聲，說道：“"+query("asking_for_name")
+                    message_vision("$N長歎一聲，説道：“"+query("asking_for_name")
                         +"，你仍未想得到嗎？這人是"+query("the_answer")+"！”\n",ob);
-                    message_vision("$N十分失望地說道：“這人如此有名，你竟然不知道！你仔細想想吧！”\n",ob);
-                    message_vision("$N慚愧之色立現于臉，頓時陷入了沉思中。\n",temp_obj);
+                    message_vision("$N十分失望地説道：“這人如此有名，你竟然不知道！你仔細想想吧！”\n",ob);
+                    message_vision("$N慚愧之色立現於臉，頓時陷入了沉思中。\n",temp_obj);
                     temp_obj->start_busy(20);
-                    message_vision("只見$N一邊搖著頭，一邊離開了。\n",ob);
+                    message_vision("只見$N一邊搖着頭，一邊離開了。\n",ob);
                 }
                 else
                 {
@@ -70,12 +70,12 @@ void delete_me()
                     if( temp_obj && query_temp("huanjing", temp_obj) == "start" )
                     {
                         ob->move(environment(temp_obj));
-                        message_vision("只見一個老人走了過來，對著$N劈頭就罵道："
+                        message_vision("只見一個老人走了過來，對着$N劈頭就罵道："
                             +"“哪有如你如此無理之人？答應回答我的問題，卻悄悄溜走！”\n",temp_obj);
                         message_vision("老人忽地一掌向$N擊來！$N躲閃不得，一陣麻木"
                             +"隨之而來，頓時動彈不得！\n",temp_obj);
                         temp_obj->start_busy(30);
-                        message_vision("$N說道：“你給我好好反省反省罷！”言罷竟然就此離去！\n",ob);
+                        message_vision("$N説道：“你給我好好反省反省罷！”言罷竟然就此離去！\n",ob);
                     }
                 }
             }
@@ -84,9 +84,9 @@ void delete_me()
     if( q_iii == 5 || q_iii == 6 )
     {
         if( query("all_found") )
-            message_vision("$N一臉喜悅之情，往旁邊走了開去。\n", ob);
+            message_vision("$N一臉喜悦之情，往旁邊走了開去。\n", ob);
         else
-            message_vision("$N長嘆一聲，往旁邊走了開去。\n", ob);
+            message_vision("$N長歎一聲，往旁邊走了開去。\n", ob);
     }
     destruct(ob);
 }
@@ -100,7 +100,7 @@ void init()
             add_action("do_glist","glist");
             break;
         case 1: case 7:
-            // 這個 set 好象必須要放在這裡的
+            // 這個 set 好像必須要放在這裏的
             if( !query("go_where") )
                 set("go_where", 2 + random( HJ_ROOM_AMOUNT -1 ) );
             add_action("do_answer","answer");
@@ -124,13 +124,13 @@ int ask_help()
     {
         case 0: case 4:
             command("hehe "+query("id"));
-            command("say “我這裡有一些東西可以買(gmai)，你也可以先看看價格表(glist)。”");
+            command("say “我這裏有一些東西可以買(gmai)，你也可以先看看價格表(glist)。”");
             break;
         case 1:
             if(!query("following_name"))
             {
                 command("say “我迷路了啊……有個地方叫做「"+chinese_number(query("go_where"))
-                    +"」的，你能帶我去那裡嗎？(answer ok)”");
+                    +"」的，你能帶我去那裏嗎？(answer ok)”");
                 remove_call_out("delete_me");
                 call_out("delete_me",60);
             }
@@ -139,7 +139,7 @@ int ask_help()
                     +chinese_number(query("go_where"))+"」呢。”");
             break;
         case 2:
-            command("say “哦？這個啊……來，你打我一拳，讓我看看你的力量有多高再說吧！”");
+            command("say “哦？這個啊……來，你打我一拳，讓我看看你的力量有多高再説吧！”");
             command("say “不用怕，你小娃兒還傷不了我！我這就是準備讓你煉力(lianli)呢！”");
             break;
         case 3:
@@ -154,22 +154,22 @@ int ask_help()
         case 5:
             if( query("found_sword") != "yes" )
             {
-                command("say “我聽說有一柄"+query("finding_name")+"削鐵如泥，端的是鋒利異常，真想看一看。”");
+                command("say “我聽説有一柄"+query("finding_name")+"削鐵如泥，端的是鋒利異常，真想看一看。”");
                 command("say “如果你能幫我找到(found 劍的id)，請告訴我好嗎？”");
             }
             if( query("found_all_sword") != "yes" )
-                command("say “我正在搜集一套寶劍，你能幫我找到的話(foundall)，請告訴我好嗎？”");
+                command("say “我正在蒐集一套寶劍，你能幫我找到的話(foundall)，請告訴我好嗎？”");
             if( query("all_found") )
                 command("haha");
             break;
         case 6:
         if( query("found_crystal") != "yes" )
         {
-            command("say “我聽說有一顆"+query("finding_name")+"神秘莫名，真想看一看。”");
+            command("say “我聽説有一顆"+query("finding_name")+"神祕莫名，真想看一看。”");
             command("say “如果你能幫我找到(found 水晶的id)，請告訴我好嗎？”");
         }
         if( query("found_all_crystal") != "yes" )
-            command("say “我正在搜集一套魔法水晶，你能幫我找到的話(foundall)，請告訴我好嗎？”");
+            command("say “我正在蒐集一套魔法水晶，你能幫我找到的話(foundall)，請告訴我好嗎？”");
         if( query("all_found") )
             command("haha");
             break;
@@ -185,13 +185,13 @@ int do_found( string arg )
 
     if( !me_ok(me) ) return 0;
     if( me->is_busy() || query_temp("hj_need_waitting", me) )
-        return notify_fail("你還忙著呢，有空了才幫人吧。\n");
+        return notify_fail("你還忙着呢，有空了才幫人吧。\n");
 
     if( !arg ) return notify_fail("你找到了什麼？\n");
     f_obj = present( arg , me );
     if( !f_obj ) return notify_fail("你身上沒有這樣東西。\n");
 
-    message_vision(CYN"$N"NOR+CYN"興奮地拿出一"+query("unit", f_obj)+f_obj->name(1)+NOR+CYN"，對著$n"NOR+CYN"說道：“你是不是在找這個？”\n",me,ob);
+    message_vision(CYN"$N"NOR+CYN"興奮地拿出一"+query("unit", f_obj)+f_obj->name(1)+NOR+CYN"，對着$n"NOR+CYN"説道：“你是不是在找這個？”\n",me,ob);
 
     if( query("found_sword") == "yes" || query("found_crystal") == "yes" )
     {
@@ -215,8 +215,8 @@ int do_found( string arg )
     command("ah");
     command("touch "+query("id", me));
     command("say “對！這就是我要找的"+f_name+"！真是太感謝你了！”");
-    message_vision( sprintf( CYN"$N"NOR+CYN"把%s"NOR+CYN"接了過去，審視良久，嘆道：“這%s"NOR+CYN"我能得一見，已無憾矣！”\n", f_name, f_name ), ob );
-    message_vision( CYN"$n"NOR+CYN"對$N"NOR+CYN"說道：“所謂寶物配英雄，這"+f_name+NOR+CYN"正是該由你所有！”\n$n"NOR+CYN"說完，把"+f_name+NOR+CYN"又交回了$N"NOR+CYN"手中。\n"NOR, me, ob);
+    message_vision( sprintf( CYN"$N"NOR+CYN"把%s"NOR+CYN"接了過去，審視良久，歎道：“這%s"NOR+CYN"我能得一見，已無憾矣！”\n", f_name, f_name ), ob );
+    message_vision( CYN"$n"NOR+CYN"對$N"NOR+CYN"説道：“所謂寶物配英雄，這"+f_name+NOR+CYN"正是該由你所有！”\n$n"NOR+CYN"説完，把"+f_name+NOR+CYN"又交回了$N"NOR+CYN"手中。\n"NOR, me, ob);
 
     // 本任務主要是能夠得到超級道具獎勵
     set("power",query("power",  f_obj)*2, f_obj);
@@ -254,7 +254,7 @@ int do_foundall()
 
     if( !me_ok(me) ) return 0;
     if( me->is_busy() || query_temp("hj_need_waitting", me) )
-        return notify_fail("你還忙著呢，有空了才幫人吧。\n");
+        return notify_fail("你還忙着呢，有空了才幫人吧。\n");
 
     if( query("iii") == 5 )
     {
@@ -269,7 +269,7 @@ int do_foundall()
                 "gs sj", "fh sj","dh sj", });
     }
 
-    message_vision(CYN"$N"NOR+CYN"沖著$n"NOR+CYN"興奮地說道：“我找齊那一套"+msg+"了！”\n"NOR, me, ob );
+    message_vision(CYN"$N"NOR+CYN"衝着$n"NOR+CYN"興奮地説道：“我找齊那一套"+msg+"了！”\n"NOR, me, ob );
 
     if( query("found_all_sword") == "yes" || query("found_all_crystal") == "yes" )
     {
@@ -309,9 +309,9 @@ int do_foundall()
         destruct( temp_obj_list[i] );
 
     command("touch "+query("id", me));
-    command("say “對，對，就是這些"+msg+"，太好了，我終于找齊它們了！”");
+    command("say “對，對，就是這些"+msg+"，太好了，我終於找齊它們了！”");
     command("say “無以為報，請接受我的一點心意吧！”");
-    message_vision( CYN"$n"NOR+CYN"接過了這一套"+msg+"，接著伸掌在$N"NOR+CYN"臉前一晃。\n"NOR, me, ob);
+    message_vision( CYN"$n"NOR+CYN"接過了這一套"+msg+"，接着伸掌在$N"NOR+CYN"臉前一晃。\n"NOR, me, ob);
 
     if( query("iii") == 5 )
         award_score = 400 + random(101);
@@ -352,10 +352,10 @@ int do_huida(string arg)
         return 0;
 
     if( me->is_busy() || query_temp("hj_need_waitting", me) )
-        return notify_fail("你還忙著呢，空閒點了再接受提問吧。\n");
+        return notify_fail("你還忙着呢，空閒點了再接受提問吧。\n");
 
     if( query("asking_for_id") && query("id", me) != query("asking_for_id") )
-        return notify_fail(query("name")+"已經在問著"+query("asking_for_name")+"了，還是不要打擾的好。\n");
+        return notify_fail(query("name")+"已經在問着"+query("asking_for_name")+"了，還是不要打擾的好。\n");
 
     if(!arg) return notify_fail("你要回答什麼？\n");
 
@@ -363,8 +363,8 @@ int do_huida(string arg)
     {
         if(arg!="好") return notify_fail("你若願意接受提問，就回答“好”吧！\n");
 
-    // 若玩家在本輪遊戲裡，已把5個預設的問題都答對過了，將不再發放問題。
-        message_vision("$N大聲說道：“好吧！你就盡管問我，看我知不知曉。”\n",me);
+    // 若玩家在本輪遊戲裏，已把5個預設的問題都答對過了，將不再發放問題。
+        message_vision("$N大聲説道：“好吧！你就儘管問我，看我知不知曉。”\n",me);
         if( sizeof(query_temp("hj_quest_answer", me)) >= 5 )
         {
             command("say “你所知武林之事甚多，看來非我之下。我又怎敢問你？”");
@@ -388,7 +388,7 @@ int do_huida(string arg)
         qt_type = ({ "int","str","con","dex","balance" });
         // 悟性  膂力  根骨  身法  存款
         temp_type = qt_type[random(sizeof(qt_type))];
-        // 防止玩家在本輪遊戲內重復回答問題
+        // 防止玩家在本輪遊戲內重複回答問題
         for(i=0;i<sizeof(qt_type);i++)
         {
             if( query_temp("hj_quest_answer/"+temp_type, me) == "ok" )
@@ -406,7 +406,7 @@ int do_huida(string arg)
         qt_temp3 = data3[temp_type];
         qt_temp4 = data4[temp_type];
 
-        // 這裡我不知道LPC是否有 max 的函數，只好自己寫；幸好不太多數據
+        // 這裏我不知道LPC是否有 max 的函數，只好自己寫；幸好不太多數據
         if( qt_temp1>=qt_temp2 && qt_temp1>=qt_temp3 && qt_temp1>=qt_temp4 )
             set("the_answer",qt_name1);
         if( qt_temp2>=qt_temp1 && qt_temp2>=qt_temp3 && qt_temp2>=qt_temp4 )
@@ -423,7 +423,7 @@ int do_huida(string arg)
         switch(temp_type)
         {
             case "int":
-            command("say “這其中一人，領悟之力奇高，因此過人一籌，終于了其心願，\n          成就大事。如此之人，當稱英雄！”");
+            command("say “這其中一人，領悟之力奇高，因此過人一籌，終於了其心願，\n          成就大事。如此之人，當稱英雄！”");
             break;
             case "str":
             command("say “所謂英雄俠客，焉能有手無搏雞之力之人？這其中一人，\n          力大無窮，堪堪劈石開山，也該配稱英雄二字！”");
@@ -432,10 +432,10 @@ int do_huida(string arg)
             command("say “人言道，吃得苦中苦，方為人上人。這其中一人，不但耐力\n          驚人，也是骨格精奇。如此之人，何愁不成大事，又有何不能稱之英雄？”");
             break;
             case "dex":
-            command("say “自古英雄皆好漢，但這裡面卻有一位，卻非以武藝見長，乃是\n          天賦奇高，輕功過人，終闖出一片天地！如此之人，也該可稱英雄！”");
+            command("say “自古英雄皆好漢，但這裏面卻有一位，卻非以武藝見長，乃是\n          天賦奇高，輕功過人，終闖出一片天地！如此之人，也該可稱英雄！”");
             break;
             case "balance":
-            command("say “有言雲：一文難倒英雄漢。這其中一位，富敵四方，接朋濟友，\n          雖無過人武藝，但又如何不能稱之英雄？”");
+            command("say “有言云：一文難倒英雄漢。這其中一位，富敵四方，接朋濟友，\n          雖無過人武藝，但又如何不能稱之英雄？”");
             break;
         }
         command("say “你若知曉他的名字，就回答(huida)予我罷！”");
@@ -445,19 +445,19 @@ int do_huida(string arg)
         call_out("delete_me",61);
         return 1;
     }
-    // 加入強制去除多余的空格的語句
+    // 加入強制去除多餘的空格的語句
     arg = replace_string( arg, " ", "" );
     arg = replace_string( arg, "　", "" ); // 連全角符號的“空白”也去掉。
-    message_vision("$N想了想，說道：“這個人是"+arg+"！”\n",me);
+    message_vision("$N想了想，説道：“這個人是"+arg+"！”\n",me);
     // 回答錯誤。
     if( arg != query("the_answer") )
     {
         set("asking","fail");
         remove_call_out("delete_me");
         command("sure "+query("id", me));
-        command("say “你說得不對。這個人哪，他的名字是"+query("the_answer")+"！”");
-        message_vision("$N十分失望地說道：“這人如此有名，你竟然不知道！你仔細想想吧！”\n",this_object());
-        message_vision("$N慚愧之色立現于臉，頓時陷入了沉思中。\n",me);
+        command("say “你説得不對。這個人哪，他的名字是"+query("the_answer")+"！”");
+        message_vision("$N十分失望地説道：“這人如此有名，你竟然不知道！你仔細想想吧！”\n",this_object());
+        message_vision("$N慚愧之色立現於臉，頓時陷入了沉思中。\n",me);
         me->start_busy(10);
         set("asking_for_id","no");
         call_out("delete_me",1);
@@ -465,9 +465,9 @@ int do_huida(string arg)
     }
     // 回答正確！玩家得到獎勵，並且設置值，本輪遊戲內若再遇上老人，不會再提這個問題。
     remove_call_out("delete_me");
-    message_vision("$N摸了摸胡子，說道：“不錯！想不到你也能知曉他的名字！”\n",this_object());
+    message_vision("$N摸了摸鬍子，説道：“不錯！想不到你也能知曉他的名字！”\n",this_object());
     command("say “你所知如此之廣，我有一物贈送予你。”");
-    message_vision("老人說完，卻不見拿出些什麼來；只是突地把手往$N身上一拍！\n",me);
+    message_vision("老人説完，卻不見拿出些什麼來；只是突地把手往$N身上一拍！\n",me);
     message_vision("$N只覺得怪異莫名，卻似乎又覺得有些什麼變化……\n",me);
     set_temp("hj_quest_answer/"+query("quest_type"), "ok", me);
     if( query_temp("hj_score", me) )
@@ -494,7 +494,7 @@ int do_lianli()
     if(!power) return 0;
 
     if( me->is_busy() || query_temp("hj_need_waiting", me) )
-        return notify_fail("你還忙著呢，還是等空閒了，專心點來煉力吧！\n");
+        return notify_fail("你還忙着呢，還是等空閒了，專心點來煉力吧！\n");
 
     if( query_temp("hj_hp", me)<power*2 )
         return notify_fail("你的氣息太弱，無法使力打人，又如何煉力？\n");
@@ -504,13 +504,13 @@ int do_lianli()
         command("say “哎呀，我已經教過你了，你怎麼那麼愚笨哪？”");
         return 1;
     }
-    message_vision("$N大喝一聲，使勁向著"+query("name")+"打出了一拳！\n",me);
+    message_vision("$N大喝一聲，使勁向着"+query("name")+"打出了一拳！\n",me);
     if( !random(3) )
     {
         me->start_busy(3+random(3));
         message_vision("只見$N用盡全力，卻似打到了銅牆鐵壁之上！$N頓時疼痛異常，感覺就似斷了手臂一般！\n",me);
         addn_temp("hj_hp", -power, me);
-        message_vision(query("name")+"「呵呵」笑了笑，拍了拍$N的頭說道：“娃兒的力氣不對哪。”\n",me);
+        message_vision(query("name")+"「呵呵」笑了笑，拍了拍$N的頭説道：“娃兒的力氣不對哪。”\n",me);
         addn("use_times", -1, this_object());
         if(query("use_times") <=0 )
         {
@@ -531,7 +531,7 @@ int do_lianli()
     }
     else if(power<30)
     {
-        message_vision("只聽得「□」的一聲，"+query("name")+"受下了這拳，但卻只是微微一震！\n",me);
+        message_vision("只聽得「嘭」的一聲，"+query("name")+"受下了這拳，但卻只是微微一震！\n",me);
         command("nod");
         command("say “娃兒還有點力氣。不過你用得不太對，我來教教你吧……”");
         temp=2+random(2);
@@ -577,19 +577,19 @@ int do_answer(string arg)
         if(query("following_name"))
         {
             if( query("id", me) == query("following_id") )
-                write("你說了要帶她去了的。\n");
-            else command("say “"+query("following_name")+"說了要帶我去了呀。”");
+                write("你説了要帶她去了的。\n");
+            else command("say “"+query("following_name")+"説了要帶我去了呀。”");
             return 1;
         }
         else
         {
             if( query("last_follow") == query("id", me) )
-                return notify_fail("剛才你不是也說好嗎！騙小孩子，不要臉～～\n");
+                return notify_fail("剛才你不是也説好嗎！騙小孩子，不要臉～～\n");
 
             set("following_name",query("name", me));
             set("following_id",query("id", me));
             set("cannot_rdmove","yes");
-            message_vision("$N對著"+query("name")+"大聲說道：“我帶你去吧！”\n",me);
+            message_vision("$N對着"+query("name")+"大聲説道：“我帶你去吧！”\n",me);
             command("nod2 "+query("id", me));
             command("say “我要去的是「"+chinese_number(query("go_where"))+"」啊。”");
             command("say “如果到了就告訴我(answer here?)，真是很感謝你啊！”");
@@ -602,11 +602,11 @@ int do_answer(string arg)
 
     if(arg == "byebye")
     {
-        if(!query("following_id")) return notify_fail("還沒答應她呢，就說拜拜！\n");
+        if(!query("following_id")) return notify_fail("還沒答應她呢，就説拜拜！\n");
         if( query("id", me) != query("following_id") )
             return notify_fail("又不是你答應帶她去的，你愛走便走麼。\n");
 
-        message_vision("$N撓了撓腦袋，對著"+query("name")+"說道：“我帶不了你去了，就這樣吧，我走了。”\n",me);
+        message_vision("$N撓了撓腦袋，對着"+query("name")+"説道：“我帶不了你去了，就這樣吧，我走了。”\n",me);
         delete("following_name");
         delete("following_id");
         command(":( "+query("id", me));
@@ -618,7 +618,7 @@ int do_answer(string arg)
             set_temp("hj_score", 0, me);
         // 放棄答應的事情，將減少遊戲得分。不過這還算是好的，起碼明確表示放棄。將減少最多10點的得分；
         // 若是半途不見了、不管她之類的，那麼，時限到了之後，將減少最多50點的得分。
-        write("你心裡感到一絲內疚！\n"HIR"遊戲提示：你的得分減少了 "+award_score+" 點。\n"NOR);
+        write("你心裏感到一絲內疚！\n"HIR"遊戲提示：你的得分減少了 "+award_score+" 點。\n"NOR);
         delete("cannot_rdmove");
         remove_call_out("random_move");
         call_out("random_move",1);
@@ -634,9 +634,9 @@ int do_answer(string arg)
         if( !query("following_id") || query("following_id") != query("id", me) || !query("go_where") )
             return 0;
         if( query("room_mark", environment(this_player())) != query("go_where") )
-            return notify_fail(query("name")+"搖了搖頭，說道：“好象不是這裡啊。”\n");
+            return notify_fail(query("name")+"搖了搖頭，説道：“好像不是這裏啊。”\n");
 
-        message_vision("$N向"+query("name")+"問道：“你是不是要來這裡？”\n",me);
+        message_vision("$N向"+query("name")+"問道：“你是不是要來這裏？”\n",me);
         command("jump");
         command("say “是啊！真的很謝謝你！”");
         set("go_where","ok");
@@ -668,7 +668,7 @@ int do_glist()
 
     // 費盡心機，即學即用（之前什麼叫映射我都不懂哎）
     // 寫了個除了負擔似乎比較大之外，還算自認為完美的防止bug判斷流程
-    // yeah 這下不怕了，obj_copy.h 裡的映射變量亂改都沒問題！哈哈哈
+    // yeah 這下不怕了，obj_copy.h 裏的映射變量亂改都沒問題！哈哈哈
     // 8:29 02-10-30
     for(i=0;i< sizeof(lists);i++)
     {
@@ -682,7 +682,7 @@ int do_glist()
         if(go_on == "yes")
             printf("%-10s( %-4s )     價格： %-30d\n",list_temp[lists[i]],lists[i],all_values[lists[i]]);
     }
-    // 這裡的 對齊 終于弄好啦，呵呵呵 太笨，以為是 (%-4)s 的，弄死都弄不好！ papaya
+    // 這裏的 對齊 終於弄好啦，呵呵呵 太笨，以為是 (%-4)s 的，弄死都弄不好！ papaya
     write("\n----[ 用遊戲積分購買貨品，並且需要一個寶石才能買一件  指令：gmai 物品id ]----\n");
     return 1;
 }

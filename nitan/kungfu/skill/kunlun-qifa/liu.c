@@ -26,13 +26,13 @@ int perform(object me, object target)
 
         if( !objectp(weapon=query_temp("handing", me)) || 
             query("skill_type", weapon) != "throwing" )
-                return notify_fail("你現在手中並沒有拿著暗器，無法施展" LIU "。\n");
+                return notify_fail("你現在手中並沒有拿着暗器，無法施展" LIU "。\n");
 
         if (weapon->query_amount() < 20)
                 return notify_fail("至少要有二十枚暗器你才能施展" LIU "。\n");
 
         if ((skill = me->query_skill("kunlun-qifa", 1)) < 120)
-                return notify_fail("你的昆侖器法尚不嫻熟，難以施展" LIU "。\n");
+                return notify_fail("你的崑崙器法尚不嫻熟，難以施展" LIU "。\n");
 
         if ((int)me->query_skill("force") < 200)
                 return notify_fail("你的內功火候不夠，難以施展" LIU "。\n");
@@ -41,7 +41,7 @@ int perform(object me, object target)
                 return notify_fail("你內力不夠，難以施展" LIU "。\n");
 
         if (! living(target))
-               return notify_fail("對方都已經這樣了，用不著這麼費力吧？\n");
+               return notify_fail("對方都已經這樣了，用不着這麼費力吧？\n");
 
         msg= HIY "$N" HIY "一聲冷笑，飛身躍起，半空中十指陡然箕張，手中的"
              + weapon->name() + HIY "便如流星一般向$n" HIY "飛去！\n";

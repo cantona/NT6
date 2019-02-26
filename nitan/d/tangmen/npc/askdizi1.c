@@ -40,18 +40,18 @@ int do_dating(string arg)
         string str=query("id", me);
        
         if (!arg || arg != "wenzi")
-             return notify_fail("你想打聽什麼，你倒是說啊！\n");
+             return notify_fail("你想打聽什麼，你倒是説啊！\n");
         
         if( query("dname") != query("id", me) )
-             return notify_fail("我不想說，你不要問，問了也白問！\n");     
+             return notify_fail("我不想説，你不要問，問了也白問！\n");     
          
         if( !(query_temp("started", me)) )
-             return notify_fail("關于你的問題，我要考慮一下，你現在是不是覺得有點熱啊！\n");
+             return notify_fail("關於你的問題，我要考慮一下，你現在是不是覺得有點熱啊！\n");
         
         if( !(query_temp("asked", me)) )
            {
              command("ah");
-             command("say 找我，你算找對了，不瞞你說吧！我剛被蚊子叮過，你說我會不會知道啊！\n");
+             command("say 找我，你算找對了，不瞞你説吧！我剛被蚊子叮過，你説我會不會知道啊！\n");
              
              switch(random(2))
              {
@@ -62,8 +62,8 @@ int do_dating(string arg)
              }
             return 1;                       
             }  
-        tell_object(me,"話還沒說完，就聽見。。。。。。\n");       
-        tell_object(me,HIG"一陣“嗡嗡”聲，一群蚊子從你身邊飛過！\n"NOR);
+        tell_object(me,"話還沒説完，就聽見。。。。。。\n");       
+        tell_object(me,HIG"一陣“嗡嗡”聲，一羣蚊子從你身邊飛過！\n"NOR);
         tell_object(me,HIR"不要猶豫了，快去追啊！\n"NOR);
         return 1;
                 

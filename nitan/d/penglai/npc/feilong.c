@@ -6,7 +6,7 @@ int is_pld_npc(){return 1;}
 void create()
 {
         set_name(HIW "飛龍" NOR, ({ "fei long", "fei", "long" }));
-        set("long", HIW "這是一只長著翅膀的惡龍，看起來令人毛骨悚然。\n" NOR);
+        set("long", HIW "這是一隻長着翅膀的惡龍，看起來令人毛骨悚然。\n" NOR);
 
         set("age", 190);
         set("str", 40);

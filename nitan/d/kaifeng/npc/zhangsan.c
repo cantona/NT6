@@ -5,7 +5,7 @@ void create()
         set("gender", "男性");
            set("combat_exp", 9000);
            set("title", "過街老鼠");
-        set("long", "他長得姦嘴猴腮的，一看就不像是個好人。\n");
+        set("long", "他長得奸嘴猴腮的，一看就不像是個好人。\n");
         
         set("combat_exp", 7000);
         set("shen_type", -1);

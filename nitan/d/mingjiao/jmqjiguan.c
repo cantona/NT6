@@ -7,8 +7,8 @@ void create()
 {
         set("short", "巨木旗機關");
         set("long", @LONG
-你眼前驟然一暗，朦朧中，只見左右前後，到處都是舖天蓋地的
-不知名的巨樹，好象鬆柏，又似冷杉，簇在一起，密實的枝葉象一蓬
+你眼前驟然一暗，朦朧中，只見左右前後，到處都是鋪天蓋地的
+不知名的巨樹，好像松柏，又似冷杉，簇在一起，密實的枝葉象一蓬
 蓬巨傘恆伸向天空，遮天蔽日。你似乎迷失了方向，象沒頭蒼蠅般到
 處亂闖。
 LONG );
@@ -48,7 +48,7 @@ int valid_leave(object me, string dir)
         {
                 me->move(__DIR__"jmqshenmu");
                 delete_temp("mingjiao/steps", me);
-                tell_object(me, "你走了半天，終于走到神木。真累! \n");
+                tell_object(me, "你走了半天，終於走到神木。真累! \n");
                 return 1;
         }
 
@@ -56,7 +56,7 @@ int valid_leave(object me, string dir)
         {
                 me->move(__DIR__"jmqshulin6");
                 delete_temp("mingjiao/steps", me);
-                tell_object(me, "你走了半天，終于走到神木。真累! \n");
+                tell_object(me, "你走了半天，終於走到神木。真累! \n");
                 return 1;
         }
 

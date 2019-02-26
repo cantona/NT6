@@ -12,7 +12,7 @@ void create()
         set("gender", "男性");
         set("age", 24);
         set("long",
-                "高根明是岳不群的第五位弟子。\n");
+                "高根明是嶽不羣的第五位弟子。\n");
         set("attitude", "peaceful");
 
         set("str", 26);
@@ -75,7 +75,7 @@ int permit_pass(object me, string dir)
         if( query_temp("beg_huashan", me) )
         {
                 message_vision("$N眼睛一彈，對$n喝道：“你亂"
-                               "跑個啥？是姦細麼？”\n", this_object(), me);
+                               "跑個啥？是奸細麼？”\n", this_object(), me);
                 return -1;
         }
 

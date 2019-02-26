@@ -1,4 +1,4 @@
-// dragon-strike.c 降龍十八掌之龍戰于野
+// dragon-strike.c 降龍十八掌之龍戰於野
 // Last Modified by sega on Mar. 10 2000
 
 #include <ansi.h>;
@@ -16,8 +16,8 @@ int ttl = 17;
 int seq = 14;
 mapping *action = ({
         ([
-                "action"      : "$N腳下一轉，突然欺到$n身前，一招"+(order[random(13)])+"「龍戰于野」"NOR"拍向$n的$l",
-                "skill_name"  : "龍戰于野",
+                "action"      : "$N腳下一轉，突然欺到$n身前，一招"+(order[random(13)])+"「龍戰於野」"NOR"拍向$n的$l",
+                "skill_name"  : "龍戰於野",
                 "dodge"       : d_e1 + (d_e2 - d_e1) * seq / ttl,
                 "parry"       : p_e1 + (p_e2 - p_e1) * seq / ttl,
                 "force"       : f_e1 + (f_e2 - f_e1) * seq / ttl,
@@ -85,7 +85,7 @@ int power_point(object me) {
 
 int help(object me)
 {
-        write(HIC"\n降龍十八掌之龍戰于野："NOR"\n");
+        write(HIC"\n降龍十八掌之龍戰於野："NOR"\n");
         write(@HELP
 
     降龍十八掌是丐幫鎮幫之寶，是天下最剛猛的武功。

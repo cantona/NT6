@@ -33,7 +33,7 @@ int perform(object me, object target)
                 return notify_fail("你的抽髓掌不夠嫻熟，難以施展" + name() + "。\n");
 
         if (lvp < 200)
-                return notify_fail("你對毒技的了解不夠，難以施展" + name() + "。\n");
+                return notify_fail("你對毒技的瞭解不夠，難以施展" + name() + "。\n");
 
         if ((int)me->query_skill("throwing") < 180)
                 return notify_fail("你暗器手法火候不夠，難以施展" + name() + "。\n");
@@ -51,7 +51,7 @@ int perform(object me, object target)
                 return notify_fail("你現在的內息不足，難以施展" + name() + "。\n");
 
         if (! living(target))
-                return notify_fail("對方都已經這樣了，用不著這麼費力吧？\n");
+                return notify_fail("對方都已經這樣了，用不着這麼費力吧？\n");
 
         /*
         corpse = filter_array(all_inventory(environment(me)),
@@ -73,13 +73,13 @@ int perform(object me, object target)
                 name = "路邊的行人";
 
         msg = WHT "$N" WHT "隨手抓起" + name + WHT "，將「"
-              HIR "腐屍毒" NOR + WHT"」毒質運于其上，朝$n"
+              HIR "腐屍毒" NOR + WHT"」毒質運於其上，朝$n"
               WHT "猛擲而去。\n" NOR;
 
         ap = attack_power(me, "strike") +
              me->query_skill("poison", 1);
 
-        // 將任務NPC和玩家區分，再計算防御狀況
+        // 將任務NPC和玩家區分，再計算防禦狀況
         if (userp(me))
                 dp = defense_power(target, "dodge") +
                      target->query_skill("martial-cognize")/2;
@@ -98,7 +98,7 @@ int perform(object me, object target)
         } else
         {
                 msg += CYN "可是$n" CYN "見勢不妙，急忙騰挪身形，終"
-                       "于避開了$N" CYN "擲來的屍體。\n" NOR;
+                       "於避開了$N" CYN "擲來的屍體。\n" NOR;
                 me->start_busy(3);
                 addn("neili", -200, me);
         }

@@ -9,7 +9,7 @@ void create()
                 set_default_object(__FILE__);
         else {
                 set("unit", "副");
-                set("long", HIW "這是一副繪著富士山風景的圖畫。\n"  NOR);
+                set("long", HIW "這是一副繪着富士山風景的圖畫。\n"  NOR);
 
                 set("value", 500000);
         }

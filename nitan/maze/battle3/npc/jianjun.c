@@ -66,7 +66,7 @@ int give_quest(string arg)
                 }
 
                 message_vision(HIR "$N略一沉思，從案前抽出一枚令箭道：“$n聽令，" +
-                               "近來軍中幾無能戰之師，\n命你加緊訓練一支精銳步兵，以備不時之需，" +
+                               "近來軍中幾無能戰之師，\n命你加緊訓練一支精鋭步兵，以備不時之需，" +
                                "不得有誤！\n" NOR, me, ob);
                 set_temp("title", HIW"大宋步兵營統領"NOR, ob);
                 if (! present("ling jian", ob))
@@ -90,7 +90,7 @@ int give_quest(string arg)
                 }
 
                 message_vision(HIR "$N略一沉思，從案前抽出一枚令箭道：“$n聽令，" +
-                               "近來軍中幾無能戰之師，\n命你加緊訓練一支精銳騎兵，以備不時之需，" +
+                               "近來軍中幾無能戰之師，\n命你加緊訓練一支精鋭騎兵，以備不時之需，" +
                                "不得有誤！\n" NOR, me, ob);
 
                 set_temp("title", HIR"大宋車騎營統領"NOR, ob);
@@ -122,7 +122,7 @@ int give_quest(string arg)
                 }
 
                 message_vision(HIR "$N略一沉思，從案前抽出一枚令箭道：“$n聽令，" +
-                               "近來軍中幾無能戰之師，\n命你加緊訓練一支精銳弓箭手，以備不時之需，" +
+                               "近來軍中幾無能戰之師，\n命你加緊訓練一支精鋭弓箭手，以備不時之需，" +
                                "不得有誤！\n" NOR, me, ob);
                 set_temp("title", HIB"大宋神弩營統領"NOR, ob);
                 if (! present("ling jian", ob))
@@ -249,7 +249,7 @@ int give_quest(string arg)
                         set_temp("title", HIY"大宋後防營統領"NOR, ob);
 
                         set_temp("warquest/guard", 1, ob);
-                        set_temp("warquest/quest", "守衛襄陽，穩固後方", ob);
+                        set_temp("warquest/quest", "守衞襄陽，穩固後方", ob);
                         // ob->command("guard");
                         ob->move("/d/xiangyang/guofuting");
                 }
@@ -304,7 +304,7 @@ int accept_kill(object me)
 {
         if (playerp(me))
         {
-                message_vision(CYN "$N" CYN "大怒道：“看來你是真的想找死！”，說罷一掌把$n" CYN
+                message_vision(CYN "$N" CYN "大怒道：“看來你是真的想找死！”，説罷一掌把$n" CYN
                                "劈倒在地。\n" NOR, this_object(), me);
                 me->unconcious();
                 return -1;

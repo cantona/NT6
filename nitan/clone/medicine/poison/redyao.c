@@ -73,14 +73,14 @@ int do_rpour(string arg)
                 f = (: call_other, __FILE__, "drink_drug" :);
                 set("liquid/drink_func", bind(f,ob), ob);
                 addn("liquid/slumber_effect", 100, ob);
-                message("vision","你與" + victim->name() + "擦身而過，偷偷將《" + name() + "》洒進他的" + ob->name()+ "裡面。\n", this_player());
+                message("vision","你與" + victim->name() + "擦身而過，偷偷將《" + name() + "》灑進他的" + ob->name()+ "裏面。\n", this_player());
                 add_amount(-1);
                 me->start_busy(2);
                 if( random(myskill) < skill/2 )
-                        message("vision","你看到"+me->name()+"鬼鬼祟祟地在"+victim->name()+"身上的一"+query("unit", ob)+ob->name()+"裡洒入了一些"+name()+"！\n",environment(me),({me,victim}));
+                        message("vision","你看到"+me->name()+"鬼鬼祟祟地在"+victim->name()+"身上的一"+query("unit", ob)+ob->name()+"裏灑入了一些"+name()+"！\n",environment(me),({me,victim}));
                 return 1;
         }
-        else return notify_fail("毒只能下在飲水裡面！\n");
+        else return notify_fail("毒只能下在飲水裏面！\n");
         return 1;
 }
 

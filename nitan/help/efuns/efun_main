@@ -1,7 +1,7 @@
 □ efun_main.c 
 
 讓 efun match_path() 具有 '/' 路徑搜尋功能
-□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□
+―――――――――――――――――――――――――――――――――――――――
 #ifdef F_MATCH_PATH
 void f_match_path PROT((void))
 {
@@ -48,10 +48,10 @@ void f_match_path PROT((void))
     free_mapping(map);
 }
 #endif                          /* F_MATCH_PATH */
-□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□
+―――――――――――――――――――――――――――――――――――――――
 
 讓 efun this_player() 可回傳 call_out() 的 command_giver
-□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□
+―――――――――――――――――――――――――――――――――――――――
 #ifdef F_THIS_PLAYER
 void
 f_this_player PROT((void))
@@ -69,7 +69,7 @@ f_this_player PROT((void))
     }
 }
 #endif
-□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□
+―――――――――――――――――――――――――――――――――――――――
 
 By Clode@RW on 2002/6/3 04:01下午
 

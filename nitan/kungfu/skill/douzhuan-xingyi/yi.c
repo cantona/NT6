@@ -1,11 +1,11 @@
-// yi.c 鬥轉星移
+// yi.c 斗轉星移
 
 #include <ansi.h>
 #include <combat.h>
 
 inherit F_SSERVER;
 
-string name() { return "鬥轉星移"; }
+string name() { return "斗轉星移"; }
 
 int perform(object me, object target)
 {
@@ -21,28 +21,28 @@ int perform(object me, object target)
         if (! target) target = offensive_target(me);
 
         if (! target || ! me->is_fighting(target))
-                return notify_fail("「鬥轉星移」只能對戰鬥中的對手使用。\n");
+                return notify_fail("「斗轉星移」只能對戰鬥中的對手使用。\n");
 
         if ((int)me->query_skill("douzhuan-xingyi", 1) < 100)
-                return notify_fail("你的鬥轉星移不夠嫻熟，不會使用絕招。\n");
+                return notify_fail("你的斗轉星移不夠嫻熟，不會使用絕招。\n");
 
         if ((int)me->query_skill("shenyuan-gong", 1) < 100)
                 return notify_fail("你的神元功修為還不到家，"
-                                   "難以運用「鬥轉星移」。\n");
+                                   "難以運用「斗轉星移」。\n");
 
         if( query("neili", me)<60 )
-                return notify_fail("你現在真氣不夠，無法使用「鬥轉星移」。\n");
+                return notify_fail("你現在真氣不夠，無法使用「斗轉星移」。\n");
 
        if (! living(target))
-              return notify_fail("對方都已經這樣了，用不著這麼費力吧？\n");
+              return notify_fail("對方都已經這樣了，用不着這麼費力吧？\n");
 
         weapon=query_temp("weapon", target);
         if( weapon && query("skill_type", weapon) == "pin" )
-                return notify_fail("對方手裡拿的是一根小小的針，"
-                                   "你沒有辦法施展「鬥轉星移」。\n");
+                return notify_fail("對方手裏拿的是一根小小的針，"
+                                   "你沒有辦法施展「斗轉星移」。\n");
 
         msg = HIM "$N" HIM "運起紫徽心法，內力自氣海穴出，經由"
-              "任督二脈奔流而出，巧妙的牽引著$n" HIM "的招式！\n";
+              "任督二脈奔流而出，巧妙的牽引着$n" HIM "的招式！\n";
 
         ap = attack_power(me, "parry");
         dp = defense_power(target, "force") +

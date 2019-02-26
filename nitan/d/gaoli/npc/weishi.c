@@ -1,6 +1,6 @@
 // 大唐雙龍傳
 
-//weishi.c 金甲衛士
+//weishi.c 金甲衞士
 
 #include <ansi.h>
 
@@ -8,12 +8,12 @@ inherit NPC;
 
 void create()
 {
-        set_name("金甲衛士", ({ "wei shi", "shi", "wei" }) );
+        set_name("金甲衞士", ({ "wei shi", "shi", "wei" }) );
         set("gender", "男性");
         set("age", 35);
         set("long",
-"這是高麗皇宮把守宮門的衛士,身披鐵甲,手拿鋼刀。
-他雙目精光炯炯，警惕地巡視著四周的情形。\n");
+"這是高麗皇宮把守宮門的衞士,身披鐵甲,手拿鋼刀。
+他雙目精光炯炯，警惕地巡視着四周的情形。\n");
         set("combat_exp", 300000+random(40000));
         set("attitude", "heroism");
 
@@ -49,7 +49,7 @@ void init()
 
 int accept_fight(object me)
 {
-        message_vision("金甲衛士對$N大喝一聲：你活得不耐煩了？皇宮前也敢胡鬧！\n");
+        message_vision("金甲衞士對$N大喝一聲：你活得不耐煩了？皇宮前也敢胡鬧！\n");
         me->apply_condition("killer", 100);
         kill_ob(me);
         return 1;

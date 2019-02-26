@@ -16,7 +16,7 @@ void create()
 
 int do_effect(object me)
 {
-        message_vision("$N把" + name() + "扔進嘴裡，幾下就吞了下去。\n", me);
+        message_vision("$N把" + name() + "扔進嘴裏，幾下就吞了下去。\n", me);
 	destruct(this_object());
 	return 1;
 }

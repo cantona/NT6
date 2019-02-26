@@ -23,7 +23,7 @@ int perform(object me, object target)
 
         if( !objectp(weapon=query_temp("weapon", me)) ||
             query("skill_type", weapon) != "staff" )
-                return notify_fail("施展「無常五化」時必須拿著一把劍！\n");
+                return notify_fail("施展「無常五化」時必須拿着一把劍！\n");
 
         if( query("neili", me)<100 )
                 return notify_fail("你的真氣不夠，無法施展「無常五化」！\n");
@@ -38,10 +38,10 @@ int perform(object me, object target)
                 return notify_fail("你沒有激發無常杖法，不能使用「無常五化」！\n");
 
        if (! living(target))
-              return notify_fail("對方都已經這樣了，用不著這麼費力吧？\n");
+              return notify_fail("對方都已經這樣了，用不着這麼費力吧？\n");
 
         msg = HIY "$N" HIY "將手中的" + weapon->name() +
-             HIY "一盪，化作無數杖影掃向$n" HIY "！\n" NOR;
+             HIY "一蕩，化作無數杖影掃向$n" HIY "！\n" NOR;
         message_combatd(msg, me, target);
 
         addn("neili", -100, me);

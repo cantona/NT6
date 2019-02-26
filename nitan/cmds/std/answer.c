@@ -39,14 +39,14 @@ int main(object me, string arg)
                 {
                         if( query_temp("quest_gift/skill", me) )
                         {
-                                message_vision( CYN "\n$N" CYN "急忙點點頭，說"
+                                message_vision( CYN "\n$N" CYN "急忙點點頭，説"
                                                 "道：這武功正好我也想學，就傳授給"
                                                 "我吧。\n" NOR, me );
 
                                 if( query("family/gongji", me)<gongxian )
                                 {
                                         message_vision( CYN "$N" CYN "突然一愣"
-                                                        "，說道：嗯？這個…你最"
+                                                        "，説道：嗯？這個…你最"
                                                         "近還不夠努力…下次吧。"
                                                         "\n" NOR, obj );
                                         delete_temp("quest_gift", me);
@@ -65,14 +65,14 @@ int main(object me, string arg)
                         }
                         else
                         {
-                                message_vision( CYN "\n$N" CYN "急忙點點頭，說"
+                                message_vision( CYN "\n$N" CYN "急忙點點頭，説"
                                                 "道：這東西正好我也需要，就交給"
                                                 "我吧。\n" NOR, me );
 
                                 if( query("family/gongji", me)<gongxian )
                                 {
                                         message_vision( CYN "$N" CYN "突然一愣"
-                                                        "，說道：嗯？這個…你最"
+                                                        "，説道：嗯？這個…你最"
                                                         "近還不夠努力…下次吧。"
                                                         "\n" NOR, obj );
                                         delete_temp("quest_gift", me);
@@ -90,7 +90,7 @@ int main(object me, string arg)
                                                         NOR, obj);
                                                 delete_temp("quest_gift", me);
                                         return notify_fail("物品文件出現了問題"
-                                                        "，請與巫師聯系。\n");
+                                                        "，請與巫師聯繫。\n");
                                 }
 
                                 if( query("base_unit", ob) )
@@ -115,21 +115,21 @@ int main(object me, string arg)
                 {
                         if( query_temp("quest_gift/skill", me) )
                         {
-                                message_vision(CYN "\n$N" CYN "頗為尷尬的說道："
+                                message_vision(CYN "\n$N" CYN "頗為尷尬的説道："
                                        "嗯…我對這個武功沒有興趣，還"
                                        "是算了吧。\n" NOR, me);
 
-                                message_vision(CYN "$n" CYN "對$N" CYN "嘆氣道"
+                                message_vision(CYN "$n" CYN "對$N" CYN "歎氣道"
                                        "：也罷，既然你不想學，這武功我"
                                        "就傳授給別人吧。\n" NOR, me, obj);
                         }
                         else
                         {
-                                message_vision(CYN "\n$N" CYN "頗為尷尬的說道："
+                                message_vision(CYN "\n$N" CYN "頗為尷尬的説道："
                                        "嗯…我現在拿這東西也無用處，還"
                                        "是算了吧。\n" NOR, me);
 
-                                message_vision(CYN "$n" CYN "對$N" CYN "嘆氣道"
+                                message_vision(CYN "$n" CYN "對$N" CYN "歎氣道"
                                        "：也罷，既然你不需要，這東西我"
                                        "就留給別人吧。\n" NOR, me, obj);
                         }
@@ -175,7 +175,7 @@ int main(object me, string arg)
                                    "者已經離開遊戲了。\n");
 
         if (environment(obj) != environment(me))
-                return notify_fail("剛才向你詢問的人現在不再這裡了。\n");
+                return notify_fail("剛才向你詢問的人現在不再這裏了。\n");
 
         message_vision(CYN "$N" CYN "回答$n" CYN
                        "：『" HIG + arg + NOR CYN "』\n" NOR, me, obj);
@@ -194,8 +194,8 @@ int help(object me)
         write(@HELP
 指令格式：answer [ <player> ] <訊息>
 
-你可以用這個指令和剛才用 ask 和你說話的使用者說話，如果
-指明了玩家則回答指定的玩家。
+你可以用這個指令和剛才用 ask 和你説話的使用者説話，如果
+指明瞭玩家則回答指定的玩家。
 
 see also : tell
 HELP

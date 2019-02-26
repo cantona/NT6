@@ -34,7 +34,7 @@ int perform(object me)
                 return notify_fail("你的真氣不夠，無法運用「望斷秋水」！\n");
 
         msg = HIC "$N" HIC "一抖手中的" + weapon->name() + HIC
-              "，挽出一朵鞭花，隨即運氣于臂，如氣貫長虹般直向$n" HIC
+              "，挽出一朵鞭花，隨即運氣於臂，如氣貫長虹般直向$n" HIC
               "擊出。\n" NOR;
 
         dp = defense_power(target, "dodge");

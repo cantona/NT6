@@ -8,13 +8,13 @@ int time_period(int timep,object me);
 void create()
 {
         set_name("赫連鐵樹", ({ "helian tieshu", "helian", "tieshu" }));
-        set("title", HIY"西夏國征東大將軍"HIM"西夏一品堂"HIR"總管"NOR);
+        set("title", HIY"西夏國徵東大將軍"HIM"西夏一品堂"HIR"總管"NOR);
         set("gender", "男性");
         set("age", 35);
         set("str", 25);
         set("dex", 26);
         set("per", 16);
-        set("long", "他身穿大紅錦袍，三十四五歲年紀，鷹鉤鼻、八字須。\n");
+        set("long", "他身穿大紅錦袍，三十四五歲年紀，鷹鈎鼻、八字須。\n");
 
         set("combat_exp", 500000);
         set("shen_type", -1);
@@ -156,12 +156,12 @@ int give_quest()
                 if( ((int) me->query("/quest/helian/time")) > time() )
                 {
 //                        tell_object(me,"赫連鐵樹對你冷冷一笑道：讓你辦的事如何了？\n");
-                        tell_object(me,"赫連鐵樹很不屑地瞟了你一眼說道：你要是沒本事，就拿點兒費用出來我讓別的人去。\n");
+                        tell_object(me,"赫連鐵樹很不屑地瞟了你一眼説道：你要是沒本事，就拿點兒費用出來我讓別的人去。\n");
                         return 1;
                 }
                 else
                 {
-                        tell_object( me, "赫連鐵樹對著你嘆了一口氣：哎，我就再給你一次機會吧。\n" );
+                        tell_object( me, "赫連鐵樹對着你歎了一口氣：哎，我就再給你一次機會吧。\n" );
                         me->delete( "quest/helian/finished" );
                         me->add("qi",-(int)(me->query("qi")/10));
                         me->add("quests/abandon", 1);
@@ -170,7 +170,7 @@ int give_quest()
         else
                 if (me->query("/quest/helian/last_time")+60+random(60) > time())
                 {
-                        tell_object(me,"赫連鐵樹對你笑道：你過于勞累，歇息會兒再上路吧。\n");
+                        tell_object(me,"赫連鐵樹對你笑道：你過於勞累，歇息會兒再上路吧。\n");
                         return 1;
                 }
         
@@ -195,7 +195,7 @@ int give_quest()
         timep = random(60) * 10 + 600;
 
         time_period(timep, me);
-        tell_object(me,"先替我把『"+quest["quest"]+"』給我殺了，看那些南蠻又能把一品堂怎麼著？！\n" NOR);
+        tell_object(me,"先替我把『"+quest["quest"]+"』給我殺了，看那些南蠻又能把一品堂怎麼着？！\n" NOR);
 
         me->set("/quest/helian/time", (int)time()+timep);
         me->set("/quest/helian/factor",factor);
@@ -255,17 +255,17 @@ int accept_object(object who, object ob)
                 who->set("quests/num",num);
                 if(num==2 && ob->value() < 1000000)
                 {
-                        tell_object(who, "赫連鐵樹一雙尖針般的眼睛直盯著你：我實在不想給你任務！十項完成不了一項。如果你不想完成這次的任務，拿一百兩違約金來！\n");
+                        tell_object(who, "赫連鐵樹一雙尖針般的眼睛直盯着你：我實在不想給你任務！十項完成不了一項。如果你不想完成這次的任務，拿一百兩違約金來！\n");
                         return 1;
                 }
                 if(num==1 && ob->value() < 100000)
                 {
-                        tell_object(who, "赫連鐵樹一雙尖針般的眼睛直盯著你：你的任務資信太差，要新任務，先拿十兩黃金來！\n");
+                        tell_object(who, "赫連鐵樹一雙尖針般的眼睛直盯着你：你的任務資信太差，要新任務，先拿十兩黃金來！\n");
                         return 1;
                 }                
                 if( ob->value() < 10000)
                 {
-                        tell_object(who, "赫連鐵樹一雙尖針般的眼睛直盯著你：這點錢可不夠我們的開銷！\n");
+                        tell_object(who, "赫連鐵樹一雙尖針般的眼睛直盯着你：這點錢可不夠我們的開銷！\n");
                         return 1;
                 }
                 else

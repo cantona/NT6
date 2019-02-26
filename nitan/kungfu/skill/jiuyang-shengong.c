@@ -20,7 +20,7 @@ int success() { return 10; }
 int power_point(object me) { return 1; }
 
 mapping *actionf = ({
-([      "action": "$N飛身一躍而起，身法陡然加快，朝著$n$l快速攻出數十拳",
+([      "action": "$N飛身一躍而起，身法陡然加快，朝着$n$l快速攻出數十拳",
         "force" : 510,
         "attack": 190,
         "dodge" : -100,
@@ -38,7 +38,7 @@ mapping *actionf = ({
         "weapon": HIR "九陽無極勁" NOR,
         "damage_type":  "刺傷"
 ]),
-([      "action": "$N將九陽神功運勁于臂，一掌凌空劈斬而出，劃出一道熾熱的黃芒",
+([      "action": "$N將九陽神功運勁於臂，一掌凌空劈斬而出，劃出一道熾熱的黃芒",
         "force" : 530,
         "attack": 175,
         "dodge" : -90,
@@ -47,7 +47,7 @@ mapping *actionf = ({
         "weapon": HIR "九陽無極勁" NOR,
         "damage_type":  "割傷"
 ]),
-([      "action": "$N跨步上前，身形微微一展，雙掌對準$n$l一並攻出",
+([      "action": "$N跨步上前，身形微微一展，雙掌對準$n$l一併攻出",
         "force" : 525,
         "attack": 185,
         "dodge" : -85,
@@ -77,7 +77,7 @@ mapping *actionf = ({
 });
 
 mapping *actionw = ({
-([      "action" : "$N攻勢忽緩而不疏，$w變化無常，捉摸不定向$n慢慢卷去",
+([      "action" : "$N攻勢忽緩而不疏，$w變化無常，捉摸不定向$n慢慢捲去",
         "force" : 330,
         "attack": 140,
         "dodge" : -35,
@@ -93,7 +93,7 @@ mapping *actionw = ({
         "damage": 310,
         "damage_type": "刺傷"
 ]),
-([      "action":"$N卷起手中的$w，霎時劍芒暴漲，宛如驕陽烈火直射向$n而去",
+([      "action":"$N捲起手中的$w，霎時劍芒暴漲，宛如驕陽烈火直射向$n而去",
         "force" : 340,
         "attack": 115,
         "dodge" : -20,
@@ -109,7 +109,7 @@ mapping *actionw = ({
         "damage": 390,
         "damage_type": "內傷"
 ]),
-([      "action":"$N回轉$w遙指$n，頓時$w頂端頓時透出一道吞吐不定的火光，電射而出",
+([      "action":"$N迴轉$w遙指$n，頓時$w頂端頓時透出一道吞吐不定的火光，電射而出",
         "force" : 330,
         "attack": 118,
         "dodge" : -10,
@@ -148,7 +148,7 @@ int get_finish(object me)
 
         if (me->query_skill("yinyang-shiertian", 1))
         {
-                tell_object(me, "你演練完畢，發現自從通曉陰陽十二重天後，再"
+                tell_object(me, "你演練完畢，發現自從通曉陰陽十二重天后，再"
                                 "分開修煉已全然無用。\n");
                 return 0;
         }
@@ -202,8 +202,8 @@ int get_finish(object me)
                 return 0;
         }
 
-        tell_object(me, HIW "一陣凡塵往事湧上心頭，你幾欲放聲長嘆。霎那間，"
-                        "你放眼回首，竟有一股莫名\n的悲哀。宗師泰鬥那種高出"
+        tell_object(me, HIW "一陣凡塵往事湧上心頭，你幾欲放聲長歎。霎那間，"
+                        "你放眼回首，竟有一股莫名\n的悲哀。宗師泰斗那種高出"
                         "不勝寒、登泰山而小天下之感猶然而生，你只覺得以\n往"
                         "的武學現在看來是多麼的渺小可笑。\n" NOR);
         return 1;
@@ -264,7 +264,7 @@ int valid_learn(object me)
                                    "神功。\n");
 
           if (query("int", me) < 30)
-                return notify_fail("你覺得九陽神功過于艱深，難以理解。\n");
+                return notify_fail("你覺得九陽神功過於艱深，難以理解。\n");
 
           if (query("con", me) < 32)
                 return notify_fail("你的先天根骨孱弱，無法運轉九陽神功。\n");
@@ -275,7 +275,7 @@ int valid_learn(object me)
         level = me->query_skill("jiuyang-shengong", 1);
 
         if ((int)me->query_skill("martial-cognize", 1) < 100)
-                return notify_fail("你覺得九陽神功過于深奧，以自己的武學修養"
+                return notify_fail("你覺得九陽神功過於深奧，以自己的武學修養"
                                    "全然無法明白。\n");
 
         if ((int)me->query_skill("force", 1) < 200)
@@ -325,7 +325,7 @@ mixed valid_damage(object ob, object me, int damage, object weapon)
         ap = ob->query_skill("force") * 12 + query("max_neili", ob) + ob->query_skill("count", 1) * 12;
         dp = me->query_skill("force") * 12 + query("neili", me);
 
-        if (ap / 3 + random(ap/2) < dp) // 提高防御的能力
+        if (ap / 3 + random(ap/2) < dp) // 提高防禦的能力
         {
                 addn("neili", -cost, me);
                 result = ([ "damage": -damage ]);
@@ -333,7 +333,7 @@ mixed valid_damage(object ob, object me, int damage, object weapon)
                 switch (random(2))
                 {
                 case 0:
-                        result += (["msg" : HIR "$n" HIR "默念九陽神功總訣，收斂"
+                        result += (["msg" : HIR "$n" HIR "默唸九陽神功總訣，收斂"
                                             "內勁，承下$N" + HIR "這一招，$N" HIR
                                             "只覺猶如石沉大海，絲毫不起作用。\n"
                                             NOR]);
@@ -421,12 +421,12 @@ int help(object me)
 
     九陽神功來自《九陽真經》。
     在少林寺中的一部《楞伽經》中的夾縫之中，達摩祖師親手書
-寫的一部經書，稱為《九陽真經》。《九陽真經》中記著許多強身
+寫的一部經書，稱為《九陽真經》。《九陽真經》中記着許多強身
 健體、易筋洗髓的法門，覺遠大師依此練習。後瀟湘子和尹克西盜
 得此書，為逃避追繳，置入猿腹。直到百年之後，方被張無忌在昆
 侖仙境的白猿腹中偶然取得，九陽神功才重見天日。
 
-    □特殊功效□
+    〖特殊功效〗
 
         學習要求：
                 基本內功200級

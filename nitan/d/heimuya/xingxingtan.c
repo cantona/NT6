@@ -14,7 +14,7 @@ void create()
         set("short", "猩猩灘");
         set("long", @LONG
 只見一片長灘，山石殷紅如血，水流湍急，這便是有名的猩猩灘，
-對面岸邊停泊著幾艘小船(boat)，要過對面就要靠這幾艘小船了。
+對面岸邊停泊着幾艘小船(boat)，要過對面就要靠這幾艘小船了。
 LONG );
         set("outdoors", "heimuya");
         set("exits", ([
@@ -57,13 +57,13 @@ void check_trigger()
             }
             else
                 message("vision", "只聽得風浪中隱隱傳來：“別急嘛，"
-                    "這兒正忙著吶……”\n",this_object() );
+                    "這兒正忙着吶……”\n",this_object() );
         }
         else
             message("vision", "ERROR: boat not found\n", this_object() );
     }
     else 
-        message("vision", "岸邊一只渡船上的艄公說道：正等著你呢，上來吧。\n",
+        message("vision", "岸邊一隻渡船上的艄公説道：正等着你呢，上來吧。\n",
             this_object() );
 }
 
@@ -80,7 +80,7 @@ void on_board()
     if( room = find_object(__DIR__"duchuan1") )
     {
         delete("exits/out", room);
-        message("vision", "艄公把踏腳板收起來，說了一聲“坐穩嘍”，"
+        message("vision", "艄公把踏腳板收起來，説了一聲“坐穩嘍”，"
             "竹篙一點，扁舟向\n河中撐去。\n", room );
     }
     delete("exits/enter");
@@ -95,7 +95,7 @@ void arrive()
     if( room = find_object(__DIR__"duchuan1") )
     {
         set("exits/out", __DIR__"changtan", room);
-        message("vision", "艄公說“到啦，上岸吧”，隨即把一塊踏腳板"
+        message("vision", "艄公説“到啦，上岸吧”，隨即把一塊踏腳板"
             "搭上堤岸。\n",room );
     }
     remove_call_out("close_passage");
@@ -158,13 +158,13 @@ int do_cross()
     if (me->query_skill("piaomiao-shenfa",1) < 100) 
     {
          tell_object(me, random(2) ? "你覺得江面太寬，沒有十足的把握躍過去。\n"
-                     : "你看著波濤洶湧的江面，心裡不禁打了個突，沒敢亂來。\n");
+                     : "你看着波濤洶湧的江面，心裏不禁打了個突，沒敢亂來。\n");
          return 1;
     }
 
     if( query("neili", me)<100 )
     {
-         tell_object(me, "你的內力不夠，還是休息一下再說吧。\n");
+         tell_object(me, "你的內力不夠，還是休息一下再説吧。\n");
          return 1;
     }
 

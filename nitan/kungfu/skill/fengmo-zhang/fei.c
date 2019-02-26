@@ -44,7 +44,7 @@ int perform(object me, object target)
 
         skill = me->query_skill("staff");
 
-        message_combatd(HIR "\n$N大喝一聲將手中急轉著的"+weapon->name()+"脫手擲出，在空中高低左右回旋！\n\n" NOR,
+        message_combatd(HIR "\n$N大喝一聲將手中急轉着的"+weapon->name()+"脱手擲出，在空中高低左右迴旋！\n\n" NOR,
                         me, target);
 
         set_temp("fengmo", 1, me);
@@ -82,7 +82,7 @@ void check_fight(object me, object target, object weapon)
                 {
                         damage = 60 + random(me->query_skill("fengmo-zhang", 1) / 4);
                         target->receive_damage("qi", damage, me);
-                        msg += HIR "$n只覺一股大力舖天蓋地般壓來,登時眼前一花，兩耳轟鳴,哇的噴出一口鮮血！！\n" NOR;
+                        msg += HIR "$n只覺一股大力鋪天蓋地般壓來,登時眼前一花，兩耳轟鳴,哇的噴出一口鮮血！！\n" NOR;
 
 
                 } else

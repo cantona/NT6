@@ -2,7 +2,7 @@
 inherit SKILL;
  
 mapping *action = ({
-([      "action": "$N身形稍退，手中$w迎風一抖，朝著$n劈頭蓋臉地砸將下",
+([      "action": "$N身形稍退，手中$w迎風一抖，朝着$n劈頭蓋臉地砸將下",
         "dodge" : 31,
         "attack": 31,
         "force" : 289,
@@ -38,7 +38,7 @@ mapping *action = ({
         "lvl" : 75,
         "damage_type": "砸傷"
 ]),
-([      "action": "$N身形稍退，手中$w迎風一抖，朝著$n劈頭蓋臉地砸將下",
+([      "action": "$N身形稍退，手中$w迎風一抖，朝着$n劈頭蓋臉地砸將下",
         "dodge" : 49,
         "attack": 63,
         "force" : 391,
@@ -56,7 +56,7 @@ mapping *action = ({
         "lvl" : 130,
         "damage_type": "砸傷"
 ]),
-([      "action": "$N連翻幾個筋鬥，手中$w轉得如風車一般，一連三棒直擊$n頂門",
+([      "action": "$N連翻幾個筋斗，手中$w轉得如風車一般，一連三棒直擊$n頂門",
         "dodge" : 31,
         "attack": 83,
         "force" : 503,

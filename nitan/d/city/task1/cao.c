@@ -8,7 +8,7 @@ void create()
         set_name("曹化淳", ({ "cao  huachun"}));
 //        set("nickname", "");
         set("long",
-        "原是朝廷的宦官，後來由于貪贓枉法，被朝廷查辦的時候逃跑了。\n");
+        "原是朝廷的宦官，後來由於貪贓枉法，被朝廷查辦的時候逃跑了。\n");
         set("gender", "無性");
         set("age", 37);
         set("attitude", "peaceful");

@@ -10,16 +10,16 @@ string *parry_msg = ({
         "卻見$n踏前一步，劍式斜指你的右臂，想要使$P閃身而退。\n", 
         "$n以攻為守，以進為退，凝神運氣向$P猛攻快打地揮出方位大異的泰山「快活三」三劍。\n", 
         "$n劍法突變，劍勢伸縮不定，奔騰矯夭，逆使嵩山劍法的「天外玉龍」企圖迫使$P變招。\n", 
-        "$n突然一劍點向$P的$l，雖一劍卻暗藏無數後著，$P手足無措，攻勢不由自主停了下來。\n" 
+        "$n突然一劍點向$P的$l，雖一劍卻暗藏無數後着，$P手足無措，攻勢不由自主停了下來。\n" 
         "$n不閃不避，舉劍閃電般使出「疊翠浮青」反削$P的$l，想擋過你此招。\n", 
-        "$n突然使出青城派鬆風劍法的「鴻飛冥冥」，長劍對著$P一絞，企圖突破$P的攻勢。\n" 
+        "$n突然使出青城派松風劍法的「鴻飛冥冥」，長劍對着$P一絞，企圖突破$P的攻勢。\n" 
         "$n挺劍一招象是「白雲出岫」回刺$P的$l，企圖將$P的攻勢化解。\n", 
         "只見$n不退反進，身如飄風，一式「天柱雲氣」動向無定，擋住了$P的\n進攻。\n", 
-        "$n不退反進，使出恆山劍招「綿裡藏針」，森森劍氣充溢四周！架開了$P的這招\n", 
+        "$n不退反進，使出恆山劍招「綿裏藏針」，森森劍氣充溢四周！架開了$P的這招\n", 
 }); 
 
 mapping *action = ({
-([      "action": HIW "但見$N挺身而上，$w" + HIW "一旋，一招仿佛泰山劍法的「來鶴清泉」直刺$n的$l" NOR,
+([      "action": HIW "但見$N挺身而上，$w" + HIW "一旋，一招彷彿泰山劍法的「來鶴清泉」直刺$n的$l" NOR,
         "attack": 70,
         "dodge" : 60,
         "parry" : 70,
@@ -44,7 +44,7 @@ mapping *action = ({
         "lvl" : 20,
         "damage_type" : "刺傷"
 ]),
-([      "action": BLU "$N劍勢忽緩而不疏，劍意有余而不盡，化恆山劍法為一劍，向$n慢慢推去" NOR,
+([      "action": BLU "$N劍勢忽緩而不疏，劍意有餘而不盡，化恆山劍法為一劍，向$n慢慢推去" NOR,
         "parry" : 73,
         "attack": 73,
         "dodge" : 65,
@@ -52,7 +52,7 @@ mapping *action = ({
         "lvl" : 30,
         "damage_type" : "刺傷"
 ]),
-([      "action": HIR "$N劍意突煥氣象森嚴，便似千軍萬馬奔馳而來，長槍大戟，黃沙千裡，盡括嵩山劍勢擊向$n的$l" NOR,
+([      "action": HIR "$N劍意突煥氣象森嚴，便似千軍萬馬奔馳而來，長槍大戟，黃沙千里，盡括嵩山劍勢擊向$n的$l" NOR,
         "parry" : 74,
         "attack": 74,
         "dodge" : 68,
@@ -108,7 +108,7 @@ mapping *action = ({
         "lvl" : 100,
         "damage_type" : "刺傷"
 ]),
-([      "action": HIW "$N突然一劍點向$n的$l，雖一劍卻暗藏無數後著，$n手足無措，不知如何是好" NOR,
+([      "action": HIW "$N突然一劍點向$n的$l，雖一劍卻暗藏無數後着，$n手足無措，不知如何是好" NOR,
         "attack": 81,
         "parry" : 81,
         "dodge" : 66,
@@ -184,7 +184,7 @@ mapping *action2 = ({
         "damage": 190, 
         "damage_type" : "刺傷" 
 ]), 
-([      "action" : HIW "$N身法飄逸，神態怡然，劍意藏于胸中，手中$w隨意揮洒而出，獨孤" 
+([      "action" : HIW "$N身法飄逸，神態怡然，劍意藏於胸中，手中$w隨意揮灑而出，獨孤" 
                        "九劍已到了收發自如的境界" NOR, 
         "force" : 300,
         "attack": 140, 
@@ -221,7 +221,7 @@ int valid_learn(object me)
         if( query("character", me) == "心狠手辣" )
                 return notify_fail("你一心想殺盡敵人，沒能理解獨孤九劍的的真正含義。\n"); 
         
-        if( query("character", me) == "陰險姦詐" )
+        if( query("character", me) == "陰險奸詐" )
                 return notify_fail("你一心想怎麼學好劍法去害人，結果沒能理解獨孤九劍。\n"); 
         
         if( query("character", me) == "光明磊落" )
@@ -253,7 +253,7 @@ mapping query_action(object me, object weapon)
                         addn("neili", -100, me);
                         return ([
                                 "action": HIR "$N臉色凝重虔誠，緩緩舉起玄鐵重劍，突然躍起身劍合一，"
-                                          "馭劍化為一道黑氣向$n沖刺而去" NOR,
+                                          "馭劍化為一道黑氣向$n衝刺而去" NOR,
                                 "damage": 400,
                                 "attack": 100,
                                 "dodge" : 80,
@@ -318,7 +318,7 @@ void skill_improved(object me)
                 } else 
                 { 
                         tell_object(me, HIC "你通曉了獨孤九劍「" HIW "破" 
-                                        "氣式" HIC "」的奧秘。\n" NOR); 
+                                        "氣式" HIC "」的奧祕。\n" NOR); 
                         me->improve_skill("martial-cognize", 1500000); 
                         me->improve_skill("martial-cognize", 1500000); 
                         me->improve_skill("martial-cognize", 1500000); 
@@ -335,7 +335,7 @@ void skill_improved(object me)
                 } else 
                 { 
                         tell_object(me, HIC "你通曉了獨孤九劍「" HIR "總" 
-                                        "破式" HIC "」的奧秘。\n" NOR); 
+                                        "破式" HIC "」的奧祕。\n" NOR); 
                         me->improve_skill("martial-cognize", 1500000); 
                         me->improve_skill("martial-cognize", 1500000); 
                         me->improve_skill("martial-cognize", 1500000); 
@@ -352,7 +352,7 @@ void skill_improved(object me)
                 } else 
                 { 
                         tell_object(me, HIC "你通曉了獨孤九劍「" HIR "劍" 
-                                        "意" HIC "」的奧秘。\n" NOR); 
+                                        "意" HIC "」的奧祕。\n" NOR); 
                         me->improve_skill("martial-cognize", 1500000); 
                         me->improve_skill("martial-cognize", 1500000); 
                         me->improve_skill("martial-cognize", 1500000); 
@@ -439,7 +439,7 @@ mixed valid_damage(object ob, object me, int damage, object weapon)
                         break; 
                 case 4: 
                         result += (["msg" : HIC "$n" HIC "突然一劍點向$N" HIC "，雖一劍" 
-                                            "卻暗藏無數後著，$N" HIC "頓時手足無措，攻" 
+                                            "卻暗藏無數後着，$N" HIC "頓時手足無措，攻" 
                                             "勢不由自主停了下來。\n" NOR]); 
                         break; 
                 default: 
@@ -507,8 +507,8 @@ mixed hit_ob(object me, object victim, int damage_bonus)
                         result = ([ "damage" : damage_bonus / 2 ]); 
                      
                         msg1 = random(2) ? HIR "$N" HIR "一劍攻出，劍氣橫飛，" + weapon->name() + HIR 
-                                           "時若遊龍穿空，時若驚鴻渡雲，卻不知這普通的" 
-                                           "一劍之中竟蘊藏著如此威力。\n" NOR: 
+                                           "時若游龍穿空，時若驚鴻渡雲，卻不知這普通的" 
+                                           "一劍之中竟藴藏着如此威力。\n" NOR: 
                                            HIR "$N" HIR "手中" + weapon->name() + HIR "猶" 
                                            "如生了眼睛一般，一劍隨意揮出，竟直刺向$n" HIR  
                                            "小腹，看似平淡，但方位、力道卻拿捏得恰倒好處。\n" NOR; 
@@ -518,7 +518,7 @@ mixed hit_ob(object me, object victim, int damage_bonus)
                 break; 
         
         case 2:        
-                message_vision(HIC "\n$N" HIC "隨意揮洒手中的" + weapon->name() + 
+                message_vision(HIC "\n$N" HIC "隨意揮灑手中的" + weapon->name() + 
                                HIC "，招招從出其不意的方位直指$n" HIC "招式中的" 
                                "破綻！\n" NOR, me, victim); 
         
@@ -534,7 +534,7 @@ mixed hit_ob(object me, object victim, int damage_bonus)
                         { 
                                 msg = HIW "$n" HIW "覺得眼前眼花繚亂，手中" 
                                       "的" + weapon2->name() + HIW "一時竟" 
-                                      "然拿捏不住，脫手而出！\n" NOR; 
+                                      "然拿捏不住，脱手而出！\n" NOR; 
                                 weapon2->move(environment(me));       
                                 addn("neili", -100, me);
                         } else 
@@ -554,7 +554,7 @@ mixed hit_ob(object me, object victim, int damage_bonus)
                 } 
                 else 
                 { 
-                        msg = HIC "$N" HIC "隨意揮洒著手中的" + weapon->name() + 
+                        msg = HIC "$N" HIC "隨意揮灑着手中的" + weapon->name() + 
                               HIC "刺向$n" HIC "，不過$n" HIC "防守的異常嚴密，$N" 
                               HIC "一時竟然無法找到破綻。\n" NOR; 
                         if (! victim->is_busy())
@@ -570,7 +570,7 @@ mixed hit_ob(object me, object victim, int damage_bonus)
                 { 
                         weapon=query_temp("weapon", me);
                         message_sort(HIY "\n$N" HIY "胸藏劍意，手中" + weapon->name() + HIY  
-                                     "隨意揮洒而出，速度之快，方位之準，顯是獨孤九劍已達到" 
+                                     "隨意揮灑而出，速度之快，方位之準，顯是獨孤九劍已達到" 
                                      "收發自如的境界。\n" NOR, 
                                      me, victim); 
         

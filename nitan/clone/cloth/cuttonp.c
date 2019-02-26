@@ -44,7 +44,7 @@ string do_wear()
         } else
         {
                 if (per >= 30)
-                        msg = HIC "$N" HIC "隨手一揮，將$n" HIC "披在身上，姿勢瀟洒之極。\n";
+                        msg = HIC "$N" HIC "隨手一揮，將$n" HIC "披在身上，姿勢瀟灑之極。\n";
                 else if (per >= 25)
                         msg = HIG "$N" HIG "把$n" HIG "展開，披在身上。\n";
                 else if (per >= 20)

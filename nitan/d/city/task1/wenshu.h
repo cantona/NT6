@@ -20,12 +20,12 @@ int do_guankan(string arg)
         if(!arg) return 0;
         if( arg=="wenshu" )
         {
-                write("\n這是一張揚州知府懸賞捉拿江洋大盜的文書，上面栩栩如生的畫著一個\n人的頭像，下面有一行小字，上面寫著：\n“江洋大盜「"+query_temp("guanfu_targetnm", me)+"」，懸賞捉拿”。\n據飛鴿傳書，該犯目前出沒于「"+query_temp("ch_weizhi", me)+"」附近。\n");
+                write("\n這是一張揚州知府懸賞捉拿江洋大盜的文書，上面栩栩如生的畫着一個\n人的頭像，下面有一行小字，上面寫着：\n“江洋大盜「"+query_temp("guanfu_targetnm", me)+"」，懸賞捉拿”。\n據飛鴿傳書，該犯目前出沒於「"+query_temp("ch_weizhi", me)+"」附近。\n");
                 if(now_time>time*3/4) write("你現在有充足的時間去尋找目標。\n");
                 if(now_time>time/2 && now_time<=time*3/4 ) write("已經過去一小半時間了。\n");
                 if(now_time>time/4 && now_time<=time/2 ) write("你還有一半的時間去追蹤目標。\n");
                 if(now_time>time/8 && now_time<=time/4 ) write("你的時間已經不多了。\n");
-                if(now_time>0 && now_time<=time/8) write("官府好象已經快有新的目標了，你要抓緊時間了！\n");
+                if(now_time>0 && now_time<=time/8) write("官府好像已經快有新的目標了，你要抓緊時間了！\n");
                 return 1;
         }
 }
@@ -56,7 +56,7 @@ int do_wancheng(string arg)
         if (gfjob_times < 1) gfjob_times = 1;
         message_vision(HIW "$N冷笑一聲，從懷中掏出文書看了看，微運內勁將文書向空中飛射出去。\n但見文書化做片片雪片，飛落在$n身上。\n"NOR, me, target);
         write(WHT "很好！你成功地完成了任務。目前你已經為官府做了"+chinese_number(gfjob_times)+"次貢獻。\n"NOR);
-        set("long",query("long",  target)+"上面飛落著許多紙片。\n", target);
+        set("long",query("long",  target)+"上面飛落着許多紙片。\n", target);
   set_temp("mark/dune1", 1, target);
         delete_temp("guanfu_time", me);
         me->clear_condition("guanfu_task");
@@ -80,7 +80,7 @@ int do_wancheng(string arg)
         write(HIW"你被獎勵了：\n" +
                chinese_number(exp) + "點實戰經驗\n" +
                chinese_number(pot) + "點潛能\n"+
-               chinese_number(score) + "點江湖閱歷\n"NOR);
+               chinese_number(score) + "點江湖閲歷\n"NOR);
         destruct(this_object());
         return 1;
 

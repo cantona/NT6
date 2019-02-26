@@ -11,7 +11,7 @@ void create()
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("long", "一把藥鋤，用來在地裡挖掘（wajue）根類藥材。\n");
+                set("long", "一把藥鋤，用來在地裏挖掘（wajue）根類藥材。\n");
                 set("unit", "把"); 
                 set("no_get",1);
                 set("no_drop",1);             
@@ -39,10 +39,10 @@ int do_wajue()
     	 || query("id", weapon) != "yaochu" )
     	if( !objectp(weapon=query_temp("secondary_weapon", me) )
     	 || query("id", weapon) != "yaochu" )
-        	return notify_fail("你手中得拿著工具才能挖藥。\n");
+        	return notify_fail("你手中得拿着工具才能挖藥。\n");
 
   	if( !query("outdoors", environment(me)) )
-  	return notify_fail("你在房間裡挖個什麼勁，要挖去外面挖！\n");
+  	return notify_fail("你在房間裏挖個什麼勁，要挖去外面挖！\n");
 
   	if(!sscanf(base_name(environment(me)),"/d/wudang/%*s")
   	&& !sscanf(base_name(environment(me)),"/d/quanzhen/%*s")
@@ -59,7 +59,7 @@ int do_wajue()
   	return notify_fail("你現在正忙,等一下再挖吧!\n");
 
   	if( query("wajue", environment(me))>time() )
-  	return notify_fail("這裡剛剛被人挖掘過，你等一會再來吧!\n");
+  	return notify_fail("這裏剛剛被人挖掘過，你等一會再來吧!\n");
 
   	me->start_busy(5);
 
@@ -75,7 +75,7 @@ void finish(object me, object ob)
   	if(random(5)>4) 
 	{
   		me->start_busy(2);
-  		message_vision( HIW"$N感到好象挖到什麼東西了,仔細一看原來是石塊!\n"NOR, this_player());
+  		message_vision( HIW"$N感到好像挖到什麼東西了,仔細一看原來是石塊!\n"NOR, this_player());
 
    	}
   
@@ -95,6 +95,6 @@ addn("neili", -(query("neili", me)/10), 		me);
    		gen->move(me);
   		me->start_busy(2);
 
-   		message_vision(HIR"$N拿著藥鋤刨地三尺，挖出了一根"+gen->name()+HIR"！\n"NOR, this_player());
+   		message_vision(HIR"$N拿着藥鋤刨地三尺，挖出了一根"+gen->name()+HIR"！\n"NOR, this_player());
 	}
 }

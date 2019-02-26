@@ -7,7 +7,7 @@ void create()
         set("gender", "男性" );
         set("title", "洛陽唐三彩" );
         set("age", 32);
-        set("long", "洛陽唐三彩的老板，他這裡所出的瓷器聞名全國。\n");
+        set("long", "洛陽唐三彩的老闆，他這裏所出的瓷器聞名全國。\n");
         set("shen_type", 1);
         set("combat_exp", 10000);
         set("str", 17);

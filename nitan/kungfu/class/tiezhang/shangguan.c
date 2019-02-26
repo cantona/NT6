@@ -67,7 +67,7 @@ void attempt_apprentice(object me)
                 command("say 你的歸元吐納法根基太弱了。\n");
         else
         {
-                command( "say 好吧，我就收下你了。否則我的武功就要和我這把老骨頭一起埋在這個山洞裡了。");
+                command( "say 好吧，我就收下你了。否則我的武功就要和我這把老骨頭一起埋在這個山洞裏了。");
                 command("recruit "+query("id", me));
         }
 }

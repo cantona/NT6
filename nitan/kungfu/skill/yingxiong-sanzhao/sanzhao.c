@@ -31,7 +31,7 @@ int perform(object me, object target)
                 return notify_fail("他已經暈倒了，你可以輕易地殺了他！\n");
 
         if( time()-query_temp("sxj-t", target)<30 )
-                return notify_fail("他已經適應了你的招式，對他來說已經無效了！\n");
+                return notify_fail("他已經適應了你的招式，對他來説已經無效了！\n");
 
         if( me->query_skill_mapped("force") != "shenlong-xinfa" &&
             me->query_skill_mapped("force") != "busi-shenlong" )
@@ -73,12 +73,12 @@ int perform(object me, object target)
                 me->start_call_out( (: call_other, __FILE__, "remove_effect", me, target, amount:), amount/15);
         }
 
-        message_combatd(HIW "$n抓住$N的後頸，一把提起。$N左手慢慢反轉，在$n左腋底搔了一把，\n$n身子軟了下來，$N左手拿住$n腋下，右手慢慢回轉，抓住$n領口，緩緩\n舉起$n的身子，過了自己頭頂，向外摔出。\n"NOR, me, target);
+        message_combatd(HIW "$n抓住$N的後頸，一把提起。$N左手慢慢反轉，在$n左腋底搔了一把，\n$n身子軟了下來，$N左手拿住$n腋下，右手慢慢迴轉，抓住$n領口，緩緩\n舉起$n的身子，過了自己頭頂，向外摔出。\n"NOR, me, target);
         chkpfm(me, target, amount);
-        message_combatd(HIW "$N俯伏地上，$n伸右足踏住$N的後腰，$N雙腿一縮，似欲跪拜，\n右臂卻慢慢橫掠而出，突然間一個筋鬥，向$n的胯下鑽去，只一作勢\n左手已抓住$n右腳足踝，右手向$n小腹擊去。\n"NOR, me, target);
+        message_combatd(HIW "$N俯伏地上，$n伸右足踏住$N的後腰，$N雙腿一縮，似欲跪拜，\n右臂卻慢慢橫掠而出，突然間一個筋斗，向$n的胯下鑽去，只一作勢\n左手已抓住$n右腳足踝，右手向$n小腹擊去。\n"NOR, me, target);
         chkpfm(me, target, amount);
         set_temp("sxj-c", 3, me);
-        message_combatd(HIW"$N雙臂反在背後，突然雙手十指彎起，各成半球之形，身子向後一撞\n十指便抓向$n的胸部，$n向後一縮，$N突然一個倒翻筋鬥，身子躍起\n雙腿一分，已跨在$n肩頭，同時雙手按指壓住$n太陽穴，食指按眉，中指按眼！\n"NOR, me, target);
+        message_combatd(HIW"$N雙臂反在背後，突然雙手十指彎起，各成半球之形，身子向後一撞\n十指便抓向$n的胸部，$n向後一縮，$N突然一個倒翻筋斗，身子躍起\n雙腿一分，已跨在$n肩頭，同時雙手按指壓住$n太陽穴，食指按眉，中指按眼！\n"NOR, me, target);
         chkpfm(me, target, amount);
 
 

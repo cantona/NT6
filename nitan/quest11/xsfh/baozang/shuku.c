@@ -39,7 +39,7 @@ int do_search(string arg)
      object me,obj;
      me = this_player();
      if (me->is_busy() || me->is_fighting())
-                   return notify_fail("你正忙著哪！\n");
+                   return notify_fail("你正忙着哪！\n");
       message_vision(HIY"$N蹲在地上，四處尋找。\n"NOR, me);
       if(!wizardp(me)) me->start_busy(1);
       if(me->query(QUESTDIR5+"yupei")||!me->query(QUESTDIR4+"lengquanshengong")||me->query(QUESTDIR4+"lengquanshengong_teach"))
@@ -51,9 +51,9 @@ int do_search(string arg)
       obj->set("owner",me->query("id"));
       obj->set("quest",1);
       obj->set("long", HIC"這是東漢玉石飾品中的一個，出自陝西，山東，河南一帶。\n"
-                      +"下面刻著一個“苗”字。\n"NOR);
+                      +"下面刻着一個“苗”字。\n"NOR);
       obj->move(me);
-      message_vision(WHT"$N按照紙團提示的方位，並沒有發現秘籍，但卻發現一塊"+obj->name()+WHT"。\n"NOR, me);
+      message_vision(WHT"$N按照紙團提示的方位，並沒有發現祕籍，但卻發現一塊"+obj->name()+WHT"。\n"NOR, me);
       log_file("quest/FEIHU", sprintf("%s(%s)找到苗家玉佩，解開冷泉神功。經驗%d。\n", me->name(1),me->query("id"),me->query("combat_exp")) );
       me->set(QUESTDIR5+"yupei",1);
       me->start_busy(2);
@@ -66,14 +66,14 @@ int do_push(string arg)
   int i;
   me = this_player();
 	if (me->is_busy() || me->is_fighting())
-		      return notify_fail("你正忙著哪！\n");
+		      return notify_fail("你正忙着哪！\n");
 	if ( !arg || (arg != "zhuo zi" &&arg != "zhuozi" &&arg != "anmen" && arg != "wall"))
        		return notify_fail("你要推動什麼？\n");
   ob = deep_inventory(me);
   i = sizeof(ob);
   while (i--)
   if (ob[i]->is_character())
-       		return notify_fail("你背負一人，無法推動。\n");
+       		return notify_fail("你揹負一人，無法推動。\n");
   if(arg=="zhuo zi"||arg=="zhuozi")
   {
     if(!me->query_temp(QUESTDIR5+"bang_zhuozi"))
@@ -109,7 +109,7 @@ int do_move(string arg)
 	object me;
   me = this_player();
 	if (me->is_busy() || me->is_fighting())
-		return notify_fail("你正忙著哪！\n");
+		return notify_fail("你正忙着哪！\n");
 	if ( !arg || (arg != "huapen" && arg != "hua pen"))
        		return notify_fail("你要轉動什麼？\n");
   if(me->query_temp(QUESTDIR5+"move_huapen"))
@@ -130,7 +130,7 @@ int do_bang(string arg)
 	object me,ob;
   me = this_player();
 	if (me->is_busy() || me->is_fighting())
-		return notify_fail("你正忙著哪！\n");
+		return notify_fail("你正忙着哪！\n");
 	if ( !arg || (arg != "zhuo zi" && arg != "zhuozi"))
        		return notify_fail("你要綁什麼？\n");
   if(me->query_temp(QUESTDIR5+"bang_zhuozi"))

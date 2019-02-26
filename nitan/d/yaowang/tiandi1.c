@@ -5,7 +5,7 @@ void create()
 {
         set("short", "田地");
         set("long", @LONG
-這是藥王谷用來種植草藥的田地，你可以拿草藥種籽在這裡種植草藥(zhong)。
+這是藥王谷用來種植草藥的田地，你可以拿草藥種籽在這裏種植草藥(zhong)。
 等草藥種成了就可以挖(dig)起來。
 LONG );
         set("no_clean_up", 1);
@@ -41,7 +41,7 @@ int do_dig(string arg)
                 return notify_fail("指令格式：dig <草藥ID> \n");
 
         if( query("owner", ob) != query("id", me) )
-                return notify_fail("這個東西好象不是你的啊？？\n"); 
+                return notify_fail("這個東西好像不是你的啊？？\n"); 
 
         message_vision("$N輕輕將$n挖了起來。\n", me, ob);
 
@@ -54,5 +54,5 @@ int do_dig(string arg)
 int do_work(string arg) 
 
 {
-        return notify_fail("這裡不能使用這個指令！\n");
+        return notify_fail("這裏不能使用這個指令！\n");
 }

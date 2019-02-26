@@ -21,7 +21,7 @@ int update_condition(object me, int duration)
                 if( objectp(ob=find_player(query("owner", me))) )
                         tell_object(ob,HIR"你的魔幻獸("+query("name", me)+HIR+")快要餓死了！\n"NOR);
                         
-                message_vision(HIY "$N" HIY "看起來又饑又渴，已經疲憊不堪。\n" NOR, me);
+                message_vision(HIY "$N" HIY "看起來又飢又渴，已經疲憊不堪。\n" NOR, me);
         }
         else
         if (duration == 7)
@@ -29,7 +29,7 @@ int update_condition(object me, int duration)
                 if( objectp(ob=find_player(query("owner", me))) )
                         tell_object(ob,HIR"你的魔幻獸("+query("name", me)+HIR+")快要餓死了！\n"NOR);
                                         
-                message_vision(HIY "$N" HIY "看起來又饑又渴，處于死亡的邊緣。\n" NOR, me);
+                message_vision(HIY "$N" HIY "看起來又飢又渴，處於死亡的邊緣。\n" NOR, me);
         }
         else
         if (duration >= 21)

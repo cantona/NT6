@@ -16,7 +16,7 @@ void create()
 他便是大輪寺的護教法王。貴為蒙古國師，極
 受成吉思汗重用，常年來隨軍隊征戰，擾亂中
 原武林，地位顯赫尊崇無比。金輪法王踏足中
-原後罕逢敵手，藐視中原群雄。其武道之高深
+原後罕逢敵手，藐視中原羣雄。其武道之高深
 當可謂西域第一人。
 LONG);
         set("nickname", HIY "蒙古國師" NOR);
@@ -97,7 +97,7 @@ LONG);
 
         create_family("大輪寺", 1, "住持");
 
-        set("end_time", 1200);  // 必須戰鬥不少于1200秒後死亡
+        set("end_time", 1200);  // 必須戰鬥不少於1200秒後死亡
         set("rewards", ([
                 "exp"   : 30000,
                 "pot"   : 10000,
@@ -213,7 +213,7 @@ varargs void die(object killer)
                 if( query("qi") > query("max_qi") ) set("qi", query("max_qi"));
                 addn("eff_qi", query("max_qi") / 10);
                 if( query("eff_qi") > query("max_qi") ) set("eff_qi", query("max_qi"));
-                message_vision(HIR "\n$N" HIR "大喝一聲，運用秘法，氣血有所回升！\n\n" NOR, this_object());
+                message_vision(HIR "\n$N" HIR "大喝一聲，運用祕法，氣血有所回升！\n\n" NOR, this_object());
                 return;
         }
 
@@ -230,9 +230,9 @@ varargs void die(object killer)
         // 戰勝金輪獲取小龍女線索
         if (query("can_perform/surge-force/quest/step", killer) == 1)
         {
-                message_vision(HIR "$N" HIR "眼見$n" HIR "快要支持不住，趕緊上前一步喝道：快說，小龍女何在？"
-                                   "否則，取你老命！\n$n" HIR "怒道：小龍女已經被那公孫止捉去，困于絕情山莊內，關"
-                                   "我何事？\n\n正說話間，$n" HIR "已趁機殺出一條血路...\n\n" NOR, killer, this_object());
+                message_vision(HIR "$N" HIR "眼見$n" HIR "快要支持不住，趕緊上前一步喝道：快説，小龍女何在？"
+                                   "否則，取你老命！\n$n" HIR "怒道：小龍女已經被那公孫止捉去，困於絕情山莊內，關"
+                                   "我何事？\n\n正説話間，$n" HIR "已趁機殺出一條血路...\n\n" NOR, killer, this_object());
 
                 tell_object(killer, HIM "看來，還是趕快去絕情山莊一趟吧！\n\n" NOR);
                 set("can_perform/surge-force/quest/step", 2, killer);

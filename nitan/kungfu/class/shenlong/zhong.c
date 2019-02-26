@@ -11,7 +11,7 @@ void apply_gift(object, int);
 
 void create()
 {
-        set_name("鐘志靈", ({ "zhong zhiling","bailong shi", "shi","zhong" }));
+        set_name("鍾志靈", ({ "zhong zhiling","bailong shi", "shi","zhong" }));
         set("long", "魁梧大漢，一看就知是關東人。\n");
         set("gender", "男性");
         set("age", 45);
@@ -48,7 +48,7 @@ void create()
 
         prepare_skill("strike", "huagu-mianzhang");
         set("inquiry", ([
-                "洪安通" : "這三個字是你說的嗎？",
+                "洪安通" : "這三個字是你説的嗎？",
                 "洪教主" : "洪教主仙福永享，壽與天齊，洪教主神目如電，燭照四方。",
                 "蘇荃"   : "沒規沒矩的。",
                 "神龍島" : "神龍島在汝州的東北方向，從塘沽口出海便到。",

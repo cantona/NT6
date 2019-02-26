@@ -70,7 +70,7 @@ void create()
                 set("base_weight", 500);
         set("consistence", 21);
 
-                set("long", "一只用粗麻布織成的袋子，身上所帶布袋的多少，是丐幫弟子江湖地位的標志。\n");
+                set("long", "一隻用粗麻布織成的袋子，身上所帶布袋的多少，是丐幫弟子江湖地位的標誌。\n");
                 set("material", "cloth");
                 set("base_armor", 5);
                 set("no_drop", "身為丐幫弟子，袋在則人在，袋亡則人亡。\n");

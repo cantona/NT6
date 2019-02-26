@@ -9,8 +9,8 @@ void create()
                 set_default_object(__FILE__);
         else {
                 set("long", NOR + CYN "這是一個生鐵所鑄的八卦盤，盤上雕"
-                            "滿了太極八卦\n紋樣，制作得非常精致。風水師"
-                            "常常借此來觀測風\n水和卜卦，也可以用來破除"
+                            "滿了太極八卦\n紋樣，製作得非常精緻。風水師"
+                            "常常藉此來觀測風\n水和卜卦，也可以用來破除"
                             "(" HIW "break" NOR + CYN ")各種奇門陣法。\n"
                             NOR);
                 set("unit", "只");
@@ -39,7 +39,7 @@ int do_break(string arg)
         if (me->is_busy()
             || query_temp("pending/exercising", me )
             || query_temp("exit_blocked", me) )
-                return notify_fail("你現在正忙著呢。\n");
+                return notify_fail("你現在正忙着呢。\n");
 
         if (skill < 1)
                 return notify_fail("你把鐵八卦翻來覆去擺弄了半天，卻"
@@ -50,7 +50,7 @@ int do_break(string arg)
                                    "破陣。\n");
 
         if( !env || !query("th_buzhen", env) )
-                return notify_fail("這裡並沒有被布下奇門陣法。\n");
+                return notify_fail("這裏並沒有被佈下奇門陣法。\n");
 
         if( !objectp(owner=find_player(query("th_zhen_owner", env)) )
            || environment(owner) != env)
@@ -65,7 +65,7 @@ int do_break(string arg)
                 delete("th_pozhen", env);
                 delete("th_zhen_owner", env);
 
-                tell_object(env, HIM "\n突然間紫霧朝周圍散去，四面景致"
+                tell_object(env, HIM "\n突然間紫霧朝周圍散去，四面景緻"
                                  "猛然一變。\n\n" NOR);
                 return 1;
         }
@@ -91,12 +91,12 @@ int do_break(string arg)
         if (me == owner && environment(owner) == env)
         {
                 message_vision(HIW "只見$N" HIW "袍袖一拂，紫霧頓時朝四面"
-                               "散去，周圍景致又恢復如初。\n" NOR, me);
+                               "散去，周圍景緻又恢復如初。\n" NOR, me);
                 me->start_busy(2);
         } else
         {
                 message_sort(HIW "\n$N" HIW "凝思片刻，須臾已將陣法的種種"
-                             "生克變化全盤了然于胸，不禁仰天一聲長笑，袍袖"
+                             "生克變化全盤瞭然於胸，不禁仰天一聲長笑，袍袖"
                              "一拂，掠入陣中。只見$N" HIW "掌劈腳挑，直激"
                              "得沙石四起，不一刻陣中之陰霾戾氣四處飛散，消"
                              "逝得無影無蹤。\n\n" NOR, me);

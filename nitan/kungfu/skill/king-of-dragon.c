@@ -10,8 +10,8 @@ int learn_bonus() { return 0; }
 int practice_bonus() { return 0; }
 int success() { return 10; }
 int power_point() { return 1; }
-string river_go_msg() {return HIW"$N微微一笑，信指召來一朵祥雲。緊接著$N飛身而上，白雲飄飄，往對岸而去。\n";}
-string river_come_msg() {return HIW"只見$N身著黃金戰甲，腳踏七色祥雲，橫渡水面而來。\n";}
+string river_go_msg() {return HIW"$N微微一笑，信指召來一朵祥雲。緊接着$N飛身而上，白雲飄飄，往對岸而去。\n";}
+string river_come_msg() {return HIW"只見$N身着黃金戰甲，腳踏七色祥雲，橫渡水面而來。\n";}
 
 string *dodge_msg = ({
         HIY "$n端坐微笑，忽而臉現莊嚴之色，$N立刻匍匐在地，虔誠膜拜。\n" NOR ,
@@ -53,7 +53,7 @@ string query_dodge_msg(string limb)
 int valid_learn(object me)
 {        
         if ( ! wizardp(me))
-        return notify_fail("﹝帝王神功﹞神功只能由巫師學習。\n");
+        return notify_fail("［帝王神功］神功只能由巫師學習。\n");
 }
 
 string exert_function_file(string func)

@@ -28,15 +28,15 @@ mapping *action = ({
         "lvl"        : 40
 ]),
 ([      "skill_name" : "夢醒蝶莊",
-        "action"     : "$N屈腕雲劍，劍光如彩碟紛飛，幻出點點星光，右手$w使出一式"HIG"「夢醒蝶莊」"NOR"躍躍洒洒飄向$n的$l",
+        "action"     : "$N屈腕雲劍，劍光如彩碟紛飛，幻出點點星光，右手$w使出一式"HIG"「夢醒蝶莊」"NOR"躍躍灑灑飄向$n的$l",
         "lvl"        : 50
 ]),
 ([      "skill_name" : "人在遐邇",
         "action"     : "$N揮劍分擊，劍勢自胸前躍出，右手$w一式"HIM"「人在遐邇」"NOR"，毫無留戀之勢，刺向$n的$l",
         "lvl"        : 60
 ]),
-([      "skill_name" : "情系短長",
-        "action"     : "$N退步，左手劍指劃轉，腰部一扭，右手$w一記" GRN"「情系短長」"NOR"自下而上刺向$n的$l",
+([      "skill_name" : "情繫短長",
+        "action"     : "$N退步，左手劍指劃轉，腰部一扭，右手$w一記" GRN"「情繫短長」"NOR"自下而上刺向$n的$l",
         "lvl"        : 80
 ]),
 });
@@ -91,7 +91,7 @@ mapping query_action(object me, object weapon)
          {
         return ([
         "action":HIC"$N神色凝重，手中$w"NOR+HIY"一頓，氣隨意轉，$w"+HIY"上劍芒突盛，
-                   心中默念劍訣，如暴風般地刺向$n的$l！"NOR,
+                   心中默唸劍訣，如暴風般地刺向$n的$l！"NOR,
         "force" : 500,
         "dodge" : -140,
         "parry" : -140,
@@ -140,22 +140,22 @@ mixed hit_ob(object me, object victim, int damage_bonus)
         && j > random(victim->query_skill("dodge",1))){
           switch(random(3)){
             case 0 :
-               msg = HIW"$N施展開劍路，劍勢浩盪起伏，犀利無比！\n"NOR;
+               msg = HIW"$N施展開劍路，劍勢浩蕩起伏，犀利無比！\n"NOR;
                msg+= HIW"$n連連後退，全力招架，無力還招！\n"NOR;
                victim->start_busy(3);
                message_vision(msg, me, victim);
                COMBAT_D->do_attack(me,victim,query_temp("weapon", me),2);
                break;
             case 1 :
-               msg = HIW"$N繞著$n飛快地旋轉，一下子連刺出好幾十劍！\n"NOR;
-               msg+= HIW"$n根本分不清楚那一劍是虛，那一劍是實，□好停下攻勢，嚴守門戶。\n"NOR;
+               msg = HIW"$N繞着$n飛快地旋轉，一下子連刺出好幾十劍！\n"NOR;
+               msg+= HIW"$n根本分不清楚那一劍是虛，那一劍是實，好停下攻勢，嚴守門户。\n"NOR;
                victim->start_busy(2);
                message_vision(msg, me, victim);
                COMBAT_D->do_attack(me,victim,query_temp("weapon", me),0);
                break;
             case 2 :
                msg = HIW"$N風馳電掣的繞著$n快跑，忽東忽西，簡直像是足不點地的飛行一般！\n"NOR;
-               msg+= HIW"$n隨著$N轉來轉去，□弄得眼花繚亂，搖搖欲墜。\n"NOR;
+               msg+= HIW"$n隨着$N轉來轉去，弄得眼花繚亂，搖搖欲墜。\n"NOR;
                victim->start_busy(3);
                message_vision(msg, me, victim);
                COMBAT_D->do_attack(me,victim,query_temp("weapon", me),1);
@@ -176,7 +176,7 @@ int help(object me)
         學習要求：
                 太極神功50級
                 內力200
-                基本劍法不低于兩儀劍法
+                基本劍法不低於兩儀劍法
 HELP
         );
         return 1;

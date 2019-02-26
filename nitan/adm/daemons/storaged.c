@@ -6,7 +6,7 @@
 根據此序列號取出物品
 原生物件不能存放
 按月租用
-租用代價要易于修改
+租用代價要易於修改
 
 */
 #include <ansi.h>
@@ -69,14 +69,14 @@ int DoMonFee(object me,int mon)
                         sql="update users set fee_time=fee_time-"+150*mon+",endrgt=now() where id="+DB_STR(arg);
                         if ((DATABASE_D->do_sqlexec(sql))<1)
                         {
-                                write("扣除點數失敗，請盡快聯系遊戲管理員查明原因。\n");
+                                write("扣除點數失敗，請儘快聯繫遊戲管理員查明原因。\n");
                                 return 0;
                         }
                         else
                         {
                                 //扣除點數成功                                
                                 me->save();
-                                //重新從數據庫取，以驗証是否真的已經改變
+                                //重新從數據庫取，以驗證是否真的已經改變
                                        res=DATABASE_D->do_sql("select fee_time from users where id="+DB_STR(arg));
                                        sscanf(res[0]+"0","%d",j);
                                 sql=sprintf("insert into reg_log (id,add_hours,new_fee_time,time) values (%s,%d,%d,now())",DB_STR(arg),-150*mon,j/10);
@@ -87,7 +87,7 @@ int DoMonFee(object me,int mon)
                 }
                 else
                 {
-                        write("你的遊戲點已經不夠用于開通（或續費）儲物櫃了（你得有至少"+(mon*150+50)+"點才可以），請趕快匯款購卡吧。\n");
+                        write("你的遊戲點已經不夠用於開通（或續費）儲物櫃了（你得有至少"+(mon*150+50)+"點才可以），請趕快匯款購卡吧。\n");
                         return 0;
                 }
         }
@@ -121,13 +121,13 @@ int CancelAccount(object me)
         m=query("data/"+query("id", me));
         if(!mapp(m))
         {
-                write("你還沒有開過戶呀！\n");
+                write("你還沒有開過户呀！\n");
         }
         else 
         {
                 if( query_temp("sure_cancel", me) != 1 )
                 {
-                    write("帳戶取消我們也不會退回租費的喲！\n如果你還沒想好，可以先把東西都取走。\n(請注意，再次輸入取消命令將不再提示本信息)\n");
+                    write("帳户取消我們也不會退回租費的喲！\n如果你還沒想好，可以先把東西都取走。\n(請注意，再次輸入取消命令將不再提示本信息)\n");
                     set_temp("sure_cancel", 1, me);
                     return 1;
                 }
@@ -137,16 +137,16 @@ int CancelAccount(object me)
                         m=query("data/"+query("id", me));
                         if(!mapp(m))
                         {
-                            write("你的帳戶未能成功取消，請聯系管理員。\n");
+                            write("你的帳户未能成功取消，請聯繫管理員。\n");
                             return 1;
                         }
-                        log_file("storage.log","cancel:"+query("name", me)+"("+query("id", me)+")取消了帳戶！類型："+m["typ"]+"\n");
+                        log_file("storage.log","cancel:"+query("name", me)+"("+query("id", me)+")取消了帳户！類型："+m["typ"]+"\n");
                         delete("data/"+query("id", me));
-                        write("你的帳戶已經成功取消！\n");
+                        write("你的帳户已經成功取消！\n");
                 }
                 else
                 {
-                        write("取消帳戶前，請先將你的物品全部取出來！\n");
+                        write("取消帳户前，請先將你的物品全部取出來！\n");
                 }
         }
         return 1;
@@ -160,7 +160,7 @@ int OpenAccount(object me,string arg)
         id=query("id", me);
         if(ExistAccount(id))
         {
-            write("你已經開過戶了！請使用cw fee <幾個月> 續租！\n");
+            write("你已經開過户了！請使用cw fee <幾個月> 續租！\n");
             return 1;
         }
         if(sscanf(arg,"%d",i)!=1)
@@ -169,7 +169,7 @@ int OpenAccount(object me,string arg)
         {
             set_temp("yes_i_know", 1, me);
             write("儲物櫃每月租費為：\n類型0\t需要100兩黃金\n類型1\t需要200兩黃金\n類型2\t需要花150個遊戲點\n"
-                "請確認你已經知道以上資費情況，再次輸入開戶命令將不再提示直接開戶！\n");
+                "請確認你已經知道以上資費情況，再次輸入開户命令將不再提示直接開户！\n");
             return 1;
         }
         switch(i)
@@ -202,31 +202,31 @@ int OpenAccount(object me,string arg)
                         "max_obs":obcount,
                         ]);
                 set("data/"+query("id", me),m);
-                log_file("storage.log","open:"+query("name", me)+"("+query("id", me)+")開設了第"+i+"類帳戶！\n");
-                write("恭喜你，你的開戶已經成功。你的儲物櫃可以儲藏"+obcount+"件物品，你可以用到"+CHINESE_D->cctime(j)+"為止。\n");
+                log_file("storage.log","open:"+query("name", me)+"("+query("id", me)+")開設了第"+i+"類帳户！\n");
+                write("恭喜你，你的開户已經成功。你的儲物櫃可以儲藏"+obcount+"件物品，你可以用到"+CHINESE_D->cctime(j)+"為止。\n");
                 save();
                 return 1;
         }
         else
         {
                 if(i!=2)
-                        write("對不起，你的錢未帶夠！請帶上足夠的錢然後使用cw open 0 或cw open 1來開戶！\n"+i+" "+k);
+                        write("對不起，你的錢未帶夠！請帶上足夠的錢然後使用cw open 0 或cw open 1來開户！\n"+i+" "+k);
                 else
-                        write("對不起，你的遊戲點不夠，請先續上足夠的遊戲點然後使用cw open 2來開戶！\n");
+                        write("對不起，你的遊戲點不夠，請先續上足夠的遊戲點然後使用cw open 2來開户！\n");
         }
         return 1;
 }
 
 void ListObject(object me)
 {
-        string k,res="你的儲物櫃裡有：\n";
+        string k,res="你的儲物櫃裏有：\n";
         mapping m,om;
         int i,j;
         string id;
         id=query("id", me);
         if(!ExistAccount(id))
         {
-                write("請先開戶！\n");
+                write("請先開户！\n");
                 return ;
         }
         if(!AccountOk(id))
@@ -260,7 +260,7 @@ void PutObject(object me,string arg)
         id=query("id", me);
         if(!ExistAccount(id))
         {
-                write("請先開戶！\n");
+                write("請先開户！\n");
                 return ;
         }
         if(!AccountOk(id))
@@ -328,7 +328,7 @@ void PutObject(object me,string arg)
         destruct(ob);
         if(objectp(ob))
         {
-                write("錯誤！儲存失敗，請聯系管理員。\n");
+                write("錯誤！儲存失敗，請聯繫管理員。\n");
                 set(key+"cnt",i-1);
                 delete(key+"objects/"+i);
         }
@@ -349,7 +349,7 @@ void GetObject(object me,string arg)
         id=query("id", me);
         if(!ExistAccount(id))
         {
-                write("請先開戶！\n");
+                write("請先開户！\n");
                 return ;
         }
         if(!AccountOk(id))
@@ -367,7 +367,7 @@ void GetObject(object me,string arg)
         m=query(kid);
         if(sizeof(m)<1)
         {
-                write("你什麼物品都沒有儲存著，還想拿走什麼？\n");
+                write("你什麼物品都沒有儲存着，還想拿走什麼？\n");
                 return ;
         }
         ks=keys(m);
@@ -415,7 +415,7 @@ int DoFee(object me,string arg)
     mon=1;
     if(!ExistAccount(id))
     {
-            write("請先開戶！\n");
+            write("請先開户！\n");
             return 1;
     }
     if(AccountOk(id))
@@ -451,7 +451,7 @@ int DoFee(object me,string arg)
             int expiredate=query("data/"+id+"/expiredate");
             expiredate+=86400*30*mon;
             set("data/"+id+"/expiredate",expiredate);
-            log_file("storage.log","open:"+query("name", me)+"("+query("id", me)+")為第"+i+"類帳戶續了"+mon+"個月！\n");
+            log_file("storage.log","open:"+query("name", me)+"("+query("id", me)+")為第"+i+"類帳户續了"+mon+"個月！\n");
             write("恭喜你，你的續費已經成功。你可以用到"+CHINESE_D->cctime(expiredate)+"為止。\n");
             save();
             return 1;
@@ -471,11 +471,11 @@ int ShowHelp(object me)
         string helpstr=
         "help              獲取本幫助信息\n"
         "fee <租期>        為儲物櫃續費，如果欠費則會先補欠費。租期為月數。\n"
-        "open <0-2>        開設儲物櫃帳戶，在該命令後的參數0-2分別代表三種不同的租用方式\n"
-        "cancel            取消自己的儲物櫃帳戶。你必須先將裡面的物品全部取出來後才可取消\n"
-        "list              列出自己的儲物櫃裡都有些什麼物品\n"
-        "put <物品ID>      將身上的某個物品放到儲物櫃裡（不是什麼都可以存放的）\n"
-        "get <編號|物品ID> 將儲物櫃裡某個編號的物品取出來\n"
+        "open <0-2>        開設儲物櫃帳户，在該命令後的參數0-2分別代表三種不同的租用方式\n"
+        "cancel            取消自己的儲物櫃帳户。你必須先將裏面的物品全部取出來後才可取消\n"
+        "list              列出自己的儲物櫃裏都有些什麼物品\n"
+        "put <物品ID>      將身上的某個物品放到儲物櫃裏（不是什麼都可以存放的）\n"
+        "get <編號|物品ID> 將儲物櫃裏某個編號的物品取出來\n"
         ;
         write(helpstr);
         MYGIFT_D->check_mygift(this_player(1), "newbie_mygift/cangku"); 

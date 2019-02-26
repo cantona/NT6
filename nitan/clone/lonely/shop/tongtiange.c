@@ -48,7 +48,7 @@ int do_deed(string arg)
                 if (SHOP_D->is_shop_owner(shop_id(), me->query("id")))
                         return notify_fail("你不已經是" + shop_name() + "的主人了嗎？\n");
 
-                write(HIC "你在" + shop_name() + HIC"的房契上簽上了你的大名：" + me->name() + "\n" NOR);
+                write(HIC "你在" + shop_name() + HIC"的房契上籤上了你的大名：" + me->name() + "\n" NOR);
                 write(HIG "恭喜你成為" + shop_name() + HIG "的主人。\n" NOR);
 
                 SHOP_D->change_owner(me, shop_id(), me->query("id"));

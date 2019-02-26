@@ -44,7 +44,7 @@ private mapping B2G_Cache=([]),
 
 /* 
         推測一字串為Big5碼的可能性(百分比機率)
-        低于20%的百分比就幾乎可確定為GB碼
+        低於20%的百分比就幾乎可確定為GB碼
         判斷的正確度與字串長度呈正比
  */
 int encode_conjecture(string arg)
@@ -79,7 +79,7 @@ int encode_conjecture(string arg)
 
 /*
         自動判別編碼並傳回採用Big5碼之字串 
-        僅適用于長度較長之字串, 判別率較高
+        僅適用於長度較長之字串, 判別率較高
 string auto_G2B(string arg)
 {
         int con = encode_conjecture(arg);

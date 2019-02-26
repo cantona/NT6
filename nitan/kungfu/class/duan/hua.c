@@ -19,9 +19,9 @@ void create()
 華阿根從極遠處挖掘地道，通入墳墓，然後盜取寶
 物。所花的一和雖巨，卻由此而從未為人發覺。有
 一次他掘入一墳，在棺木中得到了一本殉葬的武功
-秘訣，依法修習，練成了一身卓絕的外門功夫，便
-舍棄了這下賤的營生，輔佐保定帝，累立奇功，終
-于升到司徒之職。
+祕訣，依法修習，練成了一身卓絕的外門功夫，便
+捨棄了這下賤的營生，輔佐保定帝，累立奇功，終
+於升到司徒之職。
 LONG);
         set("gender", "男性");
         set("age", 46);
@@ -89,7 +89,7 @@ void attempt_apprentice(object ob)
 
         command("smile");
         command("say 世子殿下何需如此，只要有事吩咐在下一聲便是。");
-        command("say 若世子不嫌棄，我這裡倒是有一套爪法可以傳授予你。");
+        command("say 若世子不嫌棄，我這裏倒是有一套爪法可以傳授予你。");
 
         return;
 }
@@ -99,7 +99,7 @@ int recognize_apprentice(object ob, string skill)
         if( query("family/family_name", ob) != "段氏皇族" )
         {
                 command("sneer");
-                command("say 我與閣下素不相識，不知閣下此話從何說起？");
+                command("say 我與閣下素不相識，不知閣下此話從何説起？");
                 return -1;
         }
 
@@ -130,7 +130,7 @@ mixed ask_skill1()
                 return RANK_D->query_respect(me) + "和我素無瓜葛，何出此言？";
 
         if (me->query_skill("yuezhao-gong", 1) < 1)
-                return "哈哈，你連我越爪功都未學，怎麼來絕招一說？";
+                return "哈哈，你連我越爪功都未學，怎麼來絕招一説？";
 
         if( query("family/gongji", me)<400 )
                 return "恕在下無禮，王爺吩咐過，不得傳功給無功子弟。";
@@ -144,9 +144,9 @@ mixed ask_skill1()
         if (me->query_skill("yuezhao-gong", 1) < 130)
                 return "你越爪功的火候還不夠，學不了這一招。";
 
-        message_sort(HIY "\n$n" HIY "哈哈一笑，對$N" HIY "讚許的說道：“想"
+        message_sort(HIY "\n$n" HIY "哈哈一笑，對$N" HIY "讚許的説道：“想"
                      "不到世子殿下的爪法造詣竟然如此精湛，今日華某便傳你這"
-                     "招。”說罷，$n" HIY "隨即擺開架勢，慢慢的演示招數。\n"
+                     "招。”説罷，$n" HIY "隨即擺開架勢，慢慢的演示招數。\n"
                      "\n" NOR, me, this_object()); 
 
         command("nod");

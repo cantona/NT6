@@ -153,14 +153,14 @@ void die(object killer)
         int weiwang;            // 需要瓜分的威望
         int gongxian;           // 貢獻
         int tihui;              // 體會
-        int score;              // 需要瓜分的閱歷
+        int score;              // 需要瓜分的閲歷
         object *t;              // 殺死我的人的隊伍列表
         object tob;
         int ysg;
         int i;
 
         // 定義獎勵物品列表
-	// 幾率  MAX_POINT 分之 X
+	// 機率  MAX_POINT 分之 X
 	mixed oblist = ([
 			"/clone/misc/boss_item/yinghua-zan"          :         240,			
 			"/clone/armor/fudai"                         :         100,
@@ -229,7 +229,7 @@ void die(object killer)
 								([ "exp"      : exp + ((tob == dob) ? 30000 : 0),
 								   "pot"      : pot + ((tob == dob) ? 30000 : 0),
 								   "mar"      : tihui + ((tob == dob) ? 3000 : 0),
-								   //"gongxian" : tob->query("family/family_name") == "昆侖派" ? gongxian : 0,
+								   //"gongxian" : tob->query("family/family_name") == "崑崙派" ? gongxian : 0,
 								   "prompt"   : "你的隊伍打敗" + name() + "之後"]), 999);
 	
 					}
@@ -246,7 +246,7 @@ void die(object killer)
 	
 	        }
 		
-	        // 一定幾率掉物品在殺我的人身上dob
+	        // 一定機率掉物品在殺我的人身上dob
 		if (objectp(dob) && environment(dob) == environment(this_object()) && 
 		    dob->query("combat_exp") < MAX_EXP)
 		{
@@ -254,7 +254,7 @@ void die(object killer)
 			s_gift = key_s_gift[random(sizeof(key_s_gift))];
 			gift_point = oblist[s_gift];
 
-			// 判斷幾率
+			// 判斷機率
 			if (MEMBER_D->is_valib_member(dob->query("id")) 
 			    && random(MAX_POINT / ITEM_D->gift_point()) < gift_point)
 			{
@@ -284,12 +284,12 @@ void die(object killer)
 			message_vision(HIG "猛然間，$N " HIG " 向後一跳，隨手仍出一顆黑色小丸，頓時騰起一片煙霧 ...\n" NOR, 
 			               this_object());
 			command("chat 哼，雕蟲小技，不陪你們玩了，告辭！");
-			CHANNEL_D->do_channel(this_object(), "rumor", "聽說" + name() + HIM "從古墓中盜得珍寶後，奪路而逃。" NOR);
+			CHANNEL_D->do_channel(this_object(), "rumor", "聽説" + name() + HIM "從古墓中盜得珍寶後，奪路而逃。" NOR);
 		}
 */
 		// 設置更新
 		//MAP_D->update_boss(BOSS_FILE,UPDATE_PLACE,UPDATE_TIME);
-		// 1/200幾率掉出無名銅人
+		// 1/200機率掉出無名銅人
 		if (random(200) < 1)
 		{
 			object ob_tongren;

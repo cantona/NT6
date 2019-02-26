@@ -29,11 +29,11 @@ int exert(object me, object target)
                 return notify_fail("你的內功修為不夠。\n");
 
         if( query("no_fight", environment(me)) )
-                return notify_fail("在這裡不能攻擊他人。\n");
+                return notify_fail("在這裏不能攻擊他人。\n");
 
         // 執行天書任務的特殊房間防止龍吟中斷劇情。
         if( query("skybook", environment(me)) )
-                return notify_fail("在這裡不能攻擊他人。\n");
+                return notify_fail("在這裏不能攻擊他人。\n");
 
         if( query("neili", me)<800 )
                 return notify_fail("你的真氣不夠。\n");
@@ -51,7 +51,7 @@ int exert(object me, object target)
 
         case "huntian-qigong" :
                 msg = HIY "$N" HIY "深深吸入一囗氣，運足內力發出一陣"
-                      "長嘯，音傳百裡，懾人心神。\n" NOR;
+                      "長嘯，音傳百里，懾人心神。\n" NOR;
                 break;
 
         case "jiuyang-shengong" :
@@ -65,7 +65,7 @@ int exert(object me, object target)
                 break;
 
         case "kuihua-mogong" :
-                msg = HIY "$N" HIY "驀地極嘶長呼，聲音凄厲之極，令人"
+                msg = HIY "$N" HIY "驀地極嘶長呼，聲音淒厲之極，令人"
                       "毛骨悚然。\n" NOR;
                 break;
 

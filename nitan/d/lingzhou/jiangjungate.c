@@ -8,8 +8,8 @@ void create()
 {
         set("short", "大將軍府");
         set("long", @LONG
-這裡是征東大將軍赫連鐵樹的府第，在東大街的正中，對面就是衙
-門。一色高檐大屋，兩個校尉看上去彪悍驍勇，此刻正神氣活現的挎著
+這裏是徵東大將軍赫連鐵樹的府第，在東大街的正中，對面就是衙
+門。一色高檐大屋，兩個校尉看上去彪悍驍勇，此刻正神氣活現的挎着
 彎刀守在門前。
 LONG );
         set("exits", ([
@@ -46,10 +46,10 @@ int valid_leave(object me, string dir)
         {
                 message_vision("$N看見$n走了過來，剛想攔住，"
                                "卻聽$n一聲斷喝：“散開！”\n"
-                               "不由得嚇了一跳，訕訕的不敢說話。\n", wei, me);
+                               "不由得嚇了一跳，訕訕的不敢説話。\n", wei, me);
                 return ::valid_leave(me, dir);
         }
 
-        return notify_fail("校尉上前擋住你，朗聲說道：這位"  +
+        return notify_fail("校尉上前擋住你，朗聲説道：這位"  +
                            RANK_D->query_respect(me) + "請回吧。老爺不見客。\n");
 }

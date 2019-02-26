@@ -6,9 +6,9 @@ void create()
 {
         set("short", "芳草坪"); 
         set("long", @LONG
-這裡是一塊芳草坪，綠草茵茵，蝴蝶漫舞，花香撲鼻，讓人感到
-十分愜意。不禁令人就想一頭躺倒上去，好好的去睡一覺，但這裡偶
-爾也會碰到菜花蛇。東面是片小樹林，向北是間臥室。
+這裏是一塊芳草坪，綠草茵茵，蝴蝶漫舞，花香撲鼻，讓人感到
+十分愜意。不禁令人就想一頭躺倒上去，好好的去睡一覺，但這裏偶
+爾也會碰到菜花蛇。東面是片小樹林，向北是間卧室。
 LONG );
         set("type","grassland");
         set("outdoors", "wansong");
@@ -38,7 +38,7 @@ int do_search(string arg)
         grass = present("grass", this_object()); 
         if(!arg) 
         {
-                write("你要在哪裡找東西？給點提示好不好，老大！\n");
+                write("你要在哪裏找東西？給點提示好不好，老大！\n");
                 return 1;
    }
         

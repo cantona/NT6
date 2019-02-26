@@ -14,7 +14,7 @@ int parse_inquiry(object me, object ob, string topic)
                 message_vision(CYN "$N" CYN "向$n" CYN "問道：這位" +
                                RANK_D->query_respect(ob) + "，" +
                                RANK_D->query_self(me) + "初到貴寶地"
-                               "，不知這裡有些什麼風土人情？\n" NOR,
+                               "，不知這裏有些什麼風土人情？\n" NOR,
                                me, ob);
                 return 1;
         
@@ -38,12 +38,12 @@ int parse_inquiry(object me, object ob, string topic)
         case "消息":
                 message_vision(CYN "$N" CYN "向$n" CYN "問道：這位" +
                                RANK_D->query_respect(ob) + "，不知"
-                               "最近有沒有聽說什麼消息？\n" NOR, me,
+                               "最近有沒有聽説什麼消息？\n" NOR, me,
                                ob);
                 return 1;
 
         case "marry":
-                message_vision(CYN "$N眯著一雙賊眼，不懷好意的向$n"+ 
+                message_vision(CYN "$N眯着一雙賊眼，不懷好意的向$n"+ 
                                CYN"問道：敢問這位"+RANK_D->query_respect(ob) +
                                "是否婚配？\n" NOR,me,ob);
                 return 1;
@@ -65,12 +65,12 @@ int parse_inquiry(object me, object ob, string topic)
         case "money":
                 message_vision(CYN "$N雙手抱拳向$n"+CYN"問道：“在下初來咋到，行走江湖缺了些盤纏,這位"+
                                RANK_D->query_respect(ob) +
-                               "是否能施舍一二, 在下不甚感激？”\n" NOR,
+                               "是否能施捨一二, 在下不甚感激？”\n" NOR,
                                me,ob);
                 return 1;
                 
         case "friend":
-                message_vision(CYN "$N雙手抱拳向$n"+CYN"說道：“四海之內皆兄弟也,這位"+
+                message_vision(CYN "$N雙手抱拳向$n"+CYN"説道：“四海之內皆兄弟也,這位"+
                                RANK_D->query_respect(ob) +
                                ",不知願否與在下交個朋友”\n" NOR,
                                me,ob);

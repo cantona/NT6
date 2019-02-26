@@ -34,10 +34,10 @@ int perform(object me, object target)
                 return notify_fail("你現在真氣不夠，難以施展" + name() + "。\n");
 
         if (! living(target))
-                return notify_fail("對方都已經這樣了，用不著這麼費力吧？\n");
+                return notify_fail("對方都已經這樣了，用不着這麼費力吧？\n");
 
         msg = HIW "$N" HIW "凝神聚氣，手中" + weapon->name() +
-              HIW "回轉，劃出一個閃亮的劍圈，套向$n" HIW "而去。\n" NOR;
+              HIW "迴轉，劃出一個閃亮的劍圈，套向$n" HIW "而去。\n" NOR;
 
         ap = attack_power(me, "sword");
         dp = defense_power(target, "parry");

@@ -14,9 +14,9 @@ inherit F_SAVE;
 #define FINISHING               "finishing"
 
 mapping item_data = ([
- "十強賽冠軍預測" : ([ "long" : "世界杯外圍賽之十強賽馬上就要開始"
+ "十強賽冠軍預測" : ([ "long" : "世界盃外圍賽之十強賽馬上就要開始"
                                 "了，究竟本次十強賽誰能出線？中國"
-                                "隊能否順利沖出亞洲？能否根治恐韓"
+                                "隊能否順利衝出亞洲？能否根治恐韓"
                                 "恐伊症？請你在你認為可以出線的隊"
                                 "伍上下注吧！",
                        "end_time" : 1210996409,
@@ -85,7 +85,7 @@ private void get_name_end(string arg, object me);
  * 儲存數據：                                                   *
  *                                                              *
  *     item_data 映射：項目數據                                 *
- *     user_data 映射：用戶數據                                 *
+ *     user_data 映射：用户數據                                 *
  *                                                              *
  * 函數列表：                                                   *
  *                                                              *
@@ -395,7 +395,7 @@ private void select_change_type(string arg, object me, string name)
                 return; 
         case "3": 
                 write("\n你打算修改這個項目的結束時間。\n");
-                write("這個項目將在多少天後結束？");
+                write("這個項目將在多少天后結束？");
                 input_to("change_date", me, name);
                 return; 
         case "4": 
@@ -491,7 +491,7 @@ private void change_date(string arg, object me, string name)
         {
                 write("\n非法的格式，請重新輸入。\n\n");
                 
-                write("請問這個項目將在多少天後結束投注？[格式：" WHT "5" NOR "]");
+                write("請問這個項目將在多少天后結束投注？[格式：" WHT "5" NOR "]");
                 input_to("change_date", me, name);
                 return;
         }
@@ -662,7 +662,7 @@ private void get_team_info(string arg, object me, string name, int times)
                 return;
         }
         
-        // 防止出現重復輸入
+        // 防止出現重複輸入
         if (item_data[name]["subject"][team])
         {
                 write("這個隊伍已經輸入過了。\n");
@@ -677,7 +677,7 @@ private void get_team_info(string arg, object me, string name, int times)
         // 如果所有的隊伍都輸入完了
         if (times == sizeof(item_data[name]["subject"]))
         {
-                write("\n請問這個項目將在多少天後結束投注？[格式：" WHT "5" NOR "]");
+                write("\n請問這個項目將在多少天后結束投注？[格式：" WHT "5" NOR "]");
                 input_to("get_date_off", me, name);
                 return;
         }
@@ -708,7 +708,7 @@ private void get_date_off(string arg, object me, string name)
         {
                 write("\n非法的格式，請重新輸入。\n\n");
                 
-                write("請問這個項目將在多少天後結束投注？[格式：" WHT "5" NOR "]");
+                write("請問這個項目將在多少天后結束投注？[格式：" WHT "5" NOR "]");
                 input_to("get_date_off", me, name);
                 return;
         }
@@ -1013,7 +1013,7 @@ protected void select_team_tochip(string arg, object me, string name)
         {
                 if (member_array(teams[i], all_teams) == -1)
                 {
-                        write("\n這個隊伍不屬于這個項目。\n");
+                        write("\n這個隊伍不屬於這個項目。\n");
                         write("請重新輸入你要投注的隊伍[多個用“" WHT "," NOR "”隔開]：");
                         input_to("select_team_tochip", me, name);
                         return;
@@ -1060,7 +1060,7 @@ protected void get_money_tochip(string arg, object me, string name)
         
         if( count_le(query("balance", me),count_mul(money,10000)) )
         {
-                write("\n你銀行的存款余額不足，請重新輸入。\n\n");                                 
+                write("\n你銀行的存款餘額不足，請重新輸入。\n\n");                                 
                 write("請輸入最少投注黃金量：[格式：" WHT "10000" NOR "]");
                 input_to("get_money_tochip", me, name);
                 return;
@@ -1086,12 +1086,12 @@ private void get_user(string arg, object me)
         }
         if (! mapp(user = user_data[arg]))
         {
-                write("沒有這個投注用戶。\n");
+                write("沒有這個投注用户。\n");
                 write("請選擇你具體查看的玩家：");
                 input_to("get_user", me);
                 return;
         }
-        write("用戶 " + WHT + arg + NOR " 參加投注的項目有：\n\n" WHT + implode(keys(user), NOR "/" WHT) + NOR "\n");
+        write("用户 " + WHT + arg + NOR " 參加投注的項目有：\n\n" WHT + implode(keys(user), NOR "/" WHT) + NOR "\n");
         
         write("\n請選擇具體查看的項目：");
         input_to("get_user_info", me, arg);

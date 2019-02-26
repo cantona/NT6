@@ -31,7 +31,7 @@ string query_type();
 
 
 void topten_checkplayer(object player)
-{//對于外貌等屬性用先天還是後天呢？還有有些是需要有點區分的（比如男女性別）
+{//對於外貌等屬性用先天還是後天呢？還有有些是需要有點區分的（比如男女性別）
         topten_add(player,"rich");
         //topten_add(player,"pker");
         topten_add(player,"exp");
@@ -162,7 +162,7 @@ int get_all_data(object player,string type)
                         total=player->query_per();
                         break;*/
                 default:
-                        total=-1;//用-1標志類型出錯！
+                        total=-1;//用-1標誌類型出錯！
         }
         return total;
 }
@@ -233,7 +233,7 @@ int topten_del(string pid,string type)
                                 bstr=explode(astr[i],";");
                                 for(j=0;j<sizeof(bstr);j++)
                                 {
-                                        //說明該項即pid,應該去除
+                                        //説明該項即pid,應該去除
                                         if(strsrch(bstr[j],pid)!=-1)
                                         {
                                                 astr[i]="";

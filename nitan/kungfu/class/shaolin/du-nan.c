@@ -114,7 +114,7 @@ mixed ask_me()
 
         if( !query_temp("valid_in_fumoquan", this_player()) )
         {
-                command("say 大膽鼠輩，乳臭未幹，竟敢偷入金剛伏魔圈，且讓老衲來超度與你！");
+                command("say 大膽鼠輩，乳臭未乾，竟敢偷入金剛伏魔圈，且讓老衲來超度與你！");
                 kill_ob(this_player());
                 return 1;
         }
@@ -134,19 +134,19 @@ mixed ask_me()
 
         if ( present("puti zi", environment()) )
                 return RANK_D->query_respect(this_player()) +
-                "菩提子只有一顆，而且就在這裡任你取走，真是貪得無饜！";
+                "菩提子只有一顆，而且就在這裏任你取走，真是貪得無饜！";
 
         if (query("count") < 1)
-                return "菩提子乃天地之靈物，採集艱難無比，我這裡現在可沒有。";
+                return "菩提子乃天地之靈物，採集艱難無比，我這裏現在可沒有。";
 
         ob = new("/d/shaolin/obj/puti-zi");
         ob->move(this_player());
 
         addn("count", -1);
 
-        message_vision("\n渡難慘然一笑，接著長嘆一聲，從樹洞裡取出個白玉磁瓶，倒出菩提子遞給$N。\n\n", this_player());
+        message_vision("\n渡難慘然一笑，接着長歎一聲，從樹洞裏取出個白玉磁瓶，倒出菩提子遞給$N。\n\n", this_player());
 
-        return "我等昔年于佛祖座前發下宏願，每十年遍訪名山大川，歷盡艱險，\n" +
+        return "我等昔年於佛祖座前發下宏願，每十年遍訪名山大川，歷盡艱險，\n" +
                "方採得數顆菩提子，君乃有緣人，能得此造化奇物，望好自為之！";
 }
 
@@ -211,7 +211,7 @@ int accept_ask(object me, string topic)
         {
         case "歷練" :
         case "歷煉" :
-        case "鍛煉" :
+        case "鍛鍊" :
                 return QUEST_D->accept_ask(this_object(), me, topic);
                 break;
 

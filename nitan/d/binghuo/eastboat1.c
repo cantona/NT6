@@ -7,8 +7,8 @@ void create()
 {
         set("short", "東海海面");
         set("long", @LONG
-東海海面波平如鏡，大船在海鷗遊魚中穿行，風帶風帆，你也不
-知道船往哪裡去。
+東海海面波平如鏡，大船在海鷗游魚中穿行，風帶風帆，你也不
+知道船往哪裏去。
 LONG );
         set("no_sleep_room",1);
         set("outdoors", "wangpan");

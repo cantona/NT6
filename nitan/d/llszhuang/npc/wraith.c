@@ -8,7 +8,7 @@ void create()
 {
         set_name("翁四", ({ "wengsi" }) );
         set("long",
-"一個披頭散發，渾身是血的厲鬼，正在這裡飄來飄去。\n" );
+"一個披頭散髮，渾身是血的厲鬼，正在這裏飄來飄去。\n" );
         set("max_jing", 4000);
         set("max_qi", 4000);                    
         set("max_sen", 4000);

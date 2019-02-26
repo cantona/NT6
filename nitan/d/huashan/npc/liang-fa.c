@@ -9,7 +9,7 @@ void create()
         set("nickname", "閉嘴佛");
         set("gender", "男性");
         set("age", 30);
-        set("long", "樑發是岳不群的第三弟子。\n");
+        set("long", "樑發是嶽不羣的第三弟子。\n");
         set("attitude", "peaceful");
 
         set("str", 26);

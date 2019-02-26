@@ -47,8 +47,8 @@ void create()
 		"笑傲江湖"      : "笑傲漿糊是泥潭系統終極版本，希望你玩得愉快。\n",
 		"服務"          : "我是笑傲漿糊客服NPC，以後請多多指教！\n",
 		"lonely"        : "Lonely你都不認識，還是回去多讀幾年書吧！\n",
-		"福星老人"      : "別磨磨蹭蹭，找我有什麼事快說吧！\n",
-                "每日獎勵"      : "每日獎勵到禮物天使那裡領取！\n",
+		"福星老人"      : "別磨磨蹭蹭，找我有什麼事快説吧！\n",
+                "每日獎勵"      : "每日獎勵到禮物天使那裏領取！\n",
                 "經驗獎勵"      : (: gift_jingyan :),
                 "內功獎勵"      : (: gift_neigong :),
                 "宗師獎勵"      : (: gift_ultra :),
@@ -79,7 +79,7 @@ string gift_jingyan()
 	if (DB_D->query_data("kaifu_huodong/gift_jingyan/count") < 100)
 	{
 		ob = new("/clone/armor/shuijing-guan");
-		if (! objectp(ob))return "復制物品錯誤，請聯系巫師！";
+		if (! objectp(ob))return "複製物品錯誤，請聯繫巫師！";
 		
 	        set("who_get/id", query("id", me), ob);
 		set("who_get/time", time() + 30, ob); // 30秒內都不能撿取
@@ -125,9 +125,9 @@ string gift_neigong()
 	if (DB_D->query_data("kaifu_huodong/gift_neigong/count") < 100)
 	{
                 ob1 = new("/clone/tongren/tongren1");
-		if (! objectp(ob1))return "復制物品錯誤，請聯系巫師！";
+		if (! objectp(ob1))return "複製物品錯誤，請聯繫巫師！";
                 ob2 = new("/clone/tongren/tongren2");
-		if (! objectp(ob2))return "復制物品錯誤，請聯系巫師！";
+		if (! objectp(ob2))return "複製物品錯誤，請聯繫巫師！";
 				
 	        set("who_get/id", query("id", me), ob1);
 		set("who_get/time", time() + 30, ob1); // 30秒內都不能撿取
@@ -172,9 +172,9 @@ string gift_ultra()
         if (DB_D->query_data("kaifu_huodong/gift_ultra/count") < 100)
 	{
 		ob1 = new("/clone/tongren/tongren1");
-		if (! objectp(ob1))return "復制物品錯誤，請聯系巫師！";
+		if (! objectp(ob1))return "複製物品錯誤，請聯繫巫師！";
 		ob2 = new("/clone/tongren/tongren2");
-		if (! objectp(ob2))return "復制物品錯誤，請聯系巫師！";
+		if (! objectp(ob2))return "複製物品錯誤，請聯繫巫師！";
 
 	        set("who_get/id", query("id", me), ob1);
 		set("who_get/time", time() + 30, ob1); // 30秒內都不能撿取
@@ -221,7 +221,7 @@ string gift_pthuiyuan()
 	if (DB_D->query_data("kaifu_huodong/gift_pthuiyuan/count") < 100)
 	{
 		ob = new("/clone/armor/yecha2");
-		if (! objectp(ob))return "復制物品錯誤，請聯系巫師！";
+		if (! objectp(ob))return "複製物品錯誤，請聯繫巫師！";
 		
 	        set("who_get/id", query("id", me), ob);
 		set("who_get/time", time() + 30, ob); // 30秒內都不能撿取
@@ -262,19 +262,19 @@ string gift_zshuiyuan()
         if (DB_D->query_data("kaifu_huodong/gift_zshuiyuan/count") < 50)
 	{
 		ob1 = new("/clone/goods/wisdom_armor");
-		if (! objectp(ob1))return "復制物品1錯誤，請聯系巫師！";
+		if (! objectp(ob1))return "複製物品1錯誤，請聯繫巫師！";
 		ob2 = new("/clone/goods/wisdom_cloth");
-		if (! objectp(ob2))return "復制物品2錯誤，請聯系巫師！";
+		if (! objectp(ob2))return "複製物品2錯誤，請聯繫巫師！";
 		ob3 = new("/clone/goods/wisdom_head");
-		if (! objectp(ob3))return "復制物品3錯誤，請聯系巫師！";
+		if (! objectp(ob3))return "複製物品3錯誤，請聯繫巫師！";
 		ob4 = new("/clone/goods/wisdom_boots");
-		if (! objectp(ob4))return "復制物品4錯誤，請聯系巫師！";	
+		if (! objectp(ob4))return "複製物品4錯誤，請聯繫巫師！";	
 		ob5 = new("/clone/goods/wisdom_wrists");
-		if (! objectp(ob5))return "復制物品5錯誤，請聯系巫師！";
+		if (! objectp(ob5))return "複製物品5錯誤，請聯繫巫師！";
 		ob6 = new("/clone/goods/wisdom_waist");
-		if (! objectp(ob6))return "復制物品6錯誤，請聯系巫師！";	
+		if (! objectp(ob6))return "複製物品6錯誤，請聯繫巫師！";	
 		ob7 = new("/clone/goods/wisdom_surcoat");
-		if (! objectp(ob7))return "復制物品7錯誤，請聯系巫師！";	
+		if (! objectp(ob7))return "複製物品7錯誤，請聯繫巫師！";	
 									
 	        set("who_get/id", query("id", me), ob1);
 		set("who_get/time", time() + 30, ob1); // 30秒內都不能撿取

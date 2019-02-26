@@ -4,10 +4,10 @@ inherit F_DEALER;
 
 void create()
 {
-   set_name("樸老板",({ "piao laoban","piao"}) );
+   set_name("樸老闆",({ "piao laoban","piao"}) );
         set("gender", "男性" );
         set("age", 32);
-   set("long", "這是書舖的老板,他的文化水平也是很高的。\n");
+   set("long", "這是書鋪的老闆,他的文化水平也是很高的。\n");
    set("shop_id",({ "piao laoban","piao"}) );
    set("combat_exp", 20000);
    set("str", 25);

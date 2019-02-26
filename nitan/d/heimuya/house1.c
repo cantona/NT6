@@ -8,8 +8,8 @@ void create()
      set("short","內室");
         set("long", @LONG
 這是一個精雅的小舍，一進門便可聞到一陣濃冽的花香。房中掛
-著一幅五女向鳳圖，圖中繪著五個宮裝美女，美目盼兮，艷麗脫俗。
-屋裡還有一張茶幾(teapoy)，幾張椅子，椅子上舖著繡花錦墊，西面
+着一幅五女向鳳圖，圖中繪着五個宮裝美女，美目盼兮，豔麗脱俗。
+屋裏還有一張茶几(teapoy)，幾張椅子，椅子上鋪着繡花錦墊，西面
 有一扇洞形門通向後廳。
 LONG );
 
@@ -19,7 +19,7 @@ LONG );
 
      set("valid_startroom", 1);
      set("item_desc", ([
-         "teapoy": "這張茶幾似乎曾經給人移動過。\n",
+         "teapoy": "這張茶几似乎曾經給人移動過。\n",
      ]));
 
      setup();
@@ -34,7 +34,7 @@ void init()
 void close_path()
 {
      if (! query("exits/enter"))   return;
-     message("vision","茶幾又自動移了回來，蓋住了入口。\n", this_object());
+     message("vision","茶几又自動移了回來，蓋住了入口。\n", this_object());
      delete("exits/enter");
 }
 
@@ -44,7 +44,7 @@ int do_move(string arg)
         return notify_fail("什麼？\n");
      else
      {
-        write("你把茶幾推開，露出了一個通道。\n");
+        write("你把茶几推開，露出了一個通道。\n");
         if (! query("exits/enter"))
         {
             set("exits/enter", __DIR__ "midao01");

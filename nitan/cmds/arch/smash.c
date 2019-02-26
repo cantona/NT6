@@ -60,7 +60,7 @@ int main(object me, string arg)
         
                 if (wiz_level(me) < wiz_level(ob))
                 {
-                        message_vision(HIM "\n$N" HIM "身上冒著縷縷青煙，"
+                        message_vision(HIM "\n$N" HIM "身上冒着縷縷青煙，"
                                        "卻沒有半點事情。\n\n" NOR,
                                        ob);
                         return 1;
@@ -101,7 +101,7 @@ int main(object me, string arg)
 
         if (wiz_level(me) < wiz_level(ob))
         {
-                message_vision(HIM "\n$N" HIM "身上冒著縷縷青煙，"
+                message_vision(HIM "\n$N" HIM "身上冒着縷縷青煙，"
                                "卻沒有半點事情。\n\n" NOR,
                                ob);
                 return 1;

@@ -13,7 +13,7 @@ void create()
                 set_default_object(__FILE__);
         else {
                 set("unit", "把");
-                set("long", "這是一把發著黑亮熒光的特制精鋼鋤頭，你好象可以用它挖掘(wajue)什麼東西。\n");
+                set("long", "這是一把發着黑亮熒光的特製精鋼鋤頭，你好像可以用它挖掘(wajue)什麼東西。\n");
                 set("wajue", 0);
 //                set("no_sell",1);
 //                set("no_drop",1);
@@ -56,13 +56,13 @@ int do_wajue()
                 if( query("jing", me)<50 )
                         return notify_fail("你挖了半天，精力不夠了！\n");
                 if( !query("outdoors", environment(me)) )
-                        return notify_fail("在房子裡你也想挖寶？！\n");
+                        return notify_fail("在房子裏你也想挖寶？！\n");
                 if (present("bao wu",me))
                         return notify_fail("你身上已經有寶物了，別太貪心！\n");
                 if( query_temp("baowunum", me) >= 1 )
                         return notify_fail("韋爵爺正派人四處尋你呢，還不快去？\n");
                 if( t <= time && !(query_temp("invite", me) && random(2) == 1) )
-                        return notify_fail("這裡已被人挖過，一會兒再來吧！\n");
+                        return notify_fail("這裏已被人挖過，一會兒再來吧！\n");
                 if (me->is_fighting()) 
                         return notify_fail("現在正打得起勁，哪有空挖呢？！\n");
         }
@@ -79,7 +79,7 @@ int do_wajue()
         }
         else
         { 
-                printf( HIC"你拿出一把鋤頭，在地上挖了半天，突然你覺得好象挖到了什麼。\n"NOR);   
+                printf( HIC"你拿出一把鋤頭，在地上挖了半天，突然你覺得好像挖到了什麼。\n"NOR);   
                 switch (random(10))
                 {
                         case 0:
@@ -88,7 +88,7 @@ int do_wajue()
                                 ob = new(__DIR__"baowu");
                                 set("owner",query("id",  me), ob);
                                 ob->move(me);
-                                tell_object(me, HIW"由于你辛勤的挖掘，你發現了一個寶物。\n"NOR);
+                                tell_object(me, HIW"由於你辛勤的挖掘，你發現了一個寶物。\n"NOR);
                                 tell_object(me, HIW"恭喜你啦！\n"NOR);                                
                                 addn_temp("baowunum", 1, me);
                                 break;
@@ -97,7 +97,7 @@ int do_wajue()
                                 ob = new("/clone/food/fruit/"+dir[random(sizeof(dir))]);
 //                                ob->set("owner",me->query("id"));
                                 ob->move(me);
-                                tell_object(me, HIW"由于你辛勤的挖掘，你發現了一些東東。\n"NOR);
+                                tell_object(me, HIW"由於你辛勤的挖掘，你發現了一些東東。\n"NOR);
                                 break;
                         case 4:
                         case 5:
@@ -111,11 +111,11 @@ int do_wajue()
                                 }
 //                                ob->set("owner",me->query("id"));
                                 ob->move(me);
-                                tell_object(me, HIW"由于你辛勤的挖掘，你發現了一些藥材。\n"NOR);
+                                tell_object(me, HIW"由於你辛勤的挖掘，你發現了一些藥材。\n"NOR);
                                 break;
                         case 6:
 /*
-                                message_vision("哎呀不好，$N挖到蛇窩了！一條毒蛇從洞裡鑽了出來。\n", me);
+                                message_vision("哎呀不好，$N挖到蛇窩了！一條毒蛇從洞裏鑽了出來。\n", me);
                                 tell_object(me,"還不快跑？\n");
                                 ob = new("/clone/animal/snake");
                                 ob->move(environment(me));

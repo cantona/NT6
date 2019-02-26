@@ -7,7 +7,7 @@ void create()
 {
         set_name("逍遙子", ({ "xiaoyao  zi"}));
         set("nickname", "煙霞神龍");
-        set("long","病夫模樣的中年人，衣衫襤褸，咬著一根旱煙管，雙目似睜似閉，嘴裡慢慢噴出煙霧。\n");
+        set("long","病夫模樣的中年人，衣衫襤褸，咬著一根旱煙管，雙目似睜似閉，嘴裏慢慢噴出煙霧。\n");
         set("gender", "男性");
         set("age", random(10) + 45);
         set("attitude", "peaceful");

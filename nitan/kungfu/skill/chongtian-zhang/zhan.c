@@ -43,11 +43,11 @@ int perform(object me, object target)
                 return notify_fail("你的真氣不夠，難以施展" ZHAN "。\n");
 
         if (! living(target))
-                return notify_fail("對方都已經這樣了，用不著這麼費力吧？\n");
+                return notify_fail("對方都已經這樣了，用不着這麼費力吧？\n");
 
         msg = HIW "$N" HIW "雙臂舒張，掌緣微微顫動，身形一展，已移至$n"
               HIW "跟前，雙掌交叉奮力劈下，正是\n白鶴沖天掌「翅展九州」"
-              "絕技，空氣中頓時爆響出一陣尖銳的破空聲。\n" NOR;
+              "絕技，空氣中頓時爆響出一陣尖鋭的破空聲。\n" NOR;
 
         addn("neili", -50, me);
         ap = me->query_skill("strike");
@@ -65,7 +65,7 @@ int perform(object me, object target)
                 me->start_busy(3);
         } else
         {
-                msg += CYN "可是$p" CYN "奮力招架，終于將$P"
+                msg += CYN "可是$p" CYN "奮力招架，終於將$P"
                        CYN "這雙掌架開，沒有受到任何傷害。\n"NOR;
                 me->start_busy(4);
         }

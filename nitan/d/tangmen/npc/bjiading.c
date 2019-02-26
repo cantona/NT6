@@ -57,7 +57,7 @@ int do_give(string arg)
                         return notify_fail("你要給誰什麼東西？\n");
 
         if(!objectp(who = present("jia ding", environment(me))) || !living(who))
-                return notify_fail("這裡沒有這個人。\n");
+                return notify_fail("這裏沒有這個人。\n");
 
         if(sscanf(item, "%d %s", amount, item)==2)
         {
@@ -117,20 +117,20 @@ int do_giveto(object me, object obj)
         if( query("family/family_name", me) != "唐門世家" )
         {
                 message_vision("$N將一"+query("unit", obj)+tar+"交給家丁。\n",me);
-                message_vision("家丁對$N說道:“你是什麼人，為什麼會在這裡！”\n", me);
+                message_vision("家丁對$N説道:“你是什麼人，為什麼會在這裏！”\n", me);
                 message_vision("家丁不接受$N的東西。\n", me);
                 return 1;
         }
 
         if( !environment() || base_name(environment()) != query("startroom") )
         {
-                write("家丁說道：真是抱歉，請您等一下到儲料房來找我吧。\n");
+                write("家丁説道：真是抱歉，請您等一下到儲料房來找我吧。\n");
                 return 0;
         }
 
         if ( (tar == "鐵錘") && objectp(obj) && !userp(obj) && !obj->is_character() )
         {
-                message_vision("家丁沖著$N一恭身，說道：“用完了就讓我收拾起來吧！”\n", me);
+                message_vision("家丁衝着$N一恭身，説道：“用完了就讓我收拾起來吧！”\n", me);
                 message_vision("$N將一柄大鐵錘交給家丁。\n", me);
                 message_vision("家丁接過鐵錘收在身後。\n", me);
                 destruct(obj);
@@ -143,13 +143,13 @@ int do_giveto(object me, object obj)
 
         if( !query_temp("biao", me) || !query_temp("tangmen", me) )
         {
-                message_vision("家丁很怪異的看著$N，欠身說道：“您應該沒有做這裡的工作吧！”\n", me);
+                message_vision("家丁很怪異的看着$N，欠身説道：“您應該沒有做這裏的工作吧！”\n", me);
                 return 0;
         }        
 
         if ( (tar == targ) && objectp(obj) )
         {
-                message_vision("家丁沖著$N一恭身，說道：“辛苦您了，東西就交給我吧！”\n", me);
+                message_vision("家丁衝着$N一恭身，説道：“辛苦您了，東西就交給我吧！”\n", me);
                 delete_temp("tangmen", me);
                 delete_temp("find", me);
                 delete_temp("biao", me);
@@ -158,7 +158,7 @@ int do_giveto(object me, object obj)
         }
         else
         {
-                message_vision("家丁很為難的看著$N，欠身說道：“這不是你要給我的東西吧！”\n", me);
+                message_vision("家丁很為難的看着$N，欠身説道：“這不是你要給我的東西吧！”\n", me);
                 return 0;
         }
 }
@@ -170,7 +170,7 @@ int ask_tool()
 
         if( query("family/family_name", me) != "唐門世家" )
         {
-                message_vision("家丁對$N說道:“你是什麼人，為什麼會在這裡！”\n", me);
+                message_vision("家丁對$N説道:“你是什麼人，為什麼會在這裏！”\n", me);
                 return 1;
         }
 
@@ -190,7 +190,7 @@ int ask_tool()
         if( query_temp("biao", me) )
         {
                 command("say “哦，是唐鏢老爺子讓你來的吧！拿去吧！”");
-                message_vision("家丁從身後取出一柄大鐵錘交給$N，說道:“用完了記得還回來！”\n", me);
+                message_vision("家丁從身後取出一柄大鐵錘交給$N，説道:“用完了記得還回來！”\n", me);
                 new("/d/tangmen/obj/tiechui")->move(me);
                 set("tangmen/gettool", 1, me);
         }

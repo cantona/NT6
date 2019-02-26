@@ -14,8 +14,8 @@ void create()
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("long", "這是一棵天山特有的生長在雪峰的雪桑樹。
-傳說有一種雪蠶最喜歡生長在這雪桑之上，經常有人來尋找(xunzhao)□\n");
+                set("long", "這是一棵天山特有的生長在雪峯的雪桑樹。
+傳説有一種雪蠶最喜歡生長在這雪桑之上，經常有人來尋找(xunzhao) \n");
                 set("unit", "棵");
                 set("value", 8);
                 set("no_get", 1);
@@ -46,7 +46,7 @@ if( random(query("kar", me))>15 )
         tell_object(me,HIG"你仔細的翻動雪桑葉，到處尋找起來。\n" NOR);
         if(random(10)>5)
                 {
-                tell_object(me,HIR"你忽然眼前一亮，一條晶瑩雪白的雪蠶(can)正臥在一片雪桑葉上！\n"NOR);
+                tell_object(me,HIR"你忽然眼前一亮，一條晶瑩雪白的雪蠶(can)正卧在一片雪桑葉上！\n"NOR);
                 set_temp("find_can", 1, me);
                 }
         addn("neili", -10, me);
@@ -68,7 +68,7 @@ if (!arg || sscanf(arg,"%s",what)!=1)
         return notify_fail("你要喂什麼？\n");
 
 if (what!="can")
-        return notify_fail("這裡的雪桑葉只有天山雪蠶愛吃！\n");
+        return notify_fail("這裏的雪桑葉只有天山雪蠶愛吃！\n");
 
 if( !query_temp("find_can", me) )
         return notify_fail("這雪桑上什麼也沒有，你要喂什麼？\n");
@@ -78,7 +78,7 @@ if( query_temp("get_si", me) )
 
 if( query("leaves", obj)>1 )
         {
-        tell_object(me,HIY "你摘了一片雪桑葉喂給雪蠶吃。雪蠶仔細的吃了起來。\n" NOR);
+        tell_object(me,HIY "你摘了一片雪桑葉餵給雪蠶吃。雪蠶仔細的吃了起來。\n" NOR);
         set("leaves",query("leaves",  obj)-1, obj);
                 if (random(10)>5)
                         {
@@ -107,7 +107,7 @@ int do_look(string arg)
         if(what=="sang" || what=="xue sang")
                 {        
                 if( query_temp("find_can", me) )
-                        tell_object(me,query("long", ob)+"現在上面有一只雪蠶(can)！好象正在等你喂(fed)它。\n");
+                        tell_object(me,query("long", ob)+"現在上面有一隻雪蠶(can)！好像正在等你喂(fed)它。\n");
                 else tell_object(me,query("long", ob));
                 return 1;
                 }

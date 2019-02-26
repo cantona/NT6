@@ -893,7 +893,7 @@ mapping combine_list = ([
            "/clone/fam/etc/lv5d-1",
            "/clone/fam/etc/lv7d-1",
            "/clone/fam/gift/dex3-1", }) : "/clone/fam/max/tianshu1",
-        // 五張九宵紋□圖碎片拼湊出完整的九宵紋□圖
+        // 五張九宵紋龍圖碎片拼湊出完整的九宵紋龍圖
         ({ "/clone/tattoo/spcs1-1",
            "/clone/tattoo/spcs1-2",
            "/clone/tattoo/spcs1-3",
@@ -942,7 +942,7 @@ mapping combine_list = ([
            "/clone/tattoo/spcs7-4",
            "/clone/tattoo/spcs7-5" }) : "/clone/tattoo/spc7",
 
-        // 五張後羿射日圖碎片拼湊出完整的後羿射日圖
+        // 五張后羿射日圖碎片拼湊出完整的后羿射日圖
         ({ "/clone/tattoo/spcs8-1",
            "/clone/tattoo/spcs8-2",
            "/clone/tattoo/spcs8-3",
@@ -963,62 +963,62 @@ mapping combine_list = ([
            "/clone/tattoo/spcs10-4",
            "/clone/tattoo/spcs10-5" }) : "/clone/tattoo/spc10",
 
-        // 三個鑽石碎片合並成為一個鑽石
+        // 三個鑽石碎片合併成為一個鑽石
         ({ "/clone/gift/cdiamond-1",
            "/clone/gift/cdiamond-2",
            "/clone/gift/cdiamond-3" }) : "/clone/gift/diamond",
 
-        // 三個鑽石合並成為一個精美鑽石
+        // 三個鑽石合併成為一個精美鑽石
         ({ "/clone/gift/diamond-1",
            "/clone/gift/diamond-2",
            "/clone/gift/diamond-3" }) : "/clone/gift/fdiamond",
 
-        // 三個精美鑽石合並成為一個神之鑽石
+        // 三個精美鑽石合併成為一個神之鑽石
         ({ "/clone/gift/fdiamond-1",
            "/clone/gift/fdiamond-2",
            "/clone/gift/fdiamond-3" }) : "/clone/gift/mdiamond",
 
-        // 三個瑪瑙碎片合並成為一個瑪瑙
+        // 三個瑪瑙碎片合併成為一個瑪瑙
         ({ "/clone/gift/cagate-1",
            "/clone/gift/cagate-2",
            "/clone/gift/cagate-3" }) : "/clone/gift/agate",
 
-        // 三個瑪瑙合並成為一個精美瑪瑙
+        // 三個瑪瑙合併成為一個精美瑪瑙
         ({ "/clone/gift/agate-1",
            "/clone/gift/agate-2",
            "/clone/gift/agate-3" }) : "/clone/gift/fagate",
 
-        // 三個精美瑪瑙合並成為一個神之瑪瑙
+        // 三個精美瑪瑙合併成為一個神之瑪瑙
         ({ "/clone/gift/fagate-1",
            "/clone/gift/fagate-2",
            "/clone/gift/fagate-3" }) : "/clone/gift/magate",
 
-        // 三個水晶碎片合並成為一個水晶
+        // 三個水晶碎片合併成為一個水晶
         ({ "/clone/gift/ccrystal-1",
            "/clone/gift/ccrystal-2",
            "/clone/gift/ccrystal-3" }) : "/clone/gift/crystal",
 
-        // 三個水晶合並成為一個精美水晶
+        // 三個水晶合併成為一個精美水晶
         ({ "/clone/gift/crystal-1",
            "/clone/gift/crystal-2",
            "/clone/gift/crystal-3" }) : "/clone/gift/fcrystal",
 
-        // 三個精美水晶合並成為一個神之水晶
+        // 三個精美水晶合併成為一個神之水晶
         ({ "/clone/gift/fcrystal-1",
            "/clone/gift/fcrystal-2",
            "/clone/gift/fcrystal-3" }) : "/clone/gift/mcrystal",
 
-        // 三個翡翠碎片合並成為一個翡翠
+        // 三個翡翠碎片合併成為一個翡翠
         ({ "/clone/gift/cjade-1",
            "/clone/gift/cjade-2",
            "/clone/gift/cjade-3" }) : "/clone/gift/jade",
 
-        // 三個翡翠合並成為一個精美翡翠
+        // 三個翡翠合併成為一個精美翡翠
         ({ "/clone/gift/jade-1",
            "/clone/gift/jade-2",
            "/clone/gift/jade-3" }) : "/clone/gift/fjade",
 
-        // 三個精美翡翠合並成為一個神之翡翠
+        // 三個精美翡翠合併成為一個神之翡翠
         ({ "/clone/gift/fjade-1",
            "/clone/gift/fjade-2",
            "/clone/gift/fjade-3" }) : "/clone/gift/mjade",
@@ -1075,9 +1075,9 @@ mapping combine_list = ([
         // 碧魄冰晶
         ({ "/clone/fam/etc/lv5f-1",
           "/clone/fam/etc/lv7c-1", // 青龍牙
-          "/clone/fam/etc/lv7d-1", // 如意通天□
+          "/clone/fam/etc/lv7d-1", // 如意通天钁
           "/clone/fam/etc/lv7a-1", // 五彩玲瓏珠
-          "/clone/fam/etc/prize5-1", // 神□血清
+          "/clone/fam/etc/prize5-1", // 神聖血清
            }) : "/clone/fam/etc/bipo",
 
         // 幻石
@@ -1107,28 +1107,28 @@ mapping combine_list = ([
         /******************************************
                     鑲嵌之物品--珍品
         *******************************************/
-        // 神之寒晶﹒冰
+        // 神之寒晶·冰
         ({ "/clone/fam/etc/bipo-1",
           "/clone/fam/item/bless_water-1",
           "/clone/fam/etc/lv5d-1",
           "/clone/fam/etc/prize4-1",
            }) : "/clone/fam/etc/hanjing",
 
-        // 魔之心﹒魔
+        // 魔之心·魔
         ({ "/clone/fam/etc/huanshi-1",
           "/clone/fam/item/bless_water-1",
           "/clone/fam/etc/lv5d-1",
           "/clone/fam/item/stone5-1",
            }) : "/clone/fam/etc/mozhixin",
 
-        // 火之精靈﹒火
+        // 火之精靈·火
         ({ "/clone/fam/etc/binghuozhu-1",
           "/clone/fam/item/bless_water-1",
           "/clone/fam/etc/lv7d-1",
           "/clone/fam/etc/lv7b-1",
            }) : "/clone/fam/etc/huojingling",
 
-        // 雷神之瞳﹒電
+        // 雷神之瞳·電
         ({ "/clone/fam/etc/leishenzhu-1",
           "/clone/fam/item/bless_water-1",
           "/clone/fam/etc/lv5d-1",
@@ -1136,11 +1136,11 @@ mapping combine_list = ([
           "/clone/fam/item/zhenlong-1",
            }) : "/clone/fam/etc/leishentong",
 
-        // 白虎﹒金 = 精金 + 如意通天□ + 雷神珠   + 輝華月石
-        // 青龍﹒木 = 木靈 + 鎮龍石     + 青龍牙   + 乾坤聖水
-        // 玄武﹒水 = 玄冰 + 碧魄冰晶   + 神□血清 + 乾坤聖水
-        // 朱雀﹒火 = 炎晶 + 冰火珠     + 熾石     + 五彩玲瓏珠
-        // 麒麟﹒土 = 玉髓 + 幻石       + 息壤     + 輝華月石
+        // 白虎·金 = 精金 + 如意通天钁 + 雷神珠   + 輝華月石
+        // 青龍·木 = 木靈 + 鎮龍石     + 青龍牙   + 乾坤聖水
+        // 玄武·水 = 玄冰 + 碧魄冰晶   + 神聖血清 + 乾坤聖水
+        // 朱雀·火 = 炎晶 + 冰火珠     + 熾石     + 五彩玲瓏珠
+        // 麒麟·土 = 玉髓 + 幻石       + 息壤     + 輝華月石
         ({ "/clone/tessera/metal-1",
           "/clone/fam/etc/lv7d-1",
           "/clone/fam/etc/leishenzhu-1",
@@ -1180,7 +1180,7 @@ mapping combine_list = ([
  特殊裝備或者物品，非常珍貴，只能通過一些特殊途徑獲取或合成
  比如故事等。
 **********************************************************/
-       // 炎□□甲
+       // 炎龍聖甲
        ({
           "/clone/fam/etc/longlin-1",
           "/clone/fam/etc/longlin-2",
@@ -1356,31 +1356,31 @@ mapping combine_list = ([
           "/clone/quarry/item/hong-baoshikuang-5",}) : "/clone/fam/enchase/hong-baoshi",
           
 /*
-        // 風洞之眼﹒風
+        // 風洞之眼·風
        ({ "/inherit/template/gem/skull7-1",
           "/inherit/template/gem/yelgem7-1",
           "/clone/tessera/rune20-1",
            }) : "/clone/item/fengdong.c",
 
-        // 神之寒晶﹒冰
+        // 神之寒晶·冰
        ({ "/inherit/template/gem/skull7-1",
           "/inherit/template/gem/grngem7-1",
           "/clone/tessera/rune21-1",
            }) : "/clone/item/hanjing",
 
-        // 聖魔之心﹒魔
+        // 聖魔之心·魔
        ({ "/inherit/template/gem/skull7-1",
           "/inherit/template/gem/blugem7-1",
           "/clone/tessera/rune22-1",
            }) : "/clone/item/mozhixin",
 
-        // 火之精靈﹒火
+        // 火之精靈·火
        ({ "/inherit/template/gem/skull7-1",
           "/inherit/template/gem/redgem7-1",
           "/clone/tessera/rune23-1",
            }) : "/clone/item/huojingling",
 
-        // 雷神之瞳﹒電
+        // 雷神之瞳·電
        ({ "/inherit/template/gem/skull7-1",
           "/inherit/template/gem/maggem7-1",
           "/clone/tessera/rune24-1",
@@ -1390,16 +1390,16 @@ mapping combine_list = ([
 
 int main(object me, string arg)
 {
-        mapping same;                   // 判斷重復的物品的需要的mapping
-        string *item_list, *name_list;  // 合並的物品ID表和匹配的基本名字表
+        mapping same;                   // 判斷重複的物品的需要的mapping
+        string *item_list, *name_list;  // 合併的物品ID表和匹配的基本名字表
         string bname;                   // 物品對應的文件的基本名字
-        object *ob_list;                // 合並的所有物品
-        string *per;                    // mapping中記錄的可合並的基本名字表
+        object *ob_list;                // 合併的所有物品
+        string *per;                    // mapping中記錄的可合併的基本名字表
         object obj;                     // 生成的物品
         int mp, i;
 
         if (! arg)
-                return notify_fail("你要合並什麼物品？\n");
+                return notify_fail("你要合併什麼物品？\n");
 
         if (me->is_busy())
                 return notify_fail("先忙完了你的事情再做這件事情吧！\n");
@@ -1431,11 +1431,11 @@ int main(object me, string arg)
 
                 /*
                 if( query("no_identify", ob_list[i]) )
-                        return notify_fail("你身上的 " + bname + " 還沒有去鑒定啊。\n");
+                        return notify_fail("你身上的 " + bname + " 還沒有去鑑定啊。\n");
                 */
 
                 if (i > 0 && member_array(ob_list[i], ob_list[0..i - 1]) != -1)
-                        return notify_fail("合並物品需要指明不同的物品，不要重復指"
+                        return notify_fail("合併物品需要指明不同的物品，不要重複指"
                                            "明一件物品。\n");
 
                 bname = base_name(ob_list[i]);
@@ -1450,7 +1450,7 @@ int main(object me, string arg)
                 name_list[i] = bname + "-" + (string) same[bname];
         }
 
-        tell_object(me, HIW "\n你雙目微閉，將數樣物品凝于掌中，運轉內勁迫"
+        tell_object(me, HIW "\n你雙目微閉，將數樣物品凝於掌中，運轉內勁迫"
                         "使它們交融。\n" NOR);
 
         me->start_busy(1);
@@ -1480,7 +1480,7 @@ int main(object me, string arg)
 
                         tell_object(me, HIW "霎時間只見萬道光華疾閃而過，你急忙攤開手掌，"
                                         "發現掌心\n豁然出現了一"+query("unit", obj)+
-                                        obj->name() + HIW "，蘊漾著七色霞光。\n\n" NOR);
+                                        obj->name() + HIW "，藴漾着七色霞光。\n\n" NOR);
 
                         if( query("value", obj) )
                         {
@@ -1501,7 +1501,7 @@ int main(object me, string arg)
                 }
         }
         tell_object(me, HIR "可是過了半天，似乎沒有任何變化，你不禁一聲"
-                        "長嘆。\n" NOR);
+                        "長歎。\n" NOR);
 
         return 1;
 }
@@ -1511,9 +1511,9 @@ int help(object me)
         write(@HELP
 指令格式 : combine <特殊物品> & <特殊物品> & ……
 
-這個指令可以讓你將某些特殊物品合並成一種新的物品，哪些才能合
-並？這就要靠你去發掘了。每次合並都會損失一點精力的上限。如果
-要合並的幾個物品名字相同，則需要指明他們的序號，比如有三個鑽
+這個指令可以讓你將某些特殊物品合併成一種新的物品，哪些才能合
+並？這就要靠你去發掘了。每次合併都會損失一點精力的上限。如果
+要合併的幾個物品名字相同，則需要指明他們的序號，比如有三個鑽
 石，如果要合一，則需要輸入：
 
   combine diamond & diamond 2 & diamond 3

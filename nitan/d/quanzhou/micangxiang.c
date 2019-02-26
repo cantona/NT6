@@ -7,7 +7,7 @@ void create()
 {
         set("short", "米倉巷");
         set("long", @LONG
-這是通往糧倉的小路。由于民間匪盜經常搶劫官府糧倉，都督府震
+這是通往糧倉的小路。由於民間匪盜經常搶劫官府糧倉，都督府震
 怒之下，特開此路以利府中官兵增援糧倉。
 LONG );
         set("outdoors", "quanzhou");

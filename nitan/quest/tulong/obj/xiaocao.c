@@ -10,7 +10,7 @@ void create()
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("long", "一朵嬌艷美麗，不沾半點世間煙火的精靈之花。\n");
+                set("long", "一朵嬌豔美麗，不沾半點世間煙火的精靈之花。\n");
                 set("unit", "朵");
                 set("value", 6); 
                 set("no_get", 1);
@@ -39,8 +39,8 @@ int do_get(string arg)
     if( !arg ) return notify_fail("你要撿起什麼東西？\n");
         if (arg=="flower" ) 
          {
-        write(HIM"精靈之花"NOR+HIG"中出現了一只小精靈，\n
-小精靈振動著翅膀說：謝謝你解開了第三個封印，請過關吧！\n"NOR);
+        write(HIM"精靈之花"NOR+HIG"中出現了一隻小精靈，\n
+小精靈振動着翅膀説：謝謝你解開了第三個封印，請過關吧！\n"NOR);
         ob->move(me);   
  message_vision(HIG"$N被一陣清風送到了另一個房間。\n"NOR, me); 
         me->move("/d/dragon/spirit5");

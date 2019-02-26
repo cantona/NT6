@@ -20,7 +20,7 @@ int main(object me, string arg)
                 return notify_fail("你要訓練什麼野獸？\n");
 
         if (! objectp(ob = present(arg, environment(me))))
-                return notify_fail("這裡沒有這只野獸吧？\n");
+                return notify_fail("這裏沒有這隻野獸吧？\n");
 
         if (playerp(ob)) 
                 return notify_fail("人家也是玩家，你搞什麼搞啊？\n");
@@ -40,10 +40,10 @@ int main(object me, string arg)
                 return notify_fail("你沒這麼笨吧，把自己不當人？\n");
 
         if (! living(ob)) 
-                return notify_fail("這只野獸暈倒了，你怎能訓得它動呢？\n");
+                return notify_fail("這隻野獸暈倒了，你怎能訓得它動呢？\n");
 
         if (me->is_busy())
-                return notify_fail("你正忙，等會兒再說吧。\n");
+                return notify_fail("你正忙，等會兒再説吧。\n");
 
         cost=query("max_jing", me)/(me->query_skill("training",1)/10)-10;
         if( cost < 1 ) cost = 1;
@@ -51,7 +51,7 @@ int main(object me, string arg)
         if( query("jing", me) <= cost )
                 return notify_fail("現在你太累了，無法訓練野獸。\n");
 
-        message_vision("只見$N沖著" + ob->name() +
+        message_vision("只見$N衝着" + ob->name() +
                        "手腳亂擺，口中似對它輕輕細語。\n\n",me);
 
         sp=me->query_skill("training",1)+query("int", me);
@@ -62,11 +62,11 @@ int main(object me, string arg)
                 ob->kill_ob(me);
                 me->start_busy(1);
                 return notify_fail("你馭獸術不精，那東西野"
-                                   "性不泯，沖著你就竄了過來！\n");
+                                   "性不泯，衝着你就竄了過來！\n");
         }
 
         me->receive_damage("jing", cost);
-        message_vision("頓時" + ob->name() + "沖著$N搖了搖尾巴，很溫馴的樣子。\n\n", me);
+        message_vision("頓時" + ob->name() + "衝着$N搖了搖尾巴，很温馴的樣子。\n\n", me);
 
         train_level = me->query_skill("training", 1);
         if (me->can_improve_skill("training"))
@@ -99,7 +99,7 @@ int help(object me)
         write(@HELP
 指令格式 : train <動物>
 
-此指令可用于馴化某動物。對于已經馴服的動物，可以進行下述指令：
+此指令可用於馴化某動物。對於已經馴服的動物，可以進行下述指令：
 
 基本指令：
         come <動物名>:                  讓動物跟隨主人行動。
@@ -111,7 +111,7 @@ int help(object me)
 特殊指令：（只對某些動物適用）
         qi(ride) <動物名>:              騎，如騎馬，虎，雕，鯊等。
         xia(unride) <動物名>:           下，離開坐騎。
-        wei(feed) <動物名>:             替動物喂食。
+        wei(feed) <動物名>:             替動物餵食。
         yin <動物名>:                   給動物飲水。
 
 HELP

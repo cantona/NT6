@@ -23,7 +23,7 @@ void create()
         set_name("胡媚娘", ({ "hu meiniang", "hu","meiniang" }));
         set("gender", "女性");
         set("age", 26);
-        set("long", "她裝扮的妖艷無比，一雙眼睛能攝人魂魄。\n");
+        set("long", "她裝扮的妖豔無比，一雙眼睛能攝人魂魄。\n");
         set("title",HIB"修羅門北京壇主"NOR);
         set("per",29);
         set("combat_exp", 1000000);

@@ -31,10 +31,10 @@ int do_effect(object me)
                 return notify_fail("你內力修為不足，恐怕服用後難以吸收毒性。\n");
 
         if (me->query("neili") < 10000)
-                return notify_fail("你內力不足，服用後恐怕難以運功抵御劇毒。\n");
+                return notify_fail("你內力不足，服用後恐怕難以運功抵禦劇毒。\n");
 
         if (me->query("can_perform/qianzhu-wandushou/suck_time") >= 5)
-                return notify_fail("你已經吸收了足夠的毒素，不需要再重復吸取了。\n");
+                return notify_fail("你已經吸收了足夠的毒素，不需要再重複吸取了。\n");
         
         if (time() - me->query("last_eating_wudu_zhu") < 3600)
                 return notify_fail("你剛吸收過毒素，不宜再吸收！\n");
@@ -55,7 +55,7 @@ int do_effect(object me)
                 }
                 else
                 {
-                        tell_object(me, HIW "由于你有朱蛤奇毒附身，五毒珠劇毒已被全部化解。\n" NOR);
+                        tell_object(me, HIW "由於你有朱蛤奇毒附身，五毒珠劇毒已被全部化解。\n" NOR);
                         destruct(this_object());
                         return 1;                        
                 }
@@ -74,9 +74,9 @@ int do_effect(object me)
 void start_xishou(object me, int i)
 {
         string* msg = ({
-                "你開始運功抵御五毒珠的劇毒，真氣已由丹田升起，並迅速在全身遊走 ……\n",
+                "你開始運功抵禦五毒珠的劇毒，真氣已由丹田升起，並迅速在全身遊走 ……\n",
                 "你感覺五毒珠劇毒兇猛無比，普通真氣竟難以與之抗衡，情急之下忙運起五毒教密門心法 ……\n",
-                "漸漸地，五毒珠劇毒開始有規律地運動，並隨著五毒教心法的牽引而遊走 ……\n",
+                "漸漸地，五毒珠劇毒開始有規律地運動，並隨着五毒教心法的牽引而遊走 ……\n",
                 "你開始施展千蛛萬毒手心法，吸收五毒珠中的毒素 ……\n",
                 "一柱香後，毒素開始向你的十指移動，並開始與你體內的真氣融合 ……\n",        
         });
@@ -98,7 +98,7 @@ void start_xishou(object me, int i)
         
         if (i >= sizeof(msg))
         {
-                // zhuha玩家60%幾率吸收成功，其他玩家30%吸收成功
+                // zhuha玩家60%機率吸收成功，其他玩家30%吸收成功
                 if (me->query("special_skill/zhuha"))
                 {
                         ran = 6;        
@@ -121,7 +121,7 @@ void start_xishou(object me, int i)
                 me->add("can_perform/qianzhu-wandushou/suck_time", 1);
                 if (me->query("can_perform/qianzhu-wandushou/suck_time") >= 5)
                 {
-                        tell_object(me, HIM "恭喜你，已經練成了舉世無雙的絕學─萬毒穿心手！\n" NOR);
+                        tell_object(me, HIM "恭喜你，已經練成了舉世無雙的絕學—萬毒穿心手！\n" NOR);
                         me->set("can_perform/qianzhu-wandushou/chuan", 1);
                         me->save();
                 }

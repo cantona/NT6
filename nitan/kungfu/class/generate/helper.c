@@ -34,7 +34,7 @@ void kill_ob(object ob)
         if( query("family/family_name", ob) == query("family/family_name") )
         {
                 message_vision(HIC "$N" HIC "看了看對方，連忙往後一跳，"
-                               "大聲喊道：“大家住手！有話好說！”\n" NOR,
+                               "大聲喊道：“大家住手！有話好説！”\n" NOR,
                                this_object());
                 return;
         }
@@ -61,7 +61,7 @@ int accept_kill(object ob)
         if (ob == query_temp("owner"))
         {
                 message_vision("$N向後一退，大聲喊道：“所謂合則留，不合"
-                               "則去，我是不能侍奉你了！”\n說罷，也不待"
+                               "則去，我是不能侍奉你了！”\n説罷，也不待"
                                "$n回話，自顧去了。\n", this_object(), ob);
                 destruct(this_object());
                 return -1;
@@ -115,7 +115,7 @@ void scan()
 
         env = environment(ob);
         if (environment() == env || ob->is_ghost())
-                // 和主人在的地點相同，或是主人處于鬼魂狀態
+                // 和主人在的地點相同，或是主人處於鬼魂狀態
                 return;
 
         if (is_busy() || is_fighting() || ! living(this_object()))

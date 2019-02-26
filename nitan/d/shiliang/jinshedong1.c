@@ -16,7 +16,7 @@ LONG
                 "west" : __DIR__"jinshedong",
         ]));
        set("item_desc",([
-            "劍柄" : "這是一個很奇怪的劍柄，不知道有沒有劍身。你試著去拔它。\n",
+            "劍柄" : "這是一個很奇怪的劍柄，不知道有沒有劍身。你試着去拔它。\n",
             "shibi" : "也許你可以打開(break)它。\n",
              ]));
         set("jiancount",1);
@@ -59,7 +59,7 @@ int do_break(string arg)
 }
 void close(object room)
 {
-    message("vision","石壁忽然間很神秘得合上了。\n", room);
+    message("vision","石壁忽然間很神祕得合上了。\n", room);
     delete("exits/north", room);
 }
 int do_ba(string arg)
@@ -84,17 +84,17 @@ if( arg=="劍柄"||arg=="jian" ){
         return notify_fail("你伸出手去拔那劍柄。不料卻撲了個空，看樣子劍已經被人取走了。\n");
         }
         message_vision(
-        HIW "$N凝神靜氣，默運玄功，神遊物外，一時間仿佛入定了。\n"+
+        HIW "$N凝神靜氣，默運玄功，神遊物外，一時間彷彿入定了。\n"+
             "突然間$N眼中精光大盛，提起全身的潛力，猛地拔向那劍\n"+
             "柄。剎那間，風雲為之變色，鬼神為之哭泣，只見一柄閃\n"+
-            "著怪異碧色的蛇形長劍至石壁中飛將而出！！！\n"NOR, me);
+            "着怪異碧色的蛇形長劍至石壁中飛將而出！！！\n"NOR, me);
         addn("neili", -2000, me);
         jian->move(me);
         addn("jiancount",-1);
         return 1;
         }else
         message_vision(
-        "你望著石壁上的劍柄直發愣.....\n", me);
+        "你望着石壁上的劍柄直髮愣.....\n", me);
         return 1;             
 }
 void do_jian()

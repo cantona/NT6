@@ -103,17 +103,17 @@ me->start_busy(1+random(2));
 			return 1;
 		}
 		if (team[i]->query_temp("protecting")) {
-			command("say 嗯？你的隊伍裡怎麼有如此貪婪之人？");
+			command("say 嗯？你的隊伍裏怎麼有如此貪婪之人？");
 			return 1;
 		}
 
-		if( team[i]->query_temp("quest/busy")) //added by tangfeng 與quest沖突
+		if( team[i]->query_temp("quest/busy")) //added by tangfeng 與quest衝突
 		{
-			command("say 你們有人在解密之中，你們還是先處理好你其他事情再說吧。");
+			command("say 你們有人在解密之中，你們還是先處理好你其他事情再説吧。");
 			return 1;
 		}
 		if (!present(team[i])){
-			command("say 咦？怎麼好象人不全啊？"+team[i]->query("name")+"怎麼沒來？");
+			command("say 咦？怎麼好像人不全啊？"+team[i]->query("name")+"怎麼沒來？");
 			return 1;
 		}
 		if (me == team[i]) continue;
@@ -206,7 +206,7 @@ me->start_busy(1+random(2));
 	command("say 請護送這一筆鏢銀到"+endname+CYN"的"+target->name()+"手中。");
 
 	log_file("job/hubiao",
-		sprintf("%8s%-10s從林震南這裡得到護鏢任務，共%1s人做，需要送達"HIR"%s"NOR"。\n",
+		sprintf("%8s%-10s從林震南這裏得到護鏢任務，共%1s人做，需要送達"HIR"%s"NOR"。\n",
 			me->name(1),
 			"("+capitalize(me->query("id"))+")",
 			chinese_number(sizeof(team)),
@@ -279,7 +279,7 @@ int test_dart()
 	object ob = this_player();
  
   if ( ob->query_condition("hb_job_busy")){
-               command("say "+RANK_D->query_respect(ob)+"上次護鏢辛苦了，還是先休息一下再說吧。");
+               command("say "+RANK_D->query_respect(ob)+"上次護鏢辛苦了，還是先休息一下再説吧。");
 ob->add_busy(1+ random(2));
                return 1;
         }
@@ -295,7 +295,7 @@ ob->add_busy(1+ random(2));
 
 
 
-	command("say 我們福威鏢局受人所托，有筆鏢銀需要送到他處。");
+	command("say 我們福威鏢局受人所託，有筆鏢銀需要送到他處。");
 	do_accept("quest");
 	return 1;
 }

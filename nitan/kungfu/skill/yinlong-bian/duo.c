@@ -42,9 +42,9 @@ int perform(object me, object target)
         msg = HIB "突然之間，" HIB "$N" HIB "身形一閃一晃，疾退數丈,"+ weapon->name() +
               HIB "從右肩急甩向後，陡地"
               HIB "鞭頭擊向\n" HIB "$n" HIB "面門。" HIB "$N" HIB "本來與"
-              HIB "$n" HIB "相隔十丈有余,但"+ weapon->name() +
-              HIB "說到便到，正如天"
-              HIB "外\n遊龍，矢矯而至。！\n" NOR;
+              HIB "$n" HIB "相隔十丈有餘,但"+ weapon->name() +
+              HIB "説到便到，正如天"
+              HIB "外\n游龍，矢矯而至。！\n" NOR;
 
         ap = attack_power(me, "whip");
         dp = defense_power(target, "dodge");
@@ -52,7 +52,7 @@ int perform(object me, object target)
         if (ap / 2 + random(ap) > dp || !living(target))
         {
                 msg += HIR "結果$p" HIR "被$P" HIR
-                       "攻了個措手不及，目接不暇，疲于奔命！\n" NOR;
+                       "攻了個措手不及，目接不暇，疲於奔命！\n" NOR;
                 count = ap / 10;
                 addn_temp("apply/attack", count, me);
                 attack_time += random(ap / 90);

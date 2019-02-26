@@ -10,7 +10,7 @@ void create()
         set_weight(120);
         set("race", "野獸");
         set("age", 3);
-        set("long", "一只長滿了紅色斑點的蜈蚣，很是怪異。\n");
+        set("long", "一隻長滿了紅色斑點的蜈蚣，很是怪異。\n");
         set("attitude", "peaceful");
         set("str", 22);
         set("con", 25);

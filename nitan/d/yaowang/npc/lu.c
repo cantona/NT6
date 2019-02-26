@@ -6,7 +6,7 @@ void create()
         set_name(YEL"梅花鹿"NOR, ({ "meihua lu", "lu" }) );
         set("race", "野獸");
         set("age", 2);
-        set("long", "一只可愛的梅花鹿，它的血是大補之物。\n");
+        set("long", "一隻可愛的梅花鹿，它的血是大補之物。\n");
         set("attitude", "peaceful");
  
         set("str", 30);

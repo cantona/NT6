@@ -44,13 +44,13 @@ string ask_jiuyin()
         if( query("family/master_name", me) != "周芷若" )
                 return RANK_D->query_respect(this_player())+"與我素不相識，何出此言呢？";
         ob=new(__DIR__"obj/jiuyin-paper");
-        if (present("juan pian",me)) return "咦，你身上不是帶著九陰真經了嗎，怎麼還來問我？";
+        if (present("juan pian",me)) return "咦，你身上不是帶着九陰真經了嗎，怎麼還來問我？";
         if (!ob) return "嗯，借給你倒是沒問題，只是剛被別的弟子借走了，你過一陣再來問問吧。";
         if( !query("jiuyin/first", me)){
                 command ("say 你是第一次來借九陰真經吧？\n
-            這束絹片是密抄本的九陰真經，原來藏在倚天劍裡，其實也不是什麼大不了的東西，
+            這束絹片是密抄本的九陰真經，原來藏在倚天劍裏，其實也不是什麼大不了的東西，
             你拿去翻翻吧。\n
-            為師以前年輕不懂事，只知道照著書上的招式修煉(xiulian)，雖然進展很快，但
+            為師以前年輕不懂事，只知道照着書上的招式修煉(xiulian)，雖然進展很快，但
             是越練到後來，越是兇險。如果不能潛心領悟(lingwu)九陰真經中的真諦，終究無
             法有所大成。當然，領悟的話會慢很多。你要是有什麼不明白的，就直接過來跟我
             學吧。\n");
@@ -134,7 +134,7 @@ void attempt_apprentice(object ob)
                         if (random(shen) >= 1000 ) {
                                 command("hmm" );
                                 command("say 素聞" + RANK_D->query_respect(this_player()) + 
-                                "是黑道裡響當當的人物，你若是真能洗心革面，那我就收下你。");
+                                "是黑道里響噹噹的人物，你若是真能洗心革面，那我就收下你。");
                                 return;
                         }
                 }

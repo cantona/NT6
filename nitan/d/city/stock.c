@@ -55,7 +55,7 @@ int do_liststock(string arg)
         }
 
         msg = ({"代號    股票名稱     現價    漲跌  漲跌幅度 開盤價 最高價 最低價 成交張數 \n"});
-        msg += ({"─────────────────────────────────────────────\n"});
+        msg += ({"—————————————————————————————————————————————\n"});
 
         foreach(string stock in stock_sort)
         {
@@ -86,7 +86,7 @@ int do_liststock(string arg)
                         data["成交張數"],
                 )});
         }
-        msg += ({"─────────────────────────────────────────────\n"});
+        msg += ({"—————————————————————————————————————————————\n"});
         msg += ({MAG"共 "HIM+count+NOR MAG" 只上市股票，"YEL"股票單位為 "HIY"1"NOR YEL" 兩黃金/張，"NOR RED"交易手續費為 "HIR+sprintf("%.2f%%", percent*100.)+NOR RED"。\n"NOR});
         msg += ({HIK"股票數據資料來自滬深A股，10分鐘更新一次，本次更新時間："+sprintf("%s\n", TIME_D->replace_ctime(STOCK_D->query_last_update_time()))+NOR});
         me->start_more(implode(msg, ""));
@@ -165,7 +165,7 @@ int do_buystock(string arg)
 
         if( !wizardp(me) && (/*nowtime[2] < 1 || nowtime[2] > 6 ||*/ nowtime[1] < 9 || nowtime[1] >= 22) )
         {
-                tell_object(me, "周一至周日的早上九點至晚上十點允許交易。\n");
+                tell_object(me, "週一至週日的早上九點至晚上十點允許交易。\n");
                 return 1;
         }
 
@@ -195,7 +195,7 @@ int do_buystock(string arg)
 
         if( !mapp(stocks[num]) || !stocks[num]["股票名稱"] )
         {
-                tell_object(me, "沒有 "+num+" 這一只股票。\n");
+                tell_object(me, "沒有 "+num+" 這一隻股票。\n");
                 return 1;
         }
 
@@ -211,7 +211,7 @@ int do_buystock(string arg)
 
         if( new_amount > 10000000 )
         {
-                tell_object(me, "每只股票最多只能購買 10,000,000 張。\n");
+                tell_object(me, "每隻股票最多隻能購買 10,000,000 張。\n");
                 return 1;
         }
 
@@ -233,7 +233,7 @@ int do_buystock(string arg)
 
         tell_object(me,
                 WHT"股票名稱      "NOR HIW+num+" "+stocks[num]["股票名稱"]+NOR"\n"
-                "───────────────────\n"
+                "———————————————————\n"
                 YEL"股票現在價格  "HIY+sprintf("%.2f", cur_value)+"\n"NOR
                 GRN"欲購股票張數  "HIG+amount+"\n"NOR
                 GRN"目前持股價格  "HIG+sprintf("%.2f", old_value)+"\n"NOR
@@ -242,7 +242,7 @@ int do_buystock(string arg)
                 CYN"欲購股票總值  "HIC+cost+"\n"NOR
                 CYN"交易手續費用  "HIC+cost_extra+HIR"("+sprintf("%.2f", percent*100.)+"%)\n"NOR
                 CYN"購入總共花費  "HIC+(cost + cost_extra)+"\n"NOR
-                "───────────────────\n"
+                "———————————————————\n"
                 HIY"是否確定購入股票?"NOR YEL"(Yes/No)"NOR
         );
 
@@ -310,7 +310,7 @@ int do_sellstock(string arg)
 
         if( !wizardp(me) && (/*nowtime[2] < 1 || nowtime[2] > 6 ||*/ nowtime[1] < 9 || nowtime[1] >= 22) )
         {
-                tell_object(me, "周一至周日的早上九點至晚上十點允許交易。\n");
+                tell_object(me, "週一至週日的早上九點至晚上十點允許交易。\n");
                 return 1;
         }
 
@@ -340,7 +340,7 @@ int do_sellstock(string arg)
 
         if( !mapp(stocks[num]) || !stocks[num]["股票名稱"] )
         {
-                tell_object(me, "沒有 "+num+" 這一只股票。\n");
+                tell_object(me, "沒有 "+num+" 這一隻股票。\n");
                 return 1;
         }
 
@@ -365,13 +365,13 @@ int do_sellstock(string arg)
 
         if( old_amount < 1 )
         {
-                tell_object(me, "你手上並沒有 "+num+" 這只股票。\n");
+                tell_object(me, "你手上並沒有 "+num+" 這隻股票。\n");
                 return 1;
         }
 
         if( new_amount < limit )
         {
-                tell_object(me, "這只股票你手上只有 "+old_amount+" 張，可交易 "+(old_amount-limit)+" 張。\n");
+                tell_object(me, "這隻股票你手上只有 "+old_amount+" 張，可交易 "+(old_amount-limit)+" 張。\n");
                 return 1;
         }
 
@@ -385,13 +385,13 @@ int do_sellstock(string arg)
 
         tell_object(me,
                 WHT"股票名稱      "NOR HIW+num+" "+stocks[num]["股票名稱"]+NOR"\n"
-                "───────────────────\n"
+                "———————————————————\n"
                 YEL"股票現在價格  "HIY+sprintf("%.2f", cur_value)+"\n"NOR
                 GRN"目前持股價格  "HIG+sprintf("%.2f", old_value)+"\n"NOR
                 GRN"目前持股利潤  "HIG+sprintf("%.2f%%", (cur_value - old_value) * 100. / old_value)+"\n"NOR
                 GRN"欲售股票張數  "HIG+amount+"\n"NOR
                 CYN"售出總共獲得  "HIC+earn+"\n"NOR
-                "───────────────────\n"
+                "———————————————————\n"
                 HIY"是否確定售出股票?"NOR YEL"(Yes/No)"NOR
         );
 
@@ -401,9 +401,9 @@ int do_sellstock(string arg)
 
 void create()
 {
-        set("short", "証券交易所");
+        set("short", "證券交易所");
         set("long", @LONG
-這是一家証券交易所，牆上掛著一個牌子(paizi)。
+這是一家證券交易所，牆上掛着一個牌子(paizi)。
 LONG );
 
         set("item_desc", ([

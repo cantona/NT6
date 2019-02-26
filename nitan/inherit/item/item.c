@@ -20,7 +20,7 @@ string to_chinese(int status)
         else if( status == 2 ) return HIB "優良" NOR;
         else if( status == 3 ) return HIC "珍稀" NOR;
         else if( status == 4 ) return HIM "史詩" NOR;
-        else if( status == 5 ) return HIY "傳說" NOR;
+        else if( status == 5 ) return HIY "傳説" NOR;
         else if( status == 6 ) return HBRED+HIW "神器" NOR;
         else return HBRED+HIY "仙器" NOR;
 }
@@ -72,7 +72,7 @@ int fire(object me, object ob)
         string msg;
 
         if( this_object()->is_item_make() )
-                return notify_fail("你累得滿頭大汗，怎麼點也點不著。\n");
+                return notify_fail("你累得滿頭大汗，怎麼點也點不着。\n");
 
         if( stringp(msg = query("no_light")) )
                 return notify_fail(msg);
@@ -86,12 +86,12 @@ int fire(object me, object ob)
         case "leather":
         case "feather":
         case "silk":
-                msg = "$N用$f把$n點著了，結果散發出一陣令人難聞的臭味。\n";
+                msg = "$N用$f把$n點着了，結果散發出一陣令人難聞的臭味。\n";
                 break;
         case "paper":
         case "cloth":
-                msg = "$N點著了$n，火苗閃了幾閃，很快就"
-                      "燒了個幹幹凈凈，什麼都沒有剩下來。\n";
+                msg = "$N點着了$n，火苗閃了幾閃，很快就"
+                      "燒了個乾乾淨淨，什麼都沒有剩下來。\n";
                 break;
         default:
                 return notify_fail("這東西看上去沒法點，還是省省力氣吧。\n");

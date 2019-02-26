@@ -111,10 +111,10 @@ void create()
 
 	}));
 
-	set("my_life", 1); // 當氣血低于10%的時候補滿一次，設置該參數為0
+	set("my_life", 1); // 當氣血低於10%的時候補滿一次，設置該參數為0
 
         //set("auto_perform", 1);
-        set("end_time", 1800);  // 必須戰鬥不少于1800秒後死亡
+        set("end_time", 1800);  // 必須戰鬥不少於1800秒後死亡
         set("rewards", ([
                 "exp"   : 30000,
                 "pot"   : 10000,
@@ -209,7 +209,7 @@ void check_friend()
 		}
 	}
 
-	// 如果同伴的HP小于20%,且我的HP大于60%則保護對方
+	// 如果同伴的HP小於20%,且我的HP大於60%則保護對方
 	if( query("eff_qi", ob) <= query("max_qi", ob)/10 && 
        query("eff_qi", me) >= query("max_qi", me)/5*3 )
 	{
@@ -374,14 +374,14 @@ varargs void die(object killer)
                 if( query("qi") > query("max_qi") ) set("qi", query("max_qi"));
                 addn("eff_qi", query("max_qi") / 10);
                 if( query("eff_qi") > query("max_qi") ) set("eff_qi", query("max_qi"));
-                message_vision(HIR "\n$N" HIR "大喝一聲，運用秘法，氣血有所回升！\n\n" NOR, this_object());
+                message_vision(HIR "\n$N" HIR "大喝一聲，運用祕法，氣血有所回升！\n\n" NOR, this_object());
                 return;
         }
 
         if( !objectp(present("hu yidao", environment(this_object()))) )
                 set("clear_fuben", 1);
 
-        message_vision(HIR "\n$N" HIR "長嘆一聲，消失在山林之中 ……\n\n" NOR, this_object());
+        message_vision(HIR "\n$N" HIR "長歎一聲，消失在山林之中 ……\n\n" NOR, this_object());
 
         return ::die(killer);
 }

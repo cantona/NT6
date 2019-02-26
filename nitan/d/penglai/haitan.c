@@ -7,7 +7,7 @@ void create()
 {
         set("short", "海灘");
         set("long", @LONG
-這裡就是蓬萊仙島了。北邊是一望無際的大海，放眼望去，整
+這裏就是蓬萊仙島了。北邊是一望無際的大海，放眼望去，整
 個島被仙氣籠罩，前方不遠處是一片竹林，陣陣梵音傳出，令人心
 曠神怡。
 LONG);
@@ -19,7 +19,7 @@ LONG);
         set("valid_startroom", 1);
         set("no_clean_up", 1);
         set("no_rideto", 1);         // 設置不能騎馬到其他地方
-        set("no_flyto", 1);          // 設置不能從起來地方騎馬來這裡
+        set("no_flyto", 1);          // 設置不能從起來地方騎馬來這裏
         set("no_die", 1);            // 死亡後移動到扁鵲居
         set("penglai", 1);           // 表示在蓬萊島 
         set("no_fight", 1);       

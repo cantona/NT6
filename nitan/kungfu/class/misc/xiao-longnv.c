@@ -11,7 +11,7 @@ void death_msg();
 void create()
 {
         set_name("小龍女", ({ "xiao longnv",}));
-        set("title", HIR "困于情花谷的" NOR);
+        set("title", HIR "困於情花谷的" NOR);
         set("gender", "女性");
         set("age", 22);
         set("long", @LONG
@@ -161,7 +161,7 @@ void random_move()
                 env = environment(this_object());
                 message_vision("$N急急忙忙的走了。\n", this_object());
 
-                CHANNEL_D->channel_broadcast("mess", "聽說" +
+                CHANNEL_D->channel_broadcast("mess", "聽説" +
                         env->short() + HIW "(" + LOOK_CMD->locate(base_name(env)) + ")一帶出現的" +
                         HIR + this_object()->short() + HIG "消失了。\n" NOR);
 
@@ -174,5 +174,5 @@ void random_move()
 void death_msg()
 {
         command("chat* protect1");
-        CHANNEL_D->channel_broadcast("rumor", "聽說" + name() + HIM "被神雕救走 ……" NOR);
+        CHANNEL_D->channel_broadcast("rumor", "聽説" + name() + HIM "被神鵰救走 ……" NOR);
 }

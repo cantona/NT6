@@ -39,7 +39,7 @@ int perform(object me, object target)
                 return notify_fail("你沒有激發天涯明月刀，難以施展" + name() + "。\n");
 
         if (! living(target))
-                return notify_fail("對方都已經這樣了，用不著這麼費力吧？\n");
+                return notify_fail("對方都已經這樣了，用不着這麼費力吧？\n");
 
         wn = weapon->name();
 
@@ -62,7 +62,7 @@ int perform(object me, object target)
         } else
         {
                 me->start_busy(3);
-                msg += HIC "$p" HIC "見$P來勢洶湧，心知絕不可擋，當即向後橫移數尺，終于躲閃開來。\n" NOR;
+                msg += HIC "$p" HIC "見$P來勢洶湧，心知絕不可擋，當即向後橫移數尺，終於躲閃開來。\n" NOR;
                 addn("neili", -400, me);
         }
         message_combatd(msg, me, target);

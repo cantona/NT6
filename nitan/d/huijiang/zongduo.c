@@ -11,8 +11,8 @@ void create()
 {
         set("short", "紅花會總舵");
         set("long", @LONG
-這裡是紅花會的總舵，大堂上站滿了紅花會的弟子。他們的臉上表
-情肅穆，每個人的右手都緊握著自己的兵刃，中間的椅子空著，看來總
+這裏是紅花會的總舵，大堂上站滿了紅花會的弟子。他們的臉上表
+情肅穆，每個人的右手都緊握着自己的兵刃，中間的椅子空着，看來總
 舵主陳家洛不在，兩旁的香爐(xiang lu)散發出繚繚的青煙，更是襯托
 出一股神聖的氛圍。
 LONG );
@@ -22,7 +22,7 @@ LONG );
                 "west"      : __DIR__"goldroom",
         ]));
         set("item_desc", ([
-                "xiang lu" : "一個古色古香的青銅香爐，一股淡淡的香氣從裡面不時的冒出來。\n",
+                "xiang lu" : "一個古色古香的青銅香爐，一股淡淡的香氣從裏面不時的冒出來。\n",
         ]));
         set("objects", ([
                 CLASS_D("honghua")+"/wu-chen" : 1,
@@ -53,9 +53,9 @@ int do_tui(string arg)
         else if ( flag==0 )
                 {
                         flag=1;
-                        message_vision("只聽“□嚓”一響，香爐上現出一個小洞。\n", me);
+                        message_vision("只聽“咔嚓”一響，香爐上現出一個小洞。\n", me);
                         set("item_desc", ([
-                                "xiang lu" : "一個古色古香的青銅香爐，一股淡淡的香氣從裡面不時的冒出來，上面有一個小洞，好像可以插入什麼東西！\n",
+                                "xiang lu" : "一個古色古香的青銅香爐，一股淡淡的香氣從裏面不時的冒出來，上面有一個小洞，好像可以插入什麼東西！\n",
                             ]));
                 }
                 else message_vision("香爐已經推不動了！\n", me);
@@ -70,12 +70,12 @@ int do_wedge(string arg)
         if( !arg || arg!="honghua ling" )
                 return notify_fail("你要把什麼東西插入香爐？\n");
 
-        if( me->is_busy() ) return notify_fail("你正忙著呢。\n");
+        if( me->is_busy() ) return notify_fail("你正忙着呢。\n");
         else if ( get==1 && flag==1 && present("honghua ling", me) &&
                         !(present("honghualing",query("zizhi", me))) )
                 {
-                        message_vision("$N試著把紅花令插入了香爐。\n",me);
-                        message_vision( HIR"只聽香爐裡面□嚓亂響，好像是觸動了什麼機關。\n"NOR,me);
+                        message_vision("$N試着把紅花令插入了香爐。\n",me);
+                        message_vision( HIR"只聽香爐裏面咔嚓亂響，好像是觸動了什麼機關。\n"NOR,me);
                         me->start_busy(2);
                         hit();
                 }

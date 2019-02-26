@@ -36,12 +36,12 @@ int perform(object me, object target)
                 return notify_fail("你現在的真氣不足，難以施展" +name()+ "。\n");
 
         if (! living(target))
-                return notify_fail("對方都已經這樣了，用不著這麼費力吧？\n");
+                return notify_fail("對方都已經這樣了，用不着這麼費力吧？\n");
 
         msg = WHT "$N" WHT "施出觀日劍法之「" HIW "天洪地爐觀"
               HIR "日" HIW "神訣" NOR + WHT "」，將內力盡數注"
               "入" + weapon->name() + WHT "劍身直奔\n$n" WHT
-              "而去。霎時間熾炎暴漲，熱浪撲面卷來，四周空氣便"
+              "而去。霎時間熾炎暴漲，熱浪撲面捲來，四周空氣便"
               "似沸騰一般。\n" NOR;
 
         ap = attack_power(me, "sword");
@@ -66,7 +66,7 @@ int perform(object me, object target)
         addn_temp("apply/attack", count, me);
         addn_temp("apply/damage", count, me);
 
-        message_combatd(WHT "緊跟著$N" WHT "一聲冷笑，身形驀地前躍丈"
+        message_combatd(WHT "緊跟着$N" WHT "一聲冷笑，身形驀地前躍丈"
                         "許，手中" + weapon->name() + WHT "「唰唰唰」"
                         "連出九劍。\n" NOR, me, target);
 

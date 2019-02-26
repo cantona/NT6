@@ -11,7 +11,7 @@ void create()
 {
         set_name("腹蛇膽", ({"shedan", "dan"}));
         set("unit", "粒");
-        set("long", "這是一只綠瑩瑩的腹蛇膽，是制備毒藥的最佳原料。\n");
+        set("long", "這是一隻綠瑩瑩的腹蛇膽，是製備毒藥的最佳原料。\n");
         set("value", 500);
         set("medicine", 1);
                 set("no_sell", 1);

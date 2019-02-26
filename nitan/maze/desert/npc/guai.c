@@ -8,7 +8,7 @@ void create()
         set("title", HIY "綠林蠻漢" NOR);
         set("gender", "男性" );
         set("age", random(30)+20);
-        set("long", "橫行無盡大漠的強盜，佔著對地形熟悉對來無盡大漠江湖客攻擊搶掠\n");
+        set("long", "橫行無盡大漠的強盜，佔着對地形熟悉對來無盡大漠江湖客攻擊搶掠\n");
         set("attitude", "aggressive");
         set("class", "lvlin");
         set("str", 30);

@@ -228,7 +228,7 @@ int set_desc(int w_lv,string w_or,string w_name)
                         result2=HIM"看起來紫澄澄的，似乎十分沉重。\n"NOR;
                         break;
                 case "寒絲羽竹":
-                        result2=HIG"看起來晶瑩碧綠，透著絲絲的寒意。\n"NOR;
+                        result2=HIG"看起來晶瑩碧綠，透着絲絲的寒意。\n"NOR;
                         break;
                 case "隕星鐵石":
                         result2=BLK"看起來焦黑一片，看來是堅硬之極。\n"NOR;
@@ -251,22 +251,22 @@ int set_desc(int w_lv,string w_or,string w_name)
                 case 7:
                 case 8:
                 case 9:
-                        result3= "隱隱的散發著一絲令人不安的氣息。兵刃晃動，恍若"HIC"朔風出塞。\n"NOR;
+                        result3= "隱隱的散發着一絲令人不安的氣息。兵刃晃動，恍若"HIC"朔風出塞。\n"NOR;
                         break;
                 case 10:
                 case 11:
                 case 12:
-                        result3= "散發著一絲令人不安的氣息, 顯然普通兵器已不能和他相比了。兵刃晃動，恍若"HIC"白羽飄零。\n"NOR;
+                        result3= "散發着一絲令人不安的氣息, 顯然普通兵器已不能和他相比了。兵刃晃動，恍若"HIC"白羽飄零。\n"NOR;
                         break;
                 case 13:
                 case 14:
                 case 15:
-                        result3= "向外散發著一絲迷蒙的霧氣，竟有一種霸氣散發了出來。兵刃晃動，恍若"HIC"霜冷長河。\n"NOR;
+                        result3= "向外散發着一絲迷濛的霧氣，竟有一種霸氣散發了出來。兵刃晃動，恍若"HIC"霜冷長河。\n"NOR;
                         break;
                 case 16:
                 case 17:
                 case 18:
-                        result3= "一股霸氣直沖霄漢，直叫神驚鬼泣。兵刃晃動，恍若"HIC"雪落無聲。\n"NOR;
+                        result3= "一股霸氣直衝霄漢，直叫神驚鬼泣。兵刃晃動，恍若"HIC"雪落無聲。\n"NOR;
                         break;
                 case 19:
                 case 20:
@@ -281,18 +281,18 @@ int set_desc(int w_lv,string w_or,string w_name)
                 case 25:
                 case 26:
                 case 27:
-                        result3= "戾氣似乎削減了不少，一股溫和的王者之氣透了出來。兵刃晃動，恍若"HIC"青虹貫日。\n"NOR;
+                        result3= "戾氣似乎削減了不少，一股温和的王者之氣透了出來。兵刃晃動，恍若"HIC"青虹貫日。\n"NOR;
                         break;
                 case 28:
                 case 29:
                 case 30:
-                        result3= "一股溫和的王者之氣悠悠的散發了出來。兵刃晃動，恍若"HIC"冷月斷魂。\n"NOR;
+                        result3= "一股温和的王者之氣悠悠的散發了出來。兵刃晃動，恍若"HIC"冷月斷魂。\n"NOR;
                         break;
                 default:
-                        result3= "一種莊嚴，溫和，凜然而不可侵犯的氣息讓人不敢有一絲褻瀆之意, 它已經返樸歸真，成為真正的上古神兵。兵刃晃動，直欲"HIC"氣沖鬥牛。\n"NOR;
+                        result3= "一種莊嚴，温和，凜然而不可侵犯的氣息讓人不敢有一絲褻瀆之意, 它已經返樸歸真，成為真正的上古神兵。兵刃晃動，直欲"HIC"氣衝斗牛。\n"NOR;
         }
 
-        result4="上面用小篆刻著一行小字：\n\t"+player_name+"鑄于"+make_time+"\n";
+        result4="上面用小篆刻着一行小字：\n\t"+player_name+"鑄於"+make_time+"\n";
         result=result1+result2+result3+result4;
         weapon->set("long",result);
 

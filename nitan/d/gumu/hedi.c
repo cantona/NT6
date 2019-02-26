@@ -8,7 +8,7 @@ void create()
         set("short", HIR"暗流河底"NOR);
         set("long", @LONG
 你沒在水中，感覺似乎是到了水底,水勢已不似剛才那麼迅急，水壓卻是更甚從前。憋得你就要透不過氣來了，你情急
-下急急審視四周尋找出路,發覺上方(southup)隱隱透著亮光,不覺
+下急急審視四周尋找出路,發覺上方(southup)隱隱透着亮光,不覺
 心下一喜,不急細想就欲向上浮去.
 LONG
         );
@@ -40,10 +40,10 @@ int do_swim(string arg)
         me=this_player();
 
         if ( !arg || arg != "southup" )
-                return notify_fail("你要遊向哪裡？\n");
+                return notify_fail("你要遊向哪裏？\n");
 
         if ( me->is_busy() || me->is_fighting())
-                return notify_fail("你正忙著哪！\n");
+                return notify_fail("你正忙着哪！\n");
 
         if (arg =="southup")
         {

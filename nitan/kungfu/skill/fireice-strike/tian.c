@@ -1,5 +1,5 @@
 // This program is a part of NT MudLIB
-// binghuo.c 烈燄寒冰掌--
+// binghuo.c 烈焰寒冰掌--
 
 #include <ansi.h>
 #include <combat.h>
@@ -24,7 +24,7 @@ int perform(object me, object target)
                 return notify_fail("只有空手才能施展「冰火二重天」。\n");
 
         if( (int)me->query_skill("fireice-strike", 1) < 150 )
-                return notify_fail("你的烈燄寒冰掌功夫還不夠嫻熟，不會使用「冰火二重天」。\n");
+                return notify_fail("你的烈焰寒冰掌功夫還不夠嫻熟，不會使用「冰火二重天」。\n");
 
         if(me->query_skill("yunv-xinfa", 1) < 120)
                 return notify_fail("以你現在的玉女心法還使不出「冰火二重天」。\n");
@@ -39,7 +39,7 @@ int perform(object me, object target)
                 return notify_fail("你的真氣不夠！\n");
 
         if( !living(target) )
-                return notify_fail("對方已經這樣了，用不著使這麼大力氣吧。\n");
+                return notify_fail("對方已經這樣了，用不着使這麼大力氣吧。\n");
 
         if ("jiuyang-shengong" == target->query_skill_mapped("force"))
         {
@@ -101,7 +101,7 @@ int perform2(object me, object target)
         if( query("neili", me)<600 )
                 return notify_fail("你待要再出第二掌，卻發現自己的內力不夠了！\n");
 
-        msg = HIB "\n接著" HIB "$N" HIB "你揮出右手，手心竟是暗隱寒勁，以巧妙角度向" HIB "$n" HIB "拍過去!\n"NOR;
+        msg = HIB "\n接着" HIB "$N" HIB "你揮出右手，手心竟是暗隱寒勁，以巧妙角度向" HIB "$n" HIB "拍過去!\n"NOR;
         ap = attack_power(me, "strike");
         dp = defense_power(target, "dodge");
         if (ap / 2 + random(ap) > dp)

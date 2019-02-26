@@ -140,7 +140,7 @@ void random_move()
                 env = environment(this_object());
                 message_vision("$N急急忙忙的走了。\n", this_object());
 
-                CHANNEL_D->channel_broadcast("mess", "聽說" +
+                CHANNEL_D->channel_broadcast("mess", "聽説" +
                         env->short() + HIW "(" + LOOK_CMD->locate(base_name(env)) + ")一帶出現的" +
                         HIR + this_object()->short() + HIG "消失了。\n" NOR);
 
@@ -179,7 +179,7 @@ varargs void die(object killer)
                 addn("eff_jing", query("max_jing") / 10);
                 addn("qi", query("max_qi") / 10);
                 addn("eff_qi", query("max_qi") / 10);
-                message_vision(HIR "\n$N" HIR "大喝一聲，運用秘法，氣血有所回升！\n\n" NOR, me);
+                message_vision(HIR "\n$N" HIR "大喝一聲，運用祕法，氣血有所回升！\n\n" NOR, me);
                 return;
         }
 

@@ -139,7 +139,7 @@ mapping *quest = ({
         ]),
         ([
                 "id":          "fan yifei",
-                "name":        "范一飛",
+                "name":        "範一飛",
                 "type":        "殺",
                 "bonus":       86,
                 "msg":        "",
@@ -379,7 +379,7 @@ mapping *quest = ({
         ]),
         ([
                 "id":          "zhong wanchou",
-                "name":        "鐘萬仇",
+                "name":        "鍾萬仇",
                 "type":        "殺",
                 "bonus":       68,
                 "msg":        "",
@@ -515,7 +515,7 @@ mapping *quest = ({
         ]),
         ([
                 "id":          "wei shi",
-                "name":        "錦衣衛士",
+                "name":        "錦衣衞士",
                 "type":        "殺",
                 "bonus":       64,
                 "msg":        "",
@@ -611,7 +611,7 @@ mapping *quest = ({
         ]),
         ([
                 "id":          "xian laoban",
-                "name":        "冼老板",
+                "name":        "冼老闆",
                 "type":        "殺",
                 "bonus":       80,
                 "msg":        "",
@@ -667,7 +667,7 @@ mapping *quest = ({
         ]),
         ([
                 "id":          "yang laoban",
-                "name":        "楊老板",
+                "name":        "楊老闆",
                 "type":        "殺",
                 "bonus":       80,
                 "msg":        "",

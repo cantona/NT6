@@ -15,7 +15,7 @@ mapping *msg = ({
         "force" : 260,
         "damage_type": "刺傷",
 ]),
-([        "action":"$N使出隨緣三劍中第三招「劍霸天下」，人影和著劍光風一般擊向$n",
+([        "action":"$N使出隨緣三劍中第三招「劍霸天下」，人影和着劍光風一般擊向$n",
         "damage": 330,
         "force" : 300,
         "damage_type": "刺傷",

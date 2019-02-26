@@ -5,10 +5,10 @@ inherit F_MASTER;
 
 void create()
 {
-        set_name("全金發", ({ "quan jinfa", "quan" }));
+        set_name("全金髮", ({ "quan jinfa", "quan" }));
         set("title", "江南七俠");
         set("nickname", HIC"鬧市俠隱"NOR);
-        set("long", "那人五短身材，頭戴小氈帽，白凈面皮，手裡提了一桿秤，一
+        set("long", "那人五短身材，頭戴小氈帽，白淨面皮，手裏提了一杆秤，一
 個竹簍，似是個小商販。\n");
         set("gender", "男性");
         set("age", 25);
@@ -54,7 +54,7 @@ void create()
                 "韓寶駒"   : "那是我三哥。\n",
                 "南希仁"   : "那是我四哥。\n",
                 "張阿生"   : "那是我五哥。\n",
-                "全金發"   : "就是我了。\n",
+                "全金髮"   : "就是我了。\n",
                 "韓小瑩"   : "那是我七妹。\n",
         ]));
 

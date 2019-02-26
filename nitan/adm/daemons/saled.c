@@ -45,7 +45,7 @@ protected void log_buyinfo(object ob, string which, int value)
         string buyinfo;
 
         buyinfo = MEMBER_D->db_query_member(ob, "buyinfo");
-        buyinfo += sprintf("%s(%s)于%s花費 %d $NT購買物品 %s 1。\n",
+        buyinfo += sprintf("%s(%s)於%s花費 %d $NT購買物品 %s 1。\n",
                            ob->name(1),
                            query("id", ob),
                            TIME_D->replace_ctime(time()),
@@ -149,7 +149,7 @@ public string do_stock(object me, string arg)
                 set(key + "cnt", n - 1);
                 delete(key + "objects/" + n);
                 save();
-                return "錯誤！寄售失敗，請聯系管理員。\n";
+                return "錯誤！寄售失敗，請聯繫管理員。\n";
         } else {
                 save();
                 return data["name"] + "已經寄售好了！編號：" + n + " 。\n";
@@ -172,7 +172,7 @@ public string do_unstock(object me, string arg)
         kid = "data/" + id + "/objects";
         data = query(kid);
         if( sizeof(data) < 1 )
-                return "你什麼物品都沒有寄售著，還想拿走什麼？\n";
+                return "你什麼物品都沒有寄售着，還想拿走什麼？\n";
 
         if( sizeof(all_inventory(me)) >= MAX_ITEM_CARRIED )
                 return "你身上的東西太多了，沒法從貨架上取東西。\n";
@@ -254,7 +254,7 @@ public string do_buy(object me, string arg)
         int m;
 
         if( me->is_busy() )
-                return "什麼事都得等你忙完再說吧！\n";
+                return "什麼事都得等你忙完再説吧！\n";
 
         if( !arg || sscanf(arg, "%s from %s", arg, id) != 2 )
                 return "buy <某物> from <id>\n";
@@ -266,7 +266,7 @@ public string do_buy(object me, string arg)
         kid = "data/" + id + "/objects";
         data = query(kid);
         if( sizeof(data) < 1 )
-                return "他什麼物品都沒有寄售著。\n";
+                return "他什麼物品都沒有寄售着。\n";
 
         ks = keys(data);
         for( i = 0; i < sizeof(ks); i++ ) {
@@ -281,18 +281,18 @@ public string do_buy(object me, string arg)
                 value = data["value"];
                 money = MEMBER_D->db_query_member(me, "money");
                 if( money < value )
-                        return "對不起，您的泥潭金幣數量不夠，請沖值後再來！\n";
+                        return "對不起，您的泥潭金幣數量不夠，請衝值後再來！\n";
 
                 fees = (int)value * TAX / 100;
                 if( fees > 0 ) {
                         if( !MEMBER_D->player_pay(me, fees) ||
                             !MEMBER_D->player_pay(me, (value - fees), id) )
-                                return "購買物品失敗，請與本站巫師聯系！\n";
+                                return "購買物品失敗，請與本站巫師聯繫！\n";
                 }
                 else
                 {
                         if( !MEMBER_D->player_pay(me, value, id) )
-                                return "購買物品失敗，請與本站巫師聯系！\n";
+                                return "購買物品失敗，請與本站巫師聯繫！\n";
                 }
 
                 file = data["file"];
@@ -308,7 +308,7 @@ public string do_buy(object me, string arg)
                         if( ob->query_amount() )
                                 message_vision("$N買下了" + ob->short() + "。\n", me);
                         else
-                                message_vision("$N那裡買下了一"+query("unit", ob)+
+                                message_vision("$N那裏買下了一"+query("unit", ob)+
                                                 query("name", ob)+"。\n",me);
 
                         ob->move(me, 1);

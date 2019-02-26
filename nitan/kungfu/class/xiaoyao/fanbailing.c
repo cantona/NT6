@@ -10,7 +10,7 @@ string ask_me();
 
 void create()
 {
-        set_name("范百齡", ({ "fan bailing", "fan", "bailing" }));
+        set_name("範百齡", ({ "fan bailing", "fan", "bailing" }));
         set("long", "他是蘇星河的二弟子，通曉棋技。\n");
         set("gender", "男性");
         set("title", "逍遙派函谷八友");
@@ -105,7 +105,7 @@ string ask_me()
 
         addn("book_count", -1);
         command("say 好吧，那我就把它送給你了。\n");
-        message_vision(HIY"范百齡微笑著從懷中拿出了一本書，交了給$N\n\n"NOR,ob);
+        message_vision(HIY"範百齡微笑着從懷中拿出了一本書，交了給$N\n\n"NOR,ob);
         me=new("/clone/book/hand_book");
         me->move(ob);
         return "這本棋譜可千萬不要隨便給別人。\n";

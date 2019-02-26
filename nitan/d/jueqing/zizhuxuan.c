@@ -9,7 +9,7 @@ void create()
         set("short", "紫竹軒");
         set("long", @LONG
 到得此處，陣陣泥土的清香撲面而來，放眼四周只見不遠
-處有一露天亭閣(ting ge)掩映于翠竹之下。
+處有一露天亭閣(ting ge)掩映於翠竹之下。
 LONG);
 
         set("item_desc",([
@@ -35,7 +35,7 @@ LONG);
 
 string look_ge()
 {
-        return HIC "\n但見亭閣掩映于翠竹之下，之上立有一橫匾，上書："
+        return HIC "\n但見亭閣掩映於翠竹之下，之上立有一橫匾，上書："
                HIG "\n\n"
         "\t\t※※※※※※※        \n"
         "\t\t※※※※※※※        \n"

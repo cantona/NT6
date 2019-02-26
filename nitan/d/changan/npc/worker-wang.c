@@ -90,7 +90,7 @@ void heart_beat()
         ob = obs[0];
         owner = ob->query_owner();
         message_vision("$N看到$n押貨而來，連連點頭道：“很"
-                       "好！很好！就卸到這裡吧！”\n",
+                       "好！很好！就卸到這裏吧！”\n",
                        this_object(), owner);
         tell_object(owner,"你卸下"+query_temp("goods/name", ob)+
                     "，將" + ob->name() + "交給學徒拉走。\n");

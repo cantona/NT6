@@ -95,12 +95,12 @@ int do_cemote(string arg)
            }
            if (arg == "bye")
            {
-              write( MAG "你含淚凝望著你的愛侶，哽嚥道: 又要分手了，何時才能長相聚不分離呀......\n" NOR);
+              write( MAG "你含淚凝望着你的愛侶，哽咽道: 又要分手了，何時才能長相聚不分離呀......\n" NOR);
               tell_room(environment(me), CYN+(string)me->name()+
               "擁住"+(string)couple_ob->name()+"，深深的一吻。\n"
                 +NOR, ({me, couple_ob}));
                 tell_object(couple_ob, sprintf(MAG "%s %s
-                含淚凝望著你，哽嚥道: 又要分手了，何時才能長相聚不分離呀......\n"NOR,tmpstr1,me->name(1)));
+                含淚凝望着你，哽咽道: 又要分手了，何時才能長相聚不分離呀......\n"NOR,tmpstr1,me->name(1)));
            }
         }
 
@@ -140,9 +140,9 @@ int do_coupletalk(string arg)
                 tmpstr2 = "老婆";
         }
 
-        write(sprintf(MAG"你對%s %s 說：%s\n"NOR,
+        write(sprintf(MAG"你對%s %s 説：%s\n"NOR,
                 tmpstr2,couple_ob->name(1), arg ));
-        tell_object(couple_ob, sprintf(MAG "%s %s 對你說：%s\n"NOR,
+        tell_object(couple_ob, sprintf(MAG "%s %s 對你説：%s\n"NOR,
                tmpstr1,me->name(1), arg ));
 
         return 1;
@@ -195,7 +195,7 @@ void autoload(string arg)
                         tmpstr1 = "老婆";
                         tmpstr = "老公";
                 }
-                write(sprintf( MAG "你的%s也在這裡，快去找啦...\n"NOR,tmpstr1));
+                write(sprintf( MAG "你的%s也在這裏，快去找啦...\n"NOR,tmpstr1));
                 tell_object(couple_ob ,
                 sprintf( MAG "你的%s來啦,快去接...\n" NOR, tmpstr));
 //me->name(1)+"("+me->query("id")+")",environment(me))->query("name") );

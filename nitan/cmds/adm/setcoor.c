@@ -59,7 +59,7 @@ int main(object me, string arg)
                         delete("border", env);
                         return 1;
                 } else
-                        return notify_fail("這裡本來就不是邊界。\n");
+                        return notify_fail("這裏本來就不是邊界。\n");
         }
 
         if( member_array(arg, keys(map_dirs)) != -1 ) {
@@ -98,9 +98,9 @@ int main(object me, string arg)
                         clear_old_coor(env);
 
                 if( query("coor", env) != 0 )
-                        write("房間 " + base_name(env) + " 坐標重新設定成功。\n");
+                        write("房間 " + base_name(env) + " 座標重新設定成功。\n");
                 else
-                        write("房間 " + base_name(env) + " 坐標設定成功。\n");
+                        write("房間 " + base_name(env) + " 座標設定成功。\n");
                 set("coor/x", x, env);
                 set("coor/y", y, env);
                 set("coor/z", z, env);
@@ -143,7 +143,7 @@ int non_recur_do(object room, int x, int y, int z, string prefix)
                         x, y, z));
         write_file(base_name(room) + ".c", file, 1);
         file_count ++;
-        write("房間 " + base_name(room) + " 坐標設定成功。\n");
+        write("房間 " + base_name(room) + " 座標設定成功。\n");
         all += ([base_name(room) : room]);
         roomlist += ([base_name(room) : room]);
 
@@ -208,7 +208,7 @@ int non_recur_do(object room, int x, int y, int z, string prefix)
                                                 x1, y1, z1));
                                 write_file(base_name(next_room) + ".c", file, 1);
                                 file_count ++;
-                                write("房間 " + base_name(next_room) + " 坐標設定成功。\n");
+                                write("房間 " + base_name(next_room) + " 座標設定成功。\n");
 
                                 all += ([base_name(next_room) : next_room]);
                                 roomlist += ([base_name(next_room) : next_room]);

@@ -5,7 +5,7 @@ void create()
 {
         set_name("毒郎中", ({ "du langzhong", "langzhong" }));
         set("long", 
-                "一個面目兇神惡剎的中年人，現在在到處收集毒藥。\n");
+                "一個面目凶神惡剎的中年人，現在在到處收集毒藥。\n");
         set("gender", "男性");
         set("age", 50);
         set("attitude", "peaceful");

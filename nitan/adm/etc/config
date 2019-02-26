@@ -1,4 +1,4 @@
-# 發布版本的服務器地址(local表示本地)
+# 發佈版本的服務器地址(local表示本地)
 release server : local
 
 # 版本服務器接收的可同步服務器地址
@@ -7,7 +7,7 @@ release server : local
 219.150.131.179 3000 : valid
 61.158.198.165 3000 : valid
 
-# 本地能夠接納的最大用戶數目
+# 本地能夠接納的最大用户數目
 max users : 500
 
 # 本地限制巫師登錄的等級
@@ -54,11 +54,11 @@ smtp domain : smtp
 # 系統使用SMTP服務器時填寫的發送者
 smtp sender : lonely21@me.com
 
-# SMTP認証信息
+# SMTP認證信息
 smtp auth user : lonely21
 smtp auth password : abcdefg123456
 
-# 和本系統相聯系的MUD服務器
+# 和本系統相聯繫的MUD服務器
 mudlist1 : 222.210.127.125 2004              # 電信
 mudlist2 : 61.139.77.195 3004                # yh
 
@@ -80,6 +80,6 @@ mysql database : nitan
 # 本地服務器的地址用來漫遊確定玩家數據位置
 local host : 219.150.131.179
 
-# 設置了手工同步版本的標志
+# 設置了手工同步版本的標誌
 # manual_synchronize : 1
 

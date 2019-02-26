@@ -8,7 +8,7 @@ void create()
         set("short", "玄冰室");
         set("long", @LONG
 這是昔日天山童姥修練內功的地方。屋子正中有一塊千年玄冰 (
-ice)，冰上冒出絲絲寒氣，屋裡因此寒氣逼人，你不由得打了一個寒
+ice)，冰上冒出絲絲寒氣，屋裏因此寒氣逼人，你不由得打了一個寒
 顫。
 LONG );
         set("exits", ([
@@ -35,7 +35,7 @@ int exercise_improve()
         {
                 if (random(5) == 0)
                         tell_object(me, HIW "\n你運用八荒六合惟我獨尊功"
-                                        "抵御寒氣，緩緩行功。\n");
+                                        "抵禦寒氣，緩緩行功。\n");
                 return me->query_skill("force") / 10;
         }
 

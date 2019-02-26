@@ -9,9 +9,9 @@ inherit F_CLEAN_UP;
 int can_learn(object me, string skill);
 
 string *reject_msg = ({
-        "說道：您太客氣了，這怎麼敢當？\n",
-        "像是受寵若驚一樣，說道：請教？這怎麼敢當？\n",
-        "笑著說道：您見笑了，我這點雕蟲小技怎夠資格指點您什麼？\n",
+        "説道：您太客氣了，這怎麼敢當？\n",
+        "像是受寵若驚一樣，説道：請教？這怎麼敢當？\n",
+        "笑着説道：您見笑了，我這點雕蟲小技怎夠資格指點您什麼？\n",
 });
 
 void create() { seteuid(getuid()); }
@@ -82,7 +82,7 @@ int main(object me, string arg)
 
         if( !living(ob) )
                 return notify_fail("嗯……你得先把" + ob->name() +
-                                   "弄醒再說。\n");
+                                   "弄醒再説。\n");
 
         if( !me->is_apprentice_of(ob) &&
             (!(fams=query("reborn/fams", me)) || member_array(ob->query_family(), fams) == -1) ||
@@ -101,18 +101,18 @@ int main(object me, string arg)
                 return notify_fail("這項技能你恐怕必須找別人學了。\n");
 
         if( ob->is_fighting() )
-                return notify_fail(ob->name() + "忙著料理別人，沒空理你耶。\n");
+                return notify_fail(ob->name() + "忙着料理別人，沒空理你耶。\n");
 
         flag = query("no_teach/"+skill, ob);
         if( functionp(flag) ) 
                 flag = evaluate(flag, ob);  
         if( stringp(flag) ) {
-                message_vision(CYN "$N" CYN "搖搖頭，說道：" + flag + "\n" NOR, ob);
+                message_vision(CYN "$N" CYN "搖搖頭，説道：" + flag + "\n" NOR, ob);
                 return 1;
         } else if( intp(flag) && flag ) {
                 if( flag != -1 )
                         // show the messaeg if the result was not -1
-                        write(CYN + ob->name() + CYN "說道：對不起，" +
+                        write(CYN + ob->name() + CYN "説道：對不起，" +
                               to_chinese(skill) + "可不能隨便傳授。\n" NOR);
                 return 1;
         }
@@ -120,7 +120,7 @@ int main(object me, string arg)
         if( /*me->is_apprentice_of(ob) &&*/
             SKILL_D(skill)->type() == "martial" &&
             me->query_skill(skill, 1) >= SKILL_D(skill)->valid_learn_level() ) {
-                write(ob->name() + "說：嗯.... 你的" + to_chinese(skill) +
+                write(ob->name() + "説：嗯.... 你的" + to_chinese(skill) +
                       "功力已經是非同凡響了，我就不再教你，你自己多研究吧。\n");
                 return 1;
         }
@@ -281,7 +281,7 @@ int can_learn(object me, string skill)
                         return notify_fail(HIR "你發現自身所學的" HIY +
                                            to_chinese(skill_name) + HIR
                                            "和" HIY + to_chinese(skill) +
-                                           HIR "沖突不已，根本沒辦法並"
+                                           HIR "衝突不已，根本沒辦法並"
                                            "存。\n" NOR);
         }
 
@@ -295,7 +295,7 @@ int help(object me)
 
 這個指令可以讓你向別人請教有關某一種技能的疑難問題，當然，你請教的對象在這
 項技能上的造詣必須比你高，而你經由這種方式學習得來的技能也不可能高於你所請
-教的人，然而因為這種學習方式相當於一種「經驗的傳承」，因此學習可以說是熟悉
+教的人，然而因為這種學習方式相當於一種「經驗的傳承」，因此學習可以説是熟悉
 一種新技能最快的方法。
 
 此外學習也需要消耗一些精力，而消耗的精力跟你自己、與你學習對象的悟性有關。

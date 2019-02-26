@@ -12,7 +12,7 @@ int main(object me, string arg)
         int i;
         int count;
 
-        if (! arg) return notify_fail("你要脫掉什麼？\n");
+        if (! arg) return notify_fail("你要脱掉什麼？\n");
 
         if (arg == "all")
         {
@@ -20,9 +20,9 @@ int main(object me, string arg)
                 for (count = 0, i = 0; i < sizeof(inv); i++)
                         count += do_remove(me, inv[i]);
                 if (count)
-                        write("你脫完了。\n");
+                        write("你脱完了。\n");
                 else
-                        write("你什麼都沒有脫下來。\n");
+                        write("你什麼都沒有脱下來。\n");
                 return 1;
         }
 
@@ -66,7 +66,7 @@ int do_remove(object me, object ob)
                                 case "armor":
                                 case "surcoat":
                                 case "boots":
-                                        str = YEL "$N將$n" YEL "脫了下來。\n" NOR;
+                                        str = YEL "$N將$n" YEL "脱了下來。\n" NOR;
                                         break;
                                 case "bandage":
                                         str = YEL "$N將$n" YEL "從傷口處拆了下來。\n" NOR;
@@ -75,7 +75,7 @@ int do_remove(object me, object ob)
                                         str = YEL "$N卸除$n" YEL "的裝備。\n" NOR;
                         }
                 if( query_temp("no_wear", ob) )
-                        str += "脫下" + ob->name() + "以後你覺得舒服多了。\n";
+                        str += "脱下" + ob->name() + "以後你覺得舒服多了。\n";
                 message_vision(str, me, ob);
                 return 1;
         } else
@@ -87,7 +87,7 @@ int help(object me)
         write(@HELP
 指令格式 : remove all | <物品名稱>
  
-這個指令讓你脫掉身上某件防具.
+這個指令讓你脱掉身上某件防具.
  
 HELP );
         return 1;

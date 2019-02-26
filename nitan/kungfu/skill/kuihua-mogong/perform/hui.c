@@ -53,7 +53,7 @@ int perform(object me, object target)
                 return notify_fail("你現在真氣不夠，難以施展" HUI "。\n");
 
         if (! living(target))
-                return notify_fail("對方都已經這樣了，用不著這麼費力吧？\n");
+                return notify_fail("對方都已經這樣了，用不着這麼費力吧？\n");
 
         lvl = me->query_skill("kuihua-mogong", 1);
 
@@ -91,7 +91,7 @@ int perform(object me, object target)
         if( query("can_perform/kuihua-mogong/hui2", me) )
         {
         // 第二式-----滅地式        
-        message_combatd(sort_msg(HIM "\n緊跟著$N" HIM "身形一晃，已沒了蹤跡，剎那間，$n" HIM "只覺得地動"
+        message_combatd(sort_msg(HIM "\n緊跟着$N" HIM "身形一晃，已沒了蹤跡，剎那間，$n" HIM "只覺得地動"
                      "山搖，風起雲湧，正猶豫間，$N" HIM "已躥至$n" HIM "身後，一招"
                      "「" HIR "滅地訣" HIM "」使出 ……\n" NOR), me, target);
 

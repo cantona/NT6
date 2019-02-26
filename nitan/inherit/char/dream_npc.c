@@ -97,7 +97,7 @@ void die(object killer)
                 if( query("qi") > query("max_qi") ) set("qi", query("max_qi"));
                 addn("eff_qi", query("max_qi") / 10);
                 if( query("eff_qi") > query("max_qi") ) set("eff_qi", query("max_qi"));
-                message_vision(HIR "\n$N" HIR "全身泛起一道紅光，奇跡般的活了下來！\n\n" NOR, this_object());
+                message_vision(HIR "\n$N" HIR "全身泛起一道紅光，奇蹟般的活了下來！\n\n" NOR, this_object());
                 return;
         }
         
@@ -169,7 +169,7 @@ void die(object killer)
                                         exp2 = exp2 + exp2 / 10;
                                         pot2 = pot2 + pot2 / 10;
                                 }
-                                // 佩帶十周年紀念勛章增加5%
+                                // 佩帶十週年紀念勛章增加5%
                                 if( query_temp("apply/year10", tob) )
                                 {
                                         exp2 = exp2 + exp2 / 20;
@@ -194,7 +194,7 @@ void die(object killer)
                                 exp = exp + exp / 10;
                                 pot = pot + pot / 10;
                         }
-                        // 佩帶十周年紀念勛章增加5%
+                        // 佩帶十週年紀念勛章增加5%
                         if( query_temp("apply/year10", dob) )
                         {
                                 exp = exp + exp / 20;
@@ -208,14 +208,14 @@ void die(object killer)
                 }
         }
 
-        // 一定幾率掉物品在殺我的人身上dob
+        // 一定機率掉物品在殺我的人身上dob
         if (objectp(dob) && environment(dob) == environment(this_object()))
         {
                 key_s_gift = keys(oblist);
                 s_gift = key_s_gift[random(sizeof(key_s_gift))];
                 gift_point = oblist[s_gift];
 
-                // 判斷幾率
+                // 判斷機率
                 if( random(10) == 1
                         && random(MAX_POINT / ITEM_D->gift_point()) < gift_point )
                 {
@@ -248,7 +248,7 @@ void die(object killer)
                 }
         }
 
-        // 1/550000幾率掉出無名銅人
+        // 1/550000機率掉出無名銅人
         if (random(550000) == 1 && objectp(dob))
         {
                 object ob_tongren;
@@ -261,7 +261,7 @@ void die(object killer)
                 write(HIR "你得到一個" + ob_tongren->name() + HIR "。\n");
         }
 
-        //1/5000幾率掉出蓬萊仙果
+        //1/5000機率掉出蓬萊仙果
         if (random(5000) == 1 && objectp(dob))
         {
                 object ob_xianguo;

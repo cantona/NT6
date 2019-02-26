@@ -34,16 +34,16 @@ int perform(object me, object target)
                 return notify_fail("你現在內力太弱，不能使用奪命連環爪。\n");
 
        if (! living(target))
-              return notify_fail("對方都已經這樣了，用不著這麼費力吧？\n");
+              return notify_fail("對方都已經這樣了，用不着這麼費力吧？\n");
 
         switch(query("character", me) )
         {
         case "心狠手辣":
-                msg = HIR "$N" HIR "桀桀怪笑，手指微微彎曲，倏的沖$n"
+                msg = HIR "$N" HIR "桀桀怪笑，手指微微彎曲，倏的衝$n"
                       HIR "頭頂抓下。\n" NOR;
                 break;
 
-        case "陰險姦詐":
+        case "陰險奸詐":
                 msg = HIR "$N" HIR "冷笑數聲，手指微微彎曲成爪，飛向$n"
                       HIR "頭頂抓下。\n" NOR;
                 break;
@@ -77,13 +77,13 @@ int perform(object me, object target)
                 addn("neili", -150, me);
                 me->start_busy(3);
                 msg += HIC "$p" HIC "暗叫不好，急忙閃頭，可是$N"
-                       HIC "手臂□□作響，忽然暴長，迅論無比的抓向$p。\n" NOR;
+                       HIC "手臂咔咔作響，忽然暴長，迅論無比的抓向$p。\n" NOR;
                 dp = defense_power(target, "dodge");
 
                 if (ap / 2 + random(ap) > dp)
                 {
                         msg += COMBAT_D->do_damage(me, target, UNARMED_ATTACK, damage, 65,
-                                                   HIR "$n" HIR "哪裡料到$N" HIR
+                                                   HIR "$n" HIR "哪裏料到$N" HIR
                                                    "竟有如此變招，不及躲閃，肩頭被$P"
                                                    HIR "抓了個鮮血淋漓。\n" NOR);
                 } else

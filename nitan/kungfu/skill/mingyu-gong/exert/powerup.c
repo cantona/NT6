@@ -24,7 +24,7 @@ int exert(object me, object target)
         me->receive_damage("qi", 0);
 
         message_combatd(HIR "$N" HIR "運起玉明功，全身皮膚瞬間變得晶瑩無比，光滑異常，整個人\n"
-                        "神聖而不可侵犯，散發著令人心顫的寒氣。\n" NOR, me);
+                        "神聖而不可侵犯，散發着令人心顫的寒氣。\n" NOR, me);
 
         addn_temp("apply/attack", skill*2/5, me);
         addn_temp("apply/parry", skill/3, me);

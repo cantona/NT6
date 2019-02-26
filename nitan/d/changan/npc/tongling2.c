@@ -4,7 +4,7 @@ inherit NPC;
 
 void create()
 {
-        set_name("蕭群", ({ "xiao qun"}) );
+        set_name("蕭羣", ({ "xiao qun"}) );
         set("gender", "男性");
         set("age", 30);
         set("combat_exp", 200000);

@@ -33,10 +33,10 @@ int perform(object me, object target)
                 return notify_fail("你的杖法還不到家，無法使用「點字訣」！\n");
 
         if (! living(target))
-              return notify_fail("對方都已經這樣了，用不著這麼費力吧？\n");
+              return notify_fail("對方都已經這樣了，用不着這麼費力吧？\n");
 
         msg = HIG "$N" HIG "手中的" + weapon->name() +
-              HIG "忽然變得詭秘異常，忽伸忽縮，籠罩了$n" HIG "多處大穴！\n" NOR;
+              HIG "忽然變得詭祕異常，忽伸忽縮，籠罩了$n" HIG "多處大穴！\n" NOR;
 
         ap = attack_power(me, "staff");
         dp = defense_power(target, "dodge");

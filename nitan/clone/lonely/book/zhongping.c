@@ -55,7 +55,7 @@ int do_yanjiu(string arg)
 
         if (me->is_busy())
         {
-                write("你現在正忙著呢。\n");
+                write("你現在正忙着呢。\n");
                 return 1;
         }
 
@@ -67,7 +67,7 @@ int do_yanjiu(string arg)
 
         if( query("no_fight", where) && query("doing", me) != "scheme" )
         {
-                write("你無法在這裡靜下心來研讀槍譜。\n");
+                write("你無法在這裏靜下心來研讀槍譜。\n");
                 return 1;
         }
 
@@ -97,7 +97,7 @@ int do_yanjiu(string arg)
 
         if( query("jing", me)<100 )
         {
-                write("你現在過于疲倦，無法專心下來研讀新知。\n");
+                write("你現在過於疲倦，無法專心下來研讀新知。\n");
                 return 1;
         }
 
@@ -107,7 +107,7 @@ int do_yanjiu(string arg)
                 return 1;
         }
 
-        // 中平槍法絕招定岳七方
+        // 中平槍法絕招定嶽七方
         if (pfm == "ding")
         {
                 if( query("can_perform/zhongping-qiang/ding", me) )
@@ -118,13 +118,13 @@ int do_yanjiu(string arg)
 
                 if (! (int)me->query_skill("zhongping-qiang"))
                 {
-                        write("你研究了半天，發現槍譜所記載的絕招與你毫無關系。\n");
+                        write("你研究了半天，發現槍譜所記載的絕招與你毫無關係。\n");
                         return 1;
                 }
 
                 if ((int)me->query_skill("zhongping-qiang", 1) < 120)
                 {
-                        write("你發現槍譜上記載的絕招過于深奧，一時難以明白。\n");
+                        write("你發現槍譜上記載的絕招過於深奧，一時難以明白。\n");
                         return 1;
                 }
 
@@ -138,9 +138,9 @@ int do_yanjiu(string arg)
                 { 
                         message_vision(HIR "$N" HIR "仔細的研讀槍譜上記載的絕招，似"
                                        "有所悟。\n" NOR, me);
-                        tell_object(me, HIY "過得良久，陡然間你雙目一亮，終于領悟了"
-                                        "槍譜中所記載的中平槍法絕技「定岳七方」的奧"
-                                        "秘！\n" NOR + HIC "你學會了「定岳七方」。\n" NOR);
+                        tell_object(me, HIY "過得良久，陡然間你雙目一亮，終於領悟了"
+                                        "槍譜中所記載的中平槍法絕技「定嶽七方」的奧"
+                                        "祕！\n" NOR + HIC "你學會了「定嶽七方」。\n" NOR);
 
                         if (me->can_improve_skill("club"))
                                 me->improve_skill("club", 1500000);

@@ -23,7 +23,7 @@ void create()
         set("core", "杏核");         //name
         set("core_id", ({"xing hu", "apricot core", "core", "hu"}) ); //id
         set("core_unit", "個");        //unit
-        set("core_long", "一個啃得幹幹凈凈的杏核。\n"); //long
+        set("core_long", "一個啃得乾乾淨淨的杏核。\n"); //long
         set("gifts", ([
                 "int" : 1,
         ]));

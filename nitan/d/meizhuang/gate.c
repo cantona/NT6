@@ -6,9 +6,9 @@ void create()
         set("short", "梅莊大門");
         set("long", @LONG
 走過一大片梅林，走上一條青石板大路，來到一座朱門白牆的大
-莊院外，行到近處，見大門外寫著『梅莊』兩個大字，旁邊署著『虞
+莊院外，行到近處，見大門外寫着『梅莊』兩個大字，旁邊署着『虞
 允文題』四字。那虞允文是南宋破金的大功臣，這幾個字儒雅之中透
-著勃勃英氣。
+着勃勃英氣。
 LONG );
         set("outdoors", "meizhuang");
         set("exits", ([
@@ -29,7 +29,7 @@ int do_knock(string arg)
         object room, me = this_player();
 
         if (query("exits/north"))
-                return notify_fail("門已經是開著的，不用再費力去敲了！\n");
+                return notify_fail("門已經是開着的，不用再費力去敲了！\n");
 
         if (arg == "4")
         {
@@ -65,7 +65,7 @@ int do_knock(string arg)
                 {
                         set_temp("step", 0, me);
                         set("exits/north", __DIR__"tianjing");
-                        message("vision", HIY "你靜靜的等候，過了半晌，大門終于緩緩"
+                        message("vision", HIY "你靜靜的等候，過了半晌，大門終於緩緩"
                                           "的打開了。\n" NOR, this_object() );
 
                         if (! (room = find_object(__DIR__"tianjing")))

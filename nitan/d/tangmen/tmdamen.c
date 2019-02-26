@@ -10,10 +10,10 @@ void create()
 {
         set("short","蜀中唐門");
         set("long",
-"一座宏偉建築，一堵裡許長的紅牆，一個鎦金的大匾(bian)。好大的\n"
-"氣派，一股敬意油然而生，這就是蜀中唐門的門樓了。但這裡冷冷清清的，\n"
-"好象沒有多少人來過這裡。也許是唐門人不在江湖走動的原因吧。門口站\n"
-"著幾個唐門的弟子。\n"
+"一座宏偉建築，一堵裏許長的紅牆，一個鎦金的大匾(bian)。好大的\n"
+"氣派，一股敬意油然而生，這就是蜀中唐門的門樓了。但這裏冷冷清清的，\n"
+"好像沒有多少人來過這裏。也許是唐門人不在江湖走動的原因吧。門口站\n"
+"着幾個唐門的弟子。\n"
 );
         set("outdoors", "tangmen");
         set("item_desc", ([
@@ -46,7 +46,7 @@ string look_bian()
         {
                
               set_temp("dongdong", 1, me);
-              return HIC"匾後面好象有一個東西! 你可以取下來看看。\n"NOR;
+              return HIC"匾後面好像有一個東西! 你可以取下來看看。\n"NOR;
         }
         
         return "四個鎦金大字："+HIY"蜀 中 唐 門 \n"NOR;
@@ -103,18 +103,18 @@ int valid_leave(object me, string dir)
                 }
                 if( query("family/family_name", me) != "唐門世家" )
                 {
-                        return notify_fail( "這位"+RANK_D->query_respect(me)+"，你已是武林中人，不知到此有何幹！\n");  
+                        return notify_fail( "這位"+RANK_D->query_respect(me)+"，你已是武林中人，不知到此有何干！\n");  
                 }    
                 if( query("tangmen/upshan", me) )
                 {
                         if( query("betrayer", me) )
                         {
-                                tell_object(me,"唐剛說道：“你這個可恥的家伙！”\n");
+                                tell_object(me,"唐剛説道：“你這個可恥的傢伙！”\n");
                                 return 0;
                         }
                         else 
                         {
-                                tell_object(me,"唐剛說道：進去吧！\n");
+                                tell_object(me,"唐剛説道：進去吧！\n");
                                 me->move("/d/tangmen/qianyuan");
                                 return 1;
                         }

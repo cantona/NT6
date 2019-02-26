@@ -23,7 +23,7 @@
 
                void listen_callback(int fd)
 
-          這裡的 fd 是正傾聽中的 socket。
+          這裏的 fd 是正傾聽中的 socket。
 
      傳回值：
           socket_listen() 傳回：

@@ -9,7 +9,7 @@ void create()
         set_name("金環蛇", ({ "snake", "jinhuan she","she","jinhuan" }) );
         set("race", "爬蛇");
         set("age", 8);
-        set("long", "一條全身閃著金光，繞著一圈圈圓環的毒蛇。\n");
+        set("long", "一條全身閃着金光，繞着一圈圈圓環的毒蛇。\n");
         set("attitude", "peaceful");
 
         set("str", 30);

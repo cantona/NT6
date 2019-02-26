@@ -35,10 +35,10 @@ int perform(object me, object target)
                 return notify_fail("你現在真氣不夠，難以施展" LEI "。\n");
 
         if (! living(target))
-                return notify_fail("對方都已經這樣了，用不著這麼費力吧？\n");
+                return notify_fail("對方都已經這樣了，用不着這麼費力吧？\n");
 
-        msg = HIY "只見$N" HIY "聚力于掌，平平推出，頓時掌風澎湃，掌力"
-              "攜著雷霆萬鈞之勢猛貫向$n" HIY "而去！\n" NOR;
+        msg = HIY "只見$N" HIY "聚力於掌，平平推出，頓時掌風澎湃，掌力"
+              "攜着雷霆萬鈞之勢猛貫向$n" HIY "而去！\n" NOR;
         
         ap = attack_power(me, "strike");
         dp = defense_power(target, "parry");
@@ -57,7 +57,7 @@ int perform(object me, object target)
                 me->start_busy(2);
                 addn("neili", -200, me);
                 msg += CYN "可是$p" CYN "看破了$N" CYN
-                       "的企圖，躲開了這招殺著。\n" NOR;
+                       "的企圖，躲開了這招殺着。\n" NOR;
         }
         message_combatd(msg, me, target);
 

@@ -38,7 +38,7 @@ mapping *action = ({
         "damage_type" : "割傷",
         "skill_name"  : "撥雲見月",
 ]),
-([      "action" : "$N神態悠閒，手中$w觸地，一招「對影三人」從不可思議的角度劃向$n的$l",
+([      "action" : "$N神態悠閒，手中$w觸地，一招「對影三人」從不可思議的角度划向$n的$l",
         "skill_name" : "對影三人",
         "force"  : 220,
         "attack" : 55,
@@ -49,7 +49,7 @@ mapping *action = ({
         "damage_type" : "割傷",
         "skill_name"  : "對影三人",
 ]),
-([      "action" : "$N手中$w手中$w不停地顫抖著，劍氣不斷的發出，這招「花前月下」齊齊罩向$n",
+([      "action" : "$N手中$w手中$w不停地顫抖着，劍氣不斷的發出，這招「花前月下」齊齊罩向$n",
         "skill_name" : "花前月下",
         "force"  : 255,
         "attack" : 65,
@@ -71,7 +71,7 @@ mapping *action = ({
         "damage_type" : "割傷",
         "skill_name"  : "常娥奔月",
 ]),
-([      "action" : "$N手中的$w帶起一陣狂風，頓時無數朵刀花夾帶著風雷之聲一招「刀光月影」朝$n的$l處砍去",
+([      "action" : "$N手中的$w帶起一陣狂風，頓時無數朵刀花夾帶着風雷之聲一招「刀光月影」朝$n的$l處砍去",
         "skill_name" : "刀光月影",
         "force"  : 320,
         "attack" : 80,
@@ -137,7 +137,7 @@ int practice_skill(object me)
 {
         object weapon;
 
-        return notify_fail("圓月刀法博大精深，無法靠著普通的練習提升。\n");
+        return notify_fail("圓月刀法博大精深，無法靠着普通的練習提升。\n");
         if( !objectp(weapon=query_temp("weapon", me) )
          || query("skill_type", weapon) != "blade" )
                 return notify_fail("你使用的武器不對。\n");

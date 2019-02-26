@@ -5,11 +5,11 @@ inherit F_VENDOR;
 
 void create()
 {
-        set_name("薛老板", ({ "xue laoban", "xue" }) );
+        set_name("薛老闆", ({ "xue laoban", "xue" }) );
         set("gender", "男性" );
         set("age", 32);
         set("long",
-                "這是一個經驗老到的生意人，一雙精明的眼睛不停的打量著你。\n");
+                "這是一個經驗老到的生意人，一雙精明的眼睛不停的打量着你。\n");
         set("combat_exp", 300);
         set("str", 17);
         set("dex", 20);

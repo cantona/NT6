@@ -66,7 +66,7 @@ int do_pass(string arg)
         if (! objectp(ob_leitai))
                 ob_leitai = load_object(LEITAI);
         if (! objectp(ob_leitai))
-                return notify_fail("擂台在哪裡？\n");
+                return notify_fail("擂台在哪裏？\n");
 
         message_vision("$N點點頭，對$n道：“你上去吧。”\n"
                        "只見$n摩拳擦掌，踴躍奔上台去。\n",

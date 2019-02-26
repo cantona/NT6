@@ -17,14 +17,14 @@ int main(object me, string arg)
 */
 
         if( query("no_magic", environment(me)) )
-                return notify_fail("這裡無法使用神通。\n");
+                return notify_fail("這裏無法使用神通。\n");
                 
         if( !arg ) return notify_fail("指令格式：conjure <神通> [on <目標>]\n");
         
         if( sscanf(arg, "%s on %s", spl, trg)==2 ) {
                 target = present(trg, environment(me));
                 if( !target ) target = present(trg, me);
-                if( !target ) return notify_fail("這裡沒有 " + trg + "。\n");
+                if( !target ) return notify_fail("這裏沒有 " + trg + "。\n");
         } else {
                 spl = arg;
                 target = 0;

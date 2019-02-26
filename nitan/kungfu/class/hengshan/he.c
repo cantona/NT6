@@ -8,7 +8,7 @@ inherit F_MASTER;
 void create()
 {
         set_name("儀和", ({ "yi he", "he" }) );
-        set("long", "她是一位中年女尼，她看起來不卑不亢，十分沉著老練。\n");
+        set("long", "她是一位中年女尼，她看起來不卑不亢，十分沉着老練。\n");
         set("gender", "女性");
         set("class", "bonze");
         set("age", 35);
@@ -77,13 +77,13 @@ void attempt_apprentice(object ob)
         if( query("combat_exp", ob)>10000 && query("family/family_name", ob) != "恆山派" )
         {
                 command("say 我恆山派注重清修，對弟子要求能忍受寂寞。");
-                command("say 在江湖閱歷方面，" + RANK_D->query_respect(ob) +
+                command("say 在江湖閲歷方面，" + RANK_D->query_respect(ob) +
                         "經歷豐富，是否能在恆山修道？");
                 return;
         }
         if( query("shen", ob)<0 )
         {
-                command("say 我恆山乃是堂堂五岳劍派之一，對弟子要求極嚴。");
+                command("say 我恆山乃是堂堂五嶽劍派之一，對弟子要求極嚴。");
                 command("say 在德行方面，" + RANK_D->query_respect(ob) +
                         "是否還做得不夠？");
                 return;

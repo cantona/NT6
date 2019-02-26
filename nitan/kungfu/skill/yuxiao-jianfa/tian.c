@@ -40,7 +40,7 @@ int perform(object me)
                 return notify_fail("你現在的真氣不足，難以施展" + name() + "。\n");
 
         if (! living(target))
-                return notify_fail("對方都已經這樣了，用不著這麼費力吧？\n");
+                return notify_fail("對方都已經這樣了，用不着這麼費力吧？\n");
 
         msg = HIC "$N" HIC "一聲清嘯，手中" + weapon->name() +
               HIC "劍發琴音，閃動不止，劍影如夜幕般撲向$n" HIC "。\n" NOR;
@@ -55,12 +55,12 @@ int perform(object me)
                 qi_wound+= query("jiali", me);
                 msg += COMBAT_D->do_damage(me, target, WEAPON_ATTACK, qi_wound, 70,
                                            HIR "$n" HIR "頓時覺得眼前金光亂閃動，雙耳嗡嗡"
-                                           "內鳴，全身便如針紮一般！\n" NOR);
+                                           "內鳴，全身便如針扎一般！\n" NOR);
                 me->start_busy(1 + random(2));
         } else
         {
                 addn("neili", -50, me);
-                msg += CYN "可是$n" CYN "寧心靜氣，隨手揮洒，將$N"
+                msg += CYN "可是$n" CYN "寧心靜氣，隨手揮灑，將$N"
                        CYN "的招數撇在一邊。\n"NOR;
                 me->start_busy(2);
         }

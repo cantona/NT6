@@ -30,7 +30,7 @@ void create()
                 "出家"  : "貧尼不剃度弟子。",
                 "還俗"  : "恆山弟子，不能還俗。",
                 "白雲熊膽丸" : (: ask_yao :),
-                "秘籍"         : (: ask_me :),
+                "祕籍"         : (: ask_me :),
                 "天長掌法譜" : (: ask_me :),
         ]));
         set("no_get",1);
@@ -130,7 +130,7 @@ void attempt_apprentice(object ob)
         }
         if( query("shen", ob)<100000 )
         {
-                command( "say 你若能多為俠義之舉，當能承我衣砵。\n");
+                command( "say 你若能多為俠義之舉，當能承我衣缽。\n");
                 return;
         }
         command("say 阿彌陀佛，善哉！善哉！好吧，我就收下你了。");
@@ -151,7 +151,7 @@ string ask_me()
                 return RANK_D->query_respect(this_player()) +
                 "與本派毫無瓜葛，我派的武功典籍可不能交給你。";
         if (query("book_count") < 1)
-                return "你來晚了，本派的秘籍不在此處。";
+                return "你來晚了，本派的祕籍不在此處。";
         addn("book_count", -1);
         ob = new("/clone/book/tianchang-zhangpu");
         ob->move(this_player());

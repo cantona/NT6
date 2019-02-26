@@ -9,7 +9,7 @@ string ask_yapu();
 void create()
 {
         set_name("家丁", ({ "jia ding", "ding" }));
-        set("long", "一個二十出頭的小伙子，身板結實，雙目有神，似乎練過幾年功夫。\n");
+        set("long", "一個二十出頭的小夥子，身板結實，雙目有神，似乎練過幾年功夫。\n");
         set("gender", "男性");
         set("age", 25);
 
@@ -59,7 +59,7 @@ void leave(object me)
         }
 
         else if(objectp(present(me, environment(jiading)))){
-        message_vision(CYN"$N說道：這麼久還捉不到那"+query("find_yapu_real")+"裝成的"+query("find_yapu")+"，我看今天是逮不到他了，不如先回歸雲莊吧。\n"NOR,jiading);
+        message_vision(CYN"$N説道：這麼久還捉不到那"+query("find_yapu_real")+"裝成的"+query("find_yapu")+"，我看今天是逮不到他了，不如先回歸雲莊吧。\n"NOR,jiading);
         command("sigh");
         message_vision("$N快步離開了。\n"NOR,jiading);
         destruct(jiading);
@@ -111,11 +111,11 @@ int do_recognize(string arg)
         if( query("recognized"))
                 return notify_fail("家丁已經指認出來對方了！\n");
         if( !living(jiading) )
-                return notify_fail("嗯....你得先把家丁弄醒再說。\n");
+                return notify_fail("嗯....你得先把家丁弄醒再説。\n");
         if( !arg )
                 return notify_fail("你要家丁指認誰？\n");
         if(!objectp(ob = present(arg, environment(this_player()))))
-                return notify_fail("這裡沒有這個人。\n");
+                return notify_fail("這裏沒有這個人。\n");
         if( query("th_victim", ob) )
                 return notify_fail(ob->name()+"已經被指認出來了！\n");
         if(ob == me)
@@ -125,16 +125,16 @@ int do_recognize(string arg)
         if( query("family/family_name", ob) == "桃花島" )
                 return notify_fail("你連桃花島的人物也認不出來？\n");
         if( me->is_busy() || me->is_fighting() )
-                return notify_fail("你正忙著呢。\n");
+                return notify_fail("你正忙着呢。\n");
         if( jiading->is_busy() || jiading->is_fighting() )
-                return notify_fail( "家丁正忙著呢。\n");
+                return notify_fail( "家丁正忙着呢。\n");
         if( query("no_fight", environment(me)) )
-                return notify_fail("這裡不能戰鬥，認出來也沒用。\n");
+                return notify_fail("這裏不能戰鬥，認出來也沒用。\n");
 
 
         me->start_busy(1);
 
-        message_vision("$N低聲在家丁耳邊說道：是不是這個"+ob->name()+"？\n",me,ob);
+        message_vision("$N低聲在家丁耳邊説道：是不是這個"+ob->name()+"？\n",me,ob);
         where = environment(ob);
 
         if( query("yapu_target", ob) == query("id", me )
@@ -309,7 +309,7 @@ int do_recognize(string arg)
         ob->prepare_skill("strike", "tie-zhang");
         addn("gain_exp", -20, ob);
         addn("gain_pot", -20, ob);
-        set("real_message", HIR"趟子手吃了一驚，臉上陡現殺氣，朝$N沖了過來！\n"NOR, ob);
+        set("real_message", HIR"趟子手吃了一驚，臉上陡現殺氣，朝$N衝了過來！\n"NOR, ob);
                 break;
                 
         case "shaolin" :
@@ -387,11 +387,11 @@ int do_recognize(string arg)
         ob->map_skill("parry", "luan-blade");
         
         set("real_message", "", ob);
-        message_vision(HIR"胡人雙眼一□，冷笑道：就憑你這"+RANK_D->query_rude(me)+"，也想跟"+RANK_D->query_self_rude(ob)+"作對？\n"NOR, me, ob);
+        message_vision(HIR"胡人雙眼一噔，冷笑道：就憑你這"+RANK_D->query_rude(me)+"，也想跟"+RANK_D->query_self_rude(ob)+"作對？\n"NOR, me, ob);
 
         {
         num = 1+random(3);
-        message_vision(HIR"胡人拍了拍手，身後突然躍出"+chinese_number(num)+"個鐵甲護衛，"+chinese_number(num+1)+"人向$N左右包抄！\n"NOR, me, ob);
+        message_vision(HIR"胡人拍了拍手，身後突然躍出"+chinese_number(num)+"個鐵甲護衞，"+chinese_number(num+1)+"人向$N左右包抄！\n"NOR, me, ob);
                     for (i=0; i<num; i++) {
                 huwei = new("/d/taohua/npc/mg_huwei");
                 set("combat_exp", exp/2+random(exp/1000), huwei);
@@ -524,7 +524,7 @@ int do_recognize(string arg)
         ob->prepare_skill("claw", "sanyin-zhua");
 
         set("real_message", "", ob);
-        message_vision(HIR"女孩眼珠一轉，微笑道：這位"+RANK_D->query_respect(me)+"，你該不是要捉我吧？那……我可要先下手□。\n"NOR, me);
+        message_vision(HIR"女孩眼珠一轉，微笑道：這位"+RANK_D->query_respect(me)+"，你該不是要捉我吧？那……我可要先下手。\n"NOR, me);
         
         ob->carry_object("/clone/drug/xxqingxin-san");
         ob->carry_object("/d/xingxiu/obj/lianxin");
@@ -539,7 +539,7 @@ int do_recognize(string arg)
 
         if( random(query("combat_exp", me))>2000000 && ob->query_skill("strike")>250 && query("neili", ob)>1000 && random(2) == 1){
         message_vision("$N把玉笛放到口邊，輕輕一吹，只聽一陣極尖極細的哨子聲遠遠傳了出去。\n", ob);
-        message_vision(HIR"隨著哨子聲，玉笛裡突然飛出藍印印的一點火星，火星陡地熄滅，隨即大亮，蓬的一聲響，騰向半空，升起有丈許，這才緩緩降落。\n"NOR, me);
+        message_vision(HIR"隨着哨子聲，玉笛裏突然飛出藍印印的一點火星，火星陡地熄滅，隨即大亮，蓬的一聲響，騰向半空，升起有丈許，這才緩緩降落。\n"NOR, me);
         new("/d/xingxiu/obj/flute_fire")->move(environment(me));
         addn("gain_exp", random(20)+50, ob);
         addn("gain_pot", random(10)+30, ob);
@@ -605,11 +605,11 @@ int do_bring(string arg)
         if( query("job_master") != query("id", me) )
                 return 0;
         if( !living(jiading) )
-                return notify_fail("嗯....你得先把家丁弄醒再說。\n");
+                return notify_fail("嗯....你得先把家丁弄醒再説。\n");
         if( !arg )
                 return notify_fail("你要家丁帶走誰？\n");
         if(!objectp(ob = present(arg, environment(this_player()))))
-                return notify_fail("這裡沒有這個人。\n");
+                return notify_fail("這裏沒有這個人。\n");
         if(ob == me)
                 return notify_fail("帶走自己？你到底在想什麼？\n");
         if(ob == jiading)
@@ -617,9 +617,9 @@ int do_bring(string arg)
         if( query("th_victim", ob) != query("id", me) )
                 return notify_fail("你無法確定"+ob->name()+"是不是你要捉的對象。\n");
         if( me->is_busy() || me->is_fighting() )
-                return notify_fail("你正忙著呢。\n");
+                return notify_fail("你正忙着呢。\n");
         if( jiading->is_busy() || jiading->is_fighting() )
-                return notify_fail( "家丁正忙著呢。\n");
+                return notify_fail( "家丁正忙着呢。\n");
 
         switch(query("family/master_name", me)){
         case "黃藥師" :
@@ -647,20 +647,20 @@ int do_bring(string arg)
         destruct(jiading);
         }
         else if( query("th_victim", ob) == query("id", me) && !living(ob)){
-                message_vision(CYN"$N說道：把這"+ob->name()+"處理了！\n"NOR,me,ob);
+                message_vision(CYN"$N説道：把這"+ob->name()+"處理了！\n"NOR,me,ob);
                 command("nod "+getuid(me));
                 
                 if( query_temp("last_damage_from", ob) == me && query("age", ob)<20 && query("shen", me)>1000){
                 message_vision(HIR"家丁掏出一把細長的鐵柄小刀，扳開$n的嘴巴，正要斬去$n的舌頭……\n"NOR,me,ob);
-                message_vision(CYN"$N忽然說道：且慢！這"+ob->name()+"年紀尚輕，雖然誤入歧途，但是未始不能改過。\n"NOR,me,ob);
-                message_vision(CYN"$N說道：你先別動手，直接把$p帶回歸雲莊，交給"+lu+"，由他處理便是。\n"NOR,me,ob);
+                message_vision(CYN"$N忽然説道：且慢！這"+ob->name()+"年紀尚輕，雖然誤入歧途，但是未始不能改過。\n"NOR,me,ob);
+                message_vision(CYN"$N説道：你先別動手，直接把$p帶回歸雲莊，交給"+lu+"，由他處理便是。\n"NOR,me,ob);
                 command("ok");
                 addn("th_exp", yapu_exp, me);
                 addn("th_pot", yapu_pot, me);
                 set("th_help_yapu", 1, me);
                 }
                 else if( query_temp("last_damage_from", ob) == me){
-                message_vision(HIR"家丁掏出一把細長的鐵柄小刀，扳開$n的嘴巴，飛快地斬去了$n的舌頭，跟著轉過刀鋒，在$p雙耳各刺一刀，立時鮮血泉湧！\n"NOR,me,ob);
+                message_vision(HIR"家丁掏出一把細長的鐵柄小刀，扳開$n的嘴巴，飛快地斬去了$n的舌頭，跟着轉過刀鋒，在$p雙耳各刺一刀，立時鮮血泉湧！\n"NOR,me,ob);
                 message_vision(HIR"家丁收起小刀，取出一個瓷瓶，挑出傷藥彈在$p斷舌和雙耳傷處，流血立緩，可是從此也已成聾啞之人。\n"NOR,me,ob);
                 addn("th_exp", yapu_exp, me);
                 addn("th_pot", yapu_pot, me);
@@ -726,11 +726,11 @@ int do_order(string arg)
         if( query("job_master") != query("id", me) )
                 return 0;
         if( !living(jiading) )
-                return notify_fail("嗯....你得先把家丁弄醒再說。\n");
+                return notify_fail("嗯....你得先把家丁弄醒再説。\n");
         if( me->is_busy() )
-                return notify_fail("你正忙著呢。\n");
+                return notify_fail("你正忙着呢。\n");
         if( jiading->is_busy() || jiading->is_fighting() )
-                return notify_fail( "家丁正忙著呢。\n");
+                return notify_fail( "家丁正忙着呢。\n");
 
         if( arg == "follow" ) {
         message_vision("$N向家丁招了招手，要他跟上來。\n",me);
@@ -742,7 +742,7 @@ int do_order(string arg)
         command("follow none");
         }
         if( arg == "leave" ) {
-        message_vision("$N向家丁一揮手，說道：你先離開這兒！\n",me);
+        message_vision("$N向家丁一揮手，説道：你先離開這兒！\n",me);
         command("nod");
         jiading->random_move();
         }

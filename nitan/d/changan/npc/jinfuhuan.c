@@ -16,7 +16,7 @@ string *can_converts = ({
 void create()
 {
         set_name("金復還", ({ "jin fuhuan", "jin","fuhuan" }));
-        set("title", "珠寶行老板");
+        set("title", "珠寶行老闆");
         set("shen_type", 1);
         set("str", 35);
         set("gender", "男性");
@@ -58,21 +58,21 @@ int do_convert(string arg)
                 return notify_fail("指令格式：convert <數量> <物品> to <新物品>\n");
 
         if( amount < 1 || amount > 5000 )
-                return notify_fail("兌換的數量不可以小于1個同時不可以大于5000個。\n");
+                return notify_fail("兑換的數量不可以小於1個同時不可以大於5000個。\n");
 
         if( !objectp(ob = present(sid, me)) )
                 return notify_fail("你身上沒有這種東西。\n");
 
         if( member_array(sid, can_converts) == -1 )
-                return notify_fail("珠寶商說道：“我對你這個東西沒有興趣。”\n");
+                return notify_fail("珠寶商説道：“我對你這個東西沒有興趣。”\n");
 
         if( member_array(what, can_converts) == -1 )
-                return notify_fail("珠寶商說道：“你要兌換這個東西我這裡沒有。”\n");
+                return notify_fail("珠寶商説道：“你要兑換這個東西我這裏沒有。”\n");
 
         sscanf(sid, "%s%d", id, n1);
         sscanf(what, "%s%d", id, n2);
 
-        if( n1 > n2 ) return notify_fail("珠寶商說道：“我不做這樣的兌換方式買賣。”\n");
+        if( n1 > n2 ) return notify_fail("珠寶商説道：“我不做這樣的兑換方式買賣。”\n");
         else if( n1 < n2 ) n = (int)pow(3, (n2 - n1));
 
         flag = 0;
@@ -107,7 +107,7 @@ int do_convert(string arg)
                 flag--;
         }
 
-        message_vision(HIC "$N將兌換後的物品給了$n。\n", this_object(), me);
+        message_vision(HIC "$N將兑換後的物品給了$n。\n", this_object(), me);
         return 1;
 }
 

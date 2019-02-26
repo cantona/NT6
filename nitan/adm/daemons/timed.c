@@ -431,7 +431,7 @@ void process_realtime()
 }
 
 // 每 1 秒運算一次
-// 實際一天等于遊戲一月
+// 實際一天等於遊戲一月
 
 void heart_beat()
 {
@@ -447,7 +447,7 @@ void heart_beat()
                 if( !--event[fevent] )
                         exec_event(fevent);
 
-        // 每 2 秒相當于遊戲一分鐘, time 每增加 1 代表遊戲一分鐘
+        // 每 2 秒相當於遊戲一分鐘, time 每增加 1 代表遊戲一分鐘
         //if( !(++tick % 2) )
                 process_gametime();
 }
@@ -634,7 +634,7 @@ void remove_maze(string name, object room, object maze_door)
                 room->short() + HIW "(" + LOOK_CMD->locate(base_name(room)) + ")一帶出現的" +
                 HIR + name + HIR "消失了。\n" NOR, users());
         */
-        CHANNEL_D->channel_broadcast("mess", "聽說" + room->short() + HIW "(" + LOOK_CMD->locate(base_name(room)) + ")一帶出現的" +
+        CHANNEL_D->channel_broadcast("mess", "聽説" + room->short() + HIW "(" + LOOK_CMD->locate(base_name(room)) + ")一帶出現的" +
                 HIR + name + HIG "消失了。\n" NOR);
 }
 

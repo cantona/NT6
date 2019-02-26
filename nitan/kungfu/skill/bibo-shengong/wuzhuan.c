@@ -27,7 +27,7 @@ int exert(object me, object target)
         if( me->query_skill("qimen-wuxing", 1) < 120 )
                 return notify_fail("你的奇門五行修為不夠，還未領悟「奇門五轉」！\n");
 
-        msg = HIG "$N臉上青氣大盛，腳下緩緩踩著九宮八卦方位，頭頂冒出騰騰白氣，";
+        msg = HIG "$N臉上青氣大盛，腳下緩緩踩着九宮八卦方位，頭頂冒出騰騰白氣，";
         msg += "四面隱隱傳來潮湧之聲，碧波神功已發揮到極致！\n"NOR;
 
         addn("neili", -200, me);

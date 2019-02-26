@@ -45,7 +45,7 @@ int do_blow(string arg)
         if( !query("no_fight", environment(me) )
         && query("fire_source") > 0 && me->query_skill("poison", 1) > 99){        
 
-        message_vision(HIR"隨著哨子聲，玉笛裡突然飛出藍印印的一點火星，火星陡地熄滅，隨即大亮，蓬的一聲響，騰向半空，升起有丈許，這才緩緩降落。\n"NOR, me);
+        message_vision(HIR"隨着哨子聲，玉笛裏突然飛出藍印印的一點火星，火星陡地熄滅，隨即大亮，蓬的一聲響，騰向半空，升起有丈許，這才緩緩降落。\n"NOR, me);
 
         addn("fire_source", -1);
         ob=new("/d/xingxiu/obj/flute_fire");
@@ -60,7 +60,7 @@ int do_put(string arg)
         int amount;
 
         if( !arg || sscanf(arg, "%s in %s", item, target) != 2 )
-                return notify_fail("你要將什麼東西放進哪裡？\n");
+                return notify_fail("你要將什麼東西放進哪裏？\n");
         
         if( !objectp(obj = present(item, me)) )
                 return notify_fail("你要給誰什麼東西？\n");

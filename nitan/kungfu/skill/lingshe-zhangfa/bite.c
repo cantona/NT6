@@ -30,7 +30,7 @@ int perform(object me, object target)
                 return notify_fail("你只能縱蛇偷襲戰鬥中的對手。\n");
 
         if (lv < 200 )
-                return notify_fail("你的靈蛇杖法不夠嫻熟，無法在使杖攻敵之余縱蛇傷人。\n");
+                return notify_fail("你的靈蛇杖法不夠嫻熟，無法在使杖攻敵之餘縱蛇傷人。\n");
 
         if (poison < 200 )
                 return notify_fail("你對使毒的法門所知有限。\n");
@@ -95,7 +95,7 @@ int perform(object me, object target)
         set("snake_poison", poi_amount*5, snake);
         snake->kill_ob(target);
 
-        message_combatd(HIB"\n$N將"+weapon->name()+HIB"一抖，杖上金環當啷啷一陣亂響，一條"+type+HIB"從杖底直盤上來。\n"NOR,me);
+        message_combatd(HIB"\n$N將"+weapon->name()+HIB"一抖，杖上金環噹啷啷一陣亂響，一條"+type+HIB"從杖底直盤上來。\n"NOR,me);
 
         me->start_busy(1);
 

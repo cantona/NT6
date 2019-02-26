@@ -19,7 +19,7 @@ mapping *action = ({
         "lvl"   : 30,
         "damage_type":"挫傷"
 ]),
-([      "action": "$N使出一招「霸王扛鼎」，將$w從肩頭甩出砸向往$n的$l",
+([      "action": "$N使出一招「霸王扛鼎」，將$w從肩頭甩出砸嚮往$n的$l",
         "force" : 120,
         "attack": 35,
         "dodge" : -5,

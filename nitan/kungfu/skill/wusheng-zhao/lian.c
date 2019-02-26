@@ -38,7 +38,7 @@ int perform(object me)
                 return notify_fail("你沒有準備使用五聖毒爪，難以施展" + name() + "。\n");
 
         if (! living(target))
-                return notify_fail("對方都已經這樣了，用不著這麼費力吧？\n");
+                return notify_fail("對方都已經這樣了，用不着這麼費力吧？\n");
 
         msg = HIY "$N" HIY "身形一展，撲至$n" HIY "跟前，猛然施展「奪"
               "命連環」，雙爪幻作數道金光，直瑣$n" HIY "各處要脈！\n" NOR;

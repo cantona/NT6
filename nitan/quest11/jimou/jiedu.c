@@ -55,7 +55,7 @@ void main(object ob, string who)
 	"士兵歡聲雷動，原來是"+p_name+"對你的部隊使用解毒之計。\n",
                         MSG_INDENT);
 	ob->simple_action(SG_SKILL_D->query_use("jiedu"));
-	ob->start_busy(10, "你正忙于解毒呢。");
+	ob->start_busy(10, "你正忙於解毒呢。");
 	load_object("/daemons/cast_d.c")->reg_player(ob->query_primary_id(), "jiedu");	
         ob->award_exp(ob->query_sk_level("sk_zhimou")/2+random(20) ,"jiedu");
 	call_out("show_result", 5+random(5), ob, who, p_skill, p_id, e_id);

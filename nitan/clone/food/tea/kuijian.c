@@ -11,7 +11,7 @@ void create()
         if (clonep())
                  set_default_object(__FILE__);
          else {
-                 set("long", "一壺新沏的魁尖茶，悠悠地冒著香氣~~~~~~\n");
+                 set("long", "一壺新沏的魁尖茶，悠悠地冒着香氣~~~~~~\n");
                 set("unit", "壺");
                  set("value", 70);
         set("remaining",10);

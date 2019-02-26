@@ -43,7 +43,7 @@ int perform(object me, object target)
                 return notify_fail("你現在的真氣不足，難以施展" + name() + "。\n");
 
         if (! living(target))
-                return notify_fail("對方都已經這樣了，用不著這麼費力吧？\n");
+                return notify_fail("對方都已經這樣了，用不着這麼費力吧？\n");
 
         msg = HIW "$N" HIW "一聲長吟，將內力全然運到劍上，" + weapon->name() +
               HIW "劍脊頓時" HIM "紫芒" HIW "閃耀，化作數道劍氣勁逼$n"

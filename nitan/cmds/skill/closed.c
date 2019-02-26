@@ -24,22 +24,22 @@ int main(object me, string arg)
                 return notify_fail("你還是專心拱豬吧！\n");
 
         if (! ultrap(me))
-                return notify_fail("你還沒有到大宗師的境界，還是好好學習鍛煉吧。\n");
+                return notify_fail("你還沒有到大宗師的境界，還是好好學習鍛鍊吧。\n");
 
         if (wizardp(me))
                 return notify_fail("巫師閉什麼關？\n");
 
         if( !query("no_fight", where) )
-                return notify_fail("在這裡閉關？不太安全吧？\n");
+                return notify_fail("在這裏閉關？不太安全吧？\n");
 
         if( !query("sleep_room", where) )
                 return notify_fail("你得找一個能夠休息的地方閉關。\n");
 
         if( where->is_chat_room() )
-                return notify_fail("在這裡閉關？不太安全吧？\n");
+                return notify_fail("在這裏閉關？不太安全吧？\n");
 
         if (me->is_busy())
-                return notify_fail("你現在正忙著呢。\n");
+                return notify_fail("你現在正忙着呢。\n");
 
         if( query("potential", me)-query("learned_points", me)<10000 )
                 return notify_fail("你的潛能不夠，沒法閉關修行。\n");
@@ -124,7 +124,7 @@ int closing(object me)
                 message_vision("$N睜開雙目，緩緩吐了一口氣，站了起來。\n", me);
                 CLOSE_D->user_opened(me);
                 CHANNEL_D->do_channel(this_object(), "rumor",
-                                      sprintf("聽說%s(%s)閉關功德圓滿。",
+                                      sprintf("聽説%s(%s)閉關功德圓滿。",
                                       me->name(1),query("id", me)));
                 if (! interactive(me))
                 {
@@ -200,7 +200,7 @@ int halt_closing(object me)
         message_vision(HIY "$N" HIY "大喝一聲，睜開眼來，一股氣流登時"
                        "將眾人迫退四步。\n\n" NOR, me);
         // addn("potential", (query("learned_points", me) - query("potential", me)) / 2);
-        CHANNEL_D->do_channel(this_object(), "rumor", "聽說" + me->name(1) +
+        CHANNEL_D->do_channel(this_object(), "rumor", "聽説" + me->name(1) +
                               "閉關中途突然復出。");
         return 1;
 }

@@ -15,7 +15,7 @@ void create()
         id=query("id", me);
         birthday=query("birthday", me);
         }
-        set_name("電子表", ({ "watch" }) );
+        set_name("電子錶", ({ "watch" }) );
         set("long", (: do_long :) );
         set("unit", "塊");
         set("value", 0);
@@ -43,7 +43,7 @@ int do_zeng(string arg)
         if(!arg||sscanf(arg, "%s to %s", item, target)!=2) return notify_fail("zeng <物品> to <某人>\n");
         obj = present(item, me);
         ob = present(target, environment(me));
-        if(!ob) return notify_fail("這裡沒有這個人。\n");
+        if(!ob) return notify_fail("這裏沒有這個人。\n");
         if(!obj) return notify_fail("你身上沒有這樣物品。\n");
         if(obj!=this_object()) return notify_fail("這樣東西還是不贈的好。\n");
         if( id != query("id", me))return notify_fail("你不是這個物品的主人，無權轉贈！\n");
@@ -82,15 +82,15 @@ string do_long()
                 + "年" + CHINESE_D->chinese_number(birth[4]+1) + "月"
                 + CHINESE_D->chinese_number(birth[3]) + "日";
 
-        printf("這是一塊精致的電子表，表上顯示現在的時間是：\n\n");
-        printf(HIY"\t\t"HBBLU"□□□□□□□□□\n"NOR);
-        printf(HIY"\t\t"HBBLU"□  "HIR"%s"YEL"  □\n"NOR, ld);
-        printf(HIY"\t\t"HBBLU"□  "HIR"%s"YEL"  □\n"NOR, lt);
-        printf(HIY"\t\t"HBBLU"□□□□□□□□□\n"NOR);
-        printf("\n表的背後刻著一行小字：\n\n");
+        printf("這是一塊精緻的電子錶，表上顯示現在的時間是：\n\n");
+        printf(HIY"\t\t"HBBLU"┏━━━━━━━┓\n"NOR);
+        printf(HIY"\t\t"HBBLU"┃  "HIR"%s"YEL"  ┃\n"NOR, ld);
+        printf(HIY"\t\t"HBBLU"┃  "HIR"%s"YEL"  ┃\n"NOR, lt);
+        printf(HIY"\t\t"HBBLU"┗━━━━━━━┛\n"NOR);
+        printf("\n表的背後刻着一行小字：\n\n");
         printf(HIY"\t贈%s：\n\n"NOR, name);
         printf(HIR"\t\t祝天天快樂!\n\n"NOR);
-        printf(HIB"\t\t\t\t\t夜辰(nightstar)贈于\n"NOR);
+        printf(HIB"\t\t\t\t\t夜辰(nightstar)贈於\n"NOR);
         printf(HIB"\t\t\t\t\t%s\n"NOR, gt);
         return "";
 }

@@ -5,18 +5,18 @@ inherit ITEM;
 int is_tongren() { return 1; }
 void create()
 {
-        set_name(YEL "喳悃肣﹞忒栠隴闕﹞諳睽鏀悃" NOR, ({ "tongren r9", "tongren" }));
+        set_name(YEL "衝穴銅人·手陽明脈·口禾髎穴" NOR, ({ "tongren r9", "tongren" }));
         set_weight(50);
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("unit", "跺");
-                set("long", NOR + YEL "涴岆珨跺喳悃肣ㄛ奻醱餅秶賸珨虳冪釐悃弇芞偶ㄛ眕摯喳悃妏蚚源楊﹝\n" NOR);
+                set("unit", "個");
+                set("long", NOR + YEL "這是一個衝穴銅人，上面繪製了一些經絡穴位圖案，以及衝穴使用方法。\n" NOR);
                 set("value", 10000);
                 set("material", "steal");
         }
-        set("jingmai_name", "忒栠隴闕");
-        set("xuewei_name", "諳睽鏀悃");
+        set("jingmai_name", "手陽明脈");
+        set("xuewei_name", "口禾髎穴");
         set("chongxue_xiaoguo", "QI:30:ADDPOT:1000000");
         set("neili_cost", "8000");
         setup();

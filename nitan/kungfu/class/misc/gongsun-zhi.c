@@ -201,7 +201,7 @@ void random_move()
 void death_msg()
 {
         command("chat* heng");
-        command("chat 敢來我絕情山莊撒野，走著瞧！");
+        command("chat 敢來我絕情山莊撒野，走着瞧！");
 }
 
 void die(object killer)
@@ -224,7 +224,7 @@ void die(object killer)
                 if( query("qi") > query("max_qi") ) set("qi", query("max_qi"));
                 addn("eff_qi", query("max_qi") / 10);
                 if( query("eff_qi") > query("max_qi") ) set("eff_qi", query("max_qi"));
-                message_vision(HIR "\n$N" HIR "大喝一聲，運用秘法，氣血有所回升！\n\n" NOR, this_object());
+                message_vision(HIR "\n$N" HIR "大喝一聲，運用祕法，氣血有所回升！\n\n" NOR, this_object());
                 return;
         }
 
@@ -234,8 +234,8 @@ void die(object killer)
         // 戰勝金輪獲取小龍女線索
         if (query("can_perform/surge-force/quest/step", killer) == 2)
         {
-                tell_object(killer, HIM "\n正在這時，你收到楊過托人帶來的口信：龍兒已與我會面，但\n"
-                                    "身中情花劇毒，請盡快找到解毒靈藥！\n\n" NOR);
+                tell_object(killer, HIM "\n正在這時，你收到楊過託人帶來的口信：龍兒已與我會面，但\n"
+                                    "身中情花劇毒，請儘快找到解毒靈藥！\n\n" NOR);
                 set("can_perform/surge-force/quest/step", 3, killer);
                 killer->save();
         }

@@ -21,12 +21,12 @@ void create()
 {
         set_name("虛竹子", ({ "xuzhu zi", "xuzhu", "xu", "zhu", "zi" }));
         set("long", @LONG
-這便是縹緲峰靈鷲宮掌門，道號虛竹子。他看
+這便是縹緲峯靈鷲宮掌門，道號虛竹子。他看
 起來約莫二十五六歲，長得濃眉大眼，大大的
 鼻子扁平下塌，容貌頗為醜陋。身穿一件華貴
-雅致的長袍，倒使他更顯幾分精神。
+雅緻的長袍，倒使他更顯幾分精神。
 LONG );
-        set("title", "縹緲峰靈鷲宮掌門");
+        set("title", "縹緲峯靈鷲宮掌門");
         set("gender", "男性");
         set("age", 26);
         set("nickname", HIM "夢郎" NOR);
@@ -152,7 +152,7 @@ void attempt_apprentice(object ob)
 
         if( query("combat_exp", ob)<300000 )
         {
-                command("say 你這個…你經驗不足，還是去鍛煉一下再說吧。");
+                command("say 你這個…你經驗不足，還是去鍛鍊一下再説吧。");
                 return;
         }
 
@@ -172,16 +172,16 @@ mixed ask_skill1()
         me = this_player();
 
         if( query("can_perform/tianyu-qijian/shan", me) )
-                return "我…我好象…我不是已經教過你了嗎？";
+                return "我…我好像…我不是已經教過你了嗎？";
 
         if( query("family/family_name", me) != query("family/family_name") )
-                return RANK_D->query_respect(me) + "…那個…你好象不是我靈鷲宮的人吧？";
+                return RANK_D->query_respect(me) + "…那個…你好像不是我靈鷲宮的人吧？";
 
         if (me->query_skill("tianyu-qijian", 1) < 1)
-                return "你…這個…你好象連天羽奇劍都沒學吧，不學哪來絕招？";
+                return "你…這個…你好像連天羽奇劍都沒學吧，不學哪來絕招？";
 
         if( query("family/gongji", me)<100 )
-                return "…這個…你既然投入了我們靈鷲宮門下，還是…多多少少幫著做點事吧。";
+                return "…這個…你既然投入了我們靈鷲宮門下，還是…多多少少幫着做點事吧。";
 
         if (me->query_skill("force") < 100)
                 return "…嗯…你的內功火候不足，學不成這招。";
@@ -190,8 +190,8 @@ mixed ask_skill1()
                 return "…嗯…你的天羽奇劍還…還得多下功夫練練。";
 
         message_vision(HIY "$n" HIY "點了點頭，從懷中輕輕取出了一本"
-                       "劍譜，指著其中的一段對\n$N" HIY "結節不納的"
-                       "細說良久，$N" HIY "一邊聽一邊點頭。\n" NOR,
+                       "劍譜，指着其中的一段對\n$N" HIY "結節不納的"
+                       "細説良久，$N" HIY "一邊聽一邊點頭。\n" NOR,
                        me, this_object());
 
 
@@ -216,16 +216,16 @@ mixed ask_skill2()
         me = this_player();
 
         if( query("can_perform/tianyu-qijian/huan", me) )
-                return "我…我好象…我不是已經教過你了嗎？";
+                return "我…我好像…我不是已經教過你了嗎？";
 
         if( query("family/family_name", me) != query("family/family_name") )
-                return RANK_D->query_respect(me) + "…那個…你好象不是我靈鷲宮的人吧？";
+                return RANK_D->query_respect(me) + "…那個…你好像不是我靈鷲宮的人吧？";
 
         if (me->query_skill("tianyu-qijian", 1) < 1)
-                return "你…這個…你好象連天羽奇劍都沒學吧，不學哪來絕招？";
+                return "你…這個…你好像連天羽奇劍都沒學吧，不學哪來絕招？";
 
         if( query("family/gongji", me)<300 )
-                return "…這個…你既然投入了我們靈鷲宮門下，還是…多多少少幫著做點事吧。";
+                return "…這個…你既然投入了我們靈鷲宮門下，還是…多多少少幫着做點事吧。";
 
         if (me->query_skill("force") < 160)
                 return "…嗯…你的內功火候不足，學不成這招。";
@@ -262,13 +262,13 @@ mixed ask_skill3()
                 return "你…你這個…這招你不是已經學會了嗎？";
 
         if( query("family/family_name", me) != query("family/family_name") )
-                return RANK_D->query_respect(me) + "…那個…你好象不是我靈鷲宮的人吧？";
+                return RANK_D->query_respect(me) + "…那個…你好像不是我靈鷲宮的人吧？";
 
         if (me->query_skill("tianyu-qijian", 1) < 1)
-                return "你…這個…你好象連天羽奇劍都沒學吧，不學哪來絕招？";
+                return "你…這個…你好像連天羽奇劍都沒學吧，不學哪來絕招？";
 
         if( query("family/gongji", me)<400 )
-                return "…這個…你既然投入了我們靈鷲宮門下，還是…多多少少幫著做點事吧。";
+                return "…這個…你既然投入了我們靈鷲宮門下，還是…多多少少幫着做點事吧。";
 
         if (me->query_skill("force") < 180)
                 return "…嗯…你的內功火候不足，學不成這招。";
@@ -278,7 +278,7 @@ mixed ask_skill3()
 
         message_vision(HIY "$n" HIY "點了點頭，從$N" HIY "手中接過"
                        "長劍，手腕輕輕一抖，長劍便化作\n一道彩虹，"
-                       "劍光劍花聚為一線，光華眩目，籠罩著$N" HIY
+                       "劍光劍花聚為一線，光華眩目，籠罩着$N" HIY
                        "四周。\n" NOR, me, this_object());
 
         command("nod");
@@ -305,13 +305,13 @@ mixed ask_skill4()
                 return "你…這個…這招我不是已經教會你了嗎？";
 
         if( query("family/family_name", me) != query("family/family_name") )
-                return RANK_D->query_respect(me) + "…那個…你好象不是我靈鷲宮的人吧？";
+                return RANK_D->query_respect(me) + "…那個…你好像不是我靈鷲宮的人吧？";
 
         if (me->query_skill("zhemei-shou", 1) < 1)
-                return "你…這個…你好象連逍遙折梅手都沒學吧，不學哪來絕招？";
+                return "你…這個…你好像連逍遙折梅手都沒學吧，不學哪來絕招？";
 
         if( query("family/gongji", me)<300 )
-                return "…這個…你既然投入了我們靈鷲宮門下，還是…多多少少幫著做點事吧。";
+                return "…這個…你既然投入了我們靈鷲宮門下，還是…多多少少幫着做點事吧。";
 
         if (me->query_skill("force") < 120)
                 return "…嗯…你的內功火候不足，學不成這招。";
@@ -349,13 +349,13 @@ mixed ask_skill5()
                 return "你…這個…這招我不是已經教會你了嗎？";
 
         if( query("family/family_name", me) != query("family/family_name") )
-                return RANK_D->query_respect(me) + "…那個…你好象不是我靈鷲宮的人吧？";
+                return RANK_D->query_respect(me) + "…那個…你好像不是我靈鷲宮的人吧？";
 
         if (me->query_skill("zhemei-shou", 1) < 1)
-                return "你…這個…你好象連逍遙折梅手都沒學吧，不學哪來絕招？";
+                return "你…這個…你好像連逍遙折梅手都沒學吧，不學哪來絕招？";
 
         if( query("family/gongji", me)<800 )
-                return "…這個…你既然投入了我們靈鷲宮門下，還是…多多少少幫著做點事吧。";
+                return "…這個…你既然投入了我們靈鷲宮門下，還是…多多少少幫着做點事吧。";
 
         if (me->query_skill("force") < 200)
                 return "…嗯…你的內功火候不足，學不成這招。";
@@ -395,13 +395,13 @@ mixed ask_skill6()
                 return "你…這個…這招我不是已經教會你了嗎？";
 
         if( query("family/family_name", me) != query("family/family_name") )
-                return RANK_D->query_respect(me) + "…那個…你好象不是我靈鷲宮的人吧？";
+                return RANK_D->query_respect(me) + "…那個…你好像不是我靈鷲宮的人吧？";
 
         if (me->query_skill("liuyang-zhang", 1) < 1)
-                return "你…這個…你好象連天山六陽掌都沒學吧，不學哪來絕招？";
+                return "你…這個…你好像連天山六陽掌都沒學吧，不學哪來絕招？";
 
         if( query("family/gongji", me)<600 )
-                return "…這個…你既然投入了我們靈鷲宮門下，還是…多多少少幫著做點事吧。";
+                return "…這個…你既然投入了我們靈鷲宮門下，還是…多多少少幫着做點事吧。";
 
         if (me->query_skill("force") < 200)
                 return "…嗯…你的內功火候不足，學不成這招。";
@@ -410,8 +410,8 @@ mixed ask_skill6()
                 return "…嗯…你的天山六陽掌還…還得多下功夫練練。";
 
         message_vision(HIY "$n" HIY "看了看$N" HIY "，微作遲疑，但接"
-                       "著點了點頭，將$N" HIY "招至身邊，在\n耳旁低聲"
-                       "細說良久，$N" HIY "聽後會心的一笑，看來大有所"
+                       "着點了點頭，將$N" HIY "招至身邊，在\n耳旁低聲"
+                       "細説良久，$N" HIY "聽後會心的一笑，看來大有所"
                        "悟。\n" NOR, me, this_object());
 
         command("buddhi");
@@ -438,13 +438,13 @@ mixed ask_skill7()
                 return "你…這個…這招我不是已經教會你了嗎？";
 
         if( query("family/family_name", me) != query("family/family_name") )
-                return RANK_D->query_respect(me) + "…那個…你好象不是我靈鷲宮的人吧？";
+                return RANK_D->query_respect(me) + "…那個…你好像不是我靈鷲宮的人吧？";
 
         if (me->query_skill("liuyang-zhang", 1) < 1)
-                return "你…這個…你好象連天山六陽掌都沒學吧，不學哪來絕招？";
+                return "你…這個…你好像連天山六陽掌都沒學吧，不學哪來絕招？";
 
         if( query("family/gongji", me)<1000 )
-                return "…這個…你既然投入了我們靈鷲宮門下，還是…多多少少幫著做點事吧。";
+                return "…這個…你既然投入了我們靈鷲宮門下，還是…多多少少幫着做點事吧。";
 
         if (me->query_skill("force") < 200)
                 return "…嗯…你的內功火候不足，學不成這招。";
@@ -481,13 +481,13 @@ mixed ask_skill8()
                 return "你…你自己下去練習吧。";
 
         if( query("family/family_name", me) != query("family/family_name") )
-                return RANK_D->query_respect(me) + "…那個…你好象不是我靈鷲宮的人吧？";
+                return RANK_D->query_respect(me) + "…那個…你好像不是我靈鷲宮的人吧？";
 
         if (me->query_skill("liuyang-zhang", 1) < 1)
-                return "你…這個…你好象連天山六陽掌都沒學吧，不學哪來絕招？";
+                return "你…這個…你好像連天山六陽掌都沒學吧，不學哪來絕招？";
 
         if( query("family/gongji", me)<2200 )
-                return "…這個…你既然投入了我們靈鷲宮門下，還是…多多少少幫著做點事吧。";
+                return "…這個…你既然投入了我們靈鷲宮門下，還是…多多少少幫着做點事吧。";
 
         if ((int)me->query_skill("bahuang-gong", 1) < 220)
                 return "…嗯…你的八荒六合唯我獨尊功火候不足，學不成這招。";
@@ -498,8 +498,8 @@ mixed ask_skill8()
         if( query("max_neili", me)<3500 )
                 return "你的內力修為不夠，運用這招…嗯…還比較困難。";
 
-        message_vision(HIY "$n" HIY "對$N" HIY "微微一笑，模樣頗為讚"
-                       "許，說道：“我在這裡給你演示\n一遍，能否領悟"
+        message_vision(HIY "$n" HIY "對$N" HIY "微微一笑，模樣頗為贊"
+                       "許，説道：“我在這裏給你演示\n一遍，能否領悟"
                        "就全靠你的悟性了。”話音剛落，只見$n" HIY "催"
                        "動\n內勁，身形急轉，體內真氣迸發，長袍隨之鼓"
                        "脹。陡然之間，呼的\n一掌猛然拍落，頓時風聲四"

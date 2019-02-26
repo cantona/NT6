@@ -42,7 +42,7 @@ mapping *action = ({
         "skill_name" : "月華流照",
         "lvl" : 90
 ]),
-([        "action" : "$N雙掌縮入袖中，雙袖飛起掃向$n的$l，卻是一招"HIR"「嫦娥奔月」"NOR"，儀態瀟洒",
+([        "action" : "$N雙掌縮入袖中，雙袖飛起掃向$n的$l，卻是一招"HIR"「嫦娥奔月」"NOR"，儀態瀟灑",
         "skill_name" : "嫦娥奔月",
         "lvl" : 100
 ]),

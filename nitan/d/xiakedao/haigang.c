@@ -8,7 +8,7 @@ void create()
 {
         set("short", "漁港");
         set("long", @LONG
-這裡是個小小漁港。南面海面漂浮著幾艘小船，抬眼望，海天相
+這裏是個小小漁港。南面海面漂浮着幾艘小船，抬眼望，海天相
 連，無邊無際。海鷗掠過浪尖，悠悠翩然。
 LONG );
         set("outdoors", "nanhai");
@@ -46,14 +46,14 @@ int do_enter(string arg)
         ob = this_player();
 
         if (! lingpai = present("shangfa ling", ob))
-                return notify_fail(HIC "船夫說道：“你沒有賞善罰惡令，不能到俠客島去！\n" NOR);
+                return notify_fail(HIC "船伕説道：“你沒有賞善罰惡令，不能到俠客島去！\n" NOR);
 
-        message_vision(HIG "船夫點了點頭道：“既然閣下有賞善罰惡令，我就送你到俠客島去！”\n" NOR, ob);
+        message_vision(HIG "船伕點了點頭道：“既然閣下有賞善罰惡令，我就送你到俠客島去！”\n" NOR, ob);
         
         destruct(lingpai);
 
-        message_vision("船夫一見有人上船，忙叫了一聲：開船嘍！\n", ob);
-        message_vision("船夫升起帆，船就向南方航行。\n", ob);
+        message_vision("船伕一見有人上船，忙叫了一聲：開船嘍！\n", ob);
+        message_vision("船伕升起帆，船就向南方航行。\n", ob);
         
         ob->move("/d/xiakedao/duchuan");
         tell_object(ob, BLU "你在海上航行了一整天.......\n" NOR ) ;
@@ -66,7 +66,7 @@ void home(object ob)
         if (! objectp(ob))
                 return;
 
-        tell_object(ob, "大船終于抵達了南海岸邊。你走下船來。\n");
+        tell_object(ob, "大船終於抵達了南海岸邊。你走下船來。\n");
         ob->move (__DIR__"haitan");
         message("vision", ob->name() + "下了小舟，走了過來。\n",
                 environment(ob), ob);

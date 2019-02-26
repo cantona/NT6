@@ -4,12 +4,12 @@ inherit ITEM;
 int is_enchase_ob() { return 1; } 
 void create()
 {
-        set_name(HIR "火之精靈﹒火" NOR, ({"huo jingling", "huo", "jingling"}));
+        set_name(HIR "火之精靈·火" NOR, ({"huo jingling", "huo", "jingling"}));
         set_weight(300);
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("long", HIR "火神祝融之寶物，擁有著火屬性的最高力量。\n" NOR);
+                set("long", HIR "火神祝融之寶物，擁有着火屬性的最高力量。\n" NOR);
                 set("unit", "塊");
                 set("value", 12000);
                 set("can_be_enchased", 1);

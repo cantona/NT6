@@ -12,14 +12,14 @@ int perform(object me, string skill)
         int count;
 
         if (me->query("qi") < 40)
-                return notify_fail("你的體力不支，無法迅猛提升自己的防御力。\n");
+                return notify_fail("你的體力不支，無法迅猛提升自己的防禦力。\n");
 
         message_vision(YEL "$N" YEL "微一凝神，氣沉丹田，雙目陡然"
                        "精光四射。\n" NOR, me);
         count = me->query_str() * 3 / 2;
 
         if (me->query_temp("special_skill/ironskin", 1))
-                return notify_fail("你已經盡力提升自己的防御力了。\n");
+                return notify_fail("你已經盡力提升自己的防禦力了。\n");
 
         me->receive_damage("qi", 20 + random(20));
         me->set_temp("special_skill/ironskin", 1);

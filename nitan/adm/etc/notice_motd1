@@ -2,9 +2,9 @@ $BLINK$□$NOR$  $WHT$%^MUD_NAME%^$NOR$$HIK$公怖欄$NOR$                      
 $HIK$_______________________________________________________________________________
 
 $HIC$□$NOR$　%^MUD_NAME%^ : %^ENGLISH_NAME%^ Library %^MUDLIB_VERSION%^$NOR$
-$HIC$□$NOR$　驅動程式 : %^MUDOS_VERSION%^ on %^ARCH%^
+$HIC$█$NOR$　驅動程式 : %^MUDOS_VERSION%^ on %^ARCH%^
 
-$HIC$□$NOR$　永久位置 : $HIW$telnet://222.186.44.59 5555,6666$NOR$
-$HIC$□$NOR$  官方論壇 : $HIW$http://www.cqzmud.com$NOR$
+$HIC$█$NOR$　永久位置 : $HIW$telnet://222.186.44.59 5555,6666$NOR$
+$HIC$█$NOR$  官方論壇 : $HIW$http://www.cqzmud.com$NOR$
 
 $HIK$_______________________________________________________________________________$NOR$

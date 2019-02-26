@@ -16,7 +16,7 @@ void create()
                 set("value", 2000);
                 set("material", "steel");
                 set("wield_msg", "$N「唰」的一聲從懷中掏出一根$n握在手中。\n");
-                set("unwield_msg", "$N將手中的$n揣回懷裡。\n");
+                set("unwield_msg", "$N將手中的$n揣回懷裏。\n");
         }
         init_dagger(50);
         setup();

@@ -15,9 +15,9 @@ void create()
         set("gender",query("gender"));
         set("age", 30 + random(30));
         if (arrayp(query("from")) && sizeof(query("from")))
-                set("long",query("from")[random(sizeof(query("form")))] + "\n據說這次重入江湖與獨孤求敗有關。\n");
+                set("long",query("from")[random(sizeof(query("form")))] + "\n據説這次重入江湖與獨孤求敗有關。\n");
         else
-                set("long","據說這次重入江湖與獨孤求敗有關。\n");
+                set("long","據説這次重入江湖與獨孤求敗有關。\n");
 
 
 

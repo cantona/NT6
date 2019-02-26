@@ -93,10 +93,10 @@ LONG);
         set_temp("apply/armor", 200);
         set("chat_chance", 10);
         set("chat_msg", ({
-                "李莫愁縱聲而歌，音調凄婉，歌道：「問世間，情是何物，直教生死相許？」\n",
+                "李莫愁縱聲而歌，音調悽婉，歌道：「問世間，情是何物，直教生死相許？」\n",
                 "李莫愁歌道：「天南地北雙飛客，老翅幾回寒暑？」\n",
                 "李莫愁唱道：「歡樂趣，離別苦，就中更有痴兒女。」\n",
-                "李莫愁唱道：「君應有語，渺萬裡層雲，千山暮雪，只影向誰去？」\n",
+                "李莫愁唱道：「君應有語，渺萬里層雲，千山暮雪，隻影向誰去？」\n",
                 "李莫愁詞意悲切，聲調更是哀怨，唱道：「橫汾路，寂寞當年簫鼓。荒煙依舊平楚。」\n",
                 "李莫愁歌道：「招魂些何嗟及，山鬼自啼風雨。」\n",
                 "李莫愁唱道：「天也妒，未信與，鶯兒燕子俱黃土。」\n",
@@ -169,7 +169,7 @@ void attempt_apprentice(object ob)
         if( query("combat_exp", me)<400000 )
         {
                 command("heng");
-                command("say 你這點能力怎能繼承我的衣砵？");
+                command("say 你這點能力怎能繼承我的衣缽？");
                 return;
         }
         if ((int)me->query_skill("force") < 160)
@@ -196,7 +196,7 @@ int accept_ask(object me, string topic)
         {
         case "歷練" :
         case "歷煉" :
-        case "鍛煉" :
+        case "鍛鍊" :
                 return QUEST_D->accept_ask(this_object(), me, topic);
                 break;
 

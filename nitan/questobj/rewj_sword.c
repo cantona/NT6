@@ -14,8 +14,8 @@ void create()
                 set("unit", "柄");
                 set("value", 2000);
                 set("material", "steel");
-                set("wield_msg", "$N抽了$n，慘然一笑，接著長嘆一聲，從褲兜裡取出個白玉磁瓶，倒出菩提子吧唧吧唧啃了起來。\n");
-                set("unwield_msg", "$N一聲長嘆：人生如夢，夢如$n，煙如霧，霧如水蒸氣，水蒸氣如那個屁啊。\n");
+                set("wield_msg", "$N抽了$n，慘然一笑，接着長歎一聲，從褲兜裏取出個白玉磁瓶，倒出菩提子吧唧吧唧啃了起來。\n");
+                set("unwield_msg", "$N一聲長歎：人生如夢，夢如$n，煙如霧，霧如水蒸氣，水蒸氣如那個屁啊。\n");
         }
         init_sword(30);
         setup();

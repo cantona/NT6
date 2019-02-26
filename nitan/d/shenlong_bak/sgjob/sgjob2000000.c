@@ -20,7 +20,7 @@ mapping *sgjobs = ({
                 "score":                 50,
         ]),
 
-        ([      "sgjob":          "軟□甲",
+        ([      "sgjob":          "軟蝟甲",
                 "sgjob_type":           "尋",
                 "exp_bonus":             2000,
                 "pot_bonus":             300,

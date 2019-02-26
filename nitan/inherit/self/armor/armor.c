@@ -35,7 +35,7 @@ int apply_damage()
         return d + p;
 }
 
-// 防御裝備的有效值
+// 防禦裝備的有效值
 int apply_armor()
 {
         int d;
@@ -43,8 +43,8 @@ int apply_armor()
 
         defense_lvl = armor_level();
         p = query("point");
-        // if( d > p * 3 / 2) d = p * 3 / 2 + query("bless") * 10;// 乾坤聖水聖化一次增加10點防御
-        d = p * 3 / 2 + query("bless") * 2;// 乾坤聖水聖化一次增加2點防御
+        // if( d > p * 3 / 2) d = p * 3 / 2 + query("bless") * 10;// 乾坤聖水聖化一次增加10點防禦
+        d = p * 3 / 2 + query("bless") * 2;// 乾坤聖水聖化一次增加2點防禦
         return d + p;
 }
 
@@ -59,15 +59,15 @@ void create()
         set_weight(9000);
         set("item_make", 1);
         set("unit", "張");
-        set("long", "這是由神鐵煉制而成的一張護甲。
-護甲緣上刻著一行小字：胡大一(adami)
+        set("long", "這是由神鐵煉製而成的一張護甲。
+護甲緣上刻着一行小字：胡大一(adami)
 ");
         set("value", 2100000);
         set("point", 152);
         set("material", "magic stone");
         set("material_file", "ddd");
         set("wear_msg", "$N裝備金絲甲。\n");
-        set("remove_msg", "$N脫下了金絲甲。\n");
+        set("remove_msg", "$N脱下了金絲甲。\n");
         set("armor_prop/armor", apply_armor());
 
         setup();
@@ -88,8 +88,8 @@ void create()
         set_weight(9000);
         set("item_make", 1);
         set("unit", "柄");
-        set("long", "這是由神鐵煉制而成的一柄劍。
-劍柄上刻著一行小字：胡大一(adami)
+        set("long", "這是由神鐵煉製而成的一柄劍。
+劍柄上刻着一行小字：胡大一(adami)
 ");
         set("value", 2100000);
         set("point", 190);

@@ -13,7 +13,7 @@ void create()
         else
         {
                 set("unit", "張");
-                set("long", "一張短弓，打造得頗為精致，具有不錯的準確度。\n");
+                set("long", "一張短弓，打造得頗為精緻，具有不錯的準確度。\n");
                 set("value", 20000);
                 set("power", 100000);   // 攻擊威力
                 set("accuracy", 120);   // 準確度120%
@@ -44,10 +44,10 @@ int do_shot(string arg)
 
         env = environment(me);
         if( !env || query("no_fight", env) )
-                return notify_fail("這裡不能戰鬥。\n");
+                return notify_fail("這裏不能戰鬥。\n");
 
         if (me->is_busy())
-                return notify_fail("你現在忙著呢。\n");
+                return notify_fail("你現在忙着呢。\n");
 
         if( query("jing", me)<80 )
                 return notify_fail("你現在精神不夠好，無法使用" + name() +
@@ -74,7 +74,7 @@ int do_shot(string arg)
                                            "用了。\n");
 
                 if (! objectp(victim = present(target, env)))
-                        return notify_fail("這裡沒有這個人。\n");
+                        return notify_fail("這裏沒有這個人。\n");
 
                 if( !victim->is_character() || query("not_living", victim) )
                         return notify_fail("看清楚了，那不是活人！\n");
@@ -112,7 +112,7 @@ int do_shot(string arg)
 
         case 1:
                 msg = HIY "電光火石間$N" HIY "舉起" + name() + HIY "陡然射出一"
-                      +query("base_unit", ob)+ob->name()+HIY"，帶著箭嘯直"
+                      +query("base_unit", ob)+ob->name()+HIY"，帶着箭嘯直"
                       "奔$n" HIY "而去！\n" NOR;
                 break;
 

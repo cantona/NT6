@@ -16,8 +16,8 @@ void create()
         set("gender", "男性" );
         set("age", 60);
         set("no_get", 1);
-        set("long", "他頭上包著頭巾，三縷長髯飄洒胸前，面目清瘦但紅暈有光，\n"
-                "二目炯炯有神，爍爍閃著竟似是凜凜的劍光，渾身似乎都包圍\n"
+        set("long", "他頭上包着頭巾，三縷長髯飄灑胸前，面目清瘦但紅暈有光，\n"
+                "二目炯炯有神，爍爍閃着竟似是凜凜的劍光，渾身似乎都包圍\n"
                 "在一股劍氣之中。\n");
         set("str", 25);
         set("dex", 20);
@@ -63,7 +63,7 @@ void create()
         set("chat_msg", ({
                 "歐冶子撫劍而歌：巨闕神兵兮，人鑄就。蓋世寶劍兮，配英雄！\n",
                 "歐冶子低頭沉吟，似乎在思考什麼。\n"
-                "歐冶子嘆了一口氣：神兵配英雄，可英雄。。。。。。\n"
+                "歐冶子歎了一口氣：神兵配英雄，可英雄。。。。。。\n"
         }) );
         carry_object("/clone/misc/cloth")->wear();
         carry_object("/clone/weapon/changjian")->wield();
@@ -86,13 +86,13 @@ int accept_object(object who, object ob)
                 case "辟邪劍譜":
                         if( (query_temp("condition", who)) != query("name", ob) )
                         {
-                                message_vision(HIC "歐冶子一愣：我對你說過我要這樣東西麼？\n" NOR, who);
+                                message_vision(HIC "歐冶子一愣：我對你説過我要這樣東西麼？\n" NOR, who);
                                 return 0;
                         }
                         else
                         {
                                 delete_temp("condition", who);
-                                message_vision(HIG "歐冶子微笑著：很好很好！那我就幫你這一次吧！\n" NOR, who);
+                                message_vision(HIG "歐冶子微笑着：很好很好！那我就幫你這一次吧！\n" NOR, who);
                                 set_temp("condition_ok", 1, who);
                                 destruct(ob);
                                 do_give_weapon(who);
@@ -126,7 +126,7 @@ int accept_object(object who, object ob)
                         message("vision","這是什麼！這不能用來打造兵器！",who);
                         return 0;
         }
-        message("vision","歐冶子低頭檢視了一下手中的"+query("name", ob)+"點了點頭說：\n",who);
+        message("vision","歐冶子低頭檢視了一下手中的"+query("name", ob)+"點了點頭説：\n",who);
         write("我這兒可以打造以下兵器：\n"+
                 "     劍(sword)\n"+
                 "     刀(blade)\n"+
@@ -135,7 +135,7 @@ int accept_object(object who, object ob)
                 "     棒(stick)\n"+
                 "     杖(staff)\n"+
                 "     錘(hammer)\n"+
-                "     鉤(hook)\n"+
+                "     鈎(hook)\n"+
                 "     斧(axe)\n"+
                 "     鞭(whip)\n");                  
         say("這位"+RANK_D->query_respect(who)+"要造什麼兵器？決定了告訴我(answer)。\n");
@@ -159,62 +159,62 @@ int do_answer(string arg)
                 return 0;
         }
 
-        message("vision",me->name()+"對歐冶子輕聲說了幾句。\n",environment(me), ({me}) );
+        message("vision",me->name()+"對歐冶子輕聲説了幾句。\n",environment(me), ({me}) );
         switch (arg)
         {
                 case "sword" :
                         addn_temp("sword", 1, me);
-                        write("帶著原料去找侍劍吧！\n");
+                        write("帶着原料去找侍劍吧！\n");
                         message("vision","去吧！"+me->name()+"！\n",me);
                         break;
                 case "blade" :
                         addn_temp("blade", 1, me);
-                        write("帶著原料去找侍刀吧！\n");
+                        write("帶着原料去找侍刀吧！\n");
                         message("vision","去吧！"+me->name()+"！\n",me);
                         break;
                 case "spear" :
                         addn_temp("spear", 1, me);
-                        write("帶著原料去找侍槍吧！\n");
+                        write("帶着原料去找侍槍吧！\n");
                         message("vision","去吧！"+me->name()+"！\n",me);
                         break;
                 case "club" :
                         addn_temp("club", 1, me);
-                        write("帶著原料去找侍棍吧！\n");
+                        write("帶着原料去找侍棍吧！\n");
                         message("vision","去吧！"+me->name()+"！\n",me);
                         break;
                 case "stick" :
                         addn_temp("stick", 1, me);
-                        write("帶著原料去找侍棒吧！\n");
+                        write("帶着原料去找侍棒吧！\n");
                         message("vision","去吧！"+me->name()+"！\n",me);
                         break;
                 case "staff" :
                         addn_temp("staff", 1, me);
-                        write("帶著原料去找侍杖吧！\n");
+                        write("帶着原料去找侍杖吧！\n");
                         message("vision","去吧！"+me->name()+"！\n",me);
                         break;
                 case "axe" :
                         addn_temp("axe", 1, me);
-                        write("帶著原料去找侍斧吧！\n");
+                        write("帶着原料去找侍斧吧！\n");
                         message("vision","去吧！"+me->name()+"！\n",me);
                         break;
                 case "hammer" :
                         addn_temp("hammer", 1, me);
-                        write("帶著原料去找侍錘吧！\n");
+                        write("帶着原料去找侍錘吧！\n");
                         message("vision","去吧！"+me->name()+"！\n",me);
                         break;
                 case "hook" :
                         addn_temp("hook", 1, me);
-                        write("帶著原料去找侍鉤吧！\n");
+                        write("帶着原料去找侍鈎吧！\n");
                         message("vision","去吧！"+me->name()+"！\n",me);
                         break;
                 case "whip" :
                         addn_temp("whip", 1, me);
-                        write("帶著原料去找侍鞭吧！\n");
+                        write("帶着原料去找侍鞭吧！\n");
                         message("vision","去吧！"+me->name()+"！\n",me);
                         break;
                 default :
                         message_vision(HIC"歐冶子一臉狐疑：什麼兵器？\n"NOR,me);
-                        return notify_fail("歐冶子仔細的說：此事不可兒戲，請慎重！！\n");
+                        return notify_fail("歐冶子仔細的説：此事不可兒戲，請慎重！！\n");
         }
         switch(query_temp("or", me) )
         {
@@ -273,7 +273,7 @@ int do_weapon()
         if( !(query_temp("condition_ok", me)) )
         {
                 message_vision(HIY"這位"+RANK_D->query_respect(me)+"想要重新得到兵器？這不難。不過......\n" NOR, me);
-                message_vision(HIY"歐冶子沉吟了一下說：你得找到我要的東西。\n" NOR, me);
+                message_vision(HIY"歐冶子沉吟了一下説：你得找到我要的東西。\n" NOR, me);
                 switch( random(5) )
                 {
                         case 0:
@@ -327,7 +327,7 @@ int do_give_weapon(object me)
                                   env_name=query("short", env);
                           if (!userp(env))
                             env_name = area +"的" + env_name;
-                          message_vision("$N說道：你的"+query("name", obs[i])+
+                          message_vision("$N説道：你的"+query("name", obs[i])+
                           "在"+ env_name+"，快去找吧。\n",this_object());
                           return 1;
                         }
@@ -370,7 +370,7 @@ object creat_weapon()
                 case "錘":
                         weapon = new("/d/npc/m_weapon/weapon/m_hammer",1);
                         return weapon;
-                case "鉤":
+                case "鈎":
                         weapon = new("/d/npc/m_weapon/weapon/m_hook",1);
                         return weapon;
                 case "鞭":

@@ -39,7 +39,7 @@ int valid_combine(string combo) { return combo=="shaolin-cuff"; }
 int valid_learn(object me)
 {
         if( query_temp("weapon", me) || query_temp("secondary_weapon", me) )
-                return notify_fail("學少林彈腿時手裡不能拿武器。\n");
+                return notify_fail("學少林彈腿時手裏不能拿武器。\n");
         if ((int)me->query_skill("zhanzhuang-gong", 1) < 1)
                 return notify_fail("你的站樁功火候不夠，無法學少林彈腿。\n");
         return 1;

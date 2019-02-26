@@ -99,7 +99,7 @@ mapping *quest = ({
         ]),
         ([
                 "id":          "hu qingyu",
-                "name":        "胡慶余",
+                "name":        "胡慶餘",
                 "type":        "殺",
                 "bonus":       63,
                 "msg":        "",
@@ -171,7 +171,7 @@ mapping *quest = ({
         ]),
         ([
                 "id":          "xiao qun",
-                "name":        "蕭群",
+                "name":        "蕭羣",
                 "type":        "殺",
                 "bonus":       63,
                 "msg":        "",
@@ -323,7 +323,7 @@ mapping *quest = ({
         ]),
         ([
                 "id":          "he bujing",
-                "name":        "何不凈",
+                "name":        "何不淨",
                 "type":        "殺",
                 "bonus":       75,
                 "msg":        "",

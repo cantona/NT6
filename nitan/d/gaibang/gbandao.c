@@ -9,7 +9,7 @@ void create()
 {
         set("short", "暗道");
         set("long", @LONG
-一條狹窄的地下秘密通道，筆直的朝東面延伸。通道的盡頭有明亮
+一條狹窄的地下祕密通道，筆直的朝東面延伸。通道的盡頭有明亮
 的光線透進來。
 LONG );
         set("exits", ([
@@ -35,6 +35,6 @@ int valid_leave(object me, string dir)
 
         if ((!myfam || myfam["family_name"] != "丐幫") && dir == "east" &&
                 objectp(present("jian zhanglao", environment(me))))
-                return notify_fail("簡長老一把揪住你的衣領說：“慢著”\n");
+                return notify_fail("簡長老一把揪住你的衣領説：“慢着”\n");
         return ::valid_leave(me, dir);
 }

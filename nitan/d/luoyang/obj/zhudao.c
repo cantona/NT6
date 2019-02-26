@@ -14,8 +14,8 @@ void create()
                 set("long", "這是一把破竹成篾的竹刀。\n");
                 set("value", 2000);
                 set("material", "steel");
-                set("wield_msg", "$N從兜裡掏出一把$n握在手中。\n");
-                set("unwield_msg", "$N將手中的$n放回兜裡。\n");
+                set("wield_msg", "$N從兜裏掏出一把$n握在手中。\n");
+                set("unwield_msg", "$N將手中的$n放回兜裏。\n");
         }
         init_blade(5,0);
         setup();

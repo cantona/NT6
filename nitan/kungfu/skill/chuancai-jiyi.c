@@ -17,7 +17,7 @@ mapping query_menu(object me)
                   "麻辣手撕雞" : ({ "mala ji" }),
                   "手撕雞"     : ({ "shousi ji" }),
                   "三黃雞"     : ({ "sanhuang ji" }),
-                  "幹煸尤魚"   : ({ "ganbian youyu" }),
+                  "乾煸尤魚"   : ({ "ganbian youyu" }),
                   "魚香肉絲"   : ({ "yuxiang rousi" }),
                   "宮寶雞丁"   : ({ "gongbao jiding" }),
                   "紅油肚片"   : ({ "hongyou dupian" }),
@@ -36,10 +36,10 @@ int practice_skill(object me)
                 return notify_fail("你身上沒有菜料了。\n");
 
         if( query("qi", me)<50 )
-                return notify_fail("你的體力不夠了，無法鍛煉手藝。\n");
+                return notify_fail("你的體力不夠了，無法鍛鍊手藝。\n");
 
         if( query("jing", me)<50 )
-                return notify_fail("你的精神不濟，無法鍛煉手藝。\n");
+                return notify_fail("你的精神不濟，無法鍛鍊手藝。\n");
 
         me->receive_damage("qi", 40);
         me->receive_jing("jing", 40);

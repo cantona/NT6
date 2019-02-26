@@ -4,7 +4,7 @@ void create()
 {
       set("short", "華藏庵西廊");
         set("long", @LONG
-這裡是峨嵋華藏庵西廊。走廊往南通往禪房，東通往廣場。
+這裏是峨嵋華藏庵西廊。走廊往南通往禪房，東通往廣場。
 LONG );
       set("outdoors", "emei");
       set("exits", ([

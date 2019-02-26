@@ -6,7 +6,7 @@ int is_snake(){return 1;}
 void create()
 {
         set_name(NOR + YEL "金環蛇" NOR, ({ "jinhuan she", "jinhuan", "she" }));
-        set("long", YEL "這是一只讓人看了起毛骨悚然的金環蛇。\n" NOR);
+        set("long", YEL "這是一隻讓人看了起毛骨悚然的金環蛇。\n" NOR);
 
         set("age", 1);
         set("str", 15);

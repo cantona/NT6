@@ -45,7 +45,7 @@ int perform(object me, object target)
                 return notify_fail("你的真氣不夠，無法施展" LANG "。\n");
 
         if (! living(target))
-                return notify_fail("對方都已經這樣了，用不著這麼費力吧？\n");
+                return notify_fail("對方都已經這樣了，用不着這麼費力吧？\n");
 
         msg = HIW "\n$N" HIW "默運玄冥神功，展出絕招「" HIM "驚濤駭浪" HIW "」，猛然間欺身"
               "向前，雙掌齊出，掌風陰寒無比，掌未到，風先至，瞬息間雙掌已拍向$n" HIW "！\n"NOR;  

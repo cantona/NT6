@@ -40,11 +40,11 @@ int do_eat(string arg)
         if(!present(this_object(), me))
                 return notify_fail("你要吃什麼？\n");
         if( me->is_busy() )
-                return notify_fail("別急，慢慢吃，小心別噎著了。\n");
+                return notify_fail("別急，慢慢吃，小心別噎着了。\n");
 
         set("qi",query("eff_qi",  me), me);
         set("neili",query("max_neili",  me), me);
-        message_vision(HIR "$N吃下一顆朱果，只覺饑渴全消，一股暖流從丹田直沖上來。\n"NOR,me);
+        message_vision(HIR "$N吃下一顆朱果，只覺飢渴全消，一股暖流從丹田直衝上來。\n"NOR,me);
         destruct(this_object());
         return 1;
 }

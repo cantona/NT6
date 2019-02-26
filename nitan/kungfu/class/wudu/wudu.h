@@ -17,7 +17,7 @@ int permit_recruit(object ob)
         if( query("family/family_name", ob) && 
             query("family/family_name", ob) != "五毒教" )
         {
-                command("say 你不是已經有了師傅麼，還來幹什麼？做臥底麼？");
+                command("say 你不是已經有了師傅麼，還來幹什麼？做卧底麼？");
                 return 0;
         }
 

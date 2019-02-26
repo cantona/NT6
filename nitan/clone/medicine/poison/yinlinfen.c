@@ -13,8 +13,8 @@ void create()
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("long","一包以骨灰、蛇膽等為原料制成的銀光閃閃的毒粉。
-可以用來生成(make)火堆(huodui)。也可以倒(pour)進酒水裡，
+                set("long","一包以骨灰、蛇膽等為原料製成的銀光閃閃的毒粉。
+可以用來生成(make)火堆(huodui)。也可以倒(pour)進酒水裏，
 或塗(tu)在兵器上。(塗之前必須先點燃(dian)它)\n" );
                 set("unit", "包");
 //                set("unit", "些");

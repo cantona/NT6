@@ -40,7 +40,7 @@ int main(object me, string arg)
         }
 
         if (! ob)
-                return notify_fail("這裡沒有這個人。\n");
+                return notify_fail("這裏沒有這個人。\n");
 
         if (query_temp("pending/answer/" + query("id", ob), me) &&
             query_temp("pending/engage", ob) == me )
@@ -49,7 +49,7 @@ int main(object me, string arg)
 
         if (! ob->is_character())
         {
-                message_vision("$N痴痴的望著$n自言自語：嫁給"
+                message_vision("$N痴痴的望着$n自言自語：嫁給"
                                "我吧...嫁給我吧...看來是瘋了。\n", me, ob);
                 return 1;
         }
@@ -81,7 +81,7 @@ int main(object me, string arg)
 
         if( !query("can_speak", ob) )
         {
-                message_vision("$N望著$n傻笑，一副變態的模樣。\n", me, ob);
+                message_vision("$N望着$n傻笑，一副變態的模樣。\n", me, ob);
                 return 1;
         }
 
@@ -92,7 +92,7 @@ int main(object me, string arg)
                 return notify_fail("你可要穩住！根據泥潭法典第九十九條，重婚者打入地獄！\n");
 
         if( query("couple", ob) )
-                return notify_fail("你怎麼也得等人家離婚了再說吧？\n");
+                return notify_fail("你怎麼也得等人家離婚了再説吧？\n");
 
         if( query("age", me)<18 )
         {
@@ -114,11 +114,11 @@ int main(object me, string arg)
                 if( query_temp("pending/engage_to", me) == query("id", ob) )
                 {
                         CHANNEL_D->do_channel(this_object(), "rumor",
-                                "據說" + me->name(1) + "下定決心，要和" +
+                                "據説" + me->name(1) + "下定決心，要和" +
                                 ob->name(1) + "私定終身。");
                 } else
                 {
-                        write("這裡連個証婚人都沒有？你想私定終身嘛？要"
+                        write("這裏連個證婚人都沒有？你想私定終身嘛？要"
                               "是這樣就在輸入一次這個命令。\n");
                         set_temp("pending/engage_to",query("id",  ob), me);
                         return 1;
@@ -170,7 +170,7 @@ int do_right(object me, object ob)
                 return notify_fail("可惜啊，人家已經不在這兒了。\n");
 
         if (! living(ob))
-                return notify_fail("人家現在聽不到你說的話，還是算了吧。\n");
+                return notify_fail("人家現在聽不到你説的話，還是算了吧。\n");
 
         if( query_temp("pending/engage", ob) != me )
                 return notify_fail("人家現在已經不打算向你求婚了。\n");
@@ -261,7 +261,7 @@ int do_refuse(object me, object ob)
                 return notify_fail("可惜啊，人家已經不在這兒了。\n");
 
         if (! living(ob))
-                return notify_fail("人家現在聽不到你說的話，還是算了吧。\n");
+                return notify_fail("人家現在聽不到你説的話，還是算了吧。\n");
 
         if( query_temp("pending/engage", ob) != me )
                 return notify_fail("人家現在已經不打算向你求婚了。\n");
@@ -290,18 +290,18 @@ int do_refuse(object me, object ob)
                 case "狡黠多變":
                         message_vision("$N莞而一笑，對$n道：不要了，"
                                 "我怎麼看都不太合適，還是以後"
-                                "再說吧！\n", me, ob);
+                                "再説吧！\n", me, ob);
                         break;
 
                 case "光明磊落":
-                        message_vision("$N幹幹脆脆的對$n道：我不同"
+                        message_vision("$N乾乾脆脆的對$n道：我不同"
                                 "意，你死了這條心吧！\n", me, ob);
                         break;
 
                 default:
                         message_vision("$N望了望$n，冷笑道：要好，"
                                 "拿出兩百萬兩黃金作聘禮，外加"
-                                "三千顆菩提子再說吧！\n", me, ob);
+                                "三千顆菩提子再説吧！\n", me, ob);
                         break;
                 }
         } else
@@ -315,7 +315,7 @@ int do_refuse(object me, object ob)
 
                 case "狡黠多變":
                         message_vision("$N眼珠轉了幾轉，對$n道：何必"
-                                "著急？這事兒咱們以後再說。\n", me, ob);
+                                "着急？這事兒咱們以後再説。\n", me, ob);
                         break;
 
                 case "光明磊落":
@@ -324,7 +324,7 @@ int do_refuse(object me, object ob)
                         break;
 
                 default:
-                        message_vision("$N望了望$n，姦笑兩聲道：咱們"
+                        message_vision("$N望了望$n，奸笑兩聲道：咱們"
                                 "何必結婚呢？這樣不也挺好的麼？\n", me, ob);
                         break;
                 }

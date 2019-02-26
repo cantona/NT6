@@ -1,4 +1,4 @@
-// 佔卜
+// 占卜
 #include <mudlib.h>
 #include <daemons.h>
 #include <ansi.h>
@@ -15,19 +15,19 @@ void main(object ob)
 	p_name=this_body()->query_id()[0];
 	p_skill=CHAR_D->get_char(ob->query_primary_id(),"skills")["zhanbu"];
 	if(!(CHAR_D->get_char(p_name,"skills")))
-       	{       write("你不會佔卜之術。\n");
+       	{       write("你不會占卜之術。\n");
                 return;
        	}
 	
 	if( !p_id){
-                write("只有身在軍中才能使用佔卜之術。\n");
+                write("只有身在軍中才能使用占卜之術。\n");
                 return;
         };	
 	// In the furture, We have to consider theplayer's ablility
 	// add the exp of this jimou, reduce mp, etc.
 	where = TROOP_D->get_troop_area(p_id);
 	ob->simple_action(SG_SKILL_D->query_use("zhanbu"));
-	ob->start_busy(10, "你正忙于使用佔卜之術。");
+	ob->start_busy(10, "你正忙於使用占卜之術。");
 	load_object("/daemons/cast_d.c")->reg_player(ob->query_primary_id(),"zhanbu");
         ob->award_exp(ob->query_sk_level("sk_zhimou")/2+random(20), "zhanbu");
 	call_out("show_result", 5+random(5), ob, p_skill, p_id, e_id);
@@ -73,7 +73,7 @@ if(objectp(find_user(ob->query_id()[0])))
         rm=bmin(30,rm);
         this_body()->set_sg_rongmao(rm);
 	WARAI_D->war_inf(TROOP_D->get_troops(p_id,"task_id"),
-TROOP_D->find_troop(p_id)->query_id()[1]+"使用佔卜之術，使"+
+TROOP_D->find_troop(p_id)->query_id()[1]+"使用占卜之術，使"+
 CHAR_D->get_char(p_name,"name")+
 "增加容貌至"+chinese_number(rm)+"點。","b");
 		}
@@ -84,7 +84,7 @@ CHAR_D->get_char(p_name,"name")+
         rm=bmin(30,rm);
         this_body()->set_sg_rongmao(rm);
         WARAI_D->war_inf(TROOP_D->get_troops(p_id,"task_id"),
-TROOP_D->find_troop(p_id)->query_id()[1]+"使用佔卜之術，使"+
+TROOP_D->find_troop(p_id)->query_id()[1]+"使用占卜之術，使"+
 CHAR_D->get_char(p_name,"name")+
 "減低容貌至"+chinese_number(rm)+"點。","b");	
 	}
@@ -96,7 +96,7 @@ CHAR_D->get_char(p_name,"name")+
 	e_id= troops[random(sizeof(troops))];
 	damage= kill * p_skill *3/5 ;
 	WARAI_D->war_inf(TROOP_D->get_troops(p_id,"task_id"),
-TROOP_D->find_troop(p_id)->query_id()[1]+"使用佔卜之術，招來天火燒殺"+
+TROOP_D->find_troop(p_id)->query_id()[1]+"使用占卜之術，招來天火燒殺"+
 TROOP_D->find_troop(e_id)->query_id()[1]+chinese_number(damage)+
 "人。","b");
 	WARAI_D->kill_troop(e_id,damage);
@@ -109,7 +109,7 @@ TROOP_D->find_troop(e_id)->query_id()[1]+chinese_number(damage)+
 	kill = kill * 3;
 "/daemons/condition_d.c"->apply_condition(e_id,"confuse",kill,damage);
         WARAI_D->war_inf(TROOP_D->get_troops(p_id,"task_id"),
-TROOP_D->find_troop(p_id)->query_id()[1]+"使用佔卜之術，招來天雷使"+
+TROOP_D->find_troop(p_id)->query_id()[1]+"使用占卜之術，招來天雷使"+
 TROOP_D->find_troop(e_id)->query_id()[1]+"陷入混亂。","b");
 	}
 	     if (kill == 0 || kill == 1)
@@ -119,7 +119,7 @@ TROOP_D->find_troop(e_id)->query_id()[1]+"陷入混亂。","b");
 		damage= 10+ random(10);
 "/daemons/condition_d.c"->apply_condition(p_id,"confuse",kill,damage);	
 		WARAI_D->war_inf(TROOP_D->get_troops(p_id,"task_id"),
-TROOP_D->find_troop(p_id)->query_id()[1]+"使用佔卜之術失敗，陷入混亂。","b");
+TROOP_D->find_troop(p_id)->query_id()[1]+"使用占卜之術失敗，陷入混亂。","b");
 	
 		}
 	
@@ -128,14 +128,14 @@ TROOP_D->find_troop(p_id)->query_id()[1]+"使用佔卜之術失敗，陷入混�
                 AREA_D->set_area(where, "wind", random(9));
                 WARAI_D->war_inf(TROOP_D->get_troops(p_id,"task_id"),
                         TROOP_D->find_troop(p_id)->query_id()[1]+
-"使用佔卜之術使風向轉為"+DAY_D->get_wind_short(AREA_D->get_area(where,"wind"))+"。","b");
+"使用占卜之術使風向轉為"+DAY_D->get_wind_short(AREA_D->get_area(where,"wind"))+"。","b");
 		}
 	    if (kill == 16)
 		{
 		AREA_D->set_area(where, "weather", random(7));	
 		WARAI_D->war_inf(TROOP_D->get_troops(p_id,"task_id"),
 			TROOP_D->find_troop(p_id)->query_id()[1]+
-"使用佔卜之術使天氣轉為"+DAY_D->get_weather_short(AREA_D->get_area(where,"weather"))+"。", "b");
+"使用占卜之術使天氣轉為"+DAY_D->get_weather_short(AREA_D->get_area(where,"weather"))+"。", "b");
 		}
 	
  if (kill == 14)
@@ -148,7 +148,7 @@ if(objectp(find_user(ob->query_id()[0])))
 		  sm= sm + sm1;
 		  this_body()->set_shouming(sm);
 	WARAI_D->war_inf(TROOP_D->get_troops(p_id,"task_id"),
-TROOP_D->find_troop(p_id)->query_id()[1]+"使用佔卜之術，受天神祝福，增加"+
+TROOP_D->find_troop(p_id)->query_id()[1]+"使用占卜之術，受天神祝福，增加"+
 CHAR_D->get_char(p_name,"name")+
 "壽命"+chinese_number(sm1)+"年。","b");
 		}
@@ -158,7 +158,7 @@ CHAR_D->get_char(p_name,"name")+
 		sm1 = 0-sm1;
                   this_body()->set_shouming(sm);
         WARAI_D->war_inf(TROOP_D->get_troops(p_id,"task_id"),
-TROOP_D->find_troop(p_id)->query_id()[1]+"使用佔卜之術，受惡魔詛咒，減少"+
+TROOP_D->find_troop(p_id)->query_id()[1]+"使用占卜之術，受惡魔詛咒，減少"+
 CHAR_D->get_char(p_name,"name")+
 "壽命"+chinese_number(sm1)+"年。","b");
 	}
@@ -173,7 +173,7 @@ CHAR_D->get_char(p_name,"name")+
 	e_id= troops[random(sizeof(troops))];
         damage= kill * p_skill*1.2/2 ;
 	WARAI_D->war_inf(TROOP_D->get_troops(p_id,"task_id"),
-TROOP_D->find_troop(p_id)->query_id()[1]+"使用佔卜之術，招來天龍擊殺"+
+TROOP_D->find_troop(p_id)->query_id()[1]+"使用占卜之術，招來天龍擊殺"+
 TROOP_D->find_troop(e_id)->query_id()[1]+chinese_number(damage)+
 "人。","b");
         WARAI_D->kill_troop(e_id,damage);
@@ -189,14 +189,14 @@ TROOP_D->find_troop(e_id)->query_id()[1]+chinese_number(damage)+
 	if (random(2) >0){	
 	TROOP_D->add_morale(e_id,damage);
 	WARAI_D->war_inf(TROOP_D->get_troops(p_id,"task_id"),
-TROOP_D->find_troop(p_id)->query_id()[1]+"使用佔卜之術，招來天鷹使"+
+TROOP_D->find_troop(p_id)->query_id()[1]+"使用占卜之術，招來天鷹使"+
 TROOP_D->find_troop(e_id)->query_id()[1]+
 "士氣上升。","b");		
 	   	}
 	else	{
 	damage = 0 - damage;
 	WARAI_D->war_inf(TROOP_D->get_troops(p_id,"task_id"),
-TROOP_D->find_troop(p_id)->query_id()[1]+"使用佔卜之術，招來天鷲使"+
+TROOP_D->find_troop(p_id)->query_id()[1]+"使用占卜之術，招來天鷲使"+
 TROOP_D->find_troop(e_id)->query_id()[1]+
 "士氣下降。","b");
 		}	
@@ -208,7 +208,7 @@ TROOP_D->find_troop(e_id)->query_id()[1]+
 		kill= kill *18;
 "/daemons/condition_d.c"->apply_condition(e_id,"poison",kill,damage);
 WARAI_D->war_inf(TROOP_D->get_troops(p_id,"task_id"),
-TROOP_D->find_troop(p_id)->query_id()[1]+"使用佔卜之術，招來天蛇使"+
+TROOP_D->find_troop(p_id)->query_id()[1]+"使用占卜之術，招來天蛇使"+
 TROOP_D->find_troop(e_id)->query_id()[1]+
 "中毒。","b");
 

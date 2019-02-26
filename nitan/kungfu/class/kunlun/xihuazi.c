@@ -8,7 +8,7 @@ inherit F_GUARDER;
 void create()
 {
         set_name("西華子", ({"xi huazi", "xi", "huazi"}));
-        set("long", "他是昆侖派第五代弟子，滿腮虯髯，性子十分暴躁。\n");
+        set("long", "他是崑崙派第五代弟子，滿腮虯髯，性子十分暴躁。\n");
         set("gender", "男性");
         set("age", 38);
         set("attitude", "heroism");
@@ -64,13 +64,13 @@ void create()
 
         set("guarder", ([
                 "refuse_other": CYN "$N" CYN "對$n" CYN "怒喝道："
-                                "他奶奶的，你是什麼人？昆侖派豈是"
+                                "他奶奶的，你是什麼人？崑崙派豈是"
                                 "讓你隨便走動地方？" NOR,
                 "refuse_carry": CYN "$N" CYN "對$n" CYN "喝道：你"
                                 "背上背的是什麼人？給我放下來！" NOR,
         ]));
 
-        create_family("昆侖派", 5, "弟子");
+        create_family("崑崙派", 5, "弟子");
 
         set("chat_chance_combat", 100);
         set("chat_msg_combat", ({
@@ -94,13 +94,13 @@ void attempt_apprentice(object me)
 
         if( query("gender", me) == "女性" )
         {
-                command("say 師傅不準我收女弟子，你去找我幾個師妹吧。");
+                command("say 師傅不准我收女弟子，你去找我幾個師妹吧。");
                 return;
         }
 
         if( query("combat_exp", me)<10000 )
         {
-                command("say 你的江湖經驗實在太淺，還是鍛煉鍛煉再說吧。");
+                command("say 你的江湖經驗實在太淺，還是鍛鍊鍛鍊再説吧。");
                 return;
         }
 

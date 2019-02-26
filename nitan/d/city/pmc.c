@@ -6,7 +6,7 @@ void create()
 {
     set("short", HIG+BLINK"拍賣場"NOR);
         set("long", @LONG
-這裡是專門為玩家們拍賣(paimai)物品而設的地方。
+這裏是專門為玩家們拍賣(paimai)物品而設的地方。
 LONG );
         set("no_fight",1);
     set("exits", ([

@@ -9,7 +9,7 @@ void create()
                 set_default_object(__FILE__);
         else {
                 set("unit", "瓶");
-                set("long", HIB "這是一瓶墨綠色的劇毒粉末，可殺人于無形。\n" NOR);
+                set("long", HIB "這是一瓶墨綠色的劇毒粉末，可殺人於無形。\n" NOR);
                 set("value", 50);
                 set("poison_type", "poison");
                 set("can_pour", 1);

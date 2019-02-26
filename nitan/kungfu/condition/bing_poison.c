@@ -9,7 +9,7 @@ int update_condition(object me, int duration)
 {
   if (me->is_ghost()) return 1;
         tell_object(me,HIB"突然你感覺四肢麻麻的似乎不大靈便！\n"NOR);
-        tell_room(environment(me),HIB+me->name()+"突然全身一顫，兩張手掌心已全成黑色，黑氣更順著手臂向上攀升！\n"NOR, ({ me }));     
+        tell_room(environment(me),HIB+me->name()+"突然全身一顫，兩張手掌心已全成黑色，黑氣更順着手臂向上攀升！\n"NOR, ({ me }));     
         me->receive_damage("qi", 25);
         if(userp(me)) me->receive_wound("jing", 20,"中冰晶毒");
         else me->receive_wound("jing", 40,"中冰晶毒");

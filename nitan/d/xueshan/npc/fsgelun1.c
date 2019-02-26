@@ -11,7 +11,7 @@ void create()
         set_name("祭祀喇嘛", ({ "jisi lama", "jisi", "lama" }));
         set_weight(3000000);
         set("long", 
-"他是密宗的戒律僧，長得膀大腰，手中提著法器，身著黃袍，頭戴黃帽，\n"
+"他是密宗的戒律僧，長得膀大腰，手中提着法器，身着黃袍，頭戴黃帽，\n"
 "滿面肅殺之氣。\n");
         set("gender", "男性");
         set("age", 20);
@@ -66,7 +66,7 @@ int do_fashi()
         
         
         if (! present("fa tan", (environment(this_object())))){
-        command("say 我正忙著呢，你去問值日的葛倫布吧。");
+        command("say 我正忙着呢，你去問值日的葛倫布吧。");
         return 1;
         }
 
@@ -115,8 +115,8 @@ int do_fashi()
         return 1;
         }
         }
-        command("say"+query("pending", ob)+"上人法事做到一半後不知跑哪裡去了？真不象話！"
-        +query("name", me)+"上人替"+query("pending", ob)+"上人把余下的法事做完吧。\n");
+        command("say"+query("pending", ob)+"上人法事做到一半後不知跑哪裏去了？真不象話！"
+        +query("name", me)+"上人替"+query("pending", ob)+"上人把餘下的法事做完吧。\n");
         set("pending",query("name",  me), ob);
         return 1;
         }
@@ -151,7 +151,7 @@ int accept_object(object me, object ob)
 
         if( query("id", ob) == "corpse" && present("fatan",(environment(this_object())) )
          && query_temp("marks/葛", me) == 1){
-        write("祭祀喇嘛急急忙忙吩咐左右往祭壇裡填柴，倒酥油。\n");
+        write("祭祀喇嘛急急忙忙吩咐左右往祭壇裏填柴，倒酥油。\n");
         delete_temp("marks/葛", me);
         if( query("combat_exp", ob)>query("combat_exp", me )
          && query("my_killer", ob) == query("id", me)){
@@ -225,12 +225,12 @@ void preparing(object me)
         set("burn/jobtime", time(), me);
         set("in_use", 1, ob);
 
-        say("祭祀喇嘛將"+query("name", obj)+"塞進了"+query("name", ob)+"裡。\n");
+        say("祭祀喇嘛將"+query("name", obj)+"塞進了"+query("name", ob)+"裏。\n");
         write("不一會兒，一切準備停當。\n");
         command("say"+query("name", me)+"上人請為亡靈超度吧！\n");
 /*
         command("chat"+query("title", me)+query("name", me)+
-                "上人，于今日" + NATURE_D->game_time() + "超度" 
+                "上人，於今日" + NATURE_D->game_time() + "超度" 
                 +query("victim_name", obj)+"！\n");
 
 */

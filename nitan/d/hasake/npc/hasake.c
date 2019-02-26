@@ -4,7 +4,7 @@ void create()
         set_name("哈薩克牧民", ({ "hasake", "mu min"}));
         set("gender", "男性");
         set("age", 26);
-        set("long", "一位健壯的哈薩克族民，正趕著幾十只羊。\n");
+        set("long", "一位健壯的哈薩克族民，正趕着幾十只羊。\n");
         set("attitude", "friendly");
         set("combat_exp", 4000 + random(500));
         set("str", 32);
@@ -35,7 +35,7 @@ void create()
         setup();
         set("chat_chance", 5);
         set("chat_msg", ({
-"哈薩克牧民高興地說: 上個月，我用刀砍死了一頭狼，剝了狼皮送給咱阿妹。\n",
+"哈薩克牧民高興地説: 上個月，我用刀砍死了一頭狼，剝了狼皮送給咱阿妹。\n",
 "哈薩克牧民道:  歡迎來到我們哈薩克部族，請去喝碗香甜的乳酪吧。\n",
         }) );
         carry_object(__DIR__"obj/madao")->wield();

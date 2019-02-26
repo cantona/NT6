@@ -16,7 +16,7 @@ void create()
 {
         set_name(BLU "嵩山府君" NOR, ({ "songshan fujun", "songshan", "fujun" }));
         set("long", "他就是嵩山府君。\n");
-        set("title", HIW "中岳" NOR);
+        set("title", HIW "中嶽" NOR);
         set("gender", "男性");
         set("age", 50);
         set("str", 91);
@@ -104,7 +104,7 @@ int ask_offer()
                 
         if( !objectp( ob = present("contract", me) ) ||
             query("owner", ob) != query("id", me)){
-                tell_object(me, BLU "嵩山府君說道：「你還沒有去領取閻王契(contract)，我不會接受你的獻祭請求。」\n" NOR);
+                tell_object(me, BLU "嵩山府君説道：「你還沒有去領取閻王契(contract)，我不會接受你的獻祭請求。」\n" NOR);
                 return 1;
         }
         
@@ -186,7 +186,7 @@ void do_broadcast(int index)
                 break;
         case(2):
                 tell_room(environment(),
-                        BLU "嵩山府君提筆揮洒，只見絲絲紫光滲入閻王契上，片刻即成。\n" NOR);
+                        BLU "嵩山府君提筆揮灑，只見絲絲紫光滲入閻王契上，片刻即成。\n" NOR);
                 break;
         case(3):
                 tell_room(environment(),
@@ -220,10 +220,10 @@ int do_offer(string arg)
 
         if( !objectp( ob = present("contract", me) ) ||
                 query("owner", ob) != query("id", me) )
-                return notify_fail(BLU "嵩山府君說道：「你還沒有去領取閻王契(contract)，我不會接受你的獻祭請求。」\n" NOR);
+                return notify_fail(BLU "嵩山府君説道：「你還沒有去領取閻王契(contract)，我不會接受你的獻祭請求。」\n" NOR);
         
         if( query("offer_songshan", ob) )
-                return notify_fail(BLU "嵩山府君說道：「你已經在嵩山獻祭過了，就不用再來獻祭吧。」\n" NOR);
+                return notify_fail(BLU "嵩山府君説道：「你已經在嵩山獻祭過了，就不用再來獻祭吧。」\n" NOR);
                 
         if( !query_temp("can_offer", me) || 
                 query_temp("can_offer", me) != query("id", this_object()) )
@@ -241,7 +241,7 @@ int do_offer(string arg)
         
         message_vision( HIR "$N" HIR "略一沉思道：「既然如此，為顯誠意，我決定獻祭" + amount + "點最大內力。」\n" NOR, me );
         tell_object(me, BLU "嵩山府君凌空一掏，你忽然覺得自己身上少了什麼。\n" NOR);                  
-        msg = HIW + NATURE_D->game_time() + "，" + me->query_idname() + HIW "于嵩山獻祭" + amount + "點最大內力。\n";
+        msg = HIW + NATURE_D->game_time() + "，" + me->query_idname() + HIW "於嵩山獻祭" + amount + "點最大內力。\n";
         
         rec=query("offer", ob);
         if( ! rec ) rec = ({});

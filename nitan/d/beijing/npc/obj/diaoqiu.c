@@ -11,7 +11,7 @@ void create()
                 set_default_object(__FILE__);
         else {
                 set("unit", "件");
-                set("long", "一件用貂皮制作，做工細致的皮外套，很是名貴。\n");
+                set("long", "一件用貂皮製作，做工細緻的皮外套，很是名貴。\n");
                 set("value", 1000);
                 set("material", "cloth");
                 set("armor_prop/armor", 20);

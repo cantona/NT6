@@ -13,7 +13,7 @@ void create()
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("long", "一杯散發著清香的茉莉花茶。\n");
+                set("long", "一杯散發着清香的茉莉花茶。\n");
                 set("unit", "杯");
                 set("value", 0);
                 set("max_liquid", 5);

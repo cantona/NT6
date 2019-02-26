@@ -30,7 +30,7 @@ int perform(object me, object target)
                 return notify_fail("你現在真氣不夠，無法施展" JUAN "。\n");
 
         if (! living(target))
-               return notify_fail("對方都已經這樣了，用不著這麼費力吧？\n");
+               return notify_fail("對方都已經這樣了，用不着這麼費力吧？\n");
 
         msg = HIC "\n只見$N" HIC "右拳直出，中途猛地一轉，突然發力，身法"
               "陡快，將$n" HIC "籠罩， 正是飄風拳法絕招「" HIW "卷字決" HIC "」。\n" NOR;

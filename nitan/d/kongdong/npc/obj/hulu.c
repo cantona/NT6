@@ -10,7 +10,7 @@ void create()
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("long", "一個用來裝水的大葫蘆，外皮金黃，裡面能裝好幾斤清水。\n");
+                set("long", "一個用來裝水的大葫蘆，外皮金黃，裏面能裝好幾斤清水。\n");
                 set("unit", "個");
                 set("value",3);
                 set("max_liquid", 10);

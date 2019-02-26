@@ -4,7 +4,7 @@ void create()
 {
         set("short", "南疆沙漠");
         set("long", @LONG
-這就是浩瀚的塔克拉馬幹大沙漠，一走進來，你仿佛迷失
+這就是浩瀚的塔克拉馬干大沙漠，一走進來，你彷彿迷失
 了方向。你感到口內十分焦渴，還是快些離開吧。
 LONG );
 
@@ -21,7 +21,7 @@ LONG );
         ]));
 
         set("outdoors", "xiyu");
-        set("no_map", "這裡的地形令人迷惑，無法繪制地圖。\n");
+        set("no_map", "這裏的地形令人迷惑，無法繪製地圖。\n");
 
         setup();
 }
@@ -44,7 +44,7 @@ int valid_leave(object me, string dir)
 
         if (current_water <= 20)
         {
-                write("你過于缺水，眼冒金星。\n");
+                write("你過於缺水，眼冒金星。\n");
                 set("water", 0, me);
         } else
         if( !objectp(present("bigu fu", me)) && query("reborn/times", me) < 3 )

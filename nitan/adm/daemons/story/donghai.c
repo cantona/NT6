@@ -1,4 +1,4 @@
-// story:donghai 東海龍傳說
+// story:donghai 東海龍傳説
 
 #include <ansi.h>
 
@@ -11,7 +11,7 @@ nosave mixed *story = ({
         "哪吒：洗洗頭！",
         "哪吒：沖沖腳！",
         "哪吒：待我搓搓背！恩？我的小布條呢...",
-        "唏～哩～嘩～啦～～～",
+        "唏～哩～譁～啦～～～",
         "東海龍王：我的天，怎麼晃得這麼厲害？",
         "蝦兵蟹將：呼嚕呼嚕，不得了了！",
         "龍子龍孫：喔喔，老爸救命啊！",
@@ -23,7 +23,7 @@ nosave mixed *story = ({
         "啪！",
         "噢呦！",
         (: give_gift, "donghai" :),
-        "聽說三太子(prince of dragon)和哪吒發生沖突，被打落凡間。",
+        "聽説三太子(prince of dragon)和哪吒發生衝突，被打落凡間。",
 });
 
 string prompt() { return HIM "【神話】" NOR; }

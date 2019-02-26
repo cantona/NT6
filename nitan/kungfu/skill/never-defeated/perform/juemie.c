@@ -34,10 +34,10 @@ int perform(object me, object target)
                 return notify_fail("你的內力不夠，不能使用天地絕滅！\n");
  
         if (! living(target))
-              return notify_fail("對方都已經這樣了，用不著這麼費力吧？\n");
+              return notify_fail("對方都已經這樣了，用不着這麼費力吧？\n");
 
-        msg = HIC "$N" HIC "隨便走了幾步，忽然一盪手中的" + weapon->name() +
-              HIC "，迅捷無比的掃向$n" HIC "，變化復雜之極，不可思議！\n" NOR;
+        msg = HIC "$N" HIC "隨便走了幾步，忽然一蕩手中的" + weapon->name() +
+              HIC "，迅捷無比的掃向$n" HIC "，變化複雜之極，不可思議！\n" NOR;
  
         ap = attack_power(me, "sword") + me->query_int();
         dp = defense_power(target, "dodge") + target->query_dex();
@@ -55,7 +55,7 @@ int perform(object me, object target)
  
                 msg += COMBAT_D->do_damage(me, target, REMOTE_ATTACK, damage, 90,
                                            HIR "$n" HIR "連忙格擋，可是這一招實在是鬼神莫"
-                                           "測，哪裡琢磨得透？登時中了$P" HIR "的重創！\n" NOR);
+                                           "測，哪裏琢磨得透？登時中了$P" HIR "的重創！\n" NOR);
         }
 
         message_combatd(msg, me, target);

@@ -51,7 +51,7 @@ int play(object me, object ob, string arg)
         if (lvl < 90)
         {
                 message_vision(HIW "\n$N" HIW "拿起$n" HIW "吹了一首" + m_name +
-                               HIW "，韻律洋洋洒洒，頗為不錯。\n" NOR, me, ob);
+                               HIW "，韻律洋洋灑灑，頗為不錯。\n" NOR, me, ob);
         } else
         if (lvl < 150)
         {

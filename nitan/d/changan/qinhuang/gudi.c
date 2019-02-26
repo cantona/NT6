@@ -11,7 +11,7 @@ void create()
         set("long", @LONG
 頭頂幾道陽光照在地上，腳下是一片很厚的草地，走在上面軟綿
 綿的，很是恰意，四周看上去高不可攀，怪石嶙峋，你心中不由一驚，
-要不是這片厚厚的草堆墊著，在好的輕功也會摔得變成一堆肉泥。
+要不是這片厚厚的草堆墊着，在好的輕功也會摔得變成一堆肉泥。
 LONG );
         set("item_desc", ([
         "怪石" : "在嶙峋的怪石中，有塊巖石十分光滑，與其他巖石不同。\n", 
@@ -86,7 +86,7 @@ int do_enter(string arg)
         write("你想去那啊？\n");
         return 1;
         }
-        message_vision("$N躬了躬身體，鑽進了巖洞裡。\n", me);
+        message_vision("$N躬了躬身體，鑽進了巖洞裏。\n", me);
         me->move("/d/qinhuang/mudong0.c");
         message_vision("“隆隆”，洞口已經封死了。\n", me);
         return 1;

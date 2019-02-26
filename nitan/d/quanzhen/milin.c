@@ -9,8 +9,8 @@ void create()
         set("short","樹林");
 
         set("long", @LONG
-走在林中，你只聞錚錚琴聲，一股淡淡白煙，帶著極甜的花香，
-自密林深處傳出。一群乳白色的蜜蜂在你身旁飛來飛去。不論往哪ㄦ
+走在林中，你只聞錚錚琴聲，一股淡淡白煙，帶着極甜的花香，
+自密林深處傳出。一羣乳白色的蜜蜂在你身旁飛來飛去。不論往哪ㄦ
 走盡是茂密的樹林。附近有一團花叢(flowers)。
 LONG );
 
@@ -41,12 +41,12 @@ int do_push(){
         object me=this_player();
         
         if (me->is_busy())
-                return notify_fail("你現在正忙著哪！\n");
+                return notify_fail("你現在正忙着哪！\n");
 
         if( query("hide_person", this_object()) )
-                return notify_fail("你看見裡面有影子晃動，還是不鑽的好，別有什麼猛獸。\n");
+                return notify_fail("你看見裏面有影子晃動，還是不鑽的好，別有什麼猛獸。\n");
 
-        tell_object(me, "你輕輕地推開花木，向裡鑽了進去。\n");
+        tell_object(me, "你輕輕地推開花木，向裏鑽了進去。\n");
         
         room = load_object("/d/quanzhen/flowers");
         

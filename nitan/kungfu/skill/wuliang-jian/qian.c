@@ -34,7 +34,7 @@ int perform(object me, object target)
                 return notify_fail("你的真氣不夠，難以施展" + name() + "。\n");
 
         if (! living(target))
-                return notify_fail("對方都已經這樣了，用不著這麼費力吧？\n");
+                return notify_fail("對方都已經這樣了，用不着這麼費力吧？\n");
 
         msg = HIR "只見$N" HIR "手中" + weapon->name() + HIR "“唰"
               "唰唰唰”連攻四劍，劍招去勢極快，全然籠罩$n" HIR "！\n" NOR;

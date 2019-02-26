@@ -8,8 +8,8 @@ void create()
 {
         set("short", "弟子居");
         set("long", @LONG
-這裡是全真教弟子居住的房間。房間很大，整齊地舖著一排一排
-的床，床上被褥都折疊得整整齊齊，但是一個人都沒有，也許所有的
+這裏是全真教弟子居住的房間。房間很大，整齊地鋪着一排一排
+的牀，牀上被褥都摺疊得整整齊齊，但是一個人都沒有，也許所有的
 弟子都去練功去了。靠牆的地方有一個櫃子(cabinet)。
 LONG
         );
@@ -41,7 +41,7 @@ int do_pull(string arg)
                 return notify_fail("你要拉開什麼？\n");
         }
 
-        message_vision("$N使勁把櫃子拉開，現出一個洞口。原來這裡是密室的入口。\n", this_player());
+        message_vision("$N使勁把櫃子拉開，現出一個洞口。原來這裏是密室的入口。\n", this_player());
         set("exits/down", __DIR__"mishi");
         remove_call_out("close");
         call_out("close", 8, this_object());

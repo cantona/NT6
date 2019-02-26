@@ -5,7 +5,7 @@ inherit NPC;
 void create()
 {
         set_name("蠍子", ({ "scorpion" }));
-        set("long", "一只蠍子正虎視眈眈地盯著你。\n");
+        set("long", "一隻蠍子正虎視眈眈地盯著你。\n");
 
         set("race", "昆蟲");
         set("subrace", "爬蟲");

@@ -35,7 +35,7 @@ int perform(object me)
                 return notify_fail("你沒有激發風雲手，無法使用「擒拿」！\n");
 
        if (! living(target))
-              return notify_fail("對方都已經這樣了，用不著這麼費力吧？\n");
+              return notify_fail("對方都已經這樣了，用不着這麼費力吧？\n");
 
         msg = HIC "$N" HIC "貼上前來，和$n" HIC "近身搏擊，只見$P"
               "的手忽折忽扭，或抓或甩，令人眼花繚亂！\n" NOR;

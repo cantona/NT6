@@ -46,7 +46,7 @@ int perform(object me, object target)
         if( query("neili", me) <= 1000 )
                 return notify_fail("你的內力不夠，無法繼續施展亂拳飛舞！\n");
 
-        msg = HIY"$N張口一聲暴喝，雙目精光四射，接著身形飄忽不定，雙拳幻化出漫天拳影重重向$n籠罩過去！\n\n"NOR;
+        msg = HIY"$N張口一聲暴喝，雙目精光四射，接着身形飄忽不定，雙拳幻化出漫天拳影重重向$n籠罩過去！\n\n"NOR;
         message_combatd(msg, me, target);
 
         skill =  me->query_skill("unarmed");

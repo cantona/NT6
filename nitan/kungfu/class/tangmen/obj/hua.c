@@ -10,7 +10,7 @@ void create()
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("long", HIR"這是一朵鐵花，但美若曇花，精致玲瓏，讓人一看之下，就動人心魄。\n"NOR);
+                set("long", HIR"這是一朵鐵花，但美若曇花，精緻玲瓏，讓人一看之下，就動人心魄。\n"NOR);
                 set("unit", "枚");
                 set("value", 21);
         }

@@ -1,4 +1,4 @@
-// juehu.c 虎爪絕戶手「絕戶」
+// juehu.c 虎爪絕户手「絕户」
 // by Lonely
 
 #include <ansi.h>
@@ -15,21 +15,21 @@ int perform(object me, object target)
                 return notify_fail("神功傷敵只能對戰鬥中的對手使用。\n");
 
         if( objectp(query_temp("weapon", me)) )
-                return notify_fail("你必須空手才能使用「絕戶」神功！\n");  
+                return notify_fail("你必須空手才能使用「絕户」神功！\n");  
                 
         if( (int)me->query_skill("juehu-shou", 1) < 100 )
-                return notify_fail("你的虎爪絕戶手不夠嫻熟，不會使用「絕戶」神功\n");
+                return notify_fail("你的虎爪絕户手不夠嫻熟，不會使用「絕户」神功\n");
 
         if( (int)me->query_skill("taiji-shengong", 1) < 100 )
-                return notify_fail("你的太極神功不夠高，不能用「絕戶」神功傷敵。\n");
+                return notify_fail("你的太極神功不夠高，不能用「絕户」神功傷敵。\n");
 
         if( query("shen", me)<10000 )
-                return notify_fail("你邪氣太重，無法使出「絕戶」招式。\n");
+                return notify_fail("你邪氣太重，無法使出「絕户」招式。\n");
 
         if( query("neili", me)<400 )
-                return notify_fail("你現在內力太弱，不能使出「絕戶」招式。\n");
+                return notify_fail("你現在內力太弱，不能使出「絕户」招式。\n");
 
-        msg = BLU "$N默運神功，臉色白得嚇人，突然使出虎爪絕戶手的最後一擊「絕戶」，企圖當場把$n廢于抓下。\n" NOR;
+        msg = BLU "$N默運神功，臉色白得嚇人，突然使出虎爪絕户手的最後一擊「絕户」，企圖當場把$n廢於抓下。\n" NOR;
         
         
         addn("shen", -8000, me);
@@ -62,7 +62,7 @@ int perform(object me, object target)
                 target->apply_condition("juehu_hurt",(500*query("age", target)));
                 if( query("gender", target) == "男性" )
                 {
-                        message_combatd(HIW "$N突然覺的丹田內的精元已流失迨盡，心裡一陣難過，知道自己有一段時間不能行歡做樂了!\n" NOR, target);
+                        message_combatd(HIW "$N突然覺的丹田內的精元已流失迨盡，心裏一陣難過，知道自己有一段時間不能行歡做樂了!\n" NOR, target);
                 } else
                 {
                         if( query("gender", target) == "女性" )

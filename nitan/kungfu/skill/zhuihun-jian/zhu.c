@@ -37,7 +37,7 @@ int perform(object me, object target)
                 return notify_fail("你現在內力太弱，難以施展" ZHU "。\n");
 
        if (! living(target))
-              return notify_fail("對方都已經這樣了，用不著這麼費力吧？\n");
+              return notify_fail("對方都已經這樣了，用不着這麼費力吧？\n");
 
         msg = HIW "突然$N" HIW "一聲冷哼，一個跨步，手中" + weapon->name() +
               NOR + HIW "中攻直進，如閃電一般刺向$n" HIW "！\n" NOR;
@@ -57,7 +57,7 @@ int perform(object me, object target)
                 if( query("max_neili", me)>query("max_neili", target)*2 )
                 {
                         msg += HIR "只見$N" HIR "這一劍來勢好快，便聽“嗤"
-                               "啦”一聲，劍尖已沒入$n" HIR "嚥喉半尺，$n"
+                               "啦”一聲，劍尖已沒入$n" HIR "咽喉半尺，$n"
                                HIR "咯咯叫了兩聲，軟綿綿的癱了下去。\n" NOR
                                "( $n" RED "受傷過重，已經有如風中殘燭，隨"
                                "時都可能斷氣。" NOR ")\n";
@@ -70,7 +70,7 @@ int perform(object me, object target)
                         msg += HIR "只聽“嗤啦”一聲，$n" HIR "腕部已被$N"
                                HIR + weapon->name() + NOR + HIR "對穿而過"
                                "，手中" + weapon2->name() + NOR + HIR
-                               "再也捉拿不住，脫手而飛！\n" NOR;
+                               "再也捉拿不住，脱手而飛！\n" NOR;
                         me->start_busy(random(2));
                         target->start_busy(4);
                         weapon2->move(environment(target));

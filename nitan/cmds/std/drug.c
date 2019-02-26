@@ -25,11 +25,11 @@ int main(object me, string arg)
                 return notify_fail("你現在正在打架，沒時間下毒。\n");
 
         if (sscanf(arg, "%s in %s", item, target) != 2)
-                return notify_fail("你要往哪裡下毒？\n");
+                return notify_fail("你要往哪裏下毒？\n");
 
         dest = present(target, me);
         if (! dest)
-                return notify_fail("這裡沒有這樣東西。\n");
+                return notify_fail("這裏沒有這樣東西。\n");
 
         if (! objectp(obj = present(item, me)))
                 return notify_fail("你身上沒有這樣東西。\n");
@@ -46,10 +46,10 @@ int main(object me, string arg)
                 return 1;
         }
 
-        message("vision", sprintf("%s將一東西偷偷洒到了%s上面。\n",
+        message("vision", sprintf("%s將一東西偷偷灑到了%s上面。\n",
                 me->name(), dest->name()), environment(me), ({ me }));
 
-        message("vision", sprintf("你將一%s%s偷偷洒到了%s上面。\n",
+        message("vision", sprintf("你將一%s%s偷偷灑到了%s上面。\n",
                 query("unit", obj),obj->name(),dest->name()),me);
 
         f = bind((: call_other, __FILE__, "do_effect",

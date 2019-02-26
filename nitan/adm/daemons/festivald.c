@@ -99,7 +99,7 @@ string set_festival_string()
                                         ret += "威望";
                                         break;
                                 case "score":
-                                        ret += "閱歷";
+                                        ret += "閲歷";
                                         break;
                                 case "gongxian":
                                         ret += "貢獻";
@@ -130,8 +130,8 @@ string query_festival_string()
 
 int compare_date(mixed a,mixed b)
 {
-        //小于等于是1
-        //大于是0
+        //小於等於是1
+        //大於是0
         if(a[0]<b[0]) {
                 return 1;
         } else if(a[0]>b[0]) {
@@ -208,7 +208,7 @@ string give_festival_reward(object usr,string arg)
         mixed tmp;
         int i,j,sz2;
         object ob;
-        ret = "您在節日活動："+festivals[arg]["cname"]+"("+arg+")中獲得了如下獎勵：\n";
+        ret = "您在節日活動："+festivals[arg]["cname"]+"("+arg+")中獲得瞭如下獎勵：\n";
         tmp = keys(festivals[arg]["reward"]);
                         sz2 = sizeof(tmp);
                         for(j=0;j<sz2;j++) {
@@ -239,7 +239,7 @@ string give_festival_reward(object usr,string arg)
                                         break;
                                 case "score":
                                         addn("score", festivals[arg]["reward"][tmp[j]], usr);
-                                        ret += "閱歷";
+                                        ret += "閲歷";
                                         break;
                                 case "gongxian":
                                         addn("family/gongji", festivals[arg]["reward"][tmp[j]], usr);
@@ -299,7 +299,7 @@ string get_reward(object usr)
                         }
                 } else {//有記錄
                         sscanf(fes_record[now_festivals[i]],"%d-%d-%d",y,m,d);
-                        if(compare_date(({festivals[now_festivals[i]]["stimey"],festivals[now_festivals[i]]["stimem"],festivals[now_festivals[i]]["stimed"]}),({y,m,d}))==0) {//獎勵記錄比開啟更早，說明是上次節日獲得，可領獎(開啟時間大于獎勵記錄 0)
+                        if(compare_date(({festivals[now_festivals[i]]["stimey"],festivals[now_festivals[i]]["stimem"],festivals[now_festivals[i]]["stimed"]}),({y,m,d}))==0) {//獎勵記錄比開啟更早，説明是上次節日獲得，可領獎(開啟時間大於獎勵記錄 0)
                                 //給獎勵
                                 if( query("combat_exp", usr)<festivals[now_festivals[i]]["explimit"]){
                                          ret += festivals[now_festivals[i]]["cname"]+"("+now_festivals[i]+")要求經驗至少為"+festivals[now_festivals[i]]["explimit"]+"，您當前經驗不足，無法領取獎勵。\n";
@@ -310,9 +310,9 @@ string get_reward(object usr)
                                 }
                         } else { //這次領過獎了。。。
                                 if(festivals[now_festivals[i]]["type"]==0) { //類型是限領一次，不給獎勵
-                                        ret += festivals[now_festivals[i]]["cname"]+"("+now_festivals[i]+")只能領取一次獎勵，您于"+fes_record[now_festivals[i]]+"已領取過，不能再次領取。\n";
+                                        ret += festivals[now_festivals[i]]["cname"]+"("+now_festivals[i]+")只能領取一次獎勵，您於"+fes_record[now_festivals[i]]+"已領取過，不能再次領取。\n";
                                 } else { //每日領取的
-                                        if(compare_date(({ty,tm,td}),({y,m,d}))==0) { //獎勵記錄比今天早，可領取(今天 大于 獎勵記錄 0)
+                                        if(compare_date(({ty,tm,td}),({y,m,d}))==0) { //獎勵記錄比今天早，可領取(今天 大於 獎勵記錄 0)
                                                 if( query("combat_exp", usr)<festivals[now_festivals[i]]["explimit"]){
                                                         ret += festivals[now_festivals[i]]["cname"]+"("+now_festivals[i]+")要求經驗至少為"+festivals[now_festivals[i]]["explimit"]+"，您當前經驗不足，無法領取獎勵。\n";
                                                 } else {

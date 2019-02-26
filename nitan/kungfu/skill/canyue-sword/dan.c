@@ -56,7 +56,7 @@ int perform(object me, object target)
         {
                 addn("neili", -damage/2, me);
 
-                msg += HIR "$N" HIR "手中的" + weapon->name() + HIR "似乎蘇醒過來，$n的生命卻在逐漸流逝，一切已無法再改變。 \n" NOR;
+                msg += HIR "$N" HIR "手中的" + weapon->name() + HIR "似乎甦醒過來，$n的生命卻在逐漸流逝，一切已無法再改變。 \n" NOR;
                 
                 target->receive_damage("qi",damage,me);
                 target->receive_wound("qi",damage/2 + random(damage/2),me);
@@ -68,8 +68,8 @@ int perform(object me, object target)
                
         } else 
         {
-                msg += HIR "$N" HIR "一劍失去目標，忽然覺得靈魂仿佛被抽入" + weapon->name() + RED "再也無法控制！"
-                       + weapon->name() + HIR "差點脫手而出！\n" NOR; 
+                msg += HIR "$N" HIR "一劍失去目標，忽然覺得靈魂彷彿被抽入" + weapon->name() + RED "再也無法控制！"
+                       + weapon->name() + HIR "差點脱手而出！\n" NOR; 
 
                 addn("neili", -100, me);
                 me->start_busy(3);

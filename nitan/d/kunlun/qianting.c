@@ -9,7 +9,7 @@ void create()
 {
         set("short", "前廳");
         set("long",@long
-這裡是座大廳，高檐大瓦，十分的簡樸而壯闊，廳內擺幾張高背方
+這裏是座大廳，高檐大瓦，十分的簡樸而壯闊，廳內擺幾張高背方
 椅，一張八仙桌，看來是接待客人的地方，西面和東面也是客廳，供客
 人歇息，北面一條長廊通向後面。
 long);
@@ -36,9 +36,9 @@ int valid_leave(object me, string dir)
         mapping fam;
         fam=query("family", me);
 
-        if ((!fam || fam["family_name"] != "昆侖派") && dir == "north" &&
+        if ((!fam || fam["family_name"] != "崑崙派") && dir == "north" &&
                 objectp(present("xi huazi", environment(me))))
-                return notify_fail("西華子攔住你，說道：這裡是昆侖派的地盤，不要隨意亂闖！\n");
+                return notify_fail("西華子攔住你，説道：這裏是崑崙派的地盤，不要隨意亂闖！\n");
 
         return ::valid_leave(me, dir);
 }

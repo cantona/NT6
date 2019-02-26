@@ -34,7 +34,7 @@ int perform(object me, object target)
                 return notify_fail("你現在的真氣太弱，難以施展" + name() + "。\n");
 
         if (! living(target))
-                return notify_fail("對方都已經這樣了，用不著這麼費力吧？\n");
+                return notify_fail("對方都已經這樣了，用不着這麼費力吧？\n");
 
         msg = WHT "$N" WHT "使出空明拳「" HIG "空空如也" NOR + WHT "」，拳勁"
               "虛虛實實，變化莫測，讓$n" WHT "一時難以捕捉。\n" NOR;
@@ -52,7 +52,7 @@ int perform(object me, object target)
 
                 msg += COMBAT_D->do_damage(me, target, UNARMED_ATTACK, damage, 50,
                                            HIR "$n" HIR "無法窺測$N" HIR "拳中奧"
-                                           "秘，被這一拳擊中要害，登時嘔出一大口"
+                                           "祕，被這一拳擊中要害，登時嘔出一大口"
                                            "鮮血！\n:內傷@?");
         } else
         {

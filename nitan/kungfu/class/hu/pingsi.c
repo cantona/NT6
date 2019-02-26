@@ -38,7 +38,7 @@ void create()
                 "閻基"   : "閻基…哼…這個狗賊。",
                 "胡一刀" : "那……那是老主人，唉。",
                 "苗人鳳" : "苗大俠可不是壞人。",
-                "趙半山" : "他對我家主人的交情那是沒得說的。",
+                "趙半山" : "他對我家主人的交情那是沒得説的。",
                 "出關"   : (: ask_me :),
                 "辦事"   : (: ask_me :),
                 "出去"   : (: ask_me :),
@@ -64,14 +64,14 @@ mixed ask_me()
                 return "你自己沒長腿麼？";
 
         if (find_object(query("startroom")) != environment())
-                return "我這裡還有事，你就自己走回去吧。";
+                return "我這裏還有事，你就自己走回去吧。";
 
         command("nod");
         command("say 要出去辦事麼？那我叫幾個朋友送你一程吧。");
 
-        message_sort(HIC "\n平四朝遠方一招手，頓時幾個參客趕著馬車駛了"
+        message_sort(HIC "\n平四朝遠方一招手，頓時幾個參客趕着馬車駛了"
                      "過來。平四笑道「我家小主人要出關辦點事，今趟就勞"
-                     "駕你們送送。」參客聽後連忙陪笑著答應，$N" HIC "見"
+                     "駕你們送送。」參客聽後連忙陪笑着答應，$N" HIC "見"
                      "狀急忙鑽進車中，只聽一陣清脆的鞭響，馬車絕塵而去"
                      "。\n\n" NOR, me);
 
@@ -80,12 +80,12 @@ mixed ask_me()
         me->move("/d/beijing/majiu");
 
         message("vision", HIC "\n遠處一輛馬車急駛而來，車門一開" +
-                          query("name", me)+HIC"從裡面鑽了出"
+                          query("name", me)+HIC"從裏面鑽了出"
                           "來。\n\n" NOR, environment(me), ({me}));
 
         tell_object(me, CYN "\n參客笑道：這位" + RANK_D->query_respect(me) +
-                        CYN "已經到了，請下車吧。\n參客說道：我要"
-                        "在這裡辦些事情，如果打算" HIC "入關" NOR +
+                        CYN "已經到了，請下車吧。\n參客説道：我要"
+                        "在這裏辦些事情，如果打算" HIC "入關" NOR +
                         CYN "的話，我還可以找人送你。\n\n" NOR);
         return 1;
 
@@ -117,7 +117,7 @@ int ask_job()
 
         if( query("family/family_name", me) != "關外胡家" )
         {
-                message_vision("$N對著$n說道。你是哪裡來的姦細？\n", this_object(), me);
+                message_vision("$N對着$n説道。你是哪裏來的奸細？\n", this_object(), me);
                 return 1;
         }
 

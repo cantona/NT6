@@ -41,11 +41,11 @@ int perform(object me)
                 return notify_fail("你現在沒有準備使用三陰手，難以施展" SUN "。\n");
 
         if (! living(target))
-                return notify_fail("對方都已經這樣了，用不著這麼費力吧？\n");
+                return notify_fail("對方都已經這樣了，用不着這麼費力吧？\n");
 
         msg = HIR "$N" HIR "悄然遊走至$n" HIR "跟前，陡然使出"
               "三陰手絕技「損筋訣」，單掌輕輕拂過$n" HIR "太陽"
-              "穴，不著半點力道。\n" NOR;
+              "穴，不着半點力道。\n" NOR;
 
         damage = skill / 2 + random(skill / 2);
 
@@ -66,7 +66,7 @@ int perform(object me)
         {
                 addn("neili", -100, me);
                 msg += CYN "$n" CYN "見狀大吃一驚，急忙向後猛退數步，"
-                       "終于避開了$N" CYN "這一擊。\n" NOR;
+                       "終於避開了$N" CYN "這一擊。\n" NOR;
                 me->start_busy(4);
         }
         message_combatd(msg, me, target);

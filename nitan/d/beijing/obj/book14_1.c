@@ -14,7 +14,7 @@ void create()
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("long", "\n一本鑲黃旗的經書，封皮(binding)很精致。\n");
+                set("long", "\n一本鑲黃旗的經書，封皮(binding)很精緻。\n");
                 set("unit", "本");
                 set("material", "paper");
         }

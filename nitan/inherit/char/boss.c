@@ -48,7 +48,7 @@ varargs void die(object killer)
                 if( query("qi") > query("max_qi") ) set("qi", query("max_qi"));
                 addn("eff_qi", query("max_qi") / 10);
                 if( query("eff_qi") > query("max_qi") ) set("eff_qi", query("max_qi"));
-                message_vision(HIR "\n$N" HIR "大喝一聲，運用秘法，氣血有所回升！\n\n" NOR, me);
+                message_vision(HIR "\n$N" HIR "大喝一聲，運用祕法，氣血有所回升！\n\n" NOR, me);
                 return;
         }
 
@@ -63,7 +63,7 @@ varargs void die(object killer)
                         message_vision(death_msg, me);
         }
         else
-                message_vision(NOR "\n$N撲在地上掙紮了幾下，腿一伸，口中噴出幾口" 
+                message_vision(NOR "\n$N撲在地上掙扎了幾下，腿一伸，口中噴出幾口" 
                                HIR "鮮血" NOR "，死了！\n\n" NOR, me); 
 
         // 以下部分轉移到equipmentd.c中處理,因涉及到動態物品

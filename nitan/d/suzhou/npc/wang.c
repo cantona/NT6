@@ -8,13 +8,13 @@ inherit F_DEALER;
 void create()
 {
         set_name("王合計", ({ "wang heji", "heji", "wang" }));
-        set("title", "當舖老板");
+        set("title", "當鋪老闆");
         set("shen_type", 0);
 
         set("gender", "男性");
         set_max_encumbrance(100000000);
         set("age", 35);
-        set("long", "他帶著一臉詭秘、姦詐的笑容。\n");
+        set("long", "他帶着一臉詭祕、奸詐的笑容。\n");
         set("no_get_from", 1);
         set("no_get", 1);
 

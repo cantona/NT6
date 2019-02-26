@@ -4,7 +4,7 @@ void create()
 {
         set("short", "小屋");
         set("long", @LONG
-這是絕情谷底的一間小茅屋，這裡似乎很久沒有來過了。
+這是絕情谷底的一間小茅屋，這裏似乎很久沒有來過了。
 LONG);
         set("exits", ([
                "out"  :  __DIR__"underya2",

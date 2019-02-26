@@ -10,7 +10,7 @@ void create()
         set("gender", "男性" );
         set("age", 48);
         set("long",
-                "這是一個中年書生，手裡拿了一本舊書，正讀得搖頭晃腦的。 \n");
+                "這是一箇中年書生，手裏拿了一本舊書，正讀得搖頭晃腦的。 \n");
         set("str", 25);
         set("dex", 20);
         set("con", 17);
@@ -59,7 +59,7 @@ int accept_object(object who, object ob)
                 addn("visited", 1, me);
 
                 if( query_temp("marks/子柳", who)){
-                        write("朱子柳笑眯眯的說：答不出來就好好去讀讀書嘛。\n");
+                        write("朱子柳笑眯眯的説：答不出來就好好去讀讀書嘛。\n");
                         return 1;
                 }
                 else {
@@ -78,13 +78,13 @@ int accept_object(object who, object ob)
                                 break;
                         case 2:
                                 write("錦瑟無端五十弦，一弦一柱思華年。\n");
-                                write("莊生曉夢迷蝴蝶，望帝春心托杜鵑。\n");
+                                write("莊生曉夢迷蝴蝶，望帝春心託杜鵑。\n");
                                 write("滄海明珠應有淚，藍天日暖玉生煙。\n");
                                 write("此情可待成追憶，□□□□□□□。\n");
                                 set_temp("marks/子柳", 3, who);
                                 break;
                         case 3:
-                                write("白骨露於野，千裡無雞鳴。 \n");
+                                write("白骨露於野，千里無雞鳴。 \n");
                                 write("生民百遺一，念之斷□□。  \n");
                                 set_temp("marks/子柳", 4, who);
                                 break;
@@ -94,7 +94,7 @@ int accept_object(object who, object ob)
                                 set_temp("marks/子柳", 5, who);
                                 break;
                         case 5:
-                                write("牆裡秋千牆外道，牆外行人，牆裡佳人笑。 \n");
+                                write("牆裏鞦韆牆外道，牆外行人，牆裏佳人笑。 \n");
                                 write("笑漸不聞聲漸悄，□□□□□□□ \n");
                                 set_temp("marks/子柳", 6, who);
                                 break;
@@ -129,7 +129,7 @@ int do_answer(string arg)
     riddle=query_temp("marks/子柳", this_player());
 
     if (!riddle) {
-                write("我又不是你師傅，你用不著回答我。\n");
+                write("我又不是你師傅，你用不着回答我。\n");
                 return 1;
         }
     if( !arg || arg=="" ) {
@@ -155,7 +155,7 @@ int do_answer(string arg)
 
         if (riddle==soln) {
                 delete_temp("marks/子柳", this_player());
-                say ("朱子柳一鞠到地，對" + me->name() + "說道：高明，高明。佩服，佩服\n");
+                say ("朱子柳一鞠到地，對" + me->name() + "説道：高明，高明。佩服，佩服\n");
                 write ("朱子柳移開三尺，你從他身邊一躍而過，上山而去。 \n");
                 me->move("/d/heizhao/yideng8");
         }

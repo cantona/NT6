@@ -7,7 +7,7 @@ void create()
 {
         set("short", "書房");
         set("long", @long
-這裡是莊主的書房推開房門，見裡面四壁圖書，陳設得甚是精雅。
+這裏是莊主的書房推開房門，見裏面四壁圖書，陳設得甚是精雅。
 long );
         set("exits", ([
                 "east" : __DIR__"zoulang3",

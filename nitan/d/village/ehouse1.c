@@ -7,7 +7,7 @@ void create()
         set("short", "草棚");
         set("long", @LONG
 這是一個簡單的草棚，地上擺著一堆堆的貨物，上山的遊客可以
-在這買些上山用品。草棚的牆上貼著個牌子，是個價目表(sign)。
+在這買些上山用品。草棚的牆上貼着個牌子，是個價目表(sign)。
 LONG );
         set("exits", ([ /* sizeof() == 1 */
             "north" : __DIR__"eroad1",

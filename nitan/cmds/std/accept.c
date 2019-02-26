@@ -20,16 +20,16 @@ int main(object me, string arg)
                 return notify_fail("好好的做你的牢吧。\n");
 
         if (me->is_ghost())
-                return notify_fail("你還是等還了陽再說吧。\n");
+                return notify_fail("你還是等還了陽再説吧。\n");
 
         if (wizardp(me))
                 return notify_fail("你一個巫師搗什麼亂？\n");
 
         if (me->is_busy())
-                return notify_fail("你現在正忙，等有空了再說吧！\n");
+                return notify_fail("你現在正忙，等有空了再説吧！\n");
 
         if (me->is_fighting())
-                return notify_fail("你還是把眼前的敵人放倒再說吧！\n");
+                return notify_fail("你還是把眼前的敵人放倒再説吧！\n");
 
         if (r = ob->cannot_accept(me))
                 return notify_fail(r);

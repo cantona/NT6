@@ -15,7 +15,7 @@ void create()
                 set("rigidity", 8000);   
                 set("material", "steel");
                 set("wield_msg", HIR "$N" HIR "從背後抽出赤劍，頓時騰起一股凜冽的殺氣。\n" NOR);
-                set("unwield_msg", HIR "$N" HIR "嘆了口氣，將赤劍插回背後。\n" NOR);
+                set("unwield_msg", HIR "$N" HIR "歎了口氣，將赤劍插回背後。\n" NOR);
         }
         init_sword(250);
         setup();

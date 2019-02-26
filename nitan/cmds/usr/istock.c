@@ -50,7 +50,7 @@ int main(object me, string arg)
                         else
                         {
                                 stockcolor = HIW;
-                                stockdesc = " ─";
+                                stockdesc = " —";
                         }
                         msg += ({ HIY"股"NOR YEL"票" });
                         msg += ({ sprintf(NOR" %-12s %12s %-12s%-19s %12s\n", HIM+num + NOR" "HIW +stocks[num]["股票名稱"]+NOR, WHT +(data["amount"]) +NOR" 張", NOR YEL"持股 "HIW+sprintf("%.2f", ownstockvalue||0.0)+NOR, NOR YEL"現價 "+stockcolor+sprintf("%6.2f", curstockvalue||0.0)+stockdesc+NOR, NOR YEL"利潤 "+(curstockvalue>ownstockvalue?HIR:curstockvalue<ownstockvalue?HIG:HIW)+(gain>0?"+":gain==0.?" ":"")+sprintf("%.2f", gain||0.0)+"%"+NOR ) });

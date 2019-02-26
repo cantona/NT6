@@ -3,7 +3,7 @@
 #include <ansi.h>
 #include <combat.h>
 
-string name() { return HIW "神威浩盪" NOR; }
+string name() { return HIW "神威浩蕩" NOR; }
 
 inherit F_SSERVER;
 
@@ -42,7 +42,7 @@ int perform(object me, object target)
                 return notify_fail("你現在的真氣不足，難以施展" + name() + "。\n");
 
         if (! living(target))
-                return notify_fail("對方都已經這樣了，用不著這麼費力吧？\n");
+                return notify_fail("對方都已經這樣了，用不着這麼費力吧？\n");
 
         msg = HIW "只見$N" HIW "雙目精光四射，雙掌陡然一振，將體內積蓄的"
               "先天真氣雲貫推出，頓時呼嘯\n聲大作，先天勁道層層疊疊，宛如"
@@ -81,7 +81,7 @@ int perform(object me, object target)
                                 wp = weapon->name();
                                 msg += HIW "只聽“鏘”的一聲脆響，$n" HIW "手"
                                        "中的" + wp + HIW "在$N" HIW "內力激盪"
-                                       "下應聲而碎，脫手跌落在地上。\n" NOR;
+                                       "下應聲而碎，脱手跌落在地上。\n" NOR;
                                 addn("neili", -150, me);
                                 set("consistence", 0, weapon);
                                 weapon->move(environment(target));
@@ -92,7 +92,7 @@ int perform(object me, object target)
                         {
                                 cl = cloth->name();
                                 msg += HIW "只聽“轟”的一聲悶響，$n" HIW "身"
-                                       "著的" + cl + HIW "在$N" HIW "內力激盪"
+                                       "着的" + cl + HIW "在$N" HIW "內力激盪"
                                        "下應聲而裂，化成一塊塊碎片。\n" NOR;
                                 addn("neili", -150, me);
                                 set("consistence", 0, cloth);
@@ -105,7 +105,7 @@ int perform(object me, object target)
                         {
                                 cl = cloth->name();
                                 msg += HIW "只聽“轟”的一聲悶響，$n" HIW "身"
-                                       "著的" + cl + HIW "在$N" HIW "內力激盪"
+                                       "着的" + cl + HIW "在$N" HIW "內力激盪"
                                        "下應聲而碎，化成一塊塊碎片。\n" NOR;
                                 addn("neili", -150, me);
                                 set("consistence", 0, cloth);

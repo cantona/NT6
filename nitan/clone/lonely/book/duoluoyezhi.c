@@ -11,7 +11,7 @@ void create()
         else {
                 set("unit", "本");
                 set("long", HIY "這是一本薄薄的書冊，書皮看上去很新，像是"
-                            "重新抄寫的，封面上寫著「多羅葉指」四個字。\n" NOR);
+                            "重新抄寫的，封面上寫着「多羅葉指」四個字。\n" NOR);
                 set("value", 1);
                 set("no_sell", 1);
                 set("material", "paper");

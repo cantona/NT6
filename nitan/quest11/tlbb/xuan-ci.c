@@ -21,7 +21,7 @@ int ask_zuinie();
 #define QUESTDIR "quest/天龍八部/"
 #define QUESTDIR1 "quest/天龍八部/凌波微步篇/"
 #define QUESTDIR2 "quest/天龍八部/天龍營救篇/"
-#define QUESTDIR3 "quest/天龍八部/蕭峰身世篇/"
+#define QUESTDIR3 "quest/天龍八部/蕭峯身世篇/"
 #define QUESTDIR4 "quest/天龍八部/大遼救援篇/"
 #define QUESTDIR5 "quest/天龍八部/復興天下篇/"
 
@@ -32,8 +32,8 @@ void create()
 		"xuanci",
 		"dashi",
 	}));
-	set("long", "他是一位白須白眉的老僧，身穿一襲金絲繡紅袈裟。\n"
-		"他身材略顯佝僂，但卻滿面紅光，目蘊慈笑，顯得神完氣足。\n"
+	set("long", "他是一位白鬚白眉的老僧，身穿一襲金絲繡紅袈裟。\n"
+		"他身材略顯佝僂，但卻滿面紅光，目藴慈笑，顯得神完氣足。\n"
 	);
 
 	set("nickname", "少林寺方丈");
@@ -91,26 +91,26 @@ void create()
 		"貢獻": (: ask_times :),
 //		"蕭遠山":  (: ask1 :),
 //		"殺孽":  (: ask2 :),
-//		"舍身消業": (: ask3 :),
+//		"捨身消業": (: ask3 :),
 		"少林" : "我彌陀佛，老衲就是少林主持。不知道施主上我少林所謂何事。\n",
 		"主持" : "我彌陀佛，老衲就是少林主持。",
-		"蕭峰" : "他就是丐幫幫主，一身武功自不用說，其膽識智慧也是江湖一流。只是......",
-		"蕭遠山" : "當年一場往事，都已經過去，蕭施主現在神僧那裡。",
-		"無名神僧" : "神僧，他老人家，當稱達摩轉世，佛法超群。",
-		"神僧" : "神僧，他老人家，當稱達摩轉世，佛法超群。",
+		"蕭峯" : "他就是丐幫幫主，一身武功自不用説，其膽識智慧也是江湖一流。只是......",
+		"蕭遠山" : "當年一場往事，都已經過去，蕭施主現在神僧那裏。",
+		"無名神僧" : "神僧，他老人家，當稱達摩轉世，佛法超羣。",
+		"神僧" : "神僧，他老人家，當稱達摩轉世，佛法超羣。",
 		"虛竹" : (: ask_xuzhu :),
 		
 		"罪孽" : (: ask_zuinie :),
 		"恥辱" : (: ask_zuinie :),
 		"敗類" : (: ask_zuinie :),
 
-		"救援蕭峰" : (: ask_xiaofeng :),
-		"解救蕭峰" : (: ask_xiaofeng :),
-		"援救蕭峰" : (: ask_xiaofeng :),
+		"救援蕭峯" : (: ask_xiaofeng :),
+		"解救蕭峯" : (: ask_xiaofeng :),
+		"援救蕭峯" : (: ask_xiaofeng :),
 		"救援" : (: ask_xiaofeng :),
 		"解救" : (: ask_xiaofeng :),
 		"援救" : (: ask_xiaofeng :),
-		"葉二娘" : (: ask_yeerniang :),
+		"葉二孃" : (: ask_yeerniang :),
 		"私生子" : (: ask_yeerniang :),
 		"懲罰" : (: ask_zhangxing :),
 		"杖刑" : (: ask_zhangxing :),
@@ -144,7 +144,7 @@ void attempt_apprentice(object ob)
 	}
 
 	if ( ob_fam["generation"] <= my_fam["generation"] ) {
-		command("say " + RANK_D->query_respect(ob) + "，貧僧哪裡敢當 !");
+		command("say " + RANK_D->query_respect(ob) + "，貧僧哪裏敢當 !");
 		return;
 	}
 
@@ -171,12 +171,12 @@ int accept_object(object apper, object ob)
 	notify_fail("");
 	if (!apper->query_temp("lh_teacher")
 	 || !apper->query_condition("lh_job")){
-		message_vision("$N一把奪過木偶，怒道：你從哪裡偷來的?\n", me);
+		message_vision("$N一把奪過木偶，怒道：你從哪裏偷來的?\n", me);
 		destruct(ob);
 		return 0;
 	}
 	command("touch "+apper->query("id"));
-	message_vision("$N感動得熱淚盈眶，說道：老衲終于重見我少林重寶了！\n", me);
+	message_vision("$N感動得熱淚盈眶，説道：老衲終於重見我少林重寶了！\n", me);
 	command("thank "+apper->query("id"));
 	lvl = 200 + random(50);
 	apper->add("combat_exp", lvl);
@@ -219,7 +219,7 @@ int ask_job()
 		"/d/shaolin/dzdian","/d/shaolin/xcping"
 	});
 	string* name= ({ "羅漢堂","般若堂","山門殿","鐘樓","鼓樓","後殿",
-                        "証道院","平台","菩提院","藥王院","須彌殿",
+                        "證道院","平台","菩提院","藥王院","須彌殿",
                         "六祖殿","緊那羅王殿","立雪亭","千佛殿","初祖庵",
                         "白衣殿","地藏殿","心禪坪"});
 	string *name1=({ "方正大師","空見大師","空聞大師","空智大師","空性大師", });
@@ -237,13 +237,13 @@ int ask_job()
 	|| me->query_condition("sljob")
 	|| me->query_condition("sl_job_busy")
 	|| me->query("job_name") == "恆山救援"){
-		command("say 我這裡現在沒有什麼任務給你。" );
+		command("say 我這裏現在沒有什麼任務給你。" );
 		return 1;
 	}
 
-	if(me->query_temp("quest/busy")) //added by tangfeng 與quest沖突
+	if(me->query_temp("quest/busy")) //added by tangfeng 與quest衝突
 	{
-		command("say 現在我這裡沒有給你的任務，你還是先處理好你其他事情再說吧。" );
+		command("say 現在我這裏沒有給你的任務，你還是先處理好你其他事情再説吧。" );
 		return 1;
 	}
 
@@ -296,7 +296,7 @@ int ask_job()
 			}
 			if (team[i] == me) continue;
 			if (!present(team[i], environment(me))){
-				command("say 咦？怎麼好象人不全啊？"+team[i]->query("name")+"怎麼沒來？");
+				command("say 咦？怎麼好像人不全啊？"+team[i]->query("name")+"怎麼沒來？");
 				return 1;
 			}
 			if (!interactive(team[i]) || query_ip_number(team[i]) == query_ip_number(me)) {
@@ -327,7 +327,7 @@ int ask_job()
 			}
 			if (team[i]->query("shen") < 0) {
 				command("whisper "+ me->query("id")+" 此去恆山乃我正派中事，看你隊伍中的"+team[i]->query("name")+
-					"眼露兇光，不會是那任老賊派來的姦細吧？");
+					"眼露兇光，不會是那任老賊派來的奸細吧？");
 				return 1;
 			}
 			totalexp += team[i]->query("combat_exp");
@@ -449,7 +449,7 @@ int ask1()
 	if( me->query("family/generation")>36 )
 		return 0;
 
-	command( "say 老衲當年誤信人言，率眾于雁門關外截殺蕭施主全家，\n"
+	command( "say 老衲當年誤信人言，率眾於雁門關外截殺蕭施主全家，\n"
                 + "造下無窮殺孽，今日想來，追悔末及。" );
 	command( "sigh" );
 	me->set_temp("sl/pks",1);
@@ -463,7 +463,7 @@ int ask2()
 	if( me->query_temp("sl/pks") < 1 )
 		return 0;
 	command( "say 老衲得知事情真相後心灰意冷，幸得本門一位高僧點化，以無上\n"
-		+"佛法舍身消業，方使心情振奮，但也不免大誤禪修。" );
+		+"佛法捨身消業，方使心情振奮，但也不免大誤禪修。" );
 	me->set_temp("sl/pks",2);
 	return 1;
 }
@@ -487,7 +487,7 @@ int ask_xuzhu()
 	object me = this_player();
 	if(me->query(QUESTDIR3+"bad") && me->query(QUESTDIR5+"start")&& (me->query_temp(QUESTDIR5+"son")||me->query(QUESTDIR5+"over")))
 	{
-	  message_vision(HIY"$N面露悲痛之色，良久沒有說話，只是嘆息一聲。\n"NOR,this_object());
+	  message_vision(HIY"$N面露悲痛之色，良久沒有説話，只是歎息一聲。\n"NOR,this_object());
 	  if(random(2)) command("sigh");
 	  else command("say");
 	  return 1;
@@ -511,23 +511,23 @@ int ask_yeerniang()
 		command("? "+me->query("id"));
 	  message_vision(HIC"$N對$n哼了一聲，道：不要假裝不明白的樣子，二十年前，你難道你真的什麼都不記得了......\n"NOR,me,this_object());
 	  command("consider");
-	  message_vision(HIY"$N大聲道：“20年前你勾引葉家莊葉二姑娘，本來好端端的姑娘，美貌貞淑。可是被你所引誘，失身于你，\n"
+	  message_vision(HIY"$N大聲道：“20年前你勾引葉家莊葉二姑娘，本來好端端的姑娘，美貌貞淑。可是被你所引誘，失身於你，\n"
 	                    "還為你生下一個孩子，但是你只顧到自己的聲名前程，全不顧念你一個年紀輕輕的姑娘，未嫁生子，處境是\n"
-	                    "何等的凄慘。二十年來你可知道，當年的葉二姑娘就是現在的四大惡人葉二娘！”\n\n"NOR,me);
+	                    "何等的悽慘。二十年來你可知道，當年的葉二姑娘就是現在的四大惡人葉二孃！”\n\n"NOR,me);
 	  command("oh");
-	  message_vision(HIG"\n$N搖搖頭道：當年之事誰對誰錯很難說清，就算我錯，當時我也無力照顧，至于孩子，我當真不知。\n"NOR,this_object());
+	  message_vision(HIG"\n$N搖搖頭道：當年之事誰對誰錯很難説清，就算我錯，當時我也無力照顧，至於孩子，我當真不知。\n"NOR,this_object());
 	  command("dunno "+me->query("id"));
-		command("say 我真的沒有料到葉二娘就是當年葉家莊的葉二姑娘。罪孽罪孽。");
+		command("say 我真的沒有料到葉二孃就是當年葉家莊的葉二姑娘。罪孽罪孽。");
 		me->set_temp(QUESTDIR5+"yeerniang",1);
 		return 1;
 	}	
 	if(me->query(QUESTDIR3+"bad") && me->query(QUESTDIR5+"start")&& (me->query_temp(QUESTDIR5+"yeerniang")||me->query(QUESTDIR5+"over")))
 	{
 		command("sigh");
-		command("say 我真的沒有料到葉二娘就是當年葉家莊的葉二姑娘。罪孽罪孽。");
+		command("say 我真的沒有料到葉二孃就是當年葉家莊的葉二姑娘。罪孽罪孽。");
 		return 1;
 	}	
-	command("say 可是四大惡人的葉二娘？");
+	command("say 可是四大惡人的葉二孃？");
 	command("dunno "+me->query("id"));
 	return 1;
 }
@@ -538,7 +538,7 @@ int ask_zuinie()
 	   && !me->query_temp(QUESTDIR5+"zuinie")&& !me->query(QUESTDIR5+"over"))
 	{
 	  message_vision(HIY"$N哈哈笑道：你自當掩飾自己，可是作為少林主持，難道不感到羞愧。少林號稱佛門聖地，確有私生子的怪事。\n"NOR,me);
-	  message_vision(HIG"$N緩緩道了聲佛號，良久沒有說話，只是嘆息一聲。\n"NOR,this_object());
+	  message_vision(HIG"$N緩緩道了聲佛號，良久沒有説話，只是歎息一聲。\n"NOR,this_object());
 		command("sigh");
 		me->set_temp(QUESTDIR5+"zuinie",1);
 		return 1;
@@ -546,7 +546,7 @@ int ask_zuinie()
 	if(me->query(QUESTDIR3+"bad") && me->query(QUESTDIR5+"start")&& (me->query_temp(QUESTDIR5+"yeerniang")||me->query(QUESTDIR5+"over")))
 	{
 		command("sigh");
-		command("say 我真的沒有料到葉二娘就是當年葉家莊的葉二姑娘。罪孽罪孽。");
+		command("say 我真的沒有料到葉二孃就是當年葉家莊的葉二姑娘。罪孽罪孽。");
 		return 1;
 	}	
 	command("say 我彌陀佛！我佛慈悲！");
@@ -561,10 +561,10 @@ int ask_zhangxing()
 		command("sigh "+me->query("id"));
 		command("nod "+me->query("id"));
 		
-	  message_vision(HIY"\n$N朗聲說道：“不錯，老衲犯了佛門大戒，有傷鸛林清譽。國有國法，家有家規。自來任何門派\n"
+	  message_vision(HIY"\n$N朗聲説道：“不錯，老衲犯了佛門大戒，有傷鸛林清譽。國有國法，家有家規。自來任何門派\n"
 	                    "幫會，宗族寺院，都難免有不肖弟子。清名令譽之保全，不在求永遠無人犯規，在求事事按律懲處，不\n"
 	                    "稍假借。依本寺戒律，玄慈犯了淫戒，且身為方丈，罪刑加倍。執法僧重重責打玄慈二百棍。少林寺清\n"
-	                    "譽攸關，不得循私舞弊。”說著跪伏在地，遙遙對著佛像，自行捋起了僧袍，露出背脊。\n"NOR,this_object());
+	                    "譽攸關，不得循私舞弊。”説着跪伏在地，遙遙對着佛像，自行捋起了僧袍，露出背脊。\n"NOR,this_object());
 	  command("sneer "+me->query("id"));
 	  obj=new("/d/shaolin/npc/zjseng.c");
 	  obj->move(environment(me));
@@ -577,7 +577,7 @@ int ask_zhangxing()
 	message_vision(HIY"$N向$n施禮，道了聲佛號，就侍立在一邊。\n"NOR,obj,this_object());
 	  obj->command("bow "+this_object()->query("id"));
 	  command("nod "+obj->query("id"));
-	  message_vision(HIG"\n$N厲聲道：“我少林寺千年清譽，豈可壞于我手？執法僧，用刑。”\n"NOR,this_object());
+	  message_vision(HIG"\n$N厲聲道：“我少林寺千年清譽，豈可壞於我手？執法僧，用刑。”\n"NOR,this_object());
     remove_call_out("zhangxing");
     call_out("zhangxing",5,me,this_object());
 		return 1;
@@ -602,15 +602,15 @@ void zhangxing(object me,object ob)
   	tell_object(me,HIY"這等時候竟然走開，復興慕容天下的任務如何完成？\n"NOR);
    	me->delete(QUESTDIR5+"start");
    	me->delete_temp("quest/天龍八部");
-	me->delete_temp("quest/busy");//任務沖突標志取消
+	me->delete_temp("quest/busy");//任務衝突標誌取消
   	return;
   }
 	if(me->query(QUESTDIR3+"bad") && me->query(QUESTDIR5+"start")&& me->query_temp(QUESTDIR5+"yeerniang")&& !me->query_temp(QUESTDIR5+"zhangxing")&& !me->query(QUESTDIR5+"over"))
 	{
 	  message_vision(HIC"二僧知道方丈受刑，最難受的還是當眾受辱，不在皮肉之苦，倘若手下容情，給旁人瞧了出來落下話柄，\n"
 	                    "那麼方丈這番受辱反而成為毫無結果了，是以一棍棍打將下去，拍拍有聲，片刻間便將玄慈背上、股上打\n"
-	                    "得滿是杖痕，血濺僧侶。堪堪又打了一百余杖，$N支持不住，撐在地下的雙手一軟，臉孔觸到塵土。\n"NOR,this_object());
-    message_vision(WHT"\n$N哈哈大笑起來，“我不殺你，少林自此名譽一敗塗地。這余下五十杖不打也罷。”\n"NOR,me);
+	                    "得滿是杖痕，血濺僧侶。堪堪又打了一百餘杖，$N支持不住，撐在地下的雙手一軟，臉孔觸到塵土。\n"NOR,this_object());
+    message_vision(WHT"\n$N哈哈大笑起來，“我不殺你，少林自此名譽一敗塗地。這餘下五十杖不打也罷。”\n"NOR,me);
 		me->set_temp(QUESTDIR5+"zhangxing",1);
 	if(me->query("family"))
 	  command("chat "+me->query("family/master_name")+"也算是一代宗師，沒有料到其弟子"+me->name()+"竟然行事如此惡毒！");
@@ -618,7 +618,7 @@ void zhangxing(object me,object ob)
 	command("inn "+me->query("id"));
     message_vision(WHT"\n$N一時間氣急攻心，竟然昏了過去。\n"NOR,this_object());
 	command("faint");
-	tell_object(me,HIY"\n你哈哈大笑，終于完成任務，只是......返回慕容的路上，恐怕更加危險重重。\n"NOR);
+	tell_object(me,HIY"\n你哈哈大笑，終於完成任務，只是......返回慕容的路上，恐怕更加危險重重。\n"NOR);
 	this_object()->unconcious();
    }
    return;
@@ -632,7 +632,7 @@ int ask_xiaofeng()
 	if(me->query(QUESTDIR3+"bad") )
   {
   	command("heng");
-  	command("say 難道不是當年強迫蕭峰走出中原，叫我如何相信你？");
+  	command("say 難道不是當年強迫蕭峯走出中原，叫我如何相信你？");
   	return 1;
   }
   	if(me->query_condition("killer"))
@@ -645,7 +645,7 @@ int ask_xiaofeng()
 	{	  
 		if(!me->query_temp(QUESTDIR4+"askxuanci"))
 		{
-			message_vision(HIC"你急聲道：江湖傳言，蕭峰為避免南征之戰，拒絕可汗命令，現被投入鐵牢之中。\n"NOR,me);
+			message_vision(HIC"你急聲道：江湖傳言，蕭峯為避免南征之戰，拒絕可汗命令，現被投入鐵牢之中。\n"NOR,me);
 			command("ah "+me->query("id"));
 		}	
 		//增加時間和經驗間隔限制
@@ -667,7 +667,7 @@ int ask_xiaofeng()
 		  if ( obj[x]->query_temp(QUESTDIR4+"askxuanci") && obj[x]!=me) 
 		  {
 			  command("nod "+me->query("id"));
-			  command("say 我也聽說這事情，已經有"+obj[x]->query("name")+RANK_D->query_respect(obj[x]) +"前往大遼營救去了，"+obj[x]->query("name")+RANK_D->query_respect(obj[x]) +"武功高強，料想也無大礙！");	
+			  command("say 我也聽説這事情，已經有"+obj[x]->query("name")+RANK_D->query_respect(obj[x]) +"前往大遼營救去了，"+obj[x]->query("name")+RANK_D->query_respect(obj[x]) +"武功高強，料想也無大礙！");	
 			  return 1;
 		  }
 	  }
@@ -676,7 +676,7 @@ int ask_xiaofeng()
 	{
 		command("whisper "+me->query("id")+" 如果當真，少林自當盡力，當年少林與蕭家誤會頗多，這也是我中原武林贖罪的一次良機。\n"NOR);
 		command("whisper "+me->query("id")+" 只是，你又如何得知這一消息？"NOR);
-		message_vision(HIY"$N朗聲說道：“我剛從大遼歸來，也罷，依照江湖規矩，還是武功上考量一下吧。”。\n"NOR,me);
+		message_vision(HIY"$N朗聲説道：“我剛從大遼歸來，也罷，依照江湖規矩，還是武功上考量一下吧。”。\n"NOR,me);
 		command("nod "+me->query("id"));
 	}
     else command("whisper "+me->query("id")+" 可是失敗了，也罷，再給你一次機會。\n"NOR);
@@ -686,13 +686,13 @@ int ask_xiaofeng()
 	if(!room)
 	{ 
       	tell_object(me,HIR"\n趕快找wiz吧，竟然房間不存在!!!\n");
-        log_file("quest/TLBB", sprintf("%s(%s)營救蕭峰篇少林陣法文件缺少！\n", me->name(1),me->query("id")) );
+        log_file("quest/TLBB", sprintf("%s(%s)營救蕭峯篇少林陣法文件缺少！\n", me->name(1),me->query("id")) );
     }
     else
     {
       tell_room(environment(me),HIC""+me->query("name")+"隨玄慈主持匆匆出去了。\n"NOR, ({ me }));        
-		  tell_object(me,HIR"你隨玄慈主持來到一個小屋之中，卻見四端分別站著一個少林弟子。\n");
-		  //設定標志
+		  tell_object(me,HIR"你隨玄慈主持來到一個小屋之中，卻見四端分別站着一個少林弟子。\n");
+		  //設定標誌
 		  me->set(QUESTDIR+"time",time());
 		  me->set(QUESTDIR+"combat_exp",me->query("combat_exp"));
 		  me->move(room);
@@ -701,9 +701,9 @@ int ask_xiaofeng()
 		  this_object()->move("/d/shaolin/fzjs2");
 
 		  tell_room(environment(this_object()),HIC"玄慈主持匆匆回來了，神色很是慌張。\n"NOR, ({ this_object()}));    
-		  log_file("quest/TLBB", sprintf("%s(%s)營救蕭峰篇進入少林陣法。經驗：%d。\n", me->name(1),me->query("id"), me->query("combat_exp")) );                  
+		  log_file("quest/TLBB", sprintf("%s(%s)營救蕭峯篇進入少林陣法。經驗：%d。\n", me->name(1),me->query("id"), me->query("combat_exp")) );                  
 		  me->set_temp(QUESTDIR5+"askxuanci",1);
-		  me->set_temp("quest/busy",1);//與任務系統沖突標志
+		  me->set_temp("quest/busy",1);//與任務系統衝突標誌
     }
     return 1;
 	}	

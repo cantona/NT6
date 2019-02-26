@@ -3,7 +3,7 @@ inherit BOOK;
 
 void create()
 {
-        set_name(YEL "「外台秘要」" NOR, ({ "medical book6", "medical", "book6" }));
+        set_name(YEL "「外台祕要」" NOR, ({ "medical book6", "medical", "book6" }));
         set_weight(500);
         if (clonep())
                 set_default_object(__FILE__);

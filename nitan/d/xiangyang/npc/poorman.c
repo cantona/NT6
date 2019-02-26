@@ -20,7 +20,7 @@ void create()
         set("chat_chance", 15);
         set("chat_msg", ({
 "窮漢懶洋洋地打了個哈欠。\n",
-"窮漢嘆了口氣：那些蒙古韃子害得我家破人亡。\n",
+"窮漢歎了口氣：那些蒙古韃子害得我家破人亡。\n",
                 (: random_move :)
         }) );
         carry_object("/clone/misc/cloth")->wear();

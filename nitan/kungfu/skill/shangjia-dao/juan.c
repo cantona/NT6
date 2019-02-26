@@ -41,7 +41,7 @@ int perform(object me, object target)
                 return notify_fail("你的真氣不夠，難以施展" JUAN "。\n");
 
         if (! living(target))
-                return notify_fail("對方都已經這樣了，用不著這麼費力吧？\n");
+                return notify_fail("對方都已經這樣了，用不着這麼費力吧？\n");
 
         msg = HIW "$N" HIW "手中" + weapon->name() +  HIW "吞吐不定，刀勢連環起"
               "伏，頓時疊起重重刀芒裹向$n" HIW "全身！\n" NOR;
@@ -54,7 +54,7 @@ int perform(object me, object target)
                 damage = ap / 3 + random(ap / 2);
                 addn("neili", -80, me);
                 msg += COMBAT_D->do_damage(me, target, WEAPON_ATTACK, damage, 45,
-                                           HIR "$n" HIR "只覺得無數刀光攜著寒芒向"
+                                           HIR "$n" HIR "只覺得無數刀光攜着寒芒向"
                                            "自己湧來，一時躲閃不及，連中數刀！\n" NOR);
                 me->start_busy(2);
         } else 

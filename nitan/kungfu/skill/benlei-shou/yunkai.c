@@ -51,7 +51,7 @@ int perform(object me,object target)
         if( query("neili", me)<150 )
                 return notify_fail("你的內力不夠，無法運用"PNAME"！\n");
  
-        msg = HIC "$N"HIC"潛運「雲開霧闔」，雙掌挾著陣陣的風雷之聲向$n"HIC"擊去。\n"NOR;
+        msg = HIC "$N"HIC"潛運「雲開霧闔」，雙掌挾着陣陣的風雷之聲向$n"HIC"擊去。\n"NOR;
         message_combatd(msg, me, target);
         skill = me->query_skill(bskill, 1);
  

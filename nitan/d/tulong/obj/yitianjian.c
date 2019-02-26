@@ -19,7 +19,7 @@ void create()
                 set_default_object(__FILE__);
         else {
                 set("unit", "柄");
-                set("long", HIY "這便與天下至尊的屠龍寶刀並稱的倚天劍。\n相傳讓刀劍對砍(duikan)可以得到曠世的武林秘籍。\n" NOR);
+                set("long", HIY "這便與天下至尊的屠龍寶刀並稱的倚天劍。\n相傳讓刀劍對砍(duikan)可以得到曠世的武林祕籍。\n" NOR);
                 set("value", 100000);
                 set("no_sell", "這樣東西不能賣。\n");
                 set("no_store", 1);
@@ -54,7 +54,7 @@ mixed hit_ob(object me, object victim, int damage_bonus)
         if( query("neili", victim)<0 )
         set("neili", 0, victim);
 
-        return HIW "倚天劍攜著颼颼刺骨風聲，直直刺向$n，$n只感到全身的內力竟一絲絲隨著劍鋒湧出。\n" NOR;
+        return HIW "倚天劍攜着颼颼刺骨風聲，直直刺向$n，$n只感到全身的內力竟一絲絲隨着劍鋒湧出。\n" NOR;
 }
 
 void return_to_back() 
@@ -87,7 +87,7 @@ void return_to_back()
                             "，就此謝過，咱們後會有期！”\n\n"NOR);
         } else 
         { 
-                message("vision", "忽然一個人走了過來，撿起"+name()+"，嘆了口氣，搖搖頭走了。\n", me); 
+                message("vision", "忽然一個人走了過來，撿起"+name()+"，歎了口氣，搖搖頭走了。\n", me); 
         } 
 
         move("/clone/misc/void");

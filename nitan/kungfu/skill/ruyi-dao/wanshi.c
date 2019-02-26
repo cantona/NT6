@@ -64,14 +64,14 @@ int perform(object me, object target)
                         addn("neili", -100, target);
 
                 msg = COMBAT_D->do_damage(me, target, UNARMED_ATTACK, damage, 50,
-                        HIR "$p" HIR "眼見著刀光飛泄過來卻手足無措，結果被$P"
+                        HIR "$p" HIR "眼見着刀光飛泄過來卻手足無措，結果被$P"
                         HIR "一刀正中胸口，悶哼一聲，鮮血飛濺而出！\n" NOR);
                 me->start_busy(2);
                 target->start_busy(1+random(2));
         }
         else
         {
-                msg = HIY "$p" HIY "眼見著刀光飛泄過來，慌忙間就地一個打滾，總算避開了$P"
+                msg = HIY "$p" HIY "眼見着刀光飛泄過來，慌忙間就地一個打滾，總算避開了$P"
                       HIY "這招萬事如意！\n" NOR;
                 me->start_busy(3);
         }

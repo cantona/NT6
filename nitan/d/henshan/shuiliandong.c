@@ -8,10 +8,10 @@ void create()
 {
         set("short", "水簾洞外");
         set("long", 
-"水簾洞在紫蓋峰下，紫蓋峰之水經過山澗匯入紫蓋仙洞之\n中，深不可測，"
-"水滿則溢，飛瀑(pubu)高二十余丈，數疊垂簾，\n飄泄而下，蔚為壯觀。"
+"水簾洞在紫蓋峯下，紫蓋峯之水經過山澗匯入紫蓋仙洞之\n中，深不可測，"
+"水滿則溢，飛瀑(pubu)高二十餘丈，數疊垂簾，\n飄泄而下，蔚為壯觀。"
 "明張居正詩曰「" HIW "誤疑瀛海翻瓊波，莫擬\n銀河倒碧流，自是湘妃深隱處，"
-"水晶簾掛五雲頭。" NOR "」以讚嘆這\n衡山大四絕之一的 水簾洞之奇 。\n"
+"水晶簾掛五雲頭。" NOR "」以讚歎這\n衡山大四絕之一的 水簾洞之奇 。\n"
 );
         set("exits", ([ 
                "westdown"    : __DIR__"shanlu12",
@@ -23,7 +23,7 @@ void create()
         set("outdoors", "henshan");
 
         set("item_desc",([
-                "pubu" : HIG "\n只見瀑布飛瀉而下，氣勢磅礡，景致壯觀，下面卻"
+                "pubu" : HIG "\n只見瀑布飛瀉而下，氣勢磅礴，景緻壯觀，下面卻"
                          "是萬丈深淵，\n一望無底，水蓮洞卻偏偏生瀑布之後。\n\n" NOR,
         ]));
 
@@ -59,7 +59,7 @@ int do_tiao(string arg)
         if (skill_dodge < 60)
         {        
                 message_vision(HIC "\n$N" HIC "使勁向前一躍，眼見要到洞口，但$N"
-                               HIC "感覺氣力已盡，身在半\n空卻被瀑布沖了下去。\n\n"
+                               HIC "感覺氣力已盡，身在半\n空卻被瀑布衝了下去。\n\n"
                                NOR, me);
 
                  tell_object(me, HIW "你迷迷糊糊地任湍急的水流將你沖走，身上"
@@ -74,7 +74,7 @@ int do_tiao(string arg)
         if (skill_dodge < 140)
         {
                      message_vision(HIC "\n$N" HIC "奮力往前一跳，險些被瀑布打落，但有驚"
-                               "無險，$N" HIC "終于落在洞口處，可樣子卻甚是狼狽。\n\n" 
+                               "無險，$N" HIC "終於落在洞口處，可樣子卻甚是狼狽。\n\n" 
                                NOR, me);
                 me->move(obj);
                 message("vision", HIW "\n" + me->name() + HIW "從瀑布外跳狼狽萬分地"

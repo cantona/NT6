@@ -35,7 +35,7 @@ int perform(object me, object target)
                 return notify_fail("你現在的真氣不夠，難以施展" + name() + "。\n");
 
         if (! living(target))
-                return notify_fail("對方都已經這樣了，用不著這麼費力吧？\n");
+                return notify_fail("對方都已經這樣了，用不着這麼費力吧？\n");
 
         msg = HIG "$N" HIG "斜斜一指刺出，指尖晃動不已，遙遙點向$n"
               HIG "要穴所在。\n" NOR;
@@ -50,7 +50,7 @@ int perform(object me, object target)
                 addn("neili", -60, me);
                 msg += COMBAT_D->do_damage(me, target, UNARMED_ATTACK, damage, 50,
                                            HIR "結果$p" HIR "招架失誤，被$P" HIR
-                                           "這一指點了個正著，內息登時一滯，氣血倒流。\n" NOR);
+                                           "這一指點了個正着，內息登時一滯，氣血倒流。\n" NOR);
         } else
         {
                 me->start_busy(3);

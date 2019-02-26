@@ -7,10 +7,10 @@ void create()
 {
         set("short", "後渚港");
         set("long", @LONG
-後渚港是泉州三大港口之首。這裡港闊水深，風平浪靜。極目遠眺，
-海天一色，蔚藍無暇。岸邊停靠著密密麻麻的各種船只。由于海外貿易
-的廣泛發展，泉州因而成為「海上絲綢之路」的起點。在眾多的船只中
-間，還有一只大戰船(chuan)。
+後渚港是泉州三大港口之首。這裏港闊水深，風平浪靜。極目遠眺，
+海天一色，蔚藍無暇。岸邊停靠着密密麻麻的各種船隻。由於海外貿易
+的廣泛發展，泉州因而成為「海上絲綢之路」的起點。在眾多的船隻中
+間，還有一隻大戰船(chuan)。
 LONG );
         set("outdoors", "quanzhou");
         set("item_desc", ([
@@ -43,8 +43,8 @@ int do_enter ( string arg )
                 tell_object(this_player() , "你要 enter 哪兒？\n" ) ;
                 return 1 ;
         }
-        message_vision("船夫一見有人上船，忙叫了一聲：開船嘍！\n", ob);
-        message_vision("船夫升起帆，船就向東方航行。\n", ob);
+        message_vision("船伕一見有人上船，忙叫了一聲：開船嘍！\n", ob);
+        message_vision("船伕升起帆，船就向東方航行。\n", ob);
         ob ->move("/d/taiwan/dahai") ;
         tell_object(ob, BLU "你在海上航行了很久很久.......\n" NOR ) ;
         call_out("tpenghu", 10 , ob );
@@ -52,6 +52,6 @@ int do_enter ( string arg )
 }
 void tpenghu(object ob )
 {
-        tell_object(ob , "大船終于抵達了大海中一個大島嶼。你走下船來。\n" ) ;
+        tell_object(ob , "大船終於抵達了大海中一個大島嶼。你走下船來。\n" ) ;
         ob->move ("/d/taiwan/penghu") ;
 }

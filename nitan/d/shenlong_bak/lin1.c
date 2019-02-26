@@ -14,7 +14,7 @@ void create()
 {
         set("short", "灌木林");
         set("long",@LONG
-峰頂北坡是一片陰鬱潮濕的灌木林，小路隱沒在罐木林中。你對這
+峯頂北坡是一片陰鬱潮濕的灌木林，小路隱沒在罐木林中。你對這
 樣一個孤島上竟有這樣大一片灌木林(bush)感到非常吃驚。四周的密林
 中長滿了不知名的雜草。
 LONG);
@@ -52,11 +52,11 @@ int do_kan ( string arg )
         if( !arg || arg !="bush" ) return notify_fail("你要砍什麼？\n" ) ;
         if( !objectp(weapon=query_temp("weapon", me)) )
                 return notify_fail("不用武器恐怕不行吧！\n");
-        message_vision("$N抽出兵刃，對著灌木叢一陣亂砍。\n", me);
+        message_vision("$N抽出兵刃，對着灌木叢一陣亂砍。\n", me);
         if( query("neili", me)>100 )
         {
                 set("exits/north", __DIR__"lin2");
-                message_vision( "$N累得氣喘吁吁，終于砍出一條小路。\n", me);
+                message_vision( "$N累得氣喘吁吁，終於砍出一條小路。\n", me);
                 addn("neili", -50, me);
                 remove_call_out("close");
                 call_out("close", 20, this_object());
@@ -71,6 +71,6 @@ int do_kan ( string arg )
 
 void close(object room)
 {
-        message("vision","灌木叢漸漸合攏起來，終于又恢復了原狀。\n", room);
+        message("vision","灌木叢漸漸合攏起來，終於又恢復了原狀。\n", room);
         delete("exits/north", room);
 }

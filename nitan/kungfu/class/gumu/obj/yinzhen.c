@@ -36,7 +36,7 @@ void create()
 int do_bawan()
 {
         if ((int)this_player()->query_condition("ice_sting") < 10) {
-                tell_object(this_player(), "你看著手中的銀針覺得有趣，把針身的花紋細細摸了一遍。\n");
+                tell_object(this_player(), "你看着手中的銀針覺得有趣，把針身的花紋細細摸了一遍。\n");
                 tell_object(this_player(), HIB "你突然覺得手掌麻麻的有些不太靈便，猛然驚覺：“針上有毒，如此把玩，豈不危險？”忙張開手掌\n拋下銀針，只見兩手掌心已深黑如墨，手臂麻木感漸漸上升，心中大駭，忍不住便要哭出聲來。\n" NOR);
                 this_player()->apply_condition("ice_sting", 30);
         }        

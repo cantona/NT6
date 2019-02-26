@@ -23,12 +23,12 @@ ex :
 header filename.c //若 filename 尚無 NT 格式標頭, 則自動建立預設標頭, 作者為下此指令之人
 header filename author lonely // 設定 filename 作者為 lonely
 header filename update update_info // 自動往下遞增 update 資訊
-header filename note note_info // 填寫 NOTE(注解) 欄
+header filename note note_info // 填寫 NOTE(註解) 欄
 
 同時支援多行輸入
 header filename author1/author2 輸入多名作者
 header filename update1/update2 輸入多行更新資訊
-header filename note1/note2     輸入多行注解資訊
+header filename note1/note2     輸入多行註解資訊
 HELP;
 
 string default_header   = @HEADER

@@ -49,15 +49,15 @@ int main(object me, string arg)
 
         if (me == ob)
         {
-                message_vision(HIY "$N" HIY "口中念念有詞，不一會兒就變得"
-                               "精神煥發，神採奕奕。\n" NOR, me);
+                message_vision(HIY "$N" HIY "口中唸唸有詞，不一會兒就變得"
+                               "精神煥發，神采奕奕。\n" NOR, me);
                 if (me->is_ghost()) me->reincarnate();
                 me->clear_condition();
                 ob->clear_weak();
         } else
         {
                 message_vision(HIY "$N" HIY "伸手一指，$n" HIY "立刻精神煥"
-                               "發，神採奕奕。\n" NOR,
+                               "發，神采奕奕。\n" NOR,
                                me, ob);
                 if (! living(ob)) ob->revive();
                 if (ob->is_ghost()) ob->reincarnate();

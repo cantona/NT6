@@ -31,9 +31,9 @@ int perform(object me, object target)
                 return notify_fail("你現在真氣不夠，無法使用「大挪移」。\n");
 
        if (! living(target))
-              return notify_fail("對方都已經這樣了，用不著這麼費力吧？\n");
+              return notify_fail("對方都已經這樣了，用不着這麼費力吧？\n");
 
-        msg = HIM "$N" HIM "招數忽然的一變，摹可明方，內力四處回旋，無形中牽引著$n"
+        msg = HIM "$N" HIM "招數忽然的一變，摹可明方，內力四處迴旋，無形中牽引着$n"
               HIM "的招式！\n";
 
         ap = attack_power(me, "parry");

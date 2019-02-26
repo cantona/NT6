@@ -11,7 +11,7 @@ void create()
         set("quest_no_guard",1);
         set("no_steal",1);
         set("no_ansuan",1);
-        set("long", "一個穿著黑色夜行衣的人。\n");
+        set("long", "一個穿着黑色夜行衣的人。\n");
         set( "chat_chance_combat", 80);         
   set( "chat_msg_combat",({
                         (: exert_function, "recover" :),

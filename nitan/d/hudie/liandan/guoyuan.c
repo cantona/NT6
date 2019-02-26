@@ -11,7 +11,7 @@ void create()
 {
 	set("short", "果園");
 	set("long", @LONG
-這裡是『蝶谷醫仙』胡青牛的果園，零零落落種了幾棵果樹。胡大
+這裏是『蝶谷醫仙』胡青牛的果園，零零落落種了幾棵果樹。胡大
 夫為人脾氣古怪，請不到什麼人為他打理，因此這片果園顯得相當破敗
 衰落。
 LONG
@@ -53,7 +53,7 @@ int do_mai(string arg)
 		return notify_fail("你要種什麼？\n");
 
     	if (arg != "shu zhong")
-       	return notify_fail("這樣東西並不適合在這裡種植。\n");
+       	return notify_fail("這樣東西並不適合在這裏種植。\n");
        
 	if( query_temp("zhongshu", me) )
        	return notify_fail("你上次種的果樹都長好了嗎？\n");
@@ -64,7 +64,7 @@ int do_mai(string arg)
 
 	destruct(ob);
 
-	message_vision (MAG"$N在地上挖了一個小坑，小心地把果樹種籽埋在裡面。\n"NOR,me);
+	message_vision (MAG"$N在地上挖了一個小坑，小心地把果樹種籽埋在裏面。\n"NOR,me);
 
 	me->start_busy(5);
 set_temp("zhongshu", 1, 	me);
@@ -104,7 +104,7 @@ void faya(object me)
 
 void jiaoshui(object me)
 {
-	message_vision (HIR"只見天空驕陽似火，$N種下的果樹眼看著就一點點幹枯了。\n"NOR,me);
+	message_vision (HIR"只見天空驕陽似火，$N種下的果樹眼看着就一點點乾枯了。\n"NOR,me);
 
 set_temp("need_jiaoshui", 1, 	me);
 }
@@ -145,7 +145,7 @@ delete_temp("need_jiaoshui", 	me);
 
 void chucao(object me)
 {
-	message_vision (GRN"隨著時間的推移，$N種下的果樹旁邊漸漸長出了一些雜草。\n"NOR,me);
+	message_vision (GRN"隨着時間的推移，$N種下的果樹旁邊漸漸長出了一些雜草。\n"NOR,me);
 
 set_temp("need_chucao", 1, 	me);
 }
@@ -161,7 +161,7 @@ int do_chucao()
 	if (!ob = present("yao chu", me))
 		return notify_fail("你身上沒有藥鋤，拿什麼除草？\n");
 
-	message_vision (HIB"$N拿出藥鋤，仔細地把周圍的雜草清除幹凈。\n"NOR,me);
+	message_vision (HIB"$N拿出藥鋤，仔細地把周圍的雜草清除乾淨。\n"NOR,me);
 	me->start_busy(5);
 delete_temp("need_chucao", 	me);
 
@@ -186,7 +186,7 @@ delete_temp("need_chucao", 	me);
 
 void zhuochong(object me)
 {
-	message_vision (HIY"又過了一會，$N突然發現有幾只害蟲正在瘋狂地啃噬果樹的根莖！\n"NOR,me);
+	message_vision (HIY"又過了一會，$N突然發現有幾隻害蟲正在瘋狂地啃噬果樹的根莖！\n"NOR,me);
 
 set_temp("need_zhuochong", 1, 	me);
 }
@@ -231,64 +231,64 @@ void shouhuo(object me)
 	{
 		guo1 = new(__DIR__"/yao/guolei");
    		guo1->move(me);
-   		message_vision(HIM"$N收獲了一顆"+guo1->name()+HIM"！\n"NOR, this_player());
+   		message_vision(HIM"$N收穫了一顆"+guo1->name()+HIM"！\n"NOR, this_player());
 	}
 	else if (i == 2)
 	{
 		guo1 = new(__DIR__"/yao/guolei");
    		guo1->move(me);
-   		message_vision(HIM"$N收獲了一顆"+guo1->name()+HIM"！\n"NOR, this_player());
+   		message_vision(HIM"$N收穫了一顆"+guo1->name()+HIM"！\n"NOR, this_player());
 
 		guo2 = new(__DIR__"/yao/guolei");
    		guo2->move(me);
-   		message_vision(HIM"$N收獲了一顆"+guo2->name()+HIM"！\n"NOR, this_player());
+   		message_vision(HIM"$N收穫了一顆"+guo2->name()+HIM"！\n"NOR, this_player());
 
 	}
 	else if (i == 3)
 	{
 		guo1 = new(__DIR__"/yao/guolei");
    		guo1->move(me);
-   		message_vision(HIM"$N收獲了一顆"+guo1->name()+HIM"！\n"NOR, this_player());
+   		message_vision(HIM"$N收穫了一顆"+guo1->name()+HIM"！\n"NOR, this_player());
 
 		guo2 = new(__DIR__"/yao/guolei");
    		guo2->move(me);
-   		message_vision(HIM"$N收獲了一顆"+guo2->name()+HIM"！\n"NOR, this_player());
+   		message_vision(HIM"$N收穫了一顆"+guo2->name()+HIM"！\n"NOR, this_player());
 
 		guo3 = new(__DIR__"/yao/guolei");
    		guo3->move(me);
-   		message_vision(HIM"$N收獲了一顆"+guo3->name()+HIM"！\n"NOR, this_player());
+   		message_vision(HIM"$N收穫了一顆"+guo3->name()+HIM"！\n"NOR, this_player());
 
 	}
 	else
 	{
 		guo1 = new(__DIR__"/yao/guolei");
    		guo1->move(me);
-   		message_vision(HIM"$N收獲了一顆"+guo1->name()+HIM"！\n"NOR, this_player());
+   		message_vision(HIM"$N收穫了一顆"+guo1->name()+HIM"！\n"NOR, this_player());
 
 		guo2 = new(__DIR__"/yao/guolei");
    		guo2->move(me);
-   		message_vision(HIM"$N收獲了一顆"+guo2->name()+HIM"！\n"NOR, this_player());
+   		message_vision(HIM"$N收穫了一顆"+guo2->name()+HIM"！\n"NOR, this_player());
 
 		guo3 = new(__DIR__"/yao/guolei");
    		guo3->move(me);
-   		message_vision(HIM"$N收獲了一顆"+guo3->name()+HIM"！\n"NOR, this_player());
+   		message_vision(HIM"$N收穫了一顆"+guo3->name()+HIM"！\n"NOR, this_player());
 
 		guo4 = new(__DIR__"/yao/guolei");
    		guo4->move(me);
-   		message_vision(HIM"$N收獲了一顆"+guo4->name()+HIM"！\n"NOR, this_player());
+   		message_vision(HIM"$N收穫了一顆"+guo4->name()+HIM"！\n"NOR, this_player());
 
 	}
 
 	me->start_busy(2);
 
-	message_vision (HIR"終于到了收獲的季節！$N這次收獲了"+chinese_number(i)+"顆果實！\n"NOR,me);
+	message_vision (HIR"終於到了收穫的季節！$N這次收穫了"+chinese_number(i)+"顆果實！\n"NOR,me);
 
 addn("combat_exp", 1000+random(i*1000), 	me);
 addn("potential", 300+random(i*300), 	me);
         delete_temp("zhongshu", me);
 
 
-	tell_object(this_player(),MAG"由于你的辛勤勞動，經驗和潛能都有所增長。\n"NOR);
+	tell_object(this_player(),MAG"由於你的辛勤勞動，經驗和潛能都有所增長。\n"NOR);
 
 
 }
@@ -302,6 +302,6 @@ int valid_leave(object me, string dir)
 
 int discmds()
 {
-        tell_object(this_player(),"既然到了這裡，還是專心種樹吧！\n");
+        tell_object(this_player(),"既然到了這裏，還是專心種樹吧！\n");
         return 1;
 }

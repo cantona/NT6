@@ -11,7 +11,7 @@ void create()
 {
         set_name(HIY "獨孤求敗" NOR, ({ "dugu qiubai", "dugu", "qiubai" }) );
         set("title", HIR "劍魔" NOR);
-        set("long", HIR "這便是傳說中的劍魔獨孤大俠，據說天下間竟無一敵手。\n"
+        set("long", HIR "這便是傳説中的劍魔獨孤大俠，據説天下間竟無一敵手。\n"
                         "獨孤求敗曾感慨：嗚呼，生平求一敵手而不可得，誠寂寥難堪也！\n" NOR);
 
         set("gender", "男性");
@@ -115,10 +115,10 @@ void create()
 
         }));
 
-        set("my_life", 1); // 當氣血低于10%的時候補滿一次，設置該參數為0
+        set("my_life", 1); // 當氣血低於10%的時候補滿一次，設置該參數為0
 
         //set("auto_perform", 1);
-        set("end_time", 1800);  // 必須戰鬥不少于1800秒後死亡
+        set("end_time", 1800);  // 必須戰鬥不少於1800秒後死亡
         set("rewards", ([
                 "exp"   : 60000,
                 "pot"   : 20000,
@@ -162,7 +162,7 @@ void create()
         carry_object("/clone/cloth/bupao")->wear();
         carry_object("/clone/weapon/xuantie-jian")->wield();
 
-        // 設置地點劍塚
+        // 設置地點劍冢
         set("startroom", "/d/jianzhong/maigu");
 }
 
@@ -225,7 +225,7 @@ void check_weapon()
                 me->clear_condition();
         }
 
-        // 很小幾率恢復氣血
+        // 很小几率恢復氣血
         if (random(1000) == 1)
         {
                 if (query("eff_qi") < query("max_qi") / 3) addn("eff_qi", query("max_qi") / 5);
@@ -337,7 +337,7 @@ void die(object killer)
                 if( query("qi") > query("max_qi") ) set("qi", query("max_qi"));
                 addn("eff_qi", query("max_qi") / 10);
                 if( query("eff_qi") > query("max_qi") ) set("eff_qi", query("max_qi"));
-                message_vision(HIR "\n$N" HIR "大喝一聲，運用秘法，氣血有所回升！\n\n" NOR, this_object());
+                message_vision(HIR "\n$N" HIR "大喝一聲，運用祕法，氣血有所回升！\n\n" NOR, this_object());
                 return;
         }
 
@@ -356,7 +356,7 @@ void die(object killer)
         ob->move(where);
         message_vision(HIC "叮~~一聲，從$N" HIC "身上掉出" + ob->name() + NOR + HIC "，落在地上。\n" NOR, this_object());
 
-        message("vision", HIR +this_object()->name(1) + HIR "仰天長嘯：哈哈哈，老夫今日終于如願以償 ……\n" NOR, all_interactive());
+        message("vision", HIR +this_object()->name(1) + HIR "仰天長嘯：哈哈哈，老夫今日終於如願以償 ……\n" NOR, all_interactive());
 
         return ::die(killer);
 }

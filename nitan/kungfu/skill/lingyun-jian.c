@@ -12,7 +12,7 @@ mapping *action = ({
         "damage_type" : "刺傷",
         "skill_name"  : "盛氣凌人"
 ]),
-([      "action" :  "$N氣運于劍，陡然直進，一招「一劍穿心」已然使出，$w直指$n$l",
+([      "action" :  "$N氣運於劍，陡然直進，一招「一劍穿心」已然使出，$w直指$n$l",
         "force"  :  120,
         "dodge"  :  25,
         "parry"  :  40,

@@ -7,8 +7,8 @@ void do_summon();
 int checking(object me);
 void create()
 {
-        set_name( "僵屍道長", ({ "jiangshi daozhang", "jiangshi", "daozhang" }));
-        set("long", "一個可以控制僵屍的道長，看起來好可怕。。。\n");
+        set_name( "殭屍道長", ({ "jiangshi daozhang", "jiangshi", "daozhang" }));
+        set("long", "一個可以控制殭屍的道長，看起來好可怕。。。\n");
 
         set("gender", "男性");
         set("age", 45);
@@ -94,7 +94,7 @@ void do_summon()
         obs = all_inventory(environment(me));
         obs=filter_array(obs,(:query("id", $1) == "zombie":));
         if( sizeof(obs) >= 4 ) return;
-        message_vision(HIM "\n$N□□幹嚎，周圍的僵屍王應聲而來。\n" NOR, me);
+        message_vision(HIM "\n$N嗬嗬乾嚎，周圍的殭屍王應聲而來。\n" NOR, me);
         zombie = new(__DIR__"zombie");
         zombie->move(environment(me));
         enemies = me->query_enemy();

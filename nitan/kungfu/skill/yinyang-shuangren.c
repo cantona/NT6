@@ -28,7 +28,7 @@ mapping *action = ({
                 "skill_name" : "漫天飛舞",
         "damage_type" : "刺傷",
 ]),
-([      "action" : "$N一式「蓮花吐蕊」，手中$w鬥地彎彎的繞著刺向$n的$l",
+([      "action" : "$N一式「蓮花吐蕊」，手中$w鬥地彎彎的繞着刺向$n的$l",
         "force" : 160,
         "dodge" : -10,
         "damage" : 85,

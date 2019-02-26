@@ -1,6 +1,6 @@
 //                標準描述長度示例                                   |
 // 幻境內物品  遊戲工具類型
-// by naihe  2002-10-24 ~ 25  于茂名
+// by naihe  2002-10-24 ~ 25  於茂名
 // 改善一下 fx, dx, xr 的效力 05-8-31 10:16
 
 #include <ansi.h>
@@ -13,8 +13,8 @@ inherit ITEM;
 string *names=({
     HIG"定向水晶"NOR,
     HIC"飛翔之石"NOR,
-    YEL"脫離水晶"NOR,
-    HIW"回歸之鏡"NOR,
+    YEL"脱離水晶"NOR,
+    HIW"迴歸之鏡"NOR,
     HIY"祈禱之石"NOR,
     HIM"召喚之盒"NOR,
     HIM"發呆之旗"NOR,
@@ -28,18 +28,18 @@ string *names=({
  本來還有諸多的想法，但：
 1、道具太多，玩家將無所適從
 2、每次想到新的都要添加，何時才是個頭？
-3、一些特強力的道具，可留待 幻境系列 第2集 裡寫！
+3、一些特強力的道具，可留待 幻境系列 第2集 裏寫！
 
 by the way, 第2集的情節已想好幾個國度的構思了！
-玩家將能夠進一步深入遊戲中去，繼續延續第1集裡
+玩家將能夠進一步深入遊戲中去，繼續延續第1集裏
 的故事！！！
 
-並且，第2集裡將是以情節為主的內容！大家
+並且，第2集裏將是以情節為主的內容！大家
 拭目以待一個迷一般、史詩一般的情節吧！
 
 YEAH~~   all by naihe 2002-10 ~ 11
 
-終于未寫，唉。 naihe 14:04 03-10-15
+終於未寫，唉。 naihe 14:04 03-10-15
 **************************************/
 
 
@@ -74,13 +74,13 @@ string *ids2=({
 
 string *longs=({
     "這是一個定向水晶，用它你可以(dingxiang / dx)查得自己身在何處。\n",
-    "這是一顆飛翔之石，用它你可以(feixiang / fx)瞬間飛翔到幻境裡的任何地方。\n",
-    "這是一個脫離水晶，用它你可以(tuoli / tl)逃開怪物，隨機脫離去到別的地方。\n",
-    "這是一面回歸之鏡，用它你可以(huigui / hg)立刻離開幻境，回到現實裡來（遊戲得分將保持）。\n",
-    "這是一顆祈禱之石，用它你可以(qidao / qd)祈禱隨機寶物出現于自己所處之地。\n",
-    "這是一個召喚之盒，用它你可以(zhaohuan / zh)召喚隨機精靈出現于自己所處之地。\n",
+    "這是一顆飛翔之石，用它你可以(feixiang / fx)瞬間飛翔到幻境裏的任何地方。\n",
+    "這是一個脱離水晶，用它你可以(tuoli / tl)逃開怪物，隨機脱離去到別的地方。\n",
+    "這是一面迴歸之鏡，用它你可以(huigui / hg)立刻離開幻境，回到現實裏來（遊戲得分將保持）。\n",
+    "這是一顆祈禱之石，用它你可以(qidao / qd)祈禱隨機寶物出現於自己所處之地。\n",
+    "這是一個召喚之盒，用它你可以(zhaohuan / zh)召喚隨機精靈出現於自己所處之地。\n",
     "這是一面發呆之旗，用它你可以(fadai / fd)讓同一個地方的人發呆一會兒。\n",
-    "這是一面驅逐之旗，用它你可以(quzhu / qz)讓某地不許除了你之外的有著幻境氣息的人停留。\n",
+    "這是一面驅逐之旗，用它你可以(quzhu / qz)讓某地不許除了你之外的有着幻境氣息的人停留。\n",
     "這是一顆尋人水晶，用它你可以(xunren / xr)尋找如你一樣的勇士們所處何方。\n",
     "這是一顆窺探水晶，用它你可以(kuitan / kt)窺探如你一樣的勇士們身上所帶何物。\n",
     "這是一個定位之儀，用它你可以(dingwei here / dw here)先定位，再快速返回該地點(dw back)。\n",
@@ -129,7 +129,7 @@ int can_use( string id, object me )
     return 1;
 }
 
-// 程序優化，這裡判斷 busy .
+// 程序優化，這裏判斷 busy .
 int hj_busy_now( object me )
 {
     if( !me || me->is_busy() || query_temp("hj_need_waiting", me))return 1;
@@ -190,11 +190,11 @@ void delete_me()
 {
     if( query("real_name") )
     {
-        message_vision(query("real_name", this_object())+"靈氣已盡，「□」地一聲消失不見了。\n",this_object());
+        message_vision(query("real_name", this_object())+"靈氣已盡，「嘭」地一聲消失不見了。\n",this_object());
         delete("qzzq_now", environment());
     }
     else
-        message_vision(query("name", this_object())+"靈氣已盡，「□」地一聲消失不見了。\n",this_object());
+        message_vision(query("name", this_object())+"靈氣已盡，「嘭」地一聲消失不見了。\n",this_object());
     destruct(this_object());
 }
 
@@ -207,20 +207,20 @@ int do_dingxiang()
     if( !can_use( "dx shuijing" , me ) )
         return 0;
     // 本道具不受 busy 限制。
-    //if( hj_busy_now( me ) ) return notify_fail("你還有別的事情忙著呢！\n");
+    //if( hj_busy_now( me ) ) return notify_fail("你還有別的事情忙着呢！\n");
     rooms = (environment(me));
     if( rooms && temp_mark=query("room_mark", rooms) )
     {
-        message_vision(CYN"$N"NOR+CYN"拿起"NOR"$n"NOR+CYN"凝神注視著。\n"NOR, me, ob );
+        message_vision(CYN"$N"NOR+CYN"拿起"NOR"$n"NOR+CYN"凝神注視着。\n"NOR, me, ob );
         addn("use_times",-1);
-        // 報假的幾率降低了。
+        // 報假的機率降低了。
         if( !random(5) )
         {
             temp_mark+= random(2) - random(2);
             if( temp_mark < 1 || temp_mark > HJ_ROOM_AMOUNT )
                 temp_mark = 1+random( HJ_ROOM_AMOUNT );
         }
-        write(query("name")+"裡隱約顯現著一個標記，似乎是 " + chinese_number(temp_mark) + " 。 \n");
+        write(query("name")+"裏隱約顯現着一個標記，似乎是 " + chinese_number(temp_mark) + " 。 \n");
     }
     else
         return notify_fail("此地並非幻境密林內。\n");
@@ -242,14 +242,14 @@ int do_feixiang(string arg)
     if( !can_use( "fx zhishi" , me ) )
         return 0;
     if ( !arg || !sscanf(arg, "%d",temp_mark) ) 
-        return notify_fail("這裡的區域標記為 1 - "+HJ_ROOM_AMOUNT+" 。輸入你想要去的地方的標記吧……\n");
+        return notify_fail("這裏的區域標記為 1 - "+HJ_ROOM_AMOUNT+" 。輸入你想要去的地方的標記吧……\n");
     if( temp_mark < 1 || temp_mark > HJ_ROOM_AMOUNT)
-        return notify_fail("這裡的區域標記為 1 - "+HJ_ROOM_AMOUNT+" 。輸入你想要去的地方的標記吧……\n");
+        return notify_fail("這裏的區域標記為 1 - "+HJ_ROOM_AMOUNT+" 。輸入你想要去的地方的標記吧……\n");
     if( hj_busy_now( me ) )
-        return notify_fail("你還有別的事情忙著呢！\n");
+        return notify_fail("你還有別的事情忙着呢！\n");
     message_vision(CYN"$N"NOR+CYN"左手把$n"NOR+CYN"握在手心，右手伸出，指了一個方向。\n"NOR,me, ob);
     addn("use_times",-1);
-    // 飛錯的幾率降低了。
+    // 飛錯的機率降低了。
     if( !random(5) )
     {
         temp_mark+= random(2) - random(2);
@@ -279,7 +279,7 @@ int do_tuoli()
     // 已優化的判斷句
     if( !can_use( "tl shuijing" , me ) )
         return 0;
-    message_vision(CYN"$N"NOR+CYN"把$n"NOR+CYN"緊緊抓在手心裡高舉過頭，大聲叫道：“脫離此地！”\n"NOR,me, ob);
+    message_vision(CYN"$N"NOR+CYN"把$n"NOR+CYN"緊緊抓在手心裏高舉過頭，大聲叫道：“脱離此地！”\n"NOR,me, ob);
     addn("use_times",-1);
     random_rooms = HJ_DIR +"hj_room"+ (1+random(HJ_ROOM_AMOUNT));
     rooms = find_object(random_rooms);
@@ -287,7 +287,7 @@ int do_tuoli()
         rooms = load_object(random_rooms);
     message_vision(HIR"$N"HIR"身形一晃，隨即消失不見了。\n"NOR,me);
     me->move(rooms);
-    message_vision(HIR"$N"HIR"突然出現在這裡，一副驚魂未定的樣子。\n"NOR,me);
+    message_vision(HIR"$N"HIR"突然出現在這裏，一副驚魂未定的樣子。\n"NOR,me);
     if(query("use_times") <=0 )
     {
         remove_call_out("delete_me");
@@ -304,7 +304,7 @@ int do_huigui()
     if( !can_use( "hg zhijing" , me ) )
         return 0;
     if( hj_busy_now( me ) )
-        return notify_fail("你還有別的事情忙著呢！\n");
+        return notify_fail("你還有別的事情忙着呢！\n");
     qxd = present( "qixing deng",me);
     if( !qxd || query("my_master", qxd) != me )
         return notify_fail("你身上沒有七星燈？……或者你不是它的主人？……\n請使用 quit 指令強行退出遊戲！\n");
@@ -312,10 +312,10 @@ int do_huigui()
         return notify_fail("你才剛進來遊戲沒多久，就要離開？\n");
     if( query("wait_over", qxd) == "yes" )
         return notify_fail("你的遊戲時間即將結束，不必使用"+query("name")+"了吧。\n");
-    message_vision(CYN"$N"NOR+CYN"拿起"NOR"$n"NOR+CYN"高舉過頂，口裡叫道：“現實映現！”\n"NOR,me, ob);
+    message_vision(CYN"$N"NOR+CYN"拿起"NOR"$n"NOR+CYN"高舉過頂，口裏叫道：“現實映現！”\n"NOR,me, ob);
     set("use_times",0);
     set("use_huigui", "yes", qxd);
-    message_vision(WHT"只見一陣白霧不知從何處飄來，癒來癒濃……\n"NOR,me);
+    message_vision(WHT"只見一陣白霧不知從何處飄來，愈來愈濃……\n"NOR,me);
     remove_call_out("delete_me");
     call_out("delete_me",1);
     return 1;
@@ -329,10 +329,10 @@ int do_qidao()
     if( !can_use( "qd zhishi", me ) )
         return 0;
     if( hj_busy_now( me ) )
-        return notify_fail("你還有別的事情忙著呢！\n");
-    message_vision(CYN"$N"NOR+CYN"雙手握起"NOR"$n"NOR+CYN"捧在心口，閉目喃喃說著什麼。\n"NOR,me, ob);
+        return notify_fail("你還有別的事情忙着呢！\n");
+    message_vision(CYN"$N"NOR+CYN"雙手握起"NOR"$n"NOR+CYN"捧在心口，閉目喃喃説着什麼。\n"NOR,me, ob);
     addn("use_times",-1);
-    if( !random(30) )  // 玩家將有更多的機會得到屬于自己的寶物組成部分
+    if( !random(30) )  // 玩家將有更多的機會得到屬於自己的寶物組成部分
     {
         if( !query_temp("hj_game_find", me))return 1;
         temp_list=({"wait","wait"});
@@ -354,7 +354,7 @@ int do_qidao()
         obj->setme( 1+random(2) );
         obj->move(environment(me));
         if( query("msg", obj))msg=query("msg", obj);
-        else msg="忽然一小陣輕煙掠過……這裡似乎多了一些什麼。\n";
+        else msg="忽然一小陣輕煙掠過……這裏似乎多了一些什麼。\n";
         tell_room(environment(me),msg);
     }
     else
@@ -362,7 +362,7 @@ int do_qidao()
         obj=new( obj_list_obj[random(sizeof(obj_list_obj))] );
         obj->move(environment(me));
         if( query("msg", obj))msg=query("msg", obj);
-        else msg="忽然一小陣輕煙掠過……這裡似乎多了一些什麼。\n";
+        else msg="忽然一小陣輕煙掠過……這裏似乎多了一些什麼。\n";
         tell_room(environment(me),msg);
     }
     // busy 由 3秒降為 1秒。
@@ -383,12 +383,12 @@ int do_zhaohuan()
     if( !can_use( "zh zhihe", me ) )
         return 0;
     if( hj_busy_now( me ) )
-        return notify_fail("你還有別的事情忙著呢！\n");
+        return notify_fail("你還有別的事情忙着呢！\n");
     message_vision(CYN"$N"NOR+CYN"右手捧起"NOR"$n"NOR+CYN"放在身前，猛地喝了一聲：“精靈顯現！”\n"NOR,me, ob);
     addn("use_times", -1);
-    //ob->set("use_times",0);  // 這裡不知為何有BUG，為了解決，附加這一句。
+    //ob->set("use_times",0);  // 這裏不知為何有BUG，為了解決，附加這一句。
     // 已無BUG
-    if( !random(30) )  // 玩家將有更多的機會得到屬于自己的寶物組成部分。這裡是NPC攜帶寶物。
+    if( !random(30) )  // 玩家將有更多的機會得到屬於自己的寶物組成部分。這裏是NPC攜帶寶物。
     {
         if( !query_temp("hj_game_find", me))return 1;
         temp_list=({"wait","wait"});
@@ -411,7 +411,7 @@ int do_zhaohuan()
         if( query("msg", obj) )
             msg=query("msg", obj);
         else
-            msg="忽然一小陣輕煙掠過……這裡似乎多了一些什麼。\n";
+            msg="忽然一小陣輕煙掠過……這裏似乎多了一些什麼。\n";
         tell_room(environment(me),msg);
     }
     else
@@ -421,7 +421,7 @@ int do_zhaohuan()
         if( query("msg", obj) )
             msg=query("msg", obj);
         else
-            msg="忽然一小陣輕煙掠過……這裡似乎多了一些什麼。\n";
+            msg="忽然一小陣輕煙掠過……這裏似乎多了一些什麼。\n";
         tell_room(environment(me),msg);
     }
     if( query("use_times") <=0 )
@@ -438,7 +438,7 @@ void fadai( object target, int time )
     // 奪魂之技特殊技能體現之三(1)，有效抵抗發呆之旗
     if( query_temp("hj_special/sh", target) )
     {
-        message_vision( HIB"只聽得$N"HIB"四周忽地響起一陣凄厲之聲，似是把$N"HIB"保護起來了一般。\n"
+        message_vision( HIB"只聽得$N"HIB"四周忽地響起一陣淒厲之聲，似是把$N"HIB"保護起來了一般。\n"
             "$N"HIB"哈哈一笑，精神奕奕，竟是對發呆之旗毫無所懼。\n"NOR, target);
     }
     else if( (srl=present( "shenren ling", target )) )
@@ -446,7 +446,7 @@ void fadai( object target, int time )
         message_vision(CYN"$N"NOR+CYN"身上的"+query("name", srl)+NOR+CYN"突然發出一陣光芒，"
             +"似是把$N"NOR+CYN"保護起來了一般。\n"NOR, target );
     }
-    // 臨時離開遊戲，保証其安全
+    // 臨時離開遊戲，保證其安全
     else if( present( "hj temp leave obj", target ) )
     {
         message_vision( CYN"$N"NOR+CYN"身形忽隱忽現，竟似並無實體一般，發呆之旗卻是毫無用處。\n"NOR, target );
@@ -466,7 +466,7 @@ int do_fadai(string arg)
         return 0;
     // 不限制忙時
     //if( hj_busy_now( me ) )
-        //return notify_fail("你還有別的事情忙著呢！\n");
+        //return notify_fail("你還有別的事情忙着呢！\n");
     if(!arg)
         return notify_fail("你要讓誰發呆？格式：\n"
             "讓某人發呆<fadai"+query("id", me)+">\n"
@@ -483,13 +483,13 @@ int do_fadai(string arg)
     {
         target = present(arg , environment( me ) );
         if(!target)
-            return notify_fail("這裡沒有這個人。\n");
+            return notify_fail("這裏沒有這個人。\n");
         if(!target->is_character())
             return notify_fail("這不是活物！\n");
         if( !query_temp("hj_hp", target) || query_temp("hj_hp", target)<1 )
-            return notify_fail(query("name", target)+"沒有幻境裡的氣息，無法對其進行攻擊。\n");
+            return notify_fail(query("name", target)+"沒有幻境裏的氣息，無法對其進行攻擊。\n");
         if(!living(target))
-            return notify_fail("這個遊戲裡必須是清醒的對手才能攻擊。\n");
+            return notify_fail("這個遊戲裏必須是清醒的對手才能攻擊。\n");
         if( target == me )
             return notify_fail("讓自己發呆？沒必要吧……\n");
         message_vision(HIY"$N"HIY"舉起"NOR"$n"HIY"大聲叫道：“呆子出現！”\n"NOR,me, ob);
@@ -501,7 +501,7 @@ int do_fadai(string arg)
             return notify_fail("你的氣息不夠，使喚不了這個東西。\n");
         inv_here = all_inventory(environment(me));
         if(!inv_here || sizeof(inv_here) < 2)
-            return notify_fail("這兒沒別的人，這可是個寶貝，還是省著點用吧。\n");
+            return notify_fail("這兒沒別的人，這可是個寶貝，還是省着點用吧。\n");
         for(i=0;i<sizeof(inv_here);i++)
         {
             if( query_temp("hj_hp", inv_here[i]) && 
@@ -510,7 +510,7 @@ int do_fadai(string arg)
             human_amount++;
         }
         if( human_amount < 1 )
-            return notify_fail("這兒沒別的人，這可是個寶貝，還是省著點用吧。\n");
+            return notify_fail("這兒沒別的人，這可是個寶貝，還是省着點用吧。\n");
         message_vision(HIY"$N"HIY"舉起"NOR"$n"HIY"聲嘶力竭般大聲叫喊道：“一堆呆子，快快出現！”\n"NOR,me, ob);
         for(i=0;i<sizeof(inv_here);i++)
         {
@@ -541,13 +541,13 @@ int do_quzhu()
         return 1;
     }
     // 不受忙時限制。
-    //if( hj_busy_now( me ) ) return notify_fail("你還有別的事情忙著呢！\n");
+    //if( hj_busy_now( me ) ) return notify_fail("你還有別的事情忙着呢！\n");
     env = environment(me);
     if( query("room_mark", env) == 1 )
         return notify_fail("你不能在這個地方插下驅逐之旗。\n");
     if( query("qzzq_now", env) )
     {
-        write("這裡已經有人插下驅逐之旗了。\n");
+        write("這裏已經有人插下驅逐之旗了。\n");
         return 1;
     }
     set("qzzq_host_is",query("id", me));
@@ -625,28 +625,28 @@ int do_xunren(string arg)
     if( !can_use( "xr shuijing", me ) )
         return 0;
     // 不受忙時限制。
-    //    if( hj_busy_now( me ) ) return notify_fail("你還有別的事情忙著呢！\n");
+    //    if( hj_busy_now( me ) ) return notify_fail("你還有別的事情忙着呢！\n");
     if(!arg)
         return notify_fail("你要尋找什麼人？\n");
     if( arg == query("id", me) )
-        return notify_fail("幻境裡雖然有些妖魔鬼怪，但你"+query("name", me)+"還是一個而已，沒有更多的了。\n");
+        return notify_fail("幻境裏雖然有些妖魔鬼怪，但你"+query("name", me)+"還是一個而已，沒有更多的了。\n");
     target = find_player(arg);
     if(!target)
-        return notify_fail("現在並沒有這個玩家在線，莫要說在這裡了。\n");
+        return notify_fail("現在並沒有這個玩家在線，莫要説在這裏了。\n");
     rooms = (environment(target));
     if( !rooms || !query("room_mark", rooms) )
-        return notify_fail("幻境﹒密林裡並沒有這個玩家。\n");
+        return notify_fail("幻境·密林裏並沒有這個玩家。\n");
     temp_mark=query("room_mark", rooms);
-    message_vision(CYN"$N"NOR+CYN"拿起"NOR"$n"NOR+CYN"凝神注視著，似要從中看出什麼來。\n"NOR,me, ob);
+    message_vision(CYN"$N"NOR+CYN"拿起"NOR"$n"NOR+CYN"凝神注視着，似要從中看出什麼來。\n"NOR,me, ob);
     addn("use_times",-1);
-    // 尋錯的幾率降低了。
+    // 尋錯的機率降低了。
     if( !random(5) )
     {
         temp_mark += random(2) - random(2);
         if( temp_mark < 1 || temp_mark > HJ_ROOM_AMOUNT )
             temp_mark = 1+random( HJ_ROOM_AMOUNT );
     }
-    write(query("name")+"裡隱約顯現著出標記，似乎是 "+chinese_number(temp_mark)+" 。\n");
+    write(query("name")+"裏隱約顯現着出標記，似乎是 "+chinese_number(temp_mark)+" 。\n");
     if( query("use_times") <=0 )
     {
         remove_call_out("delete_me");
@@ -664,29 +664,29 @@ int do_kuitan(string arg)
     if( !can_use( "kt shuijing", me ) )
         return 0;
     // 不受忙時限制。
-    //    if( hj_busy_now( me ) ) return notify_fail("你還有別的事情忙著呢！\n");
+    //    if( hj_busy_now( me ) ) return notify_fail("你還有別的事情忙着呢！\n");
     if(!arg)
         return notify_fail("你要窺探誰的行囊？\n");
     target = present(arg , environment( me ) );
     if(!target)
-        return notify_fail("這裡沒有這個人。\n");
+        return notify_fail("這裏沒有這個人。\n");
     if(!target->is_character())
         return notify_fail("這不是活物！\n");
     if( query("hj_game/npc", target) )
         return notify_fail("這不是與你一樣的玩家勇士。\n");
     if( !query_temp("hj_hp", target) || query_temp("hj_hp", target)<1 || 
        query_temp("huanjing", target) != "start" )
-        return notify_fail(query("name", target)+"已沒有絲毫幻境裡的氣息，算了吧。\n");
+        return notify_fail(query("name", target)+"已沒有絲毫幻境裏的氣息，算了吧。\n");
     if(!living(target))
-        return notify_fail("這個遊戲裡必須是清醒的對手才能進行操作。\n");
+        return notify_fail("這個遊戲裏必須是清醒的對手才能進行操作。\n");
     inv = all_inventory(target);
     if(target == me)
         target_name="你";
     else
         target_name=query("name", target);
-    tell_object(me,"你悄悄地拿起水晶，仔細地看著……\n");
+    tell_object(me,"你悄悄地拿起水晶，仔細地看着……\n");
     if( !inv || sizeof(inv)<1 )
-        return notify_fail(target_name+"身上沒帶著任何東西。\n");
+        return notify_fail(target_name+"身上沒帶着任何東西。\n");
     for(i=0;i<sizeof(inv);i++)
     {
         if( query("hj_game/obj", inv[i]) && random(3) )
@@ -696,8 +696,8 @@ int do_kuitan(string arg)
         }
     }
     // 使用忙時取消，不再給對方提示。
-    //     if( target != me) tell_object(target,HIB"你只覺得似乎有些異樣的眼光在探視著自己一般……\n"NOR);
-    //    tell_object(me,"你盯著看久了，竟然覺得有些累似的。\n");
+    //     if( target != me) tell_object(target,HIB"你只覺得似乎有些異樣的眼光在探視着自己一般……\n"NOR);
+    //    tell_object(me,"你盯着看久了，竟然覺得有些累似的。\n");
     //    me->start_busy(5+random(6));
     addn("use_times",-1);
     if(query("use_times") <=0 )
@@ -716,9 +716,9 @@ int do_dingwei( string arg )
     if( !can_use( "dw zhiyi", me ) )
         return 0;
     if( hj_busy_now(me) )
-        return notify_fail("你還忙著呢。\n");
+        return notify_fail("你還忙着呢。\n");
     if( !arg || (arg != "here" && arg != "back") )
-        return notify_fail("你要將這裡定位(dingwei here)還是要返回(dingwei back)之前定位的地點？\n");
+        return notify_fail("你要將這裏定位(dingwei here)還是要返回(dingwei back)之前定位的地點？\n");
     if( arg == "here" )
     {
         message_vision(CYN"$N"NOR+CYN"拿出$n"NOR+CYN"，做了一個標記。\n"NOR, me, ob );
@@ -728,7 +728,7 @@ int do_dingwei( string arg )
     }
     // 否則就是返回該地點
     if( !query("dingwei_"+query("id", me)) )
-        return notify_fail("這"+query("name")+"沒有你做的定位標記，你想回到哪裡去？\n");
+        return notify_fail("這"+query("name")+"沒有你做的定位標記，你想回到哪裏去？\n");
     room_name=HJ_DIR+"hj_room"+query("dingwei_"+query("id", me));
     the_room = find_object( room_name );
     if( !the_room )
@@ -738,7 +738,7 @@ int do_dingwei( string arg )
     message_vision(CYN"$N"NOR+CYN"舉起$n"NOR+CYN"，大聲喝道：“去！”\n"NOR, me, ob);
     message_vision(HIW"$N"HIW"忽地身形一晃，消失不見了。\n"NOR, me);
     me->move( the_room );
-    message_vision(HIW"$N"HIW"突然出現在這裡。\n"NOR, me );
+    message_vision(HIW"$N"HIW"突然出現在這裏。\n"NOR, me );
     me->start_busy(1);
     addn( "use_times", -1 );
     if(query("use_times") <=0 )

@@ -1,4 +1,4 @@
-// wuyue-blade.c 巫月刀法 (jacki于1997/7/24)
+// wuyue-blade.c 巫月刀法 (jacki於1997/7/24)
 // modified by Venus Oct.1997
 
 inherit SKILL;

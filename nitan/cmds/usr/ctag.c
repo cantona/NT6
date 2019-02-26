@@ -10,7 +10,7 @@ protected mapping valid_tags = ([
 ]);
 
 protected mapping c_msg = ([
-        "outdoors" : "戶外標記",
+        "outdoors" : "户外標記",
         "no_fight" : "安全區標記",
         "no_magic" : "不能騎坐騎標記",
         "valid_startroom" : "起始點標記",
@@ -40,12 +40,12 @@ int main(object me, string arg)
 
         if( query(valid_tags[tags[n]], env) )
         {
-                write(sprintf("這裡已經設定了%s，是否要清除？[y/n]：", c_msg[valid_tags[tags[n]]]));
+                write(sprintf("這裏已經設定了%s，是否要清除？[y/n]：", c_msg[valid_tags[tags[n]]]));
                 input_to( (: delete_room_tag :), me, env, valid_tags[tags[n]] );
         }
         else
         {
-                write(sprintf("這裡沒有設定%s，是否要設定？[y/n]：", c_msg[valid_tags[tags[n]]]));
+                write(sprintf("這裏沒有設定%s，是否要設定？[y/n]：", c_msg[valid_tags[tags[n]]]));
                 input_to( (: add_room_tag :), me, env, valid_tags[tags[n]] );
         }
 

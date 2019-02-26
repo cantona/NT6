@@ -15,8 +15,8 @@ string help = @HELP
 bug -a                          新增 bug 回報
 bug -l                          列出 bug 資料
 bug <編號>                      讀取 bug 詳細內容
-bug -r <編號>                   回應 bug 處理情形       巫師專用
-bug -d <編號>[.<回復編號>]      刪除 bug 某篇或某篇回復 巫師專用
+bug -r <編號>                   迴應 bug 處理情形       巫師專用
+bug -d <編號>[.<回覆編號>]      刪除 bug 某篇或某篇回覆 巫師專用
 bug                             讀取錯誤回溯            巫師專用
 bug [ID]                        讀取某人的錯誤回溯      巫師專用
 
@@ -104,7 +104,7 @@ void edit_reply_content(object me, string number, string status, string content)
 {
         BUG_D->reply_bug(me, number, status, content);
 
-        tell_object(me, "回應編號第 "+number+" 號 Bug 完畢。\n");
+        tell_object(me, "迴應編號第 "+number+" 號 Bug 完畢。\n");
 
         me->finish_input();
 }
@@ -196,7 +196,7 @@ int main(object me, string arg)
                         if( reply > 0 )
                         {
                                 BUG_D->remove_bug(me, number, reply);
-                                tell_object(me, "刪除編號第 "+number+" 號 Bug 的第 "+reply+" 篇回應。\n"NOR);
+                                tell_object(me, "刪除編號第 "+number+" 號 Bug 的第 "+reply+" 篇迴應。\n"NOR);
                         }
                         else
                         {

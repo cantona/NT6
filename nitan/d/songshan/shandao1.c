@@ -5,9 +5,9 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "中岳山道");
+        set("short", "中嶽山道");
         set("long", @LONG
-你走在嵩山中岳山道上，青鬆翠柏，山風嵐霧，時來飄盪。左邊通
+你走在嵩山中嶽山道上，青松翠柏，山風嵐霧，時來飄蕩。左邊通
 往啟母石，右手是盧崖瀑布。
 LONG );
         set("exits", ([

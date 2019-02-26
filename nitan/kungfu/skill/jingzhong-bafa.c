@@ -28,7 +28,7 @@ mapping *action = ({
         "damage" : 435,
         "damage_type" : "割傷",
 ]),
-([      "action" : "$N一招「閉門鐵扇」，$w緩緩的斜著向$n推去",
+([      "action" : "$N一招「閉門鐵扇」，$w緩緩的斜着向$n推去",
         "force"  : 334,
         "attack" : 191,
         "dodge"  : 123,
@@ -78,7 +78,7 @@ int valid_learn(object me)
                 return notify_fail("你心中暗想：哼，這種刀法沒半點章法，練來何用？\n");
 
         if( query("int", me)<36 )
-                return notify_fail("你覺得井中八法過于艱深，難以理解。\n");
+                return notify_fail("你覺得井中八法過於艱深，難以理解。\n");
 
         if ((int)me->query_skill("martial-cognize", 1) < 300)
                 return notify_fail("你的武學修養沒有辦法理解井中八法的精神奧義。\n");

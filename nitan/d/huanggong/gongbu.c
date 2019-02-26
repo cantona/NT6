@@ -6,7 +6,7 @@ void create()
 {
         set("short", "工部公署");
         set("long", @LONG
-這裡是六部之六--工部官員候朝的朝房.
+這裏是六部之六--工部官員候朝的朝房.
 LONG
         );
         set("no_clean_up", 0);

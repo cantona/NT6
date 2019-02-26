@@ -7,7 +7,7 @@ void create()
         set_name("麻雀", ({ "maque"}));
         set("race", "飛禽");
         set("age", 3);
-        set("long", "一只嘰嘰喳喳，飛來飛去的小麻雀。\n");
+        set("long", "一隻嘰嘰喳喳，飛來飛去的小麻雀。\n");
         set("attitude", "peaceful");
 
         set("limbs", ({ "頭部", "身體", "翅膀", "爪子", "尾巴" }) );

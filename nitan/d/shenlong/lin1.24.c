@@ -2,9 +2,9 @@ inherit DEMONROOM;
 
 void create()
 {
-        set("short", "神秘巖洞冰窖");
+        set("short", "神祕巖洞冰窖");
         set("long",@LONG
-這是神龍島東南部巖洞深處的一個冰窖，這裡異常寒冷。
+這是神龍島東南部巖洞深處的一個冰窖，這裏異常寒冷。
 LONG);
 
 	set("exits", ([

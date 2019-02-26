@@ -9,7 +9,7 @@ inherit F_QUESTER;
 
 void create()
 {
-        set_name("余滄海", ({ "yu canghai", "yu", "canghai" }));
+        set_name("餘滄海", ({ "yu canghai", "yu", "canghai" }));
         set("gender", "男性");
         set("age", 52);
         set("long", "他身形矮小，可是神情凝重，儼然一派大宗師氣。\n");
@@ -94,7 +94,7 @@ void attempt_apprentice(object ob)
 void do_recruit(object ob)
 {
         if( query("int", ob)<20 )
-                command("say 我青城派以暗器見長，依我看"+RANK_D->query_respect(ob)+"不適合于學暗器。");
+                command("say 我青城派以暗器見長，依我看"+RANK_D->query_respect(ob)+"不適合於學暗器。");
         else {
                 command("say 好，很好。");
                 command("recruit "+query("id", ob));

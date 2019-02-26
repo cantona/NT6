@@ -9,7 +9,7 @@ void create()
         set("nickname", HIR"挑戰極限"NOR);
         set("gender", "男性" );
         set("age", 18);
-        set("long", YEL"這位是□"+LOCAL_MUD_NAME()+"□的使者，向他打聽“禮物”，他會帶給您想不到的驚喜。\n"NOR);
+        set("long", YEL"這位是〖"+LOCAL_MUD_NAME()+"〗的使者，向他打聽“禮物”，他會帶給您想不到的驚喜。\n"NOR);
         set("shen_type", 1);
         set("combat_exp", 1000000);
         set("str", 30);

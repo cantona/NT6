@@ -13,7 +13,7 @@ int do_eat(string arg)
 
         if( !this_object()->id(arg) ) return 0;
         if( this_player()->is_busy() )
-                return notify_fail("你正忙著呢。\n");
+                return notify_fail("你正忙着呢。\n");
 
         if (!(healwhat = query("heal")))
                 return notify_fail("這樣東西不能療傷。\n");
@@ -33,7 +33,7 @@ int do_eat(string arg)
         set("value", 0);
         addn("food_remaining", -1);
         if( !query("food_remaining") ) {
-                message_vision("$N將剩下的" + name() + "吃得幹幹凈凈。\n", this_player());
+                message_vision("$N將剩下的" + name() + "吃得乾乾淨淨。\n", this_player());
                 if( !this_object()->finish_eat() )
                         destruct(this_object());
         } else

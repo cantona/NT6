@@ -6,13 +6,13 @@ inherit EARRING;
 
 void create()
 {
-        set_name(HIR "火麒麟﹒妖燄" NOR, ({ "yaoyan erhuan", "yaoyan", "erhuan" }));
+        set_name(HIR "火麒麟·妖焰" NOR, ({ "yaoyan erhuan", "yaoyan", "erhuan" }));
         set_weight(100);
         if (clonep())
                 set_default_object(__FILE__);
         else {
                 set("unit", "副");
-                set("long", HIR "你定睛一看，卻無法辯識清楚，妖燄的火光閃耀刺眼，令人敬畏。\n" NOR);
+                set("long", HIR "你定睛一看，卻無法辯識清楚，妖焰的火光閃耀刺眼，令人敬畏。\n" NOR);
                 set("value", 200000);
                 set("material", "gold");
                 set("armor_prop/con", 40);

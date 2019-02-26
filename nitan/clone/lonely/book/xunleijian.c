@@ -13,7 +13,7 @@ void create()
                 set("long", WHT "這是一本薄薄的書冊，書皮已然發"
                             "黃，看樣子已經有一段歷史了。\n" NOR);
                 set("value", 1);
-                set("no_sell", "這本破書你自己留著吧。");
+                set("no_sell", "這本破書你自己留着吧。");
                 set("material", "paper");
                 set("skill", ([
                         "name":       "xunlei-jian",

@@ -142,17 +142,17 @@ void greeting(object ob)
 //      if( environment(ob)->query("short") == "雪山祭壇" )
         if( !query_temp("作法事", ob))return ;
         {
-                message_vision("葛倫布急急忙忙吩咐小喇嘛們往祭壇裡填柴，倒酥油。\n\n", ob);
+                message_vision("葛倫布急急忙忙吩咐小喇嘛們往祭壇裏填柴，倒酥油。\n\n", ob);
                 message_vision(HIR"$N點燃了祭壇中的木柴與酥油，熊熊烈火沖天而起。\n", ob);
                 message_vision(HIB"一絲魂魄升出祭壇，冉冉而起。魂魄受$N佛法感召，徘徊不去。\n", ob);
-                message_vision(RED"$N端起顱砵吸進一口水，「噗」的一聲猛地朝那熊熊火燄噴將過去。\n", ob);
-                message_vision(HIC"$N盤腿打坐，神光內蘊，口中念念有辭，漸漸有一絲魂魄在$N面前凝聚成形。\n", ob);
-                message_vision(HIG"魂魄越聚越多，竟然呈出人形！$N手指人形，口念真言，指引往生之路。\n", ob);
+                message_vision(RED"$N端起顱缽吸進一口水，「噗」的一聲猛地朝那熊熊火焰噴將過去。\n", ob);
+                message_vision(HIC"$N盤腿打坐，神光內藴，口中念念有辭，漸漸有一絲魂魄在$N面前凝聚成形。\n", ob);
+                message_vision(HIG"魂魄越聚越多，竟然呈出人形！$N手指人形，口唸真言，指引往生之路。\n", ob);
                 message_vision(HIW"$N手持法鈴，邊走變搖，高聲誦讀密傳經咒。突然大喝一聲。聲似雷霆。\n", ob);
-                message_vision(HIY"大院裡光芒四起，一聲巨響過後，又恢復了平靜。超度完畢。\n"NOR, ob);
+                message_vision(HIY"大院裏光芒四起，一聲巨響過後，又恢復了平靜。超度完畢。\n"NOR, ob);
                 if( query_temp("作法事", ob)>query("combat_exp", ob) )
                 {
-                        //□ 超度對象的經驗高過你，才能有所收益。對象若是玩家，收益十倍計。□
+                        //〖 超度對象的經驗高過你，才能有所收益。對象若是玩家，收益十倍計。〗
 //                      bonus=(ob->query_temp("作法事") - ob->query("combat_exp")) * ob->query_skill("lamaism",1) / 200;
                         bonus= ob->query_skill("lamaism",1) / 4;
                         exp_bonus=query("combat_exp", ob)*2*bonus/10000;
@@ -163,7 +163,7 @@ void greeting(object ob)
                                 addn("combat_exp", exp_bonus/10, ob);
                 }
                 else
-                        message_vision(HIR"\n$N不知道哪裡找了個菜鳥煞有介事地來超度，看來是白忙了。\n"NOR, ob);
+                        message_vision(HIR"\n$N不知道哪裏找了個菜鳥煞有介事地來超度，看來是白忙了。\n"NOR, ob);
                 delete_temp("作法事", ob);
         }
 }
@@ -174,9 +174,9 @@ string ask_fashi()
         object ob = this_player();
 
         if( query("short", environment(this_object())) != "雪山寺山門" )
-                return "這裡正在做法事，你沒看見麼？";
+                return "這裏正在做法事，你沒看見麼？";
         if( !(fam=query("family", ob)) || fam["family_name"] != "雪山寺" )
-                return "你是那裡跳出來的毛蟲，也能做個屁法事？";
+                return "你是那裏跳出來的毛蟲，也能做個屁法事？";
         if ( ob->query_skill("lamaism",1) < 30)
                 return "你的密宗心法還早得很呢，沒法讓你開壇做法事。";
         set_temp("法事", 1, ob);
@@ -188,19 +188,19 @@ int accept_object(object who, object ob)
         object myenv ;
         if( query("money_id", ob) && ob->value() >= 100 )
         {
-                message_vision("葛倫布笑著對$N說：好！這位"+RANK_D->query_respect(who) + "要見活佛就請進吧。\n", who);
+                message_vision("葛倫布笑着對$N説：好！這位"+RANK_D->query_respect(who) + "要見活佛就請進吧。\n", who);
                 set_temp("marks/xueshangate", 1, this_player());
                 return 1;
         }
         if( !query_temp("法事", who) )
         {
-                message_vision("葛倫布笑著對$N說：這種臭東西給我有什麼用，您還是自己留著吧！\n", who);
+                message_vision("葛倫布笑着對$N説：這種臭東西給我有什麼用，您還是自己留着吧！\n", who);
                 return 0 ;
         }
         delete_temp("法事", who);
         if( query("id", ob) == "corpse" )
         {
-                message_vision("葛倫布笑著對$N說：那我們去祭壇吧！\n", who);
+                message_vision("葛倫布笑着對$N説：那我們去祭壇吧！\n", who);
                 set_temp("作法事",query("combat_exp",  ob), who);
                 if( query("userp", ob) )
                         set_temp("玩家法事", 1, who);
@@ -213,7 +213,7 @@ int accept_object(object who, object ob)
                 return 1;
         }
         else
-                message_vision("葛倫布對$N說：這種東西還能做法事？直接埋了省事。\n", who);
+                message_vision("葛倫布對$N説：這種東西還能做法事？直接埋了省事。\n", who);
         return 0;
 }
 
@@ -242,9 +242,9 @@ int do_kneel()
                 return 0;
 
         message_vision(HIC "\n$N" HIC "你雙手合十，恭恭敬敬地跪了下來。\n\n"
-                       NOR + CYN "$n" CYN "看著$N" CYN "說道：好吧，以後你就"
+                       NOR + CYN "$n" CYN "看着$N" CYN "説道：好吧，以後你就"
                        "在本寺修行吧。\n\n" HIY "$n" HIY "伸出手掌，在$N" HIY
-                       "頭頂輕輕地摩挲了幾下，隨即便將$N" HIY "的頭發盡數剃"
+                       "頭頂輕輕地摩挲了幾下，隨即便將$N" HIY "的頭髮盡數剃"
                        "去。\n\n" NOR, me, this_object());
 
         set("class", "bonze", me);

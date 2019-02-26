@@ -57,7 +57,7 @@ void make_question(object user, object asker)
         string question, *color_name, *color, c_name, colorx;
         mapping num = ([]);
         if( stringp(query("robot_answer", user))){
-                tell_object(user, "你還是回答剛才的問題再說吧。\n");
+                tell_object(user, "你還是回答剛才的問題再説吧。\n");
                 return;
         }
         switch (random(6))

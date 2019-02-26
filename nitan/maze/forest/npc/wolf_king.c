@@ -52,7 +52,7 @@ void do_summon() {
         object wolf,me,enemy,enemies;
         me = this_object();
 
-        message_vision(HIB "\n$N仰天狼嚎“嗚～嗷～～，嗚～嗷”，頓時漫山遍野群狼齊哮。\n" NOR, me);
+        message_vision(HIB "\n$N仰天狼嚎“嗚～嗷～～，嗚～嗷”，頓時漫山遍野羣狼齊哮。\n" NOR, me);
         seteuid(getuid());
         enemies = me->query_enemy();
         if( !sizeof(enemies) ) return;

@@ -7,7 +7,7 @@ inherit NPC;
 void create()
 {
         set_name("武青嬰", ({ "wu qingying", "wu"}));
-        set("long", "她穿著一件黑色貂裘，身形苗條，言行舉止甚是斯文。\n");
+        set("long", "她穿着一件黑色貂裘，身形苗條，言行舉止甚是斯文。\n");
         set("nickname", HIW"雪嶺雙姝"NOR);
         set("gender", "女性");
         set("per", 30);

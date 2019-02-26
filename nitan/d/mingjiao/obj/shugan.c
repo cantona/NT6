@@ -39,7 +39,7 @@ int set_owner(string arg)
 
 int do_give()
 {
-        return notify_fail("你正扛著大木頭呢，怎麼給人？\n");
+        return notify_fail("你正扛着大木頭呢，怎麼給人？\n");
 }
 
 int do_carry(string arg)
@@ -50,7 +50,7 @@ int do_carry(string arg)
         if (!arg) return 0;
 
         if (me->is_busy() || me->is_fighting() )
-                return notify_fail("你正忙著呢。\n");
+                return notify_fail("你正忙着呢。\n");
 
         if (arg != "shu gan" && arg != "trunk")
                 return notify_fail("你要扛什麼？\n");
@@ -66,14 +66,14 @@ int do_carry(string arg)
                 {
                         message_vision("$N瞧了瞧旁邊沒人，偷偷摸摸地把樹幹扛到肩上。\n",me);
                         this_object()->move(me);
-                        set_temp("apply/short", ({(query("title", me)+""+query("name", me)+"扛著一根樹幹")}), me);
+                        set_temp("apply/short", ({(query("title", me)+""+query("name", me)+"扛着一根樹幹")}), me);
 
                         return 1;
                 }
         
         message_vision("$N使勁一抬，將剛砍下來的樹幹扛到肩上\n",me);
         this_object()->move(me);
-        set_temp("apply/short", ({(query("title", me)+""+query("name", me)+"扛著一根樹幹")}), me);
+        set_temp("apply/short", ({(query("title", me)+""+query("name", me)+"扛着一根樹幹")}), me);
 
 
         return 1;

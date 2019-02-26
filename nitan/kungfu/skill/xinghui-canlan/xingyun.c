@@ -1,10 +1,10 @@
-// xingyun.c 星雲密布
+// xingyun.c 星雲密佈
 
 #include <ansi.h>
 
 inherit F_SSERVER;
 
-string name() { return "星雲密布"; }
+string name() { return "星雲密佈"; }
 
 int perform(object me, object target)
 {
@@ -19,16 +19,16 @@ int perform(object me, object target)
 
         if( !objectp(weapon=query_temp("handing", me)) ||
             query("skill_type", weapon) != "throwing" )
-                return notify_fail("你現在手中並沒有拿著暗器。\n");
+                return notify_fail("你現在手中並沒有拿着暗器。\n");
 
         if (weapon->query_amount() < 10)
-                return notify_fail("你至少要有十枚暗器才能施展星雲密布。\n");
+                return notify_fail("你至少要有十枚暗器才能施展星雲密佈。\n");
 
         if ((me->query_skill("xinghui-canlan", 1)) < 120)
-                return notify_fail("你的星輝燦爛不夠嫻熟，還無法使出星雲密布絕技。\n");
+                return notify_fail("你的星輝燦爛不夠嫻熟，還無法使出星雲密佈絕技。\n");
 
         if( query("neili", me)<120 )
-                return notify_fail("你現在內力不足，無法施展星雲密布。\n");
+                return notify_fail("你現在內力不足，無法施展星雲密佈。\n");
 
         addn("neili", -80, me);
         weapon->add_amount(-10);

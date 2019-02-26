@@ -1,4 +1,4 @@
-//checkobj  查詢物品分布
+//checkobj  查詢物品分佈
 // Smallfish@Huaxia
 
 inherit F_CLEAN_UP;
@@ -137,7 +137,7 @@ string check_obj(string file)
 
         if (!sizeof(ob_list))
         {
-                msg += "這個文件沒有任何復制物品。\n";
+                msg += "這個文件沒有任何複製物品。\n";
                 return msg;
         }
 
@@ -196,8 +196,8 @@ int help(object me)
 write(@HELP
 指令格式 : checkobj <物品>|<房間>
 
-查詢指定的物品分布情況。
-如果查詢房間，則顯示房間所有固有物品的分布情況。
+查詢指定的物品分佈情況。
+如果查詢房間，則顯示房間所有固有物品的分佈情況。
 HELP
     );
     return 1;

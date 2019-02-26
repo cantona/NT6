@@ -37,22 +37,22 @@ int main(object me, string arg)
                 return notify_fail("時空已經封閉，沒有人能夠退出這個時空了。\n");
 
         if( me->is_busy() && !query("doing", me) )
-                return notify_fail("你現在正忙著做其他事，不能退出遊戲！\n");
+                return notify_fail("你現在正忙着做其他事，不能退出遊戲！\n");
 
         if (me->is_fighting())
-                return notify_fail("你現在正在打架，怎麼能說走就走？\n");
+                return notify_fail("你現在正在打架，怎麼能説走就走？\n");
 
         if (me->query_competitor())
-                return notify_fail("好家伙，你正在和人比武，怎麼能開溜？\n");
+                return notify_fail("好傢伙，你正在和人比武，怎麼能開溜？\n");
 
         if (me->dps_count() > 0)
-                return notify_fail("好家伙，你打暈了別人就想開溜？\n");
+                return notify_fail("好傢伙，你打暈了別人就想開溜？\n");
 
         if (me->query_condition("killer"))
-                return notify_fail("好家伙，你殺了人就別想開溜！\n");
+                return notify_fail("好傢伙，你殺了人就別想開溜！\n");
 
         if( time()-query("combat/pktime", me)<28800 )
-                return notify_fail("好家伙，你殺了人就別想開溜！\n");
+                return notify_fail("好傢伙，你殺了人就別想開溜！\n");
 
         if (me->over_encumbranced())
                 return notify_fail("你身上背的東西太多了，無法離開這個世界。\n");
@@ -203,10 +203,10 @@ int force_quit(object me)
         seteuid(getuid());
 
         if (me->query_condition("killer"))
-                return notify_fail("好家伙，殺了人就別想開溜！\n");
+                return notify_fail("好傢伙，殺了人就別想開溜！\n");
 
         if( time()-query("combat/pktime", me)<28800 )
-                return notify_fail("好家伙，你殺了人就別想開溜！\n");
+                return notify_fail("好傢伙，你殺了人就別想開溜！\n");
 
         if( query("mud_age", me)<1800 && !query("reborn", me) )
         {

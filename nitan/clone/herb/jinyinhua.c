@@ -8,7 +8,7 @@ void create()
                 set_default_object(__FILE__);
         else 
         {
-                set("long","金銀花：籐本植物，花分金銀二色，可入藥，敗火劑。\n");
+                set("long","金銀花：藤本植物，花分金銀二色，可入藥，敗火劑。\n");
                 set("base_unit", "朵");
                 set("base_value", 4000);
                 set("base_weight", 60);

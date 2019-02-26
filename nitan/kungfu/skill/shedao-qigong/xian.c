@@ -44,7 +44,7 @@ int perform(object me, object target)
                                    "激發為蛇島奇功, 不能使用「神龍再現」！\n");
 
        if (! living(target))
-              return notify_fail("對方都已經這樣了，用不著這麼費力吧？\n");
+              return notify_fail("對方都已經這樣了，用不着這麼費力吧？\n");
 
         switch (skill)
         {

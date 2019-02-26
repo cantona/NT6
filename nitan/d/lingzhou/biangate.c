@@ -8,8 +8,8 @@ void create()
 {
         set("short", "邊門");
         set("long", @LONG
-這裡是皇宮的邊門，供侍衛和內侍們出入之用，宮裡所需的東西一
-般都由此運入，因為比較偏僻，守衛的衛士也不多。
+這裏是皇宮的邊門，供侍衞和內侍們出入之用，宮裏所需的東西一
+般都由此運入，因為比較偏僻，守衞的衞士也不多。
 LONG );
         set("exits", ([
                 "west" : __DIR__"chaifang",
@@ -29,7 +29,7 @@ LONG );
 int valid_leave(object me, string dir)
 {
         if (dir == "west" && objectp(present("wei shi", environment(me))))
-                return notify_fail("衛士對你大吼一聲：放肆！那不是你能進去的地方。\n");
+                return notify_fail("衞士對你大吼一聲：放肆！那不是你能進去的地方。\n");
 
         return ::valid_leave(me, dir);
 }

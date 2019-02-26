@@ -41,13 +41,13 @@ mixed hit_ob(object me, object victim, int damage_bonus)
                 if (! victim->is_busy())
                 victim->start_busy(me->query_skill("whip") / 12 + 1);
                 return HIY "$N" HIY "手中赤龍金索一抖，金索頓時化作一道金光，"
-                       "遊龍般竄向$n" HIY "胸前要穴！\n" NOR;
+                       "游龍般竄向$n" HIY "胸前要穴！\n" NOR;
 
         case 1:
                 n = me->query_skill("whip");
                 victim->receive_damage("qi", n * 2 / 3, me);
                 victim->receive_wound("qi", n * 2 / 3, me);
-                return HIY "只見$N" HIY "聚力于腕，赤龍金索霎時竟如同鐵棍一般"
+                return HIY "只見$N" HIY "聚力於腕，赤龍金索霎時竟如同鐵棍一般"
                        "，向$n" HIY "橫掃而去！\n" NOR;
         }
         return damage_bonus;

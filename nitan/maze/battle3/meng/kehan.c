@@ -156,7 +156,7 @@ varargs void die(object killer)
                 return;
         }
 
-        message_vision("$N率領的蒙古騎兵在幾經頑抗後，終于被徹底" +
+        message_vision("$N率領的蒙古騎兵在幾經頑抗後，終於被徹底" +
                         HIR "消滅了" NOR "！\n",
                         this_object());
                         

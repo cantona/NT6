@@ -23,7 +23,7 @@ mapping *action = ({
         "skill_name"  : "風掃落葉"
 ]),
 ([     
-        "action" : "$N手中$w斜出，徑直指向$n$l，正是一招「氣沖雲霄」",
+        "action" : "$N手中$w斜出，徑直指向$n$l，正是一招「氣衝雲霄」",
         "force"  : 160,
         "dodge"  : 30,
         "parry"  : 45,
@@ -31,7 +31,7 @@ mapping *action = ({
         "damage" : 55,
         "lvl"    : 50,
         "damage_type" : "刺傷",
-        "skill_name"  : "氣沖雲霄"
+        "skill_name"  : "氣衝雲霄"
 ]),
 ([      
         "action" : "$N手中$w忽地轉動，一式「引火上身」，已順勢刺向$n$l",
@@ -142,7 +142,7 @@ void skill_improved(object me)
         if( lvl > 160 &&
             !query("can_perform/zhurong-jian/wan", me) ) 
         {
-                tell_object(me, WHT "你通曉了祝融劍法「" HIC "萬劍焚雲" WHT "」的奧秘。\n" NOR);    
+                tell_object(me, WHT "你通曉了祝融劍法「" HIC "萬劍焚雲" WHT "」的奧祕。\n" NOR);    
                 set("can_perform/zhurong-jian/wan", 1, me);
                 me->improve_skill("martial-cognize", 1500000);  
                 me->improve_skill("martial-cognize", 1500000); 

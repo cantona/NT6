@@ -65,13 +65,13 @@ if(member_array(TASK_D->get_task(task, "att_leader"),charlist)>=0)
 			write("你離敵人太遠無法施計。\n");
 			return;}
                 tell(deep_inventory(TROOP_D->find_troop(e_id)),
-	"士兵一陣喧嘩，原來是"+p_name+"對你的部隊使用謊報之計。\n",
+	"士兵一陣喧譁，原來是"+p_name+"對你的部隊使用謊報之計。\n",
                         MSG_INDENT);
                 // In future, we have to consider effects of the
                 // ablility of general, zhenxing, dixing, etc.
                 // Now the damage depends only on the No of bowman
 	ob->simple_action(SG_SKILL_D->query_use("huangbao"));
-	ob->start_busy(10, "你正忙于謊報呢。");
+	ob->start_busy(10, "你正忙於謊報呢。");
 	load_object("/daemons/cast_d.c")->reg_player(ob->query_primary_id(), "huangbao");
         ob->award_exp(ob->query_sk_level("sk_zhimou")/2+random(20), "huangbao");
 	

@@ -17,7 +17,7 @@ public int query_quest(object me, object ob)
     question = temp["question"];
     answer = temp["answer"];
 
-    message("vision", sprintf("%s小聲的對%s吩咐著什麼，%s一邊聽，"
+    message("vision", sprintf("%s小聲的對%s吩咐着什麼，%s一邊聽，"
                               "一邊不住的點頭。\n",
                                 ob->name(1), me->name(), me->name()),
                                 environment(me), ({ me }));
@@ -33,8 +33,8 @@ public int query_quest(object me, object ob)
     set_temp("quester",query("id",  me), npc);
     set("ultra_whisper",query("id",  me), npc);
 
-    msg = sprintf("\n%s對你說道：你趕緊走一趟，將這個口訊傳送"
-                  "(whisper)給%s，據說他正在一個迷宮中，不得延誤：\n",
+    msg = sprintf("\n%s對你説道：你趕緊走一趟，將這個口訊傳送"
+                  "(whisper)給%s，據説他正在一個迷宮中，不得延誤：\n",
                     ob->name(1), npc->name(1));
     msg += question;
 

@@ -6,7 +6,7 @@ void create()
         set("race", "人類");
         set("age", 5);
         set("long", 
-"一只長著透明羽翼的小精靈，在忽上忽下地飛舞，看上去似乎不難抓(catch)到。\n");
+"一隻長着透明羽翼的小精靈，在忽上忽下地飛舞，看上去似乎不難抓(catch)到。\n");
         set("max_qi", 90);
         set("limbs", ({ "頭部", "身體" }) );
         set("verbs", ({ "bite" }) );

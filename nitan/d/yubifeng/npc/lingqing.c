@@ -7,7 +7,7 @@ void create()
 {
         set_name("靈清居士", ({ "lingqing jushi", "jushi", "lingqing" }) );
         set("gender", "男性");
-        set("title", "昆侖派");
+        set("title", "崑崙派");
         set("class", "taoist");
         set("age", 43);
         set("attitude", "friendly");

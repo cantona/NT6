@@ -6,7 +6,7 @@ void create()
         string *names = ({"骷髏"}); 
         set_name( names[random(sizeof(names))], ({ "skeleton"}));
         set("vendetta_mark","skeleton");
-        set("long", "這是一只骨頭架子。\n");
+        set("long", "這是一隻骨頭架子。\n");
         set("title", HIB "(鬼氣)" NOR); 
 
         set("str", 50);
@@ -23,7 +23,7 @@ void create()
 /*
         set("chat_chance", 2);
         set("chat_msg", ({
-                "骷髏空洞的眼眶裡閃爍著可怕的熒光。\n"
+                "骷髏空洞的眼眶裏閃爍着可怕的熒光。\n"
         }) ); 
 */
 

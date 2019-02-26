@@ -20,7 +20,7 @@ void create()
         set_name("黃鐘公", ({ "huangzhong gong", "huang", "zhong", "huangzhong", "gong" }));
         set("long", @LONG
 這就是梅莊四位莊主排行第一的黃鐘公。只見
-他身穿一件幹幹凈凈的黃色長袍。雖然已年癒
+他身穿一件乾乾淨淨的黃色長袍。雖然已年愈
 六旬，但依然精神抖擻。他身材中等，面容和
 藹可親。
 LONG);
@@ -65,7 +65,7 @@ LONG);
         set_skill("martial-cognize", 240);
 
         set("no_teach", ([
-                "longzhua-gong"  : "龍爪功乃昔日方証大師所授的少林"
+                "longzhua-gong"  : "龍爪功乃昔日方證大師所授的少林"
                                    "絕學，老夫略之一二，並不授教。",
         ]));
 
@@ -89,10 +89,10 @@ LONG);
                 "任我行"      : "任我行乃日月神教上代教主，不過已經失蹤很久了。",
                 "東方不敗"    : "東方教主武功深不可測，天下無敵。",
                 "日月神教"    : "我們梅莊四友和日月神教已無瓜葛，你提它作甚？",
-                "廣陵散"      : "唉，傳說現在《廣陵散琴譜》竟已現世，不知是真是假。",
-                "七弦無形音"  : (: ask_skill1 :),
-                "七弦黃龍閃"  : (: ask_skill2 :),
-                "七弦連環誅"  : (: ask_skill3 :),
+                "廣陵散"      : "唉，傳説現在《廣陵散琴譜》竟已現世，不知是真是假。",
+                "七絃無形音"  : (: ask_skill1 :),
+                "七絃黃龍閃"  : (: ask_skill2 :),
+                "七絃連環誅"  : (: ask_skill3 :),
                 "綠玉洞簫"    : (: ask_xiao :),
                 "白玉瑤琴"    : (: ask_qin :),
         ]));
@@ -142,31 +142,31 @@ void attempt_apprentice(object me)
                 command("hmm");
                 command("say 原來是東方教主的弟子，收你…這個倒沒什麼問題。");
                 command("say 但是在收你之前，我得先考察一下你的能力。");
-                set("move_party/日月神教─梅莊", 1, me);
+                set("move_party/日月神教—梅莊", 1, me);
         }
 
         if( query("combat_exp", me)<400000 )
         {
                 command("sigh");
-                command("say 你的江湖經驗太淺，還是先多鍛煉鍛煉再說吧。");
+                command("say 你的江湖經驗太淺，還是先多鍛鍊鍛鍊再説吧。");
                 return;
         }
 
         if ((int)me->query_skill("force") < 180)
         {
-                command("say 學我七弦無形劍，內功非精純不可，你還是先多練練吧。");
+                command("say 學我七絃無形劍，內功非精純不可，你還是先多練練吧。");
                 return;
         }
 
         if ((int)me->query_skill("sword", 1) < 100)
         {
-                command("say 如要學我七弦無形劍，你還得在劍法上多下工夫。");
+                command("say 如要學我七絃無形劍，你還得在劍法上多下工夫。");
                 return;
         }
 
         if ((int)me->query_skill("unarmed", 1) < 100)
         {
-                command("say 如要學我七弦無形劍，你還得在拳腳上多下工夫。");
+                command("say 如要學我七絃無形劍，你還得在拳腳上多下工夫。");
                 return;
         }
 
@@ -174,9 +174,9 @@ void attempt_apprentice(object me)
         command("say 我就收下你了，不過千萬別招惹是非，給我梅莊添亂。");
         command("recruit "+query("id", me));
 
-        if( query("move_party/日月神教─梅莊", me) )
+        if( query("move_party/日月神教—梅莊", me) )
         {
-                delete("move_party/日月神教─梅莊", me);
+                delete("move_party/日月神教—梅莊", me);
                 command("say 現在你成為我梅莊中人，望你專心練武，別再去過問教中事物。");
         }
 }
@@ -194,7 +194,7 @@ mixed ask_skill1()
                 return RANK_D->query_respect(me) + "和本教素無瓜葛，何出此言？";
 
         if (me->query_skill("qixian-wuxingjian", 1) < 1)
-                return "你連七弦無形劍都沒學，何談此言？";
+                return "你連七絃無形劍都沒學，何談此言？";
 
         if( query("family/gongji", me)<500 )
                 return "你對本莊所作出的貢獻不夠，這一招我暫時還不能傳你。";
@@ -203,17 +203,17 @@ mixed ask_skill1()
                 return "你的內功火候不足，學不了這一招！";
 
         if (me->query_skill("qixian-wuxingjian", 1) < 160)
-                return "你的七弦無形劍還練得不到家，自己下去練練再來吧。";
+                return "你的七絃無形劍還練得不到家，自己下去練練再來吧。";
 
         if (me->query_skill("tanqin-jifa", 1) < 120)
                 return "你的琴技還不夠嫻熟，運用不了這一招。";
 
         message_vision(HIY "$n" HIY "微微一笑，轉身從書架上取出一本"
-                       "琴譜，指著其中一段對$N" HIY "細說\n良久，$N"
+                       "琴譜，指着其中一段對$N" HIY "細説\n良久，$N"
                        HIY "一邊聽一邊點頭。\n" NOR, me, this_object());
         command("nod");
-        command("say 這便是七弦無形音的奧義所在，你可明白了？");
-        tell_object(me, HIC "你學會了「七弦無形音」。\n" NOR);
+        command("say 這便是七絃無形音的奧義所在，你可明白了？");
+        tell_object(me, HIC "你學會了「七絃無形音」。\n" NOR);
 
         if (me->can_improve_skill("unarmed"))
                 me->improve_skill("unarmed", 1500000);
@@ -243,7 +243,7 @@ mixed ask_skill2()
                 return RANK_D->query_respect(me) + "和本教素無瓜葛，何出此言？";
 
         if (me->query_skill("qixian-wuxingjian", 1) < 1)
-                return "你連七弦無形劍都沒學，何談此言？";
+                return "你連七絃無形劍都沒學，何談此言？";
 
         if( query("family/gongji", me)<500 )
                 return "你對本莊所作出的貢獻不夠，這一招我暫時還不能傳你。";
@@ -252,18 +252,18 @@ mixed ask_skill2()
                 return "你的內功火候不足，學不了這一招！";
 
         if (me->query_skill("qixian-wuxingjian", 1) < 160)
-                return "你的七弦無形劍還練得不到家，自己下去練練再來吧！";
+                return "你的七絃無形劍還練得不到家，自己下去練練再來吧！";
 
         if (me->query_skill("tanqin-jifa", 1) < 120)
                 return "你的琴技還不夠嫻熟，運用不了這一招。";
 
         message_vision(HIY "$n" HIY "點了點頭，將$N" HIY "招至"
-                       "身邊，在耳旁低聲細說良久，$N" HIY "聽"
+                       "身邊，在耳旁低聲細説良久，$N" HIY "聽"
                        "後會心的\n一笑，看來大有所悟。\n" NOR, me,
                        this_object());
         command("nod");
-        command("say 剛才我所說的便是七弦黃龍閃的精要，你可記清了？");
-        tell_object(me, HIC "你學會了「七弦黃龍閃」。\n" NOR);
+        command("say 剛才我所説的便是七絃黃龍閃的精要，你可記清了？");
+        tell_object(me, HIC "你學會了「七絃黃龍閃」。\n" NOR);
 
         if (me->can_improve_skill("unarmed"))
                 me->improve_skill("unarmed", 1500000);
@@ -293,7 +293,7 @@ mixed ask_skill3()
                 return RANK_D->query_respect(me) + "和本教素無瓜葛，何出此言？";
 
         if (me->query_skill("qixian-wuxingjian", 1) < 1)
-                return "你連七弦無形劍都沒學，何談此言？";
+                return "你連七絃無形劍都沒學，何談此言？";
 
         if( query("family/gongji", me)<2000 )
                 return "你對本莊所作出的貢獻不夠，這一招我暫時還不能傳你。";
@@ -302,7 +302,7 @@ mixed ask_skill3()
                 return "你的內功火候不足，學不了這一招！";
 
         if (me->query_skill("qixian-wuxingjian", 1) < 180)
-                return "你的七弦無形劍還練得不到家，自己下去練練再來吧！";
+                return "你的七絃無形劍還練得不到家，自己下去練練再來吧！";
 
         if (me->query_skill("tanqin-jifa", 1) < 150)
                 return "你的琴技還不夠嫻熟，運用不了這一招。";
@@ -318,8 +318,8 @@ mixed ask_skill3()
                        "又有誰能抵受得了？”$n" HIW "聽\n後哈哈一笑。\n"
                        NOR, me, this_object());
         command("haha");
-        command("say 這招便是「六丁開山」神技，又稱七弦連環誅，你看明白了多少？");
-        tell_object(me, HIC "你學會了「七弦連環誅」。\n" NOR);
+        command("say 這招便是「六丁開山」神技，又稱七絃連環誅，你看明白了多少？");
+        tell_object(me, HIC "你學會了「七絃連環誅」。\n" NOR);
 
         if (me->can_improve_skill("unarmed"))
                 me->improve_skill("unarmed", 1500000);
@@ -361,7 +361,7 @@ mixed ask_xiao()
         }
 
         if (owner == me)
-                return "現在這綠玉洞簫不正是你拿著嗎，為何無故來消遣老夫？";
+                return "現在這綠玉洞簫不正是你拿着嗎，為何無故來消遣老夫？";
 
         if (objectp(owner) && owner != this_object())
         {
@@ -397,7 +397,7 @@ mixed ask_qin()
                 return "只有我的弟子才配使用這白玉瑤琴。";
 
         if (me->query_skill("qixian-wuxingjian", 1) < 150)
-                return "你還是下去將你的七弦無形劍練練再來吧。";
+                return "你還是下去將你的七絃無形劍練練再來吧。";
 
         if (me->query_skill("tanqin-jifa", 1) < 150)
                 return "你連琴都彈不好，幹嘛還要用我這白玉瑤琴？";
@@ -408,7 +408,7 @@ mixed ask_qin()
         ob = present("baiyu yaoqin", this_object());
 
         if (! objectp(ob))
-                return "現在白玉瑤琴已經不在我這裡了。";
+                return "現在白玉瑤琴已經不在我這裏了。";
 
         ob->move(this_object());
         command("givebaiyuyaoqinto"+query("id", me));

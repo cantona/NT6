@@ -26,7 +26,7 @@ void create()
         set("jiali", 5);
 
         set("inquiry",([
-                "name" : "我叫煙兒，從小就被賣在這裡做丫鬟。",
+                "name" : "我叫煙兒，從小就被賣在這裏做丫鬟。",
         ]));
         setup();
         carry_object("/clone/misc/cloth")->wear();

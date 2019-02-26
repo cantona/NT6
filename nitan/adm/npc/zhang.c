@@ -40,15 +40,15 @@ void create()
         set("inquiry", ([
                 "開光" : (: ask_me :),
                 "魔獸復活": (: life_warcraft :),
-                "沒錢" : "沒錢就去賺，跟我說什麼。",
+                "沒錢" : "沒錢就去賺，跟我説什麼。",
                 "窮"   : "看你也是一副窮命。",
                 "魔法" : "魔法？什麼玩藝？",
                 "法術" : "法術還分很多種呢，道術、妖術、仙術不一而足。",
                 "道術" : "道術？這可是本源正宗！",
-                "妖術" : "妖術啊，趨于下乘，不足為提。",
+                "妖術" : "妖術啊，趨於下乘，不足為提。",
                 "仙術" : "仙術只好算是中乘，還是不能和道術相比。",
                 "浸入" : "你要是不行我可以幫你看看(show)浸入需要用什麼物品。",
-                "鑒定" : "我可以幫你看看(show)你的寶石都蘊涵哪些屬性。",
+                "鑑定" : "我可以幫你看看(show)你的寶石都藴涵哪些屬性。",
                 "賽神龍" : "呵呵，那是貧道的一位故友，現在也不知他生死如何了。",
                 "萬年紅" : "此乃天下間最上乘的顏料，畫符首選，可用碧血石+火龍果+乾坤聖水合成。",     
                 "童男童女符" : (: ask_fu :),
@@ -70,27 +70,27 @@ string ask_fu()
         command("say 童男童女符乃貧道為昔日故友所造，如果閣下需要的話貧道到是可以效勞。");
         command("say 不過，還需要以下一些材料：首先是萬年紅，此乃宮廷禁品，天下間最上乘的顏料。");
         command("say 其次，天然珍珠，用天然珍珠粉末與萬年紅調和，可使畫出的符效果最佳。");
-        command("say 最後，當然，貧道也需要收取一些制作費，總共需要10萬兩黃金。");
+        command("say 最後，當然，貧道也需要收取一些製作費，總共需要10萬兩黃金。");
         command("ke");
-        command("say 怎麼樣，如果以上材料都找齊了可以來找我，我會制作出童男童女符給你，此符下線不丟失。");
+        command("say 怎麼樣，如果以上材料都找齊了可以來找我，我會製作出童男童女符給你，此符下線不丟失。");
         
         // 需要萬年紅
         if (! objectp(ob_wnh = present("wannian hong", me)))
-                return "你好象還沒備齊萬年紅顏料吧？\n";        
+                return "你好像還沒備齊萬年紅顏料吧？\n";        
                                 
         if (base_name(ob_wnh) != "/clone/fam/item/wannian-hong")
-                return "你好象還沒備齊萬年紅顏料吧？\n";
+                return "你好像還沒備齊萬年紅顏料吧？\n";
                 
         // 需要天然珍珠 
         if (! objectp(ob_zz = present("tianran zhenzhu", me)))
-                return "你好象還沒備齊天然珍珠吧？\n";          
+                return "你好像還沒備齊天然珍珠吧？\n";          
                         
         if (base_name(ob_zz) != "/clone/quarry/item/zhenzhu")
-                return "你好象還沒備齊天然珍珠吧？\n";          
+                return "你好像還沒備齊天然珍珠吧？\n";          
         
         // 需要黃金一萬兩
         if (query("balance", me) < 1000000000)
-                return "你好象沒有備齊10萬兩黃金吧。\n";
+                return "你好像沒有備齊10萬兩黃金吧。\n";
                 
         // 物品已經備齊
         destruct(ob_wnh);
@@ -102,7 +102,7 @@ string ask_fu()
         command("say 不錯，既然我要的東西你都備齊了，我這就將童男童女符給你。");
         
         message_sort("\n" HIC "$N" HIC "將萬年紅和天然珍珠粉末混合在一起，拿出一張黃色的道符，然後口中"
-                     "默念符咒，一柱香的時間，一張童男童女符已經畫好。\n" NOR, this_object());
+                     "默唸符咒，一柱香的時間，一張童男童女符已經畫好。\n" NOR, this_object());
 
         ob_fu->move(me, 1);
         
@@ -149,13 +149,13 @@ int life_warcraft()
         if( query("balance", me) < 50000000)
         {
                 command("heng");
-                command("say 說好五千兩黃金，難道你想戲耍貧道！！！");
+                command("say 説好五千兩黃金，難道你想戲耍貧道！！！");
                 return 1;
         }
         
         addn("balance", -50000000, me);
         
-        message_vision(HIM "$N" HIM "拿出一張符，點燃了拋向空中，然後念著：#＄%……﹒＄﹒…﹒#＄...\n" NOR, this_object());
+        message_vision(HIM "$N" HIM "拿出一張符，點燃了拋向空中，然後念着：#￥%……·￥·…·#￥...\n" NOR, this_object());
         
         set("warcraft/status", "living", me);
 
@@ -172,7 +172,7 @@ int ask_me()
         command("heihei");
         command("say 我只給神兵利器開光，尋常刀劍莫提！要"
                 "你本人的，我可不能幫你做壞事！");
-        tell_object(this_player(), GRN "張天師在你耳邊悄悄說："
+        tell_object(this_player(), GRN "張天師在你耳邊悄悄説："
                     "你把要開光的拿出來給我看看(show)！\n" NOR);
         return 1;
 }
@@ -205,15 +205,15 @@ int do_show(string arg)
                 return notify_fail("你身上沒有這種東西。\n");
 
         if( query("equipped", ob) )
-                return notify_fail("你先解除" + ob->name() + "的裝備再說！\n");
+                return notify_fail("你先解除" + ob->name() + "的裝備再説！\n");
 
         message_vision("$n拿出一"+query("unit", ob)+ob->name()+
-                       "對$N說：“拜托拜托...”\n",
+                       "對$N説：“拜託拜託...”\n",
                        this_object(), me);
 
         if( query("money_id", ob) )
         {
-                command("say 你亮出錢幹什麼？想獻給觀裡？那就給我好了。");
+                command("say 你亮出錢幹什麼？想獻給觀裏？那就給我好了。");
                 return 1;
         }
 
@@ -221,7 +221,7 @@ int do_show(string arg)
         {
                 command("heihei");
                 command("say 這...怎麼也的有點意思意思吧？你"
-                        "說十兩黃金怎麼樣？當然多些我也不反對。");
+                        "説十兩黃金怎麼樣？當然多些我也不反對。");
                 return 1;
         }
 
@@ -233,7 +233,7 @@ int do_show(string arg)
                         return 1;
                 }
                 obj->move(me, 1);
-                command("say 行了，你的沖穴銅人我給鑒定完了，拿去吧。");
+                command("say 行了，你的衝穴銅人我給鑑定完了，拿去吧。");
                 delete_temp("zhangpaid/張天師", me);
                 return 1;
         }
@@ -247,15 +247,15 @@ int do_show(string arg)
                 }
                 message("vision", sort_string(HIM + name() + "從口袋中摸出一張黃色"
                                 "的符紙，抽出背後的桃木劍，將那符紙點燃了，蓋在" +
-                                ob->name() + HIM "上，然後口中念念有詞：“太上老君"
-                                "急急如律賜令！”說罷一抖掌中劍，喝道：“疾”！\n" NOR, 64),
+                                ob->name() + HIM "上，然後口中唸唸有詞：“太上老君"
+                                "急急如律賜令！”説罷一抖掌中劍，喝道：“疾”！\n" NOR, 64),
                                 environment());
                 tell_object(me, HIC "你感受" + ob->name() + HIC"發生了不可言喻的變化。\n" NOR);
 
                 destruct(ob);
                 obj->move(me, 1);
                 delete("no_identify", obj);
-                command("say 行了，你的寶物我給鑒定完了，拿去吧。");
+                command("say 行了，你的寶物我給鑑定完了，拿去吧。");
                 delete_temp("zhangpaid/張天師", me);
                 return 1;
         }
@@ -286,7 +286,7 @@ int do_show(string arg)
         if( ob->item_owner() != query("id", me) )
         {
                 command("kick"+query("id", me));
-                command("say 你以為本山人的仙術是蒙事的啊，這分明不是你的！");
+                command("say 你以為本山人的仙術是矇事的啊，這分明不是你的！");
                 return 1;
         }
 
@@ -300,7 +300,7 @@ int do_show(string arg)
                 } else
                 {
                         command("kok"+query("id", me));
-                        command("say 你和它已經有緣了！我說你的"
+                        command("say 你和它已經有緣了！我説你的"
                                 "記性怎麼這麼差？");
                 }
                 return 1;
@@ -309,10 +309,10 @@ int do_show(string arg)
         message("vision", sort_string(HIM + name() + "從口袋中摸出一張黃色"
                                 "的符紙，抽出背後的桃木劍，"
                                 "將那符紙點燃了，掃過" + ob->name() + HIM "，然"
-                                "後用桃木劍穿了，手舞足蹈，口中念念有詞："
-                                "“太上老君急急如律賜令！”說罷一抖掌中劍，"
+                                "後用桃木劍穿了，手舞足蹈，口中唸唸有詞："
+                                "“太上老君急急如律賜令！”説罷一抖掌中劍，"
                                 "喝道：“疾”！\n" NOR, 64), environment());
-        message_vision("燄光劃出一道光華，$N發了發呆，也不知道算是怎麼回事。\n",
+        message_vision("焰光劃出一道光華，$N發了發呆，也不知道算是怎麼回事。\n",
                        me);
         command("say 行了，行了！你可以走了。");
         delete_temp("zhangpaid/張天師", me);
@@ -334,7 +334,7 @@ int accept_object(object who, object ob)
 
         if (ob->value() < 50000)
         {
-                command("say 算是給觀裡的香火麼？那我就收下了！");
+                command("say 算是給觀裏的香火麼？那我就收下了！");
                 return 1;
         }
 
@@ -355,7 +355,7 @@ int accept_object(object who, object ob)
 void fight_ob(object ob)
 {
         ::fight_ob(ob);
-        message_vision("$N冷笑一聲，道：“這年頭，什麼人都有。”說完伸手一指$n。\n",
+        message_vision("$N冷笑一聲，道：“這年頭，什麼人都有。”説完伸手一指$n。\n",
                        this_object(), ob);
         ob->unconcious();
 }
@@ -416,13 +416,13 @@ string ask_tianjidao()
         {
                 command("shake");
                 command("say 不久前，老夫將借來的一件天蠶寶甲給弄丟了，不知如何是好？");
-                command("say 如果能搜集到30根天蠶絲，老夫倒是有辦法重新制作一。");
+                command("say 如果能蒐集到30根天蠶絲，老夫倒是有辦法重新制作一。");
                 command("不過……");
                 command("tan");
-                command("say 那天蠶絲並非凡物，只有天山頂峰的天蠶身才有，看來這次真是闖大禍了！");
+                command("say 那天蠶絲並非凡物，只有天山頂峯的天蠶身才有，看來這次真是闖大禍了！");
                 command("look"+query("id", me));
-                command("say 閣下如果能搜集到30根天蠶絲給老夫，老夫這裡倒是有一些厲害的武功可以傳授給你。");
-                tell_object(me, this_object()->name() + HIG "讓你幫他搜集30根天蠶絲，趕快去吧！\n" NOR);
+                command("say 閣下如果能蒐集到30根天蠶絲給老夫，老夫這裏倒是有一些厲害的武功可以傳授給你。");
+                tell_object(me, this_object()->name() + HIG "讓你幫他蒐集30根天蠶絲，趕快去吧！\n" NOR);
                 set("lunhui-sword_quest/tianjidao/give_quest", 1, me);
                 me->save();
                 return "怎麼樣，考慮考慮？";
@@ -431,15 +431,15 @@ string ask_tianjidao()
         // 完成任務
         
         if (! objectp(ob_hlp = present("tiancan si", me)))
-                return "怎麼樣，30根天蠶絲搜集夠了嗎？\n";
+                return "怎麼樣，30根天蠶絲蒐集夠了嗎？\n";
                 
         if (base_name(ob_hlp) != "/clone/quarry/item/cansi2")
-                return "怎麼樣，30根天蠶絲搜集夠了嗎？\n";
+                return "怎麼樣，30根天蠶絲蒐集夠了嗎？\n";
                 
         obs = all_inventory(me);
         obs = filter_array(obs, (: base_name($1) == "/clone/quarry/item/cansi2" :));
         if( sizeof(obs) < 30 )
-                return "怎麼樣，30根天蠶絲搜集夠了嗎？\n";
+                return "怎麼樣，30根天蠶絲蒐集夠了嗎？\n";
                 
         for (i = 0; i < 30; i++)
         {
@@ -452,7 +452,7 @@ string ask_tianjidao()
         command("nod");
         command("say 既然你幫我了這個忙，好！老夫也遵守諾言，傳你「天極道」……");
         
-        message_sort(HIC "\n$N" HIC "走上前去，在$n" HIC "耳邊悄悄說了幾句，然後又拿出一本書，指指點點，"
+        message_sort(HIC "\n$N" HIC "走上前去，在$n" HIC "耳邊悄悄説了幾句，然後又拿出一本書，指指點點，"
                      "$n" HIC "不住地點頭，忽而眉頭深鎖，忽而低頭沉思 ……\n良久，$n" HIC "大笑一聲，似乎"
                      "對剛才的疑慮有所頓悟。\n", this_object(), me);
                         

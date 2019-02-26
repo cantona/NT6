@@ -4,9 +4,9 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "床上");
+        set("short", "牀上");
         set("long", @LONG
-一張白色的軟榻，看上去極為精致，紗衾鴛枕之間散發出一絲絲
+一張白色的軟榻，看上去極為精緻，紗衾鴛枕之間散發出一絲絲
 幽香．
 LONG );
         set("exits", ([

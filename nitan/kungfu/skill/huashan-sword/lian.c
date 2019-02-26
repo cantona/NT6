@@ -40,7 +40,7 @@ int perform(object me, object target)
                 return notify_fail("你沒有激發華山劍法，無法施展" + name() + "。\n");
 
         if (! living(target))
-               return notify_fail("對方都已經這樣了，用不著這麼費力吧？\n");
+               return notify_fail("對方都已經這樣了，用不着這麼費力吧？\n");
 
         msg = HIY "$N" HIY "使出華山派絕技「" HIW "劍掌五連環" HIY"」，身法陡然加快！\n" NOR;
         message_combatd(msg, me);

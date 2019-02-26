@@ -14,7 +14,7 @@ int main(object me, string arg)
         object obj, dest, *inv, obj2;
         int i, amount;
 
-        if (! arg) return notify_fail("你要將什麼東西放進哪裡？\n");
+        if (! arg) return notify_fail("你要將什麼東西放進哪裏？\n");
 
         if (sscanf(arg, "%s in %s", item, target) != 2)
                 return notify_fail("你要放什麼東西？\n");
@@ -24,7 +24,7 @@ int main(object me, string arg)
                 dest = present(target, environment(me));
 
         if (! dest || living(dest))
-                return notify_fail("這裡沒有這樣東西。\n");
+                return notify_fail("這裏沒有這樣東西。\n");
 
         if( query("no_get_from", dest) )
                 return notify_fail("還是不要打擾人家了。\n");
@@ -83,14 +83,14 @@ int do_put(object me, object obj, object dest)
         if (dest->is_character() &&
             sizeof(filter_array(all_inventory(dest),(:!query("equipped", $1):))) >= MAX_ITEM_CARRIED )
         {
-                tell_object(me, dest->name() + "裡面的東西實在"
+                tell_object(me, dest->name() + "裏面的東西實在"
                             "是太多了，你沒法再放東西了。\n");
                 return 1;
         } else
         if (dest->is_container() && sizeof(all_inventory(dest)) >= MAX_ITEM_CARRIED &&
             ! dest->no_limit_amount())
         {
-                tell_object(me, dest->name() + "裡面的東西實在"
+                tell_object(me, dest->name() + "裏面的東西實在"
                             "是太多了，你先好好整理整理吧。\n");
                 return 1;
         } else
@@ -99,8 +99,8 @@ int do_put(object me, object obj, object dest)
             obj->is_character() || query("unique", obj) || obj->is_no_clone()) || 
             query("money_id", obj) )
         {
-                tell_object(me, dest->name() + "裡面不可以放入"
-                            "這個東西或者有可能是你的容器裡的東西太多了。\n");
+                tell_object(me, dest->name() + "裏面不可以放入"
+                            "這個東西或者有可能是你的容器裏的東西太多了。\n");
                 return 1;
         } else
         if (dest->is_container() &&
@@ -108,8 +108,8 @@ int do_put(object me, object obj, object dest)
             obj->is_character() || query("unique", obj) || obj->is_no_clone()) || 
             query("money_id", obj) )
         {
-                tell_object(me, dest->name() + "裡面不可以放入"
-                            "這個東西或者有可能是你的容器裡的東西太多了。\n");
+                tell_object(me, dest->name() + "裏面不可以放入"
+                            "這個東西或者有可能是你的容器裏的東西太多了。\n");
                 return 1;
         }
 
@@ -124,14 +124,14 @@ int do_put(object me, object obj, object dest)
 
         if( obj == query_temp("is_riding", me) )
         {
-                tell_object(me, "你無法把" + obj->name() + "塞進去，你正騎著它呢。\n");
+                tell_object(me, "你無法把" + obj->name() + "塞進去，你正騎着它呢。\n");
                 return 1;
         }
 
         switch(query("equipped", obj) )
         {
         case "worn": 
-                tell_object(me, obj->name() + "必須脫下來才能放進去。\n"); 
+                tell_object(me, obj->name() + "必須脱下來才能放進去。\n"); 
                 return 1; 
         case "wielded": 
                 tell_object(me, obj->name() + "必須解除裝備才能放進去。\n"); 

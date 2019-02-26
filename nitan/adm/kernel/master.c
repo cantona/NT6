@@ -21,7 +21,7 @@
 #include "/adm/kernel/master/crash.c";                 /* 用來處理 Crash 時的緊急情況 */
 #include "/adm/kernel/master/preload.c";               /* 預先載入初始化動作 */
 #include "/adm/kernel/master/error.c";                 /* 處理錯誤訊息的函式 */
-#include "/adm/kernel/master/file.c";                  /* 關于 domain_file , author_file , privs_file */
+#include "/adm/kernel/master/file.c";                  /* 關於 domain_file , author_file , privs_file */
 #include "/adm/kernel/master/ed.c";                    /* 有關 Edit 的一些設定 */
 #include "/adm/kernel/master/parse.c";                 /* 文法(對中文Mud而言似乎沒有用處?) */
 #include "/adm/kernel/master/object.c";                /* 環境遭到毀滅時, 所有內在物件都會呼叫此函式 */
@@ -110,8 +110,8 @@ int direct_run_binary(string file)
 
         if( objectp(ob = find_object(CONFIG_D)) &&
             objectp(vob = find_object(VERSION_D)) ) {
-                // 找到了CONFIG_D，查看本地是否是版本發布站
-                // 點，如果是，則查看是否是發布的源程序，是
+                // 找到了CONFIG_D，查看本地是否是版本發佈站
+                // 點，如果是，則查看是否是發佈的源程序，是
                 // 則返回否，表示需要檢查BIN。
                 return query("release server", ob) != "local" &&
                        !VERSION_D->is_need_release_source(file);

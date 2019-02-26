@@ -8,7 +8,7 @@ void create()
 {
         set("short", "箭樓");
         set("long", @LONG
-這裡就是「大宋」軍營前箭樓。
+這裏就是「大宋」軍營前箭樓。
 LONG );
 
         set("no_magic", "1");
@@ -44,7 +44,7 @@ int do_attack(string arg)
 */
         
         if( query_temp("warquest/attack", me) )
-                return notify_fail("你的隊伍正在列陣進攻，不要亂發號令了！\n");
+                return notify_fail("你的隊伍正在列陣進攻，不要亂髮號令了！\n");
 
         if( !query("craft/siegecity/shetai", me) )
                 return notify_fail("你目前還沒有通曉「守城系兵法」中「射台」這種兵法！\n");
@@ -56,10 +56,10 @@ int do_attack(string arg)
                 return notify_fail("你又不是率領弓弩兵，如何實施射石？\n");
         
         if( query_temp("warquest/group", me)<1 )
-                return notify_fail("你的隊伍已經損失殆盡，無法列陣沖鋒了！\n");
+                return notify_fail("你的隊伍已經損失殆盡，無法列陣衝鋒了！\n");
 
         if (WAR_D->query_arrows(me) < 1)
-                return notify_fail("你的軍營裡已經沒有任何羽箭，無法實施射台了！\n");
+                return notify_fail("你的軍營裏已經沒有任何羽箭，無法實施射台了！\n");
                                 
         if (sscanf(arg, "%s on %s", who, dir) != 2)
                 return notify_fail("指令格式錯誤，請用 shoot <軍隊> on <方向> 指揮你的隊伍！\n");
@@ -71,7 +71,7 @@ int do_attack(string arg)
         if (! room) return notify_fail("無法找到目標，請用 shoot <軍隊> on <方向> 指揮你的隊伍！\n");
 
         if( query("no_fight", room) )
-                return notify_fail("那裡不允許撕殺！！\n");
+                return notify_fail("那裏不允許撕殺！！\n");
 
         if (! objectp(ob = present(who, room)))
                     return notify_fail("無法找到目標，請用 shoot <軍隊> on <方向> 指揮你的隊伍！\n");

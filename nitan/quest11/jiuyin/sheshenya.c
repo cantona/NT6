@@ -1,5 +1,5 @@
 // sheshenya.c
-// 舍身崖
+// 捨身崖
 
 // Modified by mxzhao 2004/04/11 for do_jump function
 
@@ -7,11 +7,11 @@ inherit ROOM;
 #include <ansi.h>
 void create()
 {
-	set("short",MAG "睹光台舍身崖" NOR);
+	set("short",MAG "睹光台捨身崖" NOR);
 	set("long",@long
-從臥雲庵出來，這裡是看日出、雲海、佛光、神燈之地。台下深崖萬丈，
-陡徹無底，雲遮霧掩。極目四望，數百裡外的大小雪山皆歷歷在目。因為這裡
-至高至潔，至險至奇，又至美至幻，常有人在這裡投身雲海，舍此肉身塵世。
+從卧雲庵出來，這裏是看日出、雲海、佛光、神燈之地。台下深崖萬丈，
+陡徹無底，雲遮霧掩。極目四望，數百里外的大小雪山皆歷歷在目。因為這裏
+至高至潔，至險至奇，又至美至幻，常有人在這裏投身雲海，舍此肉身塵世。
 long);
 	set("outdoors", "峨嵋山");
 	set("exits",([
@@ -36,7 +36,7 @@ int do_look()
 	if(local[2] < 4 || local[2] >= 21)
 	{
 		write(BLU"初見金頂下黑黝黝一片，忽而閃現出一點、兩點帶藍色的亮光，這種亮點\n"
-			"越來越多，轉眼便布滿山谷，有的如流螢飄飛，有的如繁星閃爍。\n"NOR, me);
+			"越來越多，轉眼便佈滿山谷，有的如流螢飄飛，有的如繁星閃爍。\n"NOR, me);
 	}
 	if(local[2] >= 4 && local[2] < 8)
 	{
@@ -45,21 +45,21 @@ int do_look()
 	}
 	if(local[2] >= 8 && local[2] <= 13)
 	{
-		write(HIC"金頂雲海，迷迷茫茫，籠罩四野，遠接天際。雲海輕盪時，你在金頂，腳\n"
+		write(HIC"金頂雲海，迷迷茫茫，籠罩四野，遠接天際。雲海輕蕩時，你在金頂，腳\n"
 			"踏白雲，大有飄飄欲仙之感；當雲濤迅猛湧來時，整個金頂都似在向前浮動，\n"
 			"令人有乘舟欲風之意。\n"NOR, me);
 	}
 	if(local[2] > 13 && local[2] < 16)
 	{
-		write(YEL"日麗風靜，雲海平舖，美麗以極。陽光從你背面斜射下來，在舍身崖下形\n"
+		write(YEL"日麗風靜，雲海平鋪，美麗以極。陽光從你背面斜射下來，在捨身崖下形\n"
 			"成彩色光環，你見到自己的身影清晰地出現在銀色世界上。『光環隨人動，\n"
 			"人影在環中』，這就是奇妙的　※※※※※※※佛光※※※※※※※　。\n"
-			"這裡有一種使人獻身的超人力量，令你不禁想要在此投身雲海，擺脫人世\n"
+			"這裏有一種使人獻身的超人力量，令你不禁想要在此投身雲海，擺脱人世\n"
 			"的俗累，與天相接。\n"NOR, me);
 	}
 	if(local[2] >= 16 && local[2] < 21)
 	{
-		write(HIC"金頂雲海，迷迷茫茫，籠罩四野，遠接天際。雲海輕盪時，你在金頂，腳\n"
+		write(HIC"金頂雲海，迷迷茫茫，籠罩四野，遠接天際。雲海輕蕩時，你在金頂，腳\n"
 			"踏白雲，大有飄飄欲仙之感；當雲濤迅猛湧來時，整個金頂都似在向前浮動，\n"
 			"令人有乘舟欲風之意。\n"NOR, me);
 	}
@@ -73,12 +73,12 @@ int do_jump(string arg)
 	
 	if (me->is_busy() || me->is_fighting())
 	{
-		return notify_fail("你正忙著哪！\n");
+		return notify_fail("你正忙着哪！\n");
 	}
 	
 	if(arg != "cliff")
 	{
-		return notify_fail("你要往哪裡跳？\n");
+		return notify_fail("你要往哪裏跳？\n");
 	}
 	
 	if (me->query("quest/jiuyin2/fail") >= 3 
@@ -106,7 +106,7 @@ int do_jump(string arg)
 			}
 		}
 
-		message_vision(HIR"$N縱身跳下舍身崖。\n"NOR, me);
+		message_vision(HIR"$N縱身跳下捨身崖。\n"NOR, me);
 		me->move(__DIR__"bankong");
 
 		if(local[2] > 13 && local[2] < 15 )
@@ -139,7 +139,7 @@ void do_wait(object me)
 	tell_object(me, "突然你被什麼東西阻擋了一下........\n");
         me->move(__DIR__"wanniansong");
 	me->set("quest/jiuyin2/emeijump", 1);
-	log_file("quest/jiuyin",sprintf("%-18s娥眉九陰部分失敗%s次後從舍身崖成功跳下，福：%d。\n",
+	log_file("quest/jiuyin",sprintf("%-18s娥眉九陰部分失敗%s次後從捨身崖成功跳下，福：%d。\n",
 		me->name(1)+"("+capitalize(getuid(me))+")",
 		chinese_number(me->query("quest/jiuyin2/fail")), me->query("kar")), me);
 //	me->unconcious();
@@ -155,7 +155,7 @@ void do_wait1(object me)
 	me->set("water", 666); 
 	me->add("quest/jiuyin2/fail",1);
 	me->set("quest/jiuyin2/time", time());
-	log_file("quest/jiuyin",sprintf("%-18s從舍身崖往下跳失敗，娥眉九陰部分失敗%s次。\n",
+	log_file("quest/jiuyin",sprintf("%-18s從捨身崖往下跳失敗，娥眉九陰部分失敗%s次。\n",
 		me->name(1)+"("+capitalize(getuid(me))+")",chinese_number(me->query("quest/jiuyin2/fail"))), me);
 	tell_object(me, HIC"只聽得撲通一聲，你掉進了一個大水潭中，咕嘟咕嘟喝了好幾口水....\n"NOR);
         for(i=0; i<sizeof(ob); i++) {
@@ -177,7 +177,7 @@ void do_wait2(object me)
         me->set_temp("last_damage_from","摔下山崖跌");
         me->add("quest/jiuyin2/fail", 1);
         me->set("quest/jiuyin2/time", time());
-	log_file("quest/jiuyin",sprintf("%-18s從舍身崖往下跳失敗，死，娥眉九陰部分失敗%s次。\n",
+	log_file("quest/jiuyin",sprintf("%-18s從捨身崖往下跳失敗，死，娥眉九陰部分失敗%s次。\n",
 		me->name(1)+"("+capitalize(getuid(me))+")",chinese_number(me->query("quest/jiuyin2/fail"))), me);
         me->unconcious();
         me->die();

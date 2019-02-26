@@ -9,7 +9,7 @@ zhen yq 邀請
 zhen in 加入
 zhen huan 換陣主
 zhen san 解散陣法
-zhen talk 陣法說話
+zhen talk 陣法説話
 zhen check 陣主察看成員的狀態
 */
 
@@ -32,7 +32,7 @@ nomask int main(object me, string arg)
                 if(!me->in_array())
                         return notify_fail("你目前沒有加入任何陣法。\n");
         // 等級 15 級
-        // 救援及時、防御等級高、陣法攻擊效果好
+        // 救援及時、防禦等級高、陣法攻擊效果好
                 else
                 {
                         object *memb;
@@ -357,7 +357,7 @@ zhen
         是否開始發揮威力，你們所組成的陣法的有效等
         級是多少。。。
 
-關于陣法的詳細的幫助信息可 help zhenfa 查看。
+關於陣法的詳細的幫助信息可 help zhenfa 查看。
 
 HELP
    );

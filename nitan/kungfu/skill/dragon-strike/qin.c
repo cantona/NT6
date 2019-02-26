@@ -41,7 +41,7 @@ int perform(object me)
                 return notify_fail("你現在真氣不夠，難以施展" + name() + "。\n");
 
         if (! living(target))
-                return notify_fail("對方都已經這樣了，用不著這麼費力吧？\n");
+                return notify_fail("對方都已經這樣了，用不着這麼費力吧？\n");
 
         msg = HIR "$N" HIR "暴喝一聲，全身內勁迸發，氣貫右臂奮力外扯，企圖將$n"
               HIR "的" + weapon->name() + HIR "吸入掌中。\n" NOR;
@@ -53,7 +53,7 @@ int perform(object me)
         {
                 addn("neili", -300, me);
                 msg += HIR "$n" HIR "只覺周圍氣流湧動，手中" + weapon->name()
-                       + HIR "竟然拿捏不住，向$N" HIR "掌心脫手飛去。\n" NOR;
+                       + HIR "竟然拿捏不住，向$N" HIR "掌心脱手飛去。\n" NOR;
                 me->start_busy(2);
                 weapon->unequip();
                 weapon->move(me, 1);

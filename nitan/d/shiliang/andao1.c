@@ -5,7 +5,7 @@ void create()
 {
         set("short", "暗道");
         set("long", @LONG
-這是溫家下面一條很隱秘的暗道，也不知道是誰修建的。 
+這是温家下面一條很隱祕的暗道，也不知道是誰修建的。 
 LONG
         );
         set("no_clean_up", 0);

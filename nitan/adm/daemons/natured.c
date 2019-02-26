@@ -101,13 +101,13 @@ void event_midnight()
         switch (m * 100 + d)
         {
         case  321:
-                msg = HIG "春天終于到了，經過了漫長的冬季，萬物開始復蘇。\n" NOR;
+                msg = HIG "春天終於到了，經過了漫長的冬季，萬物開始復甦。\n" NOR;
                 break;
         case  622:
                 msg = HIR "夏天來臨了，天氣越來越熱，所有的生物都異常活躍。\n" NOR;
                 break;
         case  923:
-                msg = HIY "已然是秋天了，大地一片金黃，正是收獲的時期。\n" NOR;
+                msg = HIY "已然是秋天了，大地一片金黃，正是收穫的時期。\n" NOR;
                 break;
         case 1222:
                 msg = HIW "來自北方的寒流掃過大地，萬物又開始了寂靜的休眠。\n" NOR;

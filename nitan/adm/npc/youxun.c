@@ -65,7 +65,7 @@ void create()
         set("chat_msg",({
                 "遊訊嘻嘻道：小的我沒別的本事，就會打聽消息，就算是巫師造謠，我也能知道。\n",
                 "遊訊亮出一指道：便宜啊，幾兩銀子就能查條謠言，這可真是跳樓價。\n",
-                "遊訊賊眯眯的說：天算地算不如人算，可是再怎麼算我遊某都知道。\n",
+                "遊訊賊眯眯的説：天算地算不如人算，可是再怎麼算我遊某都知道。\n",
         }));
 
         set_skill("dodge", 150);
@@ -119,7 +119,7 @@ mixed accept_ask(object ob, string topic)
                 {
                         obs = 0;
                         message_vision(CYN "$N" CYN "憤聲暗罵，對$n"
-                                CYN "瞪著眼睛道：『叫" + topic + "的人滿大街都是，"
+                                CYN "瞪着眼睛道：『叫" + topic + "的人滿大街都是，"
                                 "自己不會找？』\n" NOR, this_object(), ob);
                         return 1;
                 } else
@@ -128,11 +128,11 @@ mixed accept_ask(object ob, string topic)
                         obs = 0;
                         set_temp("pending/ask_youxun", topic, ob);
                         /*
-                        message_vision(CYN "$N" CYN "嘿嘿姦笑兩聲，對$n"
+                        message_vision(CYN "$N" CYN "嘿嘿奸笑兩聲，對$n"
                                 CYN "小聲道：『沒有問題，不過得要一兩黃"
                                 "金，不二價！』\n" NOR, this_object(), ob);
                         */
-                        tell_object(ob, CYN "遊訊嘿嘿姦笑兩聲，對你"
+                        tell_object(ob, CYN "遊訊嘿嘿奸笑兩聲，對你"
                                         CYN "小聲道：『沒有問題，不過得要一兩黃"
                                         "金，不二價！』\n" NOR);
                         return 1;
@@ -147,11 +147,11 @@ mixed accept_ask(object ob, string topic)
 
         set_temp("pending/ask_youxun", topic, ob);
         /*
-        message_vision(CYN "$N" CYN "嘿嘿姦笑兩聲，對$n"
+        message_vision(CYN "$N" CYN "嘿嘿奸笑兩聲，對$n"
                        CYN "小聲道：“沒有問題，不過得要10兩"
                        "白銀，不二價！”\n" NOR, this_object(), ob);
         */
-        tell_object(ob, CYN "遊訊嘿嘿姦笑兩聲，對你"
+        tell_object(ob, CYN "遊訊嘿嘿奸笑兩聲，對你"
                         CYN "小聲道：“沒有問題，不過得要10兩"
                         "白銀，不二價！”\n" NOR);
         return 1;
@@ -187,7 +187,7 @@ int recognize_apprentice(object me, string skill)
                         me->move("/d/city/beidajie1");
                         me->unconcious();
                 } else
-                        command("say 你先把我剛才教你的領悟好再說吧！");
+                        command("say 你先把我剛才教你的領悟好再説吧！");
                 return -1;
         }
 
@@ -195,7 +195,7 @@ int recognize_apprentice(object me, string skill)
 
         if( query("potential", me)<query("learned_points", me)+10 )
         {
-                write("你聽得稀裡糊塗，看來是潛能不夠了。\n");
+                write("你聽得稀裏糊塗，看來是潛能不夠了。\n");
                 return -1;
         }
 
@@ -243,7 +243,7 @@ int accept_object(object me, object ob)
                 {
                 case 0:
                         command("heihei");
-                        command("say 這種破爛你留著吧。");
+                        command("say 這種破爛你留着吧。");
                         set_temp("youxun_refused", 1, me);
                         return 0;
 
@@ -320,7 +320,7 @@ int accept_object(object me, object ob)
                         destruct(ob);
                         obs = 0;
                         //command("whisper " + me->query("id") + msg);
-                        tell_object(me, WHT"遊訊在你的耳邊悄聲說道：" + msg + "\n" NOR); 
+                        tell_object(me, WHT"遊訊在你的耳邊悄聲説道：" + msg + "\n" NOR); 
                         return 1;
                 }
 
@@ -340,7 +340,7 @@ int accept_object(object me, object ob)
                         " 據可靠消息，這個人剛才在" +
                         environment(fob)->short() + "。");
                 */
-                tell_object(me, WHT "遊訊在你的耳邊悄聲說道：據可靠消息，這個人剛才在" +
+                tell_object(me, WHT "遊訊在你的耳邊悄聲説道：據可靠消息，這個人剛才在" +
                         environment(fob)->short() + "。\n" NOR);
                 return 1;
         }
@@ -383,7 +383,7 @@ int ask_fee()
         }
 
         message("visoin", name() + "嘀嘀咕咕的對" + me->name() +
-                          "說了一些話。\n", environment(me), ({ me }));
+                          "説了一些話。\n", environment(me), ({ me }));
         return 1;
 }
 
@@ -447,7 +447,7 @@ void receive_report(object user, string verb)
 {
         string msg;
 
-        msg = sprintf("聽說%s(%s)又要發謠言了。",
+        msg = sprintf("聽説%s(%s)又要發謠言了。",
                       query("name", user),query("id", user));
         if (random(100) < 7)
         {
@@ -532,7 +532,7 @@ int ask_shedu()
         }
         ob->move(this_object());
         command("give "+query("id", ob)+" to "+query("id", me));
-        command("say 這可是歐陽瘋子弄的，可別說是我給你的啊！");
+        command("say 這可是歐陽瘋子弄的，可別説是我給你的啊！");
         return 1;
 }
 
@@ -543,7 +543,7 @@ int ask_list()
         me = this_player();
         if( query_temp("can_buy/youxun/nuclues-bomb", me) )
         {
-                command("say 你咋這麼羅嗦？好話不說二遍...");
+                command("say 你咋這麼羅嗦？好話不説二遍...");
                 return 1;
         }
         command("shzi");
@@ -556,7 +556,7 @@ int ask_list()
 int do_list(string arg)
 {
         if (arg && ! id(arg))
-                return notify_fail("這裡沒有這個人。\n");
+                return notify_fail("這裏沒有這個人。\n");
 
         if( query_temp("can_buy/youxun", this_player()) )
         {
@@ -575,12 +575,12 @@ int do_buy(string arg)
         string my_id;
 
         if (arg && sscanf(arg, "%s from %s", arg, my_id) == 2 && ! id(my_id))
-                return notify_fail("這裡沒有這個人。\n");
+                return notify_fail("這裏沒有這個人。\n");
 
         me = this_player();
         if( !query_temp("can_buy/youxun", me) )
         {
-                message_vision("$N急得雙手亂擺，對$n道：“我說過了不賣"
+                message_vision("$N急得雙手亂擺，對$n道：“我説過了不賣"
                                "東西的，我可是老實人！”\n",
                                this_object(), this_player());
                 return 1;

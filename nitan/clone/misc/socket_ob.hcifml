@@ -1,6 +1,6 @@
 // socket_ob.c
 // create by yezh 10/01/2005
-// 一個 基于 TCP & ASCII 方式的 SOCKET 物件，
+// 一個 基於 TCP & ASCII 方式的 SOCKET 物件，
 // 方法：do_open, do_send
 // 事件：on_recv, on_send, on_close
 // 在構造的時候create socket，在析構時close socket
@@ -16,7 +16,7 @@
 #define CHECK_FD_VALID();    \
     if (fd != s_fd) \
     {   \
-        // 收到了不屬于自己的數據包 \
+        // 收到了不屬於自己的數據包 \
         evaluate(callback["report"], s_fd   \
                  sprintf("收到數據包時，套接字號不一致，物件套接字號：%d，" \
                          "收到套接字號：%d\n", s_fd, fd));  \

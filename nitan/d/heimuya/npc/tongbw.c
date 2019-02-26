@@ -11,7 +11,7 @@ void create()
         set("gender", "男性" );
         set("age", 75);
         set("title", "日月神教風雷堂長老");
-        set("long", "他白發披散, 銀髯戟張, 臉上的肌肉牽動, \n"
+        set("long", "他白髮披散, 銀髯戟張, 臉上的肌肉牽動, \n"
                     "圓睜雙眼, 身上的鮮血已然凝結, 神情甚是可怖。\n");
         set("attitude", "friendly");
         set("shen_type", -1);
@@ -50,7 +50,7 @@ void create()
         set("chat_chance", 3);
         set("chat_msg", ({
                  "童百熊怒瞪雙眼道: “我沒錯, 我沒有叛教! 東方兄弟你不能冤枉我呀! ”\n",
-                 "童百熊嘆了一口氣說：“我和東方兄弟出生入死, 共歷患難的時候, 你們還沒生下來哪!”\n"
+                 "童百熊歎了一口氣説：“我和東方兄弟出生入死, 共歷患難的時候, 你們還沒生下來哪!”\n"
         }) );
         setup();
         carry_object("/d/heimuya/npc/obj/zijinchui")->wield();

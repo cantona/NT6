@@ -9,7 +9,7 @@ void create()
         set("age", random(10) + 20);
         set("str", 25);
         set("dex", 16);
-        set("long","這是個神態倨傲的東洋武士，頭戴鬥笠，身著灰黑色的和服，腰裡挎著把長長的武士刀。\n");
+        set("long","這是個神態倨傲的東洋武士，頭戴斗笠，身着灰黑色的和服，腰裏挎着把長長的武士刀。\n");
         set("combat_exp", 30000);
         set("shen_type", 1);
         set("attitude", "peaceful");
@@ -39,5 +39,5 @@ void init()
 void greeting(object ob)
 {
         if( environment(ob) != environment() ) return;
-        say("日本浪人輕蔑地瞪了你一眼，說道：中國人都象你這般沒用吧，哈哈哈！\n");
+        say("日本浪人輕蔑地瞪了你一眼，説道：中國人都象你這般沒用吧，哈哈哈！\n");
 }

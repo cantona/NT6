@@ -30,12 +30,12 @@ void checking(object ob)
         if( environment() != environment(ob) ) return;
         if( query("party/party_name", ob) == query("party/party_name") )
         {
-                message_vision("$N拍了拍$n的頭說道：加油！長樂幫發了自有你的好處！\n", me, ob);
+                message_vision("$N拍了拍$n的頭説道：加油！長樂幫發了自有你的好處！\n", me, ob);
                 return;
         }
         if( !random(2) )
-                message_vision("$N雙手抱拳，牛裡牛氣地說道：見到本幫主，難道沒有任何表示嗎？\n", me);
-        else message_vision("$N說道：還不趕快加入" + query("party/party_name") + "！！！\n", me);
+                message_vision("$N雙手抱拳，牛裏牛氣地説道：見到本幫主，難道沒有任何表示嗎？\n", me);
+        else message_vision("$N説道：還不趕快加入" + query("party/party_name") + "！！！\n", me);
 }
 
 int do_check(string arg)
@@ -62,25 +62,25 @@ int ask_join()
         ob_fam=query("family/family_name", ob);
         if( ob_fam == "丐幫" )
         {
-                say(name() + "大怒道：" + RANK_D->query_rude(ob) + "一定是丐幫派來臥底的吧！\n");
+                say(name() + "大怒道：" + RANK_D->query_rude(ob) + "一定是丐幫派來卧底的吧！\n");
                 return 1;
         }
         if( ob_fam == "大理段家" )
         {
-                say(name() + "大怒道：" + RANK_D->query_rude(ob) + "一定是大理國派來臥底的吧！\n");
+                say(name() + "大怒道：" + RANK_D->query_rude(ob) + "一定是大理國派來卧底的吧！\n");
                 return 1;
         }
 
         if( ob_fam == "桃花島" )
         {
-                say(name() + "說道：貴派祖師黃藥師一向不與江湖人士往來，我怎麼能隨便收容他老人家的門下！\n");
+                say(name() + "説道：貴派祖師黃藥師一向不與江湖人士往來，我怎麼能隨便收容他老人家的門下！\n");
                 return 1;
         }
 
         if( ob_fam == "武當派" || ob_fam == "峨嵋派" || ob_fam == "華山派" ||
                  ob_fam == "少林派" || ob_fam == "南少林派" )
         {
-                say(name() + "大怒道：" + RANK_D->query_rude(ob) + "一定是名門正派派來臥底的吧！\n");
+                say(name() + "大怒道：" + RANK_D->query_rude(ob) + "一定是名門正派派來卧底的吧！\n");
                 return 1;
         }
         myfam = (string)query("party/party_name");
@@ -96,7 +96,7 @@ int ask_join()
         }
         if( time()<query("party/enter_time", ob)+600 )
         {
-                say(name() + "大怒道：" + RANK_D->query_rude(ob) + "，你如此反復無常豈能容身于江湖！！！\n");
+                say(name() + "大怒道：" + RANK_D->query_rude(ob) + "，你如此反覆無常豈能容身於江湖！！！\n");
                 return 1;
         }
         message_vision("$N重重地拍了一下$n的肩膀，喝道：好樣的！從今以後跟兄弟們有難同當！\n", this_object(), ob);
@@ -112,10 +112,10 @@ int ask_join()
         set("owner",query("id",  ob), obj);
         set("fam", myfam, obj);
         set("combat_exp", query("combat_exp"), obj);
-        set("long", "這是"+myfam+"的幫令，上面刻著「"+query("name", ob)+"」。\n", obj);
+        set("long", "這是"+myfam+"的幫令，上面刻着「"+query("name", ob)+"」。\n", obj);
         obj->move(ob);
         message_vision("$N把一"+query("unit", obj)+obj->name()+"扔給$n。\n",this_object(),ob);
-        log_file("partyjoin",sprintf("%s于%s時加入%s\n",query("name", ob),ctime(time()),myfam));
+        log_file("partyjoin",sprintf("%s於%s時加入%s\n",query("name", ob),ctime(time()),myfam));
         return 1;
 }
 
@@ -127,10 +127,10 @@ string ask_skills()
         int amount;
 
         if( is_fighting() )
-                return RANK_D->query_rude(me) + "瞎了眼沒見我正忙著？！";
+                return RANK_D->query_rude(me) + "瞎了眼沒見我正忙着？！";
 
         if( query("party/party_name", me) != query("party/party_name") )
-                return RANK_D->query_rude(me) + "莫非是想打聽我幫的秘密吧。";
+                return RANK_D->query_rude(me) + "莫非是想打聽我幫的祕密吧。";
 
         if( !(ling = present("bang ling", me)) )
                 return RANK_D->query_rude(me) + "竟連自己的幫令都管不住！";
@@ -162,13 +162,13 @@ int do_xue(string arg)
 
         if( !(amount=query("party/skills_asked", me)) )
         {
-                write("你還沒征求幫主同意呢。\n");
+                write("你還沒徵求幫主同意呢。\n");
                 return 1;
         }
 
         if( is_fighting() )
         {
-                say(name() + "大怒道：" + RANK_D->query_rude(me) + "瞎了眼沒見我正忙著？！");
+                say(name() + "大怒道：" + RANK_D->query_rude(me) + "瞎了眼沒見我正忙着？！");
                 return 1;
         }
         if( !arg )

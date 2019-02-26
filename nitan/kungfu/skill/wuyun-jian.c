@@ -1,4 +1,4 @@
-// wuyun-jian.c 五韻七弦劍
+// wuyun-jian.c 五韻七絃劍
 // Last Modified by winder on Mar. 10 2000
 
 #include <ansi.h>;
@@ -7,11 +7,11 @@ string type() { return "martial"; }
 string martialtype() { return "skill"; }
 
 mapping *action = ({
-([        "action" : "$N左小指輕彈，一招"HIM"「宮韻」"NOR"悄然劃向$n的後心",
+([        "action" : "$N左小指輕彈，一招"HIM"「宮韻」"NOR"悄然划向$n的後心",
         "lvl" : 0,
         "skill_name" : "宮韻"
 ]),
-([        "action" : "$N右手無名指若有若無的一劃，將琴弦並做一處，"HIR"[商韻]"NOR"已將$n籠罩",
+([        "action" : "$N右手無名指若有若無的一劃，將琴絃並做一處，"HIR"[商韻]"NOR"已將$n籠罩",
         "lvl" : 10,
         "skill_name" : "商韻"
 ]),
@@ -23,7 +23,7 @@ mapping *action = ({
         "lvl" : 30,
         "skill_name" : "支韻"
 ]),
-([        "action" : "$N使出"HIW"「羽韻」"NOR"，將劍提至唇邊，如同清音出簫，劍掌齊出，劃向$n的$l",
+([        "action" : "$N使出"HIW"「羽韻」"NOR"，將劍提至脣邊，如同清音出簫，劍掌齊出，划向$n的$l",
         "lvl" : 40,
         "skill_name" : "羽韻"
 ]),
@@ -46,7 +46,7 @@ int practice_skill(object me)
          || query("skill_type", weapon) != "sword" )
                 return notify_fail("你使用的武器不對。\n");
         if( query("jing", me)<35 || query("neili", me)<15 )
-                return notify_fail("你的精或內力不夠練五韻七弦劍。\n");
+                return notify_fail("你的精或內力不夠練五韻七絃劍。\n");
         me->receive_damage("jing", 20);
         addn("neili", -15, me);
         return 1;
@@ -100,7 +100,7 @@ string perform_action_file(string action)
 
 int help(object me)
 {
-        write(HIC"\n五韻七弦劍："NOR"\n");
+        write(HIC"\n五韻七絃劍："NOR"\n");
         write(@HELP
 
     日月神教黑木崖武功，梅莊大莊主黃鐘公的獨門劍法，將琴樂

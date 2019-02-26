@@ -11,7 +11,7 @@ void create()
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("long", "一塊發出強烈膻味的羊肉.\n");
+                set("long", "一塊發出強烈羶味的羊肉.\n");
                 set("unit", "塊");
                 set("value", 1000);
                 set("eat_msg","$N咬了一口$n，突然見許多蒼蠅聚攏到嘴邊來。\n");

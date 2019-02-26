@@ -11,7 +11,7 @@ void create()
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("long", "這是一朵綻放著的馬蹄蓮，代表著永結同心，吉祥如意，聖潔虔誠。\n");
+                set("long", "這是一朵綻放着的馬蹄蓮，代表着永結同心，吉祥如意，聖潔虔誠。\n");
                 set("unit", "束");
                 set("base_value", 35);
                 set("base_unit", "朵");

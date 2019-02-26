@@ -13,10 +13,10 @@ int main(object me, string arg)
                 return notify_fail("你現在正忙。\n");
 
         if( !wizardp(me) && (time()-query_temp("maze/map", me)<3) )
-                return notify_fail("系統氣喘噓地嘆道：慢慢來 ....\n");  
+                return notify_fail("系統氣喘噓地歎道：慢慢來 ....\n");  
         
         if( !query("maze", environment(me)) )
-                return notify_fail("這裡不是迷宮區域，請用 help here 查看。\n");  
+                return notify_fail("這裏不是迷宮區域，請用 help here 查看。\n");  
                 
         if( query("jing", me)<5 )
                 return notify_fail("你現在精神狀態不佳，還是等會再查吧。\n");

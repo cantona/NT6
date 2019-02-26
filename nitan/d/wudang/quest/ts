@@ -11,7 +11,7 @@ int accept_object(object me, object ob);
 void create()
 {
         set_name("李天師", ({ "li tianshi", "li", "tianshi" }));
-        set("long", "這是一位仙風道骨的法師，身上的道袍上畫著一些符號。\n");
+        set("long", "這是一位仙風道骨的法師，身上的道袍上畫着一些符號。\n");
         set("nickname", HIY"鎮妖真人"NOR);
         set("gender", "男性");
         set("age", 30);
@@ -105,17 +105,17 @@ mixed ask_ghost()
       ghost->set_skill("claw", me->query_skill("taoism", 1) +
                       (me->query_temp("gui/count") % 5) * 10);
 
-      tell_object(me, this_object()->name() + "對你道：據說最近" +
+      tell_object(me, this_object()->name() + "對你道：據説最近" +
                   p + "常有" + ghost->name() + "出沒，附近居民"
                   "深受其害。你去把它收了吧。\n");
-      message("vision", this_object()->name() + "在" + me->name() + "耳邊吩咐著什麼，" +
+      message("vision", this_object()->name() + "在" + me->name() + "耳邊吩咐着什麼，" +
               me->name() + "一邊聽，一邊不住地點頭。\n", environment(me), me);
       ob = new("/d/wudang/quest/obj/fuzhi"); 
       ob->move(this_object());
       command("give fu zhi to " + me->query("id"));
       tell_object(me, this_object()->name() + "繼續道：" + ob->name() +
                   "可以讓鬼魂現身，可別弄丟了。\n");
-      message_vision("$n對$N說道：快動身吧，多加小心。\n", me, this_object()); 
+      message_vision("$n對$N説道：快動身吧，多加小心。\n", me, this_object()); 
       me->set_temp("gui/shougui", 1);
       return 1; 
 } 
@@ -153,7 +153,7 @@ int accept_object(object me, object ob)
          if (! me->query_temp("gui/finish"))
          {
              command("sneer " + me->query("id")); 
-             command("say 想蒙騙本天師嗎？");
+             command("say 想矇騙本天師嗎？");
              me->add("weiwang", -random(50));
              if (me->query("weiwang") < 0) me->set("weiwang", 0);
              tell_object(me, HIR"你的威望降低了！\n"NOR);
@@ -168,12 +168,12 @@ int accept_object(object me, object ob)
          if (me->query("potential") >= me->query_potential_limit())  pot = 1; 
          if (count % 10 == 0)
          {
-            message_vision("$n拍了拍$N的肩膀：好家伙，居然連著" + chinese_number(count) +
+            message_vision("$n拍了拍$N的肩膀：好傢伙，居然連着" + chinese_number(count) +
                   "次都沒有失手，幹得好！\n", me, this_object());
 
             if (count == 50)
             {
-               message_vision("$n對$N說道：這東西是獎給你的，好好跟我幹，" +
+               message_vision("$n對$N説道：這東西是獎給你的，好好跟我幹，" +
                               "本天師不會虧待你！\n", me, this_object());
                switch(random(20))
                {
@@ -204,7 +204,7 @@ int accept_object(object me, object ob)
 
             if (count == 100 || count == 200)
             {
-               message_vision("$n對$N說道：這東西是獎給你的，好好跟我幹，" +
+               message_vision("$n對$N説道：這東西是獎給你的，好好跟我幹，" +
                               "本天師不會虧待你！\n", me, this_object());
                msg = "一顆";
                gift = new("/d/shaolin/obj/puti-zi");
@@ -214,7 +214,7 @@ int accept_object(object me, object ob)
 
             if (count == 300 || count == 400)
             {
-               message_vision("$n對$N說道：這東西是獎給你的，好好跟我幹，" +
+               message_vision("$n對$N説道：這東西是獎給你的，好好跟我幹，" +
                               "本天師不會虧待你！\n", me, this_object());
                msg = "一滴";
                gift = new("/clone/misc/tianxiang");
@@ -224,7 +224,7 @@ int accept_object(object me, object ob)
 
             if (count == 500)
             {
-               message_vision("$n對$N說道：這東西是獎給你的，好好跟我幹，" +
+               message_vision("$n對$N説道：這東西是獎給你的，好好跟我幹，" +
                               "本天師不會虧待你！\n", me, this_object());
                msg = "一顆";
                gift = new("/clone/gift/jiuzhuan");
@@ -234,7 +234,7 @@ int accept_object(object me, object ob)
          }
          else  message_vision("$n對$N點了點頭：不錯，不錯。\n", me, this_object()); 
 
-         tell_object(me, HIG "通過這次□煉，你獲得了" + chinese_number(exp) + 
+         tell_object(me, HIG "通過這次煅煉，你獲得了" + chinese_number(exp) + 
                      "點經驗和" + chinese_number(pot) + "點潛能。\n" NOR); 
          me->add("combat_exp", exp); 
          me->add("shen", random(exp)); 

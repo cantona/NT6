@@ -1,12 +1,12 @@
 // This program is a part of NITAN MudLIB
-// ying.c 須彌山掌「群山疊影」
+// ying.c 須彌山掌「羣山疊影」
 
 #include <ansi.h>
 #include <combat.h>
 
 inherit F_SSERVER;
 
-string name() { return "群山疊影"; }
+string name() { return "羣山疊影"; }
 
 int perform(object me, object target)
 {
@@ -18,21 +18,21 @@ int perform(object me, object target)
         if (! target) target = offensive_target(me);
 
         if (! target || ! me->is_fighting(target))
-                return notify_fail("「群山疊影」只能對戰鬥中的對手使用。\n");
+                return notify_fail("「羣山疊影」只能對戰鬥中的對手使用。\n");
 
         if( objectp(query_temp("weapon", me)) )
-                return notify_fail("你必須空手才能使用「群山疊影」！\n");
+                return notify_fail("你必須空手才能使用「羣山疊影」！\n");
 
         if ((lvl = (int)me->query_skill("xumishan-zhang", 1)) < 150)
-                return notify_fail("你的須彌山掌掌不夠嫻熟，不會使用「群山疊影」。\n");
+                return notify_fail("你的須彌山掌掌不夠嫻熟，不會使用「羣山疊影」。\n");
 
         if( query("neili", me)<500 )
-                return notify_fail("你現在真氣太弱，不能使用「群山疊影」。\n");
+                return notify_fail("你現在真氣太弱，不能使用「羣山疊影」。\n");
 
         if (me->query_skill_prepared("strike") != "xumishan-zhang")
-                return notify_fail("你現在沒有準備使用須彌山掌，不能使用「群山疊影」。\n");
+                return notify_fail("你現在沒有準備使用須彌山掌，不能使用「羣山疊影」。\n");
 
-        msg = HIY "$N" HIY "穩穩使出須彌山掌掌的絕招「群山疊影」，雙掌"
+        msg = HIY "$N" HIY "穩穩使出須彌山掌掌的絕招「羣山疊影」，雙掌"
               "平平向$n" HIY "推去，$n" HIY "頓時覺得一股排山倒海的"
               "內力向自己湧來。\n" NOR;
         addn("neili", -150, me);
@@ -48,7 +48,7 @@ int perform(object me, object target)
         } else
         {
                 msg += HIC "$n" HIC "深吸一口氣，凝神抵擋，猶如輕舟立"
-                       "于驚濤駭浪之中，左右顛簸，卻是不倒。\n" NOR;
+                       "於驚濤駭浪之中，左右顛簸，卻是不倒。\n" NOR;
                 count = 0;
         }
         message_combatd(msg, me, target);

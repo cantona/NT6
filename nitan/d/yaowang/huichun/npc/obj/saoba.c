@@ -11,7 +11,7 @@ void create()
                 set_default_object(__FILE__);
         else {
                 set("unit", "根");
-                set("long", "這是一根竹制的掃把。\n");
+                set("long", "這是一根竹製的掃把。\n");
                 set("value", 1);
                 set("material", "iron");
                 set("wield_msg", "$N拿出一把$n，拿在手中。\n");
@@ -49,13 +49,13 @@ int do_job(string arg)
         if( query_temp("renwu_wancheng", me) >= 100 )
         {
                 set_temp("renwu_wancheng", 100, me);//表示完成任務
-                return notify_fail ("你完成了任務，回去復命吧！\n");
+                return notify_fail ("你完成了任務，回去覆命吧！\n");
         }
 
               if (me->is_busy()) 
-                      return notify_fail("你現在正忙著呢！\n"); 
+                      return notify_fail("你現在正忙着呢！\n"); 
         if( query("short", environment(me)) != query_temp("renwu_name", me) )
-                return notify_fail ("不是讓你在這裡打掃啊！\n");
+                return notify_fail ("不是讓你在這裏打掃啊！\n");
 
         //判斷是否wield了工具
         if( !objectp(weapon=query_temp("weapon", me) )
@@ -68,7 +68,7 @@ int do_job(string arg)
                 addn_temp("renwu_wancheng", j, me);
                 addn("jing", -j, me);
                 me->improve_skill("medical", (j/3));
-                message_vision ("$N拿起掃把，一邊掃著地板，一邊留意醫師在給人把脈！\n", me);
+                message_vision ("$N拿起掃把，一邊掃着地板，一邊留意醫師在給人把脈！\n", me);
                    me->start_busy(1+random(3));
         }
         return 1;

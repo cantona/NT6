@@ -4,7 +4,7 @@ inherit NPC;
 
 void create ()
 {
-        set_name("凌退思", ({"ling tuisi","ling"}));
+        set_name("淩退思", ({"ling tuisi","ling"}));
         set("title", "荊州知府");
         set("long", "
 一位中年漢子，衣飾華貴，一臉精悍之色，他就是荊州知府大人，人稱“凌翰林”。\n");

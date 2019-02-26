@@ -27,14 +27,14 @@ private void do_bonus(object room)
         if (sizeof(obs) < 1)
                 return;
 
-        msg = HIC "只聽“隆隆”一陣雷鳴響過，潮水如湧一般的向岸邊卷來。\n"
+        msg = HIC "只聽“隆隆”一陣雷鳴響過，潮水如湧一般的向岸邊捲來。\n"
                   "剎那間，漫江沸騰，波濤萬頃，潮高丈餘，萬馬奔騰，真有\n"
-                  "“濤來勢轉雄，獵獵駕長風。雷震雲霓裡，山飛霜雪中”的\n"
+                  "“濤來勢轉雄，獵獵駕長風。雷震雲霓裏，山飛霜雪中”的\n"
                   "壯麗氣勢！正所謂“遠若素練橫江，聲如金鼓；近則亙如山\n"
-                  "岳，奮如雷霆”。一時間你不禁沉浸當中，天地萬物都已然\n"
+                  "嶽，奮如雷霆”。一時間你不禁沉浸當中，天地萬物都已然\n"
                   "忘懷了。\n" NOR;
         message("vision", msg, obs);
-        msg = "聽說八月十八" + implode(sizeof(obs) > 4 ? obs[0..3]->name(1)
+        msg = "聽説八月十八" + implode(sizeof(obs) > 4 ? obs[0..3]->name(1)
                                                        : obs->name(1), "、") +
               "等人在錢塘江觀潮。";
         CHANNEL_D->do_channel(this_object(), "rumor", msg);
@@ -43,7 +43,7 @@ private void do_bonus(object room)
         if (sizeof(obs) < 1)
                 return;
 
-        msg = HIG "你望著洶湧的潮水，若有所悟，對武功又有了新的體會。\n" NOR;
+        msg = HIG "你望着洶湧的潮水，若有所悟，對武功又有了新的體會。\n" NOR;
         message("vision", msg, obs);
         for( int i=0; i<sizeof(obs); i++ )
         {
@@ -66,7 +66,7 @@ void trigger_event(int status)
         {
         case STATUS_PROMPT:
                 CHANNEL_D->do_channel(this_object(), "rumor",
-                        "八月十八又要到了，聽說不少人前往錢塘江觀潮。");
+                        "八月十八又要到了，聽説不少人前往錢塘江觀潮。");
                 // 明天18點鐘起潮
                 EVENT_D->at_after(0, 0, 1, -18, STATUS_START);
                 break;
@@ -81,7 +81,7 @@ void trigger_event(int status)
         case STATUS_END:
                 if (objectp(room))
                         message("vision", "潮水漸漸的退了下去，你這才"
-                                          "仿佛從夢中醒了過來。\n", room);
+                                          "彷彿從夢中醒了過來。\n", room);
                 // 繼續執行default中的內容
 
         default:

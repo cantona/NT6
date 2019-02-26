@@ -42,7 +42,7 @@ int perform(object me)
                 return notify_fail("你現在的真氣不夠，難以施展"+name()+"。\n");
 
         if (! living(target))
-                return notify_fail("對方都已經這樣了，用不著這麼費力吧？\n");
+                return notify_fail("對方都已經這樣了，用不着這麼費力吧？\n");
 
         msg = HIW "$N" HIW "悄然貼近$n" HIW "，施出纏絲擒拿，雙手忽"
               "折忽扭，或抓或甩，直瑣$p" HIW "各處要脈。\n" NOR;
@@ -74,7 +74,7 @@ string final(object me, object target, int damage)
         string msg;
 
         msg = HIR "卻見$n" HIR "奮力抵抗，可終究無法"
-              "擺脫$N" HIR "的攻勢，連中數掌，";
+              "擺脱$N" HIR "的攻勢，連中數掌，";
 
         if (random(3) >= 1 && ! target->is_busy())
         {

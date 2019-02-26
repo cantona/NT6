@@ -6,7 +6,7 @@ void create()
 {
         set("short", "墓穴");
         set("long", @LONG
-你隱約看到四周的牆上插著六柄火把。
+你隱約看到四周的牆上插着六柄火把。
 LONG );
         setup();
 }
@@ -24,8 +24,8 @@ int do_use(string arg)
         remove_call_out("close");
         call_out("close", 5, this_object());
              write(
-"你取出火折一晃，湊上前去點燃了其中的一只火把，也不知是什麼機關，
-其它的五只火把一一燃了起來。\n");
+"你取出火折一晃，湊上前去點燃了其中的一隻火把，也不知是什麼機關，
+其它的五隻火把一一燃了起來。\n");
         set("long", @LONG
 洞內一片凌亂，各種盔甲兵刃散落在地上，洞壁上刻了各種各樣
 的圖案，出口四通八達，也不知暗藏了什麼機關暗器。
@@ -49,7 +49,7 @@ void close(object room)
 {
         message("vision","不一會兒，牆上的火把就熄滅了。\n", room);
         set("long", @LONG
-你隱約看到四周的牆上插著六柄火把。
+你隱約看到四周的牆上插着六柄火把。
 LONG
 );
         delete("exits", room);

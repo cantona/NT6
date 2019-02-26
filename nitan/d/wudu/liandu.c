@@ -7,10 +7,10 @@ void create()
 {
         set("short", "練毒室");
         set("long", @LONG
-這裡是五毒教弟子專門的練毒室，可以在這裡練制各種毒
-藥，案上擺著各式各樣的器具。屋內正中放著一個一人多高的
+這裏是五毒教弟子專門的練毒室，可以在這裏練制各種毒
+藥，案上擺着各式各樣的器具。屋內正中放着一個一人多高的
 丹爐，爐火正旺，有個黑瘦的道人正手持桃木劍繞爐疾走，嘴
-裡吶吶自語不知在念些什麼。
+裏吶吶自語不知在念些什麼。
 LONG);
         set("no_fight", 1);
         set("exits", ([
@@ -36,10 +36,10 @@ int do_lianzhi (string arg)
                 return notify_fail("你不知道該如何下手。\n");
 
         if( query_temp("liandu/wudu", me) )
-                return notify_fail("你現在正煉著呢，切勿分心。\n");
+                return notify_fail("你現在正煉着呢，切勿分心。\n");
 
         if (me->is_busy())
-                return notify_fail("你現在正忙著呢。\n");
+                return notify_fail("你現在正忙着呢。\n");
 
         if (me->query_skill("wudu-qishu", 1) < 60 )
                 return notify_fail("你的五毒奇術不夠嫻熟，無法煉毒。\n");
@@ -50,7 +50,7 @@ int do_lianzhi (string arg)
         if (arg != "heding hong" && arg != "furou gao" &&
             arg != "kongque dan" && arg != "chixie fen" &&
             arg != "wusheng san" && arg != "duanchang san")
-                return notify_fail("你要煉制什麼毒藥？\n");
+                return notify_fail("你要煉製什麼毒藥？\n");
 
         if (arg == "heding hong")
         {
@@ -138,8 +138,8 @@ int do_lianzhi (string arg)
                 set_temp("liandu/wudu", "wushengsan", me);
         }
 
-        message_vision (HIR "\n$N" HIR "將身上的藥品投入丹爐，按照秘法小心"
-                        "煉制起來。\n\n" NOR, me);
+        message_vision (HIR "\n$N" HIR "將身上的藥品投入丹爐，按照祕法小心"
+                        "煉製起來。\n\n" NOR, me);
         me->start_call_out((: call_other, __FILE__, "liandu", me :), time);
         me->start_busy(time / 2 + 1);
         return 1;
@@ -249,7 +249,7 @@ void liandu(object me)
                                 "name"  : "五聖散劇毒",
                                 "duration" : 25,
                         ]));
-                        tell_object(me, HIY "你煉成了五毒教獨門秘藥「" + NOR
+                        tell_object(me, HIY "你煉成了五毒教獨門祕藥「" + NOR
                                         + ob->name() + NOR + HIY "」。\n" NOR);
 
                         if( query("potential", me)>
@@ -263,7 +263,7 @@ void liandu(object me)
                         tell_object(me, HIC "你獲得了" + chinese_number(exp)
                                         + "點經驗、" + chinese_number(pot) +
                                         "點潛能以及" + chinese_number(sco) +
-                                        "點江湖閱歷。\n" NOR); 
+                                        "點江湖閲歷。\n" NOR); 
                 }
 
                 ob->move(me);

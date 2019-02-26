@@ -6,8 +6,8 @@ void create()
         set("long", @LONG
 穿過月洞門，便是一座看起來非常普通的小小的院落，兩旁修竹
 姍姍，花徑鵝卵石上生滿青苔，顯得平素少有人行。花徑通到三間石
-屋之前。屋前屋後七八株蒼鬆夭矯高挺，遮得四下裡陰沉沉的。院子
-裡沒有什麼擺設，只有幾堆幹木柴(wood)放在角落裡，其中有一捆特
+屋之前。屋前屋後七八株蒼松夭矯高挺，遮得四下裏陰沉沉的。院子
+裏沒有什麼擺設，只有幾堆幹木柴(wood)放在角落裏，其中有一捆特
 別引人注目。 
 LONG );
         set("exits", ([
@@ -16,7 +16,7 @@ LONG );
         ]));
 
         set("item_desc",([
-                "wood" : "一大堆幹柴，其中有一捆的顏色比較特別。\n",
+                "wood" : "一大堆乾柴，其中有一捆的顏色比較特別。\n",
         ]));
         set("objects", ([
                 __DIR__"npc/shi" : 1,
@@ -57,7 +57,7 @@ int do_pull(string arg)
                 addn("weapon_count", -1);
                 ob=new("/d/meizhuang/obj/sea-wood");
                 ob->move("/d/meizhuang/xiaoyuan");
-                message_vision("$N在木柴堆裡撥弄著, 一根劍形的木棒掉了出來.\n", me);
+                message_vision("$N在木柴堆裏撥弄着, 一根劍形的木棒掉了出來.\n", me);
                 return 1;
         }
         else {

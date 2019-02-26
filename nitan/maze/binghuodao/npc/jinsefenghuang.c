@@ -4,7 +4,7 @@ inherit __DIR__"bhd_npc.c";
 void create()
 {
         set_name(HIY "金色鳳凰" NOR, ({ "jinse fenghuang", "jinse", "fenghuang" }));
-        set("long", HIY "一只巨大鳳凰，鱗片閃爍著金光，張開雙翅，遮天蔽日。\n" NOR);
+        set("long", HIY "一隻巨大鳳凰，鱗片閃爍着金光，張開雙翅，遮天蔽日。\n" NOR);
 
         set("age", 99999);
         set("str",500);

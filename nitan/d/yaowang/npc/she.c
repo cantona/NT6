@@ -29,7 +29,7 @@ void create()
 void die()
 {
         object ob1, ob2;
-        message_vision(HIR"$N倒在地上卷曲了兩下身子，$N死了。\n"NOR, this_object());
+        message_vision(HIR"$N倒在地上捲曲了兩下身子，$N死了。\n"NOR, this_object());
         if(random(10)>8)
         {
         ob1 = new(__DIR__"obj/shedu");

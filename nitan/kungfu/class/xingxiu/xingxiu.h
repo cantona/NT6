@@ -10,7 +10,7 @@ int welcome(object ob)
 
         if( query("betrayer/times", ob) )
         {
-                command("say 沒關系，你雖然判過幾次師，不過最後終于棄暗投明，可喜可賀！");
+                command("say 沒關係，你雖然判過幾次師，不過最後終於棄暗投明，可喜可賀！");
                 return 0;
         }
 

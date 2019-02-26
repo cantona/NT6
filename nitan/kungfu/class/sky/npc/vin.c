@@ -65,7 +65,7 @@ mixed give_quest()
         
         if (me->query("sky12/floor") != 12)
         {
-                command("say 哼，無恥狂徒，你是怎麼到這裡來的，滾回地上去吧！");
+                command("say 哼，無恥狂徒，你是怎麼到這裏來的，滾回地上去吧！");
                 me->move("/d/city/wumiao");
                 me->unconcious();
                 return "哼！\n";
@@ -79,7 +79,7 @@ mixed give_quest()
         obj = ULTRA_QUEST_D->get_random_magic_item();
         
         command("smile");
-        message_sort(HIW "\n$N" HIW "對$n" HIW "說道：多年前我遺失一件上古神"
+        message_sort(HIW "\n$N" HIW "對$n" HIW "説道：多年前我遺失一件上古神"
                      "器，名曰：" + HIR + obj + HIW "，如果你能幫我把它找回來"
                      "給我，我便不再阻攔你！\n" NOR, this_object(), me);
         

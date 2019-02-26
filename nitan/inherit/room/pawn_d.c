@@ -4,7 +4,7 @@
 /*
 單項記錄格式：
 ({"find","/obj/book/guwen_book",933947068,"/d/chang/hockshop","這是"})
-   ID     pawned ob             到期時間   當舖物件            stamp long
+   ID     pawned ob             到期時間   當鋪物件            stamp long
 */
 
 /* 此功能需要對所有的典當物件進行管理和經常性的檢索操作
@@ -12,11 +12,11 @@
  * 能典當的物品總數應有限制，還有舉行拍賣大會的時間間隔，
  * 間隔越大負擔越重，目前暫定為每星期3、6晚八點舉行，以
  * 後如必要可改為每星期2、4、6晚舉行。
- * config 裡的 maximum array size 也應足夠大，目前暫設
+ * config 裏的 maximum array size 也應足夠大，目前暫設
  * 為 50000。
 */
 
-/* 為統一貨幣單位、直觀利于玩家出價參加競買，所有顯示價
+/* 為統一貨幣單位、直觀利於玩家出價參加競買，所有顯示價
  * 值均轉換成整數銀兩的阿拉伯數字
  */
 #define PAWN_STAMP        "/std/room/obj/pawn_stamp"
@@ -50,7 +50,7 @@ void create()
         set("channel_id", "典當精靈");
 }
 
-/* 玩家 login 時由此函數制造當票 */
+/* 玩家 login 時由此函數製造當票 */
 void restore_players_pawnstamp(object me)
 {
         mixed *user_objs;
@@ -109,16 +109,16 @@ int pawn_one_object(object stamp)
  * return 1        成功
  *
  * 此函數沒有進行是否已過期檢查。
- * 主要留待于另一個想法：
+ * 主要留待於另一個想法：
  * 目前物品過期就不能再贖回了，只能拍賣大會上見，
- * 過期檢查在 HOCKSHOP 物件裡。
- * 是否可以物品在過期後與上拍賣大會前的一段時間裡
+ * 過期檢查在 HOCKSHOP 物件裏。
+ * 是否可以物品在過期後與上拍賣大會前的一段時間裏
  * 還可贖回，不過要用兩倍的價格買回作為懲罰？
- * 如這樣 HOCKSHOP 裡要作相應的修改，return -1
+ * 如這樣 HOCKSHOP 裏要作相應的修改，return -1
  * 也具有了不同的意義---即：已賣出。
- * restore_players_pawnstamp 函數裡對過期的當票也
+ * restore_players_pawnstamp 函數裏對過期的當票也
  * 應交付玩家，可以把當票名稱改成“過期的當票”。
- * 是否如此有待于討論。
+ * 是否如此有待於討論。
  */
 int redeem_one_object(object stamp)
 {
@@ -161,7 +161,7 @@ protected void begain_sale_meeting()
         if(!can_begain_meeting())
         {
                 CHANNEL_D->do_channel( this_object(), "paimai",sprintf("◆%s創世%s年度全國拍賣大會通告◆："+
-                "本屆拍賣大會由于死當物品過少，決定取消！！",MUD_NAME,(!year)?"元":chinese_number(year)));
+                "本屆拍賣大會由於死當物品過少，決定取消！！",MUD_NAME,(!year)?"元":chinese_number(year)));
                 be_in_sale_meeting = 0;
                 return;
         }
@@ -204,7 +204,7 @@ protected void give_obj_to_user()
                         current_object->move(environment(current_user));
                 }
 
-                tell_object(current_user,sprintf("一個小伙計滿頭大汗地跑到你跟前說道：“這是您買的東西%s。”\n",
+                tell_object(current_user,sprintf("一個小夥計滿頭大汗地跑到你跟前説道：“這是您買的東西%s。”\n",
                         (cant_hold_flag)?"給您放地上了":"您收好" ));
         }
         else
@@ -231,7 +231,7 @@ protected void lasting_sale_objs(int when)
                 min_value_per_chu = to_int(ceil(value/1000))*100;
                 CHANNEL_D->do_channel( this_object(), "paimai","大會正式開始，第一件物品：\n"+
                         sprintf("             %s"+HIY+"一%s，原價 %d 兩白銀：，起價：%d 兩白銀\n"+
-                                "             每次出價至少要高于當前價格 %d 兩白銀，請有意者出價。\n",
+                                "             每次出價至少要高於當前價格 %d 兩白銀，請有意者出價。\n",
                                 current_object->name(),(query("unit", current_object))?
                                 query("unit", current_object):"件",to_int(ceil(value/100)),
                                 (current_value/100),(min_value_per_chu/100)));
@@ -288,7 +288,7 @@ protected void lasting_sale_objs(int when)
                         min_value_per_chu = to_int(ceil(value/1000))*100;
                         CHANNEL_D->do_channel( this_object(), "paimai","繼續進行下一件物品：\n"+
                                 sprintf("             %s"+HIY+"一%s，原價 %d 兩白銀：，起價：%d 兩白銀\n"+
-                                "             每次出價至少要高于當前價格 %d 兩白銀，請有意者出價。\n",
+                                "             每次出價至少要高於當前價格 %d 兩白銀，請有意者出價。\n",
                                 current_object->name(),(query("unit", current_object))?
                                 query("unit", current_object):"件",(value/100),
                                 (current_value/100),(min_value_per_chu/100)));

@@ -21,7 +21,7 @@
                 其中"變量類型"為變量的 LPC 類型，如 "string"
                 或者 "protected int" 等。
 
-        這個函數需要在 options 文件裡定義了 PACKAGE_CONTRIB .
+        這個函數需要在 options 文件裏定義了 PACKAGE_CONTRIB .
 
         by 發現號(Find@tx)
 

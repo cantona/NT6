@@ -53,7 +53,7 @@ int perform(object me, object target)
 
         addn("force", -skill, me);
         message_vision(HIW "$N把冰雪心法在體內運轉，然後徐徐注入"+weapon->name()+HIW"中。
-$N手中"+weapon->name()+HIW"所到處帶起了一陣輕煙，方圓幾丈內的空氣好象都凝聚起來！\n" NOR, me);
+$N手中"+weapon->name()+HIW"所到處帶起了一陣輕煙，方圓幾丈內的空氣好像都凝聚起來！\n" NOR, me);
         set_temp("ningxie", 1, me);
         set_temp("ningxie_effect", 0, target);
        
@@ -115,7 +115,7 @@ void ningxie_result(object me, object target)
            string str;
            weapon=query_temp("weapon", me);
            
-            message_vision(HIB"\n隨著$N手中"+weapon->name()+HIB"的舞動，周圍的空氣越來越冷了。\n"NOR,me);
+            message_vision(HIB"\n隨着$N手中"+weapon->name()+HIB"的舞動，周圍的空氣越來越冷了。\n"NOR,me);
             
             afp = COMBAT_D->skill_power(me, "neili", SKILL_USAGE_DEFENSE);
             if( afp < 1) afp = 1;
@@ -183,7 +183,7 @@ void ningxie_result(object me, object target)
 
                         }
                     if (query("max_qi",target)<0 || query("max_jing",target)<0 || (!living(target) && ((query("jing",target)<0) || query("qi",target)<0)) )   
-                       {str=target->name()+"被"+me->name()+"手中"+weapon->name()+HIM"所帶出的寒氣活活凍死了，聽說連屍體也青一塊紫一快的！"NOR;
+                       {str=target->name()+"被"+me->name()+"手中"+weapon->name()+HIM"所帶出的寒氣活活凍死了，聽説連屍體也青一塊紫一快的！"NOR;
                         CHANNEL_D->do_channel(me, "rumor",str);
                         target->die();
                         delete_temp("last_channel_msg", me);

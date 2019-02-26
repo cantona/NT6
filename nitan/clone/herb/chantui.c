@@ -2,12 +2,12 @@
 
 void create()
 {
-        set_name(YEL "蟬蛻" NOR, ({"chan tui"}));
+        set_name(YEL "蟬蜕" NOR, ({"chan tui"}));
         if (clonep())
                 set_default_object(__FILE__);
         else 
         {
-                set("long", "蟬蛻：蟬由幼蟲蛻變至成蟲所遺的殼，有去風濕的效果。\n");
+                set("long", "蟬蜕：蟬由幼蟲蜕變至成蟲所遺的殼，有去風濕的效果。\n");
                 set("base_unit", "個");
                 set("base_value", 4000);
                 set("base_weight", 60);

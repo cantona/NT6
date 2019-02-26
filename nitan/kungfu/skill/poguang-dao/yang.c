@@ -39,13 +39,13 @@ int perform(object me, object target)
                 return notify_fail("你現在的真氣不夠，難以施展" YANG "。\n");
 
         if (! living(target))
-                return notify_fail("對方都已經這樣了，用不著這麼費力吧？\n");
+                return notify_fail("對方都已經這樣了，用不着這麼費力吧？\n");
 
         wn = weapon->name();
                            
         msg = HIW "\n$N" HIW "一聲怒喝，內勁瀑漲，施展出絕招「" HIY "破陽刀" HIW 
               "」手中" + wn + HIW "出神般的揮舞而出，雖然招式看似簡單，但其中卻"
-              "蘊藏著無窮的威力，有如神助一般。" NOR;
+              "藴藏着無窮的威力，有如神助一般。" NOR;
 
         message_sort(msg, me, target);
 

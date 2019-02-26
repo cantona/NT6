@@ -38,7 +38,7 @@ int do_cut(string arg)
         if (me->is_busy()
          || query_temp("pending/exercising", me )
          || query_temp("exit_blocked", me) )
-                return notify_fail("你現在正忙著呢。\n");
+                return notify_fail("你現在正忙着呢。\n");
 
         if (!arg || arg != "taomu")
                 return notify_fail("你要雕刻什麼？\n");
@@ -47,13 +47,13 @@ int do_cut(string arg)
          || query("name", ob1) != "小鐵斧" )
                 return notify_fail("你沒有工具如何雕刻？！\n"); 
 
-        message_vision(CYN"$N拿起小鐵斧在桃木上細心的劈削著......\n"NOR, me);
+        message_vision(CYN"$N拿起小鐵斧在桃木上細心的劈削着......\n"NOR, me);
 
         if (random(2) == 1) {
-        message_vision(CYN"$N忙了半天，終于雕出一把粗糙的桃木劍，並在劍柄上刻上名字。\n"NOR, me);
+        message_vision(CYN"$N忙了半天，終於雕出一把粗糙的桃木劍，並在劍柄上刻上名字。\n"NOR, me);
         ob2 = new(__DIR__"taomujian");
-        ob2->set("long","這是一柄三尺來長，手工制成的桃木劍，似乎不是一件好兵器。\n"
-                         "劍柄上刻著“"+me->name()+"”幾個字。\n");
+        ob2->set("long","這是一柄三尺來長，手工製成的桃木劍，似乎不是一件好兵器。\n"
+                         "劍柄上刻着“"+me->name()+"”幾個字。\n");
         set("owner",query("id",  me), ob2);
         ob2->move(me);
         destruct(this_object());

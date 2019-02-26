@@ -27,7 +27,7 @@ int exert(object me, object target)
         addn("neili", -100, me);
         me->receive_damage("qi", 0);
 
-        message_combatd(HIR "$N" HIR "身形忽然變得詭秘異常，進退"
+        message_combatd(HIR "$N" HIR "身形忽然變得詭祕異常，進退"
                         "之間飄忽不定，令人無從捉摸。\n" NOR, me);
 
         addn_temp("apply/attack", skill/3, me);

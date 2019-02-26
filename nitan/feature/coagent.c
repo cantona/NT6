@@ -57,7 +57,7 @@ void finish_help()
         if( base_name(environment()) != startroom ) {
                 message_vision("$N看了看四周，匆匆地離開了。\n", me);
                 me->move(startroom);
-                message_vision("$N匆匆地趕了過來，拍了拍塵土，仿佛什麼"
+                message_vision("$N匆匆地趕了過來，拍了拍塵土，彷彿什麼"
                                "都沒有發生似的。\n", me);
         }
 

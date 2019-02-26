@@ -10,10 +10,10 @@ void create()
 {
         set("short", "戒律院");
         set("long", @LONG
-整個大殿門戶緊閉，密不透風。即便是在白晝，也猶如黑夜一般，
-每隔幾步的牆上，點燃著幾枝牛油巨燭。下方擺著一排排烙鐵、水牛
+整個大殿門户緊閉，密不透風。即便是在白晝，也猶如黑夜一般，
+每隔幾步的牆上，點燃着幾枝牛油巨燭。下方擺着一排排烙鐵、水牛
 皮鞭、穿孔竹板及狼牙棒等刑具。四周站滿了手持兵刃的執法僧兵。
-他們正用冷酷的眼神打量著你，令你不禁渾身哆嗦起來。
+他們正用冷酷的眼神打量着你，令你不禁渾身哆嗦起來。
 LONG );
         set("no_fight", "1");
         set("exits", ([
@@ -43,7 +43,7 @@ void init()
                 else 
                 {
                         message_vision(HIY "$N" HIY "一進戒律院，...只聽幾聲"
-                                       "大喝，如同炸雷般在大殿裡回響。"
+                                       "大喝，如同炸雷般在大殿裏迴響。"
                                        "$N" HIY "不禁渾身發抖，再也站立不住，"
                                        "腿一軟，撲通一聲跪了下來。\n\n" NOR,
                                        ob);
@@ -62,13 +62,13 @@ void processing(object ob)
         if (! objectp(ob))
                 return;
         write(HIW "\n你定了定神，抬頭細看，只見數十名持刀僧人將你團團圍起來，\n"
-                "一片雪亮的刀光逼得你眼都睜不開。正前方的高台上放著一把\n"
-                "太師椅，居中高坐著位白須白眉的老僧，臉色鐵青，目射精光，\n"
-                "狠狠地瞪著你。\n\n\n" NOR);
+                "一片雪亮的刀光逼得你眼都睜不開。正前方的高台上放着一把\n"
+                "太師椅，居中高坐着位白鬚白眉的老僧，臉色鐵青，目射精光，\n"
+                "狠狠地瞪着你。\n\n\n" NOR);
 
         if( !(fam=query("family", ob)) || fam["family_name"] != "少林派" )
                 message_vision(HIY "玄痛一聲大喝：爾等大膽狂徒，擅闖本寺"
-                               "護法鬆林，意在不軌，該當何罪！"
+                               "護法松林，意在不軌，該當何罪！"
                                "堂堂少林寺，豈能容你等宵小如此胡作非為！執法僧"
                                "兵何在！\n\n" NOR, ob);
 
@@ -88,7 +88,7 @@ void processing(object ob)
 
                 if( query("guilty", ob) == 2 )
                 {
-                        message_vision(HIY "玄痛盯著$N" HIY "看了半餉，說"
+                        message_vision(HIY "玄痛盯着$N" HIY "看了半餉，説"
                                        "道：$N" HIY "，你懲惡揚善，鋤暴安"
                                        "良，當得表彰，但出家人首戒殺生，你"
                                        "傷害人命，乃是僧家的重罪！ "
@@ -155,7 +155,7 @@ int valid_leave(object me, string dir)
                 &&  fam["generation"] == 37  ) 
                         return ::valid_leave(me, dir);
                 else
-                        return notify_fail("玄痛說道: 大膽，你還敢逃跑！執法僧兵何在！\n");
+                        return notify_fail("玄痛説道: 大膽，你還敢逃跑！執法僧兵何在！\n");
         }
 
         return ::valid_leave(me, dir);

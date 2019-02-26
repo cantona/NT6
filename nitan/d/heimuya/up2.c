@@ -14,9 +14,9 @@ void create()
 {
         set("short", "懸崖");
         set("long", @LONG
-又一座陡峭的懸崖立在了你的面前。懸崖上仿佛有座白色的建築，
+又一座陡峭的懸崖立在了你的面前。懸崖上彷彿有座白色的建築，
 可雲煙繚繞，看不清晰。崖上又垂下一條繩索(rope)，看上去象是懸
-崖上下互通消息的工具。繩索的上面似乎隱約有一個吊籃(basket)，
+崖上下互通消息的工具。繩索的上面似乎隱約有一個弔籃(basket)，
 懸崖的牆上似乎有一個匣子(xiazi)。
 LONG );
 
@@ -52,7 +52,7 @@ void check_trigger()
                 message("vision", "“叭”的一聲，你手中的令牌已被折斷，只見一個"
                         "掉籃(basket)從天而降，你不禁一怔！\n", this_object() );
                 set("item_desc", ([
-                    "basket" : "這是一個掉籃，是傳說中的交通工具。\n",
+                    "basket" : "這是一個掉籃，是傳説中的交通工具。\n",
                 ]));
                 
                 remove_call_out("on_board");
@@ -72,7 +72,7 @@ void on_board()
 
     if( !query("exits/enter") ) return;
     tell_object(me, HIG"只見掉籃緩緩向上，四周無限美好，\n"
-                "你似乎置身于一處人間仙境無異。\n"NOR);
+                "你似乎置身於一處人間仙境無異。\n"NOR);
 
     if( room = find_object(__DIR__"basket") )
     {
@@ -89,7 +89,7 @@ void arrive()
     if( room = find_object(__DIR__"basket") )
     {
         set("exits/out", __DIR__"up3", room);
-        message("vision", "□的一聲，你似乎一下從天上到了地上。\n",room );
+        message("vision", "噔的一聲，你似乎一下從天上到了地上。\n",room );
     }
     remove_call_out("close_passage");
     call_out("close_passage", 20);
@@ -130,7 +130,7 @@ int do_insert(string arg)
         }
         else    {
                 addn_temp("mark/cards", 1, me);
-                message("vision", "□的一聲，你看到掉籃向下一節。\n",me );
+                message("vision", "噔的一聲，你看到掉籃向下一節。\n",me );
         }
     }
     else

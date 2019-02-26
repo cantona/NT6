@@ -55,10 +55,10 @@ void create()
 int inquiry_tanqin()
 {
         object me = this_player();
-        message_vision("阿朱說道：這位" + RANK_D->query_respect(me) +
+        message_vision("阿朱説道：這位" + RANK_D->query_respect(me) +
                        "這麼有雅興，那我就為你彈奏一曲！\n只聽琴"
-                       "聲繁復清亮，你不由的痴了。\n", me );
-        message_vision("阿朱一曲終了，道個萬福，說道：現醜了。\n", me );
+                       "聲繁複清亮，你不由的痴了。\n", me );
+        message_vision("阿朱一曲終了，道個萬福，説道：現醜了。\n", me );
         return 1;
 }
 
@@ -69,8 +69,8 @@ mixed ask_me()
         me = this_player();
         if( query("family/family_name", me) != "慕容世家" )
         {
-                message_vision(CYN "$n" CYN "望著$N" CYN +
-                               "吃吃的笑，道：“儂說啥子耶？”\n" NOR, me,
+                message_vision(CYN "$n" CYN "望着$N" CYN +
+                               "吃吃的笑，道：“儂説啥子耶？”\n" NOR, me,
                                this_object());
                 return 1;
         }

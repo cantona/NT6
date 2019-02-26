@@ -7,7 +7,7 @@ void create()
 {
         set("short", "墓門");
         set("long", @LONG
-你走過了草地，眼前突然了一片開闊地，突兀地聳立著一座大墓，
+你走過了草地，眼前突然了一片開闊地，突兀地聳立着一座大墓，
 墓上砌的石頭已經班駁了，看的出來這是座古墓。墓前沒有立碑，也
 沒有任何的標記，不知道這是前朝哪位王公大臣的墓穴。墓門口被一
 塊的大石頭(shi)封閉得絲毫不透。
@@ -25,7 +25,7 @@ LONG );
         ]));
 
         set("item_desc", ([
-               "shi": HIC "這是塊巨石，怕不有萬斤上下，好象錈著「" NOR + YEL"降龍石" HIC
+               "shi": HIC "這是塊巨石，怕不有萬斤上下，好像錈着「" NOR + YEL"降龍石" HIC
                       "」幾個字。\n" NOR,
         ]) );
         set("coor/x", -3220);
@@ -51,13 +51,13 @@ int do_move(string arg)
 
         if( (int)me->query_str() > 33 ) {
                 message_vision(HIC "$N" HIC "站在石前，雙掌發力推動巨石，只聽得巨石"
-                       "吱吱連聲，緩\n緩向後移去，現出一道門戶來。\n" NOR,
+                       "吱吱連聲，緩\n緩向後移去，現出一道門户來。\n" NOR,
                        this_player());
                 set("exits/south", __DIR__"mudao01");
                 remove_call_out("close");
                 call_out("close", 5, this_object());
         } else
-                message_vision("$N試著推了推巨石，巨石紋絲不動，只得罷了。\n", this_player());
+                message_vision("$N試着推了推巨石，巨石紋絲不動，只得罷了。\n", this_player());
         return 1;
 }
 

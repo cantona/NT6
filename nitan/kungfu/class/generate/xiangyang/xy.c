@@ -19,7 +19,7 @@ int main(object me, string arg)
                 if (me->is_busy())return notify_fail("你正忙呢。\n");
                 
                 if (XYWAR_D->now_status() != 2 && XYWAR_D->now_status() != 3 && ! wizardp(me))
-                        return notify_fail("襄陽保衛戰目前還沒有開始，無法查看。\n");
+                        return notify_fail("襄陽保衞戰目前還沒有開始，無法查看。\n");
                 
                 XYWAR_D->show_soldier(me);
                 return 1;

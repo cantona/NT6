@@ -8,8 +8,8 @@ void create()
 {
     set("short", HIY"擂台"NOR);
         set("long", @LONG
-這是一個四方的大擂台，擂台北面掛著一張厚厚的布簾子，你感
-覺到一股濃厚的殺氣從布簾後散發出來，彌漫在空氣裡，直鑽入你內
+這是一個四方的大擂台，擂台北面掛着一張厚厚的布簾子，你感
+覺到一股濃厚的殺氣從布簾後散發出來，瀰漫在空氣裏，直鑽入你內
 心。
 LONG );
 
@@ -38,7 +38,7 @@ int do_get()
     me = this_player();
     if (wizardp(me)) return 0;
 
-    tell_object(me,"在這裡你想幹什麼？\n");
+    tell_object(me,"在這裏你想幹什麼？\n");
     return 1;
 }
 
@@ -48,7 +48,7 @@ int do_drop()
     me = this_player();
     if (wizardp(me)) return 0;
 
-    tell_object(me,"在這裡你想幹什麼？\n");
+    tell_object(me,"在這裏你想幹什麼？\n");
     return 1;
 }
 
@@ -58,7 +58,7 @@ int do_put()
     me = this_player();
     if (wizardp(me)) return 0;
 
-    tell_object(me,"在這裡你想幹什麼？\n");
+    tell_object(me,"在這裏你想幹什麼？\n");
     return 1;
 }
 
@@ -68,6 +68,6 @@ int do_summon()
     me = this_player();
     if (wizardp(me)) return 0;
 
-    tell_object(me,"在這裡你想幹什麼？\n");
+    tell_object(me,"在這裏你想幹什麼？\n");
     return 1;
 }

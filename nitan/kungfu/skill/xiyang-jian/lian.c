@@ -36,7 +36,7 @@ int perform(object me, object target)
                 return notify_fail("你沒有激發西洋劍術，無法使用連環劍！\n");
 
        if (! living(target))
-              return notify_fail("對方都已經這樣了，用不著這麼費力吧？\n");
+              return notify_fail("對方都已經這樣了，用不着這麼費力吧？\n");
 
         msg = HIC "\n$N" HIC "狂喝一聲，只見上一劍、下一劍、左一劍、右一劍、當中一劍，一起刺向$n"
               HIC "！\n" NOR;

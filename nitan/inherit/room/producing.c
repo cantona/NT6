@@ -25,7 +25,7 @@ void setup()
         string mine;
         int count;
 
-        // 這裡的房間不能戰鬥，而且永不停息運轉
+        // 這裏的房間不能戰鬥，而且永不停息運轉
         set("no_fight", 1);
         set("no_clean_up", 1);
 

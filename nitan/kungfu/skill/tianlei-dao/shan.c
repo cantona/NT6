@@ -38,12 +38,12 @@ int perform(object me, object target)
                 return notify_fail("你現在的真氣不夠，難以施展" + name() + "。\n");
 
         if (! living(target))
-                return notify_fail("對方都已經這樣了，用不著這麼費力吧？\n");
+                return notify_fail("對方都已經這樣了，用不着這麼費力吧？\n");
 
 
         wn = weapon->name();
 
-        msg = HIY "\n$N" HIY "將手中" + wn + HIY "立于胸前，施出絕招「" HIW "五"
+        msg = HIY "\n$N" HIY "將手中" + wn + HIY "立於胸前，施出絕招「" HIW "五"
               "雷連閃" HIY "」，$N身法陡然加快，\n手中" + wn + HIY "連續砍出五刀，"
               "刀法之精妙，令人匪夷所思。\n" NOR;
 

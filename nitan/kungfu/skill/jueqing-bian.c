@@ -9,7 +9,7 @@ int sanwu
 (object me, object victim, object weapon, int damage);
 
 mapping *action = ({
-([        "action":                "$N輕抖手腕，一招「青蛇吐芯」，手中$w抖得筆直，直向$n卷去",
+([        "action":                "$N輕抖手腕，一招「青蛇吐芯」，手中$w抖得筆直，直向$n捲去",
         "force":                60,
         "dodge":                -30,
         "damage":                30,
@@ -41,7 +41,7 @@ mapping *action = ({
         "skill_name" : "蟾蜍出洞",
         "damage_type":        "鞭傷"
 ]),
-([        "action":                "$N運氣于腕，一招「蜈蚣翻身」，手中$w轉起無數個圈圈，帶著一股陰風，直向$n撲去",
+([        "action":                "$N運氣於腕，一招「蜈蚣翻身」，手中$w轉起無數個圈圈，帶着一股陰風，直向$n撲去",
         "force":                300,
         "dodge":                -20,
         "damage":                80,
@@ -85,7 +85,7 @@ mapping query_action(object me, object weapon)
         ({
                 "$N一招"+WHT"「無孔不入」"+NOR"，$n身前身後都是$w的影子同時點$n全身各處大穴",
                 "$N一招未絕，第二招"+WHT"「無所不至」"+NOR"以然打到，手中$w點向$n周身諸處偏門穴道",
-                WHT"兩招掃過$N又是一招「無所不為」，$w回旋飛至，專打$n周身柔弱之處"NOR,
+                WHT"兩招掃過$N又是一招「無所不為」，$w迴旋飛至，專打$n周身柔弱之處"NOR,
         });
         level   = (int) me->query_skill("jueqing-bian", 1);
 

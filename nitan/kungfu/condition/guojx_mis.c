@@ -1,4 +1,4 @@
-//guojx_mis.c  郭姦細任務
+//guojx_mis.c  郭奸細任務
 
 #include <ansi.h>
 #include <login.h>

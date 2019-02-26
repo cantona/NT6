@@ -10,7 +10,7 @@ void create()
         if (clonep())
                 destruct(this_object());
         else {
-                set("long", HIY "一柄鋒利的長劍，劍身宛如流水，隱隱漾著青光。\n" NOR);
+                set("long", HIY "一柄鋒利的長劍，劍身宛如流水，隱隱漾着青光。\n" NOR);
                 set("unit", "柄");
                 set("value", 800000);
                 set("no_sell", "…嗯…這劍倒是口好劍，不過這價錢不好開，我看"

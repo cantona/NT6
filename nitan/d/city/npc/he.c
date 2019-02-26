@@ -13,7 +13,7 @@ void create()
 
         set("gender", "男性" );
         set("age", 53);
-        set("long", "何員外是揚州城裡的首富，和當地的官紳都有很深的交情。據說他還和桃花島有些關系。\n");
+        set("long", "何員外是揚州城裏的首富，和當地的官紳都有很深的交情。據説他還和桃花島有些關係。\n");
         set("combat_exp", 400);
         set("attitude", "friendly");
         set("inquiry", ([
@@ -43,7 +43,7 @@ void init()
 void greeting(object ob)
 {
         if( !ob || environment(ob) != environment() ) return;
-        say("何員外奇怪地對你說道：“你這人怎麼隨隨便便地就跑到我的園子裡來？”\n");
+        say("何員外奇怪地對你説道：“你這人怎麼隨隨便便地就跑到我的園子裏來？”\n");
 }
 
 mixed ask_back()
@@ -53,15 +53,15 @@ mixed ask_back()
         me = this_player();
         if( query("family/family_name", me) != "桃花島" )
         {
-                message_vision("$N自顧自的幹活，好象沒有聽見$n在說什麼。\n",
+                message_vision("$N自顧自的幹活，好像沒有聽見$n在説什麼。\n",
                                this_object(), me);
                 return -1;
         }
 
         message_sort("$N猛然抬起頭來，上上下下打量了一會"
                      "兒$n，眼角微微一動，立刻放下手中的"
-                     "活計，從內室領出一只白雕，說道：你"
-                     "乘坐這只白雕回桃花島吧。\n",
+                     "活計，從內室領出一隻白雕，説道：你"
+                     "乘坐這隻白雕回桃花島吧。\n",
                      this_object(), me);
 
         tell_object(me, HIW "你坐上白雕飛了很久，越過大海，忽然眼前一亮，"

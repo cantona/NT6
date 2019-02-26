@@ -4,7 +4,7 @@ inherit WORM;
 void create()
 {
         set_name(CYN "長螯蠍" NOR, ({ "changao xie", "changao", "xie" }));
-        set("long", CYN "這是一只雙螯巨大的毒蠍。\n" NOR);
+        set("long", CYN "這是一隻雙螯巨大的毒蠍。\n" NOR);
         set("race", "野獸");
         set("age", random(10));
         set("attitude", "peaceful");

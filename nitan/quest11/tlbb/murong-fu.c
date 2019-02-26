@@ -17,7 +17,7 @@ inherit NPC;
 #define QUESTDIR "quest/天龍八部/"
 #define QUESTDIR1 "quest/天龍八部/凌波微步篇/"
 #define QUESTDIR2 "quest/天龍八部/天龍營救篇/"
-#define QUESTDIR3 "quest/天龍八部/蕭峰身世篇/"
+#define QUESTDIR3 "quest/天龍八部/蕭峯身世篇/"
 #define QUESTDIR4 "quest/天龍八部/大遼救援篇/"
 #define QUESTDIR5 "quest/天龍八部/復興天下篇/"
 
@@ -48,7 +48,7 @@ void create()
 	set("nick","以彼之道 還施彼身");
 	set("long",
 		"他就是天下號稱以彼之道，還施彼身的姑蘇慕容復。\n"
-		"他臉上帶著不可一世的笑容。\n");
+		"他臉上帶着不可一世的笑容。\n");
 	set("age", 27);
 	set("attitude", "friendly");
 	set("str", 30);
@@ -106,11 +106,11 @@ void create()
 
 	set("inquiry", ([
 		"name" : "我就是以彼之道，還施彼身的姑蘇慕容復。\n",
-		"here" : "這裡是大名鼎鼎的燕子塢，難道你沒有聽說過？\n",
+		"here" : "這裏是大名鼎鼎的燕子塢，難道你沒有聽説過？\n",
 		"rumors" : "家父突染惡疾，我連他老人家最後一面都沒見到，此事頂有蹊蹺！\n",
-		"姑媽" : "我的姑媽住在曼佗羅山莊，那裡有聞名天下的娘繯玉洞。\n",
-		"虛竹" : "你說的可是少林弟子虛竹？我不認識......\n",
-		"葉二娘" : "我不認識......你找錯人問了。\n",
+		"姑媽" : "我的姑媽住在曼佗羅山莊，那裏有聞名天下的娘繯玉洞。\n",
+		"虛竹" : "你説的可是少林弟子虛竹？我不認識......\n",
+		"葉二孃" : "我不認識......你找錯人問了。\n",
 		"還施水閣" : (: ask_ge :),
 		"慕容博" : (: ask_bo :),
 		"領悟" : (: ask_book :),
@@ -119,16 +119,16 @@ void create()
 		"碧玉劍" : (: ask_sword2 :),
 		"寶劍" : (: ask_sword :),
 		"次數" : (: ask_times :),
-		"鬥轉星移"  : (: ask_skill :),
+		"斗轉星移"  : (: ask_skill :),
 		"圖解" : (: ask_book2 :),
 		"武學" : (: ask_learn :),
-		"復命" : (: ask_fuming :),
+		"覆命" : (: ask_fuming :),
 		"放棄" : (: ask_fangqi :),
 		"復興天下" : (: ask_fuxing :),//tlbb quest
 		"大燕國" : (: ask_fuxing :),
 		"復國" : (: ask_fuxing :),	
 		"大燕國玉璽" : (: ask_yuxi :),
-		"秘密" : (: ask_yuxi :),		
+		"祕密" : (: ask_yuxi :),		
 		"玉璽" : (: ask_yuxi :),	
               "以彼之道還施彼身" : (: ask_bishen :),
 	
@@ -181,14 +181,14 @@ void greeting(object me)
 	{
 		message_vision(HIC"\n$n疑惑地問道：$N，人呢？\n"NOR,me,this_object()); 
 		me->delete_temp("quest/天龍八部");
-		me->delete_temp("quest/busy");//任務沖突標志取消
+		me->delete_temp("quest/busy");//任務衝突標誌取消
 		return;
 	}
 	command("whisper "+me->query("id")+" 沒想到"+ RANK_D->query_respect(me) +"竟然有如此實力，獨闖少林，連破少林伏魔陣和丐幫打狗陣！");
-	command("whisper "+me->query("id")+" 更沒有想到"+ RANK_D->query_respect(me) +"竟然能夠擊敗無名神僧和蕭峰的聯手！\n");
+	command("whisper "+me->query("id")+" 更沒有想到"+ RANK_D->query_respect(me) +"竟然能夠擊敗無名神僧和蕭峯的聯手！\n");
 	command("chat* admire "+me->query("id"));
 	command("pat "+me->query("id"));
-	command("whisper "+me->query("id")+" 有"+ RANK_D->query_respect(me) +"的幫助，想來復興我大燕國指日可待！");
+	command("whisper "+me->query("id")+" 有"+ RANK_D->query_respect(me) +"的幫助，想來複興我大燕國指日可待！");
 	command("haha "+me->query("id"));
 	command("whisper "+me->query("id")+" "+ RANK_D->query_respect(me) +"，等朕興復大燕，身登大寶，人人皆有封賞。");
 
@@ -197,14 +197,14 @@ void greeting(object me)
 
 	me->set(QUESTDIR5+"over",1);
 	me->delete_temp("quest/天龍八部");
-	me->delete_temp("quest/busy");//任務沖突標志取消
+	me->delete_temp("quest/busy");//任務衝突標誌取消
 	//獎勵
         p=10+random(100);
 	me->add("max_neili",p);
         me->add("combat_exp",me->query_skill("force")*2+500);
         i=100+random(100);
 	me->add("mana",i);
-        tell_object(me,HIY"\n你于"+NATURE_D->game_time()+"幫助慕容復打敗少林丐幫，實現復興天下的計劃，獲得"+p+"點最大內力、"+((int)me->query_skill("force")*2+500)+"點經驗獎勵、"+i+"點聲望。\n"NOR);   
+        tell_object(me,HIY"\n你於"+NATURE_D->game_time()+"幫助慕容復打敗少林丐幫，實現復興天下的計劃，獲得"+p+"點最大內力、"+((int)me->query_skill("force")*2+500)+"點經驗獎勵、"+i+"點聲望。\n"NOR);   
         log_file("quest/TLBB", sprintf("%s(%s) 復興天下篇完成。獎勵：%d點最大內力，%d點經驗，%d點聲望。\n", me->name(1),me->query("id"), p,(me->query_skill("force")*2+500),i ) );
 }
 void attempt_apprentice(object ob)
@@ -223,7 +223,7 @@ void attempt_apprentice(object ob)
 
 	command("say 嗯，看你還是個學武的料，我就收下你吧！");
 	command("say 蒼天在上，讓我姑蘇慕容又得一良材，為復興我大燕多了一份力量。");
-	command("chat* 朗聲說道：公子我又收一良材，大燕興復指日可待啦！");
+	command("chat* 朗聲説道：公子我又收一良材，大燕興復指日可待啦！");
 	command("chat* haha");
 	command("recruit " + ob->query("id"));
 	ob->set("title","姑蘇慕容第三代弟子");
@@ -236,14 +236,14 @@ string ask_fuxing()
 
 	mapping fam = ob->query("family");
 	if ( !fam )
-		return "這位"+ RANK_D->query_respect(ob) +"無門無派，此話從何說起？";
+		return "這位"+ RANK_D->query_respect(ob) +"無門無派，此話從何説起？";
 	if( !ob->query(QUESTDIR3+"bad"))
-		return "我與"+ RANK_D->query_respect(ob) +"向來沒什麼往來，此話從何說起？"; 		
+		return "我與"+ RANK_D->query_respect(ob) +"向來沒什麼往來，此話從何説起？"; 		
 
 	if( ob->query(QUESTDIR5+"over"))
 	{
 		command("haha");
-		command("whisper "+ob->query("id")+" 有"+ RANK_D->query_respect(ob) +"的幫助，想來復興我大燕國指日可待！");
+		command("whisper "+ob->query("id")+" 有"+ RANK_D->query_respect(ob) +"的幫助，想來複興我大燕國指日可待！");
 		if (random(2))return "今天天氣就是好，就是好。";
 		return "今天天氣真不錯。";
 	}
@@ -257,7 +257,7 @@ string ask_fuxing()
 	if( ob->query_temp(QUESTDIR5+"yuxi") && !ob->query(QUESTDIR5+"start"))
 	{
 		command("addoil " + ob->query("id"));
-		command("whisper " + ob->query("id")+" "+ RANK_D->query_respect(ob) +"，不是告訴盡快將玉璽找回？");
+		command("whisper " + ob->query("id")+" "+ RANK_D->query_respect(ob) +"，不是告訴儘快將玉璽找回？");
 		if (random(2))return "今天天氣就是好，就是好。";
 		return "今天天氣真不錯。";
 	}
@@ -270,7 +270,7 @@ string ask_fuxing()
 	}		
     
 	command("addoil "+ob->query("id"));
-	command("say "+ RANK_D->query_respect(ob) +"幫我把蕭峰趕出中原，已經幫我大忙了！");
+	command("say "+ RANK_D->query_respect(ob) +"幫我把蕭峯趕出中原，已經幫我大忙了！");
 	//增加時間和經驗間隔限制
 	//時間一天，經驗500K
 	if(ob->query(QUESTDIR+"time")&&time()-ob->query(QUESTDIR+"time")<86400)
@@ -284,27 +284,27 @@ string ask_fuxing()
 		if ( obj[x]->query_temp(QUESTDIR5+"askfu") && obj[x]!=ob) 
 		{
 			command("sigh "+ob->query("id"));
-			return "只是關于這件事情，已經有"+obj[x]->query("name")+RANK_D->query_respect(obj[x]) +"幫我了.........";
+			return "只是關於這件事情，已經有"+obj[x]->query("name")+RANK_D->query_respect(obj[x]) +"幫我了.........";
 		}
 	}
-	//設定標志
+	//設定標誌
 	ob->set(QUESTDIR+"time",time());
 	ob->set(QUESTDIR+"combat_exp",ob->query("combat_exp"));  
 
 	command("whisper " + ob->query("id")+" 恩，只是所謂復興天下，談何容易，而且......");
 	command("look " + ob->query("id"));
-	command("whisper " + ob->query("id")+" 當今，天下武林所謂正派有“兩派一幫”之說，就是少林派、武當派與丐幫。");
-	command("whisper " + ob->query("id")+" 其中少林、武當人稱武林泰山北鬥，臥龍藏虎之輩層出不窮，無名神僧和張三豐人稱不死老怪物。");
-	command("whisper " + ob->query("id")+" 而丐幫乃天下第一大幫，從前任幫主蕭峰，到大俠郭靖、還是神丐洪七，都是名震一方的高手。");
+	command("whisper " + ob->query("id")+" 當今，天下武林所謂正派有“兩派一幫”之説，就是少林派、武當派與丐幫。");
+	command("whisper " + ob->query("id")+" 其中少林、武當人稱武林泰山北斗，卧龍藏虎之輩層出不窮，無名神僧和張三丰人稱不死老怪物。");
+	command("whisper " + ob->query("id")+" 而丐幫乃天下第一大幫，從前任幫主蕭峯，到大俠郭靖、還是神丐洪七，都是名震一方的高手。");
 	command("consider");
-	command("whisper " + ob->query("id")+" 近年來，張無忌掌教西域明教，大有凌駕中原武林之勢，且因武當關系緊密，影響力日益加劇。");
+	command("whisper " + ob->query("id")+" 近年來，張無忌掌教西域明教，大有凌駕中原武林之勢，且因武當關係緊密，影響力日益加劇。");
 	command("whisper " + ob->query("id")+" 西南大理，枯榮復出，六脈重現，段譽更被稱為青年第一高手，挾皇室之威，隱約成為江南武林之尊。");
 	command("whisper " + ob->query("id")+" 因此，要復興天下，必須掃除這“兩派一幫一教一世家”。對付丐幫少林，我已經有了一個完全之策。");
-	command("whisper " + ob->query("id")+" "+ RANK_D->query_respect(ob) +"竟然立志復興天下，就先帶張三豐、張無忌或枯榮三個中任意一個人頭回來見我，以明心志！");
+	command("whisper " + ob->query("id")+" "+ RANK_D->query_respect(ob) +"竟然立志復興天下，就先帶張三丰、張無忌或枯榮三個中任意一個人頭回來見我，以明心志！");
 	log_file("quest/TLBB", sprintf("%s(%s)為復興天下需要砍人了，特此紀錄。經驗：%d。\n", ob->name(1),ob->query("id"), ob->query("combat_exp")) );
 	command("addoil " + ob->query("id"));
 	ob->set_temp(QUESTDIR5+"askfu",1);
-	ob->set_temp("quest/busy",1);//與任務系統沖突標志
+	ob->set_temp("quest/busy",1);//與任務系統衝突標誌
 	if (random(2))		return "今天天氣就是好，就是好。";
 	return "今天天氣真不錯。";
 }
@@ -317,14 +317,14 @@ string ask_yuxi()
 
 	mapping fam = ob->query("family");
 	if ( !fam )
-		return "這位"+ RANK_D->query_respect(ob) +"無門無派，此話從何說起？";
+		return "這位"+ RANK_D->query_respect(ob) +"無門無派，此話從何説起？";
 	if( !ob->query(QUESTDIR3+"bad"))
-		return "我與"+ RANK_D->query_respect(ob) +"向來沒什麼往來，此話從何說起？"; 		
+		return "我與"+ RANK_D->query_respect(ob) +"向來沒什麼往來，此話從何説起？"; 		
 
 	if( ob->query(QUESTDIR5+"over"))
 	{
 		command("haha");
-		command("whisper "+ob->query("id")+" 有"+ RANK_D->query_respect(ob) +"的幫助，想來復興我大燕國指日可待！");
+		command("whisper "+ob->query("id")+" 有"+ RANK_D->query_respect(ob) +"的幫助，想來複興我大燕國指日可待！");
 		if (random(2))return "今天天氣就是好，就是好。";
 		return "今天天氣真不錯。";
 	}
@@ -339,14 +339,14 @@ string ask_yuxi()
 	if( ob->query_temp(QUESTDIR5+"yuxi") && !ob->query(QUESTDIR5+"start"))
 	{
 		command("? " + ob->query("id"));
-		command("whisper " + ob->query("id")+" "+ RANK_D->query_respect(ob) +"，不是告訴盡快將玉璽找回？");
+		command("whisper " + ob->query("id")+" "+ RANK_D->query_respect(ob) +"，不是告訴儘快將玉璽找回？");
 		if (random(2))return "今天天氣就是好，就是好。";
 		return "今天天氣真不錯。";
 	}
 	if(!ob->query_temp(QUESTDIR5+"give_shouji") && !ob->query(QUESTDIR5+"start"))
 	{
 		command("? " + ob->query("id"));
-		command("whisper " + ob->query("id")+" "+ RANK_D->query_respect(ob) +"，你哪裡知道玉璽這回事情？");
+		command("whisper " + ob->query("id")+" "+ RANK_D->query_respect(ob) +"，你哪裏知道玉璽這回事情？");
 		if (random(2))return "今天天氣就是好，就是好。";
 		return "今天天氣真不錯。";
 	}
@@ -386,9 +386,9 @@ string ask_yuxi()
 	mrdizi->set("fight_id",ob->query("id")); 
 	mrdizi->set("yuxi_have",1);//帶玉璽的弟子
 	mrdizi->move(room);
-	ob->set_temp("quest/busy",1);//與任務系統沖突標志
+	ob->set_temp("quest/busy",1);//與任務系統衝突標誌
 	tell_room(environment(mrdizi), HIB"\n"+mrdizi->name()+"匆匆地來到"+room->query("short")+"，神色大是慌張。\n"NOR);
-	command("whisper " + ob->query("id")+" 我已經在燕子屋布下天羅地網，剛才探子回報，叛徒很在曼陀羅山莊"+room->query("short")+"出現過！");
+	command("whisper " + ob->query("id")+" 我已經在燕子屋佈下天羅地網，剛才探子回報，叛徒很在曼陀羅山莊"+room->query("short")+"出現過！");
 	log_file("quest/TLBB", sprintf("%s(%s)為復興天下需要尋找玉璽，特此紀錄。經驗：%d。\n", ob->name(1),ob->query("id"), ob->query("combat_exp")) );
 	command("addoil "+ob->query("id"));
 	if(wizardp(ob)) tell_object(ob,"\n"+where+"\n");
@@ -403,7 +403,7 @@ string ask_fenglu()
 	int gold = 0, fenglu;
 
 	if ( !fam || fam["family_name"] != "姑蘇慕容")
-		return "這位"+ RANK_D->query_respect(ob) +"不是我慕容弟子，此話從何說起？";
+		return "這位"+ RANK_D->query_respect(ob) +"不是我慕容弟子，此話從何説起？";
         switch ( fam["generation"] ) {
 		case 2:
 			gold += 500;
@@ -446,7 +446,7 @@ mixed ask_sword2()
 
 	weapon = present("biyu jian", this_object());
 	if (!objectp(weapon))
-		return "碧玉劍已經被人拿走了, 現在不在我手裡。";
+		return "碧玉劍已經被人拿走了, 現在不在我手裏。";
 	command("unwield biyu jian");
 	command("give biyu jian to " + me->query("id"));
 	return 1;
@@ -467,7 +467,7 @@ string ask_skill()
 
 	if (!(fam = this_player()->query("family"))|| fam["family_name"] != "姑蘇慕容")
 		return RANK_D->query_respect(this_player()) + "與本派素無來往，不知此話從何談起？";
-	return "鬥轉星移是我慕容家的絕學，最是注重招架和身法。";
+	return "斗轉星移是我慕容家的絕學，最是注重招架和身法。";
 }
 
 string ask_ge()
@@ -476,7 +476,7 @@ string ask_ge()
 
 	if (!(fam = this_player()->query("family")) || fam["family_name"] != "姑蘇慕容")
 		return RANK_D->query_respect(this_player()) + "與本派素無來往，不知此話從何談起？";
-	return "還施水閣是我慕容收藏天下秘籍之所在，在我的書……";
+	return "還施水閣是我慕容收藏天下祕籍之所在，在我的書……";
 }
 
 string ask_sword()
@@ -501,16 +501,16 @@ string ask_book()
 		return RANK_D->query_respect(me) + "功力不夠，何以談及領悟？";
 	if (present("douzhuan xingyi", me))
 		return RANK_D->query_respect(me) +
-		"現在身上不是有鬥轉星移的武籍了嗎？怎麼又來要了？ 真是貪得無厭！";
+		"現在身上不是有斗轉星移的武籍了嗎？怎麼又來要了？ 真是貪得無厭！";
 
 	ob = unew("/d/mr/obj/shu1");
 	if(!clonep(ob))
-		return "鬥轉星移武籍已經被別人要走了。";
+		return "斗轉星移武籍已經被別人要走了。";
 
 	ob->move(me);
 
-	message_vision("$N得到一本鬥轉星移的武功秘籍。\n", me);
-	return "好吧，看你為慕容家忠心耿耿，這本書就賜于你吧。";
+	message_vision("$N得到一本斗轉星移的武功祕籍。\n", me);
+	return "好吧，看你為慕容家忠心耿耿，這本書就賜於你吧。";
 }
 
 string ask_book2()
@@ -530,15 +530,15 @@ string ask_book2()
 		"功力不夠，何以談及領取圖解？";
 	if (present("douzhuan xingyi", me))
 		return RANK_D->query_respect(this_player()) +
-		"你現在身上不是有鬥轉星移的武籍了嘛，怎麼又來要了？ 真是貪得無厭！";
+		"你現在身上不是有斗轉星移的武籍了嘛，怎麼又來要了？ 真是貪得無厭！";
 
 	ob = unew("/d/mr/obj/shu2");
 	if (!clonep(ob))
-		return "對不起，鬥轉星移的武籍已經被別人要走了。";
+		return "對不起，斗轉星移的武籍已經被別人要走了。";
 
 	ob->move(this_player());
-	message_vision("$N得到一本鬥轉星移的武功秘籍。\n", me);
-	return "好吧，看你為慕容家忠心耿耿，這本書就賜于你吧。";
+	message_vision("$N得到一本斗轉星移的武功祕籍。\n", me);
+	return "好吧，看你為慕容家忠心耿耿，這本書就賜於你吧。";
 }
 
 mixed ask_bo()
@@ -548,7 +548,7 @@ mixed ask_bo()
 
 	if (me->query_temp("marks/失敗")) {
 		message_vision(
-			"$N眼中發出兩道寒光直射$n，一字一字地說道：已經較量過了，你怎麼還不回去安心練功呢！\n",
+			"$N眼中發出兩道寒光直射$n，一字一字地説道：已經較量過了，你怎麼還不回去安心練功呢！\n",
 			ob, me
 		);
 		return 1;
@@ -563,7 +563,7 @@ mixed ask_bo()
 		return "你已經可以去見家父，不用再向我學了！";
 
 	message_vision(
-		"$N眼中發出兩道寒光直射$n，一字一字地說道：家父現在身處少林，那裡藏龍臥虎，\n"
+		"$N眼中發出兩道寒光直射$n，一字一字地説道：家父現在身處少林，那裏藏龍卧虎，\n"
 		"你若武功未成，最好不要去自取其辱；如果你有信心，就和我較量一下。(jiaoliang)\n",
 		ob, me
 	);
@@ -582,7 +582,7 @@ int do_jiaoliang()
 	obj = this_player();
 
 	if (obj->query_temp("marks/jiao")) {
-		message_vision("$N對$n說：好吧，那就請師父指點幾招。\n", obj, me);
+		message_vision("$N對$n説：好吧，那就請師父指點幾招。\n", obj, me);
 		set("max_qi", 4500);
 		set("jiali", 50);
 		set("neili", 6500);
@@ -598,7 +598,7 @@ int do_jiaoliang()
 			COMBAT_D->do_attack(obj, me, obj->query_temp("weapon"), 1);
 			if (!i || (me->query("qi")*100/current_qi) < 30) {
 				message_vision(
-					"$N對$n說道：不想我慕容世家又出良材，我這就寫封家信，你馬上動身前去少林，\n"
+					"$N對$n説道：不想我慕容世家又出良材，我這就寫封家信，你馬上動身前去少林，\n"
 					"把它交給家父。希望你能不負眾望，振興慕容世家，光復大燕國。\n",
 					me, obj
 				);
@@ -611,7 +611,7 @@ int do_jiaoliang()
 			COMBAT_D->do_attack(me, obj, me->query_temp("weapon"), 1);
 		}
 		message_vision(
-			"$N對著$n冷冷說道：你武功未成，就好高騖遠，你還是安心練功去吧！\n",
+			"$N對着$n冷冷説道：你武功未成，就好高騖遠，你還是安心練功去吧！\n",
 			me, obj
 		);
 		obj->set_temp("marks/失敗", 1);
@@ -634,16 +634,16 @@ string ask_learn()
 		return RANK_D->query_respect(me)
 		+ "你已經盡數掌握了精深奧妙的武學訣要，我可不敢勞您的大架了。";
 
-	if (me->query_skill("parry", 1) < 100 ) // 招架必須大于等于100級
+	if (me->query_skill("parry", 1) < 100 ) // 招架必須大於等於100級
 		return RANK_D->query_respect(me) +
-		"于本門武學尚不能運用自如，如何談及天下之武學？";
-	if (me->query_skill("douzhuan-xingyi", 1) < 100 )  // 鬥轉星移必須大于等于100級
+		"於本門武學尚不能運用自如，如何談及天下之武學？";
+	if (me->query_skill("douzhuan-xingyi", 1) < 100 )  // 斗轉星移必須大於等於100級
 		return RANK_D->query_respect(me) +
-		"于本門武學尚不能運用自如，如何談及天下之武學？";
+		"於本門武學尚不能運用自如，如何談及天下之武學？";
 	if (me->query_condition("mr_job") )
 		return RANK_D->query_respect(me) +"還沒完成我交給你的任務呢。";
 	if (is_fighting())
-		return "嚷什麼嚷，沒看見我這正忙著呢嗎？";
+		return "嚷什麼嚷，沒看見我這正忙着呢嗎？";
 	if (me->query("job_name") =="慕容偷學" && !wizardp(me))
 		return RANK_D->query_respect(me) +
 		"先等等吧，我現在沒有什麼感興趣的武功想學。";
@@ -694,13 +694,13 @@ int ask_fuming(string arg)
 
 	if( me->is_busy())
 	{
-		command("say 你正忙著呢，有什麼事情呆會再說。");
+		command("say 你正忙着呢，有什麼事情呆會再説。");
 		return 1;
 	}
 
 	if( me->is_fighting())
 	{
-		command("say 你正打架呢，有什麼事情呆會再說。");
+		command("say 你正打架呢，有什麼事情呆會再説。");
 		return 1;
 	}
 
@@ -712,7 +712,7 @@ int ask_fuming(string arg)
 
 	if( this_object()->is_fighting())
 	{
-		command("say 嚷什麼嚷，沒看見我這正忙著呢嗎？");
+		command("say 嚷什麼嚷，沒看見我這正忙着呢嗎？");
 		return 1;
 	}
 	me->set("job_name", "慕容偷學");
@@ -741,9 +741,9 @@ int ask_fuming(string arg)
 		bouns,pot,me->query("job_time/慕容"),me->query("combat_exp")), me);
 */
           
-	message_vision(CYN"慕容復仔細研究著$N記在紙卷上的武功精要，情不自禁地說道：好一個"+me->query_temp("skill_target")+"。\n"NOR, me);
+	message_vision(CYN"慕容復仔細研究着$N記在紙捲上的武功精要，情不自禁地説道：好一個"+me->query_temp("skill_target")+"。\n"NOR, me);
               TASKREWARD_D->get_reward(me,"慕容",0,0,0,16+ random(5),0,0,0,this_object());
-	message_vision(CYN"慕容復拍了拍$N的頭，對$P說道：辛苦你了，下去休息吧。\n"NOR, me);
+	message_vision(CYN"慕容復拍了拍$N的頭，對$P説道：辛苦你了，下去休息吧。\n"NOR, me);
 
 
 	me->improve_skill("douzhuan-xingyi", me->query_int()*2);
@@ -795,7 +795,7 @@ string ask_times()
 	object ob;
 	ob = this_player();
 	if(!ob->query("job_time/慕容"))
-		return "很遺憾，"+ob->name()+"，你好象沒有為慕容做過貢獻！";
+		return "很遺憾，"+ob->name()+"，你好像沒有為慕容做過貢獻！";
 	return ""+ob->name()+"，你已經完成了"+CHINESE_D->chinese_number((int)ob->query("job_time/慕容"))+"次慕容偷學任務！";
 }
 
@@ -810,15 +810,15 @@ int accept_object(object who, object ob)
       	if( ob->query("owner")==who->query("id"))
         {
            command("smile "+who->query("id"));
-  	       command("whisper "+who->query("id")+" 不錯，看你如此用心，這裡有個天大的秘密可以告訴你。");
-  	       command("whisper "+who->query("id")+" 二十年前，江南葉家莊葉二姑娘離奇失蹤，幾年後江湖上出現所謂四大惡人，其中一個就叫葉二娘。");
+  	       command("whisper "+who->query("id")+" 不錯，看你如此用心，這裏有個天大的祕密可以告訴你。");
+  	       command("whisper "+who->query("id")+" 二十年前，江南葉家莊葉二姑娘離奇失蹤，幾年後江湖上出現所謂四大惡人，其中一個就叫葉二孃。");
 		   command("smile "+who->query("id"));
-  	       command("whisper "+who->query("id")+" 沒有人想到，葉二娘就是當年葉二姑娘。而這一切罪魁禍首就是當今的少林主持玄慈！");
+  	       command("whisper "+who->query("id")+" 沒有人想到，葉二孃就是當年葉二姑娘。而這一切罪魁禍首就是當今的少林主持玄慈！");
 		   command("smoke");
   	       command("whisper "+who->query("id")+" 二十年前，還是少年的玄慈曾經夜宿葉家莊，勾引葉二姑娘，幾年後葉二姑娘更為他生下一子。");
-  	       command("whisper "+who->query("id")+" 這是我們天大的機會。這個孩子就是少林三十六代弟子虛竹。他屁股上的胎記可以証明一切！！");
+  	       command("whisper "+who->query("id")+" 這是我們天大的機會。這個孩子就是少林三十六代弟子虛竹。他屁股上的胎記可以證明一切！！");
 		   command("claw");
-  	       command("whisper "+who->query("id")+" 如此一來，少林名譽掃地，之後趁丐幫蕭峰離走內亂之際滅其丐幫，之後武林便是你我的天下！");
+  	       command("whisper "+who->query("id")+" 如此一來，少林名譽掃地，之後趁丐幫蕭峯離走內亂之際滅其丐幫，之後武林便是你我的天下！");
            command("crazy");
            command("addoil "+who->query("id"));
            who->set(QUESTDIR5+"start",1);
@@ -827,7 +827,7 @@ int accept_object(object who, object ob)
         else
         {
            command("? "+who->query("id"));
-  	       command("whisper "+who->query("id")+" 這不是你要找的玉璽，這塊你從哪裡得來的？");
+  	       command("whisper "+who->query("id")+" 這不是你要找的玉璽，這塊你從哪裏得來的？");
   	       command("heng "+who->query("id"));
 		   command("whisper "+who->query("id")+" 竟然隨便找來一塊就來胡弄我.........");
 		   log_file("quest/TLBB", sprintf("%s(%s)找的玉璽不是本人的，失敗。經驗：%d。\n", who->name(1),who->query("id"), who->query("combat_exp")) );
@@ -853,11 +853,11 @@ int accept_object(object who, object ob)
 	  {
 		  command("smile "+who->query("id"));	  
 		  if(ob->query("victim_id")=="zhang sanfeng")
-			  command("whisper "+who->query("id")+" 不錯，武當那個老雜毛沒想到也有今天，這裡有個天大的秘密可以告訴你。");
+			  command("whisper "+who->query("id")+" 不錯，武當那個老雜毛沒想到也有今天，這裏有個天大的祕密可以告訴你。");
 		  if(ob->query("victim_id")=="zhang wuji")
-			  command("whisper "+who->query("id")+" 不錯，明教那個小家伙沒想到也有今天，這裡有個天大的秘密可以告訴你。");
+			  command("whisper "+who->query("id")+" 不錯，明教那個小傢伙沒想到也有今天，這裏有個天大的祕密可以告訴你。");
 		  if(ob->query("victim_id")=="kurong zhanglao")
-			  command("whisper "+who->query("id")+" 不錯，大理那個死禿子沒想到也有今天，這裡有個天大的秘密可以告訴你。");
+			  command("whisper "+who->query("id")+" 不錯，大理那個死禿子沒想到也有今天，這裏有個天大的祕密可以告訴你。");
 		  command("addoil "+who->query("id"));
 		  who->set_temp(QUESTDIR5+"give_shouji",1);
 		  log_file("quest/TLBB", sprintf("%s(%s)為復興天下殺死一個掌門人。經驗：%d。\n", who->name(1),who->query("id"), who->query("combat_exp")) );
@@ -910,7 +910,7 @@ int ask_bishen()
 	}
         if ( ob->query("combat_exp") < 1000000) {
 		command("shake "+ ob->query("id"));
-		command("say 這位"+RANK_D->query_respect(ob)+"你的武功過于浮躁,現在還不是告訴你的時候。");
+		command("say 這位"+RANK_D->query_respect(ob)+"你的武功過於浮躁,現在還不是告訴你的時候。");
 		return 1;
 	}
 	if (random(ob->query("kar")) < 26 && ob->query("int") < 25){
@@ -920,7 +920,7 @@ int ask_bishen()
 		ob->add("quest/bishen/fail", 1);
 		ob->set("quest/bishen/time", time());
 		log_file("quest/bishen",
-			sprintf("%-18s想從慕容復處領悟鬥轉星移的精髓所在失敗，失敗%s次。\n",
+			sprintf("%-18s想從慕容復處領悟斗轉星移的精髓所在失敗，失敗%s次。\n",
 				ob->name(1)+"("+capitalize(getuid(ob))+")",
 				chinese_number(ob->query("quest/bishen/fail")) 
 			), ob
@@ -930,10 +930,10 @@ int ask_bishen()
 	command("look " + ob->query("id"));
 	command("nod " + ob->query("id"));
 	command("say 好吧,我就將其中的奧妙告訴你吧。");
-       command("chat* 縱聲長笑道：我姑蘇慕容又有一人領悟鬥轉星移精髓所在,何愁復國大業不成！");
+       command("chat* 縱聲長笑道：我姑蘇慕容又有一人領悟斗轉星移精髓所在,何愁復國大業不成！");
        command("chat* yeah");
 	log_file("quest/bishen",
-		sprintf("%-18s失敗%s次後，成功從慕容復處領悟鬥轉星移精髓所在，福：%d，悟：%d。\n",
+		sprintf("%-18s失敗%s次後，成功從慕容復處領悟斗轉星移精髓所在，福：%d，悟：%d。\n",
 			ob->name(1)+"("+capitalize(getuid(ob))+")",
 			chinese_number(ob->query("quest/bishen/fail")), 
 			ob->query("kar"), 

@@ -26,7 +26,7 @@ mapping sword_obj = ([
         "/d/meizhuang/obj/qin":1,                     //暫時無處獲取
         "/d/jinshe/obj/jinshe-jian":32,               //金蛇洞
         "/d/huashan/obj/longquan":30,                 //華山居室
-        "/d/huashan/npc/obj/green_water_sword":35,    //岳靈珊
+        "/d/huashan/npc/obj/green_water_sword":35,    //嶽靈珊
         "/d/heimuya/obj/yuxiao":35,                   //東方不敗
         "/d/heimuya/npc/obj/zhen":1,                  //暫時無處獲取
         "/d/heimuya/npc/obj/changjian":30,            //桑三娘、任盈盈
@@ -38,7 +38,7 @@ mapping sword_obj = ([
         "/d/emei/obj/zhujian":25,                     //峨嵋儲物間
         "/d/emei/obj/skysword":1,                     //暫時無處獲取
         "/d/emei/obj/ruanjian":35,                    //靜風師太
-        "/d/city/obj/gangjian":18,                    //白衣衛士（六個）
+        "/d/city/obj/gangjian":18,                    //白衣衞士（六個）
         "/d/city/obj/duanjian":12,                    //相當多
         "/d/city/obj/changjian":10,                   //相當多
         "/d/city/obj/branch1":18,                     //蛇谷
@@ -46,13 +46,13 @@ mapping sword_obj = ([
         "/d/city/npc/obj/gangjian":10,                //相當多
         "/d/city/npc/obj/duanjian":1,                 //暫時無處獲取
         "/d/city/npc/obj/changjian":15,               //程玉環、丁堅、史令威、梅莊護院
-        "/d/changan/npc/obj/sword":12,                //群玉樓保鏢、樑興祿
+        "/d/changan/npc/obj/sword":12,                //羣玉樓保鏢、樑興祿
         "/d/changan/npc/obj/changjian":10,            //慕容豪、武將
         "/d/beijing/npc/obj/sword5":20,               //東廠官兵
-        "/d/beijing/npc/obj/sword4":15,               //西廠官兵、城門督察、御前侍衛、驍騎營侍衛、張康年、趙齊賢
-        "/d/beijing/npc/obj/sword3":35,               //馮錫范
+        "/d/beijing/npc/obj/sword4":15,               //西廠官兵、城門督察、御前侍衞、驍騎營侍衞、張康年、趙齊賢
+        "/d/beijing/npc/obj/sword3":35,               //馮錫範
         "/d/beijing/npc/obj/sword2":20,               //劍僧
-        "/d/beijing/npc/obj/sword1":30,               //歸二娘
+        "/d/beijing/npc/obj/sword1":30,               //歸二孃
         "/d/beijing/npc/obj/bishou":35,               //鰲拜
         "/d/beijing/npc/obj/baojian":1,               //暫時無處獲取
         "/clone/weapon/zhujian":5,                    //很多

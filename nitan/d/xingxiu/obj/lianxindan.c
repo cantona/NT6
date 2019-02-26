@@ -18,7 +18,7 @@ void create()
                 set("material", "iron");
                 set("long", HIG"煉心彈是星宿派淬毒暗器，針長寸許，發出詭異的光。\n"NOR);
                 set("wield_msg", HIC"$N迅速地從鹿皮袋中摸出一些煉心彈，捏在手中就待發出！\n"NOR);
-                set("unwield_msg",HIC"$N將手裡剩下的煉心彈收回鹿皮袋中。\n"NOR);
+                set("unwield_msg",HIC"$N將手裏剩下的煉心彈收回鹿皮袋中。\n"NOR);
         }
         set_amount(50);
         init_throwing(10);

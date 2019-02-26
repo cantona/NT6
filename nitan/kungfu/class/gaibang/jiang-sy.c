@@ -10,12 +10,12 @@ inherit F_MASTER;
 
 void create()
 {
-        set_name("江上遊", ({"jiang shangyou", "jiang shangyou", "jiang"}));
+        set_name("江上游", ({"jiang shangyou", "jiang shangyou", "jiang"}));
         set("title", "丐幫五袋弟子");
         set("gender", "男性");
         set("age", 28);
         set("long",
-                "他是遠近聞名的潛水好手，被人起了個外號就叫「浪裡魚」江上遊。\n");
+                "他是遠近聞名的潛水好手，被人起了個外號就叫「浪裏魚」江上游。\n");
 
         set("attitude", "peaceful");
         set("class", "beggar");

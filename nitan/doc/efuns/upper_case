@@ -12,7 +12,7 @@
                 返回將參數字符串轉換為大寫後的字符串。
                 （原字符串沒有改變）
 
-        這個函數需要在 options 文件裡定義了 PACKAGE_CONTRIB .
+        這個函數需要在 options 文件裏定義了 PACKAGE_CONTRIB .
 
         參考：
                 capitalize,

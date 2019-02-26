@@ -5,7 +5,7 @@ inherit NPC;
 void create()
 {
         set_name(HIR"蜈蚣"NOR, ({ "wu gong" }));
-        set("long", "一只有毒的火紅色大蜈蚣。\n");
+        set("long", "一隻有毒的火紅色大蜈蚣。\n");
 
         set("race", "昆蟲");
         set("subrace", "爬蟲");

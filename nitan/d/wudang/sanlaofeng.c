@@ -2,9 +2,9 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "三老峰");
+        set("short", "三老峯");
         set("long", @LONG
-此處乃武當山三老峰，只見三座奇峰突兀，驚險無比，行人多不
+此處乃武當山三老峯，只見三座奇峯突兀，驚險無比，行人多不
 敢放膽在此玩賞風景。
 LONG );
         set("exits", ([

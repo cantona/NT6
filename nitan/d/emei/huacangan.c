@@ -5,7 +5,7 @@ void create()
         set("short", "華藏庵");
         set("long", @LONG
 華藏庵是金頂的主要建築，規模宏大，中祀普賢菩薩，旁列萬佛。
-華藏庵後邊是睹光台，旁邊是臥雲庵。
+華藏庵後邊是睹光台，旁邊是卧雲庵。
 LONG );
         set("outdoors", "emei");
         set("exits", ([

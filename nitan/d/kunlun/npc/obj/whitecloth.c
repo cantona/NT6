@@ -8,7 +8,7 @@ inherit CLOTH;
 
 void create()
 {
-        set_name(HIW"啞說藽"NOR, ({ "baihu cloth","cloth" }) );
+        set_name(HIW"啞説藽"NOR, ({ "baihu cloth","cloth" }) );
         set_weight(1000);
         if( clonep() )
                 set_default_object(__FILE__);

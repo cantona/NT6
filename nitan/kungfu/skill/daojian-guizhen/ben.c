@@ -58,7 +58,7 @@ int perform(object me, object target)
                 return notify_fail("你現在的真氣不夠，難以施展" + name() + "。\n");
 
         if (! living(target))
-                return notify_fail("對方都已經這樣了，用不著這麼費力吧？\n");
+                return notify_fail("對方都已經這樣了，用不着這麼費力吧？\n");
 
         addn("neili", -30000, me);
 
@@ -68,7 +68,7 @@ int perform(object me, object target)
              target->query_skill("blade", 1);
 
         message_combatd(HIY "$N" HIY "雙目微閉，衣裳無風自起，剎那間，殺氣充斥 ……\n"
-                     HIC "一束刀光，" HIM "一道劍影，" HIY "一招「萬馬奔騰」毫無征兆地使出，刀光劍氣就猶如地\n"
+                     HIC "一束刀光，" HIM "一道劍影，" HIY "一招「萬馬奔騰」毫無徵兆地使出，刀光劍氣就猶如地\n"
                      "獄幽靈般地呼嘯而出，將$n" HIY "籠罩……\n" NOR, me, target);
 
         if (ap / 2 + random(ap / 2) > dp)
@@ -77,7 +77,7 @@ int perform(object me, object target)
                 damage += damage_power(me, "sword");
                 damage+=query("jiali", me);
 
-                message_combatd(HIC "$N" HIC "被兩道飛馳而來的強光籠罩著，毫無思考的余地，只得拼死抵抗……\n" NOR, target);
+                message_combatd(HIC "$N" HIC "被兩道飛馳而來的強光籠罩着，毫無思考的餘地，只得拼死抵抗……\n" NOR, target);
 
                 msg = COMBAT_D->do_damage(me, target, attack_type, damage, 500 + 200 * (userp(me)?0:1),
                                           (: final1, me, target, damage :));
@@ -85,10 +85,10 @@ int perform(object me, object target)
         }
         else
         {
-                message_combatd(HIM "$N" HIM "驚駭不已，卻硬著頭皮施展輕功閃避，竟無意間躲過此招。\n" NOR, target);
+                message_combatd(HIM "$N" HIM "驚駭不已，卻硬着頭皮施展輕功閃避，竟無意間躲過此招。\n" NOR, target);
         }
 
-        // 20%幾率無BUSY
+        // 20%機率無BUSY
         if (random(5) < 4) me->start_busy(3);
         target->start_busy(3);
 

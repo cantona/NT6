@@ -8,7 +8,7 @@ void create()
         set("gender", "男性");
         set("age", 90);
         set("long",
-                "只見他長得鶴發童顏，身材高大，面目慈祥。\n");
+                "只見他長得鶴髮童顏，身材高大，面目慈祥。\n");
         set("combat_exp", 150000);
    set("qi",1000);
    set("jing",1000);

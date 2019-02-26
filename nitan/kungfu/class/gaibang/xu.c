@@ -11,7 +11,7 @@ void create()
         set_name("徐長老", ({"xu zhanglao", "xu", "zhanglao"}));
         set("gender", "男性");
         set("age", 85);
-        set("long", "白須飄動，穿著一身補丁累累的鶉衣，是個年紀極高的老丐。\n");
+        set("long", "白鬚飄動，穿着一身補丁累累的鶉衣，是個年紀極高的老丐。\n");
         set("title", "丐幫九袋長老");
         set("attitude", "peaceful");
         set("class", "beggar");

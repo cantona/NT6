@@ -23,7 +23,7 @@ int do_fu(string arg)
 	if(!arg||(arg!="head"&&arg!="頭"))
 		return notify_fail("你要吃什麼?\n");
 	me->add("bellicosity",100);
-	message_vision("$N抓起一顆[死人頭]狂啃起來，滿臉都透露著邪氣。\n",me);
+	message_vision("$N抓起一顆[死人頭]狂啃起來，滿臉都透露着邪氣。\n",me);
 	destruct(ob);
 	return 1;
 }

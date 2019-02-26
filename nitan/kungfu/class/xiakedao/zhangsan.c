@@ -65,20 +65,20 @@ void start_punish(object ob, string msg)
 {
         set_temp("punish_ob", ob);
         move(environment(ob));
-        message_vision("$N走了過來，冷冷的盯著$n。\n", this_object(), ob);
+        message_vision("$N走了過來，冷冷的盯着$n。\n", this_object(), ob);
         command("chat " + ob->name() + "，你" + msg);
         command("chat " + "今天我" + name() + "要為武林除去此害！");
         command("follow"+query("id", ob));
 
         if( query("no_fight", environment(ob)) )
         {
-                tell_object(ob, "你看著" + name() + "的眼神，心中不禁一寒，轉身逃走。\n");
+                tell_object(ob, "你看着" + name() + "的眼神，心中不禁一寒，轉身逃走。\n");
                 message("vision", ob->name() + "看到" + name() + "，臉色忽變，轉身逃走。\n" +
                         name() + "冷笑一聲，緊隨其後而走。\n",
                         environment(ob), ({ ob }));
                 ob->move("/d/city/guangchang");
                 move("/d/city/guangchang");
-                tell_object(ob, HIR "...這...這是哪裡？好熟悉啊？"
+                tell_object(ob, HIR "...這...這是哪裏？好熟悉啊？"
                             "你心底一橫，轉過身來，索性不再走了。\n" NOR);
                 message("vision", ob->name() + "慌慌張張的跑了過來，只見有一人"
                         "緊隨其後而來。\n", environment(ob), ({ ob }));
@@ -129,7 +129,7 @@ void die()
 
         command("chat 天哪！想不到我" + name() + "除害不成...反被害除...先回去練功去！");
         message_vision(HIM "$N" HIM "狂吐幾口鮮血，扔下一個煙霧彈，"
-                       HIM "趁著混亂逃走了。\n", this_object());
+                       HIM "趁着混亂逃走了。\n", this_object());
         destruct(this_object());
 }
 

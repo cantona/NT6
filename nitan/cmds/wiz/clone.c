@@ -14,7 +14,7 @@ int main(object me, string file)
 
         if( !file)file=query("cwf", me);
         if (! file)
-                return notify_fail("你要復制什麼物件？\n");
+                return notify_fail("你要複製什麼物件？\n");
 
         file=resolve_path(query("cwd", me),file);
         if (sscanf(file, "%*s.c") != 1) file += ".c";
@@ -46,18 +46,18 @@ int main(object me, string file)
                 case "gift":
                         if (! sscanf(file, "/clone/special/%*s") &&
                             ! sscanf(file, "/clone/gift/%*s"))
-                                return notify_fail("你不能復制這個物品。\n");
+                                return notify_fail("你不能複製這個物品。\n");
                         break;
 
                 case "all":
                         break;
 
                 default:
-                        return notify_fail("你不能復制物品。\n");
+                        return notify_fail("你不能複製物品。\n");
                 }
 
                 if (! me->is_admin())
-                        message_system(sprintf("%s(%s)復制了物品：%s(%s)。\n",
+                        message_system(sprintf("%s(%s)複製了物品：%s(%s)。\n",
                                                me->name(1),query("id", me),
                                                filter_color(file->name(1)),query("id", get_object(file))));
         }
@@ -67,13 +67,13 @@ int main(object me, string file)
         err = catch(obj = new(file));
         if (err)
         {
-                write("復制失敗：" + err + "\n");
+                write("複製失敗：" + err + "\n");
                 return 1;
         }
 
         if (! objectp(obj))
         {
-                write("你無法復制該物品。\n");
+                write("你無法複製該物品。\n");
                 return 1;
         }
 
@@ -84,19 +84,19 @@ int main(object me, string file)
                                          base_name(obj)));
         if( !obj->is_character() && !query("no_get", obj) && obj->move(me) )
         {
-                write(query("name", obj)+"復制成功，放在你的物品欄。\n");
+                write(query("name", obj)+"複製成功，放在你的物品欄。\n");
                 message_vision(msg + "\n", me, obj);
                 return 1;
         }
         if (obj->move(environment(me)))
         {
-                write(query("name", obj)+"復制成功，放在這個房間。\n");
+                write(query("name", obj)+"複製成功，放在這個房間。\n");
                 message_vision(msg + "\n", me, obj);
                 return 1;
         }
 
         destruct(obj);
-        return notify_fail("無法復制不能移動的物件(" + file + ")。\n");
+        return notify_fail("無法複製不能移動的物件(" + file + ")。\n");
 }
 
 int help(object me)
@@ -104,7 +104,7 @@ int help(object me)
         write(@HELP
 指令格式 : clone <檔名>
 
-利用此指令可復制任何能移動之物件(含人物)。
+利用此指令可複製任何能移動之物件(含人物)。
 
 該命令在可以被授權使用的信息包括：gift、all。
 HELP );

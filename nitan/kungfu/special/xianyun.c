@@ -25,9 +25,9 @@ int perform(object me, string skill, string arg)
         if (joblv < 10)
                 return notify_fail("你的職業等級不足，無法施展。\n");                
 
-        if (me->is_busy())return notify_fail("等你忙完再說吧！\n");
+        if (me->is_busy())return notify_fail("等你忙完再説吧！\n");
 
-        message_vision(HIM "$N" HIM "施展出閒雲野鶴，頓時飄忽自如，瀟洒之極！\n" NOR, me);
+        message_vision(HIM "$N" HIM "施展出閒雲野鶴，頓時飄忽自如，瀟灑之極！\n" NOR, me);
  
         me->add("neili", -600);
         me->start_busy(1);

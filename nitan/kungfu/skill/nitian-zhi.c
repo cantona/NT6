@@ -98,7 +98,7 @@ mixed hit_ob(object me, object victim, int damage_bonus)
         victim->receive_wound("qi",damage_bonus/2+damage_bonus*PMSKILLS_D->get_point2(query("pmskills/point", me))*2,me);
         addn("neili", -50, me);
 
-        return HIR "$n說道:好爽啊!\n" NOR;
+        return HIR "$n説道:好爽啊!\n" NOR;
 }
 
 mixed valid_damage(object ob, object me, int damage, object weapon)

@@ -17,12 +17,12 @@ void create()
 {
         object ob;
         set_name("何足道", ({"he zudao", "he", "zudao"}));
-        set("title", "昆侖派開山祖師");
-        set("nickname", HIY "昆侖三聖" NOR);
+        set("title", "崑崙派開山祖師");
+        set("nickname", HIY "崑崙三聖" NOR);
         set("long", @LONG
-這就是昆侖派開山祖師，號稱琴劍棋三絕的昆
+這就是崑崙派開山祖師，號稱琴劍棋三絕的昆
 侖三聖何足道。見他長臉深目，面目清秀。卻
-是瘦骨棱棱，身著一青衫。
+是瘦骨稜稜，身着一青衫。
 LONG);
         set("gender", "男性");
         set("age", 95);
@@ -79,7 +79,7 @@ LONG);
         prepare_skill("strike", "kunlun-zhang");
         prepare_skill("hand", "sanyin-shou");
 
-        create_family("昆侖派", 1, "祖師");
+        create_family("崑崙派", 1, "祖師");
 
         set("inquiry", ([
                 "絕招"      : "你要問什麼絕招？",
@@ -214,8 +214,8 @@ mixed ask_skill1()
         if (me->query_skill("qiankun-jian", 1) < 100)
                 return "你的乾坤神劍修為還不夠，自己下去練練再來吧。";
 
-        message_vision(HIY "$n" HIY "微微一笑，轉身從弦琴上取出一本"
-                       "劍經，指著其中一段對$N" HIY "細說\n良久，$N"
+        message_vision(HIY "$n" HIY "微微一笑，轉身從絃琴上取出一本"
+                       "劍經，指着其中一段對$N" HIY "細説\n良久，$N"
                        HIY "一邊聽一邊點頭。\n" NOR, me, this_object());
         command("nod");
         command("say 這是我早年所創的劍法，並不強勁，下去後稍加練習便成。");
@@ -295,7 +295,7 @@ mixed ask_skill3()
                 return "你對本派所作出的貢獻不夠，這一招我暫時還不能傳你。";
 
         if( !query("can_perform/qiankun-jian/qian", me) )
-                return "要學此招，必須先通曉「乾坤勁」的奧秘。";
+                return "要學此招，必須先通曉「乾坤勁」的奧祕。";
 
         if (me->query_skill("force") < 300)
                 return "你的內功火候不足，學不了這一招！";
@@ -304,13 +304,13 @@ mixed ask_skill3()
                 return "你的乾坤神劍修為還不夠，自己下去練練再來吧。";
 
         message_vision(HIW "$n" HIW "微笑道：既然你的劍術已經到達超凡的"
-                       "境界，今日我就傳你這招。\n$n" HIW "說著“刷”的"
-                       "一聲響，從背負的瑤琴底下抽出一柄長劍，縱身近\n前"
+                       "境界，今日我就傳你這招。\n$n" HIW "説着“刷”的"
+                       "一聲響，從揹負的瑤琴底下抽出一柄長劍，縱身近\n前"
                        "，長劍陡然彎彎彈出，劍尖直刺$N" HIW "胸口，出招"
                        "之快真乃為任何劍法所\n不及。$N" HIW "頓時措手不"
                        "及，當場呆立，完全不知道該如何應招。$n" HIW "哈"
-                       "\n哈一笑，收起長劍，說道：剛才這一招不是直刺，卻"
-                       "是先聚內力，然後\n蓄勁彈出。這逆轉乾坤的奧秘便是"
+                       "\n哈一笑，收起長劍，説道：剛才這一招不是直刺，卻"
+                       "是先聚內力，然後\n蓄勁彈出。這逆轉乾坤的奧祕便是"
                        "將乾坤劍法逆行施展即可。\n" NOR, me,
                        this_object());
         command("haha");
@@ -345,7 +345,7 @@ mixed ask_skill4()
                 return RANK_D->query_respect(me) + "和本派素無瓜葛，何出此言？";
 
         if (me->query_skill("kunlun-zhang", 1) < 1)
-                return "你連昆侖掌法都沒學，還談什麼絕招可言？";
+                return "你連崑崙掌法都沒學，還談什麼絕招可言？";
 
         if( query("family/gongji", me)<600 )
                 return "你對本派所作出的貢獻不夠，這一招我暫時還不能傳你。";
@@ -354,14 +354,14 @@ mixed ask_skill4()
                 return "你的內功火候不足，學不了這一招！";
 
         if (me->query_skill("kunlun-zhang", 1) < 120)
-                return "你的昆侖掌法修為還不夠，自己下去練練再來吧。";
+                return "你的崑崙掌法修為還不夠，自己下去練練再來吧。";
 
         message_vision(HIY "$n" HIY "點了點頭，將$N" HIY "招至"
-                       "身邊，在耳旁低聲細說良久，$N" HIY "聽"
+                       "身邊，在耳旁低聲細説良久，$N" HIY "聽"
                        "後會心的\n一笑，看來大有所悟。\n" NOR, me,
                        this_object());
         command("nod");
-        command("say 剛才我所說的便是日入空山的精要，你可記清了？");
+        command("say 剛才我所説的便是日入空山的精要，你可記清了？");
         tell_object(me, HIC "你學會了「日入空山」。\n" NOR);
 
         if (me->can_improve_skill("strike"))
@@ -383,7 +383,7 @@ mixed ask_jian()
 
         me = this_player();
 
-        if( query("family/family_name", me) != "昆侖派" )
+        if( query("family/family_name", me) != "崑崙派" )
                 return "閣下素來和本派並無淵源，何故來打聽我的隨身之物？";
 
         if( query("family/master_id", me) != query("id") )
@@ -411,14 +411,14 @@ mixed ask_jian()
         }
 
         if (owner == me)
-                return "我的佩劍不正是你拿著在用嗎，為何還反倒問起我來了？";
+                return "我的佩劍不正是你拿着在用嗎，為何還反倒問起我來了？";
 
         if (objectp(owner) && owner != this_object())
         {
                 if (! owner->is_character())
                         return "你來晚了，我的兩極劍現在並不在我手中。";
 
-                if( query("family/family_name", owner) == "昆侖派" )
+                if( query("family/family_name", owner) == "崑崙派" )
                         return "我的佩劍現在暫時是你同門"+query("name", owner)+
                                "在用，你要用就去找他吧。";
                 else

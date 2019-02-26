@@ -8,16 +8,16 @@ mapping *info_store = ({
 ]),
 
 ([      "name"  : "揚州醉仙樓",
-        "boss"  : "冼老板",
+        "boss"  : "冼老闆",
         "place" : "/d/city/zuixianlou2",
 ]),
 
-([      "name"  : "揚州打鐵舖",
+([      "name"  : "揚州打鐵鋪",
         "boss"  : "王鐵匠",
         "place" : "/d/city/datiepu",
 ]),
 
-([      "name"  : "揚州藥舖",
+([      "name"  : "揚州藥鋪",
         "boss"  : "平一指",
         "place" : "/d/city/yaopu",
 ]),
@@ -27,7 +27,7 @@ mapping *info_store = ({
         "place" : "/d/city/qianzhuang",
 ]),
 
-([      "name"  : "揚州雜貨舖",
+([      "name"  : "揚州雜貨鋪",
         "boss"  : "楊永福",
         "place" : "/d/city/zahuopu",
 ]),
@@ -37,7 +37,7 @@ mapping *info_store = ({
         "place" : "/d/city/shuyuan",
 ]),
 
-([      "name"  : "揚州當舖",
+([      "name"  : "揚州當鋪",
         "boss"  : "唐楠",
         "place" : "/d/city/dangpu",
 ]),
@@ -63,38 +63,38 @@ mapping *info_store = ({
 ]),
 
 ([      "name"  : "揚州馬廄",
-        "boss"  : "馬夫",
+        "boss"  : "馬伕",
         "place" : "/d/city/majiu",
 ]),
 
 
 ([      "name"  : "長白山香肉館",
-        "boss"  : "酒館老板",
+        "boss"  : "酒館老闆",
         "place" : "/d/changbai/xrguan",
 ]),
 
-([      "name"  : "大理薛記成衣舖",
-        "boss"  : "薛老板",
+([      "name"  : "大理薛記成衣鋪",
+        "boss"  : "薛老闆",
         "place" : "/d/dali/chengyipu",
 ]),
 
-([      "name"  : "大理藥舖",
+([      "name"  : "大理藥鋪",
         "boss"  : "何紅藥",
         "place" : "/d/dali/yaopu",
 ]),
 
-([      "name"  : "大理石舖",
+([      "name"  : "大理石鋪",
         "boss"  : "石匠",
         "place" : "/d/dali/shipu",
 ]),
 
 ([      "name"  : "大理太和居",
-        "boss"  : "宋老板",
+        "boss"  : "宋老闆",
         "place" : "/d/dali/jiulou2",
 ]),
 
 ([      "name"  : "大理馬廄",
-        "boss"  : "馬夫",
+        "boss"  : "馬伕",
         "place" : "/d/dali/majiu",
 ]),
 
@@ -105,7 +105,7 @@ mapping *info_store = ({
 ]),
 
 ([      "name"  : "峨嵋山馬廄",
-        "boss"  : "馬夫",
+        "boss"  : "馬伕",
         "place" : "/d/emei/majiu1",
 ]),
 
@@ -120,7 +120,7 @@ mapping *info_store = ({
         "place" : "/d/foshan/yxlou",
 ]),
 
-([      "name"  : "佛山油條舖",
+([      "name"  : "佛山油條鋪",
         "boss"  : "王老漢",
         "place" : "/d/foshan/shaobing",
 ]),
@@ -136,7 +136,7 @@ mapping *info_store = ({
         "place" : "/d/hangzhou/kedian",
 ]),
 
-([      "name"  : "杭州鐵匠舖",
+([      "name"  : "杭州鐵匠鋪",
         "boss"  : "歐治子",
         "place" : "/d/hangzhou/datie",
 ]),
@@ -147,12 +147,12 @@ mapping *info_store = ({
 ]),
 
 
-([      "name"  : "蘭州鐵面當舖",
+([      "name"  : "蘭州鐵面當鋪",
         "boss"  : "老朝奉",
         "place" : "/d/qilian/dangpu",
 ]),
 
-([      "name"  : "蘭州雜貨舖",
+([      "name"  : "蘭州雜貨鋪",
         "boss"  : "小販",
         "place" : "/d/qilian/zahuopu",
 ]),
@@ -163,7 +163,7 @@ mapping *info_store = ({
 ]),
 
 ([      "name"  : "古浪皮貨藥材店",
-        "boss"  : "伙計",
+        "boss"  : "夥計",
         "place" : "/d/qilian/fur-shop",
 ]),
 
@@ -178,7 +178,7 @@ mapping *info_store = ({
 ]),
 
 ([      "name"  : "永登馬廄",
-        "boss"  : "馬夫",
+        "boss"  : "馬伕",
         "place" : "/d/qilian/majiu",
 ]),
 
@@ -189,11 +189,11 @@ mapping *info_store = ({
 ]),
 
 ([      "name"  : "泉州馬廄",
-        "boss"  : "馬夫",
+        "boss"  : "馬伕",
         "place" : "/d/quanzhou/majiu",
 ]),
 
-([      "name"  : "泉州雜貨舖",
+([      "name"  : "泉州雜貨鋪",
         "boss"  : "陳阿婆",
         "place" : "/d/quanzhou/zahuopu",
 ]),
@@ -204,7 +204,7 @@ mapping *info_store = ({
 ]),
 
 ([      "name"  : "泉州鴻翔綢緞莊",
-        "boss"  : "許老板",
+        "boss"  : "許老闆",
         "place" : "/d/quanzhou/silkshop",
 ]),
 
@@ -218,13 +218,13 @@ mapping *info_store = ({
         "place" : "/d/quanzhou/taoran",
 ]),
 
-([      "name"  : "泉州打鐵舖",
+([      "name"  : "泉州打鐵鋪",
         "boss"  : "鐵匠",
         "place" : "/d/quanzhou/datiepu",
 ]),
 
 
-([      "name"  : "南陽悅來客棧",
+([      "name"  : "南陽悦來客棧",
         "boss"  : "店小二",
         "place" : "/d/shaolin/kedian1",
 ]),
@@ -235,13 +235,13 @@ mapping *info_store = ({
 ]),
 
 ([      "name"  : "南陽馬廄",
-        "boss"  : "馬夫",
+        "boss"  : "馬伕",
         "place" : "/d/shaolin/majiu",
 ]),
 
 
 ([      "name"  : "華山村馬廄",
-        "boss"  : "馬夫",
+        "boss"  : "馬伕",
         "place" : "/d/village/majiu",
 ]),
 
@@ -255,7 +255,7 @@ mapping *info_store = ({
         "place" : "/d/village/ehouse1",
 ]),
 
-([      "name"  : "華山村鐵匠舖",
+([      "name"  : "華山村鐵匠鋪",
         "boss"  : "馮鐵匠",
         "place" : "/d/village/smithy1",
 ]),
@@ -273,11 +273,11 @@ mapping *info_store = ({
 
 
 ([      "name"  : "伊犁馬廄",
-        "boss"  : "馬夫",
+        "boss"  : "馬伕",
         "place" : "/d/xingxiu/majiu",
 ]),
 
-([      "name"  : "伊犁巴紮",
+([      "name"  : "伊犁巴扎",
         "boss"  : "買賣提",
         "place" : "/d/xingxiu/store",
 ]),

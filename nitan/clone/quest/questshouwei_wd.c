@@ -50,7 +50,7 @@ int do_halt()
         
         if ( me->is_fighting(ob))
         {
-                message_vision(HIW"$N喝道：“你既然識破我的身份，就休想活著離開！”\n"NOR, ob, me);
+                message_vision(HIW"$N喝道：“你既然識破我的身份，就休想活着離開！”\n"NOR, ob, me);
                 return 1;
         }
         return 0;

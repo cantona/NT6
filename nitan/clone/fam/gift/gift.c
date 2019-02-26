@@ -24,7 +24,7 @@ void create()
                 // 天賦種類的名稱
                 set("gift_name", "容貌");
 
-                // 成功的幾率
+                // 成功的機率
                 set("gift_point", 100);
 
                 // 成功的描述
@@ -39,15 +39,15 @@ int do_effect(object me)
 
         point = query("gift_point");
 
-        // 真命天子提升成功幾率
+        // 真命天子提升成功機率
         if( query("special_skills/emperor", me) )
                 point += 35;
 
-        // 天煞孤星提升成功幾率
+        // 天煞孤星提升成功機率
         if( query("special_skills/lonely", me) )
                 point += 10;
 
-        // 福星高照提升成功幾率
+        // 福星高照提升成功機率
         if( query("special_skill/lucky", me) )
                 point += 5;
 
@@ -58,7 +58,7 @@ int do_effect(object me)
         if( query("gift/" + query("gift_type") + "/all", me) >= 1 ||
             query("gift/" + query("gift_type") + "/succeed", me) >= 6 )
         {
-                tell_object(me, "你覺得這藥好象沒什麼效果。\n");
+                tell_object(me, "你覺得這藥好像沒什麼效果。\n");
         } else
         if (random(100) >= point)
         {

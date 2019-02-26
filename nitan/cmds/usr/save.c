@@ -18,7 +18,7 @@ int main(object me, string arg)
 
         if( query("valid_startroom", environment(me))){
                 set("startroom", base_name(environment(me)), me);
-                write("當你下次連線進來時，會從這裡開始。\n");
+                write("當你下次連線進來時，會從這裏開始。\n");
         }
 
         if( (int)link_ob->save() && (int)me->save() ) {

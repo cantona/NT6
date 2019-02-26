@@ -13,7 +13,7 @@ void create()
 	set("race", "龍");
 	set("gender", "雄性");
 	set("long", "這本是一條在海底修煉的神龍。因為滄海桑田的變遷，原來的翰海變成
-了沙漠。它在這裡蟄伏下來，也不知道有幾千幾萬年了。 \n");
+了沙漠。它在這裏蟄伏下來，也不知道有幾千幾萬年了。 \n");
 	
 	set("combat_exp", 15000000);
 	
@@ -70,7 +70,7 @@ int dragonbreath ()	{
 int hurting()	{
 	int i,dam;
 	object *inv;
-	message_vision(HIR"\n\n$N一張嘴，無數道烈燄迎面向你撲來，閃無可閃，避無可避。\n\n"NOR,this_object());
+	message_vision(HIR"\n\n$N一張嘴，無數道烈焰迎面向你撲來，閃無可閃，避無可避。\n\n"NOR,this_object());
 	inv = all_inventory(environment(this_object()));
         for(i=sizeof(inv)-1; i>=0; i--)
 		if( living(inv[i]))
@@ -137,7 +137,7 @@ void die()
 	// the stone ... one at time, give whoever you want :D
 	if(objectp(me)) { 
 		CHANNEL_D->do_channel("rumor","一個新的武林神話的誕生。。。。");
-		CHANNEL_D->do_channel("rumor",sprintf("%s，%s于%s%s%s。", NATURE_D->game_time(),
+		CHANNEL_D->do_channel("rumor",sprintf("%s，%s於%s%s%s。", NATURE_D->game_time(),
 				me->query("name"), environment(this_object())->query("short"),"斬殺", name())); 
 	    
 	    hate = query_hate_list();

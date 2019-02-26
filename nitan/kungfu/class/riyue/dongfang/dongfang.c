@@ -177,7 +177,7 @@ void teach_kuihua(object me, int lv)
 	int qi;
 	
         string* teach_words = ({
-        HIG "忽然間東方不敗身法陡然加快，呼嘯著在你周圍旋轉，你感覺胸悶氣短。\n" NOR,
+        HIG "忽然間東方不敗身法陡然加快，呼嘯着在你周圍旋轉，你感覺胸悶氣短。\n" NOR,
         HIG "霎那間一道銀光閃過，東方不敗手中銀針頓時化分為萬千幻影，纏繞在你周圍，你漸漸覺得頭暈目眩。\n" NOR,
         HIG "漸漸地，東方不敗身法越來越快，已化身為無數她的身影，東方不敗尖嘯一聲，從不同的角度向你襲來。\n" NOR,
         HIG "東方不敗長袖一拂，一道銀光劃過，猛然間在你眼前一亮，你頓覺得胸口刺痛無比。\n" NOR,
@@ -213,11 +213,11 @@ void teach_kuihua(object me, int lv)
         {
               message_sort(HIW "東方不敗尖嘯一聲，又回到了原地，似乎從未離開過。\n" NOR, me);
 
-              message_sort(HIW "東方不敗再未有任何言語，只是玩弄著自己的指甲 ……\n" NOR, me);
+              message_sort(HIW "東方不敗再未有任何言語，只是玩弄着自己的指甲 ……\n" NOR, me);
 
               if (random(10) > 7)return;
               
-              write(HIM "你仔細回味剛才那驚心動魄的一幕，回想東方不敗施展的各種招式，猛然間你一聲長嘆，"
+              write(HIM "你仔細回味剛才那驚心動魄的一幕，回想東方不敗施展的各種招式，猛然間你一聲長歎，"
                         "心中疑慮頓然消除 ……\n" NOR);
               if (me->can_improve_skill("force"))
                     me->improve_skill("force", 1500000);
@@ -265,7 +265,7 @@ mixed ask_skill1()
         }
         command("nod");
         command("heihei");
-        tell_object(me, HIR "\n東方不敗身子忽進忽退，身形詭秘異常，在你身邊飄忽不定，不久又回到了原地。\n");
+        tell_object(me, HIR "\n東方不敗身子忽進忽退，身形詭祕異常，在你身邊飄忽不定，不久又回到了原地。\n");
         command("say 看清楚了？！");
         if (me->can_improve_skill("dodge"))
               me->improve_skill("dodge", 1500000);
@@ -303,7 +303,7 @@ mixed ask_skill2()
         command("heihei");
         tell_object(me, HIR "\n東方不敗尖嘯一聲，猛然進步欺前，一招竟直襲向虛空，速度之快，令人稱奇。\n" NOR);
         command("say 看清楚了？！");
-        command("say 這招精要在于快、準、狠，對于實戰經驗較低的人可能會一招使其斃命！");
+        command("say 這招精要在於快、準、狠，對於實戰經驗較低的人可能會一招使其斃命！");
         command("say 你下去一定要勤加練習。");
 
         if (me->can_improve_skill("force"))
@@ -426,7 +426,7 @@ mixed ask_skill5()
         if( !query("can_perform/kuihua-mogong/hui", me) )
         {
                command("heihei");
-               msg = HIW "東方不敗對$N" HIW "說道：好，既然這樣我就傳你葵花魔功最高境「毀天滅地」！"
+               msg = HIW "東方不敗對$N" HIW "説道：好，既然這樣我就傳你葵花魔功最高境「毀天滅地」！"
                      "毀天滅地分兩招，第一招「毀天式」，第二招「滅地訣」，必須要將這兩招學全方能領"
                      "悟出「毀天滅地」！現在我先傳你第一招「毀天式」，待你下去將此招運用得熟練了我"
                      "再傳你「滅地訣」。你只要在戰鬥中使用 " HIR "perform sword.hui" HIW " 並且打中"
@@ -455,7 +455,7 @@ mixed ask_skill5()
                       return 1;
                }
                command("nod");
-               msg = HIW "東方不敗對$N" HIW "說道：不錯，不錯！你「毀天式」已經運用得很熟練了，該是"
+               msg = HIW "東方不敗對$N" HIW "説道：不錯，不錯！你「毀天式」已經運用得很熟練了，該是"
                      "你學習「滅地訣」的時候了，你可看好了。猛然間東方不敗身形一晃，已沒了蹤跡，剎"
                      "那間，你只覺得地動山搖，風起雲湧，正猶豫間，東方不敗已躥至你身後，輕輕地拍了"
                      "拍你的頭。\n" NOR;

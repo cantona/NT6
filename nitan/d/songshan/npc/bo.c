@@ -6,7 +6,7 @@ inherit NPC;
 void create()
 {
         set_name("卜沉", ({ "bo chen", "chen", "bo" }) );
-        set("long", "他是一個白頭發老者。嵩山派掌門人的師弟。\n");
+        set("long", "他是一個白頭髮老者。嵩山派掌門人的師弟。\n");
         set("nickname", HIW"白頭翁"NOR);
         set("gender", "男性");
         set("class", "swordsman");

@@ -102,7 +102,7 @@ void init(object ob)
                         command("play xiaoao-jianghu");
                 else
                         say(CYN + this_object()->name() +
-                            CYN "深深地嘆了口氣。\n" NOR);
+                            CYN "深深地歎了口氣。\n" NOR);
         }
         return;
 }

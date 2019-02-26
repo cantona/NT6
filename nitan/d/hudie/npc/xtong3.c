@@ -8,7 +8,7 @@ void create()
         set_name("小童", ({ "xiao tong","xiao","tong" }) );
         set("gender", "男性" );
         set("age", 13);
-        set("long", "這是一個清秀的小童，身著一身青衣，一付可愛的樣子。\n");
+        set("long", "這是一個清秀的小童，身着一身青衣，一付可愛的樣子。\n");
         set("shen_type", 1);
         set("combat_exp", 50000);
         set("str", 20);

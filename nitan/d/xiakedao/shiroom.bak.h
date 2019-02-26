@@ -2,15 +2,15 @@ int do_study(string arg)
 {
         string *skill_name = ({
                "strike",          //趙客縵胡纓
-               "sword",           //吳鉤霜雪明
+               "sword",           //吳鈎霜雪明
                "dodge",           //銀鞍照白馬
                "throwing",        //颯沓如流星
                "pixie-jian",      //十步殺一人 sword
-               "qiankundanuoyi",//千裡不留行 dodge
+               "qiankundanuoyi",//千里不留行 dodge
                "lingboweibu",     //事了拂衣去 dodge
                "qimen-wuxing",   //深藏身與名 dodge
                "unarmed",         //閒過信陵飲 cuff or strike or unarmed
-               "qimen-flee",      //脫劍膝前橫 sword
+               "qimen-flee",      //脱劍膝前橫 sword
                "parry",           //將炙啖朱亥
                "blade",           //持觴勸侯嬴
                "axe",              //三杯吐然諾 force 暫時先count吧
@@ -20,7 +20,7 @@ int do_study(string arg)
                "hammer",          //救趙揮金錘 sword
                "buddhism",        //邯鄲先震驚 force
                "hubo",            //千秋二壯士
-               "xiaowuxiang",           //亙赫大樑城 force
+               "xiaowuxiang",           //亙赫大梁城 force
                "checking",        //縱死俠骨香   指法
                "club",            //不慚世上英   齊眉棍
                "kuihua-xinfa",    //誰能書閣下
@@ -79,18 +79,18 @@ int do_study(string arg)
                 default: break;
         }
 
-        message_vision("$N正在鑽研石壁上的圖案和注釋。\n",me);
+        message_vision("$N正在鑽研石壁上的圖案和註釋。\n",me);
 
         // 不是互搏或太玄則要求最低等級80
         if( me->query_skill(skill_name[item], 1) < 80 ) {
                   if( item != 23 )
                         if( item != 18 ) {
-                                write("你望著石壁冥思苦想了一會，發覺上面的東西對你來說太深奧了。\n");
+                                write("你望着石壁冥思苦想了一會，發覺上面的東西對你來説太深奧了。\n");
                                 return 1;
                         }
         }
         if( me->query_skill(skill_name[item], 1) >= 5900 ) {
-                write("你望著石壁冥思苦想了一會，發覺上面的東西對你來說太淺薄了。\n");
+                write("你望着石壁冥思苦想了一會，發覺上面的東西對你來説太淺薄了。\n");
                 return 1;
         }
         // 辟邪劍法和葵花心法
@@ -107,7 +107,7 @@ int do_study(string arg)
         }
         if( (int)(me->query_skill(skill_name[item], 1) *
                 me->query_skill(skill_name[item],1)*81) >= query("combat_exp", me)){
-                write("你對著石壁冥思苦想了一會，毫無收獲。\n");
+                write("你對着石壁冥思苦想了一會，毫無收穫。\n");
                 return 1;
         }
 
@@ -135,18 +135,18 @@ int do_study(string arg)
                         me->improve_skill(skill_name[item], times*(random(me->query_kar())+(10+random(me->query_int()-9))/10+1));
                         success = 1;
                 }
-//              write("你對著石壁冥思苦想了一會，似乎"+CHINESE_D->chinese(skill_name[item])+"有些心得。\n");
+//              write("你對着石壁冥思苦想了一會，似乎"+CHINESE_D->chinese(skill_name[item])+"有些心得。\n");
         }
 //      else
-//              write("你對著石壁冥思苦想了一會，可是成見太深，似乎沒啥心得。\n");
+//              write("你對着石壁冥思苦想了一會，可是成見太深，似乎沒啥心得。\n");
 
         if( success == 1 ) {
                 me->receive_damage("jing", times*jing_cost);
                 me->receive_damage("qi",times*random(query("int", me)));
-                write("你對著石壁冥思苦想了"+chinese_number(times)+"回，似乎對"+CHINESE_D->chinese(skill_name[item])+"有些心得。\n");
+                write("你對着石壁冥思苦想了"+chinese_number(times)+"回，似乎對"+CHINESE_D->chinese(skill_name[item])+"有些心得。\n");
         } else {
                 me->receive_damage("jing", jing_cost);
-                write("你對著石壁冥思苦想了一會，可是成見太深，似乎沒啥心得。\n");
+                write("你對着石壁冥思苦想了一會，可是成見太深，似乎沒啥心得。\n");
         }
         success = 0;
         return 1;

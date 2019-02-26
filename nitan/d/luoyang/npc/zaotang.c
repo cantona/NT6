@@ -2,7 +2,7 @@ inherit NPC;
 
 void create()
 {
-        set_name("澡堂伙計", ({ "zaotang huoji", "zaotang", "huoji" }) );
+        set_name("澡堂夥計", ({ "zaotang huoji", "zaotang", "huoji" }) );
         set("gender", "男性" );
         set("age", 22);
         set("shen_type", 1);

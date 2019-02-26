@@ -1,6 +1,6 @@
         read_file(3)                LP MudOSv21c7                (7 Jul 1996)
         函數名稱:
-                read_file() - 把一個檔案的內容讀進一個字串變數裡.
+                read_file() - 把一個檔案的內容讀進一個字串變數裏.
         函數語法:
                 string read_file( string file, int start_line,
                         int number_of_lines );

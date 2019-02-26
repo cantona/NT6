@@ -6,7 +6,7 @@ void create()
         set_name(YEL"蠍子"NOR, ({ "xie zi", "xie" }) );
         set("race", "野獸");
         set("age", 2);
-        set("long", "一只巴掌大的毒蠍，尾巴高高地翹著。\n");
+        set("long", "一隻巴掌大的毒蠍，尾巴高高地翹着。\n");
         set("attitude", "peaceful");
  
         set("str", 30);

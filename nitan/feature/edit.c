@@ -5,7 +5,7 @@ int edit(function callback, string text)
         if( !text ) text = "";
 
         write("結束離開用 '.'，取消輸入用 '~q'，使用內建列編輯器用 '~e'。\n");
-        write("─────────────────────────────\n");
+        write("—————————————————————————————\n");
         write(text);
 
         input_to("input_line", text, callback);

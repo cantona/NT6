@@ -13,7 +13,7 @@ void create()
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("unit", "桿");
+                set("unit", "杆");
                 set("value", 14000);
                 set("material", "steel");
                 set("long", "一柄烏黑的鋼槍，上面連槍纓都沒有。\n");

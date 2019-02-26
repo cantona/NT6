@@ -23,11 +23,11 @@ void create()
        set_name(HIW"巫師工作服"NOR,({"wizard suit","suit" }));
        set("long",@LONG
 ※※※※※※※※※※※※※※※※※※※※※※※※※※※※
-※  命  令  ※    用       法   ※    說        明    ※
+※  命  令  ※    用       法   ※    説        明    ※
 ※※※※※※※※※※※※※※※※※※※※※※※※※※※※
 ※yao       ※yao <genre><valu> ※可以憑空取錢        ※
 ※bianxing  ※bianxing <id>     ※給人做變性手術      ※
-※xing      ※xing <id>         ※讓某人蘇醒          ※
+※xing      ※xing <id>         ※讓某人甦醒          ※
 ※hun       ※hun  <id>         ※讓某人暈倒          ※
 ※feng      ※feng <id>         ※封凍某人            ※
 ※jiefeng   ※jiefeng <id>      ※解封某人            ※
@@ -440,7 +440,7 @@ int fengplayer (string str)
   if (!str) return notify_fail("feng <id>\n");
        ob = LOGIN_D->find_body(str);
   if (!ob) return notify_fail("有這個人嗎?\n");
-  tell_object(ob,"你的眼睛突然一片模糊，好象有人蒙住你了...\n");
+  tell_object(ob,"你的眼睛突然一片模糊，好像有人矇住你了...\n");
   ob->set_temp("block_msg/all",1);
   ob->disable_player(HIR "<失去知覺中>" NOR);      
   return 1;    
@@ -454,10 +454,10 @@ int jiefengplayer (string str)
   if (!ob) return notify_fail("有這個人嗎?\n");   
   ob->set_temp("block_msg/all",0);
   ob->enable_player(); 
-  tell_object(ob,"有人很你說道：“恭喜發財”，你終于可以...\n");
+  tell_object(ob,"有人很你説道：“恭喜發財”，你終於可以...\n");
   return 1;
 }
-//  XING 使人蘇醒
+//  XING 使人甦醒
 int xing (string str)
 {
   object who;
@@ -494,13 +494,13 @@ int bx(string arg)
   if(arg=="kittt") return notify_fail("你奶奶的想死啊！\n");
   if (arg!=NULL_VALUE){
     bxid = LOGIN_D->find_body(arg);
-    if (!bxid) return notify_fail("在網上好象沒這個人呀！\n");
+    if (!bxid) return notify_fail("在網上好像沒這個人呀！\n");
     }
   if (arg) {
     if(arg=="kittt") return notify_fail("你想死啊！\n");
     if(bxid->query("gender")=="女性") bxid->set( "gender", "男性" );
     else bxid->set( "gender", "女性" );
-    message("shout", HIM "【謠言】某人：聽說"+me->query("name")+"成功的對" 
+    message("shout", HIM "【謠言】某人：聽説"+me->query("name")+"成功的對" 
     +bxid->query("name")+"進行了一次變性手術。\n" NOR,users());
     bxid->save();
     return 1;
@@ -516,7 +516,7 @@ int yao (string arg)
           return notify_fail("usage: yao <多少錢> <錢幣種類>\n");
         n_money = present(kind + "_money", this_player());
         if( !n_money && file_size("/clone/money/" + kind + ".c") < 0 )
-                return notify_fail("好象沒有這種錢呀？搖個屁呀！\n");
+                return notify_fail("好像沒有這種錢呀？搖個屁呀！\n");
         if( amount < 1 )
                 return notify_fail("呵呵，還是沒有。\n");
         if( !n_money ) {
@@ -525,7 +525,7 @@ int yao (string arg)
                 n_money->set_amount(amount);
         } else
                 n_money->add_amount(amount);
- message_vision( sprintf(HIY "$N使勁的掏自己的口袋，突然從袋子裡掏出%s%s%s。\n" NOR,
+ message_vision( sprintf(HIY "$N使勁的掏自己的口袋，突然從袋子裏掏出%s%s%s。\n" NOR,
         chinese_number(amount),n_money->query("base_unit"),n_money->query("name")),
         this_player());return 1;
 }

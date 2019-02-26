@@ -23,24 +23,24 @@ mapping *action = ({
         "skill_name" : "完壁歸趙",
         "damage_type" : "刺傷"
 ]),
-([      "action" : "$N輕吁一聲，飛身一躍而起，一招「臥薪嘗膽」，連續向$n刺出數劍",
+([      "action" : "$N輕籲一聲，飛身一躍而起，一招「卧薪嚐膽」，連續向$n刺出數劍",
         "force"  : 82,
         "attack" : 51,
         "parry"  : 18,
         "dodge"  : 53,
         "damage" : 33,
         "lvl"    : 40,
-        "skill_name" : "臥薪嘗膽",
+        "skill_name" : "卧薪嚐膽",
         "damage_type" : "刺傷"
 ]),
-([      "action" : "$N仰天長嘯，斜行向前，一招「五岳為輕」，$w橫削直擊，擊向$n的$l",
+([      "action" : "$N仰天長嘯，斜行向前，一招「五嶽為輕」，$w橫削直擊，擊向$n的$l",
         "force"  : 112,
         "attack" : 58,
         "parry"  : 20,
         "dodge"  : 52,
         "damage" : 45,
         "lvl"    : 60,
-        "skill_name" : "五岳為輕",
+        "skill_name" : "五嶽為輕",
         "damage_type" : "割傷"
 ]),
 });

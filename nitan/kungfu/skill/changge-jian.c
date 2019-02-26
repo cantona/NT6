@@ -9,7 +9,7 @@ string martialtype() { return "skill"; }
 
 /* 攻擊信息 */
 mapping *action = ({
-([        "action"     : "$N一聲長嘆，$w輕點一招"MAG"「醉拍春衫惜舊香」"NOR"向著$n的$l疾刺而去",
+([        "action"     : "$N一聲長歎，$w輕點一招"MAG"「醉拍春衫惜舊香」"NOR"向着$n的$l疾刺而去",
         "skill_name" : "醉拍春衫惜舊香",
         "lvl"        : 0,
 ]),
@@ -21,23 +21,23 @@ mapping *action = ({
         "skill_name" : "年年陌上生青草",
         "lvl"        : 20,
 ]),
-([      "action"     : "$N怔怔而望，若有所思，忽然變招，驀然有驟風席卷，劍招凌烈撒向$n的$l，好一招"RED"「日日樓中到夕陽」"NOR,
+([      "action"     : "$N怔怔而望，若有所思，忽然變招，驀然有驟風席捲，劍招凌烈撒向$n的$l，好一招"RED"「日日樓中到夕陽」"NOR,
         "skill_name" : "日日樓中到夕陽",
         "lvl"        : 30,
 ]),
-([      "action"     : "$N衣袂飛舞，身形舒緩如舞，輕歌曼妙，一招" HIC"「雲渺渺，水茫茫」"NOR"，$w劃向$n的$l",
+([      "action"     : "$N衣袂飛舞，身形舒緩如舞，輕歌曼妙，一招" HIC"「雲渺渺，水茫茫」"NOR"，$w划向$n的$l",
         "skill_name" : "雲渺渺，水茫茫",
         "lvl"        : 40,
 ]),
-([      "action"     : "$N微閉雙目，一股落寞的神情布于臉上，劍意凝重，空氣頓時壓力大增一招"YEL"「征人歸路許多長」"NOR"飛刺$n的$l",
-        "skill_name" : "征人歸路許多長",
+([      "action"     : "$N微閉雙目，一股落寞的神情佈於臉上，劍意凝重，空氣頓時壓力大增一招"YEL"「徵人歸路許多長」"NOR"飛刺$n的$l",
+        "skill_name" : "徵人歸路許多長",
         "lvl"        : 60,
 ]),
 ([      "action"     : "$N斜倚長劍，輕嘯而歌卻充滿了枯澀的意味，$w自肋下翻刺而出一招"HIM"「相思本是無憑語」"NOR"刺向$n的$l",
         "skill_name" : "相思本是無憑語",
         "lvl"        : 80,
 ]),
-([      "action"     : "$N緩緩搖頭，雙目中似有淚光閃動$w輝映著蒼白的光芒若隱若現的閃現而出，一招"YEL"「莫向花箋費淚行」"NOR+"刺向$n的$l",
+([      "action"     : "$N緩緩搖頭，雙目中似有淚光閃動$w輝映着蒼白的光芒若隱若現的閃現而出，一招"YEL"「莫向花箋費淚行」"NOR+"刺向$n的$l",
         "lvl"        : 100,
         "skill_name" : "莫向花箋費淚行",
 ]),
@@ -46,7 +46,7 @@ mapping *action = ({
 /* 招架信息 */
 string *parry_msg = ({
         HIY"卻見$n踏前一步，劍式斜指$P的右臂，想要使$P閃身而退。\n"NOR,
-        HIY"$n突然一劍點向$P的$l，雖一劍卻暗藏無數後著，$P手足無措，攻勢不由自主停了下來！\n"NOR,
+        HIY"$n突然一劍點向$P的$l，雖一劍卻暗藏無數後着，$P手足無措，攻勢不由自主停了下來！\n"NOR,
 });
 
 /* 輕功信息 */
@@ -70,7 +70,7 @@ int valid_combine(string combo) { return combo=="king-of-dragon"; }
 /* 招數效力的條件，目前我們沒限制 */
 int valid_effect(object me, object weapon, string name, int skill) { }
 
-/* 學習的條件。practice也要檢測本函數，所以，在這裡限制內功和內力就夠了。 */
+/* 學習的條件。practice也要檢測本函數，所以，在這裏限制內功和內力就夠了。 */
 int valid_learn(object me)
 {
         object ob;
@@ -92,7 +92,7 @@ int practice_skill(object me)
                 return notify_fail("你內力或氣不夠，沒有辦法練習長歌劍法。\n");
         me->receive_damage("qi", 30);
         addn("neili", -3, me);
-        write("你按著所學練了一遍長歌劍法。\n");
+        write("你按着所學練了一遍長歌劍法。\n");
         return 1;
 }
 
@@ -135,7 +135,7 @@ mixed be_hit_ob(object me, object victim, int damage_bonus, int factor)
         if( random(ap/2)>dp && query("neili", me)>2000 )
         {
 
-                tell_object(me, HIY"你只覺得盡力襲體，急忙運起金鐘罩神功，一股真氣彌漫全身！\n"NOR);
+                tell_object(me, HIY"你只覺得盡力襲體，急忙運起金鐘罩神功，一股真氣瀰漫全身！\n"NOR);
                 addn("neili", -2*damage_bonus, me);
                 return -damage_bonus;
         }
@@ -186,20 +186,20 @@ string query_dodge_msg(string limb)
         return dodge_msg[random(sizeof(dodge_msg))];
 }
 
-/* 武功難度系數 = 100 / (learn_bonus+parctice_bonus+10) 在skill.c命令中體現 */
+/* 武功難度係數 = 100 / (learn_bonus+parctice_bonus+10) 在skill.c命令中體現 */
 /* 每點潛能所能學到的本技能點數 = random(query_int()/2+query("int")/2+bonus) */
-/* 限制范圍 0 - 30 */
+/* 限制範圍 0 - 30 */
 int learn_bonus() { return 10; }
 
 /* 每次練習獲得技能點數 = (random(基本武功*基本武功/(skill+1)))/5+bonus */
-/* 限制范圍 0 - 30 */
+/* 限制範圍 0 - 30 */
 int practice_bonus() { return 15; }
 
 /* 對師傅傳授產生誤解的比率。random(success()) == 0的時候誤解。暫時不用。
 數值越大越不容易誤解。誤解引起倒退或停滯，僅體現在learn & teach */
 int success() { return 10; } 
 
-/* 威力參數，參照門派參數，限制范圍1到1.5。嚴禁超標！目前僅用于輕功。 */
+/* 威力參數，參照門派參數，限制範圍1到1.5。嚴禁超標！目前僅用於輕功。 */
 int power_point() { return 1; }
 
 /* 絕招文件目錄 */
@@ -221,7 +221,7 @@ int help(object me)
         write(@HELP
 
     長歌劍法不對玩家開放。
-    長歌劍法可激發成劍法、招架和輕功。用于NPC制作。
+    長歌劍法可激發成劍法、招架和輕功。用於NPC製作。
     
 HELP
         );

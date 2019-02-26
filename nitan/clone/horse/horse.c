@@ -119,7 +119,7 @@ int show_trans(object me)
                         places = ({});
                         places = keys(self_flag);
                         for (i = 0; i < sizeof(places); i ++)
-                                write(sprintf(HIG "%-20s%-20s\n" NOR, places[i], "用戶記錄地點"));
+                                write(sprintf(HIG "%-20s%-20s\n" NOR, places[i], "用户記錄地點"));
                 }
         }
         else if(mapp(self_flag))
@@ -129,7 +129,7 @@ int show_trans(object me)
                         places = ({});
                         places = keys(self_flag);
                         for (i = 0; i < sizeof(places); i ++)
-                                write(sprintf(HIG "%-20s%-20s\n" NOR, places[i], "用戶記錄地點"));
+                                write(sprintf(HIG "%-20s%-20s\n" NOR, places[i], "用户記錄地點"));
                 }                
         }
 
@@ -230,7 +230,7 @@ int move_to(object me, string place)
         if (sscanf(trans_path, "/d/newbie/%s", temp) == 1)
         {
                 write("你無法騎馬達到這個地方。\n");
-                log_file("horse", me->query("id") + "于" + ctime(time()) + " 試圖利用記錄點回到新手村。\n");
+                log_file("horse", me->query("id") + "於" + ctime(time()) + " 試圖利用記錄點回到新手村。\n");
                 return 1;
         }        
         // 神龍島上不能到達(超影馬除外)
@@ -324,7 +324,7 @@ int move_to(object me, string place)
         me->set_temp("running", 1);
 
         message("vision",  "\n" + this_object() ->name() + HIW "一聲長"
-                  "嘶，箭一般地沖出 ……\n" NOR, environment(me), ({horse}));
+                  "嘶，箭一般地衝出 ……\n" NOR, environment(me), ({horse}));
 
         call_out("arrived_dest", trans_times, me, follower, running, horse, trans_path);
 

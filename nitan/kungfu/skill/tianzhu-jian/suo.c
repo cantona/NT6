@@ -39,7 +39,7 @@ int perform(object me, object target)
                 return notify_fail("你現在的真氣不夠，難以施展" SUO "。\n");
 
         if (! living(target))
-                return notify_fail("對方都已經這樣了，用不著這麼費力吧？\n");
+                return notify_fail("對方都已經這樣了，用不着這麼費力吧？\n");
 
         wp = weapon->name();
         ap = me->query_skill("tianzhu-jian", 1);
@@ -62,7 +62,7 @@ int perform(object me, object target)
                 if (random(ap) > dp / 2)
                 {
                         msg = HIR "$n" HIR "只見眼前白芒暴漲，登時右手一輕，"
-                              + wp2 + HIR "竟脫手飛出。\n" NOR;
+                              + wp2 + HIR "竟脱手飛出。\n" NOR;
 
                         target->start_busy(3);
                         weapon2->move(environment(target));
@@ -82,7 +82,7 @@ int perform(object me, object target)
 
                 if (random(ap) > dp / 2)
                 {
-                        msg += HIR "\n$n" HIR "驚慌不定，頓時亂了陣腳，竟被困于$N"
+                        msg += HIR "\n$n" HIR "驚慌不定，頓時亂了陣腳，竟被困於$N"
                                HIR "的劍光當中。" NOR;
 
                         target->start_busy(ap / 25 + 1);

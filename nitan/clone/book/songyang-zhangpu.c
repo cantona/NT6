@@ -13,7 +13,7 @@ void create()
                 set_default_object(__FILE__);
         else {
                 set("unit","本");
-                set("long","這是一張麻紙小冊，上面好象還有一些小人揮舞拳腳的圖形。\n",
+                set("long","這是一張麻紙小冊，上面好像還有一些小人揮舞拳腳的圖形。\n",
          );
          set("value", 0);
          set("material", "paper");

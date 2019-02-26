@@ -7,7 +7,7 @@ void create()
 {
         set_name("惡僧", ({ "e  seng"}));
         set("long",
-        "少林的叛僧，幹了不少壞事，據說時常出沒在煙花柳巷。\n");
+        "少林的叛僧，幹了不少壞事，據説時常出沒在煙花柳巷。\n");
         set("gender", "男性");
         set("age", 37);
         set("attitude", "peaceful");

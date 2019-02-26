@@ -1,7 +1,7 @@
 inherit SKILL;
 
 mapping *action = ({
-([      "action" : "$N身形急晃，一躍而至$n跟前，右掌帶著切骨寒氣砍向$n的$l",
+([      "action" : "$N身形急晃，一躍而至$n跟前，右掌帶着切骨寒氣砍向$n的$l",
         "force" : 160,
         "attack": 25,
         "dodge" : -15,
@@ -11,7 +11,7 @@ mapping *action = ({
         "skill_name" : "切骨寒氣",
         "damage_type" : "割傷"
 ]),
-([      "action" : "$N飛身躍起，雙掌至上而下斜砍而出，頓時萬千道陰風寒勁從四面八方席卷$n",
+([      "action" : "$N飛身躍起，雙掌至上而下斜砍而出，頓時萬千道陰風寒勁從四面八方席捲$n",
         "force" : 220,
         "attack": 40,
         "dodge" : -20,
@@ -31,7 +31,7 @@ mapping *action = ({
         "skill_name" : "切骨寒氣",
         "damage_type" : "割傷"
 ]),
-([      "action" : "$N反轉右掌對準自己護住全身，突然一個筋鬥翻至$n面前，左掌橫向$n攔腰砍去",
+([      "action" : "$N反轉右掌對準自己護住全身，突然一個筋斗翻至$n面前，左掌橫向$n攔腰砍去",
         "force" : 360,
         "attack": 60,
         "dodge" : -80,
@@ -123,7 +123,7 @@ mixed hit_ob(object me, object victim, int damage_bonus, int factor)
                                  "id"    : query("id", me),
                                  "duration" : lvl / 100 + random(lvl / 10) ])))
         {
-                return "$n只感一陣刮骨之痛，看來是受了對方陰風刀內勁的幹擾。\n";
+                return "$n只感一陣刮骨之痛，看來是受了對方陰風刀內勁的干擾。\n";
         }
 }
 

@@ -31,7 +31,7 @@ int perform(object me, object target)
                 return notify_fail("你的內力不夠。\n");
 
         if (! living(target))
-               return notify_fail("對方都已經這樣了，用不著這麼費力吧？\n");
+               return notify_fail("對方都已經這樣了，用不着這麼費力吧？\n");
 
         me->add("neili", -200);
         msg = HIM "\n$N" HIM "露出詭異的笑容，忽然身法陡然加快，有如完全鬼影般旋轉，"

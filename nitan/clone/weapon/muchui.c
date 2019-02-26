@@ -12,7 +12,7 @@ void create()
                 set_default_object(__FILE__);
         else {
                 set("unit", "把");
-                        set("long", "一根削得很精致的短錘。\n");
+                        set("long", "一根削得很精緻的短錘。\n");
                 set("value", 3);
                 set("material", "iron");
                 set("wield_msg", "$N拿出一把$n，試了試重量，然後握在手中。\n");

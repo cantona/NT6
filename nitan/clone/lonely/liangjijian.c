@@ -16,7 +16,7 @@ void create()
                 set("value", 800000);
                 set("no_sell", 1);
                 set("material", "steel");
-                set("wield_msg", HIW "$N" HIW "一聲長嘆，抽出一柄紅白相間的"
+                set("wield_msg", HIW "$N" HIW "一聲長歎，抽出一柄紅白相間的"
                                  "長劍握在手中。\n" NOR);
                 set("unwield_msg", HIW "$N" HIW "一聲輕哼，將手中的兩極劍插"
                                  "回背後。\n" NOR);

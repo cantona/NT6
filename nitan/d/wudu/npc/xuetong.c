@@ -7,7 +7,7 @@ void create()
         set("gender", "男性" );
         set("age", 14);
         set("per", 30);
-        set("long", "這是一個十三四歲的小童，正心不在焉的跟著先生胡亂念著。\n");
+        set("long", "這是一個十三四歲的小童，正心不在焉的跟着先生胡亂念着。\n");
         set("combat_exp", 300);
         set("attitude", "friendly");
         set_skill("dodge", 5);

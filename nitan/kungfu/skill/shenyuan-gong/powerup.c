@@ -23,8 +23,8 @@ int exert(object me, object target)
 
         addn("neili", -100, me);
 
-        message_combatd(HIM "$N一聲長嘯，腳下按北鬥方位連踏七步，身形"
-                        "急轉、飄洒之極！\n" NOR, me);
+        message_combatd(HIM "$N一聲長嘯，腳下按北斗方位連踏七步，身形"
+                        "急轉、飄灑之極！\n" NOR, me);
 
         addn_temp("apply/attack", skill/3, me);
         addn_temp("apply/defense", skill/3, me);

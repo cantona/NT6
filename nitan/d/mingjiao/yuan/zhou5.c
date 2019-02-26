@@ -6,7 +6,7 @@ inherit F_UNIQUE;
 
 void create()
 {
-        set_name("周五輸", ({ "zhou wushu", "wushu", "zhou"}));
+        set_name("週五輸", ({ "zhou wushu", "wushu", "zhou"}));
         set("title", HIC "神箭八雄" NOR);
         set("gender", "男性");
         set("age", 25);

@@ -35,7 +35,7 @@ int perform(object me, object target)
                 return notify_fail("你沒有激發日月鞭法，不能使用傷字訣！\n");
 
        if (! living(target))
-              return notify_fail("對方都已經這樣了，用不著這麼費力吧？\n");
+              return notify_fail("對方都已經這樣了，用不着這麼費力吧？\n");
 
         msg = HIY "$N" HIY "嘿然冷笑，手中的" + weapon->name() +
               HIY "一振，霎時變得筆直，如同流星一般飛刺向$n" + HIY "！\n" NOR;

@@ -45,7 +45,7 @@ int perform(object me, object target)
                 return notify_fail("你必須是空手才能施展「疾電」！\n");
 
        if (! living(target))
-              return notify_fail("對方都已經這樣了，用不著這麼費力吧？\n");
+              return notify_fail("對方都已經這樣了，用不着這麼費力吧？\n");
 
         msg = HIR "$N" HIR "仰天一聲長嘯，飛身躍起，雙爪幻出漫天爪影，氣勢恢弘，宛如疾電一般籠罩$n" HIR "各處要穴！\n" NOR;
 

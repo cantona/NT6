@@ -31,7 +31,7 @@ void create()
                 set("force_point", 3);
 
                 // 服用成功的描述
-                set("pill_msg1", HIR "你只覺一股暖氣散布全身，說不出"
+                set("pill_msg1", HIR "你只覺一股暖氣散佈全身，説不出"
                                  "的舒服受用。\n" NOR);
 
                 // 服用失敗的描述
@@ -70,11 +70,11 @@ int do_effect(object me)
         if ((int)me->query_condition("pill_drug") > 0)
         {
                 write("你覺得現在內息未定，經脈隱隱還能感到真氣"
-                      "沖盪，不敢貿然服食。\n");
+                      "衝蕩，不敢貿然服食。\n");
                 return 1;
         }
 
-        // 增加藥物效用時間，該時段裡不能再次服用
+        // 增加藥物效用時間，該時段裏不能再次服用
         me->apply_condition("pill_drug", time);
 
         message_vision(HIY "$N" HIY "服下一" + query("base_unit") +

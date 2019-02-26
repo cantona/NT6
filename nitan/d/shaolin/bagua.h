@@ -3,7 +3,7 @@
 
 string* dirs = ({
         "坎", "坤", "離", "乾",
-        "艮", "震", "巽", "兌"
+        "艮", "震", "巽", "兑"
         });
 
 int check_dirs(object me, string dir)
@@ -60,7 +60,7 @@ int check_dirs(object me, string dir)
                         else
                                 delete_temp("bagua/count", me);
                         break;
-                case "兌":
+                case "兑":
                         if (bc == 5 || bc == 10 || bc == 14 || bc == 16) {
                                 set_temp("bagua/count", bc+1, me);
                                 me->receive_wound("jing", 50); }

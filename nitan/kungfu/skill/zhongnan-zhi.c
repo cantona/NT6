@@ -41,11 +41,11 @@ mapping *action = ({
         "lvl" : 80,
         "damage_type" : "刺傷"
 ]),
-([      "action" : "$N雙手不住晃動，緩緩逼近$n，一招「冰凍千裡」，籠罩了$n的$l",
+([      "action" : "$N雙手不住晃動，緩緩逼近$n，一招「冰凍千里」，籠罩了$n的$l",
         "force" : 190,
         "dodge" : 25,
         "damage": 20,
-        "skill_name" : "冰凍千裡",
+        "skill_name" : "冰凍千里",
         "lvl" : 90,
         "damage_type" : "刺傷"
 ]),

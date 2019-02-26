@@ -11,7 +11,7 @@ void create()
 	if( clonep() )
 		set_default_object(__FILE__);
 	else {
-                set("long", "一顆紫中泛黃的精致奇丹，具有這神話般的功效，"
+                set("long", "一顆紫中泛黃的精緻奇丹，具有這神話般的功效，"
                             "是練武人夢寐以求的妙藥。\n");
                 set("value", 2500000);
 		set("unit", "粒");

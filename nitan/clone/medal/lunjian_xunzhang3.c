@@ -7,7 +7,7 @@ inherit MEDAL;
 void create()
 {
         set_name(HIC "論劍青銅勛章" NOR, ({ "lunjian bronze medal", "lunjian", "xunzhang" }));
-        set("long", HIC "華山論劍天下第三獲得的勛章，非常珍貴，乃強者的象征。\n" NOR);
+        set("long", HIC "華山論劍天下第三獲得的勛章，非常珍貴，乃強者的象徵。\n" NOR);
         set_weight(500);
         if (clonep())
                 set_default_object(__FILE__);

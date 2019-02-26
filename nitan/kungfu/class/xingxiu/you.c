@@ -112,7 +112,7 @@ void check_azi()
                         else 
                         {
                                 who->set_leader(player);
-                                tell_object(player,"遊坦之大聲叫道：“你要把阿紫姑娘帶到哪裡去？快把阿紫姑娘還給我！除非殺(kill)了我，要不然我絕對不會允許你把阿紫姑娘帶走！”\n");
+                                tell_object(player,"遊坦之大聲叫道：“你要把阿紫姑娘帶到哪裏去？快把阿紫姑娘還給我！除非殺(kill)了我，要不然我絕對不會允許你把阿紫姑娘帶走！”\n");
                                 call_out("auto_kill",10);
                         }
                 }
@@ -181,7 +181,7 @@ void die()
         {
         message("vision","遊坦之面目猙獰之極，手突然揚起，滿是鮮血的
 臉上居然露出了一絲詭異的笑容，這下用盡了他
-所有的力氣，終于緩緩的倒了下去。\n",environment(player));
+所有的力氣，終於緩緩的倒了下去。\n",environment(player));
         message("vision","遊坦之大叫一聲，死了！\n",environment(player));
         tell_object(player, 
         "你覺得臉上似乎沾上了什麼東西，伸手一摸卻什麼也沒有。\n");
@@ -250,12 +250,12 @@ int accept_fight(object me)
 {
         if( !query_temp("azi/killer", me) || !query_temp("azi/killer2", me) )
         {
-        tell_object(me,"遊坦之說道：“我可沒心思和你玩！”\n");
+        tell_object(me,"遊坦之説道：“我可沒心思和你玩！”\n");
         return 0;
         }
         else
         {
-        tell_object(me,"遊坦之怒道：“既然你這麼急著投胎，我就成全你！”\n");
+        tell_object(me,"遊坦之怒道：“既然你這麼急着投胎，我就成全你！”\n");
         kill_ob(me);
         return 1;
         }

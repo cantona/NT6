@@ -34,7 +34,7 @@ int do_du(string arg)
         if (!(arg=="wumu yishu" || arg == "book" || arg == "yishu" ))
         return 0;
         if (me->is_busy()) {
-                write("你現在正忙著呢。\n");
+                write("你現在正忙着呢。\n");
                 return 1;
         }
         if( me->is_fighting() ) {
@@ -51,11 +51,11 @@ int do_du(string arg)
         }
         message("vision", me->name() + "正專心地研讀武穆遺書。\n", environment(me), me);
         if( query("jing", me)<80){
-                write("你現在過于疲倦，無法專心下來研讀新知。\n");
+                write("你現在過於疲倦，無法專心下來研讀新知。\n");
                 return 1;
         }
         if( query("qi", me)<80){
-                write("你現在過于疲倦，無法專心下來研讀新知。\n");
+                write("你現在過於疲倦，無法專心下來研讀新知。\n");
                 return 1;
         }
         pxlevel = me->query_skill("craft-cognize", 1);
@@ -70,7 +70,7 @@ int do_du(string arg)
         }
         if( me->query_skill("craft-cognize", 1) > 399 &&
             me->query_skill("array-cognize", 1) > 399){
-                write("你發現對于武穆遺書上的兵法和陣法要詣已經了然于胸，完全掌握了。\n");
+                write("你發現對於武穆遺書上的兵法和陣法要詣已經瞭然於胸，完全掌握了。\n");
                 return 1;
         }
         me->receive_damage("qi", 50);

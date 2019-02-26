@@ -6,12 +6,12 @@ inherit ROOM;
 string random_name()
 {
 string *msgs = ({
-        "賓頭盧尊者","迦諾迦伐蹉尊者","迦諾跋厘惰尊者","蘇頻陀尊者", 
+        "賓頭盧尊者","迦諾迦伐蹉尊者","迦諾跋釐惰尊者","蘇頻陀尊者", 
         "諾巨羅尊者","跋陀羅尊者","迦理迦尊者","羅弗多羅尊者",
         "戌博迦尊者","半托迦尊者","羅羅尊者","那伽犀那尊者",
         "因揭陀尊者","伐那婆斯尊者","阿氏多尊者","注荼半托迦尊者",
         "迦葉尊者","彌勒尊者",
-        "觀世音菩薩","跋陀和菩薩","羅憐那竭菩薩","□曰兜菩薩",
+        "觀世音菩薩","跋陀和菩薩","羅憐那竭菩薩","憍曰兜菩薩",
         "那羅達菩薩","須深菩薩","摩訶須薩和菩薩","因坻達菩薩",
         "和倫調菩薩","文殊師利菩薩","得大勢菩薩","無盡菩薩","寶檀花菩薩",
         "藥王菩薩","藥上菩薩","彌勒菩薩",
@@ -44,7 +44,7 @@ i = sizeof(player->name(1));
 set("last_joke",time());
 str = NOR WHT"\n\t\t是日，西天雷音寺內，諸相菩薩羅漢與之佛祖論法。\n\n\t\t佛祖：今日聽聞%s"NOR WHT"處有一%s氏%s者，與我佛甚是有緣，何當渡之？
 \n\t\t%s：%s氏者雖為有緣之人，然其家貧，恐無入我門之資。。。。\n\n\t\t佛祖：。。。。\n\n\t\t%s：今日亦無別等要緊之事，不如散去。。。。\n\n\t\t\t。。。。。。
-\n\t\t一幹人等凈數散去。。。。\n\n"NOR;
+\n\t\t一干人等淨數散去。。。。\n\n"NOR;
 str = sprintf(str,
                 player->name(1)[0..1],
                 player->name(1)[2..i],
@@ -61,9 +61,9 @@ void create ()
 set ("short", HIW"兔子"NOR YEL"窩"NOR);
 set ("long",YEL"\n
 深山深處的兔子窩，地下四通八達，不愧"NOR WHT"狡兔三窟"NOR YEL"的稱號。
-洞口長滿了綠油油的"NOR HIG"青草"NOR YEL"，茁壯的向上生長著，顯示著其
+洞口長滿了綠油油的"NOR HIG"青草"NOR YEL"，茁壯的向上生長着，顯示着其
 無比強烈的生命。人類與之比起，又算得了什麼？\n
-微風撫過，"NOR HIG"綠草"NOR YEL"們隨風擺動，享受著它們短暫生命中難得
+微風撫過，"NOR HIG"綠草"NOR YEL"們隨風擺動，享受着它們短暫生命中難得
 平靜的謝意。
 一縷"NOR HIC"陽光"NOR YEL"(light)透過"NOR HIG"青草"NOR YEL"射進洞中，映出斑影婆娑。\n\n
 "NOR);
@@ -108,30 +108,30 @@ int do_lo(string arg)
 {
         object who;
                    string msg = @MSG
-NORBLK                 □     □                    NOR
-NORBLK               NORBLK□NORHBWHT  NORBLK□  NORHBWHTBLK□ NORBLK□      NOR
-NORYEL               NORBLK□NORHBWHT  NORHBWHTWHT NORBLK□ NORHBWHTBLK□NORWHT□NOR
-NORYEL               NORBLK□NORHBWHT  NORWHT□NORBLK□NORHBWHT  NORHBWHTHIW NORBLK□NOR
-NORBLK               NORBLK□NORHBWHTBLK_.-~~-._ NORBLK□NOR
-NORBLK             □NORHIR□NORHBWHTHIR□    □NORHIR□NORBLK□NOR
-NORBLK             NORHIR□NORHIR□□NORHBWHTHIW●●NORHIR□□NORHIR□NOR
-NORBLK           NORBLK□ NORWHT□□□□□□NORBLK□ NOR
-NORBLK          □NORWHT□NORHBWHTBLK __--~~~~--__ NORWHT□NORBLK□NOR
-NORBLK         NORHBWHTBLK□ .-~            ~-.  NORBLK□NOR
-NORBLK       NORBLK□NORHBWHTBLK  |                  |  NORBLK□NOR
-NORBLK      □NORHBWHTBLK□  ~-._.---~~---._.-~   NORBLK□NOR
-NORBLK      NORBLK□NORHBWHTBLK□      □      □       NORWHT□NORBLK□NOR
-NORBLK      NORBLK□NORHBWHTBLK□□□NORWHT□□NORHBWHTBLK      NORWHT□□NORHBWHTBLK□□ NORWHT□NORBLK□NOR
-NORBLK      □NORHBWHTBLK□NORWHT□NORHBWHTBLK                 NORWHT□□NORHBWHTBLK□NORBLK□__NOR
-NORBLK  NORBLK□NORWHT□NORHBWHTHIR□NORHIR□ NORHBWHTBLK□□     ●   ,  □□NORWHT NORHIR□NORHBWHTHIR□ NOR
-NORHIW  NORHBWHTBLK□NORHIR□□NORHBWHTHIR□NORBLK□□ NORHBWHTBLK□^-_  _--□NORBLK□NORBLK□□NORHBWHTHIR□NORHIR□NORHBWHTWHT□NORBLK□NOR
-NORBLK□NORHBWHTWHT     NORHBWHTBLK□ NORBLK□□□□NORHBWHTBLK□□□NORBLK□□   □NORHBWHTBLK□NORHBWHTWHT    NORWHT□NOR
-NORBLK  NORHBWHTBLK□ NORWHT□NORBLK□NORHBWHTBLK□NORBLK□      □□□□  □NORWHT□NORHBWHTBLK□ NORHBWHTWHT□ NOR
-NORBLK   NORHBWHTYEL NORHBWHTBLK□NORBLK□NORBLK□NORHBWHTBLK□NORWHT□□□□□□□□□NORHBWHTBLK NORBLK□ NORBLK□□□NOR
-NORBLK        □NORHBWHTBLK□      NORHBWHTWHT            NORWHT□NORHIW              NOR
-NORBLK         NORHBWHTBLK□                   NORWHT□NORBLK□  NORYEL          NOR
-NORBLK NORYEL         NORHBWHTYEL NORHBWHTBLK□     □□□     NORWHT□NORBLK□NOR
-NORBLK           NORBLK□□□□□□□□□□NOR
+NORBLK                 ▂     ▂                    NOR
+NORBLK               NORBLK▊NORHBWHT  NORBLK▎  NORHBWHTBLK▍ NORBLK▎      NOR
+NORYEL               NORBLK▋NORHBWHT  NORHBWHTWHT NORBLK▎ NORHBWHTBLK▎NORWHT▋NOR
+NORYEL               NORBLK▋NORHBWHT  NORWHT▊NORBLK▋NORHBWHT  NORHBWHTHIW NORBLK▎NOR
+NORBLK               NORBLK▊NORHBWHTBLK_.-~~-._ NORBLK▍NOR
+NORBLK             ◢NORHIR◢NORHBWHTHIR◣    ◢NORHIR◣NORBLK◣NOR
+NORBLK             NORHIR◢NORHIR██NORHBWHTHIW●●NORHIR██NORHIR◣NOR
+NORBLK           NORBLK▉ NORWHT▁▃▄▄▄▃NORBLK█ NOR
+NORBLK          ◢NORWHT▅NORHBWHTBLK __--~~~~--__ NORWHT▅NORBLK◣NOR
+NORBLK         NORHBWHTBLK▍ .-~            ~-.  NORBLK▍NOR
+NORBLK       NORBLK▋NORHBWHTBLK  |                  |  NORBLK▍NOR
+NORBLK      ▕NORHBWHTBLK▎  ~-._.---~~---._.-~   NORBLK▌NOR
+NORBLK      NORBLK▊NORHBWHTBLK▏      ▁      ▁       NORWHT▊NORBLK▎NOR
+NORBLK      NORBLK▊NORHBWHTBLK▎▁▄NORWHT▃▆NORHBWHTBLK      NORWHT▇▄NORHBWHTBLK▄▂ NORWHT▊NORBLK▏NOR
+NORBLK      ▁NORHBWHTBLK◣NORWHT▅NORHBWHTBLK                 NORWHT▇▅NORHBWHTBLK◢NORBLK▁__NOR
+NORBLK  NORBLK▌NORWHT▆NORHBWHTHIR◥NORHIR◣ NORHBWHTBLK▄▂     ●   ,  ▁▃NORWHT NORHIR◢NORHBWHTHIR◤ NOR
+NORHIW  NORHBWHTBLK▍NORHIR██NORHBWHTHIR◥NORBLK██ NORHBWHTBLK◣^-_  _--◢NORBLK▆NORBLK██NORHBWHTHIR◤NORHIR█NORHBWHTWHT█NORBLK▍NOR
+NORBLK▌NORHBWHTWHT     NORHBWHTBLK▁ NORBLK︳██▆NORHBWHTBLK◣▔◢NORBLK▆█   ▁NORHBWHTBLK︳NORHBWHTWHT    NORWHT▌NOR
+NORBLK  NORHBWHTBLK▍ NORWHT▊NORBLK▎NORHBWHTBLK▍NORBLK◣      ▆▆██  █NORWHT▋NORHBWHTBLK▎ NORHBWHTWHT█ NOR
+NORBLK   NORHBWHTYEL NORHBWHTBLK▂NORBLK▏NORBLK▊NORHBWHTBLK▎NORWHT▇▆▄▃▃▃▄▅▇NORHBWHTBLK NORBLK▋ NORBLK▅▃▆NOR
+NORBLK        ▕NORHBWHTBLK▍      NORHBWHTWHT            NORWHT▌NORHIW              NOR
+NORBLK         NORHBWHTBLK▋                   NORWHT▋NORBLK▏  NORYEL          NOR
+NORBLK NORYEL         NORHBWHTYEL NORHBWHTBLK◣     ▁▃▁     NORWHT◤NORBLK▎NOR
+NORBLK           NORBLK◣▁▂▄▆▆▅▃▂◢NOR
 MSG;
         
 

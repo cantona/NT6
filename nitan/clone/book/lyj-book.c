@@ -14,7 +14,7 @@ void create()
                 set_default_object(__FILE__);
         else {
                 set("unit", "本");
-                set("long", "這是昆侖派前人所總結的正兩儀劍法的秘籍。\n");
+                set("long", "這是崑崙派前人所總結的正兩儀劍法的祕籍。\n");
                 set("value", 500);
                 set("material", "paper");
                 set("skill", ([

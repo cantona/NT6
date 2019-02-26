@@ -12,10 +12,10 @@
 ●  msg_min <anything>     設定當使用ｇｏｔｏ到達某處時, 別人所看到
                            的訊息。
 
-●  msg_mout <anything>    設定當使用ｇｏｔｏ離開時, 原來房間裡的人
+●  msg_mout <anything>    設定當使用ｇｏｔｏ離開時, 原來房間裏的人
                            所看到的訊息。
 
-●  msg_clone <anything>   設定當ｃｌｏｎｅ□ＮＰＣ或ＯＢＪ時所顯示
+●  msg_clone <anything>   設定當ｃｌｏｎｅＮＰＣ或ＯＢＪ時所顯示
                            的訊息。$ｎ 表示你所ｃｌｏｎｅ的物件的名
                            字。
 
@@ -25,6 +25,6 @@
 
 ●  combat verbose           設定戰鬥中是否要顯示數字方面的資料。
      
-●  trace_error <yes/no>   顯示ｔｒａｃｅ□ｅｒｒｏｒ。
+●  trace_error <yes/no>   顯示ｔｒａｃｅｅｒｒｏｒ。
 
-●  no_task_msg                   找到ｔａｓｋ物品是不公布信息。
+●  no_task_msg                   找到ｔａｓｋ物品是不公佈信息。

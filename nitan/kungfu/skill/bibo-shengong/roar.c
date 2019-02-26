@@ -12,14 +12,14 @@ int exert(object me, object target)
 
         if( query("neili", me)<600
         ||  (int)me->query_skill("bibo-shengong", 1) < 50)
-                return notify_fail("你鼓足真氣「喵」的叫了一聲, 結果嚇走了幾只老鼠。\n");
+                return notify_fail("你鼓足真氣「喵」的叫了一聲, 結果嚇走了幾隻老鼠。\n");
                 
         skill = me->query_skill("force", 1) / 4 + me->query_skill("bibo-shengong", 1);
         addn("neili", -150, me);
         me->receive_damage("qi", 10);
         
         if( query("no_fight", environment(me)) )
-                return notify_fail("這裡不能攻擊別人! \n");
+                return notify_fail("這裏不能攻擊別人! \n");
 
         me->start_busy(5);
         message_combatd(HIY "$N" HIY "氣凝丹田，運集全身內力吟出" 

@@ -32,7 +32,7 @@ mapping *action = ({
         "damage" : 44,
         "damage_type" : "割傷",
 ]),
-([      "action" : "$N轉“嵌”位至“易”位，$w緩緩的斜著向$n推去",
+([      "action" : "$N轉“嵌”位至“易”位，$w緩緩的斜着向$n推去",
         "force"  : 237,
         "attack" : 55,
         "dodge"  : 55,

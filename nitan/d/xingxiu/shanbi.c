@@ -8,7 +8,7 @@ void create()
         set("short", "山壁");
         set("long", @LONG
 一條草草在山壁上人工開鑿出來崎嶇的小路，幾個星宿弟子正在埋
-頭苦幹。這裡，寒風凜冽，西面是望浩浩百裡方圓的星宿海。東邊山壁
+頭苦幹。這裏，寒風凜冽，西面是望浩浩百里方圓的星宿海。東邊山壁
 上，盡是星宿弟子用力砸出的坑凹(ao)。
 LONG
         );
@@ -46,10 +46,10 @@ int do_za(string arg)
         if (!weapon) return notify_fail("你用什麼砸山壁來練功？\n");  
         if( query("skill_type", weapon) == "staff" )
                 if ((int)me->query_skill("staff", 1) >= 120) 
-                        return notify_fail("你已經不用再在這裡費功夫了。\n");  
+                        return notify_fail("你已經不用再在這裏費功夫了。\n");  
         if( query("skill_type", weapon) == "hammer" )
                 if ((int)me->query_skill("hammer", 1) >= 120) 
-                        return notify_fail("你已經不用再在這裡費功夫了。\n");  
+                        return notify_fail("你已經不用再在這裏費功夫了。\n");  
         if( random(query("kar", me))<3 )
         {
                 message_vision("$N一不小心砸到自己腳上，痛得暈了過去。\n",me);

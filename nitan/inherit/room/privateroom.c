@@ -163,7 +163,7 @@ int do_kickout(string arg)
                 return notify_fail("你又不是這兒的主人，想幹什麼？\n");
 
         if (! query("no_fight"))
-                return notify_fail("江湖上拳頭大的說話，你何不施展出真實本領？\n ");
+                return notify_fail("江湖上拳頭大的説話，你何不施展出真實本領？\n ");
 
         if( query("couple/couple_id", me) == query("room_owner_id") )
         {
@@ -179,10 +179,10 @@ int do_kickout(string arg)
                 return notify_fail("數據錯誤：無法查詢出口。\n");
 
         message_vision("$N大喝一聲：“快給" + RANK_D->query_self_rude(me) +
-                       "滾出去！”\n說罷，飛起一腳把$n咕嚕咕嚕的踢了出去！\n",
+                       "滾出去！”\n説罷，飛起一腳把$n咕嚕咕嚕的踢了出去！\n",
                        me, ob);
         ob->move(entry);
-        message("vision", "只聽一陣嘈雜，一人慘叫著從裡面"
+        message("vision", "只聽一陣嘈雜，一人慘叫着從裏面"
                           "飛了出來，重重的落到了地上。\n",
                 environment(ob), ob);
         tell_object(ob, HIR "你只覺得渾身劇痛，骨頭都麻了。\n" NOR);
@@ -203,10 +203,10 @@ int do_knock(string arg)
 
         if (stringp(exit = query("KEY_DOOR/exit")) &&
             query("exits/" + exit))
-                return notify_fail("這裡的門是開的，你敲它幹什麼。\n");
+                return notify_fail("這裏的門是開的，你敲它幹什麼。\n");
 
         if (! query("room_key"))
-                return notify_fail("在這裡開門又不用鑰匙，你亂敲什麼。\n");
+                return notify_fail("在這裏開門又不用鑰匙，你亂敲什麼。\n");
 
         me = this_player();
         message_vision("$N走上前去，“篤篤篤”輕輕敲了幾下門。\n", me);
@@ -227,10 +227,10 @@ int do_unlock(string arg)
                 return notify_fail("你要打開什麼？\n");
 
         if (! stringp(exit = query("KEY_DOOR/exit")))
-                return notify_fail("這裡沒有門需要打開。\n");
+                return notify_fail("這裏沒有門需要打開。\n");
 
         if (query("exits/" + exit))
-                return notify_fail("這裡的門是開的，不必多此一舉了。\n");
+                return notify_fail("這裏的門是開的，不必多此一舉了。\n");
 
         me = this_player();
         if (stringp(query("room_key")))
@@ -262,12 +262,12 @@ int do_lock(string arg)
                 return notify_fail("你要鎖上什麼？\n");
 
         if (! stringp(exit = query("KEY_DOOR/exit")))
-                return notify_fail("這裡沒有門需要關上。\n");
+                return notify_fail("這裏沒有門需要關上。\n");
 
         if (! query("exits/" + exit))
-                return notify_fail("這裡的門已經鎖上了，不必多此一舉了。\n");
+                return notify_fail("這裏的門已經鎖上了，不必多此一舉了。\n");
 
-        message_vision("$N隨手一帶門，“□當”一聲門鎖上了。\n",
+        message_vision("$N隨手一帶門，“哐當”一聲門鎖上了。\n",
                        this_player());
         this_close_door(1);
         return 1;
@@ -324,7 +324,7 @@ void this_close_door(int silent)
                 return;
 
         if (! silent)
-                message("vision", "\n一陣風吹來，“□當”一聲門關上了。\n",
+                message("vision", "\n一陣風吹來，“哐當”一聲門關上了。\n",
                         this_object());
         delete("exits/" + exit);
 
@@ -336,7 +336,7 @@ void this_close_door(int silent)
 
         if (! ob) return;
 
-        message("vision", "\n“□當”一聲門關上了。\n", ob);
+        message("vision", "\n“哐當”一聲門關上了。\n", ob);
         delete("exits/"+query("KEY_DOOR/exit", ob), ob);
 }
 

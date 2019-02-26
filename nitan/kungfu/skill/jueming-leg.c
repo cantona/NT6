@@ -7,7 +7,7 @@ string type() { return "martial"; }
 string martialtype() { return "skill"; }
 
 mapping *action = ({
-([        "action" : "$n用右腳鉤踢$N左腳下盤，$N提腳避開$n鋒芒，一招「黑虎蹬山」，\n迅速猛力地連續踹擊$n的$l。",
+([        "action" : "$n用右腳鈎踢$N左腳下盤，$N提腳避開$n鋒芒，一招「黑虎蹬山」，\n迅速猛力地連續踹擊$n的$l。",
         "lvl"   : 0,
         "skill_name" : "黑虎蹬山" 
 ]),
@@ -19,11 +19,11 @@ mapping *action = ({
         "lvl"   : 20,
         "skill_name" : "虎尾攪林" 
 ]),
-([        "action" : "$N用右腳鉤踢$n左腿下盤，同時右鉤踢突然橫掃$n腰部，一招「風卷殘葉」",
+([        "action" : "$N用右腳鈎踢$n左腿下盤，同時右鈎踢突然橫掃$n腰部，一招「風捲殘葉」",
         "lvl"   : 30,
-        "skill_name" : "風卷殘葉" 
+        "skill_name" : "風捲殘葉" 
 ]),
-([        "action" : "$n用右拳猛擊$N面部，$N速用右裡合腿掛攔$n腕部，一招「疾浪翻花」，\n變為側踹腿踹$n的$l",
+([        "action" : "$n用右拳猛擊$N面部，$N速用右裏合腿掛攔$n腕部，一招「疾浪翻花」，\n變為側踹腿踹$n的$l",
         "lvl"   : 40,
         "skill_name" : "疾浪翻花" 
 ]),
@@ -31,7 +31,7 @@ mapping *action = ({
         "lvl"   : 60,
         "skill_name" : "浪子踢球" 
 ]),
-([        "action" : "$N用右腳鉤踢$n足根，使出「順風扯旗」，順勢變為橫腿，側倒疾掃$n$l",
+([        "action" : "$N用右腳鈎踢$n足根，使出「順風扯旗」，順勢變為橫腿，側倒疾掃$n$l",
         "lvl"   : 80,
         "skill_name" : "順風扯旗" 
 ]),

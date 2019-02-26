@@ -23,7 +23,7 @@ int exert(object me, object target)
 
         skill = me->query_skill("hamagong", 1);
         msg = HIB "$N" HIB "忽地雙手撐地倒立，逆運經脈，頓時"
-              "內息暗生，防御力大增。\n" NOR;
+              "內息暗生，防禦力大增。\n" NOR;
         message_combatd(msg, me);
 
         addn_temp("apply/dodge", skill/2, me);

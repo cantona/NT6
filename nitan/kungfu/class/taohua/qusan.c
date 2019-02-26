@@ -11,13 +11,13 @@ string ask_xiao();
 void create()
 {
         set_name("曲三", ({ "qu san", "san", "qu" }));
-        set("title", "酒店老板");
+        set("title", "酒店老闆");
         set("nickname", "跛子");
         set("gender", "男性");
         set("age", 25);
         set("long",
-                "他是最近新搬到此地的一個跛子。他無精打彩地招呼著客人，"
-                "眼睛不時呆呆地看著天空。\n");
+                "他是最近新搬到此地的一個跛子。他無精打彩地招呼着客人，"
+                "眼睛不時呆呆地看着天空。\n");
         set("attitude", "friendly");
         set("class", "scholar");
         set("str", 30);
@@ -65,9 +65,9 @@ void create()
 
         set("attitude", "friendly");
         set("inquiry", ([
-                "黃藥師" : "我師…，什麼？我這裡不賣藥。\n",
+                "黃藥師" : "我師…，什麼？我這裏不賣藥。\n",
                 "賣藥"   : "不賣藥就是不賣藥。\n",
-                "曲靈風" : "啊！我，……你說的人我不認識。\n",
+                "曲靈風" : "啊！我，……你説的人我不認識。\n",
                 "生意"   : "這個麼……。\n",
                 "學藝"   : (: ask_xueyi :),
                 "古玩"   : (: ask_xiao :),
@@ -102,7 +102,7 @@ void greeting(object ob)
         if (!ob || environment(ob) != environment())
                 return;
 
-        say("曲三有氣無力地說道：這位" + RANK_D->query_respect(ob) +
+        say("曲三有氣無力地説道：這位" + RANK_D->query_respect(ob) +
             "，買點五香花生下酒吧。\n");
 }
 
@@ -180,13 +180,13 @@ int ask_xueyi()
         if( !query_temp("lingfeng_teach", me )
          && (query("family/master_name", me) != "曲靈風") )
         {
-                command("say " + RANK_D->query_respect(me) + "說笑了，在下只是個窮賣酒的，有啥可教的？");
+                command("say " + RANK_D->query_respect(me) + "説笑了，在下只是個窮賣酒的，有啥可教的？");
                 return 1;
         }
 
         if (base_name(environment(me)) != "/d/jiaxing/xiaodian")
         {
-                command("say 這得回到酒店再說。");
+                command("say 這得回到酒店再説。");
                 return 1;
         }
 
@@ -201,13 +201,13 @@ int ask_xueyi()
         if (k > 2)
         {
                 command("whisper "+query("id", me)+
-                        "這裡耳目眾多，實不是傳功授藝之所，還是先打發了周圍閒人再說。");
+                        "這裏耳目眾多，實不是傳功授藝之所，還是先打發了周圍閒人再説。");
                 return 1;
         }
 
         command("say " + RANK_D->query_respect(me) + "隨我來。");
-        tell_object(me, CYN "曲三脫下破舊的布衣，換上一身青袍，在臉上摸了幾把。\n" NOR);
-        tell_object(me, CYN "曲三打開碗櫥，將一只碗向右旋轉，忽聽得喀喇喇一聲響，"
+        tell_object(me, CYN "曲三脱下破舊的布衣，換上一身青袍，在臉上摸了幾把。\n" NOR);
+        tell_object(me, CYN "曲三打開碗櫥，將一隻碗向右旋轉，忽聽得喀喇喇一聲響，"
                         "櫥壁向兩旁分開，露出黑黝黝的一個洞來。\n" NOR);
         set_temp("taohua/master", this_object()->name(), me);
         me->move("/d/jiaxing/mishi");
@@ -231,7 +231,7 @@ string ask_xiao()
 
 
         if (query("xiao_count") < 1)
-                return "最近生意不好，哪裡有錢買古玩？";
+                return "最近生意不好，哪裏有錢買古玩？";
 
         if( present("tongxiao",this_player()) || query_temp("get_xiao", this_player()) )
                 return RANK_D->query_respect(me) + "還沒有把古玩交給黃島主？";
@@ -239,10 +239,10 @@ string ask_xiao()
         command("say " + RANK_D->query_respect(me) + "是從桃花島來的？");
 
         if (me->query_skill("bibo-shengong", 1) < 100)
-                return "久聞黃島主收藏奇珍異寶，我有些古玩，想請他老人家鑒賞。";
+                return "久聞黃島主收藏奇珍異寶，我有些古玩，想請他老人家鑑賞。";
 
         if (me->query_skill("yuxiao-jianfa", 1) < 100)
-                return "久聞黃島主收藏奇珍異寶，我有些古玩，想請他老人家鑒賞。";
+                return "久聞黃島主收藏奇珍異寶，我有些古玩，想請他老人家鑑賞。";
 
 
         command("touch"+query("id", me));
@@ -253,5 +253,5 @@ string ask_xiao()
 
         message_vision("曲三遞給$N一支青銅簫。\n", this_player());
 
-        return "我近日得到一件古玩，麻煩你帶給黃島主鑒賞鑒賞。";
+        return "我近日得到一件古玩，麻煩你帶給黃島主鑑賞鑑賞。";
 }

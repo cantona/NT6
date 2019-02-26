@@ -38,7 +38,7 @@ int perform(object me)
                 return notify_fail("你現在沒有準備使用太極拳，無法使用" + name() + "。\n");
 
         if (! living(target))
-                return notify_fail("對方都已經這樣了，用不著這麼費力吧？\n");
+                return notify_fail("對方都已經這樣了，用不着這麼費力吧？\n");
 
         msg = HIW "$N" HIW "使出太極拳「擠」字訣，右腳實，左腳虛，粘連粘"
               "隨，右掌已搭住$n" HIW "左腕，橫勁發出。\n" NOR;
@@ -63,7 +63,7 @@ int perform(object me)
         {
                 addn("neili", -10, me);
                 msg += CYN "$n" CYN "見狀大吃一驚，急忙向後猛退數步，"
-                       "終于避開了$N" CYN "這一擊。\n" NOR;
+                       "終於避開了$N" CYN "這一擊。\n" NOR;
                 me->start_busy(3);
         }
         message_combatd(msg, me, target);

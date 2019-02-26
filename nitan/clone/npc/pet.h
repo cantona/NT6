@@ -57,7 +57,7 @@ int receive_whistle(object me)
 
         if ((env = environment()) && env == me)
         {
-                write(name() + "你不是正騎著嗎？你召喚個什麼勁？\n");
+                write(name() + "你不是正騎着嗎？你召喚個什麼勁？\n");
                 return 1;
         }
 
@@ -82,7 +82,7 @@ int receive_whistle(object me)
                         }
                 }
 
-                message_vision(HIG "$n" HIG "不知從哪裡竄到$N" HIG "面前！\n\n" NOR,
+                message_vision(HIG "$n" HIG "不知從哪裏竄到$N" HIG "面前！\n\n" NOR,
                                me, this_object());
         }
 

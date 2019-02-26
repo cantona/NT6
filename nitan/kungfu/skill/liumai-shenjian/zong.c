@@ -40,7 +40,7 @@ int perform(object me, object target)
                 return notify_fail("你必須是空手才能施展" ZONG "！\n");
 
         if (! living(target))
-                return notify_fail("對方都已經這樣了，用不著這麼費力吧？\n");
+                return notify_fail("對方都已經這樣了，用不着這麼費力吧？\n");
 
 
         msg = HIM "$N" HIM "一聲清嘯，十指紛彈，頓覺六脈劍譜已湧上心頭，此起"

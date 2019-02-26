@@ -30,7 +30,7 @@ int perform(object me, object target)
 
         if( objectp(weapon=query_temp("weapon", me)) || 
             objectp(weapon=query_temp("handing", me)) )
-                return notify_fail("你必須空著雙手才能使用指法絕招。\n");
+                return notify_fail("你必須空着雙手才能使用指法絕招。\n");
 
         if( query("neili", me)<500 )
                 return notify_fail("你的內力不夠。\n");
@@ -52,7 +52,7 @@ int perform(object me, object target)
                 mapforce = "內力";
                 
         msg = MAG "\n$N" NOR MAG "口中默誦九字真言，雙手攤開，九式手印不住變幻。\n" +
-               "一時之間，漫天手印混雜著強烈的" HIW + mapforce + NOR + 
+               "一時之間，漫天手印混雜着強烈的" HIW + mapforce + NOR + 
                MAG "，無堅不摧地殺向$n" NOR MAG "！\n" NOR;
                 
         message_combatd(msg, me, target);
@@ -75,11 +75,11 @@ int perform(object me, object target)
                 if (weapon2)
                         msg += MAG "$n" NOR MAG "見$N" MAG "來勢兇猛，不敢正面抵擋，手中" + weapon2->name() + 
                                NOR MAG "滿天幻影，防得水泄不通\n" + 
-                               "$N" NOR MAG "竟是置若罔聞，" HIW "螺旋勁氣" NOR MAG "仍舊綿綿不絕，$n" NOR MAG "無可奈何之下，被擊個正著！\n" NOR; 
+                               "$N" NOR MAG "竟是置若罔聞，" HIW "螺旋勁氣" NOR MAG "仍舊綿綿不絕，$n" NOR MAG "無可奈何之下，被擊個正着！\n" NOR; 
                 else
                         msg += MAG "$n" NOR MAG "見$N" MAG "來勢兇猛，不敢正面抵擋，側身進步雙掌奮力側擊$N\n" + 
                                NOR MAG "$N" NOR MAG "竟是置若罔聞，" HIW "螺旋勁氣" NOR MAG "仍舊綿綿不絕，$n" + 
-                               NOR MAG "無可奈何之下，被擊個正著！\n" NOR;
+                               NOR MAG "無可奈何之下，被擊個正着！\n" NOR;
                
                 target->receive_damage("qi", damage, me);
                 target->receive_wound("qi", damage/2, me);

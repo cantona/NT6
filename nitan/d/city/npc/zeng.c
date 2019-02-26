@@ -21,8 +21,8 @@ void create()
         set("dex", 25);
         set("str", 25);
         set("long",
-"她是韋爵爺不知道第幾房的小妾，在這裡開個成衣舖，賣些不知道
-哪來的衣服。有人說那都是韋爵爺從宮中弄出來的禁品。話這麼說，
+"她是韋爵爺不知道第幾房的小妾，在這裏開個成衣鋪，賣些不知道
+哪來的衣服。有人説那都是韋爵爺從宮中弄出來的禁品。話這麼説，
 生意照樣紅活。\n");
         set_skill("unarmed", 60);
         set_skill("changquan", 60);
@@ -123,7 +123,7 @@ int do_sew(string arg)
 
         me = this_player();
         if (me->is_busy())
-                return notify_fail("你正忙著呢，別著急。\n");
+                return notify_fail("你正忙着呢，彆着急。\n");
 
         if( !query_temp("job/sew", me) )
         {
@@ -166,7 +166,7 @@ int working(object me)
                 msg = "$N戴上一個頂針，摸出針線。";
                 break;
         case 2:
-                msg = "$N展開布料，對著樣子比劃了半天。";
+                msg = "$N展開布料，對着樣子比劃了半天。";
                 break;
         case 3:
                 msg = "$N輕輕的折了折料子，留下幾條痕印。";

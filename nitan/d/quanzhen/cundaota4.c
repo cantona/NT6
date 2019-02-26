@@ -10,9 +10,9 @@ void create()
 {
         set("short", "存道塔頂");
         set("long", @LONG
-這裡是存道塔的塔頂，塔梯到這裡就到了盡頭。牆壁上開著幾
-個窗戶(window)，一個中年道人正捧著一本書苦苦研讀。天色昏暗，
-桌上擺放著一支蠟燭(candle)，卻沒有點著。
+這裏是存道塔的塔頂，塔梯到這裏就到了盡頭。牆壁上開着幾
+個窗户(window)，一箇中年道人正捧着一本書苦苦研讀。天色昏暗，
+桌上擺放着一支蠟燭(candle)，卻沒有點着。
 LONG
         );
         set("exits", ([
@@ -51,8 +51,8 @@ int do_dian(string arg)
         if ( query("count")>0 &&
         present("zhangjing", environment(me)) &&
         living(present("zhangjing", environment(me))) ) {
-                message_vision(HIG"$N走上前去，打著火把蠟燭點燃，屋裡頓時亮堂了許多。\n"NOR,this_player());
-                message_vision("掌經道長抬起頭，好象剛從沉思中恢復過來似的，道：天\n",this_player());
+                message_vision(HIG"$N走上前去，打着火把蠟燭點燃，屋裏頓時亮堂了許多。\n"NOR,this_player());
+                message_vision("掌經道長抬起頭，好像剛從沉思中恢復過來似的，道：天\n",this_player());
                 message_vision("色已晚了嗎，唉，我讀這本道德經竟然連天色也忘記了。\n",this_player());
                 message_vision("好，多謝這位"+RANK_D->query_respect(me)+"了，我身上這東西是掌藥師弟送給我\n",this_player());
                 message_vision("的，也不知道有什麼用，現在送給你啦。\n",this_player());
@@ -61,7 +61,7 @@ int do_dian(string arg)
                 ob->move(me);
         }
         else {
-                message_vision("$N走上前去，打著火把蠟燭點燃，屋裡頓時亮堂了許多。\n",this_player());
+                message_vision("$N走上前去，打着火把蠟燭點燃，屋裏頓時亮堂了許多。\n",this_player());
         }
         return 1;
 }

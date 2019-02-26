@@ -6,7 +6,7 @@ void create()
         set_name("烏鴉", ({ "wuya", "craw" }) );
         set("race", "飛禽");
         set("age", 3);
-        set("long", "一只黑色的烏鴉，醜陋極了。\n");
+        set("long", "一隻黑色的烏鴉，醜陋極了。\n");
         set("attitude", "peaceful");
 
         set("combat_exp", 300);

@@ -8,9 +8,9 @@ void create()
 {
         set("short",HIG "小花園" NOR);
         set("long", @LONG
-這裡一個小花園，這裡的肥沃土壤十分適合各種花的生長，特別
-地一些十分名貴的花種，這裡也可生長。你可以在這裡種花(zhonghua)。
-花店裡可以買到花的種子。
+這裏一個小花園，這裏的肥沃土壤十分適合各種花的生長，特別
+地一些十分名貴的花種，這裏也可生長。你可以在這裏種花(zhonghua)。
+花店裏可以買到花的種子。
 LONG
         );
 
@@ -83,7 +83,7 @@ int do_jiaoshui()
 
         if (me->is_busy())
         {
-                tell_object(me, HIR "你正忙著呢，別著急。\n" NOR);
+                tell_object(me, HIR "你正忙着呢，彆着急。\n" NOR);
                 return 1;
         }
 
@@ -131,9 +131,9 @@ int do_jiaoshui()
                                 return 1;
                         }
 
-                        message_vision(HIC "$N" HIC "十分小心的給小坑裡澆了一些水，突然" +
-                                       query("long", ob)+"從坑裡冒了出來。\n"NOR,me);
-                        message_vision(HIR "$N" HIR "把它摘了下來，拿在手裡。\n" NOR,me);
+                        message_vision(HIC "$N" HIC "十分小心的給小坑裏澆了一些水，突然" +
+                                       query("long", ob)+"從坑裏冒了出來。\n"NOR,me);
+                        message_vision(HIR "$N" HIR "把它摘了下來，拿在手裏。\n" NOR,me);
                         ob->move(me, 1);
                         delete_temp("jiaoshui", me);
                         delete_temp("peiyu", me);
@@ -143,8 +143,8 @@ int do_jiaoshui()
                         return 1;
                 }
 
-                message_vision(HIR "$N" HIR "笨手笨腳的拿起水壺給小坑裡澆水，結果水"
-                               "洒的太多把花給毀了。\n",me);
+                message_vision(HIR "$N" HIR "笨手笨腳的拿起水壺給小坑裏澆水，結果水"
+                               "灑的太多把花給毀了。\n",me);
                 delete_temp("jiaoshui", me);
                 delete_temp("zhonghua", me);
                 delete_temp("peiyu", me);

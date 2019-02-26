@@ -29,7 +29,7 @@ int main(object me, string arg)
         if (new_status != "新手導師" &&
             new_status != "主頁維護" &&
             new_status != "遊戲宣傳" &&
-            new_status != "取消雇傭" )
+            new_status != "取消僱傭" )
                 return notify_fail("沒有這種職位。\n");
 
 /*
@@ -46,7 +46,7 @@ int main(object me, string arg)
                 return notify_fail("該玩家已經擔任該職位。\n");
         }
 
-        if (new_status == "取消雇傭")
+        if (new_status == "取消僱傭")
         {
                   if( !mapp(query("viremploy", ob)) )
                   {
@@ -121,7 +121,7 @@ write(@HELP
 
 用來提升權限等級, [主頁維護、遊戲宣傳、新手導師、巫師助理]
 
-           employ <某人> 取消雇傭
+           employ <某人> 取消僱傭
 
 取消該虛擬工作人員的職位。
 

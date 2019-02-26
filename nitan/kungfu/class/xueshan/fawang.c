@@ -33,7 +33,7 @@ void create()
 他便是雪山寺的護教法王。貴為蒙古國師，極
 受成吉思汗重用，常年來隨軍隊征戰，擾亂中
 原武林，地位顯赫尊崇無比。金輪法王踏足中
-原後罕逢敵手，藐視中原群雄。其武道之高深
+原後罕逢敵手，藐視中原羣雄。其武道之高深
 當可謂西域第一人。
 LONG);
         set("nickname", HIY "蒙古國師" NOR);
@@ -113,7 +113,7 @@ LONG);
         set("inquiry", ([
                 "日月金輪"  : (: ask_lun :),
                 "密道"      : (: ask_midao :),
-                "秘道"      : (: ask_midao :),
+                "祕道"      : (: ask_midao :),
                 "金剛印"    : (: ask_skill1 :),
                 "修羅降世"  : (: ask_skill2 :),
                 "若悲"      : (: ask_skill3 :),
@@ -124,12 +124,12 @@ LONG);
                 "龍吞勢"    : (: ask_skill8 :),
                 "象跌勢"    : (: ask_skill9 :),
                 "般若極"    : (: ask_skill10 :),
-                "真般若極"  : "這是傳說中的招式，便是我也未能領悟。",
+                "真般若極"  : "這是傳説中的招式，便是我也未能領悟。",
                 "破元通虛"  : "這一招你去讓霍都教你好了。",
                 "轟雷萬鈞"  : "這一招你去讓達而巴教你好了。",
                 "鎮魂舞"    : "這一招你去讓達而巴教你好了。",
                 "龍象袈裟"  : "這是我的隨身物品，你打聽這個做甚？",
-                "金輪九轉"  : "我讓你去跟唐楠接口，你來跟我說幹嘛？",
+                "金輪九轉"  : "我讓你去跟唐楠接口，你來跟我説幹嘛？",
         ]));
 
         set("master_ob", 1);
@@ -218,7 +218,7 @@ void attempt_apprentice(object ob)
         }
 
         command("nod");
-        command("say 念你力求上進，以後就跟著我吧！");
+        command("say 念你力求上進，以後就跟着我吧！");
         command("recruit "+query("id", ob));
 }
 
@@ -253,11 +253,11 @@ mixed ask_skill1()
                 return "等你把大手印練熟了再來找老夫。";
 
         message_sort(HIY "\n$n" HIY "微微一愣，上下打量了$N" HIY "一番，點"
-                     "了點頭。當下凝神沉履，面容莊重，雙手攜著勁風奮力向$N"
+                     "了點頭。當下凝神沉履，面容莊重，雙手攜着勁風奮力向$N"
                      HIY "面前的一座舍利佛塔拍落，頓時只聽得轟然聲悶響，佛"
-                     "塔內的香灰被$n" HIY "的掌力激盪得四處飛揚，塵煙彌漫"
+                     "塔內的香灰被$n" HIY "的掌力激盪得四處飛揚，塵煙瀰漫"
                      "，待得煙消雲散後，$N" HIY "這才發現那座舍利佛塔上豁"
-                     "然嵌著一雙掌印。\n\n" NOR, me, this_object());
+                     "然嵌着一雙掌印。\n\n" NOR, me, this_object());
 
         command("nod");
         command("say 只要內功精純，這招並不難練。");
@@ -405,7 +405,7 @@ mixed ask_skill4()
                 return "等你把不動明王劍練熟了再來找老夫。";
 
         message_sort(HIY "\n$n" HIY "對$N" HIY "微微一笑，隨即伸出右手，中"
-                     "食二指並攏，捏作劍訣，“嗤”的一聲空點而出，霎時破"
+                     "食二指併攏，捏作劍訣，“嗤”的一聲空點而出，霎時破"
                      "空之聲驟響，一股氣勁從指尖迸發，將$N" HIY "所穿戴的"
                      "僧袍刺透出一個小孔。\n\n" NOR, me, this_object());
 
@@ -458,12 +458,12 @@ mixed ask_skill5()
                 return "等你把日月輪法練熟了再來找我。";
 
         message_sort(HIY "\n$n" HIY "沉思片刻，方才點了點頭，伸手將$N" HIY
-                     "招至身邊，俯身在$P" HIY "耳旁低聲細說良久，$N" HIY
+                     "招至身邊，俯身在$P" HIY "耳旁低聲細説良久，$N" HIY
                      "聽後不禁會心的一笑，似乎對$n" HIY "的教導大有所悟"
                      "。\n\n" NOR, me, this_object());
 
         command("grin");
-        command("say 把我剛才說的記牢，自己下去練吧。");
+        command("say 把我剛才説的記牢，自己下去練吧。");
         tell_object(me, HIC "你學會了「破立勢」。\n" NOR);
 
         if (me->can_improve_skill("hammer"))
@@ -511,7 +511,7 @@ mixed ask_skill6()
                 return "等你把日月輪法練熟了再來找我。";
 
         message_sort(HIY "\n$n" HIY "沉思片刻，方才點了點頭，伸手將$N" HIY
-                     "招至身邊，俯身在$P" HIY "耳旁低聲細說良久，$N" HIY
+                     "招至身邊，俯身在$P" HIY "耳旁低聲細説良久，$N" HIY
                      "聽後不禁會心的一笑，似乎對$n" HIY "的教導大有所悟"
                      "。\n\n" NOR, me, this_object());
 
@@ -561,10 +561,10 @@ mixed ask_skill7()
                 return "等你把日月輪法練熟了再來找我。";
 
         message_sort(HIY "\n$n" HIY "凝視了$N" HIY "半天，才頗為讚許的點"
-                     "了點頭，說道：“你能有此實力也屬不易，今日為師就"
-                     "傳你這招，瞧仔細了！”說罷$n" HIY "便取出日月金輪"
+                     "了點頭，説道：“你能有此實力也屬不易，今日為師就"
+                     "傳你這招，瞧仔細了！”説罷$n" HIY "便取出日月金輪"
                      "，嗔目大喝，單手陡然一振，驀地將日月金輪飛擲而出"
-                     "，幻作數道光芒，相互盤旋著壓向$N" HIY "，招術當真"
+                     "，幻作數道光芒，相互盤旋着壓向$N" HIY "，招術當真"
                      "精奇之極！\n\n" NOR, me, this_object());
 
         command("haha");
@@ -618,12 +618,12 @@ mixed ask_skill8()
                 return "你的龍象般若功修為不足，練練再來吧。";
 
         message_sort(HIY "\n$n" HIY "沉思片刻，方才點了點頭，伸手將$N" HIY
-                     "招至身邊，俯身在$P" HIY "耳旁低聲細說良久，$N" HIY
+                     "招至身邊，俯身在$P" HIY "耳旁低聲細説良久，$N" HIY
                      "聽後不禁會心的一笑，似乎對$n" HIY "的教導大有所悟"
                      "。\n\n" NOR, me, this_object());
 
         command("nod");
-        command("say 剛才我說的全是這招的精髓，自己下去領悟吧。");
+        command("say 剛才我説的全是這招的精髓，自己下去領悟吧。");
         tell_object(me, HIC "你學會了「龍吞勢」。\n" NOR);
 
         if (me->can_improve_skill("force"))
@@ -729,7 +729,7 @@ mixed ask_skill10()
 
         message_sort(HIY "\n$n" HIY "微微點了點頭，只是隨手搭在$N" HIY
                      "的肩上，突然$N" HIY "陡覺全身筋脈劇震，內息澎湃"
-                     "洶湧之極，猶如江河絕堤，便欲沖關破出一般，不由大"
+                     "洶湧之極，猶如江河絕堤，便欲衝關破出一般，不由大"
                      "驚。\n\n" NOR, me, this_object());
 
         command("haha");
@@ -772,10 +772,10 @@ mixed ask_midao()
         command("whisper"+query("id", me)+"你既然投入我雪山寺，以"
                 "後若\n要去中原辦事，即可用我雪山寺先輩們留下的密道，直"
                 "接去禪\n室轉動(" HIY "turn lunpan" NOR + WHT ") 輪盤觸"
-                "發機關，地面便會開啟密道，然\n後你順著密道前進便能到達"
+                "發機關，地面便會開啟密道，然\n後你順着密道前進便能到達"
                 "中原揚州。若要回寺可找我雪山寺\n伏在中原的唐楠，接口的"
                 "密語是" HIY "金輪九轉" NOR + WHT "，可記清楚了。\n");
-        return "此秘密不可泄露于他人，否則我饒不了你！";
+        return "此祕密不可泄露於他人，否則我饒不了你！";
 }
 
 mixed ask_lun()
@@ -818,7 +818,7 @@ mixed ask_lun()
         }
 
         if (owner == me)
-                return "怎麼？日月金輪不就是你拿著在用嗎？";
+                return "怎麼？日月金輪不就是你拿着在用嗎？";
 
         if (objectp(owner) && owner != this_object())
         {

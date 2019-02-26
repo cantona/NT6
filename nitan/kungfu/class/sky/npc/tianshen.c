@@ -73,7 +73,7 @@ mixed start_thborn()
                 "富士山風景畫"      : "/clone/misc/boss_item/fengjing-hua",
                 "暗殺名單"          : "/clone/misc/boss_item/ansha-mingdan",
                 "交子"              : "/clone/misc/boss_item/jiaozi",
-                "《櫻花讚》"        : "/clone/misc/boss_item/yinghua-zan",
+                "《櫻花贊》"        : "/clone/misc/boss_item/yinghua-zan",
                 "安守閣地圖"        : "/clone/misc/boss_item/anshouge-tu",
                 "天師鬼符"          : "/clone/misc/boss_item/tianshi-guifu",            
         ]);        
@@ -83,7 +83,7 @@ mixed start_thborn()
                 "富士山風景畫"      : "/clone/misc/boss_item/fengjing-hua",
                 "暗殺名單"          : "/clone/misc/boss_item/ansha-mingdan",
                 "交子"              : "/clone/misc/boss_item/jiaozi",
-                "《櫻花讚》"        : "/clone/misc/boss_item/yinghua-zan",
+                "《櫻花贊》"        : "/clone/misc/boss_item/yinghua-zan",
         ]);                
         
         // 檢查轉世條件
@@ -131,7 +131,7 @@ mixed start_thborn()
                 // 測試期間不開放挑戰BOSS
                 if (me->query("id") != "rcwiz" && me->query("id") != "axiao" && me->query("id") != "mrhy")
                 {
-                        message_sort(HIM "\n$N" HIM "對$n" HIM "說道：不錯！不錯！看來你已經通過了第一"
+                        message_sort(HIM "\n$N" HIM "對$n" HIM "説道：不錯！不錯！看來你已經通過了第一"
                                          "輪考驗，現在我將送你進入無盡太虛之中挑戰二轉守護神，打敗守護"
                                          "神便可開啟二轉之門！\n", this_object(), me);
                         tell_object(me, HIG "無盡太虛之門還未開啟，請保留好你的任務物品，開放日程請留意系統通告！\n" NOR);                                 
@@ -147,7 +147,7 @@ mixed start_thborn()
                 
                 me->set("scborn/item_ok", 1);
                 
-                message_sort(HIM "\n$N" HIM "對$n" HIM "說道：不錯！不錯！看來你已經通過了第一"
+                message_sort(HIM "\n$N" HIM "對$n" HIM "説道：不錯！不錯！看來你已經通過了第一"
                                  "輪考驗，現在我將送你進入無盡太虛之中挑戰二轉守護神，打敗守護"
                                  "神便可開啟二轉之門！\n\n", this_object(), me);
 
@@ -202,9 +202,9 @@ mixed start_thborn()
                         destruct(ob2);
                 }
 
-                message_sort(HIM "\n$N" HIM "對$n" HIM "說道：天道有序，即使閣下通過第一次轉生"
+                message_sort(HIM "\n$N" HIM "對$n" HIM "説道：天道有序，即使閣下通過第一次轉生"
                                  "獲取了超越常人的能力，但是，第二次轉生需要自身達到意識上的超"
-                                 "脫激發體內蘊藏的巨大能量，從而真正的擺脫天道的束縛，脫胎換骨。"
+                                 "脱激發體內藴藏的巨大能量，從而真正的擺脱天道的束縛，脱胎換骨。"
                                  "看來你已經獲得了二次轉生的基本條件，現在，你只需要接受最後的"
                                  "考驗，本大神便可協助你完成二次轉生。\n"
                                  HIM "$N" HIM "頓了頓繼續道：如果你能找到" + item1 + HIM "和" +

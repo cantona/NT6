@@ -7,7 +7,7 @@ void  create  ()
         set("short", "洛水渡口");
         set("long",  @LONG
 這是洛陽城郊的洛水渡口，靜靜的洛水由此向東，匯入滾滾黃河。
-碼頭上正泊著一艘烏篷船。
+碼頭上正泊着一艘烏篷船。
 LONG);
         set("exits",  ([  /*  sizeof()  ==  2  */
                 "east"      : __DIR__"gongshu",

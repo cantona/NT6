@@ -7,7 +7,7 @@ void create()
 {
         set("short", "東大街");
         set("long", @LONG
-你走在東大街上，踩著堅實的青石板地面。向北是一條寬直的大
+你走在東大街上，踩着堅實的青石板地面。向北是一條寬直的大
 道。北邊可以通往東城門，西南邊通向南大街，東南方就是有名的望
 江樓了。東邊則是大名鼎鼎的俠義盟成都分部。不遠處有一幢破爛的
 房屋，但是屋子的門樑 (liang)已經垮塌，把門封了個嚴實。
@@ -45,7 +45,7 @@ int do_break(string arg)
                 return 0;
 
         if (query("break"))
-                return notify_fail("房樑已經被震飛，用不著再費力了。\n");
+                return notify_fail("房樑已經被震飛，用不着再費力了。\n");
 
         message_vision(HIY "$N" HIY "走到房前，運氣雙掌，猛地擊"
                        "向垮塌的房樑！\n" NOR, me);

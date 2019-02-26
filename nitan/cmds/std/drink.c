@@ -23,7 +23,7 @@ int main(object me, string arg)
                 if (sscanf(from, "all %s", from))
                 {
                         if (me->is_busy())
-                                return notify_fail("你忙著呢，沒有功夫找東西。\n");
+                                return notify_fail("你忙着呢，沒有功夫找東西。\n");
 
                         search_flag = 0;
                         foreach (from_ob in all_inventory(me))
@@ -68,7 +68,7 @@ int main(object me, string arg)
                         return notify_fail("你要搶劫啊？\n");
                 else
                 if (sizeof(all_inventory(from_ob)) < 1)
-                        return notify_fail(from_ob->name() + "裡面什麼都沒有啊。\n");
+                        return notify_fail(from_ob->name() + "裏面什麼都沒有啊。\n");
         } else
                 from_ob = me;
 
@@ -120,14 +120,14 @@ int main(object me, string arg)
 
         if (me->is_fighting())
         {
-                write("你邊打架邊喝東西也不怕嗆著？\n");
+                write("你邊打架邊喝東西也不怕嗆着？\n");
                 return 1;
         }
 
         if( !query("liquid/remaining", ob) )
         {
                 write(ob->name()+(query("liquid/name", ob)?
-                      "裡的"+query("liquid/name", ob)+"已經被喝得一滴也不剩了。\n":
+                      "裏的"+query("liquid/name", ob)+"已經被喝得一滴也不剩了。\n":
                       "是空的。\n"));
                 if( query("env/auto_drinkout", me) && 
                     environment(ob) != environment(me))
@@ -152,7 +152,7 @@ int main(object me, string arg)
         ob->do_effect();
         if( !query("liquid/remaining", ob) )
         {
-                write("你已經將"+ob->name()+"裡的"+query("liquid/name", ob )
+                write("你已經將"+ob->name()+"裏的"+query("liquid/name", ob )
                         + "喝得一滴也不剩了。\n");
                 ob->clear_effect();
                 if( query("env/auto_drinkout", me) && 
@@ -183,14 +183,14 @@ int help(object me)
         write(@HELP
 指令格式 : drink <容器> [in [all] <包裹>]
  
-這個指令可以讓你喝容器裡面的液體。如果你沒有設置變量 careful，
+這個指令可以讓你喝容器裏面的液體。如果你沒有設置變量 careful，
 並且你身上沒有帶這種容器就會自動在周圍的環境尋找你指定的容器。
 
-如果你指明了 in， 那麼你將從包裹取出容器飲用。倘若你身上沒有
+如果你指明瞭 in， 那麼你將從包裹取出容器飲用。倘若你身上沒有
 指明的包裹並且沒有設置環境變量 careful 的話， 就會自動在附近
 的環境尋找。
 
-如果你指明了 all，那麼你將在身上所有指定的包裹中尋找想要的容
+如果你指明瞭 all，那麼你將在身上所有指定的包裹中尋找想要的容
 器，這需要花費你一段時間。
 
 see also : eat

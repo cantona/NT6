@@ -40,12 +40,12 @@ mapping combat_action =
                 "damage_type":        "勒傷",
         ]),
         "snap": ([
-                "action":        "$N展開四爪，飛身往$n猛裡一撲",
+                "action":        "$N展開四爪，飛身往$n猛裏一撲",
                 "damage":        40,
                 "damage_type":        "勒傷",
         ]),
         "snoot":([
-                "action":        "$N用長鼻子惡狠狠地向$n卷去",
+                "action":        "$N用長鼻子惡狠狠地向$n捲去",
                 "damage":        30,
                 "damage_type":        "瘀傷",
         ]),

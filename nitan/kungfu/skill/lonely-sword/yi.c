@@ -37,7 +37,7 @@ int perform(object me, object target)
                 return notify_fail("你沒有激發獨孤九劍，無法使用劍意！\n");
 
        if (! living(target))
-              return notify_fail("對方都已經這樣了，用不著這麼費力吧？\n");
+              return notify_fail("對方都已經這樣了，用不着這麼費力吧？\n");
 
         switch (random(3))
         {
@@ -46,7 +46,7 @@ int perform(object me, object target)
                 break;
 
         case 1:
-                msg = HIM "$N" HIM "隨手揮洒手中的" + weapon->name() +
+                msg = HIM "$N" HIM "隨手揮灑手中的" + weapon->name() +
                        HIM "，漫無目的，不成任何招式。\n" NOR;
                 break;
 

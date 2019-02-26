@@ -35,10 +35,10 @@ string *skill_level_desc = ({
         BLU"不堪一擊",BLU"毫不足慮",BLU"不足掛齒",BLU"初學乍練",BLU"勉勉強強",
         HIB"初窺門徑",HIB"初出茅廬",HIB"略知一二",HIB"普普通通",HIB"平平淡淡",
         CYN"平淡無奇",CYN"粗通皮毛",CYN"半生不熟",CYN"馬馬虎虎",CYN"略有小成",
-        HIC"已有小成",HIC"鶴立雞群",HIC"駕輕就熟",HIC"青出于藍",HIC"融會貫通",
-        HIG"心領神會",HIG"爐火純青",HIG"了然于胸",HIG"略有大成",HIG"已有大成",
-        YEL"豁然貫通",YEL"出類拔萃",YEL"無可匹敵",YEL"技冠群雄",YEL"神乎其技",
-        HIY"出神入化",HIY"非同凡響",HIY"傲視群雄",HIY"登峰造極",HIY"無與倫比",
+        HIC"已有小成",HIC"鶴立雞羣",HIC"駕輕就熟",HIC"青出於藍",HIC"融會貫通",
+        HIG"心領神會",HIG"爐火純青",HIG"瞭然於胸",HIG"略有大成",HIG"已有大成",
+        YEL"豁然貫通",YEL"出類拔萃",YEL"無可匹敵",YEL"技冠羣雄",YEL"神乎其技",
+        HIY"出神入化",HIY"非同凡響",HIY"傲視羣雄",HIY"登峯造極",HIY"無與倫比",
         RED"所向披靡",RED"一代宗師",RED"精深奧妙",RED"神功蓋世",RED"舉世無雙",
         WHT"驚世駭俗",WHT"撼天動地",WHT"震古鑠今",WHT"超凡入聖",WHT"威鎮寰宇",
         HIW"空前絕後",HIW"天人合一",MAG"深藏不露",HIM"深不可測",HIR"返璞歸真"
@@ -47,7 +47,7 @@ string *skill_level_desc = ({
 string *knowledge_level_desc = ({
         BLU"新學乍用",BLU"初窺門徑",HIB"略知一二",HIB"半生不熟",
         CYN"馬馬虎虎",CYN"已有小成",HIC"融會貫通",HIC"心領神會",
-        GRN"了然於胸",GRN"豁然貫通",YEL"非同凡響",YEL"舉世無雙",
+        GRN"瞭然於胸",GRN"豁然貫通",YEL"非同凡響",YEL"舉世無雙",
         HIY"震古鑠今",RED"無與倫比",WHT"超凡入聖",HIW"空前絕後",
 });
 
@@ -191,7 +191,7 @@ int main(object me, string arg)
         }
 
         if (! valid_check)
-                return notify_fail("只有巫師或有師徒/夫妻/結拜/同盟關系的人"
+                return notify_fail("只有巫師或有師徒/夫妻/結拜/同盟關係的人"
                                    "才能察看他人的技能。\n");
 
         skl = ob->query_skills();
@@ -395,7 +395,7 @@ int help(object me)
 
 這個指令可以讓你(你)查詢所學過的技能。
 
-你也可以指定一個和你有師徒關系的對象，用 skills 可以查知對方的技能狀況。
+你也可以指定一個和你有師徒關係的對象，用 skills 可以查知對方的技能狀況。
 也可以查詢某人某項技能的情況，比如skills taiji-shengong of song， 或者
 是skills literate of me， 用這種方法查詢時分以下幾種情況：
 
@@ -409,7 +409,7 @@ int help(object me)
 3 如果查詢的技能是一種普通的武技，則顯示可以激發的基本武技基礎和可以與
   之互備的武功。
 
-使用該命令可以了解你學到的武功技能。玩家查詢的時候不需要指明me參數，可
+使用該命令可以瞭解你學到的武功技能。玩家查詢的時候不需要指明me參數，可
 以直接輸入<技能名>參數。
 
 巫師可以查詢任何人或 NPC 的技能狀況。

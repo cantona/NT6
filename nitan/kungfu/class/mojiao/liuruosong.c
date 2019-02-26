@@ -10,12 +10,12 @@ inherit F_QUESTER;
 void create()
 {
         set_name("柳若鬆", ({"liu ruosong", "liu", "ruosong"}));
-        set("nickname", HIW "青鬆劍客" NOR );
+        set("nickname", HIW "青松劍客" NOR );
         // set("title", "歲寒三友");
         set("gender", "男性");
         set("age", 42);
         set("shen_type", -1);
-        set("long", "“歲寒三友”中的”青鬆劍客”，萬鬆山莊的主人。\n"
+        set("long", "“歲寒三友”中的”青松劍客”，萬松山莊的主人。\n"
                     "武當山玄真觀，天一真人門下唯一的俗家弟子。\n");
         set("attitude", "peaceful");
 
@@ -68,9 +68,9 @@ void create()
         create_family("魔教", 41, "弟子");
 
         set("no_teach", ([
-                "wudang-xinfa"          : "此乃武當武功，我不能輕易傳授于你。",
-                "wudang-zhang"      : "此乃武當武功，我不能輕易傳授于你。",
-                "wudang-jian"         : "此乃武當武功，我不能輕易傳授于你。",
+                "wudang-xinfa"          : "此乃武當武功，我不能輕易傳授於你。",
+                "wudang-zhang"      : "此乃武當武功，我不能輕易傳授於你。",
+                "wudang-jian"         : "此乃武當武功，我不能輕易傳授於你。",
         ]));
   
         set("chat_chance_combat", 120); 
@@ -105,7 +105,7 @@ int accept_ask(object me, string topic)
         {
         case "歷練" :
         case "歷煉" :
-        case "鍛煉" :
+        case "鍛鍊" :
                 return QUEST_D->accept_ask(this_object(), me, topic);
                 break;
 

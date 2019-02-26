@@ -13,7 +13,7 @@ string name() { return HIY "十二重天" NOR; }
 //1  判斷內力
 //2  判斷音律修養
 //3  判斷佛學及道學修養
-//4  判斷江湖閱歷
+//4  判斷江湖閲歷
 //5  判斷先天臂力
 //6  判斷後天臂力及unarmed
 //7  判斷先天悟性
@@ -60,10 +60,10 @@ int perform(object me, object target)
                 return notify_fail("你武學修養不足，難以施展" +name()+ "。\n");
 
         if (! living(target))
-                return notify_fail("對方都已經這樣了，用不著這麼費力吧？\n");
+                return notify_fail("對方都已經這樣了，用不着這麼費力吧？\n");
 
-        message_combatd(HIM "\n$N" HIM "口中默念：天道無常。心神沉入十二重天境界，"
-                     "連空間似乎也扭曲了起來。$n" HIM "大驚失色，仿佛已身在異界！\n" NOR, me, target);
+        message_combatd(HIM "\n$N" HIM "口中默唸：天道無常。心神沉入十二重天境界，"
+                     "連空間似乎也扭曲了起來。$n" HIM "大驚失色，彷彿已身在異界！\n" NOR, me, target);
 
 
         ap = attack_power(me, "force");
@@ -84,7 +84,7 @@ int perform(object me, object target)
 
         // 第一招，判斷對方內力
         message_combatd(HIW "$N" HIW "雙臂一震，一股渾厚至極的內勁洶湧澎湃，"
-                     "帶著排山倒海之勢向$n" HIW "席卷而至。\n" NOR, me, target);
+                     "帶着排山倒海之勢向$n" HIW "席捲而至。\n" NOR, me, target);
 
         damage1 = 0;
 
@@ -92,7 +92,7 @@ int perform(object me, object target)
         {
                 if( query("max_neili", me)>query("max_neili", target)*2 )
                 {
-                        msg = HIW "$n" HIW "舉臂欲擋,然而$N" HIW "渾厚的內力無可抵御，"
+                        msg = HIW "$n" HIW "舉臂欲擋,然而$N" HIW "渾厚的內力無可抵禦，"
                               "剎那間就將$n" HIW "全身骨頭壓碎。" NOR "( $n" RED "受傷過重，已"
                               "經有如風中殘燭，隨時都可能斷氣。" NOR ")\n";
                         damage1 = -1;
@@ -135,8 +135,8 @@ int perform(object me, object target)
         dp1 = target->query_skill("guzheng-jifa", 1) + target->query_skill("tanqin-jifa", 1) +
               target->query_skill("chuixiao-jifa", 1) + dp;
 
-        message_combatd(HIW "\n$N" HIW "一聲清嘯，憑借渾厚的內力，憑空吹奏起莫名的曲子,"
-                     HIW "歡快中帶著一絲淡淡的憂傷，仿佛又回到了遙遠的童年。\n" NOR, me, target);
+        message_combatd(HIW "\n$N" HIW "一聲清嘯，憑藉渾厚的內力，憑空吹奏起莫名的曲子,"
+                     HIW "歡快中帶着一絲淡淡的憂傷，彷彿又回到了遙遠的童年。\n" NOR, me, target);
 
         if (ap * 2 / 3 + random(ap) > dp1)
         {
@@ -159,8 +159,8 @@ int perform(object me, object target)
         dp1 = target->query_skill("buddhism", 1) + target->query_skill("lamaism", 1) +
               target->query_skill("taoism", 1) + dp;
 
-        message_combatd(HIW "\n$N用內力將一股醉人的幽香彌漫開來，便似一個溫柔"
-                     HIW "美麗的女子臥在身側一般\n" NOR, me, target);
+        message_combatd(HIW "\n$N用內力將一股醉人的幽香瀰漫開來，便似一個温柔"
+                     HIW "美麗的女子卧在身側一般\n" NOR, me, target);
 
         if (ap * 2 / 3 + random(ap) > dp1)
         {
@@ -170,7 +170,7 @@ int perform(object me, object target)
                 target->receive_wound("jing", damage / 2, me);
                 p=query("qi", target)*100/query("max_qi", target);
 
-                msg = HIY "霎時間$n" HIY "只感心頭滾熱，喉幹舌燥，說不出的難受。\n" NOR;
+                msg = HIY "霎時間$n" HIY "只感心頭滾熱，喉乾舌燥，説不出的難受。\n" NOR;
                 msg += "( $n" + eff_status_msg(p) + " )\n";
         } else
         {
@@ -178,7 +178,7 @@ int perform(object me, object target)
         }
         message_combatd(msg, me, target);
 
-        // 第四招，判斷對方江湖閱歷
+        // 第四招，判斷對方江湖閲歷
         dp1=query("score", target);
         dp1 /= 20000;
         if (dp1 > 10000)
@@ -201,7 +201,7 @@ int perform(object me, object target)
                                           (: final, me, target, damage :));
         } else
         {
-                msg = CYN "$n" CYN "見多識廣，危急時刻終于看清$N"
+                msg = CYN "$n" CYN "見多識廣，危急時刻終於看清$N"
                       CYN "招式來路，連忙飛身避開。\n" NOR;
         }
         message_combatd(msg, me, target);
@@ -210,7 +210,7 @@ int perform(object me, object target)
         dp1=query("str")*30+target->query_skill("parry", target)+dp;
 
         message_combatd(HIW "\n$N" HIW "大喝一聲，一招攻向$n" HIW "，雖然"
-                     "簡單明了，卻有石破天驚之勢！\n" NOR, me, target);
+                     "簡單明瞭，卻有石破天驚之勢！\n" NOR, me, target);
 
         if (ap * 2 / 3 + random(ap) > dp1)
         {
@@ -231,7 +231,7 @@ int perform(object me, object target)
                         wp = weapon->name();
                         msg += HIW "只聽“鏘”的一聲脆響，$n" HIW "手"
                                "中的" + wp + HIW "在$N" HIW "內力激盪"
-                               "下應聲而碎，脫手跌落在地上。\n" NOR;
+                               "下應聲而碎，脱手跌落在地上。\n" NOR;
                         addn("neili", -150, me);
                         set("consistence", 0, weapon);
                         weapon->move(environment(target));
@@ -303,7 +303,7 @@ int perform(object me, object target)
                 // 第九招，判斷對方先天根骨及基本招架
         dp1=query("con")*30+target->query_skill("parry", target)+dp;
 
-        message_combatd(HIW "\n$N連發數招，層層疊疊的內勁便如一堵無形氣牆，向前疾沖而"
+        message_combatd(HIW "\n$N連發數招，層層疊疊的內勁便如一堵無形氣牆，向前疾衝而"
                      HIW "去。$n" HIW "只覺無路可退，心中大驚。\n" NOR, me, target);
 
         if (ap * 2 / 3 + random(ap) > dp1)
@@ -324,7 +324,7 @@ int perform(object me, object target)
                 {
                         cl = cloth->name();
                         msg += HIW "只聽“轟”的一聲悶響，$n" HIW "身"
-                               "著的" + cl + HIW "在$N" HIW "內力激盪"
+                               "着的" + cl + HIW "在$N" HIW "內力激盪"
                                "下應聲而裂，化成一塊塊碎片。\n" NOR;
                         addn("neili", -150, me);
                         set("consistence", 0, cloth);
@@ -340,7 +340,7 @@ int perform(object me, object target)
         dp1 = target->query_con() * 2 + target->query_skill("force", 1) + dp;
 
         message_combatd(HIW "\n$N" HIW "雙臂陡然暴長數尺。只聽破空之聲驟響，"
-                     HIW "雙掌幻出漫天掌影，舖天蓋地向$n" HIW "攻去。\n" NOR, me, target);
+                     HIW "雙掌幻出漫天掌影，鋪天蓋地向$n" HIW "攻去。\n" NOR, me, target);
 
         if (ap * 2 / 3 + random(ap) > dp1)
         {
@@ -370,7 +370,7 @@ int perform(object me, object target)
                 target->receive_wound("jing", damage / 8, me);
                 p=query("qi", target)*100/query("max_qi", target);
 
-                msg = HIY "$n" HIY "騰挪閃躲，竭盡全力，也沒辦法躲開氣旋，被擊了個正著！\n" NOR;
+                msg = HIY "$n" HIY "騰挪閃躲，竭盡全力，也沒辦法躲開氣旋，被擊了個正着！\n" NOR;
                 msg += "( $n" + eff_status_msg(p) + " )\n";
 
                 if( objectp(cloth=query_temp("armor/cloth", target) )
@@ -379,7 +379,7 @@ int perform(object me, object target)
                 {
                         cl = cloth->name();
                         msg += HIW "只聽“轟”的一聲悶響，$n" HIW "身"
-                               "著的" + cl + HIW "在$N" HIW "內力激盪"
+                               "着的" + cl + HIW "在$N" HIW "內力激盪"
                                "下應聲而碎，化成一塊塊碎片。\n" NOR;
                         addn("neili", -150, me);
                         set("consistence", 0, cloth);
@@ -388,7 +388,7 @@ int perform(object me, object target)
         } else
         {
                 msg = CYN "$n大吃一驚，連忙退後，居然"
-                      CYN "僥幸躲開了這一招！\n" NOR;
+                      CYN "僥倖躲開了這一招！\n" NOR;
         }
         message_combatd(msg, me, target);
 
@@ -402,11 +402,11 @@ int perform(object me, object target)
                 if (! target->is_busy())
                         target->start_busy(4 + random(lvl / 400));
                 msg = COMBAT_D->do_damage(me, target, UNARMED_ATTACK, damage, 80 + random(10),
-                                          HIY "$n猶如和數十人戰鬥，哪裡還能抵擋的住，"
+                                          HIY "$n猶如和數十人戰鬥，哪裏還能抵擋的住，"
                                           HIY "僅僅數息之間，已經身中數招！\n" NOR, me , target);
         } else
         {
-                msg = CYN "$n在身邊布下層層內勁，將$N" CYN "凌厲的攻勢盡數抵擋。\n" NOR;
+                msg = CYN "$n在身邊佈下層層內勁，將$N" CYN "凌厲的攻勢盡數抵擋。\n" NOR;
         }
         message_combatd(msg, me, target);
 
@@ -445,7 +445,7 @@ void tian_end(object me, object target)
         addn_temp("apply/reduce_busy", 36, target);
         addn_temp("apply/avoid_weak", 90, target);
         addn_temp("apply/avoid_locked", 90, target);
-        tell_object(target, HIR "你的忽視虛弱，忽視忙亂、忽視絕招冷凍能力終于解除封印。\n" NOR);
+        tell_object(target, HIR "你的忽視虛弱，忽視忙亂、忽視絕招冷凍能力終於解除封印。\n" NOR);
                 delete_temp("no_perform", target);
         }
         return;

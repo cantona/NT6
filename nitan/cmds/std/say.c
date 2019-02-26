@@ -15,8 +15,8 @@ int main(object me, string arg)
         env = environment(me);
         if (! arg)
         {
-                write("你自言自語不知道在說些什麼。\n");
-                message("sound", me->name() + "自言自語不知道在說些什麼。\n",
+                write("你自言自語不知道在説些什麼。\n");
+                message("sound", me->name() + "自言自語不知道在説些什麼。\n",
                         env, me);
                 return 1;
         }
@@ -40,14 +40,14 @@ int main(object me, string arg)
                 addn("jing", -50, me);
         }
 
-        write(CYN "你說道：" + arg + "\n" NOR);
-        message("sound", CYN + me->name() + "[" + capitalize(query("id", me))+ "]" + CYN "說道：" +  arg + "\n" NOR,
+        write(CYN "你説道：" + arg + "\n" NOR);
+        message("sound", CYN + me->name() + "[" + capitalize(query("id", me))+ "]" + CYN "説道：" +  arg + "\n" NOR,
                 env, me);
 
         // The mudlib interface of say
         all_inventory(env)->relay_say(me, arg);
-        me->add_msg_log("say", "你說道: "HIG+arg+NOR"\n");
-        (all_inventory(env)-({ me }))->add_msg_log("say", me->query_idname()+"說道: "HIG+arg+NOR"\n");
+        me->add_msg_log("say", "你説道: "HIG+arg+NOR"\n");
+        (all_inventory(env)-({ me }))->add_msg_log("say", me->query_idname()+"説道: "HIG+arg+NOR"\n");
 
         me->ban_say(1);
 
@@ -59,10 +59,10 @@ int help (object me)
         write(@HELP
 指令格式: say <訊息>
  
-說話，所有跟你在同一個房間的人都會聽到你說的話。如果你設置了
+説話，所有跟你在同一個房間的人都會聽到你説的話。如果你設置了
 auto_say參數，那麼系統會自動的將你輸入的非命令和表情動詞作為
 你講的話處理。如果你設置了pure_say參數，那麼除非你輸入用 '/'
-字符打頭的命令，否則系統都將當作你說的話來處理。
+字符打頭的命令，否則系統都將當作你説的話來處理。
  
 注: 本指令可用 ' 取代.
  

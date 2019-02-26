@@ -6,9 +6,9 @@ inherit F_MASTER;
 
 void create()
 {
-        set_name("衛四娘", ({"wei siniang", "wei", "siniang"}));
-        set("long", "她昆侖派第五代弟子，容顏俏麗，身材豐滿，舉\n"
-                    "手投足間帶著點挑逗之意。\n");
+        set_name("衞四娘", ({"wei siniang", "wei", "siniang"}));
+        set("long", "她崑崙派第五代弟子，容顏俏麗，身材豐滿，舉\n"
+                    "手投足間帶着點挑逗之意。\n");
         set("nickname", HIY "閃電娘娘" NOR);
         set("gender", "女性");
         set("age", 38);
@@ -58,7 +58,7 @@ void create()
         prepare_skill("strike", "kunlun-zhang");
         prepare_skill("cuff", "zhentian-quan");
 
-        create_family("昆侖派", 5, "弟子");
+        create_family("崑崙派", 5, "弟子");
 
         set("chat_chance_combat", 100);
         set("chat_msg_combat", ({
@@ -82,13 +82,13 @@ void attempt_apprentice(object me)
 
         if( query("gender", me) != "女性" )
         {
-                command("say 師傅不準我收男弟子，你去找我師兄去吧。");
+                command("say 師傅不准我收男弟子，你去找我師兄去吧。");
                 return;
         }
 
         if( query("combat_exp", me)<10000 )
         {
-                command("say 你的江湖經驗實在太淺，還是鍛煉鍛煉再說吧。");
+                command("say 你的江湖經驗實在太淺，還是鍛鍊鍛鍊再説吧。");
                 return;
         }
 

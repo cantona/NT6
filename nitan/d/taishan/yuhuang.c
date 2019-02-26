@@ -1,6 +1,6 @@
 // Room: /d/taishan/yuhuang.c
 // Last Modified by Winder on Aug. 25 2001
-// Modified by Zeratul Jan 11 2001 江湖閱歷低于10000不能見盟主
+// Modified by Zeratul Jan 11 2001 江湖閲歷低於10000不能見盟主
 
 #include <ansi.h>;
 inherit ROOM;
@@ -13,9 +13,9 @@ void create()
 皇殿、觀日亭、望河亭、東西道房組成。山門額書“敕修玉皇頂”。正
 殿內祀明代銅鑄玉皇大帝像。神龕上匾額“柴望遺風”。遠古帝王多在
 此燔柴祭天，望祀山川諸神。觀前為古登封台，歷代皇帝封禪的儀式都
-是在這裡舉行。台下有一無字碑，據說是漢武帝所立。
-　　東南石坪寬敞，名平頂峰，上建乾坤亭，上刻“孔子小天下處”。
-正中往上便是武林盟主所在之處─封禪台。
+是在這裏舉行。台下有一無字碑，據説是漢武帝所立。
+　　東南石坪寬敞，名平頂峯，上建乾坤亭，上刻“孔子小天下處”。
+正中往上便是武林盟主所在之處—封禪台。
 LONG );
         set("exits", ([
                 "southdown" : __DIR__"nantian",
@@ -60,7 +60,7 @@ int valid_leave(object me, string dir)
                         query("id", me) != mengzhu && 
                         query("id", me) != shangshan && 
                         query("id", me) != fae )
-                        return notify_fail("江百勝伸手攔住你說道：盟主很忙，現在不見外客，你下山去吧！\n");
+                        return notify_fail("江百勝伸手攔住你説道：盟主很忙，現在不見外客，你下山去吧！\n");
                 else if( query("id", me) == mengzhu )
                 {
                         message_vision(HIY "\n江百勝誠惶誠恐的向$N跪倒磕頭，大聲喊道：盟主萬歲，萬歲，萬萬歲！\n" NOR, me);

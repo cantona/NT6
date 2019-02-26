@@ -11,7 +11,7 @@ void create()
         set("race", "野獸");
         set("gender", "雄性");
         set("age", 1000);
-        set("long", "這是一只修煉成妖的虎精怪。\n");
+        set("long", "這是一隻修煉成妖的虎精怪。\n");
 
         set("str", 80);
         set("cor", 120);
@@ -50,7 +50,7 @@ void do_attack() {
         if (!enemies || sizeof(enemies)==0)
                         return;
         enemy = enemies[random(sizeof(enemies))];
-        msg = HIW"\n$N眉心張開第三只眼，聚起一道白光射向$n！\n"NOR;
+        msg = HIW"\n$N眉心張開第三隻眼，聚起一道白光射向$n！\n"NOR;
         message_combatd(msg,this_object(),enemy);
         if( random(query("combat_exp"))*6>query("combat_exp", enemy)){
                         msg = HIW"$n躲閃不及，被白光罩住！\n"NOR;

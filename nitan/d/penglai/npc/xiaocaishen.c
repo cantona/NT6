@@ -6,7 +6,7 @@ int is_pld_npc(){return 1;}
 void create()
 {
         set_name(HIY "小財神" NOR, ({ "xiao caishen", "xiao", "caishen" }));
-        set("long", HIY "這是仙界的小財神，據說專門打理仙界的金庫。\n" NOR);
+        set("long", HIY "這是仙界的小財神，據説專門打理仙界的金庫。\n" NOR);
 
         set("age", 4000);
         set("str", 20);

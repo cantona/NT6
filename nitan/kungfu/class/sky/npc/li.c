@@ -5,10 +5,10 @@ inherit NPC;
 void create()
 {
         set_name("李尋歡", ({ "li xunhuan", "li", "xunhuan"}));
-        set("long", "    一個身著白衫的中年男子，俊俏的面龐\n" 
+        set("long", "    一個身着白衫的中年男子，俊俏的面龐\n" 
                     "毫無血色，似乎因酒色過度而蒼白。他手中\n"
-                    "握著一柄小刀，靜靜雕刻著一個木人。周圍\n"
-                    "發生的一切他仿佛都看不見。\n"); 
+                    "握着一柄小刀，靜靜雕刻着一個木人。周圍\n"
+                    "發生的一切他彷彿都看不見。\n"); 
         set("nickname", HIR "小李探花" NOR);
         set("title", HIY "大宗師" NOR);
         set("gender", "男性");
@@ -29,8 +29,8 @@ void create()
 
         set("chat_chance", 1);
         set("chat_msg",({
-                CYN "李尋歡深深的嘆了口氣。\n" NOR,
-                CYN "李尋歡靜靜地雕刻著手中的木偶。\n" NOR,
+                CYN "李尋歡深深的歎了口氣。\n" NOR,
+                CYN "李尋歡靜靜地雕刻着手中的木偶。\n" NOR,
                 CYN "李尋歡咳嗽了幾聲。\n" NOR,
                 CYN "李尋歡：“咳…咳…”\n" NOR,
         }));
@@ -135,7 +135,7 @@ void die()
 }
 
 
-// 氣血小于1000則死亡，避免他人協助幫忙轉世
+// 氣血小於1000則死亡，避免他人協助幫忙轉世
 void heart_beat()
 {
         if (this_object()->query("qi") < 1000 || this_object()->query("eff_qi") < 1000)

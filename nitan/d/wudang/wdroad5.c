@@ -41,14 +41,14 @@ int do_float()
 
         if( query("neili", me)<150 )
         {
-                tell_object(me, "你的內力不夠，還是休息一下再說吧。\n");
+                tell_object(me, "你的內力不夠，還是休息一下再説吧。\n");
                 return 1;
         }
 
         addn("neili", -120, me);
 
         message_sort(HIC "\n$N" HIC"深吸一口氣，邁開大步，雙足"
-                     "如飛，踩著山間雜草，飄然而起，直奔那武當"
+                     "如飛，踩着山間雜草，飄然而起，直奔那武當"
                      "山去了！轉瞬不見，只留下遠遠一個影子。\n"
                      "\n" NOR, me);
         me->move("/d/wudang/guangchang");

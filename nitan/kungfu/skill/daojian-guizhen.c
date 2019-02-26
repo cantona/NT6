@@ -28,7 +28,7 @@ mapping *action = ({
         "damage_type" : "刺傷",
 ]),
 ([      "action" : "$N神色微變，一招「" HIY "丹鳳朝陽" NOR "」，招式"
-                   "頓時變得凌厲無比，接著使一招「" HIW "天設牢籠" NOR
+                   "頓時變得凌厲無比，接着使一招「" HIW "天設牢籠" NOR
                    "」！\n那$w便有如白霧一般壓向$n",
         "force" : 490,
         "attack": 170,
@@ -38,7 +38,7 @@ mapping *action = ({
         "damage_type" : "割傷",
 ]),
 ([      "action" : "$N使一招胡家刀法的「" HIW "閉門鐵扇" NOR "」，$w毫"
-                   "不經意的緩緩斜著推斬出，招至\n中途，剎那間忽然只見寒"
+                   "不經意的緩緩斜着推斬出，招至\n中途，剎那間忽然只見寒"
                    "光一閃而過，$N又一招苗家劍法之「" HIY "迎門腿反劈華"
                    "山" NOR "」！\n卻見$w光芒閃爍不定，已經反劈而下",
         "force" : 530,
@@ -50,7 +50,7 @@ mapping *action = ({
 ]),
 ([      "action" : "$N猛喝一聲，一招胡家刀法「" HIW "翼德闖帳" NOR "」"
                    "並苗家劍法「" HIY "返腕翼德闖帳" NOR "」，手中\n$w反"
-                   "手疾挑而出，接著轉身躍起，一道白光射向$n的胸口",
+                   "手疾挑而出，接着轉身躍起，一道白光射向$n的胸口",
         "force" : 470,
         "attack": 130,
         "dodge" :-70,
@@ -71,7 +71,7 @@ mapping *action = ({
 ]),
 ([      "action" : "$N一招「" HIY "上步雲邊摘月" NOR "」，縱身躍起，不"
                    "見蹤影，忽然間卻見$w從半空中穿出\n變招「" HIW "春"
-                   "風送暖" NOR "」，左腳躍步落地，$w順勢往前，呼嘯著劈"
+                   "風送暖" NOR "」，左腳躍步落地，$w順勢往前，呼嘯着劈"
                    "向$n的$l",
         "force" : 510,
         "attack": 180,
@@ -81,7 +81,7 @@ mapping *action = ({
         "damage_type" : "割傷",
 ]),
 ([      "action" : "只見$N一招「" HIY "沖天掌蘇秦背劍" NOR "」，左手虛"
-                   "擊，右手$w猛的自下方挑起，剎時\n又出殺著「" HIW "八方"
+                   "擊，右手$w猛的自下方挑起，剎時\n又出殺着「" HIW "八方"
                    "藏刀勢" NOR "」，頓時劍光中閃出無數朵刀花從四面八方"
                    "湧向$n全身",
         "force" : 530,
@@ -191,9 +191,9 @@ int get_finish(object me)
                 return 0;
         }
 
-        tell_object(me, HIY "\n一陣凡塵往事湧上心頭，你幾欲放聲長嘆。霎"
-                        "那間，苗家劍法和胡家刀法交替著不斷在\n你腦海裡"
-                        "閃現，終于融會貫通，合二為一。你終于通曉了刀劍"
+        tell_object(me, HIY "\n一陣凡塵往事湧上心頭，你幾欲放聲長歎。霎"
+                        "那間，苗家劍法和胡家刀法交替着不斷在\n你腦海裏"
+                        "閃現，終於融會貫通，合二為一。你終於通曉了刀劍"
                         "歸真的訣竅。\n" NOR);
         return 1;
 }
@@ -260,12 +260,12 @@ int valid_learn(object me)
                 return notify_fail("你的刀劍根基火候不足，難以修煉刀劍"
                                    "歸真。\n");
 
-        // 刀法和劍法均低于刀劍歸真
+        // 刀法和劍法均低於刀劍歸真
         if (lvls < lvld && lvlb < lvld)
                 return notify_fail("你的刀劍根基火候不足，無法領會更高"
                                    "深的刀劍歸真。\n");
 
-        // 刀法和劍法中其一低于刀劍歸真
+        // 刀法和劍法中其一低於刀劍歸真
         if (lvls < lvld || lvlb < lvld)
         {
                 // 倘若修煉者為武學大宗師，且基本刀法及劍法等級均
@@ -317,7 +317,7 @@ void skill_improved(object me)
         if( lvl >= 200 && 
             !query("can_perform/daojian-guizhen/ben", me) )  
         { 
-                tell_object(me, HIC "你通曉了刀劍歸真「" HIR "萬馬奔騰" HIC "」的奧秘。\n" NOR);     
+                tell_object(me, HIC "你通曉了刀劍歸真「" HIR "萬馬奔騰" HIC "」的奧祕。\n" NOR);     
                 set("can_perform/daojian-guizhen/ben", 1, me); 
                 me->improve_skill("martial-cognize", 1500000);   
                 me->improve_skill("martial-cognize", 1500000);   
@@ -327,7 +327,7 @@ void skill_improved(object me)
         if( lvl >= 300 && 
             !query("can_perform/daojian-guizhen/po", me) )  
         { 
-                tell_object(me, HIC "你通曉了刀劍歸真「" HIR "破定軍山" HIC "」的奧秘。\n" NOR);     
+                tell_object(me, HIC "你通曉了刀劍歸真「" HIR "破定軍山" HIC "」的奧祕。\n" NOR);     
                 set("can_perform/daojian-guizhen/po", 1, me); 
                 me->improve_skill("martial-cognize", 1500000);   
                 me->improve_skill("martial-cognize", 1500000);   
@@ -337,7 +337,7 @@ void skill_improved(object me)
         if( lvl >= 250 && 
             !query("can_perform/daojian-guizhen/tian", me) )  
         { 
-                tell_object(me, HIC "你通曉了刀劍歸真「" HIR "刀劍七重天" HIC "」的奧秘。\n" NOR);     
+                tell_object(me, HIC "你通曉了刀劍歸真「" HIR "刀劍七重天" HIC "」的奧祕。\n" NOR);     
                 set("can_perform/daojian-guizhen/tian", 1, me); 
                 me->improve_skill("martial-cognize", 1500000);   
                 me->improve_skill("martial-cognize", 1500000);   
@@ -347,7 +347,7 @@ void skill_improved(object me)
         if( lvl >= 280 && 
             !query("can_perform/daojian-guizhen/xue", me) )  
         { 
-                tell_object(me, HIC "你通曉了刀劍歸真「" HIR "天下有血" HIC "」的奧秘。\n" NOR);     
+                tell_object(me, HIC "你通曉了刀劍歸真「" HIR "天下有血" HIC "」的奧祕。\n" NOR);     
                 set("can_perform/daojian-guizhen/xue", 1, me); 
                 me->improve_skill("martial-cognize", 1500000);   
                 me->improve_skill("martial-cognize", 1500000);   

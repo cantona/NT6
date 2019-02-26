@@ -8,7 +8,7 @@ string *parry_msg = ({
 });
 
 mapping *action = ({
-([      "action" : "$N手中$w橫空掃過，一招「斷波無流」，夾雜著呼天搶地般的氣勢向$n$l砍去",
+([      "action" : "$N手中$w橫空掃過，一招「斷波無流」，夾雜着呼天搶地般的氣勢向$n$l砍去",
         "skill_name" : "斷波無流",
         "force"  : 500,
         "attack" : 360,
@@ -16,7 +16,7 @@ mapping *action = ({
         "damage" : 600,
         "damage_type" : "割傷",
 ]),
-([      "action" : "$N一招「神刀無情」，心中一陣凄苦，雙眼微閉，$w無情般的劃過，揮向$n的$l",
+([      "action" : "$N一招「神刀無情」，心中一陣悽苦，雙眼微閉，$w無情般的劃過，揮向$n的$l",
         "skill_name" : "神刀無情",
         "force"  : 500,
         "attack" : 360,
@@ -24,7 +24,7 @@ mapping *action = ({
         "damage" : 600,
         "damage_type" : "割傷",
 ]),
-([      "action" : "$N使出一招「碧波神刀」，$w猶如海嘯般，舖天蓋地卷向$n",
+([      "action" : "$N使出一招「碧波神刀」，$w猶如海嘯般，鋪天蓋地卷向$n",
         "skill_name" : "碧波神刀",
         "force"  : 500,
         "attack" : 360,
@@ -48,7 +48,7 @@ mapping *action = ({
         "damage" : 600,
         "damage_type" : "割傷",
 ]),
-([      "action" : "$N一聲長嘆，回首舊事，心中一陣凄涼，一招「驚天刀煞」使出，$w發出震天般響聲，猶如鬼怪般湧向$n",
+([      "action" : "$N一聲長歎，回首舊事，心中一陣淒涼，一招「驚天刀煞」使出，$w發出震天般響聲，猶如鬼怪般湧向$n",
         "skill_name" : "驚天刀煞",
         "force"  : 600,
         "attack" : 360,
@@ -162,9 +162,9 @@ mixed hit_ob(object me, object victim, int damage_bonus)
         if (! objectp(weapon))return damage_bonus;
         
         desc = ({
-                HIY "$N" HIY "縱身而起，舉起手中" + weapon->name() + HIY "從天劈下，猶如一道閃電劃向$n" HIY "。\n" NOR,
+                HIY "$N" HIY "縱身而起，舉起手中" + weapon->name() + HIY "從天劈下，猶如一道閃電划向$n" HIY "。\n" NOR,
                 HIC "$N" HIC "輕旋" + weapon->name() + HIC "，單刀直劈，招式簡單之極，卻剛猛無比。\n" NOR,
-                HIR "$N" HIR "揮動手中" + weapon->name() + HIR "，頓時飛沙走石，夾雜著凌厲的刀勢，將$n" HIR "籠罩。\n" NOR,
+                HIR "$N" HIR "揮動手中" + weapon->name() + HIR "，頓時飛沙走石，夾雜着凌厲的刀勢，將$n" HIR "籠罩。\n" NOR,
         });
 
         if (me->is_busy() 

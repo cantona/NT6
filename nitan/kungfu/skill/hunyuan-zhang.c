@@ -18,15 +18,15 @@ mapping *action = ({
         "lvl" : 20,
         "skill_name" : "雲斷秦嶺"
 ]),
-([        "action" : "$N雙掌隱隱泛出青氣，一式"GRN"「青鬆翠翠」"NOR"，幻成漫天碧綠的鬆針，雨點般向$n擊去",
+([        "action" : "$N雙掌隱隱泛出青氣，一式"GRN"「青松翠翠」"NOR"，幻成漫天碧綠的松針，雨點般向$n擊去",
         "lvl" : 30,
-        "skill_name" : "青鬆翠翠"
+        "skill_name" : "青松翠翠"
 ]),
-([        "action" : "$N身形往上一縱，使出一式"HIC"「天紳倒懸」"NOR"，雙掌並攏，筆直地向$n的$l插去",
+([        "action" : "$N身形往上一縱，使出一式"HIC"「天紳倒懸」"NOR"，雙掌併攏，筆直地向$n的$l插去",
         "lvl" : 40,
         "skill_name" : "天紳倒懸"
 ]),
-([        "action" : "$N身形一變，使一式"MAG"「無邊落木」"NOR"，雙掌帶著蕭剎的勁氣，猛地擊往$n的$l",
+([        "action" : "$N身形一變，使一式"MAG"「無邊落木」"NOR"，雙掌帶着蕭剎的勁氣，猛地擊往$n的$l",
         "lvl" : 50,
         "skill_name" : "無邊落木"
 ]),
@@ -34,7 +34,7 @@ mapping *action = ({
         "lvl" : 60,
         "skill_name" : "高山流水"
 ]),
-([        "action" : "$N突地一招"RED"「金玉滿堂」"NOR"，雙掌挾著一陣風雷之勢，猛地劈往$n的$l",
+([        "action" : "$N突地一招"RED"「金玉滿堂」"NOR"，雙掌挾着一陣風雷之勢，猛地劈往$n的$l",
         "lvl" : 70,
         "skill_name" : "金玉滿堂"
 ]),
@@ -146,7 +146,7 @@ void skill_improved(object me)
                 else
                         addn("hunyuan/gift", 1, me);
                 addn("max_neili", i, me);
-                tell_object(me, HIW "\n隨著混元掌的提高，你感覺自己內力增加了" + chinese_number(i) + "點。\n" NOR);
+                tell_object(me, HIW "\n隨着混元掌的提高，你感覺自己內力增加了" + chinese_number(i) + "點。\n" NOR);
         }
 }
 

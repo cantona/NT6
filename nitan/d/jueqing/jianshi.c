@@ -13,7 +13,7 @@ void create()
         set("long", @LONG
 只見室中的壁上、桌上、架上、擺滿了各類兵刃，式樣繁
 多，十之八九都是古劍，或長逾七尺，或短僅數寸，有的鐵斑
-駁，有的寒光逼人，直看得人眼光撩亂。不遠處的牆壁上掛著
+駁，有的寒光逼人，直看得人眼光撩亂。不遠處的牆壁上掛着
 有一副古畫(hua)。
 LONG);
         set("item_desc", ([
@@ -86,7 +86,7 @@ int do_pull(string arg)
                 return 1;
         }
 
-        message_vision(HIG "只聽見“□嚓”一聲，$N " HIG "將牆上的畫"
+        message_vision(HIG "只聽見“咔嚓”一聲，$N " HIG "將牆上的畫"
                        "拉破了。\n" NOR, me);
         set_temp("marks/拉", 1, ob);
 

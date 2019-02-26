@@ -21,7 +21,7 @@ int perform(object me, object target)
                 return notify_fail("天地同壽只能對戰鬥中的對手使用。\n");
 
         if( me->is_busy() )
-                return notify_fail("你現在忙著呢，使不出這一招。\n");
+                return notify_fail("你現在忙着呢，使不出這一招。\n");
 
         weapon=query_temp("weapon", me);
         if( !weapon || query("skill_type", weapon) != "sword" )

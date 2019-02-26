@@ -12,7 +12,7 @@ int main(object me, string arg)
         object *t;
         int i;
 
-        // team kill 命令使用的標志
+        // team kill 命令使用的標誌
         int kill_flag;
         int want_kill_flag;
 
@@ -35,7 +35,7 @@ int main(object me, string arg)
                                    "沒有人能夠聽你的號令，還是靠自己吧。\n");
 
         if( query("no_fight", env) )
-                return notify_fail("這裡不能戰鬥。\n");
+                return notify_fail("這裏不能戰鬥。\n");
 
         if (! objectp(obj = present(arg, env)))
                 return notify_fail("你想攻擊誰？\n");
@@ -59,7 +59,7 @@ int main(object me, string arg)
                                        "這種人不必講究什麼江湖道義！”\n\n",
                                        me, obj);
                 else
-                        message_vision("\n$N扯著嗓子喊道：“大家並肩"
+                        message_vision("\n$N扯着嗓子喊道：“大家並肩"
                                        "子上啊！一起除掉" + obj->name() +
                                        "這" + RANK_D->query_rude(obj) +
                                        "！”\n\n", me, obj);
@@ -81,9 +81,9 @@ int main(object me, string arg)
         default:
         }
 
-        // 戰鬥已經發生，隊伍中所有的人參與戰鬥
-        message("vision", HIR "你和大家一起跟著" + me->name(1) +
-                          HIR "沖了上去，圍著" + obj->name() +
+        // 戰鬥已經發生，隊伍中所有的人蔘與戰鬥
+        message("vision", HIR "你和大家一起跟着" + me->name(1) +
+                          HIR "衝了上去，圍着" + obj->name() +
                           "就是一頓亂砍。\n" NOR, t, ({ me }));
 
         // 判斷是否是我先主動想殺死對方
@@ -133,7 +133,7 @@ int main(object me, string arg)
         {
                 // 殺人方向和隊長保持一致：如果對方
                 // 主動攻擊隊伍中的某一個人，則設置
-                // 是對方挑舋
+                // 是對方挑釁
                 if (want_kill_flag)
                         tob->want_kill(obj);
 

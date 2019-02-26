@@ -127,7 +127,7 @@ int ask_all()
         if( query("family/family_name", me) != "藥王谷" )
                 return notify_fail( "你不是我們藥王谷的，打聽它幹什麼？");
 
-        tell_object(me, sprintf("\n我這裡就只有這些我自己抄寫的書，高級的要有谷主的命令才好。\n%s\n", all_msg));
+        tell_object(me, sprintf("\n我這裏就只有這些我自己抄寫的書，高級的要有谷主的命令才好。\n%s\n", all_msg));
         add_action("do_borrow", "borrow");
         add_action("do_borrow", "jieshu");
         return 1;

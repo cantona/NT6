@@ -3,7 +3,7 @@
 inherit SHAOLIN_SKILL;
 
 mapping *action = ({
-([      "action": "$N微一躬身，一招「龍行無狀」，$w帶著刺耳的吱吱聲，擦地掃向$n的腳踝",
+([      "action": "$N微一躬身，一招「龍行無狀」，$w帶着刺耳的吱吱聲，擦地掃向$n的腳踝",
         "force" : 100,
         "attack": 10,
         "dodge" : -5,
@@ -43,7 +43,7 @@ mapping *action = ({
         "skill_name" : "淺龍入水",
         "damage_type":"挫傷"
 ]),
-([      "action": "$N將$w頂住自己的胸膛，一端指向$n，一招「騰龍上天」，大聲叫喊著沖向$n",
+([      "action": "$N將$w頂住自己的胸膛，一端指向$n，一招「騰龍上天」，大聲叫喊着衝向$n",
         "force" : 160,
         "attack": 30,
         "dodge" : -15,
@@ -53,7 +53,7 @@ mapping *action = ({
         "skill_name" : "騰龍上天",
         "damage_type":"挫傷"
 ]),
-([      "action": "$N一招「行雲流水」，全身僵直，蹦跳著持杖前行，冷不防舉杖攔腰向$n劈去",
+([      "action": "$N一招「行雲流水」，全身僵直，蹦跳着持杖前行，冷不防舉杖攔腰向$n劈去",
         "force" : 180,
         "attack": 35,
         "dodge" : 5,
@@ -63,7 +63,7 @@ mapping *action = ({
         "skill_name" : "行雲流水",
         "damage_type":"挫傷"
 ]),
-([      "action": "$N面帶戚色，一招「龍飛鳳舞」，趁$n說話間，一杖向$n張大的嘴巴捅了過去",
+([      "action": "$N面帶戚色，一招「龍飛鳳舞」，趁$n説話間，一杖向$n張大的嘴巴捅了過去",
         "force" : 220,
         "attack": 40,
         "dodge" : -5,
@@ -83,7 +83,7 @@ mapping *action = ({
         "skill_name" : "蒼龍決",
         "damage_type":"挫傷"
 ]),
-([      "action": "$N伏地一招「地龍決」，一個翻滾，身下$w往橫裡打出，揮向$n的襠部",
+([      "action": "$N伏地一招「地龍決」，一個翻滾，身下$w往橫裏打出，揮向$n的襠部",
         "force" : 280,
         "attack": 50,
         "dodge" : -5,

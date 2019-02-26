@@ -35,13 +35,13 @@ int perform(object me, object target)
                 return notify_fail("你內力現在不夠, 不能使用天羅地網! \n");
 
         if( target->is_busy() )
-                return notify_fail(target->name() + "目前正自顧不暇，放膽攻擊吧□\n");
+                return notify_fail(target->name() + "目前正自顧不暇，放膽攻擊吧ⅵ\n");
 
         if( query_temp("luowang", target) )
                 return notify_fail("對手已在你的天羅地網勢之中！\n");
 
         msg = HIM "\n但見$N雙臂飛舞，出手擋擊回臂反撲發掌奇快，但一招一式清清楚楚自成" +
-              "段落，兩只手掌宛似化成了千手千掌！\n" NOR;
+              "段落，兩隻手掌宛似化成了千手千掌！\n" NOR;
 
         ap = attack_power(me, "strike");
         dp = defense_power(target, "dodge");

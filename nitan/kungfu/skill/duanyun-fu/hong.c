@@ -37,7 +37,8 @@ msg = CYN"$N突然暴吼一聲：“我砸！我砸！我砸砸砸！”，手�
     if( random(query("combat_exp", me)/100)>
       query("combat_exp", target)/300){
     if( target_w->weight() > 2 * random(my_w->weight()) ) {
-msg+="結果$p手中的"+query("name", target_w)+"被$P的轟天砸砸個正著，再也把握不□住，立即脫手飛出！\n" NOR;
+msg+="結果$p手中的"+query("name", target_w)+"被$P的轟天砸砸個正着，再也把握不
+住，立即脱手飛出！\n" NOR;
     target_w->unequip();
     target_w->move(environment(target));
     target->reset_action();

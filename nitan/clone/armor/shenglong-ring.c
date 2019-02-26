@@ -12,7 +12,7 @@ void create()
                 set_default_object(__FILE__);
         else {
                 set("unit", "個");
-                set("long", HIY "聖龍之泉乃古老神獸聖龍之化身，象征著「能量」！\n" NOR);
+                set("long", HIY "聖龍之泉乃古老神獸聖龍之化身，象徵着「能量」！\n" NOR);
                 set("value", 200000);
                 set("material", "gold");
                 set("armor_prop/con", 20);

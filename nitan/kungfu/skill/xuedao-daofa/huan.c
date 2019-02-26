@@ -36,7 +36,7 @@ int perform(object me, object target)
                 return notify_fail("你使用的武器不對，難以施展" + name() + "。\n");
 
         if( me->is_busy() )
-                return notify_fail("你正忙著呢。\n");
+                return notify_fail("你正忙着呢。\n");
 
         if ((int)me->query_skill("force") < 1200)
                 return notify_fail("你的內功火候不夠，難以施展" + name() + "。\n");
@@ -54,12 +54,12 @@ int perform(object me, object target)
                 return notify_fail("你目前真氣不足，難以施展" + name() + "。\n");
 
         if (! living(target))
-                return notify_fail("對方都已經這樣了，用不著這麼費力吧？\n");
+                return notify_fail("對方都已經這樣了，用不着這麼費力吧？\n");
 
         ap = attack_power(me, "blade");
         dp = defense_power(target, "parry");
 
-        msg = HIR "$N" HIR "手中" + weapon->name() + "直指$n" HIR"，口中喝罵道：「洒家什麼都吃就是不知虧！人若傷我！我必還之！」\n"
+        msg = HIR "$N" HIR "手中" + weapon->name() + "直指$n" HIR"，口中喝罵道：「灑傢什麼都吃就是不知虧！人若傷我！我必還之！」\n"
               HIR "只見" + weapon->name() + "泛出濃烈血光、腥味刺鼻，映的四周直若濃血地獄。\n";
 
         if (ap / 2 + random(ap) > dp)

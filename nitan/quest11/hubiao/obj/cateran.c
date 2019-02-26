@@ -510,7 +510,7 @@ set("dex",35+random(5));
 		set("chat_msg_combat", ({
       (: perform_action, "strike.diezhang" :),
 		}));
-		menpai = "昆侖派";
+		menpai = "崑崙派";
 		break;
 		case 22: // kl2
 		set_skill("xuantian-wuji", 500);
@@ -526,7 +526,7 @@ set("dex",35+random(5));
 			(: exert_function, "taxue" :),
 			(: perform_action, "cuff.kaishan" :),
 		}));
-		menpai = "昆侖派";
+		menpai = "崑崙派";
 		break;
 		case 23: // kl3
 		set_skill("xuantian-wuji", 500);
@@ -542,7 +542,7 @@ set("dex",35+random(5));
 			(: exert_function, "taxue" :),
 			(: perform_action, "leg.chuanyun" :),
 		}));
-		menpai = "昆侖派";
+		menpai = "崑崙派";
 		break;
 		case 24: // kl4
 		set_skill("xuantian-wuji", 500);
@@ -557,7 +557,7 @@ set("dex",35+random(5));
 			(: perform_action, "sword.xunlei" :),
 			(: perform_action, "sword.podi" :),
 		}));
-		menpai = "昆侖派";
+		menpai = "崑崙派";
 		weapon = "sword";
 		break;
 		case 25: // tls3
@@ -796,7 +796,7 @@ void fight_ob(object ob)
 {
 	if (!objectp(query_temp("target"))
 	|| ob->query_temp("protecting") != query_temp("target")) {
-		command("say 走遠點，老子正忙著呢。");
+		command("say 走遠點，老子正忙着呢。");
 		ob->remove_killer(this_object());
 	}
 	else ::fight_ob(ob);

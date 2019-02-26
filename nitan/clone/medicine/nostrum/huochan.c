@@ -19,7 +19,7 @@ void create()
 {
         set_name(HIR"火蟾"NOR, ({"huo chan", "chan"}));
         set("unit", "只");
-        set("long", "這是一只生長在昆侖山頂的火蟾，兩眼投射出奪目的紅光。\n");
+        set("long", "這是一隻生長在崑崙山頂的火蟾，兩眼投射出奪目的紅光。\n");
         set("pour_type", "1");
         setup();
 }
@@ -35,12 +35,12 @@ int do_eat(string arg)
         if(!present(this_object(), me))
                 return notify_fail("你要吃什麼？\n");
         if( me->is_busy() )
-                return notify_fail("別急，慢慢吃，小心別噎著了。\n");
+                return notify_fail("別急，慢慢吃，小心別噎着了。\n");
         if( neili_limit <= force_limit)addn("max_neili", 5, me);
         set("neili",query("max_neili",  me), me);
         set("eff_qi",query("max_qi",  me), me);
         set("qi",query("eff_qi",  me), me);
-        message_vision(HIY "$N吃下一只火蟾，只覺一股熱線自嚥而下，沿督脈直沖玄關，一股真力源源不絕匯入丹田。\n"NOR,me);
+        message_vision(HIY "$N吃下一隻火蟾，只覺一股熱線自咽而下，沿督脈直衝玄關，一股真力源源不絕匯入丹田。\n"NOR,me);
         destruct(this_object());
         return 1;
 }

@@ -11,7 +11,7 @@ void create()
                 destruct(this_object());
         else {
                 set("unit", "枚");
-                set("long", HIY "散發著古樸光澤的指環，這便是燕子鄔主人慕容"
+                set("long", HIY "散發着古樸光澤的指環，這便是燕子鄔主人慕容"
                             "博的信物琥珀神環。\n" NOR);
                 set("value", 800000);
                 set("no_sell", "…嗯…這東西珍是夠珍貴，可是年代久遠，我難以估價。");

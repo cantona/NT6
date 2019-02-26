@@ -18,7 +18,7 @@ void create()
                 set("no_sell", "你還是拿到別地去吧。\n");
                 set("unit", "輛");
                 set("material", "wood");
-                set("no_get", "好家伙，車你也想扛在肩上？\n");
+                set("no_get", "好傢伙，車你也想扛在肩上？\n");
         }
         setup();
 }
@@ -32,7 +32,7 @@ string long()
         if (! mapp(goods = query_temp("goods")))
                 return desc;
 
-        desc += "裡面裝著" + chinese_number(goods["amount"]) +
+        desc += "裏面裝着" + chinese_number(goods["amount"]) +
                 goods["unit"] + goods["name"] + "。\n";
         return desc;
 }

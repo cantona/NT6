@@ -16,7 +16,7 @@ int exert(object me, object target)
                 return notify_fail("你要吸取誰的精神？\n");
 
         if( query("no_fight", environment(me)) )
-                return notify_fail("這裡不能戰鬥，你不可以使用化功大法吸人的精神。\n");
+                return notify_fail("這裏不能戰鬥，你不可以使用化功大法吸人的精神。\n");
 
         if( query_temp("sucked", me) )
                 return notify_fail("你剛剛吸取過精神！\n");
@@ -42,7 +42,7 @@ int exert(object me, object target)
                         "已經精神渙散，你已經無法從他體內吸取精力了！\n");
 
         message_vision(
-                HIR "$N突然神秘的一笑，雙掌一前一後對準$n的太陽穴拍了過來！\n\n" NOR,
+                HIR "$N突然神祕的一笑，雙掌一前一後對準$n的太陽穴拍了過來！\n\n" NOR,
                 me, target );
 
         if( !target->is_killing(me) ) target->kill_ob(me);

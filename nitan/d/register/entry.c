@@ -61,16 +61,16 @@ void create()
         set("short", HIR "生命之谷" NOR);
         set("long",
 "混沌初分盤古開天地，迷霧、微風，天地初開，四周混沌，霧茫\n"
-"茫一片，這裡就是子天醜地人寅出的生命之谷。\n"
+"茫一片，這裏就是子天醜地人寅出的生命之谷。\n"
 "　　谷中有一個石頭砌成的池子，其中水清澈卻不見底，不知道它究\n"
-"竟有多深，池子正上方懸掛著太極兩儀四象，不知有何奧妙？！\n"
+"竟有多深，池子正上方懸掛着太極兩儀四象，不知有何奧妙？！\n"
 );
         set("no_fight", 1);
         set("objects", ([
                 __DIR__"npc/pangu" : 1,
         ]));
 
-        // set("no_say", "盤古正在閉目沉思，你哪裡敢亂說話？\n");
+        // set("no_say", "盤古正在閉目沉思，你哪裏敢亂説話？\n");
 
 /*
         set("item_desc", ([
@@ -128,7 +128,7 @@ int do_choose(string arg)
                     HIC "1" NOR ".光明磊落  "
                     HIC "2" NOR ".狡黠多變  "
                     HIC "3" NOR ".心狠手辣  "
-                    HIC "4" NOR ".陰險姦詐 ("
+                    HIC "4" NOR ".陰險奸詐 ("
                     HIC "choose 1" NOR "-" HIC "4" NOR ")\n");
                 return 1;
         }
@@ -145,12 +145,12 @@ int do_choose(string arg)
                 set("character", "心狠手辣", me);
                 break;
         case 4:
-                set("character", "陰險姦詐", me);
+                set("character", "陰險奸詐", me);
                 break;
         }
         
         write(HIC"你選擇了"NOR+HIM+query("character", me)+NOR+HIC"的性格，接下來你可以洗(washto)天賦了。\n"NOR,me);
-        write(HIY "新手導師：戚長發有洗天賦丹出售(一兩黃金)，可以重新設定天賦，所以你不用在這裡糾結而浪費時間。\n" NOR); 
+        write(HIY "新手導師：戚長髮有洗天賦丹出售(一兩黃金)，可以重新設定天賦，所以你不用在這裏糾結而浪費時間。\n" NOR); 
         write("指令格式：washto <膂力> <悟性> <根骨> <身法>\n例    如：washto 20 20 20 20\n"); 
         return 1;
 }
@@ -173,7 +173,7 @@ int do_wash(string arg)
                 return 1;
         }
                 
-        write(HIC "你跳入生命池，頓時被一股激流卷了進去。\n" NOR, me);
+        write(HIC "你跳入生命池，頓時被一股激流捲了進去。\n" NOR, me);
 
         tmpstr = tmpint = tmpcon = tmpdex = 13;
 
@@ -264,11 +264,11 @@ int do_washto(string arg)
                 return notify_fail("你所選擇的身法數值要求必須在13和30之間。\n"); 
 
         if (tmpstr + tmpint + tmpcon + tmpdex > 80) 
-                return notify_fail("你所選擇的天賦數值總和不能大于80。\n"); 
+                return notify_fail("你所選擇的天賦數值總和不能大於80。\n"); 
         
         dower = 80 - (tmpstr + tmpint + tmpcon + tmpdex);
       
-        write(HIC "你跳入忘憂池，頓時被一股激流卷了進去。\n" NOR, me); 
+        write(HIC "你跳入忘憂池，頓時被一股激流捲了進去。\n" NOR, me); 
         my = me->query_entire_dbase(); 
   
         my["str"] = tmpstr; 
@@ -303,7 +303,7 @@ int do_washto(string arg)
         set("mud_age", 0, me);
         set("age", 11, me);
         me->save();
-        message_vision("$N揉揉眼睛，迷惘的望著這個陌生的世界。\n", me);
+        message_vision("$N揉揉眼睛，迷惘的望着這個陌生的世界。\n", me);
         tell_object(me, HIY "新手導師：查看本人所在地的地圖指令map，查看所有地圖指令為map map\n" NOR);
         return 1; 
 }
@@ -335,7 +335,7 @@ int do_born(string arg)
 
         if (! arg || (! stringp(dest = born[arg]) && ! mapp(dest)))
         {
-                message_vision("有個聲音惡狠狠的對$N說：你要幹什麼！投胎去哪裡？\n", me);
+                message_vision("有個聲音惡狠狠的對$N説：你要幹什麼！投胎去哪裏？\n", me);
                 return 1;
         }
 
@@ -398,7 +398,7 @@ int do_born(string arg)
         }
         if (! objectp(obj))
         {
-                message_vision("有個聲音喃喃說道：怎麼好像有問題...\n", me);
+                message_vision("有個聲音喃喃説道：怎麼好像有問題...\n", me);
                 return 1;
         }
 
@@ -422,7 +422,7 @@ int do_born(string arg)
         set("age", 14, me);
         me->save();
         HELP_CMD->main(me, "rules");
-        message_vision("$N揉揉眼睛，迷惘的望著這個陌生的世界。\n", me);
+        message_vision("$N揉揉眼睛，迷惘的望着這個陌生的世界。\n", me);
         tell_object(me, HIY "新手導師：查看本人所在地的地圖指令map，查看所有地圖指令為map map\n" NOR);
 
         return 1;

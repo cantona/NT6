@@ -40,7 +40,7 @@ int perform(object me, object target)
                 return notify_fail("你現在的真氣不足，難以施展" PO "。\n");
 
         if (! living(target))
-                return notify_fail("對方都已經這樣了，用不著這麼費力吧？\n");
+                return notify_fail("對方都已經這樣了，用不着這麼費力吧？\n");
 
         damage = (int)me->query_skill("qixing-shou", 1) / 2;
         damage += random(damage);
@@ -63,7 +63,7 @@ int perform(object me, object target)
 
         ap = me->query_skill("hand");
         dp = target->query_skill("dodge");
-        msg += "\n" HIC "緊接著$N" HIC "左掌驀的一抬，憑空虛劃了道" HIY "弧芒" HIC
+        msg += "\n" HIC "緊接着$N" HIC "左掌驀的一抬，憑空虛劃了道" HIY "弧芒" HIC
                "，至上而下反推$n" HIC "後頸。\n" NOR;
         if (ap / 2 + random(ap) > dp)
         {
@@ -79,18 +79,18 @@ int perform(object me, object target)
 
         ap = me->query_skill("hand");
         dp = target->query_skill("force");
-        msg += "\n" HIC "便在此時，卻見$N" HIC "雙掌猛然回圈，平推而出，頓時層層"
+        msg += "\n" HIC "便在此時，卻見$N" HIC "雙掌猛然迴圈，平推而出，頓時層層"
                HIW "氣浪" HIC "直襲$n" HIC "。\n" NOR;
         if (ap / 2 + random(ap) > dp)
         {
                 msg += COMBAT_D->do_damage(me, target, UNARMED_ATTACK, damage, 30,
                                            HIR "$p" HIR "在$N" HIR "的猛攻之下，已"
-                                           "再無余力招架，竟被這一掌震得飛起，摔了"
+                                           "再無餘力招架，竟被這一掌震得飛起，摔了"
                                            "出去！\n" NOR);
         } else
         {
                 msg += CYN "然而$p" CYN "沉身聚氣，奮力一格，便將$P"
-                       CYN "這掌驅于無形。\n" NOR;
+                       CYN "這掌驅於無形。\n" NOR;
         }
         me->start_busy(2 + random(3));
         addn("neili", -200, me);

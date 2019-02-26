@@ -25,7 +25,7 @@ int exert(object me, object target)
         me->receive_damage("qi", 0);
 
         message_combatd(HIR "$N" HIR "微一凝神，運起九陽神功，將真氣"
-                        "凝聚在丹田之中，沿奇經八脈遍布全身！\n" NOR, me);
+                        "凝聚在丹田之中，沿奇經八脈遍佈全身！\n" NOR, me);
 
         addn_temp("apply/attack", skill*2/5, me);
         addn_temp("apply/unarmed_damage", skill*2/5, me);

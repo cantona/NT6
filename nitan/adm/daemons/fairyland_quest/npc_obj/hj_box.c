@@ -1,6 +1,6 @@
 //                標準描述長度示例                                   |
-// “幻境”裡的寶箱
-// by naihe  2002-10-23  于茂名
+// “幻境”裏的寶箱
+// by naihe  2002-10-23  於茂名
 
 #include <ansi.h>
 
@@ -49,16 +49,16 @@ int do_open(string arg)
 {
     string *obj_list=({
         "/clone/money/silver",
-        __DIR__"hj_obj_quest",   // 神秘石類領悟技能的物品
+        __DIR__"hj_obj_quest",   // 神祕石類領悟技能的物品
         __DIR__"hj_obj_tools",   // 對本遊戲有幫助的物品（如定向水晶）
         __DIR__"hj_obj_weapon",  // 武器型的物品
         __DIR__"hj_obj_other",   // 果品、寶石等
-        __DIR__"hj_obj_other",   // 果品、寶石類出現的幾率上調
+        __DIR__"hj_obj_other",   // 果品、寶石類出現的機率上調
     });
 
     object obj,me;
     int temp;
-    string msg=""HIB"只見一陣煙霧冒起……這裡似乎多了一些什麼！"NOR"\n";
+    string msg=""HIB"只見一陣煙霧冒起……這裏似乎多了一些什麼！"NOR"\n";
 
     me=this_player();
     temp=1+random(3); // 最多時打開一個箱子可獲得3個機會
@@ -70,7 +70,7 @@ int do_open(string arg)
         return notify_fail("這個寶箱已被打開過了。\n");
 
     if( me->is_busy() || query_temp("hj_need_waiting", me) )
-        return notify_fail("你還忙著呢。\n");
+        return notify_fail("你還忙着呢。\n");
 
     message_vision(CYN"$N"NOR+CYN"小心地把"+query("name")+NOR+CYN"打了開來。\n"NOR,me);
     me->start_busy(1);
@@ -82,7 +82,7 @@ int do_open(string arg)
     // 由寶箱抽出的物件統一描述。
     while( temp-- )
     {
-    // 滾石之技唯一體現，打開寶箱時得到技能石的幾率提升
+    // 滾石之技唯一體現，打開寶箱時得到技能石的機率提升
         if( query_temp("hj_special/xs", me) && !random(3) )
             obj = new( __DIR__"hj_obj_quest" );
         else obj=new( obj_list[random(sizeof(obj_list))] );

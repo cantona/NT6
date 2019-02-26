@@ -7,7 +7,7 @@ inherit MEDAL;
 void create()
 {
         set_name(HIG "斬妖勛章" NOR, ({ "zhanyao xunzhang", "zhanyao", "xunzhang" }));
-        set("long", HIG "斬殺千年九頭蛇精後獲得的勛章，非常珍貴，乃勇者的象征。\n" NOR);
+        set("long", HIG "斬殺千年九頭蛇精後獲得的勛章，非常珍貴，乃勇者的象徵。\n" NOR);
         set_weight(500);
         if (clonep())
                 set_default_object(__FILE__);

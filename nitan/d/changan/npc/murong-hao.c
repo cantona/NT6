@@ -6,7 +6,7 @@ inherit F_DEALER;
 void create()
 {
         set_name("慕容豪", ({"murong hao", "murong", "hao"}));
-        set("title", "老板");
+        set("title", "老闆");
         set("gender", "男性");
         set("age", 25);
         set("long", "慕容豪是慕容世家的弟子。\n");
@@ -53,7 +53,7 @@ void greeting(object ob)
 
 int accept_fight(object me)
 {
-        command("say 他媽的！你一進來老子就知道你是沖著我來的！\n");   
+        command("say 他媽的！你一進來老子就知道你是衝着我來的！\n");   
         command("hate");
         command("grin");
         command("say 我不是好欺負的！"+RANK_D->query_rude(me)+"你拿命來吧！");

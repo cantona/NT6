@@ -4,7 +4,7 @@ void create()
 {
         set("short", "三天門");
         set("long", @LONG
-這裡是登山石階的盡頭三天門，再往上走就是武當絕頂了。
+這裏是登山石階的盡頭三天門，再往上走就是武當絕頂了。
 LONG );
         set("exits", ([
                 "northdown": __DIR__"ertiangate",

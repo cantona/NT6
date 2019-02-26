@@ -31,7 +31,7 @@ int perform(object me, object target)
         if( query("neili", me)<250 )
                 return notify_fail("你的真氣不夠，不能使用佛心劍！\n");
 
-        msg = HIM "$N" HIM "猛地裡一聲清嘯，劍法忽變，那柄" + weapon->name() + HIM
+        msg = HIM "$N" HIM "猛地裏一聲清嘯，劍法忽變，那柄" + weapon->name() + HIM
                   "竟似成了一條軟帶，輕柔曲折，飄忽不定，正是武當派的\n"
                   "七十二招「繞指柔劍」中的一招「柔月穿空」。只見$N"
                   HIM + weapon->name() + HIM "劍破長空，疾刺$n" HIM "胸膛，"

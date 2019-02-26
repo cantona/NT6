@@ -6,7 +6,7 @@ void create()
         set("short","花園");
         set("long", @LONG
 這個花園雖然不大，但整理的井井有條，看的出主人下了一番功
-夫，丫環常來這裡嬉戲。沿著彎彎曲曲的花徑，可以同向各處。
+夫，丫環常來這裏嬉戲。沿着彎彎曲曲的花徑，可以同向各處。
 LONG );
         set("outdoors", "yanziwu");
         set("exits",([

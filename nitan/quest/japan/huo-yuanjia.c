@@ -98,7 +98,7 @@ string ask_job(string arg)
         }
         if( query("job_done", me) == "japan_job")return "「你不是剛剛幫我偷過一次嗎？」";
 
-        if ( me->query_condition("job_busy" ) ) return "「哇，你比我還忙著，先做完你自己的任務吧。」";
+        if ( me->query_condition("job_busy" ) ) return "「哇，你比我還忙着，先做完你自己的任務吧。」";
 
         if ( me->query_condition("gb_busy" ) ) return "「你不是在幫丐幫做任務嗎？」";
 
@@ -110,12 +110,12 @@ string ask_job(string arg)
 
         if( query_temp("japan/job", me)){
                 command("knock"+query("id", me));
-                return "「不叫你去做了嗎？怎麼還在這裡？為國抗敵是要作出實際行動來的。」";
+                return "「不叫你去做了嗎？怎麼還在這裏？為國抗敵是要作出實際行動來的。」";
         }
         for ( i = 0; i < sizeof(ob_list); i++ ) {
-                if( query_temp("japan/job", ob_list[i]))return "「現在東瀛人已經進城，無法在潛入那裡了。」";
+                if( query_temp("japan/job", ob_list[i]))return "「現在東瀛人已經進城，無法在潛入那裏了。」";
 
-                if ( (int)ob_list[i]->query_condition("japan_job") >= 1 ) return "「現在東瀛人已經進城，無法在潛入那裡了。」";
+                if ( (int)ob_list[i]->query_condition("japan_job") >= 1 ) return "「現在東瀛人已經進城，無法在潛入那裏了。」";
         }
         team = me->query_team();
         count = sizeof(team);
@@ -127,7 +127,7 @@ string ask_job(string arg)
         for ( i = 0; i < count; i++ ) {
                 if ( team[i] == 0 ) return "「你的隊伍中現在有人不在。」";
 
-                if( query_temp("japan/job", team[i]))return "「"+query("name", team[i])+"不是已經去了嗎？你還站這裡幹嗎？」";
+                if( query_temp("japan/job", team[i]))return "「"+query("name", team[i])+"不是已經去了嗎？你還站這裏幹嗎？」";
 
                 if( (uptime()-query("time", ob))<300)return "「剛剛有人進城殺敵去了。」";
 

@@ -39,9 +39,9 @@ int perform(object me, object target)
                 return notify_fail("你沒有準備使用辟邪劍法，難以施展" GUI "。\n");
 
         if (! living(target))
-                return notify_fail("對方都已經這樣了，用不著這麼費力吧？\n");
+                return notify_fail("對方都已經這樣了，用不着這麼費力吧？\n");
 
-        msg = HIR "$N" HIR "身子忽進忽退，宛若鬼魅，身形詭秘異常，在$n"
+        msg = HIR "$N" HIR "身子忽進忽退，宛若鬼魅，身形詭祕異常，在$n"
               HIR "身邊飄忽不定。\n" NOR;
 
         ap=me->query_skill("sword")*3/2+query("level", me)*20+
@@ -52,7 +52,7 @@ int perform(object me, object target)
 
         if (ap / 2 + random(ap) > dp)
         {
-                msg += HIR "$p" HIR "霎時只覺眼花繚亂，只能緊守門戶，不"
+                msg += HIR "$p" HIR "霎時只覺眼花繚亂，只能緊守門户，不"
                        "敢妄自出擊！\n" NOR;
                 target->start_busy(ap / 45 + 2);
                 me->start_busy(1);

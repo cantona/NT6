@@ -11,9 +11,9 @@ string *enter_msg = ({
         HIB+"\n你只覺得眼前一花，突然什麼也聽不見，什麼也看不見......\n\n"+NOR,
         HIB+"只覺得身體不斷的下墜......\n\n"+NOR,
         HIB+"墜向無盡的黑暗......\n\n"+NOR,
-        HIB+"忽然仿佛一只大手托了你一下......\n\n"+NOR,
-        HIB+"冥冥中隱約傳來陣陣叮叮當當碰撞聲......\n\n"+NOR,
-        HIB+"你睜眼一看，發現自己已置身于一個喧囂而似乎並不陌生的世界......\n\n"+NOR,
+        HIB+"忽然彷彿一隻大手託了你一下......\n\n"+NOR,
+        HIB+"冥冥中隱約傳來陣陣叮叮噹噹碰撞聲......\n\n"+NOR,
+        HIB+"你睜眼一看，發現自己已置身於一個喧囂而似乎並不陌生的世界......\n\n"+NOR,
 });
 
 void entering_world(object me, int n);
@@ -22,7 +22,7 @@ void create()
 {
         set("short", HIW "\n\n                無        間        道" NOR);
         set("long", HIW "\n"
-"這裡是天地人三界不管的終極無間，這裡沒有任何出路，只有黑暗。\n\n" NOR);
+"這裏是天地人三界不管的終極無間，這裏沒有任何出路，只有黑暗。\n\n" NOR);
 
         set("no_magic", 1);
         setup();
@@ -54,7 +54,7 @@ int do_say(string arg)
                                NOR, this_player());
                 ob = new("/d/death/obj/wujian");
                 ob->move(this_player(), 1); 
-                message_vision(HIW "突然間電閃雷鳴，宇宙無敵之劍無間閃電伴隨著道道閃電穿進$N的懷中！\n", this_player());     
+                message_vision(HIW "突然間電閃雷鳴，宇宙無敵之劍無間閃電伴隨着道道閃電穿進$N的懷中！\n", this_player());     
                 this_object()->recreate();
                 set("poem_said", 1);
                 return 1;
@@ -62,7 +62,7 @@ int do_say(string arg)
 
         if( arg == "潛能無限，精意神通，身居禍福，自我主宰！" && (int)query("poem_said") == 1 )
         {
-                write(HIC "\n你對著黑暗一聲猛喝，聲音在司內回盪了好一陣才消逝。\n" NOR);
+                write(HIC "\n你對着黑暗一聲猛喝，聲音在司內迴盪了好一陣才消逝。\n" NOR);
                 return 1;
         }
 }
@@ -71,13 +71,13 @@ void recreate()
 {
         set("short", HIW "\n\n                無        間        道" NOR);
         set("long", HIW "\n"
-"這裡是天地人三界不管的終極無間，這裡沒有任何出路，只有黑暗。\n"
+"這裏是天地人三界不管的終極無間，這裏沒有任何出路，只有黑暗。\n"
 "前方是一面足有一人高的大銅鏡(mirror)。\n\n" NOR);
 
         set("item_desc", ([
-                "大銅鏡": "一面足有一人高的大銅鏡，奇怪的是鏡子裡一片混沌，照不出任何人影。\n",
-                "銅鏡"  : "一面足有一人高的大銅鏡，奇怪的是鏡子裡一片混沌，照不出任何人影。\n",
-                "mirror": "一面足有一人高的大銅鏡，奇怪的是鏡子裡一片混沌，照不出任何人影。\n",
+                "大銅鏡": "一面足有一人高的大銅鏡，奇怪的是鏡子裏一片混沌，照不出任何人影。\n",
+                "銅鏡"  : "一面足有一人高的大銅鏡，奇怪的是鏡子裏一片混沌，照不出任何人影。\n",
+                "mirror": "一面足有一人高的大銅鏡，奇怪的是鏡子裏一片混沌，照不出任何人影。\n",
         ]));
         set("objects", ([
                 "/d/death/npc/ghost" : 21,
@@ -98,7 +98,7 @@ int do_enter(string arg)
                 return notify_fail("你還是先解決掉這些亡魂吧！\n");
                 
         set_temp("entering_world", 1, me);
-        message_vision("$N向著銅鏡的方向走去。\n",me);
+        message_vision("$N向着銅鏡的方向走去。\n",me);
         call_out("entering_world", 1, me, 0);
         return 1;
 }

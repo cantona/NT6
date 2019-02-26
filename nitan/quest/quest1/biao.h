@@ -1,6 +1,6 @@
 mapping *yun_biao = ({
 ([
-        "name":   "京城雜貨舖",
+        "name":   "京城雜貨鋪",
         "file":   "/d/beijing/zahuo",
         "bonus":  200,
         "time":   900,
@@ -36,7 +36,7 @@ mapping *yun_biao = ({
         "time":   900,
 ]),
 ([
-        "name":   "新疆雜貨舖",
+        "name":   "新疆雜貨鋪",
         "file":   "/d/xingxiu/store",
         "bonus":  210,
         "time":   1100,
@@ -54,7 +54,7 @@ mapping *yun_biao = ({
         "time":   900,
 ]),
 ([
-        "name":   "襄陽當舖",
+        "name":   "襄陽當鋪",
         "file":   "/d/xiangyang/dangpu",
         "bonus":  150,
         "time":   600,

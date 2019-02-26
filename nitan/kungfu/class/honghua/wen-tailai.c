@@ -13,8 +13,8 @@ void create()
         set_name("文泰來", ({ "wen tailai", "wen","tailai" }));
         set("title", "紅花會四當家");
         set("nickname", HIW "奔雷手" NOR);
-        set("long", "文泰來號稱“奔雷手”，十五歲起浪盪江湖，\n"
-                    "手下不知擊斃過多少神姦巨憝、兇徒惡霸。\n");
+        set("long", "文泰來號稱“奔雷手”，十五歲起浪蕩江湖，\n"
+                    "手下不知擊斃過多少神奸巨憝、兇徒惡霸。\n");
         set("gender", "男性");
         set("age", 34);
         set("attitude", "peaceful");
@@ -111,7 +111,7 @@ void attempt_apprentice(object me)
         }
 
         command("haha");
-        command("say 不錯，不錯，你以後就跟著我吧。");
+        command("say 不錯，不錯，你以後就跟着我吧。");
         command("recruit "+query("id", me));
 }
 
@@ -142,9 +142,9 @@ mixed ask_skill1()
         if (me->query_skill("benlei-zhang", 1) < 120)
                 return "你的霹靂奔雷掌還練得不到家，自己下去練練再來吧！";
 
-        message_vision(HIY "$n" HIY "大笑數聲，對$N" HIY "說道：“想不到"
+        message_vision(HIY "$n" HIY "大笑數聲，對$N" HIY "説道：“想不到"
                        "你的掌法居然能有如此造\n詣，今日我傳你這招又何妨"
-                       "？”說罷，$n" HIY "隨即擺開架勢，慢\n慢的演示招數"
+                       "？”説罷，$n" HIY "隨即擺開架勢，慢\n慢的演示招數"
                        "。\n" NOR, me, this_object());
 
         command("haha");

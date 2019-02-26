@@ -5,7 +5,7 @@ void create()
 {
         set_name(GRN "斷腸草" NOR, ({"duanchang cao", "duanchang", "cao"}));
         set("unit", "株");
-        set("long", GRN "這是一株閃爍著磷光的小草。\n" NOR);
+        set("long", GRN "這是一株閃爍着磷光的小草。\n" NOR);
         set("value", 10);
         set_weight(100);
         set("only_do_effect", 1);

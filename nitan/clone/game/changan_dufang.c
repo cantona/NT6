@@ -2,16 +2,16 @@
 //by bravo
 // naihe 05-12-3 0:22 完全重寫(只是沿原來的文件名及地理位置而已)，添加賭大小功能，使之成為真正賭場。
 // naihe 05-12-3 17:01 調整豹子賠率，增加數據存取功能及更詳細的分析 log.
-// 由于 sz /d/ 下文件沒有 save_object() 權，故更改此文件為 /clone/room/changan_dufang.c
+// 由於 sz /d/ 下文件沒有 save_object() 權，故更改此文件為 /clone/room/changan_dufang.c
 // naihe 05-12-6 8:41 加上彩金功能。
 // naihe 05-12-14 16:42 最終完善。
-// naihe 05-12-18 10:15 降低手續費用由百分率改為千分率，可選擇余地更多。
+// naihe 05-12-18 10:15 降低手續費用由百分率改為千分率，可選擇餘地更多。
 
 #include <ansi.h>
 inherit ROOM;
 inherit F_SAVE;
-#include <ctime_format_func.h>    // 某些MUD裡沒有這個函數：ctime_format()，把它寫成：return ctime(time()); 即可。
-//#include <set_del_color_func.h> // 某些MUD裡沒有這兩個 s_efun:  setcolor(), delcolor().
+#include <ctime_format_func.h>    // 某些MUD裏沒有這個函數：ctime_format()，把它寫成：return ctime(time()); 即可。
+//#include <set_del_color_func.h> // 某些MUD裏沒有這兩個 s_efun:  setcolor(), delcolor().
 
 #define     DUFANG_VERSION                  "V1.2 (2005.12.18)"
 
@@ -40,7 +40,7 @@ inherit F_SAVE;
 #define     JACKPOT_MIN     200             // 彩金最少
 //    ###############################
 
-#define     BIG_STR         HIG"大"NOR      // 可以在這裡改一下顏色。只是描述而已。
+#define     BIG_STR         HIG"大"NOR      // 可以在這裏改一下顏色。只是描述而已。
 #define     SMALL_STR       HIC"小"NOR
 #define     SINGLE_STR      HIY"單"NOR
 #define     DOUBLE_STR      HIM"雙"NOR
@@ -506,8 +506,8 @@ string query_now_long()
 {
     string msg;
 
-    msg ="這裡是王者歸來的一家小賭坊，別看它規模不大，卻常常有許多千金富豪
-來這裡徹夜豪賭。對門的牆上帖著一張布告(bugao)。\n\n";
+    msg ="這裏是王者歸來的一家小賭坊，別看它規模不大，卻常常有許多千金富豪
+來這裏徹夜豪賭。對門的牆上帖着一張佈告(bugao)。\n\n";
     msg += query_now_long2();
     return msg;
 }
@@ -518,7 +518,7 @@ string look_bugao()
     string msg;
     msg =
 "**********************************************************
-    賭坊遊戲說明  "HIC+DUFANG_VERSION"  Naihe@神州 MUD"NOR"
+    賭坊遊戲説明  "HIC+DUFANG_VERSION"  Naihe@神州 MUD"NOR"
 
     本賭坊直接使用錢莊轉帳付款，設骰子賭局。
 
@@ -527,10 +527,10 @@ string look_bugao()
 
     4,6,8,10,12,14,16 為雙，5,7,9,11,13,15,17 為單。
     4-10 為小，11-17 為大。
-    三顆骰子都一樣時為“豹子”，通吃大小單雙──但賠出押
+    三顆骰子都一樣時為“豹子”，通吃大小單雙——但賠出押
     中豹子的注金，賠率為固定的 "+(game_info["percent_baozi"]+100)+"%。
 
-    其它賠率每局另報，投注范圍 1 - 10000 兩"HIW"白銀"NOR"。
+    其它賠率每局另報，投注範圍 1 - 10000 兩"HIW"白銀"NOR"。
 
     "HIY"押注：   <bet 數量 to da|xiao|dan|shuang|baozi>"NOR"
              你也可以用  a|b|c|d|e  來簡化輸入上面的類型。
@@ -557,7 +557,7 @@ string system_info_msg()
 {
     int t = query_system_win();
     return sprintf(
-        "(系統現在 %s )  總收入：%d (額外獎勵：%d)  總支出：%d (手續消耗：%d)  盈余：%s%d"NOR"  ("HIY"黃金"NOR")\n",
+        "(系統現在 %s )  總收入：%d (額外獎勵：%d)  總支出：%d (手續消耗：%d)  盈餘：%s%d"NOR"  ("HIY"黃金"NOR")\n",
         (BetOn ? HIG"開放中"NOR : HIR"關閉中"NOR),
         log_info["total_bet_g"],
         log_info["system_reward_g"],
@@ -611,7 +611,7 @@ protected int do_mewiz( string arg )
                 "指定巫師："+ replace_string( SYSTEM_WIZ_ID, "$", " ") + "\n"
             );
         if( add < -10000 || add > 10000 )
-            return notify_fail("增加量范圍是 -10000 ~ 10000 之間。\n");
+            return notify_fail("增加量範圍是 -10000 ~ 10000 之間。\n");
         now = log_info["system_reward_g"];
         all = now + add;
         if( all < 0 )
@@ -702,7 +702,7 @@ protected int do_bet( string arg )
     if( member_array( type , keys(type_str) ) == -1 )
         return notify_fail("押注格式： <bet 數量 to da|xiao|dan|shuang>\n");
     if( bet < 1 || bet > 10000 )
-        return notify_fail("押注范圍在 1 - 10000 兩白銀之間。\n");
+        return notify_fail("押注範圍在 1 - 10000 兩白銀之間。\n");
     if( me->query( "balance" ) < bet*100 )
         return notify_fail("你的存款不足 "+bet+" 兩白銀了。\n");
     // naihe add 人數限制 05-12-6 8:46
@@ -740,7 +740,7 @@ protected int do_bet( string arg )
     {
         valid_gogo_time = time() + GOGO_WAIT_TIME;       // 過幾秒才可以用 gogo 加速開獎。
         GameStat = 1;
-        tell_room( this_object(), HIW"第 "+times_flag+" 局賭局將于 "+WAIT_TIME+" 秒後開始，要買的就快押啦！\n"NOR );
+        tell_room( this_object(), HIW"第 "+times_flag+" 局賭局將於 "+WAIT_TIME+" 秒後開始，要買的就快押啦！\n"NOR );
         remove_call_out( "game_start" );
         call_out( "game_start", WAIT_TIME, 0 );
     }

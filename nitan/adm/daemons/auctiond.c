@@ -62,7 +62,7 @@ void heart_beat()
                     ! environment(obj) || environment(obj) != me)
                 {
                         map_delete(auction_info, id[i]);
-                        message_auction(sprintf("由于%s(%s)的拍賣品突然失蹤，此次拍賣被取消。", me->name(), id[i]));
+                        message_auction(sprintf("由於%s(%s)的拍賣品突然失蹤，此次拍賣被取消。", me->name(), id[i]));
                         continue;
                 }
                 if (stringp(auction_info[id[i]]["now"]) &&
@@ -117,9 +117,9 @@ void heart_beat()
                                                         {
                                                         case 0:
                                                         case 2:
-                                                                tell_object(ob, "但是" + me->name() + "付不起傭金"
+                                                                tell_object(ob, "但是" + me->name() + "付不起佣金"
                                                                                 "，只好作罷。\n");
-                                                                tell_object(me, "但是你付不起傭金，只好作罷。\n");
+                                                                tell_object(me, "但是你付不起佣金，只好作罷。\n");
                                                                 map_delete(auction_info, id[i]);
                                                                 continue;
                                                         default:
@@ -129,7 +129,7 @@ void heart_beat()
                                                                                 obj->short() + "。\n");
                                                                 tell_object(me, "你把" + obj->short() + "交人帶給"
                                                                                 "了" + ob->name() + "。\n");
-                                                                tell_object(me, "你的拍賣所得已經存入你的銀行帳戶。\n");
+                                                                tell_object(me, "你的拍賣所得已經存入你的銀行帳户。\n");
                                                                 addn("balance", money, me);
                                                                 map_delete(auction_info, id[i]);
                                                                 obj->move(ob);
@@ -141,9 +141,9 @@ void heart_beat()
                                                 {
                                                 case 0:
                                                 case 2:
-                                                        tell_object(ob, "但是" + me->name() + "付不起傭金"
+                                                        tell_object(ob, "但是" + me->name() + "付不起佣金"
                                                                         "，只好作罷。\n");
-                                                        tell_object(me, "但是你付不起傭金，只好作罷。\n");
+                                                        tell_object(me, "但是你付不起佣金，只好作罷。\n");
                                                         map_delete(auction_info, id[i]);
                                                         continue;
                                                 default:
@@ -188,7 +188,7 @@ public void add_auction(object me, object ob, int money)
         }
         if (! me->can_afford(money * lot_percent))
         {
-                tell_object(me, "你付不起傭金呀。\n");
+                tell_object(me, "你付不起佣金呀。\n");
                 return;
         }
 
@@ -199,7 +199,7 @@ public void add_auction(object me, object ob, int money)
                               "state" : 1, ]);
         tell_object(me, "你開始拍賣" + ob->short() + NOR "，目前" +
                         (strlen(msg = MONEY_D->money_str(money * lot_percent)) ?
-                        "你需要付出" + msg : "不需要付出") + "傭金。\n");
+                        "你需要付出" + msg : "不需要付出") + "佣金。\n");
         message_auction(sprintf("%s(%s)開價%s拍賣%s。", me->name(),
                                 id, filter_color(ob->short()),
                                 MONEY_D->money_str(money),));
@@ -302,7 +302,7 @@ public void decide_auction(object me, string player)
             ! environment(ob) || environment(ob) != me)
         {
                 map_delete(auction_info, id);
-                message_auction(sprintf("由于%s(%s)的拍賣品突然失蹤，此次拍賣被取消。", me->name(), id));
+                message_auction(sprintf("由於%s(%s)的拍賣品突然失蹤，此次拍賣被取消。", me->name(), id));
                 return;
         }
 
@@ -331,9 +331,9 @@ public void decide_auction(object me, string player)
                         {
                         case 0:
                         case 2:
-                                tell_object(who, "但是" + me->name() + "付不起傭金"
+                                tell_object(who, "但是" + me->name() + "付不起佣金"
                                                  "，只好作罷。\n");
-                                tell_object(me, "但是你付不起傭金，只好作罷。\n");
+                                tell_object(me, "但是你付不起佣金，只好作罷。\n");
                                 map_delete(auction_info, id);
                                 return;
                         default:
@@ -342,7 +342,7 @@ public void decide_auction(object me, string player)
                                                  ob->short() + "。\n");
                                 tell_object(me, "你把" + ob->short() + "交人帶給"
                                                 "了" + who->name() + "。\n");
-                                tell_object(me, "你的拍賣所得已經存入你的銀行帳戶。\n");
+                                tell_object(me, "你的拍賣所得已經存入你的銀行帳户。\n");
                                 addn("balance", money, me);
                                 ob->move(who);
                                 map_delete(auction_info, id);
@@ -354,9 +354,9 @@ public void decide_auction(object me, string player)
                 {
                 case 0:
                 case 2:
-                        tell_object(who, "但是" + me->name() + "付不起傭金"
+                        tell_object(who, "但是" + me->name() + "付不起佣金"
                                          "，只好作罷。\n");
-                        tell_object(me, "但是你付不起傭金，只好作罷。\n");
+                        tell_object(me, "但是你付不起佣金，只好作罷。\n");
                         map_delete(auction_info, id);
                         return;
                 default:

@@ -6,7 +6,7 @@ void create()
 {
         set("short","白雲庵東廊");
         set("long",@LONG
-這裡是恆山白雲庵東廊。走廊往北通往練武房，東邊通往藏經閣。
+這裏是恆山白雲庵東廊。走廊往北通往練武房，東邊通往藏經閣。
 LONG);
         set("outdoors", "hengshan");
         set("exits",([ /* sizeof() == 1 */

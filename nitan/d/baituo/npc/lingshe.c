@@ -11,12 +11,12 @@ void create()
         set_name("靈蛇", ({ "ling she", "she", "snake" }) );
         set("race", "野獸");
         set("age", 4);
-        set("long", "一條銀光閃閃的小蛇，產于西域，極為罕見。\n");
+        set("long", "一條銀光閃閃的小蛇，產於西域，極為罕見。\n");
         set("attitude", "peaceful");
 
-        set("msg_fail", "$n沖$N嘶地一吐舌頭");
-        set("msg_succ", "$n嘶嘶做響，蛇頭隨著$N的手動了起來");
-        set("msg_trained","$n悄無聲息地遊到$N的腳下不動了");
+        set("msg_fail", "$n衝$N嘶地一吐舌頭");
+        set("msg_succ", "$n嘶嘶做響，蛇頭隨着$N的手動了起來");
+        set("msg_trained","$n悄無聲息地游到$N的腳下不動了");
         set("auto_follow",0);
         set("wildness", 90);
 
@@ -80,7 +80,7 @@ int convert(string arg)
                 kill_ob(me);
                 return 1;
         }
-        message_vision("$N左手按住靈蛇的頭，右手輕撫其七寸，口中念念有詞，片刻間將蛇化為一根蛇杖。\n",
+        message_vision("$N左手按住靈蛇的頭，右手輕撫其七寸，口中唸唸有詞，片刻間將蛇化為一根蛇杖。\n",
                 me,);
                 ob = new("/d/baituo/obj/lingshezhang");
         ob->move(environment(this_object()));

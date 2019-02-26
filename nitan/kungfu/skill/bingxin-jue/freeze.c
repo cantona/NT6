@@ -27,7 +27,7 @@ int exert(object me, object target)
                 return notify_fail("你的內力不夠!");
 
        if (! living(target))
-              return notify_fail("對方都已經這樣了，用不著這麼費力吧？\n");
+              return notify_fail("對方都已經這樣了，用不着這麼費力吧？\n");
 
         msg = HIW "$N" HIW "默運冰心決，一股寒氣迎面撲向$n"
               HIW "，四周登時雪花飄飄。\n" NOR;

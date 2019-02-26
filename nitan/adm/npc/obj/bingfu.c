@@ -23,7 +23,7 @@ mapping bingfa = ([
                      ]),
                      
         "siegecity": ([ "jinglan"    : "井闌",
-                        "chongche"   : "沖車",
+                        "chongche"   : "衝車",
                         "fashi"      : "發石",
                         "xiangbing"  : "象兵",
                         "luoshi"     : "落石",
@@ -76,7 +76,7 @@ void create()
                 set("no_sell", 1);
                 set("no_store", 1);
         }
-        set("master", "高□不□寒");
+        set("master", "高處不勝寒");
         set("owner", "lonely");
         setup();
 }
@@ -162,16 +162,16 @@ int do_attack(string arg)
                 return notify_fail("你已經設置為由系統自動指揮作戰！如想自己操作，請修改設置。\n");
 
         if( query_temp("warquest/attack", me) )
-                return notify_fail("你的隊伍正在列陣進攻，不要亂發號令了！\n");
+                return notify_fail("你的隊伍正在列陣進攻，不要亂髮號令了！\n");
 
         if( !query_temp("warquest/train", me) )
                 return notify_fail("你未帶一兵一卒，指揮個什麼呀？\n");
 
         if( query_temp("warquest/group", me)<1 )
-                return notify_fail("你的隊伍已經損失殆盡，無法列陣沖鋒了！\n");
+                return notify_fail("你的隊伍已經損失殆盡，無法列陣衝鋒了！\n");
 
         if( query("no_fight", env) )
-                return notify_fail("這裡不許戰鬥！！\n");
+                return notify_fail("這裏不許戰鬥！！\n");
 
         if (sscanf(arg, "%s with %s & %s", who, zhen, craft, dir) < 3)
                 return notify_fail("指令格式錯誤，請用 attack <sb.> with <array> & <craft> 指揮你的隊伍！\n");
@@ -189,7 +189,7 @@ int do_attack(string arg)
                 return notify_fail("你目前還沒有通曉「" + bingfa[craft] + "」這種兵法！\n");
 
         message_vision(HIY "$N將手中寶劍一揮，大喝道：三軍列陣「" + zhenfa[zhen] +
-                "」，準備向敵軍發起沖鋒──>" + bingfa[craft] + "！！\n" NOR, me, ob);
+                "」，準備向敵軍發起衝鋒——>" + bingfa[craft] + "！！\n" NOR, me, ob);
 
         set_temp("warquest/attack", 1, me);
         set_temp("warquest/array", zhenfa[zhen], me);
@@ -221,7 +221,7 @@ int do_stock(string arg)
         set_temp("warquest/purchase", arg, me);
                                 
         if( query_temp("warquest/move", me) )
-                return notify_fail("號令已經發布下去了！\n");
+                return notify_fail("號令已經發佈下去了！\n");
                 
         switch(query_temp("warquest/purchase", me) )
         {
@@ -298,7 +298,7 @@ int do_order(string arg)
                 return notify_fail("請用 order sb to do sth. 來發布號令！\n");
 
         if (! objectp(ob = present(who, env)))
-                return notify_fail("這裡沒有你可以調度的這名將領！\n");
+                return notify_fail("這裏沒有你可以調度的這名將領！\n");
 
         if( query_temp("warquest/party", ob) != "song" )
                 return notify_fail("對方不是宋軍，如何供你調度？！\n");

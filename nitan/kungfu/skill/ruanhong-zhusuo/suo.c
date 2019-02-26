@@ -34,7 +34,7 @@ int perform(object me, object target)
                 return notify_fail("你沒有激發軟紅蛛索，無法施展" + name() + "。\n");
 
         if (! living(target))
-                return notify_fail("對方都已經這樣了，用不著這麼費力吧？\n");
+                return notify_fail("對方都已經這樣了，用不着這麼費力吧？\n");
 
         msg = HIW "$N" HIW "使出「鎖龍」訣，手中" + weapon->name() +
               HIW "一抖，登時幻出漫天鞭影，宛如蛟龍通天，一齊襲向$n"
@@ -46,7 +46,7 @@ int perform(object me, object target)
         if (ap / 2 + random(ap * 2) > dp)
         {
                 msg += HIC "結果$p" HIC "被$P" HIC
-                       "攻了個措手不及，目接不暇，疲于奔命！\n" NOR;
+                       "攻了個措手不及，目接不暇，疲於奔命！\n" NOR;
                 count = ap / 12;
                 addn_temp("apply/attack", count, me);
                 attack_time += random(ap / 45);

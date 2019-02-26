@@ -15,9 +15,9 @@ void create()
                 set_default_object(__FILE__);
         else {
                 set("unit", "滴");
-                set("long", HIG "這是附著在靈芝上的一滴晶瑩剔透的玉露，傳說採自\n"
-                                "靈山，千年來以靈芝為母，不斷的吸取著日精月華，\n"
-                                "具有著無比神奇的功效。\n");
+                set("long", HIG "這是附着在靈芝上的一滴晶瑩剔透的玉露，傳説採自\n"
+                                "靈山，千年來以靈芝為母，不斷的吸取着日精月華，\n"
+                                "具有着無比神奇的功效。\n");
                 set("value", 1000000);
                 set("only_do_effect", 1);
         }

@@ -5,8 +5,8 @@ inherit NPC;
 int ask_wjb(object me, object ob); 
 void create() 
 { 
-     set_name("守衛",({"shou wei","guard"}) ); 
-     set("long","這是一位的無極幫的守衛。\n"); 
+     set_name("守衞",({"shou wei","guard"}) ); 
+     set("long","這是一位的無極幫的守衞。\n"); 
      set("title","無極幫幫眾"); 
      set("gender","男性"); 
      set("age",20); 
@@ -28,16 +28,16 @@ int ask_wjb(object me, object ob)
      if( query("bunch/bunch_name", me) != "無極幫" && query("shen", me) >= 0 )
      { 
            command("famours"+query("id", me));
-           tell_object(me,"守衛笑眯眯地對你說：“是想加入咱們無極幫吧？請進請進。”\n"); 
+           tell_object(me,"守衞笑眯眯地對你説：“是想加入咱們無極幫吧？請進請進。”\n"); 
            set_temp("good_wjb", 1, me);
            return 1; 
      } 
      if( bad_bunch(me) || query("shen", me)<0 )
      { 
-           ob->command("say 哪裡來的邪魔歪道，找打麼？\n"); 
+           ob->command("say 哪裏來的邪魔歪道，找打麼？\n"); 
            return 1; 
      } 
 
-     tell_object(me,"守衛奇怪道：“同為本幫兄弟，你何出此言啊？”\n"); 
+     tell_object(me,"守衞奇怪道：“同為本幫兄弟，你何出此言啊？”\n"); 
      return 1; 
 } 

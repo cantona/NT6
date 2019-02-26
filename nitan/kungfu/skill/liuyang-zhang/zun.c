@@ -18,7 +18,7 @@ int perform(object me, object target)
                 return notify_fail("你還沒有轉世重生，還不能領悟到"+name()+"的精髓。\n");
 
         if( me->is_busy() )
-                return notify_fail("你正忙著呢。\n");
+                return notify_fail("你正忙着呢。\n");
 
         if( !target )
         {
@@ -36,7 +36,7 @@ int perform(object me, object target)
                 return notify_fail("你要對誰施展"+name()+"？\n");
 
         if( !living(target) )
-                return notify_fail("對方都已經這樣了，用不著這麼費力吧？\n");
+                return notify_fail("對方都已經這樣了，用不着這麼費力吧？\n");
 
         if( me->query_skill_prepared("strike") != "liuyang-zhang" )
                 return notify_fail("你還沒有將天山六陽掌與逍遙折梅手互備，無法施展"+name()+"。\n");
@@ -51,7 +51,7 @@ int perform(object me, object target)
                 return notify_fail("你的真氣不夠，現在無法施展"+name()+"。\n");
 
         msg = HIY "但見$N" HIY "衣袂飄飄翩躚起舞，閉目凝神默運玄功，手中生死符由內勁霧化蒸騰，\n"
-              HIY "如雲霞般隨著雙掌的翻飛繚繞周身，忽然$N" HIY "傾步前移，雙掌破空擊出，挾著絲絲寒意，直向$n" HIY "雙肩貫去。\n" NOR;
+              HIY "如雲霞般隨着雙掌的翻飛繚繞周身，忽然$N" HIY "傾步前移，雙掌破空擊出，挾着絲絲寒意，直向$n" HIY "雙肩貫去。\n" NOR;
 
         msg += HIR "$n" HIR "只覺胸口一悶，一絲涼意直入肺腑，腦中一片空白茫然不知所措！\n" NOR;
 
@@ -73,7 +73,7 @@ int perform(object me, object target)
         {
                 msg += COMBAT_D->do_damage(me, target, UNARMED_ATTACK, damage, 300,
                                            HIR "$n" HIR "恍然驚醒，心下大駭，慌亂中抬手相抗，怎料得$N"
-                                           HIR "那凝脂如雪的雙掌竟然蘊含千鈞力道，\n"
+                                           HIR "那凝脂如雪的雙掌竟然藴含千鈞力道，\n"
                                            HIR "一觸之下頓讓自己雙臂氣勁潰散，毫無抵擋之力，結結實實地受下此招。\n" NOR);
 
         } else
@@ -83,7 +83,7 @@ int perform(object me, object target)
         addn_temp("apply/add_damage", -50, me);
         message_combatd(msg, me, target);
 
-        msg = HIY "$N" HIY "一招未老，瞬即抽身回翔，接著反手推出一掌，看似漫無目的，那匯聚著白虹掌力的內勁確如浪湧一般奔至$n"HIY"胸前。\n" NOR;
+        msg = HIY "$N" HIY "一招未老，瞬即抽身迴翔，接着反手推出一掌，看似漫無目的，那匯聚着白虹掌力的內勁確如浪湧一般奔至$n"HIY"胸前。\n" NOR;
         // 第二掌
         ap = attack_power(me, "strike") + me->query_con()*20;
         dp = defense_power(target, "parry") + target->query_con()*20;
@@ -94,7 +94,7 @@ int perform(object me, object target)
 
                 msg += COMBAT_D->do_damage(me, target, UNARMED_ATTACK, damage, 150,
                                            HIR "那掌勁不疾不徐，卻又避無可避，從$n" HIR "胸口透體而過,直震得$n筋骨寸裂。\n"
-                                           HIR "$n" HIR "只覺心脈如千道銀針紮入，氣海一陣翻湧，一團血霧從口中噴激而出。\n" NOR);
+                                           HIR "$n" HIR "只覺心脈如千道銀針扎入，氣海一陣翻湧，一團血霧從口中噴激而出。\n" NOR);
 
         } else
         {
@@ -104,7 +104,7 @@ int perform(object me, object target)
         message_combatd(msg, me, target);
 
         // 第三掌
-        msg = HIY "$N" HIY "縱身一躍，驀然騰空數丈，隨著一聲嬌叱，已俯身飄搖而下，重重掌影層疊成一朵巨大的雪蓮，朝$n" HIY "頭頂壓下。\n" NOR;
+        msg = HIY "$N" HIY "縱身一躍，驀然騰空數丈，隨着一聲嬌叱，已俯身飄搖而下，重重掌影層疊成一朵巨大的雪蓮，朝$n" HIY "頭頂壓下。\n" NOR;
 
         ap = attack_power(me, "strike") + me->query_dex()*20;
         dp = defense_power(target, "force") + target->query_dex()*20;
@@ -120,7 +120,7 @@ int perform(object me, object target)
 
         } else
         {
-                msg += CYN "$p" CYN "見此招來勢洶湧，豈敢貿然招架。俯腰移步，一個靈動，居然在千鈞一發之際抽身而出。\n" NOR;
+                msg += CYN "$p" CYN "見此招來勢洶湧，豈敢貿然招架。俯腰移步，一個靈動，居然在千鈞一髮之際抽身而出。\n" NOR;
         }
 
 

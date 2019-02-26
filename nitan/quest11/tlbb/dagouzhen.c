@@ -16,19 +16,19 @@ void destruct_book(object ob);
 int do_eat(string arg);
 
 #define QUESTDIR "quest/天龍八部/"
-#define QUESTDIR3 "quest/天龍八部/蕭峰身世篇/"
+#define QUESTDIR3 "quest/天龍八部/蕭峯身世篇/"
 #define QUESTDIR4 "quest/天龍八部/大遼救援篇/"
 #define QUESTDIR5 "quest/天龍八部/復興天下篇/"
 
 string* anhao = ({"維","經","摩","法","華","嚴","無","量","壽","大","般","涅","磐","阿","含","金","剛","波","羅","蜜","多","心","佛",
-                  "須","提","若","菩","薩","以","滿","恆","河","沙","等","世","界","七","寶","佛","說","是","經","已","長","老","所",
+                  "須","提","若","菩","薩","以","滿","恆","河","沙","等","世","界","七","寶","佛","説","是","經","已","長","老","所",
                   "菩","提","及","諸","比","丘","尼","優","婆","塞","優","婆","夷","一","切","世","間","天","人","阿","修","羅","聞",});
 
 void create()
 {
 	set("short",HIW "打狗陣" NOR);
 	set("long", @LONG
-這是一片空場地，四角分別站著四個丐幫弟子。一角放著個兵器架。
+這是一片空場地，四角分別站着四個丐幫弟子。一角放着個兵器架。
 LONG);
   set("no_get_from", 1); 
   set("quest", 1);
@@ -41,8 +41,8 @@ void init()
   me = this_player();
   if(me->query_condition("killer"))
   {
-   message_vision(HIC"\n突然$N似乎氣血有些不順，跟著一個趔趄倒了下去。\n"NOR,me); 
-   tell_object(me,HIR"你突然感到一股力量吸引著你，瞬間你失去知覺。\n"NOR);
+   message_vision(HIC"\n突然$N似乎氣血有些不順，跟着一個趔趄倒了下去。\n"NOR,me); 
+   tell_object(me,HIR"你突然感到一股力量吸引着你，瞬間你失去知覺。\n"NOR);
    tell_room(environment(me),HIR"\n只見，地上突然出現一個裂洞，"+ me->name()+ "一頭紮了下去，瞬間消失。\n"NOR, ({ me }));
    if(me->query(QUESTDIR3+"bad"))  me->move("/d/shaolin/guangchang");
    else if(me->query(QUESTDIR3+"good"))  me->move("/d/fuzhou/fenduo1");
@@ -63,8 +63,8 @@ int do_eat(string arg)
 {
      object me = this_player();
      if (me->query("food") < me->query("str")*3+50){
-          message_vision(HIC"$N正覺得有些肚子饑，外面走來一個僧人，送給$N一些飯菜。\n"NOR, me);
-          message_vision(HIC"$N爽快地大吃一頓，隨手把剩余的飯菜丟了出去。\n"NOR, me);
+          message_vision(HIC"$N正覺得有些肚子飢，外面走來一個僧人，送給$N一些飯菜。\n"NOR, me);
+          message_vision(HIC"$N爽快地大吃一頓，隨手把剩餘的飯菜丟了出去。\n"NOR, me);
           me->add("food", me->query("str")*10+100, me);
           return 1;
      }
@@ -86,7 +86,7 @@ int do_leave(string arg)
 	me = this_player();
 	if(me->query(QUESTDIR3+"bad") && me->query_temp(QUESTDIR5+"zhangxing") && !me->query_temp(QUESTDIR5+"dagouzhen"))
 	{
-		message_vision(HIC"$N決定離開這裡，卻聽見一個聲音道：老爺太太，施舍口冷飯。\n"NOR, me);
+		message_vision(HIC"$N決定離開這裏，卻聽見一個聲音道：老爺太太，施捨口冷飯。\n"NOR, me);
 		return 1;
 	}
 	if(me->query(QUESTDIR3+"bad") && me->query_temp(QUESTDIR5+"zhangxing") && me->query_temp(QUESTDIR5+"dagouzhen"))
@@ -111,9 +111,9 @@ int do_leave(string arg)
                                      anhao[random(sizeof(anhao))]+anhao[random(sizeof(anhao))]+anhao[random(sizeof(anhao))]+
                                      anhao[random(sizeof(anhao))]+anhao[random(sizeof(anhao))]+anhao[random(sizeof(anhao))]);
        message_vision(HIG"$N對$n點了點頭，恭喜$n闖過打狗陣法。\n"NOR, obj,me);
-       tell_object(me,obj->name()+"在你的耳邊悄聲說道：恩，果然是"+me->query("family/master_name")+"座下"+me->query("family/family_name")+"高手，確實武功了得。\n"NOR);
-       tell_object(me,obj->name()+"在你的耳邊悄聲說道：如此說來，還是盡快營救蕭大俠為是。半夜三更，在頌摩崖屆時會有我丐幫弟子接應。\n"NOR);
-       tell_object(me,obj->name()+"在你的耳邊悄聲說道：注意一定是半夜時刻，另外，可能需要暗號接應，暗號是【"+me->query_temp(QUESTDIR4+"anhao")+"】。\n"NOR);
+       tell_object(me,obj->name()+"在你的耳邊悄聲説道：恩，果然是"+me->query("family/master_name")+"座下"+me->query("family/family_name")+"高手，確實武功了得。\n"NOR);
+       tell_object(me,obj->name()+"在你的耳邊悄聲説道：如此説來，還是儘快營救蕭大俠為是。半夜三更，在頌摩崖屆時會有我丐幫弟子接應。\n"NOR);
+       tell_object(me,obj->name()+"在你的耳邊悄聲説道：注意一定是半夜時刻，另外，可能需要暗號接應，暗號是【"+me->query_temp(QUESTDIR4+"anhao")+"】。\n"NOR);
       me->set(QUESTDIR+"time",time());
 	  }
 	  return 1;
@@ -145,7 +145,7 @@ int do_start(string arg)
 		return 1;
 	}
     destruct_book(this_object());
-	  if(!me->query_temp(QUESTDIR4+"dagouzhen")&& !me->query_temp(QUESTDIR5+"dagouzhen"))  message_vision(HIC"$N決定嘗試闖一闖這打狗陣法，盡快離開這裡。\n"NOR, this_player());
+	  if(!me->query_temp(QUESTDIR4+"dagouzhen")&& !me->query_temp(QUESTDIR5+"dagouzhen"))  message_vision(HIC"$N決定嘗試闖一闖這打狗陣法，儘快離開這裏。\n"NOR, this_player());
     else   message_vision(HIC"$N決定再次闖一闖這打狗陣法。\n"NOR, this_player());
     tell_object(me,HIR"突然你感到一股神力充斥在房間之中，你精神不由一陣。\n"NOR);
     me->remove_all_killer();   
@@ -194,7 +194,7 @@ void start(object me)
   	return;
   }	
   message_vision(HIC"$N決定闖陣。\n"NOR, me);
-  message_vision(HIC"一會，從角落裡緩緩地走出四個乞丐，身著百衲結衣，估計年紀都在五十開外！\n"NOR, me);
+  message_vision(HIC"一會，從角落裏緩緩地走出四個乞丐，身着百衲結衣，估計年紀都在五十開外！\n"NOR, me);
   copy_person(me);
   return;
 }
@@ -218,10 +218,10 @@ void rule(object me)
        obj->move(environment(me)); 
        message_vision(YEL"“啪”地一聲，又一本"+obj->query("name")+"掉在$N面前。\n"NOR,me);
     }
-   message_vision(HIC"\n只聽一個聲音對道：小子，少林寺有吃有喝的，何必走江湖跑龍套呢，還是呆在這裡潛心修我佛法為上！\n"NOR,me);
-   message_vision(HIC"這兩本佛經是少林主持托我給$N的，關鍵還聽說這裡面可能藏有傳說中的九陽神功，就看小子你的造化了！\n"NOR, me);
+   message_vision(HIC"\n只聽一個聲音對道：小子，少林寺有吃有喝的，何必走江湖跑龍套呢，還是呆在這裏潛心修我佛法為上！\n"NOR,me);
+   message_vision(HIC"這兩本佛經是少林主持託我給$N的，關鍵還聽説這裏面可能藏有傳説中的九陽神功，就看小子你的造化了！\n"NOR, me);
   }
-  tell_object(me,HIY"\n要離開這裡只有硬闖打狗陣。你可以使用：\n"
+  tell_object(me,HIY"\n要離開這裏只有硬闖打狗陣。你可以使用：\n"
                        +"啟動陣法（start）、中止陣法（stop）、離開房間（leave）、恢復自己（full）。\n"
                   +HIR"\n陣法之中，有死亡的可能，請及時中止陣法！\n\n"NOR);
   return;
@@ -259,7 +259,7 @@ void destruct_person(object ob)
   {
 	  if(!(present("gaibang dizi", ob))) return;
     obj=present("gaibang dizi", ob);
-    if(random(2)) message_vision(HIR"$N點了點頭，緩緩消失在角落裡。\n" NOR, obj);
+    if(random(2)) message_vision(HIR"$N點了點頭，緩緩消失在角落裏。\n" NOR, obj);
     else message_vision(HIR"$N一邊退一邊唱道：“老爺太太行行好，賞賜乞兒一文錢。”\n" NOR, obj);
 		destruct(obj);
   }
@@ -272,8 +272,8 @@ void destruct_book(object ob)
   {
 	  if(!(present("shu", ob))) return;
     obj=present("shu", ob);
-    if(random(2)) message_vision(HIR"一陣風過，$N飄在風裡，消去了。\n" NOR, obj);
-    else message_vision(HIR"一晃，$N竟然也跟著消失了。\n" NOR, obj);
+    if(random(2)) message_vision(HIR"一陣風過，$N飄在風裏，消去了。\n" NOR, obj);
+    else message_vision(HIR"一晃，$N竟然也跟着消失了。\n" NOR, obj);
 		destruct(obj);
   }
 }

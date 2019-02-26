@@ -12,8 +12,8 @@ void create()
         set("combat_exp",10000 + random(5000));
         set("chat_chance", 1);
         set("chat_msg", ({
-        	CYN "僕人突然說道：後院很需要人手，郭大俠正為此煩惱呢。\n" NOR,
-        	CYN "僕役低聲的說：在後院做事有好多好處啊。\n" NOR,
+        	CYN "僕人突然説道：後院很需要人手，郭大俠正為此煩惱呢。\n" NOR,
+        	CYN "僕役低聲的説：在後院做事有好多好處啊。\n" NOR,
         }));
         setup();
         carry_object("/clone/misc/cloth")->wear();

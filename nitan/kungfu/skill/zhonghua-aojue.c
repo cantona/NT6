@@ -2,9 +2,9 @@ inherit FORCE;
 
 string *dodge_msg = ({
         "$n暗運內力，$N的進攻就如擊到氣牆上，沒有半點效果。\n",
-        "$n大喝一聲，一股氣流直沖而出，硬生生震退了$N。\n",
+        "$n大喝一聲，一股氣流直衝而出，硬生生震退了$N。\n",
         "$n身子一轉，一股旋風將$N的招數全部化解。\n",
-        "$n哼然冷笑，微微移動，內力回旋使$N的進攻差之毫厘。\n",
+        "$n哼然冷笑，微微移動，內力迴旋使$N的進攻差之毫釐。\n",
 });
 
 int query_neili_improve(object me)
@@ -17,7 +17,7 @@ int query_neili_improve(object me)
 
 
 mapping *actionf = ({
-([      "action":"$N跨出一步，一指緩緩戳向$n的$l，籠罩了方圓數寸的范圍",
+([      "action":"$N跨出一步，一指緩緩戳向$n的$l，籠罩了方圓數寸的範圍",
         "force" : 500,
         "attack": 150,
         "dodge" : 90,
@@ -68,7 +68,7 @@ mapping *actionf = ({
 });
 
 mapping *actionw = ({
-([      "action":"$N跨出一步，手中$w緩緩刺向$n，籠罩了方圓數寸的范圍",
+([      "action":"$N跨出一步，手中$w緩緩刺向$n，籠罩了方圓數寸的範圍",
         "force" : 450,
         "attack": 170,
         "dodge" : 100,
@@ -159,11 +159,11 @@ int valid_learn(object me)
                                    "憑自己的戰鬥經驗一時間難以領會。\n");
 
         if ((int)me->query_skill("martial-cognize", 1) < 300)
-                return notify_fail("你覺得中華傲決過于深奧之極，以"
+                return notify_fail("你覺得中華傲決過於深奧之極，以"
                                    "自己的武學修養全然無法明白。\n");
 
         if( query("int", me)<35 )
-                return notify_fail("你覺得中華傲決過于艱深，難以理解。\n");
+                return notify_fail("你覺得中華傲決過於艱深，難以理解。\n");
 
         if( query("con", me)<31 )
                 return notify_fail("依照你的根骨無法修煉中華傲決。\n");

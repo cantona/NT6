@@ -26,7 +26,7 @@ int main(object me, string str)
                 return notify_fail("等你還了陽再追尋吧。\n");
 
         if( query("no_magic", environment(me)) || query("maze", environment(me)) )
-                return notify_fail("你在這裡無法感應到你的物品，不可以施法追尋。\n");
+                return notify_fail("你在這裏無法感應到你的物品，不可以施法追尋。\n");
 
         if (! objectp(ob = find_object(str)) || ! environment(ob))
                 return notify_fail("你窮盡精力，也無法感應到這個物品。\n");
@@ -38,9 +38,9 @@ int main(object me, string str)
 int help(object me)
 {
 write(@HELP
-指令格式 : miss <煉制物品的ID>
+指令格式 : miss <煉製物品的ID>
 
-此指令可讓你追尋你煉制的物品，必須有一定的精力才能做到。
+此指令可讓你追尋你煉製的物品，必須有一定的精力才能做到。
 HELP
     );
     return 1;

@@ -36,7 +36,7 @@ int do_eat(string arg)
                 return notify_fail("你要服什麼？\n");
                 
         if (this_player()->is_busy() || this_player()->is_fighting())
-                return notify_fail("你正忙著呢。\n");
+                return notify_fail("你正忙着呢。\n");
                 
         if( query("eff_qi", this_player()) == 
             this_player(query("max_qi", )) )

@@ -13,7 +13,7 @@ void create()
 {
         set_name("獎勵使", ({ "jiangli shi", "shi", "jiangli" }));
         set("nickname", HIY "泥潭" NOR);
-        set("long", "他就是泥潭獎勵使，如果你對泥潭有貢獻的話，可以到他這裡領取獎勵。\n");
+        set("long", "他就是泥潭獎勵使，如果你對泥潭有貢獻的話，可以到他這裏領取獎勵。\n");
         set("gender", "男性");
         set("age", 20);
         set("per", 30);
@@ -43,10 +43,10 @@ mixed ask_gongxian()
          gx=query("hx_gongxian", me);
 
         if( !query("hx_gongxian", me) )
-                return "“你好象還沒有為泥潭作出貢獻哦，要加油。”";
+                return "“你好像還沒有為泥潭作出貢獻哦，要加油。”";
 
         if( query("hx_gongxian", me)>0 )
-                  write (WHT"獎勵使對你笑了笑，說道：“幹得好！你現在已經有"+chinese_number(gx)+"點貢獻度了，要繼續努力哦。”\n"NOR);
+                  write (WHT"獎勵使對你笑了笑，説道：“幹得好！你現在已經有"+chinese_number(gx)+"點貢獻度了，要繼續努力哦。”\n"NOR);
         return 1;
 }
 
@@ -79,7 +79,7 @@ int do_lingqu(string arg)
          if ( arg != "菩提子" && arg != "補天石" && arg != "冰蠶絲" && arg != "仙丹" && arg != "神力丸"
 && arg != "洗髓丹" && arg != "火紅仙丹" && arg != "天香玉露" && arg != "九轉金丹" && arg != "玄黃紫清丹"
 && arg != "瑪瑙殘片" && arg != "翡翠殘片" && arg != "鑽石殘片" && arg != "水晶殘片" )
-                return notify_fail("獎勵使看了你一眼：“我這裡可沒有你想要的，決定了再來找我吧。”\n");
+                return notify_fail("獎勵使看了你一眼：“我這裏可沒有你想要的，決定了再來找我吧。”\n");
 
          if ( arg == "補天石")
                  {

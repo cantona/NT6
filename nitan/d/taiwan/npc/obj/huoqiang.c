@@ -19,7 +19,7 @@ void create()
                 set("value", 10000);
                 set("material", "bamboo");
                 set("wield_msg", "$N抽出一支烏油的木柄火槍握在手中。\n");
-                set("unwield_msg", "$N把手中的火槍背回背上。\n");
+                set("unwield_msg", "$N把手中的火槍揹回背上。\n");
         }
         init_staff(30);
         setup();

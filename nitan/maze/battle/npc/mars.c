@@ -94,7 +94,7 @@ mixed hit_ob(object me, object ob, int damage_bouns)
 {
         ob->receive_wound("qi", 20000 + random(20000), me);
         set("neili",query("max_neili",  me), me);
-        return HIR "$N" HIR "身上騰起一股火燄，登時逼得$n"
+        return HIR "$N" HIR "身上騰起一股火焰，登時逼得$n"
                HIR "退後幾步，悶哼一聲。\n" NOR;
 }
 

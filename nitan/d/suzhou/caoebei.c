@@ -7,8 +7,8 @@ void create()
 {
         set("short", "曹娥碑");
         set("long",@long
-相傳曹娥死後葬于此，上虞令命邯鄲淳作文鐫碑(gravestone)以記
-其事。時邯鄲淳年方十三，文不加點，一揮而就，立于墓側。
+相傳曹娥死後葬於此，上虞令命邯鄲淳作文鐫碑(gravestone)以記
+其事。時邯鄲淳年方十三，文不加點，一揮而就，立於墓側。
 long);
         set("outdoors", "suzhou");
         set("exits",([

@@ -7,7 +7,7 @@ inherit F_DBASE;
 
 mixed quest_name;
 
-nosave int destructing;         // 析構對象時候的標志
+nosave int destructing;         // 析構對象時候的標誌
 nosave string status;           // 任務對象的狀態
 
 int is_quest() { return clonep(this_object()); }
@@ -33,7 +33,7 @@ void set_name(string name)
 // 該任務消息靈通人士(knower)對某人(who)而言的介紹
 varargs string query_introduce(object knower, object who)
 {
-        // 缺省是沒有介紹的 - 能夠被散布的應該必須有介紹。
+        // 缺省是沒有介紹的 - 能夠被散佈的應該必須有介紹。
         return 0;
 }
 
@@ -44,10 +44,10 @@ varargs int can_know_by(object knower)
         return 1;
 }
 
-// 該任務是否能被消息靈通人士(knower)廣為散布
+// 該任務是否能被消息靈通人士(knower)廣為散佈
 varargs int can_rumor_by(object knower)
 {
-        // 缺省只要該人知道就可以散布
+        // 缺省只要該人知道就可以散佈
         // 必須引用this_object()，因為can_know_by() 一般會被
         // 具體的任務對象重載，如果不引用this_object()就調用
         // 不了重載的函數。
@@ -117,13 +117,13 @@ void change_status(string new_state)
         }
 }
 
-// 在QUEST_D那裡登記一條消息
+// 在QUEST_D那裏登記一條消息
 void set_information(string key, string info)
 {
         QUEST_D->set_information(this_object(), key, info);
 }
 
-// 在QUEST_D那裡登記自己的消息
+// 在QUEST_D那裏登記自己的消息
 void register_information()
 {
         // 必須登記一定的信息才可以

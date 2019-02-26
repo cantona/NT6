@@ -46,14 +46,14 @@ int accept_kill(object who)
 
 int accept_ansuan(object who)
 {
-        return notify_fail("你剛想暗算，可是只見會場裡黑壓壓的擠滿了人，根本看不清楚。\n");
+        return notify_fail("你剛想暗算，可是隻見會場裏黑壓壓的擠滿了人，根本看不清楚。\n");
 }
 
 int begin(object me)
 {
         command("bow");
-        command("say 閣下對不住了，今日我如不趁人之危，定會死于閣下之手！");
-        command("say 我神拳門絕技，乃是使用手上功夫，先吃我三拳再說。");
+        command("say 閣下對不住了，今日我如不趁人之危，定會死於閣下之手！");
+        command("say 我神拳門絕技，乃是使用手上功夫，先吃我三拳再説。");
 
         message_vision(HIR "\n$N喝道：小心了！我這第一拳乃“催筋斷骨”！\n" NOR,
                            this_object());
@@ -83,7 +83,7 @@ void die()
                                    this_object(),query("anti"));
 
                 message_vision(HIR "人身的小腹本來極是柔軟，但$N" HIR
-                                   "著拳時如中鐵石，剛知不妙，已狂噴鮮血。\n" NOR,
+                                   "着拳時如中鐵石，剛知不妙，已狂噴鮮血。\n" NOR,
                                    this_object(),query("anti"));
 
                 set_temp("win_guo", 1, query("anti"));
@@ -110,7 +110,7 @@ int do_get(string arg)
         {
                 message_vision(CYN "$N哼了一聲。\n" NOR,
                                    obj);
-                message_vision(CYN "$N說道：要想得到寶刀，先過我三拳！\n" NOR,
+                message_vision(CYN "$N説道：要想得到寶刀，先過我三拳！\n" NOR,
                                    obj);
                 delete_temp("bi", this_player());
                 return 1;

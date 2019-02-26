@@ -44,7 +44,7 @@ void create()
         set("inquiry", ([
                 "蓬萊仙島"               :   "這不是你該來的地方，我看你還是快走吧。\n",
                 "南山入口"               :   "呵呵，如果你能給我一瓶青梅酒，我便指引你入口所在。\n",
-                "青梅酒"                 :   "你不知道麼，這島上仙人都愛喝，不過釀制方法只有酒劍仙知道，哈哈　……",
+                "青梅酒"                 :   "你不知道麼，這島上仙人都愛喝，不過釀製方法只有酒劍仙知道，哈哈　……",
         ]));
         
         set("chat_chance_combat", 120);
@@ -62,7 +62,7 @@ void init()
         object me = this_player();
         
         if (objectp(present("penglai qingmeijiu", me)))
-                command("say 好香~~，是誰的青梅酒快快拿出來讓本仙人品嘗品嘗。");
+                command("say 好香~~，是誰的青梅酒快快拿出來讓本仙人品嚐品嚐。");
 }
 
 void unconcious()
@@ -87,9 +87,9 @@ int accept_object(object me, object obj)
                 command("haha");
                 command("say 好，實在是好~~~~");
                 command("say 既然你解了本仙人的酒癮，進入南山的方法我自然會教給你 ……");
-                message_vision("\n$N" NOR "對著$n" NOR "竊竊私語，似乎在傳授什麼口訣。\n\n" NOR, this_object(), me);
-                tell_object(me, HIG "守路仙人在你耳邊說道：#%&$#%@%&%$&#$%@#@$\n" NOR);
-                command("say 你可記好了，這入山的方法就在這裡面。");
+                message_vision("\n$N" NOR "對着$n" NOR "竊竊私語，似乎在傳授什麼口訣。\n\n" NOR, this_object(), me);
+                tell_object(me, HIG "守路仙人在你耳邊説道：#%&$#%@%&%$&#$%@#@$\n" NOR);
+                command("say 你可記好了，這入山的方法就在這裏面。");
                 me->set("penglai/nanshan_quest/ok", 1);
                 destruct(obj);
                 return 1;

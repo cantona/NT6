@@ -31,7 +31,7 @@ void create()
         setup();
         set("chat_chance",10);
         set("chat_msg",({
-                "莊丁對著你笑了笑道：請隨便逛，到我們這裡來就不必拘束。\n",
+                "莊丁對着你笑了笑道：請隨便逛，到我們這裏來就不必拘束。\n",
         }));
         carry_object("/clone/misc/cloth")->wear();
 }

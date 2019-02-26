@@ -14,11 +14,11 @@ void create()
         set_skill("dodge", 50);
         set("chat_chance", 10);
         set("chat_msg", ({
-                "商人心有余辜的說道：我幾乎死在唐門的暗器下！\n",
+                "商人心有餘辜的説道：我幾乎死在唐門的暗器下！\n",
         }) );
         set("chat_chance_combat", 100);
         set("chat_msg_combat", ({
-                "商人說道：我有幸從唐門的暗器下生還，現在居然要死在路邊！\n",
+                "商人説道：我有幸從唐門的暗器下生還，現在居然要死在路邊！\n",
                 }) );
 
         setup();

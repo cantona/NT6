@@ -1,4 +1,4 @@
-// ruyi-hook.c 如意鉤法
+// ruyi-hook.c 如意鈎法
 // Last Modifyed by Winder on Aug. 21 2002
 
 #include <ansi.h>;
@@ -11,15 +11,15 @@ mapping *action = ({
         "lvl" : 0,
         "skill_name" : "翻天覆地"
 ]),
-([        "action" : "只見$N左手劍指虛攻$n的上身，$w卻以迅雷不及掩耳之勢向$n的腰部鉤去。好一招「若離若合」！",
+([        "action" : "只見$N左手劍指虛攻$n的上身，$w卻以迅雷不及掩耳之勢向$n的腰部鈎去。好一招「若離若合」！",
         "lvl" : 3,
         "skill_name" : "若離若合"
 ]),
-([        "action" : "只見$N一招「雪滿銀鉤」將$w舞得如同雪花紛飛，將$n的全身籠罩在$w光芒之下。",
+([        "action" : "只見$N一招「雪滿銀鈎」將$w舞得如同雪花紛飛，將$n的全身籠罩在$w光芒之下。",
         "lvl" : 6,
-        "skill_name" : "雪滿銀鉤"
+        "skill_name" : "雪滿銀鈎"
 ]),
-([        "action" : "只見$N使出「天王索命」，一鉤緊似一鉤，一鉤快似一勾，一氣呵成，直逼$n的周身大穴。",
+([        "action" : "只見$N使出「天王索命」，一鈎緊似一鈎，一鈎快似一勾，一氣呵成，直逼$n的周身大穴。",
         "lvl" : 9,
         "skill_name" : "天王索命"
 ]),
@@ -31,9 +31,9 @@ mapping *action = ({
         "lvl" : 15,
         "skill_name" : "神龍擺尾"
 ]),
-([        "action" : "$N一招「鉤心鬥角」，$w自左而右，一氣呵成橫掃$n的$l",
+([        "action" : "$N一招「鈎心鬥角」，$w自左而右，一氣呵成橫掃$n的$l",
         "lvl" : 18,
-        "skill_name" : "鉤心鬥角"
+        "skill_name" : "鈎心鬥角"
 ]),
 ([        "action" : "$N右腳向前一步，左膝提起，一招「不陰不陽」，$w向前上方刺向$n的$l",
         "lvl" : 21,
@@ -43,33 +43,33 @@ mapping *action = ({
         "lvl" : 24,
         "skill_name" : "爾虞我詐"
 ]),
-([        "action" : "$N使出「峰巒重疊」，$w劃出三個圓弧，綿綿不斷劃向$n的$l",
+([        "action" : "$N使出「峯巒重疊」，$w劃出三個圓弧，綿綿不斷划向$n的$l",
         "lvl" : 27,
-        "skill_name" : "峰巒重疊"
+        "skill_name" : "峯巒重疊"
 ]),
-([        "action" : "$N一轉身，$w向後斜帶，一招「飛橫拔戶」，砍向$n的$l",
+([        "action" : "$N一轉身，$w向後斜帶，一招「飛橫拔户」，砍向$n的$l",
         "lvl" : 30,
-        "skill_name" : "飛橫拔戶"
+        "skill_name" : "飛橫拔户"
 ]),
-([        "action" : "$N雙手握著$w，微一低頭，一招「閉門思過」，突然從腦後疾向$n刺去",
+([        "action" : "$N雙手握着$w，微一低頭，一招「閉門思過」，突然從腦後疾向$n刺去",
         "lvl" : 35,
         "skill_name" : "閉門思過"
 ]),
-([        "action" : "$N雙手執著$w，鉤頭向內，一招「欲擒故縱」，倒轉身體，刺向$n",
+([        "action" : "$N雙手執着$w，鈎頭向內，一招「欲擒故縱」，倒轉身體，刺向$n",
         "lvl" : 40,
         "skill_name" : "欲擒故縱"
 ]),
-([        "action" : "$N一招「對牛彈琴」，$w在$n一楞之間突然劃向$n的$l",
+([        "action" : "$N一招「對牛彈琴」，$w在$n一楞之間突然划向$n的$l",
         "lvl" : 50,
         "skill_name" : "對牛彈琴"
 ]),
-([        "action" : "$N雙腳並步，身體立起，一招「蓮葉托桃」，$w向前平刺$n的襠部",
+([        "action" : "$N雙腳並步，身體立起，一招「蓮葉託桃」，$w向前平刺$n的襠部",
         "lvl" : 60,
-        "skill_name" : "蓮葉托桃"
+        "skill_name" : "蓮葉託桃"
 ]),
-([        "action" : "$N一招「群魔亂舞」，$w舞動護住全身向$n撞去",
+([        "action" : "$N一招「羣魔亂舞」，$w舞動護住全身向$n撞去",
         "lvl" : 70,
-        "skill_name" : "群魔亂舞"
+        "skill_name" : "羣魔亂舞"
 ]),
 ([        "action" : "$N一反身，使一招「魚死網破」，$w不顧一切地劈向$n的$l",
         "lvl" : 80,
@@ -95,7 +95,7 @@ int valid_learn(object me)
         if ((int)me->query_skill("dulong-dafa", 1) < 20)
                 return notify_fail("你的毒龍大法火候太淺。\n");
         if ((int)me->query_skill("hook", 1) < 20)
-                return notify_fail("你的鉤法基本功還不紮實。\n");
+                return notify_fail("你的鈎法基本功還不紮實。\n");
         return 1;
 }
 
@@ -107,7 +107,7 @@ int practice_skill(object me)
                 query("skill_type", weapon) != "hook" )
                 return notify_fail("你使用的武器不對。\n");
         if( query("qi", me)<40 )
-                return notify_fail("你的氣血不夠練如意鉤法。\n");
+                return notify_fail("你的氣血不夠練如意鈎法。\n");
         me->receive_damage("qi", 30);
         return 1;
 }
@@ -162,14 +162,14 @@ string perform_action_file(string action)
 
 int help(object me)
 {
-        write(HIC"\n如意鉤法"NOR"\n");
+        write(HIC"\n如意鈎法"NOR"\n");
         write(@HELP
 
-    如意鉤法是神龍島鉤法。
+    如意鈎法是神龍島鈎法。
 
         學習要求：
                 毒龍大法20級
-                基本鉤法20級
+                基本鈎法20級
                 內力修為100
 HELP
         );

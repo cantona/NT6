@@ -7,7 +7,7 @@ void create()
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("long", HIR "這是一顆有著血色光澤的藥丸，據說吃後可增強身法。\n" NOR);
+                set("long", HIR "這是一顆有着血色光澤的藥丸，據説吃後可增強身法。\n" NOR);
                 set("base_unit", "顆");
                 set("base_value", 10000);
                 set("base_weight", 50);

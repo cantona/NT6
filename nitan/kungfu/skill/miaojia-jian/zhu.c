@@ -37,9 +37,9 @@ int perform(object me, object target)
                 return notify_fail("你沒有激發苗家劍法，難以施展" + name() + "。\n");
 
         if (! living(target))
-                return notify_fail("對方都已經這樣了，用不著這麼費力吧？\n");
+                return notify_fail("對方都已經這樣了，用不着這麼費力吧？\n");
 
-        msg = HIY "$N" HIY "回圈手中" + weapon->name() + HIY "施「黃龍吐珠」斜"
+        msg = HIY "$N" HIY "迴圈手中" + weapon->name() + HIY "施「黃龍吐珠」斜"
               "貫而出，劍尖頓時吐出一道黃芒，閃電般射向$n" + HIY "！\n" NOR;
 
         ap = attack_power(me, "sword");
@@ -52,7 +52,7 @@ int perform(object me, object target)
                 addn("neili", -150, me);
                 me->start_busy(2);
                 msg += COMBAT_D->do_damage(me, target, WEAPON_ATTACK, damage, 65,
-                                           HIR "$n" HIR "見狀連忙格擋，可哪裡來得"
+                                           HIR "$n" HIR "見狀連忙格擋，可哪裏來得"
                                            "及，登時只覺全身一麻，劍氣已透胸而過。\n"
                                            NOR);
         } else

@@ -43,7 +43,7 @@ void eat_corpse(object ob)
         corpse=present("corpse",environment());
         if (corpse)
         {
-                message_vision("$N一點點啄食著$n，時不時振起散亂的羽毛。\n",this_object(),corpse);
+                message_vision("$N一點點啄食着$n，時不時振起散亂的羽毛。\n",this_object(),corpse);
                 return;
         }
         return;
@@ -70,7 +70,7 @@ mapping default_dirs = ([
         "up":           "上",
         "down":         "下",
         "out":          "外",
-        "enter":        "裡",
+        "enter":        "裏",
 ]);
 
         mapping exits;
@@ -86,7 +86,7 @@ mapping default_dirs = ([
         else dir =dirs[i];
         message_vision("$N一聲驚叫，振翅向"+dir+"飛去。\n",this_object());
         move(where[i]);
-        tell_room(where[i],"一只黑鷲飛了過來，在空中盤旋。\n");
+        tell_room(where[i],"一隻黑鷲飛了過來，在空中盤旋。\n");
         return;
 }
 void do_kill(string arg)
@@ -101,7 +101,7 @@ void random_eat()
         corpse=present("corpse",environment());
         if (corpse)
         {
-                message_vision("$N一點點啄食著$n，時不時振起散亂的羽毛。\n",this_object(),corpse);
+                message_vision("$N一點點啄食着$n，時不時振起散亂的羽毛。\n",this_object(),corpse);
                 return;
         }
         return;

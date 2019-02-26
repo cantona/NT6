@@ -5,16 +5,16 @@ void create()
 {
         set("short", "後山山洞");
         set("long", @LONG
-這裡是全真教開山祖師王重陽真人靜修的山洞。洞雖不大但卻布
-置得很是雅致，便似大戶人家的客廳一樣。洞壁上懸掛著副畫(hua)，
-桌椅茶幾都很精致。
+這裏是全真教開山祖師王重陽真人靜修的山洞。洞雖不大但卻布
+置得很是雅緻，便似大户人家的客廳一樣。洞壁上懸掛着副畫(hua)，
+桌椅茶几都很精緻。
 LONG );
         set("exits", ([
                 "out" : __DIR__"xiaolu12",
         ]));
         set("item_desc", ([
-                "hua": YEL "\n畫中是一個中年道士的背影，看不出什麼相"
-                       "貌，畫中道人一手\n指著天，畫角題著「" HIR "活"
+                "hua": YEL "\n畫中是一箇中年道士的背影，看不出什麼相"
+                       "貌，畫中道人一手\n指着天，畫角題着「" HIR "活"
                        "死人像" NOR + YEL "」幾個字。\n" NOR,
         ]) );
 
@@ -38,9 +38,9 @@ int do_ketou(string arg)
         object paper, me = this_player();
         int level1, level2, level3;
 
-        if (me->is_busy()) return notify_fail("你正在忙著呢。\n");
+        if (me->is_busy()) return notify_fail("你正在忙着呢。\n");
 
-        message_vision("$N恭恭敬敬地在神案前的團蒲上跪了下來，對著神位磕了三個響頭。\n", me);
+        message_vision("$N恭恭敬敬地在神案前的團蒲上跪了下來，對着神位磕了三個響頭。\n", me);
         // me->receive_damage("qi", random(30));
         me->start_busy(1);
 

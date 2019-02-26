@@ -34,14 +34,14 @@ int perform(object me, object target)
                 return notify_fail("你現在的真氣不夠，難以施展" +name()+ "。\n");
 
         if (! living(target))
-                return notify_fail("對方都已經這樣了，用不著這麼費力吧？\n");
+                return notify_fail("對方都已經這樣了，用不着這麼費力吧？\n");
 
         ap = attack_power(me, "whip");
         dp = defense_power(target, "parry");
 
         msg = HIY "\n$N" HIY "一聲長嘯，內勁暴漲，施出絕招「" HIW "無孔"
               "不入" HIY "」手中" + weapon->name() + HIY "哧哧作響，龍"
-              "吟不定，\n$N" HIY "猛然騰空而起，揮舞著手中的" + weapon->name() +
+              "吟不定，\n$N" HIY "猛然騰空而起，揮舞着手中的" + weapon->name() +
               HIY "，凌空直下，湧向$n" HIY "。\n" NOR;
         message_combatd(msg, me, target);
 
@@ -50,7 +50,7 @@ int perform(object me, object target)
                 damage = damage_power(me, "whip");
 
                 msg = COMBAT_D->do_damage(me, target, WEAPON_ATTACK, damage, 50,
-                                           HIR "但見$N" HIR "攻勢如洪，氣勢磅礡，"
+                                           HIR "但見$N" HIR "攻勢如洪，氣勢磅礴，"
                                            "$n" HIR "心中略微一驚，慘叫一聲，頓"
                                            "時鮮血淋淋。\n" NOR);
 

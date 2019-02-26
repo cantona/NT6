@@ -7,8 +7,8 @@ void create()
 {
         set("short", "山洞");
         set("long", @LONG
-這裡是一個不大的山洞，奔騰的瀑布成了它的門簾，陽光輕易就
-可以的透過水簾射進來，因此這裡白天並不陰暗。
+這裏是一個不大的山洞，奔騰的瀑布成了它的門簾，陽光輕易就
+可以的透過水簾射進來，因此這裏白天並不陰暗。
 LONG );
         set("exits", ([ /* sizeof() == 2 */
                 "out"  : __DIR__"shanhongpb",
@@ -29,7 +29,7 @@ string long()
                 return sort_string(msg, 64, 4);
 
         if (! ob->is_fighting())
-                msg += "只見一人坐在地上，手中抱著一柄竹劍，翻了復"
+                msg += "只見一人坐在地上，手中抱着一柄竹劍，翻了復"
                        "去的看，也不知道在研究什麼。\n";
         else
                 msg += "只見一人正在與" +

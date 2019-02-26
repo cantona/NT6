@@ -8,28 +8,28 @@
 // 版面管理：
 //   int    query_forum_id()       - 查詢版面 ID
 //   mixed  query_forum_info()     - 查詢版面信息
-//   string query_mud_name()       - 查詢用戶名('阿福-jjgod' 形式)
-//   string query_user_name()      - 查詢用戶 ID('jjgod' 形式)
-//   int    query_user_id()        - 查詢用戶編號
+//   string query_mud_name()       - 查詢用户名('阿福-jjgod' 形式)
+//   string query_user_name()      - 查詢用户 ID('jjgod' 形式)
+//   int    query_user_id()        - 查詢用户編號
 //   int    query_post_id()        - 查詢文章編號
 //   int    query_topic_id()       - 查詢主題編號
 
 // 文章管理：
-//   mixed *query_all_topics()     - 返回所有主題(不包括回復) -+
-//   mixed *query_all_posts()      - 返回所有文章(包括回復)   -+- 二者格式不同
+//   mixed *query_all_topics()     - 返回所有主題(不包括回覆) -+
+//   mixed *query_all_posts()      - 返回所有文章(包括回覆)   -+- 二者格式不同
 //   mixed *query_post_info()      - 返回文章內容(根據 POST_ID)
 //   mixed *query_topic_info()     - 返回主題內容(根據 TOPIC_ID)
 //   mixed *query_new_post()       - 返回未讀文章(根據不同瀏覽模式返回主題或者所有文章)
-//   mixed *query_post()           - 根據用戶指定的編號找到應讀的文章
+//   mixed *query_post()           - 根據用户指定的編號找到應讀的文章
 //   int    query_topic_number()   - 返回主題的編號
 //   int   *query_number_post()    - 根據序號找到文章的 POST_ID
 //   int   *query_number_topic()   - 根據序號找到主題的 TOPIC_ID / POST_ID
 //   mixed *query_post_data()      - 返回指定文章數據
 
-// 文章發表、回復與刪除：
+// 文章發表、回覆與刪除：
 //   int   delete_topic()          - 刪除指定編號的主題
 //   int   delete_post()           - 刪除指定編號的文章
-//   int   reply_topic()           - 回復主題
+//   int   reply_topic()           - 回覆主題
 //   int   add_topic_view()        - 增加主題的瀏覽次數
 //   int   post_new_topic()        - 發表新主題
 
@@ -271,7 +271,7 @@ mixed query_forum_info(object board, string key)
         return ret;
 }
 
-// 若沒有作用數據庫保存用戶數據的工作，就要修改 NAME_D 以提供類似的
+// 若沒有作用數據庫保存用户數據的工作，就要修改 NAME_D 以提供類似的
 // 把 id 轉換為 name 的功能
 string query_mud_name(int user_id)
 {
@@ -289,8 +289,8 @@ string query_mud_name(int user_id)
                        user_name);
 }
 
-// 把 Web 數據庫保存的用戶 id(類似 1、2 這樣的)轉換為 mud 中的 id，
-// 即 Web 論壇上的用戶名
+// 把 Web 數據庫保存的用户 id(類似 1、2 這樣的)轉換為 mud 中的 id，
+// 即 Web 論壇上的用户名
 string query_user_name(int user_id)
 {
         int db;
@@ -329,7 +329,7 @@ string query_user_name(int user_id)
         return ret;
 }
 
-// 返回所有的主題(回復從屬于主題，另置)
+// 返回所有的主題(回覆從屬於主題，另置)
 varargs mixed *query_all_topics(object board, int raw)
 {
         int forum_id;
@@ -378,7 +378,7 @@ varargs mixed *query_all_topics(object board, int raw)
         return res;
 }
 
-// 查詢一個 board 所有的文章(包括回復)
+// 查詢一個 board 所有的文章(包括回覆)
 // ({ 文章編號, 所屬主題編號, 作者號, 發表時間 })
 mixed *query_all_posts(object board)
 {
@@ -427,7 +427,7 @@ mixed *query_all_posts(object board)
 }
 
 // 查詢一篇文章的詳細信息
-// ({ 標題, BBCODE 鑒定號, 內容 })
+// ({ 標題, BBCODE 鑑定號, 內容 })
 varargs mixed *query_post_info(int post_id, int raw)
 {
         int db;
@@ -467,7 +467,7 @@ varargs mixed *query_post_info(int post_id, int raw)
 }
 
 // 查詢一篇主題的詳細信息
-// ({ 標題, 編號, 發表者編號, 發表時間, 瀏覽次數, 回復數, 首貼編號 })
+// ({ 標題, 編號, 發表者編號, 發表時間, 瀏覽次數, 回覆數, 首貼編號 })
 varargs mixed *query_topic_info(int topic_id, int raw)
 {
         int db;
@@ -507,7 +507,7 @@ varargs mixed *query_topic_info(int topic_id, int raw)
         return ret;
 }
 
-// 查詢一個主題所有的回復(不包括首貼)
+// 查詢一個主題所有的回覆(不包括首貼)
 // ({ 文章編號, 所屬主題編號, 作者號, 發表時間 })
 mixed *query_all_replies(int topic_id, int first_post_id)
 {
@@ -568,7 +568,7 @@ int query_topic_number(object board, int topic_id)
         }
 }
 
-// 根據用戶名查找用戶 id
+// 根據用户名查找用户 id
 int query_user_id(string user_name)
 {
         int db;
@@ -776,7 +776,7 @@ int post_new_topic(object board, string title, string name, string text, string 
         if (! intp(ret))
                 log_error("post_new_topic.db_exec", ret);
 
-        // 增加用戶發帖數
+        // 增加用户發帖數
         sql = sprintf("UPDATE %s SET user_posts = user_posts + 1 WHERE user_id ="
                       " %d", USERS_TABLE, poster_id);
         ret = db_exec(db, sql);
@@ -881,7 +881,7 @@ mixed *query_post_data(int post_id)
         return ret;
 }
 
-// 根據用戶指定的編號找到主題的 id
+// 根據用户指定的編號找到主題的 id
 int *query_number_topic(object board, int num, int mode)
 {
         mixed *posts;
@@ -905,7 +905,7 @@ int *query_number_topic(object board, int num, int mode)
         return posts[num][TOPIC_ID];
 }
 
-// 根據用戶指定的編號找到文章的 id
+// 根據用户指定的編號找到文章的 id
 int *query_number_post(object board, int num)
 {
         mixed *posts;
@@ -928,7 +928,7 @@ int *query_number_post(object board, int num)
         return posts[num][POST_ID];
 }
 
-// 回復主題
+// 回覆主題
 int reply_topic(object board, int topic_id, string name, string text, string ip)
 {
         int db;
@@ -983,7 +983,7 @@ int reply_topic(object board, int topic_id, string name, string text, string ip)
         if (! intp(ret))
                 log_error("reply_topic.db_exec", ret);
         
-        // 設定尾貼 id，回復加一，時間更新
+        // 設定尾貼 id，回覆加一，時間更新
         sql = sprintf("UPDATE %s SET topic_replies = topic_replies + 1, "
                       "topic_last_post_id = %d, topic_time = %d WHERE topic_id = %d",
                       TOPICS_TABLE, post_id, t, topic_id);
@@ -992,7 +992,7 @@ int reply_topic(object board, int topic_id, string name, string text, string ip)
         if (! intp(ret))
                 log_error("reply_topic.db_exec", ret);
 
-        // 增加用戶發帖數
+        // 增加用户發帖數
         sql = sprintf("UPDATE %s SET user_posts = user_posts + 1 WHERE user_id ="
                       " %d", USERS_TABLE, poster_id);
         ret = db_exec(db, sql);

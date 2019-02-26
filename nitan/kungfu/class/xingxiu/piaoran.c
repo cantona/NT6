@@ -49,7 +49,7 @@ void create()
         create_family("星宿派", 2, "弟子");
         set("inquiry", ([
                 "星宿派" : "你想加入，就拜我為師。",
-                "星宿海" : "去星宿海幹什麼？拜我為師就夠你學的了。",
+                "星宿海" : "去星宿海乾什麼？拜我為師就夠你學的了。",
                 "丁春秋" : "丁春秋是你叫的嗎？沒大沒小的。以後叫老仙！",
                 "煉毒"   : (: ask_job :),
                 "毒"     : (: ask_job :),
@@ -74,18 +74,18 @@ string ask_job()
         if( fam["family_name"] != "星宿派" && !query_temp("ding_flatter", me) )
                 return "給老子滾一邊去！";
         if(poison < 120) return "哈哈哈，你先學夠了基本的毒技再來吧。";
-        if(poison >= 200) return "這個。。。這種腐屍毒對你好象沒什麼用了吧？";
+        if(poison >= 200) return "這個。。。這種腐屍毒對你好像沒什麼用了吧？";
         if(me->query_skill("huagong-dafa", 1) < 100 )
                 return "你的化功大法還不純熟，煉毒會很危險的！";
         if(me->query_condition("wait_xx_task"))
-                return "你好象把師兄的事情搞砸了吧？這次你就好好等著。";
+                return "你好像把師兄的事情搞砸了吧？這次你就好好等着。";
         if(me->query_condition("xx_task") || me->query_condition("xx_task2"))
-                return "你還在為其他師兄弟們做事呢，等完成了再來我這裡吧。";
+                return "你還在為其他師兄弟們做事呢，等完成了再來我這裏吧。";
         if( interactive(me) && query_temp("xx_job", me) )
-                return "你怎麼還在這裡發呆？";
+                return "你怎麼還在這裏發呆？";
 
         set_temp("promotion_target", 1, me);
-        message_vision("\n$N對著$n嘿嘿一笑：“想練毒是吧？先去給你自己找具有用的屍體來。”\n", this_object(), me);
+        message_vision("\n$N對着$n嘿嘿一笑：“想練毒是吧？先去給你自己找具有用的屍體來。”\n", this_object(), me);
         return "記住，可不是殺個小嘍羅那樣丟人顯眼！\n";
 }
 
@@ -109,7 +109,7 @@ void greeting(object me)
 
         if (fam["family_name"] != "星宿派")
         {
-                command("say 哪裡跑來的"+RANK_D->query_rude(me)+"！竟敢擅闖星宿禁地！");
+                command("say 哪裏跑來的"+RANK_D->query_rude(me)+"！竟敢擅闖星宿禁地！");
                 kill_ob(me);
         }
 }
@@ -118,7 +118,7 @@ void kicking(object who)
 {
         if(!who || environment(who) != environment())  return;
         who->move("/d/xingxiu/cave");
-        message("vision","只聽“呼”地一聲，緊接著"+query("name", who)+"從黑暗中直飛出來，摔了個四腳朝天！\n",environment(who),who);
+        message("vision","只聽“呼”地一聲，緊接着"+query("name", who)+"從黑暗中直飛出來，摔了個四腳朝天！\n",environment(who),who);
         who->receive_wound("jing", 200);
         who->receive_wound("qi", 250);
         who->start_busy(5);
@@ -140,8 +140,8 @@ int accept_object(object who, object ob,object me)
         if(userp(ob))
         {
                 command("stare"+query("id", who));
-                command("say 竟敢來這裡欺騙我，給我滾出去！");
-                message_vision("\n說完$N雙掌前推，一股內勁拂出，就將$n震出洞外！\n\n", this_object(), who);
+                command("say 竟敢來這裏欺騙我，給我滾出去！");
+                message_vision("\n説完$N雙掌前推，一股內勁拂出，就將$n震出洞外！\n\n", this_object(), who);
                 kicking(who);
                 return 0;
         }
@@ -160,14 +160,14 @@ int accept_object(object who, object ob,object me)
                 (!query("victim_user", ob) && 
                 query("victim_exp", ob)<query("combat_exp", who)) )
         {
-                command("say 嘿嘿，我早就說過太弱的屍體沒用，你另找一具吧。");
+                command("say 嘿嘿，我早就説過太弱的屍體沒用，你另找一具吧。");
                 return 0;
         }
         if (interactive(who) && (who->query_condition("xx_task") ||
                 who->query_condition("xx_task2")))
         {
                 command("pat"+query("id", who));
-                command("say 你還在為其他師兄弟們做事呢，等完成了再來我這裡吧。");
+                command("say 你還在為其他師兄弟們做事呢，等完成了再來我這裏吧。");
                 return 0;
         }
         call_out("put_in", 4, ob, this_object(), who, obj);
@@ -186,7 +186,7 @@ int put_in(object corpse, object ob, object me, object obj)
         }
         if(!objectp(present(me, environment(ob))))
         {
-                command("say 耶？那家伙怎麼不見了？");
+                command("say 耶？那傢伙怎麼不見了？");
                 command("drop corpse");
                 return 1;
         }
@@ -200,5 +200,5 @@ int put_in(object corpse, object ob, object me, object obj)
         set_temp("liandu_target",query("id",  me), obj);
         set("arg",query_temp("dest",  ob), obj);
         command("nod"+query("id", me));
-        command("say 好吧，你來試著練習(liandu)一下毒技吧。");
+        command("say 好吧，你來試着練習(liandu)一下毒技吧。");
 }

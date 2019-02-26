@@ -13,7 +13,7 @@ mixed ask_me();
 void create()
 {
         set_name("馮阿三", ({ "feng asan", "feng" , "asan"}));
-        set("long", "據說他就是魯班的後人，當代的第一巧匠。是\n"
+        set("long", "據説他就是魯班的後人，當代的第一巧匠。是\n"
                     "設計機關的能手。\n");
         set("title", "逍遙派函谷八友");
         set("nickname", HIY "巧匠" NOR);
@@ -63,7 +63,7 @@ void create()
 
         set("inquiry", ([
                 "鐵八卦" : (: ask_item1 :),
-                "布陣箱" : (: ask_item2 :),
+                "佈陣箱" : (: ask_item2 :),
                 "機關"   : (: ask_me :),
         ]));
 
@@ -100,7 +100,7 @@ void attempt_apprentice(object ob)
                 return;
         }
 
-        command("say 好吧，我就收下你了，多幹活，少說話！");
+        command("say 好吧，我就收下你了，多幹活，少説話！");
         command("recruit "+query("id", ob));
 }
 
@@ -112,7 +112,7 @@ mixed ask_item1()
         me = this_player();
 
         if( query("family/family_name", me) != "逍遙派" )
-                return "你是誰？哪裡來的？我認識你麼？";
+                return "你是誰？哪裏來的？我認識你麼？";
 
         if( query("family/master_id", me) != "wuyazi"
             && query("family/master_id", me) != "suxinghe" )
@@ -122,14 +122,14 @@ mixed ask_item1()
                 return "你又不懂奇門五行，拿去幹嘛用？";
 
         if (query("bagua_count") < 1)
-                return "我這裡也沒有了，你自己去城裡買一個吧。";
+                return "我這裏也沒有了，你自己去城裏買一個吧。";
 
         addn("bagua_count", -1);
         ob = new("/d/taohua/obj/bagua");
         ob->move(this_object());
 
         command("givetiebaguato"+query("id", me));
-        return "這只鐵八卦你就先拿去用吧。";
+        return "這隻鐵八卦你就先拿去用吧。";
 }
 
 mixed ask_item2()
@@ -140,7 +140,7 @@ mixed ask_item2()
         me = this_player();
 
         if( query("family/family_name", me) != "逍遙派" )
-                return "你是誰？哪裡來的？我認識你麼？";
+                return "你是誰？哪裏來的？我認識你麼？";
 
         if( query("family/master_id", me) != "wuyazi"
             && query("family/master_id", me) != "suxinghe" )
@@ -150,14 +150,14 @@ mixed ask_item2()
                 return "你又不懂奇門五行，拿去幹嘛用？";
 
         if (query("xiang_count") < 1)
-                return "我這裡也沒有了，你等兩天再來吧。";
+                return "我這裏也沒有了，你等兩天再來吧。";
 
         addn("xiang_count", -1);
         ob = new("/d/taohua/obj/xiang");
         ob->move(this_object());
 
         command("givebuzhenxiangto"+query("id", me));
-        return "布陣箱給你了，可別到處去瞎攪和。";
+        return "佈陣箱給你了，可別到處去瞎攪和。";
 }
 
 mixed ask_me()
@@ -169,5 +169,5 @@ mixed ask_me()
                 return "我在設計機關方面是有點特長，讓大家見笑了。";
 
         command("laugh");
-        return "別吵著我，我在看書呢。哈哈，芝麻開門。。。。這書真好笑\n";
+        return "別吵着我，我在看書呢。哈哈，芝麻開門。。。。這書真好笑\n";
 }

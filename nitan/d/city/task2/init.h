@@ -79,7 +79,7 @@ void do_check()
                 if( ! living(me)&& ob = present("ren zhi",environment(me)))
                 {
                   addn("combat_num", 1, ob);
-                message_vision("$N咬牙切齒地對著天空大叫：“賊老天！”\n",me);
+                message_vision("$N咬牙切齒地對着天空大叫：“賊老天！”\n",me);
                  }
                 call_out("do_check",1);
         }
@@ -94,7 +94,7 @@ void do_check()
                         if( !query("no_fight", environment()) )
                         {
                                 me->set_leader(ob);
-                                message_vision("$N對著$n大喝一聲：你這"+RANK_D->query_rude(ob)+"，拿命來！\n",me,ob);
+                                message_vision("$N對着$n大喝一聲：你這"+RANK_D->query_rude(ob)+"，拿命來！\n",me,ob);
                                 me->kill_ob(ob);
                                 command("kill"+query("id", ob));
                               //  if(!ob->is_busy())   ob->start_busy(20);
@@ -134,7 +134,7 @@ void do_wait()
                 }
                 else
                 {
-                        message_vision("$N自言自語地說道：看來人質不會從這裡來了，我還是回去吧。\n$N滿面無奈地向遠處走了開去。\n",this_object());
+                        message_vision("$N自言自語地説道：看來人質不會從這裏來了，我還是回去吧。\n$N滿面無奈地向遠處走了開去。\n",this_object());
                         destruct(me);
                 }
         }
@@ -146,7 +146,7 @@ void killed_enemy(object victim)
 
         if( query("id", victim) == "renzhi" )
         {
-                message_vision("$N仰天狂笑一聲：哈哈，終于得手了！說罷，幾個起落，身形消失在遠處的屋檐角。\n",me);
+                message_vision("$N仰天狂笑一聲：哈哈，終於得手了！説罷，幾個起落，身形消失在遠處的屋檐角。\n",me);
                 destruct(me);
         }
 }

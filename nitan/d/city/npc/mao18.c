@@ -9,9 +9,9 @@ void create()
         object ob;
         set_name("茅十八", ({ "mao shiba", "mao", "shiba" }));
         set("long", @LONG
-他虯髯如亂草，滿臉血污，好象曾受過很重的
-傷，可以看得見他左腿上血跡未幹。但他雙目
-炯炯，卻又有著說不出的威風。
+他虯髯如亂草，滿臉血污，好像曾受過很重的
+傷，可以看得見他左腿上血跡未乾。但他雙目
+炯炯，卻又有着説不出的威風。
 LONG);
         set("title", "官府通緝要犯");
         set("gender", "男性");
@@ -61,16 +61,16 @@ LONG);
         }));
 
         set("inquiry", ([
-                "史鬆"   : "誰殺了史鬆這姦賊，我可以幫他提高江湖威望。",
+                "史鬆"   : "誰殺了史鬆這奸賊，我可以幫他提高江湖威望。",
                 "斷字訣" : "我總得留兩手吧？",
         ]));
 
         set("chat_chance", 2);
         set("chat_msg", ({
-                CYN "茅十八說道: 他奶奶的，我就不信鰲拜有這等厲害，我正要上北京去鬥他一鬥。\n" NOR,
-                CYN "茅十八嘆道: 我這五虎斷門刀法對付鹽梟可是綽綽有余，不知對付鰲拜行不行。\n" NOR,
-                CYN "茅十八說道: 他奶奶的，要誰幫我殺了史鬆，兄弟我就謝謝了。\n" NOR,
-                CYN "茅十八朗聲說道：江湖有言為人不識陳近南，就稱英雄也枉然。\n" NOR,
+                CYN "茅十八説道: 他奶奶的，我就不信鰲拜有這等厲害，我正要上北京去鬥他一鬥。\n" NOR,
+                CYN "茅十八歎道: 我這五虎斷門刀法對付鹽梟可是綽綽有餘，不知對付鰲拜行不行。\n" NOR,
+                CYN "茅十八説道: 他奶奶的，要誰幫我殺了史鬆，兄弟我就謝謝了。\n" NOR,
+                CYN "茅十八朗聲説道：江湖有言為人不識陳近南，就稱英雄也枉然。\n" NOR,
                 (: random_move :)
         }) );
         setup();
@@ -112,7 +112,7 @@ int accept_object(object me, object ob)
                 	tell_object(me, HIW "\n\n你成功的幫助茅十八弄到了黑龍鞭！\n" NOR +
                                         HIC "通過這次的歷練，你獲得了" + chinese_number(exp) +
                                         "點經驗、" + chinese_number(pot) + "點潛能以及" +
-                                	chinese_number(sc) + "點江湖閱歷。\n\n" NOR);
+                                	chinese_number(sc) + "點江湖閲歷。\n\n" NOR);
                 set("skybook/luding/mao", 1, 	me);
                 set("can_learn/wuhu-duanmendao/mao", 1, 	me);
 		}

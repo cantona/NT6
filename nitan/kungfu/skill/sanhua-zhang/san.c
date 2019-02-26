@@ -32,10 +32,10 @@ int perform(object me, object target)
                 return notify_fail("你沒有激發散花掌，無法使用天女散花！\n");
 
        if (! living(target))
-              return notify_fail("對方都已經這樣了，用不著這麼費力吧？\n");
+              return notify_fail("對方都已經這樣了，用不着這麼費力吧？\n");
 
         msg = HIY "$N" HIY "哈哈一笑，雙掌一錯，忽然化作漫天"
-              "掌影，猶如千百只手掌一齊攻向$n" HIY "！\n" NOR;
+              "掌影，猶如千百隻手掌一齊攻向$n" HIY "！\n" NOR;
 
         ap = attack_power(me, "strike");
         dp = defense_power(target, "dodge");

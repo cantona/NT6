@@ -6,7 +6,7 @@ void create()
 {
         set_name("日月弟子", ({ "riyue dizi", "riyue", "dizi" }));
         set("title", WHT "黑木崖" NOR);
-        set("long", "這是駐紮黑木崖的弟子，他警惕地巡視著四周的情形。\n");
+        set("long", "這是駐紮黑木崖的弟子，他警惕地巡視着四周的情形。\n");
         set("gender", "男性");
         set("attitude", "peaceful");
 

@@ -12,7 +12,7 @@ void create()
                 set_default_object(__FILE__);
         else {
                 set("unit", "個");
-                set("long", "這是一個很雅致的香爐，爐中飄出陣陣淡淡檀香。\n");
+                set("long", "這是一個很雅緻的香爐，爐中飄出陣陣淡淡檀香。\n");
                 set("value", 100);
                 set("material", "gold");
                 set("no_get",1);

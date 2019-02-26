@@ -34,10 +34,10 @@ int perform(object me, object target)
                 return notify_fail("你沒有激發劍盾珠索，難以施展" FU "。\n");
 
         if (! living(target))
-                return notify_fail("對方都已經這樣了，用不著這麼費力吧？\n");
+                return notify_fail("對方都已經這樣了，用不着這麼費力吧？\n");
 
         msg = HIW "$N" HIW "右手一揚，手中" + weapon->name() +
-              HIW "頓時回旋飛舞而至，迂回盤繞向$n" HIW "！\n";
+              HIW "頓時迴旋飛舞而至，迂迴盤繞向$n" HIW "！\n";
 
         me->start_busy(1);
 

@@ -74,7 +74,7 @@ mapping *action = ({
         "skill_name" : "天孤冷月式",
         "damage_type":  "刺傷"
 ]),
-([      "action":"$N左指凌空虛點，右手$w逼出丈許雪亮光芒，一式「劍氣縱橫」刺向$n的嚥喉",
+([      "action":"$N左指凌空虛點，右手$w逼出丈許雪亮光芒，一式「劍氣縱橫」刺向$n的咽喉",
         "force" : 282,
         "parry" : 63,
         "dodge" : 55,
@@ -176,7 +176,7 @@ void skill_improved(object me)
         if( lvl > 120 &&
             !query("can_perform/poyang-jian/xian", me) ) 
         {
-                tell_object(me, WHT "你通曉了破陽冷光劍「" HIY "神光再現" WHT "」的奧秘。\n" NOR);    
+                tell_object(me, WHT "你通曉了破陽冷光劍「" HIY "神光再現" WHT "」的奧祕。\n" NOR);    
                 set("can_perform/poyang-jian/xian", 1, me);
                 me->improve_skill("martial-cognize", 1500000);  
                 me->improve_skill("martial-cognize", 1500000);  
@@ -186,7 +186,7 @@ void skill_improved(object me)
         if( lvl > 180 &&
             !query("can_perform/poyang-jian/long", me) ) 
         {
-                tell_object(me, WHT "你通曉了破陽冷光劍「" HIC "天外玉龍" WHT "」的奧秘。\n" NOR);    
+                tell_object(me, WHT "你通曉了破陽冷光劍「" HIC "天外玉龍" WHT "」的奧祕。\n" NOR);    
                 set("can_perform/poyang-jian/long", 1, me);
                 me->improve_skill("martial-cognize", 1500000);  
                 me->improve_skill("martial-cognize", 1500000); 

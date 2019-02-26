@@ -6,7 +6,7 @@ inherit NPC;
 void create()
 {
         set_name("莊家", ({ "zhuang jia", "zhuang", "jia" }));
-        set("long", "一位賭場老手，正笑眯眯地看著你。\n請輸入 ya 來獲取幫助。\n");
+        set("long", "一位賭場老手，正笑眯眯地看着你。\n請輸入 ya 來獲取幫助。\n");
         set("no_get", 1);
         set("age", 40);
         set("per", 20);
@@ -141,7 +141,7 @@ void casino()
         tc1 = gen_point();
         tc2 = gen_point();
         say(name()+"唱道：頭彩骰號是" HIW +chinese_number(tc1)+ NOR "、" HIW +chinese_number(tc2)+ NOR "！\n");
-        say("接著"+name()+"麻利地將玉骰從銀盤中收回：現在開盤押錢！\n");
+        say("接着"+name()+"麻利地將玉骰從銀盤中收回：現在開盤押錢！\n");
         delete("bet");
         delete("total");
         set("total/tc", 0);
@@ -373,8 +373,8 @@ void kai()
                                         total += ukp + ukp*b["kp"];
                                 } else tell_object(me, name()+"收走了你押在"+t["kp"]+"上的"+MONEY_D->money_str(ukp)+"。\n");
                         if (!total) message_vision(name()+ "唱道：$N本盤不賠不賺。\n", me);
-                        else if (total > 0) message_vision(name()+ "唱道：$N本盤凈賺"+MONEY_D->money_str(total)+"。\n", me);
-                        else message_vision(name()+"唱道：$N本盤凈賠"+MONEY_D->money_str(-total)+"。\n", me);
+                        else if (total > 0) message_vision(name()+ "唱道：$N本盤淨賺"+MONEY_D->money_str(total)+"。\n", me);
+                        else message_vision(name()+"唱道：$N本盤淨賠"+MONEY_D->money_str(-total)+"。\n", me);
                         if (!wiz_level(me)) tt += total/100;
                 }
                 cc++;

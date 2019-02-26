@@ -8,8 +8,8 @@ void create()
 {
         set("short", "草地");
         set("long", @LONG
-這是襄陽城外的草地。蒙古兵進犯以來，這裡的百姓全進城了，
-這裡幾十裡都沒了人煙。
+這是襄陽城外的草地。蒙古兵進犯以來，這裏的百姓全進城了，
+這裏幾十裏都沒了人煙。
 LONG );
         set("outdoors", "xiangyang");
 

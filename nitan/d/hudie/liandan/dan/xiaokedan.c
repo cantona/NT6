@@ -29,7 +29,7 @@ int do_eat(string arg)
    addn("food", 5*me->max_food_capacity(), me);
    addn("water", 5*me->max_food_capacity(), me);
 
- 	message_vision(HIR"$N拿起消渴止餓丹吃了下去，感覺精神一振，饑渴的感覺不復存在。\n"NOR,me);
+ 	message_vision(HIR"$N拿起消渴止餓丹吃了下去，感覺精神一振，飢渴的感覺不復存在。\n"NOR,me);
        destruct(this_object());
        return 1;
 }

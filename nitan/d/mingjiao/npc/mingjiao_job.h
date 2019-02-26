@@ -30,7 +30,7 @@ string judge_jobmsg(object player,int flg)
                         job_flg="挖地道"; break;
 
 //                default:
-//                        job_msg="這位"+RANK_D->query_respect(player)+"現在好象沒有任務在身。";
+//                        job_msg="這位"+RANK_D->query_respect(player)+"現在好像沒有任務在身。";
 //                        return job_msg;
 //                        write("judge_jobmsg reached default! please report.\n");
         }
@@ -94,7 +94,7 @@ string ask_abandon()
                 case "挑水":
                         id = "tang yang"; name = "唐洋"; break;
                 case "砍樹":
-                        id = "wen cangsong"; name = "聞蒼鬆"; break;
+                        id = "wen cangsong"; name = "聞蒼松"; break;
                 case "挖地道":
                         delete_temp("didao_done", player);
                         id = "yan yuan"; name = "顏垣"; break;
@@ -108,7 +108,7 @@ string ask_abandon()
                         return "閣下盡力完成這次任務吧。";
         }
         else
-                return "既然這位"+RANK_D->query_respect(player)+"想放棄"+job_flg+"的任務，請去跟"+name+"旗主說一聲。";
+                return "既然這位"+RANK_D->query_respect(player)+"想放棄"+job_flg+"的任務，請去跟"+name+"旗主説一聲。";
 
         return "ask_abandon() has error!";
 }

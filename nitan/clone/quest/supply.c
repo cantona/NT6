@@ -36,7 +36,7 @@ void init_quest(object npc_ob, string sob_file)
 
         if( query_temp("quest_ob", npc_ob) )
         {
-                // 這個NPC已經用于其他任務，中止任務
+                // 這個NPC已經用於其他任務，中止任務
                 destruct(this_object());
                 return;
         }
@@ -62,7 +62,7 @@ void init_quest(object npc_ob, string sob_file)
         set("inquiry/"+NPC_ID, "是我啊，你找對人了！", npc_ob);
         set("inquiry/"+SOB_NAME, "我現在正需要這些東西，你可帶來了？", npc_ob);
 
-        // 設置接收物品的信息：由于NPC存在的時候該任務對象必
+        // 設置接收物品的信息：由於NPC存在的時候該任務對象必
         // 定會存在（因為任務析構的時候會清除NPC），所以可以
         // 讓NPC引用本地的"npc_accept_object"函數。
         set_temp("override/accept_object", (:npc_accept_object:), npc_ob);
@@ -119,7 +119,7 @@ string ask_npc(object knower, object me)
         mapping my = query_entire_dbase();
 
         if (! objectp(NPC_OB))
-                return CYN "哦，據說" HIY + NPC_NAME + NOR CYN
+                return CYN "哦，據説" HIY + NPC_NAME + NOR CYN
                        "不知道躲到哪兒去了，好多人正罵娘呢。" NOR;
 
         return "不清楚，不清楚，我又不認識人家！";
@@ -131,7 +131,7 @@ string ask_sob(object knower, object me)
         mapping my = query_entire_dbase();
 
         return CYN "這" HIY + SOB_NAME + NOR CYN
-               "可不是咱們百姓應該沾的東西呀，你說是不是？" NOR;
+               "可不是咱們百姓應該沾的東西呀，你説是不是？" NOR;
 }
 
 // 任務介紹
@@ -145,8 +145,8 @@ string query_introduce(object knower)
                 call_out("do_say", 1);
         }
 
-        return CYN "據說" + PLACE + "的" + HIY + NPC_NAME + NOR CYN "急需一批" +
-               HIY + SOB_NAME + NOR CYN "。嘿！你說他想幹什麼？" NOR;
+        return CYN "據説" + PLACE + "的" + HIY + NPC_NAME + NOR CYN "急需一批" +
+               HIY + SOB_NAME + NOR CYN "。嘿！你説他想幹什麼？" NOR;
 }
 
 // 任務提示
@@ -155,13 +155,13 @@ string query_prompt()
         switch (random(3))
         {
         case 0:
-                return CYN "倒是最近聽有些客人說起『" HIY + name() +
+                return CYN "倒是最近聽有些客人説起『" HIY + name() +
                        NOR CYN "』來。";
         case 1:
-                return "也沒什麼大事，只是聽說過『" HIY + name() +
+                return "也沒什麼大事，只是聽説過『" HIY + name() +
                        NOR CYN "』罷了。";
         default:
-                return "前兩天還聽人家說過『" HIY + name() +
+                return "前兩天還聽人家説過『" HIY + name() +
                        NOR CYN "』呢。";
         }
 }
@@ -171,7 +171,7 @@ void do_say(object knower)
         if (! objectp(knower) || ! living(knower))
                 return 0;
 
-        message_vision(CYN "$N" CYN "嘟囔道：我跟你都說了，要這些東西沒好"
+        message_vision(CYN "$N" CYN "嘟囔道：我跟你都説了，要這些東西沒好"
                        "事，這不？出事了吧？\n" NOR, knower);
 }
 
@@ -196,7 +196,7 @@ int npc_accept_object(object me, object who, object ob)
 
         if( base_name(environment(me)) != query("startroom", me) )
         {
-                message_vision(CYN "$N" CYN "一臉茫然的望著$n" CYN "。\n" NOR,
+                message_vision(CYN "$N" CYN "一臉茫然的望着$n" CYN "。\n" NOR,
                                me, who);
                 return -1;
         }
@@ -220,7 +220,7 @@ int npc_accept_object(object me, object who, object ob)
 
 /*
                 CHANNEL_D->do_channel(this_object(), "rumor",
-                                      "聽說" + who->name(1) +
+                                      "聽説" + who->name(1) +
                                       "("+query("id", who)+")替"+
                                       me->name() + HIM + "備齊了" + SOB_NAME + "。");
 */

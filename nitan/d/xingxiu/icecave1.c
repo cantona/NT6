@@ -17,7 +17,7 @@ void create()
 {
         set("short", "冰洞");
         set("long", @LONG
-進到冰洞裡面，那洞頂上緊緊垂掛著冰錐(icicle)，長短不齊，
+進到冰洞裏面，那洞頂上緊緊垂掛着冰錐(icicle)，長短不齊，
 粗細不一；洞底下冰樹叢生，千姿萬態。穿行洞內，好似進了光怪陸
 離的神話世界。
 LONG );
@@ -62,10 +62,10 @@ int do_flick(string arg) {
                 return 0;
 
         if (me->query_busy())
-                return notify_fail("你正忙著呢。\n");
+                return notify_fail("你正忙着呢。\n");
 
         if (query("icicle") < 1)
-                return notify_fail("這裡的冰錐你都夠不著了。\n");
+                return notify_fail("這裏的冰錐你都夠不着了。\n");
 
         if( query("jing", me)<30 || query("jingli", me)<30 )
                 return notify_fail("你的精神不能集中。\n");
@@ -158,7 +158,7 @@ private int blow_result(object victim)
 
         if( random(victim->query_skill("force"))>45 && query("neili", victim)>20 && victim->query_skill("feixing-shu",1)>100 )
         {
-                message_vision( WHT"\n$N運功抵御寒流，同時望著洞頂的冰錐，研析著暗器地奧妙！\n"NOR, victim );
+                message_vision( WHT"\n$N運功抵禦寒流，同時望着洞頂的冰錐，研析着暗器地奧妙！\n"NOR, victim );
                 if(query("icicle")<100) addn("icicle", 1+random(6));
                 addn("neili", -random(40), victim);
                 victim->improve_skill("feixing-shu",query("int", me));

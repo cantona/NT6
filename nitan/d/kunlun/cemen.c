@@ -9,7 +9,7 @@ void create()
         set("short", "側門");
         set("long", @LONG
 繞過三聖堂的後花園，經過一條曲曲折折的花徑，又穿入許多廳堂
-之中。但見屋宇連綿，門戶復疊，到了昆侖派的側門。
+之中。但見屋宇連綿，門户復疊，到了崑崙派的側門。
 LONG );
         set("exits", ([
 //                "west"  : __DIR__"klshanlu1",

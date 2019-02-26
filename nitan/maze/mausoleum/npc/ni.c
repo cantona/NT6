@@ -88,7 +88,7 @@ void do_swing()
         msg = HIW"$N口中突然多了件物事，似是一塊透明的布疋，若有若無，不知是什麼東西,向眾人吐去！\n"NOR;
         message_vision(msg,this_object());
         foreach( enemy in enemies ) {
-                msg = HIW"$n突然間腳下一滑，撲地倒了，跟著身子便變成了一團。\n"NOR;
+                msg = HIW"$n突然間腳下一滑，撲地倒了，跟着身子便變成了一團。\n"NOR;
                 message_vision(msg,this_object(), enemy);
                 enemy->receive_damage("qi",10000+random(10000),this_object());
                 COMBAT_D->report_status(enemy);

@@ -118,7 +118,7 @@ int check_rescure(object who)
           if( query("leader", me) )
                     return 1;
           set("leader",query("id",  who), me);
-          message_vision("$N對$n急切地說道：恩人！快點兒帶我去見我爹！\n",me,who);
+          message_vision("$N對$n急切地説道：恩人！快點兒帶我去見我爹！\n",me,who);
           command("follow "+query("id", who));
           set_temp("no_return ", 1, me);
           return 1;

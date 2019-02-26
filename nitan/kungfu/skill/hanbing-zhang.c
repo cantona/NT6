@@ -2,7 +2,7 @@
 inherit SKILL;
 
 mapping *action = ({
-([      "action" : "$N使一招「冰封萬裡」，右掌一翻，向$n的$l拍去",
+([      "action" : "$N使一招「冰封萬里」，右掌一翻，向$n的$l拍去",
         "force"  : 90,
         "attack" : 4,
         "dodge"  : 30,
@@ -10,9 +10,9 @@ mapping *action = ({
         "damage" : 25, 
         "lvl"    : 0,
         "damage_type" : "瘀傷",
-        "skill_name"  : "冰封萬裡",
+        "skill_name"  : "冰封萬里",
 ]),
-([      "action" : "$N使一招「不寒而栗」，左手猛地拍向$n的$l",
+([      "action" : "$N使一招「不寒而慄」，左手猛地拍向$n的$l",
         "force"  : 110,
         "attack" : 6,
         "dodge"  : 48,
@@ -20,7 +20,7 @@ mapping *action = ({
         "damage" : 40, 
         "lvl"    : 25,
         "damage_type" : "瘀傷",
-        "skill_name"  : "不寒而栗",
+        "skill_name"  : "不寒而慄",
 ]),
 ([      "action" : "$N雙目微閉，一式「冰凍三尺」，掌力渾厚，擊向$n的$l",
         "force"  : 120,
@@ -42,7 +42,7 @@ mapping *action = ({
         "damage_type" : "瘀傷",
          "skill_name" : "水火不容",
 ]),
-([      "action" : "$N雙掌翻騰，卻欲停止，一式「萬裡雪飄」，飄然不定，擊向$n$l",
+([      "action" : "$N雙掌翻騰，卻欲停止，一式「萬里雪飄」，飄然不定，擊向$n$l",
         "force"  : 180,
         "attack" : 15,
         "dodge"  : 55,
@@ -50,7 +50,7 @@ mapping *action = ({
         "damage" : 60, 
         "lvl"    : 90,
         "damage_type" : "瘀傷",
-        "skill_name"  : "萬裡雪飄",
+        "skill_name"  : "萬里雪飄",
 ]),
 ([      "action" : "$N單掌直出，內勁十足，一式「寒冰無極」，掌法一快一慢，向$n的$l打去",
         "force"  : 210,
@@ -72,7 +72,7 @@ mapping *action = ({
         "damage_type" : "瘀傷",
         "skill_name"  : "冰天雪地",
 ]),
-([      "action" : "$N左掌忽地拍向$n，又突然收回，緊跟著右掌斜出，一招「"
+([      "action" : "$N左掌忽地拍向$n，又突然收回，緊跟着右掌斜出，一招「"
                    "天寒地凍」劈向$n$l",
         "force"  : 280,
         "attack" : 25,

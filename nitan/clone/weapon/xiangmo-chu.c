@@ -14,7 +14,7 @@ void create()
                 set_default_object(__FILE__);
         else {
                 set("unit", "根");
-                set("long", HIY"此杵頂呈蓮花狀，杵身長約兩尺，鴨蛋粗細，杵段尖銳鋒厲。是密宗喇嘛降妖伏魔的法器。\n"NOR);
+                set("long", HIY"此杵頂呈蓮花狀，杵身長約兩尺，鴨蛋粗細，杵段尖鋭鋒厲。是密宗喇嘛降妖伏魔的法器。\n"NOR);
                 set("value", 7000);
                 set("material", "steel");
                 set("rigidity", 4000);

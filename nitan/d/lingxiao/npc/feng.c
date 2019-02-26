@@ -3,12 +3,12 @@ inherit NPC;
 
 void create()
 {
-        set_name("封萬裡", ({"feng wanli", "feng", "wanli"}));
+        set_name("封萬里", ({"feng wanli", "feng", "wanli"}));
         set("nickname", HIR "風火神龍" NOR);
-        set("long", "他是凌霄城第六代弟子封萬裡，是第六代弟子中\n"
+        set("long", "他是凌霄城第六代弟子封萬里，是第六代弟子中\n"
                     "最為出類拔萃的人物。其劍法剛猛迅捷，如狂風\n"
                     "似烈火，因此得了個風火神龍的外號。但不知為\n"
-                    "何，他少了一只手臂,眼中全是憤怒悔恨之色。\n");
+                    "何，他少了一隻手臂,眼中全是憤怒悔恨之色。\n");
         set("gender", "男性");
         set("age", 34);
         set("attitude", "friendly");

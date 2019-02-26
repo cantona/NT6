@@ -38,7 +38,7 @@ int wear()
                 else if( query("gender", me) == "女性" )
                         message_vision("好一個美麗俏佳娃！\n", me);
                 else
-                        message_vision("好一個不三不四的家伙！\n", me);
+                        message_vision("好一個不三不四的傢伙！\n", me);
         }
         return ret;
 }

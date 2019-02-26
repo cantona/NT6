@@ -48,20 +48,20 @@ int set_task(string arg)
         if( !this_object()->id(arg)) return 0;
 
         if( me->is_busy() || me->is_fighting()) 
-                return notify_fail("你正忙著呢。\n");    
+                return notify_fail("你正忙着呢。\n");    
         if( query("xx_user", this_object()) != getuid(me) )
-                return notify_fail("拿著只別人的笛子吹？\n");    
+                return notify_fail("拿着只別人的笛子吹？\n");    
         if( !(query("outdoors", where)) )
-                return notify_fail("你在屋裡吹笛子，笛聲怎麼可能傳得遠呢？\n");
+                return notify_fail("你在屋裏吹笛子，笛聲怎麼可能傳得遠呢？\n");
         if(me->query_condition("gb_songxin") )
-                return notify_fail("老仙最討厭臭叫化子，先扔掉你的丐幫幫務再說！\n");
+                return notify_fail("老仙最討厭臭叫化子，先扔掉你的丐幫幫務再説！\n");
         if( query_temp("xx/id", me) )
                 return notify_fail("你現在正在執行任務中。\n");  
         if(me->query_condition("job_busy")) 
                 return notify_fail("你剛要完任務，先等等吧。\n");           
         if(me->query_condition("wait_xx_task")) 
                 return notify_fail("上次搞砸了，這次你就等等吧。\n");      
-        tell_room(environment(me),HIY+me->name()+"拿起一只"+query("name", this_object())+HIY"放到口邊，輕輕一吹，發出一股塵銳的哨聲。本來笛聲清揚激越，\n但這根玉笛中發出來的聲音卻十分凄厲，全非樂調。\n"NOR,({me}));
+        tell_room(environment(me),HIY+me->name()+"拿起一隻"+query("name", this_object())+HIY"放到口邊，輕輕一吹，發出一股塵鋭的哨聲。本來笛聲清揚激越，\n但這根玉笛中發出來的聲音卻十分淒厲，全非樂調。\n"NOR,({me}));
         tell_object(me,HIY"你拿起"+query("name", this_object())+HIY"放到口邊，輕輕吹了起來。\n"NOR);
         if( (query("outdoors", where)) != "xingxiu" && 
                 (query("outdoors", where)) != "xiyu" )
@@ -84,11 +84,11 @@ int report(object me)
         if(!me) return 0;
   
         if( me->is_busy() || me->is_fighting()) 
-                return notify_fail("你正忙著呢。\n");   
+                return notify_fail("你正忙着呢。\n");   
         if( !query_temp("quest/id", me) )
                 return notify_fail("你現在還沒有接收到任何任務。\n");
    
-        message_vision(HIW"\n只見天空中飛下一只白色信鴿，降在$N的肩頭。\n\n"NOR,me);
+        message_vision(HIW"\n只見天空中飛下一隻白色信鴿，降在$N的肩頭。\n\n"NOR,me);
         message_vision("$N將書信從白鴿身上解下，瞟了一眼。\n",me);
         tell_object(me,"信中寫道： \n老仙最近的意思可能是想要");
         if( query_temp("quest/type", me) == "殺" )
@@ -108,7 +108,7 @@ int report_task()
         write("你目前的任務目標是：\n\n");
    
         if( query_temp("quest/type", me) == "殺" )
-                write("殺掉「"+query_temp("quest/name", me)+"("+query_temp("quest/id", me)+")」。\n\n並在屍體上留下(signcorpse)我們星宿派的標志。\n");
+                write("殺掉「"+query_temp("quest/name", me)+"("+query_temp("quest/id", me)+")」。\n\n並在屍體上留下(signcorpse)我們星宿派的標誌。\n");
         else
                 write("找到「"+query_temp("quest/name", me)+"("+query_temp("quest/id", me)+")」，獻(xian)給老仙。\n\n");
    
@@ -124,7 +124,7 @@ int mark_success(string arg)
         if(!objectp(target = present(arg, environment(me))))
                 return notify_fail("找不到這個東西。\n");
         if( me->is_busy() || me->is_fighting()) 
-                return notify_fail("你正忙著呢。\n");    
+                return notify_fail("你正忙着呢。\n");    
         switch (is_target(target, me))
         {
                 case 0:  return 0;
@@ -138,13 +138,13 @@ int mark_success(string arg)
                         set_temp("quest/last_id", last, me);
                         me->apply_condition("wait_xx_task", 40); 
                         return 0;
-                case -4: tell_object(me,"哦，這人和NPC同名？算他倒霉！\n");
+                case -4: tell_object(me,"哦，這人和NPC同名？算他倒黴！\n");
                         return 0;
                 default: break;
         }
         if( query("family/family_name", me) == "星宿派" )
         {
-                message_vision(HIR"\n$N左手一揚，衣袖中飛出一點"BLU"藍印印"HIR"的火花，嗤嗤做響，射向$n，著體便燃！\n\n"NOR, me, target);
+                message_vision(HIR"\n$N左手一揚，衣袖中飛出一點"BLU"藍印印"HIR"的火花，嗤嗤做響，射向$n，着體便燃！\n\n"NOR, me, target);
                 set("name", HIB"燒焦的屍體"NOR, target);
                 set("long", HIB"一具被煉心彈燒焦的屍體，焦臭四溢，情狀可怖。\n"NOR, target);
                 addn("xx_points", 1, me);

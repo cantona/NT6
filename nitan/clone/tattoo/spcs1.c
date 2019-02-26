@@ -9,7 +9,7 @@ void create()
                 set_default_object(__FILE__);
         else {
                 set("long", NOR + WHT "這是一塊羊皮碎片，上面繪有殘缺不全"
-                            "的九宵紋□紋樣。\n" NOR);
+                            "的九宵紋龍紋樣。\n" NOR);
                 set("unit", "塊");
                 set("value", 10);
                 set("material", "paper");

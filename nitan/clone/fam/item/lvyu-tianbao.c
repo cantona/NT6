@@ -11,7 +11,7 @@ void create()
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("long", HIG "這是一顆綠色寶石，據說擁有著奇幻的力量。\n"
+                set("long", HIG "這是一顆綠色寶石，據説擁有着奇幻的力量。\n"
                                                 "輸入指令 up9lv <你的兵器ID> 可將你的兵器升級為9級兵器。\n" NOR);
                 set("value", 1);
                 set("no_sell", 1);

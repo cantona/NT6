@@ -8,7 +8,7 @@ void create()
         set("short", "懷甫亭");
         set("long", @LONG
 “懷甫亭”是當年杜甫流落巴陵，貧窮潦倒，還為岳陽留下了《登
-岳陽樓》等不朽詩篇(poem)。杜甫後來卒于岳陽。由此拾級西上即是岳
+岳陽樓》等不朽詩篇(poem)。杜甫後來卒於岳陽。由此拾級西上即是嶽
 陽樓。
 LONG );
         set("outdoors", "yueyang");

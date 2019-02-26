@@ -17,7 +17,7 @@ int perform(object me, object target)
            !arrayp(can_perform) || 
            !sizeof(can_perform) || 
            member_array("light",can_perform) == -1)
-                return notify_fail("你還沒有學會使用﹝天龍之光﹞！\n");
+                return notify_fail("你還沒有學會使用［天龍之光］！\n");
 
         if (me->is_busy())
                 return notify_fail("你上一個動作還沒有完成，無法使用天龍之光。\n");
@@ -37,12 +37,12 @@ int perform(object me, object target)
                 return notify_fail("你的精神狀況不好！\n");
 
         if( environment(me) && query("no_fight", environment(me)) )
-                return notify_fail("這裡不能使用﹝天龍之光﹞!\n");
+                return notify_fail("這裏不能使用［天龍之光］!\n");
 
         addn("jingli", -400, me);
         me->receive_damage("jing", 250);
 
-        message_vision(HIY "$N猛然爆發出一聲驚天動地的怒吼，天地隱隱回響著清澈的龍吟．．．\n" NOR, me);
+        message_vision(HIY "$N猛然爆發出一聲驚天動地的怒吼，天地隱隱迴響着清澈的龍吟．．．\n" NOR, me);
 
         if ( lvl <= random(500) )
         {

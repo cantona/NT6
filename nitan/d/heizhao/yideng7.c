@@ -21,7 +21,7 @@ LONG );
                 ]) );
 
         set("item_desc",([
-                "gap" : "這缺口看起來倒是不寬，可以跳過去，但是對面有個書生擋著，如果他在你跳到半空的時候出手攻擊，那你是必死無疑。\n",
+                "gap" : "這缺口看起來倒是不寬，可以跳過去，但是對面有個書生擋着，如果他在你跳到半空的時候出手攻擊，那你是必死無疑。\n",
                 ]));
         
         set("invalid_startroom", 1);
@@ -43,7 +43,7 @@ void init()
 int do_kill(string arg)
 {
         if (arg=="zhu" || arg=="ziliu" || arg=="zhu ziliu") {
-                tell_object(this_object(), "隔著這個缺口，你怎麼攻擊他啊？\n");
+                tell_object(this_object(), "隔着這個缺口，你怎麼攻擊他啊？\n");
                 return 1;
         }
         return 0;

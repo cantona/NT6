@@ -1,7 +1,7 @@
 #include <ansi.h>
 #include <combat.h>
 
-string name() { return HIR "燃木真燄" NOR; }
+string name() { return HIR "燃木真焰" NOR; }
 
 inherit F_SSERVER;
 
@@ -34,7 +34,7 @@ int perform(object me, object target)
 
 
         msg = HIY "$N" HIY "雙手持刀，對天咆哮，所施正是燃木刀法絕學「"
-              HIR "燃木真燄" HIY "」。霎時呼嘯聲大作，但見一股澎湃無比的罡勁"
+              HIR "燃木真焰" HIY "」。霎時呼嘯聲大作，但見一股澎湃無比的罡勁"
 
               "至$N" HIY "刀間湧出，雲貫向$N" HIY "而去。\n" NOR;
         message_combatd(sort_msg(msg), me);
@@ -59,7 +59,7 @@ void remove_effect(object me, int skill)
                 addn_temp("apply/weapon_damage", -(skill/4), me);
                 delete_temp("zhen_yan", me);
 
-                tell_object(me, "你經過調氣養息，又可以繼續施展「" HIR "燃木真燄" NOR "」了。\n");
+                tell_object(me, "你經過調氣養息，又可以繼續施展「" HIR "燃木真焰" NOR "」了。\n");
         }
 }
 

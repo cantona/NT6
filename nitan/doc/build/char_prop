@@ -45,7 +45,7 @@ WIN, LST (int)
         人物的神.
 
 "xingyu", "max_xingyu" (int)
-        人物的性欲.
+        人物的性慾.
 "family" (mapping)
 
     人物的師承門派等記錄，當人物拜師或自創門派時就會設定這個屬性，其內容

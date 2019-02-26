@@ -10,7 +10,7 @@ void create()
                 set_default_object(__FILE__);
         else {
                 set("long", HIB"目前的功能有：\n"+
-                            "enter <迷宮代碼>：創建一個屬于自己或隊伍的迷宮副本。\n"
+                            "enter <迷宮代碼>：創建一個屬於自己或隊伍的迷宮副本。\n"
                             "迷宮代碼：forest-原始森林，jiutoushe-九頭蛇領域，desert-無盡大漠，necropolis-詭異墓園，temple-失落神廟，mausoleum-秦皇陵墓。\n"
                             "\n"NOR); 
                 set("unit", "個");

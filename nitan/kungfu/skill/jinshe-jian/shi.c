@@ -44,7 +44,7 @@ int perform(object me, object target)
                 return notify_fail("你現在的真氣不夠，難以施展" SHEN "。\n");
 
         if (! living(target))
-                return notify_fail("對方都已經這樣了，用不著這麼費力吧？\n");
+                return notify_fail("對方都已經這樣了，用不着這麼費力吧？\n");
 
         wn = weapon->name();
 
@@ -60,7 +60,7 @@ int perform(object me, object target)
         {
                 damage = damage_power(me, "sword");
 
-                // 十分之一的幾率可被招架
+                // 十分之一的機率可被招架
                 if (random(10) <= 1 && ap / 2 < dp)
                 {
                         damage = damage / 3;

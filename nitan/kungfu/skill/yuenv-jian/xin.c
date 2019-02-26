@@ -44,7 +44,7 @@ int perform(object me, object target)
                 return notify_fail("你的真氣不夠！\n");
 
         if (! living(target))
-                return notify_fail("對方都已經這樣了，用不著這麼費力吧？\n");
+                return notify_fail("對方都已經這樣了，用不着這麼費力吧？\n");
 
         if( query("gender", me) == "女性" && 
             query("gender", target) == "女性" )
@@ -52,7 +52,7 @@ int perform(object me, object target)
         else
                 delta = 0;
 
-        msg = HIG "\n$N" HIG "幽幽一聲長嘆，手中的" + weapon->name() +
+        msg = HIG "\n$N" HIG "幽幽一聲長歎，手中的" + weapon->name() +
               HIG "就如閃電般刺向$n" HIG "的胸口。\n但見劍招輕盈靈動，優美華麗，就"
               "連殺人間也不帶一絲塵俗之氣。\n" NOR;
 
@@ -72,7 +72,7 @@ int perform(object me, object target)
 
                 msg += COMBAT_D->do_damage(me, target, WEAPON_ATTACK, damage, 50,
                                            HIR "$n" HIR "大吃一驚，慌忙躲避，然而劍"
-                                           "氣來的好快，哪裡躲得開？\n只聽$p" HIR
+                                           "氣來的好快，哪裏躲得開？\n只聽$p" HIR
                                            "一聲慘叫，胸口已經被劍氣所傷！\n" NOR);
                 if (ap / 2 + random(ap) > dp)
                 {

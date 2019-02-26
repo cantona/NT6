@@ -6,7 +6,7 @@ inherit F_DEALER;
 void create()
 {
         set_name("蕭萬喜", ({ "xiao wanxi", "xiao", "wanxi"}));
-        set("title", "當舖老板");
+        set("title", "當鋪老闆");
         set("shen_type", 1);
         set("gender", "男性");
         set_max_encumbrance(100000000);

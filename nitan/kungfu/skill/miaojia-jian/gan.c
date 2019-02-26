@@ -39,7 +39,7 @@ int perform(object me, object target)
                 return notify_fail("你沒有激發苗家劍法，難以施展" + name() + "。\n");
 
         if (! living(target))
-                return notify_fail("對方都已經這樣了，用不著這麼費力吧？\n");
+                return notify_fail("對方都已經這樣了，用不着這麼費力吧？\n");
 
         wn = weapon->name();
 
@@ -63,13 +63,13 @@ int perform(object me, object target)
         {
                 me->start_busy(3);
                 msg += HIC "$n" HIC "見" + wn + HIC "來勢洶湧，心知絕"
-                       "不可擋，當即向後橫移數尺，終于躲閃開來。\n" NOR;
+                       "不可擋，當即向後橫移數尺，終於躲閃開來。\n" NOR;
                 addn("neili", -500, me);
         }
 
         if (userp(me) && (int)me->query_skill("miaojia-jian", 1) < 260)
         {
-                msg += HIY "只見" + wn + HIY "余勢不盡，又向前飛出數"
+                msg += HIY "只見" + wn + HIY "餘勢不盡，又向前飛出數"
                        "丈，方才沒入土中。\n" NOR;
                 weapon->move(environment(me));
         } else

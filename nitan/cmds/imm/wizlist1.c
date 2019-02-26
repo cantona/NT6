@@ -89,14 +89,14 @@ int main(object me, string arg)
                 }        
                 
                 if (k == 1) 
-                        str = "□□□";        
+                        str = "━━━";        
                 else 
-                        str = "□□□";
+                        str = "━┳━";
                                 
                 if (k != j && k != 1 && j != 1) 
-                        str = "  □□";
+                        str = "  ┣━";
                 if (k == j && k != 1 && j != 1)     
-                        str = "  □□";
+                        str = "  ┗━";
                         
                 if (objectp(ob = find_player(list[i])) && me->visible(ob)) 
                 {                        

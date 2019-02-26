@@ -1,7 +1,7 @@
 // action_d.c
 // 活動精靈，負責發起和關閉每日的活動
-// 這個daemon我傾向于做成廣播器和活動狀態的容器
-// 他本身什麼也不做，其他系統從他這裡獲取某個活動是否開啟的狀態
+// 這個daemon我傾向於做成廣播器和活動狀態的容器
+// 他本身什麼也不做，其他系統從他這裏獲取某個活動是否開啟的狀態
 
 #include <localtime.h>
 #include <ansi.h>
@@ -30,7 +30,7 @@ void check_action_startend()
 
         tmp = 0;
         ltime = localtime(time());
-        now_min = ltime[LT_HOUR]*60+ltime[LT_MIN]; // 當前分鐘，這裡要用localtime(獲取本地時間)
+        now_min = ltime[LT_HOUR]*60+ltime[LT_MIN]; // 當前分鐘，這裏要用localtime(獲取本地時間)
 
         // 逐個setting做判斷，60秒一次，這個效率可以接受
         foreach( string key in keys(action_settings) ) {
@@ -39,7 +39,7 @@ void check_action_startend()
                         continue;
                 // 當前時間在結束時間之後，則需要試試是否應該關閉它
                 if( now_min>=action_settings[key]["end"] ) {
-                        // 存在于活躍列表，則結束之
+                        // 存在於活躍列表，則結束之
                         if( !undefinedp(active_actions[key]) ) {
                                 map_delete(active_actions,key);
                                 // 廣播
@@ -87,7 +87,7 @@ string query_action_string()
         now_min = ltime[LT_HOUR]*60+ltime[LT_MIN];
 /*      ret = HIY"當前正在進行中的活動有：\n";
         foreach(string key in keys(active_actions)) {
-                ret += action_settings[key]["name"]+"："+chinese_number(action_settings[key]["times"])+"倍[剩余"+chinese_number(action_settings[key]["end"]-now_min)+"分鐘]\n";
+                ret += action_settings[key]["name"]+"："+chinese_number(action_settings[key]["times"])+"倍[剩餘"+chinese_number(action_settings[key]["end"]-now_min)+"分鐘]\n";
         }
         ret += NOR;
         return ret;
@@ -96,7 +96,7 @@ string query_action_string()
         foreach( string key in keys(action_settings) ) {
                 ret += "\t"+action_settings[key]["name"]+"："+str2(action_settings[key]["start"]/60)+":"+str2(action_settings[key]["start"]%60)+"～"+str2(action_settings[key]["end"]/60)+":"+str2(action_settings[key]["end"]%60)+"（"+chinese_number(action_settings[key]["times"])+"倍）";
                 if( active_actions[key] ) {
-                        ret += HIG"-當前進行中-剩余"+chinese_number(action_settings[key]["end"]-now_min)+"分鐘\n"HIY;
+                        ret += HIG"-當前進行中-剩餘"+chinese_number(action_settings[key]["end"]-now_min)+"分鐘\n"HIY;
                 } else {
                         ret +=HIG"-當前未開啟\n"HIY;
                 }
@@ -105,7 +105,7 @@ string query_action_string()
         return ret+NOR;
 }
 
-// 這裡是其他系統調用查詢當前是否處于某個活動中的接口，返回的是倍率
+// 這裏是其他系統調用查詢當前是否處於某個活動中的接口，返回的是倍率
 int query_action(string action)
 {
         if( undefinedp(active_actions[action]) )
@@ -127,7 +127,7 @@ int setup()
         mixed file;
         mixed tmp;
 
-        // 這裡應該判斷是否有文件
+        // 這裏應該判斷是否有文件
         if( !(file = read_file("/adm/etc/action_list")) )
                 return 0;
         // 過濾win的換行符
@@ -141,8 +141,8 @@ int setup()
                         // action_name:chinese_name:starttime:endtime:times
                         // task_reward:多倍TASK獎勵:1500:1700:2
                         // 活動英文標識:活動中文名:開始時間:結束時間:倍率
-                        // 時間應該形如0830(前兩位表示小時-24小時制，後兩位表示分鐘)，並且開始時間應當小于結束時間
-                        // 這裡假設配置文件是對的。。。
+                        // 時間應該形如0830(前兩位表示小時-24小時制，後兩位表示分鐘)，並且開始時間應當小於結束時間
+                        // 這裏假設配置文件是對的。。。
                         tmp = explode(line, ":");
                         action_settings[tmp[0]] = ([]);
                         action_settings[tmp[0]]["name"] = tmp[1];

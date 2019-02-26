@@ -19,7 +19,7 @@
           呼叫 socket_acquire() 是為了要完成開始自 socket_release()
           要轉移一個 socket 所有權（和控制權）到一個新物件上的握手程
           序(handshake)。socket_release() 呼叫那個將擁有所有權新物件
-          的釋放回呼(callback)函式以通知那個物件說它想要傳送這個 socket
+          的釋放回呼(callback)函式以通知那個物件説它想要傳送這個 socket
           的控制權過去。那個將擁有所有權的新物件有責任決定它是否接受
           這個 socket。若它願意接受的話，則要呼叫 socket_acquire() 以
           完成這個轉移。如果不願的話，則這個回呼函式不需完成握手程序

@@ -42,7 +42,7 @@ int perform(object me, object target)
                 return notify_fail("你的真氣不夠，無法施展" YING "。\n");
 
         if (! living(target))
-                return notify_fail("對方都已經這樣了，用不著這麼費力吧？\n");
+                return notify_fail("對方都已經這樣了，用不着這麼費力吧？\n");
 
         msg = HIR "$N" HIR "倏然躍近，無聲無影擊出一拳，去勢快極，拳影重"
               "重疊疊，直襲$n" HIR "而去。\n"NOR;

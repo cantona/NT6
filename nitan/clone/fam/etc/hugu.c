@@ -8,7 +8,7 @@ void create()
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("long", HIW "一副白虎骨，乃制衣極品，世間罕有。\n" NOR);
+                set("long", HIW "一副白虎骨，乃製衣極品，世間罕有。\n" NOR);
                 set("unit", "副");
                 set("value", 500000);
         }

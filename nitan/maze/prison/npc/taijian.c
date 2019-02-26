@@ -10,9 +10,9 @@ void set_players(object *ob) {
 void add_player(object ob) {
         if(member_array(ob,players)==-1) {
                 players += ({ob});
-                message_vision(BLU"$N對$n說道：謝謝！\n"NOR,this_object(),ob);
+                message_vision(BLU"$N對$n説道：謝謝！\n"NOR,this_object(),ob);
         } else
-                message_vision(BLU"$N對$n說道：你已經答應幫忙，你不會反悔吧！\n"NOR,this_object(),ob);
+                message_vision(BLU"$N對$n説道：你已經答應幫忙，你不會反悔吧！\n"NOR,this_object(),ob);
 }
 
 object* query_players() {
@@ -87,10 +87,10 @@ void init()
 void greeting(object ob)
 {
         if( !ob || environment(ob) != environment() ) return;
-        if( query_temp("開場白結束") || query_temp("開始說開場白") || query_temp("任務") )
+        if( query_temp("開場白結束") || query_temp("開始説開場白") || query_temp("任務") )
                 return;
                 
-        message_vision(CYN "$N有氣無力地說道：這位" + RANK_D->query_respect(ob) +
+        message_vision(CYN "$N有氣無力地説道：這位" + RANK_D->query_respect(ob) +
                 "，你是來為皇宮清除叛逆的嗎？？(answer yes/no)\n" NOR, this_object(), ob);
 } 
 
@@ -100,11 +100,11 @@ int do_answer(string arg) {
                         return 0;
                 if(present("tape",environment()))
                         return 0;
-                set_temp("開始說開場白",1);
+                set_temp("開始説開場白",1);
                 set_temp("in_speech", 1);
                 play_sound_0(this_object(),0);
         } else if(arg=="no") {
-                message_vision(BLU"$N說道：誰想聽你這個太監廢話！\n",this_player());
+                message_vision(BLU"$N説道：誰想聽你這個太監廢話！\n",this_player());
         } else
                 return notify_fail("你要回答什麼？\n");
         return 1;
@@ -117,13 +117,13 @@ void play_sound_0(object speaker,int index) {
                 return;        
         switch (index)  {
                 case(0):
-                        tell_room(environment(),CYN"太監說道：天牢總管太監總管李蓮英在天牢中鍛煉出一批死士來刺殺聖上......\n"NOR);
+                        tell_room(environment(),CYN"太監説道：天牢總管太監總管李蓮英在天牢中鍛煉出一批死士來刺殺聖上......\n"NOR);
                         break;
                 case(1):
-                        tell_room(environment(),CYN"太監說道：由于天牢死士個個都屬于武林人氏，武功高強，所以聖上尋求各位勇士前來幫助。\n"NOR);
+                        tell_room(environment(),CYN"太監説道：由於天牢死士個個都屬於武林人氏，武功高強，所以聖上尋求各位勇士前來幫助。\n"NOR);
                         break;
                 case(2):
-                        tell_room(environment(),CYN"太監說道：你願意為宮廷清理叛逆，鏟除李蓮英嗎？(accept yes/no)\n"NOR);
+                        tell_room(environment(),CYN"太監説道：你願意為宮廷清理叛逆，剷除李蓮英嗎？(accept yes/no)\n"NOR);
                         speaker->set_temp("開場白結束",1);
                         break;
                 default: 
@@ -150,17 +150,17 @@ int do_accept(string arg) {
                 set_temp("任務", 1);
                 ob = new("/maze/prison/npc/obj/key");
                 ob->move(me, 1);
-                tell_room(environment(),CYN"太監說道：這是進入天牢的鑰匙，現在交給你，希望" + RANK_D->query_respect(me) + 
-                        "能完成聖上發布下來的任務。\n" NOR);
-                message_vision(HIY "$N" HIY "說罷" HIY "便領著$n" HIY "快步朝地上牢房走去。\n\n" NOR, this_object(), me);
+                tell_room(environment(),CYN"太監説道：這是進入天牢的鑰匙，現在交給你，希望" + RANK_D->query_respect(me) + 
+                        "能完成聖上發佈下來的任務。\n" NOR);
+                message_vision(HIY "$N" HIY "説罷" HIY "便領着$n" HIY "快步朝地上牢房走去。\n\n" NOR, this_object(), me);
                 me->move("/maze/prison/tianlao");
-                tell_object(me, CYN + name() + "說道：就是這裡，接下來就看您了。\n"
-                        HIC + name() + "說完便急急忙忙趕了回去。\n" NOR);                
+                tell_object(me, CYN + name() + "説道：就是這裏，接下來就看您了。\n"
+                        HIC + name() + "説完便急急忙忙趕了回去。\n" NOR);                
         }        
         else if(arg=="no") {
                 delete_temp("開場白結束");
-                delete_temp("開始說開場白");
-                message_vision(BLU"$N說道：沒好處的事情我可不幹！\n",this_player());
+                delete_temp("開始説開場白");
+                message_vision(BLU"$N説道：沒好處的事情我可不幹！\n",this_player());
         }
         else
                 return 0;

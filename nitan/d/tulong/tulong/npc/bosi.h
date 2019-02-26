@@ -10,7 +10,7 @@ void init()
         if( query_temp("have_yitianjian", me )
            || present("yitian jian", me))
         {
-                command("say 咦？倚天劍怎麼會在你手裡，看來"
+                command("say 咦？倚天劍怎麼會在你手裏，看來"
                         "這次中原之行沒白跑了！");
                 this_object()->kill_ob(me);
                 return;
@@ -27,7 +27,7 @@ void init()
 
         if (present("shenghuo ling", me))
         {
-                command("say 咦？你怎麼會拿著有我教的聖火令"
+                command("say 咦？你怎麼會拿着有我教的聖火令"
                         "，快還給我！");
                 this_object()->kill_ob(me);
                 return;

@@ -8,7 +8,7 @@ void create()
         set("short", "峻極禪院");
         set("long", @LONG
 峻極禪院處嵩山絕頂，院中古柏森森，殿上並無佛像。院宇遼闊，
-可容千人。往裡就是嵩山派的本院了。
+可容千人。往裏就是嵩山派的本院了。
 LONG );
         set("exits", ([
                 "south" : __DIR__"qianting",

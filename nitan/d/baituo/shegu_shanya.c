@@ -57,8 +57,8 @@ int do_view(string arg)
 
         room = load_object(__DIR__"shegu1");
         if( query("defense", room) )
-        msg += RED"谷口彌漫著血紅色的毒霧，與外隔絕。\n"NOR;
-        else msg += HIW"原本紅霧密布的谷口，這時卻豁然開朗，所有的霧氣都無影無蹤了。\n"NOR;
+        msg += RED"谷口瀰漫着血紅色的毒霧，與外隔絕。\n"NOR;
+        else msg += HIW"原本紅霧密佈的谷口，這時卻豁然開朗，所有的霧氣都無影無蹤了。\n"NOR;
                 break;
 
         case "east" :
@@ -85,7 +85,7 @@ int do_view(string arg)
         msg += HIW"一眼望去，你覺得彼端山中，似有股難以描述的靈氣。\n"NOR;
         else if( present("pusiqu she", room) ) 
         msg += HIR"你遙望山中景色，忽然覺得有些心驚肉跳，再定神望去，越看越覺得不對勁。\n"NOR;
-        else msg += "你悠閒地觀賞著山景，覺得心情輕鬆了不少。\n";
+        else msg += "你悠閒地觀賞着山景，覺得心情輕鬆了不少。\n";
                 break;
 
         case "southeast" :
@@ -95,7 +95,7 @@ int do_view(string arg)
 
         case "southwest" :
         case "sw" :
-        write("你往西南遠眺，正可望見蛇谷密林深處的□魔鬼灘□地帶……\n\n");
+        write("你往西南遠眺，正可望見蛇谷密林深處的u魔鬼灘v地帶……\n\n");
         room = load_object(__DIR__"shegu32");
         COMMAND_DIR"std/look"->look_room(me, room);
         msg = "……距離雖遠，但是居高臨下，倒還看得清楚。\n";

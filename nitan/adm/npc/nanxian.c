@@ -87,7 +87,7 @@ LONG);
 
         set("inquiry", ([
                 "name" : "姓名不過是一種代號而已，問它有何意義？",
-                "北醜" : "你盡提那個齷齪的家伙做甚？",
+                "北醜" : "你盡提那個齷齪的傢伙做甚？",
                 "狀態回復": (: full_all :),
                 "狀態恢復": (: full_all :),
 /*
@@ -196,7 +196,7 @@ mixed accept_ask(object who, string topic)
                         return "對不起，帝王符圖任務只針對有效會員開放！\n";
                 // 檢查是否領取過任務
                 if( !query("quest_tuteng/start", me) )
-                        return "我好象沒有交給你任務吧。\n";
+                        return "我好像沒有交給你任務吧。\n";
                 // 檢查任務是否已完成
                 if( query("quest_tuteng/end", me) )
                         return "不錯，不錯，閣下了卻了南賢的心願，多謝！\n";
@@ -208,10 +208,10 @@ mixed accept_ask(object who, string topic)
                 for (i = 1; i <= 7; i ++)
                 {
                         if (! objectp(ob_hlp = present("diwang futu" + sprintf("%d", i), me)))
-                                return "怎麼樣，我要的7張帝王圖搜集齊了嗎\n";
+                                return "怎麼樣，我要的7張帝王圖蒐集齊了嗎\n";
 
                         if (base_name(ob_hlp) != "/clone/tuteng/futu" + sprintf("%d", i))
-                                return "怎麼樣，我要的7張帝王圖搜集齊了嗎？\n";
+                                return "怎麼樣，我要的7張帝王圖蒐集齊了嗎？\n";
                 }
 
                 // 齊全：摧毀7張圖
@@ -229,7 +229,7 @@ mixed accept_ask(object who, string topic)
                         write("獲取隨機圖騰技能！ \n");
                 }
 
-                // 2、exp 150萬  pot 200 萬 weiwang 100萬 閱歷 100萬
+                // 2、exp 150萬  pot 200 萬 weiwang 100萬 閲歷 100萬
                 GIFT_D->delay_bonus(me,
                                     ([ "exp"      : 1500000,
                                        "pot"      : 2000000,
@@ -325,7 +325,7 @@ mixed accept_ask(object who, string topic)
                 // 4、如霸刀等級超過600lv，則傳授絕招且霸刀提升5個等級的熟練度，至多可提升5級。
                 if (me->query_skill("badao",1) >= 600)
                 {
-                        message_sort(HIC "\n南賢繼續對$N說道：閣下既會霸刀，南賢不才，也略知一二，如謀不棄，"
+                        message_sort(HIC "\n南賢繼續對$N説道：閣下既會霸刀，南賢不才，也略知一二，如謀不棄，"
                                          "就由在下將所知與你講解一番 ……\n" NOR, me);
 
                         tell_object(me, HIW "你聽了南賢的講解後，對霸刀有了新的體會！\n" NOR);
@@ -337,14 +337,14 @@ mixed accept_ask(object who, string topic)
                                 if (me->can_improve_skill("badao"))
                                         me->improve_skill("badao", 15000000);
                         }
-                        tell_object(me, HIM "南賢悄悄對你說道：據說，只要你霸刀達到800級，這阿鼻道第二刀可找陰長生學習。\n" NOR);
-                        tell_object(me, HIM "南賢又對你說道：可是陰長生不會白教你，需要找到天下第一神酒--天乙神酒與他交換。\n" NOR);
+                        tell_object(me, HIM "南賢悄悄對你説道：據説，只要你霸刀達到800級，這阿鼻道第二刀可找陰長生學習。\n" NOR);
+                        tell_object(me, HIM "南賢又對你説道：可是陰長生不會白教你，需要找到天下第一神酒--天乙神酒與他交換。\n" NOR);
                 }
                 // 設置任務完成標志
                 set("quest_tuteng/end", 1, me);
 
                 me->save();
-                log_file("diwang-quest",query("id", me)+"于"+ctime(time())+"完成帝王符圖任務！\n");
+                log_file("diwang-quest",query("id", me)+"於"+ctime(time())+"完成帝王符圖任務！\n");
 
                 return 1;
         }
@@ -378,7 +378,7 @@ mixed accept_ask(object who, string topic)
                         command("say 我正在修煉渾天寶鑒之無敵劍氣，急需1把青罡劍練功！");
                         command("ke");
                         command("say 能幫我這個忙嗎？");
-                        tell_object(me, this_object()->name() + HIG "讓你幫他搜集1把青罡劍把，趕快去吧！\n" NOR);
+                        tell_object(me, this_object()->name() + HIG "讓你幫他蒐集1把青罡劍把，趕快去吧！\n" NOR);
                         set("lunhui-sword_quest/xiuluodao/give_quest", 1, me);
                         me->save();
                         return "事成之後，我會傳你幾招武功防身！";
@@ -387,10 +387,10 @@ mixed accept_ask(object who, string topic)
                 // 完成任務
                 
                 if (! objectp(ob_hlp = present("qinggang jian", me)))
-                        return "怎麼樣，1把青罡劍搜集夠了嗎？\n";
+                        return "怎麼樣，1把青罡劍蒐集夠了嗎？\n";
                         
                 if (base_name(ob_hlp) != "/clone/weapon/qinggang-jian")
-                        return "怎麼樣，1把青罡劍搜集夠了嗎？\n";
+                        return "怎麼樣，1把青罡劍蒐集夠了嗎？\n";
 
                 destruct(ob_hlp);
                 
@@ -398,7 +398,7 @@ mixed accept_ask(object who, string topic)
                 command("nod");
                 command("say 既然你幫我了這個忙，我就順便傳你一招，相信你以後用得著 ...");
                 
-                message_sort(HIC "\n$N" HIC "走上前去，在$n" HIC "耳邊悄悄說了幾句，然後又拿出一本書，指指點點，"
+                message_sort(HIC "\n$N" HIC "走上前去，在$n" HIC "耳邊悄悄説了幾句，然後又拿出一本書，指指點點，"
                              "$n" HIC "不住地點頭，忽而眉頭深鎖，忽而低頭沉思 ……\n良久，$n" HIC "大笑一聲，似乎"
                              "對剛才的疑慮有所頓悟。\n", this_object(), me);
                                         
@@ -513,7 +513,7 @@ mixed ask_me2()
                 all_interactive(), 0);
 */
 
-        tell_object(me, HIR "\n你領取二小時的高效練功時間開始計時，輸入指令istat可以查看剩余時間。\n" NOR);
+        tell_object(me, HIR "\n你領取二小時的高效練功時間開始計時，輸入指令istat可以查看剩餘時間。\n" NOR);
 
         addn("time_reward/study", 7200, me);
         set("time_reward/which_day1", td, me);
@@ -541,13 +541,13 @@ mixed ask_me3()
         /*
         t = localtime(time())[2];
         if (t >= 20 && t < 24)
-                return "每天20~24點均為雙倍經驗時間，現在正處于雙倍經驗時間段你還是過一會再來領吧。\n";
+                return "每天20~24點均為雙倍經驗時間，現在正處於雙倍經驗時間段你還是過一會再來領吧。\n";
 
         message("member", HIM "\n【泥潭會員】" + me->query_idname() + HIM " 領取二小時的雙倍獎勵時間開始計時。\n" NOR,
                 all_interactive(), 0);
         */
 
-        tell_object(me, HIR "\n你領取二小時的雙倍經驗時間開始計時，輸入指令istat可以查看剩余時間。\n" NOR);
+        tell_object(me, HIR "\n你領取二小時的雙倍經驗時間開始計時，輸入指令istat可以查看剩餘時間。\n" NOR);
 
         set("time_reward/which_day2", td, me);
         addn("time_reward/quest", 7200, me);
@@ -559,7 +559,7 @@ mixed ask_me4()
 {
         object me = this_player();
 
-        tell_object(me, HIY "南賢說道：既然你要參加比武，那麼老夫就送你一程！\n" NOR);
+        tell_object(me, HIY "南賢説道：既然你要參加比武，那麼老夫就送你一程！\n" NOR);
         message_vision(HIY "只見南賢伸手一招，一道紅光照向$N，$N騰空飛去！\n" NOR, me);
         me->move("/d/huashan/houzhiwangyu");
         return 1;
@@ -571,9 +571,9 @@ mixed ask_duanwu()
 	object ob;
 
 	if (query_temp("duanwu_time", me) > time())
-		tell_object(me, HIY "南賢說道：" + query("name", me)  + "你剛剛已經拿過了，再拿需要等待10秒，每個人每天只能吃一次喲！\n"NOR);
+		tell_object(me, HIY "南賢説道：" + query("name", me)  + "你剛剛已經拿過了，再拿需要等待10秒，每個人每天只能吃一次喲！\n"NOR);
 	else {
-		tell_object(me, HIY "南賢說道：" + query("name", me)  + "端午節快樂！\n"NOR);
+		tell_object(me, HIY "南賢説道：" + query("name", me)  + "端午節快樂！\n"NOR);
  		message_vision(HIY "南賢從懷裡拿出一個粽子送給了 " + query("name", me) + "！\n" NOR);
 		ob = new("/u/luoyun/zongzi");
 		ob->move(me);
@@ -591,7 +591,7 @@ int full_all()
         me = this_object();
         ob = this_player();
 
-        //只開放申請帳號至今不足30天且年齡小于18歲的的ID
+        //只開放申請帳號至今不足30天且年齡小於18歲的的ID
         if( time()-query("birthday", ob)>86400*19 )
         {
                 command("say 你已經不是新手了，還要我來照顧你的呀？\n");
@@ -678,7 +678,7 @@ mixed ask_me6()
         wd = time() / 604800;
 
         if( query("flowers/which_week", me) == wd )
-                return "你本周已經領過新手導師評價票了。";
+                return "你本週已經領過新手導師評價票了。";
 
         if (! MEMBER_D->is_valid_member(me))
                 return "你不是會員，想要領取新手導師評價票還是先購買會員卡吧。\n";
@@ -703,7 +703,7 @@ mixed ask_buchang()
 
         id=query("id", me);
 
-        if( !MEMBER_D->is_member(id) ) // 非沖值用戶肯定不是會員
+        if( !MEMBER_D->is_member(id) ) // 非沖值用户肯定不是會員
         {
                 day = time() + 15724800; // 補償半年的會員
                 sql = sprintf("INSERT INTO %s SET id = \"%s\", jointime = %d, endtime = %d",
@@ -751,7 +751,7 @@ mixed ask_buchang()
                 }
                 else
                 {
-                        // 是否小于年度
+                        // 是否小於年度
                         if( endtime - jointime < 31536000 ||
                             query("online_time", me)<86400*3)//防止刷nt
                         {
@@ -832,7 +832,7 @@ mixed ask_reborn()
 
         if( query("reborn/times", who) >= 3 )
         {
-                message_vision("$N對$n一拱手，道： 鬩丫□□□□纜只亓耍□銥淳筒揮昧稅桑□n",
+                message_vision("$N對$n一拱手，道：你已經歷過三世輪回了，我看就不用了吧！\n",
                                this_object(), who);
                 return 1;
         }
@@ -1003,7 +1003,7 @@ mixed ask_reborn()
                 return 1;
         }
 
-        message_vision(CYN "$N嘆道：「人間本是百樁磨，既然是有心之士相詢，老夫也不藏拙，這物事你便收下吧。」\n" NOR,
+        message_vision(CYN "$N歎道：「人間本是百樁磨，既然是有心之士相詢，老夫也不藏拙，這物事你便收下吧。」\n" NOR,
                        this_object(), who);
 
         ob = new(CONTRACT);
@@ -1016,11 +1016,11 @@ mixed ask_reborn()
         set("set_data", 1, ob);
 
         message_vision(HIC "$N拿出一份閻王契(Contract)給$n。\n" NOR
-                       CYN "$N續道：「欲成轉世奇緣，需向五岳山君獻祭，你這便前往泰山、華山、衡山、恆山與嵩山一行吧。」\n" NOR,
+                       CYN "$N續道：「欲成轉世奇緣，需向五嶽山君獻祭，你這便前往泰山、華山、衡山、恆山與嵩山一行吧。」\n" NOR,
                        this_object(), who);
 
         message("channel:rumor",HBRED"【轉世重生】人間："+query("name", who)+"("+query("id", who)+")"
-                HBRED "拿到閻王契，開始前往五岳獻祭，欲成轉世奇緣！\n\n" NOR, users());
+                HBRED "拿到閻王契，開始前往五嶽獻祭，欲成轉世奇緣！\n\n" NOR, users());
 
         set("reborn_offer", "start", who);
 
@@ -1039,7 +1039,7 @@ int accept_object(object who, object ob)
                 return 0;
 
         if( sizeof(query("offer", ob))<5 )
-                return notify_fail(CYN "南賢搖搖頭道：「五岳獻祭未成，為時尚早。」\n" NOR);
+                return notify_fail(CYN "南賢搖搖頭道：「五嶽獻祭未成，為時尚早。」\n" NOR);
 
         delete("bindable", ob);
         delete("bind_owner", ob);
@@ -1051,7 +1051,7 @@ int to_return(object who, object ob)
 {
         if (! ob || ! who) return 0;
 
-        message_vision(CYN "$N點了點頭道：「果真是有心人，竟能捱過五岳山君那般挑剔折磨，來，在這裡蓋個血指印。」\n" NOR
+        message_vision(CYN "$N點了點頭道：「果真是有心人，竟能捱過五嶽山君那般挑剔折磨，來，在這裡蓋個血指印。」\n" NOR
                        HIC "$n依從$N指示，咬破拇指，在閻王契上蓋上血指印。\n" NOR
                        HIM "只見閻王契(Contract)突生紫光，血指印旁憑空現出了$n的名字。\n" NOR
                        CYN "$N續道：「速去昆侖之巔尋那昆侖鏡，將閻王契投入其中，方可獲得肉身入地獄面見閻王之資格。路程險惡，務必小心。」\n" NOR,

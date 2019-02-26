@@ -48,13 +48,13 @@ void main(object ob, string who)
 			write("你離敵人太遠無法施計。\n");
 			return;}
 	tell(deep_inventory(TROOP_D->find_troop(e_id)),
-"一陣怒濤般的響聲傳來，一條水龍向部隊沖了下來。，原來是"+p_name+"對你的部隊使用水淹之計。\n",
+"一陣怒濤般的響聲傳來，一條水龍向部隊衝了下來。，原來是"+p_name+"對你的部隊使用水淹之計。\n",
                         MSG_INDENT);
                 // In future, we have to consider effects of the
                 // ablility of general, zhenxing, dixing, etc.
                 // Now the damage depends only on the No of bowman
 	ob->simple_action(SG_SKILL_D->query_use("jbsj"));
-	ob->start_busy(10, "你正忙于施計呢。\n");
+	ob->start_busy(10, "你正忙於施計呢。\n");
 	load_object("/daemons/cast_d.c")->reg_player(ob->query_primary_id(),"jbsj");
         ob->award_exp(ob->query_sk_level("sk_zhimou")/2+random(20), "jbsj");	
 	call_out("show_result", 10+random(5), ob, who, p_skill, p_id, e_id);
@@ -82,7 +82,7 @@ kill = random(kill);
 	ob->stop_busy();
 	if( kill>50)
 	{	tell(deep_inventory(TROOP_D->find_troop(e_id)),
-                "水龍沖過，士兵驚慌失措，溺死無數。\n",
+                "水龍衝過，士兵驚慌失措，溺死無數。\n",
                         MSG_INDENT);
 		mora = random (-20) -10;
 		mora1 = random (6) +2;
@@ -93,7 +93,7 @@ kill = random(kill);
 	{     if(kill>20)
 		{
 	tell(deep_inventory(TROOP_D->find_troop(e_id)),
-        	"水龍沖過，士兵多有溺死。\n",
+        	"水龍衝過，士兵多有溺死。\n",
                         MSG_INDENT);	
 		mora = random (-10) - 5;
 		mora1 = random (3) + 1;
@@ -103,7 +103,7 @@ kill = random(kill);
 	      else if( kill>5)
 		{
 		tell(deep_inventory(TROOP_D->find_troop(e_id)),
-        	"水龍沖過，士兵有些不慎溺死。\n",
+        	"水龍衝過，士兵有些不慎溺死。\n",
                         MSG_INDENT);
 		mora = random(-5) - 1;
 		mora1 = 1;
@@ -113,7 +113,7 @@ kill = random(kill);
 	      else 
 		{
 		tell(deep_inventory(TROOP_D->find_troop(e_id)),
-        	"水龍沖過，但士兵們在指揮下避開了浪頭。\n",
+        	"水龍衝過，但士兵們在指揮下避開了浪頭。\n",
                         MSG_INDENT);
 		mora = random(8) + 3;
 		mora1 = random(-8) - 3;

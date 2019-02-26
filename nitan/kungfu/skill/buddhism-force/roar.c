@@ -14,7 +14,7 @@ int exert(object me, object target)
                 return notify_fail("你的內力不夠。\n");
 
         if( query("no_fight", environment(me)) )
-                return notify_fail("在這裡不能攻擊他人。\n");
+                return notify_fail("在這裏不能攻擊他人。\n");
 
         if( userp(me) && me->query_condition("killer") > 20)
                 return notify_fail("你感到一絲內疚，手突然軟了下來！\n");
@@ -26,7 +26,7 @@ int exert(object me, object target)
 
         me->start_busy(3);
         message_combatd(
-                HIY "$N深深地吸一囗氣，真力迸發，發出一聲驚天動地的巨吼□\n" NOR, me);
+                HIY "$N深深地吸一囗氣，真力迸發，發出一聲驚天動地的巨吼ⅵ\n" NOR, me);
 
         ob = all_inventory(environment(me));
         for (i = 0; i < sizeof(ob); i++) 
@@ -52,7 +52,7 @@ int exert(object me, object target)
                         ob[i]->receive_damage("jing", damage * 2, me);
                         if( query("neili", ob[i])<skill*2 )
                                 ob[i]->receive_wound("jing", damage, me);
-                        tell_object(ob[i], "你覺得眼前一陣金星亂冒，耳朵痛得像是要裂開一樣□\n");
+                        tell_object(ob[i], "你覺得眼前一陣金星亂冒，耳朵痛得像是要裂開一樣ⅵ\n");
                 }
         }
 

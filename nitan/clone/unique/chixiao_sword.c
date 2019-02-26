@@ -26,7 +26,7 @@ void create()
         set("replica_ob", "/clone/weapon/changjian");  
         set("no_put",1);
         set("no_steal",1); 
-        set("wield_msg",HIR"$N[噌]的一聲抽出一把赤劍，忽然從旁邊跳出一條赤龍，圍著$N轉。\n"NOR);   
+        set("wield_msg",HIR"$N[噌]的一聲抽出一把赤劍，忽然從旁邊跳出一條赤龍，圍着$N轉。\n"NOR);   
         set("unwield_msg",HIR"$N把手中的赤劍插入劍鞘，赤龍化做長虹飛到天空，消失了。\n"NOR);    
         } 
         init_sword(900);   

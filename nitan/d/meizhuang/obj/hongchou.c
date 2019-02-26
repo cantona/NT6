@@ -34,11 +34,11 @@ int do_tear(string arg)
                 addn("cloth_count", -1);
                 ob=new("/clone/book/zhanyi");
                 ob->move("/d/meizhuang/dingduan");
-                message_vision("$N把紅綢撕開，發現裡面包著一件衣服。\n", me);
+                message_vision("$N把紅綢撕開，發現裏面包着一件衣服。\n", me);
                 return 1;
         }
         else {
-                message_vision("$N把紅綢撕開，但裡面什麼都沒有。\n", me);
+                message_vision("$N把紅綢撕開，但裏面什麼都沒有。\n", me);
                 return 1;
              }
 }

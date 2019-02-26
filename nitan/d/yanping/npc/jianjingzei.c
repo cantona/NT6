@@ -7,7 +7,7 @@ void create()
         set_name("剪徑賊", ({ "jianjing zei","zei" }) );
         set("gender", "男性");
         set("age", 30);
-        set("long", "這家伙滿臉橫肉□一付兇神惡煞的模樣，令人望而生畏。\n");
+        set("long", "這傢伙滿臉橫肉一付凶神惡煞的模樣，令人望而生畏。\n");
         set("combat_exp", 10000);
         set("shen_type", -1);
         set("attitude", "aggressive");

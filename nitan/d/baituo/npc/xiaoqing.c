@@ -73,12 +73,12 @@ void greeting(object ob)
         if( !ob || environment(ob) != environment() ) return;
         if(random(2)==1)
         {
-                say("小青笑吟吟地說道：這位" + RANK_D->query_respect(ob) +
+                say("小青笑吟吟地説道：這位" + RANK_D->query_respect(ob) +
                     "請進，見到你真高興。\n");
                 return;
         } else
         {
-                say("小青笑了笑說道：這位" + RANK_D->query_respect(ob) +
+                say("小青笑了笑説道：這位" + RANK_D->query_respect(ob) +
                     "快請進吧。 \n");
                 return;
         }
@@ -95,14 +95,14 @@ string inquiry_gao()
                 return "莊主現在已經不叫我做『蛇膽膏』了！\n";
 
         say("這位" + RANK_D->query_respect(ob)+
-            "不瞞您說。師傅讓我作『蛇膽膏』，\n可我",ob);
+            "不瞞您説。師傅讓我作『蛇膽膏』，\n可我",ob);
         switch (query_temp("dan"))
         {
-        case 0: write(HIY "差一只青蛇膽，一只金蛇膽。\n" NOR);
+        case 0: write(HIY "差一隻青蛇膽，一隻金蛇膽。\n" NOR);
                 break;
-        case 1: write(HIY "還差一只金蛇膽。\n" NOR);
+        case 1: write(HIY "還差一隻金蛇膽。\n" NOR);
                 break;
-        case 2: write(HIY "還差一只青蛇膽。\n" NOR);
+        case 2: write(HIY "還差一隻青蛇膽。\n" NOR);
                 break;
         }
         return "不知哪位好心人能幫幫我呢？\n";
@@ -133,14 +133,14 @@ int accept_object(object who, object ob)
                 if (query_temp("dan") == 2)
                 {
                         message_vision("小青一看是金蛇膽，滿臉遺憾地對\n"
-                                       "$N說：我還差青蛇膽，不缺金蛇膽。\n", who);
+                                       "$N説：我還差青蛇膽，不缺金蛇膽。\n", who);
                         return 0;
                 }
                 addn_temp("dan", 2);
                 if (query_temp("dan") == 2)
                 {
                         message_vision("你把金蛇膽遞給了小青，她高興得跳了起來。\n"
-                                       "摟著$N的脖子說：還差青蛇膽就大功告成了！\n",who);
+                                       "摟着$N的脖子説：還差青蛇膽就大功告成了！\n",who);
                         destruct(ob);
                         return 1;
                 }
@@ -150,24 +150,24 @@ int accept_object(object who, object ob)
                 if (query_temp("dan") == 1)
                 {
                         message_vision("小青一看是青蛇膽，滿臉遺憾\n"
-                                       "地對$N說：我還差金蛇膽，不缺青蛇膽。\n",who);
+                                       "地對$N説：我還差金蛇膽，不缺青蛇膽。\n",who);
                         return 0;
                 }
                 addn_temp("dan", 1);
                 if (query_temp("dan") == 1)
                 {
                         message_vision("你把青蛇膽遞給了小青，她高興得跳了起來。\n"
-                                       "摟著$N的脖子說：還差就金蛇膽大功告成了！\n",who);
+                                       "摟着$N的脖子説：還差就金蛇膽大功告成了！\n",who);
                         destruct(ob);
                         return 1;
                 }
         }
 
         command("kiss"+query("id", who));
-        write(HIY "只見小青手腳麻利地把兩只蛇膽投入藥罐中，又加入一些\n"
-              "不知是什麼的藥粉，然後把稀裡嘩啦一搖，嘿！『蛇膽膏』做\n"
+        write(HIY "只見小青手腳麻利地把兩隻蛇膽投入藥罐中，又加入一些\n"
+              "不知是什麼的藥粉，然後把稀里嘩啦一搖，嘿！『蛇膽膏』做\n"
               "成了。\n" NOR );
-        message_vision("小青很神秘地湊近$N悄悄說了些什麼。\n", who);
+        message_vision("小青很神祕地湊近$N悄悄説了些什麼。\n", who);
         tell_object(who,"我偷偷拿了一點『蛇膽膏』送給你，莊主不會發現的。\n");
         message_vision("小青深情地望了$N一眼，臉紅了。\n",who);
         obn = new("/d/baituo/obj/shedangao");

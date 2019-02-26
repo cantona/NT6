@@ -159,7 +159,7 @@ int main(object me, string arg)
 
 int help (object me)
 {
-        write(WHT "──────────────────────────────────
+        write(WHT "——————————————————————————————————
 
 " HIM "輸入指令： member show info                     顯示會員系統面板界面
 輸入指令： member show payinfo                  顯示歷史充值交費信息
@@ -170,8 +170,8 @@ int help (object me)
 輸入指令： member stats                         列出所有會員名單信息
 輸入指令： member zhuan <amount> to <id>        轉帳王者幣給其他的ID
 
-" WHT "──────────────────────────────────
-" HIC "淘寶沖值鏈接地址:
+" WHT "——————————————————————————————————
+" HIC "淘寶衝值鏈接地址:
 " HIR "http://shop33371514.taobao.com\n
 " HIG "相關參考文件：help ntstore, help member\n" NOR);
 

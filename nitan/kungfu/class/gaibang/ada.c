@@ -13,7 +13,7 @@ void create()
 八臂神劍方東白本是丐幫四大長老之首，劍術
 之精，名動江湖，只因他出劍奇快，有如生了
 七八條手臂一般，因此上得了這個外號。十多
-年前聽說他身染重病身亡，當時人人都感惋惜，
+年前聽説他身染重病身亡，當時人人都感惋惜，
 不覺他竟尚在人世。
 LONG);
         set("title", "丐幫四大長老之首");
@@ -140,7 +140,7 @@ int recognize_apprentice(object ob, string skill)
         {
                 command("sigh");
                 command("say 也罷，也罷。");
-                command("say 這辟塵和觀日兩套劍法乃我生平絕學，就傳給你好了。");
+                command("say 這闢塵和觀日兩套劍法乃我生平絕學，就傳給你好了。");
                 set_temp("can_learn/ada", 1, ob);
         }
         return 1;
@@ -160,21 +160,21 @@ mixed ask_skill1()
         if( query("family/master_id", me) != "madayuan"
             && query("family/master_id", me) != "hongqigong"
             && query("family/beggarlvl", me)<7 )
-                return "我什麼時候說過要教你？";
+                return "我什麼時候説過要教你？";
 
         if (me->query_skill("pichen-jian", 1) < 1)
-                return "你學過辟塵劍法嗎？不學哪來絕招。";
+                return "你學過闢塵劍法嗎？不學哪來絕招。";
 
         if( query("family/gongji", me)<300 )
                 return "你在幫內毫無作為可言，這樣的人不值得我憐憫。";
 
         if (me->query_skill("pichen-jian", 1) < 100)
-                return "你的辟塵劍法還不到家，要多練練。";
+                return "你的闢塵劍法還不到家，要多練練。";
 
-        message_sort(HIY "\n$n" HIY "一聲長嘆，搖頭道：“也罷，也"
-                     "罷，你過來。”說完便將$N" HIY "招到一旁的僻"
+        message_sort(HIY "\n$n" HIY "一聲長歎，搖頭道：“也罷，也"
+                     "罷，你過來。”説完便將$N" HIY "招到一旁的僻"
                      "靜處，輕聲在$N" HIY "耳邊低聲嘀咕了半天，不"
-                     "時還伸指捏作劍訣，比劃演示劍招，所示全為辟塵"
+                     "時還伸指捏作劍訣，比劃演示劍招，所示全為闢塵"
                      "劍法絕招的精微要詣，$N" HIY "聽後大有所悟。"
                      "\n\n" NOR, me, this_object());
 
@@ -207,7 +207,7 @@ mixed ask_skill2()
         if( query("family/master_id", me) != "madayuan"
             && query("family/master_id", me) != "hongqigong"
             && query("family/beggarlvl", me)<7 )
-                return "我什麼時候說過要教你？";
+                return "我什麼時候説過要教你？";
 
         if (me->query_skill("guanri-jian", 1) < 1)
                 return "你學過觀日劍法嗎？不學哪來絕招。";
@@ -221,10 +221,10 @@ mixed ask_skill2()
         if( query("max_neili", me)<2000 )
                 return "你內力修為不夠，學不了這一招。";
 
-        message_sort(HIY "\n$n" HIY "一聲長嘆，搖頭道：“也罷，也"
-                     "罷，你過來。”說完便將$N" HIY "招到一旁的僻"
+        message_sort(HIY "\n$n" HIY "一聲長歎，搖頭道：“也罷，也"
+                     "罷，你過來。”説完便將$N" HIY "招到一旁的僻"
                      "靜處，輕聲在$N" HIY "耳邊低聲嘀咕了半天，不"
-                     "時還伸指捏作劍訣，比劃演示劍招，所示全為辟塵"
+                     "時還伸指捏作劍訣，比劃演示劍招，所示全為闢塵"
                      "劍法絕招的精微要詣，$N" HIY "聽後大有所悟。"
                      "\n\n" NOR, me, this_object());
 

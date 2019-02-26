@@ -47,7 +47,7 @@ void create()
 
         set("chat_chance", 2);
         set("chat_msg", ({
-                 "賈布嘆道: “攘外必先安內，堂中令牌被盜若是被教主知道，我命休矣。”\n"
+                 "賈布歎道: “攘外必先安內，堂中令牌被盜若是被教主知道，我命休矣。”\n"
         }) );
         setup();
         carry_object("/d/heimuya/npc/obj/dadao")->wield();

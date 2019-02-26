@@ -11,7 +11,7 @@ void create()
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("long", "一顆香甜的哈密瓜。不吃哈密瓜等于白來西域。\n");
+                set("long", "一顆香甜的哈密瓜。不吃哈密瓜等於白來西域。\n");
                 set("unit", "顆");
                 set("value", 40);
                 set("food_remaining", 1);

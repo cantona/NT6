@@ -13,8 +13,8 @@ void create()
                 set_default_object(__FILE__);
         else {
                 set("unit", "件");
-                set("long", HIR "此乃傳說中唐僧所穿戴的錦鑭袈裟，只見金光閃耀，令人睜不開眼，猶如佛光普照般祥和。\n"
-                            HIC "仔細看去，袈裟上隱約出現幾個大字：" HIG "不墜地獄，不入輪回\n" NOR);
+                set("long", HIR "此乃傳説中唐僧所穿戴的錦鑭袈裟，只見金光閃耀，令人睜不開眼，猶如佛光普照般祥和。\n"
+                            HIC "仔細看去，袈裟上隱約出現幾個大字：" HIG "不墜地獄，不入輪迴\n" NOR);
                 set("value", 800000);
                 set("armor_prop/armor", 800);
                 set("armor_prop/str", 7);

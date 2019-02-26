@@ -9,7 +9,7 @@ int perform(object me,object target)
         int my_skill, my_force, tg_age, skill_count, duli;
 
         if( query("no_fight", environment(me)) )
-                return notify_fail("這裡太嘈雜，你不能靜下心來修煉。\n");
+                return notify_fail("這裏太嘈雜，你不能靜下心來修煉。\n");
 
         if( !objectp(target)
          || query("host_id", target) != query("id", me) )
@@ -32,10 +32,10 @@ int perform(object me,object target)
                 return notify_fail("戰鬥中無法修煉千蛛萬毒手！\n");
 
         if( me->is_busy() )
-                return notify_fail("你正忙著呢！\n");
+                return notify_fail("你正忙着呢！\n");
 
         if( target->is_fighting() || target->is_busy() )
-                return notify_fail("毒蟲正忙著呢，不能和你配合！\n");
+                return notify_fail("毒蟲正忙着呢，不能和你配合！\n");
 
         if( query_temp("wudu_suck", me) )
                 return notify_fail("你正在修煉中！\n");
@@ -44,16 +44,16 @@ int perform(object me,object target)
                 return notify_fail("你的實戰經驗不夠，無法繼續修煉千蛛萬毒手！\n");
 
         if( my_skill < 130 && tg_age > 99 )
-                return notify_fail(query("name", target)+"的毒力對你來說太強了，小心把小命送了！\n");
+                return notify_fail(query("name", target)+"的毒力對你來説太強了，小心把小命送了！\n");
 
         if( my_skill < 160 && tg_age > 999 )
-                return notify_fail(query("name", target)+"的毒力對你來說太強了，小心把小命送了！\n");
+                return notify_fail(query("name", target)+"的毒力對你來説太強了，小心把小命送了！\n");
 
         if( my_skill > 140 && my_skill < 170 && tg_age < 999 )
-                return notify_fail(query("name", target)+"的毒力對你來說已經太輕微了！\n");
+                return notify_fail(query("name", target)+"的毒力對你來説已經太輕微了！\n");
 
         if( my_skill > 200 && tg_age < 9999 )
-                return notify_fail(query("name", target)+"的毒力對你來說已經太輕微了！\n");
+                return notify_fail(query("name", target)+"的毒力對你來説已經太輕微了！\n");
 
         if( query("neili", me)<200 )
                 return notify_fail("你的內力不夠，不足以對抗毒氣，別把小命送掉。\n");
@@ -67,9 +67,9 @@ int perform(object me,object target)
 
         tell_object(me,RED"你小心翼翼的將手伸到"+query("name", target)+
                         RED "的面前，它張嘴就咬住了你的中指。你深吸一口\n氣，"
-                        "面上頓時罩著一股黑氣，豆大的汗珠從額頭滾了下來。你只"
+                        "面上頓時罩着一股黑氣，豆大的汗珠從額頭滾了下來。你只"
                         "覺得"+query("name", target)+RED"的\n毒素自傷處"
-                        "源源不絕地流了進來，隨真氣遍布全身。\n\n" NOR );
+                        "源源不絕地流了進來，隨真氣遍佈全身。\n\n" NOR );
 
         target->receive_wound("qi", 5);
 
@@ -125,7 +125,7 @@ int perform(object me,object target)
                 if( query_temp("apply/defense", target)>300 )
                             set_temp("apply/defense", 300, target);
                 else
-                    tell_object(me,HIC+query("name", target)+NOR+HIC"的防御力提高到"+
+                    tell_object(me,HIC+query("name", target)+NOR+HIC"的防禦力提高到"+
                         chinese_number(query_temp("apply/defense", target))+"點。\n"NOR);
                break;
 

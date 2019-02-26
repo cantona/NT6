@@ -14,7 +14,7 @@ LONG );
         set("outdoors", "quanzhou");
         set("no_clean_up", 0);
         set("item_desc", ([
-                "stone" :"只見窄石聳立在崖上，任狂風暴哮始終不倒，你不禁感嘆造物之奇。\n",
+                "stone" :"只見窄石聳立在崖上，任狂風暴哮始終不倒，你不禁感歎造物之奇。\n",
         ]));
         set("exits", ([
                 "eastdown"  : __DIR__"shanlu2",

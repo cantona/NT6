@@ -133,7 +133,7 @@ int open_baoxiang(object me,object this)
                 if(rand >= totalRate && rand < totalRate+list[keys[i]]) {
                         ob = new(keys[i]);
                         if(ob && ob->move(me)) {
-                                str = "打開了一個"+this->name()+"，從裡邊得到了"+ob->name()+"("+query("id",ob)+")。\n";
+                                str = "打開了一個"+this->name()+"，從裏邊得到了"+ob->name()+"("+query("id",ob)+")。\n";
                                 tell_room(environment(me),me->name()+str,({me}));
                                 tell_object(me,"你"+str);
                                 return 1;

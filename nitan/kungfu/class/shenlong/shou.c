@@ -12,8 +12,8 @@ void create()
         set_name("瘦頭陀", ({ "shou toutuo", "shou" ,"toutuo"}));
         set("title", HIY"神龍教"NOR"右護法");
         set("nickname",HIR "遼東瘦尊者" NOR);
-        set("long", "這頭陀身材奇矮，而且胖得出奇，整個人就活脫脫是一個大冬瓜。\n"
-                    "光溜溜的腦袋上瞪著一對銅鈴大眼，樣子非常滑稽。\n" );
+        set("long", "這頭陀身材奇矮，而且胖得出奇，整個人就活脱脱是一個大冬瓜。\n"
+                    "光溜溜的腦袋上瞪着一對銅鈴大眼，樣子非常滑稽。\n" );
         set("gender", "男性");
         set("age", 44);
 

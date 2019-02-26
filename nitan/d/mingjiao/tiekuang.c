@@ -12,7 +12,7 @@ void create()
 {
         set("short",HIR "鐵礦" NOR);
         set("long", @LONG
-[1；37m這裡是一個光禿禿的小山丘，四周什麼花草樹木也沒有。仔細一
+[1；37m這裏是一個光禿禿的小山丘，四周什麼花草樹木也沒有。仔細一
 看，發現山丘周圍有些黑黝黝的大石頭，這就是光明頂盛產的烏金鐵
 礦石。明教教眾用的兵器都是用這種礦石鑄造而成，比之尋常精鐵鑄
 造的兵器更為堅固，鋒利。[2；37；0m
@@ -36,7 +36,7 @@ void init()
 
 int do_save(string arg)
 {
-        write("這裡並非一般地方,不能在這裡紀錄。\n");
+        write("這裏並非一般地方,不能在這裏紀錄。\n");
         return 1;
 }
 
@@ -47,10 +47,10 @@ int do_wa(string arg)
         me = this_player();
 
         if( me->is_busy() || query_temp("pending/job_busy", me) )
-                return notify_fail("你正忙著呢。\n");
+                return notify_fail("你正忙着呢。\n");
 
         if( query("mingjiao/job", me) != "jin_caikuang")
-                return notify_fail("這裡不能隨便亂挖！\n");
+                return notify_fail("這裏不能隨便亂挖！\n");
 
         if( present("wujin kuangshi", me) )
                 return notify_fail("你已經有一塊礦石，實在抱不動第二塊了。\n");
@@ -112,7 +112,7 @@ int valid_leave(object me, string dir)
         object ob;
 
         if (dir == "northeast" && query_temp("job_busy", me) )
-               return notify_fail("你正忙著挖礦呢！\n");
+               return notify_fail("你正忙着挖礦呢！\n");
 
         return ::valid_leave(me, dir);
 }

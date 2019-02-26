@@ -13,7 +13,7 @@ void create()
                 set_default_object(__FILE__);
         else {
                 set("unit", "個");
-                set("long", "這是一個小廟裡常見的慈善箱，專門用來接受善男信女們的捐款。\n");
+                set("long", "這是一個小廟裏常見的慈善箱，專門用來接受善男信女們的捐款。\n");
                 set("value", 1000);
                 set("material", "wood");
                 set("no_get",1);
@@ -36,7 +36,7 @@ void init()
                 ob=new("/clone/money/silver");
                 ob->set_amount(10);
                 ob->move(this_object());
-                tell_object(me, "\n你忽然看到慈善箱裡有什麼東西在閃閃發光！\n\n");
+                tell_object(me, "\n你忽然看到慈善箱裏有什麼東西在閃閃發光！\n\n");
                 addn("combat_exp", 1, me);
         }
         add_action("do_put", "put");
@@ -50,7 +50,7 @@ int do_put(string arg)
 
         me = this_player();
 
-        if(!arg) return notify_fail("你要將什麼東西放進哪裡？\n");
+        if(!arg) return notify_fail("你要將什麼東西放進哪裏？\n");
 
         if( sscanf(arg, "%s in %s", item, target)!=2 
         ||  sscanf(item, "%d %s", amount, item)!=2

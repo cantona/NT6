@@ -36,7 +36,7 @@ int perform(object me, object target)
                 return notify_fail("你現在真氣不夠，難以施展" REN "。\n");
 
         if (! living(target))
-                return notify_fail("對方都已經這樣了，用不著這麼費力吧？\n");
+                return notify_fail("對方都已經這樣了，用不着這麼費力吧？\n");
 
         msg = HIW "$N" HIW "手中長劍劍芒躍動，劍光暴長，劍尖顫動似乎分左右刺向$n"
               HIW "，$n" HIW "看到劍\n光偏左，疾側身右轉，但只這一剎，劍光剎時襲"
@@ -59,7 +59,7 @@ int perform(object me, object target)
         {
                 me->start_busy(3);
                 msg += CYN "可是$p" CYN "輕輕一笑，側身右轉，躲開了$P"
-                       CYN "左轉的劍式，毫發未傷。\n" NOR;
+                       CYN "左轉的劍式，毫髮未傷。\n" NOR;
         }
         message_combatd(msg, me, target);
         return 1;

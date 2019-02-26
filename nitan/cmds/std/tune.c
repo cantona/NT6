@@ -39,7 +39,7 @@ int main(object me, string arg)
 
                 names = CHANNEL_D->query_channel_users(arg, 1)->query_id(1);
                 names = sort_array(names, 1);
-                tell(me, "其余 " + sizeof(names) + " 人如下：\n");
+                tell(me, "其餘 " + sizeof(names) + " 人如下：\n");
                 tell(me, sprintf("%-=80s", implode(names, ", ")) + ".\n");
                 return 1;
         }

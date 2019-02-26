@@ -17,7 +17,7 @@ int perform(object me)
         if (jing_cost < 5) jing_cost = 5;
 
         if( query("no_fight", environment(me)) && query("doing", me) != "scheme" )
-                return notify_fail("這裡太嘈雜，你不能靜下心來演練。\n");
+                return notify_fail("這裏太嘈雜，你不能靜下心來演練。\n");
 
         if (me->is_fighting())
                 return notify_fail("「總訣式」不能在戰鬥中演練。\n");

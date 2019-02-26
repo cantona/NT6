@@ -26,7 +26,7 @@ void create()
                 set_default_object(__FILE__);
         else {
                 set("unit", "個");
-                set("long", WHT "這是一個灰布包裹，裡面脹鼓鼓的，不知裝"
+                set("long", WHT "這是一個灰布包裹，裏面脹鼓鼓的，不知裝"
                             "了些什麼。\n" NOR);
                 set("no_sell", 1);
                 set("value", 500);
@@ -55,15 +55,15 @@ int do_open(string arg)
 
         if (query("gift_count") < 1)
         {
-                write("包裹裡面什麼也沒有了。\n");
+                write("包裹裏面什麼也沒有了。\n");
                 return 1;
         }
 
         me = this_player();
-        message_vision(WHT "\n$N" WHT "拆開包裹，發現裡面留有張"
-                       "字條，寫著「" HIR "師門急事，請火速趕回"
-                       NOR + WHT "」。\n除此之外字條下好象還壓"
-                       "著什麼東西，被裹得很嚴密，$N" WHT "見狀"
+        message_vision(WHT "\n$N" WHT "拆開包裹，發現裏面留有張"
+                       "字條，寫着「" HIR "師門急事，請火速趕回"
+                       NOR + WHT "」。\n除此之外字條下好像還壓"
+                       "着什麼東西，被裹得很嚴密，$N" WHT "見狀"
                        "連忙取出。\n" NOR, me);
 
         if (random(5) <= 3)
@@ -84,7 +84,7 @@ int do_open(string arg)
 
         gift->move(me, 1);
         addn("gift_count", -1);
-        set("long", WHT "這是一個灰布包裹，裡面的東西已經被取出來了。\n" NOR);
+        set("long", WHT "這是一個灰布包裹，裏面的東西已經被取出來了。\n" NOR);
         set("value", 0);
         return 1;
 }

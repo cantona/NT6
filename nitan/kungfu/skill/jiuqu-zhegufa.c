@@ -6,7 +6,7 @@
 inherit SKILL;
 
 mapping *action = ({
-([      "action": "$N一聲冷哼，以掌化爪，五指如鉤，直逼$n的膻中要穴",
+([      "action": "$N一聲冷哼，以掌化爪，五指如鈎，直逼$n的膻中要穴",
         "force" : 130,
         "attack": 65,
         "dodge" : 5,
@@ -69,7 +69,7 @@ mapping *action = ({
         "lvl" : 180,
         "damage_type" : "內傷"
 ]),
-([      "action": "$N岳立霆峙，在一陣暴雷聲中，雙手同時拍向$n的全身各處",
+([      "action": "$N嶽立霆峙，在一陣暴雷聲中，雙手同時拍向$n的全身各處",
         "force" : 380,
         "attack": 127,
         "dodge" : 50,
@@ -155,7 +155,7 @@ mixed hit_ob(object me, object victim, int damage_bonus)
 
                 victim->receive_wound("qi", (damage_bonus - 200) / 2);
                 return HIR "$n" HIR "稍一遲疑，只見$N" HIR "手正搭在自己" + limb +
-                       "上，只聽「□嚓」一聲脆響，此處骨骼頓時應聲而碎！\n" NOR;
+                       "上，只聽「咔嚓」一聲脆響，此處骨骼頓時應聲而碎！\n" NOR;
         }
 }
 

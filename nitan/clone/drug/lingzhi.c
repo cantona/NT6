@@ -41,7 +41,7 @@ int cure_ob(object me)
         set("qi",query("max_qi",  me), me);
         set("neili",query("max_neili",  me), me);
         
-        message_vision(HIG "$N吃下一枚靈芝，只覺得精神健旺，氣血充盈，體內真力源源滋生，甚至不再感到饑餓幹渴! \n" NOR, me);
+        message_vision(HIG "$N吃下一枚靈芝，只覺得精神健旺，氣血充盈，體內真力源源滋生，甚至不再感到飢餓乾渴! \n" NOR, me);
 
         me->apply_condition("cool_drug", 30);
         destruct(this_object());

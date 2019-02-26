@@ -19,7 +19,7 @@ mapping *action = ({
         "lvl"    : 16,
         "skill_name" : "天設牢籠",
 ]),
-([        "action" : "$N一招"HIG"「閉門鐵扇」"NOR"，$w緩緩的斜著向$n推去 ",
+([        "action" : "$N一招"HIG"「閉門鐵扇」"NOR"，$w緩緩的斜着向$n推去 ",
         "lvl"    : 24,
         "skill_name" : "閉門鐵扇",
 ]),
@@ -201,7 +201,7 @@ int help(object me)
         write(HIC"\n胡家刀法："NOR"\n");
         write(@HELP
 
-    胡家刀法為胡家始祖飛天狐貍所創。胡斐據家傳刀譜練成後與
+    胡家刀法為胡家始祖飛天狐狸所創。胡斐據家傳刀譜練成後與
 金面佛苗人鳳的苗家劍齊名天下。
 
         學習要求：

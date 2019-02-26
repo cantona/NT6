@@ -40,17 +40,17 @@ mapping *action = ({
 ]),
 });
 string  *msg = ({
-        CYN"空中那五只$w"CYN"對擊，聲若龍吟，悠悠不絕，就在$n"CYN"一呆之際，$w"CYN"飛砸了出去！"NOR,
-        MAG"嗚嗚聲響中，$w"MAG"旋轉飛舞著撞向$n"MAG"，在$p"MAG"便要擋隔時，卻繞過$n"MAG"飛到了身後"NOR,
+        CYN"空中那五隻$w"CYN"對擊，聲若龍吟，悠悠不絕，就在$n"CYN"一呆之際，$w"CYN"飛砸了出去！"NOR,
+        MAG"嗚嗚聲響中，$w"MAG"旋轉飛舞着撞向$n"MAG"，在$p"MAG"便要擋隔時，卻繞過$n"MAG"飛到了身後"NOR,
         MAG"$w"MAG"連續擲出，連續飛回，繞著$n"MAG"兜個圈子，忽高忽低，或正或斜，所發聲音也是有輕有響，旁觀眾人均給擾得眼花撩亂，心神不定"NOR,
-        YEL"一聲「小心了！」，驀然間$w"YEL"五體歸一，並排向$n"YEL"撞去，勢若五牛沖陣，威不可擋"NOR,
+        YEL"一聲「小心了！」，驀然間$w"YEL"五體歸一，並排向$n"YEL"撞去，勢若五牛衝陣，威不可擋"NOR,
         HIB"只見$w"HIB"繞著$n"HIB"，上下翻飛，$w"HIB"跳躍靈動，嗚嗚響聲不絕，掀的陣陣狂風有如刀割，似要把$n"HIB"從中劈開"NOR,
-        HIR"突然，狂風亂起，激盪中那$w"HIR"相碰相撞，五輪歸一，合並了向$n砸去"NOR,
-        HIG"法輪在$n"HIG"身前環饒，猛地向$p"HIG"迎頭擊下，接著又飛來一輪，一抄一送，嗚嗚聲響，兜向$n"HIG"$l"NOR,
-        HIW"呼呼飛嘯聲中，那五只$w"HIW"或直飛、或斜飛、或回旋、或下墜、或上升，霎時間$n"HIW"的全部退路已被封死"NOR,
-        HIC"猛地裡$w"HIC"向$n"HIC"$l飛砸下，在$p"HIC"沉肩卸避之時，$w"HIC"又突然上飛擊出，砸向$p"HIC"的$l"NOR,
+        HIR"突然，狂風亂起，激盪中那$w"HIR"相碰相撞，五輪歸一，合併了向$n砸去"NOR,
+        HIG"法輪在$n"HIG"身前環饒，猛地向$p"HIG"迎頭擊下，接着又飛來一輪，一抄一送，嗚嗚聲響，兜向$n"HIG"$l"NOR,
+        HIW"呼呼飛嘯聲中，那五隻$w"HIW"或直飛、或斜飛、或迴旋、或下墜、或上升，霎時間$n"HIW"的全部退路已被封死"NOR,
+        HIC"猛地裏$w"HIC"向$n"HIC"$l飛砸下，在$p"HIC"沉肩卸避之時，$w"HIC"又突然上飛擊出，砸向$p"HIC"的$l"NOR,
         HIM"那$w"HIM"飛旋砸到，$n"HIM"卻並不回頭，聽風辨器，一一擋開，但$w"HIM"便如長上了眼睛一般，竟然又旋飛到了$n"HIM"$l"NOR,
-        HIG"隨著森森懾人的厲吼，$w"HIG"錘驀而急顫晃動，輪身嗡嗡震響，在不及眨眼的瞬息間，耀目的電光金蛇四射迸閃，飛掠周遭，迅捷無匹的擊$n！"NOR,
+        HIG"隨着森森懾人的厲吼，$w"HIG"錘驀而急顫晃動，輪身嗡嗡震響，在不及眨眼的瞬息間，耀目的電光金蛇四射迸閃，飛掠周遭，迅捷無匹的擊$n！"NOR,
         MAG"法輪再次合圍，紫電精芒圍著$n"MAG"的四周旋舞閃射，千百輪影幻映出一幅美麗而眩目的圖案，這圖案美極了，似是一片多角形的紫色雪晶體"NOR,
 });
 int valid_enable(string usage) { return usage == "hammer" || usage == "parry"; }
@@ -115,9 +115,9 @@ mixed hit_ob(object me, object victim, int damage_bonus)
                                 piece = new("/clone/misc/piece");
                                 piece->set_name(query("name", victim_w)+"的碎片",({query("id", victim_w),"piece"}));
                                 piece->move(environment(victim));
-                                set("long", "一堆破碎物事，好象是兵器碎片。\n", piece);
+                                set("long", "一堆破碎物事，好像是兵器碎片。\n", piece);
                                 destruct(victim_w);
-                                return HIB "你聽到「叮當」一聲兵刃破碎的聲音，兵器碎片濺了一地！\n" NOR;
+                                return HIB "你聽到「叮噹」一聲兵刃破碎的聲音，兵器碎片濺了一地！\n" NOR;
                         }
                         else return HIR"可惜你沒用法輪，沒法砸碎對方兵器！\n"NOR;
                 }
@@ -153,19 +153,19 @@ mixed hit_ob(object me, object victim, int damage_bonus)
                 {
                         addn("neili", -50, me);
                         message_combatd(HIG+query("name", me)+"運勁回拉，$N被帶得踉蹌幾步，但覺虎口劇痛，"+
-                                        weapon1->name()+HIG"脫手飛出！\n"NOR, victim);
+                                        weapon1->name()+HIG"脱手飛出！\n"NOR, victim);
                         weapon1->unequip();
                         weapon1->move(environment(victim));
                 } else
                 if( query_temp("shield", victim) )
                 {
                         addn("neili", -50, me);
-                        message_combatd(HIY"$N借勢前沖，"+weapon1->name()+HIY"直刺過去，但被"+
-                                        query("name", victim)+"護體真氣盪得滑了開去。\n"NOR,victim);
+                        message_combatd(HIY"$N借勢前衝，"+weapon1->name()+HIY"直刺過去，但被"+
+                                        query("name", victim)+"護體真氣蕩得滑了開去。\n"NOR,victim);
                 }
 
-                else message_combatd(HIY"$N借勢前沖，"+weapon->name()+HIY"直刺"+query("name", victim)+"，"+
-                                        query("name", victim)+"變招奇快，"+weapon->name()+HIY"一抖鬆脫，縱身退了開去。\n"NOR,
+                else message_combatd(HIY"$N借勢前衝，"+weapon->name()+HIY"直刺"+query("name", victim)+"，"+
+                                        query("name", victim)+"變招奇快，"+weapon->name()+HIY"一抖鬆脱，縱身退了開去。\n"NOR,
                                         victim);
         }
 }

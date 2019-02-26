@@ -18,7 +18,7 @@ void create()
         
         set("no_get", 1);
 
-        // 襄陽士兵標志
+        // 襄陽士兵標誌
         set("xybing", 1);
 
         set_temp("apply/armor", 1000);
@@ -129,7 +129,7 @@ void random_move()
                 return;
         }
 
-        // 檢查襄陽保衛戰是否結束
+        // 檢查襄陽保衞戰是否結束
         if (XYWAR_D->dest_status() == 1)
         {
                 set_temp("dest_now", 1);

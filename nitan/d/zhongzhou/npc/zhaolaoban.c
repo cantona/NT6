@@ -4,7 +4,7 @@ inherit F_DEALER;
 void create()
 {
         set_name("趙德言", ({ "zhao deyan", "zhao", "deyan" }));
-        set("title", "雜貨舖老板");
+        set("title", "雜貨鋪老闆");
         set("shen_type", 1);
 
         set("gender", "男性");

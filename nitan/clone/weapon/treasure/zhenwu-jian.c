@@ -14,7 +14,7 @@ void create()
                 set_default_object(__FILE__);
         else {
                 set("unit", "柄");
-                set("long","此劍劍鞘銅綠斑斕，以銅絲嵌著兩個篆文：“真武”。\n乃是創派之祖張三豐所用佩劍，向來是武當派鎮山之寶。\n");
+                set("long","此劍劍鞘銅綠斑斕，以銅絲嵌着兩個篆文：“真武”。\n乃是創派之祖張三丰所用佩劍，向來是武當派鎮山之寶。\n");
                 set("value", 10000);
                 set("material", "steel");
                 set("weapon_prop/per", 8);

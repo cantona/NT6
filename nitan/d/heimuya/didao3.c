@@ -3,9 +3,9 @@ inherit ROOM;
 
 void create()
 {
-  set("short","秘道");
+  set("short","祕道");
         set("long", @LONG
-走在裡面，你不覺想到這似乎在每個角落都藏著無限殺機，你感
+走在裏面，你不覺想到這似乎在每個角落都藏着無限殺機，你感
 到近了近了，越來越近了。
 LONG );
 

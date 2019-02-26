@@ -123,7 +123,7 @@ int move_liquid (object target)
                         // how much can if be filled
                         remain = target->query_max_liquid() - liquid->query_amount();
                         if (remain < 1)
-                        return notify_fail("已經滿了，沒法往裡倒了。\n");
+                        return notify_fail("已經滿了，沒法往裏倒了。\n");
                         // if more than it can be filled
                         if( obj->query_amount() > remain) {
                                 obj->add_amount(-remain);

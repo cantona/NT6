@@ -82,7 +82,7 @@ void attempt_apprentice(object ob)
                 return;
         }
 
-        command("say 既然如此，那你以後就跟著我吧。");
+        command("say 既然如此，那你以後就跟着我吧。");
         command("recruit "+query("id", ob));
 }
 

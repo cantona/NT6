@@ -21,7 +21,7 @@ void create()
         set("gender", "男性");
         set("age", 46);
         set("long", "他就是鼎鼎大名的" + bunch_good["bunch_name"] + "的主管。\n");
-        set("nickname",HIY"袖裡乾坤"NOR);
+        set("nickname",HIY"袖裏乾坤"NOR);
         set("title","紫衫會主管");
         set("per",28);
         set("combat_exp", 1000000);

@@ -14,7 +14,7 @@ void create()
         else {
                 set("unit", "個");
                 set("super_mask", 1);
-                set("long", "這似乎是一個由人皮制成的面具。\n");
+                set("long", "這似乎是一個由人皮製成的面具。\n");
                 set("value", 10000);
         }
         set("auto_load", 1);
@@ -51,7 +51,7 @@ int do_pretend(string arg)
         }
 
         if (me->query_skill("pretending", 1) < 100)
-                return notify_fail("你拿著面具摸來摸去，就是不會使用。\n");
+                return notify_fail("你拿着面具摸來摸去，就是不會使用。\n");
 
         if( query("age", me) >= 60 && 
             !query("special_skill/youth", me) )
@@ -61,7 +61,7 @@ int do_pretend(string arg)
                 return notify_fail("通緝犯無法戴面具。\n");
 
         if( sscanf(base_name(environment(me)), "/maze/battle%*s") )
-                return notify_fail("戰場裡無法戴面具。\n");
+                return notify_fail("戰場裏無法戴面具。\n");
 
         if (! objectp(who = present(arg, environment(me))) || 
             ! living(who))
@@ -74,8 +74,8 @@ int do_pretend(string arg)
                 return notify_fail("假扮" + who->name() + "？好像太難了點。\n");
 
         // 因為呼叫short()有時候會表述對方的狀態，所以不直接
-        // 拷貝who->short()，而是直接看復制對方的應用short()，
-        // 如果沒有就復制對方的真實short()。
+        // 拷貝who->short()，而是直接看複製對方的應用short()，
+        // 如果沒有就複製對方的真實short()。
         if( sizeof(mask=query_temp("apply/short", who)) )
                 pshort = mask[sizeof(mask) - 1];
         else

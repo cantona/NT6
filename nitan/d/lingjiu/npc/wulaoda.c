@@ -10,7 +10,7 @@ void create()
         set_name("烏老大", ({ "wu laoda", "wu"}));
         set("long",@LONG
 他就是名動江湖的烏老大，
-由于謀反童姥未遂而被囚禁于此。
+由於謀反童姥未遂而被囚禁於此。
 LONG        
            );
         set("gender", "男性");
@@ -61,5 +61,5 @@ string ask_me()
         addn("wan_count", -1);
         ob = new("/d/lingjiu/npc/obj/baiyunwan");
         ob->move(this_player());
-        return "唉，看在你舍身救我的份上，這顆白雲熊膽丸就給你吧。";
+        return "唉，看在你捨身救我的份上，這顆白雲熊膽丸就給你吧。";
 }

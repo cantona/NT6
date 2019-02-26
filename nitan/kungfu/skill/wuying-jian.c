@@ -51,7 +51,7 @@ mapping *action = ({
         "skill_name" : "風行葉落", 
         "damage_type" : "刺傷"
 ]),
-([      "action" : "$N使出「聲東擊西」，手中$w如刮起狂風一般閃爍不定，刺向$n",
+([      "action" : "$N使出「聲東擊西」，手中$w如颳起狂風一般閃爍不定，刺向$n",
         "force" : 200,
         "dodge" : 80,
         "damage" : 140,
@@ -59,7 +59,7 @@ mapping *action = ({
         "skill_name" : "聲東擊西",
         "damage_type" : "刺傷"
 ]),
-([      "action" : "$N隨手使出劍法之奧義「無影無蹤」，手中$w如鬼魅一般舖天蓋地的刺向$n",
+([      "action" : "$N隨手使出劍法之奧義「無影無蹤」，手中$w如鬼魅一般鋪天蓋地的刺向$n",
         "force" : 300,
         "dodge" : 90,
         "damage" : 250,

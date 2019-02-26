@@ -16,7 +16,7 @@ void create()
 一股秋菊似的幽香突然襲來，原來朵朵鮮花挺立在這寒風中，給冰雪
 世界增添了春色，這就是被叫作 "高山玫瑰" 的雪蓮。雪蓮單單生長
 在這氣候嚴寒、土質貧瘠的冰山雪嶺上，每年盛夏開花，一直開到深
-秋，不畏冰雪，即使在雪花紛飛中，依然吐苞放瓣，敢於同雪花爭艷，
+秋，不畏冰雪，即使在雪花紛飛中，依然吐苞放瓣，敢於同雪花爭豔，
 最終與莖同枯而不落。
 LONG );
         set("exits", ([
@@ -53,8 +53,8 @@ int valid_leave(object me, string dir)
                 me->receive_wound("qi",  100);
                 message_vision(HIR"$N一不小心腳下一滑，... 啊...！\n"NOR, me);
                 me->move("/d/xingxiu/tianchi");
-                tell_object(me, HIR"你從峰頂梭地一下滑了下來，只覺得渾身無處不疼，還受了幾處傷。\n"NOR);
-                message("vision",HIR"只見"+query("name", me)+"梭地一下從峰頂上直滑下來，差點兒掉進天池。\n"NOR,environment(me),me);
+                tell_object(me, HIR"你從峯頂梭地一下滑了下來，只覺得渾身無處不疼，還受了幾處傷。\n"NOR);
+                message("vision",HIR"只見"+query("name", me)+"梭地一下從峯頂上直滑下來，差點兒掉進天池。\n"NOR,environment(me),me);
                 if ( j > 0 )
                         for (i=0; i < sizeof(inv); i++) 
                         {

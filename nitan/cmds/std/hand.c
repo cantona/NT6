@@ -34,7 +34,7 @@ int main(object me, string arg)
         if( objectp(old=query_temp("handing", me)) )
         {
                 if (old == ob)
-                        return notify_fail("你不是正拿著它嗎？\n");
+                        return notify_fail("你不是正拿着它嗎？\n");
 
                 if( !stringp(str=query("unhand_msg", old)) )
                         str = "$N收回手中的$n。\n";
@@ -53,19 +53,19 @@ int main(object me, string arg)
              query_temp("armor/finger", me)) )
         {
                 // none of two hand is free
-                return notify_fail("你雙手都拿著武器，沒有辦法"
-                                   "再拿著" + ob->name() + "了。\n");
+                return notify_fail("你雙手都拿着武器，沒有辦法"
+                                   "再拿着" + ob->name() + "了。\n");
         }
 
         if( query_temp("armor/hands", me) && 
             query_temp("armor/finger", me) )
         {
                 // none of two hand is free
-                return notify_fail("你雙手都戴著武器，沒有辦法"
-                                   "再拿著" + ob->name() + "了。\n");
+                return notify_fail("你雙手都戴着武器，沒有辦法"
+                                   "再拿着" + ob->name() + "了。\n");
         }
         if( query("equipped", ob) )
-                return notify_fail("你正裝備著它呢！\n");
+                return notify_fail("你正裝備着它呢！\n");
 
         set_temp("handing", ob, me);
         if( !stringp(str=query("hand_msg", ob)) )

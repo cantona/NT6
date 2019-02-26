@@ -11,7 +11,7 @@ void create()
 {
         set_name("丁典", ({ "ding dian", "ding" }));
         set("long",
-                "這人滿臉虯髯，頭發長長的直垂至頸，衣衫破爛不堪，簡直如同荒山中的野人。\n");
+                "這人滿臉虯髯，頭髮長長的直垂至頸，衣衫破爛不堪，簡直如同荒山中的野人。\n");
         set("gender", "男性");
         set("age", 35);
 
@@ -35,13 +35,13 @@ void create()
         set("shen_type", 1);
         set("chat_chance", 10);
         set("chat_msg", ({
-                "丁典輕輕嘆了一口氣。那嘆息中，竟有憂傷、溫柔之意。\n",
-                "丁典嘴角掛著一絲微笑，痴望遠處高樓紗窗上那一盆鮮花。\n",
+                "丁典輕輕歎了一口氣。那歎息中，竟有憂傷、温柔之意。\n",
+                "丁典嘴角掛着一絲微笑，痴望遠處高樓紗窗上那一盆鮮花。\n",
                 "丁典大聲道：怎麼會忘記？決不會的！難道……難道是生了病？\n",
                 "丁典喃喃道：就算是生了病，也會叫人來換花啊！\n",
         }) );
         set("inquiry", ([
-                "凌霜華" : "“唉……”，然後指了指牢外那座小樓的窗口，啥也不說了。\n",
+                "凌霜華" : "“唉……”，然後指了指牢外那座小樓的窗口，啥也不説了。\n",
                 "喚醒"   : (: ask_skill1 :),
                 "療精"   : (: ask_skill2 :),
         ]));
@@ -60,7 +60,7 @@ int accept_object(object me, object obj)
                         ({me}));
                 key = new("/clone/book/shenzhaojing");
                 if (!key){
-                        command("say 我已經托人把書帶給霜華了，不勞您大駕了。");
+                        command("say 我已經託人把書帶給霜華了，不勞您大駕了。");
                         return 0;
                 }
 
@@ -116,7 +116,7 @@ int ask_skill1()
         }
         command("sign");
         command("say 不知你學得神照經是福是禍了。也罷，隨你去吧。");
-        tell_object(who,HIC"丁典在你耳邊悄悄說了幾句運功的口訣，你急忙用心一一記下。\n"NOR);
+        tell_object(who,HIC"丁典在你耳邊悄悄説了幾句運功的口訣，你急忙用心一一記下。\n"NOR);
         tell_object(who,HIC "你學會了「喚醒」。\n" NOR);
         set("can_perform/shenzhaojing/wakeup", 1, who);
         return 1;
@@ -136,7 +136,7 @@ int ask_skill2()
         }
         command("sign");
         command("say 不知你學得神照經是福是禍了。也罷，隨你去吧。");
-        tell_object(who,HIC"丁典在你耳邊悄悄說了幾句運功的口訣，你急忙用心一一記下。\n"NOR);
+        tell_object(who,HIC"丁典在你耳邊悄悄説了幾句運功的口訣，你急忙用心一一記下。\n"NOR);
         tell_object(who,HIC "你學會了「療精」。\n" NOR);
         set("can_perform/shenzhaojing/jingheal", 1, who);
         return 1;

@@ -10,7 +10,7 @@ inherit ITEM;
 // 是否討論板？
 int is_board()  { return 1; }
 
-// create() 時調用，主要用于根據數據庫內保留的信息設置
+// create() 時調用，主要用於根據數據庫內保留的信息設置
 // 版面的長描述。
 void setup()
 {
@@ -189,7 +189,7 @@ void done_post(object me, string title, string text)
 
         if (i > 20 && strlen(text) / i < 10)
         {
-                tell_object(me, "你的文章中短句太多了，請調整一下以便他人閱讀。\n");
+                tell_object(me, "你的文章中短句太多了，請調整一下以便他人閲讀。\n");
                 return;
         }
 
@@ -198,7 +198,7 @@ void done_post(object me, string title, string text)
                 // scan all lines
                 if (strlen(lines[i]) > 300)
                 {
-                        tell_object(me, "你文章中有些行太長了，請分行以便他人閱讀。\n");
+                        tell_object(me, "你文章中有些行太長了，請分行以便他人閲讀。\n");
                         return;
                 }
         }
@@ -213,15 +213,15 @@ void done_post(object me, string title, string text)
         if (sscanf(title, "re last %d", num)) topic_id = BOARD_D->query_number_topic(ob, -num, mode);
         if (sscanf(title, "re %d", num)) topic_id = BOARD_D->query_number_topic(ob, (num - 1), mode);
 
-        // 回復舊主題？
+        // 回覆舊主題？
         if (topic_id)
         {
                 if (! BOARD_D->reply_topic(ob, topic_id,
                                            query("id", me), text,
                                            query_ip_number(me)))
-                        tell_object(me, "回復失敗，請向巫師查詢原因。\n");
+                        tell_object(me, "回覆失敗，請向巫師查詢原因。\n");
                 else
-                        tell_object(me, "回復完畢。\n");
+                        tell_object(me, "回覆完畢。\n");
                 return;
         }
 
@@ -249,11 +249,11 @@ int do_post(string arg, int n)
         if (wiz_level(me) < 1)
         {
                 if (query("mud_age", me) < 1800)
-                        return notify_fail("你必須在完成注冊三十分鐘以後才能使用討論版，這段"
-                                           "時間內請先閱讀他人的留言。\n");
+                        return notify_fail("你必須在完成註冊三十分鐘以後才能使用討論版，這段"
+                                           "時間內請先閲讀他人的留言。\n");
 
                 if (query("jing", me) < 50)
-                        return notify_fail("你現在精神不濟，休息一會兒再說吧。\n");
+                        return notify_fail("你現在精神不濟，休息一會兒再説吧。\n");
 
                 me->receive_damage("jing", 50);
         }
@@ -334,11 +334,11 @@ int do_read(string arg)
 
                 BOARD_D->add_topic_view(notes[num][TOPIC_ID], 1);
 
-                // 此貼是哪篇主題的回復？
+                // 此貼是哪篇主題的回覆？
                 if (sizeof(tinfo))
                         msg += sprintf("此貼是主題 " WHT "%s" NOR " (%d) 的%s。\nWeb 地址： " WHT "(%s)" NOR,
                                        tinfo[TOPIC_TITLE], BOARD_D->query_topic_number(ob, tinfo[TOPIC_ID]),
-                                       (tinfo[TOPIC_FIRST_ID] == notes[num][POST_ID] ? "首貼" : "回復"),
+                                       (tinfo[TOPIC_FIRST_ID] == notes[num][POST_ID] ? "首貼" : "回覆"),
                                        sprintf(TOPIC_URL, tinfo[TOPIC_ID]));
         } else
         {
@@ -359,7 +359,7 @@ int do_read(string arg)
 
                 BOARD_D->add_topic_view(notes[num][TOPIC_ID], 1);
 
-                // 是否有回復呢？
+                // 是否有回覆呢？
                 if (notes[num][TOPIC_REPLIES])
                 {
                         mode = query("env/reply_mode", me);
@@ -370,7 +370,7 @@ int do_read(string arg)
                                                                      notes[num][TOPIC_FIRST_ID]);
                                 switch (mode)
                                 {
-                                // 顯示最後一篇回復
+                                // 顯示最後一篇回覆
                                 case 1 :
                                         reply = replies[sizeof(replies) - 1];
                                         pinfo = BOARD_D->query_post_info(reply[POST_ID]);
@@ -385,7 +385,7 @@ int do_read(string arg)
                                                        BOARD_D->query_mud_name(reply[POSTER_ID]),
                                                        pinfo[POST_TEXT]);
                                         break;
-                                // 顯示所有回復
+                                // 顯示所有回覆
                                 // case 2 :
                                 default :
                                         foreach (reply in replies)
@@ -407,12 +407,12 @@ int do_read(string arg)
                                 msg += "─────────────────────────────"
                                        "────────\n";
                         }
-                        msg += "本主題共有 " WHT + notes[num][TOPIC_REPLIES] + NOR " 篇回復。\n";
+                        msg += "本主題共有 " WHT + notes[num][TOPIC_REPLIES] + NOR " 篇回覆。\n";
                 }
         }
         me->start_more(msg);
 
-        // 記錄上次閱讀到哪裡
+        // 記錄上次閲讀到哪裏
         if (! mapp(last_read_time))
                 set("board_last_read", ([myid:t]), me);
         else

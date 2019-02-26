@@ -13,7 +13,7 @@ void create()
 {
         set_name("定逸師太", ({ "dingyi shitai", "shitai", "dingyi" }) );
         set("long",
-        "她是恆山派的定逸師太，性格剛猛，為人正直，有巾幗不讓須眉之風。\n"
+        "她是恆山派的定逸師太，性格剛猛，為人正直，有巾幗不讓鬚眉之風。\n"
         "她眼中精光四射，絕無半點老態。\n");
         set("gender", "女性");
         set("class", "bonze");
@@ -28,7 +28,7 @@ void create()
                 "剃度"  : (: ask_for_join :),
                 "出家"  : (: ask_for_join :),
                 "join"  : (: ask_for_join :),
-                "秘籍"  : (: ask_me :),
+                "祕籍"  : (: ask_me :),
                 "手法精要" : (: ask_me :),
                 "還俗"  : "恆山弟子，不能還俗。",
         ]));
@@ -125,7 +125,7 @@ void attempt_apprentice(object ob)
         }
         if( query("shen", ob)<100000 )
         {
-                command( "say 你若能多為俠義之舉，當能承我衣砵。\n");
+                command( "say 你若能多為俠義之舉，當能承我衣缽。\n");
                 return;
         }
 
@@ -146,7 +146,7 @@ string ask_me()
                 return RANK_D->query_respect(this_player()) +
                 "與本派毫無瓜葛，我派的武功典籍可不能交給你。";
         if (query("book_count") < 1)
-                return "你來晚了，本派的秘籍不在此處。";
+                return "你來晚了，本派的祕籍不在此處。";
         addn("book_count", -1);
         ob = new("/clone/book/basic_hand_book");
         ob->move(this_player());

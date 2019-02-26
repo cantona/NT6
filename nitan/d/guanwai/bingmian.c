@@ -6,7 +6,7 @@ void create()
 {
         set("short", "冰面");
         set("long", @LONG
-這裡是鬆花江的江面，現已凍成了幾尺厚的堅冰。行人或馬匹，車輛均
+這裏是松花江的江面，現已凍成了幾尺厚的堅冰。行人或馬匹，車輛均
 可橫逾江面而絕無危險。冰面上留有厚厚的積雪，與兩岸連成一片，只有中
 間經常行走之出，露出一條青色的冰路。
 LONG );
@@ -35,7 +35,7 @@ int valid_leave(object me, string dir)
                 }
                 break;
         default:
-                set_temp("die_reason", "因為冰面開凍，掉到江裡面淹死了", me);
+                set_temp("die_reason", "因為冰面開凍，掉到江裏面淹死了", me);
                 me->die();
                 write("以後可要注意啦！\n");
                 return -1;

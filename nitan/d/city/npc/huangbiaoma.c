@@ -29,7 +29,7 @@ void create()
 
         set("chat_chance", 4);
         set("chat_msg", ({
-                HIY"黃驃馬"NOR"低下頭來，「奚奚嗦嗦」地嚼著幹草。\n",
+                HIY"黃驃馬"NOR"低下頭來，「奚奚嗦嗦」地嚼着乾草。\n",
                 HIY"黃驃馬"NOR"抬頭看了看你，繼續埋下頭吃它的夜草。\n",
         }) );
 

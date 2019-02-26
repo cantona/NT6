@@ -10,7 +10,7 @@ void create()
                 set_default_object(__FILE__);
         else {
                 set("unit", "座");
-                set("long", "這是佛門中的浮屠，上面雕刻著金剛經。\n");
+                set("long", "這是佛門中的浮屠，上面雕刻着金剛經。\n");
                 set("value", 50);
         }
 }

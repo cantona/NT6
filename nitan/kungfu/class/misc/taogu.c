@@ -7,7 +7,7 @@ inherit "/inherit/char/punisher";
 void create()
 {
         set_name("桃谷老仙", ({ "taogu laoxian", "laoxian" }));
-        set("long",  "他據說是桃谷六仙的長輩，出身于東海桃花島。\n");
+        set("long",  "他據説是桃谷六仙的長輩，出身於東海桃花島。\n");
         set("gender", "男性");
         set("age", 58);
         set("attitude", "peaceful");

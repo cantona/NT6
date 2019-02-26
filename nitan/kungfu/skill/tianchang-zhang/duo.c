@@ -39,7 +39,7 @@ int perform(object me, object target)
                 return notify_fail("你沒有運用冷月神功！\n");
 
         if( query("neili", me)<300 )
-                return notify_fail("你的內力不夠，無法使用空手折梅！\n");
+                return notify_fail("你的內力不夠，無法使用空手摺梅！\n");
 
         if( !living(target))
                 return notify_fail("對方都已經這樣了，還奪什麼，去撿好了！\n");
@@ -72,14 +72,14 @@ int perform(object me, object target)
 
                 if (comb1 > comb2 * 3/5 )
                 {
-                        message_combatd(HIW"$n只覺一股寒氣自"+query("name", weapon)+HIW"傳了過來，整個手臂一陣冰涼，手中"+query("name", weapon)+HIW"脫手而出！\n"NOR,me,target);
+                        message_combatd(HIW"$n只覺一股寒氣自"+query("name", weapon)+HIW"傳了過來，整個手臂一陣冰涼，手中"+query("name", weapon)+HIW"脱手而出！\n"NOR,me,target);
                         weapon->unequip();
                         weapon->move(me);
                         addn("neili", -50, me);
                         return 1;
                 }
                 message_combatd(HIW"$N默運冷月寒氣，催動寒冷真氣注入"+query("name", weapon)+HIW"，$n見狀趕緊催動體內真氣與其相抗。\n\n"NOR,me,target);
-                message_combatd(HIG"$N只覺$n手中的"+query("name", weapon)+HIG"傳來一陣炎熱的氣勁，將自己的冷月寒氣消弭于無形，只好放手，飄身退開。\n"NOR,me,target);
+                message_combatd(HIG"$N只覺$n手中的"+query("name", weapon)+HIG"傳來一陣炎熱的氣勁，將自己的冷月寒氣消弭於無形，只好放手，飄身退開。\n"NOR,me,target);
                 me->start_busy(1+random(2));
                 addn("neili", -150, me);
                 return 1;

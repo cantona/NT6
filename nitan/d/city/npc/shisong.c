@@ -64,8 +64,8 @@ void create()
 
         set("chat_chance", 1);
         set("chat_msg", ({
-                CYN "史鬆說道：在下黑龍鞭史鬆，奉鰲少保將令，擒拿天地會反賊。\n" NOR,
-                CYN "史鬆說道：鰲少保天生神勇，曾在北京街上一拳打死一頭瘋牛。\n" NOR,
+                CYN "史鬆説道：在下黑龍鞭史鬆，奉鰲少保將令，擒拿天地會反賊。\n" NOR,
+                CYN "史鬆説道：鰲少保天生神勇，曾在北京街上一拳打死一頭瘋牛。\n" NOR,
         }));
 
         setup();
@@ -100,7 +100,7 @@ void init()
 
         if( query("id", ob) == "mao shiba" )
         {
-                command("say 茅十八你這個反賊，今天終于逮到你了！");
+                command("say 茅十八你這個反賊，今天終於逮到你了！");
                 me->set_leader(ob);
                 remove_call_out("kill_ob");
                 call_out("kill_ob", 1, ob); 
@@ -142,7 +142,7 @@ int accept_object(object me, object ob)
                         tell_object(me, HIW "\n\n你成功的幫助史鬆弄到了通緝令！\n" NOR +
                                         HIC "通過這次的歷練，你獲得了" + chinese_number(exp) +
                                         "點經驗、" + chinese_number(pot) + "點潛能以及" +
-                                        chinese_number(sc) + "點江湖閱歷。\n\n" NOR);
+                                        chinese_number(sc) + "點江湖閲歷。\n\n" NOR);
                         set("skybook/luding/shi", 1, me);
                         set("can_learn/yunlong-bian/shi", 1, me);
                 }

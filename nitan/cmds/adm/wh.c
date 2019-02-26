@@ -14,7 +14,7 @@ int main(object me,string arg)
                 return 0;
         if(!arg)
                 return help();
-        str=NOR "開始搜索(最多只列"+MR+"個搜索結果)：\n";
+        str=NOR "開始搜索(最多隻列"+MR+"個搜索結果)：\n";
         foreach(object ob in objects())
         {
                 if(ob->id(arg) && sizeof(tmp)<MR)

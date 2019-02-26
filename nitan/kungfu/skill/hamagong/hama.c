@@ -114,7 +114,7 @@ int perform2(object me, object target, int p)
                 call_out("remove_effect", me->query_con()/6, me);
                 return notify_fail("你待要再發一掌，卻發現自己內力不夠了！\n");
         }
-        msg = BLU"\n$N左掌勁力未消，右掌也跟著推出，功力相疊，「蛤蟆功」掌風排山倒海般湧向$n！\n"NOR;        
+        msg = BLU"\n$N左掌勁力未消，右掌也跟着推出，功力相疊，「蛤蟆功」掌風排山倒海般湧向$n！\n"NOR;        
         if(random(me->query_skill("force")) > target->query_skill("force")/4 &&
                 me->query_skill(bskill, 1) > 150 )
         {
@@ -172,7 +172,7 @@ int perform3(object me, object target, int p)
                 call_out("remove_effect", me->query_con()/4, me);
                 return notify_fail("你待要再發一掌，卻發現自己內力不夠了！\n");
         }
-        msg = BLU"\n$N雙腿一登，雙掌相並向前猛力推出，$n連同身前方圓三丈全在「蛤蟆功」勁力籠罩之下！\n"NOR;        
+        msg = BLU"\n$N雙腿一登，雙掌相併向前猛力推出，$n連同身前方圓三丈全在「蛤蟆功」勁力籠罩之下！\n"NOR;        
         if(random(me->query_skill("force")) > target->query_skill("force")/4 &&
                 me->query_skill(bskill, 1) > 199 )
         {

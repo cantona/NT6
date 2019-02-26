@@ -40,13 +40,13 @@ void create()
         map_skill("unarmed", "taixuan-gong");
         set("chat_chance",3);
         set("chat_msg",({
-            "李四大聲稱讚著：好酒，真是好酒，真是酒逢知己千杯少啊！\n",
+            "李四大聲稱讚着：好酒，真是好酒，真是酒逢知己千杯少啊！\n",
             "李四咂咂嘴：可惜無肉下酒，喝起來不爽。\n",
-            "李四斜睨著你說道：你站在這幹麼呢？難道也想和我兄弟倆幹一杯不成？\n"
+            "李四斜睨着你説道：你站在這幹麼呢？難道也想和我兄弟倆乾一杯不成？\n"
         }) );
         set("inquiry",([
            "酒"     : (: inquiry_jiu :),
-//           "here"   : "這裡當然就是俠客島啦。",
+//           "here"   : "這裏當然就是俠客島啦。",
 //           "俠客行" : "往南面走，進山後就明白了。",
         ]) );
         create_family("俠客島", 2, "弟子");
@@ -60,26 +60,26 @@ int inquiry_jiu()
 
         if( query_temp("xkd/jiu", me) )
         { 
-                message_vision("李四瞪眼說到：酒不是已經給你了嗎？這位"+RANK_D->query_respect(me) + "不要貪得無厭。\n", me);
+                message_vision("李四瞪眼説到：酒不是已經給你了嗎？這位"+RANK_D->query_respect(me) + "不要貪得無厭。\n", me);
                 return 1;
         }
         if( !query_temp("xkd/backleg", me) )
         { 
-                message_vision( "李四瞪眼說到：這位"+RANK_D->query_respect(me)+"，你以為這是什麼酒，是二鍋頭啊？？這麼寶貴的東西我怎能隨便給人呢。\n", me);
+                message_vision( "李四瞪眼説到：這位"+RANK_D->query_respect(me)+"，你以為這是什麼酒，是二鍋頭啊？？這麼寶貴的東西我怎能隨便給人呢。\n", me);
                 return 1;
         }
         if( !query_temp("xkd/forleg", me) )
         { 
-                message_vision( "李四瞪眼說到：這位"+RANK_D->query_respect(me)+"，想要酒我還得和我的兄弟商量一下。\n", me);
+                message_vision( "李四瞪眼説到：這位"+RANK_D->query_respect(me)+"，想要酒我還得和我的兄弟商量一下。\n", me);
                 return 1;
         }        
         if( query_temp("野豬/backleg") || random(10) > 5 ) 
         { 
-                message_vision( "李四瞪眼說到：這位"+RANK_D->query_respect(me)+"來得不巧，酒我已經給了別人了。\n", me);
+                message_vision( "李四瞪眼説到：這位"+RANK_D->query_respect(me)+"來得不巧，酒我已經給了別人了。\n", me);
         }
         else
         {
-                message_vision( "李四冷冷地說道：這位" + RANK_D->query_respect(me)+"，居然想喝我的毒酒，好吧，你有膽子就喝吧，不過可別後悔。\n",me);
+                message_vision( "李四冷冷地説道：這位" + RANK_D->query_respect(me)+"，居然想喝我的毒酒，好吧，你有膽子就喝吧，不過可別後悔。\n",me);
                 obn = new( "/clone/medicine/nostrum/binghuojiu" );
                 obn->move( me );
                 set_temp("xkd/jiu", 1, me);

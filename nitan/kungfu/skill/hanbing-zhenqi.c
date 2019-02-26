@@ -34,19 +34,19 @@ int valid_learn(object me)
 
         if( query("gender", me) == "無性"
            && (int)me->query_skill("hanbing-zhenqi", 1) > 19)
-                return notify_fail("你無根無性，陰陽不調，難以鍛煉寒冰真氣。\n");
+                return notify_fail("你無根無性，陰陽不調，難以鍛鍊寒冰真氣。\n");
 
         if( query("con", me)<34 )
                 return notify_fail("你先天根骨不夠，無法修煉寒冰真氣！\n");
 
         if (me->query_skill("force", 1) < 100)
-                return notify_fail("你的基本內功火候不夠，難以鍛煉寒冰真氣。\n");
+                return notify_fail("你的基本內功火候不夠，難以鍛鍊寒冰真氣。\n");
 
         if( query("max_neili", me)<1000 )
-                return notify_fail("你目前的內力修為不夠，難以鍛煉寒冰真氣。\n");
+                return notify_fail("你目前的內力修為不夠，難以鍛鍊寒冰真氣。\n");
 
         if (me->query_skill("force", 1) < me->query_skill("hanbing-zhenqi", 1))
-                return notify_fail("你的基本內功水平不夠，難以鍛煉更深厚的寒冰真氣。\n");
+                return notify_fail("你的基本內功水平不夠，難以鍛鍊更深厚的寒冰真氣。\n");
 
         return ::valid_learn(me);
 }
@@ -88,7 +88,7 @@ mixed hit_ob(object me, object victim, int damage_bonus, int factor)
 
                         return random(2) ? ([ "damage" : result,
                                               "msg"    : HIW "$n" HIW "接下$N" HIW "一招，霎"
-                                                         "時只感到寒風襲體，說不出的惡心難受"
+                                                         "時只感到寒風襲體，説不出的噁心難受"
                                                          "。\n" NOR ]):
 
                                            ([ "damage" : result,

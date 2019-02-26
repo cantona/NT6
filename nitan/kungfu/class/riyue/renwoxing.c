@@ -18,7 +18,7 @@ void create()
         set_name("任我行", ({ "ren woxing", "ren","woxing" }));
         set("title", GRN "日月神教教主" NOR );
         set("long", "只見他一張長長的臉孔，臉色雪白，更無半分血色，眉目清秀，
-身材甚高，一頭黑發，穿的是一襲青衫。\n");
+身材甚高，一頭黑髮，穿的是一襲青衫。\n");
         set("gender", "男性");
         set("class", "scholar");
         set("age", 55);
@@ -139,17 +139,17 @@ void attempt_apprentice(object ob)
 int ask_bijian()
 {
         object obj, me = this_player(), ob = this_object();
-        message_vision("$N躬身說道：“晚輩今日有幸拜見任老前輩，還望多加指教。”\n
+        message_vision("$N躬身説道：“晚輩今日有幸拜見任老前輩，還望多加指教。”\n
 $n笑道：“不用客氣，你來解我寂寞，可多謝你啦。”\n", me, ob );
         message_vision("$N道：“不敢。”\n
-$n點了點頭，說道：“我只想瞧瞧你的劍法，並非真的過
-招，再說，我也未必能勝得了你。”\n\n", me, ob);
+$n點了點頭，説道：“我只想瞧瞧你的劍法，並非真的過
+招，再説，我也未必能勝得了你。”\n\n", me, ob);
         command("enable sword damo-jian");
         say(HIR"任我行大喝一聲：“少林劍法！”"NOR);
         COMBAT_D->do_attack(ob, me, query_temp("weapon"));
         if( query("qi", me)<0 || !present(me,environment()) )
         {
-                say("任我行嘆了口氣，說道：“才一招。”\n");
+                say("任我行歎了口氣，説道：“才一招。”\n");
                 command("enable sword tianmo-jian");
                 return 1;
         }
@@ -158,7 +158,7 @@ $n點了點頭，說道：“我只想瞧瞧你的劍法，並非真的過
         COMBAT_D->do_attack(ob, me, query_temp("weapon"));
         if( query("qi", me)<0 || !present(me,environment()) )
         {
-                say("任我行嘆了口氣，說道：“才兩招。”\n");
+                say("任我行歎了口氣，説道：“才兩招。”\n");
                 command("enable sword tianmo-jian");
                 return 1;
         }
@@ -167,7 +167,7 @@ $n點了點頭，說道：“我只想瞧瞧你的劍法，並非真的過
         COMBAT_D->do_attack(ob, me, query_temp("weapon"));
         if( query("qi", me)<0 || !present(me,environment()) )
         {
-                say("任我行嘆了口氣，說道：“才三招。”\n");
+                say("任我行歎了口氣，説道：“才三招。”\n");
                 command("enable sword tianmo-jian");
                 return 1;
         }
@@ -176,7 +176,7 @@ $n點了點頭，說道：“我只想瞧瞧你的劍法，並非真的過
         COMBAT_D->do_attack(ob, me, query_temp("weapon"));
         if( query("qi", me)<0 || !present(me,environment()) )
         {
-                say("任我行嘆了口氣，說道：“才四招。”\n");
+                say("任我行歎了口氣，説道：“才四招。”\n");
                 command("enable sword tianmo-jian");
                 return 1;
         }
@@ -186,7 +186,7 @@ $n點了點頭，說道：“我只想瞧瞧你的劍法，並非真的過
         COMBAT_D->do_attack(ob, me, query_temp("weapon"));
         if( query("qi", me)<0 || !present(me,environment()) )
         {
-                say("任我行嘆了口氣，說道：“才五招。”\n");
+                say("任我行歎了口氣，説道：“才五招。”\n");
                 command("enable sword tianmo-jian");
                 return 1;
         }
@@ -195,7 +195,7 @@ $n點了點頭，說道：“我只想瞧瞧你的劍法，並非真的過
         COMBAT_D->do_attack(ob, me, query_temp("weapon"));
         if( query("qi", me)<0 || !present(me,environment()) )
         {
-                say("任我行嘆了口氣，說道：“才六招。”\n");
+                say("任我行歎了口氣，説道：“才六招。”\n");
                 command("enable sword tianmo-jian");
                 return 1;
         }
@@ -204,7 +204,7 @@ $n點了點頭，說道：“我只想瞧瞧你的劍法，並非真的過
         COMBAT_D->do_attack(ob, me, query_temp("weapon"));
         if( query("qi", me)<0 || !present(me,environment()) )
         {
-                say("任我行嘆了口氣，說道：“才七招。”\n");
+                say("任我行歎了口氣，説道：“才七招。”\n");
                 command("enable sword tianmo-jian");
                 return 1;
         }
@@ -213,16 +213,16 @@ $n點了點頭，說道：“我只想瞧瞧你的劍法，並非真的過
         COMBAT_D->do_attack(ob, me, query_temp("weapon"));
         if( query("qi", me)<0 || !present(me,environment()) )
         {
-                say("任我行嘆了口氣，說道：“還是沒過八招。”\n");
+                say("任我行歎了口氣，説道：“還是沒過八招。”\n");
                 command("enable sword tianmo-jian");
                 return 1;
         }
         if( query_temp("heimuling", me) )
-            say("任我行說道：“哈哈，這位" + RANK_D->query_respect(me) +
+            say("任我行説道：“哈哈，這位" + RANK_D->query_respect(me) +
                 "武功不錯，快去幫我殺了東方不敗那個閹賊！”\n");
         else
         {
-            say("任我行說道：“這位" + RANK_D->query_respect(me) +
+            say("任我行説道：“這位" + RANK_D->query_respect(me) +
                 "不錯，我就送你一塊黑木令吧。”\n");
             set_temp("heimuling", 1, me);
         }
@@ -254,7 +254,7 @@ mixed ask_pfm()
            return "你的天魔劍法尚欠火候，還領悟不了這招，再多練練去吧！";
 
      message_vision(HIY "$n" HIY "對$N" HIY "點了點頭：這招講究以意馭劍，瞧仔細了。\n" HIW
-                    "只見$n" HIW "雙足一點，騰空而起，手中長劍前探，緊跟著身子連轉" HIW
+                    "只見$n" HIW "雙足一點，騰空而起，手中長劍前探，緊跟着身子連轉" HIW
                     "數圈，一道白影筆直向$N" HIW "射來。\n" NOR,
                     me, this_object());
      say(HIC"任我行飄然而落，還劍入鞘，微笑道：“看懂了沒有？”\n"NOR);
@@ -275,14 +275,14 @@ string ask_jing()
             return "少林易筋經神功名滿江湖，若有幸習得，終生受用不盡。";
 
      if( query("family/master_id", me) != query("id") )
-            return "據說曾有少林高僧將經文記錄下來，不知是真是假。";
+            return "據説曾有少林高僧將經文記錄下來，不知是真是假。";
 
 
      if (objectp(present("yijinjing", me)))
             return "你不是已有經書了，還問我做什麼。";
 
      if( query_temp("ask_jing", me) && time()-query_temp("ask_jing", me)<120 )
-            return "跟你說了經書不在老夫身上，你不相信麼？";
+            return "跟你説了經書不在老夫身上，你不相信麼？";
 
      if (random(3) != 0 || query("yijinjing_count") < 1)
      {
@@ -297,7 +297,7 @@ string ask_jing()
      addn("yijinjing_count", -1);
      ob = new("/clone/book/yijinjing");
      ob->move(me);
-     return "這卷經文你可要小心收好，千萬勿示于他人。";
+     return "這卷經文你可要小心收好，千萬勿示於他人。";
 }
 
 void reset()

@@ -14,7 +14,7 @@ mapping *action = ({
         "lvl"    : 39,
         "skill_name" : "魯達拔柳"
 ]),
-([        "action" : "$N使出一招"BLU"「霸王扛鼎」"NOR"，將$w從肩頭甩出砸向往$n的$l",
+([        "action" : "$N使出一招"BLU"「霸王扛鼎」"NOR"，將$w從肩頭甩出砸嚮往$n的$l",
         "lvl"    : 69,
         "skill_name" : "霸王扛鼎"
 ]),

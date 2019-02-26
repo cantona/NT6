@@ -4,10 +4,10 @@ void create()
 {
     set("short", "大殿");
         set("long", @LONG
-沿著"水銀"河，走到了大殿的盡頭，這裡更是金碧輝煌，迎面是
+沿着"水銀"河，走到了大殿的盡頭，這裏更是金碧輝煌，迎面是
 一個龍頭寶座，用純金鑄造而成，寶座上囊嵌無數的寶石，上方有個
 碩大的龍頭，也是由金玉所成，巍是壯觀。東面有扇巨大的石門，但
-卻是關著的。
+卻是關着的。
 LONG );
         set("exits", ([
                 "south" :__DIR__"dadian2",
@@ -48,7 +48,7 @@ int do_climb(string arg)
         if( !query_temp("look", me))return 0;
         if(arg != "龍角")       return notify_fail("你要往那爬呀？\n");
         if( query_temp("chan", me))return notify_fail("你已經在龍頭上了。\n");
-        if( !objectp(weapon=query_temp("weapon", me)))return notify_fail("這裡光溜溜的，你怎麼爬呀。\n");
+        if( !objectp(weapon=query_temp("weapon", me)))return notify_fail("這裏光溜溜的，你怎麼爬呀。\n");
         if( query("skill_type", weapon) != "whip")return notify_fail("你還是找條繩子什麼的，也許會爬得上去哦。\n");
         message_vision("$N使出"+query("name", weapon)+"，往上一拋，纏在龍角上。\n然後$N施展輕功，爬到了龍頭上。\n",me);
         set_temp("chan", 1, me);
@@ -59,12 +59,12 @@ int do_qiao(string arg)
         object me=this_player();
         object weapon,ob;
         if(!arg)        return 0;
-        if( !query_temp("chan", me))return notify_fail("你夠不著。\n");
+        if( !query_temp("chan", me))return notify_fail("你夠不着。\n");
         if(!query("qiao")) return notify_fail("你還要橇什麼？\n");
         if(arg != "龍眼")       return notify_fail("你想撬什麼嘛？\n");
         if( !objectp(weapon=query_temp("weapon", me)))return notify_fail("用手啊，也許找些什麼工具來會好點哦。\n");
         if( query("skill_type", weapon) != "dagger")return notify_fail("你舉起手中"+query("name", weapon)+"揮舞了幾下，才發現這樣東西不好使也。\n");
-        message_vision("$N掏出一把"+query("name", weapon)+",使勁地撬了起來。\n$N連吃奶的力氣都用上了，終于撬起了兩個碩大的龍眼。\n",me);
+        message_vision("$N掏出一把"+query("name", weapon)+",使勁地撬了起來。\n$N連吃奶的力氣都用上了，終於撬起了兩個碩大的龍眼。\n",me);
         ob=new(__DIR__"obj/longzhu.c");
         if (!ob->move(me))
                 ob->move(this_object());

@@ -31,7 +31,7 @@ void create()
         set("max_force", 500);
         set("force", 500);
 
-        set("long",     "一名稚氣未幹而聰明伶俐的少年。\n");
+        set("long",     "一名稚氣未乾而聰明伶俐的少年。\n");
 
 
         set("combat_exp", 20000);

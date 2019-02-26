@@ -45,7 +45,7 @@ int perform(object me, object target)
         if( query_temp("perform", me) == 1 ||
             query_temp("perform2", me) == 1 ||
             query_temp("perform3", me) == 1 )
-                return notify_fail("你現在正用著「劍芒」呢。\n");
+                return notify_fail("你現在正用着「劍芒」呢。\n");
 
         if ((int)me->query_skill("huashan-sword", 1) < 100 ||
             (int)me->query_skill("sword", 1) < 100 ||
@@ -74,7 +74,7 @@ int perform(object me, object target)
 
         if (ap / 2 + random(ap) > dp)
         {
-                msg += HIR "結果一劍刺中，$n只覺得全身氣脈通道阻塞，真氣立受幹撓！\n"NOR;
+                msg += HIR "結果一劍刺中，$n只覺得全身氣脈通道阻塞，真氣立受干撓！\n"NOR;
                 if (! target->is_busy())
                         target->start_busy(2 + random(4));
                 addn("neili", -200, me);
@@ -126,7 +126,7 @@ int perform2(object me, object target)
         }
 
         name = name1[random(sizeof(name1))];
-        msg = MAG "\n接著$N踏前一步，" + name2 + "發出的第二支劍芒隔空點向$n的" + name + "，認穴竟無厘毫之差！\n" NOR;
+        msg = MAG "\n接着$N踏前一步，" + name2 + "發出的第二支劍芒隔空點向$n的" + name + "，認穴竟無釐毫之差！\n" NOR;
 
         ap = attack_power(me, "sword");
         dp = defense_power(target, "parry");
@@ -187,7 +187,7 @@ int perform3(object me, object target)
         }
 
         name = name1[random(sizeof(name1))];
-        msg = HIW "\n緊跟著$N手中" + name2 + "發出第三支劍芒，只見一道光芒直奔$n，劍輝掃向$n的" + name + "！\n" NOR;
+        msg = HIW "\n緊跟着$N手中" + name2 + "發出第三支劍芒，只見一道光芒直奔$n，劍輝掃向$n的" + name + "！\n" NOR;
 
         ap = attack_power(me, "sword");
         dp = defense_power(target, "force");

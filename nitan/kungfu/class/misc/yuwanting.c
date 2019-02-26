@@ -4,8 +4,8 @@ inherit "/inherit/char/punisher";
 
 void create()
 {
-        set_name("于萬亭", ({ "yu wanting", "yu", "wanting" }));
-        set("long",  "這是早已歸隱的紅花會上代總舵主于萬亭。\n");
+        set_name("於萬亭", ({ "yu wanting", "yu", "wanting" }));
+        set("long",  "這是早已歸隱的紅花會上代總舵主於萬亭。\n");
         set("gender", "男性");
         set("age", 67);
         set("attitude", "peaceful");

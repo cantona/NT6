@@ -12,7 +12,7 @@ void create()
         else {
                 set("unit", "本");
                 set("long",
-        "這是一本發舊的秘籍。上書：“「魅影劍法」下冊”。\n"
+        "這是一本發舊的祕籍。上書：“「魅影劍法」下冊”。\n"
         "書皮泛黃，看來已經保存很久了。\n", );
                 set("value", 0);
                 set("material", "paper");

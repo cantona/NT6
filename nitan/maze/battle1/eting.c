@@ -52,7 +52,7 @@ string long_desc()
                ||                  ||
                ||                  ||
                ||__________________||\n
-               "+HIC"正前方豎著一排兵器架\n"NOR;
+               "+HIC"正前方豎着一排兵器架\n"NOR;
         else
                 desc  = HIW"
                    /I____________I\\         "+HIR"★"+HIW"
@@ -68,7 +68,7 @@ string long_desc()
                ||                  ||
                ||                  ||
                ||__________________||\n
-               "+HIC"正前方豎著一排兵器架\n"NOR;
+               "+HIC"正前方豎着一排兵器架\n"NOR;
 
         return desc;
 }
@@ -90,7 +90,7 @@ int do_withdraw(string arg)
         if( query_temp("battle/team_name", me) == query("team_name") )
                 return notify_fail("偷自己的旗？\n");
 
-        message_vision(HIY"$N向旗桿躍起，想一把拔下旗子。\n"NOR, me);
+        message_vision(HIY"$N向旗杆躍起，想一把拔下旗子。\n"NOR, me);
 
         obj = all_inventory(environment(me));
         for( i=0; i<sizeof(obj); i++ ) {
@@ -115,7 +115,7 @@ int do_withdraw(string arg)
                         destruct(flag);
                 }
                 CHANNEL_D->do_channel(this_object(), "war",
-                        "聽說"+me->name()+"奪走了"+query("flag_name")+HIR"！"NOR );
+                        "聽説"+me->name()+"奪走了"+query("flag_name")+HIR"！"NOR );
         }
         return 1;
 }
@@ -134,7 +134,7 @@ int do_plant(string arg)
                 return notify_fail("你想要插什麼？\n");
 
         if( query("flag") > 0 )
-                return notify_fail("旗桿上已有旗了。\n");
+                return notify_fail("旗杆上已有旗了。\n");
 
         if( query_temp("battle/team_name", me) == query("team_name") )
                 return notify_fail("這可不是你的地盤。\n");
@@ -145,12 +145,12 @@ int do_plant(string arg)
         if( query("name", flag) == query("team_name")+"大旗" )
                 return notify_fail("自己的隊旗應該插在大本營才是。\n");
 
-        message_vision(HIY"$N把大旗嘩啦啦展開，插上了旗桿。\n"NOR, me);
+        message_vision(HIY"$N把大旗嘩啦啦展開，插上了旗杆。\n"NOR, me);
 
         set("flag",1);
 
         CHANNEL_D->do_channel(this_object(), "war",
-                "聽說"+me->name()+"將"+query("name", flag)+HIR"插到了演武廳！"NOR);
+                "聽説"+me->name()+"將"+query("name", flag)+HIR"插到了演武廳！"NOR);
         set("flag_name",query("name", flag));
 
         destruct(flag);

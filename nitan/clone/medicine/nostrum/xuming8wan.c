@@ -14,7 +14,7 @@ void create()
                 set("nostrum", 121);
                 set("no_sell",1);
                 set("level", 160);
-                set("long","這是花了一十二年時光，採集千年人參、伏苓、靈芝、鹿茸、首烏、靈脂、熊膽、三七、麝香種種珍貴之極的藥物，九蒸九曬，制成八顆起死回生的“續命八丸”。有的極臭，有的極苦，有的入口如刀割，有的辛辣如火炙。只要吞服了這“續命八丸”，不論多大的內傷外傷，定然起死回生。\n");
+                set("long","這是花了一十二年時光，採集千年人蔘、伏苓、靈芝、鹿茸、首烏、靈脂、熊膽、三七、麝香種種珍貴之極的藥物，九蒸九曬，製成八顆起死回生的“續命八丸”。有的極臭，有的極苦，有的入口如刀割，有的辛辣如火炙。只要吞服了這“續命八丸”，不論多大的內傷外傷，定然起死回生。\n");
                 set("value", 0);
         }
         set("pour_type", "1");
@@ -37,7 +37,7 @@ int do_eat(string arg)
         if(!present(this_object(), me))
                 return notify_fail("你要吃什麼？\n");
         if( me->is_busy() )
-                return notify_fail("別急，慢慢吃，小心別噎著了。\n");
+                return notify_fail("別急，慢慢吃，小心別噎着了。\n");
 
         if( !wizardp(me) &&
                 (!query("dietime", me) || time()-query("dietime", me)>600) )
@@ -47,7 +47,7 @@ int do_eat(string arg)
         }
         if(!id(arg)) return notify_fail("你要吃什麼？\n");
         if( me->is_busy() )
-                return notify_fail("別急，慢慢吃，小心別噎著了。\n");
+                return notify_fail("別急，慢慢吃，小心別噎着了。\n");
         message_vision("$N吃下一粒" + name() + "。\n", me);
         log_file("eat_dan", sprintf("[%s] %s eat xuming8wan \n", ctime(time()), geteuid(me)));
         delete("dietime", me);
@@ -69,6 +69,6 @@ int do_eat(string arg)
 
 void destwan()
 {
-        message_vision("$N慢慢幹涸化成灰，一會就飄落地上消失了。\n",this_object());
+        message_vision("$N慢慢乾涸化成灰，一會就飄落地上消失了。\n",this_object());
         destruct(this_object());
 }

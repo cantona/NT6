@@ -35,7 +35,7 @@ mapping *action = ({
         "lvl"    : 30,
         "damage_type": "刺傷"
 ]),
-([      "action" : "$N神態悠閒，手中$w憑空一指，一招「白雲千載」輕妙地劃向$n的$l",
+([      "action" : "$N神態悠閒，手中$w憑空一指，一招「白雲千載」輕妙地划向$n的$l",
         "force"  : 130,
         "dodge"  :-25,
         "parry"  :-21,

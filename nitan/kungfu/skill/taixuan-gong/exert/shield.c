@@ -9,7 +9,7 @@ int exert(object me, object target)
         int skill;
 
         if (target != me)
-                return notify_fail("你只能用太玄功來提升自己的防御力。\n");
+                return notify_fail("你只能用太玄功來提升自己的防禦力。\n");
 
         if( query("neili", me)<100 )
                 return notify_fail("你的真氣不夠。\n");
@@ -26,7 +26,7 @@ int exert(object me, object target)
         me->receive_damage("qi", 0);
 
         message_vision(HIG "$N" HIG "默默運功，昔日俠客島石壁上的口訣一一"
-                        "呈現，太玄功內勁已護于全身。\n" NOR, me);
+                        "呈現，太玄功內勁已護於全身。\n" NOR, me);
 
         if( query("breakup", me) )
         {

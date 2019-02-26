@@ -27,7 +27,7 @@ mapping *action = ({
         "lvl"   : 60,
         "damage_type" : "瘀傷",
 ]),
-([      "action" : "$N抽身躍起，退後數步，陡然間卻又疾身而上，朝著$n的$l處猛拍一掌",
+([      "action" : "$N抽身躍起，退後數步，陡然間卻又疾身而上，朝着$n的$l處猛拍一掌",
         "force" : 320,
         "attack": 45,
         "dodge" : 115,

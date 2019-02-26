@@ -24,13 +24,13 @@ int perform(object me, object target)
                 return notify_fail("看清楚些，那不是蛇，你瞎搞什麼？\n");
 
         if (living(target))
-                return notify_fail("那條蛇還精神著呢，你找死啊。\n");
+                return notify_fail("那條蛇還精神着呢，你找死啊。\n");
 
         if ((int)me->query_skill("shedu-qiqiao", 1) < 80)
-                return notify_fail("你的蛇毒奇巧還不夠嫻熟，不能煉制毒藥。\n");
+                return notify_fail("你的蛇毒奇巧還不夠嫻熟，不能煉製毒藥。\n");
 
         if ((int)me->query_skill("hamagong", 1) < 80)
-                return notify_fail("你的蛤蟆功的修為不夠，不能煉制毒藥。\n");
+                return notify_fail("你的蛤蟆功的修為不夠，不能煉製毒藥。\n");
 
         if( query("neili", me)<200 )
                 return notify_fail("你現在的內力不夠！\n");
@@ -75,7 +75,7 @@ int perform(object me, object target)
         msg += HIM "$N" HIM "將" + target->name() + HIM "的毒液悉數擠"
                "出，在內力的作用下化成了一顆晶瑩剔透的藥丸。\n\n" NOR;
         message_combatd(msg, me);
-        tell_object(me, HIC "你煉制了一顆蛇毒藥丸。\n" NOR);
+        tell_object(me, HIC "你煉製了一顆蛇毒藥丸。\n" NOR);
 
         // improve skill
         exp = lvl / 5;

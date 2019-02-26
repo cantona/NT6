@@ -11,7 +11,7 @@ void create()
 {
         set_name("周芷若", ({ "zhou zhiruo","zhiruo","zhou"}));
         set("long", "她是峨嵋派的第四代掌門弟子。只見她一張\n"
-                    "臉秀麗絕俗。身著一身淡黃衣裳。略顯清減\n"
+                    "臉秀麗絕俗。身着一身淡黃衣裳。略顯清減\n"
                     "的巧笑中帶了些許無奈。\n");
         set("gender", "女性");
         set("age", 20);
@@ -22,12 +22,12 @@ void create()
                 "剃度"     : "找我剃度？不對吧。",
                 "出家"     : "要出家找我的師姐們去。",
                 "還俗"     : "無聊。還俗也找我！",
-                "張無忌"   : "這個狠心短命的家伙，我再也不要見他！",
+                "張無忌"   : "這個狠心短命的傢伙，我再也不要見他！",
                 "趙敏"     : "不要問這個賤婢子！",
                 "倚天劍"   : "倚天不出，誰與爭鋒？唉！",
                 "屠龍刀"   : "你想武林稱雄？別做夢了。",
                 "滅絕師太" : "師父待我恩重如山，我今生難以回報。",
-                "九陰真經" : "那是什麼東西？我這可是第一次聽說。",
+                "九陰真經" : "那是什麼東西？我這可是第一次聽説。",
                 "天誅龍蛟訣" : (: ask_skill1 :),
                 "奪命連環爪" : (: ask_skill2 :),
         ]));
@@ -51,7 +51,7 @@ void create()
         set_skill("yijin-duangu", 260);      // 易筋鍛骨
         set_skill("linji-zhuang", 200);
         set_skill("dodge", 260);
-        set_skill("shexing-lifan", 260);     // 蛇行貍翻
+        set_skill("shexing-lifan", 260);     // 蛇行狸翻
         set_skill("zhutian-bu", 180);
         set_skill("finger", 180);
         set_skill("tiangang-zhi", 180);
@@ -94,8 +94,8 @@ void create()
 
         set("no_teach", ([
                 "linji-zhuang"     : "想學臨濟十二莊找我師父去。",
-                "shexing-lifan"    : "蛇行貍翻？這也是種武功嗎？聽名字倒是蠻有意思的。",
-                "yijin-duangu"     : "你說的那是什麼啊？我這可是頭一次聽說。",
+                "shexing-lifan"    : "蛇行狸翻？這也是種武功嗎？聽名字倒是蠻有意思的。",
+                "yijin-duangu"     : "你説的那是什麼啊？我這可是頭一次聽説。",
                 "cuixin-zhang"     : "催心掌？聽名字怪嚇人的，這樣的武功我可不會。",
                 //"jiuyin-baiguzhao" : "九陰白骨爪？這是什麼武功啊？光聽名字我就毛骨悚然。",
                 "yinlong-bian"     : "我只會劍法和刀法，鞭法師父從來沒教過我。",
@@ -129,7 +129,7 @@ mixed ask_skill1()
                return "這招我不是已經教過你了嗎？自己下去多練吧！";
 
         if( query("family/family_name", me) != query("family/family_name") )
-               return "你是哪裡來的？快給我滾開！";
+               return "你是哪裏來的？快給我滾開！";
 
         if (me->query_skill("yinlong-bian", 1) <130 )
                return "你的銀龍鞭法練的還不夠純熟，無發領悟此精妙絕技！";
@@ -139,7 +139,7 @@ mixed ask_skill1()
 
         command("say 看好了，以後對那些妖人不要手軟，一上來就用這招！");
         command("grin");
-        message_vision(HIG "周芷若抽出鞭子，隨意揮舞著，將銀龍鞭法奧義展現無疑。\n不一會兒，周芷若已是大汗淋漓。\n" NOR,me);
+        message_vision(HIG "周芷若抽出鞭子，隨意揮舞着，將銀龍鞭法奧義展現無疑。\n不一會兒，周芷若已是大汗淋漓。\n" NOR,me);
         command("say 這就是銀龍鞭法的「天誅龍蛟訣」了，你要認真領悟其奧妙。");
         command("hehe");
         tell_object(me, HIC "你學會了「天誅龍蛟訣」。\n" NOR);
@@ -158,7 +158,7 @@ mixed ask_skill2()
                return "這招我不是已經教過你了嗎？自己下去多練吧！";
 
         //if (me->query("family/family_name") != query("family/family_name"))
-               //return "你是哪裡來的？快給我滾開！";
+               //return "你是哪裏來的？快給我滾開！";
 
         if (me->query_skill("jiuyin-baiguzhao", 1) <120 )
                return "你的九陰白骨爪練的還不夠純熟，無發領悟此精妙絕技！";

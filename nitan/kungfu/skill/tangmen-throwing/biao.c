@@ -22,7 +22,7 @@ int perform(object me, object target)
         if( !objectp(weapon=query_temp("handing", me)) ||
             (query("id", weapon) != "qizi gangbiao" &&
              query("skill_type", weapon) != "throwing") )
-                return notify_fail("你現在手中沒有拿著暗器七子剛鏢，難以施展" + name() + "。\n");
+                return notify_fail("你現在手中沒有拿着暗器七子剛鏢，難以施展" + name() + "。\n");
 
         if( query("id", weapon) != "qizi gangbiao" &&
              weapon->query_amount() < 7)
@@ -47,12 +47,12 @@ int perform(object me, object target)
                 return notify_fail("你現在真氣不足，難以施展" + name() + "。\n");
 
         if (! living(target))
-                return notify_fail("對方都已經這樣了，用不著這麼費力吧？\n");
+                return notify_fail("對方都已經這樣了，用不着這麼費力吧？\n");
 
         addn("neili", -100, me);
 
         msg = HIR "\n$N" HIR "突然身行一止，從懷中摸出七枚手掌大小的" + weapon->name() + HIR "，一揚手向$n " HIR "擲去。\n"
-              "只見七枚" + weapon->name() + HIR "，飛旋打出，$n" HIR "的周身飛舞著無數的光影，卻聽不到一絲聲音。\n"NOR;
+              "只見七枚" + weapon->name() + HIR "，飛旋打出，$n" HIR "的周身飛舞着無數的光影，卻聽不到一絲聲音。\n"NOR;
 
         ap = attack_power(me, "throwing");
         dp = defense_power(target, "parry") +
@@ -105,8 +105,8 @@ int perform(object me, object target)
                 me->start_busy(2);
         } else
         {
-                tell_object(target, HIR "忽然那無數的光影一閃而沒，你心中一驚急忙運內力于全身。\n" NOR);
-                msg = HIR "$n" HIR "雙臂急舞，衣袖帶起破風之聲。只聽當的一聲輕響，竟將那七枚暗器磕飛開去。\n" NOR;
+                tell_object(target, HIR "忽然那無數的光影一閃而沒，你心中一驚急忙運內力於全身。\n" NOR);
+                msg = HIR "$n" HIR "雙臂急舞，衣袖帶起破風之聲。只聽噹的一聲輕響，竟將那七枚暗器磕飛開去。\n" NOR;
                 message_combatd(msg, me, target);
                 if( query("neili", target)<1000 )
                         set("neili", 0, target);

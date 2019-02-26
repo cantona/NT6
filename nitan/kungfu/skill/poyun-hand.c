@@ -15,11 +15,11 @@ mapping *action = ({
         "lvl"    : 10,
         "skill_name"  : "排山倒海"
 ]),
-([        "action" : "$N就地一滾，突然到了$n身前，使一招"MAG"「風卷殘雲」"NOR"，雙手直拍$n小腹",
+([        "action" : "$N就地一滾，突然到了$n身前，使一招"MAG"「風捲殘雲」"NOR"，雙手直拍$n小腹",
         "lvl"    : 20,
-        "skill_name"  : "風卷殘雲"
+        "skill_name"  : "風捲殘雲"
 ]),
-([        "action" : "$N左手護胸，右手凝勁後發，一招"HIC"「雲過天晴」"NOR"，緩緩托向$n的$l",
+([        "action" : "$N左手護胸，右手凝勁後發，一招"HIC"「雲過天晴」"NOR"，緩緩託向$n的$l",
         "lvl"    : 40,
         "skill_name"  : "雲過天晴"
 ]),
@@ -27,7 +27,7 @@ mapping *action = ({
         "lvl"    : 60,
         "skill_name"  : "夢幻塵緣"
 ]),
-([        "action" : "$N身形詭異，忽左忽右，陡然轉到$n身後，一招"HIR"「電光火石」"NOR"，雙手直向$n嚥喉插下",
+([        "action" : "$N身形詭異，忽左忽右，陡然轉到$n身後，一招"HIR"「電光火石」"NOR"，雙手直向$n咽喉插下",
         "lvl"    : 80,
         "skill_name"  : "電光火石"
 ]),

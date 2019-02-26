@@ -6,7 +6,7 @@ void create()
         set_name("白兔", ({ "bai tu", "tu" }) );
         set("race", "野獸");
         set("age", 2);
-        set("long", "一只雪白的小白兔，可愛之致。\n");
+        set("long", "一隻雪白的小白兔，可愛之致。\n");
         set("attitude", "peaceful");
  
         set("str", 15);

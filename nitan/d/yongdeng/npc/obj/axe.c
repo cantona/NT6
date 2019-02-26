@@ -10,7 +10,7 @@ void create()
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("unit", "桿");
+                set("unit", "杆");
                 set("long", "這是一柄喪門斧。\n");
                 set("value", 1500);
                 set("rigidity",100);

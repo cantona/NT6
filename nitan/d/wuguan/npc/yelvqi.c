@@ -108,10 +108,10 @@ string ask_job()
 		return "你不是已經領了工作嗎？還不快去做。";
 
         if( query("combat_exp", ob) >= 100000 )
-             	return "你功夫已經足夠闖盪江湖，這裡沒有什麼適合你的工作了。";
+             	return "你功夫已經足夠闖蕩江湖，這裏沒有什麼適合你的工作了。";
 
         if( query("mark/guofu_out", ob) )
-             	return "你不是已經外出闖盪了嗎，怎麼又回來了？";
+             	return "你不是已經外出闖蕩了嗎，怎麼又回來了？";
 
         set_temp("job_name", target, ob);
         //ob->apply_condition("wuguan_job", random(3) + 4);
@@ -144,7 +144,7 @@ int do_task(string arg)
             || query_temp("mark/鋸完了", ob )
             || query_temp("mark/掃完了", ob )
             || query_temp("mark/挑完了", ob)) )
-                return notify_fail(CYN "耶律齊皺眉道：我讓你幹的事都幹"
+                return notify_fail(CYN "耶律齊皺眉道：我讓你乾的事都幹"
                                    "完了嗎？\n" NOR);
 
         if (interactive(ob)
@@ -157,7 +157,7 @@ int do_task(string arg)
 
         if( !query_temp("mark/還了", ob) )
 		return notify_fail(CYN "耶律齊道：…嗯…你還是先把工具"
-                                   "還了""再說吧（將工具還給武修文 give 工具ID to wu xiuwen )。\n" NOR);
+                                   "還了""再説吧（將工具還給武修文 give 工具ID to wu xiuwen )。\n" NOR);
 
         command("smile"+query("id", ob));
         command("say 幹得不錯，這是給你的獎賞。");

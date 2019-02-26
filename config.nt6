@@ -125,7 +125,7 @@ object table size : 8003
 default fail message : 什麼？
 
 # default message when error() occurs (optional)
-default error message : [1;33m你發現事情不大對了，但是又說不上來。[2;37;0m
+default error message : [1;33m你發現事情不大對了，但是又説不上來。[2;37;0m
 
 ###############################################################################
 #          The following aren't currently used or implemented (yet)           #

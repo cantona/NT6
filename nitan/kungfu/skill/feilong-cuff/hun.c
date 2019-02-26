@@ -1,4 +1,4 @@
-// hun.c 飛龍升天
+// hun.c 飛龍昇天
 
 #include <ansi.h>
 
@@ -18,20 +18,20 @@ int perform(object me, object target)
         skill = me->query_skill("feilong-cuff", 1);
 
         if (! me->is_fighting(target))
-                return notify_fail("飛龍升天只能對戰鬥中的對手使用。\n");
+                return notify_fail("飛龍昇天只能對戰鬥中的對手使用。\n");
 
         if(me->query_skill_mapped("cuff") != "feilong-cuff") 
-                return notify_fail("你沒有用飛龍神拳，無法使用「飛龍升天」絕招！\n");
+                return notify_fail("你沒有用飛龍神拳，無法使用「飛龍昇天」絕招！\n");
 
         if (me->query_skill_prepared("cuff") != "feilong-cuff")
-                return notify_fail("你沒有準備使用飛龍神拳，無法施展「飛龍升天」絕招。\n");
+                return notify_fail("你沒有準備使用飛龍神拳，無法施展「飛龍昇天」絕招。\n");
 
         if (skill < 100)
                 return notify_fail("你的飛龍神拳等級不夠，練好了再來！\n");
 
         if( objectp(weapon=query_temp("weapon", me)) || 
             objectp(weapon=query_temp("handing", me)) )
-                return notify_fail("你必須空著雙手才能使用拳法絕招。\n");
+                return notify_fail("你必須空着雙手才能使用拳法絕招。\n");
 
         if( query("neili", me)<500 )
                 return notify_fail("你的內力不夠。\n");
@@ -45,7 +45,7 @@ int perform(object me, object target)
         dp = target->query_skill("parry",1) + target->query_skill("dodge",1);
         dp = dp*3/2;
 
-        msg = HIW "\n$N" HIW "默運運起飛龍神拳的" HIC "飛龍升天" HIW "，忽的長嘯一聲，雙拳電閃擊出。\n" NOR;
+        msg = HIW "\n$N" HIW "默運運起飛龍神拳的" HIC "飛龍昇天" HIW "，忽的長嘯一聲，雙拳電閃擊出。\n" NOR;
 
         message_combatd(msg, me, target);
 
@@ -58,7 +58,7 @@ int perform(object me, object target)
                 COMBAT_D->do_attack(me, target, 0, 0);
         }
 
-        msg = HIR "\n$N" HIR "雙拳宛若布下天羅地網式，招招擊向$n" HIR "的關節要害！\n\n" NOR;
+        msg = HIR "\n$N" HIR "雙拳宛若佈下天羅地網式，招招擊向$n" HIR "的關節要害！\n\n" NOR;
 
         if (ap / 2 + random(ap) > dp || !living(target))
         {

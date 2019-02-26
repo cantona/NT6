@@ -13,7 +13,7 @@ void create()
         else {
                 set("unit", "根");
                 set("long", "一根獨特的石柱，下部直如筆桿，上端酷似筆
-尖，筆桿和筆尖之間夾一石縫，更顯得象一只自然毛筆。\n");
+尖，筆桿和筆尖之間夾一石縫，更顯得象一隻自然毛筆。\n");
                 set("value", 1);
                 set("skill", ([
                         "name"         : "literate",

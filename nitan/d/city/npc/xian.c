@@ -1,18 +1,18 @@
-// xian. 冼老板
+// xian. 冼老闆
 
 inherit BUNCHER; 
 inherit F_DEALER;
 
 void create()
 {
-        set_name("冼老板", ({ "xian laoban", "xian" }));
-        set("title", "醉仙樓老板");
+        set_name("冼老闆", ({ "xian laoban", "xian" }));
+        set("title", "醉仙樓老闆");
         set("shen_type", 1);
 
         set("str", 20);
         set("gender", "男性");
         set("age", 45);
-        set("long", "洗老板經營祖傳下來的醉仙樓已有多年。\n");
+        set("long", "洗老闆經營祖傳下來的醉仙樓已有多年。\n");
         set("combat_exp", 50000);
         set("qi", 300);
         set("max_qi", 300);

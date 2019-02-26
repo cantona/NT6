@@ -8,9 +8,9 @@ inherit SKILL;
 #define PMSKILLS_D        "/adm/daemons/pmskillsd"
 
 string *parry_msg = ({
-HIG "環境洒家會計師急口令哈颯颯颯颯撒生活上 \n" NOR,
-HIG "環境洒家會計師急口令哈颯颯颯颯撒生活上 \n" NOR,
-HIG "環境洒家會計師急口令哈颯颯颯颯撒生活上 \n" NOR,
+HIG "環境灑家會計師急口令哈颯颯颯颯撒生活上 \n" NOR,
+HIG "環境灑家會計師急口令哈颯颯颯颯撒生活上 \n" NOR,
+HIG "環境灑家會計師急口令哈颯颯颯颯撒生活上 \n" NOR,
 });
 
 string query_parry_msg(object weapon)
@@ -23,7 +23,7 @@ string who_make(){ return "yeying"; }
 
 //####actions start####
 mapping *action = ({
-([        "action"     :  "環境洒家會計師急口令哈颯颯颯颯撒",
+([        "action"     :  "環境灑家會計師急口令哈颯颯颯颯撒",
           "force"      :  387,
           "attack"     :  159,
           "parry"      :  48,
@@ -102,7 +102,7 @@ mixed hit_ob(object me, object victim, int damage_bonus)
         if (damage_bonus < 160 || ! living(victim))return 0;
 
         if( random(3) || me->is_busy() || query_temp("pmskill/lian", me) || query("neili", me)<100)return 0;
-        message_vision(HIR "\n環境洒家會計師急口令環境洒家會計師急口令\n" NOR, me, victim);
+        message_vision(HIR "\n環境灑家會計師急口令環境灑家會計師急口令\n" NOR, me, victim);
 
         me->start_busy(1 + random(attack_time));
 
@@ -149,13 +149,13 @@ mixed valid_damage(object ob, object me, int damage, object weapon)
                 switch (random(3))
                 {
                 case 0:
-                   result += (["msg" : HIC "環境洒家會計師急口令環境洒家會計師急口令\n" NOR]);
+                   result += (["msg" : HIC "環境灑家會計師急口令環境灑家會計師急口令\n" NOR]);
                 break;
                 case 1:
-                   result += (["msg" : HIC "環境洒家會計師急口令環境洒家會計師急口令\n" NOR]);
+                   result += (["msg" : HIC "環境灑家會計師急口令環境灑家會計師急口令\n" NOR]);
                 break;
                 default:
-                   result += (["msg" : HIC "環境洒家會計師急口令環境洒家會計師急口令\n" NOR]);
+                   result += (["msg" : HIC "環境灑家會計師急口令環境灑家會計師急口令\n" NOR]);
                 break;
                 }
                 return result;

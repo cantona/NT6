@@ -34,7 +34,7 @@ int perform(object me, object target)
  
         if( !objectp(weapon=query_temp("weapon", me) )
          || query("skill_type", weapon) != "sword" )
-                return notify_fail(PNAME"開始時必須拿著一把劍！\n");
+                return notify_fail(PNAME"開始時必須拿着一把劍！\n");
 
         fskill = "baiyun-xinfa";
         bskill = "sword";

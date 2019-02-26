@@ -7,7 +7,7 @@ void create()
         set_name("烏龜", ({ "wu gui", "gui" }) );
         set("race", "野獸");
         set("age", 10);
-        set("long", "一只大烏龜，看來歲數不小了。\n");
+        set("long", "一隻大烏龜，看來歲數不小了。\n");
         set("attitude", "peaceful");
 
         set("limbs",  ({  "頭部",  "爪子",  "尾巴"  })  );

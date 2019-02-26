@@ -12,7 +12,7 @@ mapping *action = ({
 //      "poison": 80,
         "damage_type": "瘀傷"
 ]),
-([      "action": "$N突然身形旋轉起來撲向$n，雙掌飛舞著拍向$n的$l",
+([      "action": "$N突然身形旋轉起來撲向$n，雙掌飛舞着拍向$n的$l",
         "dodge": -10,
         "force": 200,
 //      "poison": 60,
@@ -25,7 +25,7 @@ mapping *action = ({
 //      "poison": 100,
         "damage_type": "瘀傷"
 ]),
-([        "action": "$N雙掌挾著一股腥臭之氣拍向$n的$l",
+([        "action": "$N雙掌挾着一股腥臭之氣拍向$n的$l",
         "dodge": -10,
         "force": 350,
         "damage": 60,

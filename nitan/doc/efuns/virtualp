@@ -6,7 +6,7 @@
                 int virtualp( object arg );
                 整數 virtualp( 物件 arg );
         函數用法:
-                如果對 arg  來說, objectp() 為 1, 並設定 O_VIRTUAL 
+                如果對 arg  來説, objectp() 為 1, 並設定 O_VIRTUAL 
                 旗標, virtualp()  就傳回真值 (即 1) . 經由主宰物件 
                 (master.c)  之 compile_object 函式創造出來的物件,
                 驅動程式 (driver) 皆對其設定 O_VIRTUAL  旗標.

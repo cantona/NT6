@@ -42,10 +42,10 @@ int valid_leave(object me, string dir)
         {
                 message_vision(CYN "$N" CYN "看見$n" CYN "走了過來，剛想攔住，卻"
                                "聽$n" CYN "一聲斷喝：給我散開！\n$N" CYN "不由得"
-                               "嚇了一跳，訕訕的不敢說話。\n" NOR, bing, me);
+                               "嚇了一跳，訕訕的不敢説話。\n" NOR, bing, me);
                 return ::valid_leave(me, dir);
         }
 
-        return notify_fail(CYN "親兵上前擋住你，朗聲說道：這位" +
+        return notify_fail(CYN "親兵上前擋住你，朗聲説道：這位" +
                            RANK_D->query_respect(me) + "請回吧。老爺不見客。\n" NOR);
 }

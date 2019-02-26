@@ -14,7 +14,7 @@ void create()
         set("title", "日月神教");
         set("long", @LONG
 這就是日月神教教主任我行之女，教中被人稱
-作「聖姑」的任盈盈。只見她青衫小袖，明艷
+作「聖姑」的任盈盈。只見她青衫小袖，明豔
 不可方物，卻是顰眉微皺，似乎不高興。
 LONG);
         set("gender", "女性" );
@@ -125,7 +125,7 @@ void attempt_apprentice(object ob)
         }
 
         command("sigh");
-        command("say 那你以後就跟著我吧。");
+        command("say 那你以後就跟着我吧。");
         command("recruit "+query("id", ob));
         return;
 }

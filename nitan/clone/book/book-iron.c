@@ -48,7 +48,7 @@ int do_study(string arg)
                 (int)me->query_skill("parry", 1) <= 100 )
                 if( query("jing", me)<20 )
                 {
-//                        write("你現在過于疲倦，休息一會兒再讀吧！\n");
+//                        write("你現在過於疲倦，休息一會兒再讀吧！\n");
                         me->unconcious();
                         return 1;
                 }                  

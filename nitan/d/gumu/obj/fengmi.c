@@ -23,7 +23,7 @@ int do_effect(object me)
 {
         if (query("mi_count") < 1)
         {
-                write("罐子裡的玉蜂蜜已經被喝得一滴不剩了。\n");
+                write("罐子裏的玉蜂蜜已經被喝得一滴不剩了。\n");
                 return 1;
         }
 

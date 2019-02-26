@@ -8,9 +8,9 @@ void create()
 {
         set("short", "走廊");
         set("long", @LONG
-這裡是殿堂走廊。房頂一側支在南面的高牆上，另一側則與北邊殿
+這裏是殿堂走廊。房頂一側支在南面的高牆上，另一側則與北邊殿
 堂的屋頂相連。彩樑畫棟，抬眼望去，連頂棚也用彩漆繪滿了各種飛天
-的圖形，每幅畫似乎都在訴說一個娓娓動人的佛經故事。南邊牆上題著
+的圖形，每幅畫似乎都在訴説一個娓娓動人的佛經故事。南邊牆上題着
 一個字(writing)。
 LONG
         );
@@ -74,21 +74,21 @@ int do_study(string arg)
         {
               if( query("jing", me)>cost )
                 {me->improve_skill("medicine",(query("int", me)/4));
-                 write("你對著牆壁琢磨了一回兒，似乎對濟世之術有點心得。\n");
+                 write("你對着牆壁琢磨了一回兒，似乎對濟世之術有點心得。\n");
                  set_temp("stone_learned", 1, me);
                  return 1;
                 }
                 else
              {
                 cost=query("jing", me);
-                write("你現在過于疲倦，無法專心下來研讀濟世之術。\n");
+                write("你現在過於疲倦，無法專心下來研讀濟世之術。\n");
              } 
                  
         }
 
         if( !query_temp("stone_learned", me) )
         {
-                write("你對著牆壁琢磨了一回兒，發現上面所說的太過淺顯，對你來說已毫無意義了。\n");
+                write("你對着牆壁琢磨了一回兒，發現上面所説的太過淺顯，對你來説已毫無意義了。\n");
         }
         return 1;
 }

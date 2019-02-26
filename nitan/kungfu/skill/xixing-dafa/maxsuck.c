@@ -19,7 +19,7 @@ int exert(object me, object target)
          target = offensive_target(me);
 
         if( query("no_fight", environment(me)) )
-                return notify_fail("在這裡不能攻擊他人。\n");
+                return notify_fail("在這裏不能攻擊他人。\n");
 
         if( !objectp(target) ||
                 query("id", target) == "zhangmen" || 
@@ -50,7 +50,7 @@ int exert(object me, object target)
         if( !me->is_fighting() || !target->is_fighting())
 
         if( (int)me->query_skill("xixing-dafa",1) < 90 )
-                return notify_fail("你的吸星大法功力不夠，不能吸取對方的丹元！□n");
+                return notify_fail("你的吸星大法功力不夠，不能吸取對方的丹元！\n");
         if( (int)me->query_skill("kuihua-xinfa",1) < 90 )
                 return notify_fail("你的葵花心法不夠，不能運取吸星大法！\n");
 

@@ -12,7 +12,7 @@ mapping *action = ({
         "damage_type" : "刺傷",
         "skill_name"  : "天山人間"
 ]),
-([      "action" :  "$N氣運于劍，陡然直進，一招「一柱擎天」已然使出，$w直指$n$l",
+([      "action" :  "$N氣運於劍，陡然直進，一招「一柱擎天」已然使出，$w直指$n$l",
         "force"  :  90,
         "dodge"  :  25,
         "parry"  :  40,
@@ -23,7 +23,7 @@ mapping *action = ({
         "skill_name"  : "一柱擎天"
 ]),
 ([     
-        "action" :  "$N劍勢突變，飄忽不定，一式「雲裡霧裡」，向$n$l刺去",
+        "action" :  "$N劍勢突變，飄忽不定，一式「雲裏霧裏」，向$n$l刺去",
         "force"  :  110,
         "dodge"  :  30,
         "parry"  :  40,
@@ -31,7 +31,7 @@ mapping *action = ({
         "damage" :  40,
         "lvl"    :  50,
         "damage_type" : "刺傷",
-        "skill_name"  : "雲裡霧裡"
+        "skill_name"  : "雲裏霧裏"
 ]),
 ([      
         "action" :  "$N輕嘯一聲，$w一抖，一式「氣冠長虹」，眨眼間$w已到$n$l",
@@ -145,7 +145,7 @@ void skill_improved(object me)
         if( lvl > 120 &&
             !query("can_perform/tianzhu-jian/suo", me) ) 
         {
-                tell_object(me, WHT "你通曉了天柱劍法「" HIC "煙雲鎖身" WHT "」的奧秘。\n" NOR);    
+                tell_object(me, WHT "你通曉了天柱劍法「" HIC "煙雲鎖身" WHT "」的奧祕。\n" NOR);    
                 set("can_perform/tianzhu-jian/suo", 1, me);
                 me->improve_skill("martial-cognize", 1500000);  
                 me->improve_skill("martial-cognize", 1500000); 

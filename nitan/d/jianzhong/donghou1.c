@@ -4,7 +4,7 @@ void create()
 {
         set("short","谷後樹林");
         set("long",@LONG
-樹林裡鬱鬱蔥蔥，鳥語花香，光線從樹葉的縫隙中洒
+樹林裏鬱鬱葱葱，鳥語花香，光線從樹葉的縫隙中灑
 向大地，微風吹來，樹影一陣婆娑。四周全是樹，一片綠
 色，在碧綠的海洋中，你漸漸地迷失了方向。
 LONG
@@ -68,7 +68,7 @@ int valid_leave(object me, string dir)
                                  me->move(__DIR__"donghou");
                            delete_temp("zhongnan/tree", me);
                         message("vision",query("name", me)+"一臉倦容地從樹林中鑽了出來。\n",environment(me),me);
-                             return notify_fail("你走了半天，終于走出了這片樹林。\n");
+                             return notify_fail("你走了半天，終於走出了這片樹林。\n");
                  } else
                 if( query_temp("zhongnan/tree", me)<i )
                 {
@@ -81,7 +81,7 @@ int valid_leave(object me, string dir)
                         msg="你鑽進了樹林，可是一會兒又走回了原地。\n";
                 } else
                 {
-                        message("vision",query("name", me)+"似乎胸有成竹地鑽進了樹林裡。\n",environment(me),me);
+                        message("vision",query("name", me)+"似乎胸有成竹地鑽進了樹林裏。\n",environment(me),me);
                         msg="你走了幾步，發現這兒你似乎曾經走過。\n";
                 }
                 return notify_fail(msg);//::valid_leave(me,dir);
@@ -93,10 +93,10 @@ int valid_leave(object me, string dir)
                         me->move(__DIR__"qiaobi");
                         delete_temp("dugu_visit", me);
                         message("vision",query("name", me)+"從樹林中走了過來。\n",environment(me),me);
-                        return notify_fail("你往北走了裡許，來到了一座峭壁之前。\n");
+                        return notify_fail("你往北走了裏許，來到了一座峭壁之前。\n");
                 } else
                 {
-                        message_vision("$N在樹林裡信步而行，邊走邊欣賞風景。\n",me);
+                        message_vision("$N在樹林裏信步而行，邊走邊欣賞風景。\n",me);
                         return ::valid_leave(me,dir);
                 }
         }

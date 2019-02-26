@@ -83,23 +83,23 @@ int do_paimai(string arg)
         if( query("money_id", ob) )
                 return notify_fail("你要拍賣「錢」？\n");
         if( query("value", ob)<10 || money == 0 )
-                return notify_fail("拍賣師說道：這件東西不值錢，你就別賣了！\n");
+                return notify_fail("拍賣師説道：這件東西不值錢，你就別賣了！\n");
         if( query("no_sell", ob) && !query("can_auction", ob) )
-                return notify_fail("拍賣師說道：這樣東西不能拍賣了！\n");
+                return notify_fail("拍賣師説道：這樣東西不能拍賣了！\n");
         if( query("no_drop", ob) && !query("can_auction", ob) )
-                return notify_fail("拍賣師說道：扔不掉的東西想來賣，你當我這裡是垃圾堆啊！\n");
+                return notify_fail("拍賣師説道：扔不掉的東西想來賣，你當我這裏是垃圾堆啊！\n");
         if( ob->query_unique() && !query("can_auction", ob) )
-                return notify_fail("拍賣師說道的說：這是孤品啊，我們這裡可不敢承接這個買賣了！\n");
+                return notify_fail("拍賣師説道的説：這是孤品啊，我們這裏可不敢承接這個買賣了！\n");
     if( money<(100+query("value", ob)/100) )
-                return notify_fail("拍賣師說道：您想做賠本生意，嘿嘿，您財大氣粗無所謂，小店的聲譽可是要受損的。\n");
+                return notify_fail("拍賣師説道：您想做賠本生意，嘿嘿，您財大氣粗無所謂，小店的聲譽可是要受損的。\n");
     if(money<0||money>1000000)
-                return notify_fail("拍賣師說道：你出的價格是非法的。\n"); //防止溢出
+                return notify_fail("拍賣師説道：你出的價格是非法的。\n"); //防止溢出
         if( query("balance", who)<10000 )
-                return notify_fail("拍賣師說道：你賬號裡的錢不夠支付手續費！\n");
+                return notify_fail("拍賣師説道：你賬號裏的錢不夠支付手續費！\n");
    
         addn("balance", -10000, who);
         command("sys"+query("name", who)+"("+query("id", who)+")"+NOR+query("name", ob)+HIC+"進行拍賣。\n"NOR);
-        command("chat"+"有人提交"+NOR+query("name", ob)+HIC+"進行拍賣，請使用"+HIW"□"HIG"拍賣"HIW"□"NOR+HIC"頻道"HIY"（ＢＩＬＬ）"HIC"了解具體情況。"NOR);
+        command("chat"+"有人提交"+NOR+query("name", ob)+HIC+"進行拍賣，請使用"+HIW"〖"HIG"拍賣"HIW"〗"NOR+HIC"頻道"HIY"（ＢＩＬＬ）"HIC"瞭解具體情況。"NOR);
     who->apply_condition("auction_forbindden",1+random(10));
         sscanf(file_name(ob),"%s#%d",file_name,clone_number);
 
@@ -196,7 +196,7 @@ int finish_paimai(int num,int sign)
                         tell_object(buyer,HIR"你獲得了 "+NOR+query("npaimai/" + sprintf("%d", num))+HIR+" 的所有權，請在十分鐘內來拍賣屋取回你買的東西。\n"NOR);
                 if (owner)
                         tell_object(owner,HIR"你的"+NOR+query("npaimai/" + sprintf("%d", num))+HIR+"賣了"
-                        +chinese_number(query("vpaimai/" + sprintf("%d", num)))+"兩銀子，扣除5%手續費，其余的已經加入你的戶頭了。\n"NOR);        
+                        +chinese_number(query("vpaimai/" + sprintf("%d", num)))+"兩銀子，扣除5%手續費，其餘的已經加入你的户頭了。\n"NOR);        
         }
     if(buyer)
           buyer->apply_condition("auction_forbindden",1+random(10));
@@ -224,7 +224,7 @@ int report_paimai(object buyer,int money,int num)
         remove_call_out("finish_paimai");
         remove_call_out("go_paimai");
         
-        if(query("pnum")) // pnum是判斷是否有人投標的標志　 
+        if(query("pnum")) // pnum是判斷是否有人投標的標誌　 
         {
                 pay_back(query("ipaimai/" + sprintf("%d", num)),query("vpaimai/" + sprintf("%d", num))*100);//歸還前一個競買者的錢　
                 addn("pnum",1);
@@ -357,7 +357,7 @@ int do_yao()
                         }
                 }
         }
-        tell_object(this_player(),"這裡沒有屬于你的物品。\n");
+        tell_object(this_player(),"這裏沒有屬於你的物品。\n");
         return 1;
 }
 int delete_ob(int num)

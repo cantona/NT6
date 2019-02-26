@@ -75,7 +75,7 @@ void remove()
         if (! living(this_object()))
         {
                 message_vision("路過兩個人，看到昏迷不醒的$N"
-                               "，嘆口氣，把$P架走了。\n",
+                               "，歎口氣，把$P架走了。\n",
                                this_object());
                 return;
         }

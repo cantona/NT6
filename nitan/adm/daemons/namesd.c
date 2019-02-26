@@ -113,7 +113,7 @@ varargs nomask mapping random_name(int gender, int long_name, string name_a, str
                 vor = sur_name[str];
         }
         
-        // 表格裡沒有這個字。
+        // 表格裏沒有這個字。
         if( !str || !vor )
                 return 0;
         
@@ -157,7 +157,7 @@ varargs nomask mapping random_name(int gender, int long_name, string name_a, str
                 nach = key;
         }
         
-        // 表格裡沒有這個字。
+        // 表格裏沒有這個字。
         if( !str2 || !nach )
                 return 0;
                 

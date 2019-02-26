@@ -156,7 +156,7 @@ void create()
         setup();
 }
 
-// 在這裡配置是否使用全格式模式或格式對應模式
+// 在這裏配置是否使用全格式模式或格式對應模式
 void setup()
 {
         // 即基準文件為 "/inherit/template/gem/gem.c"。

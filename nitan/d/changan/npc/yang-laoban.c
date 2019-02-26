@@ -5,13 +5,13 @@ inherit F_DEALER;
 
 void create()
 {
-        set_name("楊老板", ({ "yang laoban", "yang","laoban" }));
-        set("title", "望星樓老板");
+        set_name("楊老闆", ({ "yang laoban", "yang","laoban" }));
+        set("title", "望星樓老闆");
         set("shen_type", 1);
         set("str", 24);
         set("gender", "男性");
         set("age", 55);
-        set("long", "楊老板不但是這兒的掌櫃，還是這兒的大廚，\n並且燒得一手好菜。\n");
+        set("long", "楊老闆不但是這兒的掌櫃，還是這兒的大廚，\n並且燒得一手好菜。\n");
         set("combat_exp", 50000);
         set("attitude", "friendly");
         set_skill("unarmed", 60);

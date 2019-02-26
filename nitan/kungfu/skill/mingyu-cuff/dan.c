@@ -29,7 +29,7 @@ int perform(object me, object target)
 
         if( objectp(weapon=query_temp("weapon", me)) || 
             objectp(weapon=query_temp("handing", me)) )
-                return notify_fail("你必須空著雙手才能使用掌法絕招。\n");
+                return notify_fail("你必須空着雙手才能使用掌法絕招。\n");
 
         if ((int)me->query_skill("mingyu-cuff", 1) < 200)
                 return notify_fail("你的明玉拳不夠嫻熟，不會使用「亢龍無悔」。\n");
@@ -40,7 +40,7 @@ int perform(object me, object target)
         if( query("neili", me)<800 )
                 return notify_fail("你現在內力太弱，不能使用「亢龍無悔」。\n");
                         
-        msg = HIB "\n$N" HIB "把全身勁力運于雙拳，一聲大喝，平平地向$n推出雙掌！\n" NOR;
+        msg = HIB "\n$N" HIB "把全身勁力運於雙拳，一聲大喝，平平地向$n推出雙掌！\n" NOR;
 
         ap = me->query_skill("cuff") + me->query_skill("force");
         ap+=query("jiali", me);

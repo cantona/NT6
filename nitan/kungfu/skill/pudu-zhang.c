@@ -10,7 +10,7 @@ mapping *action = ({
         "lvl" : 0,
         "skill_name" : "黃牛轉角"
 ]),
-([        "action":"$N快步跨出，一招"HIW"「野馬追風」"NOR"，左手平托$w，右掌猛推杖端，頂向$n的胸口。",
+([        "action":"$N快步跨出，一招"HIW"「野馬追風」"NOR"，左手平託$w，右掌猛推杖端，頂向$n的胸口。",
         "lvl" : 9,
         "skill_name" : "野馬追風"
 ]),
@@ -18,7 +18,7 @@ mapping *action = ({
         "lvl" : 18,
         "skill_name" : "猛虎跳澗"
 ]),
-([        "action":"$N一招"HIY"「獅子搖頭」"NOR"，雙手持杖如櫓，對準$n猛地一攪，如同平地刮起一陣旋風。",
+([        "action":"$N一招"HIY"「獅子搖頭」"NOR"，雙手持杖如櫓，對準$n猛地一攪，如同平地颳起一陣旋風。",
         "lvl" : 27,
         "skill_name" : "獅子搖頭"
 ]),
@@ -30,9 +30,9 @@ mapping *action = ({
         "lvl" : 45,
         "skill_name" : "大蟒翻身"
 ]),
-([        "action":"$N雙手和十，躬身一招"HIY"「胡僧托砵」"NOR"，$w自肘彎飛出，攔腰向$n撞去。",
+([        "action":"$N雙手和十，躬身一招"HIY"「胡僧託缽」"NOR"，$w自肘彎飛出，攔腰向$n撞去。",
         "lvl" : 53,
-        "skill_name" : "胡僧托砵"
+        "skill_name" : "胡僧託缽"
 ]),
 ([        "action":"$N一招"CYN"「慈航普渡」"NOR"，$w如飛龍般自掌中躍出，直向$n的胸口穿入。",
         "lvl" : 60,

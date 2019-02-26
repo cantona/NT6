@@ -360,7 +360,7 @@ object object_parse(string arg, object* objects)
 
         if( !arg || !arg[0] || !sizeof(objects) ) return 0;
 
-        // 試著取得 which
+        // 試着取得 which
         if( sscanf(arg, "%s %d", objectname, which) != 2 )
                 objectname = arg;
 
@@ -400,7 +400,7 @@ object object_parse(string arg, object* objects)
 
         ex: arr = ({ 2, <function1>, 3, <function2>, <function3> })
         則 process_function(arr) 後會先間隔兩秒後再執行 function1,
-        接著再間隔 3 秒後再連續執行 function2 與 function3
+        接着再間隔 3 秒後再連續執行 function2 與 function3
 */
 void process_function(string *fp)
 {

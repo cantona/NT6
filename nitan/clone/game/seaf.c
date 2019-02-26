@@ -10,7 +10,7 @@
 inherit ITEM;
 
 int has_start;
-int game_mode;                                // 開始攻擊？0-布局 1-火力 2-開火 3-結束
+int game_mode;                                // 開始攻擊？0-佈局 1-火力 2-開火 3-結束
 int who_win;                                // 勝利方 0=沒有結束 -1=和手
 mixed table;                                // 兩個棋盤 table = cell[9][9]
                                                         // cell = ({ HasShip , HasFire })
@@ -229,7 +229,7 @@ string build_board(string key)
                 }
                 r+="\n";
         }
-        r += "船只狀態：" + player_status(key) + "\n";
+        r += "船隻狀態：" + player_status(key) + "\n";
         return r;
 }
 
@@ -294,15 +294,15 @@ void display(int who)
                                 switch(game_mode)
                                 {
                                 case 0:
-                                        m = sprintf("布置船只：%d只\n",remain_place(ob->query("id")));
-                                        m += "使用["HIY"place X坐標 Y坐標"NOR"]布置船只\n";
-                                        m += "使用["HIY"unplace X坐標 Y坐標"NOR"]取消布置\n";
-                                        m += "使用["HIY"rplace"NOR"]隨機擺放船只\n";
+                                        m = sprintf("佈置船隻：%d只\n",remain_place(ob->query("id")));
+                                        m += "使用["HIY"place X座標 Y座標"NOR"]佈置船隻\n";
+                                        m += "使用["HIY"unplace X座標 Y座標"NOR"]取消佈置\n";
+                                        m += "使用["HIY"rplace"NOR"]隨機擺放船隻\n";
                                         break;
                                 case 1:
-                                        m = sprintf("布置火力：%d個\n",remain_fire(ob->query("id")));
-                                        m += "使用["HIY"fire X坐標 Y坐標"NOR"]設置攻擊位置\n";
-                                        m += "使用["HIY"unfire X坐標 Y坐標"NOR"]取消設置\n";
+                                        m = sprintf("佈置火力：%d個\n",remain_fire(ob->query("id")));
+                                        m += "使用["HIY"fire X座標 Y座標"NOR"]設置攻擊位置\n";
+                                        m += "使用["HIY"unfire X座標 Y座標"NOR"]取消設置\n";
                                         break;
                                 case 3:
                                         m = "戰鬥結束了。\n戰況：";
@@ -413,11 +413,11 @@ void init()
         add_action("do_visitor","visit");                // 查看情況
         add_action("do_finish","finish");                // 完成
 
-        add_action("do_place","place");                        // 布置船只
-        add_action("do_rplace","rplace");                // 隨機擺放船只
-        add_action("do_unplace","unplace");                // 取消船只
+        add_action("do_place","place");                        // 佈置船隻
+        add_action("do_rplace","rplace");                // 隨機擺放船隻
+        add_action("do_unplace","unplace");                // 取消船隻
 
-        add_action("do_fire","fire");                        // 布置火力
+        add_action("do_fire","fire");                        // 佈置火力
         add_action("do_unfire","unfire");                // 取消火力
 
 
@@ -503,15 +503,15 @@ int do_place(string arg)
                 return notify_fail("你都不玩啊！\n");
         
         if(!has_start||game_mode!=0)
-                return notify_fail("現在不是布置船只的時候。\n");
+                return notify_fail("現在不是佈置船隻的時候。\n");
 
         if( !arg || sscanf(arg, "%d %d", x, y)!=2 )
-                return notify_fail("place X坐標 Y坐標\n");
+                return notify_fail("place X座標 Y座標\n");
 
         if(x<1||x>WIDTH)
-                return notify_fail("X坐標錯誤\n");
+                return notify_fail("X座標錯誤\n");
         if(y<1||y>HEIGHT)
-                return notify_fail("Y坐標錯誤\n");
+                return notify_fail("Y座標錯誤\n");
 
         id = this_player()->query("id");
         sh = get_ship(id);
@@ -520,7 +520,7 @@ int do_place(string arg)
                 return notify_fail("access date fail\n");
 
         if(tb[x-1][y-1][0] == 1)
-                return notify_fail("該處已經布置了船只\n");
+                return notify_fail("該處已經佈置了船隻\n");
 
         for(i=0;i<SHIP_NUM;i++)
         {
@@ -534,12 +534,12 @@ int do_place(string arg)
         }
 
         if(i==SHIP_NUM)
-                return notify_fail("你已經沒有空余的船只可以布置了。\n");
+                return notify_fail("你已經沒有空餘的船隻可以佈置了。\n");
         else
         {
                 display(player_id(id));
                 if(!remain_place(id))
-                        tell_object(this_player(),"\n使用[Finish]結束布置船只。\n");
+                        tell_object(this_player(),"\n使用[Finish]結束佈置船隻。\n");
         }
         return 1;
 }
@@ -553,15 +553,15 @@ int do_unplace(string arg)
                 return notify_fail("你都不玩啊！\n");
         
         if(game_mode!=0)
-                return notify_fail("現在不是布置船只的時候。\n");
+                return notify_fail("現在不是佈置船隻的時候。\n");
 
         if( !arg || sscanf(arg, "%d %d", x, y)!=2 )
-                return notify_fail("unplace X坐標 Y坐標\n");
+                return notify_fail("unplace X座標 Y座標\n");
 
         if(x<1||x>WIDTH)
-                return notify_fail("X坐標錯誤\n");
+                return notify_fail("X座標錯誤\n");
         if(y<1||y>HEIGHT)
-                return notify_fail("Y坐標錯誤\n");
+                return notify_fail("Y座標錯誤\n");
 
         sh = get_ship(this_player()->query("id"));
         tb = get_table(this_player()->query("id"));
@@ -581,7 +581,7 @@ int do_unplace(string arg)
         }
 
         if(i==SHIP_NUM)
-                return notify_fail("該位置沒有布置船只。\n");
+                return notify_fail("該位置沒有佈置船隻。\n");
         return 1;
 }
 
@@ -605,18 +605,18 @@ int do_finish(string arg)
         if(game_mode==0)
         {
                 if(remain_place(id))
-                        return notify_fail("還有船只沒有布置\n");
+                        return notify_fail("還有船隻沒有佈置\n");
         }
         else if(game_mode==1)
         {
                 if(remain_fire(id))
-                        return notify_fail("還有火力沒有布置\n");
+                        return notify_fail("還有火力沒有佈置\n");
         }
 
         if(game_mode==0)
-                msg(this_player(),0,"$N的船只布置完成\n");
+                msg(this_player(),0,"$N的船隻佈置完成\n");
         else if(game_mode==1)
-                msg(this_player(),0,"$N的火力布置完成\n");
+                msg(this_player(),0,"$N的火力佈置完成\n");
 
         player_action[this_player()->query("id")] = 1;
         if(sizeof(player_action)==2)
@@ -640,15 +640,15 @@ int do_fire(string arg)
                 return notify_fail("你都不玩啊！\n");
         
         if(game_mode!=1)
-                return notify_fail("現在不是布置火力的時候。\n");
+                return notify_fail("現在不是佈置火力的時候。\n");
 
         if( !arg || sscanf(arg, "%d %d", x, y)!=2 )
-                return notify_fail("place X坐標 Y坐標\n");
+                return notify_fail("place X座標 Y座標\n");
 
         if(x<1||x>WIDTH)
-                return notify_fail("X坐標錯誤\n");
+                return notify_fail("X座標錯誤\n");
         if(y<1||y>HEIGHT)
-                return notify_fail("Y坐標錯誤\n");
+                return notify_fail("Y座標錯誤\n");
 
         id = this_player()->query("id");
         sh = get_ship(id);
@@ -657,7 +657,7 @@ int do_fire(string arg)
                 return notify_fail("access date fail\n");
 
         if(tb[x-1][y-1][1] != 0)
-                return notify_fail("該處已經布置了火力\n");
+                return notify_fail("該處已經佈置了火力\n");
 
         for(i=0;i<SHIP_NUM;i++)
         {
@@ -672,12 +672,12 @@ int do_fire(string arg)
         }
 
         if(i==SHIP_NUM)
-                return notify_fail("你已經沒有空余的火力可以布置了。\n");
+                return notify_fail("你已經沒有空餘的火力可以佈置了。\n");
         else
         {
                 display(player_id(id));
                 if(i+1==SHIP_NUM)
-                        tell_object(this_player(),"\n使用[Finish]結束布置火力。\n");
+                        tell_object(this_player(),"\n使用[Finish]結束佈置火力。\n");
         }
         return 1;
 }
@@ -692,15 +692,15 @@ int do_unfire(string arg)
                 return notify_fail("你都不玩啊！\n");
         
         if(game_mode!=1)
-                return notify_fail("現在不是布置火力的時候。\n");
+                return notify_fail("現在不是佈置火力的時候。\n");
 
         if( !arg || sscanf(arg, "%d %d", x, y)!=2 )
-                return notify_fail("unplace X坐標 Y坐標\n");
+                return notify_fail("unplace X座標 Y座標\n");
 
         if(x<1||x>WIDTH)
-                return notify_fail("X坐標錯誤\n");
+                return notify_fail("X座標錯誤\n");
         if(y<1||y>HEIGHT)
-                return notify_fail("Y坐標錯誤\n");
+                return notify_fail("Y座標錯誤\n");
 
         id = this_player()->query("id");
         sh = get_ship(id);
@@ -721,7 +721,7 @@ int do_unfire(string arg)
         }
 
         if(i==SHIP_NUM)
-                return notify_fail("該位置沒有布置火力。\n");
+                return notify_fail("該位置沒有佈置火力。\n");
         return 1;
 }
 
@@ -891,7 +891,7 @@ int do_visitor(string arg)
         {
                 ob = present(key,environment(this_object()));
                 if(!ob)
-                        return notify_fail("這裡沒有這個玩家啊？\n");
+                        return notify_fail("這裏沒有這個玩家啊？\n");
 
                 if(del)
                 {
@@ -936,7 +936,7 @@ int do_rplace(string arg)
                 return notify_fail("你都不玩啊！\n");
         
         if(!has_start||game_mode!=0)
-                return notify_fail("現在不是布置船只的時候。\n");
+                return notify_fail("現在不是佈置船隻的時候。\n");
         
         sh = get_ship(this_player()->query("id"));
         tb = get_table(this_player()->query("id"));
@@ -967,33 +967,33 @@ int do_help(string arg)
 {
         this_player()->start_more( @HELP
 海戰棋使用方法:
-──[開始遊戲]───────────────
+——[開始遊戲]———————————————
 幫助命令：helpboard
 加入命令：join　　　　　加入遊戲
 開始命令：start 　　　　開始遊戲
 重置命令：reset board 　結束遊戲
 
-──[船只布置]───────────────
-放置船只：place X坐標 Y坐標
-取消放置：unplace X坐標 Y坐標
+——[船隻佈置]———————————————
+放置船隻：place X座標 Y座標
+取消放置：unplace X座標 Y座標
 隨機放置：rplace
 放置結束：finish
 
-──[火力布置]───────────────
-放置火力：fire X坐標 Y坐標
-取消放置：unfire X坐標 Y坐標
+——[火力佈置]———————————————
+放置火力：fire X座標 Y座標
+取消放置：unfire X座標 Y座標
 放置結束：finish
 
-──[觀戰命令]───────────────
+——[觀戰命令]———————————————
 觀戰命令：visit [-d] 玩家ID
                 邀請其它玩家觀看你的遊戲。
                 加參數 -d 表示刪除該玩家的觀看資格。
 
-──[遊戲規則]───────────────
+——[遊戲規則]———————————————
 該遊戲是兩人遊戲。
 分為準備和戰鬥階段兩個階段。
 
-在準備階段，各人把自己的船放置于自己的
+在準備階段，各人把自己的船放置於自己的
 棋盤上。當各人都準備好以後，進入戰鬥階
 段。
 
@@ -1009,7 +1009,7 @@ int do_help(string arg)
 遊戲開始時候，每人有10艘船。
 最後誰的船最先被全部消滅掉，誰為輸者。
 
-──────────────────────
+——————————————————————
                         make by 貓部貓(Catyboy) v1.0
 HELP
         );

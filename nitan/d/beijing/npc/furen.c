@@ -40,7 +40,7 @@ void create()
         set_temp("apply/damage", 35);
         set("inquiry", ([
                 "鰲拜"  : "鰲拜是我家的大仇人。",
-                "吳之榮": "我一定要手刃了這個姦賊。",
+                "吳之榮": "我一定要手刃了這個奸賊。",
                 "禮物"  : "這樣禮物可不一般，她就是我的好丫環雙兒。",
                 "雙兒"  : "這小丫頭跟隨我多年，做事也還妥當。",
         ]) );
@@ -66,7 +66,7 @@ void greeting(object ob)
         if (! ob || environment(ob) != environment() || ! living(ob))
                 return;
 
-        say( "莊夫人說道：很久沒有人來了，這位" + RANK_D->query_respect(ob) +
+        say( "莊夫人説道：很久沒有人來了，這位" + RANK_D->query_respect(ob) +
              "，可知道我相公的下落嗎？\n");
 }
 
@@ -93,7 +93,7 @@ int accept_object(object me, object ob)
                 }
 
               set_temp("zhuang_liwu", 1, me);
-                 message_vision("\n莊夫人對$N說道：這位" +
+                 message_vision("\n莊夫人對$N説道：這位" +
                                RANK_D->query_respect(me) +
                                "，如此大恩大德，妾身實不知何以為報。\n"
                                 "莊夫人微一沉思，道：我想送恩公一件禮物，"
@@ -102,10 +102,10 @@ int accept_object(object me, object ob)
         if( query("name", ob) == "明史輯略" || 
              query("name", ob) == "莊允城" )
         {
-                 message_vision("\n莊夫人說道：這位" +
+                 message_vision("\n莊夫人説道：這位" +
                                RANK_D->query_respect(me)+"，多謝了！\n", me);
 
-                 message_vision("莊夫人感嘆道：唉！你要能幫我找到吳之榮這"
+                 message_vision("莊夫人感歎道：唉！你要能幫我找到吳之榮這"
                                "狗賊就好了。\n", me);
         }                
          return 1;

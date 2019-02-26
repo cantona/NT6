@@ -14,8 +14,8 @@ mixed start_kaoyan();
 void create()
 {
         set_name(HIW "通天老仙" NOR, ({ "tongtian laoxian", "tongtian", "laoxian" }));
-        set("long", HIW "    此乃鎮守天外天的天界大神─通天老仙，據說他\n"
-                        "掌管著天界轉世之路最後一道到大門。\n" NOR);
+        set("long", HIW "    此乃鎮守天外天的天界大神—通天老仙，據説他\n"
+                        "掌管着天界轉世之路最後一道到大門。\n" NOR);
 
         set("gender", "男性");
         set("age", 199);
@@ -60,7 +60,7 @@ void create()
         carry_object(__DIR__"obj/xianpao")->wear();
 }
 
-// 轉世後考驗過12天可以再獲得2點輪回點
+// 轉世後考驗過12天可以再獲得2點輪迴點
 mixed start_kaoyan()
 {
            object me;
@@ -83,7 +83,7 @@ mixed start_kaoyan()
            // 檢查是否已經獲得過
            if (me->query("scborn/get_lunhui_point_12t"))
            {
-                          write("你已經獲取過輪回點了。\n");
+                          write("你已經獲取過輪迴點了。\n");
                           return 0;
            }
 
@@ -93,14 +93,14 @@ mixed start_kaoyan()
                           return 0;
            }
 
-           // 獲得輪回點
+           // 獲得輪迴點
            me->add("scborn/total_lunhui_point", 2);
            me->add("scborn/cur_lunhui_point", 2);
            me->set("scborn/get_lunhui_point_12t", 1);
 
            me->save();
 
-           write("恭喜你經過十二重天考驗，獲得 兩 點輪回點。\n");
+           write("恭喜你經過十二重天考驗，獲得 兩 點輪迴點。\n");
            return 1;
 }
 
@@ -114,13 +114,13 @@ mixed start_scborn()
 
         if (me->query("sky12/haotianta"))
         {
-                tell_object(me, HIG "通天老仙對你說道：昊天塔找到了嗎？\n" NOR);
+                tell_object(me, HIG "通天老仙對你説道：昊天塔找到了嗎？\n" NOR);
                 return 1;
         }
 
-        message_sort(HIM "\n$N" HIM "對$n" HIM "說道：人之生老病死、轉世輪回皆有定數，"
-                     "乃上天注定，如果非要逆天而行，則需打通重重難關，你現在打通了天界"
-                     "十二重天，原本應該可以轉世重生，但由于你違逆天道，人道，如要順利"
+        message_sort(HIM "\n$N" HIM "對$n" HIM "説道：人之生老病死、轉世輪迴皆有定數，"
+                     "乃上天註定，如果非要逆天而行，則需打通重重難關，你現在打通了天界"
+                     "十二重天，原本應該可以轉世重生，但由於你違逆天道，人道，如要順利"
                      "轉世重新做人還需將自身吸入昊天塔中，借用此神器吸星換月之力方可。\n" NOR,
                      this_object(), me);
                      
@@ -154,7 +154,7 @@ int do_yhjob(string arg)
                 msg += HIM "魔師: 令世人畏懼的職業，擁有邪異類攻擊特技。\n" NOR;
                 msg += HIG "隱士: 被世人所遺忘，隱居世外，擁有多種輔助類特技。\n" NOR;
                 msg += HIY "具體職業介紹請參見轉世職業幫助文件 help scborn_yhjob\n" NOR;
-                msg += HIY "請輸入指令" HIR " yhjob 職業 " HIY "來選擇您轉世後的職業，選擇前請認真閱讀轉世職業幫助文件。\n\n" NOR;
+                msg += HIY "請輸入指令" HIR " yhjob 職業 " HIY "來選擇您轉世後的職業，選擇前請認真閲讀轉世職業幫助文件。\n\n" NOR;
 
                 write(msg);
                 return 1;        
@@ -223,7 +223,7 @@ int accept_object(object me, object ob)
         destruct(ob);
 
         message_sort(HIC "\n$N" HIC "念起咒語，祭起手中的昊天塔，剎時間，七道光芒從"
-                         "昊天塔中奔騰而出，將$n" HIC "卷了進去 ……\n" NOR,
+                         "昊天塔中奔騰而出，將$n" HIC "捲了進去 ……\n" NOR,
                          this_object(), me);
                          
 
@@ -274,13 +274,13 @@ int accept_object(object me, object ob)
 int notify_all(object me, string msg, mixed spes)
 {
                 CHANNEL_D->do_channel(this_object(), "rumor", 
-                               HIY "聽說" + me->name() + HIY + 
+                               HIY "聽説" + me->name() + HIY + 
                                "打通十二重天，穿梭時空，進入了來世！\n" NOR);
          
          tell_object(me, HIW "\n你獲得轉世技能：" + msg + "\n" NOR);
 
-                 // 獲得輪回點
-                 tell_object(me, HIG"轉世成功，獲得 五 點輪回點，以後請使用 power 指令查看。\n");
+                 // 獲得輪迴點
+                 tell_object(me, HIG"轉世成功，獲得 五 點輪迴點，以後請使用 power 指令查看。\n");
                  me->add("scborn/total_lunhui_point", 5);
                  me->add("scborn/cur_lunhui_point", 5);
 

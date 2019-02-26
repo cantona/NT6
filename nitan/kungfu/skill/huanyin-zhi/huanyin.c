@@ -13,7 +13,7 @@ int perform(object me, object target)
         if (! target) target = offensive_target(me);
 
         if( query("no_fight", environment(me)) )
-                return notify_fail("這裡不能攻擊別人! \n");
+                return notify_fail("這裏不能攻擊別人! \n");
 
         if (! target || ! target->is_character())
                 return notify_fail("施毒只能對對手使用。\n");
@@ -34,7 +34,7 @@ int perform(object me, object target)
                 return notify_fail("你的真氣不夠，現在無法施展幻陰神指。\n");
 
         if (! living(target))
-                return notify_fail("對方都已經這樣了，用不著這麼費力吧？\n");
+                return notify_fail("對方都已經這樣了，用不着這麼費力吧？\n");
 
         msg = HIG "$N" HIG "深深的吸了一口氣，緩緩的刺"
               "出一指，挾待一股寒氣逼向$n" HIG "。\n" NOR;

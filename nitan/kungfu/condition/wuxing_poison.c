@@ -31,7 +31,7 @@ int update_condition(object me, int duration)
         if( duration > limit3 && duration < limit4)
         {
                 tell_object(me,"你覺得肝腸寸斷，全身痛苦得縮成一團，毒氣似乎已經開始擴散了。\n");
-                message("vision", me->name() + "嘴唇發青，牙關咬的咯咯直響，身子已經蜷縮成了一團。\n", environment(me), me);
+                message("vision", me->name() + "嘴脣發青，牙關咬的咯咯直響，身子已經蜷縮成了一團。\n", environment(me), me);
         }
         if( duration > limit2 && duration < limit3)
         {

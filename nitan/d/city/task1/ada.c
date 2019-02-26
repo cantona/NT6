@@ -8,7 +8,7 @@ void create()
         set_name("阿大", ({"a  da"}));
         set("nickname", "八臂神劍");
         set("long",
-        "原丐幫四大長老之首，出身少林，劍術之精，名動江湖，據說出手極快。\n");
+        "原丐幫四大長老之首，出身少林，劍術之精，名動江湖，據説出手極快。\n");
         set("gender", "男性");
         set("age", 66);
         set("attitude", "peaceful");

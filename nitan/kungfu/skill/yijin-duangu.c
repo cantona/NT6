@@ -21,7 +21,7 @@ int valid_force(string force)
 }
 
 mapping *action = ({
-([      "action":"$N默自運功，依照易筋鍛骨的口訣將內息在周身經脈中遊走了一遍"
+([      "action":"$N默自運功，依照易筋鍛骨的口訣將內息在周身經脈中游走了一遍"
 ]),
 });
 
@@ -100,11 +100,11 @@ mixed valid_damage(object ob, object me, int damage, object weapon)
                 {
                 case 0:
                         result += (["msg" : HIM"$n單手接下了$N這一招，卻發出「鏘」一聲，"
-                                            HIM"仿佛$n這只手是鐵鑄般。\n"NOR]);
+                                            HIM"彷彿$n這隻手是鐵鑄般。\n"NOR]);
                         break;
                 case 1:
                         result += (["msg" : HIM"$N一招平實得打在$n身上，然而$N感覺像打到"
-                                            HIM"棉花上一樣，說不出的怪異。\n"NOR]);
+                                            HIM"棉花上一樣，説不出的怪異。\n"NOR]);
                         break;
                 default:
                         result += (["msg" : HIM"眼看$N這招逼得$n無路可逃，卻見$n沒了骨頭"

@@ -34,7 +34,7 @@ int exert(object me, object target)
         if( !objectp(weapon) || query("skill_type", weapon) != "blade" )
                 return notify_fail("你沒有裝備刀，難以施展" + HUAXUE + "。\n");
 
-        msg = HIR "$N" HIR "凝神閉目，右手持刀，左手順著" + weapon->name() +
+        msg = HIR "$N" HIR "凝神閉目，右手持刀，左手順着" + weapon->name() +
               HIR "刀刃一抹，鮮血頓時將" + weapon->name() + HIR "染紅。\n待到$N"
               HIR "雙目睜開，頓時殺氣沖天！\n" NOR;
 

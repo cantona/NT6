@@ -1,4 +1,4 @@
-// 神話世界﹒西遊記﹒版本４．５０
+// 神話世界·西遊記·版本４．５０
 /* <SecCrypt CPL V3R05> */
  
 
@@ -12,7 +12,7 @@ void create()
    if (clonep())
      set_default_object(__FILE__);
    else {
-                set("long", "又香又甜的哈密瓜。□n");
+                set("long", "又香又甜的哈密瓜。n");
                 set("unit", "顆");
      set("value", 100);
      set("food_remaining", 4);

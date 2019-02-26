@@ -4,7 +4,7 @@ void create()
 {
         set("short", "蛇精洞外");
         set("long",@LONG
-這是蛇精洞外，再往前走就要進入蛇精洞了，據說，還沒有人能活著
+這是蛇精洞外，再往前走就要進入蛇精洞了，據説，還沒有人能活着
 走出蛇精洞。
 LONG);
 
@@ -14,7 +14,7 @@ LONG);
 		"enter"   : __DIR__"shejingdong",
 	]));
 
-	// 為確保100%安全，這裡也設置免死
+	// 為確保100%安全，這裏也設置免死
 	set("no_die", 1);
 	
         setup();
@@ -36,7 +36,7 @@ int valid_leave(object me, string dir)
         	{
         		if (base_name(environment(ob)) == "/d/shenlong/shejingdong")
         		{
-        			write("對不起，裡面已經開始了對抗蛇精的戰鬥。\n");
+        			write("對不起，裏面已經開始了對抗蛇精的戰鬥。\n");
         			return 0;
         		}
         	}

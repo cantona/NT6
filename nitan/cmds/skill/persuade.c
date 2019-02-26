@@ -18,7 +18,7 @@ int main(object me, string arg)
                 return notify_fail("只有峨嵋派才能用渡世濟人！\n");
 
         if( query("no_fight", environment(me)) )
-                return notify_fail("這裡不會有人打鬥！\n");
+                return notify_fail("這裏不會有人打鬥！\n");
 
         if( query_temp("dushi", me) )
                 return notify_fail("你已經在勸人家罷鬥了！\n");
@@ -29,7 +29,7 @@ int main(object me, string arg)
         victim = present(who, where);
 
         if (! victim || victim == me)
-                return notify_fail("你想找的對象不在這裡。\n");
+                return notify_fail("你想找的對象不在這裏。\n");
 
         if (! living(victim))
                 return notify_fail("他目前這個樣子似乎已經不能戰鬥了。\n");
@@ -51,14 +51,14 @@ int main(object me, string arg)
         dp=query("jing", victim);
 
         tell_object(me, "你搖搖了頭，慢慢地向" + victim->name() +
-                    "走過去，雙手合十，開始念誦佛經...\n\n");
+                    "走過去，雙手合十，開始唸誦佛經...\n\n");
         tell_object(victim, me->name() + "搖搖了頭向你慢慢走過來，"
-                    "雙手合十，說道：我佛慈悲普度渡眾生, 還請" +
+                    "雙手合十，説道：我佛慈悲普度渡眾生, 還請" +
                     RANK_D->query_respect(victim) +
                     "罷鬥, 免增罪孽吧...\n\n");
 
         message("vision", "只見" + me->name() + "搖搖了頭，慢慢地向" +
-                victim->name() + "走過去，\n雙手合十，說道：請" +
+                victim->name() + "走過去，\n雙手合十，説道：請" +
                 RANK_D->query_respect(victim) + "，停手吧 ...\n\n",
                 where, ({ me, victim }));
 
@@ -83,7 +83,7 @@ protected void compelete_dushi(object me, object victim, object ob, int sp, int 
 
         if (environment(victim) != environment(me))
         {
-                tell_object(me, "很可惜，你要找的人已經不在這裡了。\n");
+                tell_object(me, "很可惜，你要找的人已經不在這裏了。\n");
                 return;
         }
 
@@ -91,7 +91,7 @@ protected void compelete_dushi(object me, object victim, object ob, int sp, int 
         {
                 victim->remove_all_enemy(1);
                 tell_object(me, victim->name() + "低頭想了一會，又看了"
-                            "看你，搖搖頭，嘆了口氣，停止了打鬥。\n");
+                            "看你，搖搖頭，歎了口氣，停止了打鬥。\n");
                 tell_object(victim, "你聽了之後，心中不覺一緊，不再想繼續打下去了。\n");
 
                 me->improve_skill("persuading",2*random(query("int", me)));
@@ -105,7 +105,7 @@ protected void compelete_dushi(object me, object victim, object ob, int sp, int 
                 if (random(sp) > dp / 2)
                 {
                         message_vision("$n狠狠地瞪了$N一眼，喝道：滾！"
-                                       "$N嘆了口氣轉身走開了。\n", me, victim);
+                                       "$N歎了口氣轉身走開了。\n", me, victim);
                         return;
                 }
         

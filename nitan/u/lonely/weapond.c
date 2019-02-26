@@ -57,7 +57,7 @@ mapping weapon_actions = ([
                 "post_action":  (: call_other, __FILE__, "slash_weapon" :),
         ]),
         "strike": ([
-                "action":       "$N一個大舒臂掄起$w，對著$n的$l往下一砸",
+                "action":       "$N一個大舒臂掄起$w，對着$n的$l往下一砸",
                 "damage_type":  "築傷",
                 "dodge":        -10,
                 "parry":        -10,
@@ -141,14 +141,14 @@ void bash_weapon(object me, object victim, object weapon, int damage)
                 } 
                 else if( wap > 3 * wdp )
                         {
-                                message_vision(HIY"$N只覺得手中"+ob->name()+HIY"把持不定，脫手飛出！\n"NOR,victim);
+                                message_vision(HIY"$N只覺得手中"+ob->name()+HIY"把持不定，脱手飛出！\n"NOR,victim);
                                 ob->unequip();
                                 ob->move(environment(victim));
                                 victim->reset_action();
                         } 
                         else if( wap > wdp )
                                 {
-                                        message_vision(HIW "$N只覺得手中" + ob->name() + HIW"一震，險些脫手！\n"NOR, victim);
+                                        message_vision(HIW "$N只覺得手中" + ob->name() + HIW"一震，險些脱手！\n"NOR, victim);
                                 }
                                 else
                                 {
@@ -175,7 +175,7 @@ void slash_weapon(object me, object victim, object weapon, int damage)
                 if( wp > 0 && wp > (wp1 + wp2) * 5 &&
                         random(query("str", me))>query("str", victim)/2 )
                 {
-                        message_vision(WHT "只聽見「□」地一聲輕響，$N手中的"+weapon1->name()+WHT"已經被"+weapon->name()+WHT"削為兩截！\n"NOR, victim );
+                        message_vision(WHT "只聽見「哐」地一聲輕響，$N手中的"+weapon1->name()+WHT"已經被"+weapon->name()+WHT"削為兩截！\n"NOR, victim );
                         weapon1->unequip();
                         weapon1->move(environment(victim));
                         set("name", "斷掉的"+query("name", weapon1), weapon1);
@@ -191,7 +191,7 @@ void slash_weapon(object me, object victim, object weapon, int damage)
                         && poison1 > 1 && victim->query_condition(poison) < 50)
                 {
                         if (poison1 == 2)                   
-                                set_temp("apply/long", ({query("long", weapon)+"好象是被喂過劇毒，不過效果已經不明顯了。\n"}), weapon);
+                                set_temp("apply/long", ({query("long", weapon)+"好像是被餵過劇毒，不過效果已經不明顯了。\n"}), weapon);
                                 addn("poison_number", -1, weapon);
                                 victim->apply_condition(poison, victim->query_condition(poison) + random(10));
                                 message_vision(HIR"$n只覺得傷口上一麻，大叫一聲：不好！\n"NOR,me,victim);

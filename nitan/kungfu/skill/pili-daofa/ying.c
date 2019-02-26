@@ -30,7 +30,7 @@ int perform(object me, object target)
                 return notify_fail("你的真氣不夠，不能使用「刀影重重」。\n");
 
         msg = HIC "$N" HIC "身法忽變，手中" + weapon->name() + "劃出片片刀影，向$n" + HIC
-              "一層層卷去。\n" NOR;
+              "一層層捲去。\n" NOR;
 
         ap = attack_power(me, "blade");
         dp = defense_power(target, "dodge");

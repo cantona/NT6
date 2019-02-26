@@ -52,7 +52,7 @@
 
          msg = HIW "\n$N你深吸一口氣，大喝一聲，施出鐵掌掌法中的“鐵蒲扇掌”擊向$n！\n"NOR;
           if ( target->query_con()/3 < random(me->query_con())) {
-              msg += HIG"\n$n雙掌一並，硬是接下了$N這一掌！\n"NOR;
+              msg += HIG"\n$n雙掌一併，硬是接下了$N這一掌！\n"NOR;
               if (target->query_str() < me->query_str()) {
                   target->add_temp("apply/strength",-me->query_str());
                   target->set_temp("pushan",me->query_str());

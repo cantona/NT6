@@ -1,10 +1,10 @@
 //                標準描述長度示例                                   |
-// 幻境﹒遙遠傳說之起緣﹒幽靈顯現 新增人物，用于檢測玩家是否 robot.  grin~
+// 幻境·遙遠傳説之起緣·幽靈顯現 新增人物，用於檢測玩家是否 robot.  grin~
 // 以奈何現在寫ROBOT的臭水平，只能想到這樣的寫法，不知道這樣的問題能
 // 不能用 robot 來回答？ grin~
-// ROBOT CHECK 程序在 2002 年底左右寫成，這裡是直接復制過來用的。
+// ROBOT CHECK 程序在 2002 年底左右寫成，這裏是直接複製過來用的。
 
-// by naihe  2003-10-22  于茂名
+// by naihe  2003-10-22  於茂名
 
 #include <ansi.h>
 inherit NPC;
@@ -37,7 +37,7 @@ int me_ok(object me)
 void create()
 {
     set_name( "蒙面人", ({ "mengmian ren", "mmr" }) );
-    set("long", "這是一個蒙著臉面的男人，嗓音沙啞，一副神秘兮兮的樣子。\n");
+    set("long", "這是一個蒙着臉面的男人，嗓音沙啞，一副神祕兮兮的樣子。\n");
     set("hj_game/npc", "robot_checker");
     set("gender","男性");
     set("age", 41);
@@ -68,13 +68,13 @@ int do_test( string arg )
 
     if( !arg ) return notify_fail("要對誰進行問題測試？\n");
 
-    message_vision( "$N對著$n說道：“對"+arg+"進行測試問題。”\n", this_player(), this_object() );
+    message_vision( "$N對着$n説道：“對"+arg+"進行測試問題。”\n", this_player(), this_object() );
     command( "ok" );
 
     who = present( arg, environment(this_object()) );
     if( !who )
     {
-        command("say 這個人不在這裡耶。");
+        command("say 這個人不在這裏耶。");
         return 1;
     }
 
@@ -105,14 +105,14 @@ int do_ans( string arg )
 
     if( !arg )
     {
-        message_vision("$N對著$n大聲說道：“我知道了！它根本就不在這裡！！！”\n", me, this_object() );
+        message_vision("$N對着$n大聲説道：“我知道了！它根本就不在這裏！！！”\n", me, this_object() );
         command("kick"+query("id", me));
-        command( "say 胡說！就在這裡，看仔細點！");
+        command( "say 胡説！就在這裏，看仔細點！");
         return 1;
     }
 
 
-    message_vision("$N對著$n大聲說道：“我知道了！它的位置是 "+arg+" ！”\n", me, this_object() );
+    message_vision("$N對着$n大聲説道：“我知道了！它的位置是 "+arg+" ！”\n", me, this_object() );
 
     if( !query("wait_ans") )
     {
@@ -144,7 +144,7 @@ int do_ans( string arg )
         return 1;
     }
 
-    command("say 亂說！看仔細點！");
+    command("say 亂説！看仔細點！");
     return 1;
 }
 
@@ -178,7 +178,7 @@ void delete_me()
     else
     {
         ob->move( environment(me) );
-        message_vision( "$n對著$N劈頭大罵道：“豈有此理，問你那麼簡單的問題都不會，該罰！”\n說罷，$n對著$N踢了一腳，$N只痛得嗷嗷大叫。\n$n罵道：“我都看出來了，是 "+query("quest_ans")+" 嘛！！！”$n說完，氣憤地離開了！\n", me, ob);
+        message_vision( "$n對着$N劈頭大罵道：“豈有此理，問你那麼簡單的問題都不會，該罰！”\n説罷，$n對着$N踢了一腳，$N只痛得嗷嗷大叫。\n$n罵道：“我都看出來了，是 "+query("quest_ans")+" 嘛！！！”$n説完，氣憤地離開了！\n", me, ob);
         tell_object( me, HIR"遊戲提示：你的氣息大大降低了！！！\n"NOR );
 
         hp=query_temp("hj_hp", me);
@@ -226,15 +226,15 @@ void start_check()
 
     question_info = get_question( PIC_NUMBER );
 
-    message_vision("只見一個$n急急忙忙地走了過來，直沖到$N面前，張口就問了一個問題。\n",
+    message_vision("只見一個$n急急忙忙地走了過來，直衝到$N面前，張口就問了一個問題。\n",
         me, this_object() );
 
-    tell_object(me,query("name")+"說道：“"+query("name", me)+"，我有一個問題想請教你，請你"HIR"務必要在三分鐘內回答"NOR"我。”\n");
+    tell_object(me,query("name")+"説道：“"+query("name", me)+"，我有一個問題想請教你，請你"HIR"務必要在三分鐘內回答"NOR"我。”\n");
 
     tell_object( me,  question_info [ "shows_all" ] );
-    tell_object( me,  query("name")+"說道：“我看不出來 "+question_info[ "shows_color" ] +" 這個顏色的 "+question_info[ "shows_flag" ] + " 圖案在哪裡，你能告訴我它在什麼位置嗎？”\n");
-    tell_object( me,  query("name")+"繼續說道：“從左往右數，你把它的位置告訴我就行了。”(ans 數字)\n");
-    tell_object( me,  query("name")+"不厭其煩地說道：“如果你沒看清，你可以問我，我重復一次。”(ask mengmian ren about 問題)\n");
+    tell_object( me,  query("name")+"説道：“我看不出來 "+question_info[ "shows_color" ] +" 這個顏色的 "+question_info[ "shows_flag" ] + " 圖案在哪裏，你能告訴我它在什麼位置嗎？”\n");
+    tell_object( me,  query("name")+"繼續説道：“從左往右數，你把它的位置告訴我就行了。”(ans 數字)\n");
+    tell_object( me,  query("name")+"不厭其煩地説道：“如果你沒看清，你可以問我，我重複一次。”(ask mengmian ren about 問題)\n");
 
     set( "quest", question_info[ "shows_all" ] + "\n顏色："+ question_info[ "shows_color" ]+" 圖案："+question_info[ "shows_flag" ] + " ，請回答它的位置（從左到右數，<ans 數字>）。\n" );
     set( "quest_ans", question_info[ "answer" ] );
@@ -247,7 +247,7 @@ mapping get_question(int times)
 {
     string
 *show=({ }),
-*flags=({"☆","★","○","●","◎","◇","◆","□","■","△","▲","□",}),
+*flags=({"☆","★","○","●","◎","◇","◆","□","■","△","▲","¤",}),
 flag,
 *cls=({HIR,HIC,HIG,HIY,HIW,HIM,}),
 cl,
@@ -295,8 +295,8 @@ shows = "  ";
     return ([ "shows_color": bcl+"    "+NOR,"shows_flag": flag+NOR,"shows_all" : shows,"answer":answer ]);
 
 /************************************************
- 格式說明：需要調用本函數時，需加參數：“次數”。
- 返回值元素說明：
+ 格式説明：需要調用本函數時，需加參數：“次數”。
+ 返回值元素説明：
  shows_color :  玩家提示，顏色
  shows_flag  :  玩家提示，圖案
  shows_all   :  玩家提示，總圖
@@ -324,7 +324,7 @@ write("這次的顏色是："+shows_color+"，圖案是："+shows_flag+"。\n");
 string get_flag(string this_times)
 {
     string
-*flags=({"☆","★","○","●","◎","◇","◆","□","■","△","▲","□",}),
+*flags=({"☆","★","○","●","◎","◇","◆","□","■","△","▲","¤",}),
 temp_flag,
 *cls=({HIR,HIC,HIG,HIY,HIW,HIM,}),
 temp_cls,

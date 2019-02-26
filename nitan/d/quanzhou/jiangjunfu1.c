@@ -7,7 +7,7 @@ void create()
 {
         set("short", "將軍府書房");
         set("long", @LONG
-這是靖海侯府的書房，裡面除了書籍之外，更多的還是各種兵刃。
+這是靖海侯府的書房，裏面除了書籍之外，更多的還是各種兵刃。
 LONG );
         set("exits", ([
                 "south" : __DIR__"jiangjunfu",

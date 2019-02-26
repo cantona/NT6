@@ -9,8 +9,8 @@ void create()
 {
         set("short", "劍廬");
         set("long", @LONG
-這是一間凈室，室內一物不設。窗外偶爾光線斜入，映見正中樑頂
-似乎存放著一些物事。
+這是一間淨室，室內一物不設。窗外偶爾光線斜入，映見正中樑頂
+似乎存放着一些物事。
 LONG );
         set("sword_count", 1);
         set("exits", ([ /* sizeof() == 2 */

@@ -56,7 +56,7 @@ void init()
                 }
                 else
                 {
-                        command("say 想跑，還不乖乖就范！！！\n");
+                        command("say 想跑，還不乖乖就範！！！\n");
                         me->set_leader(ob);
                         remove_call_out("dest2");
                         remove_call_out("dest");

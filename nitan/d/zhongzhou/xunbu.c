@@ -5,7 +5,7 @@ void create()
         set("short", "巡捕房");
         set("long", @LONG
 一走進昏暗的巡捕房，一時你啥都看不見，就覺得有點陰
-森可怕。你飛快的想著自己有沒做過什麼傷天害理的事。
+森可怕。你飛快的想着自己有沒做過什麼傷天害理的事。
 LONG);
         set("objects", ([
                   "clone/npc/xunbu" : 2,

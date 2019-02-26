@@ -10,7 +10,7 @@ void death_msg();
 
 void create()
 {
-        set_name(HIW "劍塚刀客" NOR, ({ "jianzhong daoke", "jianzhong", "daoke" }) );
+        set_name(HIW "劍冢刀客" NOR, ({ "jianzhong daoke", "jianzhong", "daoke" }) );
         set("title", HIY "「隱士」" NOR);
         set("gender", "男性");
         set("age", 38);
@@ -144,7 +144,7 @@ void random_move()
                 env = environment(this_object());
                 message_vision("$N急急忙忙的走了。\n", this_object());
 
-                CHANNEL_D->channel_broadcast("mess", "聽說" + 
+                CHANNEL_D->channel_broadcast("mess", "聽説" + 
                         env->short() + HIW "(" + LOOK_CMD->locate(base_name(env)) + ")一帶出現的" +
                         HIR + this_object()->short() + HIG "消失了。\n" NOR);
 
@@ -160,14 +160,14 @@ void death_msg()
         {
                 command("chat* sigh");
                 command("chat 想不到我隱居此處竟也被仇家找到，天亡我也！");
-                CHANNEL_D->channel_broadcast("rumor", "聽說" + name() + HIM "被江湖人士所殺。" NOR);
+                CHANNEL_D->channel_broadcast("rumor", "聽説" + name() + HIM "被江湖人士所殺。" NOR);
         }
         else
         {
                 message_vision(HIG "猛然間，劍光一閃，跳出一個蒙面黑衣人將$N " HIG " 抱起，殺出一條血路，逃命去了 ...\n" NOR,
                                this_object());
                 command("chat 哼，區區鼠輩，竟也想取吾命！");
-                CHANNEL_D->channel_broadcast("rumor", "聽說" + name() + HIM "遭江湖人士追殺，被"
-                                      "神秘黑衣人救走後從此銷聲匿跡。" NOR);
+                CHANNEL_D->channel_broadcast("rumor", "聽説" + name() + HIM "遭江湖人士追殺，被"
+                                      "神祕黑衣人救走後從此銷聲匿跡。" NOR);
         }
 }

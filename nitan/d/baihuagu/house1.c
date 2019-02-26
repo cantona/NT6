@@ -7,8 +7,8 @@ inherit ROOM;
 {
          set("short", HIY"周伯通居"NOR);
          set("long", 
-"這是間很簡陋的屋子，陳設簡單，由此可見老頑童極于玩而不
-極于物。屋角邊靠著一張床。\n");
+"這是間很簡陋的屋子，陳設簡單，由此可見老頑童極於玩而不
+極於物。屋角邊靠着一張牀。\n");
         set("sleep_room", "1");
         set("exits", ([
                 "east"  : __DIR__"house2",

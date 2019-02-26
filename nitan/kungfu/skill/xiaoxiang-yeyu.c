@@ -29,7 +29,7 @@ int practice_skill(object me)
                 return notify_fail("你的精神不夠好，沒法練習了。\n");
 
         if( query("qi", me)<30 )
-                return notify_fail("你現在口幹舌燥，實在是太累了。\n");
+                return notify_fail("你現在口乾舌燥，實在是太累了。\n");
 
         me->receive_damage("jing", 25);
         me->receive_damage("qi", 10);

@@ -7,7 +7,7 @@ inherit NPC;
 void create()
 {
         set_name("趙齊賢", ({"zhao qixian", "zhao", "qixian" }));
-        set("title",HIY "乾清宮帶刀侍衛" NOR);
+        set("title",HIY "乾清宮帶刀侍衞" NOR);
         set("gender", "男性");
         set("attitude", "peaceful");
 

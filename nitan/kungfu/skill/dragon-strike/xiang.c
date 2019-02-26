@@ -46,10 +46,10 @@ int perform(object me, object target)
                 return notify_fail("你現在沒有準備使用降龍十八掌，無法使用「龍翔九天」！\n");
 
        if (! living(target))
-              return notify_fail("對方都已經這樣了，用不著這麼費力吧？\n");
+              return notify_fail("對方都已經這樣了，用不着這麼費力吧？\n");
 
         msg = HIY "$N" HIY "深吸一口氣，跨前一步，雙掌猛然翻滾，"
-              "繽紛而出，宛如一條神龍攀蜒于九天之上！\n\n" NOR;
+              "繽紛而出，宛如一條神龍攀蜒於九天之上！\n\n" NOR;
 
         ap = attack_power(me, "strike") + me->query_str();
         dp = defense_power(target, "parry") + target->query_dex();

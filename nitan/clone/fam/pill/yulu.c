@@ -9,7 +9,7 @@ void create()
         else {
                 set("unit", "瓶");
                 set("long", HIG "採自靈山，千年來以靈芝為母，不斷的"
-                            "吸取著日精月華。\n" NOR);
+                            "吸取着日精月華。\n" NOR);
                 set("value", 30000);
         }
         setup();
@@ -35,11 +35,11 @@ int do_drink(string arg)
                 return notify_fail("你要喝什麼東西？\n");
 
         if (me->is_busy())
-                return notify_fail("急什麼，小心別噎著了。\n");
+                return notify_fail("急什麼，小心別噎着了。\n");
 
         if ((int)me->query_condition("pill_drug") > 0)
         {
-                write("你覺得現在內息未定，經脈隱隱還能感到真氣沖盪，不"
+                write("你覺得現在內息未定，經脈隱隱還能感到真氣衝蕩，不"
                       "敢貿然服食。\n");
                 return 1;
         }

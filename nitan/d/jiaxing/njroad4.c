@@ -8,7 +8,7 @@ void create()
         set("short", "村中小路");
         set("long", @LONG
 一條村中的小路。往南邊看已經可以看到大江了，江水的咆哮聲不
-時地敲擊著你的耳鼓。
+時地敲擊着你的耳鼓。
 LONG
         );
         set("no_clean_up", 0);

@@ -9,7 +9,7 @@ void create()
         set("gender", "男性" );
         set("age", 42);
         set("long", "\n只見他一身錦衣，笑容滿面，任誰見了他都生不起氣來。\n"+
-                      "此人深諳為官之道，極善察言觀色、溜須拍馬，頗得皇帝\n歡心。\n");
+                      "此人深諳為官之道，極善察言觀色、溜鬚拍馬，頗得皇帝\n歡心。\n");
         set("shen_type", 1);
         set("combat_exp", 50000);
         set("str", 17);
@@ -47,7 +47,7 @@ void greeting(object ob)
 
                 if(! present("shi", environment(ob)))
                 {
-                        message_vision("登時門外沖進幾個侍衛，揮刀向$N直撲過來。\n",ob);
+                        message_vision("登時門外衝進幾個侍衞，揮刀向$N直撲過來。\n",ob);
                         man = new("/d/beijing/npc/shiwei2.c");
                         man->move(environment(ob));
                         man = new("/d/beijing/npc/shiwei2.c");
@@ -61,7 +61,7 @@ void greeting(object ob)
         switch (random(5))
         {
                 case 0:
-                        message_vision("\n$N剛一進門, 康親王便搶著迎了出來，笑道：“這位" +
+                        message_vision("\n$N剛一進門, 康親王便搶着迎了出來，笑道：“這位" +
                                        RANK_D->query_respect(ob) + "，請進請進。\n", ob);
                         if( query("meili", ob)<100 )
                         {

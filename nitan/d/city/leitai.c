@@ -13,8 +13,8 @@ void create()
         set("short", "擂台");
         set("long", @LONG
 這是一個四丈見方的擂台。粗壯結實的木柱撐起一片平台，四角
-的支柱上高掛著四副對聯，四面的觀眾都能清楚地看到台上的手起腳
-落。樑上貼著一長條幅(tiaofu)，上面寫了一些東西。
+的支柱上高掛着四副對聯，四面的觀眾都能清楚地看到台上的手起腳
+落。樑上貼着一長條幅(tiaofu)，上面寫了一些東西。
 LONG );
         set("outdoors", "city");
         set("item_desc", ([
@@ -53,7 +53,7 @@ string look_tiaofu()
                        HIY "lclose" NOR "命令開放關閉擂台。\n";
 
         return "本擂台現在被" + ob->name(1) + "暫時關閉，"
-               "組織比武，閒雜人等勿要喧嘩。\n"
+               "組織比武，閒雜人等勿要喧譁。\n"
                "巫師請用" HIY "invite" NOR "命令邀請他人上台，"
                "或在台下使用" HIY "pass" NOR "命令\n"
                "指定某人上台比武，用" HIY "kickout" NOR
@@ -83,7 +83,7 @@ int do_lclose(string arg)
         if (objectp(query("close_by")))
                 return notify_fail("這個擂台已經被" +
                                    query("close_by")->name(1) +
-                                   "關閉用于比武了。\n");
+                                   "關閉用於比武了。\n");
 
         set("close_by", me);
         message("vision", HIW "【武林盛會】" + me->name(1) +
@@ -96,7 +96,7 @@ int do_lclose(string arg)
                 {
                         ob->move("/d/city/wudao1");
                         if (living(ob))
-                                tell_object(ob,"公平子對你說：擂台給關閉了，您先請下台等待吧！\n");
+                                tell_object(ob,"公平子對你説：擂台給關閉了，您先請下台等待吧！\n");
                 }
         }
 
@@ -162,7 +162,7 @@ int do_invite(string arg)
                 return notify_fail("你想讓誰上來？\n");
 
         if (environment(ob) == this_object())
-                return notify_fail("嗯？現在不是已經在這裡了麼？\n");
+                return notify_fail("嗯？現在不是已經在這裏了麼？\n");
 
         if (wizardp(ob))
                 return notify_fail("人家自己想上來自己會上來，不勞你費心。\n");
@@ -183,7 +183,7 @@ int do_invite(string arg)
         for (i = 0; i < sizeof(inv); i++)
         {
                 if (! userp(inv[i])) continue;
-                return notify_fail("對方身上背著個大活人呢，不能上台！\n");
+                return notify_fail("對方身上揹着個大活人呢，不能上台！\n");
         }
 
         message("vision", HIW + me->name() + "一聲長嘯：" + ob->name() +
@@ -212,7 +212,7 @@ int do_jiangli(string arg)
                 return notify_fail("你沒有資格給別人獎勵。\n");
 
         if (! objectp(query("close_by")))
-                return notify_fail("現在擂台並沒有用于召開比武大會，你" +
+                return notify_fail("現在擂台並沒有用於召開比武大會，你" +
                                    "不能給別人獎勵。\n");
 
         if (query("close_by")->name(1) != me->name())
@@ -297,7 +297,7 @@ int do_jiangli(string arg)
                 query("id", ob)+")獲得本屆比武大會第"+
                 chinese_number(place) + "名。\n" NOR,
                 all_interactive());
-        message_vision("$N在懷裡掏了半天，摸出一"+query("unit", obv)+
+        message_vision("$N在懷裏掏了半天，摸出一"+query("unit", obv)+
                        obv->name() + "交給了$n！\n", me, ob);
 
         winner+=([place:query("id", ob)]);

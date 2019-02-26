@@ -11,7 +11,7 @@ int valid_enable(string usage) { return usage == "tanqin-jifa"; }
 int valid_learn(object me)
 {
         if (me->query_skill("tanqin-jifa", 1) < 30)
-                return notify_fail("你的彈琴技法水平太差，還是先練好再說吧！\n");
+                return notify_fail("你的彈琴技法水平太差，還是先練好再説吧！\n");
 
         if (me->query_skill("tanqin-jifa", 1) < me->query_skill("qiuyue-lai", 1))
                 return notify_fail("你的彈琴技法所有有限，無法領會更精妙的蒹葭。\n");
@@ -31,7 +31,7 @@ int practice_skill(object me)
                 return notify_fail("你的精神不夠好，沒法練習了。\n");
 
         if( query("qi", me)<30 )
-                return notify_fail("你現在口幹舌燥，實在是太累了。\n");
+                return notify_fail("你現在口乾舌燥，實在是太累了。\n");
 
         me->receive_damage("jing", 25);
         me->receive_damage("qi", 10);
@@ -50,7 +50,7 @@ void do_effect(object me)
                 if (! obs[i]->is_character() || obs[i] == me || ! living(obs[i]))
                         continue;
 
-                tell_object(obs[i], HIC "但聽琴韻中奏著「" HIW "蒹葭蒼蒼，白露為霜，所謂伊"
+                tell_object(obs[i], HIC "但聽琴韻中奏着「" HIW "蒹葭蒼蒼，白露為霜，所謂伊"
                                     "人，在天一方……" HIC "」\n卻不知琴韻何以如此纏綿，竟"
                                     "似充滿了思慕之情。\n" NOR);
 

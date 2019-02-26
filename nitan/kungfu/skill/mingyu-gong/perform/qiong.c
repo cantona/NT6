@@ -26,7 +26,7 @@ int perform(object me, object target)
                 return notify_fail("空手才能施展「瓊樓玉宇」。\n");
 
         if (! living(target))
-                return notify_fail("對方都已經這樣了，用不著這麼費力吧？\n");
+                return notify_fail("對方都已經這樣了，用不着這麼費力吧？\n");
 
         if( query("neili", me)<400 )
                 return notify_fail("你的內力所剩無幾，無法施展「瓊樓玉宇」。\n");
@@ -67,7 +67,7 @@ int perform(object me, object target)
         addn_temp("apply/unarmed_damage", bonus, me);
         addn_temp("apply/defense", bonus*2, me);
 
-         message_combatd(WHT"□"HIY"瓊樓玉宇"WHT"□\n\n"HIG"只見$N分光勁勢再抖，像蛟龍出海，大鵬展翅，
+         message_combatd(WHT"〖"HIY"瓊樓玉宇"WHT"〗\n\n"HIG"只見$N分光勁勢再抖，像蛟龍出海，大鵬展翅，
 先是一團光芒，光芒驀然爆開，化作一片光雨，漫天遍地向$n刺來！\n" NOR, me, target);
 
         set_temp("mingyu_pfm/qiong", bonus, me);

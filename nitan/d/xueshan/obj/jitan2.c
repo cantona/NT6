@@ -16,7 +16,7 @@ void create()
                 set_default_object(__FILE__);
         else {
                 set("unit", "個");
-                set("long", "這是一個極其龐大的銅制祭壇，高約三丈，方圓約有五丈，乃是當年吐番國王親\n"
+                set("long", "這是一個極其龐大的銅製祭壇，高約三丈，方圓約有五丈，乃是當年吐番國王親\n"
                             "自指揮鑄造的，耗傾國之力，十年方成。\n");
                 set("value", 1000);
                 set("material", "wood");
@@ -48,10 +48,10 @@ int do_put(string arg)
         if (me->is_busy()
          || query_temp("pending/exercising", me )
          || query_temp("exit_blocked", me) )
-                return notify_fail("你現在正忙著呢。\n");
+                return notify_fail("你現在正忙着呢。\n");
 
         if( !arg || sscanf(arg, "%s in %s", item, target) != 2 )
-                return notify_fail("你要將什麼東西放進哪裡？\n");
+                return notify_fail("你要將什麼東西放進哪裏？\n");
                 
         if( item == "all" ) {
                 write("還是一樣一樣來吧。\n");
@@ -64,7 +64,7 @@ int do_put(string arg)
                 return notify_fail("你要給誰什麼東西？\n");
 
         if( query("id", obj) != "corpse"){
-                write("你不能往祭壇裡放這樣東西。\n");
+                write("你不能往祭壇裏放這樣東西。\n");
                 return 1;
         }
 
@@ -84,7 +84,7 @@ int do_light(string arg)
         message_vision(HIR"$N點燃了祭壇中的木柴與酥油，熊熊烈火沖天而起。\n"NOR, me);
         set("burning", 1);
         set("pending",query("name", me));
-        set("long", query("long") + HIR"裡面燃著熊熊的火燄。\n"NOR);
+        set("long", query("long") + HIR"裏面燃着熊熊的火焰。\n"NOR);
         set("in_use", 0);
         log_file("job/xueshan",query("name", me)+"("+
             query("id", me)+")開始燒人"+ctime(time())+"\n");
@@ -150,9 +150,9 @@ int do_spray(string arg)
         if (!id(arg))
                 return notify_fail("你想往哪兒噴？\n");
         if( query("liquid/remaining", ob)<1 )
-                return notify_fail("顱砵裡面的水已經所剩無幾了。\n");
+                return notify_fail("顱缽裏面的水已經所剩無幾了。\n");
 
-        message_vision(HIW"$N端起顱砵吸進一口水，「噗」的一聲猛地朝那熊熊火燄噴將過去。\n"NOR, me);
+        message_vision(HIW"$N端起顱缽吸進一口水，「噗」的一聲猛地朝那熊熊火焰噴將過去。\n"NOR, me);
         addn("liquid/remaining", -1, ob);
         set("wait_for_spray", 0);
         set("time_to_dazuo", 1);
@@ -165,7 +165,7 @@ int do_dazuo()
         if (me->is_busy()
          || query_temp("pending/exercising", me )
          || query_temp("exit_blocked", me) )
-                return notify_fail("你現在正忙著呢。\n");
+                return notify_fail("你現在正忙着呢。\n");
         
         if( query("name", me) != query("pending") )
                 return notify_fail("你湊什麼熱鬧？\n");
@@ -174,7 +174,7 @@ int do_dazuo()
         if (!query("time_to_dazuo"))
                 return notify_fail("這不是你打坐的時候。\n");
 
-        message_vision(HIY"$N盤腿打坐，神光內蘊，口中念念有辭，漸漸有一絲魂魄在$N面前凝聚成形。\n"NOR, me);
+        message_vision(HIY"$N盤腿打坐，神光內藴，口中念念有辭，漸漸有一絲魂魄在$N面前凝聚成形。\n"NOR, me);
         me->start_busy(20);
         remove_call_out("rise");
         call_out("rise",20+random(20), me);
@@ -182,7 +182,7 @@ int do_dazuo()
 }
 void rise(object me)
 {
-        message_vision(BLU"魂魄越聚越多，竟然呈出人形！ $N手指人形，口念真言，指引往生之路。\n"NOR, me);
+        message_vision(BLU"魂魄越聚越多，竟然呈出人形！ $N手指人形，口唸真言，指引往生之路。\n"NOR, me);
         addn("neili", -600, me);
         if( query_temp("award_pending", me)*10/query("combat_exp", me) >= 16){
         addn("max_neili", me->query_skill("lamaism",1)/100, me);
@@ -268,10 +268,10 @@ void close_up(object me)
         gaining = gaining + butter;
 //************************************
 
-        message_vision(HIW"大院裡光茫四起，一聲巨響過後，又恢復了平靜。超度完畢。\n"NOR, me);
-        set("long", "這是一個極其龐大的銅制祭壇，高約三丈，方圓約有五丈，乃是當年吐番國王親\n"
+        message_vision(HIW"大院裏光茫四起，一聲巨響過後，又恢復了平靜。超度完畢。\n"NOR, me);
+        set("long", "這是一個極其龐大的銅製祭壇，高約三丈，方圓約有五丈，乃是當年吐番國王親\n"
                     "自指揮鑄造的，耗傾國之力，十年方成。\n");
-        set("long", query("long") + RED"裡面燃著的火燄快熄滅了。\n"NOR);
+        set("long", query("long") + RED"裏面燃着的火焰快熄滅了。\n"NOR);
         me->improve_skill("lamaism",query("int", me));
         addn("jingli", -300, me);
         set("burning", 0);
@@ -308,6 +308,6 @@ void renewing(object ob)
 {
         set("last_burner",query("pending",  ob), ob);
         set("pending", 0, ob);
-        ob->set("long","這是一個極其龐大的銅制祭壇，高約三丈，方圓約有五丈，乃是當年吐番國王親\n"
+        ob->set("long","這是一個極其龐大的銅製祭壇，高約三丈，方圓約有五丈，乃是當年吐番國王親\n"
                         "自指揮鑄造的，耗傾國之力，十年方成。\n");
 }                                

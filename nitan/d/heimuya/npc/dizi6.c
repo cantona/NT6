@@ -6,7 +6,7 @@ void create()
 {
         set_name("日月弟子", ({ "riyue dizi", "riyue", "dizi" }));
         set("title", HIM "天香堂" NOR);
-        set("long", "這是日月神教天香堂下的弟子，他警惕地巡視著四周的情形。\n");
+        set("long", "這是日月神教天香堂下的弟子，他警惕地巡視着四周的情形。\n");
         set("gender", "女性");
         set("attitude", "peaceful");
 

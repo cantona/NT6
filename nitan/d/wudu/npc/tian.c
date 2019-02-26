@@ -31,10 +31,10 @@ int do_yao(string arg)
                 return notify_fail("田嫂笑道：沒那，等開飯時再來吧！\n");
 
         if((present("baozi", this_player())))
-        return notify_fail("田嫂笑道：不要拿著手裡的，還看著鍋裡的！\n");
+        return notify_fail("田嫂笑道：不要拿着手裏的，還看着鍋裏的！\n");
         
         if ( present("baozi", environment()) )
-                return notify_fail("田嫂笑道：那不是有一塊呢嘛，吃完再說！\n");
+                return notify_fail("田嫂笑道：那不是有一塊呢嘛，吃完再説！\n");
 
         m=new(__DIR__"obj/baozi2");
         mm=new(__DIR__"obj/baozi2");

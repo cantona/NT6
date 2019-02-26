@@ -38,10 +38,10 @@ int perform(object me, object target)
                 return notify_fail("你現在沒有準備使用黯然銷魂掌，無法施展" + name() + "。\n");
 
        if (! living(target))
-              return notify_fail("對方都已經這樣了，用不著這麼費力吧？\n");
+              return notify_fail("對方都已經這樣了，用不着這麼費力吧？\n");
 
         msg = HIM "\n$N" HIM "一聲長吟：“黯然銷魂者，唯別而已矣！”，頓時心如"
-              "止水，黯然神傷，\n于不經意中隨手使出了" HIR "『黯然銷魂』" HIM "！\n" NOR;
+              "止水，黯然神傷，\n於不經意中隨手使出了" HIR "『黯然銷魂』" HIM "！\n" NOR;
 
         ap = attack_power(me, "unarmed") +
              me->query_skill("force");

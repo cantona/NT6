@@ -8,12 +8,12 @@ void create()
 { 
         set("short",HIB"石室"NOR);
         set("long", @LONG
-頭頂的石壁 (shibi)又恢復了原狀，你發現自己置身于一間陰沉的
-石室中，空盪盪的感覺使你心中只有恐懼，甚至忘記孤獨。你不知身處
+頭頂的石壁 (shibi)又恢復了原狀，你發現自己置身於一間陰沉的
+石室中，空蕩蕩的感覺使你心中只有恐懼，甚至忘記孤獨。你不知身處
 何地，四周如此漆黑一片，只能靠摸索前行。
 LONG        );
         set("item_desc", ([
-                "shibi": "石壁恢復了原狀，與周圍吻合地天衣無縫，你不由感嘆其高超造詣。\n"NOR,
+                "shibi": "石壁恢復了原狀，與周圍吻合地天衣無縫，你不由感歎其高超造詣。\n"NOR,
         ]));
         set("exits", ([
                 "out" : __DIR__"shishi1",
@@ -35,7 +35,7 @@ int do_tui(string arg)
         object me = this_player();
 
         if (me->is_busy() || me->is_fighting())
-                return notify_fail("你正忙著哪！\n");
+                return notify_fail("你正忙着哪！\n");
         if (arg =="shibi")
         {
                 message_vision(YEL "$N雙手把石壁用力向上推去，咯吱吱一聲，石壁緩緩移開。\n"NOR,me);

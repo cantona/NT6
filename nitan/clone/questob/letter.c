@@ -43,18 +43,18 @@ string long()
         if( query("id", me) != query("quester") )
                 return msg;
 
-        // call_out 不一定很準時，所以這裡要防止出現
+        // call_out 不一定很準時，所以這裏要防止出現
         // “負一秒”這樣的情況
         if (time() > query("dest_time"))
                 return msg;
 
-        msg += "上面寫著：\n";
+        msg += "上面寫着：\n";
 
-        // 為其他類型的任務提供擴展余地
+        // 為其他類型的任務提供擴展餘地
         switch (quest["type"])
         {
         case "kill" :
-                // 尋找 master 太過麻煩，所以這裡就根據本人的善惡
+                // 尋找 master 太過麻煩，所以這裏就根據本人的善惡
                 // 判斷消息
                 msg += "\n“字諭弟子" + me->name() + "：";
                 if (me->is_good())
@@ -65,8 +65,8 @@ string long()
                                 "機會將他除去，你若願意，便代我出手"
                                 "無妨，但務必須在" HIR +
                                 CHINESE_D->chinese_monthday(quest["limit"]) +
-                                NOR "之前完成。否則回山復命即可。" +
-                                quest["master_name"] + "于" +
+                                NOR "之前完成。否則回山覆命即可。" +
+                                quest["master_name"] + "於" +
                                 CHINESE_D->chinese_monthday(quest["time"]) +
                                 "。”\n");
                 } else
@@ -78,8 +78,8 @@ string long()
                                 "機會將他除去，你若願意，便代我出手"
                                 "無妨，但務必須在" HIR +
                                 CHINESE_D->chinese_monthday(quest["limit"]) +
-                                NOR "之前完成。否則回山復命即可。" +
-                                quest["master_name"] + "于" +
+                                NOR "之前完成。否則回山覆命即可。" +
+                                quest["master_name"] + "於" +
                                 CHINESE_D->chinese_monthday(quest["time"]) +
                                 "。”\n");
                 } else {
@@ -89,14 +89,14 @@ string long()
                                 "機會將他除去，你若願意，便代我出手"
                                 "無妨，但務必須在" HIR +
                                 CHINESE_D->chinese_monthday(quest["limit"]) +
-                                NOR "之前完成。否則回山復命即可。" +
-                                quest["master_name"] + "于" +
+                                NOR "之前完成。否則回山覆命即可。" +
+                                quest["master_name"] + "於" +
                                 CHINESE_D->chinese_monthday(quest["time"]) +
                                 "。”\n");
                 }
                 break;
         }
-        // 想立即拒絕的話就輸入 refuse，否則等 30 秒也沒關系
+        // 想立即拒絕的話就輸入 refuse，否則等 30 秒也沒關係
         msg += HIC "\n如果你願意接受此任務，請在" HIW +
                chinese_number(query("dest_time") - time()) +
                HIC "秒之內輸入" HIW "(accept quest)"

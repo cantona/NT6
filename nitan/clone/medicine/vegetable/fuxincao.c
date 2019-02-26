@@ -24,7 +24,7 @@ int do_eat(string arg)
         if(!present(this_object(), me))
                 return notify_fail("你要吃什麼？\n");
         if( me->is_busy() )
-                return notify_fail("別急，慢慢吃，小心別噎著了。\n");
+                return notify_fail("別急，慢慢吃，小心別噎着了。\n");
 
         message_vision(HIG "生吃腐心草還不如熬了粥再喝吧。\n" NOR, me);
         force_limit = me->query_skill("force",1)*10;

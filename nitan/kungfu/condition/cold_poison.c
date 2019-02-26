@@ -13,8 +13,8 @@ int update_condition(object me, int duration)
                 message("vision", HIW+me->name()+"瑟瑟發抖，全身結上一層薄薄的白霜。\n"NOR, environment(me), me);
         }
         else {
-                tell_object(me, HIW"忽然一股寒氣優似冰箭，循著手臂，迅速無倫的射入胸膛，你中的寒毒發作了！\n"NOR);
-                message("vision", HIW+me->name()+"全身發顫，牙關格格直響，過得片刻，嘴唇也紫了，臉色漸漸由青而白。\n"NOR, environment(me), me);
+                tell_object(me, HIW"忽然一股寒氣優似冰箭，循着手臂，迅速無倫的射入胸膛，你中的寒毒發作了！\n"NOR);
+                message("vision", HIW+me->name()+"全身發顫，牙關格格直響，過得片刻，嘴脣也紫了，臉色漸漸由青而白。\n"NOR, environment(me), me);
         }
         me->receive_damage("qi", 35,"體內寒毒發作");
         if(userp(me)) me->receive_wound("jing", 20,"體內寒毒發作");

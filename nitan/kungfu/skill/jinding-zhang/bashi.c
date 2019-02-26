@@ -39,9 +39,9 @@ int perform(object me, object target)
                 return notify_fail("你現在沒有準備使用金頂綿掌，難以施展" + name() + "。\n");
 
         if (! living(target))
-               return notify_fail("對方都已經這樣了，用不著這麼費力吧？\n");
+               return notify_fail("對方都已經這樣了，用不着這麼費力吧？\n");
 
-        msg = HIY "$N" HIY "深深吸了一口氣，提起全身的功力于"
+        msg = HIY "$N" HIY "深深吸了一口氣，提起全身的功力於"
               "雙掌猛力拍出，只聽得骨骼一陣爆響！\n" NOR;
 
         ap = attack_power(me, "strike");
@@ -60,7 +60,7 @@ int perform(object me, object target)
          } else
          {
                 msg += CYN "可是$p" CYN "猛地向後一躍，跳出了$P"
-                       CYN "的攻擊范圍。\n" NOR;
+                       CYN "的攻擊範圍。\n" NOR;
                 me->start_busy(3);
          }
          message_combatd(msg, me, target);

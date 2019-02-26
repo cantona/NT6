@@ -6,9 +6,9 @@ void create()
         set("short", "錦城驛");
         set("long", @LONG
 錦城驛是全西南最大的客店，生意非常興隆。外地遊客多選擇這
-裡落腳，你可以在這裡打聽到各地的風土人情。店小二裡裡外外忙得
+裏落腳，你可以在這裏打聽到各地的風土人情。店小二里裏外外忙得
 團團轉，沉重的川味官話你是實在聽不順耳。這是成都督府官辦的客
-棧，接待著各地入川的官差浪人。牆上掛著一個牌子(paizi)。
+棧，接待着各地入川的官差浪人。牆上掛着一個牌子(paizi)。
 LONG );
         set("no_fight", 1);
         set("valid_startroom", 1);
@@ -40,7 +40,7 @@ int valid_leave(object me, string dir)
 {
 
         if( !query_temp("rent_paid", me) && dir == "up" )
-                return notify_fail(CYN "店小二一下擋在樓梯前，白眼一翻：怎麼著，想白住啊？\n" NOR);
+                return notify_fail(CYN "店小二一下擋在樓梯前，白眼一翻：怎麼着，想白住啊？\n" NOR);
 
         /*
         if( query_temp("rent_paid", me) && dir == "east" )

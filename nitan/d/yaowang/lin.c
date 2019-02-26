@@ -6,8 +6,8 @@ void create()
 {
         set("short", "濃密樹林");
         set("long", @LONG
-這裡是一片濃密的樹林，參天的大樹遮天蔽日，偶爾有幾縷
-光線透進來。地上滿是枯枝敗葉，空氣中彌漫著讓人不安的氣氛。
+這裏是一片濃密的樹林，參天的大樹遮天蔽日，偶爾有幾縷
+光線透進來。地上滿是枯枝敗葉，空氣中瀰漫着讓人不安的氣氛。
 LONG
         );
 
@@ -36,7 +36,7 @@ protected void do_ansuan(object me)
         if( !me || (environment(me) != this_object()) )
                 return;
 
-        tell_object(me, sprintf(HIB"\n突然“嗖”的一聲，樹後打來一只飛鏢。\n%s\n\n"NOR,
+        tell_object(me, sprintf(HIB"\n突然“嗖”的一聲，樹後打來一隻飛鏢。\n%s\n\n"NOR,
                 flag?"你趕緊一側身躲了過去，下出了一身冷汗。":
                 sprintf("一下釘在了你的%s上。",(n=sizeof(limbs=query("limbs", me)))?
                 limbs[random(n)]:"身")));

@@ -46,7 +46,7 @@ void create()
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("long", sort_string(HIW "一個四周邊緣環繞著神秘光環的箱子，據說"
+                set("long", sort_string(HIW "一個四周邊緣環繞着神祕光環的箱子，據説"
                                 "可以將東西無限制的存（store）進去,不會"
                                 "丟失，且無論什麼時候都可以取（take）出"
                                 "來，還可以使用密碼鎖（lock）防盜。" NOR, 38, 0));
@@ -66,7 +66,7 @@ string extra_long()
         if (query("open") || wizardp(this_player()))
         {
                 if (! store || sizeof(store) < 1)
-                        return "目前沒有存放任何物品在箱子裡。\n";
+                        return "目前沒有存放任何物品在箱子裏。\n";
 
                 msg = HIW "\n目前你存放的物品有：\n編號  物品                                      數量\n"
                           "──────────────────────────────────\n" NOR;
@@ -92,11 +92,11 @@ string extra_long()
         } else
         {
                 if (query("closed"))
-                        msg = HIW "箱子目前是關著的，似乎還上了密碼鎖，你需要先打"
-                        "開（open）箱子才可以查看（look）箱子裡的物品。" NOR;
+                        msg = HIW "箱子目前是關着的，似乎還上了密碼鎖，你需要先打"
+                        "開（open）箱子才可以查看（look）箱子裏的物品。" NOR;
                 else
-                        msg = HIW "箱子目前是關著的，不過沒有上密碼鎖，你需要先打"
-                        "開（open）箱子才可以查看（look）箱子裡的物品。" NOR;
+                        msg = HIW "箱子目前是關着的，不過沒有上密碼鎖，你需要先打"
+                        "開（open）箱子才可以查看（look）箱子裏的物品。" NOR;
 
                 return sort_string(msg, 38, 0);
         }
@@ -146,7 +146,7 @@ int do_open(string arg)
         set("open", 1);
         set("closed", 0);
         save();
-        write(HIG "箱子已經成功打開，可輸入 look 查看箱子裡裝的東西！\n" NOR);
+        write(HIG "箱子已經成功打開，可輸入 look 查看箱子裏裝的東西！\n" NOR);
         return 1;
 }
 
@@ -157,7 +157,7 @@ int get_passwd(string pass, object ob)
                 set("open", 1);
                 set("closed", 0);
                 save();
-                write(HIG "箱子已經成功解鎖，可輸入 look 查看箱子裡裝的東西！\n" NOR);
+                write(HIG "箱子已經成功解鎖，可輸入 look 查看箱子裏裝的東西！\n" NOR);
                 return 1;
         } else
         {
@@ -256,12 +256,12 @@ int do_take(string arg)
                 return notify_fail("格式錯誤，請用 take 編號 數量 來取回物品。\n");
 
         if (amount < 1 || amount > 10000)
-                return notify_fail("每次取物品的數量不得小于一同時也不能大于一萬。\n");
+                return notify_fail("每次取物品的數量不得小於一同時也不能大於一萬。\n");
 
         if (sn < 1) return notify_fail("你要取第幾號物品？\n");
 
         if (! store || sizeof(store) < 1 || sn > sizeof(store))
-                return notify_fail("你的箱子裡沒有存放這項物品。\n");
+                return notify_fail("你的箱子裏沒有存放這項物品。\n");
 
         if (amount > store[sn-1]["amount"])
                 // return notify_fail("這樣物品你沒有那麼多個。\n");
@@ -293,14 +293,14 @@ int do_take(string arg)
                 ob->set_amount(amount);
                 ob->move(me, 1);
                 save();
-                message_vision("$N從箱子裡取出一"+query("unit", ob)+query("name", ob)+"。\n",me);
+                message_vision("$N從箱子裏取出一"+query("unit", ob)+query("name", ob)+"。\n",me);
                 return 1;
         }
 
         destruct(ob);
         if( amount > 200 ) {
                 amount = 200;
-                tell_object(me, "該物品每次最多只能取200個。\n");
+                tell_object(me, "該物品每次最多隻能取200個。\n");
         }
 
         store[sn-1]["amount"] -= amount;
@@ -392,7 +392,7 @@ int do_take(string arg)
         }
         save();
         if( ob )
-        message_vision("$N從箱子裡取出" + chinese_number(amount) +
+        message_vision("$N從箱子裏取出" + chinese_number(amount) +
                         query("unit", ob)+query("name", ob)+"。\n",me);
         return 1;
 }
@@ -407,13 +407,13 @@ int do_store(string arg)
 
         if (! arg) return notify_fail("你要存放什麼東西？\n");
 
-        if (me->is_busy()) return notify_fail("你正在忙著呢！\n");
+        if (me->is_busy()) return notify_fail("你正在忙着呢！\n");
 
         if (query("open") != 1 && ! wizardp(me))
                 return notify_fail("箱子是合上的，請先打開（open）後再放入物品。\n");
 
         if (store && sizeof(store) > 500)
-                return notify_fail("箱子最多只能存入五百個格子，現在箱子已經滿了。\n");
+                return notify_fail("箱子最多隻能存入五百個格子，現在箱子已經滿了。\n");
 
         if (arg == "all")
         {
@@ -526,7 +526,7 @@ int store_item(object me, object ob, int amount)
         switch(query("equipped", ob) )
         {
         case "worn":
-                tell_object(me, ob->name() + "必須先脫下來才能存放。\n");
+                tell_object(me, ob->name() + "必須先脱下來才能存放。\n");
                 return 0;
         case "wielded":
                 tell_object(me, ob->name() + "必須先解除裝備才能存放。\n");
@@ -535,7 +535,7 @@ int store_item(object me, object ob, int amount)
 
         if (sizeof(all_inventory(ob)))
         {
-                tell_object(me,"請你先把"+query("name", ob)+"裡面的東西先拿出來再存放。\n");
+                tell_object(me,"請你先把"+query("name", ob)+"裏面的東西先拿出來再存放。\n");
                 return 0;
         }
 
@@ -559,7 +559,7 @@ int store_item(object me, object ob, int amount)
                         store_data(me, ob, sn);
                         save();
                         message_vision("$N存入"+chinese_number(amount)+query("unit", ob)+
-                                        query("name", ob)+"到箱子裡。\n",me);
+                                        query("name", ob)+"到箱子裏。\n",me);
                         destruct(ob);
                         destruct(obj);
                         return 1;
@@ -576,7 +576,7 @@ int store_item(object me, object ob, int amount)
                         store[i]["amount"] += amount;
 
                         message_vision("$N存入" + (amount > 1 ? "一" : chinese_number(amount)) +
-                                        query("unit", ob)+query("name", ob)+"到箱子裡。\n",me);
+                                        query("unit", ob)+query("name", ob)+"到箱子裏。\n",me);
                         destruct(ob);
                         save();
                         return 1;
@@ -587,7 +587,7 @@ int store_item(object me, object ob, int amount)
         save();
 
         message_vision("$N存入" + (amount > 1 ? "一" : chinese_number(amount)) +
-                        query("unit", ob)+query("name", ob)+"到箱子裡。\n",me);
+                        query("unit", ob)+query("name", ob)+"到箱子裏。\n",me);
 
         destruct(ob);
         return 1;

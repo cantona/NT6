@@ -80,7 +80,7 @@ void init()
 
         if (living(this_object()) && present("yitian sword", me))
         {
-                command("say 咦？倚天劍怎麼會在你手裡，看來這次中原之行沒白跑了！");
+                command("say 咦？倚天劍怎麼會在你手裏，看來這次中原之行沒白跑了！");
                 kill_ob(me);
                 return;
         }
@@ -94,7 +94,7 @@ void init()
 
         if (living(this_object()) && present("shenghuo ling", me))
         {
-                command("say 咦？你怎麼會拿著我教的聖火令？死吧！");
+                command("say 咦？你怎麼會拿着我教的聖火令？死吧！");
                 kill_ob(me);
                 return;
         }

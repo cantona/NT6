@@ -20,7 +20,7 @@ void create()
                 set("unit", "支");
                 set("value", 0);
                 set("material", "steel");
-                set("long", "這是傳說中古老而神秘的暗器--蛇兒口。\n");
+                set("long", "這是傳説中古老而神祕的暗器--蛇兒口。\n");
         }
         setup();
 }

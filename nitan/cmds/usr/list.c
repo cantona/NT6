@@ -22,9 +22,9 @@ int main(object me, string arg)
                 inv = all_inventory(env);
 
                 if (! inv)
-                        return notify_fail("這裡並沒有任何在擺攤的商人。\n");
+                        return notify_fail("這裏並沒有任何在擺攤的商人。\n");
 
-                msg = HIC "現在這裡的小攤子有："
+                msg = HIC "現在這裏的小攤子有："
                       HIY "\n──────────────\n" NOR;
                 for (i = 0; i < sizeof(inv); i++)
                 {
@@ -36,7 +36,7 @@ int main(object me, string arg)
                         }
                 }
                 if (! have_vendor) 
-                        msg = WHT "目前這裡並沒有任何擺攤的商人。\n" NOR;
+                        msg = WHT "目前這裏並沒有任何擺攤的商人。\n" NOR;
                 else
                         msg += HIY "──────────────\n" NOR;
                 write(msg);
@@ -44,7 +44,7 @@ int main(object me, string arg)
         }
 
         if (! (obj = present(arg, env)) || ! userp(obj))
-                return notify_fail("這裡並沒有這個商人。\n");
+                return notify_fail("這裏並沒有這個商人。\n");
 
         if( !query("is_vendor", obj) )
                 return notify_fail(obj->name(1) + "並不是商人。\n");

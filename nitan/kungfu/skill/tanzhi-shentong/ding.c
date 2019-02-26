@@ -1,7 +1,7 @@
 #include <ansi.h>
 #include <combat.h>
 
-string name() { return HIC "定昆侖" NOR; }
+string name() { return HIC "定崑崙" NOR; }
 
 inherit F_SSERVER;
 
@@ -38,7 +38,7 @@ int perform(object me, object target)
                 return notify_fail("你現在的真氣不夠，難以施展" + name() + "。\n");
 
         if (! living(target))
-                return notify_fail("對方都已經這樣了，用不著這麼費力吧？\n");
+                return notify_fail("對方都已經這樣了，用不着這麼費力吧？\n");
 
         msg = HIC "$N" HIC "合指輕彈，頓時只聽“颼”的一聲，一縷若有若無的"
               "罡氣已朝$n" HIC "電射而去。\n" NOR;
@@ -50,7 +50,7 @@ int perform(object me, object target)
         if (ap / 2 + random(ap) + fmsk > dp) 
         {
                 msg +=  HIR "$n" HIR "只覺脅下一麻，已被$P"
-                        HIR "指氣射中，全身酸軟無力，呆立當場。\n" NOR;
+                        HIR "指氣射中，全身痠軟無力，呆立當場。\n" NOR;
                 target->start_busy(ap / 80  + fmsk / 25); 
                 me->start_busy(1);
                 addn("neili", -100, me);

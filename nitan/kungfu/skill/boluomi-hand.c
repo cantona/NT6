@@ -7,15 +7,15 @@ string type() { return "martial"; }
 string martialtype() { return "skill"; }
 
 mapping *action = ({
-([      "action":"$N雙手合十做鞠，第一式"BLU"「布施式」"NOR"打出，內勁已逼得衣帶翻飛，將$n層層籠罩",
+([      "action":"$N雙手合十做鞠，第一式"BLU"「佈施式」"NOR"打出，內勁已逼得衣帶翻飛，將$n層層籠罩",
         "lvl"   : 0,
-        "skill_name" : "布施式"
+        "skill_name" : "佈施式"
 ]),
 ([      "action":"$N右手伸出，上翻下壓，左揮右劈，在$n眼前連連變幻，這招叫做"RED"「持戒式」"NOR"，最是變化無窮",
         "lvl"   : 10,
         "skill_name" : "持戒式"
 ]),
-([      "action":"$N低頭垂肩，使"YEL"「忍辱式」"NOR"這招，對眼前$n不聞不問，暗地裡卻聚力雙手，伺機拍出",
+([      "action":"$N低頭垂肩，使"YEL"「忍辱式」"NOR"這招，對眼前$n不聞不問，暗地裏卻聚力雙手，伺機拍出",
         "lvl"   : 20,
         "skill_name" : "忍辱式"
 ]),
@@ -23,7 +23,7 @@ mapping *action = ({
         "lvl"   : 40,
         "skill_name" : "精進式"
 ]),
-([      "action":"$N一式"HIY"「禪定式」"NOR"，單臂凌空懸垂，心中平靜如水，一點點向著$n頂門壓將下來",
+([      "action":"$N一式"HIY"「禪定式」"NOR"，單臂凌空懸垂，心中平靜如水，一點點向着$n頂門壓將下來",
         "lvl"   : 80,
         "skill_name" : "禪定式"
 ]),

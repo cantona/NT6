@@ -33,7 +33,7 @@ int perform(object me, string skill)
                 count = 38;
                 break;
 
-        case "陰險姦詐":
+        case "陰險奸詐":
                 count = 48;
                 break;
 
@@ -59,5 +59,5 @@ void remove_effect(object me, int count)
         delete_temp("special_skill/hatred", me);
         addn_temp("apply/damage", -count, me);
         addn_temp("apply/unarmed_damage", -count, me);
-        tell_object(me, "你精神一鬆懈，殺氣盪然無存。\n");
+        tell_object(me, "你精神一鬆懈，殺氣蕩然無存。\n");
 }

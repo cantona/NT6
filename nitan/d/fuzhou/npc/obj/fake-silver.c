@@ -10,7 +10,7 @@ void create()
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("long", "白花花的銀子，真是人見人愛。不過好象是鏢銀耶。\n");
+                set("long", "白花花的銀子，真是人見人愛。不過好像是鏢銀耶。\n");
                 set("unit", "兩");
                 set("material", "lead");
         }

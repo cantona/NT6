@@ -18,7 +18,7 @@ void create()
                 set("material", "iron");
                 set("long", "鳳尾箭連珠箭發，勢道兇猛。\n");
                 set("wield_msg", HIC"$N迅速地從箭袋中抽出一束鳳尾箭，拉弦在手，就待發出！\n"NOR);
-                set("unwield_msg",HIC"$N將手裡剩下的鳳尾箭放回箭袋中。\n"NOR);
+                set("unwield_msg",HIC"$N將手裏剩下的鳳尾箭放回箭袋中。\n"NOR);
         }
         set_amount(1);
         setup();

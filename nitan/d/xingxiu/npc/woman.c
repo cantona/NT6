@@ -21,8 +21,8 @@ void create()
         setup();
         set("chat_chance", 10);
         set("chat_msg", ({
-                "維吾爾族婦女看著你笑了起來\n",
-                "維吾爾族婦女說道：小波郎子呀克西。\n",
+                "維吾爾族婦女看着你笑了起來\n",
+                "維吾爾族婦女説道：小波郎子呀克西。\n",
                 "維吾爾族婦女向你努了努嘴，又指了指北邊。\n",
         }) );
         carry_object(__DIR__"obj/wcloth")->wear();

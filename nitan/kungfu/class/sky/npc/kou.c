@@ -5,7 +5,7 @@ inherit NPC;
 void create()
 {
         set_name("寇仲", ({ "kou zhong", "kou", "zhong"}));
-        set("long", "一個身著龍袍的魁梧少年，他就是少帥軍的統帥寇仲。\n"); 
+        set("long", "一個身着龍袍的魁梧少年，他就是少帥軍的統帥寇仲。\n"); 
         set("nickname", HIR "大唐雙龍" NOR);
         set("title", HIY "大宗師" NOR);
         set("gender", "男性");
@@ -138,7 +138,7 @@ void die()
 }
 
 
-// 氣血小于1000則死亡，避免他人協助幫忙轉世
+// 氣血小於1000則死亡，避免他人協助幫忙轉世
 void heart_beat()
 {
         if (this_object()->query("qi") < 1000 || this_object()->query("eff_qi") < 1000)

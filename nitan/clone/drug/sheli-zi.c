@@ -41,7 +41,7 @@ int cure_ob(object me)
         destruct(this_object());
         }
         else {
-                message_vision(HIY "$N吃下一顆舍利子，油然間只覺腦袋裡注進了一縷清新之氣...\n" NOR, this_player());
+                message_vision(HIY "$N吃下一顆舍利子，油然間只覺腦袋裏注進了一縷清新之氣...\n" NOR, this_player());
                 addn("max_jingli", add, me);
                 addn("eff_jingli", add, me);
                 me->apply_condition("bonze_drug", 80);

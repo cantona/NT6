@@ -9,7 +9,7 @@ mixed valid_database(object ob, string action, mixed *info)
         {
                 if( action == "connect" ) {
                         /*
-                         * 這裡演示的多站點數據庫互動
+                         * 這裏演示的多站點數據庫互動
                          * 協作的返回密碼寫法，單站點
                          * 簡單返回密碼即可（by Find）
                          */

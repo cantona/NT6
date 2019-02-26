@@ -17,7 +17,7 @@ int exert(object me, object target)
 
         room = environment(me);
         if( query("no_fight", room)){
-                tell_object(me, "在這裡不能攻擊他人。\n");
+                tell_object(me, "在這裏不能攻擊他人。\n");
                 return 1;
         }
 
@@ -50,7 +50,7 @@ int exert(object me, object target)
    //  modified by aln to give a more reasonable busy time
         me->start_busy(1 + random(5 - skill/60));
         message_vision(
-                HIG "$N抽出一支洞簫，潛運內力，放到唇邊吹奏起來，簫聲婉轉纏綿，如良宵私語，又如昆崗鳳嗚。□\n" NOR, me);
+                HIG "$N抽出一支洞簫，潛運內力，放到脣邊吹奏起來，簫聲婉轉纏綿，如良宵私語，又如昆崗鳳嗚。ⅵ\n" NOR, me);
 
         inv = all_inventory(room);
         for(i = 0; i < sizeof(inv); i++) {

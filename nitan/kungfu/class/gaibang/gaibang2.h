@@ -9,7 +9,7 @@ int accept_object(object ob, object obj)
 
         if (!ob_fam || (ob_fam["family_name"] != "丐幫"))
         {
-                command("say 你哪裡來的青竹令？\n");
+                command("say 你哪裏來的青竹令？\n");
                 return 0;
         }
 
@@ -69,7 +69,7 @@ int accept_object(object ob, object obj)
         }
         command("smile");
         command("say 升袋當然只升不降。跳升也是不行的。\n");
-        command("say 這東西給你還是自己留著吧。\n");
+        command("say 這東西給你還是自己留着吧。\n");
         command("give"+query("id", obj)+"to"+query("id", me));
         return 0;
 }

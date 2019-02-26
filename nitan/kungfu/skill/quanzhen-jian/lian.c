@@ -61,11 +61,11 @@ int perform(object me, object target)
         limit=180;
         if (count<=10) tell_object(me, HIG"\n\n你精神抖擻，內力充沛，出招格外凌厲。\n\n"NOR);
         if (count>10 && count<=20) {
-                tell_object(me, HIG"\n\n你反復使用□三連環□，招數已經沒有以前凌厲，但仍然咄咄逼人。\n\n"NOR);
+                tell_object(me, HIG"\n\n你反覆使用〖三連環〗，招數已經沒有以前凌厲，但仍然咄咄逼人。\n\n"NOR);
                 limit=120;
         }
         if (count>20) {
-                tell_object(me, HIG"\n\n你使用太多次□三連環□，精力渙散，招數已經失去了原有的凌厲。\n\n"NOR);
+                tell_object(me, HIG"\n\n你使用太多次〖三連環〗，精力渙散，招數已經失去了原有的凌厲。\n\n"NOR);
                 limit=60;
         }
 

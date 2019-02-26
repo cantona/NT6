@@ -8,7 +8,7 @@ void create()
           if (clonep())
                     set_default_object(__FILE__);
           else {
-                    set("long", HIR "一個火紅色的大蟠桃，正散發著撲鼻的清香。\n" NOR);
+                    set("long", HIR "一個火紅色的大蟠桃，正散發着撲鼻的清香。\n" NOR);
                     set("value", 3000);
                 set("only_do_effect", 1);
                     set("unit", "個");

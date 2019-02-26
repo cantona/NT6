@@ -39,7 +39,7 @@ int perform(object me, object target)
                 return notify_fail("你現在的真氣不足，難以施展" + name() + "。\n");
 
         if (! living(target))
-                return notify_fail("對方都已經這樣了，用不著這麼費力吧？\n");
+                return notify_fail("對方都已經這樣了，用不着這麼費力吧？\n");
 
         msg = HIY "$N" HIY "一聲斷喝，施出「" HIR "鎮魂舞" HIY "」絕技，寶相"
               "莊嚴，氣度萬千。手中" + weapon->name() + HIY "朝$n" HIY "連續"

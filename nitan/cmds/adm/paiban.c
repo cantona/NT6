@@ -48,7 +48,7 @@ int main(object me, string arg)
 
         message_system("系統批量檔案處理中，請耐心等候...");                                                                    
 
-        write(HIG "\n現在系統正在批處理 " + dir + " 目錄房間描述，稍後匯報。\n" 
+        write(HIG "\n現在系統正在批處理 " + dir + " 目錄房間描述，稍後彙報。\n" 
               HIG "進度：" + process_bar(0) + "\n"); 
                             
         if (me)

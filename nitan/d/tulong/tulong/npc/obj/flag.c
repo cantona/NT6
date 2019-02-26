@@ -11,7 +11,7 @@ void create()
                 set_default_object(__FILE__);
         else {
                 set("unit", "面");
-                set("long", "旗上繡著一頭大鷹，雙翅伸展，甚是威武。\n");
+                set("long", "旗上繡着一頭大鷹，雙翅伸展，甚是威武。\n");
                 set("value", 300);
                 set("material", "silk");
                 set("wield_msg", "$N拿出一面$n，揮舞示意。\n");

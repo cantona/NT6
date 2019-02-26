@@ -1,11 +1,11 @@
 // This program is a part of NITAN MudLIB
-// meng.c 「回夢」
+// meng.c 「迴夢」
 
 #include <ansi.h>
 
 inherit F_SSERVER;
 
-string name() { return "回夢"; }
+string name() { return "迴夢"; }
 
 int perform(object me, object target)
 {
@@ -15,21 +15,21 @@ int perform(object me, object target)
         if( !target ) target = offensive_target(me);
 
         if( !target || !target->is_character() || !me->is_fighting(target) )
-                return notify_fail("「回夢」只能對戰鬥中的對手使用。\n");
+                return notify_fail("「迴夢」只能對戰鬥中的對手使用。\n");
 
         if( objectp(query_temp("weapon", me)) )
-                return notify_fail("你必須空手才能使用「回夢」！\n");
+                return notify_fail("你必須空手才能使用「迴夢」！\n");
 
         if( (int)me->query_skill("boyun-suowu", 1) < 140 )
-                return notify_fail("你的撥雲鎖霧不夠嫻熟，不會使用「回夢」。\n");
+                return notify_fail("你的撥雲鎖霧不夠嫻熟，不會使用「迴夢」。\n");
 
         if( (int)me->query_skill("biyun-xinfa", 1) < 130 )
                 return notify_fail("你的碧雲心法不夠高，不能用來反震傷敵。\n");
 
         if( query("neili", me)<300 )
-                return notify_fail("你現在內力太弱，不能使用「回夢」。\n");
+                return notify_fail("你現在內力太弱，不能使用「迴夢」。\n");
 
-        msg = CYN "$N默念口訣，使出「撥雲鎖霧」之「回夢」，意欲以內力震暈$n。\n"NOR;
+        msg = CYN "$N默唸口訣，使出「撥雲鎖霧」之「迴夢」，意欲以內力震暈$n。\n"NOR;
 
 
         ap = attack_power(me, "hand");

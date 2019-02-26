@@ -5,7 +5,7 @@ inherit SKILL;
 int is_ultimate_skill() { return 1; }
 
 mapping *action = ({
-([      "action" : "$N劍橫于胸，猛地刺向$n，招式頗為凌厲",
+([      "action" : "$N劍橫於胸，猛地刺向$n，招式頗為凌厲",
         "force"  : 20,
          "attack" : 40,
         "dodge"  : 20,
@@ -94,7 +94,7 @@ void skill_improved(object me)
         if( lvl >= 30 &&  
             !query("can_perform/tianjian/lian", me) )   
         {
-                tell_object(me, HIC "你通曉了天劍「" HIR "連環決" HIC "」的奧秘。\n" NOR);     
+                tell_object(me, HIC "你通曉了天劍「" HIR "連環決" HIC "」的奧祕。\n" NOR);     
                 set("can_perform/tianjian/lian", 1, me);  
                 me->improve_skill("martial-cognize", 1500000);
         }

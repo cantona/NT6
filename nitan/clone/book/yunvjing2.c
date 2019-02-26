@@ -12,7 +12,7 @@ void create()
                 set_default_object(__FILE__);
         else {
                 set("unit", "本");
-                set("long", "這是一本寫在薄絹上的書。封面上寫著 玉女心經「下」。\n");
+                set("long", "這是一本寫在薄絹上的書。封面上寫着 玉女心經「下」。\n");
                 set("value", 0);
                 set("material", "silk");
                 set("skill", ([

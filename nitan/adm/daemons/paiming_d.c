@@ -311,20 +311,20 @@ protected string make_msg(class player_data *big_players, string name)
 	if(len%2)
 		len++;
 
-	head = sprintf(HIY"\n%|"+(string)len+"s\n%|"+(string)len+"s\n□",sprintf("□ 天下%s榜 □",name),"□□□□□□□□□□□□□");
+	head = sprintf(HIY"\n%|"+(string)len+"s\n%|"+(string)len+"s\n╔",sprintf("〖 天下%s榜 〗",name),"☉☉☉☉☉☉☉☉☉☉☉☉☉");
 
-	bk = repeat_string("□", len/2);
-	head += sprintf("%s□\n",bk);
-	end =  sprintf("□%s□%s\n",bk,NOR);
+	bk = repeat_string("═", len/2);
+	head += sprintf("%s╗\n",bk);
+	end =  sprintf("╚%s╝%s\n",bk,NOR);
 
 	for(i=0;i<n;i++)
 	{
-		content += sprintf("□%|"+(string)len+"s□\n",sprintf("%s %s(%s)",
+		content += sprintf("║%|"+(string)len+"s║\n",sprintf("%s %s(%s)",
 			big_players[i]->title, big_players[i]->name, capitalize(big_players[i]->id) ));
 		if(i == (n-1))
 			content += end;
 		else
-			content += sprintf("□%s□\n",bk);
+			content += sprintf("╠%s╣\n",bk);
 	}
 
 	return (head + content);
@@ -387,7 +387,7 @@ int query_player_data(int num, string ref name, string ref id, string ref title
 	return 1;
 }
 
-// 先這樣湊合著
+// 先這樣湊合着
 protected int sort_top_rich(class player_data t1, class player_data t2)
 {
 	if(t1->gold > t2->gold)

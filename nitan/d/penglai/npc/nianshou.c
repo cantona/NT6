@@ -6,7 +6,7 @@ int is_pld_npc(){return 1;}
 void create()
 {
         //set_name(HIR "年獸" NOR, ({ "nian shou", "nian", "shou" }));
-        //set("long", HIR "傳說中的年獸，打敗它在新的一年能帶給你好運。\n" NOR);
+        //set("long", HIR "傳説中的年獸，打敗它在新的一年能帶給你好運。\n" NOR);
 
         set_name(HIM "幻獸" NOR, ({ "huan shou", "huan", "shou" }));
         set("long", HIM "神話故事中能令人產生幻覺的怪獸。\n" NOR);

@@ -50,7 +50,7 @@ int perform(object me, object target)
                 return notify_fail("你的精不夠使用三花聚頂！\n");
 
 
-        msg = HIM"$N運起玄門先天功，內力遍布全身，頭頂冒出絲絲熱氣，竟然呈現三朵蓮花，緊跟劈出一掌，一股氣勁似浪潮一般向$n襲來！\n\n"NOR;
+        msg = HIM"$N運起玄門先天功，內力遍佈全身，頭頂冒出絲絲熱氣，竟然呈現三朵蓮花，緊跟劈出一掌，一股氣勁似浪潮一般向$n襲來！\n\n"NOR;
         message_vision(msg, me, target);
 
         set_temp("sanhua", 1, me);
@@ -92,14 +92,14 @@ int perform(object me, object target)
                                 addn("neili", -150, me);//tobreakweapontakesmoreneili
 
                         } else if( wap > 2 * wdp ) {
-                                message_vision(HIW"$N只覺得手中" + weapon->name() + "被一掌震得把持不定，脫手飛出！\n" NOR, target);
+                                message_vision(HIW"$N只覺得手中" + weapon->name() + "被一掌震得把持不定，脱手飛出！\n" NOR, target);
                                 weapon->unequip();
                                 weapon->move(environment(target));
                                 target->reset_action();
                                 addn("neili", -120, me);//tobreakweapontakesmoreneili
 
                         } else if( wap > wdp ) {
-                                message_vision("$N只覺得手中" + weapon->name() + "一震，險些脫手！\n", target);
+                                message_vision("$N只覺得手中" + weapon->name() + "一震，險些脱手！\n", target);
                                 addn("neili", -100, me);//tobreakweapontakesmoreneili
                         }
                 }

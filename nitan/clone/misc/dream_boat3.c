@@ -8,12 +8,12 @@ int last_update_boss;
 
 string *nature_message = ({
         "遠處傳來陣陣海浪聲，船身輕輕地搖晃了幾下，隨即風平浪靜。\n",
-        "天空傳來數聲雷鳴，風雲突變，烏雲黑壓壓的一片籠罩著上空。\n",
-        "你放眼望去，一群海豚尾隨著船，正在跳躍嬉戲，海面波光粼粼，甚是美麗。\n",
-        "幾聲驚雷過後，天空突然下起雨來，海浪滔天，船身劇烈地搖晃著。\n",
-        "風雨過後，天空突然放晴，一群海鷗從天邊飛來，映襯著遠出的彩虹，真是人間美景。\n",
+        "天空傳來數聲雷鳴，風雲突變，烏雲黑壓壓的一片籠罩着上空。\n",
+        "你放眼望去，一羣海豚尾隨着船，正在跳躍嬉戲，海面波光粼粼，甚是美麗。\n",
+        "幾聲驚雷過後，天空突然下起雨來，海浪滔天，船身劇烈地搖晃着。\n",
+        "風雨過後，天空突然放晴，一羣海鷗從天邊飛來，映襯着遠出的彩虹，真是人間美景。\n",
         "你站在船頭，一陣海風吹過，清新撲面，閉上雙眼，感覺渾身舒泰無比。\n",
-        "周圍依然是無邊的海洋，海浪拍打著帆船，海風吹過，將帆鼓得滿滿地。\n",
+        "周圍依然是無邊的海洋，海浪拍打着帆船，海風吹過，將帆鼓得滿滿地。\n",
         });
 
 void start_heart_beat()
@@ -36,12 +36,12 @@ void create()
                 set("value", 1);
                                 
                 if (query("running"))
-                           set("long", HIR "\n船夫(chuanfu)吆喝道：我們的船正在行使中，請耐心等候。\n" NOR);
+                           set("long", HIR "\n船伕(chuanfu)吆喝道：我們的船正在行使中，請耐心等候。\n" NOR);
                 else
-                        set("long", HIC "\n船夫(chuanfu)吆喝道：我們的船正在等待中，你可以先在船上休息（enter）。\n" NOR);
+                        set("long", HIC "\n船伕(chuanfu)吆喝道：我們的船正在等待中，你可以先在船上休息（enter）。\n" NOR);
 
                 set("item_desc", ([
-                        "chuanfu" : "這是一位經驗豐富船夫，正忙得不可開焦。\n",
+                        "chuanfu" : "這是一位經驗豐富船伕，正忙得不可開焦。\n",
                 ]));
                 set("no_flyto", 1);
                 set("no_rideto", 1);
@@ -58,7 +58,7 @@ void create()
 
                 set("unit", "艘");
                 set("material", "wood");
-                set("no_get", "船夫(chuanfu)喝道：好家伙，這你也想扛在肩上？\n");
+                set("no_get", "船伕(chuanfu)喝道：好傢伙，這你也想扛在肩上？\n");
 
         }
         setup();        
@@ -107,13 +107,13 @@ int do_enter ( string arg )
                 return 1;
         }
 
-        // 把背起的用戶放下來
+        // 把背起的用户放下來
         inv = deep_inventory(ob);
         for (i = 0; i < sizeof(inv); i++)
         {
                 if (! playerp(inv[i])) continue;
 
-                // 被人背起的用戶
+                // 被人揹起的用户
                 inv[i]->move(environment(this_object()));                
         }
 
@@ -121,14 +121,14 @@ int do_enter ( string arg )
         // 暫時只對500萬EXP以下的非轉世會員開放
         if ((! MEMBER_D->is_valib_member(ob->query("id")) || 
             ob->query("scborn/ok")) && ! wizardp(ob))
-                return notify_fail("船夫(chuanfu)道：公開測試期間，這船暫時只針對非轉世會員開放。\n");
+                return notify_fail("船伕(chuanfu)道：公開測試期間，這船暫時只針對非轉世會員開放。\n");
 */                                
         if (environment(ob) == this_object())
-                return notify_fail("船夫(chuanfu)道：你已經在船上了，怎麼，想跳下海？\n");
+                return notify_fail("船伕(chuanfu)道：你已經在船上了，怎麼，想跳下海？\n");
 
         if (! ob->move(this_object()))return notify_fail("這位客官，船已經坐不下了，等下班吧！\n");
 
-        tell_object(ob, HIG "船夫(chuanfu)對你說道：要下船請輸入 out 。\n" NOR);
+        tell_object(ob, HIG "船伕(chuanfu)對你説道：要下船請輸入 out 。\n" NOR);
 
         return 1 ;
 }
@@ -173,25 +173,25 @@ void heart_beat()
                         
                         if (time() - query("start_time") >= query("running_time") / 2 )        
                         {                
-                                set("long", HIR "\n船夫(chuanfu)吆喝道：我們的船正在行使中，已行使超過路程的一半，請耐心等候。\n" NOR);                        
+                                set("long", HIR "\n船伕(chuanfu)吆喝道：我們的船正在行使中，已行使超過路程的一半，請耐心等候。\n" NOR);                        
                                 if ((time() - last_update_boss >= 1800) && random(4) == 7 )
                                 {
                                         ob_boss = new("/d/penglai/npc/qingmianshou");
                                         if (ob_boss->move(this_object()))        
                                         {
-                                                message_vision(HIB "突然，風起浪湧，只見天空一團黑霧飄過，船身劇烈晃動，恍惚間，一只巨獸已經站在"
+                                                message_vision(HIB "突然，風起浪湧，只見天空一團黑霧飄過，船身劇烈晃動，恍惚間，一隻巨獸已經站在"
                                                                "你面前。\n" NOR, this_object()); 
-                                                       CHANNEL_D->do_channel(this_object(), "rumor", "聽說" HIG "青面獸" + HIM "從蓬萊仙島逃出，上了仙境號帆船。" NOR);
+                                                       CHANNEL_D->do_channel(this_object(), "rumor", "聽説" HIG "青面獸" + HIM "從蓬萊仙島逃出，上了仙境號帆船。" NOR);
                                         }
                                         last_update_boss = time();
                                 }
                                 
                         }
                         else
-                                set("long", HIR "\n船夫(chuanfu)吆喝道：我們的船正在行使中，請耐心等候。\n" NOR);
+                                set("long", HIR "\n船伕(chuanfu)吆喝道：我們的船正在行使中，請耐心等候。\n" NOR);
                 }
                 else
-                        set("long", HIC "\n船夫(chuanfu)吆喝道：我們的船正在等待中(開船剩余" + sprintf("%d", left_time) + "分鐘)，你可以先在船上休息（enter）。\n" NOR);
+                        set("long", HIC "\n船伕(chuanfu)吆喝道：我們的船正在等待中(開船剩餘" + sprintf("%d", left_time) + "分鐘)，你可以先在船上休息（enter）。\n" NOR);
                 
                 inv = all_inventory(this_object());
                 obs = filter_array(inv, (: userp($1) :)); // 過濾掉非玩家物件
@@ -205,7 +205,7 @@ void heart_beat()
                                         set("stop_time", time()); // 設置到站時間
                                         this_object()->move(query("dest_place"));
                                         delete("running");
-                                        message_vision(HIC "船夫(chuanfu)吆喝道：客官們小心喲，船靠岸了 ……\n" NOR, this_object());
+                                        message_vision(HIC "船伕(chuanfu)吆喝道：客官們小心喲，船靠岸了 ……\n" NOR, this_object());
 /*
                                         if (ob_boss = find_living("qingmian shou"))
                                         {
@@ -242,7 +242,7 @@ void heart_beat()
                         {
                                 set("start_time", time());
                                 set("running", 1);
-                                message_vision(HIC "船夫(chuanfu)吆喝道：小心啦，船起航了 ……\n" NOR, this_object());
+                                message_vision(HIC "船伕(chuanfu)吆喝道：小心啦，船起航了 ……\n" NOR, this_object());
                                 this_object()->move("/clone/misc/sea");
                         }
                         return;

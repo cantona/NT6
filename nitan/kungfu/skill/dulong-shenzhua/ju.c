@@ -38,13 +38,13 @@ int perform(object me, object target)
                 return notify_fail("你現在的真氣不夠，難以施展" JU "。\n");
 
         if (! living(target))
-                return notify_fail("對方都已經這樣了，用不著這麼費力吧？\n");
+                return notify_fail("對方都已經這樣了，用不着這麼費力吧？\n");
 
         ap=me->query_skill("claw")+query("force", me);
         dp=target->query_skill("parry")+query("force", target);
 
-        msg = HIC "\n$N" HIC "運轉真氣，將體內真氣積聚于雙爪間，猛然間雙爪凌"
-              "空而下，猶如神龍般劃向$n" HIC "，這招正是玄冥谷絕學「" HIM "真"
+        msg = HIC "\n$N" HIC "運轉真氣，將體內真氣積聚於雙爪間，猛然間雙爪凌"
+              "空而下，猶如神龍般划向$n" HIC "，這招正是玄冥谷絕學「" HIM "真"
               "龍聚" HIC "」。\n" NOR;
 
         if (ap / 2 + random(ap) > dp)

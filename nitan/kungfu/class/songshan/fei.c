@@ -97,7 +97,7 @@ void attempt_apprentice(object ob)
 
         if ((int)ob->query_skill("songshan-jian", 1) < 120)
         {
-                command("say 我嵩山劍派乃五岳劍派之一，最為重視劍法。");
+                command("say 我嵩山劍派乃五嶽劍派之一，最為重視劍法。");
                 command("say 你的嵩山劍法還不夠熟練，下去練練再來吧。");
                 return;
         }

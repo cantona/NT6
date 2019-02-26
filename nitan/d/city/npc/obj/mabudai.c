@@ -8,7 +8,7 @@ void create()
                 set_default_object(__FILE__);
         else {
                 set("unit", "個");
-                set("long", "一只用麻布織成的袋子，好像可以裝東西。\n"); 
+                set("long", "一隻用麻布織成的袋子，好像可以裝東西。\n"); 
                 set("value", 100);
                 set("no_steal",1); 
         }

@@ -15,7 +15,7 @@ int main(object me, string arg)
                 if( query("to_pvp/time", me)<time() )
                 {
                         delete("to_pvp", me);
-                        return notify_fail(master+"長嘆道：“難道本派中就沒有人能殺此賊？悲呼！！！”");
+                        return notify_fail(master+"長歎道：“難道本派中就沒有人能殺此賊？悲呼！！！”");
                 }
                 if( arg == "cancel" )
                 {

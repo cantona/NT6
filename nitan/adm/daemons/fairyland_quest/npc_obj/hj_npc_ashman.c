@@ -1,6 +1,6 @@
 //                標準描述長度示例                                   |
 // 清道夫，四處揀取垃圾
-// by naihe  2002-10-23  于茂名
+// by naihe  2002-10-23  於茂名
 
 #include <ansi.h>
 
@@ -10,7 +10,7 @@ inherit NPC;
 
 int begin=1,move_time=3,temp=1;
 string out_msg="$N忽地從旁邊的樹木林中鑽去，不見了。\n";
-string help_msg=CYN"$N"NOR+CYN"歇斯底裡般叫道：“來人啦！救命啦！有人要殺人啦！”\n"NOR;
+string help_msg=CYN"$N"NOR+CYN"歇斯底里般叫道：“來人啦！救命啦！有人要殺人啦！”\n"NOR;
 string xixi_msg=CYN"$N"NOR+CYN"「嘻嘻嘻」傻笑了幾聲。\n"NOR;
 
 int steal_times;
@@ -26,7 +26,7 @@ void create()
     set("no_refresh",1);
 
     set("hj_game/npc","ashman");
-    set("msg","只聽得一陣樹葉撥拉之聲，一個"+query("name", this_object())+"從旁邊林子裡鑽了出來。\n");
+    set("msg","只聽得一陣樹葉撥拉之聲，一個"+query("name", this_object())+"從旁邊林子裏鑽了出來。\n");
 
     set_temp("hj_hp_max",100+random(101));
     set_temp("hj_hp",query_temp("hj_hp_max"));
@@ -65,7 +65,7 @@ void checking()
     {
         remove_call_out("delete_me");
         inv = all_inventory(ob);
-        out_msg="$N慘叫一聲，整個身體夸張地扭曲起來，隨即消失不見了。\n";
+        out_msg="$N慘叫一聲，整個身體誇張地扭曲起來，隨即消失不見了。\n";
         if(inv || sizeof(inv) > 0)
         {
             for(i=0;i<sizeof(inv);i++)
@@ -100,7 +100,7 @@ void normal()
     move_time=3;
     temp=1;
     delete("killme_by");
-    message_vision("$N神色緊張地四處張望著，一副驚魂未定的樣子。\n",this_object());
+    message_vision("$N神色緊張地四處張望着，一副驚魂未定的樣子。\n",this_object());
 }
 
 void delete_me()
@@ -196,7 +196,7 @@ void get_all()      // 加入隨機偷取玩家東西的函數 by naihe 10:52 02
                 if( random(10) == 1 && query("id", inv[iii]) != "qixing deng" && 
                    query("hj_game/obj", inv[iii]) )
                 {
-                    message_vision(sprintf("$N身上帶著的一%s%s似乎被誰偷偷摸走了！\n",query("unit", inv[iii]),query("name", inv[iii])),all_here[i]);
+                    message_vision(sprintf("$N身上帶着的一%s%s似乎被誰偷偷摸走了！\n",query("unit", inv[iii]),query("name", inv[iii])),all_here[i]);
                     inv[iii]->move(ob);
                     steal="yes";
                     steal_times++;

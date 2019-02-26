@@ -54,8 +54,8 @@ void create()
 
         set("chat_chance", 20);
         set("chat_msg", ({
-                "殺手說道: 這次看那些玩家們往哪兒跑。\n",
-                "殺手說道: 殺! 殺! 殺!!!。\n",
+                "殺手説道: 這次看那些玩家們往哪兒跑。\n",
+                "殺手説道: 殺! 殺! 殺!!!。\n",
                 (: random_move :)
         }) );
 
@@ -82,7 +82,7 @@ void greeting(object ob)
         if (interactive(ob))
 //        && !environment(ob)->query("no_fight"))
         {
-                command("say 你這家伙不要跑，讓大爺我宰了你！！！\n");
+                command("say 你這傢伙不要跑，讓大爺我宰了你！！！\n");
                 me->set_leader(ob);
                 remove_call_out("kill_ob");
                 call_out("kill_ob", 1, ob); 

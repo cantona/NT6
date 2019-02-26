@@ -1,7 +1,7 @@
 #include <ansi.h>
 #include <combat.h>
 
-#define JUAN "「" HIY "風卷霹靂上九天" NOR "」"
+#define JUAN "「" HIY "風捲霹靂上九天" NOR "」"
 
 inherit F_SSERVER;
 
@@ -23,7 +23,7 @@ int perform(object me, object target)
                 return notify_fail(JUAN "只能空手施展。\n");
 
         if ((int)me->query_skill("hua-quan", 1) < 120)
-                return notify_fail("你的西岳華拳不夠嫻熟，難以施展" JUAN "。\n");
+                return notify_fail("你的西嶽華拳不夠嫻熟，難以施展" JUAN "。\n");
 
         if ((int)me->query_skill("force") < 180)
                 return notify_fail("你的內功修為不夠，難以施展" JUAN "。\n");
@@ -32,16 +32,16 @@ int perform(object me, object target)
                 return notify_fail("你現在真氣不夠，難以施展" JUAN "。\n");
 
         if (me->query_skill_mapped("cuff") != "hua-quan") 
-                return notify_fail("你沒有激發西岳華拳，難以施展" JUAN "。\n");
+                return notify_fail("你沒有激發西嶽華拳，難以施展" JUAN "。\n");
 
         if (me->query_skill_prepared("cuff") != "hua-quan")
-                return notify_fail("你現在沒有準備使用西岳華拳，難以施展" JUAN "。\n");
+                return notify_fail("你現在沒有準備使用西嶽華拳，難以施展" JUAN "。\n");
 
         if (! living(target))
-                return notify_fail("對方都已經這樣了，用不著這麼費力吧？\n");
+                return notify_fail("對方都已經這樣了，用不着這麼費力吧？\n");
 
-        msg = HIY "只見$N" HIY "身形疾轉，雙拳聚力齊發，一式「風卷霹靂上九天」攜"
-              "著隱隱風雷之勢貫向$n" HIY "！\n" NOR;
+        msg = HIY "只見$N" HIY "身形疾轉，雙拳聚力齊發，一式「風捲霹靂上九天」攜"
+              "着隱隱風雷之勢貫向$n" HIY "！\n" NOR;
 
         if (random(me->query_skill("cuff")) > target->query_skill("dodge") / 2)
         {
@@ -51,7 +51,7 @@ int perform(object me, object target)
                 addn("neili", -250, me);
                 msg += COMBAT_D->do_damage(me, target, UNARMED_ATTACK, damage, 55,
                                            HIR "結果$n" HIR "閃避不及，被$P" HIR
-                                           "雙拳貫中，凄然一聲慘嚎，口噴鮮血，身"
+                                           "雙拳貫中，悽然一聲慘嚎，口噴鮮血，身"
                                            "子向後飛出丈許。\n" NOR);
         } else
         {

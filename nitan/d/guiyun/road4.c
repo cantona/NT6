@@ -32,7 +32,7 @@ int valid_leave(object me, string dir)
                 if( (query("family/family_name", me) == "桃花島" && 
                         me->query_skill("qimen-wuxing", 1) > 14) ||
                         me->query_skill("qimen-wuxing", 1) > 39)
-                        write( "由于你平常看慣了這些簡易的陣法，所以不用細想，信步就走出了陣！\n");
+                        write( "由於你平常看慣了這些簡易的陣法，所以不用細想，信步就走出了陣！\n");
                 else {
                         set_temp("jiugong_dir", "w", me);
                         me->move(__DIR__"jiugong" + (random(9) + 1));

@@ -10,7 +10,7 @@ void create()
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("long", "一個不知道用什麼動物的皮制成的水壺。\n");
+                set("long", "一個不知道用什麼動物的皮製成的水壺。\n");
                 set("unit", "個");
                 set("value", 100);
                 set("max_liquid", 10);

@@ -39,12 +39,12 @@ int perform(object me, object target)
                 return notify_fail("你現在的真氣不足，難以施展" HONG "。\n");
 
         if (! living(target))
-                return notify_fail("對方都已經這樣了，用不著這麼費力吧？\n");
+                return notify_fail("對方都已經這樣了，用不着這麼費力吧？\n");
 
         wp = weapon->name();
 
         msg = HIR "$N" HIR "舞動手中" + wp + HIR "，一招「" HIY "轟雷萬鈞"
-              HIR "」挾著震天撞擊之聲朝$n" HIR "當頭砸下！\n" NOR;
+              HIR "」挾着震天撞擊之聲朝$n" HIR "當頭砸下！\n" NOR;
 
         ap = me->query_skill("hammer");
         dp = target->query_skill("force");
@@ -62,7 +62,7 @@ int perform(object me, object target)
         } else
         {
                 msg += CYN "可是$p" CYN "早知$P"
-                       CYN "有此一著，當即巧妙招架，格擋開來。\n"NOR;
+                       CYN "有此一着，當即巧妙招架，格擋開來。\n"NOR;
                 addn("neili", -100, me);
                 me->start_busy(3);
         }

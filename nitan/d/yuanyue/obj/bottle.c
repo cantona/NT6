@@ -3,12 +3,12 @@ inherit F_LIQUID;
 #include <ansi.h> 
 void create()
 {
-        set_name(HIG"酒壇"NOR, ({"jiutan"}));
+        set_name(HIG"酒罈"NOR, ({"jiutan"}));
         set_weight(700);
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("long", "一個青瓷酒攤，花紋精細，裡面想來裝的也是美酒。\n");
+                set("long", "一個青瓷酒攤，花紋精細，裏面想來裝的也是美酒。\n");
                 set("unit", "個");
                 set("value", 100);
                 set("max_liquid", 10);

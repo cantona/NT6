@@ -12,7 +12,7 @@ void create()
         set_name("黃大仙", ({ "huang daxian", "daxian", "huang" }) );
         set("gender", "男性" );
         set("age", 85);
-        set("long","一位抽簽算命的老先生。\n");
+        set("long","一位抽籤算命的老先生。\n");
         set("shen_type", 1);
         set("combat_exp", 10000);
         set("str", 17);
@@ -24,8 +24,8 @@ void create()
         set_skill("unarmed",20);
 
         set("inquiry", ([
-                "求簽" : "哈哈哈哈，你也知道老夫？求簽要心誠，要不要試試(qiuqian)？",
-                "解簽" : "這可是有違天意的啊！罷了，老夫年事已高，時日無多，你就把簽給老夫看看！",
+                "求籤" : "哈哈哈哈，你也知道老夫？求籤要心誠，要不要試試(qiuqian)？",
+                "解籤" : "這可是有違天意的啊！罷了，老夫年事已高，時日無多，你就把籤給老夫看看！",
         ]));
 
         setup();
@@ -48,10 +48,10 @@ int do_qiuqian()
         ob = this_object();
 
         if( !wizardp(me) && time()-query_temp("last_qiuqian", me)<1800 )
-                return notify_fail("才求簽不久，又想求簽，你當這是遊戲啊？\n");
+                return notify_fail("才求籤不久，又想求籤，你當這是遊戲啊？\n");
 
         if (present("zhu qian",me))
-                return notify_fail("你身上不是有一根簽麼？好好琢磨琢磨吧。\n");
+                return notify_fail("你身上不是有一根籤麼？好好琢磨琢磨吧。\n");
 
         command("look "+query("id", me));
         command("consider");
@@ -61,11 +61,11 @@ int do_qiuqian()
         set("owner", query("id", me), qian);
 
         if (!qian->move(me))
-                return notify_fail("身上帶這麼多東西還來求簽，你當是趕集啊？\n");
+                return notify_fail("身上帶這麼多東西還來求籤，你當是趕集啊？\n");
 
-        message_vision("$N將一個簽筒遞給$n，面色凝重的叮囑道：『記住，心誠則靈！』\n",ob,me);
-        message_vision("$N微閉雙眼，默默禱告，隨後捧起簽筒疾搖片刻，一根簽掉了出來。\n",me);
-        message_vision("$N趕緊放下簽筒，俯身把簽揀了起來，小心翼翼的收入懷中。\n",me);
+        message_vision("$N將一個籤筒遞給$n，面色凝重的叮囑道：『記住，心誠則靈！』\n",ob,me);
+        message_vision("$N微閉雙眼，默默禱告，隨後捧起籤筒疾搖片刻，一根籤掉了出來。\n",me);
+        message_vision("$N趕緊放下籤筒，俯身把籤揀了起來，小心翼翼的收入懷中。\n",me);
 
         set_temp("last_qiuqian", time(), me);
         delete_temp("have_gived", me);
@@ -96,14 +96,14 @@ int do_answer(string arg)
 
         if (!arg || member_array(arg,qian_type) == -1)
         {
-                str = HIC "我這裡有很多種簽：" NOR;
+                str = HIC "我這裏有很多種籤：" NOR;
                 for (i = 0;i < sizeof(qian_type);i ++)
                 {
                         str += HIW + qian_type[i] + HIC;
                         if (i != sizeof(qian_type) -1)
                                 str += "、";
                 }
-                str += "，你想求哪種簽？\n";
+                str += "，你想求哪種籤？\n";
                 tell_object(me, str);
                 tell_object(me, "想好了就回答我！(answer 答案)\n");
                 return 1;
@@ -116,11 +116,11 @@ int do_answer(string arg)
         file = "/d/city/npc/qianwen/" + file + ".txt";
 
         document = read_file(file) + "\n";
-        tell_object(me,this_object()->name() + "口中念念有詞：\n");
+        tell_object(me,this_object()->name() + "口中唸唸有詞：\n");
         command("walkby "+query("id", me));
         tell_object(me,HIM + qianwen["doc"] + "\n" + NOR);
-        tell_object(me,this_object()->name() + "對你說道：" + HIW + qianwen["title"] + NOR + "乃" + HIR + qianwen["type"] + NOR + "。\n");
-        str = "簽文含義你好好記著！\n";
+        tell_object(me,this_object()->name() + "對你説道：" + HIW + qianwen["title"] + NOR + "乃" + HIR + qianwen["type"] + NOR + "。\n");
+        str = "籤文含義你好好記着！\n";
         str += HIG + document + NOR;
         tell_object(me,str);
         tell_object(me,"你求的是" + HIW + arg + NOR + "，待老夫想想！\n");
@@ -132,14 +132,14 @@ int do_answer(string arg)
                 default:
                         command("yi");
                         command("consider");
-                        message_vision("$N盯著簽尋思良久，臉色癒發凝重，突然將簽塞回$n手中，卻是一言不發！\n",this_object(),me);
+                        message_vision("$N盯着籤尋思良久，臉色愈發凝重，突然將籤塞回$n手中，卻是一言不發！\n",this_object(),me);
                         obj->move(me);
                         return 1;
                         break;
         }
         command("whisper "+query("id", me)+" about "+str);
         command("smile "+query("id", me));
-        message_vision("$N將簽還給了$n。\n",this_object(),me);
+        message_vision("$N將籤還給了$n。\n",this_object(),me);
         obj->move(me);
 
         delete_temp("can_answer", me);
@@ -168,14 +168,14 @@ int accept_object(object me, object ob)
                 }
                 command("nod "+query("id", me));
                 command("say 孺子可教也！且告知老夫你所求何事？");
-                str = HIC "這簽可是有很多解法：" NOR;
+                str = HIC "這籤可是有很多解法：" NOR;
                 for (i = 0;i < sizeof(qian_type);i ++)
                 {
                         str += HIW + qian_type[i] + HIC;
                         if (i != sizeof(qian_type) -1)
                                 str += "、";
                 }
-                str += "，你想求哪種簽？\n";
+                str += "，你想求哪種籤？\n";
                 tell_object(me,str);
                 tell_object(me,"想好了就告訴老夫！(answer 答案)\n");
                 set_temp("can_answer", 1, me);
@@ -195,7 +195,7 @@ int accept_object(object me, object ob)
             query("owner", ob) != query("id", me) )
         {
                 command("haha");
-                command("say 你哪裡揀來一根牙簽，也好意思來糊弄我！");
+                command("say 你哪裏揀來一根牙籤，也好意思來糊弄我！");
                 return 0;
         }
 
@@ -207,7 +207,7 @@ int accept_object(object me, object ob)
         {
                 command("yi");
                 command("consider");
-                message_vision("$N盯著簽尋思良久，臉色癒發凝重，突然將簽塞回$n手中，卻是一言不發！\n",this_object(),me);
+                message_vision("$N盯着籤尋思良久，臉色愈發凝重，突然將籤塞回$n手中，卻是一言不發！\n",this_object(),me);
                 ob->move(me);
                 return -1;
         }
@@ -220,22 +220,22 @@ int accept_object(object me, object ob)
         {
                 command("yi");
                 command("consider");
-                message_vision("$N盯著簽尋思良久，臉色癒發凝重，突然將簽塞回$n手中，卻是一言不發！\n",this_object(),me);
+                message_vision("$N盯着籤尋思良久，臉色愈發凝重，突然將籤塞回$n手中，卻是一言不發！\n",this_object(),me);
                 ob->move(me);
                 return -1;
         }
 
         switch (qianwen["type"])
         {
-                case "上上簽":
-                case "下下簽":
+                case "上上籤":
+                case "下下籤":
                         command("heihei");
-                        tell_object(me,"這簽可是非同小可，老夫本也不應泄漏天機，如果你願意給我十兩黃金，尚可考慮！\n");
+                        tell_object(me,"這籤可是非同小可，老夫本也不應泄漏天機，如果你願意給我十兩黃金，尚可考慮！\n");
                         set_temp("have_gived", 100000, me);
                         break;
                 default:
                         command("say");
-                        tell_object(me,"這簽解答雖是容易，可找別人未必就能解正天意，若想明其究竟，你可願意給我黃金五兩？\n");
+                        tell_object(me,"這籤解答雖是容易，可找別人未必就能解正天意，若想明其究竟，你可願意給我黃金五兩？\n");
                         set_temp("have_gived", 50000, me);
                         break;
         }

@@ -20,11 +20,11 @@ void create()
 
         set("combat_exp", 1000);
         set("inquiry", ([
-                "買書" : "還是找朱先生吧！我這裡可不管。",
+                "買書" : "還是找朱先生吧！我這裏可不管。",
                 "工作" : (: ask_job :),
                 "抄書" : (: ask_job :),
                 "job"  : (: ask_job :),
-                "書"   : "先生那裡書多得很。",
+                "書"   : "先生那裏書多得很。",
                 "借書" : "借？我可沒有書借給你呀！",
         ]));
 
@@ -38,7 +38,7 @@ void init()
 
 int accept_object(object who, object ob)
 {
-        command("say 先生說了，無功不受祿！我不能要你的東西。");
+        command("say 先生説了，無功不受祿！我不能要你的東西。");
         return 0;
 }
 
@@ -52,7 +52,7 @@ string ask_job()
                 return "讓你抄的書你抄完了？";
 
         if( query("combat_exp", me)<1200 )
-                return "雖然在這裡只是抄抄書，可是你經驗"
+                return "雖然在這裏只是抄抄書，可是你經驗"
                        "太差，遇到流氓搗亂可不好！";
 
         if( query("combat_exp", me)>8000 )
@@ -88,12 +88,12 @@ int do_copy(string arg)
 
         me = this_player();
         if (me->is_busy())
-                return notify_fail("你正忙著呢，別著急。\n");
+                return notify_fail("你正忙着呢，彆着急。\n");
 
         if( !query_temp("job/copy", me) )
         {
                 message_vision("$N摸起毛筆，剛想蘸墨，就聽見$n喊道："
-                               "拜托拜托，千萬別動文房四寶，我要收拾呢。\n",
+                               "拜託拜託，千萬別動文房四寶，我要收拾呢。\n",
                                me, this_object());
                 return 1;
         }
@@ -142,10 +142,10 @@ int working(object me)
         case 5:
                 msg = "$N蘸了蘸墨，繼續仔細地抄寫。";
         case 7:
-                msg = "$N不斷翻動著書籍，紙張越來越厚。";
+                msg = "$N不斷翻動着書籍，紙張越來越厚。";
                 break;
         default:
-                msg = "$N把書籍抄好，將紙上墨吹幹，裝訂成冊，遞給$n。";
+                msg = "$N把書籍抄好，將紙上墨吹乾，裝訂成冊，遞給$n。";
                 finish = 1;
                 break;
         }
@@ -156,7 +156,7 @@ int working(object me)
                 object ob;
                 msg += "$n看了$N抄寫的書，滿意道：“真好！比我"
                        "強多了。諾，這是先生給你的報酬！你可以\n"
-                       "在先生那裡學點文化。”\n";
+                       "在先生那裏學點文化。”\n";
                 delete_temp("job/copy", me);
                 delete_temp("job/step", me);
 
@@ -197,7 +197,7 @@ int working(object me)
 int halt_working(object me)
 {
         message_vision("$N把手中的筆墨紙硯丟到一旁，牢騷道："
-                       "什麼呀，根本就不是人幹的活！\n", me);
+                       "什麼呀，根本就不是人乾的活！\n", me);
         delete_temp("job/copy", me);
         delete_temp("job/step", me);
         return 1;

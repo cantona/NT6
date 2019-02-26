@@ -9,7 +9,7 @@ void create()
                 set_default_object(__FILE__);
         else {
                 set("unit", "只");
-                set("long", "一只雕琢而成的暗黃色小木鼎, 木理之間隱隱泛出紅絲。鼎側有五個銅錢大的圓孔，木鼎齊頸出有一道細縫，似乎上下分為兩截。\n");
+                set("long", "一隻雕琢而成的暗黃色小木鼎, 木理之間隱隱泛出紅絲。鼎側有五個銅錢大的圓孔，木鼎齊頸出有一道細縫，似乎上下分為兩截。\n");
                 set("value", 5);
                 set("muding/remaining", 0);                
         }
@@ -52,7 +52,7 @@ int do_suck(string arg)
           switch(random(3)) {
             case 0:
                   me->improve_skill("poison",(query("int", me)/2));
-                  write (RED"你只覺掌中微微一涼，一股陰氣順著脈絡侵入腦髓。\n"NOR"你對基本毒技的領會又加深了一些！\n");
+                  write (RED"你只覺掌中微微一涼，一股陰氣順着脈絡侵入腦髓。\n"NOR"你對基本毒技的領會又加深了一些！\n");
                   break;
             case 1:
                   me->improve_skill("chousui-zhang",(query("int", me)/2));

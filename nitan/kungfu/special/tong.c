@@ -17,14 +17,14 @@ int perform(object me, string skill, string arg)
 
         if (me->query("neili") < 500)return notify_fail("你內力不足，通慧神眼！\n");
 
-        if (me->is_busy())return notify_fail("等你忙完再說吧！\n");
+        if (me->is_busy())return notify_fail("等你忙完再説吧！\n");
                 
         if (! objectp(ob = present(arg, environment(me))))
-                return notify_fail("這裡沒有這個人！可能是你的格式有錯誤！\n"
+                return notify_fail("這裏沒有這個人！可能是你的格式有錯誤！\n"
                                    "格式 ： special tong <對象id> \n");
 
         if (ob->query_temp("apply/invisible"))
-                return notify_fail("這裡沒有這個人！可能是你的格式有錯誤！\n"
+                return notify_fail("這裏沒有這個人！可能是你的格式有錯誤！\n"
                                    "格式 ： special tong <對象id> \n");                
 
         if (ob->query("special_skill/emperor"))

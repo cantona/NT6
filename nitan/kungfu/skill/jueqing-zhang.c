@@ -72,7 +72,7 @@ mapping *action = ({
         "damage_type" : "瘀傷",
         "skill_name"  : "恩斷情絕",
 ]),
-([      "action" : "$N左掌忽地拍向$n，又突然收回，緊跟著右掌斜出，一招「"
+([      "action" : "$N左掌忽地拍向$n，又突然收回，緊跟着右掌斜出，一招「"
                    "流水無情」劈向$n$l",
         "force"  : 280,
         "attack" : 25,

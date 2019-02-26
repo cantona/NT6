@@ -11,7 +11,7 @@ void create()
         set("nickname", HIG "鐵掌蓮花" NOR);
         set("long", @LONG
 她就是鐵掌幫的幫主鐵掌水上漂裘千仞的妹妹，
-只見她頭發散亂，面色蒼老，衣衫破爛。
+只見她頭髮散亂，面色蒼老，衣衫破爛。
 LONG);
 
         set("gender", "女性");
@@ -106,7 +106,7 @@ void attempt_apprentice(object me)
         if( query("combat_exp", me)<400000 )
         {
                 command("heng");
-                command("say 你這點能力怎能繼承我的衣砵？");
+                command("say 你這點能力怎能繼承我的衣缽？");
                 return;
         }
 
@@ -127,7 +127,7 @@ void attempt_apprentice(object me)
         command("say 我就收下你了，希望你苦練鐵掌神功，將之發揚光大。");
         command("recruit "+query("id", me));
 
-        if( query("move_party/絕情谷─鐵掌幫", me) && 
+        if( query("move_party/絕情谷—鐵掌幫", me) && 
              query("surname", me) == "公孫" )
         {
                 name=query("name", me);
@@ -137,9 +137,9 @@ void attempt_apprentice(object me)
 
                 set("surname", "裘", me);
                 set("name", new_name, me);
-                delete("move_party/絕情谷─鐵掌幫", me);
+                delete("move_party/絕情谷—鐵掌幫", me);
 
-                command("say 公孫止那老家伙不是個東西，你以後還是跟你娘親姓為好。");
+                command("say 公孫止那老傢伙不是個東西，你以後還是跟你孃親姓為好。");
                 command("say 從今以後你就叫作" + new_name + "吧。");
         }
 }
@@ -151,7 +151,7 @@ int accept_ask(object me, string topic)
         {
         case "歷練" :
         case "歷煉" :
-        case "鍛煉" :
+        case "鍛鍊" :
                 return QUEST_D->accept_ask(this_object(), me, topic);
                 break;
 
@@ -208,7 +208,7 @@ int accept_ask(object me, string topic)
                 return MASTER_D->teach_pfm(me, this_object(),
                         ([ "perform" : "can_perform/tie-zhang/lei",
                            "name"    : "掌心雷",
-                           "msg1"    : "$N投以$n讚許的一笑，說道：“"
+                           "msg1"    : "$N投以$n讚許的一笑，説道：“"
                                        "看好了！”隨即只見$N猛催內力"
                                        "，雙掌登時變得火紅，趁$n驚詫"
                                        "之際雙掌幻為一對掌刀凌空劈斬"

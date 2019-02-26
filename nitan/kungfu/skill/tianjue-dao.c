@@ -37,7 +37,7 @@ mapping *action = ({
         "skill_name"  : "平刀式",
 ]),
 ([      
-        "action" : "$N將$w橫于胸前，猛地劈出，一式「絕刀式」，砍向$n$l",
+        "action" : "$N將$w橫於胸前，猛地劈出，一式「絕刀式」，砍向$n$l",
         "force"  :  100,
         "dodge"  :  38,
         "damage" :  35,

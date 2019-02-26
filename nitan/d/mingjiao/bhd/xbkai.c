@@ -7,7 +7,7 @@ void create()
 	set("short", HIW"小冰塊"NOR);
         set("long", @LONG
 這是一塊小浮基，能用手劃(hua)動它，不遠之處就是一塊巖石(
-yanshi)，從那裡可以登上陸地。
+yanshi)，從那裏可以登上陸地。
 LONG );
         set("no_fight", 1);
         set("no_get_from", 1); 
@@ -33,7 +33,7 @@ void init()
                  obj[i]->move(__DIR__"dbshan");
                  me->unconcious();
                  me->move(__DIR__"dbshan");
-                 message("vision", "一個昏迷不醒的人被海水沖了上來。\n",environment(me), ({me}) );
+                 message("vision", "一個昏迷不醒的人被海水衝了上來。\n",environment(me), ({me}) );
              }
         }
         delete("hua_trigger");
@@ -44,12 +44,12 @@ void init()
 int do_hua()
 {
       object ob=this_player();
-      if(ob->is_busy()) return notify_fail("你正忙著呢。\n");
+      if(ob->is_busy()) return notify_fail("你正忙着呢。\n");
       if(ob->query_temp("marks/劃1")) return notify_fail("你已經劃到巖石邊了。\n");
-      message_vision("$N手腳劃動，吃力的向北邊的巖石劃去。\n",ob);
+      message_vision("$N手腳划動，吃力的向北邊的巖石劃去。\n",ob);
       ob->start_busy(1);      
       if((int)query("hua_trigger")>=7){
-            message_vision("浮冰終于被$N劃到達巖石的旁邊。\n", ob);
+            message_vision("浮冰終於被$N劃到達巖石的旁邊。\n", ob);
 	    delete("hua_trigger");
 	    ob->set_temp("marks/劃1",1);
             }
@@ -64,7 +64,7 @@ int do_pa(string arg)
 	if (!ob->query_temp("marks/劃1"))
 		return notify_fail("你現在離巖石還很遠呢。\n");
         if (!arg  || arg !="yanshi")
-		return notify_fail("你要爬到那裡？\n");
+		return notify_fail("你要爬到那裏？\n");
 	message("vision", ob->name() + "堅難的爬上了巖石。\n", environment(ob), ({ob}));
         ob->move(__DIR__"yanshi");
         message("vision", ob->name() + "從浮冰上爬了上來，渾身上水。\n",environment(ob), ({ob}) );

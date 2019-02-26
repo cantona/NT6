@@ -6,7 +6,7 @@ void create()
         set("long", @LONG
 一條小巷不知通到何處，兩邊高牆院落，更顯的小巷的昏
 暗。誰也不想在這種地方多呆，你只想往前走走，看看前面到
-底通到哪裡。
+底通到哪裏。
 LONG);
 
         set("outdoors", "zhongzhou");

@@ -13,7 +13,7 @@ void create()
         else {
                 set("unit", "片");
                 set("value", 1);
-                set("long", YEL + GRN "這是一片竹葉，還帶著仙氣。\n" NOR);
+                set("long", YEL + GRN "這是一片竹葉，還帶着仙氣。\n" NOR);
         }
 
         setup();

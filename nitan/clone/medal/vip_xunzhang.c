@@ -7,7 +7,7 @@ inherit MEDAL;
 void create()
 {
         set_name(HIY "VIP勛章" NOR, ({ "vip medal", "vip", "xunzhang", "medal" }));
-        set("long", HIW "為泥潭做出重大貢獻而獲得的勛章，非常珍貴，乃睿者的象征。\n" NOR);
+        set("long", HIW "為泥潭做出重大貢獻而獲得的勛章，非常珍貴，乃睿者的象徵。\n" NOR);
         set_weight(500);
         if (clonep())
                 set_default_object(__FILE__);

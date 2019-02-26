@@ -13,7 +13,7 @@ void create()
                 set_default_object(__FILE__);
         else {
                 set("unit", "個");
-                set("long", "一個已經幹涸了的泉孔。\n");
+                set("long", "一個已經乾涸了的泉孔。\n");
                 set("value", 1);
         }
 }

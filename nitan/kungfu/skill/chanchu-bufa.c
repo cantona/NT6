@@ -7,7 +7,7 @@ string type() { return "martial"; }
 string martialtype() { return "dodge"; }
 
 string *dodge_msg = ({
-        "只見$n一招"HIY"「蟾飛九天」"NOR"，身體向上筆直地縱起丈余，躲過了$N這一招。\n",
+        "只見$n一招"HIY"「蟾飛九天」"NOR"，身體向上筆直地縱起丈餘，躲過了$N這一招。\n",
         "但是$n一個使出"HIY"「蛙鳴震天」"NOR"，身形飄忽，輕輕一縱，早已避開。\n",
          "$n一招"HIY"「蛙入稻田」"NOR"，身行隨意轉，倏地往一旁挪開了三尺，避過了這一招。\n",
         "可是$n一個"HIY"「蟾蜍撲蟲」"NOR"，側身一讓，$N這一招撲了個空。\n",
@@ -61,7 +61,7 @@ mixed valid_damage(object ob, object me, int damage, object weapon)
                 {
                 case 0:
                         result += (["msg" : WHT "$n" WHT "身體向下一伏，手腳飛快地攪動起地上的塵土，匪所思疑地往後一縱，\n"
-                                            "$N只見眼前彌漫著一陣嗆人塵煙，視線一片模糊！\n" NOR]);
+                                            "$N只見眼前瀰漫着一陣嗆人塵煙，視線一片模糊！\n" NOR]);
                         break;
                 case 1:
                         result += (["msg" : WHT "$n" WHT "身體向後一翻，向後縱出數丈之遠，"
@@ -81,11 +81,11 @@ mixed valid_damage(object ob, object me, int damage, object weapon)
                 {
                 case 0:
                         result = WHT "$n" WHT "身體向下一伏，手腳飛快地攪動起地上的塵土，匪所思疑地往後一縱，\n"
-                                 "$N" WHT "猛地向前一沖，早突過塵煙，來到$n的身後。\n" NOR;
+                                 "$N" WHT "猛地向前一衝，早突過塵煙，來到$n的身後。\n" NOR;
                         break;
                 case 1:
                         result = WHT "$n" WHT "身體向後一翻，向後縱出數丈之遠，\n"
-                                 "$N一個箭步就沖到了$n面前！\n" NOR;
+                                 "$N一個箭步就衝到了$n面前！\n" NOR;
                         break;
                 default:
                         result = WHT "$n" WHT "一個側身閃過，"

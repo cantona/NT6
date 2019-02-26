@@ -9,8 +9,8 @@ void create()
 {
         set("short", "老宅後院");
         set("long", @LONG
-這裡是向陽老宅的後院。滿地是發出朽爛霉氣的落葉。院子的中央
-有一口井，井台(tai) 上刻著些字。院子南面有一扇門(men)，但已被坍
+這裏是向陽老宅的後院。滿地是發出朽爛黴氣的落葉。院子的中央
+有一口井，井台(tai) 上刻着些字。院子南面有一扇門(men)，但已被坍
 塌的磚瓦擋住了。
 LONG );
         set("exits", ([
@@ -62,14 +62,14 @@ int do_break(string arg)
 
 void close(object room)
 {
-        message("vision","門上的磚頭瓦塊稀裡花拉坍塌下來，又擋住了小門。\n", room);
+        message("vision","門上的磚頭瓦塊稀里花拉坍塌下來，又擋住了小門。\n", room);
         delete("exits/south", room);
 }
 
 int look_tai(string arg)
 {
         if( !arg || arg!="tai" ) return 0;
-        write("井台上胡亂刻著許多臟話，其中一條是：\n");
+        write("井台上胡亂刻着許多髒話，其中一條是：\n");
         switch (random(15)) {
         case 0:
           write("林家沒一個好東西，我×林遠圖林震南林平之的祖宗！\n");
@@ -81,10 +81,10 @@ int look_tai(string arg)
           write("林平之這個小白臉生得有趣，大爺我真想把他當兔爺兒養起來。\n");
           break;
         case 3:
-          write(this_player()->name()+"長得太醜了，大爺我看著一點兒性欲也沒有。\n");
+          write(this_player()->name()+"長得太醜了，大爺我看着一點兒性慾也沒有。\n");
           break;
         case 4:
-          write("你們這些人在別人家的井台上亂塗臟話，太不像話了！\n");
+          write("你們這些人在別人家的井台上亂塗髒話，太不像話了！\n");
           break;
         case 5:
           write("嘿，孫子，老爺我罵的就是你！\n");
@@ -99,10 +99,10 @@ int look_tai(string arg)
           write("ｆｕｃｋ　ｙｏｕ，　ｍａｎ！\n");
           break;
         case 9:
-          write("井裡黑乎乎的，又沒火照明，正好讓我跟"+this_player()->name()+"快活快活！\n");
+          write("井裏黑乎乎的，又沒火照明，正好讓我跟"+this_player()->name()+"快活快活！\n");
           break;
         case 10:
-          write("說我下流，流到你家炕上了？！\n");
+          write("説我下流，流到你家炕上了？！\n");
           break;
         case 11:
           write(this_player()->name()+"和翠花兩個人瞎搞！\n");

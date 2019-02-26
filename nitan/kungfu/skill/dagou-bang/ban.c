@@ -37,7 +37,7 @@ int perform(object me, object target)
                 return notify_fail("你現在的真氣不夠，難以施展" + name() + "。\n");
 
         if (! living(target))
-                return notify_fail("對方都已經這樣了，用不著這麼費力吧？\n");
+                return notify_fail("對方都已經這樣了，用不着這麼費力吧？\n");
 
         msg = HIG "$N" HIG "使出打狗棒法「" NOR + WHT "絆"
               HIG"」字訣，手中"+query("name", weapon)+
@@ -74,7 +74,7 @@ int perform(object me, object target)
                 }
         } else
         {
-                msg += CYN "可$n" CYN "全神防御，不露半點破綻，使得$N"
+                msg += CYN "可$n" CYN "全神防禦，不露半點破綻，使得$N"
                        CYN "這招無功而返。\n" NOR;
                 me->start_busy(4);
                 addn("neili", -100, me);

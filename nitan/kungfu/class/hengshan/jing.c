@@ -126,7 +126,7 @@ void attempt_apprentice(object ob)
         }
         if( query("shen", ob)<100000 )
         {
-                command( "say 你若能多為俠義之舉，當能承我衣砵。\n");
+                command( "say 你若能多為俠義之舉，當能承我衣缽。\n");
                 return;
         }
 

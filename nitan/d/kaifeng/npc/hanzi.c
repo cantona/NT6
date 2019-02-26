@@ -20,10 +20,10 @@ void create()
         set_skill("unarmed",20);
         set("chat_chance", 10);
         set("chat_msg", ({
-                CYN "菜販子叫道：賣新鮮的蘿卜吆。\n" NOR,
-                CYN "菜販子叫道：賣新鮮的胡蘿卜吆。\n" NOR,
+                CYN "菜販子叫道：賣新鮮的蘿蔔吆。\n" NOR,
+                CYN "菜販子叫道：賣新鮮的胡蘿蔔吆。\n" NOR,
                 CYN "菜販子叫道：賣新鮮的白菜吆。\n" NOR,
-                CYN "菜販子叫道：賣新鮮的大蔥吆。\n" NOR,
+                CYN "菜販子叫道：賣新鮮的大葱吆。\n" NOR,
                 CYN "菜販子叫道：賣新鮮的土豆吆。\n" NOR,
         }) );       
 

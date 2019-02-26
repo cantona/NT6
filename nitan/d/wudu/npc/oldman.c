@@ -6,7 +6,7 @@ void create()
         set_name("白髯老者", ({ "lao zhe", "lao", "zhe"}) );
         set("gender", "男性" );
         set("age", 64);
-        set("long", "一個須發皆白的老者，精神矍鑠，滿面紅光。\n");
+        set("long", "一個鬚髮皆白的老者，精神矍鑠，滿面紅光。\n");
         set("max_qi", 2000);
         set("max_jing", 2000);
         set("max_neili", 2000);

@@ -37,6 +37,6 @@ void init()
         message_vision(HIY "綠營會眾悄悄告訴$N：身在綠營心在漢！\n" NOR, 
                 this_player());
         else
-        message_vision(HIY "綠營會眾沖著$N擠了擠眼說：狗皇帝是從青樓地道被當家的逮著的！\n" NOR, 
+        message_vision(HIY "綠營會眾衝着$N擠了擠眼説：狗皇帝是從青樓地道被當家的逮着的！\n" NOR, 
                 this_player());
 }

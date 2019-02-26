@@ -38,9 +38,9 @@ int perform(object me, object target)
                 return notify_fail("你現在真氣不夠，難以施展" YIN "。\n");
 
         if (! living(target))
-                return notify_fail("對方都已經這樣了，用不著這麼費力吧？\n");
+                return notify_fail("對方都已經這樣了，用不着這麼費力吧？\n");
 
-        msg = HIR "$N" HIR "凝神沉履，積聚全身功力于一掌，攜著雷霆之勢奮力向$n"
+        msg = HIR "$N" HIR "凝神沉履，積聚全身功力於一掌，攜着雷霆之勢奮力向$n"
               HIR "胸前拍落。\n" NOR;
 
         if (random(me->query_skill("strike")) > target->query_skill("parry") / 2)
@@ -58,7 +58,7 @@ int perform(object me, object target)
                 me->start_busy(3);
                 addn("neili", -100, me);
                 msg += CYN "可是$p" CYN "奮力招架，不露半點破綻，將$P"
-                       CYN "這一招驅之于無形。\n" NOR;
+                       CYN "這一招驅之於無形。\n" NOR;
         }
         message_combatd(msg, me, target);
 

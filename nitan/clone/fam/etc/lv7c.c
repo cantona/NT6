@@ -8,7 +8,7 @@ void create()
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("long", HIB "通體深藍的的象牙狀物體，傳說是龍的牙齒。\n" NOR);
+                set("long", HIB "通體深藍的的象牙狀物體，傳説是龍的牙齒。\n" NOR);
                 set("unit", "根");
                 set("value", 50000);
                 set("can_be_enchased", 1);

@@ -11,6 +11,6 @@ void create()
                 set("material", "paper"); 
                 set("long", "一個普普通通甚至有些破舊不堪的布袋，知道究竟有何用的人少之甚少。\n"); 
         } 
-        set("owner", "說不得"); 
+        set("owner", "説不得"); 
         setup(); 
 } 

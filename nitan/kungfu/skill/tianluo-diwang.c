@@ -21,7 +21,7 @@ mapping *action = ({
         "damage_type" : "瘀傷",
         "lvl"    : 30,
 ]),
-([      "action" : "$N縱身向前撲去，一下急沖疾縮，就在兩臂將合未合之際，雙手抱向$n的$l",
+([      "action" : "$N縱身向前撲去，一下急衝疾縮，就在兩臂將合未合之際，雙手抱向$n的$l",
         "force"  : 230,
         "attack" : 30,
         "parry"  : 30,
@@ -48,7 +48,7 @@ mapping *action = ({
         "lvl"    : 120,        
         "damage_type" : "瘀傷"
 ]),
-([      "action" : "$N雙臂飛舞，兩只手掌宛似化成了千手千掌，任$n如何躍騰閃躲，始終飛不出"
+([      "action" : "$N雙臂飛舞，兩隻手掌宛似化成了千手千掌，任$n如何躍騰閃躲，始終飛不出"
                    "只掌所圍作的圈圈", 
         "force"  : 300,
         "attack" : 65,
@@ -121,7 +121,7 @@ mixed valid_damage(object ob, object me, int damage, object weapon)
 
                 default:
                         result += (["msg" : HIC "$n" HIC "掌勢突然一變，驟然化為滿天掌雨，"
-                                            HIC "護于胸前，$N" HIC "竟無從攻擊。\n" NOR]);
+                                            HIC "護於胸前，$N" HIC "竟無從攻擊。\n" NOR]);
                         break;
                 }
                 return result;
@@ -138,7 +138,7 @@ mixed valid_damage(object ob, object me, int damage, object weapon)
 
                 default:
                         result = HIY "$n" HIY "掌勢突然一變，驟然化為滿天掌雨，"
-                                 HIY "護于胸前，可是$N" HIY "卻看透其中虛實，徑"
+                                 HIY "護於胸前，可是$N" HIY "卻看透其中虛實，徑"
                                  HIY "直攻向$n\n" NOR;
                         break;
                 }

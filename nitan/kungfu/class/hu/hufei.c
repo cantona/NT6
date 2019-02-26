@@ -48,8 +48,8 @@ void create()
         set("long", @LONG
 他就是胡一刀之子胡斐，因其武功高強神出鬼
 沒。在江湖上人送外號「雪山飛狐」。他身穿
-一件白色長衫，腰間別著一把看起來很舊的刀。
-滿腮虯髯，根根如鐵，一頭濃發，卻不結辮。
+一件白色長衫，腰間別着一把看起來很舊的刀。
+滿腮虯髯，根根如鐵，一頭濃髮，卻不結辮。
 LONG
         );
         set("attitude", "peaceful");
@@ -113,26 +113,26 @@ LONG
                 "胡家拳經"   : (: ask_quanjing :),
                 "刀譜"       : (: ask_book :),
                 "胡家刀譜"   : (: ask_daopu :),
-                // "風卷霹靂"   : (: ask_skill1 :),
-                // "風卷霹靂上九天" : (: ask_skill1 :),
+                // "風捲霹靂"   : (: ask_skill1 :),
+                // "風捲霹靂上九天" : (: ask_skill1 :),
                 "奔拳快打"   : (: ask_skill2 :),
                 // "烏龍探海"   : (: ask_skill3 :),
                 // "作繭自縛"   : (: ask_skill4 :),
                 "飛天神行"   : (: ask_skill5 :),
                 "星光閃爍"   : (: ask_skill6 :),
-                // "雄霸群山"   : (: ask_skill7 :),
+                // "雄霸羣山"   : (: ask_skill7 :),
                 // "閃刀訣"     : (: ask_skill8 :),
                 "推天獻印勢" : (: ask_skill9 :),
                 "卸甲錐心勢" : (: ask_skill10 :),
                 "八方藏刀勢" : (: ask_skill11 :),
-                "橫掃千軍"   : "咦？這是什麼招數，我沒聽說過。",
+                "橫掃千軍"   : "咦？這是什麼招數，我沒聽説過。",
                 "袁紫衣"     : "算了，別提這傷心事了。",
                 "閻基"       : "閻基這個狗賊我非殺了他不可。",
                 "趙半山"     : "我趙三哥啊！他剛來關外看我呢。 ",
                 "苗若蘭"     : "不知什麼時候還能再見到若蘭姑娘。",
                 "若蘭"       : "不知什麼時候還能再見到若蘭姑娘。",
                 "胡一刀"     : "遼東大俠胡一刀是我爹。不過我從沒見過他。",
-                "程靈素"     : "現在我也不知道她在哪裡，只是曾經聽她說過好像要去襄陽。",
+                "程靈素"     : "現在我也不知道她在哪裏，只是曾經聽她説過好像要去襄陽。",
                 "苗人鳳"     : "苗人鳳和家父齊名，本可成為知交好友，然而家父卻死在他的劍下。"
         ]));
 
@@ -204,7 +204,7 @@ void attempt_apprentice(object ob)
                 return;
         }
 
-        if (ob->name(1) == "胡子" || ob->name(1) == "胡臭")
+        if (ob->name(1) == "鬍子" || ob->name(1) == "胡臭")
         {
                 command("say 你給換起個名字，現在這個名字也太齷齪了。");
                 return;
@@ -263,7 +263,7 @@ mixed try_to_learn_sixiangbu()
                 return 0;
         }
 
-        return "四象步法對你來說過于艱深，你還是先奠定好基礎再說。";
+        return "四象步法對你來説過於艱深，你還是先奠定好基礎再説。";
 }
 
 /*
@@ -274,13 +274,13 @@ mixed ask_skill1()
         me = this_player();
 
         if( query("can_perform/hua-quan/juan", me) )
-                return "俺不是已經教過你了嗎？還多說什麼？";
+                return "俺不是已經教過你了嗎？還多説什麼？";
 
         if( query("family/family_name", me) != query("family/family_name") )
                 return "你又不是俺胡家的，還和我羅嗦什麼？";
 
         if (me->query_skill("hua-quan", 1) < 1)
-                return "你連西岳華拳都未曾學過，哪裡來絕招？";
+                return "你連西嶽華拳都未曾學過，哪裏來絕招？";
 
         if( query("family/gongji", me)<350 )
                 return "你在我胡家碌碌無為，這招我先不忙傳你。";
@@ -292,21 +292,21 @@ mixed ask_skill1()
                 return "你的內功火候不足，學不成這招。";
 
         if (me->query_skill("hua-quan", 1) < 120)
-                return "你的西岳華拳火候未到，還得多練習練習。";
+                return "你的西嶽華拳火候未到，還得多練習練習。";
 
-        message_vision(HIY "$n" HIY "點了點頭，說道：“我先將這華拳的總"
-                       "訣傳授予你，需得慢慢\n領會。”說完便聽得$n" HIY
-                       "朗誦道：“風卷霹靂上九天，曉星當頭即\n走拳。出"
-                       "勢跨虎西岳傳，金鵬展翅庭中站。韋陀獻抱在胸前，"
-                       "把臂\n攔門橫鐵閂。魁鬼仰鬥撩綠欄，出勢跨虎西岳"
+        message_vision(HIY "$n" HIY "點了點頭，説道：“我先將這華拳的總"
+                       "訣傳授予你，需得慢慢\n領會。”説完便聽得$n" HIY
+                       "朗誦道：“風捲霹靂上九天，曉星當頭即\n走拳。出"
+                       "勢跨虎西嶽傳，金鵬展翅庭中站。韋陀獻抱在胸前，"
+                       "把臂\n攔門橫鐵閂。魁鬼仰鬥撩綠欄，出勢跨虎西嶽"
                        "傳。白猿偷桃拜天庭，\n吳王試劍劈玉磚……”$N" HIY
                        "在一旁細細捉摸。如此這般，過了良久。\n" NOR, me,
                        this_object());
         command("nod");
         command("say 我曾以華拳門掌門的身份參加掌門人大會，那次……");
         command("sigh");
-        command("say 這西岳華拳創于唐朝，威力的確不凡，可得多花功夫練習。");
-        tell_object(me, HIC "你學會了「風卷霹靂上九天」。\n" NOR);
+        command("say 這西嶽華拳創於唐朝，威力的確不凡，可得多花功夫練習。");
+        tell_object(me, HIC "你學會了「風捲霹靂上九天」。\n" NOR);
 
         if (me->can_improve_skill("cuff"))
                 me->improve_skill("cuff", 1500000);
@@ -326,13 +326,13 @@ mixed ask_skill2()
         me = this_player();
 
         if( query("can_perform/hujia-quan/kuai", me) )
-                return "俺不是已經教過你了嗎？還多說什麼？";
+                return "俺不是已經教過你了嗎？還多説什麼？";
 
         if( query("family/family_name", me) != query("family/family_name") )
                 return "你又不是俺胡家的，還和我羅嗦什麼？";
 
         if (me->query_skill("hujia-quan", 1) < 1)
-                return "你連胡家拳法都未曾學過，哪裡來絕招？";
+                return "你連胡家拳法都未曾學過，哪裏來絕招？";
 
         if( query("family/gongji", me)<100 )
                 return "你在我胡家碌碌無為，這招我先不忙傳你。";
@@ -371,7 +371,7 @@ mixed ask_skill5()
         me = this_player();
 
         if( query("can_perform/sixiang-bufa/fei", me) )
-                return "俺不是已經教過你了嗎？還多說什麼？";
+                return "俺不是已經教過你了嗎？還多説什麼？";
 
         if( query("family/family_name", me) != query("family/family_name") )
                 return "你又不是俺胡家的，還和我羅嗦什麼？";
@@ -403,7 +403,7 @@ mixed ask_skill5()
         message_vision(HIY "$n" HIY "對$N" HIY "點了點頭，喝道：“看"
                        "好了。”話音剛落，只見$n" HIY "足尖\n輕點地面"
                        "，凌空一躍而起，身形頓時變得飄忽不定，難以捉"
-                       "摸。$N" HIY "\n越看越覺精奇，不禁暗自感嘆。\n"
+                       "摸。$N" HIY "\n越看越覺精奇，不禁暗自感歎。\n"
                        NOR, me, this_object());
 
         command("haha");
@@ -427,13 +427,13 @@ mixed ask_skill6()
         me = this_player();
 
         if( query("can_perform/mantian-xing/shan", me) )
-                return "俺不是已經教過你了嗎？還多說什麼？";
+                return "俺不是已經教過你了嗎？還多説什麼？";
 
         if( query("family/family_name", me) != query("family/family_name") )
                 return "你又不是俺胡家的，還和我羅嗦什麼？";
 
         if (me->query_skill("mantian-xing", 1) < 1)
-                return "你連滿天星都未曾學過，哪裡來絕招？";
+                return "你連滿天星都未曾學過，哪裏來絕招？";
 
         if( query("family/gongji", me)<200 )
                 return "你在我胡家碌碌無為，這招我先不忙傳你。";
@@ -453,7 +453,7 @@ mixed ask_skill6()
                        "種很特別的暗器法門。\n" NOR, me, this_object());
 
         command("nod");
-        command("say 剛才俺說的你都記住了嗎？");
+        command("say 剛才俺説的你都記住了嗎？");
         tell_object(me, HIC "你學會了「星光閃爍」。\n" NOR);
 
         if (me->can_improve_skill("throwing"))
@@ -472,13 +472,13 @@ mixed ask_skill7()
         me = this_player();
 
         if( query("can_perform/chuangwang-dao/xiong", me) )
-                return "俺不是已經教過你了嗎？還多說什麼？";
+                return "俺不是已經教過你了嗎？還多説什麼？";
 
         if( query("family/family_name", me) != query("family/family_name") )
                 return "你又不是俺胡家的，還和我羅嗦什麼？";
 
         if (me->query_skill("chuangwang-dao", 1) < 1)
-                return "你連闖王刀法都未曾學過，哪裡來絕招？";
+                return "你連闖王刀法都未曾學過，哪裏來絕招？";
 
         if( query("gongxian", me)<50 )
                 return "你在我胡家碌碌無為，這招我先不忙傳你。";
@@ -498,8 +498,8 @@ mixed ask_skill7()
                        NOR, me, this_object());
 
         command("nod");
-        command("say 這招是用于沖鋒陷陣的，高手對抗卻不多用。");
-        tell_object(me, HIC "你學會了「雄霸群山」。\n" NOR);
+        command("say 這招是用於衝鋒陷陣的，高手對抗卻不多用。");
+        tell_object(me, HIC "你學會了「雄霸羣山」。\n" NOR);
 
         if (me->can_improve_skill("blade"))
                 me->improve_skill("blade", 1500000);
@@ -518,13 +518,13 @@ mixed ask_skill8()
         me = this_player();
 
         if( query("can_perform/liuhe-dao/shan", me) )
-                return "俺不是已經教過你了嗎？還多說什麼？";
+                return "俺不是已經教過你了嗎？還多説什麼？";
 
         if( query("family/family_name", me) != query("family/family_name") )
                 return "你又不是俺胡家的，還和我羅嗦什麼？";
 
         if (me->query_skill("liuhe-dao", 1) < 1)
-                return "你連六合刀法都未曾學過，哪裡來絕招？";
+                return "你連六合刀法都未曾學過，哪裏來絕招？";
 
         if( query("family/gongji", me)<200 )
                 return "你在我胡家碌碌無為，這招我先不忙傳你。";
@@ -539,9 +539,9 @@ mixed ask_skill8()
                 return "你的六合刀法火候未到，還得多練習練習。";
 
         message_vision(HIY "$n" HIY "對$N" HIY "笑了笑，拔出腰間佩刀"
-                       "握在手中，說道：“這六合刀法的\n要訣不過是展"
-                       "、抹、鉤、剁、砍、劈六勢，看好了。”說完便只"
-                       "見\n$n" HIY "手中鋼刀吞吐不定，形若遊龍，勢如"
+                       "握在手中，説道：“這六合刀法的\n要訣不過是展"
+                       "、抹、鈎、剁、砍、劈六勢，看好了。”説完便只"
+                       "見\n$n" HIY "手中鋼刀吞吐不定，形若游龍，勢如"
                        "猛虎。接連變換了數種方\n位，最後哧的一聲砍落"
                        "，刀身震得嗡嗡直響。\n" NOR, me, this_object());
 
@@ -566,13 +566,13 @@ mixed ask_skill9()
         me = this_player();
 
         if( query("can_perform/hujia-daofa/xian", me) )
-                return "俺不是已經教過你了嗎？還多說什麼？";
+                return "俺不是已經教過你了嗎？還多説什麼？";
 
         if( query("family/family_name", me) != query("family/family_name") )
                 return "你又不是俺胡家的，還和我羅嗦什麼？";
 
         if (me->query_skill("hujia-daofa", 1) < 1)
-                return "你連胡家刀法都未曾學過，哪裡來絕招？";
+                return "你連胡家刀法都未曾學過，哪裏來絕招？";
 
         if( query("family/gongji", me)<900 )
                 return "你在我胡家碌碌無為，這招我先不忙傳你。";
@@ -584,11 +584,11 @@ mixed ask_skill9()
                 return "你的胡家刀法火候未到，還得多練習練習。";
 
         message_vision(HIY "$n" HIY "拔出腰間佩刀，握在手中。對$N" HIY "笑"
-                       "道：“我便用這招攻你，看\n你如何抵擋。”說完$n" HIY
-                       "已橫過刀身，將刀鋒正對著$N" HIY "，雙手分握\n刀背和"
+                       "道：“我便用這招攻你，看\n你如何抵擋。”説完$n" HIY
+                       "已橫過刀身，將刀鋒正對着$N" HIY "，雙手分握\n刀背和"
                        "刀把，緩緩向$N" HIY "推進。$N" HIY "見狀不禁啞然失"
                        "笑，心道：“這也\n稱得上是刀法？如此緩慢怎麼破敵。"
-                       "”當下也不多言，沖上前攻出\n一招，可霎時只見$n" HIY
+                       "”當下也不多言，衝上前攻出\n一招，可霎時只見$n" HIY
                        "刀勢一變，中攻直進向$N" HIY "劈來，竟然全無破\n綻。"
                        "$N" HIY "急忙左閃右避，可$n" HIY "的刀尖始終不離$N"
                        HIY "胸前半寸。\n" NOR, me, this_object());
@@ -615,13 +615,13 @@ mixed ask_skill10()
         me = this_player();
 
         if( query("can_perform/hujia-daofa/zhui", me) )
-                return "俺不是已經教過你了嗎？還多說什麼？";
+                return "俺不是已經教過你了嗎？還多説什麼？";
 
         if( query("family/family_name", me) != query("family/family_name") )
                 return "你又不是俺胡家的，還和我羅嗦什麼？";
 
         if (me->query_skill("hujia-daofa", 1) < 1)
-                return "你連胡家刀法都未曾學過，哪裡來絕招？";
+                return "你連胡家刀法都未曾學過，哪裏來絕招？";
 
         if( query("family/gongji", me)<600 )
                 return "你在我胡家碌碌無為，這招我先不忙傳你。";
@@ -639,12 +639,12 @@ mixed ask_skill10()
                        "，以掌作刀，先使出胡家\n刀法中的一式「霸王卸甲"
                        "」，掌鋒斜斜劃出一道半圈，至下往上劈\n出。待掌"
                        "至中途卻猛然變成一招「穿心錐」，單掌急速旋轉，"
-                       "復由\n上往中穿出。$N" HIY "看到這裡，雙目陡然"
+                       "復由\n上往中穿出。$N" HIY "看到這裏，雙目陡然"
                        "一亮，似乎明白了什麼。\n" NOR,
                        me, this_object());
 
         command("nod2");
-        command("say 這招的精要便是先卸除敵人的防御，再給他致命一擊。");
+        command("say 這招的精要便是先卸除敵人的防禦，再給他致命一擊。");
         command("say …嗯…這勢太過凌厲，可千萬不能用它為非作歹！");
         tell_object(me, HIC "你學會了「卸甲錐心勢」。\n" NOR);
 
@@ -665,7 +665,7 @@ mixed ask_skill11()
         me = this_player();
 
         if( query("can_perform/hujia-daofa/cang", me) )
-                return "俺不是已經教過你了嗎？還多說什麼？";
+                return "俺不是已經教過你了嗎？還多説什麼？";
 
         if( query("family/family_name", me) != query("family/family_name") )
                 return "你又不是俺胡家的，還和我羅嗦什麼？";
@@ -686,17 +686,17 @@ mixed ask_skill11()
                         "點頭，頗為讚許道：“想不到今日\n你的刀法能有"
                         "如此造詣，假以時日，你必當超過為師。今日我就"
                         "傳\n你這套八方藏刀勢，希望日後你能夠有所作為"
-                        "。”$n" HIY "頓了頓，又\n接著對$N" HIY "說道"
+                        "。”$n" HIY "頓了頓，又\n接着對$N" HIY "説道"
                         "：“我胡家刀法之所以厲害，不外乎刀勢凌厲。須"
-                        "知\n以主欺客，不如以客犯主；嫩勝于老，遲勝于"
+                        "知\n以主欺客，不如以客犯主；嫩勝於老，遲勝於"
                         "急。胡家刀法常用到\n的纏、滑、絞、擦、抽、截"
-                        "等刀勢就遠強于一般刀法中展、抹、鉤、\n剁、砍"
-                        "、劈等刀勢。而這八方藏刀勢的變化卻又不止于此"
-                        "，讓我慢\n慢給你說來……”如此這般，過了良久"
+                        "等刀勢就遠強於一般刀法中展、抹、鈎、\n剁、砍"
+                        "、劈等刀勢。而這八方藏刀勢的變化卻又不止於此"
+                        "，讓我慢\n慢給你説來……”如此這般，過了良久"
                         "……良久……\n" NOR, me, this_object());
 
         command("nod");
-        command("say 剛才我所說的全是要點，需牢記在心。");
+        command("say 剛才我所説的全是要點，需牢記在心。");
         command("say 你下來後一定要勤加練習，才能將這勢用得純熟。");
         tell_object(me, HIC "你學會了「八方藏刀勢」。\n" NOR);
 
@@ -725,7 +725,7 @@ mixed ask_baodao()
         me = this_player();
 
         if( query("family/family_name", me) != "關外胡家" )
-                return "你是哪裡來的？跑來跟我羅嗦什麼！";
+                return "你是哪裏來的？跑來跟我羅嗦什麼！";
 
         if( query("family/master_id", me) != query("id") )
                 return "你又不是我的弟子，跟我羅嗦些什麼？";
@@ -734,7 +734,7 @@ mixed ask_baodao()
                 return "你不是我俠義中人，這寶刀我不能給你。";
 
         if (me->query_skill("hujia-daofa", 1) < 150)
-                return "你還是先在我這裡把胡家刀法練好再說吧。";
+                return "你還是先在我這裏把胡家刀法練好再説吧。";
 
         ob = find_object(LENGYUE);
         if (! ob) ob = load_object(LENGYUE);
@@ -752,7 +752,7 @@ mixed ask_baodao()
         if (objectp(owner) && owner != this_object())
         {
                 if (! owner->is_character())
-                        return "…嗯…冷月寶刀現在不在我手裡。";
+                        return "…嗯…冷月寶刀現在不在我手裏。";
 
                 if( query("family/family_name", owner) == "關外胡家" )
                         return "冷月寶刀現在暫時是你兄弟"+query("name", owner)+
@@ -782,7 +782,7 @@ mixed ask_jundao()
         me = this_player();
 
         if( query("family/family_name", me) != "關外胡家" )
-                return "你是哪裡來的？跑來跟我羅嗦什麼！";
+                return "你是哪裏來的？跑來跟我羅嗦什麼！";
 
         if( query("family/master_id", me) != query("id") )
                 return "你又不是我的弟子，跟我羅嗦些什麼？";
@@ -804,12 +804,12 @@ mixed ask_jundao()
         }
 
         if (owner == me)
-                return "俺的那柄闖王軍刀不就是你拿著在用嗎？";
+                return "俺的那柄闖王軍刀不就是你拿着在用嗎？";
 
         if (objectp(owner) && owner != this_object())
         {
                 if (! owner->is_character())
-                        return "…嗯…闖王軍刀現在不在我手裡。";
+                        return "…嗯…闖王軍刀現在不在我手裏。";
 
                 if( query("family/family_name", owner) == "關外胡家" )
                         return "闖王軍刀現在暫時是你兄弟"+query("name", owner)+
@@ -839,7 +839,7 @@ mixed ask_quanjing()
         me = this_player();
 
         if( query("family/family_name", me) != "關外胡家" )
-                return "你是哪裡來的？跑來跟我羅嗦什麼！";
+                return "你是哪裏來的？跑來跟我羅嗦什麼！";
 
         if( query("family/master_id", me) != query("id") )
                 return "你又不是我的弟子，跟我羅嗦些什麼？";
@@ -848,7 +848,7 @@ mixed ask_quanjing()
                 return "你不是我俠義中人，這拳經我不能給你。";
 
         if( query("combat_exp", me)<10000 )
-                return "你現在經驗太淺，不用忙著去閱讀拳經。";
+                return "你現在經驗太淺，不用忙着去閲讀拳經。";
 
         if (me->query_skill("hujia-quan", 1) > 119)
                 return "你胡家拳法的造詣已經不淺了，那本拳經還是留給後輩們讀吧。";
@@ -864,12 +864,12 @@ mixed ask_quanjing()
         }
 
         if (owner == me)
-                return "我胡家的家傳拳經不就是你拿著在看嗎？";
+                return "我胡家的家傳拳經不就是你拿着在看嗎？";
 
         if (objectp(owner) && owner != this_object())
         {
                 if (! owner->is_character())
-                        return "…嗯…胡家拳經現在不在我手裡。";
+                        return "…嗯…胡家拳經現在不在我手裏。";
 
                 if( query("family/family_name", owner) == "關外胡家" )
                         return "胡家拳經現在暫時被你兄弟"+query("name", owner)+
@@ -894,7 +894,7 @@ mixed ask_daopu()
         me = this_player();
 
         if( query("family/family_name", me) != "關外胡家" )
-                return "你是哪裡來的？跑來跟我羅嗦什麼！";
+                return "你是哪裏來的？跑來跟我羅嗦什麼！";
 
         if( query("family/master_id", me) != query("id") )
                 return "你又不是我的弟子，跟我羅嗦些什麼？";
@@ -903,10 +903,10 @@ mixed ask_daopu()
                 return "你不是我俠義中人，這刀譜我不能給你。";
 
         if( query("combat_exp", me)<50000 )
-                return "你現在經驗太淺，這本刀譜對你來說過于深奧了。";
+                return "你現在經驗太淺，這本刀譜對你來説過於深奧了。";
 
         if (me->query_skill("blade", 1) > 179)
-                return "你刀法的造詣已稱得上是登峰造極了，刀譜還是留給後輩們讀吧。";
+                return "你刀法的造詣已稱得上是登峯造極了，刀譜還是留給後輩們讀吧。";
 
         ob = find_object(DAOPU);
         if (! ob) ob = load_object(DAOPU);
@@ -919,12 +919,12 @@ mixed ask_daopu()
         }
 
         if (owner == me)
-                return "我胡家的家刀譜經不就是你拿著在看嗎？";
+                return "我胡家的家刀譜經不就是你拿着在看嗎？";
 
         if (objectp(owner) && owner != this_object())
         {
                 if (! owner->is_character())
-                        return "…嗯…胡家刀譜現在不在我手裡。";
+                        return "…嗯…胡家刀譜現在不在我手裏。";
 
                 if( query("family/family_name", owner) == "關外胡家" )
                         return "胡家刀譜現在暫時被你兄弟"+query("name", owner)+
@@ -951,7 +951,7 @@ int accept_object(object me, object ob)
         if ( !present(ob, me) ) return notify_fail("你沒有這件東西。");
         if( query("id", ob) == "yanji" )
         {
-                write(HIC "\n胡斐說道：這位" + RANK_D->query_respect(me)+"，如此大恩大德，在下實不知何以為報。\n");
+                write(HIC "\n胡斐説道：這位" + RANK_D->query_respect(me)+"，如此大恩大德，在下實不知何以為報。\n");
                 write(HIC "\n胡斐大喜道：狗賊！想不到你也有今天！！手起刀落，將閻基剁為兩段。\n");
                 ob->die();
                 set_temp("marks/hujiadaopu", 1, me);
@@ -965,7 +965,7 @@ string ask_book()
 
         me = this_player();
         if( !query_temp("marks/hujiadaopu", me) )
-                return "你說什麼? \n";
+                return "你説什麼? \n";
         if( (query("shen", me)<10000) )
                 return "刀譜落入宵小之手，難免是閻基第二。\n";
 
@@ -974,7 +974,7 @@ string ask_book()
         {
                 if (query("book_count") > 0)
                 {
-                        write(HIC "胡斐說著轉身從閻基屍身上搜出一本破舊書本，遞了給你。\n");
+                        write(HIC "胡斐説着轉身從閻基屍身上搜出一本破舊書本，遞了給你。\n");
                         call_out("waiting",0,me,ob);
                         addn("book_count", -1);
                         ob = new ("/clone/book/blade_book");
@@ -993,7 +993,7 @@ int accept_ask(object me, string topic)
         {
         case "歷練" :
         case "歷煉" :
-        case "鍛煉" :
+        case "鍛鍊" :
                 return QUEST_D->accept_ask(this_object(), me, topic);
                 break;
 
@@ -1036,10 +1036,10 @@ int accept_ask(object me, string topic)
                            "shen"    : 28000, ]));
                 break;
 
-         case "開天辟地" :
+         case "開天闢地" :
                  return MASTER_D->teach_pfm(me, this_object(),
                          ([ "perform" : "can_perform/hujia-daofa/pi",
-                            "name"    : "開天辟地",
+                            "name"    : "開天闢地",
                             "sk1"     : "hujia-daofa",
                             "lv1"     : 120,
                             "sk2"     : "force",

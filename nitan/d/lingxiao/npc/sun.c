@@ -6,7 +6,7 @@ void create()
 {
         set_name("孫萬年", ({"sun wannian", "sun", "wannian"}));
         set("long", "他是凌宵城第六代弟子孫萬年，生得獐頭鼠目。\n"
-                    "因為品行不端，被關在這裡思過。\n");
+                    "因為品行不端，被關在這裏思過。\n");
         set("age", 24);
         set("attitude", "peaceful");
 
@@ -63,5 +63,5 @@ void create()
 
 void attempt_apprentice(object ob)
 {
-        command("say 拜你奶奶的雄，沒看見老子被關在這裡的嗎？");
+        command("say 拜你奶奶的雄，沒看見老子被關在這裏的嗎？");
 }

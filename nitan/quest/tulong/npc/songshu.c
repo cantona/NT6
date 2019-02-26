@@ -3,10 +3,10 @@ inherit NPC;
 
 void create()
 {
-        set_name("鬆鼠", ({ "song shu", "shu" }) );
+        set_name("松鼠", ({ "song shu", "shu" }) );
         set("race", "野獸");
         set("age", 2);
-        set("long", "一只可愛的鬆鼠。\n");
+        set("long", "一隻可愛的松鼠。\n");
         set("attitude", "peaceful");
  
         set("str", 15);

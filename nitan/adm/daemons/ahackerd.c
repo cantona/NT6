@@ -80,7 +80,7 @@ void passwd_mistake(string id,string ip)
                 CHANNEL_D->do_channel(this_object(),"sys",sprintf("賬號 %s：連續5次密碼輸入錯誤，此賬號被封鎖予以保護。\n",
                         capitalize(id)));
                 log_file("hacking",sprintf("***賬號:%s 連續"+MAX_MISTAKE+"次密碼輸入不正確被懷疑受到攻擊.\n"
-                        +"   于 %s 被暫時封鎖予以保護.最後一次攻擊來自%s.\n",id,ctime(time()),ip));
+                        +"   於 %s 被暫時封鎖予以保護.最後一次攻擊來自%s.\n",id,ctime(time()),ip));
                 check_same_ip_number(ip);
                 return;
         }

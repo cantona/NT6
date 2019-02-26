@@ -5,7 +5,7 @@ inherit NPC;
 void create ()
 {
         set_name("萬圭", ({"wan gui","wan"}));
-        set("long", "他是萬震山的獨子，他長身玉立，臉型微見瘦削，俊美瀟洒，倒象是個富家公子。\n");
+        set("long", "他是萬震山的獨子，他長身玉立，臉型微見瘦削，俊美瀟灑，倒象是個富家公子。\n");
         set("title","萬門三弟子");
         set("gender", "男性");
         set("age", 25);

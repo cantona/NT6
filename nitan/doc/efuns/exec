@@ -7,7 +7,7 @@
                 整數 exec( 物件 to, 物件 from );
         函數用法:
                 這個函式允許指定的物件把可互動的連結 (link) 遷移到另
-                外一個物件上. 也就是說, 成功地執行 exec( to, from )
+                外一個物件上. 也就是説, 成功地執行 exec( to, from )
                 之後, interactive( to ) 會傳回 1, 而 interactive( from )
                 會傳回 0. 而控制 from 的玩家會轉移控制權到 to 的身上.
                 請注意這個函式的權力非常大, 不當地使用會危及 MUD  的

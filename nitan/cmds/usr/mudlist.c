@@ -10,7 +10,7 @@
 inherit F_CLEAN_UP;
 
 string help = @HELP
-        梓袧 mudlist 硌鍔﹝
+        標準 mudlist 指令。
 HELP;
 
 int online;
@@ -26,11 +26,11 @@ string cstatus(int status, string color)
 
         if( status & ONLINE)
         {
-                str+=HIW"蟀盄"NOR;
+                str+=HIW"連線"NOR;
                 online++;
         }
-        if( status&SHUTDOWN)    str+=YEL"壽敕"NOR;
-        if( status&DISCONNECT)  str+=WHT"剿盄"NOR;
+        if( status&SHUTDOWN)    str+=YEL"關閉"NOR;
+        if( status&DISCONNECT)  str+=WHT"斷線"NOR;
         str += color;
 
         return sprintf("%-18s",str);
@@ -46,7 +46,7 @@ int main(object me, string arg)
         mixed c=({}),v=({});
 
         if( !i2=find_object(INTERMUD2_D) )
-                return tell(me, "厙繚儕鍾甜羶衄掩婥﹝\n", CMDMSG);
+                return tell(me, "網路精靈並沒有被載入。\n", CMDMSG);
 
         if( arg )
         {
@@ -82,9 +82,9 @@ int main(object me, string arg)
         v=keys(x);
         v = sort_array(v,1);
 
-        str+="↓INTERMUD_2 MUDLIST\n\n"HIY"Cf"NOR"-炵苀傖髡赻雄瓚剿晤鎢濬倰\n"HIG"GB"NOR"-峈GB晤鎢\n"HIR"AD"NOR"-衄湮講嫘豢捅洘\n"HIB"Ig"NOR"-路橈捅洘\n\n";
-        str+=sprintf("珋婓奀覦ㄩ%s\n\n↓隅都蚺蹈桶\n%-:20s%-26s%16s%5s %18s %-16s\n",TIME_D->replace_ctime(time()),"靡備","笢恅靡備(盄奻杅)","IP 弇硊","硎","袨怓","郔綴諉揖");
-        str+=repeat_string("岸",53)+"\n";
+        str+="□INTERMUD_2 MUDLIST\n\n"HIY"Cf"NOR"-系統成功自動判斷編碼類型\n"HIG"GB"NOR"-確認為GB編碼\n"HIR"AD"NOR"-確認有大量廣告訊息\n"HIB"Ig"NOR"-隔絕訊息\n\n";
+        str+=sprintf("現在時刻：%s\n\n□確定常駐列表\n%-:20s%-26s%16s%5s %18s %-16s\n",TIME_D->replace_ctime(time()),"名稱","中文名稱(線上人數)","IP 位址","埠","狀態","最後接觸");
+        str+=repeat_string("─",53)+"\n";
         foreach(t in c)
         {
 //              shout(sprintf("%s       \n",t));
@@ -129,12 +129,12 @@ int main(object me, string arg)
 
         }
 
-        str+=repeat_string("岸",53)+"\n僕 "+sizeof(mudlist)+" 捩訧蹋ㄛ衄 "+online+" 跺 Mud 蟀盄笢﹝\n\n↓脹渾蹈桶\n";
-        str+=sprintf("%-:20s%-26s%16s%5s %18s %-16s\n","靡備","笢恅靡備(盄奻杅)","IP 弇离","硎","隙茼","郔綴諉揖");
-        str+=repeat_string("岸",53)+"\n";
+        str+=repeat_string("─",53)+"\n共 "+sizeof(mudlist)+" 筆資料，有 "+online+" 個 Mud 連線中。\n\n□等待確認列表\n";
+        str+=sprintf("%-:20s%-26s%16s%5s %18s %-16s\n","名稱","中文名稱(線上人數)","IP 位置","埠","迴應","最後接觸");
+        str+=repeat_string("─",53)+"\n";
         foreach(t in v)
         str+=sprintf("%-:20s%-26s%16s%5s %18d %-16s\n",t,(incoming_mudlist[x[t]]["MUDNAME"]||"")+NOR+(incoming_mudlist[x[t]]["USERS"]?"("+incoming_mudlist[x[t]]["USERS"]+")":""),incoming_mudlist[x[t]]["HOSTADDRESS"],incoming_mudlist[x[t]]["PORT"]+"",incoming_mudlist[x[t]]["CONNECTION"],TIME_D->replace_ctime(incoming_mudlist[x[t]]["LASTESTCONTACT"]));
-        str+=repeat_string("岸",53)+"\n僕 "+sizeof(incoming_mudlist)+" 捩訧蹋ㄛ狟棒訧捅載陔:"+TIME_D->replace_ctime(fetch_variable("refresh_limit",i2)+REFRESH_INCOMING_TIME)+"\n\n軞數僕 "+sizeof(mudlist+incoming_mudlist)+" 跺 Mud ﹝\n";
+        str+=repeat_string("─",53)+"\n共 "+sizeof(incoming_mudlist)+" 筆資料，下次資訊更新:"+TIME_D->replace_ctime(fetch_variable("refresh_limit",i2)+REFRESH_INCOMING_TIME)+"\n\n總計共 "+sizeof(mudlist+incoming_mudlist)+" 個 Mud 。\n";
 
         online=0;
 

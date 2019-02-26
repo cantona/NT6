@@ -11,7 +11,7 @@ void create()
                 set_default_object(__FILE__);
         else {
                 set("long", "一盤清甜可人的西湖醋魚，用西湖中的金色鯉魚
-燒制而成，是西湖第一名菜。\n");
+燒製而成，是西湖第一名菜。\n");
                 set("unit", "碗");
                 set("value", 120);
                 set("food_remaining", 20);

@@ -80,14 +80,14 @@ int main(object me, string arg)
                         return notify_fail("你目前還沒有制訂計劃。\n");
 
                 if( query("doing", me) )
-                        return notify_fail("你現在正在忙于鍛煉，不能開展新計劃。\n");
+                        return notify_fail("你現在正在忙於鍛鍊，不能開展新計劃。\n");
 
                 env = environment(me);
                 if (! env)
                         return notify_fail("你現在什麼都做不了。\n");
 
                 if (env->is_chat_room())
-                        return notify_fail("你不能在聊天室裡面執行計劃。\n");
+                        return notify_fail("你不能在聊天室裏面執行計劃。\n");
 
                 if( !query("sleep_room", env) )
                         return notify_fail("你必須在能夠休息的地方才能執行計劃。\n");
@@ -96,13 +96,13 @@ int main(object me, string arg)
                         return notify_fail("你必須在安全的地方才能執行計劃。\n");
 
                 if( query("combat_exp", me)<50000 )
-                        return notify_fail("你的實戰經驗太淺薄，還是先好好鍛煉鍛煉再說吧。\n");
+                        return notify_fail("你的實戰經驗太淺薄，還是先好好鍛鍊鍛鍊再説吧。\n");
 
                 if( query("potential", me)-query("learned_points", me)<100 )
                         return notify_fail("你的潛能太少，難以開展計劃。\n");
 
                 if (sizeof(filter_array(all_inventory(env), (: playerp :))) > 12)
-                        return notify_fail("這裡的人實在太多了，你難以靜心開展計劃。\n");
+                        return notify_fail("這裏的人實在太多了，你難以靜心開展計劃。\n");
 
                 addn("learned_points", 100, me);
 
@@ -268,7 +268,7 @@ void execute_schedule(object me)
                         my_temp["scs_repeat"] += ({ ({ scs_step, i }) });
                 else
                 {
-                        write("循環嵌套的層次太多，你的計劃書好復雜，執行不了。\n");
+                        write("循環嵌套的層次太多，你的計劃書好複雜，執行不了。\n");
                         cancel_schedule(me);
                         break;
                 }

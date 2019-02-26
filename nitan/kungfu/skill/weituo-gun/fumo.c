@@ -1,11 +1,11 @@
 // This program is a part of NITAN MudLIB
-// fumo.c 韋托伏魔
+// fumo.c 韋託伏魔
 
 #include <ansi.h>
 #include <combat.h>
 
 inherit F_SSERVER;
-string name() { return "韋托伏魔"; }
+string name() { return "韋託伏魔"; }
 
 int perform(object me, object target)
 {
@@ -17,7 +17,7 @@ int perform(object me, object target)
         if (! target) target = offensive_target(me);
 
         if (! target || ! me->is_fighting(target))
-                return notify_fail("「韋托伏魔」只能在戰鬥中對對手使用。\n");
+                return notify_fail("「韋託伏魔」只能在戰鬥中對對手使用。\n");
 
         if( !objectp(weapon=query_temp("weapon", me)) ||
               query("skill_type", weapon) != "club" )
@@ -27,16 +27,16 @@ int perform(object me, object target)
                 return notify_fail("你的內功的修為不夠，難以使用這一絕技！\n");
 
         if (me->query_skill("weituo-gun", 1) < 135)
-                return notify_fail("你的韋陀棍法修為不夠，目前不能使用韋托伏魔！\n");
+                return notify_fail("你的韋陀棍法修為不夠，目前不能使用韋託伏魔！\n");
 
         if( query("neili", me)<800 )
-                return notify_fail("你的真氣不夠，不能使用韋托伏魔！\n");
+                return notify_fail("你的真氣不夠，不能使用韋託伏魔！\n");
 
         if (me->query_skill_mapped("club") != "weituo-gun")
-                return notify_fail("你沒有激發韋陀棍法，不能使用韋托伏魔！\n");
+                return notify_fail("你沒有激發韋陀棍法，不能使用韋託伏魔！\n");
 
         if( query("shen", me)<10000 )
-                return notify_fail("你正氣不足，難以理解韋托伏魔的精髓。\n");
+                return notify_fail("你正氣不足，難以理解韋託伏魔的精髓。\n");
 
         msg = HIY "$N" HIY "臉色柔和，盡顯一派慈祥之意，手中的" + weapon->name() +
               HIY "輕旋，恍惚中顯出佛家韋陀神像，神光四射，籠罩住$n" + HIY "！\n" NOR;

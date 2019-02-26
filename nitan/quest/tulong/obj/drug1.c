@@ -7,7 +7,7 @@ void init()
     set("no_get", "你拿不起來這樣東西。試試挖挖(dig)。\n");
     set("no_give","這麼珍貴的藥，哪能隨便給人？\n");
     set("no_drop","這麼寶貴的丹藥，扔了多可惜呀！\n");
-    set("no_sell","凡人哪裡知道"+query("name", this_object())+"的價值？還是自己留著吧。\n");
+    set("no_sell","凡人哪裏知道"+query("name", this_object())+"的價值？還是自己留着吧。\n");
 
     add_action("do_dig", "dig");
     add_action("do_eat", "eat");
@@ -100,8 +100,8 @@ int do_eat(string arg)
 
    neili_add=30;
    
-   message_vision("$N將一顆$n輕輕嚼著嚥下了肚，臉上泛起陣紅暈。\n", who, me);
-   tell_object(who, "你覺得一陣熱氣直通七竅，渾身上下好象有使不完的力氣。\n");
+   message_vision("$N將一顆$n輕輕嚼着嚥下了肚，臉上泛起陣紅暈。\n", who, me);
+   tell_object(who, "你覺得一陣熱氣直通七竅，渾身上下好像有使不完的力氣。\n");
 
   set("eff_jing",query("max_jing",  who), who);
   set("jing",query("max_jing",  who), who);

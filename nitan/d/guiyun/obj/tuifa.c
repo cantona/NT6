@@ -12,7 +12,7 @@ void create()
         else {
                 set("treasure", 1);
                 set("unit", "本");
-                set("long", "這本腿法中詳細地畫著黃藥師所創的旋風掃葉腿的圖解，雖然對你來說略顯艱深，但用它來領悟基本腿法的訣竅卻是可以的。\n");
+                set("long", "這本腿法中詳細地畫着黃藥師所創的旋風掃葉腿的圖解，雖然對你來説略顯艱深，但用它來領悟基本腿法的訣竅卻是可以的。\n");
                 set("value", 40);
                 set("material", "paper");
                 set("skill", ([

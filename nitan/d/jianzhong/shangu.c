@@ -1,4 +1,4 @@
-//Room: songlin2.c 鬆林 
+//Room: songlin2.c 松林 
 //Date: Sep 22 1997
 
 inherit ROOM;
@@ -7,7 +7,7 @@ void create()
 {
       set("short","山谷");
       set("long",@LONG
-你沿著雕鳴聲走入深谷，景致更加秀麗了。你側耳傾聽，
+你沿着雕鳴聲走入深谷，景緻更加秀麗了。你側耳傾聽，
 雕鳴聲似乎就在耳邊，你不禁加快了腳步。
 LONG);
       set("outdoors", "jianzhong");

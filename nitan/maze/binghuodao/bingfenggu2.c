@@ -2,9 +2,9 @@ inherit __DIR__"binghuodao";
 
 void create()
 {
-        set("short", "冰峰谷");
+        set("short", "冰峯谷");
         set("long",
-"這裡是一處險要的峽谷，整個峽谷被冰雪覆蓋，漫天雪花，盡\n"
+"這裏是一處險要的峽谷，整個峽谷被冰雪覆蓋，漫天雪花，盡\n"
 "是白茫茫一片。不時傳來幾聲狼嚎，令人毛骨悚然。\n"
 );
         set("exits", ([ 

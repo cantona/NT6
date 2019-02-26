@@ -1,4 +1,4 @@
-// 神話世界﹒西遊記﹒版本４．５０
+// 神話世界·西遊記·版本４．５０
 /* <SecCrypt CPL V3R05> */
  
 
@@ -7,7 +7,7 @@ inherit F_FOOD;
 
 string *names= ({
   "脆烤火雞",
-  "香熏火雞",
+  "香薰火雞",
   "填棗火雞",
 });
 
@@ -41,7 +41,7 @@ void create()
   if (clonep())
     set_default_object(__FILE__);
   else {
-    set("long", "一只碩大的感恩節火雞。\n");
+    set("long", "一隻碩大的感恩節火雞。\n");
     set("unit", "只");
     set("value", 950);
     set("food_remaining", 30);

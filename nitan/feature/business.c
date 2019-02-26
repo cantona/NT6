@@ -154,7 +154,7 @@ nomask string query_business_status()
                         if(!all[i]->to)
                                 status = sprintf("貨物在%s",to_chinese(all[i]->now));
                         else if(time() <=  all[i]->time)
-                                status = sprintf("正在運往%s的途中剩余%s天左右到達",to_chinese(all[i]->to),
+                                status = sprintf("正在運往%s的途中剩餘%s天左右到達",to_chinese(all[i]->to),
                                                  chinese_number((all[i]->time - time()) / 1440));
                         else
                                 status = sprintf("已運抵%s",to_chinese(all[i]->to));
@@ -199,7 +199,7 @@ nomask void fasong_ware()
 
         if( !(n = sizeof(all)) )
         {
-                write("你現在手裡沒有任何貨物。\n");
+                write("你現在手裏沒有任何貨物。\n");
                 return;
         }
 
@@ -365,7 +365,7 @@ protected void random_happen(class business w)
         if(!cl)
                 return;
 
-        if( (cl == "谷物") || (cl == "土特產") )
+        if( (cl == "穀物") || (cl == "土特產") )
                 reason = "爛掉";
         else
         {

@@ -14,9 +14,9 @@ void create()
         set("short", "迷宮");
         set("long", @LONG
 這是一間寬敞的石屋，四周巨石壘就的牆壁泛出幽幽的青色光芒，兩盞青銅
-燈吐出一尺高的火燄，飄忽閃爍，偶然有燈花爆裂的輕響，更令人感到窒息般的
-寂靜。地上是丈許見方的青石板舖就，房間中央一塊白色石板格外醒目，上面雕
-刻著細密的圖紋，讓人不由自主的想上前查看（mazemap）一番。
+燈吐出一尺高的火焰，飄忽閃爍，偶然有燈花爆裂的輕響，更令人感到窒息般的
+寂靜。地上是丈許見方的青石板鋪就，房間中央一塊白色石板格外醒目，上面雕
+刻着細密的圖紋，讓人不由自主的想上前查看（mazemap）一番。
 LONG );
         setup();
 }
@@ -42,7 +42,7 @@ void init()
                 break;
         case TRIP:
                 message_vision(HIR "\n$N一腳踩上了什麼東西，身形再也把持不住，猛"
-                        "的向前滑出，只留下一聲驚叫久久回盪...\n\n" NOR, me);
+                        "的向前滑出，只留下一聲驚叫久久迴盪...\n\n" NOR, me);
                 next_room = mazeobj->trip_maze(room);
                 if( objectp(next_room) )
                         me->move(next_room);
@@ -62,7 +62,7 @@ void init()
         case WOUND:
                 message_vision(HIR "\n只聽得一聲機括脆響，$N下意識的趕緊避讓，卻"
                         "為時已晚，一支鋼弩不偏不倚正好射中$N。\n" NOR 
-                        HIR "$N驚怒交加，傷口處痛徹心扉，終于忍不住連聲哀叫起來。"
+                        HIR "$N驚怒交加，傷口處痛徹心扉，終於忍不住連聲哀叫起來。"
                         "\n\n" NOR, me);
                 damage=query("max_qi", me);
                 damage = damage/10 + random(damage/10) + 1;

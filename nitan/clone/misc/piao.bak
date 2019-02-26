@@ -13,7 +13,7 @@ void create()
         set_name(HIY "彩票" NOR, ({ "cai piao", "piao" }));
         set_weight(10);
         set("long", @LONG
-這是一張比武大會的競猜彩票。背面(reverso)寫著參賽選手名單。
+這是一張比武大會的競猜彩票。背面(reverso)寫着參賽選手名單。
 
 你有兩種玩法：
 玩法一、用xuan 1來填寫彩票，選出比賽前五名，不分名次順序，全部

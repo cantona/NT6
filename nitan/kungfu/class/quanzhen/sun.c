@@ -15,10 +15,10 @@ void create()
         set("gender", "女性");
         set("age", 33);
         set("class", "taoist");
-        set("nickname",CYN"清凈散人"NOR);
+        set("nickname",CYN"清淨散人"NOR);
         set("long",
                 "她就是全真教二代弟子中唯一的女弟子孫不二孫真人。她本是\n"
-                "馬鈺入道前的妻子，道袍上繡著一個骷髏頭。\n");
+                "馬鈺入道前的妻子，道袍上繡着一個骷髏頭。\n");
         set("attitude", "peaceful");
         set("shen_type",1);
         set("str", 30);

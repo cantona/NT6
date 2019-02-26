@@ -19,7 +19,7 @@ void create()
                 set("armor_prop/dodge", 2);
                 set("female_only", 1);
                 set("wear_msg","$N穿上一雙$n。\n");
-                set("remove_msg","$N將$n脫了下來。\n");
+                set("remove_msg","$N將$n脱了下來。\n");
         }
 
         setup();

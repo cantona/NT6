@@ -7,7 +7,7 @@ inherit F_AUTOLOAD;
 void create()
 {
         set_name(HIC"三清神戒"NOR, ({ "magic ring", "ring" }));
-        set("long", HIC"這是一個從遠古流傳下來的戒指，上面刻著一些奇怪的咒語。\n"NOR);
+        set("long", HIC"這是一個從遠古流傳下來的戒指，上面刻着一些奇怪的咒語。\n"NOR);
         set("weight", 400);
         set("unit", "個");
         set("value", 5000000);

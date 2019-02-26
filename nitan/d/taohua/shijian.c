@@ -11,8 +11,8 @@ void create()
 {
         set("short", "試劍亭");
         set("long", @LONG
-這座小亭孤零零立于水中，整座亭均以紅鬆搭成，四面池水縈回，清
-幽古樸兼而有之。亭內掛著一副對聯(duilian)，均以狂草寫成，字裡行
+這座小亭孤零零立於水中，整座亭均以紅松搭成，四面池水縈迴，清
+幽古樸兼而有之。亭內掛着一副對聯(duilian)，均以狂草寫成，字裏行
 間大有俯仰自得，不可一世之意。
 LONG );
 
@@ -57,7 +57,7 @@ int do_jump(string arg)
 
         message_vision("$N縱身跳回聽魚石。\n\n", me);
         me->move(__DIR__"tingyu");
-        message("vision", me->name() + "縱身由試劍亭裡跳了過來。\n",environment(me), ({me}) );
+        message("vision", me->name() + "縱身由試劍亭裏跳了過來。\n",environment(me), ({me}) );
 
         return 1;
 }
@@ -75,7 +75,7 @@ int do_lian(string arg)
                 return notify_fail("什麼？\n");
 
         if (me->is_busy())
-                return notify_fail("你現在正忙著呢。\n");
+                return notify_fail("你現在正忙着呢。\n");
 
         if( me->is_fighting() )
                 return notify_fail("你已經在戰鬥中了，學一點實戰經驗吧。\n");
@@ -98,7 +98,7 @@ int do_lian(string arg)
                 times = 1;
                 multiple="";
         }
-        else        multiple="反復";
+        else        multiple="反覆";
         shijian = times;
         
         if(!stringp(skillname = me->query_skill_mapped(skillarg)) )
@@ -117,7 +117,7 @@ int do_lian(string arg)
         notify_fail("你現在不能練習這項技能。\n");
         if( !SKILL_D(skillname)->valid_learn(me) ) return 0;
 
-        notify_fail("你試著練習" + to_chinese(skillname) + "，但是並沒有任何進步。\n");
+        notify_fail("你試着練習" + to_chinese(skillname) + "，但是並沒有任何進步。\n");
 
         for(times; times > 0; times--) {
                 if( SKILL_D(skillname)->practice_skill(me) )

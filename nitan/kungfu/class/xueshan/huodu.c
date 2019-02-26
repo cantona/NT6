@@ -117,7 +117,7 @@ void attempt_apprentice(object ob)
         }
 
         command("nod");
-        command("say 小王看得起你，以後就跟著我吧。");
+        command("say 小王看得起你，以後就跟着我吧。");
         command("recruit "+query("id", ob));
 }
 
@@ -149,7 +149,7 @@ mixed ask_skill1()
                 return "等你把破虛打穴法練熟了再來找小王吧。";
 
         message_sort(HIY "\n$n" HIY "沉思片刻，方才點了點頭，伸手將$N" HIY
-                     "招至身邊，俯身在$P" HIY "耳旁低聲細說良久，$N" HIY
+                     "招至身邊，俯身在$P" HIY "耳旁低聲細説良久，$N" HIY
                      "聽後不禁會心的一笑，似乎對$n" HIY "的教導大有所悟"
                      "。\n\n" NOR, me, this_object());
 

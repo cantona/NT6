@@ -15,7 +15,7 @@ mapping *action = ({
         "damage_type" : "割傷",
         "skill_name"  : "舉杯邀明月",
 ]),
-([      "action" : "$N刀鋒一轉，劃過一道圓弧，突然又于其上施展出挑、刺的招數，正是一招「對影成三人」！",
+([      "action" : "$N刀鋒一轉，劃過一道圓弧，突然又於其上施展出挑、刺的招數，正是一招「對影成三人」！",
         "force"  : 160,
         "attack" : 42,
         "dodge"  : -40,
@@ -85,7 +85,7 @@ mapping query_action(object me, object weapon)
         {
                 addn("neili", -300, me);
                 return ([
-                        "action": "$N使出一招" HIM "「天涯明月相思淚」" NOR "，$w霍地射出寒光點點，猶如冬夜寒雨般舖天蓋地掃向$n",
+                        "action": "$N使出一招" HIM "「天涯明月相思淚」" NOR "，$w霍地射出寒光點點，猶如冬夜寒雨般鋪天蓋地掃向$n",
                         "damage": 500,
                         "dodge" : -100,
                         "parry" : -150,

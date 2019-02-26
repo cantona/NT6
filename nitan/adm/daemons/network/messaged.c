@@ -331,7 +331,7 @@ private int user_logon(mapping info)
         DEBUG_OUT(sprintf("User %s want to login.", info[USER]));
         if (! stringp(user = info[USER]) || strlen(user) < 3)
                 // invalid user name
-                return error_msg("非法的用戶名。\n");
+                return error_msg("非法的用户名。\n");
 
         if (! stringp(pass = info[PASSWORD]))
                 // no password
@@ -340,26 +340,26 @@ private int user_logon(mapping info)
         ob = find_player(user);
         if (objectp(ob))
                 // the user has existed
-                return error_msg("該用戶已經登錄進入" + LOCAL_MUD_NAME() + "。\n");
+                return error_msg("該用户已經登錄進入" + LOCAL_MUD_NAME() + "。\n");
 
         if (sizeof(connection) > MAX_CONNECTIONS)
-                return error_msg("已經有太多的用戶登錄了。\n");
+                return error_msg("已經有太多的用户登錄了。\n");
 
         ob = new(LOGIN_OB);
         set("id", user, ob);
         if (! ob->restore())
                 // no this user
-                return error_msg(LOCAL_MUD_NAME() + "中沒有該用戶。\n");
+                return error_msg(LOCAL_MUD_NAME() + "中沒有該用户。\n");
 
         if( !query("registered", ob) )
-                return error_msg("該用戶尚未成功注冊。\n");
+                return error_msg("該用户尚未成功註冊。\n");
 
         if( crypt(pass,query("password", ob)) != query("password", ob) )
-                return error_msg("用戶口令不正確，請重新輸入。\n");
+                return error_msg("用户口令不正確，請重新輸入。\n");
 
         if (me = find_chatter(user))
         {
-                notice_msg = "該用戶已經在線，注銷原先的連接。\n";
+                notice_msg = "該用户已經在線，註銷原先的連接。\n";
                 user_logout(me, "有人從(" + query_last_addr() +
                                 ")取代了你的連接。\n");
         }
@@ -369,7 +369,7 @@ private int user_logon(mapping info)
         {
                 destruct(ob);
                 if (body) destruct(body);
-                return error_msg("無法讀取該用戶的信息，請和巫師聯系。\n");
+                return error_msg("無法讀取該用户的信息，請和巫師聯繫。\n");
         }
 
         if (body->is_in_prison())
@@ -518,7 +518,7 @@ private void call_fun(mapping info)
 
         default:
                 if (! info[USER] || ! objectp(me = connection[info[USER]]))
-                        result = error_msg("請先登錄你的用戶。\n");
+                        result = error_msg("請先登錄你的用户。\n");
                 else
                 if (! stringp(fun = me->find_chat_command(info[FUNCTION])))
                         result = error_msg("這個版本的消息精靈"
@@ -808,8 +808,8 @@ private int direct_send(object user)
                         if (q[0][MSG_NOTICE])
                         {
                                 notice_user(q[0][MSG_NOTICE], FUN_NOTICE,
-                                            "已經與該用戶" + user->full_name() +
-                                            "失去聯系。\n");
+                                            "已經與該用户" + user->full_name() +
+                                            "失去聯繫。\n");
                         }
                         remove_user(user);
 
@@ -1129,7 +1129,7 @@ string reject_tell(object user1, object user2)
                 if( !is_sub(query("id", user1),can_tell) )
                 {
                         if (! visible(user1, user2))
-                                return "這個用戶沒有登錄，你無法和他交談。\n";
+                                return "這個用户沒有登錄，你無法和他交談。\n";
                         else
                                 return to_name + "不想聽你羅嗦啦。\n";
                 }
@@ -1143,7 +1143,7 @@ string reject_tell(object user1, object user2)
 
                 // check target's connection status
                 if (! living(user2))
-                        return to_name + "現在昏迷不醒，聽不到你說的話。\n";
+                        return to_name + "現在昏迷不醒，聽不到你説的話。\n";
         }
 
         // user1 can tell to user2
@@ -1225,7 +1225,7 @@ int send_msg_to(mixed user, string msgto, string msg)
                         stringp(user) ? connection[user][NAME] : 0))
                 {
                         notice_user(user, FUN_VISION, HIY "網際訊息已送出，可能"
-                                    "要稍候才能得到回應。\n" NOR);
+                                    "要稍候才能得到迴應。\n" NOR);
                         return 1;
                 }
 
@@ -1234,14 +1234,14 @@ int send_msg_to(mixed user, string msgto, string msg)
             ! from->visible(to))
         {
                 notice_user(from, FUN_NOTICE,
-                            "這個用戶沒有登錄，你無法和他交談。\n");
+                            "這個用户沒有登錄，你無法和他交談。\n");
                 return 1;
         }
 
         if (to == from)
         {
                 notice_user(from, FUN_NOTICE,
-                            "自己對自己說話？似乎無此必要。\n");
+                            "自己對自己説話？似乎無此必要。\n");
                 return 1;
         }
 
@@ -1286,7 +1286,7 @@ private void acktell(object from, object to, string msg)
                 notice_user(from, FUN_VISION,
                          YEL "可是" + gender_pronoun(query("gender", to)) +
                          "已經發呆" + chinese_number(query_idle(to) / 60) +
-                         "分鐘了，恐怕聽不到你說的話。\n" NOR);
+                         "分鐘了，恐怕聽不到你説的話。\n" NOR);
         }
 
 }

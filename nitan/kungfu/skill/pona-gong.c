@@ -10,7 +10,7 @@ mapping *action = ({
         "skill_name" : "起手式",
         "damage_type" : "瘀傷"
 ]),
-([        "action" : "$N一式「石破天驚」，左掌向上，右掌向下，拳風□啪爆響，一股勁力直沖$n的$l",
+([        "action" : "$N一式「石破天驚」，左掌向上，右掌向下，拳風吡啪爆響，一股勁力直衝$n的$l",
         "force" : 200,
         "dodge" : 5,
         "parry" : 0,

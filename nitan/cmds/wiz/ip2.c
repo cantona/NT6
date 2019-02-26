@@ -1,18 +1,18 @@
 /******** Written by ken@NT.  All rights reserved. ********/
 //ip.c
 /**********************************************************/
-/* 用法︰ 除了用(ip id)本指令來查知對方IP，或玩家所在地外 */
+/* 用法∶ 除了用(ip id)本指令來查知對方IP，或玩家所在地外 */
 /*        還可以由外部調用convert_ip函數，比如logind.c    */
 /*        調用方法，假設ob是一個玩家，那麼調用的方法如下  */
 /*        "/cmds/adm/ip.c"->convert_ip(query_ip_number    */
 /*        (ob)) 這樣就會返回一個字符串類型的ob的所在地。  */
 /*                                                        */
-/* 更新︰ 數據庫放在/adm/etc/ipdata/ 分別放著五個己分類   */
+/* 更新∶ 數據庫放在/adm/etc/ipdata/ 分別放著五個己分類   */
 /*        的IP數據文件，如發現有未知IP，可以自行更新。    */
 /*                                                        */
-/* 準確︰ 準確度完全取決于數據庫，本程序是這樣實現IP查找  */
+/* 準確∶ 準確度完全取決於數據庫，本程序是這樣實現IP查找  */
 /*        的，一個IP由四個IP段所組成，A.B.C.D 先找到IP的  */
-/*        A段，這決定在/ipdata/裡的那個文件中查找，大大加 */
+/*        A段，這決定在/ipdata/裏的那個文件中查找，大大加 */
 /*        快了查找到速度，然後查找query_ip_number(ob)是否 */
 /*        在和IP1和IP2之間是就反回後面的地區名，不是就找下*/
 /*        一行，到最後也不到返回未知地區。( by ken@NT )   */
@@ -111,7 +111,7 @@ string convert_ip(string ip)
                         ip_data_detail = explode(ip_data[i], "|");
                         if(strcmp (ip[0..2], ip_data_detail[0][0..2]) != 0 &&
                            strcmp (ip[0..2], ip_data_detail[1][0..2]) != 0)
-                        continue; // 如果IP的第一段完全相等于IP文件裡的IP頭一段則執行下面代碼
+                        continue; // 如果IP的第一段完全相等於IP文件裏的IP頭一段則執行下面代碼
                         {                       
                                 sscanf(ip_data_detail[0], "%d.%d.%d.%d", a, b, c, d);
                                 ipa = d + (c * 1000) + (b * 1000000);

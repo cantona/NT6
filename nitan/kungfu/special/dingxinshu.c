@@ -12,7 +12,7 @@ string name() { return HIG "定心術" NOR; }
 int perform(object me, string skill)
 {
         // 2轉後使用可立即獲得180級左右互搏
-        // 如果當前等級超過180則顯示說明
+        // 如果當前等級超過180則顯示説明
         if (me->query("thborn/ok") && me->query_skill("zuoyou-hubo",1) < 180)
         {
                 me->set_skill("zuoyou-hubo", 180);

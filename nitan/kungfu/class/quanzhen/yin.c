@@ -18,7 +18,7 @@ void create()
         set("long",
                 "他是丘處機的得意大弟子尹志平，他粗眉大眼，長的有些英雄氣\n"
                 "概，在全真教第三代弟子中算得上年輕有為。身材不高，眉宇間\n"
-                "似乎有一股憂鬱之色。長的倒是長眉俊目，容貌秀雅，面白無須，\n"
+                "似乎有一股憂鬱之色。長的倒是長眉俊目，容貌秀雅，面白無鬚，\n"
                 "可惜朱雀和玄武稍有不和。\n");
         set("attitude", "friendly");
         set("shen_type",1);
@@ -107,7 +107,7 @@ mixed ask_skill1()
                 return "這招我不是已經教會你了嗎？";
 
         if( query("family/family_name", me) != query("family/family_name") )
-                return "閣下與貧道素不相識，不知此話從何說起？";
+                return "閣下與貧道素不相識，不知此話從何説起？";
 
         if (me->query_skill("zhongnan-zhi", 1) < 1)
                 return "你連終南指法都沒學，何談絕招可言？";

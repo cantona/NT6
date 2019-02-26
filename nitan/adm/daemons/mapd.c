@@ -36,7 +36,7 @@ mapping map_short = ([
         "wudang"    : "武當",
         "emei"      : "峨嵋",
         "qingcheng" : "青城",
-        "kunlun"    : "昆侖山",
+        "kunlun"    : "崑崙山",
         "zhongnan"  : "終南山",
         "henshan"   : "衡山",
         "taishan"   : "泰山",
@@ -255,7 +255,7 @@ public int been_known(string outdoors)
         return stringp(map_short[outdoors]);
 }
 
-// 獲得某個戶外地點的中文名字
+// 獲得某個户外地點的中文名字
 public string query_map_short(string outdoors)
 {
         string str;
@@ -266,13 +266,13 @@ public string query_map_short(string outdoors)
         return "不詳地點";
 }
 
-// 獲得所有戶外地點的集合
+// 獲得所有户外地點的集合
 public string *query_all_map_zone()
 {
         return keys(map_short);
 }
 
-// 獲得某個戶外地點的地圖
+// 獲得某個户外地點的地圖
 public string query_maps(string outdoors)
 {
         mixed maps;
@@ -314,7 +314,7 @@ public string query_maps(string outdoors)
 // 是'2'，而不是B。如果n為-1，則返回一直到末尾的所有字符
 //
 // 這樣存在問題，有必要引入一個變量， 標識是否取回顏色，不過
-// 由于出錯的幾率相當小，所以姑且不計。
+// 由於出錯的機率相當小，所以姑且不計。
 string get_map_line(string line, int x, int n)
 {
         string rs;
@@ -340,14 +340,14 @@ string get_map_line(string line, int x, int n)
                                 return rs;
                 } else
                 {
-                        // 字符串去掉第一個字符，相當于向右移動
+                        // 字符串去掉第一個字符，相當於向右移動
                         x--;
                         line = line[1..<1];
                 }
         }
 
         // 截取n個字符
-        // 為什麼這裡用do-while，而不直接用while？這是有原因
+        // 為什麼這裏用do-while，而不直接用while？這是有原因
         // 的。
         rs = "";
         for (;;)
@@ -393,7 +393,7 @@ public string mark_map(string map, string name)
         int x, y, xd;           // 比較的地圖位置
         int n;
 
-        // 去除地圖的顏色：這樣可以準確的判斷絕對的坐標
+        // 去除地圖的顏色：這樣可以準確的判斷絕對的座標
         map = filter_color(map);
 
         // 將地圖分成行
@@ -496,7 +496,7 @@ public string marked_map(object env)
         int result_ok;
 
         if (! objectp(env))
-                return "這裡無法獲得地圖。\n";
+                return "這裏無法獲得地圖。\n";
 
         if( !stringp(outdoors=query("outdoors", env)) )
                 return "必須在室外察看所處的具體位置。\n";
@@ -597,18 +597,18 @@ public mapping query_connect_info()
 string make_color(string map)
 {
         map = replace_string(map, "★", HIR"★"NOR);
-        map = replace_string(map, "≒", HIC"≒"NOR);
+        map = replace_string(map, "≈", HIC"≈"NOR);
         map = replace_string(map, "～", HIC"～"NOR);
-        map = replace_string(map, "Λ", HIG"Λ"NOR);
+        map = replace_string(map, "∧", HIG"∧"NOR);
         map = replace_string(map, "ψ", GRN"ψ"NOR);
         map = replace_string(map, "♀", HIR"♀"NOR);
         map = replace_string(map, "±", HIM"±"NOR);
         map = replace_string(map, "＋", HIG"＋"NOR);
         map = replace_string(map, "∴", YEL"∴"NOR);
-        map = replace_string(map, "□", YEL"□"NOR);
-        map = replace_string(map, "□", HIW"□"NOR);
+        map = replace_string(map, "∷", YEL"∷"NOR);
+        map = replace_string(map, "≌", HIW"≌"NOR);
         map = replace_string(map, "＊", MAG"＊"NOR);
-        map = replace_string(map, "─", HIY"─"NOR);
+        map = replace_string(map, "—", HIY"—"NOR);
         map = replace_string(map, "｜", HIY"｜"NOR);
         map = replace_string(map, "＼", HIY"＼"NOR);
         map = replace_string(map, "／", HIY"／"NOR);
@@ -636,8 +636,8 @@ string make_color(string map)
         map = replace_string(map, ">", ">"NOR);
         map = replace_string(map, "【", YEL"【");
         map = replace_string(map, "】", "】"NOR);
-        map = replace_string(map, "□", CYN"□"NOR);
-        map = replace_string(map, "□", CYN"□"NOR);
+        map = replace_string(map, "〖", CYN"〖"NOR);
+        map = replace_string(map, "〗", CYN"〗"NOR);
         return map;
 }
 
@@ -729,9 +729,9 @@ public string show_map(object env)
                         }
                 }
                 if (i==sizeof(dirs))
-                        return HIG"這裡不能查看地圖，請到室外。\n"NOR;
+                        return HIG"這裏不能查看地圖，請到室外。\n"NOR;
         }
-        if( !stringp(file) || !sizeof(file) ) return HIY"暫時還沒有開放這裡的地圖查詢。\n"NOR;
+        if( !stringp(file) || !sizeof(file) ) return HIY"暫時還沒有開放這裏的地圖查詢。\n"NOR;
         name = filter_color(query("short", env));
         if( strsrch(file, "_zone") != -1 )
                 sscanf(file, "%s_zone", file);
@@ -744,7 +744,7 @@ public string show_map(object env)
                         return map;
                 }
         }
-        return HIY"暫時還沒有開放這裡的地圖查詢。\n"NOR;
+        return HIY"暫時還沒有開放這裏的地圖查詢。\n"NOR;
 }
 
 /********************************************************************/
@@ -906,7 +906,7 @@ mapping show_trans_info = ([
         "lingxiao"  : ({ "雪山劍派", "family" }),
         "quanzhen"  : ({ "全真派", "family" }),
         "mojiao"    : ({ "魔教", "family" }),
-        "kunlun"    : ({ "昆侖派", "family" }),
+        "kunlun"    : ({ "崑崙派", "family" }),
         "qingcheng" : ({ "青城派", "family" }),
         "jueqing"   : ({ "絕情谷", "family" }),
         "guiyun"    : ({ "歸雲莊", "family" }),
@@ -923,10 +923,10 @@ mapping show_trans_info = ([
         "kedian"    : ({ "揚州客店", "common" }),
         "wumiao"    : ({ "武廟", "common" }),
         "guofu"     : ({ "郭府外", "common" }),///d/wuguan/guofu_gate
-        "ganjiang"  : ({ "幹將莫邪", "common" }),
+        "ganjiang"  : ({ "干將莫邪", "common" }),
         "tianshi"   : ({ "張天師", "common" }),
         "haigui"    : ({ "海龜", "common" }),
-        "shendiao"  : ({ "神雕", "common" }),
+        "shendiao"  : ({ "神鵰", "common" }),
         "luban"     : ({ "魯班", "common" }),
         "dugu"      : ({ "獨孤求敗", "common" }),
         "huang"     : ({ "黃裳", "common" }),
@@ -1030,7 +1030,7 @@ int show_trans(object me)
 
         if (mapp(self_flag))
         {
-                show_places += HIR "\n<用戶記錄地點>\n" NOR;
+                show_places += HIR "\n<用户記錄地點>\n" NOR;
                 if (sizeof(self_flag))
                 {
                         places = keys(self_flag);
@@ -1171,7 +1171,7 @@ int move_to(object me, string place)
 */
         
         message("vision",  "\n" + horse ->name() + HIW "一聲長"
-                  "嘶，箭一般地沖出 ……\n" NOR, environment(me), ({horse}));
+                  "嘶，箭一般地衝出 ……\n" NOR, environment(me), ({horse}));
 
         running = new("/clone/misc/running");
         me->move(running);

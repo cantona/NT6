@@ -10,7 +10,7 @@ void create()
         set_weight(100);
         set("race", "野獸");
         set("age", 2);
-        set("long", "一只渾身上下透體通明的蠶。\n");
+        set("long", "一隻渾身上下透體通明的蠶。\n");
         set("attitude", "peaceful");
         set("str", 20);
         set("con", 20);

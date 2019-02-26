@@ -45,11 +45,11 @@ int perform(object me, object target)
                 return notify_fail("你的真氣不夠，無法運用" YI "。\n");
 
         if (! living(target))
-                return notify_fail("對方都已經這樣了，用不著這麼費力吧？\n");
+                return notify_fail("對方都已經這樣了，用不着這麼費力吧？\n");
 
-        msg = HIW "$N" HIW "大喝一聲，雙掌紛飛，擒拿手中夾著鷹爪功，左手查"
+        msg = HIW "$N" HIW "大喝一聲，雙掌紛飛，擒拿手中夾着鷹爪功，左手查"
               "拳，右手綿掌。攻出去是\n八卦掌，收回時已是太極拳，諸家雜陳，"
-              "毫無規律，舖天蓋地向$n" HIW "狂湧而去。\n\n" NOR;
+              "毫無規律，鋪天蓋地向$n" HIW "狂湧而去。\n\n" NOR;
 
         ap = attack_power(me, "unarmed") + me->query_str();
         dp = defense_power(target, "parry") + target->query_dex();

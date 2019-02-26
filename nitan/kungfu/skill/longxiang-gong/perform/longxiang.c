@@ -29,7 +29,7 @@ int perform(object me, object target)
                 return notify_fail(name()+ "只能對戰鬥中的對手使用。\n");
         
         if( me->is_busy() )
-                return notify_fail("你正忙著呢！\n");
+                return notify_fail("你正忙着呢！\n");
                 
         if( query_temp("weapon", me) || query_temp("secondary_weapon", me) ) 
                 return notify_fail(name() + "只能空手使用。\n"); 
@@ -51,7 +51,7 @@ int perform(object me, object target)
                 return notify_fail("你武學修養不足，難以施展" +name()+ "。\n");
 
         if (! living(target))
-                return notify_fail("對方都已經這樣了，用不著這麼費力吧？\n");
+                return notify_fail("對方都已經這樣了，用不着這麼費力吧？\n");
 
         message_combatd(HIM "\n$N" HIM "運起十龍十象之力，霎時金波流轉，罡氣籠罩全身，\n"
                         HIM "$N" HIM "縱聲長嘯，漫天掌力狂湧而去，當真石破天驚，威力無比，襲向$n" HIM "。\n" NOR, me, target);
@@ -84,7 +84,7 @@ int perform(object me, object target)
         if (ap / 2 + random(ap) > dp)
         {
                 msg = COMBAT_D->do_damage(me, target, UNARMED_ATTACK, damage, 100 + random(10),
-                                          HIY "$n" HIY "冷笑一聲，覺得$N" HIY "此招膚淺之極，于"
+                                          HIY "$n" HIY "冷笑一聲，覺得$N" HIY "此招膚淺之極，於"
                                           "是隨意招架，猛然間，「噗嗤」！一聲，雙掌"
                                           HIY "已穿透$n" HIY "的胸膛，鮮血不斷湧出。\n" NOR, me , target);
         } else
@@ -104,7 +104,7 @@ int perform(object me, object target)
                                            (: final2, me, target, damage :));
         } else
         {
-                msg = HIC "$n" HIC "默運內功，內勁貫于全身，奮力抵擋住$N" HIC "這招。\n" NOR;
+                msg = HIC "$n" HIC "默運內功，內勁貫於全身，奮力抵擋住$N" HIC "這招。\n" NOR;
         }
         message_combatd(sort_msg(msg), me, target);
         message_combatd(HIM "十龍十象之四龍四象\n" NOR, me, target);
@@ -141,7 +141,7 @@ int perform(object me, object target)
         message_combatd(sort_msg(msg), me, target);
         message_combatd(HIM "十龍十象之六龍六象\n" NOR, me, target);
 
-        // 第六招，判斷對方江湖閱歷
+        // 第六招，判斷對方江湖閲歷
 
         if( query("score", me)>query("score", target)*2 )
         {
@@ -180,7 +180,7 @@ int perform(object me, object target)
         if (ap / 2 + random(ap) > dp)
         {
                 msg = COMBAT_D->do_damage(me, target, UNARMED_ATTACK, damage, 100 + random(10),
-                        HIY "$n" HIY "騰挪閃躲，竭盡全力，也沒辦法躲開氣旋，被擊了個正著！\n" NOR, me, target);
+                        HIY "$n" HIY "騰挪閃躲，竭盡全力，也沒辦法躲開氣旋，被擊了個正着！\n" NOR, me, target);
         } else
         {
                 msg = HIC "$n" HIC "見這招來勢兇猛，身形疾退，瞬間飄出三"
@@ -197,12 +197,12 @@ int perform(object me, object target)
         if (ap / 2 + random(ap) > dp)
         {
                 msg = COMBAT_D->do_damage(me, target, UNARMED_ATTACK, damage, 80 + random(10),
-                                          HIY "$n猶如和數十人戰鬥，哪裡還能抵擋的住，"
+                                          HIY "$n猶如和數十人戰鬥，哪裏還能抵擋的住，"
                                           HIY "僅僅數息之間，已經身中數招！\n" NOR, me , target);
         } else
         {
                msg = CYN "$n大吃一驚，連忙退後，居然"
-                      CYN "僥幸躲開了這一招！\n" NOR;
+                      CYN "僥倖躲開了這一招！\n" NOR;
         }
         message_combatd(sort_msg(msg), me, target);
         message_combatd(HIM "十龍十象之十龍十象\n" NOR, me, target);
@@ -219,7 +219,7 @@ int perform(object me, object target)
                         HIY "五臟六腑翻騰不休，口中" HIR "鮮血" HIY "如箭般噴出！\n" NOR, me, target);
         } else
         {
-                msg = CYN "$n在身邊布下層層內勁，將$N" CYN "凌厲的攻勢盡數抵擋。\n" NOR;
+                msg = CYN "$n在身邊佈下層層內勁，將$N" CYN "凌厲的攻勢盡數抵擋。\n" NOR;
         }
                      
         me->start_busy(6 + random(5));
@@ -230,7 +230,7 @@ string final1(object me, object target, int damage, int lvl)
 {
         addn("neili", -(lvl+random(lvl)), target);
 
-        return  HIY "$n" HIY "卻覺$N" HIY "這招氣勢恢弘，于是運力奮力抵擋。但是無奈這"
+        return  HIY "$n" HIY "卻覺$N" HIY "這招氣勢恢弘，於是運力奮力抵擋。但是無奈這"
                 "招威力驚人，$n" HIY "悶哼一聲，倒退幾步，頓覺內息渙散，身"
                 "上早已染滿鮮血！\n" NOR;
 }
@@ -249,7 +249,7 @@ string final3(object me, object target, int damage, int lvl)
    
         target->start_busy(4 + random(3));
   
-        return  HIY "$N" HIY "掌法奇妙無比，雙手時而宛若遊龍，時而"
+        return  HIY "$N" HIY "掌法奇妙無比，雙手時而宛若游龍，時而"
                 "宛若驚鴻，霎那間$n" HIY "已遍體鱗傷，$N" HIY "猛然將雙拳一"
                 "轉，拳勢陡然加快，將$n" HIY "團團圍住，竟無一絲空隙！\n" NOR;
 
@@ -272,7 +272,7 @@ void tian_end(object me, object target)
         addn_temp("apply/reduce_busy", 36, target);
         addn_temp("apply/avoid_weak", 90, target);
         addn_temp("apply/avoid_forget", 90, target);
-        tell_object(target, HIR "你的忽視虛弱，忽視忙亂、忽視絕招冷凍能力終于解除封印。\n" NOR);
+        tell_object(target, HIR "你的忽視虛弱，忽視忙亂、忽視絕招冷凍能力終於解除封印。\n" NOR);
                 delete_temp("no_perform", target);
         }
         return;

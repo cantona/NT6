@@ -39,7 +39,7 @@ int perform(object me, object target)
                 return notify_fail("你沒有激發如意刀法，難以施展" + name() + "。\n");
 
         if (! living(target))
-                return notify_fail("對方都已經這樣了，用不著這麼費力吧？\n");
+                return notify_fail("對方都已經這樣了，用不着這麼費力吧？\n");
 
         msg = HIC "$N" HIC "使出逍遙絕技「如意六刀」，身法忽然奇快無比，變幻莫測！\n" NOR;
         message_combatd(msg, me);

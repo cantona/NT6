@@ -10,7 +10,7 @@ void create()
         set_weight(320);
         set("race", "野獸");
         set("age", 3);
-        set("long", "一只癩蛤蟆，背上有一條條的綠色條紋。\n");
+        set("long", "一隻癩蛤蟆，背上有一條條的綠色條紋。\n");
         set("attitude", "peaceful");
         set("str", 25);
         set("con", 25);

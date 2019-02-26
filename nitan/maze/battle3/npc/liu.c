@@ -66,7 +66,7 @@ int ask_degree()
 
         if( lv <= query("degree_jungong", ob) || query("degree_jungong", ob)<8 )
         {
-                 command("say 要獲得更高的策封，大人所立軍功好象不夠啊！\n");
+                 command("say 要獲得更高的策封，大人所立軍功好像不夠啊！\n");
                  return 1;
         }
 
@@ -91,7 +91,7 @@ int add_degree(object ob, int lv)
                 + "......\n"NOR,
                 users());
 
-        message("channel:rumor", MAG"【大宋京城】"HIY"奉天承命，皇帝詘曰："
+        message("channel:rumor", MAG"【大宋京城】"HIY"奉天承命，皇帝詔曰："
                 +"策封"+old_degree+""+HIW+query("name", ob )
                 + HIY" 為大宋 "NOR + degree + HIY"，欽此！\n"NOR,
                 users());
@@ -148,7 +148,7 @@ string ask_chubing()
                if (me->query_condition("junquest_fail"))
                        return "大人尚是待罪之身，輕言出兵，恐性命難保啊，還是請回吧！\n";
                if (me->query_condition("junquest_song"))
-                       return "大人已經經軍令在身了，還在這裡磨蹭什麼啊？！\n";
+                       return "大人已經經軍令在身了，還在這裏磨蹭什麼啊？！\n";
                if( query("degree_jungong", me)<8 )
                        return "大人官低位卑，如何能任一軍之帥，難服人心哪？！\n"; 
 
@@ -193,7 +193,7 @@ string ask_chubing()
 
                return HIC"大人，朝中可用之兵已經所剩無幾，僅此數營步兵，尚可一戰，\n"
                        + "此次出征，任重道遠，無奈事關我大宋國運，還望大人盡力而為，"
-                       + "望大人\n早日得勝，凱旋回朝！御馬監有為將軍備的千裡馬，可助大人腳力。\n"NOR;
+                       + "望大人\n早日得勝，凱旋迴朝！御馬監有為將軍備的千里馬，可助大人腳力。\n"NOR;
 }
 
 void quest_begin(string who, object me)
@@ -278,7 +278,7 @@ string ask_fengshang()
                  return "大人猶是待罪之身，還敢來要什麼封賞？？\n";
 
         if (! intp(reward) || reward < 1)
-                 return "大人于社稷有何功勞啊，哪來什麼封賞？？\n";
+                 return "大人於社稷有何功勞啊，哪來什麼封賞？？\n";
 
         if( query_temp("ask_fengshang", me) )
                  return "大人稍安勿躁，"
@@ -313,7 +313,7 @@ void add_fengshang(object me,int reward)
         addn("potential", pot, me);
         addn("experience", random(21), me);
         addn("balance", 10000000, me);
-        message("channel:rumor", MAG"【大宋京城】" HIY "奉天承命，皇帝詘曰：\n"
+        message("channel:rumor", MAG"【大宋京城】" HIY "奉天承命，皇帝詔曰：\n"
                 + me->short(1) + "\n" + HIY"抗蒙有功，賞黃金千兩，綢緞五百匹，美女十名，"
                 + " 記軍功 "HIR + chinese_number(jungong)
                 + HIY" 策，欽此！\n\n"NOR,
@@ -339,7 +339,7 @@ void add_fengshang(object me,int reward)
                 addn("experience", random(11), jiang["jiang"+i]);
                 addn("balance", 5000000, jiang["jiang"+i]);
                   
-                message("channel:rumor", MAG"【大宋京城】" HIY "奉天承命，皇帝詘曰：\n"
+                message("channel:rumor", MAG"【大宋京城】" HIY "奉天承命，皇帝詔曰：\n"
                         + jiang["jiang" + i]->short(1) + "\n" + HIY"抗蒙有功，賞黃金五百兩，綢緞兩百匹，"
                         + " 記軍功 "HIR + chinese_number(jungong) + HIY" 策，欽此！\n\n"NOR,
                         users()); 

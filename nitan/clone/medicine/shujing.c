@@ -9,7 +9,7 @@ void create()
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("long", "這是一包玉清散，據說是武當派的秘藥，功能強身健體，延年益壽。\n");
+                set("long", "這是一包玉清散，據説是武當派的祕藥，功能強身健體，延年益壽。\n");
                 set("base_unit", "包");
                 set("base_value", 140000);
                 set("base_weight", 80);
@@ -50,7 +50,7 @@ int do_effect(object me)
         */
 
         message_vision(YEL "$N" YEL "吃下一粒" + name() +
-                       YEL "，內息運行一小周天，感覺身體發生了一些變化。\n", me);
+                       YEL "，內息運行一小週天，感覺身體發生了一些變化。\n", me);
 
         addn("max_jingli", 5+random(2), me);
         if( query("max_jingli", me)>me->query_current_jingli_limit() )

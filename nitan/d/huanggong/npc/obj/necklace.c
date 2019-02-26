@@ -1,4 +1,4 @@
-// necklace.c 金項鏈
+// necklace.c 金項鍊
 
 #include <armor.h>
 
@@ -6,7 +6,7 @@ inherit NECK;
 
 void create()
 {
-        set_name("金項鏈", ({ "golden necklace", "necklace", "lace" }));
+        set_name("金項鍊", ({ "golden necklace", "necklace", "lace" }));
         set("weight", 500);
         if (clonep())
                 set_default_object(__FILE__);

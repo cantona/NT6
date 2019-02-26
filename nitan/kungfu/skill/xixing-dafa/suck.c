@@ -14,14 +14,14 @@ int exert(object me, object target)
         if (! target || target == me) target = offensive_target(me);
 
         if( query("no_fight", environment(me)) )
-                return notify_fail("在這裡不能攻擊他人。\n");
+                return notify_fail("在這裏不能攻擊他人。\n");
 
         if (! objectp(target) || ! me->is_fighting(target))
                 return notify_fail("你只能吸取戰鬥中的對手的丹元！\n");
 
         if( query("race", target) != "人類" || 
             query("not_living", target) )
-                return notify_fail("搞錯了！只有活著的生物才能有丹元！\n");
+                return notify_fail("搞錯了！只有活着的生物才能有丹元！\n");
 
         my_max=query("max_neili", me);
         tg_max=query("max_neili", target);

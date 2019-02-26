@@ -6,7 +6,7 @@
 int update_condition(object me, int duration)
 {
         if (duration < 2) {
-                tell_object(me, HIW "守衛時間已到，快回去復命(task ok)吧！\n" NOR);
+                tell_object(me, HIW "守衞時間已到，快回去覆命(task ok)吧！\n" NOR);
         set_temp("shouwei_ok", 1, me);
                 return 0;
         }

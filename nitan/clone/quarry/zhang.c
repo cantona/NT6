@@ -4,7 +4,7 @@ inherit QUARRY;
 void create()
 {
         set_name("獐", ({ "zhang zi", "zhang", "zi" }));
-        set("long", CYN "這是一只行動敏捷的獐。\n" NOR);
+        set("long", CYN "這是一隻行動敏捷的獐。\n" NOR);
         set("no_auto_kill", 1);
 
         set("age", 1);

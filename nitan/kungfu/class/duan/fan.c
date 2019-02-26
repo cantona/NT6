@@ -6,7 +6,7 @@ inherit F_MASTER;
 
 void create()
 {
-        set_name("范驊", ({ "fan ye", "fan", "ye" }));
+        set_name("範驊", ({ "fan ye", "fan", "ye" }));
         set("title", "大理國護國三公" );
         set("nickname", HIW "司馬" NOR);
         set("long", @LONG

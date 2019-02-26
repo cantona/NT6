@@ -8,8 +8,8 @@ void create()
 {
         set("short", HIM"懸崖"NOR);
         set("long", @LONG
-此處已是終南山絕路，光禿禿的石壁，下面則是雲霧彌漫的萬丈深
-崖(xuanya)，傳聞中有個古墓弟子因受不了古墓之清苦寡欲，從此處一
+此處已是終南山絕路，光禿禿的石壁，下面則是雲霧瀰漫的萬丈深
+崖(xuanya)，傳聞中有個古墓弟子因受不了古墓之清苦寡慾，從此處一
 躍而下，了卻一生。近懸崖邊有棵摩天大樹(tree)，枝葉極盛，如大傘
 一張遮掩住方圓之地。
 LONG        );
@@ -37,7 +37,7 @@ void init()
                 if(!( room = find_object(__DIR__"tree")))
                         room = load_object(__DIR__"tree");
                 if(!(present("du mang", room))) return;
-                message_vision(HIR "突然聞到一股腥臭之氣，大樹上倒懸下一條碗口粗細的三角頭巨蟒，把$N卷走了。\n\n"NOR, me);
+                message_vision(HIR "突然聞到一股腥臭之氣，大樹上倒懸下一條碗口粗細的三角頭巨蟒，把$N捲走了。\n\n"NOR, me);
                 me->move(__DIR__"tree");
                 me->start_busy(3);
         }
@@ -62,14 +62,14 @@ int do_tiao(string arg)
                         addn_temp("mark/jump", 1, me);
                         return 1;
                 }
-                message_vision(HIR "$N縱身跳下懸崖，悲呼一聲，兄弟姐妹們，來生再見，回聲不絕于耳。\n"NOR, me);
+                message_vision(HIR "$N縱身跳下懸崖，悲呼一聲，兄弟姐妹們，來生再見，回聲不絕於耳。\n"NOR, me);
                 delete_temp("mark/jump", me);
                 set_temp("last_damage_from", "跳崖自殺而", me);
                 me->unconcious();
                 me->die();
                 return 1;
         }
-        return notify_fail("你要跳到哪裡？\n");
+        return notify_fail("你要跳到哪裏？\n");
 }
 
 int do_yao(string arg)
@@ -84,7 +84,7 @@ int do_yao(string arg)
         if( !(fam=query("family", me)) || fam["family_name"] != "古墓派" )
                 return notify_fail("搖什麼搖，沒見過樹啊？\n");
         if (me->is_busy() || me->is_fighting())
-                return notify_fail("你正忙著哪！\n");
+                return notify_fail("你正忙着哪！\n");
         if( query("qi", me)<30 )
                 return notify_fail("你累得夠嗆，去稍作歇息吧。\n");
         if (arg == "tree")
@@ -93,7 +93,7 @@ int do_yao(string arg)
                         return notify_fail("你使出渾身的勁力，但是大樹卻紋絲不動。\n");
                 if (c_skill > 100)
                         return notify_fail("你使勁地搖晃大樹，發現大樹快被你搖斷了。\n");
-                write("你使勁地搖晃著大樹，震的大樹微微晃動。\n");
+                write("你使勁地搖晃着大樹，震的大樹微微晃動。\n");
                 me->receive_damage("qi", 10 + random(20));
                 if (c_skill*c_skill*c_skill/10 < c_exp )
                         me->improve_skill("parry",random(query("int", me)));
@@ -111,7 +111,7 @@ int do_climb(string arg)
                 message_vision(YEL"$N騰身往大樹上爬去。\n"NOR, me);
                 if (me->query_skill("dodge", 1) < 30)
                 {
-                        message_vision(HIR"結果$N從樹上一個筋鬥掉下來。\n"NOR, me);
+                        message_vision(HIR"結果$N從樹上一個筋斗掉下來。\n"NOR, me);
                         me->receive_wound("qi", random(5) + 5);
                         return 1;
                 }

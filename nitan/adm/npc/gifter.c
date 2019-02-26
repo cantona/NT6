@@ -112,7 +112,7 @@ mixed ask_gift()
                 message_vision(HIW "$N" HIW "凌空一指，突然天空中一道" HIM "七" HIY "彩" HIR "霞" HIC "光" HIW "籠罩$n，轉瞬即逝！\n" NOR,
                                this_object(), me);
 
-                tell_object(me, HIG "你身上好象多了一個禮物（gift），你快看看是什麼禮物吧。\n" NOR);
+                tell_object(me, HIG "你身上好像多了一個禮物（gift），你快看看是什麼禮物吧。\n" NOR);
                 return 1;
         }
 }
@@ -128,7 +128,7 @@ mixed ask_gift1()
         if( query("gifter/which_day", me) == td )
                 return "你今天已經領過禮物了。";
 
-        tell_object(me, HIY "\n你領取了一個今天的禮物(" HIM "天師護身符" NOR + HIY ")，祝你在王者歸來裡玩的愉快！\n" NOR);
+        tell_object(me, HIY "\n你領取了一個今天的禮物(" HIM "天師護身符" NOR + HIY ")，祝你在王者歸來裏玩的愉快！\n" NOR);
 
         ob = new("/clone/goods/tianshi-charm");
         ob->move(me, 1);
@@ -175,7 +175,7 @@ mixed ask_gift2()
 
         set("gifter/monfee1", 1, me);
 
-        tell_object(me, HIY "\n你領取了一個月的(" HIM "會員體驗" NOR + HIY ")，祝你在王者歸來裡玩的愉快！\n" NOR);
+        tell_object(me, HIY "\n你領取了一個月的(" HIM "會員體驗" NOR + HIY ")，祝你在王者歸來裏玩的愉快！\n" NOR);
 
         return 1;
 }
@@ -205,7 +205,7 @@ mixed ask_gift3()
 
         set("gifter/20081224", 1, me);
 
-        tell_object(me, HIY "\n天空突現一道金光照耀著你，你冥冥中感覺到在2009年將萬事有如神助！\n" NOR);
+        tell_object(me, HIY "\n天空突現一道金光照耀着你，你冥冥中感覺到在2009年將萬事有如神助！\n" NOR);
 
         return 1;
 }
@@ -270,41 +270,41 @@ mixed ask_gift4()
 
                 tell_object(me,
 HIW"\n"+
-"     □□□□□□□□□ "HIR"春節快樂"HIW" □□□□□□□□□\n"+
-"     □  ┌──── Happy  New  Year ────┐  □\n"+
-"     □  │                                  │  □\n"+
-"     □  │                                  │  □\n");
+"     ┏━━━━━━━━ "HIR"春節快樂"HIW" ━━━━━━━━┓\n"+
+"     ┃  ┌──── Happy  New  Year ────┐  ┃\n"+
+"     ┃  │                                  │  ┃\n"+
+"     ┃  │                                  │  ┃\n");
                 if( strlen(query("name", me)) == 2)tell_object(me,
-HIW"□│親愛的"+query("name", me)+"：│□\n");
+HIW"┃│親愛的"+query("name", me)+"：│┃\n");
                 if( strlen(query("name", me)) == 4)tell_object(me,
-HIW"□│親愛的"+query("name", me)+"：│□\n");
+HIW"┃│親愛的"+query("name", me)+"：│┃\n");
                 if( strlen(query("name", me)) == 6)tell_object(me,
-HIW"□│親愛的"+query("name", me)+"：│□\n");
+HIW"┃│親愛的"+query("name", me)+"：│┃\n");
                 if( strlen(query("name", me)) == 8)tell_object(me,
-HIW"□│親愛的"+query("name", me)+"：│□\n");
+HIW"┃│親愛的"+query("name", me)+"：│┃\n");
                 if( strlen(query("name", me)) == 10)tell_object(me,
-HIW"□│親愛的"+query("name", me)+"：│□\n");
+HIW"┃│親愛的"+query("name", me)+"：│┃\n");
         tell_object(me,
-HIW"     □  │      願您和您的家人在新的一年    │  □\n"+
-"     □  │  裡，健康、快樂、平安！          │  □\n"+
-"     □  │                                  │  □\n"+
-"     □  │             *  *"HIR"r"HIW"*  *            │  □\n"+
-"     □  │          * *"HIR"a"HIW"* "HIG"^"HIY"Y"HIG"^"HIW" *"HIR"i"HIW"* *         │  □\n"+
-"     □  │         *"HIM"m"HIW"*"HIG"^"HIY"Y"HIG"^"HIW"*"HIG"^\\^"HIW"*"HIG"^"HIY"Y"HIG"^"HIW"*"RED"s"HIW"*        │  □\n"+
-"     □  │         "HIG"^"HIY"Y"HIG"^"HIW"*"HIG"\\"HIW"*"RED"e"HIW"*"HIG"/"HIW"*"HIG"l"HIW"*"HIG"/"HIW"*"HIG"^"HIY"Y"HIG"^"HIW"        │  □\n"+
-"     □  │         *"HIG"\\"HIW"*"CYN"t"HIW"*"HIG"|"HIY"Y"HIG"^\\^"HIY"Y"HIG"|"HIW"*"HIG"l"HIW"*"HIG"/"HIW"*        │  □\n"+
-"     □  │        *"MAG"s"HIW"*"HIG"|"HIY"Y"HIG"^\\\\^/^//^"HIY"Y"HIG"|"HIW"*"HIR"a"HIW"*       │  □\n"+
-"     □  │        "GRN"^"YEL"Y"GRN"^\\\\_^\\\\\\//^_//^"YEL"Y"GRN"^"HIW"       │  □\n"+
-"     □  │        "GRN"^\\_^\\_\\_\\//_/_/^_/^"HIW"       │  □\n"+
-"     □  │         "GRN"^^\\_^\\_\\\\/_/^_/^^"HIW"        │  □\n"+
-"     □  │           "GRN"^^\\_ \\// _/^^"HIW"          │  □\n"+
-"     □  │               "GRN"\\_\\_/"HIW"              │  □\n"+
-"     □  │                "GRN"/|\\"HIW"               │  □\n"+
-"     □  │               "GRN"/\\\\/\\"HIW"              │  □\n"+
-"     □  │                                  │  □\n"+
-"     □  │                  "RED"泥潭巫師組恭賀"HIW"  │  □\n"+
-HIW"     □  └─────────────────┘  □\n"+
-"     □□□□□□□□□□□□□□□□□□□□□□□\n"+
+HIW"     ┃  │      願您和您的家人在新的一年    │  ┃\n"+
+"     ┃  │  裏，健康、快樂、平安！          │  ┃\n"+
+"     ┃  │                                  │  ┃\n"+
+"     ┃  │             *  *"HIR"r"HIW"*  *            │  ┃\n"+
+"     ┃  │          * *"HIR"a"HIW"* "HIG"^"HIY"Y"HIG"^"HIW" *"HIR"i"HIW"* *         │  ┃\n"+
+"     ┃  │         *"HIM"m"HIW"*"HIG"^"HIY"Y"HIG"^"HIW"*"HIG"^\\^"HIW"*"HIG"^"HIY"Y"HIG"^"HIW"*"RED"s"HIW"*        │  ┃\n"+
+"     ┃  │         "HIG"^"HIY"Y"HIG"^"HIW"*"HIG"\\"HIW"*"RED"e"HIW"*"HIG"/"HIW"*"HIG"l"HIW"*"HIG"/"HIW"*"HIG"^"HIY"Y"HIG"^"HIW"        │  ┃\n"+
+"     ┃  │         *"HIG"\\"HIW"*"CYN"t"HIW"*"HIG"|"HIY"Y"HIG"^\\^"HIY"Y"HIG"|"HIW"*"HIG"l"HIW"*"HIG"/"HIW"*        │  ┃\n"+
+"     ┃  │        *"MAG"s"HIW"*"HIG"|"HIY"Y"HIG"^\\\\^/^//^"HIY"Y"HIG"|"HIW"*"HIR"a"HIW"*       │  ┃\n"+
+"     ┃  │        "GRN"^"YEL"Y"GRN"^\\\\_^\\\\\\//^_//^"YEL"Y"GRN"^"HIW"       │  ┃\n"+
+"     ┃  │        "GRN"^\\_^\\_\\_\\//_/_/^_/^"HIW"       │  ┃\n"+
+"     ┃  │         "GRN"^^\\_^\\_\\\\/_/^_/^^"HIW"        │  ┃\n"+
+"     ┃  │           "GRN"^^\\_ \\// _/^^"HIW"          │  ┃\n"+
+"     ┃  │               "GRN"\\_\\_/"HIW"              │  ┃\n"+
+"     ┃  │                "GRN"/|\\"HIW"               │  ┃\n"+
+"     ┃  │               "GRN"/\\\\/\\"HIW"              │  ┃\n"+
+"     ┃  │                                  │  ┃\n"+
+"     ┃  │                  "RED"泥潭巫師組恭賀"HIW"  │  ┃\n"+
+HIW"     ┃  └─────────────────┘  ┃\n"+
+"     ┗━━━━━━━━━━━━━━━━━━━━━┛\n"+
 "\n" NOR);
 
         return 1;

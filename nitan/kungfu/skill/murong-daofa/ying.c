@@ -21,7 +21,7 @@ int perform(object me,object target)
 
         if( !weapon || query("skill_type", weapon) != "blade"
         || me->query_skill_mapped("blade") != "murong-daofa")
-                return notify_fail("你手裡沒有刀，無法使用刀影掌！\n");
+                return notify_fail("你手裏沒有刀，無法使用刀影掌！\n");
 
         if((int)me->query_skill("xingyi-zhang", 1) < 100 )
                 return notify_fail("你的掌法還未練成，不能使用刀影掌！\n");
@@ -49,7 +49,7 @@ int perform(object me,object target)
         if((int)me->query_skill("strike", 1) < 100 )
                 return notify_fail("你的基本掌法不夠嫻熟，不能在刀招中夾雜使用刀影掌。\n");
 
-        message_combatd(HIR"\n$N大吼一聲使出慕容絕技「刀影掌」，只見$P掌隨刀走，片片刀光中夾雜著陣陣掌風一起奔向$n！\n"NOR, me,target);
+        message_combatd(HIR"\n$N大吼一聲使出慕容絕技「刀影掌」，只見$P掌隨刀走，片片刀光中夾雜着陣陣掌風一起奔向$n！\n"NOR, me,target);
         addn("neili", -200, me);
         addn_temp("apply/attack", j, me);
         COMBAT_D->do_attack(me,target,query_temp("weapon", me),1);

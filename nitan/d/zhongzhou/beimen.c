@@ -4,7 +4,7 @@ void create()
 {
         set("short", "中州北門");
         set("long", @LONG
-這裡已經到了中州的北門了，高高的城牆的磚縫裡長滿了
+這裏已經到了中州的北門了，高高的城牆的磚縫裏長滿了
 草。走過城門，再過了護城河，就是城外了。
 LONG);
         set("outdoors", "zhongzhou");

@@ -29,7 +29,7 @@ int main(object me, string arg)
         if (mkdir(dir))
                 write("Ok.\n");
         else
-                write("你沒有在這裡建子目錄的權利。\n");
+                write("你沒有在這裏建子目錄的權利。\n");
         return 1;        
 }
 

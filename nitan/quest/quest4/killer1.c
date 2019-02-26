@@ -227,7 +227,7 @@ mapping *first_name=({
 ([      "name":"楊",      "id":"yang"   ]),
 ([      "name":"王",      "id":"wang"   ]),
 ([      "name":"樑",      "id":"liang"  ]),
-([      "name":"于",      "id":"yu"     ]),
+([      "name":"於",      "id":"yu"     ]),
 ([      "name":"黃",      "id":"huang"  ]),
 ([      "name":"林",      "id":"lin"    ]),
 ([      "name":"陳",      "id":"chen"   ]),
@@ -266,7 +266,7 @@ mapping *second_name1=({
 ([      "name":"宏",    "id":"hong"  ]),
 ([      "name":"榮",    "id":"rong"  ]),
 ([      "name":"鵬",    "id":"peng"  ]),
-([      "name":"沖",    "id":"chong" ]),
+([      "name":"衝",    "id":"chong" ]),
 ([      "name":"灝",    "id":"hao"   ]),
 ([      "name":"思",    "id":"si"    ]),
 ([      "name":"理",    "id":"li"    ]),
@@ -300,7 +300,7 @@ mapping *second_name2=({
 });
 
 mapping *third_name1=({
-([      "name":"峰",    "id":"feng"  ]),
+([      "name":"峯",    "id":"feng"  ]),
 ([      "name":"華",    "id":"hua"   ]),
 ([      "name":"奇",    "id":"qi"    ]),
 ([      "name":"歌",    "id":"ge"    ]),
@@ -577,7 +577,7 @@ void init()
         if( killer->query("combat_exp") <= ob->query("combat_exp")*5/2
            && killer->query("combat_exp") >= ob->query("combat_exp")*2/5)
         {
-        message_vision(HIR"$N對$n怒喝道: “邪魔外道，看你往哪裡跑，"
+        message_vision(HIR"$N對$n怒喝道: “邪魔外道，看你往哪裏跑，"
         +"還不速速下跪受死！\n"NOR,killer,ob);
         if(userp(ob))
         {
@@ -588,11 +588,11 @@ void init()
         }
         } else
         if( killer->query("combat_exp")*2/5 > ob->query("combat_exp") && random(5)>3)
-        message_vision(HIC"$N對$n喝道: “殺你這種小角色怕臟了我的手，"
+        message_vision(HIC"$N對$n喝道: “殺你這種小角色怕髒了我的手，"
         +"還不快給我滾！\n"NOR,killer,ob); 
         else
         if(killer->query("combat_exp")<ob->query("combat_exp")*2/5 && random(5)>3)
-        message_vision(HIW"$N對$n大義凜然道: “撞到閣下手裡我也認了，"
+        message_vision(HIW"$N對$n大義凜然道: “撞到閣下手裏我也認了，"
         +"要殺要剮悉聽尊便！\n"NOR,killer,ob);
         } else
         {
@@ -635,7 +635,7 @@ void escape_me()
         object ob=this_object(); 
         message_vision(
         HIW"$N大笑了幾聲：“今天痛痛快快地砍了這幫江湖宵小們一頓，\n"+
-        "總算沒有辜負掌門的重托了，哈哈哈哈！”\n說罷，一個筋鬥跳出戰圈，不知去向。\n"NOR,ob);
+        "總算沒有辜負掌門的重託了，哈哈哈哈！”\n説罷，一個筋斗跳出戰圈，不知去向。\n"NOR,ob);
         remove_call_out("escape_me");
         destruct(ob);
 }
@@ -699,7 +699,7 @@ void die()
              && team[n]->query_temp("chousha/fam") == killer->query_temp("chousha/fam")
              && team[n]->is_killing(me) )   
           {
-           tell_object(team[n],HIW"你所參加的隊伍獎勵你奮勇殺敵之戰功──"
+           tell_object(team[n],HIW"你所參加的隊伍獎勵你奮勇殺敵之戰功——"
            +"你獲得了"+CHINESE_D->chinese_number(team_exp)+"點實戰經驗和\n"
            +CHINESE_D->chinese_number(team_pot)+"點潛能獎勵！\n"NOR);
 

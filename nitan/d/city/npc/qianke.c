@@ -9,11 +9,11 @@ object  room  =  0;
 
 void  create()
 {
-    set_name("簽客",  ({"qian  ke",  "ke"  }));
+    set_name("籤客",  ({"qian  ke",  "ke"  }));
     set("gender",  "男性");
     set("age",  30);
     set("per",  30);
-    set("long",  "一位精瘦的簽客。\n");
+    set("long",  "一位精瘦的籤客。\n");
     set("combat_exp",  5000);
     set_skill("force",  50);
     set_skill("unarmed",  50);

@@ -28,7 +28,7 @@ int exert(object me, object target)
         me->receive_damage("qi", 0);
 
         message_combatd(HIR "$N" HIR "微一凝神，運起太玄神功，只聽$P"
-                        "全身骨骼□□啪啪一陣爆響，渾身充滿活力！\n" NOR, me);
+                        "全身骨骼噼噼啪啪一陣爆響，渾身充滿活力！\n" NOR, me);
 
         addn_temp("apply/attack", skill*27/50, me);
         addn_temp("apply/parry", skill*27/50, me);

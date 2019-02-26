@@ -6,7 +6,7 @@ void create()
 {
 	set("short", "世外桃源");
 	set("long", @LONG
-這裡就是世外桃源。
+這裏就是世外桃源。
 LONG
 	);
 	set("no_clean_up", 0);

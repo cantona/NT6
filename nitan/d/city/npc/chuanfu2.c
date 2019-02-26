@@ -1,4 +1,4 @@
-// chuanfu.c 老船夫
+// chuanfu.c 老船伕
 
 #include <ansi.h>
 
@@ -7,11 +7,11 @@ void goto_matou1(object ob);
 
 void create()
 {
-        set_name("老船夫", ({ "lao chuanfu","chuanfu" }));
+        set_name("老船伕", ({ "lao chuanfu","chuanfu" }));
         set("gender", "男性");
         set("age", 56);
         set("long",
-                "這是一個老船夫。飽經風霜的臉上什麼也看不出來。\n",
+                "這是一個老船伕。飽經風霜的臉上什麼也看不出來。\n",
         );
 
         set("combat_exp", 1000000);
@@ -43,17 +43,17 @@ int accept_object(object who, object ob)
 
     if( query("money_id", ob) && ob->value() >= 2000 )
         {
-        message_vision("老船夫對$N說：好！這位" + RANK_D->query_respect(who) + "請上船吧。\n" , who);
+        message_vision("老船伕對$N説：好！這位" + RANK_D->query_respect(who) + "請上船吧。\n" , who);
         who->move ("/d/city/duchuan");
                 call_out("goto_matou1", time, who) ;
                return 1;
         }
     else  
-                message_vision("老船夫皺眉對$N說：您給的也太少了吧？\n", who);
+                message_vision("老船伕皺眉對$N説：您給的也太少了吧？\n", who);
         return 0;
 }
 void goto_matou1(object ob)
 {
-   tell_object(ob, "渡船終于到岸了。你走下船來。\n" ) ;
+   tell_object(ob, "渡船終於到岸了。你走下船來。\n" ) ;
    ob->move ("/d/shaolin/matou1") ;
 }

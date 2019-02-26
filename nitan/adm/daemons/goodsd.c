@@ -125,7 +125,7 @@ void log_buyinfo(object ob, class goods item)
         string buyinfo;
 
         buyinfo = MEMBER_D->db_query_member(ob, "buyinfo");
-        buyinfo += sprintf("%s(%s)于%s花費 %d $NT購買物品 %s 1。\n",
+        buyinfo += sprintf("%s(%s)於%s花費 %d $NT購買物品 %s 1。\n",
                            ob->name(1),
                            query("id", ob),
                            TIME_D->replace_ctime(time()),
@@ -175,8 +175,8 @@ public varargs int show_goods(object me, string arg)
         }
 
         msg += "\n";
-        msg += HIG "請認真閱讀有關說明，購買前請考慮清楚， 如無差錯，恕不退貨！\n" NOR;
-        msg += HIG "有關王者商城的說明及購買王者幣($NT)的方式，請輸入指令 help ntstore 查看。\n" NOR;
+        msg += HIG "請認真閲讀有關説明，購買前請考慮清楚， 如無差錯，恕不退貨！\n" NOR;
+        msg += HIG "有關王者商城的説明及購買王者幣($NT)的方式，請輸入指令 help ntstore 查看。\n" NOR;
         msg += HIG "------------------------------------------------------------------------------------------\n" NOR;
         msg += HIY "當前促銷活動：所有商品銷售扣率 " + rate + "%，把握機會哦。\n" NOR;
         me->start_more(msg);
@@ -225,7 +225,7 @@ void get_element_id(string arg, object ob, int value, int num, class goods item)
                 obj->set_name(my_name, ({my_id, "element"})); 
                 if( !MEMBER_D->player_pay(ob, value) )
                 {
-                        write("\n購買物品失敗，請與本站ADMIN聯系！\n");
+                        write("\n購買物品失敗，請與本站ADMIN聯繫！\n");
                         destruct(obj);
                         return;
                 }
@@ -252,7 +252,7 @@ void get_element_id(string arg, object ob, int value, int num, class goods item)
                                 obj->set_name(my_name, ({my_id, "element"})); 
                                 if( !MEMBER_D->player_pay(ob, value) )
                                 {
-                                        write("\n購買物品失敗，請與本站ADMIN聯系！\n");
+                                        write("\n購買物品失敗，請與本站ADMIN聯繫！\n");
                                         destruct(obj);
                                         return;
                                 }
@@ -299,13 +299,13 @@ void get_tongren_id(string arg, object ob, int value, class goods item)
         obj = new(file);
         if( !objectp(obj) )
         {
-                write("\n復制物品失敗，請與本站ADMIN聯系！\n");
+                write("\n複製物品失敗，請與本站ADMIN聯繫！\n");
                 return;
         }
 
         if( !MEMBER_D->player_pay(ob, value) )
         {
-                write("\n購買物品失敗，請與本站ADMIN聯系！\n");
+                write("\n購買物品失敗，請與本站ADMIN聯繫！\n");
                 destruct(obj);
                 return;
         }
@@ -333,7 +333,7 @@ public int buy_goods(object ob, string arg)
         }
 
         if( !MEMBER_D->is_member(ob) ) {
-                write("你還沒有沖值，有關沖值方式，請輸入指令 help store 查看。\n");
+                write("你還沒有衝值，有關衝值方式，請輸入指令 help store 查看。\n");
                 return 1;
         }
 
@@ -351,7 +351,7 @@ public int buy_goods(object ob, string arg)
         }
 
         if( all_goods[i]->type == "manual" ) {
-                write("對不起，該服務必須由 admin 手動實現，請及時與 admin 聯系！\n");
+                write("對不起，該服務必須由 admin 手動實現，請及時與 admin 聯繫！\n");
                 return 1;
         }
 
@@ -373,7 +373,7 @@ public int buy_goods(object ob, string arg)
         {
         case "package":
                 if( !MEMBER_D->player_pay(ob, value) ) {
-                        write("購買物品失敗，請與本站ADMIN聯系！\n");
+                        write("購買物品失敗，請與本站ADMIN聯繫！\n");
                         return 1;
                 }
 
@@ -621,12 +621,12 @@ public int buy_goods(object ob, string arg)
                 which = all_goods[i]->id;
                 item = new(all_goods[i]->file);
                 if( !objectp(item) ) {
-                        write("復制物品失敗，請與本站ADMIN聯系！\n");
+                        write("複製物品失敗，請與本站ADMIN聯繫！\n");
                         return 1;
                 }
 
                 if( !MEMBER_D->player_pay(ob, value) ) {
-                        write("購買物品失敗，請與本站ADMIN聯系！\n");
+                        write("購買物品失敗，請與本站ADMIN聯繫！\n");
                         destruct(item);
                         return 1;
                 }
@@ -656,7 +656,7 @@ public int buy_goods(object ob, string arg)
                 return 1;
         case "srv":
                 if( !MEMBER_D->player_pay(ob, value) ) {
-                        write("購買物品失敗，請與本站ADMIN聯系！\n");
+                        write("購買物品失敗，請與本站ADMIN聯繫！\n");
                         return 1;
                 }
 
@@ -737,7 +737,7 @@ public int buy_goods(object ob, string arg)
                         break;
                 case "cleardie" :
                         if( !MEMBER_D->player_pay(ob, value) ) {
-                                write("購買物品失敗，請與本站ADMIN聯系！\n");
+                                write("購買物品失敗，請與本站ADMIN聯繫！\n");
                                 return 1;
                         }
                         delete("combat/last_die", ob);
@@ -762,7 +762,7 @@ public int buy_goods(object ob, string arg)
                 }
 
                 if( !MEMBER_D->player_pay(ob, value) ) {
-                        write("購買魔卡失敗，請與本站ADMIN聯系！\n");
+                        write("購買魔卡失敗，請與本站ADMIN聯繫！\n");
                         return 1;
                 }
 
@@ -789,7 +789,7 @@ public int buy_goods(object ob, string arg)
                         return 0;
                 }
                 if( !MEMBER_D->player_pay(ob, value) ) {
-                        write("購買故事失敗，請與本站ADMIN聯系！\n");
+                        write("購買故事失敗，請與本站ADMIN聯繫！\n");
                         return 0;
                 }
                 addn("gift/"+all_goods[i]->id, 1, ob);
@@ -802,7 +802,7 @@ public int buy_goods(object ob, string arg)
 
         case "gold" :
                 if( !MEMBER_D->player_pay(ob, value) ) {
-                        write("購買黃金失敗，請與本站ADMIN聯系！\n");
+                        write("購買黃金失敗，請與本站ADMIN聯繫！\n");
                         return 1;
                 }
 
@@ -821,12 +821,12 @@ public int buy_goods(object ob, string arg)
                 }
 
                 if( sizeof(specials) >= 10 ) {
-                        write("對不起，一個帳號最多只能擁有十個特殊技能！\n");
+                        write("對不起，一個帳號最多隻能擁有十個特殊技能！\n");
                         return 0;
                 }
 
                 if( !MEMBER_D->player_pay(ob, value) ) {
-                        write("購買先天技能失敗，請與本站ADMIN聯系！\n");
+                        write("購買先天技能失敗，請與本站ADMIN聯繫！\n");
                         return 0;
                 }
 
@@ -851,7 +851,7 @@ public int buy_goods(object ob, string arg)
                         }
 
                         if( !MEMBER_D->player_pay(ob, value) ) {
-                                write("購買奇遇技能失敗，請與本站ADMIN聯系！\n");
+                                write("購買奇遇技能失敗，請與本站ADMIN聯繫！\n");
                                 return 0;
                         }
 
@@ -880,7 +880,7 @@ public int buy_goods(object ob, string arg)
                         }
 
                         if( !MEMBER_D->player_pay(ob, value) ) {
-                                write("購買圖騰特技失敗，請與本站ADMIN聯系！\n");
+                                write("購買圖騰特技失敗，請與本站ADMIN聯繫！\n");
                                 return 0;
                         }
                         
@@ -915,7 +915,7 @@ public int do_look(object me, string arg)
         object item;
 
         if( me->is_busy() ) {
-                write("你正在忙著呢！\n");
+                write("你正在忙着呢！\n");
                 return 1;
         }
 
@@ -949,7 +949,7 @@ public int do_look(object me, string arg)
         catch(call_other(all_goods[i]->file, "???"));
         item = find_object(all_goods[i]->file);
         if( !objectp(item) ) {
-                write("出售的物品屬性查看出錯，請與ADMIN聯系！\n");
+                write("出售的物品屬性查看出錯，請與ADMIN聯繫！\n");
                 return 1;
         }
 

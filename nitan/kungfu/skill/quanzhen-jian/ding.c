@@ -35,9 +35,9 @@ int perform(object me, object target)
                 return notify_fail("你沒有激發全真劍法，難以施展" + name() + "。\n");
 
         if (! living(target))
-                return notify_fail("對方都已經這樣了，用不著這麼費力吧？\n");
+                return notify_fail("對方都已經這樣了，用不着這麼費力吧？\n");
 
-        msg = HIC "$N" HIC "腳下左弓右箭，神氣完足如雷霆五岳，一式「"
+        msg = HIC "$N" HIC "腳下左弓右箭，神氣完足如雷霆五嶽，一式「"
               HIR "定陽針" NOR + HIC "」斜斜刺出。\n" NOR;
 
         me->start_busy(2);

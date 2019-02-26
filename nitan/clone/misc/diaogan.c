@@ -36,16 +36,16 @@ int do_fish()
         object me = this_player();
 
         if (! arrayp(query("resource/fish", environment(me))))
-                return notify_fail("這裡看不出有魚的樣子。\n");
+                return notify_fail("這裏看不出有魚的樣子。\n");
 
         if (! objectp(yr = present("yu er", me)) || yr->query_amount() < 1)
                 return notify_fail("你身上沒有魚餌了。\n");
 
         if (me->is_busy() || me->is_fighting())
-                return notify_fail("你還是忙完手頭上的事情再說吧。\n");
+                return notify_fail("你還是忙完手頭上的事情再説吧。\n");
 
-        message_vision("$N掏出一點魚餌，仔細的放在釣鉤上，輕輕一甩桿，只見水面上盪起了\n"
-                       "一個個圓圈，中間只有一個白色的浮子在隨著水波盪漾。\n", me);
+        message_vision("$N掏出一點魚餌，仔細的放在釣鈎上，輕輕一甩杆，只見水面上蕩起了\n"
+                       "一個個圓圈，中間只有一個白色的浮子在隨着水波盪漾。\n", me);
         yr->add_amount(-1);
         me->start_busy((: call_other, __FILE__, "finishing" :),
                        (: call_other, __FILE__, "halt_finishing" :));
@@ -89,9 +89,9 @@ int finishing(object me)
                 break;
         case 4:
                 message_vision(random(2) ? "一陣劇烈的搖擺過後，浮子安靜"
-                                           "下來，$N連忙拉起釣竿，一看鉤上空空如也。\n"
+                                           "下來，$N連忙拉起釣竿，一看鈎上空空如也。\n"
                                          : "浮子猛然的左右擺動，忽然又安靜了下了，$N疑惑的"
-                                           "拉起釣竿，除了閃亮\n的魚鉤，上面什麼也沒有。\n",
+                                           "拉起釣竿，除了閃亮\n的魚鈎，上面什麼也沒有。\n",
                                me);
                 tell_object(me, CYN "看來是拉桿(draw)拉晚了，白白的賠了一個魚餌！\n" NOR);
                 delete_temp("fishing", me);
@@ -103,7 +103,7 @@ int finishing(object me)
                 {
                         if (random(3)) return 1;
                         tell_object(me, random(2) ? "水面波瀾不驚，沒有什麼變化。\n"
-                                                  : "微風輕輕的吹，水面盪起一層層細浪，就是沒有魚上鉤。\n");
+                                                  : "微風輕輕的吹，水面蕩起一層層細浪，就是沒有魚上鈎。\n");
                         break;
                 }
                 message_vision("忽然$N的浮子震動了一下。\n", me);
@@ -147,7 +147,7 @@ int do_draw(string arg)
         if (stage < 2)
         {
                 message_vision("$N連忙一拉釣竿，高高的舉了起來，卻見上面魚餌依然，還"
-                               "是老樣子，只好\n垂頭喪氣的重新把桿甩了出去。\n", me);
+                               "是老樣子，只好\n垂頭喪氣的重新把杆甩了出去。\n", me);
                 set_temp("fishing", 0, me);
                 return 1;
         }
@@ -158,7 +158,7 @@ int do_draw(string arg)
                                         base_name(environment(me))));
         ob = new(fish[random(sizeof(fish))]);
 
-        message_vision(random(2) ? "$N手急眼快，猛地一收釣竿，只見上面掛著一" +
+        message_vision(random(2) ? "$N手急眼快，猛地一收釣竿，只見上面掛着一" +
                                    query("unit", ob)+"扭來扭去的"+
                                    ob->name() + "。\n"
                                  :"$N順勢一拉桿，登時把一"+query("unit", ob)+

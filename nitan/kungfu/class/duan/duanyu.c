@@ -21,12 +21,12 @@ void create()
 
         set("chat_chance", 1);
         set("chat_msg", ({
-                CYN "段譽嘆了口氣道：唉，老爸這是怎麼回事？\n" NOR,
+                CYN "段譽歎了口氣道：唉，老爸這是怎麼回事？\n" NOR,
         }));
 
         set("inquiry", ([
                 "大理" : "大理是個好地方，山清水秀，風景宜人。\n",
-                "王語嫣" : "唉，她心裡只有她表哥，從來就沒把我放在眼裡。\n",
+                "王語嫣" : "唉，她心裏只有她表哥，從來就沒把我放在眼裏。\n",
                 "拜師" : "嗯……我的師傅是老子、孔子和莊子，他們的學問我還沒學全呢。\n",
         ]));
 
@@ -103,7 +103,7 @@ void help_girl(object me)
                 break;
         default:
                 msg = "這位" + RANK_D->query_respect(me) +
-                      "，我說你已然半男不女，怎麼還打女孩子的主意？";
+                      "，我説你已然半男不女，怎麼還打女孩子的主意？";
                 break;
         }        
         command("say " + msg);
@@ -130,7 +130,7 @@ void help_girl(object me)
 
 int accept_fight(object me)
 {
-        command("say 哎呀呀，有話好好說，不要就動手嘛。");
+        command("say 哎呀呀，有話好好説，不要就動手嘛。");
         return 0;
 }
 
@@ -188,7 +188,7 @@ void check_enemys(object wang)
 
         if (is_fighting() && random(5) == 0 && living(wang))
         {
-                message_vision(HIW "\n王語嫣在$N" HIW "耳邊嘀嘀咕咕的說些話。\n"
+                message_vision(HIW "\n王語嫣在$N" HIW "耳邊嘀嘀咕咕的説些話。\n"
                                NOR, this_object());
                 addn_temp("apply/damage", 10);
                 addn_temp("apply/defense", 10);
@@ -208,7 +208,7 @@ void check_enemys(object wang)
                         return;
                 }
                 message_vision(HIW "$n" HIW "對$N" HIW "道：好了，敵人退了，我"
-                               "下來吧。\n$N" HIW "這才戀戀不舍的把$n" HIW "放"
+                               "下來吧。\n$N" HIW "這才戀戀不捨的把$n" HIW "放"
                                "了下來。\n" NOR, this_object(), wang);
                 wang->move(environment(this_object()));
                 return;

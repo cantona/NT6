@@ -11,7 +11,7 @@
         用法：
                 傳回函數指標 f 的宿主物件
 
-        此函數需要編譯 MudOS 時在配置文件裡定義了 PACKAGE_CONTRIB。
+        此函數需要編譯 MudOS 時在配置文件裏定義了 PACKAGE_CONTRIB。
 
         參看：
                 bind

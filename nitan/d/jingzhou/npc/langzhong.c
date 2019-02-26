@@ -5,7 +5,7 @@ inherit NPC;
 void create ()
 {
         set_name("走方郎中", ({"lang zhong","doctor"}));
-        set("long", "這是一個搖著虎撐在沿街賣藥的走方郎中。\n");
+        set("long", "這是一個搖着虎撐在沿街賣藥的走方郎中。\n");
         set("gender", "男性");
         set("age", 32);
         set("combat_exp", 50000);

@@ -11,7 +11,7 @@ void create()
         else {
                 set("unit", "朵");
                 set("long", 
-"一株茶花，同株開著兩朵花，一朵花色"HIR"純紅"NOR"，一朵"WHT"純白"NOR"，各有其妙。\n");
+"一株茶花，同株開着兩朵花，一朵花色"HIR"純紅"NOR"，一朵"WHT"純白"NOR"，各有其妙。\n");
                 set("value", 75);
                 set("material", "plant");
                 set_weight(10);

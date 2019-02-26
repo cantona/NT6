@@ -124,9 +124,9 @@ int get_finish(object me)
                 return 0;
         }
 
-        tell_object(me, HIY "\n一陣凡塵往事湧上心頭，你幾欲放聲長嘆。霎那間衡山"
-                        "派五種劍法不斷在\n你的腦海裡交替閃現，最後終于融會貫通"
-                        "，合為一體。你終于通曉了衡山\n五神劍的訣竅。\n" NOR);
+        tell_object(me, HIY "\n一陣凡塵往事湧上心頭，你幾欲放聲長歎。霎那間衡山"
+                        "派五種劍法不斷在\n你的腦海裏交替閃現，最後終於融會貫通"
+                        "，合為一體。你終於通曉了衡山\n五神劍的訣竅。\n" NOR);
         return 1;
 }
 
@@ -207,7 +207,7 @@ void skill_improved(object me)
            if( lvl > 180 &&
             !query("can_perform/wushen-jian/hui", me) ) 
         {
-                tell_object(me, WHT "你通曉了衡山五神劍「" HIC "回峰蜿蜒勢" WHT "」的奧秘。\n" NOR);    
+                tell_object(me, WHT "你通曉了衡山五神劍「" HIC "回峯蜿蜒勢" WHT "」的奧祕。\n" NOR);    
                 set("can_perform/wushen-jian/hui", 1, me);
                 me->improve_skill("martial-cognize", 1500000);  
                 me->improve_skill("martial-cognize", 1500000); 
@@ -216,7 +216,7 @@ void skill_improved(object me)
             if( lvl > 200 &&
             !query("can_perform/wushen-jian/qian", me) ) 
         {
-                tell_object(me, WHT "你通曉了衡山五神劍「" HIC "千劍縱橫勢" WHT "」的奧秘。\n" NOR);    
+                tell_object(me, WHT "你通曉了衡山五神劍「" HIC "千劍縱橫勢" WHT "」的奧祕。\n" NOR);    
                 set("can_perform/wushen-jian/qian", 1, me);
                 me->improve_skill("martial-cognize", 1500000);  
                 me->improve_skill("martial-cognize", 1500000); 
@@ -225,7 +225,7 @@ void skill_improved(object me)
             if( lvl > 240 &&
             !query("can_perform/wushen-jian/shen", me) ) 
         {
-                tell_object(me, WHT "你通曉了衡山五神劍「" HIC "五神朝元勢" WHT "」的奧秘。\n" NOR);    
+                tell_object(me, WHT "你通曉了衡山五神劍「" HIC "五神朝元勢" WHT "」的奧祕。\n" NOR);    
                 set("can_perform/wushen-jian/shen", 1, me);
                 me->improve_skill("martial-cognize", 1500000);  
                 me->improve_skill("martial-cognize", 1500000); 
@@ -263,7 +263,7 @@ mixed hit_ob(object me, object victim, int damage_bonus)
                   return random(2) ? HIW "$N" HIW "一劍攻出，剎那間劍氣橫飛，$n" HIW
                                      "身上頓時鮮血狂湧。\n" NOR:
                                      HIW "$N" HIW "劍鋒一轉，一劍平平刺向$n" HIW "要害"
-                                     "，看似普通的一招其中卻蘊藏著極大的殺著。\n" NOR;
+                                     "，看似普通的一招其中卻藴藏着極大的殺着。\n" NOR;
              }
              break;
 
@@ -285,8 +285,8 @@ mixed hit_ob(object me, object victim, int damage_bonus)
              {
                 weapon=query_temp("weapon", me);
                 message_sort(HIM "\n$N" HIM "輕嘯一聲，騰空而起，" + weapon->name() + "在"
-                             "空中挽出一個劍花，頃刻間劍花四散，洋洋洒洒。猶如無"
-                             "數花瓣從半空洒向$n" HIM "全身。\n" NOR, me, victim);
+                             "空中挽出一個劍花，頃刻間劍花四散，洋洋灑灑。猶如無"
+                             "數花瓣從半空灑向$n" HIM "全身。\n" NOR, me, victim);
 
                 for (i = 0; i < 5; i++)
                 {

@@ -7,15 +7,15 @@ string type() { return "martial"; }
 string martialtype() { return "skill"; }
 
 mapping *action = ({
-([        "action" : "$N身形一晃而至，一招"HIB"「小鬼勾魂」"NOR"，雙掌帶著一縷腥風拍向$n的前心",
+([        "action" : "$N身形一晃而至，一招"HIB"「小鬼勾魂」"NOR"，雙掌帶着一縷腥風拍向$n的前心",
         "lvl"    : 0,
         "skill_name" : "小鬼勾魂"
 ]),
-([        "action" : "$N身形化做一縷輕煙繞著$n急轉，一招"MAG"「天網恢恢」"NOR"，雙掌幻出無數掌影罩向$n",
+([        "action" : "$N身形化做一縷輕煙繞着$n急轉，一招"MAG"「天網恢恢」"NOR"，雙掌幻出無數掌影罩向$n",
         "lvl"    : 20,
         "skill_name" : "天網恢恢"
 ]),
-([        "action" : "$N大喝一聲，一招"BLU"「惡鬼推門」"NOR"，單掌如巨斧開山帶著一股腥風猛劈向$n的面門",
+([        "action" : "$N大喝一聲，一招"BLU"「惡鬼推門」"NOR"，單掌如巨斧開山帶着一股腥風猛劈向$n的面門",
         "lvl"    : 30,
         "skill_name" : "惡鬼推門"
 ]),
@@ -35,7 +35,7 @@ mapping *action = ({
         "lvl"    : 70,
         "skill_name" : "毒龍擺尾"
 ]),
-([        "action" : "$N大喝一聲，運起五毒神功，一招"RED"「毒火焚身」"NOR"，剎那間全身毛發盡綠，一對碧綠的雙爪閃電般的朝$n的$l抓去",
+([        "action" : "$N大喝一聲，運起五毒神功，一招"RED"「毒火焚身」"NOR"，剎那間全身毛髮盡綠，一對碧綠的雙爪閃電般的朝$n的$l抓去",
         "lvl"    : 80,
         "skill_name" : "毒火焚身"
 ]),
@@ -88,7 +88,7 @@ void skill_improved(object me)
 {
         if( random(15)<1 && query("per", me)>5 )
         {
-                tell_object(me, HIR"你忽然覺得體內毒氣狂竄，面上頓時罩著一層黑氣！\n" NOR );
+                tell_object(me, HIR"你忽然覺得體內毒氣狂竄，面上頓時罩着一層黑氣！\n" NOR );
                 addn("per", -1, me);
         }
 }

@@ -12,13 +12,13 @@ mapping bunch_good = ([
         "name" : "俠義盟",
         "id"   : "xym",
         "place": "ca",
-        "boss" : "成中岳",
+        "boss" : "成中嶽",
         "type" : "good",
 ]);
 
 void create()
 {
-        set_name("成中岳", ({ "cheng zhongyue", "cheng" }));
+        set_name("成中嶽", ({ "cheng zhongyue", "cheng" }));
         set("gender", "男性");
         set("age", 45);
         set("long", "他就是鼎鼎大名的" + bunch_good["bunch_name"] + "的總瓢把子。\n");

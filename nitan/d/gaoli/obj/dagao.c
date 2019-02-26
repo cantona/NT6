@@ -22,6 +22,6 @@ void create()
 int is_get_of(object pal,object ob)
 {
   if(pal->query("family/family_name")!="弈劍派")
-  return notify_fail("只有弈劍派弟子可以撿這裡的東西！！\n");
+  return notify_fail("只有弈劍派弟子可以撿這裏的東西！！\n");
   return 1;
 */

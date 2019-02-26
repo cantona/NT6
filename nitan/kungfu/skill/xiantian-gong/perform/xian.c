@@ -46,10 +46,10 @@ int perform(object me, object target)
                 return notify_fail("你現在的真氣不足，難以施展" + name() + "。\n");
 
         if (! living(target))
-                return notify_fail("對方都已經這樣了，用不著這麼費力吧？\n");
+                return notify_fail("對方都已經這樣了，用不着這麼費力吧？\n");
 
-        msg = HIW "\n$N" HIW "施出先天罡氣，頓時將方圓十裡天地之氣吸入體內"
-              "，凝聚于雙手手掌處，左手一揮，層層疊疊湧向$n" HIW "！\n" NOR;
+        msg = HIW "\n$N" HIW "施出先天罡氣，頓時將方圓十里天地之氣吸入體內"
+              "，凝聚於雙手手掌處，左手一揮，層層疊疊湧向$n" HIW "！\n" NOR;
 
         addn_temp("apply/ap_power", 30, me);
         ap=attack_power(me,"unarmed")+me->query_con()*20;
@@ -72,7 +72,7 @@ int perform(object me, object target)
         }
         
         message_combatd(msg, me, target); 
-        msg = HIW "緊接著，$N" HIW "一聲清嘯，右手虛向$n"HIW"蓋下，龐大的天地之氣洶湧般壓向$n" HIW "！\n" NOR;
+        msg = HIW "緊接着，$N" HIW "一聲清嘯，右手虛向$n"HIW"蓋下，龐大的天地之氣洶湧般壓向$n" HIW "！\n" NOR;
         if (ap / 2 + random(ap) > dp)
         {
                 if( !target->is_busy() )
@@ -135,7 +135,7 @@ string attack2(object me, object target, int damage)
         target->apply_condition("no_exert", 10);
         call_out("clear_no_exert", 25, target);
         
-        msg += WHT "$n" WHT "感到氣脈受損，內息紊亂，說不出的痛苦。\n" NOR;
+        msg += WHT "$n" WHT "感到氣脈受損，內息紊亂，説不出的痛苦。\n" NOR;
 
         return msg;
 }

@@ -98,7 +98,7 @@ void attempt_apprentice(object me)
         }
 
         command("heihei");
-        command("say 以後你就跟著老子吧。");
+        command("say 以後你就跟着老子吧。");
         command("recruit "+query("id", me));
 }
 
@@ -109,13 +109,13 @@ mixed ask_skill1()
         me = this_player();
 
         if( query("can_perform/heisha-zhang/cui", me) )
-                return "老子把啥子都給你說完了，你龜兒咋那麼煩哦！";
+                return "老子把啥子都給你説完了，你龜兒咋那麼煩哦！";
 
         if( query("family/family_name", me) != query("family/family_name") )
                 return "你龜兒子是哪兒來的？老子認不到你。";
 
         if (me->query_skill("heisha-zhang", 1) < 1)
-                return "你龜兒黑砂掌都沒學，還說啥子催魂掌哦！";
+                return "你龜兒黑砂掌都沒學，還説啥子催魂掌哦！";
 
           if( query("family/gongji", me)<150 )
                 return "你龜兒貢獻都做得不夠，喊我咋個傳你嘛？";
@@ -129,16 +129,16 @@ mixed ask_skill1()
         if (me->query_skill("heisha-zhang", 1) < 100)
                 return "你黑砂掌學成這副龜兒子德性，咋個練催魂掌嘛？";
 
-        message_vision(HIY "$n" HIY "看了看$N" HIY "，哈哈一笑，說道"
+        message_vision(HIY "$n" HIY "看了看$N" HIY "，哈哈一笑，説道"
                        "：“要得，要得！看你娃學得還\n可以，今天我就"
-                       "教你催魂掌。”$n" HIY "說罷，便輕輕拍出一掌，"
-                       "看\n似不著半點力道。正當$N" HIY "納悶間，聽得"
+                       "教你催魂掌。”$n" HIY "説罷，便輕輕拍出一掌，"
+                       "看\n似不着半點力道。正當$N" HIY "納悶間，聽得"
                        "“噗”的一聲，隨即塵沙滾\n滾，飄然四起，身前"
                        "沙地豁然留下一個烏黑的掌印，煞是驚人。\n" NOR,
                        me, this_object());
 
         command("heihei");
-        command("say 剛才老子說的你都要記好了好，自己下去練。");
+        command("say 剛才老子説的你都要記好了好，自己下去練。");
         tell_object(me, HIC "你學會了「催魂掌」。\n" NOR);
 
         if (me->can_improve_skill("strike"))

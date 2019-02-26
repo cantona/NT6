@@ -8,7 +8,7 @@ void create()
         set("race", "野獸");
         set("gender", "雄性");
         set("age", 2+random(3));
-        set("long", "這是一匹紫騮寶馬，日行千裡，夜行八百。\n");
+        set("long", "這是一匹紫騮寶馬，日行千里，夜行八百。\n");
         set("ridable", 1);
         set("int", 30);
         set("qi", 300);

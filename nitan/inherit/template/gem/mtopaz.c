@@ -16,7 +16,7 @@ void create()
                 set_default_object(__FILE__);
         else {
 //**            set("$dbase_key", "$dbase_value\n");            /* DBASE_ENTRY */
-                set("long", HIY "一顆煥發著奇異的光彩的黃寶石，給人以不同尋常的感覺。\n" NOR);  /* DBASE_EXIT  */
+                set("long", HIY "一顆煥發着奇異的光彩的黃寶石，給人以不同尋常的感覺。\n" NOR);  /* DBASE_EXIT  */
                 set("value", 200000);
                 set("unit", "顆");
                 set("level", 4);

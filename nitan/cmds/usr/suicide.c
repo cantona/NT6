@@ -52,7 +52,7 @@ protected void check_password(string passwd, object me, int forever)
         if (forever)
         {
                 tell_object(me, HIR "\n你決定要自殺了，如果三十秒"
-                            "鐘內不後悔，就真的永別了。\n\n" NOR);
+                            "鍾內不後悔，就真的永別了。\n\n" NOR);
                 set_temp("suicide/time", time(), me);
                 set_temp("suicide/last", 0, me);
                 set_temp("suicide/from", query_ip_number(me), me);

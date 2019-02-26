@@ -20,7 +20,7 @@ int do_hjtop()
     if( !out_room )
         return errs("現在無法查看記錄。\n");
     write(HIW"
-       『幻境﹒遙遠傳說之起緣﹒幽靈顯現』
+       『幻境·遙遠傳説之起緣·幽靈顯現』
 "+out_room->get_TOP_pic()+"\n"NOR);
     return 1;
 }
@@ -72,7 +72,7 @@ int do_gsks( string arg )
     clcl = NOR + WHT;
     pic = "◆";
     msg = clcl +
-          "□───────┬─┬─────┬─────┬─────────□\n" +
+          "╭───────┬─┬─────┬─────┬─────────╮\n" +
           "│    技   能   │LV│ 運用(yun)│ 絕技(pfm)│    效     果     │\n" +
           "├───────┼─┼─────┼─────┼─────────┤\n";
 
@@ -88,13 +88,13 @@ int do_gsks( string arg )
         t2 = "   ----   ";
         switch( list[i] )
         {
-            case "heal" : cl = CYN; t1 = "克制(kz)"; break;
+            case "heal" : cl = CYN; t1 = "剋制(kz)"; break;
             case "hfzj" : cl = HIW; t1 = "翔空(xk)"; t2 = "狂風(kf)"; break;
             case "hyzj" : cl = HIM; t1 = "聰敏(cm)"; t2 = "暴雨(by)"; break;
             case "llzj" : cl = HIC; t1 = "力量(ll)"; t2 = "驚雷(jl)"; break;
             case "ydzj" : cl = HIG; t1 = "光芒(gm)"; t2 = "迅電(xd)"; break;
             case "dhzj" : cl = HIB; t1 = "守護(sh)"; t2 = "奪魂(dh)"; break;
-            case "fhzj" : cl = HIR; t1 = "熱情(rq)"; t2 = "火燄(hy)"; break;
+            case "fhzj" : cl = HIR; t1 = "熱情(rq)"; t2 = "火焰(hy)"; break;
             case "gszj" : cl = HIY; t1 = "尋石(xs)"; t2 = "巨石(js)"; break;
         }
 
@@ -149,7 +149,7 @@ int do_gsks( string arg )
     // 沒有通過檢測的技能
     if( !amount )
         return errs("你並未學得任何 幻境 內的技能。\n");
-    msg += clcl+ "□───────┴─┴─────┴─────┴─────────□\n"NOR;
+    msg += clcl+ "╰───────┴─┴─────┴─────┴─────────╯\n"NOR;
     write( "  以下是你學得的幻境內技能(共"+chinese_number(amount)+"項)：\n" + msg + "  如需要放棄某項技能，請使用指令：<gsks -d 技能名>  例如：gsks -d heal\n  請注意，輸入指令將直接放棄該技能，並無法恢復！\n");
     return 1;
 }
@@ -173,7 +173,7 @@ int do_ghp()
     if( hp > hp_max ) color = HIC;
 
     if( !temp = query("find_name") )
-        temp = "神秘國度";
+        temp = "神祕國度";
     switch( temp )
     {
         case "風之國度": temp = HIW+temp+NOR;break;
@@ -186,7 +186,7 @@ int do_ghp()
     if( query_temp("hj_special/cm", me))temp2+=HIM"「聰敏」"NOR;
     if( query_temp("hj_special/ll", me))temp2+=HIC"「力量」"NOR;
     if( query_temp("hj_special/gm", me))temp2+=HIG"「光芒」"NOR;
-    if( query_temp("hj_special/kz", me))temp2+=CYN"「克制」"NOR;
+    if( query_temp("hj_special/kz", me))temp2+=CYN"「剋制」"NOR;
     if( query_temp("hj_special/sh", me))temp2+=HIB"「守護」"NOR;
     if( query_temp("hj_special/rq", me))temp2+=HIR"「熱情」"NOR;
     if( query_temp("hj_special/xs", me))temp2+=HIY"「尋石」"NOR;
@@ -202,7 +202,7 @@ int do_ghp()
     }
     if( strlen( temp3 ) > 20 ) temp3 = temp3[0..19] + ">>>>";
 
-    write( sprintf("【 %s ∥ LV "HIY"%d"NOR" ∥ 氣息：%s%d"NOR"/"HIG"%d"NOR" ∥ 得分："HIY"%d"NOR" ∥ 基本力量："HIY"%s"NOR" ∥ 累計殺死NPC "HIM"%d"NOR" 個 】\n【 技能運用中：%s 】\n"NOR,
+    write( sprintf("【 %s ‖ LV "HIY"%d"NOR" ‖ 氣息：%s%d"NOR"/"HIG"%d"NOR" ‖ 得分："HIY"%d"NOR" ‖ 基本力量："HIY"%s"NOR" ‖ 累計殺死NPC "HIM"%d"NOR" 個 】\n【 技能運用中：%s 】\n"NOR,
         temp,query("huanjing2003/lv", me),color,
         hp,hp_max,query_temp("hj_score", me),temp3,query("huanjing2003/kill_npc", me),temp2));
     return 1;
@@ -222,7 +222,7 @@ int do_gheal(string arg)
     else target=present( arg,environment( me ) );
     if( !target ) return errs("你要幫誰恢復氣息？\n");
     if( !target->is_character() ) return errs("這不是活物。\n");
-    if( !living(target) ) return errs("還是先等這人醒來再說吧。\n");
+    if( !living(target) ) return errs("還是先等這人醒來再説吧。\n");
     if( !query_temp("hj_hp", target) || !query_temp("hj_hp_max", target) )
         return errs("這人沒有絲毫氣息，還是免了吧。\n");
 
@@ -235,7 +235,7 @@ int do_gheal(string arg)
         return errs("你已在運用恢復之技。\n");
 
     if( me->is_busy() )
-        return errs("你還忙著呢。\n");
+        return errs("你還忙着呢。\n");
 
     if(target == me )
     {
@@ -387,7 +387,7 @@ int do_hjquit(string arg)
 
 < hjquit fail >     放棄所有的成績，立刻退出 幻境 遊戲。
                       "HIR"使用此指令將減少你的1點貢獻度，請慎用。"NOR"
-< hjquit ok >       以正常方式退出（類似使用 回歸之鏡），
+< hjquit ok >       以正常方式退出（類似使用 迴歸之鏡），
                       但你必須有 500 分以上的當前得分，並且
                       需要一定的 已進行遊戲 時間。
 \n"NOR);
@@ -404,7 +404,7 @@ int do_hjquit(string arg)
     }
 
     if( me->is_busy() || query_temp("hj_need_waiting", me) )
-        return errs("你還忙著呢。\n");
+        return errs("你還忙着呢。\n");
 
     qxd = present( "qixing deng",me);
     if( !qxd || query("my_master", qxd) != me )
@@ -426,7 +426,7 @@ int do_hjquit(string arg)
 
     set("use_huigui", "yes", qxd);
 
-    message_vision(WHT"只見一陣白霧不知從何處飄來，癒來癒濃……\n"NOR,me);
+    message_vision(WHT"只見一陣白霧不知從何處飄來，愈來愈濃……\n"NOR,me);
     return 1;
 }
 
@@ -478,14 +478,14 @@ int do_halt()
 // 延時中發生的意外。
 void delete_special_sks( object me, string sks, string sks_name )
 {
-    // 話這麼說，基本安全總要做的
+    // 話這麼説，基本安全總要做的
     if( !me || !me_ok(me) )
         return;
-    // 如果用 wiztools 停止了運用，這裡再停一次，豈非搞笑？所以要看看它是否還在用。
+    // 如果用 wiztools 停止了運用，這裏再停一次，豈非搞笑？所以要看看它是否還在用。
     if( !query_temp("hj_special/"+sks, me) )
         return;
     delete_temp("hj_special/"+sks, me);
-    message_vision( HIY"\n只見圍著$N"HIY"的一圈微光隱退，「"+sks_name+"」技能的效力消失了。\n\n"NOR, me);
+    message_vision( HIY"\n只見圍着$N"HIY"的一圈微光隱退，「"+sks_name+"」技能的效力消失了。\n\n"NOR, me);
 }
 
 int do_gyun( string arg )
@@ -501,7 +501,7 @@ int do_gyun( string arg )
         "cm": ({ "聰敏", "雨之國度", "hyzj", "喚雨之技" }),
         "ll": ({ "力量", "雷之國度", "llzj", "落雷之技" }),
         "gm": ({ "光芒", "電之國度", "ydzj", "引電之技" }),
-        "kz": ({ "克制",       "--", "heal", "恢復之技" }),
+        "kz": ({ "剋制",       "--", "heal", "恢復之技" }),
         "sh": ({ "守護",       "--", "dhzj", "奪魂之技" }),
         "rq": ({ "熱情",       "--", "fhzj", "飛火之技" }),
         "xs": ({ "尋石",       "--", "gszj", "滾石之技" }),
@@ -523,7 +523,7 @@ int do_gyun( string arg )
 "HIM"    聰敏(cm)   >>>>>>   %s
 "HIC"    力量(ll)   >>>>>>   %s
 "HIG"    光芒(gm)   >>>>>>   %s
-"NOR+CYN"    克制(kz)   >>>>>>   %s
+"NOR+CYN"    剋制(kz)   >>>>>>   %s
 "HIB"    守護(sh)   >>>>>>   %s
 "HIR"    熱情(rq)   >>>>>>   %s
 "HIY"    尋石(xs)   >>>>>>   %s
@@ -545,7 +545,7 @@ int do_gyun( string arg )
         write("你現在實在是太忙了(忙時5秒以上)，無法靜心運用特殊技能。\n");
         return 1;
     }
-    // 不得重復運用。
+    // 不得重複運用。
     if( query_temp("hj_special/"+arg, me) )
     {
         write("你已在運用這個技能。\n");
@@ -581,43 +581,43 @@ int do_gyun( string arg )
         // #########################################################
         case "翔空":
             message_vision(HIW"\n只見$N"HIW"張開雙手，仰天閉目口誦咒文，霎時間平地起風，$N"HIW"竟至浮身半空！\n"
-                "這正是風之「翔空」秘籍！\n\n"NOR, me);
+                "這正是風之「翔空」祕籍！\n\n"NOR, me);
             break;
         // #########################################################
         case "聰敏":
-            message_vision(HIM"\n只見$N"NOR+HIM"兩手互握，低頭閉目默念咒文，頓時似有無限靈感紛湧而至！\n"
-                "這正是雨之「聰敏」秘籍！\n\n"NOR, me);
+            message_vision(HIM"\n只見$N"NOR+HIM"兩手互握，低頭閉目默唸咒文，頓時似有無限靈感紛湧而至！\n"
+                "這正是雨之「聰敏」祕籍！\n\n"NOR, me);
             break;
         // #########################################################
         case "力量":
-            message_vision(HIC"\n只見$N"HIC"雙目圓睜單拳向天，口中大喝一聲，頓時全身筋骨□啪作響，氣勢驚人！\n"
-                "這正是雷之「力量」秘籍！\n\n"NOR, me);
+            message_vision(HIC"\n只見$N"HIC"雙目圓睜單拳向天，口中大喝一聲，頓時全身筋骨噼啪作響，氣勢驚人！\n"
+                "這正是雷之「力量」祕籍！\n\n"NOR, me);
             break;
         // #########################################################
         case "光芒":
             message_vision(HIG"\n只見$N"HIG"右手攤掌緩緩前伸，剎那間掌心凝聚一團耀眼光芒，瞬間籠罩全身！\n"
-                "這正是電之「光芒」秘籍！\n\n"NOR, me);
+                "這正是電之「光芒」祕籍！\n\n"NOR, me);
             break;
         // #########################################################
-        case "克制":
+        case "剋制":
             message_vision( CYN"\n只見$N"NOR+CYN"雙掌合十，默默地念了幾句咒文，頓時一陣清風掠起，讓人心境平和，再無煩憂。\n"
-                "這正是恢復之技「克制」秘籍！\n\n"NOR, me );
+                "這正是恢復之技「剋制」祕籍！\n\n"NOR, me );
             del_time *= 4;  // 效力持久
             break;
         // #########################################################
         case "守護":
-            message_vision( HIB"\n只見$N"HIB"雙手食指並置額心，口念咒文，四處即時和起一陣凄厲之聲，似有靈體護身一般！\n"
-                "這正是奪魂之技「守護」秘籍！\n\n"NOR, me );
+            message_vision( HIB"\n只見$N"HIB"雙手食指並置額心，口唸咒文，四處即時和起一陣淒厲之聲，似有靈體護身一般！\n"
+                "這正是奪魂之技「守護」祕籍！\n\n"NOR, me );
             break;
         // #########################################################
         case "熱情":
-            message_vision( HIR"\n只見$N"HIR"左手握拳置于左腰之旁，右手伸出食、中二指，滿臉笑容，大喊一聲：“耶！”\n"
-                "這正是飛火之技「熱情」秘籍！\n\n"NOR,me);
+            message_vision( HIR"\n只見$N"HIR"左手握拳置於左腰之旁，右手伸出食、中二指，滿臉笑容，大喊一聲：“耶！”\n"
+                "這正是飛火之技「熱情」祕籍！\n\n"NOR,me);
             break;
         // #########################################################
         case "尋石":
             message_vision( HIY"\n只見$N"HIY"雙手緊握放在臉前，閉目喃喃祈禱道：“石頭，石頭，我要石頭……”\n"
-                "這正是滾石之技「尋石」秘籍！\n\n"NOR,me);
+                "這正是滾石之技「尋石」祕籍！\n\n"NOR,me);
             break;
         // #########################################################
     }

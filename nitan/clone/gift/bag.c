@@ -77,7 +77,7 @@ int do_open(string arg)
 
         if (random(10) < 3)
         {                
-                write("你打開包裹一看，裡面盡是一些不值錢的東西，隨手將之仍在一邊。\n");
+                write("你打開包裹一看，裏面盡是一些不值錢的東西，隨手將之仍在一邊。\n");
                 destruct(this_object());
                 return 1;
         }

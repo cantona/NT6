@@ -39,9 +39,9 @@ int perform(object me, object target)
                 return notify_fail("你現在真氣不夠，難以施展" NING "。\n");
 
         if (! living(target))
-                return notify_fail("對方都已經這樣了，用不著這麼費力吧？\n");
+                return notify_fail("對方都已經這樣了，用不着這麼費力吧？\n");
 
-        msg = HIW "\n$N" HIW "嬌喝一聲，飛身而起，使出絕招「" HIM "寧氏一劍" HIW "」將畢生功力運于"
+        msg = HIW "\n$N" HIW "嬌喝一聲，飛身而起，使出絕招「" HIM "寧氏一劍" HIW "」將畢生功力運於"
               + weapon->name() + HIW "上，頓時劍光四射，劍勢如虹，將$n" HIW "籠罩" HIW "。\n" NOR;
 
         ap = attack_power(me, "sword");

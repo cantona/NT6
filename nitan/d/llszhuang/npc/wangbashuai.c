@@ -4,8 +4,8 @@ void create()
 {
         set_name("王八衰", ({ "wang bashuai","wang","bashuai"}) );
         set("long",@LONG
-這人勾鼻深目，皮包骨的臉像鬼而不似人，配合著似若從地獄裡爬出來
-的魔鷹，教人感到不寒而栗。
+這人勾鼻深目，皮包骨的臉像鬼而不似人，配合着似若從地獄裏爬出來
+的魔鷹，教人感到不寒而慄。
 LONG
          );
         set("title",CYN"神箭八雄"NOR);

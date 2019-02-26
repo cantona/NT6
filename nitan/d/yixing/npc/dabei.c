@@ -6,7 +6,7 @@ void check_body();
 void create()
 {
         set_name("大悲老人", ({ "dabei laoren", "dabei", "laoren" }));
-        set("long", "他是個紅面老者，白發拂胸，甚是雄偉。\n");
+        set("long", "他是個紅面老者，白髮拂胸，甚是雄偉。\n");
         set("title", "白鯨島島主");
         set("gender", "男性");
         set("attitude", "friendly");
@@ -61,7 +61,7 @@ void check_body()
            ||! objectp(present("18 niou", me)))
                 return;
 
-        message_vision(HIR "\n$N" HIR "紅著雙眼，暴怒道：天殺的，老"
+        message_vision(HIR "\n$N" HIR "紅着雙眼，暴怒道：天殺的，老"
                        "子今天豁出去了！\n" NOR, me);
 
         set_temp("apply/attack", 150);

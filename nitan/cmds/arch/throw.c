@@ -101,11 +101,11 @@ int main(object me, string arg)
                 if (card = present("throw card", me))
                 {
                         message("vision", me->name() + "掏出一張卡片，"
-                                "滴嘀咕咕的不知道在說些什麼，好像"
+                                "滴嘀咕咕的不知道在説些什麼，好像"
                                 "提到了"+query("name", ob)+"。\n",
                                 environment(me), ({ me }));
                         tell_object(me, "你掏出" + card->name() + "，"
-                                "口中念念有詞：天靈靈！地靈靈！快把" +
+                                "口中唸唸有詞：天靈靈！地靈靈！快把" +
                                 query("name", ob)+"送到地獄去！\n");
                         time=query("time_to_leave", card);
                         destruct(card);
@@ -139,11 +139,11 @@ int help(object me)
 
 禁閉他人理由主要如下：
 1. 口出污言穢語(rude)
-2. 發布他人說的污言穢語(copy)
+2. 發佈他人説的污言穢語(copy)
 3. 造謠生事(rumor)
-4. 散布重復信息(flood)
+4. 散佈重複信息(flood)
 5. 使用系統錯誤，檔案待查(bug)
-6. 出于維護該玩家檔案的目的(main)
+6. 出於維護該玩家檔案的目的(main)
 
 see also : free 
 HELP );

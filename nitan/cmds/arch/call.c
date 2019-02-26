@@ -156,7 +156,7 @@ int help(object me)
         write(@HELP
 指令格式 : call <物件>-><函數>(<參數>, ...... )
  
-呼叫<物件>裡的<函數>並傳入相關<參數>.
+呼叫<物件>裏的<函數>並傳入相關<參數>.
 
 該命令在可以被授權使用的信息包括：
 self、npc、user、nonechar、wizard、all。

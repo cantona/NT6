@@ -21,14 +21,14 @@ mapping *action = ({
         "skill_name" : "曉星當頭即走拳",
         "damage_type":  "瘀傷"
 ]),
-([      "action": "$N右拳在$n面門一晃，左掌使了個「出勢跨虎西岳傳」往$n狠命一拳",
+([      "action": "$N右拳在$n面門一晃，左掌使了個「出勢跨虎西嶽傳」往$n狠命一拳",
         "force" : 100,
         "attack": 28,
         "dodge" : 45,
         "parry" : 8,
         "damage": 10,
         "lvl"   : 60,
-        "skill_name" : "出勢跨虎西岳傳",
+        "skill_name" : "出勢跨虎西嶽傳",
         "damage_type":  "抓傷"
 ]),
 ([      "action": "$N左拳拉開，右拳帶風，一招「金鵬展翅庭中站」勢不可擋地擊向$n",
@@ -71,14 +71,14 @@ mapping *action = ({
         "skill_name" : "魁鬼仰鬥撩綠欄",
         "damage_type":  "瘀傷"
 ]),
-([      "action": "只見$N運足氣力使出「出勢跨虎西岳傳」，連攻數拳，全部擊向$n的$l",
+([      "action": "只見$N運足氣力使出「出勢跨虎西嶽傳」，連攻數拳，全部擊向$n的$l",
         "force" : 220,
         "attack": 51,
         "dodge" : 57,
         "parry" : 20,
         "damage": 32,
         "lvl"   : 160,
-        "skill_name" : "出勢跨虎西岳傳",
+        "skill_name" : "出勢跨虎西嶽傳",
         "damage_type":  "瘀傷"
 ]),
 ([      "action": "$N往後一縱，就勢使了個「白猿偷桃拜天庭」，右腿掃向$n的$l",
@@ -121,16 +121,16 @@ int valid_enable(string usage)
 int valid_learn(object me)
 {
         if( query_temp("weapon", me) || query_temp("secondary_weapon", me) )
-                return notify_fail("練西岳華拳必須空手。\n");
+                return notify_fail("練西嶽華拳必須空手。\n");
 
         if( query("max_neili", me)<200 )
-                return notify_fail("你的內力不夠，無法練習西岳華拳。\n");
+                return notify_fail("你的內力不夠，無法練習西嶽華拳。\n");
 
         if ((int)me->query_skill("cuff", 1) < 40)
                 return notify_fail("你的基本拳法火候太淺。\n");
 
         if ((int)me->query_skill("cuff", 1) < (int)me->query_skill("hua-quan", 1))
-                return notify_fail("你的基本拳法火候有限，無法領會更高深的西岳華拳。\n");
+                return notify_fail("你的基本拳法火候有限，無法領會更高深的西嶽華拳。\n");
 
         return 1;
 }
@@ -155,10 +155,10 @@ mapping query_action(object me, object weapon)
 int practice_skill(object me)
 {
         if( query("qi", me)<70 )
-                return notify_fail("你現在手足酸軟，休息一下再練吧。\n");
+                return notify_fail("你現在手足痠軟，休息一下再練吧。\n");
 
         if( query("neili", me)<60 )
-                return notify_fail("你的內力不夠練習西岳華拳。\n");
+                return notify_fail("你的內力不夠練習西嶽華拳。\n");
 
         me->receive_damage("qi", 65);
         addn("neili", -40, me);

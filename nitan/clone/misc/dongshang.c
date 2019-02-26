@@ -1,4 +1,4 @@
-// dongshang.c 袪瘡粉
+// dongshang.c 祛瘡粉
 
 inherit ITEM;
 #include <ansi.h>
@@ -13,7 +13,7 @@ void init()
 
 void create()
 {
-        set_name(HIC"袪瘡粉"NOR, ({"quchuang fen", "quchuangfen"}));
+        set_name(HIC"祛瘡粉"NOR, ({"quchuang fen", "quchuangfen"}));
         if (clonep())
                 set_default_object(__FILE__);
         else {
@@ -37,7 +37,7 @@ int do_mo(string arg)
                 return 1;
         } else {
                 me->clear_condition("ill_dongshang");
-                message_vision("$N把袪瘡粉抹在凍傷的地方，凍瘡消去了不少。\n", me);
+                message_vision("$N把祛瘡粉抹在凍傷的地方，凍瘡消去了不少。\n", me);
                 me->start_busy(2);
                 destruct(this_object());
                 return 1;

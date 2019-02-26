@@ -15,7 +15,7 @@ void create()
                 set("value", 10);
                 set("material", "iron");                             
                 set("long", "這是一副法鈴，搖起來叮叮鐺鐺亂響。\n");
-                set("wield_msg", "$N從腰間抽出一副$n，握在手裡。\n");
+                set("wield_msg", "$N從腰間抽出一副$n，握在手裏。\n");
                 set("unequip_msg", "$N將$n收起來，掛回腰間。\n");
         }
         init_hammer(1);

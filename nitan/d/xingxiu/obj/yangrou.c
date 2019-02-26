@@ -11,7 +11,7 @@ void create()
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("long", "一串香噴噴的羊肉串，上面沾滿了孜然和辣椒面。\n");
+                set("long", "一串香噴噴的羊肉串，上面沾滿了孜然和辣椒麪。\n");
                 set("unit", "串");
                 set("value", 200);
                 set("food_remaining", 3);

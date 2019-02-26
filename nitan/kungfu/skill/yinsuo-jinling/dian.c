@@ -48,7 +48,7 @@ int perform(object me, object target)
                 return notify_fail("你沒有激發銀索金鈴，無法施展" +name()+ "！\n");
 
         if (! living(target))
-                return notify_fail("對方都已經這樣了，用不著這麼費力吧？\n");
+                return notify_fail("對方都已經這樣了，用不着這麼費力吧？\n");
 
         msg = HIY "\n$N手上金鈴飛出，使出銀索金鈴的上乘隔空點穴功夫，直取$n的大椎穴。\n\n"NOR;
 
@@ -67,9 +67,9 @@ int perform(object me, object target)
                                 switch (random(2))
                                 {
                                 case 0:
-                                        msg += HIR "$n連續變了幾種上乘身法，終于沒能躲過，"
+                                        msg += HIR "$n連續變了幾種上乘身法，終於沒能躲過，"
                                                 "$N的金鈴正點在$n的檀中穴上，$n只覺得一口"
-                                                "涼氣，自丹田而上，心裡有種說不出的難受。\n";
+                                                "涼氣，自丹田而上，心裏有種説不出的難受。\n";
                                         damage = 3;
                                         break;
                                 case 1:
@@ -100,13 +100,13 @@ int perform(object me, object target)
                                 {
                                 case 0:
                                         msg += HIR "$n看到這招，竟然不知躲避，「嗤」的一聲，$N"
-                                                "的金鈴正點在$n大椎穴上，$n全身酸軟,跌倒在地。\n";
+                                                "的金鈴正點在$n大椎穴上，$n全身痠軟,跌倒在地。\n";
 //                                        target->unconcious();
                                         damage = 5;
                                         break;
                                 case 1:
                                         msg += HIR "$n一轉念，已經想出了九十九種化解的辦法，"
-                                                "尚未來得及施展，只聽「嗤」的一聲，已被$N點中大椎穴，全身酸軟，跌倒在地。\n";
+                                                "尚未來得及施展，只聽「嗤」的一聲，已被$N點中大椎穴，全身痠軟，跌倒在地。\n";
 //                                        target->unconcious();
                                         damage = 5;
                                         break;

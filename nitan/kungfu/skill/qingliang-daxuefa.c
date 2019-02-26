@@ -31,7 +31,7 @@ mapping *action = ({
         "skill_name" : "追風逐電",
         "damage_type" : "刺傷"
 ]),
-([      "action":"$N手中的$w自左而右地一晃，使出「飛黃騰達」帶著呼呼風聲橫打$n的章門穴",
+([      "action":"$N手中的$w自左而右地一晃，使出「飛黃騰達」帶着呼呼風聲橫打$n的章門穴",
         "force" : 190,
         "attack": 50,
         "dodge" : 5,
@@ -41,7 +41,7 @@ mapping *action = ({
         "skill_name" : "飛黃騰達",
         "damage_type" : "刺傷"
 ]),
-([      "action":"$N飛身躍起，一式「快馬加鞭」，卷起漫天筆影，$w向$n電射而去",
+([      "action":"$N飛身躍起，一式「快馬加鞭」，捲起漫天筆影，$w向$n電射而去",
         "force" : 240,
         "attack": 60,
         "dodge" : 10,
@@ -61,17 +61,17 @@ mapping *action = ({
         "skill_name" : "靈台觀景",
         "damage_type" : "刺傷"
 ]),
-([      "action":"$N使出一招「群山疊影」挺筆中宮直進，筆尖顫動，中途忽然轉而向上變幻無方",
+([      "action":"$N使出一招「羣山疊影」挺筆中宮直進，筆尖顫動，中途忽然轉而向上變幻無方",
         "force" : 280,
         "attack": 70,
         "dodge" : 5,
         "parry" : 52,
         "damage": 75,
         "lvl"   : 140,
-        "skill_name" : "群山疊影",
+        "skill_name" : "羣山疊影",
         "damage_type" : "刺傷"
 ]),
-([      "action":"$N側身斜刺一筆，一招「風雷卷破」卷帶著呼呼筆風，將$n包圍緊裹",
+([      "action":"$N側身斜刺一筆，一招「風雷卷破」卷帶着呼呼筆風，將$n包圍緊裹",
         "force" : 310,
         "attack": 75,
         "dodge" : 5,

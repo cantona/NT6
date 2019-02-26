@@ -26,7 +26,7 @@ int do_enter(string arg)
         object me;
         me = this_player();
         if( !arg || arg!="hole" ) return 0;
-        message("vision", me->name() + "一彎腰往洞裡走下去。\n", environment(me), ({me}) );
+        message("vision", me->name() + "一彎腰往洞裏走下去。\n", environment(me), ({me}) );
         me->move("/d/shiliang/andao1");
         message("vision", me->name() + "從上面走了下來。\n", environment(me), ({me}) );
         return 1;

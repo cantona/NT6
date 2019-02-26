@@ -7,7 +7,7 @@ inherit NPC;
 void create()
 {
         set_name("姚清泉", ({ "yao qingquan", "yao" }));
-        set("nickname",HIC"千裡追風"NOR);
+        set("nickname",HIC"千里追風"NOR);
         set("gender", "男性");
         set("age", 45);
 

@@ -1,5 +1,5 @@
 // This program is a part of NITAN MudLIB
-// zhang.c 張三豐
+// zhang.c 張三丰
 
 inherit NPC;
 inherit F_MASTER;
@@ -35,11 +35,11 @@ int try_to_learn_jy();
 void create()
 {
         object ob;
-        set_name("張三豐", ({ "zhang sanfeng", "zhang" }));
+        set_name("張三丰", ({ "zhang sanfeng", "zhang" }));
         set("nickname", "邋遢真人");
         set("long",
-                "這就是武當派開山鼻祖、當今武林的泰山北鬥張三豐真人。\n"
-                "但見他身穿一襲污穢的灰布道袍，身形高大異常，須發如銀，\n"
+                "這就是武當派開山鼻祖、當今武林的泰山北斗張三丰真人。\n"
+                "但見他身穿一襲污穢的灰佈道袍，身形高大異常，鬚髮如銀，\n"
                 "臉上紅潤光滑，笑眯眯的甚是可親，此外也無特異情狀。\n");
         set("gender", "男性");
         set("age", 100);
@@ -118,7 +118,7 @@ void create()
                 "真武除邪"   : (: ask_skill11 :),
                 "太極劍意"   : (: ask_skill12 :),
                 "煉丹術"     : (: ask_medicine :),
-                "制藥"       : (: ask_medicine :),
+                "製藥"       : (: ask_medicine :),
                 "武當九陽"   : (: ask_to_learn_jy :),
                 "三黃寶臘丹" : "等你學好了煉丹術，以後自己制吧。",
                 "玉清散"     : "嗯...等你通曉了煉丹術的奧妙，自己慢慢制吧。",
@@ -186,7 +186,7 @@ void attempt_apprentice(object ob)
         {
                 command("say 我武當派乃內家武功，最重視內功心法。");
                 command("say " + RANK_D->query_respect(ob) +
-                        "是否還應該在氤氳紫氣上多下點功夫？");
+                        "是否還應該在氤氲紫氣上多下點功夫？");
                 return;
         }
 
@@ -247,7 +247,7 @@ mixed ask_skill1()
 
         message_sort(HIY "\n$n" HIY "微微一笑，伸出一指，出手如風，陡然"
                      "點在$N" HIY "耳緣三分處，$N" HIY "頓時只覺$n" HIY
-                     "內力的源源不絕，澎湃湧入，全身一陣酸麻，不禁大驚"
+                     "內力的源源不絕，澎湃湧入，全身一陣痠麻，不禁大驚"
                      "失色。\n\n" NOR, me, this_object());
 
         command("say 你懂了嗎？");
@@ -401,7 +401,7 @@ mixed ask_skill4()
                      "、沉肩墜肘」的訣竅，你又做到了多少？”\n\n" NOR,
                      me, this_object());
 
-        command("say 當牢記借力而生，著力而發，反施其身。");
+        command("say 當牢記借力而生，着力而發，反施其身。");
         command("say 道理便是如此，下去後慢慢體會吧。");
         tell_object(me, HIC "你學會了「擠字訣」。\n" NOR);
         if (me->can_improve_skill("cuff"))
@@ -566,7 +566,7 @@ mixed ask_skill7()
 
         message_sort(HIY "\n$n" HIY "微微笑了笑，伸出一指，以指作劍，開"
                      "始慢慢的演示劍招。從起手勢一直到五十三式「指南針」"
-                     "，雙手同時畫圓，復成第五十四式「持劍歸原」。直待一"
+                     "，雙手同時畫圓，覆成第五十四式「持劍歸原」。直待一"
                      "套劍法演示完畢，$n" HIY "這才向$N" HIY "問到：“這"
                      "太極劍招中的劍意，你又明白了多少？”\n\n" NOR, me,
                      this_object());
@@ -610,7 +610,7 @@ mixed ask_skill8()
 
         message_sort(HIY "\n$n" HIY "微微笑了笑，伸出一指，以指作劍，開"
                      "始慢慢的演示劍招。從起手勢一直到五十三式「指南針」"
-                     "，雙手同時畫圓，復成第五十四式「持劍歸原」。直待一"
+                     "，雙手同時畫圓，覆成第五十四式「持劍歸原」。直待一"
                      "套劍法演示完畢，$n" HIY "這才向$N" HIY "問到：“這"
                      "太極劍招中的劍意，你又明白了多少？”\n\n" NOR, me,
                      this_object());
@@ -655,7 +655,7 @@ mixed ask_skill9()
 
         message_sort(HIY "\n$n" HIY "微微笑了笑，伸出一指，以指作劍，開"
                      "始慢慢的演示劍招。從起手勢一直到五十三式「指南針」"
-                     "，雙手同時畫圓，復成第五十四式「持劍歸原」。直待一"
+                     "，雙手同時畫圓，覆成第五十四式「持劍歸原」。直待一"
                      "套劍法演示完畢，$n" HIY "這才向$N" HIY "問到：“這"
                      "太極劍招中的劍意，你又明白了多少？”\n\n" NOR, me,
                      this_object());
@@ -700,7 +700,7 @@ mixed ask_skill10()
 
         message_sort(HIY "\n$n" HIY "微微笑了笑，伸出一指，以指作劍，開"
                      "始慢慢的演示劍招。從起手勢一直到五十三式「指南針」"
-                     "，雙手同時畫圓，復成第五十四式「持劍歸原」。"
+                     "，雙手同時畫圓，覆成第五十四式「持劍歸原」。"
                      "太極劍招中的劍意，你又明白了多少？”\n\n" NOR, me,
                      this_object());
 
@@ -791,13 +791,13 @@ mixed ask_skill12()
                 return "你的門派技能天威正氣還沒有修煉到家，要多練練！";
         
         message_sort(HIY "\n$n" HIY "身形一轉，手中之劍輕靈而出，猶如碧波盪漾，蜿蜒"
-                              "而出，形態飄逸瀟洒之極，頗具$HIG$太□$HIY$之意……\n\n$N" 
-                              HIY "接著道：這招的關鍵就是要領悟太極真意，從而將太極劍"
+                              "而出，形態飄逸瀟灑之極，頗具$HIG$太極$HIY$之意……\n\n$N" 
+                              HIY "接着道：這招的關鍵就是要領悟太極真意，從而將太極劍"
                               "威力發揮到極至。\n\n" NOR, me, this_object());
 
         command("haha");
         command("say 你可明白了？");        
-        tell_object(me, HIC "你學會了「太□□意」。\n" NOR);
+        tell_object(me, HIC "你學會了「太極劍意」。\n" NOR);
         if (me->can_improve_skill("sword"))
                 me->improve_skill("sword", 1500000);
         if (me->can_improve_skill("taiji-jian"))
@@ -844,7 +844,7 @@ mixed ask_jian()
         if( query("family/first", me) ) cost = 250;
         else cost = 500;
         if( query("family/gongji", me) < cost )
-                return "你為我武當派效力還不夠，等你擁有足夠的師門功績再來兌換真武劍使用時間吧。";
+                return "你為我武當派效力還不夠，等你擁有足夠的師門功績再來兑換真武劍使用時間吧。";
 
         ob = find_object(ZHENWU_SWORD);
         if (! ob) ob = load_object(ZHENWU_SWORD);
@@ -915,8 +915,8 @@ mixed ask_medicine()
 
         if ((int)me->query_skill("liandan-shu", 1) < 100)
         {
-                command("say 你對煉丹術的了解太淺，等你學得再"
-                        "好一些我才能把秘本傳與你。");
+                command("say 你對煉丹術的瞭解太淺，等你學得再"
+                        "好一些我才能把祕本傳與你。");
                 return 1;
         }
 
@@ -963,7 +963,7 @@ mixed ask_to_learn_jy()
         case 9:
                 if (player->query_skill("taiji-shengong", 1) < 200)
                 {
-                        return "你的功力尚淺，好好學全了武當太極功再說吧。\n";
+                        return "你的功力尚淺，好好學全了武當太極功再説吧。\n";
                 }
 
                 obj = 0;
@@ -980,7 +980,7 @@ mixed ask_to_learn_jy()
                 message_vision("$N給$n一部九陽神功殘篇。\n", this_object(), player);
                 command("rumor"+query("name", this_player())+"弄到了一部"NOR+YEL"九陽神功殘篇"HIM"。"NOR);
                 return "我將心中記得的一些九陽神功筆錄在此，\n"+
-                       "你可找一位少林派高手與之共同參悟(canwu)，也好讓這功夫不至于失傳。\n";
+                       "你可找一位少林派高手與之共同參悟(canwu)，也好讓這功夫不至於失傳。\n";
         }
         return 0;
 }
@@ -999,15 +999,15 @@ mixed ask_to_learn_jy()
                 return "昔日《九陽真經》在我師父覺遠大師手中丟失，現在也不知道流落何方。";
 
         if( !query("can_learn/jiuyang-shengong/shaolin", me) )
-                return "唉，如果當時能夠追回《九陽真經》，覺遠大師也不至于落難。";
+                return "唉，如果當時能夠追回《九陽真經》，覺遠大師也不至於落難。";
 
-        message_vision(CYN "\n張三豐仔細打量了$N" CYN "好一陣，目光陡然一亮。\n\n" NOR, me);
+        message_vision(CYN "\n張三丰仔細打量了$N" CYN "好一陣，目光陡然一亮。\n\n" NOR, me);
 
         command("say 你不就是當年還送經書予覺遠大師之人嗎？");
         command("say 所謂‘大恩不言謝’，這九陽神功老道倒是通曉一點，現已化為武當九陽功。");
-        command("say 如果閣下不嫌棄，老道倒是可以將這套九陽功傳授于你。");
+        command("say 如果閣下不嫌棄，老道倒是可以將這套九陽功傳授於你。");
 
-        tell_object(me, HIC "張三豐同意傳授你「武當九陽功」。\n" NOR);
+        tell_object(me, HIC "張三丰同意傳授你「武當九陽功」。\n" NOR);
 
         if (me->can_improve_skill("martial-cognize"))
                 improve_skill("martial-cognize", 1500000);
@@ -1033,7 +1033,7 @@ int try_to_learn_jy()
                 {
                         command("say 武當九陽神功乃是九陽神功的分支，我少"
                                 "年時得師父覺遠大師所授。");
-                        command("say 雖然這武功在我手裡有所改動，但它還是"
+                        command("say 雖然這武功在我手裏有所改動，但它還是"
                                 "少林的武功，就算是我的弟子也不傳授。");
                         return -1;
                 }
@@ -1069,7 +1069,7 @@ int recognize_apprentice(object me, string skill)
                 {
                         command("say 武當九陽神功乃是九陽神功的分支，我少"
                                 "年時得師父覺遠大師所授。");
-                        command("say 雖然這武功在我手裡有所改動，但它還是"
+                        command("say 雖然這武功在我手裏有所改動，但它還是"
                                 "少林的武功，就算是我的弟子也不傳授。");
                         return -1;
                 }
@@ -1089,7 +1089,7 @@ int accept_ask(object me, string topic)
         {
         case "歷練" :
         case "歷煉" :
-        case "鍛煉" :
+        case "鍛鍊" :
                 return QUEST_D->accept_ask(this_object(), me, topic);
                 break;
 

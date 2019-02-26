@@ -2,7 +2,7 @@
 // /d/zhongnan/obj/qz_force.c 玄門內功心法
 /*
         修正內力計算方法
-        修正使用者躲于safe room使用避免使者的不當之使用方式
+        修正使用者躲於safe room使用避免使者的不當之使用方式
         修正使用者在坐騎上修煉內力亦可行動之BUG
         mantian /may/1/2001
 */
@@ -10,9 +10,9 @@
 
 inherit ITEM;
 string *koujue = ({
-                                         "《修真活計有何憑，心死群情今不生》",
+                                         "《修真活計有何憑，心死羣情今不生》",
                                          "《精氣充盈功行具，靈光照耀滿神京》",
-                                         "《秘語師傳悟本初，來時無久去無餘》",
+                                         "《祕語師傳悟本初，來時無久去無餘》",
                                          "《歷年塵垢揩磨盡，偏體靈明耀太虛》"
 });
 
@@ -40,7 +40,7 @@ void create()
         else
         {
                 set("unit", "本");
-                set("long", "這是一本線裝書，上書《玄門內功心法》，原來是全真教的練氣(lianqi)秘籍。\n");
+                set("long", "這是一本線裝書，上書《玄門內功心法》，原來是全真教的練氣(lianqi)祕籍。\n");
                 set("value", 5000);
                 set("material", "paper");
                 set("skill", ([
@@ -69,16 +69,16 @@ int do_dazuo(string arg)
                 return notify_fail("你還是專心拱豬吧！\n");
 
         if( query("sleep_room", where) )
-                return notify_fail("不能在睡房裡修煉內功，這會影響他人。\n");
+                return notify_fail("不能在睡房裏修煉內功，這會影響他人。\n");
 
         if( query("no_fight", where) )
                 return notify_fail("你不能集中精神，只感體內真氣亂竄，無法專心修練內功。\n");
 
-        if( query("name", where) == "大車裡" )
-                return notify_fail("車裡太顛簸, 修練內功會走火入魔. \n");
+        if( query("name", where) == "大車裏" )
+                return notify_fail("車裏太顛簸, 修練內功會走火入魔. \n");
 
         if( me->is_busy() || query_temp("pending/exercising", me) )
-                return notify_fail("你現在正忙著呢。\n");
+                return notify_fail("你現在正忙着呢。\n");
 
         if( me->is_fighting() )
                 return notify_fail("戰鬥中不能練內功，會走火入魔。\n");
@@ -100,7 +100,7 @@ int do_dazuo(string arg)
         if( query("jing", me)*100/query("max_jing", me)<70 )
                 return notify_fail("你現在精不夠，無法控制內息的流動！\n");
 
-        write("你按著玄門內功心法的氣訣坐下來運氣用功，一股內息開始在體內流動。\n");
+        write("你按着玄門內功心法的氣訣坐下來運氣用功，一股內息開始在體內流動。\n");
 
         set_temp("pending/exercise", 1, me);
         set_temp("exercise_cost", exercise_cost, me);
@@ -127,7 +127,7 @@ int exercising(object me)
 
         if( me->query_skill_mapped("force") == "xiantian-gong" )
         {
-                write("你默念著"+koujue[random(4)]+"，只覺得一股內息在體內迅速流動，全身都感到舒暢無比。\n");
+                write("你默唸着"+koujue[random(4)]+"，只覺得一股內息在體內迅速流動，全身都感到舒暢無比。\n");
 
                 me->receive_damage("qi", cost);
                 me->receive_damage("jing", cost/10);
@@ -139,12 +139,12 @@ int exercising(object me)
                 {
                         if(me->query_skill_mapped("force") == "bitao-xuangong")
                         {
-                                write("你默念著"+koujue[random(4)]+"，只覺得一股內息在體內竄來竄去，讓你覺得不對勁，難道是走火入魔的前兆？\n");
+                                write("你默唸着"+koujue[random(4)]+"，只覺得一股內息在體內竄來竄去，讓你覺得不對勁，難道是走火入魔的前兆？\n");
                                 cost = neili_gain + random(neili_gain*100);
                         }
                         else
                         {
-                                write("你默念著"+koujue[random(4)]+"，只覺得一股內息在體內竄來竄去，讓你覺得不對勁。\n");
+                                write("你默唸着"+koujue[random(4)]+"，只覺得一股內息在體內竄來竄去，讓你覺得不對勁。\n");
                                 cost = neili_gain + random(neili_gain*10);
                                 me->receive_damage("qi", cost);
                                 set_temp("die_reason", "打坐走火入魔死了", me);
@@ -152,7 +152,7 @@ int exercising(object me)
                         }
                         else
                         {
-                        write("你念著"+koujue[random(4)]+"，似乎有點體會，只覺得一股內息在體內迅速流動，全身都感到舒暢無比。\n");
+                        write("你念着"+koujue[random(4)]+"，似乎有點體會，只覺得一股內息在體內迅速流動，全身都感到舒暢無比。\n");
 
                         me->receive_damage("qi", cost, "打坐走火入魔死了");
                         me->receive_damage("jing", cost/10, "打坐走火入魔死了");

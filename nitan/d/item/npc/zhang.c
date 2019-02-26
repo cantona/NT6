@@ -34,12 +34,12 @@ void create()
 
         set("inquiry", ([
                 "開光" : (: ask_me :),
-                "沒錢" : "沒錢就去賺，跟我說什麼。",
+                "沒錢" : "沒錢就去賺，跟我説什麼。",
                 "窮"   : "看你也是一副窮命。",
                 "魔法" : "魔法？什麼玩藝？",
                 "法術" : "法術還分很多種呢，道術、妖術、仙術不一而足。",
                 "道術" : "道術？這可是本源正宗！",
-                "妖術" : "妖術啊，趨于下乘，不足為提。",
+                "妖術" : "妖術啊，趨於下乘，不足為提。",
                 "仙術" : "仙術只好算是中乘，還是不能和道術相比。",
                 "浸入" : "你要是不行我可以幫你看看(show)浸入需要用什麼物品。",
         ]));
@@ -59,7 +59,7 @@ int ask_me()
         command("heihei");
         command("say 我只給神兵利器開光，尋常刀劍莫提！要"
                 "你本人的，我可不能幫你做壞事！");
-        tell_object(this_player(), GRN "張天師在你耳邊悄悄說："
+        tell_object(this_player(), GRN "張天師在你耳邊悄悄説："
                     "你把要開光的拿出來給我看看(show)！\n" NOR);
         return 1;
 }
@@ -90,15 +90,15 @@ int do_show(string arg)
                 return notify_fail("你身上沒有這種東西。\n");
 
         if( query("equipped", ob) )
-                return notify_fail("你先解除" + ob->name() + "的裝備再說！\n");
+                return notify_fail("你先解除" + ob->name() + "的裝備再説！\n");
 
         message_vision("$n拿出一"+query("unit", ob)+ob->name()+
-                       "對$N說：“拜托拜托...”\n",
+                       "對$N説：“拜託拜託...”\n",
                        this_object(), me);
 
         if( query("money_id", ob) )
         {
-                command("say 你亮出錢幹什麼？想獻給觀裡？那就給我好了。");
+                command("say 你亮出錢幹什麼？想獻給觀裏？那就給我好了。");
                 return 1;
         }
 
@@ -106,7 +106,7 @@ int do_show(string arg)
         {
                 command("heihei");
                 command("say 這...怎麼也的有點意思意思吧？你"
-                        "說十兩黃金怎麼樣？當然多些我也不反對。");
+                        "説十兩黃金怎麼樣？當然多些我也不反對。");
                 return 1;
         }
 
@@ -115,10 +115,10 @@ int do_show(string arg)
                 imbue_ob=new(query("magic/imbue_ob", ob));
                 if (! objectp(imbue_ob))
                 {
-                       command("say 你的物件有點問題，得和巫師聯系！");
+                       command("say 你的物件有點問題，得和巫師聯繫！");
                        return 1;
                 }
-                tell_object(me, HIG "張天師悄悄對你說道：“恩...我看看，應該用" +
+                tell_object(me, HIG "張天師悄悄對你説道：“恩...我看看，應該用" +
                             imbue_ob->name() + HIG "浸入它才能進一步激發它的潛力。”\n");
                 delete_temp("paid/張天師", me);
                 destruct(imbue_ob);
@@ -142,7 +142,7 @@ int do_show(string arg)
         if( ob->item_owner() != query("id", me) )
         {
                 command("kick"+query("id", me));
-                command("say 你以為本山人的仙術是蒙事的啊，這分明不是你的！");
+                command("say 你以為本山人的仙術是矇事的啊，這分明不是你的！");
                 return 1;
         }
 
@@ -156,7 +156,7 @@ int do_show(string arg)
                 } else
                 {
                         command("kok"+query("id", me));
-                        command("say 你和它已經有緣了！我說你的"
+                        command("say 你和它已經有緣了！我説你的"
                                 "記性怎麼這麼差？");
                 }
                 return 1;
@@ -165,10 +165,10 @@ int do_show(string arg)
         message("vision", sort_string(HIM + name() + "從口袋中摸出一張黃色"
                                 "的符紙，抽出背後的桃木劍，"
                                 "將那符紙點燃了，掃過" + ob->name() + HIM "，然"
-                                "後用桃木劍穿了，手舞足蹈，口中念念有詞："
-                                "“太上老君急急如律賜令！”說罷一抖掌中劍，"
+                                "後用桃木劍穿了，手舞足蹈，口中唸唸有詞："
+                                "“太上老君急急如律賜令！”説罷一抖掌中劍，"
                                 "喝道：“疾”！\n" NOR, 64), environment());
-        message_vision("燄光劃出一道光華，$N發了發呆，也不知道算是怎麼回事。\n",
+        message_vision("焰光劃出一道光華，$N發了發呆，也不知道算是怎麼回事。\n",
                        me);
         command("say 行了，行了！你可以走了。");
         delete_temp("paid/張天師", me);
@@ -189,7 +189,7 @@ int accept_object(object who, object ob)
 
         if (ob->value() < 50000)
         {
-                command("say 算是給觀裡的香火麼？那我就收下了！");
+                command("say 算是給觀裏的香火麼？那我就收下了！");
                 return 1;
         }
 
@@ -210,7 +210,7 @@ int accept_object(object who, object ob)
 void fight_ob(object ob)
 {
         ::fight_ob(ob);
-        message_vision("$N冷笑一聲，道：“這年頭，什麼人都有。”說完伸手一指$n。\n",
+        message_vision("$N冷笑一聲，道：“這年頭，什麼人都有。”説完伸手一指$n。\n",
                        this_object(), ob);
         ob->unconcious();
 }

@@ -9,7 +9,7 @@ void create()
         set("race", "走獸");
         set("age", 20);
         set("long", @LONG
-一只矯健輕快的猛虎，雄偉極了。
+一隻矯健輕快的猛虎，雄偉極了。
 
 
     ("`-''-/").___..--''"`-.
@@ -34,7 +34,7 @@ LONG);
         setup();
         set("chat_chance", 10);
         set("chat_msg", ({
-                "老虎在濬巡，嚇得你大氣都不敢出。\n",
+                "老虎在浚巡，嚇得你大氣都不敢出。\n",
                 "老虎仰天長嘯，聲震山谷，黃葉紛墜。\n",
         }) );
 }
@@ -58,8 +58,8 @@ void greeting(object ob)
         if( ob->query_dex()<20 && !query_temp("owner", this_object()) )
         {
                 message_vision( "只見發起一陣狂風。
-只聽得亂樹背後撲地一聲響，跳出一只吊睛白額大蟲來。
-那大蟲又餓，又渴，把兩只爪在地上略按一按，和身望你一撲，從半空裡攛將下來。\n",ob);
+只聽得亂樹背後撲地一聲響，跳出一隻吊睛白額大蟲來。
+那大蟲又餓，又渴，把兩隻爪在地上略按一按，和身望你一撲，從半空裏攛將下來。\n",ob);
                 message_vision("$N這一下沒有躲開，為虎所傷暈了過去。\n\n",ob);
                 ob->receive_wound("qi",20);
                 ob->start_busy(2);

@@ -25,7 +25,7 @@ int perform(object me, object target)
 
         if( !objectp(weapon=query_temp("handing", me)) || 
             query("skill_type", weapon) != "throwing" )
-                return notify_fail("你現在手中沒有拿著暗器，難以施展" XING "。\n");
+                return notify_fail("你現在手中沒有拿着暗器，難以施展" XING "。\n");
 
         if (weapon->query_amount() < 15)
                 return notify_fail("至少要有十五枚暗器才能施展" XING "。\n");
@@ -46,7 +46,7 @@ int perform(object me, object target)
                 return notify_fail("對方已經中了你的絕招，現在是廢人一個，趕快進攻吧！\n");
 
         if (! living(target))
-                return notify_fail("對方都已經這樣了，用不著這麼費力吧？\n");
+                return notify_fail("對方都已經這樣了，用不着這麼費力吧？\n");
 
         addn("neili", -100, me);
         weapon->add_amount(-15);
@@ -105,8 +105,8 @@ int perform(object me, object target)
                         call_out("back", 2 + random(skill / 15), target);
                 } else
                 {
-                        msg += HIR "$n" HIR "集中生智，雙手畫圈回旋揮舞，撥弄"
-                               "開了要害處的殺著，可還是受了點輕傷。\n" NOR;
+                        msg += HIR "$n" HIR "集中生智，雙手畫圈迴旋揮舞，撥弄"
+                               "開了要害處的殺着，可還是受了點輕傷。\n" NOR;
 
                         target->receive_damage("qi", 100);
                         target->receive_wound("qi", 40);
@@ -124,7 +124,7 @@ int perform(object me, object target)
         } else
         {
                  msg += CYN "可是$n" CYN "小巧騰挪，好不容易避開了"
-                        CYN "$N" CYN "舖天蓋地的攻擊。\n" NOR;
+                        CYN "$N" CYN "鋪天蓋地的攻擊。\n" NOR;
                  me->start_busy(3);
                  message_combatd(msg, me, target);
         }

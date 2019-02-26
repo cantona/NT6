@@ -22,11 +22,11 @@ string resolvePath(string path,int op)
         {
                 //dn=dn-({dn[sizeof(dn)-1]});
                 //tmp=implode(dn,"/")+"/";
-                //上面的程序不好，不能對同名路徑正確處理，比如不能在/log/log文件裡搜索
+                //上面的程序不好，不能對同名路徑正確處理，比如不能在/log/log文件裏搜索
                 tmp="/";
                 for(i=0;i<sizeof(dn)-1;i++)
                 {
-                        //write("合並"+dn[i]+"\n");
+                        //write("合併"+dn[i]+"\n");
                         tmp+=dn[i]+"/";
                 }
                 return tmp;
@@ -45,7 +45,7 @@ int main(object me, string arg)
         if (!arg) return help();
         
         if( !wizardp(me) && time()-query_temp("last_grep", me)<30 )
-                return notify_fail("系統氣喘噓地嘆道：慢慢來 ....\n");   
+                return notify_fail("系統氣喘噓地歎道：慢慢來 ....\n");   
 
         if (sscanf(arg,"%s %s",path,pattern)!=2)
                     return help();
@@ -85,7 +85,7 @@ int do_grep(string path,string wild,int level)
 {
         //int i;string *fs;
         string sbuffer,file;
-        reset_eval_cost();//重新設置剩余執行時間，必須設置！
+        reset_eval_cost();//重新設置剩餘執行時間，必須設置！
         if( query("env/debug", this_player()) )
                 write("開始搜索"+path+wild+"\n");
         if(level<0)
@@ -138,7 +138,7 @@ int help()
         write(@HELP
 指令格式：grep <help/news/all> 查找內容
 
-該指令功能相當強大，用于在相應地方或全局搜索指定查找的內容。
+該指令功能相當強大，用於在相應地方或全局搜索指定查找的內容。
 
 help:   在所有help文件中搜索。
 news:   在所有的新聞中搜索。

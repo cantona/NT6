@@ -31,7 +31,7 @@ int perform(object me, object target)
                 return notify_fail("你一陽指訣不夠嫻熟，難以施展" + name() + "。\n");
 
         if ((int)me->query_skill("jingluo-xue", 1) < 200)
-                return notify_fail("你對經絡學了解不夠，難以施展" + name() + "。\n");
+                return notify_fail("你對經絡學瞭解不夠，難以施展" + name() + "。\n");
 
         if (me->query_skill_mapped("finger") != "sun-finger")
                 return notify_fail("你沒有激發一陽指訣，難以施展" + name() + "。\n");
@@ -49,7 +49,7 @@ int perform(object me, object target)
                 return notify_fail("你現在的真氣不夠，難以施展" + name() + "。\n");
 
         if (! living(target))
-                return notify_fail("對方都已經這樣了，用不著這麼費力吧？\n");
+                return notify_fail("對方都已經這樣了，用不着這麼費力吧？\n");
 
         damage = damage_power(me, "finger");
         if( (n = me->query_skill("qimai-liuzhuan", 1) / 100) >= 1 )
@@ -63,7 +63,7 @@ int perform(object me, object target)
         if( objectp(weapon=query_temp("weapon", target)) )
         {
                 wp = weapon->name();
-                msg += "$N" HIW "單指一揚，徑點$n" HIW "持著" + wp + NOR + HIW
+                msg += "$N" HIW "單指一揚，徑點$n" HIW "持着" + wp + NOR + HIW
                        "的手腕上「" HIY "腕骨" HIW "」、「" HIY "陽谷" HIW "」"
                        "、「" HIY "養老" HIW "」三穴。\n" NOR;
 
@@ -73,19 +73,19 @@ int perform(object me, object target)
                 if (ap / 2 + random(ap) > dp)
                 {
                         msg += HIR "霎時間$n" HIR "只覺得手腕一麻，手中" + wp +
-                               HIR "再也拿持不住，脫手掉在地上。\n\n" HIW "緊"
-                               "接著";
+                               HIR "再也拿持不住，脱手掉在地上。\n\n" HIW "緊"
+                               "接着";
                         addn("neili", -150, me);
                         weapon->move(environment(target));
                 } else
                 {
                         msg += CYN "可是$n" CYN "將手中" + wp + NOR + CYN "轉"
-                               "動如輪，終于化解了這一招。\n\n" HIW "緊接著";
+                               "動如輪，終於化解了這一招。\n\n" HIW "緊接着";
                         addn("neili", -100, me);
                 }
         }
 
-        msg += "$N" HIW "凝氣于指，一式「" HIR "陽關三疊" HIW "」點出，頓時一股"
+        msg += "$N" HIW "凝氣於指，一式「" HIR "陽關三疊" HIW "」點出，頓時一股"
                "純陽的內力直襲$n" HIW "胸口！\n" NOR;
         if (ap / 2 + random(ap) > dp)
         {
@@ -105,7 +105,7 @@ int perform(object me, object target)
         ap = attack_power(me, "finger");
         dp = defense_power(target, "dodge");
 
-        msg += "\n" HIW "接著$N" HIW "踏前一步，體內真氣迸發，隔空一指勁點$n" HIW
+        msg += "\n" HIW "接着$N" HIW "踏前一步，體內真氣迸發，隔空一指勁點$n" HIW
                "而去，指氣縱橫，嗤然作響！\n" NOR;
         if (ap / 2 + random(ap) > dp)
         {
@@ -156,7 +156,7 @@ int perform(object me, object target)
 
         if( !query("neili", target) )
                 tell_object(target, HIC "你只覺丹田內竟似空空如也，一時"
-                                    "說不出的難受。\n" NOR);
+                                    "説不出的難受。\n" NOR);
 
         return 1;
 }

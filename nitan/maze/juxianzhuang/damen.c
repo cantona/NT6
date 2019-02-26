@@ -8,7 +8,7 @@ void create()
         set("long",  @LONG
 遊氏雙雄身為一方豪富，卻不失武林中人的本色，宅邸之中的演
 武場修葺得尤為廣闊，場中旌旗蔽空，檣帆林立，場邊的兵器架上擺
-放著刀、槍、劍、戟、錘等十八般兵器，被家丁們擦拭得寒光閃閃。
+放着刀、槍、劍、戟、錘等十八般兵器，被家丁們擦拭得寒光閃閃。
 遊氏雙雄嗜武成痴，時常邀請武林中的前輩耆宿、後起之秀來莊中比
 試切磋。
 LONG);
@@ -34,7 +34,7 @@ int valid_leave(object me, string dir)
         if( me->query_temp("juxianzhuang_step") != 6 &&
             me->query_temp("juxianzhuang_step") != 13 )
                 if( objectp(present("xu zhanglao", environment(me))) && dir == "west" )
-                        return notify_fail("徐長老攔住你說：你來洛陽聚賢莊撒野？快走開！\n");
+                        return notify_fail("徐長老攔住你説：你來洛陽聚賢莊撒野？快走開！\n");
 
         if( me->query_temp("juxianzhuang_step") == 13 && dir == "west" )
         {

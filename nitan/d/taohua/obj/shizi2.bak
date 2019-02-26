@@ -41,10 +41,10 @@ int do_tanzhi(string arg)
                 return notify_fail("你要幹什麼？\n");
 
         if (!(victim = present(arg,environment(me))))
-                return notify_fail("這裡並無此人！\n");
+                return notify_fail("這裏並無此人！\n");
 
         if (!victim)
-                return notify_fail("這裡並無此人！\n");
+                return notify_fail("這裏並無此人！\n");
 
         if (!living(victim))
                 return notify_fail("這不是活物！\n");
@@ -58,7 +58,7 @@ int do_tanzhi(string arg)
 //                return notify_fail("大膽！竟想謀害巫師！\n");
         
         if( query("no_fight", environment(me)) )
-                return notify_fail("在這裡不能攻擊他人。\n");
+                return notify_fail("在這裏不能攻擊他人。\n");
 
         if (me->query_skill("tanzhi-shentong", 1) < 120)
                 return notify_fail("學小孩彈石子，不害臊嗎？\n");
@@ -161,14 +161,14 @@ int bash_weapon(object me, object victim)
                         victim->reset_action();
                 } else if( wap > wdp ) {
                 
-                        if(jiali < 200) message_vision(HIW"$N只覺得手中" + ob->name() + HIW"把持不定，脫手飛出！\n"NOR, victim);
+                        if(jiali < 200) message_vision(HIW"$N只覺得手中" + ob->name() + HIW"把持不定，脱手飛出！\n"NOR, victim);
                         else message_vision(HIW"小石子一撞之下，炸得粉碎，震得$N虎口疼痛，"+ ob->name() + HIW"摔在地下！\n"NOR, victim);
         
                         ob->unequip();
                         ob->move(environment(victim));
                         victim->reset_action();
                 } else if( wap > wdp / 2 ) {
-                        message_vision("$N只覺得手中" + ob->name() + "一震，險些脫手！\n",
+                        message_vision("$N只覺得手中" + ob->name() + "一震，險些脱手！\n",
                                 victim);
                 } else {
                         message_vision("$N射出的小石子和$n的"+ob->name()+"相擊，冒出點點的火星。\n", me, victim);

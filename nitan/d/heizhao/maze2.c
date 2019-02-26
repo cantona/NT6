@@ -11,7 +11,7 @@ void create()
         set("short", "迷宮樹林");
         set("long", @LONG
 這是迷宮中的一個路口，但見四下黑森森的都是樹木，腳下小路
-東盤西曲，密林中難辨方向，舉步踏到的盡是矮樹雜草，荊棘鉤刺到
+東盤西曲，密林中難辨方向，舉步踏到的盡是矮樹雜草，荊棘鈎刺到
 小腿，劃得你鮮血淋淋。一個小木樁上釘了五個木牌，分別指向五條
 小路，並標明『金，木，水，火，土』。北邊樹木稀少些，看來可以
 是走出去(out)的方向。
@@ -42,7 +42,7 @@ void init()
                 message_vision("$N一個不小心，在樹叢上一拌，“咕嘟”一下摔進了荊棘叢。\n", me);
                 addn("qi", -100, me);
                 addn("eff_qi", -100, me);
-                message_vision("$N掙紮了半天，從荊棘叢裡爬了出來，渾身紮滿了刺，痛苦難當。\n", me);
+                message_vision("$N掙扎了半天，從荊棘叢裏爬了出來，渾身扎滿了刺，痛苦難當。\n", me);
         }
         add_action("do_out", "out");
 }
@@ -63,7 +63,7 @@ int valid_leave(object me, string dir)
         addn("qi", -10, me);
 
         if (walked==mpath) {
-                tell_object(me,"你苦思冥想，精掐細算，終于找到了破此迷宮之道。只三轉兩轉，便走了出去。\n");
+                tell_object(me,"你苦思冥想，精掐細算，終於找到了破此迷宮之道。只三轉兩轉，便走了出去。\n");
                 set("exits/"+dir, __DIR__"shanlu5"); 
                 remove_call_out("closing");
                 call_out("closing",1,dir);

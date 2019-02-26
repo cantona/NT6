@@ -39,7 +39,7 @@ int perform(object me, object target)
                 return notify_fail("你的真氣不夠，難以施展" + name() + "。\n");
 
         if (! living(target))
-                return notify_fail("對方都已經這樣了，用不著這麼費力吧？\n");
+                return notify_fail("對方都已經這樣了，用不着這麼費力吧？\n");
 
         msg = HIY "$N" HIY "使出桃花島狂風絕技，身法飄忽不定，足帶風塵，掌攜"
               "萬鈞，有若天仙！\n" NOR;
@@ -49,7 +49,7 @@ int perform(object me, object target)
         count = me->query_skill("bibo-shengong", 1) / 2 + me->query_skill("xuanfeng-tui", 1);
         addn_temp("apply/attack", count, me);
 
-        msg = YEL  "\n$N" YEL"聚力于左掌，右腿一腳跟著踢出！\n"NOR;
+        msg = YEL  "\n$N" YEL"聚力於左掌，右腿一腳跟着踢出！\n"NOR;
         message_combatd(msg,me,target);
         COMBAT_D->do_attack(me,target,weapon,TYPE_REGULAR,msg);
 
@@ -57,7 +57,7 @@ int perform(object me, object target)
         message_combatd(msg,me,target);
         COMBAT_D->do_attack(me,target,weapon,TYPE_REGULAR,msg);
 
-        msg = YEL "\n$N" YEL "見" YEL "$n" YEL "門戶大開，暗運內力，雙腿連環踢向" YEL "$n！\n"NOR;
+        msg = YEL "\n$N" YEL "見" YEL "$n" YEL "門户大開，暗運內力，雙腿連環踢向" YEL "$n！\n"NOR;
         message_combatd(msg,me,target);
         COMBAT_D->do_attack(me,target,weapon,TYPE_REGULAR,msg);
 

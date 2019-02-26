@@ -10,7 +10,7 @@ void create()
 {
         set("short", "天山山路");
         set("long", @LONG
-這裡是天山東麓，山風從山上吹來，你冷得瑟瑟發抖。路邊是一片
+這裏是天山東麓，山風從山上吹來，你冷得瑟瑟發抖。路邊是一片
 草原。西面一條深澗(valley)擋住了上山的路。
 LONG );
         set("exits", ([
@@ -71,7 +71,7 @@ int do_jump(string arg)
         if (! arg || arg != "valley")
                 return notify_fail("你要往哪跳？\n");
 
-        message_vision(HIY "\n$N" HIY "豫了一下，鼓氣勇氣，朝著對面的山崖跳了過"
+        message_vision(HIY "\n$N" HIY "豫了一下，鼓氣勇氣，朝着對面的山崖跳了過"
                        "去。\n\n" NOR, me);
 
         if ((int)me->query_skill("dodge", 1) < 100 )
@@ -80,7 +80,7 @@ int do_jump(string arg)
                 me->receive_wound("qi", 300);
                 me->unconcious();
                 message("vision", HIR "\n突然聽得「砰」的一聲，只見一個人從上面"
-                                  "的山峰上墜了下來，真是壯觀。\n" NOR,
+                                  "的山峯上墜了下來，真是壯觀。\n" NOR,
                                   environment(me), ({me}));
         } else
         {

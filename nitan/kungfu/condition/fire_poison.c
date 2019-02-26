@@ -8,17 +8,17 @@ inherit POISON;
 
 string name() { return "fire_poison"; }
 
-string chinese_name() { return "星宿毒燄"; }
+string chinese_name() { return "星宿毒焰"; }
 
 string update_msg_others()
 {
         return HIR "$N" HIR "一聲慘嚎，全身竟燃起了" HIG "碧綠色"
-               HIR "的火燄。\n" NOR;
+               HIR "的火焰。\n" NOR;
 }
 
 string update_msg_self()
 {
-        return HIR "你只覺全身灼熱無比，身體上燃起的" HIG "碧燄"
+        return HIR "你只覺全身灼熱無比，身體上燃起的" HIG "碧焰"
                HIR "直焚心髓。\n" NOR;
 }
 
@@ -30,5 +30,5 @@ string die_msg_others()
 
 string die_reason()
 {
-        return "被星宿毒燄活活燒死了";
+        return "被星宿毒焰活活燒死了";
 }

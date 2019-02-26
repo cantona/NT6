@@ -7,8 +7,8 @@ void create()
 {
         set("short", "樹洞內部");
         set("long", @LONG
-這是楊州城中央廣場的老槐樹內部，也是丐幫秘密的地下通道的總交
-匯處。樹洞裡丟滿了各種拉圾，弭漫著一股臭哄哄的味道。樹洞壁上釘著
+這是楊州城中央廣場的老槐樹內部，也是丐幫祕密的地下通道的總交
+匯處。樹洞裏丟滿了各種拉圾，弭漫着一股臭哄哄的味道。樹洞壁上釘着
 一塊非常醒目的木牌（board）。
 LONG );
         set("exits", ([
@@ -38,7 +38,7 @@ int do_say(string arg)
 {
         if( arg=="天堂有路你不走呀" ||  arg=="地獄無門你進來啊")
         {
-                write("只聽裡面有人說了聲：是本幫兄弟吧？請進來吧。\n");
+                write("只聽裏面有人説了聲：是本幫兄弟吧？請進來吧。\n");
                 message("vision", "樹洞邊上一堵牆緩緩移了開來，原來是道小木門。\n", this_player());
                 set("exits/down", __DIR__"undertre");
                 remove_call_out("close");

@@ -9,7 +9,7 @@ void create()
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("long", CYN "傳說此石乃是歷代皇朝用于鎮住龍脈所用，大非尋常。\n" NOR);
+                set("long", CYN "傳説此石乃是歷代皇朝用於鎮住龍脈所用，大非尋常。\n" NOR);
                 set("unit", "塊");
                 set("value", 9000);
                 set("item_origin", 1);

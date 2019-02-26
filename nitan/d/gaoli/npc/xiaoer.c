@@ -31,7 +31,7 @@ void greeting(object ob)
         if( !ob || !visible(ob) || environment(ob) != environment() ) return;
         switch( random(3) ) {  // 1/3 chance to greet.
                 case 0:
-                        say( name()+"笑咪咪地說道：這位" +
+                        say( name()+"笑咪咪地説道：這位" +
 RANK_D->query_respect(ob)
                                 + "，進來歇歇腳，喝兩盅吧。\n");
                         break;
@@ -42,7 +42,7 @@ int accept_object(object who, object ob)
 {
    if (ob->query("money_id") && ob->value() >= 300) 
    {
-     tell_object(who, "小二一哈腰，說道：多謝您老，客官請上樓歇息。\n");
+     tell_object(who, "小二一哈腰，説道：多謝您老，客官請上樓歇息。\n");
      who->set_temp("rent_paid",1);
      return 1;
    }

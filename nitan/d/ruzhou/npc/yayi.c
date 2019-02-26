@@ -7,7 +7,7 @@ void create()
         set("gender", "男性");
         set("age", 25);
 
-        set("long", "一個高大威猛的漢子，因為久在官府做事，臉上已經磨煉得毫無表情。\n");
+        set("long", "一個高大威猛的漢子，因為久在官府做事，臉上已經磨鍊得毫無表情。\n");
         set("combat_exp", 7500);
         set("shen_type", 1);
         set_skill("unarmed", 30);

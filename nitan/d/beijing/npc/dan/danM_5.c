@@ -39,7 +39,7 @@ int do_effect(object me)
         if(me->improve_neili(10))
                 message_vision(HIY "$N" HIY "吃下一粒" + name() + HIY "，感到內力又雄厚不少。\n" NOR, me); 
         else
-                message_vision(HIY "$N" HIY "吃下一粒" + name() + HIY "，感覺好象沒什麼效果。\n" NOR, me); 
+                message_vision(HIY "$N" HIY "吃下一粒" + name() + HIY "，感覺好像沒什麼效果。\n" NOR, me); 
 
         me->start_busy(1); 
 

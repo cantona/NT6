@@ -30,9 +30,9 @@ int perform(object me, object target)
                 return notify_fail("你並沒有運用槍械技術，難以施展" SHE "。\n");
 
         if (! living(target))
-                return notify_fail("對方都已經這樣了，用不著這麼費力吧？\n");
+                return notify_fail("對方都已經這樣了，用不着這麼費力吧？\n");
 
-        msg = HIR "$N" HIR "施出秘奧義「拔槍狼牙射擊」，手中" + weapon->name() +
+        msg = HIR "$N" HIR "施出祕奧義「拔槍狼牙射擊」，手中" + weapon->name() +
               HIR "連續數槍，同時噴出數十條火龍罩向$n" HIR "四周！\n\n" NOR;
         message_combatd(msg, me, target);
 

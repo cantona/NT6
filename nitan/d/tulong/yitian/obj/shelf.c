@@ -12,7 +12,7 @@ void create()
         else {
                 set("prep", "in");
                 set("unit", "只");
-                set("long", RED "一只由名貴紅木所制，用來存放配劍的架子。\n" NOR);
+                set("long", RED "一隻由名貴紅木所制，用來存放配劍的架子。\n" NOR);
                 set("value", 1);
         }
 }

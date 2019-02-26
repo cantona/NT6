@@ -1,4 +1,4 @@
-// youwei.c 右衛舍
+// youwei.c 右衞舍
 
 //** inherit PRIVATE_ROOM;
 inherit ROOM;                                   /* EXAMPLE */
@@ -7,14 +7,14 @@ void create()
 {
 //**    object ob;
 
-        set("short", "右衛舍");             /* EXAMPLE */
-//**    set("short", "ROOM_NAME右衛舍");
+        set("short", "右衞舍");             /* EXAMPLE */
+//**    set("short", "ROOM_NAME右衞舍");
         set("long", @LONG
-這裡是右衛舍，是看護大門的家丁放哨的地方。當然現在是空空
-盪盪，沒有一個人。
+這裏是右衞舍，是看護大門的家丁放哨的地方。當然現在是空空
+蕩蕩，沒有一個人。
 LONG );
 
-        set("default_long", "這裡是右衛舍，是看護ROOM_NAME大門的家丁放" /* EXAMPLE */
+        set("default_long", "這裏是右衞舍，是看護ROOM_NAME大門的家丁放" /* EXAMPLE */
                             "哨的地方。");                              /* EXAMPLE */
                                                                         /* EXAMPLE */
 

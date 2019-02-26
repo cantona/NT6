@@ -6,7 +6,7 @@
                 整數 inherits( 字串 file, 物件 obj );
         函數用法:
                 如果 obj 不是繼承 file, inherits() 傳回 0. 如果 obj
-                繼承最新復制的 file 則傳回 1, 如果繼承舊的復制的 file
+                繼承最新複製的 file 則傳回 1, 如果繼承舊的複製的 file
                 則傳回 2.
         參考函數:
                 deep_inherit_list(3), inherit_list(3)

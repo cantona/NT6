@@ -10,7 +10,7 @@ void create()
         set("age", 50);
         set("long",
         "這是個老實巴交的老僕人，雖然衣服上打了很多補丁，卻是十分的整潔。\n"
-        "因為長期待在廚房裡，眼睛被煙熏成了一條縫。\n");
+        "因為長期待在廚房裏，眼睛被煙燻成了一條縫。\n");
         set("attitude", "friendly");
         set("shen_type", 1);
 
@@ -34,7 +34,7 @@ void create()
         set_temp("apply/attack", 10);
         set_temp("apply/defense", 15);
         set_temp("apply/damage", 4);
-//        create_family("昆侖派", 24, "弟子");
+//        create_family("崑崙派", 24, "弟子");
         setup();
         carry_object("/d/kunlun/obj/cloth")->wear();
 }
@@ -55,7 +55,7 @@ void greeting(object ob)
 {
         if( !ob || environment(ob) != environment() ) return;
 
-        say("僕人笑吟吟地說道：這位" + RANK_D->query_respect(ob)
+        say("僕人笑吟吟地説道：這位" + RANK_D->query_respect(ob)
                 + "請先入座，" + "我這就給您上茶。\n");
 }
 

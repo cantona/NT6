@@ -1,11 +1,11 @@
-// constitution.c 鎮蘊七星
+// constitution.c 鎮藴七星
 // Created by Vin 1/9/2001
 
 #include <ansi.h>
 
 inherit F_CLEAN_UP;
 
-string name() { return HIY "鎮蘊七星" NOR; }
+string name() { return HIY "鎮藴七星" NOR; }
 
 int perform(object me, string skill)
 {

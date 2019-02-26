@@ -12,7 +12,7 @@ int perform(object me, string skill, string arg)
         string msg;
         
         if( query_temp("special2/aishang", me) )
-                return notify_fail("你已經處于極度的哀傷當中了，稍後再施展吧。\n");
+                return notify_fail("你已經處於極度的哀傷當中了，稍後再施展吧。\n");
         
         set_temp("special2/aishang", 1, me);
         
@@ -27,8 +27,8 @@ int perform(object me, string skill, string arg)
         addn_temp("apply/dodge", sk, me);
         addn_temp("apply/force", sk, me);
 
-        msg = HIY "$N" HIY "輕撫「劍靈之哀傷」，剎那間，渾身散發出淡藍色的光芒，一直藍色的蝴蝶從$N" HIY "身體內升起，不斷煽動著翅膀。"
-              "蝴蝶漸漸地化作一個仙子的模樣，凝視著$N" HIY "身上的「劍靈之哀傷」，慢慢地滴下眼淚 …… $N" HIY "不由自主地一陣哀傷，似"
+        msg = HIY "$N" HIY "輕撫「劍靈之哀傷」，剎那間，渾身散發出淡藍色的光芒，一直藍色的蝴蝶從$N" HIY "身體內升起，不斷煽動着翅膀。"
+              "蝴蝶漸漸地化作一個仙子的模樣，凝視着$N" HIY "身上的「劍靈之哀傷」，慢慢地滴下眼淚 …… $N" HIY "不由自主地一陣哀傷，似"
               "乎在此刻與劍靈合為一體！\n" NOR;
         message_vision(sort_msg(msg), me) ;
         

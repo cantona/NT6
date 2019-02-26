@@ -9,7 +9,7 @@ void create()
                 set_default_object(__FILE__);
         else
         {
-                set("long", "這是一袋特制的香料。\n");
+                set("long", "這是一袋特製的香料。\n");
                 set("base_unit", "袋");
                 set("base_weight", 3000);
                 set("no_sell", 1);

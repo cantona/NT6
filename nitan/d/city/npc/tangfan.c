@@ -42,6 +42,6 @@ void init()
 void greeting(object ob)
 {
         if (environment(ob)==environment())
-        message_vision("賣糖的小販沖$P吆喝著：家裡有喜事嗎？買點糖果招待朋友吧。\n",ob);
+        message_vision("賣糖的小販衝$P吆喝着：家裏有喜事嗎？買點糖果招待朋友吧。\n",ob);
         return;
 }

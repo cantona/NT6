@@ -5,7 +5,7 @@ inherit "/inherit/char/smith.c";
 void create()
 {
         set_name("鐵匠", ({ "tiejiang", "smith" }));
-        set("title", "打鐵舖老板");
+        set("title", "打鐵鋪老闆");
         set("shen_type", 1);
         set("gender", "男性" );
         set("age", 33);

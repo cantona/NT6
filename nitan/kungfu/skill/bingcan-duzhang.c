@@ -13,7 +13,7 @@ mapping *action = ({
         "force" : 430,
         "damage_type": "瘀傷"
 ]),
-([      "action": "$N突然身形旋轉起來撲向$n，雙掌飛舞著拍向$n的$l",
+([      "action": "$N突然身形旋轉起來撲向$n，雙掌飛舞着拍向$n的$l",
         "dodge" : -22,
         "attack": 96,
         "parry" : -34,
@@ -29,7 +29,7 @@ mapping *action = ({
         "force" : 530,
         "damage_type": "瘀傷"
 ]),
-([      "action": "$N詭異的一笑，雙掌帶著凌厲的寒氣拍向$n的$l",
+([      "action": "$N詭異的一笑，雙掌帶着凌厲的寒氣拍向$n的$l",
         "dodge" : 28,
         "attack": 139,
         "parry" : 36,

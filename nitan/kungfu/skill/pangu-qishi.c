@@ -2,7 +2,7 @@
 inherit SKILL;
 
 mapping *action = ({
-([      "action" : "$N左手單臂掄起$w，一招「開山」，夾雜著陣陣風聲向$n$l砸去",
+([      "action" : "$N左手單臂掄起$w，一招「開山」，夾雜着陣陣風聲向$n$l砸去",
         "skill_name" : "開山",
         "force" : 320,
         "attack": 27,
@@ -12,8 +12,8 @@ mapping *action = ({
         "damage": 62,
         "damage_type" : "挫傷",
 ]),
-([      "action" : "$N將手中$w劃出一道半弧，一式「斷岳」便如流星墜地，直轟$n",
-        "skill_name" : "斷岳",
+([      "action" : "$N將手中$w劃出一道半弧，一式「斷嶽」便如流星墜地，直轟$n",
+        "skill_name" : "斷嶽",
         "force" : 460,
         "attack": 38,
         "dodge" : -27,
@@ -22,7 +22,7 @@ mapping *action = ({
         "damage": 66,
         "damage_type" : "挫傷",
 ]),
-([      "action" : "突然間$N手中$w挾著無上勁力，一招「劈天」施出，飛砍向$n而去",
+([      "action" : "突然間$N手中$w挾着無上勁力，一招「劈天」施出，飛砍向$n而去",
         "skill_name" : "劈天",
         "force" : 500,
         "attack": 43,

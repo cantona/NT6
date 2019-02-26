@@ -1,6 +1,6 @@
         clonep(3)                LP MudOSv21c7                (7 Jul 1996)
         函數名稱:
-                clonep() - 檢查給定的一個變數是否為復制的物件.
+                clonep() - 檢查給定的一個變數是否為複製的物件.
         函數語法:
                 int clonep( void | mixed arg );
                 整數 clonep( 無參數 | 混合 arg );

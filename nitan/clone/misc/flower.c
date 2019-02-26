@@ -137,8 +137,8 @@ int check(object me,object obj)
                 }
 
                 tell_object(me,"\n一個賣花的小姑娘腳步蹣跚的走了過來。\n");
-                tell_object(me,"賣花姑娘走到你跟前欠身說道：“這裡有您的花，是"+flowers[0]["from"]+"送給您的。”\n");
-                tell_object(me,"賣花姑娘從花籃中拿出一束"+flowers[0]["flowername"]+"交到你手裡。\n");
+                tell_object(me,"賣花姑娘走到你跟前欠身説道：“這裏有您的花，是"+flowers[0]["from"]+"送給您的。”\n");
+                tell_object(me,"賣花姑娘從花籃中拿出一束"+flowers[0]["flowername"]+"交到你手裏。\n");
                 tell_object(me,"賣花姑娘對你微微一笑道：“花已經送到，小女子告退。”\n");
                 tell_object(me,"賣花姑娘走了出去。\n");
                 if(!ob) ob=new(flower_path+"qingren_cao");

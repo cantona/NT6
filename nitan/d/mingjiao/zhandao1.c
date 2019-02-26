@@ -6,7 +6,7 @@ void create()
 {
         set("short", "棧道");
         set("long", @LONG
-這裡是通往明教的棧道，腳下茂林生雲，極其艱險。
+這裏是通往明教的棧道，腳下茂林生雲，極其艱險。
 LONG );
         set("exits", ([
                 "northup"   : __DIR__"zhandao2",

@@ -17,7 +17,7 @@ void create()
         set("con", 30);
 
         set("long",
-"你看到的是博餅屋裡的小哈巴狗。\n");
+"你看到的是博餅屋裏的小哈巴狗。\n");
         set("combat_exp", 2000000);
         set("attitude", "friendly");
 

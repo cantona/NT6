@@ -9,16 +9,16 @@ void create()
         set("short",HIC"領悟室"NOR);
         set("long", @LONG
 此地供各弟子打坐靜修之用。地上僅有幾個蒲團，幾對少男少女正
-在閉目領悟。東面石壁上有一方凸起，刻著不少文字(wall), 西面地上
-有一方凹陷，刻著些古怪的圖形(ground), 頂上有一些美女圖形(top)。
+在閉目領悟。東面石壁上有一方凸起，刻着不少文字(wall), 西面地上
+有一方凹陷，刻着些古怪的圖形(ground), 頂上有一些美女圖形(top)。
 LONG        );
         set("exits", ([
                 "north" : __DIR__"mudao23",
         ]));
         set("item_desc", ([
-                "top"    : HIC "\t玉女遨遊于空，逍遙穿梭，身形百變。\n"NOR,
-                "wall"   : HIC "\t內功心法...古墓子弟可研習于此。\n"NOR,
-                "ground" : HIC "\t閃轉騰挪之術...古墓子弟可研習于此。\n"NOR,
+                "top"    : HIC "\t玉女遨遊於空，逍遙穿梭，身形百變。\n"NOR,
+                "wall"   : HIC "\t內功心法...古墓子弟可研習於此。\n"NOR,
+                "ground" : HIC "\t閃轉騰挪之術...古墓子弟可研習於此。\n"NOR,
         ]));
         set("no_clean_up", 0);
         set("coor/x", -3180);
@@ -42,12 +42,12 @@ int do_lingwu(string arg)
         c_skill=(int)me->query_skill("dodge", 1);
         c_exp=query("combat_exp", me);
         if ( !arg ) 
-                return notify_fail("你要參照哪裡來領悟？\n");
+                return notify_fail("你要參照哪裏來領悟？\n");
         c_exp=query("combat_exp", me);
         if( !(fam=query("family", me)) || fam["family_name"] != "古墓派" )
                 return notify_fail("你不是古墓傳人，如何能領悟古墓武功？\n");
         if (me->is_busy() || me->is_fighting())
-                return notify_fail("你正忙著哪！\n");
+                return notify_fail("你正忙着哪！\n");
         if ((int)me->query_skill("literate", 1) < 30)
                 return notify_fail("你丫鬥字不識一籮筐，領悟個啥？\n");
         if (arg == "top")
@@ -58,7 +58,7 @@ int do_lingwu(string arg)
                 me->receive_damage("jing", 25);
                 if ((int)me->query_skill("force", 1) < 30)
                 {
-                        message_vision(HIM "$N看著美女圖形開始氣血上湧，目光直勾勾，竟出現猥褻之意。\n"NOR, me);
+                        message_vision(HIM "$N看着美女圖形開始氣血上湧，目光直勾勾，竟出現猥褻之意。\n"NOR, me);
                         write(HIR"你定力不夠，這樣的圖畫還是少看為妙。\n"NOR);
                         message_vision(HIR"$N忽然搖晃起來，驀地噴出口鮮血。\n"NOR, me);
                         me->receive_wound("qi", 10);
@@ -82,7 +82,7 @@ int do_lingwu(string arg)
                 if( query("jing", me)<20 )
                         return notify_fail("你覺得好累，好想睡覺。\n");
                 me->receive_damage("jing", 5 + random(15));
-                write("你靜心研習石壁的秘籍，對內功心法有些領悟。\n");
+                write("你靜心研習石壁的祕籍，對內功心法有些領悟。\n");
                 if (c_skill*c_skill*c_skill/10<c_exp)
                         me->improve_skill("force",random(query("int", me)));
                 return 1;
@@ -91,7 +91,7 @@ int do_lingwu(string arg)
         {
                 c_skill=(int)me->query_skill("parry", 1);
                 if (c_skill > 50)
-                        return notify_fail("你對著地上研習一會，只覺所述早已盡藏心胸。\n");
+                        return notify_fail("你對着地上研習一會，只覺所述早已盡藏心胸。\n");
                 if( query("jing", me)<20 )
                         return notify_fail("你一陣暈旋，想是用腦過度，該休息一會了。\n");
                 me->receive_damage("jing",5 + random(15));
@@ -100,5 +100,5 @@ int do_lingwu(string arg)
                         me->improve_skill("parry",random(query("int", me)));
                 return 1;
         }
-        return notify_fail("你無法參照那裡來領悟。\n");
+        return notify_fail("你無法參照那裏來領悟。\n");
 }

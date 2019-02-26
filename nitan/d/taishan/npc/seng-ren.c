@@ -44,7 +44,7 @@ int accept_object(object me, object obj)
         {
                 command("smile");
                 command("say 阿弭陀佛，多謝這位" + RANK_D->query_respect(me) + "了 ！");
-                command("say 貧僧正需這本金剛經來三照石坪上的原文啊 ！");
+                command("say 貧僧正需這本金剛經來叁照石坪上的原文啊 ！");
         }
 
         return 1;

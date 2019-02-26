@@ -5,7 +5,7 @@ void create()
 {
       set("short", "十二盤");
         set("long", @LONG
-這裡石階陡折多彎，號稱「十二盤」。由此西上可達華嚴頂，東
+這裏石階陡折多彎，號稱「十二盤」。由此西上可達華嚴頂，東
 下則到萬年庵。
 LONG );
       set("outdoors", "emei");

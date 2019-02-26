@@ -39,11 +39,11 @@ int perform(object me, object target)
                 return notify_fail("你現在的真氣不夠，難以施展" BING "。\n");
 
         if (! living(target))
-                return notify_fail("對方都已經這樣了，用不著這麼費力吧？\n");
+                return notify_fail("對方都已經這樣了，用不着這麼費力吧？\n");
 
         wn = weapon->name();
                            
-        msg = HIC "\n$N" HIC "將" + wn + HIC "反手一轉，內力運于其上，施出"
+        msg = HIC "\n$N" HIC "將" + wn + HIC "反手一轉，內力運於其上，施出"
               "絕招「" HIW "寒冰環" HIC "」，猛然間身法忽地加快，" + wn + HIC
               "透出陣陣寒氣，連連揮出，將$n" HIC "籠罩在寒氣之中。" NOR;
         message_sort(msg, me, target);

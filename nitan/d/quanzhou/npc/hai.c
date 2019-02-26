@@ -9,7 +9,7 @@ int ask_for_gongzi();
 void create()
 {
         set_name("海公公", ({"hai gonggong", "hai", "gonggong"}));
-        set("title", "東廠千戶");
+        set("title", "東廠千户");
         set("long",
 "他是東廠大太監海大富，喬裝改扮成商人模樣出京尋歡作樂，長得既像
 老頭又像老太太。\n"
@@ -88,11 +88,11 @@ string ask_for_zigong()
                 return "我雖已廢，但一樣可以給你這個小美人帶來快樂，要不要試試？\n";
         /*
         if( me->query("str", me) > 28 )
-                return "這位好漢過于粗壯，自宮有礙觀瞻，不妥，不妥。\n";
+                return "這位好漢過於粗壯，自宮有礙觀瞻，不妥，不妥。\n";
         */
 
         if( query("mud_age", me)<600 )
-                return "這位小兄弟才出娘胎，就要自宮，好可憐見的。\n";
+                return "這位小兄弟才出孃胎，就要自宮，好可憐見的。\n";
 
         set_temp("pending/zigong", 1, me);
         return "自宮？這位公子相貌堂堂，何必... 我真希望能有你的那個。自宮之後，
@@ -128,7 +128,7 @@ int ask_for_gongzi()
         if( query("gender", me) != "無性")return 0;
         if ( me->query_skill("pixie-jian",1) < 60)
         {
-                tell_object(me,"海公公道：下等使役太監哪有工資？進東廠再說！\n");
+                tell_object(me,"海公公道：下等使役太監哪有工資？進東廠再説！\n");
                        return 1;
         }
         paytimes=(query("mud_age", me)/7200);

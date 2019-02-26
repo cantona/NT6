@@ -73,7 +73,7 @@ void init()
         if( query("shen", ob)<1000 && 
                 query("family/master_id", ob) == "xutianhong" )
         {
-                command("chat"+query("name", ob)+"！你這等邪惡姦詐之徒，我豈能仍是你的師父。\n");
+                command("chat"+query("name", ob)+"！你這等邪惡奸詐之徒，我豈能仍是你的師父。\n");
                 command("expell"+query("id", ob));
                 set("title", "紅花會"+RED+"棄徒"NOR, this_player());
         }

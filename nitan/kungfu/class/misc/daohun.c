@@ -49,7 +49,7 @@ void init_npc(object me)
         set("owner",query("id",  me), ob);
 
         set_name(HIB+me->name()+HIB"的刀魂"NOR,({query("id", me)+"daohun"}));
-        set("long", HIM "據說當霸道修煉到一定程度便能夠達到刀人合一的\n"
+        set("long", HIM "據説當霸道修煉到一定程度便能夠達到刀人合一的\n"
                         "境界，能夠使手中的刀富有靈氣，從而幻化出刀魂。\n" NOR);
 
         // 設置百分比
@@ -176,7 +176,7 @@ void heart_beat()
                         if (query("no_in_place") > 0)
                         {
                                 // 消失
-                                message_vision(HIG "$N" HIG "周身白光籠罩，伴隨著刺眼的光芒，$N" HIG 
+                                message_vision(HIG "$N" HIG "周身白光籠罩，伴隨着刺眼的光芒，$N" HIG 
                                                    "瞬間化為烏有！\n" NOR, this_object());
                                 destruct(this_object());
                                 return;
@@ -189,7 +189,7 @@ void heart_beat()
                 // 如果超過時間則消失
                 if (time() - query("start_time") > 5*60)
                 {
-                        message_vision(HIG "$N" HIG "周身白光籠罩，伴隨著刺眼的光芒，$N" HIG 
+                        message_vision(HIG "$N" HIG "周身白光籠罩，伴隨着刺眼的光芒，$N" HIG 
                                         "瞬間化為烏有！\n" NOR, this_object()); 
                         destruct(this_object());
                         return;
@@ -202,7 +202,7 @@ void heart_beat()
                         addn("no_find_owner", 1);
                         if (query("no_find_ower") >= 3)
                         {
-                                message_vision(HIG "$N" HIG "周身白光籠罩，伴隨著刺眼的光芒，$N" HIG 
+                                message_vision(HIG "$N" HIG "周身白光籠罩，伴隨着刺眼的光芒，$N" HIG 
                                                 "瞬間化為烏有！\n" NOR, this_object()); 
                                 destruct(this_object());
                                 return;                         
@@ -255,7 +255,7 @@ void unconcious()
 
 void die(object killer)
 {
-        message_vision(HIG "$N" HIG "周身白光籠罩，伴隨著刺眼的光芒，$N" HIG 
+        message_vision(HIG "$N" HIG "周身白光籠罩，伴隨着刺眼的光芒，$N" HIG 
                                      "瞬間化為烏有！\n" NOR, this_object());
         destruct(this_object());
         return;

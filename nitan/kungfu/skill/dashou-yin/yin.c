@@ -39,9 +39,9 @@ int perform(object me, object target)
                 return notify_fail("你沒有準備大手印，難以施展" + name() + "。\n");
 
         if (! living(target))
-                return notify_fail("對方都已經這樣了，用不著這麼費力吧？\n");
+                return notify_fail("對方都已經這樣了，用不着這麼費力吧？\n");
 
-        msg = HIY "$N" HIY "面容莊重，單手攜著勁風朝$n" HIY "猛然拍出，正"
+        msg = HIY "$N" HIY "面容莊重，單手攜着勁風朝$n" HIY "猛然拍出，正"
               "是密宗絕學「金剛印」。\n" NOR;
 
         ap = attack_power(me, "hand");

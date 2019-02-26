@@ -12,7 +12,7 @@ mapping bunch_good = ([
         "bunch_name" : "俠義盟",
         "id"    : "xym",
         "place" : "ca",      //總舵
-        "boss"  : "成中岳",
+        "boss"  : "成中嶽",
         "place_name" : "揚州", //分舵
         "type"  : "good",
 ]);

@@ -11,7 +11,7 @@ string ask_jian();
 void create()
 {
         set_name("靜風師太", ({ "jingfeng shitai","jingfeng","shitai"}));
-        set("long", "她是一位中年師太，只見她眉目底垂，手中握著一把鋼刀。"
+        set("long", "她是一位中年師太，只見她眉目底垂，手中握着一把鋼刀。"
                     "自然而然的有股威嚴。\n");
         set("gender", "女性");
         set("age", 42);
@@ -108,15 +108,15 @@ string ask_yao()
                 return "你未曾受傷，討這藥膏做什麼？";
 
         if (ob = present("tianxiang gao", this_player()))
-                return "你身上不是帶著本門秘藥？";
+                return "你身上不是帶着本門祕藥？";
 
         if (query("gao_count") < 1)
-                return "你來晚了，本門秘藥已盡數給了本派弟子。";
+                return "你來晚了，本門祕藥已盡數給了本派弟子。";
 
         addn("gao_count", -1);
         ob = new("/d/emei/obj/tianxiang-gao");
         ob->move(this_player());
-        return "我這裡有本門秘藥，你拿去療傷吧。";
+        return "我這裏有本門祕藥，你拿去療傷吧。";
 }
 
 string ask_jian()
@@ -133,10 +133,10 @@ string ask_jian()
                 return "我現在沒有什麼武器好給，你下次在來吧。";
 
         if (ob = present("ruanjian", this_player()))
-                return "你身上不是帶著武器嗎？怎麼還來要！";
+                return "你身上不是帶着武器嗎？怎麼還來要！";
 
         addn("jian_count", -1);
         ob = new("/d/emei/obj/ruanjian");
         ob->move(this_player());
-        return "我這裡有一把軟劍，你拿去用吧。";
+        return "我這裏有一把軟劍，你拿去用吧。";
 }

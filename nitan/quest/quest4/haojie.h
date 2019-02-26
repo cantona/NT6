@@ -57,8 +57,8 @@ void haojie_begin(int num)
 
      site_name=city_name[random(sizeof(city_name))];
      message("channel:rumor", HIR"【江湖浩劫】"HIW"江湖英雄令"
-            +HIR"重現江湖，號召各路豪傑齊赴"+HIY+site_name+HIR"抵御"
-             +HIB"神秘殺手組織"+HIR"之入侵！\n"NOR,users());
+            +HIR"重現江湖，號召各路豪傑齊赴"+HIY+site_name+HIR"抵禦"
+             +HIB"神祕殺手組織"+HIR"之入侵！\n"NOR,users());
      for(n=0;n<num;n++)
      {
           killer=new("/quest/chousha/killer");
@@ -104,7 +104,7 @@ void haojie_close()
    }
 
    message("channel:rumor", HIR"【江湖浩劫】經過各路武林豪傑的殊死抗爭，"
-   +HIY"神秘殺手組織"+HIR"稱霸中原武林的陰謀終于暫時宣告破滅，\n江湖中又似乎恢復"
+   +HIY"神祕殺手組織"+HIR"稱霸中原武林的陰謀終於暫時宣告破滅，\n江湖中又似乎恢復"
    +"了以往的片刻安平！\n"NOR,users());
 
    haojie_times=0;

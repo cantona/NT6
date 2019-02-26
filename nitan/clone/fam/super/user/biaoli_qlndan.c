@@ -7,7 +7,7 @@ void create()
         if (clonep())
                 set_default_object(__FILE__);
         else {  
-        	set("long", HIC "傳說麒麟內丹乃修煉千年火麒麟的內丹，擁有無邊的力量。\n" + 
+        	set("long", HIC "傳説麒麟內丹乃修煉千年火麒麟的內丹，擁有無邊的力量。\n" + 
         	                "服食(fushi qilinneidan 技能id)後可永久提升非知識類技能1級。\n" HIC
         	                "擁有者：biaoli\n" NOR);
                 set("unit", "顆");
@@ -41,7 +41,7 @@ int do_use(string arg)
 		return notify_fail("你身上沒有這個東西！\n");
 
 	if (ob->query("owner") != me->query("id"))
-		return notify_fail(ob->name() + NOR "已經于其他玩家綁定！\n");
+		return notify_fail(ob->name() + NOR "已經於其他玩家綁定！\n");
 
 	if (! me->query_skill(skid, 1))
 		return notify_fail("你沒有這個技能，請確認輸入是否正確！\n");

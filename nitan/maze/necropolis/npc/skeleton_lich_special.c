@@ -8,7 +8,7 @@ void create()
         // set_name( names[random(sizeof(names))], ({ "skeleton lich","skeleton"}));
         set_name( names[random(sizeof(names))], ({ "skeleton lich" }));
         set("vendetta_mark","skeleton");
-        set("long", "這是一只骨頭架子。\n");
+        set("long", "這是一隻骨頭架子。\n");
         set("title", HIB "(鬼氣)" NOR); 
 
         set("str", 50);
@@ -24,7 +24,7 @@ void create()
 /*
         set("chat_chance", 1);
         set("chat_msg", ({
-                "骷髏空洞的眼眶裡閃爍著可怕的熒光。\n"
+                "骷髏空洞的眼眶裏閃爍着可怕的熒光。\n"
         }) ); 
 */
         set("death_msg",BLU"\n$N散成了一堆碎骨頭。\n\n"NOR);
@@ -60,7 +60,7 @@ int is_undead() {
 void do_bone_spirit() {
         object *enemies,enemy;
         int i,no_busy;
-        message_vision(BLU"\n$N沙啞的聲音念誦著咒語，周身凝聚了一個個散發著死亡氣息的光球！\n\n"NOR,this_object());
+        message_vision(BLU"\n$N沙啞的聲音唸誦着咒語，周身凝聚了一個個散發着死亡氣息的光球！\n\n"NOR,this_object());
         enemies = query_enemy();
         foreach(enemy in enemies) {
                 if(!enemy)

@@ -11,13 +11,13 @@ void create()
 {
         set("short", "山洞");
         set("long", @LONG
-你正處在一個小山洞中。這裡光線很暗，只能隱隱約約看出地上有一
-堆幹草。幹草上好象放著一個石匣(xia)。你突然聞到一股難聞的氣味，
-顯然是有人長期住在這裡卻不打掃的緣故。
+你正處在一個小山洞中。這裏光線很暗，只能隱隱約約看出地上有一
+堆乾草。乾草上好像放着一個石匣(xia)。你突然聞到一股難聞的氣味，
+顯然是有人長期住在這裏卻不打掃的緣故。
 LONG );   
         set("item_desc", ([
                 "xia" : @TEXT
-你仔細看了一下石匣，發現裡面似乎放著一本書，似乎可以試著拿出來
+你仔細看了一下石匣，發現裏面似乎放着一本書，似乎可以試着拿出來
 (pick book)。
 TEXT
         ]) );
@@ -52,7 +52,7 @@ int do_pick(string arg)
         obj = present("zhou botong",environment(me));
         if (obj && living(obj))        
         {
-                message_vision(YEL "周伯通兩眼一瞪，哼了一聲道：別在我這裡偷偷摸摸！"
+                message_vision(YEL "周伯通兩眼一瞪，哼了一聲道：別在我這裏偷偷摸摸！"
                                "我周伯通還沒死哪！\n" NOR,me) ;
                 return 1 ;
         }
@@ -63,6 +63,6 @@ int do_pick(string arg)
                 addn("get_available", -1);
                 message_vision("$N從石匣中取出一本書。\n",me );
         } else
-                return notify_fail("你要拿起那本書，卻發現你看花了眼，其實那裡什麼都沒有。\n");
+                return notify_fail("你要拿起那本書，卻發現你看花了眼，其實那裏什麼都沒有。\n");
         return 1;
 }

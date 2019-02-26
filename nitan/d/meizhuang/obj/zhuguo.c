@@ -25,8 +25,8 @@ int do_effect(object me)
 {
         set("qi",query("eff_qi",  me), me);
         set("neili",query("max_neili",  me), me);
-        message_vision(HIR "$N" HIR "吃下一顆朱果，只覺饑渴全消，一股"
-                       "暖流從丹田直沖上來。\n"NOR,me);
+        message_vision(HIR "$N" HIR "吃下一顆朱果，只覺飢渴全消，一股"
+                       "暖流從丹田直衝上來。\n"NOR,me);
 
         destruct(this_object());
         return 1;

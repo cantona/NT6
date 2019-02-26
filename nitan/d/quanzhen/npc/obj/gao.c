@@ -26,7 +26,7 @@ int do_effect(object me)
 
         if ((int)me->query_condition("pill_drug") > 0)
         {
-                write("你覺得現在內息未定，經脈隱隱還能感到真氣沖盪，不"
+                write("你覺得現在內息未定，經脈隱隱還能感到真氣衝蕩，不"
                       "敢貿然服食。\n");
                 return 1;
         }

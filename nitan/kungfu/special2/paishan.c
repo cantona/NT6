@@ -12,7 +12,7 @@ int perform(object me, string skill, string arg)
         if (me->query_temp("special/paishan"))
                 return notify_fail("排山倒海技能已經在施展中了。\n");
 
-        if (me->is_busy())return notify_fail("等你忙完再說吧！\n");
+        if (me->is_busy())return notify_fail("等你忙完再説吧！\n");
 
         message_vision(HIW "$N" HIW "雙拳緊握，殺氣懾人，衣裳無風自起，一股氣流猶如排山倒海般地湧出 ……\n" NOR, me);
  

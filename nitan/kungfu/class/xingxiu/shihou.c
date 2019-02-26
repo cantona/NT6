@@ -97,7 +97,7 @@ string ask_job()
         if(me->query_condition("wait_xx_task"))
                 return "上次搞砸了，這次你就等等吧。";
         if( interactive(me) && query_temp("xx_job", me) )
-                return "你怎麼還在這裡發呆？";
+                return "你怎麼還在這裏發呆？";
         if(interactive(me) && me->query_condition("wait_xx_task"))
                 return "老仙現在心情還好，不用你來為他分憂。";
         if(query("di_count") < 1)
@@ -110,6 +110,6 @@ string ask_job()
         if(fam["family_name"] != "星宿派")
                 set_temp("apply/short", ({WHT"星宿派跟班"NOR+me->name()+"("+query("id", me)+")"}), me);
         set_temp("xx_job", 1, me);
-        message_vision("\n$N拿出一只玉制短笛，交給$n。\n", this_object(), me);
+        message_vision("\n$N拿出一隻玉製短笛，交給$n。\n", this_object(), me);
         return "老仙最近心情不佳，你可要多多為他老人家分憂才是！\n";
 }

@@ -90,7 +90,7 @@ void pu_hit(object me, object target)
 
         if( time == 1 ) msg = HIB "\n$N雙腿一彎，蹲下身來，“閣”的一聲大叫，運起蛤蟆功勁力，雙掌齊發，向前推出。這一推實乃$P畢生功力之所聚，$n猛然感受到山洪海嘯般的勁力襲來。\n" NOR;
         else if( time == 2 ) msg = HIM "\n$N第一推剛完，第二推又已迅速異常的趕到，前勁未衰，後勁繼至，掌風越發猛烈。\n" NOR;
-        else msg = HIR "\n$N眼看前招落空，卻毫無慌亂，順勢又是一推，第"+chinese_number(time)+"推的掌風猶如沙漠風暴，一陣猛過一陣，呼嘯著向$n撲來。\n"NOR;
+        else msg = HIR "\n$N眼看前招落空，卻毫無慌亂，順勢又是一推，第"+chinese_number(time)+"推的掌風猶如沙漠風暴，一陣猛過一陣，呼嘯着向$n撲來。\n"NOR;
 
         message_combatd(msg , me,target);
 
@@ -102,7 +102,7 @@ void pu_hit(object me, object target)
 
                 if(time == 1) message_combatd(HIY "$n眼見這一推來勢兇猛，擋既不能，避又不可，當下雙足一點，躍高四尺，躲開了這一推。\n只聽身後騰的一聲大響，$N這一推的勁力激起一股狂風巨浪，頓時塵土紛揚，令人驚駭不已。\n\n" NOR, me, target);
 
-                else message_combatd(HIY "$n眼見這一推氣勢洶洶，當下雙足一點，側躍三尺，又躲開了這一推。\n只聽轟的一聲巨響，蛤蟆功猛勁激得灰泥彌漫，又是一片塵土飛揚，聲勢驚人。\n" NOR, me, target);
+                else message_combatd(HIY "$n眼見這一推氣勢洶洶，當下雙足一點，側躍三尺，又躲開了這一推。\n只聽轟的一聲巨響，蛤蟆功猛勁激得灰泥瀰漫，又是一片塵土飛揚，聲勢驚人。\n" NOR, me, target);
                 if (! target->is_busy())
                 target->start_busy(2+random(2));
                 me->start_busy(1);
@@ -118,11 +118,11 @@ void pu_hit(object me, object target)
                         weapon->unequip();
                         weapon->move(environment(target));
                         target->reset_action();
-                        message_combatd(HIR"$N猛覺得勁風罩來，心知不妙，手中"NOR + weapon->name() + HIR"脫手飛出，趕緊也是雙掌向前平推。這一下是以硬接硬，剎那之間，兩下裡竟然凝住不動。\n"NOR, target );
+                        message_combatd(HIR"$N猛覺得勁風罩來，心知不妙，手中"NOR + weapon->name() + HIR"脱手飛出，趕緊也是雙掌向前平推。這一下是以硬接硬，剎那之間，兩下里竟然凝住不動。\n"NOR, target );
                 }
-                else message_combatd(HIR"$N猛覺勁風罩來，心知不妙，也是雙掌向前平推。這一下是以硬接硬，剎那之間，兩下裡竟然凝住不動。\n\n"NOR, target );
+                else message_combatd(HIR"$N猛覺勁風罩來，心知不妙，也是雙掌向前平推。這一下是以硬接硬，剎那之間，兩下里竟然凝住不動。\n\n"NOR, target );
 
-                message("vision", HIW BLK"兩人本是忽縱忽竄、大起大落的搏擊，突然間變得兩具僵屍相似，連手指也不動一動，似乎氣也不喘一口。\n\n"NOR, environment(me), ({ me, target }) );
+                message("vision", HIW BLK"兩人本是忽縱忽竄、大起大落的搏擊，突然間變得兩具殭屍相似，連手指也不動一動，似乎氣也不喘一口。\n\n"NOR, environment(me), ({ me, target }) );
 
                 addn("neili", -hmg, target);
                 if (! target->is_busy())

@@ -7,7 +7,7 @@ void create()
 {
         set("short", "甬道");
         set("long", @LONG
-這裡是劍湖宮內的甬道。東通正廳，西面是通往後山的小路。甬
+這裏是劍湖宮內的甬道。東通正廳，西面是通往後山的小路。甬
 道廊檐邊看下去，就是無量山景形勝了。
 LONG );
         set("outdoors", "wuliang");

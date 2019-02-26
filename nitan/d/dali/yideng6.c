@@ -43,7 +43,7 @@ void dropjingli(object me, int losejl)
       if (!me || environment(me) != environment()) 
               return; 
         if (environment(me)==find_object("/d/dali/yideng6.c")) {
-                message_vision("$N托得久了，只覺得兩臂發麻，眼前一陣金星亂冒！\n",me);
+                message_vision("$N託得久了，只覺得兩臂發麻，眼前一陣金星亂冒！\n",me);
                       losejl = 10+random(40);
                 set_temp("die_reason", "精力透支過度而死了", me);
                 addn("jing", -losejl, me);
@@ -56,7 +56,7 @@ void moveout(object me)
       if (!me || environment(me) != environment())  
               return;  
         if (environment(me)==find_object("/d/dali/yideng6.c")) {
-                message_vision("$N眼前一陣發黑，終于堅持不住了，手一鬆，“轟隆”！ ... ...\n",me);
+                message_vision("$N眼前一陣發黑，終於堅持不住了，手一鬆，“轟隆”！ ... ...\n",me);
                 me->unconcious();
                 me->move("/d/dali/xiaodao2.c");
                 return;
@@ -65,7 +65,7 @@ void moveout(object me)
 
 int do_exert(string arg)
 {
-        tell_object(this_player(), "你正托著大石頭呢，怎麼運氣？！\n");
+        tell_object(this_player(), "你正託着大石頭呢，怎麼運氣？！\n");
         return 1;
 }
 
@@ -74,9 +74,9 @@ int do_pian(string arg)
         object me;
         me=this_player();
         if (arg=="nong" || arg=="wu santong" || arg=="farmer" || arg=="wu") {
-                message_vision("$N情急生智，大喊道：“大叔，我懷裡有一封洪老爺子給段皇爺的信！”\n",me);
-                message_vision("“你來暫托一下，待我取出給你。”\n",me);
-                message_vision("等到農夫托起大石，$N身形一縱，從他身邊掠過，沖向後山！\n\n",me);
+                message_vision("$N情急生智，大喊道：“大叔，我懷裏有一封洪老爺子給段皇爺的信！”\n",me);
+                message_vision("“你來暫託一下，待我取出給你。”\n",me);
+                message_vision("等到農夫托起大石，$N身形一縱，從他身邊掠過，衝向後山！\n\n",me);
                 me->move("/d/dali/yideng7.c");
                 return 1;
         }

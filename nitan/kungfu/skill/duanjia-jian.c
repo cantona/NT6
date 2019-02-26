@@ -20,7 +20,7 @@ mapping *action = ({
         "lvl" : 29,
         "skill_name" : "奇兵突起"
 ]),
-([        "action" : "$N使出"HIB"「夜叉探海」"NOR"，$w挽出三個劍花，綿綿不斷劃向$n的$l",
+([        "action" : "$N使出"HIB"「夜叉探海」"NOR"，$w挽出三個劍花，綿綿不斷划向$n的$l",
         "lvl" : 39,
         "skill_name" : "夜叉探海"
 ]),

@@ -28,7 +28,7 @@
           果呼叫了 socket_acquire()，握手程序就完成了，而 socket 所有
           權就已經成功地轉移給 ob。ob 也可以不呼叫 socket_acquire() 而
           婉謝接受這個 socket 的責任，此時，所有權不會改變，而且原來的
-          socket 所有者必須決定如何回應這個情況。
+          socket 所有者必須決定如何迴應這個情況。
 
           如果 socket 所有者成功地轉移，則 socket_release() 會傳回
           EESUCCESS。如果 ob 不接受這個 socket 的所有權的話，則會傳回

@@ -21,7 +21,7 @@ int exert(object me, object target)
           */
 
           if( query("no_fight", environment(me)) && file_name(environment(me)) != "/d/city/biwu_dating" )
-                  return notify_fail("在這裡不能運用化功大法。\n");
+                  return notify_fail("在這裏不能運用化功大法。\n");
 
           lv = (int)me->query_skill("huagong-dafa", 1);
 
@@ -50,12 +50,12 @@ int exert(object me, object target)
               me->query_skill_mapped("dodge") == "pixie-jian" )
           return notify_fail("辟邪劍法與化功大法的修煉方法相悖，無法同時施展化功大法和辟邪劍法！\n");
           if(me->is_busy())
-                  return notify_fail("你正忙著呢,沒辦法施展化功大法! \n");
+                  return notify_fail("你正忙着呢,沒辦法施展化功大法! \n");
 
 message_vision(
-HIB"$N突然面色陰暗下來，幹笑幾聲，陡然加快身法，將一雙大袖舞得呼呼風響。\n"
-HIG"只見$N越舞越快滿場遊走，化功大法激發出的真氣布滿$N的兩只袖袍，象鼓足的風帆。\n"
-HIB"四處彌漫的真氣將空氣擠成一股股洶湧澎湃的氣浪。\n" NOR, me, target );
+HIB"$N突然面色陰暗下來，乾笑幾聲，陡然加快身法，將一雙大袖舞得呼呼風響。\n"
+HIG"只見$N越舞越快滿場遊走，化功大法激發出的真氣佈滿$N的兩隻袖袍，象鼓足的風帆。\n"
+HIB"四處瀰漫的真氣將空氣擠成一股股洶湧澎湃的氣浪。\n" NOR, me, target );
 
 
           set_temp("newhua", me->query_skill("huagong-dafa",1)/20+10, me);
@@ -123,7 +123,7 @@ void checking(int del_time,object me)
                   {
                           message_vision(
 HIR "$n剛剛靠近$N，只覺得一股陰冷無比的氣浪撲來要將自己卷裹進去，連忙運功布氣。\n"
-CYN "$N冷哼一聲，黑氣騰騰的雙手已抓住$n的脈門大穴，$n疼入骨髓不由發出凄厲慘叫。\n" NOR, me, target );
+CYN "$N冷哼一聲，黑氣騰騰的雙手已抓住$n的脈門大穴，$n疼入骨髓不由發出淒厲慘叫。\n" NOR, me, target );
                           tell_object(target, HIR "你突然覺得全身真氣自手掌奔湧而出，四肢無力，再也使不出勁來！\n" NOR);
                           tell_object(me, HIG "你覺得" + target->name() + "的真氣自手掌源源不絕地流了進來。\n" NOR);
                         dmg=(int)me->query_skill("force")*3 +random(1+(int)me->query_skill("force"));

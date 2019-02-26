@@ -12,7 +12,7 @@ void create()
 
         set("long",
 "這是一條全身赤紅，吸天地之間的火氣而長大的孽龍！
-它全身散發著赤紅色的火燄\n");
+它全身散發着赤紅色的火焰\n");
 
         set("str", 100+random(20));
         set("con", 52);
@@ -55,7 +55,7 @@ int hurting()
         int dam;
         object *inv;
 
-        message_vision( HIR "\n\n$N"+HIR"吐出一股熾可焚金的火燄．．整個天地似乎都被燃燒著！！！\n\n",this_object());
+        message_vision( HIR "\n\n$N"+HIR"吐出一股熾可焚金的火焰．．整個天地似乎都被燃燒着！！！\n\n",this_object());
         inv = all_inventory(environment(this_object()));
         for(i=sizeof(inv)-1; i>=0; i--)
         if( living(inv[i]))

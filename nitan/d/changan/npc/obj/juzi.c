@@ -11,7 +11,7 @@ void create()
                 set_default_object(__FILE__);
         else 
         {
-                set("long", "一個黃橙橙的桔子。□n");
+                set("long", "一個黃橙橙的桔子。\n");
                 set("unit", "個");
                 set("value", 100);
                 set("food_remaining", 4);

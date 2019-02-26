@@ -9,7 +9,7 @@ void create()
         else { 
                 set("unit", "把"); 
                 set("material", "iron"); 
-                set("long", "這是一把短小鋒利的匕首，匕首柄上刻著一個”康“字，令人難以捉摸。\n"); 
+                set("long", "這是一把短小鋒利的匕首，匕首柄上刻着一個”康“字，令人難以捉摸。\n"); 
         } 
         set("owner", "楊過"); 
         setup(); 

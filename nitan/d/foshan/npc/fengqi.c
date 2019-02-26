@@ -7,7 +7,7 @@ void create()
 {
         set_name("鳳七", ({ "feng qi", "feng", "qi" }) );
         set("gender", "男性" );
-        set("title", "酒樓老板" );
+        set("title", "酒樓老闆" );
         set("age", 42);
         set("long", @LONG
 鳳七是鳳天南的遠房祖弟，在這英雄樓當掌櫃。武功沒有什麼，為人
@@ -49,11 +49,11 @@ void greeting(object ob)
         switch (random(2))
         {
                 case 0:
-                        say( "鳳七笑咪咪地說道：這位" + RANK_D->query_respect(ob)
+                        say( "鳳七笑咪咪地説道：這位" + RANK_D->query_respect(ob)
                                 + "，進來喝杯茶，歇歇腿吧。\n");
                         break;
                 case 1:
-                        say( "鳳七笑咪咪地說道：這位" + RANK_D->query_respect(ob)
+                        say( "鳳七笑咪咪地説道：這位" + RANK_D->query_respect(ob)
                                 + "，快請進。\n");
                         break;
         }

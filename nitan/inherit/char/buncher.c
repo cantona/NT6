@@ -91,7 +91,7 @@ int accept_object(object who, object ob)
 
         if (query("startroom") != base_name(environment(this_object())))
         {
-                command("say 我身體有點不適，你有事等我回去再說吧。\n");
+                command("say 我身體有點不適，你有事等我回去再説吧。\n");
                 return 0;
         }
 
@@ -115,13 +115,13 @@ int accept_object(object who, object ob)
                 if (!query("money_id", ob))
                 {
                         command("say " + RANK_D->query_self_rude(this_object()) +
-                                 "只對錢有興趣，你的破玩意自己留著吧。\n");
+                                 "只對錢有興趣，你的破玩意自己留着吧。\n");
                         return 0;
                 }
 
                 if (ob->value() < query_temp("invite/money") * 10)
                 {
-                        command("say 我不是說過了嗎？" +
+                        command("say 我不是説過了嗎？" +
                                 chinese_number(query_temp("invite/money") / 1000) +
                                 "兩黃金，少一下子也不行！\n");
                         return 0;
@@ -239,7 +239,7 @@ void die()
 
         set("bunch/zhongcheng", zhongcheng);
 
-        message("channel:rumor", HIM "【謠言】某人：由于" + query("name") + "被殺，" +
+        message("channel:rumor", HIM "【謠言】某人：由於" + query("name") + "被殺，" +
                                  room->short() + "的開發度降為" + kaifa + "！\n" NOR, users());
 
         return ::die();

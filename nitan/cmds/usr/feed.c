@@ -36,7 +36,7 @@ int main(object me, string arg)
 
                 if (! environment(me)->is_chat_room() ||
                     environment(me) == find_object("/d/city/zhujuan"))
-                        return notify_fail("這裡難以讓你施展奇術。\n");
+                        return notify_fail("這裏難以讓你施展奇術。\n");
 
                 obs = filter_array(all_inventory(environment(me)),
                                    (: interactive($1) &&
@@ -44,18 +44,18 @@ int main(object me, string arg)
                                       wiz_level($1) <= wiz_level($(me)) &&
                                       query_idle($1) >= 120 :));
                 if (sizeof(obs) < 1)
-                        return notify_fail("這裡並沒有合適的對象讓你施展神功。\n");
+                        return notify_fail("這裏並沒有合適的對象讓你施展神功。\n");
 
                 addn("learned_points", 50, me);
                 me->receive_damage("jing", 50);
 
-                message_sort(HIM "$N" HIM "口中念念有詞道：“天靈靈，地靈靈，凈壇使者快快顯靈！”"
+                message_sort(HIM "$N" HIM "口中唸唸有詞道：“天靈靈，地靈靈，淨壇使者快快顯靈！”"
                                "只聽晴空一聲霹靂，數道閃電直落而下，登時煙霧繚繞....\n" NOR, me);
                 tell_object(obs, HIG "你只覺得頭一暈...\n" NOR);
                 obs->move("/d/city/zhujuan");
                 message_sort("待煙霧緩緩散去，你發現" + implode(obs->name(), "、") + "竟然不見了！\n", me);
                 message("vision", "只聽連續幾聲“撲通”，" + chinese_number(sizeof(obs)) +
-                                  "個人掉進了豬圈，繼續高聲打著呼嚕。\n",
+                                  "個人掉進了豬圈，繼續高聲打着呼嚕。\n",
                                   environment(obs[0]), obs);
                 return 1;
         }
@@ -70,13 +70,13 @@ int main(object me, string arg)
                 return notify_fail("你的養豬水平還沒有那麼高。\n");
 
         if (! lvl)
-                return notify_fail("你得先學好了養豬大法再說。\n");
+                return notify_fail("你得先學好了養豬大法再説。\n");
 
         if (lvl < 50)
                 return notify_fail("你的養豬水平太差，無法施展絕技。\n");
 
         if (lvl < 300 && environment(ob) != environment(me))
-                return notify_fail("你的養豬水平有限，無法施展奇術于千裡之外！\n");
+                return notify_fail("你的養豬水平有限，無法施展奇術於千里之外！\n");
 
         if (environment(ob) == find_object("/d/city/zhujuan"))
                 return notify_fail("此人正在豬圈中享福呢。\n");
@@ -88,7 +88,7 @@ int main(object me, string arg)
                 return notify_fail("此人不在線上，不能養之。\n");
 
         if (query_idle(ob) < 120)
-                return notify_fail("這人現在精神著呢，不好養吧。\n");
+                return notify_fail("這人現在精神着呢，不好養吧。\n");
 
         if( query("jing", me)<50 )
                 return notify_fail("你的精神太差，不能施展這一曠古神功。\n");
@@ -99,7 +99,7 @@ int main(object me, string arg)
         me->receive_damage("jing", 50);
         addn("learned_points", 10, me);
 
-        message_vision(HIM "$N" HIM "口中念念有詞：天蓬元帥急急聽令，現送上肥豬一頭！\n", me);
+        message_vision(HIM "$N" HIM "口中唸唸有詞：天蓬元帥急急聽令，現送上肥豬一頭！\n", me);
         if( !wizardp(ob) && (random(lvl*lvl)+lvl*lvl<query("combat_exp", ob) || 
             query("combat_exp", ob) >= 50000) )
         {
@@ -127,7 +127,7 @@ int main(object me, string arg)
                 break;
         default:
                 message_vision(HIM "撲通一下，只見天蓬元帥從天上摔了下來。$N" +
-                               HIM "忍不住嘻嘻一笑，元帥大怒：“好家伙，躲在這裡？”\n"
+                               HIM "忍不住嘻嘻一笑，元帥大怒：“好傢伙，躲在這裏？”\n"
                                "一團煙霧過後，只聽慘叫連連，$N" HIM "聲音漸漸遠去。\n" NOR,
                                ob);
                 break;
@@ -135,12 +135,12 @@ int main(object me, string arg)
 
         ob->move("/d/city/zhujuan");
         message("vision", "只聽“撲通”一聲，" + ob->name() +
-                          "掉進了豬圈，繼續高聲打著呼嚕。\n",
+                          "掉進了豬圈，繼續高聲打着呼嚕。\n",
                 environment(ob), ob);
         write(HIC "你的養豬大法成功了，" + ob->name(1) +
               HIC "現在進豬圈享福去了\n" NOR);
 
-        CHANNEL_D->do_channel(this_object(), "rumor", "聽說" +
+        CHANNEL_D->do_channel(this_object(), "rumor", "聽説" +
                               me->name(1) + HIM "施展養豬大法，" +
                               ob->name(1) + HIM "進豬圈繼續發呆，長睡不醒。");
         return 1;

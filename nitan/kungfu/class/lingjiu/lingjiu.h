@@ -5,7 +5,7 @@ int permit_recruit(object ob)
         if( query("detach/靈鷲宮", ob) || 
             query("betrayer/靈鷲宮", ob) )
         {
-                command("say 離開了縹緲峰就不要再回來！");
+                command("say 離開了縹緲峯就不要再回來！");
                 return 0;
         }
 

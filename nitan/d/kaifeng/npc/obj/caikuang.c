@@ -18,7 +18,7 @@ void create()
         }
         else {
                 set("unit", "只");
-                set("long", "一只翠綠細竹子竹筐。\n");
+                set("long", "一隻翠綠細竹子竹筐。\n");
                 set("value", 500);
         }
 }

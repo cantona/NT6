@@ -38,10 +38,10 @@ int do_zou()
         object me = this_player();
         
         if( !query_temp("marks/點", me) )
-                return notify_fail(HIW"\n這裡一片漆黑，如果沒有火光寸步難行。\n\n"NOR);
+                return notify_fail(HIW"\n這裏一片漆黑，如果沒有火光寸步難行。\n\n"NOR);
         
         if (me->is_fighting() || me->is_busy())
-                return notify_fail("\n你現在正忙著呢。\n\n");
+                return notify_fail("\n你現在正忙着呢。\n\n");
         
         me->move(__DIR__"outzigai");
         

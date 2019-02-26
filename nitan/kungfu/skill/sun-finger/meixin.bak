@@ -53,7 +53,7 @@ int perform(object me, object target)
                 return notify_fail("你內力現在不夠，不能使用眉心指！\n");
 
         if( target->is_busy() )
-                return notify_fail(target->name() + "目前正自顧不暇，放膽攻擊吧□\n");
+                return notify_fail(target->name() + "目前正自顧不暇，放膽攻擊吧ⅵ\n");
 
         msg = HIR "$N"HIR"突然一躍而起，使出「眉心指」，點向$n"HIR"的眉心, 使$n"HIR"大驚失色。\n";
 
@@ -61,14 +61,14 @@ int perform(object me, object target)
         {
                 if ((int)target->query_skill("hamagong",1)>100)
                 {
-                        msg += HIY "$p大驚之下不及運功抵御，$P一擊而中，正點在$p的眉心，破了$p多年苦練的蛤蟆功。\n"NOR;
+                        msg += HIY "$p大驚之下不及運功抵禦，$P一擊而中，正點在$p的眉心，破了$p多年苦練的蛤蟆功。\n"NOR;
                         set("neili", 100, target);
                         target->receive_wound("jing",400,me);
                         target->start_busy(random(3) + 1);
                         me->start_busy(random(3) + 1);
                         addn("neili", -500, me);
                 } else {
-                        msg += HIG"眉心指雖然點中，但是只帶來一些疼痛。 \n"NOR;
+                        msg += HIG"眉心指雖然點中，但是隻帶來一些疼痛。 \n"NOR;
                         target->receive_wound("qi",100,me);
                         addn("neili", -100, me);
                 }

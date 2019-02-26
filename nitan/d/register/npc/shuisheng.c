@@ -9,7 +9,7 @@ int do_decide(string arg);
 void create()
 {
         set_name("水笙", ({ "shui sheng","shuisheng"}));
-        set("long", "她輕妝淡抹，眉目之中深深的透露哀思。\n");
+        set("long", "她輕粧淡抹，眉目之中深深的透露哀思。\n");
         set("gender", "女性");
         set("age", 22);
         set("attitude", "peaceful");
@@ -43,8 +43,8 @@ void greeting(object me)
 
         if( !query("registered", me) )
         {
-                command("tell"+query("id", me)+"你還沒有注冊，快注冊(register)吧。");
-                command("tell"+query("id", me)+"你務必注冊你個你能夠收取信件的地址"
+                command("tell"+query("id", me)+"你還沒有註冊，快註冊(register)吧。");
+                command("tell"+query("id", me)+"你務必註冊你個你能夠收取信件的地址"
                         "，\n以備口令丟失的時候能夠收取更新的口令。");
                 return;
         }
@@ -57,7 +57,7 @@ void greeting(object me)
 
         if (! wizardp(me))
         {
-                command("tell"+query("id", me)+"咦，你怎麼跑到這裡來了？");
+                command("tell"+query("id", me)+"咦，你怎麼跑到這裏來了？");
                 if( !stringp(query("born", me)) )
                 {
                         message_vision("$N被昏昏沉沉的扔了出去。\n", me);
@@ -86,14 +86,14 @@ int do_register(string arg)
 
         if( query("registered", me) )
         {
-                command("say 你不是已經注冊過了嗎？不用再注冊了。");
+                command("say 你不是已經註冊過了嗎？不用再註冊了。");
                 return 1;
         }
 
         if (! arg || ! stringp(arg))
         {
                 command("shake"+query("id", me));
-                command("say 注冊的email地址你得給我啊。請輸入register 你的email地址");
+                command("say 註冊的email地址你得給我啊。請輸入register 你的email地址");
                 return 1;
         }
 
@@ -107,13 +107,13 @@ int do_register(string arg)
         command("nod"+query("id", me));
         command("tell"+query("id", me)+"好，你的email地址是："+arg+
                 "，如果沒有\n錯誤，你就決定(decide)吧。");
-        command("tell"+query("id", me)+"請注意，由于本站不採用mail確認，所以
-你即使注冊一個你無法收信的地址，系統也不能識別。當你決定採用
-這個信箱地址以後，它將成為確認你身份的唯一途徑，這個注冊的信
+        command("tell"+query("id", me)+"請注意，由於本站不採用mail確認，所以
+你即使註冊一個你無法收信的地址，系統也不能識別。當你決定採用
+這個信箱地址以後，它將成為確認你身份的唯一途徑，這個註冊的信
 箱地址是永遠不能改變的。當你丟失了你的密碼以後系統的管理人員
-可以將修改後的口令發送到你注冊的信箱中，如果你出于某種目的不
-願意注冊你的信箱，那麼管理人員將不為你的密碼負任何責任，這意
-味著你必須自己保管好你的密碼。");
+可以將修改後的口令發送到你註冊的信箱中，如果你出於某種目的不
+願意註冊你的信箱，那麼管理人員將不為你的密碼負任何責任，這意
+味着你必須自己保管好你的密碼。");
         return 1;
 }
 
@@ -127,18 +127,18 @@ int do_decide(string arg)
 
         if( query("registered", me) )
         {
-                command("say 行了行了，我已經知道你的地址了，不用再說啦！\n");
+                command("say 行了行了，我已經知道你的地址了，不用再説啦！\n");
                 return 1;
         }
 
         if( !stringp(query_temp("email", me)) )
         {
-                command("say 你要決定什麼？是決定注冊嗎？要是那"
-                        "樣請你先注冊你的email地址。");
+                command("say 你要決定什麼？是決定註冊嗎？要是那"
+                        "樣請你先註冊你的email地址。");
                 return 1;
         }
 
-        command("say 好了！你的email地址已經注冊了！現在快去附近選你的品質吧。");
+        command("say 好了！你的email地址已經註冊了！現在快去附近選你的品質吧。");
         set("email",query_temp("email",  me), me);
         set("registered", 1, me);
         me->save();

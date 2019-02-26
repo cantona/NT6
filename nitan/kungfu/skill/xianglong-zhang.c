@@ -14,7 +14,7 @@ mapping *action = ({
 ]),
 ([        "action" : "$N右掌一招"+(order[random(13)])+"「見龍在田」"NOR"，迅捷無比地劈向$n的$l",
 ]),
-([        "action" : "$N雙掌施出一招"+(order[random(13)])+"「鴻漸于陸」"NOR"，隱隱帶著風聲拍向$n的$l",
+([        "action" : "$N雙掌施出一招"+(order[random(13)])+"「鴻漸於陸」"NOR"，隱隱帶着風聲拍向$n的$l",
 ]),
 ([        "action" : "$N左掌聚成拳狀，右掌一招"+(order[random(13)])+"「潛龍勿用」"NOR"緩緩推向$n的$l",
 ]),
@@ -22,13 +22,13 @@ mapping *action = ({
 ]),
 ([        "action" : "$N使出"+(order[random(13)])+"「突如其來」"NOR"，右掌從不可能的角度向$n的$l推出",
 ]),
-([        "action" : "$N大吼一聲，雙掌使出"+(order[random(13)])+"「震驚百裡」"NOR"，不顧一切般擊向$n",
+([        "action" : "$N大吼一聲，雙掌使出"+(order[random(13)])+"「震驚百里」"NOR"，不顧一切般擊向$n",
 ]),
 ([        "action" : "$N使出"+(order[random(13)])+"「或躍在淵」"NOR"，向$n的$l連拍數掌",
 ]),
 ([        "action" : "$N身形滑動，雙掌使一招"+(order[random(13)])+"「雙龍取水」"NOR"一前一後按向$n的$l",
 ]),
-([        "action" : "$N使出"+(order[random(13)])+"「魚躍于淵」"NOR"，身形飛起，雙掌並在一起向$n的$l劈下",
+([        "action" : "$N使出"+(order[random(13)])+"「魚躍於淵」"NOR"，身形飛起，雙掌並在一起向$n的$l劈下",
 ]),
 ([        "action" : "$N雙掌立起，使出"+(order[random(13)])+"「時乘六龍」"NOR"向$n連砍六下",
 ]),
@@ -36,13 +36,13 @@ mapping *action = ({
 ]),
 ([        "action" : "$N使出"+(order[random(13)])+"「損則有孚」"NOR"，雙掌軟綿綿地拍向$n的$l",
 ]),
-([        "action" : "$N腳下一轉，突然欺到$n身前，一招"+(order[random(13)])+"「龍戰于野」"NOR"拍向$n的$l",
+([        "action" : "$N腳下一轉，突然欺到$n身前，一招"+(order[random(13)])+"「龍戰於野」"NOR"拍向$n的$l",
 ]),
-([        "action" : "$N門戶大開，一招"+(order[random(13)])+"「履霜冰至」"NOR"向$n的$l劈去",
+([        "action" : "$N門户大開，一招"+(order[random(13)])+"「履霜冰至」"NOR"向$n的$l劈去",
 ]),
 ([        "action" : "$N使出"+(order[random(13)])+"「羝羊觸蕃」"NOR"，雙掌由下往上擊向$n的$l",
 ]),
-([        "action" : "$N左掌護胸，右掌使一招"+(order[random(13)])+"「神龍擺尾」"NOR"上下晃動著擊向$n的$l",
+([        "action" : "$N左掌護胸，右掌使一招"+(order[random(13)])+"「神龍擺尾」"NOR"上下晃動着擊向$n的$l",
 ]),
 });
 
@@ -77,10 +77,10 @@ int get_ready(object me)
 
 int get_finish(object me)
 {
-        if( query("character", me) == "陰險姦詐" )
+        if( query("character", me) == "陰險奸詐" )
         {
                 tell_object(me, "你演練完畢，發現此套掌法似乎跟自己的性格"
-                                "不合，難于修煉。\n");
+                                "不合，難於修煉。\n");
                 return 0;
         }
 
@@ -107,7 +107,7 @@ int get_finish(object me)
 
         if ((int)me->query_skill("force") < 300)
         {
-                tell_object(me, "你演練完畢，幾乎虛脫，看來自身內功水平還"
+                tell_object(me, "你演練完畢，幾乎虛脱，看來自身內功水平還"
                                 "有待提高。\n");
                 return 0;
         }
@@ -115,7 +115,7 @@ int get_finish(object me)
         if( query("max_neili", me)<3000 )
         {
                 tell_object(me, "你演練完畢，丹田提不起半點力來，看來應該"
-                                "繼續鍛煉內力。\n");
+                                "繼續鍛鍊內力。\n");
                 return 0;
         }
 
@@ -148,7 +148,7 @@ void skill_improved(object me)
 }
 int valid_learn(object me)
 {
-        if( query("character", me) == "陰險姦詐" )
+        if( query("character", me) == "陰險奸詐" )
                 return notify_fail("你心中暗想：這武功難練得緊，學它做甚？\n");
 
         if( query("str", me)<36 )
@@ -225,10 +225,10 @@ mixed hit_ob(object me, object victim, int damage_bonus)
         {
                 victim->receive_wound("qi", (damage_bonus - 80) / 3, me);
 
-                return random(2) ? HIR "只聽$n" HIR "前胸「□嚓」一聲脆響，竟像是"
+                return random(2) ? HIR "只聽$n" HIR "前胸「咔嚓」一聲脆響，竟像是"
                                    "肋骨斷折的聲音。\n" NOR:
 
-                                   HIR "$n" HIR "一聲慘叫，胸前「□嚓□嚓」幾聲脆"
+                                   HIR "$n" HIR "一聲慘叫，胸前「咔嚓咔嚓」幾聲脆"
                                    "響，口中鮮血狂噴。\n" NOR;
         }
 }
@@ -259,7 +259,7 @@ int help(object me)
                 先天臂力25
                 先天根骨20
                 基本掌法180
-                基本掌法不低于降龍掌
+                基本掌法不低於降龍掌
 HELP
         );
         return 1;

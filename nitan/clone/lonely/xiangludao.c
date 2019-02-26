@@ -49,7 +49,7 @@ string do_wield()
         {
                 return GRN "$N" GRN "抽出柄鬼頭刀，哪知剛握在手中，卻發現手掌已"
                        "然浮腫，磷光閃閃。\n" HIY "幸好$N" HIY "精通毒理，瞬間已"
-                       "將掌中所觸綠波劇毒驅之于無形。\n\n" NOR;
+                       "將掌中所觸綠波劇毒驅之於無形。\n\n" NOR;
         } else
         if (me->query_skill("biyan-dao") < 1 && me->query_skill("poison") > 120)
         {

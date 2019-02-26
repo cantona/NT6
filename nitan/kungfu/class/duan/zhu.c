@@ -9,9 +9,9 @@ mixed ask_skill1();
 void create()
 {
         set_name("朱丹臣", ({ "zhu danchen", "zhu", "danchen" }));
-        set("title", "大理國護衛" );
+        set("title", "大理國護衞" );
         set("nickname", CYN "筆硯生" NOR);
-        set("long", "他是大理國四大護衛之一。一副書生酸溜溜的打扮行頭。\n");
+        set("long", "他是大理國四大護衞之一。一副書生酸溜溜的打扮行頭。\n");
         set("gender", "男性");
         set("age", 40);
         set("class", "officer");
@@ -89,7 +89,7 @@ void attempt_apprentice(object ob)
 
         command("smile");
         command("say 世子殿下何需如此，只要有事吩咐在下一聲便是。");
-        command("say 若世子不嫌棄，我這裡倒是有一套筆法可以傳授予你。");
+        command("say 若世子不嫌棄，我這裏倒是有一套筆法可以傳授予你。");
 
         return;
 }
@@ -99,7 +99,7 @@ int recognize_apprentice(object ob, string skill)
         if( query("family/family_name", ob) != "段氏皇族" )
         {
                 command("sneer");
-                command("say 我與閣下素不相識，不知閣下此話從何說起？");
+                command("say 我與閣下素不相識，不知閣下此話從何説起？");
                 return -1;
         }
 
@@ -130,7 +130,7 @@ mixed ask_skill1()
                 return RANK_D->query_respect(me) + "和我素無瓜葛，何出此言？";
 
         if (me->query_skill("qingliang-daxuefa", 1) < 1)
-                return "你連我清涼打穴法都未學，怎麼來絕招一說？";
+                return "你連我清涼打穴法都未學，怎麼來絕招一説？";
 
         if( query("family/gongji", me)<400 )
                 return "恕在下無禮，王爺吩咐過，不得傳功給無功子弟。";
@@ -180,7 +180,7 @@ int accept_object(object who, object ob)
 
         if( ob->value()/15 + query("dushu", who) < 0 )
         {
-                say(this_object()->name()+"受寵若驚地說：“這麼多錢我可不敢收呀！”\n");
+                say(this_object()->name()+"受寵若驚地説：“這麼多錢我可不敢收呀！”\n");
                 return 0;
         }
 
@@ -188,13 +188,13 @@ int accept_object(object who, object ob)
         {
                 if( ob->value() >= learn )
                 {
-                        say(this_object()->name()+"點了點頭，說道：哦，像你這麼有心的學生還真是不多見，好好努力\n可以向我請教讀書寫字(literate)的任何問題。\n");
+                        say(this_object()->name()+"點了點頭，説道：哦，像你這麼有心的學生還真是不多見，好好努力\n可以向我請教讀書寫字(literate)的任何問題。\n");
                         set("dushu", ob->value()/15, who);
                         return 1;
                 }
                 else
                 {
-                        say(this_object()->name()+"說道：你的誠意不夠，這錢還是拿回去吧。\n");
+                        say(this_object()->name()+"説道：你的誠意不夠，這錢還是拿回去吧。\n");
                         return 0;
                 }
         }
@@ -202,13 +202,13 @@ int accept_object(object who, object ob)
         {
                 if( ob->value() >= learn )
                 {
-                        say(this_object()->name()+"點了點頭，說道：哦，像你這麼有心的學生還真是不多見，好好努力將來必定前途無量，謝了。\n");
+                        say(this_object()->name()+"點了點頭，説道：哦，像你這麼有心的學生還真是不多見，好好努力將來必定前途無量，謝了。\n");
                         addn("dushu", ob->value()/15, who);
                         return 1;
                 }
                 else
                 {
-                        say(this_object()->name()+"說道：你的誠意不夠，這錢還是拿回去吧。\n");
+                        say(this_object()->name()+"説道：你的誠意不夠，這錢還是拿回去吧。\n");
                         return 0;
                 }
         }
@@ -229,7 +229,7 @@ int do_learn(string arg)
         ob = this_object();
 
         if (me->is_busy())
-                return notify_fail("你現在正忙著呢。\n");
+                return notify_fail("你現在正忙着呢。\n");
 
         if(!arg || arg=="?" || arg=="/?")
                 return notify_fail("指令格式：learn <某人> [about] <技能> <次數>\n");
@@ -280,7 +280,7 @@ int do_learn(string arg)
         }
 
         if( !living(ob) )
-                return notify_fail("嗯....你得先把" + ob->name() + "弄醒再說。\n");
+                return notify_fail("嗯....你得先把" + ob->name() + "弄醒再説。\n");
 
         if (me->query_skill("literate",1) >=ob->query_skill("literate", 1) && query("dushu",me))
         {
@@ -309,7 +309,7 @@ int do_learn(string arg)
         if (! room=find_object(query("startroom",ob)))
                 room=load_object(query("startroom",ob));
         if (room!=environment()){
-                command("say 我出來辦點事，等我回去再說吧！");
+                command("say 我出來辦點事，等我回去再説吧！");
                 return 1;
         }
         /*

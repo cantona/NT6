@@ -72,7 +72,7 @@ void init()
                 } else
                 if( query_temp("stay", ob)<30 )
                 {
-                        command("say 喂，叫你離開，你怎麼還呆在這裡？");
+                        command("say 喂，叫你離開，你怎麼還呆在這裏？");
                         addn_temp("stay", 1, ob);
                 } else
                 {

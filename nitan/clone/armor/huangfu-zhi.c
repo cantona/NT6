@@ -13,7 +13,7 @@ void create()
         else {
                 set("material", "paper");
                 set("unit", "張");
-                set("long", NOR + YEL "一張泛黃的符紙，上面用紅色的顏料繪著各種奇怪的符號。\n" NOR);
+                set("long", NOR + YEL "一張泛黃的符紙，上面用紅色的顏料繪着各種奇怪的符號。\n" NOR);
                 set("value", 1000000);
                 set("limit", ([
                         "exp"    :   2000000,

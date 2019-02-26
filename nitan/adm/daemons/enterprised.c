@@ -45,7 +45,7 @@ string query_enterprise_color_id(string id)
 }
 
 
-// 回傳在哪個企業體裡
+// 回傳在哪個企業體裏
 string in_enterprise(string id)
 {
         string enterprise_id, member_id;
@@ -59,7 +59,7 @@ string in_enterprise(string id)
         return 0;
 }
 
-// 注冊企業成員
+// 註冊企業成員
 void register_member(string enterprise_id, string member_id)
 {
         mapping member_data = allocate_mapping(0);
@@ -71,7 +71,7 @@ void register_member(string enterprise_id, string member_id)
         save_object(DATA_PATH);
 }
 
-// 注銷企業成員
+// 註銷企業成員
 void unregister_member(string unregister_id)
 {
         string enterprise_id, member_id;
@@ -116,7 +116,7 @@ void delete_enterprise_info(string id, string prop)
         map_delete(enterprises[id], prop);
 }
 
-// 注冊企業
+// 註冊企業
 void register_enterprise(string id, string color_id, string president)
 {
         enterprises[id] = allocate_mapping(0);
@@ -135,7 +135,7 @@ void register_enterprise(string id, string color_id, string president)
         save_object(DATA_PATH);
 }
 ///////////////////////////////////////////////////////////////////////////////////////////
-// 注銷企業
+// 註銷企業
 void unregister_enterprise(string enterprise_id)
 {
         object member_ob;
@@ -409,10 +409,10 @@ void heart_beat()
                 }
 
 
-                // 股價低于預期股價的 90%
+                // 股價低於預期股價的 90%
                 if( enterprise_data["stockvalue"]  < enterprise_data["stockpredictvalue"] * 0.9 )
                         randomvalue = range_random(-40, 80);
-                // 股價高于預期股價的 110%
+                // 股價高於預期股價的 110%
                 else if( enterprise_data["stockvalue"] > enterprise_data["stockpredictvalue"] * 1.1 )
                         randomvalue = range_random(-80, 40);
                 else
@@ -438,7 +438,7 @@ void heart_beat()
                                 randomvalue/100.,
                                 new_stockvalue));
                 else if( randomvalue <= -200 )
-                        CHANNEL_D->do_channel(this_object(), "stock", sprintf("企業集團%s股價重挫 "HIG"□%.2f"NOR" 點(%.2f%%)，成為 "HIW"%.2f"NOR" 點。",
+                        CHANNEL_D->do_channel(this_object(), "stock", sprintf("企業集團%s股價重挫 "HIG"▼%.2f"NOR" 點(%.2f%%)，成為 "HIW"%.2f"NOR" 點。",
                                 query_enterprise_color_id(enterprise_id),
                                 -stockvalue_change,
                                 -randomvalue/100.,
@@ -448,7 +448,7 @@ void heart_beat()
                 if( stockvalue_change > 0. )
                         CHANNEL_D->do_channel(this_object(), "stock", sprintf("%-20s 股價 "HIR"▲%5.2f"NOR"，成為 "HIW"%7.2f"NOR" 點。", query_enterprise_color_id(enterprise_id), stockvalue_change, new_stockvalue));
                 else if( stockvalue_change < 0. )
-                        CHANNEL_D->do_channel(this_object(), "stock", sprintf("%-20s 股價 "HIG"□%5.2f"NOR"，成為 "HIW"%7.2f"NOR" 點。", query_enterprise_color_id(enterprise_id), -stockvalue_change, new_stockvalue));
+                        CHANNEL_D->do_channel(this_object(), "stock", sprintf("%-20s 股價 "HIG"▼%5.2f"NOR"，成為 "HIW"%7.2f"NOR" 點。", query_enterprise_color_id(enterprise_id), -stockvalue_change, new_stockvalue));
                 else
                         CHANNEL_D->do_channel(this_object(), "stock", sprintf("%-20s 股價 "HIW"  %5.2f"NOR"，成為 "HIW"%7.2f"NOR" 點。", query_enterprise_color_id(enterprise_id), stockvalue_change, new_stockvalue));
 */

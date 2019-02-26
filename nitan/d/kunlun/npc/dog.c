@@ -8,7 +8,7 @@ void create()
         set_name("車騎將軍", ({ "dog"}) );
         set("race", "走獸");
         set("age", 4);
-        set("long", "一只昂首挺胸，吐著長舌頭的大惡狗。\n");
+        set("long", "一隻昂首挺胸，吐着長舌頭的大惡狗。\n");
         set("attitude", "peaceful");
         
         set("str", 26);

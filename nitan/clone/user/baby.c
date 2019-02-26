@@ -287,14 +287,14 @@ int check_legal_name(string name, int max_len)
         i = strlen(name);
         if ((strlen(name) < 4) || (strlen(name) > max_len ))
         {
-                write(sprintf("對不起，姓名必須是 2 到 %d 個中文字。\n",
+                write(sprintf("對不起，姓名必須是 2 到 %d 箇中文字。\n",
                       max_len / 2));
                 return 0;
         }
 
         if (max_len < 13 && strsrch(NAME_D->who_is(name), "泥") >= 0)
         {
-                write("對不起，孩子的名字不能和玩家的名字重復。\n");
+                write("對不起，孩子的名字不能和玩家的名字重複。\n");
                 return 0;
         }
 
@@ -316,7 +316,7 @@ int do_home(string arg)
         if( query("id", who) == query("parents/father" )
          || query("id", who) == query("parents/mother") )
         {
-                message_vision("$N對著$n輕聲說道：現在我有些事情，你先回家去吧。\n", who, me);
+                message_vision("$N對着$n輕聲説道：現在我有些事情，你先回家去吧。\n", who, me);
                 me->save();
                 destruct(me);
                 return 1;
@@ -336,7 +336,7 @@ int do_drop(string arg)
 
         if (me->move(environment(who)))
         {
-                message_vision("$N把$n從懷裡放了下來。\n", who, me);
+                message_vision("$N把$n從懷裏放了下來。\n", who, me);
                 return 1;
         }
         return 0;
@@ -354,7 +354,7 @@ int do_get(string arg)
         if (! this_object()->id(arg)) return 0;
 
         if (environment(me) != environment(who))
-                return notify_fail("這裡沒有這個孩子。\n");
+                return notify_fail("這裏沒有這個孩子。\n");
 
         fid=query("parents/father", me);
         mid=query("parents/mother", me);
@@ -367,11 +367,11 @@ int do_get(string arg)
         {
                 if (query("age") < 15 && me->move(who))
                 {
-                        message_vision("$N彎下腰把$n抱了起來，摟在懷裡。\n", who, me);
+                        message_vision("$N彎下腰把$n抱了起來，摟在懷裏。\n", who, me);
                 }
                 else
                 {
-                        message_vision("$N彎下腰一抱卻沒把$n抱起來，小家伙好沉哪！\n", who, me);
+                        message_vision("$N彎下腰一抱卻沒把$n抱起來，小傢伙好沉哪！\n", who, me);
                 }
         } else
         if( mapp(bro=query("brothers", ob1)) && sizeof(bro)>0 )
@@ -381,11 +381,11 @@ int do_get(string arg)
                 {
                         if (query("age") < 15 && me->move(who))
                         {
-                                message_vision("$N彎下腰把$n抱了起來，摟在懷裡。\n", who, me);
+                                message_vision("$N彎下腰把$n抱了起來，摟在懷裏。\n", who, me);
                         }
                         else
                         {
-                                message_vision("$N彎下腰一抱卻沒把$n抱起來，小家伙好沉哪！\n", who, me);
+                                message_vision("$N彎下腰一抱卻沒把$n抱起來，小傢伙好沉哪！\n", who, me);
                         }
                 }
         } else
@@ -397,11 +397,11 @@ int do_get(string arg)
                 {
                         if (query("age") < 15 && me->move(who))
                         {
-                                message_vision("$N彎下腰把$n抱了起來，摟在懷裡。\n", who, me);
+                                message_vision("$N彎下腰把$n抱了起來，摟在懷裏。\n", who, me);
                         }
                         else
                         {
-                                message_vision("$N彎下腰一抱卻沒把$n抱起來，小家伙好沉哪！\n", who, me);
+                                message_vision("$N彎下腰一抱卻沒把$n抱起來，小傢伙好沉哪！\n", who, me);
                         }
                 }
         }
@@ -508,7 +508,7 @@ void relay_whisper(object me, string msg)
         if( query("id", me) != query("parents/father" )
          && query("id", me) != query("parents/mother") )
         {
-                message_vision(query("name", this_object())+"疑惑地看著$N。\n",me);
+                message_vision(query("name", this_object())+"疑惑地看着$N。\n",me);
                 return;
         }
 
@@ -535,7 +535,7 @@ void relaying (string msg)
         if (command(msg))
                 return;
         else
-                command("say 好象不行呀。。。\n");
+                command("say 好像不行呀。。。\n");
         return;
 
 }
@@ -554,7 +554,7 @@ mixed ask_father()
                 return notify_fail(me->name() + "露出痛苦的表情道：“家父已經去世了，你問家父有何貴幹？！”\n");
 
         name=query("name", ob);
-        command("say 我的父親是個頂天立地的大英雄，" + name + "(" + id + ")就是他的尊號，你聽說過他嗎？");
+        command("say 我的父親是個頂天立地的大英雄，" + name + "(" + id + ")就是他的尊號，你聽説過他嗎？");
         UPDATE_D->global_destruct_player(ob, 1);
         return 1;
 }
@@ -573,7 +573,7 @@ mixed ask_mother()
                 return notify_fail(me->name() + "露出痛苦的表情道：“家母已經去世了，你問家母有何貴幹？！”\n");
 
         name=query("name", ob);
-        command("say 我的母親是武林第一美女，" + name + "(" + id + ")就是他的尊號，你聽說過她嗎？");
+        command("say 我的母親是武林第一美女，" + name + "(" + id + ")就是他的尊號，你聽説過她嗎？");
         UPDATE_D->global_destruct_player(ob, 1);
         return 1;
 }

@@ -5,8 +5,8 @@ void create()
 {
         set("short", "小廳");
         set("long",@LONG
-這是一個小小的客廳，牆上掛著一些字畫，其中最顯眼的是王
-羲之的一幅《蘭亭集序》，有個女僕人正在打掃著衛生。
+這是一個小小的客廳，牆上掛着一些字畫，其中最顯眼的是王
+羲之的一幅《蘭亭集序》，有個女僕人正在打掃着衞生。
 LONG
         );
         set("exits", ([
@@ -17,7 +17,7 @@ LONG
                  __DIR__"npc/afeng" : 1,
         ]));
         set("item_desc", ([
-                "《蘭亭集序》" : "這大概是王老先生的真跡，筆法遒勁，渾然一派大家風范。\n" ,
+                "《蘭亭集序》" : "這大概是王老先生的真跡，筆法遒勁，渾然一派大家風範。\n" ,
         ]));
         set("coor/x", 1620);
         set("coor/y", -1770);
@@ -37,7 +37,7 @@ int do_kneel(string arg)
         me = this_player();
         if (!arg||arg=="") return 0;
         if( arg=="《蘭亭集序》" ) {
-                message_vision("$N虔誠地跪在《蘭亭集序》下，磕起頭來，“咚咚”地板好象是空的。\n", this_player());
+                message_vision("$N虔誠地跪在《蘭亭集序》下，磕起頭來，“咚咚”地板好像是空的。\n", this_player());
         }
         if( sscanf(arg, "《蘭亭集序》 %s", dir)==1 ) 
         {

@@ -26,7 +26,7 @@ void create()
 //***** ADDED BY SCATTER *****
                        set("wposition", "/clone/weapon/gshezhan.c");
 //***** END OF ADDING *****
-                set("wield_msg", HIW"$N抽出一根$n"+HIW"握在手中，杖端的蛇頭呲呲做響，讓人不寒而栗。\n"NOR);
+                set("wield_msg", HIW"$N抽出一根$n"+HIW"握在手中，杖端的蛇頭呲呲做響，讓人不寒而慄。\n"NOR);
                 set("unwield_msg", "$N將手中的$n放了下來。\n");
                 init_staff(35);
                 setup();
@@ -36,10 +36,10 @@ string long_desc()
                   string desc ;
                   object staff = this_object();
 
-                  desc = HIB"一根彎彎曲曲的黑色粗杖，似是鋼鐵所制，杖頭鑄著個裂口而笑的人頭，人頭口中露出尖利雪白的牙齒，\n模樣甚是猙獰詭異，\n"NOR;
+                  desc = HIB"一根彎彎曲曲的黑色粗杖，似是鋼鐵所制，杖頭鑄着個裂口而笑的人頭，人頭口中露出尖利雪白的牙齒，\n模樣甚是猙獰詭異，\n"NOR;
 
-                  if( query("snake", staff) == 1)desc+=HIW"杖上盤著一條銀鱗閃閃的小蛇，不住的蜿蜒上下。\n"NOR;
-                  else if( query("snake", staff) == 2)desc+=HIW"杖上盤著兩條銀鱗閃閃的小蛇，不住的蜿蜒上下。\n"NOR;
+                  if( query("snake", staff) == 1)desc+=HIW"杖上盤着一條銀鱗閃閃的小蛇，不住的蜿蜒上下。\n"NOR;
+                  else if( query("snake", staff) == 2)desc+=HIW"杖上盤着兩條銀鱗閃閃的小蛇，不住的蜿蜒上下。\n"NOR;
                   
                   return desc;
 }

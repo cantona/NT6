@@ -49,7 +49,7 @@ void message_chaser()
                                 if( !query("keep", owner))continue;
                                 if( (random(50) == 1) || (query("skill", ob) && random(20) == 1) )
                                 {
-                                        message("channel:snow",sprintf(HIM"【謠言】某人：聽說%s"+HIM+"好象落在%s的%s"+HIM+"手裡了！\n"NOR,
+                                        message("channel:snow",sprintf(HIM"【謠言】某人：聽説%s"+HIM+"好像落在%s的%s"+HIM+"手裏了！\n"NOR,
                                         ob->name(),
                                         to_chinese(explode(base_name(environment(owner)), "/")[1]),
                                         owner->name()),users());
@@ -57,7 +57,7 @@ void message_chaser()
                                 continue;
                         }
                         else if (!wizardp(ob) && random(300)==1)
-                                message("channel:snow",sprintf(HIM"【謠言】某人：聽說%s"+HIM+"好象落在%s"+HIM+"手裡了！\n"NOR, 
+                                message("channel:snow",sprintf(HIM"【謠言】某人：聽説%s"+HIM+"好像落在%s"+HIM+"手裏了！\n"NOR, 
                                 ob->name(),
                                 query("name", owner)),users());
                 if( !userp(owner) ) continue;

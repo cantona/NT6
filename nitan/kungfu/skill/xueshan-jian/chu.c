@@ -39,7 +39,7 @@ int perform(object me, object target)
                 return notify_fail("你沒有激發雪山劍法，難以施展" + name() + "。\n");
 
         if (! living(target))
-                return notify_fail("對方都已經這樣了，用不著這麼費力吧？\n");
+                return notify_fail("對方都已經這樣了，用不着這麼費力吧？\n");
 
         /*
         msg = HIW "$N" HIW "手中" + weapon->name() + HIW
@@ -47,7 +47,7 @@ int perform(object me, object target)
               "虛，四面八方向$n" HIW "攻去！\n" NOR;
         */
         msg = HIY"$N一抖手中" + weapon->name() + HIY"，一式"HIW"「雪花六出」"HIY"，連續刺出六劍，劍劍快如流星，\n"
-              "幻成雪花六點，帶起一陣寒□向前疾飄而去。\n"NOR;
+              "幻成雪花六點，帶起一陣寒飈向前疾飄而去。\n"NOR;
         ap = attack_power(me, "sword");
         dp = defense_power(target, "parry");
         attack_time = 6;
@@ -55,7 +55,7 @@ int perform(object me, object target)
         if (ap / 2 + random(ap * 2) > dp)
         {
                 msg += HIR "$n" HIR "只覺劍影重重，登時眼花繚"
-                       "亂，被攻了個措手不及，疲于奔命。\n" NOR;
+                       "亂，被攻了個措手不及，疲於奔命。\n" NOR;
                 count = ap / 10;
                 addn_temp("apply/attack", count, me);
         } else

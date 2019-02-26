@@ -5,8 +5,8 @@ void create()
 {
         set("short", "屠宰場");
         set("long", @LONG
-這裡是藥王谷的屠宰場，是專門用來屠宰藥王谷飼養的動物，
-取藥材用的，你可以把動物捉到這裡，進行屠宰(sha)。
+這裏是藥王谷的屠宰場，是專門用來屠宰藥王谷飼養的動物，
+取藥材用的，你可以把動物捉到這裏，進行屠宰(sha)。
 LONG );
         set("no_fight", 1);
         set("exits", ([
@@ -38,10 +38,10 @@ int do_sha(string arg)
                 return notify_fail("指令格式：sha <ID> \n");
 
         if( !query("yaowang_zhuo", ob) )
-                return notify_fail("這個東西不能在這裡殺！\n");
+                return notify_fail("這個東西不能在這裏殺！\n");
 
         if( me->is_fighting() || me->is_busy() )
-                return notify_fail("你正忙著呢！\n");
+                return notify_fail("你正忙着呢！\n");
 
         if(random(3))
         {

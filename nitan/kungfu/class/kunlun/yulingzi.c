@@ -11,7 +11,7 @@ void create()
 {
         set_name("玉靈子", ({ "yuling zi","yuling", "zi" }));
         set("long",
-                "她昆侖派第五代弟子，容顏俏麗，身材豐滿，舉手投足間帶著點挑逗之意。\n");
+                "她崑崙派第五代弟子，容顏俏麗，身材豐滿，舉手投足間帶着點挑逗之意。\n");
         set("gender", "女");
         set("age", 28);
         set("attitude", "peaceful");
@@ -50,7 +50,7 @@ void create()
         map_skill("sword", "xunlei-jian");
         prepare_skill("leg", "chuanyun-leg");
 
-        create_family("昆侖派", 5, "弟子");
+        create_family("崑崙派", 5, "弟子");
         set("env/wimpy", 60);
         setup();
         carry_object("/clone/weapon/changjian")->wield();
@@ -66,7 +66,7 @@ void attempt_apprentice(object ob)
         {
                 command("fear");
                 command("say "+RANK_D->query_respect(ob)+
-                        "，師母不準我收男弟子，你去找我師兄去吧。");
+                        "，師母不准我收男弟子，你去找我師兄去吧。");
                 return;
         }
 

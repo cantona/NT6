@@ -22,7 +22,7 @@ int perform(object me, object target)
 
         if( !objectp(weapon=query_temp("weapon", me)) ||
             query("skill_type", weapon) != "whip" )
-                return notify_fail("你沒有拿著鞭子。\n");
+                return notify_fail("你沒有拿着鞭子。\n");
 
         if( query("neili", me)<80 )
                 return notify_fail("你現在真氣不夠，無法施展「纏繞」訣！\n");
@@ -31,7 +31,7 @@ int perform(object me, object target)
                 return notify_fail("你沒有激發日月鞭法，無法施展「纏繞」訣！\n");
 
        if (! living(target))
-              return notify_fail("對方都已經這樣了，用不著這麼費力吧？\n");
+              return notify_fail("對方都已經這樣了，用不着這麼費力吧？\n");
 
         msg = HIC "$N" HIC "使出日月鞭法「纏繞」訣，連揮數鞭企圖把$n"
               HIC "的全身纏繞起來。\n";

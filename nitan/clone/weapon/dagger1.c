@@ -14,8 +14,8 @@ void create()
                 set("long", "這是一把比武專用的的匕首。\n");
                 set("value", 0);
                 set("material", "steel");
-                set("wield_msg", "$N從兜裡掏出一把$n握在手中。\n");
-                set("unwield_msg", "$N將手中的$n放會兜裡。\n");
+                set("wield_msg", "$N從兜裏掏出一把$n握在手中。\n");
+                set("unwield_msg", "$N將手中的$n放會兜裏。\n");
         }
         init_dagger(100,0);
         setup();

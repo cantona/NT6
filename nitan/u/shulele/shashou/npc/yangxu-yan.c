@@ -23,7 +23,7 @@ void create()
    set("gender", "男性" );
    set("nickname",HIR"拿人錢財，替人消災"NOR);
    set("age", 32);
-   set("long", "這就是武林中聞名殺手集團大老板。\n");
+   set("long", "這就是武林中聞名殺手集團大老闆。\n");
        
    set("combat_exp", 10000000);
    set("str",30);
@@ -63,7 +63,7 @@ void create()
       ob[i]->unequip();
      destruct(ob[i]);}
      else if(environment(ob[i])){
-     tell_object(environment(ob[i]),ob[i]->query("name")+"被一陣風卷走了。\n");
+     tell_object(environment(ob[i]),ob[i]->query("name")+"被一陣風捲走了。\n");
      destruct(ob[i]);}
      else destruct(ob[i]);
    //carry_object(__DIR__"obj/qingfeng-jian")->wield();
@@ -83,7 +83,7 @@ int do_kill(string arg)
 	me=this_player();
 	ob=this_object();
 	usr=users();
-	if(!arg) return notify_fail("你讓我去殺誰？明說好了!\n");
+	if(!arg) return notify_fail("你讓我去殺誰？明説好了!\n");
 	j=0;
 	if(me->query("id")==arg) return notify_fail("殺你自己？開玩笑吧？！\n");
 	for(i=0;i<sizeof(usr);i++)
@@ -105,14 +105,14 @@ int do_kill(string arg)
 	case 0: return notify_fail("哼，這麼點錢，也想來找我？\n");
 	case 2: return notify_fail("您的零錢不夠了，銀票又沒人找得開。\n");
 	default:
-	tell_object(me,"拿錢買命點點頭，道：收人錢財，與人消災，你等著好了！\n");
+	tell_object(me,"拿錢買命點點頭，道：收人錢財，與人消災，你等着好了！\n");
 	if(victim->query("combat_exp")>500000)
 	ob->set("combat_exp",victim->query("combat_exp"));
 	if(!objectp(victim)) return notify_fail("哎呀，這個人突然跑了，下次吧!\n");
 	victim->start_busy(2);
 	message_vision("$N身行一晃，蹤跡不見!\n",ob);
 	ob->move(environment(victim));
-	message_vision(HIR"$N沖著$n叫道：有人雇我來殺你，你認命好了!\n"NOR,ob,victim);
+	message_vision(HIR"$N衝着$n叫道：有人僱我來殺你，你認命好了!\n"NOR,ob,victim);
 	ob->kill_ob(victim);
 log_file("killer_kill",sprintf("%s let yang kill %s\n",me->query("id"),victim->query("id")));
 	call_out("yang_go",180,ob);

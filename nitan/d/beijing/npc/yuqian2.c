@@ -2,10 +2,10 @@ inherit NPC;
 
 void create()
 {
-        set_name("驍騎營侍衛", ({ "shi wei", "shi", "wei" }));
+        set_name("驍騎營侍衞", ({ "shi wei", "shi", "wei" }));
         set("age", 32);
         set("gender", "男性");
-        set("long", "驍騎營侍衛個個都是是紫禁城中的好手，千萬別去招惹。\n");
+        set("long", "驍騎營侍衞個個都是是紫禁城中的好手，千萬別去招惹。\n");
         set("attitude", "peaceful");
 
         set("str", 30);
@@ -25,7 +25,7 @@ void create()
 
        set("chat_chance_combat", 10);
         set("chat_msg_combat", ({
-                "驍騎營侍衛喝道：亡命狂徒，京城之中，豈得由你猖狂？\n",
+                "驍騎營侍衞喝道：亡命狂徒，京城之中，豈得由你猖狂？\n",
         }));
         setup();
         carry_object("/d/beijing/npc/obj/sword4")->wield();

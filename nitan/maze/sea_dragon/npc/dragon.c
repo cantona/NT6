@@ -11,7 +11,7 @@ void create()
 {
         set_name( HIB "鎮海神龍" NOR, ({ "sea dragon king", "dragon king", "dragon" }) );
         set("long", HIB "這是一條全身碧綠，吸大海之間的精華而長大"
-                    "的神龍！它全身散發著碧綠色的光芒！\n\n" NOR);
+                    "的神龍！它全身散發着碧綠色的光芒！\n\n" NOR);
 
         set("race", "野獸");
         set("gender", "雄性");
@@ -46,8 +46,8 @@ void create()
 
         set("chat_chance", 5);
         set("chat_msg", ({
-                HIB "海底打來一個巨浪！差點把你卷走！\n" NOR,
-                HIB "鎮海神龍突然吐出一顆湛藍的珠子，又卷了回去！\n" NOR,
+                HIB "海底打來一個巨浪！差點把你捲走！\n" NOR,
+                HIB "鎮海神龍突然吐出一顆湛藍的珠子，又捲了回去！\n" NOR,
         }));
 
         set("chat_chance_combat", 100);
@@ -113,7 +113,7 @@ varargs void start_busy(mixed new_busy, mixed new_interrupt)
 
 int big_blowing()
 {
-        message_vision(HIB "$N" HIB "從海水裡深深地吸入一口氣，全身發出耀眼"
+        message_vision(HIB "$N" HIB "從海水裏深深地吸入一口氣，全身發出耀眼"
                        "的藍色，整個龍腹脹大了幾倍！！\n" NOR, this_object());
 
         remove_call_out("hurting");

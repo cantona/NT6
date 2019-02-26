@@ -48,7 +48,7 @@ int exert(object me, object target)
         if (i > 2)
         {
                 message_combatd(HIW "$N" HIW "驀然回首，憂鬱眼神淡如清水，完全不將外界事物放在心上，\n"
-                        HIW "劍招突變，一會兒，情意綿綿，一會兒卻舍命相拼，意欲尋死，\n"
+                        HIW "劍招突變，一會兒，情意綿綿，一會兒卻捨命相拼，意欲尋死，\n"
                         HIW "一招一式若神來之筆，拿捏的異常準確！\n" NOR, me);
                 tell_object(me, HIM "既已無緣，何需誓言，你不覺間進入忘情境界。\n");
                 addn_temp("apply/attack", skill/3, me);

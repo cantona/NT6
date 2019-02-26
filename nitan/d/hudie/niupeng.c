@@ -7,7 +7,7 @@ void create()
 { 
         set("short", "牛棚");
         set("long", @LONG
-這裡是蝴蝶谷的牛棚，據說因倒斃在這裡的人不計其數，使得『
+這裏是蝴蝶谷的牛棚，據説因倒斃在這裏的人不計其數，使得『
 見死不救』胡青牛的大名天下聞名。
 LONG );
 
@@ -34,10 +34,10 @@ int valid_leave(object me, string dir)
 
         inv = deep_inventory(me);
         if (dir == "northdown"){
-          write("北面是一片花圃，裡面種滿了諸般花草。\n");
+          write("北面是一片花圃，裏面種滿了諸般花草。\n");
           ob = filter_array(inv,(:get_object:));        
           if (myfam && myfam["family_name"] =="明教" && myfam["generation"] == 35 && ! sizeof(ob))
-          write("由于你已聽聞張教主的教誨，走慣了這片花圃，所以信步走了進去。\n");
+          write("由於你已聽聞張教主的教誨，走慣了這片花圃，所以信步走了進去。\n");
           else {
              tell_room(environment(me), me->name()+"往南面的牛棚快步離開。\n"NOR, ({ me }));
              me->move(__DIR__"huapu1");

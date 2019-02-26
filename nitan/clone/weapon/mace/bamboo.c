@@ -15,7 +15,7 @@ void create()
                 set("unit", "根");
                 set("value", 100);
                 set("material", "wood");
-                set("long", "一根短竹，大概是因為浸過水的原故拿在手裡沉甸甸的。\n");
+                set("long", "一根短竹，大概是因為浸過水的原故拿在手裏沉甸甸的。\n");
                 set("wield_msg", "$N操起一根$n，擺了個架式。\n");
                 set("unwield_msg", "$N將$n別回腰間。\n");
         }

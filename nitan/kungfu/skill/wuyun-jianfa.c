@@ -2,14 +2,14 @@
 inherit SKILL;
 
 mapping *action = ({
-([      "action" : "$N左小指輕彈，一招「宮韻」悄然劃向$n的後心",
+([      "action" : "$N左小指輕彈，一招「宮韻」悄然划向$n的後心",
         "force" : 100,
         "dodge" : 20,
         "damage" : 20,
         "lvl" : 0,
         "damage_type" : "刺傷"
 ]),
-([      "action" : "$N右手無名指若有若無的一劃，將琴弦並做一處，[商韻]已將$n籠罩",
+([      "action" : "$N右手無名指若有若無的一劃，將琴絃並做一處，[商韻]已將$n籠罩",
         "force" : 120,
         "dodge" : 15,
         "damage" : 30,
@@ -30,7 +30,7 @@ mapping *action = ({
         "lvl" : 60,
         "damage_type" : "刺傷"
 ]),
-([      "action" : "$N使出「羽韻」，將劍提至唇邊，如同清音出簫，劍掌齊出，劃向$n的$l",
+([      "action" : "$N使出「羽韻」，將劍提至脣邊，如同清音出簫，劍掌齊出，划向$n的$l",
         "force" : 210,
         "dodge" : 10,
         "damage" : 60,
@@ -72,10 +72,10 @@ int practice_skill(object me)
                 return notify_fail("你使用的武器不對。\n");
 
         if( query("qi", me)<50 )
-                return notify_fail("你的體力不夠練五韻七弦劍。\n");
+                return notify_fail("你的體力不夠練五韻七絃劍。\n");
 
         if( query("neili", me)<50 )
-                return notify_fail("你的體力不夠練五韻七弦劍。\n");
+                return notify_fail("你的體力不夠練五韻七絃劍。\n");
 
         me->receive_damage("qi", 40);
         addn("neili", -38, me);

@@ -12,7 +12,7 @@ void create()
                 set_default_object(__FILE__);
         else {
                 set("unit", "個");
-                set("long", "一只裝禮物的竹籃子，細蔑精制而成，手藝可真不錯。\n");
+                set("long", "一隻裝禮物的竹籃子，細蔑精製而成，手藝可真不錯。\n");
                 set("value", 1000);
         }
 }

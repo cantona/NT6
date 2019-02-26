@@ -12,7 +12,7 @@ int main(object me, string arg)
                 return 0;
 
         if( query("no_fight", environment(me)) )
-                return notify_fail("這裡禁止戰鬥。\n");
+                return notify_fail("這裏禁止戰鬥。\n");
 
         if( !arg
         ||  !objectp(obj = present(arg, environment(me)))
@@ -35,7 +35,7 @@ int main(object me, string arg)
 
         if( query("can_speak", obj) )
         {
-                message_vision("\n$N對著$n說道："
+                message_vision("\n$N對著$n説道："
                         + RANK_D->query_self(me)
                         + me->name() + "，領教"
                         + RANK_D->query_respect(obj) + "的高招！\n\n", me, obj);

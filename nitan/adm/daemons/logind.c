@@ -42,6 +42,7 @@ nosave string *banned_id = ({
         "immortal", "player", "fuck", "admin",
         "all", "none", "cancel", "leave", "out",
         "entry", "enter", "shit", "tmd", "tnnd",
+        "lonely",
 });
 
 protected void get_id(string arg, object ob);
@@ -229,6 +230,7 @@ void logon(object ob)
                 input_to("get_version", ob);
         }
 
+#if 0
         if( !query_temp("big5", ob)){
                 write(HIC "□□□□才棟□虜砰□叫塊□GB/BIG5□跑□才棟□□□鋇□魁□□□\n" NOR
                       "目前的字符集是簡體，請輸入GB/BIG5改變字符集，或直接登錄用戶。\n"
@@ -240,6 +242,9 @@ void logon(object ob)
                 write("目前的字符集是繁體，請輸入GB/BIG5改變字符集，或直接登錄用戶。\n");
                 write("請輸入您的英文名字(" CYN "忘記密碼請輸入「pass」" NOR ")：\n");
         }
+#else
+	write("請輸入您的英文名字(" CYN "忘記密碼請輸入「pass」" NOR ")：\n");
+#endif
         input_to( (: get_id :), ob );
 }
 
@@ -369,6 +374,7 @@ protected void get_id(string arg, object ob)
 
         arg = lower_case(arg);
 
+#if 0
         if( arg == "big5" ) {
                 set_temp("big5", 1, ob);
                 logon(ob);
@@ -382,7 +388,15 @@ protected void get_id(string arg, object ob)
                 input_to("pass_id", ob);
                 return;
         }
+#else
+	if ( arg == "pass" ) {
+		write("請輸入您的英文ID：\n");
+		input_to("pass_id", ob);
+		return;
+	}
+#endif
 
+#if 0
         if( arg == "lonely" )
         {
                 write("就憑你也敢偷巫師的帳號？\n");
@@ -391,6 +405,7 @@ protected void get_id(string arg, object ob)
         }
 
         if( arg == "lonely21" ) arg = "lonely";
+#endif
 
         if( !check_legal_id(arg) ) {
                 /*
@@ -920,12 +935,14 @@ TEXT NOR
 protected void get_surname(string arg, object ob)
 {
         if( arg && strlen(arg) > 0 ) {
+#if 0
                 if( query_temp("big5", ob) )
 #ifdef LONELY_IMPROVED
                         // arg = B2G(arg);
                         arg = LANGUAGE_D->toGB(arg);
 #else
                         arg = LANGUAGE_D->toGB(arg);
+#endif
 #endif
                 if( !check_legal_name(arg, 4) ) {
                         write("您的中文" HIG "姓氏" NOR "(不要超過兩個漢字)：\n");
@@ -947,12 +964,14 @@ protected void get_name(string arg, object ob)
         string fname;
         string result;
 
+#if 0
         if( query_temp("big5", ob) )
 #ifdef LONELY_IMPROVED
                 // arg = B2G(arg);
                 arg = LANGUAGE_D->toGB(arg);
 #else
                 arg = LANGUAGE_D->toGB(arg);
+#endif
 #endif
         if( !check_legal_name(arg, 4) ) {
                 write("您的中文" HIY "名字" NOR "(不要超過兩個漢字)：\n");
@@ -1338,7 +1357,9 @@ varargs void enter_world(object ob, object user, int silent, int timer, string a
         ob->clear_msg_buffer();
 
         //user->set_encoding(ob->query_encoding());
+#if 0
         if( query_temp("big5", ob) ) set_temp("big5", 1, user);
+#endif
         if( query_temp("tomud", ob) ) set_temp("tomud", 1, user);
 
         if( interactive(ob) ) exec(user, ob);
@@ -1610,10 +1631,13 @@ varargs void reconnect(object ob, object user, int silent)
 
         set_temp("link_ob", ob, user);
         set_temp("body_ob", user, ob);
+#if 0
         if( query_temp("big5", ob) )
                 set_temp("big5", 1, user);
         else
                 delete_temp("big5", user);
+#endif
+
         if( query_temp("tomud", ob) )
                 set_temp("tomud", 1, user);
         else
@@ -1682,7 +1706,9 @@ int check_legal_name(string name, int maxlen)
         int i;
 
         i = strlen(name);
-        if( (strlen(name) < 2) || (strlen(name) > maxlen) ) {
+//        if( (strlen(name) < 2) || (strlen(name) > maxlen) ) {
+	maxlen *= 3;
+        if( (strlen(name) < 3) || (strlen(name) > maxlen) ) {
                 write("對不起，你的中文姓名不能太長或太短。\n");
                 return 0;
         }

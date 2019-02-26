@@ -11,7 +11,7 @@ int update_condition(object me, int duration)
 
         if( duration == 1 && query_temp("guo_shoucheng/failed", me) )
         {
-                message_vision(CYN "\n一名宋兵跑過來對$N說道：蒙古靼子又開始進攻了，元帥叫你立刻前去待命！\n" NOR, me);
+                message_vision(CYN "\n一名宋兵跑過來對$N説道：蒙古靼子又開始進攻了，元帥叫你立刻前去待命！\n" NOR, me);
                 delete_temp("guo_shoucheng/failed", me);
                 me->apply_condition("jobshadi_failed", 0);
                 return 0;

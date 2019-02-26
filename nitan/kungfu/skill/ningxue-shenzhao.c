@@ -2,7 +2,7 @@
 inherit SKILL;
 
 mapping *action = ({
-([  "action": "$N全身拔地而起，半空中一個筋鬥，一式「兇鷹襲兔」，迅猛地抓向$n的$l",
+([  "action": "$N全身拔地而起，半空中一個筋斗，一式「兇鷹襲兔」，迅猛地抓向$n的$l",
     "force" : 250,
     "attack": 45,
     "dodge" : 10,
@@ -22,7 +22,7 @@ mapping *action = ({
     "skill_name" : "雄鷹展翅" ,
     "damage_type" : "抓傷"
 ]),
-([  "action": "$N一式「拔翅鷹飛」，全身向斜裡平飛，右腿一繃，雙爪搭向$n的肩頭",
+([  "action": "$N一式「拔翅鷹飛」，全身向斜裏平飛，右腿一繃，雙爪搭向$n的肩頭",
     "force" : 300,
     "attack": 60,
     "dodge" : 20,
@@ -72,14 +72,14 @@ mapping *action = ({
     "skill_name" : "搏擊長空" ,
     "damage_type" : "抓傷"
 ]),
-([  "action": "$N騰空高飛三丈，一式「鷹揚萬裡」，天空中頓時顯出一個巨靈爪影，緩緩罩向$n",
+([  "action": "$N騰空高飛三丈，一式「鷹揚萬里」，天空中頓時顯出一個巨靈爪影，緩緩罩向$n",
     "force" : 410,
     "attack": 143,
     "dodge" : 55,
     "parry" : 81,
     "damage": 121,
     "lvl"   : 180,
-    "skill_name" : "鷹揚萬裡" ,
+    "skill_name" : "鷹揚萬里" ,
     "damage_type" : "抓傷"
 ]),
 ([  "action": "$N忽的撥地而起，使一式「蒼龍出水」，身形化作一道閃電射向$n",

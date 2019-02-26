@@ -1,16 +1,16 @@
 
 $HIC$┌───────────────────────────┐
-│                $NOR$$WHT$店舖拍賣巫師操作手冊$HIC$                  │
+│                $NOR$$WHT$店鋪拍賣巫師操作手冊$HIC$                  │
 ├───────────────────────────┤
-│ $NOR$$WHT$□  拍賣啟動前確保已經初始化($HIY$shop reset$NOR$$WHT$)所有店舖。$HIC$   │
-│ $NOR$$WHT$□  啟動拍賣($HIY$start <任意參數>$NOR$$WHT$)進程，缺省為手工操作。$HIC$ │
-│ $NOR$$WHT$□  拍賣指定店舖指令為($HIY$auction <店舖名稱>$NOR$$WHT$)。$HIC$         │
-│ $NOR$$WHT$□  手工操作轉為自動進程指令為($HIY$auto$NOR$$WHT$)。$HIC$               │
-│ $NOR$$WHT$□  查看當前拍賣情況指令($HIY$paimailist$NOR$$WHT$)。$HIC$               │
-│ $NOR$$WHT$□  取消玩家拍賣資格($HIY$unwelcome <id> [1|0]$NOR$$WHT$)。$HIC$         │
-│ $NOR$$WHT$□  請使用落棰($HIY$qiao$NOR$$WHT$)宣報拍賣價格。$HIC$                   │
-│ $NOR$$WHT$□  結束拍賣($HIY$finish$NOR$$WHT$)，店舖全部拍賣完畢才能使用。$HIC$     │
-│ $NOR$$WHT$□  主持巫師斷線、離開或發呆，拍賣將轉化為自動進程。$HIC$ │
-│ $NOR$$WHT$□  系統將會記錄下整個拍賣的全過程。$HIC$                 │
+│ $NOR$$WHT$①  拍賣啟動前確保已經初始化($HIY$shop reset$NOR$$WHT$)所有店鋪。$HIC$   │
+│ $NOR$$WHT$②  啟動拍賣($HIY$start <任意參數>$NOR$$WHT$)進程，缺省為手工操作。$HIC$ │
+│ $NOR$$WHT$③  拍賣指定店鋪指令為($HIY$auction <店鋪名稱>$NOR$$WHT$)。$HIC$         │
+│ $NOR$$WHT$④  手工操作轉為自動進程指令為($HIY$auto$NOR$$WHT$)。$HIC$               │
+│ $NOR$$WHT$⑤  查看當前拍賣情況指令($HIY$paimailist$NOR$$WHT$)。$HIC$               │
+│ $NOR$$WHT$⑥  取消玩家拍賣資格($HIY$unwelcome <id> [1|0]$NOR$$WHT$)。$HIC$         │
+│ $NOR$$WHT$⑦  請使用落棰($HIY$qiao$NOR$$WHT$)宣報拍賣價格。$HIC$                   │
+│ $NOR$$WHT$⑧  結束拍賣($HIY$finish$NOR$$WHT$)，店鋪全部拍賣完畢才能使用。$HIC$     │
+│ $NOR$$WHT$⑨  主持巫師斷線、離開或發呆，拍賣將轉化為自動進程。$HIC$ │
+│ $NOR$$WHT$⑩  系統將會記錄下整個拍賣的全過程。$HIC$                 │
 └───────────────────────────┘$NOR$
 

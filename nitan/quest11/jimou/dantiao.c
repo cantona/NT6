@@ -60,8 +60,8 @@ void main(object ob, string who)
                 // In future, we have to consider effects of the
                 // ablility of general, zhenxing, dixing, etc.
                 // Now the damage depends only on the No of bowman
-	ob->simple_action("$N遙指敵陣，怒聲喝道：可有賊將敢于我一戰？！\n");
-	ob->start_busy(5, "你正忙于單挑呢。");
+	ob->simple_action("$N遙指敵陣，怒聲喝道：可有賊將敢於我一戰？！\n");
+	ob->start_busy(5, "你正忙於單挑呢。");
 	set_this_player(find_user(who));
 	find_user(who)->modal_push((:input_way:),"請輸入你的選擇(yes/no)：");
 	return;

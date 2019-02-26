@@ -12,7 +12,7 @@ void create()
                 set_default_object(__FILE__);
         else
         {
-                set("long", "一只威武的大龍蝦。\n");
+                set("long", "一隻威武的大龍蝦。\n");
                 set("unit", "只");
         }
 

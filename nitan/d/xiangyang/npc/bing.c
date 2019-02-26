@@ -54,7 +54,7 @@ void init()
 
 int accept_fight(object me)
 {
-        command("say 大爺我正想找人殺吶，今天算你倒霉。\n");
+        command("say 大爺我正想找人殺吶，今天算你倒黴。\n");
         kill_ob(me);
         return 1;
 }

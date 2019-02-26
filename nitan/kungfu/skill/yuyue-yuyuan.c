@@ -1,4 +1,4 @@
-// dragon-strike.c 降龍十八掌之魚躍于淵
+// dragon-strike.c 降龍十八掌之魚躍於淵
 // Last Modified by sega on Mar. 10 2000
 
 #include <ansi.h>;
@@ -16,8 +16,8 @@ int ttl = 17;
 int seq = 10;
 mapping *action = ({
         ([
-                "action"      : "$N使出"+(order[random(13)])+"「魚躍于淵」"NOR"，身形飛起，雙掌並在一起向$n的$l劈下",
-                "skill_name" : "魚躍于淵",
+                "action"      : "$N使出"+(order[random(13)])+"「魚躍於淵」"NOR"，身形飛起，雙掌並在一起向$n的$l劈下",
+                "skill_name" : "魚躍於淵",
                 "dodge"       : d_e1 + (d_e2 - d_e1) * seq / ttl,
                 "parry"       : p_e1 + (p_e2 - p_e1) * seq / ttl,
                 "force"       : f_e1 + (f_e2 - f_e1) * seq / ttl,
@@ -86,7 +86,7 @@ int power_point(object me) {
 
 int help(object me)
 {
-        write(HIC"\n降龍十八掌之魚躍于淵："NOR"\n");
+        write(HIC"\n降龍十八掌之魚躍於淵："NOR"\n");
         write(@HELP
 
     降龍十八掌是丐幫鎮幫之寶，是天下最剛猛的武功。

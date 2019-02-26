@@ -42,7 +42,7 @@ int perform(object me, object target)
                 return notify_fail("你的內力不夠使用斷雲決！\n");
 
         message_vision(HIW "$N運足內力，猛地一揚"NOR + "$n" + 
-                       HIW "卷起無邊風雲遮月掩日，一股"NOR + 
+                       HIW "捲起無邊風雲遮月掩日，一股"NOR + 
                        HIM "罡風" NOR + HIW "隨著漫天鞭影撲天蓋地的向敵人襲來。\n" 
                          NOR,me,query_temp("weapon", me));
 

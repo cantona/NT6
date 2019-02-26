@@ -7,7 +7,7 @@ inherit NPC;
 void create()
 {
         set_name("侍劍", ({ "shijian" }));
-        set("long","她是長樂幫主的小丫鬟，臉龐略作圓形，倒也嫵媚可喜。\n她頭發略見蓬鬆，雪白的赤足踏在一雙繡花拖鞋中。\n");
+        set("long","她是長樂幫主的小丫鬟，臉龐略作圓形，倒也嫵媚可喜。\n她頭髮略見蓬鬆，雪白的赤足踏在一雙繡花拖鞋中。\n");
         set("gender", "女性");
         set("age", 16);
         set("attitude", "friendly");

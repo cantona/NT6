@@ -15,7 +15,7 @@ void create()
                 set("value", 8000);
                 set("no_sell", 1);
                 set("material", "steel");
-                set("wield_msg", HIG "$N" NOR + WHT "抽出$n" NOR + WHT"，負手而立，一派宗師風范。\n" NOR);
+                set("wield_msg", HIG "$N" NOR + WHT "抽出$n" NOR + WHT"，負手而立，一派宗師風範。\n" NOR);
                 set("unwield_msg", HIG "$N" NOR + WHT "清嘯一聲，彈指間，將$n" NOR + WHT "收回。\n" NOR);
                 set("stable", 100);
         }

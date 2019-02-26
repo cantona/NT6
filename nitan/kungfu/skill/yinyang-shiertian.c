@@ -19,7 +19,7 @@ string *dodge_msg = ({
         HIW "只見$n" HIW "身子輕輕晃動，$N" HIW "眼前頓時出現了無數個$n" HIW
         "的幻影，令$N" HIW "完全無法辨出虛實。\n" NOR,
         HIW "$n" HIW "往旁邊歪歪斜斜的邁出一步，卻恰好令$N" HIW "的攻擊失之"
-        "毫厘。\n" NOR,
+        "毫釐。\n" NOR,
         HIW "$N" HIW "這一招來的好快，然後$n" HIW "一閃，似乎不費半點力氣，"
         "卻將$N" HIW "這一招剛好避開。\n" NOR,
         HIW "但見$n" HIW "輕輕一躍，已不見了蹤影，$N" HIW "心中大駭，卻又見"
@@ -30,11 +30,11 @@ string *parry_msg = ({
         HIW "$N" HIW "一招擊在$n" HIW "身上，卻被$n" HIW "暗運乾坤大挪移內勁"
         "，將內力盡數移入地下。\n" NOR,
         HIW "$n輕輕一帶，$N" HIW "發現自己招數回擊過來，嚇得往後倒退幾步。\n" NOR,
-        HIW "$n手臂回轉，在$N" HIW "手肘下輕輕一推，$N" HIW "招數落空。\n" NOR,
+        HIW "$n手臂迴轉，在$N" HIW "手肘下輕輕一推，$N" HIW "招數落空。\n" NOR,
         HIW "$n右手伸出，在$N" HIW "手腕上輕輕一拉，$N" HIW "收勢不住，直往前撲去。\n" NOR,
         HIW "$n身形不動，$N" HIW "一招擊下，有如石沉大海，不覺呆住了。\n" NOR,
         HIW "$n左牽右引，$N" HIW "如身處漩流，連續轉了好幾個圈。\n" NOR,
-        HIW "$n雙手回圈，$N" HIW "只覺得前面好象有一堵牆，再也攻不進去。\n" NOR,
+        HIW "$n雙手迴圈，$N" HIW "只覺得前面好像有一堵牆，再也攻不進去。\n" NOR,
         HIW "$n輕輕一轉，$N" HIW "一招擊在地上，只打得塵土飛揚。\n" NOR,
 });
 
@@ -79,7 +79,7 @@ mapping *actionf = ({
         "weapon": HIR "九陽無極勁" NOR,
         "damage_type":  "割傷"
 ]),
-([      "action": HIY "$N" HIY "身形一轉，拳頭攜著疾速旋轉的氣流揮出，疾如閃電，"
+([      "action": HIY "$N" HIY "身形一轉，拳頭攜着疾速旋轉的氣流揮出，疾如閃電，"
                   "勢如雷霆，擊向$n" HIY,
         "force" : 800,
         "attack": 400,
@@ -99,7 +99,7 @@ mapping *actionf = ({
         "weapon": WHT "降龍無極勁" NOR,
         "damage_type": "刺傷"
 ]),
-([      "action": HIW "$N" HIW "雙手十指齊伸，數十條氣流從少沖穴中激射而出，「六"
+([      "action": HIW "$N" HIW "雙手十指齊伸，數十條氣流從少衝穴中激射而出，「六"
                   "脈神劍」出手如風，指向$n" HIW,
         "force" : 700,
         "attack": 300,
@@ -123,7 +123,7 @@ mapping *actionf = ({
 
 mapping *actionw = ({
 ([      "action": HIY "$N" HIY "攻勢忽緩而不疏，$w" HIY "變化無常，捉摸不定向$n"
-                  HIY "慢慢卷去",
+                  HIY "慢慢捲去",
         "force" : 600,
         "attack": 300,
         "dodge" : 300,
@@ -140,7 +140,7 @@ mapping *actionw = ({
         "damage": 400,
         "damage_type": "內傷"
 ]),
-([      "action": HIY "$N" HIY "卷起手中的$w" HIY "，就如鐵錘一般對著$n" HIY "亂"
+([      "action": HIY "$N" HIY "捲起手中的$w" HIY "，就如鐵錘一般對着$n" HIY "亂"
                   "砍亂砸，沒有半點章法",
         "force" : 600,
         "attack": 300,
@@ -158,7 +158,7 @@ mapping *actionw = ({
         "damage": 400,
         "damage_type": "內傷"
 ]),
-([      "action": HIY "$N" HIY "含笑回轉$w" HIY "，伸手一指，頗得拈花指之意，點"
+([      "action": HIY "$N" HIY "含笑迴轉$w" HIY "，伸手一指，頗得拈花指之意，點"
                   "向$n" HIY "全身",
         "force" : 600,
         "attack": 300,
@@ -207,7 +207,7 @@ int get_finish(object me)
         }
         if( query("str", me)<39 )
         {
-                tell_object(me, "你演練完畢，只覺雙臂酸疼，全身發軟。\n");
+                tell_object(me, "你演練完畢，只覺雙臂痠疼，全身發軟。\n");
                 return 0;
         }
         if( query("dex", me)<39 )
@@ -218,7 +218,7 @@ int get_finish(object me)
 
         if( query("age", me) >= 18 )
         {
-                                tell_object(me, "你已錯過演練的最佳時刻，今生將于此高深武學無緣。\n");
+                                tell_object(me, "你已錯過演練的最佳時刻，今生將於此高深武學無緣。\n");
                 return 0;
         }
 
@@ -228,11 +228,11 @@ int get_finish(object me)
                 return 0;
         }
 
-        tell_object(me, HIW "一陣凡塵往事湧上心頭，你幾欲放聲長嘆。霎那間，你放眼回首，竟有一股莫名\n"
-                        "的悲哀。宗師泰鬥那種高出不勝寒、登泰山而小天下之感猶然而生，你只覺得以\n往的"
+        tell_object(me, HIW "一陣凡塵往事湧上心頭，你幾欲放聲長歎。霎那間，你放眼回首，竟有一股莫名\n"
+                        "的悲哀。宗師泰斗那種高出不勝寒、登泰山而小天下之感猶然而生，你只覺得以\n往的"
                         "武學現在看來是多麼的渺小可笑。\n" NOR);
 
-        CHANNEL_D->do_channel(this_object(), "rumor", "聽說" + me->name() + "演練出"HIY"陰陽九轉十二重天"HIM"。\n");
+        CHANNEL_D->do_channel(this_object(), "rumor", "聽説" + me->name() + "演練出"HIY"陰陽九轉十二重天"HIM"。\n");
         return 1;
 }
 

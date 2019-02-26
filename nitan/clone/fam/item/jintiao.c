@@ -13,8 +13,8 @@ void create()
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("long", HIY "一根金燦燦的金條，拿在手裡頗為舒適。\n"
-                            "使用 changing 指令將炎黃金條兌換為十萬YSG，會員可兌換十一萬YSG。\n" 
+                set("long", HIY "一根金燦燦的金條，拿在手裏頗為舒適。\n"
+                            "使用 changing 指令將炎黃金條兑換為十萬YSG，會員可兑換十一萬YSG。\n" 
                             "如果暫時不使用，最好將金條存入倉庫，以免丟失。\n" NOR);
                 set("value", 1);
                 set("no_sell", 1);
@@ -44,14 +44,14 @@ int do_changing(string arg)
         if (! MEMBER_D->is_valib_member(me->query("id")))
         {
                 me->add("stocks/balance", 100000);
-                write(HIG "成功將一跟炎黃金條兌換為十萬YSG並存入了您的銀庫。\n" NOR);
+                write(HIG "成功將一跟炎黃金條兑換為十萬YSG並存入了您的銀庫。\n" NOR);
                 write(HIY "您目前在炎黃銀庫存有 " + HIC + me->query("stocks/balance") + HIY "YSG。\n" NOR);
 
         }
         else
         {
                 me->add("stocks/balance", 110000);
-                write(HIG "成功將一跟炎黃金條兌換為十一萬YSG並存入了您的銀庫。\n" NOR);
+                write(HIG "成功將一跟炎黃金條兑換為十一萬YSG並存入了您的銀庫。\n" NOR);
                 write(HIY "您目前在炎黃銀庫存有 " + HIC + me->query("stocks/balance") + HIY "YSG。\n" NOR);
         }
 

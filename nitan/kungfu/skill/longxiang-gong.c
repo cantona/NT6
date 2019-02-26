@@ -29,7 +29,7 @@ int valid_force(string force)
 }
 
 mapping *action = ({
-([      "action" : "$N單掌一抖，運聚龍象般若功功力，呼嘯著向$n的$l處拍去",
+([      "action" : "$N單掌一抖，運聚龍象般若功功力，呼嘯着向$n的$l處拍去",
         "dodge"  : 37,
         "force"  : 430,
         "attack" : 173,
@@ -153,7 +153,7 @@ mixed hit_ob(object me, object victim, int damage_bonus)
         {
                 addn("neili", -80, me);
                 victim->receive_wound("qi", (damage_bonus - 50) / 3, me);
-                return HIY "$N" HIY "拳鋒之上竟蘊藏著『" HIR "十龍十象"
+                return HIY "$N" HIY "拳鋒之上竟藴藏着『" HIR "十龍十象"
                        HIY "』之力，罡勁破體，摧毀了$n" HIY "的真元！\n" NOR;
         } else
         {
@@ -178,7 +178,7 @@ void skill_improved(object me)
 
         if( lvl>400 && !query("can_perform/longxiang-gong/zhen", me) )
         {
-                tell_object(me, HIR "你突然靈犀一動，領悟出數百年無人練成的真﹒般若極秘訣！\n" NOR);
+                tell_object(me, HIR "你突然靈犀一動，領悟出數百年無人練成的真·般若極祕訣！\n" NOR);
                 set("can_perform/longxiang-gong/zhen", 1, me);
         }
 
@@ -240,7 +240,7 @@ int help(object me)
 三層境界，只是人壽有限，密宗中的高僧修士欲在天年終了之前練
 到第七層、第八層，便非得躁進不可，這一來，往往陷入了欲速不
 達的大危境。北宋年間，藏邊曾有一位高僧練到了第九層，繼續勇
-猛精進，待練到第十層時，心魔驟起，無法自制，終于狂舞七日七
+猛精進，待練到第十層時，心魔驟起，無法自制，終於狂舞七日七
 夜，自終絕脈而死。
 
         學習要求：

@@ -9,11 +9,11 @@ object  room  =  0;
 
 void  create()
 {
-    set_name("青□龜童",  ({"gui  tong",  "tong"  }));
+    set_name("青鬏龜童",  ({"gui  tong",  "tong"  }));
     set("gender",  "男性");
     set("age",  13);
     set("per",  30);
-    set("long",  "一位紮著青□的龜童。\n");
+    set("long",  "一位扎着青鬏的龜童。\n");
     set("combat_exp",  5000);
     set_skill("force",  50);
     set_skill("unarmed",  50);
@@ -41,7 +41,7 @@ void  init()
 
 void  refuse_message  (object  me,  object  who)
 {
-    message_vision  ("$N說：別別，殺$N哪有賽龜有趣。\n",me,who);
+    message_vision  ("$N説：別別，殺$N哪有賽龜有趣。\n",me,who);
 }
 
 int  do_fight(string  arg)

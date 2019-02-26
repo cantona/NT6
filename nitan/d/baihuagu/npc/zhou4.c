@@ -13,7 +13,7 @@ void create()
         set("age", 45);
         set("long",
                 "他就是人稱「老頑童」的周伯通。\n"
-                "他一副仙風道骨的樣子，看起來好象才四十來歲。很難想象他其實已經年逾古稀了。\n"
+                "他一副仙風道骨的樣子，看起來好像才四十來歲。很難想象他其實已經年逾古稀了。\n"
         );
 
         set("combat_exp", 5000000);
@@ -71,8 +71,8 @@ int accept_object(object who, object ob)
         if( query("id", ob) == "dushe" )
         {
                 message_vision("$N拿出一條毒蛇在老頑童的眼前晃了晃．．．．．．
-老頑童嚇得跳了起來，沖出洞外！邊跑邊喊：糟糕透了，老玩童這番死定了！\n\n
-聲音漸漸遠去，終于不復耳聞。\n" ,who);
+老頑童嚇得跳了起來，衝出洞外！邊跑邊喊：糟糕透了，老玩童這番死定了！\n\n
+聲音漸漸遠去，終於不復耳聞。\n" ,who);
                 destruct(this_object());
                 return 0;
         }
@@ -80,7 +80,7 @@ int accept_object(object who, object ob)
         {
                 if( query_temp("marks/mihave", who) )
                 {
-                        message_vision("老頑童接過蜂蜜，高興地說道：好，好，好。\n\n",who);
+                        message_vision("老頑童接過蜂蜜，高興地説道：好，好，好。\n\n",who);
                         if( query("combat_exp", who)<100000 )
                         {
                                 tell_object(who,HIW"你的經驗上升了！\n你的潛能上升了！\n" NOR);

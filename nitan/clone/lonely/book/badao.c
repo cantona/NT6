@@ -12,7 +12,7 @@ void create()
                 set("material", "paper");
                 set("no_sell", 1);
                 set("long", HIG "\n這是一本用薄紙寫成的書，封皮上寫有「霸刀」二字。\n"
-                            "你可以試著讀讀(read)看。\n\n" NOR, );
+                            "你可以試着讀讀(read)看。\n\n" NOR, );
         }
         
         remove_call_out("check_environment");
@@ -90,13 +90,13 @@ int do_du(string arg)
         if (where->query("no_fight")
            && me->query("doing") != "scheme")
         {
-                write("你無法在這裡靜下心來研讀霸刀。\n");
+                write("你無法在這裏靜下心來研讀霸刀。\n");
                 return 1;
         }
 
     /* if (! me->query("scborn/ok"))
         {
-                write("你還沒有經歷輪回轉世呢，無法修煉霸刀。\n");
+                write("你還沒有經歷輪迴轉世呢，無法修煉霸刀。\n");
                 return 1;
         } */
         
@@ -180,13 +180,13 @@ int do_du(string arg)
 
         if (me->query_skill("sanscrit", 1) < 200)
         {
-                write("你的梵文水平太低，無法看懂書裡所記載的內容。\n");        
+                write("你的梵文水平太低，無法看懂書裏所記載的內容。\n");        
                 return 1;
         }
         
         if (! id(arg))
         {
-                write("這裡沒有這本書。\n");
+                write("這裏沒有這本書。\n");
                 return 1;
         }
 
@@ -198,7 +198,7 @@ int do_du(string arg)
         
         if (me->query_skill("lunhui-sword", 1) && ! me->query("thborn/ok"))
         {
-                write("你體內的六道輪回真氣無法與霸刀相兼容。\n");
+                write("你體內的六道輪迴真氣無法與霸刀相兼容。\n");
                 return 1;
         }
                 
@@ -212,13 +212,13 @@ int do_du(string arg)
            || (int)me->query("qi") < 100
            || (int)me->query("neili") < 200)
         {
-                write("你現在過于疲倦，無法專心下來研讀新知。\n");
+                write("你現在過於疲倦，無法專心下來研讀新知。\n");
                 return 1;
         }
         
         msg = HIG "$N" HIG "翻看《霸刀》，仔細研究上面所記載的武學，霎那間若有所悟……\n" NOR;
         msg += HIG "$N" HIG "以手做刀，左劈右砍，忽而眉頭金鎖，忽而閉目沉思。\n" NOR;
-        msg += HIG "$N" HIG "長嘆一聲，感慨萬千，似乎明白了什麼 ……\n" NOR; 
+        msg += HIG "$N" HIG "長歎一聲，感慨萬千，似乎明白了什麼 ……\n" NOR; 
         message_vision(msg, me); 
 
         if (me->query_skill("badao", 1) < 180)
@@ -227,16 +227,16 @@ int do_du(string arg)
                 // 第一次學習
                 if (! me->query_skill("badao", 1))
                 {
-                        // 輪回點
+                        // 輪迴點
                         if (me->query("scborn/cur_lunhui_point") < 7 && ! me->query("thborn/ok"))
                         {
-                                write("你輪回點不足，無法領悟霸刀。\n");
+                                write("你輪迴點不足，無法領悟霸刀。\n");
                                 return 1;
                         }    
                         if (! me->query("thborn/ok"))
                         {
                                 me->add("scborn/cur_lunhui_point", -7);
-                                write(HIG "\n恭喜你學會了霸刀，消耗輪回點 7 點，請勿將霸刀放棄為0級後再重新學習，否則需要重新消耗輪回點。\n" NOR);
+                                write(HIG "\n恭喜你學會了霸刀，消耗輪迴點 7 點，請勿將霸刀放棄為0級後再重新學習，否則需要重新消耗輪迴點。\n" NOR);
                         }
                         me->set_skill("badao", 40 + random(21));
                         me->save();
@@ -248,7 +248,7 @@ int do_du(string arg)
         }
         else
         {
-                write(HIR "你霸刀級別已經無法再通過研讀秘籍來提升了。\n" NOR);
+                write(HIR "你霸刀級別已經無法再通過研讀祕籍來提升了。\n" NOR);
                 return 1;
         }
 

@@ -1,7 +1,7 @@
 #include <ansi.h>
 #include <combat.h>
 
-#define ZHE "「" HIG "只手遮天" NOR "」"
+#define ZHE "「" HIG "隻手遮天" NOR "」"
 
 inherit F_SSERVER;
 
@@ -46,10 +46,10 @@ int perform(object me, object target)
                 return notify_fail("你的真氣不夠，無法施展" ZHE "。\n");
 
        if (! living(target))
-              return notify_fail("對方都已經這樣了，用不著這麼費力吧？\n");
+              return notify_fail("對方都已經這樣了，用不着這麼費力吧？\n");
 
         msg = HIW "\n$N" HIW "運起玄冥神功，全身浮現出一層紫氣，猛然間雙掌翻騰不息，施"
-                  "展出絕招「" HIG "只手遮天" HIW "」，攜帶著萬古至毒至寒之氣的掌勁"
+                  "展出絕招「" HIG "隻手遮天" HIW "」，攜帶着萬古至毒至寒之氣的掌勁"
                   "攻向$n" HIW "！\n"NOR;  
 
         lvl = me->query_skill("xuanming-zhang", 1);
@@ -69,7 +69,7 @@ int perform(object me, object target)
                 {
                         message_sort(msg, me, target);
                         message_sort(HIM "$N" HIM "一掌打在$n" HIM "身上，猛然間氣血翻騰，一股陰寒之氣竟"
-                                     "反噬回來，$N" HIM "抵御不住，寒毒侵入體內。$N" HIM "悶哼一聲，一"
+                                     "反噬回來，$N" HIM "抵禦不住，寒毒侵入體內。$N" HIM "悶哼一聲，一"
                                      "口淤血吐出，臉色頓時發紫。" NOR, me, target);
 
                         me->receive_wound("qi",query("jiali", me)+random(query("jiali", me)/2));

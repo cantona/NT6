@@ -1,7 +1,7 @@
 #include <ansi.h>
 #include <combat.h>
 
-#define PI "「" HIW "辟邪□影" NOR "」"
+#define PI "「" HIW "辟邪劍影" NOR "」"
 
 inherit F_SSERVER;
 
@@ -57,10 +57,10 @@ int perform(object me, object target)
                 return notify_fail("你沒有激發辟邪劍法，難以施展" PI "。\n");
 
         if (! living(target))
-                return notify_fail("對方都已經這樣了，用不著這麼費力吧？\n");
+                return notify_fail("對方都已經這樣了，用不着這麼費力吧？\n");
 
         msg = HIR "$N" HIR "身形一轉，手中" + weapon->name() + HIR "寒光閃爍，猛然間，化作"
-              "萬千劍影射向$n" HIR "，正是江湖中失傳已久的驚世奇學「辟邪□影」！\n" NOR;
+              "萬千劍影射向$n" HIR "，正是江湖中失傳已久的驚世奇學「辟邪劍影」！\n" NOR;
         
         message_combatd(sort_msg(msg), me, target);
 

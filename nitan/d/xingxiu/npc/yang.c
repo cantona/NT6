@@ -22,7 +22,7 @@ void create()
 void die()
 {
         object ob;
-        message_vision("$N凄唳的嚎了幾聲，倒在地上死了。\n", this_object());
+        message_vision("$N悽唳的嚎了幾聲，倒在地上死了。\n", this_object());
         ob = new(__DIR__"yangpi");
         ob->move(environment(this_object()));
         destruct(this_object());

@@ -6,9 +6,9 @@ void create()
 {
         set("short", "東海之濱");
         set("long", @LONG
-這裡是大海之濱，浪花拍打著礁石，發出陣陣響聲，海面上一群
-群海鷗『歐歐。。』地叫著，不時有魚兒躍出海面，濺起層層的浪花。
-邊上有艘大船(chuan)， 船上坐著幾個漁夫打扮的人，乘船可渡過大
+這裏是大海之濱，浪花拍打着礁石，發出陣陣響聲，海面上一羣
+羣海鷗『歐歐。。』地叫着，不時有魚兒躍出海面，濺起層層的浪花。
+邊上有艘大船(chuan)， 船上坐着幾個漁夫打扮的人，乘船可渡過大
 海到達海的另一端。西面一直走就是燕京了，東面是一望無際的大海。
 極目眺望不禁讓人心胸開擴，神舒意暢，的確是一個好居處。
 LONG );
@@ -56,8 +56,8 @@ void init()
         {
                 room = get_object("/d/tulong/tulong/daobian");
                 ren = present("bai guishou",room);
-                tell_object(me, HIC "你看見沙灘上停泊滿了海船，所有的海船全部標記著天鷹教的標記。\n"NOR);
-                tell_object(me, CYN "白龜壽對你說道：我天鷹教得到屠龍寶刀，這位武林同道可願意參加揚刀立威大會？\n"NOR);
+                tell_object(me, HIC "你看見沙灘上停泊滿了海船，所有的海船全部標記着天鷹教的標記。\n"NOR);
+                tell_object(me, CYN "白龜壽對你説道：我天鷹教得到屠龍寶刀，這位武林同道可願意參加揚刀立威大會？\n"NOR);
                 message("vision", HIR"\n【倚天屠龍】" NOR+WHT "白龜壽仰天一聲長笑。\n" NOR, all_interactive());
                 message("vision", HIR"\n【倚天屠龍】" NOR+WHT "白龜壽：我天鷹教得到屠龍寶刀，今在王盤山島舉行揚刀立威大會。\n" NOR, all_interactive());
                 remove_call_out("mes");
@@ -97,7 +97,7 @@ int moveto(object me)
 
 int arrive1(object me)
 {
-        message_vision(HIB "\n天鷹教的大船在大海上慢慢的漂著......$N不禁感到睡意朦朧。\n"NOR, me);
+        message_vision(HIB "\n天鷹教的大船在大海上慢慢的漂着......$N不禁感到睡意朦朧。\n"NOR, me);
         remove_call_out("arrive2");
         call_out("arrive2",10,me);
         return 1;
@@ -105,7 +105,7 @@ int arrive1(object me)
 
 int arrive2(object me)
 {
-        message_vision(HIY "\n$N突然聽到一聲驚喝：“到了，下船吧”！$N頓時提起精神，跟著天鷹教教眾下了船。\n"NOR, me);
+        message_vision(HIY "\n$N突然聽到一聲驚喝：“到了，下船吧”！$N頓時提起精神，跟着天鷹教教眾下了船。\n"NOR, me);
         me->move("/d/tulong/tulong/daobian");
         tell_object(me, HIR "\n你突然想到：最好先砸了其他人的船(break boat)，讓他們無路可逃。\n" NOR);
         return 1;
@@ -122,8 +122,8 @@ int do_enter ( string arg )
                 return 1 ;
         }
         ob = this_player () ;
-        message_vision("船夫一見有人上船，忙叫了一聲：開船嘍！\n", ob);
-        message_vision("船夫升起帆，船就向東方航行。\n", ob);
+        message_vision("船伕一見有人上船，忙叫了一聲：開船嘍！\n", ob);
+        message_vision("船伕升起帆，船就向東方航行。\n", ob);
         ob->move("/d/mingjiao/lsd/dahai") ;
         tell_object(ob, BLU "你在海上航行了三天三夜.......\n" NOR ) ;
         call_out("home", 10 , ob );
@@ -131,7 +131,7 @@ int do_enter ( string arg )
 }
 void home( object ob )
 {
-        tell_object(ob , "大船終于抵達了南海岸邊。你走下船來。\n" ) ;
+        tell_object(ob , "大船終於抵達了南海岸邊。你走下船來。\n" ) ;
         ob->move("/d/mingjiao/lsd/anbian") ;
 }
 

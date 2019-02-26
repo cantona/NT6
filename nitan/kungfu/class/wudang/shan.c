@@ -16,8 +16,8 @@ void create()
         set_name("張翠山", ({ "zhang cuishan", "zhang" }));
         set("nickname","武當五俠");
         set("long",
-                "他就是張三豐的五弟子、武當七俠之中的張翠山。\n"
-                "身穿一件幹幹凈凈的藍色道袍。\n");
+                "他就是張三丰的五弟子、武當七俠之中的張翠山。\n"
+                "身穿一件乾乾淨淨的藍色道袍。\n");
         set("gender", "男性");
         set("age",31);
         set("attitude", "peaceful");
@@ -130,7 +130,7 @@ void attempt_apprentice(object ob)
 
         if (ob->query_int() < 30)
         {
-                command("say 你的資質將來到不了鐵劃銀鉤的境界，收你也是白搭。\n");
+                command("say 你的資質將來到不了鐵劃銀鈎的境界，收你也是白搭。\n");
                 return;
         }
 
@@ -151,7 +151,7 @@ void attempt_apprentice(object ob)
         if ((int)ob->query_skill("taoism", 1) < 70)
         {
                 command("say 習武是為了強身健體，一味的練武是不可取的。");
-                command("say 我看你還需要在修身養性方面多鍛煉鍛煉，以提高你"
+                command("say 我看你還需要在修身養性方面多鍛鍊鍛鍊，以提高你"
                         "的道德心法。");
                 return;
         }
@@ -186,8 +186,8 @@ mixed ask_me()
                 return "你的倚天屠龍掌還不到家，要多練練！";
 
         message_vision(HIY "$n" HIY "點了點頭，運起太極神功，將倚天屠龍"
-                       "掌二十四字一氣呵\n成，攜帶著排山倒海之勁一齊施"
-                       "展了出來。只見雙掌紛飛，掌風\n凌厲，直刮得$N" HIY
+                       "掌二十四字一氣呵\n成，攜帶着排山倒海之勁一齊施"
+                       "展了出來。只見雙掌紛飛，掌風\n凌厲，直颳得$N" HIY
                        "臉龐隱隱生痛。\n" NOR, me, this_object());
         command("nod");
         command("say 將倚天屠龍掌二十四招連續使出，便是新招。你可明白了？");

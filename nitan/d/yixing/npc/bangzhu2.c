@@ -68,7 +68,7 @@ int do_ask(string arg)
         }
 
         if( !objectp(ob = present(dest, environment(me))) ) {
-                write("這裡沒有這個人。\n");
+                write("這裏沒有這個人。\n");
                 return 1;
         }
 
@@ -78,7 +78,7 @@ int do_ask(string arg)
         if( !living(me) )
                 return 1;
 
-        say(name() + "大怒道：沒見老子生了病煩著呢？滾！！！\n");
+        say(name() + "大怒道：沒見老子生了病煩着呢？滾！！！\n");
         return 1;
 }
 
@@ -115,7 +115,7 @@ void come_attacker()
                         bonus=bonus*100000/(100000+query("combat_exp", helper));
                         record = bonus/2 + random(bonus);
                         addn("combat_exp", record, helper);
-                        log_file("BangJob",sprintf("%s于%s時因護駕有功得%s經驗點\n",query("name", helper),ctime(time()),chinese_number(record)));
+                        log_file("BangJob",sprintf("%s於%s時因護駕有功得%s經驗點\n",query("name", helper),ctime(time()),chinese_number(record)));
                         bonus /= 4;
                         addn("score", bonus, obj);
                         delete("job", obj);
@@ -148,7 +148,7 @@ void come_attacker()
                 ob->name() + "走了過來。\n",
                 room, ({ob}));
         ob->set_leader(me);
-        message_vision("$N對$n喝道：看你還往哪裡跑？！\n", ob, me);
+        message_vision("$N對$n喝道：看你還往哪裏跑？！\n", ob, me);
         ob->kill_ob(me);
         command("!!!");
         me->kill_ob(ob);

@@ -129,9 +129,9 @@ int do_coupletalk(string arg)
                 tmpstr2 = "老婆";
         }
 
-        write(sprintf(MAG"你對%s %s 說：%s\n"NOR,
+        write(sprintf(MAG"你對%s %s 説：%s\n"NOR,
                 tmpstr2,couple_ob->name(1), arg ));
-        tell_object(couple_ob, sprintf(MAG "%s %s 對你說：%s\n"NOR,
+        tell_object(couple_ob, sprintf(MAG "%s %s 對你説：%s\n"NOR,
                tmpstr1,me->name(1), arg ));
 
         return 1;
@@ -184,7 +184,7 @@ void autoload(string arg)
                     tmpstr1 = "老婆";
                     tmpstr = "老公";
               }
-              write(sprintf( MAG "你的%s也在這裡，快去找啦...\n"NOR,tmpstr1));
+              write(sprintf( MAG "你的%s也在這裏，快去找啦...\n"NOR,tmpstr1));
               tell_object(couple_ob ,
               sprintf( MAG "你的%s來啦,快去接...\n" NOR, tmpstr));
 //me->name(1)+"("+me->query("id")+")",environment(me))->query("name") );

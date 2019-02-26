@@ -11,7 +11,7 @@ void create()
                 set_default_object(__FILE__);
         else {
                 set("unit", "柄");
-                set("long", "這是一柄精工制成的鋼劍，這種劍在將領之間非常流行。\n");
+                set("long", "這是一柄精工製成的鋼劍，這種劍在將領之間非常流行。\n");
                 set("value", 500);
                 set("material", "steel");
                 set("wield_msg", "$N「唰」的一聲抽出一柄$n握在手中。\n");

@@ -85,7 +85,7 @@ void remove()
         if (! living(this_object()))
         {
                 message_vision("路過兩個人，看到昏迷不醒的$N"
-                               "，嘆口氣，把$P架走了。\n",
+                               "，歎口氣，把$P架走了。\n",
                                this_object());
                 return;
         }
@@ -112,7 +112,7 @@ void die(object killer)
                                                    "weiwang": random(3) + 2, ]));
 
 /*
-                        CHANNEL_D->do_channel(this_object(), "rumor", "聽說" +
+                        CHANNEL_D->do_channel(this_object(), "rumor", "聽説" +
                                               ob->name(1)+"("+query("id", ob)+
                                               ")在" + environment()->short() + HIM
                                               "殺害了" + name() + "，為朝廷除去一"
@@ -126,7 +126,7 @@ void die(object killer)
                                                    "weiwang": random(3) + 2, ]));
 
 /*
-                        CHANNEL_D->do_channel(this_object(), "rumor", "聽說" +
+                        CHANNEL_D->do_channel(this_object(), "rumor", "聽説" +
                                               ob->name(1)+"("+query("id", ob)+
                                               ")在" + environment()->short() + HIM
                                               "擊斃了" + name() + "，為周圍百姓除"

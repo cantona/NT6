@@ -10,9 +10,9 @@ void create ()
   set ("short", "高昌大門");
   set ("long", @LONG
     轉過了一排樹木，只見一座石山上嵌著兩扇鐵鑄的大門,
-  大門看樣子重逾千鈞，據說是古代高昌國王為了抵御強敵而設計的。
+  大門看樣子重逾千鈞，據説是古代高昌國王為了抵禦強敵而設計的。
   門上鐵鏽斑駁，顯是歷時已久的舊物。但是門上的門環(huan)
-  似乎可以扭(niu).門上寫著：
+  似乎可以扭(niu).門上寫着：
                ****************
                *              *
                *  高 昌 大 殿 *
@@ -65,7 +65,7 @@ if( (int)query("left_trigger")==2
            tell_object(me,HIC"你成功打開了通往高昌大殿的鐵門！\n在這次歷練中你獲得了"+
                             chinese_number(exp)+"點經驗、"+
                      chinese_number(pot)+"點潛能以及"+
-                     chinese_number(score)+"點江湖閱歷。\n\n"NOR);
+                     chinese_number(score)+"點江湖閲歷。\n\n"NOR);
           }
      }
      delete("left_trigger");
@@ -100,7 +100,7 @@ int do_niu(string arg)
    if( !arg || arg=="" ) return 0;
 
    if( arg=="huan" ) {
-     write("你試著扭動門環，似乎可以左右滑動....\n");
+     write("你試着扭動門環，似乎可以左右滑動....\n");
 delete("left_trigger");
 delete("right_trigger");
      return 1;

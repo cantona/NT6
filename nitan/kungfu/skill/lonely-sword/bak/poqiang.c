@@ -38,8 +38,8 @@ int perform(object me)
         if( query("neili", me)<50 )
             return notify_fail("你的內力不夠，無法運用「破槍式」！\n");
 
-        msg = HIC "$N一式獨孤九劍「破槍式」，劍勢靈巧地順著"+weapon2->name()
-+"削落，劃向$n的五指。\n";
+        msg = HIC "$N一式獨孤九劍「破槍式」，劍勢靈巧地順着"+weapon2->name()
++"削落，划向$n的五指。\n";
         message_combatd(msg, me, target);
         damage = 10 + random(skill / 2);
         ap = me->query_skill("sword") + skill;
@@ -67,7 +67,7 @@ int perform(object me)
         {
             if(userp(me))
                  addn("neili", -30, me);
-            msg = "可是$n看破了$N的劍路，舍命將手中" + weapon2->name()+
+            msg = "可是$n看破了$N的劍路，捨命將手中" + weapon2->name()+
 "向前急刺，迫使$N收回攻勢！\n"NOR;
             me->start_busy(4);
         }

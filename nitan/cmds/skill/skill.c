@@ -58,7 +58,7 @@ int main(object me, string arg)
                         return notify_fail("沒有這種技能存在。\n");
         }
 
-        msg = "關于" + to_chinese(arg) + "的詳細屬性如下：\n";
+        msg = "關於" + to_chinese(arg) + "的詳細屬性如下：\n";
         msg += HIC "≡" HIY "──────────────────"
                "────" HIC "≡\n" NOR;
         msg += WHT + "  武功名稱：  " HIG + arg + "\n" + NOR;

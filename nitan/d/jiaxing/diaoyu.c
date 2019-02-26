@@ -8,8 +8,8 @@ void create()
 {
         set("short", "釣魚亭");
         set("long", @LONG
-湖邊一座石砌的精致小亭。極目遠眺，碧水連天，波光瀲灩。近處
-遊魚唼喋，漾起一圈圈漣漪。
+湖邊一座石砌的精緻小亭。極目遠眺，碧水連天，波光瀲灩。近處
+游魚唼喋，漾起一圈圈漣漪。
 LONG
         );
         set("outdoors", "jiaxing");
@@ -46,7 +46,7 @@ void init()
 }
 int do_shuohua()
 {
-        write ("別說話！別把魚嚇走了！\n");
+        write ("別説話！別把魚嚇走了！\n");
         return 1;
 }
 int do_ban()
@@ -61,11 +61,11 @@ int do_diao(string arg)
         object mon;
 
 //        if((int)(me->query("combat_exp")) > 15000)
-//              return notify_fail("你的經驗太高了，這裡不適合你。\n");
+//              return notify_fail("你的經驗太高了，這裏不適合你。\n");
         if (query_temp("char_count") < 1)
-              return notify_fail("這裡太擁擠了。沒處下鉤。回頭再來吧。\n");
+              return notify_fail("這裏太擁擠了。沒處下鈎。回頭再來吧。\n");
         if (query("fish") < 1)
-              return notify_fail("這裡的魚釣得差不多了，半天看不到魚影。回頭再來吧。\n");
+              return notify_fail("這裏的魚釣得差不多了，半天看不到魚影。回頭再來吧。\n");
         if (!arg)
               return notify_fail("你要釣什麼？\n");
         if (arg != "fish" && arg != "魚")
@@ -75,7 +75,7 @@ int do_diao(string arg)
         if( (query("qi", me))<16 )
               return notify_fail("你已經太累了，還是休息一下吧。\n");
         message_vision("
-$N將魚餌掛在鉤上，輕輕一盪魚竿，將魚餌扔進水裡。\n\n",me);
+$N將魚餌掛在鈎上，輕輕一蕩魚竿，將魚餌扔進水裏。\n\n",me);
         set_temp("fishing", 1, me);
         addn_temp("char_count", -1);
         addn("fish", -1);
@@ -92,8 +92,8 @@ void del_fishing(object me, object mon, int bonus, int exp, int pot)
         if (random (10) < 2)
         {
                 message_vision(HIY"
-只見浮漂微微一動，$N趕緊用力提竿，提上來一看，白白的魚鉤上什麼也
-沒有。唉，太心急了，沒等魚兒吃鉤就早早提竿了。\n"NOR,me);
+只見浮漂微微一動，$N趕緊用力提竿，提上來一看，白白的魚鈎上什麼也
+沒有。唉，太心急了，沒等魚兒吃鈎就早早提竿了。\n"NOR,me);
                 me->start_busy(3);
                 return ;
         }

@@ -11,7 +11,7 @@ void create()
                 set_default_object(__FILE__);
         else {
                 set("unit", "把");
-                set("long","這是一把挖地的鐵鍬，用精鋼打制，木柄上雕著一條仰頭吐信的怪蛇。\n");
+                set("long","這是一把挖地的鐵鍬，用精鋼打製，木柄上雕着一條仰頭吐信的怪蛇。\n");
                 set("value", 5000);
                 set("material", "steel");
                 set("no_put",1);

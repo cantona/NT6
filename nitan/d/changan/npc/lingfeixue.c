@@ -11,7 +11,7 @@ void create()
         set("title",HIY "千金一笑" NOR);
         set("age", 23);
         set("long", 
-        "凌飛雪原是一個青樓名妓，後來被當朝一位大官看中，據說這個\n群玉樓也是那位官員給她開的。");
+        "凌飛雪原是一個青樓名妓，後來被當朝一位大官看中，據説這個\n羣玉樓也是那位官員給她開的。");
         set("str", 40);
         set("dex", 40);
         set("con", 40);
@@ -31,15 +31,15 @@ void create()
         set("attitude", "friendly");
         set("inquiry", ([
         "name" : "我就是曾經“一笑博千金”的長安第一美女凌飛雪。",
-        "here" : "這兒就是長安城裡最最有名的群玉樓。",
+        "here" : "這兒就是長安城裏最最有名的羣玉樓。",
         ]) );
 
         setup();
         set("chat_chance", 15);
         set("chat_msg", ({
-                "凌飛雪得意地說道：當初我嫵媚一笑，也不知有多少人曾經拜倒在我裙下。\n",
+                "凌飛雪得意地説道：當初我嫵媚一笑，也不知有多少人曾經拜倒在我裙下。\n",
                 "凌飛雪若有所思的道：也不知到湘湘今天肯不肯出來接客。\n",
-                "凌飛雪對你說道：這位客官，你來我們群玉樓就算對了，您想要什麼樣的姑娘都有。\n",
+                "凌飛雪對你説道：這位客官，你來我們羣玉樓就算對了，您想要什麼樣的姑娘都有。\n",
         }) );
 
         carry_object("/d/changan/npc/obj/skirt")->wear();
@@ -67,7 +67,7 @@ void greeting(object me)
         if( query("class", me) == "bonze" )
         {
                 command("say 呵！" + RANK_D->query_respect(me) +
-                        "也來光顧我們群玉樓啊。");
+                        "也來光顧我們羣玉樓啊。");
                 command("say 快請上樓吧！");
         }
 
@@ -94,7 +94,7 @@ void accept_kill(object me)
                 ob=new("/d/changan/npc/baobiao");
                 ob->move(environment());
         }
-        message_vision(HIC "\n忽然從門外沖進來幾個保鏢，對$N"
+        message_vision(HIC "\n忽然從門外衝進來幾個保鏢，對$N"
                        HIC "大喊一聲“幹什麼？在這兒鬧事，想"
                        "找死嗎？\n\n"NOR, me);
         ob->kill_ob(me);

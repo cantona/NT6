@@ -33,7 +33,7 @@ int exert(object me, object target)
 
         if( objectp(target) && target != me ) {
                 if( !target->query_weak() )
-                        return notify_fail(target->name() + "並沒有處于虛弱狀態。\n");
+                        return notify_fail(target->name() + "並沒有處於虛弱狀態。\n");
 
                 addn("neili", -1000, me);
                 me->receive_damage("qi", 0);
@@ -51,7 +51,7 @@ int exert(object me, object target)
         addn("neili", -1000, me);
         me->receive_damage("qi", 0);
 
-        message_combatd(HIY "$N" HIY "神色忽而歡嘆、忽而憂心、轉瞬間又化做不喜不悲之狀，\n隨著$N" HIY "張開眼神，一屢精光乍現及逝，$N"HIY"的氣習卻已全然不同。\n" NOR, me);
+        message_combatd(HIY "$N" HIY "神色忽而歡歎、忽而憂心、轉瞬間又化做不喜不悲之狀，\n隨著$N" HIY "張開眼神，一屢精光乍現及逝，$N"HIY"的氣習卻已全然不同。\n" NOR, me);
 
         addn_temp("apply/avoid_busy", 100, me);
         addn_temp("apply/avoid_weak", 100, me);

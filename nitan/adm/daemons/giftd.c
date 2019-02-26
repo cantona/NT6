@@ -42,7 +42,7 @@ varargs mixed set(string idx, mixed para, object who)
                         if( !UPDATE_D->can_improve_level(old_lvl) &&
                             para > to_int(pow(old_lvl, 3.0)*10000) )
                         {
-                                //tell_object(ob, HIR "由于你處于等級封印中，你的實戰經驗無法提升！\n" NOR);
+                                //tell_object(ob, HIR "由於你處於等級封印中，你的實戰經驗無法提升！\n" NOR);
                                 return;
                         }
 
@@ -149,7 +149,7 @@ varargs mixed add(string prop, mixed data, object who)
 }
 
 // 延遲獎勵：因為有時給出獎勵的時候應該是在某些事件發生以後，
-// 但是在該事件發生時給與獎勵更易于書寫程序，所以獎勵生成的
+// 但是在該事件發生時給與獎勵更易於書寫程序，所以獎勵生成的
 // 地方在事件正在發生的時候，但是要讓玩家看起來是在事件發生
 // 以後。比如殺人，人死亡的時候給與獎勵是容易做的，但是我希
 // 望玩家在看到NPC 的死亡信息以後才看到獎勵的信息，這時候就
@@ -222,7 +222,7 @@ void special_bonus(object me, object who, mixed arg)
 
         /*
         message_vision("$n對$N微微一笑，道：幹得不賴，辛苦"
-                       "了，正好我這裡有點東西，你就拿去吧。\n",
+                       "了，正好我這裏有點東西，你就拿去吧。\n",
                        who, me);
         */
 
@@ -242,7 +242,7 @@ varargs public void bonus(object who, mapping b, int flag)
         int pot;                // 獎勵的潛能
         int mar;                // 獎勵的實戰體會
         int shen;               // 獎勵的神
-        int score;              // 獎勵的江湖閱歷
+        int score;              // 獎勵的江湖閲歷
         int weiwang;            // 獎勵的江湖威望
         int gongxian;           // 獎勵的門派貢獻
         int gold;
@@ -388,14 +388,14 @@ varargs public void bonus(object who, mapping b, int flag)
         if (stringp(msg = b["prompt"]))
                 msg = HIG + msg + HIG "，你獲得了";
         else
-                msg = HIG "通過這次鍛煉，你獲得了";
+                msg = HIG "通過這次鍛鍊，你獲得了";
 
         if (exp > 0) msg += chinese_number(exp) + "點經驗、";
         if (pot > 0) msg += chinese_number(pot) + "點潛能、";
         if (mar > 0) msg += chinese_number(mar) + "點實戰體會、";
         if (shen > 0) msg += chinese_number(shen) + "點正神、";
         if (shen < 0) msg += chinese_number(-shen) + "點負神、";
-        if (score > 0) msg += chinese_number(score) + "點江湖閱歷、";
+        if (score > 0) msg += chinese_number(score) + "點江湖閲歷、";
         if (weiwang > 0) msg += chinese_number(weiwang) + "點威望、";
         if (gongxian > 0) msg += chinese_number(gongxian) + "點門派功績、";
         if (gold > 0) msg += chinese_number(gold) + "兩黃金、";
@@ -431,7 +431,7 @@ varargs public void work_bonus(object who, mapping b, int flag, string type/*任
         int pot;                // 獎勵的潛能
         int mar;                // 獎勵的實戰體會
         int shen;               // 獎勵的神
-        int score;              // 獎勵的江湖閱歷
+        int score;              // 獎勵的江湖閲歷
         int weiwang;            // 獎勵的江湖威望
         int gongxian;           // 獎勵的門派貢獻
         int gold;
@@ -577,14 +577,14 @@ varargs public void work_bonus(object who, mapping b, int flag, string type/*任
         if (stringp(msg = b["prompt"]))
                 msg = HIC "\n" + msg + HIC "，你獲得了";
         else
-                msg = HIC "\n通過這次鍛煉，你獲得了";
+                msg = HIC "\n通過這次鍛鍊，你獲得了";
 
         if (exp > 0) msg += chinese_number(exp) + "點經驗、";
         if (pot > 0) msg += chinese_number(pot) + "點潛能、";
         if (mar > 0) msg += chinese_number(mar) + "點實戰體會、";
         if (shen > 0) msg += chinese_number(shen) + "點正神、";
         if (shen < 0) msg += chinese_number(-shen) + "點負神、";
-        if (score > 0) msg += chinese_number(score) + "點江湖閱歷、";
+        if (score > 0) msg += chinese_number(score) + "點江湖閲歷、";
         if (weiwang > 0) msg += chinese_number(weiwang) + "點威望、";
         if (gongxian > 0) msg += chinese_number(gongxian) + "點門派功績、";
         if (gold > 0) msg += chinese_number(gold) + "兩黃金、";
@@ -738,9 +738,9 @@ varargs public void freequest_bonus(object who)
                 delete("quest", who);
                 message_sort(HIW "\n正在這時，只見一位" +
                              query("family/family_name", who)+
-                             "弟子急急忙忙趕到$N" HIW "身邊，說"
-                             "道：“原來你在這裡啊，師傅正到處派"
-                             "人找你呢。聽說有要緊事交給你辦，你"
+                             "弟子急急忙忙趕到$N" HIW "身邊，説"
+                             "道：“原來你在這裏啊，師傅正到處派"
+                             "人找你呢。聽説有要緊事交給你辦，你"
                              "趕快回去吧！這個包裹是師傅讓我轉交"
                              "給你的。”\n" NOR, who);
 
@@ -760,7 +760,7 @@ varargs public void gift_bonus(object who, mapping b)
         int exp;                // 獎勵的經驗
         int pot;                // 獎勵的潛能
         int mar;                // 獎勵的實戰體會
-        int score;              // 獎勵的江湖閱歷
+        int score;              // 獎勵的江湖閲歷
         int weiwang;            // 獎勵的江湖威望
         int gongxian;           // 獎勵的門派貢獻
         int percent;            // 獎勵的有效百分比
@@ -856,7 +856,7 @@ varargs public void gift_bonus(object who, mapping b)
         // 生成謠言信息
         if (stringp(msg = b["rumor"]))
         {
-                shout(HIR "【武林傳聞】" NOR + WHT "聽說" +
+                shout(HIR "【武林傳聞】" NOR + WHT "聽説" +
                       who->name()+WHT"["+query("id", who)+
                       WHT "]" + msg + WHT "。\n" NOR);
         }
@@ -876,7 +876,7 @@ varargs public void gift_bonus(object who, mapping b)
                 if (exp > 0) msg += chinese_number(exp) + "點經驗、";
                 if (pot > 0) msg += chinese_number(pot) + "點潛能、";
                 if (mar > 0) msg += chinese_number(mar) + "點實戰體會、";
-                if (score > 0) msg += chinese_number(score) + "點江湖閱歷、";
+                if (score > 0) msg += chinese_number(score) + "點江湖閲歷、";
                 if (weiwang > 0) msg += chinese_number(weiwang) + "點江湖威望、";
                 if (gongxian > 0) msg += chinese_number(gongxian) + "點門派功績、";
 
@@ -908,7 +908,7 @@ varargs public void war_bonus(object who, mapping b)
         int pot;                // 獎勵的潛能
         int mar;                // 獎勵的實戰體會
         int shen;               // 獎勵的神
-        int score;              // 獎勵的江湖閱歷
+        int score;              // 獎勵的江湖閲歷
         int weiwang;            // 獎勵的江湖威望
         int gongxian;           // 獎勵的門派貢獻
         int gold;
@@ -927,7 +927,7 @@ varargs public void war_bonus(object who, mapping b)
         if (percent < 1 || percent > 100)
                 percent = 100;
         
-        // 轉世後獎勵大幅度降低，轉世獎勵高是為了新人適應這裡
+        // 轉世後獎勵大幅度降低，轉世獎勵高是為了新人適應這裏
         if( query("reborn/times", who) ) percent /= 4; 
         
         exp = b["exp"] * percent / 100;
@@ -1036,14 +1036,14 @@ varargs public void war_bonus(object who, mapping b)
         if (stringp(msg = b["prompt"]))
                 msg = HIG + msg + HIG "，你獲得了";
         else
-                msg = HIG "通過這次鍛煉，你獲得了";
+                msg = HIG "通過這次鍛鍊，你獲得了";
 
         if (exp > 0) msg += chinese_number(exp) + "點經驗、";
         if (pot > 0) msg += chinese_number(pot) + "點潛能、";
         if (mar > 0) msg += chinese_number(mar) + "點實戰體會、";
         if (shen > 0) msg += chinese_number(shen) + "點正神、";
         if (shen < 0) msg += chinese_number(-shen) + "點負神、";
-        if (score > 0) msg += chinese_number(score) + "點江湖閱歷、";
+        if (score > 0) msg += chinese_number(score) + "點江湖閲歷、";
         if (weiwang > 0) msg += chinese_number(weiwang) + "點威望、";
         if (gongxian > 0) msg += chinese_number(gongxian) + "點門派功績、";
         if (gold > 0) msg += chinese_number(gold) + "兩黃金、";
@@ -1079,7 +1079,7 @@ varargs public void boss_bonus(object who, mapping b, int flag)
         int pot;                // 獎勵的潛能
         int mar;                // 獎勵的實戰體會
         int shen;               // 獎勵的神
-        int score;              // 獎勵的江湖閱歷
+        int score;              // 獎勵的江湖閲歷
         int weiwang;            // 獎勵的江湖威望
         int gongxian;           // 獎勵的門派貢獻
         int gold;
@@ -1224,14 +1224,14 @@ varargs public void boss_bonus(object who, mapping b, int flag)
         if (stringp(msg = b["prompt"]))
                 msg = HIG + msg + HIG "，你獲得了";
         else
-                msg = HIG "通過這次鍛煉，你獲得了";
+                msg = HIG "通過這次鍛鍊，你獲得了";
 
         if (exp > 0) msg += chinese_number(exp) + "點經驗、";
         if (pot > 0) msg += chinese_number(pot) + "點潛能、";
         if (mar > 0) msg += chinese_number(mar) + "點實戰體會、";
         if (shen > 0) msg += chinese_number(shen) + "點正神、";
         if (shen < 0) msg += chinese_number(-shen) + "點負神、";
-        if (score > 0) msg += chinese_number(score) + "點江湖閱歷、";
+        if (score > 0) msg += chinese_number(score) + "點江湖閲歷、";
         if (weiwang > 0) msg += chinese_number(weiwang) + "點威望、";
         if (gongxian > 0) msg += chinese_number(gongxian) + "點門派功績、";
         if (gold > 0) msg += chinese_number(gold) + "兩黃金、";
@@ -1267,7 +1267,7 @@ varargs public void fuben_bonus(object who, mapping b, int flag)
         int pot;                // 獎勵的潛能
         int mar;                // 獎勵的實戰體會
         int shen;               // 獎勵的神
-        int score;              // 獎勵的江湖閱歷
+        int score;              // 獎勵的江湖閲歷
         int weiwang;            // 獎勵的江湖威望
         int gongxian;           // 獎勵的門派貢獻
         int gold;
@@ -1412,14 +1412,14 @@ varargs public void fuben_bonus(object who, mapping b, int flag)
         if (stringp(msg = b["prompt"]))
                 msg = HIG + msg + HIG "，你獲得了";
         else
-                msg = HIG "通過這次鍛煉，你獲得了";
+                msg = HIG "通過這次鍛鍊，你獲得了";
 
         if (exp > 0) msg += chinese_number(exp) + "點經驗、";
         if (pot > 0) msg += chinese_number(pot) + "點潛能、";
         if (mar > 0) msg += chinese_number(mar) + "點實戰體會、";
         if (shen > 0) msg += chinese_number(shen) + "點正神、";
         if (shen < 0) msg += chinese_number(-shen) + "點負神、";
-        if (score > 0) msg += chinese_number(score) + "點江湖閱歷、";
+        if (score > 0) msg += chinese_number(score) + "點江湖閲歷、";
         if (weiwang > 0) msg += chinese_number(weiwang) + "點威望、";
         if (gongxian > 0) msg += chinese_number(gongxian) + "點門派功績、";
         if (gold > 0) msg += chinese_number(gold) + "兩黃金、";
@@ -1454,7 +1454,7 @@ varargs public void battle_bonus(object who, mapping b)
         int pot;                // 獎勵的潛能
         int mar;                // 獎勵的實戰體會
         int shen;               // 獎勵的神
-        int score;              // 獎勵的江湖閱歷
+        int score;              // 獎勵的江湖閲歷
         int weiwang;            // 獎勵的江湖威望
         int gongxian;           // 獎勵的門派貢獻
         int gold;
@@ -1580,14 +1580,14 @@ varargs public void battle_bonus(object who, mapping b)
         if (stringp(msg = b["prompt"]))
                 msg = HIG + msg + HIG "，你獲得了";
         else
-                msg = HIG "通過這次鍛煉，你獲得了";
+                msg = HIG "通過這次鍛鍊，你獲得了";
 
         if (exp > 0) msg += chinese_number(exp) + "點經驗、";
         if (pot > 0) msg += chinese_number(pot) + "點潛能、";
         if (mar > 0) msg += chinese_number(mar) + "點實戰體會、";
         if (shen > 0) msg += chinese_number(shen) + "點正神、";
         if (shen < 0) msg += chinese_number(-shen) + "點負神、";
-        if (score > 0) msg += chinese_number(score) + "點江湖閱歷、";
+        if (score > 0) msg += chinese_number(score) + "點江湖閲歷、";
         if (weiwang > 0) msg += chinese_number(weiwang) + "點威望、";
         if (gongxian > 0) msg += chinese_number(gongxian) + "點門派功績、";
         if (gold > 0) msg += chinese_number(gold) + "兩黃金、";
@@ -1623,7 +1623,7 @@ varargs public void event_bonus(object who, mapping b, int flag)
         int pot;                // 獎勵的潛能
         int mar;                // 獎勵的實戰體會
         int shen;               // 獎勵的神
-        int score;              // 獎勵的江湖閱歷
+        int score;              // 獎勵的江湖閲歷
         int weiwang;            // 獎勵的江湖威望
         int gongxian;           // 獎勵的門派貢獻
         int gold;
@@ -1770,14 +1770,14 @@ varargs public void event_bonus(object who, mapping b, int flag)
         if (stringp(msg = b["prompt"]))
                 msg = HIG + msg + HIG "，你獲得了";
         else
-                msg = HIG "通過這次鍛煉，你獲得了";
+                msg = HIG "通過這次鍛鍊，你獲得了";
 
         if (exp > 0) msg += chinese_number(exp) + "點經驗、";
         if (pot > 0) msg += chinese_number(pot) + "點潛能、";
         if (mar > 0) msg += chinese_number(mar) + "點實戰體會、";
         if (shen > 0) msg += chinese_number(shen) + "點正神、";
         if (shen < 0) msg += chinese_number(-shen) + "點負神、";
-        if (score > 0) msg += chinese_number(score) + "點江湖閱歷、";
+        if (score > 0) msg += chinese_number(score) + "點江湖閲歷、";
         if (weiwang > 0) msg += chinese_number(weiwang) + "點威望、";
         if (gongxian > 0) msg += chinese_number(gongxian) + "點門派功績、";
         if (gold > 0) msg += chinese_number(gold) + "兩黃金、";

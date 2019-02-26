@@ -65,11 +65,11 @@ void greeting(object ob)
         switch( random(2) )
         {
                 case 0:
-                        say( "俠客島弟子說道：這位" + RANK_D->query_respect(ob)
+                        say( "俠客島弟子説道：這位" + RANK_D->query_respect(ob)
                                  + "，快請到迎賓館中歇歇腳吧。\n");
                         break;
                 case 1:
-                        say( "俠客島弟子恭手說道：這位" + RANK_D->query_respect(ob)
+                        say( "俠客島弟子恭手説道：這位" + RANK_D->query_respect(ob)
                                  + "，島主正在等你呢。\n");
                         break;
         }

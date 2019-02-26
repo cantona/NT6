@@ -38,9 +38,9 @@ int perform(object me, object target)
                 return notify_fail("你的真氣不夠，難以施展" + name() + "。\n");
 
         if (! living(target))
-                return notify_fail("對方都已經這樣了，用不著這麼費力吧？\n");
+                return notify_fail("對方都已經這樣了，用不着這麼費力吧？\n");
 
-        msg = HIW "只見$N" HIW "身形一展，身法陡然變得詭異無比，聚力于指悄然點"
+        msg = HIW "只見$N" HIW "身形一展，身法陡然變得詭異無比，聚力於指悄然點"
               "出，數股劍氣直襲$n" HIW "要穴而去。\n" NOR;
 
         message_combatd(msg, me, target);

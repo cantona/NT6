@@ -26,8 +26,8 @@ void create()
         set_name("陳家洛", ({ "chen jialuo", "chen","jialuo" }));
         set("title", "紅花會少總舵主");
         set("long", "他一副模樣直是個富貴人家的紈褲子弟，豐\n"
-                    "姿如玉，目朗似星，輕袍緩帶，手中搖著一\n"
-                    "柄折扇，神採飛揚，氣度閒雅，吐屬斯文。\n"
+                    "姿如玉，目朗似星，輕袍緩帶，手中搖着一\n"
+                    "柄摺扇，神采飛揚，氣度閒雅，吐屬斯文。\n"
                     "服飾儼然是個貴介公子。\n");
         set("nickname", HIW "玉面神龍" NOR);
         set("gender", "男性");
@@ -145,7 +145,7 @@ int do_say(string arg)
 
         if( arg=="青葉紅花白蓮藕")
         {
-                write("陳家洛說道：天下英雄是一家。\n");
+                write("陳家洛説道：天下英雄是一家。\n");
                 message("vision", "陳家洛低聲道：原來是自家弟兄，不知有何見教？\n", this_player());
                 set("inquiry", ([
                         "紅花令" : (: ask_ling :),
@@ -161,7 +161,7 @@ string ask_ling()
         object ob,me;
 
         if (count == 0) return "紅花令已經傳出去了！\n";
-        message_vision(HIR"陳家洛說道：“想要紅花令嗎？，先接我三招！\n"NOR,this_player());
+        message_vision(HIR"陳家洛説道：“想要紅花令嗎？，先接我三招！\n"NOR,this_player());
         ob = this_object();
         me = this_player();
         COMBAT_D->do_attack(ob, me, query_temp("weapon") );
@@ -238,7 +238,7 @@ int try_to_learn_quan()
         if( !query("can_learn/chen/baihua-cuoquan", me) && 
             query("family/master_id", me) != query("id") )
         {
-                command("say 等你成為我的弟子後再說吧。");
+                command("say 等你成為我的弟子後再説吧。");
                 return -1;
         }
 
@@ -246,7 +246,7 @@ int try_to_learn_quan()
         {
                 command("heng");
                 command("say 我們紅花會在江湖上行走，講的就是“俠義”二字。");
-                command("say 你連這都忘了，叫我如何敢傳功于你？");
+                command("say 你連這都忘了，叫我如何敢傳功於你？");
                 return -1;
         }
 
@@ -317,7 +317,7 @@ mixed ask_skill1()
                 return "你的劍盾珠索還練得不到家，自己下去練練再來吧！";
 
         message_vision(HIY "$n" HIY "點了點頭，將$N" HIY "招至"
-                       "身邊，在耳旁低聲細說良久，$N" HIY "\n聽"
+                       "身邊，在耳旁低聲細説良久，$N" HIY "\n聽"
                        "後會心的一笑，看來大有所悟。\n" NOR, me,
                        this_object());
 
@@ -366,7 +366,7 @@ mixed ask_skill2()
         message_vision(HIY "$n" HIY "對$N" HIY "讚許地點了點頭，道：“既"
                        "然你如此有心，今日\n我便傳你此招。”$n" HIY "招"
                        "了招手，$N" HIY "連忙走上前去，只見\n$n" HIY "輕"
-                       "聲在$N" HIY "說了些話，接著手中長索一抖，登時幻"
+                       "聲在$N" HIY "説了些話，接着手中長索一抖，登時幻"
                        "出漫\n天鞭影，宛如蛟龍通天，無數鞭影向四面八方勁"
                        "點而去。\n" NOR, me, this_object());
 
@@ -417,9 +417,9 @@ mixed ask_skill3()
 
         message_vision(HIY "$n" HIY "微微一笑，對$N" HIY "點頭道："
                        "“你今日有此造詣，傳你這\n招，又有何難？”"
-                       "說話隨即一聲清嘯，身形一展，舞步宛如\n行雲"
+                       "説話隨即一聲清嘯，身形一展，舞步宛如\n行雲"
                        "流水、彩蝶飛揚般，速度變得異常敏捷。$N" HIY
-                       "見得如此神\n妙的舞步，不禁讚嘆不已。\n" NOR,
+                       "見得如此神\n妙的舞步，不禁讚歎不已。\n" NOR,
                        me, this_object());
 
         command("smile");
@@ -466,8 +466,8 @@ mixed ask_skill4()
         if (me->query_skill("baihua-cuoquan", 1) < 120)
                 return "你的百花錯拳還練得不到家，自己下去練練再來吧！";
 
-        message_vision(HIY "$n" HIY "對$N" HIY "點了點頭，說道：“我給"
-                       "你演示一遍，可要仔細\n看好了。”說罷只見$n" HIY
+        message_vision(HIY "$n" HIY "對$N" HIY "點了點頭，説道：“我給"
+                       "你演示一遍，可要仔細\n看好了。”説罷只見$n" HIY
                        "頓步沉身，雙掌交錯打出，掌鋒\n拳影重重疊疊，虛"
                        "實難辨。\n" NOR, me, this_object());
 
@@ -516,11 +516,11 @@ mixed ask_skill5()
         if (me->query_skill("baihua-cuoquan", 1) < 150)
                 return "你的百花錯拳還練得不到家，自己下去練練再來吧！";
 
-        message_vision(HIY "$n" HIY "對$N" HIY "微微一笑，說道：“看"
+        message_vision(HIY "$n" HIY "對$N" HIY "微微一笑，説道：“看"
                        "好了！”只聽$n" HIY "話音\n剛落，隨即大喝一"
-                       "聲，雙掌紛飛，擒拿手中夾著鷹爪功，左\n手查拳"
+                       "聲，雙掌紛飛，擒拿手中夾着鷹爪功，左\n手查拳"
                        "，右手綿掌。攻出去八卦掌，收回時已是太極拳，"
-                       "諸\n家雜陳，毫無規律，舖天蓋地連續貫出。氣勢"
+                       "諸\n家雜陳，毫無規律，鋪天蓋地連續貫出。氣勢"
                        "恢弘，無與倫\n比。只看得$N" HIY "呆立當場，"
                        "不知所措。\n" NOR, me, this_object());
 
@@ -569,20 +569,20 @@ mixed ask_skill6()
         if (me->query_skill("zhanshen-xinjing", 1) < 250)
                 return "你的戰神心經修為不夠，自己下去練練再來吧！";
 
-        message_vision(HIY "$n" HIY "對$N" HIY "微微一笑，嘆道：“你"
+        message_vision(HIY "$n" HIY "對$N" HIY "微微一笑，歎道：“你"
                        "今日造詣非凡，確有能力\n繼承我這拳法，我先將"
-                       "總訣說予你聽罷。方今之時，臣以神\n遇，而不以"
+                       "總訣説予你聽罷。方今之時，臣以神\n遇，而不以"
                        "目視，官知止而神欲行，依乎天理，批大卻，導\n"
                        "大竅，因其固然……”$N" HIY "聽得滿臉迷茫，問"
                        "道：“師父，這\n…不是《莊子》中庖丁解……”"
                        "$n" HIY "笑道：“起初我也是\n這般的懷疑，但破"
-                       "敵秘訣，卻盡都在此。”說完便接著沉吟\n道：“"
+                       "敵祕訣，卻盡都在此。”説完便接着沉吟\n道：“"
                        "行為遲，動刀甚微，孑然已解，如土委地，提刀而"
                        "立，\n為之四顧，為之躊躇滿志……”良久，良久"
                        "……。\n" NOR, me, this_object());
 
         command("smile");
-        command("say 這本是我在玉峰上領悟的拳訣，今日傳給了你，望你好自為之。");
+        command("say 這本是我在玉峯上領悟的拳訣，今日傳給了你，望你好自為之。");
         tell_object(me, HIC "你學會了「戰神轟天訣」。\n" NOR);
 
         if (me->can_improve_skill("unarmed"))
@@ -630,8 +630,8 @@ mixed ask_jiansuo()
                                        "“你行為如此不恥，居然還敢來問我要劍盾"
                                        "珠索？”\n" NOR, this_object(), me);
                 else
-                        message_vision(CYN "$N" CYN "冷笑一聲，對$n" CYN "說道"
-                                       "：“好一個姦惡之徒，竟敢貪圖我的隨身利"
+                        message_vision(CYN "$N" CYN "冷笑一聲，對$n" CYN "説道"
+                                       "：“好一個奸惡之徒，竟敢貪圖我的隨身利"
                                        "器！”\n" NOR, this_object(), me);
                 return 1;
         }
@@ -659,7 +659,7 @@ mixed ask_jiansuo()
         }
 
         if (owner == me)
-                return "劍盾珠索現在不就在你手裡嗎？";
+                return "劍盾珠索現在不就在你手裏嗎？";
 
         if (objectp(owner) && owner != this_object())
         {
@@ -676,7 +676,7 @@ mixed ask_jiansuo()
 
         ob->move(this_object());
         message_vision(CYN "$N" CYN "微微一笑，道：“這劍盾珠索你就"
-                       "拿去，多用它行俠仗義，懲姦除惡。”\n" NOR,
+                       "拿去，多用它行俠仗義，懲奸除惡。”\n" NOR,
                        this_object(), me);
         command("givejiandunzhusuoto"+query("id", me));
         return 1;

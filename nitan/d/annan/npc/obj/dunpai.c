@@ -4,7 +4,7 @@ inherit SHIELD;
 
 void create()
 {
-   set_name(HIG"籐牌"NOR, ({ "tengpai"}) );
+   set_name(HIG"藤牌"NOR, ({ "tengpai"}) );
    set_weight(300);
    if( clonep() )
      set_default_object(__FILE__);

@@ -21,7 +21,7 @@ void create()
         set_name("令牌", ({"ling pai","ling" }));
        set_max_encumbrance(10);
        set("unit", "塊");
-       set("long", "這是一塊朱紅的令牌,精鋼打造，用來証明官府人士的身份。\n帶著它你就有權搜尋罪犯(guancha)，逮捕嫌疑犯(daibu)。\n");
+       set("long", "這是一塊硃紅的令牌,精鋼打造，用來證明官府人士的身份。\n帶着它你就有權搜尋罪犯(guancha)，逮捕嫌疑犯(daibu)。\n");
        set("value", 0);
        set("no_drop", "這樣東西不能離開你。\n");
        set("no_burn",1);
@@ -42,15 +42,15 @@ int do_watch(string arg)
         if (!ob=present("ling pai",me))
                 return notify_fail("什麼？\n");
         if( query_temp("kf_finish", me) )
-                return notify_fail("程藥發等著回話哪，你還在磨蹭什麼？\n");
+                return notify_fail("程藥發等着回話哪，你還在磨蹭什麼？\n");
         if (!arg||!obj=present(arg,environment(me)))
                 return notify_fail("你要觀察誰？\n");
         if( !obj->is_character() || obj->is_corpse() )
         return notify_fail("你只能觀察一個活的物體。\n");
         if( me->is_busy() )
-                return notify_fail("你正忙著。\n");
+                return notify_fail("你正忙着。\n");
         targ=query("name", obj);
-        tell_object(me,"你用銳利的眼神盯著"+targ+"。\n\n");
+        tell_object(me,"你用鋭利的眼神盯着"+targ+"。\n\n");
 
         if( query_temp("kf_tufei", obj) == query_temp("kf_npc", me )
          && random(query("kar", me))>15){
@@ -98,7 +98,7 @@ int do_watch(string arg)
                         break;
 
                         case 5:
-                        tell_object(me,"只見"+targ+"手足僵硬，渾身散發著金屬光澤。\n\n");
+                        tell_object(me,"只見"+targ+"手足僵硬，渾身散發着金屬光澤。\n\n");
                         break;
 
                         case 6:
@@ -110,7 +110,7 @@ int do_watch(string arg)
                         break;
          
                         case 8:
-                        tell_object(me,"只見"+targ+"幹笑幾聲，臉上擠出一絲媚笑。\n\n");
+                        tell_object(me,"只見"+targ+"乾笑幾聲，臉上擠出一絲媚笑。\n\n");
                         break;
                 
                         case 9:
@@ -136,15 +136,15 @@ int do_catch(string arg)
         if( !query("kaifengfu", me) )
                 return notify_fail("你並非朝廷官員，何必操這份閒心？\n");
         if( query_temp("kf_finish", me) )
-                return notify_fail("林大人等著回話哪，你還在磨蹭什麼？\n");
+                return notify_fail("林大人等着回話哪，你還在磨蹭什麼？\n");
         if (!arg||!obj=present(arg,environment(me)))
                 return notify_fail("你要逮捕誰？\n");
         if( !obj->is_character() || obj->is_corpse() )
                 return notify_fail("你只能逮捕一個活人。\n");
         if( !query_temp("kf_faxian", me )
          || query_temp("kf_faxianed", obj) != query("id", me) )
-                return notify_fail("朝廷紀律嚴明，沒有証據怎好拿人？\n");
-        message_vision ("$N對著$n冷笑一聲道：閣下的案子發了，老老實實跟本官走一趟。\n\n",me,obj);
+                return notify_fail("朝廷紀律嚴明，沒有證據怎好拿人？\n");
+        message_vision ("$N對着$n冷笑一聲道：閣下的案子發了，老老實實跟本官走一趟。\n\n",me,obj);
         if( query_temp("kf_whatnpc", me) == 1)new_obj=new("/d/kaifeng/npc/tufei1.c");
     if( query_temp("kf_whatnpc", me) == 2)new_obj=new("/d/kaifeng/npc/tufei2.c");
     if( query_temp("kf_whatnpc", me) == 3)new_obj=new("/d/kaifeng/npc/tufei3.c");

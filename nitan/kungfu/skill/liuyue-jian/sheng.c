@@ -35,10 +35,10 @@ int perform(object me, object target)
                 return notify_fail("你沒有激發流月劍舞，難以施展" + name() + "。\n");
 
         if (! living(target))
-                return notify_fail("對方都已經這樣了，用不著這麼費力吧？\n");
+                return notify_fail("對方都已經這樣了，用不着這麼費力吧？\n");
 
         msg = HIW "$N" HIW "手腕一陣疾抖，劍身微顫，劍作龍吟。剎那間劍芒陡漲，"
-              "如天河倒瀉一般洒向$n"
+              "如天河倒瀉一般灑向$n"
               HIW "。\n" NOR;
 
         message_combatd(msg, me, target);

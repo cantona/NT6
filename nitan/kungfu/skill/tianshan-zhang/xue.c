@@ -47,9 +47,9 @@ int perform(object me, object target)
                 return notify_fail("你沒有激發天山杖法，使不了" + name() + "。\n");
 
         if (! living(target))
-               return notify_fail("對方都已經這樣了，用不著這麼費力吧？\n");
+               return notify_fail("對方都已經這樣了，用不着這麼費力吧？\n");
 
-        msg = HIW "$N" HIW "使出星宿絕技「冰雪紛飛」，招式變得詭秘異常！\n" NOR;
+        msg = HIW "$N" HIW "使出星宿絕技「冰雪紛飛」，招式變得詭祕異常！\n" NOR;
         message_combatd(msg, me);
         addn("neili", -120, me);
         level = me->query_skill("tianshan-zhang", 1);

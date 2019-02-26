@@ -17,10 +17,10 @@ void create()
         set_name("無嗔", ({ "wu chen", "wu", "chen" }));
         set("nickname", HIR "毒手藥王" NOR);
         set("long",@LONG
-這是一位身著樸素的老者，面色慈祥，竟不知他便是
+這是一位身着樸素的老者，面色慈祥，竟不知他便是
 號稱「毒手藥王」的無嗔。他出家之前，脾氣很是暴
 躁。他出家後法名大嗔，後來他經修性養心，頗有進
-益，于是更名一嗔。收程靈素法名再更作微嗔。時至
+益，於是更名一嗔。收程靈素法名再更作微嗔。時至
 現在，法名已作無嗔。
 LONG );
         set("title", HIG "藥王谷谷主" NOR);
@@ -101,10 +101,10 @@ LONG );
         setup();
 
         set("inquiry", ([
-                "神農□"   : (: ask_shennong :),
+                "神農鐗"   : (: ask_shennong :),
                 "藥王神篇" : (: ask_shenpian :),
                 "七星海棠" : "七星海棠乃天下第一毒，無藥可治！",
-                "苗人鳳"   : "呵呵，當年我和那個家伙比武，結果少了一根指頭，不過後來還是報復回來了。",
+                "苗人鳳"   : "呵呵，當年我和那個傢伙比武，結果少了一根指頭，不過後來還是報復回來了。",
          ]) );
 
         carry_object("/clone/cloth/cloth")->wear();
@@ -182,11 +182,11 @@ mixed ask_shennong()
                 if( query("family/family_name", me) == "藥王谷" )
                         message_vision(CYN "$N" CYN "冷哼一聲，對$n" CYN "道："
                                        "“你難道忘記了我是怎麼教你的嗎？現在居"
-                                       "然和那三個家伙一樣走上了邪道，居然還有"
-                                       "臉問我要神農□？”\n" NOR,
+                                       "然和那三個傢伙一樣走上了邪道，居然還有"
+                                       "臉問我要神農鐗？”\n" NOR,
                                        this_object(), me);
                 else
-                        message_vision(CYN "$N" CYN "冷笑一聲，對$n" CYN "說道"
+                        message_vision(CYN "$N" CYN "冷笑一聲，對$n" CYN "説道"
                                        "：“好一個邪派妖徒，竟敢貪圖本派寶物！"
                                        "”\n" NOR,
                                        this_object(), me);
@@ -197,13 +197,13 @@ mixed ask_shennong()
                 return "你不是我們藥王谷的，打聽它幹什麼？";
 
         if( query("family/master_id", me) != query("id") )
-                return "只有我的弟子才能用神農□。";
+                return "只有我的弟子才能用神農鐗。";
 
         if( query("shen", me)<100000 )
-                return "你俠義正事做得還不夠，這神農□我不能教給你。";
+                return "你俠義正事做得還不夠，這神農鐗我不能教給你。";
 
         if (me->query_skill("shennong-zhang", 1) < 120)
-                return "你連神農杖法都沒學好，就算用神農□也是白搭。";
+                return "你連神農杖法都沒學好，就算用神農鐗也是白搭。";
 
         ob = find_object(SHENNONG);
         if (! ob) ob = load_object(SHENNONG);
@@ -216,23 +216,23 @@ mixed ask_shennong()
         }
 
         if (owner == me)
-                return "神農□現在不就在你手裡嗎？";
+                return "神農鐗現在不就在你手裏嗎？";
 
         if (objectp(owner) && owner != this_object())
         {
                 if (! owner->is_character())
-                        return "你來晚了一步，我已經把神農□借給你同門師兄弟用去了。";
+                        return "你來晚了一步，我已經把神農鐗借給你同門師兄弟用去了。";
 
                 if( query("family/master_id", owner) == query("id") )
-                        return "嗯，神農□現在暫時是你同門師兄弟"+query("name", owner)+
+                        return "嗯，神農鐗現在暫時是你同門師兄弟"+query("name", owner)+
                                "在用，你要用就去找他吧。";
                 else
-                        return "本門的神農□現在落入了"+query("name", owner)+
+                        return "本門的神農鐗現在落入了"+query("name", owner)+
                                "之手，你去把它取回來吧！";
         }
 
         ob->move(this_object());
-        message_vision(HIC "$N" HIC "微微一笑，道：“這柄神農□你就"
+        message_vision(HIC "$N" HIC "微微一笑，道：“這柄神農鐗你就"
                        "拿去，記住，千萬不可用它為非作歹！”\n" NOR,
                        this_object(), me);
         command("giveshennongjianto"+query("id", me));
@@ -251,11 +251,11 @@ mixed ask_shenpian()
                 if( query("family/family_name", me) == "藥王谷" )
                         message_vision(CYN "$N" CYN "冷哼一聲，對$n" CYN "道："
                                        "“你難道忘記了我是怎麼教你的嗎？現在居"
-                                       "然和那三個家伙一樣走上了邪道，我如何能"
+                                       "然和那三個傢伙一樣走上了邪道，我如何能"
                                        "將《藥王神篇》交予你？”\n" NOR,
                                        this_object(), me);
                 else
-                        message_vision(CYN "$N" CYN "冷笑一聲，對$n" CYN "說道"
+                        message_vision(CYN "$N" CYN "冷笑一聲，對$n" CYN "説道"
                                        "：“好一個邪派妖徒，竟敢貪圖本派寶物！"
                                        "”\n" NOR,
                                        this_object(), me);
@@ -285,7 +285,7 @@ mixed ask_shenpian()
         }
 
         if (owner == me)
-                return "我這《藥王神篇》現在不就在你手裡嗎？";
+                return "我這《藥王神篇》現在不就在你手裏嗎？";
 
         if (objectp(owner) && owner != this_object())
         {
@@ -294,7 +294,7 @@ mixed ask_shenpian()
 
                 if( query("family/master_id", owner) == query("id") )
                         return "嗯，《藥王神篇》現在在你同門師兄弟"+query("name", owner)+
-                               "手裡，你去找他吧。";
+                               "手裏，你去找他吧。";
                 else
                         return "本門的《藥王神篇》現在落入了"+query("name", owner)+
                                "之手，你去把它取回來吧！";

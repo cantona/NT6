@@ -5,8 +5,8 @@ void create()
 {
         set("short","梅道");
         set("long",@LONG
-這裡種滿了綠梅。站在這裡，似乎看到了在凌霄城永遠不
-可能看到的春天一樣。一陣微風吹來，在綠梅的海洋中盪起陣
+這裏種滿了綠梅。站在這裏，似乎看到了在凌霄城永遠不
+可能看到的春天一樣。一陣微風吹來，在綠梅的海洋中蕩起陣
 陣漣漪，同時將那股浸人心脾的素香，送到每個人的心中。東
 邊就是凌霄城的觀景勝地戲梅亭了。
 LONG);
@@ -34,7 +34,7 @@ int do_pick(string arg)
         if (arg == "mei hua" || arg == "meihua")
         {
                 if (query("count") < -5)
-                        return notify_fail("這裡的梅花已經被摘光了。\n");
+                        return notify_fail("這裏的梅花已經被摘光了。\n");
 
                 ob = new(__DIR__"obj/mei");
                 ob->move(me, 1);

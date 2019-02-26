@@ -122,7 +122,7 @@ int do_kill(string arg)
         if( query("winner", this_object()) == query("id", this_player()) )
                 return notify_fail("你是不是瘋了？！\n");
         command("say 你想謀害本使者，當真是自找死路！ 座下紅衣武士何在！");
-        message_vision("四周的紅衣武士群起對$N發動攻擊！\n", this_player());
+        message_vision("四周的紅衣武士羣起對$N發動攻擊！\n", this_player());
         for( i=0; i<4; i++ ) {
                 if( objectp( ob = present("wei shi " + (i+1), environment(this_object())) ) )
                         ob->kill_ob(this_player());
@@ -239,7 +239,7 @@ int do_recopy(object me, object ob)
         ob = this_player();
 
         if( me->is_fighting() || ob->is_fighting() || query("fighting", me) )
-                return notify_fail("現在這裡正打的不亦樂乎！等會吧！\n");
+                return notify_fail("現在這裏正打的不亦樂乎！等會吧！\n");
 
         if( query("winner", me) != query("id", ob) )
                 return notify_fail("你不是現任罰惡使者！\n");
@@ -391,7 +391,7 @@ int do_recover()
         ob = this_player();
 
         if( me->is_fighting() || ob->is_fighting() || query("fighting", me) )
-                return notify_fail("現在這裡正打的不亦樂乎！等會吧！\n");
+                return notify_fail("現在這裏正打的不亦樂乎！等會吧！\n");
 
         if( query("winner", me) != query("id", ob) || query("age", me)>query("age", ob) || 
              query("birthday", me) != query("birthday", ob) )

@@ -10,7 +10,7 @@ void create()
         if (clonep())
                 destruct(this_object());
         else {
-                set("long", YEL "這是一柄厚背紫金八卦刀，刀縫浮動著淡紫色的"
+                set("long", YEL "這是一柄厚背紫金八卦刀，刀縫浮動着淡紫色的"
                             "光澤。\n" NOR);
                 set("unit", "柄");
                 set("value", 800000);

@@ -60,7 +60,7 @@ int main(object me, string arg)
         i = 0;
         result = ({ });
         call_out("search_dir", 0, count, dir, i, address, me, result);
-        write(HIG "現在系統將統計數據，稍後匯報。\n"
+        write(HIG "現在系統將統計數據，稍後彙報。\n"
               HIG "進度：" + process_bar(0) + "\n");
         me->attach_system();
         run_user = me;

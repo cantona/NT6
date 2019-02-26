@@ -20,7 +20,7 @@ int main(object me, string arg)
         sscanf(arg, "%s %s", arg, msg);
                 
         if( !objectp(target = find_player(arg)) || ! me->visible(target) )
-                return notify_fail("這個用戶沒有登錄，你無法和他交談。\n");
+                return notify_fail("這個用户沒有登錄，你無法和他交談。\n");
 
         my_id=query("id", me);
         no_tell=query("env/no_tell", target);
@@ -36,7 +36,7 @@ int main(object me, string arg)
                 return notify_fail("此人現在不在線上，聽不到你的話。\n");
 
         if (! living(target))
-                return notify_fail("這人現在恐怕聽不到你說的話了...\n");
+                return notify_fail("這人現在恐怕聽不到你説的話了...\n");
 
         if (me->ban_say(1))
                 return 0;
@@ -56,8 +56,8 @@ int main(object me, string arg)
         else
                 set_temp("waitback_list", ([me:info]), target);
         
-        tell_object(me, HIG "你開始等待著" HIG + target->query_idname(1) + HIG "回神。\n" NOR);
-        tell_object(target, HIG + me->query_idname(1) + HIG "開始等待著你回神。\n" NOR);
+        tell_object(me, HIG "你開始等待着" HIG + target->query_idname(1) + HIG "回神。\n" NOR);
+        tell_object(target, HIG + me->query_idname(1) + HIG "開始等待着你回神。\n" NOR);
         tell_object(target, "\a", 0);
         return 1;
 }

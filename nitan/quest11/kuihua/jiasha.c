@@ -43,7 +43,7 @@ int do_move(string arg)
 	}
 	else {
 		message_vision("$N輕輕地挪動袈裟，突然從袈裟的窟窿中冒出一股毒氣，鑽進$N的鼻子中。\n", me);
-		me->set_temp("last_damage_from", "被毒氣所熏而");
+		me->set_temp("last_damage_from", "被毒氣所薰而");
 		me->die();
 		return 1;
 	}

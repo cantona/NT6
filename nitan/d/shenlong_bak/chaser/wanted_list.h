@@ -11,12 +11,12 @@ mapping wanted_list = ([
         "/clone/weapon/treasure/dragonblade.c"      : 1 ,//屠龍刀
         "/clone/weapon/treasure/duanyun-axe.c"      : 1 ,//斷雲斧
         "/clone/weapon/treasure/fumo-dao.c"         : 1 ,//伏魔刀
-        "/clone/weapon/treasure/ganjiang-jian.c"    : 1 ,//幹將
+        "/clone/weapon/treasure/ganjiang-jian.c"    : 1 ,//干將
         "/clone/weapon/treasure/greenwater-sword.c" : 1 ,//碧水劍
         "/clone/weapon/treasure/green-sword.c"      : 1 ,//碧水劍
         "/clone/weapon/treasure/jiandao.c"          : 1 ,//五毒剪
         "/clone/weapon/treasure/jiaowei-qin.c"      : 1 ,//焦尾琴
-        "/clone/weapon/treasure/jinfenggou.c"       : 1 ,//金鳳鉤
+        "/clone/weapon/treasure/jinfenggou.c"       : 1 ,//金鳳鈎
         "/clone/weapon/treasure/jinhua.c"           : 1 ,//奪命金花
         "/clone/weapon/treasure/jinlun.c"           : 1 ,//金輪
         "/clone/weapon/treasure/jinlongbian.c"      : 1 ,//金龍鞭
@@ -38,13 +38,13 @@ mapping wanted_list = ([
 //        "/clone/weapon/treasure/yinlun.c"           : 1 ,//銀輪
         "/clone/weapon/treasure/yitian-jian.c"      : 1 ,//倚天劍
         "/clone/weapon/treasure/ylbian.c"           : 1 ,//雲龍鞭
-        "/clone/weapon/treasure/youlong-jian.c"     : 1 ,//遊龍劍
+        "/clone/weapon/treasure/youlong-jian.c"     : 1 ,//游龍劍
         "/clone/weapon/treasure/yuchang-jian.c"     : 1 ,//魚腸劍
         "/clone/weapon/treasure/yuewang-jian.c"     : 1 ,//越王劍
         "/clone/weapon/treasure/zhanlu-jian.c"      : 1 ,//湛廬劍
         "/clone/weapon/treasure/zhen.c"             : 1 ,//繡花針
         "/clone/weapon/treasure/zhenwu-jian.c"      : 1 ,//真武劍
-        "/clone/weapon/treasure/zhenyue.c"          : 1 ,//鎮岳尚方
+        "/clone/weapon/treasure/zhenyue.c"          : 1 ,//鎮嶽尚方
         "/clone/armor/treasure/baojia.c"            : 1 ,//真絲寶甲
         "/clone/armor/treasure/jingang-zhao.c"      : 1 ,//金剛罩
         "/clone/armor/treasure/wucanyi.c"           : 1 ,//烏蠶衣
@@ -54,11 +54,11 @@ mapping wanted_list = ([
 //        "/clone/book/bagua1.c"                      : 1 ,//洛書
         "/clone/book/medicine6.c"                   : 1 ,//胡青牛醫經
         "/clone/book/medicine7.c"                   : 1 ,//王難姑毒經
-//        "/clone/book/jinshe1.c"                     : 1 ,//金蛇秘籍上冊
+//        "/clone/book/jinshe1.c"                     : 1 ,//金蛇祕籍上冊
 //        "/clone/book/yijing0.c"                     : 1 ,//易經序卦篇
-//        "/clone/book/yijing1.c"                     : 1 ,//易經說卦篇
+//        "/clone/book/yijing1.c"                     : 1 ,//易經説卦篇
 //        "/clone/book/yijing2.c"                     : 1 ,//易經雜卦篇
-//        "/clone/book/yijing3.c"                     : 1 ,//易經系辭篇
+//        "/clone/book/yijing3.c"                     : 1 ,//易經繫辭篇
         "/clone/book/jiuyin1.c"                     : 1 ,//九陰真經上冊
         "/clone/book/jiuyin2.c"                     : 1 ,//九陰真經下冊
         "/clone/book/shipian.c"                     : 1 ,//長石片
@@ -78,7 +78,7 @@ mapping wanted_list = ([
         "/clone/unique/cy-jian.c"      : 1,  // 重陽劍
         "/d/shaolin/obj/jingang-zhao.c": 1,  // 金剛罩
         "/d/xueshan/obj/wucan-yi.c"    : 1,  // 烏蠶衣
-        "/d/taohua/obj/ruanwei-jia.c"  : 1,  // 軟□甲
+        "/d/taohua/obj/ruanwei-jia.c"  : 1,  // 軟蝟甲
         "/d/taohua/obj/taomu-jian.c"   : 1,  // 桃木劍
         "/clone/unique/xuedao.c"       : 1,  // 血刀
         "/d/city/npc/obj/shenzhao.c"   : 3,  // 神照經

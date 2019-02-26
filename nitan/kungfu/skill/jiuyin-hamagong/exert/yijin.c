@@ -11,7 +11,7 @@ int exert(object me, object target)
         int skill, n;
 
         if (target != me)
-                notify_fail("你只能對自己用["+WHT+"易經轉脈"+NOR+"]來提升自已的戰鬥和防御力。\n"NOR,);
+                notify_fail("你只能對自己用["+WHT+"易經轉脈"+NOR+"]來提升自已的戰鬥和防禦力。\n"NOR,);
 
         if( query("neili", me)<500 )
                 return notify_fail("你的內力不夠!");

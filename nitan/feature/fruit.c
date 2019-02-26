@@ -33,11 +33,11 @@ int do_eat(string arg)
                 return notify_fail("你太累了，實在沒力氣吃什麼了。\n");
         if( !this_object()->id( arg ) ) return notify_fail("你要吃什麼？\n");
         if( me->is_busy() )
-                return notify_fail("別急，慢慢吃，小心別噎著了。\n");
+                return notify_fail("別急，慢慢吃，小心別噎着了。\n");
         if( me->is_fighting() )
                 me->start_busy(2);
         if( !query( "fruit_remaining" )  )
-                return notify_fail("你拿著這個" + ob->name() + "，看了半天覺得無處下嘴。\n");
+                return notify_fail("你拿着這個" + ob->name() + "，看了半天覺得無處下嘴。\n");
         if( (int)me->query("water") >= (int)me->max_food_capacity() ||
                 (int)me->query("food") >= (int)me->max_water_capacity() )
         {
@@ -69,15 +69,15 @@ int do_eat(string arg)
                                 if (temp >= 500  && random( 2000 - temp ) == 0 && me->query("age")<22)
                                 {
 //如果這個player年紀小<22，就改善先天的天賦
-//否則 只影響後天的天賦就 query_per()這類了..
-//現在這個東西太麻煩，而且我們對先天後天的天賦使用沒有明確的概念
-//所以我就把它都改成先天的了。──lala，１９９８－０１－０７
+//否則 隻影響後天的天賦就 query_per()這類了..
+//現在這個東西太麻煩，而且我們對先天后天的天賦使用沒有明確的概念
+//所以我就把它都改成先天的了。——lala，１９９８－０１－０７
 
 //原來的獎勵可以吃到30 30 35 35 的天賦 進行了限制
 //-- qingyun 2004.10.13
 //這個東西是別的mud的吧
 //原本是建立在不能迅速降食物基礎上，因為俠客行有沙漠
-//這個東西等同于送天賦給知道的人 
+//這個東西等同於送天賦給知道的人 
                                         if (me->query(list[i])>=30 )
                                                 sign = 0;
                                         if (me->query("gift/hamlet/"+list[i])>0)
@@ -89,7 +89,7 @@ int do_eat(string arg)
                                                 me->addn("gift/hamlet/"+list[i],1);
                                                 me->addn( list[ i ] , sign );
                                                 me->set( "hamlet_food/" + list[ i ], 0);
-                                                tell_object( me, YEL"由于你日常的飲食習慣而造成了你天賦的改變！\n"NOR );
+                                                tell_object( me, YEL"由於你日常的飲食習慣而造成了你天賦的改變！\n"NOR );
                                         }
                                 }
                         }
@@ -101,7 +101,7 @@ int do_eat(string arg)
         {
 //吃到最後一口就變成個水果核
                 if ( msg = query ("end_msg" ) ) message_vision( msg , me, ob );
-                else message_vision(RED"$N吃完最後一口$n，心滿意足的說：真不錯。\n", me,ob);
+                else message_vision(RED"$N吃完最後一口$n，心滿意足的説：真不錯。\n", me,ob);
                 if ( query("core") )
                 {
                         core = new( "/clone/misc/core.c" );
@@ -137,7 +137,7 @@ int stats( int i )
                         break;
                 case 1:
                         base_long = query("base_long");
-                        set("long",base_long+"，上面好象有些斑點，不過還不算顯眼。\n");
+                        set("long",base_long+"，上面好像有些斑點，不過還不算顯眼。\n");
                         call_out("stats", life/4, 2);
                         break;
                 case 2:
@@ -168,7 +168,7 @@ int stats( int i )
                                 if ( env = environment( this_object() ) )
                                         core->move( env );
                         }
-                        tell_room( environment(this_object()), this_object()->query("name")+"終于完全爛掉了。\n" );
+                        tell_room( environment(this_object()), this_object()->query("name")+"終於完全爛掉了。\n" );
                         destruct( this_object() );
                         break;
         }

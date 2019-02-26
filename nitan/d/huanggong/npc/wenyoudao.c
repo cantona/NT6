@@ -4,11 +4,11 @@ inherit NPC;
 
 void create()
 {
-        set_name("溫有道", ({ "wen youdao", "wen" ,"youdao"}));
+        set_name("温有道", ({ "wen youdao", "wen" ,"youdao"}));
         set("gender", "無性");
         set("title", HIC"御書房太監"NOR);
         set("age", 16);
-        set("long", "一個文弱的小太監，和他兄弟溫有方共司御書房。\n");
+        set("long", "一個文弱的小太監，和他兄弟温有方共司御書房。\n");
 
         set("combat_exp", 1000);
         set("shen_type", 0);

@@ -4,7 +4,7 @@ void create()
 {
       set("short", "二天門");
         set("long", @LONG
-這裡是「二天門」，金光燦燦的金頂就在眼前了。
+這裏是「二天門」，金光燦燦的金頂就在眼前了。
 LONG );
       set("exits", ([
           "northdown": __DIR__"toutiangate",

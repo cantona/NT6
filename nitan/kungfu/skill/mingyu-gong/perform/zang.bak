@@ -7,7 +7,7 @@ int exert(object me, object target, int amount)
         int i, skill, damage,force,extra,extra_enemy,state,base,res_kee,last_damage; 
         string msg;
         if( query("class", me) != "yihua" )
-                return notify_fail ("﹝亂花葬玉﹞只有移花宮弟子能使用。\n");
+                return notify_fail ("［亂花葬玉］只有移花宮弟子能使用。\n");
 
         if( !me->is_fighting() )
                 return notify_fail("亂花葬玉只能在戰鬥中使用。\n"); 
@@ -66,7 +66,7 @@ int exert(object me, object target, int amount)
             if (random(extra+extra_enemy)<extra_enemy)
             {
                 last_damage = last_damage /2;
-                combat_message_vision(HIR"$N只覺眼前光芒刺眼，周圍空氣幾欲沸騰，大驚之下連忙急運內功，抵御開來。\n"NOR,enemys[i]);
+                combat_message_vision(HIR"$N只覺眼前光芒刺眼，周圍空氣幾欲沸騰，大驚之下連忙急運內功，抵禦開來。\n"NOR,enemys[i]);
             }
             else
                 combat_message_vision(HIR"$N只覺眼前無數寒光閃過，隨即全身一陣刺痛，幾股血柱自身上射出。\n"NOR,enemys[i]);

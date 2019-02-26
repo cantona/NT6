@@ -70,7 +70,7 @@ int attempt_apprentice(object ob)
 {
         if( !query("born", ob) )
         {
-                command("say 你快投胎去，在這裡瞎攪和什麼？");
+                command("say 你快投胎去，在這裏瞎攪和什麼？");
                 return 0;
         }
 
@@ -124,7 +124,7 @@ mixed ask_reborn()
         who = this_player();
 
         if( !query("reborn_lunhui", who)){
-                message_vision( BLU "$N" BLU "對$n" BLU "一拱手，道：你想轉世先過了六道守衛佛這一關再說！\n", 
+                message_vision( BLU "$N" BLU "對$n" BLU "一拱手，道：你想轉世先過了六道守衞佛這一關再説！\n", 
                                 this_object(), who );
                 return 1;
         }      
@@ -137,7 +137,7 @@ mixed ask_reborn()
         }
 
         message_vision( BLU "$N" BLU "點點頭道：“好，既然你闖過地府的考驗，老夫就送你上天界直接面見佛祖！”\n"
-                        BLU "$N" BLU "隨手一招，突然刮起一陣陰風，將$n" BLU "帶到極樂世界。\n" NOR, 
+                        BLU "$N" BLU "隨手一招，突然颳起一陣陰風，將$n" BLU "帶到極樂世界。\n" NOR, 
                         this_object(), who );                            
                  
         who->move("/d/reborn/heaven");

@@ -46,7 +46,7 @@ int help(object me)
         write(@HELP
 指令格式 : ran <number>
 
-用處 : 測試隨機函數的分布。
+用處 : 測試隨機函數的分佈。
 HELP
         );
         return 1;

@@ -49,7 +49,7 @@ int heal_up()
 void leave()
 {
         message("vision",
-                HIW + name() + "說道：我不能久留，既然事情已經結束，我要回精靈界了！\n\n"
+                HIW + name() + "説道：我不能久留，既然事情已經結束，我要回精靈界了！\n\n"
                 + name() + "化成一道柔和的光芒，漸漸消失不見了。\n" NOR, environment(),
                 this_object() );
         destruct(this_object());
@@ -62,7 +62,7 @@ void invocation(object who)
 
         message("vision",
                 HIY "一陣清風吹過，一個小精靈隨風而來。\n\n"
-                + name() + "說道：我是接受精靈刀的召喚來幫忙的！\n" NOR,
+                + name() + "説道：我是接受精靈刀的召喚來幫忙的！\n" NOR,
                 environment(), this_object() );
         enemy = who->query_enemy();
         i = sizeof(enemy);

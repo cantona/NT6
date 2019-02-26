@@ -51,5 +51,5 @@ void init()
 void greeting(object ob)
 {
      if( !ob || environment(ob) != environment() ) return;
-     say( "道明小師父輕聲說道：歡迎來保國寺藏經樓。您要讀經書嗎？\n");
+     say( "道明小師父輕聲説道：歡迎來保國寺藏經樓。您要讀經書嗎？\n");
 }

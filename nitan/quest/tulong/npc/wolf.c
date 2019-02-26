@@ -8,7 +8,7 @@ void create()
         set_name("野狼", ({ "wolf", "yelang", "lang" }) );
         set("race", "野獸");
         set("age", 5);
-        set("long", "一只獨行的野狼，半張著的大嘴裡露著幾顆獠牙。\n");
+        set("long", "一隻獨行的野狼，半張着的大嘴裏露着幾顆獠牙。\n");
 //        set("attitude", "aggressive");
         set("attitude", "peace");
         set("shen_type", -1);
@@ -25,7 +25,7 @@ void create()
 
         set("chat_chance", 10);
         set("chat_msg", ({
-                "野狼耷邋著尾巴，突然抬頭，沖你發出一聲凄厲的長嚎。\n",
-                "野狼閃著綠幽幽的眼光沖你瞄了瞄，血盆巨口裡答答滴著哈喇子。\n",
+                "野狼耷邋着尾巴，突然抬頭，衝你發出一聲淒厲的長嚎。\n",
+                "野狼閃着綠幽幽的眼光衝你瞄了瞄，血盆巨口裏答答滴着哈喇子。\n",
         }) );
 }

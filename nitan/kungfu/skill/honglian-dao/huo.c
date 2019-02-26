@@ -39,10 +39,10 @@ int perform(object me, object target)
                 return notify_fail("你沒有激發紅蓮刀法，難以施展" HUO "。\n");
 
         if (! living(target))
-                return notify_fail("對方都已經這樣了，用不著這麼費力吧？\n");
+                return notify_fail("對方都已經這樣了，用不着這麼費力吧？\n");
 
         msg = HIR "$N" HIR "施出紅蓮刀法絕技，手中" + weapon->name() +
-              HIR "運轉如飛，激起層層熱浪席卷$n" HIR "周身！\n" NOR;
+              HIR "運轉如飛，激起層層熱浪席捲$n" HIR "周身！\n" NOR;
         message_combatd(msg, me, target);
 
         addn("neili", -80, me);

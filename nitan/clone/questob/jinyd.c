@@ -11,7 +11,7 @@ void create()
         else {
                 set("unit", "個");
                 set("no_sell", "這...這是什麼東西？我可不敢要。\n");
-                set("long", "純金腰帶，重得令人無法穿戴，上面紋著一條龍。\n");
+                set("long", "純金腰帶，重得令人無法穿戴，上面紋着一條龍。\n");
                 set("value", 1);
                 set("material", "gold");
         }

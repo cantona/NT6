@@ -50,7 +50,7 @@ int main(object me, string arg)
 
                 if ((len = strsrch(val, '#')) != -1)
                 {
-                        // 有尾注
+                        // 有尾註
                         affix = val[len..<1];
                         val = val[0..len - 1];
                         val = trim(val);
@@ -165,7 +165,7 @@ void write_config()
         if (! stringp(file))
                 file = "";
 
-        // 去掉"\r"保証和MSDOS的文件格式兼容
+        // 去掉"\r"保證和MSDOS的文件格式兼容
         file = replace_string(file, "\r", "");
 
         tmp = explode(file, "\n");
@@ -185,7 +185,7 @@ void write_config()
 
                 if (line[0] == '&')
                 {
-                        // 被系統注釋的
+                        // 被系統註釋的
                         line = line[1..<1];
                         while (strlen(line) && line[0] == ' ') line = line[1..<1];
                 }
@@ -194,7 +194,7 @@ void write_config()
                 len = strsrch(line, '#');
                 if (len != -1)
                 {
-                        // 記錄尾注
+                        // 記錄尾註
                         affix = line[len..<1];
                         line = line[0..len - 1];
                 } else
@@ -224,7 +224,7 @@ void write_config()
 
                 cfg -= ({ arg });
 
-                // 加上尾注
+                // 加上尾註
                 if (stringp(affix))
                         line = sprintf("%-44s %s", line, affix);
 

@@ -4,9 +4,9 @@
 inherit ROOM;
 void create()
 {
-        set("short", "曲院風荷");
+        set("short", "麴院風荷");
         set("long", @LONG
-跨過小拱橋，迎面有一亭院，旁邊立著石碑，上題“曲院風荷。”
+跨過小拱橋，迎面有一亭院，旁邊立着石碑，上題“麴院風荷。”
 往東是回蘇堤。
 LONG);
         set("exits", ([

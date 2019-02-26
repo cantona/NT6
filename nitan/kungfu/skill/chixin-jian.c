@@ -9,7 +9,7 @@ inherit SKILL;
 mapping *action = ({
    (["skill_name" : "情投意合展歡顏",
      "action" : "$N使一式"+HIC"『情投意合展歡顏』"NOR+"，面露微笑，手中$w一抖，劍光"
-                "暴長，洒向$n的$l",
+                "暴長，灑向$n的$l",
      "dodge"  : 10,
      "force"  : 50,
      "damage" : 10,
@@ -31,8 +31,8 @@ mapping *action = ({
      "damage" : 20,
      "lvl"    : 20,
      "damage_type":  "刺傷"]),
-   (["skill_name" : "千裡嬋娟只是空",
-     "action" : "$N使一式"+HIC"『千裡嬋娟只是空』"NOR+"，身形一晃，疾掠而上，手中$w"
+   (["skill_name" : "千里嬋娟只是空",
+     "action" : "$N使一式"+HIC"『千里嬋娟只是空』"NOR+"，身形一晃，疾掠而上，手中$w"
                 "龍吟一聲，對準$n的$l連遞數劍",
      "dodge"  : 40,
      "force"  : 90,
@@ -65,23 +65,23 @@ mapping *action = ({
      "damage_type":  "刺傷"]),
    (["skill_name" : "此恨綿綿無絕期",
      "action" : "$N使一式"+HIC"『此恨綿綿無絕期』"NOR+"，神色微變，劍招陡然變得凌厲無"
-                "比，手中$w如匹鏈般洒向$n的$l",
+                "比，手中$w如匹鏈般灑向$n的$l",
      "dodge"  : 30,
      "force"  : 180,
      "damage" : 40,
      "lvl"    : 70,
      "damage_type":  "刺傷"]),
    (["skill_name" : "黯然神傷淚滿面",
-     "action" : "$N使一式"+HIC"『黯然神傷淚滿面』"NOR+"，緩緩低首，暗自嘆了口氣，眼中"
-                "瑩光流動，接著手中$w中宮直進，迅捷無比地往$n的$l刺去",
+     "action" : "$N使一式"+HIC"『黯然神傷淚滿面』"NOR+"，緩緩低首，暗自歎了口氣，眼中"
+                "瑩光流動，接着手中$w中宮直進，迅捷無比地往$n的$l刺去",
      "dodge"  : 20,
      "force"  : 200,
      "damage" : 35,
      "lvl"    : 80,
      "damage_type":  "刺傷"]),
    (["skill_name" : "願人長久空遺恨",
-     "action" : "$N使一式"+HIC"『願人長久空遺恨』"NOR+"，騰身飛躍，手中$w于半空中閃下，"
-                "化作一道白色長弧洒向$n的$l",
+     "action" : "$N使一式"+HIC"『願人長久空遺恨』"NOR+"，騰身飛躍，手中$w於半空中閃下，"
+                "化作一道白色長弧灑向$n的$l",
      "dodge"  : 30,
      "force"  : 220,
      "damage" : 45,
@@ -96,7 +96,7 @@ mapping *action = ({
      "lvl"    : 100,
      "damage_type":  "刺傷"]),
    (["skill_name" : "來生還盼續前緣",
-     "action" : "$N使一式"+HIC"『來生還盼續前緣』"NOR+"，驀地疾退一步，又沖前三步，手中"
+     "action" : "$N使一式"+HIC"『來生還盼續前緣』"NOR+"，驀地疾退一步，又衝前三步，手中"
                 "$w化為光弧往$n的$l刺去",
      "dodge"  : 40,
      "force"  : 260,
@@ -104,8 +104,8 @@ mapping *action = ({
      "lvl"    : 110,
      "damage_type":  "刺傷"]),
    (["skill_name" : "此情不移堅似鋼",
-     "action" : "$N使一式"+HIC"『此情不移堅似鋼』"NOR+"，縱身躍起，不見蹤影，接著卻又從"
-                "半空中穿下，雙手握著$w，聲勢逼人地刺向$n的$l",
+     "action" : "$N使一式"+HIC"『此情不移堅似鋼』"NOR+"，縱身躍起，不見蹤影，接着卻又從"
+                "半空中穿下，雙手握着$w，聲勢逼人地刺向$n的$l",
      "dodge"  : 60,
      "force"  : 280,
      "damage" : 65,

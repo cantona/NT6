@@ -9,7 +9,7 @@ int exert(object me, object target, int amount)
         object *ob;
         int i, skill, force,extra,level; 
         if( query("class", me) != "yihua" )
-                return notify_fail ("﹝星屑旋轉﹞只有移花宮弟子能使用。\n");
+                return notify_fail ("［星屑旋轉］只有移花宮弟子能使用。\n");
         if( !me->is_fighting() )
                 return notify_fail("星屑旋轉只能在戰鬥中使用。\n"); 
         if( query_temp("xingxiexuanzhuan", me)+10>time() )
@@ -26,7 +26,7 @@ int exert(object me, object target, int amount)
         
         
         combat_message_vision(HIW"$N深吸一口氣，催動第"+chinese_number(level)+"重的明玉功,臉上突然變得非紅非白，整個人竟似透明的！\n",me);
-        combat_message_vision("$N肌肉裡的每一恨筋絡，每一恨骨頭都彷佛能看得清清楚楚，說不出的詭秘可怕！\n"NOR,me);
+        combat_message_vision("$N肌肉裏的每一恨筋絡，每一恨骨頭都彷佛能看得清清楚楚，説不出的詭祕可怕！\n"NOR,me);
         
         set_temp("xingxiexuanzhuan", time(), me);
         
@@ -66,7 +66,7 @@ void take_effect(object me,object target,int level)
 
         if( /*query("step_less", target) || */!query_temp("condition/mingyu", target) || !objectp(me) || !objectp(target) || !target->is_fighting(me) )
                         {
-                msg = HIW"$N終于擺脫了明玉功的真氣漩渦。\n"NOR;
+                msg = HIW"$N終於擺脱了明玉功的真氣漩渦。\n"NOR;
                         combat_message_vision(msg,target);      
                         delete_temp("condition/mingyu", target);
       return;

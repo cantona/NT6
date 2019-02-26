@@ -18,26 +18,26 @@ inherit F_DBASE;
 #include "/adm/etc/database.h"
 
 // 漫遊精靈如何工作？
-// 每個站點的漫遊精靈負責進行認証和數據傳輸。啟動以後，漫遊
+// 每個站點的漫遊精靈負責進行認證和數據傳輸。啟動以後，漫遊
 // 精靈會監聽一個端口，查詢來自其他站點的請求。
 //
 // 數據漫遊：
 // 如果某個站點登陸了其他站點漫遊過來的使用者，則本站點從原
-// 始站點漫遊精靈那裡獲得該玩家的數據，包括 login & user 以
-// 及 item 三部分，由于 dbased 和 news 裡的數據用的是數據庫
+// 始站點漫遊精靈那裏獲得該玩家的數據，包括 login & user 以
+// 及 item 三部分，由於 dbased 和 news 裏的數據用的是數據庫
 // 來處理，所以就不需要漫遊。然後根據這些數據在本站點構造一
 // 個玩家，這些數據會在原始站被刪除以確保各站數據唯一性，在
-// 退出的時候不會傳遞回原先的站點，而保留在現在的站點。玩家
+// 退出的時候不會傳遞迴原先的站點，而保留在現在的站點。玩家
 // 使用這種方式進行漫遊。
 //
 // 配套支持：
 // 數據庫 mysql 需記錄玩家的 id  所在的站點、密碼以及姓名以
-// 保証 id 的唯一性。數據庫還需處理 dbased 中數據以保証漫遊
+// 保證 id 的唯一性。數據庫還需處理 dbased 中數據以保證漫遊
 // 過來的數據能得到有效使用。
 //
-// 認証流程：
-// 漫遊精靈接受來自連線精靈的數據驗証請求，並將從需要請求得
-// 站點或的數據。發送請求是需要包括用戶名和站點 -- 這個必須
+// 認證流程：
+// 漫遊精靈接受來自連線精靈的數據驗證請求，並將從需要請求得
+// 站點或的數據。發送請求是需要包括用户名和站點 -- 這個必須
 // 通過一定手段進行保密。接受請求以後將查驗是否通過並返回相
 // 應的信息。接收到返回的正確信息以後，漫遊精靈重新驅動起連
 // 線精靈。
@@ -71,7 +71,7 @@ nosave int cfd;
 nosave string *cruise_file = ({ });
 nosave mapping socket_info;
 
-// 客戶端的連接信息
+// 客户端的連接信息
 nosave mixed *client_info = 0;
 // 傳送的文件
 string *fetch_file_list = 0;
@@ -288,7 +288,7 @@ protected void in_read_callback(int fd, mixed mess)
                 str = mess;
         else
         if (bufferp(mess))
-                // 接收到了緩沖區
+                // 接收到了緩衝區
                 str = read_buffer(mess, 0, sizeof(mess));
         else
                 return;
@@ -465,7 +465,7 @@ int authenticate_user(object ob, string sites)
                               
         if (is_cruise == 3)
         {
-                write(HIY "由于同時在漫遊該人物檔案，漫遊被強行中止。\n" NOR);
+                write(HIY "由於同時在漫遊該人物檔案，漫遊被強行中止。\n" NOR);
                 return 0;
         }
  
@@ -556,7 +556,7 @@ protected int send_pending_msg(int fd)
         }
 }
 
-// 由于命令簡單，不採用常規的語法分析。
+// 由於命令簡單，不採用常規的語法分析。
 protected void parse_cmd(int fd)
 {
         string cmd;
@@ -596,7 +596,7 @@ protected void cmd_getfile(int fd, string arg)
 
         if (stringp(arg) && sscanf(arg, "%s from %s", id, mudn) == 2)
         {
-                sys_info(sprintf("站點 %s正在讀取驗証信息，準備漫遊玩家(%s)數據。", mudn, id));
+                sys_info(sprintf("站點 %s正在讀取驗證信息，準備漫遊玩家(%s)數據。", mudn, id));
                 socket_info[fd][SUB_SITES] = mudn;
         }
 
@@ -787,12 +787,12 @@ protected int connect_server()
                                             log_time()));
                 return 0;
         }
-        // 目的為關閉該 cfd，系統監聽的cfd在這裡被改變了，所以監聽的cfd不會被關閉
+        // 目的為關閉該 cfd，系統監聽的cfd在這裏被改變了，所以監聽的cfd不會被關閉
         status = STATUS_CONNECT;
         remove_call_out("send_timeout");
         call_out("send_timeout", 180, cfd);
         
-        // 初始化客戶端信息
+        // 初始化客户端信息
         client_info = allocate(8);
         client_info[STATUS] = STATUS_CONNECTING;
         client_info[FILE_NAME] = 0;
@@ -847,10 +847,10 @@ protected void syn_read_callback(int fd, buffer buf)
                 {
                         // 沒有文件名字，接收的是普通應答信息
         
-                        // 計算我應該從緩沖區中讀出的字節數目，因為
+                        // 計算我應該從緩衝區中讀出的字節數目，因為
                         // 可能不能一次獲得普通的應答信息，因此我將
                         // 這些信息累計到RESULT_BUFFER中， 一直到讀
-                        // 滿期望的字節為止。那麼我這次從緩沖區讀出
+                        // 滿期望的字節為止。那麼我這次從緩衝區讀出
                         // 來的應該是多少個字節，就應該計算。其中保
                         // 存在FILE_POS中的是我已經讀出的字符。
                         len = NORMAL_RESULT_LEN - client_info[FILE_POS];
@@ -859,13 +859,13 @@ protected void syn_read_callback(int fd, buffer buf)
                                 len = sizeof(buf);
                         client_info[FILE_POS] += len;
                         client_info[RESULT_BUFFER] += read_buffer(buf, 0, len);
-                        // 取剩余的buffer
+                        // 取剩餘的buffer
                         buf = buf[len..<1];
         
                         if (client_info[FILE_POS] >= NORMAL_RESULT_LEN)
                         {
                                 // 讀到了一條通常的返回信息，重新設
-                                // 置緩沖區。
+                                // 置緩衝區。
                                 str = client_info[RESULT_BUFFER];
                                 client_info[RESULT_BUFFER] = "";
                                 client_info[FILE_POS] = 0;
@@ -887,7 +887,7 @@ protected void syn_read_callback(int fd, buffer buf)
         } while (sizeof(buf) && client_info[STATUS] != STATUS_FINISHED);
 }
 
-// 漫遊時客戶端連接的寫回調函數
+// 漫遊時客户端連接的寫回調函數
 void syn_write_callback(int fd)
 {
         if (fd != cfd)
@@ -937,7 +937,7 @@ protected void debug_info(string msg)
         CHANNEL_D->do_channel(this_object(), "debug", msg);
 }
 
-// 客戶端發送阻塞的消息
+// 客户端發送阻塞的消息
 
 protected int send_client_pending_msg()
 {
@@ -967,13 +967,13 @@ protected int send_client_pending_msg()
         }
 }
 
-// 同步時客戶端連接的讀回調函數
-// 由于服務器可能會返回兩種數據：1 普通應答信息  2 二進制文
-// 件數據。因此接收函數依據狀態中的文件名字存在與否來鑒別這
+// 同步時客户端連接的讀回調函數
+// 由於服務器可能會返回兩種數據：1 普通應答信息  2 二進制文
+// 件數據。因此接收函數依據狀態中的文件名字存在與否來鑑別這
 // 兩種狀態：如果有文件名字，那麼就認為是接收文件中，如果沒
 // 有，則是接收普通應答信息。普通應答信息一定是固定個字節，
 // 以ASCII 方式存放。如果一次接收沒有滿足期望的字節，那麼長
-// 度將保存在FILE_POS裡面。
+// 度將保存在FILE_POS裏面。
 
 protected void syn_receive_result(string str)
 {
@@ -997,7 +997,7 @@ protected void syn_receive_result(string str)
 
         if (sscanf(str, RESULT_ERR "%s", msg))
         {
-                // 遇到了錯誤，先記錄進入日志
+                // 遇到了錯誤，先記錄進入日誌
                 log_file("cruise", sprintf("%s error respond: %s\n",
                                             log_time(), msg));
                 DEBUG_LOG(str + "\n");
@@ -1131,7 +1131,7 @@ protected void send_cruise_file(string cruise_id, int fd)
         
         if (objectp(ob = find_player(cruise_id)))
         {
-                tell_object(HIY "由于你的人物數據正在漫遊，系統強行使你離線。\n" NOR);             
+                tell_object(HIY "由於你的人物數據正在漫遊，系統強行使你離線。\n" NOR);             
                 ob->save();
                 destruct(ob);
         }
@@ -1257,7 +1257,7 @@ protected void send_timeout(int fd)
         syn_close_callback(fd);
 }
 
-// 漫遊時客戶端連接斷開的回調函數
+// 漫遊時客户端連接斷開的回調函數
 protected void syn_close_callback(int fd)
 {   
         remove_call_out("send_timeout");
@@ -1295,7 +1295,7 @@ int clear_syn_info()
         return 0;
 
 
-        // 客戶端：清除漫遊的SOCKET和信息
+        // 客户端：清除漫遊的SOCKET和信息
         if (cfd)
         {
                 log_file("cruise", sprintf("%s 暫停了漫遊數據的操作。\n", log_time()));

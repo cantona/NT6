@@ -16,7 +16,7 @@ void create()
 	set("age", 44);
 	set("str", 25);
 	set("dex", 20);
-	set("long", "這是一個幹瘦老頭，一雙小眼睛賊閃發光。\n");
+	set("long", "這是一個乾瘦老頭，一雙小眼睛賊閃發光。\n");
 	set("combat_exp", 25000);
 	set("score", 2000);
 	set("shen_type", -1);

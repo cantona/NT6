@@ -136,7 +136,7 @@ void init()
         		command("say 這位" + RANK_D->query_respect(ob) +
                         	"，武功這麼差，怎麼闖江湖呢？\n");
         		command("whisper"+query("id", ob)+"現在正"
-                        	"值兵荒馬亂，這裡正遭蒙\n古人的圍攻，你"
+                        	"值兵荒馬亂，這裏正遭蒙\n古人的圍攻，你"
                         	"還是別亂走動的好。我們郭府內正缺少人手"
                         	"打\n雜，你若有興趣倒是可以進來 (" HIY
                         	"join 郭府" NOR + WHT ")幫幫忙，順便學"
@@ -150,7 +150,7 @@ void init()
         		command("haha");
         		command("whisper"+query("id", ob)+"不錯，"
                                 "不錯。想不到你的進展如\n此神速，再留在"
-                                "郭府已無多大用處，今後還是多去闖盪闖盪吧。\n");
+                                "郭府已無多大用處，今後還是多去闖蕩闖蕩吧。\n");
 
 delete("mark/guofu_ok", 			ob);
 set("mark/guofu_out", 1, 			ob);
@@ -158,11 +158,11 @@ set("mark/guofu_out", 1, 			ob);
 addn("combat_exp", exp, 	ob);
         addn("potential", pot, 	ob);
                 addn("score", sc, 	ob);
-                        tell_object(ob, HIC "通過在郭府內的鍛煉，你獲得"
+                        tell_object(ob, HIC "通過在郭府內的鍛鍊，你獲得"
                                         "了" + chinese_number(exp) + "點"
                                         "經驗、" + chinese_number(pot) +
                                         "點潛能\n以及" + chinese_number(sc)
-                                        + "點江湖閱歷，武技得到了提升。"
+                                        + "點江湖閲歷，武技得到了提升。"
                                         "\n\n" NOR);
 		} else
         	if( query("mark/guofu_over", ob) )
@@ -186,7 +186,7 @@ addn("combat_exp", exp, 	ob);
 		{
         		command("look"+query("id", ob));
         		command("hmm");
-        		command("say 趕快幹活去，沒事瞎溜達什麼？");
+        		command("say 趕快乾活去，沒事瞎溜達什麼？");
 		}
         }
         add_action("do_join", "join");
@@ -234,22 +234,22 @@ int do_join(string arg)
            && arg != "guofu"
            && arg != "郭府")
                 return notify_fail(CYN "武敦儒眉頭一皺，道：你到"
-                                   "底要幹什麼？怎麼說話吞吞吐吐"
+                                   "底要幹什麼？怎麼説話吞吞吐吐"
                                    "的？\n" NOR);
 
 	if( query("mark/guofu_over", ob) )
                 return notify_fail(CYN "武敦儒冷笑道：師父讓你走"
-                                   "開，你還賴在這裡幹嘛？\n" NOR);
+                                   "開，你還賴在這裏幹嘛？\n" NOR);
 
 	if( query("mark/guofu_ok", ob) )
                 return notify_fail(CYN "武敦儒皺眉道：你不是已經"
-                                   "進來了嗎？趕快幹活去，羅嗦什"
+                                   "進來了嗎？趕快乾活去，羅嗦什"
                                    "麼？\n" NOR);
 
 	if( query("mark/guofu_out", ob) )
                 return notify_fail(CYN "武敦儒微笑道：你現在的武"
                                    "功已經有一定的底子了，還是多"
-                                   "闖盪闖盪吧。\n" NOR);
+                                   "闖蕩闖蕩吧。\n" NOR);
 
         if( query("combat_exp", ob)>5000 )
                 return notify_fail(CYN "武敦儒微笑道：讓你來打雜"
@@ -259,9 +259,9 @@ int do_join(string arg)
 	if( query_temp("mark/guofu_join", ob) )
 	{
         	message_vision(HIC "\n$N" HIC "對$n" HIC "點了點"
-                               "頭，說道：甚好，甚好。入了郭府一"
+                               "頭，説道：甚好，甚好。入了郭府一"
                                "切就要\n按規矩辦事，你現在去耶律"
-                               "幫主那裡，他會幫你安排事情的。\n"
+                               "幫主那裏，他會幫你安排事情的。\n"
                                "\n", this_object(), ob);
 set("mark/guofu_ok", 1, 		ob);
                 set("startroom", "/d/wuguan/guofu_dayuan", ob);
@@ -285,7 +285,7 @@ int accept_fight(object who)
 
 	if( query("mark/guofu_ok", ob) )
 	{
-        	command("say 給我滾進去，跑到這裡來瞎胡鬧什麼！");
+        	command("say 給我滾進去，跑到這裏來瞎胡鬧什麼！");
         	return 0;
 	} else
 	{
@@ -300,7 +300,7 @@ int accept_hit(object who)
 
 	if( query("mark/guofu_ok", ob) )
 	{
-        	command("say 給我滾進去，跑到這裡來瞎胡鬧什麼！");
+        	command("say 給我滾進去，跑到這裏來瞎胡鬧什麼！");
         	return 0;
 	} else
 	{
@@ -316,7 +316,7 @@ int accept_kill(object who)
 
 	if( query("mark/guofu_ok", ob) )
 	{
-        	command("say 給我滾進去，跑到這裡來瞎胡鬧什麼！");
+        	command("say 給我滾進去，跑到這裏來瞎胡鬧什麼！");
                 return notify_fail("你還是不要輕舉妄動為好。\n");
 	} else
 	{
@@ -332,7 +332,7 @@ int accept_touxi(object who)
 
 	if( query("mark/guofu_ok", ob) )
 	{
-        	command("say 給我滾進去，跑到這裡來瞎胡鬧什麼！");
+        	command("say 給我滾進去，跑到這裏來瞎胡鬧什麼！");
                 return notify_fail("你還是不要輕舉妄動為好。\n");
 
 	} else

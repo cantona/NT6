@@ -11,7 +11,7 @@ void create()
                 set_default_object(__FILE__);
         else {
                 set("unit", "根");
-                set("long", HIW "這是一根銀制的長戟，沉重無比，在中原很難見到。\n" NOR);
+                set("long", HIW "這是一根銀製的長戟，沉重無比，在中原很難見到。\n" NOR);
                 set("value", 10000);
                 set("material", "silver");
         }

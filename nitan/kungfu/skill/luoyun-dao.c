@@ -2,13 +2,13 @@
 inherit SKILL;
 
 mapping *action = ({
-([      "action" :  "$N手中$w平平一刀，一式「萬裡烏雲」，揮向$n$l",
+([      "action" :  "$N手中$w平平一刀，一式「萬里烏雲」，揮向$n$l",
         "force"  :  80,
         "dodge"  :  28,
         "damage" :  20,
         "lvl"    :  0,
         "damage_type":  "刺傷",
-        "skill_name"  : "萬裡烏雲",
+        "skill_name"  : "萬里烏雲",
 ]),
 ([      "action" :  "$N手中$w自空而下，一式「雲深霧鎖」，劈向$n$l",
         "force"  :  90,
@@ -39,14 +39,14 @@ mapping *action = ({
         "skill_name"  : "風聲蕭蕭",
 ]),
 ([      
-        "action" : "$N雙手握刀，一式「力劈群山」，手中$w自上而下，如長龍"
+        "action" : "$N雙手握刀，一式「力劈羣山」，手中$w自上而下，如長龍"
                    "般而下，砍向$n$l",
         "force"  :  140,
         "dodge"  :  40,
         "damage" :  40,
         "lvl"    :  120,
         "damage_type":  "刺傷",
-        "skill_name"  : "力劈群山",
+        "skill_name"  : "力劈羣山",
 ]),
 });
 

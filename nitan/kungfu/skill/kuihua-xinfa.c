@@ -35,7 +35,7 @@ int valid_learn(object me)
         if ((int)me->query_skill("force", 1) < 10)
                 return notify_fail("你的基本內功火候不足，不能學葵花心法。\n");
         if( i>10 && query("shen", me)>t*100 )
-                return notify_fail("學葵花心法，要心狠手辣，姦惡歹毒，你可做得不夠呀！\n");
+                return notify_fail("學葵花心法，要心狠手辣，奸惡歹毒，你可做得不夠呀！\n");
 /*
         if ( me->query_skill("buddhism",1) || me->query_skill("taoism",1) )
                 return notify_fail("你練了禿驢牛鼻子們的心法，還學葵花心法做什麼！\n");

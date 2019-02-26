@@ -18,7 +18,7 @@ void create()
                 set("unit", "本");
                 set("value", 500);
                 set("material", "paper");
-                set("long", "這本書上寫著本MUD結婚的程序，你可以翻閱(fan)它。\n");
+                set("long", "這本書上寫着本MUD結婚的程序，你可以翻閲(fan)它。\n");
         }
         setup();
 }

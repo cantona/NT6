@@ -7,7 +7,7 @@ int exert(object me, object target, int amount)
         int i, skill, damage,extra,force,max_force,state,base,res_kee; 
         string msg;
         if( query("class", me) != "yihua" )
-                return notify_fail ("﹝柔腕斷玉﹞只有移花宮弟子能使用。\n");
+                return notify_fail ("［柔腕斷玉］只有移花宮弟子能使用。\n");
         if( !me->is_fighting() )
                 return notify_fail("柔腕斷玉只能在戰鬥中使用。\n"); 
         force=query("force", me);
@@ -22,7 +22,7 @@ int exert(object me, object target, int amount)
                     if( !target
                     ||      !target->is_character()
                     ||      !me->is_fighting(target) )
-                            return notify_fail("﹝柔腕斷玉﹞只能對戰鬥中的對手使用。\n");
+                            return notify_fail("［柔腕斷玉］只能對戰鬥中的對手使用。\n");
 
                 
         //suppose: force: 220,mingyu-force: 180, max_force: 650+220*5=1750
@@ -38,7 +38,7 @@ int exert(object me, object target, int amount)
         state = random(4);
         switch (state) {
                 case 0:
-                                msg += HIC "\n$N手腕微微一轉，$n竟隨著$N的手勢快速旋轉起來，身上多了一道黑青的掌印！\n\n"NOR;
+                                msg += HIC "\n$N手腕微微一轉，$n竟隨着$N的手勢快速旋轉起來，身上多了一道黑青的掌印！\n\n"NOR;
                                 break;
                 case 1:
                                 msg += HIG "\n$N手腕微微一轉，$n如受重擊，稻草一般飛了出去！\n\n"NOR;

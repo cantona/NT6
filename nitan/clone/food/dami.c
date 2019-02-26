@@ -1,4 +1,4 @@
-// 神話世界﹒西遊記﹒版本４．５０
+// 神話世界·西遊記·版本４．５０
 /* <SecCrypt CPL V3R05> */
  
 // chicken_leg.c
@@ -20,8 +20,8 @@ void create()
                 set("value", 200);
                 set("food_remaining", 100);
                 set("food_supply", 5);
-                set("wield_msg", "$N抓起一袋大米，好象要和人拼命．\n");
-     set("eat_msg", "$N拿出幾粒大米放到嘴裡嚼了嚼，差點把牙崩調！\n");
+                set("wield_msg", "$N抓起一袋大米，好像要和人拼命．\n");
+     set("eat_msg", "$N拿出幾粒大米放到嘴裏嚼了嚼，差點把牙崩調！\n");
                 set("material", "bone");
         }
         setup();

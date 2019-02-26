@@ -14,7 +14,7 @@ void create()
                 set_default_object(__FILE__);
         else {
                 set("unit", "副");
-                set("long", "這是一副沙袋，裡面裝滿了鐵砂，用以練習輕功。\n");
+                set("long", "這是一副沙袋，裏面裝滿了鐵砂，用以練習輕功。\n");
                 set("value", 6000);
                 set("material", "wrists");
                 set("armor_prop/armor", 5);

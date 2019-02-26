@@ -36,7 +36,7 @@ int main(object who, string arg)
                 write("你剛才領的任務：\n"+msg+"\n");
          }
 
-        if (!flag_bh) write("你目前沒有從幫會那裡接任務！\n");
+        if (!flag_bh) write("你目前沒有從幫會那裏接任務！\n");
 
         write(HIR + "\n門派任務系統：\n" + NOR);
         if( query("quest_count", me) )
@@ -50,7 +50,7 @@ int main(object who, string arg)
                   case "kill":
                         write(q["master_name"] + "吩咐你在" + CHINESE_D->chinese_monthday(q["limit"]) +
                       "之前割下" HIR + q["name"] + NOR "的人頭，回" + q["family"] + "交差。\n" +
-                      "據說此人前不久曾經在" + q["place"] + "出沒。\n");
+                      "據説此人前不久曾經在" + q["place"] + "出沒。\n");
                       tag_fam = 1;
                       break;
                 case "letter":
@@ -125,7 +125,7 @@ int main(object who, string arg)
                 write("你剛才領的任務："+msg+"\n");
          }
 
-        if (!flag_zs) write("你目前沒有從任何宗師那裡接任務！\n");
+        if (!flag_zs) write("你目前沒有從任何宗師那裏接任務！\n");
         return 1;
 }
 
@@ -153,7 +153,7 @@ int help(object me)
         write(@HELP
 指令格式 : checkquest  <ID>
 這個指令可以用來查詢某個玩家從所在門派的掌門或
-世家長輩領取任務以及從宗師那裡領取得任務。
+世家長輩領取任務以及從宗師那裏領取得任務。
 
 HELP );
         return 1;

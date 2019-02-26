@@ -11,7 +11,7 @@ void create()
         else {
                 set("unit", "本");
                 set("long", YEL "這是一本薄薄的書冊，書皮已然發黃，封"
-                            "面上寫著「幽冥指」三個字。\n" NOR);
+                            "面上寫着「幽冥指」三個字。\n" NOR);
                 set("value", 1);
                 set("no_sell", 1);
                 set("material", "paper");

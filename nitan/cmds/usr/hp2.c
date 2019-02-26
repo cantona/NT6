@@ -238,7 +238,7 @@ int main(object me, string arg)
                       "────────" HIC "≡\n" NOR;
                 sp += sprintf( YEL " 般 若 掌： %s" NOR YEL "   無 常 杖： %s" NOR YEL "   金 剛 拳： %s\n" NOR, 
            query("sl_gift/yzc", ob)?HIY"○":HIC"×",query("sl_gift/zg", ob)?HIY"○":HIC"×",query("sl_gift/str", ob)?HIY"○":HIC"×"); 
-                sp += sprintf( YEL " 一 指 禪： %s" NOR YEL "   火 燄 刀： %s" NOR YEL "   禪宗心法： %s\n" NOR, 
+                sp += sprintf( YEL " 一 指 禪： %s" NOR YEL "   火 焰 刀： %s" NOR YEL "   禪宗心法： %s\n" NOR, 
            query("sl_gift/con", ob)?HIY"○":HIC"×",query("sl_gift/huoyandao", ob)?HIY"○":HIC"×",query("sl_gift/int", ob)?HIY"○":HIC"×"); 
                 sp += sprintf( YEL " 桃花密陣： %s" NOR YEL "   一燈療傷： %s" NOR YEL " 大乘涅磐功： %s\n" NOR, 
            query("taohua_maze", ob)?HIY"○":HIC"×",query("dali/yideng_rewarded", ob)?HIY"○":HIC"×",query("sl_gift/mhyn", ob)?HIY"○":HIC"×"); 
@@ -308,7 +308,7 @@ int main(object me, string arg)
                 if (me->is_most_craze())
                         sp += HIR "【 憤 " BLINK "怒" NOR HIR " 】  " +
                               sprintf("%-22s",query("character", me) == "光明磊落"?
-                                               "豎發沖冠" : "怒火中燒");
+                                               "豎發衝冠" : "怒火中燒");
                 else
                         sp += sprintf(HIR "【 憤 怒 】 %5d/ %5d (+%-3d)    ",
                                       craze, me->query_max_craze(),

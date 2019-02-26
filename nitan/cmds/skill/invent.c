@@ -66,16 +66,16 @@ string *msga = ({
         "$N靈台一片清明，想起",
         "$N苦思以前練功時的點點滴滴，似乎想起",
         "突然，$N腦海靈光一現，發現",
-        "$N反復比劃，發現",
+        "$N反覆比劃，發現",
 });
 
 string *msgb = ({ 
         "似有相通之處，不禁心中一亮。",
-        "頗有一一印証之功，隨手演練，似有所悟。",
+        "頗有一一印證之功，隨手演練，似有所悟。",
         "似乎可以合而為一，頓時心內一陣狂喜！",
-        "可以相互取長補短，開辟一種全新的境界。",
+        "可以相互取長補短，開闢一種全新的境界。",
         "如果連續使出，似乎可以將威力發揮至極限。",
-        "如果詳加修正，可以相互彌補個中不足，創造出更完美的招式。"
+        "如果詳加修正，可以相互彌補箇中不足，創造出更完美的招式。"
 });
 
 string *banned_name = ({
@@ -120,7 +120,7 @@ int main(object me, string arg)
                 
                 for( i = 0; i < sizeof(invent); i++ )
                 {
-                        msg += CYN "\n□" HIC + to_chinese(invent[i]) + CYN "□：" HIY +
+                        msg += CYN "\n〖" HIC + to_chinese(invent[i]) + CYN "〗：" HIY +
                                to_chinese(invent_skills[invent[i]]) +
                                CYN "(" HIY + invent_skills[invent[i]] + CYN ")\n";
                 }
@@ -220,22 +220,22 @@ int main(object me, string arg)
         } 
 
         if( me->is_busy() )
-                return notify_fail("你還是先忙完手頭的事再說吧！\n");         
+                return notify_fail("你還是先忙完手頭的事再説吧！\n");         
 
         if( query("pigging", where) )
                 return notify_fail("你還是專心拱豬吧！\n");
                 
         if( !query("no_fight", where) )
-                return notify_fail("在這裡閉關？不太安全吧？\n");
+                return notify_fail("在這裏閉關？不太安全吧？\n");
 
         if( !query("sleep_room", where) )
                 return notify_fail("你得找一個能夠休息的地方閉關。\n");
                 
         if( !ultrap(me) )
-                return notify_fail("你還沒有到大宗師的境界，還是好好學習鍛煉吧。\n");
+                return notify_fail("你還沒有到大宗師的境界，還是好好學習鍛鍊吧。\n");
 
         if( query("reborn/times", me)<1 )
-                return notify_fail("你還沒有經過轉世，還是好好學習鍛煉吧。\n");
+                return notify_fail("你還沒有經過轉世，還是好好學習鍛鍊吧。\n");
 
         if( query("potential", me)-query("learned_points", me)<1000000 )
                 return notify_fail("你的潛能不夠，沒法閉關修行。\n");
@@ -592,7 +592,7 @@ void input_skill_name(string arg, object me)
                                  + sort_msg("如：" + c_name + "是創自" + me->name(1) + "的絕世" + valid_types[skill] + 
                                             "，招式勇往直前，大開大闔，以勇猛霸道而著稱，當初江湖十大掌門"
                                             "圍攻" + me->name(1) + "的時候，情勢萬分危機，" + me->name(1)
-                                            + "在千鈞一發之際使出這套武功，頓時風雲變色，化險為夷……\n\n")
+                                            + "在千鈞一髮之際使出這套武功，頓時風雲變色，化險為夷……\n\n")
                                  + "----------------------------------------------------------------\n\n"
                                  + "請輸入：");
         me->edit(bind((: call_other, __FILE__, "describe_done", me, skill, e_name, c_name :), me));
@@ -822,7 +822,7 @@ void decide_input(string arg, object me, string skill, string e_name, string c_n
                 if( s_skill["skill_z_number"] == 1 ) {
                         if( objectp( ob = get_object(SKILL_D(e_name)) ) ) {
                                 delete_temp("invent", me);
-                                tell_object(me, "BUG！請聯系巫師！\n");
+                                tell_object(me, "BUG！請聯繫巫師！\n");
                                 return;
                         }
                 
@@ -859,7 +859,7 @@ void decide_input(string arg, object me, string skill, string e_name, string c_n
                 } else {
                         if( !objectp( ob = get_object(SKILL_D(e_name)) ) ) {
                                 delete_temp("invent", me);
-                                tell_object(me, "BUG！請聯系巫師！\n");
+                                tell_object(me, "BUG！請聯繫巫師！\n");
                                 return;
                         }                        
                         destruct(ob);
@@ -1070,10 +1070,10 @@ int help(object me)
           invent <基本武功> ?   查看該基本武功的已創武功
           invent <基本武功> d   刪除該基本武功的已創武功
 
-歷來武林中堪稱一代宗師者，均是于武學上總結己之所學，並能
-融會各家之所長，開創武林中先河者。武學雖然可能源于一脈，
+歷來武林中堪稱一代宗師者，均是於武學上總結己之所學，並能
+融會各家之所長，開創武林中先河者。武學雖然可能源於一脈，
 但各人所學加之經歷之不同，卻對同一事物有不同領悟。如此，
-武林才變得如今般絢麗多彩。然而，開辟武林中的新溪經並非易
+武林才變得如今般絢麗多彩。然而，開闢武林中的新溪經並非易
 事，需要耗費無數心血及精力才有可能獨樹一幟，成先人所未曾
 想。 
 

@@ -38,13 +38,13 @@ int perform(object me, object target)
                 return notify_fail("你現在的真氣不足，難以施展" + name() + "。\n");
 
         if (! living(target))
-                return notify_fail("對方都已經這樣了，用不著這麼費力吧？\n");
+                return notify_fail("對方都已經這樣了，用不着這麼費力吧？\n");
 
         wp = weapon->name();
 
         msg = HIY "$N" HIY "嗔目大喝，施展出日月輪法「" HIW "五輪連轉"
               HIY "」神技，驀地將手中" + wp + HIY "飛擲\n而出，幻作數"
-              "道光芒，相互盤旋著壓向$n" HIY "，招術煞為精奇！\n" NOR;
+              "道光芒，相互盤旋着壓向$n" HIY "，招術煞為精奇！\n" NOR;
         message_combatd(msg, me, target);
 
         if ((int)me->query_skill("longxiang-gong", 1) < 90)

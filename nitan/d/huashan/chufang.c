@@ -4,8 +4,8 @@ void create()
 {
         set("short","廚房");
         set("long", @LONG
-這是華山派的廚房，一位華山小師妹正在燒飯。整個房間彌漫著
-飯菜香。你可以向小師妹要(serve) 些吃的喝的。牆上貼著一張啟事
+這是華山派的廚房，一位華山小師妹正在燒飯。整個房間瀰漫着
+飯菜香。你可以向小師妹要(serve) 些吃的喝的。牆上貼着一張啟事
 (note)。
 LONG );
         set("exits",([
@@ -25,7 +25,7 @@ LONG );
 int valid_leave(object me, string dir)
 {
         if ( present("soup", me) || present("rice", me))
-        return notify_fail("小師妹瞪了你一眼: 吃不了要兜著走啊? \n");
+        return notify_fail("小師妹瞪了你一眼: 吃不了要兜着走啊? \n");
         return ::valid_leave(me, dir);
 }
 

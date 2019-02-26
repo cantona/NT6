@@ -25,7 +25,7 @@ int exert(object me, object target)
         me->receive_damage("qi", 0);
 
         message_combatd(HIR "$N" HIR "仰天一聲狂哮，全身骨骼爆響，真氣盪漾，殺"
-                        "氣彌漫，氣勢迫人。\n" NOR, me);
+                        "氣瀰漫，氣勢迫人。\n" NOR, me);
 
         if( objectp(weapon=query_temp("weapon", me)) && 
            query("skill_type", weapon) == "blade" && 

@@ -7,7 +7,7 @@ void create()
 {
 	set("short", "墓室");
 	set("long",@long
-這裡是郭襄墓下的墓室。墓室不大，正面是一具白玉石棺，旁邊放著一盞
+這裏是郭襄墓下的墓室。墓室不大，正面是一具白玉石棺，旁邊放着一盞
 長明燈。石棺一塵不染，看來經常有人進來打掃。
 long);
 	set("exits", ([
@@ -34,13 +34,13 @@ int do_move(string arg)
 		return notify_fail("你要幹什麼？\n");
 
 	if (me->is_busy() || me->is_fighting()) 
-		return notify_fail("你正忙著哪！\n");
+		return notify_fail("你正忙着哪！\n");
 
 	if ( me->query("combat_exp") < 1000000 ) return 0;
 	if ( !me->query("quest/jiuyin2/emeijump")) return 0;
 
 	message_vision("$N運足氣，雙手用力去搬白玉石棺蓋。\n", me);
-	message_vision(HIR"忽然間幾支短箭從棺後一個機關裡射出來，直射向$N的面門！\n"NOR, me);
+	message_vision(HIR"忽然間幾支短箭從棺後一個機關裏射出來，直射向$N的面門！\n"NOR, me);
 
 	dex = me->query_dex(1) + me->query("kar");
 
@@ -79,16 +79,16 @@ int do_na(string arg)
 	me = this_player();
 	ob = this_object();
 
-	if (me->is_busy() || me->is_fighting()) return notify_fail("你正忙著哪！\n");
+	if (me->is_busy() || me->is_fighting()) return notify_fail("你正忙着哪！\n");
 
 
 	if (arg != "all from coffin") return notify_fail("你要幹什麼？\n");
 
 	if (!me->query_temp("marks/掀")) 
-		return notify_fail("你不打開石棺的蓋子，怎麼能拿裡面的東西？\n");
+		return notify_fail("你不打開石棺的蓋子，怎麼能拿裏面的東西？\n");
 
 	if( random(30) > 5 ) {
-		write("你在石棺裡摸了半天，什麼也沒有拿到。\n", me);
+		write("你在石棺裏摸了半天，什麼也沒有拿到。\n", me);
 		write("只聽見啪的一聲，棺蓋不知怎麼又合上了。\n", me);
 		log_file("quest/jiuyin",sprintf("%-18s在失敗%s次後，在郭襄墓中掀開棺蓋，但未得到任何東西。\n",
        			me->name(1)+"("+capitalize(getuid(me))+")",chinese_number(me->query("quest/jiuyin2/fail"))), me);

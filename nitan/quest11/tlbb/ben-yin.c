@@ -7,7 +7,7 @@ inherit NPC;
 #define QUESTDIR "quest/天龍八部/"
 #define QUESTDIR1 "quest/天龍八部/凌波微步篇/"
 #define QUESTDIR2 "quest/天龍八部/天龍營救篇/"
-#define QUESTDIR3 "quest/天龍八部/蕭峰身世篇/"
+#define QUESTDIR3 "quest/天龍八部/蕭峯身世篇/"
 #define QUESTDIR4 "quest/天龍八部/大遼救援篇/"
 #define QUESTDIR5 "quest/天龍八部/復興天下篇/"
 #define QUESTDIR6 "quest/天龍八部/武功/"
@@ -24,7 +24,7 @@ void create()
 {
         set_name("本因大師", ({ "benyin dashi","benyin","dashi"}) );
         set("nickname", "天龍寺主持");
-	set("long", "一位白須白眉的老僧，身穿一襲金絲木棉袈裟。\n"+
+	set("long", "一位白鬚白眉的老僧，身穿一襲金絲木棉袈裟。\n"+
 			"若以俗家輩份排列，本因大師應是當今大理國保定帝的俗家叔父。\n");
 	set("gender", "男性" );
         set("attitude", "friendly");
@@ -70,24 +70,24 @@ void create()
         create_family("天龍寺", 13, "方丈");
 	set("inquiry", ([
 		"name": "貧僧就是本因",
-		"龍樹院" : "龍樹院在雨花閣後面的鬆樹林中",
+		"龍樹院" : "龍樹院在雨花閣後面的松樹林中",
 		"枯榮" : "枯榮大師在龍樹院參悟",
 		"枯榮大師" : "枯榮大師在龍樹院參悟",
-		"鬆樹林" : (: ask_kurong :),
+		"松樹林" : (: ask_kurong :),
 		"龍樹院" : (: ask_kurong :),
             		"段譽" : (: askduanyu :),
-		            "大理" : "這裡便是大理。",
-		            "天龍寺" : "這裡正是天龍寺，大理段家武學的最高之地。",
+		            "大理" : "這裏便是大理。",
+		            "天龍寺" : "這裏正是天龍寺，大理段家武學的最高之地。",
 		            "天龍有難" : (: tianlonghelp :),
 		            "營救" : (: asksave :),
 		            "搭救" : (: asksave :),
-		            "蕭峰" : "江湖人稱南慕容、北蕭峰，端得一條好漢。",
+		            "蕭峯" : "江湖人稱南慕容、北蕭峯，端得一條好漢。",
 		            "營救段譽" : (: asksave :),
-		            "營救蕭峰" : (: askxiaofeng :),
-		            "慕容復" : "江湖人稱南慕容、北蕭峰，聽說慕容公子年級輕輕，卻無所不精。",
-		            "慕容博" : "我聽說是，姑蘇慕容不出的傑才，可惜英年早逝。",
+		            "營救蕭峯" : (: askxiaofeng :),
+		            "慕容復" : "江湖人稱南慕容、北蕭峯，聽説慕容公子年級輕輕，卻無所不精。",
+		            "慕容博" : "我聽説是，姑蘇慕容不出的傑才，可惜英年早逝。",
 		            "鳩摩智" : (: askjiumozhi :),
-		            "六脈神劍" : "傳說的我天龍寺最高絕學，需要極深內力才能運用。",
+		            "六脈神劍" : "傳説的我天龍寺最高絕學，需要極深內力才能運用。",
         ]) );
         set("chat_chance_combat", 30);
         set("chat_msg_combat",({
@@ -112,7 +112,7 @@ string ask_kurong()
 	if ((ob_fam && ob_fam["family_name"] != "天龍寺")||ob->query("class") != "bonze")
 		return ("對不起，你不能去打擾枯榮大師！\n");
 	if (ob_fam["generation"] == (my_fam["generation"] + 1)){
-		return ("鬆林很密，容易迷路，你一進林，向北走四步，向西走三步，再向北走一步，西走三步就到了 \n");
+		return ("松林很密，容易迷路，你一進林，向北走四步，向西走三步，再向北走一步，西走三步就到了 \n");
 	} 
 	else return ("你輩分不夠，不能去拜見枯榮大師。 \n");
 }
@@ -146,7 +146,7 @@ void init()
     	command("look "+me->query("id"));
     	command("touch "+me->query("id"));
     	command("say 多些這位"+RANK_D->query_respect(me) +"幫忙，本寺當可高枕無憂了。"); 
-      tell_object(me,HIG"\n你走進大廳，卻發現這裡更是熱鬧非凡，場中兩人正都在一起，那身受僧衣的怕就是鳩摩智了，另外一個竟然正是大理王子段譽，\n"
+      tell_object(me,HIG"\n你走進大廳，卻發現這裏更是熱鬧非凡，場中兩人正都在一起，那身受僧衣的怕就是鳩摩智了，另外一個竟然正是大理王子段譽，\n"
                           "武功之高，世上罕見。\n"NOR);
       if(!(obj1=present("duan yu",this_object()))||!(obj1=present("zhongnian nanzi",this_object())))
       {
@@ -161,9 +161,9 @@ void init()
   	     obj2=new("/kungfu/class/xueshan/jiumozhi");
   	     obj2->move(environment(me));
       }
-      message_vision(HIC"只見鬥室中劍氣縱橫，刀勁飛舞，便似有無數迅雷疾風相互沖撞激盪。鳩摩智只覺得段譽內勁越來越強，劍法也是變化莫測，\n"
-                        "隨時自創新意，與適才本因、本相等人的拘泥劍招大不相同，令人實難捉摸。他自不知段譽記不明白六路劍法中這許多繁復的\n"
-                        "招式，不過危急中隨指亂刺，那裡是什麼自創新招了？心下既驚且悔：“天龍寺中居然伏得有這樣一個青年高手，今日當真是\n"
+      message_vision(HIC"只見斗室中劍氣縱橫，刀勁飛舞，便似有無數迅雷疾風相互衝撞激盪。鳩摩智只覺得段譽內勁越來越強，劍法也是變化莫測，\n"
+                        "隨時自創新意，與適才本因、本相等人的拘泥劍招大不相同，令人實難捉摸。他自不知段譽記不明白六路劍法中這許多繁複的\n"
+                        "招式，不過危急中隨指亂刺，那裏是什麼自創新招了？心下既驚且悔：“天龍寺中居然伏得有這樣一個青年高手，今日當真是\n"
                         "自取其辱。”突然間嗤嗤嗤連砍三刀，叫道：“且住！” \n\n"NOR,me);   
          
       message_vision(HIM"\n段譽當即收招，只是你卻發現他真氣竟然不能隨意收發，只將手指一抬向懷頂指去，$N不禁暗叫不好，抬眼望去鳩摩智似已有覺悟。\n\n"NOR,me);   
@@ -194,7 +194,7 @@ void new_happen(object me)
 	  command("say 怎麼關鍵時候，"+me->name()+"在何處？");
 	  me->delete(QUESTDIR2+"start");
 	  me->delete_temp("quest/天龍八部");
-	  me->delete_temp("quest/busy");//任務沖突標志取消 
+	  me->delete_temp("quest/busy");//任務衝突標誌取消 
 	  command("heng");
 	  return;
   }
@@ -205,7 +205,7 @@ void new_happen(object me)
 	  command("say 段譽呢？這麼快，除了鳩摩智，誰將他搶走呢？");
 	  me->delete(QUESTDIR2+"start");
 	  me->delete_temp("quest/天龍八部");
-	  me->delete_temp("quest/busy");//任務沖突標志取消 
+	  me->delete_temp("quest/busy");//任務衝突標誌取消 
 	  command("?");
 	  tell_object(me,HIR"段譽不知所蹤，任務失敗。\n"NOR);
 	  if((obj2=present("jiumo zhi",environment(ob))))
@@ -222,7 +222,7 @@ void new_happen(object me)
 	  command("say 鳩摩智呢？竟然莫名其妙退走了？");
 	  me->delete(QUESTDIR2+"start");
 	  me->delete_temp("quest/天龍八部");
-	  me->delete_temp("quest/busy");//任務沖突標志取消 
+	  me->delete_temp("quest/busy");//任務衝突標誌取消 
 	  command("?");
 	  tell_object(me,HIR"繼續情節無法展開。\n"NOR);
 	  if((obj1=present("duan yu",environment(ob))))
@@ -240,16 +240,16 @@ void new_happen(object me)
 	  && me->query_temp(QUESTDIR2+"kill_dizi"))
   {
  
-    message_vision(HIY"\n果然，鳩摩智見段譽臉有迷惘之色，收斂真氣時手忙腳亂，全然不知所雲，心念微動，便即縱身而上，揮拳向他臉上擊去。他見鳩\n"
-                        "摩智揮拳打到，便即毛手毛腳的伸臂去格。鳩摩智右掌翻過，已抓住了他胸口‘神封穴’。段譽立時全身酸軟，動彈不得。鳩摩智\n"
-                        "立即伸指又點他‘極泉’、‘大椎’、‘京門’數處大穴。鳩摩智倒退三步，說道：“這位小施主心中記得六脈神劍的圖譜。原來\n"
+    message_vision(HIY"\n果然，鳩摩智見段譽臉有迷惘之色，收斂真氣時手忙腳亂，全然不知所云，心念微動，便即縱身而上，揮拳向他臉上擊去。他見鳩\n"
+                        "摩智揮拳打到，便即毛手毛腳的伸臂去格。鳩摩智右掌翻過，已抓住了他胸口‘神封穴’。段譽立時全身痠軟，動彈不得。鳩摩智\n"
+                        "立即伸指又點他‘極泉’、‘大椎’、‘京門’數處大穴。鳩摩智倒退三步，説道：“這位小施主心中記得六脈神劍的圖譜。原來\n"
                         "的圖譜已被枯榮大師焚去，小施主便是活圖譜，在慕容先生墓前將他活活的燒了，也是一樣。”左掌揚處，向前急連砍出五刀，抓\n"
                         "住段譽退出了牟尼堂門外。\n\n"NOR,me);  
    	command("@@");
     message_vision(HIY"\n這生變化實在出乎意料之外，你雖已瞧出段譽武學之中隱伏有大大的破綻，卻也決計料想不到，竟能如此輕而易舉的手到擒來。等\n"
                         "鳩摩智拿人走人之時，已經來不及了。本因等縱前想要奪人，均被他這連環五刀封住，無法搶上。\n\n"NOR,me);  
    	command("wah");
-    message_vision(HIC"\n鳩摩智長笑說道：“燒了死圖譜，反得活圖譜。慕容先生地下有人相伴，可不覺寂寞了！”右掌斜劈，喀喇喇一聲響，將牟尼堂的\n"
+    message_vision(HIC"\n鳩摩智長笑説道：“燒了死圖譜，反得活圖譜。慕容先生地下有人相伴，可不覺寂寞了！”右掌斜劈，喀喇喇一聲響，將牟尼堂的\n"
                         "兩根柱子劈倒，身形微幌，便如一溜輕煙般奔入林中，剎那間不知去向。你和本因雙雙搶出，見鳩摩智已然走遠。卻聽內堂枯榮長\n"
                         "老道：“快追！”衣襟帶風，一飄數丈。似是本參大師和他並肩齊行，向北追趕。 \n\n"NOR,me);
     me->set_temp(QUESTDIR2+"caught",1);
@@ -267,7 +267,7 @@ string askjiumozhi()
 	if (me->query(QUESTDIR1+"over") && !me->query(QUESTDIR2+"start"))
 	{
   	  command("nod "+me->query("id"));
-		  return "聽說，大輪寺第一高僧鳩摩智將來我天龍寺佛法交流，真是我大理之幸啊。";
+		  return "聽説，大輪寺第一高僧鳩摩智將來我天龍寺佛法交流，真是我大理之幸啊。";
   }
 	if (me->query(QUESTDIR2+"start") && !me->query_temp(QUESTDIR2+"jiumozhi")&&!me->query(QUESTDIR2+"over"))
 	{
@@ -277,8 +277,8 @@ string askjiumozhi()
    	                 return "感謝"+RANK_D->query_respect(me) +"如此仗義。今天很忙了，"+RANK_D->query_respect(me) +"先行休息去吧！";
       if(me->query(QUESTDIR+"combat_exp")&&me->query("combat_exp")-me->query(QUESTDIR+"combat_exp")<500000)
   	                return "以"+RANK_D->query_respect(me) +"目前的經驗就算目前有情況，也幫不上什麼忙，還是抓緊練功吧！";
-      //設定標志
-	  tell_object(me,HIW"\n你素知大輪明王鳩摩智是吐蕃國的護國法王，但只聽說他具大智慧，精通佛法，想來武功也是超高。只是這等\n"NOR);
+      //設定標誌
+	  tell_object(me,HIW"\n你素知大輪明王鳩摩智是吐蕃國的護國法王，但只聽説他具大智慧，精通佛法，想來武功也是超高。只是這等\n"NOR);
   	  tell_object(me,HIW"明搶之事，確實不通情理。‘六脈神劍經’更是天龍寺鎮寺之寶，這等上門要書的做法擺明就是欺負他人。\n"NOR);
   	  tell_object(me,HIC"你打定主意道：這等欺負人的行徑，確是武林不齒，在下不才，也要管上一管。\n\n"NOR);
 	  command("touch "+me->query("id"));
@@ -292,7 +292,7 @@ string askjiumozhi()
 	  me->set(QUESTDIR+"combat_exp",me->query("combat_exp"));        
 
   	  me->set_temp(QUESTDIR2+"jiumozhi",1);
-	  me->set_temp("quest/busy",1);//與任務系統沖突標志
+	  me->set_temp("quest/busy",1);//與任務系統衝突標誌
 	  log_file("quest/TLBB", sprintf("%s(%s) 開始天龍八部天龍寺救援篇。經驗：%d。\n", me->name(1),me->query("id"), me->query("combat_exp")) );
 	  return "這大輪明王也算是舉世聞名的高僧了，怎能恁地不通情理，膽敢向本寺強要此經？只怕善意者不來，來者不善，\n"
 		         "此事後果非小，我作不得主，請枯榮師叔出來主持大局。不過，這次有"+RANK_D->query_respect(me) +"相助，只怕是明王的失算了。\n"
@@ -305,7 +305,7 @@ string askjiumozhi()
   }
 
   command("nod");
-  return "大輪明王鳩摩智是吐蕃國的護國法王，但聽說他具大智慧，精通佛法，想來武功也是驚人。";
+  return "大輪明王鳩摩智是吐蕃國的護國法王，但聽説他具大智慧，精通佛法，想來武功也是驚人。";
 }
 string askxiaofeng()
 {
@@ -314,39 +314,39 @@ string askxiaofeng()
   if(!me->query(QUESTDIR3+"start"))
   {
   	  command("hoho");
-  		return "江湖人稱南慕容、北蕭峰，端得一條好漢，何來援救之說。";
+  		return "江湖人稱南慕容、北蕭峯，端得一條好漢，何來援救之説。";
   }
 	if (me->query(QUESTDIR3+"start") && !me->query(QUESTDIR3+"over"))
 	{
   	  command("sigh");
   	  command("shrug "+me->query("id"));
-		  return "聽說這件事情，只是天龍寺向來不涉及武林之爭。";
+		  return "聽説這件事情，只是天龍寺向來不涉及武林之爭。";
   }
 
 	if (me->query(QUESTDIR3+"bad"))
 	{
   	  command("heng");
   	  command("? "+me->query("id"));
-                  return "蕭峰，難不是你所迫出中原，今日所謂搭救不知何意！";
+                  return "蕭峯，難不是你所迫出中原，今日所謂搭救不知何意！";
   }
 	if (me->query(QUESTDIR3+"start") && me->query(QUESTDIR3+"over")&& !me->query(QUESTDIR4+"start"))
 	{
   	  command("sigh");
   	  command("shrug "+me->query("id"));
-		  return "聽說這件事情，只是天龍寺向來不涉及武林之爭。";
+		  return "聽説這件事情，只是天龍寺向來不涉及武林之爭。";
   }
 	if (me->query(QUESTDIR4+"start")&& !me->query(QUESTDIR4+"over"))
 	{
   	  command("nod "+me->query("id"));
-		  return "聽說這件事情，只是天龍寺向來不涉及武林之爭。";
+		  return "聽説這件事情，只是天龍寺向來不涉及武林之爭。";
   }
 	if (me->query(QUESTDIR4+"start") && me->query(QUESTDIR4+"over"))
 	{
   	  command("haha "+me->query("id"));
-		  return "聽說那一戰，"+me->query("name")+"更是威震武林，端得厲害啊。";
+		  return "聽説那一戰，"+me->query("name")+"更是威震武林，端得厲害啊。";
   }
   command("hoho");
-	return "江湖人稱南慕容、北蕭峰，端得一條好漢，何來援救之說。";
+	return "江湖人稱南慕容、北蕭峯，端得一條好漢，何來援救之説。";
 }
 string asksave()
 {
@@ -355,19 +355,19 @@ string asksave()
   if(!me->query(QUESTDIR1+"start") &&!me->query(QUESTDIR2+"start"))
   {
   	  command("hoho");
-  		return "小王子素來不喜武學，只愛佛法易經，平易近人，何來援救之說？";
+  		return "小王子素來不喜武學，只愛佛法易經，平易近人，何來援救之説？";
   }
 	if (me->query(QUESTDIR1+"start") && !me->query(QUESTDIR1+"wuliangover")&& !me->query(QUESTDIR1+"over"))
 	{
   	  command("sigh");
   	  command("shrug "+me->query("id"));
-		  return "聽說，前段時間小王子和鎮南王又是吵架一番，至今未有回家，不知"+RANK_D->query_respect(me) +"可否幫助打聽一下。";
+		  return "聽説，前段時間小王子和鎮南王又是吵架一番，至今未有回家，不知"+RANK_D->query_respect(me) +"可否幫助打聽一下。";
   }
 	if (me->query(QUESTDIR1+"start") && me->query_temp(QUESTDIR1+"yingjiu")&& !me->query(QUESTDIR1+"over"))
 	{
   	  command("sigh");
   	  command("shrug "+me->query("id"));
-		  return "聽說這件事情，只是天龍寺向來不涉及武林之爭。";
+		  return "聽説這件事情，只是天龍寺向來不涉及武林之爭。";
   }
 	if (me->query(QUESTDIR1+"start") && me->query(QUESTDIR1+"over")&& !me->query(QUESTDIR2+"start"))
 	{
@@ -385,7 +385,7 @@ string asksave()
 		  return "我佛慈悲。竟然惹出鳩摩智這等高手，但願王子吉人天相啊。";
   }
   command("hoho");
-	return "小王子素來不喜武學，只愛佛法易經，平易近人，何來援救之說？";
+	return "小王子素來不喜武學，只愛佛法易經，平易近人，何來援救之説？";
 }
 string askduanyu()
 {
@@ -394,19 +394,19 @@ string askduanyu()
   if(!me->query(QUESTDIR1+"start" )&&!me->query(QUESTDIR2+"start"))
   {
   	  command("hoho");
-  		return "你問譽兒啊，他是鎮南王正淳的公子，聽說天資聰明，生性淳厚，只是素來不喜武學，只愛佛法易經。";
+  		return "你問譽兒啊，他是鎮南王正淳的公子，聽説天資聰明，生性淳厚，只是素來不喜武學，只愛佛法易經。";
   }
 	if (me->query(QUESTDIR1+"start") && !me->query(QUESTDIR1+"wuliangover")&& !me->query(QUESTDIR1+"over"))
 	{
   	  command("sigh");
   	  command("shrug "+me->query("id"));
-		  return "聽說，前段時間小王子和鎮南王又是吵架一番，至今未有回家。";
+		  return "聽説，前段時間小王子和鎮南王又是吵架一番，至今未有回家。";
   }
 	if (me->query(QUESTDIR1+"start") && me->query_temp(QUESTDIR1+"yingjiu")&& !me->query(QUESTDIR1+"over"))
 	{
   	  command("sigh");
   	  command("shrug "+me->query("id"));
-		  return "聽說這件事情，只是天龍寺向來不涉及武林之爭。";
+		  return "聽説這件事情，只是天龍寺向來不涉及武林之爭。";
   }
 	if (me->query(QUESTDIR1+"start") && me->query(QUESTDIR1+"over")&& !me->query(QUESTDIR2+"start"))
 	{
@@ -416,7 +416,7 @@ string askduanyu()
 	if (me->query(QUESTDIR2+"start") && !me->query(QUESTDIR2+"over")&& !me->query_temp(QUESTDIR2+"caught"))
 	{
   	  command("sigh "+me->query("id"));
-		  return "我佛慈悲。小王子自萬劫谷回來，總是氣血不定，才被送往我天龍寺枯榮長老那裡求救來了。";
+		  return "我佛慈悲。小王子自萬劫谷回來，總是氣血不定，才被送往我天龍寺枯榮長老那裏求救來了。";
   }
 	if (me->query(QUESTDIR2+"start") && !me->query(QUESTDIR2+"over"))
 	{
@@ -424,7 +424,7 @@ string askduanyu()
 		  return "我佛慈悲。竟然惹出鳩摩智這等高手，但願王子吉人天相啊。";
   }
   command("hoho");
-	return "你問譽兒啊，他是鎮南王正淳的公子，聽說天資聰明，生性淳厚。";
+	return "你問譽兒啊，他是鎮南王正淳的公子，聽説天資聰明，生性淳厚。";
 }
 string tianlonghelp()
 {
@@ -439,15 +439,15 @@ string tianlonghelp()
 	if(me->query_condition("killer"))
 	{
 	   command("fear "+me->query("id"));
-	   return "天龍寺和中原官府應該沒有半點關系，"+RANK_D->query_respect(me) +"還是自我小心通緝！";
+	   return "天龍寺和中原官府應該沒有半點關係，"+RANK_D->query_respect(me) +"還是自我小心通緝！";
 	}
   if (me->query(QUESTDIR1+"over") && !me->query(QUESTDIR2+"start"))
 	{
   	  command("sigh");
-	  tell_object(me,HIY"只見本因方丈從懷中取出一封金光燦爛的信箋，遞在你手中。你接了過來，著手重甸甸地，但見這信奇異之極。\n"NOR);
-  	  tell_object(me,HIY"你識得寫的是：“書呈崇聖寺住侍”，從金套中抽出信箋，也是一張極薄的金箋，上用梵文書寫，大意說：“\n"NOR);
+	  tell_object(me,HIY"只見本因方丈從懷中取出一封金光燦爛的信箋，遞在你手中。你接了過來，着手重甸甸地，但見這信奇異之極。\n"NOR);
+  	  tell_object(me,HIY"你識得寫的是：“書呈崇聖寺住侍”，從金套中抽出信箋，也是一張極薄的金箋，上用梵文書寫，大意説：“\n"NOR);
   	  tell_object(me,HIG"當年與姑蘇慕容博先生相會，訂交結友，談論當世武功。慕容先生言下對貴寺‘六脈神劍’備致推崇，深以未\n"NOR);
-  	  tell_object(me,HIG"得拜觀為憾。近聞慕容先生仙逝，哀痛無已，為報知己，擬向貴寺討求該經，焚化于慕容先生墓前，日內來取，\n"NOR);
+  	  tell_object(me,HIG"得拜觀為憾。近聞慕容先生仙逝，哀痛無已，為報知己，擬向貴寺討求該經，焚化於慕容先生墓前，日內來取，\n"NOR);
   	  tell_object(me,HIG"勿卻為幸。貧僧自當以貴重禮物還報，未敢空手妄取也。”信末署名‘大雪山大輪寺釋子鳩摩智合十百拜’。\n"NOR);
   	  command("heng");
 

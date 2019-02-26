@@ -38,7 +38,7 @@ int perform(object me, object target)
                 return notify_fail("你現在的真氣不夠，難以施展" + name() + "。\n");
 
         if (! living(target))
-                return notify_fail("對方都已經這樣了，用不著這麼費力吧？\n");
+                return notify_fail("對方都已經這樣了，用不着這麼費力吧？\n");
 
         msg = HIR "$N" HIR "一躍而起，手腕一抖，挽出一個美麗的劍花，飛向$n"
               HIR "而去。\n"NOR;
@@ -58,7 +58,7 @@ int perform(object me, object target)
         } else
         {
                 msg += CYN "可是$p" CYN "猛地向邊上一躍，跳出了$P"
-                       CYN "的攻擊范圍。\n"NOR;
+                       CYN "的攻擊範圍。\n"NOR;
                 addn("neili", -100, me);
                 me->start_busy(3);
         }

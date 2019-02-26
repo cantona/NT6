@@ -259,7 +259,7 @@ mapping *quest = ({
         ]),
         ([
                 "id":          "yue wife",
-                "name":        "岳夫人",
+                "name":        "嶽夫人",
                 "type":        "殺",
                 "bonus":       92,
                 "msg":        "",
@@ -277,7 +277,7 @@ mapping *quest = ({
 */
         ([
                 "id":          "yu hongxing",
-                "name":        "余洪興",
+                "name":        "餘洪興",
                 "type":        "殺",
                 "bonus":       75,
                 "msg":        "",
@@ -341,7 +341,7 @@ mapping *quest = ({
         ]),
         ([
                 "id":          "fan ye",
-                "name":        "范驊",
+                "name":        "範驊",
                 "type":        "殺",
                 "bonus":       66,
                 "msg":        "",

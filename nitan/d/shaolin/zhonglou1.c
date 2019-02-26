@@ -14,9 +14,9 @@ void create()
 {
         set("short", "鐘樓一層");
         set("long", @LONG
-這裡是塔樓的底層，一縷縷陽光從牆上的花磚縫隙裡透射進來，
-在青磚地上投下別致的光影，如同一格格棋盤相似。往上看，長長的
-木樓梯盤繞而上，似乎永無盡頭。牆角，梯級都相當潔凈，看來經常
+這裏是塔樓的底層，一縷縷陽光從牆上的花磚縫隙裏透射進來，
+在青磚地上投下別緻的光影，如同一格格棋盤相似。往上看，長長的
+木樓梯盤繞而上，似乎永無盡頭。牆角，梯級都相當潔淨，看來經常
 有僧人打掃。
 LONG );
         set("exits", ([
@@ -52,9 +52,9 @@ int do_open(string arg)
         if( arg=="brick" && !query("exits/down") )
         {
                 message_vision( 
-                "$N走到樓梯下，趴在地上，試著用戒刀伸進青磚縫裡，慢慢的撬著……\n"
+                "$N走到樓梯下，趴在地上，試着用戒刀伸進青磚縫裏，慢慢的撬着……\n"
                 "等到青磚一塊塊地起了出來，地上露出一個大洞，幾排石階往下伸去，\n"
-                "從這裡分明通向一個暗道。\n", this_player());
+                "從這裏分明通向一個暗道。\n", this_player());
 
                 set("exits/down", __DIR__"andao3");
                 if( room = find_object(__DIR__"andao3") ) 
@@ -79,7 +79,7 @@ void close_passage()
                 return;
 
         message("vision", 
-        "只聽乒地一聲響，鐘樓小門被推了開來，一群僧兵一湧而入。\n"
+        "只聽乒地一聲響，鐘樓小門被推了開來，一羣僧兵一湧而入。\n"
         "他們有的砌磚，有的拌漿，七手八腳地用磚塊把洞口封了起來，\n"
         "再在磚縫間澆入燒紅的鐵汁。\n", this_object() );
 
@@ -105,7 +105,7 @@ void close_passage()
         if( room = find_object(__DIR__"andao3") ) {
 //                room->delete("exits/up");
                 message("vision", 
-        "只聽乒，乓幾聲巨響，接著幾滴滾燙的鐵水滴了下來。\n"
+        "只聽乒，乓幾聲巨響，接着幾滴滾燙的鐵水滴了下來。\n"
         "向上的洞口被人用磚塊嚴嚴實實地封了起來。\n", room );
         }
         delete("exits/down");

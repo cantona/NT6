@@ -14,7 +14,7 @@ void create()
                 set("unit", "把");
                 set("value", 7000);
                 set("material", "steel");
-                set("long", "這是一把又細又長的劍，劍身銳利。\n");
+                set("long", "這是一把又細又長的劍，劍身鋭利。\n");
                 set("wield_msg", "一道青光閃過，$N手中已多了把$n。\n");
                 set("unequip_msg", "$N放下手中的$n。\n");
         }

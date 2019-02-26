@@ -9,8 +9,8 @@ void check_ultra(object me);
 // level = (skill effect level) + (action["force"] - 200) / 5
 mapping opinions_rank = ([
         500 : "宗師",
-        450 : "登峰造極",
-        410 : "超凡脫俗",
+        450 : "登峯造極",
+        410 : "超凡脱俗",
         380 : "臻至化境",
         350 : "爐火純青",
         320 : "已有大成",
@@ -130,5 +130,5 @@ void check_ultra(object me)
                 "躋身武林大宗師的行列！");
         ultra->do_congration(me);
         CHANNEL_D->do_channel(find_object(MASTER_OB), "rumor",
-                              "聽說" + query("name", me) + "成為武學大宗師。");
+                              "聽説" + query("name", me) + "成為武學大宗師。");
 }

@@ -83,19 +83,19 @@ nomask varargs protected void do_count(string name,int silver)
                 {
                         if(silver > 0)
                                 CHANNEL_D->do_channel( this_object(), "news",
-                                        sprintf("聽說由于有人在%s大量收購%s致使當地物價飛漲。\n",domain,name));
+                                        sprintf("聽説由於有人在%s大量收購%s致使當地物價飛漲。\n",domain,name));
                         else
                                 CHANNEL_D->do_channel( this_object(), "news",
-                                        sprintf("聽說由于有人在%s大量拋售%s致使當地物價飛速下滑。\n",domain,name));
+                                        sprintf("聽説由於有人在%s大量拋售%s致使當地物價飛速下滑。\n",domain,name));
                 }
                 else if(change >= 1)
                 {
                         if(silver > 0)
                                 CHANNEL_D->do_channel( this_object(), "news",
-                                        sprintf("聽說由于有人在%s大量收購%s致使當地物價有所上揚。\n",domain,name));
+                                        sprintf("聽説由於有人在%s大量收購%s致使當地物價有所上揚。\n",domain,name));
                         else
                                 CHANNEL_D->do_channel( this_object(), "news",
-                                        sprintf("聽說由于有人在%s大量拋售%s致使當地有所下降。\n",domain,name));
+                                        sprintf("聽説由於有人在%s大量拋售%s致使當地有所下降。\n",domain,name));
                 }
         }
 
@@ -112,7 +112,7 @@ nomask protected int valid_check()
         if(clonep())
                 return 0;
         if(!sscanf((fname = file_name(this_object())),"/d/%*s"))
-                error("商棧物件必須存在于區域目錄下。\n");
+                error("商棧物件必須存在於區域目錄下。\n");
         idx = strsrch(fname, "/", -1);
         if(fname[idx+1..] != "business")
                 error("商棧物件的文件名必須是'business'。\n");
@@ -423,7 +423,7 @@ nomask protected void get_shougou_amount(string arg,object me,class ware w)
 
         if(n > 210000000)
         {
-                write("收購數量不可大于 21 億。");
+                write("收購數量不可大於 21 億。");
                 return;
         }
 
@@ -584,7 +584,7 @@ nomask protected void get_paochu_amount(string arg,object me,class ware w)
         if( !save_to_bank(me,value*100) )
         {
                 tell_object(me,"你的貨款全部損失了，請向巫師報告。\n");
-                log_file("warehouse",sprintf("%s(%s)由于銀行存款超額拋售物品時損失了 %d 兩銀子。%s\n",
+                log_file("warehouse",sprintf("%s(%s)由於銀行存款超額拋售物品時損失了 %d 兩銀子。%s\n",
                         me->name(),query("id", me),value,ctime(time())));
                 return 0;
         }
@@ -592,7 +592,7 @@ nomask protected void get_paochu_amount(string arg,object me,class ware w)
         addn("balance", value*100, me);
 #endif
 
-        write(sprintf("你在本地拋售了 %d %s%s，\n應得貨款 %d 兩銀子已存入您的銀行賬戶。\n",
+        write(sprintf("你在本地拋售了 %d %s%s，\n應得貨款 %d 兩銀子已存入您的銀行賬户。\n",
                 n,w->unit,w->name,value));
 
         w->amount += n;

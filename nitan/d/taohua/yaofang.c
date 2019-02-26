@@ -8,7 +8,7 @@ void create()
 {
         set("short", "藥房");
         set("long", @LONG
-這裡是黃藥師儲藏平日煉制藥材的地方，桃花島弟子也經常到這裡來
+這裏是黃藥師儲藏平日煉製藥材的地方，桃花島弟子也經常到這裏來
 取用一些自己合用的藥物。散發出陣陣沁人心肺花香的就是桃花島名聞天
 下的九花玉露丸，氣味刺鼻的則是解毒靈藥田七鯊膽散，顏色猩紅如血的
 是療傷聖藥無常丹。北面是一道長廊。
@@ -35,10 +35,10 @@ int valid_leave(object me, string dir)
         myfam=query("family", me);
 
         if ( (!myfam || myfam["family_name"] != "桃花島") && dir == "north" )
-                return notify_fail("桃花島不留外客，你不能住在這裡！\n");
+                return notify_fail("桃花島不留外客，你不能住在這裏！\n");
 
         if( query("gender", me) == "無性" && dir == "north" )
-                return notify_fail("你不能住在這裡！\n");
+                return notify_fail("你不能住在這裏！\n");
 
         return ::valid_leave(me, dir);
 }

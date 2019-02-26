@@ -14,8 +14,8 @@ void create()
 {
         set_name("歐陽鋒", ({ "ouyang feng", "ouyang", "feng" }));
         set("long", "他是白駝山莊主，號稱“西毒”的歐陽鋒。\n"
-                    "由于習練「九陰真經」走火入魔，已變得精\n"
-                    "神錯亂，整日披頭散發。\n");
+                    "由於習練「九陰真經」走火入魔，已變得精\n"
+                    "神錯亂，整日披頭散髮。\n");
         set("title", "老毒物");
         set("gender", "男性");
         set("age", 53);
@@ -222,7 +222,7 @@ int hurting()
         object *inv;
 
         remove_call_out("hurting");
-        message_vision( HIR "\n\n$N手中靈蛇杖吐出一股熾可焚金的火燄．．整個天地似乎都被燃燒著！！！\n\n",this_object());
+        message_vision( HIR "\n\n$N手中靈蛇杖吐出一股熾可焚金的火焰．．整個天地似乎都被燃燒着！！！\n\n",this_object());
         inv = all_inventory(environment(this_object()));
         for(i=sizeof(inv)-1; i>=0; i--)
         if( living(inv[i]))
@@ -266,7 +266,7 @@ void random_move()
                 env = environment(this_object());
                 message_vision("$N急急忙忙的走了。\n", this_object());
                 
-                CHANNEL_D->channel_broadcast("mess", "聽說"+
+                CHANNEL_D->channel_broadcast("mess", "聽説"+
                         env->short() + HIW "(" + LOOK_CMD->locate(base_name(env)) + ")一帶出現的" +
                         HIR + this_object()->short() + HIG "消失了。\n" NOR);
 

@@ -25,7 +25,7 @@ void create()
         set("no_get",1);
 
         set("inquiry", ([
-                  "秘籍"     : (: ask_me :),
+                  "祕籍"     : (: ask_me :),
                   "段家斧法"  : (: ask_me :),
                   "shu" : (: ask_me :),
                        ]));
@@ -131,7 +131,7 @@ string ask_me()
                 return RANK_D->query_respect(this_player()) + 
                 "非我弟子，不知此話從何談起？";
         if (query("book_count") < 1)
-                return "你來晚了，本派的秘籍不在此處。";
+                return "你來晚了，本派的祕籍不在此處。";
         addn("book_count", -1);
         ob = new("/clone/book/axe");
         ob->move(this_player());

@@ -35,10 +35,10 @@ int perform(object me)
                 return notify_fail("你沒有激發千葉手，無法使用「千葉佛手」！\n");
 
        if (! living(target))
-              return notify_fail("對方都已經這樣了，用不著這麼費力吧？\n");
+              return notify_fail("對方都已經這樣了，用不着這麼費力吧？\n");
 
         msg = HIC "$N" HIC "倏的靠近$n" HIC "，伸手一晃，"
-              "化出無數掌影，如同你有千百只手一齊攻向" HIC
+              "化出無數掌影，如同你有千百隻手一齊攻向" HIC
               "$n！\n" NOR;
 
         ap = attack_power(me, "hand") +

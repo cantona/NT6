@@ -1,4 +1,4 @@
-// 神話世界﹒西遊記﹒版本４．５０
+// 神話世界·西遊記·版本４．５０
 /* <SecCrypt CPL V3R05> */
  
 // xianyao.c        
@@ -12,7 +12,7 @@ void create()
     "龍肝",
     "鳳髓",
     "熊掌",
-    "猩唇",
+    "猩脣",
     });
   string *ids = ({
     "long gan",
@@ -35,5 +35,5 @@ void create()
     set("no_drop",1);
     set("no_sell",1);
   }
-  set("long", "一金碗天上才有的仙肴珍饈－－"+names[i]+"。\n");
+  set("long", "一金碗天上才有的仙餚珍饈－－"+names[i]+"。\n");
 }

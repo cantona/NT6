@@ -9,8 +9,8 @@ void create ()
 {
         set("short", HIB "幽冥殿" NOR   );
         set("long", HIB @LONG
-這裡便是名聞天下，令人提起心驚膽寒的閻幽冥殿。人死後都會在
-這裡受到應有的處置。正前一張大桌。正前坐著十殿閻羅。
+這裏便是名聞天下，令人提起心驚膽寒的閻幽冥殿。人死後都會在
+這裏受到應有的處置。正前一張大桌。正前坐着十殿閻羅。
 
 LONG NOR);
         set("exits", ([ /* sizeof() == 1 */
@@ -43,7 +43,7 @@ int valid_leave(object me, string dir)
                 if( !wizardp(me) && !query("hell_quest/鎖陽丹", me) && 
                     !query("over_quest/hell_quest/鎖陽丹", me) )
                         return notify_fail(CYN "十殿閻羅看了你一眼，喝道：你還不滾"
-                                           "回去還陽，來這裡湊什麼熱鬧！\n" NOR);
+                                           "回去還陽，來這裏湊什麼熱鬧！\n" NOR);
         }
         return ::valid_leave(me, dir);
 }

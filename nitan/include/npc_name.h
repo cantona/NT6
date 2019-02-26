@@ -20,7 +20,7 @@ mapping *first_name = ({
 ([      "name":"楊",      "id":"yang"   ]),
 ([      "name":"王",      "id":"wang"   ]),
 ([      "name":"樑",      "id":"liang"  ]),
-([      "name":"于",      "id":"yu"     ]),
+([      "name":"於",      "id":"yu"     ]),
 ([      "name":"黃",      "id":"huang"  ]),
 ([      "name":"林",      "id":"lin"    ]),
 ([      "name":"陳",      "id":"chen"   ]),
@@ -61,7 +61,7 @@ mapping *second_name1 = ({
 ([      "name":"宏",    "id":"hong"  ]),
 ([      "name":"榮",    "id":"rong"  ]),
 ([      "name":"鵬",    "id":"peng"  ]),
-([      "name":"沖",    "id":"chong" ]),
+([      "name":"衝",    "id":"chong" ]),
 ([      "name":"灝",    "id":"hao"   ]),
 ([      "name":"思",    "id":"si"    ]),
 ([      "name":"理",    "id":"li"    ]),
@@ -96,7 +96,7 @@ mapping *second_name2 = ({
 
 
 mapping *third_name1 = ({
-([      "name":"峰",    "id":"feng"  ]),
+([      "name":"峯",    "id":"feng"  ]),
 ([      "name":"華",    "id":"hua"   ]),
 ([      "name":"奇",    "id":"qi"    ]),
 ([      "name":"歌",    "id":"ge"    ]),

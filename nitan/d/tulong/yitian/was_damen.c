@@ -7,7 +7,7 @@ void create()
 {
     set("short", "萬安寺寺門");
         set("long", @LONG
-這裡便是萬安寺的大門所在，那萬安寺樓高四層，寺後的一座十三級寶塔更
+這裏便是萬安寺的大門所在，那萬安寺樓高四層，寺後的一座十三級寶塔更
 老遠便可望見。大門內外不時有親兵在來回巡視察看，戒備很是森嚴。
 LONG );
 
@@ -30,7 +30,7 @@ int valid_leave(object me,string dir)
         if ( dir == "enter" && ob = present("qianfu zhang"))
         {
                 ob->command("tnnd"+query("id", me));
-                message_vision(CYN "$N喝道：亂黨賊子，敢在這裡撒野？去死吧！\n" NOR,ob,me);
+                message_vision(CYN "$N喝道：亂黨賊子，敢在這裏撒野？去死吧！\n" NOR,ob,me);
                 ob->kill_ob(me);
                 ob=present("guan bing 1");
                 if (objectp(ob)) ob->kill_ob(me);

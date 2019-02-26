@@ -7,7 +7,7 @@ void create()
         set("race", "野獸");
         set("age", 5);
         set("long",
-"一只白尾巴的野兔，尾巴一翹一翹的。\n");
+"一隻白尾巴的野兔，尾巴一翹一翹的。\n");
         set("max_qi", 1000);
         set("env/wimpy", 99);
         set("maze_get",1);

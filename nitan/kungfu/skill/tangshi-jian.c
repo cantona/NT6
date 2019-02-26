@@ -6,7 +6,7 @@ string type() { return "martial"; }
 string martialtype() { return "skill"; }
 
 mapping *action = ({
-([        "action" : "$N手中$w自左上方斜劈向下，跟著向後挺劍刺出，一招"HIC"「孤鴻海上來，池潢不敢顧」"NOR"，手中$w更不回頭，一劍劍點向$n的$l。",
+([        "action" : "$N手中$w自左上方斜劈向下，跟着向後挺劍刺出，一招"HIC"「孤鴻海上來，池潢不敢顧」"NOR"，手中$w更不回頭，一劍劍點向$n的$l。",
         "lvl" : 0,
         "skill_name" : "孤鴻海上來，池潢不敢顧"
 ]),
@@ -26,9 +26,9 @@ mapping *action = ({
         "lvl" : 40,
         "skill_name" : "舉頭望明月，低頭思故鄉"
 ]),
-([        "action" : "$N上身往左側一擰，一招"BLU"「長安一片月，萬戶搗衣聲」"NOR"，右手$w反手向$n的$l揮去",
+([        "action" : "$N上身往左側一擰，一招"BLU"「長安一片月，萬户搗衣聲」"NOR"，右手$w反手向$n的$l揮去",
         "lvl" : 50,
-        "skill_name" : "長安一片月，萬戶搗衣聲"
+        "skill_name" : "長安一片月，萬户搗衣聲"
 ]),
 ([        "action" : "$N左一招"MAG"「萬國仰宗周」"NOR"，右一招"HIM"「衣冠拜冕旒」"NOR"，劍鋒平指，一氣呵成橫掃$n的$l",
         "lvl" : 60,
@@ -104,7 +104,7 @@ int help(object me)
         write(@HELP
 
     鐵骨墨萼梅念笙傳給他三個徒弟五雲手萬震山，陸地神龍言達
-平，鐵鎖橫江戚長發的劍法。
+平，鐵鎖橫江戚長髮的劍法。
 
         學習要求：
                 內力100

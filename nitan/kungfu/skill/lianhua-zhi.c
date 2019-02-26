@@ -12,7 +12,7 @@ mapping *action = ({
         "skill_name" : "臘月開蓮",
         "damage_type" : "刺傷"
 ]),
-([      "action": "$N左掌虛托，一式「蓮蕊璨目」，右指穿腋疾出，指向$n的胸前",
+([      "action": "$N左掌虛託，一式「蓮蕊璨目」，右指穿腋疾出，指向$n的胸前",
         "force" : 140,
         "attack": 15,
         "parry" : 18,
@@ -50,7 +50,7 @@ mapping *action = ({
         "skill_name" : "七寶蓮花",
         "damage_type" : "刺傷"
 ]),
-([      "action": "$N雙掌平托胸前，十指叉開，一式「葉底留蓮」，指向$n的周身大穴",
+([      "action": "$N雙掌平託胸前，十指叉開，一式「葉底留蓮」，指向$n的周身大穴",
         "force" : 280,
         "attack": 45,
         "parry" : 40,

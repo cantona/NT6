@@ -38,7 +38,7 @@ int perform(object me, object target)
                 return notify_fail("你現在的內力不夠，難以施展" + name() + "。\n");
 
         if (! living(target))
-                return notify_fail("對方都已經這樣了，用不著這麼費力吧？\n");
+                return notify_fail("對方都已經這樣了，用不着這麼費力吧？\n");
 
         msg = HIY "$N" HIY "掌勢陡然一變，施出落英神劍掌「奇門五轉」絕技，虛虛"
               "實實的攻向$n" HIY "。\n" NOR;

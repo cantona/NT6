@@ -30,7 +30,7 @@ int perform(object me, object target)
         if( query("neili", me)<500 )
                 return notify_fail("你的真氣不夠，無法使用玄冥無極。\n");
 
-        msg = MAG "$N運起玄冥神功，全身浮現出一層紫氣，猛然間雙掌翻騰，施展出絕招玄冥\n無極，攜帶著萬古至毒至寒之氣的掌勁已攻向$n！\n"NOR;  
+        msg = MAG "$N運起玄冥神功，全身浮現出一層紫氣，猛然間雙掌翻騰，施展出絕招玄冥\n無極，攜帶着萬古至毒至寒之氣的掌勁已攻向$n！\n"NOR;  
 
         lvl = me->query_skill("xuanming-zhang", 1);
         ap=attack_power(me,"strike")+query("str", me)*10;

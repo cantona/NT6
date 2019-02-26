@@ -3,14 +3,14 @@ inherit ITEM;
 
 void create()
 {
-        set_name(HIG "天轎﹒伏魔" NOR, ({"tianjiao fumo", "fumo" }));
+        set_name(HIG "天轎·伏魔" NOR, ({"tianjiao fumo", "fumo" }));
         set_weight(900);
         if (clonep())
                 set_default_object(__FILE__);
         else {
                 set("unit", "塊");
                 set("value", 50000);
-                set("enchase/name", "天轎﹒伏魔");
+                set("enchase/name", "天轎·伏魔");
                 set("enchase/point", 70);
                 set("enchase/type", "all");
                 set("enchase/cur_firm", 80);

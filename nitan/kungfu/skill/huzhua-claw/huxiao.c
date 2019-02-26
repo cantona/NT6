@@ -24,7 +24,7 @@ int perform(object me, object target)
                 return notify_fail("「虎嘯山林」只能在戰鬥中對對手使用。\n");
 
         if( objectp(query_temp("weapon", me)) )
-                return notify_fail("使用「虎嘯山林」時雙手必須空著！\n");
+                return notify_fail("使用「虎嘯山林」時雙手必須空着！\n");
 
         if( (int)me->query_skill("huzhua-claw", 1) < 120 )
                 return notify_fail("你的虎爪擒拿手不夠嫻熟，不會使用「虎嘯山林」。\n");
@@ -43,7 +43,7 @@ int perform(object me, object target)
         if( query("neili", me)<600 )
                 return notify_fail("你現在內力太弱，不能使用「虎嘯山林」。\n");
 
-        msg = HIR "$N長嘯一聲，將內力聚于手心，如猛虎下山一般撲向$n！\n" NOR;
+        msg = HIR "$N長嘯一聲，將內力聚於手心，如猛虎下山一般撲向$n！\n" NOR;
 
 
         if( random(10) >= 5 
@@ -70,7 +70,7 @@ int perform(object me, object target)
 
             case 2 :
                msg  = BLU "$N一招「虎虎生威」，拿向$n，似乎$n的全身都被手影籠罩！\n" NOR;
-               msg += BLU "$n只覺得周圍全被手影籠罩，毫無躲閃的余地。\n" NOR;
+               msg += BLU "$n只覺得周圍全被手影籠罩，毫無躲閃的餘地。\n" NOR;
                me->start_busy(random(3));
                message_combatd(msg, me, target);
                break;

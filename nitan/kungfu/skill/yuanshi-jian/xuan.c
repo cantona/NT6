@@ -35,7 +35,7 @@ int perform(object me, object target)
                 return notify_fail("你沒有激發原始劍法，難以施展" XUAN "。\n");
 
         if (! living(target))
-                return notify_fail("對方都已經這樣了，用不著這麼費力吧？\n");
+                return notify_fail("對方都已經這樣了，用不着這麼費力吧？\n");
 
         msg = HIW "$N" HIW "一振手中" + weapon->name() + HIW "，挽出數朵劍花，層"
               "層湧向$n" HIW"，猶如潮水，一浪高過一浪。\n" NOR;

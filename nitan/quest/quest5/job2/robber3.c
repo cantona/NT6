@@ -209,7 +209,7 @@ void die()
         if( query_temp("guo_shoucheng/start_job", ob) == 1 )
                 set("ygjg", ob, robber);
                 
-        message_vision("$N撲在地上掙紮了幾下，口中噴出幾口" HIR "鮮血" NOR "，死了！\n",this_object());
+        message_vision("$N撲在地上掙扎了幾下，口中噴出幾口" HIR "鮮血" NOR "，死了！\n",this_object());
         destruct(this_object());
         return;
 }

@@ -8,20 +8,20 @@ void reset();
 
 void create()
 {
-        set("short", HIB "【輪回司】" NOR);
+        set("short", HIB "【輪迴司】" NOR);
         set("long", HIB @LONG
 
                     輪         回         司
 
-    輪回司內寒氣森森，青石舖設的地面滿是灰塵。堂周青布圍幔，圍幔
-上用金銀絲線繡著些奇怪的圖案，正堂上一張青石桌案 (table)，桌案上
-布滿了蛛網，看樣子很久沒打掃過了。
+    輪迴司內寒氣森森，青石鋪設的地面滿是灰塵。堂周青布圍幔，圍幔
+上用金銀絲線繡着些奇怪的圖案，正堂上一張青石桌案 (table)，桌案上
+佈滿了蛛網，看樣子很久沒打掃過了。
 
 LONG NOR );
 
         set("item_desc", ([
-                "table" : WHT "一個青石制成的桌案，上面有幾許"
-                          "裂縫，看樣子已擱在這裡很久了。\n" NOR,
+                "table" : WHT "一個青石製成的桌案，上面有幾許"
+                          "裂縫，看樣子已擱在這裏很久了。\n" NOR,
         ]));
 
         set("exits", ([
@@ -95,7 +95,7 @@ int do_turn(string arg)
 
         if( arg == "lunpan" && (int)query("poem_said") == 1 )
         {
-                write(HIC "你試著觸動輪盤，發現它可以左右轉動。\n" NOR);
+                write(HIC "你試着觸動輪盤，發現它可以左右轉動。\n" NOR);
                 return 1;
         }
 
@@ -120,7 +120,7 @@ int do_turn(string arg)
                         return 1;
                 }
            else {
-                        write(HIC "你要將輪盤向著哪個方向轉動？\n" NOR);
+                        write(HIC "你要將輪盤向着哪個方向轉動？\n" NOR);
                         return 1;
                 }
         }
@@ -137,7 +137,7 @@ int do_say(string arg)
                 message_vision(HIW "\n只聽$N" HIW "猛然高聲喝道：“天地崩"
                                "裂時！”\n" NOR + HIR "\n$N" HIR "話音剛"
                                "落，地面突然「轟隆隆」晃動了幾下。青石桌案"
-                               "表層的石屑登時脫落，露出了一個石盤。\n\n"
+                               "表層的石屑登時脱落，露出了一個石盤。\n\n"
                                NOR, this_player());
                 this_object()->recreate();
                 set("poem_said", 1);
@@ -146,7 +146,7 @@ int do_say(string arg)
 
         if( arg == "天地崩裂時" && (int)query("poem_said") == 1 )
         {
-                write(HIC "\n你對著大堂一聲猛喝，聲音在司內回盪了好一陣才消逝。\n" NOR);
+                write(HIC "\n你對着大堂一聲猛喝，聲音在司內迴盪了好一陣才消逝。\n" NOR);
                 return 1;
         }
 }
@@ -160,20 +160,20 @@ void reset()
 
 void recreate()
 {
-        set("short", HIB "【輪回司】" NOR);
+        set("short", HIB "【輪迴司】" NOR);
         set("long", HIB @LONG
 
                     輪         回         司
 
-    輪回司內寒氣森森，青石舖設的地面滿是灰塵。堂周青布圍幔，圍幔
-上用金銀絲線繡著些奇怪的圖案，正堂上一張青石桌案 (table)，桌案的
-表層已經脫落，露出內部的一個石制輪盤(lunpan)。
+    輪迴司內寒氣森森，青石鋪設的地面滿是灰塵。堂周青布圍幔，圍幔
+上用金銀絲線繡着些奇怪的圖案，正堂上一張青石桌案 (table)，桌案的
+表層已經脱落，露出內部的一個石制輪盤(lunpan)。
 
 LONG NOR );
 
         set("item_desc", ([
-                "table" : WHT "一個青石制成的桌案，上面有幾許"
-                          "裂縫，它的表層已經脫落了。\n" NOR,
+                "table" : WHT "一個青石製成的桌案，上面有幾許"
+                          "裂縫，它的表層已經脱落了。\n" NOR,
                 "lunpan": WHT "一個石制的輪盤，上面滿是花紋，似"
                           "乎可以轉動。\n" NOR,
         ]));

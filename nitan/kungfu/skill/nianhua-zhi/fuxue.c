@@ -33,7 +33,7 @@ int perform(object me, object target)
                 return notify_fail("你沒有激發拈花指，無法使用拈花拂穴！\n");
 
        if (! living(target))
-              return notify_fail("對方都已經這樣了，用不著這麼費力吧？\n");
+              return notify_fail("對方都已經這樣了，用不着這麼費力吧？\n");
 
         msg = HIY "$N" HIY "使出拈花指絕技「拈花拂穴」，罩住了$n"
               HIY "的全身，指氣層層疊疊的攻向$p" HIY "的要穴！\n" NOR;

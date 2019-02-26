@@ -36,7 +36,7 @@ int perform(object me, object target)
                 return notify_fail("你沒有激發纏魂索法，使不了" + name() + "。\n");
 
        if (! living(target))
-              return notify_fail("對方都已經這樣了，用不著這麼費力吧？\n");
+              return notify_fail("對方都已經這樣了，用不着這麼費力吧？\n");
 
         msg = HIY "$N" HIY "詭異的一笑，手中" + weapon->name() +
               HIY "抖得筆直，劈向$n" HIY "手腕，可是待到中途卻又停滯，轉往$n"

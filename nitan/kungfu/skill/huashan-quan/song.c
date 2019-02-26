@@ -4,7 +4,7 @@
 
 inherit F_SSERVER;
 
-string name() { return HIG "蒼鬆式" NOR; }
+string name() { return HIG "蒼松式" NOR; }
 
 int perform(object me, object target)
 {
@@ -32,9 +32,9 @@ int perform(object me, object target)
                 return notify_fail("你沒有準備使用劈石破玉拳，無法施展" + name() + "。\n");
 
         if (! living(target))
-               return notify_fail("對方都已經這樣了，用不著這麼費力吧？\n");
+               return notify_fail("對方都已經這樣了，用不着這麼費力吧？\n");
 
-        msg = HIY "$N" HIY "怒喝一聲，右拳直出，剛猛有力，正是華山絕技「" HIG "蒼鬆式" HIY
+        msg = HIY "$N" HIY "怒喝一聲，右拳直出，剛猛有力，正是華山絕技「" HIG "蒼松式" HIY
                "」，拳風呼響，襲向$n" HIY "。\n"NOR;
 
         ap = attack_power(me, "cuff") + me->query_str()*10;

@@ -9,7 +9,7 @@ void create()
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("long", "這是一包金蜜散，據說可以解玉蜂針毒。\n");                
+                set("long", "這是一包金蜜散，據説可以解玉蜂針毒。\n");                
                 set("base_unit", "包");
                 set("base_value", 8000);
                 set("base_weight", 80);

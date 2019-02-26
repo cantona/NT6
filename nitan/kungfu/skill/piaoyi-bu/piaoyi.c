@@ -44,7 +44,7 @@ int perform(object me, object target)
         if (me->query_skill_mapped("dodge") != "piaoyi-bu") 
                 return notify_fail("你沒有激發飄逸步法，無法使用" + PIAOYI + "！\n");
 
-        msg = HIG "$N" HIG "催動自己的真力運勁于雙腿，使出飄逸步法的絕技" + 
+        msg = HIG "$N" HIG "催動自己的真力運勁於雙腿，使出飄逸步法的絕技" + 
               PIAOYI + HIG "，身形頓時如靈燕一般！\n" NOR;
         
         qi=query("qi", me);
@@ -83,6 +83,6 @@ void remove_effect(object me, int aamount, int damount)
                 addn_temp("apply/dodge", -aamount, me);
                 addn_temp("apply/parry", damount, me);
                 delete_temp("piaoyi", me);
-                tell_object(me, HIG "你的" + PIAOYI + HIG "運功完畢，雙腿一陣酸麻。\n");
+                tell_object(me, HIG "你的" + PIAOYI + HIG "運功完畢，雙腿一陣痠麻。\n");
         }
 }

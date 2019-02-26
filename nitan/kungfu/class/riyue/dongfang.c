@@ -86,7 +86,7 @@ void create()
     create_family("日月神教", 2, "教主");
 
     set("no_teach", ([
-        "pixie-jian" : "辟邪劍法只能靠自己研讀《葵花寶典》。他日待你小成，我自會指點于你。",
+        "pixie-jian" : "辟邪劍法只能靠自己研讀《葵花寶典》。他日待你小成，我自會指點於你。",
     ]));
 
 
@@ -145,7 +145,7 @@ string ask_book()
      me = this_player();
      if( query("family/family_name", me) != query("family/family_name") )
             return "你這個" + RANK_D->query_rude(this_player()) +
-                   "，打聽本教秘笈有何圖謀？";
+                   "，打聽本教祕笈有何圖謀？";
 
      if( query("family/master_id", me) != query("id") )
             return "你又非我親傳弟子，打聽寶典做什麼？";
@@ -159,7 +159,7 @@ string ask_book()
         if( query("family/first", me) ) cost = 2500; 
         else cost = 5000; 
         if( query("family/gongji", me) < cost ) 
-                return "你為我教效力還不夠，等你擁有足夠的師門功績再來兌換辟邪劍影秘笈吧。";
+                return "你為我教效力還不夠，等你擁有足夠的師門功績再來兑換辟邪劍影祕笈吧。";
 
      if (query("kuihua_count") < 1)
             return "你來晚了，寶典我已經借出去了。";
@@ -182,7 +182,7 @@ mixed ask_pfm()
      object me = this_player();
 
      if( query("can_perform/pixie-jian/ying", me) )
-           return "我已指點于你，還多問什麼？自己多練練去！";
+           return "我已指點於你，還多問什麼？自己多練練去！";
 
      if( query("family/family_name", me) != query("family/family_name") )
            return "本教武功獨步武林，這位" + RANK_D->query_respect(me) +

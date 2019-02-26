@@ -5,9 +5,9 @@
 
        神州處處是我家--無相幫之聯絡圖(Wuxiangxinmo's alias)
 
-    本狗自殺後復出，在俠客行一百中已找不著北，幸有泥友無相心魔和店
-小二寄來所有他們搜集編寫的alias，可從武廟去往幾乎所有門派和城市，堪
-稱任務寶典、泥潭秘籍。如今，無相萍蹤杳杳，俠影難覓，謹以此聯絡圖紀
+    本狗自殺後復出，在俠客行一百中已找不着北，幸有泥友無相心魔和店
+小二寄來所有他們蒐集編寫的alias，可從武廟去往幾乎所有門派和城市，堪
+稱任務寶典、泥潭祕籍。如今，無相萍蹤杳杳，俠影難覓，謹以此聯絡圖紀
 念昔日輝煌的無相幫，及幫中眾多好友，如冷氣技工試試啦等，並恭祝幫主
 無相心魔他老人家洪福永駐，壽與天齊。
 
@@ -42,11 +42,11 @@
 #alias twt huqingyu   w;ne;e;#alias -twt;w;sw;e;-huqingyu
 #alias twt2         give 5 silver to waiter;u;enter
 #alias yanziwu      suzhou;w;#7 s;sw;yell boat;enter;yzw1
-#alias yzw1         #action 少女說: “到啦，上岸吧。”，隨即一點竹篙，
+#alias yzw1         #action 少女説: “到啦，上岸吧。”，隨即一點竹篙，
 把舟泊好。;yzw2
-#alias yzw2         out;#unaction 少女說: “到啦，上岸吧。”，隨即一
+#alias yzw2         out;#unaction 少女説: “到啦，上岸吧。”，隨即一
 點竹篙，把舟泊好。
-#alias yzw3         #action 小舟終于戀戀不舍地靠岸了。你走下小舟來。
+#alias yzw3         #action 小舟終於戀戀不捨地靠岸了。你走下小舟來。
 少女揮手道別。;ne;#6 n;e;-suzhou
 #alias hufei        guanwai;#3 n;e;e;ne;e;n;e;e;ne;e;se;e;n
 #alias -hufei       s;w;nw;w;nw;w;w;s;w;sw;w;w;#3 s;-guanwai

@@ -22,7 +22,7 @@ mapping *action = ({
         "lvl"    : 40,
         "skill_name" : "靈蛇挺身"
 ]),
-([        "action" : "$N使出一招"YEL"「蛇遊蟒走」"NOR"，$w左右迂回向$n的$l掃去",
+([        "action" : "$N使出一招"YEL"「蛇遊蟒走」"NOR"，$w左右迂迴向$n的$l掃去",
         "lvl"    : 50,
         "skill_name" : "蛇遊蟒走"
 ]),
@@ -91,7 +91,7 @@ mixed hit_ob(object me, object victim, int damage_bonus, int factor)
                                  "id":query("id", me),
                                  "duration" : lvl / 100 + random(lvl / 10) ])))
        {
-                return HIR "只聽$n痛呼了一聲，卻是被蛇杖頂端的小蛇咬了個正著！\n" NOR;
+                return HIR "只聽$n痛呼了一聲，卻是被蛇杖頂端的小蛇咬了個正着！\n" NOR;
        }
 }
 

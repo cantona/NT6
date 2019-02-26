@@ -11,9 +11,9 @@ void create()
 {
         set("short", "日月後洞");
         set("long", @LONG
-這裡是星宿派日月洞後洞，星宿老仙有時候會在這裡閉關練功。
-只見洞內燈火通明，似乎比日月洞寬敞了許多。正前方有一個精致的
-石桌（desk），石桌上擺著各式水果，想必是星宿派弟子送來孝敬老
+這裏是星宿派日月洞後洞，星宿老仙有時候會在這裏閉關練功。
+只見洞內燈火通明，似乎比日月洞寬敞了許多。正前方有一個精緻的
+石桌（desk），石桌上擺着各式水果，想必是星宿派弟子送來孝敬老
 仙的。
 LONG );
         set("exits", ([
@@ -41,17 +41,17 @@ string look_desk()
        if( query_temp("move", me) )
        {
               if (! environment(ob))
-                     write(HIC "看來這個石桌被人移動過！底下露出一個小洞，只見洞中放著一"
+                     write(HIC "看來這個石桌被人移動過！底下露出一個小洞，只見洞中放着一"
                            "個木鼎(mu ding)模樣的容器！\n你試圖想將它拿(pick)出來！\n" NOR);
               else 
                      write(HIW "看來這個石桌被人移動過！底下露出一個小洞，只見洞中空空如也！\n" NOR);
        }
 
        if (me->query_skill("poison", 1) < 160)
-              return NOR + WHT "這是一張很精致的石桌，石桌上雕刻著各種像是毒物（pet）模樣的"
+              return NOR + WHT "這是一張很精緻的石桌，石桌上雕刻着各種像是毒物（pet）模樣的"
                      "圖案。陣陣奇特香氣\n從石桌中散發出來，你頓感覺頭暈目眩，胸悶之極。\n" NOR;
 
-       return NOR + WHT "這是一張很精致的石桌，石桌上雕刻著各種像是毒物（pet）模樣的"
+       return NOR + WHT "這是一張很精緻的石桌，石桌上雕刻着各種像是毒物（pet）模樣的"
               "圖案。陣陣奇特香氣\n從石桌中散發出來，你心中一驚：“不好，這桌子上竟塗有劇毒！”\n" NOR;
 }
 
@@ -92,7 +92,7 @@ int do_move(string arg)
              delete_temp("move", me);
 
              message_sort(HIC "\n$N" HIC "試圖將石桌移開，但是$P手剛碰到石桌，卻聽到一聲慘叫，$N" HIC
-                            "倒在地上，連掙也沒有掙紮便一命嗚呼了！\n", me);
+                            "倒在地上，連掙也沒有掙扎便一命嗚呼了！\n", me);
 
              set_temp("die_reason", "中星宿派具毒而亡", me);
              me->die();
@@ -132,7 +132,7 @@ int do_pick(string arg)
       {
              delete_temp("move", me);
        
-             message_sort(HIM "\n$N" HIM "將手伸進石桌試圖拿取神木王鼎，但是突然一只赤蠍跳了出來一口"
+             message_sort(HIM "\n$N" HIM "將手伸進石桌試圖拿取神木王鼎，但是突然一隻赤蠍跳了出來一口"
                          "咬在$N" HIM "的手上，$N" HIM "怪叫一聲，頓時斃命！\n" NOR, me);
 
              me->die();
@@ -140,7 +140,7 @@ int do_pick(string arg)
              return 1;
       }
   
-      message_sort(HIM "\n$N" HIM "將手伸進石桌試圖拿取神木王鼎，突然一只赤蠍跳了出來一口"
+      message_sort(HIM "\n$N" HIM "將手伸進石桌試圖拿取神木王鼎，突然一隻赤蠍跳了出來一口"
                    "咬在$N" HIM "的" + hand->name() + HIM "上，但是$N" HIM "卻絲毫無傷地將"
                    "神木王鼎取了出來！\n" NOR, me);
 

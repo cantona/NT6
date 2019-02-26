@@ -39,16 +39,16 @@ void greeting(object me)
         command("look"+query("id", me));
         command("say 這位" + RANK_D->query_respect(me) +
                 "，這年頭做那種什麼正人君子太吃虧啦，看看\n"
-                "我？看看岳不群老哥，那才是做人的道理，別猶豫啦！");
+                "我？看看嶽不羣老哥，那才是做人的道理，別猶豫啦！");
 }
 
 void check_leave(object me, string dir)
 {
         if (dir == "out")
         {
-                message_vision("$N對$n姦笑道：上路吧！\n", this_object(), me);
+                message_vision("$N對$n奸笑道：上路吧！\n", this_object(), me);
                 command("chat 哈哈！江湖上又要...... 嘿嘿！");
-                set("character", "陰險姦詐", me);
+                set("character", "陰險奸詐", me);
         } else
         if (dir == "east")
         {

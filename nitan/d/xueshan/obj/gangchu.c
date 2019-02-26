@@ -15,7 +15,7 @@ void create()
                 set("value", 3000);
                 set("material", "steel");
                 set("wield_msg", "$N「呼」的一聲抽出一柄$n高舉在手中。\n");
-                set("unwield_msg","$N將手中的$n背回背上。\n");
+                set("unwield_msg","$N將手中的$n揹回背上。\n");
                 set("stable", 40);
         }
         init_hammer(50);

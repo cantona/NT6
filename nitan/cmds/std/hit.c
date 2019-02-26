@@ -12,7 +12,7 @@ int main(object me, string arg)
                 return 0;
 
         if( query("no_fight", environment(me)) )
-                return notify_fail("這裡禁止戰鬥。\n");
+                return notify_fail("這裏禁止戰鬥。\n");
 
         if( !arg || !objectp(obj = present(arg, environment(me))) )
                 return notify_fail("你想攻擊誰？\n");

@@ -32,7 +32,7 @@ int perform(object me, object target)
                 return notify_fail(PNAME"只能對戰鬥中的對手使用。\n");
                 
         if( query_temp("weapon", me) || query_temp("secondary_weapon", me) )
-                return notify_fail("「無影反踢」開始時不能拿著兵器！\n");
+                return notify_fail("「無影反踢」開始時不能拿着兵器！\n");
 
         fskill = "qingming-xuangong";
         bskill = "leg";

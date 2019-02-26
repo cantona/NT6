@@ -4,14 +4,14 @@ inherit BOOK;
 
 void create()
 {
-        set_name("鞭法秘要", ({ "whip book", "book" }));
+        set_name("鞭法祕要", ({ "whip book", "book" }));
         set_weight(600);
         if (clonep())
                 set_default_object(__FILE__);
         else {
                 set("unit", "本");
                 set("long",
-"封面上寫著「鞭法秘要）」\n");
+"封面上寫著「鞭法祕要）」\n");
                 set("value", 50000);
                 set("material", "paper");
                 set("skill", ([

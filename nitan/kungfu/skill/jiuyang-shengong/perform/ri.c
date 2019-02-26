@@ -44,7 +44,7 @@ int perform(object me)
         if ((int)query("neili", me) < 2000)
                 return notify_fail("你的真氣不夠，無法運用" + name() + "。\n");
 
-        msg = HIY "只見$N" HIY "雙目微閉，單手托天。掌心頓時騰起一個無比刺眼的"
+        msg = HIY "只見$N" HIY "雙目微閉，單手託天。掌心頓時騰起一個無比刺眼的"
               "氣團，正是奧\n義「" NOR + HIW "魔光日無極" NOR + HIY "」。霎時"
               "金光萬道，塵沙四起，空氣熾熱，幾欲沸騰。$N" HIY "\n隨即收攏掌心"
               "，氣團爆裂開來，向四周電射而出，光芒足以和日月爭輝。\n\n" NOR;
@@ -72,7 +72,7 @@ int perform(object me)
 
                         default:
                                 tell_object(obs[i], HIR "你只覺眼前金光萬道，周圍空氣幾欲沸"
-                                                    "騰，光芒便如千萬細針一齊紮入身體般。\n"
+                                                    "騰，光芒便如千萬細針一齊扎入身體般。\n"
                                                     NOR);
                                 break;
                         }
@@ -110,7 +110,7 @@ int perform(object me)
                         case 2:
                                 msg = HIR "只見" + obs[i]->name() +
                                       HIR "跌跌撞撞向後連退數步，伏倒"
-                                      "在地。須眉、衣衫都發出一股焦臭"
+                                      "在地。鬚眉、衣衫都發出一股焦臭"
                                       "。\n" NOR;
                                 msg += "( " + obs[i]->name() + eff_status_msg(p) + " )\n\n";
                                 break;
@@ -138,7 +138,7 @@ int perform(object me)
                 } else
                 {
                         tell_object(obs[i], HIY "你只覺眼前金光萬道，周圍空氣幾"
-                                            "欲沸騰，大驚之下連忙急運內功，抵御"
+                                            "欲沸騰，大驚之下連忙急運內功，抵禦"
                                             "開來。\n" NOR);
                 }
                 if (query("neili", obs[i]) < 0)

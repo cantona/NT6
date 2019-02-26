@@ -14,7 +14,7 @@ void create()
 	set("gender", "男性");
 	set("age", 8888);
 	set("long", @LONG
-這是一只長相奇特怪獸，全身幻出七彩之色，頭大身小，一對渾圓的眼
+這是一隻長相奇特怪獸，全身幻出七彩之色，頭大身小，一對渾圓的眼
 珠閃爍出攝人的光芒。
 LONG );
 	set("combat_exp", 2000000000);
@@ -114,13 +114,13 @@ void die(object killer)
         int pot;                // 需要瓜分的潛能
         int tihui;              // 需要瓜分的體會
         int weiwang;            // 需要瓜分的威望
-        int score;              // 需要瓜分的閱歷
+        int score;              // 需要瓜分的閲歷
         object *t;              // 殺死我的人的隊伍列表
         object tob;
         int i;
 
         // 定義獎勵物品列表
-		// 幾率  X / 萬分之一
+		// 機率  X / 萬分之一
 		mixed oblist = ([
 
 		]);
@@ -206,7 +206,7 @@ void die(object killer)
 		}
 
         }
-        //25%幾率掉出七彩琉璃靴
+        //25%機率掉出七彩琉璃靴
  	if (objectp(dob) && environment(dob) == environment(this_object()) && random(4) == 1)
 	{
 		gift_ob = new("/clone/armor/qicai-xue");
@@ -218,9 +218,9 @@ void die(object killer)
 
         // 消失
         command("chat 看來這趟東方之行實在是自討沒趣！");
-	message_vision("$N長嘯一聲，化作一團火燄，消失在天際。\n", this_object());
+	message_vision("$N長嘯一聲，化作一團火焰，消失在天際。\n", this_object());
         CHANNEL_D->do_channel(this_object(), "rumor",
-                        "聽說" + name() + HIM "被一群武林異士打敗，敗興而歸。" NOR);
+                        "聽説" + name() + HIM "被一羣武林異士打敗，敗興而歸。" NOR);
                         
 	destruct(this_object());
 
@@ -231,7 +231,7 @@ void random_move()
 {
 	if (time() - query("born_time") > 1800)
 	{
-		message_vision("$N長嘯一聲，化作一團火燄，消失在天際。\n", this_object());
+		message_vision("$N長嘯一聲，化作一團火焰，消失在天際。\n", this_object());
 		destruct(this_object());
 		return;
 	}

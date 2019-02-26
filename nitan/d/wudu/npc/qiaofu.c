@@ -27,7 +27,7 @@ void create()
         add_money("coin", 50);
         set("inquiry", ([
                 "name": "大家都叫我阿牛．平常上山打柴，有時也採些藥材。\n",
-                "here": "此乃臥龍崗．聽說山上有位臥龍先生。\n",
+                "here": "此乃卧龍崗．聽説山上有位卧龍先生。\n",
         ]) );
         carry_object("/d/city/obj/cloth")->wear();
 }

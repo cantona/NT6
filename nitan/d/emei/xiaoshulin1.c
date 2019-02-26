@@ -27,7 +27,7 @@ int do_jump(string arg)
         if (! arg || arg != "chuang")
                 return 0;
 
-        message_vision("$N趁人不注意，跳進窗裡。\n", me);
+        message_vision("$N趁人不注意，跳進窗裏。\n", me);
         me->move(__DIR__"hcawest");
         message_vision("$N從華藏庵外跳窗進來。\n", me);
         return 1;

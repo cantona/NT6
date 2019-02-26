@@ -39,10 +39,10 @@ int perform(object me, object target)
                 return notify_fail("你現在真氣不夠，難以施展" FAN "。\n");
 
         if (! living(target))
-                return notify_fail("對方都已經這樣了，用不著這麼費力吧？\n");
+                return notify_fail("對方都已經這樣了，用不着這麼費力吧？\n");
 
         msg = HIW "只見$N" HIW "腳踏八卦四方之位，身形在全場遊走不定，雙掌隨後緊"
-              "拍而出，緊緊纏繞著$n" HIW "。\n" NOR;
+              "拍而出，緊緊纏繞着$n" HIW "。\n" NOR;
         addn("neili", -150, me);
 
         if (random(me->query_skill("force") + me->query_skill("bazhen-zhang")) >

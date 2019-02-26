@@ -51,7 +51,7 @@ int perform(object me, object target)
         }
         else
         {
-                message_combatd(HIG"激鬥中的$N沖著$n大喊：“蓋世。。。”，語意未了，就被$n迫得手忙腳亂。\n" NOR, me, target);
+                message_combatd(HIG"激鬥中的$N衝着$n大喊：“蓋世。。。”，語意未了，就被$n迫得手忙腳亂。\n" NOR, me, target);
         }
         return 1;
 }
@@ -60,6 +60,6 @@ void remove_effect(object me, int level)
         delete_temp("shenlong/yingxiong", me);
         addn_temp("apply/attack", -level, me);
         addn_temp("apply/unarmed_damage", -level, me);
-        message_combatd(HIY"$N突然感到心底一陣失落：“歷代英雄，都歸孤塚。”一念及此，頓時意興蕭然。\n" NOR, me);
+        message_combatd(HIY"$N突然感到心底一陣失落：“歷代英雄，都歸孤冢。”一念及此，頓時意興蕭然。\n" NOR, me);
 }
 

@@ -11,7 +11,7 @@ void create()
         set_name("駱冰", ({ "luo bing", "luo", "bing"}));
         set("title", "紅花會十一當家");
         set("nickname", HIC "鴛鴦刀" NOR);
-        set("long", "這是一個秀美的少婦。一手短刀，一手握著一\n"
+        set("long", "這是一個秀美的少婦。一手短刀，一手握着一\n"
                     "柄長刀。\n");
         set("gender", "女性");
         set("age", 34);
@@ -116,12 +116,12 @@ mixed ask_skill1()
                 return "你的韓王青刀還練得不到家，自己下去練練再來吧！";
 
         message_vision(HIY "$n" HIY "點了點頭，將$N" HIY "招至"
-                       "身邊，在耳旁低聲細說良久，$N" HIY "聽"
+                       "身邊，在耳旁低聲細説良久，$N" HIY "聽"
                        "後會心\n的一笑，看來大有所悟。\n" NOR,
                        me, this_object());
 
         command("nod");
-        command("say 剛才我所說的便是韓王青刀的精要，你可記清了？");
+        command("say 剛才我所説的便是韓王青刀的精要，你可記清了？");
         tell_object(me, HIC "你學會了「刀影重重」。\n" NOR);
 
         if (me->can_improve_skill("blade"))

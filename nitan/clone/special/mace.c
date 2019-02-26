@@ -109,7 +109,7 @@ int do_author(string arg)
                 return notify_fail("你已經邀請人家了，可是別人還沒有答應。\n");
 
         if (! living(ob))
-                return notify_fail("看樣子人家沒法聽見你說什麼了。\n");
+                return notify_fail("看樣子人家沒法聽見你説什麼了。\n");
 
         message_vision("$N高舉權杖，問道：“" + ob->name(1) + "，你可願意入我" +
                        PARTY + "？”\n", me);
@@ -148,7 +148,7 @@ int do_expell(string arg)
         ob->delete("party");
 
         CHANNEL_D->do_channel(this_object(), "rumor",
-                              "聽說" + ob->name(1) + "被" + me->name(1) +
+                              "聽説" + ob->name(1) + "被" + me->name(1) +
                               "開除出" + PARTY + "了。");
         return 1;
 }
@@ -159,7 +159,7 @@ int do_right(object me, object ob)
                 return notify_fail("可惜啊，人家已經不在這兒了。\n");
 
         if (! living(ob))
-                return notify_fail("人家現在聽不到你說的話，還是算了吧。\n");
+                return notify_fail("人家現在聽不到你説的話，還是算了吧。\n");
 
         if (ob->query_temp("pending/author") != me)
                 return notify_fail("人家現在已經不打算收你了。\n");
@@ -170,7 +170,7 @@ int do_right(object me, object ob)
 
         me->set("party/party_name", PARTY);
         CHANNEL_D->do_channel(this_object(), "rumor",
-                              "聽說" + ob->name(1) + "收" + me->name(1) +
+                              "聽説" + ob->name(1) + "收" + me->name(1) +
                               "入了" + PARTY + "。");
         return 1;
 }
@@ -181,7 +181,7 @@ int do_refuse(object me, object ob)
                 return notify_fail("可惜啊，人家已經不在這兒了。\n");
 
         if (! living(ob))
-                return notify_fail("人家現在聽不到你說的話，還是算了吧。\n");
+                return notify_fail("人家現在聽不到你説的話，還是算了吧。\n");
 
         if (ob->query_temp("pending/author") != me)
                 return notify_fail("人家現在已經不打算收你了。\n");

@@ -4,12 +4,12 @@ inherit ITEM;
 int is_enchase_ob() { return 1; } 
 void create()
 {
-        set_name(HIM "雷神之瞳﹒電" NOR, ({"leishen tong", "leishen", "tong"}));
+        set_name(HIM "雷神之瞳·電" NOR, ({"leishen tong", "leishen", "tong"}));
         set_weight(300);
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("long", HIM "頃刻間，七彩之光透射天地，此乃天界之聖物，擁有著神一般的力量。\n" NOR);
+                set("long", HIM "頃刻間，七彩之光透射天地，此乃天界之聖物，擁有着神一般的力量。\n" NOR);
                 set("unit", "顆");
                 set("value", 12000);
                 set("can_be_enchased", 1);

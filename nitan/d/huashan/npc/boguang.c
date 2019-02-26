@@ -13,7 +13,7 @@ int climb_tree(object me);
 void create()
 {
         set_name("田伯光", ({ "tian boguang", "tian", "boguang" }));
-        set("nickname", "萬裡獨行");
+        set("nickname", "萬里獨行");
         set("long", 
                 "田伯光昔年為江湖中臭名昭彰的採花賊，但結識華山令狐沖後已\n"
                 "改邪歸正。一手快刀絕技，天下無雙。輕功在武林中也是一等的。\n");
@@ -71,7 +71,7 @@ void init()
             !query_temp("said", me) )
         {
                 set_temp("said", 1, me);
-                command("say 想找風前輩？你可得勝過我的快刀再說。");
+                command("say 想找風前輩？你可得勝過我的快刀再説。");
                 remove_call_out("climb_tree");
                 call_out("climb_tree", 50, me);         
         }
@@ -92,20 +92,20 @@ void lost()
         ob = this_object();
         me = query_competitor();
         
-        if( query("short", environment(ob)) == "朝陽峰" )
+        if( query("short", environment(ob)) == "朝陽峯" )
         {          
                 addn("tian_count", 1, environment(ob));
                 command( "say " + RANK_D->query_respect(me) + "果然高明，在下多有得罪。在下這便帶你去見風前輩。");
-                message("vision", me->name() + "隨著田伯光走進荒山裡。\n", environment(ob), ({ob}));
+                message("vision", me->name() + "隨着田伯光走進荒山裏。\n", environment(ob), ({ob}));
                 ob->move("/d/huashan/yelin1");
                 me->move("/d/huashan/yelin1");
                 tell_object(me, "田伯光領你走過華山後山的一片荒山野林，你注意到那兒似乎有個山洞。\n");
                 ob->move("/d/huashan/xiaojing1");
                 me->move("/d/huashan/xiaojing1");
-                tell_object(me,"你跟著田伯光走了良久，來到一條小路。\n");
+                tell_object(me,"你跟着田伯光走了良久，來到一條小路。\n");
                 command( "bow" );
                 command( "say 風前輩住處由此路過去便是，在下失陪了。");
-                say("田伯光說完便頭也不回地走了。\n");        
+                say("田伯光説完便頭也不回地走了。\n");        
                 remove_call_out("fast_attack");
                 remove_call_out("climb_tree");
                 remove_call_out("destob");
@@ -204,20 +204,20 @@ int climb_tree(object me)
                 return 1;
         }
         
-        if( query("short", environment(me)) == "朝陽峰" )
+        if( query("short", environment(me)) == "朝陽峯" )
         {
                 if( !query_temp("fought", me) )
                 {
                         addn("tian_count", 1, environment(me));
-                        message_vision("田伯光怒火大漲，潑口大罵道：“你既然無意拜見風前輩，幹巴巴地叫老子下來幹嘛？”\n", me);
-                        message_vision("田伯光接著便爬回樹上，拜見周公去了。\n", me);                
+                        message_vision("田伯光怒火大漲，潑口大罵道：“你既然無意拜見風前輩，乾巴巴地叫老子下來幹嘛？”\n", me);
+                        message_vision("田伯光接着便爬回樹上，拜見周公去了。\n", me);                
                 }
                 else 
                 {
                         message_vision("田伯光打了個呵欠。\n", me);
                         command("say 恕我不能奉陪。");
                         addn("tian_count", 1, environment(me));
-                        message_vision("田伯光接著便爬回樹上，拜見周公去了。\n", me);
+                        message_vision("田伯光接着便爬回樹上，拜見周公去了。\n", me);
                 }
         }
         else

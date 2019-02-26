@@ -66,7 +66,7 @@ mapping *info_guest = ({
         "bonus" : 60,
 ]),
 
-([      "name"  : "戚長發",
+([      "name"  : "戚長髮",
         "title" : "戚前輩",
         "file" : "/d/foshan/yard",
         "area"  : "湘西沅陵",
@@ -228,14 +228,14 @@ mapping *info_guest = ({
 ]),
 
 ([      "name"  : "南海鱷神",
-        "title" : "岳老三",
+        "title" : "嶽老三",
         "file" : "/d/xixia/dawu",
         "area"  : "西夏",
         "bonus" : 250,
 ]),
 
-([      "name"  : "葉二娘",
-        "title" : "葉二娘",
+([      "name"  : "葉二孃",
+        "title" : "葉二孃",
         "file" : "/d/xixia/dawu",
         "area"  : "西夏",
         "bonus" : 250,

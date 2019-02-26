@@ -40,7 +40,7 @@ int perform(object me, object target)
                 return notify_fail("你目前的真氣不足，難以施展" + name() + "。\n");
 
         if (! living(target))
-                return notify_fail("對方都已經這樣了，用不著這麼費力吧？\n");
+                return notify_fail("對方都已經這樣了，用不着這麼費力吧？\n");
 
         if( angry=query("qi", me)<query("max_qi", me)/2 )
                 msg = HIR "$N" HIR "目睚俱裂，一聲爆喝，全身骨骼劈啪作響，拳"

@@ -6,7 +6,7 @@ void create()
         set_name("哈薩克人", ({ "hasake ren", "hasake", "ren"}));
         set("gender", "男性");
         set("age", 26);
-        set("long", "一個哈薩克族青年，趕著幾十只羊。\n");
+        set("long", "一個哈薩克族青年，趕着幾十只羊。\n");
         set("attitude", "friendly");
         set("combat_exp", 4000);
         set("shen_type", 0);
@@ -29,7 +29,7 @@ void create()
 
         set("inquiry", ([
                     "蘇普"   : "呀，你也要跟蘇普摔跤？往東走你就會找到他。",
-                    "阿曼"   : "嘆，我摔跤總贏不了蘇普。",
+                    "阿曼"   : "歎，我摔跤總贏不了蘇普。",
                     "計老人" : "計老人會釀又香又烈的美酒，會醫牛羊馬匹的疾病。",
         ]));
 

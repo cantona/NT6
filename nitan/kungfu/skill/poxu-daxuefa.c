@@ -1,14 +1,14 @@
 inherit SKILL;
 
 mapping *action = ({
-([      "action":"$N身形一展，施出一招「橫峰斷雲勢」，$w疾風般刺向$n的$l",
+([      "action":"$N身形一展，施出一招「橫峯斷雲勢」，$w疾風般刺向$n的$l",
         "force" : 30,
         "attack": 15,
         "dodge" : 10,
         "parry" : 12,
         "damage": 25,
         "lvl"   : 0,
-        "skill_name" : "橫峰斷雲勢",
+        "skill_name" : "橫峯斷雲勢",
         "damage_type" : "刺傷"
 ]),
 ([      "action":"$N一聲叱喝，$w如靈蛇吞吐，施一招「青龍嘯」向$n的$l刺去",

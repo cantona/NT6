@@ -15,7 +15,7 @@ void create()
         set_name("俞蓮舟", ({ "yu lianzhou", "yu" }));
         set("nickname", "武當二俠");
         set("long",
-                "他就是張三豐的二弟子俞蓮舟。\n"
+                "他就是張三丰的二弟子俞蓮舟。\n"
                 "他今年五十歲，身材魁梧，氣度凝重。\n"
                 "雖在武當七俠中排名第二，功夫卻是最精。\n");
         set("gender", "男性");
@@ -78,8 +78,8 @@ void create()
         create_family("武當派", 2, "弟子");
 
         set("inquiry", ([
-                "虎爪絕戶手": (: ask_me :),
-                "絕戶": (: ask_me :),
+                "虎爪絕户手": (: ask_me :),
+                "絕户": (: ask_me :),
                 "絕招"  : (: ask_me :),
         ]));
 
@@ -120,7 +120,7 @@ void attempt_apprentice(object ob)
         if ((int)ob->query_skill("taoism", 1) < 80)
         {
                 command("say 習武是為了強身健體，一味的練武是不可取的。");
-                command("say 我看你還需要在修身養性方面多鍛煉鍛煉，以提高"
+                command("say 我看你還需要在修身養性方面多鍛鍊鍛鍊，以提高"
                         "你的道德心法。");
                 return;
         }
@@ -144,7 +144,7 @@ mixed ask_me()
                 return RANK_D->query_respect(me) + "不是我們武當派的人，何出此言？";
 
         if (me->query_skill("huzhua-shou", 1) < 1)
-                return "你連虎爪絕戶手都沒學，還談什麼絕招可言？";
+                return "你連虎爪絕户手都沒學，還談什麼絕招可言？";
 
         if( query("family/gongji", me)<400 )
                 return "你為我武當派效力還不夠，這招我先不忙傳你。";
@@ -156,15 +156,15 @@ mixed ask_me()
                 return "你的內功的修為不夠，練高了再來吧。";
 
         if (me->query_skill("huzhua-shou", 1) < 120)
-                return "你的虎爪絕戶手還不到家，還是自己先下去多多練習吧。";
+                return "你的虎爪絕户手還不到家，還是自己先下去多多練習吧。";
 
-        message_vision(HIY "$n" HIY "嘆了口氣，在$N" HIY "耳邊輕"
-                       "聲說了幾句虎爪絕戶手\n的精要，隔了良久，"
-                       "又嘆了一口氣。\n" NOR, me, this_object());
+        message_vision(HIY "$n" HIY "歎了口氣，在$N" HIY "耳邊輕"
+                       "聲説了幾句虎爪絕户手\n的精要，隔了良久，"
+                       "又歎了一口氣。\n" NOR, me, this_object());
         command("sigh");
-        command("say 這便是絕戶手的精要所在，你懂了多少？");
-        command("say 絕戶手太易使人重殘，因而使用前一定要慎重考慮。");
-        tell_object(me, HIC "你學會了「絕戶神抓」。\n" NOR);
+        command("say 這便是絕户手的精要所在，你懂了多少？");
+        command("say 絕户手太易使人重殘，因而使用前一定要慎重考慮。");
+        tell_object(me, HIC "你學會了「絕户神抓」。\n" NOR);
         if (me->can_improve_skill("claw"))
                 me->improve_skill("claw", 1500000);
         if (me->can_improve_skill("huzhua-shou"))

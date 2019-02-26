@@ -12,7 +12,7 @@ void create()
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("long", "這是一串頗為精致的長命鎖，不過已相當破舊，"+
+                set("long", "這是一串頗為精緻的長命鎖，不過已相當破舊，"+
                             "上面依稀刻了“長命百歲”幾個字，下面似乎有一個小小的“曲”字。\n");
                 set("unit", "串");
                 set("value", 1500);

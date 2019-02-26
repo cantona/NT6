@@ -8,7 +8,7 @@ void create()
 { 
        set("short","金剛座");
         set("long", @LONG
-你踩在金剛座上，密集金剛的臉龐近在咫尺，對著你默默微笑。
+你踩在金剛座上，密集金剛的臉龐近在咫尺，對着你默默微笑。
 LONG );
         set("exits", ([
                 "down" : "/d/xueshan/hongdian",

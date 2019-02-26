@@ -11,7 +11,7 @@ void create()
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("long","這是一朵水晶般的一串串白色丁香花，隱隱的散發著幽香。\n");
+                set("long","這是一朵水晶般的一串串白色丁香花，隱隱的散發着幽香。\n");
                 set("unit", "束");
                 set("base_value", 50);
                 set("base_unit", "朵");

@@ -108,7 +108,7 @@ int find_zhiwei(int level)
                 if(((int)us[i]->query("level")==level)
                         && ((int)us[i]->query("tiandihui/tang")==ttang))
                 {
-                        write(CYN"雲風裡說道：我火雲教現在沒有合適的位置給你。\n"NOR);
+                        write(CYN"雲風裏説道：我火雲教現在沒有合適的位置給你。\n"NOR);
                         return 0;
                 }
         }
@@ -158,13 +158,13 @@ int check_ob(object ob,int level)
         if(exp<lvl_exp)
         {
                 message_vision(
-CYN"陳進南對$N"CYN"說道：你的經驗太少，無法勝任"+zhiwei[level]+CYN"之職。\n"NOR,ob);
+CYN"陳進南對$N"CYN"説道：你的經驗太少，無法勝任"+zhiwei[level]+CYN"之職。\n"NOR,ob);
                 return 0;
         }
         if(job<lvl_job)
         {
                 message_vision(
-CYN"雲風裡對$N"CYN"說道：論到貢獻，我教中還有很多兄弟在你之上。我看你還無法勝任"+zhiwei[level]+CYN"一職。\n"NOR,ob);
+CYN"雲風裏對$N"CYN"説道：論到貢獻，我教中還有很多兄弟在你之上。我看你還無法勝任"+zhiwei[level]+CYN"一職。\n"NOR,ob);
                 return 0;
         }
         return 1;
@@ -173,7 +173,7 @@ CYN"雲風裡對$N"CYN"說道：論到貢獻，我教中還有很多兄弟在你
 string assume_tang(object ob,int level,int ttang)
 {
         message_vision(
-CYN"雲風裡對著$N"CYN"點了點頭道：不錯，我天地會兄弟中數你盡職盡責，"+tang[ttang]+zhiwei[level]+CYN"之職就由你來擔任吧。\n"NOR,ob);
+CYN"雲風裏對着$N"CYN"點了點頭道：不錯，我天地會兄弟中數你盡職盡責，"+tang[ttang]+zhiwei[level]+CYN"之職就由你來擔任吧。\n"NOR,ob);
         ob->set("tiandihui/tang",ttang);
         ob->add("tiandihui/level",1);
         ob->add("combat_exp",10000);
@@ -181,7 +181,7 @@ CYN"雲風裡對著$N"CYN"點了點頭道：不錯，我天地會兄弟中數你
         if(level>3)
                 ob->set("title",HIW"火雲教"+zhiwei[level]);
         message_vision(
-"雲風裡從懷中取出一些銀兩說道：這些銀兩是你辛苦所得。\n",ob);
+"雲風裏從懷中取出一些銀兩説道：這些銀兩是你辛苦所得。\n",ob);
         MONEY_D->pay_player(ob,200000);
         return (HIW"火雲教"+tang[ttang]+zhiwei[level]);
 }

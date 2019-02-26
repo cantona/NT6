@@ -14,7 +14,7 @@ void create()
                 set_default_object(__FILE__);
         else {
                 set("unit", "柄");
-                set("long", "一柄精鐵制的流星錘。\n");
+                set("long", "一柄精鐵製的流星錘。\n");
                 set("value", 1000);
                 set("weapon_prop/parry", 1);
                        set("poisoned", "bing_poison");

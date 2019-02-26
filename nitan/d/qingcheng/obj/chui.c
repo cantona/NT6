@@ -15,7 +15,7 @@ void create()
                 set("material", "iron");
                 set("long", HIC"雷公轟為一柄八角小錘，錘柄長僅及尺，錘頭還沒常人的拳頭大。\n情況緊急時可以擲(zhi)敵。\n"NOR);
                 set("wield_msg", HIC"$N將右手伸入左手衣袖，隨即將手伸出，手中已握了一柄八角小錘！\n"NOR);
-                set("unwield_msg",HIC"$N將手裡小錘往袖中一塞就不見了。\n"NOR);
+                set("unwield_msg",HIC"$N將手裏小錘往袖中一塞就不見了。\n"NOR);
         }
         init_hammer(5);
         setup();
@@ -36,15 +36,15 @@ int do_zhi(string arg)
         if (environment(this_object())!=me)
                 return 0;
         if( query("no_fight", environment(me)) )
-                return notify_fail("這裡禁止戰鬥。\n");
+                return notify_fail("這裏禁止戰鬥。\n");
         if( (me->is_busy() ))
-                return notify_fail("你現在正忙著呢，沒得閒擲「雷公轟」。\n");
+                return notify_fail("你現在正忙着呢，沒得閒擲「雷公轟」。\n");
         if( !(me->is_fighting() ))
                 return notify_fail("「雷公轟」只能對戰鬥中的對手使用。\n");
         if( !arg )
                 return notify_fail("你要擲擊誰？\n");
         if( !objectp(obj = present(arg, environment(me)) ))
-                return notify_fail("這裡沒有這個人！\n");
+                return notify_fail("這裏沒有這個人！\n");
         if( !obj->is_character() || obj->is_corpse() )
                 return notify_fail("看清楚一點，那並不是活物。\n");
         if( !me->is_fighting(obj) )
@@ -63,7 +63,7 @@ int do_zhi(string arg)
                 return notify_fail("你的城字十八破火候不到，無法擲雷公轟！\n");
 
         addn("neili", -200, me);
-        msg = HIY"$N手指一振，八角雷公轟脫手飛出！\n"NOR;
+        msg = HIY"$N手指一振，八角雷公轟脱手飛出！\n"NOR;
 
 //        if( random(attacklvl) > (int)((parrylvl+dodgelvl)/2))
                 if( attacklvl*3/4 > random(parrylvl+dodgelvl))
@@ -79,7 +79,7 @@ int do_zhi(string arg)
         seteuid(getuid());
         piece = new("/clone/misc/piece");
         set("name",query("name",  inv[equip])+"的碎片", piece);
-        set("long", "一堆破碎物事，好象是布片鐵片什麼的。\n", piece);
+        set("long", "一堆破碎物事，好像是布片鐵片什麼的。\n", piece);
         piece->move(environment(obj));
         destruct(inv[equip]);
                         }

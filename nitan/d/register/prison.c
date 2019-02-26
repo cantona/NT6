@@ -9,8 +9,8 @@ void create()
 {
         set("short", HIR "第十八層地獄" NOR);
         set("long", @LONG
-這裡極度陰森，你感到無數的鬼魂到處遊盪，駭得你大氣也不敢
-透一口，只想趕快離開這裡。也不知道在這裡會呆多久，想到這裡你
+這裏極度陰森，你感到無數的鬼魂到處遊蕩，駭得你大氣也不敢
+透一口，只想趕快離開這裏。也不知道在這裏會呆多久，想到這裏你
 不禁感到深深的懊惱。
     旁邊有一個牌子(paizi)。
 LONG );
@@ -37,9 +37,9 @@ int do_suicide()
 
 void catch_back(object me)
 {
-        message_vision(HIM "忽然一陣詭秘的煙霧彌漫在四周，兩個青面獠牙"
+        message_vision(HIM "忽然一陣詭祕的煙霧瀰漫在四周，兩個青面獠牙"
                "的小鬼跳了出來，一把抓住$N" HIM "，用\n鐵鏈鎖住，惡狠"
-               "狠的叫道：“好家伙！我讓你跑...”\n\n" NOR,
+               "狠的叫道：“好傢伙！我讓你跑...”\n\n" NOR,
                me);
 
         message("vision", HIY "忽的一道金光，你登時什麼也看不到了...\n\n"
@@ -50,7 +50,7 @@ void catch_back(object me)
 
 void catch_ob(object me)
 {
-        message_vision(HIM "忽然一陣詭秘的煙霧彌漫在四周，兩個青面獠牙"
+        message_vision(HIM "忽然一陣詭祕的煙霧瀰漫在四周，兩個青面獠牙"
                        "的小鬼跳了出來，一把抓住$N" HIM "，用\n鐵鏈鎖住，惡狠"
                        "狠的叫道：“站住！你犯案了，快跟我們走吧！”\n\n" NOR,
                        me);
@@ -68,7 +68,7 @@ int free_ob(object me)
         message_vision("忽然兩個小鬼冒了出來，拎住$N，道：好了，你可以"
                        "走了，要是再敢犯案，哼哼...\n\n", me);
         message("vision", "兩個小鬼和" + me->name() + "突然在你面前消"
-                          "失了... 你不禁嘆了一口氣。\n",
+                          "失了... 你不禁歎了一口氣。\n",
                           environment(me), ({ me }));
 
         tell_object(me, HIR "你眼前一黑...\n\n" NOR);
@@ -80,7 +80,7 @@ int free_ob(object me)
 
         set("startroom", startroom, me);
         me->move(startroom);
-        message("vision", "一陣詭秘的煙霧過後，只見" + me->name() +
+        message("vision", "一陣詭祕的煙霧過後，只見" + me->name() +
                           "直挺挺的躺在地上。\n", environment(me), ({ me }));
         return 1;
 }

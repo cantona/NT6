@@ -45,7 +45,7 @@ void greeting(object ob)
          if (xiang)
         {
                   message_vision(CYN "$N" CYN "恭敬地向$n" NOR +
-                               CYN "跪倒，嘴裡念念有詞。\n" NOR,
+                               CYN "跪倒，嘴裏唸唸有詞。\n" NOR,
                                this_object(), xiang);
                     return;
            }

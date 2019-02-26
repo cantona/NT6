@@ -5,9 +5,9 @@ void create()
 {
         set("short", "中央廣場");
         set("long", @LONG
-這裡是城市的正中心，一個很寬闊的廣場，舖著青石地面。遊手
-好閒的人常在這裡溜溜達達，經常有藝人在這裡表演。中央一棵大榕
-樹(tree)盤根錯節，據傳已有千年的樹齡，是這座城市的歷史見証。
+這裏是城市的正中心，一個很寬闊的廣場，鋪着青石地面。遊手
+好閒的人常在這裏溜溜達達，經常有藝人在這裏表演。中央一棵大榕
+樹(tree)盤根錯節，據傳已有千年的樹齡，是這座城市的歷史見證。
 樹幹底部有一個很大的樹洞(dong)。你可以看到北邊有來自各地的行
 人來來往往，南面人聲鼎沸，一派繁華景象，東邊不時地傳來朗朗的
 讀書聲，西邊則見不到幾個行人，一片肅靜。
@@ -15,7 +15,7 @@ LONG );
         set("no_sleep_room",1);
         set("outdoors", "city");
         set("item_desc", ([
-                "dong" : WHT "\n這是一個黑不溜湫的大洞，裡面不知道"
+                "dong" : WHT "\n這是一個黑不溜湫的大洞，裏面不知道"
                          "有些什麼古怪。\n" NOR,
                 "tree" : GRN "\n這是一棵巨大古老的大榕樹，枝葉非常"
                          "的茂密。\n" NOR,
@@ -58,7 +58,7 @@ int do_enter(string arg)
         if (arg == "dong")
         {
                 if( objectp(query_temp("is_riding", me)) )
-                        return notify_fail("沒聽說過有人能騎坐騎進樹洞的。\n");
+                        return notify_fail("沒聽説過有人能騎坐騎進樹洞的。\n");
 
                 if (me->is_busy())
                 {
@@ -66,11 +66,11 @@ int do_enter(string arg)
                         return 1; 
                 }
 
-                message("vision", HIC + me->name() + HIC "一彎腰往洞裡走"
+                message("vision", HIC + me->name() + HIC "一彎腰往洞裏走"
                                   "了進去。\n" NOR, environment(me), ({me}));
 
                 me->move("/d/gaibang/inhole");
-                message("vision", HIC + me->name() + HIC "從洞裡走了進來"
+                message("vision", HIC + me->name() + HIC "從洞裏走了進來"
                                   "。\n" NOR, environment(me), ({me}));
                 return 1;
         }
@@ -85,12 +85,12 @@ int do_jump(string arg)
         room = get_object( "/adm/daemons/fairyland_quest/room_door_hj" );
         if( !room ) return 0;
 
-        tell_room(environment(me),query("name", me)+"使勁地往上一跳，突然卷來一陣旋風，"+
-                query("name", me)+"頓時被風刮得不知所蹤。\n",me);
+        tell_room(environment(me),query("name", me)+"使勁地往上一跳，突然捲來一陣旋風，"+
+                query("name", me)+"頓時被風颳得不知所蹤。\n",me);
 
-        write("你使勁地往上一跳，忽地平地卷起一陣旋風，恍惚中你已來到了「幻境」。\n");
+        write("你使勁地往上一跳，忽地平地捲起一陣旋風，恍惚中你已來到了「幻境」。\n");
         me->move(room);
-        tell_room(room,"忽然一陣旋風襲過，"+query("name", me)+"已出現在這裡。\n",me);
+        tell_room(room,"忽然一陣旋風襲過，"+query("name", me)+"已出現在這裏。\n",me);
         return 1;
 }
 
@@ -105,7 +105,7 @@ int do_climb(string arg)
         if (arg == "tree" || arg == "up")
         {
                 if( objectp(query_temp("is_riding", me)) )
-                        return notify_fail("沒聽說過有人能騎坐騎還能爬樹的。\n");
+                        return notify_fail("沒聽説過有人能騎坐騎還能爬樹的。\n");
 
                 if (me->is_busy())
                 {
@@ -115,7 +115,7 @@ int do_climb(string arg)
 
                 if( query("gender", me) != "女性" )
                         message("vision",
-                                me->name() + "戰戰兢兢地拉著大榕樹的盤根，屁股一扭一扭地往上爬。\n",
+                                me->name() + "戰戰兢兢地拉着大榕樹的盤根，屁股一扭一扭地往上爬。\n",
                                 environment(me), ({me}) );
                 else 
                 if( query("age", me)<40 && query("per", me)>24 )

@@ -29,14 +29,14 @@ int do_dissolve(string arg)
 
         if( !arg ) return notify_fail("你要用化屍粉溶解什麼東西？\n");
         if(!present(this_object(), me)) return 0;
-        if( me->is_busy() ) return notify_fail("你正忙著其它事呢。\n");
+        if( me->is_busy() ) return notify_fail("你正忙着其它事呢。\n");
 
         if( !objectp(ob = present(arg, environment(me))) )
-                return notify_fail("這裡沒有這樣東西。\n");
+                return notify_fail("這裏沒有這樣東西。\n");
         if( !ob->is_corpse() )
                 return notify_fail("化屍粉只能用來溶解屍體。\n");
         message_vision(
-                "$N用指甲挑了一點化屍粉在$n上，只聽見一陣「嗤嗤」聲響帶著\n"
+                "$N用指甲挑了一點化屍粉在$n上，只聽見一陣「嗤嗤」聲響帶着\n"
                 "一股可怕的惡臭，$n只剩下一灘黃水。\n", me, ob);
         destruct(ob);
         return 1;

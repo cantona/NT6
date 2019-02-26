@@ -60,7 +60,7 @@ int dispel(object me, object ob, int duration)
                 if( me->addn("can_perform/luohan-fumogong/jiu",1+random(5))<100 )
                 {
                         tell_object(me, HIC "\n突然間你發覺體內陰陽兩種真"
-                                        "氣慢慢交融，說不出的舒服受用。\n"
+                                        "氣慢慢交融，説不出的舒服受用。\n"
                                         "\n" NOR);
                 } else
                 {
@@ -117,14 +117,14 @@ int update_condition(object me, int duration)
                 case 0:
                         tell_object(me, HIR "突然間你只覺丹田處有如火燒，全身"
                                         "真氣鼓盪，便似要爆裂開一般。\n" NOR);
-                        message("vision", HIR "忽見" + me->name() + HIR "須發"
-                                "焦卷，全身散發著滾滾熱氣，嘶啞著嗓子亂嚎。\n"
+                        message("vision", HIR "忽見" + me->name() + HIR "鬚髮"
+                                "焦卷，全身散發着滾滾熱氣，嘶啞着嗓子亂嚎。\n"
                                 NOR, environment(me), me);
                         break;
 
                 case 1:
                         tell_object(me, HIW "霎時你只覺如同置身冰堅地獄，寒氣"
-                                        "瞬間遊遍全身，說不出的難受。\n" NOR);
+                                        "瞬間遊遍全身，説不出的難受。\n" NOR);
                         message("vision", HIW "忽見" + me->name() + HIW "散發"
                                 "出絲絲寒氣，全身上下竟然被罩上了一層薄冰。\n"
                                 NOR, environment(me), me);

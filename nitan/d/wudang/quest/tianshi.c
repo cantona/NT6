@@ -11,7 +11,7 @@ int accept_object(object me, object ob);
 void create()
 {
         set_name("李天師", ({ "li tianshi", "li", "tianshi" }));
-        set("long", "這是一位仙風道骨的法師，身上的道袍上畫著一些驅魔符號。\n");
+        set("long", "這是一位仙風道骨的法師，身上的道袍上畫着一些驅魔符號。\n");
         set("nickname", HIY"鎮妖真人"NOR);
         set("gender", "男性");
         set("age", 30);
@@ -96,17 +96,17 @@ mixed ask_ghost()
       set_temp("damage", dam*2/5, ghost);
       ghost->set_skill("claw", dam);
 
-      tell_object(me, this_object()->name() + "對你道：據說最近" +
+      tell_object(me, this_object()->name() + "對你道：據説最近" +
                   p + "常有" + ghost->name() + "出沒，附近居民"
                   "深受其害。你去把它收了吧。\n");
-      message("vision", this_object()->name() + "在" + me->name() + "耳邊吩咐著什麼，" +
+      message("vision", this_object()->name() + "在" + me->name() + "耳邊吩咐着什麼，" +
               me->name() + "一邊聽，一邊不住地點頭。\n", environment(me), me);
       ob = new("/d/wudang/quest/obj/fuzhi");
       ob->move(this_object());
       command("givefuzhito"+query("id", me));
       tell_object(me, this_object()->name() + "繼續道：" + ob->name() +
                   "可以讓鬼魂現身，可別弄丟了。\n");
-      message_vision("$n對$N說道：快動身吧，多加小心。\n", me, this_object());
+      message_vision("$n對$N説道：快動身吧，多加小心。\n", me, this_object());
       set_temp("gui/shougui", 1, me);
       return 1;
 }
@@ -141,7 +141,7 @@ int accept_object(object me, object ob)
          if( !query_temp("gui/finish", me) )
          {
              command("sneer"+query("id", me));
-             command("say 想蒙騙本天師嗎？");
+             command("say 想矇騙本天師嗎？");
              addn("weiwang", -random(50), me);
              if( query("weiwang", me)<0)set("weiwang", 0, me);
              tell_object(me, HIR"你的威望降低了！\n"NOR);
@@ -153,7 +153,7 @@ int accept_object(object me, object ob)
          pot = exp/3 + random(exp/3);
          if( query("potential", me) >= me->query_potential_limit())pot=1;
          message_vision("$n對$N點了點頭：不錯，不錯。\n", me, this_object());
-         tell_object(me, HIG "通過這次□煉，你獲得了" + chinese_number(exp) +
+         tell_object(me, HIG "通過這次煅煉，你獲得了" + chinese_number(exp) +
                      "點經驗和" + chinese_number(pot) + "點潛能。\n" NOR);
          tell_object(me, HIC"你對道學心法有了新的領悟！\n"NOR);
          me->improve_skill("taoism", me->query_int()*2);

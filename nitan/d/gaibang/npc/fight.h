@@ -5,7 +5,7 @@ void attempt_apprentice(object ob)
 {
         if( query("detach/丐幫", ob) || query("betrayer/丐幫", ob) )
         {
-                command("say 嘿嘿，你當初走的時候是怎麼說的？");
+                command("say 嘿嘿，你當初走的時候是怎麼説的？");
                 return;
         }
 
@@ -33,13 +33,13 @@ int accept_object(object ob, object obj)
 
         if( query("id", obj) != "qingzhu ling" )
         {
-                command("say 啥玩藝？還是自個留著吧。");
+                command("say 啥玩藝？還是自個留着吧。");
                 return 0;
         }
 
         if (! ob_fam || ob_fam["family_name"] != "丐幫")
         {
-                command("say 你是從哪裡搞來的青竹令？");
+                command("say 你是從哪裏搞來的青竹令？");
                 return 0;
         }
 
@@ -113,7 +113,7 @@ int accept_fight(object ob)
 
         if (is_fighting())
         {
-                command("say 你等會，讓我把面前的這個家伙放倒再說。");
+                command("say 你等會，讓我把面前的這個傢伙放倒再説。");
                 return 0;
         }
 
@@ -121,7 +121,7 @@ int accept_fight(object ob)
            || query("jing") < query("eff_jing") * 2 / 3
            || query("neili") < query("max_neili") * 2 / 3)
         {
-                command("say 我現在有點疲倦，待我歇會兒再說。");
+                command("say 我現在有點疲倦，待我歇會兒再説。");
                 return 0;
         }
 

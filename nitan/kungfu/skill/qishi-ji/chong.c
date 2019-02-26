@@ -1,7 +1,7 @@
 #include <ansi.h>
 #include <combat.h>
 
-#define CHONG "「" HIY "沖刺攻擊" NOR "」"
+#define CHONG "「" HIY "衝刺攻擊" NOR "」"
 
 inherit F_SSERVER;
 
@@ -36,7 +36,7 @@ int perform(object me, object target)
                 return notify_fail("你現在的真氣不夠，難以施展" CHONG "。\n");
 
         if (! living(target))
-                return notify_fail("對方都已經這樣了，用不著這麼費力吧？\n");
+                return notify_fail("對方都已經這樣了，用不着這麼費力吧？\n");
 
         msg = HIY "$N" HIY "狂哮一聲，手中" + weapon->name() + HIY "接連六"
               "刺，竟似幻作六道電光，盡數刺向$n" HIY "！\n" NOR;

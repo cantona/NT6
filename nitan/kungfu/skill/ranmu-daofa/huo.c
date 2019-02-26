@@ -36,10 +36,10 @@ int perform(object me, object target)
                 return notify_fail("你沒有激發燃木刀法，不能施展火麒蝕月。\n");
 
        if (! living(target))
-              return notify_fail("對方都已經這樣了，用不著這麼費力吧？\n");
+              return notify_fail("對方都已經這樣了，用不着這麼費力吧？\n");
 
         msg = HIR "只見$N" HIR "手中" + weapon->name() + HIR "一抖，刀身登時騰起"
-                        "滔天烈燄，如浴火麒麟一般席卷$n" HIR "全身！\n"NOR;
+                        "滔天烈焰，如浴火麒麟一般席捲$n" HIR "全身！\n"NOR;
 
         me->start_busy(2 + random(2));
         ap = attack_power(me, "balde");

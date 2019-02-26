@@ -42,7 +42,7 @@ int perform(object me, object target)
                 return notify_fail("你現在的真氣不足，難以施展" + name() + "。\n");
 
         if (! living(target))
-                return notify_fail("對方都已經這樣了，用不著這麼費力吧？\n");
+                return notify_fail("對方都已經這樣了，用不着這麼費力吧？\n");
 
         msg = WHT "$N" WHT "雙掌交錯，施出鐵掌絕技「" HIR "龍影掌" NOR +
               WHT "」，旋起層層殘影，籠罩$n" WHT "四方。\n" NOR;

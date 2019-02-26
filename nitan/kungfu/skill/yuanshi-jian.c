@@ -21,7 +21,7 @@ mapping *action = ({
         "lvl"   : 20,
         "damage_type" : "刺傷"
 ]),
-([      "action": "$N手中的$w向$n直直刺去, 這看似很平凡的一招竟然含著巨大的殺著",
+([      "action": "$N手中的$w向$n直直刺去, 這看似很平凡的一招竟然含着巨大的殺着",
         "force" : 115,
         "attack": 58,
         "parry" : 45,
@@ -30,7 +30,7 @@ mapping *action = ({
         "lvl"   : 40,
         "damage_type" : "刺傷"
 ]),
-([      "action": "$N一聲大喝，手中$w隨意揮洒，幻出許許劍芒，逼得$n連連後退",
+([      "action": "$N一聲大喝，手中$w隨意揮灑，幻出許許劍芒，逼得$n連連後退",
         "force" : 127,
         "attack": 61,
         "parry" : 48,
@@ -39,7 +39,7 @@ mapping *action = ({
         "lvl"   : 60,
         "damage_type" : "刺傷"
 ]),
-([      "action": "$N手中$w光芒閃爍，在許許劍芒中遞出殺著，完全出自$n意料之外",
+([      "action": "$N手中$w光芒閃爍，在許許劍芒中遞出殺着，完全出自$n意料之外",
         "force" : 139,
         "attack": 68,
         "parry" : 51,
@@ -66,7 +66,7 @@ mapping *action = ({
         "lvl"   : 120,
         "damage_type" : "刺傷"
 ]),
-([      "action": "$N飛身躍起，手中$w舞出無數個閃爍的劍花，滿天閃落而下，制$n于其中",
+([      "action": "$N飛身躍起，手中$w舞出無數個閃爍的劍花，滿天閃落而下，制$n於其中",
         "force" : 185,
         "attack": 81,
         "parry" : 64,
@@ -75,7 +75,7 @@ mapping *action = ({
         "lvl"   : 140,
         "damage_type" : "刺傷"
 ]),
-([      "action": "$N身行晃動不定，手中$w揮洒而出，劃出萬點迅捷無比的寒星洒向$n",
+([      "action": "$N身行晃動不定，手中$w揮灑而出，劃出萬點迅捷無比的寒星灑向$n",
         "force" : 210,
         "attack": 94,
         "parry" : 68,
@@ -84,7 +84,7 @@ mapping *action = ({
         "lvl"   : 160,
         "damage_type" : "刺傷"
 ]),
-([      "action": "$N隨意揮洒手中$w，頓時幻出萬般劍芒, 數股劍氣從劍芒中遞出，直知貫向$n",
+([      "action": "$N隨意揮灑手中$w，頓時幻出萬般劍芒, 數股劍氣從劍芒中遞出，直知貫向$n",
         "force" : 223,
         "attack": 104,
         "parry" : 70,
@@ -102,7 +102,7 @@ mapping *action = ({
         "lvl"   : 200,
         "damage_type" : "刺傷"
 ]),
-([      "action": "$N一聲巨喝，體內真氣迸發，只見$w從天而降，一股強大的劍氣席卷$n全身",
+([      "action": "$N一聲巨喝，體內真氣迸發，只見$w從天而降，一股強大的劍氣席捲$n全身",
         "force" : 280,
         "attack": 124,
         "parry" : 72,

@@ -17,7 +17,7 @@ LONG);
 		
 	]));
         	set("no_rideto", 1);         // 設置不能騎馬到其他地方
-       		set("no_flyto", 1);          // 設置不能從起來地方騎馬來這裡
+       		set("no_flyto", 1);          // 設置不能從起來地方騎馬來這裏
 		set("n_time", 30);
 		set("n_npc",1); 
 		set("n_max_npc", 2);
@@ -48,13 +48,13 @@ void init()
 		me->move(__DIR__"haitan");
 	}
 
-	// 把背起的用戶放下來
+	// 把背起的用户放下來
         inv = deep_inventory(me);
         for (i = 0; i < sizeof(inv); i++)
         {
                 if (! playerp(inv[i])) continue;
 
-                // 被人背起的用戶
+                // 被人揹起的用户
                 inv[i]->move(__DIR__"haitan");                
         }	
 	

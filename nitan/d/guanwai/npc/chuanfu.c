@@ -1,4 +1,4 @@
-// chuanfu.c 船夫
+// chuanfu.c 船伕
 
 #include <ansi.h>
 
@@ -6,10 +6,10 @@ inherit NPC;
 
 void create()
 {
-        set_name("船夫", ({ "chuan fu", "fu" }));
+        set_name("船伕", ({ "chuan fu", "fu" }));
         set("gender", "男性");
         set("age", 36);
-        set("long", "這是一個鬆花江上的船夫。飽經風霜的臉上"
+        set("long", "這是一個松花江上的船伕。飽經風霜的臉上"
                     "透出東北人的豪爽。\n");
 
         set("combat_exp", 10000);
@@ -32,9 +32,9 @@ int accept_object(object who, object ob)
 
         if( query("money_id", ob) && ob->value() >= 100 )
         {
-                message_vision("船夫對$N說：好！既然這位" + RANK_D->query_respect(who) +
+                message_vision("船伕對$N説：好！既然這位" + RANK_D->query_respect(who) +
                                "要過江，\n那我就送你上這條船吧！\n" , who);
-                message_vision("船夫讓大家上了船，一聲「起錨」船就張帆離岸了......\n", who);
+                message_vision("船伕讓大家上了船，一聲「起錨」船就張帆離岸了......\n", who);
                 obs = all_inventory(environment());
                 obs = filter_array(obs, (: $1 == $(who) || $1->is_character() &&
                                            $1->query_leader() == $(who) :));
@@ -45,7 +45,7 @@ int accept_object(object who, object ob)
                        return -1;
         } else  
         {
-                message_vision("船夫皺眉對$N說：就這點？怎麼也得一兩銀子吧！\n", who);
+                message_vision("船伕皺眉對$N説：就這點？怎麼也得一兩銀子吧！\n", who);
                 return 0;
         }
 }

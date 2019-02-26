@@ -12,7 +12,7 @@ int main(object me, string arg)
         string *skname;
 
         if (me->is_busy())
-                return notify_fail("你現在正忙著呢。\n");
+                return notify_fail("你現在正忙着呢。\n");
 
         if (! arg)
                 return notify_fail("指令格式：apprentice | bai [cancel]|<對象>\n");

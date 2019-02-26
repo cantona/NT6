@@ -9,7 +9,7 @@
         整數 valid_override( 字串 檔案, 字串 外部函式名, 字串 主檔案 );
 用法：
         file 是該呼叫實際上所處的檔案；mainfile 是欲編譯的檔案〈因為
-        #include 的關系，兩者可能會不同〉。
+        #include 的關係，兩者可能會不同〉。
 
         在主宰物件 (master.c) 中加上 valid_override() 可以控制 efun:: 這種
         前置語法 (prefix) 的用途。每次當驅動程式嘗試編譯前面加上 efun:: 的
@@ -22,8 +22,8 @@
 
         int valid_override(string file, string efun) { return 1; }
 
-        底下是一個限制較多的 valid_override() 范例：
-        〈譯按：本范例與 21 版並無不同，但是目前已多了 mainfile 參數〉
+        底下是一個限制較多的 valid_override() 範例：
+        〈譯按：本範例與 21 版並無不同，但是目前已多了 mainfile 參數〉
 
         int valid_override( string file, string name )
         {

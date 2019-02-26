@@ -25,7 +25,7 @@ void create()
         NPC_D->init_npc_skill(this_object(), 7 + random(2));
         set("gender", "男性" );
         set("age", 30 + random(30));
-        set("long", "這是看護莊園的守衛，看上去似乎身懷絕技。\n");
+        set("long", "這是看護莊園的守衞，看上去似乎身懷絕技。\n");
         set("attitude", "friendly");
 
         set("max_qi", 4800);
@@ -95,9 +95,9 @@ int accept_kill(object ob)
 {
         if (is_owner(ob))
         {
-                message_vision("$N一聲長嘆，道：“既然主人不留我了，罷"
+                message_vision("$N一聲長歎，道：“既然主人不留我了，罷"
                                "罷罷！合則留，不合則去！我走了。”\n"
-                               "說罷，$N一揚手，切下一角衣抉，飄然而去。\n",
+                               "説罷，$N一揚手，切下一角衣抉，飄然而去。\n",
                                this_object(), ob);
                 destruct(this_object());
                 return 0;

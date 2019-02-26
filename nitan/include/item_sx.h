@@ -33,7 +33,7 @@ nosave mapping weapon_shuxing = ([
 ]);
 
 nosave mapping armor_shuxing = ([
-"armor"         : "物理防御",
+"armor"         : "物理防禦",
 "str"      : "臂力",
 "int"  : "悟性",
 "con"  : "根骨",

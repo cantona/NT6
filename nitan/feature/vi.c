@@ -4,7 +4,7 @@
  * port to chinese wizard group : /feature/vi.c by ken@chinesemud.net (99-3-15) 
  */ 
  
-#include <ansi.h>                       // 定義 ANSI/VT100 終端機的逸脫碼 
+#include <ansi.h>                       // 定義 ANSI/VT100 終端機的逸脱碼 
  
 #define ECHO 0                          // 讀取輸入時要顯示字元 
 #define HIDE 1                          // 讀取輸入時不顯示字元 
@@ -142,7 +142,7 @@ void start_edit(string file)                // 呼叫編輯器，開始編輯
                 get_char("_input", HIDE, this_player()); 
         } 
         else 
-        {        // 第一次使用編輯器，先看功能說明 
+        {        // 第一次使用編輯器，先看功能説明 
                 this_player()->set_temp("no_me_help", 1); 
                 _help(this_player()); 
         } 
@@ -223,7 +223,7 @@ protected void _input(string str, object pl, int fresh) // 讀得輸入字串
         } 
         if (str[0] == 27) 
         { 
-                chars = explode(str, ESC);      // 逸脫碼的字串，以 ESC 斷開 
+                chars = explode(str, ESC);      // 逸脱碼的字串，以 ESC 斷開 
                 for (i=sizeof(chars)-1; i>=0; i--) 
                         chars[i] = ESC + chars[i];      // 加回 ESC 
                 if (sizeof(chars) == 0)                 // 若只是單一字元 ESC 
@@ -233,7 +233,7 @@ protected void _input(string str, object pl, int fresh) // 讀得輸入字串
  
         size = sizeof(chars); 
         for (i=0; i<size; i++) 
-        {        // 轉換逸脫碼為編輯器內碼 
+        {        // 轉換逸脱碼為編輯器內碼 
                 switch (chars[i]) 
                 { 
                 case "\t":       me["sChar"] = "TAB";   break; 
@@ -326,7 +326,7 @@ private int _dispatcher(object pl)                // 分派指令到不同函式
                         me["sChar"] = 
                         me["keymap"][me["sChar"]]; 
                 if (!stringp(me["sChar"])) return 1; // Type checking... 
-                // 檢查是數字的話，就是附加到命令計數裡 
+                // 檢查是數字的話，就是附加到命令計數裏 
                 if ('0'<=me["sChar"][0] && me["sChar"][0]<='9') 
                         me["sCount"] += me["sChar"]; 
                 else 
@@ -625,12 +625,12 @@ protected void _goto_line_done(string str, object pl, int rein) // 取得行號
  
         me["iCol"] = 1; 
         if (me["iS_Row"]<=no && no<=me["iE_Row"]) 
-        {        // 指定行號在原可視范圍中 
+        {        // 指定行號在原可視範圍中 
                 me["iRow"] = no-me["iS_Row"]+1; 
                 _refresh_status(pl); 
         } 
         else 
-        {        // 指定行號不在原可視范圍中，需要重繪畫面 
+        {        // 指定行號不在原可視範圍中，需要重繪畫面 
                 me["iS_Row"] = no-11; 
                 if (me["iS_Row"] < 1)        me["iS_Row"] = 1; 
                 if (me["iE_Row"] < no+11)        me["iE_Row"] = no+11; 
@@ -877,7 +877,7 @@ private void _page_down(object pl)        // 往下卷一頁（22 行）
 { 
         mapping me=pl->query_temp("me"); 
  
-        if (me["iS_Row"]+22 > sizeof(me["sText"])) return; // 檢查是否不能再卷了 
+        if (me["iS_Row"]+22 > sizeof(me["sText"])) return; // 檢查是否不能再捲了 
         me["iS_Row"] += 22;        me["iE_Row"] += 22; 
         // 檢查遊標的新位置是否超過檔尾 
         if (me["iS_Row"]+me["iRow"]-1 > sizeof(me["sText"])) 
@@ -894,9 +894,9 @@ private void _page_up(object pl)        // 往上卷一頁（22 行）
 { 
         mapping me=pl->query_temp("me"); 
  
-        if (me["iS_Row"] <= 1) return; // 檢查是否不能再卷了 
+        if (me["iS_Row"] <= 1) return; // 檢查是否不能再捲了 
         me["iS_Row"] -= 22; 
-        if (me["iS_Row"] < 1) me["iS_Row"] = 1; // 最多只能翻到第一列 
+        if (me["iS_Row"] < 1) me["iS_Row"] = 1; // 最多隻能翻到第一列 
         _refresh_screen(pl, me["iS_Row"], me["iE_Row"], me["iS_Col"]); 
         // 若遊標的新位置超過行尾，則移動遊標到行尾 
         if (me["iS_Col"]+me["iCol"]-1 > 

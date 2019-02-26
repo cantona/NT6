@@ -6,7 +6,7 @@ void create()
 {
         set_name("麥鯨", ({ "mai jing", "mai", "jing" }) );
         set("long",
-                  "這是巨鯨幫幫主麥鯨，身高七尺，滿面\n紮須，相貌很是威猛。\n");
+                  "這是巨鯨幫幫主麥鯨，身高七尺，滿面\n扎須，相貌很是威猛。\n");
         set("attitude", "heroism");
         set("title", WHT "巨鯨幫幫主" NOR);
         set("age", 47);
@@ -47,7 +47,7 @@ int accept_kill(object who)
 
 int accept_ansuan(object who)
 {
-        return notify_fail("你剛想暗算，可是只見會場裡黑壓壓的擠滿了人，根本看不清楚。\n");
+        return notify_fail("你剛想暗算，可是隻見會場裏黑壓壓的擠滿了人，根本看不清楚。\n");
 }
 
 int begin()
@@ -74,7 +74,7 @@ void die()
 {
         if (objectp(query("anti")))
         {
-                message_vision(HIR"\n\n$N掙紮了兩下，一口氣沒接上，倒在地上一動不動了。\n"NOR,this_object());
+                message_vision(HIR"\n\n$N掙扎了兩下，一口氣沒接上，倒在地上一動不動了。\n"NOR,this_object());
                 set_temp("win_mai", 1, query("anti"));
                 delete_temp("bi", query("anti"));
                 query("anti")->apply_condition("nishui",0);
@@ -86,7 +86,7 @@ void unconcious()
 {
         if (objectp(query("anti")))
         {
-                message_vision(HIR"\n\n$N掙紮了兩下，一口氣沒接上，倒在地上一動不動了。\n"NOR,this_object());
+                message_vision(HIR"\n\n$N掙扎了兩下，一口氣沒接上，倒在地上一動不動了。\n"NOR,this_object());
                 set_temp("win_mai", 1, query("anti"));
                 delete_temp("bi", query("anti"));
                 query("anti")->apply_condition("nishui",0);
@@ -125,7 +125,7 @@ int do_get(string arg)
                 message_vision(CYN "$N正色道：這位英雄請了！\n" NOR,
                                    obj);
 
-                message_vision(CYN "$N說道：屠龍寶刀乃不世之寶，要得此刀，需過(bi)了我這關！\n" NOR,
+                message_vision(CYN "$N説道：屠龍寶刀乃不世之寶，要得此刀，需過(bi)了我這關！\n" NOR,
                                    obj);
 
                 delete_temp("bi", this_player());

@@ -21,7 +21,7 @@ void create()
         seteuid(getuid());
         set("title", color_title[random(sizeof(color_title))]);
         set("gender", "男性");
-        set("long", "這人身穿黑色緊裝，面上蒙著一塊黑布，只露出一雙眼睛，精光四射。\n");
+        set("long", "這人身穿黑色緊裝，面上蒙着一塊黑布，只露出一雙眼睛，精光四射。\n");
         set("age", random(20)+25);      
         set("str", 20+random(5));
         set("int",20+random(5));  

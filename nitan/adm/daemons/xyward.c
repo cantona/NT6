@@ -43,20 +43,20 @@
 // 增加蒙古兵時間間隔
 #define ADD_MGB_WAIT     120
 
-// 測試標志
+// 測試標誌
 #define TEST             0
 
-// 是否允許開放標志
+// 是否允許開放標誌
 #define ALLOW_START      1
 
 inherit F_DBASE;
 
 int status = 0;                // 襄陽戰狀態
-int start_status = 0;          // 系統狀態，1 表明開始，則不再重復調用
-int sign_up_status = 0;        // 報名標志
+int start_status = 0;          // 系統狀態，1 表明開始，則不再重複調用
+int sign_up_status = 0;        // 報名標誌
 string *p = ({});             // 參加襄陽戰的玩家物件列表
 
-int start_time = 0;           // 襄陽保衛戰開始時間
+int start_time = 0;           // 襄陽保衞戰開始時間
 int attack_time = 0;          // 蒙古人開始攻城時間
         
 int tiemuzhen = 0;            // 本次是否出現鐵木真
@@ -72,7 +72,7 @@ int query_add_mgb_times(){return add_mgb_times;}
 
 int last_add_mgb_time = 0; // 上次增援蒙古兵時間
 int last_combat_change_time = 0; // 上次調整戰術的時間
-int add_xyb_flag = 0; // 增派襄陽士兵標志
+int add_xyb_flag = 0; // 增派襄陽士兵標誌
 
 public int query_add_xyb_flag(){return add_xyb_flag;}
 
@@ -81,17 +81,17 @@ string xy_msg1 = "----";
 string query_xy_msg1(){return xy_msg1;}
 
 // 1 為襄陽  2 為蒙古
-int who_win; // 襄陽保衛戰誰勝利
+int who_win; // 襄陽保衞戰誰勝利
 
-// 襄陽保衛戰序列號 RAN_NUM
-// 該序列號在每次開始前隨機產生，作用是標注本次襄陽保衛戰鬥的唯一性
+// 襄陽保衞戰序列號 RAN_NUM
+// 該序列號在每次開始前隨機產生，作用是標註本次襄陽保衞戰鬥的唯一性
 // 每殺死一個蒙古並則做設置 /xywar/RAN_NUM/point, point根據殺死的蒙古兵等級來設置
 int RAN_NUM = 0;
 
 public int get_who_win(){return who_win;}
 public int set_who_win(int who){who_win = who;} 
 public void player_die(string id);
-public int get_ran_num(){return RAN_NUM;} // 獲取本次襄陽保衛戰序列號
+public int get_ran_num(){return RAN_NUM;} // 獲取本次襄陽保衞戰序列號
 
 object xy_guojing; // 郭靖
 int guojing_moved = 0; // 郭靖是否已經與蒙古人交戰
@@ -113,7 +113,7 @@ int die_xywar(object me)
 {
         me->delete_override("die");
 
-        // 保衛戰已經結束則沒有死亡保護
+        // 保衞戰已經結束則沒有死亡保護
         if (status == THEEND)return 0;
         
         me->move("d/city/wumiao");
@@ -125,7 +125,7 @@ int die_xywar(object me)
         me->set("jingli", me->query("max_jingli"));        
 
         me->revive();
-        tell_object(me, BLINK + HIG "你已經退出襄陽保衛戰！\n" NOR);
+        tell_object(me, BLINK + HIG "你已經退出襄陽保衞戰！\n" NOR);
         player_die(me->query("id"));
         
         me->save();
@@ -169,7 +169,7 @@ void clear_junying()
         XYWAR_D->xywar_message(HIW "蒙古軍營清理完畢！\n" NOR);
 }
 
-// 設置報名參加襄陽保衛戰的玩家免除死亡
+// 設置報名參加襄陽保衞戰的玩家免除死亡
 void set_no_die(object me)
 {
         me->set_override("die", (: call_other, __FILE__, "die_xywar", me:));
@@ -288,20 +288,20 @@ public string re_poision(string p)
 void xywar_over()
 {
         status = THEEND;
-        xywar_message(HIR "提示：本次襄陽保衛戰由于報名人數不足，宣告結束。\n" NOR);
+        xywar_message(HIR "提示：本次襄陽保衞戰由於報名人數不足，宣告結束。\n" NOR);
         reset_data();           // 襄陽戰結束後重新設置數據
 
         return;
 }
 
-// 保衛戰失敗
+// 保衞戰失敗
 // 蒙古勝利
 public void war_fail()
 {        
         who_win = 2;;
         
-        call_out("xywar_message", 4, HIY "本次襄陽保衛戰以殘敗收場，蒙古人長驅直入，佔領了襄陽，從此生靈塗炭，民不聊生 ……！\n");
-        call_out("xywar_message", 5, HIY "而參與那次慘烈的襄陽保衛戰的義士們卻永遠不會被後人所遺忘！\n");
+        call_out("xywar_message", 4, HIY "本次襄陽保衞戰以殘敗收場，蒙古人長驅直入，佔領了襄陽，從此生靈塗炭，民不聊生 ……！\n");
+        call_out("xywar_message", 5, HIY "而參與那次慘烈的襄陽保衞戰的義士們卻永遠不會被後人所遺忘！\n");
 
         set_now_status(THEEND);
 
@@ -318,7 +318,7 @@ void gift_to_player()
         
         n = sizeof(p);
         
-        // 將本次襄陽保衛戰序列號轉化為字串
+        // 將本次襄陽保衞戰序列號轉化為字串
         str_ran_num = sprintf("%d", RAN_NUM);
         
         for (i = 0; i < n; i ++)
@@ -339,7 +339,7 @@ void gift_to_player()
                                            "weiwang"  : GIFT_WEI_BASE + dob->query("xywar/xy_" + str_ran_num) / 20,
                                            "score"    : GIFT_YUE_BASE + dob->query("xywar/xy_" + str_ran_num) / 20,
                                            "mar"      : GIFT_MAR_BASE + dob->query("xywar/xy_" + str_ran_num) / 20,
-                                           "prompt"   : "你在襄陽保衛戰勝利後"]), 999);
+                                           "prompt"   : "你在襄陽保衞戰勝利後"]), 999);
                         dob->delete("xywar/xy_" + str_ran_num);
                 }
                 else
@@ -350,7 +350,7 @@ void gift_to_player()
                                            "weiwang"  : GIFT_WEI_BASE,
                                            "score"    : GIFT_YUE_BASE,
                                            "mar"      : GIFT_MAR_BASE,
-                                           "prompt"   : "你在襄陽保衛戰勝利後"]), 999);                                         
+                                           "prompt"   : "你在襄陽保衞戰勝利後"]), 999);                                         
                 }
                 dob->save();
 
@@ -363,7 +363,7 @@ void gift_to_player()
                                            "weiwang"  : GIFT_WEI_BASE + random(GIFT_WEI_BASE / 2),                               
                                            "score"    : GIFT_YUE_BASE + random(GIFT_YUE_BASE / 2),  
                                            "mar"      : GIFT_MAR_BASE + random(GIFT_MAR_BASE / 2),                           
-                                           "prompt"   : "你在襄陽保衛戰勝利後"]), 999);
+                                           "prompt"   : "你在襄陽保衞戰勝利後"]), 999);
                 else
                         GIFT_D->delay_bonus(dob,                                              
                                         ([ "exp"      : GIFT_EXP_BASE / 2 + random(GIFT_EXP_BASE / 3),                                           
@@ -371,13 +371,13 @@ void gift_to_player()
                                            "weiwang"  : GIFT_WEI_BASE / 2 + random(GIFT_WEI_BASE / 3),                               
                                            "score"    : GIFT_YUE_BASE / 2 + random(GIFT_YUE_BASE / 3),  
                                            "mar"      : GIFT_MAR_BASE / 2 + random(GIFT_MAR_BASE / 3),                           
-                                           "prompt"   : "你在襄陽保衛戰勝利後"]), 999);                                                           
+                                           "prompt"   : "你在襄陽保衞戰勝利後"]), 999);                                                           
          */
         }
         
 }
 
-// 保衛戰勝利
+// 保衞戰勝利
 // 襄陽勝利
 // 獎勵所有參戰玩家
 public void war_win()
@@ -388,7 +388,7 @@ public void war_win()
         
         set_now_status(THEEND);
         
-        call_out("xywar_message", 4, HIW "由于襄陽守軍及玩家地奮力抵抗，終于擊退了蒙古軍，襄陽保衛戰勝利！\n");
+        call_out("xywar_message", 4, HIW "由於襄陽守軍及玩家地奮力抵抗，終於擊退了蒙古軍，襄陽保衞戰勝利！\n");
 
         return;
 }
@@ -400,18 +400,18 @@ void arrived_center()
 
         war_fail();
 
-        xywar_message(HIR "蒙古人已佔領襄陽中央廣場，本次襄陽保衛戰以襄陽失陷告終！\n" NOR);                
+        xywar_message(HIR "蒙古人已佔領襄陽中央廣場，本次襄陽保衞戰以襄陽失陷告終！\n" NOR);                
         
 }
 
-// 由于報名玩家剩余不到五名，戰鬥失敗
+// 由於報名玩家剩餘不到五名，戰鬥失敗
 void war_end_player()
 {
         if (status == THEEND)return;
                 
-        xywar_message(HIR "由于參與襄陽保衛戰的玩家已剩余不到五名，難以繼續抵抗蒙古人的攻勢。" NOR);
+        xywar_message(HIR "由於參與襄陽保衞戰的玩家已剩餘不到五名，難以繼續抵抗蒙古人的攻勢。" NOR);
         xywar_message(HIR "蒙古人長驅直入，佔領了襄陽，從此生靈塗炭，民不聊生 ……" NOR);
-        xywar_message(HIR "而參與那次慘烈的襄陽保衛戰的義士們卻永遠不會被後人所遺忘！\n" NOR);
+        xywar_message(HIR "而參與那次慘烈的襄陽保衞戰的義士們卻永遠不會被後人所遺忘！\n" NOR);
         
         set_now_status(THEEND);
                 
@@ -559,8 +559,8 @@ string max_min_n_soldier(string keys)
 
 }
 
-// 蒙古士兵死亡通告，用于系統判斷每組軍隊數量
-// 襄陽士兵通告，用于系統判斷襄陽士兵總數量
+// 蒙古士兵死亡通告，用於系統判斷每組軍隊數量
+// 襄陽士兵通告，用於系統判斷襄陽士兵總數量
 void soldier_die(string route, int which)
 {
         if (route == "xiangyang") // 襄陽士兵死亡
@@ -601,7 +601,7 @@ int is_guojing_die()
 // 郭靖死亡後所有襄陽士兵自動撤退
 void guojing_die()
 {
-        is_guojing_died = 1; // 標志郭靖已死亡
+        is_guojing_died = 1; // 標誌郭靖已死亡
 }
 
 // 報名參加襄陽戰
@@ -631,7 +631,7 @@ int if_sign_up(string id)
         return 0;
 }
 
-// 外部調用，玩家死亡後從襄陽保衛站報名中刪除
+// 外部調用，玩家死亡後從襄陽保衞站報名中刪除
 public void player_die(string id)
 {
         if (! stringp(id))return;
@@ -687,20 +687,20 @@ void set_now_status(int flag)
         if (flag == THEEND)
         {
                 status = THEEND;
-                call_out("xywar_message", 10, HIG "本次襄陽保衛戰已結束，系統將于1分鐘內釋放資源，襄陽恢復平靜。");
+                call_out("xywar_message", 10, HIG "本次襄陽保衞戰已結束，系統將於1分鐘內釋放資源，襄陽恢復平靜。");
                 reset_data(); // 初始化所有數據
         }
 
         status = flag;
 }
 
-// 報名標志，1=可以報名  0=不可以報名
+// 報名標誌，1=可以報名  0=不可以報名
 int sign_up_status(){return sign_up_status;}
 
-// 設置報名標志
+// 設置報名標誌
 void set_sign_up_status(int flag){sign_up_status = flag;}
 
-// 退兵標志
+// 退兵標誌
 int dest_status()
 {
         if (status == THEEND)
@@ -764,14 +764,14 @@ void check_time()
         remove_call_out("check_time");
         call_out("check_time", 15);
 
-        // 如果發現戰鬥開始標志
+        // 如果發現戰鬥開始標誌
         if (start_status)return;
 
-        // 1小時內不能重復自動啟動
+        // 1小時內不能重複自動啟動
         if (time() - DB_D->query_data("xywar/last_auto_start") < 36000)
                 return;
                 
-        // 檢查是否到了啟動時間，如果是則設置開始標志
+        // 檢查是否到了啟動時間，如果是則設置開始標誌
         // 返回北京時間 (年:月:日:時:分:秒)
         bjtime1 = MEMBER_D->bjtime(time(), 0);
         str_bjtime = explode(bjtime1, ":");
@@ -783,12 +783,12 @@ void check_time()
                         DB_D->set_data("xywar/start", 1);
         }
 
-        // 檢查開始標志，並啟動
+        // 檢查開始標誌，並啟動
         if (DB_D->query_data("xywar/start"))
         {                
                 DB_D->set_data("xywar/start", 0);
                 DB_D->set_data("xywar/last_auto_start", time());
-                log_file("xywar", "xywar 于 " + ctime(time()) + " 自動啟動！\n");
+                log_file("xywar", "xywar 於 " + ctime(time()) + " 自動啟動！\n");
                 start_xywar();
         }
 }
@@ -810,7 +810,7 @@ void create()
         call_out("check_combatd", 30); // 戰鬥戰術系統總控函數
 }
 
-// 戰鬥戰術系統總控文件，用于控制蒙古軍隊戰術軍隊調整
+// 戰鬥戰術系統總控文件，用於控制蒙古軍隊戰術軍隊調整
 void check_combatd()
 {
                 int total, w, e, s, n;
@@ -841,9 +841,9 @@ void check_combatd()
                         if (! is_guojing_die())
                         {
                                 xywar_message(HIW "郭靖：好，既然如此，我郭某誓與襄陽共存亡 ……" NOR);
-                                xywar_message(HIR "聽說郭靖親自上陣，與蒙古人決一死戰。\n" NOR);
+                                xywar_message(HIR "聽説郭靖親自上陣，與蒙古人決一死戰。\n" NOR);
                                 
-                                call_out("xywar_message", 2, HIY "蒙古將領：蒙古勇士們向前沖啊，宋軍已經潰不成軍了。\n");
+                                call_out("xywar_message", 2, HIY "蒙古將領：蒙古勇士們向前衝啊，宋軍已經潰不成軍了。\n");
 
                                 // 將guojing 移動到蒙古人最多的地方
                                 if (objectp(xy_guojing))
@@ -854,7 +854,7 @@ void check_combatd()
                                         // 設置移動方向
                                         xy_guojing->set("route", re_poision(max_route));
 
-                                        // 已經移動標志
+                                        // 已經移動標誌
                                         guojing_moved = 1;                                        
                                 }
                         }
@@ -865,7 +865,7 @@ void check_combatd()
                 */
                 if (status == WARRING || (status == WAIT_START && total_menggu_soldier("total") < 120))
                 {
-                        // 1.  蒙古軍隊數量少于80時派兵增援
+                        // 1.  蒙古軍隊數量少於80時派兵增援
                         if (add_mgb_times < ADD_MGB_TIMES &&
                                time() - last_add_mgb_time >= ADD_MGB_WAIT &&
                                (status == WARRING || status == WAIT_START) &&
@@ -907,7 +907,7 @@ void check_combatd()
                                 return;
                         }
                         
-                        // 防御30分鐘則代表襄陽勝利
+                        // 防禦30分鐘則代表襄陽勝利
                         if (time() - attack_time > 1800)
                         {
                                 xywar_message(HIG "郭靖：襄陽城經過眾多玩家及將士的努力，已經堅守超過30分鐘");
@@ -925,8 +925,8 @@ void check_combatd()
                                 switch(random(10))
                                 {
                                         case 0:
-                                                xywar_message("郭靖：蒙古人正在調配軍隊，請保衛襄陽的義士做好相關準備，隨時備戰。");
-                                                xywar_message("黃蓉：各位守城玩家請各自分配好任務，準備隨時迎擊蒙古軍，誓死保衛襄陽。\n");
+                                                xywar_message("郭靖：蒙古人正在調配軍隊，請保衞襄陽的義士做好相關準備，隨時備戰。");
+                                                xywar_message("黃蓉：各位守城玩家請各自分配好任務，準備隨時迎擊蒙古軍，誓死保衞襄陽。\n");
                                                 break;
                                         case 1:
                                                 xywar_message("郭靖：蒙古的千夫長在從軍前都是一代成名的武學宗師，萬萬不可輕視。");
@@ -939,11 +939,11 @@ void check_combatd()
                                                 xywar_message("蒙古探子：襄陽城內突然集聚了大量江湖人士，看來他們想死守城池。");
                                                 if (tiemuzhen)dj_name = "成吉思汗";
                                                 else dj_name = "蒙古將領";
-                                                xywar_message(dj_name + "：哼，兩軍交鋒豈同江湖撕鬥，一群烏合之眾必將死于亂箭之下。\n");                                        
+                                                xywar_message(dj_name + "：哼，兩軍交鋒豈同江湖撕鬥，一羣烏合之眾必將死於亂箭之下。\n");                                        
                                                 break;                
                                         case 3:
                                                 xywar_message("黃蓉：參戰的玩家在殺死任意蒙古人後都會獲得一定的經驗和潛能獎勵。");
-                                                xywar_message("黃蓉：如果襄陽保衛戰勝利則所有參戰玩家（不包括中途退出的）都將獲得豐富的獎勵\n");
+                                                xywar_message("黃蓉：如果襄陽保衞戰勝利則所有參戰玩家（不包括中途退出的）都將獲得豐富的獎勵\n");
                                                 break;
                                         case 4:
                                                 xywar_message("黃蓉：在對抗蒙古人時系統會自動關閉參戰玩家的戰鬥信息，中途切勿打開，以免影響遊戲速度。\n");
@@ -953,31 +953,31 @@ void check_combatd()
                                                 xywar_message("黃蓉：玩家將領請根據雙方戰鬥狀況隨時做出戰略調整，指揮各參戰玩家抵抗蒙古人進攻。\n");                                                
                                                 break;
                                         case 6:
-                                                xywar_message("郭靖：玩家將領可在本次襄陽保衛戰中使用一次兵符，使用後可增加120名襄陽守軍。");
+                                                xywar_message("郭靖：玩家將領可在本次襄陽保衞戰中使用一次兵符，使用後可增加120名襄陽守軍。");
                                                 xywar_message("郭靖：使用兵符的指令是 " HIY "xy add xyb " HIC "。\n");
                                                 break;
                                         case 7:
-                                                xywar_message("郭靖：一旦玩家與蒙古人對面，蒙古人則會自動叫殺，佩帶隱身符則可隱身于蒙古人中，不被主動攻擊。\n");
+                                                xywar_message("郭靖：一旦玩家與蒙古人對面，蒙古人則會自動叫殺，佩帶隱身符則可隱身於蒙古人中，不被主動攻擊。\n");
                                                 break;
                                         case 8:
                                                 if (tiemuzhen)
                                                 {
-                                                        xywar_message("郭靖：郭某自幼跟隨大汗鐵木真馳騁大漠，彎弓射雕，不想今日卻對戰沙場。");
-                                                        xywar_message("郭靖：不過國難當頭，蒙古人殺掠成性，今日郭某將誓死保衛我大宋江山，死守襄陽。");
+                                                        xywar_message("郭靖：郭某自幼跟隨大汗鐵木真馳騁大漠，彎弓射鵰，不想今日卻對戰沙場。");
+                                                        xywar_message("郭靖：不過國難當頭，蒙古人殺掠成性，今日郭某將誓死保衞我大宋江山，死守襄陽。");
                                                         xywar_message("郭靖：參戰玩家可選出數名高手偷襲蒙古軍營，只要殺死成吉思汗鐵木真蒙古人便不攻自破。\n");
                                                         break;
                                                 }
-                                                xywar_message("郭靖：郭某自幼跟隨大汗鐵木真馳騁大漠，與蒙古哲別彎弓射雕，不想今日卻對戰沙場。");
-                                                xywar_message("郭靖：不過國難當頭，蒙古人殺掠成性，今日郭某將誓死保衛我大宋江山，死守襄陽。");
+                                                xywar_message("郭靖：郭某自幼跟隨大汗鐵木真馳騁大漠，與蒙古哲別彎弓射鵰，不想今日卻對戰沙場。");
+                                                xywar_message("郭靖：不過國難當頭，蒙古人殺掠成性，今日郭某將誓死保衞我大宋江山，死守襄陽。");
                                                 xywar_message("郭靖：蒙古哲別在蒙古語中為“神射手”，其箭法精準，切忌不可輕視。");
                                                 xywar_message("郭靖：如果可能玩家在集中優勢兵力解決千夫長後應集中全力將哲別消滅。\n");
                                                 break;
                                         case 9:
-                                                xywar_message("襄陽城四周已經彌漫著濃烈的硝煙味，城民早已各自收拾細軟，隨時準備趁亂逃命，場面一片混亂。");
+                                                xywar_message("襄陽城四周已經瀰漫着濃烈的硝煙味，城民早已各自收拾細軟，隨時準備趁亂逃命，場面一片混亂。");
                                                 break;
                                         default:
                                                 xywar_message(HIW "蒙古軍士：三軍已集合完畢，糧草輜重、刀槍箭矢已點算完畢，隨時可以開戰。" NOR);
-                                                xywar_message(HIY "襄陽軍士：我軍已集合完畢，四城門均要道均已有重兵把守，我軍誓于蒙古人周旋到底。\n" NOR);
+                                                xywar_message(HIY "襄陽軍士：我軍已集合完畢，四城門均要道均已有重兵把守，我軍誓於蒙古人周旋到底。\n" NOR);
                                                 
                                                 break;                                                                                                                                
                                 }
@@ -998,23 +998,23 @@ void reset_data()
             p = ({});                 // 參加襄陽戰的玩家物件列表
         status = THEEND;          // 襄陽戰狀態
         start_status = 0;         // 系統狀態 恢復到未開始狀態
-        sign_up_status = 0;       // 報名標志
+        sign_up_status = 0;       // 報名標誌
             tiemuzhen = 0;            // 本次是否出現鐵木真
         n_mg_tq = 0;
         n_mg_zb = 0;
         n_mg_gb = 0;
         n_mg_bb = 0;              // 騎兵、哲別、弓兵、步兵數量
         n_xy_sb = 0;              // 襄陽士兵數量        
-        is_guojing_died = 0;      // 郭靖是否死亡標志
+        is_guojing_died = 0;      // 郭靖是否死亡標誌
 
         add_mgb_times = 0;             // 增援蒙古兵次數
-        add_xyb_flag = 0;              // 增援襄陽士兵次數標志
+        add_xyb_flag = 0;              // 增援襄陽士兵次數標誌
         last_add_mgb_time = 0;         // 上次增援蒙古兵時間
         guojing_moved = 0;             // 郭靖是否已經與蒙古人交戰
         xysb_poision = "襄陽城內四周"; // 襄陽守軍駐紮地
         player_leader = "";            // 玩家將領的ID
         last_move_xysolder = 0;        // 上次調動襄陽守軍的時間
-        start_time = 0;                // 襄陽保衛戰開始時間
+        start_time = 0;                // 襄陽保衞戰開始時間
         attack_time = 0;               // 蒙古人開始攻城時間
         who_win = 0;                   // 誰勝利
         xy_msg1 = "----";              // 襄陽增援消息，楊過等
@@ -1067,27 +1067,27 @@ void do_combatd_message(int i)
                         break;
                 //
                 case 4:
-                        xywar_message("郭靖：請報名參加襄陽保衛戰的玩家自行組織，守住四大門路口，防止蒙古人攻入襄陽中央廣場。");
+                        xywar_message("郭靖：請報名參加襄陽保衞戰的玩家自行組織，守住四大門路口，防止蒙古人攻入襄陽中央廣場。");
                         break;
                 //
                 case 5:
                         xywar_message("宋軍探子：蒙古軍隊已開始進行調動，隨時會有所行動。");
                         break;
                 case 6:
-                        xywar_message(dj_name + "：傳我號令，全軍于３０秒後開始進攻襄陽城。");
-                        xywar_message(HIR "蒙古人于30秒後開始進攻襄陽城，請注意守好相關路口。" NOR);
+                        xywar_message(dj_name + "：傳我號令，全軍於３０秒後開始進攻襄陽城。");
+                        xywar_message(HIR "蒙古人於30秒後開始進攻襄陽城，請注意守好相關路口。" NOR);
                         xywar_message(HIY "戰鬥中請使用指令 " HIR "xy" HIY " 隨時查看戰況詳情。" NOR);
                         if (tiemuzhen)
                         {
                                 xywar_message(HIG "勝利條件：1、殺死成吉思汗\t       " HIM "失敗條件：1、蒙古人佔領襄陽中央廣場\n" HIG
-                                              "\t              2、防守蒙古人攻擊30分鐘\t         " HIM "2、所有參加襄陽保衛戰的玩家剩余不到五名\n" HIG
+                                              "\t              2、防守蒙古人攻擊30分鐘\t         " HIM "2、所有參加襄陽保衞戰的玩家剩餘不到五名\n" HIG
                                               "\t              3、全部殲滅蒙古人\n" 
                                               HIG "\t              4、蒙古人退兵\n" NOR);
                         }
                         else
                         {
                                 xywar_message(HIG "勝利條件：1、防守蒙古人攻擊30分鐘\t       " HIM "失敗條件：1、蒙古人佔領襄陽中央廣場\n" HIG
-                                              "\t              2、全部殲滅蒙古人。\t       " HIM "          2、所有參加襄陽保衛戰的玩家剩余不到五名\n" 
+                                              "\t              2、全部殲滅蒙古人。\t       " HIM "          2、所有參加襄陽保衞戰的玩家剩餘不到五名\n" 
                                               HIG "\t              3、蒙古人退兵\n" NOR);                                
                         }
 
@@ -1096,7 +1096,7 @@ void do_combatd_message(int i)
                         call_out("do_attack", 30);
 
                         call_out("do_attack_msg", 22, HIM "城外發出漫天戰鼓之聲，蒙古軍士蠢蠢欲動。");
-                        call_out("do_attack_msg", 26, HIM "一聲犀利地號角聲響起，萬山雷動，卷起漫天狂沙，蒙古人軍隊已開始調動。");
+                        call_out("do_attack_msg", 26, HIM "一聲犀利地號角聲響起，萬山雷動，捲起漫天狂沙，蒙古人軍隊已開始調動。");
                         
                         return;
                         break;
@@ -1119,8 +1119,8 @@ void check_sign_up()
         // 停止報名
         sign_up_status = 0;
 
-        xywar_message(HIY "郭靖：各位江湖義士，很感謝大家的支持，現在停止報名，並公布我軍統計的報名人數！" NOR);
-        xywar_message(HIW "襄陽副將：本次總共有 " HIY + chinese_number(sizeof(p)) + HIW " 位玩家報名參加襄陽保衛戰！" NOR);
+        xywar_message(HIY "郭靖：各位江湖義士，很感謝大家的支持，現在停止報名，並公佈我軍統計的報名人數！" NOR);
+        xywar_message(HIW "襄陽副將：本次總共有 " HIY + chinese_number(sizeof(p)) + HIW " 位玩家報名參加襄陽保衞戰！" NOR);
 
         // 檢查離線玩家，從報名中刪除之
         sub_check_player();
@@ -1128,9 +1128,9 @@ void check_sign_up()
         // 參加人數過少，結束襄陽戰，蒙古人退兵
         if (sizeof(p) < 20 && ! TEST)
         {
-                status = 0; // 襄陽戰結束標志
+                status = 0; // 襄陽戰結束標誌
 
-                xywar_message("各位江湖義士，本次襄陽保衛戰報名人數不足20人，既然天意如此，也罷！\n");
+                xywar_message("各位江湖義士，本次襄陽保衞戰報名人數不足20人，既然天意如此，也罷！\n");
 
                 if (tiemuzhen)dj_name = "成吉思汗";
                 else dj_name = "大將軍";
@@ -1165,7 +1165,7 @@ void check_sign_up()
         if (objectp(ob))
         {
                 // 選擇玩家將領
-                xywar_message(HIG "本次襄陽保衛戰由" + HIY + ob->name() + "(" + ob->query("id") + ")" HIG 
+                xywar_message(HIG "本次襄陽保衞戰由" + HIY + ob->name() + "(" + ob->query("id") + ")" HIG 
                                  "擔任襄陽守軍將領，可以根據戰況調動襄陽守軍(xy xmove 方向)。\n");
         }
         
@@ -1244,7 +1244,7 @@ int init_soldier()
 {
         /**
         1、初始化郭靖
-        2、設置襄陽戰等待標志
+        2、設置襄陽戰等待標誌
         3、產生蒙古軍隊物件並移動到各自的位置
         4、產生襄陽士兵並分配到四個門
         **/        
@@ -1254,7 +1254,7 @@ int init_soldier()
         //int n_mg_tq, n_mg_zb, n_mg_bb, n_mg_gb, n_xy_sb;
         int i, n;
 
-        // 設置等待攻擊標志
+        // 設置等待攻擊標誌
         status = WAIT_START;
         
         xy_guojing = new(XYNPC + "guo");
@@ -1268,7 +1268,7 @@ int init_soldier()
         {
                 ob = new(XYNPC + "mgqianfuzhang");
                 
-                // 設置本次襄陽保衛戰的序列號
+                // 設置本次襄陽保衞戰的序列號
                 ob->set("ran_num", RAN_NUM);
                 
                 // 分配到四大門
@@ -1306,7 +1306,7 @@ int init_soldier()
         {
                 ob = new(XYNPC + "mgbaifuzhang");
                 
-                // 設置本次襄陽保衛戰的序列號
+                // 設置本次襄陽保衞戰的序列號
                 ob->set("ran_num", RAN_NUM);
                                 
                 // 分配到四大門
@@ -1343,7 +1343,7 @@ int init_soldier()
         {
                 ob = new(XYNPC + "mgfujiang");
                 
-                // 設置本次襄陽保衛戰的序列號
+                // 設置本次襄陽保衞戰的序列號
                 ob->set("ran_num", RAN_NUM);
                                 
                 // 分配到四大門
@@ -1383,7 +1383,7 @@ int init_soldier()
         {
                 ob = new(XYNPC + "mgqibing");
                 
-                // 設置本次襄陽保衛戰的序列號
+                // 設置本次襄陽保衞戰的序列號
                 ob->set("ran_num", RAN_NUM);
                                 
                 // 分配到四大門
@@ -1423,7 +1423,7 @@ int init_soldier()
         {
                 ob = new(XYNPC + "mgzhebie");
                 
-                // 設置本次襄陽保衛戰的序列號
+                // 設置本次襄陽保衞戰的序列號
                 ob->set("ran_num", RAN_NUM);
                                 
                 // 分配到四大門
@@ -1463,7 +1463,7 @@ int init_soldier()
         {
                 ob = new(XYNPC + "mggongbing");
                 
-                // 設置本次襄陽保衛戰的序列號
+                // 設置本次襄陽保衞戰的序列號
                 ob->set("ran_num", RAN_NUM);
                                 
                 // 分配到四大門
@@ -1503,7 +1503,7 @@ int init_soldier()
         {
                 ob = new(XYNPC + "mgbubing");
                 
-                // 設置本次襄陽保衛戰的序列號
+                // 設置本次襄陽保衞戰的序列號
                 ob->set("ran_num", RAN_NUM);
                                 
                 // 分配到四大門
@@ -1544,25 +1544,25 @@ int init_soldier()
                 ob = new(XYNPC + "mgbubing");
                 ob->set("route", re_route);
                 ob->move(doors[more_soldier_poision]);                
-                // 設置本次襄陽保衛戰的序列號
+                // 設置本次襄陽保衞戰的序列號
                 ob->set("ran_num", RAN_NUM);
 
                 ob = new(XYNPC + "mggongbing");
                 ob->set("route", re_route);
                 ob->move(doors[more_soldier_poision]);
-                // 設置本次襄陽保衛戰的序列號
+                // 設置本次襄陽保衞戰的序列號
                 ob->set("ran_num", RAN_NUM);
                                 
                 ob = new(XYNPC + "mgqibing");
                 ob->set("route", re_route);
                 ob->move(doors[more_soldier_poision]);
-                // 設置本次襄陽保衛戰的序列號
+                // 設置本次襄陽保衞戰的序列號
                 ob->set("ran_num", RAN_NUM);
                 
                 ob = new(XYNPC + "mgzhebie");
                 ob->set("route", re_route);
                 ob->move(doors[more_soldier_poision]);
-                // 設置本次襄陽保衛戰的序列號
+                // 設置本次襄陽保衞戰的序列號
                 ob->set("ran_num", RAN_NUM);                
         }
 
@@ -1619,14 +1619,14 @@ int init_soldier()
         {
                 mg_dj = new(XYNPC + "tiemuzhen");
                 mg_dj->move("/d/xiangyang/junying3");
-                // 設置本次襄陽保衛戰的序列號
+                // 設置本次襄陽保衞戰的序列號
                 mg_dj->set("ran_num", RAN_NUM);                
         }
         else
         {
                 mg_dj = new(XYNPC + "mgdajiang");
                 mg_dj->move("/d/xiangyang/junying3");
-                // 設置本次襄陽保衛戰的序列號
+                // 設置本次襄陽保衞戰的序列號
                 mg_dj->set("ran_num", RAN_NUM);                
         }
 
@@ -1635,7 +1635,7 @@ int init_soldier()
         {
                 ob = new(XYNPC + "mgqianfuzhang");
                 ob->move(environment(mg_dj));
-                // 設置本次襄陽保衛戰的序列號
+                // 設置本次襄陽保衞戰的序列號
                 ob->set("ran_num", RAN_NUM);
                                 
                 if (tiemuzhen)                
@@ -1653,7 +1653,7 @@ int init_soldier()
                         ob = new(XYNPC + "mgqianfuzhang");
                         ob->move(environment(mg_dj));
                         ob->force_me("guard tie muzhen");
-                        // 設置本次襄陽保衛戰的序列號
+                        // 設置本次襄陽保衞戰的序列號
                         ob->set("ran_num", RAN_NUM);                        
                 }
                                 
@@ -1662,18 +1662,18 @@ int init_soldier()
                         ob = new(XYNPC + "mgfujiang");
                         ob->move(environment(mg_dj));
                         ob->force_me("guard tie muzhen");
-                        // 設置本次襄陽保衛戰的序列號
+                        // 設置本次襄陽保衞戰的序列號
                         ob->set("ran_num", RAN_NUM);                        
                 }
                 
-                // 要設置不計算士兵數量標志
+                // 要設置不計算士兵數量標誌
                 for (i = 0; i < 20; i ++ )
                 {
                         ob = new(XYNPC + "mgqibing");
                         ob->set("no_total", 1);
                         ob->move(environment(mg_dj));
                         ob->force_me("guard tie muzhen");
-                        // 設置本次襄陽保衛戰的序列號
+                        // 設置本次襄陽保衞戰的序列號
                         ob->set("ran_num", RAN_NUM);                        
                 }
 
@@ -1683,7 +1683,7 @@ int init_soldier()
                         ob->set("no_total", 1);
                         ob->move(environment(mg_dj));
                         ob->force_me("guard tie muzhen");
-                        // 設置本次襄陽保衛戰的序列號
+                        // 設置本次襄陽保衞戰的序列號
                         ob->set("ran_num", RAN_NUM);                        
                 }
         }
@@ -1696,14 +1696,14 @@ int init_soldier()
                 ob->set("no_total", 1);
                 ob->move("/d/xiangyang/junying1");
                 ob->force_me("guard north");
-                // 設置本次襄陽保衛戰的序列號
+                // 設置本次襄陽保衞戰的序列號
                 ob->set("ran_num", RAN_NUM);
                                 
                 ob = new(XYNPC + "mggongbing");
                 ob->set("no_total", 1);
                 ob->move("/d/xiangyang/junying1");
                 ob->force_me("guard north");
-                // 設置本次襄陽保衛戰的序列號
+                // 設置本次襄陽保衞戰的序列號
                 ob->set("ran_num", RAN_NUM);                
         }
 
@@ -1713,7 +1713,7 @@ int init_soldier()
                 ob = new(XYNPC + "mgqianfuzhang");
                 ob->move("/d/xiangyang/junying2");
                 ob->force_me("guard north");
-                // 設置本次襄陽保衛戰的序列號
+                // 設置本次襄陽保衞戰的序列號
                 ob->set("ran_num", RAN_NUM);                
         }
         for (i = 0; i < 40; i ++)
@@ -1722,14 +1722,14 @@ int init_soldier()
                 ob->set("no_total", 1);                
                 ob->move("/d/xiangyang/junying2");
                 ob->force_me("guard north");
-                // 設置本次襄陽保衛戰的序列號
+                // 設置本次襄陽保衞戰的序列號
                 ob->set("ran_num", RAN_NUM);
                                 
                 ob = new(XYNPC + "mgqibing");
                 ob->set("no_total", 1);
                 ob->move("/d/xiangyang/junying2");
                 ob->force_me("guard north");
-                // 設置本次襄陽保衛戰的序列號
+                // 設置本次襄陽保衞戰的序列號
                 ob->set("ran_num", RAN_NUM);                
         }
 
@@ -1740,9 +1740,9 @@ int init_soldier()
 
         // 郭靖通知玩家進行報名
         call_out("xywar_message", 5, HIY "郭靖：各路江湖豪傑，武林同道，現今蒙古人即將圍攻襄陽，情況危機，"
-                                         "如願保衛襄陽出一份力，請\n            速到" HIM "襄陽中央廣場" HIY "進行報名吧！" NOR);
+                                         "如願保衞襄陽出一份力，請\n            速到" HIM "襄陽中央廣場" HIY "進行報名吧！" NOR);
 
-        // 設置可報名標志
+        // 設置可報名標誌
         sign_up_status = 1;
 
             // 5分鐘後停止報名，並檢查報名人數是否達到要求
@@ -1755,10 +1755,10 @@ int init_soldier()
 // 襄陽援軍達到後的動作
 void add_xy_soldier_action()
 {
-        call_out("xywar_message", 1, HIY "蒙古探子：報！襄陽援兵已經部署完畢，分散于四城門抵抗我軍。" NOR);
+        call_out("xywar_message", 1, HIY "蒙古探子：報！襄陽援兵已經部署完畢，分散於四城門抵抗我軍。" NOR);
         
         if (random(2) == 1)        
-                call_out("xywar_message", 3, HIY "蒙古將領：哼！看來他們是在做最後的垂死掙紮，傳令加強進攻，盡快拿下城池。" NOR);
+                call_out("xywar_message", 3, HIY "蒙古將領：哼！看來他們是在做最後的垂死掙扎，傳令加強進攻，儘快拿下城池。" NOR);
         else
                 call_out("xywar_message", 3, HIY "蒙古將領：傳令全軍將士加強攻勢，萬萬不可輕敵，這次務必要順利拿下襄陽城" NOR);
 }
@@ -1814,7 +1814,7 @@ void add_xy_soldier()
         // 修改襄陽軍數量記錄表
         n_xy_sb = n_xy_sb + ADD_XY_SOLDIER;
 
-        xywar_message(HIY "襄陽援兵已抵達襄陽城，並平均分散在四門抵御蒙古人。");
+        xywar_message(HIY "襄陽援兵已抵達襄陽城，並平均分散在四門抵禦蒙古人。");
         
         call_out("add_xy_soldier_action", 2); 
         
@@ -1831,7 +1831,7 @@ void add_xy_soldier_ext(object me)
                     return;
             }            
         
-        // 調用後增加調用標志
+        // 調用後增加調用標誌
         add_xyb_flag = 1;
         
         call_out("xywar_message", 2, HIR + me->name() + "使用兵符，增派襄陽守軍。" NOR);
@@ -1842,7 +1842,7 @@ void add_xy_soldier_ext(object me)
 
 // 蒙古人派兵增援
 // 需要在設置方位的時候檢查 yb_attack_where 變量，如果不為"none"則需要單獨設置
-// 目的是將援軍火力在某一方向上集中，便于攻城
+// 目的是將援軍火力在某一方向上集中，便於攻城
 void add_soldier()
 {
         object ob;
@@ -2370,12 +2370,12 @@ void add_soldier()
 
         xywar_message(HIR "蒙古人增援部隊已抵達襄陽，並準備開始攻城。");
 
-        // 散布虛假消息
+        // 散佈虛假消息
         if (yb_attack_where != "none")
         {
                 string string_ran_doors = random_doors_name();
                 
-                xywar_message(HIY "蒙古大將：蒙古援軍聽令，所有分隊朝著" + HIR + string_ran_doors +
+                xywar_message(HIY "蒙古大將：蒙古援軍聽令，所有分隊朝着" + HIR + string_ran_doors +
                               HIY "方向進攻，不得有誤。" NOR);
                 xywar_message(NOR + YEL "頃刻間，離" + string_ran_doors + NOR + YEL "不遠處，塵土飛揚，"
                               "似乎聚集了大量軍隊。" NOR);
@@ -2400,16 +2400,16 @@ void support_npc()
                 case 0:
                         call_out("xywar_message", 2, HIW "楊過：郭伯伯，現今襄陽有難，誅殺蒙古韃子怎能不算過兒一份！" NOR);
                         call_out("xywar_message", 5, HIW "小龍女：過兒，你到哪兒我就跟你到哪兒 ……" NOR);
-                        call_out("xywar_message", 8, HIY "郭靖大笑：好好好！男兒以保家衛國為己任，有過兒你和龍姑娘在，我就放心了！" NOR);
+                        call_out("xywar_message", 8, HIY "郭靖大笑：好好好！男兒以保家衞國為己任，有過兒你和龍姑娘在，我就放心了！" NOR);
                         // 隨機選擇一個門守護
                         sp = keys(doors2);
                         pos = sp[random(sizeof(sp))];
                         guard_door = doors2[pos];
                         guard_door_name = doors2_name[pos];
-                        call_out("xywar_message", 12, HIW "楊過：我和龍兒也是路過此地，聽說蒙古人將要圍攻襄陽城，所以便來看看。" NOR);
-                        call_out("xywar_message", 15, HIW "楊過：我和龍兒決定了要助郭伯伯一臂之力，保衛襄陽城。" NOR);
+                        call_out("xywar_message", 12, HIW "楊過：我和龍兒也是路過此地，聽説蒙古人將要圍攻襄陽城，所以便來看看。" NOR);
+                        call_out("xywar_message", 15, HIW "楊過：我和龍兒決定了要助郭伯伯一臂之力，保衞襄陽城。" NOR);
                         call_out("xywar_message", 18, HIW "小龍女望了郭靖一眼點了點頭。" NOR);
-                        call_out("xywar_message", 20, HIY "郭靖激動地說到：好，過兒。那你們就守護" + HIR + guard_door_name + HIY "吧！" NOR);
+                        call_out("xywar_message", 20, HIY "郭靖激動地説到：好，過兒。那你們就守護" + HIR + guard_door_name + HIY "吧！" NOR);
                         call_out("xywar_message", 22, HIW "言畢，楊過和小龍女直奔" + guard_door_name + "。" NOR);
                         
                         ob1 = new(YANGGUO);
@@ -2432,7 +2432,7 @@ void support_npc()
                         call_out("xywar_message", 10, HIM "一燈大師雙手合十道：可憐我天下蒼生又將置身火海，生靈塗炭，老衲豈能坐視不理！" NOR);
                         call_out("xywar_message", 14, HIG "洪七公：哈哈，這麼熱鬧？我老叫花子可不能錯過……" NOR);
                         call_out("xywar_message", 18, HIC "郭靖一臉興奮：好好好！襄陽有救了！" NOR);
-                        call_out("xywar_message", 20, HIR "聽說東邪、西毒、南帝、北丐四大宗師加入到襄陽保衛戰當中，共同抗擊蒙古人。" NOR);
+                        call_out("xywar_message", 20, HIR "聽説東邪、西毒、南帝、北丐四大宗師加入到襄陽保衞戰當中，共同抗擊蒙古人。" NOR);
                         
                         ob1 = new(DONGXIE);
                         ob2 = new(XIDU);
@@ -2471,18 +2471,18 @@ void start_story(int i)
                 "郭靖：哎，蒙古人久攻襄陽不下，這次一定又加重兵力，欲強取我襄陽城。",
                 "郭靖頓了頓對宋兵吩咐道：傳令襄陽所有軍士加強戒備，等待號令！",
                 "宋兵應了一聲轉身出去。",
-                "郭靖長嘆道：這次蒙古人大舉進攻襄陽，不知道又要有多少無辜的人犧牲，哎...",
-                "郭靖頓了頓對坐在一旁的黃蓉說道：這次蒙古人來勢洶洶，對襄陽志在必得，以目前襄陽城的兵力恐怕堅守不了多久，\n"
+                "郭靖長歎道：這次蒙古人大舉進攻襄陽，不知道又要有多少無辜的人犧牲，哎...",
+                "郭靖頓了頓對坐在一旁的黃蓉説道：這次蒙古人來勢洶洶，對襄陽志在必得，以目前襄陽城的兵力恐怕堅守不了多久，\n"
                 "            不知蓉兒你有什麼好辦法可以幫助渡過這一次危難，保住襄陽城！",
-                "黃蓉站起在房中走了一圈對郭靖說道：以目前的形勢看，敵強我弱，如果光靠襄陽城目前這點兵力恐怕 ……",
+                "黃蓉站起在房中走了一圈對郭靖説道：以目前的形勢看，敵強我弱，如果光靠襄陽城目前這點兵力恐怕 ……",
                 "黃蓉頓了頓又道：不如以靖哥哥你的大名，招募天下英雄豪傑來此共同作戰，或可保住襄陽城。",
                 "郭靖猛然間手一拍桌子將正在思索的黃蓉嚇了一大跳：好，就這麼決定了，這次無論如何都要守住襄陽城。",
                 "黃蓉：@@",
                 "此時，一位宋兵急匆匆地跑了進來道：郭將軍，據探子回報，蒙古軍已逼近襄陽，大約五分鐘後可抵達城外！",
                 "郭靖正色道：傳令襄陽全體軍士，振作精神，隨時準備和蒙古人開戰。",
                 "宋軍應了一聲，轉身跑出去。",
-                "郭靖和黃蓉低聲交談了幾句後也跟著出去，直奔軍營 …… 大戰一觸即發！",
-                HIR "提示：蒙古軍隊將于五分鐘後抵達襄陽城外，請正在任務的玩家停止任務，以免無辜受害！！！" NOR,
+                "郭靖和黃蓉低聲交談了幾句後也跟着出去，直奔軍營 …… 大戰一觸即發！",
+                HIR "提示：蒙古軍隊將於五分鐘後抵達襄陽城外，請正在任務的玩家停止任務，以免無辜受害！！！" NOR,
         });
         
         
@@ -2516,19 +2516,19 @@ void start_story(int i)
 void start_xywar()
 {
         /*
-        1、分配軍隊數量，緊根著開始故事情節敘述
+        1、分配軍隊數量，緊根着開始故事情節敍述
         2、1、完成五分鐘後初始化-->init_soldier()
         3、正式啟動戰鬥
         */
 
-        start_status = 1;    // 設置情節開始以免系統重復調用
+        start_status = 1;    // 設置情節開始以免系統重複調用
         start_time = time();  // 設置開始時間
 
-        RAN_NUM = 100 + random(900); // 產生本次襄陽保衛戰序列號，共三位數
+        RAN_NUM = 100 + random(900); // 產生本次襄陽保衞戰序列號，共三位數
         
         allot_soldier(); // 分配軍隊數量
 
-        // 開始敘述故事
+        // 開始敍述故事
         start_story(0);
 
 }
@@ -2543,8 +2543,8 @@ string leader_player()
 }
 
 // 玩家可控制襄陽守軍
-// 1、查詢目前守軍守衛地點
-// 2、設置守軍集合兵力守衛地點
+// 1、查詢目前守軍守衞地點
+// 2、設置守軍集合兵力守衞地點
 // 如果襄陽士兵死完則無法再顯示
 // 蒙古軍派遣援軍後1分鐘內無法查詢
 
@@ -2585,7 +2585,7 @@ void show_soldier(object me)
 
 
 // 調動襄陽守軍
-// 權限在/cmds/usr/xy.c 裡做判斷
+// 權限在/cmds/usr/xy.c 裏做判斷
 void move_xysoldier(object me, string p)
 {
         int xytotal;
@@ -2593,7 +2593,7 @@ void move_xysoldier(object me, string p)
         
         if (now_status() != WARRING && now_status() != WAIT_START)
         {
-                write("襄陽保衛戰還沒有開始，你無法調動襄陽守軍。\n");
+                write("襄陽保衞戰還沒有開始，你無法調動襄陽守軍。\n");
                 return;
         }
         
@@ -2624,9 +2624,9 @@ void move_xysoldier(object me, string p)
         // 設置調動時間
         last_move_xysolder = time();
         
-        write("你已經下令調動襄陽守軍，襄陽守軍正趕往" + HIY + xy_soldier_poision("name") + NOR "地點抵御蒙古人。\n" NOR);
+        write("你已經下令調動襄陽守軍，襄陽守軍正趕往" + HIY + xy_soldier_poision("name") + NOR "地點抵禦蒙古人。\n" NOR);
         
-        xywar_message(HIG + me->name() + "正在調動襄陽守軍，襄陽守軍已經趕往" + HIY + xy_soldier_poision("name") + HIG "地點抵御蒙古人。\n" NOR);
+        xywar_message(HIG + me->name() + "正在調動襄陽守軍，襄陽守軍已經趕往" + HIY + xy_soldier_poision("name") + HIG "地點抵禦蒙古人。\n" NOR);
         
         if (tiemuzhen)dj_name = "成吉思汗";
         else dj_name = "蒙古大將";
@@ -2713,10 +2713,10 @@ void combat_sdjixi()
 }
 
 // 集中兵力攻擊某門
-// 參數pos 為方向，指相對于襄陽廣場的方向 west,east,north,south
+// 參數pos 為方向，指相對於襄陽廣場的方向 west,east,north,south
 void combat_attack_all(string pos)
 {
-        // 50%幾率虛假說明攻擊方向
+        // 50%機率虛假説明攻擊方向
         if (random(2) == 1)
         {
         }

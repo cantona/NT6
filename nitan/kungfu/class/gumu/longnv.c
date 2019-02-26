@@ -94,7 +94,7 @@ LONG);
                 "玉女劍法" : "玉女劍法和全真劍法合璧，天下無敵！\n",
                 "古墓派" : "我的林祖師爺爺本來和重陽先師是一對璧人，可是...\n",
                 "玉蜂針"   : (: ask_zhen :),
-                "玉女心經秘籍": (: ask_yunv :),
+                "玉女心經祕籍": (: ask_yunv :),
         ]));
 
         set_temp("apply/attack", 150);
@@ -201,7 +201,7 @@ int accept_ask(object me, string topic)
         {
         case "歷練" :
         case "歷煉" :
-        case "鍛煉" :
+        case "鍛鍊" :
                 return QUEST_D->accept_ask(this_object(), me, topic);
                 break;
 

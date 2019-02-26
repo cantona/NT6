@@ -91,7 +91,7 @@ mapping *quest = ({
         ]),
         ([
                 "id":          "dou peng",
-                "name":        "鬥篷",
+                "name":        "斗篷",
                 "type":        "尋",
                 "bonus":       75,
                 "msg1":        "",

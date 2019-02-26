@@ -3,9 +3,9 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "南巖峰");
+        set("short", "南巖峯");
         set("long", @LONG
-這裡是武當三十六巖之最，鬆樹翳天，木石爭奇，峭壁萬仞。在
+這裏是武當三十六巖之最，松樹翳天，木石爭奇，峭壁萬仞。在
 懸崖之半築有一宮宇，下臨深淵，工程浩大。宮前有一石柱，自峭壁
 上橫出。
 LONG );
@@ -33,7 +33,7 @@ int valid_leave(object me, string dir)
         if ((! myfam || myfam["family_name"] != "武當派")
            && dir == "southdown"
            && objectp(present("mo shenggu", environment(me))))
-                return notify_fail(CYN "莫聲谷攔住你說：此處乃本派禁"
+                return notify_fail(CYN "莫聲谷攔住你説：此處乃本派禁"
                                    "地，請止步。\n" NOR);
 
         return ::valid_leave(me, dir);

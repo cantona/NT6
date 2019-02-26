@@ -40,7 +40,7 @@ int lookout()
         if(steps<15) msg += "就在西南方";
         if(steps>15) msg += "就在西北方";
         if(steps==15) msg += "就在西方";
-        msg += "不遠處好象是個漁港，四周也有不少的漁船來來往往。\n";
+        msg += "不遠處好像是個漁港，四周也有不少的漁船來來往往。\n";
         }
     else if(stepe >95 && stepe < 105 && steps >0 && steps < 10){
         if(stepe>100) msg += "在西";
@@ -49,7 +49,7 @@ int lookout()
         if(steps<5) msg += "南方";
         if(steps>5) msg += "北方";
         if(steps==5) msg += "方";
-        msg += "不遠處好象有塊小島。\n";
+        msg += "不遠處好像有塊小島。\n";
         }
     else if(stepe >195 && stepe < 205 && stepn >940 && stepn < 960){
         if(stepe>200) msg += "在西";
@@ -58,21 +58,21 @@ int lookout()
         if(stepn<950) msg += "北方";
         if(stepn>950) msg += "南方";
         if(stepn==950) msg += "方";
-        msg += "的天邊好象是有東西在燃燒，火燄印紅了天空。\n";
+        msg += "的天邊好像是有東西在燃燒，火焰印紅了天空。\n";
         }
     else {
         msg += "你似乎迷失了方向。\n";
           if(stepn && stepn>20){
               if(stepn>=1100) msg += WHT"船已經很難再前進了，四周都是白茫茫的一遍，圍滿了浮冰。\n"NOR;
-              else if(stepn>=800) msg += HIW"船裡的淡水也已經結凍，海面漂浮著一塊塊的浮冰。\n"NOR;
-              else if(stepn>=650) msg += HIB"陣陣寒風呼嘯而過，海水裡也漂來一塊塊小浮冰。\n"NOR;
+              else if(stepn>=800) msg += HIW"船裏的淡水也已經結凍，海面漂浮着一塊塊的浮冰。\n"NOR;
+              else if(stepn>=650) msg += HIB"陣陣寒風呼嘯而過，海水裏也漂來一塊塊小浮冰。\n"NOR;
               else if(stepn>=500) msg += HIM"海風已經變得刺骨，天空也陰沉沉地。\n"NOR;
-              else msg += "海風日漸強烈，溫度也開始降低了。\n";
+              else msg += "海風日漸強烈，温度也開始降低了。\n";
               }    
           else{
               msg += "海面風和日麗，";
-              if(stepe) msg += "不時還可以看見從來沒見過的怪魚在海中遊弋。\n";
-              else if(stepw) msg += "不時有幾只海鷗在天空盤旋，看來離海岸不遠。\n";
+              if(stepe) msg += "不時還可以看見從來沒見過的怪魚在海中游弋。\n";
+              else if(stepw) msg += "不時有幾隻海鷗在天空盤旋，看來離海岸不遠。\n";
               else msg += "看不見海鳥，看來已經離開海岸線很遠了。\n";
               }
        }    
@@ -145,7 +145,7 @@ int do_turn(string arg)
 
         if (!arg) return notify_fail("你要往哪個方向開船？\n");
         if(query("boat_of")) return notify_fail("船還沒開呢。\n");
-        if (me->is_busy()) return notify_fail("你正忙著呢。\n");
+        if (me->is_busy()) return notify_fail("你正忙着呢。\n");
         switch(arg) {
                 case "東":
                 case "east":
@@ -162,7 +162,7 @@ int do_turn(string arg)
                 default:
                         return notify_fail("你要往哪個方向開？\n");
         }      
-        if(query_temp("dir") == dir) return notify_fail(name()+"正在向"+dir+"面行駛著呢。\n");
+        if(query_temp("dir") == dir) return notify_fail(name()+"正在向"+dir+"面行駛着呢。\n");
         write("你把"+name()+"向"+dir+"面駛去。\n");
         tell_room(ob, me->name()+"把"+name()+"向"+dir+"面駛去。\n", ({me}));
         if(random(2)==1) me->start_busy(1);
@@ -223,7 +223,7 @@ int turnning(object me, string dir)
         }
         set_temp("dir", dir);
         if(random(10) > 7)
-                random(2)?message_vision("$N駕著"+name()+"，正破浪向"+dir+"面駛去。\n",me):
+                random(2)?message_vision("$N駕着"+name()+"，正破浪向"+dir+"面駛去。\n",me):
                 tell_room(ob, ob->name()+"迎風破浪，向"+dir+"面駛去。\n");
 
 //寧波出海口在 w15,s15,
@@ -250,14 +250,14 @@ int turnning(object me, string dir)
         else if (stepn>947 && stepn<953 && stepe>197 && stepe<203){
                 load_object("/d/mingjiao/bhd/dbshan");
                 message_vision(HIW"\n突然，前方出現了一座巨大的冰山！"+ob->name()+"收勢不住，眼看就要碰上了！\n"NOR, me);
-                message_vision(HIR"\n只聽□地一聲，"+ob->name()+"碰上冰山，所有人都從船艙中被甩了出去！\n"NOR, me);
+                message_vision(HIR"\n只聽嘣地一聲，"+ob->name()+"碰上冰山，所有人都從船艙中被甩了出去！\n"NOR, me);
                 obj = all_inventory(ob);     
                 for(i=0; i<sizeof(obj);i++) {
                         if(userp(obj[i])) {                     
                                 obj[i]->unconcious();
                                 obj[i]->move("/d/mingjiao/bhd/dbshan");
                                 obj[i]->apply_condition("cold_wind", 1);
-                                message("vision", "只聽□地一聲，一個"+obj[i]->name()+"從觸礁的海船裡被拋了出來！\n",environment(obj[i]), ({obj[i]}));
+                                message("vision", "只聽嘣地一聲，一個"+obj[i]->name()+"從觸礁的海船裏被拋了出來！\n",environment(obj[i]), ({obj[i]}));
                         }
                 } 
                 dest(ob);                                          
@@ -279,7 +279,7 @@ void over(object ob)
      if(!ob) return;
      obj = all_inventory(ob);
      if(obj){                
-        message_vision(HIR"\n突然一陣狂風吹過，刮斷了桅桿，$N也被拋上了天！\n"NOR, ob);
+        message_vision(HIR"\n突然一陣狂風吹過，刮斷了桅杆，$N也被拋上了天！\n"NOR, ob);
         for(i=0; i<sizeof(obj); i++) {
            inv = all_inventory(obj[i]);
               for(j= 0;j< sizeof(inv);j++){
@@ -288,7 +288,7 @@ void over(object ob)
                 }
            obj[i]->unconcious();
            obj[i]->move("/d/mingjiao/xikou");
-           message("vision", "突然一陣大風刮過，將一個"+obj[i]->name()+"從海裡吹上岸來！\n",environment(obj[i]), ({obj[i]}));           
+           message("vision", "突然一陣大風颳過，將一個"+obj[i]->name()+"從海里吹上岸來！\n",environment(obj[i]), ({obj[i]}));           
            }             
         }   
      dest(ob);

@@ -19,7 +19,7 @@ int main(object me, string arg)
         ob = present(arg, environment(me));
 
         if (! ob || ! living(ob))
-                return notify_fail("這裡沒有這個生物。\n");
+                return notify_fail("這裏沒有這個生物。\n");
 
         if (geteuid(ob) != geteuid(me))
                 return notify_fail(ob->name() + "的 euid 和你不合，無"

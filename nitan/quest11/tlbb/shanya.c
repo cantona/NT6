@@ -10,10 +10,10 @@ inherit ROOM;
 string look_down();
 void create()
 {
-	set("short", "白龍峰");
+	set("short", "白龍峯");
 	set("long", @LONG
-走出十余裡，你來到無量山主峰的後山，已來到無量劍派禁地，任何外人
-不得擅入。這裡叢林密布，山石怪異。旁邊就是一深不見底的懸崖(cliff)。
+走出十餘里，你來到無量山主峯的後山，已來到無量劍派禁地，任何外人
+不得擅入。這裏叢林密佈，山石怪異。旁邊就是一深不見底的懸崖(cliff)。
 LONG
 	);
 	set("exits", ([
@@ -60,7 +60,7 @@ int do_jump(string arg,object *obj)
            && me->query(QUESTDIR1+"over"))
         {
 	       message_vision(HIR "$N腳下踩一個空，「啊～～～」發出一聲慘叫，向下直墜下去。\n" 
-                            "$N墜下百余丈，撞到崖邊一棵古鬆上，彈了幾彈，下墜的巨力卻也消了。\n" NOR, me);
+                            "$N墜下百餘丈，撞到崖邊一棵古鬆上，彈了幾彈，下墜的巨力卻也消了。\n" NOR, me);
          me->move(__DIR__"bankong");
          tell_object(me,HIY"\n你已不是第一次跳躍，看似危險，其實你早看好了方向，你半空一個凌身翻，\n"
                            "抓住古鬆，再次借力又一個飛身，已經安全到達一棵樹頂。你緩緩躍了下來。\n"NOR);
@@ -74,7 +74,7 @@ int do_jump(string arg,object *obj)
 )
         {
 	       message_vision(HIR "$N腳下踩一個空，「啊～～～」發出一聲慘叫，向下直墜下去。\n" 
-         "$N墜下百余丈，撞到崖邊一棵古鬆上，彈了幾彈，下墜的巨力卻也消了。\n" NOR, me);
+         "$N墜下百餘丈，撞到崖邊一棵古鬆上，彈了幾彈，下墜的巨力卻也消了。\n" NOR, me);
          me->move(__DIR__"bankong");
 	       return 1;
          }

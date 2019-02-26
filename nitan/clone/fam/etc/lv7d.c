@@ -3,12 +3,12 @@ inherit ITEM;
 
 void create()
 {
-        set_name(HIW "如意通天□" NOR, ({"ruyi jue", "ruyi", "jue"}));
+        set_name(HIW "如意通天钁" NOR, ({"ruyi jue", "ruyi", "jue"}));
         set_weight(300);
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("long", HIW "純白無暇的寶玉，傳說只有在天界才會出現。\n" NOR);
+                set("long", HIW "純白無暇的寶玉，傳説只有在天界才會出現。\n" NOR);
                 set("unit", "塊");
                 set("value", 50000);
                 set("can_be_enchased", 1);

@@ -95,13 +95,13 @@ string ask_tianjidao()
         {
                 command("shake");
                 command("say 不久前，老夫將借來的一件天蠶寶甲給弄丟了，不知如何是好？");
-                command("say 如果能搜集到30根天蠶絲，老夫倒是有辦法重新制作一。");
+                command("say 如果能蒐集到30根天蠶絲，老夫倒是有辦法重新制作一。");
                 command("不過……");
                 command("tan");
-                command("say 那天蠶絲並非凡物，只有天山頂峰的天蠶身才有，看來這次真是闖大禍了！");
+                command("say 那天蠶絲並非凡物，只有天山頂峯的天蠶身才有，看來這次真是闖大禍了！");
                 command("look " + me->query("id"));
-                command("say 閣下如果能搜集到30根天蠶絲給老夫，老夫這裡倒是有一些厲害的武功可以傳授給你。");
-                tell_object(me, this_object()->name() + HIG "讓你幫他搜集30根天蠶絲，趕快去吧！\n" NOR);
+                command("say 閣下如果能蒐集到30根天蠶絲給老夫，老夫這裏倒是有一些厲害的武功可以傳授給你。");
+                tell_object(me, this_object()->name() + HIG "讓你幫他蒐集30根天蠶絲，趕快去吧！\n" NOR);
                 me->set("lunhui-sword_quest/tianjidao/give_quest", 1);
                 me->save();
                 return "怎麼樣，考慮考慮？";
@@ -110,10 +110,10 @@ string ask_tianjidao()
         // 完成任務
         
         if (! objectp(ob_hlp = present("tiancan si", me)))
-                return "怎麼樣，30根天蠶絲搜集夠了嗎？\n";
+                return "怎麼樣，30根天蠶絲蒐集夠了嗎？\n";
                 
         if (base_name(ob_hlp) != "/clone/quarry/item/cansi2")
-                return "怎麼樣，30根天蠶絲搜集夠了嗎？\n";
+                return "怎麼樣，30根天蠶絲蒐集夠了嗎？\n";
         
         if ("/adm/daemons/stored"->get_ob_amount(me, ob_hlp) >= 30)
         {
@@ -125,14 +125,14 @@ string ask_tianjidao()
         }
         else
         {
-                return "怎麼樣，30根天蠶絲搜集夠了嗎？\n";
+                return "怎麼樣，30根天蠶絲蒐集夠了嗎？\n";
         }
         
         command("hehe");
         command("nod");
         command("say 既然你幫我了這個忙，好！老夫也遵守諾言，傳你「天極道」……");
         
-        message_sort(HIC "\n$N" HIC "走上前去，在$n" HIC "耳邊悄悄說了幾句，然後又拿出一本書，指指點點，"
+        message_sort(HIC "\n$N" HIC "走上前去，在$n" HIC "耳邊悄悄説了幾句，然後又拿出一本書，指指點點，"
                      "$n" HIC "不住地點頭，忽而眉頭深鎖，忽而低頭沉思 ……\n良久，$n" HIC "大笑一聲，似乎"
                      "對剛才的疑慮有所頓悟。\n", this_object(), me);
                              

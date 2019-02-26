@@ -40,7 +40,7 @@ int perform(object me, object target)
                 return notify_fail("你沒有激發鹿頭杖法，難以施展" TONG "。\n");
 
         if (! living(target))
-                return notify_fail("對方都已經這樣了，用不著這麼費力吧？\n");
+                return notify_fail("對方都已經這樣了，用不着這麼費力吧？\n");
 
         msg = HIW "\n$N" HIW "一聲暴喝，猛然間騰空而起，手中" 
               + weapon->name() + HIW "從天而降，氣勢驚人地"
@@ -57,7 +57,7 @@ int perform(object me, object target)
 
                 msg = COMBAT_D->do_damage(me, target, WEAPON_ATTACK, damage, 55,
                                            HIR "$n" HIR "完全無法看清招中虛實，只"
-                                           "聽「□」地一聲，已被$N" HIR "擊中肩膀。\n" NOR);
+                                           "聽「嘭」地一聲，已被$N" HIR "擊中肩膀。\n" NOR);
                 me->start_busy(3);
                 addn("neili", -180, me);
         } else 

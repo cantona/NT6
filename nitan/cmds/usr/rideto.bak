@@ -90,7 +90,7 @@ int main(object me, string arg)
                 return notify_fail("你的負荷出現故障，動彈不得。\n");
 
         if( query_temp("sleeped", me) )
-                return notify_fail("你現在正躺著呢。\n");
+                return notify_fail("你現在正躺着呢。\n");
 
         if (me->is_in_prison())
                 return notify_fail("你正在做牢呢，你想幹什麼？！\n");
@@ -109,11 +109,11 @@ int main(object me, string arg)
 
 /*
         if( !query("outdoors", environment(me)) )
-                return notify_fail("在房間裡不能亂跑！\n");
+                return notify_fail("在房間裏不能亂跑！\n");
 */
 
         if( query("no_magic", environment(me)) || query("no_fly", environment(me)) || query("maze", environment(me)) )
-                return notify_fail("你發現這裡有點古怪，你的坐騎好象不聽你的指揮！\n");
+                return notify_fail("你發現這裏有點古怪，你的坐騎好像不聽你的指揮！\n");
 
         if (me->query_condition("killer"))
                 return notify_fail("你有命案在身呢，你還是小心為妙，不宜在官道上肆無忌憚行走！\n");
@@ -148,15 +148,15 @@ int main(object me, string arg)
         }
         if (! room) return notify_fail("你感覺到似乎那個地方有點不對勁。\n");
 
-        message("vision", me->name() + "騎著「" + riding->name() + NOR "」匆匆忙忙地離開了。\n",
+        message("vision", me->name() + "騎着「" + riding->name() + NOR "」匆匆忙忙地離開了。\n",
                 environment(me), ({me}));
 
         where=query("short", room);
 
-        tell_object(me, "你一路馬不停蹄，終于趕到了" + where + "。\n");
+        tell_object(me, "你一路馬不停蹄，終於趕到了" + where + "。\n");
         me->move(room);
 
-        message("vision", me->name() + "騎著「" + riding->name() + NOR "」一路疾馳而來。\n",
+        message("vision", me->name() + "騎着「" + riding->name() + NOR "」一路疾馳而來。\n",
                 environment(me), ({me}));
 
         // me->receive_damage("qi", 10);
@@ -180,7 +180,7 @@ wudang   : 武當山        taishan  : 泰  山        quanzhen : 全真教
 emei     : 峨眉山        lingjiu  : 靈鷲宮        gumu     : 古  墓
 baituo   : 白馱山        mingjiao : 光明頂        xingxiu  : 星宿海
 huashan  : 華  山        murong   : 慕  容        xueshan  : 雪  山
-xuedao   : 血刀門        xiaoyao  : 逍遙林        kunlun   : 昆侖山
+xuedao   : 血刀門        xiaoyao  : 逍遙林        kunlun   : 崑崙山
 guanwai  : 關  外        guiyun   : 歸雲莊        nanhai   : 南  海
 hanzhong : 漢中鎮        zhongnan : 終南山        yanziwu  : 燕子塢
 tangmen  : 唐  門        lanzhou  : 蘭  州        kaifeng  : 開  封

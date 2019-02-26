@@ -10,10 +10,10 @@ int exert(object me, object target)
 
         if (target == me) target = offensive_target(me);
 
-        if (me->is_busy()) return notify_fail("你正忙著呢。\n");
+        if (me->is_busy()) return notify_fail("你正忙着呢。\n");
 
         if( query("no_fight", environment(me)) )
-                return notify_fail("在這裡不能攻擊他人。\n");
+                return notify_fail("在這裏不能攻擊他人。\n");
 
         if( !objectp(target) || query("id", target) == "muren" )
                 return notify_fail("你要吸取誰的丹元？\n");

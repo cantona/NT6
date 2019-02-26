@@ -11,7 +11,7 @@
         功。第一個參數 caller 是呼叫此 socket 外部函式的物件。第二個參數
         function 是被呼叫的 socket 外部函式名稱〈例如 socket_write() 或
         socket_bind()〉。第三個參數是一個資訊的陣列。如果有資訊的話，這個
-        陣列的第一個元素 (element) 是被參考的檔案敘述值 (file descriptor
+        陣列的第一個元素 (element) 是被參考的檔案敍述值 (file descriptor
         being referenced)。第二個元素是擁有此 socket 的物件〈物件型態〉。
         第三個元素是此 socket 的遠端位址 (address of the remote end)〈字串
         型態〉。第四個元素是與 socket 相關的 (associated) 連接埠號碼 (port
@@ -31,7 +31,7 @@ int valid_socket(object eff_user, string fun, mixed *info)
 /*
 int valid_socket(object caller, string func, mixed *info)
 {
-        // caller 在 login_ob 裡可能不會傳入物件
+        // caller 在 login_ob 裏可能不會傳入物件
         if( !objectp(caller) )
                 return 0;
 

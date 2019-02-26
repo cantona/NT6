@@ -143,7 +143,7 @@ mixed ask_skill1()
                 return "這招我不是已經教會你了嗎？";
 
         if( query("family/family_name", me) != query("family/family_name") )
-                return "閣下與在下素不相識，不知此話從何說起？";
+                return "閣下與在下素不相識，不知此話從何説起？";
 
         if (me->query_skill("tongchui-zhang", 1) < 1)
                 return "你連銅錘掌法都沒學，何談絕招可言？";
@@ -161,7 +161,7 @@ mixed ask_skill1()
                 return "你現在的內功修為不足，還是練高點再來吧。";
 
         message_sort(HIY "\n$n" HIY "微微一笑，從懷中輕輕取出了一本"
-                     "小冊子，指著其中的一段對$N" HIY "細說良久，$N"
+                     "小冊子，指着其中的一段對$N" HIY "細説良久，$N"
                      HIY "一邊聽一邊點頭。\n\n" NOR, me,
                      this_object());
 
@@ -189,7 +189,7 @@ mixed ask_skill2()
                 return "這招我不是已經教會你了嗎？";
 
         if( query("family/family_name", me) != query("family/family_name") )
-                return "閣下與在下素不相識，不知此話從何說起？";
+                return "閣下與在下素不相識，不知此話從何説起？";
 
         if (me->query_skill("jueming-tui", 1) < 1)
                 return "你連絕命腿法都沒學，何談絕招可言？";

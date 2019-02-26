@@ -10,7 +10,7 @@ void create()
                 set_default_object(__FILE__);
         else {
                 set("unit", "瓜");
-                set("long", "這是一只黃銅澆鑄的鍍金瓜狀，透露出一股華貴氣息。\n");
+                set("long", "這是一隻黃銅澆鑄的鍍金瓜狀，透露出一股華貴氣息。\n");
                 set("value", 5000);
                 set("material", "copper");
         }

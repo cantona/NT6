@@ -26,7 +26,7 @@ int main(object me, string arg)
                 return notify_fail("你現在正在戰鬥！\n"); 
 
         if (me->is_ghost()) 
-                return notify_fail("等你還了陽再說吧。\n"); 
+                return notify_fail("等你還了陽再説吧。\n"); 
                 
         if (me->is_in_prison())   
                 return notify_fail("你正在做牢呢。\n");
@@ -35,7 +35,7 @@ int main(object me, string arg)
                 return notify_fail("你還想幹什麼？！\n");
                 
         if( query("no_magic", environment(me)) )
-                return notify_fail("你發現這裡有點古怪！\n");                
+                return notify_fail("你發現這裏有點古怪！\n");                
         
         if (arg == "back")
         {
@@ -92,7 +92,7 @@ int main(object me, string arg)
                 if( !file ) return notify_fail("你還沒有住房呢！\n");
                 
                 if (base_name(environment(me)) == file)
-                        return notify_fail("你已經在這裡了。\n");
+                        return notify_fail("你已經在這裏了。\n");
                         
                 if (! get_object(file))
                         return notify_fail("你感覺到似乎有什麼不對勁！\n");

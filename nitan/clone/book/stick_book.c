@@ -10,7 +10,7 @@ void create()
                 set_default_object(__FILE__);
         else {
                 set("unit", "本");
-                set("long", "這是本有些年代的書了，封皮上寫著《棒法入門》。\n");
+                set("long", "這是本有些年代的書了，封皮上寫着《棒法入門》。\n");
                 set("value", 100);
                 set("material", "paper");
                 set("skill", ([

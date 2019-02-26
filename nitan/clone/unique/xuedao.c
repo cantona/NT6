@@ -21,7 +21,7 @@ void create()
                 set("material", "steel");
                 set("rigidity", 200);
                 set("replica_ob","/d/shaolin/obj/jiedao");
-                set("wield_msg", RED "只聽「唰」的一聲，血刀脫鞘飛出，$N手中似是握住一條赤蛇泛著紅光，彌漫著一片血氣。\n" NOR);
+                set("wield_msg", RED "只聽「唰」的一聲，血刀脱鞘飛出，$N手中似是握住一條赤蛇泛着紅光，瀰漫着一片血氣。\n" NOR);
                 set("unwield_msg", RED " 蛇進刀鞘。\n" NOR);
                 set("clone_ob", "/clone/weapon/xuedao");
         }

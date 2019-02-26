@@ -7,7 +7,7 @@ void create()
         if (clonep())
                 set_default_object(__FILE__);
         else {  
-        	set("long", HIC "傳說神農氏曾煉丹千次，終成此丹！\n" + 
+        	set("long", HIC "傳説神農氏曾煉丹千次，終成此丹！\n" + 
         	                "服食(fushi qianhuidan)後，30分鐘內可額外提升研究次數50次。\n" HIR
         	                /*"擁有者：擁有者ID*/"\n" NOR);
                 set("unit", "顆");
@@ -37,7 +37,7 @@ int do_use(string arg)
 		return notify_fail("你身上沒有這個東西！\n");
 /*
 	if( query("owner", ob) != query("id", me) )
-		return notify_fail(ob->name() + NOR "已經于其他玩家綁定！\n");
+		return notify_fail(ob->name() + NOR "已經於其他玩家綁定！\n");
 */
 
 	if( !query("add_yanjiu_times50", me) || 
@@ -50,7 +50,7 @@ addn("add_yanjiu_times50", 1800, 		me);
 
 
 	tell_object(me, HIG "恭喜！你服下" + ob->name() + HIG "後，30分鐘內研究次數額外提高50次！\n");
-	tell_object(me,HIG"目前該效果還剩余時間："+sprintf("%d",query("add_yanjiu_times50", me))+"秒。\n");
+	tell_object(me,HIG"目前該效果還剩餘時間："+sprintf("%d",query("add_yanjiu_times50", me))+"秒。\n");
 	
 	me->save();
 	

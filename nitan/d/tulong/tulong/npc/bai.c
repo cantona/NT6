@@ -3,7 +3,7 @@ inherit NPC;
 void create()
 {
         set_name("白龜壽", ({ "bai guishou", "bai", "guishou"}) );
-        set("long", "一個五十來歲的老者，禿著頭頂，一身結實的肌肉。\n");
+        set("long", "一個五十來歲的老者，禿着頭頂，一身結實的肌肉。\n");
         set("attitude", "heroism");
         set("title", "天鷹教");
         set("nickname", HIW "玄武壇壇主" NOR);

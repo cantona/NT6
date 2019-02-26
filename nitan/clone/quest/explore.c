@@ -42,7 +42,7 @@ void init_quest(object npc_ob, string qob_name, string zone, string *files)
 
         if( query_temp("quest_ob", npc_ob) )
         {
-                // 這個NPC已經用于其他任務，中止任務
+                // 這個NPC已經用於其他任務，中止任務
                 destruct(this_object());
                 return;
         }
@@ -51,7 +51,7 @@ void init_quest(object npc_ob, string qob_name, string zone, string *files)
         {
                 if( objectp(query_temp("quest_ob", qob)) )
                 {
-                        // 該物品已經存在並用于其他任務，這個任務不能進行
+                        // 該物品已經存在並用於其他任務，這個任務不能進行
                         destruct(this_object());
                         return;
                 }
@@ -99,7 +99,7 @@ void init_quest(object npc_ob, string qob_name, string zone, string *files)
         set("inquiry/"+QOB_NAME, "啊！你...你知道麼？快給我！", npc_ob);
         set_temp("quest_ob", this_object(), npc_ob);
 
-        // 設置接收物品的信息：由于NPC存在的時候該任務對象必
+        // 設置接收物品的信息：由於NPC存在的時候該任務對象必
         // 定會存在（因為任務析構的時候會清除NPC），所以可以
         // 讓NPC引用本地的"npc_accept_object"函數。
         set_temp("override/accept_object", (:npc_accept_object:), npc_ob);
@@ -181,7 +181,7 @@ object search_qob(object me)
         string msg;
 
         if( query("score", me)<2000 )
-                // 必須有2000的江湖閱歷才能夠找到
+                // 必須有2000的江湖閲歷才能夠找到
                 return 0;
 
         if (! objectp(QOB))
@@ -229,10 +229,10 @@ string ask_npc(object knower, object me)
         mapping my = query_entire_dbase();
 
         if (! objectp(NPC_OB))
-                return CYN "哦，據說" HIY + NPC_NAME + NOR CYN
-                       "不知道去哪兒去了，神秘的失蹤了。" NOR;
+                return CYN "哦，據説" HIY + NPC_NAME + NOR CYN
+                       "不知道去哪兒去了，神祕的失蹤了。" NOR;
 
-        return "你說" + NPC_NAME + "啊？我還想向你打聽呢！";
+        return "你説" + NPC_NAME + "啊？我還想向你打聽呢！";
 }
 
 // 詢問QOB - 提供的物品的信息
@@ -245,11 +245,11 @@ string ask_qob(object knower, object me)
         string *str;
 
         if (! objectp(QOB) || ! objectp(env = ENV_OB) && ! environment(QOB))
-                return CYN "據可靠的消息說，" + QOB_NAME + CYN "是"
-                       "再也找不著了，再怎麼也是白忙活了。" NOR;
+                return CYN "據可靠的消息説，" + QOB_NAME + CYN "是"
+                       "再也找不着了，再怎麼也是白忙活了。" NOR;
 
         if (environment(QOB))
-                return CYN "好像說是有人已經找到" + QOB_NAME +
+                return CYN "好像説是有人已經找到" + QOB_NAME +
                        CYN "了，嘖嘖，怎麼就不是我呢？" NOR;
 
         if( query("score", me) >= 2000 )
@@ -265,15 +265,15 @@ string ask_qob(object knower, object me)
                 }
 
                 message("vision", WHT + knower->name() + "看了看四周，鬼鬼祟祟"
-                                  "的在" + me->name() + WHT "耳邊說了些什麼。\n"
+                                  "的在" + me->name() + WHT "耳邊説了些什麼。\n"
                                   NOR, environment(me), ({ me }));
 
                 tell_object(me, sort_msg(knower->name() + "看了看四"
-                            "周，鬼鬼祟祟的在你耳邊說道：“你可千萬"
-                            "別告訴別人呀！這可是我聽到的秘密情報，"
-                            "今天我不要錢就告訴你了：據說那個東西在一個" +
-                            exits + "的地方，離咱們這裡也不算太遠呢。你"
-                            "到那裡仔細找找沒準會有發現呢！”\n"));
+                            "周，鬼鬼祟祟的在你耳邊説道：“你可千萬"
+                            "別告訴別人呀！這可是我聽到的祕密情報，"
+                            "今天我不要錢就告訴你了：據説那個東西在一個" +
+                            exits + "的地方，離咱們這裏也不算太遠呢。你"
+                            "到那裏仔細找找沒準會有發現呢！”\n"));
 
                 if( !mapp(dq=query_temp("freequest", me)) )
                         dq = ([ this_object() : 1 ]);
@@ -285,7 +285,7 @@ string ask_qob(object knower, object me)
                 message_vision(CYN "$N" CYN "上上下下的打量了$n" CYN "一番，嘴"
                                "角露出一絲不屑的神態。\n" NOR, knower, me);
 
-        return CYN "其實你說這" HIY + QOB_NAME + NOR CYN
+        return CYN "其實你説這" HIY + QOB_NAME + NOR CYN
                "東西有啥用呢？能比得上雞腿和酒袋麼？" NOR;
 }
 
@@ -300,7 +300,7 @@ string query_introduce(object knower)
                 call_out("do_say", 1);
         }
 
-        return CYN "據說" + HIY + NPC_NAME + NOR CYN "正在托人尋找" +
+        return CYN "據説" + HIY + NPC_NAME + NOR CYN "正在託人尋找" +
                HIY + QOB_NAME + NOR CYN "，嘖嘖，可惜我要看店。" NOR;
 }
 
@@ -313,11 +313,11 @@ string query_prompt()
                 return CYN "最近聽來往的客人談起過『" HIY + name() +
                        NOR CYN "』來。";
         case 1:
-                return "噢！樓上住店的那幾個客人剛才說什麼『" HIY + name() +
+                return "噢！樓上住店的那幾個客人剛才説什麼『" HIY + name() +
                        NOR CYN "』呢。";
         default:
                 return "前兩天來過幾個江湖人士，一看就是高手，"
-                       "他們還說起過『" HIY + name() + NOR CYN "』呢。";
+                       "他們還説起過『" HIY + name() + NOR CYN "』呢。";
         }
 }
 
@@ -353,7 +353,7 @@ int npc_accept_object(object me, object who, object ob)
 
         if( base_name(environment(me)) != query("startroom", me) )
         {
-                message_vision("$N望著$n，一副白痴模樣。\n", me, who);
+                message_vision("$N望着$n，一副白痴模樣。\n", me, who);
                 return -1;
         }
 
@@ -380,12 +380,12 @@ int npc_accept_object(object me, object who, object ob)
                "score"   : score,
                "weiwang" : weiwang,
                "prompt"  : "在尋找" + QOB_NAME + HIC
-                           "的過程中，經過鍛煉" ]);
+                           "的過程中，經過鍛鍊" ]);
         GIFT_D->delay_bonus(who, b);
 
 /*
         CHANNEL_D->do_channel(this_object(), "rumor",
-                              "聽說" + who->name(1) +
+                              "聽説" + who->name(1) +
                               "("+query("id", who)+
                               ")替" + me->name() + HIM +
                               "找到了" + QOB_NAME + HIM
@@ -411,7 +411,7 @@ void register_information()
         set_information(QOB_NAME, (: ask_qob :));
 }
 
-// 這個任務可以被某人散布嗎？
+// 這個任務可以被某人散佈嗎？
 int can_know_by(object knower)
 {
         mapping my = query_entire_dbase();

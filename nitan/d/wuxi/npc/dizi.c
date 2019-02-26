@@ -41,7 +41,7 @@ void greeting(object ob)
 {
         if( !ob || environment(ob) != environment() ) return;
         if( query("combat_exp", ob)<10000 )
-        message_vision("武館弟子沖著$N叫道：快來跟我比劃幾招。(bi dizi)\n",ob);
+        message_vision("武館弟子衝着$N叫道：快來跟我比劃幾招。(bi dizi)\n",ob);
 }
 
 int do_bi(string arg)

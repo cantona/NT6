@@ -71,7 +71,7 @@ int main(object me, string arg)
         else
                 pay = pay * 100 / (me->query_skill("higgling", 1) + 100);
         if (MONEY_D->player_pay(me, 10000 + item->value()) != 1)
-                return notify_fail("你身上的錢不夠，沒法托人購買道具。\n");
+                return notify_fail("你身上的錢不夠，沒法託人購買道具。\n");
 
         ob = new(item);
         message_vision("$N找了一個打雜的，讓他幫助你購買" + item->name() + "。\n", me);
@@ -96,7 +96,7 @@ int do_purchase(object me, string from, string item, int count, string money)
 
         from_ob = present(from, environment(me));
         if (! objectp(from_ob))
-                return notify_fail("這裡沒有這個人。\n");
+                return notify_fail("這裏沒有這個人。\n");
 
         if (from_ob == me)
                 return notify_fail("左手和右手做生意？好主意，不過這幫不了你練左右互搏。\n");
@@ -115,7 +115,7 @@ int do_purchase(object me, string from, string item, int count, string money)
                 return notify_fail("人家並沒有亮出來這樣東西。\n");
 
         if (item_ob->is_item_make())
-                return notify_fail("這可是別人煉制的物品，不太妥吧。\n");
+                return notify_fail("這可是別人煉製的物品，不太妥吧。\n");
 
         if( query("money_id", item_ob) )
                 return notify_fail("錢你也想買？\n");
@@ -180,7 +180,7 @@ int do_purchase(object me, string from, string item, int count, string money)
 int do_refuse(object me, object ob)
 {
         if (! objectp(ob))
-                return notify_fail("這裡沒有人等你回話了。\n");
+                return notify_fail("這裏沒有人等你回話了。\n");
 
         if( query_temp("pending/purchase", ob) != query("id", me) )
                 return notify_fail("人家已經不打算和你做買賣了。\n");
@@ -205,7 +205,7 @@ int do_right(object me, object ob)
         object  temp_ob;
 
         if (! objectp(ob))
-                return notify_fail("這裡沒有人等你回話了。\n");
+                return notify_fail("這裏沒有人等你回話了。\n");
 
         if( query_temp("pending/purchase", ob) != query("id", me) )
                 return notify_fail("人家已經不打算和你做買賣了。\n");
@@ -346,8 +346,8 @@ int help(object me)
 器道具，來滿足你計劃的需要。
 
 另外，你也可以使用這個命令，使用貨幣求購另外一個玩家身上的物
-品。這個物品必須是對方亮出來的，即拿(hand)在手裡的。如果你輸
-入的名字是 ？ 則表示購買對方手裡的東西，為了保險起見，輸入英
+品。這個物品必須是對方亮出來的，即拿(hand)在手裏的。如果你輸
+入的名字是 ？ 則表示購買對方手裏的東西，為了保險起見，輸入英
 文代號更好一些。如果你提出要求以後後悔了，可以輸入 cancel 參
 數打消這個念頭。
 

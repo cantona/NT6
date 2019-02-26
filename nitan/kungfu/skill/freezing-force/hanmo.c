@@ -39,9 +39,9 @@ int exert(object me, object target)
         addn("neili", -1000, me);
         me->receive_damage("qi", 0);
 
-        message_combatd(HIB "$N" HIB "神色凝重，深吸一口氣，體表瞬間變為靛藍色，$N" HIB "隨之擺出各種奇特的造型舞動著。\n"
-                       "隨著那些詭異的舞姿，藍色煙氣四起，在空中竟似顯現無數異樣蠶蟲，在$N身周繞行不止，\n"
-                       "四周溫度驟降，只剎那間功夫，空氣似乎都凝結了。這瞬間，$N" HIB "如同毒神附體，使人周身顫栗。\n" NOR, me);
+        message_combatd(HIB "$N" HIB "神色凝重，深吸一口氣，體表瞬間變為靛藍色，$N" HIB "隨之擺出各種奇特的造型舞動着。\n"
+                       "隨着那些詭異的舞姿，藍色煙氣四起，在空中竟似顯現無數異樣蠶蟲，在$N身周繞行不止，\n"
+                       "四周温度驟降，只剎那間功夫，空氣似乎都凝結了。這瞬間，$N" HIB "如同毒神附體，使人周身顫慄。\n" NOR, me);
 
         addn_temp("apply/unarmed_damage", 9000, me);
         addn_temp("apply/avoid_freeze", 90, me);
@@ -65,6 +65,6 @@ void remove_effect(object me)
                 addn_temp("apply/avoid_freeze", -90, me);
                 delete_temp("freezing", me);
                 tell_object(me, HIB "$N" HIB "身形一滯，略顯蹣跚，將冰蠶寒魔玄力收回丹田，"
-                                "隨著真氣凝成的蠶蟲納入體內，\n$N" HIB"的體色恢復正常，周圍的寒氣也慢慢散開了。\n" NOR);
+                                "隨着真氣凝成的蠶蟲納入體內，\n$N" HIB"的體色恢復正常，周圍的寒氣也慢慢散開了。\n" NOR);
         }
 }

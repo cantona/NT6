@@ -26,7 +26,7 @@ int do_cai(string arg)
         if( query_temp("caiyao", me) == 2 )
                 return notify_fail("東西到手，快去交了吧。\n"); 
 
-        message_vision("$N趴在地上，瞪大了眼睛在草叢中找尋著藥草，生怕漏掉了目標。\n",me); 
+        message_vision("$N趴在地上，瞪大了眼睛在草叢中找尋着藥草，生怕漏掉了目標。\n",me); 
 
         me->start_call_out((: call_other, __FILE__, "cai", me :), 3); 
         me->start_busy(4); 
@@ -41,7 +41,7 @@ int cai(object me)
         {
         me->receive_damage("jing",10+random(20));
         me->receive_damage("qi",10+random(20));   
-        message_vision(CYN"一翻摸索後，草叢中似乎沒有$N要找的東西，$N失望的嘆了口氣。\n"NOR,me);
+        message_vision(CYN"一翻摸索後，草叢中似乎沒有$N要找的東西，$N失望的歎了口氣。\n"NOR,me);
         }
 
         if (random(20) ==1 && ! present("du she", environment(me))) 
@@ -53,7 +53,7 @@ int cai(object me)
 
    else if(random(20)==1 && ! present("du langzhong", environment(me))) 
         {         
-        tell_room(environment(me),HIR"林子後面突然跳出一個兇神惡剎的男子，手提一把短刀向你撲來！\n"NOR );
+        tell_room(environment(me),HIR"林子後面突然跳出一個凶神惡剎的男子，手提一把短刀向你撲來！\n"NOR );
         ob=new("/d/beijing/npc/liandan_langzhong");
         ob->move(environment(me));
         }
@@ -64,7 +64,7 @@ int cai(object me)
         me->receive_damage("jing",10+random(20));
         me->receive_damage("qi",10+random(20));
         addn_temp("caiyao", 1, me);
-        message_vision(HIG"$N找了半天，終于發現其中一株草苗與其它的草略有不同，
+        message_vision(HIG"$N找了半天，終於發現其中一株草苗與其它的草略有不同，
 小心翼翼地掘了出來。\n"NOR,me); 
         }
         me->stop_busy();

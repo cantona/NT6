@@ -12,7 +12,7 @@ void create()
         else
                 set_name(HIC "秦越人" NOR, ({ "qin yueren", "qin", "yueren" }));                
                 
-        set("long", HIC "生活在春秋戰國時期的扁鵲，據說後來得仙人指引，修成正果。\n" NOR);
+        set("long", HIC "生活在春秋戰國時期的扁鵲，據説後來得仙人指引，修成正果。\n" NOR);
 
         set("gender", "男性");
         set("age", 9999);

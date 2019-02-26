@@ -8,7 +8,7 @@ void create()
 {
         set("short","華山書房");
         set("long", @LONG
-這裡是華山派的書房，靠牆是一排書架，裡面堆著亂七八糟的一
+這裏是華山派的書房，靠牆是一排書架，裏面堆着亂七八糟的一
 大堆書，最近老有人上山尋事，都很久沒人整理書房了，要找啥書都
 很麻煩。右側有張書桌，桌上四寶俱備。
 LONG );
@@ -35,7 +35,7 @@ int do_zhengli()
         if ((query("book_count") > 0) && (random(5) == 3))
         {
                 message_vision(HIY "$N" HIY "辛辛苦苦整理了好半天，居然在"
-                               "破雜物堆裡發現了一本書。\n"NOR,me);
+                               "破雜物堆裏發現了一本書。\n"NOR,me);
                 ob=new("/clone/book/sword_book2");
                 ob->move(me);
                 addn("book_count", -1);

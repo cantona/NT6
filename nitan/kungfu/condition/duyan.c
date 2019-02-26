@@ -30,7 +30,7 @@ int update_condition(object me, int duration)
         me->apply_condition("duyan", duration - 1);
 
         if (duration < 1)
-                tell_object(me, HIW "你中的毒鹽終于發作光了。\n" NOR );
+                tell_object(me, HIW "你中的毒鹽終於發作光了。\n" NOR );
         else
                 tell_object(me, HIW "你中的毒鹽發作了！\n" NOR );
 

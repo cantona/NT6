@@ -36,7 +36,7 @@ void create()
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("long", YEL "這是一本泛黃的皮冊子，裡面記載著如何修改您的頭銜的秘訣。\n"
+                set("long", YEL "這是一本泛黃的皮冊子，裏面記載着如何修改您的頭銜的祕訣。\n"
                                                 "使用後可修改您的頭銜（TITLE），指令：retitle 頭銜 即可。\n" 
                                                                 "下線丟失:否\n" 
                                                         "顏色定義，您可以在您的頭銜中加入指定顏色：\n"

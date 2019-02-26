@@ -5,7 +5,7 @@ int ask_me();
 void create()
 {
         set_name("凌霜華", ({ "ling shuanghua", "ling", "shuanghua" }));
-        set("long", "她長得清秀脫俗，真是人淡如菊。\n");
+        set("long", "她長得清秀脱俗，真是人淡如菊。\n");
         set("gender", "女性");
         set("age", 18);
 
@@ -45,7 +45,7 @@ void greeting(object me)
         command("fu"+query("id", me));
         command("say 這位"+RANK_D->query_respect(me)+"是來"+
                 "看菊花的吧？");
-        command("say 不知道爹爹在花園裡種了什麼，人一進去就會被熏死的，"+
+        command("say 不知道爹爹在花園裏種了什麼，人一進去就會被薰死的，"+
                 "你還是請回吧。");
 }
 
@@ -64,7 +64,7 @@ int ask_me()
                 command("say 我不是告訴你了嗎？你記性也太那個了。");
                 return 1;
         }
-        command("say 啊！你是丁大哥的朋友啊！家父在花園裡中了劇毒的金波旬花，"
+        command("say 啊！你是丁大哥的朋友啊！家父在花園裏中了劇毒的金波旬花，"
                 + "你進去後屏住呼吸就可以了。");
         set_temp("jinboxunhua", 1, who);
         return 1;

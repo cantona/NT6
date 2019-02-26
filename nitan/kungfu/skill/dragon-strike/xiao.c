@@ -51,7 +51,7 @@ int perform(object me)
                 return notify_fail("你現在的真氣不足，難以施展" XIAO "。\n");
 
         if (! living(target))
-                return notify_fail("對方都已經這樣了，用不著這麼費力吧？\n");
+                return notify_fail("對方都已經這樣了，用不着這麼費力吧？\n");
 
         if( objectp(weapon=query_temp("weapon", target)) )
         {
@@ -65,7 +65,7 @@ int perform(object me)
                 {
                         addn("neili", -300, me);
                         msg += HIR "$n" HIR "只覺周圍氣流湧動，手中" + weapon->name() +
-                               HIR "竟然拿捏不住，向$N" HIR "掌心脫手飛去。\n" NOR;
+                               HIR "竟然拿捏不住，向$N" HIR "掌心脱手飛去。\n" NOR;
 
                         weapon->move(environment());
                 } else
@@ -77,7 +77,7 @@ int perform(object me)
                 message_combatd(msg, me, target);
         }
 
-        msg = WHT "忽然$N" WHT "身形激進，施出降龍十八掌之「" HIW "震驚百裡" NOR +
+        msg = WHT "忽然$N" WHT "身形激進，施出降龍十八掌之「" HIW "震驚百里" NOR +
               WHT "」，全身真氣鼓動，雙掌如排山倒海般壓向$n" WHT "。\n"NOR;
 
         ap = attack_power(me, "strike");
@@ -103,8 +103,8 @@ int perform(object me)
 
         message_combatd(msg, me, target);
 
-        msg = HIY "緊跟著$N" HIY "施出降龍十八掌「" HIW "飛龍在天"
-              HIY "」，雙掌翻滾，宛如一條神龍攀蜒于九天之上。\n" NOR;
+        msg = HIY "緊跟着$N" HIY "施出降龍十八掌「" HIW "飛龍在天"
+              HIY "」，雙掌翻滾，宛如一條神龍攀蜒於九天之上。\n" NOR;
 
         ap = attack_power(me, "strike");
         dp = defense_power(target, "parry");
@@ -144,7 +144,7 @@ int perform(object me)
         dp = defense_power(target, "parry");
 
         msg = HIW "$N" HIW "右掌斜揮，前招掌力未消，此招掌力又到，竟然又攻出一招「" HIR "亢龍有悔" HIW "」，掌夾風勢，勢如破竹，\n"
-              HIW "便如一堵無形氣牆，向前疾沖而去。$n" HIW "只覺氣血翻湧，氣息沉濁。\n" NOR;
+              HIW "便如一堵無形氣牆，向前疾衝而去。$n" HIW "只覺氣血翻湧，氣息沉濁。\n" NOR;
 
         if (ap / 2 + random(ap) > dp)
         {
@@ -155,7 +155,7 @@ int perform(object me)
         } else
         {
                 msg += HIC "$p眼見來勢兇猛，身形疾退，瞬間"
-                       "飄出三丈，脫出掌力之外。\n" NOR;
+                       "飄出三丈，脱出掌力之外。\n" NOR;
         }
         message_combatd(msg, me, target);
         me->start_busy(3 + random(3));

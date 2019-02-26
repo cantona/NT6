@@ -7,7 +7,7 @@ void create()
         set_name("大狼狗", ({ "wolf dog", "dog" }) );
         set("race", "野獸");
         set("age", 4);
-        set("long", "一只昂首挺胸，吐著長舌頭的大狼狗。像是財主家裡養的寵物。\n");
+        set("long", "一隻昂首挺胸，吐着長舌頭的大狼狗。像是財主家裏養的寵物。\n");
         set("attitude", "peaceful");
         
         set("str", 26);

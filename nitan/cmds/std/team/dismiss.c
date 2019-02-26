@@ -15,8 +15,8 @@ int main(object me, string arg)
                 write("你將隊伍解散了。\n");
         } else
         {
-                message("team", me->name(1) + "決定脫離隊伍。\n", t, me);
-                write("你脫離了你的隊伍。\n");
+                message("team", me->name(1) + "決定脱離隊伍。\n", t, me);
+                write("你脱離了你的隊伍。\n");
         }
 
         me->dismiss_team();

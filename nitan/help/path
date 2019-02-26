@@ -1,5 +1,5 @@
                    泥潭路徑之環遊泥潭最新版
-以下路徑全部從揚州中央廣場n;e;e開始(凡是有rideto的n;e;e後需要ride xxx馬廄裡有的馬
+以下路徑全部從揚州中央廣場n;e;e開始(凡是有rideto的n;e;e後需要ride xxx馬廄裏有的馬
 
 宗師路徑:
 獨孤求敗:rideto huashan;#wa 2000;ne;cross
@@ -13,7 +13,7 @@
 
 朝廷欽犯:rideto beijing;#wa 2000;#wa 3000;#6 s
 
-劍塚刀客:rideto xiangyang;#wa 2000;#6 e;ne;e;e;n;e;s;e;n;n
+劍冢刀客:rideto xiangyang;#wa 2000;#6 e;ne;e;e;n;e;s;e;n;n
 
 盜墓飛賊:rideto gumu
 
@@ -56,37 +56,37 @@
        give ding green flower
 
 
-太監辟辟邪劍法: 
+太監闢辟邪劍法: 
 1去洛陽找到莆田少林寺高手渡元禪師(duyuan chanshi)，問他
-關于辟邪劍譜的事，他會殺你，幹掉他，身上就有本袈裟。
+關於辟邪劍譜的事，他會殺你，幹掉他，身上就有本袈裟。
 
-2自宮後，去華山玉女祠（鎮岳宮eu;w）jump cliff再climb up
+2自宮後，去華山玉女祠（鎮嶽宮eu;w）jump cliff再climb up
  是太監的話就會觸發對話劇情，情節結束會得到一件袈裟
 
 3去福州福威鏢局，找林震南詢問“福威鏢局、遠圖公、辟邪
 劍法、銅板”得到密碼後到向陽老宅的井中輸入數字，進入密室後在
 房樑上就能找到第3件袈裟。(rideto fuzhou;w;w;n;enter;n;ask lin
 about 福威鏢局;ask lin about 遠圖公;ask lin about 辟邪劍法;ask
-lin about 銅板;然後買火折，買賣提和楊永福那裡都有。接下來，
+lin about 銅板;然後買火折，買賣提和楊永福那裏都有。接下來，
 rideto fuzhou;s;s;w;w;n;break men;n;down;use fire;zuan;press xxxx
 (xxxx為林震南告訴你的銅板數);進到密室climb tie xiang;jump liang;
 move jia sha)
 
 全真先天功:
 先天功之純陽通神功：全真弟子當自身全真技能造詣已經極高時，可
-嘗試在王重陽祖師面前行禮（ketou）,如果自身條件達到，將會幾率
-性的得到純陽神通功秘訣(shentong mijue)，按照秘訣要求參悟，即
+嘗試在王重陽祖師面前行禮（ketou）,如果自身條件達到，將會機率
+性的得到純陽神通功祕訣(shentong mijue)，按照祕訣要求參悟，即
 可領悟先天功的無上心法--純陽神通功。
      
 圓月彎刀解密:
 圓月彎刀學習解密：每年7月15日月夜 到達圓月山莊背後山溝，看到
-洪水後。跳入山溝會立刻昏迷，醒來如果看見被沖入山谷中一個很深
+洪水後。跳入山溝會立刻昏迷，醒來如果看見被衝入山谷中一個很深
 的洞穴（四面都是山，都是樹，雨後的山谷潮濕而新鮮，就像是個初
 浴的處女。洞穴的四壁畫滿了圖畫，畫的卻不是人間，而是天上。）
 在此處自殺(ci hou)（沒有武器的話會提示沒有武器怎麼刺喉）會出
-現一條淡淡的影子，帶著種淡淡的香氣，從面前飛了過去，忽然又不
-見了。接著手中的武器會消失。然後撞牆(zhuang qiang)會觸發青青
-救人的故事，然後青青會帶你進入憂愁谷（這裡是個幽谷，幽深的山
+現一條淡淡的影子，帶着種淡淡的香氣，從面前飛了過去，忽然又不
+見了。接着手中的武器會消失。然後撞牆(zhuang qiang)會觸發青青
+救人的故事，然後青青會帶你進入憂愁谷（這裏是個幽谷，幽深的山
 谷，四面都是高不可攀的絕壁，好像根本沒有出路。山谷並不大，雖
 然也有庭園宮室、亭台樓閣，景象雖然和那洞穴的壁畫一樣，卻只不
 過圖畫中的一角而已。）向青青要刀，如果先天滿足的話青青會給你
@@ -100,14 +100,14 @@ move jia sha)
        kill 所有人;s;s;ne;ne;ne;se;l chuan;enter chuan就到了
        
 
-冰火島:先參考wenxuan 2010 3 因為裡面有些路徑不具體,且有的地方有改動所以我在這裡補充路徑
+冰火島:先參考wenxuan 2010 3 因為裏面有些路徑不具體,且有的地方有改動所以我在這裏補充路徑
        首先rideto hangzhou;#wa 3000;s;s;s;#2 sw;#3 w;sw;s;s;ed;enter zhou
        ask yin 冰火島;decide
        下船後先到王盤山n;get stone;#5 break boat;s;n;s
        kill 所有人;s;s;ne;ne;ne;se;接下繼續參考wenxuan 2010 3
        (提示：必須有屠龍刀故事觸發才能去冰火島否則不能break boat).
 
-九陽神功:請參考wenxuan 2010 2(提示拿書的小號臂力必須小于20否則拿不到記得帶武器)
+九陽神功:請參考wenxuan 2010 2(提示拿書的小號臂力必須小於20否則拿不到記得帶武器)
          小號拿到後把包裹給大號..大號打開需馬上get all
 
 乾坤大挪移:rideto mingjiao;#wa 2000;w;w;w;wu;wu;w;w;enter;break men(需要300基本內功)
@@ -118,7 +118,7 @@ move jia sha)
 
 百花錯拳,莊子舞,戰神心經:rideto hangzhou;#wa 3000;s;s;s;#2 sw;#3 w;sw;s;s;wu;enter
                          kill all;u;一直找到陳家洛.xue chen baihua-cuoquan 來激發
-                         接著可以xue chen zhuangzi-wu 
+                         接着可以xue chen zhuangzi-wu 
                                  xue chen zhanshen-xinjing
 
 九陰真經:屠龍刀拿法：rideto hangzhou;#wa 3000;s;s;s;#2 sw;#3 w;sw;s;s;ed;enter zhou;ask yin 冰火島;decide
@@ -137,14 +137,14 @@ move jia sha)
 獨孤九劍無招解密:rideto xiangyang;#wa 2000;#5 e;ne;e;e;n;n;n;e;s;n;
 n;n;#wa 1000;enter;n;s;out;n;n;n;wa qingtai;climb bi;enter,
 然後hole1~hole6對應相應的機關，enter hole後move desk;out;
-l door當6把火炬都亮著就可以enter;get canben;rideto huashan;
+l door當6把火炬都亮着就可以enter;get canben;rideto huashan;
 ne;cross;give dugu canben
 
 六脈神劍:rideto dali;#4 n;nw;n;ne;e;#3 s;#wa 1000;e;#2 s;w;#6 s;kill kurong(隨機出現六脈神劍劍譜.注意需要skills300以上方安全)
 
 唐詩劍法:可以參考wenxuan 2010 4
 
-其余各種解密可以參考help fam_skill help pub_skill
+其餘各種解密可以參考help fam_skill help pub_skill
 
 
 taskNPC路徑
@@ -171,11 +171,11 @@ taskNPC路徑
 
 鰲拜;rideto beijing;#wa 2000;#2 w;#7 n;kill shi wei;n;n;
 
-張三豐:rideto wudang;#wa 2000;wu;w;su;su;su;su;sd;su;sd;su;su;su;su;s;s;s;s;s
+張三丰:rideto wudang;#wa 2000;wu;w;su;su;su;su;sd;su;sd;su;su;su;su;s;s;s;s;s
 
 姚春:rideto beijing;#wa 2000;w;w;n;e;e;n
 
-謝遜:參考help path裡的冰火島就找到了
+謝遜:參考help path裏的冰火島就找到了
 
 黃藥師:rideto taohua;#wa 2000;ask sha 玩;agree;w;w
 
@@ -211,7 +211,7 @@ taskNPC路徑
 
 全冠清:rideto yangzhou;#wa 2000;e;e;e;#3 s
 
-說不得:rideto mingjiao;#wa 2000;w;w;w;wu;wu;#4 nu;enter;#4 nu;n
+説不得:rideto mingjiao;#wa 2000;w;w;w;wu;wu;#4 nu;enter;#4 nu;n
 
 任盈盈;rideto heimuya;#wa 2000;#6 ed;yell boat;enter boat;下船後;eu;s;#10 e
 
@@ -223,7 +223,7 @@ taskNPC路徑
 
 買賣提:rideto yili;#wa 2000;w
 
-李可秀:高昌裡
+李可秀:高昌裏
 
 採花子:rideto xingxiu;#wa 2000;n;w;w;
 

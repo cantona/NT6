@@ -8,7 +8,7 @@ void create()
 {
         set("short", "廚房");
         set("long", @LONG
-這裡常年有幾個啞僕在烹調食物，等候傳喚。對待這些人不用太客氣，
+這裏常年有幾個啞僕在烹調食物，等候傳喚。對待這些人不用太客氣，
 命令(order)他們就可以了。
 LONG );
         set("exits", ([
@@ -81,7 +81,7 @@ int do_order()
                 message_vision("啞僕面無表情地拿出"+ob1->name()+"給$N。\n", me);
         }
         else if ( (int)me->max_food_capacity()-food_ind >= 40 )
-                message_vision("啞僕指了指$N拿著的食物，搖了搖頭。\n", me);
+                message_vision("啞僕指了指$N拿着的食物，搖了搖頭。\n", me);
         else message_vision("啞僕指了指$N的肚子，搖了搖手。\n", me);
 
         if ( (int)me->max_water_capacity()-water_ind >= 40 && !w
@@ -91,7 +91,7 @@ int do_order()
                 message_vision("啞僕面無表情地拿出"+ob2->name()+"給$N。\n", me);
         }
         else if ( (int)me->max_water_capacity()-water_ind >= 40 )
-                message_vision("啞僕指了指$N拿著的食物，搖了搖頭。\n", me);
+                message_vision("啞僕指了指$N拿着的食物，搖了搖頭。\n", me);
         else message_vision("啞僕指了指$N的肚子，搖了搖手。\n", me);
 
         return 1;
@@ -108,7 +108,7 @@ int valid_leave(object me, string dir)
         }
 
         if ( (f>0 || w>0) && present("ya pu", environment(me)) ) 
-                return notify_fail("啞僕攔著你，指了指你拿著的食物，搖了搖頭。\n");
+                return notify_fail("啞僕攔着你，指了指你拿着的食物，搖了搖頭。\n");
 
         return ::valid_leave(me, dir);
 }

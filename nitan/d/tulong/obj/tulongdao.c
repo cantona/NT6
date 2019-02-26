@@ -19,7 +19,7 @@ void create()
                 set_default_object(__FILE__);
         else {
                 set("unit", "柄");
-                set("long", HIY "這便是號稱武林至尊的屠龍寶刀，四尺來長的單刀，竟達一百多斤之重。\n相傳其中藏有曠世的大秘密。\n" NOR);
+                set("long", HIY "這便是號稱武林至尊的屠龍寶刀，四尺來長的單刀，竟達一百多斤之重。\n相傳其中藏有曠世的大祕密。\n" NOR);
                 set("value", 100000);
                 set("no_sell", "這樣東西不能賣。\n");
                 set("no_store", 1);
@@ -47,7 +47,7 @@ mixed hit_ob(object me, object victim, int damage_bonus)
         int dam;
         dam = me->query_str()*100;
         victim->receive_damage("jing",dam * 2);
-        return HIM "屠龍刀夾帶著刺耳的破空聲劃出一道道長虹，$n只感到心神意亂，勉強作出抵擋。\n" NOR;
+        return HIM "屠龍刀夾帶着刺耳的破空聲劃出一道道長虹，$n只感到心神意亂，勉強作出抵擋。\n" NOR;
 }
 
 void init()
@@ -75,7 +75,7 @@ int do_open(string arg, object me)
                 pai->move(this_player());
                 pai = new("/d/tulong/obj/yishu");
                 pai->move(this_player());
-                message_vision(WHT "\n$N提起屠龍刀對準倚天劍用力的砍了下去！\n\n"NOR+HIW"只聽一聲悶響，$N手臂一震，屠龍刀和倚天劍已經斷了。你發現刀劍中竟然夾藏著幾卷帛絹。\n"NOR,this_player());
+                message_vision(WHT "\n$N提起屠龍刀對準倚天劍用力的砍了下去！\n\n"NOR+HIW"只聽一聲悶響，$N手臂一震，屠龍刀和倚天劍已經斷了。你發現刀劍中竟然夾藏着幾卷帛絹。\n"NOR,this_player());
                 destruct (ob);
                 destruct(this_object());
                 return 1;
@@ -113,7 +113,7 @@ void return_to_back()
 
         } else 
         { 
-                message("vision", "忽然一個人走了過來，撿起"+name()+"，嘆了口氣，搖搖頭走了。\n", me); 
+                message("vision", "忽然一個人走了過來，撿起"+name()+"，歎了口氣，搖搖頭走了。\n", me); 
         } 
 
         move("/clone/misc/void");

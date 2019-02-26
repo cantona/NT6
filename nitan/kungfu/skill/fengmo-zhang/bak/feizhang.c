@@ -43,7 +43,7 @@ int perform(object me, object target)
 
         skill = me->query_skill("staff");
         
-        message_vision(HIR "\n$N大喝一聲將手中急轉著的"+weapon->name()+"脫手擲出，在空中高低左右回旋！\n\n" NOR, me, target);
+        message_vision(HIR "\n$N大喝一聲將手中急轉着的"+weapon->name()+"脱手擲出，在空中高低左右迴旋！\n\n" NOR, me, target);
 
         set_temp("fengmo", 1, me);
         set_temp("location", file_name(environment(me)), me);

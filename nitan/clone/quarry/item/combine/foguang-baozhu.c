@@ -8,7 +8,7 @@ void create()
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("long", HIY "這是一粒閃耀著佛光的寶珠，光芒四射，人間罕有。\n" NOR);
+                set("long", HIY "這是一粒閃耀着佛光的寶珠，光芒四射，人間罕有。\n" NOR);
                 set("base_unit", "粒");
                 set("unit", "粒");
                 set("base_value", 100);

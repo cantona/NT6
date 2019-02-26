@@ -26,7 +26,7 @@ int valid_learn(object me)
         if ((me->query_skill("lamaism",1) > 1))
                 return notify_fail("哈哈！"+ RANK_D->query_respect(me)+"已經學了密宗心法，即非我正派中人！\n");
         if (me->query_skill("zhengqijue", 1) >= 100)
-                return notify_fail("限于資質，你對正氣訣的理解也就到此為止了。\n");
+                return notify_fail("限於資質，你對正氣訣的理解也就到此為止了。\n");
         return 1;
 }
 */
@@ -37,7 +37,7 @@ int practice_skill(object me)
 }
 void skill_improved(object me)
 {
-        tell_object(me, HIR "你心裡鼓盪著一股俠義之氣！\n" NOR );
+        tell_object(me, HIR "你心裏鼓盪着一股俠義之氣！\n" NOR );
    addn("shen", 200, me);
 }
 
@@ -47,7 +47,7 @@ int help(object me)
         write(@HELP
 
     正氣訣為華山心法，配合紫霞神功能增加氣。
-    可尋找正氣訣閱讀。
+    可尋找正氣訣閲讀。
 
         學習要求：
                 紫霞神功30級

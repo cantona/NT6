@@ -9,14 +9,14 @@ void create()
         set("subrace", "飛蟲");
         seteuid(getuid());
         set("age", 1);
-        set("long", "這是一群玉色的蜜蜂，個頭比普通蜜蜂大得多，\n");
+        set("long", "這是一羣玉色的蜜蜂，個頭比普通蜜蜂大得多，\n");
         set("attitude", "peaceful");
         set("no_train", 1);
         set("combat_exp", 500);
         set("chat_chance", 3);
         set("chat_msg", ({
                 "玉蜂嚶嚶嗡嗡地亂舞個不停。\n",
-                "玉蜂飛速地向你沖過來，好象要叮你一口。可是在要觸及你的一剎那又飛開了。\n",
+                "玉蜂飛速地向你衝過來，好像要叮你一口。可是在要觸及你的一剎那又飛開了。\n",
                 "玉蜂嗡嗡嗡飛過來，在你頭上轉了一圈，又飛走了。\n",
         }) );
         set_temp("apply/attack", 200);

@@ -10,7 +10,7 @@ void create()
 {
         set_name("丹青生", ({ "danqing sheng", "danqing", "dan", "qing", "sheng" }));
         set("long", @LONG
-只見這人髯長及腹，左手拿著一只酒杯，臉上
+只見這人髯長及腹，左手拿着一隻酒杯，臉上
 醺醺然大有醉意，這就是梅莊四位莊主排行第
 四的丹青生。他好酒、好畫、好劍，人稱三絕。
 三絕之中，以酒為首，丹青次之，劍道居末。
@@ -66,8 +66,8 @@ LONG);
                 "任我行"      : "任我行乃日月神教上代教主，不過已經失蹤很久了。",
                 "東方不敗"    : "東方教主武功深不可測，天下無敵。",
                 "日月神教"    : "我們梅莊四友和日月神教已無瓜葛，你提它作甚？",
-                "溪山行旅圖"  : "我一直想看看北宋范中立《溪山行旅圖》究竟是怎樣的。",
-                "醉裡乾坤"    : (: ask_skill1 :),
+                "溪山行旅圖"  : "我一直想看看北宋範中立《溪山行旅圖》究竟是怎樣的。",
+                "醉裏乾坤"    : (: ask_skill1 :),
         ]));
 
         set("chat_chance_combat", 100);
@@ -97,14 +97,14 @@ void attempt_apprentice(object me)
                 command("yi");
                 command("say 我道是誰，原來是東方教主的弟子。");
                 command("say 這件事我不便插手，你去找我大哥、二哥好了。");
-                set("move_party/日月神教─梅莊", 1, me);
+                set("move_party/日月神教—梅莊", 1, me);
                 return;
         }
 
         if( query("combat_exp", me)<50000 )
         {
                 command("sigh");
-                command("say 你的江湖經驗太淺，還是先多鍛煉鍛煉再說吧。");
+                command("say 你的江湖經驗太淺，還是先多鍛鍊鍛鍊再説吧。");
                 return;
         }
 
@@ -116,7 +116,7 @@ void attempt_apprentice(object me)
         }
 
         command("en");
-        command("say 那你以後就跟著我吧。");
+        command("say 那你以後就跟着我吧。");
         command("recruit "+query("id", me));
 }
 
@@ -145,8 +145,8 @@ mixed ask_skill1()
                 return "你的內功火候尚不精純，學不了這一招。";
 
         message_vision(HIY "$n" HIY "哈哈一笑，舉起手中酒杯一口飲"
-                       "幹，說道：好，今日老夫便傳你這招！\n$n" HIY
-                       "說完左掌猛力拍落，一股掌力擊在地下，“蓬”"
+                       "幹，説道：好，今日老夫便傳你這招！\n$n" HIY
+                       "説完左掌猛力拍落，一股掌力擊在地下，“蓬”"
                        "的一聲響，身子向後\n躍起，已在丈許之外。只"
                        "見他尚未站定，長劍已在身前連劃三個圓圈，幻"
                        "作\n三個光圈。三個光圈便如是有形之物，凝在"
@@ -156,7 +156,7 @@ mixed ask_skill1()
                        "目瞪口呆。\n" NOR, me, this_object());
         command("haha");
         command("say 精要便是如此，自己下去練吧。");
-        tell_object(me, HIC "你學會了「醉裡乾坤」。\n" NOR);
+        tell_object(me, HIC "你學會了「醉裏乾坤」。\n" NOR);
 
         if (me->can_improve_skill("sword"))
                 me->improve_skill("sword", 1500000);

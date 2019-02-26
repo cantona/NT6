@@ -46,7 +46,7 @@ void setup_char(object ob)
         case "飛禽":
                 BIRD_RACE->setup_bird(ob);
                 break;
-        case "遊魚":
+        case "游魚":
                 FISH_RACE->setup_fish(ob);
                 break;
         case "蛇類":

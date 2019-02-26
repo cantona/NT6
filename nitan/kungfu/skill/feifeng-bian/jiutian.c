@@ -67,7 +67,7 @@ int perform(object me, object target)
                 if( query_temp("weapon", target)){
                         weapon1=query_temp("weapon", target);
                         if( query("combat_exp", me)<random(query("combat_exp", target)*8/5)){
-                                message_vision(HIW"$n手指一鬆，"NOR+weapon1->name()+NOR HIW"險些脫手！\n" NOR, me, target);
+                                message_vision(HIW"$n手指一鬆，"NOR+weapon1->name()+NOR HIW"險些脱手！\n" NOR, me, target);
                         }
                         else {
                                 message_vision(HIW"$n手上一鬆，不由自主的丟下了"NOR+weapon1->name()+NOR HIW"！\n" NOR, me, target);
@@ -135,7 +135,7 @@ void checking(object me, object target, object weapon, int dodge, int damage, in
                 return;
         }
         if (random(5) == 1)
-                message_vision(HIG"$N身姿如同九天鳳凰，瀟洒飄逸又威勢逼人！\n"NOR,me);
+                message_vision(HIG"$N身姿如同九天鳳凰，瀟灑飄逸又威勢逼人！\n"NOR,me);
                 addn_temp("jiutian", -1, me);
                 call_out("checking", 1, me, target, weapon, dodge,damage, parry);
         }

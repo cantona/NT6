@@ -69,7 +69,7 @@ void create()
         set("inquiry", ([
             "配藥" : (: ask_aoyao :),
             "煉藥" : (: ask_aoyao :),
-            "制藥" : (: ask_aoyao :),
+            "製藥" : (: ask_aoyao :),
             "熬藥" : (: ask_aoyao :),
         ]));
 
@@ -93,7 +93,7 @@ int ask_aoyao()
         object me = this_player();
         message_vision(query("name")+"向$N解釋道：\n",me);
         message_vision("你先將蓋子打開[open lip]，然後加入所需的藥材[add **** in lu]\n",me);
-        message_vision("記著適量倒一些玉蜂蜜[pour mi]，這是我古墓聖藥的藥引。再扣好蓋子[close lip]\n",me);
+        message_vision("記着適量倒一些玉蜂蜜[pour mi]，這是我古墓聖藥的藥引。再扣好蓋子[close lip]\n",me);
         message_vision("把炭盆點燃[burn coal]，等爐火旺起來了。就可以熬藥了[aoyao]。\n",me);
         message_vision("熬藥時要隨時控制火候，還要不停攪拌，很累人的。藥熬好了之後，\n",me);
         message_vision("記得先滅了火[mie huo]再取藥[qu yao]，以免被燙傷。\n",me);

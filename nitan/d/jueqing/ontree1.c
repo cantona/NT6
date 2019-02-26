@@ -6,7 +6,7 @@ void create()
 {
         set("short", NOR + RED "大棗樹上" NOR);
         set("long", @LONG
-這裡是石窟內的一棵百仗高的大棗樹上，但見此處被樹葉
+這裏是石窟內的一棵百仗高的大棗樹上，但見此處被樹葉
 所蓋，密不透風。
 LONG);
         set("exits", ([
@@ -37,10 +37,10 @@ int do_jump(string arg)
                 ob = load_object(__DIR__"undertan");
 
         if (me->is_busy())
-                return notify_fail("你現在正忙著呢！\n");
+                return notify_fail("你現在正忙着呢！\n");
 
         if (me->is_fighting())
-                return notify_fail("你還是先把你面前這個家伙解決了再說。\n");
+                return notify_fail("你還是先把你面前這個傢伙解決了再説。\n");
 
         tell_room(ob, HIC + me->name() + "從大棗樹上跳了下來。\n" NOR, me);
 
@@ -54,7 +54,7 @@ int valid_leave(object me, string dir)
 {
         if (dir == "down")
         { 
-               write(HIC "這裡離地面太高，看來你只有跳下去了。\n" NOR);
+               write(HIC "這裏離地面太高，看來你只有跳下去了。\n" NOR);
                return -1;
         }
 

@@ -5,14 +5,14 @@ void create()
 {
         set("short", "大山洞");
         set("long", @LONG
-這是西山上一個大山洞，裡面黑乎乎的，什麼也沒有。你睜眼仔細
+這是西山上一個大山洞，裏面黑乎乎的，什麼也沒有。你睜眼仔細
 觀察，發現洞中有一叢叢齊肩的長草(cao)。
 LONG );
         set("exits", ([
                 "out"  : __DIR__"tulu4",
         ]));
         set("item_desc", ([
-            "cao" : "長草密集厚實，好象遮蓋住了什麼，你實在看不清楚。\n",
+            "cao" : "長草密集厚實，好像遮蓋住了什麼，你實在看不清楚。\n",
         ]));
         set("no_clean_up", 0);
         set("coor/x", -7131);
@@ -34,7 +34,7 @@ int do_use(string arg)
         if (!present("fire", me))  return 0;
         if( arg=="fire" )
         {
-                write("你點燃了火折，發現草後面好象還有個洞，似乎可以鑽(zuan)進去。\n");
+                write("你點燃了火折，發現草後面好像還有個洞，似乎可以鑽(zuan)進去。\n");
                 set_temp("marks/dashandong", 1, me);
                 return 1;
         }

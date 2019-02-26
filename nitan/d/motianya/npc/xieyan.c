@@ -74,7 +74,7 @@ int accept_object(object me, object ob)
         } else
         {
                 command("say 很好，很好！");
-                command("say 我這裡有一套碧針清掌，是我晚年創下的絕學，可以傳授予你。");
+                command("say 我這裏有一套碧針清掌，是我晚年創下的絕學，可以傳授予你。");
                 set("can_learn/xieyanke/bizhen-qingzhang", 1, me);
                 destruct(ob);
                 return -1;
@@ -93,7 +93,7 @@ int recognize_apprentice(object ob, string skill)
         if (skill != "bizhen-qingzhang")
         {
                 command("killair");
-                command("say 我說過只傳授你這套掌法，你不學就算了。");
+                command("say 我説過只傳授你這套掌法，你不學就算了。");
                 return -1;
         }
 

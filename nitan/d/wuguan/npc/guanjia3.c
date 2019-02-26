@@ -6,7 +6,7 @@ void create()
         set_name("馬房管事", ({ "mafang guanshi", "guanshi" }) );
         set("gender", "男性" );
         set("age", 50);
-        set("long", "他是馬房管事，專管馬房裡的大小雜事！\n");
+        set("long", "他是馬房管事，專管馬房裏的大小雜事！\n");
         set("combat_exp", 2500);
         set("attitude", "friendly");
         set("inquiry", ([

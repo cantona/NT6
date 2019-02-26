@@ -30,46 +30,46 @@ int reset_game(int all);
 mixed se_text = ({
         ({"","","","",""}),
         ({
-            "□□□□┐",
+            "┏━━━┐",
         "│      │",
         "│  ●  │",
         "│      │",
-                "□□□□□",
+                "┖━━━┛",
         }),
         ({
-                "□□□□┐",
+                "┏━━━┐",
         "│  ●  │",
         "│      │",
         "│  ●  │",
-                "□□□□□",
+                "┖━━━┛",
         }),
         ({
-                "□□□□┐",
+                "┏━━━┐",
                 "│●　　│",
         "│　●　│",
         "│　　●│",
-                "□□□□□",
+                "┖━━━┛",
         }),
         ({
-                "□□□□┐",
+                "┏━━━┐",
         "│●　●│",
         "│　　　│",
         "│●　●│",
-                "□□□□□",
+                "┖━━━┛",
         }),
         ({
-                "□□□□┐",
+                "┏━━━┐",
         "│●　●│",
         "│　●　│",
         "│●　●│",
-                "□□□□□",
+                "┖━━━┛",
         }),
         ({
-                "□□□□┐",
+                "┏━━━┐",
         "│●　●│",
         "│●　●│",
         "│●　●│",
-                "□□□□□",
+                "┖━━━┛",
         })
 });
 
@@ -486,9 +486,9 @@ int do_next(string arg)
                 return msg(0,0,"有玩家缺場了，請重新開始遊戲(start)。\n");
 
         if(me!=ob)
-                msg(me,ob,"$N對$n說道：到你了。\n");
+                msg(me,ob,"$N對$n説道：到你了。\n");
         else
-                msg(me,0,"對自己說道：到我啦！\n");
+                msg(me,0,"對自己説道：到我啦！\n");
         tell_object(ob,for_guess_msg());
         return 1;
 }
@@ -544,7 +544,7 @@ int do_guess(string arg)
 
         cur_player = player_follow[last_player];
 
-        msg(me,0,sprintf("$N(%s)說道：%d個%d\n",me->query("id"),n,p));
+        msg(me,0,sprintf("$N(%s)説道：%d個%d\n",me->query("id"),n,p));
         if(history)
                 history = history + ({ sprintf("%-20s：%d個%d",me->query("name")+"("+me->query("id")+")",n,p) });
         else
@@ -658,7 +658,7 @@ int do_dahua(string arg)
         if(last_player!=arg)
                 return notify_fail("不是他最後猜色子了。\n");
 
-        msg(me,ob,HIC "\n$N對$n說道：我不相信！！！\n" NOR);
+        msg(me,ob,HIC "\n$N對$n説道：我不相信！！！\n" NOR);
         show_all_se(me);
         return 1;
 }
@@ -687,7 +687,7 @@ int do_finish(string arg)
                 if(!cur_player)cur_player = me->query("id");
                 if(ob = get_cur_player())
                 {
-                        msg(ob,0,"$N說道：由我先猜！！！\n");
+                        msg(ob,0,"$N説道：由我先猜！！！\n");
                         tell_object(ob,for_guess_msg());
                 }
                 else
@@ -750,7 +750,7 @@ int do_visitor(string arg)
         {
                 ob = present(key,environment(this_object()));
                 if(!ob)
-                        return notify_fail("這裡沒有這個玩家啊？\n");
+                        return notify_fail("這裏沒有這個玩家啊？\n");
 
                 if(del)
                 {
@@ -790,36 +790,36 @@ int do_help(string arg)
 {
         this_player()->start_more( @HELP
 大話色使用方法:
-──[開始遊戲]───────────────
+——[開始遊戲]———————————————
 幫助命令：helpse
 加入命令：join　　　　　加入遊戲
 開始命令：start 　　　　開始遊戲
 重置命令：reset se                結束遊戲
 
-──[遊戲前命令]───────────────
+——[遊戲前命令]———————————————
 　搖色子：toss
 查看色子：view [玩家ID]
 準備結束：finish 或者 deal
 
-──[遊戲命令]───────────────
+——[遊戲命令]———————————————
 拆穿大話：dahua 玩家ID
 猜測色子：guess 色子數量 色子點數
 　　　　　或者 g 色子數量 色子點數
 催促玩家：next
 
-──[其它命令]───────────────
+——[其它命令]———————————————
 　計數器：showc
-猜測日志：history
+猜測日誌：history
 
-──[旁觀命令]───────────────
+——[旁觀命令]———————————————
 觀戰命令：visit [-d] 玩家ID
                 邀請其它玩家觀看你的遊戲。
                 加參數 -d 表示刪除該玩家的觀看資格。
 
-──[遊戲規則]───────────────
+——[遊戲規則]———————————————
 建設中...
 
-──────────────────────
+——————————————————————
                         make by 貓部貓(Catyboy) v1.0
 HELP
         );

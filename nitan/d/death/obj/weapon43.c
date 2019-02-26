@@ -5,7 +5,7 @@ inherit BLADE;
 
 void create()
 {
-        set_name(YEL "鳳凰□" NOR, ({ "fenghuang jue", "fenghuang", "jue", "blade", "dao" }) );
+        set_name(YEL "鳳凰钁" NOR, ({ "fenghuang jue", "fenghuang", "jue", "blade", "dao" }) );
         set_weight(4000);
         if( clonep() )
                 set_default_object(__FILE__);

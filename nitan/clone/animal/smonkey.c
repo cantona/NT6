@@ -8,7 +8,7 @@ void create()
         set_name("小猴子", ({ "monkey", "hou", "houzi" }) );
         set("race", "走獸");
         set("age", 2+random(3));
-        set("long", "一只機靈的小猴子，眼巴巴的看著你，大概想討些吃的。\n");
+        set("long", "一隻機靈的小猴子，眼巴巴的看着你，大概想討些吃的。\n");
         set("attitude", "peaceful");
 
         set("limbs", ({ "頭部", "身體",  "前腿", "後腿", "尾巴" }) );
@@ -25,8 +25,8 @@ void create()
 
         set("chat_chance", 8);
         set("chat_msg", ({
-                "一只小猴子忽然跑過來，向你作了個揖。\n",
-                "一只小猴子嘰嘰喳喳跑了過來。\n",
+                "一隻小猴子忽然跑過來，向你作了個揖。\n",
+                "一隻小猴子嘰嘰喳喳跑了過來。\n",
                 "小猴子蹦蹦跳跳地跑開了。\n",
                 "小猴子搖搖尾巴跑開了。\n",
         }) );
@@ -38,7 +38,7 @@ int accept_object(object me, object obj)
 
         if( query("food_supply", obj) && obj->value() >= 0){
                 command("jump"+query("id", me));
-                say("小猴子三兩下便把"+query("name", obj)+"吃得幹幹凈凈。\n");
+                say("小猴子三兩下便把"+query("name", obj)+"吃得乾乾淨淨。\n");
 
                 remove_call_out("destroy_it");
                 call_out("destroy_it", 1, obj);
@@ -46,14 +46,14 @@ int accept_object(object me, object obj)
                 if( query("id", obj) != "banana" )
                         return 1;
 
-                message_vision("小猴子拉扯$N的衣服，示意$N跟著它。\n", me);
-                message("vision", me->name() + "隨著小猴子走向深山，左拐右拐地一下子便看不見了。\n", environment(me), ({me}));
-                message("vision", "另一只小猴子走了過來。\n", environment(me),({me}));
-                write("你隨著小猴子在山裡走著，東轉西轉地搞得你迷失了方向。\n");
+                message_vision("小猴子拉扯$N的衣服，示意$N跟着它。\n", me);
+                message("vision", me->name() + "隨着小猴子走向深山，左拐右拐地一下子便看不見了。\n", environment(me), ({me}));
+                message("vision", "另一隻小猴子走了過來。\n", environment(me),({me}));
+                write("你隨着小猴子在山裏走着，東轉西轉地搞得你迷失了方向。\n");
                 write("走了良久，小猴子把你帶到一片密林前。\n");
-                write("緊接著，小猴子便往野林裡跑了。\n");
+                write("緊接着，小猴子便往野林裏跑了。\n");
                 me->move("/d/quanzhou/milin");
-                message("vision", me->name()+"跟著小猴子走了過來。\n", environment(me), ({me}) );
+                message("vision", me->name()+"跟着小猴子走了過來。\n", environment(me), ({me}) );
                 return 1;
         } else {
                 say("小猴子把"+query("name", obj)+"接了過來，玩弄了幾下，似乎不懂有什麼用。\n");
@@ -90,6 +90,6 @@ void init()
         if( interactive(me) && living(me) )
         {
                 command("look"+query("id", me));
-                message_vision("小猴子神秘地對$N眨了眨眼睛，“吱，吱，吱”叫了幾聲！\n", me);
+                message_vision("小猴子神祕地對$N眨了眨眼睛，“吱，吱，吱”叫了幾聲！\n", me);
         }
 }

@@ -9,10 +9,10 @@ void create()
         set("short","芙蓉洞");
         set("long", @LONG
 一進入洞中，陽光便射在頭頂上，舉目一望，原來洞頂有一個小
-洞，陽光便是從中射進來的，一看四周，這裡長滿了芙蓉花，正由于
-上面的小洞(dong)才使這些花不至于枯死也有充足的陽光照射。不遠
-處石壁(wall)上布滿了蜘蛛網，看來這裡的主人已經很久沒有來了。
-想到這裡不禁蒼涼之意頓起：「芙蓉花開時，不見主人歸」。
+洞，陽光便是從中射進來的，一看四周，這裏長滿了芙蓉花，正由於
+上面的小洞(dong)才使這些花不至於枯死也有充足的陽光照射。不遠
+處石壁(wall)上佈滿了蜘蛛網，看來這裏的主人已經很久沒有來了。
+想到這裏不禁蒼涼之意頓起：「芙蓉花開時，不見主人歸」。
 LONG );
    
         set("exits",([
@@ -24,7 +24,7 @@ LONG );
                 "net"   : (: look_net :),
 
                 "dong"  : HIY "陽光從洞外射進來，四周怪石(stone)突出，似乎可"
-                          "以從這裡爬(climb)上去。\n" NOR,
+                          "以從這裏爬(climb)上去。\n" NOR,
 
                 "stone" : "只見這些突石有的堅韌如刀，有的層錯如梯，各顯其異。\n"
         ]));
@@ -84,7 +84,7 @@ int do_think(string arg)
                 return notify_fail("你要參悟什麼？\n");
 
         if (me->is_busy() || me->is_fighting())
-                return notify_fail("你現在正忙著呢。\n");
+                return notify_fail("你現在正忙着呢。\n");
 
         if ((int)me->query_skill("sword", 1) < 30)
                 return notify_fail("你的基本劍法火候不夠，無法領悟石壁"
@@ -92,16 +92,16 @@ int do_think(string arg)
 
         /*
         if ((int)me->query_skill("furong-jian", 1) < 20)
-                return notify_fail("你發現牆上所記載的劍法過于深奧，自"
+                return notify_fail("你發現牆上所記載的劍法過於深奧，自"
                                    "己一時難以領會。\n");
         */
 
         if ((int)me->query_skill("furong-jian", 1) > 120)
-                return notify_fail("你發現牆上所記載的劍法過于膚淺，自"
+                return notify_fail("你發現牆上所記載的劍法過於膚淺，自"
                                    "己無法領會到任何東西。\n");
 
         if( query("jing", me)<25 )
-                return notify_fail("你現在精神不濟，過于疲倦，還是休息"
+                return notify_fail("你現在精神不濟，過於疲倦，還是休息"
                                    "一會吧。\n");
 
         me->receive_damage("jing", 20);
@@ -135,20 +135,20 @@ string look_wall()
 
                 write(WHT @TEXT
 
-  □□□□□□□□□□□□□□□□□□□□□□□□□□□□□□
-  □                                                 ****** □
-  □   ●>        ●       ●        ●       ●     * 芙 * □
-  □   \ __    □v|\     \//>□    \//\__   □v|^    * 蓉 * □
-  □   /<        /<       />             />        /<     * 劍 * □
-  □                                                     * 法 * □
-  □                                                     ****** □
-  □□□□□□□□□□□□□□□□□□□□□□□□□□□□□□
+  ┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
+  ┃                                                 ****** ┃
+  ┃   ●>        ●       ●        ●       ●     * 芙 * ┃
+  ┃   \ __    ━v|\     \//>━    \//\__   ━v|^    * 蓉 * ┃
+  ┃   /<        /<       />             />        /<     * 劍 * ┃
+  ┃                                                     * 法 * ┃
+  ┃                                                     ****** ┃
+  ┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
                                                              
 TEXT NOR);
                 return "\n";
          }
 
-         msg = WHT "\n石壁上面布滿了蜘蛛網(net)，顯然很久沒有人來過這裡"
+         msg = WHT "\n石壁上面佈滿了蜘蛛網(net)，顯然很久沒有人來過這裏"
                "了。\n看到此處，你心中悲涼之意頓起！\n" NOR;
 
          return msg;
@@ -166,7 +166,7 @@ string look_net()
         if( query_temp("marks/拉", here) )
                 return "一張被拉破的蜘蛛網懸在半空。\n";
 
-        msg = WHT "\n你走進細看，石壁上幾只蜘蛛還在不停地吐絲織網，透過"
+        msg = WHT "\n你走進細看，石壁上幾隻蜘蛛還在不停地吐絲織網，透過"
               "蛛網\n竟能隱約看見石壁上殘留的一些文字。你不禁想拉開(pul"
               "l)蛛\n網看個究竟。\n" NOR;
 
@@ -180,7 +180,7 @@ int do_climb(string arg)
           if (! arg || arg != "stone")
                 return notify_fail("你想爬什麼？\n");
 
-        write(HIG "\n你踩著洞中突出的石頭上，很快爬出了洞口。\n\n" NOR);
+        write(HIG "\n你踩着洞中突出的石頭上，很快爬出了洞口。\n\n" NOR);
 
         me->move(__DIR__"furongfeng");
            

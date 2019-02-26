@@ -15,5 +15,5 @@ string update_msg_others()
 
 string update_msg_self()
 {
-        return HIR "你只覺一股莫名的惡心湧上心頭，全身上下氣血翻滾，經脈不暢。\n" NOR;
+        return HIR "你只覺一股莫名的噁心湧上心頭，全身上下氣血翻滾，經脈不暢。\n" NOR;
 }

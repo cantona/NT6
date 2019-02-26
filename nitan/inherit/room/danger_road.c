@@ -4,7 +4,7 @@
 *  每一條路上視此路的長短和偏僻程度可放置幾個這個
 *  被劫的路,簡單繼承此物件即可 "inherit DANGER_ROAD",
 *  不要繼承 ROOM , 其他就不用管了.
-*  注意:如果您的房間裡用到了init() 函數,請在結尾處
+*  注意:如果您的房間裏用到了init() 函數,請在結尾處
 *  加上 ::init().
 *
 *  by 發現號(Find) 10/98.
@@ -77,8 +77,8 @@ return;
 
                         obj->move(environment(me));
 
-                        message_vision("\n突然旁邊竄出"+chinese_number(n)+"條蒙面大漢朝著$N走了過來。\n",me);
-                        message_vision("\n$N惡狠狠的對著$n喊道：打劫！拿出"+
+                        message_vision("\n突然旁邊竄出"+chinese_number(n)+"條蒙面大漢朝着$N走了過來。\n",me);
+                        message_vision("\n$N惡狠狠的對着$n喊道：打劫！拿出"+
                                 chinese_number((query("age", me)/10)*10)+
                                 "兩銀子算完事，要不讓你活不到天亮!\n\n",obj,me);
                         obj->ask_money();

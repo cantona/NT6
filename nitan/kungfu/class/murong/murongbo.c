@@ -22,7 +22,7 @@ void create()
 {
         set_name("慕容博", ({ "murong bo", "murong", "bo" }));
         set("long", @LONG
-他是姑蘇慕容的傳人，可以說是自慕容龍城以下武功最為傑出
+他是姑蘇慕容的傳人，可以説是自慕容龍城以下武功最為傑出
 之人。不僅能貫通天下百家之長，更是深為精通慕容家絕技。
 LONG );
         set("nickname", HIM "以彼之道 還施彼身" NOR);
@@ -158,9 +158,9 @@ LONG );
         set("inquiry", ([
                 "絕招"   : (: ask_me :),
                 "絕技"   : (: ask_me :),
-                "鬥轉星移": (: ask_me :),
+                "斗轉星移": (: ask_me :),
                 "紫徽心法": (: ask_book1 :),
-        "鬥轉星移書": (: ask_book2 :),
+        "斗轉星移書": (: ask_book2 :),
                 "武學修養": (: ask_wuxue :),
         ]));
 
@@ -191,7 +191,7 @@ void attempt_apprentice(object ob)
         }
         if ((int)ob->query_skill("douzhuan-xingyi", 1) < 130)
         {
-                command("say 鬥轉星移乃我慕容世家絕技，你不好好練習到我這來做甚？。");
+                command("say 斗轉星移乃我慕容世家絕技，你不好好練習到我這來做甚？。");
                 return;
         }
         if ((int)ob->query_skill("shenyuan-gong", 1) < 120)
@@ -223,7 +223,7 @@ mixed try_learn_sk()
                 return "你還是安心學本門功夫吧。";
 
         command("shake");
-        command("say 據說少林的武功學了對身體有害，你就不要學了。");
+        command("say 據説少林的武功學了對身體有害，你就不要學了。");
         set_temp("has_asked/murongbo", 1, me);
         return -1;
 }
@@ -271,7 +271,7 @@ int accept_ask(object me, string topic)
         {
         case "歷練" :
         case "歷煉" :
-        case "鍛煉" :
+        case "鍛鍊" :
                 return QUEST_D->accept_ask(this_object(), me, topic);
                 break;
 
@@ -386,13 +386,13 @@ mixed ask_me()
 
         me = this_player();
         if( query("can_perform/douzhuan-xingyi/yi", me) )
-                return "你還不快去練功去？光復大燕不是靠嘴上說的！";
+                return "你還不快去練功去？光復大燕不是靠嘴上説的！";
 
         if( query("family/family_name", me) != query("family/family_name") )
                 return "你是什麼人？有何居心？";
 
         if (me->query_skill("douzhuan-xingyi", 1) < 100)
-                return "鬥轉星移是我們慕容家的絕學，你練好沒有？";
+                return "斗轉星移是我們慕容家的絕學，你練好沒有？";
 
         message_vision(HIY "$n" HIY "看看$N" HIY "，示意$N"
                        HIY "攻自己一招，$N" HIY "疑疑惑惑的"
@@ -404,7 +404,7 @@ mixed ask_me()
         command("nod");
         command("say 這其中的奧妙乃是用巧妙的招式配合我"
                 "慕容家的紫徽心法，你要好好體會，去吧！");
-        tell_object(me, HIG "你學會了鬥轉星移。\n" NOR);
+        tell_object(me, HIG "你學會了斗轉星移。\n" NOR);
         if (me->can_improve_skill("douzhuan-xingyi"))
                 me->improve_skill("douzhuan-xingyi", 90000);
         if (me->can_improve_skill("zihui-xinfa"))
@@ -425,10 +425,10 @@ string ask_book1()
                        "與我慕容家素無來往，不知此話從何談起？";
 
         if (me->query_skill("zihui-xinfa", 1) < 100)
-                return "你的紫徽心法水平還不夠，還用不著這本秘籍。";
+                return "你的紫徽心法水平還不夠，還用不着這本祕籍。";
 
         if (query("zihui_count") < 1)
-                return "你來晚了，紫徽秘籍我已經借出去了。";
+                return "你來晚了，紫徽祕籍我已經借出去了。";
 
         addn("zihui_count", -1);
         ob = new("/clone/book/zihui-book");
@@ -448,15 +448,15 @@ string ask_book2()
                        "與我慕容家素無來往，不知此話從何談起？";
 
         if (me->query_skill("douzhuan-xingyi", 1) < 100)
-                return "你的鬥轉星移連的還不到家，我還不能給你這本秘籍。";
+                return "你的斗轉星移連的還不到家，我還不能給你這本祕籍。";
 
         if (query("douzhuan_count") < 1)
-                return "你來晚了，秘籍我已經借出去了。";
+                return "你來晚了，祕籍我已經借出去了。";
 
         addn("douzhuan_count", -1);
         ob = new("/clone/book/douzhuan-book");
         ob->move(this_player());
-        return "這本鬥轉星移你可以收好了。";
+        return "這本斗轉星移你可以收好了。";
 }
 
 mixed ask_wuxue()
@@ -465,33 +465,33 @@ mixed ask_wuxue()
 
         if( query("family/family_name", me) != "慕容世家" )
         {
-                write(ob->name() + "說道：你不是我慕容世家的人，給我滾一邊去！\n");
+                write(ob->name() + "説道：你不是我慕容世家的人，給我滾一邊去！\n");
                 return 1;
         }
 
         if (me->is_busy() || me->is_fighting())
         {
-                write(ob->name() + "說道：你正忙著呢。\n");
+                write(ob->name() + "説道：你正忙着呢。\n");
                 return 1;
         }
 
-        // write("你向" + ob->name() + "請教關于「武學修養」的疑問。\n");
+        // write("你向" + ob->name() + "請教關於「武學修養」的疑問。\n");
 
         if( query("potential", me)-query("learned_points", me)<20 )
         {
-                write(ob->name()+"說道：你的潛能不足以領悟「武學修養」的精妙所在。\n");
+                write(ob->name()+"説道：你的潛能不足以領悟「武學修養」的精妙所在。\n");
                 return 1;
         }
 
         if( query("jing", me)<50 )
         {
-                write(ob->name()+"說道：" + RANK_D->query_respect(me) + "先休息一下吧。\n");
+                write(ob->name()+"説道：" + RANK_D->query_respect(me) + "先休息一下吧。\n");
                 return 1;
         }
 
         if (me->query_skill("martial-cognize") > 800)
         {
-                write(ob->name()+"說道：" + RANK_D->query_respect(me) +
+                write(ob->name()+"説道：" + RANK_D->query_respect(me) +
                         "的「武學修養」造詣已經很高了，我已不能指點你更深一層。\n");
                 return 1;
         }

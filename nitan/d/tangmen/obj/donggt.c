@@ -47,7 +47,7 @@ int do_drink(string arg)
         }
         else 
         { 
-                   message_vision("$N捧起湯碗，喝幹了最後一滴鮮湯。\n", this_player());
+                   message_vision("$N捧起湯碗，喝乾了最後一滴鮮湯。\n", this_player());
                 destruct(this_object());
         }
 

@@ -39,12 +39,12 @@ int do_eat(string arg)
         if (!present(this_object(), me))
                 return notify_fail("你要吃什麼？\n");
         if (me->is_busy() )
-                return notify_fail("別急，慢慢吃，小心別噎著了。\n");
+                return notify_fail("別急，慢慢吃，小心別噎着了。\n");
 
         if( query("eff_jing", me) >= query("max_jing", me) && 
                 query("eff_qi", me) >= query("max_qi", me) )
         {
-                message_vision(HIG"$N吃下一只無常丹，只覺全身冰涼，看來你補藥吃太多了，鬧起肚子來了！\n" NOR, me);
+                message_vision(HIG"$N吃下一隻無常丹，只覺全身冰涼，看來你補藥吃太多了，鬧起肚子來了！\n" NOR, me);
                 me->receive_damage("jing",30);
                 me->receive_damage("qi",50);
                 me->receive_wound("jing",20);

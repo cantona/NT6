@@ -3,11 +3,11 @@ inherit COMBINED_ITEM;
 
 void create()
 {
-        set_name(NOR + WHT "幹糧" NOR, ({ "gan liang", "gan", "liang" }));
+        set_name(NOR + WHT "乾糧" NOR, ({ "gan liang", "gan", "liang" }));
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("long", NOR + WHT "這是一塊便于攜帶的幹糧。\n" NOR);
+                set("long", NOR + WHT "這是一塊便於攜帶的乾糧。\n" NOR);
                 set("base_unit", "塊");
                 set("base_value", 50);
                 set("base_weight", 10);

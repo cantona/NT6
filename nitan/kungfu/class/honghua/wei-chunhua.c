@@ -1,19 +1,19 @@
 // Last Modified by winder on Sep. 12 2001
-// wei-chunhua.c 衛春華
+// wei-chunhua.c 衞春華
 
 #include <ansi.h>;
 inherit NPC;
 
 void create()
 {
-        set_name("衛春華", ({ "wei chunhua", "wei","chunhua" }));
+        set_name("衞春華", ({ "wei chunhua", "wei","chunhua" }));
         set("title", HIR "紅花會"HIG"九當家" NOR);
         set("nickname", HIY "九命錦豹子" NOR);
         set("long", 
 "他長得面目英俊，穿一件青布長衫，三十歲左右年紀，雙目炯炯，
-英氣逼人。凡逢江湖上兇毆爭鬥、對抗官兵之時，衛春華總是不顧
+英氣逼人。凡逢江湖上兇毆爭鬥、對抗官兵之時，衞春華總是不顧
 性命的勇往直前，一生所遇兇險不計其數，但連重傷也未受過一次，
-是以說他有九條性命。\n");
+是以説他有九條性命。\n");
         set("gender", "男性");
         set("class", "swordsman");
         set("age", 31);

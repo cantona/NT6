@@ -120,7 +120,7 @@ string ask_me()
                         return "你來晚了，那本《論語》我已經贈送給別入了。";
 
                 command("say 想要這本論語麼？你只管拿去就是。");
-                message_vision(HIY "$N" HIY "從懷裡掏出一本舊書，交了給$n"
+                message_vision(HIY "$N" HIY "從懷裏掏出一本舊書，交了給$n"
                                HIY "。\n" NOR, me, ob);
                 book->move(ob, 1);
                 return "這本書可千萬不要借給別人啊，他們一借就不還的了。\n";
@@ -130,7 +130,7 @@ string ask_me()
                 return "我現在手頭沒有什麼書了。";
 
         addn("book_count", -1);
-        command("say 哈哈，論語就沒有了，這裡有我派高手從少林盜來的書。");
+        command("say 哈哈，論語就沒有了，這裏有我派高手從少林盜來的書。");
         command("say 既然你那麼好學，我就把它送給你吧。");
         message_vision(HIY "$N" HIY "翻箱倒櫃找了半天，找出一本舊書，交了給$n"
                        HIY "。\n" NOR, me, ob);

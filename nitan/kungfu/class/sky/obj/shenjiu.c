@@ -7,7 +7,7 @@ void create()
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("long", HIW "這是一瓶天乙神酒，便是只聞聞也讓你昏昏欲醉。\n" NOR);
+                set("long", HIW "這是一瓶天乙神酒，便是隻聞聞也讓你昏昏欲醉。\n" NOR);
                 set("unit", "瓶");
                 set("no_sell", 1);
                 set("value", 50000);
@@ -31,7 +31,7 @@ int do_eat(string arg)
                 return notify_fail("你要喝什麼東西？\n");
 
         if (me->is_busy())
-                return notify_fail("急什麼，小心別噎著了。\n");
+                return notify_fail("急什麼，小心別噎着了。\n");
 
         if (random(30) > 1)
         {

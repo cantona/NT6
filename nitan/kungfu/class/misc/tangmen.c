@@ -6,7 +6,7 @@ inherit "/inherit/char/punisher";
 void create()
 {
         set_name("唐門隱士", ({ "yin shi", "yin", "shi" }));
-        set("long",  "他就是唐門的高手，據說長年隱藏于山中。\n");
+        set("long",  "他就是唐門的高手，據説長年隱藏於山中。\n");
         set("gender", "男性");
         set("age", 55);
         set("attitude", "peaceful");

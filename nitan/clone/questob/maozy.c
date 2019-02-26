@@ -11,7 +11,7 @@ void create()
         else {
                 set("unit", "塊");
                 set("no_sell", "這...這是什麼東西？我可不敢要。\n");
-                set("long", "極大的一塊貓眼寶石，周圍嵌著金邊。\n");
+                set("long", "極大的一塊貓眼寶石，周圍嵌着金邊。\n");
                 set("value", 1);
                 set("material", "stone");
         }

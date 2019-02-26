@@ -13,8 +13,8 @@ int main(object me, string arg)
 
         ob=query_temp("last_opponent", me);
         if( objectp(ob) && living(ob) && ob->is_killing(me) ) {
-                message_vision("$N向$n求饒，但是$N大聲說道："
-                        + RANK_D->query_rude(me) + "廢話少說，納命來！\n", ob, me);
+                message_vision("$N向$n求饒，但是$N大聲説道："
+                        + RANK_D->query_rude(me) + "廢話少説，納命來！\n", ob, me);
                 return 1;
         }
 
@@ -24,7 +24,7 @@ int main(object me, string arg)
         else
                 set("score", 0, me);
 
-        message_vision( HIW "\n$N說道：「不打了，不打了，我投降....。」\n\n" NOR, me);
+        message_vision( HIW "\n$N説道：「不打了，不打了，我投降....。」\n\n" NOR, me);
         return 1;
 }
 int help(object me)

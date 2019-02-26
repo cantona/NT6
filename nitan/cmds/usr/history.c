@@ -14,8 +14,8 @@ string help = @HELP
 
 這個指令用來檢視您曾使用過的指令紀錄，您可以透過下列指令來使用您的指令紀錄
 
-!!              重復上一個指令
-!<指令編號>     重復 <指令編號> 的指令
+!!              重複上一個指令
+!<指令編號>     重複 <指令編號> 的指令
 
 指令格式:
 history <指令數>                顯示最近 <指令數> 筆的指令歷程
@@ -37,7 +37,7 @@ int main(object me, string arg)
 
         if( !wizardp(me) && time()-query_temp("last_history", me)<3 ) 
         { 
-                write("系統氣喘噓地嘆道：慢慢來 ....\n");   
+                write("系統氣喘噓地歎道：慢慢來 ....\n");   
                 return 1; 
         } 
 
@@ -46,16 +46,16 @@ int main(object me, string arg)
                 string *game_history = HISTORY_D->query_history();        
                 
                 msg = MUD_FULL_NAME"重大歷史事件\n";
-                msg += WHT"──────────────────────────────────────────────\n"NOR;
+                msg += WHT"——————————————————————————————————————————————\n"NOR;
                 msg += HIC"編號 時間              ID        事件\n"NOR;
-                msg += WHT"──────────────────────────────────────────────\n"NOR;
+                msg += WHT"——————————————————————————————————————————————\n"NOR;
                 
                 for(i=0;i<sizeof(game_history);i+=4)
                 {
                         msg +=sprintf(HIW"%-5d"NOR CYN"%-18s"NOR YEL"%-10s"NOR HIC"%s\n"NOR, i/4+1, TIME_D->replace_ctime(game_history[i]), game_history[i+2],game_history[i+3]);
                 }
                 
-                msg += WHT"──────────────────────────────────────────────\n"NOR;
+                msg += WHT"——————————————————————————————————————————————\n"NOR;
                 me->start_more(msg);
                 return 1;
         }
@@ -65,7 +65,7 @@ int main(object me, string arg)
                 object *sortusers;
                 
                 msg = "排名 玩家名稱                   指令數   速度(每秒)   五百平均 系統負荷\n";
-                msg += WHT"───────────────────────────────────────\n"NOR;
+                msg += WHT"———————————————————————————————————————\n"NOR;
                 sortusers = filter_array(users(), (: playerp($1) :));
                 sortusers = sort_array(sortusers, (: to_float($1->total_command_count())/(time() - query_temp("logon_time", $1)) < to_float($2->total_command_count())/(time() - query_temp("logon_time", $2)) ? 1 : -1 :));
 
@@ -85,7 +85,7 @@ int main(object me, string arg)
                         );
 
                 }
-                msg += WHT"───────────────────────────────────────\n"NOR;
+                msg += WHT"———————————————————————————————————————\n"NOR;
                 me->start_more(msg);
                 return 1;
         }
@@ -99,7 +99,7 @@ int main(object me, string arg)
                 return tell(me, "沒有 " + arg + " 這位玩家。\n");
 
         if( ob != me && wiz_level(me->query_id(1)) < wiz_level(ob->query_id(1)) )
-                return tell(me, pnoun(2, me) + "沒有權限查閱" + ob->query_idname() + "的歷史指令紀錄。\n");
+                return tell(me, pnoun(2, me) + "沒有權限查閲" + ob->query_idname() + "的歷史指令紀錄。\n");
 
         cmd_history = ob->query_history();
 

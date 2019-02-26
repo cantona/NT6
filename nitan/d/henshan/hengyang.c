@@ -4,7 +4,7 @@ void create()
 {
         set("short", "衡陽城");
         set("long", @LONG
-這裡就是衡陽縣城。衡陽地處偏遠，顯見遠不如中原繁華了。
+這裏就是衡陽縣城。衡陽地處偏遠，顯見遠不如中原繁華了。
 LONG );
         set("outdoors", "henshan");
 

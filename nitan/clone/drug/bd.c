@@ -62,5 +62,5 @@ void remove_effect(object me)
 {
                   addn_temp("apply/attack", -100, me);
                   delete_temp("qz/baozidan", me);
-                  tell_object(me, "過了一會兒，豹子膽帶來的余勁好象消失了。\n");
+                  tell_object(me, "過了一會兒，豹子膽帶來的餘勁好像消失了。\n");
 }

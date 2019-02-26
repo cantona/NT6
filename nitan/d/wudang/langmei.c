@@ -21,9 +21,9 @@ void create()
         set("short", "榔梅園");
         set("long", @LONG
 眼前豁然開朗，你輕鬆地走在榔梅園的小路上。兩邊是桃樹林(t
-ree)，樹上盛開著粉紅的桃花，紅雲一片，望不到邊。不時有蜜蜂「
-嗡嗡」地飛過，消失在在花叢中；幾只猴子在樹上互相追逐著，嘰嘰
-喳喳地爭搶桃子。遠處是高高的天柱峰(feng)。
+ree)，樹上盛開着粉紅的桃花，紅雲一片，望不到邊。不時有蜜蜂「
+嗡嗡」地飛過，消失在在花叢中；幾隻猴子在樹上互相追逐着，嘰嘰
+喳喳地爭搶桃子。遠處是高高的天柱峯(feng)。
 LONG );
         set("outdoors", "wudang");
 
@@ -67,7 +67,7 @@ return 1;
                 return 1;
                 }else
         message_vision(
-        "你這麼著急呀？桃還沒熟呢。\n" , this_player());
+        "你這麼着急呀？桃還沒熟呢。\n" , this_player());
         remove_call_out("do_tao");
         call_out("do_tao",60);
         return 1;             

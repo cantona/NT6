@@ -19,7 +19,7 @@ void create()
                 set("material", "steel");
                 set("weapon_prop/per", 8);
                 set("wield_msg", "$N「唰」的一聲抽出一柄$n握在手中，頓時只聽冤魂慘嚎，令人毛骨悚然。\n");
-                set("unwield_msg", "$N將手中的$n插回劍鞘，一下子風平浪靜，晴空萬裡。\n");
+                set("unwield_msg", "$N將手中的$n插回劍鞘，一下子風平浪靜，晴空萬里。\n");
         }
         init_sword(120);
         setup();

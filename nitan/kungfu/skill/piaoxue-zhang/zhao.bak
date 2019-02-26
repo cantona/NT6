@@ -46,7 +46,7 @@ int perform(object me, object target)
 
         msg = HIY "\n$N突然間全身骨骼中發出劈劈拍拍的輕微爆裂之聲，炒豆般的響聲未絕，右掌已向$n胸口擊去。\n\n"NOR;
         msg += HIG"這一掌是峨嵋派的絕學，叫做“佛光普照”。這“佛光普照”的掌法便只一招，而且這\n";
-        msg += HIG"一招也無其他變化，招式平平淡淡，一成不變，可是其威力之源，就在于以峨嵋派絕頂\n";
+        msg += HIG"一招也無其他變化，招式平平淡淡，一成不變，可是其威力之源，就在於以峨嵋派絕頂\n";
         msg += HIG"內功作為根基。一掌既出，內力如排山倒海一般襲來，敵人擋無可擋，避無可避。\n\n";
 
 
@@ -72,7 +72,7 @@ int perform(object me, object target)
         if ( damage < 600) {
                 msg += HIR"$n身子一晃，立足不定，差點兒就要摔倒。\n"NOR;
         }else if ( damage < 800) {
-                msg += HIR"$n向後接連摔了兩個筋鬥，哇的一聲，噴出一口鮮血。\n"NOR;
+                msg += HIR"$n向後接連摔了兩個筋斗，哇的一聲，噴出一口鮮血。\n"NOR;
         }else if ( damage < 1200) {
                 msg += HIR"$n哇的一聲，噴出一口鮮血，委頓在地，便似一堆軟泥。\n"NOR;
         }else if ( damage < 1800) {
@@ -104,11 +104,11 @@ int perform(object me, object target)
         if( !target->is_busy() )
         target->start_busy(1+random(3));
 
-        msg += HIY"$p眼看這一招來勢洶洶，知道難于對付，連忙發力抵抗，猛聽得砰然一聲大響，$N已打中在$p胸口.\n"NOR;
+        msg += HIY"$p眼看這一招來勢洶洶，知道難於對付，連忙發力抵抗，猛聽得砰然一聲大響，$N已打中在$p胸口.\n"NOR;
         if ( damage < 400) {
                 msg += HIR"$n身子一晃，立足不定，差點兒就要摔倒。\n"NOR;
         }else if ( damage < 600) {
-                msg += HIR"$n向後接連摔了兩個筋鬥，哇的一聲，噴出一口鮮血。\n"NOR;
+                msg += HIR"$n向後接連摔了兩個筋斗，哇的一聲，噴出一口鮮血。\n"NOR;
         }else if ( damage < 1000) {
                 msg += HIR"$n哇的一聲，噴出一口鮮血，委頓在地，便似一堆軟泥。\n"NOR;
         }
@@ -134,12 +134,12 @@ int perform(object me, object target)
         target->receive_wound("qi", random(damage), me);
         target->start_busy(1+random(3));
 
-        msg += HIM"$p眼看這一招來勢洶洶，慌忙使出本門身法，向側躍出數丈，可是這佛光普照蘊藏峨眉內家上乘內功，\n";
+        msg += HIM"$p眼看這一招來勢洶洶，慌忙使出本門身法，向側躍出數丈，可是這佛光普照藴藏峨眉內家上乘內功，\n";
         msg += "方圓數丈都被神功所震撼，$p只覺得後心一震，已被劈空掌力所傷.\n"NOR;
         if ( damage < 300) {
                 msg += HIR"$n身子一晃，立足不定，差點兒就要摔倒。\n"NOR;
         }else if ( damage < 500) {
-                msg += HIR"$n向後接連摔了兩個筋鬥，哇的一聲，噴出一口鮮血。\n"NOR;
+                msg += HIR"$n向後接連摔了兩個筋斗，哇的一聲，噴出一口鮮血。\n"NOR;
         }else if ( damage < 800) {
                 msg += HIR"$n哇的一聲，噴出一口鮮血，委頓在地，便似一堆軟泥。，\n"NOR;
         }
@@ -151,7 +151,7 @@ int perform(object me, object target)
   }
   else {
          msg += HIC"$n眼看這一招來勢洶洶，使出本門身法，向後躍出數丈，\n\n"NOR;
-         msg += HIW"$N這一招乃是使上了全力，絲毫不留余地。沒想到全無用處，不覺臉如死灰，手掌微微發抖。\n" NOR;
+         msg += HIW"$N這一招乃是使上了全力，絲毫不留餘地。沒想到全無用處，不覺臉如死灰，手掌微微發抖。\n" NOR;
          addn("neili", -jiali*2, me);
          me->start_busy(2 + random(2));
          message_vision(msg+"\n", me, target);

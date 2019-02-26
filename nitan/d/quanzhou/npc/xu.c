@@ -6,14 +6,14 @@ inherit F_DEALER;
 
 void create()
 {
-        set_name("許老板", ({ "xu laoban", "xu", "laoban", "boss" }));
-        set("title", "綢緞莊老板");
+        set_name("許老闆", ({ "xu laoban", "xu", "laoban", "boss" }));
+        set("title", "綢緞莊老闆");
         set("shen_type", 1);
 
         set("str", 20);
         set("gender", "男性");
         set("age", 35);
-        set("long", "鴻翔綢緞莊乃是許老板祖傳的生意，到許老板已是第四代了。\n");
+        set("long", "鴻翔綢緞莊乃是許老闆祖傳的生意，到許老闆已是第四代了。\n");
         set("attitude", "friendly");
         set_skill("unarmed", 50);
         set_skill("dodge", 50);

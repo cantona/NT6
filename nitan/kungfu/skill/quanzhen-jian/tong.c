@@ -52,7 +52,7 @@ int perform(object me, object target)
                 damage=query("qi", target);
                 target->receive_damage("qi", damage-10,me);
                 target->receive_wound("qi", damage-10,me);
-                msg += HIC "$n疾忙斜躍，但劍急如電，只覺一陣鑽心劇痛，劍尖紮入胸前，鮮血飛濺！\n"NOR;
+                msg += HIC "$n疾忙斜躍，但劍急如電，只覺一陣鑽心劇痛，劍尖扎入胸前，鮮血飛濺！\n"NOR;
                 set("neili", 0, me);
         }
         else

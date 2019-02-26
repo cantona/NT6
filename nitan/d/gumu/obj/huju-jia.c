@@ -11,7 +11,7 @@ void create()
         else
         {
                 set("unit", "個");
-                set("long", "一個木頭制成的架子，上面掛著鐵甲(armor)等護具。你可以拿(na)些去用。\n");
+                set("long", "一個木頭製成的架子，上面掛着鐵甲(armor)等護具。你可以拿(na)些去用。\n");
                 set("material","wood");
                 set("no_get",1);
         }

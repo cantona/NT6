@@ -11,7 +11,7 @@ void create()
         set("race", "野獸");
         set("gender", "雄性");
         set("age", 20);
-        set("long", "這是一只兇猛的熊。\n");
+        set("long", "這是一隻兇猛的熊。\n");
 
         set("str", 100);
         set("dex", 40);

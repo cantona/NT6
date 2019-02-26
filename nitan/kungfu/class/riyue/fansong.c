@@ -10,7 +10,7 @@ mixed ask_pfm();
 
 void create()
 {
-    set_name("范鬆", ({"fan song", "fan", "song"}));
+    set_name("範鬆", ({"fan song", "fan", "song"}));
     set("nickname", HIW "大力神魔" NOR );
     set("title", "日月神教長老");
     set("gender", "男性");

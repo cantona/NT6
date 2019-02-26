@@ -1,4 +1,4 @@
-// feng.c 馮老板
+// feng.c 馮老闆
 
 #include <ansi.h>
 
@@ -8,7 +8,7 @@ inherit F_DEALER;
 void create()
 {
         set_name("馮虎", ({ "feng hu", "feng" }));
-        set("title", "當舖老板");
+        set("title", "當鋪老闆");
         set("shen_type", 0);
 
         set("gender", "男性");
@@ -16,7 +16,7 @@ void create()
         set("age", 35);
         set("str", 100);
         set("no_get_from", 1);
-//以下為防止玩家運用特殊方法將當舖老板搬走。
+//以下為防止玩家運用特殊方法將當鋪老闆搬走。
         set("no_get", "1");
 
         set_skill("unarmed", 60);

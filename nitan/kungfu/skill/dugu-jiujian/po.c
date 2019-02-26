@@ -39,7 +39,7 @@ int perform(object me, object target)
                 return notify_fail("你沒有激發獨孤九劍，無法施展" PO "。\n");
 
         if (! living(target))
-                return notify_fail("對方都已經這樣了，用不著這麼費力吧？\n");
+                return notify_fail("對方都已經這樣了，用不着這麼費力吧？\n");
 
         weapon2=query_temp("weapon", target);
         prepare = target->query_skill_prepare();
@@ -68,7 +68,7 @@ int perform(object me, object target)
 
         if (ap * 2 / 3 + random(ap) > dp)
         {
-                msg = HIC "$N" HIC "隨意揮洒手中的" + weapon->name() +
+                msg = HIC "$N" HIC "隨意揮灑手中的" + weapon->name() +
                       HIC "，招招從出其不意的方位直指$n" 
                       HIC + to_chinese(type)[4..<1] + "中的破綻。\n" NOR;
 
@@ -93,7 +93,7 @@ int perform(object me, object target)
                         {
                                 msg = HIW "$n" HIW "覺得眼前眼花繚亂，手中"
                                       "的" + weapon2->name() + HIW "一時竟"
-                                      "然拿捏不住，脫手而出！\n" NOR;
+                                      "然拿捏不住，脱手而出！\n" NOR;
                                 weapon2->move(environment(me));
                         } else
                         {
@@ -110,7 +110,7 @@ int perform(object me, object target)
                 }
         } else
         {
-                msg = HIC "$N" HIC "拿著手中的" + weapon->name() +
+                msg = HIC "$N" HIC "拿着手中的" + weapon->name() +
                       HIC "，東戳西指，不過$n" HIC "防守的異常嚴密，$N"
                       HIC "一時竟然無法找到破綻。\n" NOR;
                 me->start_busy(3 + random(2));

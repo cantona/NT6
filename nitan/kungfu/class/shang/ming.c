@@ -29,7 +29,7 @@ void create()
         set("nickname", YEL "八卦刀" NOR);
         set("age", 45);
         set("long", @LONG
-這人身著長衫，身材高大魁梧，留著短須，神
+這人身着長衫，身材高大魁梧，留着短鬚，神
 情嚴肅，模樣甚為威嚴。他就是山東大豪、商
 家堡的現任堡主「八卦刀」商劍鳴，相傳他刀
 掌雙絕，武功了得，在江湖上罕逢敵手。
@@ -103,7 +103,7 @@ LONG);
                 "劈天神芒"   : (: ask_skill6 :),
                 "殺龍無悔"   : (: ask_skill7 :),
                 "天刀八勢"   : (: give_letter :),
-                "胡一刀"     : "哦？聽說此人刀法甚是了得，可惜我沒見過他。",
+                "胡一刀"     : "哦？聽説此人刀法甚是了得，可惜我沒見過他。",
                 "苗人鳳"     : "哼，這賊鳥廝居然敢號稱天下無敵，改天一定要去會會。"
         ]));
 
@@ -227,7 +227,7 @@ mixed ask_skill1()
 
         message_vision(HIY "$n" HIY "微微一笑，當下也不答話，只是伸出右手，輕輕放"
                        "在\n$N" HIY "胸口。正當$N" HIY "疑惑間，卻見$n" HIY "掌勁"
-                       "輕吐，$N" HIY "頓時全身\n一震，如遭電擊，各處經脈無不酸麻"
+                       "輕吐，$N" HIY "頓時全身\n一震，如遭電擊，各處經脈無不痠麻"
                        "，不禁大驚失色。\n" NOR, me, this_object());
 
         command("say 明白了麼？");
@@ -273,13 +273,13 @@ mixed ask_skill2()
 
         message_vision(HIY "$n" HIY "對$N" HIY "點了點頭，沉聲道：“看好了！”隨即"
                        "便拉開架\n勢，演示拳招。霎時只見$n" HIY "身子驀的橫移，向左"
-                       "轉成為\n弓箭步，兩臂向後成鉤手，“呼”的一聲倒揮出來，平舉"
+                       "轉成為\n弓箭步，兩臂向後成鈎手，“呼”的一聲倒揮出來，平舉"
                        "反\n擊向$N" HIY "而去，招數甚為精妙。\n" NOR, me,
                        this_object());
 
         command("sneer");
         command("say 馬老兒能夠創出這招，也算得上個人物。");
-        command("say 這招並不復雜，稍加練習變成。");
+        command("say 這招並不複雜，稍加練習變成。");
         tell_object(me, HIC "你學會了「混沌初開」。\n" NOR);
 
         if (me->can_improve_skill("cuff"))
@@ -320,13 +320,13 @@ mixed ask_skill3()
         if (me->query_skill("jinbiao-jue", 1) < 100)
                 return "你的金鏢訣還練得不到家，自己下去練練再來吧！";
 
-        message_vision(HIY "$n" HIY "將$N" HIY "招至跟前，輕聲在耳旁秘密說了些"
+        message_vision(HIY "$n" HIY "將$N" HIY "招至跟前，輕聲在耳旁祕密説了些"
                        "什麼。隨後又\n伸出右手，十指箕張，一伸一縮，煞是巧妙。"
                        "看樣子是一種\n很特別的暗器法門。\n" NOR, me,
                        this_object());
 
         command("nod");
-        command("say 剛才我所說的你可都記牢了？剩下的就是靠自己多加練習。");
+        command("say 剛才我所説的你可都記牢了？剩下的就是靠自己多加練習。");
         tell_object(me, HIC "你學會了「金蓮幻生」。\n" NOR);
 
         if (me->can_improve_skill("throwing"))
@@ -368,10 +368,10 @@ mixed ask_skill4()
                 return "你的八陣八卦掌還練得不到家，自己下去練練再來吧！";
 
         message_vision(HIY "$n" HIY "笑了笑，對$N" HIY "點頭示意讚許，當下凝神沉"
-                       "履，積聚全\n身功力于一掌，攜著雷霆之勢奮力向$N" HIY "面前"
+                       "履，積聚全\n身功力於一掌，攜着雷霆之勢奮力向$N" HIY "面前"
                        "的一座青銅香爐\n拍落，頓時只聽轟然一聲悶響，香爐內的香灰"
-                       "被$n" HIY "的掌\n力激盪得四處飛揚，塵煙彌漫，待得煙消雲散"
-                       "，$N" HIY "這才發現\n那座青銅香爐上豁然嵌著一雙掌印。\n"
+                       "被$n" HIY "的掌\n力激盪得四處飛揚，塵煙瀰漫，待得煙消雲散"
+                       "，$N" HIY "這才發現\n那座青銅香爐上豁然嵌着一雙掌印。\n"
                        NOR, me, this_object());
         command("ke");
         command("nod");
@@ -518,10 +518,10 @@ mixed ask_skill7()
         if (me->query_skill("force") < 250)
                 return "嗯，你的內功火候尚需提高，練好了再來找我吧。";
 
-        message_vision(HIY "$n" HIY "凝神了$N" HIY "半天，長嘆一聲，說道：“這一"
+        message_vision(HIY "$n" HIY "凝神了$N" HIY "半天，長歎一聲，説道：“這一"
                        "招「殺龍無\n悔」本是我創來對付苗人鳳所用，但既然你的刀法"
-                       "已達此境\n界，今日我就傳你這招。”說完，便伸手將$N" HIY
-                       "招至身旁，低\n聲在$P" HIY "耳畔細說良久。\n" NOR, me,
+                       "已達此境\n界，今日我就傳你這招。”説完，便伸手將$N" HIY
+                       "招至身旁，低\n聲在$P" HIY "耳畔細説良久。\n" NOR, me,
                        this_object());
         command("sigh");
         command("say 這一招的訣竅就是義無返顧，奮力一擊。");
@@ -562,14 +562,14 @@ mixed ask_dao()
                                        "，居然還有臉問我要寶刀？”\n" NOR,
                                        this_object(), me);
                 else
-                        message_vision(CYN "$N" CYN "冷笑一聲，對$n" CYN "說道"
+                        message_vision(CYN "$N" CYN "冷笑一聲，對$n" CYN "説道"
                                        "：“什麼東西，居然敢在我面前放肆！”\n"
                                        NOR, this_object(), me);
                 return 1;
         }
 
         if( query("family/family_name", me) != "商家堡" )
-                return "哪裡來的野種，居然敢窺視我的寶刀？";
+                return "哪裏來的野種，居然敢窺視我的寶刀？";
 
         if( query("family/master_id", me) != query("id") )
                 return "只有我的弟子才配用這八卦刀，你別拿去丟臉。";
@@ -591,7 +591,7 @@ mixed ask_dao()
         }
 
         if (owner == me)
-                return "嗯？我的八卦刀現在不是你拿著在用嗎？";
+                return "嗯？我的八卦刀現在不是你拿着在用嗎？";
 
         if (objectp(owner) && owner != this_object())
         {

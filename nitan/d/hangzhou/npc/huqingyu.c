@@ -5,11 +5,11 @@ inherit NPC;
 
 void create()
 {
-        set_name("胡慶余",({ "hu qingyu","hu" }));
+        set_name("胡慶餘",({ "hu qingyu","hu" }));
         set("gender", "男性" );
         set("age", 63);
         set("long",
-"胡慶余是當世一大巫醫，他的本事神奇無比。真有生死肉骨之功。\n");
+"胡慶餘是當世一大巫醫，他的本事神奇無比。真有生死肉骨之功。\n");
         set("combat_exp", 200000);
         set("attitude", "friendly");
 /*
@@ -18,7 +18,7 @@ void create()
         ]) );
         set("chat_chance", 30);
         set("chat_msg",({
-                "胡慶余淡淡說道：“改個名，就是新人了。”\n",
+                "胡慶餘淡淡説道：“改個名，就是新人了。”\n",
         }));
 */
         setup();
@@ -39,11 +39,11 @@ int accept_object(object me, object ob)
                 {
                         if( query("class", me) == "bonze" || query("class", me) == "quanzhen" )
                         {
-                                say("胡慶余掩口暗笑：出家人是不能改名字的。我還怕你們掌門師尊派人砸我的小店呢。\n");
+                                say("胡慶餘掩口暗笑：出家人是不能改名字的。我還怕你們掌門師尊派人砸我的小店呢。\n");
                                 return 0;
                         }
                         command("nod");
-                        command("say好吧，"+query("name", me)+"，你說個章程！\n");
+                        command("say好吧，"+query("name", me)+"，你説個章程！\n");
                         set_temp("marks/huqingyu", 1, me);
                         return 1;
                 }
@@ -62,16 +62,16 @@ int do_name(string arg,object me)
 
         me = this_player();
         if( query("class", me) == "bonze" || query("class", me) == "quanzhen" )
-                return notify_fail("胡慶余掩口暗笑：出家人是不能改名字的。我還怕你們掌門師尊派人砸我的小店呢。\n");
+                return notify_fail("胡慶餘掩口暗笑：出家人是不能改名字的。我還怕你們掌門師尊派人砸我的小店呢。\n");
         if( !query_temp("marks/huqingyu", me) )
         {
-                return notify_fail("胡慶余翻著黑白眼：錢呢？沒給錢想佔便宜？\n");
+                return notify_fail("胡慶餘翻着黑白眼：錢呢？沒給錢想佔便宜？\n");
         }
-        if( !arg ) return notify_fail("胡慶余笑道：名字總該寫全吧。\n");
+        if( !arg ) return notify_fail("胡慶餘笑道：名字總該寫全吧。\n");
         if( strlen(arg) > 10 )
-        return notify_fail("胡慶余驚呼起來：哪有這麼長的名字？\n");
+        return notify_fail("胡慶餘驚呼起來：哪有這麼長的名字？\n");
         if( strlen(arg) < 4 )
-        return notify_fail("胡慶余哼了一聲：這麼短算啥名字？\n");
+        return notify_fail("胡慶餘哼了一聲：這麼短算啥名字？\n");
         i=strlen(arg);
         while(i--)
         {
@@ -94,7 +94,7 @@ int do_name(string arg,object me)
                 return 1;
         }
         if( (strlen(arg) < 2) || (strlen(arg) > 10 ) ) {
-                write("對不起，你的中文名字必須是 1 到 5 個中文字。\n");
+                write("對不起，你的中文名字必須是 1 到 5 箇中文字。\n");
                 return 1;
         }
 
@@ -112,7 +112,7 @@ int do_betrayer(object me)
         me = this_player();
         if( !query_temp("marks/huqingyu", me) )
         {
-                return notify_fail("胡慶余翻著黑白眼：錢呢？沒給錢想佔便宜？\n");
+                return notify_fail("胡慶餘翻着黑白眼：錢呢？沒給錢想佔便宜？\n");
         }
 
         delete_temp("marks/huqingyu", me);
@@ -133,10 +133,10 @@ int do_age(object me)
         object obj;
         me = this_player();
 
-        return notify_fail("胡慶余翻著黑白眼：死生有命，你也別太在意了！\n");
+        return notify_fail("胡慶餘翻着黑白眼：死生有命，你也別太在意了！\n");
         if( !query_temp("marks/huqingyu", me) )
         {
-                return notify_fail("胡慶余翻著黑白眼：錢呢？沒給錢想佔便宜？\n");
+                return notify_fail("胡慶餘翻着黑白眼：錢呢？沒給錢想佔便宜？\n");
         }
         delete_temp("marks/huqingyu", me);
 

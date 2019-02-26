@@ -90,7 +90,7 @@ int do_decide()
         if( query_temp("yinsusu", me) != 1 )
                 return notify_fail("殷素素問：你決定什麼呀？\n");
 
-        message_vision("殷素素對$N說道：“好，你可別後悔，坐穩了。”\n\n", me);
+        message_vision("殷素素對$N説道：“好，你可別後悔，坐穩了。”\n\n", me);
         message_vision("殷素素升起帆，小舟輕輕漂向江口。\n\n", me);
         me->move ("/d/binghuo/jiangmian1");
         call_out("goto_wpsd1",10,me) ;
@@ -106,6 +106,6 @@ void goto_wpsd1(object me)
 
 void goto_wpsd2(object me)
 {
-        tell_object(me , "片刻間坐船靠岸，白龜壽親自舖上跳板。你走下舟來。\n" ) ;
+        tell_object(me , "片刻間坐船靠岸，白龜壽親自鋪上跳板。你走下舟來。\n" ) ;
         me->move ("/d/binghuo/wangpanshan") ;
 }

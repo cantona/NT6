@@ -59,7 +59,7 @@ int OkTimes, FailTimes, AllTimes, FindTimes;
 string GetAward = "允許";
 
 
-// 這裡調用子目錄內的一個價格文件
+// 這裏調用子目錄內的一個價格文件
 #include "npc_obj/hj_settings/obj_values.h"
 
 // 這些 id 需要與遊戲內道具同步。
@@ -89,7 +89,7 @@ int me_ok( object me )
 void create()
 {
     restore();
-    set("short",HIW"回歸之路"NOR);
+    set("short",HIW"迴歸之路"NOR);
     setlong();
     delete("is_checking");
     // 這個一定要
@@ -172,13 +172,13 @@ int valid_leave(object me, string dir)
         }
     }
     if(temp)
-        return notify_fail( HIR"你身上還攜帶著幻境相關的物品，請先計算得分再離開。\n"
+        return notify_fail( HIR"你身上還攜帶着幻境相關的物品，請先計算得分再離開。\n"
             "若你執意要離開，可使用 outout 指令，那麼你的得分及所有攜帶的幻境物品將被清除。\n"NOR );
     if( query_temp("huanjing", me) == "fail" || query_temp("huanjing", me) == "over" )
         return notify_fail(HIR"你未曾計算你的遊戲得分，請先計算得分再離開。\n"
             "若你執意要離開，可使用 outout 指令，那麼你的得分及所有攜帶的幻境物品將被清除。\n"NOR);
     if( query_temp("hj_score", me) )
-        return notify_fail(HIR"你未曾把你的得分全部兌獎！請先對獎完畢再離開。\n"
+        return notify_fail(HIR"你未曾把你的得分全部兑獎！請先對獎完畢再離開。\n"
             "若你執意要離開，可使用 outout 指令，那麼你的得分及所有攜帶的幻境物品將被清除。\n"NOR);
     return ::valid_leave(me, dir);
 }
@@ -199,7 +199,7 @@ int outout()
     }
     delete_temp("hj_score", me);
     delete_temp("huanjing", me);
-    message_vision( HIR"\n$N"HIR"使用了強制指令，離開了這裡。\n"NOR, me );
+    message_vision( HIR"\n$N"HIR"使用了強制指令，離開了這裏。\n"NOR, me );
     me->move( query("exits/out") );
     message_vision( "$N走了過來。\n",me );
     return 1;
@@ -209,7 +209,7 @@ int no_do_cmds()
 {
     if( !wizardp( this_player() ) )
     {
-        write("在這裡你不允許使用這個指令。\n");
+        write("在這裏你不允許使用這個指令。\n");
         return 1;
     }
     return 0;
@@ -220,15 +220,15 @@ string get_TOP_pic()
     string c1 = HIB, c2 = HIY, c3 = HIC, c4 = HIG;
 
     return sprintf(c1+"
- □□□□□□□□□□□□□□□□□□□□□□□□
- □"+c2+"最高總分"+c1+"□"+c2+"%|20s"+c1+"□"+c2+"%|12d"+c1+"□
- □□□□□□□□□□□□□□□□□□□□□□□□
- □"+c3+"最高得分"+c1+"□"+c3+"%|20s"+c1+"□"+c3+"%|12d"+c1+"□
- □□□□□□□□□□□□□□□□□□□□□□□□
- □"+c4+"最高效率"+c1+"□"+c4+"%|20s"+c1+"□"+c4+"%6|d /小時"+c1+"□
- □□□□□□□□□□□□□□□□□□□□□□□□
- □"HIW"總人次%|8d"+c1+"□"HIC"勝%|6d"+c1+"□"HIM"敗%|6d"+c1+"□"HIY"寶%|6d"+c1+"□
- □□□□□□□□□□□□□□□□□□□□□□□□\n"NOR, 
+ ┏━━━━┳━━━━━━━━━━┳━━━━━━┓
+ ┃"+c2+"最高總分"+c1+"┃"+c2+"%|20s"+c1+"┃"+c2+"%|12d"+c1+"┃
+ ┣━━━━╋━━━━━━━━━━╋━━━━━━┫
+ ┃"+c3+"最高得分"+c1+"┃"+c3+"%|20s"+c1+"┃"+c3+"%|12d"+c1+"┃
+ ┣━━━━╋━━━━━━━━━━╋━━━━━━┫
+ ┃"+c4+"最高效率"+c1+"┃"+c4+"%|20s"+c1+"┃"+c4+"%6|d /小時"+c1+"┃
+ ┣━━━━┻━━┳━━━━┳━━┻━┳━━━━┫
+ ┃"HIW"總人次%|8d"+c1+"┃"HIC"勝%|6d"+c1+"┃"HIM"敗%|6d"+c1+"┃"HIY"寶%|6d"+c1+"┃
+ ┗━━━━━━━┻━━━━┻━━━━┻━━━━┛\n"NOR, 
 
     HighName1+"("+HighId1+")", HighScore1,
     HighName2+"("+HighId2+")", HighScore2,
@@ -242,10 +242,10 @@ void setlong()
             "HIW"【 回 歸 現 實 之 路 】
 "NOR+get_TOP_pic()+HIW"
       來吧，踏上回歸現實之路，忘掉你所經歷的
-    幻境之事，從這裡的虛幻中走出，你將回歸你那
+    幻境之事，從這裏的虛幻中走出，你將回歸你那
   美麗燦爛的陽光之地，你將會記得你真正應該的所在。
 "NOR"
-  計算你的得分與兌換遊戲獎勵：< "HIG"YEAH"NOR" / "HIY"YEAH!!!"NOR" >\n");
+  計算你的得分與兑換遊戲獎勵：< "HIG"YEAH"NOR" / "HIY"YEAH!!!"NOR" >\n");
 }
 
 
@@ -306,7 +306,7 @@ void score_tools( object me )
     }
 
     tell_object( me, "你的各類常規道具物品加分如下：\n\n");
-    // 這裡用一個很羅嗦的判斷來寫，雖然比原先的耗N倍資源，又慢，但是
+    // 這裏用一個很羅嗦的判斷來寫，雖然比原先的耗N倍資源，又慢，但是
     // 我認為這樣有效果，有氣氛，就愛這麼做。
     remove_call_out("score_tools_go");
     call_out( "score_tools_go", 1, me, 0, 0);
@@ -407,7 +407,7 @@ void score_sp_tools_go( object me, int score, int hj_obj_amount )
               || temp_id == "wm slzj" || temp_id == "sxzy dsg"
             )
             {
-                // 若非本人的，或者有 “假”的標記，只加一部分(相對真的來說)。
+                // 若非本人的，或者有 “假”的標記，只加一部分(相對真的來説)。
                 if( !query("host_id", temp )
                    || query("host_id", temp) != query("id", me )
                    || query("fake", temp )
@@ -419,7 +419,7 @@ void score_sp_tools_go( object me, int score, int hj_obj_amount )
                 // 否則就高分
                 else
                 {
-                    // 這個標記是為了防止以 “寶物的累積 -> 一次性帶出” 的方法來沖擊高分記錄的 :)
+                    // 這個標記是為了防止以 “寶物的累積 -> 一次性帶出” 的方法來衝擊高分記錄的 :)
                     // 雖然現在這樣也行，不過這可虧很多了，呵呵。
                     // 更詳細的信息可以看 _qxd_.c 的 3 號主文件
                     if( query("this_time_mark", temp) != 
@@ -431,7 +431,7 @@ void score_sp_tools_go( object me, int score, int hj_obj_amount )
                     else
                     {
                         temp_score = 1500;
-                        temp_msg = "屬于你的";
+                        temp_msg = "屬於你的";
                         FindTimes ++;
                     }
                 }
@@ -456,7 +456,7 @@ void score_sp_tools_go( object me, int score, int hj_obj_amount )
                 else
                 {
                     temp_score = 200;
-                    temp_msg = "屬于你的";
+                    temp_msg = "屬於你的";
                 }
             }
             // 各族權杖加分
@@ -464,7 +464,7 @@ void score_sp_tools_go( object me, int score, int hj_obj_amount )
                 "aiyao quanzhang", "shanguai quanzhang", "juren quanzhang",}) ) != -1
             )
             {
-                temp_msg = "神秘的";
+                temp_msg = "神祕的";
                 temp_score = 50;
             }
             // 各族寶物加分
@@ -552,7 +552,7 @@ void score_all( object me )
     else
     {
         xiaolv = 0;
-        msg = "由于$N"HIC"沒有進入或退出遊戲的時間記錄，無法計算效率。";
+        msg = "由於$N"HIC"沒有進入或退出遊戲的時間記錄，無法計算效率。";
     }
 
     message_vision(HIC"\n$N"HIC"的最終得分是："+score+" 點！\n"+msg+"\n\n"NOR, me);
@@ -631,14 +631,14 @@ void score_all( object me )
         }
         */
 
-        message_vision(HIW"恭喜$N"HIW"成功歸來，將得到所有的遊戲分數！請輸入 <YEAH!!!> 指令查詢獎品兌換。\n"NOR,me);
+        message_vision(HIW"恭喜$N"HIW"成功歸來，將得到所有的遊戲分數！請輸入 <YEAH!!!> 指令查詢獎品兑換。\n"NOR,me);
     }
 
     delete_temp("huanjing", me);
 
     // 記錄該玩家本次的技能、力量。
     // 該數據將在下一次進入遊戲時被七星燈判斷使用，
-    // 這裡不作任何判斷。
+    // 這裏不作任何判斷。
 
     set("huanjing2003/last_power",query_temp("hj_game_mepower",  me), me);
     set("huanjing2003/last_skills_name",query_temp("hj_game_skills",  me), me);
@@ -651,17 +651,17 @@ void score_all( object me )
     AllTimes ++;
     setlong();
     save();
-    // 只有在這裡的時候才 save() .
+    // 只有在這裏的時候才 save() .
 
     if( IS_TEST && !TEST_AWARD_GXD )
     {
-        message_vision(HIY"\n由于現在是測試期間，並且沒有任何獎勵，$N"HIY"的得分被清除了。\n\n"NOR, me);
+        message_vision(HIY"\n由於現在是測試期間，並且沒有任何獎勵，$N"HIY"的得分被清除了。\n\n"NOR, me);
         delete_temp("hj_score", me);
     }
 
     if( IS_TEST && member_array(query("id", me),test_id_list) == -1 )
     {
-        message_vision(HIY"\n由于現在是測試期間，並且$N"HIY"沒有報名參加測試，$N"HIY"的得分被清除了。\n\n"NOR, me);
+        message_vision(HIY"\n由於現在是測試期間，並且$N"HIY"沒有報名參加測試，$N"HIY"的得分被清除了。\n\n"NOR, me);
         delete_temp("hj_score", me);
     }
 }

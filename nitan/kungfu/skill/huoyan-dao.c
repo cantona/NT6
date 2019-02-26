@@ -1,4 +1,4 @@
-// huoyan-dao.c 火燄刀
+// huoyan-dao.c 火焰刀
 
 #include <ansi.h>;
 inherit SKILL;
@@ -10,20 +10,20 @@ mapping *action = ({
         "skill_name" : "鑽木取火",
         "lvl" : 0
 ]),
-([        "action" : "$N使出一招"HIR"「祝融懷燄」"NOR"，手掌如刀，斜斜劈向$n的$l",
-        "skill_name" : "祝融懷燄",
+([        "action" : "$N使出一招"HIR"「祝融懷焰」"NOR"，手掌如刀，斜斜劈向$n的$l",
+        "skill_name" : "祝融懷焰",
         "lvl" : 10
 ]),
 ([        "action" : "$N使出一招"HIR"「風火無邊」"NOR"，雙掌一拍，一道內力自掌中攻向$n的$l",
         "skill_name" : "風火無邊",
         "lvl" : 20
 ]),
-([        "action" : "$N使出一招"RED"「六道輪回」"NOR"，雙手合十，當頭劈向$n",
-        "skill_name" : "六道輪回",
+([        "action" : "$N使出一招"RED"「六道輪迴」"NOR"，雙手合十，當頭劈向$n",
+        "skill_name" : "六道輪迴",
         "lvl" : 30
 ]),
-([        "action" : "$N使出一招"HIR"「雙龍吐燄」"NOR"，雙掌一錯，兩道內力交叉攻向$n的$l",
-        "skill_name" : "雙龍吐燄",
+([        "action" : "$N使出一招"HIR"「雙龍吐焰」"NOR"，雙掌一錯，兩道內力交叉攻向$n的$l",
+        "skill_name" : "雙龍吐焰",
         "lvl" : 40
 ]),
 ([        "action" : "$N使出一招"HIB"「刀山火海」"NOR"，雙掌向下斜拍，頓時萬千道內力從四面八方攻向$n",
@@ -50,7 +50,7 @@ int valid_combine(string combo)
 int valid_learn(object me)
 {
         if( query_temp("weapon", me) || query_temp("secondary_weapon", me) )
-                return notify_fail("練火燄刀必須空手。\n");
+                return notify_fail("練火焰刀必須空手。\n");
 
         if( query("max_neili", me)<1200 )
                 return notify_fail("你的內力不夠。\n");
@@ -59,7 +59,7 @@ int valid_learn(object me)
                 return notify_fail("你的內功火候太淺。\n");
 
         if (me->query_skill("strike", 1) < me->query_skill("huoyan-dao", 1))
-                return notify_fail("你的基本掌法火候有限，無法領會更高深的火燄刀法。\n");
+                return notify_fail("你的基本掌法火候有限，無法領會更高深的火焰刀法。\n");
 
         return 1;
 }
@@ -68,11 +68,11 @@ int practice_skill(object me)
         object weapon;
 
         if( query_temp("weapon", me) || query_temp("secondary_weapon", me) )
-                return notify_fail("練火燄刀必須空手。\n");
+                return notify_fail("練火焰刀必須空手。\n");
         if( query("qi", me)<60 )
-                return notify_fail("你的體力不夠，練不了火燄刀。\n");
+                return notify_fail("你的體力不夠，練不了火焰刀。\n");
         if( query("neili", me)<40 )
-                return notify_fail("你的內力不夠，練不了火燄刀。\n");
+                return notify_fail("你的內力不夠，練不了火焰刀。\n");
         me->receive_damage("qi", 55);
         addn("neili", -35, me);
         return 1;
@@ -176,17 +176,17 @@ mixed valid_damage(object ob, object me, int damage, object weapon)
         if (ap / 2 + random(ap) < dp)
         {
                 result = ([ "damage" : -damage / 2 ]);
-                result += ([ "msg" : HIR "$n展開火燄刀法，封住了一些$N的攻擊！\n" NOR ]);
+                result += ([ "msg" : HIR "$n展開火焰刀法，封住了一些$N的攻擊！\n" NOR ]);
                 return result;
        }
 }
 
 int help(object me)
 {
-        write(HIR"\n火燄刀："NOR"\n");
+        write(HIR"\n火焰刀："NOR"\n");
         write(@HELP
 
-    火燄刀為雪山大輪寺住持鳩摩智的獨門絕技。
+    火焰刀為雪山大輪寺住持鳩摩智的獨門絕技。
     原為少林七十二絕技之一，後鳩摩智得慕容博相助，得窺少林
 絕藝，並輔以小無相功，另創新招。
 

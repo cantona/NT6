@@ -53,7 +53,7 @@ int perform(object me, object target)
                 return notify_fail("你沒有激發聖火令法，無法使用" + name() + "。\n");
 
         if (! living(target))
-                return notify_fail("對方都已經這樣了，用不著這麼費力吧？\n");
+                return notify_fail("對方都已經這樣了，用不着這麼費力吧？\n");
 
         msg = HIR "$N" HIR "一聲長嘯，手中" + weapon->name() +
               HIR "一轉，招數頓時變得詭異無比，從意想不到的方"

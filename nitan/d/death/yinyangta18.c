@@ -5,8 +5,8 @@ void create()
 {
         set("short", HIB "陰陽塔" NOR);
         set("long", HIB @LONG
-這是地獄中最高的一座塔，高約三百余尺，共有十八級。這裡就是
-塔頂，塔頂有個供奉台(stone)，傳說有神獸朱雀路過。
+這是地獄中最高的一座塔，高約三百餘尺，共有十八級。這裏就是
+塔頂，塔頂有個供奉台(stone)，傳説有神獸朱雀路過。
 LONG NOR
         );
 
@@ -15,7 +15,7 @@ LONG NOR
         ]));
 
         set("item_desc", ([
-                "stone" : HIW "\n上面好象可以放(put)物品。\n" NOR,
+                "stone" : HIW "\n上面好像可以放(put)物品。\n" NOR,
         ]));
                 
         set("objects",([
@@ -44,7 +44,7 @@ int do_fang(string arg)
 
 
         if (me->is_busy())
-                return notify_fail("你現在正忙著呢。\n");
+                return notify_fail("你現在正忙着呢。\n");
                 
         if (objectp(present("zhu que", environment(me))))
                 return notify_fail("朱雀已經現身了，還尋什麼呀，趕快戰鬥吧！\n");

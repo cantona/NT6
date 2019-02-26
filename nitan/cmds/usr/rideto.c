@@ -25,7 +25,7 @@ int main(object me, string arg)
                 return notify_fail("你的負荷出現故障，動彈不得。\n");
 
         if( query_temp("sleeped", me) )
-                return notify_fail("你現在正躺著呢。\n");
+                return notify_fail("你現在正躺着呢。\n");
 
         if (me->is_in_prison())
                 return notify_fail("你正在做牢呢，你想幹什麼？！\n");
@@ -34,7 +34,7 @@ int main(object me, string arg)
                 return notify_fail("你現在正在戰鬥！\n");
 
         if( me->is_ghost() )
-                return notify_fail("你還是等還陽後再說吧。\n");
+                return notify_fail("你還是等還陽後再説吧。\n");
 
         if( me->is_busy() || query("doing", me) )
                 return notify_fail("你的動作還沒有完成，不能移動。\n");
@@ -47,7 +47,7 @@ int main(object me, string arg)
 
 /*
         if( !query("outdoors", environment(me)) )
-                return notify_fail("在房間裡不能亂跑！\n");
+                return notify_fail("在房間裏不能亂跑！\n");
 */
         // 帳篷中不能rideto
         env = environment(me);
@@ -61,10 +61,10 @@ int main(object me, string arg)
         }
 
         if( query("no_rideto", env) )
-                return notify_fail("這裡無法騎馬穿梭。\n");
+                return notify_fail("這裏無法騎馬穿梭。\n");
                
         if( query("no_magic", env) || query("maze", env) )
-                return notify_fail("你發現這裡有點古怪，你的坐騎好象不聽你的指揮！\n");
+                return notify_fail("你發現這裏有點古怪，你的坐騎好像不聽你的指揮！\n");
 
         //if (me->query_condition("killer"))
         //        return notify_fail("你有命案在身呢，你還是小心為妙，不宜在官道上肆無忌憚行走！\n");
@@ -75,7 +75,7 @@ int main(object me, string arg)
                 return 1;
         }
         
-        return notify_fail("你還是先找匹坐騎再說吧。\n");
+        return notify_fail("你還是先找匹坐騎再説吧。\n");
 }
 
 int help(object me)

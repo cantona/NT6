@@ -3,7 +3,7 @@ void create()
 {
         set("short","船上");
         set("long", @LONG
-一只大江船，比尋常的船大了許多，此時大船已經靠岸，隨時可以從甲板(d
+一隻大江船，比尋常的船大了許多，此時大船已經靠岸，隨時可以從甲板(d
 eck)上跳下去。
 LONG );
         set("item_desc", ([
@@ -26,7 +26,7 @@ int do_jump(string arg)
         me = this_player();
 
         if( !arg || arg=="" )
-        return notify_fail("你要往哪裡跳？\n");
+        return notify_fail("你要往哪裏跳？\n");
 
         if( arg=="deck" ) 
         {

@@ -11,11 +11,11 @@ void create()
         seteuid(getuid());
         set("short", "樹頂");
         set("long",
-"這是萬年古鬆的樹頂。當年祖師爺？？？曾在這裡日觀雲動，夜觀星\n"
-"變，最終悟出了？？？？的唐門絕學，因此很多弟子常常在這裡日夜靜坐。\n"
+"這是萬年古鬆的樹頂。當年祖師爺？？？曾在這裏日觀雲動，夜觀星\n"
+"變，最終悟出了？？？？的唐門絕學，因此很多弟子常常在這裏日夜靜坐。\n"
 );        
         set("item_desc", ([
-                "down" : "一眼望去只見白雲片片，猶如棉絮般輕柔，隨著山風飄來飄去。\n",
+                "down" : "一眼望去只見白雲片片，猶如棉絮般輕柔，隨着山風飄來飄去。\n",
         ]));
 
         set("area", "tangmen");
@@ -52,7 +52,7 @@ int do_wu(string arg)
                 return notify_fail("你是個文盲，先學點文化(literate)吧。\n");
 
         if ( me->is_busy() )
-                return notify_fail("你現在正忙著呢。\n");
+                return notify_fail("你現在正忙着呢。\n");
 
         if( me->is_fighting() )
                 return notify_fail("你無法在戰鬥中靜心領悟！\n");
@@ -62,10 +62,10 @@ int do_wu(string arg)
                         return notify_fail("你日觀雲變，但是卻無法從中領悟什麼。\n");
 
                 if( (int)me->query_skill("dodge", 1) > 201 )
-                        return notify_fail("你日觀雲變，自覺一切變化都已熟記于心。\n");
+                        return notify_fail("你日觀雲變，自覺一切變化都已熟記於心。\n");
 
                 if( d_skill*d_skill*d_skill/10 > c_exp )
-                                      return notify_fail("你靜觀天變，但由于實戰經驗不足沒有領悟到什麼。\n"); 
+                                      return notify_fail("你靜觀天變，但由於實戰經驗不足沒有領悟到什麼。\n"); 
 
                 if( query("jingli", me)>cost )
                 {
@@ -76,7 +76,7 @@ int do_wu(string arg)
                 else
                 {
                         if( query("jingli", me) <= cost )
-                                write("你現在過于疲倦，無法靜下心來領悟。\n");
+                                write("你現在過於疲倦，無法靜下心來領悟。\n");
                 }
                 return 1;
         }
@@ -87,10 +87,10 @@ int do_wu(string arg)
                                 return notify_fail("你夜觀星變，但是卻無法從中領悟什麼。\n");
         
                         if( (int)me->query_skill("finger", 1) > 201 )
-                                return notify_fail("你夜觀星變，自覺一切變化都已熟記于心。\n");
+                                return notify_fail("你夜觀星變，自覺一切變化都已熟記於心。\n");
 
                         if( f_skill*d_skill*d_skill/10 > c_exp )
-                                      return notify_fail("你靜觀天變，但由于實戰經驗不足沒有領悟到什麼。\n"); 
+                                      return notify_fail("你靜觀天變，但由於實戰經驗不足沒有領悟到什麼。\n"); 
         
                         if( query("jingli", me)>cost )
                         {
@@ -101,7 +101,7 @@ int do_wu(string arg)
                         else
                         {
                                 if( query("jingli", me) <= cost )
-                                        write("你現在過于疲倦，無法靜下心來領悟。\n");
+                                        write("你現在過於疲倦，無法靜下心來領悟。\n");
                         }
                         return 1;
                 }
@@ -116,10 +116,10 @@ int do_climb(string arg)
 
         if ( arg && arg == "down" )
         {
-                message_vision(HIC "$N攀著繁茂的樹枝一步步爬了下去。\n" NOR, ob);
+                message_vision(HIC "$N攀着繁茂的樹枝一步步爬了下去。\n" NOR, ob);
                 ob->move(__DIR__"shugan3");
                 return 1;
         }
         else
-                return notify_fail("你要向哪裡爬？\n");
+                return notify_fail("你要向哪裏爬？\n");
 }

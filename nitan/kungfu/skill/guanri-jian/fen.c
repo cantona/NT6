@@ -35,10 +35,10 @@ int perform(object me, object target)
                 return notify_fail("你現在的真氣不足，難以施展" +name()+ "。\n");
 
         if (! living(target))
-                return notify_fail("對方都已經這樣了，用不著這麼費力吧？\n");
+                return notify_fail("對方都已經這樣了，用不着這麼費力吧？\n");
 
         msg = WHT "$N" WHT "運轉內力，陡然一勢「" HIR "焚陽劍" NOR +
-              WHT "」劃出，手中" + weapon->name() + WHT "攜著一股熱"
+              WHT "」劃出，手中" + weapon->name() + WHT "攜着一股熱"
               "流卷向$n" WHT "全身。\n" NOR;
 
         ap = attack_power(me, "sword");

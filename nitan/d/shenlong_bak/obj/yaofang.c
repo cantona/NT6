@@ -11,7 +11,7 @@ void create()
                 set_default_object(__FILE__);
         else {
                 set("unit", "個");
-                set("long","上面密密麻麻寫滿了字，列出各類藥草，配制方法和服法用途。\n");
+                set("long","上面密密麻麻寫滿了字，列出各類藥草，配製方法和服法用途。\n");
                 set("material", "paper");
         }
 }

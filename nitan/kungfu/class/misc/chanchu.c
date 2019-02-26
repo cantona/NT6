@@ -13,7 +13,7 @@ void create()
 	set("gender", "男性");
 	set("age", 1000);
 	set("long", @LONG
-這是一只巨大的蟾蜍，口中吐著綠色毒氣，甚是可怕。
+這是一隻巨大的蟾蜍，口中吐着綠色毒氣，甚是可怕。
 LONG );
 	set("combat_exp", 2000000000);
 	set("shen_type", 0);
@@ -81,7 +81,7 @@ mixed hit_ob(object me, object ob, int damage_bouns)
 {
 	ob->start_busy(5 + random(5));
 	me->receive_wound("qi", 3000 + random(3000), ob);
-        return HIY "$N" HIY "周圍毒氣氤氳，直逼得$n" HIY "頭暈目眩。\n" NOR;
+        return HIY "$N" HIY "周圍毒氣氤氲，直逼得$n" HIY "頭暈目眩。\n" NOR;
 }
 
 void heart_beat()
@@ -111,13 +111,13 @@ void die(object killer)
         int exp;                // 需要瓜分的經驗
         int pot;                // 需要瓜分的潛能
         int weiwang;            // 需要瓜分的威望
-        int score;              // 需要瓜分的閱歷
+        int score;              // 需要瓜分的閲歷
         object *t;              // 殺死我的人的隊伍列表
         object tob;
         int i;
 
         // 定義獎勵物品列表
-		// 幾率  X / 萬分之一
+		// 機率  X / 萬分之一
 		mixed oblist = ([
 			"/clone/armor/fenghuang-chai2"           :        	1,
 			"/clone/armor/haizhi-xin2"               :        	1,
@@ -204,14 +204,14 @@ void die(object killer)
 
         }
 
-        // 一定幾率掉物品在殺我的人身上dob
+        // 一定機率掉物品在殺我的人身上dob
 		if (objectp(dob) && environment(dob) == environment(this_object()))
 		{
 			key_s_gift = keys(oblist);
 			s_gift = key_s_gift[random(sizeof(key_s_gift))];
 			gift_point = oblist[s_gift];
 
-			// 判斷幾率
+			// 判斷機率
 			if (MEMBER_D->is_valib_member(dob->query("id")) 
 				&& random(MAX_POINT / ITEM_D->gift_point()) < gift_point)
 			{

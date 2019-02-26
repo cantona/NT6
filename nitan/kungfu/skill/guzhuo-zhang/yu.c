@@ -41,7 +41,7 @@ int perform(object me, object target)
                 return notify_fail("你現在真氣不夠，難以施展" YU "。\n");
 
         if (! living(target))
-                return notify_fail("對方都已經這樣了，用不著這麼費力吧？\n");
+                return notify_fail("對方都已經這樣了，用不着這麼費力吧？\n");
 
         msg = HIR "$N" HIR "體內真氣迸發，大喝一聲，雙掌向$n" HIR "平平推"
               "去，招數樸實無華，毫無半點花巧可言。\n" NOR;  

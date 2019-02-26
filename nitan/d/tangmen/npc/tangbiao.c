@@ -90,12 +90,12 @@ int give_job()
 
         if( !environment() || base_name(environment()) != query("startroom") )
         {
-                say("唐鏢說道:“我現在沒心情給你派活，等我回制鏢房再說吧！”\n");
+                say("唐鏢説道:“我現在沒心情給你派活，等我回制鏢房再説吧！”\n");
                 return 0;
         }
 
         if( !query_temp("tangmen/biao", me) )
-                command("say “這裡沒有活能給你幹，你聽誰說的？”");
+                command("say “這裏沒有活能給你幹，你聽誰説的？”");
         else
         {
                 if( query_temp("biao", me) )
@@ -108,7 +108,7 @@ int give_job()
                         coun = ( sizeof(tar) - 1 );
                 targ = tar[coun];
                 printf("%d/%d\n",coun,sizeof(tar));
-                say("唐鏢說道:“我這裡上好的" + targ + "不多了，你去後山給我找一些來吧！”\n");
+                say("唐鏢説道:“我這裏上好的" + targ + "不多了，你去後山給我找一些來吧！”\n");
                 set_temp("biao", coun, me);
         }
         return 1;
@@ -138,6 +138,6 @@ int give_anqi()
 int accept_object(object who, object ob)
 {
         command("say 要是找到了，就放到儲藏室去吧！給我幹什麼?");
-        write("唐鏢沖著你不耐煩的揮了揮手，低著頭接著研究暗器圖譜。\n");
+        write("唐鏢衝着你不耐煩的揮了揮手，低着頭接着研究暗器圖譜。\n");
         return 0;
 }

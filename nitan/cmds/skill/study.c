@@ -89,7 +89,7 @@ int main(object me, string arg)
                 if( !me->query_family() || (me->query_family() != skill["family_name"] && 
                     (!arrayp(fams) || member_array(skill["family_name"], fams) == -1)) )
                 {
-                        write("你對" + skill["family_name"] + "的練功心法不了解，再怎麼讀也沒用。\n");
+                        write("你對" + skill["family_name"] + "的練功心法不瞭解，再怎麼讀也沒用。\n");
                         return 1;
                 }
         }
@@ -132,13 +132,13 @@ int main(object me, string arg)
 
         if( me->query_skill(sname, 1) > skill["max_skill"] )
                 return notify_fail("你研讀了一會兒，但是發現"
-                                   "上面所說的對你而言都太淺"
+                                   "上面所説的對你而言都太淺"
                                    "了，沒有學到任何東西。\n");
 
         if( me->query_skill(sname, 1) < skill["min_skill"] )
                 return notify_fail("你研讀了一會兒，但是卻發現"
                                    "你對這門技能的理解還太淺"
-                                   "，結果毫無收獲。\n");
+                                   "，結果毫無收穫。\n");
 
         if( !me->query_skill(sname, 1) )
                 me->set_skill(sname, 0);
@@ -146,7 +146,7 @@ int main(object me, string arg)
         my_skill = me->query_skill(sname, 1);
         if( !me->can_improve_skill(sname) ) {
                 return notify_fail("也許是缺乏實戰經驗，你對" +
-                                   ob->name() + "上面所說的"
+                                   ob->name() + "上面所説的"
                                    "東西總是無法領會。\n");
         }
 
@@ -204,7 +204,7 @@ int main(object me, string arg)
                       to_chinese(sname)));
 
         if( t4 < times )
-                write("你現在已經過于疲倦，無法繼續研讀新知。\n");
+                write("你現在已經過於疲倦，無法繼續研讀新知。\n");
 
         return 1;
 }
@@ -215,7 +215,7 @@ int help(object me)
 指令格式: study|du <物品名稱> [次數]
           study|du <物品名稱> with [次數]
 
-這個指令使你可以通過閱讀秘笈或其他物品自學某些技巧, 但前提
+這個指令使你可以通過閲讀祕笈或其他物品自學某些技巧, 但前提
 是: 你不能是個『文盲』。並且你不能在不能戰鬥的地方讀書。
 
 see also : learn

@@ -10,7 +10,7 @@ void create()
                 set_default_object(__FILE__);
         else {
                 set("unit", "幅");
-                set("long", "這是一幅天山折梅手法圖，上面畫著一些紛繁復雜的招式。\n");
+                set("long", "這是一幅天山折梅手法圖，上面畫着一些紛繁複雜的招式。\n");
                 set("value", 500);
                 set("no_put", 1);
                 set("material", "paper");

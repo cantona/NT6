@@ -10,7 +10,7 @@ void create()
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("long", HIW "一根閃耀著奇異光芒的腰帶。\n" NOR) ;
+                set("long", HIW "一根閃耀着奇異光芒的腰帶。\n" NOR) ;
                 set("unit", "根");
                 set("value", 400000);
                 set("armor_prop/armor", 100);

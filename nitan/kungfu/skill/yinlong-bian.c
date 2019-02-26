@@ -1,4 +1,4 @@
-//yinlong-bian.c 《九陰真經》──九陰神功──銀龍鞭法
+//yinlong-bian.c 《九陰真經》——九陰神功——銀龍鞭法
 //Edit By Vin On 13/2/2001
 
 #include <ansi.h>
@@ -33,7 +33,7 @@ mapping *action = ({
         "lvl"   : 100,
         "damage_type": "抽傷"
 ]),
-([      "action": "$N勁走螺旋，一式「吞天裂地勢」，$w在$n眼前連變數種招式，忽然從$l處倒卷上來",
+([      "action": "$N勁走螺旋，一式「吞天裂地勢」，$w在$n眼前連變數種招式，忽然從$l處倒捲上來",
         "force" : 263,
         "attack": 70,
         "dodge" : -5,
@@ -51,7 +51,7 @@ mapping *action = ({
         "lvl"   : 140,
         "damage_type": "抽傷"
 ]),
-([      "action": "$N含胸拔背，一式「六道輪回勢」，力道靈動威猛，勁力從四面八方向$n擠壓出去",
+([      "action": "$N含胸拔背，一式「六道輪迴勢」，力道靈動威猛，勁力從四面八方向$n擠壓出去",
         "force" : 331,
         "attack": 85,
         "dodge" : -12,

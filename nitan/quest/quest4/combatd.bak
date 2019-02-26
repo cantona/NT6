@@ -8,7 +8,7 @@ void killer_reward(object killer, object victim)
     int exp, pot, score, bonus,factor;
     int chousha_exp, chousha_pot, chousha_score;
 
-    die_msg = ({"死的時候還面帶微笑。","死狀極其恐怖。","真是慘不忍睹啊！","哎,真是人生悲劇！","真是可憐！","大家默哀吧！","可悲，可嘆啊！",});
+    die_msg = ({"死的時候還面帶微笑。","死狀極其恐怖。","真是慘不忍睹啊！","哎,真是人生悲劇！","真是可憐！","大家默哀吧！","可悲，可歎啊！",});
       if (!killer)     return;
     killer->killed_enemy(victim);
     killer_master_id=killer->query("family/master_id");
@@ -103,7 +103,7 @@ void killer_reward(object killer, object victim)
       victim->delete_temp("chousha");
      }
 
-                message("channel:rumor",HIM"\n□江湖傳聞□: 聽說"
+                message("channel:rumor",HIM"\n〖江湖傳聞〗: 聽説"
                         +victim->name(1)+msg+"\n"NOR,users());
                 }
 
@@ -266,7 +266,7 @@ for(i=0;i<mp_num-1;i++)
                 str += allstr;
         }
         write_file("/hate/"+pai2, str, 1);
-        tell_object(killer,HIR"由于你殘害"+victim->query("name")+
+        tell_object(killer,HIR"由於你殘害"+victim->query("name")+
                "，"+victim->query("family/family_name")+"對你的師門更加仇視了！\n"NOR);
         return;
 }

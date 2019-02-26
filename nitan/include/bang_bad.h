@@ -67,7 +67,7 @@ int do_type(string arg)
 
         if (!wizardp(this_player()) &&  
             (good_bunch(this_player()) || query("shen", this_player())>0) )
-                return notify_fail("你一個正派人士到這裡來查什麼任務？\n");
+                return notify_fail("你一個正派人士到這裏來查什麼任務？\n");
 
         if (!wizardp(this_player()) && ! bad_bunch(this_player()))
                 return notify_fail("你先加入黑道聯盟，才可以查看黑道的任務。\n");

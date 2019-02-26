@@ -30,7 +30,7 @@ int perform(object me, object target)
         return notify_fail(target->name() + "目前正自顧不暇，放膽攻擊吧。\n");
 
           me->start_perform( 5, "纏繞訣");
-    msg = HIG "$N使出纏繞訣，鞭子一揮向$n的雙腿卷去！\n";
+    msg = HIG "$N使出纏繞訣，鞭子一揮向$n的雙腿捲去！\n";
 
         me->start_busy(random(2));
         if( (random(query("combat_exp", me))>query("combat_exp", target)/2 )

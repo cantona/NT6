@@ -4,7 +4,7 @@ inherit NPC;
 
 void create()
 {
-        set_name("岳靈珊", ({ "yue lingshan", "yue", "lingshan" }) );
+        set_name("嶽靈珊", ({ "yue lingshan", "yue", "lingshan" }) );
         set("nickname", "小師妹");
         set("gender", "女性" );
         set("age", 17);
@@ -22,7 +22,7 @@ void create()
         set("jiali", 40);
         set("combat_exp", 100000);
 
-        set("long",     "岳靈珊是華山派掌門岳不群的獨生女兒。\n");
+        set("long",     "嶽靈珊是華山派掌門嶽不羣的獨生女兒。\n");
 
         create_family("華山派", 14, "弟子");
 

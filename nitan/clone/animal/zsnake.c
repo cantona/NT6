@@ -9,12 +9,12 @@ void create()
         set_name("竹葉青", ({ "zhuye qing", "snake" }) );
         set("race", "爬蛇");
         set("age", 4);
-        set("long", "一只身體碧綠的蛇，顯得特別細小。\n");
+        set("long", "一隻身體碧綠的蛇，顯得特別細小。\n");
         set("attitude", "peaceful");
 
-        set("msg_fail", "$n沖$N嘶地一吐舌頭");
-        set("msg_succ", "$n嘶嘶做響，蛇頭隨著$N的手動了起來");
-        set("msg_trained","$n悄無聲息地遊到$N的腳下不動了");
+        set("msg_fail", "$n衝$N嘶地一吐舌頭");
+        set("msg_succ", "$n嘶嘶做響，蛇頭隨着$N的手動了起來");
+        set("msg_trained","$n悄無聲息地游到$N的腳下不動了");
         set("auto_follow",0);
         set("wildness", 11);
 
@@ -65,5 +65,5 @@ int convert(string arg)
         if (arg!="snake" && arg!="zhuye qing") return 0;
         if( query("family/family_name", me) != "白駝山" )
                 return notify_fail("你不能化蛇為杖。\n");
-        return notify_fail("竹葉青過于細小，不能化為杖。\n");
+        return notify_fail("竹葉青過於細小，不能化為杖。\n");
 }

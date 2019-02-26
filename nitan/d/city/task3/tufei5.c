@@ -103,7 +103,7 @@ void init()
                         carry_object("/clone/weapon/changjian")->wield();
                 set("title", "燕雲十八騎", obj);
                 obj->set_weight(500000);
-                set_name("大遼姦細", ({ "jian xi","jx"}) );
+                set_name("大遼奸細", ({ "jian xi","jx"}) );
                 remove_call_out ("destroy_npc");
                 call_out ("destroy_npc", 900); // 15 min
         }

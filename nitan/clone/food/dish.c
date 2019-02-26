@@ -1,11 +1,11 @@
-// dish.c 菜肴
+// dish.c 菜餚
 
 inherit ITEM;
 inherit F_FOOD;
 
 void create()
 {
-        set_name("菜肴", ({ "dish" }));
+        set_name("菜餚", ({ "dish" }));
         set_weight(40);
         if (clonep())
                 set_default_object(__FILE__);

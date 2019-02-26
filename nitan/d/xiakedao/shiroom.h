@@ -32,11 +32,11 @@ int do_study(string arg)
                 write("你覺得這上面的詩大有寓意，不由的盡心苦思。\n");
         else
         if (lvl >= 1)
-                write("你心中暗想：這定是前輩高手留下的秘籍，這些詞句可要好好分析。\n");
+                write("你心中暗想：這定是前輩高手留下的祕籍，這些詞句可要好好分析。\n");
         else
         if (random(2))
         {
-                write("你望著上面的筆劃，想起所修習的武功來，不禁漸漸有所體會。\n");
+                write("你望着上面的筆劃，想起所修習的武功來，不禁漸漸有所體會。\n");
                 if( query("experience", me)<me->query_experience_limit() )
                         addn("experience", 1, me);
         } else

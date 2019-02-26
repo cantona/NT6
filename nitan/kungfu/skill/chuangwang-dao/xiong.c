@@ -3,7 +3,7 @@
 
 inherit F_SSERVER;
 
-string name() { return HIY "雄霸群山" NOR; }
+string name() { return HIY "雄霸羣山" NOR; }
 
 int perform(object me, object target)
 {
@@ -38,7 +38,7 @@ int perform(object me, object target)
                 return notify_fail("你的真氣不夠，難以施展" + name() + "。\n");
 
         if (! living(target))
-                return notify_fail("對方都已經這樣了，用不著這麼費力吧？\n");
+                return notify_fail("對方都已經這樣了，用不着這麼費力吧？\n");
 
         msg = HIY "$N" HIY "一聲怒喝，手中" + weapon->name() +  HIY "凌空劈斬"
               "而出，刀鋒頓時如閃電般貫向$n" HIY "！\n" NOR;

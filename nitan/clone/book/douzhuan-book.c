@@ -1,4 +1,4 @@
-// douzhuan-book.c 鬥轉星移
+// douzhuan-book.c 斗轉星移
 
 #include <ansi.h>
 
@@ -6,7 +6,7 @@ inherit BOOK;
 
 void create()
 {
-        set_name(CYN "鬥轉星移" NOR, ({ "douzhuan book", "douzhuan", "book" }));
+        set_name(CYN "斗轉星移" NOR, ({ "douzhuan book", "douzhuan", "book" }));
         set_weight(500);
         if (clonep())
                 set_default_object(__FILE__);
@@ -14,7 +14,7 @@ void create()
         {
                 set("unit", "本");
                 set("no_sell", 1);
-                set("long", "這是一本記載了慕容家鬥轉星移的秘籍。\n");
+                set("long", "這是一本記載了慕容家斗轉星移的祕籍。\n");
                 set("value", 1000);
                 set("material", "paper");
                 set("skill", ([

@@ -14,7 +14,7 @@ void create()
         set("int", 28);
         set("con", 28);
         set("per", 28);
-        set("long", "她一張瓜子臉兒，薄薄的嘴唇，眉目靈動，頗有英氣。\n");
+        set("long", "她一張瓜子臉兒，薄薄的嘴脣，眉目靈動，頗有英氣。\n");
 
         set("combat_exp", 5000);
         set("score", 200);

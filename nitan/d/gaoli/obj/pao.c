@@ -16,7 +16,7 @@ void create()
                 set("armor_prop/armor", 335);
                 set("value", 1000);
                 set("wear_msg","$N把$n迎風一展，緩緩的披在身上。\n");
-                set("remove_msg","$N輕輕的把$n從身上脫了下來。\n");
+                set("remove_msg","$N輕輕的把$n從身上脱了下來。\n");
         }
         setup();
 }

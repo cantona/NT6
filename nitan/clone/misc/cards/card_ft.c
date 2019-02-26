@@ -38,13 +38,13 @@ int do_dakai(string arg)
 HIR"\n"+
 "                                              \n"+
 "        │       │       │       │         \n"+   
-"     □┴┴□ □┴┴□ □┴┴□ □┴┴□      \n"+
+"     ╭┴┴╮ ╭┴┴╮ ╭┴┴╮ ╭┴┴╮      \n"+
 "     │    │ │    │ │    │ │    │      \n"+
 "     │    │ │    │ │    │ │    │      \n"+
 "     │ 迎 │ │ 春 │ │ 接 │ │ 福 │      \n"+
 "     │    │ │    │ │    │ │    │      \n"+
 "     │    │ │    │ │    │ │    │      \n"+
-"     □┬┬□ □┬┬□ □┬┬□ □┬┬□      \n"+
+"     ╰┬┬╯ ╰┬┬╯ ╰┬┬╯ ╰┬┬╯      \n"+
 "        !!       !!       !!       !!         \n"+
 "        ;;       ;;       ;;       ;;         \n"+
 "\n"+
@@ -67,7 +67,7 @@ int do_chaikai(string arg)
 
         if (arg == "card")
         {
-                message_vision(HIG"$N興高採烈地拆開了賀卡，突然掉下一個"HIR"紅包"HIG"！\n"NOR, me);
+                message_vision(HIG"$N興高采烈地拆開了賀卡，突然掉下一個"HIR"紅包"HIG"！\n"NOR, me);
                 box = new(__DIR__"redbag");
                 newcard = new(__DIR__"card_ft_done");
                 newcard->move(me);

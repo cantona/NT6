@@ -132,14 +132,14 @@ void die(object killer)
                 }
         }
 
-        // 一定幾率掉物品在殺我的人身上dob
+        // 一定機率掉物品在殺我的人身上dob
         if (objectp(dob) && environment(dob) == environment(this_object()))
         {
                 key_s_gift = keys(oblist);
                 s_gift = key_s_gift[random(sizeof(key_s_gift))];
                 gift_point = oblist[s_gift];
 
-                // 判斷幾率
+                // 判斷機率
                 if( (MEMBER_D->is_valid_member(query("id", dob)) || random(4) == 1 )
                         && random(MAX_POINT / ITEM_D->gift_point()) < gift_point)
                 {

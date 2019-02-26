@@ -16,8 +16,8 @@ LONG
                 "southeast" : __DIR__"slu1",
         ]));
         set("item_desc", ([
-                "grass": "這裡雜草(grass)很密，但你似乎可以撥開(push)它們。\n",
-                "雜草": "這裡的雜草(grass)很密，但你似乎可以撥開(push)它們。\n"
+                "grass": "這裏雜草(grass)很密，但你似乎可以撥開(push)它們。\n",
+                "雜草": "這裏的雜草(grass)很密，但你似乎可以撥開(push)它們。\n"
         ]));
         setup();
 }

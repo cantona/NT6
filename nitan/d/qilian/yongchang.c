@@ -8,7 +8,7 @@ void create()
         set("short", "永昌");
         set("long", @LONG
 永昌以北是一片大沙漠，再往北就是蒙古了，永昌就建在這戈壁灘
-上。孤零零一座城堡獨立沙中，一股凄涼之情不由在你心中油然而生。
+上。孤零零一座城堡獨立沙中，一股淒涼之情不由在你心中油然而生。
 LONG );
         set("outdoors", "qilian");
         set("no_clean_up", 0);

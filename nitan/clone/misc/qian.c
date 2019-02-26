@@ -6,7 +6,7 @@ string get_long();
 
 void create()
 {
-        set_name( "竹簽", ({ "zhu qian", "qian"}) );
+        set_name( "竹籤", ({ "zhu qian", "qian"}) );
         set_weight(100);
         if( clonep() )
                 set_default_object(__FILE__);
@@ -27,10 +27,10 @@ string get_long()
         qianwen = query("qianwen");
 
         if( !mapp(qianwen) || query("owner") != query("id", this_player()) )
-                return "一根狹長的竹簽，上面用朱砂題了兩行小字，看不太真切。\n";
+                return "一根狹長的竹籤，上面用硃砂題了兩行小字，看不太真切。\n";
 
-        long = "一根狹長的竹簽，上面題了幾行小字：\n";
-        long += "                "+HIW +"□"+ qianwen["title"] + "□\n" + NOR;
+        long = "一根狹長的竹籤，上面題了幾行小字：\n";
+        long += "                "+HIW +"〖"+ qianwen["title"] + "〗\n" + NOR;
         long += HIM + qianwen["doc"] + "\n" + NOR;
         return long;
 }

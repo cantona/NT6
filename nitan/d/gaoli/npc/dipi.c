@@ -39,7 +39,7 @@ void welcome(object ob)
    
    switch(random(2)){
     case 0:
-     command("say 高麗的地頭我說了算，有事找我就行了！");
+     command("say 高麗的地頭我説了算，有事找我就行了！");
      break;
     case 1:
      command("say 今天還要去收保護費，不然就沒飯吃了。");

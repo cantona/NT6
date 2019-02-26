@@ -56,11 +56,11 @@ int perform(object me, object target)
         {
                 addn("neili", -200, me);
                 me->start_busy(3);
-                msg += CYN "可是$p" CYN "內力深厚，及時擺脫了"
+                msg += CYN "可是$p" CYN "內力深厚，及時擺脱了"
                        CYN "$P" CYN "內力的牽扯，躲開了這一擊！\n" NOR;
         }
 
-        msg += HIR "而$P" + HIR "由于內力提升過度，經脈負荷不" +
+        msg += HIR "而$P" + HIR "由於內力提升過度，經脈負荷不" +
                "了，受了不輕的內傷！\n" NOR;
 
         me->receive_damage("qi", damage / 10);

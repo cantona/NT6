@@ -6,7 +6,7 @@ string type() { return "martial"; }
 string martialtype() { return "skill"; }
 
 mapping *action = ({
-([        "action" : "$N右手五指分開，微微一撥，再並攏向外一拂，一式" MAG"「花疏雲淡」"NOR"，拂向$n的膻中要穴",
+([        "action" : "$N右手五指分開，微微一撥，再併攏向外一拂，一式" MAG"「花疏雲淡」"NOR"，拂向$n的膻中要穴",
         "lvl" : 0,
         "skill_name" : "花疏雲淡"
 ]),
@@ -26,7 +26,7 @@ mapping *action = ({
         "lvl" : 42,
         "skill_name" : "芳蘭竟體"
 ]),
-([        "action" : "$N兩臂左手下右手上地于胸前成蘭花指形翻上，微吸一口氣，一式"HIG"「蘭桂齊芳」"NOR"，雙手向外快速一撥，激出數道勁氣逼向$n的華蓋、璇璣、紫宮幾處大穴",
+([        "action" : "$N兩臂左手下右手上地於胸前成蘭花指形翻上，微吸一口氣，一式"HIG"「蘭桂齊芳」"NOR"，雙手向外快速一撥，激出數道勁氣逼向$n的華蓋、璇璣、紫宮幾處大穴",
         "lvl" : 54,
         "skill_name" : "蘭桂齊芳"
 ]),
@@ -99,7 +99,7 @@ mapping query_action(object me, object weapon)
             && query("neili", me)>1000 )
         {
                 addn("neili", -300, me);
-                return ([       "action" : HIW "$N" HIW "兩臂交叉置于胸前，指形作蘭花狀陡然翻上，疾點$n"
+                return ([       "action" : HIW "$N" HIW "兩臂交叉置於胸前，指形作蘭花狀陡然翻上，疾點$n"
                                            HIW "胸前諸多要穴",
                                 "attack" : 100,
                                 "dodge"  : -300,

@@ -10,7 +10,7 @@ void create()
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("long", "一顆用五種香料炮制出來的茶葉蛋。\n");
+                set("long", "一顆用五種香料炮製出來的茶葉蛋。\n");
                 set("unit", "顆");
                 set("value", 50);
                 set("food_remaining", 1);

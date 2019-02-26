@@ -125,11 +125,11 @@ void error_handler(mapping error, int caught)
 
         efun::write_file(LOG_DIR + "debug.log", standard_trace(error, caught));
 
-        // 避免陷入無限錯誤回報回圈
+        // 避免陷入無限錯誤回報迴圈
         if( previous_object() == this_object() )
         {
                 if( find_object(CHANNEL_D) )
-                        CHANNEL_D->channel_broadcast("debug", "Master object 發生無限錯誤回圈，"+error["file"]+" 第 "+error["line"]+" 行，錯誤："+error["error"]+"，已強制中止。");
+                        CHANNEL_D->channel_broadcast("debug", "Master object 發生無限錯誤迴圈，"+error["file"]+" 第 "+error["line"]+" 行，錯誤："+error["error"]+"，已強制中止。");
                 return;
         }
 
@@ -143,7 +143,7 @@ void error_handler(mapping error, int caught)
 
                 if( !wizardp(user) )
                 {
-                        tell_object(user, "[1;5;33mWARNING[m 這裡發現了臭蟲，請用 bug 指令將詳細情況報告給巫師或相關人員...\n");
+                        tell_object(user, "[1;5;33mWARNING[m 這裏發現了臭蟲，請用 bug 指令將詳細情況報告給巫師或相關人員...\n");
 
                         if( find_object(CHANNEL_D) )
                         {

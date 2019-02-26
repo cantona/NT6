@@ -2,7 +2,7 @@
 inherit SKILL;
 
 mapping *action = ({
-([      "action": "在呼呼風聲中，$N使一招「越爪手」，雙手如鉤如戢，插向$n的$l",
+([      "action": "在呼呼風聲中，$N使一招「越爪手」，雙手如鈎如戢，插向$n的$l",
         "force" : 100,
         "attack": 28,
         "dodge" : 17,
@@ -72,14 +72,14 @@ mapping *action = ({
         "skill_name" : "三顧茅廬" ,
         "damage_type" : "抓傷"
 ]),
-([      "action": "$N使出「臥薪嘗膽」，雙爪如狂風驟雨般對準$n的$l連續抓出",
+([      "action": "$N使出「卧薪嚐膽」，雙爪如狂風驟雨般對準$n的$l連續抓出",
         "force" : 270,
         "attack": 61,
         "dodge" : 58,
         "parry" : 38,
         "damage": 45,
         "lvl"   : 120,
-        "skill_name" : "臥薪嘗膽" ,
+        "skill_name" : "卧薪嚐膽" ,
         "damage_type" : "抓傷"
 ])
 });

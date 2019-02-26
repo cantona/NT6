@@ -5,7 +5,7 @@ inherit F_BANKER;
 void create()
 {
         set_name("錢多", ({"qian duo", "qian", "duo"}));
-        set("title", "錢莊老板");
+        set("title", "錢莊老闆");
         set("nickname", "視錢如糞土");
         set("gender", "男性");
         set("age", 35);
@@ -53,7 +53,7 @@ void init()
         "※                  ※\n" +
         "※  取錢： withdraw ※\n" +
         "※                  ※\n" +
-        "※  兌換： convert  ※\n" +
+        "※  兑換： convert  ※\n" +
         "※                  ※\n" +
         "※  查帳： check    ※\n" +
         "※                  ※\n" +

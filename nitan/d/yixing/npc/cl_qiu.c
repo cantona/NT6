@@ -49,10 +49,10 @@ void create()
         prepare_skill("cuff", "wuxing-quan");
 */
         set("inquiry", ([
-                "長樂幫" : "這裡就是長樂幫總舵所在地。",
+                "長樂幫" : "這裏就是長樂幫總舵所在地。",
                 "司徒橫" : "我對我們幫主老人家的景仰之情，有如滔滔江水連綿不絕。",
-                "虎猛堂" : "虎猛堂自從我當香主後，一日千裡，哈！哈！哈！",
-                "香主" : "各位香主的任命由幫主老人家說了算。",
+                "虎猛堂" : "虎猛堂自從我當香主後，一日千里，哈！哈！哈！",
+                "香主" : "各位香主的任命由幫主老人家説了算。",
                 "貝海石" : "貝大夫在弊幫勞苦功高，頗得幫主信任。",
                 "幫主" : "我家幫主司徒大爺乃威鎮江南的“東霸天”也。",
         ]));
@@ -64,7 +64,7 @@ void create()
 int accept_object(object who, object ob)
 {
         if( base_name(ob) != TUCHAN )
-                return notify_fail(name() + "擺了擺手，說道：你還是自個兒留著用吧。\n");
+                return notify_fail(name() + "擺了擺手，説道：你還是自個兒留着用吧。\n");
 
         command("joythank"+query("id", who));
         set_temp("changle", 1, who);

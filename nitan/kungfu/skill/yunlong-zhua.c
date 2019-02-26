@@ -7,7 +7,7 @@ string type() { return "martial"; }
 string martialtype() { return "skill"; }
 
 mapping *action = ({
-([        "action" : "$N全身拔地而起，半空中一個筋鬥，一式"HIM"「兇鷹襲兔」"NOR"，迅猛地抓向$n的$l",
+([        "action" : "$N全身拔地而起，半空中一個筋斗，一式"HIM"「兇鷹襲兔」"NOR"，迅猛地抓向$n的$l",
         "lvl"    : 0,
         "skills_name" : "兇鷹襲兔",
 ]),
@@ -15,7 +15,7 @@ mapping *action = ({
         "lvl"    : 10,
         "skills_name" : "雄鷹展翅",
 ]),
-([        "action" : "$N一式"HIG"「拔翅鷹飛」"NOR"，全身向斜裡平飛，右腿一繃，雙爪搭向$n的肩頭",
+([        "action" : "$N一式"HIG"「拔翅鷹飛」"NOR"，全身向斜裏平飛，右腿一繃，雙爪搭向$n的肩頭",
         "lvl"    : 20,
         "skills_name" : "拔翅鷹飛",
 ]),
@@ -35,9 +35,9 @@ mapping *action = ({
         "lvl"    : 60,
         "skills_name" : "搏擊長空",
 ]),
-([        "action" : "$N騰空高飛三丈，一式"YEL"「鷹揚萬裡」"NOR"，天空中頓時顯出一個巨靈爪影，緩緩罩向$n",
+([        "action" : "$N騰空高飛三丈，一式"YEL"「鷹揚萬里」"NOR"，天空中頓時顯出一個巨靈爪影，緩緩罩向$n",
         "lvl"    : 60,
-        "skills_name" : "鷹揚萬裡",
+        "skills_name" : "鷹揚萬里",
 ]),
 ([        "action" : "$N忽的撥地而起，使一式"BLU"「蒼龍出水」"NOR"，身形化作一道閃電射向$n",
         "lvl"    : 70,

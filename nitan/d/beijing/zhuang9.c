@@ -6,8 +6,8 @@ void create()
 {
     set("short", "小房間");
         set("long", @LONG
-這是一個小房間，桌上點著蠟燭。房中只有一桌一床，陳設簡單，
-卻十分幹凈。床上舖著被褥。
+這是一個小房間，桌上點着蠟燭。房中只有一桌一牀，陳設簡單，
+卻十分乾淨。牀上鋪着被褥。
 LONG );
     set("exits", ([
                 "south" : "/d/beijing/zhuang8",

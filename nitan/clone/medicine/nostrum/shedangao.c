@@ -28,7 +28,7 @@ int do_eat(string arg)
         if(!present(this_object(), me))
                 return notify_fail("你要吃什麼？\n");
         if( me->is_busy() )
-                return notify_fail("別急，慢慢吃，小心別噎著了。\n");
+                return notify_fail("別急，慢慢吃，小心別噎着了。\n");
 
         if( (query("max_jing", me) >= 110) || (query("max_qi", me) >= 200) )
                 return notify_fail("你吃『蛇膽膏』已無效用！\n");
@@ -50,7 +50,7 @@ int do_eat(string arg)
                 addn("eff_qi", 3, me);
                 addn("qi", 5, me);
         }
-        message_vision("$N吃下一塊蛇膽膏，頓覺一股浩盪真氣直湧上來，精，氣大增...\n" , me);
+        message_vision("$N吃下一塊蛇膽膏，頓覺一股浩蕩真氣直湧上來，精，氣大增...\n" , me);
         destruct(this_object());
         return 1;
 }

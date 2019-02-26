@@ -12,7 +12,7 @@ int exert(object me, object target)
         int skill;
 
         if (target != me)
-                return notify_fail("你只能用紫徽心法來提升自己的防御力。\n");
+                return notify_fail("你只能用紫徽心法來提升自己的防禦力。\n");
 
         if( query("neili", me)<100 )
                 return notify_fail("你的內力不夠。\n");
@@ -27,8 +27,8 @@ int exert(object me, object target)
         addn("neili", -100, me);
         me->receive_damage("qi", 0);
 
-        message_combatd(HIW "$N" HIW "手指扣成北鬥七星圖形，運起紫徽心法，"
-                        "頓時全身紫蘊朦朧，衣袖飄揚！\n" NOR, me);
+        message_combatd(HIW "$N" HIW "手指扣成北斗七星圖形，運起紫徽心法，"
+                        "頓時全身紫藴朦朧，衣袖飄揚！\n" NOR, me);
 
         addn_temp("apply/armor", skill, me);
         set_temp("shield", 1, me);

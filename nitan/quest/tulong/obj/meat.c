@@ -24,7 +24,7 @@ void eat_decayed(object me)
    waittime=5-me->query_con()/10;
    if (waittime<1) waittime=1;
    me->start_busy(waittime);
-   message_vision("$N忽然覺得肚子裡咕嘟咕嘟直響，找了塊幹凈地方就蹲了下來...\n嗚，好臭！\n", me);
+   message_vision("$N忽然覺得肚子裏咕嘟咕嘟直響，找了塊乾淨地方就蹲了下來...\n嗚，好臭！\n", me);
    return;
 }
 int do_eat(string arg)

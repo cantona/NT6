@@ -36,10 +36,10 @@ int perform(object me, object target)
                 return notify_fail("你沒有激發玄鐵劍法，不能施展卷字訣。\n");
 
         if (! living(target))
-              return notify_fail("對方都已經這樣了，用不著這麼費力吧？\n");
+              return notify_fail("對方都已經這樣了，用不着這麼費力吧？\n");
 
         msg = HIY "$N一抖手中的" + weapon->name() + HIY "，自下而上的朝$n"
-              HIY "卷了過去，曲曲折折，變化無常！\n" NOR;
+              HIY "捲了過去，曲曲折折，變化無常！\n" NOR;
 
         ap = attack_power(me, "sword");
         dp = defense_power(target, "dodge");

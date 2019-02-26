@@ -11,7 +11,7 @@ void create()
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("long", "一個用來裝龜蛇酒的酒壺，裡面可裝一斤的酒。\n");
+                set("long", "一個用來裝龜蛇酒的酒壺，裏面可裝一斤的酒。\n");
                 set("unit", "個");
                 set("value", 300);
                 set("max_liquid", 15);

@@ -44,13 +44,13 @@ int perform(object me, object target)
                 return notify_fail("你現在的真氣不夠，難以施展" SHEN "。\n");
 
         if (! living(target))
-                return notify_fail("對方都已經這樣了，用不著這麼費力吧？\n");
+                return notify_fail("對方都已經這樣了，用不着這麼費力吧？\n");
 
         wn = weapon->name();
 
         msg = HIM "\n$N" HIM "一聲怒喝，內勁暴漲，手中" + wn +
               HIM "變幻萬千，霎那間化作紅黃藍綠白五道劍光，縱"
-              "橫飛揚。$P身法驀地變快，隨著劍光同時將『" HIR
+              "橫飛揚。$P身法驀地變快，隨着劍光同時將『" HIR
               "祝融" HIM "』、『" HIY "紫蓋" HIM "』、『" NOR
               WHT "石廩" HIM "』、『" HIG "芙蓉" HIM "』、『"
               HIW "天柱" HIM "』五套劍法交替使出，電光火石間"
@@ -66,7 +66,7 @@ int perform(object me, object target)
         {
                 damage = damage_power(me, "sword");
 
-                // 五分之一的幾率可被招架
+                // 五分之一的機率可被招架
                 if (random(10) <= 1 && ap / 2 < dp)
                 {
                         damage = damage / 3;
@@ -82,7 +82,7 @@ int perform(object me, object target)
                 {
                         msg = COMBAT_D->do_damage(me, target, WEAPON_ATTACK, damage, 80 + random(10),
                                                   HIR "\n$n" HIR "見$N" HIR "五道劍光繽紛"
-                                                  "洒落，交錯縱橫，呼嘯著向自己襲來。心"
+                                                  "灑落，交錯縱橫，呼嘯着向自己襲來。心"
                                                   "底不由大驚，登時聽得“噗嗤”一聲，劍"
                                                   "氣透體而過。\n" NOR);
                         addn("neili", -300, me);

@@ -42,7 +42,7 @@ void attempt_detach(object me)
 
         command("sigh");
 
-        // 一轉後只可無損失脫離一次
+        // 一轉後只可無損失脱離一次
         fams = query("reborn/fams", me);
         if( !arrayp(fams) || member_array(query("family/family_name", me), fams) == -1 )
         {
@@ -54,7 +54,7 @@ void attempt_detach(object me)
                 me->unconcious();
 
                 message_vision("$N將手掌粘在$n的背後，喃喃自語，"
-                               "不知道在說些什麼。\n", this_object(), me);
+                               "不知道在説些什麼。\n", this_object(), me);
                 addn("detach/"+query("family/family_name", me), 1, me);
         }
         command("say 走吧走吧！你現在可以走吧！");
@@ -82,7 +82,7 @@ nomask void master_accept_kill(object me)
                         continue;
                 else
                 {
-                        message_vision(sprintf("$N朝$n著喊道：“你%s，真是活的不耐煩了！！”\n\n",
+                        message_vision(sprintf("$N朝$n着喊道：“你%s，真是活的不耐煩了！！”\n\n",
                                 (me->is_apprentice_of(this_object()))?
                                 "膽敢欺師滅祖":((query("family/family_name", me) == query("family/family_name"))?
                                 "連同門師傅都要殺":"敢動本門師傅" )),inv[i],me );
@@ -113,7 +113,7 @@ public mixed teach_perform(object me, object master, mapping args)
 
                 if( query("family/family_name", me) != family )
                         return RANK_D->query_respect(me) + "與我" +
-                               family + "素無淵源，不知此話從何說起。";
+                               family + "素無淵源，不知此話從何説起。";
         }
 
         // 如果已經學會，則返回
@@ -166,7 +166,7 @@ public mixed teach_perform(object me, object master, mapping args)
                 case 0 :
                         msg = "$N微微點了點頭，伸手將$n" HIY "招"
                               "至身前，低聲在$n" HIY "耳畔講述了"
-                              "半天，還不時伸手比劃演示著什麼，所"
+                              "半天，還不時伸手比劃演示着什麼，所"
                               "講全是" + to_chinese(sk1) + "的精"
                               "微要詣。$n" HIY "聽後會心一笑，看"
                               "來對$N的教導大有所悟。";
@@ -174,7 +174,7 @@ public mixed teach_perform(object me, object master, mapping args)
 
                 case 1 :
                         msg = "$N凝視了$n" HIY "許久，方才微微點"
-                              "了點頭，說道：“我給你演示一遍，可"
+                              "了點頭，説道：“我給你演示一遍，可"
                               "看清楚了。”$N話音剛落，隨即起身而"
                               "立拉開架勢，慢慢的演示開" +
                               to_chinese(sk1) + "的招式。$n" HIY
@@ -183,11 +183,11 @@ public mixed teach_perform(object me, object master, mapping args)
                         break;
 
                 case 2 :
-                        msg = "$N看了看$n" HIY "，頗為讚許的說道"
+                        msg = "$N看了看$n" HIY "，頗為讚許的説道"
                               "：“想不到你的" + to_chinese(sk1) +
                               "進展如此神速，已達此般境界。不易，"
                               "不易。今日我便傳你這招，可記清楚了"
-                              "。”說完$N便將$n" HIY "招至跟前，"
+                              "。”説完$N便將$n" HIY "招至跟前，"
                               "耐心講述" + name + "的諸多精要，$n"
                               HIY "一邊聽一邊不住的點頭。";
                         break;
@@ -196,9 +196,9 @@ public mixed teach_perform(object me, object master, mapping args)
                         msg = "$N哈哈一笑，對$n" HIY "讚道：“不"
                               "錯，不錯。依照你現在" +
                               to_chinese(sk1) + "的造詣，我便傳授"
-                              "你" + name + "又有何妨？”說完便只"
+                              "你" + name + "又有何妨？”説完便只"
                               "見$N從懷中摸出一本頗為古舊的小冊子"
-                              "，指著其中一段對$n" HIY "仔細講解"
+                              "，指着其中一段對$n" HIY "仔細講解"
                               "。$n" HIY "聽後沉思良久，若有所悟。";
                         break;
                 }
@@ -248,7 +248,7 @@ public mixed teach_perform(object me, object master, mapping args)
                         msg = "這招你下去後需勤加練習，方能運用自如。";
                         break;
                 default :
-                        msg = "這招其實並不復雜，你自己下去練習吧。";
+                        msg = "這招其實並不複雜，你自己下去練習吧。";
                         break;
                 }
         }

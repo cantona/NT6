@@ -67,7 +67,7 @@ nomask string process_history(int i)
         {
                 if( i > total_command_count || i < 1 || i <= total_command_count - HISTORY_BUFFER_SIZE )
                 {
-                        tell(this_object(), "指令歷程范圍錯誤。\n");
+                        tell(this_object(), "指令歷程範圍錯誤。\n");
                         return 0;
                 }
                 if( total_command_count >= HISTORY_BUFFER_SIZE )
@@ -142,9 +142,9 @@ nomask void process_input_event()
 
                         chinese_time = time_period(time - wait_time);
 
-                        tell_object(usr, HIY "你等了" + chinese_time + "後，" + this_idname + HIY "終于回神了。\n" +
+                        tell_object(usr, HIY "你等了" + chinese_time + "後，" + this_idname + HIY "終於回神了。\n" +
                                          (wait_msg ? "\n留言：" + wait_msg : "") + "\n\a" NOR);
-                        msg += HIY + usr->query_idname(1) + HIY "花了" + chinese_time + "等著你回神。\n" +
+                        msg += HIY + usr->query_idname(1) + HIY "花了" + chinese_time + "等着你回神。\n" +
                                          (wait_msg ? "\n留言：" + wait_msg : "") + "\n\a" NOR;
                 }
                 //call_out((: tell(this_object(), $(msg)) :), 0);
@@ -212,7 +212,7 @@ string process_input(string str)
 
         if( query_temp("dizziness", me) )
         {
-                tell_object(me, "你目前處于眩暈狀態，無法進行任何動作。\n");
+                tell_object(me, "你目前處於眩暈狀態，無法進行任何動作。\n");
                 return "";
         }
 
@@ -238,7 +238,7 @@ string process_input(string str)
         // attach system ?
         if( me->is_attach_system() ) {
                 me->detach_system();
-                tell_object(me, HIR "用戶終止了當前執行的進程。\n" NOR);
+                tell_object(me, HIR "用户終止了當前執行的進程。\n" NOR);
         }
 
         if( str == "" ) return str;

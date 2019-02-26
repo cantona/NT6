@@ -9,8 +9,8 @@ void create()
         set("short", "海灘");
         set("long", @LONG
 但見岸上樹木蒼翠，長長的海灘望不到盡頭，盡是雪白的細沙，四
-處一片寂靜，聽不見一點聲音，西面是大海，東面仿拂有一座山峰，兩
-旁是望不到盡頭的海灘。島上的空氣似乎又熱又悶，咸濕的海風中帶著
+處一片寂靜，聽不見一點聲音，西面是大海，東面仿拂有一座山峯，兩
+旁是望不到盡頭的海灘。島上的空氣似乎又熱又悶，鹹濕的海風中帶着
 一股腥臭，又夾雜了一縷奇特的花香，聞起來十分怪異。
 LONG
         );
@@ -42,10 +42,10 @@ void init()
                 random((int)me->query_skill("dodge")) < 80 )
         {
                 message_vision( HIR "$N的眼前突然出現一個無底的深淵...$N掉入了陷阱之中。\n" NOR, me);
-                message_vision( HIR "陷阱中的鋼板突然冒出許多鋒利的鋼針，深深地紮入了$N的身體中...\n" NOR, me);
+                message_vision( HIR "陷阱中的鋼板突然冒出許多鋒利的鋼針，深深地扎入了$N的身體中...\n" NOR, me);
                 damage = 100000 / ( 100 + (int)me->query_skill("force"));
-                me->receive_wound("qi", damage + random(damage), "被紮死了");
-                me->receive_damage("qi", damage + random(damage), "被紮死了");
+                me->receive_wound("qi", damage + random(damage), "被扎死了");
+                me->receive_damage("qi", damage + random(damage), "被扎死了");
                 me->apply_condition("snake_poison", 50 + random(50) +
                 me->query_condition("snake_poison"));
         }

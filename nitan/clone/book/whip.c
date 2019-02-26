@@ -10,7 +10,7 @@ void create()
                 set_default_object(__FILE__);
         else {
                 set("unit", "冊");
-                set("long","這是一冊修習鞭法的武經\n裡面記載著全真派掌教丹陽子多年的練功心得，畫冊中人物姿勢如玉龍盤柱、如金鳳飛舞。\n");
+                set("long","這是一冊修習鞭法的武經\n裏面記載着全真派掌教丹陽子多年的練功心得，畫冊中人物姿勢如玉龍盤柱、如金鳳飛舞。\n");
                 set("value", 500);
                 set("material", "book");
                 set("skill", ([

@@ -66,7 +66,7 @@ TEXT;
         addn_temp("apply/damage", amount, me);
         addn_temp("apply/attack", amount*2, me);
         set_temp("xiangmo_busy", 1, me);
-        message_combatd(HIR"\n$N大呼酣戰，口念密宗不動明王真言，使出『金剛降魔』大法。\n"NOR,me,target);
+        message_combatd(HIR"\n$N大呼酣戰，口唸密宗不動明王真言，使出『金剛降魔』大法。\n"NOR,me,target);
         message_combatd("$N一聲高呼，身形陡轉，猶如雪豹下山。\n",me,target);
         message_combatd(HIW+str+NOR,me,target);
         ap = nec + attack_power(me, "hammer");
@@ -88,7 +88,7 @@ TEXT;
                                 target->start_busy(2);
                 }
                 else
-                {       message_combatd(HIR"\n$n見此情景，極力擺脫，結果精力大耗才跳出$N的降魔幻影。\n"NOR,me,target);
+                {       message_combatd(HIR"\n$n見此情景，極力擺脱，結果精力大耗才跳出$N的降魔幻影。\n"NOR,me,target);
                         target->receive_damage("jing", damage/5 + random(damage/3), me);
                         target->receive_wound("qi", damage/4 + random(damage/3), me);
                         str=COMBAT_D->status_msg(query("qi", target)*100/query("max_qi", target));
@@ -102,7 +102,7 @@ TEXT;
         }
         else
         {
-                message_combatd(HIR"$n見此情景，冥思一翻，終于識破了$N的降魔幻影。\n"NOR, me, target);
+                message_combatd(HIR"$n見此情景，冥思一翻，終於識破了$N的降魔幻影。\n"NOR, me, target);
                 message_combatd("只見$n不退反進，身如飄風，反而向$N發起進攻,$N頓時不知所措。\n",me,target);
                 me->start_busy(4);
         }

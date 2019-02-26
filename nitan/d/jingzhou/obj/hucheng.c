@@ -10,6 +10,6 @@ void create()
         set("unit", "把");
 //      set("no_get", 1);
 
-        set("long", "這是一把郎中走街串巷搖著的虎撐。\n");
+        set("long", "這是一把郎中走街串巷搖着的虎撐。\n");
         setup();
 }

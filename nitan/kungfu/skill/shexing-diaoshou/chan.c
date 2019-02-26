@@ -43,14 +43,14 @@ int perform(object me, object target)
 
         /*
         if( !query_temp("gb_huixuan", me) )
-                return notify_fail("你沒有使出逍遙回旋步，無法使出纏身決！\n");
+                return notify_fail("你沒有使出逍遙迴旋步，無法使出纏身決！\n");
         */
 
         lvl = ((int)me->query_skill("xiaoyaoyou", 1) +
                (int)me->query_skill("shexing-diaoshou", 1)) / 2;
 
         message_combatd(HIB "\n突然間$N口中發出“嘶嘶”的聲音，雙手半曲，三指上豎成蛇狀，\n"
-                        "陪合著瀟遙步法，突然欺近$n的身邊，令$n大吃一驚。\n" NOR, me, target);
+                        "陪合着瀟遙步法，突然欺近$n的身邊，令$n大吃一驚。\n" NOR, me, target);
 
         addn("neili", -100+random(50), me);
 
@@ -83,6 +83,6 @@ void remove_effect(object target,int lvl)
         if (target->is_fighting())
         {
                 // target->start_busy(1 + random(1));
-                message_combatd(HIG "$N使出渾身解數，算是掙脫了蛇形刁手的詭異怪招。\n" NOR, target);
+                message_combatd(HIG "$N使出渾身解數，算是掙脱了蛇形刁手的詭異怪招。\n" NOR, target);
         }
 }

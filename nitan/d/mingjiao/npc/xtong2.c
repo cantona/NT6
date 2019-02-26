@@ -47,7 +47,7 @@ void init()
 void greeting(object ob)
 {
         if( !ob || environment(ob) != environment() ) return;
-        say(CYN"小僮笑吟吟地說道：這位" + RANK_D->query_respect(ob)
+        say(CYN"小僮笑吟吟地説道：這位" + RANK_D->query_respect(ob)
              + "請了，" + "我這就給您泡茶。\n"NOR);
 }
 
@@ -60,9 +60,9 @@ string ask_tea()
                if( (query("water", me)*10/me->max_water_capacity())>8 )
                 return "你怎麼喝飽了還想要？";
         if ( present("suanmei tang", this_player()))
-                return "先喝完了我給你的再說吧。";
+                return "先喝完了我給你的再説吧。";
         if ( present("suanmei tang",  environment(me)) )
-                return "那不是有嗎？先喝完了再說。";
+                return "那不是有嗎？先喝完了再説。";
         ob = new("/d/mingjiao/obj/tang");
         ob->move(environment(this_object()));
         return "這杯又甜又熱的酸梅湯給你吧，請慢點喝喲。";

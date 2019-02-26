@@ -33,12 +33,12 @@ int main(object me, string arg)
 
         if (ob->is_apprentice_of(me))
         {
-                message_vision("$N拍拍$n的頭，說道：「好徒兒！」\n", me, ob);
+                message_vision("$N拍拍$n的頭，説道：「好徒兒！」\n", me, ob);
                 return 1;
         }
 
         if( !query("family", me) )
-                return notify_fail("你並不屬于任何門派，你必須先加入一個"
+                return notify_fail("你並不屬於任何門派，你必須先加入一個"
                                    "門派，或自己創一\n個才能收徒。\n");
 
         // If the target is willing to apprentice us already, we do it.

@@ -42,12 +42,12 @@ string inquiry_linghuchong()
  message_vision("去年上華山一去就再無音信,他不會忘記我吧......\n"
          , me );
  if(query_temp("letter")==0)
- {  message_vision("任盈盈又說道：這位"+ RANK_D->query_respect(me)+"，我已經派
+ {  message_vision("任盈盈又説道：這位"+ RANK_D->query_respect(me)+"，我已經派
        藍鳳凰去尋找了，也不知道怎麼樣了。\n",me);
    return "";
  }
-   message_vision("任盈盈又說道：這位"+ RANK_D->query_respect(me)+"，我這裡有
-       信, 你要是找到『阿沖』，就把信交給她，她會明白的。\n" , me);
+   message_vision("任盈盈又説道：這位"+ RANK_D->query_respect(me)+"，我這裏有
+       信, 你要是找到『阿衝』，就把信交給她，她會明白的。\n" , me);
    obn=new("/d/heimuya/npc/obj/letter");
    obn->move(me);
    set_temp("letter",0);

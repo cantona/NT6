@@ -43,8 +43,8 @@ int perform(object me, object target)
                 return notify_fail("你沒有激發太極劍法，不能使用「" + name() + "」。\n");
 
         msg = HIY "$N" HIY "閉目凝神，心如點轉，一招充滿太極劍意的「" HIW + name() +
-              HIY "」緩緩使出，劍招返樸歸真，看似平淡無奇，\n實則匯集了天地之間的正氣，"
-              HIY "由手中" + weapon->name()+ "幻化出無數太極劍圈，舖天蓋地的壓向$n！\n" NOR;
+              HIY "」緩緩使出，劍招返樸歸真，看似平淡無奇，\n實則彙集了天地之間的正氣，"
+              HIY "由手中" + weapon->name()+ "幻化出無數太極劍圈，鋪天蓋地的壓向$n！\n" NOR;
 
         ap = attack_power(me, "sword");
         dp = defense_power(target, "parry");
@@ -94,7 +94,7 @@ string final(object me, object target, int damage)
         target->receive_wound("jing", damage / 6, me);
         return  HIY "結果$p" HIY "沒有把它放在心上，隨"
                 "手應了一招，卻見$P" HIY "劍勢忽然一變"
-                "，\n氣象萬千，變幻無窮，極具王者風范！\n"
+                "，\n氣象萬千，變幻無窮，極具王者風範！\n"
                 HIR "$p" HIR "驚慌失措，呆在當場，被$P"
                 HIR "這一劍擊中要害！鮮血崩流，慘不忍睹！\n" NOR;
 }

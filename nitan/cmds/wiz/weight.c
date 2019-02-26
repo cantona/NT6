@@ -52,11 +52,11 @@ int main(object me, string arg)
                 return 1;
         }
 
-        tell_object(me, HIM "嘩！你覺得你變得" + to + "了一些。\n" NOR);
+        tell_object(me, HIM "譁！你覺得你變得" + to + "了一些。\n" NOR);
 
         if (objectp(env = environment(me)))
         {
-                message("vision", me->name() + "口中念念有詞，不知道"
+                message("vision", me->name() + "口中唸唸有詞，不知道"
                         "在幹些什麼。\n", env, ({ env, me }));
 
                 if( userp(env) && !query("env/invisible", me) )

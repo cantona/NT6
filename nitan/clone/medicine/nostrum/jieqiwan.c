@@ -21,7 +21,7 @@ void create()
                 set("vegetable", 15);
                 set("nostrum", 82);
                 set("level", 110);
-                set("long","這是一顆透著紫紅色調的九轉結氣丸。此丸乃武當珍藥，提高功力，靈效無比。\n");
+                set("long","這是一顆透着紫紅色調的九轉結氣丸。此丸乃武當珍藥，提高功力，靈效無比。\n");
                 set("value", 100);
                 set("no_drop", "這樣東西不能離開你。\n");
         }
@@ -42,7 +42,7 @@ int do_eat(string arg)
         if(!present(this_object(), me))
                 return notify_fail("你要吃什麼？\n");
         if( me->is_busy() )
-                return notify_fail("別急，慢慢吃，小心別噎著了。\n");
+                return notify_fail("別急，慢慢吃，小心別噎着了。\n");
 
         me->start_busy(2);
         if ( me->query_skill_mapped("force") != "taiji-shengong" )
@@ -62,7 +62,7 @@ int do_eat(string arg)
                 else if ( neili_limit <= force_limit )
                 {
                         addn("max_neili", 1, me);
-                        message_vision(HIG "$N吃下一顆九轉結氣丸，只覺渾身真氣遊走，過紫宮，入泥丸\n透十二重樓，遍布奇筋八脈！\n" NOR, me);
+                        message_vision(HIG "$N吃下一顆九轉結氣丸，只覺渾身真氣遊走，過紫宮，入泥丸\n透十二重樓，遍佈奇筋八脈！\n" NOR, me);
                 }
                 me->apply_condition("taoist_drug", 60);
         }

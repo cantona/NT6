@@ -27,12 +27,12 @@ int main(object me, string arg)
 
         if( query_temp("pending/detach", ob) )
         {
-                message_vision("\n$N痛心的對$n說：唉！你若能呆在我" +
+                message_vision("\n$N痛心的對$n説：唉！你若能呆在我" +
                        query("family/family_name", ob)+
                        "，何等有前途？罷了！罷了！\n", me, ob);
         } else
         {
-                message_vision("\n$N對著$n說道：從今天起，你再也不是我"
+                message_vision("\n$N對着$n説道：從今天起，你再也不是我"
                         +query("family/family_name", me)+"的弟子了，你走吧！\n",
                         me, ob);
         }
@@ -55,8 +55,8 @@ int help(object me)
 指令格式 : expell|kaichu <某人>
 
 這個指令可以讓你開除不成才的弟子，或是請求離開師門的弟子。被開除的
-弟子所有本門的秘學都會被追回，而其他除了知識類的以外技能都可能會下
-降，這對于一個人物而言是一個「比死還嚴重」的打擊，請你在開除一名弟
+弟子所有本門的祕學都會被追回，而其他除了知識類的以外技能都可能會下
+降，這對於一個人物而言是一個「比死還嚴重」的打擊，請你在開除一名弟
 子之前務必審慎考慮。
 
 HELP

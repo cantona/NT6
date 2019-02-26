@@ -99,12 +99,12 @@ int give_job()
 
         if( !environment() || base_name(environment()) != query("startroom") )
         {
-                say("唐毒說道:“我現在沒心情給你派活，等我回制毒房再說吧！”\n");
+                say("唐毒説道:“我現在沒心情給你派活，等我回製毒房再説吧！”\n");
                 return 0;
         }
 
         if( !query_temp("tangmen/du", me) )
-                command("say “這裡沒有活能給你幹，你聽誰說的？”");
+                command("say “這裏沒有活能給你幹，你聽誰説的？”");
         else
         {
                 if( query_temp("duyao", me) )
@@ -117,7 +117,7 @@ int give_job()
                         coun = ( sizeof(tar) - 1 );
                 targ = tar[coun];
                 printf("%d/%d\n",coun,sizeof(tar));
-                say("唐毒說道:“我這裡正缺一味毒物，快去給我找一只" + targ + "來吧！”\n");
+                say("唐毒説道:“我這裏正缺一味毒物，快去給我找一隻" + targ + "來吧！”\n");
                 set_temp("duyao", coun, me);
         }
         return 1;
@@ -130,7 +130,7 @@ int give_duyao()
         
         if ( me->is_busy() )
         {
-                command("say 你正忙著呢！\n");
+                command("say 你正忙着呢！\n");
                 return 1;
         }
 
@@ -141,7 +141,7 @@ int give_duyao()
         } else
         if ( query("duyao") < 1 )
         {
-                command("say 我這裡的毒藥已經給完了！\n");
+                command("say 我這裏的毒藥已經給完了！\n");
                 return 1;
         } else
         {
@@ -162,6 +162,6 @@ int give_duyao()
 int accept_object(object who, object ob)
 {
         command("say 要是找到了，就放到儲藏室去吧！給我幹什麼?");
-        write("唐毒沖著你揚了揚手中一只墨綠色的蟲子，嘿嘿姦笑了幾聲。\n");
+        write("唐毒衝着你揚了揚手中一隻墨綠色的蟲子，嘿嘿奸笑了幾聲。\n");
         return 0;
 }

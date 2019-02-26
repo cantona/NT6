@@ -1,4 +1,4 @@
-//Room: songlin2.c 鬆林 
+//Room: songlin2.c 松林 
 //Date: Sep 22 1997
 
 inherit ROOM;
@@ -8,7 +8,7 @@ void create()
       set("short","樹林");
       set("long",@LONG
 這是樹林深處，暗無天日，朦朧中只感覺到左右前後到處
-都是樹影。一條小溪蜿蜒蛇行，靜靜地流淌著。
+都是樹影。一條小溪蜿蜒蛇行，靜靜地流淌着。
 LONG);
       set("outdoors", "jianzhong");
       set("exits",([ /* sizeof() == 1 */

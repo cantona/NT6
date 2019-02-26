@@ -6,7 +6,7 @@ inherit NPC;
 
 void create()
 {
-        set_name("于人豪", ({ "yu renhao", "yu", "renhao" }));
+        set_name("於人豪", ({ "yu renhao", "yu", "renhao" }));
         set("gender", "男性");
         set("nickname", HIC"青城四秀"NOR);
         set("age", 25);
@@ -54,6 +54,6 @@ void init()
 
 void greeting(object ob)
 {
-        say ("于人豪大喊一聲：老子就是于人豪！\n");
+        say ("於人豪大喊一聲：老子就是於人豪！\n");
         return;
 }

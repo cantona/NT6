@@ -12,7 +12,7 @@ string ask_job();
 
 void create()
 {
-        set_name("聞蒼鬆", ({ "wen cangsong", "wen", "cangsong", }));
+        set_name("聞蒼松", ({ "wen cangsong", "wen", "cangsong", }));
         set("long",
         "他是一位高大魁偉的中年男子，身穿一件白布長袍。\n"
         "他天生神力，手中的兩頭狼牙棒有萬夫不當之勇，真是一條威風凜凜的漢子。\n"
@@ -68,7 +68,7 @@ void create()
         set("inherit_title",HIG"明教"NOR"巨木旗教眾"NOR);
 
         set("inquiry", ([
-                "name" : "在下就是明教巨木旗掌旗使聞蒼鬆，不知閣下有何指教。",
+                "name" : "在下就是明教巨木旗掌旗使聞蒼松，不知閣下有何指教。",
                 "任務" : (: ask_job :),
                 "job"  : (: ask_job :),
                 "放棄" : (: ask_abandon :),
@@ -102,7 +102,7 @@ string ask_job()
                         command("pat"+query("id", player));
                         if (axe=present("axe",player))
                                 destruct(axe);
-                        message_vision("聞蒼鬆叫來一名教眾，把$N的樹幹接了過去。\n",player);
+                        message_vision("聞蒼松叫來一名教眾，把$N的樹幹接了過去。\n",player);
                         destruct(shugan);
                         delete_temp("apply/short", player);
                         remove_call_out("reward");
@@ -110,7 +110,7 @@ string ask_job()
                return query("name", player)+"幹得不錯！下去好好休息休息。\n"; 
                 }
                 else
-                        return "這好象不是你砍的吧。想偷懶？\n";
+                        return "這好像不是你砍的吧。想偷懶？\n";
         }
 
         if( query("mingjiao/job", player) )
@@ -122,9 +122,9 @@ string ask_job()
 
         axe=new(OBJ_PATH"/axe");
         axe->move(player);
-        tell_object(player,"聞蒼鬆給你一把斧頭。\n");
+        tell_object(player,"聞蒼松給你一把斧頭。\n");
 
-        return "你來的正好，兄弟們演練陣法，巨木不夠了，你去樹林裡砍些樹幹扛回來。\n";
+        return "你來的正好，兄弟們演練陣法，巨木不夠了，你去樹林裏砍些樹幹扛回來。\n";
 
 }
 

@@ -1,11 +1,11 @@
-// pi.c 開天辟地
+// pi.c 開天闢地
 
 #include <ansi.h>
 #include <combat.h>
 
 inherit F_SSERVER;
 
-string name() { return "開天辟地"; }
+string name() { return "開天闢地"; }
 
 int perform(object me, object target)
 {
@@ -21,14 +21,14 @@ int perform(object me, object target)
                 target = me->select_opponent();
         }
         if (! target || ! me->is_fighting(target))
-                return notify_fail("「開天辟地」只能對戰鬥中的對手使用。\n");
+                return notify_fail("「開天闢地」只能對戰鬥中的對手使用。\n");
 
         if( !objectp(weapon=query_temp("weapon", me)) ||
             query("skill_type", weapon) != "blade" )
                 return notify_fail("運用「開天劈地」手中必須有刀！\n");
 
         if ((int)me->query_skill("hujia-daofa", 1) < 600)
-                return notify_fail("你的胡家刀法不夠嫻熟，不會使用「開天辟地」。\n");
+                return notify_fail("你的胡家刀法不夠嫻熟，不會使用「開天闢地」。\n");
 
         if ((int)me->query_skill("force") < 650)
                 return notify_fail("你的內功修為不夠高。\n");
@@ -95,7 +95,7 @@ int perform(object me, object target)
                                 target->receive_damage("qi",damage/7,me);
                                         target->receive_wound("qi",damage/15 + random(damage/15),me);
                         }
-                        msg += HIR + weapon->name() + HIR "余勢未盡，又劈入了$n" + HIR +
+                        msg += HIR + weapon->name() + HIR "餘勢未盡，又劈入了$n" + HIR +
                                 "的胸口，$n遭此重創，鮮血狂噴而出！\n" NOR;
 
                         if( !weapon2->is_item_make() )
@@ -130,7 +130,7 @@ int perform(object me, object target)
                                                 target->receive_wound("qi",damage / 15 + random(damage / 15), me);
                                 }
 
-                                msg += "\n" + HIY + weapon->name() + HIY "余勢未盡，又劈入了$n" + HIY +
+                                msg += "\n" + HIY + weapon->name() + HIY "餘勢未盡，又劈入了$n" + HIY +
                                         "的胸口，$n遭此重創，鮮血狂噴而出！\n" NOR;
 
                                 weapon2->set_name("碎裂的" + weapon2->query("name"));
@@ -169,7 +169,7 @@ int perform(object me, object target)
         } else
         {
                 msg += HIY "$n" HIY "見勢不妙，抽身急退，險險避過$N"
-                       HIY "的這記開天辟地，塵土飛揚中，地上裂開了一道大口子！\n"NOR;
+                       HIY "的這記開天闢地，塵土飛揚中，地上裂開了一道大口子！\n"NOR;
                 addn("neili", -100, me);
                 me->start_busy(3);
         }

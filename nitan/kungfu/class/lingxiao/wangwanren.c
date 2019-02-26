@@ -9,7 +9,7 @@ void create()
         set_name("王萬仞", ({"wang wanren", "wang", "wanren"}));
         set("long", "他是凌霄城第六代弟子王萬仞，專門負責接送新入\n"
                     "門的弟子上山。他本是凌霄城中傑出弟子，只是好\n"
-                    "酒貪杯，才被罰到此守衛。\n");
+                    "酒貪杯，才被罰到此守衞。\n");
         set("gender", "男性");
         set("age", 34);
         set("attitude", "friendly");
@@ -76,6 +76,6 @@ void attempt_apprentice(object me)
         if (! permit_recruit(me))
                 return;
 
-        command("say 嗯？拜我為師？好說，好說。");
+        command("say 嗯？拜我為師？好説，好説。");
         command("recruit "+query("id", me));
 }

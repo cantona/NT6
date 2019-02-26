@@ -10,7 +10,7 @@ void create()
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("long","一包透著陰深冷氣的毒粉。已經點燃，可以塗(tu)在兵器上了。\n" );
+                set("long","一包透着陰深冷氣的毒粉。已經點燃，可以塗(tu)在兵器上了。\n" );
                 set("unit", "些");
                 set("base_value", 5000);
                 set("base_unit", "包");

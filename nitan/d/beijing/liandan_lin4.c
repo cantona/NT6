@@ -4,7 +4,7 @@ int do_cai(string arg);
 
 void create()
 {
-        set("short", "城西後林");
+        set("short", "城西后林");
         set("long", @LONG
 這是一片茂密的樹林。很多棵幾十丈高的大樹聚在一塊，象一把
 把瓊天大傘，連日月都被遮蔽得黯然無光。樹林中還不時可以聽到大

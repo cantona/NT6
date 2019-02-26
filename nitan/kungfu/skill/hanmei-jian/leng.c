@@ -34,10 +34,10 @@ int perform(object me, object target)
                 return notify_fail("你沒有激發寒梅劍法，難以施展" + name() + "。\n");
 
         if (! living(target))
-                return notify_fail("對方都已經這樣了，用不著這麼費力吧？\n");
+                return notify_fail("對方都已經這樣了，用不着這麼費力吧？\n");
 
-        msg = HIW "$N" HIW "輕吁一聲，飛身一躍而起，手中" + weapon->name() +
-              HIW "攜著陰寒之勁刺向$n" HIW "！\n" NOR;
+        msg = HIW "$N" HIW "輕籲一聲，飛身一躍而起，手中" + weapon->name() +
+              HIW "攜着陰寒之勁刺向$n" HIW "！\n" NOR;
 
         ap = attack_power(me, "sword");
         dp = defense_power(target, "force");

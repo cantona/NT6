@@ -9,7 +9,7 @@ void create()
                 set_default_object(__FILE__);
         else {
                 set("money_id", "yuanbao");
-                set("long", HIY "一塊金黃色的元寶，閃閃發亮，拿在手裡沉甸甸的。\n" NOR);
+                set("long", HIY "一塊金黃色的元寶，閃閃發亮，拿在手裏沉甸甸的。\n" NOR);
                 set("unit", "些");
                 set("base_value", 1000000);
                 set("base_unit", "塊");

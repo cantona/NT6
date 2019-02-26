@@ -20,7 +20,7 @@ void create()
         set_default_object(__FILE__);
     else {
         set("unit", "部");
-        set("long", "這是武當派祖師張三豐真人筆錄的部分九陽神功。\n");
+        set("long", "這是武當派祖師張三丰真人筆錄的部分九陽神功。\n");
         set("material", "paper");
         set("value", 1);
                 set("skill", ([
@@ -50,7 +50,7 @@ int do_canwu(string arg)
     target = present(arg, env);
     if (!objectp(target))  return notify_fail("你要跟誰一起參悟?\n");
     if (!userp(target))    return notify_fail("你只能跟玩家一起參悟。\n");
-    if (player->is_busy()) return notify_fail("你正忙著呢。\n");
+    if (player->is_busy()) return notify_fail("你正忙着呢。\n");
     
     my_lvl = player->query_skill("taiji-shengong", 1);
     your_lvl = player->query_skill("hunyuan-yiqi", 1);
@@ -67,12 +67,12 @@ int do_canwu(string arg)
         your_skill = "taiji-shengong";
     }
     if (your_lvl < my_lvl-10)
-        return notify_fail(target->name(1)+"的本門內功遠遜于你，已不能幫你參悟了。\n");
+        return notify_fail(target->name(1)+"的本門內功遠遜於你，已不能幫你參悟了。\n");
     if( query("jing", player)<1000 )
-        return notify_fail("你精神不濟，連話都說不清楚了。\n");
+        return notify_fail("你精神不濟，連話都説不清楚了。\n");
     if( query("jing", target)<1000 )
         return notify_fail("你想向"+target->name(1)+"請教有關"+
-                to_chinese(your_skill)+"的問題，可人家沒精打採的不理你。\n");
+                to_chinese(your_skill)+"的問題，可人家沒精打采的不理你。\n");
     message_vision("$N拿出九陽神功殘篇，跟$n相互參悟，雙方似有所悟。\n",
         player, target);
 

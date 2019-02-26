@@ -49,7 +49,7 @@ int perform(object me, object target)
                 return notify_fail("你現在的真氣不夠，無法施展" TONG "。\n");
 
         if (! living(target))
-                return notify_fail("對方都已經這樣了，用不著這麼費力吧？\n");
+                return notify_fail("對方都已經這樣了，用不着這麼費力吧？\n");
 
         if (weapon)
                 wp = "手中" + weapon->name();
@@ -72,7 +72,7 @@ int perform(object me, object target)
         } else
         {
                 msg += CYN "可是$n" CYN "早已看破$N"
-                       CYN "招中虛實，單手一揮，登將這招化于無形。\n" NOR;
+                       CYN "招中虛實，單手一揮，登將這招化於無形。\n" NOR;
                 addn("neili", -50, me);
                 me->start_busy(4);
         }

@@ -5,17 +5,17 @@
 
 #include <ansi.h>
 inherit ROOM;
-#define QUESTDIR3 "quest/天龍八部/蕭峰身世篇/"
+#define QUESTDIR3 "quest/天龍八部/蕭峯身世篇/"
 #define QUESTDIR5 "quest/天龍八部/復興天下篇/"
 
 void create()
 {
     set("short", BLU"石坊"NOR);
     set("long", 
-"一個巨大的牌坊橫架在兩片山壁之間，牌坊正上方刻著六個鬥大的金字：\n"
+"一個巨大的牌坊橫架在兩片山壁之間，牌坊正上方刻着六個斗大的金字：\n"
 "\n\t\t\t『"HIY"天下第一名剎"NOR"』\n\n"+
 "字跡有些剝落，看上去年代頗為久遠了。前方是一偏很大的廣場，站滿了前來\n"+
-"進香的香客和一些江湖上的豪士。象征著少林寺的山門殿，就矗立在廣場的另\n"+
+"進香的香客和一些江湖上的豪士。象徵着少林寺的山門殿，就矗立在廣場的另\n"+
 "一側。\n"
     );
 
@@ -104,7 +104,7 @@ void check(object me)
     	{
        	me->remove_all_killer();   	
     		me->reincarnate();
-	  	  message_vision(HIW"\n突然一道神光籠罩著$N，$N的精氣神竟然全部恢復了！\n"NOR, me);
+	  	  message_vision(HIW"\n突然一道神光籠罩着$N，$N的精氣神竟然全部恢復了！\n"NOR, me);
         me->move("/d/shaolin/shifang");
     		tell_object(me,HIR"\n還是乖乖呆在少林潛修佛法算了！\n"NOR);
     		message_vision("$N急急忙忙地來到了"+environment(me)->query("short")+"。\n", me);
@@ -122,7 +122,7 @@ void check(object me)
 		  me->remove_all_killer(); 
 
     	me->reincarnate();
-	  	message_vision(HIW"\n突然一道神光籠罩著$N，$N的精氣神竟然全部恢復了！\n\n"NOR, me);
+	  	message_vision(HIW"\n突然一道神光籠罩着$N，$N的精氣神竟然全部恢復了！\n\n"NOR, me);
 		me->move("/d/shaolin/shifang");
 		message_vision("$N急急忙忙地來到了"+environment(me)->query("short")+"。\n", me);
 		me->set_temp(QUESTDIR5+"zhenfa",1);
@@ -134,5 +134,5 @@ void check(object me)
 }
 int valid_leave(object me, string dir)
 {
-   return notify_fail(HIR"你無法離開這裡。\n"NOR);
+   return notify_fail(HIR"你無法離開這裏。\n"NOR);
 }

@@ -1,4 +1,4 @@
-// jianqi.c 六道輪回
+// jianqi.c 六道輪迴
 
 #include <ansi.h>
 
@@ -20,13 +20,13 @@ int perform(object me, object target)
         skill = me->query_skill("liudaolunhui-sword", 1);
 
         if (! me->is_fighting(target))
-                return notify_fail("六道輪回劍氣只能對戰鬥中的對手使用。\n");
+                return notify_fail("六道輪迴劍氣只能對戰鬥中的對手使用。\n");
 
         if(me->query_skill_mapped("sword") != "liudaolunhui-sword") 
-                return notify_fail("你沒有用六道輪回劍法，無法使用劍氣絕招！\n");
+                return notify_fail("你沒有用六道輪迴劍法，無法使用劍氣絕招！\n");
 
         if (skill < 100)
-                return notify_fail("你的六道輪回劍法等級不夠，練好了再來！\n");
+                return notify_fail("你的六道輪迴劍法等級不夠，練好了再來！\n");
 
         if( !objectp(weapon=query_temp("weapon", me)) || 
             query("skill_type", weapon) != "sword" )
@@ -45,7 +45,7 @@ int perform(object me, object target)
         dp = dp*3/2;
 
         msg = HIG "$N" HIG "凝神靜氣，默運神通，周圍寒氣漸生，手中" + weapon->name() + HIG
-              "通體碧寒，仿佛周圍一切都已經被凍結了。\n" NOR;
+              "通體碧寒，彷彿周圍一切都已經被凍結了。\n" NOR;
 
         msg += HIY "$N" HIY "乘$n" HIY "氣血僵硬，無法動彈之際，手中" + weapon->name() + HIY
               "劍走偏鋒，籠罩$n" HIY "全身各處大穴，順勢連出數招。\n" NOR;
@@ -64,8 +64,8 @@ int perform(object me, object target)
         if (ap / 2 + random(ap) > dp || !living(target))
         {
                 msg = HIW "忽然$N" HIW "大喝一聲，" + weapon->name() + HIW
-                      "遙遙指向$n。\n" HIW "一道劍氣如白色蛟龍般洶湧噴薄，帶著周圍刺骨的寒氣襲向$n" HIW "的全身。\n" + 
-                      "待得$n" HIW "猛然驚覺，卻為時已晚。" HIR "劍氣" HIW "已透體而過，全身氣血凝固，仿佛被凍僵了！\n" NOR;
+                      "遙遙指向$n。\n" HIW "一道劍氣如白色蛟龍般洶湧噴薄，帶着周圍刺骨的寒氣襲向$n" HIW "的全身。\n" + 
+                      "待得$n" HIW "猛然驚覺，卻為時已晚。" HIR "劍氣" HIW "已透體而過，全身氣血凝固，彷彿被凍僵了！\n" NOR;
 
                 target->receive_damage("qi", damage, me);
                 target->receive_wound("qi", damage/2, me);
@@ -74,7 +74,7 @@ int perform(object me, object target)
                 target->start_busy(1);
         } else
         {
-                msg = HIW "$N" HIW "抖動著手中的" + weapon->name() + HIW "尋找著機會，"
+                msg = HIW "$N" HIW "抖動着手中的" + weapon->name() + HIW "尋找着機會，"
                       "可是$n" HIW "拼命躲閃，$N" HIW "一時竟也無機可乘。\n" NOR;
         }
 

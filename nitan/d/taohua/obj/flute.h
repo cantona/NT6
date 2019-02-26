@@ -16,27 +16,27 @@ void init()
 }
 
 string *play_msg = ({
-        HIM"但聽得簫聲連綿不斷，越來越是明徹，忽高忽低，癒變癒奇，實在美妙之極，柔媚之音縈繞耳際。",
+        HIM"但聽得簫聲連綿不斷，越來越是明徹，忽高忽低，愈變愈奇，實在美妙之極，柔媚之音縈繞耳際。",
         HIG"那簫聲忽高忽低，忽前忽後，忽焉在西，倏爾在南，似乎有十多人伏在四周，此起彼伏的吹簫戲弄一般。",
         MAG"簫聲調子陡變，似淺笑，似低訴，柔靡萬端。",
         HIG"只聽得簫聲由柔媚宛轉而漸漸急促，似是催人起舞。",
-        HIM"這時那$w"+HIM"之聲情致飄忽，纏綿宛轉，便似一個女子一會兒嘆息，一會兒呻吟，一會兒又軟語溫存、柔聲叫喚。",
+        HIM"這時那$w"+HIM"之聲情致飄忽，纏綿宛轉，便似一個女子一會兒歎息，一會兒呻吟，一會兒又軟語温存、柔聲叫喚。",
         HIM"$w"+HIM"曲調比適才更加勾魂引魄，柔媚宛轉，輕輕細細的耍了兩個花腔。",
-        HIG"$N吹到清羽之音，只聽得簫聲越拔越高，癒吹癒是回腸盪氣。",
+        HIG"$N吹到清羽之音，只聽得簫聲越拔越高，愈吹愈是迴腸蕩氣。",
         HIM"$N曲調突轉，緩緩的變得柔靡萬端，恰如昆崗鳳鳴，深閨私語。",
 });
 
 string *bihai_play_msg = ({
-        HIB"此時簫聲猶如潮水中魚躍鯨浮，海面上風嘯鷗飛，再加上水妖海怪，群魔弄潮，忽而冰山飄至，忽而熱海如沸，極盡變幻之能事。",
-        BLU"此時曲調如潮退後水平如鏡，海底卻又是暗流湍急，于無聲處隱伏兇險，更令聆曲者不知不覺而入伏，尤為防不勝防。",
+        HIB"此時簫聲猶如潮水中魚躍鯨浮，海面上風嘯鷗飛，再加上水妖海怪，羣魔弄潮，忽而冰山飄至，忽而熱海如沸，極盡變幻之能事。",
+        BLU"此時曲調如潮退後水平如鏡，海底卻又是暗流湍急，於無聲處隱伏兇險，更令聆曲者不知不覺而入伏，尤為防不勝防。",
         HIB"洞簫本以柔和宛轉見長，這時的音調卻極具峻峭肅殺之致。",
-        BLU"$N又吹得半晌，$w"+BLU"聲癒來癒細，幾乎難以聽聞。這正是《碧海潮生曲》的厲害之處，簫聲癒輕，誘力癒大。",
+        BLU"$N又吹得半晌，$w"+BLU"聲愈來愈細，幾乎難以聽聞。這正是《碧海潮生曲》的厲害之處，簫聲愈輕，誘力愈大。",
 });
 
 string *succeed_msg = ({
-        HIM"$n心頭一盪，臉上不自禁的露出微笑，只感全身熱血沸騰，就只想手舞足蹈的亂動一番，方才舒服。",
-        HIM"$n聽到簫聲，登時心神盪漾，情欲激動，心煩意亂之極，更覺心頭滾熱，喉幹舌燥。",
-        HIM"$n心中一盪，呆了一呆，又聽得一陣，只感面紅耳赤，血脈賁張，便想手舞足蹈一番。",
+        HIM"$n心頭一蕩，臉上不自禁的露出微笑，只感全身熱血沸騰，就只想手舞足蹈的亂動一番，方才舒服。",
+        HIM"$n聽到簫聲，登時心神盪漾，情慾激動，心煩意亂之極，更覺心頭滾熱，喉乾舌燥。",
+        HIM"$n心中一蕩，呆了一呆，又聽得一陣，只感面紅耳赤，血脈賁張，便想手舞足蹈一番。",
         HIM"那簫聲具有極大魔力，$n抵擋不住，凝神傾聽之下，心中的韻律節拍漸漸與簫聲相合。",
 });
 
@@ -47,10 +47,10 @@ string *bihai_succeed_msg = ({
 });
 
 string *fail_msg = ({
-        "$n剛想隨著簫聲伸手踢足，立時驚覺，潛運$f，竭力鎮攝心神。",
+        "$n剛想隨着簫聲伸手踢足，立時驚覺，潛運$f，竭力鎮攝心神。",
         "總算$n功力精湛，心頭尚有一念清明，硬生生把伸出去揮袖舞蹈的手縮了回來。",
-        "$n寧定心神，心中一片空明，不著片塵，任$N簫聲再盪，聽來只與海中波濤、樹梢風響一般無異。",
-        "$n只感心中一盪，臉上發熱，連忙鎮懾心神。",
+        "$n寧定心神，心中一片空明，不着片塵，任$N簫聲再蕩，聽來只與海中波濤、樹梢風響一般無異。",
+        "$n只感心中一蕩，臉上發熱，連忙鎮懾心神。",
 });
 
 string *bihai_fail_msg = ({
@@ -59,10 +59,10 @@ string *bihai_fail_msg = ({
 });
 
 string *dazuo_fail_msg = ({
-        "$n盤膝坐在地下，低頭行功，奮力抵御簫聲的引誘。",
+        "$n盤膝坐在地下，低頭行功，奮力抵禦簫聲的引誘。",
         "$n左手撫胸，右手放在背後，潛運$f，收斂心神，對$N的吹奏全然不聞不見。",
-        "$n盤膝而坐，數次身子已伸起尺許，終于還是以極大的定力坐了下來。",
-        "$n盤膝坐在地上，一面運起$f，摒慮寧神，抵御簫聲的引誘。",
+        "$n盤膝而坐，數次身子已伸起尺許，終於還是以極大的定力坐了下來。",
+        "$n盤膝坐在地上，一面運起$f，摒慮寧神，抵禦簫聲的引誘。",
 });
 
 string *faint_msg = ({
@@ -82,7 +82,7 @@ int do_play()
         shape=query("shape", ob);
 
         if( me->is_busy() || query_temp("pending/exercising", me) )
-                return notify_fail("你現在正忙著呢。\n");
+                return notify_fail("你現在正忙着呢。\n");
                 
         if( me->query_skill_mapped("force") != "bitao-xuangong" )
                 return notify_fail("你所用的並非碧濤玄功，無法施展碧海潮生曲！\n");
@@ -113,8 +113,8 @@ int do_play()
         
         
         if( query_temp("wuzhuan", me) && !query_temp("playing_bihai", me) )
-        msg = "但見$N神色鄭重，手按$n，邊走邊吹，腳下踏著八卦方位。";
-        else msg = "$N$n就唇，幽幽嚥嚥的吹了起來。";
+        msg = "但見$N神色鄭重，手按$n，邊走邊吹，腳下踏着八卦方位。";
+        else msg = "$N$n就脣，幽幽咽咽的吹了起來。";
         if( query("no_fight", environment(me)) )
                 msg += "這吹奏不含絲毫內力，便與常人吹簫無異。\n";
         else
@@ -129,7 +129,7 @@ int do_play()
         set_temp("apply/short", ({me->name()+"正吹奏著"+ob->name()+"。"}), me);
         set_temp("play_type", play_type, me);
 
-        message_vision(HIC"突然之間，半空中如鳴琴，如擊玉，發了幾聲，接著悠悠揚揚，飄下一陣清亮柔和的洞簫聲來。\n"NOR, me);
+        message_vision(HIC"突然之間，半空中如鳴琴，如擊玉，發了幾聲，接着悠悠揚揚，飄下一陣清亮柔和的洞簫聲來。\n"NOR, me);
 //        me->start_busy((: playing :), (: halt_play :));
         me->start_busy(2);
         call_out("playing", 1, me);
@@ -211,20 +211,20 @@ void playing(object me)
         else {
                 if( query_temp("wuzhuan", me) && !query_temp("playing_bihai", me)){
 
-                        set_temp("apply/short", ({me->name()+"手按"+ob->name()+"，腳下踏著八卦方位，邊行邊吹。"}), me);
+                        set_temp("apply/short", ({me->name()+"手按"+ob->name()+"，腳下踏着八卦方位，邊行邊吹。"}), me);
                         addn_temp("playing_bihai", 1, me);//改為碧海msg
                 }
 
                 //決定play訊息類別
                 if( query_temp("playing_bihai", me) == 1 )
-                play = HIC"這套曲子模擬大海浩淼，萬裡無波，遠處潮水緩緩推近，漸近漸快，其後洪濤洶湧，白浪連山。";
+                play = HIC"這套曲子模擬大海浩淼，萬里無波，遠處潮水緩緩推近，漸近漸快，其後洪濤洶湧，白浪連山。";
                 else if( !query_temp("playing_bihai", me) )
                 play = play_msg[random(sizeof(play_msg))];
                 else 
                 play = bihai_play_msg[random(sizeof(bihai_play_msg))] ;
                 //end
                 
-                if( query("neili", me)<random(600))message_vision(CYN"簫聲忽地微有窒滯，但隨即回歸原來的曲調。\n"NOR,me);//警告play者
+                if( query("neili", me)<random(600))message_vision(CYN"簫聲忽地微有窒滯，但隨即迴歸原來的曲調。\n"NOR,me);//警告play者
 
 
                 if(times != 0 && times/2 * 2 == times)
@@ -250,7 +250,7 @@ void playing(object me)
                 if( query_temp("wuzhuan", me) )
                 attacker=query("neili", me)/20+random(force)/2+random(music*flag)+times*10;
                 if( attacker <= 0 ) attacker = 0;
-                //開始重復計算所有敵人
+                //開始重複計算所有敵人
                 for(i=0; i<sizeof(target); i++) {
                 
                 if( !living(target[i]) || target[i]==me ) continue;
@@ -278,7 +278,7 @@ void playing(object me)
                 music2 = (int)target[i]->query_skill("music",1);
                 force2 = target[i]->query_skill("force");
                 defender=query("neili", target[i])/25-tag*5+random(force2)+music2;
-                //打坐、吐納時防御提高
+                //打坐、吐納時防禦提高
                 if( query_temp("pending/exercise", target[i]) || query_temp("pending/respirate", target[i]) )
                 defender=query("neili", target[i])/10-tag*10+random(force2)+music2;
 
@@ -333,16 +333,16 @@ void playing(object me)
                          && query("race", target[i]) == "人類" )
                         message_vision( faint+"\n"NOR, me, target[i]);
                         else if( (query("jing", target[i])<0 || query("jingli", target[i])<0) && query("race", target[i]) != "人類" )
-                        message_vision("只見$n昂起了頭，隨著簫聲搖頭擺腦的舞動。\n"NOR, me, target[i]);
+                        message_vision("只見$n昂起了頭，隨着簫聲搖頭擺腦的舞動。\n"NOR, me, target[i]);
                         else if(times/2 * 2 == times)
                         message_vision("", me, target[i]);
                         else if( query("race", target[i]) != "人類" )
-                        message_vision("只見$n昂起了頭，隨著簫聲搖頭擺腦的舞動。\n"NOR, me, target[i]);
+                        message_vision("只見$n昂起了頭，隨着簫聲搖頭擺腦的舞動。\n"NOR, me, target[i]);
                         else message_vision( succeed +"\n"NOR, me, target[i]);
                         }
                         }
                 }
-                //play效果計算到這□
+                //play效果計算到這
 
                 if( wizardp(me) && query("env/check_play", me) )
                         tell_object(me,sprintf("times：%d\n" ,times));

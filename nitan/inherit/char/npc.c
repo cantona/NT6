@@ -282,7 +282,7 @@ int accept_hit(object who)
                         break;
                 case "killer":
                         if( random(t) > 3 ) {
-                                command("say 哼，找死找到這裡來了，" +
+                                command("say 哼，找死找到這裏來了，" +
                                         RANK_D->query_self_rude(this_object()) +
                                         "手正癢呢！");
                                 kill_ob(who);

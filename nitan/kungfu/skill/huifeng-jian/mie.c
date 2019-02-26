@@ -1,4 +1,4 @@
-// mie.c  回風拂柳劍法「滅劍」
+// mie.c  迴風拂柳劍法「滅劍」
 
 #include <ansi.h>
 #include <combat.h>
@@ -24,10 +24,10 @@ int perform(object me, object target)
                 return notify_fail("你所使用的武器不對，無法施展" + name() + "。\n");
 
         if (me->query_skill_mapped("sword") != "huifeng-jian")
-                return notify_fail("你沒有激發回風拂柳劍法，無法施展" + name() + "。\n");
+                return notify_fail("你沒有激發迴風拂柳劍法，無法施展" + name() + "。\n");
 
         if ((int)me->query_skill("huifeng-jian", 1) < 120)
-                return notify_fail("你的回風拂柳劍法不夠嫻熟，無法施展" + name() + "。\n");
+                return notify_fail("你的迴風拂柳劍法不夠嫻熟，無法施展" + name() + "。\n");
 
         if ((int)me->query_skill("force") < 180)
                 return notify_fail("你的內功火候不夠，無法施展" + name() + "。\n");
@@ -36,10 +36,10 @@ int perform(object me, object target)
                return notify_fail("你現在真氣不夠，無法施展" + name() + "。\n");
 
         if (! living(target))
-               return notify_fail("對方都已經這樣了，用不著這麼費力吧？\n");
+               return notify_fail("對方都已經這樣了，用不着這麼費力吧？\n");
 
         msg = HIR "$N" HIR "手中長劍劍芒躍動，劍光暴長，幻出死亡的色彩，劍尖漸"
-              "漸逼近$n" HIR "，\n$n" HIR "看到漫天劍光，抽身後躍，可是只這一剎"
+              "漸逼近$n" HIR "，\n$n" HIR "看到漫天劍光，抽身後躍，可是隻這一剎"
               "，$N" HIR "漫天劍影化為一劍直\n刺$n" HIR "前胸，快捷無倫，只有一"
               "劍！\n" NOR;
 
@@ -53,7 +53,7 @@ int perform(object me, object target)
                 damage = damage_power(me, "sword");
                 msg += COMBAT_D->do_damage(me, target, WEAPON_ATTACK, damage, 65,
                                            HIR "$n" HIR "全然無法躲避，" + weapon->name() +
-                                           HIR "端端正正紮進在$p" HIR "的胸口，鮮血登時飛濺"
+                                           HIR "端端正正扎進在$p" HIR "的胸口，鮮血登時飛濺"
                                            "而出。\n" NOR);
                 addn("neili", -150, me);
         } else

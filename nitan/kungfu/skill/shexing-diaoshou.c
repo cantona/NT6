@@ -22,7 +22,7 @@ mapping *action = ({
 	"skill_name" : "虎頭蛇尾",
         "damage_type" : "瘀傷"
 ]),
-([	"action" : "$N一式"+(order[random(13)])+"「畫蛇添足」"NOR"，右手環攏成爪，一出手就向扣$n的嚥喉要害",
+([	"action" : "$N一式"+(order[random(13)])+"「畫蛇添足」"NOR"，右手環攏成爪，一出手就向扣$n的咽喉要害",
 	"force" : 230,
         "dodge" : 20,
 	"damage": 385,
@@ -78,7 +78,7 @@ mapping *action = ({
         "skill_name" : "青蛇挺身",
         "damage_type" : "瘀傷"
 ]),
-([      "action" : "$N全身之力聚于一指，一式"+(order[random(13)])+"「銀蛇吐信」"NOR"，指向$n的胸前",
+([      "action" : "$N全身之力聚於一指，一式"+(order[random(13)])+"「銀蛇吐信」"NOR"，指向$n的胸前",
         "force" : 100,
         "damage" : 280,
         "dodge" : 25,
@@ -87,7 +87,7 @@ mapping *action = ({
         "skill_name" : "銀蛇吐信",
         "damage_type" : "瘀傷"
 ]),
-([      "action" : "$N左掌貼于神道穴，右手一式"+(order[random(13)])+"「金蛇擺尾」"NOR"，向$n的$l劃過",
+([      "action" : "$N左掌貼於神道穴，右手一式"+(order[random(13)])+"「金蛇擺尾」"NOR"，向$n的$l劃過",
         "force" : 120,
         "damage" : 280,
         "dodge" : 28,
@@ -191,7 +191,7 @@ if (!me) {
 				attack=random(attack);
 				if(attack<=1) attack=1;
 				if(attack>4) attack=4;
-message_vision(HIY "緊接著，$N口中發出“嘶嘶”的聲音，雙手半曲，三指上豎成蛇狀，陪合著瀟遙步法，有如急風暴雨般攻出了"+
+message_vision(HIY "緊接着，$N口中發出“嘶嘶”的聲音，雙手半曲，三指上豎成蛇狀，陪合着瀟遙步法，有如急風暴雨般攻出了"+
 			   chinese_number(attack+1)+"招。\n" NOR, me);
 					for(i=0;i<attack;i++)
 					{
@@ -233,7 +233,7 @@ else		if(level>200
 && !me->query_temp("noauto")
 			)
 	{
-			message_vision(YEL "$N揉身而上，自左向右輕輕回旋一周，$n被$N的身行所迷惑，頓時放棄攻擊，改為自守。\n" NOR, me,ob);
+			message_vision(YEL "$N揉身而上，自左向右輕輕迴旋一週，$n被$N的身行所迷惑，頓時放棄攻擊，改為自守。\n" NOR, me,ob);
 
 if (ob && me &&
 ob!=me)
@@ -294,7 +294,7 @@ if (random(8)==0 && level>=300 && me->query_skill_mapped("force") == "hamagong")
 	target->apply_condition("qx_snake_poison",3);
 if (!target->is_busy()) target->start_busy(2);
 	
- return HIR "$N倒轉經脈，身形一變，一口毒氣對著$n吐出!$n頭一昏，不知所措 ！\n";
+ return HIR "$N倒轉經脈，身形一變，一口毒氣對着$n吐出!$n頭一昏，不知所措 ！\n";
 }
 	if( damage_bonus < 100 ) return 0;
 
@@ -304,7 +304,7 @@ if (me->query_temp("hmg_dzjm") && random(4)>2 )
 {
         victim->receive_damage("qi", damage_bonus/2);
         victim->receive_wound("qi", damage_bonus/2);
- return HIR "$N倒轉經脈對著$n張口一咬!$n傷口一涼，鮮血噴出！\n";
+ return HIR "$N倒轉經脈對着$n張口一咬!$n傷口一涼，鮮血噴出！\n";
 }
 	if( damage_bonus/2 > victim->query_str() || random(8)==0 ) {
 if(me->query_skill("hamagong", 1)>100)

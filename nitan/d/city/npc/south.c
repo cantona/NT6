@@ -8,7 +8,7 @@ void create()
         set("age", 40);
         set("gender", "女性");
         set("title", "南家");
-        set("long","她就是陳圓圓。雖然後世認為丟了大明江山也有她的一點點幹系，但她砌長城的本事卻也不小。\n");
+        set("long","她就是陳圓圓。雖然後世認為丟了大明江山也有她的一點點干係，但她砌長城的本事卻也不小。\n");
         set("attitude", "peaceful");
         set("str", 24);
         set("dex", 16);

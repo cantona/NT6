@@ -21,12 +21,12 @@ void destguo(object ob)
 
 void create()
 {
-        set_name(HIM "人參果" NOR, ({"renshen guo", "renshen", "guo"}));
+        set_name(HIM "人蔘果" NOR, ({"renshen guo", "renshen", "guo"}));
         if (clonep())
                 set_default_object(__FILE__);
         else {
                 set("unit", "只");
-                set("long", HIM "這是一只已經成型的人參果，真的象極了三"
+                set("long", HIM "這是一隻已經成型的人蔘果，真的象極了三"
                             "周不滿的小孩。\n" NOR);
                 set("only_do_effect", 1);
         }
@@ -44,8 +44,8 @@ int do_effect(object me)
         set("eff_qi",query("max_qi",  me), me);
         set("qi",query("eff_qi",  me), me);
 
-        message_vision(HIM "\n$N" HIM "吃下一枚人參果，只覺得精神健旺，內"
-                       "力充沛，真氣源源而\n生，甚至不再感到饑餓幹渴。\n\n", me);
+        message_vision(HIM "\n$N" HIM "吃下一枚人蔘果，只覺得精神健旺，內"
+                       "力充沛，真氣源源而\n生，甚至不再感到飢餓乾渴。\n\n", me);
 
         destruct(this_object());
         return 1;

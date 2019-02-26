@@ -6,13 +6,13 @@ inherit F_DEALER;
 void create()
 {
         set_name("金湘玉", ({ "jin xiangyu", "jin", "xiangyu" }));
-        set("title", "龍門客棧老板娘");
+        set("title", "龍門客棧老闆娘");
         set("shen_type", 0);
         set("gender", "女性");
         set("per", 34);
         set("long", "金湘玉是黃土高原一帶有名的大美人。一些達官\n"
-                    "貴人，江湖浪子常常在這裡歇息，所以她對這一\n"
-                    "帶的一舉一動都了如指掌。\n");
+                    "貴人，江湖浪子常常在這裏歇息，所以她對這一\n"
+                    "帶的一舉一動都瞭如指掌。\n");
         set("combat_exp", 500);
         set("attitude", "friendly");
         set("vendor_goods", ({
@@ -46,11 +46,11 @@ void greeting(object ob)
         switch( random(2) )
         {
         case 0:
-                say(CYN "金湘玉笑眯眯地說道：這位" + RANK_D->query_respect(ob)
+                say(CYN "金湘玉笑眯眯地説道：這位" + RANK_D->query_respect(ob)
                   + CYN + "，快請進來喝碗酒吧。\n" NOR);
                 break;
         case 1:
-                say(CYN "金湘玉說道：喲！這位" + RANK_D->query_respect(ob)
+                say(CYN "金湘玉説道：喲！這位" + RANK_D->query_respect(ob)
                   + CYN + "快請進，本店有剛出窯的好酒。\n" NOR);
                 break;
         }

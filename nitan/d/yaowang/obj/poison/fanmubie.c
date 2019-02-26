@@ -6,7 +6,7 @@ inherit ITEM;
 
 void create()
 {
-        set_name(HIY "番木鱉" NOR, ({"fanmubie", "poison"}));
+        set_name(HIY "番木鼈" NOR, ({"fanmubie", "poison"}));
         if (clonep())
                 set_default_object(__FILE__);
         else {
@@ -31,7 +31,7 @@ void create()
 int do_effect(object me)
 {
         message_vision("$N仰頭把一小袋" + name() + "都嚥了下去。\n", me);
-        set_temp("die_reason", "吞了番木鱉，莫名其妙的見了閻王", me);
+        set_temp("die_reason", "吞了番木鼈，莫名其妙的見了閻王", me);
         me->die();
         destruct(this_object());
         return 1;

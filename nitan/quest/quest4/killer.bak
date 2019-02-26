@@ -212,7 +212,7 @@ mapping *first_name=({
 ([      "name":"楊",      "id":"yang"   ]),
 ([      "name":"王",      "id":"wang"   ]),
 ([      "name":"樑",      "id":"liang"  ]),
-([      "name":"于",      "id":"yu"     ]),
+([      "name":"於",      "id":"yu"     ]),
 ([      "name":"黃",      "id":"huang"  ]),
 ([      "name":"林",      "id":"lin"    ]),
 ([      "name":"陳",      "id":"chen"   ]),
@@ -251,7 +251,7 @@ mapping *second_name1=({
 ([      "name":"宏",    "id":"hong"  ]),
 ([      "name":"榮",    "id":"rong"  ]),
 ([      "name":"鵬",    "id":"peng"  ]),
-([      "name":"沖",    "id":"chong" ]),
+([      "name":"衝",    "id":"chong" ]),
 ([      "name":"灝",    "id":"hao"   ]),
 ([      "name":"思",    "id":"si"    ]),
 ([      "name":"理",    "id":"li"    ]),
@@ -285,7 +285,7 @@ mapping *second_name2=({
 });
 
 mapping *third_name1=({
-([      "name":"峰",    "id":"feng"  ]),
+([      "name":"峯",    "id":"feng"  ]),
 ([      "name":"華",    "id":"hua"   ]),
 ([      "name":"奇",    "id":"qi"    ]),
 ([      "name":"歌",    "id":"ge"    ]),
@@ -527,7 +527,7 @@ void init()
         {
               command("heng "+ob->query("id"));
               command("say "+RANK_D->query_rude(ob)+"，算你識趣，"
-              +"我們殺手組織勢力遍布天下，不想找麻煩的話，還不快滾！\n");
+              +"我們殺手組織勢力遍佈天下，不想找麻煩的話，還不快滾！\n");
         }
 
         if (ob->query_temp("haojie/ask"))
@@ -536,7 +536,7 @@ void init()
            && killer->query("combat_exp") >= ob->query("combat_exp")/2)
            {
               message_vision(HIR"$N對$n怒喝道: “"+RANK_D->query_rude(ob)+
-              "，看你往哪裡跑，連我們殺手組織都敢惹，納命來吧！\n"NOR,killer,ob);
+              "，看你往哪裏跑，連我們殺手組織都敢惹，納命來吧！\n"NOR,killer,ob);
 
               killer->set_temp(ob->query("id"),1);
               killer->set_leader(ob);
@@ -544,7 +544,7 @@ void init()
               ob->kill_ob(killer);
            } else
            if( killer->query("combat_exp")*2/5 > ob->query("combat_exp") && random(5)>3)
-           message_vision(HIC"$N對$n喝道: “毛都沒長齊整，殺你怕臟了我的手，"
+           message_vision(HIC"$N對$n喝道: “毛都沒長齊整，殺你怕髒了我的手，"
                           +"還不快給我滾！\n"NOR,killer,ob); 
            else
            if(killer->query("combat_exp")<ob->query("combat_exp")/2 && random(5)>3)
@@ -593,7 +593,7 @@ void escape_me()
         if( !ob ) return;  
 
         message_vision(
-        HIB"$N忽然一個筋鬥跳出戰圈，狠狠說道：“算你們今次運氣好，\n"+
+        HIB"$N忽然一個筋斗跳出戰圈，狠狠説道：“算你們今次運氣好，\n"+
         "暫且放過你們，下次就沒這麼簡單了，哼！”\n"NOR,ob);
         remove_call_out("escape_me");
         destruct(ob);
@@ -658,7 +658,7 @@ void die()
          if( team[n]->query_temp("haojie/ask")
              && team[n]->is_killing(me) )   
           {
-           tell_object(team[n],HIW"你所參加的隊伍獎勵你奮勇殺敵之戰功──"
+           tell_object(team[n],HIW"你所參加的隊伍獎勵你奮勇殺敵之戰功——"
            +"你獲得了"+CHINESE_D->chinese_number(team_exp)+"點實戰經驗和\n"
            +CHINESE_D->chinese_number(team_pot)+"點潛能獎勵！\n"NOR);
 

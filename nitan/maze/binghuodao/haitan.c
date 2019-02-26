@@ -6,7 +6,7 @@ void create()
 {
         set("short", "海灘");
         set("long",
-"這裡是冰火島西岸海灘，海浪拍打著海邊巨石。周圍是一望無\n"
+"這裏是冰火島西岸海灘，海浪拍打着海邊巨石。周圍是一望無\n"
 "際的大海，東邊傳來陣陣巨大的聲響，地動山搖一般，似乎島上的\n"
 "火山在不斷地噴發，釋放出巨大的能量。\n"
 );
@@ -15,7 +15,7 @@ void create()
         ]));
         
         set("no_rideto", 1);         // 設置不能騎馬到其他地方
-        set("no_flyto", 1);          // 設置不能從起來地方騎馬來這裡
+        set("no_flyto", 1);          // 設置不能從起來地方騎馬來這裏
         set("binghuo", 1);           // 表示在冰火島    
         set("outdoors", "battle4");
         
@@ -84,13 +84,13 @@ int valid_leave(object me, string dir)
                         return 1;
                 }
 
-                // 把背起的用戶放下來
+                // 把背起的用户放下來
                 inv = deep_inventory(me);
                 for (i = 0; i < sizeof(inv); i++)
                 {
                         if (! playerp(inv[i])) continue;
         
-                        // 被人背起的用戶
+                        // 被人揹起的用户
                         inv[i]->move(__FILE__);
                 }                       
         }

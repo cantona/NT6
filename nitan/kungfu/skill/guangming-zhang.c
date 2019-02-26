@@ -45,7 +45,7 @@ mapping *action = ({
         "damage" : 50,
         "damage_type" : "瘀傷"
 ]),
-([      "action" : "$N左掌畫了個圈圈，右掌推出，一招「燄卷五方鼓」擊向$n$l",
+([      "action" : "$N左掌畫了個圈圈，右掌推出，一招「焰卷五方鼓」擊向$n$l",
         "force" : 200,
         "dodge" : 5,
         "parry" : -3,
@@ -61,7 +61,7 @@ mapping *action = ({
         "damage" : 60,
         "damage_type" : "瘀傷"
 ]),
-([      "action" : "$N吐氣揚聲，一招「氣撼九重天」雙掌並力推出",
+([      "action" : "$N吐氣揚聲，一招「氣撼九重天」雙掌併力推出",
         "force" : 250,
         "dodge" : 4,
         "parry" : -1,

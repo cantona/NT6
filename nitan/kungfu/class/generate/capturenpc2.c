@@ -110,7 +110,7 @@ void die(object killer)
                                              "weiwang": random(20) + 15, ]));
 
 /*
-                CHANNEL_D->do_channel(this_object(), "rumor", "聽說"
+                CHANNEL_D->do_channel(this_object(), "rumor", "聽説"
                                       +ob->name(1)+"("+query("id", ob)+
                                       ")在" + environment()->short() + HIM
                                       "為六大門派擊斃了" + name() + "。");

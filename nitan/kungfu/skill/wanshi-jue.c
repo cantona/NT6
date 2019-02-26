@@ -14,7 +14,7 @@ int valid_learn(object me)
   
   if(!me->query("execute_quest/wanshijue",1)&&
      me->query("vocation")!="殺手")
-   return notify_fail("你現在無法領會頑石訣的奧秘！\n");
+   return notify_fail("你現在無法領會頑石訣的奧祕！\n");
   
   return 1;
   

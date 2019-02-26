@@ -21,11 +21,11 @@ int perform(object me, object target)
                 return notify_fail(name() + "只能在戰鬥中對對手使用。\n");
         
         if( me->is_busy() )
-                return notify_fail("你正在忙著呢。\n"); 
+                return notify_fail("你正在忙着呢。\n"); 
 
         if( !objectp(weapon=query_temp("handing", me)) || 
             query("skill_type", weapon) != "throwing" )
-                return notify_fail("你現在手中沒有拿著暗器，難以施展" + name() + "。\n");
+                return notify_fail("你現在手中沒有拿着暗器，難以施展" + name() + "。\n");
 
         if( (skill = me->query_skill("tangmen-throwing", 1)) < 800 )
                 return notify_fail("你的唐門暗器不夠嫻熟，難以施展" + name() + "。\n");
@@ -43,11 +43,11 @@ int perform(object me, object target)
                 return notify_fail("你現在真氣不足，難以施展" + name() + "。\n");
 
         if( !living(target) )
-                return notify_fail("對方都已經這樣了，用不著這麼費力吧？\n");
+                return notify_fail("對方都已經這樣了，用不着這麼費力吧？\n");
 
         addn("neili", -1000, me);
 
-        msg = HIM "\n$N" HIM "手中突然多了一支花，美得妖艷，$n" HIM "覺得有點痴了，\n"
+        msg = HIM "\n$N" HIM "手中突然多了一支花，美得妖豔，$n" HIM "覺得有點痴了，\n"
               HIM "$n" HIM "不知不覺中進入了一花一世界中。\n" NOR;
 
         ap = attack_power(me, "throwing") * 2;
@@ -58,7 +58,7 @@ int perform(object me, object target)
 
         if (ap * 2 / 3 + random(ap * 3 / 2) > dp)
         {
-                msg = HIR"那花越開越艷，一花一世界，一木一浮生，$n"HIR"微笑著倒下了，那花也謝了。\n" NOR;
+                msg = HIR"那花越開越豔，一花一世界，一木一浮生，$n"HIR"微笑着倒下了，那花也謝了。\n" NOR;
                 weapon->hit_ob(me,target,query("jiali", me)+200);
                 //weapon->move(target);
                 weapon->add_amount(-1);
@@ -74,7 +74,7 @@ int perform(object me, object target)
                 me->start_busy(2);
         } else
         {
-                msg = HIR "危急時刻，$n " HIR "頓悟一方一凈土，從花的世界中遁出，那花劃空而過。只聽當的一聲輕響，那花謝了，輕輕地砸在地面上。\n" NOR;
+                msg = HIR "危急時刻，$n " HIR "頓悟一方一淨土，從花的世界中遁出，那花劃空而過。只聽噹的一聲輕響，那花謝了，輕輕地砸在地面上。\n" NOR;
                 message_combatd(msg, me, target);
                 if( query("neili", target)<1000 )
                         set("neili", 0, target);

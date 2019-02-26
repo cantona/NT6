@@ -122,7 +122,7 @@ void greeting(object ob)
         set("inquiry/武林大會", (: ask_wldh :));
         set("inquiry/聚賢莊", (: ask_wldh :));
 
-        //say( "段正淳說道：呵呵，這位" + RANK_D->query_respect(ob) + "，好久不見了啊，近來可好？來我大理有事嗎？\n");
+        //say( "段正淳説道：呵呵，這位" + RANK_D->query_respect(ob) + "，好久不見了啊，近來可好？來我大理有事嗎？\n");
         command("say 呵呵，這位" + RANK_D->query_respect(ob) + "，好久不見了啊，近來可好？來我大理有事嗎？\n");
         return;
 }
@@ -161,25 +161,25 @@ int say_msg(object me, int index)
 
         switch( index ) {
         case(1):
-                message_vision(CYN"$N說道：你什麼都不用說了，我是不會去參加這所謂的"正義"之舉的。\n"NOR, this_object(), me);
+                message_vision(CYN"$N説道：你什麼都不用説了，我是不會去參加這所謂的"正義"之舉的。\n"NOR, this_object(), me);
                 break;
         case(2):
                 message_vision(WHT"<$N皺了皺眉，臉色微微發青。>\n"NOR, this_object(), me);
                 break;
         case(3):
-                message_vision(CYN"$N說道：江湖上的流言蜚語我聽的多了，從來沒聽過這麼離譜的，喬峰是一個有擔當，有責任的大英雄，大俠士。\n"NOR, this_object(), me);
+                message_vision(CYN"$N説道：江湖上的流言蜚語我聽的多了，從來沒聽過這麼離譜的，喬峯是一個有擔當，有責任的大英雄，大俠士。\n"NOR, this_object(), me);
                 break;
         case(4):
-                message_vision(CYN"$N說道：我覺得這件事情裡面肯定有什麼誤會，所謂的殺父、殺母、殺師的事情一定不是喬峰幹的，是有人在陷害他。\n"NOR, this_object(), me);
+                message_vision(CYN"$N説道：我覺得這件事情裏面肯定有什麼誤會，所謂的殺父、殺母、殺師的事情一定不是喬峯乾的，是有人在陷害他。\n"NOR, this_object(), me);
                 break;
         case(5):
-                message_vision(CYN"$N說道：喬峰是譽兒的結拜兄弟，是阿朱的知己，又是我的救命恩人，喬峰是契丹人又如何？契丹人難道沒有英雄好漢？\n"NOR, this_object(), me);
+                message_vision(CYN"$N説道：喬峯是譽兒的結拜兄弟，是阿朱的知己，又是我的救命恩人，喬峯是契丹人又如何？契丹人難道沒有英雄好漢？\n"NOR, this_object(), me);
                 break;
         case(6):
-                message_vision(CYN"$N說道：大理願與喬峰共同進退。所以我有兩件事情，請你幫忙。\n"NOR, this_object(), me);
+                message_vision(CYN"$N説道：大理願與喬峯共同進退。所以我有兩件事情，請你幫忙。\n"NOR, this_object(), me);
                 break;
         case(7):
-                message_vision(CYN"$N說道：第一件事，是把這封信送給徐長老。我在信中已經說明了我不去參加聚賢莊武林大會的理由。\n"NOR, this_object(), me);
+                message_vision(CYN"$N説道：第一件事，是把這封信送給徐長老。我在信中已經説明了我不去參加聚賢莊武林大會的理由。\n"NOR, this_object(), me);
                 message_vision(WHT"$N拿出一封信交給了$n。\n"NOR, this_object(), me);
                 ob = new("/clone/misc/letter");
                 set("long", "這是一封"+this_object()->name()+"寫給徐長老的親筆信函。\n", ob);
@@ -189,7 +189,7 @@ int say_msg(object me, int index)
                 ob->move(me, 1);
                 break;
         case(8):
-                message_vision(CYN"$N說道：第二件事，是請你找機會進入聚賢莊，以喬峰的性格，他一定會在聚賢莊出現的，喬峰現在被千夫所指，一定很需要幫忙。\n"NOR, this_object(), me);
+                message_vision(CYN"$N説道：第二件事，是請你找機會進入聚賢莊，以喬峯的性格，他一定會在聚賢莊出現的，喬峯現在被千夫所指，一定很需要幫忙。\n"NOR, this_object(), me);
                 set_temp("juxianzhuang_step", 3, me);
                 break;
         default:
@@ -218,7 +218,7 @@ mixed ask_skill1()
                 return "你連乾天指法都沒學，還談什麼絕招可言？";
 
         if( query("family/gongji", me)<50 )
-                return "你在族裡碌碌無為，叫我如何信得過你？";
+                return "你在族裏碌碌無為，叫我如何信得過你？";
 
         if (me->query_skill("force") < 100)
                 return "你內功的修為還不夠，練高了再來吧。";
@@ -227,10 +227,10 @@ mixed ask_skill1()
                 return "你的內力修為還不夠，練高點再來吧。";
 
         if (me->query_skill("qiantian-zhi", 1) < 80)
-                return "你的乾天指法功力還不夠，練高了再說吧。";
+                return "你的乾天指法功力還不夠，練高了再説吧。";
 
         message_sort(HIY "\n$n" HIY "點了點頭，將$N" HIY "招至身邊，在"
-                     "$N" HIY "耳旁低聲細說良久，$N" HIY "一邊聽一邊不"
+                     "$N" HIY "耳旁低聲細説良久，$N" HIY "一邊聽一邊不"
                      "住的點頭，看樣子大有所悟。\n\n" NOR,
                      me, this_object());
 
@@ -264,7 +264,7 @@ mixed ask_skill2()
                 return "你連五羅輕煙掌都沒學，還談什麼絕招可言？";
 
         if( query("family/gongji", me)<150 )
-                return "你在族裡碌碌無為，叫我如何信得過你？";
+                return "你在族裏碌碌無為，叫我如何信得過你？";
 
         if (me->query_skill("force") < 100)
                 return "你內功的修為還不夠，練高了再來吧。";
@@ -273,7 +273,7 @@ mixed ask_skill2()
                 return "你的內力修為還不夠，練高點再來吧。";
 
         if (me->query_skill("wuluo-zhang", 1) < 100)
-                return "你的五羅輕煙掌還不夠，練高了再說吧。";
+                return "你的五羅輕煙掌還不夠，練高了再説吧。";
 
         message_sort(HIY "\n$n" HIY "微微一笑，當下更不答話，伸出右掌輕輕"
                      "一抖，登時化出五道掌影，輕飄飄的拍了出去，卻聽"噗噗"
@@ -308,7 +308,7 @@ mixed ask_skill3()
                 return "你連金玉拳法都沒學，還談什麼絕招可言？";
 
         if( query("family/gongji", me)<150 )
-                return "你在族裡碌碌無為，叫我如何信得過你？";
+                return "你在族裏碌碌無為，叫我如何信得過你？";
 
         if (me->query_skill("force") < 100)
                 return "你內功的修為還不夠，練高了再來吧。";
@@ -317,10 +317,10 @@ mixed ask_skill3()
                 return "你的內力修為還不夠，練高點再來吧。";
 
         if (me->query_skill("jinyu-quan", 1) < 80)
-                return "你的金玉拳法還不夠，練高了再說吧。";
+                return "你的金玉拳法還不夠，練高了再説吧。";
 
         message_sort(HIY "\n$n" HIY "點了點頭，將$N" HIY "招至身邊，在"
-                     "$N" HIY "耳旁低聲細說良久，$N" HIY "一邊聽一邊不"
+                     "$N" HIY "耳旁低聲細説良久，$N" HIY "一邊聽一邊不"
                      "住的點頭，看樣子大有所悟。\n\n" NOR,
                      me, this_object());
 
@@ -353,7 +353,7 @@ mixed ask_skill4()
                 return "你連段家劍法都沒學，還談什麼絕招可言？";
 
         if( query("family/gongji", me)<300 )
-                return "你在族裡碌碌無為，叫我如何信得過你？";
+                return "你在族裏碌碌無為，叫我如何信得過你？";
 
         if( query("shen", me)<0 )
                 return "算了吧，傳你絕招只怕你又去作惡！";
@@ -365,10 +365,10 @@ mixed ask_skill4()
                 return "你的內力修為還不夠，練高點再來吧。";
 
         if (me->query_skill("duanjia-jian", 1) < 80)
-                return "你的段家劍法還不行，練練再說吧！";
+                return "你的段家劍法還不行，練練再説吧！";
 
         message_sort(HIY "\n$n" HIY "點了點頭，沉聲道："我這就給你演示"
-                     "一遍，可看清楚了！"說罷只見$n" HIY "拔出腰間長劍"
+                     "一遍，可看清楚了！"説罷只見$n" HIY "拔出腰間長劍"
                      "，深吸一口氣，腳下步步進擊，穩重之極，手中長劍使得"
                      "猶如飛龍一般，纏繞向$N" HIY "。招式之巧妙，實乃$N"
                      HIY "前所未聞。\n\n" NOR, me, this_object());
@@ -422,7 +422,7 @@ mixed ask_skill6()
                 return "你連段家劍法都沒學，還談什麼絕招可言？";
 
         if( query("family/gongji", me)<500 )
-                return "你在族裡碌碌無為，叫我如何信得過你？";
+                return "你在族裏碌碌無為，叫我如何信得過你？";
 
         if( query("shen", me)<0 )
                 return "算了吧，傳你絕招只怕你又去作惡！";
@@ -434,10 +434,10 @@ mixed ask_skill6()
                 return "你的內力修為還不夠，練高點再來吧。";
 
         if (me->query_skill("duanjia-jian", 1) < 150)
-                return "你的段家劍法還不行，練練再說吧！";
+                return "你的段家劍法還不行，練練再説吧！";
 
         message_sort(HIY "\n$n" HIY "點了點頭，沉聲道："我這就給你演示"
-                     "一遍，可看清楚了！"說罷只見$n" HIY "拔出腰間長劍"
+                     "一遍，可看清楚了！"説罷只見$n" HIY "拔出腰間長劍"
                      "劍法突變，劍氣縱橫，上六劍，下六劍，前六劍，後六劍"
                      "，左六劍，右六劍，三十六路劍法瞬間完成。\n\n" NOR, me, this_object());
 
@@ -470,7 +470,7 @@ mixed ask_skill7()
                 return "你連段家劍法都沒學，還談什麼絕招可言？";
 
         if( query("family/gongji", me)<800 )
-                return "你在族裡碌碌無為，叫我如何信得過你？";
+                return "你在族裏碌碌無為，叫我如何信得過你？";
 
         if( query("shen", me)<0 )
                 return "算了吧，傳你絕招只怕你又去作惡！";
@@ -482,10 +482,10 @@ mixed ask_skill7()
                 return "你的內力修為還不夠，練高點再來吧。";
 
         if (me->query_skill("duanjia-jian", 1) < 120)
-                return "你的段家劍法還不行，練練再說吧！";
+                return "你的段家劍法還不行，練練再説吧！";
 
         message_sort(HIY "\n$n" HIY "點了點頭，沉聲道："我這就給你演示"
-                     "一遍，可看清楚了！"說罷只見$n" HIY "拔出腰間長劍"
+                     "一遍，可看清楚了！"説罷只見$n" HIY "拔出腰間長劍"
                      "凝神運氣，把一陽指指力灌注到長劍上，長劍變得金白"
                      "。\n\n" NOR, me, this_object());
 

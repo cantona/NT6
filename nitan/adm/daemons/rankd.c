@@ -127,8 +127,8 @@ string query_rank(object ob)
                                         if( budd >= 2000) return HIR "【 九千歲 】"NOR;
                                         if( budd >= 1800) return HIR "【 廠  公 】"NOR;
                                         if( budd >= 1500) return HIR "【 大檔頭 】"NOR;
-                                        if( budd >= 1200) return HIM "【東廠千戶】"NOR;
-                                        if( budd >= 900)  return MAG "【東廠百戶】"NOR;
+                                        if( budd >= 1200) return HIM "【東廠千户】"NOR;
+                                        if( budd >= 900)  return MAG "【東廠百户】"NOR;
                                         if( budd >= 600) return MAG "【太監總管】"NOR;
                                         if( budd >= 300) return MAG "【 太  監 】"NOR;
                                         return MAG "【 小太監 】" NOR;
@@ -302,7 +302,7 @@ string query_rank(object ob)
                                                 if (shen <= -500) return HIB "【 小魔女 】" NOR;
                                         }
 
-                                        // 沒有門派的才搬用這裡的
+                                        // 沒有門派的才搬用這裏的
                                         switch(query("class", ob)){
                                                 case "bonze": return "【 尼 姑 】";
                                                 case "taoist":
@@ -453,7 +453,7 @@ string query_rank(object ob)
                                                         if(budd >= 1900) return HIC "【 親  王 】" NOR;
                                                         if(budd >= 1500) return HIC "【 侯  爺 】" NOR;
                                                         if(budd >= 1100) return HIC "【 將  官 】" NOR;
-                                                        if(budd >= 700) return HIC "【 侍  衛 】" NOR;
+                                                        if(budd >= 700) return HIC "【 侍  衞 】" NOR;
                                                         if(budd >= 300) return HIC "【 校  尉 】" NOR;
                                                         return HIC "【 兵  士 】" NOR;
                                                 case "關外胡家":
@@ -731,7 +731,7 @@ string query_self_rude(object ob)
                 default:
                         if( age < 20 ) return "本姑娘";
                         if( age < 30 ) return "本姑奶奶";
-                        else return "老娘";
+                        else return "老孃";
                         break;
                 }
         case "男性":

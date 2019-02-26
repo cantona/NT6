@@ -4,7 +4,7 @@
 inherit SKILL;
 
 mapping *action = ({
-([      "action": "$N微一躬身，一招「混沌初開」，$w帶著刺耳的吱吱聲，擦地掃向$n的腳踝",
+([      "action": "$N微一躬身，一招「混沌初開」，$w帶着刺耳的吱吱聲，擦地掃向$n的腳踝",
         "force" : 130,
         "attack": 10,
         "dodge" : -5,
@@ -14,14 +14,14 @@ mapping *action = ({
         "skill_name" : "混沌初開",
         "damage_type":"挫傷"
 ]),
-([      "action": "$N一招「後羿射日」，右手托住杖端，左掌居中一擊，令其憑慣性倒向$n的肩頭",
+([      "action": "$N一招「后羿射日」，右手托住杖端，左掌居中一擊，令其憑慣性倒向$n的肩頭",
         "force" : 140,
         "attack": 15,
         "dodge" : -10,
         "parry" : 15,
         "damage": 25,
         "lvl"   : 20,
-        "skill_name" : "後羿射日",
+        "skill_name" : "后羿射日",
         "damage_type":"挫傷"
 ]),
 ([      "action": "$N一招「夸父趕日」，飛身一躍而起，$w揮舞轉動不停，逼得$n左閃右避，狼狽不堪",
@@ -44,7 +44,7 @@ mapping *action = ({
         "skill_name" : "莫邪奠劍",
         "damage_type":"挫傷"
 ]),
-([      "action": "$N高舉$w，猛然一聲暴喝，杖端遙指$n，一招「大禹治水」，攜著呼嘯聲貫向$n",
+([      "action": "$N高舉$w，猛然一聲暴喝，杖端遙指$n，一招「大禹治水」，攜着呼嘯聲貫向$n",
         "force" : 180,
         "attack": 30,
         "dodge" : -15,
@@ -74,7 +74,7 @@ mapping *action = ({
         "skill_name" : "軒轅帝威",
         "damage_type":"挫傷"
 ]),
-([      "action": "$N一招「化蛇易龍」，單手持杖，力注于腕，待$n攻來， $w猛地彈射而起，擊向$n",
+([      "action": "$N一招「化蛇易龍」，單手持杖，力注於腕，待$n攻來， $w猛地彈射而起，擊向$n",
         "force" : 260,
         "attack": 45,
         "dodge" : -5,

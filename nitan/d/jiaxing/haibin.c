@@ -11,8 +11,8 @@ void create()
 {
         set("short", "海濱");
         set("long", @LONG
-這裡是錢塘江的入海口。波濤洶湧，咆哮不息。海潮(tide)不斷地
-撲面而來，拍在岸邊，濺起的水珠在半空飛舞，好象大雪紛紛一樣。
+這裏是錢塘江的入海口。波濤洶湧，咆哮不息。海潮(tide)不斷地
+撲面而來，拍在岸邊，濺起的水珠在半空飛舞，好像大雪紛紛一樣。
 LONG
         );
         set("no_clean_up", 0);
@@ -43,11 +43,11 @@ int do_use(string arg)
 {
         object me = this_player();
 
-        if (me->is_busy()) return notify_fail("你正忙著呢！\n");
+        if (me->is_busy()) return notify_fail("你正忙着呢！\n");
         if( (arg == "boat" || arg == "chuan") && query_temp("thd_boat", me) )
         {
                 delete_temp("thd_boat", me);
-                write("你跳上小船，將船劃向桃花島。\n");
+                write("你跳上小船，將船划向桃花島。\n");
                 write("海上正是順風，船借風勢，數日內便到達了。\n");
                 me->move("/d/taohua/shore");
                 return 1;
@@ -59,18 +59,18 @@ int do_jump(string arg)
 {
         object me = this_player();
 
-        if (me->is_busy()) return notify_fail("你正忙著呢！\n");
+        if (me->is_busy()) return notify_fail("你正忙着呢！\n");
         if (arg == "boat" || arg == "chuan")
                 return do_use(arg);
 
         if (arg != "chao" && arg != "tide")
-                return notify_fail("你要往哪裡跳？\n");
+                return notify_fail("你要往哪裏跳？\n");
 
         if (me->query_dex() < 59)
-                return notify_fail("你試圖跳進海潮裡，卻總覺得力不從心。\n");
+                return notify_fail("你試圖跳進海潮裏，卻總覺得力不從心。\n");
 
         if (me->query_skill("dodge") < 80)
-                return notify_fail("你試圖跳進海潮裡，卻發現自己的輕功修為還沒有達到這麼高的境界。\n");
+                return notify_fail("你試圖跳進海潮裏，卻發現自己的輕功修為還沒有達到這麼高的境界。\n");
         message_vision("$N聳身一躍，跳進了海潮中！\n", me);
         me->move("/d/taohua/tide");
         return 1;
@@ -83,8 +83,8 @@ int do_look(string arg)
         if( query("family/master_name", me) != "黃藥師" || me->query_skill("count",1)<50 )
         {
                 set("long", @LONG
-這裡是錢塘江的入海口。波濤洶湧，咆哮不息。海潮(tide)不斷地
-撲面而來，拍在岸邊，濺起的水珠在半空飛舞，好象大雪紛紛一樣。
+這裏是錢塘江的入海口。波濤洶湧，咆哮不息。海潮(tide)不斷地
+撲面而來，拍在岸邊，濺起的水珠在半空飛舞，好像大雪紛紛一樣。
 LONG
 );
                 me->look(arg);
@@ -94,9 +94,9 @@ LONG
                 if (!arg)
                 {
                         set("long", @LONG
-這裡是錢塘江的入海口。波濤洶湧，咆哮不息。海潮(tide)不斷地
-撲面而來，拍在岸邊，濺起的水珠在半空飛舞，好象大雪紛紛一樣。遠
-處有一塊巨巖(rock)，後面似乎隱藏著什麼。
+這裏是錢塘江的入海口。波濤洶湧，咆哮不息。海潮(tide)不斷地
+撲面而來，拍在岸邊，濺起的水珠在半空飛舞，好像大雪紛紛一樣。遠
+處有一塊巨巖(rock)，後面似乎隱藏着什麼。
 LONG
 );
                         me->look(arg);
@@ -109,7 +109,7 @@ LONG
                 }
                 else if( (arg == "boat" || arg == "chuan") && query_temp("thd_boat", me) )
                 {
-                        write("一條藏著的小船，不精通陰陽八卦是很難發現的。\n");
+                        write("一條藏着的小船，不精通陰陽八卦是很難發現的。\n");
                         return 1;
                 }
         }

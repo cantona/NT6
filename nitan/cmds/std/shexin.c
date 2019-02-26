@@ -13,9 +13,9 @@ int main(object me, string arg)
         seteuid(getuid());
 
         if( query("no_ansuan", environment(me)) )
-                return notify_fail("這裡禁止戰鬥。\n");
+                return notify_fail("這裏禁止戰鬥。\n");
         if( query("no_fight", environment(me)) )
-                return notify_fail("這裡禁止戰鬥。\n");
+                return notify_fail("這裏禁止戰鬥。\n");
         if( me->is_busy() )
                 return notify_fail("你上一個動作還沒有完成！\n");
         if( me != this_player() ) return 0;
@@ -46,18 +46,18 @@ int main(object me, string arg)
         if( wiz_level(me) < wiz_level(ob) )
                 return notify_fail("你沒法對" + ob->name() + "行使懾心術。\n");
 message_vision("
-$N的一對眼睛半眯著，只如兩道細縫，但細縫中瑩然有光，眼神甚是清朗。
+$N的一對眼睛半眯着，只如兩道細縫，但細縫中瑩然有光，眼神甚是清朗。
 $n微覺不妥，要想轉頭避開$N的眼光，可是一雙眼睛竟似被$N的目光吸住了，
-不由自主的凝視著他。\n", me, ob);
+不由自主的凝視着他。\n", me, ob);
         if( random(me->query_skill("necromancy",1)) < random(ob->query_skill("force",1)))
         {
-                message_vision("突然$n猛地一陣清醒，于是，$n大喝一聲：你活膩了，敢來對我施懾心術？\n", me, ob);
+                message_vision("突然$n猛地一陣清醒，於是，$n大喝一聲：你活膩了，敢來對我施懾心術？\n", me, ob);
                 if( query("age", ob)>17)ob->kill_ob(me);
                 return 1;
         }
         if (strsrch(cmd, "give ") >= 0)
         {
-                message_vision("于是，$n迷迷糊糊也不知道是遞了些什麼給$N。\n", me, ob);
+                message_vision("於是，$n迷迷糊糊也不知道是遞了些什麼給$N。\n", me, ob);
         }
         else
         {
@@ -65,7 +65,7 @@ $n微覺不妥，要想轉頭避開$N的眼光，可是一雙眼睛竟似被$N�
                 {
                         if( !userp(ob) )
                                 return notify_fail("你只能對玩家行使懾心術。\n");
-                        message_vision("結果，$n迷迷糊糊也不知道怎麼回事就往前摸著走開了。\n", me, ob);
+                        message_vision("結果，$n迷迷糊糊也不知道怎麼回事就往前摸着走開了。\n", me, ob);
                 }
                 else
                 {
@@ -95,8 +95,8 @@ int help(object me)
     shexin sb to follow sb
     shexin sb to go <dir>
 
-    利用懾心術誘惑某人做把身上的東西給你, 或往那裡離開，或者
-跟著你。當然你必須是雪山派弟子，且有相當的降伏法修為。
+    利用懾心術誘惑某人做把身上的東西給你, 或往那裏離開，或者
+跟着你。當然你必須是雪山派弟子，且有相當的降伏法修為。
     對方如果內功深厚，而你學藝不精，必然也會招致以牙還牙。當
 心！
 HELP

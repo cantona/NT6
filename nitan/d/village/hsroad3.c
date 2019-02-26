@@ -7,7 +7,7 @@ void create()
 {
         set("short", "黃土路");
         set("long", @LONG
-一條坑坑窪窪的土路，彎彎曲曲的通向山裡。
+一條坑坑窪窪的土路，彎彎曲曲的通向山裏。
 LONG );
         set("outdoors", "village");
         set("exits", ([

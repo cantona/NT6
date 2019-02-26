@@ -64,7 +64,7 @@ int do_halt()
 
         if (this_player() == query_temp("catch_ob"))
         {
-                write(CYN + name() + "喝道：“賊子，哪裡跑！”\n" NOR);
+                write(CYN + name() + "喝道：“賊子，哪裏跑！”\n" NOR);
                 return 1;
         }
 
@@ -128,16 +128,16 @@ void catch_ob(object ob)
         if (base_name(environment()) != "/d/changan/baihu1")
         {
                 set_temp("old_position", base_name(environment()));
-                message_vision(HIR "$N輕聲哼了一聲，拖著$n" HIR
+                message_vision(HIR "$N輕聲哼了一聲，拖着$n" HIR
                                "轉身離去。\n" NOR, this_object(), ob);
                 move("/d/changan/baihu1");
                 remove_call_out("return_back");
                 call_out("return_back", 1);
         }
 
-        message_vision(HIW "$N拖著$n" HIW "走了過來，幾個獄卒迎了上"
+        message_vision(HIW "$N拖着$n" HIW "走了過來，幾個獄卒迎了上"
                        "來，把$n" HIW "押進大牢去了。\n" NOR, this_object(), ob);
-        CHANNEL_D->do_channel(this_object(), "rumor", "聽說" +
+        CHANNEL_D->do_channel(this_object(), "rumor", "聽説" +
                             ob->name(1) + HIM "被開封府總捕頭" + name() +
                             "緝拿歸案，押入大牢。");
         ob->get_into_prison(0, "/d/changan/prison", 30);
@@ -167,9 +167,9 @@ void catch_killer(object ob)
             random((int)ob->query_skill("pretending")) > 50)
                 return;
 
-        message_vision(HIY "$N盯著$n" HIY "看了一會兒，突然喝道：“你不"
+        message_vision(HIY "$N盯着$n" HIY "看了一會兒，突然喝道：“你不"
                        "就是在逃的" + ob->name(1) + HIY "嗎？今天撞到我"
-                       "的手裡，不要想再跑了！”\n" NOR, this_object(), ob);
+                       "的手裏，不要想再跑了！”\n" NOR, this_object(), ob);
         set_temp("catch_ob", ob);
         kill_ob(ob);                       
 }

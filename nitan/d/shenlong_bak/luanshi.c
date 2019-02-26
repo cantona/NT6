@@ -34,10 +34,10 @@ void init()
                 random((int)me->query_skill("dodge")) < 80 )
         {
                 message_vision( HIR "$N的眼前突然出現一個無底的深淵...$N掉入了陷阱之中。\n" NOR, me);
-                message_vision( HIR"陷阱中的鋼板突然冒出許多鋒利的鋼針，深深地紮進$N的身體中...\n" NOR, me);
+                message_vision( HIR"陷阱中的鋼板突然冒出許多鋒利的鋼針，深深地扎進$N的身體中...\n" NOR, me);
                 damage = 100000 / ( 100 + (int)me->query_skill("force"));
-                me->receive_wound("qi", damage + random(damage), "被紮死了");
-                me->receive_damage("qi", damage + random(damage), "被紮死了");
+                me->receive_wound("qi", damage + random(damage), "被扎死了");
+                me->receive_damage("qi", damage + random(damage), "被扎死了");
 
                 me->apply_condition("snake_poison", 50 + random(50) + me->query_condition("snake_poison"));
         }

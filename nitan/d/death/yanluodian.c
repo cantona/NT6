@@ -10,7 +10,7 @@ void create()
 {
         set("short", HIR "閻羅殿" NOR);
         set("long", HIB @LONG
-這裡陰深恐怖，讓人感覺到一陣陣的寒意，兩旁列著牛頭馬面，冥
+這裏陰深恐怖，讓人感覺到一陣陣的寒意，兩旁列着牛頭馬面，冥
 府獄卒，各個威嚴肅穆。十殿閻羅，盡皆在此，地藏王正坐在大堂之上，
 不怒自威，你的腿腳不禁都有些軟了。
     大殿角落有一個石頭砌成的池子，其中水清澈卻不見底，不知道它
@@ -44,7 +44,7 @@ int valid_leave(object me, string dir)
                 if (objectp(present("dizang", environment(me))) 
                  && !query("hell_quest/鎖陽丹", me) )
                         return notify_fail(CYN "地藏王看了你一眼，喝道：你還不滾"
-                                           "回去還陽，來這裡湊什麼熱鬧！\n" NOR);
+                                           "回去還陽，來這裏湊什麼熱鬧！\n" NOR);
         }
         return ::valid_leave(me, dir);
 }

@@ -10,9 +10,9 @@ void create()
         seteuid(getuid());
         set("short", "書房");
         set("long",
-"這是蓮藕小築裡的書房。唐門弟子可以在這裡研學詩畫。靠牆並排擺\n"
-"著幾個書架，一本唐詩選集(shi)引起了你的注意，另外牆上還掛了幾幅\n"
-"字畫(hua)，看來在這裡可以學到不少東西。\n"
+"這是蓮藕小築裏的書房。唐門弟子可以在這裏研學詩畫。靠牆並排擺\n"
+"着幾個書架，一本唐詩選集(shi)引起了你的注意，另外牆上還掛了幾幅\n"
+"字畫(hua)，看來在這裏可以學到不少東西。\n"
 );        
         set("exits", ([        
                 "east" : __DIR__"nzlangw3",
@@ -49,12 +49,12 @@ int do_look(string arg)
         if ( cost < 1) cost = 0;
 
         if ( me->is_busy() )
-                return notify_fail("你現在正忙著呢。\n");
+                return notify_fail("你現在正忙着呢。\n");
 
         if ( arg == "hua")
         {
                 if( (int)me->query_skill("literate", 1) > 50 )
-                        return notify_fail("你對著字畫仔細揣摩了一會兒，發現從中已經學不到什麼了。\n");
+                        return notify_fail("你對着字畫仔細揣摩了一會兒，發現從中已經學不到什麼了。\n");
 
                 if( query("jing", me)>cost && 
                     query("potential", me)-query("learned_points", me) >= 1 )
@@ -67,10 +67,10 @@ int do_look(string arg)
                 else
                 {
                         if( query("jing", me) <= cost )
-                                write("你現在過于疲倦，無法專心下來研讀新知。\n");
+                                write("你現在過於疲倦，無法專心下來研讀新知。\n");
 
                         if( query("potential", me)-query("learned_points", me) <= 0 )
-                                write("你看著字畫反復琢磨，竟沒有一絲心得。\n");
+                                write("你看着字畫反覆琢磨，竟沒有一絲心得。\n");
                 }
                 return 1;
         }
@@ -89,7 +89,7 @@ int do_du(string arg)
         if ( cost < 1) cost = 0;
 
         if ( me->is_busy() )
-                return notify_fail("你現在正忙著呢。\n");
+                return notify_fail("你現在正忙着呢。\n");
 
         if ( arg == "shi")
         {
@@ -111,10 +111,10 @@ int do_du(string arg)
                 else
                 {
                         if( query("jing", me) <= cost )
-                                write("你現在過于疲倦，無法專心下來研讀新知。\n");
+                                write("你現在過於疲倦，無法專心下來研讀新知。\n");
 
                         if( query("potential", me) <= query("learned_points", me) )
-                                write("你看著詩集反復琢磨，竟沒有一絲心得。\n");
+                                write("你看着詩集反覆琢磨，竟沒有一絲心得。\n");
                 }
                 return 1;
         }

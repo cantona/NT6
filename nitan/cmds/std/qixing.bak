@@ -11,7 +11,7 @@
 
 秦志鯤向丘處機打聽有關『job』的消息。
 丘處機點了點頭。
-丘處機說道：你去大校場趙志敬那兒好好練習一下「天罡北鬥陣」!
+丘處機説道：你去大校場趙志敬那兒好好練習一下「天罡北斗陣」!
 
 
 尹志平吸了一口氣，將內力收回丹田，劍招也恢復正常！
@@ -26,10 +26,10 @@ int main(object me, string arg)
         object en, obj1, obj2, obj3, obj4, obj5, obj6, *obs;
         int i, j, power;
         if( query("no_fight", environment(me)) )
-                return notify_fail("這裡不準戰鬥。\n");
+                return notify_fail("這裏不準戰鬥。\n");
         if( !arg )
         {
-                return notify_fail("啟動天罡北鬥陣必須指定組陣陣友和對手。\n");
+                return notify_fail("啟動天罡北斗陣必須指定組陣陣友和對手。\n");
         }
         if(sscanf(arg, "%s %s %s %s %s %s %s",enemy,ob1,ob2,ob3,ob4,ob5,ob6)!=7)
         {
@@ -41,25 +41,25 @@ int main(object me, string arg)
         if(!en->is_character() )
                 return notify_fail("看清楚一點，那並不是生物。\n");
         if( en->is_fighting() )
-                return notify_fail("人家已經在戰鬥中了，還想布陣？\n");
+                return notify_fail("人家已經在戰鬥中了，還想佈陣？\n");
         if( !living(en) || query_temp("noliving", en) )
-                return notify_fail(en->name()+"都已倒地了，還用得著圍攻嗎？\n");
+                return notify_fail(en->name()+"都已倒地了，還用得着圍攻嗎？\n");
         if( query("age", en) <= 15 && userp(en) )
                 return notify_fail("為了世界更美好，放過小孩子吧。\n");
         if(en==me) return notify_fail("幹掉自己？別這麼想不開。\n");
 
         if(!objectp( obj1 = present(ob1, environment(me))))
-                return notify_fail("你好象陣友沒指定對吧？\n");
+                return notify_fail("你好像陣友沒指定對吧？\n");
         if(!objectp( obj2 = present(ob2, environment(me))))
-                return notify_fail("你好象陣友沒指定對吧？\n");
+                return notify_fail("你好像陣友沒指定對吧？\n");
         if(!objectp( obj3 = present(ob3, environment(me))))
-                return notify_fail("你好象陣友沒指定對吧？\n");
+                return notify_fail("你好像陣友沒指定對吧？\n");
         if(!objectp( obj4 = present(ob4, environment(me))))
-                return notify_fail("你好象陣友沒指定對吧？\n");
+                return notify_fail("你好像陣友沒指定對吧？\n");
         if(!objectp( obj5 = present(ob5, environment(me))))
-                return notify_fail("你好象陣友沒指定對吧？\n");
+                return notify_fail("你好像陣友沒指定對吧？\n");
         if(!objectp( obj6 = present(ob6, environment(me))))
-                return notify_fail("你好象陣友沒指定對吧？\n");
+                return notify_fail("你好像陣友沒指定對吧？\n");
         if(en==obj1 || en==obj2 || en==obj3 || en==obj4 || en==obj5 || en==obj6 || en==me || obj1==obj2 || obj1==obj3 || obj1==obj4 || obj1==obj5 || obj1==obj6 || obj1==me || obj2==obj3 || obj2==obj4 || obj2==obj5 || obj2==obj6 || obj2==me || obj3==obj4 || obj3==obj5 || obj3==obj6 || obj3==me || obj4==obj5 || obj4==obj6 || obj4==me || obj5==obj6 || obj5==me || obj6==me)
                 return notify_fail("陣列擺設不對。\n");
         me->dismiss_team();
@@ -86,11 +86,11 @@ return notify_fail(query("name", obs[i])+"人家還小，放棄吧。\n");
                         if((int)obs[i]->query_skill("array",1) <= 50 ||
                           (int)obs[i]->query_skill("xiantian-qigong",1) <= 50 ||
                           (int)obs[i]->query_skill("quanzhen-jian",1) <= 50)
-return notify_fail(query("name", obs[i])+"的技能不足布陣。\n");
+return notify_fail(query("name", obs[i])+"的技能不足佈陣。\n");
                 }
 
                 if(sizeof(obs) != 7)
-                        return notify_fail("布陣人數不足。\n");
+                        return notify_fail("佈陣人數不足。\n");
 
         }
 
@@ -99,8 +99,8 @@ return notify_fail(query("name", obs[i])+"的技能不足布陣。\n");
                 if(obs[i] != me)
                         message_vision(myname+"道："+query("name", obs[i])+"請做好準備！\n",me);
         }
-        message_vision(myname+ "清了清喉嚨，大聲說道：好，時辰已到，現在開始啟動「天罡北鬥陣」！\n",me);
-        message_vision(myname+ "突然身形移動，發動眾全真弟子搶佔位置，左邊四人，右邊三人，正是擺的「天罡北鬥陣」陣法。\n",me);
+        message_vision(myname+ "清了清喉嚨，大聲説道：好，時辰已到，現在開始啟動「天罡北斗陣」！\n",me);
+        message_vision(myname+ "突然身形移動，發動眾全真弟子搶佔位置，左邊四人，右邊三人，正是擺的「天罡北斗陣」陣法。\n",me);
         remove_call_out("do_qixing");
         call_out("do_qixing", 1, me, en);
         return 1;
@@ -123,16 +123,16 @@ int do_qixing(object me, object en)
         switch (random (4))
         {
                 case 0:
-message_vision("天罡北鬥陣氣勢宏大，前攻後擊，連環相接，讓人眼花撩亂，方寸頓失。\n",me);
+message_vision("天罡北斗陣氣勢宏大，前攻後擊，連環相接，讓人眼花撩亂，方寸頓失。\n",me);
                         break;
                 case 1:
-message_vision("天罡北鬥陣法滾滾推動，攻勢連綿不絕，瞬間將敵人圍在垓心。\n",me);
+message_vision("天罡北斗陣法滾滾推動，攻勢連綿不絕，瞬間將敵人圍在垓心。\n",me);
                         break;
                 case 2:
-message_vision("天罡北鬥陣越縮越小，無形劍氣象浪潮一般逼向中央，令人有窒息之感。\n",me);
+message_vision("天罡北斗陣越縮越小，無形劍氣象浪潮一般逼向中央，令人有窒息之感。\n",me);
                         break;
                 case 3:
-message_vision("只見天罡北鬥陣暗合五行八卦之理，陣中人步法精妙，攻守配合得天衣無縫，威力之大，讓人嘆為觀止。\n",me);
+message_vision("只見天罡北斗陣暗合五行八卦之理，陣中人步法精妙，攻守配合得天衣無縫，威力之大，讓人歎為觀止。\n",me);
                         break;
         }
         for(i=0;i<sizeof(obs);i++)
@@ -167,14 +167,14 @@ message_vision(where[i]+"位上的"+query("name", obs[i])+"挺身而出，步法
         COMBAT_D->do_attack(en,obs[j], enweapon);
         if( query("qi", obs[j])*2 <= query("max_qi", obs[j]) )
         {
-message_vision(HIR+query("name", obs[j])+"一跤趴在地上，摔出北鬥陣。\n"NOR,me);
+message_vision(HIR+query("name", obs[j])+"一跤趴在地上，摔出北斗陣。\n"NOR,me);
                 remove_call_out("do_end");
                 call_out("do_end", 1, me, en, 1);
                 return 1;
         }
         if( query("qi", obs[j])*3 <= query("max_qi", obs[j])*2 )
         {
-message_vision(query("name", obs[j])+"踉蹌了一步，差點摔出北鬥陣。\n",me);
+message_vision(query("name", obs[j])+"踉蹌了一步，差點摔出北斗陣。\n",me);
         }
         else if( query("qi", obs[j])*5 <= query("max_qi", obs[j])*4 )
 message_vision(query("name", obs[j])+"被打得晃了幾晃，不過又站穩了步子。\n",me);
@@ -192,12 +192,12 @@ int do_end(object me, object en, int result)
                         set("qixing", 1, en);
                 }
                 delete_temp("pre_qixing", en);
-                message_vision(HIR"\n天罡北鬥陣被"+query("name", en)+"打破了。\n"NOR,me);
+                message_vision(HIR"\n天罡北斗陣被"+query("name", en)+"打破了。\n"NOR,me);
         }
         else
         {
                 delete_temp("pre_qixing", en);
-message_vision(HIR"\n$N笑了笑：天罡北鬥陣不愧為全真鎮教之寶。\n"NOR,me);
+message_vision(HIR"\n$N笑了笑：天罡北斗陣不愧為全真鎮教之寶。\n"NOR,me);
         }
         remove_call_out("do_back");
         call_out("do_back", 1, me);
@@ -214,11 +214,11 @@ int do_back(object me)
                 {
                         if( objectp(weapon=query_temp("weapon", obs[i]) )
                                  && query("skill_type", weapon) == "sword" )
-message_vision("$N身子向後一縱，使一招『收劍式』，將劍挽了一個劍花，往懷中一抱，退出「天罡北鬥陣」。\n", obs[i]);
+message_vision("$N身子向後一縱，使一招『收劍式』，將劍挽了一個劍花，往懷中一抱，退出「天罡北斗陣」。\n", obs[i]);
                         else
-message_vision("$N身子向後一縱，使一招『收山式』，右拳劃了一圈，左掌往懷中一抱，退出「天罡北鬥陣」。\n", obs[i]);
+message_vision("$N身子向後一縱，使一招『收山式』，右拳劃了一圈，左掌往懷中一抱，退出「天罡北斗陣」。\n", obs[i]);
 
-message_vision("$N作了個楫道：貧道先告退了！說完就快步離開了。\n", obs[i]);
+message_vision("$N作了個楫道：貧道先告退了！説完就快步離開了。\n", obs[i]);
                 }
         }
         me->dismiss_team();

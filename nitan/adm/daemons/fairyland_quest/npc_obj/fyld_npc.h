@@ -2,19 +2,19 @@
 
 string *songs3=({
     "親愛的朋友",
-    "你可曾聽說過，在遠古的時候",
+    "你可曾聽説過，在遠古的時候",
     "曾有過的古老國度的故事？",
-    "那裡有著各樣的神奇的寶物",
-    "也有著勤勞而善良的人們",
+    "那裏有着各樣的神奇的寶物",
+    "也有着勤勞而善良的人們",
     "在我所在的地方，",
     me_guodu,
     baowu_name+"、"+baowu_other1+"和"+baowu_other2,
-    "將能組成我們最為之著迷的",
+    "將能組成我們最為之着迷的",
     "國之靈物。",
     "我親愛的朋友",
     "如果你能尋得它們",
     "你也將能夠見到那往日的",
-    "神秘國度的神秘之光。",
+    "神祕國度的神祕之光。",
 });
 
 int ask_all();
@@ -71,7 +71,7 @@ void create()
         ]));
     set("hj_game/npc", me_mark[0]);
     set("host_id","no");
-    set("msg", HIW"只見一個人影漸漸清晰，終于憑空出現了一個陌生的人。\n"NOR);
+    set("msg", HIW"只見一個人影漸漸清晰，終於憑空出現了一個陌生的人。\n"NOR);
 
         set("chat_chance", 1);
         set("chat_msg", ({ (: wait_singsong :) }));
@@ -82,7 +82,7 @@ void create()
     remove_call_out("delete_me");
     call_out("checking", 1);
     call_out("delete_me",2400+random(600) ); // 降低遊戲難度，40 - 50分鐘內消失。
-// 若七星燈內的設置 deng_time 為 300 的話，這裡需要恢復為 1800+random(600) 。
+// 若七星燈內的設置 deng_time 為 300 的話，這裏需要恢復為 1800+random(600) 。
 
 }
 
@@ -189,13 +189,13 @@ int ask_baowu()
 
     if( singing == 1) 
     {
-        write(query("name", ob)+"正在唱歌呢，哪裡有空回答你呀。\n");
+        write(query("name", ob)+"正在唱歌呢，哪裏有空回答你呀。\n");
         return 1;
     }
 
     if( query("host_id", ob) != query("id", me) )
     {
-        message_vision(CYN"$N"NOR+CYN"微微笑了一笑，卻並不說話。\n"NOR,ob);
+        message_vision(CYN"$N"NOR+CYN"微微笑了一笑，卻並不説話。\n"NOR,ob);
         return 1;
     }
 
@@ -209,7 +209,7 @@ int ask_baowu()
 
     if(!obj1 && !obj2)
     {
-        message_vision(CYN"$N"NOR+CYN"似乎剛說點什麼，忽地想起什麼似的微微笑了一笑，卻又不說話了。\n"NOR,ob);
+        message_vision(CYN"$N"NOR+CYN"似乎剛説點什麼，忽地想起什麼似的微微笑了一笑，卻又不説話了。\n"NOR,ob);
         return 1;
     }
 
@@ -279,14 +279,14 @@ int ask_baowu()
     set("my_master", me, baowu);
     set("this_time_mark",query_temp("this_time_mark",  me), baowu);
     baowu->set("long",
-        query("long", baowu)+"它上面似乎刻著個細細的名字："+query("id", me)+"\n");
+        query("long", baowu)+"它上面似乎刻着個細細的名字："+query("id", me)+"\n");
     delete("waiting_set", baowu);
     baowu ->move(me);
 
     message_vision(CYN"$n"NOR+CYN"又拿出了一個"+query("name", baowu)+NOR+CYN"遞給了$N"NOR+CYN"。\n"NOR,me,ob);
     command( "say “近日林中竟有幽靈族人現身，請帶上這個令牌，或有些許幫助。”");
-    message_vision(CYN"$N"NOR+CYN"說完，身影突然朦朧，竟然就此消失不見！\n"NOR,ob);
-    message_vision(CYN"$N"NOR+CYN"細細思索著，一時間竟然呆住了。\n"NOR,me);
+    message_vision(CYN"$N"NOR+CYN"説完，身影突然朦朧，竟然就此消失不見！\n"NOR,ob);
+    message_vision(CYN"$N"NOR+CYN"細細思索着，一時間竟然呆住了。\n"NOR,me);
     me->start_busy(10+random(10));   // 此時有極高的忙時，並且有怪物出現要打
 
     temp_i = 3;
@@ -302,7 +302,7 @@ int ask_baowu()
     }
 
     singing=1; 
-// 這個可以作應急判斷，當這wait delete 的短短一秒裡，可以保証不再執行任何函數 :)
+// 這個可以作應急判斷，當這wait delete 的短短一秒裏，可以保證不再執行任何函數 :)
     remove_call_out("sing_song");
     destruct(this_object());
     return 1;

@@ -7,7 +7,7 @@ void create()
         set_name("野兔", ({ "ye tu", "ye", "hare" }) );
         set("race", "走畜");
         set("age", 5);
-        set("long", "一只好可愛的小野兔。\n");
+        set("long", "一隻好可愛的小野兔。\n");
         set("attitude", "peaceful");
 
         set("combat_exp", 500);
@@ -22,7 +22,7 @@ void create()
 void die()
 {
         object ob;
-        message_vision("$N凄慘的嚎了幾聲，死了。\n", this_object());
+        message_vision("$N悽慘的嚎了幾聲，死了。\n", this_object());
         ob = new(__DIR__"turou");
         ob->move(environment(this_object()));
         destruct(this_object());

@@ -15,7 +15,7 @@ void create()
         set("gender", "男性");
         set("age", 21);
         set("long",
-                "這是個蓬頭垢面的青年乞丐，整天端著個破碗哼哼：“你不收，他不收，誰也不願收 ...”\n");
+                "這是個蓬頭垢面的青年乞丐，整天端着個破碗哼哼：“你不收，他不收，誰也不願收 ...”\n");
         set("attitude", "peaceful");
         set("class", "beggar");
 

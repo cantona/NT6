@@ -9,7 +9,7 @@ void create()
         set_name("水蛇", ({ "snake", "shuishe", "she" }) );
         set("race", "爬蛇");
         set("age", 4);
-        set("long", "一條小溪裡的小蛇。\n");
+        set("long", "一條小溪裏的小蛇。\n");
         set("attitude", "peaceful");
 
         set("qi",100);

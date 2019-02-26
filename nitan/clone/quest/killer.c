@@ -12,7 +12,7 @@ void create()
         set("quest_no_guard",1);
         set("no_steal",1);
         set("no_ansuan",1);
-//        set("long", "一個穿著黑色夜行衣的人。\n");
+//        set("long", "一個穿着黑色夜行衣的人。\n");
         set("chat_chance", 10);
         set("chat_msg", ({
                                  (: random_move :)
@@ -138,7 +138,7 @@ void die()
                 pot += pot * added / 2;
         }
 //        me->delete("quest/kill");
-        // 這裡調整一些 以上比例是2:1左右
+        // 這裏調整一些 以上比例是2:1左右
         // 每個下來是200多exp 100多pot
         exp *= 3;
         pot *= 2;
@@ -192,7 +192,7 @@ void die()
                                 tell_object(obs[i],HIW"經過這番歷練，你被獎勵了：");
                                 tell_object(obs[i],chinese_number(exp) +"點實戰經驗、" +
                                 chinese_number(pot) + "點潛能、"+
-                                chinese_number(score)+"點江湖閱歷。\n"NOR);
+                                chinese_number(score)+"點江湖閲歷。\n"NOR);
                         }
                 }
         }

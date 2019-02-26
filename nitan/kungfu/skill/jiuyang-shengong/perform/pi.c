@@ -47,7 +47,7 @@ int perform(object me, object target)
                 return notify_fail("你沒有激發九陽神功為刀法，難以施展" + name() + "。\n");
 
         if (! living(target))
-                return notify_fail("對方都已經這樣了，用不著這麼費力吧？\n");
+                return notify_fail("對方都已經這樣了，用不着這麼費力吧？\n");
 
         msg = HIW "\n$N" HIW "猛然間飛身而起，半空中一聲長嘯，內力源源不絕地湧"
               "入" + weapon->name() + HIW "，剎那間刀芒奪目，自天而下，劈向$n" HIW "！\n" NOR;

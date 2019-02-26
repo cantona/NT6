@@ -19,15 +19,15 @@ int main(object me, string arg)
 		return notify_fail("你身上沒有這樣東西。\n");
 
 	if( !query("lure", ob) )
-		return notify_fail("這東西好象不是誘餌吧！\n");
+		return notify_fail("這東西好像不是誘餌吧！\n");
 
 	if (me->is_busy())
-		return notify_fail("等你忙完了再說吧！\n");
+		return notify_fail("等你忙完了再説吧！\n");
 
 	if( query_temp("hunting", me) )
-		return notify_fail("別著急，再等等！\n");
+		return notify_fail("彆着急，再等等！\n");
 
-	message_vision(HIG "$N將" + ob->name() + "放在地上，躲在一旁靜靜守侯著 ……\n" NOR, me);
+	message_vision(HIG "$N將" + ob->name() + "放在地上，躲在一旁靜靜守侯着 ……\n" NOR, me);
 
 	me->start_busy(3 + random(5));
 set_temp("hunting", 1, 	me);
@@ -60,7 +60,7 @@ void do_hunt(object me, object env, object ob)
 
 delete_temp("hunting", 	me);
 
-        // 獲得幾率判斷是否動物出現
+        // 獲得機率判斷是否動物出現
 	point = quarry[temp[i]];
 	if( MEMBER_D->is_valid_member(query("id", me)) )
 		point += 3;
@@ -91,22 +91,22 @@ set("owner",query("id",  me), 	obq);
 		switch(random(4))
 		{
 			case 0:
-			message_vision(HIG "不一會兒，一只" + obq->name() + HIG "竄了出來，將" + 
-                                       ob->name() + HIG "一口咬在嘴裡。\n" NOR, me);
+			message_vision(HIG "不一會兒，一隻" + obq->name() + HIG "竄了出來，將" + 
+                                       ob->name() + HIG "一口咬在嘴裏。\n" NOR, me);
 			break;
 
 			case 1:
-			message_vision(HIM "轉眼間，一只" + obq->name() + HIG "突然出現，將" + 
-                                       ob->name() + HIG "吞進嘴裡。\n" NOR, me);
+			message_vision(HIM "轉眼間，一隻" + obq->name() + HIG "突然出現，將" + 
+                                       ob->name() + HIG "吞進嘴裏。\n" NOR, me);
 			break;
 
 			case 2:
-			message_vision(HIW "良久，一只" + obq->name() + HIG "大搖大擺地走了出來，仔細地打量著" + 
+			message_vision(HIW "良久，一隻" + obq->name() + HIG "大搖大擺地走了出來，仔細地打量着" + 
                                        ob->name() + HIG "。\n" NOR, me);
 			break;
 
 			default:
-			message_vision(HIC "少時，一只" + obq->name() + HIG "竄了過來，一口將" + 
+			message_vision(HIC "少時，一隻" + obq->name() + HIG "竄了過來，一口將" + 
                                        ob->name() + HIG "叼在了嘴上，相貌貪婪之極。\n" NOR, me);
 			break;
 		}

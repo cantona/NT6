@@ -16,7 +16,7 @@ void create()
                 set("value", 50000);
 //                set("no_drop", "1");
                 set("material", "iron");
-                set("long", "這是天下第一利器，有“倚天不出，誰與爭鋒”之說。\n");
+                set("long", "這是天下第一利器，有“倚天不出，誰與爭鋒”之説。\n");
                 set("wield_msg", "直如矯龍吞水，長虹冠日一般，$n已在$N手中，天地為之變色。\n");
                 set("unwield_msg", "$N將$n插回腰間，華光頓斂，天地間只聞龍鳴。\n");
         }

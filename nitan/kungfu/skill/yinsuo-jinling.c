@@ -3,14 +3,14 @@
 inherit SKILL;
 
 mapping *action = ({
-([      "action": "$N端坐不動，一招「對台梳妝」，手中$w抖得筆直，對準$n$l直刺而去",
+([      "action": "$N端坐不動，一招「對台梳粧」，手中$w抖得筆直，對準$n$l直刺而去",
         "force" : 80,
         "attack": 30,
         "dodge" :-35,
         "parry" :-25,
         "damage": 30,
         "lvl"   : 0,
-        "skill_name" : "對台梳妝",
+        "skill_name" : "對台梳粧",
         "damage_type": "刺傷"
 ]),
 ([      "action": "$N身形一轉，一招「雲龍白鶴」，手中$w如矯龍般騰空一卷，猛地向$n劈頭打下",
@@ -23,14 +23,14 @@ mapping *action = ({
         "skill_name" : "雲龍白鶴",
         "damage_type": "抽傷"
 ]),
-([      "action": "$N力貫鞭梢，一招「明月千裡」，手中$w舞出滿天鞭影，舖天蓋地襲向$n全身",
+([      "action": "$N力貫鞭梢，一招「明月千里」，手中$w舞出滿天鞭影，鋪天蓋地襲向$n全身",
         "force" : 160,
         "attack": 45,
         "dodge" :-63,
         "parry" :-29,
         "damage": 61,
         "lvl"   : 80,
-        "skill_name" : "明月千裡",
+        "skill_name" : "明月千里",
         "damage_type": "抽傷"
 ]),
 ([      "action":"$N一聲嬌喝，一招「映月無聲」，手中$w變換莫測，從意想不到的方位掃向$n",
@@ -43,7 +43,7 @@ mapping *action = ({
         "skill_name" : "映月無聲",
         "damage_type": "抽傷"
 ]),
-([      "action":"$N飛身一躍而起，凌空一招「影玉徵輝」，$w宛如蛟龍通天，攜著颼颼破空之聲襲向$n",
+([      "action":"$N飛身一躍而起，凌空一招「影玉徵輝」，$w宛如蛟龍通天，攜着颼颼破空之聲襲向$n",
         "force" : 210,
         "attack": 53,
         "dodge" :-76,
@@ -169,7 +169,7 @@ mixed hit_ob(object me, object victim, int damage_bonus, int factor)
                 if (random(me->query_str() + me->query_dex()) > victim->query_str() + me->query_dex())
                 {
                         message_combatd(HIY "\n$N氣運手臂用力一拽，" + weap->name() + "卻無法從" + weap1->name() +
-                                        "的纏繞中脫開，情急之下只好放棄了手中的" + weap->name() + "。\n" NOR, victim );
+                                        "的纏繞中脱開，情急之下只好放棄了手中的" + weap->name() + "。\n" NOR, victim );
                         weap->unequip();
                         weap->move(environment(me));
                         victim->reset_action();
@@ -177,7 +177,7 @@ mixed hit_ob(object me, object victim, int damage_bonus, int factor)
 
                 else
                 {
-                        message_combatd(HIY "\n$N暗運巧勁，" + weap->name() + "順著方向快速旋轉數下，解開了" + weap1->name() +
+                        message_combatd(HIY "\n$N暗運巧勁，" + weap->name() + "順着方向快速旋轉數下，解開了" + weap1->name() +
                                         "的纏繞。\n" NOR, victim );
                         addn("neili", -50, victim);
                 }

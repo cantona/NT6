@@ -25,7 +25,7 @@
                 特定變量的數目的到的，精確的統計一個變量所佔
                 用的內存是不可能的。
 
-        此函數需要編譯 MudOS 時在配置文件裡定義了 PACKAGE_CONTRIB。
+        此函數需要編譯 MudOS 時在配置文件裏定義了 PACKAGE_CONTRIB。
 
         by 發現號(Find@tx)
 

@@ -4,7 +4,7 @@ inherit F_MASTER;
 
 void create()
 {
-        set_name("伙計", ({ "huo ji", "huo", "ji" }) );
+        set_name("夥計", ({ "huo ji", "huo", "ji" }) );
         set("title", HIB"藥王谷"NOR+YEL"跑堂"NOR);
         set("gender", "男性" );
         set("age", 22);
@@ -44,22 +44,22 @@ int greeting(object ob)
                 case 0:
                         command("bow"+query("id", ob));
                         command("say "+RANK_D->query_respect(ob)
-                +"，這裡出售藥王谷弟子精心炮制的成藥，藥效不凡！\n");
+                +"，這裏出售藥王谷弟子精心炮製的成藥，藥效不凡！\n");
                         break;
                 case 1:
                         command("nod"+query("id", ob));
                         command("say "+RANK_D->query_respect(ob)
-                +"，這裡出售藥王谷弟子精心炮制的成藥，藥效不凡！\n");
+                +"，這裏出售藥王谷弟子精心炮製的成藥，藥效不凡！\n");
                         break;
                 case 2:
                         command("hi"+query("id", ob));
                         command("say "+RANK_D->query_respect(ob)
-                +"，這裡出售藥王谷弟子精心炮制的成藥，藥效不凡！\n");
+                +"，這裏出售藥王谷弟子精心炮製的成藥，藥效不凡！\n");
                         break;
                 case 3:
                         command("welcome"+query("id", ob));
                         command("say "+RANK_D->query_respect(ob)
-                +"，這裡出售藥王谷弟子精心炮制的成藥，藥效不凡！\n");
+                +"，這裏出售藥王谷弟子精心炮製的成藥，藥效不凡！\n");
                         break;
                 }
         }
@@ -77,7 +77,7 @@ int do_sell(string arg)
                 return notify_fail("你要寄售什麼東西？\n");
 
         if( !query("yaowang", ob) )
-                return notify_fail("這個東西不能在這裡寄售！\n");
+                return notify_fail("這個東西不能在這裏寄售！\n");
 
         value=query("value", ob);
         if (value < 30)
@@ -125,7 +125,7 @@ int do_list()
         inv = all_inventory(this_object());
 
         if (!sizeof(inv) && !arrayp(goods = query("vendor_goods")))
-                return notify_fail("目前這裡沒有東西寄售。\n");
+                return notify_fail("目前這裏沒有東西寄售。\n");
         for (i = 0; i < sizeof(inv); i++) 
         {
                 if( !query("equipped", inv[i]) && !query("money_id", inv[i]) )
@@ -184,17 +184,17 @@ int do_buy(string arg)
         }
 
         if (query_temp("busy"))
-                return notify_fail("喲，抱歉啊，我這兒正忙著呢……您請稍候。\n");
+                return notify_fail("喲，抱歉啊，我這兒正忙着呢……您請稍候。\n");
 
         
         switch(MONEY_D->player_pay(this_player(),query("value", ob))){
         case 0:
-                return notify_fail("窮光蛋，一邊呆著去！\n");
+                return notify_fail("窮光蛋，一邊呆着去！\n");
         case 2:
                 return notify_fail("您的零錢不夠了，銀票又沒人找得開。\n");
         default:
                 set_temp("busy", 1);
-                message_vision("$N從$n那裡買下了一"+query("unit", ob)+
+                message_vision("$N從$n那裏買下了一"+query("unit", ob)+
                 query("name", ob)+"。\n",this_player(),this_object());
                 ob->move(this_player());
 

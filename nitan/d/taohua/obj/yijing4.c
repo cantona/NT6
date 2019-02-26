@@ -5,15 +5,15 @@ inherit ITEM;
 
 void create()
 {
-        set_name( "易經《系辭篇》", ({ "jing", "yi jing" }));
+        set_name( "易經《繫辭篇》", ({ "jing", "yi jing" }));
         set_weight(200);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
                 set("unit", "本");
-                set("long", "這是一冊易經。上面寫著：\n
+                set("long", "這是一冊易經。上面寫着：\n
 　　天尊地卑，乾坤定矣。卑高以陳，貴賤位矣。 動靜有常，剛柔斷矣。
-方以類聚，物以群分，吉兇生矣。 在天成象，在地成形，變化見矣。
+方以類聚，物以羣分，吉凶生矣。 在天成象，在地成形，變化見矣。
 
 　　鼓之以雷霆，潤之以風雨，日月運行，一寒一暑，乾道成男，坤道成
 女。

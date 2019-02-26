@@ -25,7 +25,7 @@ int perform(object me, object target)
                 return notify_fail("你一陽指訣不夠嫻熟，難以施展" + name() + "。\n");
 
         if ((int)me->query_skill("jingluo-xue", 1) < 120)
-                return notify_fail("你對經絡學了解不夠，難以施展" + name() + "。\n");
+                return notify_fail("你對經絡學瞭解不夠，難以施展" + name() + "。\n");
 
         if (me->query_skill_mapped("finger") != "sun-finger")
                 return notify_fail("你沒有激發一陽指訣，難以施展" + name() + "。\n");
@@ -46,7 +46,7 @@ int perform(object me, object target)
                 return notify_fail(target->name() + "目前正自顧不暇，放膽攻擊吧。\n");
 
         if (! living(target))
-                return notify_fail("對方都已經這樣了，用不著這麼費力吧？\n");
+                return notify_fail("對方都已經這樣了，用不着這麼費力吧？\n");
 
         msg = HIR "$N" HIR "凝聚一陽指訣功力，陡然點出一指，變化多端，巧逼$n"
               HIR "諸處大穴。\n" NOR;

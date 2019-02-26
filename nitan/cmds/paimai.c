@@ -102,14 +102,14 @@ void auction_state_check(int times, int        s_times, int last_price, string  
 
         if(flag2 && !flag1) 
         {
-                str="由于賣方缺席，取消"+ob_name+"的拍賣";
+                str="由於賣方缺席，取消"+ob_name+"的拍賣";
                 auction_chat(str);
                 auction_cancel(ob_id, ob_auction, nul);
                 return;
         }
         if(!objectp(ob)        || !objectp(present(ob,ob_onwer)))
         {
-                str="由于賣方保管不當，拍賣物品"+ob_name+"丟失，本次拍賣取消！\n";
+                str="由於賣方保管不當，拍賣物品"+ob_name+"丟失，本次拍賣取消！\n";
                 auction_chat(str);
                 ob_onwer->delete_temp("auctioning");
                 auction_cancel(ob_id, ob_auction, nul);
@@ -136,14 +136,14 @@ void auction_state_check(int times, int        s_times, int last_price, string  
                         {
                                 if(flag1 && !flag2)
                                 {
-                                        str="由于買方缺席，取消"+ob_name+"的拍賣！";
+                                        str="由於買方缺席，取消"+ob_name+"的拍賣！";
                                         auction_chat(str);
                                         auction_cancel(ob_id, ob_onwer,        nul);
                                         return;
                                 }
                                 if(flag1 && flag2)
                                 {
-                                        str="由于買賣雙方缺席，取消"+ob_name+"的拍賣！";
+                                        str="由於買賣雙方缺席，取消"+ob_name+"的拍賣！";
                                         auction_chat(str);
                                         auction_cancel(ob_id, nul, nul);
                                         return;
@@ -156,14 +156,14 @@ void auction_state_check(int times, int        s_times, int last_price, string  
         {
                 if(flag1 && !flag2)
                 {
-                        str="由于買方缺席，取消"+ob_name+"的拍賣！";
+                        str="由於買方缺席，取消"+ob_name+"的拍賣！";
                         auction_chat(str);
                         auction_cancel(ob_id, ob_onwer,        nul);
                         return;
                 }
                 if(flag1 && flag2)
                 {
-                        str="由于買賣雙方缺席，取消"+ob_name+"的拍賣！";
+                        str="由於買賣雙方缺席，取消"+ob_name+"的拍賣！";
                         auction_chat(str);
                         auction_cancel(ob_id, nul, nul);
                         return;
@@ -188,7 +188,7 @@ void auction_end(string        ob_name, int ob_price, mixed ob_auction, object  
         if(stringp(ob_auction))
         {
                 str=onwer_id+"以底價"+MONEY_D->price_str(ob_price)+"拍賣"+
-                ob_name+"，由于無人投標，本次拍賣無效！\n";                
+                ob_name+"，由於無人投標，本次拍賣無效！\n";                
                 auction_cancel(ob_id, ob_onwer,        nul);
                 tell_object(ob_onwer,HIR"很遺憾！，"NOR"你的"+ob_name+"無人投標，本次拍賣無效！\n");
                 ob_onwer->set("auction_fail",ob_onwer->query("mud_age"));
@@ -201,7 +201,7 @@ void auction_end(string        ob_name, int ob_price, mixed ob_auction, object  
                 // 買賣雙方金錢物品的交換，買方需交成交價10%的中介費
                 if(!player_pay(ob_auction, (int)(ob_price*11/10))) 
                 {
-                        str="由于買方無力支付競價，取消"+ob_name+"的拍賣！\n";
+                        str="由於買方無力支付競價，取消"+ob_name+"的拍賣！\n";
                         ob_auction->delete_temp("auctioning");
                         auction_cancel(ob_id, ob_onwer,        nul);
                 }
@@ -220,11 +220,11 @@ void auction_end(string        ob_name, int ob_price, mixed ob_auction, object  
                                 }
                                 else
                                 {
-                                        tell_object(ob_auction,        "此次拍賣所得由于你無力保管而收歸國有！\n");
+                                        tell_object(ob_auction,        "此次拍賣所得由於你無力保管而收歸國有！\n");
                                         destruct(ob);
                                 }
                         }        
-                        tell_object(ob_onwer,ob_name+"拍賣成功！所得款已經自動轉至你的錢莊帳戶。\n");
+                        tell_object(ob_onwer,ob_name+"拍賣成功！所得款已經自動轉至你的錢莊帳户。\n");
                         ob_onwer->add("balance",ob_price);
                         auction_cancel(ob_id, ob_auction, ob_onwer);
                 }
@@ -272,7 +272,7 @@ if(!this_player()->query("canpaimai"))
                         me->set("channels", ({ "jiaoyi" }) );
                 else if( member_array("jiaoyi", tuned_ch) == -1 )
                         me->set("channels", tuned_ch + ({ "jiaoyi" }) );
-                tell_object(me,"\n你的交易頻道(jiaoyi)現在處于開通狀態\n");
+                tell_object(me,"\n你的交易頻道(jiaoyi)現在處於開通狀態\n");
                 return 1;
         }        
                 
@@ -367,7 +367,7 @@ if(!this_player()->query("canpaimai"))
                         {
                                 if(me->query("mud_age") - check_v[j] < 3600*cheat_times)        
                                 {
-                                        tell_object(me,"你由于在某次拍賣過程中信譽值降低，暫時無權參與。\n");
+                                        tell_object(me,"你由於在某次拍賣過程中信譽值降低，暫時無權參與。\n");
                                         return 1;
                                 }
                                 else map_delete(check, check_k[j]);                        
@@ -400,7 +400,7 @@ if(!this_player()->query("canpaimai"))
                         tell_object(me,"這件物品不能參加拍賣。\n");
                         return 1;
                 }
-                // 克扣拍賣手續費10%
+                // 剋扣拍賣手續費10%
                 
                 value = ob->query("value");
                 if (value < 30)
@@ -413,7 +413,7 @@ if(!this_player()->query("canpaimai"))
                 guaranty = (int)(num/50);                
                 if(!player_pay(me, guaranty)) 
                 {
-                        tell_object(me,"你全部的身家財產尚不足以交納拍賣保証金！(如果使用銀票，請事先兌換)\n");
+                        tell_object(me,"你全部的身家財產尚不足以交納拍賣保證金！(如果使用銀票，請事先兑換)\n");
                         return 1;
                 }                
                 write("你所要拍賣的物品："+ob->query("name")+"， 底價："+MONEY_D->price_str(num)+"\n\n");
@@ -463,7 +463,7 @@ if(!this_player()->query("canpaimai"))
                         {
                                 if(me->query("mud_age") - check_v[j] < 3600*cheat_times)        
                                 {
-                                        tell_object(me,"你由于在某次拍賣過程中信譽值降低，暫時無權參與。\n");
+                                        tell_object(me,"你由於在某次拍賣過程中信譽值降低，暫時無權參與。\n");
                                         return 1;
                                 }
                                 else map_delete(check, check_k[j]);                        
@@ -491,7 +491,7 @@ if(!this_player()->query("canpaimai"))
                 
                 if(objectp(obj)        && v2[3]        == me)
                 {
-                        tell_object(me,"那是你自己的拍賣物品，想暗地托價不成？\n");
+                        tell_object(me,"那是你自己的拍賣物品，想暗地託價不成？\n");
                         return 1;
                 }
                 coin = player_bank(me);
@@ -511,7 +511,7 @@ if(!this_player()->query("canpaimai"))
 
                 if((int)((num + ob_price)*11/10 > this_player()->query("balance")))
                                 {
-                                                tell_object(me,"錢莊裡沒有足夠的存款來競拍賣該物品。（預計價含10%中介費）。\n");
+                                                tell_object(me,"錢莊裏沒有足夠的存款來競拍賣該物品。（預計價含10%中介費）。\n");
                                                 return 1;
                                 }
 
@@ -589,7 +589,7 @@ int player_demand(int num, string unit,        object me, string flag)
                 case "gold":num*=10000;break;
                 case "cash":
                 case "thousand-cash":
-                        tell_object(me,"拍賣交易中不得使用銀票，請先在錢莊兌換成硬通貨。\n");
+                        tell_object(me,"拍賣交易中不得使用銀票，請先在錢莊兑換成硬通貨。\n");
                         return 0;
                 default:
                         tell_object(me,"非法的貨幣單位！\nvalid        unit: coin, silver, gold\n");
@@ -656,7 +656,7 @@ int player_pay(object who, int amount)
                 if(objectp(s_ob)) destruct(s_ob);
                 if(objectp(g_ob)) destruct(g_ob);                
                 who->add("balance",-(amount-total)); 
-                        tell_object(who,"你身上的零錢不夠，所需費用已直接從錢莊帳戶上扣除。\n\n");
+                        tell_object(who,"你身上的零錢不夠，所需費用已直接從錢莊帳户上扣除。\n\n");
                 return 1;
         }
         else 
@@ -692,8 +692,8 @@ int help()
 {
     write(@HELP命令格式：
  
-    查看目前處于競拍狀態的物品清單：paimai -l
-    查看目前處于競拍狀態的物品介紹：paimai -i    
+    查看目前處於競拍狀態的物品清單：paimai -l
+    查看目前處於競拍狀態的物品介紹：paimai -i    
     拍賣物品：paimai <物品ID> for <底價值> <貨幣單位>
     競拍物品：paimai <物品ID> add <加價值> <貨幣單位> 
     
@@ -706,21 +706,21 @@ HELP
 
 int help_2()
 {    
-    write(@HELP拍賣規則說明文檔：  
+    write(@HELP拍賣規則説明文檔：  
 
     1. 玩家在18歲以後，自身經驗值達到1000點即有權利參與拍賣。  
     
-    2. 拍賣過程中銀票無效，請先去錢莊兌換成硬通貨，如黃金、白銀、銅錢。
+    2. 拍賣過程中銀票無效，請先去錢莊兑換成硬通貨，如黃金、白銀、銅錢。
     
-    3. 當有人拍賣物品時，拍賣進程正式開始（拍賣底價不得少于10兩白銀），此時玩家可以
+    3. 當有人拍賣物品時，拍賣進程正式開始（拍賣底價不得少於10兩白銀），此時玩家可以
        以至少1兩白銀（或100文銅錢）的最低差價值參加競拍，如果一段時間內無人投標，將
        進行喊價，三次喊價後仍然無人出價，則拍賣終止。倘若一直有人投標，到了規定時間，
        此次拍賣活動仍會被終止。拍賣場最大允許5件物品同時拍賣。
        
     4. 拍賣活動終止後，最後出價者為勝，貨款從買者手邊及錢莊提取，物品直接轉移到買者
        身上，如果不堪負重則放在買者所在房間之中，如果房間也無法裝下，物品作沒收處理，
-       切記！物主所得款額直接轉至其錢莊帳戶。拍賣開始時對賣方收取底價2%的手續費。倘
-       若拍賣過程中始終無人投標，拍賣過程宣布失敗，手續費恕不退還物主。拍賣成功，買
+       切記！物主所得款額直接轉至其錢莊帳户。拍賣開始時對賣方收取底價2%的手續費。倘
+       若拍賣過程中始終無人投標，拍賣過程宣佈失敗，手續費恕不退還物主。拍賣成功，買
        方需按成交價交納10%的中介費。
        
     5. 拍賣過程中，以下行為當作違反拍賣規則處理：買賣雙方的任何一人離開遊戲導致拍賣

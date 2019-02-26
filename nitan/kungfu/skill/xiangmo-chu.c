@@ -26,16 +26,16 @@ mapping *action = ({
         "skill_name" : "歌舞閻羅",
         "lvl" : 32
 ]),
-([        "action" : "$N使出一招"HIY"「浮遊血海」"NOR"，全身貼地而飛，一棍直搗$n的$l",
-        "skill_name" : "浮遊血海",
+([        "action" : "$N使出一招"HIY"「浮游血海」"NOR"，全身貼地而飛，一棍直搗$n的$l",
+        "skill_name" : "浮游血海",
         "lvl" : 40
 ]),
 ([        "action" : "$N使出一式"HIY"「驅鬼御魔」"NOR"，以棍支地，雙足飛揣$n的面門",
         "skill_name" : "驅鬼御魔",
         "lvl" : 48
 ]),
-([        "action" : "$N運力于掌，使出"HIY"「盪魔除妖」"NOR"，飛身疾進，手中$w橫掃$n的$l",
-        "skill_name" : "盪魔除妖",
+([        "action" : "$N運力於掌，使出"HIY"「蕩魔除妖」"NOR"，飛身疾進，手中$w橫掃$n的$l",
+        "skill_name" : "蕩魔除妖",
         "lvl" : 56
 ]),
 });

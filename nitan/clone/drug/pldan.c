@@ -27,8 +27,8 @@ void init();
 void create()
 {
         set_name(HIB "破立丹" NOR, ({"poli dan", "puoli", "dan"}));
-        set("long", HIW"     一顆淡藍色的小藥丸，閃爍著晶瑩的光澤，這就是傳說中能夠讓
-人脫胎換骨，洗心革面，重新做人的破立丹了。如想了解更多關于破
+        set("long", HIW"     一顆淡藍色的小藥丸，閃爍着晶瑩的光澤，這就是傳説中能夠讓
+人脱胎換骨，洗心革面，重新做人的破立丹了。如想了解更多關於破
 立丹的祥情，請看幫助(help help_pldan)"NOR"\n\n");
         set_weight(20);
         if (clonep())
@@ -50,7 +50,7 @@ int cure_ob(object me)
     
     if( query("fupldan", me) == "yes" )
     {
-                    write(HIR "破立丹每人最多只能服用一次，你以前服用過，不可以再次服用了！\n");
+                    write(HIR "破立丹每人最多隻能服用一次，你以前服用過，不可以再次服用了！\n");
                     return 1;
     }
     else
@@ -62,7 +62,7 @@ int cure_ob(object me)
                     3. 增加四十級的基本內功。\n
                     4. 還俗。（限非全真派的道士，非少林派的和尚，非雪山派的喇嘛）\n
                     5. 重新制定自己的神。\n
-                    6. 破立丹每人最多只能服用一次，服用過則永遠不可以再次服用，
+                    6. 破立丹每人最多隻能服用一次，服用過則永遠不可以再次服用，
                        如果你想等以後再服，請選6 \n
                     ------------------------------------\n\n
                     你想要發生哪種效果呢？（請輸入對應的數字代碼）\n
@@ -302,7 +302,7 @@ me = this_player();
                                 set("str", intbl, me);
                                 set("dex", intsf, me);
                                 set("fupldan", "yes", me);
-                                message_vision(HIY "$N服下破立仙丹，身體發生了翻天覆地的變化，\n整個人脫胎換骨，好象變成了另外一個人。\n" NOR, me);
+                                message_vision(HIY "$N服下破立仙丹，身體發生了翻天覆地的變化，\n整個人脱胎換骨，好像變成了另外一個人。\n" NOR, me);
                                 me->unconcious();
                                 destruct(this_object());
                                 return 1;

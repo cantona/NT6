@@ -25,7 +25,7 @@ int perform(object me)
 
         addn("neili", -200, me);
 
-        message_combatd(HIR "只聽$N" HIR "口中念念有詞，頃刻"
+        message_combatd(HIR "只聽$N" HIR "口中唸唸有詞，頃刻"
                         "之間武功大進！\n" NOR, me);
 
         addn_temp("apply/attack", 10, me);

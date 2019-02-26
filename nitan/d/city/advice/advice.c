@@ -5,7 +5,7 @@ void create()
 {
        set("short", HIY "遊戲客服" NOR);
         set("long", @LONG
-大家對遊戲種遇到的問題及遊戲發展的意見都可以POST在這裡！
+大家對遊戲種遇到的問題及遊戲發展的意見都可以POST在這裏！
 謝謝大家合作。
 LONG );
 

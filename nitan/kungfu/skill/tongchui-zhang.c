@@ -21,7 +21,7 @@ mapping *action = ({
         "skill_name" : "旁敲側擊",
         "damage_type": "瘀傷"
 ]),
-([      "action" : "$N右手由鉤變掌，使一招「力拔千鈞」，單掌登時橫掃$n的$l",
+([      "action" : "$N右手由鈎變掌，使一招「力拔千鈞」，單掌登時橫掃$n的$l",
         "force"  : 51,
         "dodge"  : 16,
         "parry"  : 19,
@@ -90,7 +90,7 @@ mapping query_action(object me, object weapon)
 int practice_skill(object me)
 {
         if( query("qi", me)<60 )
-                return notify_fail("你現在手足酸軟，休息一下再練吧。\n");
+                return notify_fail("你現在手足痠軟，休息一下再練吧。\n");
 
         if( query("neili", me)<50 )
                 return notify_fail("你的內力不夠練銅錘掌法。\n");

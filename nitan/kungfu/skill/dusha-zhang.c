@@ -15,7 +15,7 @@ mapping *action = ({
         "lvl"   : 0,
         "damage_type": "瘀傷"
 ]),
-([      "action": "$N身形挫動，風聲虎虎，接著朝$n連發八掌，一掌快似一掌，一掌猛似一掌",
+([      "action": "$N身形挫動，風聲虎虎，接着朝$n連發八掌，一掌快似一掌，一掌猛似一掌",
         "force" : 130,
         "attack": 35,
         "dodge" : 10,
@@ -107,7 +107,7 @@ mixed hit_ob(object me, object victim, int damage_bonus, int factor)
                    "id":query("id", me),
                    "duration" : lvl / 50 + random(lvl / 20) ])))
         {
-                return WHT "$n" WHT "忽然感到一股莫名的惡心，全身癱軟，嘴皮烏紫。\n" NOR;
+                return WHT "$n" WHT "忽然感到一股莫名的噁心，全身癱軟，嘴皮烏紫。\n" NOR;
         }
 }
 

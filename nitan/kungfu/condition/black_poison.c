@@ -10,7 +10,7 @@ int update_condition(object me, int duration)
   if (me->is_ghost()) return 1;
         if( !living(me) || query_temp("noliving", me) )
         {
-                message("vision", me->name()+"喘著粗氣，中掌處黑絲如墨。\n", environment(me), me);
+                message("vision", me->name()+"喘着粗氣，中掌處黑絲如墨。\n", environment(me), me);
         }
         else
         {

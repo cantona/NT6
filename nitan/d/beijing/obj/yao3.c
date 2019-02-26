@@ -28,7 +28,7 @@ int do_eat(string arg)
         if (!id(arg))
                 return notify_fail("你要吃什麼藥？\n");
         if (me->is_busy() )
-                return notify_fail("別急，慢慢吃，小心別噎著了。\n");
+                return notify_fail("別急，慢慢吃，小心別噎着了。\n");
         if( query("eff_qi", me) == query("max_qi", me) )
                 return notify_fail("你現在不需要用金創藥。\n");
         else {

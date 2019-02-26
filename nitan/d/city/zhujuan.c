@@ -11,7 +11,7 @@ void create()
 {
         set("short", "豬圈");
         set("long", @LONG
-這裡是一個臭烘烘的豬圈，欄上掛著一個牌子(paizi)。
+這裏是一個臭烘烘的豬圈，欄上掛着一個牌子(paizi)。
 LONG );
         set("no_fight", 1);
         set("no_sleep_room",1);

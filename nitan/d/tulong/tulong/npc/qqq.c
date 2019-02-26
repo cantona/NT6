@@ -54,7 +54,7 @@ void create()
 
 int accept_ansuan(object who)
 {
-        return notify_fail("你剛想暗算，可是只見會場裡黑壓壓的擠滿了人，根本看不清楚。\n");
+        return notify_fail("你剛想暗算，可是隻見會場裏黑壓壓的擠滿了人，根本看不清楚。\n");
 }
 void init()
 {
@@ -83,7 +83,7 @@ void put()
         if (objectp(ob) && objectp(obj2)) 
         {
                 ob->move(obj2);
-                message_vision(HIC "\n$N哈哈一笑，手一揮，將那屠龍寶刀擲進了烈燄沖天的大鐵鼎中。\n\n" NOR,
+                message_vision(HIC "\n$N哈哈一笑，手一揮，將那屠龍寶刀擲進了烈焰沖天的大鐵鼎中。\n\n" NOR,
                                    this_object());
         }
         ob = present("tulong blade", this_object());

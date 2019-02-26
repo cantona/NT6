@@ -38,7 +38,7 @@ int perform(object me, object target)
                 return notify_fail("你沒有激發劍盾珠索，難以施展" QIAN "。\n");
 
         if (! living(target))
-                return notify_fail("對方都已經這樣了，用不著這麼費力吧？\n");
+                return notify_fail("對方都已經這樣了，用不着這麼費力吧？\n");
 
         wname = weapon->name();
 
@@ -81,8 +81,8 @@ int perform(object me, object target)
         ap = me->query_skill("whip");
         dp = target->query_skill("force");
 
-        msg += "\n" HIW "緊接著又見$N" HIW "縱身而起，單手將" + wname +
-               HIW "急速舞動，凌空朝著$n" HIW "圈去。\n" NOR;
+        msg += "\n" HIW "緊接着又見$N" HIW "縱身而起，單手將" + wname +
+               HIW "急速舞動，凌空朝着$n" HIW "圈去。\n" NOR;
         if (ap / 2 + random(ap) > dp)
         {
                 msg += COMBAT_D->do_damage(me, target, WEAPON_ATTACK, damage, 10,
@@ -92,7 +92,7 @@ int perform(object me, object target)
         } else
         {
                 msg += CYN "可$p" CYN "一個翻滾，起身時已在"
-                       "丈許開外，便將這式化解于無形。\n" NOR;
+                       "丈許開外，便將這式化解於無形。\n" NOR;
         }
         me->start_busy(3 + random(3));
         addn("neili", -300, me);

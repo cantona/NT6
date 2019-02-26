@@ -81,7 +81,7 @@ $n遭到前所未有的打擊,但$N也受傷不輕。\n" NOR;
 
 
      else if( ski_value <  160 ){
-     msg += CYN "第六招 『群魔亂舞』\n\n$n受到傷害,動彈不得！\n" NOR;
+     msg += CYN "第六招 『羣魔亂舞』\n\n$n受到傷害,動彈不得！\n" NOR;
      target->start_busy( (int)me->query_skill("bingpo-blade") /100 + 2);
 
      addn("neili", -query("max_neili", me)*7/10, me);}

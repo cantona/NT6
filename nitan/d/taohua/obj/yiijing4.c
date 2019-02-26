@@ -5,7 +5,7 @@ inherit ITEM;
 
 void create()
 {
-        set_name( "易經《系辭篇》", ({ "jing", "yi jing" }));
+        set_name( "易經《繫辭篇》", ({ "jing", "yi jing" }));
         set_weight(200);
         if( clonep() )
                 set_default_object(__FILE__);

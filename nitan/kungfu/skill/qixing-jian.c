@@ -37,13 +37,13 @@ mapping *action = ({
         "skill_name" : "星弛電閃",
         "damage_type":  "刺傷"
 ]),
-([      "action":"$N一式「橫移北鬥」，左手伸展，右手$w揮向$n的$l",
+([      "action":"$N一式「橫移北斗」，左手伸展，右手$w揮向$n的$l",
         "force" : 130,
         "attack": 30,
         "dodge" : 35,
         "damage": 32,
         "lvl" : 40,
-        "skill_name" : "橫移北鬥",
+        "skill_name" : "橫移北斗",
         "damage_type":  "割傷"
 ]),
 ([      "action":"$N手中$w斜指蒼天，一式「七星匯聚」，對準$n的$l斜斜擊出",

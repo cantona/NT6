@@ -13,7 +13,7 @@ void create()
                 set("base_weight", 100);
                 set("base_value", 25);
                 set("material", "stone");
-                set("long", "一塊有棱有角的石頭。\n");
+                set("long", "一塊有稜有角的石頭。\n");
                 
         }
        set_amount(20);

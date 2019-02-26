@@ -58,7 +58,7 @@ void create()
         prepare_skill("strike", "sixiang-zhang");
 
         set("inquiry", ([
-                "出家"     : "你去本山的庵堂裡找我靜字輩師姐吧。她們在福壽庵、千佛庵、\n萬年庵、萬行庵和臥雲庵修行。\n",
+                "出家"     : "你去本山的庵堂裏找我靜字輩師姐吧。她們在福壽庵、千佛庵、\n萬年庵、萬行庵和卧雲庵修行。\n",
                 "滅絕師太" : "她是本派掌門人，在華藏庵修行。\n",
                 "紀曉芙"   : (: ask_for_ji :),
         ]));
@@ -96,7 +96,7 @@ int ask_for_ji()
 {
         object ob;
         ob = this_player();
-        tell_object(ob,"貝錦儀說道：紀曉芙在舍身崖呢。她就是想不開。嗨！\n");
+        tell_object(ob,"貝錦儀説道：紀曉芙在捨身崖呢。她就是想不開。嗨！\n");
         set("marks/ji", 1, ob);
         return 1;
 }

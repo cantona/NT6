@@ -108,7 +108,7 @@ void create()
 void attempt_apprentice(object ob)
 {
     if( query("family/family_name", ob) == "日月神教" )
-        command("say 老夫已不收弟子，不過我這裡有一套鞭法，你若想學，我可以教你。");
+        command("say 老夫已不收弟子，不過我這裏有一套鞭法，你若想學，我可以教你。");
     else
         command("say 我不收弟子。");
     return;
@@ -147,7 +147,7 @@ int recognize_apprentice(object ob, string skill)
          {
              if( !query("can_learn/xiang/whip", ob) )
              {
-                  command("say 好吧，我就教你一點關于鞭法的基本知識。");
+                  command("say 好吧，我就教你一點關於鞭法的基本知識。");
                   set("can_learn/xiang/whip", 1, ob);
              }
              return 1;
@@ -181,7 +181,7 @@ mixed ask_pfm()
               return "你的流水鞭法還練不到家，讓我怎麼教你呢！";
 
       message_vision(HIY "$n" HIY "對$N" HIY "點了點頭：你看那塊巨石。\n" HIY
-                     "只見$n" HIY "手中長鞭一盪，驟然向上揮出，只見長鞭" HIY
+                     "只見$n" HIY "手中長鞭一蕩，驟然向上揮出，只見長鞭" HIY
                      "劃出一道弧線，直向巨石擊去。\n" HIW
                      "“叭”的一聲，巨石已被打成碎片，四下飛散。\n" NOR,
                      me, this_object());
@@ -201,11 +201,11 @@ int ask_kill()
       else
       {
             command("tell"+query("id", me)+"你要去殺東方不敗？\n");
-            message_vision(HIC "向問天對$N點了點頭說：我助你一臂之力。\n" NOR, me);
+            message_vision(HIC "向問天對$N點了點頭説：我助你一臂之力。\n" NOR, me);
             ob=new("/d/heimuya/npc/obj/card4");
             ob->move(me);
             delete("have_ling");
-            tell_object(me, "向問天從懷裡摸出一塊令牌塞到你的手上。\n");
+            tell_object(me, "向問天從懷裏摸出一塊令牌塞到你的手上。\n");
       }
       return 1;
 }

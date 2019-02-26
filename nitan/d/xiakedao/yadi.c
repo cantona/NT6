@@ -15,7 +15,7 @@ void create()
 面並無明顯出口。
 LONG );
         set("item_desc",([
-            "water" : "碧綠碧綠的水，在陽光照耀下美麗級了，你不禁想遊泳了。\n",
+            "water" : "碧綠碧綠的水，在陽光照耀下美麗級了，你不禁想游泳了。\n",
         ]));
         set("no_clean_up", 0);
         set("coor/x", -3000);
@@ -82,13 +82,13 @@ int do_swim(string arg)
         message_vision("$N深吸了一口氣，奮力的遊了起來。\n", me);
         if( random(query("kar", me))>10 )
         {
-                message_vision("你遊著遊著，突然發現了一道石門(men)，也許你能將它推(push)開。\n", me);
+                message_vision("你遊着遊着，突然發現了一道石門(men)，也許你能將它推(push)開。\n", me);
                 me->receive_damage("qi", 15);
                 me->receive_wound("qi", 10);
         }
         else
         {
-                message_vision("你遊著遊著，突然發現了一條鐵索(suo)從上面伸了過來。這條鐵索並無鐵鏽，可能經常有人爬上爬下(climb)。\n", me);
+                message_vision("你遊着遊着，突然發現了一條鐵索(suo)從上面伸了過來。這條鐵索並無鐵鏽，可能經常有人爬上爬下(climb)。\n", me);
                 me->receive_damage("qi",10);
                 me->receive_wound("qi",10);
         }
@@ -104,10 +104,10 @@ int do_climb(string arg)
                 write("你要爬什麼呀? \n");
                 return 1;
         }
-        message_vision("$N深吸了一口氣，慢慢沿著鐵索的向上爬。\n", this_player());
+        message_vision("$N深吸了一口氣，慢慢沿着鐵索的向上爬。\n", this_player());
         if(n >40)
         {
-                message_vision("$N爬了半天，終于爬了上來，$N不禁在胸前雙掌合十，感謝佛祖。\n", this_player());
+                message_vision("$N爬了半天，終於爬了上來，$N不禁在胸前雙掌合十，感謝佛祖。\n", this_player());
                 this_player()->move(__DIR__"pubu");
         }
         else

@@ -5,10 +5,10 @@ inherit NPC;
 string ask_quest(); 
 void create()
 {
-        set_name("溫方達", ({ "wen fangda", "wen", "fangda" }));
-        set("title", "溫家五老");
+        set_name("温方達", ({ "wen fangda", "wen", "fangda" }));
+        set("title", "温家五老");
         set("long", 
-        "他就是溫家五老的老大溫方達。\n"
+        "他就是温家五老的老大温方達。\n"
         "一個精瘦的老者，一雙眼睛露出狡猾的目光。\n");
         set("gender", "男性");
         set("age", 66);
@@ -67,18 +67,18 @@ string ask_quest()
         { 
            // 解了quest還來問 找抽！！ by daidai
            call_out("outwuguan",1,me);
-           return "你是怎麼知道這個姦賊的？";
+           return "你是怎麼知道這個奸賊的？";
         }
         if( !query_temp("quest/金蛇劍法/start", me) )
         {
            command("heng");
-           return "那是我溫家堡的仇人！";
+           return "那是我温家堡的仇人！";
         }
         message_vision(HIG"$N臉上露出異樣的神色。\n"NOR, ob);
         command("look"+query("id", me));
         command("sigh");
-        command("say 這麼說你就是金蛇姦賊的傳人了，來報仇了？");
-         message_vision(HIC"$N一擺手：“跟我來吧。”帶著$n向練武場走去。\n"NOR, ob, me);
+        command("say 這麼説你就是金蛇奸賊的傳人了，來報仇了？");
+         message_vision(HIC"$N一擺手：“跟我來吧。”帶着$n向練武場走去。\n"NOR, ob, me);
         
         set_temp("quest/金蛇劍法/start_kill", 1, me);
         delete_temp("quest/金蛇劍法/start", me);
@@ -94,8 +94,8 @@ void outwuguan(object me)
         object *inv;
         if(!me) return;
         command("ah");
-        command("say 你是金蛇郎君那個姦賊的傳人！來人啊！給我殺了這廝！");
-        message_vision(HIR"只見一群家丁揮舞兵器向$N沖殺而來，$N落荒而逃。\n"NOR, me);
+        command("say 你是金蛇郎君那個奸賊的傳人！來人啊！給我殺了這廝！");
+        message_vision(HIR"只見一羣家丁揮舞兵器向$N衝殺而來，$N落荒而逃。\n"NOR, me);
         inv = filter_array(deep_inventory(me), (: userp :));
         if( sizeof(inv))
                 inv->move(environment(ob));

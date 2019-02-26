@@ -16,7 +16,7 @@ void start_quest()
         string *ob_names;
 
         if (sizeof(children("/clone/quest/capture")) > 300)
-                // 系統中最□個追殺的任務
+                // 系統中最7個追殺的任務
                 return;
 
         qob = new("/clone/quest/capture");

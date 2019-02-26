@@ -58,7 +58,7 @@ int perform(object me, object target)
                 return notify_fail(target->name() +"已經手忙腳亂了，不需要在用毒了。\n");
 
         lvl = me->query_skill(bskill, 1);
-        msg = BLU"$N"BLU"默運內力，將毒氣運于鞭上，只見一股藍色的霧氣罩住了長鞭。\n";
+        msg = BLU"$N"BLU"默運內力，將毒氣運於鞭上，只見一股藍色的霧氣罩住了長鞭。\n";
         if( random(query("combat_exp", me))>query("combat_exp", target)/2 && random(lvl)>20 )
         {
                 msg += "$p措不及防，不由身染毒氣。\n" NOR;

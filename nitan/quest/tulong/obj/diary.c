@@ -9,7 +9,7 @@ void create()
     else {
             set("unit", "本");
             set("material", "paper");
-            set("long", "一本巫師夜辰以前的日記，你可以讀一讀（ｒｅａｄ），說不定會有什麼發現。\n");
+            set("long", "一本巫師夜辰以前的日記，你可以讀一讀（ｒｅａｄ），説不定會有什麼發現。\n");
           }
 
     setup();

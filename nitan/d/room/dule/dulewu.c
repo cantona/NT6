@@ -9,13 +9,13 @@ void create()
         set("short", "小屋");                   /* EXAMPLE */
 //**    set("short", "ROOM_NAME小屋");
         set("long", @LONG
-屋子不大，靠窗的地方擺了一張床，屋中一張桌，幾只椅，非常簡單。
-恐怕只有甘于寂寞的人才住得了這種簡樸的屋子。
+屋子不大，靠窗的地方擺了一張牀，屋中一張桌，幾隻椅，非常簡單。
+恐怕只有甘於寂寞的人才住得了這種簡樸的屋子。
 LONG );
 
-        set("default_long", "屋子不大，靠窗的地方擺了一張床，"   /**/
-                            "屋中一張桌，幾只椅，非常簡單。"     /**/
-                            "看來主人是一個甘于平淡寂寞的人。"); /**/
+        set("default_long", "屋子不大，靠窗的地方擺了一張牀，"   /**/
+                            "屋中一張桌，幾隻椅，非常簡單。"     /**/
+                            "看來主人是一個甘於平淡寂寞的人。"); /**/
 
 //**    set("objects", ([
 //**            "/adm/npc/obj/xiang" : 1,
@@ -60,7 +60,7 @@ int do_findbaby(string arg)
                 return 0;
 
         if( !query("couple/child_id", me) )
-                return notify_fail("你又還沒有孩子，來這裡湊什麼熱鬧啊？\n");
+                return notify_fail("你又還沒有孩子，來這裏湊什麼熱鬧啊？\n");
 
         if( objectp(baby=find_living(query("couple/child_id", me)) )
         &&  environment(baby) && baby->is_baby())
@@ -76,7 +76,7 @@ int do_findbaby(string arg)
 
                 baby->load_baby(me);
                 baby->move(environment(me));
-                message_vision("你忽然看到床底下" +
+                message_vision("你忽然看到牀底下" +
                         ({"探出一顆小腦瓜", "伸出一雙小腳丫", "伸出一支小手"})
                         [random(3)] + "．．．\n", me);
 

@@ -44,13 +44,13 @@ int perform(object me, object target)
                 damage = damage_power(me, "sword");
                 
                 addn("neili", -400, me);
-                pmsg = HIR "只見$N劍走了個怪異的弧線，從不可思議的角度向$n殺去,\n$n只覺得背心一陣冰涼，呆呆地看著前胸的劍尖！\n" NOR;
+                pmsg = HIR "只見$N劍走了個怪異的弧線，從不可思議的角度向$n殺去,\n$n只覺得背心一陣冰涼，呆呆地看着前胸的劍尖！\n" NOR;
                 
                 msg += COMBAT_D->do_damage(me, target, WEAPON_ATTACK, damage, 65, pmsg);
                 me->start_busy(2);
         } else 
         {
-                msg += CYN"可是$p猛地向前一躍,跳出了$P的攻擊范圍。\n"NOR;
+                msg += CYN"可是$p猛地向前一躍,跳出了$P的攻擊範圍。\n"NOR;
                 addn("neili", -200, me);
                 me->start_busy(4);
         }

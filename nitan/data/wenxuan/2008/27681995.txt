@@ -1,4 +1,4 @@
-subject : 解﹒明教之《九陽神功》
+subject : 解·明教之《九陽神功》
 author_name : 如來哥哥
 author_id : zxcvbnm
 time : 1222191305
@@ -6,15 +6,15 @@ board : 如來哥哥的留言板
 file : /data/analecta/2008/27681995.txt
 add_time : 1222201761
 content :
-首先ask zhang wuji about 九陽秘籍
-第2步在明教密道裡找到成昆殺之，取其頭顱(cut head from corpse)
+首先ask zhang wuji about 九陽祕籍
+第2步在明教密道里找到成昆殺之，取其頭顱(cut head from corpse)
 第3步在關外胡家附近坐船到冰火島找到謝遜give head to xie xun，他會給你一束金毛。
-第4步回到明教將金毛交給張無忌，然後再ask zhang 九陽秘籍，此刻他會提示你關于“經在油中”的訊息。
-接著你需要準備一個大米(可以是剛申請的ID)，隨同你要學九陽的ID一起rideto kunlun到達昆侖山，
-sw;se;eu;s之後讓主ID先昏(#50 d)，接著用大米get你的主ID(這裡注意主ID身上負重不要太多，不然大米背不動)，
-然後jump down，隨後等主ID醒了zuan cave，進去裡面找到一只瘸腿的猴子它會follow你，
+第4步回到明教將金毛交給張無忌，然後再ask zhang 九陽祕籍，此刻他會提示你關於“經在油中”的訊息。
+接着你需要準備一個大米(可以是剛申請的ID)，隨同你要學九陽的ID一起rideto kunlun到達崑崙山，
+sw;se;eu;s之後讓主ID先昏(#50 d)，接着用大米get你的主ID(這裏注意主ID身上負重不要太多，不然大米背不動)，
+然後jump down，隨後等主ID醒了zuan cave，進去裏面找到一隻瘸腿的猴子它會follow你，
 你就帶它去找到有樹枝的地方，snap 樹枝，用樹枝給他包紮(指令bandage)，
-之後出于感恩，它會給你一個包裹(bag)，open bag就會得到九陽真經啦！
+之後出於感恩，它會給你一個包裹(bag)，open bag就會得到九陽真經啦！
 
 密道成昆所在：rideto mingjiao;w;w;w;wu;wu;w;w;enter;break men(需要force300級);enter;n;n;w;n;u(如遇無路可用"open 方向"來打通)
 謝遜所在：rideto hujia;s;s;e;ask chuan 出海;give chuan 1 gold;下岸後#6 n;e;enter dong

@@ -13,7 +13,7 @@ mapping *action = ({
        "skill_name" : "圓轉如意",
        "damage_type":  "拉傷"
 ]),
-([     "action": HIW"$N的$w"HIW"在$n身旁連連進擊，忽然一招「佛自西來」從$n$l處倒卷上來"NOR,
+([     "action": HIW"$N的$w"HIW"在$n身旁連連進擊，忽然一招「佛自西來」從$n$l處倒捲上來"NOR,
        "dodge": 50,
        "damage": 150,
        "force": 400,

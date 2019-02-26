@@ -36,7 +36,7 @@ int perform(object me, object target)
                 return notify_fail("你沒有激發流星劍法，難以施展" + name() + "。\n");
 
         if (! living(target))
-                return notify_fail("對方都已經這樣了，用不著這麼費力吧？\n");
+                return notify_fail("對方都已經這樣了，用不着這麼費力吧？\n");
 
         msg = HIY "$N" HIY "聚集了全身功力，頓時見到一個金色影子，一點劍芒，正在$n"
               HIR "眼前擴大，快速功向$n。\n" NOR;

@@ -75,8 +75,8 @@ int perform(object me, object target)
         addn_temp("apply/defense", bonus*2, me);
 
         message_combatd(HIR"\n只聽一聲寶劍破空的龍吟之聲，$N手中的"+weapon->name()+HIR"頓時閃爍出耀眼的光芒，一股股寒氣彌\n"+
-                          "漫于周身。忽然$N招式徒然一快，使出一招「"HIW"九羽天誅"HIR"」，霎時間滿天劍影舖天蓋地，\n"+
-                          "仿佛三九天的鵝毛大雪撲面而來，直壓向$n的周身要害，速度更是快得驚人！\n"NOR, me, target);
+                          "漫於周身。忽然$N招式徒然一快，使出一招「"HIW"九羽天誅"HIR"」，霎時間滿天劍影鋪天蓋地，\n"+
+                          "彷彿三九天的鵝毛大雪撲面而來，直壓向$n的周身要害，速度更是快得驚人！\n"NOR, me, target);
 
         hits = bonus/3;
 

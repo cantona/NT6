@@ -10,7 +10,7 @@ void create()
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("long", "這是一張古舊的圖片，上面繪著些紋樣。");
+                set("long", "這是一張古舊的圖片，上面繪着些紋樣。");
                 set("unit", "張");
                 set("material", "paper");
                 set("value", 500);                        // 刺青時的花費與圖騰的價值相關
@@ -37,8 +37,8 @@ string long()
 
         if (query("can_tattoo"))
         {
-                msg = WHT "這是一張" + name() + NOR + WHT "，圖中描著" + query("tattoo_long") + "。你可以"
-                      "讓紋身師傅參照著圖樣在你的" + implode(query("can_tattoo"),
+                msg = WHT "這是一張" + name() + NOR + WHT "，圖中描着" + query("tattoo_long") + "。你可以"
+                      "讓紋身師傅參照着圖樣在你的" + implode(query("can_tattoo"),
                       "、") + "上刺青，以提高你的" + implode(query("tattoo_type"),
                       "、") + "。";
 
@@ -46,14 +46,14 @@ string long()
                 {
                         msg += "此外，" + name() + NOR + WHT "還能帶"
                                "給你" + query("tattoo_spcname") + NOR
-                               WHT "的神秘力量。";
+                               WHT "的神祕力量。";
                 } else
                 {
                         msg += "此外，" + name() + NOR + WHT "似乎還"
-                               "蘊藏著某些未知的神秘力量。";
+                               "藴藏着某些未知的神祕力量。";
                 }
         } else
-                msg = "這是一張古舊的圖片，上面繪著些紋樣。";
+                msg = "這是一張古舊的圖片，上面繪着些紋樣。";
 
         return sort_string(msg, 54);
 }

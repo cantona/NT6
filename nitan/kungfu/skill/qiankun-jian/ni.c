@@ -37,7 +37,7 @@ int perform(object me, object target)
                 return notify_fail("你沒有激發乾坤神劍，難以施展" NI "。\n");
 
         if (! living(target))
-                return notify_fail("對方都已經這樣了，用不著這麼費力吧？\n");
+                return notify_fail("對方都已經這樣了，用不着這麼費力吧？\n");
 
         msg = HIW "$N" HIW "一聲清嘯，手中" + weapon->name() +
               HIW "一振，將乾坤劍法逆行施展，頓時劍影重重，萬"

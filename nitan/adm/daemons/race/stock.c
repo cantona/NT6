@@ -36,13 +36,13 @@ void create()
                 "前腿",        "後腿", "前蹄",        "後蹄", "尾巴"
         }) );
 
-        set("dead_message",       "\n$N悲嘶一聲，倒地掙紮了幾下不動了。\n\n"       );
+        set("dead_message",       "\n$N悲嘶一聲，倒地掙扎了幾下不動了。\n\n"       );
         set("unconcious_message", "\n$N長聲悲嘶，乒地一聲摔倒在地上。\n\n"         );
         set("revive_message",     "\n$N慢慢動彈了一下，低嘶一聲，站立起來。\n\n"   );
         set("leave_msg",          "馳去"                                   );
-        set("arrive_msg",         "小步跑了過來，蹄聲有節奏地踏擊著地面"       );
-        set("fleeout_message",    "悲嘶著落荒而逃"                     );
-        set("fleein_message",     "搖搖擺擺地跑了過來，鼻孔裡呼呼地噴著白氣"   );
+        set("arrive_msg",         "小步跑了過來，蹄聲有節奏地踏擊着地面"       );
+        set("fleeout_message",    "悲嘶着落荒而逃"                     );
+        set("fleein_message",     "搖搖擺擺地跑了過來，鼻孔裏呼呼地噴着白氣"   );
 }
 
 void setup_stock(object ob)

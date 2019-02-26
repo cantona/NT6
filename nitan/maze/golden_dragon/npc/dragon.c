@@ -14,7 +14,7 @@ void create()
         set("gender", "雄性");
         set("age", 200);
         set("long",
-HIY"這是一條全身金黃，在黃沙中長大的神龍！它全身散發著金黃色的光芒！\n\n"NOR);
+HIY"這是一條全身金黃，在黃沙中長大的神龍！它全身散發着金黃色的光芒！\n\n"NOR);
 
         set("dex",100);
         set("con",100);
@@ -33,8 +33,8 @@ HIY"這是一條全身金黃，在黃沙中長大的神龍！它全身散發著�
 
         set("chat_chance", 5);
         set("chat_msg", ({
-                HIB "突然一陣黃沙卷來！差點把你卷走！\n" NOR,
-                HIB "黃金巨龍突然吐出一顆金黃的珠子，又卷了回去！\n" NOR,
+                HIB "突然一陣黃沙捲來！差點把你捲走！\n" NOR,
+                HIB "黃金巨龍突然吐出一顆金黃的珠子，又捲了回去！\n" NOR,
         }));
 
         set("chat_chance_combat", 120);
@@ -90,7 +90,7 @@ void init()
 
 int big_blowing()
 {
-        message_vision(HIB "$N" HIB "從黃沙裡深深地吸入一口氣，全身發出耀眼的金色，"
+        message_vision(HIB "$N" HIB "從黃沙裏深深地吸入一口氣，全身發出耀眼的金色，"
                        "整個龍腹脹大了幾倍！！\n" NOR, this_object());
 
         remove_call_out("hurting");

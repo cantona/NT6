@@ -1,12 +1,12 @@
-// huangxu.c 黃須道人
+// huangxu.c 黃鬚道人
 
 #include <ansi.h>
 inherit NPC;
 
 void create()
 {
-        set_name("黃須道人", ({ "huangxu  daoren"}));
-        set("long", "武當的叛徒，為人姦詐，常常幹些壞事。\n");
+        set_name("黃鬚道人", ({ "huangxu  daoren"}));
+        set("long", "武當的叛徒，為人奸詐，常常幹些壞事。\n");
         set("gender", "男性");
         set("age", 35);
         set("attitude", "peaceful");

@@ -10,7 +10,7 @@ void create()
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("long", "一塊玫瑰色的點心，據說是紅娘親手做的，不知是真是假？\n");
+                set("long", "一塊玫瑰色的點心，據説是紅娘親手做的，不知是真是假？\n");
                 set("unit", "塊");
                 set("value", 5000);
                 set("food_remaining", 3);

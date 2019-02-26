@@ -24,7 +24,7 @@ int perform(object me, object target)
                 return notify_fail("「摩訶參禪」只能在戰鬥中使用。\n");
 
         if( query_temp("weapon", me) )
-                return notify_fail("你拿著武器怎麼能使用「摩訶參禪」！\n");   
+                return notify_fail("你拿着武器怎麼能使用「摩訶參禪」！\n");   
 
         if( (int)me->query_skill("mohe-zhi", 1) < 80 )
                 return notify_fail("你的摩訶指還不夠嫻熟，使不出「摩訶參禪」絕技。\n");

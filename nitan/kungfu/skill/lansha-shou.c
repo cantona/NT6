@@ -5,7 +5,7 @@
 inherit SKILL;
 
 mapping *action = ({
-([      "action" : "$N跨前一步，雙掌陡然攻出，帶著絲絲陰風擊向$n的$l",
+([      "action" : "$N跨前一步，雙掌陡然攻出，帶着絲絲陰風擊向$n的$l",
         "force" : 100,
         "attack": 25,
         "dodge" : 15,
@@ -13,7 +13,7 @@ mapping *action = ({
         "damage": 10,
         "damage_type" : "瘀傷"
 ]),
-([      "action" : "$N左掌護胸，右掌掌心帶著極寒之氣拍向$n的$l",
+([      "action" : "$N左掌護胸，右掌掌心帶着極寒之氣拍向$n的$l",
         "force" : 130,
         "attack": 30,
         "dodge" : 10,
@@ -45,7 +45,7 @@ mapping *action = ({
         "damage": 35,
         "damage_type" : "瘀傷"
 ]),
-([      "action" : "$N身形急晃，一躍而至$n跟前，右掌帶著沖天寒氣擊向$n的$l",
+([      "action" : "$N身形急晃，一躍而至$n跟前，右掌帶着沖天寒氣擊向$n的$l",
         "force" : 210,
         "attack": 65,
         "dodge" : 25,
@@ -69,7 +69,7 @@ mapping *action = ({
         "damage": 25,
         "damage_type" : "瘀傷"
 ]),
-([      "action" : "$N仰天一聲狂嘯，雙掌攜帶著萬古冰堅直直貫向$n",
+([      "action" : "$N仰天一聲狂嘯，雙掌攜帶着萬古冰堅直直貫向$n",
         "force" : 330,
         "attack": 35,
         "dodge" : 25,
@@ -146,7 +146,7 @@ mixed hit_ob(object me, object victim, int damage_bonus, int factor)
                    "id":query("id", me),
                    "duration" : lvl / 50 + random(lvl / 20) ])))
         {
-                return HIB "$n" HIB "忽然感到一股莫名的惡心，全身癱軟，嘴皮烏紫。\n" NOR;
+                return HIB "$n" HIB "忽然感到一股莫名的噁心，全身癱軟，嘴皮烏紫。\n" NOR;
         }
 }
 

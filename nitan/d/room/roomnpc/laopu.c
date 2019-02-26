@@ -122,9 +122,9 @@ int accept_kill(object ob)
 {
         if (is_owner(ob))
         {
-                message_vision("$N一聲長嘆，道：“既然主人不留我了，罷"
+                message_vision("$N一聲長歎，道：“既然主人不留我了，罷"
                                "罷罷！合則留，不合則去！我走了。”\n"
-                               "說罷，老人丟下掃把，飄然而去。\n",
+                               "説罷，老人丟下掃把，飄然而去。\n",
                                this_object(), ob);
                 destruct(this_object());
                 return 0;

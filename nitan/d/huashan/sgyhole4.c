@@ -6,7 +6,7 @@ void create()
 {
         set("short", "山洞");
         set("long", @LONG
-這是一個毫不起眼的山洞，但是裡面的石壁上卻畫滿了五岳劍派
+這是一個毫不起眼的山洞，但是裏面的石壁上卻畫滿了五嶽劍派
 所有已經失傳的精妙絕招。花崗巖石壁(wall)上很多小人，全是用利
 器刻制，想見當初運力之人內力十分深厚。
 LONG );
@@ -45,13 +45,13 @@ int do_mianbi()
 
         if (ob->is_busy())
         {
-                write("你正忙著呢。\n");
+                write("你正忙着呢。\n");
                 return 1;
         }
 
         if (ob->query_skill("sword", 1) < 100)
         {
-                write("你對基本劍法的了解顯然太低，無法領悟石壁內容。\n", ob);
+                write("你對基本劍法的瞭解顯然太低，無法領悟石壁內容。\n", ob);
                 return 1;
         }
 
@@ -73,7 +73,7 @@ int do_mianbi()
                 return 1;
         }
 
-        message_vision("$N面對著石壁趺坐靜思，良久，對「破陽冷光劍」"
+        message_vision("$N面對着石壁趺坐靜思，良久，對「破陽冷光劍」"
                         "似有所悟。\n", ob);
         ob->improve_skill("poyang-jian",1+random(query("int", ob)));
         ob->receive_damage("jing", 35);

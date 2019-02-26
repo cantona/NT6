@@ -7,7 +7,7 @@ void create()
         set("gender", "男性" );
         set("age", 50);
         set("long", @LONG
-這是一個一輩子以砍材為生的老樵夫，由于飽
+這是一個一輩子以砍材為生的老樵夫，由於飽
 受風霜，顯出與年齡不相稱的衰老。
 LONG);
         set("shen_type",1);

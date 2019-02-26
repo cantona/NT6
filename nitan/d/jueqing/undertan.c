@@ -35,8 +35,8 @@ LONG);
 string look_kong()
 {
        string msg;
-       msg = HIW "\n抬頭向頭頂透光的洞穴望去，只見那洞離地少說也有一百來丈，"
-             "樹下雖長著一株大棗樹，但不過四五丈高，就算二十株棗樹疊起，也到"
+       msg = HIW "\n抬頭向頭頂透光的洞穴望去，只見那洞離地少説也有一百來丈，"
+             "樹下雖長着一株大棗樹，但不過四五丈高，就算二十株棗樹疊起，也到"
              "不了頂，凝思半晌，實是束手無策。\n" NOR;
 
       return sort_msg(msg); 
@@ -59,10 +59,10 @@ int do_climb(string arg)
                 ob = load_object(__DIR__"ontree1");
 
         if (me->is_busy())
-                return notify_fail("你現在正忙著呢！\n");
+                return notify_fail("你現在正忙着呢！\n");
 
         if (me->is_fighting())
-                return notify_fail("你還是先把你面前這個家伙解決了再說。\n");
+                return notify_fail("你還是先把你面前這個傢伙解決了再説。\n");
 
         tell_room(ob, HIC + me->name() + "從下面爬了上來。\n" NOR, me);
 

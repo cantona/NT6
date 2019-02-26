@@ -5,9 +5,9 @@ inherit NPC;
 void create()
 {
         set_name("鯊魚", ({ "sha yu", "sha" }) );
-        set("race", "遊魚");
+        set("race", "游魚");
         set("age", 20);
-        set("long", "一只生活在冰海的巨大鯨鯊。\n");
+        set("long", "一隻生活在冰海的巨大鯨鯊。\n");
         set("attitude", "friendly");
         set("shen_type", 0);
 
@@ -23,7 +23,7 @@ void create()
 void die()
 {
         object ob, corpse;
-        message_vision("$N全身一陣劇烈的扭曲，終于安靜了下來，翻白眼死了。\n", this_object());
+        message_vision("$N全身一陣劇烈的扭曲，終於安靜了下來，翻白眼死了。\n", this_object());
         if( objectp(corpse = CHAR_D->make_corpse(this_object())) )
                 ob = new("/clone/medicine/vegetable/shadan");
         ob->move(corpse);

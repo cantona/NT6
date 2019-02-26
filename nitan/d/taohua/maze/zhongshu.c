@@ -11,8 +11,8 @@ void create()
 
         set("short", "石陣中樞");
         set("long", @LONG
-這是桃花島石陣中樞所在地，四壁(wall)上繪著二十八星宿圖，地上
-密密麻麻刻著諸般卦象。地上一個太極圖(tu)，周圍分別環繞先天八卦與
+這是桃花島石陣中樞所在地，四壁(wall)上繪着二十八星宿圖，地上
+密密麻麻刻着諸般卦象。地上一個太極圖(tu)，周圍分別環繞先天八卦與
 後天八卦，外圈則是推演而出的六十四卦。一縷天光悄然注下，映得室中
 忽明忽暗，似乎萬籟俱寂，又似乎諸聲雜陳，動靜之間，不可琢磨。
 LONG );
@@ -30,7 +30,7 @@ LONG );
 "青龍七宿：角木蛟、亢金龍、氐土貉、房月狐、心日兔、尾火虎、箕水豹\n"
 "白虎七宿：奎木狼、婁金狗、胃土雉、昂日雞、畢月鳥、觜火猴、參水猿\n"
 "朱雀七宿：井木犴、鬼金羊、柳土獐、星日馬、張月鹿、翼水蛇、軫火蚓\n"
-"玄武七宿：鬥木獬、牛金羊、女土蝠、虛日鼠、危月燕、室火豬、壁水＜□俞＞\n",
+"玄武七宿：鬥木獬、牛金羊、女土蝠、虛日鼠、危月燕、室火豬、壁水＜犭俞＞\n",
         ]));
 
 
@@ -174,7 +174,7 @@ int do_stand(string arg)
                         me->unconcious();
                         return 1;
                 }
-                message_vision(HIY "$N足下虛步先後天八卦方位，自先天而後天，片刻間已萬物不縈于懷。\n" NOR,me);
+                message_vision(HIY "$N足下虛步先後天八卦方位，自先天而後天，片刻間已萬物不縈於懷。\n" NOR,me);
                 set_temp("standed", 1, me);
                 set("yang", me);
                 return 1;
@@ -232,7 +232,7 @@ int do_understand(string arg)
                 return notify_fail("你不能自行修煉基本內功！\n");
 
         if (me->is_busy())
-                return notify_fail("你現在正忙著呢。\n");
+                return notify_fail("你現在正忙着呢。\n");
 
         if (me->is_fighting())
                 return notify_fail("你已經在戰鬥中了，學一點實戰經驗吧。\n");
@@ -273,14 +273,14 @@ int do_understand(string arg)
         }
         else if(random(5) == 0) {
                 me->improve_skill(arg, skill_special/4 + random(skill_special/2));
-                tell_object(me, "你拿手比劃著，似乎對" + to_chinese(arg) + "中的幾個招數有所體會。\n" );
+                tell_object(me, "你拿手比劃着，似乎對" + to_chinese(arg) + "中的幾個招數有所體會。\n" );
         }
         else if(random(2) == 0) {
                 me->improve_skill(arg, skill_special/8 + random(skill_special/4));
                 tell_object(me, "你坐立不安，潛心苦思" + to_chinese(arg) + "上的難解之處。\n" );
         }
         else if(random(5) == 0) {
-                tell_object(me, "你心中說不出的煩燥，對" + to_chinese(arg) + "始終不得一解。\n" );
+                tell_object(me, "你心中説不出的煩燥，對" + to_chinese(arg) + "始終不得一解。\n" );
         }
         else if(random(10) == 0) {
                 me->improve_skill(arg, - (skill_special/10 + random(skill_special/5)));

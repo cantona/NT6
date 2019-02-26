@@ -7,7 +7,7 @@ void create()
         set("long",@LONG
 搶旗戰場
 
-敘述征求，一格 2 玄黃
+敍述徵求，一格 2 玄黃
 LONG);
         set("flag_war", 1);
         set("no_magic", 1);

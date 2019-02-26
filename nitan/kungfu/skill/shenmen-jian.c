@@ -16,7 +16,7 @@ mapping *action = ({
         "damage" : 9,
         "damage_type" : "刺傷"
 ]),
-([      "action" : "$N手中$w自上而下反刺，模擬冰輪橫空、清光舖地的光景",
+([      "action" : "$N手中$w自上而下反刺，模擬冰輪橫空、清光鋪地的光景",
         "force"  : 86,
         "attack" : 27,
         "dodge"  :-15,
@@ -48,7 +48,7 @@ mapping *action = ({
         "damage" : 28,
         "damage_type" : "刺傷"
 ]),
-([      "action" : "$N手中$w中宮直入，攜著強大的勁道攻向$n的$l",
+([      "action" : "$N手中$w中宮直入，攜着強大的勁道攻向$n的$l",
         "force"  : 160,
         "attack" : 42,
         "dodge"  :-45,
@@ -107,7 +107,7 @@ mixed hit_ob(object me, object victim, int damage_bonus)
         weapon->move(environment(victim));
 
         return HIW "突然間$n" HIW "被$N" HIW "一劍刺中神門要穴，手中" +
-               weapon->name() + HIW "再也抓拿不住，不禁脫手飛出。\n" NOR;
+               weapon->name() + HIW "再也抓拿不住，不禁脱手飛出。\n" NOR;
 }
 
 int practice_skill(object me)

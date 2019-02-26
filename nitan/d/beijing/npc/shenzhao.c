@@ -8,7 +8,7 @@ void create()
                 "他身材略高，太陽穴微凸，雙目炯炯有神。\n"
         );
         set("gender", "男性");
-        set("title", "康親王府侍衛頭領");
+        set("title", "康親王府侍衞頭領");
         set("attitude", "friendly");
         set("class", "bonze");
         set("age", 50);

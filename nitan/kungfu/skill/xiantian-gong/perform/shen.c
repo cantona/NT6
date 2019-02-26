@@ -43,10 +43,10 @@ int perform(object me, object target)
                 return notify_fail("你現在的真氣不足，難以施展" + name() + "。\n");
 
         if (! living(target))
-                return notify_fail("對方都已經這樣了，用不著這麼費力吧？\n");
+                return notify_fail("對方都已經這樣了，用不着這麼費力吧？\n");
 
         msg = HIW "$N" HIW "運起純陽神通功，片刻便見白氣逐漸籠罩全身，雙眼精光四射，與平時判若兩人。\n"
-              HIW "$N" HIW "接著突然出掌攻向$n，當真是無聲無息，卻迅如閃電。\n" NOR;
+              HIW "$N" HIW "接着突然出掌攻向$n，當真是無聲無息，卻迅如閃電。\n" NOR;
 
         ap = attack_power(me, "unarmed") + me->query_skill("force");
         dp = defense_power(target, "dodge") + target->query_skill("force");

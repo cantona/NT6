@@ -90,18 +90,18 @@ int do_nod(string arg)
         command("smile");
         command("say 我講個故事你聽：\n");
 
-        message("vision", "靜空師太對著"+me->name()+"講了幾句話。\n",
+        message("vision", "靜空師太對着"+me->name()+"講了幾句話。\n",
                         environment(me), ({me}) );
 
         switch(random(3)) {
                 case 0:
-                write("靜空師太說：白水禪師曾住在我們萬年庵，那時叫白水寺。
+                write("靜空師太説：白水禪師曾住在我們萬年庵，那時叫白水寺。
             有個僧人問他：什麼是祖師西來意？　白水禪師是怎樣回答他的呢？\n\n");
 
                 if ((int)me->query_skill("mahayana", 1) > 60 + random(5)) {
-                        write("你想起在一部經書裡讀到過這個故事。\n");
-                        write("你說：四溟無窯宅，一滴潤乾坤。\n\n");
-                        message("vision", me->name()+"想了一下，跟靜空師太說了幾句話。\n",
+                        write("你想起在一部經書裏讀到過這個故事。\n");
+                        write("你説：四溟無窯宅，一滴潤乾坤。\n\n");
+                        message("vision", me->name()+"想了一下，跟靜空師太説了幾句話。\n",
                                 environment(me), ({me}) );
 
                         command("say 阿彌陀佛，善哉！善哉！好吧，我就收下你了。");
@@ -115,13 +115,13 @@ int do_nod(string arg)
                 break;
 
                 case 1:
-                write("靜空師太說：白水禪師曾住在我們萬年庵，那時叫白水寺。
+                write("靜空師太説：白水禪師曾住在我們萬年庵，那時叫白水寺。
             有個僧人問他：禪宗六祖一路，應談何事？　白水禪師是怎樣回答他的呢？\n\n");
 
                 if ((int)me->query_skill("mahayana", 1) > 60 + random(5)) {
-                        write("你想起在一部經書裡讀到過這個故事。\n");
+                        write("你想起在一部經書裏讀到過這個故事。\n");
                         write("你答道：澗鬆千載鶴來聚，月中香桂鳳凰歸。\n\n");
-                        message("vision", me->name()+"想了一下，跟靜空師太說了幾句話。\n",
+                        message("vision", me->name()+"想了一下，跟靜空師太説了幾句話。\n",
                                 environment(me), ({me}) );
 
                         command("say 阿彌陀佛，善哉！善哉！好吧，我就收下你了。");
@@ -135,13 +135,13 @@ int do_nod(string arg)
                        break;
 
                 case 2:
-                write("靜空師太說：白水禪師曾住在我們萬年庵，那時叫白水寺。
+                write("靜空師太説：白水禪師曾住在我們萬年庵，那時叫白水寺。
             有個僧人問他：什麼是此經，即佛性？　白水禪師是怎樣回答他的呢？\n\n");
 
                 if ((int)me->query_skill("mahayana", 1) > 60 ) {
-                        write("你想起在一部經書裡讀到過這個故事。\n");
+                        write("你想起在一部經書裏讀到過這個故事。\n");
                         write("你答道：拋梭石女遼空響，海底泥牛夜叫頻。\n\n");
-                        message("vision", me->name()+"想了一下，跟靜空師太說了幾句話。\n",
+                        message("vision", me->name()+"想了一下，跟靜空師太説了幾句話。\n",
                                 environment(me), ({me}) );
 
                         command("say 阿彌陀佛，善哉！善哉！好吧，我就收下你了。");

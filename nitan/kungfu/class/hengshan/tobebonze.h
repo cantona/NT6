@@ -22,12 +22,12 @@ int do_kneel()
         string name, new_name;
         if( !query_temp("pending/join_bonze", me) )
                 return 0;
-        message_vision("$N你雙手合十，恭恭敬敬地跪了下來。\n\n$n看著$N說道：好吧，你就在本庵修行吧。\n\n$n伸出手掌，在$N頭頂輕輕地摩挲了幾下，將$N的頭發盡數剃去。\n\n", me, this_object() );
+        message_vision("$N你雙手合十，恭恭敬敬地跪了下來。\n\n$n看着$N説道：好吧，你就在本庵修行吧。\n\n$n伸出手掌，在$N頭頂輕輕地摩挲了幾下，將$N的頭髮盡數剃去。\n\n", me, this_object() );
         name=query("purename", me);
         if( !name)name=query("name", me);
         new_name = "容" + name[0..1];;
         command("say 從今以後你的法名叫做" + new_name + "。");
-        command("chat "+name+"削發為尼，在恆山修行，取法名"+new_name+"。");
+        command("chat "+name+"削髮為尼，在恆山修行，取法名"+new_name+"。");
         command("smile");
         set("marks/old_name", name, me);
         delete_temp("pending/join_bonze", me);

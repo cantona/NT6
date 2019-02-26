@@ -26,7 +26,7 @@ int perform(object me, object target)
                 return notify_fail("運用「玉玲瓏」手中必須有劍！\n");
 
         if ((int)me->query_skill("liudaolunhui-sword", 1) < 200)
-                return notify_fail("你的六道輪回劍法不夠嫻熟，不會使用「玉玲瓏」。\n");
+                return notify_fail("你的六道輪迴劍法不夠嫻熟，不會使用「玉玲瓏」。\n");
                                 
         if ((int)me->query_skill("force") < 300)
                 return notify_fail("你的內功修為不夠高。\n");
@@ -34,9 +34,9 @@ int perform(object me, object target)
         if( query("neili", me)<800 )
                 return notify_fail("你現在內力太弱，不能使用「玉玲瓏」。\n");
                         
-        msg = HIW "\n$N" HIW "身影慢慢的浮現在$n" HIW "面前，只見$N" HIW "洒出無數晶瑩剔透的"
+        msg = HIW "\n$N" HIW "身影慢慢的浮現在$n" HIW "面前，只見$N" HIW "灑出無數晶瑩剔透的"
               "玉玲瓏圍繞在$n" HIW "周圍。\n刀光劍影的世界霎時間沉寂在這柔和的雪光之中，"
-              "好一記溫柔纏綿的玉玲瓏\n\n" HIM "縱情山水間，揮洒天地情!\n\n" NOR;
+              "好一記温柔纏綿的玉玲瓏\n\n" HIM "縱情山水間，揮灑天地情!\n\n" NOR;
 
         ap = me->query_skill("sword") + me->query_skill("force");
         ap+=query("jiali", me);
@@ -57,11 +57,11 @@ int perform(object me, object target)
                 addn("neili", -damage/2, me);
 
                 msg += HIW "$n" HIW "頓時沉寂在這夢一般的景象之中，如痴如醉中被雪玲瓏擊中了!\n"
-                       "$n" HIW "完全陷入玉玲瓏的威力之中無法自拔。\n看著劍光從前心穿過" NOR;
+                       "$n" HIW "完全陷入玉玲瓏的威力之中無法自拔。\n看着劍光從前心穿過" NOR;
                 
                 if( objectp(weapon2=query_temp("weapon", target)) )
                 {
-                        msg += HIW "，手中" + weapon2->name() + HIW "當啷一聲掉在地上。\n" NOR;
+                        msg += HIW "，手中" + weapon2->name() + HIW "噹啷一聲掉在地上。\n" NOR;
                         weapon2->move(environment(target));
                 }
                 else

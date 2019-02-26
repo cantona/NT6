@@ -93,7 +93,7 @@ mapping *food = ({
 });
 
 mapping *liquid = ({
-([        "name" : "面湯",
+([        "name" : "麪湯",
         "unit" : "碗",
         "short" : "miantang",
         "value" : 10,
@@ -172,9 +172,9 @@ void create()
         set("short", "小酒館");
         set("long", @LONG
 這是太湖邊的一家小酒館。你一走進來，就聞到一股酒菜的香味，
-勾人食涎。廳內擺著幾張八仙桌(table)， 桌上整齊地擺放著碗筷，四
-周放著些椅子(chair)。 一個酒保正在忙個不停。你要想打聽江湖掌故
-和謠言，這裡是個好所在。櫃台上立著一個價目表(sign)。
+勾人食涎。廳內擺着幾張八仙桌(table)， 桌上整齊地擺放着碗筷，四
+周放着些椅子(chair)。 一個酒保正在忙個不停。你要想打聽江湖掌故
+和謠言，這裏是個好所在。櫃枱上立着一個價目表(sign)。
 LONG
         );
 
@@ -185,7 +185,7 @@ LONG
         set("item_desc", ([
                 "sign" : (: look_sign :),
                 "table" : (: look_table :),
-                "chair" : "木制的坐椅，看起來好象很結實。\n",
+                "chair" : "木製的坐椅，看起來好像很結實。\n",
         ]) );
 
         set("objects",([
@@ -235,7 +235,7 @@ void kick_all()
                                 message_vision("酒保對$N喝道：“付帳走人！”\n", ob[i]);
                                 if( !query_temp("to_pay", ob[i]) )
                                 {
-                                        message_vision("酒保把$N從座位上拽了起來，拉到櫃台前。\n", ob[i]);
+                                        message_vision("酒保把$N從座位上拽了起來，拉到櫃枱前。\n", ob[i]);
                                         message_vision("掌櫃翻出菜單，撥打了一陣算盤後告訴$N：“一共" + chinese_number(pay) + "文錢。”\n", ob[i]);
                                         delete_temp("marks/sit", ob[i]);
                                         set_temp("to_pay", 1, ob[i]);
@@ -293,7 +293,7 @@ void quarter_pass()
                         paytime++;
                         if( paytime == 6 && query_temp("total_pay", ob[i])){
                                 message_vision("酒保對$N大喝一聲：“怎麼還不付帳？！想吃霸王餐啊！”\n", ob[i]);
-                                message_vision("酒保叫來幾個大漢，指著$N說：“給我打！”\n", ob[i]);
+                                message_vision("酒保叫來幾個大漢，指着$N説：“給我打！”\n", ob[i]);
                                 message_vision("大漢們圍住$N，亂拳齊下。\n", ob[i]);
                                 delete_temp("total_pay", ob[i]);
                                 delete_temp("to_pay", ob[i]);
@@ -304,10 +304,10 @@ void quarter_pass()
                                 delete_temp("cai_4", ob[i]);
                                 delete_temp("cai_5", ob[i]);
                                 ob[i]->unconcious();
-                                message_vision("酒保撇撇嘴，說：“丟出去！”\n", ob[i]);
+                                message_vision("酒保撇撇嘴，説：“丟出去！”\n", ob[i]);
                                 message_vision("大漢們抬起$N，扔出了店門。\n", ob[i]);
                                 ob[i]->move(KICK_TO);
-                                tell_room(KICK_TO, "只見酒館大門一開，幾個大漢將一個昏迷不醒的家伙丟了出來。\n", ({ob[i]}));
+                                tell_room(KICK_TO, "只見酒館大門一開，幾個大漢將一個昏迷不醒的傢伙丟了出來。\n", ({ob[i]}));
                         }
                         else set_temp("to_pay", paytime, ob[i]);
                 }
@@ -320,7 +320,7 @@ int do_sit(string arg)
         object me = this_player();
 
         if (me->is_busy() || me->is_fighting())
-                return notify_fail("你正忙著呢！\n");
+                return notify_fail("你正忙着呢！\n");
         if (arg == "table" || arg == "zhuozi")
                 return notify_fail("你要坐在桌子上？那先把你煮熟了再端上來吧。\n");        
         if ( !arg || (arg != "chair" && arg != "yizi") )
@@ -333,7 +333,7 @@ int do_sit(string arg)
         message_vision("$N找了個空位座下，準備吃飯。\n", me);        
         if (query_temp("serve") == "無")
         {
-                message_vision("酒保走過來對$N說：“對不起您哪，現在不是用餐時間。”\n", me);        
+                message_vision("酒保走過來對$N説：“對不起您哪，現在不是用餐時間。”\n", me);        
                 message_vision("$N無奈地又站了起來。\n", me);        
                 return 1;
         }
@@ -346,7 +346,7 @@ int do_stand()
         object me = this_player();
 
         if( !query_temp("marks/sit", me) )
-                return notify_fail("你已經站著了，是不是站久了有點發昏啊？\n");        
+                return notify_fail("你已經站着了，是不是站久了有點發昏啊？\n");        
         if( query_temp("total_pay", me) )
                 return notify_fail("沒付錢(pay)就想走嗎？\n");        
         message_vision("$N拍拍屁股，站了起來。\n", me);        
@@ -361,11 +361,11 @@ int do_order(string arg)
         int i, count;
 
         if (me->is_busy() || me->is_fighting())
-                return notify_fail("你正忙著呢！\n");
+                return notify_fail("你正忙着呢！\n");
         if( !query_temp("marks/sit", me) )
-                return notify_fail("酒保用好象瞧見一個怪物一樣的眼神打量著你：“站著吃喝？有位子不坐，您不嫌累呀？”\n");
+                return notify_fail("酒保用好像瞧見一個怪物一樣的眼神打量着你：“站着吃喝？有位子不坐，您不嫌累呀？”\n");
         if (!arg)
-                return notify_fail("酒保不耐煩地說：“你究竟要什麼啊？”\n");
+                return notify_fail("酒保不耐煩地説：“你究竟要什麼啊？”\n");
                         
         serve = query_temp("serve");
         if (serve == "無")
@@ -377,13 +377,13 @@ int do_order(string arg)
                 if ((arg == food[i]["name"] || arg == food[i]["short"]) &&
                         serve == food[i]["time"])
                 {
-                        message_vision("$N沖酒保喊道：“來" + food[i]["unit"] + food[i]["name"] +"。”\n", me);
+                        message_vision("$N衝酒保喊道：“來" + food[i]["unit"] + food[i]["name"] +"。”\n", me);
                         if( query_temp("cai_count", me) >= 5 )
                         {
-                                message_vision("酒保奇怪地問$N：“您打算開宴呀？！先把桌上的吃完了再說！”\n", me);
+                                message_vision("酒保奇怪地問$N：“您打算開宴呀？！先把桌上的吃完了再説！”\n", me);
                                 return notify_fail("");
                         }
-                        message_vision("酒保喊著：“來～啦～”，給$N端來了" + food[i]["unit"] + food[i]["name"] +"。\n", me);
+                        message_vision("酒保喊着：“來～啦～”，給$N端來了" + food[i]["unit"] + food[i]["name"] +"。\n", me);
                         addn_temp("total_pay", food[i]["value"], me);
                         addn_temp("cai_count", 1, me);
                         set_temp("cai_"+count+"/name", food[i]["name"], me);
@@ -399,13 +399,13 @@ int do_order(string arg)
                         arg == liquid[i]["short"]) &&
                         serve == liquid[i]["time"])
                 {
-                        message_vision("$N沖酒保喊道：“來" + liquid[i]["unit"] + liquid[i]["name"] +"。”\n", me);
+                        message_vision("$N衝酒保喊道：“來" + liquid[i]["unit"] + liquid[i]["name"] +"。”\n", me);
                         if( query_temp("cai_count", me) >= 5 )
                         {
-                                message_vision("酒保奇怪地問$N：“您打算開宴呀？！先把桌上的吃完了再說！”\n", me);
+                                message_vision("酒保奇怪地問$N：“您打算開宴呀？！先把桌上的吃完了再説！”\n", me);
                                 return notify_fail("");
                         }
-                        message_vision("酒保喊著：“來～啦～”，給$N端來了" + liquid[i]["unit"] + liquid[i]["name"] +"。\n", me);
+                        message_vision("酒保喊着：“來～啦～”，給$N端來了" + liquid[i]["unit"] + liquid[i]["name"] +"。\n", me);
                         addn_temp("total_pay", liquid[i]["value"], me);
                         addn_temp("cai_count", 1, me);
                         set_temp("cai_"+count+"/name", liquid[i]["name"], me);
@@ -416,7 +416,7 @@ int do_order(string arg)
                         set_temp("cai_"+count+"/type", "liquid", me);
                         return 1;
                 }
-        return notify_fail("酒保不耐煩地說：“沒這樣菜！”\n");
+        return notify_fail("酒保不耐煩地説：“沒這樣菜！”\n");
 }
 
 int do_eat(string arg)
@@ -435,7 +435,7 @@ int do_eat(string arg)
         if (i == count) return 0;
         if( !query_temp("marks/sit", me) )
         {
-                write( "酒保用好象瞧見一個怪物一樣的眼神打量著你：“站著吃喝？有位子不坐，您不嫌累呀？”\n");
+                write( "酒保用好像瞧見一個怪物一樣的眼神打量着你：“站着吃喝？有位子不坐，您不嫌累呀？”\n");
                 return 1;
         }
         if (me->is_busy()) {
@@ -456,7 +456,7 @@ int do_eat(string arg)
         remaining--;
         if (remaining == 0)
         {
-                message_vision("$N將一"+query_temp("cai_"+i+"/unit", me)+query_temp("cai_"+i+"/name", me)+"吃得一幹二凈。\n",me);
+                message_vision("$N將一"+query_temp("cai_"+i+"/unit", me)+query_temp("cai_"+i+"/name", me)+"吃得一乾二淨。\n",me);
                 for (; i < count - 1; i++)
                 {
                         set_temp("cai_"+i+"/name",query_temp("cai_"+(i+1,  me)+"/name"), me);
@@ -489,7 +489,7 @@ int do_drink(string arg)
         if (i == count) return 0;
         if( !query_temp("marks/sit", me) )
         {
-                write( "酒保用好象瞧見一個怪物一樣的眼神打量著你：“站著吃喝？有位子不坐，您不嫌累呀？”\n");
+                write( "酒保用好像瞧見一個怪物一樣的眼神打量着你：“站着吃喝？有位子不坐，您不嫌累呀？”\n");
                 return 1;
         }
         if (me->is_busy())
@@ -511,7 +511,7 @@ int do_drink(string arg)
         remaining--;
         if (remaining == 0)
         {
-                message_vision("$N將一"+query_temp("cai_"+i+"/unit", me)+query_temp("cai_"+i+"/name", me)+"喝得一幹二凈。\n",me);
+                message_vision("$N將一"+query_temp("cai_"+i+"/unit", me)+query_temp("cai_"+i+"/name", me)+"喝得一乾二淨。\n",me);
                 for (; i < count - 1; i++)
                 {
                         set_temp("cai_"+i+"/name",query_temp("cai_"+(i+1,  me)+"/name"), me);
@@ -536,14 +536,14 @@ int do_pay()
                 return notify_fail("掌櫃賠笑道：“您是來做善事是嗎？不吃也付帳？”\n");
         if( query_temp("marks/sit", me) )
         {
-                message_vision("$N站起身來，走到櫃台前結帳。\n", me);
+                message_vision("$N站起身來，走到櫃枱前結帳。\n", me);
                 message_vision("掌櫃翻出菜單，撥打了一陣算盤後告訴$N：“一共" + MONEY_D->price_str(pay) + "。”\n", me);
-                message_vision("掌櫃沖著酒保嚷道：把這位客官桌子上的剩菜收拾幹凈。\n", me);
+                message_vision("掌櫃衝着酒保嚷道：把這位客官桌子上的剩菜收拾乾淨。\n", me);
         }
         else
         {
                 message_vision("$N向掌櫃問道：“還差多少？”\n", me);
-                message_vision("掌櫃翻了翻白眼，說道：“還差" + MONEY_D->price_str(pay) + "。”\n", me);
+                message_vision("掌櫃翻了翻白眼，説道：“還差" + MONEY_D->price_str(pay) + "。”\n", me);
         }
         delete_temp("marks/sit", me);
         delete_temp("cai_count", me);
@@ -553,7 +553,7 @@ int do_pay()
 
 int do_buy()
 {
-        write("酒保說道：“本店不外賣，請坐下來(sit)點菜(order)。”\n");
+        write("酒保説道：“本店不外賣，請坐下來(sit)點菜(order)。”\n");
         return 1;
 }
 
@@ -572,7 +572,7 @@ string look_sign()
         string serve;
         int i;
 
-        write("牌子上寫著：\n");
+        write("牌子上寫着：\n");
         serve = query_temp("serve");
         if (serve == "無")
         {
@@ -600,7 +600,7 @@ string look_table()
                 write("桌子上是空的。\n");
                 return "";
         }
-        write("你面前的桌子上放著：\n");
+        write("你面前的桌子上放着：\n");
         for (i = 0; i < count; i++)
         {
                 name=query_temp("cai_"+i+"/name", me);
@@ -629,7 +629,7 @@ int valid_leave(object me, string dir)
         if( query_temp("marks/sit", me) )
                 return notify_fail("你打算連椅子也搬出去？\n");        
         if( query_temp("total_pay", me) )
-                return notify_fail("酒保攔住你說：“不付錢就想溜？找扁啊！”\n");        
+                return notify_fail("酒保攔住你説：“不付錢就想溜？找扁啊！”\n");        
         delete_temp("cai_count", me);
         delete_temp("cai_1", me);
         delete_temp("cai_2", me);

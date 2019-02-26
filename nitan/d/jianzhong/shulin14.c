@@ -1,4 +1,4 @@
-//Room: songlin2.c 鬆林 
+//Room: songlin2.c 松林 
 //Date: Sep 22 1997
 
 inherit ROOM;

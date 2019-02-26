@@ -84,7 +84,7 @@ LONG );
                 "流星趕月" : (: ask_skill4 :),
                 "金面生蓮" : (: ask_skill5 :),
                 "胡家刀法" : "胡家刀法乃是我當年從胡世兄處習得，當真精妙無比。",
-                "胡一刀"   : "當年我中了姦人毒計殺害了他，令我遺憾終生！",
+                "胡一刀"   : "當年我中了奸人毒計殺害了他，令我遺憾終生！",
         ]));
 
         set("chat_chance_combat", 120);
@@ -140,7 +140,7 @@ void attempt_apprentice(object ob)
 
         command("sigh");
         command("recruit "+query("id", ob));
-        command("say 我本已打算不收徒弟，讓我田家與胡、苗、范三家的紛爭得以平息。");
+        command("say 我本已打算不收徒弟，讓我田家與胡、苗、範三家的紛爭得以平息。");
         command("say 可是這祖傳三十七勢苗家劍就在我處失傳，未免太過不孝。");
         return;
 }
@@ -162,7 +162,7 @@ int recognize_apprentice(object me, string skill)
 
         if( query("combat_exp", me)<400000 )
         {
-                command("say 你此時功力太淺，還是先打好基礎再說吧。");
+                command("say 你此時功力太淺，還是先打好基礎再説吧。");
                 return -1;
         }
 
@@ -174,12 +174,12 @@ int recognize_apprentice(object me, string skill)
 
         if (me->query_skill(skill, 1) >= 600)
         {
-               command("say 夠了！我就教你到這裡吧，武功還是"
+               command("say 夠了！我就教你到這裏吧，武功還是"
                        "要靠自己多研究才是！");
                return -1;
         }
 
-        command("say 看在當年我中了姦人毒計殺害了胡一刀，令我遺憾終生的事上，我就傳你苗家劍法。");
+        command("say 看在當年我中了奸人毒計殺害了胡一刀，令我遺憾終生的事上，我就傳你苗家劍法。");
         return 1;
 }
 
@@ -190,7 +190,7 @@ mixed ask_skill1()
         me = this_player();
 
         if( query("can_perform/miaojia-jian/zhai", me) )
-                return "自己下去練！還多說什麼？";
+                return "自己下去練！還多説什麼？";
 
         if (me->query_skill("miaojia-jian", 1) < 1)
                 return "你連苗家劍法都未學，何談絕招可言？";
@@ -217,7 +217,7 @@ mixed ask_skill1()
                        me, this_object());
 
         command("nod");
-        command("say 此招看似復雜，其實並不難練，你下去後自己體會吧。");
+        command("say 此招看似複雜，其實並不難練，你下去後自己體會吧。");
         tell_object(me, HIC "你學會了「雲邊摘月」。\n" NOR);
 
         if (me->can_improve_skill("sword"))
@@ -237,7 +237,7 @@ mixed ask_skill2()
         me = this_player();
 
         if( query("can_perform/miaojia-jian/zhu", me) )
-                return "自己下去練！還多說什麼？";
+                return "自己下去練！還多説什麼？";
 
         if (me->query_skill("miaojia-jian", 1) < 1)
                 return "你連苗家劍法都未學，何談絕招可言？";
@@ -258,7 +258,7 @@ mixed ask_skill2()
                 return "你的苗家劍法火候未到，還得多練習練習。";
 
         message_vision(HIY "$n" HIY "對$N" HIY "笑了笑，隨即伸出右手，"
-                       "中食二指並攏，捏作\n劍訣，“嗤”的一聲空點而出"
+                       "中食二指併攏，捏作\n劍訣，“嗤”的一聲空點而出"
                        "，霎時破空之聲驟響，一股\n氣勁從指尖迸發，將$N"
                        HIY "身旁的木幾穿透出一個小孔。\n" NOR, me,
                        this_object());
@@ -284,7 +284,7 @@ mixed ask_skill3()
         me = this_player();
 
         if( query("can_perform/miaojia-jian/qian", me) )
-                return "自己下去練！還多說什麼？";
+                return "自己下去練！還多説什麼？";
 
         if (me->query_skill("miaojia-jian", 1) < 1)
                 return "你連苗家劍法都未學，何談絕招可言？";
@@ -304,7 +304,7 @@ mixed ask_skill3()
         if (me->query_skill("miaojia-jian", 1) < 160)
                 return "你的苗家劍法火候未到，還得多練習練習。";
 
-        message_vision(HIY "$n" HIY "長嘆一聲，當下也不答話，從$N" HIY
+        message_vision(HIY "$n" HIY "長歎一聲，當下也不答話，從$N" HIY
                        "處接過配劍，將三\n十七勢苗家劍連環施出，霎時劍"
                        "光逼人，氣芒縱橫，龍吟\n不止。只見$n" HIY "所"
                        "施的三十七勢劍法竟如一勢，交替連\n環，一氣呵成"
@@ -332,7 +332,7 @@ mixed ask_skill4()
         me = this_player();
 
         if( query("can_perform/miaojia-jian/gan", me) )
-                return "自己下去練！還多說什麼？";
+                return "自己下去練！還多説什麼？";
 
         if (me->query_skill("miaojia-jian", 1) < 1)
                 return "你連苗家劍法都未學，何談絕招可言？";
@@ -354,7 +354,7 @@ mixed ask_skill4()
 
         message_vision(HIY "$n" HIY "凝視了$N" HIY "半天，緩緩地點了"
                        "點頭。當下拔出腰間配\n劍，劍走龍蛇，白光如虹"
-                       "，凝重處如山岳巍峙，輕靈處若\n清風無跡，神劍"
+                       "，凝重處如山嶽巍峙，輕靈處若\n清風無跡，神劍"
                        "之威，當真神鬼難測。舞到急處，$n" HIY "\n一聲"
                        "大喝，手中配劍竟然離手射出，化作一道流星，直"
                        "沒\n至柄插入$N" HIY "對面的牆壁中。\n" NOR,
@@ -389,7 +389,7 @@ mixed ask_skill5()
         me = this_player();
 
         if( query("can_perform/miaojia-jian/lian", me) )
-                return "自己下去練！還多說什麼？";
+                return "自己下去練！還多説什麼？";
 
         if (me->query_skill("miaojia-jian", 1) < 1)
                 return "你連苗家劍法都未學，何談絕招可言？";
@@ -411,9 +411,9 @@ mixed ask_skill5()
 
         message_sort(HIY "$n哈哈一笑，對$N" HIY "讚道：不"
                      "錯，不錯。依照你現在苗家劍法的造詣，"
-                     "我便傳授你金面生蓮又有何妨？說完便只"
+                     "我便傳授你金面生蓮又有何妨？説完便只"
                      "見$n從懷中摸出一本頗為古舊的小冊子，"
-                     "指著其中一段對$N" HIY "仔細講解。$N"
+                     "指着其中一段對$N" HIY "仔細講解。$N"
                      HIY "聽後沉思良久，若有所悟。" NOR,
                      me, this_object());
 

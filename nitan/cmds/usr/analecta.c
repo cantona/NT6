@@ -30,13 +30,13 @@ int main(object me, string arg)
                HIC + ")文章選集：\n" NOR WHT "──────────────────"
                "──────────────────\n" NOR;
 
-        // 閱讀最新文選
+        // 閲讀最新文選
         if (arg == "new" || arg && sscanf(arg, "new %d", year))
         {
                 analectas = ANALECTA_D->query_year_analecta(year);
                 if (! arrayp(analectas) || ! sizeof(analectas))
                         info += CYN " 現在 " WHT + year + CYN " 沒有任何新的文選"
-                                "供你閱讀。\n";
+                                "供你閲讀。\n";
                 else
                 {
                         i=query("analecta_last_read/"+year, me);
@@ -44,7 +44,7 @@ int main(object me, string arg)
                         analectas = filter_array(analectas, (: filter_analectas :), i);
                         if (! sizeof(analectas))
                                 info += CYN " 現在 " WHT + year + CYN " 年沒有任何"
-                                        "新的文選供你閱讀。\n";
+                                        "新的文選供你閲讀。\n";
                         else
                                 info += read_analecta(year, analectas[0],
                                                       member_array(analectas[0], analectas) + 1,
@@ -56,7 +56,7 @@ int main(object me, string arg)
         if (arg && sscanf(arg, "add %d from %s", i, name) == 2)
         {
                 if (! objectp(board = present(name, environment(me))))
-                        info += CYN " 這裡沒有 " WHT + name + 
+                        info += CYN " 這裏沒有 " WHT + name + 
                                 CYN " 這塊留言板。\n" NOR;
                 else
                 if (! SECURITY_D->valid_grant(me, "(immortal)") 
@@ -151,7 +151,7 @@ int main(object me, string arg)
                 info += CYN "年度 " WHT + year + CYN " 的文選有：\n\n" NOR;
                 info += list_analectas(analectas, year, me);
         }
-        // 閱讀指定年份的文章
+        // 閲讀指定年份的文章
         else
         if (arg && sscanf(arg, "%d %d", year, i) == 2)
         {
@@ -170,7 +170,7 @@ int main(object me, string arg)
                         info += read_analecta(year, analectas[i - 1], i, me);
                 }
         }
-        // 閱讀本年度文章或者列出其他年度文章
+        // 閲讀本年度文章或者列出其他年度文章
         else
         if (arg && sscanf(arg, "%d", i))
         {
@@ -215,7 +215,7 @@ int main(object me, string arg)
                         info += sort_string(CYN " 現在有 " WHT +
                                             implode(all_analecta, CYN "、" WHT) +
                                             CYN " 這 " WHT + sizeof(all_analecta) +
-                                            CYN " 年的文選供閱讀。\n" NOR, 86);
+                                            CYN " 年的文選供閲讀。\n" NOR, 86);
                 }
         }
         else return help(me);
@@ -253,7 +253,7 @@ string list_analectas(mapping *analectas, int year, object me)
         return info;
 }
 
-// 閱讀文選
+// 閲讀文選
 string read_analecta(int year, mapping analecta, int i, object me)
 {
         string info;
@@ -291,9 +291,9 @@ int help(object me)
                     [ convert <目錄> ] |
                     [ years ]
 
-本指令提供文選的閱讀、增加和刪除。閱讀時，除本年文選不需要
-指定年度外，其他的都要指定年度。 比如閱讀 2000 年第 3 號文
-選，即輸入 analecta 2000 3。 使用 new 參數可以閱讀你尚未閱
+本指令提供文選的閲讀、增加和刪除。閲讀時，除本年文選不需要
+指定年度外，其他的都要指定年度。 比如閲讀 2000 年第 3 號文
+選，即輸入 analecta 2000 3。 使用 new 參數可以閲讀你尚未閲
 讀的新文選。使用 years 參數可以列出目前有文選的年度。
 
 巫師可以使用 new 參數來添加文選，del 參數來刪除文選。 刪除

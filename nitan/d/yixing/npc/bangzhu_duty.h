@@ -12,20 +12,20 @@ int ask_join()
 
         if( ob_fam == "丐幫" )
         {
-                say(name() + "大怒道：" + RANK_D->query_rude(ob) + "一定是丐幫派來臥底的吧！\n");
+                say(name() + "大怒道：" + RANK_D->query_rude(ob) + "一定是丐幫派來卧底的吧！\n");
                 return 1;
         }
 
         if( ob_fam == "大理段家" )
         {
-                say(name() + "大怒道：" + RANK_D->query_rude(ob) + "一定是大理國派來臥底的吧！\n");
+                say(name() + "大怒道：" + RANK_D->query_rude(ob) + "一定是大理國派來卧底的吧！\n");
                 return 1;
         }
 
         if( ob_fam == "武當派" || ob_fam == "峨嵋派" || ob_fam == "華山派" ||
                 ob_fam == "少林派" || ob_fam == "南少林派" )
         {
-                say(name() + "大怒道：" + RANK_D->query_rude(ob) + "一定是名門正派派來臥底的吧！\n");
+                say(name() + "大怒道：" + RANK_D->query_rude(ob) + "一定是名門正派派來卧底的吧！\n");
                 return 1;
         }
 
@@ -43,7 +43,7 @@ int ask_join()
         }
         if( time()<query("party/entertime", ob)+600 )
         {
-                say(name() + "大怒道：" + RANK_D->query_rude(ob) + "，你如此反復無常豈能容身于江湖！！！\n");
+                say(name() + "大怒道：" + RANK_D->query_rude(ob) + "，你如此反覆無常豈能容身於江湖！！！\n");
                 return 1;
         }
         message_vision("$N重重地拍了一下$n的肩膀，喝道：好樣的！從今以後跟兄弟們有難同當！\n", this_object(), ob);
@@ -62,11 +62,11 @@ int ask_join()
         set("fam", myfam, obj);
         set("combat_exp", query("combat_exp"), obj);
         obj->set("long",
-"這是"+myfam+"的幫令，上面刻著「"+query("name", ob)+"」。\n");
+"這是"+myfam+"的幫令，上面刻着「"+query("name", ob)+"」。\n");
         obj->move(ob);
         message_vision("$N把一"+query("unit", obj)+obj->name()+"扔給$n。\n",this_object(),ob);
 
-        log_file("test/BangJoin",sprintf("%s于%s時加入%s\n",query("name", ob),ctime(time()),myfam));
+        log_file("test/BangJoin",sprintf("%s於%s時加入%s\n",query("name", ob),ctime(time()),myfam));
         return 1;
 }
 #include "guanjia.h"
@@ -93,7 +93,7 @@ string ask_job()
 
         myfam = (string)query("fam");
         if( query_temp("bangs/fam", me) != myfam )
-                return RANK_D->query_rude(me) + "莫非是想打聽我幫的秘密吧。";
+                return RANK_D->query_rude(me) + "莫非是想打聽我幫的祕密吧。";
 
         if( objectp(leader = me->query_leader()) ) {
                 if( leader != this_object() )
@@ -167,7 +167,7 @@ string ask_job()
                                 dest = load_object(file);
                         ob->move(dest);            
                         message("vision",
-                        ob->name() + "押著鏢車走了過來。\n",
+                        ob->name() + "押着鏢車走了過來。\n",
                         dest, ({ob}));
                         region = explode(file, "/")[1];
                         set("job/name",query("nickname",  ob), ling);
@@ -183,7 +183,7 @@ string ask_job()
                         if( !dest || !biaoju ) {
                                 destruct(ob);
                                 command("shake");
-                                return "你歇著吧，最近沒有要緊的幫務。";
+                                return "你歇着吧，最近沒有要緊的幫務。";
                         }
 
                         file = base_name(dest);
@@ -191,7 +191,7 @@ string ask_job()
                          || !mapp(query("exits", dest))){
                                 destruct(ob);
                                 command("shake");
-                                return "你歇著吧，最近沒有要緊的幫務。";
+                                return "你歇着吧，最近沒有要緊的幫務。";
                         }
 
                         command("nod");
@@ -241,7 +241,7 @@ string ask_job()
                 starts = keys(info_destine);
                 if( member_array(region, starts) == -1 ) {
                         command("shake");
-                        return "你歇著吧，最近沒有要緊的幫務。";
+                        return "你歇着吧，最近沒有要緊的幫務。";
                 }
                 destine = info_destine[region];
                 mydests = keys(destine);
@@ -257,11 +257,11 @@ string ask_job()
                 set("helper", me, ob);
                 command("nod");
                 call_out("do_start", 1, this_object(), ob);
-                return "說道：我最近身體不適，你護送我至" + region_names[mydest] + "。\n";
+                return "説道：我最近身體不適，你護送我至" + region_names[mydest] + "。\n";
         }
 
         command("shake");
-        return "你歇著吧，最近沒有要緊的幫務。";
+        return "你歇着吧，最近沒有要緊的幫務。";
 }
 
 void do_start(object me, object ob)
@@ -298,7 +298,7 @@ int accept_object(object who, object ob)
                         return notify_fail(name() + "大怒道：沒有用的東西，連自己的幫務都記不住？！\n");
                 bonus=job["bonus"]*job["max"]/(query("combat_exp", who)+1000);
                 record = bonus / 2 + random(bonus);
-                log_file("test/BangJob",sprintf("%s于%s時找到%s得%s經驗點\n",query("name", who),ctime(time()),chname,chinese_number(record)));
+                log_file("test/BangJob",sprintf("%s於%s時找到%s得%s經驗點\n",query("name", who),ctime(time()),chname,chinese_number(record)));
                 bonus = job["score"];
                 break;
 
@@ -310,7 +310,7 @@ int accept_object(object who, object ob)
                 bonus=query("combat_exp", ob);
                 bonus=bonus*120/(bonus+query("combat_exp", who));
                 record = bonus + random(bonus);
-                log_file("test/BangJob",sprintf("%s于%s時因截鏢得%s經驗點\n",query("name", who),ctime(time()),chinese_number(record)));
+                log_file("test/BangJob",sprintf("%s於%s時因截鏢得%s經驗點\n",query("name", who),ctime(time()),chinese_number(record)));
                 bonus /= 4;
                 break;
         default:
@@ -337,10 +337,10 @@ string ask_skills()
         int amount;
 
         if( is_fighting() )
-                return RANK_D->query_rude(me) + "瞎了眼沒見我正忙著？！";
+                return RANK_D->query_rude(me) + "瞎了眼沒見我正忙着？！";
 
         if( query_temp("bangs/fam", me) != query("fam") )
-                return RANK_D->query_rude(me) + "莫非是想打聽我幫的秘密吧。";
+                return RANK_D->query_rude(me) + "莫非是想打聽我幫的祕密吧。";
 
         if( !(ling = present("bang ling", me)) )
                 return RANK_D->query_rude(me) + "竟連自己的幫令都管不住！";
@@ -369,12 +369,12 @@ int do_xue(string arg)
         int i, amount, level, mylvl;
 
         if( !(amount=query_temp("bangs/skills_asked", me))){
-                write("你還沒征求幫主同意呢。\n");
+                write("你還沒徵求幫主同意呢。\n");
                 return 1;
         }
 
         if( is_fighting() ) {
-                say(name() + "大怒道：" + RANK_D->query_rude(me) + "瞎了眼沒見我正忙著？！");
+                say(name() + "大怒道：" + RANK_D->query_rude(me) + "瞎了眼沒見我正忙着？！");
                 return 1;
         }
 

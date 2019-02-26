@@ -11,7 +11,7 @@ inherit F_MASTER;
 void create()
 {
         set_name("靜玄師太", ({ "jingxuan shitai","jingxuan","shitai"}));
-        set("long", "她是峨嵋派大師姐，跟隨滅絕師太二十余載，"
+        set("long", "她是峨嵋派大師姐，跟隨滅絕師太二十餘載，"
                     "峨嵋派的功夫已盡得所傳。\n");
         set("gender", "女性");
         set("age", 42);
@@ -112,19 +112,19 @@ int do_nod(string arg)
         command("smile");
         command("say 我講個故事你聽：\n");
 
-        message("vision", "靜玄師太對著"+me->name()+"講了幾句話。\n",
+        message("vision", "靜玄師太對着"+me->name()+"講了幾句話。\n",
                         environment(me), ({me}) );
 
         switch(random(2)) {
                 case 0:
-                write("靜玄師太說：羅漢和尚曾住在峨嵋山延福院裡。
-            有僧人問他：什麼是西來大意？　他說；井中紅燄，日裡浮漚。
+                write("靜玄師太説：羅漢和尚曾住在峨嵋山延福院裏。
+            有僧人問他：什麼是西來大意？　他説；井中紅焰，日裏浮漚。
             僧人問：這怎麼領會？　羅漢和尚是怎樣回答他的呢？\n\n");
 
                 if ((int)me->query_skill("mahayana", 1) > 60 + random(10)) {
-                        write("你想起在一部書裡讀到過這個典故。\n");
-                        write("你說：遙指扶桑日那邊。\n\n");
-                        message("vision", me->name()+"想了一下，跟靜玄師太說了幾句話。\n",
+                        write("你想起在一部書裏讀到過這個典故。\n");
+                        write("你説：遙指扶桑日那邊。\n\n");
+                        message("vision", me->name()+"想了一下，跟靜玄師太説了幾句話。\n",
                                 environment(me), ({me}) );
 
                         command("say 阿彌陀佛，善哉！善哉！好吧，我就收下你了。");
@@ -138,14 +138,14 @@ int do_nod(string arg)
                 break;
 
                 case 1:
-                write("靜玄師太說：密印安民曾在華藏寺開法。
+                write("靜玄師太説：密印安民曾在華藏寺開法。
             密印安民有一次請教名僧圓悟：什麼是古帆未掛？
-            圓悟說：庭前柏樹子。密印安民大悟徹悟後說了什麼？\n\n");
+            圓悟説：庭前柏樹子。密印安民大悟徹悟後説了什麼？\n\n");
 
                 if ((int)me->query_skill("mahayana", 1) > 60 + random(10)) {
-                        write("你想起在一部經書裡讀到過這個典故。\n");
-                        write("你答道：古人說“一滴投于巨壑”，殊不知大海也投于一滴！。\n\n");
-                        message("vision", me->name()+"想了一下，跟靜玄師太說了幾句話。\n",
+                        write("你想起在一部經書裏讀到過這個典故。\n");
+                        write("你答道：古人説“一滴投於巨壑”，殊不知大海也投於一滴！。\n\n");
+                        message("vision", me->name()+"想了一下，跟靜玄師太説了幾句話。\n",
                                 environment(me), ({me}) );
 
                         command("say 阿彌陀佛，善哉！善哉！好吧，我就收下你了。");

@@ -11,7 +11,7 @@ void create()
 {
         set_name("胡青牛", ({ "hu qingniu", "hu" }));
         set("long", 
-                "他就是明教號稱見死不救的胡青牛，據說他精通醫理，可以起死回\n"
+                "他就是明教號稱見死不救的胡青牛，據説他精通醫理，可以起死回\n"
                 "生。但他從不醫教外人士。\n");
         set("gender", "男性");
             set("title",HIG "明教" NOR "教眾");
@@ -60,7 +60,7 @@ int ask_me()
         }
         else
         {
-                message_vision("胡青牛喂$N服下一顆藥丸,然後盤膝坐下，雙掌貼著$N的背心。\n", ob);
+                message_vision("胡青牛喂$N服下一顆藥丸,然後盤膝坐下，雙掌貼着$N的背心。\n", ob);
                 remove_call_out("recover");
                 call_out("recover",2,ob);
                 return 1;

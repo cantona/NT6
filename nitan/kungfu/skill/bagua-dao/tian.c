@@ -43,7 +43,7 @@ int perform(object me, object target)
                 return notify_fail("你沒有激發八卦刀法，難以施展" TIAN "。\n");
 
         if (! living(target))
-                return notify_fail("對方都已經這樣了，用不著這麼費力吧？\n");
+                return notify_fail("對方都已經這樣了，用不着這麼費力吧？\n");
 
         message_combatd(HIY "$N" HIY "驀地一振手中" + weapon->name() +
                         HIY "，發出萬千龍吟，霎時刀光滾滾，向四面湧出"

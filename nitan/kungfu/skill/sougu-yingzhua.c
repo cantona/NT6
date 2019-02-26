@@ -19,15 +19,15 @@ mapping *action = ({
         "lvl"    : 10,
         "skill_name" : "掏爪式"
 ]),
-([        "action" : "\n$N左爪護胸，右爪凝勁後發，一招"HIC"「托爪式」"NOR"，緩緩托向$n的$l",
+([        "action" : "\n$N左爪護胸，右爪凝勁後發，一招"HIC"「託爪式」"NOR"，緩緩託向$n的$l",
         "lvl"    : 20,
-        "skill_name" : "托爪式"
+        "skill_name" : "託爪式"
 ]),
 ([        "action" : "\n$N身形詭異，疾速前撲，使一招"HIG"「撩爪式」"NOR"，直撩$n襠部",
         "lvl"    : 35,
         "skill_name" : "撩爪式"
 ]),
-([        "action" : "\n$N身形飄忽，陡然轉到$n身後，一招"HIW"「鎖爪式」"NOR"，雙爪直向$n嚥喉插下",
+([        "action" : "\n$N身形飄忽，陡然轉到$n身後，一招"HIW"「鎖爪式」"NOR"，雙爪直向$n咽喉插下",
         "lvl"    : 60,
         "skill_name" : "鎖爪式"
 ]),

@@ -12,8 +12,8 @@ void create()
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("long", "雞豆花色白細嫩，湯清味鮮，源于豆花，高于豆花，
-被譽名為“豆花不用豆，吃雞不見雞”的佳肴美饌。\n");
+                set("long", "雞豆花色白細嫩，湯清味鮮，源於豆花，高於豆花，
+被譽名為“豆花不用豆，吃雞不見雞”的佳餚美饌。\n");
                 set("unit", "只");
                 set("value", 300);
                 set("food_remaining", 5);

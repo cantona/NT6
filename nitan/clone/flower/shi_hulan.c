@@ -11,7 +11,7 @@ void create()
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("long","這是一朵花繁似錦，美艷絕倫的石斛蘭，花瓣外觀雅致絢麗，\n花朵中央有紫墨色的花暈，代表著“愛你永不變”。\n");
+                set("long","這是一朵花繁似錦，美豔絕倫的石斛蘭，花瓣外觀雅緻絢麗，\n花朵中央有紫墨色的花暈，代表着“愛你永不變”。\n");
                 set("unit", "束");
                 set("base_value", 45);
                 set("base_unit", "朵");

@@ -9,7 +9,7 @@ void create()
         set("short", "鹿港");
         set("long", @LONG
 鹿港地瀕海濱，風帆爭飛、萬商畢集，是海峽兩岸貿易的中部要港、
-台灣中部的門戶。俗諺雲：一府二鹿三笨港，乃指鹿港為全台僅次于台
+台灣中部的門户。俗諺雲：一府二鹿三笨港，乃指鹿港為全台僅次於台
 灣府的第二大城。
     海港內有舟(zhou)船來往澎湖。
 LONG );
@@ -52,6 +52,6 @@ int do_enter ( string arg )
 }
 void tpenghu(object ob )
 {
-        tell_object(ob , "兵舟終于抵達了海峽中一個大島。你走下船來。\n" ) ;
+        tell_object(ob , "兵舟終於抵達了海峽中一個大島。你走下船來。\n" ) ;
         ob->move (__DIR__"penghu") ;
 }

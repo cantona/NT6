@@ -37,7 +37,7 @@ mapping *action=({
         "damage_type" : "瘀傷"
 ]),
 ([      "action" : "$N一招" HIW "『雲陣居震為雲門』" NOR "倏忽欺至$n身前，含胸收腹，頭緩緩低"
-                   "下，似乎顯得沒精打採，一記雲掌軟綿綿的拍向$n",
+                   "下，似乎顯得沒精打采，一記雲掌軟綿綿的拍向$n",
         "force" : 230,
         "attack": 35,
         "dodge" : 107,
@@ -47,8 +47,8 @@ mapping *action=({
         "skill_name" : "雲陣居震為雲門",
         "damage_type" : "瘀傷"
 ]),
-([      "action" : "$N一招" HIR "『飛龍居坎飛龍門』" NOR "突然縱起丈余，頭下腳上，倒過身子，"
-                   "猶如一只在空中盤旋的飛龍，一掌拍向$n",
+([      "action" : "$N一招" HIR "『飛龍居坎飛龍門』" NOR "突然縱起丈餘，頭下腳上，倒過身子，"
+                   "猶如一隻在空中盤旋的飛龍，一掌拍向$n",
         "force" : 270,
         "attack": 40,
         "dodge" : 129,
@@ -58,7 +58,7 @@ mapping *action=({
         "skill_name" : "飛龍居坎飛龍門",
         "damage_type" : "瘀傷"
 ]),
-([      "action" : "$N一招" MAG "『武翼居兌武翼門』" NOR "身如陀螺急轉，展開輕功圍著$n快速遊"
+([      "action" : "$N一招" MAG "『武翼居兑武翼門』" NOR "身如陀螺急轉，展開輕功圍着$n快速遊"
                    "走，忽然飛身而起，一掌拍向$n的$l",
         "force" : 320,
         "attack": 48,
@@ -66,11 +66,11 @@ mapping *action=({
         "parry" : 118,
         "damage": 38,
         "lvl"   : 150,
-        "skill_name" : "武翼居兌武翼門",
+        "skill_name" : "武翼居兑武翼門",
         "damage_type" : "瘀傷"
 ]),
 ([      "action" : "$N錯步上前，一招" CYN "『鳥翔居離鳥翔門』" NOR "招招搶先，以快打慢，猶如"
-                   "一只展翅翱翔的大鵬，輕輕一躍已經到了$n的身後，運掌如風推\n向$n的大椎穴",
+                   "一隻展翅翱翔的大鵬，輕輕一躍已經到了$n的身後，運掌如風推\n向$n的大椎穴",
         "force" : 360,
         "attack": 61,
         "dodge" : 153,
@@ -138,7 +138,7 @@ mapping query_action(object me, object weapon)
 int practice_skill(object me)
 {
         if( query("qi", me)<100 )
-                return notify_fail("你現在手足酸軟，休息一下再練吧。\n");
+                return notify_fail("你現在手足痠軟，休息一下再練吧。\n");
 
         if( query("neili", me)<80 )
                 return notify_fail("你的內力不夠了。\n");

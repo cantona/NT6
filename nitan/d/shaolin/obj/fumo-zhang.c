@@ -19,7 +19,7 @@ LONG );
         set("no_sell", 1);
         set("material", "steel");
         set("wield_msg", HIY "只聽「錚」的一聲，伏魔杖騰空而出，自行躍入$N掌中。
-瞬時天際間風雲變色，電閃雷鳴，彌漫著一片無邊殺意。\n" NOR);
+瞬時天際間風雲變色，電閃雷鳴，瀰漫着一片無邊殺意。\n" NOR);
         set("unwield_msg", HIY "伏魔杖自$N掌中飛起，在半空中一轉，「唰」地靠在$N身後。\n" NOR);
         init_staff(200);
         set("stable", 100);

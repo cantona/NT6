@@ -6,7 +6,7 @@ void create()
         set_name("漁夫", ({ "yu fu", "yu", "fu" }));
         set("gender", "男性");
         set("age", 40 + random(10));
-        set("long", "一個頭戴鬥笠的漁夫，正悠然自得地在岸邊垂釣。\n");
+        set("long", "一個頭戴斗笠的漁夫，正悠然自得地在岸邊垂釣。\n");
 
         set("attitude", "friendly");
 

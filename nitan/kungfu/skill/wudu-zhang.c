@@ -7,7 +7,7 @@ string type() { return "martial"; }
 string martialtype() { return "skill"; }
 
 mapping *action = ({
-([        "action" : "$N雙手一翻，兩掌帶著淡淡的藍光，直向$n拍去",
+([        "action" : "$N雙手一翻，兩掌帶着淡淡的藍光，直向$n拍去",
         "lvl" : 0,
         "skill_name" : "五毒掌"
 ]),
@@ -15,7 +15,7 @@ mapping *action = ({
         "lvl" : 10,
         "skill_name" : "五毒掌"
 ]),
-([        "action" : "$N雙掌翻飛，四周迷茫著一股暗淡的霧氣，排向$n的全身",
+([        "action" : "$N雙掌翻飛，四周迷茫着一股暗淡的霧氣，排向$n的全身",
         "lvl" : 20,
         "skill_name" : "五毒掌"
 ]),
@@ -23,7 +23,7 @@ mapping *action = ({
         "lvl" : 30,
         "skill_name" : "五毒掌"
 ]),
-([        "action" : "$N默運內力，雙掌忽然變黑，帶著一股陰風只撲$n的全身",
+([        "action" : "$N默運內力，雙掌忽然變黑，帶着一股陰風只撲$n的全身",
         "lvl" : 40,
         "skill_name" : "五毒掌"
 ])
@@ -86,7 +86,7 @@ void skill_improved(object me)
 {
         if( random(15)<1 && query("per", me)>5 )
         {
-                tell_object(me, HIR"你忽然覺得體內毒氣狂竄，面上頓時罩著一層黑氣！\n" NOR );
+                tell_object(me, HIR"你忽然覺得體內毒氣狂竄，面上頓時罩着一層黑氣！\n" NOR );
                 addn("per", -1, me);
         }
 }

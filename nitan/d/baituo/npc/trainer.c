@@ -36,7 +36,7 @@ void attempt_apprentice(object ob)
         if( query("born_family", ob) != "歐陽世家" )
         {
                 command("shake");
-                command("say 哪裡來的家伙？居然敢來白駝山添亂？");
+                command("say 哪裏來的傢伙？居然敢來白駝山添亂？");
                 return;
         }
 
@@ -49,7 +49,7 @@ int accept_fight(object ob)
         if( query("born_family", ob) != "歐陽世家" )
         {
                 command("shake");
-                command("say 哪裡來的家伙居然敢來白駝山添亂？");
+                command("say 哪裏來的傢伙居然敢來白駝山添亂？");
                 return 0;
         }
 

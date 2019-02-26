@@ -11,7 +11,7 @@ void create()
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("long", "一張詭秘的卡片，據說用它可以陷害別人。\n");
+                set("long", "一張詭祕的卡片，據説用它可以陷害別人。\n");
                 set("value", 1);
                 set("no_sell", 1);
                 set("unit", "張");

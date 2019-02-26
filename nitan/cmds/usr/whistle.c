@@ -33,7 +33,7 @@ int main(object me, string arg)
         }
                         
         if( me->is_busy() || query("doing", me) )
-                return notify_fail("你現在正忙呢，等你有空了再說吧。\n");
+                return notify_fail("你現在正忙呢，等你有空了再説吧。\n");
  
         if (me->is_in_prison())   
                 return notify_fail("你正在做牢呢，你想幹什麼？！\n"); 
@@ -48,10 +48,10 @@ int main(object me, string arg)
                 return notify_fail("你不知道如何召喚這個魔幻獸。\n");
         
         if( query("warcraft/status", me) == "died" )
-                return notify_fail("你的魔幻獸已經死亡，請到張天師那裡讓它先復活。\n");
+                return notify_fail("你的魔幻獸已經死亡，請到張天師那裏讓它先復活。\n");
 
         if( query("no_magic", environment(me)) || query("no_fly", environment(me)) )
-                return notify_fail("你發現這裡有點古怪，你的魔幻獸好象不能進來！\n");    
+                return notify_fail("你發現這裏有點古怪，你的魔幻獸好像不能進來！\n");    
          
         call_other(file, "???");
         ob = find_object(file);

@@ -4,10 +4,10 @@ inherit NPC;
 void create()
 {
         set_name("張康年", ({ "zhang kangnian", "zhang", "kangnian" }));
-        set("title", HIR "御前侍衛" NOR);
+        set("title", HIR "御前侍衞" NOR);
         set("age", 32);
         set("gender", "男性");
-        set("long", "一個身材魁梧的中年男子，他便是御前侍衛張康年。\n");
+        set("long", "一個身材魁梧的中年男子，他便是御前侍衞張康年。\n");
         set("attitude", "peaceful");
 
         set("str", 30);

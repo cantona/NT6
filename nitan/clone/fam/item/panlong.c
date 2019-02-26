@@ -9,7 +9,7 @@ void create()
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("long", HIW "由穹外隕星中提煉出的神秘金屬煉制而成，世所罕見。\n" NOR);
+                set("long", HIW "由穹外隕星中提煉出的神祕金屬煉製而成，世所罕見。\n" NOR);
                 set("unit", "束");
                 set("value", 9000);
                 set("item_origin", 1);

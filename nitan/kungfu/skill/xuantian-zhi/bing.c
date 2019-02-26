@@ -42,10 +42,10 @@ int perform(object me, object target)
                 return notify_fail("你的真氣不夠，無法使用" BING "。\n");
 
         if (! living(target))
-                return notify_fail("對方都已經這樣了，用不著這麼費力吧？\n");
+                return notify_fail("對方都已經這樣了，用不着這麼費力吧？\n");
 
         msg = HIW "$N" HIW "默運玄天無極功，頓時一層寒霜籠罩全身，一聲冷"
-              "笑，聚力于指，直戳$n" HIW "要穴！\n"NOR;  
+              "笑，聚力於指，直戳$n" HIW "要穴！\n"NOR;  
 
         lvl = me->query_skill("xuantian-zhi", 1);
 

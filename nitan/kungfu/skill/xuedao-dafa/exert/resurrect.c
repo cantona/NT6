@@ -50,7 +50,7 @@ int exert(object me, object target)
 
         if (random(10) < 3)
         {
-                tell_object(me, HIC "由于你過度的催動真元，導致你的內"
+                tell_object(me, HIC "由於你過度的催動真元，導致你的內"
                                 "力有所損耗。\n" NOR);
                 addn("max_neili", -1, me);
         }

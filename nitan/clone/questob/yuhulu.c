@@ -12,7 +12,7 @@ void create()
                 set_default_object(__FILE__);
         else {
                 set("unit", "只");
-                set("long", "這是一個美玉雕刻的葫蘆，玲瓏精致。\n");
+                set("long", "這是一個美玉雕刻的葫蘆，玲瓏精緻。\n");
                 set("value", 8000);
                 set("material", "jade");
         }

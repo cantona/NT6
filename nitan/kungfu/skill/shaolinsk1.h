@@ -99,7 +99,7 @@ int do_ask(string arg)
                  }
        
                  message_vision(HIY "$n" HIY "點了點頭，伸手將$N" HIY "招至" 
-                                    "身邊，在耳旁低聲細說良久，$N" HIY "聽" 
+                                    "身邊，在耳旁低聲細説良久，$N" HIY "聽" 
                                     "後會\n心的一笑，看來大有所悟。\n" NOR, me, ob); 
                                                                         
                  command("nod"); 

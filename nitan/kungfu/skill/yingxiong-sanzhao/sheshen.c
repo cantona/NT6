@@ -1,10 +1,10 @@
-// sheshen.c 舍身技
+// sheshen.c 捨身技
 
 #include <ansi.h>
 
 inherit F_SSERVER;
 
-string name() { return "舍身"; }
+string name() { return "捨身"; }
 
 int perform(object me, object target)
 {
@@ -18,32 +18,32 @@ int perform(object me, object target)
         if( !target
         ||      !target->is_character()
         ||      !me->is_fighting(target) )
-                return notify_fail("舍身只能對戰鬥中的對手使用。\n");
+                return notify_fail("捨身只能對戰鬥中的對手使用。\n");
 
         if( me->is_ghost() || query("eff_qi", me)<0 )
                 return notify_fail("你已經死了。\n");
 
 
         if( me->is_busy() )
-                return notify_fail("你現在忙著呢，使不出這一招。\n");
+                return notify_fail("你現在忙着呢，使不出這一招。\n");
 
 
 //        if( !me->query("yinliting_teach") )
-//                 return notify_fail("你未得教主傳授，不會使用舍身。\n");
+//                 return notify_fail("你未得教主傳授，不會使用捨身。\n");
 
         if( (int)me->query_skill("strike") < 250 )
-                return notify_fail("你的英雄三招極不夠嫻熟，不會使用舍身。\n");
+                return notify_fail("你的英雄三招極不夠嫻熟，不會使用捨身。\n");
 //        if( me->query("neili") >= 100 || me->query("qi") >= 200)
 //                                               return notify_fail("你未到山窮水盡之地，不需用此狠招！\n")
         if( (int)me->query_skill("shenlong-xinfa", 1) < 250 && (int)me->query_skill("busi-shenlong", 1) < 250 )
-                return notify_fail("你的內功修為不夠，不會使用舍身。\n");
+                return notify_fail("你的內功修為不夠，不會使用捨身。\n");
 
         if( me->query_skill_mapped("force") != "shenlong-xinfa" &&
             me->query_skill_mapped("force") != "busi-shenlong" )
-                return notify_fail("你所用的內功于英雄三招氣路相悖！\n");
+                return notify_fail("你所用的內功於英雄三招氣路相悖！\n");
 
         if( query("combat_exp", me)<500000 )
-                return notify_fail("你實戰經驗不足，不會使用舍身。\n");
+                return notify_fail("你實戰經驗不足，不會使用捨身。\n");
 
         if( query("shen", target)>10000 )
                 shen=-query("shen", me)/50;
@@ -57,7 +57,7 @@ int perform(object me, object target)
 
         if( mine>query("combat_exp", target)/3*2 )
         {
-                msg += HIR"$n"+HIR"猝不及防之下，被$N撲個正著，只覺渾身灼熱無比，卻又渾身動彈不得，\n忍不住了發出一聲聲凄厲的慘叫！！！$n面目變的猙獰可怕，垂死前的掙紮終于停止了。\n兩人都耗盡所有的氣力，只留下驚心動魄的悲慘一幕！！！\n" NOR;
+                msg += HIR"$n"+HIR"猝不及防之下，被$N撲個正着，只覺渾身灼熱無比，卻又渾身動彈不得，\n忍不住了發出一聲聲淒厲的慘叫！！！$n面目變的猙獰可怕，垂死前的掙扎終於停止了。\n兩人都耗盡所有的氣力，只留下驚心動魄的悲慘一幕！！！\n" NOR;
                 message_combatd(msg, me, target);
                 addn("max_neili", -(30+random(30)), me);
                 addn("combat_exp", -exp, me);
@@ -67,8 +67,8 @@ int perform(object me, object target)
                 me->start_busy(3 + random(3));
                 if( !target->is_busy() )
                         target->start_busy(3 + random(3));
-                set_temp("die_reason", "與"+target->name(1)+"同歸于盡", me);
-                set_temp("die_reason", "與"+me->name(1)+"同歸于盡", target);
+                set_temp("die_reason", "與"+target->name(1)+"同歸於盡", me);
+                set_temp("die_reason", "與"+me->name(1)+"同歸於盡", target);
                 me->die();
                 target->die();
                 return 1;

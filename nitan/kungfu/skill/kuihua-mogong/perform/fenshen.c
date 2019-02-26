@@ -66,7 +66,7 @@ int perform(object me, object target)
         }
         else
         {
-                message_sort(HIM "\n$N趕緊收攝住心神，小心的移動著腳步，將$n這招化解。\n" NOR, target, me);
+                message_sort(HIM "\n$N趕緊收攝住心神，小心的移動着腳步，將$n這招化解。\n" NOR, target, me);
         }
                 
         return 1;

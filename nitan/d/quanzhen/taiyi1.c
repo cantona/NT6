@@ -8,7 +8,7 @@ void create()
         set("short", "太乙池");
         set("long", @LONG
 你眼前出現一個山間湖泊，這就是著名的太乙池 (chi)，傳為唐
-天寶年間地震造成，四周高峰環列，池面碧波盪漾，山光水影，風景
+天寶年間地震造成，四周高峯環列，池面碧波盪漾，山光水影，風景
 十分優美。
 LONG
         );
@@ -42,7 +42,7 @@ int do_jump(string arg)
         c_exp=query("combat_exp", me);
         if( !arg || arg != "chi")
         {
-                write("你往哪裡跳呀? \n");
+                write("你往哪裏跳呀? \n");
                 return 1;
         }
         inv = all_inventory(me);
@@ -50,7 +50,7 @@ int do_jump(string arg)
         {
           if (inv[i]->is_character())
              {
-              return notify_fail("你要跳？自己一個人跳吧，帶著別人幹嗎？\n");
+              return notify_fail("你要跳？自己一個人跳吧，帶着別人幹嗎？\n");
              }
         }  
         message_vision("$N往太乙池中跳去。\n", me);

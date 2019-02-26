@@ -8,8 +8,8 @@ void create()
 {
         set("short", HIY"懸崖"NOR);
         set("long", @LONG
-你來到懸崖之上，突然在對而傳來幾聲狼嗥，甚是凄厲可怖。只見
-對面幾只大灰狼仰起頭，向著你張牙舞爪的嗥叫，想是要食之果腹，只
+你來到懸崖之上，突然在對而傳來幾聲狼嗥，甚是淒厲可怖。只見
+對面幾隻大灰狼仰起頭，向着你張牙舞爪的嗥叫，想是要食之果腹，只
 是之間有一條深不見底的萬丈峽谷，無法過來。
 LONG        );
         set("exits", ([ /* sizeof() == 1 */
@@ -36,16 +36,16 @@ int do_jump(string arg)
                 {
                         message("vision", me->name() + "一個縱身，跳下了懸崖。\n", environment(me), ({me}) );
                         write(HIR"\n你向下一跳，直向萬丈深淵掉去！！！\n\n"NOR);
-                        write(HIR"\n你下落的速度太快，沖開彌漫之霧，直向下墮！！！\n\n"NOR);
+                        write(HIR"\n你下落的速度太快，衝開瀰漫之霧，直向下墮！！！\n\n"NOR);
                         write(HIR"\n你只覺身旁風聲虎虎，身子不斷的向下摔落......\n偶爾見到峭壁上有樹枝伸出，便想去抓，但下落之\n力太大，樹枝喀喇的一聲斷了！！！\n\n"NOR);
-                        write(HIY"\n但，你的下落速度慢了一點，急忙使一招“烏龍絞柱”，牢牢的抱住了鬆樹。\n\n"NOR);
+                        write(HIY"\n但，你的下落速度慢了一點，急忙使一招“烏龍絞柱”，牢牢的抱住了松樹。\n\n"NOR);
                         me->move(__DIR__"songshu");
-                        message("vision", me->name() + "死死的抱住了這棵小鬆樹。\n", environment(me), ({me}) );
+                        message("vision", me->name() + "死死的抱住了這棵小松樹。\n", environment(me), ({me}) );
                 }
                 else {
                         message("vision", me->name() + "一個縱身，跳下了懸崖。\n", environment(me), ({me}) );
                         write(HIR"\n你向下一跳，直向萬丈深淵掉去！！！\n\n"NOR);
-                        write(HIR"\n你下落的速度太快，沖開彌漫之霧，直向下墮！！！\n\n"NOR);
+                        write(HIR"\n你下落的速度太快，衝開瀰漫之霧，直向下墮！！！\n\n"NOR);
                         write(HIR"\n你只覺身旁風聲虎虎，身子不斷的向下摔落......\n偶爾見到峭壁上有樹枝伸出，便想去抓，但下落之\n力太大，樹枝喀喇的一聲斷了！！！\n"NOR);
                         write(HIR"\n                ."NOR);
                         write(HIR"\n                ."NOR);
@@ -62,7 +62,7 @@ int do_jump(string arg)
                 {
                         message("vision", me->name() + "一個縱身，跳下了懸崖。\n", environment(me), ({me}) );
                         write(HIR"\n你向下一跳，直向萬丈深淵掉去！！！\n\n"NOR);
-                        write(HIR"\n你下落的速度太快，沖開彌漫之霧，直向下墮！！！\n\n"NOR);
+                        write(HIR"\n你下落的速度太快，衝開瀰漫之霧，直向下墮！！！\n\n"NOR);
                         write(HIR"\n你只覺身旁風聲虎虎，身子不斷的向下摔落......\n偶爾見到峭壁上有樹枝伸出，便想去抓，但下落之\n力太大，樹枝喀喇的一聲斷了！！！\n"NOR);
                         write(HIR"\n                ."NOR);
                         write(HIR"\n                ."NOR);
@@ -75,7 +75,7 @@ int do_jump(string arg)
                 {
                         message("vision", me->name() + "一個縱身，跳下了懸崖。\n", environment(me), ({me}) );
                         write(HIR"\n你向下一跳，直向萬丈深淵掉去！！！\n\n"NOR);
-                        write(HIR"\n你下落的速度太快，沖開彌漫之霧，直向下墮！！！\n\n"NOR);
+                        write(HIR"\n你下落的速度太快，衝開瀰漫之霧，直向下墮！！！\n\n"NOR);
                         write(HIR"\n你只覺身旁風聲虎虎，身子不斷的向下摔落......\n偶爾見到峭壁上有樹枝伸出，便想去抓，但下落之\n力太大，樹枝喀喇的一聲斷了！！！\n"NOR);
                         write(HIR"\n                ."NOR);
                         write(HIR"\n                ."NOR);

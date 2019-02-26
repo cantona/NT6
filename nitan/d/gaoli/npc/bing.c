@@ -8,7 +8,7 @@ void create()
         set_name("小兵", ({ "xiao bing", "bing" }));
         set("age", 18+random(10));
         set("gender", "男性");
-        set("long","這是一名高麗士兵，這些士兵隸屬御林軍，是士兵中的精銳。\n");
+        set("long","這是一名高麗士兵，這些士兵隸屬御林軍，是士兵中的精鋭。\n");
         set("attitude", "peaceful");
         set("str", 20);
         set("combat_exp", 80000);

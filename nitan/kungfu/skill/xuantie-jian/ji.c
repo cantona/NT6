@@ -39,7 +39,7 @@ int perform(object me, object target)
         if( query("jingli", me) <= 1000 )
                 return notify_fail("你的精力不夠施展千均一擊！\n");
 
-        msg=HIW"\n\n$N身子左斜，左手抽出背負的"+query("name", weapon)+"，順手一招「千均一擊」!\n"NOR;
+        msg=HIW"\n\n$N身子左斜，左手抽出揹負的"+query("name", weapon)+"，順手一招「千均一擊」!\n"NOR;
 
         ap=attack_power(me, "sword");
         dp=defense_power(target, "force");
@@ -67,7 +67,7 @@ int perform(object me, object target)
         }
         else if (query("str", me)>random(query("str", target)*2) )
         {
-                msg+=HIC"$N只覺對方沖撞而來的勁力綿綿不絕，越來越強,運出所有內力振臂一擊。\n" NOR;
+                msg+=HIC"$N只覺對方衝撞而來的勁力綿綿不絕，越來越強,運出所有內力振臂一擊。\n" NOR;
                 addn("neili", -300, me);
                 addn("neili", -300, target);
                 me->start_busy(1+random(2));

@@ -9,7 +9,7 @@ void create()
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("long",HIG "這是一杯特制的薄荷冰，看起來讓人饞涎欲滴。\n" NOR);
+                set("long",HIG "這是一杯特製的薄荷冰，看起來讓人饞涎欲滴。\n" NOR);
                 set("unit", "杯");
                 set("value", 1000);
                 set("max_liquid", 5);

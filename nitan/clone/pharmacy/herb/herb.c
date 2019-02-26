@@ -11,8 +11,8 @@ int tp, op, xp;
 string *eng;
 string s_name, unit, desc;
 
-string* _tp = ({ "苦", "咸", "酸", "辛", "甘" });
-string* _op = ({ "寒", "涼", "平", "溫", "熱" });
+string* _tp = ({ "苦", "鹹", "酸", "辛", "甘" });
+string* _op = ({ "寒", "涼", "平", "温", "熱" });
 string* _xp = ({ "無", "有" });
 
 void create()

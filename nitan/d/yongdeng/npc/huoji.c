@@ -1,16 +1,16 @@
-// huoji. 藥舖伙計
+// huoji. 藥鋪夥計
 
 inherit NPC;
 inherit F_DEALER;
 
 void create()
 {
-        set_name("伙計", ({ "huoji" }));
+        set_name("夥計", ({ "huoji" }));
         set("str", 20);
         set("gender", "男性");
         set("per", 18);
         set("age", 18);
-        set("long", "他是這兒的伙計，正在店裡忙裡忙外。\n");
+        set("long", "他是這兒的夥計，正在店裏忙裏忙外。\n");
         set("combat_exp", 250);
         set("attitude", "friendly");
         set("vendor_goods", ({

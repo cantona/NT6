@@ -9,7 +9,7 @@ void create()
                 set_default_object(__FILE__);
         else {
                 set("unit", "本");
-                set("long", YEL "神醫華佗所著的醫書，內含許多醫學秘要。\n" NOR);
+                set("long", YEL "神醫華佗所著的醫書，內含許多醫學祕要。\n" NOR);
                 set("value", 30000);
                 set("material", "paper");
                 set("skill",

@@ -130,13 +130,13 @@ void join_battle(object me)
                 return tell_object(me, BUSY_MESSAGE);
 
         if( me->is_fighting() )
-                return tell_object(me, "你目前正在戰鬥中，還是先處理目前的對手再說吧。\n");
+                return tell_object(me, "你目前正在戰鬥中，還是先處理目前的對手再説吧。\n");
 
         if (me->is_in_prison()) 
                 return tell_object(me, "你正在做牢呢，你想幹什麼？！\n"); 
 
         if (me->is_ghost()) 
-                return tell_object(me, "你還是等還陽後再說吧！\n"); 
+                return tell_object(me, "你還是等還陽後再説吧！\n"); 
 
         if( !battle_open_flag )
                 return tell_object(me, battle_name+"目前無法報名。\n");
@@ -150,13 +150,13 @@ void join_battle(object me)
         if( mapp(cnd = me->query_condition()) && sizeof(cnd))
         {
                if( !undefinedp(cnd["hunger"]) )
-                        return tell_object(me, "你還是先找點吃的東西再說吧。\n");
+                        return tell_object(me, "你還是先找點吃的東西再説吧。\n");
 
                if( !undefinedp(cnd["killer"]) )
                         return tell_object(me, "官府正在通緝你，你還敢在這兒拋頭露面？\n");
 
                if( !undefinedp(cnd["bandage"]) )
-                        return tell_object(me, "你還是等包紮的傷口止住了血再說吧！\n");
+                        return tell_object(me, "你還是等包紮的傷口止住了血再説吧！\n");
 
                if( !undefinedp(cnd["putizi_drug"]) )
                         return tell_object(me, "你剛服完菩提子不久，好好運功夫吸納吧！\n");
@@ -218,7 +218,7 @@ void cancel_battle(object me)
 
 int check_quit(object me)
 {
-        CHANNEL_D->channel_broadcast("war", "玩家" + me->name(1) +"在「"+battle_name+"」中臨陣脫逃，溜走了。"NOR);
+        CHANNEL_D->channel_broadcast("war", "玩家" + me->name(1) +"在「"+battle_name+"」中臨陣脱逃，溜走了。"NOR);
         restore_status(me);
 
         addn("honors", -500, me);
@@ -232,7 +232,7 @@ int check_quit(object me)
 
         // continue run quit function
         me->move("/d/city/guangchang");
-        message("vision", "只見" + me->name() + "慌裡慌張的跑了過來。\n",
+        message("vision", "只見" + me->name() + "慌裏慌張的跑了過來。\n",
                 environment(me), ({ me }));
 
         return 1;
@@ -540,10 +540,10 @@ void stop_battle()
 
         call_out((: calculate_score :), 5);
 
-        CHANNEL_D->channel_broadcast("war", WHT"────────────────────────────────"NOR);
-        CHANNEL_D->channel_broadcast("war", "「"+battle_name+HIR"」終于漸漸平息..."NOR);
+        CHANNEL_D->channel_broadcast("war", WHT"————————————————————————————————"NOR);
+        CHANNEL_D->channel_broadcast("war", "「"+battle_name+HIR"」終於漸漸平息..."NOR);
         CHANNEL_D->channel_broadcast("war", "「"+battle_name+HIR"」正在統計戰績..."NOR);
-        CHANNEL_D->channel_broadcast("war", WHT"────────────────────────────────"NOR);
+        CHANNEL_D->channel_broadcast("war", WHT"————————————————————————————————"NOR);
 }
 
 void calculate_score()
@@ -562,7 +562,7 @@ void calculate_score()
 
         map_delete(battle_player, 0);
 
-        CHANNEL_D->channel_broadcast("war", WHT"────────────────────────────────"NOR);
+        CHANNEL_D->channel_broadcast("war", WHT"————————————————————————————————"NOR);
 
         lv2 = players_count/4;
         if( lv2 < lv1+2 ) lv2 = lv1+2;
@@ -632,7 +632,7 @@ void calculate_score()
                 }
         }
 
-        CHANNEL_D->channel_broadcast("war", WHT"────────────────────────────────"NOR);
+        CHANNEL_D->channel_broadcast("war", WHT"————————————————————————————————"NOR);
         rank = 0;
         foreach(family in sort_array(keys(famscore), (: $(famscore)[$2]["score"] - $(famscore)[$1]["score"] :)))
         {
@@ -691,7 +691,7 @@ void calculate_score()
                 }
         }
         
-        CHANNEL_D->channel_broadcast("combat", WHT"────────────────────────────────"NOR);
+        CHANNEL_D->channel_broadcast("combat", WHT"————————————————————————————————"NOR);
 
         //foreach(string id in keys(battle_player))
         foreach(player in total)
@@ -823,7 +823,7 @@ void heart_beat()
 
                 statue->move(where);
 
-                CHANNEL_D->channel_broadcast("war", "具有強大神秘力量的石碑出現在"+where->short()+"附近...");
+                CHANNEL_D->channel_broadcast("war", "具有強大神祕力量的石碑出現在"+where->short()+"附近...");
         }
 
         if( !(battle_time_countdown%60) )

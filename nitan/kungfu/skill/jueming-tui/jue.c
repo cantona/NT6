@@ -38,7 +38,7 @@ int perform(object me, object target)
                 return notify_fail("你目前的內力不夠，難以施展"+name()+"。\n");
 
         if (! living(target))
-                return notify_fail("對方都已經這樣了，用不著這麼費力吧？\n");
+                return notify_fail("對方都已經這樣了，用不着這麼費力吧？\n");
 
         switch (random(3))
         {
@@ -53,7 +53,7 @@ int perform(object me, object target)
                 break;
 
         default:
-                msg = HIR "突然只見$N" HIR "雙腿連環踢出，挾著□□"
+                msg = HIR "突然只見$N" HIR "雙腿連環踢出，挾着嚯嚯"
                       "風聲，以千鈞之勢掃向$n" HIR "。\n" NOR;
                 break;
         }

@@ -46,7 +46,7 @@ int main(object me)
         write(NOR + WHT "\t\t CPU 的負擔狀況：  " + query_load_average() + "\n");
         printf(NOR + WHT "\t\t 共使用的記憶體：  %s bytes\n", memory_expression(memory_info()) );
         write(NOR + WHT "\t\t 線上使用者總數：  " + sizeof( users() ) + "  個人在線上\n");
-        write(NOR + WHT "\t\t 注冊使用者總數：  " + DATABASE_D->db_count_user() + "  個人在本遊戲注冊\n");
+        write(NOR + WHT "\t\t 註冊使用者總數：  " + DATABASE_D->db_count_user() + "  個人在本遊戲註冊\n");
         write(NOR + WHT "\t\t 載入的物件總數：  " + sizeof( objects() ) + " 個物件\n");
         write(NOR + WHT "\t\t 心跳總數的資訊：  " + sizeof(heart_beats()) + " 個\n");
         write(NOR + WHT "\t\t 延遲呼叫數資訊：  " + sizeof(call_out_info()) + " 個\n");

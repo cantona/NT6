@@ -7,7 +7,7 @@ inherit "/inherit/char/punisher";
 void create()
 {
         set_name("長老", ({ "zhang lao", "zhang", "lao" }));
-        set("long",  "日月神教開山鼻祖方臘手下第一貼身侍衛，無人知曉其真實姓名。\n");
+        set("long",  "日月神教開山鼻祖方臘手下第一貼身侍衞，無人知曉其真實姓名。\n");
         set("gender", "男性");
         set("age", 145);
         set("attitude", "peaceful");

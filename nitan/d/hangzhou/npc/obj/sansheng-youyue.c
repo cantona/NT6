@@ -17,7 +17,7 @@ void create()
                 set("armor_prop/armor", 0);
                 set("armor_prop/per", 3);
                 set("wear_msg", "$N輕輕地把一朵$n插在鬢間，微微一笑。\n");
-                set("unequip_msg", "$N幽幽長嘆，輕輕地把$n從頭上摘了下來。\n");
+                set("unequip_msg", "$N幽幽長歎，輕輕地把$n從頭上摘了下來。\n");
         }
         setup();
 }

@@ -80,14 +80,14 @@ int main(object me, string arg)
         
         write("\n");
         write(HIC    "序號              功效                      等級          升級點數\n"NOR);
-        write(HIG "──────────────────────────────────\n" NOR);
+        write(HIG "——————————————————————————————————\n" NOR);
         write(HIC"基本能力進階：\n\n"NOR);
 
         for(i=0; i<sizeof(bas_ability); i++)
                 write(sprintf(WHT"("WHT"%3d"WHT")", (i+1)) + HIC"\t"+ get_ability_info(ob, bas_ability[i], 0) + NOR);
         write("\n");
      
-        write(HIG "──────────────────────────────────\n" NOR);
+        write(HIG "——————————————————————————————————\n" NOR);
         write(HIC"門派能力進階：\n\n"NOR);
 
         if( !stringp(myclass=query("family/family_name", ob)) )       
@@ -103,11 +103,11 @@ int main(object me, string arg)
                         write(sprintf(WHT"("WHT"%3d"WHT")", (i+21)) + HIC"\t"+ get_ability_info(ob, fam_ability[myclass][i],1) + NOR);
 
         write("\n");
-        write(HIG "──────────────────────────────────\n" NOR);
+        write(HIG "——————————————————————————————————\n" NOR);
 
         write(HIW"你現在總共獲得 "HIC + ab + NOR+HIW" 點能力。\n" NOR);
         write(HIW"你已經用去了 " RED+ learned_ability +NOR+HIW" 點能力，還剩下 "HIG+ (ab-learned_ability) + NOR+HIW" 點可供分配。\n" NOR);
-        //write(HIG "──────────────────────────────────\n" NOR);
+        //write(HIG "——————————————————————————————————\n" NOR);
         write("\n\n");
         return 1;
 }
@@ -132,9 +132,9 @@ ability + n     提高第ｎ項能力的等級。
 當你的人物等級升級而獲得能力點，就可以提高自身的各項能力了！
 輸入ａｂｉｌｉｔｙ就可以看到一個清晰的列表。分兩大類，第一
 類共有２０項，所有門派都可以修習，大多是提高基本屬性的；第
-二類有五項，屬于門派武功的精髓所在，不同門派各有特色。
+二類有五項，屬於門派武功的精髓所在，不同門派各有特色。
 
-每項能力共分十級，每級的功效都有詳細說明。
+每項能力共分十級，每級的功效都有詳細説明。
 
 該修習什麼呢？這就是由各個不同門派的特點或者個人喜好所決定
 了。如果你想在戰鬥中持久，就多提高些增長精氣神的能力，如果

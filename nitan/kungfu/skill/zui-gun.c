@@ -7,9 +7,9 @@ string type() { return "martial"; }
 string martialtype() { return "skill"; }
 
 mapping *action = ({
-([        "action":""BLU"「藍採和，提籃勸酒醉朦朧」"NOR"，$N手中$w半提，緩緩劃向$n的$l",
+([        "action":""BLU"「藍采和，提籃勸酒醉朦朧」"NOR"，$N手中$w半提，緩緩划向$n的$l",
         "lvl" : 0,
-        "skill_name" : "藍採和，提籃勸酒醉朦朧"
+        "skill_name" : "藍采和，提籃勸酒醉朦朧"
 ]),
 ([        "action":""HIM"「何仙姑，攔腰敬酒醉仙步」"NOR"，$N左掌護胸，右臂挾棍猛地掃向$n的腰間",
         "lvl" : 10,
@@ -23,13 +23,13 @@ mapping *action = ({
         "lvl" : 30,
         "skill_name" : "韓湘子，鐵棍提胸醉拔蕭"
 ]),
-([        "action":""YEL"「漢鐘離，跌步翻身醉盤龍」"NOR"，$N手中棍花團團，疾風般向卷向$n",
+([        "action":""YEL"「漢鍾離，跌步翻身醉盤龍」"NOR"，$N手中棍花團團，疾風般向卷向$n",
         "lvl" : 40,
-        "skill_name" : "漢鐘離，跌步翻身醉盤龍"
+        "skill_name" : "漢鍾離，跌步翻身醉盤龍"
 ]),
-([        "action":""HIY"「鐵拐李，踢倒金山醉玉池」"NOR"，$N單腿支地，一腿一棍齊齊擊向$n的$l",
+([        "action":""HIY"「鐵枴李，踢倒金山醉玉池」"NOR"，$N單腿支地，一腿一棍齊齊擊向$n的$l",
         "lvl" : 50,
-        "skill_name" : "鐵拐李，踢倒金山醉玉池"
+        "skill_name" : "鐵枴李，踢倒金山醉玉池"
 ]),
 ([        "action":""RED"「張果老，醉酒拋杯倒騎驢」"NOR"，$N扭身反背，$w從胯底鑽出，戳向$n的胸口",
         "lvl" : 60,

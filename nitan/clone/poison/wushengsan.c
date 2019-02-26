@@ -9,7 +9,7 @@ void create()
                 set_default_object(__FILE__);
         else {
                 set("unit", "盒");
-                set("long", HIW "這便是五毒教的獨門秘藥五聖散，可置人于死地。\n" NOR);
+                set("long", HIW "這便是五毒教的獨門祕藥五聖散，可置人於死地。\n" NOR);
                 set("value", 50);
                 set("poison_type", "poison");
                 set("can_pour", 1);

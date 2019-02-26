@@ -23,15 +23,15 @@ void create()
         set("attitude", "heroism");
         set("chat_chance", 15);
         set("chat_msg", ({
-                "公子說道: 哈哈，終于得到"HIR"鬼三"NOR"的傳家寶了，! \n",
+                "公子説道: 哈哈，終於得到"HIR"鬼三"NOR"的傳家寶了，! \n",
                 (: random_move :)
         }) );
 
         set("chat_chance_combat", 15);
         set("chat_msg_combat", ({
-                "公子說道: 你當真吃了豹子膽啦 ? 你知道我是誰 ! \n",
+                "公子説道: 你當真吃了豹子膽啦 ? 你知道我是誰 ! \n",
                 "公子忽然發出一劍，招數精奇，但劍到中途卻又急忙收招。\n",
-                "公子說道: 快離開我 ! 我不能打架了 !....\n"
+                "公子説道: 快離開我 ! 我不能打架了 !....\n"
         }) );
 
         set("inquiry", ([
@@ -56,12 +56,12 @@ string ask_me(object who)
         if (query("revealed"))
         {
                 if (is_killing(who))
-                        return "你既然知道了我的秘密，今日休想活命！\n";
+                        return "你既然知道了我的祕密，今日休想活命！\n";
                 else
                 {
                         kill_ob(who);
                         who->fight_ob(this_object());
-                        return "知道我秘密的人都得死，納命來吧！\n";
+                        return "知道我祕密的人都得死，納命來吧！\n";
                 }
         }
 
@@ -74,7 +74,7 @@ string ask_me(object who)
 
 
         message("vision",
-                HIY "落魄公子眼中突然放出獸性的光芒，怒聲說道，好小了,既然你是鬼三派來的,就去死吧？！\n"NOR,
+                HIY "落魄公子眼中突然放出獸性的光芒，怒聲説道，好小了,既然你是鬼三派來的,就去死吧？！\n"NOR,
                 environment(), this_object());
 
         set("title", HIB"鬼手"NOR);
@@ -116,5 +116,5 @@ string ask_me(object who)
         }
         add_money("silver", 20);
         set("revealed", 1);
-        return "哈哈,既然知道了我的秘密你就得死！\n";
+        return "哈哈,既然知道了我的祕密你就得死！\n";
 }

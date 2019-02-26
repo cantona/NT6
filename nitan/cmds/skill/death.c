@@ -24,13 +24,13 @@ int main(object me, string arg)
                 return notify_fail("你已經打通生死玄關了，沒有必要再來一遍！\n");
 
         if( !query("no_fight", where) )
-                return notify_fail("在這裡打通生死玄關？不太安全吧？\n");
+                return notify_fail("在這裏打通生死玄關？不太安全吧？\n");
 
         if( !query("sleep_room", where) )
                 return notify_fail("你得找一個能夠休息的地方閉關修行。\n");
 
         if (me->is_busy())
-                return notify_fail("你現在正忙著呢。\n");
+                return notify_fail("你現在正忙着呢。\n");
 
         if( query("potential", me)-query("learned_points", me)<1000 )
                 return notify_fail("你的潛能不夠，沒法閉關修行以打通生死玄關。\n");
@@ -91,7 +91,7 @@ int outing(object me)
                 message_vision("$N睜開雙目，緩緩吐了一口氣，站了起來。\n", me);
                 CLOSE_D->user_opened(me);
                 CHANNEL_D->do_channel(this_object(), "rumor",
-                                      sprintf("聽說%s(%s)閉關結束，似乎沒有什麼成果。",
+                                      sprintf("聽説%s(%s)閉關結束，似乎沒有什麼成果。",
                                       me->name(1),query("id", me)));
                 if (! interactive(me))
                 {
@@ -110,14 +110,14 @@ int outing(object me)
         if( random(100000)<query("con", me) )
         {
                 message_vision(HIY "只見$N" HIY "頭上現出萬朵金蓮，光"
-                               "華四射，一時間麝香撲鼻、氤氳遍地！\n" NOR, me);
+                               "華四射，一時間麝香撲鼻、氤氲遍地！\n" NOR, me);
                 tell_object(me, HIM "你覺得精力源源而生，忽然心如止水，如身出"
                             "天際，無源無盡、登時大徹大悟。\n" NOR);
 
                 set("death", 1, me);
                 CHANNEL_D->do_channel(this_object(), "rumor",
-                                      sprintf("聽說%s(%s)經過閉關苦修，終"
-                                      "于參悟出生死之道，打通了生死玄關。",
+                                      sprintf("聽説%s(%s)經過閉關苦修，終"
+                                      "於參悟出生死之道，打通了生死玄關。",
                                       me->name(1),query("id", me)));
 
                 CHAR_D->setup_char(me);
@@ -152,9 +152,9 @@ int halt_outing(object me)
 {
         CLOSE_D->user_opened(me);
         tell_object(me, "你中止了閉關。\n");
-        message_vision(HIY "$N" HIY "輕輕嘆了一口氣，緩緩的睜開眼。\n\n" NOR, me);
+        message_vision(HIY "$N" HIY "輕輕歎了一口氣，緩緩的睜開眼。\n\n" NOR, me);
         addn("potential", (query("learned_points", me)-query("potential", me))/2, me);
-        CHANNEL_D->do_channel(this_object(), "rumor", "聽說" + me->name(1) +
+        CHANNEL_D->do_channel(this_object(), "rumor", "聽説" + me->name(1) +
                               "閉關中途突然復出。");
         return 1;
 }

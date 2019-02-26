@@ -8,7 +8,7 @@ void create()
 {
         set("short", "密室");
         set("long", @LONG
-這裡是古墓中的密室，四周密不透風，你只能借著牆上昏暗的燈
+這裏是古墓中的密室，四周密不透風，你只能藉着牆上昏暗的燈
 光來勉強分辨方向。牆是用整塊的青石砌合起來的，接合的甚是完美，
 你難以從中找出一絲縫隙。你正在欣賞，突然間發覺牆上似乎有幾塊
 磚 (brick)高高凸起，與周圍的磚很不和諧。
@@ -42,10 +42,10 @@ int do_ci(string arg)
         }
 
         if( !objectp(weapon=query_temp("weapon", me)) )
-                return notify_fail("要刺牆不用家伙恐怕不行吧！\n");
+                return notify_fail("要刺牆不用傢伙恐怕不行吧！\n");
 
         message_vision(HIG "\n$N" HIG "拔出兵刃，向青磚輕輕刺去，只聽得空空作聲，青磚"
-                       "的另一頭仿佛是空的。\n", this_player());
+                       "的另一頭彷彿是空的。\n", this_player());
 
         set_temp("tmarks/磚", 1, me);
         return 1;

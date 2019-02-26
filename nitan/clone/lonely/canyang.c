@@ -19,7 +19,7 @@ void create()
                 set("no_sell", 1);
                 set("material", "steel");
                 set("wield_msg", HIC "$N" CYN "驀地縱聲長嘯，霎時寒"
-                                 "芒一閃，一道金光破空劃過，落于$N"
+                                 "芒一閃，一道金光破空劃過，落於$N"
                                  CYN "掌間。\n" NOR);
                 set("unwield_msg", HIC "$N" CYN "一聲輕哼，將手中的"
                                    "殘陽寶劍插入劍鞘。\n" NOR);
@@ -56,13 +56,13 @@ mixed hit_ob(object me, object victim, int damage_bonus)
                 victim->receive_damage("jing", n / 2 , me);
                 victim->receive_wound("jing", n / 4, me);
                 return HIW "$N" HIW "長嘯一聲，手中" HIY "殘陽寶劍" HIW 
-                           "橫于胸前，猛地揮出，一陣熾熱的劍氣將$n" 
+                           "橫於胸前，猛地揮出，一陣熾熱的劍氣將$n" 
                            HIW "逼得連連後退。\n" NOR;
         case 1:
                 victim->receive_damage("qi", n, me);
                 victim->receive_wound("qi", n, me);
                 return HIR "$N" HIR "手中" HIY "殘陽寶劍" HIR "突然劍光"
-                           "一閃，耀眼奪目，一道熾熱的劍氣劃向$n" HIR "。\n" NOR;
+                           "一閃，耀眼奪目，一道熾熱的劍氣划向$n" HIR "。\n" NOR;
         }
         return damage_bonus;
 }
@@ -98,7 +98,7 @@ void return_to_zuo()
                              "$N將殘陽寶劍交給嵩山派弟子帶走。\n", me);  
       } else  
       {  
-              message("vision", "忽然一個嵩山派弟子走了過來，撿起殘陽寶劍，嘆了口氣，搖搖頭走了。\n",  
+              message("vision", "忽然一個嵩山派弟子走了過來，撿起殘陽寶劍，歎了口氣，搖搖頭走了。\n",  
                       me);  
       }  
  

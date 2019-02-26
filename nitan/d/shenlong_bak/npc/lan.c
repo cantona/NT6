@@ -34,7 +34,7 @@ void create()
         set("inquiry", ([
                 "五毒教" : "哼！就憑你也來打聽本教？\n",
                 "藍鳳凰" : "你瞎了眼啦？\n",
-                "藥方" : "我五毒教祖傳眾多古怪藥方，但向來秘而不宣。\n",
+                "藥方" : "我五毒教祖傳眾多古怪藥方，但向來祕而不宣。\n",
                 "五仙藥酒" : (: ask_me :),
         ]));
 
@@ -64,7 +64,7 @@ void unconcious()
 {
         object ob;
 
-        say("\n突然藍鳳凰一聲長嘆，掏出一瓶藥酒扔入舟外。\n");
+        say("\n突然藍鳳凰一聲長歎，掏出一瓶藥酒扔入舟外。\n");
         say("隨即慘淡一笑，正欲再摸出什麼物事，但終究無力動彈不得。\n");
         ob = new("/d/shenlong/obj/yaofang");
         ob->move(this_object());
@@ -75,7 +75,7 @@ void die()
 {
         object ob;
 
-        say("\n突然，只見船身一晃，藍鳳凰一腳踩空掉入河裡。\n");
+        say("\n突然，只見船身一晃，藍鳳凰一腳踩空掉入河裏。\n");
         if( ob = present("yaofang", this_object()) ) destruct(ob);
         destruct(this_object());
 }

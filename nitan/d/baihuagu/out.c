@@ -6,7 +6,7 @@ void create()
 {
         set("short", "樹林外");
         set("long", @LONG
-眼前一片光明，比起樹林裡的黑暗，簡直有點刺眼。南邊是一
+眼前一片光明，比起樹林裏的黑暗，簡直有點刺眼。南邊是一
 片陰森森的大樹林，相信你是不敢再進去了。
 LONG);
         set("outdoors", "baihuagu");

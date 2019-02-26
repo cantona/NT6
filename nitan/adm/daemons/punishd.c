@@ -60,7 +60,7 @@ mapping family_punishers = ([
               "凌霄城"   : ({ CLASS_D("misc") + "/lingxiao" }), 
               "鐵掌幫"   : ({ CLASS_D("misc") + "/tiezhang" }), 
               "絕情谷"   : ({ CLASS_D("misc") + "/jueqing" }), 
-              "昆侖派"   : ({ CLASS_D("misc") + "/kunlun" }),
+              "崑崙派"   : ({ CLASS_D("misc") + "/kunlun" }),
 ]);
 
 void monitor()

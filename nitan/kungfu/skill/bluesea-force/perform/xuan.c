@@ -33,7 +33,7 @@ int perform(object me, object target)
                 return notify_fail("你沒有準備好使用南海玄功，無法施展玄黃連環掌！\n");
 
        if (! living(target))
-              return notify_fail("對方都已經這樣了，用不著這麼費力吧？\n");
+              return notify_fail("對方都已經這樣了，用不着這麼費力吧？\n");
 
         msg = HIC "$N" HIC "輕輕劃了個圈子，身形忽然變快，合數招為一擊攻向$n"
               HIC "！\n" NOR;

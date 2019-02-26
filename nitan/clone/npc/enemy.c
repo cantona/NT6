@@ -1,4 +1,4 @@
-// 守衛任務 NPC。
+// 守衞任務 NPC。
 
 #include <ansi.h>
 
@@ -63,9 +63,9 @@ void greeting(object me)
             me->query_family() == query("is_attacking") &&
             !query_temp("defend_quest/finish", me) )
         {
-                // 這裡的描寫似乎需要調整（正派說這種話不合身份）
+                // 這裏的描寫似乎需要調整（正派説這種話不合身份）
                 command("grin");
-                message_sort(HIW "只見$N" HIW "獰笑著對$n" HIW "道：“嘿嘿，不知死活的" +
+                message_sort(HIW "只見$N" HIW "獰笑着對$n" HIW "道：“嘿嘿，不知死活的" +
                         RANK_D->query_rude(me) +"，竟然敢和我們" + this_object()->query_family() +"做對？！"
                         "看我來教訓教訓你！”\n", this_object(), me );
                         
@@ -83,7 +83,7 @@ void kill_ob(object me)
                 return ::kill_ob(me);
         else
         {
-                // 復制狀態，需要調整。
+                // 複製狀態，需要調整。
                 NPC_D->set_from_me(ob, me, 100 + random(20));
                 NPC_D->init_npc_skill(ob, NPC_D->check_level(me) + (1 + random(2)));
                 ::kill_ob(me);
@@ -148,7 +148,7 @@ void die()
                                 message_sort(HIR "眼見$N" HIR + condition[random(sizeof(condition))]
                                                 +"，突然$N大喝一聲，急退幾步，\n“撲通”給$n跪了下來。"
                                                 "\n" NOR, ob, me);
-                                tell_object(me, HIW + ob->name()+"突然從懷裡掏出一堆白花花的銀子，小聲"
+                                tell_object(me, HIW + ob->name()+"突然從懷裏掏出一堆白花花的銀子，小聲"
                                                 "對你道：“這位" + RANK_D->query_respect(me) + "，\n你"
                                                 "就網開一面（nod）如何，這" + chinese_number(amount) +
                                                 "兩白銀就歸你了！”\n" NOR);

@@ -11,7 +11,7 @@ mapping *action = ({
         "skill_name"  : "沖天",
         "damage_type" : "瘀傷"
 ]),
-([      "action" : "$N一式「破地」，左拳下擊，右拳隨後直沖，勢如地裂",
+([      "action" : "$N一式「破地」，左拳下擊，右拳隨後直衝，勢如地裂",
         "force"  : 55,
         "attack" : 9,
         "parry"  : 1,

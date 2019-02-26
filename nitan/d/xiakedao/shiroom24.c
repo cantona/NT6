@@ -7,7 +7,7 @@ void create()
 {
         set("short", "石室");
         set("long", @LONG
-這裡火光昏暗，只見那龍島主與木島主盤膝坐在錦墊之上，面對
+這裏火光昏暗，只見那龍島主與木島主盤膝坐在錦墊之上，面對
 石壁(wall)，凝神苦思。此石室已是山腹最深處，卻寬闊高大，足可
 容下近百人。洞中火把亦是其他洞的二三倍之多。
 LONG );
@@ -16,7 +16,7 @@ LONG );
         ]));
         set("item_desc", ([
                 "wall" : @WALL
-牆的正上方刻著「白首太玄經」幾個大字。字的下方刻的是密密麻麻
+牆的正上方刻着「白首太玄經」幾個大字。字的下方刻的是密密麻麻
 的蝌蚪文，成千上萬。文字排列甚不整齊，或橫或豎，或直或斜。左
 下的大片甚至混成一團難分次序，委實難以辨認。
 WALL
@@ -50,7 +50,7 @@ int do_canwu(string msg)
                 return notify_fail("幹什麼？\n");
 
         if (me->is_busy())
-                return notify_fail("你現在正忙著呢。\n");
+                return notify_fail("你現在正忙着呢。\n");
 
         if (me->is_fighting())
                 return notify_fail("你在戰鬥哦？！小心，來了！！！\n");
@@ -59,11 +59,11 @@ int do_canwu(string msg)
                 return notify_fail("你想參悟什麼？\n");
 
         if (where != "wall")
-                return notify_fail("這裡沒什麼給你參悟的啊！\n");
+                return notify_fail("這裏沒什麼給你參悟的啊！\n");
 
         if (me->query_skill("literate", 1)
          || query("learned_literate", me) )
-                return notify_fail("你對著石壁想了半天也沒發現什麼！\n");
+                return notify_fail("你對着石壁想了半天也沒發現什麼！\n");
 
         if ((int)me->query_skill("force", 1) < 340)
                 return notify_fail("你的內功修為不夠，無法貫通石壁上的絕學！\n");
@@ -91,7 +91,7 @@ int do_canwu(string msg)
                 if( query("taixuan_perform/jing/count", me) >= 300 )
                 {
                         write(HIM "猛然間，你一聲長嘯，胸中豁然貫通，再無疑慮。\n" NOR);
-                        write(HIC "你終于通曉了絕學「白首太玄經」。\n" NOR);
+                        write(HIC "你終於通曉了絕學「白首太玄經」。\n" NOR);
 
                         set("can_perform/taixuan-gong/jing", 1, me);
                         delete("taixuan_perform/jing/count", me);
@@ -147,11 +147,11 @@ int do_study(string arg)
                 write("你覺得這上面的詩大有寓意，不由的盡心苦思。\n");
         else
         if (lvl >= 1)
-                write("你心中暗想：這定是前輩高手留下的秘籍，這些詞句可要好好分析。\n");
+                write("你心中暗想：這定是前輩高手留下的祕籍，這些詞句可要好好分析。\n");
         else
         if (random(2))
         {
-                write("你望著上面的筆劃，想起所修習的武功來，不禁漸漸有所體會。\n");
+                write("你望着上面的筆劃，想起所修習的武功來，不禁漸漸有所體會。\n");
                 if( query("experience", me)<me->query_experience_limit() )
                         addn("experience", 1, me);
         } else

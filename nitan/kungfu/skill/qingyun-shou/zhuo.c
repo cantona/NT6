@@ -34,7 +34,7 @@ int perform(object me, object target)
                 return notify_fail("你現在沒有準備使用青雲手，難以施展" + name() + "。\n");
 
         if (! living(target))
-                return notify_fail("對方都已經這樣了，用不著這麼費力吧？\n");
+                return notify_fail("對方都已經這樣了，用不着這麼費力吧？\n");
 
         msg = WHT "$N" WHT "劃身錯步，單手拂過，手影虛虛實實，難辨真偽，完"
               "全籠罩$n" WHT "。\n" NOR;

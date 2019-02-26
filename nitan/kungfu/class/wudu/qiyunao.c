@@ -84,8 +84,8 @@ LONG);
                 "毒經上篇" : "這個…毒經上篇你去問煉毒室的道人要吧。",
                 "中篇"     : (: ask_me :),
                 "毒經中篇" : (: ask_me :),
-                "下篇"     : "毒經下篇在教主手裡，你去問她要吧。",
-                "毒經下篇" : "毒經下篇在教主手裡，你去問她要吧。",
+                "下篇"     : "毒經下篇在教主手裏，你去問她要吧。",
+                "毒經下篇" : "毒經下篇在教主手裏，你去問她要吧。",
                 "騰蛇訣"   : (: ask_skill1 :),
                 "毒蟾掌"   : (: ask_skill2 :),
                 "奪命連環" : (: ask_skill3 :),
@@ -95,7 +95,7 @@ LONG);
         set("chat_chance", 2);
         set("chat_msg",({
                 CYN "齊雲敖怒道：這賤婢這樣下去，本教三祖七子辛苦創下的基業"
-                "都要毀在她手裡了。\n" NOR,
+                "都要毀在她手裏了。\n" NOR,
                 CYN "齊雲敖自言自語道：我如能找到天下最厲害的毒聖，這教主之"
                 "位就是我的了。\n" NOR,
                 CYN "齊雲敖自言自語道：唉…我應該上哪去找龍涎香呢？\n" NOR,
@@ -123,7 +123,7 @@ void attempt_apprentice(object ob)
 
         if( query("shen", ob)>-1000 )
         {
-                command("say 我越看你越象六扇門派來的臥底。");
+                command("say 我越看你越象六扇門派來的卧底。");
                 return;
         }
         if( query("shen", ob)>-15000 )
@@ -324,13 +324,13 @@ mixed ask_me()
         me = this_player();
 
         if( query("family/family_name", me) != "五毒教" )
-                return "你是哪裡來的？跑來跟我羅嗦什麼！";
+                return "你是哪裏來的？跑來跟我羅嗦什麼！";
 
         if( query("shen", me)>-10000 )
                 return "你是怎麼搞的？連殺人都不會？";
 
         if( query("combat_exp", me)<100000 )
-                return "你現在經驗太淺，不用忙著去閱讀毒經。";
+                return "你現在經驗太淺，不用忙着去閲讀毒經。";
 
         if (me->query_skill("poison", 1) > 119)
                 return "你用毒的造詣已經不淺了，這毒經不看也罷。";
@@ -346,12 +346,12 @@ mixed ask_me()
         }
 
         if (owner == me)
-                return "不就是你拿著麼？怎麼反倒問我來了？";
+                return "不就是你拿着麼？怎麼反倒問我來了？";
 
         if (objectp(owner) && owner != this_object())
         {
                 if (! owner->is_character())
-                        return "…嗯…毒經中篇現在不在我手裡。";
+                        return "…嗯…毒經中篇現在不在我手裏。";
 
                 if( query("family/family_name", owner) == "五毒教" )
                         return "毒經現在是你同門"+query("name", owner)+

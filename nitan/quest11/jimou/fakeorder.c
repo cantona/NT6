@@ -15,7 +15,7 @@ void main(object ob, string who)
 	string chars;	
         //2001.4.13
         write("該計謀的使用導致NPC將領們的強烈抗議，所以暫時被取消了。\n");
-        write("如果你想把該計謀轉換其他計謀，請和巫師在線聯系和留言。\n");
+        write("如果你想把該計謀轉換其他計謀，請和巫師在線聯繫和留言。\n");
         return;
         //added end
 
@@ -65,7 +65,7 @@ void main(object ob, string who)
                 // ablility of general, zhenxing, dixing, etc.
                 // Now the damage depends only on the No of bowman
 	ob->simple_action(SG_SKILL_D->query_use("fakeorder"));
-	ob->start_busy(10, "你正忙于假傳命令呢。");
+	ob->start_busy(10, "你正忙於假傳命令呢。");
 	load_object("/daemons/cast_d.c")->reg_player(ob->query_primary_id(),"fakeorder");
 	ob->award_exp(ob->query_sk_level("sk_zhimou")/2+random(20), "fakeorder");
 	call_out("show_result", 5+random(5), ob, who,p_skill, p_id, e_id);

@@ -4,7 +4,7 @@ inherit NPC;
 
 void create()
 {
-        set_name("護衛", ({ "hu wei", "wei" }));
+        set_name("護衞", ({ "hu wei", "wei" }));
         set("long", "一個神情剽悍的蒙古大漢，是軍中將官的隨從，均是熟習武藝之輩。\n");
         set("gender", "男性");
         set("age", 25);

@@ -10,7 +10,7 @@ void create()
             set("unit", "張");
             set("material", "paper");
             set("long", "一張詳細的巴山地圖，左下角寫了一行小字：
-            成都東十裡，左三右四，子午雙時．．\n");
+            成都東十里，左三右四，子午雙時．．\n");
           }
     set("owner", "馬超興");
     setup();

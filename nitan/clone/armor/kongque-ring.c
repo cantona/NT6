@@ -12,7 +12,7 @@ void create()
                 set_default_object(__FILE__);
         else {
                 set("unit", "個");
-                set("long", HIG "孔雀環乃神鳥孔雀之化身，象征著「敏捷」！\n" NOR);
+                set("long", HIG "孔雀環乃神鳥孔雀之化身，象徵着「敏捷」！\n" NOR);
                 set("value", 200000);
                 set("material", "gold");
                 set("armor_prop/dex", 20);

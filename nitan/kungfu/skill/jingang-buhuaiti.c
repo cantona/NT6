@@ -45,7 +45,7 @@ mixed valid_damage(object ob, object me, int damage, object weapon)
                 switch (random(5))
                 {
                 case 0:
-                        result += (["msg" : HIY "$n" HIY "身前仿佛有一道無形氣牆，讓$N"
+                        result += (["msg" : HIY "$n" HIY "身前彷彿有一道無形氣牆，讓$N"
                                             HIY "再難前進一步。\n" NOR]);
                         break;
                 case 1:
@@ -73,13 +73,13 @@ mixed valid_damage(object ob, object me, int damage, object weapon)
                 switch (random(4))
                 {
                 case 0:
-                        result = HIY "$n身前仿佛有一道無形氣牆，但$N早已看破$n的詭計，直攻其要害。\n";
+                        result = HIY "$n身前彷彿有一道無形氣牆，但$N早已看破$n的詭計，直攻其要害。\n";
                         break;
                 case 1:
                         result = HIY "$n渾若無事的接下了這一招，卻意外地受到了傷害。\n";
                         break;
                 case 2:
-                        result = HIY "可是$N看出了$n的金剛不壞的氣門所在，招式變幻莫測，雙手遙指$n氣門,$n心裡一慌，真氣流暢不順，露出了破綻。\n";
+                        result = HIY "可是$N看出了$n的金剛不壞的氣門所在，招式變幻莫測，雙手遙指$n氣門,$n心裏一慌，真氣流暢不順，露出了破綻。\n";
                         break;
                 default:
                         result = HIY "只見$N這一招打了個正中！大喝一聲“破！”，結果正中$n要害。\n" NOR;
@@ -107,7 +107,7 @@ int query_effect_parry(object attacker, object me)
 int practice_skill(object me)
 {
         if (me->query_skill("jingang-buhuaiti", 1) < 100)
-                return notify_fail("你對這門護體神功的了解甚淺，還不足以自行鍛煉。\n");
+                return notify_fail("你對這門護體神功的瞭解甚淺，還不足以自行鍛鍊。\n");
 
         if( query("qi", me)<70 )
                 return notify_fail("你的體力太低了。\n");

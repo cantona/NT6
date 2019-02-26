@@ -23,7 +23,7 @@ mapping *action = ({
         "skill_name" : "梅雪爭春",
         "damage_type" : "刺傷"
 ]),
-([      "action" : "$N輕吁一聲，飛身一躍而起，一招「劍毒梅香」，連續向$n刺出數劍",
+([      "action" : "$N輕籲一聲，飛身一躍而起，一招「劍毒梅香」，連續向$n刺出數劍",
         "force"  : 120,
         "attack" : 51,
         "parry"  : 18,

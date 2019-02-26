@@ -11,7 +11,7 @@ void create()
         set_name(HIW "冰劍" NOR, ({"ice sword", "sword", "jian"}));
         set_weight(5000);
         set("unit", "把");
-        set("long", "一把散發著森森寒氣的冰劍,令人望之生寒。\n");
+        set("long", "一把散發着森森寒氣的冰劍,令人望之生寒。\n");
         set("value", 8);
         set("material", "ice");
         set("wield_msg", "$N「唰」地一聲抽出一把$n握在手中，只覺一股寒氣撲面而來！\n");
@@ -58,7 +58,7 @@ void melt()
 //a room.
                 if( query("outdoors", env) != "lingxiao" )
                 {
-                        tell_object(env,"冰劍終于化成了一灘水，流得到處都是。\n");
+                        tell_object(env,"冰劍終於化成了一灘水，流得到處都是。\n");
                         destruct(this_object());
                         return;
                 }

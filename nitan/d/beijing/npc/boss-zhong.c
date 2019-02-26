@@ -10,17 +10,17 @@ mapping bunch_good = ([
         "bunch_name" : "無極幫",
         "id"   : "wjb",
         "place": "bjw",
-        "boss" : "鐘百雄",
+        "boss" : "鍾百雄",
         "type" : "good",
         
 ]);
 
 void create()
 {
-        set_name("鐘百雄", ({ "zhong baixiong", "zhong" }));
+        set_name("鍾百雄", ({ "zhong baixiong", "zhong" }));
         set("gender", "男性");
         set("age", 42);
-        set("long", "他就是大名鼎鼎的鐘百雄鐘大俠。\n");
+        set("long", "他就是大名鼎鼎的鐘百雄鍾大俠。\n");
         set("nickname",HIY"楚霸王"NOR);
         set("title","無極幫北京西城分舵");
         set("per",23);

@@ -7,8 +7,8 @@ void create()
 {
         set("short", "大門");
         set("long", @LONG
-你來到一棟大屋前，大門口進進出出的都是一身乞丐打扮，于是你
-突然醒悟，這裡就是江湖中的丐兒幫吧。大門破破舊舊的，久經風雨的
+你來到一棟大屋前，大門口進進出出的都是一身乞丐打扮，於是你
+突然醒悟，這裏就是江湖中的丐兒幫吧。大門破破舊舊的，久經風雨的
 橫樑發黑開裂，長上了綠苔，只有兩個銅門環磨蹭得金光閃閃。
 LONG );
         set("outdoors", "yueyang");
@@ -32,7 +32,7 @@ int valid_leave(object me, string dir)
 
         if ((!myfam || myfam["family_name"] != "丐幫") && dir == "north" &&
                 objectp(present("xi zhanglao", environment(me))))
-                return notify_fail("奚長老攔住你說：此處乃本幫禁地，請止步。\n");
+                return notify_fail("奚長老攔住你説：此處乃本幫禁地，請止步。\n");
 
         return ::valid_leave(me, dir);
 }

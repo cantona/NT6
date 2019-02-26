@@ -11,7 +11,7 @@ void create()
                 set_default_object(__FILE__);
         else {
                 set("unit", "張");
-                set("long", "這張破桌子放在這裡，說不出的詭異。\n");
+                set("long", "這張破桌子放在這裏，説不出的詭異。\n");
                 set("value", 1);
         }
 }

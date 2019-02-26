@@ -1,7 +1,7 @@
 #include <ansi.h>
 #include <combat.h>
 
-#define ZHEN "「" HIW "震驚百裡" NOR "」"
+#define ZHEN "「" HIW "震驚百里" NOR "」"
 
 inherit F_SSERVER;
 
@@ -41,9 +41,9 @@ int perform(object me, object target)
                 return notify_fail("你現在的真氣不足，難以施展" ZHEN "。\n");
 
         if (! living(target))
-                return notify_fail("對方都已經這樣了，用不著這麼費力吧？\n");
+                return notify_fail("對方都已經這樣了，用不着這麼費力吧？\n");
 
-        msg = WHT "$N" WHT "施出降龍十八掌之「" HIW "震驚百裡" NOR +
+        msg = WHT "$N" WHT "施出降龍十八掌之「" HIW "震驚百里" NOR +
               WHT "」，全身真氣鼓動，雙掌如排山倒海般壓向$n" WHT "。\n"NOR;  
 
         ap=me->query_skill("strike")+query("str", me)*10;

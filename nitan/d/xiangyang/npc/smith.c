@@ -9,7 +9,7 @@ mixed  ask_back();
 void create()
 {
         set_name("鐵匠", ({ "tie jiang", "tie", "smith" }));
-        set("title", "鐵匠舖老板");
+        set("title", "鐵匠鋪老闆");
         set("shen_type", 1);
 
         set("gender", "男性" );
@@ -63,7 +63,7 @@ varargs int receive_damage(string type, int n, object who)
                 return 0;
 
         tell_object(who, HIR "你發現" + name() +
-                    HIR "詭秘一笑，忽然覺得一陣心悸，神智一陣恍惚。\n" NOR);
+                    HIR "詭祕一笑，忽然覺得一陣心悸，神智一陣恍惚。\n" NOR);
         return who->receive_damage(type, n, this_object());
 }
 
@@ -84,17 +84,17 @@ mixed ask_back()
         me = this_player();
         if( query("family/family_name", me) != "血刀門" )
         {
-                message_vision("$N自顧自的幹活，好象沒有聽見$n在說什麼。\n",
+                message_vision("$N自顧自的幹活，好像沒有聽見$n在説什麼。\n",
                                this_object(), me);
                 return -1;
         }
 
         message_vision("$N猛然抬起頭來，上上下下打量了一會"
                        "兒$n，眼角微微一動，\n放下手中的活"
-                       "計，低聲道：快跟我來。\n說罷，$N領"
-                       "著$n急急忙忙的朝後面走去。\n", this_object(), me);
-        tell_object(me, "你跟著" + name() + "急急的走著，來到了"
-                    "一處秘道，" + name() + "指著前面道：“一直走"
+                       "計，低聲道：快跟我來。\n説罷，$N領"
+                       "着$n急急忙忙的朝後面走去。\n", this_object(), me);
+        tell_object(me, "你跟着" + name() + "急急的走着，來到了"
+                    "一處祕道，" + name() + "指着前面道：“一直走"
                     "就行了，去吧！”\n");
         tell_object(me, HIW "你走了很久，越來越冷，忽然眼前一亮，"
                     "你已經看到了陽光，只見附近的積雪映得眼花繚亂。\n" NOR);

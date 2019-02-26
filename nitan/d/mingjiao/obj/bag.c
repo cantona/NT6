@@ -45,13 +45,13 @@ int do_open(string arg)
 
         if (query("book_count") < 1)
         {
-                write("油布包裡面什麼也沒有了。\n");
+                write("油布包裏面什麼也沒有了。\n");
                 return 1;
         }
 
         me = this_player();
         where = environment(me);
-        message_vision("$N輕輕地把油布包來看時，裡面原來是一本"
+        message_vision("$N輕輕地把油布包來看時，裏面原來是一本"
                        "薄薄的經書，只因油布包得緊密，雖長期藏"
                        "在猿腹之中，書頁仍然完好無損。\n", me);
         book = new("/clone/book/jiuyang-book");

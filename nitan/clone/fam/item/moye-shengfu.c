@@ -13,7 +13,7 @@ void create()
         else {
                 set("long", HIW "莫邪聖符可以將普通道具升級為自造道具，以後可以隨時召喚升級後的道具。\n"
                                                 "指令格式： upd <欲升級道具ID> to <升級後的道具ID> \n"
-                                                                "目前僅僅限于升級防具類道具。\n" NOR);
+                                                                "目前僅僅限於升級防具類道具。\n" NOR);
                 set("value", 1);
                 set("no_sell", 1);
                         set("unit", "張");
@@ -87,11 +87,11 @@ int do_upd(string arg)
 3.1 該道具是否下線不丟失
 3.2 該道具是否為自造道具。
 3.3 該物品新ID是否合法，全為英文名。
-3.4 該物品新ID是否與現有自造物品ID重復（can_summon)。
+3.4 該物品新ID是否與現有自造物品ID重複（can_summon)。
 */
         // 首先判斷該道具是否存在
                 if (! objectp(ob = present(tar_id, me)))
-                        return notify_fail("你身上好象沒有這個物品吧！\n");
+                        return notify_fail("你身上好像沒有這個物品吧！\n");
 
                 // 檢查ob是否為防具
                 if (! stringp(armor_type = ob->query("armor_type")))
@@ -113,7 +113,7 @@ int do_upd(string arg)
                 // 該物品新ID是否合法，全為英文名
                 if (! check_legal_id(new_id))return 1;
                                                 
-                // 該物品新ID是否與現有自造物品ID重復（can_summon)
+                // 該物品新ID是否與現有自造物品ID重複（can_summon)
                 can_summon_list = me->query("can_summon");
 
                 if (mapp(can_summon_list))
@@ -124,7 +124,7 @@ int do_upd(string arg)
 
                                 if (member_array(new_id, key_can_summon_list) != -1)
                                 {
-                                        return notify_fail("升級後的ID名有重復，請輸入 summon 查看已有的ID名。\n");
+                                        return notify_fail("升級後的ID名有重複，請輸入 summon 查看已有的ID名。\n");
                                 }
                         }
                 }
@@ -134,7 +134,7 @@ int do_upd(string arg)
                     ob->query("armor_type") == "medal2")
                 {
                         ob->set("long", ob->query("long") + 
-                                        HIC "只見勛章的邊緣刻著一排小字：諸神賜予 " + me->name() + HIC + "(" + me->query("id") + ")\n" NOR);
+                                        HIC "只見勛章的邊緣刻着一排小字：諸神賜予 " + me->name() + HIC + "(" + me->query("id") + ")\n" NOR);
                 }
 
 
@@ -268,7 +268,7 @@ int do_upd(string arg)
                 load_object("/data/item/" + me->query("id")[0..0] + "/" + me->query("id") + "-" + new_id + ".c");
 
                 // 記錄
-                log_file("moyefu", me->query("id") + " 于 " + ctime(time()) + " 使用莫邪符升級 " + new_id + "。\n");
+                log_file("moyefu", me->query("id") + " 於 " + ctime(time()) + " 使用莫邪符升級 " + new_id + "。\n");
                 
                 // 設置CAN_SUMMON
                 me->set("can_summon/" + new_id, "/data/item/" + me->query("id")[0..0] + "/" + me->query("id") + "-" + new_id + ".c");

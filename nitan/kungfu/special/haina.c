@@ -24,9 +24,9 @@ int perform(object me, string skill, string arg)
         if (joblv < 20)
                 return notify_fail("你的職業等級不足，無法施展。\n");                
 
-        if (me->is_busy())return notify_fail("等你忙完再說吧！\n");
+        if (me->is_busy())return notify_fail("等你忙完再説吧！\n");
 
-        message_vision(HIM "$N" HIM "臉色微變，深吸一口氣，然後緩緩吐出，頃刻間，周身彌漫著陣陣薄霧。\n" NOR, me);
+        message_vision(HIM "$N" HIM "臉色微變，深吸一口氣，然後緩緩吐出，頃刻間，周身瀰漫着陣陣薄霧。\n" NOR, me);
  
         me->add("neili", -1000);
         me->start_busy(1);
@@ -36,7 +36,7 @@ int perform(object me, string skill, string arg)
         me->set_temp("special2/haina/joblv", joblv);
         armor = me->query_temp("apply/armor");
         damage = me->query_temp("apply/damage");
-        attack = 1;//me->query_temp("apply/attack"); 在 combatd.c裡做處理
+        attack = 1;//me->query_temp("apply/attack"); 在 combatd.c裏做處理
 
         armor = armor * (10 + (joblv - 20) / 2) / 100;
         attack = 1;//attack * (10 + (joblv - 20) / 2) / 100;

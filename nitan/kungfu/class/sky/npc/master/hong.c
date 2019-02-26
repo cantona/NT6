@@ -8,7 +8,7 @@ void create()
         set_name("洪七公", ({ "hong qigong", "hong", "qigong" }));
         set("long", @LONG
 他就是丐幫第十七任幫主，號稱九指神丐的洪
-七公老爺子。只見他須眉皆白，周身上下邋遢
+七公老爺子。只見他鬚眉皆白，周身上下邋遢
 不已，模樣甚是齷齪。可是他目光如電，顯得
 正義凜然，不怒而自威。
 LONG);
@@ -168,7 +168,7 @@ void die()
 
         return;
 }
-// 氣血小于1000則死亡，避免他人協助幫忙轉世
+// 氣血小於1000則死亡，避免他人協助幫忙轉世
 void heart_beat()
 {
         if (this_object()->query("qi") < 1000 || this_object()->query("eff_qi") < 1000)

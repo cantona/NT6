@@ -40,7 +40,7 @@ int perform(object me, object target)
                 return notify_fail("你現在的真氣不足，，難以施展" + name() + "。\n");
 
         if (! living(target))
-                return notify_fail("對方都已經這樣了，用不著這麼費力吧？\n");
+                return notify_fail("對方都已經這樣了，用不着這麼費力吧？\n");
 
         ap = attack_power(me, "sword");
         dp = defense_power(target, "parry");
@@ -49,7 +49,7 @@ int perform(object me, object target)
 
         msg = HIW "$N" HIW "一聲清嘯，手中" + weapon->name() + HIW "凌"
                   "空劃出，劍尖陡然生出半尺吞吐不定的青芒，一道劍氣破空"
-                  "徑直劃向$n。\n" NOR;
+                  "徑直划向$n。\n" NOR;
         if (ap / 2 + random(ap) > dp)
         {
                 msg += COMBAT_D->do_damage(me, target, WEAPON_ATTACK, damage, 85,
@@ -62,7 +62,7 @@ int perform(object me, object target)
                        CYN "的企圖，斜躍避開。\n" NOR;
         }
 
-        msg += HIW "\n$N" HIW "見$n" HIW "應接不暇，一聲冷笑，兵刃揮洒而"
+        msg += HIW "\n$N" HIW "見$n" HIW "應接不暇，一聲冷笑，兵刃揮灑而"
               "出，一記更加凌厲的劍芒由劍尖彈射而出，凌空直射$n" HIW
               "。\n" NOR;
         if (ap / 2 + random(ap) > dp)
@@ -74,7 +74,7 @@ int perform(object me, object target)
         } else
         {
                 msg += CYN "$n" CYN "強忍全身的痛楚，飛身一躍，避開了$N"
-                       CYN "這強大的殺著。\n" NOR;
+                       CYN "這強大的殺着。\n" NOR;
         }
         me->start_busy(2 + random(2));
         addn("neili", -400, me);

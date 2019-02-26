@@ -10,7 +10,7 @@ void create()
                 set_default_object(__FILE__);
         else {
                 set("unit", "只");
-                set("long", "這是一黃銅喜鵲飾物，象征著吉祥如意。\n");
+                set("long", "這是一黃銅喜鵲飾物，象徵着吉祥如意。\n");
                 set("value", 5000);
                 set("material", "copper");
         }

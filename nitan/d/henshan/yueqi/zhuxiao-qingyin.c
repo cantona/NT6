@@ -6,7 +6,7 @@ inherit MI_XIAO;
 
 void create()
 {
-        set_name(HIG "碧玉洞蕭﹒清音" NOR, ({ "qingyin xiao", "qingyin", "xiao" }));
+        set_name(HIG "碧玉洞蕭·清音" NOR, ({ "qingyin xiao", "qingyin", "xiao" }));
         set_weight(600);
 
         if (clonep())

@@ -6,7 +6,7 @@
 //【巫師】董曉(Sdong)：the style of qz perform should be high speed but not high damage
 /*
 **maco 補：連環本質應該是劍掌腿。**
-尹志平左劍平刺，右掌正擊，同時左腿橫掃而出，正是全真派中的「三連環」絕招。趙志敬高縱丈餘，揮劍下削。尹志平長劍脫手，猛往對方擲去，跟著「嘿」的一聲，雙掌齊出。
+尹志平左劍平刺，右掌正擊，同時左腿橫掃而出，正是全真派中的「三連環」絕招。趙志敬高縱丈餘，揮劍下削。尹志平長劍脱手，猛往對方擲去，跟著「嘿」的一聲，雙掌齊出。
 
 楊過見這幾招凌厲變幻，已非己之所知，不禁手心人全是冷汗，眼見趙志敬身在半空，一個勢虛，一個勢實，看來這兩掌要打得他筋折骨斷。豈知趙志敬竟在這情勢危急異常之際忽然空中翻身，急退尋丈，輕輕巧巧的落了下來。
 */
@@ -80,7 +80,7 @@ int perform(object me, object target)
         if( query_temp("restore", me))me->prepare_skill("cuff","chunyang-quan");
         addn_temp("apply/attack", -skill, me);
 
-        message_vision( "\n緊跟著$N突然騰空飛起，使出一招鴛鴦連環腿，兩腿風馳電掣連環踢向$n\n",me,target);
+        message_vision( "\n緊跟着$N突然騰空飛起，使出一招鴛鴦連環腿，兩腿風馳電掣連環踢向$n\n",me,target);
         if( random(query("combat_exp", me))>query("combat_exp", target)/3 )
         {
                 if( ( target->query_skill("dodge")+target->query_skill("parry") ) < random((me->query_skill("cuff") + me->query_skill("force"))*2/3) )

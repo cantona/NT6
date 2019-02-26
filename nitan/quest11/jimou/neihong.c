@@ -72,16 +72,16 @@ void main(object ob, string who)
 	}
 
                 tell(deep_inventory(TROOP_D->find_troop(e_id)),
-	"一陣喧嘩中，部下來報：“有敵來襲！”\n",
+	"一陣喧譁中，部下來報：“有敵來襲！”\n",
                         MSG_INDENT);
 		tell(deep_inventory(TROOP_D->find_troop(t_id)),
-        "一陣喧嘩中，部下來報：“有敵來襲！”\n",
+        "一陣喧譁中，部下來報：“有敵來襲！”\n",
                         MSG_INDENT);
                 // In future, we have to consider effects of the
                 // ablility of general, zhenxing, dixing, etc.
                 // Now the damage depends only on the No of bowman
 	ob->simple_action(SG_SKILL_D->query_use("neihong"));
-	ob->start_busy(10, "你正忙于施計呢。\n");
+	ob->start_busy(10, "你正忙於施計呢。\n");
 	load_object("/daemons/cast_d.c")->reg_player(ob->query_primary_id(), "neihong");	
 	ob->award_exp(ob->query_sk_level("sk_zhimou")/2+20, "neihong");
 	call_out("show_result", 10+random(5), ob, who, p_skill, p_id, e_id, t_id);
@@ -111,10 +111,10 @@ kill = random(kill);
 	ob->stop_busy();
 	if( kill>50)
 	{	tell(deep_inventory(TROOP_D->find_troop(e_id)),
-                "你大聲吼道：“沖！沖！”\n",
+                "你大聲吼道：“衝！衝！”\n",
                         MSG_INDENT);
 		tell(deep_inventory(TROOP_D->find_troop(t_id)),
-                "你大聲吼道：“沖！沖！”\n",
+                "你大聲吼道：“衝！衝！”\n",
                         MSG_INDENT);
 		mora = random (-20) -10;
 		mora1 = random (6) +2;
@@ -138,10 +138,10 @@ kill = random(kill);
 	      else if( kill>5)
 		{
 		tell(deep_inventory(TROOP_D->find_troop(e_id)),
-        	"你遲疑的說道：“小心列隊，不可亂了軍心！”\n",
+        	"你遲疑的説道：“小心列隊，不可亂了軍心！”\n",
                         MSG_INDENT);
 		tell(deep_inventory(TROOP_D->find_troop(t_id)),
-                "你遲疑的說道：“小心列隊，不可亂了軍心！”\n",
+                "你遲疑的説道：“小心列隊，不可亂了軍心！”\n",
                         MSG_INDENT);
 		mora = random(-5) - 1;
 		mora1 = 1;
@@ -151,10 +151,10 @@ kill = random(kill);
 	      else 
 		{
 		tell(deep_inventory(TROOP_D->find_troop(e_id)),
-        	"你胸有成竹的說道：“不慌！此乃內訌之計！”\n",
+        	"你胸有成竹的説道：“不慌！此乃內訌之計！”\n",
                         MSG_INDENT);
 		tell(deep_inventory(TROOP_D->find_troop(t_id)),
-                "你胸有成竹的說道：“不慌！此乃內訌之計！”\n",
+                "你胸有成竹的説道：“不慌！此乃內訌之計！”\n",
                         MSG_INDENT);
 		mora = random(8) + 3;
 		mora1 = random(-8) - 3;

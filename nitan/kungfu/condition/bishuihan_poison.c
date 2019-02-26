@@ -10,7 +10,7 @@ string chinese_name() { return "碧水寒毒"; }
 
 string update_msg_others()
 {
-       return HIW "$N" HIW "臉色蒼白，突然由白轉為綠色，接著又由綠色轉為紫色，全身不住的顫抖，似乎非常痛苦。\n" NOR;
+       return HIW "$N" HIW "臉色蒼白，突然由白轉為綠色，接着又由綠色轉為紫色，全身不住的顫抖，似乎非常痛苦。\n" NOR;
 }
 
 string update_msg_self()

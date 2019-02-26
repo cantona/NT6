@@ -7,7 +7,7 @@ inherit "/inherit/char/punisher";
 void create()
 {
         set_name("老奴", ({ "lao nu", "laonu" }));
-        set("long",  "他看上去白發蒼蒼，一副僕人打扮，弱不經風的樣子。\n");
+        set("long",  "他看上去白髮蒼蒼，一副僕人打扮，弱不經風的樣子。\n");
         set("gender", "男性");
         set("age", 72);
         set("attitude", "peaceful");

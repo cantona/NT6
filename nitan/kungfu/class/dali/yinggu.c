@@ -14,7 +14,7 @@ void create()
         set("nickname", CYN "神算子" NOR ) ;
         set("age", 48);
         set("long",
-                "她頭發花白，身批麻衫，凝視著地上無數的一根根竹片，"
+                "她頭髮花白，身批麻衫，凝視着地上無數的一根根竹片，"
                 "顯然正在潛心思索，雖然聽得有人進來，卻不抬頭。\n");
 
         set("str", 25);
@@ -35,7 +35,7 @@ void create()
         set("attitude", "peaceful");
         set("inquiry", ([
                 "段皇爺"  : "你提他作什麼，哼，求他醫傷麼，死了這條心吧。",
-                "周伯通"  : "他、他、、他在哪裡！",
+                "周伯通"  : "他、他、、他在哪裏！",
                 "段智興"  : "這個老和尚，枉稱慈悲！\n",
                 "算術"    :  (: ask_me :),
         ]) );
@@ -59,7 +59,7 @@ string ask_me()
 {
         object who=this_player();
         if( query_temp("marks/瑛", who)){
-                        write("瑛姑冷冷的說：上一道你還沒答出來呢，急什麼？\n");
+                        write("瑛姑冷冷的説：上一道你還沒答出來呢，急什麼？\n");
                         return "一道一道的來。\n";
         }
         else {
@@ -72,15 +72,15 @@ string ask_me()
                         break;
                 case 1:
                         write("百數方陣，縱橫斜正各五百零五數，\n");
-                        write("四二，四一，七六各據一角，余角何數? \n");
+                        write("四二，四一，七六各據一角，餘角何數? \n");
                         set_temp("marks/瑛", 2, who);
                         break;
                 case 2:
-                        write("丈許長桿，日取其半，幾日可終? \n");
+                        write("丈許長杆，日取其半，幾日可終? \n");
                         set_temp("marks/瑛", 3, who);
                         break;
                 }
-                message_vision("瑛姑冷冷地對$N說：解否? \n", who);
+                message_vision("瑛姑冷冷地對$N説：解否? \n", who);
                 return "你解出來就回答(answer)我。\n";
         }
 }
@@ -93,7 +93,7 @@ int do_answer(string arg)
         riddle=query_temp("marks/瑛", this_player());
 
         if (!riddle) {
-                write("我又不是你師傅，你用不著回答我。\n");
+                write("我又不是你師傅，你用不着回答我。\n");
                 return 1;
         }
 

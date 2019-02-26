@@ -5,9 +5,9 @@ void create()
 {
         set("short", "桃花山莊正門");
         set("long",@LONG
-這裡是桃花島的正門。門前疏落地種了幾株桃花樹，更顯
-得此地主人對桃花的偏愛。門口站著兩個小童看守大門。看來
-由于地處邊遠人煙罕至，人們對山莊的防衛不是特別謹慎。門
+這裏是桃花島的正門。門前疏落地種了幾株桃花樹，更顯
+得此地主人對桃花的偏愛。門口站着兩個小童看守大門。看來
+由於地處邊遠人煙罕至，人們對山莊的防衞不是特別謹慎。門
 前有一對白雕(diao)，毛羽如雪，甚為可愛。
 LONG);
         set("outdoors", "taohua");
@@ -68,6 +68,6 @@ void taohua(object ob)
         if (base_name(environment(ob)) != "/d/taohua/lantian")
                 return;
           ob->move("/d/guiyun/qianyuan");
-          tell_object(ob, HIC "\n你終于飛到了中原，白雕落了下來。\n\n" NOR);
+          tell_object(ob, HIC "\n你終於飛到了中原，白雕落了下來。\n\n" NOR);
             addn("sb_ride", -1);
 }

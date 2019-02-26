@@ -37,7 +37,7 @@ void init()
 {
         object ob = this_player();
         if( query_temp("th_tomb_thief", ob)){
-                tell_object(ob,CYN"你似乎覺得桃林中有點異樣，但又說不上來。\n"NOR);
+                tell_object(ob,CYN"你似乎覺得桃林中有點異樣，但又説不上來。\n"NOR);
                 delete("exits/east");
                 set("exits/east", __DIR__"hyjuchu");
                     remove_call_out("close_door");

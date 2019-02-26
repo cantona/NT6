@@ -11,7 +11,7 @@ void create()
         set("title", "商家堡少主");
         set("age", 17);
         set("long", @LONG
-這便是商家堡的少主商寶震，只見他衣著華麗，
+這便是商家堡的少主商寶震，只見他衣着華麗，
 宛然一副富家公子的模樣。
 LONG);
         set("attitude", "peaceful");
@@ -100,5 +100,5 @@ LONG);
 void attempt_apprentice(object ob)
 {
         command("shake");
-        command("say 你去找我爹爹或是娘親好了，我自己的武功都沒練好呢。");
+        command("say 你去找我爹爹或是孃親好了，我自己的武功都沒練好呢。");
 }

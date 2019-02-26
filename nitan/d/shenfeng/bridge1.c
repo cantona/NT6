@@ -5,9 +5,9 @@ void create()
 {
         set("short", "獨木橋");
         set("long", @LONG
-四下無聲，仰視蒼天，注視雪白的山峰，令人不覺愴然而
+四下無聲，仰視蒼天，注視雪白的山峯，令人不覺愴然而
 發思古之幽情。往前只見一道飛巖，下臨絕崖，只有一條狹窄
-的獨木橋(bridge)通達對崖，危橋在谷風中不停地抖動。
+的獨木橋(bridge)通達對崖，危橋在穀風中不停地抖動。
 LONG);
         set("outdoors", "gaochang");
 
@@ -36,7 +36,7 @@ int do_zou(string arg)
 
         if (me->query_skill("dodge", 1) < 100)
                 return notify_fail(HIY "\n你戰戰兢兢地向前邁出兩"
-                                   "步，可突然間谷風刮過，危橋一"
+                                   "步，可突然間穀風刮過，危橋一"
                                    "陣狂\n顫，嚇得你趕忙收回了腳"
                                    "步。\n" NOR);
 
@@ -50,6 +50,6 @@ int do_zou(string arg)
                        "去。\n" NOR, me);
         me->move(room);
         message_vision(HIW "$N" HIW "從獨木橋上飄然而下，來到了山"
-                       "峰的對面。\n" NOR, me);
+                       "峯的對面。\n" NOR, me);
         return 1;
 }

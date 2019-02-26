@@ -32,24 +32,24 @@ mapping *action = ({
         "damage_type" : "瘀傷"
 ]),
 
-([        "action" : "$N一招「群山遮落日」,頭緩緩低下，似乎顯得沒精打"
+([        "action" : "$N一招「羣山遮落日」,頭緩緩低下，似乎顯得沒精打"
                    "採，一記雲掌軟綿綿的拍向$n",
         "force" : 130,
         "attack": 15,
         "dodge" : 55,
         "damage": 8,
         "lvl"   : 40,
-        "skill_name" : "群山遮落日",
+        "skill_name" : "羣山遮落日",
         "damage_type" : "瘀傷"
 ]),
-([        "action" : "$N一招「幽幽谷中敘」，突然縱起丈余，猶如一只在空"
+([        "action" : "$N一招「幽幽谷中敍」，突然縱起丈餘，猶如一隻在空"
                    "中盤旋的飛龍，一掌拍向$n",
         "force" : 150,
         "attack": 22,
         "dodge" : 52,
         "damage": 14,
         "lvl"   : 60,
-        "skill_name" : "幽幽谷中敘",
+        "skill_name" : "幽幽谷中敍",
         "damage_type" : "瘀傷"
 ]),
 
@@ -63,7 +63,7 @@ mapping *action = ({
         "skill_name" : "冥冥道中聚",
         "damage_type" : "瘀傷"
 ]),
-([        "action" : "$N一招「高堂明鏡」，猶如一只展翅翱翔的大鵬，運掌"
+([        "action" : "$N一招「高堂明鏡」，猶如一隻展翅翱翔的大鵬，運掌"
                    "如風般襲向$n",
         "force" : 210,
         "attack": 20,
@@ -83,7 +83,7 @@ mapping *action = ({
         "skill_name" : "天上人間",
         "damage_type" : "瘀傷"
 ]),
-([        "action" : "$N施出「金石為開」，雙掌不斷反轉，忽地並攏，筆直"
+([        "action" : "$N施出「金石為開」，雙掌不斷反轉，忽地併攏，筆直"
                    "地向$n的$l襲去",
         "force" : 260,
         "attack": 21,

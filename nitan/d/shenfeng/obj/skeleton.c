@@ -8,7 +8,7 @@ void create()
                 set_default_object(__FILE__);
             else {
                 set("unit", "具");
-                set("long", "這副骸骨已經躺在這裡很久了。\n");
+                set("long", "這副骸骨已經躺在這裏很久了。\n");
                 set("value", 1);
                 set("no_get", "這東西一碰就散，還是別揀吧！\n");
             }

@@ -13,7 +13,7 @@ int valid_enable(string usage) { return usage=="array"; }
 
 string *style = ({ 
 HIM "$N手持$w，前進中一陣急驟，手中$w猛然刺向$n！\n"NOR,
-HIM "$N著地一滾，手中$w上挑，已刺向$n小腹！\n"NOR, 
+HIM "$N着地一滾，手中$w上挑，已刺向$n小腹！\n"NOR, 
 HIM "$N反手握住$w，化出一道白弧，劍尖直指$n眉心！\n"NOR,
 HIM "$N向前一縱，略退半步，突然一個急進，手中$w向$n猛撲過去！\n"NOR,
 HIM "$N與$w合而為一，飛身而起，挺身刺向$n的兩處要害！\n"NOR, 
@@ -24,7 +24,7 @@ HIM "$N手中$w疾揮，劃出道道劍光，身形一轉，迅速刺向$n！\n"
 
 string *zhen = ({ 
 HIC"\n真武劍陣緩緩轉動，將$n圍在核心，一股強大的綿力壓向$n。\n\n"NOR, 
-HIC"\n真武劍陣忽進忽退，$n凝神觀陣，看不出絲毫破綻，只得緊守門戶，不敢妄自出招。\n\n"NOR, 
+HIC"\n真武劍陣忽進忽退，$n凝神觀陣，看不出絲毫破綻，只得緊守門户，不敢妄自出招。\n\n"NOR, 
 HIC"\n$N一聲長嘯，真武劍陣迅速移位，眾人步法精妙，緊隨$n進退。\n\n"NOR, 
 HIC"\n真武劍陣越縮越小，攻勢連綿不絕，無形劍氣象浪潮一般圈向$n。\n\n"NOR 
 });
@@ -67,7 +67,7 @@ int form_array(object me)
                 return notify_fail("你還沒有準備好真武劍陣！\n");
 
         if( sizeof(member) > MAX_ZHEN )
-                return notify_fail("真武劍陣最多只能由八名武當弟子組成。\n");
+                return notify_fail("真武劍陣最多隻能由八名武當弟子組成。\n");
 
         if( sizeof(member) < MIN_ZHEN )
                 return notify_fail("真武劍陣至少要由五名武當弟子組成。\n");
@@ -107,9 +107,9 @@ int form_array(object me)
                return notify_fail("你的隊伍已經組成了「真武劍陣」！\n");
 
         message_vision( HIY "$N" HIY "一聲長嘯，手中" + weapon->name() + 
-                        HIY "一盪，身形移動，率領眾人分四象八卦站定方位，擺出了"
+                        HIY "一蕩，身形移動，率領眾人分四象八卦站定方位，擺出了"
                         HIY "「真武劍陣」陣法！\n\n"
-                        HIW "眾人揮劍齊呼：真武劍陣 ── 天下第一！\n\n" NOR, me);
+                        HIW "眾人揮劍齊呼：真武劍陣 —— 天下第一！\n\n" NOR, me);
 
         set_temp("alreading", me->query_skill("zhenwu-array",1)/10+10, me);
         call_out("checking", 1, 1, me); 
@@ -150,7 +150,7 @@ void checking(int del_time,object me)
         {
             if (!member[i]) 
             {
-                message_vision(HIW "由于$n" HIW "已離開劍陣，真武劍陣需要重新組合。\n\n" NOR, me, member[i]); 
+                message_vision(HIW "由於$n" HIW "已離開劍陣，真武劍陣需要重新組合。\n\n" NOR, me, member[i]); 
                 remove_effect(me);
                 return;
             }
@@ -159,7 +159,7 @@ void checking(int del_time,object me)
             {
                 if ( sizeof(member) < MIN_ZHEN )
                 {
-                    message_vision(HIW "由于$N" HIW "沒能抵擋住$n"
+                    message_vision(HIW "由於$N" HIW "沒能抵擋住$n"
                                    HIW "的致命一擊，真武劍陣人數不足，頓出破綻，被$n攻破。\n\n"NOR, member[i], target);
                     remove_effect(me);
                     return;
@@ -172,8 +172,8 @@ void checking(int del_time,object me)
 
             if (environment(member[i]) != environment(me)) 
             {
-                message_vision(HIW "$n" HIW "見$N" HIW "癒戰癒勇，私心頓起，為求自保，悄然逃離現場！\n"
-                               HIC "由于$n離開現場，真武劍陣被$N攻破了！\n\n" NOR, target, member[i]); 
+                message_vision(HIW "$n" HIW "見$N" HIW "愈戰愈勇，私心頓起，為求自保，悄然逃離現場！\n"
+                               HIC "由於$n離開現場，真武劍陣被$N攻破了！\n\n" NOR, target, member[i]); 
                 remove_effect(me);
                 return;
             }
@@ -182,7 +182,7 @@ void checking(int del_time,object me)
             if( !objectp(weapon) || query("skill_type", weapon) != "sword" )
             {
                 message_vision(HIW "$N" HIW "見$n" HIW "劍已離手，精神大振，疾向$n連攻數招。\n"
-                               HIW "$n" HIW "無奈之下，步步後退，終于偏離了真武劍陣方位！\n"
+                               HIW "$n" HIW "無奈之下，步步後退，終於偏離了真武劍陣方位！\n"
                                HIC "真武劍陣被$N" HIC "攻破了！！\n\n" NOR, target, member[i]); 
                 remove_effect(me);
                 return;
@@ -211,7 +211,7 @@ void checking(int del_time,object me)
                                   NOR, member[fighting], target);
            else
                    message_vision(HIY "$N" HIY "對$n"
-                                  HIY "喝道：“今日我武當派要清理門戶，還不快快受死？”\n"
+                                  HIY "喝道：“今日我武當派要清理門户，還不快快受死？”\n"
                                   NOR, member[fighting], target);
            }
 

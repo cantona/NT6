@@ -7,7 +7,7 @@ void create()
         set_name("海豹", ({ "hai bao", "bao" }) );
         set("race", "走獸");
         set("age", 20);
-        set("long", "一只生活在冰海的海豹。\n");
+        set("long", "一隻生活在冰海的海豹。\n");
         set("attitude", "friendly");
         set("shen_type", 0);
 
@@ -22,7 +22,7 @@ void create()
 void die()
 {
         object ob, corpse;
-        message_vision("$N凄慘的嚎了幾聲，死了。\n", this_object());
+        message_vision("$N悽慘的嚎了幾聲，死了。\n", this_object());
         if( objectp(corpse = CHAR_D->make_corpse(this_object())) )
         {
                 if(random(10) > 6)

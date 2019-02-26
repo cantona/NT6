@@ -8,7 +8,7 @@ void create()
         set("short", "林間小道");
         set("long", @LONG
 這是一條從南到北的林間小道，沿途風景極之清幽，參天古樹，拔
-地而起，兩旁百花爭艷。令人留連忘返。
+地而起，兩旁百花爭豔。令人留連忘返。
 LONG );
         set("exits", ([
                 "south" : __DIR__"muwu1",

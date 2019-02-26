@@ -10,7 +10,7 @@ void create()
                 destruct(this_object());
         else {
                 set("unit", "本");
-                set("long", HIR "這是一本薄薄的書冊，封面上豁然寫著「血"
+                set("long", HIR "這是一本薄薄的書冊，封面上豁然寫着「血"
                             "刀經」三個大字。\n" NOR);
                 set("value", 1);
                 set("no_sell", "血…血刀…經？這…該不會是血刀門的東西吧？");

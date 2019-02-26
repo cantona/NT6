@@ -10,7 +10,7 @@ void create()
 {
         set("short", "華山祭壇");
         set("long", @LONG
-五岳之西岳華山祭壇處，祭壇上有青銅鼎香爐一座，終年香火不滅，
+五嶽之西嶽華山祭壇處，祭壇上有青銅鼎香爐一座，終年香火不滅，
 若身有閻王契，點上召神香，則可召喚「泰山府君」出現。。
 LONG );
         set("exits", ([
@@ -45,7 +45,7 @@ int do_put(string arg)
                 
         if( where == "xiang lu" ) {
                 if( what != "magic xiang" ) {
-                        tell_object(me, "青銅鼎香爐裡可不能亂扔東西！\n");
+                        tell_object(me, "青銅鼎香爐裏可不能亂扔東西！\n");
                         return 1;
                 }  
                              
@@ -60,7 +60,7 @@ int do_put(string arg)
                         return 1;
                 }
                                         
-                message_vision( MAG "$N" MAG "將召神香插進銅鼎香爐裡，淡淡的香味彌漫著四周。\n" NOR, me);
+                message_vision( MAG "$N" MAG "將召神香插進銅鼎香爐裏，淡淡的香味瀰漫着四周。\n" NOR, me);
                 obj->move(ob);
                 set("no_get", 1, obj);
                 obj->start_borrowing();  
@@ -83,5 +83,5 @@ void start_worship(object who, int n)
         set("worship",query("id",  who), ob);
         ob->move(this_object());
         ob->start_borrowing(); 
-        ob->command("say 「何方來人，鬥膽呼喚本君現身？」");
+        ob->command("say 「何方來人，斗膽呼喚本君現身？」");
 }

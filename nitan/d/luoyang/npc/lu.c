@@ -6,7 +6,7 @@ void create()
         set_name("魯開", ({ "lu kai", "lu", "kai" }) );
         set("gender", "男性" );
         set("age", 32);
-        set("long", "這就是木匠舖老板魯開，他一手絕活揚名洛陽。\n");
+        set("long", "這就是木匠鋪老闆魯開，他一手絕活揚名洛陽。\n");
         set("shen_type", 1);
         set("combat_exp", 10000);
         set("str", 17);

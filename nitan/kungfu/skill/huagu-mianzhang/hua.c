@@ -35,7 +35,7 @@ int perform(object me, object target)
                 return notify_fail("你沒有激發化骨綿掌，無法施展化骨掌。\n");
 
        if (! living(target))
-              return notify_fail("對方都已經這樣了，用不著這麼費力吧？\n");
+              return notify_fail("對方都已經這樣了，用不着這麼費力吧？\n");
 
         addn("neili", -100, me);
 

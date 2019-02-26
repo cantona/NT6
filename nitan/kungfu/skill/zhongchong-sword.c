@@ -1,10 +1,10 @@
-// six-fingers.c 六脈神劍 - 中沖劍
+// six-fingers.c 六脈神劍 - 中衝劍
 #include <ansi.h>
 inherit SKILL;
 
 mapping *action = ({
-        ([ "name":   "中沖劍",
-           "action": "$N右手中指一豎，“中沖劍”向前刺出。真氣鼓盪，嗤然聲響，"
+        ([ "name":   "中衝劍",
+           "action": "$N右手中指一豎，“中衝劍”向前刺出。真氣鼓盪，嗤然聲響，"
                      "無形劍氣直指$n的$l",
            "force":  490,
            "dodge":  -15,
@@ -20,13 +20,13 @@ int valid_enable(string usage) { return usage == "finger" ||  usage == "parry"; 
 int valid_learn(object me)
 {
         if( query_temp("weapon", me) || query_temp("secondary_weapon", me) )
-                return notify_fail("練中沖劍必須空手。\n");
+                return notify_fail("練中衝劍必須空手。\n");
 
         if( query("max_neili", me)<2250 )
-                return notify_fail("你的內力太弱，無法學中沖劍。\n");
+                return notify_fail("你的內力太弱，無法學中衝劍。\n");
 
         if ((int)me->query_skill("finger", 1) < (int)me->query_skill("zhongchong-sword", 1))
-                return notify_fail("你的基本指法水平有限，無法無法領會更高深的中沖劍。\n");
+                return notify_fail("你的基本指法水平有限，無法無法領會更高深的中衝劍。\n");
 
         return 1;
 }
@@ -51,7 +51,7 @@ int practice_skill(object me)
                 return notify_fail("你的體力太低了。\n");
 
         if( query("neili", me)<200 )
-                return notify_fail("你的內力不夠練中沖劍。\n");
+                return notify_fail("你的內力不夠練中衝劍。\n");
 
         me->receive_damage("qi", 40);
         addn("neili", -80, me);

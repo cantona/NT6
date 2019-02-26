@@ -7,8 +7,8 @@ void create()
         set_name("何紅藥",({ "he hongyao", "he" }) );
         set("gender", "女性" );
         set("age", 47);
-        set("long", "這女人就象個老乞婆，蓬頭垢面，頭發亂得象雞窩，十指尤如
-雞爪。滿臉都是奇怪的傷痕，好象是被蟲蛇撕咬所致，傷痕青
+        set("long", "這女人就象個老乞婆，蓬頭垢面，頭髮亂得象雞窩，十指尤如
+雞爪。滿臉都是奇怪的傷痕，好像是被蟲蛇撕咬所致，傷痕青
 黑不堪入目。\n");
          set_temp("apply/defense", 5);
         set("combat_exp", 70000);

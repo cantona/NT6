@@ -29,8 +29,8 @@ private void do_bonus(object room)
         if (r == 0)
         {
                 msg = HIR "只見太陽一點一點的升了起來，倏的眼前一亮，只見一道光暈出現在雲際，\n"
-                          "朦朦朧朧似乎有一個人影立在當中，令人嘆羨不已。\n" NOR;
-                msg += HIG "你冥冥中仿佛得到了佛主的指示，登時有茅塞頓開的感覺。\n" NOR;
+                          "朦朦朧朧似乎有一個人影立在當中，令人歎羨不已。\n" NOR;
+                msg += HIG "你冥冥中彷彿得到了佛主的指示，登時有茅塞頓開的感覺。\n" NOR;
 
                 for( int i=0; i<sizeof(obs); i++ )
                         addn("potential", 1000, obs[i]);
@@ -57,14 +57,14 @@ private void do_bonus(object room)
                 MAP_D->record_rumor(obs, "峨嵋佛光", this_object());
 
                 CHANNEL_D->do_channel(this_object(), "rumor",
-                                      "聽說峨嵋金頂佛光出現，令人嘆為觀止，讚嘆不已。");
+                                      "聽説峨嵋金頂佛光出現，令人歎為觀止，讚歎不已。");
         } else
         if (r < 250)
         {
                 switch (random(3))
                 {
                 case 0:
-                        msg = HIY "一輪紅日躍出天際，映射得層巒疊翠分外妖嬈，茫茫雲海，盡披紅妝。\n" NOR;
+                        msg = HIY "一輪紅日躍出天際，映射得層巒疊翠分外妖嬈，茫茫雲海，盡披紅粧。\n" NOR;
                         break;
                 case 1:
                         msg = HIY "忽然間一輪紅日躍了上來，天地之間登時輝煌無比，只射得你眼睛都無法睜開。\n" NOR;
@@ -94,7 +94,7 @@ private void do_bonus(object room)
                         msg = WHT "天邊漸漸的發白，但是一層一層的雲氣將日頭壓得光芒一絲都看不見。\n" NOR;
                         break;
                 }
-                msg += HIG "你心中連嘆：“太可惜了！”\n" NOR;
+                msg += HIG "你心中連歎：“太可惜了！”\n" NOR;
 
                 message("vision", msg, obs);
         }

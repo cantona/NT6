@@ -4,14 +4,14 @@ $HIY$【留言版】$NOR$
 小異，基本上都提供下列指令：
 
 $HIC$post$NOR$    <標題> 開始進行留言，你必須指定一個標題才能留言。
-$HIC$re$NOR$      <編號> 回復指定帖子。
-$HIC$re$NOR$      <last> 回復最後一個帖子。
+$HIC$re$NOR$      <編號> 回覆指定帖子。
+$HIC$re$NOR$      <last> 回覆最後一個帖子。
 
 $HIC$from$NOR$    [編號] 列表顯示從指定編號開始五十個留言的標題。
-$HIC$read$NOR$    <編號> 閱讀指定編號留言。
-$HIC$read$NOR$    <next> 閱讀您第一未讀過的留言。
+$HIC$read$NOR$    <編號> 閲讀指定編號留言。
+$HIC$read$NOR$    <next> 閲讀您第一未讀過的留言。
 $HIC$read$NOR$    <new>  同上。
-$HIC$read$NOR$    <old>  閱讀留言板保存的舊帖。
+$HIC$read$NOR$    <old>  閲讀留言板保存的舊帖。
 
 $HIC$hold$NOR$  +|- <id> 設置留言板禁止某人留言。
 $HIC$banzhu$NOR$ +|- <id>設置留言板的斑竹。

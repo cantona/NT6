@@ -44,7 +44,7 @@ int do_du(string arg)
 
         if (me->is_busy())
         {
-                write("你現在正忙著呢。\n");
+                write("你現在正忙着呢。\n");
                 return 1;
         }
 
@@ -68,19 +68,19 @@ int do_du(string arg)
 
         if( query("jing", me)<30 )
         {
-                write("你現在過于疲倦，無法專心下來研讀新知。\n");
+                write("你現在過於疲倦，無法專心下來研讀新知。\n");
                 return 1;
         }
 
         if( me->query_skill("tie-zhang", 1) > 120)
         {
-                write("你研讀了一會兒，但是發現上面所說的對你而言都太淺顯了，沒有學到任何東西。\n");
+                write("你研讀了一會兒，但是發現上面所説的對你而言都太淺顯了，沒有學到任何東西。\n");
                 return 1;
         }
 
         if( me->query_skill("tie-zhang", 1) < 50)
         {
-                write("你研讀了一會兒，但是發現上面所說的對你而言都太深奧了，沒有學到任何東西。\n");
+                write("你研讀了一會兒，但是發現上面所説的對你而言都太深奧了，沒有學到任何東西。\n");
                 return 1;
         }
 

@@ -7,7 +7,7 @@ void create()
         set("short", "猴子望月");
         set("long", @LONG
 此處原是一仞高聳入雲的峭壁，不知何年由人從峭壁的半腰硬是
-開出一條棧道來，棧道旁有一粗十余丈的擎天石柱，石柱頂生一鬆，
+開出一條棧道來，棧道旁有一粗十餘丈的擎天石柱，石柱頂生一鬆，
 鬆旁有一天生奇石，宛如翹首望月的猴子。 
 LONG );
         set("exits", ([ /* sizeof() == 3 */
@@ -42,7 +42,7 @@ int do_open()
         object me = this_player();
 
         if (query("exits/up"))
-                return notify_fail("門已經是開著的了。\n");
+                return notify_fail("門已經是開着的了。\n");
 
         set("exits", ([ /* sizeof() == 3 */
                 "southdown" : __DIR__"liyubei",
@@ -68,7 +68,7 @@ int do_close()
         object me = this_player();
 
         if (! query("exits/up"))
-                return notify_fail("門已經是關著的了。\n");
+                return notify_fail("門已經是關着的了。\n");
 
         set("exits", ([ /* sizeof() == 3 */
                 "southdown" : __DIR__"liyubei",

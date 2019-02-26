@@ -1,4 +1,4 @@
-// wanli.c 晴空萬裡
+// wanli.c 晴空萬里
 
 #include <ansi.h>
 #include <combat.h>
@@ -18,25 +18,25 @@ int perform(object me, object target)
         if (! target) target = offensive_target(me);
 
         if (! target || ! me->is_fighting(target))
-                return notify_fail("晴空萬裡只能對戰鬥中的對手使用。\n");
+                return notify_fail("晴空萬里只能對戰鬥中的對手使用。\n");
 
         if ((int)me->query_skill("never-defeated", 1) < 120)
-                return notify_fail("你的不敗神功還不夠嫻熟，不能使用晴空萬裡。\n");
+                return notify_fail("你的不敗神功還不夠嫻熟，不能使用晴空萬里。\n");
                                 
         if( query("neili", me)<200 )
-                return notify_fail("你現在內力太弱，不能使用晴空萬裡。\n");
+                return notify_fail("你現在內力太弱，不能使用晴空萬里。\n");
                         
         if( !objectp(weapon=query_temp("weapon", me)) )
-                return notify_fail("你必須手持兵刃才能施展晴空萬裡！\n");
+                return notify_fail("你必須手持兵刃才能施展晴空萬里！\n");
                 
         if (me->query_skill_mapped("sword") != "never-defeated") 
-                return notify_fail("你現在沒有激發不敗神功為劍法，難以施展晴空萬裡。\n"); 
+                return notify_fail("你現在沒有激發不敗神功為劍法，難以施展晴空萬里。\n"); 
                 
         if (! living(target))
-                return notify_fail("對方都已經這樣了，用不著這麼費力吧？\n");
+                return notify_fail("對方都已經這樣了，用不着這麼費力吧？\n");
 
         msg = HIC "$N" HIC "懷抱" + weapon->name() + HIC "，一"
-              "圈圈的劃向$n" HIC "，將$p" HIC "卷在當中！\n" NOR;
+              "圈圈的划向$n" HIC "，將$p" HIC "卷在當中！\n" NOR;
         addn("neili", -20, me);
 
         ap = attack_power(me, "sword");

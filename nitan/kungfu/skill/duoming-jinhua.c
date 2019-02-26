@@ -15,7 +15,7 @@ mapping *action = ({
         "lvl" : 20,
         "skill_name": "隔日黃花",
 ]),
-([        "action":"$N一招「飛雪黃花」，長袖一揮，手中$w風卷殘雪般漫天激
+([        "action":"$N一招「飛雪黃花」，長袖一揮，手中$w風捲殘雪般漫天激
 射$n的$l",
         "lvl" : 40,
         "skill_name": "飛雪黃花",
@@ -28,7 +28,7 @@ mapping *action = ({
         "lvl" : 100,
         "skill_name":"遍地黃花",
 ]),
-([        "action":"$N手扣$w，身形一晃，憑空一指，一招「金花奪目」洒
+([        "action":"$N手扣$w，身形一晃，憑空一指，一招「金花奪目」灑
 向$n的$l",
         "lvl" : 120,
         "skill_name": "金花奪目",

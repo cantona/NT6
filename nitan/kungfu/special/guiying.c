@@ -12,7 +12,7 @@ int perform(object me, string skill, string arg)
         if (me->query_temp("special/guiying"))
                 return notify_fail("鬼影流星技能已經在施展中了。\n");
 
-        if (me->is_busy())return notify_fail("等你忙完再說吧！\n");
+        if (me->is_busy())return notify_fail("等你忙完再説吧！\n");
 
         message_vision(HIY "$N" HIY "凝神閉氣，將數股真氣同時催動，沿各處經脈運轉一個周天，剎時身法變得飄逸無比 ……\n" NOR, me);
  

@@ -46,7 +46,7 @@ void create()
         map_skill("unarmed","kongming-quan");
 
         set("inquiry", ([
-                "周伯通"     : "他、他、、他在哪裡！",
+                "周伯通"     : "他、他、、他在哪裏！",
                 "段智興"     : "這個老和尚，枉稱慈悲！\n",
                 "一燈大師"   : (: ask_yideng :),
                 "九章算術"   : (: ask_book :),
@@ -67,7 +67,7 @@ string ask_book()
                 fam["family_name"] != "段氏皇族") ||
                 (query("book_count") < 1) )
                 return RANK_D->query_respect(this_player()) +
-                "說什麼？我實在不明白。";
+                "説什麼？我實在不明白。";
 
         if (this_player()->query_skill("literate",1) < 100)
                 return RANK_D->query_respect(this_player()) +
@@ -86,7 +86,7 @@ string ask_yideng()
 
         if (query("yideng_count") < 1)
                 return RANK_D->query_respect(this_player()) +
-                "想說什麼？找一燈大師，那可別找我。";
+                "想説什麼？找一燈大師，那可別找我。";
         addn("yideng_count", -1);
         ob = new(__DIR__"obj/whiteobj");
         ob->move(this_player());

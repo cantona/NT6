@@ -31,7 +31,7 @@ mapping *action = ({
         "skill_name" : "寅時挑燈",
         "damage_type" : "點穴"
 ]),
-([      "action":"$N手中的$w自左而右地一晃，使出「神卯環心」帶著呼呼風聲橫打$n的章門穴",
+([      "action":"$N手中的$w自左而右地一晃，使出「神卯環心」帶着呼呼風聲橫打$n的章門穴",
         "force" : 190,
         "attack": 50,
         "dodge" : 5,
@@ -41,7 +41,7 @@ mapping *action = ({
         "skill_name" : "神卯環心",
         "damage_type" : "點穴"
 ]),
-([      "action":"$N飛身躍起，一式「午不過子」，卷起漫天幻影，$w向$n勞宮穴電射而去",
+([      "action":"$N飛身躍起，一式「午不過子」，捲起漫天幻影，$w向$n勞宮穴電射而去",
         "force" : 240,
         "attack": 60,
         "dodge" : 10,
@@ -71,14 +71,14 @@ mapping *action = ({
         "skill_name" : "七耀計都",
         "damage_type" : "點穴"
 ]),
-([      "action":"$N側身斜刺一招，正是一式「破煞沖關」卷帶著呼呼風聲，將$n包圍緊裹",
+([      "action":"$N側身斜刺一招，正是一式「破煞衝關」卷帶着呼呼風聲，將$n包圍緊裹",
         "force" : 310,
         "attack": 75,
         "dodge" : 5,
         "parry" : 64,
         "damage": 90,
         "lvl"   : 150,
-        "skill_name" : "破煞沖關",
+        "skill_name" : "破煞衝關",
         "damage_type" : "點穴"
 ]),
 });

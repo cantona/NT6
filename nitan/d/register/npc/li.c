@@ -7,7 +7,7 @@ void greeting(object me);
 void create()
 {
         set_name("李自成", ({ "li zicheng", "li"}));
-        set("long", "他面透煞氣，暴戾異常，看得你心裡毛毛的。\n");
+        set("long", "他面透煞氣，暴戾異常，看得你心裏毛毛的。\n");
         set("gender", "男性");
         set("age", 49);
         set("attitude", "peaceful");

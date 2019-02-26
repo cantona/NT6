@@ -2,7 +2,7 @@ inherit NPC;
 
 void create()
 {
-        set_name("老雇工", ({ "lao gugong","lao"}) );
+        set_name("老僱工", ({ "lao gugong","lao"}) );
         set("gender", "男性" );
         set("age", 50);
         set("long", "年邁的外地討生活人。\n");

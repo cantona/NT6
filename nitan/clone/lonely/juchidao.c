@@ -46,7 +46,7 @@ mixed hit_ob(object me, object victim, int damage_bonus)
                 n = me->query_skill("blade");
                 victim->receive_damage("qi", n, me);
                 victim->receive_wound("qi", n, me);
-                return HIC "\n$N" HIC "將手中黃金鋸齒刀立于胸前，猛地金"
+                return HIC "\n$N" HIC "將手中黃金鋸齒刀立於胸前，猛地金"
                       "刀一橫，金光晃動之處$n" HIC "只覺殺氣逼人。\n" NOR;
         }
         return damage_bonus;

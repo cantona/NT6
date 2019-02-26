@@ -25,7 +25,7 @@ int perform(object me, object target)
         if( !objectp(weapon=query_temp("handing", me)) || 
             query("skill_type", weapon) != "throwing" || 
             weapon->query_amount() < 1)
-                return notify_fail("你現在手中並沒有拿著暗器，無法施展出" SHE "。\n");
+                return notify_fail("你現在手中並沒有拿着暗器，無法施展出" SHE "。\n");
 
         if ((skill = me->query_skill("fenglei-zifa", 1)) < 100)
                 return notify_fail("你的風雷子法不夠嫻熟，無法施展" SHE "。\n");
@@ -34,7 +34,7 @@ int perform(object me, object target)
                 return notify_fail("你內力不足，無法施展" SHE "。\n");
 
         if (! living(target))
-                return notify_fail("對方都已經這樣了，用不著這麼費力吧？\n");
+                return notify_fail("對方都已經這樣了，用不着這麼費力吧？\n");
 
         addn("neili", -80, me);
         weapon->add_amount(-1);

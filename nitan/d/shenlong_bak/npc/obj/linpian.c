@@ -9,7 +9,7 @@ void create()
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("long", HIG "一片從蛇精身上獲取的鱗片，是勇者的象征。\n" NOR);
+                set("long", HIG "一片從蛇精身上獲取的鱗片，是勇者的象徵。\n" NOR);
                 set("unit", "片");
         }
 }

@@ -54,7 +54,7 @@ void attempt_apprentice(object ob)
         if( query("born_family", ob) != "歐陽世家" )
         {
                 command("shake");
-                command("say 你是哪裡來的？居然敢來白駝山添亂？");
+                command("say 你是哪裏來的？居然敢來白駝山添亂？");
                 return;
         }
 

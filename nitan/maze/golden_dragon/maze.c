@@ -18,13 +18,13 @@ void create()
         // 迷宮房間時間ID和刷新時間。
         set_remove_time(1800);
 
-        //迷宮房間裡的怪物。
+        //迷宮房間裏的怪物。
         set_maze_npcs(__DIR__"npc/beast");
 
         // 迷宮中的怪物出現可能性
         set_npcs_rate(50);
 
-        //迷宮房間裡的BOSS。
+        //迷宮房間裏的BOSS。
         set_exit_npcs(__DIR__"npc/dragon");
 
         //迷宮的單邊長
@@ -61,13 +61,13 @@ LONG
         //BOSS房間描述
         set_exit_desc(HIY"
 
-這裡就是沙漠盡頭。。。。。。
+這裏就是沙漠盡頭。。。。。。
 "NOR);
 
         //迷宮房間的短描述
         set_maze_room_short("忘憂園");
 
-        //迷宮房間的描述，如果有多條描述，制造每個房
+        //迷宮房間的描述，如果有多條描述，製造每個房
         //間的時候會從中隨機選擇一個。
         set_maze_room_desc(@LONG
 這兒就是關外的忘憂園。周圍陰森森的，只有四個黑乎乎的洞口，
@@ -75,7 +75,7 @@ LONG
 LONG
 );
 
-        // 迷宮房間是否為戶外房間？
+        // 迷宮房間是否為户外房間？
         //set_outdoors(1);
 }
 

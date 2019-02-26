@@ -25,16 +25,16 @@ int main(object me, string arg)
                 return notify_fail("你現在已經佔了一個攤位，還是適可而止吧。\n");
 
         if( me->is_busy() || query_temp("pending/deriving", me) )
-                return notify_fail("你現在正忙著呢，沒功夫擺攤設點。\n");
+                return notify_fail("你現在正忙着呢，沒功夫擺攤設點。\n");
 
         if (me->query_condition("killer"))
                 return notify_fail("現在官府正到處查你呢，難得還有心情擺攤？\n");
 
         if( query("no_trade", where) )
-                return notify_fail("這裡常有官兵來巡邏，最好換個地方做生意。\n");
+                return notify_fail("這裏常有官兵來巡邏，最好換個地方做生意。\n");
 
         if( query("no_fight", where) && !query("can_trade", where) )
-                return notify_fail("這個地方過于嘈雜，還是換個地方做生意吧。\n");
+                return notify_fail("這個地方過於嘈雜，還是換個地方做生意吧。\n");
 
         message_vision(WHT "$N" WHT "尋了塊空地，一屁股坐了下來，隨後掏"
                        "出一塊布攤開在地。\n" NOR, me);
@@ -57,7 +57,7 @@ int baitan(object me)
         case 0:
 
                 message_vision(CYN "$N" CYN "環顧了一下四周，笑眯眯"
-                               "地招呼著眾人。\n" NOR, me);
+                               "地招呼着眾人。\n" NOR, me);
                 break;
 
         case 1:
@@ -67,7 +67,7 @@ int baitan(object me)
 
         case 2:
                 message_vision(CYN "$N" CYN "吆喝道：大家來看看，我"
-                               "這裡貨物齊全，包您滿意。\n" NOR, me);
+                               "這裏貨物齊全，包您滿意。\n" NOR, me);
                 break;
         case 3:
                 message_vision(CYN "$N" CYN "吆喝道：來來來，現在所"

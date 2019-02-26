@@ -2,10 +2,10 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "火燄洞外");
+        set("short", "火焰洞外");
         set("long",@LONG
-這是神龍島火燄洞外，據說洞內長滿各種毒蟲，傳說洞內住著一
-只火燄巨獸，但是沒有人見過。
+這是神龍島火焰洞外，據説洞內長滿各種毒蟲，傳説洞內住着一
+只火焰巨獸，但是沒有人見過。
 LONG);
 
 	set("exits", ([
@@ -14,7 +14,7 @@ LONG);
 
 	]));
 
-	// 未確保100%安全，在這裡也設置免死
+	// 未確保100%安全，在這裏也設置免死
 	set("no_die", 1);
 	
         setup();
@@ -36,7 +36,7 @@ int valid_leave(object me, string dir)
         	{
         		if (base_name(environment(ob)) == "/d/shenlong/huodong1")
         		{
-        			write("對不起，裡面已經開始了對抗火麒麟的戰鬥。\n");
+        			write("對不起，裏面已經開始了對抗火麒麟的戰鬥。\n");
         			return 0;
         		}
         	}

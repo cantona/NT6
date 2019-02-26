@@ -26,18 +26,18 @@ int main(object me, string arg)
               && !(query("sleep_room", where) )
              && !objectp(bag = present("sleepbag", me))
               || (query("no_sleep_room", where)) )
-             return notify_fail("這裡不是你能睡的地方！\n");
+             return notify_fail("這裏不是你能睡的地方！\n");
 
 
         if (me->is_busy())
-                return notify_fail("你正忙著呢！\n");
+                return notify_fail("你正忙着呢！\n");
 
         if( me->is_fighting() )
                 return notify_fail("戰鬥中不能睡覺！\n");
 
         if( query("hotel", where) && !(query_temp("rent_paid", me)) )
         {
-                message_vision("店小二從門外對$N大叫：把這裡"
+                message_vision("店小二從門外對$N大叫：把這裏"
                                "當避難所啊！先到一樓付錢後再來睡！\n",me);
                 return 1;
         }
@@ -45,7 +45,7 @@ int main(object me, string arg)
         jing=query("jing", me);
         qi=query("qi", me);
         if (jing < 0 || qi < 0)
-                return notify_fail("你現在接近昏迷，睡不著覺。\n");
+                return notify_fail("你現在接近昏迷，睡不着覺。\n");
         cnd = me->query_condition();
         if (cnd && sizeof(cnd))
         {
@@ -56,10 +56,10 @@ int main(object me, string arg)
                             CONDITION_D(kc[i])->min_jing_needed(me) > jing)
                         {
                                 message("vision", me->name() + "看樣子是想睡覺，"
-                                        "可是輾轉反側，就是睡不著。\n",
+                                        "可是輾轉反側，就是睡不着。\n",
                                         environment(me), me);
                                 tell_object(me, "你想合上眼睛好好睡上一覺，可是" +
-                                            to_chinese(kc[i]) + "不斷折磨著你，"
+                                            to_chinese(kc[i]) + "不斷折磨着你，"
                                             "讓你輾轉難眠。\n");
                                 return 1;
                         }
@@ -68,10 +68,10 @@ int main(object me, string arg)
 
         if( query("sleep_room", where) )
         {
-            write("你往床上一躺，開始睡覺。\n");
+            write("你往牀上一躺，開始睡覺。\n");
             write("不一會兒，你就進入了夢鄉。\n");
             set_temp("block_msg/all", 1, me);
-            message_vision("$N一歪身，倒在床上，不一會"
+            message_vision("$N一歪身，倒在牀上，不一會"
                            "便鼾聲大作，進入了夢鄉。\n",me);
         } else
         if (objectp(bag = present("sleepbag", me)))

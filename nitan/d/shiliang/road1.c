@@ -5,7 +5,7 @@ void create()
         set("short", "青石大道");
         set("long", @LONG
 這是通往衢州石樑鎮的青石大道，浙南山國，比之水鄉澤國的蘇南
-浙北，自是另一風味了。北面就是石樑溫家了。
+浙北，自是另一風味了。北面就是石樑温家了。
 LONG
         );
         set("outdoors", "shiliang");

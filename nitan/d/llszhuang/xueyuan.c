@@ -6,7 +6,7 @@ void create()
 {
         set("short", "雪原");
         set("long",
-"這裡是一片無垠的雪地，天地之間一片蒼茫，兩行足跡遠遠地延伸出\n"
+"這裏是一片無垠的雪地，天地之間一片蒼茫，兩行足跡遠遠地延伸出\n"
 "去，似乎永無盡頭。此時狂風大作，風中隱隱傳來厲嘯和“咯咯”的笑聲。\n"
 );
         set("no_magic", "1");
@@ -56,16 +56,16 @@ int valid_leave(object ob,string dir)
                      message("channel:chat", YEL"【江湖故事】江湖傳言："+ob->name()+"在某一天突然闖入了柳綠山莊。\n"NOR,users());
                                 ob->move(__DIR__"gate");
                                 delete_temp("doom_trigger", ob);
-                                return notify_fail("你終于找到了出口，來到了綠柳山莊的正門。\n");
+                                return notify_fail("你終於找到了出口，來到了綠柳山莊的正門。\n");
                         }
 
 
                         if( query_temp("doom_trigger", ob) == -3 )
                         {
-                                write("你終于找到了來時的路，渡過了小河，循原路回。\n");
+                                write("你終於找到了來時的路，渡過了小河，循原路回。\n");
                                 ob->move(__DIR__"dukou");
                                 delete_temp("doom_trigger", ob);
-                              return notify_fail("你終于找到了來時的路，渡過了小河，循原路回到了渡口。\n");
+                              return notify_fail("你終於找到了來時的路，渡過了小河，循原路回到了渡口。\n");
                         }
 
                         return 1;

@@ -10,7 +10,7 @@ void create()
         set("long", @LONG
 在這小山洞(dong)的深處，一股強大的水流自地上流出，形成一條
 小河流向洞外。如果想再進一步深入的話，就得要跳入水中了。往外可
-到小河邊。往裡就要潛水了。
+到小河邊。往裏就要潛水了。
 LONG
         );
         set("item_desc", ([
@@ -35,7 +35,7 @@ int valid_leave(object me, string dir)
         if( dir == "southdown" && query("family/family_name", me) == "古墓派" )
         {
                 message_vision(HIG "$N縱身一躍，跳入水潭之中。\n"NOR,me);
-                write(HIC"許多遊魚從你邊遊過，你伸手一撈，卻抓了空。突然你眼前一亮，一股暗流撲面而來，將你沖入一個所在。\n"NOR);
+                write(HIC"許多游魚從你邊遊過，你伸手一撈，卻抓了空。突然你眼前一亮，一股暗流撲面而來，將你衝入一個所在。\n"NOR);
                 return 1;
         }
         return ::valid_leave(me, dir);

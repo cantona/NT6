@@ -80,7 +80,7 @@ int recognize_apprentice(object ob, string skill)
 {
         if( query("combat_exp", ob)>20000 )
         {
-                command("say 你現在應該多出去鍛煉鍛煉，呆在這裡可不是辦法。");
+                command("say 你現在應該多出去鍛鍊鍛鍊，呆在這裏可不是辦法。");
                 return -1;
         }
 

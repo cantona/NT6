@@ -197,7 +197,7 @@ void join_battle(object me)
                 return tell_object(me, BUSY_MESSAGE);
 
         if( me->is_fighting() )
-                return tell_object(me, "你目前正在戰鬥中，還是先處理目前的對手再說吧。\n");
+                return tell_object(me, "你目前正在戰鬥中，還是先處理目前的對手再説吧。\n");
 
         if( me->query_condition("killer") )
                 return tell_object(me, "官府正在通緝你，你還敢在這兒拋頭露面？\n");
@@ -282,7 +282,7 @@ void cancel_battle(object me)
 
 int check_quit(object me)
 {
-        CHANNEL_D->channel_broadcast("war", HIR"戰"NOR RED"場"HIR"：玩家" + me->name(1) +"在「"+battle_name+HIR"」中臨陣脫逃，溜走了。"NOR);
+        CHANNEL_D->channel_broadcast("war", HIR"戰"NOR RED"場"HIR"：玩家" + me->name(1) +"在「"+battle_name+HIR"」中臨陣脱逃，溜走了。"NOR);
 
         addn("honors", -500, me); // 扣減榮譽
         if( query("honors", me)<0);
@@ -295,7 +295,7 @@ int check_quit(object me)
 
         tell_object(me, "你一口氣逃出了戰場。\n");
         restore_status(me);
-        message("vision", "只見" + me->name() + "慌裡慌張的跑了過來。\n",
+        message("vision", "只見" + me->name() + "慌裏慌張的跑了過來。\n",
                 environment(me), ({ me }));
 
         return 1;
@@ -675,10 +675,10 @@ void stop_battle()
         battle_start_flag = 0;
         battle_time_countdown = 0;        
 
-        CHANNEL_D->channel_broadcast("war", WHT"────────────────────────────────"NOR);
-        CHANNEL_D->channel_broadcast("war", HIR"戰"NOR RED"爭"HIR"：「"+battle_name+HIR"」終于漸漸平息..."NOR);
+        CHANNEL_D->channel_broadcast("war", WHT"————————————————————————————————"NOR);
+        CHANNEL_D->channel_broadcast("war", HIR"戰"NOR RED"爭"HIR"：「"+battle_name+HIR"」終於漸漸平息..."NOR);
         CHANNEL_D->channel_broadcast("war", HIR"戰"NOR RED"爭"HIR"：正在統計戰績..."NOR);
-        CHANNEL_D->channel_broadcast("war", WHT"────────────────────────────────"NOR);
+        CHANNEL_D->channel_broadcast("war", WHT"————————————————————————————————"NOR);
 
 
         if( ob = find_object(BATTLE_FIELD_DIR + battle_name) )
@@ -715,7 +715,7 @@ void calculate_score()
 
         map_delete(battle_player, 0);
 
-        CHANNEL_D->channel_broadcast("war", WHT"────────────────────────────────"NOR);
+        CHANNEL_D->channel_broadcast("war", WHT"————————————————————————————————"NOR);
 
         rank = 0;
         foreach(string id in get_sorted_players())

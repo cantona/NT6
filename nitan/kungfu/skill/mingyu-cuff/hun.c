@@ -30,7 +30,7 @@ int perform(object me, object target)
 
         if( objectp(weapon=query_temp("weapon", me)) || 
             objectp(weapon=query_temp("handing", me)) )
-                return notify_fail("你必須空著雙手才能使用掌法絕招。\n");
+                return notify_fail("你必須空着雙手才能使用掌法絕招。\n");
 
         if( query("neili", me)<500 )
                 return notify_fail("你的內力不夠。\n");
@@ -57,8 +57,8 @@ int perform(object me, object target)
                 COMBAT_D->do_attack(me, target, 0, 0);
         }
 
-        msg = HIW "\n緊接著地面上響起了一陣輕而密的劈啪之聲，眼看著巖石以及泥土的表面上，\n"
-              HIW "瞬時凝結起了寸余高的冰塊。“唰”地一下，向$n襲來。\n" NOR;
+        msg = HIW "\n緊接着地面上響起了一陣輕而密的劈啪之聲，眼看着巖石以及泥土的表面上，\n"
+              HIW "瞬時凝結起了寸餘高的冰塊。“唰”地一下，向$n襲來。\n" NOR;
 
         if (ap / 2 + random(ap) > dp || !living(target))
         {

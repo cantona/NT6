@@ -12,9 +12,9 @@ void set_players(object *ob) {
 void add_player(object ob) {
         if(member_array(ob,players)==-1) {
                 players += ({ob});
-                message_vision(BLU"$N對$n說道：謝謝！\n"NOR,this_object(),ob);
+                message_vision(BLU"$N對$n説道：謝謝！\n"NOR,this_object(),ob);
         } else
-                message_vision(BLU"$N對$n說道：你已經答應幫忙，你不會反悔吧！\n"NOR,this_object(),ob);
+                message_vision(BLU"$N對$n説道：你已經答應幫忙，你不會反悔吧！\n"NOR,this_object(),ob);
 }
 
 void del_player(object ob) {
@@ -128,9 +128,9 @@ void init()
 void greeting(object ob)
 {
         if( !ob || environment(ob) != environment() ) return;
-        if( query_temp("開場白結束") || query_temp("開始說開場白") || query_temp("任務") )
+        if( query_temp("開場白結束") || query_temp("開始説開場白") || query_temp("任務") )
                 return;
-        message_vision(CYN "$N有氣無力地說道：這位" + RANK_D->query_respect(ob) +
+        message_vision(CYN "$N有氣無力地説道：這位" + RANK_D->query_respect(ob) +
                 "，能聽我一言嗎？(answer yes/no)\n" NOR, this_object(), ob);
 }
 
@@ -141,12 +141,12 @@ int do_answer(string arg) {
                         return 0;
                 if(present("tape",environment()))
                         return 0;
-                set_temp("開始說開場白",1);
+                set_temp("開始説開場白",1);
                 ob = new(__DIR__"obj/taoist_tape");
                 ob->move(environment());
                 ob->play_sound_0(this_object(),0);
         } else if(arg=="no") {
-                message_vision(BLU"$N說道：誰想聽你這個牛鼻子廢話！\n",this_player());
+                message_vision(BLU"$N説道：誰想聽你這個牛鼻子廢話！\n",this_player());
         } else
                 return notify_fail("你要回答什麼？\n");
         return 1;
@@ -180,8 +180,8 @@ int do_accept(string arg) {
         }
         else if(arg=="no") {
                 delete_temp("開場白結束");
-                delete_temp("開始說開場白");
-                message_vision(BLU"$N說道：沒好處的事情我可不幹！\n",this_player());
+                delete_temp("開始説開場白");
+                message_vision(BLU"$N説道：沒好處的事情我可不幹！\n",this_player());
         }
         else
                 return 0;
@@ -209,7 +209,7 @@ int do_report(string arg) {
         switch(quest_index) {
                         case(1):
                                 if( query("quest/killed/骷髏", mazeobj) >= query("quest/to_kill/骷髏", mazeobj) && 
-                                         query("quest/killed/僵屍", mazeobj) >= query("quest/to_kill/僵屍", mazeobj) && 
+                                         query("quest/killed/殭屍", mazeobj) >= query("quest/to_kill/殭屍", mazeobj) && 
                                          query("quest/killed/幽靈", mazeobj) >= query("quest/to_kill/幽靈", mazeobj )
                                          ) {
                                                  //mazeobj->delete("quest/to_kill");
@@ -223,7 +223,7 @@ int do_report(string arg) {
                         case(2):
                                 if( query("quest/killed/骷髏武士", mazeobj) >= query("quest/to_kill/骷髏武士", mazeobj) && 
                                          query("quest/killed/骷髏法師", mazeobj) >= query("quest/to_kill/骷髏法師", mazeobj) && 
-                                         query("quest/killed/血僵屍", mazeobj) >= query("quest/to_kill/血僵屍", mazeobj) && 
+                                         query("quest/killed/血殭屍", mazeobj) >= query("quest/to_kill/血殭屍", mazeobj) && 
                                          query("quest/killed/屍煞", mazeobj) >= query("quest/to_kill/屍煞", mazeobj) && 
                                          query("quest/killed/幽冥之火", mazeobj) >= query("quest/to_kill/幽冥之火", mazeobj) && 
                                          query("quest/killed/幽冥之眼", mazeobj) >= query("quest/to_kill/幽冥之眼", mazeobj )
@@ -252,7 +252,7 @@ int do_report(string arg) {
                  case(4):
                                 if( query("quest/finded/骨杖", mazeobj) >= query("quest/to_find/骨杖", mazeobj) && 
                                          query("quest/finded/幽冥之火", mazeobj) >= query("quest/to_find/幽冥之火", mazeobj) && 
-                                         query("quest/finded/僵屍血", mazeobj) >= query("quest/to_find/僵屍血", mazeobj )
+                                         query("quest/finded/殭屍血", mazeobj) >= query("quest/to_find/殭屍血", mazeobj )
                                  ) {
                                                  //mazeobj->delete("quest/to_find");
                                                  set_temp("in_speech",1);
@@ -264,7 +264,7 @@ int do_report(string arg) {
                                 break;
                 case(5):
                                 if(!query_leader()) {
-                                        message_vision(BLU"$N對$n說：你帶路吧。\n"NOR,this_object(),this_player());
+                                        message_vision(BLU"$N對$n説：你帶路吧。\n"NOR,this_object(),this_player());
                                         set_leader(this_player());
                                         return 1;
                                 }
@@ -321,7 +321,7 @@ void smart_action3()
                 target = enemies[random(sizeof(enemies))];
                 if(target)
                 {
-                        msg = HIG "$N口中喃喃地念著咒文，左手一揮，手中聚起五色光芒，霎時化為三股！\n\n";
+                        msg = HIG "$N口中喃喃地念着咒文，左手一揮，手中聚起五色光芒，霎時化為叁股！\n\n";
                         msg += HIC "一團青光射向$n！\n" NOR;
 
                         yourexp=query("combat_exp", target);
@@ -367,7 +367,7 @@ void smart_action3()
                                 damage = damage + random(damage);
 
                                 msg +=  HIR "結果「嗤」地一聲，紫光從$p身上透體而過，拖出一條長長的七彩光氣，光氣繞了\n"
-                                            "回轉過來又從$N頂門注入$P的體內！\n" NOR;
+                                            "迴轉過來又從$N頂門注入$P的體內！\n" NOR;
                                 target->receive_damage("qi", damage, me);
                                 target->receive_wound("qi", damage/3, me);
                         } else
@@ -530,9 +530,9 @@ int accept_object(object me, object obj)
                                                 destruct(obj);
                                                 return 1;
                                 }
-                                if(obj->name()=="僵屍血" &&
+                                if(obj->name()=="殭屍血" &&
                                    query("id", obj) == "zombie blood"){
-                                                set("quest/finded/僵屍血", 1, mazeobj);
+                                                set("quest/finded/殭屍血", 1, mazeobj);
                                                 command("pat "+query("id", me));
                                                 destruct(obj);
                                                 return 1;
@@ -561,7 +561,7 @@ void give_reward_necropolis(object *ob,object reward_giver) {
                                 continue;
                         //if(!environment(member) || !environment(member)->query("virtual_room"))
                                 //continue;
-                        if(mazedir!=FUBEN_D->query_maze_dir(member))//不在同一個副本裡
+                        if(mazedir!=FUBEN_D->query_maze_dir(member))//不在同一個副本里
                                 continue;
                         ref_exp = 80000;
                         ref_pot = 3000;

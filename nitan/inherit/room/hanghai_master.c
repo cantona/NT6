@@ -1,6 +1,6 @@
 //                標準描述長度示例                                   |
 // “小航海時代”遊戲主支持
-// by naihe  2003-06-19  于茂名
+// by naihe  2003-06-19  於茂名
 
 
 
@@ -11,9 +11,9 @@ inherit ITEM;
 #define B1                "燦爛奪目的黃金劍"        // 金劍  - YEL, HIY
 #define B2                "裝滿金幣的寶箱"        // 寶箱  - MAG, HIM
 #define B3                "鑲嵌鑽石的金皇冠"        // 皇冠  - YEL, HIY
-#define B4                "皇後的鑽石項鏈"        // 項鏈  - CYN, HIC
-#define B5                "聖潔的銀杯"                // 銀杯  - WHT, HIW
-#define B6                "神秘的白金權杖"        // 權杖  - WHT, HIW
+#define B4                "皇后的鑽石項鍊"        // 項鍊  - CYN, HIC
+#define B5                "聖潔的銀盃"                // 銀盃  - WHT, HIW
+#define B6                "神祕的白金權杖"        // 權杖  - WHT, HIW
 #define B7                "驅逐邪靈的聖十字架"        // 聖架  - HIM, HIM
 #define B8                "預示未來的琉璃水晶"        // 水晶  - CYN, HIC
 #define B9                "鑲嵌紅寶石的力量之戒"        // 寶戒  - RED, HIR
@@ -48,7 +48,7 @@ int finded_baowu( int which, string name )
         addn("be_finded", 1);
         set("b"+ which, HIW + query("b"+ which) );
         map();
-        write(HIC"□小航海時代□  太幸運了！終于找到了 "+ name + " ！\n"NOR);
+        write(HIC"〖小航海時代〗  太幸運了！終於找到了 "+ name + " ！\n"NOR);
 
         if( query("be_finded") == 10 )
         {
@@ -69,7 +69,7 @@ int finded_baowu( int which, string name )
 
                 write(HIY"
 =========================================
-             □小航海時代□
+             〖小航海時代〗
 
     你找齊了十件寶物！！遊戲勝利結束了。
     你的最終得分是 "+score+" 分(僅供參考)。
@@ -128,7 +128,7 @@ void create()
                 set_default_object(__FILE__);
         else
         {
-                set("long", "□小航海時代□遊戲的主要道具，有了它才可以進行遊戲。
+                set("long", "〖小航海時代〗遊戲的主要道具，有了它才可以進行遊戲。
 
 查詢現在的遊戲狀態，輸入： game check
 任何時候結束遊戲，輸入：   game over
@@ -190,7 +190,7 @@ void new_game(object me)
         new_game_set( 6, "巨型章魚" );
 
 // ******************************************
-        new_game_set( 6, "海籐精怪" );
+        new_game_set( 6, "海藤精怪" );
 
 // ******************************************
         new_game_set( 6, "火神鳥" );
@@ -212,7 +212,7 @@ void new_game(object me)
         new_game_set( 1, B9);
         new_game_set( 1, B10);
 
-        new_game_set( 1, "當前船只位置");
+        new_game_set( 1, "當前船隻位置");
 
         set("att_rb", 999999);
         set("att_hp", 1);
@@ -222,7 +222,7 @@ void new_game(object me)
         set("att_fd", 1);
         set("hp", 100);
 
-        write(">>>>>>>  各類武器及船只補給完畢。\n");
+        write(">>>>>>>  各類武器及船隻補給完畢。\n");
         set_temp("hanghai_gameing", "waiting_go", me);
         write("\n============ 設置成功！正在進入遊戲…… ============\n");
 
@@ -230,8 +230,8 @@ void new_game(object me)
         set("b1", YEL"金劍"NOR);
         set("b2", YEL"寶箱"NOR);
         set("b3", YEL"皇冠"NOR);
-        set("b4", CYN"項鏈"NOR);
-        set("b5", WHT"銀杯"NOR);
+        set("b4", CYN"項鍊"NOR);
+        set("b5", WHT"銀盃"NOR);
         set("b6", WHT"權杖"NOR);
         set("b7", RED"聖架"NOR);
         set("b8", CYN"水晶"NOR);
@@ -244,7 +244,7 @@ void new_game(object me)
 void new_game_set( int amount, string mark )
 {
         int x, y;
-// 這裡的 x, y ， x是豎數第幾橫，y是橫數第幾個。
+// 這裏的 x, y ， x是豎數第幾橫，y是橫數第幾個。
 
         while( amount-- )
         {
@@ -258,7 +258,7 @@ void new_game_set( int amount, string mark )
                 }
 
                 set( "aaa(" +x+ "," +y+ ")" , mark );
-                if( mark == "當前船只位置" )
+                if( mark == "當前船隻位置" )
                 {
                         set("now_x", x);
                         set("now_y", y);
@@ -378,7 +378,7 @@ int do_go(string arg)
 
         here = query( "aaa(" +x+ "," +y+ ")" );
 
-        set("aaa(" +x+ "," +y+ ")", "當前船只位置");
+        set("aaa(" +x+ "," +y+ ")", "當前船隻位置");
         set("now_x", x);
         set("now_y", y);
 
@@ -394,7 +394,7 @@ int do_go(string arg)
                 addn("hp", 20+random(11));
                 if( query("hp") > 100 ) set("hp", 100);
                 map();
-                write(HIG"□小航海時代□  發現島嶼！得到了彈藥補給和船只修理。\n"NOR);
+                write(HIG"〖小航海時代〗  發現島嶼！得到了彈藥補給和船隻修理。\n"NOR);
                 return 1;
         }
 
@@ -403,7 +403,7 @@ int do_go(string arg)
                 addn("hp", 20+random(11));
                 if( query("hp") > 100 ) set("hp", 100);
                 map();
-                write(HIC"□小航海時代□  發現修補材料！船只得到了修理。\n"NOR);
+                write(HIC"〖小航海時代〗  發現修補材料！船隻得到了修理。\n"NOR);
                 return 1;
         }
 
@@ -411,7 +411,7 @@ int do_go(string arg)
         {
                 addn("hp", - (30+random(11)));
                 map();
-                write(HIR"□小航海時代□  糟糕！撞上了冰山！船受到了嚴重的損壞。\n"NOR);
+                write(HIR"〖小航海時代〗  糟糕！撞上了冰山！船受到了嚴重的損壞。\n"NOR);
                 check_hp();
                 return 1;
         }
@@ -440,9 +440,9 @@ int do_go(string arg)
 
         if( here == "望遠鏡" )
         {
-                game_now = "了望中 （指令： liaowang x y）";
+                game_now = "瞭望中 （指令： liaowang x y）";
                 map();
-                write(HIM"□小航海時代□  發現了望遠鏡！輸入 (liaowang x y) 指令查看該點周邊海域的情形！ \n"NOR);
+                write(HIM"〖小航海時代〗  發現瞭望遠鏡！輸入 (liaowang x y) 指令查看該點周邊海域的情形！ \n"NOR);
                 set_temp("hanghai_gameing", "wangyuanjing", me);
                 return 1;
         }
@@ -450,7 +450,7 @@ int do_go(string arg)
         if( here == "報警探索儀" )
         {
                 map();
-                write(HIM"□小航海時代□  發現了報警探索儀！\n"NOR);
+                write(HIM"〖小航海時代〗  發現了報警探索儀！\n"NOR);
 
 
                 msg = HIM"\n報警儀探索中……自動探索 "+x+","+y+" 區域的情況。\n\n";
@@ -473,20 +473,20 @@ int do_go(string arg)
         if( here == "尋寶圖" )
         {
                 map();
-                write(HIC"□小航海時代□  發現了尋寶圖！\n"NOR);
+                write(HIC"〖小航海時代〗  發現了尋寶圖！\n"NOR);
                 xunbaotu();
                 return 1;
         }
 
 
-        if( here == "海盜船" || here == "火神鳥" || here == "海籐精怪"
+        if( here == "海盜船" || here == "火神鳥" || here == "海藤精怪"
          || here == "巨型章魚" || here == "幽靈船" )
         {
                 game_now = "與 "+ here+ " 戰鬥中！ 等待敵人攻擊";
                 set_temp("hanghai_gameing", "fighting", me);
                 att_now = "not_ok";
                 map();
-                write(HIR"□小航海時代□  糟糕！遭遇了 "+ here+ " ！進入緊急戰鬥狀態！！！\n"NOR);
+                write(HIR"〖小航海時代〗  糟糕！遭遇了 "+ here+ " ！進入緊急戰鬥狀態！！！\n"NOR);
                 set("who_name", here);
                 remove_call_out("fight_start");
                 call_out("fight_start", 1, here);
@@ -495,13 +495,13 @@ int do_go(string arg)
 
 
         map();
-        write(HIW"□小航海時代□  漫漫航程，什麼也沒有發現……\n"NOR);
+        write(HIW"〖小航海時代〗  漫漫航程，什麼也沒有發現……\n"NOR);
         return 1;
 }
 
 void map()
 {
-        string the_map = HIC"□小航海時代□  -- "HIR"HP："+query("hp")+"  寶物："+ query("be_finded")+NOR"\n\n        ", temp_map, temp2;
+        string the_map = HIC"〖小航海時代〗  -- "HIR"HP："+query("hp")+"  寶物："+ query("be_finded")+NOR"\n\n        ", temp_map, temp2;
         int x, y, temp = 0;
 
         for( x=1; x<11; x++ )
@@ -525,8 +525,8 @@ void map()
                                 temp_map = HIG"▲"NOR;
                         if( query( "aaa"+temp2 ) == "舊的島嶼" )
                                 temp_map = HIG"△"NOR;
-                        if( query( "aaa"+temp2 ) == "當前船只位置" )
-                                temp_map = BLINK+HIY"□"NOR;
+                        if( query( "aaa"+temp2 ) == "當前船隻位置" )
+                                temp_map = BLINK+HIY"≌"NOR;
 
                         the_map += temp_map;
                         temp++;
@@ -570,7 +570,7 @@ void check_hp()
 
         if( query("hp") > 0 ) return;
 
-        the_map = HIR"\n□小航海時代□  -- 失敗結果公布(共尋得"+query("be_finded")+"件寶物)\n\n        "NOR;
+        the_map = HIR"\n〖小航海時代〗  -- 失敗結果公佈(共尋得"+query("be_finded")+"件寶物)\n\n        "NOR;
 
         for( x=1; x<11; x++ )
         {
@@ -589,8 +589,8 @@ void check_hp()
                                 temp_map = HIR"盜"NOR;
                         if( temp2 == "巨型章魚" )
                                 temp_map = HIR"魚"NOR;
-                        if( temp2 == "海籐精怪" )
-                                temp_map = HIR"籐"NOR;
+                        if( temp2 == "海藤精怪" )
+                                temp_map = HIR"藤"NOR;
                         if( temp2 == "火神鳥" )
                                 temp_map = HIR"鳥"NOR;
                         if( temp2 == "幽靈船" )
@@ -603,8 +603,8 @@ void check_hp()
                                 temp_map = HIG"▲"NOR;
                         if( temp2 == "舊的島嶼" )
                                 temp_map = HIG"△"NOR;
-                        if( temp2 == "當前船只位置" )
-                                temp_map = BLINK+HIB"□"NOR;
+                        if( temp2 == "當前船隻位置" )
+                                temp_map = BLINK+HIB"≌"NOR;
 
                         if( temp2 == B1 || temp2 == B2 || temp2 == B3
                          || temp2 == B4 || temp2 == B5 || temp2 == B6
@@ -642,10 +642,10 @@ void game_over_over()
 {
         write(HIR"
 =========================================
-             □小航海時代□
+             〖小航海時代〗
 
-      你的船只損壞得再也無法支持，
-          終于沉入了大海之中！
+      你的船隻損壞得再也無法支持，
+          終於沉入了大海之中！
 =========================================
 \n"NOR);
         remove_call_out("del_me");
@@ -666,12 +666,12 @@ int do_liaowang( string arg )
                 return 0;
 
         if( !arg || sscanf( arg, "%d %d", x, y ) != 2 )
-                return notify_fail("請輸入正確坐標！x -> 豎著數第幾橫  y -> 橫著數第幾個\n");
+                return notify_fail("請輸入正確座標！x -> 豎着數第幾橫  y -> 橫着數第幾個\n");
         if( x<1 || x>10 || y<1 || y>16 )
-                return notify_fail("請輸入正確坐標！x -> 豎著數第幾橫  y -> 橫著數第幾個\n");
+                return notify_fail("請輸入正確座標！x -> 豎着數第幾橫  y -> 橫着數第幾個\n");
 
 
-        msg = HIM"了望中……你決定查看 "+x+","+y+" 區域的情況。\n\n";
+        msg = HIM"瞭望中……你決定查看 "+x+","+y+" 區域的情況。\n\n";
 
         msg += get_msg( x-1,y-1, "wyj" );
         msg += get_msg( x-1,y,   "wyj" );
@@ -706,7 +706,7 @@ string get_msg( int x, int y, string type )
         }
 
         if( msg == "冰山" || msg == "海盜船" || msg == "巨型章魚"
-         || msg == "海籐精怪" || msg == "火神鳥" || msg == "幽靈船" )
+         || msg == "海藤精怪" || msg == "火神鳥" || msg == "幽靈船" )
         {
                 set("weixian("+x+","+y+")", 1);
                 if( type == "wyj" ) return "("+x+","+y+") " + msg + "\n";
@@ -742,15 +742,15 @@ void fight_start( string who )
 {
         switch( who )
         {
-                case "海盜船": pic_target = "□";target_damage=2; break;
-                case "巨型章魚": pic_target = "□"; target_damage=4; break;
-                case "海籐精怪": pic_target = "※"; target_damage=6; break;
+                case "海盜船": pic_target = "≌";target_damage=2; break;
+                case "巨型章魚": pic_target = "∝"; target_damage=4; break;
+                case "海藤精怪": pic_target = "※"; target_damage=6; break;
                 case "火神鳥": pic_target = "∮"; target_damage=8; break;
-                case "幽靈船": pic_target = "□"; target_damage=10; break;
+                case "幽靈船": pic_target = "≌"; target_damage=10; break;
         }
 
         target_hp = 50+ random(31);
-        pic_me = "□";
+        pic_me = "≌";
 
         remove_call_out("be_attack");
         call_out("be_attack", 1);
@@ -765,15 +765,15 @@ void be_attack()
         addn("hp", -damage);
 
         pic1 = HIR + pic_target + " " + query("who_name") + "("+ target_hp + ")"NOR;
-        pic2 = sprintf("    "HIG"(%|4d)航海者 "HIR"□"NOR, query("hp"), pic_me);
+        pic2 = sprintf("    "HIG"(%|4d)航海者 "HIR"¤"NOR, query("hp"), pic_me);
 
         write( sprintf("
                      _ _ _ _ _ _ _ _ _ _       ATTACK!
-            "HIR"-%-2d"NOR"    /                     `"HIY"□"NOR"
+            "HIR"-%-2d"NOR"    /                     `"HIY"¤"NOR"
 %s                        %s
-≒≒≒≒≒≒≒≒≒≒≒≒≒≒≒≒≒≒≒≒≒≒≒≒≒≒≒≒≒≒≒\n\n", damage, pic2,  pic1));
+≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈\n\n", damage, pic2,  pic1));
 
-        write(HIY"□小航海時代□  受到了 "+query("who_name")+ " 的攻擊，船只損壞 "+ damage +" ！\n"NOR);
+        write(HIY"〖小航海時代〗  受到了 "+query("who_name")+ " 的攻擊，船隻損壞 "+ damage +" ！\n"NOR);
         check_hp();
         call_out("can_att", 1);
 }
@@ -782,8 +782,8 @@ void can_att()
 {
         if( query("hp") < 1 ) return;
 
-        write(HIY"□小航海時代□  輪到你攻擊了！(atk 方式)\n"NOR);
-        write( sprintf(HIG"武器剩余：    rb:無限    hp:%d    jf:%d    rs:%d    yq:%d    fd:%d\n"NOR,
+        write(HIY"〖小航海時代〗  輪到你攻擊了！(atk 方式)\n"NOR);
+        write( sprintf(HIG"武器剩餘：    rb:無限    hp:%d    jf:%d    rs:%d    yq:%d    fd:%d\n"NOR,
                 query("att_hp"), query("att_jf"), query("att_rs"), query("att_yq"), query("att_fd") ) );
         game_now = "與 "+ query("who_name")+ " 戰鬥中！ 等待攻擊指令";
         att_now = "ok";
@@ -813,7 +813,7 @@ int do_attack(string arg)
                         temp = "火炮";
                         if( target_name == "海盜船" ) damage = damage(5);
                         if( target_name == "巨型章魚" ) damage = damage(4);
-                        if( target_name == "海籐精怪" ) damage = damage(3);
+                        if( target_name == "海藤精怪" ) damage = damage(3);
                         if( target_name == "火神鳥" ) damage = damage(2);
                         if( target_name == "幽靈船" ) damage = damage(1);
                         break;
@@ -821,7 +821,7 @@ int do_attack(string arg)
                         temp = "巨斧";
                         if( target_name == "海盜船" ) damage = damage(4);
                         if( target_name == "巨型章魚" ) damage = damage(1);
-                        if( target_name == "海籐精怪" ) damage = damage(5);
+                        if( target_name == "海藤精怪" ) damage = damage(5);
                         if( target_name == "火神鳥" ) damage = damage(3);
                         if( target_name == "幽靈船" ) damage = damage(2);
                         break;
@@ -829,7 +829,7 @@ int do_attack(string arg)
                         temp = "燃燒彈";
                         if( target_name == "海盜船" ) damage = damage(2);
                         if( target_name == "巨型章魚" ) damage = damage(3);
-                        if( target_name == "海籐精怪" ) damage = damage(4);
+                        if( target_name == "海藤精怪" ) damage = damage(4);
                         if( target_name == "火神鳥" ) damage = damage(1);
                         if( target_name == "幽靈船" ) damage = damage(5);
                         break;
@@ -837,7 +837,7 @@ int do_attack(string arg)
                         temp = "魚槍";
                         if( target_name == "海盜船" ) damage = damage(1);
                         if( target_name == "巨型章魚" ) damage = damage(5);
-                        if( target_name == "海籐精怪" ) damage = damage(2);
+                        if( target_name == "海藤精怪" ) damage = damage(2);
                         if( target_name == "火神鳥" ) damage = damage(4);
                         if( target_name == "幽靈船" ) damage = damage(3);
                         break;
@@ -845,7 +845,7 @@ int do_attack(string arg)
                         temp = "漫天飛刀";
                         if( target_name == "海盜船" ) damage = damage(3);
                         if( target_name == "巨型章魚" ) damage = damage(2);
-                        if( target_name == "海籐精怪" ) damage = damage(1);
+                        if( target_name == "海藤精怪" ) damage = damage(1);
                         if( target_name == "火神鳥" ) damage = damage(5);
                         if( target_name == "幽靈船" ) damage = damage(4);
                         break;
@@ -854,17 +854,17 @@ int do_attack(string arg)
         target_hp -= damage;
         addn("score", damage);
 
-        pic1 = HIR"□" + " " + query("who_name") + "("+ target_hp + ")"NOR;
+        pic1 = HIR"¤" + " " + query("who_name") + "("+ target_hp + ")"NOR;
         pic2 = sprintf("    "HIG"(%|4d)航海者 %s"NOR, query("hp"), pic_me);
 
 
         write( sprintf("
        %|8s！    _ _ _ _ _ _ _ _ _ _
-                   "HIY"□"NOR"                     \\    "HIR"-%d"NOR"
+                   "HIY"¤"NOR"                     \\    "HIR"-%d"NOR"
 %s                        %s
-≒≒≒≒≒≒≒≒≒≒≒≒≒≒≒≒≒≒≒≒≒≒≒≒≒≒≒≒≒≒≒\n\n", temp,damage, pic2,  pic1));
+≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈\n\n", temp,damage, pic2,  pic1));
 
-        write(HIY"□小航海時代□  使用 "+ temp+ " 對 "+query("who_name")+ " 進行攻擊！損害對方  "+ damage +" 。\n"NOR);
+        write(HIY"〖小航海時代〗  使用 "+ temp+ " 對 "+query("who_name")+ " 進行攻擊！損害對方  "+ damage +" 。\n"NOR);
 
         att_now = "not_ok";
         remove_call_out("target_check_hp");
@@ -889,7 +889,7 @@ void target_check_hp()
                 addn("hp", 1+(random(5)) );
                 if( query("hp") > 100 ) set("hp", 100);
                 map();
-                write(HIG"\n□小航海時代□  打敗了 "+query("who_name")+ " ！獲得了少量的補給。繼續出發吧！\n\n"NOR);
+                write(HIG"\n〖小航海時代〗  打敗了 "+query("who_name")+ " ！獲得了少量的補給。繼續出發吧！\n\n"NOR);
                 set_temp("hanghai_gameing", "ok", me);
                 addn("score", 100);
                 return;

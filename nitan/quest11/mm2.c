@@ -33,8 +33,8 @@ void create()
      //set("nickname",HIR"專 用"NOR);
      set("gender", "女性" );
      set("age", 18);
-     set("long","奧黛麗﹒凱瑟琳﹒赫本-魯斯頓（Audrey Kathleen Hepburn-Ruston）;\n"+
-                "假日裡的小公主。\n");
+     set("long","奧黛麗·凱瑟琳·赫本-魯斯頓（Audrey Kathleen Hepburn-Ruston）;\n"+
+                "假日裏的小公主。\n");
      set("combat_exp", 10000);
      set("attitude", "friendly");
      set("no_get", 1);
@@ -190,12 +190,12 @@ int do_look(string target)
 void kicking(object me)
 {
 	if (!me || environment(me) != environment()
-	|| environment(this_object())->query("short") != "當舖")
+	|| environment(this_object())->query("short") != "當鋪")
 		return;
 
 	me->move("/d/city/guangchangnan");
-	message("vision","只聽“□”地一聲，緊接著" +  me->query("name") +
-		"從當舖裡飛了出來，臉上一個紅手印，屁股上有一個小鞋印。\n", environment(me), me);
+	message("vision","只聽“嘭”地一聲，緊接着" +  me->query("name") +
+		"從當鋪裏飛了出來，臉上一個紅手印，屁股上有一個小鞋印。\n", environment(me), me);
 }
 
 int ask_wuliao()
@@ -213,7 +213,7 @@ int ask_cantu()
 {
      object me;
      me = this_player();
-     command("say 本周你好象已經翻閱過"+ chinese_number(me->query("spec/cantu")) +NOR"次苗家劍法殘圖了。");
+     command("say 本週你好像已經翻閲過"+ chinese_number(me->query("spec/cantu")) +NOR"次苗家劍法殘圖了。");
      command("say 這些殘圖我已經翻(fanyue mjjf cantu)過好多遍了，可是上面的劍招太難了，沒人指點，我總是學不會。");
      command("sigh ");
      command("say 你知道誰能指點我一下嘛？要不等你學會了回來教我好不好？ ");
@@ -224,8 +224,8 @@ int ask_daopu()
 {
      object me;
      me = this_player();
-     command("say 本周你已經弄壞了"+ HIR+chinese_number(me->query("spec/daopu")) +NOR"本破舊刀譜了。");
-     command("say 據說這上面紀錄的是傳說中享譽江湖的胡家刀法呢！");
+     command("say 本週你已經弄壞了"+ HIR+chinese_number(me->query("spec/daopu")) +NOR"本破舊刀譜了。");
+     command("say 據説這上面紀錄的是傳説中享譽江湖的胡家刀法呢！");
      command("say 看不清楚的話,我可以借個放大鏡給你仔細辨認一下(bianren pojiu daopu)，不過你要請我吃哈根達斯哦！");
      command("smile ");
          return 1;
@@ -234,7 +234,7 @@ int ask_ebook()
 {
      object me;
      me = this_player();
-     command("say 本周你已經用掉了"+ HIR+chinese_number(me->query("spec/ebook")) +NOR"本精英之書。");
+     command("say 本週你已經用掉了"+ HIR+chinese_number(me->query("spec/ebook")) +NOR"本精英之書。");
      command("say 怎麼才漲了這麼點經驗啊？");
      command("push ");
          return 1;
@@ -243,8 +243,8 @@ int ask_tianlong()
 {
      object me;
      me = this_player();
-     command("say 本周你已經讀(read)過"+ HIR+chinese_number(me->query("spec/tianlong")) +NOR"遍天龍八部了。");
-     command("say 我最崇拜裡面的蕭峰蕭大哥了！");
+     command("say 本週你已經讀(read)過"+ HIR+chinese_number(me->query("spec/tianlong")) +NOR"遍天龍八部了。");
+     command("say 我最崇拜裏面的蕭峯蕭大哥了！");
      command("say 最可憐的人還是阿紫啊！");
      command("sigh ");
          return 1;
@@ -253,9 +253,9 @@ int ask_jingpa()
 {
      object me;
      me = this_player();
-     command("say 本周你已經歸還給瑛姑阿姨"+ HIR+chinese_number(me->query("spec/jingpa")) +NOR"方鴛鴦錦帕。");
-     command("say 她有沒有教你點鬼谷神機術啊？");
-     command("say 不過這死老太婆老不肯教我，說我笨。");
+     command("say 本週你已經歸還給瑛姑阿姨"+ HIR+chinese_number(me->query("spec/jingpa")) +NOR"方鴛鴦錦帕。");
+     command("say 她有沒有教你點鬼穀神機術啊？");
+     command("say 不過這死老太婆老不肯教我，説我笨。");
      command("shout ");
          return 1;
 }
@@ -263,9 +263,9 @@ int ask_kongxin()
 {
      object me;
      me = this_player();
-     command("say 本周你已經服用過"+ HIR+chinese_number(me->query("spec/kongxin")) +NOR"次空心散。");
-     command("say 服用一點逍遙自在，就會把江湖瑣事忘的幹幹凈凈。");
-     command("say 這東西不會就是傳說中的K粉吧");
+     command("say 本週你已經服用過"+ HIR+chinese_number(me->query("spec/kongxin")) +NOR"次空心散。");
+     command("say 服用一點逍遙自在，就會把江湖瑣事忘的乾乾淨淨。");
+     command("say 這東西不會就是傳説中的K粉吧");
      command("fear ");
          return 1;
 }
@@ -273,9 +273,9 @@ int ask_pearl()
 {
      object me;
      me = this_player();
-     command("say 本周你已經對著它祈禱(pary)過"+ HIR+chinese_number(me->query("spec/pearl")) +NOR"次了。");
-     command("say 我有這樣一串珍珠手鏈呢。");
-     command("say 不過我還是覺得自己挺倒霉的，老是碰見些色狼來騷擾我。");
+     command("say 本週你已經對着它祈禱(pary)過"+ HIR+chinese_number(me->query("spec/pearl")) +NOR"次了。");
+     command("say 我有這樣一串珍珠手鍊呢。");
+     command("say 不過我還是覺得自己挺倒黴的，老是碰見些色狼來騷擾我。");
      command("club ");
          return 1;
 }
@@ -283,7 +283,7 @@ int ask_putao()
 {
      object me;
      me = this_player();
-     command("say 本周你已經吃過"+ HIR+chinese_number(me->query("spec/putao")) +NOR"串神奇葡萄。");
+     command("say 本週你已經吃過"+ HIR+chinese_number(me->query("spec/putao")) +NOR"串神奇葡萄。");
      command("say 酸酸甜甜就是我。");
      command("sing ");
          return 1;
@@ -293,7 +293,7 @@ int ask_shuzhi()
 {
      object me;
      me = this_player();
-     command("say 本周你已經隨手亂丟過"+ HIR+chinese_number(me->query("spec/shuzhi")) +NOR"根小樹枝了。");
+     command("say 本週你已經隨手亂丟過"+ HIR+chinese_number(me->query("spec/shuzhi")) +NOR"根小樹枝了。");
      command("say 亂丟垃圾是要罰款的哦！");
      command("say 左圓右方，這麼簡單的事情嘛，我也能畫(hua fangyuan)出來哦！");
      command("draw lao ban ");
@@ -304,8 +304,8 @@ int ask_suizhi()
 {
      object me;
      me = this_player();
-     command("say 本周你已經隨手亂丟過"+ HIR+chinese_number(me->query("spec/suizhi")) +NOR"團碎紙片了。");
-     command("say 你老是翻來覆去的拿著它看什麼啊(chakan suizhi pian)？");
+     command("say 本週你已經隨手亂丟過"+ HIR+chinese_number(me->query("spec/suizhi")) +NOR"團碎紙片了。");
+     command("say 你老是翻來覆去的拿着它看什麼啊(chakan suizhi pian)？");
      command("say 不可能是張教主藏經圖的啦！");
      command("giggle ");
      command("say 張教主早回家種田去了，傳聞多少年都沒出了。");
@@ -316,8 +316,8 @@ int ask_taijitu()
 {
      object me;
      me = this_player();
-     command("say 本周你已經盯著這張太極圖研究(yanjiu taiji tu)"+ HIR+chinese_number(me->query("spec/taijitu")) +NOR"次啦。");
-     command("say 邋遢道士天天嘟囔著太極深意，可意會不可言傳。");
+     command("say 本週你已經盯着這張太極圖研究(yanjiu taiji tu)"+ HIR+chinese_number(me->query("spec/taijitu")) +NOR"次啦。");
+     command("say 邋遢道士天天嘟囔着太極深意，可意會不可言傳。");
      command("say 要不你去問問他吧。");
          return 1;
 }
@@ -325,7 +325,7 @@ int ask_wcard()
 {
      object me;
      me = this_player();
-     command("say 本周你已經用掉了"+ HIR+chinese_number(me->query("spec/wcard")) +NOR"張貴賓卡。");
+     command("say 本週你已經用掉了"+ HIR+chinese_number(me->query("spec/wcard")) +NOR"張貴賓卡。");
      command("say 我愛洗澡，皮膚好好！");
      command("sing ");
      command("say 沒事你秀(show card)啥呢？你以為就你自己辦過了啊？");
@@ -339,7 +339,7 @@ int ask_zhanshu()
 {
      object me;
      me = this_player();
-     command("say 本周你已經拆閱(yuedu)過"+ HIR+chinese_number(me->query("spec/zhanshu")) +NOR"封獨孤戰書。");
+     command("say 本週你已經拆閲(yuedu)過"+ HIR+chinese_number(me->query("spec/zhanshu")) +NOR"封獨孤戰書。");
      command("say 獨孤九劍，難道天下真的有這麼高明的劍法麼？ ");
      command("think ");
      return 1;
@@ -349,8 +349,8 @@ int ask_yuji()
 {
      object me;
      me = this_player();
-     command("say 本周你已經服用過"+ HIR+chinese_number(me->query("spec/yuji")) +NOR"粒玉肌丸。");
-     command("say 本周你已經服用過"+ HIR+chinese_number(me->query("spec/yuji1")) +NOR"粒極品玉肌丸。");
+     command("say 本週你已經服用過"+ HIR+chinese_number(me->query("spec/yuji")) +NOR"粒玉肌丸。");
+     command("say 本週你已經服用過"+ HIR+chinese_number(me->query("spec/yuji1")) +NOR"粒極品玉肌丸。");
      command("say 朵爾膠囊，以內養外，補腎養顏....");
      command("blush ");
          return 1;
@@ -360,7 +360,7 @@ int ask_shenshu()
 {
      object me;
      me = this_player();
-     command("say 本周你已經閱讀過"+ HIR+chinese_number(me->query("spec/shenshu")) +NOR"次金庸全集。");
+     command("say 本週你已經閲讀過"+ HIR+chinese_number(me->query("spec/shenshu")) +NOR"次金庸全集。");
          return 1;
 }
 

@@ -19,7 +19,7 @@ int valid_learn(object me)
         lvl = (int)me->query_skill("horticulture", 1);
 
         if( lvl>29 && query("kar", me) != 26 )
-                return notify_fail("限于天資，你只能修習這個程度了。\n");
+                return notify_fail("限於天資，你只能修習這個程度了。\n");
         else return 1;
 }
 

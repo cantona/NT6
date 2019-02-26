@@ -15,7 +15,7 @@ void create()
                 set("value", 0);
                 set("zhongling",1);
                 set("zhong",1);
-                set("long","這是鐘靈的一雙繡球鞋。\n");
+                set("long","這是鍾靈的一雙繡球鞋。\n");
                 set("material", "cloth");
                 set("armor_type", "feet");
                 set("armor_prop/per", 1);
@@ -23,6 +23,6 @@ void create()
                 set("armor_prop/dodge", 2);
                 set("female_only", 1);
                 set("wear_msg","$N穿上一雙$n。\n");
-                set("remove_msg","$N將$n脫了下來。\n");
+                set("remove_msg","$N將$n脱了下來。\n");
         }
 }

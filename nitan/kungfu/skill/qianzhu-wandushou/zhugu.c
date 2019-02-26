@@ -14,7 +14,7 @@ int perform(object me, object target)
         if (! target) target = offensive_target(me);
 
         if( query("no_fight", environment(me)) )
-                return notify_fail("這裡不能攻擊別人！\n");
+                return notify_fail("這裏不能攻擊別人！\n");
 
         if (! target || ! target->is_character())
                 return notify_fail("你要對誰施展蛛蠱決？\n");

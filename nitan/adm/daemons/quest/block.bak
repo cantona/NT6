@@ -86,7 +86,7 @@ void start_quest()
                         continue;
                 npc->move(env);
                 npc->set_short_desc("正在" + (random(2) ? "聚精會神" : "大氣不敢喘") +
-                                    "地埋伏著。");
+                                    "地埋伏着。");
                 env_count++;
         }
         qob = new("/clone/quest/block");

@@ -11,7 +11,7 @@ void create()
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("long", "一碗炙牛肉條，每條牛肉都是由四條小肉拼成，香氣濃鬱。\n");
+                set("long", "一碗炙牛肉條，每條牛肉都是由四條小肉拼成，香氣濃郁。\n");
                 set("unit", "碗");
                 set("value", 50);
                 set("food_remaining", 1);

@@ -65,9 +65,9 @@ int main(object me, string arg)
         }
 
         // moving
-        tell_room(environment(ob), HIM "天空中伸出一只大手把"+
+        tell_room(environment(ob), HIM "天空中伸出一隻大手把"+
                   query("name", ob)+HIM"抓了起來,然後不見了。\n"NOR,ob);
-        tell_object(ob,"一只手把你抓了起來, 你眼前一陣黑....\n");
+        tell_object(ob,"一隻手把你抓了起來, 你眼前一陣黑....\n");
         tell_object(me, HIM "你把" + ob->name() + HIM "抓到你的面前。\n" NOR);
         tell_object(ob, HIM ".... 醒來時發現是" + me->name() + HIM
                     "把你弄過來的。\n" NOR);

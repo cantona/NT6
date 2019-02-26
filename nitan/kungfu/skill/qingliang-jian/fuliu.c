@@ -42,11 +42,11 @@ int perform(object me, object target)
               return notify_fail("你的劍法不是清涼劍。\n");
         
         if (! living(target)) 
-              return notify_fail("對方都已經這樣了，用不著這麼費力吧？\n"); 
+              return notify_fail("對方都已經這樣了，用不着這麼費力吧？\n"); 
  
         msg = HIG "\n$N暗運真氣，衣袖慢慢鼓了起來，猶似吃飽了風的帆篷一般，"
                   "然而卻又似一陣清風般讓人感到舒服和安逸，\n"
-                  "輕輕一劍，就象一陣清風吹落的一片楊柳葉，劃向$n。\n" NOR;
+                  "輕輕一劍，就象一陣清風吹落的一片楊柳葉，划向$n。\n" NOR;
 
         if( random(query("combat_exp", me))>query("combat_exp", target)/3 )
         { 
@@ -71,7 +71,7 @@ int perform(object me, object target)
         {
                 me->start_busy(3);
        
-                msg += HIG"$n看得分明，連忙提氣縱身，以跳離了$N的劍氣范圍。\n"NOR;
+                msg += HIG"$n看得分明，連忙提氣縱身，以跳離了$N的劍氣範圍。\n"NOR;
         }
                 
         addn("neili", -150, me);

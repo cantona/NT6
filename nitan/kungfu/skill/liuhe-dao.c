@@ -16,7 +16,7 @@ mapping *action = ({
         "skill_name" : "呵壁問天",
         "damage_type":  "割傷"
 ]),
-([      "action":"$N運刀如風，一招「氣蓋河山」，刀勢霸道之極，向著$n周身各處猛砍猛劈",
+([      "action":"$N運刀如風，一招「氣蓋河山」，刀勢霸道之極，向着$n周身各處猛砍猛劈",
         "attack": 60,
         "dodge" : 60,
         "parry" : 65,
@@ -25,7 +25,7 @@ mapping *action = ({
         "skill_name" : "氣蓋河山",
         "damage_type":  "割傷"
 ]),
-([      "action":"$N一著「天地乍合」，突然搶進$n近側，迅猛地驅刀連斬，攻式頓然合成一個圓圈",
+([      "action":"$N一着「天地乍合」，突然搶進$n近側，迅猛地驅刀連斬，攻式頓然合成一個圓圈",
         "attack": 60,
         "dodge" : 60,
         "parry" : 55,
@@ -43,7 +43,7 @@ mapping *action = ({
         "skill_name" : "離合無常",
         "damage_type":  "割傷"
 ]),
-([      "action":"$N施展「和合六出」繞著$n飛旋，$w帶著狂野刀風，凌歷無比地劈出六刀",
+([      "action":"$N施展「和合六出」繞着$n飛旋，$w帶着狂野刀風，凌歷無比地劈出六刀",
         "attack": 63,
         "dodge" : 60,
         "parry" : 70,

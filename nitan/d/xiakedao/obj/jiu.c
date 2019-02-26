@@ -28,7 +28,7 @@ int do_drink(string arg)
                 return notify_fail("你要喝什麼東西？\n");
 
         if (me->is_busy())
-                return notify_fail("急什麼，小心別噎著了。\n");
+                return notify_fail("急什麼，小心別噎着了。\n");
 
         message_vision(HIC "$N" HIC "一仰頭，將整瓶" + name() +
                        HIC "喝了下去。\n" NOR, me);

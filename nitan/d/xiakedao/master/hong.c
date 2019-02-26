@@ -23,8 +23,8 @@ void create()
 
         set("chat_chance", 1);
         set("chat_msg", ({
-                "洪七公嘆了口氣道：“唉……何時能再吃到蓉兒做的「叫化雞」啊……”\n",
-                "洪七公說道：“俗話說「吃在江南」，所以老叫化特地跑來揚州看看。”\n",
+                "洪七公歎了口氣道：“唉……何時能再吃到蓉兒做的「叫化雞」啊……”\n",
+                "洪七公説道：“俗話説「吃在江南」，所以老叫化特地跑來揚州看看。”\n",
                 "洪七公喃喃道：“我們丐幫的「降龍十八掌」是天下最霸道的掌法。”\n",
 //                (: random_move :),
         }));
@@ -56,7 +56,7 @@ void create()
         set_skill("staff", 150);             // 基本棍杖
         set_skill("dagou-bang", 150);        // 打狗棒法
         set_skill("begging", 100);           // 叫化絕活
-        set_skill("checking", 100);          // 道聽途說
+        set_skill("checking", 100);          // 道聽途説
         
         map_skill("force", "huntian-qigong");
         map_skill("unarmed", "xianglong-zhang");

@@ -12,7 +12,7 @@ void create()
                 set_default_object(__FILE__);
         else {
                 set("unit", "枚");
-                set("long", MAG "紫黑色的指環，血色的暗紋，散發著陣陣陰寒之氣，令人心神顫抖。 \n" NOR);
+                set("long", MAG "紫黑色的指環，血色的暗紋，散發着陣陣陰寒之氣，令人心神顫抖。 \n" NOR);
                 set("value", 20000000);
                 set("material", "gold");
                 set("armor_prop/damage", 4000);

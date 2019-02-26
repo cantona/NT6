@@ -1,4 +1,4 @@
-// 乾坤聖水用于聖化兵器
+// 乾坤聖水用於聖化兵器
 
 #include <ansi.h>
 
@@ -52,9 +52,9 @@ int do_bless(string arg)
                 return notify_fail("你只能聖化自己的兵器或防具！\n");
 
         if( query("bless", ob) >= 30 )
-                return notify_fail("一件兵器或防具最多只能聖化三十次！\n");
+                return notify_fail("一件兵器或防具最多隻能聖化三十次！\n");
 
-        message_vision(HIW "\n$N將乾坤聖水緩緩洒在" + ob->name() + HIW "上，頃刻間"
+        message_vision(HIW "\n$N將乾坤聖水緩緩灑在" + ob->name() + HIW "上，頃刻間"
                        + ob->name() + HIW "猶如烈火中重生一般，散發出絢目的光彩！\n\n", me);
         addn("bless", 1, ob);
         set("consistence", 100, ob);

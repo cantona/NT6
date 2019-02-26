@@ -7,8 +7,8 @@ inherit F_COAGENT;
 void create()
 {
         set_name("華英雄", ({ "hua yingxiong", "hua", "yingxiong"}));
-        set("long", "一個俊俏的中年男子，衣著長衫，他就是華英雄。\n"
-                    "傳說他命犯天煞孤星，一生漂泊，落于異地。爾後\n"
+        set("long", "一個俊俏的中年男子，衣着長衫，他就是華英雄。\n"
+                    "傳説他命犯天煞孤星，一生漂泊，落於異地。爾後\n"
                     "習得一身絕技，兼修煉「中華傲決」，大敗「東洋\n"
                     "戰神」無敵。\n"); 
         set("nickname", HIW "中華英雄" NOR);
@@ -125,7 +125,7 @@ void die()
         return;
 }
 
-// 氣血小于1000則死亡，避免他人協助幫忙轉世
+// 氣血小於1000則死亡，避免他人協助幫忙轉世
 void heart_beat()
 {
         if (this_object()->query("qi") < 1000 || this_object()->query("eff_qi") < 1000)

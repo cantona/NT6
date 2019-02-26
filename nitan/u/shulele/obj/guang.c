@@ -13,7 +13,7 @@ void create()
                 set_default_object(__FILE__);
         else {
                 set("unit", "把");
-                set("long", HIY"這是一把光之劍,做工極其精致。是眾神的遺產之一!\n"NOR);
+                set("long", HIY"這是一把光之劍,做工極其精緻。是眾神的遺產之一!\n"NOR);
                 set("unique", 1);
                 set("value", 0);
 		set("no_put", 1);
@@ -38,7 +38,7 @@ void create()
         set("armor_prop/percao",15);
                 set("treasure",1);       
                 set("wield_msg",HIY"一陣耀眼的聖光過後 ，$N的手上多出了一把光之劍。\n"NOR);
-                set("unwield_msg",HIY"$N把手中的光之劍插入劍鞘。耀眼的聖光也跟著消失了。\n"NOR);
+                set("unwield_msg",HIY"$N把手中的光之劍插入劍鞘。耀眼的聖光也跟着消失了。\n"NOR);
         }
      init_sword(1777);
         setup();
@@ -59,7 +59,7 @@ if (1)
 if (random(4)==0)
 {
 message_vision(HIY"$N手上的光之劍突然聖光大作!!一道聖光照在了$N的身上!!\n"NOR, me,victim);
-message_vision(HIY"回復聖光!!  $N全身感到無比的舒適！！\n"NOR, me,victim); 
+message_vision(HIY"回覆聖光!!  $N全身感到無比的舒適！！\n"NOR, me,victim); 
 	if((int)me->query("qi") < (int)me->query("max_qi")+(int)me->query("max_qi")/3)
         {
         me->add("qi",me->query("eff_qi")/6);

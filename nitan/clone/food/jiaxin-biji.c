@@ -11,7 +11,7 @@ void create()
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("long","一盆形態精巧別致，外脆裡嫩，而又別有風味的夾心荸薺。\n");
+                set("long","一盆形態精巧別緻，外脆裏嫩，而又別有風味的夾心荸薺。\n");
                 set("unit", "盆");
                 set("value", 150);
                 set("food_remaining", 4);

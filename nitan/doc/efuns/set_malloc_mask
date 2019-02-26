@@ -11,7 +11,7 @@
                 時, options.h 中 DEBUGMALLOC  和 DEBUGMALLOC_EXTENSIONS 
                 皆同時定義時才有效. 此遮罩 (mask) 控制驅動程式配置記憶體
                 和釋放記憶體時, 顯示多少與記憶體相關的除錯訊息. 詳細資料
-                請參閱驅動程式原始碼中的 md.c 
+                請參閲驅動程式原始碼中的 md.c 
         參考函數:
                 debugmalloc(3)
         手冊翻譯:

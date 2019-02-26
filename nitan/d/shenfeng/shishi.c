@@ -5,7 +5,7 @@ void create()
 {
         set("short", "石室");
         set("long", @LONG
-這個山洞裡伸手不見五指，黑沉沉的甚麼也瞧不見。
+這個山洞裏伸手不見五指，黑沉沉的甚麼也瞧不見。
 LONG);
         setup();
 }
@@ -28,26 +28,26 @@ int do_use(string arg)
                 return 0;
 
         if( query("mark/light", this_object()) )
-                return notify_fail("你已經點著火折了。\n");
+                return notify_fail("你已經點着火折了。\n");
 
         if (arg == "fire")
         {
                 message_sort(HIR "\n$N" HIR "取出火折一晃，火光下只見四"
-                             "面石壁都是晶瑩白玉，地下放著幾張桌椅，伸手"
+                             "面石壁都是晶瑩白玉，地下放着幾張桌椅，伸手"
                              "在桌上一按，桌子居然仍是堅牢完固，原來山洞"
                              "密閉，不受風侵，是以洞中物事並不朽爛。\n\n"
                              NOR, me);
 
                 set("long", @LONG
-借著微弱的火光，只見四面石壁(wall)都是晶瑩白玉，地
-下放著幾張木制桌椅。你伸手在桌上一按，桌子居然仍是堅牢
+藉着微弱的火光，只見四面石壁(wall)都是晶瑩白玉，地
+下放着幾張木製桌椅。你伸手在桌上一按，桌子居然仍是堅牢
 完固，原來山洞密閉，不受風侵，是以洞中物事並不朽爛。
 
 LONG);
 
                 set("item_desc", ([
-                        "wall" : WHT "只見石壁上有一大裂縫，從黑□□的裂"
-                                 "縫裡飄出陣陣的陰風。\n" NOR, 
+                        "wall" : WHT "只見石壁上有一大裂縫，從黑黢黢的裂"
+                                 "縫裏飄出陣陣的陰風。\n" NOR, 
                 ]));
                 addn("mark/light",query("id", me));
                 return 1;
@@ -59,7 +59,7 @@ int do_tiao(string arg)
         object ob, me = this_player();
 
         if( !query("mark/light", this_object()) )
-                return notify_fail("洞裡一片漆黑，你根本探不清方向。\n");
+                return notify_fail("洞裏一片漆黑，你根本探不清方向。\n");
 
         if (! arg || arg != "down")
                 return notify_fail("你要往哪跳？\n");
@@ -70,9 +70,9 @@ int do_tiao(string arg)
         if( query("mark/light", this_object()) == query("id", me) )
         {
                 delete("mark/light");
-                set("long", "山洞裡伸手不見五指，黑沉沉的甚麼也瞧不見。\n");
+                set("long", "山洞裏伸手不見五指，黑沉沉的甚麼也瞧不見。\n");
 
-                message("vision", HIR + me->name() + HIR "徑自拿著火折跳了下去"
+                message("vision", HIR + me->name() + HIR "徑自拿着火折跳了下去"
                         "，洞內隨即又是一片漆黑。\n" NOR, environment(me), ({me}));
         }
 
@@ -82,7 +82,7 @@ int do_tiao(string arg)
                 me->receive_wound("qi", 300);
                 me->unconcious();
                 message("vision", HIR "\n突然聽得「砰」的一聲，只見一個人從上"
-                                  "面的山峰上墜了下來，真是壯觀。\n" NOR,
+                                  "面的山峯上墜了下來，真是壯觀。\n" NOR,
                                   environment(me), ({me}));
         } else
         {

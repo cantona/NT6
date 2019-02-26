@@ -12,12 +12,12 @@ mixed ask_skill1();
 void create()
 {
         object ob;
-        set_name("范鬆", ({"fan song", "fan", "song"}));
+        set_name("範鬆", ({"fan song", "fan", "song"}));
         set("nickname", HIR "大力神魔" NOR );
         set("title", "日月神教前輩長老");
         set("long", @LONG
-大力神魔范鬆乃是日月神教的前輩長老，武功
-高強，位尊無比。曾一度掃除五岳劍派聯盟。
+大力神魔範鬆乃是日月神教的前輩長老，武功
+高強，位尊無比。曾一度掃除五嶽劍派聯盟。
 LONG);
         set("gender", "男性");
         set("class", "scholar");
@@ -73,7 +73,7 @@ LONG);
 
         set("inquiry", ([
                 "破陽神斧" : (: ask_fu :),
-                "開天辟地" : (: ask_skill1 :),
+                "開天闢地" : (: ask_skill1 :),
         ]));
 
         set("chat_chance_combat", 120);
@@ -119,7 +119,7 @@ int recognize_apprentice(object ob, string skill)
         if( query("family/family_name", ob) != "日月神教" )
         {
                 command("killair");
-                command("say 給我滾開，少在老夫面前說三道四！");
+                command("say 給我滾開，少在老夫面前説三道四！");
                 return -1;
         }
 
@@ -140,7 +140,7 @@ int recognize_apprentice(object ob, string skill)
         if (skill != "hammer" && skill != "pangu-qishi")
         {
                 command("hmm");
-                command("say 我只傳授你這套錘法，其余的找你師父學去。");
+                command("say 我只傳授你這套錘法，其餘的找你師父學去。");
                 return -1;
         }
 
@@ -198,7 +198,7 @@ mixed ask_fu()
         }
 
         if (owner == me)
-                return "破陽神斧現在不就在你手裡嗎？";
+                return "破陽神斧現在不就在你手裏嗎？";
 
         if (objectp(owner) && owner != this_object())
         {
@@ -251,16 +251,16 @@ mixed ask_skill1()
         if (me->query_skill("pangu-qishi", 1) < 180)
                 return "你的盤古七勢還練得不到家，自己下去練練再來吧！";
 
-        message_sort(HIY "\n$n" HIY "朝$N" HIY "微微點了點頭，說道：“看"
-                     "好了！”說完$n" HIY "一聲斷喝，手中巨斧如山岳巍峙，"
-                     "攜著開天辟地之勢猛劈而下，氣勢恢弘之極。頓時只聽轟"
+        message_sort(HIY "\n$n" HIY "朝$N" HIY "微微點了點頭，説道：“看"
+                     "好了！”説完$n" HIY "一聲斷喝，手中巨斧如山嶽巍峙，"
+                     "攜着開天闢地之勢猛劈而下，氣勢恢弘之極。頓時只聽轟"
                      "然一聲巨響，$n" HIY "面前的山壁已被劈出一道人來寬的"
                      "裂縫，威力之強，真可謂是驚天地，泣鬼神。直把$N" HIY
                      "看得目瞪口呆。\n\n" NOR, me, this_object()); 
 
         command("nod2");
         command("say 招式便是如此，你自己下去練吧。");
-        tell_object(me, HIC "你學會了「開天辟地」。\n" NOR);
+        tell_object(me, HIC "你學會了「開天闢地」。\n" NOR);
         if (me->can_improve_skill("hammer"))
                 me->improve_skill("hammer", 1500000);
         if (me->can_improve_skill("pangu-qishi"))

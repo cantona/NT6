@@ -30,7 +30,7 @@ void start_quest()
         int amount;     // 送貨的數量
 
         if (sizeof(children("/clone/quest/deliver")) > 30)
-                // 系統中最□8個送貨的任務
+                // 系統中最68個送貨的任務
                 return;
 
         name = ob_list[random(sizeof(ob_list))];

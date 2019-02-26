@@ -14,8 +14,8 @@ void create()
                 set("unit", "根");
                 set("value", 20000);
                 set("material", "wood");
-                set("long", "一根碧玉制就的笛子，綠瑩瑩地甚是精致。\n");
-                set("wield_msg", "$N拿起一根$n放在唇邊輕輕一吹。\n");
+                set("long", "一根碧玉製就的笛子，綠瑩瑩地甚是精緻。\n");
+                set("wield_msg", "$N拿起一根$n放在脣邊輕輕一吹。\n");
                 set("unwield_msg", "$N笑了一笑，將$n插回腰間。\n");
         }
         init_sword(15);

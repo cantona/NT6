@@ -13,7 +13,7 @@ void create()
                 set_default_object(__FILE__);
         else {
                 set("unit", "柄");
-                set("long", HIR "傳說斬天之刃可以開天辟地，破氣穿甲，無所不能。\n" NOR);
+                set("long", HIR "傳説斬天之刃可以開天闢地，破氣穿甲，無所不能。\n" NOR);
                 set("value", 2000);
                 set("material", "tian jing");
                 set("wield_msg", HIR "「唰」的一聲抽出一柄$n握在手中。\n");

@@ -55,13 +55,13 @@ mapping *action = ({
         "skill_name"  : "懷中抱月",
         "damage_type" : "割傷"
 ]),
-([      "action": "$N一招「風卷荷葉」，左腳躍步落地，$w順勢往前，挾風聲劈向$n的$l",
+([      "action": "$N一招「風捲荷葉」，左腳躍步落地，$w順勢往前，挾風聲劈向$n的$l",
         "force" : 120,
         "dodge" : 75,
         "parry" : 85,
         "damage": 35,
         "lvl"   : 120,
-        "skill_name"  : "風卷荷葉",
+        "skill_name"  : "風捲荷葉",
         "damage_type" : "割傷"
 ]),
 ([      "action": "$N盤身駐地，一招「青龍出水」，揮出一片流光般的刀影，向$n的全身湧去",

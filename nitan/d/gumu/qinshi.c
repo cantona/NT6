@@ -7,7 +7,7 @@ void create()
 {
         set("short", HIC"琴室"NOR);
         set("long", @LONG
-一張石桌(table)，一條石凳，桌上放著一把古琴(qin)，是小龍女
+一張石桌(table)，一條石凳，桌上放着一把古琴(qin)，是小龍女
 休憩時刻撫琴抒懷的地方。每每琴音裊裊，平淡清和，直引人心弛神往，
 與世無爭。
 LONG        );
@@ -15,9 +15,9 @@ LONG        );
                 "west" : __DIR__"mudao18",
         ]));
         set("item_desc", ([
-                "qin"   : HIC"這是一把年代極遠的古琴，琴風古樸，暗蘊玄機。
-琴上刻著“至遠 寧心 渡風”六個字。\n"NOR,
-                "table" : "桌上放著一把古琴。 \n",
+                "qin"   : HIC"這是一把年代極遠的古琴，琴風古樸，暗藴玄機。
+琴上刻着“至遠 寧心 渡風”六個字。\n"NOR,
+                "table" : "桌上放着一把古琴。 \n",
         ]));
         set("coor/x", -3160);
         set("coor/y", 10);
@@ -61,7 +61,7 @@ BLINK HIY"滄海一聲笑 滔滔兩岸潮\t浮沉隨浪 只記今朝
                         return 1;
                 }
                 if( c_skill > 100)
-                        return notify_fail("你內功精湛，彈琴已無益于你修行內力。\n");
+                        return notify_fail("你內功精湛，彈琴已無益於你修行內力。\n");
                 write("你心隨弦走，融入琴境，漸漸心氣平和，周身真氣自然流動。\n");
                 me->receive_damage("qi", 15+random(10), me);
                 me->receive_damage("jing", 15+random(10), me);

@@ -7,7 +7,7 @@ void create()
         set("gender", "男性" );
         set("age", 22);
         set("long",
-                "一個笑眯眯的店小二，是虎坊客棧中的伙計。\n");
+                "一個笑眯眯的店小二，是虎坊客棧中的夥計。\n");
         set("combat_exp", 100);
         set("attitude", "friendly");
         set("rank_info/respect", "小二哥");
@@ -43,11 +43,11 @@ void greeting(object ob)
         if( !ob || environment(ob) != environment() ) return;
         switch( random(2) ) {
                 case 0:
-                        say( "店小二笑咪咪地說道：這位" + RANK_D->query_respect(ob)
+                        say( "店小二笑咪咪地説道：這位" + RANK_D->query_respect(ob)
                                 + "，歡迎來到虎坊客棧。\n");
                         break;
                 case 1:
-                        say( "店小二用脖子上的毛巾抹了抹手，說道：這位" + RANK_D->query_respect(ob)
+                        say( "店小二用脖子上的毛巾抹了抹手，説道：這位" + RANK_D->query_respect(ob)
                                 + "，快請進，是打尖還是住店呀？\n");
                         break;
         }

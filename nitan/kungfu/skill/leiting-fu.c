@@ -12,7 +12,7 @@ mapping *action = ({
         "damage": 62,
         "damage_type" : "挫傷",
 ]),
-([      "action" : "$N淵停岳峙，身形猛的升起五丈，一招「飛驚落虹」寒光乍現般向$n劈去",
+([      "action" : "$N淵停嶽峙，身形猛的升起五丈，一招「飛驚落虹」寒光乍現般向$n劈去",
         "skill_name" : "飛驚落虹",
         "force" : 460,
         "attack": 38,
@@ -22,7 +22,7 @@ mapping *action = ({
         "damage": 66,
         "damage_type" : "挫傷",
 ]),
-([      "action" : "$N突然暴喝一聲，手裡的$w一挫，一招「蒼穹開破」猛的劈向$n而去",
+([      "action" : "$N突然暴喝一聲，手裏的$w一挫，一招「蒼穹開破」猛的劈向$n而去",
         "skill_name" : "蒼穹開破",
         "force" : 500,
         "attack": 43,
@@ -152,7 +152,7 @@ int practice_skill(object me)
         object weapon;
 
         if (me->query_skill("leiting-fu", 1) < 260)
-                return notify_fail("你對雷霆斧法了解不夠，還不足以自行鍛煉。\n");
+                return notify_fail("你對雷霆斧法瞭解不夠，還不足以自行鍛鍊。\n");
 
         if( !objectp(weapon=query_temp("weapon", me)) || 
             query("skill_type", weapon) != "hammer" )

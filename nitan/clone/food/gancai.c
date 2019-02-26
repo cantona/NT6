@@ -5,7 +5,7 @@ inherit F_FOOD;
 
 void create()
 {
-        set_name("幹菜包子", ({"gancai baozi", "baozi" }) );
+        set_name("乾菜包子", ({"gancai baozi", "baozi" }) );
         set_weight(50);//一兩
         if( clonep() ) 
                 set_default_object(__FILE__);

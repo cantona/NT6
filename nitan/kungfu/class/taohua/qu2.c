@@ -23,7 +23,7 @@ void create()
         set("age", 46);
         set("long", "曲靈風是黃藥師的大徒弟，也是黃藥師最得意的徒兒。他\n"
                     "對黃藥師一貫忠心耿耿，尤其是性格古怪，象極了他師父\n"
-                    "的邪氣。他身形修長，相貌英俊，白衣飄飄，形容瀟洒。\n");
+                    "的邪氣。他身形修長，相貌英俊，白衣飄飄，形容瀟灑。\n");
         set("attitude", "friendly");
         set("class", "scholar");
         set("str", 30);
@@ -85,7 +85,7 @@ void create()
         set("inquiry", ([
                 "東邪"     : "家師人稱東邪！呵呵。",
                 "西毒"     : "歐陽鋒是與家師並世齊名的高手，人稱老毒物。",
-                "南帝"     : "聽家師說段王爺現在出家當了和尚，法名一燈。",
+                "南帝"     : "聽家師説段王爺現在出家當了和尚，法名一燈。",
                 "北丐"     : "北丐洪七公是丐幫幫主，現在揚州城外。",
                 "黃蓉"     : "她是師父的愛女。",
                 "黃藥師"   : "你要拜訪家師？",
@@ -182,17 +182,17 @@ mixed ask_skill1()
                 return "師父吩咐過，不傳功給無功勞的弟子。";
 
         if (me->query_skill("force") < 120)
-                return "你的內功修為不夠，還是多鍛煉鍛煉吧。";
+                return "你的內功修為不夠，還是多鍛鍊鍛鍊吧。";
 
         if (me->query_skill("luoying-shenjian", 1) < 80)
                 return "你的落英神劍還不夠熟練，練高了再來找我。";
 
-        message_sort(HIY "\n$n" HIY "看了看$N" HIY "，沒說什麼，隨手從懷中輕輕取"
-                     "出了一本劍譜，指著其中一段對$N" HIY "細說良久，$N" HIY "一"
+        message_sort(HIY "\n$n" HIY "看了看$N" HIY "，沒説什麼，隨手從懷中輕輕取"
+                     "出了一本劍譜，指着其中一段對$N" HIY "細説良久，$N" HIY "一"
                      "邊聽一邊不住地點頭。\n\n" NOR, me, this_object());
 
         command("nod");
-        command("say 這招並不復雜，你自己下去練吧。");
+        command("say 這招並不複雜，你自己下去練吧。");
         tell_object(me, HIC "你學會了「風雷神劍」。\n" NOR);
         if (me->can_improve_skill("sword"))
                 me->improve_skill("sword", 1500000);
@@ -225,7 +225,7 @@ mixed ask_book1()
         }
 
         if (owner == me)
-                return "嗯？那本「河圖」不就是你拿著在看麼？";
+                return "嗯？那本「河圖」不就是你拿着在看麼？";
 
         if (objectp(owner) && owner != this_object())
         {
@@ -241,7 +241,7 @@ mixed ask_book1()
         }
         ob->move(this_object());
 
-        message_vision(CYN "$N" CYN "嘆道：既然是師父的命令，這本「河圖」就"
+        message_vision(CYN "$N" CYN "歎道：既然是師父的命令，這本「河圖」就"
                        "交給你吧。\n" NOR, this_object(), me);
         command("givehetuto"+query("id", me));
         return 1;
@@ -267,7 +267,7 @@ mixed ask_book2()
         }
 
         if (owner == me)
-                return "嗯？那本「洛書」不就是你拿著在看麼？";
+                return "嗯？那本「洛書」不就是你拿着在看麼？";
 
         if (objectp(owner) && owner != this_object())
         {
@@ -283,7 +283,7 @@ mixed ask_book2()
         }
         ob->move(this_object());
 
-        message_vision(CYN "$N" CYN "嘆道：既然是師父的命令，這本「洛書」就"
+        message_vision(CYN "$N" CYN "歎道：既然是師父的命令，這本「洛書」就"
                        "交給你吧。\n" NOR, this_object(), me);
         command("giveluoshuto"+query("id", me));
         return 1;

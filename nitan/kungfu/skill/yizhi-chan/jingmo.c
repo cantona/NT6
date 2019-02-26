@@ -34,9 +34,9 @@ int perform(object me, object target)
                 return notify_fail("你沒有激發一指禪，無法使用驚魔一指！\n");
 
        if (! living(target))
-              return notify_fail("對方都已經這樣了，用不著這麼費力吧？\n");
+              return notify_fail("對方都已經這樣了，用不着這麼費力吧？\n");
 
-        msg = HIY "$N" HIY "大喝一聲，中指按出，一股銳利的殺氣攻向$n"
+        msg = HIY "$N" HIY "大喝一聲，中指按出，一股鋭利的殺氣攻向$n"
               HIY "，氣勢恢宏之極！\n" NOR;
 
         ap = attack_power(me, "finger");

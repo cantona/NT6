@@ -4,16 +4,16 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "昆侖谷底");
+        set("short", "崑崙谷底");
         set("long", @LONG
 翻過那堵屏風也似的大山壁。眼前依舊茫茫雲海，更無去路，山
-石堅硬無比，你看到右邊有一株大鬆樹(tree)，左側山壁黑黝黝似乎
+石堅硬無比，你看到右邊有一株大松樹(tree)，左側山壁黑黝黝似乎
 有個小山洞(dong)。
 LONG );
         set("outdoors", "mingjiao");
         set("item_desc", ([
                 "dong": "一個不知深淺的山洞。\n",
-                "tree": "一株挺拔健碩的鬆樹。\n",
+                "tree": "一株挺拔健碩的松樹。\n",
         ]));
         setup();
 }
@@ -32,7 +32,7 @@ int do_enter(string arg)
                 write("你想幹什麼呀?\n");
                 return 1;
         }
-        message_vision("$N深吸了一口氣，慢慢沿著洞壁往裡爬。\n", me);
+        message_vision("$N深吸了一口氣，慢慢沿着洞壁往裏爬。\n", me);
         if(n < 20 || wizardp(me))
         {
                 message_vision("$N爬進數丈，忽見前面透進光亮，心中大喜，手足兼施，加速前行。\n", me);
@@ -61,7 +61,7 @@ int do_climb(string arg)
                 write("你想幹什麼呀?\n");
                 return 1;
         }
-        message_vision("$N手攀鬆樹，搖了兩搖，試試是否結實。\n", me);
+        message_vision("$N手攀松樹，搖了兩搖，試試是否結實。\n", me);
         message_vision("$N忽然一個失手，向懸崖下直跌下去。\n", me);
         me->move(__DIR__"shanjiao");
         me->receive_damage("qi", 1);

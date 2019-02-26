@@ -12,7 +12,7 @@ void create()
 {                            
         set_name("蒙古箭手",({ "menggu jianshou","jianshou" }) );
         set("gender", "男性" );
-        set("long","這是一名蒙古神箭手，正警惕地監視著襄陽城的情況。\n");
+        set("long","這是一名蒙古神箭手，正警惕地監視着襄陽城的情況。\n");
 
         set("int", 30);
         set("str", 30+random(10));
@@ -159,7 +159,7 @@ void seek_ob(object me)
                                         me->start_busy(num * 2);
                         } else
                                 tell_object(all_inventory(room),
-                                        HIB"你覺得好象有人在"HIR"東面"HIW+chinese_number(step)+"箭地"HIB"外朝你這邊窺視了一眼！\n"NOR);
+                                        HIB"你覺得好像有人在"HIR"東面"HIW+chinese_number(step)+"箭地"HIB"外朝你這邊窺視了一眼！\n"NOR);
                 }
         }
         remove_call_out("seek_ob"); 
@@ -183,7 +183,7 @@ void die()
                         addn_temp("guo_shoucheng/killed_mgb", query_str()/5, ob);
                 else
                         addn_temp("guo_shoucheng/killed_mgb", 1, ob);
-                tell_object(ob, RED "一名蒙古弓箭手又喪命于你的利箭之下！\n" NOR);
+                tell_object(ob, RED "一名蒙古弓箭手又喪命於你的利箭之下！\n" NOR);
         }
         destruct(this_object());
         return;

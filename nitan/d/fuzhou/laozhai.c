@@ -9,8 +9,8 @@ void create()
 {
     set("short", "向陽老宅");
     set("long", @LONG
-這裡是福威鏢局總鏢頭林震南在福建的舊居。室內的家具橫七豎八
-地倒在地上。房間的一角結著一張蜘蛛網，屋裡到處是塵土，顯然是已
+這裏是福威鏢局總鏢頭林震南在福建的舊居。室內的傢俱橫七豎八
+地倒在地上。房間的一角結着一張蜘蛛網，屋裏到處是塵土，顯然是已
 經很久沒有人住了。房間的盡頭有一扇門(men) ，但已被坍塌的磚瓦擋
 住了。
 LONG );
@@ -71,14 +71,14 @@ int do_break(string arg)
 
 void close(object room)
 {
-    message("vision","門上的磚頭瓦塊稀裡嘩拉坍塌下來，又擋住了後門。\n", room);
+    message("vision","門上的磚頭瓦塊稀里譁拉坍塌下來，又擋住了後門。\n", room);
     delete("exits/north", room);
 }
 
 void buqun_rob(object me, object book)
 {
-    message_vision(HIY "忽然，一個蒙面人從黑影裡閃了出來，一招「有鳳來儀」，"
-        "手中長劍閃爍\n不定，刺向$N的嚥喉！\n" NOR,  me);
+    message_vision(HIY "忽然，一個蒙面人從黑影裏閃了出來，一招「有鳳來儀」，"
+        "手中長劍閃爍\n不定，刺向$N的咽喉！\n" NOR,  me);
 
     if( !me->query_skill("bixie-jian", 1) ) {
         message_vision("$N一愣之間，已被蒙面人刺中！\n", me);

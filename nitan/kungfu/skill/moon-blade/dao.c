@@ -29,7 +29,7 @@ int perform(object me)
                 return notify_fail(name() + "只能對戰鬥中的對手使用。\n");
 
         if( me->is_busy() )
-                return notify_fail("你正在忙著呢。\n");
+                return notify_fail("你正在忙着呢。\n");
 
         if( !objectp(weapon=query_temp("weapon", me)) ||
             query("skill_type", weapon) != "blade" )
@@ -51,7 +51,7 @@ int perform(object me)
                 return notify_fail("你現在的真氣不足，難以施展" + name() + "。\n");
 
         if (! living(target))
-                return notify_fail("對方都已經這樣了，用不著這麼費力吧？\n");
+                return notify_fail("對方都已經這樣了，用不着這麼費力吧？\n");
 
         ap = attack_power(me, "blade");
         dp = defense_power(target, "force");
@@ -65,7 +65,7 @@ int perform(object me)
                 {
                         addn("neili", -500, me);
                         msg += HIR "$n" HIR "暗叫不好，連忙舉起手中兵器抵擋，卻不想虎口劇痛，手中" + weapon->name() +
-                               HIR "捏不住，脫手而出。\n" NOR;
+                               HIR "捏不住，脱手而出。\n" NOR;
 
                         weapon->move(environment(me));
                 } else
@@ -105,7 +105,7 @@ int perform(object me)
 
         message_combatd(msg, me, target);
 
-        msg = HBMAG "緊跟著$N" HBMAG "躍向空中，另一殺招" HIB "「至上刀」" NOR +
+        msg = HBMAG "緊跟着$N" HBMAG "躍向空中，另一殺招" HIB "「至上刀」" NOR +
                    HBMAG "手中刀狂舞，一瞬間天空中多出了無數個滿月，一起向$n" HBMAG "飛去。\n" NOR;
 
         dp = defense_power(target, "parry");

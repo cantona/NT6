@@ -7,7 +7,7 @@ void create()
         set_name("台夷姑娘",({ "gu niang", "girl" }) );
         set("gender", "女性" );
         set("age", 17);
-        set("long", "一位年輕的台夷姑娘，上著無領襯花對襟，下穿五色筒裙。\n");
+        set("long", "一位年輕的台夷姑娘，上着無領襯花對襟，下穿五色筒裙。\n");
          set_temp("apply/defense", 5);
         set("combat_exp", 7000);
 //        set("shen", 100);

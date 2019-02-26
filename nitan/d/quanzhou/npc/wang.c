@@ -7,7 +7,7 @@ inherit F_DEALER;
 void create()
 {
         set_name("王通治", ({ "wang tongzhi", "wang", "tongzhi" }));
-        set("title", "藥舖掌櫃");
+        set("title", "藥鋪掌櫃");
         set("shen_type", 1);
 
         set("str", 20);

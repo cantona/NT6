@@ -48,12 +48,12 @@ int do_kan(string arg)
             query("skill_type", weapon) != "sword" )
                 return notify_fail(weapon->name() + "也能用來砍東西？\n");
 
-	message_vision("$N抽出兵刃，對著灌木叢就是一陣亂砍。\n", me);
+	message_vision("$N抽出兵刃，對着灌木叢就是一陣亂砍。\n", me);
 
         if( query("neili", me)>100 )
         {
                 set("exits/north", __DIR__"lin2");
-                message_vision("$N累得氣喘吁吁,終于砍出一條小路。\n", me);
+                message_vision("$N累得氣喘吁吁,終於砍出一條小路。\n", me);
                 addn("neili", -50, me);
                 remove_call_out("close");
                 call_out("close", 20);
@@ -67,7 +67,7 @@ int do_kan(string arg)
 
 void close()
 {
-        message("vision", "灌木叢漸漸合攏起來,終于又恢復了原狀。\n",
+        message("vision", "灌木叢漸漸合攏起來,終於又恢復了原狀。\n",
                 this_object());
         delete("exits/north");
 }

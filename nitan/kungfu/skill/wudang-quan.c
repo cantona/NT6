@@ -18,7 +18,7 @@ mapping *action = ({
         "lvl" : 20,
         "skill_name" : "一條鞭"
 ]),
-([        "action" : "$N馬步紮穩，左手虛晃，右手握拳一式"GRN"「直擊」"NOR"迅猛打向$n的胸口",
+([        "action" : "$N馬步扎穩，左手虛晃，右手握拳一式"GRN"「直擊」"NOR"迅猛打向$n的胸口",
         "lvl" : 40,
         "skill_name" : "直擊"
 ]),
@@ -26,7 +26,7 @@ mapping *action = ({
         "lvl" : 50,
         "skill_name" : "雁回頭"
 ]),
-([        "action" : "$N雙臂回環，身行微微後仰，一招"HIW"「井欄」"NOR"，纏向$n的雙手",
+([        "action" : "$N雙臂迴環，身行微微後仰，一招"HIW"「井欄」"NOR"，纏向$n的雙手",
         "lvl" : 60,
         "skill_name" : "井欄"
 ])
@@ -40,7 +40,7 @@ int valid_learn(object me)
                 return notify_fail("練武當長拳必須空手。\n");
 
         if ((int)me->query_skill("yinyun-ziqi", 1) < 10)
-                return notify_fail("你的氤氳紫氣火候不夠，無法學武當長拳。\n");
+                return notify_fail("你的氤氲紫氣火候不夠，無法學武當長拳。\n");
 
         if( query("max_neili", me)<50 )
                 return notify_fail("你的內力太弱，無法練武當長拳。\n");

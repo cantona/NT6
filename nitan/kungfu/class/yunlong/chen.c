@@ -18,7 +18,7 @@ void create()
         set("long",
                 "\n這是一個文士打扮的中年書生，神色和藹。\n"
                 "他就是天下聞名的天地會總舵主陳近南，\n"
-                "據說十八般武藝，樣樣精通。\n"
+                "據説十八般武藝，樣樣精通。\n"
                 "偶爾向這邊看過來，頓覺他目光如電，英氣逼人。\n");
         set("gender", "男性");
         set("class", "scholar");
@@ -105,7 +105,7 @@ int ask_tuihui()
 
         if( query("party/party_name", ob) != "天地會" )
         {
-                message_vision("陳近南笑了笑，對$N說道：你還沒"
+                message_vision("陳近南笑了笑，對$N説道：你還沒"
                                "加入我天地會呢，退什麼退？\n", ob);
                 return 1;
         }
@@ -137,7 +137,7 @@ mixed ask_me()
                 return "你的凝血神爪還不到家，要多練練！";
 
         message_vision(HIY "$n" HIY "點了點頭，變掌為爪，"
-                       "隨意揮洒而出，雙爪頓時幻出漫天爪影，"
+                       "隨意揮灑而出，雙爪頓時幻出漫天爪影，"
                        "氣勢恢弘無比。\n" NOR,
                        me, this_object());
         command("nod");
@@ -187,7 +187,7 @@ void attempt_apprentice(object ob)
         }
         if( query("weiwang", ob)<60 )
         {
-                command("say 我雲龍門武功天下無敵，凡入我門，\n必闖盪江湖，行俠仗義，為天下蒼生謀福利。\n");
+                command("say 我雲龍門武功天下無敵，凡入我門，\n必闖蕩江湖，行俠仗義，為天下蒼生謀福利。\n");
                 command("say " + RANK_D->query_respect(ob) +
                         "是否應該先出去闖一闖，做幾件驚天動地的大事？");
                 return ;
@@ -205,7 +205,7 @@ void attempt_apprentice(object ob)
                 command("chat 我天地會所作所為，無一不是前人所未行之事。\n");
                 command("chat 萬事開創在我，駭人聽聞，物議沸然，又何足論？\n");
                 command("chat 今天就收了你吧！！\n");
-                command("chat 想不到我一身驚人藝業，今日終于有了傳人，哈哈哈哈！！！！\n");
+                command("chat 想不到我一身驚人藝業，今日終於有了傳人，哈哈哈哈！！！！\n");
                 message_vision(HIC "$N的江湖威望提高了！\n" NOR,this_player());
                 set("weiwang", 80, ob);
         }

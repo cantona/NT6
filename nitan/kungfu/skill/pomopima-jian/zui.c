@@ -1,7 +1,7 @@
 #include <ansi.h>
 #include <combat.h>
 
-#define ZUI "「" HIR "醉裡乾坤" NOR "」"
+#define ZUI "「" HIR "醉裏乾坤" NOR "」"
 
 inherit F_SSERVER;
 
@@ -37,7 +37,7 @@ int perform(object me, object target)
                 return notify_fail("你沒有激發潑墨披麻劍，無法使用" ZUI "。\n");
 
         if (! living(target))
-                return notify_fail("對方都已經這樣了，用不著這麼費力吧？\n");
+                return notify_fail("對方都已經這樣了，用不着這麼費力吧？\n");
 
         msg = HIR "$N" HIR "一聲長吟，手中" + weapon->name() + NOR + HIR
               "連劃三個圓圈，幻作三個光圈，便如是有形之物，緩緩向$n" HIR

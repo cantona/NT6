@@ -49,7 +49,7 @@ int lingwu(string arg)
         sl=me->query_skill(special,1);
         if (bl > sl)
                 return notify_fail("你的"+CHINESE_D->chinese(special)+"造詣不夠，無法領悟更深一層的"+CHINESE_D->chinese(arg)+"。\n");
-        write("你對著字畫瞑思苦想，對"+CHINESE_D->chinese(arg)+"的體會又深了一層。\n");
+        write("你對着字畫瞑思苦想，對"+CHINESE_D->chinese(arg)+"的體會又深了一層。\n");
         me->receive_damage("jing",bl/2);
         me->improve_skill(arg,sl/5+1);
         return 1;

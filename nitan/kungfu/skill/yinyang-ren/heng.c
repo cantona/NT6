@@ -45,12 +45,12 @@ int perform(object me, object target)
                 return notify_fail("你沒有激發陰陽刃法，難以施展" HENG "。\n");
 
         if (! living(target))
-                return notify_fail("對方都已經這樣了，用不著這麼費力吧？\n");
+                return notify_fail("對方都已經這樣了，用不着這麼費力吧？\n");
 
         msg = HIY "\n只見$N" HIY "手中" + weapon->name() + HIY "斜指"
               "蒼天，猛然間招式突變，" + weapon->name() + HIY "“呼"
               "呼”作響，一式「" HIC "橫空出世" HIY "」，力劈虛空，"
-              "氣壓群山，猶如風卷殘雲般地襲向$n" HIY "。\n" NOR;
+              "氣壓羣山，猶如風捲殘雲般地襲向$n" HIY "。\n" NOR;
         message_sort(msg, me, target);
 
         // 根據所激發的是sword或blade來判斷ap值。

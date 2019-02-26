@@ -11,7 +11,7 @@ int valid_learn(object me)
 {
         if (me->query_skill("tanqin-jifa", 1) < 50 &&
             me->query_skill("chuixiao-jifa", 1) < 50)
-                return notify_fail("你的吹蕭和彈琴的技法水平都太差，還是先練好再說吧！\n");
+                return notify_fail("你的吹蕭和彈琴的技法水平都太差，還是先練好再説吧！\n");
 
         if (me->query_skill("tanqin-jifa", 1) < me->query_skill("qingxin-pushan", 1) &&
             me->query_skill("cuhixiao-jifa", 1) < me->query_skill("qingxin-pushan", 1))

@@ -1,4 +1,4 @@
-// sonfeng-jian.c 鬆風劍法
+// sonfeng-jian.c 松風劍法
 // Last Modified by sir 10.22.2001
 
 #include <ansi.h>;
@@ -46,16 +46,16 @@ int valid_enable(string usage) { return usage == "sword" || usage == "parry"; }
 int valid_learn(object me)
 {
         if( query("max_neili", me)<200 )
-                return notify_fail("你的內力不夠，無法修習鬆風劍法。\n");
+                return notify_fail("你的內力不夠，無法修習松風劍法。\n");
 
         if ((int)me->query_skill("dodge") < 60)
-                return notify_fail("你的輕功火候太淺，無法修習鬆風劍法。\n");
+                return notify_fail("你的輕功火候太淺，無法修習松風劍法。\n");
 
         if ((int)me->query_dex() < 25)
-                return notify_fail("你的身法還不夠靈活，無法修習鬆風劍法。\n");
+                return notify_fail("你的身法還不夠靈活，無法修習松風劍法。\n");
 
         if ((int)me->query_skill("sword", 1) < (int)me->query_skill("songfeng-jian", 1))
-                return notify_fail("你的基本劍法水平有限，無法領會更高深的鬆風劍法。\n");
+                return notify_fail("你的基本劍法水平有限，無法領會更高深的松風劍法。\n");
 
         return 1;
 }
@@ -68,7 +68,7 @@ int practice_skill(object me)
          || query("skill_type", weapon) != "sword" )
                 return notify_fail("你使用的武器不對。\n");
         if( query("qi", me)<40 || query("neili", me)<30 )
-                return notify_fail("你的內力或氣不夠練鬆風劍法。\n");
+                return notify_fail("你的內力或氣不夠練松風劍法。\n");
         me->receive_damage("qi", 35);
         addn("neili", -20, me);
         return 1;
@@ -122,10 +122,10 @@ string perform_action_file(string action)
 }
 int help(object me)
 {
-        write(HIC"\n鬆風劍法："NOR"\n");
+        write(HIC"\n松風劍法："NOR"\n");
         write(@HELP
 
-    鬆風劍法是青城派劍法。
+    松風劍法是青城派劍法。
 
         學習要求：
                 青冥神功20級

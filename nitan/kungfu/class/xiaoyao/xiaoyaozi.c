@@ -26,7 +26,7 @@ void create()
         set_name("逍遙子", ({ "xiaoyao zi", "xiaoyao", "zi" }));
         set("title", "逍遙派開山祖師");
         set("long", @LONG
-眼前此人須眉皆白，看不出有多老。他便是逍
+眼前此人鬚眉皆白，看不出有多老。他便是逍
 遙派開山祖師無崖子。然而似乎身染重疾，行
 動不便。雖然如此，從眉宇仍然看得出此人當
 年必然是一位風流倜儻的美男子。想不到今天
@@ -167,7 +167,7 @@ void attempt_apprentice(object ob)
 
                 if( query("max_neili", ob)<500 )
                 {
-                        command("say 不過你內力太差…嗯…也好，待我傳功于你！");
+                        command("say 不過你內力太差…嗯…也好，待我傳功於你！");
                         set("max_neili", 500+random(100), ob);
                         if (ob->query_skill("force", 1) < 50)
                                 ob->set_skill("force", 50 + random(10));
@@ -214,12 +214,12 @@ void attempt_apprentice(object ob)
 
         if( query("combat_exp", ob)<500000 )
         {
-                command("say 你的經驗也忒低了點，好好鍛煉鍛煉再說吧。");
+                command("say 你的經驗也忒低了點，好好鍛鍊鍛鍊再説吧。");
                 return;
         }
 
         command("haha");
-        command("say 想不到在這世上竟然還有人可以繼承我逍遙派的衣砵！");
+        command("say 想不到在這世上竟然還有人可以繼承我逍遙派的衣缽！");
         command("recruit "+query("id", ob));
 }
 
@@ -248,8 +248,8 @@ mixed ask_skill1()
                 return "你的流月劍舞火候未到，還得多練習練習。";
 
         message_vision(HIY "$n" HIY "點了點頭，從懷中輕輕取出了一本"
-                       "劍譜，指著其中的一段對\n$N" HIY "不厭其煩的"
-                       "細說良久，$N" HIY "一邊聽一邊點頭。\n" NOR,
+                       "劍譜，指着其中的一段對\n$N" HIY "不厭其煩的"
+                       "細説良久，$N" HIY "一邊聽一邊點頭。\n" NOR,
                        me, this_object());
 
         command("nod");
@@ -295,7 +295,7 @@ mixed ask_skill2()
                        "麗，輕盈靈動，實乃前所謂聞，頓時大有所悟。\n"
                        NOR, me, this_object());
 
-        command("say 這招的關鍵在于靈動二字，你下去練吧。");
+        command("say 這招的關鍵在於靈動二字，你下去練吧。");
         tell_object(me, HIC "你學會了「天升劍訣」。\n" NOR);
 
         if (me->can_improve_skill("sword"))
@@ -334,7 +334,7 @@ mixed ask_skill3()
 
         message_vision(HIY "$n" HIY "對$N" HIY "微笑道：“想不到"
                        "今日你的輕功能有如此造詣，我便傳\n你此招"
-                       "，看好了！”說完只見$n" HIY "提起真氣，依"
+                       "，看好了！”説完只見$n" HIY "提起真氣，依"
                        "照先天伏羲六十\n四卦將凌波微步由頭到尾迅"
                        "速無比的走了一次。但見$n" HIY "意態飄\n逸"
                        "，影子亂飛，真個將逍遙二字發揮得淋漓盡至"
@@ -380,7 +380,7 @@ mixed ask_skill4()
 
         message_vision(HIY "$n" HIY "看了看$N" HIY "，微微一笑，隨即"
                        "便點了點頭，將$N" HIY "招至身邊，在\n耳旁低聲"
-                       "細說良久，$N" HIY "聽後會心的一笑，看來大有所"
+                       "細説良久，$N" HIY "聽後會心的一笑，看來大有所"
                        "悟。\n" NOR, me, this_object());
 
         command("haha");
@@ -563,14 +563,14 @@ mixed ask_skill8()
         if( query("max_neili", me)<3500 )
                 return "你的內力修為不夠，強運這招會擾亂自身的真元。";
 
-        message_vision(HIY "$n" HIY "對$N" HIY "微微一笑，模樣頗為讚"
-                       "許，說道：“我在這裡給你演示\n一遍，能否領悟"
+        message_vision(HIY "$n" HIY "對$N" HIY "微微一笑，模樣頗為贊"
+                       "許，説道：“我在這裏給你演示\n一遍，能否領悟"
                        "就全靠你的悟性了。”話音剛落，只見$n" HIY "起"
                        "身\n而立，大袖一揮，掌緣頓時幻起萬道霞光，$n"
                        HIY "翻過掌心，掌中\n霞光也隨之盪漾。$n" HIY
-                       "接著催動內力，霎那間，掌中霞光竟由紫\n變紅，"
+                       "接着催動內力，霎那間，掌中霞光竟由紫\n變紅，"
                        "由紅轉白……竟接連幻出七種顏色，便宛如一道彩"
-                       "虹橫架于\n掌心之上。此時，$n" HIY "一聲斷喝，"
+                       "虹橫架於\n掌心之上。此時，$n" HIY "一聲斷喝，"
                        "七色掌勁相繼迸出掌心。只聽\n得“哧哧哧哧哧哧"
                        "哧”七聲連響，$N" HIY "對面的石壁竟被$n" HIY
                        "的七色\n掌勁貫穿出七個碗口粗的深穴。\n" NOR,
@@ -665,7 +665,7 @@ mixed ask_zhihuan()
 
         ob->move(this_object());
         message_vision(CYN "$N" CYN "微微一笑，道：“這逍遙神仙環你便拿去，希"
-                       "望日後你能繼承我的衣砵。”\n" NOR, this_object(), me);
+                       "望日後你能繼承我的衣缽。”\n" NOR, this_object(), me);
         command("give shenxian huan to "+query("id", me));
         addn("family/gongji", -cost, me);
 
@@ -678,7 +678,7 @@ int accept_ask(object me, string topic)
         {
         case "歷練" :
         case "歷煉" :
-        case "鍛煉" :
+        case "鍛鍊" :
                 return QUEST_D->accept_ask(this_object(), me, topic);
                 break;
 

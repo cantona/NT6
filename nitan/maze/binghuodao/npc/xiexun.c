@@ -8,7 +8,7 @@ void create()
         set("title", HIR "發狂的金毛獅王" NOR);
         set("long",
         "他是一位身材魁偉異常的的老者，身穿一件白布長袍。\n"
-        "他滿頭黃發，威風凜凜，真如天神一般，只是兩只眼睛並不睜開。\n"
+        "他滿頭黃髮，威風凜凜，真如天神一般，只是兩隻眼睛並不睜開。\n"
         );
 
         set("gender", "男性");
@@ -132,7 +132,7 @@ void die(object killer)
         if (! objectp(dob = killer))
                 dob = query_last_damage_from();
 
-        // 如果殺我的人屬于某幫派則設置該幫派具有搶先進入密道
+        // 如果殺我的人屬於某幫派則設置該幫派具有搶先進入密道
         if (dob && userp(dob))
         {
                 if (! objectp(env = find_object("/maze/binghuodao/jitan")))

@@ -41,7 +41,7 @@ int perform(object me, object target)
         }
 
         if( target->is_busy() ) {
-                tell_object(me, target->name() + "目前正自顧不暇，放膽攻擊吧□\n");
+                tell_object(me, target->name() + "目前正自顧不暇，放膽攻擊吧ⅵ\n");
                 return 1;
         }
 
@@ -88,7 +88,7 @@ int perform(object me, object target)
                 msg = CYN "$N使出打狗棒法「纏」字訣，幻出連山棒影，將$n吞沒！\n";
                 break;
         case "riyue-bian":
-                msg = HIY "$N使出日月鞭法的天纏地繞訣，連揮數鞭，如黑龍般著地向$n的全身卷去！\n";
+                msg = HIY "$N使出日月鞭法的天纏地繞訣，連揮數鞭，如黑龍般着地向$n的全身捲去！\n";
                 break;
         }
 
@@ -98,7 +98,7 @@ int perform(object me, object target)
                         msg += "結果$p被$P攻了個措手不及，渾身被漫天鞭影裹在其中！\n" NOR;
                         break;
                 case "taiji-jian":
-                        msg += "結果$p被$P攻了個措手不及□\n" NOR;
+                        msg += "結果$p被$P攻了個措手不及ⅵ\n" NOR;
                         break;
                 case "dagou-bang":
                         msg += "結果$p被$P纏了個手忙腳亂，一時無法還招進攻！\n" NOR;

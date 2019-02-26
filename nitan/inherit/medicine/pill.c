@@ -40,12 +40,12 @@ int do_pour(string arg)
         if( !ob ) return notify_fail("你身上沒有 " + what + " 這樣東西。\n");
         if( !query("pourable", ob) )
         {
-                write(this_object()->name() + "似乎不能摻進水酒裡的。\n");
+                write(this_object()->name() + "似乎不能摻進水酒裏的。\n");
                 return 1;
         }
         if( !query("liquid/remaining", ob) )
         {
-                write(ob->name() + "裡什麼也沒有，先裝些水酒才能溶化掉"+this_object()->name()+"。\n");
+                write(ob->name() + "裏什麼也沒有，先裝些水酒才能溶化掉"+this_object()->name()+"。\n");
                 return 1;
         }
 // We let call other to call the "master copy" of the object in case the

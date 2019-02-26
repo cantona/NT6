@@ -30,8 +30,8 @@ void create()
         set("gender", "男性" );
         set("age", 60);
         set("long",
-                "他頭上包著頭巾，三縷長髯飄洒胸前，面目清瘦但紅暈有光，\n"
-                "二目炯炯有神，爍爍閃著竟似是凜凜的劍光，渾身似乎都包圍\n"
+                "他頭上包着頭巾，三縷長髯飄灑胸前，面目清瘦但紅暈有光，\n"
+                "二目炯炯有神，爍爍閃着竟似是凜凜的劍光，渾身似乎都包圍\n"
                 "在一股劍氣之中。\n");
         set("str", 25);
         set("dex", 20);
@@ -76,7 +76,7 @@ void create()
         set("chat_msg", ({
                 "歐冶子撫劍而歌：巨闕神兵兮，人鑄就。蓋世寶劍兮，配英雄！\n",
                 "歐冶子低頭沉吟，似乎在思考什麼。\n"
-                "歐冶子嘆了一口氣：神兵配英雄，可英雄。。。。。。\n"
+                "歐冶子歎了一口氣：神兵配英雄，可英雄。。。。。。\n"
         }) );
         carry_object("/clone/misc/cloth")->wear();
         carry_object("/clone/weapon/changjian")->wield();
@@ -92,7 +92,7 @@ int ask_blue()
         object me = this_player();
         object ob = this_object();
 
-        message_vision(CYN "$N對$n" CYN "說道：你是要合成籃色裝備嗎？你先付給我一萬兩黃金，然後把以下材料準備好給我。\n"
+        message_vision(CYN "$N對$n" CYN "説道：你是要合成籃色裝備嗎？你先付給我一萬兩黃金，然後把以下材料準備好給我。\n"
                 "       1、想要合成的白色裝備 1 個\n"
                 "       2、相同等級已經吸取屬性的黑水晶或超級黑水晶 3 個\n" NOR, ob, me);
         set_temp("upgrade/money", 100000000, me);
@@ -105,7 +105,7 @@ int ask_pink()
         object me = this_player();
         object ob = this_object();
 
-        message_vision(CYN "$N對$n" CYN "說道：你是要合成粉色裝備嗎？你先付給我一萬兩黃金，然後把以下材料準備好給我。\n"
+        message_vision(CYN "$N對$n" CYN "説道：你是要合成粉色裝備嗎？你先付給我一萬兩黃金，然後把以下材料準備好給我。\n"
                 "       1、想要合成的藍色裝備 1 個\n"
                 "       2、粉水晶或超級粉水晶 1 個\n"
                 "       3、玄鐵石 3 個\n" NOR, ob, me);
@@ -119,7 +119,7 @@ int ask_gold()
         object me = this_player();
         object ob = this_object();
 
-        message_vision(CYN "$N對$n" CYN "說道：你是要合成金色裝備嗎？你先付給我一萬兩黃金，然後把以下材料準備好給我。\n"
+        message_vision(CYN "$N對$n" CYN "説道：你是要合成金色裝備嗎？你先付給我一萬兩黃金，然後把以下材料準備好給我。\n"
                 "       1、想要合成的粉色裝備 1 個\n"
                 "       2、黃水晶或超級黃水晶 2 個\n" NOR, ob, me);
         set_temp("upgrade/money", 100000000, me);
@@ -132,7 +132,7 @@ int ask_green()
         object me = this_player();
         object ob = this_object();
 
-        message_vision(CYN "$N對$n" CYN "說道：合成套裝(綠裝)必需的道具如下
+        message_vision(CYN "$N對$n" CYN "説道：合成套裝(綠裝)必需的道具如下
        1）1件需求等級為30 級以上（包含30級）的金裝備
        2）1塊綠水晶
        3）5 塊金色名字的煉化材料（玄鐵石)
@@ -147,7 +147,7 @@ int ask_steady()
         object me = this_player();
         object ob = this_object();
 
-        message_vision(CYN "$N對$n" CYN "說道：強化必需的道具如下
+        message_vision(CYN "$N對$n" CYN "説道：強化必需的道具如下
        1）1件需求等級為30 級以上（包含30級）的藍裝備（粉裝備、金裝備、綠裝備）
        2）1塊聖水晶
        3）1顆吸取了附加屬性的黑水晶（超級黑水晶）
@@ -165,7 +165,7 @@ int check_legal_name(string name, int max_len)
         i = strlen(name);
         if ((strlen(name) < 2) || (strlen(name) > max_len ))
         {
-                write(sprintf("對不起，中文字必須是 1 到 %d 個中文字。\n",
+                write(sprintf("對不起，中文字必須是 1 到 %d 箇中文字。\n",
                       max_len / 2));
                 return 0;
         }
@@ -215,7 +215,7 @@ int accept_object(object me, object ob)
         int i;
 
         if( query_temp("upgrade/making") ) {
-                message_vision("$N對$n說：我現在正忙著呢，請稍等一會！\n",
+                message_vision("$N對$n説：我現在正忙着呢，請稍等一會！\n",
                                this_object(), me);
                 return 0;
         }
@@ -229,16 +229,16 @@ int accept_object(object me, object ob)
                 }
 
                 if( ob->value()<query_temp("upgrade/money", me)){
-                        message_vision("$N對$n說：對不起，老夫這一"
+                        message_vision("$N對$n説：對不起，老夫這一"
                                        "千多年來，還沒有打過折扣。\n",
                                        this_object(), me);
                         return 0;
                 }
                 if( query_temp("upgrade/do", me) == "steady" )
-                        message_vision("$N對$n說道：好，你這就把你的要強化的裝備給我看看(show)先。\n",
+                        message_vision("$N對$n説道：好，你這就把你的要強化的裝備給我看看(show)先。\n",
                                 this_object(), me);
                 else
-                        message_vision("$N對$n說道：好，你這就把你的要合成的裝備給我看看(show)先。\n",
+                        message_vision("$N對$n説道：好，你這就把你的要合成的裝備給我看看(show)先。\n",
                                 this_object(), me);
 
                 set_temp("paid/歐冶子", 1, me);
@@ -247,7 +247,7 @@ int accept_object(object me, object ob)
         }
 
         if( !mapp(nds=query_temp("upgrade/needs", me)) && !query_temp("upgrade/prepare", me)){
-                message_vision("$N對$n說：你給我這個幹什麼啊！\n",
+                message_vision("$N對$n説：你給我這個幹什麼啊！\n",
                                this_object(), me);
                 return 0;
         }
@@ -262,7 +262,7 @@ int accept_object(object me, object ob)
                                 do_combine(me, ob);
                         return 1;
                 } else {
-                        message_vision("$N對$n說：你給我這個幹什麼啊！\n",
+                        message_vision("$N對$n説：你給我這個幹什麼啊！\n",
                                               this_object(), me);
                         return 0;
                 }
@@ -276,27 +276,27 @@ int accept_object(object me, object ob)
                         if( ob->query_name() == "黑水" ) {
                                 if( query_temp("upgrade/level", me) && 
                                     query("enchase/level", ob) != query_temp("upgrade/level", me)){
-                                        message_vision("$N對$n說：" + ob->name() + "的等級和要求不符！\n",
+                                        message_vision("$N對$n説：" + ob->name() + "的等級和要求不符！\n",
                                                 this_object(), me);
                                         return 0;
                                 }
                                 if( query_temp("upgrade/type", me) && 
                                     query("enchase/type", ob) != query_temp("upgrade/type", me)){
-                                        message_vision("$N對$n說：" + ob->name() + "的類型和要求不符！\n",
+                                        message_vision("$N對$n説：" + ob->name() + "的類型和要求不符！\n",
                                                 this_object(), me);
                                         return 0;
                                 }
                                 str=keys(query("enchase/apply_prop", ob))[0];
                                 if( query_temp("upgrade/do", me) == "steady"){
                                         if( !query_temp("upgrade/steady_prop/"+str, me)){
-                                                message_vision("$N對$n說：" + ob->name() + "所吸取的屬性和用來強化的裝備原始屬性不一致，不可用來強化！\n",
+                                                message_vision("$N對$n説：" + ob->name() + "所吸取的屬性和用來強化的裝備原始屬性不一致，不可用來強化！\n",
                                                         this_object(), me);
                                                 return 0;
                                         }
                                         set_temp("upgrade/apply_prop/"+str,query("enchase/apply_prop/"+str,  ob), me);
                                 } else {
                                         if( query_temp("upgrade/apply_prop/"+str, me)){
-                                                message_vision("$N對$n說：" + ob->name() + "所吸取的屬性不可重復用來合成！\n",
+                                                message_vision("$N對$n説：" + ob->name() + "所吸取的屬性不可重複用來合成！\n",
                                                         this_object(), me);
                                                 return 0;
                                         }
@@ -320,7 +320,7 @@ int accept_object(object me, object ob)
                         tell_object(me, HIR "\n恩，不錯，還有沒有了？！\n" NOR);
                         return -1;
                 } else {
-                        message_vision("$N對$n說：你給我這個幹什麼啊？我要你找的材料不是這個！\n",
+                        message_vision("$N對$n説：你給我這個幹什麼啊？我要你找的材料不是這個！\n",
                                    this_object(), me);
                         return 0;
                 }
@@ -336,8 +336,8 @@ int do_combine(object me, object ob)
         set_temp("upgrade/making", ob);
         set_temp("upgrade/player_id",query("id", me));
 
-        message_vision(HIM "$N拿出特制的魔方，將" + ob->name() + HIM "和合成材料放了進去。\n"
-                       "接著$N按照特殊的順序將魔方旋轉，霎時間只見魔方發出一道奇異的光芒，\n"
+        message_vision(HIM "$N拿出特製的魔方，將" + ob->name() + HIM "和合成材料放了進去。\n"
+                       "接着$N按照特殊的順序將魔方旋轉，霎時間只見魔方發出一道奇異的光芒，\n"
                        "一"+query("unit", ob)+"嶄新的"+ob->name()+HIM"出現在你的眼前。\n\n"NOR,
                        this_object(), me);
 
@@ -414,7 +414,7 @@ int do_finish(object me, object ob)
                 me = find_player(query_temp("upgrade/player_id"));
 
         if( !objectp(me) || environment(me) != environment() ) {
-                message_vision(HIW "$N嘆了口氣，說道：客人為何這就去"
+                message_vision(HIW "$N歎了口氣，説道：客人為何這就去"
                                "了！？罷了罷了，不做了，去吧！\n"
                                "$N把"+ob->name()+"拋進火爐，就此不見。\n\n" NOR,
                                this_object());
@@ -446,7 +446,7 @@ int do_show(string arg)
         int level, i;
 
         if( query_temp("upgrade/making") )
-                return notify_fail("我正在忙著呢，請稍等一會！\n");
+                return notify_fail("我正在忙着呢，請稍等一會！\n");
 
         if( !arg )
                 return notify_fail("你要亮出什麼東西？\n");
@@ -456,13 +456,13 @@ int do_show(string arg)
                 return notify_fail("你身上沒有這種東西。\n");
 
         if( query("equipped", ob) )
-                return notify_fail("你先解除" + ob->name() + "的裝備再說！\n");
+                return notify_fail("你先解除" + ob->name() + "的裝備再説！\n");
 
         if( query_temp("upgrade/file", me) )
-                return notify_fail("你先把你正在進行的合成/強化/改造完工了再說！\n");
+                return notify_fail("你先把你正在進行的合成/強化/改造完工了再説！\n");
 
         message_vision("$n拿出一"+query("unit", ob)+ob->name()+
-                       "對$N說：“拜托拜托...”\n",
+                       "對$N説：“拜託拜託...”\n",
                        this_object(), me);
 
         if( !wizardp(me) && !query_temp("paid/歐冶子",1, me)){
@@ -470,7 +470,7 @@ int do_show(string arg)
                 /*command("heihei");
                 set_temp("upgrade/money", 100000000, me);
                 command("say 這...怎麼也的有點意思意思吧？你"
-                        "說一萬兩黃金怎麼樣？當然多些我也不反對。");*/
+                        "説一萬兩黃金怎麼樣？當然多些我也不反對。");*/
                 return 1;
         }
 
@@ -482,7 +482,7 @@ int do_show(string arg)
 
         /*if( ob->item_owner() != query("id", me)){
                 command("kick"+query("id", me));
-                command("say 你以為我的仙術是蒙事的啊，這分明不是你的！");
+                command("say 你以為我的仙術是矇事的啊，這分明不是你的！");
                 return 1;
         }*/
         if( query_temp("upgrade/do", me) == "steady"){
@@ -540,7 +540,7 @@ int do_show(string arg)
 void kill_ob(object ob)
 {
         ::kill_ob(ob);
-        message_vision("$N冷笑一聲，道：“這年頭，什麼人都有。”說完伸手一指$n。\n",
+        message_vision("$N冷笑一聲，道：“這年頭，什麼人都有。”説完伸手一指$n。\n",
                        this_object(), ob);
         ob->unconcious();
 }

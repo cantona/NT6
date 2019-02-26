@@ -31,7 +31,7 @@ p_skill=CHAR_D->get_char(p_name,"skills")["guwu"];
         };	
 
 	ob->simple_action(SG_SKILL_D->query_use("guwu"));
-	ob->start_busy(10, "你正忙于鼓舞士氣呢。");
+	ob->start_busy(10, "你正忙於鼓舞士氣呢。");
 	load_object("/daemons/cast_d.c")->reg_player(ob->query_primary_id(), "guwu");
 	ob->award_exp(ob->query_sk_level("sk_zhimou")/2+random(20), "guwu");
 	call_out("show_result", 5+random(5), ob, p_id, p_skill);

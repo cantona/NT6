@@ -7,7 +7,7 @@ mapping *action = ({
         "dodge" : 50,
         "damage": 60,
         "lvl" : 10,
-        "skill_name" : "雲裡霧裡",
+        "skill_name" : "雲裏霧裏",
         "damage_type" : "瘀傷"
 ]),
 ([      "action" : "$N長嘯一聲，平地飛起三丈，居高臨下腳上頭下，雙手重疊在一起，運勁壓向對手，$n大驚失色",
@@ -29,7 +29,7 @@ mapping *action = ({
         "skill_name" : "雲深霧澤",
         "damage_type" : "瘀傷"
 ]),
-([      "action" : "$N運氣狂哮，四面八方出現無數掌影，一掌突出，夾著雷霆萬鈞之式拍向$n",
+([      "action" : "$N運氣狂哮，四面八方出現無數掌影，一掌突出，夾着雷霆萬鈞之式拍向$n",
         "dodge" : 120,
         "damage": 150,
         "lvl" : 80,

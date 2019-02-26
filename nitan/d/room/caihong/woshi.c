@@ -1,4 +1,4 @@
-// woshi.c 彩虹居臥室
+// woshi.c 彩虹居卧室
 
 #include <room.h>
 #include <ansi.h>
@@ -8,17 +8,17 @@ inherit ROOM;                                   /* EXAMPLE */
 
 void create()
 {
-        set("short", "臥室");                   /* EXAMPLE */
-//**    set("short", "ROOM_NAME臥室");
+        set("short", "卧室");                   /* EXAMPLE */
+//**    set("short", "ROOM_NAME卧室");
         set("long", @LONG
-這是主人的臥室，收拾得井井有條。南窗下是一張大床，床邊有一個
-櫃子，還有一個書架。整間屋子雖然樸素，但是可以說是樣樣俱全，並不
+這是主人的卧室，收拾得井井有條。南窗下是一張大牀，牀邊有一個
+櫃子，還有一個書架。整間屋子雖然樸素，但是可以説是樣樣俱全，並不
 缺少什麼東西。
 LONG );
 
-        set("default_long", "這是主人的臥室，收拾得井井有條。南窗下是"   /* EXAMPLE */
-                            "一張大床，床邊有一個櫃子，還有一個書架，"   /* EXAMPLE */
-                            "上面放著一些書。整間屋子布置得非常樸素，"   /* EXAMPLE */
+        set("default_long", "這是主人的卧室，收拾得井井有條。南窗下是"   /* EXAMPLE */
+                            "一張大牀，牀邊有一個櫃子，還有一個書架，"   /* EXAMPLE */
+                            "上面放着一些書。整間屋子佈置得非常樸素，"   /* EXAMPLE */
                             "並不奢華。屋門在西首。");                   /* EXAMPLE */
 
 //**    set("objects", ([
@@ -60,7 +60,7 @@ int do_findbaby(string arg)
                 return 0;
 
         if( !query("couple/child_id", me) )
-                return notify_fail("你又還沒有孩子，來這裡湊什麼熱鬧啊？\n");
+                return notify_fail("你又還沒有孩子，來這裏湊什麼熱鬧啊？\n");
 
         if( objectp(baby=find_living(query("couple/child_id", me)) )
         &&  environment(baby) && baby->is_baby())
@@ -76,7 +76,7 @@ int do_findbaby(string arg)
 
                 baby->load_baby(me);
                 baby->move(environment(me));
-                message_vision("你忽然看到床底下" +
+                message_vision("你忽然看到牀底下" +
                         ({"探出一顆小腦瓜", "伸出一雙小腳丫", "伸出一支小手"})
                         [random(3)] + "．．．\n", me);
 

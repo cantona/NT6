@@ -6,8 +6,8 @@ void create()
 {
         set("short", "穿廊門");
         set("long", @LONG
-這裡是鬆風觀通往後院的中門，門厚三寸，紅鬆銅箍，數十年猶有
-鬆香飄盪，和觀中香火摻和出一股出世的滋味。外派人士到此就該回頭
+這裏是松風觀通往後院的中門，門厚三寸，紅松銅箍，數十年猶有
+松香飄蕩，和觀中香火摻和出一股出世的滋味。外派人士到此就該回頭
 了。
 LONG );
         set("exits", ([
@@ -38,7 +38,7 @@ if (dir != "south" )
                        if(present("yu renhao", environment(me)) && living(present("yu renhao", environment(me))))
                         {
                                 return notify_fail(
-"于人豪喝道：後面是本派重地，這位" + RANK_D->query_respect(me) + "請止步。\n");
+"於人豪喝道：後面是本派重地，這位" + RANK_D->query_respect(me) + "請止步。\n");
                         }
                         else
                                 return ::valid_leave(me, dir);                        

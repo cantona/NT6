@@ -44,7 +44,7 @@ int perform(object me, object target)
         if( query_temp("powerup", me) )
         {
                 msg += HIW + weapon->name() +
-                HIW "無邊的殺氣撕裂空氣，武器上所帶的寒氣仿佛可以冰凍一切，"
+                HIW "無邊的殺氣撕裂空氣，武器上所帶的寒氣彷彿可以冰凍一切，"
                 "刃未至而氣先及，$n" HIW "眉毛都蒙上了薄薄白霜！\n\n" NOR;
         }
 
@@ -74,7 +74,7 @@ int perform(object me, object target)
                                 msg += COMBAT_D->do_damage(me, target, WEAPON_ATTACK, damage, 60,
                                                            HIY "\n$n" HIY "再也堅持不住，幾欲暈倒"
                                                            "$N將手中利刃在地上一拖，$N順勢反手往又上"
-                                                           "撩了一招，$n毫無防御，傷口再次擴大，\n"
+                                                           "撩了一招，$n毫無防禦，傷口再次擴大，\n"
                                                            "又是一股血柱直噴而出！\n" NOR);
 
                 } else
@@ -101,7 +101,7 @@ int perform(object me, object target)
                                                 target->receive_wound("qi",damage / 15 + random(damage / 15), me);
                                 }
 
-                                msg += "\n" + HIY + weapon->name() + HIY "余勢未盡，又劈入了$n" + HIY +
+                                msg += "\n" + HIY + weapon->name() + HIY "餘勢未盡，又劈入了$n" + HIY +
                                         "的胸口，$n遭此重創，鮮血狂噴而出！\n" NOR;
 
                                 if( query("material", weapon2) != "tian jing" && random(2) == 1 )

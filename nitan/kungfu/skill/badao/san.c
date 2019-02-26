@@ -40,18 +40,18 @@ int perform(object me, object target)
                 return notify_fail("你沒有激發霸刀，無法使用" XIAN "。\n");
 
         if (! living(target))
-               return notify_fail("對方都已經這樣了，用不著這麼費力吧？\n");
+               return notify_fail("對方都已經這樣了，用不着這麼費力吧？\n");
 
         addn("neili", -3000, me);
 
         ap=me->query_skill("blade")+me->query_skill("force")+me->query_skill("martial-cognize",1)+query("str", me);
         dp = target->query_skill("dodge") + target->query_skill("force") + target->query_skill("martial-cognize", 1);
 
-        message_combatd(HIW "\n$N" HIW "一聲長嘆，似乎看盡凡塵滄桑，事態萬千，持刀而立，遙望天際 ……\n\n", me, target);        
+        message_combatd(HIW "\n$N" HIW "一聲長歎，似乎看盡凡塵滄桑，事態萬千，持刀而立，遙望天際 ……\n\n", me, target);        
 
         // 第一刀
         msg = HIY "$N" HIY "踏步向前，施展出阿鼻道三刀之「一刀入魔」，" + weapon->name() + HIY 
-              "順勢劈過，狂風驟起，大地回歸黑暗 ……\n" NOR;
+              "順勢劈過，狂風驟起，大地迴歸黑暗 ……\n" NOR;
 
         if (ap * 4 / 5 + random(ap) > dp)
         {
@@ -66,7 +66,7 @@ int perform(object me, object target)
         }
 
         // 第二刀
-        msg += HIY "\n$N" HIY "輕嘆，猛然間，手臂一揮，一式阿鼻道三刀之「人間煉獄」已然使出，" + weapon->name() + HIY "長鳴一聲"
+        msg += HIY "\n$N" HIY "輕歎，猛然間，手臂一揮，一式阿鼻道三刀之「人間煉獄」已然使出，" + weapon->name() + HIY "長鳴一聲"
                "，劃破黑暗，吹吸間，一道熾熱的白光卷向$n" HIY "，周圍空氣令人窒息。\n" NOR;
 
         if (ap * 4 / 5 + random(ap) > dp)
@@ -82,7 +82,7 @@ int perform(object me, object target)
 
         // 第三刀
         msg += HIY "\n$N" HIY "雙眼一紅，力量大增，猛然怒呵一聲，飛天而起，但見天地又重歸黑暗，似乎整個塵世已經"
-              "墜入無間地獄般，令人再無半點生念，突然，四周充斥著鬼哭狼嚎的巨響，$N" HIY "卻早已沒了蹤影。\n" NOR;
+              "墜入無間地獄般，令人再無半點生念，突然，四周充斥着鬼哭狼嚎的巨響，$N" HIY "卻早已沒了蹤影。\n" NOR;
         if (ap * 4 / 5 + random(ap) > dp)
         {
                 damage = ap * 4 + random(ap);
@@ -105,7 +105,7 @@ string attack1(object me, object target, int damage)
 {
         string msg;
 
-        msg = HIR "$n" HIR "只覺心中一陣凄涼，胸口卻已翻騰不息，說不出的難受。\n" NOR;
+        msg = HIR "$n" HIR "只覺心中一陣淒涼，胸口卻已翻騰不息，説不出的難受。\n" NOR;
 
         addn("neili", -1*damage/2, target);
         

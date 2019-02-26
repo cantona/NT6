@@ -7,7 +7,7 @@ inherit NPC;
 void create()
 {
         set_name("葛通", ({"ge tong", "ge", "tong", }));
-        set("title",HIY "坤寧宮帶刀侍衛" NOR);
+        set("title",HIY "坤寧宮帶刀侍衞" NOR);
         set("gender", "男性");
         set("attitude", "peaceful");
 

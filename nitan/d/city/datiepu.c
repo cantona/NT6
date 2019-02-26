@@ -4,11 +4,11 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "打鐵舖");
+        set("short", "打鐵鋪");
         set("long", @LONG
-這是一家簡陋的打鐵舖，中心擺著一個火爐，爐火把四周照得一
+這是一家簡陋的打鐵鋪，中心擺着一個火爐，爐火把四周照得一
 片通紅，一走進去就感到渾身火熱。牆角堆滿了已完工和未完工的菜
-刀、鐵錘、鐵棍、匕首、盔甲等物。一位鐵匠滿頭大汗揮舞著鐵錘，
+刀、鐵錘、鐵棍、匕首、盔甲等物。一位鐵匠滿頭大汗揮舞着鐵錘，
 專心致志地在打鐵。
 LONG );
 
@@ -32,7 +32,7 @@ int valid_leave(object me, string dir)
                 return notify_fail("你已經答應幫鐵匠打鐵了，不要到處亂跑。\n");
 
         if( !query_temp("smith_times", me) && dir == "south" )
-                return notify_fail("不要在別人家裡亂躥！\n");
+                return notify_fail("不要在別人家裏亂躥！\n");
 
         return ::valid_leave(me, dir);
 }

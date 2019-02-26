@@ -8,7 +8,7 @@ void create()
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("long", HIW "傳說中蛋生獲仙人所贈的奇書，整本書不見一字。\n" NOR);
+                set("long", HIW "傳説中蛋生獲仙人所贈的奇書，整本書不見一字。\n" NOR);
                 set("value", 500000);
                 set("unit", "本");
         }
@@ -24,7 +24,7 @@ int do_read(string arg)
         object me = this_player();
 
         if (me->is_busy())
-                return notify_fail("你現在正忙著呢。\n");
+                return notify_fail("你現在正忙着呢。\n");
 
         if (me->is_fighting())
                 return notify_fail("戰鬥中無法研讀。\n");

@@ -20,7 +20,7 @@ int accept_object(object ob, object obj)
          && !query_temp("have_letter", ob) )
         {
                 set_temp("fight_ok", 1, ob);
-                command("say 好，既然已有掌門真人許可，我們就來驗証一下武功。");
+                command("say 好，既然已有掌門真人許可，我們就來驗證一下武功。");
                 remove_call_out("destroying");
                 call_out("destroying", 1, me, obj);
                 return 1;
@@ -98,7 +98,7 @@ string ask_for_join()
                 return "無量壽佛！玄門清修之士，應自小開始修行。\n";
 
         if( query("betrayer", me)>0 )
-                return "無量壽佛！你生性反復無常，非我玄門清修之士之所為。\n";
+                return "無量壽佛！你生性反覆無常，非我玄門清修之士之所為。\n";
 
         set_temp("pending/join_quanzhen", 1, me);
         return "無量壽佛！施主若真心皈依我全真教門，請跪下(kneel)受戒。\n";
@@ -112,8 +112,8 @@ int do_kneel()
         if( !query_temp("pending/join_quanzhen", me))return 0;
 
         message_vision(
-                "$N右手捏著蓮花指，恭恭敬敬地磕下頭去。\n\n"
-                "$n伸出雙手，將$N頭頂長發挽成一個道髻。\n\n",me,this_object());
+                "$N右手捏着蓮花指，恭恭敬敬地磕下頭去。\n\n"
+                "$n伸出雙手，將$N頭頂長髮挽成一個道髻。\n\n",me,this_object());
         name=query("purename", me);
         if( !name)name=query("name", me);
         new_name = name[0..1] + "靜" + name[2..3];

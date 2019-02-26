@@ -4,7 +4,7 @@
 // buildroom 是可以保存數據的對象，繼承者必須是/d/...目錄下面的文
 // 件，此時它的存盤文件的名字為：/data/room/...。
 //
-// 玩家建造的房屋保存在private_room這個mapping裡面。
+// 玩家建造的房屋保存在private_room這個mapping裏面。
 // mapping的結構：
 // room_id : room_name
 //
@@ -109,11 +109,11 @@ string long()
         proom = query("private_room");
         if (! proom || ! sizeof(proom))
         {
-                desc += HIM "    這裡的風水極佳，是建造幫派總壇的好地方。\n" NOR;
+                desc += HIM "    這裏的風水極佳，是建造幫派總壇的好地方。\n" NOR;
                 return desc;
         }
 
-        line = "    這裡坐落著幫派";
+        line = "    這裏坐落着幫派";
         idk = sort_array(keys(proom), 1);
         k = sizeof(idk) - 1;
         for (i = 0; i <= k; i++)

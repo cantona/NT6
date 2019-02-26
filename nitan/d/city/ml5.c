@@ -6,7 +6,7 @@ void create()
 {
 	set("short", "青竹林");
         set("long", @LONG
-這是一片茂密的青竹林，一走進來，你仿佛迷失了方向。
+這是一片茂密的青竹林，一走進來，你彷彿迷失了方向。
 LONG );
 	set("exits", ([
 		"east" : "/d/city/ml6",

@@ -11,7 +11,7 @@ void create()
   object me = this_object();
   int j;
   set_name("骷髏", ({"ku lou", "yao", "kulou"}));
-  set("long","剛才還是一付幹枯的骸骨，但不知怎麼他突然跳起來了，看樣子是來索命的！\n");
+  set("long","剛才還是一付乾枯的骸骨，但不知怎麼他突然跳起來了，看樣子是來索命的！\n");
   set("gender", "男性");
   set("age", 100);
   set("attitude", "peaceful");
@@ -84,7 +84,7 @@ void create()
   
   set("chat_chance", 10);
   set("chat_msg", ({
-	"骷髏道：唉，也不知在這裡睡了多久了。\n",
+	"骷髏道：唉，也不知在這裏睡了多久了。\n",
 	"骷髏道：今天就拿你開刀了。\n",
 	}) );
   
@@ -134,7 +134,7 @@ void die()
     {
        wan=new("/d/obj/drug/guo");
       if(environment()) wan->move(environment());
-       msg=HIW"你突然發現白骨堆裡好象有點東西！\n"NOR;
+       msg=HIW"你突然發現白骨堆裏好像有點東西！\n"NOR;
        message("vision", msg, environment());
     }  
       destruct(this_object());

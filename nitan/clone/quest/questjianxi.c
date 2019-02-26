@@ -53,7 +53,7 @@ void create()
           (:call_out,"random_move",0:),
                 }) );
                set("inquiry", ([
-                "姦細"    : (: ask_me :),
+                "奸細"    : (: ask_me :),
                 "jian xi" : (: ask_me :),
                 "jianxi"  : (: ask_me :),
         ]) );
@@ -79,7 +79,7 @@ int ask_me(object who)
 
         if( query("owner", this_object()) == query("id", me) )
         {
-                message_vision(HIY"$N眼中突然閃過驚懼的目光，雙眼冒火般瞪著$n，大聲喊道："+RANK_D->query_self_rude(ob)+"就是"+query("fname", ob)+"！"+RANK_D->query_rude(me)+"！納命來吧！\n"NOR,ob,me);
+                message_vision(HIY"$N眼中突然閃過驚懼的目光，雙眼冒火般瞪着$n，大聲喊道："+RANK_D->query_self_rude(ob)+"就是"+query("fname", ob)+"！"+RANK_D->query_rude(me)+"！納命來吧！\n"NOR,ob,me);
                 me->start_busy(1);        
     ob->fight_ob(me);         
 //                me->fight_ob(ob);        
@@ -94,7 +94,7 @@ int ask_me(object who)
       addn_temp("apply/dodge", 100, ob);
     else 
       addn_temp("apply/dodge", 50, ob);
-                set("title",query("family_name",  ob)+"姦細", ob);
+                set("title",query("family_name",  ob)+"奸細", ob);
                 set("name",query("fname",  ob), ob);
                 if ( mapp(map_status = ob->query_skill_map()) ) {
                         mname  = keys(map_status);
@@ -117,7 +117,7 @@ int ask_me(object who)
     set_temp("asked", 1, ob);
         }
         else
-                message_vision(HIY"$N眼中寒光一閃，馬上又變得漠然了，只是奇怪地看著$n。\n"NOR, ob, me);
+                message_vision(HIY"$N眼中寒光一閃，馬上又變得漠然了，只是奇怪地看着$n。\n"NOR, ob, me);
         return 1;
 }
 
@@ -165,7 +165,7 @@ int do_halt()
         
         if ( me->is_fighting(ob)  )
         {
-                tell_object( me, HIR"姦細未除，怎能臨陣退縮？\n"NOR );
+                tell_object( me, HIR"奸細未除，怎能臨陣退縮？\n"NOR );
                 return 1;
         }
         return 0;

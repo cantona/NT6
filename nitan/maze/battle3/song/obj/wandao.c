@@ -5,7 +5,7 @@ inherit BLADE;
 
 void create()
 {
-        set_name(HIW"回風刀"NOR, ({ "wan dao","blade" }));
+        set_name(HIW"迴風刀"NOR, ({ "wan dao","blade" }));
         set_weight(12000);
         if (clonep())
                 set_default_object(__FILE__);

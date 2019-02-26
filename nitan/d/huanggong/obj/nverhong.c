@@ -10,7 +10,7 @@ void create()
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("long", "一壇上好的女兒紅,醇香誘人.\n");
+                set("long", "一罈上好的女兒紅,醇香誘人.\n");
                 set("unit", "壇");
                 set("value", 500);
                 set("max_liquid", 15);

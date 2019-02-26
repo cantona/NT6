@@ -5,10 +5,10 @@ void create()
 {
         set("short", "密室");
         set("long", @LONG
-這裡是一座不大的石室，房間落滿灰塵，好象有多年沒人打掃似
-的。室內只有一床一案，一縷陽光從洞頂的巖縫中射入，照射在室壁
+這裏是一座不大的石室，房間落滿灰塵，好像有多年沒人打掃似
+的。室內只有一牀一案，一縷陽光從洞頂的巖縫中射入，照射在室壁
 上，你發現石壁(wall)上似乎有一些花紋。室內光線明亮。牆邊有一
-個青石床，一個寬大的石案上擺著一個石匣(xia)。
+個青石牀，一個寬大的石案上擺着一個石匣(xia)。
 LONG
         );
         set("sleep_room", 1);
@@ -18,9 +18,9 @@ LONG
                 "eastup" : __DIR__"shixi",
         ]));
         set("item_desc",([
-                "xia": WHT "\n一只石匣，好象是和石案連在一起的，不"
+                "xia": WHT "\n一隻石匣，好像是和石案連在一起的，不"
                        "知道敢不敢打開看看。\n " NOR,
-                "wall": WHT "\n牆上刻著很多蠅頭小字，還附著一些圖畫，"
+                "wall": WHT "\n牆上刻着很多蠅頭小字，還附着一些圖畫，"
                        "似乎是一門極上乘的武學。\n " NOR,
         ]));
 
@@ -50,7 +50,7 @@ int do_open(string arg)
                 ob = new(__DIR__"obj/qianzhumiji");
                 ob->move(me);
         } else
-                return notify_fail("\n你打開石匣，但見裡面空空如也。\n");
+                return notify_fail("\n你打開石匣，但見裏面空空如也。\n");
 
         return 1;
 }
@@ -103,7 +103,7 @@ int do_think(string arg)
                 return 1; 
         }
 
-        message_vision(HIY "$N" HIY "面對著石壁靜思良久，對千蛛萬毒手似有所悟。\n" NOR, ob);
+        message_vision(HIY "$N" HIY "面對着石壁靜思良久，對千蛛萬毒手似有所悟。\n" NOR, ob);
         ob->improve_skill("qianzhu-wandushou",random(30*query("int", ob)));
         ob->receive_damage("jing", 15);
         return 1;

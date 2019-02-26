@@ -1,4 +1,4 @@
-// 該物件用于記錄A-F房間開鎖狀態和隨機分配房間參數
+// 該物件用於記錄A-F房間開鎖狀態和隨機分配房間參數
 // 該文件常駐內存直到系統關閉
 
 inherit ITEM;
@@ -40,7 +40,7 @@ public void init_data(string arg)
          object s;
 
          // 隨機分配房間參數，每次reboot後順序都不一樣
-         // 初試化個房間數據，各個房間數據統一交該物件管理，便于統一
+         // 初試化個房間數據，各個房間數據統一交該物件管理，便於統一
          // 增加了解迷的難度
          ran_num = random(6);
          set("number/lockroom1", rn[ran_num]);

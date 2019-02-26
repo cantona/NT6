@@ -1,6 +1,6 @@
 //rune31.c
 
-// Jah □
+// Jah 喬
 
 #include <ansi.h>
 

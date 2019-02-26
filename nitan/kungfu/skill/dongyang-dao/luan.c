@@ -33,7 +33,7 @@ int perform(object me, object target)
                 return notify_fail("你的東洋刀法還不到家，無法使用亂刀訣！\n");
 
        if (! living(target))
-              return notify_fail("對方都已經這樣了，用不著這麼費力吧？\n");
+              return notify_fail("對方都已經這樣了，用不着這麼費力吧？\n");
 
         msg = HIY "\n$N" HIY "嘿嘿一聲冷笑，手中的" + weapon->name() +
               HIY "左突右伸，刀刀都從意想不到的地方砍向$n"

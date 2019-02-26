@@ -190,7 +190,7 @@ void check_environment()
 
         if (base_name(environment(this_object())) != query("startroom"))
         {
-                command("say 咦？我怎麼會在這裡，有人作弊，有人作弊，巫師快出來！");
+                command("say 咦？我怎麼會在這裏，有人作弊，有人作弊，巫師快出來！");
                 destruct(this_object());
         }
 */
@@ -233,7 +233,7 @@ void check_weapon()
 
         if (me->is_busy()) me->interrupt_busy(this_object(),1000);
 
-        // 很小幾率恢復氣血
+        // 很小几率恢復氣血
         if (random(20) == 1)
         {
                 //log_file("shejing", "成功恢復氣血。\n");
@@ -403,7 +403,7 @@ void die(object killer)
         int exp;                // 需要瓜分的經驗
         int pot;                // 需要瓜分的潛能
         int weiwang;            // 需要瓜分的威望
-        int score;              // 需要瓜分的閱歷
+        int score;              // 需要瓜分的閲歷
         object *t;              // 殺死我的人的隊伍列表
         object tob;
         int mar;                //  需要瓜分的體會
@@ -418,7 +418,7 @@ void die(object killer)
 
 
         // 定義獎勵物品列表
-        // 幾率  X / 百分之
+        // 機率  X / 百分之
         mixed oblist = ([
                 "/clone/armor/fenghuang-chai3"           :                20,
                 "/clone/armor/haizhi-xin3"               :                20,
@@ -716,14 +716,14 @@ void die(object killer)
                 }
         }
 
-        // 一定幾率掉物品在殺我的人身上dob
+        // 一定機率掉物品在殺我的人身上dob
         if (objectp(dob) && environment(dob) == environment(this_object()))
         {
                 key_s_gift = keys(oblist);
                 s_gift = key_s_gift[random(sizeof(key_s_gift))];
                 gift_point = oblist[s_gift];
 
-                // 判斷幾率
+                // 判斷機率
                 if( MEMBER_D->is_valid_member(query("id", dob) )
                     && random(MAX_POINT / ITEM_D->gift_point()) < gift_point)
                 {
@@ -743,14 +743,14 @@ void die(object killer)
                 }
         }
 
-        // 一定幾率掉物品在地上
+        // 一定機率掉物品在地上
         if (1)
         {
                 key_s_gift = keys(oblist);
                 s_gift = key_s_gift[random(sizeof(key_s_gift))];
                 gift_point = oblist[s_gift];
 
-                // 判斷幾率
+                // 判斷機率
                 if (random(MAX_POINT / ITEM_D->gift_point()) < gift_point)
                 {
                         gift_ob = new(s_gift);
@@ -808,7 +808,7 @@ void die_gift()
         int i;
 
         // 定義獎勵物品列表
-        // 幾率  X / 百分之
+        // 機率  X / 百分之
         mapping oblist = ([
                 "/clone/armor/fenghuang-chai3"           :                20,
                 "/clone/armor/haizhi-xin3"               :                20,
@@ -972,7 +972,7 @@ void die_gift()
                 key_s_gift = keys(oblist);
                 s_gift = key_s_gift[random(sizeof(key_s_gift))];
                 gift_point = oblist[s_gift];
-                // 判斷幾率
+                // 判斷機率
                 if (random(MAX_POINT / ITEM_D->gift_point()) < gift_point || 1)
                 {
                         gift_ob = new(s_gift);
@@ -988,17 +988,17 @@ void die_gift()
                 }
         }
 
-        // 50%幾率爆出斬妖勛章
+        // 50%機率爆出斬妖勛章
         if (random(2) == 1)
         {
                 ob_xz = new("/clone/armor/zhanyao-xunzhang");
                 ob_xz->move(environment(this_object()));
-                message_vision(HIR "□當~~一聲，從$N" HIR "身上掉出一枚" + ob_xz->name() + HIR "，落在地上。\n" NOR, this_object());
+                message_vision(HIR "哐當~~一聲，從$N" HIR "身上掉出一枚" + ob_xz->name() + HIR "，落在地上。\n" NOR, this_object());
                 set("who_get/id", "NONE", ob_xz);
                 set("who_get/time", time()+5, ob_xz);//5秒內都不能撿取
         }
 
-        // 5/100幾率掉出無名銅人
+        // 5/100機率掉出無名銅人
         if (random(100) < 5)
         {
                 object ob_tongren;

@@ -35,7 +35,7 @@ void done_post(object me, mapping note, string text)
     else
         notes += ({ note });
     tell_object(me, HIM "求救OK。請等待。\n");
- // tell_object(me, HIM "巫師正忙著，請等待。\n");
+ // tell_object(me, HIM "巫師正忙着，請等待。\n");
  // tell_object(me, HIM "你先做你自己的事情吧，一會用sos read看看是否解決了，ｏｋ？\n" NOR);
 	message("channel:wiz", HIY "【求救】：玩家 "+note["author"]+" 使用"BLINK" SOS "NOR HIY"緊急求救，請在線巫師使用 sos 命令查看。\n" NOR,users());
     save();
@@ -92,12 +92,12 @@ int do_solve(object me, int i)
         return 0;
     } 
     if ( notes[i-1]["solve"]!="" ) {
-        write(notes[i-1]["solve"]+"已經標志啦!\n");
+        write(notes[i-1]["solve"]+"已經標誌啦!\n");
         return 1;
     }
     notes[i-1]["solve"] = me->query("id");
     save();
-    write("該 sos 信息已標志為解決。\n");
+    write("該 sos 信息已標誌為解決。\n");
     return 1;
 }
 
@@ -110,7 +110,7 @@ int main(object me, string arg)
     restore();
     if (!arg) {
         if(!wiz_level(me)){
-            tell_object(me, HIM "你現在是在" HIY MUD_NAME HIM "裡，你可以向在線WIZ求救。\n" NOR);
+            tell_object(me, HIM "你現在是在" HIY MUD_NAME HIM "裏，你可以向在線WIZ求救。\n" NOR);
       //    tell_object(me, HIM "趕快向巫師們發出求救：ＳＯＳ！\n" NOR);
                        where = environment(me);
             if (!where) 
@@ -136,13 +136,13 @@ int main(object me, string arg)
     } 
 
     if( sscanf(arg, "%s %s", s, arg1) == 2 ) {
-        if( !wiz_level(me) ) return notify_fail("格式不對，具體使用方法請參閱 help sos \n");
-        if ( s != "solve" ) return notify_fail("格式不對，具體使用方法請參閱 help sos \n");
+        if( !wiz_level(me) ) return notify_fail("格式不對，具體使用方法請參閲 help sos \n");
+        if ( s != "solve" ) return notify_fail("格式不對，具體使用方法請參閲 help sos \n");
         if ( arg1 =="all" ) {
            if( !(i = sizeof(notes)) ) return notify_fail("沒人發出sos求救信號。\n");
            for( ; i > 0; i-- ) 
                notes[i-1]["solve"] = me->query("id");
-           write("所有的 sos 信息已經標志為解決了。\n");
+           write("所有的 sos 信息已經標誌為解決了。\n");
            return 1;
         }
         i = search_id(arg1);
@@ -152,8 +152,8 @@ int main(object me, string arg)
         }
     }
     if( sscanf(arg, "%s %d", s, arg2) == 2 ) {
-        if( !wiz_level(me) ) return notify_fail("格式不對，具體使用方法請參閱 help sos \n");
-        if ( s != "solve" ) return notify_fail("格式不對，具體使用方法請參閱 help sos \n");
+        if( !wiz_level(me) ) return notify_fail("格式不對，具體使用方法請參閲 help sos \n");
+        if ( s != "solve" ) return notify_fail("格式不對，具體使用方法請參閲 help sos \n");
         do_solve( me, arg2 ); 
         return 1;
     }
@@ -168,11 +168,11 @@ int main(object me, string arg)
             }
             break;
         case "list":
-            if( !wiz_level(me) ) return notify_fail("格式不對，具體使用方法請參閱 help sos \n");
+            if( !wiz_level(me) ) return notify_fail("格式不對，具體使用方法請參閲 help sos \n");
             list_bug(me);
             break;
         case "pack":
-            if( !wiz_level(me) ) return notify_fail("格式不對，具體使用方法請參閱 help sos \n");
+            if( !wiz_level(me) ) return notify_fail("格式不對，具體使用方法請參閲 help sos \n");
             if( !(i = sizeof(notes)) ) return notify_fail("沒人發出 sos 求救信號。\n");
             for( ; i > 0; i-- ) 
                 if( "" != notes[i-1]["solve"] ) {
@@ -185,11 +185,11 @@ int main(object me, string arg)
             save();
             break;
         case "solve":
-            if( !wiz_level(me) ) return notify_fail("格式不對，具體使用方法請參閱 help sos \n");
+            if( !wiz_level(me) ) return notify_fail("格式不對，具體使用方法請參閲 help sos \n");
             return notify_fail("格式: sos solve <編號或玩家id>\n");
             break;
         default:
-            if( !wiz_level(me) ) return notify_fail("格式不對，具體使用方法請參閱 help sos \n");
+            if( !wiz_level(me) ) return notify_fail("格式不對，具體使用方法請參閲 help sos \n");
             if( sscanf(arg, "%d", i) == 1 )
                 do_read( me, i );
             else if( sscanf( arg, "%s", str ) == 1 ) {
@@ -198,7 +198,7 @@ int main(object me, string arg)
                 do_read( me, i );
             }
     }
-    else return notify_fail("格式不對，具體使用方法請參閱 help sos \n");
+    else return notify_fail("格式不對，具體使用方法請參閲 help sos \n");
     return 1;
 }
 
@@ -210,10 +210,10 @@ int help(object me)
            sos
            sos read
 這個指令可以在系統出現bug時來向巫師求助。
-輸入該命令後，系統將提示你輸入對 bug 的描述。玩家在這裡應該將 bug
-出現的情況和系統的提示盡量詳細地進行說明，以便巫師修改該 bug。
+輸入該命令後，系統將提示你輸入對 bug 的描述。玩家在這裏應該將 bug
+出現的情況和系統的提示儘量詳細地進行説明，以便巫師修改該 bug。
 每個玩家只能貼一條 sos，新的 sos 將覆蓋以前的輸入。
-可以用 sos read 閱讀自己貼出的 sos。
+可以用 sos read 閲讀自己貼出的 sos。
 HELP
     );
 	else 
@@ -226,8 +226,8 @@ write(@HELP
            sos solve <號碼或玩家id>
 這個指令可以輔助巫師處理玩家提出的 bug 列表。sos 和 sos list 的功能一樣，
 都是將所有的 bug 信息進行列表。帶參數的 sos 命令，根據參數的不同，將顯示
-對應號碼或對應玩家的 bug 的詳細信息。sos solve用來標志某個bug已經被解決了。
-sos pack 將刪除所有已經標志為解決了的 bug。
+對應號碼或對應玩家的 bug 的詳細信息。sos solve用來標誌某個bug已經被解決了。
+sos pack 將刪除所有已經標誌為解決了的 bug。
 HELP
     );
     return 1;

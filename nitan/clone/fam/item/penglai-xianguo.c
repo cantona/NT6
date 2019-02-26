@@ -11,7 +11,7 @@ void create()
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("long", HIM "\n這是一顆晶瑩紅透的仙果，據說服用後能功力大增。\n"
+                set("long", HIM "\n這是一顆晶瑩紅透的仙果，據説服用後能功力大增。\n"
                                       "*服用(fuyong xianguo)需消耗吸靈壺，可獲得30萬經驗，25萬潛能，1000點貢獻及20萬體會（雙倍獎勵服務加倍）。\n"
                                       "*每服用一個蓬萊仙果會消耗一個吸靈壺，吸靈壺可從商城購買。\n" NOR);
                 set("unit", "顆");

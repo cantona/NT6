@@ -12,7 +12,7 @@ string chinese_name() { return "腐屍毒"; }
 
 string update_msg_others()
 {
-        return WHT "$N" WHT "全身上下淌著黃水，不住的嘶嚎，散發"
+        return WHT "$N" WHT "全身上下淌着黃水，不住的嘶嚎，散發"
                "出陣陣極難聞的惡臭。\n" NOR;
 }
 

@@ -5,8 +5,8 @@ inherit NPC;
 void create()
 {
         set_name("丁勉", ({ "ding mian", "ding", "mian" }) );
-        set("long", "嵩山派掌門人的二師弟托塔手丁勉是個胖子，身材魁偉。\n");
-        set("nickname", HIC"托塔手"NOR);
+        set("long", "嵩山派掌門人的二師弟託塔手丁勉是個胖子，身材魁偉。\n");
+        set("nickname", HIC"託塔手"NOR);
         set("gender", "男性");
         set("class", "swordsman");
         set("age", 45);

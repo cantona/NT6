@@ -7,7 +7,7 @@ void create()
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("long", HIY "傳說此丹乃是天宮中的神品，凡人吃了可以平增膂力。\n" NOR);
+                set("long", HIY "傳説此丹乃是天宮中的神品，凡人吃了可以平增膂力。\n" NOR);
                 set("base_unit", "顆");
                 set("base_value", 100000);
                 set("base_weight", 50);

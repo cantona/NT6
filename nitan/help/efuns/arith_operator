@@ -1,7 +1,7 @@
 新增 Package arith_operator:
     
     新增 mixed count(mixed, string, mixed);
-         用于(string)大數運算與大數數值比較
+         用於(string)大數運算與大數數值比較
          
          coutn (1, "<", 2)
 

@@ -40,7 +40,7 @@ int main(object me, string arg)
                         }
                 }
                 if (! count)
-                        return notify_fail("你已經裝備著了。\n");
+                        return notify_fail("你已經裝備着了。\n");
                 return 1;
         }
 

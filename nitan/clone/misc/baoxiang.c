@@ -81,7 +81,7 @@ void create()
     else 
     {
         set("unit", "口");
-        set("long", HIY "這是一只金色的寶箱，裝飾的珠光寶氣，你或許可以打開（open）它。\n" NOR);
+        set("long", HIY "這是一隻金色的寶箱，裝飾的珠光寶氣，你或許可以打開（open）它。\n" NOR);
         set("value", 1);
     }
 }
@@ -118,12 +118,12 @@ int do_open(string arg)
     
     if (is_opened)
     {
-        return notify_fail("寶箱已經是開著的，您就不用費勁折騰啦！\n");
+        return notify_fail("寶箱已經是開着的，您就不用費勁折騰啦！\n");
     }
         
     message_vision("$N把寶箱打開了。\n", me);
     ob->set_name(HIY "打開的寶箱" NOR, ({ "bao xiang", "xiang" }) );
-    set("long", HIY"這是一只被打開的金色寶箱，裝飾的珠光寶氣，一看就不是尋常地攤貨。\n"NOR, ob);
+    set("long", HIY"這是一隻被打開的金色寶箱，裝飾的珠光寶氣，一看就不是尋常地攤貨。\n"NOR, ob);
     is_opened = 1;
 
         if( random(2))set("maze/box", GOLD, ob);
@@ -161,7 +161,7 @@ int do_open(string arg)
     {
         case SPECIAL_MAP:
             environment(query("mazeobj", ob))->set_display_map(2);
-            message_vision("只見$N中沖出一道白光，迅速投入房間中央的白色石板中，白色石板越發的亮堂起來。\n", ob);
+            message_vision("只見$N中衝出一道白光，迅速投入房間中央的白色石板中，白色石板越發的亮堂起來。\n", ob);
             break;
         case SPECIAL_DAN:
             bonus = new(dan_list[random(sizeof(dan_list))]);
@@ -192,7 +192,7 @@ int do_open(string arg)
         case NPC_SKILL:
             //FUBEN_D->query_maze_mainobj()->set_npcs_weakly();
             environment(query("mazeobj", ob))->set_boss_weakly();
-            set("long", HIY "寶箱底部隱約刻著一行字：據說迷宮主人現在狀態很虛弱。\n" NOR);
+            set("long", HIY "寶箱底部隱約刻着一行字：據説迷宮主人現在狀態很虛弱。\n" NOR);
             break;
         default:
             break;        

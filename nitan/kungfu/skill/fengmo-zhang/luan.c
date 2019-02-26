@@ -5,7 +5,7 @@
 
 inherit F_SSERVER;
 
-string name() { return HIR "群魔亂舞" NOR; }
+string name() { return HIR "羣魔亂舞" NOR; }
 
 int perform(object me, object target)
 {
@@ -41,7 +41,7 @@ int perform(object me, object target)
                 return notify_fail("你現在的真氣不足，難以施展"+name()+"。\n");
 
         if (! living(target))
-                return notify_fail("對方都已經這樣了，用不著這麼費力吧？\n");
+                return notify_fail("對方都已經這樣了，用不着這麼費力吧？\n");
 
         msg = HIR "只見$N" HIR "眼中殺氣大盛，暴喝一聲，飛撲上前，"
                   "便如發狂一般，手中的" + weapon->name() +

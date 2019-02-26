@@ -9,7 +9,7 @@ void create()
                 set_default_object(__FILE__);
         else {
                 set("unit", "柄");
-                set("long", "一柄官府衛兵特用的長劍，劍脊上鑄有“東廠”二字。\n");
+                set("long", "一柄官府衞兵特用的長劍，劍脊上鑄有“東廠”二字。\n");
                 set("value", 2000);
                 set("material", "gold");
         }

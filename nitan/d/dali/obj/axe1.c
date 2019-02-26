@@ -13,7 +13,7 @@ void create()
                 set("value", 200);
                 set("material", "steel");
                 set("wield_msg", 
-"$N「唰」的一聲拔出一柄精光閃閃的斧頭握在手裡。\n");
+"$N「唰」的一聲拔出一柄精光閃閃的斧頭握在手裏。\n");
                 set("unwield_msg", "$N將手中的$n插回腰間。\n");
         }
         init_axe(20);

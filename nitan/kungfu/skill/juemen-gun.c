@@ -1,7 +1,7 @@
 // juemen-gun.c 絕門棍
 // Last Modified by sega on Mar. 10 2000
 //沒碰文件,沒用吧?
-//歸雲莊南西仁和柯鎮惡用著個？
+//歸雲莊南西仁和柯鎮惡用着個？
 
 #include <ansi.h>;
 inherit SKILL;
@@ -11,13 +11,13 @@ string martialtype() { return "skill"; }
 string *dodge_msg = ({
         "$n右腳輕輕一點躍開躲過了$N的攻擊。\n",
         "$n向旁邊撲出，順勢一滾，閃到一邊。\n",
-        "$n斜裡沖前一步，身法詭異，$N這一招落到空處。\n",
+        "$n斜裏衝前一步，身法詭異，$N這一招落到空處。\n",
         "$n忽然直身飛入半空，很久也不見人影，半響後竟閃到了$N的背後。\n",
         "$n突然一個急轉身，$N的這一招滑到了一邊。\n",
 });
 
 mapping *action = ({
-([        "action" : "$N斜裡沖前一步，身法詭異，手中$w橫掃$n的$l",
+([        "action" : "$N斜裏衝前一步，身法詭異，手中$w橫掃$n的$l",
         "damage": 450,
         "dodge" : 50,
         "damage_type" : "挫傷"
@@ -34,12 +34,12 @@ mapping *action = ({
         "dodge" : 60,
         "damage_type" : "挫傷"
 ]),
-([        "action" : "$N突然一個急轉身，$w橫掃一圈後挾著猛烈的勁道打向$n的$l",
+([        "action" : "$N突然一個急轉身，$w橫掃一圈後挾着猛烈的勁道打向$n的$l",
         "damage": 600,
         "dodge" : 75,
         "damage_type" : "挫傷"
 ]),
-([        "action" : "$N向前撲出，順勢一滾，接著翻身跳起，手裡$w斜向上擊
+([        "action" : "$N向前撲出，順勢一滾，接着翻身跳起，手裏$w斜向上擊
 向$n的$l",
         "damage": 750,
         "dodge" : 65,

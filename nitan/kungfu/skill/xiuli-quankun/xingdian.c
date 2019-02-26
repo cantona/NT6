@@ -15,7 +15,7 @@ i = me->query_skill("xingyi-zhang", 1)/5;        if( !target ) target = offensiv
                 return notify_fail("「星光點點」只能在戰鬥中對對手使用。\n");
 
         if( objectp(query_temp("weapon", me)) )
-                return notify_fail("使用「星光點點」時雙手必須空著！\n");
+                return notify_fail("使用「星光點點」時雙手必須空着！\n");
 
         if( (int)me->query_skill("xingyi-zhang", 1) < 120 )
                 return notify_fail("你的星移掌不夠嫻熟，不會使用「星光點點」。\n");

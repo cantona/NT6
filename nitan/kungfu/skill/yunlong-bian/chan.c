@@ -37,7 +37,7 @@ int perform(object me, object target)
                 return notify_fail("你現在的真氣不足，難以施展" CHAN "。\n");
 
         if (! living(target))
-               return notify_fail("對方都已經這樣了，用不著這麼費力吧？\n");
+               return notify_fail("對方都已經這樣了，用不着這麼費力吧？\n");
 
         msg = WHT "$N" WHT "使出雲龍鞭法「纏」字訣，連揮" + weapon->name() +
               WHT"企圖把$n"  WHT "的全身纏住。\n" NOR;

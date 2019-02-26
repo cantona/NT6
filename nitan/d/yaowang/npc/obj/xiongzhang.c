@@ -8,7 +8,7 @@ void create()
                 set_default_object(__FILE__);
         else {
                 set("unit", "只");
-                set("long", "這是一只黑熊掌。\n");
+                set("long", "這是一隻黑熊掌。\n");
                 set("yaowang", 1);
                 set("value", 1000);
                 set("weight", 1000);

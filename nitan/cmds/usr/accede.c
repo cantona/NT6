@@ -27,38 +27,38 @@ int main(object me, string arg)
                         return notify_fail("剛才沒人向你尋求幫助。\n");
 
                 if (! objectp(ob = present(arg, environment(me))))
-                        return notify_fail("這裡沒有這個人。\n");
+                        return notify_fail("這裏沒有這個人。\n");
 
                 if( query_temp("need_accede/user", ob) != query("id", me) )
                         return notify_fail(CYN + ob->name() + CYN "瞪眼"
-                                           "望著你道：你是誰？找我有什麼"
+                                           "望着你道：你是誰？找我有什麼"
                                            "事？\n" NOR);
 
                 if (ob == me)
                         return notify_fail("自己應酬自己？\n");
 
                 if (me->is_fighting())
-                        return notify_fail("你還是打完架再說吧。\n");
+                        return notify_fail("你還是打完架再説吧。\n");
 
                 if (me->is_busy())
-                        return notify_fail("你還是有空了再說吧。\n");
+                        return notify_fail("你還是有空了再説吧。\n");
 
                 if( !query("can_speak", ob) )
                         return notify_fail("你大腦有水？\n");
 
                 if (! living(ob))
                         return notify_fail("你還是等" + ob->name() +
-                                           "醒了後再說吧。\n");
+                                           "醒了後再説吧。\n");
 
                 if (ob->is_fighting())
                         return notify_fail("你還是等" + ob->name() +
-                                           "打完架再說吧。\n");
+                                           "打完架再説吧。\n");
 
                 if (ob->is_busy())
                         return notify_fail("你還是等" + ob->name() +
-                                           "忙完了再說吧。\n");
+                                           "忙完了再説吧。\n");
 
-                notify_fail(CYN + ob->name() + CYN "瞪眼望著你道：你是誰"
+                notify_fail(CYN + ob->name() + CYN "瞪眼望着你道：你是誰"
                             "？找我有什麼事？\n" NOR);
 
                 return ob->need_accede(me);

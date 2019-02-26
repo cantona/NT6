@@ -65,7 +65,7 @@ mapping attrib =([
         "learned_points": "",
         "學習點數"        : "learnd_points",
         "score"         : "",
-        "江湖閱歷"      : "score",
+        "江湖閲歷"      : "score",
         "weiwang"       : "",
         "江湖威望"      : "weiwang",
         "meili"         : "",
@@ -98,7 +98,7 @@ int main(object me, string arg)
         // 恢復狀態，精、氣、內力
         if (! arg)
         {
-                message_vision(HIW "$N喃喃的念了一會咒語，一股煙霧籠罩了$N。\n\n" NOR, me);
+                message_vision(HIW "$N喃喃的唸了一會咒語，一股煙霧籠罩了$N。\n\n" NOR, me);
                 restore_condition(me);
                 return 1;
         }
@@ -106,7 +106,7 @@ int main(object me, string arg)
         // 恢復成原始數據，放棄武功
         if (arg == "org")
         {
-                message_vision(HIW "$N喃喃的念了一會咒語，一股煙霧籠罩了$N。\n\n" NOR, me);
+                message_vision(HIW "$N喃喃的唸了一會咒語，一股煙霧籠罩了$N。\n\n" NOR, me);
                 restore_origin(me);
                 return 1;
         }
@@ -116,7 +116,7 @@ int main(object me, string arg)
         if (argnum < 2)
         {
                 // 沒有指定屬性
-                message_vision(HIW "$N喃喃的念了一會咒語，什麼也沒發生。\n\n" NOR, me);
+                message_vision(HIW "$N喃喃的唸了一會咒語，什麼也沒發生。\n\n" NOR, me);
                 return 1;
         }
 
@@ -124,9 +124,9 @@ int main(object me, string arg)
         {
                 // 修改屬性
                 if (attrs == "") attrs = pack;
-                message_vision(HIW "$N喃喃的念叨：天靈靈，地靈靈，各路神仙快顯靈！\n\n" NOR, me);
+                message_vision(HIW "$N喃喃的唸叨：天靈靈，地靈靈，各路神仙快顯靈！\n\n" NOR, me);
                 set(attrs, argn, me);
-                message_vision(HIY "天上轟隆隆的響了一會，$N呵呵的笑了兩聲說道：真是靈驗。\n\n" NOR, me);
+                message_vision(HIY "天上轟隆隆的響了一會，$N呵呵的笑了兩聲説道：真是靈驗。\n\n" NOR, me);
                 return 1;
         } else
         {
@@ -154,7 +154,7 @@ int main(object me, string arg)
 
 void restore_condition(object me)
 {
-        message_vision(HIY "$N變得神採奕奕！\n\n" NOR, me);
+        message_vision(HIY "$N變得神采奕奕！\n\n" NOR, me);
         // 恢復氣
         set("qi",query("max_qi",  me), me);
         set("eff_qi",query("max_qi",  me), me);
@@ -228,7 +228,7 @@ write(@HELP
 wizlian          : 恢復所有屬性包括氣，精，精力，內力，食物，飲水。
 wizlian org      : 初始化個人數據，放棄所有武功，神降到0。
 wizlian [屬性] n : 修改某項屬性為n。
-wizlian [武功] n : 修改某項武功為n級，點數為m，如果小于零就不修改。
+wizlian [武功] n : 修改某項武功為n級，點數為m，如果小於零就不修改。
 
 HELP
     );

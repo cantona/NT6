@@ -11,7 +11,7 @@ void create()
         set("age", 200);
         set("long", 
 "這是一條全身赤紅，吸天地之間的火氣而長大的火麒麟！
-它全身散發著赤紅色的火燄。\n");
+它全身散發着赤紅色的火焰。\n");
         
         set("str", 100);
         set("con", 100);
@@ -48,8 +48,8 @@ void big_blowing()
      ob = this_object();        
      me = this_player();
 
-     tell_room(environment(ob),HIR "\n\n火麒麟突然吐出一股熾可焚金的火燄，"
-                  "整個天地似乎都被燒著了！！！\n\n"NOR);
+     tell_room(environment(ob),HIR "\n\n火麒麟突然吐出一股熾可焚金的火焰，"
+                  "整個天地似乎都被燒着了！！！\n\n"NOR);
 
 
      inv = all_inventory(environment(ob));
@@ -58,7 +58,7 @@ void big_blowing()
      {
                 dam = random(500) + 100;               
                 inv[i]->receive_wound("qi",dam);
-                tell_object(inv[i], HBRED"你被火燄燒著，頓覺氣血大受損傷！\n\n"NOR);
+                tell_object(inv[i], HBRED"你被火焰燒着，頓覺氣血大受損傷！\n\n"NOR);
      } 
 }
 
@@ -82,7 +82,7 @@ void die()
         int exp, userexp;
 
         ob = this_object();
-        message_vision(HIR"\n$N" HIG"掙紮了幾下，發出一聲慘叫，便不再動彈了。\n"NOR, ob);
+        message_vision(HIR"\n$N" HIG"掙扎了幾下，發出一聲慘叫，便不再動彈了。\n"NOR, ob);
 
         if(objectp(killer = ob->query_last_damage_from()) &&
            ! killer->query("reborn_start/qilindong/qilin") )
@@ -92,14 +92,14 @@ void die()
                 obj = new(__DIR__"obj/qilin");
                 obj ->move(killer, 1);
                
-                message_vision(HIC "\n\n一團火燄猛地升騰，一個聲音對$N說道："
+                message_vision(HIC "\n\n一團火焰猛地升騰，一個聲音對$N説道："
                                "謝謝你殺死火麒麟，你將得到麒麟臂作為獎勵！\n\n" NOR, killer); 
-                message_vision(HIY"只見$N" HIY"慢慢消失，只剩下了一只麒麟的前臂。\n"
+                message_vision(HIY"只見$N" HIY"慢慢消失，只剩下了一隻麒麟的前臂。\n"
                                "\n$n隨即將麒麟臂撿了起來。\n\n"NOR, ob, killer);            
                 killer->set("reborn_start/qilindong/qilin",1);
                 killer->add("combat_exp",exp);
                 killer->add("potential",20000);                       
-                message("vison", HBMAG"【轉世傳聞】：據說" + killer->query("name") +
+                message("vison", HBMAG"【轉世傳聞】：據説" + killer->query("name") +
                                 "成功地殺死了火麒麟，得到寶物麒麟臂!\n"NOR, users());
         }              
         destruct(ob);

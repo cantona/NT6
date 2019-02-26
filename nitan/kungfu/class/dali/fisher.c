@@ -55,9 +55,9 @@ int accept_object(object who, object ob)
                 call_out("destroying", 1, ob);
 
         write("點蒼漁隱接過金娃娃，上上下下打量了你幾眼，忽的將金娃娃拋\n");
-        write("回水中，冷冷的說道：休想以此上去害我師父，拼著給師叔一頓\n");
+        write("回水中，冷冷的説道：休想以此上去害我師父，拼着給師叔一頓\n");
         write("責罵。 \n");
-        write("他轉身拋金娃娃，加上說得口沫橫飛，不小心把小船的入口讓了出來。\n");
+        write("他轉身拋金娃娃，加上説得口沫橫飛，不小心把小船的入口讓了出來。\n");
         set("exits/enter", "/d/heizhao/smallboat.c", thisroom);
         remove_call_out("closing");
         call_out("closing", 5, thisroom);

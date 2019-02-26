@@ -18,7 +18,7 @@ void create()
         set("class", "taoist");
         set("long",
                 "他就是大遼的小王爺楊康，實乃楊家將後人楊鐵心之子。\n"
-                "他相貌端正，但眉宇間似乎隱藏著一絲狡猾的神色。\n");
+                "他相貌端正，但眉宇間似乎隱藏着一絲狡猾的神色。\n");
         set("attitude", "friendly");
         set("shen", 0);
         set("str", 25);
@@ -174,6 +174,6 @@ void random_move()
 
 void death_msg()
 {
-        command("chat 我乃是金國小王爺，想殺我，痴人說夢 ...");
-        CHANNEL_D->do_channel(this_object(), "rumor", "聽說" + name() + HIM "被金兵給救走了。" NOR);
+        command("chat 我乃是金國小王爺，想殺我，痴人説夢 ...");
+        CHANNEL_D->do_channel(this_object(), "rumor", "聽説" + name() + HIM "被金兵給救走了。" NOR);
 }

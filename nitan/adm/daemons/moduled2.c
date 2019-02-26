@@ -123,7 +123,7 @@ void create()
         seteuid(ROOT_UID);
 }
 
-// 根據套裝部件和持有部件者打印部件信息,應用于look.c調用
+// 根據套裝部件和持有部件者打印部件信息,應用於look.c調用
 string module_stats(object ob, object owner)
 {
         class eqmodule mod_stats;
@@ -175,7 +175,7 @@ string module_stats(object ob, object owner)
                 msg = sprintf(HIW"  %s(%d/%d"NOR")\n",
                                modname,
                                query_temp("modamount_"+mark_level+"_"+modname, owner), num);
-                msg+= sprintf(NOR "□□□□□□□□□□□□\n");
+                msg+= sprintf(NOR "┏━━━━━━━━━━┓\n");
 
                 data = query_temp("modparts_" + mark_level+"_"+modname, owner);
                 if( !mapp(data) ) data = ([]);
@@ -194,27 +194,27 @@ string module_stats(object ob, object owner)
                                 else
                                         eq_str = RED"×"NOR;
 
-                        str = sprintf(NOR "□%s%-18s"NOR"□\n",eq_str, modparts[apply[i]]);
+                        str = sprintf(NOR "┃%s%-18s"NOR"┃\n",eq_str, modparts[apply[i]]);
                         msg += str;
                 }
                 if( ob->is_item_make() && member_array(query("mod_mark", ob), apply) == -1 )
                 {
                         eq_str = RED"×"NOR;
-                        str = sprintf(NOR "□%s%-18s"NOR"□\n",eq_str, ob->name(1));
+                        str = sprintf(NOR "┃%s%-18s"NOR"┃\n",eq_str, ob->name(1));
                         msg += str;
                 }
 
-                msg += sprintf(NOR "□□□□□□□□□□□□\n");
+                msg += sprintf(NOR "┗━━━━━━━━━━┛\n");
                 bas = mod_stats->bas;
                 if( query_temp("modamount_"+mark_level+"_"+modname, owner) >= bas )
                         eq_str = HIR;
                 else
                         eq_str = HIK;
                 //msg += sprintf(HIG"  裝備效果"NOR")\n");
-                msg += sprintf(NOR "%s□□□□□□□□□□□□"NOR"\n", eq_str);
+                msg += sprintf(NOR "%s┏━━━━━━━━━━┓"NOR"\n", eq_str);
 
                 str = sprintf("%d件:", bas);
-                msg += sprintf(NOR "%s□"NOR"%-20s%s□"NOR"\n", eq_str, str, eq_str);
+                msg += sprintf(NOR "%s┃"NOR"%-20s%s┃"NOR"\n", eq_str, str, eq_str);
                 stats = copy(mod_stats->bas_prop);
                 key = keys(stats);
                 if( sizeof(key) > 0 )
@@ -226,7 +226,7 @@ string module_stats(object ob, object owner)
 #ifndef LONELY_IMPROVED
                                 len = color_len(str);
 #endif
-                                msg += sprintf(NOR "%s□"NOR"%-" + (20 + len) + "s%s□"NOR"\n",
+                                msg += sprintf(NOR "%s┃"NOR"%-" + (20 + len) + "s%s┃"NOR"\n",
                                                        eq_str, str, eq_str);
                         }
                 }
@@ -235,7 +235,7 @@ string module_stats(object ob, object owner)
                 else
                         eq_str = HIK;
                 str = sprintf("%d件:", num);
-                msg += sprintf(NOR "%s□"NOR"%-20s%s□"NOR"\n", eq_str, str, eq_str);
+                msg += sprintf(NOR "%s┃"NOR"%-20s%s┃"NOR"\n", eq_str, str, eq_str);
                 stats = copy(mod_stats->adv_prop);
                 key = keys(stats);
                 if( sizeof(key) > 0 )
@@ -247,7 +247,7 @@ string module_stats(object ob, object owner)
 #ifndef LONELY_IMPROVED
                                 len = color_len(str);
 #endif
-                                msg += sprintf(NOR "%s□"NOR"%-" + (20 + len) + "s%s□"NOR"\n",
+                                msg += sprintf(NOR "%s┃"NOR"%-" + (20 + len) + "s%s┃"NOR"\n",
                                                        eq_str, str, eq_str);
                         }
                 }
@@ -257,7 +257,7 @@ string module_stats(object ob, object owner)
                 else
                         eq_str = HIK;
                 str = sprintf("Add:");
-                msg += sprintf(NOR "%s□"NOR"%-20s%s□"NOR"\n", eq_str, str, eq_str);
+                msg += sprintf(NOR "%s┃"NOR"%-20s%s┃"NOR"\n", eq_str, str, eq_str);
                 stats = copy(mod_stats->add_prop);
                 key = keys(stats);
                 if( sizeof(key) > 0 )
@@ -269,11 +269,11 @@ string module_stats(object ob, object owner)
 #ifndef LONELY_IMPROVED
                                 len = color_len(str);
 #endif
-                                msg += sprintf(NOR "%s□"NOR"%-" + (20 + len) + "s%s□"NOR"\n",
+                                msg += sprintf(NOR "%s┃"NOR"%-" + (20 + len) + "s%s┃"NOR"\n",
                                                        eq_str, str, eq_str);
                         }
                 }
-                msg += sprintf(NOR "%s□□□□□□□□□□□□"NOR"\n", eq_str);
+                msg += sprintf(NOR "%s┗━━━━━━━━━━┛"NOR"\n", eq_str);
         }
         return msg;
 }
@@ -370,7 +370,7 @@ class eqmodule load_module(string modlevel)
                         //field[i] = replace_string(field[i], " ", "");
                         if( sscanf( field[i], "%s:%d", key, value ) != 2 )
                             sscanf( field[i], "%s:%s", key, value );
-                        // 無需復雜的解析
+                        // 無需複雜的解析
                         stats[key] = value;
                 }
                 item->bas_prop = copy(stats);
@@ -385,7 +385,7 @@ class eqmodule load_module(string modlevel)
                         //field[i] = replace_string(field[i], " ", "");
                         if( sscanf( field[i], "%s:%d", key, value ) != 2 )
                             sscanf( field[i], "%s:%s", key, value );
-                        // 無需復雜的解析
+                        // 無需複雜的解析
                         stats[key] = value;
                 }
                 item->adv_prop = copy(stats);
@@ -499,7 +499,7 @@ void equip_module(object ob, object owner)
         // 裝備的套裝設置標記
         set_temp("mod_equip", 1, ob);
 
-        if( n < bas-1 ) return; // 小于最少激活套裝數量，無法激活套裝屬性
+        if( n < bas-1 ) return; // 小於最少激活套裝數量，無法激活套裝屬性
         else if( n == bas-1 )
         {
                 // 加上正在裝備的ob，正好激活套裝屬性
@@ -626,7 +626,7 @@ void equip_module(object ob, object owner)
 
                 if( change )
                 {
-                        stats = copy(tmp_stats->bas_prop); // 由于可套裝等級變化，套裝基本屬性會變化，先去除原有的
+                        stats = copy(tmp_stats->bas_prop); // 由於可套裝等級變化，套裝基本屬性會變化，先去除原有的
                         apply = keys(stats);
                         for( i=0; i<sizeof(apply); i++ ) {
                                 if (apply[i] == "int" || apply[i] == "str" ||
@@ -725,7 +725,7 @@ void equip_module(object ob, object owner)
 
                 if( change )
                 {
-                        stats = copy(tmp_stats->bas_prop); // 由于可套裝等級變化，套裝基本屬性會變化，先去除原有的
+                        stats = copy(tmp_stats->bas_prop); // 由於可套裝等級變化，套裝基本屬性會變化，先去除原有的
                         apply = keys(stats);
                         for( i=0; i<sizeof(apply); i++ ) {
                                 if (apply[i] == "int" || apply[i] == "str" ||
@@ -820,7 +820,7 @@ void unequip_module(object ob, object owner)
         if( !valid_module(mod_stats) )
                 return;
 
-        // 檢查套裝部件ob是否是套裝裡的一件
+        // 檢查套裝部件ob是否是套裝裏的一件
         file = query("mod_mark", ob);
         name = query("name", ob);
 
@@ -954,7 +954,7 @@ void unequip_module(object ob, object owner)
                 }
                 if( change )
                 {
-                        stats = copy(tmp_stats->bas_prop); // 由于可套裝等級變化，套裝基本屬性會變化，先去除原有的
+                        stats = copy(tmp_stats->bas_prop); // 由於可套裝等級變化，套裝基本屬性會變化，先去除原有的
                         apply = keys(stats);
                         for( i=0; i<sizeof(apply); i++ ) {
                                 if (apply[i] == "int" || apply[i] == "str" ||
@@ -1021,7 +1021,7 @@ void unequip_module(object ob, object owner)
 
                 if( change )
                 {
-                        stats = copy(tmp_stats->bas_prop); // 由于可套裝等級變化，套裝基本屬性會變化，先去除原有的
+                        stats = copy(tmp_stats->bas_prop); // 由於可套裝等級變化，套裝基本屬性會變化，先去除原有的
                         apply = keys(stats);
                         for( i=0; i<sizeof(apply); i++ ) {
                                 if (apply[i] == "int" || apply[i] == "str" ||
@@ -1104,7 +1104,7 @@ public int suit_special(object me, string arg)
         後可提升下列某項狀態 50% ，並持續 10 分鐘。
         無視攻擊、無視躲閃、無視招架、無視內功、抗毒效果、毒素傷害
         虛弱對手、解封絕招、絕招傷害、絕招命中、雙倍傷害、
-        化解傷害、抵抗虛弱、封存絕招、絕招防御、研究效果、汲取效果
+        化解傷害、抵抗虛弱、封存絕招、絕招防禦、研究效果、汲取效果
         */
 
 
@@ -1123,7 +1123,7 @@ public int suit_special(object me, string arg)
                         return notify_fail("你現在正在運用此類特技中，請稍後再使用。\n");
 
                 if( query("neili", me) < query("max_neili", me))
-                        return notify_fail("你的剩余內力不足，無法施展套裝絕技。\n");
+                        return notify_fail("你的剩餘內力不足，無法施展套裝絕技。\n");
                 set("neili", 0, me);
 
                 message_combatd(HIC "$N一聲長吟，全身裝備剎那間流光異彩，將其籠罩！\n" NOR, me);
@@ -1157,7 +1157,7 @@ public int suit_special(object me, string arg)
                                 return notify_fail("你現在正在運用此類特技中，請稍後再使用。\n");
 
                         if( query("neili", me) < query("max_neili", me))
-                                return notify_fail("你的剩余內力不足，無法施展套裝絕技。\n");
+                                return notify_fail("你的剩餘內力不足，無法施展套裝絕技。\n");
                         set("neili", 0, me);
 
                         message_combatd(HIG "$N施展出套裝絕技「天之道」，瞬間全身泛出金色光芒！\n" NOR, me);
@@ -1184,10 +1184,10 @@ public int suit_special(object me, string arg)
                                 return notify_fail("你現在正在運用此類特技中，請稍後再使用。\n");
 
                         if( query("neili", me) < query("max_neili", me))
-                                return notify_fail("你的剩余內力不足，無法施展套裝絕技。\n");
+                                return notify_fail("你的剩餘內力不足，無法施展套裝絕技。\n");
                         set("neili", 0, me);
 
-                        message_combatd(HIG "$N施展出套裝絕技「縱橫」，兩道金光一縱一橫從天際掠過，旋轉于$N四周！\n" NOR, me);
+                        message_combatd(HIG "$N施展出套裝絕技「縱橫」，兩道金光一縱一橫從天際掠過，旋轉於$N四周！\n" NOR, me);
                         set_temp("suit_defense", 1, me);
                         addn_temp("apply/damage", 10000, me);
                         addn_temp("apply/armor", 5000, me);
@@ -1208,10 +1208,10 @@ public int suit_special(object me, string arg)
                                 return notify_fail("你現在正在運用此類特技中，請稍後再使用。\n");
 
                         if( query("neili", me) < query("max_neili", me))
-                                return notify_fail("你的剩余內力不足，無法施展套裝絕技。\n");
+                                return notify_fail("你的剩餘內力不足，無法施展套裝絕技。\n");
                         set("neili", 0, me);
 
-                        message_combatd(HIM "$N負手而力，衣裳無風而動，口中念念有詞，「天□之魂」已然迸發而出！\n" NOR, me);
+                        message_combatd(HIM "$N負手而力，衣裳無風而動，口中唸唸有詞，「天驕之魂」已然迸發而出！\n" NOR, me);
                         set_temp("suit_special", 200, me);
 
                         jifa_list = ({});
@@ -1227,7 +1227,7 @@ public int suit_special(object me, string arg)
                                 }
                         }
 
-                        me->start_call_out((: call_other,  __FILE__, "remove_effect", me, HIM "天□之魂" NOR, 600 :), 900);
+                        me->start_call_out((: call_other,  __FILE__, "remove_effect", me, HIM "天驕之魂" NOR, 600 :), 900);
                         return 1;
                 }
                 if( arg == "juedai" )
@@ -1236,15 +1236,15 @@ public int suit_special(object me, string arg)
                                 return notify_fail("你現在正在運用此類特技中，請稍後再使用。\n");
 
                         if( query("neili", me) < query("max_neili", me))
-                                return notify_fail("你的剩余內力不足，無法施展套裝絕技。\n");
+                                return notify_fail("你的剩餘內力不足，無法施展套裝絕技。\n");
                         set("neili", 0, me);
 
-                        message_combatd(HIM "$N目光如炬，渾身紫光閃現，令人不寒而栗，實乃一代天□，無與抗衡！\n" NOR, me);
+                        message_combatd(HIM "$N目光如炬，渾身紫光閃現，令人不寒而慄，實乃一代天驕，無與抗衡！\n" NOR, me);
                         set_temp("suit_defense", 1, me);
                         addn_temp("apply/damage", 15000, me);
                         addn_temp("apply/armor", 10000, me);
 
-                        me->start_call_out((: call_other,  __FILE__, "remove_effect2", me, HIM "□代天□" NOR, 15000, 10000 :), 600);
+                        me->start_call_out((: call_other,  __FILE__, "remove_effect2", me, HIM "絕代天驕" NOR, 15000, 10000 :), 600);
                         return 1;
                 }
         }
@@ -1260,10 +1260,10 @@ public int suit_special(object me, string arg)
                                 return notify_fail("你現在正在運用此類特技中，請稍後再使用。\n");
 
                         if( query("neili", me) < query("max_neili", me))
-                                return notify_fail("你的剩余內力不足，無法施展套裝絕技。\n");
+                                return notify_fail("你的剩餘內力不足，無法施展套裝絕技。\n");
                         set("neili", 0, me);
 
-                        message_combatd(HIR "$N舉頭望天，悠然一聲長嘆，忽然全身被紅色的光芒包裹，殺氣驟現！\n" NOR, me);
+                        message_combatd(HIR "$N舉頭望天，悠然一聲長歎，忽然全身被紅色的光芒包裹，殺氣驟現！\n" NOR, me);
                         set_temp("suit_special", 300, me);
 
                         jifa_list = ({});
@@ -1278,7 +1278,7 @@ public int suit_special(object me, string arg)
                                         addn_temp("apply/" + jifa_list[i], 1000, me);
                                 }
                         }
-                        me->start_call_out((: call_other,  __FILE__, "remove_effect", me, HIR "□﹒□□" NOR, 1000 :), 1800);
+                        me->start_call_out((: call_other,  __FILE__, "remove_effect", me, HIR "斬·無雙" NOR, 1000 :), 1800);
                         return 1;
                 }
                 if( arg == "zhanws1" )
@@ -1287,7 +1287,7 @@ public int suit_special(object me, string arg)
                                 return notify_fail("你現在正在運用此類特技中，請稍後再使用。\n");
 
                         if( query("neili", me) < query("max_neili", me))
-                                return notify_fail("你的剩余內力不足，無法施展套裝絕技。\n");
+                                return notify_fail("你的剩餘內力不足，無法施展套裝絕技。\n");
                         set("neili", 0, me);
 
                         message_combatd(HIR "$N長嘯一聲，輕撫全身裝備，所過之處泛出紅色血芒，令人心膽具寒。\n" NOR, me);
@@ -1295,7 +1295,7 @@ public int suit_special(object me, string arg)
                         addn_temp("apply/damage", 20000, me);
                         addn_temp("apply/armor", 10000, me);
 
-                        me->start_call_out((: call_other,  __FILE__, "remove_effect2", me, HIR "□﹒□□" NOR, 20000, 10000 :), 1200);
+                        me->start_call_out((: call_other,  __FILE__, "remove_effect2", me, HIR "戰·無雙" NOR, 20000, 10000 :), 1200);
                         return 1;
                 }
         }

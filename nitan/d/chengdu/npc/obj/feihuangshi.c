@@ -20,7 +20,7 @@ void create()
                 set("damage", 5);        //Here the damage=int_throwing, added by King
                 set("material", "stone");
                 set("wield_msg", HIC"$N迅速地從暗器袋中掏出一些飛蝗石，捏在手中就待發出！\n"NOR);
-                set("unwield_msg",HIC"$N將手裡剩下的飛蝗石盡數放回暗器袋中。\n"NOR);
+                set("unwield_msg",HIC"$N將手裏剩下的飛蝗石盡數放回暗器袋中。\n"NOR);
         }
         set_amount(20);
         init_throwing(25);

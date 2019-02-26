@@ -1,7 +1,7 @@
 inherit FORCE;
 
 mapping *action = ({
-([  "action": "$N飛身一躍而起，身法陡然加快，朝著$n$l快速攻出數十拳",
+([  "action": "$N飛身一躍而起，身法陡然加快，朝着$n$l快速攻出數十拳",
     "lvl"   : 0,
     "damage_type" : "瘀傷"
 ]),

@@ -1,4 +1,4 @@
-// group_quest:party1 群組任務──幫派挑舋
+// group_quest:party1 羣組任務——幫派挑釁
 
 #include <ansi.h>
 #include "party.h"
@@ -14,7 +14,7 @@ void create()
         }
 }
 
-//string prompt() { return HIR "【幫派挑舋】" NOR; }
+//string prompt() { return HIR "【幫派挑釁】" NOR; }
 string prompt() { return HIR "【幫派】" NOR; }
 
 int select_quest()

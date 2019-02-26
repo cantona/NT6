@@ -8,7 +8,7 @@ void create()
         set("short", "順濟橋");
         set("long", @LONG
 這是橫跨晉河的一座石拱橋。橋寬水深，水陸交通便捷，是南去的
-唯一出口。一隊官兵駐紮在這裡。
+唯一出口。一隊官兵駐紮在這裏。
 LONG );
         set("outdoors", "quanzhou");
         set("exits", ([

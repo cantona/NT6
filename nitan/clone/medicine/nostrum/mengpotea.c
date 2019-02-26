@@ -13,7 +13,7 @@ void create()
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                 set("long", GRN"這就是傳說中著名的孟婆茶。每個鬼魂在投胎轉世之前，都要喝上一碗孟婆茶，據說喝了這碗茶後，你在陽間的一切一切就都會忘得幹幹凈凈，就此與今世脫離了一切關系。\n");
+                 set("long", GRN"這就是傳説中著名的孟婆茶。每個鬼魂在投胎轉世之前，都要喝上一碗孟婆茶，據説喝了這碗茶後，你在陽間的一切一切就都會忘得乾乾淨淨，就此與今世脱離了一切關係。\n");
                 set("unit", "碗");
         }
         set("pour_type", "1");
@@ -34,7 +34,7 @@ int do_drink(string arg)
         if(!present(this_object(), me))
                 return notify_fail("你要吃什麼？\n");
         if( me->is_busy() )
-                return notify_fail("別急，慢慢吃，小心別噎著了。\n");
+                return notify_fail("別急，慢慢吃，小心別噎着了。\n");
 //if a ghost
         if( !me->is_ghost() )
         {

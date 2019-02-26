@@ -8,7 +8,7 @@ inherit QUEST_OB;
 #include <defend.h>
 
 #define ENEMY_FAM             my["enemy_fam"]      // 攻擊者來自的門派
-#define DEFEND_FAM            my["defend_fam"]     // 要保衛的門派
+#define DEFEND_FAM            my["defend_fam"]     // 要保衞的門派
 #define MASTER_ID             my["master_id"]
 #define PLACE                 my["place"]
 #define MIN_EXP               30000                // 最小 EXP 要求
@@ -18,10 +18,10 @@ nosave object dmaster = 0;
 // 下面區分正派和邪派，就是為了防止出現一個門派自己攻擊
 // 自己的荒唐情況（當然這也不難避免），一般而言，都是正
 // 派攻擊邪派，或者邪派攻擊正派的（諸如“六大門派圍攻光
-// 明頂”、“日月神教滅五岳劍派”什麼的），但是我們知道，
-// 有些門派是很難說得清正邪的，比如桃花島，姑蘇慕容等等，
-// 這樣我們就認為，同時不屬于以下兩個數組的門派，是“亦
-// 正亦邪”或者說是“不正不邪”，也就是說，它在這場紛爭
+// 明頂”、“日月神教滅五嶽劍派”什麼的），但是我們知道，
+// 有些門派是很難説得清正邪的，比如桃花島，姑蘇慕容等等，
+// 這樣我們就認為，同時不屬於以下兩個數組的門派，是“亦
+// 正亦邪”或者説是“不正不邪”，也就是説，它在這場紛爭
 // 中的態度是：既可能攻擊正派，也可能攻擊邪派，當然，也
 // 可能攻擊亦正亦邪的門派。
 
@@ -101,9 +101,9 @@ void init_quest(int num, string family_name)
         }
 
         // 設置NPC的對話信息
-        set("inquiry/"+name(), "你可以輸入指令defend來領取保衛門派任務。", dmaster);
+        set("inquiry/"+name(), "你可以輸入指令defend來領取保衞門派任務。", dmaster);
         dmaster->set("inquiry/"+ENEMY_FAM,"這個"+ENEMY_FAM+"真是太可惡了，"
-                                            "屢次來我們" + DEFEND_FAM +"挑舋。");
+                                            "屢次來我們" + DEFEND_FAM +"挑釁。");
         dmaster->set("inquiry/"+DEFEND_FAM,"在下就是"+DEFEND_FAM+"的掌門呀，"
                                             "你願不願意助本門一臂之力，共御外敵？");
         set_temp("override/ask_defend", (:ask_defend:), dmaster);
@@ -125,7 +125,7 @@ void init_quest(int num, string family_name)
         }
 
         CHANNEL_D->do_channel(dmaster, "family",
-                        sprintf("聽說%s的一班弟子大舉殺上我派，我派形勢不妙。", enemy_fam));
+                        sprintf("聽説%s的一班弟子大舉殺上我派，我派形勢不妙。", enemy_fam));
 
         // 切換到正常狀態
         change_status(QUEST_READY);
@@ -258,21 +258,21 @@ int ask_defend(object ob, object me)
 
         string *msg_now =
         ({
-                "最近本門常有人來挑舋", "最近本門似乎不太平安",
+                "最近本門常有人來挑釁", "最近本門似乎不太平安",
                 "最近本門時有敵人進攻", "最近本門似乎很不安穩",
-                "聽說就快要有敵人進攻", "常有人對本門虎視眈眈",
+                "聽説就快要有敵人進攻", "常有人對本門虎視眈眈",
         });
         string *msg_do =
         ({
                 "趕快到四處巡查巡查", "注意四周都要去查查",
-                "山上山下都仔細看看", "在本門要道好好守著",
-                "在險要地方做好防衛", "得防止敵人攻上山來",
+                "山上山下都仔細看看", "在本門要道好好守着",
+                "在險要地方做好防衞", "得防止敵人攻上山來",
         });
         string *msg_place =
         ({
-                "雖然說不上山明水秀，但是", "也是一個險要位置，所以",
+                "雖然説不上山明水秀，但是", "也是一個險要位置，所以",
                 "好歹也是個重要關卡，因此", "畢竟算個本門要地，那麼",
-                "常常有敵人來此攻打，所以", "就怕敵人攻到這裡，因此",
+                "常常有敵人來此攻打，所以", "就怕敵人攻到這裏，因此",
         });
 
         if( !query("family/family_name", me) )
@@ -287,7 +287,7 @@ int ask_defend(object ob, object me)
         if( query("family/family_name", ob) != query("family/family_name", me) )
         {
                 ob->command("?"+query("id", me));
-                message_sort(HIC "$N" HIC "皺著眉頭對$n" HIC "道：“這位"
+                message_sort(HIC "$N" HIC "皺着眉頭對$n" HIC "道：“這位"
                         +query("family/family_name", me)+"的"+RANK_D->query_respect(me)+
                         "，你怕是找錯人了吧？”\n" NOR, ob, me);
                 tell_object(me, HIW "這不是你自己的門派，你不應該問這位師傅要任務呀。\n" NOR);
@@ -308,7 +308,7 @@ int ask_defend(object ob, object me)
                 ob->command("yi");
                 message_sort(HIC "$N" HIC "疑惑地對$n" HIC "道：“你不是已經在做"
                                 "這個任務了麼？\n怎麼還來找我？”\n" NOR, ob, me);
-                tell_object(me, HIW "快去做好準備，保衛你的門派吧。\n" NOR);
+                tell_object(me, HIW "快去做好準備，保衞你的門派吧。\n" NOR);
                 return 1;
         }
 
@@ -351,7 +351,7 @@ int ask_finish(object ob, object me)
         if( query("family/family_name", ob) != query("family/family_name", me) )
         {
                 ob->command("?"+query("id", me));
-                message_vision(HIC "$N" HIC "皺著眉頭對$n" HIC "道：“這位" +
+                message_vision(HIC "$N" HIC "皺着眉頭對$n" HIC "道：“這位" +
                                query("family/family_name", me)+"的"+RANK_D->query_respect(me)+
                                "，你怕是找錯人了吧？”\n" NOR,ob,me);
                 tell_object(me, HIW "這不是你自己的門派，你不應該問這位師傅要任務呀。\n" NOR);
@@ -391,7 +391,7 @@ int ask_finish(object ob, object me)
                         gongxian = killed * 3;
 
                         message_vision(HIC "$N" HIC "點點頭對$n" HIC "道：“好！這次任務你成功截殺了" +
-                                       chinese_number(killed) + "個敵人，這裡是給你的一點獎勵。”\n" NOR, ob, me);
+                                       chinese_number(killed) + "個敵人，這裏是給你的一點獎勵。”\n" NOR, ob, me);
                         /*
                         tell_object(me, HIW "這次任務你得到了" + chinese_number(exp) + "點經驗值和" +
                                        chinese_number(pot) + "點潛能值的獎勵，你的門派貢獻提高了。\n" NOR);
@@ -428,7 +428,7 @@ void die(object ob)
                                 message_sort(HIR "眼見$N" HIR + condition[random(sizeof(condition))]
                                                 +"，突然$N大喝一聲，急退幾步，\n“撲通”給$n跪了下來。"
                                                 "\n" NOR, ob, me);
-                                tell_object(me, HIW + ob->name()+"突然從懷裡掏出一堆白花花的銀子，小聲"
+                                tell_object(me, HIW + ob->name()+"突然從懷裏掏出一堆白花花的銀子，小聲"
                                                 "對你道：“這位" + RANK_D->query_respect(me) + "，\n你"
                                                 "就網開一面（nod）如何，這" + chinese_number(amount) +
                                                 "兩白銀就歸你了！”\n" NOR);
@@ -472,7 +472,7 @@ string ask_defender(object knower, object me)
         mapping my = query_entire_dbase();
 
         return CYN "這個" HIY + DEFEND_FAM + NOR CYN
-               "聽說名聲倒是很大，不會這次就會給" HIY
+               "聽説名聲倒是很大，不會這次就會給" HIY
                + DEFEND_FAM + NOR CYN "滅了吧。";
 }
 
@@ -496,7 +496,7 @@ string query_introduce(object knower)
                 call_out("do_say", 1);
         }
 
-        return CYN "據說那個" + HIY + ENEMY_FAM + NOR CYN "的弟子們正在攻打" +
+        return CYN "據説那個" + HIY + ENEMY_FAM + NOR CYN "的弟子們正在攻打" +
                HIY + DEFEND_FAM + NOR CYN "呢，也不知道結下了什麼樑子。" NOR;
 }
 
@@ -505,7 +505,7 @@ void do_say(object knower)
         if (! objectp(knower) || ! living(knower))
                 return 0;
 
-        message_sort("$N嘟囔道：“我跟你都說了，這些門派呀，沒一個好"
+        message_sort("$N嘟囔道：“我跟你都説了，這些門派呀，沒一個好"
                        "東西，這不？打起來了吧？”\n", knower);
 }
 
@@ -515,13 +515,13 @@ string query_prompt()
         switch (random(3))
         {
         case 0:
-                return CYN "倒是最近聽有些客人說起" HIY + name() +
+                return CYN "倒是最近聽有些客人説起" HIY + name() +
                        NOR CYN "來。";
         case 1:
-                return "也沒什麼大事，只是聽說過" HIY + name() +
+                return "也沒什麼大事，只是聽説過" HIY + name() +
                        NOR CYN "罷了。";
         default:
-                return "前兩天還聽人家說過" HIY + name() +
+                return "前兩天還聽人家説過" HIY + name() +
                        NOR CYN "呢。";
         }
 }

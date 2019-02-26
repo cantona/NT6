@@ -10,7 +10,7 @@ string attack4(object me, object target, int damage);
 string attack5(object me, object target, int damage);
 string attack6(object me, object target, int damage);
 
-string name() { return HIR "真﹒六道輪回" NOR; } 
+string name() { return HIR "真·六道輪迴" NOR; } 
 
 int perform(object me, object target)
 {
@@ -22,10 +22,10 @@ int perform(object me, object target)
         int in_shejingdong;
 
         /*
-        // 檢查是否經過賽神龍效果過輪回點6點
+        // 檢查是否經過賽神龍效果過輪迴點6點
         if( !query("scborn/perform_zhen_saishenlong", me) && !query("thborn/ok", me) )
         {
-                // 輪回點大于6則自動扣除並設置標志
+                // 輪迴點大於6則自動扣除並設置標誌
                 if( query("scborn/cur_lunhui_point", me) >= 6 )
                 {
                         addn("scborn/cur_lunhui_point", -6, me);
@@ -34,7 +34,7 @@ int perform(object me, object target)
                 }
                 // 否則無法施展該招
                 else
-                        return notify_fail("對不起，由于你的輪回點有問題，你暫時無法施展該招，詳情參見新聞。\n");
+                        return notify_fail("對不起，由於你的輪迴點有問題，你暫時無法施展該招，詳情參見新聞。\n");
         }
         */
         
@@ -48,7 +48,7 @@ int perform(object me, object target)
                 return notify_fail("你使用的武器不對，難以施展" + name() + "。\n");
 
         if (me->query_skill_mapped("force") != "lunhui-sword")
-                return notify_fail("需要將六道輪回劍激發為內功才能施展。\n");
+                return notify_fail("需要將六道輪迴劍激發為內功才能施展。\n");
 
         if( query("max_neili", me)<10000 )
                 return notify_fail("你的內力修為不夠，難以施展" + name() + "。\n");
@@ -57,16 +57,16 @@ int perform(object me, object target)
                 return notify_fail("你對禪宗心法參悟不夠，難以施展" + name() + "。\n");
 
         if ((int)me->query_skill("lunhui-sword", 1) < 900)
-                return notify_fail("你六道輪回劍火候不夠，難以施展" + name() + "。\n");
+                return notify_fail("你六道輪迴劍火候不夠，難以施展" + name() + "。\n");
 
         if (me->query_skill_mapped("sword") != "lunhui-sword")
-                return notify_fail("你沒有激發六道輪回劍，難以施展" + name() + "。\n");
+                return notify_fail("你沒有激發六道輪迴劍，難以施展" + name() + "。\n");
 
         if( query("neili", me)<4000 )
                 return notify_fail("你現在真氣不夠，難以施展" + name() + "。\n");
 
         if (! living(target))
-                return notify_fail("對方都已經這樣了，用不著這麼費力吧？\n");
+                return notify_fail("對方都已經這樣了，用不着這麼費力吧？\n");
         
         wait_time = 30;
         
@@ -86,7 +86,7 @@ int perform(object me, object target)
         wn = weapon->name();
 
         message_combatd(HIW "$N" HIW "面露拈花之意，祭起手中" + wn +
-                        HIW "，霎時碧波流轉，華光萬丈，說不盡的祥和。"
+                        HIW "，霎時碧波流轉，華光萬丈，説不盡的祥和。"
                         "\n" NOR, me, target);
 
         //  記錄下最初的房間
@@ -103,7 +103,7 @@ int perform(object me, object target)
 
         damage = damage_power(me, "sword")*3;
 
-        // 六道輪回之人間道
+        // 六道輪迴之人間道
         room = find_object("/d/death/liudaolunhui/rendao");
         if (! room) room = load_object("/d/death/liudaolunhui/rendao");
 
@@ -111,7 +111,7 @@ int perform(object me, object target)
         if (! in_shejingdong)target->move(room);
 
         message_combatd(HIY "\n$N" HIY "左手輕輕一撥，右手所持的" + wn +
-                       HIY "叮呤做響，劍姿說不出的瀟洒妙曼。\n" NOR, me, target);
+                       HIY "叮呤做響，劍姿説不出的瀟灑妙曼。\n" NOR, me, target);
 
         if (ap * 4 / 5 + random(ap) > dp)
         {
@@ -120,11 +120,11 @@ int perform(object me, object target)
         } else
         {
                 msg = CYN "可是$n" CYN "收斂心神，奮力招"
-                      "架，將劍招卸于無形。\n" NOR;
+                      "架，將劍招卸於無形。\n" NOR;
         }
         message_combatd(msg, me, target);
 
-        // 六道輪回之畜生道
+        // 六道輪迴之畜生道
         room = find_object("/d/death/liudaolunhui/chushengdao");
         if (! room) room = load_object("/d/death/liudaolunhui/chushengdao");
 
@@ -142,18 +142,18 @@ int perform(object me, object target)
         } else
         {
                 msg = CYN "可是$n" CYN "收斂心神，奮力招"
-                      "架，將劍招卸于無形。\n" NOR;
+                      "架，將劍招卸於無形。\n" NOR;
         }
         message_combatd(msg, me, target);
 
-        // 六道輪回之餓鬼道
+        // 六道輪迴之餓鬼道
         room = find_object("/d/death/liudaolunhui/eguidao");
         if (! room) room = load_object("/d/death/liudaolunhui/eguidao");
 
         if (! in_shejingdong)me->move(room);
         if (! in_shejingdong)target->move(room);
 
-        message_combatd(HIY "\n$N" HIY "一聲長嘆，左手捏著劍訣，忽聞" +
+        message_combatd(HIY "\n$N" HIY "一聲長歎，左手捏着劍訣，忽聞" +
                        wn + HIY "上血腥之氣漸濃，朝$n" HIY "迎頭斬落。\n"
                        NOR, me, target);
 
@@ -169,11 +169,11 @@ int perform(object me, object target)
         } else
         {
                 msg = CYN "可是$n" CYN "收斂心神，奮力招"
-                      "架，將劍招卸于無形。\n" NOR;
+                      "架，將劍招卸於無形。\n" NOR;
         }
         message_combatd(msg, me, target);
 
-        // 六道輪回之修羅道
+        // 六道輪迴之修羅道
         room = find_object("/d/death/liudaolunhui/xiuluodao");
         if (! room) room = load_object("/d/death/liudaolunhui/xiuluodao");
 
@@ -196,18 +196,18 @@ int perform(object me, object target)
         } else
         {
                 msg = CYN "可是$n" CYN "收斂心神，奮力招"
-                      "架，將劍招卸于無形。\n" NOR;
+                      "架，將劍招卸於無形。\n" NOR;
         }
         message_combatd(msg, me, target);
 
-        // 六道輪回之地獄道
+        // 六道輪迴之地獄道
         room = find_object("/d/death/liudaolunhui/diyudao");
         if (! room) room = load_object("/d/death/liudaolunhui/diyudao");
 
         if (! in_shejingdong)me->move(room);
         if (! in_shejingdong)target->move(room);
 
-        message_combatd(HIY "\n緊接著$N" HIY + wn + HIY "一顫，有若龍吟"
+        message_combatd(HIY "\n緊接着$N" HIY + wn + HIY "一顫，有若龍吟"
                        "，劍身騰起一道滔天寒流，向四周擴散開去。\n" NOR,
                        me, target);
 
@@ -218,11 +218,11 @@ int perform(object me, object target)
         } else
         {
                 msg = CYN "可是$n" CYN "收斂心神，奮力招"
-                      "架，將劍招卸于無形。\n" NOR;
+                      "架，將劍招卸於無形。\n" NOR;
         }
         message_combatd(msg, me, target);
 
-        // 六道輪回之天極道
+        // 六道輪迴之天極道
         room = find_object("/d/death/liudaolunhui/tiandao");
         if (! room) room = load_object("/d/death/liudaolunhui/tiandao");
 
@@ -245,7 +245,7 @@ int perform(object me, object target)
         } else
         {
                 msg = CYN "可是$n" CYN "收斂心神，奮力招"
-                      "架，將劍招卸于無形。\n" NOR;
+                      "架，將劍招卸於無形。\n" NOR;
         }
         message_combatd(msg, me, target);
 
@@ -253,7 +253,7 @@ int perform(object me, object target)
         addn("neili", -4000, me);
         set_temp("last_perform_zhen", time(), me);
         
-        // 為什麼提行？為了畫面更為賞心悅目而已
+        // 為什麼提行？為了畫面更為賞心悦目而已
         tell_object(me, "\n\n");
         tell_object(target, "\n\n");
 
@@ -268,7 +268,7 @@ string attack1(object me, object target, int damage)
 {
         string msg;
 
-        msg = HIR "$n" HIR "只覺心頭一陣凄苦，竟忍不住要落"
+        msg = HIR "$n" HIR "只覺心頭一陣悽苦，竟忍不住要落"
               "下淚來，喉嚨一甜，嘔出一口鮮血。\n" NOR;
 
         if( !query_temp("liudaolunhui", target) )
@@ -320,7 +320,7 @@ string attack3(object me, object target, int damage)
         int shd;
         string msg;
 
-        msg = HIR "劍鋒過處，卷起漫天血浪，$n" HIR "只感頭暈目"
+        msg = HIR "劍鋒過處，捲起漫天血浪，$n" HIR "只感頭暈目"
               "眩，四肢乏力，難以再戰。\n" NOR;
 
         if( query_temp("shield", target) )
@@ -335,7 +335,7 @@ string attack3(object me, object target, int damage)
                 delete_temp("shield", target);
 
                 msg += WHT "$N" WHT "氣勁湧至，宛若刀割，頓時將$n"
-                       WHT "的護體真氣摧毀得盪然無存。\n" NOR;
+                       WHT "的護體真氣摧毀得蕩然無存。\n" NOR;
         }
         return msg;
 }
@@ -354,7 +354,7 @@ string attack4(object me, object target, int damage)
                 if( query("material", cloth) == "tian jing")return msg;
                               
                 cn = cloth->name();
-                msg += WHT "忽聽轟然聲大作，$n" WHT "身著的" + cn +
+                msg += WHT "忽聽轟然聲大作，$n" WHT "身着的" + cn +
                        WHT "在$N" WHT "內力激盪下，竟被震得粉碎。\n"
                        NOR;
 
@@ -367,7 +367,7 @@ string attack4(object me, object target, int damage)
                 if( query("material", armor) == "tian jing")return msg;
                                 
                 an = armor->name();
-                msg += WHT "忽聽「哧啦」一聲脆響，$n" WHT "身著的" +
+                msg += WHT "忽聽「哧啦」一聲脆響，$n" WHT "身着的" +
                        an + WHT "竟被$N" WHT "震裂，化成塊塊碎片。\n"
                        NOR;
 
@@ -391,12 +391,12 @@ string attack5(object me, object target, int damage)
                 
                 target->affect_by("poison",
                         (["level":query("jiali", me)*3+random(query("jiali", me)),
-                           "name"     : "煉獄寒燄",
+                           "name"     : "煉獄寒焰",
                            "id":query("id", me),
                            "duration" : 80 ]));
 
                 msg += WHT "霎時間$n" WHT "忽覺一股奇寒散入七經八脈"
-                       "，仿佛連血液都停止了流動。\n" NOR;
+                       "，彷彿連血液都停止了流動。\n" NOR;
         }
         return msg;
 }
@@ -412,7 +412,7 @@ string attack6(object me, object target, int damage)
 
         string msg;
 
-        msg = HIR "$N" HIR "劍勢迅猛之極，令$n" HIR "毫無招架余地，"
+        msg = HIR "$N" HIR "劍勢迅猛之極，令$n" HIR "毫無招架餘地，"
               "竟鎮怯當場，素手待斃。\n" NOR;
 
         if( !query_temp("no_exert", target) )

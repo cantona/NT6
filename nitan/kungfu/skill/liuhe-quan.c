@@ -51,7 +51,7 @@ mapping *action = ({
         "skill_name" : "細胸巧",
         "damage_type": "瘀傷"
 ]),
-([      "action": "$N一聲長嘯，雙拳交錯擊出，一招「跺子腳」，拳風密布$n的前後左右",
+([      "action": "$N一聲長嘯，雙拳交錯擊出，一招「跺子腳」，拳風密佈$n的前後左右",
         "force" : 97,
         "dodge" : 28,
         "parry" : 30,
@@ -61,14 +61,14 @@ mapping *action = ({
         "skill_name" : "跺子腳",
         "damage_type": "瘀傷"
 ]),
-([      "action": "$N怒吼一聲，凌空飛起，一式「鬆子靈」，雙拳居高臨下，齊齊捶向$n",
+([      "action": "$N怒吼一聲，凌空飛起，一式「松子靈」，雙拳居高臨下，齊齊捶向$n",
         "force" : 115,
         "dodge" : 24,
         "parry" : 21,
         "attack": 17,
         "damage": 24,
         "lvl"   : 120,
-        "skill_name" : "鬆子靈",
+        "skill_name" : "松子靈",
         "damage_type": "瘀傷"
 ]),
 });
@@ -120,7 +120,7 @@ mapping query_action(object me, object weapon)
 int practice_skill(object me)
 {
         if( query("qi", me)<100 )
-                return notify_fail("你現在手足酸軟，休息一下再練吧。\n");
+                return notify_fail("你現在手足痠軟，休息一下再練吧。\n");
 
         if( query("neili", me)<80 )
                 return notify_fail("你的內力不夠了。\n");

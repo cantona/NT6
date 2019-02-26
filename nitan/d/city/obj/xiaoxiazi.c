@@ -17,8 +17,8 @@ void create()
     else
     {
         set( "long", @LONG
-這個匣子雖小，卻入手很沉，不知道是什麼材料制成的。匣子表面上刻著一些神
-秘的花紋，隱隱泛著柔和的紅光，看上去有些奇異。
+這個匣子雖小，卻入手很沉，不知道是什麼材料製成的。匣子表面上刻着一些神
+祕的花紋，隱隱泛着柔和的紅光，看上去有些奇異。
 LONG
         );
         set( "unit", "個" );
@@ -71,7 +71,7 @@ int opening()
     if ( mark > 50 )
     {
         message_vision( "$N伸手按在匣子上。\n", me );
-        write ( "你突然感到匣子裡有一種奇異的力量吸引著你的手掌。\n" );
+        write ( "你突然感到匣子裏有一種奇異的力量吸引着你的手掌。\n" );
         addn_temp("open_box_mark", -10, me);
         return 1;
     }
@@ -89,8 +89,8 @@ int opening()
     addn_temp("open_box_mark", -10, me);
     if ( !query_temp( "both_open" ) )
     {
-        // 接著按著這個匣子吧。
-        message_vision( "還按著", me );
+        // 接着按着這個匣子吧。
+        message_vision( "還按着", me );
         return 1;
     }
     // 該合作打開這個匣子了。
@@ -107,7 +107,7 @@ int opening()
     }
     else
     {
-        // 哈哈，終于是一對夫妻在開這個匣子了。:-)
+        // 哈哈，終於是一對夫妻在開這個匣子了。:-)
         message_vision( "", me );
         // new一雙護花鈴，夫妻倆一人一個。
         ob = new( __DIR__"huhua_ling" );

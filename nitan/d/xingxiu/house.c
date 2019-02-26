@@ -7,7 +7,7 @@ void create()
 {
         set("short", "巴依家院");
         set("long", @LONG
-這是一個巴依家的庭院。門口大樹的樹蔭投到院子裡，讓人覺得很
+這是一個巴依家的庭院。門口大樹的樹蔭投到院子裏，讓人覺得很
 涼快。院子東面是巴依的客廳，西邊就是伊犁鎮大街。
 LONG
         );
@@ -33,6 +33,6 @@ int valid_leave(object me, string dir)
         if (!wizardp(me) &&
                 objectp(present("bayi", environment(me))) && 
                 dir == "east")
-                return notify_fail("巴依說：我把阿凡提關在我的客廳裡了，誰也不許進去。\n");
+                return notify_fail("巴依説：我把阿凡提關在我的客廳裏了，誰也不許進去。\n");
         return ::valid_leave(me, dir);
 }

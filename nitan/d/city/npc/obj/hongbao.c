@@ -11,7 +11,7 @@ void create()
                 set_default_object(__FILE__);
         else {
                 set("unit", "個");
-                set("long", "一個精制的紅紙袋，邊上有燙金的花紋，用來裝賀儀禮金正合適。\n");
+                set("long", "一個精製的紅紙袋，邊上有燙金的花紋，用來裝賀儀禮金正合適。\n");
                 set("value", 1000);
         }
 }

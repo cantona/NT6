@@ -1,7 +1,7 @@
 #include <ansi.h>
 #include <combat.h>
 
-#define ZHU "「" HIW "七弦連環誅" NOR "」"
+#define ZHU "「" HIW "七絃連環誅" NOR "」"
 
 inherit F_SSERVER;
 
@@ -32,7 +32,7 @@ int perform(object me, object target)
                 return notify_fail("你的內功的修為不夠，現在無法使用" ZHU "。\n");
 
         if (skill < 180)
-                return notify_fail("你的七弦無形劍修為有限，現在無法使用" ZHU "。\n");
+                return notify_fail("你的七絃無形劍修為有限，現在無法使用" ZHU "。\n");
 
         if( query("neili", me)<500 )
                 return notify_fail("你的真氣不夠，無法運用" ZHU "。\n");
@@ -43,13 +43,13 @@ int perform(object me, object target)
                 return notify_fail("你不能使用這種兵器施展" ZHU "。\n");
 
         if (weapon && me->query_skill_mapped("sword") != "qixian-wuxingjian")
-                return notify_fail("你現在沒有準備使用七弦無形劍，無法施展" ZHU "。\n");
+                return notify_fail("你現在沒有準備使用七絃無形劍，無法施展" ZHU "。\n");
 
         if (! weapon && me->query_skill_prepared("unarmed") != "qixian-wuxingjian")
-                return notify_fail("你現在沒有準備使用七弦無形劍，無法施展" ZHU "。\n");
+                return notify_fail("你現在沒有準備使用七絃無形劍，無法施展" ZHU "。\n");
 
         if (! living(target))
-                return notify_fail("對方都已經這樣了，用不著這麼費力吧？\n");
+                return notify_fail("對方都已經這樣了，用不着這麼費力吧？\n");
 
         if (weapon)
         {

@@ -47,8 +47,8 @@ int  *h_list  =  ({  3*19+3,  15*19+15,  15*19+3,  3*19+15,  3*19+9,
           15*19+9,  9*19+3,  9*19+15  });  //  for  use  of  handicap
 string  *xindex  =  ({  "Ａ","Ｂ","Ｃ","Ｄ","Ｅ","Ｆ","Ｇ","Ｈ","Ｉ",
           "Ｊ","Ｋ","Ｌ","Ｍ","Ｎ","Ｏ","Ｐ","Ｑ","Ｒ","Ｓ"  });
-string  *yindex  =  ({  "□","□","□","□","□","□","□","□","□",
-          "□","□","□","□","□","□","□","□","□","□"  });  
+string  *yindex  =  ({  "⑴","⑵","⑶","⑷","⑸","⑹","⑺","⑻","⑼",
+          "⑽","⑾","⑿","⒀","⒁","⒂","⒃","⒄","⒅","⒆"  });  
 string  *Ucase  =  ({  "A","B","C","D","E","F","G","H","I","J","K",
       "L","M","N","O","P","Q","R","S"  });
 string  *lcase  =  ({  "a","b","c","d","e","f","g","h","i","j","k",
@@ -62,15 +62,15 @@ void  create  ()
 {
     set  ("short",  "棋室");
         set("long", @LONG
-棋苑共分四個大間，是手談休棲的好地方。這個房間裡有一張石
-桌，上面劃著一張圍棋盤。桌角擺放著棋子。另外還有兩張石凳，顏
-色一白一黑。在門口的牆壁上貼著一張下棋指南(help)。
+棋苑共分四個大間，是手談休棲的好地方。這個房間裏有一張石
+桌，上面划着一張圍棋盤。桌角擺放着棋子。另外還有兩張石凳，顏
+色一白一黑。在門口的牆壁上貼着一張下棋指南(help)。
 LONG );
 
     set("no_fight", "1");
     set("no_steal", "1");
     set("no_sleep_room", "1");
-    set("no_practice","這裡不允許練功。\n");
+    set("no_practice","這裏不允許練功。\n");
 
     set("objects",  ([
     __DIR__"obj/table"  :  1,
@@ -105,7 +105,7 @@ string look_string()
 {
         string  msg  =  "歡迎到棋苑來下棋！\n"  +
 "
-在這裡您可以下圍棋或五子棋，以下是下棋的步驟：
+在這裏您可以下圍棋或五子棋，以下是下棋的步驟：
 一、先找好對手，然後分別用  sit black  和  sit white  入座；
 二、使用 new 開始一盤新的棋局：new [-5] [-b(numbers)] [-h(numbers)]
     其中 -5  代表下五子棋，不選即為下圍棋；
@@ -152,7 +152,7 @@ int  do_sit(string  arg)
         object  me  =  this_player();
 
         if( query_temp("weiqi_seat", me) )
-                return  notify_fail("你已經坐著了。\n");
+                return  notify_fail("你已經坐着了。\n");
 
         if(!arg  ||  (arg  !=  "black"  &&  arg  !=  "white"))
                 return  notify_fail("你想玩黑棋還是白棋？\n");        
@@ -190,7 +190,7 @@ int  do_pass(string  arg)
         if( !query_temp("weiqi_seat", me) )
                 return  notify_fail("你沒有在下棋。\n");
         s=query_temp("weiqi_seat", me);
-        message_vision("$N拋下棋子，站起來長嘆一聲，“我輸了”\n",me);
+        message_vision("$N拋下棋子，站起來長歎一聲，“我輸了”\n",me);
         map_delete(pl,s);
         delete_temp("weiqi_seat", me);
         status=WQ_NOT_PLAYING;
@@ -646,7 +646,7 @@ int  do_play(string  arg)
         if( query_temp("weiqi_seat", me) != turn )
                 return  notify_fail("還沒輪到你走棋。\n");
         if(!translate_position(arg,x_ptr,y_ptr))
-                return  notify_fail("你要下在哪裡？\n");
+                return  notify_fail("你要下在哪裏？\n");
 
         if(status==WQ_PLAYING_WUZI)  {
                 rv  =  wuzi_rule(x_ptr[0],y_ptr[0]);
@@ -690,7 +690,7 @@ int  do_play(string  arg)
 int valid_leave(object me, string dir)
 {
         if( query_temp("weiqi_seat", me) )
-                return notify_fail("你現在還坐著呢，怎麼離開啊？\n");
+                return notify_fail("你現在還坐着呢，怎麼離開啊？\n");
  
         return ::valid_leave(me, dir);
 }

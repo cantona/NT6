@@ -34,7 +34,7 @@ void greeting(object ob)
         if (!ob||environment(ob)!=environment()) return;
         if( query("short", environment()) == "察合台營帳" )
         {
-                message_vision("$N露出白色獠牙，向$n沖去.\n",this_object(),ob);
+                message_vision("$N露出白色獠牙，向$n衝去.\n",this_object(),ob);
                 kill_ob(ob);
                 return;
         }

@@ -45,7 +45,7 @@ int main(object me, string arg)
         }
 
         message_system("系統進行數據處理中，請耐心等候...\n");
-        write(HIG "現在系統將檢查所有玩家，稍後匯報。\n"
+        write(HIG "現在系統將檢查所有玩家，稍後彙報。\n"
               HIG "進度：" + process_bar(0) + "\n");
         if (me)
         {
@@ -170,7 +170,7 @@ protected string examine_player(string name, int copy_user, int type, int last_t
         
                         if (! arrayp(st) || sizeof(st) < 3)
                                 // 可能沒有這個文件
-                                return sprintf(WHT "無法查閱玩家(%s)的的登錄信息。\n" NOR, name);
+                                return sprintf(WHT "無法查閲玩家(%s)的的登錄信息。\n" NOR, name);
         
                         // 取最後訪問 login_ob 的時間
                         last_touched = st[1];
@@ -279,7 +279,7 @@ protected string examine_player(string name, int copy_user, int type, int last_t
                 {
                         me = this_player();
                         // I should login it
-                        message_vision("$N口中念念有詞，將$n變了出來。\n",
+                        message_vision("$N口中唸唸有詞，將$n變了出來。\n",
                                        me, user_ob);
                         catch(user_ob->setup());
                         catch(user_ob->restore_autoload());
@@ -430,7 +430,7 @@ write(@HELP
 指令格式：examine [-u] <玩家ID> | -all
 
 查找玩家，判斷數據是否正常。如果使用了[-u]參數，則除了檢查玩
-家，還會將不在線上玩家復制出來，以供詳細查閱。
+家，還會將不在線上玩家複製出來，以供詳細查閲。
 
 判斷依據：
 1. 超過 20000 兩黃金。

@@ -14,7 +14,7 @@ int practice_skill(object me)
 }
 void skill_improved(object me)
 {
-        tell_object(me, HIR "你心裡鼓盪著一股俠義之氣！\n" NOR );
+        tell_object(me, HIR "你心裏鼓盪着一股俠義之氣！\n" NOR );
         addn("shen", 200, me);
 }
 

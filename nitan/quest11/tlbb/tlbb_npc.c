@@ -5,7 +5,7 @@
 inherit FIGHTER;
 #include <ansi.h>
 
-#define QUESTDIR3 "quest/天龍八部/蕭峰身世篇/"
+#define QUESTDIR3 "quest/天龍八部/蕭峯身世篇/"
 #define QUESTDIR4 "quest/天龍八部/大遼救援篇/"
 #define QUESTDIR5 "quest/天龍八部/復興天下篇/"
 
@@ -51,7 +51,7 @@ void init()
     ob = this_object();
     if(ob->query("setok")) return;
 	  if(!ob->query("party"))	ob->set("party",str_menpai[random(sizeof(str_menpai))]);  	 
-    ob->copy_menpai(({ob->query("party")}),1,random(2),100);  //復制npc的門派武功                                              
+    ob->copy_menpai(({ob->query("party")}),1,random(2),100);  //複製npc的門派武功                                              
 	  ob->copy_state();				//根據門派更新npc 的一些狀態
 		if (ob->query("f_skill2")) 
 				good_skills=to_chinese(ob->query("f_skill"))+"和"+to_chinese(ob->query("f_skill2"));
@@ -80,7 +80,7 @@ void init()
 	  	set_name("無名老僧", ({"wuming laoseng","wuming","laoseng",}));
       set("long",
                 "他是一位身穿青袍的枯瘦僧人，身材不高。\n"
-                "年紀已在七旬開外，稀稀疏疏的幾根長須已然全白。\n"
+                "年紀已在七旬開外，稀稀疏疏的幾根長鬚已然全白。\n"
       );
       set("nickname", "無名神僧");
       set("gender", "男性");
@@ -96,14 +96,14 @@ void init()
     }
 	  else if(ob->query("party")=="gb")
 	  {
-	    set_name("蕭峰", ({"xiao feng", "xiao", "feng"}));
+	    set_name("蕭峯", ({"xiao feng", "xiao", "feng"}));
 	    set("gender", "男性");
 	    set("nickname",HIB"奇俠"NOR);
 	    set("title",HIY"前丐幫幫主"NOR);
 	    set("age", 58);
 	    set("long", 
-	    	"他就是丐幫前任幫主蕭峰。\n"
-	    	"他身高六尺有余，體格十分魁梧，長有一張線條粗曠、十\n"
+	    	"他就是丐幫前任幫主蕭峯。\n"
+	    	"他身高六尺有餘，體格十分魁梧，長有一張線條粗曠、十\n"
 		    "分男性化的臉龐，雙目如電，炯炯有神。\n");
     	set("attitude", "peaceful");
 	    set("str", 30);
@@ -140,7 +140,7 @@ void die()
 	object ob=this_object();
   if(random(2))command("why");
   else command("disapp "+ob->query("id"));
-  if(random(2)) message_vision(HIG"$N點了點頭，緩緩消失在角落裡。\n\n" NOR, ob);
+  if(random(2)) message_vision(HIG"$N點了點頭，緩緩消失在角落裏。\n\n" NOR, ob);
   else message_vision(HIG"$N慢慢地退了出去。\n\n" NOR, ob);
 	destruct(ob);
 }

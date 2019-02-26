@@ -12,7 +12,7 @@ void init()
 void destdan()
 {
         object ob;
-        message_vision("$N慢慢被風吹著，一會就不再新鮮了。\n",this_object());
+        message_vision("$N慢慢被風吹着，一會就不再新鮮了。\n",this_object());
         ob = new("/d/guanwai/npc/xiongdan1");
         ob->move(environment(this_object()));
         destruct(this_object());
@@ -31,7 +31,7 @@ int do_eat(string arg)
         object me=this_player();
         if (!id(arg))  return notify_fail("你要吃什麼？\n");
         if (me->is_fighting()) return notify_fail("戰鬥中不能吃東西！\n");
-        if (me->is_busy()) return notify_fail("你正忙著呢！\n");
+        if (me->is_busy()) return notify_fail("你正忙着呢！\n");
         if(arg=="dan")
         {
                 addn("max_neili", 2, me);

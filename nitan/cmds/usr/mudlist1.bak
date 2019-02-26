@@ -34,7 +34,7 @@ int main(object me, string arg)
         mud_svc = DNS_MASTER->query_svc() + ([ Mud_name() : 0 ]);
 
         if (! mud_list)
-                return notify_fail(LOCAL_MUD_NAME() + "目前並沒有跟網路上其他 Mud 取得聯系。\n");
+                return notify_fail(LOCAL_MUD_NAME() + "目前並沒有跟網路上其他 Mud 取得聯繫。\n");
 
         // Get list of all mud names within name server
         muds = keys(mud_list) - ({ "DEFAULT" });
@@ -64,7 +64,7 @@ int main(object me, string arg)
 */
 
         if (! sizeof(muds))
-                return notify_fail("目前本站並沒有和這個 MUD 取得任何聯系。\n");
+                return notify_fail("目前本站並沒有和這個 MUD 取得任何聯繫。\n");
 
         //      Place mudlist into alphabetical format
         muds = sort_array(muds, 1);
@@ -108,7 +108,7 @@ int main(object me, string arg)
                                   upper_case(vis_mudn), name,
                                   mud_list[mudn]["HOSTADDRESS"],
                                   mud_list[mudn]["PORT"],
-                                  mud_list[mudn][DNS_NO_CONTACT] > MAX_RETRYS ? "失去聯系"
+                                  mud_list[mudn][DNS_NO_CONTACT] > MAX_RETRYS ? "失去聯繫"
                                                                               : mud_list[mudn]["USERS"]);
 
                 // 累計玩家數量
@@ -135,7 +135,7 @@ int help()
         write(@HELP
 指令格式 : mudlist <MUD名字> | all | sites
 
-這個指令讓你列出目前跟這個 Mud 取得聯系中的其他 Mud。
+這個指令讓你列出目前跟這個 Mud 取得聯繫中的其他 Mud。
 
 如果不加參數則列出該 Mud 所有正式分站。
 使用 all 參數表示列出所有的 Mud 遊戲。

@@ -10,7 +10,7 @@ void create()
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("long","紙上一個個字都如蝌蚪一般。\n這是從五台山錦繡峰普濟寺中石碣上拓下來的甲骨文。\n");
+                set("long","紙上一個個字都如蝌蚪一般。\n這是從五台山錦繡峯普濟寺中石碣上拓下來的甲骨文。\n");
                 set("unit", "幅");
                 set("value", 20);
         }

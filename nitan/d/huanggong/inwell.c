@@ -6,9 +6,9 @@ void create()
         set("short", "井底");
         set("long", @LONG
 這是一口極深的水井。浮在水面往上看，只覺得圓圓的天空是那麼
-可愛。井壁(wall)上滿是滑溜溜的青苔。一個□轆的頭上, 吊著一根長
-繩(string)，繩端系著一個木桶(mutong)。木桶懸在空中，離你很近，
-只差一點就可以夠得著。
+可愛。井壁(wall)上滿是滑溜溜的青苔。一個軲轆的頭上, 吊着一根長
+繩(string)，繩端繫着一個木桶(mutong)。木桶懸在空中，離你很近，
+只差一點就可以夠得着。
 LONG
         );
         set("outdoors", "huanggong");
@@ -35,11 +35,11 @@ int do_reach(string arg)
         if (!arg||arg=="") return 0;
         if( arg=="mutong") {
                 message_vision(
-                "\n$N試著去抓木桶，但總是差一點夠著，要能跳高一點就好了。\n", me);
+                "\n$N試著去抓木桶，但總是差一點夠着，要能跳高一點就好了。\n", me);
         }
         if( arg=="string") {
                 message_vision(
-                "\n$N試著去抓長繩，但總是差一點夠著，要能跳高一點就好了。\n", me);
+                "\n$N試著去抓長繩，但總是差一點夠着，要能跳高一點就好了。\n", me);
         }
 return 1;
 }
@@ -60,12 +60,12 @@ int do_climb(string arg)
                 {
                         delete_temp("hasjump", me);
                         message_vision(
-        "$N順著長繩往上爬，終于爬出了深井，重見天日。\n", me);
+        "$N順着長繩往上爬，終於爬出了深井，重見天日。\n", me);
                         message_vision(
         "$N仰天長笑道：這世上就沒有我做不成的事啊，哈哈哈。。。\n", me);
                         me->move(__DIR__"houyuan");
                 }
-                else return notify_fail("\n你夠不著。\n");
+                else return notify_fail("\n你夠不着。\n");
         }
         return 1;
 }

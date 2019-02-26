@@ -17,5 +17,5 @@ string update_msg_others()
 
 string update_msg_self()
 {
-        return HIG "你中的" HIR "﹝火玫瑰毒﹞" HIG "發作了！\n";
+        return HIG "你中的" HIR "［火玫瑰毒］" HIG "發作了！\n";
 }

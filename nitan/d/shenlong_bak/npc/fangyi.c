@@ -73,12 +73,12 @@ int do_work()
 
         if( !query("sg/spy", me) && !wizardp(me) )
         {
-                say("方怡哼了一聲說：假仁假義的東西，還不給我滾！\n");
+                say("方怡哼了一聲説：假仁假義的東西，還不給我滾！\n");
                 return 1;
         }
         if( query_temp("marks/方a", me) )
         {
-                say("方怡不耐煩地說道：有完沒完了？\n");
+                say("方怡不耐煩地説道：有完沒完了？\n");
                 return 1;
         }
         if( time()<query("marks/方c", me)+180 )
@@ -92,7 +92,7 @@ int do_work()
         set("marks/方c", time(), me);
 
         fwant = fjob[random(sizeof(fjob))];
-        fword = sprintf("方怡嘆了口氣，說道：奉教主之命，捉%s來配藥。\n",fwant);
+        fword = sprintf("方怡歎了口氣，説道：奉教主之命，捉%s來配藥。\n",fwant);
         say(fword);
         set_temp("marks/毒蛇", fwant, me);
         return 1;
@@ -103,7 +103,7 @@ int do_comfort(string arg)
         object me = this_player();
 
         if(!arg || !(arg == "fang yi" || arg == "fang")) return notify_fail("");
-        message_vision("$N笑嘻嘻地安慰著方怡。\n", me);
+        message_vision("$N笑嘻嘻地安慰着方怡。\n", me);
         if( !query_temp("marks/方a", me) )
         {
                 say("方怡冷笑道：別假惺惺了。\n");
@@ -137,7 +137,7 @@ int accept_object(object who, object ob)
         command("jump"+query("id", who));
         command("secret"+query("id", who));
 
-        message_vision("方怡在$N耳邊悄悄的說了幾句話。\n", who);
+        message_vision("方怡在$N耳邊悄悄的説了幾句話。\n", who);
         if( who->query_skill("medicine", 1) < 30 )
                 who->improve_skill("medicine",random(2*query("int", who)));
 

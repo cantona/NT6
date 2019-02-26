@@ -6,7 +6,7 @@ void create()
 {
         set("short", "石階");
         set("long", @LONG
-山路突然陡峭，兩旁山峰筆立，中間留出一條窄窄的石階，僅能
+山路突然陡峭，兩旁山峯筆立，中間留出一條窄窄的石階，僅能
 兩人並肩而行。
 LONG );
         set("outdoors", "heimuya");

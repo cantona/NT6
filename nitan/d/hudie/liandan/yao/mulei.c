@@ -28,7 +28,7 @@ mapping *yao= ({
        "id":       "zhang mu",
        "yaoxing":  3000,
 ]),
-([     "name":     "綠",
+([     "name":     "綠は",
        "id":       "hou pu",
        "yaoxing":  4000,
 ]),

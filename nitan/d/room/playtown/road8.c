@@ -8,7 +8,7 @@ void create()
         set("short","三岔口");
         set("long",
 "你走在一條曲長的小道上，這是一個三岔口，南面是一條碎石小道西\n"
-"北面和東北面有兩條青磚舖成的路。\n"
+"北面和東北面有兩條青磚鋪成的路。\n"
 );
 
         set("outdoors","playertown");

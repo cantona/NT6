@@ -7,14 +7,14 @@ void create()
         set("short", "金色沙灘");
         set("long",@LONG
 此處乃是蓬萊仙島東方盡頭，遠處是一望無際的海洋，腳下沙
-灘軟綿綿的，泛著耀眼的金光，猶如佛光普照，令人無比舒泰。
+灘軟綿綿的，泛着耀眼的金光，猶如佛光普照，令人無比舒泰。
 LONG);
 
         set("exits", ([
                 "west"     : __DIR__"jinxianqiao",                
         ]));
         set("no_rideto", 1);         // 設置不能騎馬到其他地方
-        set("no_flyto", 1);          // 設置不能從起來地方騎馬來這裡
+        set("no_flyto", 1);          // 設置不能從起來地方騎馬來這裏
         set("no_die", 1);            // 死亡後移動到扁鵲居
         set("penglai", 1);           // 表示在蓬萊島
 

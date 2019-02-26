@@ -56,8 +56,8 @@ int perform(object me, object target)
                 me->start_busy(2);
         } else
         {
-                msg += HIC "可是$p" HIC "眼明手快，叮叮當當接連將$P"
-                       HIC "的殺招接下，嘆為觀止！\n"NOR;
+                msg += HIC "可是$p" HIC "眼明手快，叮叮噹噹接連將$P"
+                       HIC "的殺招接下，歎為觀止！\n"NOR;
                 addn("neili", -100, me);
                 me->start_busy(2);
         }

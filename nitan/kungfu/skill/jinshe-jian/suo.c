@@ -35,7 +35,7 @@ int perform(object me)
                 return notify_fail("你的內力不夠，無法運用「鎖劍訣」！\n");
 
         msg = HIC "$N手中"YEL"金蛇劍"HIC"畫出一道金光，斜刺一拉，「鎖劍訣」！\n"
-              YEL "金蛇劍"HIC"劍尖倒鉤正好掛在$n的"+weapon2->name()+"上。\n";
+              YEL "金蛇劍"HIC"劍尖倒鈎正好掛在$n的"+weapon2->name()+"上。\n";
               
         message_combatd(msg, me, target);
 
@@ -49,7 +49,7 @@ int perform(object me)
                 addn("neili", -50, me);
                 msg = "$n頓時覺得眼前金光一閃，手腕一振，手中";
                 msg += weapon2->name();
-                msg += "脫手飛出！\n" NOR;
+                msg += "脱手飛出！\n" NOR;
                 me->start_busy(random(2));
                 target->receive_damage("qi", damage);
                 target->start_busy(2);

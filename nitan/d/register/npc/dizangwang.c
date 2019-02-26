@@ -46,7 +46,7 @@ void greeting(object me)
 
         if( undefinedp(query("born", me)) )
         {
-                command("say"+query("name", me)+"，你快快在無憂池中洗脫筋骨(wash)，然後投胎去吧！");
+                command("say"+query("name", me)+"，你快快在無憂池中洗脱筋骨(wash)，然後投胎去吧！");
         } else
         {
                 if (wizardp(me))
@@ -54,11 +54,11 @@ void greeting(object me)
                 else
                 {
                         command("kick"+query("id", me));
-                        command("say 凡人跑到這裡來幹什麼？");
+                        command("say 凡人跑到這裏來幹什麼？");
                         message_vision("$N一腳把$n踢得無影無蹤。\n\n",
                                        this_object(), me);
                         me->move(VOID_OB);
-                        message_vision("\n$N跌落地上，捂著屁股哇哇叫了幾聲。\n",
+                        message_vision("\n$N跌落地上，捂着屁股哇哇叫了幾聲。\n",
                                        me);
                 }
         }
@@ -76,7 +76,7 @@ int attempt_apprentice(object ob)
 {
         if( !query("born", ob) )
         {
-                command("say 你快投胎去，在這裡瞎攪和什麼？");
+                command("say 你快投胎去，在這裏瞎攪和什麼？");
                 return 0;
         }
 

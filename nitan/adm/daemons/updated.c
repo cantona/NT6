@@ -616,7 +616,7 @@ varargs string remove_user(string user, int raw)
         string result;
         string flogin, fuser, fpackage;
 
-        if (user == "lonely") return "好象不可以耶！";
+        if (user == "lonely") return "好像不可以耶！";
 
         // destruct the user object
         if (ob = find_player(user))
@@ -815,7 +815,7 @@ void set_title(object ob)
                         return;
                 }
 
-        // 這個用戶並沒有分配的稱號
+        // 這個用户並沒有分配的稱號
         delete("granted_title", ob);
 }
 

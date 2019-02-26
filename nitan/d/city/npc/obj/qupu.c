@@ -13,7 +13,7 @@ void create()
         else{
                 set("unit", "冊");
                 set("long", "
-一冊裱釘精美的曲譜，你可以唱(chang)裡面的曲子：
+一冊裱釘精美的曲譜，你可以唱(chang)裏面的曲子：
 
   《圓圓曲》(yuanyuan_qu)
   《望海潮》(wanghai_chao)
@@ -26,9 +26,9 @@ void create()
   《笑傲江湖》(xiaoao_jianghu)
   《白雪歌送武判官回京》(baixue_ge)
   《虞美人》(yu_meiren)
-  《蘭陵王﹒丙子送春》 (song_chun)
+  《蘭陵王·丙子送春》 (song_chun)
   《詠荷》 (yong_he)
-  《水調歌頭﹒中秋 》 (shuidiao_getou)
+  《水調歌頭·中秋 》 (shuidiao_getou)
   《滿江紅》 (manjiang_hong)
   《雨霖鈴》 (yulin_lin)
   《一剪梅》 (yijian_mei)
@@ -69,16 +69,16 @@ int do_sing(string arg)
 notify_fail("你能同時唱兩首曲子嗎？\n");
        if(!arg) return notify_fail("你想唱什麼？\n");
         while (i--) if (arg == qupu[i]["name"]) break;
-        if (i<0) return notify_fail("曲譜裡還沒有你想唱的曲子。\n");
+        if (i<0) return notify_fail("曲譜裏還沒有你想唱的曲子。\n");
         if(me->is_busy())
-           return notify_fail("你正忙著呢。\n");
-        if( query_temp("qupu", me))return notify_fail("你正在唱著呢。\n");
+           return notify_fail("你正忙着呢。\n");
+        if( query_temp("qupu", me))return notify_fail("你正在唱着呢。\n");
         if( query("gender", me) != "男性"){
           if(present("dong xiao", me))
              message_vision(MAG
-"$N輕捻$n"MAG"，起身盈盈拜起，玉唇含簫，只聽：
+"$N輕捻$n"MAG"，起身盈盈拜起，玉脣含簫，只聽：
 曲調柔媚宛轉，簫聲緩緩盪漾，猶似微風起處，荷塘水波輕響。
-接著$N微微一笑，曼聲開始唱道：\n\n"NOR, me, ob);
+接着$N微微一笑，曼聲開始唱道：\n\n"NOR, me, ob);
           else 
 message_vision("$N輕捻$n，起身盈盈一拜，然後曼聲開始唱道：\n\n"NOR, me, ob);
           }
@@ -108,7 +108,7 @@ void sing_stage(object me, int stage, int i, int size)
 
       if(present("dong xiao", me))
           
-message_vision(MAG"\n過了一會，$N簫聲漸緩漸輕，似乎流水汩汩遠去，終于歌完曲終，寂然無聲。\n"NOR,me);
+message_vision(MAG"\n過了一會，$N簫聲漸緩漸輕，似乎流水汩汩遠去，終於歌完曲終，寂然無聲。\n"NOR,me);
       else 
 message_vision("\n$N聲調轉高，唱完最後一字，歌聲卻依然曼長不絕，在空中來回盪漾。。。\n", 
 me);

@@ -22,7 +22,7 @@ void create()
                set_default_object(__FILE__);
        else{
        set("unit", "柄");
-       set("long", "這就是傳說中的魚腸劍，沒想到會在這裡出現！\n"
+       set("long", "這就是傳説中的魚腸劍，沒想到會在這裏出現！\n"
                    "你忍不住想把它撿(jian)起來！！！\n");
        set("value",1000000);
        set("material", "steel");

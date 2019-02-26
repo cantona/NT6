@@ -174,7 +174,7 @@ void random_move()
 void death_msg()
 {
         command("chat 中原武學果然名不虛傳 ……");
-        CHANNEL_D->channel_broadcast("rumor", "聽說" + name() + HIM "被江湖人士所殺。" NOR);
+        CHANNEL_D->channel_broadcast("rumor", "聽説" + name() + HIM "被江湖人士所殺。" NOR);
 }
 
 

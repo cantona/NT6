@@ -21,10 +21,10 @@ int exert(object me, object target)
 
 
         if( query("neili", me)<800 )
-                return notify_fail("你的內力不足于化毒。n");
+                return notify_fail("你的內力不足於化毒。n");
 
         if( query("jing", me)<60 )
-                return notify_fail("你的精神狀態不足于化毒。\n");
+                return notify_fail("你的精神狀態不足於化毒。\n");
 
         if( query_temp("huadu", me) )
                 return notify_fail("你已運功化毒了。\n");
@@ -33,7 +33,7 @@ int exert(object me, object target)
         addn("neili", 400, me);
         me->recieve_damage("jing", 50);
 
-        message_combatd(BLU"$N閉目凝神，將體內蘊積的毒質慢慢化為真氣，分散在四肢內。\n" NOR, me);
+        message_combatd(BLU"$N閉目凝神，將體內藴積的毒質慢慢化為真氣，分散在四肢內。\n" NOR, me);
         i = me->query_skill("poison", 1) / 2;
         addn_temp("apply/attack", i, me);
         set_temp("huadu", 1, me);
@@ -51,6 +51,6 @@ void remove_effect(object me, int i)
         {
                 addn_temp("apply/attack", -i, me);
                 delete_temp("huadu", me);
-                message_combatd(BLU "$N運功化毒完畢，將真氣化回毒質蘊積體內。\n" NOR, me);
+                message_combatd(BLU "$N運功化毒完畢，將真氣化回毒質藴積體內。\n" NOR, me);
         }
 }

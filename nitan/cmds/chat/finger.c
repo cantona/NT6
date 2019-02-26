@@ -11,7 +11,7 @@ int main(object me, mapping info)
         string fun;
 
         if (! stringp(info[ARG]))
-                return MESSAGE_D->error_msg("請輸入你要查詢的用戶代號。\n");
+                return MESSAGE_D->error_msg("請輸入你要查詢的用户代號。\n");
 
         msg = FINGER_D->finger_user(info[ARG], me);
         if (sscanf(info[ARG], "%*s@%*s") == 2)
@@ -22,7 +22,7 @@ int main(object me, mapping info)
         } else
         {
                 fun = FUN_NOTICE;
-                msg = HIW "關于用戶(" + info[ARG] + ")的查詢信息：\n"
+                msg = HIW "關於用户(" + info[ARG] + ")的查詢信息：\n"
                       NOR + msg;
         }
 

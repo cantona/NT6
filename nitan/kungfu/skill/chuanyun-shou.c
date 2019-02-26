@@ -15,7 +15,7 @@ mapping *action = ({
         "lvl" : 10,
         "skill_name" : "開天式"
 ]),
-([        "action" : "$N一式"BLU"「奪劍式」"NOR"，右手環攏成爪，一出手就向扣$n的嚥喉要害",
+([        "action" : "$N一式"BLU"「奪劍式」"NOR"，右手環攏成爪，一出手就向扣$n的咽喉要害",
         "lvl" : 20,
         "skill_name" : "奪劍式"
 ]),

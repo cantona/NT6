@@ -9,25 +9,25 @@ mapping e_gname = ([
         "阿貝爾"   : "abel",
         "肯尼"     : "kenny",
         "丹尼爾"   : "daniel",
-        "大衛"     : "dave",
+        "大衞"     : "dave",
         "戴維恩"   : "devin",
         "道恩"     : "don",
         "懷特"     : "white",
         "布魯克"   : "brook",
         "巴克"     : "buck",
-        "查裡斯"   : "charles",
-        "克裡斯特" : "christ",
-        "克裡斯托爾": "christopher",
-        "克裡弗德" : "clifford",
+        "查里斯"   : "charles",
+        "克里斯特" : "christ",
+        "克里斯托爾": "christopher",
+        "克里弗德" : "clifford",
         "克拉克"   : "clark",
-        "埃裡維斯" : "elvis",
+        "埃裏維斯" : "elvis",
         "弗德"     : "ford",
-        "哈裡"     : "harry",
+        "哈里"     : "harry",
         "希曼"     : "hyman",
         "傑克"     : "jack",
         "傑夫"     : "jeff",
         "約翰"     : "john",
-        "朱裡安"   : "julian",
+        "朱裏安"   : "julian",
         "蘭伯特"   : "lambert",
         "邁克斯"   : "max",
         "邁克爾"   : "michael",
@@ -36,10 +36,10 @@ mapping e_gname = ([
 ]);
 
 mapping e_sname = ([
-        "皮克克"     : "pycock",
+        "皮剋剋"     : "pycock",
         "阿伯特"     : "abbot",
         "艾思比特"   : "aisbett",
-        "裡格特索思" : "rigoutsos",
+        "裏格特索思" : "rigoutsos",
         "維斯"       : "weiss",
         "布拉蒂"     : "brady",
         "拉斯特曼"   : "lustman",
@@ -55,7 +55,7 @@ mapping e_sname = ([
         "伍德斯"     : "woods",
         "漢森"       : "hansen",
         "漢貝爾"     : "hampel",
-        "哈拉裡克"   : "haralick",
+        "哈拉里克"   : "haralick",
         "內瓦蒂亞"   : "nevatia",
         "塞吉維克"   : "sedgewick",
         "威格斯勒"   : "wechsler",
@@ -69,7 +69,7 @@ void generate_e_name(object ob)
         pname2 = keys(e_sname)[random(sizeof(e_sname))];
         id1 = e_gname[pname1];
         id2 = e_sname[pname2];
-        name = pname1 + "﹒" + pname2;
+        name = pname1 + "·" + pname2;
         id = id1 + " " + id2;
         if (ob) ob->set_name(name, ({ id, id1, id2 }));
 }

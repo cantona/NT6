@@ -33,7 +33,7 @@ int perform(object me, object target)
                 return notify_fail("你內力不夠, 不能使用千蛛萬毒! \n");
 
         if( query_temp("qzwd_used", me) )
-                return notify_fail("你剛使用過千蛛萬毒，無法在短時間裡積聚毒力! \n");
+                return notify_fail("你剛使用過千蛛萬毒，無法在短時間裏積聚毒力! \n");
 
         msg = HIR "$N一聲獰笑飛身縱起，凌空一指向$n的眉心點去。\n";
         message_combatd(msg, me, target);
@@ -50,7 +50,7 @@ int perform(object me, object target)
                 message_combatd(msg, me, target);
                 if(target->query_skill("hunyuan-yiqi",1)>me->query_skill("qianzhu-wandushou",1)*12/10&&random(2)==0)
                 {
-                        msg = RED"$N忽然覺得指力被一團無形的勁力包裹著，緊接著只聽\n"
+                        msg = RED"$N忽然覺得指力被一團無形的勁力包裹着，緊接着只聽\n"
                               "$n一聲大喝，$N頓時如一根稻草般被拋向遠處。\n" NOR;
                         message_combatd(msg, me, target);
 

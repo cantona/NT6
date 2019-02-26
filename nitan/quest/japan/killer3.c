@@ -8,7 +8,7 @@ void create()
 {
         set_name("東瀛武士", ({ "dongying wushi", "dongyin", "wushi", "shi" }));
         set("gender", "男性");
-        set("long", "　　來自于東瀛的武官，燒殺劫略無惡不作。\n");
+        set("long", "　　來自於東瀛的武官，燒殺劫略無惡不作。\n");
         set("age", random(18) + 10);
         set("str", 20 + random(10));
         set("int", 20 + random(10));
@@ -39,7 +39,7 @@ void init()
         ob = this_object();
 
         if( interactive(me=this_player()) && query_temp("job/fleet", me) && query("target", ob) == query("id", me)){
-                message_vision(HIR "$N對$n說道：「□□□，□□！」\n" NOR, ob, me);
+                message_vision(HIR "$N對$n説道：「グイス，プタ！」\n" NOR, ob, me);
                 ob->kill_ob(me);
                 me->fight_ob(ob);
                 me->start_busy(1);

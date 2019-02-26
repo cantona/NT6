@@ -4,7 +4,7 @@ inherit ITEM;
 
 void create()
 {
-        set_name("海鬆子", ({ "hai song zi" }) );
+        set_name("海松子", ({ "hai song zi" }) );
         set_weight(100);
         if( clonep() )
                 set_default_object(__FILE__);
@@ -26,7 +26,7 @@ int do_eat(string arg)
         if(!id(arg))
                 return 0;
 
-        message_vision("$N把海鬆子放在嘴裡嚼了嚼，苦的皺起了眉頭。\n", me);
+        message_vision("$N把海松子放在嘴裏嚼了嚼，苦的皺起了眉頭。\n", me);
 
         me->apply_condition("mabi", 5);
         destruct(this_object());

@@ -9,7 +9,7 @@ void create()
         set("short", "明教山門");
         set("long", @LONG
 一個巨大的天然石橋橫跨在兩片山壁之間，石橋正上方龍盤鳳舞
-刻著兩個大字：『明教』。字跡有些剝落，看上去年代久遠。兩位三
+刻着兩個大字：『明教』。字跡有些剝落，看上去年代久遠。兩位三
 十來歲的大漢手持鋼劍守在山門兩側。
 LONG );
         set("exits", ([
@@ -37,7 +37,7 @@ int valid_leave(object me, string dir)
                 for(i=sizeof(inv)-1; i>=0; i--)
                         if(query("weapon_prop", inv[i]) && ((string)query("equipped", inv[i])=="wielded"))
                                 if(objectp(present("da han", environment(me))))
-                                        return notify_fail("大漢攔住你說道：這位" +
+                                        return notify_fail("大漢攔住你説道：這位" +
                                                 RANK_D->query_respect(me) + "請放下兵刃。我教教規嚴"
                                                 "厲，外客不\n得持兵刃上山。請見諒。\n");
         }

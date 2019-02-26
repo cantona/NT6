@@ -1,11 +1,11 @@
 //                標準描述長度示例                                   |
 // 幻境新添 NPC，煉魔匠
-// by naihe  2003-11-05  于茂名
+// by naihe  2003-11-05  於茂名
 // 寶石的要求太高，降低點 05-9-1 14:43
 
 #include <ansi.h>
 #include <errs_func.h>
-// 裡面有個 errs() 代替 notify_fail() ，即 write(msg), return 1;
+// 裏面有個 errs() 代替 notify_fail() ，即 write(msg), return 1;
 inherit NPC;
 
 #include "hj_settings/room_amount_hj.h"
@@ -50,7 +50,7 @@ void init()
     add_action("do_lianmo", ({ "lianmo", "lm" }) );
 }
 
-// 該函數復制 zhujian shi 的，一些函數名懶得改了
+// 該函數複製 zhujian shi 的，一些函數名懶得改了
 // 而且又懶得做成 #include ，就這樣吧。
 int do_lianmo( string arg )
 {
@@ -60,7 +60,7 @@ int do_lianmo( string arg )
 
     if( !ob_ok() || !me_ok(me) ) return 0;
     if( me->is_busy() || query_temp("hj_need_waiting", me) )
-        return errs("你還忙著呢。\n");
+        return errs("你還忙着呢。\n");
 
     if( !arg || sscanf( arg, "%s %s", type, sword_id ) != 2 )
         return errs("你是想提煉魔法水晶嗎(look lianmo jiang)？\n");
@@ -69,7 +69,7 @@ int do_lianmo( string arg )
         return errs("我這還有點工作沒完成，請稍等一會兒吧。\n");
 
     list = ({ "kfsj","bysj","llsj","ydsj","gssj","fhsj","dhsj" });
-    // 這裡的順序和 hj_obj_weapon.c 裡的順序是一樣的。
+    // 這裏的順序和 hj_obj_weapon.c 裏的順序是一樣的。
 
     set = member_array( type, list );
     if( set == -1 && type != "up" )
@@ -79,7 +79,7 @@ int do_lianmo( string arg )
     // 配合 hj_obj_weapon.c 的設置。
 
     sword = present( sword_id, me );
-    if( !sword ) return errs("你可沒帶著這樣的水晶，你以為我是那個什麼奈何啊，懂得憑空變給你？\n");
+    if( !sword ) return errs("你可沒帶着這樣的水晶，你以為我是那個什麼奈何啊，懂得憑空變給你？\n");
     if( query("hj_game/obj", sword) != "magic" )
         return errs(query("name", sword)+"不是可以提煉的魔法水晶。\n");
     // 如果是其他各類水晶……哈哈哈，也不認識
@@ -91,7 +91,7 @@ int do_lianmo( string arg )
     if( type == "up" )
     {
         if( query("use_times", sword) >= query("real_use_times", sword) )
-            return errs("這水晶裡還充滿了魔力，還是不必提煉了吧。\n");
+            return errs("這水晶裏還充滿了魔力，還是不必提煉了吧。\n");
 
         all_mine = all_inventory(me);
         // 玩家身上肯定有sj，不必進行 !all_mine 的判斷
@@ -108,7 +108,7 @@ int do_lianmo( string arg )
             }
         }
         if( !bs1 || !bs2 || !bs3 )
-            return errs("這……這需要三顆寶石，你好象不夠吧。\n");
+            return errs("這……這需要三顆寶石，你好像不夠吧。\n");
         destruct( bs1 );
         destruct( bs2 );
         destruct( bs3 );
@@ -125,7 +125,7 @@ int do_lianmo( string arg )
             }
         }
         if( !bs1 )
-            return errs("這需要一顆寶石，你好象沒有吧。\n");
+            return errs("這需要一顆寶石，你好像沒有吧。\n");
         destruct( bs1 );
         // 全部OK，進行設置及描述等
         addn_temp("hj_score", -score_need, me);
@@ -135,10 +135,10 @@ int do_lianmo( string arg )
 
         t = NOR+CYN;
         message_vision( sprintf(
-            CYN"$N%s拿出一%s%s%s遞給了$n%s，說道：“麻煩你幫我煉煉這水晶。”\n"
-            "$N%s說罷，又拿出了一顆寶石，還夾了點什麼，一並塞給了$n%s。\n"
+            CYN"$N%s拿出一%s%s%s遞給了$n%s，説道：“麻煩你幫我煉煉這水晶。”\n"
+            "$N%s説罷，又拿出了一顆寶石，還夾了點什麼，一併塞給了$n%s。\n"
             "只見$n%s接過了水晶，敲敲摸摸只弄了幾下，就把它遞給了$N%s。\n"
-            "$n%s說道：“好啦，這水晶已經修好了，保証好用。”\n"NOR,
+            "$n%s説道：“好啦，這水晶已經修好了，保證好用。”\n"NOR,
                 t,query("unit", sword),query("name", sword),t,t,
                 t, t,
                 t, t,
@@ -158,7 +158,7 @@ int do_lianmo( string arg )
        || !bs2 || query("hj_game/obj", bs2) != "other"
        || !bs3 || query("hj_game/obj", bs3) != "other"
     )
-        return errs("這……這需要各色寶石各一顆，你好象不夠吧。\n");
+        return errs("這……這需要各色寶石各一顆，你好像不夠吧。\n");
     destruct( bs1 );
     destruct( bs2 );
     destruct( bs3 );
@@ -181,7 +181,7 @@ int do_lianmo( string arg )
         }
     }
     if( !bs1 || !bs2)
-        return errs("這需要兩顆寶石，你好象不夠吧。\n");
+        return errs("這需要兩顆寶石，你好像不夠吧。\n");
     destruct( bs1 );
     destruct( bs2 );
     // 那麼就OK嘍
@@ -191,17 +191,17 @@ int do_lianmo( string arg )
     t = NOR+CYN;
     /*
     message_vision( sprintf(
-        CYN"$N%s拿出一%s%s%s遞給了$n%s，說道：“麻煩你，我想把它改成 \"%s\" 。”\n"
-        "$N%s說罷，又拿出了"HIR"紅%s、"HIG"綠%s、"HIB"藍%s共三顆寶石，還夾了點什麼，一並塞給了$n%s。\n"
-        "$n%s接過了水晶，說道：“好罷，稍後我就送去給你，放心好啦……”\n"NOR,
+        CYN"$N%s拿出一%s%s%s遞給了$n%s，説道：“麻煩你，我想把它改成 \"%s\" 。”\n"
+        "$N%s説罷，又拿出了"HIR"紅%s、"HIG"綠%s、"HIB"藍%s共三顆寶石，還夾了點什麼，一併塞給了$n%s。\n"
+        "$n%s接過了水晶，説道：“好罷，稍後我就送去給你，放心好啦……”\n"NOR,
             t,query("unit", sword),query("name", sword),t,t,type,
             t, t, t, t, t,
             t, t), me, this_object() );
     */
     message_vision( sprintf(
-        CYN"$N%s拿出一%s%s%s遞給了$n%s，說道：“麻煩你，我想把它改成 \"%s\" 。”\n"
-        "$N%s說罷，又拿出了兩顆寶石，還夾了點什麼，一並塞給了$n%s。\n"
-        "$n%s接過了水晶，說道：“好罷，稍後我就送去給你，放心好啦……”\n"NOR,
+        CYN"$N%s拿出一%s%s%s遞給了$n%s，説道：“麻煩你，我想把它改成 \"%s\" 。”\n"
+        "$N%s説罷，又拿出了兩顆寶石，還夾了點什麼，一併塞給了$n%s。\n"
+        "$n%s接過了水晶，説道：“好罷，稍後我就送去給你，放心好啦……”\n"NOR,
             t,query("unit", sword),query("name", sword),t,t,type,
             t, t, t, t, t,
             t, t), me, this_object() );
@@ -230,11 +230,11 @@ void send_sj( object me, int me_mark, int set )
 
     if( environment(me) == environment(this_object()) )
         message_vision( sprintf(
-        CYN"$n%s把一%s%s%s遞給了$N%s，說道：“你要改的水晶已經改好了，拿去用吧。”\n"NOR,
+        CYN"$n%s把一%s%s%s遞給了$N%s，説道：“你要改的水晶已經改好了，拿去用吧。”\n"NOR,
         t,query("unit", s),query("name", s),t,t),me,this_object());
     else message_vision( sprintf(
         CYN"只見一位%s%s匆匆地走了過來，拿出一%s%s%s交給了$N%s。\n"
-        "%s%s說道：“你要改的水晶已經改好了，拿去用吧。”說完，%s%s又匆匆地離開了。\n"NOR,
+        "%s%s説道：“你要改的水晶已經改好了，拿去用吧。”説完，%s%s又匆匆地離開了。\n"NOR,
         query("name"),t,query("unit", s),query("name", s),t,t,
         query("name"), t, query("name"), t ), me );
 

@@ -6,8 +6,8 @@ void create()
 {
         set("short", "鄂魚潭對岸");
         set("long", @LONG
-這裡是鄂魚潭的對岸，但見前方有一洞口(dong)，些許陽
-光從裡面射了進來。
+這裏是鄂魚潭的對岸，但見前方有一洞口(dong)，些許陽
+光從裏面射了進來。
 LONG);
 
        set("exits", ([
@@ -52,10 +52,10 @@ int do_cross(string arg)
                 ob3 = load_object(__DIR__"eyutan3");
 
         if (me->is_busy())
-                return notify_fail("你現在正忙著呢！\n");
+                return notify_fail("你現在正忙着呢！\n");
 
         if (me->is_fighting())
-                return notify_fail("你還是先把你面前這個家伙解決了再說。\n");
+                return notify_fail("你還是先把你面前這個傢伙解決了再説。\n");
 
         n = me->query_skill("dodge");
         

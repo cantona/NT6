@@ -10,7 +10,7 @@ int query_neili_improve(object me)
 }
 
 mapping *action = ({
-([      "action" : "$N身形一轉，拳頭攜著疾速旋轉的氣流揮出，疾如閃電，勢如雷霆，擊向$n",
+([      "action" : "$N身形一轉，拳頭攜着疾速旋轉的氣流揮出，疾如閃電，勢如雷霆，擊向$n",
         "dodge"  : 50,
         "force"  : 300,
         "attack" : 120,
@@ -19,7 +19,7 @@ mapping *action = ({
         "lvl"    : 0,
         "damage_type": "震傷" 
 ]), 
-([      "action" : "$N身形一轉，拳頭攜著疾速旋轉的氣流揮出，疾如閃電，勢如雷霆，擊向$n",
+([      "action" : "$N身形一轉，拳頭攜着疾速旋轉的氣流揮出，疾如閃電，勢如雷霆，擊向$n",
         "dodge"  : 50,
         "force"  : 332,
         "attack" : 112,
@@ -37,7 +37,7 @@ mapping *action = ({
         "lvl"    : 220,
         "damage_type": "震傷"
 ]),
-([      "action" : "$N攻勢忽緩而不疏，$w變化無常，捉摸不定向$n慢慢卷去",
+([      "action" : "$N攻勢忽緩而不疏，$w變化無常，捉摸不定向$n慢慢捲去",
         "dodge"  : 75,
         "force"  : 410,
         "attack" : 143,
@@ -76,7 +76,7 @@ int practice_skill(object me)
                 return notify_fail("你的體力不夠練逆九陰心法。\n");
          
         if (me->query_condition("jiuyin-except"))
-                return notify_fail("你完全無法控制自已，還哪裡有心情去修煉逆九陰心法？\n"); 
+                return notify_fail("你完全無法控制自已，還哪裏有心情去修煉逆九陰心法？\n"); 
         
         if (me->query_skill("jiuyin-shengong", 1) > 1)
         {
@@ -91,7 +91,7 @@ int practice_skill(object me)
         
         if( query("neili", me)<400 && random(10)<3 )
         {      
-                message_vision(HIY "突然你但覺一股無明真氣沖至你頭頂。隨即你只感到全身就像被撕裂般痛苦!\n"NOR,me);         
+                message_vision(HIY "突然你但覺一股無明真氣衝至你頭頂。隨即你只感到全身就像被撕裂般痛苦!\n"NOR,me);         
                 me->apply_condition("jiuyin-except", skill + (int)me->query_condition("jiuyin-except"));
                 return 1;
         }

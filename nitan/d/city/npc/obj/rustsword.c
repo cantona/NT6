@@ -12,7 +12,7 @@ void create()
                 set_default_object(__FILE__);
         else {
                 set("unit", "柄");
-                set("long", "這是一柄鏽跡斑斑的鋼劍，不過似乎隱藏著一些光芒。\n");
+                set("long", "這是一柄鏽跡斑斑的鋼劍，不過似乎隱藏着一些光芒。\n");
                 set("value", 400000);
                 set("material", "steel");
                 set("wield_msg", "$N「唰」的一聲抽出一柄$n握在手中。\n");

@@ -24,7 +24,7 @@ int main(object me, string str)
         z0=query("coor/z", room);
    
         if (! x0 && ! y0 && ! z0 && base_name(room) != "/d/city/guangchang") 
-                return notify_fail(WHT "這個地方不能使用locate指令，只有在有task發布的地區才可以使用！\n" NOR);
+                return notify_fail(WHT "這個地方不能使用locate指令，只有在有task發佈的地區才可以使用！\n" NOR);
                 
         if (! str) 
                 return notify_fail("指令格式: locate <物品>\n");

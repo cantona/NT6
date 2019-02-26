@@ -22,7 +22,7 @@ int perform(object me, object target)
 
         if( !objectp(weapon=query_temp("handing", me)) ||
             query("skill_type", weapon) != "throwing" )
-                return notify_fail("你現在手中沒有拿著暗器，難以施展" + name() + "。\n");
+                return notify_fail("你現在手中沒有拿着暗器，難以施展" + name() + "。\n");
 
         if (weapon->query_amount() < 1)
                 return notify_fail("你手中沒有針，無法施展" + name() + "。\n");
@@ -44,7 +44,7 @@ int perform(object me, object target)
                                    "個，趕快進攻吧！\n");
 
         if (! living(target))
-                return notify_fail("對方都已經這樣了，用不著這麼費力吧？\n");
+                return notify_fail("對方都已經這樣了，用不着這麼費力吧？\n");
 
         addn("neili", -120, me);
         weapon->add_amount(-1);

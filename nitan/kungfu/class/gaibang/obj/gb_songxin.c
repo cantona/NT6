@@ -120,7 +120,7 @@ void killer_clone(object me)
 {
         object obj;
 
-        tell_object(me,"糟糕，又沖上來了個人。。!!! \n");
+        tell_object(me,"糟糕，又衝上來了個人。。!!! \n");
         obj = new("/kungfu/class/gaibang/npc/npc2");
         set("target", me, obj);
         obj->move(environment(me));
@@ -131,7 +131,7 @@ void stealer_clone(object me)
 {
         object obj;
 
-        tell_object(me,"糟糕，又沖上來了個人。。!!! \n");
+        tell_object(me,"糟糕，又衝上來了個人。。!!! \n");
         obj = new("/kungfu/class/gaibang/npc/snpc2");
         set("target", me, obj);
         obj->move(environment(me));

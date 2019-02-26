@@ -41,7 +41,7 @@ int perform(object me, object target)
                 return notify_fail("你沒有激發靈蛇杖法，無法使用「橫行無忌」！\n");
 
        if (! living(target))
-              return notify_fail("對方都已經這樣了，用不著這麼費力吧？\n");
+              return notify_fail("對方都已經這樣了，用不着這麼費力吧？\n");
 
         msg = HIY "$N" HIY "一聲冷笑，手中的" + weapon->name() + HIY "忽然變得"
               "如同活物一般，時上時下，忽左忽右，不知攻向$n" HIY "何處！\n" NOR;

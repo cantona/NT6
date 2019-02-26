@@ -6,7 +6,7 @@ void create()
 	      set_name(HIC"旗子"NOR, ({"fwar flag","flag"}) );
         set_weight(300);
         set("unit", "面");
-        set("long", "一面大旗上描繪著不知名的圖騰，看來你似乎可以將它檢起。\n");
+        set("long", "一面大旗上描繪着不知名的圖騰，看來你似乎可以將它檢起。\n");
         set("value", 1);
         set("no_store",1);
         set("no_sell", 1);
@@ -24,7 +24,7 @@ int do_get(string arg) {
 	if(!me) return 0;
 	if(arg == "all" || !arg || !ob = present(arg, environment(me))) return 0;
 	if(ob != this_object()) return 0;
-	if(present("fwar flag", me)) return notify_fail("你身上已經有一只旗子了，先去插好再來吧。\n");
+	if(present("fwar flag", me)) return notify_fail("你身上已經有一隻旗子了，先去插好再來吧。\n");
 	if(ob->move(me)) {
 		me->start_busy(2);
 		FWAR_D->get_flag(me, ob);

@@ -31,7 +31,7 @@ void create()
         set_skill("huashan-sword", 80);
         map_skill("parry", "huashan-sword");
         map_skill("sword", "huashan-sword");
-        create_family("昆侖派", 4, "弟子");
+        create_family("崑崙派", 4, "弟子");
 
         setup();
         carry_object("/d/wudang/obj/bluecloth")->wear();

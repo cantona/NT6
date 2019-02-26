@@ -10,8 +10,8 @@ void create()
 {
      set("short", "峭壁");
         set("long", @LONG
-這是位于終南山的一處峭壁，遠處傳來洶湧的流水聲，周圍是陰
-暗的叢林。一面光滑的大石(stone)上面似乎密密麻麻地刻著些字。
+這是位於終南山的一處峭壁，遠處傳來洶湧的流水聲，周圍是陰
+暗的叢林。一面光滑的大石(stone)上面似乎密密麻麻地刻着些字。
 LONG );
      set("exits", ([ /* sizeof() == 1 */ 
          "south" : "/d/changan/zhongnan.c",

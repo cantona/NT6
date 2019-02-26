@@ -24,7 +24,7 @@ int permit_recruit(object ob)
         if( query("detach/歐陽世家", ob) || 
             query("betrayer/times", ob) )
         {
-                message_vision("$N搖搖頭對$n說：你反復無常，我不能收你為徒！\n",
+                message_vision("$N搖搖頭對$n説：你反覆無常，我不能收你為徒！\n",
                                me, ob);
                 return 0;
         }

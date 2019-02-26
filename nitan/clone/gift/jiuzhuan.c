@@ -9,8 +9,8 @@ void create()
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("long", "一顆金色的仙丹，傳說是太上老君"
-                              "精心修煉的靈丹妙藥。成功幾率100%"
+                set("long", "一顆金色的仙丹，傳説是太上老君"
+                              "精心修煉的靈丹妙藥。成功機率100%"
                             "增加先天各四點\n");
                 set("base_value", 150000);
                 set("base_weight", 200);
@@ -68,7 +68,7 @@ int do_effect(object me)
                 addn("gift/str/succeed", 1, me);
         }
 
-        write(HIM "冥冥中你有所感悟。只覺得靈台一片空明，純凈無比。\n" NOR);
+        write(HIM "冥冥中你有所感悟。只覺得靈台一片空明，純淨無比。\n" NOR);
         addn("magic_points", 1000+random(1000), me);
 
         add_amount(-1);

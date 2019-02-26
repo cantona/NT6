@@ -53,7 +53,7 @@ int do_zuan(string arg)
             message("vision", me->name() + "滋溜一下不見了。\n",
                     environment(me), ({me}) );
             me->move(__DIR__"midao");
-            message("vision", me->name() + "從井裡鑽了出來。\n",
+            message("vision", me->name() + "從井裏鑽了出來。\n",
                     environment(me), ({me}) );
             delete_temp("marks/鑽1", this_player());
 

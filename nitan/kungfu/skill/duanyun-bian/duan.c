@@ -134,7 +134,7 @@ int second_hit(object me, object target){
                 } else if(random(ap)>dp/3 && objectp(query_temp("weapon",target)) && me->is_fighting() && random(4)==1){
 
                         message_combatd(HIG"\n$n見敵人招勢兇猛，忙舉起手中"+query("name", query_temp("weapon", target))+HIG"招架。\n",me,target);
-                        message_combatd(HIW"\n$N鞭梢微揚，已經將$n手中的"+query("name", query_temp("weapon", target))+HIW"卷住，兩人同時運力回奪。\n"NOR,me,target);
+                        message_combatd(HIW"\n$N鞭梢微揚，已經將$n手中的"+query("name", query_temp("weapon", target))+HIW"捲住，兩人同時運力回奪。\n"NOR,me,target);
 
                         me->start_busy(3);
                         target->start_busy(3);
@@ -214,7 +214,7 @@ int duo(object me, object target)
 
                 if( query("neili", me)>query("neili", target)){
 
-                        message_combatd(HIG"\n$N運足了氣力，猛地將"+query("name", query_temp("weapon", me))+HIG"向後一拉，將$n手中的"+query("name", query_temp("weapon", target))+HIG"拉得脫手而出，掉在了地上。\n"NOR,me,target);
+                        message_combatd(HIG"\n$N運足了氣力，猛地將"+query("name", query_temp("weapon", me))+HIG"向後一拉，將$n手中的"+query("name", query_temp("weapon", target))+HIG"拉得脱手而出，掉在了地上。\n"NOR,me,target);
 
                         message_combatd(HIG"\n$N順手就是一招，向$n擊去。"NOR,me,target);
 
@@ -233,7 +233,7 @@ int duo(object me, object target)
                         target->start_busy(2+random(3));
                 } else {
 
-                        message_combatd(HIG"\n$n運足了氣力，猛地將"+query_temp("weapon",query("name",  target))+HIG"向後一拉，將$N手中的"+query("name", query_temp("weapon", me))+HIG"拉得脫手而出，掉在了地上。\n"NOR,me,target);
+                        message_combatd(HIG"\n$n運足了氣力，猛地將"+query_temp("weapon",query("name",  target))+HIG"向後一拉，將$N手中的"+query("name", query_temp("weapon", me))+HIG"拉得脱手而出，掉在了地上。\n"NOR,me,target);
 
                         query_temp("weapon", me)->move(environment(me));
 
@@ -321,7 +321,7 @@ int duo2(object me, object target){
 
                 } else {
 
-                        message_combatd(HIG"\n$n運足了氣力，猛地將$N手中的"+query("name", query_temp("weapon", me))+HIG"拉得脫手而出，掉在了地上。\n"NOR,me,target);
+                        message_combatd(HIG"\n$n運足了氣力，猛地將$N手中的"+query("name", query_temp("weapon", me))+HIG"拉得脱手而出，掉在了地上。\n"NOR,me,target);
 
                         query_temp("weapon", me)->move(environment(me));
 

@@ -66,7 +66,7 @@ int perform(object me, object target)
                 target->receive_wound("qi", damage/2);
                 addn("neili", -500, me);
                 msg += HIR"
-$n只見漫天都是杖影，根本無從招架，只有挨打的份兒，結果每一杖都被打中，直打得滿頭血包、渾身血條，且五臟六腑亦被重創，鮮血自嘴角汩汩流個不休，眼看就要摔暈在地！！！\n"NOR;
+$n只見漫天都是杖影，根本無從招架，只有捱打的份兒，結果每一杖都被打中，直打得滿頭血包、渾身血條，且五臟六腑亦被重創，鮮血自嘴角汩汩流個不休，眼看就要摔暈在地！！！\n"NOR;
         } else
         {
                 me->start_busy(1);

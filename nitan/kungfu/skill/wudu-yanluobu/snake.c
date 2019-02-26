@@ -43,7 +43,7 @@ int perform(object me, object target)
        else
         {
        me->start_busy(4);
-        msg = HIR"可是$n以靜制動，緊守門戶，絲毫不受$N的影響,$N自己倒累的滿頭大汗！\n"NOR;
+        msg = HIR"可是$n以靜制動，緊守門户，絲毫不受$N的影響,$N自己倒累的滿頭大汗！\n"NOR;
         message_vision(msg, me, target);
        }
         return 1;

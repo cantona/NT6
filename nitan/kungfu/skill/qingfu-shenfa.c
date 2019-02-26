@@ -9,7 +9,7 @@ string martialtype() { return "dodge"; }
 string *dodge_msg = ({
         "只見$n一招"HIC"「福滿乾坤」"NOR"，身形陡然縱起，躲過了$N這一招。\n",
         "$n一式"HIC"「五蝠獻壽」"NOR"，身形晃動，向一旁飄出，避開了$N這一招。。\n",
-        "$n使出"HIC"「洞天福地」"NOR"，一個空心筋鬥向後翻出，避開了$N的凌厲攻勢。\n",
+        "$n使出"HIC"「洞天福地」"NOR"，一個空心筋斗向後翻出，避開了$N的凌厲攻勢。\n",
         "$n一招"HIC"「雲龍百蝠」"NOR"，身隨意轉，$N只覺眼前一花，$n已繞至$N的身後。\n",
 });
 
@@ -80,8 +80,8 @@ mixed valid_damage(object ob, object me, int damage, object weapon)
                 switch (random(2))
                 {
                 case 0:
-                        result += (["msg" : HIG "只見$n" HIG "長嘯一聲猶如一只蝙"
-                                            "蝠一樣縱身而起，于半空倒立，$N" HIG
+                        result += (["msg" : HIG "只見$n" HIG "長嘯一聲猶如一隻蝙"
+                                            "蝠一樣縱身而起，於半空倒立，$N" HIG
                                             "這招卻撲了個空。\n" NOR]);
                         break;
 
@@ -97,8 +97,8 @@ mixed valid_damage(object ob, object me, int damage, object weapon)
                 switch (random(2))
                 {
                 case 0:
-                        result = HIY "只見$n" HIY "長嘯一聲猶如一只蝙"
-                                 "蝠一樣縱身而起，于半空倒立，可是$N"
+                        result = HIY "只見$n" HIY "長嘯一聲猶如一隻蝙"
+                                 "蝠一樣縱身而起，於半空倒立，可是$N"
                                  HIY "精通易理，將其中虛實辨得清清楚楚。\n" NOR;
 
                 default:

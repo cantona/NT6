@@ -38,7 +38,7 @@ int perform(object me, object target)
                 return notify_fail("你現在的真氣不足，難以施展" + name() + "。\n");
 
         if (! living(target))
-                return notify_fail("對方都已經這樣了，用不著這麼費力吧？\n");
+                return notify_fail("對方都已經這樣了，用不着這麼費力吧？\n");
 
         msg = WHT "$N" WHT "身形一展，施出鐵掌絕技「" HIR "五指刀" NOR +
               WHT "」，掌鋒激起層層氣浪，朝$n" WHT "狂劈而去。\n" NOR;

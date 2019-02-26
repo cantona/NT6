@@ -6,7 +6,7 @@ void create()
         set_name("計老人", ({ "ji laoren", "ji"}));
         set("gender", "男性");
         set("age", 83);
-        set("long", "滿頭白發，竟無一根是黑的，身材甚是高大，
+        set("long", "滿頭白髮，竟無一根是黑的，身材甚是高大，
 只是弓腰曲背，臉上全是皺紋，衰老已極。\n");
         set("attitude", "friendly");
         set("combat_exp", 475000);
@@ -55,5 +55,5 @@ string ask_li()
     if (!ob) return "這孩子，不知道又跑哪去了，唉。。。\n";
     where = environment(ob);
        if (!where) return "這孩子，不知道又跑哪去了，唉。。。\n";
-    return "哦，這孩子好象跑到"+query("short", where)+"玩去了。";
+    return "哦，這孩子好像跑到"+query("short", where)+"玩去了。";
 }

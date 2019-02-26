@@ -10,7 +10,7 @@ void create()
         if (clonep())
                 destruct(this_object());
         else {
-                set("long", HIC "這是一柄形如冷月的寶刀，整個刀身冷氣森森，銳利無比。\n" NOR);
+                set("long", HIC "這是一柄形如冷月的寶刀，整個刀身冷氣森森，鋭利無比。\n" NOR);
                 set("unit", "柄");
                 set("value", 800000);
                 set("no_sell", 1);

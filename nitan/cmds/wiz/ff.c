@@ -19,7 +19,7 @@ int main(object me, string arg)
 
         if (! ob) ob = present(dest, environment(me));
         if (! ob) ob = find_object(resolve_path(query("cwd", me), dest));
-        if (! ob) return notify_fail("這裡沒有「" + dest + "」。\n");
+        if (! ob) return notify_fail("這裏沒有「" + dest + "」。\n");
 
         file = function_exists(func, ob, 1);
         if (! file)
@@ -34,7 +34,7 @@ int help()
         write(@TEXT
 指令格式：ff <物件> <函數名稱>
 
-這個指令可以找出指定物件中的某個函數定義在哪一個檔案裡。
+這個指令可以找出指定物件中的某個函數定義在哪一個檔案裏。
 TEXT );
         return 1;
 }

@@ -51,7 +51,7 @@ void greeting(object ob)
         {
                 if( query("age", ob)<30 )
                 {
-                        message_vision("賣花姑娘沖$P甜甜一笑：姑娘不買朵鬱金香嗎？\n",ob);
+                        message_vision("賣花姑娘衝$P甜甜一笑：姑娘不買朵鬱金香嗎？\n",ob);
                         return;
                 }
         }
@@ -59,12 +59,12 @@ void greeting(object ob)
         {
                 if( query("couple", ob) )
                 {
-                        message_vision("賣花姑娘沖著$P笑著：不給您的妻子買束花嗎？\n",ob);
+                        message_vision("賣花姑娘衝着$P笑着：不給您的妻子買束花嗎？\n",ob);
                         return;
                 }
                 else
                 {
-                        message_vision("賣花姑娘沖著$P笑著：不給心上人買束紅玫瑰嗎？\n",ob);
+                        message_vision("賣花姑娘衝着$P笑着：不給心上人買束紅玫瑰嗎？\n",ob);
                         return;
                 }
         }

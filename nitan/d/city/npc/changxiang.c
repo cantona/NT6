@@ -54,7 +54,7 @@ int accept_object(object me, object ob)
         if ( val > 0 )
         {
                 command("look"+query("id", me));
-                write("常翔面無表情的說道：我告訴過你要交多少錢的。\n");
+                write("常翔面無表情的説道：我告訴過你要交多少錢的。\n");
         }
         return 0;
 }

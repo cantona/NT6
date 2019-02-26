@@ -16,7 +16,7 @@ void   respone_for_challenge(object me);
 
 mixed *story = ({
         (: show_time :),
-        "一個神秘的人來到了中原...",
+        "一個神祕的人來到了中原...",
         (: create_challenger :),
         (: master_opinion, 1 :),
         (: master_opinion, 2 :),
@@ -40,23 +40,23 @@ object rob;             // 應戰者
 object *ultra ;         // 大宗師
 
 string *too_cheap_msg = ({
-        "$N怒道：“誰敢這麼說？你算是什麼人？”",
+        "$N怒道：“誰敢這麼説？你算是什麼人？”",
         "“砰”的一聲，$N被打得飛了出去，眼看是活不成了。",
         "達摩祖師：“罪過！罪過！”",
 });
 
 string *fenco = ({
         "王語嫣", "黃蓉", "趙敏", "苗若蘭",
-        "袁紫衣", "水笙", "阿珂", "岳靈珊",
+        "袁紫衣", "水笙", "阿珂", "嶽靈珊",
         "霍青桐", "小龍女",
 });
 
 string *fenmsg = ({
         "快快快！$C！快快快！",
-        "沖啊！$C！沖啊！$C！",
+        "衝啊！$C！衝啊！$C！",
         "$C，加油！$C加油！",
         "$C努力呀！就看你的啦！",
-        "$C不要退，往上沖！加油！加油！加油！",
+        "$C不要退，往上衝！加油！加油！加油！",
 });
 
 string *menco = ({
@@ -96,7 +96,7 @@ mixed query_story_message(int step)
 string show_time()
 {
         return (random(2)) ? "不知不覺之間，時間到了" + NATURE_D->game_time() + "。"
-                           : "歲月如梭，說話間就到了" + NATURE_D->game_time() + "。";
+                           : "歲月如梭，説話間就到了" + NATURE_D->game_time() + "。";
 }
 
 mixed create_challenger()
@@ -114,7 +114,7 @@ mixed create_challenger()
         ob->move("/d/city/guangchang");
         message("vision", ob->name() + "大搖大擺的走了過來，當街一立！\n",
                           environment(ob));
-        CHANNEL_D->do_channel(this_object(), "rumor", "聽說" +
+        CHANNEL_D->do_channel(this_object(), "rumor", "聽説" +
                 "從"+query("nation", ob)+"來了一個名叫"+
                 ob->name(1) + "的人。");
         next = NOT_READY;
@@ -162,7 +162,7 @@ mixed master_opinion(int n)
 
                 if( query("nation", cob) == "日本" )
                 {
-                        ob->force_me("chat 哼！哪裡來的日本鬼子？吃" +
+                        ob->force_me("chat 哼！哪裏來的日本鬼子？吃" +
                                      RANK_D->query_self(ob) + "一招！");
                         next = CHALLENGER_KILLED_BY_ULTRA;
                         return 1;
@@ -210,7 +210,7 @@ mixed continue_story(int n)
 
         case CHALLENGER_KILLED_BY_ULTRA:
                 cob->force_me("chat 八格呀路！");
-                CHANNEL_D->do_channel(this_object(), "rumor", "聽說日本"
+                CHANNEL_D->do_channel(this_object(), "rumor", "聽説日本"
                         "鬼子" + cob->name(1) + "被打得他媽都認不出他來了。");
                 destruct(cob);
                 stop_story();
@@ -220,7 +220,7 @@ mixed continue_story(int n)
                 cob->force_me("chat* haha");
                 stop_story();
                 CHANNEL_D->do_channel( this_object(),
-                        "rumor","聽說來自"+query("nation", cob)+
+                        "rumor","聽説來自"+query("nation", cob)+
                         "的" + cob->name(1) + "在中國居然沒有對手，真是"
                         "中原武林的奇恥大辱！");
                 return cob->name(1) + "：“中原武林，不過如此！我去了！”";
@@ -235,8 +235,8 @@ mixed continue_story(int n)
                                 rob->lost();
                         }
                         CHANNEL_D->do_channel( this_object(),
-                        "rumor","聽說"+accepted+"在和"+query("nation", cob)+
-                        "" + cob->name(1) + "交手的時候臨陣脫逃，使中原武林蒙羞！");
+                        "rumor","聽説"+accepted+"在和"+query("nation", cob)+
+                        "" + cob->name(1) + "交手的時候臨陣脱逃，使中原武林蒙羞！");
                         return cob->name(1) + "狂笑不止：“懦夫！中國都是一些懦夫！哈哈！”";
                 }
 
@@ -267,11 +267,11 @@ mixed continue_story(int n)
         case 5:
                 return cob->name(1) +
                        (random(2) ? "：“怎麼，還有沒人敢應戰麼？真是讓我失望！”"
-                                   : "：“說什麼中土武學博大精深，原來都是謠傳。”");
+                                   : "：“説什麼中土武學博大精深，原來都是謠傳。”");
 
         case 7:
                 return cob->name(1) +
-                       (random(2) ? "搖搖頭，又嘆嘆氣，一副不屑的樣子。”"
+                       (random(2) ? "搖搖頭，又歎歎氣，一副不屑的樣子。”"
                                    : "哼了一聲，滿臉盡是不屑。");
 
         case 9:
@@ -285,7 +285,7 @@ mixed continue_story(int n)
                                    : "：“哈哈哈哈！什麼武術？都是一些騙人的東西！我走了！”");
 
         case 11:
-                CHANNEL_D->do_channel(this_object(), "rumor", "聽說來自" +
+                CHANNEL_D->do_channel(this_object(), "rumor", "聽説來自" +
                         query("nation", cob)+"的"+cob->name(1)+"在中國"
                         "耀武揚威了一番後安然的回國去了，真是恥辱。");
                 return 0;
@@ -348,7 +348,7 @@ void accept_for_challenge(object me)
         if (! fam) fam = ""; else fam += "高手";
         me->force_me("chat* heng");
         me->force_me("chat " + cob->name(1) + "少要猖狂，我來了！");
-        CHANNEL_D->do_channel(this_object(), "rumor", "聽說" + fam +
+        CHANNEL_D->do_channel(this_object(), "rumor", "聽説" + fam +
                    me->name(1) + "挺身而出，接下了" + cob->name(1) + "的挑戰！");
         rob = me;
         accepted = me->name(1);

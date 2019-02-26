@@ -13,7 +13,7 @@ void create()
         set("long", @LONG
 這是北城門，因為曾經失火，到現在城牆還是黑乎乎的，因此白
 紙黑字的官府告示(gaoshi)就顯得特別現眼。北方是一片崇山峻嶺，
-一條黃土小徑在山裡蜿蜒而上。
+一條黃土小徑在山裏蜿蜒而上。
 LONG );
         set("item_desc", ([
                 "gaoshi" : (:look_gaoshi:),

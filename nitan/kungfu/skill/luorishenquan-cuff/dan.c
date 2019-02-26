@@ -29,7 +29,7 @@ int perform(object me, object target)
 
         if( objectp(weapon=query_temp("weapon", me)) || 
             objectp(weapon=query_temp("handing", me)) )
-                return notify_fail("你必須空著雙手才能使用拳法絕招。\n");
+                return notify_fail("你必須空着雙手才能使用拳法絕招。\n");
 
         if ((int)me->query_skill("luorishenquan-cuff", 1) < 200)
                 return notify_fail("你的落日神拳不夠嫻熟，不會使用「落日」。\n");
@@ -40,7 +40,7 @@ int perform(object me, object target)
         if( query("neili", me)<800 )
                 return notify_fail("你現在內力太弱，不能使用「落日」。\n");
                         
-        msg = HIY "\n$N" HIY "仰天發出一聲長笑，使出落日神拳的絕招﹝落日﹞，\n"
+        msg = HIY "\n$N" HIY "仰天發出一聲長笑，使出落日神拳的絕招［落日］，\n"
               "就似燦爛無比的夕陽，頓時間天地亦為之變色！\n" NOR;
 
         ap = me->query_skill("cuff") + me->query_skill("force");

@@ -20,10 +20,10 @@ int main(object me, string arg)
                 return notify_fail("你還是專心拱豬吧！\n");
 
         if (me->is_busy())
-                return notify_fail("你現在正忙著呢！\n");
+                return notify_fail("你現在正忙着呢！\n");
 
         if (me->is_fighting())
-                return notify_fail("戰鬥中吐納，好象只有神仙才能做到。\n");
+                return notify_fail("戰鬥中吐納，好像只有神仙才能做到。\n");
 
         if (! arg || ! sscanf(arg, "%d", respirate_cost))
                 return notify_fail("你要花多少精修行？\n");
@@ -123,7 +123,7 @@ int help(object me)
         write(@HELP
 指令格式 : respirate|tuna [<耗費「精」的量>]
  
-當你的年齡大于24歲以後，可以通過打坐修行，利用「煉精化氣，煉
+當你的年齡大於24歲以後，可以通過打坐修行，利用「煉精化氣，煉
 氣化神，煉神還虛」的方法將你的精轉變成精力。注意：你不能在不
 能戰鬥的地方吐納。
 

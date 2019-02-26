@@ -33,7 +33,7 @@ int perform(object me, object target)
                 return notify_fail("你現在內力太弱，不能使用玉女無情。\n");
 
         msg = HIB "\n\n$N真氣催動，帶得劍意縱橫無情！\n" NOR;
-        msg += HIY "\n$N右手支頤，左袖輕輕揮出，長嘆一聲，臉現寂寥之意，無奈中使出殺招。\n\n" NOR;
+        msg += HIY "\n$N右手支頤，左袖輕輕揮出，長歎一聲，臉現寂寥之意，無奈中使出殺招。\n\n" NOR;
 
         ap = attack_power(me, "strike");
         dp = defense_power(target, "dodge");

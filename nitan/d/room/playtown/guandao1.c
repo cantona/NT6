@@ -7,7 +7,7 @@ void create ()
         set("short",  "官道");
         set("long",  @LONG
 這是一條寬闊筆直的官道，黃土路面，足可容得下十馬並馳。往東通向
-汴樑城，附近有一個玩家村。
+汴梁城，附近有一個玩家村。
 LONG);
         set("exits",  ([
                 "west"  :  __DIR__"guandao2",

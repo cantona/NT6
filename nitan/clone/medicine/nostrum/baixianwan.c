@@ -17,7 +17,7 @@ void create()
         set("nostrum", 25);
         set("level", 70);
         set("pour_type", "1");
-        set("long", "這是一粒百涎丸，看上去白熙熙的，還透著亮光，不知道吃了會...\n");
+        set("long", "這是一粒百涎丸，看上去白熙熙的，還透着亮光，不知道吃了會...\n");
         setup();
 }
 
@@ -29,7 +29,7 @@ int do_eat(string arg)
         if(!present(this_object(), me))
                 return notify_fail("你要吃什麼？\n");
         if( me->is_busy() )
-                return notify_fail("別急，慢慢吃，小心別噎著了。\n");
+                return notify_fail("別急，慢慢吃，小心別噎着了。\n");
 
         message_vision(HIG"$N吃下一粒百涎丸，只覺得胸內氣血翻騰，啊...！吃錯藥了！！！\n" NOR, me);
         set("qi", 10, me);

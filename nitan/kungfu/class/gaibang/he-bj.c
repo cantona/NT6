@@ -10,7 +10,7 @@ inherit F_MASTER;
 
 void create()
 {
-        set_name("何不凈", ({"he bujing", "he", "bujing"}));
+        set_name("何不淨", ({"he bujing", "he", "bujing"}));
         set("title", "丐幫七袋弟子");
         set("gender", "男性");
         set("age", 30);

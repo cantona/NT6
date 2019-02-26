@@ -21,7 +21,7 @@ mixed main(object me, string arg, int remote)
 
         if( !wizardp(me) && userp(me) ){
         if( uptime()-me->query_temp("last_who_time")<5)
-                return notify_fail(WHT"你正忙著。\n"NOR);
+                return notify_fail(WHT"你正忙着。\n"NOR);
         }
         me->set_temp("last_who_time",uptime());
 
@@ -71,7 +71,7 @@ mixed main(object me, string arg, int remote)
 
         else str += "在線玩家有：";
 
-     str += NOR"\n□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□\n"NOR;
+     str += NOR"\n━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"NOR;
         ob = filter_array(objects(), (: userp :));
         if (opt_party)
                 ob = filter_array(ob, (: $1->query("family/family_name") ==
@@ -130,7 +130,7 @@ mixed main(object me, string arg, int remote)
                 }
                 if( count%7 ) str += "\n";
         }
-   str += "□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□\n"NOR;
+   str += "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"NOR;
  
          load=query_load_average();
 

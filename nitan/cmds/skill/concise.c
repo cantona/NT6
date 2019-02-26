@@ -38,7 +38,7 @@ int main(object me, string str)
                 return notify_fail("必須是20級以上的裝備才能凝練。\n");
 
         message_vision(HIM "$N" HIM "將" + ob->name() +
-                       HIM "握于掌中，默默運轉內力，開始凝煉。\n" NOR, me);
+                       HIM "握於掌中，默默運轉內力，開始凝鍊。\n" NOR, me);
 
         if (random(100)<50 )
         {
@@ -86,7 +86,7 @@ int help(object me)
 write(@HELP
 指令格式：concise <物品ID>
 
-此指令可讓你將某些物品凝煉。一般來說所有怪外掉落的裝備都可以
+此指令可讓你將某些物品凝鍊。一般來説所有怪外掉落的裝備都可以
 被凝練，不過凝練物品需要比較高的內功等級和內力修為，每次成功
 的凝練都會增加一定數量的靈慧，但是會消耗一點最大內力。
 HELP);

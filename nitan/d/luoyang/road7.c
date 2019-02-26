@@ -8,7 +8,7 @@ void  create  ()
         set("short",  "土路");
         set("long",  @LONG
 這是洛陽城郊的一條茅草土路。洛陽四塞之地，平原遠處天際間，
-隱隱可見群山逶迤。
+隱隱可見羣山逶迤。
 LONG);
         set("exits",  ([  /*  sizeof()  ==  2  */
                 "north" : __DIR__"road2",

@@ -242,7 +242,7 @@ void refresh_stock_data()
         int *nowtime = TIME_D->query_realtime_array();
 
 #ifndef DEBUG
-        if( nowtime[2] < 1 || nowtime[2] > 5 ) // 周末休盤
+        if( nowtime[2] < 1 || nowtime[2] > 5 ) // 週末休盤
                 return;
 
         if( nowtime[1] < 9

@@ -26,7 +26,7 @@ int perform(object me, object target)
                 return notify_fail("「九弧破日」只能對戰鬥中的對手使用。\n");
 
         if( !weapon || query("skill_type", weapon) != "sword" )
-                return notify_fail("你手裡沒有劍，無法使用「九弧破日」絕技！\n");
+                return notify_fail("你手裏沒有劍，無法使用「九弧破日」絕技！\n");
 
         if ( me->query_skill_mapped("sword") != "tianyu-qijian"
                 || me->query_skill_mapped("parry") != "tianyu-qijian" )
@@ -180,7 +180,7 @@ int help(object me)
                  " 兵器，並以滿天花雨的手法拋向敵人，實是厲害不過。然而，此招需有深\n"+
                  " 厚內功作基礎，並需相當的劍法造詣才能得以施展。也正因手上勁道不好\n"+
                  " 掌握，因此這一招的威力及命中率需靠"HIY"經常地使用"CYN"來提高，招式的威力與\n"+
-                 " 所使用的武器質量也有很大關系。不僅如此，當劍法的造詣達到一定境界\n"+
+                 " 所使用的武器質量也有很大關係。不僅如此，當劍法的造詣達到一定境界\n"+
                  " 之時還會出現"HIG"附加功效"CYN"。\n\n"+
 
               WHT" 要求：八荒六合唯我獨尊功　"HIR"140"WHT" 級\n"+

@@ -51,7 +51,7 @@ nosave mapping name_alias = ([
     "thg"         : "Tom's Hardware Guide",
     "yahoo"		: "Yahoo!",
     "pchome"		: "PC Home",
-    "yam"		: "蕃薯籐",
+    "yam"		: "蕃薯藤",
     "bahamut"	:	"Bahamut",
   */
   "udn"      : "聯合新聞網",

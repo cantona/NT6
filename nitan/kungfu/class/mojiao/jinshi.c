@@ -15,7 +15,7 @@ void create()
         set("age", 52);
         set("shen_type", -1);
         set("long", "魔教四大長老之首，此人三尺多高，三尺長的袍子穿在他身上，已經拖下了地。\n"
-                    "他的胡子比這件金袍更長，他的劍比胡子還長。背後卻背著柄四尺長的劍，用\n"
+                    "他的鬍子比這件金袍更長，他的劍比鬍子還長。背後卻揹着柄四尺長的劍，用\n"
                     "黃金鑄成的劍鞘已拖在地上，這個人看起來實在也不像是個人。\n");
         set("attitude", "peaceful");
 
@@ -106,7 +106,7 @@ int accept_ask(object me, string topic)
         {
         case "歷練" :
         case "歷煉" :
-        case "鍛煉" :
+        case "鍛鍊" :
                 return QUEST_D->accept_ask(this_object(), me, topic);
                 break;
 

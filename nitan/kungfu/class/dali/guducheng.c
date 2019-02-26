@@ -13,9 +13,9 @@ mixed ask_skill1();
 void create()
 {
         set_name("古篤誠", ({ "gu ducheng", "gu", "ducheng" }));
-        set("title", "大理國護衛" );
+        set("title", "大理國護衞" );
         set("nickname", HIY "忠心耿耿" NOR);
-        set("long", "他是大理國四大護衛之一。\n");
+        set("long", "他是大理國四大護衞之一。\n");
         set("gender", "男性");
         set("age", 40);
         set("class", "officer");
@@ -87,7 +87,7 @@ void attempt_apprentice(object ob)
 
         command("ah");
         command("say 世子殿下何需如此，只要有事吩咐在下一聲便是。");
-        command("say 若世子不嫌棄，我這裡倒是有一套斧法可以傳授予你。");
+        command("say 若世子不嫌棄，我這裏倒是有一套斧法可以傳授予你。");
 
         return;
 }
@@ -97,13 +97,13 @@ int recognize_apprentice(object ob, string skill)
         if( query("family/family_name", ob) != "段氏皇族" )
         {
                 command("heng");
-                command("say 你算什麼人？古某為何要聽命于你？");
+                command("say 你算什麼人？古某為何要聽命於你？");
                 return -1;
         }
 
         if (skill != "pangen-cuojiefu" && skill != "hammer")
         {
-                command("say 我就只有這套斧法拿得出手，其余的還是找你爹爹學吧。");
+                command("say 我就只有這套斧法拿得出手，其餘的還是找你爹爹學吧。");
                 return -1;
         }
 
@@ -127,7 +127,7 @@ mixed ask_skill1()
                 return RANK_D->query_respect(me) + "和古某素不相識，何出此言？";
 
         if (me->query_skill("pangen-cuojiefu", 1) < 1)
-                return "世子殿下還是先學了在下的盤根錯節斧再說吧。";
+                return "世子殿下還是先學了在下的盤根錯節斧再説吧。";
 
         if( query("family/gongji", me)<150 )
                 return "這個…不是我不願意…只是王爺吩咐了，無功勞者不得…那個。";

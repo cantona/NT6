@@ -13,8 +13,8 @@ void create()
         set("title",  "大理國大宰相" );
         set("long", 
 "他就是大理國的原大宰相，一燈大師的四大弟子之一。
-只見他四十來歲年紀，頭戴逍遙巾，手揮折疊扇，頦下
-一叢漆黑的長須，確是個飽學宿儒模樣。\n");
+只見他四十來歲年紀，頭戴逍遙巾，手揮摺疊扇，頦下
+一叢漆黑的長鬚，確是個飽學宿儒模樣。\n");
         set("gender", "男性");
         set("age", 45);
         set("class", "officer");
@@ -70,7 +70,7 @@ void create()
         }) );
 
         set("inquiry", ([
-                "一燈大師"   : "師父他老人家在裡面。你答對了就可以見他了。\n",
+                "一燈大師"   : "師父他老人家在裏面。你答對了就可以見他了。\n",
                 "段智興"     : "那是我師父俗世的名諱。\n",
                 "劉瑛姑"     : "她是我師父俗世的妃子。\n",
                 "辛未狀元"   : (: ask_reply1 :),
@@ -81,14 +81,14 @@ void create()
         set("chat_chance", 3);
         set("chat_msg", ({
 "朱子柳讀道：“暮春者，春服既成，冠者五六人，童子六七人，浴
-乎沂，風乎舞雩，詠而歸。”讀得興高採烈，一誦三嘆，確似在春
+乎沂，風乎舞雩，詠而歸。”讀得興高采烈，一誦三歎，確似在春
 風中載歌載舞，喜樂無已。\n",
-"朱子柳捻須吟道：
-    “六經蘊籍胸中久，一劍十年磨在手。
+"朱子柳捻鬚吟道：
+    “六經藴籍胸中久，一劍十年磨在手。
       杏花頭上一枝橫，恐泄天機莫露口。
-      一點累累大如鬥，卻掩半床無所有。
+      一點累累大如鬥，卻掩半牀無所有。
       完名直待掛冠歸，本來面目君知否？”\n",
-"朱子柳揮扇指著一排棕櫚道：“風擺棕櫚，千手佛搖折疊扇。”\n",
+"朱子柳揮扇指着一排棕櫚道：“風擺棕櫚，千手佛搖摺疊扇。”\n",
 "朱子柳道：“我有一聯，請你對個下聯：‘琴瑟琵琶，八大王一般頭面’。”\n",
         }) );
         setup();
@@ -107,7 +107,7 @@ void greeting(object ob)
 
         myfam = (mapping)query("family", ob);
         if( myfam["master_name"] == "yideng dashi")
-              say ("朱子柳沖著你點了點頭，說：你回來了。\n");
+              say ("朱子柳衝着你點了點頭，説：你回來了。\n");
         set_temp("du_allow", 1, ob);
         return;
 }
@@ -118,7 +118,7 @@ string ask_reply1()
         set_temp("yideng_du1", 1, me);
         if( query_temp("yideng_du2", me) && query_temp("yideng_du3", me) )
         {
-message_vision("\n朱子柳大驚，站起身來，長袖一揮，向$N一揖到地，說道：“在下拜服。”\n\n", me);
+message_vision("\n朱子柳大驚，站起身來，長袖一揮，向$N一揖到地，説道：“在下拜服。”\n\n", me);
                 set_temp("du_allow", 1, me);
                 return RANK_D->query_respect(me) + "請。";
         }
@@ -131,7 +131,7 @@ string ask_reply2()
         set_temp("yideng_du2", 1, me);
         if( query_temp("yideng_du1", me) && query_temp("yideng_du3", me) )
         {
-message_vision("\n朱子柳大驚，站起身來，長袖一揮，向$N一揖到地，說道：“在下拜服。”\n\n", me);
+message_vision("\n朱子柳大驚，站起身來，長袖一揮，向$N一揖到地，説道：“在下拜服。”\n\n", me);
                 set_temp("du_allow", 1, me);
                 return RANK_D->query_respect(me) + "請。";
         }
@@ -144,7 +144,7 @@ string ask_reply3()
         set_temp("yideng_du3", 1, me);
         if( query_temp("yideng_du1", me) && query_temp("yideng_du2", me) )
         {
-message_vision("\n朱子柳大驚，站起身來，長袖一揮，向$N一揖到地，說道：“在下拜服。”\n\n", me);
+message_vision("\n朱子柳大驚，站起身來，長袖一揮，向$N一揖到地，説道：“在下拜服。”\n\n", me);
                 set_temp("du_allow", 1, me);
                 return RANK_D->query_respect(me) + "請。";
         }

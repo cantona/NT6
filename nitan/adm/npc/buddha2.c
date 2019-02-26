@@ -85,7 +85,7 @@ int ask_recover()
         command("say 你可記得前世你姓甚名誰，我給你的揭語又是什麼？");
         command("say 若你能答得上來我便給你開啟前生全部記憶。");
 
-        tell_object(me, HIW "佛祖在你耳邊說道，若你想起來了就輸入 recollect <id> <揭語> \n" NOR);
+        tell_object(me, HIW "佛祖在你耳邊説道，若你想起來了就輸入 recollect <id> <揭語> \n" NOR);
         return 1;
 }
 
@@ -99,7 +99,7 @@ int do_recollect(string arg)
         object buddha, ob, me = this_player();
 
         if( query_temp("do_recollect") )
-                return notify_fail("我現在正忙著，你請稍後片刻。\n");
+                return notify_fail("我現在正忙着，你請稍後片刻。\n");
 
         if( query("reborn/times", me) )
                 return notify_fail("你的阿賴耶識不是已經打開了嗎？");
@@ -112,13 +112,13 @@ int do_recollect(string arg)
         if( !data ) return notify_fail("我怎麼不記得前世跟你有緣呢？\n");
 
         if( data["reborn_pass"] != pass )
-                return notify_fail("這句哪裡是我給過的揭語！\n");
+                return notify_fail("這句哪裏是我給過的揭語！\n");
 
         if( data["reborn_time"]>query("birthday", me) )
                 return notify_fail("此人轉世之時你已在世上，你又怎麼可能會是他今生投胎之軀？\n");
 
         if( data["gender"] != query("gender", me) )
-                return notify_fail("你于此人轉世之前的性別不一致，你怎麼可能是他呢？\n");
+                return notify_fail("你於此人轉世之前的性別不一致，你怎麼可能是他呢？\n");
 
         if( query("combat_exp", me) >= 100000000 )
                 return notify_fail("你的經驗受今世影響太深，我無法幫你打開阿賴耶識。\n");
@@ -127,7 +127,7 @@ int do_recollect(string arg)
 
         command("say 看來你果然是前世與我有緣之人，待我將你前世記憶打開！");
 
-        message_vision( HIY "\n佛祖說著便朝著$N" HIY "輕輕一揮手。\n\n" NOR
+        message_vision( HIY "\n佛祖説着便朝着$N" HIY "輕輕一揮手。\n\n" NOR
                         HIR "$N" HIR "突然感到頭痛欲裂......\n\n" NOR, me );
 
         my_name = data["name"];
@@ -282,7 +282,7 @@ int do_recollect(string arg)
         if( query("reborn/times", me) == 1 )
         {
                 set("xiantian_force", 1, me);
-                tell_object(me, HIY "你終于脫凡入聖，可以修煉先天真氣了。\n" NOR);
+                tell_object(me, HIY "你終於脱凡入聖，可以修煉先天真氣了。\n" NOR);
         } else
         if( query("reborn/times", me) == 2 )
         {
@@ -292,7 +292,7 @@ int do_recollect(string arg)
                 set("yuanshen/armor", 10, me);
                 set("yuanshen_exp", 1, me);
                 set("yuanshen_level", 1, me);
-                tell_object(me, HIY "你將精力化成元神，終于練得元神出世。\n" NOR);
+                tell_object(me, HIY "你將精力化成元神，終於練得元神出世。\n" NOR);
         } else
         if( query("reborn/times", me) == 3 )
         {
@@ -302,9 +302,9 @@ int do_recollect(string arg)
                 set("yuanshen/armor", 100, me);
                 set("yuanshen_exp", 100000, me);
                 set("yuanshen_level", 100, me);
-                tell_object(me, HIY "你的元神終于可以突破瓶頸，可以繼續修煉了。\n" NOR);
+                tell_object(me, HIY "你的元神終於可以突破瓶頸，可以繼續修煉了。\n" NOR);
         }
-        message("vision", HBRED "【轉世重生】天界：據說有人已得佛祖恩典，開啟了阿賴耶識。\n" NOR, users());
+        message("vision", HBRED "【轉世重生】天界：據説有人已得佛祖恩典，開啟了阿賴耶識。\n" NOR, users());
         me->save();
         me->unconcious();
 

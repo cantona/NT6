@@ -34,7 +34,7 @@ int perform(object me, object target)
                 return notify_fail("你現在真氣不夠，不能使用「迎風一刀斬」。\n");
 
        if (! living(target))
-              return notify_fail("對方都已經這樣了，用不著這麼費力吧？\n");
+              return notify_fail("對方都已經這樣了，用不着這麼費力吧？\n");
 
         msg = HIC "\n$N" HIC "大喝一聲，眼中兇光畢露，手中的" +
               weapon->name() + HIC "化作一道光弧直劈而下，正是扶桑密學「迎風一刀斬」。\n"NOR;

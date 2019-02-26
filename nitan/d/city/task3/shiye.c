@@ -50,7 +50,7 @@ int do_join(string arg)
         if(!arg || arg!="guanfu") return notify_fail("譚友紀道：你要加入什麼組織？\n");
         if( query("officerlvl", ob)>0 )
         {
-                message_vision(HIC"譚友紀說道：你已經是揚州府捕快了。\n"NOR,ob);
+                message_vision(HIC"譚友紀説道：你已經是揚州府捕快了。\n"NOR,ob);
                 return 1;
         }
         if( query("combat_exp", ob)<20000 )
@@ -77,7 +77,7 @@ string ask_me()
                 say("好小子，你怎麼知道我喜歡吃叫化雞？\n");
                 command("lick");
                 say("既然你我成了食友，我就告訴你吧。付耳過來！\n");
-                command("whisper"+query("id", this_player())+"你去北京找全聚德的老板，只要告訴他是我叫你去的，他就會...");
+                command("whisper"+query("id", this_player())+"你去北京找全聚德的老闆，只要告訴他是我叫你去的，他就會...");
                 delete_temp("marks/雞", this_player());
                 set_temp("marks/雞2", 1, this_player());
                 return "今天嗯....啊....那個天氣很好....\n";

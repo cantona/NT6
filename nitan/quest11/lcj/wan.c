@@ -17,7 +17,7 @@ void create()
 	set("age", 62);
 	set("str", 30);
 	set("dex", 26);
-	set("long", "這人紫金臉龐，面帶威嚴，威武有力，站在那裡就象是一座鐵塔。\n");
+	set("long", "這人紫金臉龐，面帶威嚴，威武有力，站在那裏就象是一座鐵塔。\n");
 	set("combat_exp", 100000);
 	set("shen_type", 1);
 	set("attitude", "peaceful");
@@ -35,13 +35,13 @@ void create()
 		"練功" : "東西練武場都可以練的，你去那兒練吧!",
 		"離館" : (:ask_liguan:),  
 		"狄雲" : (: ask_diyun:),	
-		"戚長發" : (: ask_qi:),	
-		"唐詩選輯" : "唐詩選輯？......我沒聽說過。",
-		"連城訣" : "連城決？......我沒聽說過。",
-		"連城劍法" : "什麼連城劍法？我沒聽說過。",
+		"戚長髮" : (: ask_qi:),	
+		"唐詩選輯" : "唐詩選輯？......我沒聽説過。",
+		"連城訣" : "連城決？......我沒聽説過。",
+		"連城劍法" : "什麼連城劍法？我沒聽説過。",
 		"言達平" : "他是我師弟。",
 		"梅念笙" : "鐵骨墨萼梅念笙老先生啊，正是我師傅。",
-		"落花流水":"你說的可是南四奇！",
+		"落花流水":"你説的可是南四奇！",
 		"花鐵幹":"“中平槍花鐵幹”！",
 		"劉乘風":"“柔雲劍劉乘風”！",
 		"陸天抒":"“仁義陸大刀”！",
@@ -64,12 +64,12 @@ int ask_liguan()
 	}
 	if(ob ->query("combat_exp") >= 3000 && objectp(letter = new(__DIR__"obj/letter")) ) {
 		command("nod "+ob->query("id"));
-		command("say 這位" + RANK_D->query_respect(ob)+"可以出去闖盪江湖了，江湖險惡，可千萬小心啊。去和我"+
-			"四徒弟孫均去說一聲吧，他會安排的。");
+		command("say 這位" + RANK_D->query_respect(ob)+"可以出去闖蕩江湖了，江湖險惡，可千萬小心啊。去和我"+
+			"四徒弟孫均去説一聲吧，他會安排的。");
 		            command("say 江湖險惡，若要防身，非有幾件利器堅甲不可。");
             
-            	command("say 老夫當年雲遊江南，曾與一位奇人相交甚好，你可前往尋訪，求得冶鐵□造之術。");
-            	command("say 如果你不解冶鐵□造之術，可以使用 help dazao 獲得詳細信息。");
+            	command("say 老夫當年雲遊江南，曾與一位奇人相交甚好，你可前往尋訪，求得冶鐵煅造之術。");
+            	command("say 如果你不解冶鐵煅造之術，可以使用 help dazao 獲得詳細信息。");
                 letter->move(ob);
                 message_vision("$n給$N一封「"+letter->query("name")+"」。\n",ob,  this_object());        
                    command("say 我看你基礎武功還不夠紮實，就讓我再指點你幾招，你可要看仔細了。");
@@ -113,7 +113,7 @@ string ask_diyun()
 	if(!me->query(QUESTDIR1+"over") || !me->query_temp(QUESTDIR2+"start" ))
 	{
 	   call_out("outwuguan",1,me);
-	   return "你怎麼進來這裡的？";
+	   return "你怎麼進來這裏的？";
 	}
 	if(me->query_temp(QUESTDIR2+"askwan_diyun" ))
 	{
@@ -138,16 +138,16 @@ string ask_qi()
 	if(!me->query(QUESTDIR1+"over") || !me->query_temp(QUESTDIR2+"start" ))
 	{
 	   call_out("outwuguan",1,me);
-	   return "你怎麼進來這裡的？";
+	   return "你怎麼進來這裏的？";
 	}
 	if(me->query_temp(QUESTDIR2+"askwan_qi" ))
 	{
 	   command("say");
-	   return "嘿嘿，在哪裡我也不知道......！";
+	   return "嘿嘿，在哪裏我也不知道......！";
 	}
 	command("look "+me->query("id"));
 	command("haha");
-	command("say 當年戚長發妄想刺殺我，幸虧我發現得及時。這些年，也不知道他哪裡去了。");
+	command("say 當年戚長髮妄想刺殺我，幸虧我發現得及時。這些年，也不知道他哪裏去了。");
 	message_vision(HIY"$N臉上露出得意的神色。\n", ob);
 	command("haha");
 	me->set_temp(QUESTDIR2+"askwan_qi",1);
@@ -163,7 +163,7 @@ void outwuguan(object me)
    if( me->query("combat_exp") <3000 ) return;
 	command("?");
 	message_vision(HIY"$N臉上露出疑惑的神色。\n", ob);
-	command("say 你怎麼進來這裡的？");
+	command("say 你怎麼進來這裏的？");
 	message_vision(HIR"只聽見一聲來人啊，$N被一陣棍棒給打暈了。\n"NOR, me);
 	me->delete("enter_wuguan");
 	inv = filter_array(deep_inventory(me), (: userp :));

@@ -5,7 +5,7 @@ inherit BUNCHER;
 void create()
 {
         set_name("華陀二世", ({ "huatuo ershi", "huatuo", "ershi", "hua", "tuo" }));
-        set("title", "藥舖老板");
+        set("title", "藥鋪老闆");
         set("gender", "男性");
         set("long", "他就是醫術高超的華陀後裔。可是他性格古怪，不是什麼人都醫的。\n");
         set("age", 65);

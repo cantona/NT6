@@ -41,10 +41,10 @@ int perform(object me, object target)
                 return notify_fail("你現在的真氣不足，難以施展" FEI "。\n");
 
         if (! living(target))
-                return notify_fail("對方都已經這樣了，用不著這麼費力吧？\n");
+                return notify_fail("對方都已經這樣了，用不着這麼費力吧？\n");
 
         msg = HIY "$N" HIY "施出降龍十八掌「" HIW "飛龍在天"
-              HIY "」，雙掌翻滾，宛如一條神龍攀蜒于九天之上"
+              HIY "」，雙掌翻滾，宛如一條神龍攀蜒於九天之上"
               "。\n" NOR;  
 
         ap=me->query_skill("strike")+query("str", me)*10;

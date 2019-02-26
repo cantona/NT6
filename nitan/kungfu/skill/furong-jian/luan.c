@@ -42,12 +42,12 @@ int perform(object me, object target)
                 return notify_fail("你現在的真氣不夠，難以施展" LUAN "。\n");
 
         if (! living(target))
-                return notify_fail("對方都已經這樣了，用不著這麼費力吧？\n");
+                return notify_fail("對方都已經這樣了，用不着這麼費力吧？\n");
 
         wn = weapon->name();
 
         msg = HIM "\n$N" HIM "輕嘯一聲，騰空而起，" + wn + "在空中挽出一個劍"
-              HIM "花，頃刻間劍花四散，洋洋洒洒。\n猶如無數花瓣從半空洒向$n"
+              HIM "花，頃刻間劍花四散，洋洋灑灑。\n猶如無數花瓣從半空灑向$n"
               HIM "全身。" NOR;
 
         message_sort(msg, me, target);

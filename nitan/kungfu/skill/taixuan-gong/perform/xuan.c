@@ -71,7 +71,7 @@ int perform(object me, object target)
                          
         }
         if (! living(target))
-              return notify_fail("對方都已經這樣了，用不著這麼費力吧？\n");
+              return notify_fail("對方都已經這樣了，用不着這麼費力吧？\n");
 
         msg = HIW "\n霎時間$N" HIW "只覺思緒狂湧，當即閉上雙眼，再不理睬$n"
               HIW "如何招架，只管施招攻出！此時俠客島石壁上的千百種招"

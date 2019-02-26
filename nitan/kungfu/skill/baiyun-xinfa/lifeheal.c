@@ -19,10 +19,10 @@ int exert(object me, object target)
         notify_fail("不是你要抓的人，湊什麼熱鬧！\n");
         if (!userp(target) && !target->accept_hit(me)) return 0;
         if( me->is_busy() )
-                return notify_fail("你現在正忙著呢，哪有空運功？\n");
+                return notify_fail("你現在正忙着呢，哪有空運功？\n");
 
         if( target->is_busy())
-                return notify_fail(target->name()+"現在正忙著呢！\n");
+                return notify_fail(target->name()+"現在正忙着呢！\n");
 
         if( (int)me->query_skill("baiyun-xinfa") < 20 )
                 return notify_fail("你的白雲心法修為不夠。\n");

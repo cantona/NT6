@@ -9,7 +9,7 @@ void create()
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("long", "相傳為三國劉備招親而制作的慶筵名菜。鱔作龍，雞作鳳，形態逼真，味道鮮美。\n");
+                set("long", "相傳為三國劉備招親而製作的慶筵名菜。鱔作龍，雞作鳳，形態逼真，味道鮮美。\n");
                 set("unit", "碗");
                 set("value", 500);
                 set("food_remaining", 10);

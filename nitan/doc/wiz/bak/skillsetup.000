@@ -1,4 +1,4 @@
-                         關于武功的設置
+                         關於武功的設置
 
 一、打鬥程序公式：
 攻擊能力：ap
@@ -14,14 +14,14 @@ dp = dp + action["dodge"]/100   躲避成功的公式是：random(ap+dp) < dp
 pp = pp + action["parry"]/100   招架成功的公式是：random(ap+pp) < pp
 
 所以，dodge和parry參數越高，對手就越容易躲避或招架成功。這兩個參數
-允許范圍：-90 <-> 90。
+允許範圍：-90 <-> 90。
 
 最終傷害力 = damage + damagebonus
 
 damage = apply/damage * (1+action["damage"]/200)
 damagebonus = query_str() * (1+action["force"]/200)
 
-由于沒有apply/damage，所以空手功夫的damage等于0，action["damage"]也
+由於沒有apply/damage，所以空手功夫的damage等於0，action["damage"]也
 不起作用。而無論空手還是兵器，damagebonus是永遠都有的。
 
 建議大家set combat verbose。
@@ -105,7 +105,7 @@ poyu-quan.c:        破玉拳     華山
 qishang-quan.c:     七傷拳     明教
 shaolin-cuff.c:     少林南拳   南少林
 yujiamu-quan.c:     金剛瑜迦母拳 雪山寺
-zhentian-cuff.c:    震天拳法   昆侖
+zhentian-cuff.c:    震天拳法   崑崙
 "dagger":       "短兵",        family    dodge      parry      force     damage
 shigu-bifa.c:       石鼓打穴筆法 黑木崖
 "dodge":        "輕功",        family    dodge      parry      force     damage
@@ -114,25 +114,25 @@ bixie-jian.c        辟邪劍法   公共
 chanchu-bufa.c      蟾蜍步法   白駝
 chuanhua.c          穿花繞樹   青城
 feixing-shu.c       飛星術     星宿
-feiyan-huixiang.c   飛燕回翔   華山
+feiyan-huixiang.c   飛燕迴翔   華山
 fengshenjue.c       風神訣     泰山
 fuguanglueying.c    浮光掠影   嵩山
 huashan-shenfa.c    華山身法   華山  
 jinyan-gong.c       金雁功     全真
-kunlun-shenfa.c     昆侖身法   昆侖
+kunlun-shenfa.c     崑崙身法   崑崙
 lingboweibu.c       凌波微步   逍遙
 lingxu-bu.c         凌虛步     公共
 piaoyibu.c          飄逸步法   黑木崖
 qiankun-danuoyi.c   乾坤大挪移 明教
 qingfu-shenfa.c     青蝠身法   明教
-qiuyan-nanhui.c     秋雁南回   衡山
+qiuyan-nanhui.c     秋雁南迴   衡山
 shaolin-shenfa.c    少林身法   少林
 shenkong-xing.c     身空行     雪山寺
 shenxing-baibian.c  神行百變   公共
 shuishangpiao.c     鐵掌水上飄 鐵掌
 snowstep.c          梅雪飄香步 凌霄
 taixuan-gong.c      太玄功     公共
-taxue-wuhen.c       踏雪無痕   昆侖
+taxue-wuhen.c       踏雪無痕   崑崙
 tiannan-step.c      天南步法   大理
 tiyunzong.c         梯雲縱     武當
 wudu-yanluobu.c     五毒煙蘿步 五毒
@@ -141,7 +141,7 @@ yanfly.c            燕雙飛     公共
 yanling-shenfa.c    燕靈身法   慕容
 yiwei-dujiang.c     一葦渡江   南少林
 yixingbu.c          意形步法   神龍
-youlong-shenfa.c    遊龍身法   紅花
+youlong-shenfa.c    游龍身法   紅花
 yueying-wubu.c      月影舞步   逍遙
 yunlong-shenfa.c    雲龍身法   雲龍
 yunv-shenfa.c       玉女身法   古墓
@@ -192,7 +192,7 @@ wudu-shengong.c     五毒神功   五毒
 xiantian-qigong.c   先天氣功   全真
 xiaowuxiang.c       小無相功   雪山寺
 xixing-dafa.c       吸星大法   黑木崖
-xuantian-wuji.c     玄天無極功 昆侖
+xuantian-wuji.c     玄天無極功 崑崙
 yijinjing.c         易筋經     南北少林
 yunlong-shengong.c  雲龍神功   雲龍
 yunv-xinfa.c        玉女心法   古墓
@@ -220,10 +220,10 @@ songyang-strike.c:  大嵩陽掌法 嵩山
 suohou-hand.c:      鎖喉擒拿手 丐幫
 yunlong-shou.c:     雲龍手     雲龍
 zhemei-shou.c:      天山折梅手 逍遙
-"hook":         "鉤法",        family    dodge      parry      force     damage
-wudu-goufa.c:       五毒鉤法   五毒
+"hook":         "鈎法",        family    dodge      parry      force     damage
+wudu-goufa.c:       五毒鈎法   五毒
 "leg":          "腿法",        family    dodge      parry      force     damage
-chuanyun-leg.c:     穿雲腿法   昆侖
+chuanyun-leg.c:     穿雲腿法   崑崙
 ruying-leg.c:       如影隨形腿 南少林
 shaolin-leg.c:      少林彈腿   南少林
 "spear":        "槍法",        family    dodge      parry      force     damage
@@ -254,12 +254,12 @@ heisha-zhang.c:            黑砂掌     紅花
 huagu-mianzhang.c:  化骨綿掌   神龍
 huashan-zhangfa.c:  華山掌法   華山(未用)
 hunyuan-zhang.c:    混元掌     華山
-huoyan-dao.c:       火燄刀     雪山
+huoyan-dao.c:       火焰刀     雪山
 jinding-zhang.c:    金頂綿掌   峨嵋
 jingang-strike.c:   大金剛神掌 南少林
 jinshe-zhang.c:     金蛇遊身掌 公共
 kuaihuo-strike.c:   快活十三掌 泰山
-kunlun-strike.c:    昆侖掌     昆侖
+kunlun-strike.c:    崑崙掌     崑崙
 liuyang-zhang.c:    天山六陽掌 逍遙
 sanhua-strike.c:    散花掌     南少林
 sanhua-zhang.c:     散花掌     少林
@@ -271,12 +271,12 @@ wudu-zhang.c:       五毒掌     五毒
 wuluo-zhang.c:      五羅輕煙掌 大理
 xianglong-zhang.c:  降龍十八掌 丐幫
 xingyi-strike.c:    星移掌     慕容
-zhusha-zhang.c:            朱砂掌     鐵掌
+zhusha-zhang.c:            硃砂掌     鐵掌
 "sword":        "劍法",        family    dodge      parry      force     damage
 bixie-jian.c:       辟邪劍法   公共
 bixie-sword.c:      假辟邪劍法 公共
 changge-jian.c:     長歌劍法   公共
-chongling-sword.c:  沖靈劍法   華山
+chongling-sword.c:  衝靈劍法   華山
 damo-jian.c:        達摩劍     少林
 damo-sword.c:       達摩劍     南少林
 duanjia-sword.c:(劍杖)段家劍   大理
@@ -287,12 +287,12 @@ hengshan-sword.c:   衡山劍法   衡山
 huashan-jian.c:     華山劍法   華山(未用)
 huashan-jianfa.c:   華山劍法   華山(未用)
 huashan-sword.c:    華山劍法   華山
-huifeng-jian.c:     回風拂柳劍 峨嵋
+huifeng-jian.c:     迴風拂柳劍 峨嵋
 iron-sword.c:       玄鐵劍法   古墓
 jinshe-jian.c:      金蛇劍法   公共
 kuangfeng-jian.c:   狂風劍法   華山
 liangyi-jian.c:     兩儀劍法   武當
-liangyi-sword.c:    正兩儀劍法 昆侖
+liangyi-sword.c:    正兩儀劍法 崑崙
 lonely-sword.c:     獨孤九劍   華山
 luohua-jian.c:      落花十三劍 紅花
 luoying-shenjian.c: 落英神劍   桃花
@@ -302,16 +302,16 @@ qingmang-sword.c:   青蟒劍法   五毒
 quanzhen-jian.c:    全真劍法   全真
 shedao-qigong.c:(劍杖)蛇島奇功 神龍
 shenghuo-ling.c:    聖火令法   明教
-songfeng-jian.c:    鬆風劍法   青城
+songfeng-jian.c:    松風劍法   青城
 songshan-sword.c:   嵩山劍法   嵩山
 taiji-jian.c:       太極劍法   武當
 taishan-sword.c:    泰山劍法   泰山
 tangshi-jian.c:     唐詩劍法   公共
 tianyu-qijian.c:    天羽奇劍   逍遙
 wudang-jian.c:      武當劍法   武當
-wuyun-jian.c:       五韻七弦劍 黑木崖
+wuyun-jian.c:       五韻七絃劍 黑木崖
 xueshan-sword.c:    雪山劍法   凌霄
-xunlei-sword.c:     迅雷十六劍 昆侖
+xunlei-sword.c:     迅雷十六劍 崑崙
 yunlong-jian.c:     雲龍劍法   雲龍
 yunu-sword.c:       玉女金針十三劍 華山
 yunv-jian.c:        玉女素心劍 古墓
@@ -322,7 +322,7 @@ duoming-jinhua.c:   奪鳴金花   明教
 feixing-shu.c:      飛星術     星宿
 hanxing-bada.c:     寒星八打   公共(應改為紅花會)
 jinshe-zhui.c:      金蛇錐法   公共
-mantian-huayu.c:    滿天花雨   昆侖
+mantian-huayu.c:    滿天花雨   崑崙
 wuying-feidao.c:    無影飛刀   紅花
 xuanyuan-arrow.c:   軒轅箭     神箭八騎
 "unarmed":      "拳腳",        family    dodge      parry      force     damage
@@ -367,7 +367,7 @@ lotus-force     蓮花心法,       emei-force      峨眉心法,
 tianmo-force    天魔大法,       hunyuan-force   混元神功,
 beiming-force   北冥神功,       huagong-force   化功大法,
 xixing-force    吸星大法,       mizong-force    密宗心法,
-huangting-force 黃庭心法,       douzhuan-force  鬥轉星移,
+huangting-force 黃庭心法,       douzhuan-force  斗轉星移,
 wuxiang-force   小無相功,       yijing-force    易筋神功,
 bahuang-force   八荒六合唯我獨尊,
 
@@ -379,9 +379,9 @@ lotus-force     蓮花心法,       emei-force      峨眉心法,
 tianmo-force    天魔大法,       hunyuan-force   混元神功,
 beiming-force   北冥神功,       huagong-force   化功大法,
 xixing-force    吸星大法,       mizong-force    密宗心法,
-huangting-force 黃庭心法,       douzhuan-force  鬥轉星移,
+huangting-force 黃庭心法,       douzhuan-force  斗轉星移,
 shenlong-force  神龍心法,       guangming-force 大光明心法,
-kunlun-force    昆侖心法,       zixia-force     紫霞神功,
+kunlun-force    崑崙心法,       zixia-force     紫霞神功,
 songshan-force  嵩山心法,       taishan-force   泰山心法,
 hengshan-force  衡山心法,       heng-shan-force 恆山心法,
 
@@ -405,8 +405,8 @@ yiwei-steps     一葦渡江,       shenxing-steps  神行百變,
 taxue-steps     踏雪無痕,
 
 baituo-steps    白駝步法,       xiaoyao-steps   逍遙遊,
-shenlong-steps  神龍步法,       lieyan-steps    烈燄身法,
-kunlun-steps    昆侖步法,       emei-steps      峨眉步法,
+shenlong-steps  神龍步法,       lieyan-steps    烈焰身法,
+kunlun-steps    崑崙步法,       emei-steps      峨眉步法,
 songshan-steps  嵩山身法,       taishan-steps   泰山身法,
 hengshan-steps  衡山身法,       heng-shan-steps 恆山身法,
 
@@ -455,10 +455,10 @@ huagong-force   化功大法：      護體真氣、吸取內力、吸取真元
 xixing-force    吸星大法：      護體真氣、吸取內力、吸取真元
 mizong-force    密宗心法：      為人療傷、護體真氣
 huangting-force 黃庭心法：      為人療傷、護體真氣
-douzhuan-force  鬥轉星移：      護體真氣、轉力之術
+douzhuan-force  斗轉星移：      護體真氣、轉力之術
 shenlong-force  神龍心法：      護體真氣
 guangming-force 大光明心法：    護體真氣
-kunlun-force    昆侖心法：      為人療傷、護體真氣
+kunlun-force    崑崙心法：      為人療傷、護體真氣
 zixia-force     紫霞神功：      為人療傷、護體真氣
 songshan-force  嵩山心法：      為人療傷
 taishan-force   泰山心法：      為人療傷
@@ -538,7 +538,7 @@ longzhua-gong   龍爪功,         yingzhua-gong   鷹爪功,
 fengyun-shou    風雲手,         qianye-shou     如來千葉手,
 luohan-quan     羅漢神拳,       sanhua-zhang    散花掌,
 banruo-zhang    般若掌,         guangming-zhang 光明掌法,
-kunlun-zhang    昆侖掌法,       huashan-zhang   華山掌法,
+kunlun-zhang    崑崙掌法,       huashan-zhang   華山掌法,
 xiaobao-juehuo  小寶絕活,       songshan-zhang  嵩山掌法,
 taishan-zhang   泰山掌法,       hengshan-zhang  衡山掌法,
 heng-shan-zhang 恆山掌法,
@@ -578,13 +578,13 @@ By Micro Liang (97-07-01)
    化功大法
    腐屍爪
   姑蘇慕容：
-   鬥轉星移
-   三合指
+   斗轉星移
+   叁合指
   大理段氏：
    六脈神劍
    五羅輕煙掌
   其它：
-   火燄刀
+   火焰刀
    易筋經
    蛇鶴八打
    鱷嘴剪法
@@ -598,9 +598,9 @@ By Micro Liang (97-07-01)
    五虎斷門刀
    六合刀
    八卦刀法
-   漁叟鉤法
+   漁叟鈎法
    柴刀十八路
-   回風拂柳刀
+   迴風拂柳刀
 
 射??英雄傳：
   東邪：
@@ -625,7 +625,7 @@ By Micro Liang (97-07-01)
    先天功
    全真劍法
    金雁功
-   天殍北鬥陣
+   天殍北斗陣
   其它：
    左右互博之術
    空明拳
@@ -637,7 +637,7 @@ By Micro Liang (97-07-01)
     九陰白骨爪
     摧心掌
     易筋鍛骨篇
-    蛇行貍翻
+    蛇行狸翻
     飛絮勁
    空明拳
    鐵掌
@@ -649,7 +649,7 @@ By Micro Liang (97-07-01)
    美人三式：
     貴妃回眸
     小憐橫陳
-    飛燕回翔
+    飛燕迴翔
    英雄三式
    太極刀
 
@@ -664,13 +664,13 @@ By Micro Liang (97-07-01)
    泰山十八盤
    華山劍法
    玉女金針十三式
-   沖靈劍法
+   衝靈劍法
    狂風刀法
    獨孤九劍
    吸星大法
    葵花寶典
    辟邪劍法
-   七弦無形劍
+   七絃無形劍
    玄天指
    潑墨劍法
 
@@ -722,7 +722,7 @@ By Micro Liang (97-07-01)
   華山派：
    鷹蛇生死博
    反兩儀刀法
-  昆侖派：
+  崑崙派：
    兩儀劍法
    無聲無息
   峨萆派：
@@ -736,7 +736,7 @@ By Micro Liang (97-07-01)
    梯雲蹤
    太極拳
    太極劍
-   虎爪絕戶手
+   虎爪絕户手
    武當長拳
    真武七截陣
   少林：

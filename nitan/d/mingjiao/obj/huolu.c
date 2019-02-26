@@ -15,7 +15,7 @@ void create()
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("long", "這是座大火爐，裡面雄火燃燒，可以用來煉鐵。\n");
+                set("long", "這是座大火爐，裏面雄火燃燒，可以用來鍊鐵。\n");
                 set("unit", "座");
                 set("no_get", 1);
         }
@@ -36,13 +36,13 @@ int do_tou(string arg)
         ob = this_object();
         
         if( me->is_busy() || query_temp("pending/job_busy", me) )
-                return notify_fail("你正忙著呢。\n");
+                return notify_fail("你正忙着呢。\n");
 
         if (!arg || sscanf(arg, "%s in %s", item, target) != 2 )
-            return notify_fail("你要將什麼東西放進哪裡？\n");
+            return notify_fail("你要將什麼東西放進哪裏？\n");
 
         if (item != "礦石" || target != "火爐")
-                return notify_fail("你要將什麼東西放進哪裡？\n");
+                return notify_fail("你要將什麼東西放進哪裏？\n");
 
         if ( !kuangshi=present("wujin kuangshi",me) )
                 return notify_fail("你身上並沒有礦石。\n");
@@ -52,7 +52,7 @@ int do_tou(string arg)
 
         message_vision("$N把一"+query("unit", kuangshi)+query("name", kuangshi)+"投進火爐。\n",me);
         destruct(kuangshi);
-        message_vision(HIC"$N拉動風箱，火燄由紅慢慢變青，沖起一丈多高！\n"NOR,me);
+        message_vision(HIC"$N拉動風箱，火焰由紅慢慢變青，衝起一丈多高！\n"NOR,me);
         
         set_temp("in_use",1);
         set_temp("pending/job_busy", 1, me);
@@ -78,7 +78,7 @@ int do_datie(string arg)
         object me=this_player();
 
         if( me->is_busy() || query_temp("pending/job_busy", me) )
-                return notify_fail("你正忙著呢。\n");
+                return notify_fail("你正忙着呢。\n");
 
         if (arg != "tie" && arg != "鐵")
                 return notify_fail("你要打什麼？\n");
@@ -89,7 +89,7 @@ int do_datie(string arg)
         if( query("neili", me)<50 || query("jingli", me)<50 )
                 return notify_fail(RED"你已經精疲力竭了！\n"NOR);
 
-        message_vision("$N揮動大鐵錘，朝著燒紅的鐵礦石狠狠地打了下去！\n",me);
+        message_vision("$N揮動大鐵錘，朝着燒紅的鐵礦石狠狠地打了下去！\n",me);
         addn("qi", -30, me);
         set_temp("pending/job_busy", 1, me);
 
@@ -106,7 +106,7 @@ void job_done(object me)
 
         if (random(me->query_str()) > 20 || random(10) > 5 )
         {
-                message_vision(HIC"經過千錘百煉，精鐵終于煉出來了！$N渾身汗如雨下，幾乎累得喘不過氣來。\n"NOR,me);
+                message_vision(HIC"經過千錘百煉，精鐵終於煉出來了！$N渾身汗如雨下，幾乎累得喘不過氣來。\n"NOR,me);
                 jingtie=new(OBJ_PATH"/jingtie");
                 jingtie->move(me);
                 remove_action("do_datie","da");

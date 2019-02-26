@@ -36,11 +36,11 @@ int perform(object me, object target)
                 return notify_fail("你沒有準備使用六脈神劍，無法施展「六脈歸宗」。\n");
 
         if( !living(target) )
-                return notify_fail("對方都已經這樣了，用不著這麼費力吧？\n");
+                return notify_fail("對方都已經這樣了，用不着這麼費力吧？\n");
 
         msg = HIY"$N使出六脈神劍最強絕技『六脈歸宗』，真氣急運九大周天，內力洶湧滂湃，\n"
-              HIR"剎時間數股熾熱剛猛的劍氣自指中射出！！無數迅雷疾風相互沖撞激之際，\n"
-              HIW"竟然匯集成一束凌厲無匹的劍柱，宛如一條白色巨蟒,閃電般疾射向$n！！！\n"NOR,
+              HIR"剎時間數股熾熱剛猛的劍氣自指中射出！！無數迅雷疾風相互衝撞激之際，\n"
+              HIW"竟然彙集成一束凌厲無匹的劍柱，宛如一條白色巨蟒,閃電般疾射向$n！！！\n"NOR,
 
         ap = attack_power(me, "finger") + me->query_skill("force") + me->query_str()*10;;
         ap+= random(1+query("jiali", me)/2);

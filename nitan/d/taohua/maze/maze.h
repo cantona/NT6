@@ -56,7 +56,7 @@ int check_count(object me, int count)
         if( query_temp("/taohua/count", me)>2100 )
         {
                 tell_object(me,
-                        HIW "忽見得一陣狂風掛來，天空中烏雲密布，一陣陰冷的濃霧瞬間把你裹住......\n\n" NOR);
+                        HIW "忽見得一陣狂風掛來，天空中烏雲密佈，一陣陰冷的濃霧瞬間把你裹住......\n\n" NOR);
                 if (userp(me))
                 me->unconcious();
                 delete_temp("taohua/count", me);
@@ -69,5 +69,5 @@ int check_count(object me, int count)
 void remove_effect(object me, int level)
 {
         addn_temp("apply/int", -level, me);
-        tell_object(me, HIB "你心中一動，腦海中空空盪盪，似乎有什麼東西正離你而去。\n" NOR);
+        tell_object(me, HIB "你心中一動，腦海中空空蕩蕩，似乎有什麼東西正離你而去。\n" NOR);
 }

@@ -35,7 +35,7 @@ int perform(object me, object target)
                 return notify_fail("你沒有準備使用九陰神功，無法施展" ZHUA "。\n");
        
        if (! living(target))
-              return notify_fail("對方都已經這樣了，用不著這麼費力吧？\n");
+              return notify_fail("對方都已經這樣了，用不着這麼費力吧？\n");
 
         msg = HIY "$N" HIY "微微一笑，右手成爪，忽的抓向$n"
               HIY "的要穴！\n" NOR;

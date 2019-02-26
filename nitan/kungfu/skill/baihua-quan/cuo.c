@@ -35,14 +35,14 @@ int perform(object me, object target)
                 return notify_fail("你的百花錯拳還不夠純熟！\n");
 
        if (! living(target))
-              return notify_fail("對方都已經這樣了，用不著這麼費力吧？\n");
+              return notify_fail("對方都已經這樣了，用不着這麼費力吧？\n");
 
-        msg = HIW "只見$N使出百花錯拳的精妙百花錯亂，擒拿手中夾著鷹爪功，左手查拳，右手綿掌。攻\n"
+        msg = HIW "只見$N使出百花錯拳的精妙百花錯亂，擒拿手中夾着鷹爪功，左手查拳，右手綿掌。攻\n"
                   "出去是八卦掌，收回時已是太極拳，諸家雜陳，毫無規律，只令$n眼花繚亂。\n\n" NOR;
         i = 10;
         if (lvl * 2 / 3 - random(lvl) > (int)target->query_skill("parry") / 2)
         {
-                msg += HIW "$n只感到頭暈目眩，只見$N或掌、或爪、或拳、或指舖天蓋地的向自己各個部位襲來！\n"
+                msg += HIW "$n只感到頭暈目眩，只見$N或掌、或爪、或拳、或指鋪天蓋地的向自己各個部位襲來！\n"
                            "只一瞬間，全身竟已多了數十出傷痕，"NOR+HIR"鮮血"NOR+HIW"狂瀉不止！\n"NOR;
                 count = me->query_skill("baihua-quan", 1) / 6;
                 addn_temp("apply/attack", count, me);

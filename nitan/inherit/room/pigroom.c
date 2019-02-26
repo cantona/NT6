@@ -181,7 +181,7 @@ string table_str(string dir)        // what's going on in table ?
                         rseat = PIG_D->order_turn("north");
                 else
                         rseat = PIG_D->order_turn(dir);
-//                r = "桌上面正在激烈的拱著！！\n";
+//                r = "桌上面正在激烈的拱着！！\n";
         
                 if (roundcard_count < 4)
                         r = sprintf("現在是第%s輪，該由%s出牌。\n", 
@@ -207,7 +207,7 @@ string table_str(string dir)        // what's going on in table ?
                 r += picks_str();
         }
         else {
-                r = "這是一張專門用于拱豬的四方桌。\n\n";
+                r = "這是一張專門用於拱豬的四方桌。\n\n";
                        if (bidcard_str != "")
                         r += "賣了的牌：" + bidcard_str + "\n\n";
                 else
@@ -288,7 +288,7 @@ int do_claim(string arg)
                 if (claimer != "")
                         return notify_fail("claim yes|no ？\n");
                 agreed[claimer=query_temp("pigging_seat", me)]=1;
-                write("你發出全收的要求！等待回音……\n");
+                write("你發出全收的要求！等待迴音……\n");
                 for (i = 0; i < 4; i++)
                         if (seat[i] != claimer)
                                 tell_object(pl[seat[i]],query("name", me)+
@@ -330,7 +330,7 @@ int do_sit(string arg)
         object me = this_player();
 
         if (!arg || (arg != "north" && arg != "west" && arg != "south" && arg != "east"))
-                return notify_fail("你想坐在哪裡？\n");
+                return notify_fail("你想坐在哪裏？\n");
 
         if (server == me)
                 return notify_fail("桌長不能換坐位！\n");
@@ -468,7 +468,7 @@ int do_bid(string arg)
         case BID_CTRANS :
                 allow_playbid[3] = 0; break;
         }
-        message_vision("$N說道：我賣" + PIG_D->card_str(c) + "！\n", me);
+        message_vision("$N説道：我賣" + PIG_D->card_str(c) + "！\n", me);
         ts = "";
         if (bidcard_str != "") ts = "，";
         bidcard_str=PIG_D->card_str(c)+"（"+query("name", me)+"）"+
@@ -489,7 +489,7 @@ int do_pass(string arg)
         if( passed[query_temp("pigging_seat", me)] == 1 )
                 return notify_fail("你已經停賣了！\n");
         passed[query_temp("pigging_seat", me)]=1;
-        message_vision("$N說道：我停賣！\n", me);
+        message_vision("$N説道：我停賣！\n", me);
         for (i = 0; i < 4; i++) 
                 if ((int)passed[seat[i]] == 0)
                         return 1;
@@ -610,7 +610,7 @@ int do_play(string arg)
                         cpos = i; break;
                 }
         if (cpos == -1)
-                return notify_fail("你手裡沒有這張牌！\n");
+                return notify_fail("你手裏沒有這張牌！\n");
 
         if (roundcard_count > 0 && (sc = PIG_D->has_suit(cards[ms], 0, 
                 card_count[ms] - 1, SUIT(roundcards[round_order[0]]))) > 0 && 

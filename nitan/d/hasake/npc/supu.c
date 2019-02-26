@@ -35,7 +35,7 @@ void create()
         set_skill("dodge", 40);
         set("inquiry", ([
             "阿曼" : "阿曼是我的心上人，我每次殺了野狼都會送她狼皮。\n",
-            "李文秀" : "她的歌唱得最好聽的了，有人說她比天鈴鳥唱得還好。
+            "李文秀" : "她的歌唱得最好聽的了，有人説她比天鈴鳥唱得還好。
 但這幾年來，我一直沒聽到她唱歌，一直沒在見到她。\n",
             "摔跤" : (: ask_me :),
             "比試" : (: ask_me :),
@@ -64,7 +64,7 @@ int ask_me()
             return 1;
             } 
         else {
-        message_vision("$N看了$n一眼，用不太標準的漢話說道：
+        message_vision("$N看了$n一眼，用不太標準的漢話説道：
 我是未來的草原第一勇士，這位漢族"+RANK_D->query_respect(this_player())+"你就和我切搓(fight)幾下吧？\n", this_object(), this_player());
         set_temp("supu1", 1, this_player());
         return 1;
@@ -78,11 +78,11 @@ int accept_fight(object ob)
         if( query("eff_qi", me)<query("max_qi", me) || 
            query("qi", me)<query("eff_qi", me) || 
            query("neili", me)<query("max_neili", me)){
-           message_vision(CYN"$N對$n說：我還沒有休息好，你等一會兒吧。\n"NOR, ob, me);
+           message_vision(CYN"$N對$n説：我還沒有休息好，你等一會兒吧。\n"NOR, ob, me);
            return 0;
            }
         if( query_temp("supu1", ob)){
-        message_vision(CYN"$N對$n說：好吧，那我就同你切搓幾招吧，點到為止。\n"NOR, ob, me);
+        message_vision(CYN"$N對$n説：好吧，那我就同你切搓幾招吧，點到為止。\n"NOR, ob, me);
         remove_call_out("checking");
         call_out("checking", 1, me, ob);
         delete_temp("supu1", ob);
@@ -105,20 +105,20 @@ int checking(object me, object ob)
                 }
         if ( !present(ob, environment()) ) return 1; 
         if( (query("qi", me)*100/my_max_qi) <= 50){
-            message_vision(CYN"$N對$n不住地讚嘆：你們漢人果然不一般，我服輸了，送你一些禮物。\n"NOR, me, ob);
+            message_vision(CYN"$N對$n不住地讚歎：你們漢人果然不一般，我服輸了，送你一些禮物。\n"NOR, me, ob);
              good = new(goods[random(sizeof(goods))]); 
             set("owner",query("id",  ob), good);
             good->move(ob);
             set_temp("supu_fight", 1, ob);
             message_vision("$N交給$n一件禮物。\n", me, ob);
-            message_vision(CYN"$N說道：我要回去陪阿曼了，有緣再相見吧。\n"NOR, me);            
-            message_vision("$N帶著灰狼皮離開了"+query("short", environment(me))+"。\n",me);
+            message_vision(CYN"$N説道：我要回去陪阿曼了，有緣再相見吧。\n"NOR, me);            
+            message_vision("$N帶着灰狼皮離開了"+query("short", environment(me))+"。\n",me);
             destruct(this_object());
             return 1;
             }
         if( (query("qi", ob)*100/his_max_qi)<50){
-                message_vision(CYN"$N沖著$n一撇嘴，說道：你們漢人的武學不過如此。\n"NOR, me,ob);
-                message_vision("$N對$n行了個禮，垂頭喪氣地離開了這裡。\n",ob, me);
+                message_vision(CYN"$N衝着$n一撇嘴，説道：你們漢人的武學不過如此。\n"NOR, me,ob);
+                message_vision("$N對$n行了個禮，垂頭喪氣地離開了這裏。\n",ob, me);
 //                ob->move("/u/snowman/hj/road");
 //                message_vision("$N垂頭喪氣地走回來。\n", ob);
                 return 1;
@@ -141,7 +141,7 @@ int accept_object(object who, object ob)
                 command("ah"+query("id", who));
                 command("say 你殺死了大灰狼！看來你也是個勇士，要不要和我比試一下？\n");                
                 set_temp("supu_accept", 1, who);
-        message_vision("$N看了$n一眼，用不太標準的漢話說道：
+        message_vision("$N看了$n一眼，用不太標準的漢話説道：
 我是未來的草原第一勇士，這位漢族"+RANK_D->query_respect(this_player())+"你就和我切搓(fight)幾下吧？\n", this_object(), this_player());
         set_temp("supu1", 1, this_player());
                 call_out("destob",0,ob);                         

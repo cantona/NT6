@@ -42,7 +42,7 @@ int perform(object me, object target)
                 return notify_fail(target->name() + "目前正自顧不暇，放膽攻擊吧。\n");
 
         if (! living(target))
-                return notify_fail("對方都已經這樣了，用不著這麼費力吧？\n");
+                return notify_fail("對方都已經這樣了，用不着這麼費力吧？\n");
 
         msg = HIW "$N" HIW "雙手一圈，施出「引」字訣，如抱太極，一股"
               "雄渾無比的力道組成了一個旋渦，圈向$n" HIW "。\n" NOR;
@@ -66,7 +66,7 @@ int perform(object me, object target)
         } else
         {
                 msg += CYN "$n" CYN "見狀連忙使出“千斤墜”之力定"
-                       "住身形，擺脫了$N" CYN "的力道。\n" NOR;
+                       "住身形，擺脱了$N" CYN "的力道。\n" NOR;
                 addn("neili", -50, me);
                 me->start_busy(3);
         }

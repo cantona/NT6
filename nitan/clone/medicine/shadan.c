@@ -8,7 +8,7 @@ void create()
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("long", HIW "集結數中名貴藥材煉制而成的丹藥，乃是桃花島的獨門奇藥。\n" NOR);
+                set("long", HIW "集結數中名貴藥材煉製而成的丹藥，乃是桃花島的獨門奇藥。\n" NOR);
                 set("base_unit", "顆");
                 set("base_value", 5000);
                 set("base_weight", 70);

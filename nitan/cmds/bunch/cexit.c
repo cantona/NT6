@@ -31,12 +31,12 @@ int main(object me, string arg)
 
 	if(!exits || !sizeof(exits))
 	{
-		write("目前這裡沒有任何出口。\n請輸入要加入出口的方向(q 退出)：");
+		write("目前這裏沒有任何出口。\n請輸入要加入出口的方向(q 退出)：");
 		input_to( (: get_add_dir :), me, env, exits);
 		return 1;
 	}
 
-	out = "目前這裡已存在的出口：\n";
+	out = "目前這裏已存在的出口：\n";
 
 	foreach(string dir, string dest in exits)
 	{
@@ -80,7 +80,7 @@ protected void decide_action_do(string str, object who, object env, mapping exit
 	{
 		if(mapp(exits) && (sizeof(exits) >= max_exits))
 		{
-			tell_object(who, sprintf("每個房間最多只能有%s個出口。\n非法操作錯誤。\n", chinese_number(max_exits)));
+			tell_object(who, sprintf("每個房間最多隻能有%s個出口。\n非法操作錯誤。\n", chinese_number(max_exits)));
 			return;
 		}
 		tell_object(who, "請輸入要加入出口的方向(q 退出)：");
@@ -178,7 +178,7 @@ protected void get_add_dir(string str, object who, object env, mapping exits)
 
 	if(mapp(exits) && (sizeof(exits) >= max_exits))
 	{
-		tell_object(who, sprintf("每個房間最多只能有%s個出口。\n操作失敗。\n", chinese_number(max_exits)));
+		tell_object(who, sprintf("每個房間最多隻能有%s個出口。\n操作失敗。\n", chinese_number(max_exits)));
 		return;
 	}
 
@@ -212,7 +212,7 @@ protected void do_add_exit(string str, object who, object env, mapping exits, st
 
 	if(!regexp(str, "^[a-z0-9_]+$"))
 	{
-		tell_object(who, "房間名裡包含錯誤字符。\n修改失敗。\n");
+		tell_object(who, "房間名裏包含錯誤字符。\n修改失敗。\n");
 		return;
 	}
 

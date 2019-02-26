@@ -92,7 +92,7 @@ mapping query_action()
        object me = this_object();
         string msg1, msg2;
         msg1 = HIR"祗聽簌簌聲響，$N蜿蜒竄前，"+(random(2)?"右":"左")+"邊的蛇頭嘶嘶吐信，猛然咬向$n的$l"NOR;
-        msg2 = RED"一口才剛咬過，卻見$N另一個頭也轉過了來，緊跟著咬向$n$l"NOR;
+        msg2 = RED"一口才剛咬過，卻見$N另一個頭也轉過了來，緊跟着咬向$n$l"NOR;
 
         if( query_temp("double_hit", me) )
         return ([
@@ -105,7 +105,7 @@ mapping query_action()
         "damage_type":"咬傷"]);
 
         else return ([
-        "action": HIR"祗見$N兩丈多長的身子一撲，猛然朝$n身上卷到！"NOR,
+        "action": HIR"祗見$N兩丈多長的身子一撲，猛然朝$n身上捲到！"NOR,
         "force" : 400,
         "dodge" : 0,
         "parry" : 0,

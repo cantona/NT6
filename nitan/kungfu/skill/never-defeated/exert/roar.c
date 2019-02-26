@@ -18,11 +18,11 @@ int exert(object me, object target)
         me->receive_damage("qi", 10);
 
         if( query("no_fight", environment(me)) )
-                return notify_fail("這裡不能攻擊別人! \n");
+                return notify_fail("這裏不能攻擊別人! \n");
 
         me->start_busy(5);
         message_combatd(HIY "$N" HIY "縱聲長嘯，真力貫注、威"
-                        "震百裡，發人耳聵！\n" NOR, me);
+                        "震百里，發人耳聵！\n" NOR, me);
 
         ob = all_inventory(environment(me));
         for (i = 0; i < sizeof(ob); i++)

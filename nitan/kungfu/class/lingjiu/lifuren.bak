@@ -19,7 +19,7 @@ void create()
         set("age", 37);
         set("long", @LONG
 這便是南海椰花島島主黎夫人，只見她不過中
-年，但頭發已是班白，手持一根形狀頗為奇特
+年，但頭髮已是班白，手持一根形狀頗為奇特
 的釣竿，不知究為何物。
 LONG );
         set("attitude", "peaceful");
@@ -82,7 +82,7 @@ int recognize_apprentice(object ob, string skill)
         if( query("family/family_name", ob) != "靈鷲宮" )
         {
                 command("hmm");
-                command("say 給老娘滾開。");
+                command("say 給老孃滾開。");
                 return -1;
         }
 
@@ -115,11 +115,11 @@ mixed ask_skill()
 
         me = this_player();
         if( query("can_perform/caiyan-gong/huan", me) )
-                return "你不是已經學會了嗎？何故來消遣老娘！";
+                return "你不是已經學會了嗎？何故來消遣老孃！";
 
         if( query("family/family_name", me) != "靈鷲宮" && 
            query("family/family_name", me) != "椰花島" )
-                return "還不給老娘滾開！";
+                return "還不給老孃滾開！";
 
         if (me->query_skill("caiyan-gong", 1) < 1)
                 return "你採燕功都未曾練過，還談什麼絕招。";
@@ -134,14 +134,14 @@ mixed ask_skill()
         if (me->query_skill("caiyan-gong", 1) < 120)
                 return "你的採燕功火候還差得遠，再回去練練！";
 
-        message_vision(HIY "$n" HIY "點了點頭，喝道：“看好了！”說完"
-                       "單手一抖，已抽\n出背負在背上的釣竿，隨即急速舞"
+        message_vision(HIY "$n" HIY "點了點頭，喝道：“看好了！”説完"
+                       "單手一抖，已抽\n出揹負在背上的釣竿，隨即急速舞"
                        "動，頓時只見釣竿由一變\n二，由二變四，由四變八"
                        "，由八變十六……幻出無數竿影連\n連刺出，全全籠"
                        "罩$N" HIY "四周各個方位。\n" NOR, me,
                        this_object());
         command("sweat");
-        command("say 這招看起來復雜，其實卻並不難練習。");
+        command("say 這招看起來複雜，其實卻並不難練習。");
         tell_object(me, HIC "你學會了「雲霞幻生」。\n" NOR);
         if (me->can_improve_skill("dodge"))
                 me->improve_skill("dodge", 1500000);
@@ -162,7 +162,7 @@ void attempt_apprentice(object ob)
                 return;
 
         command("en");
-        command("say 好吧，既然你想鬧著玩，老娘就收下你好了！");
+        command("say 好吧，既然你想鬧着玩，老孃就收下你好了！");
         command("recruit "+query("id", ob));
 }
 

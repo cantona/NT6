@@ -37,10 +37,10 @@ int perform(object me, object target)
                 return notify_fail("你現在真氣不夠，難以施展" CAN "。\n");
 
         if (! living(target))
-                return notify_fail("對方都已經這樣了，用不著這麼費力吧？\n");
+                return notify_fail("對方都已經這樣了，用不着這麼費力吧？\n");
 
-        msg = HIR "$N" HIR "伸出兩指，注力于" + weapon->name() +
-              HIR "劍脊，驀然回轉劍鋒，攜著全身力道向$n" HIR "劃去。\n" NOR;
+        msg = HIR "$N" HIR "伸出兩指，注力於" + weapon->name() +
+              HIR "劍脊，驀然迴轉劍鋒，攜着全身力道向$n" HIR "劃去。\n" NOR;
 
         ap = me->query_skill("sword");
         dp = target->query_skill("parry");

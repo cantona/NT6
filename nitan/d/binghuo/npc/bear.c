@@ -8,7 +8,7 @@ void create()
         set_name(WHT"白熊"NOR, ({ "bai xiong", "bear","xiong" }) );
         set("race", "走獸");
         set("age", 20);
-        set("long", "一只兇猛的白熊，形體碩大，人立而行。\n");
+        set("long", "一隻兇猛的白熊，形體碩大，人立而行。\n");
         set("attitude", "aggressive");
         set("shen_type", -1);
 
@@ -21,9 +21,9 @@ void create()
 
         set("chat_chance", 10);
         set("chat_msg", ({
-                "白熊沖著你搖頭擺尾地，不知道是什麼意思。\n",
-                "白熊呵的一聲，好象要向你撲來。\n",
-                "白熊擠了擠鼻子，你覺得它好象在笑，頓時一陣緊張。\n",
+                "白熊衝着你搖頭擺尾地，不知道是什麼意思。\n",
+                "白熊呵的一聲，好像要向你撲來。\n",
+                "白熊擠了擠鼻子，你覺得它好像在笑，頓時一陣緊張。\n",
         }) );
 }
 

@@ -6,7 +6,7 @@ int ask_weiwang();
 void create()
 {
         set_name("張德貴", ({ "zhang degui", "zhang", "dedui" }));
-        set("title", "當舖老板");
+        set("title", "當鋪老闆");
         set("shen_type", 1);
 
         set("gender", "男性");

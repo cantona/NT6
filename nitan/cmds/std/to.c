@@ -43,7 +43,7 @@ int main(object me, string arg)
                 return help(me);
 
         if (! SECURITY_D->valid_grant(me, "(immortal)")) 
-                return notify_fail("鑒于玩家利用此指令幹擾別人機器人，現封閉這個指令。\n");
+                return notify_fail("鑑於玩家利用此指令干擾別人機器人，現封閉這個指令。\n");
 
         if (sscanf(arg, "%s %s", verb, opp) != 2)
         {
@@ -52,7 +52,7 @@ int main(object me, string arg)
         }
 
         if (! valid_verb[verb])
-                return notify_fail("對不起，不能使用這種方式發布信息。\n");
+                return notify_fail("對不起，不能使用這種方式發佈信息。\n");
 
         if ((valid_verb[verb] & NEED_OPP) && ! opp)
                 return notify_fail("你必須指明對象才能發出信息。\n");
@@ -127,9 +127,9 @@ int help(object me)
         write(@HELP
 指令格式： to say | tell | chat | rumor ... [sb]
 
-這個指令讓你發布信息的時候可以發布多行，但是使用耳語
-(whisper)方式。 玩家發布的信息會在每行前面自動加上一
-個空格。對于tell命令，必須指定對象。另外注意的是：一
+這個指令讓你發佈信息的時候可以發佈多行，但是使用耳語
+(whisper)方式。 玩家發佈的信息會在每行前面自動加上一
+個空格。對於tell命令，必須指定對象。另外注意的是：一
 次可以貼的行數受玩家內力和精的限制。
 HELP );
         return 1;

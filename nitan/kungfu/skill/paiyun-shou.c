@@ -11,7 +11,7 @@ mapping *action = ({
         "lvl" : 0,
         "damage_type" : "抓傷"
 ]),
-([        "action" : "$N退後一步，雙掌一起排出，如鉤如戢，插向$n的$l",
+([        "action" : "$N退後一步，雙掌一起排出，如鈎如戢，插向$n的$l",
         "force" : 40,
         "dodge" : 15,
         "parry" : 5,
@@ -35,7 +35,7 @@ mapping *action = ({
         "lvl"   : 40,
         "damage_type" : "內傷"
 ]),
-([        "action" : "$N左手護胸，腋下含空，右手五指如鉤，打向$n的要穴",
+([        "action" : "$N左手護胸，腋下含空，右手五指如鈎，打向$n的要穴",
         "force" : 100,
         "dodge" : 30,
         "parry" : 14,

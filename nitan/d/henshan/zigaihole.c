@@ -10,13 +10,13 @@ void create()
 {
         set("short", "紫蓋仙洞");
         set("long", @LONG
-這裡便是紫蓋仙洞。聽這裡的人說的由于這裡處于紫蓋峰下，峰
-上融化的雪水便經過山澗匯如紫蓋仙洞中，但是這裡卻一點水也沒有，
+這裏便是紫蓋仙洞。聽這裏的人説的由於這裏處於紫蓋峯下，峯
+上融化的雪水便經過山澗匯如紫蓋仙洞中，但是這裏卻一點水也沒有，
 耳邊卻傳來來淙淙的水流聲，你才發現雪水並不是匯直接流入洞中，
 而是從洞壁上順勢向下流，經過一個較深的低窪地帶，積蓄起來，水
 滿則溢，便形成了水蓮洞外的飛瀑。往光照來的的地方看去，已沒有
-路可走，數丈遠處便是懸崖，原來這個洞竟生于一個峭壁之上。只見
-不遠處擺著一個石桌(desk)，顯然這裡曾經有人來過。
+路可走，數丈遠處便是懸崖，原來這個洞竟生於一個峭壁之上。只見
+不遠處擺着一個石桌(desk)，顯然這裏曾經有人來過。
 LONG );
         
         set("item_desc",([
@@ -92,7 +92,7 @@ int do_pick(string arg)
                                HIC "拿了出來。\n" NOR, me);
                 return 1;
         } else
-                return notify_fail(YEL "這裡面什麼也沒有。\n" NOR);
+                return notify_fail(YEL "這裏面什麼也沒有。\n" NOR);
         return 1;
 }
 
@@ -107,7 +107,7 @@ string look_desk()
                 return WHT "\n石桌像是已被人推開，下面露出一個坑(keng)來。\n";
         else
    
-                return WHT "\n一張石桌，上面已布滿了灰塵。\n";
+                return WHT "\n一張石桌，上面已佈滿了灰塵。\n";
 
        
 }
@@ -128,10 +128,10 @@ string look_keng()
 
         // if (environment(book))
         if( query_temp("marks/拿", here) )
-                return HIY "\n這個坑中像是藏東西的，但裡面空空如也，顯然裡面的東西已\n"
+                return HIY "\n這個坑中像是藏東西的，但裏面空空如也，顯然裏面的東西已\n"
                            "被人拿走了。\n" NOR;
 
-        return HIY "\n只見裡面放著一本(book)，你忍不住想拿(pick)來看看。\n" NOR;
+        return HIY "\n只見裏面放着一本(book)，你忍不住想拿(pick)來看看。\n" NOR;
            
 }
 

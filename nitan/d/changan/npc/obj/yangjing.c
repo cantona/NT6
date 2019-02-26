@@ -28,7 +28,7 @@ int do_eat(string arg)
         object me = this_player();
         if (! id(arg)) return notify_fail("你要吃什麼？\n");
         if (me->is_busy())
-                return notify_fail("別急，慢慢吃，小心別噎著了。\n");
+                return notify_fail("別急，慢慢吃，小心別噎着了。\n");
                 message_vision("$N吃下一粒" + name() + "。\n", me);
 
         if( query("eff_jing", me)/query("max_jing", me)<0.9 )

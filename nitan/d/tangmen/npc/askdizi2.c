@@ -41,24 +41,24 @@ int do_dating(string arg)
         object ob = this_object();
         
         if ( !arg || arg != "wenzi")
-             return notify_fail("你想詢問什麼，你倒是說啊！\n");
+             return notify_fail("你想詢問什麼，你倒是説啊！\n");
         
         if( query("dname") != query("id", me) )
-             return notify_fail("我不想說，你不要問，問了也白問！\n");
+             return notify_fail("我不想説，你不要問，問了也白問！\n");
              
         if( (query_temp("askok", me)) )
-             return notify_fail("關于你的問題，我要考慮一下，你現在是不是覺得有點熱啊！\n");
+             return notify_fail("關於你的問題，我要考慮一下，你現在是不是覺得有點熱啊！\n");
         
         if( !(query_temp("asked", me)) )
              return notify_fail("你這個真奇怪，有問路的，有問要錢的，有問吃的，沒聽有問蚊子的。\n");
         
         switch( random(6))
         {
-            case 0 : str = "唐家舖子";where = "/d/tangmen/tjpuzi";break;
+            case 0 : str = "唐家鋪子";where = "/d/tangmen/tjpuzi";break;
             case 1 : str = "唐門酒樓";where = "/d/tangmen/jiulou";break;
             case 2 : str = "客店";where = "/d/tangmen/kedian";break;
-            case 3 : str = "藥舖";where = "/d/tangmen/hcfdian";break;
-            case 4 : str = "兵器舖";where = "/d/tangmen/tmbingqi";break;
+            case 3 : str = "藥鋪";where = "/d/tangmen/hcfdian";break;
+            case 4 : str = "兵器鋪";where = "/d/tangmen/tmbingqi";break;
             default : str = "唐氏錢莊";where = "/d/tangmen/tsqianz";break;
         }
         

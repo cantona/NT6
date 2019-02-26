@@ -11,9 +11,9 @@ inherit F_GUARDER;
 
 void create()
 {
-        set_name("褚萬裡", ({ "chu wanli", "chu" }));
-        set("title", "大理國護衛" );
-        set("long", "他是大理國四大護衛之一，英氣逼人。\n");
+        set_name("褚萬里", ({ "chu wanli", "chu" }));
+        set("title", "大理國護衞" );
+        set("long", "他是大理國四大護衞之一，英氣逼人。\n");
         set("gender", "男性");
         set("age", 40);
         set("class", "officer");
@@ -67,7 +67,7 @@ void create()
                                 "起！王爺有令，出了段家就莫回來。\n" NOR,
                 "refuse_other": CYN "$N" CYN "一把攔住$n" CYN "，喝"
                                 "道：閒雜人等，不能入內。\n" NOR,
-                "refuse_carry": CYN "$N" CYN "陪著笑臉對$n" CYN "道"
+                "refuse_carry": CYN "$N" CYN "陪着笑臉對$n" CYN "道"
                                 "：可否將…你背的人放下再進王府？\n" NOR,
         ]));
 

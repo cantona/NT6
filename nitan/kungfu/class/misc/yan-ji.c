@@ -168,7 +168,7 @@ void random_move()
 void death_msg()
 {
         command("chat 倘若我學得完整胡家刀法，今日死的人就不是我了，我恨啊！ ...");
-        CHANNEL_D->do_channel(this_object(), "rumor", "聽說" + name() + HIM "被江湖人士所殺。" NOR);
+        CHANNEL_D->do_channel(this_object(), "rumor", "聽説" + name() + HIM "被江湖人士所殺。" NOR);
 }
 
 void die(object killer)
@@ -191,7 +191,7 @@ void die(object killer)
                 if( query("qi") > query("max_qi") ) set("qi", query("max_qi"));
                 addn("eff_qi", query("max_qi") / 10);
                 if( query("eff_qi") > query("max_qi") ) set("eff_qi", query("max_qi"));
-                message_vision(HIR "\n$N" HIR "大喝一聲，運用秘法，氣血有所回升！\n\n" NOR, this_object());
+                message_vision(HIR "\n$N" HIR "大喝一聲，運用祕法，氣血有所回升！\n\n" NOR, this_object());
                 return;
         }
 

@@ -7,16 +7,16 @@ string type() { return "martial"; }
 string martialtype() { return "dodge"; }
 
 string *dodge_msg = ({
-"$n一式"HIC"「行雲流水」"NOR"，身不傾，腳不移，身體如行雲流水般直滑出丈余。\n",
+"$n一式"HIC"「行雲流水」"NOR"，身不傾，腳不移，身體如行雲流水般直滑出丈餘。\n",
 "$n一式"BLU"「潛音夜行」"NOR"，忽然一彎腰，全身貼地而行，頓時閃過了$N的凌厲攻勢。\n",
 "$n一式"HIW"「移步換形」"NOR"，足不動，手不抬，一轉眼間便繞到了$N的身後。\n",
-"$n一式"MAG"「分身化影」"NOR"，一轉身間，四面八方飄動著無數個$n的身影，令$N手足無措。\n",
+"$n一式"MAG"「分身化影」"NOR"，一轉身間，四面八方飄動着無數個$n的身影，令$N手足無措。\n",
 "$n一式"HIB"「凌波微步」"NOR"，左踏巽，右轉乾，身行一晃，便到幾丈遠的地方。\n",
 "$n一式"HIM"「更上層樓」"NOR"，身在空中，左腳在右足上一點，從$N頭頂騰空而過。\n",
 "$n一式"HIW"「仙子出水」"NOR"，長袖一拂，全身化為一道白影，幽幽地從$N頭頂飄落。\n",
-"$n一式"HIG"「峰回路轉」"NOR"，身體如陀螺般急轉，登時一股氣流湧出，令$N難以動彈。\n",
+"$n一式"HIG"「峯迴路轉」"NOR"，身體如陀螺般急轉，登時一股氣流湧出，令$N難以動彈。\n",
 "$n一式"GRN"「臨行秋波」"NOR"，身行倏的從$N的眼前直繞到身後，$N瞪大了兩眼，不明所以。\n",
-"$n一式"HIY"「浪子回頭」"NOR"，身行倏的從$N的眼前飄過，長發一甩，瀟洒之極。\n",
+"$n一式"HIY"「浪子回頭」"NOR"，身行倏的從$N的眼前飄過，長髮一甩，瀟灑之極。\n",
 });
 
 int valid_enable(string usage) { return (usage=="dodge") || (usage=="move"); }
@@ -63,7 +63,7 @@ mixed valid_damage(object ob, object me, int damage, object weapon)
         {
                 result = ([ "damage": -damage ]);
 
-                 result += (["msg" : HIC "$n" HIC "施展神行百變，神光離合，一轉身間，四面八方飄動著無數個$n的身影，\n"
+                 result += (["msg" : HIC "$n" HIC "施展神行百變，神光離合，一轉身間，四面八方飄動着無數個$n的身影，\n"
                                     HIC "$N" HIC "手足無措，頭腦發昏，只覺得四面都是$n的身影，所發招數盡數落空。\n" NOR]);
                 return result;
         }

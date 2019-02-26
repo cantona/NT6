@@ -7,8 +7,8 @@ void create()
 {
         set("short", "南巖宮地下室");
         set("long", @LONG
-這是一個幹燥潔凈的地下室，四壁用光滑的大理石砌就而成，十
-數支鬆明照得這裡通明透亮。
+這是一個乾燥潔淨的地下室，四壁用光滑的大理石砌就而成，十
+數支松明照得這裏通明透亮。
 LONG );
         set("objects", ([
                    CLASS_D("wudang") +"/xiaosong": 1,
@@ -29,7 +29,7 @@ int valid_leave(object me, string dir)
             if (dir == "up")
             {
                        if (me->query_skill("taiji-shengong", 1) < 80)
-                              return notify_fail(HIY "你試著推了推頂上的磚蓋，觸"
+                              return notify_fail(HIY "你試着推了推頂上的磚蓋，觸"
                                            "手冰涼，紋絲不動。\n" NOR);
 
                   message_sort(HIY "\n$N" HIY "全身運足太極神功，拔身錯步，嘿地"

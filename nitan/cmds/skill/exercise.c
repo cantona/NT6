@@ -25,7 +25,7 @@ int main(object me, string arg)
                 return notify_fail("你還是專心拱豬吧！\n");
 
         if( me->is_busy() || query_temp("pending/exercising", me) )
-                return notify_fail("你現在正忙著呢。\n");
+                return notify_fail("你現在正忙着呢。\n");
 
         if (me->is_fighting())
                 return notify_fail("戰鬥中不能練內功，會走火入魔。\n");
@@ -183,7 +183,7 @@ int halt_exercise(object me)
 int help(object me)
 {
         write(@HELP
-指令格式 : exercise|dazuo [<耗費「氣」的量> 必須多于 10]
+指令格式 : exercise|dazuo [<耗費「氣」的量> 必須多於 10]
 
 運氣練功，控制體內的氣在各經脈間流動，藉以訓練人體肌肉骨骼的耐
 力、爆發力，並且用內力的形式將能量儲備下來。注意：你不能在不能

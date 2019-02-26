@@ -7,7 +7,7 @@ void create()
 {
         set_name(YEL "判官" NOR, ({ "pan guan","guan" }) );
         set("long", @LONG
-地獄陰司中執掌管帶眾鬼，以施獎懲之官，手中拿著記載人壽命的生死簿。
+地獄陰司中執掌管帶眾鬼，以施獎懲之官，手中拿着記載人壽命的生死簿。
 LONG);
         set("gender","男性");
         set("str",1000);

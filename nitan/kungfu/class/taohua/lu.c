@@ -20,7 +20,7 @@ void create()
         set("gender", "男性");
         set("nickname", HIC "歸雲莊主" NOR);
         set("age", 52);
-        set("long", "陸乘風是黃藥師的第四個徒弟。他的鬢角已微見白發，但\n"
+        set("long", "陸乘風是黃藥師的第四個徒弟。他的鬢角已微見白髮，但\n"
                     "身材魁梧，雙眼有神。\n");
         set("attitude", "friendly");
         set("class", "scholar");
@@ -84,12 +84,12 @@ void create()
         set("inquiry", ([
                 "東邪"   : "家師人稱東邪！呵呵。",
                 "西毒"   : "歐陽鋒是與家師並世齊名的高手，人稱老毒物。",
-                "南帝"   : "聽家師說段王爺現在出家當了和尚，法名一燈。",
+                "南帝"   : "聽家師説段王爺現在出家當了和尚，法名一燈。",
                 "北丐"   : "北丐洪七公是丐幫幫主，現在揚州城外。",
                 "黃蓉"   : "她是師父的愛女。",
                 "梅超風" :"這賊婆娘害得我好苦。她不要臉偷漢，那也罷了，幹嗎要偷師父的《九陰真經》？",
-                "陳玄風" :"他和梅超風都是師門叛徒，有何好說？這兩人害得我好苦！我半身不遂，就是拜受這兩人之賜。",
-                "曲靈風" :"靈風師兄專于武技，不過育有一女，不知如今下落如何？",
+                "陳玄風" :"他和梅超風都是師門叛徒，有何好説？這兩人害得我好苦！我半身不遂，就是拜受這兩人之賜。",
+                "曲靈風" :"靈風師兄專於武技，不過育有一女，不知如今下落如何？",
                 "馮默風" :"你可持桃花本門信物前往尋找默風，馮師弟天性淡泊，但外和內剛，恐怕需用非常手段才能逼他表露身份．．．",
                 "黃藥師" : "當年師父一怒之下，將我們師兄弟四人一齊震斷腳筋，逐出桃花島。",
                 "桃花島" : (: ask_me :),
@@ -142,7 +142,7 @@ void attempt_apprentice(object ob)
         } else
         {
                 command("say 一位異人曾在本莊花廳留詩半闕，如果你能補全，也不枉來歸雲莊一遭");
-                message_vision("陸莊主凝視著$N，說道：快把你的下闕大聲朗誦(recite)出來吧。\n",
+                message_vision("陸莊主凝視着$N，説道：快把你的下闕大聲朗誦(recite)出來吧。\n",
                                this_player());
                 set_temp("pending/recite", 1, ob);
         }
@@ -156,11 +156,11 @@ int do_recite(string arg)
                 return 0;
 
         if (! arg)
-                return notify_fail("你說什麼？\n");
+                return notify_fail("你説什麼？\n");
 
         set_temp("pending/recite", 0, this_player());
 
-        message_vision("$N大聲說道：" + arg + "\n", this_player());
+        message_vision("$N大聲説道：" + arg + "\n", this_player());
 
         if (arg == "無人爭曉渡殘月下寒沙")
         {
@@ -183,7 +183,7 @@ int do_recite(string arg)
                 set("title", "歸雲莊"+ttt, this_player());
         } else
         {
-                command("say 你這白丁，待在這裡，沒的臟了我的屋子！");
+                command("say 你這白丁，待在這裏，沒的髒了我的屋子！");
         }
         return 1;
 }
@@ -199,7 +199,7 @@ string ask_me()
                        "與敝莊素無來往，不知此話從何談起？";
 
         if (query("bagua_count") < 1)
-                return "今天我太累了，有什麼事明天再說吧。";
+                return "今天我太累了，有什麼事明天再説吧。";
 
         if( present("tie bagua",this_player()) || query_temp("get_bagua", this_player()) )
                 return "現在你可以上桃花島試一試，看有沒有福份見到我師傅。";
@@ -236,12 +236,12 @@ mixed ask_skill1()
                 return "師父吩咐過，不傳功給無功勞的弟子。";
 
         if (me->query_skill("force") < 120)
-                return "你的內功修為不夠，還是多鍛煉鍛煉吧。";
+                return "你的內功修為不夠，還是多鍛鍊鍛鍊吧。";
 
         if (me->query_skill("pikong-zhang", 1) < 80)
                 return "你的劈空掌還不夠熟練，練高了再來找我。";
 
-        message_sort(HIY "\n$n" HIY "對著$N" HIY "點了點頭，說道：“我給你演示"
+        message_sort(HIY "\n$n" HIY "對着$N" HIY "點了點頭，説道：“我給你演示"
                      "一遍，可看仔細了！”話音剛落，頓時只見$n" HIY "雙掌交疊雲"
                      "貫而出，激盪出無數圈勁氣，一環環向$N" HIY "斫去，招數當真"
                      "精奇無比。\n\n" NOR, me, this_object());
@@ -280,12 +280,12 @@ mixed ask_skill1()
                 return "師父吩咐過，不傳功給無功勞的弟子。";
 
         if (me->query_skill("force") < 120)
-                return "你的內功修為不夠，還是多鍛煉鍛煉吧。";
+                return "你的內功修為不夠，還是多鍛鍊鍛鍊吧。";
 
         if (me->query_skill("canglang-bian", 1) < 80)
                 return "你的滄浪鞭法還不夠熟練，練高了再來找我。";
 
-        message_sort(HIY "\n$n" HIY "對著$N" HIY "點了點頭，說道：“我給你演示"
+        message_sort(HIY "\n$n" HIY "對着$N" HIY "點了點頭，説道：“我給你演示"
                      "一遍，可看仔細了！”話音剛落，頓時只見$n" HIY "手中長鞭"
                      "如巨浪連綿無窮無盡攻向虛空，真精奇無比。\n\n" NOR, me,
                      this_object());
@@ -323,7 +323,7 @@ mixed ask_skill2()
                 return "師父吩咐過，不傳功給無功勞的弟子。";
 
         if (me->query_skill("force") < 150)
-                return "你的內功修為不夠，還是多鍛煉鍛煉吧。";
+                return "你的內功修為不夠，還是多鍛鍊鍛鍊吧。";
 
         if (me->query_skill("xuanfeng-tui", 1) < 100)
                 return "你的旋風掃葉腿還不夠熟練，練高了再來。";
@@ -369,14 +369,14 @@ mixed ask_skill3()
                 return "師父吩咐過，不傳功給無功勞的弟子。";
 
         if (me->query_skill("force") < 150)
-                return "你的內功修為不夠，還是多鍛煉鍛煉吧。";
+                return "你的內功修為不夠，還是多鍛鍊鍛鍊吧。";
 
         if (me->query_skill("luoying-shenjian", 1) < 100)
                 return "你的落英神劍還不夠熟練，練高了再來。";
 
         message_sort(HIY "\n$n" HIY "點了點頭，喝道：“看好了！”便在$n" HIY
                      "話音落下的一瞬間，早已拔地而起，陡然使出「風雷四神劍」"
-                     "絕技，高聲長吟：“桃花影裡飛神劍”，如風如雷般的發出數劍! "
+                     "絕技，高聲長吟：“桃花影裏飛神劍”，如風如雷般的發出數劍! "
                      "氣勢恢弘，勁風只襲得$N" HIY "面龐隱隱生疼。\n\n" NOR, me,
                      this_object());
 
@@ -401,7 +401,7 @@ int accept_kill(object me)
 {
         if( query("family/family_name", me) == "桃花島" )
         {
-                command("say 你我本是同門，如何要加害于我！\n");
+                command("say 你我本是同門，如何要加害於我！\n");
                 set("th_killer", 1, me);
                 kill_ob(me);
                 return 1;
@@ -456,13 +456,13 @@ int ask_xfsy()
         {
                 obj = new("/d/taohua/obj/xfsy_xinfa2");
                 obj->move(me);
-                command("say 這套心法我做了一些注解，"+RANK_D->query_respect(me) +
+                command("say 這套心法我做了一些註解，"+RANK_D->query_respect(me) +
                         "可拿回去自行參悟。");
 
                 message_vision("$N遞給$n一張薄紙。\n",this_object(),me);
                 delete("xfsy_xinfa_accept");
         } else
-                command("say 旋風掃葉腿心法已不在我這裡。");
+                command("say 旋風掃葉腿心法已不在我這裏。");
 
         return 1;
 }

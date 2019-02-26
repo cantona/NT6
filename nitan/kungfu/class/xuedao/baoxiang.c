@@ -143,7 +143,7 @@ mixed ask_skill1()
                 return "你連紅蓮刀法都沒學，還羅嗦什麼？";
 
         if( query("family/gongji", me)<80 )
-                return "老祖說了，咋們的絕技不傳無功之人。";
+                return "老祖説了，咋們的絕技不傳無功之人。";
 
         if( query("shen", me)>-8000 )
                 return "你這樣心慈手軟，就算學會這招又有什麼用？";

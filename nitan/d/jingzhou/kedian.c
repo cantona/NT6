@@ -6,7 +6,7 @@ void create()
         set("short", "客店");
         set("long", @LONG
 這是一家價錢低廉的客棧，生意很是清淡。外地遊客偶爾選擇這
-裡落腳，你在這裡住可要小心，聽說荊州有黑店。
+裏落腳，你在這裏住可要小心，聽説荊州有黑店。
 LONG );
         set("no_fight", 1);
         set("valid_startroom", 1);
@@ -33,7 +33,7 @@ int valid_leave(object me, string dir)
 
         if( !query_temp("rent_paid", me) && dir == "up" )
                 return notify_fail(CYN "店小二一下擋在樓梯前，白眼一"
-                                   "翻：怎麼著，想白住啊！\n" NOR);
+                                   "翻：怎麼着，想白住啊！\n" NOR);
 
         return ::valid_leave(me, dir);
 }

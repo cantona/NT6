@@ -15,7 +15,7 @@ void create()
         set("gender", "男性");
         set("age", 63);
         set("long", "渡元禪師乃是莆田少林寺方丈紅葉禪師的得意\n"
-                    "弟子，因岳肅和蔡子峰偷看到葵花寶典一事而\n"
+                    "弟子，因嶽肅和蔡子峯偷看到葵花寶典一事而\n"
                     "下山察訪。\n");
         set("attitude", "peaceful");
         set("class", "bonze");

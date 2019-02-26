@@ -45,9 +45,9 @@ int perform(object me, object target)
                 return notify_fail("你的真氣不夠，難以施展" HONG "。\n");
 
         if (! living(target))
-                return notify_fail("對方都已經這樣了，用不著這麼費力吧？\n");
+                return notify_fail("對方都已經這樣了，用不着這麼費力吧？\n");
 
-        msg = HIW "$N" HIW "一聲怒嚎，將戰神心經提運極至，雙拳頓時攜著"
+        msg = HIW "$N" HIW "一聲怒嚎，將戰神心經提運極至，雙拳頓時攜着"
               "雷霆萬鈞之勢猛貫向$n" HIW "。\n" NOR;
 
         ap=me->query_skill("unarmed")+query("level", me)*20+

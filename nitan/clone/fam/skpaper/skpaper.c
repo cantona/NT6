@@ -38,7 +38,7 @@ string long()
                 msg = WHT "這是一張" + name() + NOR + WHT "，看樣子"
                       "已經頗有年時了。頁片上用隸體密密麻麻寫滿了蠅"
                       "頭小字，似乎都和" + query("skill_name") +
-                      "有關，你可以試著讀讀(read)看，也許對武學能夠"
+                      "有關，你可以試着讀讀(read)看，也許對武學能夠"
                       "有所幫助。";
         } else
                 msg = "這是一張殘缺不全的書頁，可字跡已無法辨清了。";
@@ -67,7 +67,7 @@ int do_read(string arg)
                                            "己的武學似乎難以參詳。\n");
 
                 if (me->query_skill(booksk, 1) < query("min_lvl"))
-                        return notify_fail("你覺得自己對這項技能的了解尚過淺薄，"
+                        return notify_fail("你覺得自己對這項技能的瞭解尚過淺薄，"
                                            "一時無法參詳透徹。\n");
 
                 if (me->query_skill(booksk, 1) >= query("max_lvl"))
@@ -75,11 +75,11 @@ int do_read(string arg)
                                            "從中獲得任何幫助。\n");
 
                 if (! me->can_improve_skill(booksk))
-                        return notify_fail("你參詳了半天，發覺似乎是由于自身經驗"
+                        return notify_fail("你參詳了半天，發覺似乎是由於自身經驗"
                                            "不足的緣故，很多東西無法理解。\n");
 
-                message_vision(HIW "$N" HIW "聚精會神地閱讀「" NOR + na + HIW
-                               "」上所記載的東西，似乎有所收獲。\n" NOR, me);
+                message_vision(HIW "$N" HIW "聚精會神地閲讀「" NOR + na + HIW
+                               "」上所記載的東西，似乎有所收穫。\n" NOR, me);
 
                 if (me->can_improve_skill(booksk))
                         me->improve_skill(booksk, query("power_point"));

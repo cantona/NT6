@@ -10,7 +10,7 @@ void create()
 積垢，卻有枝粗大的蠟燭(lazhu)放在案上。
 LONG );
         set("item_desc", ([
-                "lazhu": "一枝粗大的蠟燭，燭淚似乎頗為新鮮，好象剛有人點過。\n"
+                "lazhu": "一枝粗大的蠟燭，燭淚似乎頗為新鮮，好像剛有人點過。\n"
         ]) );
         set("exits", ([
                 "south" : __DIR__"shangang",
@@ -60,7 +60,7 @@ int do_open(string arg)
                 return notify_fail("佛像暗門早給人家打開了！\n");
         if( query_temp("marks/lazhu", me) )
         {
-                message("vision", me->name() + "奮力去撬暗門。撬得幾下，那暗門漸漸鬆了。"+me->name()+"伸手指將暗門輕輕起了出來，舉燭一照，只見佛像肚裡珠光寶氣，靄靄浮動，不知這個大肚子之中，藏了有多少珍珠寶貝。\n", environment(me) );
+                message("vision", me->name() + "奮力去撬暗門。撬得幾下，那暗門漸漸鬆了。"+me->name()+"伸手指將暗門輕輕起了出來，舉燭一照，只見佛像肚裏珠光寶氣，靄靄浮動，不知這個大肚子之中，藏了有多少珍珠寶貝。\n", environment(me) );
                 delete_temp("marks/lazhu", me);
                 obj = new("/d/city/obj/goldring");
                 obj -> move(foxiang); 

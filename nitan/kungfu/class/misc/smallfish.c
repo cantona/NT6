@@ -26,7 +26,7 @@ void create()
 {
         set_name("高處不勝寒", ({ "gaochu bushenghan" }));
         set("title", HIY "王者麾下滅天騎士團" NOR "破天王");
-        set("nickname",HIR "天地交征" NOR);
+        set("nickname",HIR "天地交徵" NOR);
         set("long", "別惹！你惹不起！\n" );
         set("gender", "男性");
         set("age", 30);

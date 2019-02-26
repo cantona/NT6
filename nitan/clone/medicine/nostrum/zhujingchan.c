@@ -26,9 +26,9 @@ int do_eat(string arg)
         if (!present(this_object(), this_player()))
                 return notify_fail("你要吃什麼？\n");
         if (me->is_busy() )
-                return notify_fail("別急，慢慢吃，小心別噎著了。\n");
+                return notify_fail("別急，慢慢吃，小心別噎着了。\n");
 
-        message_vision(HIG"$N吃下一只朱睛冰蟾，只覺一股清香沁入心肺，頓時靈台一片空明，神意清爽！\n" NOR, me);
+        message_vision(HIG"$N吃下一隻朱睛冰蟾，只覺一股清香沁入心肺，頓時靈台一片空明，神意清爽！\n" NOR, me);
        if(!userp(me))
         {
         if (me->query_condition("chanchu_poison"))

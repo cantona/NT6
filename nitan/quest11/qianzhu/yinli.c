@@ -17,7 +17,7 @@ void create()
 	set("age", 19);
 	set("long","她是個十七八歲的少女，荊釵布裙，是個鄉村貧女，\n"+
                    "面容黝黑，臉上肌膚浮腫，凹凹凸凸，生得極是醜陋，\n"+
-                   "只是一對眸子頗有神採，身材也是苗條纖秀。\n");
+                   "只是一對眸子頗有神采，身材也是苗條纖秀。\n");
 	set("str", 20);
 	set("int", 20);
 	set("con", 20);
@@ -63,11 +63,11 @@ void create()
 	set("chat_chance", 3);
 	set("chat_msg", ({
 		(: random_move :),
-		CYN"殷離突然自言自語道：“死鬼！我很老了麼？老得像你媽了？”，說完又吃吃地笑了起來。\n"NOR,
+		CYN"殷離突然自言自語道：“死鬼！我很老了麼？老得像你媽了？”，説完又吃吃地笑了起來。\n"NOR,
 		(: random_move :),
 		"殷離從地下拾起一根柴枝，在地上亂抽了兩下。\n",
 		(: random_move :),
-		CYN"殷離突然板著臉道：你取笑我生得醜，你不想活了。\n"NOR,
+		CYN"殷離突然板着臉道：你取笑我生得醜，你不想活了。\n"NOR,
 		(: random_move :),
 		CYN"殷離彎過中指，用指節輕輕在你額頭上敲了兩下，笑道：乖兒子，那你叫我媽罷！\n"NOR,
 	}));
@@ -88,20 +88,20 @@ string ask_qzs()
 		return "這千蛛萬毒手可不太適合大男人來修煉哦。";
 
         if ( me->query("combat_exp") < 1200000 )
-		return "你的實戰經驗太少了，還是再去鍛煉一番吧。";
+		return "你的實戰經驗太少了，還是再去鍛鍊一番吧。";
 
 	if ( me->query("con") < 15 || me->query("int") < 20) 
 		return "你的先天條件實在太差，不適合修煉千蛛萬毒手。";
 
         if ( present("goldbox", me))
-		return "修煉千蛛萬毒手所用的金盒不是在你這裡麼？還問我作甚？";
+		return "修煉千蛛萬毒手所用的金盒不是在你這裏麼？還問我作甚？";
 
 	if ( me->query_temp("get_jinhe"))
 		return "我不是剛給你金盒了，怎麼還來要啊？？";
 
 	time = time() - me->query("qianzhu_time");
 	if ( me->query("qianzhu_time") && time < 86400 && !wizardp(me))
-	 	return "嗯？我不是和你說了，過段時間再來問問吧。";
+	 	return "嗯？我不是和你説了，過段時間再來問問吧。";
 
 	ob = unew(BOOK_D("jinhe"));
 	if( !clonep(ob)) 
@@ -113,7 +113,7 @@ string ask_qzs()
 		ob->set("xiulian", 10 + random(10));
 		ob->move(me);
 		me->set_temp("get_jinhe", 1);
-		return "嗯，這裡有個我才修煉過的金盒，既然你要就拿去吧。";
+		return "嗯，這裏有個我才修煉過的金盒，既然你要就拿去吧。";
 	}
 	else {
 		i = me->query("combat_exp", 1) / 500000;
@@ -144,7 +144,7 @@ string ask_qzs()
 				), me
 			);
 			ob->move(me);
-			return "嗯，你就拿著這個金盒去修煉(xiulian)千蛛萬毒手吧。";
+			return "嗯，你就拿着這個金盒去修煉(xiulian)千蛛萬毒手吧。";
 		}
 		else {
 			command("look "+ me->query("id"));
@@ -198,18 +198,18 @@ string ask_lsd()
 	if(me->query_temp("yinli_ask"))
 		return "咦，我不是叫你先陪我玩玩嗎？急什麼急。";
 	if(me->query_temp("yinli_ask1"))
-		return "咦，我不是叫你跟著我到處去玩玩嗎，還等什麼呀？";
+		return "咦，我不是叫你跟着我到處去玩玩嗎，還等什麼呀？";
 	if(me->query_temp("marks/靈蛇"))
 		return "咦，我不是剛剛告訴過你了嗎？";
 	if(me->query("luopan/lsd"))
 		return "咦，我不是已經告訴你了麼？";
 	me->set_temp("yinli_ask1",1);
 	command("xixi");
-	command("say 我一個人在這裡好無聊啊，你先陪我玩玩好嗎？");
+	command("say 我一個人在這裏好無聊啊，你先陪我玩玩好嗎？");
 	this_object()->set_temp("waiting", 1);
 	remove_call_out("checking");
 	call_out("checking", 20, me, this_object());
-	return "你跟著(follow)我，我們到處去走走。";
+	return "你跟着(follow)我，我們到處去走走。";
 }
 
 int checking(object me, object ob)
@@ -258,7 +258,7 @@ int checking1(object me, object ob)
 	me->set_temp("marks/靈蛇",1);
 	me->set("luopan/lsd", 1);
 	command("say 好啦，我玩夠了。你想知道靈蛇島在什麼地方是吧？");
-	command("say 不過我可要先警告你，去那裡很危險的哦！");
+	command("say 不過我可要先警告你，去那裏很危險的哦！");
 	command("whisper "+me->query("id")+" 婆婆的靈蛇島在黃道帶以東一百、以南五個距離的地方。");
 	new("/d/mingjiao/obj/luopan")->move(ob);
 	command("give luo pan to "+me->query("id"));

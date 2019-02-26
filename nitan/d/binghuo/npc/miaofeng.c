@@ -6,7 +6,7 @@ inherit NPC;
 void create()
 {
         set_name("妙風使", ({ "miaofeng shi", "miaofeng", "shi" }));
-        set("long", "此人黃須鷹鼻，一看就知道是個胡人。\n");
+        set("long", "此人黃鬚鷹鼻，一看就知道是個胡人。\n");
         set("title",HIG "明教總教"HIM"使者"NOR);
         set("gender", "男性");
         set("age", 30);

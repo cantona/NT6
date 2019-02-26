@@ -10,7 +10,7 @@ void create()
         set_name("老猴子", ({ "monkey", "hou", "houzi" }) );
         set("race", "走獸");
         set("age", 200 + random(50));
-        set("long", "一只老態龍鐘的老猴子，雖然動作遲緩，但絲毫不減狡詐的性子。\n");
+        set("long", "一隻老態龍鍾的老猴子，雖然動作遲緩，但絲毫不減狡詐的性子。\n");
         set("attitude", "peaceful");
 
         set("limbs", ({ "頭部", "身體",  "前腿", "後腿", "尾巴" }) );

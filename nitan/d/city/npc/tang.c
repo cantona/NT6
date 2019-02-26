@@ -23,12 +23,12 @@ string  *query_all_trade() { return all_trade; }
 void create()
 {
         set_name("唐楠", ({ "tang nan", "tang", "nan" }));
-        set("title", "當舖老板");
+        set("title", "當鋪老闆");
         set("shen_type", 0);
         set("gender", "男性");
         set("age", 35);
         set("str", 1000);
-        set("long", "據說唐楠是四川唐家的後代。\n");
+        set("long", "據説唐楠是四川唐家的後代。\n");
         set("no_get_from", 1);
 
         set_skill("unarmed", 60);
@@ -68,18 +68,18 @@ mixed ask_back()
         me = this_player();
         if( query("family/family_name", me) != "雪山寺" )
         {
-                message_vision(CYN "$N" CYN "一臉茫然道：啥？剛才你說啥？\n" NOR,
+                message_vision(CYN "$N" CYN "一臉茫然道：啥？剛才你説啥？\n" NOR,
                                this_object(), me);
                 return -1;
         }
 
         message_sort(HIY "\n$N" HIY "看了看$n" HIY "，陰笑兩聲，隨即在$n"
-                     HIY "耳邊低聲說道：“小的早就為您老人家準備好了，就"
-                     "在櫃台後面，您快跟我來吧。”說罷$N" HIY "便領著$n"
+                     HIY "耳邊低聲説道：“小的早就為您老人家準備好了，就"
+                     "在櫃枱後面，您快跟我來吧。”説罷$N" HIY "便領着$n"
                      HIY "快步朝後廳走去。\n\n" NOR, this_object(), me);
         me->move("/d/xueshan/midao");
-        tell_object(me, CYN + name() + "說道：就是這裡，你一直走南就行了。\n"
-                        HIC + name() + "說完便急急忙忙趕了回去。\n" NOR);
+        tell_object(me, CYN + name() + "説道：就是這裏，你一直走南就行了。\n"
+                        HIC + name() + "説完便急急忙忙趕了回去。\n" NOR);
         return -1;
 }
 
@@ -117,7 +117,7 @@ mixed trade_task(int index)
                    ob = present(big_task[index]["trade"][trades[i]], who);
                    //if( !objectp(ob) || !query("task_ob", ob) )
                    if( !objectp(ob) || !ob->is_task() )
-                        return "等你拿到了" + trades[i] + "再說吧。";
+                        return "等你拿到了" + trades[i] + "再説吧。";
         }
 
         for(int i = 0; i < sizeof(trades); i++) {
@@ -151,7 +151,7 @@ void add_big(string arg, int i)
                 ]);
 
         set("inquiry/" + filter_color(name), (: ask_task, i, name :));
-        set("inquiry/兌換" + filter_color(name), (: trade_task, i :));
+        set("inquiry/兑換" + filter_color(name), (: trade_task, i :));
         all_trade[sizeof(all_trade)-i-1]=query("id", task_ob);
         destruct(task_ob);
 }
@@ -177,7 +177,7 @@ void task_announce()
                         "、" : ((i < (sizeof(big_task) - 1)) ?
                         HIC "和" NOR : HIC "，不知哪位江湖朋友需要。" NOR));
         }
-        set("inquiry/兌換", "我這裡有" + msg[10..<34] + "可以和你交換。");
+        set("inquiry/兑換", "我這裏有" + msg[10..<34] + "可以和你交換。");
         command("chat " + msg);
 }
 

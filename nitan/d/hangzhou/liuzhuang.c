@@ -8,7 +8,7 @@ void create()
 {
         set("short", "劉莊");
         set("long", @LONG
-莊園的大匾上是“劉莊”兩個大字。大門(gate)緊閉，裡面靜悄
+莊園的大匾上是“劉莊”兩個大字。大門(gate)緊閉，裏面靜悄
 悄的一點聲音都沒有。
 LONG);
         set("exits", ([
@@ -17,7 +17,7 @@ LONG);
                 "north" : __DIR__"liuzhuang2",
         ]));
         set("item_desc", ([
-                   "gate" : "朱紅的大門緊閉著，敲敲(knock)看吧。\n"
+                   "gate" : "硃紅的大門緊閉着，敲敲(knock)看吧。\n"
         ]));
         set("objects", ([
                 __DIR__"npc/guanjia" : 1,
@@ -40,7 +40,7 @@ int do_knock(string arg)
         object me;
 
         me = this_player();
-        message_vision("$N“咚，咚，咚，。。。”地敲著門，可裡面卻一"
+        message_vision("$N“咚，咚，咚，。。。”地敲着門，可裏面卻一"
                        "點動靜都沒有。\n", me);
         return 1;
 }

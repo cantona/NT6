@@ -7,7 +7,7 @@ void create()
 {
 	set("short", "祭壇");
 	set("long",@long
-這裡是華山絕頂上人們祭祀上天的祭壇，華山弟子都要下山行俠仗義，以
+這裏是華山絕頂上人們祭祀上天的祭壇，華山弟子都要下山行俠仗義，以
 換取上蒼對華山百姓的保佑。
 long);
 	set("exits", ([
@@ -41,7 +41,7 @@ int do_jitan(string arg)
 		return notify_fail("你身上沒有令牌如何告慰英烈的在天之靈？\n");
 
 	if (me->is_busy() || me->is_fighting())
-		return notify_fail("你正忙著哪！\n");
+		return notify_fail("你正忙着哪！\n");
 
 	if( !me->query_temp("jitan") )
 		return notify_fail("你要幹什麼？\n");
@@ -58,7 +58,7 @@ int do_jitan(string arg)
 		default:	return notify_fail("你要幹什麼？\n");
 	}
 
-	message_vision("$N恭敬地從侍童手中接過蒙面人，擺放在祭壇前，恭敬地磕了三個響頭。\n", me);
+	message_vision("$N恭敬地從侍童手中接過蒙麪人，擺放在祭壇前，恭敬地磕了三個響頭。\n", me);
 	write(HIW"突然天空中降下一道閃電，劈向蒙面人。只聽蒙面人一聲慘叫，就此西去。\n"NOR, me);
 
 	addskill = (int)me->query("int",1) * 2;

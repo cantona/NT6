@@ -4,7 +4,7 @@ void create()
 {
         set("short", "山路");
         set("long", @LONG
-這裡是荒涼的山路，只有一條蜿蜒崎嶇的小徑。
+這裏是荒涼的山路，只有一條蜿蜒崎嶇的小徑。
 LONG );
         set("exits", ([
                 "northup" : "/d/beijing/shanlu2",

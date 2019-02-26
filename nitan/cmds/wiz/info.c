@@ -42,7 +42,7 @@ int main(object me, string arg)
         if (userp(obj))                str += "使用者 ";
         if (interactive(obj))        str += "線上 ";
         if (wizardp(obj))        str += "巫師 ";
-        if (clonep(obj))         str += "復制 ";
+        if (clonep(obj))         str += "複製 ";
         if (virtualp(obj))         str += "虛擬 ";
         if( query("env/invisible", obj))str+="隱身";
         if (query_heart_beat(obj)) str += "心跳:" + query_heart_beat(obj) + " ";
@@ -51,7 +51,7 @@ int main(object me, string arg)
         if ((ttl = obj->query_time_to_leave()) > 0)
                 write("禁閉：\t\t" + appromix_time(ttl) + "\n");
 
-        write("復制個數：\t" + sizeof(children(base_name(obj)+".c")) + "\n");
+        write("複製個數：\t" + sizeof(children(base_name(obj)+".c")) + "\n");
         write("參考連結：\t" + refs(obj) + "\n");
         if (obj->is_telneting())
                 write("遠程登陸：\t" + obj->query_dest_addr() + "\n");

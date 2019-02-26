@@ -4,7 +4,7 @@ void create()
 {
     set("short", "拳俑");
         set("long", @LONG
-這裡的陶俑都手無寸鐵，擺著各種搏擊格鬥的姿勢，神態各異。
+這裏的陶俑都手無寸鐵，擺着各種搏擊格鬥的姿勢，神態各異。
 LONG );
     set("exits", ([
         "west":__DIR__"shidao2",
@@ -43,6 +43,6 @@ int do_xue(string arg)
         set("unarmed", 1, me);
         return 1;
     }
-    write("你對著秦俑瞧了一回兒，發現已經沒有什麼好學的了。\n");
+    write("你對着秦俑瞧了一回兒，發現已經沒有什麼好學的了。\n");
     return 1;
 }

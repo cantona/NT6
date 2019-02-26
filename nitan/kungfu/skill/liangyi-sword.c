@@ -1,4 +1,4 @@
-// liangyi-sword.c (kunlun) 昆侖派正兩儀劍法
+// liangyi-sword.c (kunlun) 崑崙派正兩儀劍法
 // Last Modified by sir 10.22.2001
 
 #include <ansi.h>
@@ -7,15 +7,15 @@ string type() { return "martial"; }
 string martialtype() { return "skill"; }
 
 mapping *action= ({ // 12 招
-([        "action":"$N一式"HIC"「順水推舟」"NOR"，$N手中$w指向自己左胸口，劍柄斜斜向右外，緩緩劃向$n的$l",
+([        "action":"$N一式"HIC"「順水推舟」"NOR"，$N手中$w指向自己左胸口，劍柄斜斜向右外，緩緩划向$n的$l",
         "lvl" : 0,
         "skill_name" : "順水推舟"
 ]),
-([        "action":"$N身形微側，左手後擺，右手$w一招"HIY"「橫掃千軍」"NOR"，直向$n的腰間揮去",
+([        "action":"$N身形微側，左手後襬，右手$w一招"HIY"「橫掃千軍」"NOR"，直向$n的腰間揮去",
         "lvl" : 10,
         "skill_name" : "橫掃千軍"
 ]),
-([        "action":"$N縱身近前，$w鬥然彎彎彈出，劍光爆長，一招"HIB"「峭壁斷雲」"NOR"，猛地刺向$n的胸口",
+([        "action":"$N縱身近前，$w斗然彎彎彈出，劍光爆長，一招"HIB"「峭壁斷雲」"NOR"，猛地刺向$n的胸口",
         "lvl" : 20,
         "skill_name" : "峭壁斷雲"
 ]),
@@ -23,7 +23,7 @@ mapping *action= ({ // 12 招
         "lvl" : 30,
         "skill_name" : "仙人指路"
 ]),
-([        "action":"$N劍招忽變，使出一招"GRN"「雨打飛花」"NOR"，全走斜勢，但七八招斜勢中偶爾又挾著一招正勢，教人極難捉摸",
+([        "action":"$N劍招忽變，使出一招"GRN"「雨打飛花」"NOR"，全走斜勢，但七八招斜勢中偶爾又挾着一招正勢，教人極難捉摸",
         "lvl" : 40,
         "skill_name" : "雨打飛花"
 ]),
@@ -39,7 +39,7 @@ mapping *action= ({ // 12 招
         "lvl" : 70,
         "skill_name" : "江河不竭"
 ]),
-([        "action":"$N左手劍鞘一舉，快逾電光石光，一招"HIW"「高塔掛雲」"NOR"，用劍鞘套住$n手中兵器，$w直指$n的嚥喉",
+([        "action":"$N左手劍鞘一舉，快逾電光石光，一招"HIW"「高塔掛雲」"NOR"，用劍鞘套住$n手中兵器，$w直指$n的咽喉",
         "lvl" : 80,
         "skill_name" : "高塔掛雲"
 ]),
@@ -149,7 +149,7 @@ int help(object me)
         write(HIC"\n正兩儀劍法："NOR"\n");
         write(@HELP
 
-    正兩儀劍法是昆侖派的高深劍法。
+    正兩儀劍法是崑崙派的高深劍法。
     倘若雙劍合璧，兩儀化四象，四象生八卦，陰陽相調，水火互
 濟，威力很強！
 

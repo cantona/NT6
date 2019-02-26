@@ -5,7 +5,7 @@ void create()
 {
         set("short", HIG "【夢境】" NOR);
         set("long", CYN @LONG
-這裡是夢境。你感覺到迷迷糊糊的，意識很不清晰。
+這裏是夢境。你感覺到迷迷糊糊的，意識很不清晰。
 四處都是白茫茫一片，看什麼都不真切。
 LONG NOR );
  /*       set("exits", ([

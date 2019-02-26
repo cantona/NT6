@@ -12,7 +12,7 @@ void create()
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("long","這件鵝黃色的綢衫上面繡著幾只翠鳥，聞起來還有一股淡香。\n");
+                set("long","這件鵝黃色的綢衫上面繡着幾隻翠鳥，聞起來還有一股淡香。\n");
                 set("unit", "件");
                 set("value", 600);
                 set("material", "cloth");

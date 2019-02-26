@@ -36,7 +36,7 @@ int valid_learn(object me)
                 return notify_fail("你不是日月神教的人，難以修煉吸星大法。\n");
 
         if( query("con", me)<20 )
-                return notify_fail("你試著按照法門運轉了一下內息，忽然覺得心火如"
+                return notify_fail("你試着按照法門運轉了一下內息，忽然覺得心火如"
                                    "焚，丹田卻是一陣冰涼！\n");
 
         if ((int)me->query_skill("force", 1) < 100)
@@ -92,7 +92,7 @@ mixed valid_damage(object ob, object me, int damage, object weapon)
                         break;
                 case 2:
                         result += ([ "msg" : HIM "$N" HIM "只覺得發出的內力猶"
-                                             "無影無蹤，渾然不知著落。\n" NOR ]);
+                                             "無影無蹤，渾然不知着落。\n" NOR ]);
                         break;
                 default:
                         result += ([ "msg" : HIM "$N" HIM "不住催動內力，但是"
@@ -135,13 +135,13 @@ int help(object me)
     吸星大法創自北宋年間的逍遙派，分為北冥神功和化功大法兩
 路，後來從大理段氏和星宿派分別傳落，合而為一，稱為吸星大法。
 主要是繼承了化功大法一路，修習者當令丹田常如空箱，恆似深谷，
-空箱可貯物，深谷可容水。若有內息，散之于任脈諸穴。
+空箱可貯物，深谷可容水。若有內息，散之於任脈諸穴。
     吸星大法只能拜任我行為師學習，非有相當機緣不能學到。
 
         學習要求：
                 葵花心法
                 基本內功10級
-                盡量少的正氣
+                儘量少的正氣
                 不能學習佛門心法
                 散功
 HELP

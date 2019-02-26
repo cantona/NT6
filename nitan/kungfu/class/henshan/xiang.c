@@ -105,10 +105,10 @@ int accept_ask(object me, string topic)
 {
         switch (topic)
         {
-        case "峰連碧羅" :
+        case "峯連碧羅" :
                 return MASTER_D->teach_pfm(me, this_object(),
                         ([ "perform" : "can_perform/biluo-zhang/lian",
-                           "name"    : "峰連碧羅",
+                           "name"    : "峯連碧羅",
                            "sk1"     : "biluo-zhang",
                            "lv1"     : 100,
                            "force"   : 120,

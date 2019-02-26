@@ -4,7 +4,7 @@
 #include <ansi.h>;
 #include <combat.h>;
 inherit F_SSERVER;
-#define PNAME "﹝落花秋歌﹞"
+#define PNAME "［落花秋歌］"
 int perform(object me, object target)
 {
         string msg;
@@ -125,15 +125,15 @@ int help(object me)
         write(@HELP
 
         使用功效：
-                大增己方攻擊力和防御力，共同出手兩招
+                大增己方攻擊力和防禦力，共同出手兩招
 
         出手要求：
                 紅花神功100級
                 秋歌七刀100級
                 內力修為800
                 內力500
-                必須有伙伴組隊配合
-        伙伴要求：
+                必須有夥伴組隊配合
+        夥伴要求：
                 紅花神功100級
                 落花十三劍100級
                 內力修為800

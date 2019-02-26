@@ -15,7 +15,7 @@ void create()
         set("short", "灌木林");
         set("long",@LONG
 這是連片灌木林。周圍安靜得奇怪，讓你覺得有一股莫名的恐懼伴
-隨著你。走了不遠，你就可以看得見前面的空地了。
+隨着你。走了不遠，你就可以看得見前面的空地了。
 LONG);
         set("exits", ([
                 "northdown" : __DIR__"kongdi",

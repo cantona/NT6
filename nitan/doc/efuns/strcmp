@@ -1,6 +1,6 @@
         strcmp(3)                LP MudOSv21c7                (7 Jul 1996)
         函數名稱:
-                strcmp() - 判斷兩個字串間的語句關系 (lexical
+                strcmp() - 判斷兩個字串間的語句關係 (lexical
                            relationship).
         函數語法:
                 int strcmp( string one, string two );

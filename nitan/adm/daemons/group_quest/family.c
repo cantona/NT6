@@ -1,4 +1,4 @@
-// group_quest:family 群組任務──門派入侵
+// group_quest:family 羣組任務——門派入侵
 
 #include <ansi.h>
 #include "family.h"
@@ -39,7 +39,7 @@ int select_quest()
                 }
         }
 
-        // MUD中沒有屬于任何一個門派的玩家
+        // MUD中沒有屬於任何一個門派的玩家
         if (!sizeof(fam_map))
             return 0;
 
@@ -59,9 +59,9 @@ int select_quest()
         the_family = p;
 
         // 從這個門派中隨機抽取三個玩家的名單，
-        // 這裡有一個問題，如果這個門派在線的玩家數少于3人怎麼辦？
-        // 而且我也沒有發現哪裡使用到了name1, name2, name3，很奇怪
-        // 我現在把他們放到一個name數組裡面
+        // 這裏有一個問題，如果這個門派在線的玩家數少於3人怎麼辦？
+        // 而且我也沒有發現哪裏使用到了name1, name2, name3，很奇怪
+        // 我現在把他們放到一個name數組裏面
         i = 3;
         while (i--)
         {

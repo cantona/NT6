@@ -34,7 +34,7 @@ int perform(object me, object target)
                 return notify_fail("你沒有激發玉女素心劍，不能使用雙劍合璧。\n");
 
        if (! living(target))
-              return notify_fail("對方都已經這樣了，用不著這麼費力吧？\n");
+              return notify_fail("對方都已經這樣了，用不着這麼費力吧？\n");
 
         msg = HIY "$N" HIY "左手以全真劍法劍意，右手化玉女劍法劍"
               "招，雙劍合璧同時刺出。\n" NOR;

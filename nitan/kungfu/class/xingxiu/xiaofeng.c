@@ -6,7 +6,7 @@ int auto_perform();
 void you_out();
 void create()
 {
-        set_name("蕭峰", ({"xiao feng", "xiao", "feng"}));
+        set_name("蕭峯", ({"xiao feng", "xiao", "feng"}));
         set("nickname", "大俠");
         set("gender", "男性");
         set("age", 35);
@@ -63,7 +63,7 @@ int accept_kill(object victim)
         if( query_temp("azi/killer", victim) != 1 && query_temp("azi/killer2", victim) != 1 )
         {
                 command("say 臭賊有幫手，但我蕭某何時怕過人多！\n");
-                message_vision(HIY "蕭峰見來了幫手，豪氣頓增,把降龍十八掌發揮到極致,只見蕭峰雙臂劃圈推出，正是一招「亢龍有悔」!\n" NOR,me);
+                message_vision(HIY "蕭峯見來了幫手，豪氣頓增,把降龍十八掌發揮到極致,只見蕭峯雙臂劃圈推出，正是一招「亢龍有悔」!\n" NOR,me);
                 command("halt");
                 ob = all_inventory(environment(me));
                 for(i=0; i<sizeof(ob); i++) {
@@ -86,7 +86,7 @@ void die()
         object  ob;
         ob = me->query_last_damage_from();
         if( ob)set_temp("xiaofeng/done", 1, ob);
-        message_vision(HIR"蕭峰道:阿紫,姐夫無能,保護不了你了！\n" NOR,this_object());
+        message_vision(HIR"蕭峯道:阿紫,姐夫無能,保護不了你了！\n" NOR,this_object());
         you_out();
         ::die();
 }
@@ -100,7 +100,7 @@ void destruct_me(object me)
         if (obj)
         {
                destruct(obj);
-               message_vision(HIY"蕭峰哈哈大笑，道:今天饒爾等不死。抱住阿紫，幾個起落，便已不見！\n" NOR,this_object());
+               message_vision(HIY"蕭峯哈哈大笑，道:今天饒爾等不死。抱住阿紫，幾個起落，便已不見！\n" NOR,this_object());
                destruct(me);
         }
 }

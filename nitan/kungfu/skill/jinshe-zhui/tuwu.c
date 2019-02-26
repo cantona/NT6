@@ -14,7 +14,7 @@ int perform(object me, object target)
 
         /*
         if( query_temp("jinshe/tuwu", me) )
-                return notify_fail("你才用的金蛇吐霧，沒法接著就出招。\n");
+                return notify_fail("你才用的金蛇吐霧，沒法接着就出招。\n");
         */
 
         if (! target) target = offensive_target(me);
@@ -24,8 +24,8 @@ int perform(object me, object target)
         if( !objectp(weapon=query_temp("handing", me)) || 
             // (string)weapon->query("id") != "jinshe zhui" ||
             weapon->query_amount() < 1)
-                // return notify_fail("你手裡沒拿金蛇錐，不能使用絕招！\n");
-                return notify_fail("你手裡沒拿金蛇錐或其他暗器，不能使用絕招！\n");
+                // return notify_fail("你手裏沒拿金蛇錐，不能使用絕招！\n");
+                return notify_fail("你手裏沒拿金蛇錐或其他暗器，不能使用絕招！\n");
 
         if ((skill = me->query_skill("jinshe-zhui", 1)) < 100)
                 return notify_fail("你的金蛇錐法不夠嫻熟，不會使用金蛇吐霧。\n");
@@ -75,10 +75,10 @@ void tuwu_end(object me, object target)
 {
         if (target && living(target))
         {
-                message_combatd("$N抹了抹滿臉的" HIR "鮮血" NOR "，終于睜開了眼。\n",
+                message_combatd("$N抹了抹滿臉的" HIR "鮮血" NOR "，終於睜開了眼。\n",
                                 target);
                 set_temp("block_msg/all", 0, target);
-                write(HIR "你終于抹掉了滿臉的鮮血，看到了周圍的情景。\n"NOR);
+                write(HIR "你終於抹掉了滿臉的鮮血，看到了周圍的情景。\n"NOR);
                 delete_temp("jinshe/tuwu", target);
         }
 

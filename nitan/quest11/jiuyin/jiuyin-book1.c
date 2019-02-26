@@ -42,7 +42,7 @@ int do_unite(string arg)
 		if(me->query_skill("jiuyin-zhengong", 1) < 200
 		 || me->query_skill("jiuyin-shenfa", 1) < 150
 		 || me->query_skill("xuanyin-jian", 1) < 150 )
-			return notify_fail("你還是將此卷讀熟後再合並九陰真經上、下卷吧。\n");
+			return notify_fail("你還是將此卷讀熟後再合併九陰真經上、下卷吧。\n");
 		message_vision(HIY"$N將九陰真經上、下卷互相對照，重新抄錄了整本九陰真經。\n"NOR,me);
 		ob = new(__DIR__"book");
 		ob->set("owner",me->query("id"));
@@ -74,19 +74,19 @@ int do_study(string arg)
       if (!arg) return notify_fail("你要讀什麼？\n");
 
       if(me->is_busy())
-          return notify_fail("你現在正忙著呢。\n");
+          return notify_fail("你現在正忙着呢。\n");
 
       if(where->query("sleep_room")|| where->query("no_fight"))
-          return notify_fail("這裡你不能讀書。\n");
+          return notify_fail("這裏你不能讀書。\n");
 
       if( me->is_fighting() )
           return notify_fail("你無法在戰鬥中專心下來研讀新知！\n");
 
       if(! me->query("quest/jiuyin1/pass"))
-          return notify_fail("你從哪裡偷來的九陰真經，無法研讀。\n");
+          return notify_fail("你從哪裏偷來的九陰真經，無法研讀。\n");
 
       if( this_object()->query("owner") != me->query("id"))
-          return notify_fail("你從哪裡偷來的九陰真經，無法研讀。\n");
+          return notify_fail("你從哪裏偷來的九陰真經，無法研讀。\n");
 
       if( !me->query_skill("literate", 1) )
           return notify_fail("你是個文盲，先學點文化(literate)吧。\n");
@@ -115,9 +115,9 @@ int do_study(string arg)
           if( my_skill >= me->query_skill("daode-jing",1))
               return notify_fail("你道德經太淺，不能學到什麼東西。\n");
           if( my_skill * my_skill * my_skill / 10 > (int)me->query("combat_exp") ) 
-              return notify_fail("也許是缺乏實戰經驗，你對經書上面所說的東西總是無法領會。\n");
+              return notify_fail("也許是缺乏實戰經驗，你對經書上面所説的東西總是無法領會。\n");
           else
-              write("你研讀著有關九陰真功的技巧，似乎有些心得。\n");
+              write("你研讀着有關九陰真功的技巧，似乎有些心得。\n");
         //天賦“領悟大師”影響效果：  by spiderii@ty ..lsxk想法太過變態了
         if(me->query("relife/quest/lwds")){
          if(random(100) > me->query("relife/quest/lwds")*10)
@@ -137,9 +137,9 @@ int do_study(string arg)
           if( my_skill >= me->query_skill("daode-jing",1))
               return notify_fail("你道德經太淺，不能學到什麼東西。\n");
           if( my_skill * my_skill * my_skill / 10 > (int)me->query("combat_exp") ) 
-              return notify_fail("也許是缺乏實戰經驗，你對經書上面所說的東西總是無法領會。\n");
+              return notify_fail("也許是缺乏實戰經驗，你對經書上面所説的東西總是無法領會。\n");
           else
-              write("你研讀著有關九陰身法的技巧，似乎有些心得。\n");
+              write("你研讀着有關九陰身法的技巧，似乎有些心得。\n");
         //天賦“領悟大師”影響效果：  by spiderii@ty ..lsxk想法太過變態了
         if(me->query("relife/quest/lwds")){
          if(random(100) > me->query("relife/quest/lwds")*10)
@@ -159,9 +159,9 @@ int do_study(string arg)
           if( my_skill >= me->query_skill("daode-jing",1))
               return notify_fail("你道德經太淺，不能學到什麼東西。\n");
           if( my_skill * my_skill * my_skill / 10 > (int)me->query("combat_exp") ) 
-              return notify_fail("也許是缺乏實戰經驗，你對經書上面所說的東西總是無法領會。\n");
+              return notify_fail("也許是缺乏實戰經驗，你對經書上面所説的東西總是無法領會。\n");
           else
-              write("你研讀著有關玄陰劍法的技巧，似乎有些心得。\n");
+              write("你研讀着有關玄陰劍法的技巧，似乎有些心得。\n");
         //天賦“領悟大師”影響效果：  by spiderii@ty ..lsxk想法太過變態了
         if(me->query("relife/quest/lwds")){
          if(random(100) > me->query("relife/quest/lwds")*10)
@@ -177,7 +177,7 @@ int do_study(string arg)
           break;
          case "daode-jing":
               my_skill = me->query_skill("daode-jing", 1);
-          write("你研讀著道德經，似乎有些心得。\n");
+          write("你研讀着道德經，似乎有些心得。\n");
           me->improve_skill("daode-jing", ((int)me->query_skill("literate", 1)/5+5) );
           me->receive_damage("jing", cost );
           if(me->query_skill("daode-jing",1)>150)

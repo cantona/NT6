@@ -48,7 +48,7 @@ int do_shou(string arg)
 
     if( !objectp(ob=query_temp("handing", me)) || 
          ob->name() != HIY"符紙"NOR)
-         return notify_fail("你手裡沒有拿符紙，無法讓鬼魂現身！\n");
+         return notify_fail("你手裏沒有拿符紙，無法讓鬼魂現身！\n");
 
     me->start_busy(2);
     if (query("env/invisible"))
@@ -97,12 +97,12 @@ void course(object me, object weapon)
     if (ap < 100)   dam = 80;
     if ( ap / 2 + random(ap) > dp )
     {
-       message_vision(HIR "$N突然發出一聲凄厲的慘叫，令人毛骨悚然。\n"NOR, this_object());
+       message_vision(HIR "$N突然發出一聲淒厲的慘叫，令人毛骨悚然。\n"NOR, this_object());
        if (random(10) < 3)
        {
           message_vision(HIY"\n" + weapon->name() +
-                         HIY "突然脫手而出，劃出一道金光，刺入了$n的嚥喉。\n\n"
-                         HIR "只聽一聲凄厲的尖叫，$n倒在地下扭動了幾下，"
+                         HIY "突然脱手而出，劃出一道金光，刺入了$n的咽喉。\n\n"
+                         HIR "只聽一聲淒厲的尖叫，$n倒在地下扭動了幾下，"
                          HIR "慢慢化成了一灘黑水，消失了。\n\n", me, this_object());
           weapon->move(environment(this_object()));
           set_temp("gui/finish", 1, me);
@@ -110,7 +110,7 @@ void course(object me, object weapon)
           set_temp("gui/base", dam, me);
           if (random(5) == 0)
           {
-              message_vision(HIG "$N突然看到地上有一顆發著綠光的丹丸，小心地撿了起來。\n"NOR, me);
+              message_vision(HIG "$N突然看到地上有一顆發着綠光的丹丸，小心地撿了起來。\n"NOR, me);
               dan = new("/d/wudang/quest/obj/rendan");
               dan->move(me);
           }

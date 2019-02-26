@@ -44,7 +44,7 @@ int perform(object me, object target)
                                    "激發為蛇島奇功, 不能使用「摧心斷腸」！\n");
 
        if (! living(target))
-              return notify_fail("對方都已經這樣了，用不著這麼費力吧？\n");
+              return notify_fail("對方都已經這樣了，用不着這麼費力吧？\n");
 
         switch (skill)
         {
@@ -60,7 +60,7 @@ int perform(object me, object target)
 
         case "staff":
                 msg = HIW "$N" HIW "一聲暴喝，手中" + weapon->name() +
-                      HIW "橫掃盪出，一時間塵土飛揚，$n"
+                      HIW "橫掃蕩出，一時間塵土飛揚，$n"
                       HIW "登時覺得呼吸不暢。\n" NOR;
                 break;
         }

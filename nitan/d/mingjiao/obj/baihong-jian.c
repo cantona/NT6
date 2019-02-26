@@ -24,7 +24,7 @@ void create()
                 set("wield_str", 22);
                 set("treasure",1);
                 set("wield_msg", "只聽見「嗡」地一聲，白光頓現，$N將腰間解下的$n抖得筆直。\n");
-                set("unequip_msg", "$N將手中的$n卷入腰間。\n");
+                set("unequip_msg", "$N將手中的$n捲入腰間。\n");
         }
         init_sword(70);
         setup();

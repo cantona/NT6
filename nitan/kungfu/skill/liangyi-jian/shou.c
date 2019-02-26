@@ -65,7 +65,7 @@ int perform(object me, object target)
                 message_combatd(HIR"\n$n"HIR"被如此兇悍的招數，嚇的全身冰涼，呆立不動，但見$N"HIR"手中的利劍從自\n己的小腹刺入後，直接洞穿了$n"HIR"的身體！\n"NOR, me, target);
                 tell_object(target, HIR"你感覺一柄利劍從自己身體穿過，駭怖到了極點！\n" NOR);
                 addn("max_neili", -100, me);
-                set_temp("last_damage_from", "使用天地同壽和"+target->name()+"同歸于盡", me);
+                set_temp("last_damage_from", "使用天地同壽和"+target->name()+"同歸於盡", me);
                 me->receive_wound("qi",query("max_qi", me)+200,target);
                 set_temp("last_damage_from", "被"+me->name()+"使用天地同壽殺", target);
                 target->receive_wound("qi",query("max_qi", target)+200,me);
@@ -77,7 +77,7 @@ int perform(object me, object target)
         else 
         {
                 target->start_busy(3 + random(3));
-                message_combatd(HIY"\n$n在千鈞一發之際，急忙推開$N，向上飛起，勉強避開這招，但已被嚇的目瞪口呆。\n"NOR, me, target);
+                message_combatd(HIY"\n$n在千鈞一髮之際，急忙推開$N，向上飛起，勉強避開這招，但已被嚇的目瞪口呆。\n"NOR, me, target);
                 addn("max_neili", -50, me);
                 set_temp("last_damage_from", "使用天地同壽", me);
                 me->receive_wound("qi",query("max_qi", me)+200,target);

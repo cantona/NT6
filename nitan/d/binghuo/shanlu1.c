@@ -39,7 +39,7 @@ int do_enter(string arg)
         if( arg=="dong" ) 
         {
                 message("vision",
-                        me->name() + "一彎腰往洞裡走了進去。\n",
+                        me->name() + "一彎腰往洞裏走了進去。\n",
                         environment(me), ({me}) );
                 me->move(__DIR__"inhole1");
                 message("vision",

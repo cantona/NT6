@@ -43,7 +43,7 @@ mapping default_dirs = ([
         "southwest":    "西南",
         "up":           "上面",
         "down":         "下面",
-        "enter":        "裡面",
+        "enter":        "裏面",
         "out":          "外面",
 ]);
 
@@ -66,7 +66,7 @@ mapping default_undirs = ([
         "northeast":    "西南",
         "down":         "上面",
         "up":           "下面",
-        "out":          "裡面",
+        "out":          "裏面",
         "enter":        "外面",
 ]);
 
@@ -103,7 +103,7 @@ int main(object me, string arg)
         }
 
         if( query("no_fight", env) )
-                return notify_fail("那裡禁止戰鬥。\n");
+                return notify_fail("那裏禁止戰鬥。\n");
 
         if (! objectp(target = present(who, env)))
                 return notify_fail("這個方向沒有此人。\n");
@@ -119,14 +119,14 @@ int main(object me, string arg)
                 return notify_fail("你的動作還沒有完成，不能暗算別人。\n");
 
         if (me->is_fighting())
-                return notify_fail("你正忙著戰鬥呢，還有心思暗算別人？\n");
+                return notify_fail("你正忙着戰鬥呢，還有心思暗算別人？\n");
 
         if( !query("can_speak", target) )
                 return notify_fail("你這人真有意思，連" + target->name() +
                                    "也想暗算。\n");
 
         if (! living(target))
-                return notify_fail(target->name() + "都已經這樣了，你還用得著暗算嗎？\n");
+                return notify_fail(target->name() + "都已經這樣了，你還用得着暗算嗎？\n");
 
         if( query("jing", me)<100 )
                 return notify_fail("你無法集中精力，暗算不了別人。\n");
@@ -184,7 +184,7 @@ int main(object me, string arg)
         if( random(query("combat_exp", me))>query("combat_exp", target)/2 && 
             ! target->is_guarder())
         {
-                message_vision(CYN"$N一時沒有防范，被$n攻了個措手不及！\n" NOR, target, me);
+                message_vision(CYN"$N一時沒有防範，被$n攻了個措手不及！\n" NOR, target, me);
                 if (! target->is_busy())
                         target->start_busy(random(4) + 2);
         } else
@@ -246,7 +246,7 @@ int help(object me)
         write(@HELP
 指令格式 : ansuan <人物> at <方向>
 
-這個指令讓你暗算位于<方向>的<人物>。
+這個指令讓你暗算位於<方向>的<人物>。
 如果暗算成功，則敵人發現不了你。否則...:)
 HELP );
         return 1;

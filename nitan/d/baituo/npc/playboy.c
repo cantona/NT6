@@ -8,7 +8,7 @@ void create()
         set("nickname", "採花大盜");
         set("gender", "男性" );
         set("age", 19);
-        set("long", "這是個流裡流氣的花花公子。\n");
+        set("long", "這是個流裏流氣的花花公子。\n");
         set("attitude", "friendly");
         set("shen_type", -1);
 
@@ -48,10 +48,10 @@ void greeting(object ob)
         if( query("gender", ob) == "女性" )
         {
                 if (random(2) == 1)
-                        say("花花公子色迷迷說：" + RANK_D->query_respect(ob) +
-                            "幹嘛那麼著急趕路，陪我玩玩不行嗎？\n");
+                        say("花花公子色迷迷説：" + RANK_D->query_respect(ob) +
+                            "幹嘛那麼着急趕路，陪我玩玩不行嗎？\n");
                 else
                         say("花花公子唱道：路邊的野花不採白不採~~。這位" +
-                            RANK_D->query_respect(ob) + "你說是嗎？\n");
+                            RANK_D->query_respect(ob) + "你説是嗎？\n");
         }
 }

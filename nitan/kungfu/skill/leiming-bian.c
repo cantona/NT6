@@ -2,14 +2,14 @@
 inherit SKILL;
 
 mapping *action = ({
-([ "action": "$N將身一縱，躍在半空，一式「彩鳳棲梧」，手中$w盤旋而下，鞭勢靈動之至，擊向$n$l",
+([ "action": "$N將身一縱，躍在半空，一式「綵鳳棲梧」，手中$w盤旋而下，鞭勢靈動之至，擊向$n$l",
    "dodge": -5,
    "damage":30,
    "force": 100,
         "attack": 90,
         "parry" : 60,
    "lvl" : 0,
-   "skill_name" : "彩鳳棲梧",
+   "skill_name" : "綵鳳棲梧",
         "damage_type": "抽傷"
 ]),
 ([ "action": "$N沉肩滑步，手中$w一抖，一式「鳳凰展翅」，迅捷無比地分打左右兩側，$n頓時左右支絀，慌了手腳",
@@ -32,7 +32,7 @@ mapping *action = ({
    "skill_name" : "蛟龍戲鳳",
         "damage_type": "抽傷"
 ]),
-([ "action": "$N一聲清嘯，手中$w一招「龍飛鳳舞」，劃出漫天鞭影舖天蓋地地向$n卷來，勢道猛烈之極",
+([ "action": "$N一聲清嘯，手中$w一招「龍飛鳳舞」，劃出漫天鞭影鋪天蓋地地向$n捲來，勢道猛烈之極",
    "dodge": -10,
    "damage":110,
    "force": 250,
@@ -120,12 +120,12 @@ mixed hit_ob(object me, object victim, int damage_bonus, int factor)
                                                  if (random(me->query_str()) > victim->query_str()/2 )
                         {             
                                         message_vision(HIY "$N氣運手臂用力一拽，" + weap->name()
-                                + "卻無法從"+weap1->name()+"的纏繞中脫開，情急之下只好放棄了手中的兵刃。\n" NOR, victim );
+                                + "卻無法從"+weap1->name()+"的纏繞中脱開，情急之下只好放棄了手中的兵刃。\n" NOR, victim );
                         weap->move(environment(me));
                                                 victim->reset_action();
                                                 } else {
                                                 message_vision(HIY "$N暗運巧勁，" + weap->name()
-                                + "順著方向快速旋轉數下，解開了"+weap1->name()+"的纏繞。\n" NOR, victim );
+                                + "順着方向快速旋轉數下，解開了"+weap1->name()+"的纏繞。\n" NOR, victim );
                         addn("neili", -50, victim);
                                                 }
                                                 addn("neili", -50, me);

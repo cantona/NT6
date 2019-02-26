@@ -34,12 +34,12 @@ mapping *action = ({
         "skill_name" : "七星聚月",
         "damage_type":  "抽傷"
 ]),
-([      "action": "$N半空一招「北鬥生採」，手中$w如遊龍洗空，長鳳戲羽，分點$n左右",
+([      "action": "$N半空一招「北斗生採」，手中$w如游龍洗空，長鳳戲羽，分點$n左右",
         "force" : 150,
         "dodge" : -35,
         "damage": 70,
         "lvl"   : 60,
-        "skill_name" : "北鬥生採",
+        "skill_name" : "北斗生採",
         "damage_type":  "抽傷"
 ]),
 ([      "action": "$N向前急進，手中$w圈轉如虹，一招「朝拜天罡」，罩向$n前胸",

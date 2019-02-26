@@ -15,7 +15,7 @@ void create()
                 set_default_object(__FILE__);
         else {
                 set("unit", "把");
-                set("long", "這是一把歌女用的瑤琴，制做得相當精巧細膩。\n");
+                set("long", "這是一把歌女用的瑤琴，製做得相當精巧細膩。\n");
                 set("value", 300);
                 set("material", "iron");
                 set("wield_msg", "$N從背上解下一把$n，然後橫在手中。\n");

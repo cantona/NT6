@@ -14,24 +14,24 @@ void load_banned_ids();
 
 void add_site(string pattern);                  // ban 一個不歡迎的 ip 地址
 void remove_site(string pattern);               // 解封一個 ip 地址
-void add_welcome_user(string user_id);          // 增加一個 welcome 用戶(id)
-void remove_welcome_user(string user_id);       // 刪除一個 welcome 用戶(id)
+void add_welcome_user(string user_id);          // 增加一個 welcome 用户(id)
+void remove_welcome_user(string user_id);       // 刪除一個 welcome 用户(id)
 void remove_netclub(string netline);            // 移去一條網吧線
-void open_club_line(object user);               // 由 welcome 用戶自己打開網吧地址
+void open_club_line(object user);               // 由 welcome 用户自己打開網吧地址
 
-// 屬于 welcome 的用戶不受 ban 的影響，而且可以開放這根線上多個 ip 地址
+// 屬於 welcome 的用户不受 ban 的影響，而且可以開放這根線上多個 ip 地址
 string list_welcome_users();                    // welcome users列表
 string list_sites();                            // 被 ban 的 ip 列表
 
 int is_banned(string site);                     // 判斷是否一個 ban 的 ip (logind.c調用)
-int is_netclub(string netline);                 // 判斷是否一個網吧線的用戶(logind.c調用)
-int is_welcome(string user_id);                 // 判斷是否一個 welcome 的用戶(logind.c調用)
+int is_netclub(string netline);                 // 判斷是否一個網吧線的用户(logind.c調用)
+int is_welcome(string user_id);                 // 判斷是否一個 welcome 的用户(logind.c調用)
 
 string *Sites;
 string *Netclubs;
 string *Welcomes;
 string *Banned_IDs;                             //  ban id 表
-string *Banned_Names;                           //  ban 中文名表
+string *Banned_Names;                           //  ban 中文名錶
 
 void create()
 {
@@ -193,7 +193,7 @@ void add_site(string site)
                 }
                 if (tmp1 == "*")
                 {
-                        write (RED + site + "的 IP 范圍太大了!\n" NOR);
+                        write (RED + site + "的 IP 範圍太大了!\n" NOR);
                         return;
                 }
                 Sites += ({site});
@@ -478,7 +478,7 @@ int vaild_allow_address(object ob)
         if (! sizeof(address))
         {
                 set_temp("no_allow_ip", 1, ob);
-                // write(HIY "\n警告：你未設定自己的登錄地址范圍。請用 allowip 指令設置。\n" NOR);
+                // write(HIY "\n警告：你未設定自己的登錄地址範圍。請用 allowip 指令設置。\n" NOR);
                 if (is_welcome(query("id", ob)) && ! is_netclub(query_ip_number(ob)))
                 {
                         open_club_line(ob);    // 並自動開放網吧限制
@@ -501,8 +501,8 @@ int vaild_allow_address(object ob)
                 }
                 return 1;
         }
-        write(HIR "\n嚴重警告：你不在自己所設定的登錄地址范圍內。\n" NOR);
-        log_file("static/ALLOW_IP", sprintf("%s(%s)于%s試圖從%s登錄。\n",
+        write(HIR "\n嚴重警告：你不在自己所設定的登錄地址範圍內。\n" NOR);
+        log_file("static/ALLOW_IP", sprintf("%s(%s)於%s試圖從%s登錄。\n",
                  query("name", ob),query("id", ob),ctime(time()),query_ip_number(ob)));
         return 0;
 }

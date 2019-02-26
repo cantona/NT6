@@ -84,11 +84,11 @@ int exert(object me, object target)
                 } else
                 {
                         tell_object(me, MAG "你運功良久，沒能發揮半點作用。\n" NOR);
-                        tell_object(target, MAG "你覺得內息一陣紊亂，說不出"
+                        tell_object(target, MAG "你覺得內息一陣紊亂，説不出"
                                             "的難受。\n看來" + me->name() +
                                             "是不能給予你幫助了。\n" NOR);
                         message_vision(HIG "$N將手掌從$n背後收了回來，臉色"
-                                           "說不出的難看。\n" NOR,
+                                           "説不出的難看。\n" NOR,
                                            me, target);
                         me->start_busy(6 + random(6));
                         if (! target->is_busy())

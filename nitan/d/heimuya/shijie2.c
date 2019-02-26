@@ -6,7 +6,7 @@ void create()
 {
         set("short", "石階");
         set("long", @LONG
-越往上，山勢越陡峭，中間的石階越窄，僅能一人行走，從這裡
+越往上，山勢越陡峭，中間的石階越窄，僅能一人行走，從這裏
 往上望，隱約望見一座石門。
 LONG );
         set("outdoors", "heimuya");

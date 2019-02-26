@@ -56,7 +56,7 @@ max_neili:100000
 <M2030>
 <mod_name>$HBRED$刑天套裝$NOR$</mod_name>
 <mod_parts>
-A2030:$HBGRN$刑天項鏈$NOR$
+A2030:$HBGRN$刑天項鍊$NOR$
 A2031:$HBGRN$刑天戒指$NOR$
 A2032:$HBGRN$刑天護符$NOR$
 A2033:$HBGRN$刑天魔劍$NOR$
@@ -91,7 +91,7 @@ fatal_blow:60
 <type>armor/armor</type>
 <name>$HBGRN$文曲星甲$NOR$</name>
 <id>wisdom armor</id>
-<long>蘊含了文曲星的精元和無上智慧(神)。</long>
+<long>藴含了文曲星的精元和無上智慧(神)。</long>
 <value>2000000</value>
 <mod_level>M2000</mod_level>
 <mod_name>$HBGRN$文曲星學習套裝(神)$NOR$</mod_name>
@@ -131,7 +131,7 @@ apply_prop/practice_effect:10
 <type>armor/surcoat</type>
 <name>$HBGRN$文曲星披風$NOR$</name>
 <id>wisdom surcoat</id>
-<long>蘊含了文曲星的精元和無上智慧(神)。</long>
+<long>藴含了文曲星的精元和無上智慧(神)。</long>
 <value>2000000</value>
 <mod_level>M2000</mod_level>
 <mod_name>$HBGRN$文曲星學習套裝(神)$NOR$</mod_name>
@@ -171,7 +171,7 @@ apply_prop/derive_effect:10
 <type>armor/waist</type>
 <name>$HBGRN$文曲星束帶$NOR$</name>
 <id>wisdom waist</id>
-<long>蘊含了文曲星的精元和無上智慧(神)。</long>
+<long>藴含了文曲星的精元和無上智慧(神)。</long>
 <value>2000000</value>
 <mod_level>M2000</mod_level>
 <mod_name>$HBGRN$文曲星學習套裝(神)$NOR$</mod_name>
@@ -211,7 +211,7 @@ apply_prop/derive_effect:10
 <type>armor/head</type>
 <name>$HBGRN$文曲星頭盔$NOR$</name>
 <id>wisdom head</id>
-<long>蘊含了文曲星的精元和無上智慧(神)。</long>
+<long>藴含了文曲星的精元和無上智慧(神)。</long>
 <value>2000000</value>
 <mod_level>M2000</mod_level>
 <mod_name>$HBGRN$文曲星學習套裝(神)$NOR$</mod_name>
@@ -251,7 +251,7 @@ apply_prop/research_effect:10
 <type>armor/boots</type>
 <name>$HBGRN$文曲星靴$NOR$</name>
 <id>wisdom boots</id>
-<long>蘊含了文曲星的精元和無上智慧(神)。</long>
+<long>藴含了文曲星的精元和無上智慧(神)。</long>
 <value>2000000</value>
 <mod_level>M2000</mod_level>
 <mod_name>$HBGRN$文曲星學習套裝(神)$NOR$</mod_name>
@@ -291,7 +291,7 @@ apply_prop/practice_effect:10
 <type>armor/wrists</type>
 <name>$HBGRN$文曲星護腕$NOR$</name>
 <id>wisdom wrists</id>
-<long>蘊含了文曲星的精元和無上智慧(神)。</long>
+<long>藴含了文曲星的精元和無上智慧(神)。</long>
 <value>2000000</value>
 <mod_level>M2000</mod_level>
 <mod_name>$HBGRN$文曲星學習套裝(神)$NOR$</mod_name>
@@ -405,7 +405,7 @@ apply_prop/int:1
 <type>armor/head</type>
 <name>$HIY$神$HIW$之$HIM$祝福$NOR$$YEL$頭盔$NOR$</name>
 <id>zhufu head</id>
-<long>這是一頂鐵制的頭盔，用以保護頭部。</long>
+<long>這是一頂鐵製的頭盔，用以保護頭部。</long>
 <value>3000</value>
 <mod_level>M2010</mod_level>
 <mod_name>$HIY$神$HIW$之$HIM$祝福$NOR$$YEL$套裝$NOR$</mod_name>
@@ -597,9 +597,9 @@ apply_prop/int:1
 #刑天套裝部件
 <A2030>
 <type>rings/neck</type>
-<name>$HBGRN$刑天項鏈$NOR$</name>
+<name>$HBGRN$刑天項鍊$NOR$</name>
 <id>xingtian neck</id>
-<long>一條黃金打造的項鏈。</long>
+<long>一條黃金打造的項鍊。</long>
 <value>2000000</value>
 <mod_level>M2030</mod_level>
 <mod_name>$HBRED$刑天套裝$NOR$</mod_name>
@@ -635,7 +635,7 @@ armor:10
 <type>rings/charm</type>
 <name>$HBGRN$刑天護符$NOR$</name>
 <id>xingtian charm</id>
-<long>一件黃金制作的護身符。</long>
+<long>一件黃金製作的護身符。</long>
 <value>2000000</value>
 <mod_level>M2030</mod_level>
 <mod_name>$HBRED$刑天套裝$NOR$</mod_name>

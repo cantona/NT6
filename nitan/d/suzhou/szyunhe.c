@@ -31,10 +31,10 @@ void create()
 {
         set("short", "運河");
         set("long", @long
-這裡是古老的運河的橋頭邊，只見這條運河(river) 蜿蜒流淌，從
-蘇州城裡穿過。運河的兩岸都是蘇州的尋常百姓家，在蘇州的城裡出門
-最好的交通工具就是船了。只見進處有一位老船夫，見你走過來，起身
-向你迎來，手上掛著一個竹牌(sign)。
+這裏是古老的運河的橋頭邊，只見這條運河(river) 蜿蜒流淌，從
+蘇州城裏穿過。運河的兩岸都是蘇州的尋常百姓家，在蘇州的城裏出門
+最好的交通工具就是船了。只見進處有一位老船伕，見你走過來，起身
+向你迎來，手上掛着一個竹牌(sign)。
 long);
         set("exits",([
                 "southeast" : __DIR__"xidajie1",
@@ -49,11 +49,11 @@ long);
   set("river_type", "湖");               // 江面上傳來回響
   set("need_dodge",300);                 // 需要多少輕功
   set("come_msg_out",   "一葉扁舟緩緩地駛了過來，採蓮女將一塊踏腳板搭上堤岸，以便乘客上下。\n");
-  set("busy_msg",       "只聽得河面不遠處隱隱傳來：“別急嘛，這兒正忙著吶……”\n");
-  set("wait_msg",       "岸邊一只渡船上的採蓮女說道：正等著你呢，上來吧。\n");
+  set("busy_msg",       "只聽得河面不遠處隱隱傳來：“別急嘛，這兒正忙着吶……”\n");
+  set("wait_msg",       "岸邊一隻渡船上的採蓮女説道：正等着你呢，上來吧。\n");
   set("leave_msg_out",  "採蓮女把踏腳板收了起來，竹篙一點，扁舟向運河駛去。\n");
-  set("leave_msg_in",   "採蓮女把踏腳板收起來，說了一聲“坐穩嘍”，竹篙一點，扁舟向運河駛去。\n");
-  set("come_msg_in",    "採蓮女說“到啦，上岸吧”，隨即把一塊踏腳板搭上堤岸。\n");
+  set("leave_msg_in",   "採蓮女把踏腳板收起來，説了一聲“坐穩嘍”，竹篙一點，扁舟向運河駛去。\n");
+  set("come_msg_in",    "採蓮女説“到啦，上岸吧”，隨即把一塊踏腳板搭上堤岸。\n");
   set("item_desc/river", HIC "\n只見近岸處有一葉小舟，也許大聲喊("
                          HIY "yell" HIC ")一聲船家(" HIY "boat" HIC
                         ")就\n能聽見。倘若你自負輕功絕佳,也可直接"
@@ -94,7 +94,7 @@ int do_go(string arg)
 
         if (!arg) return 0;
         if (ob->is_busy() || ob->is_fighting())
-                return notify_fail("你正忙著呢！\n");
+                return notify_fail("你正忙着呢！\n");
         while(i--)
         {
                 if (arg == sign[i]["id"])
@@ -102,7 +102,7 @@ int do_go(string arg)
                         switch (MONEY_D->player_pay(ob, sign[i]["value"]))
                         {
                                 case 0:
-                                        return notify_fail("窮光蛋，一邊呆著去！\n");
+                                        return notify_fail("窮光蛋，一邊呆着去！\n");
                                 case 2:
                                         return notify_fail("有零錢嗎？\n");
                         }
@@ -115,7 +115,7 @@ int do_go(string arg)
                         return 1;
                 }
         }
-        return notify_fail("你要去哪裡？\n");
+        return notify_fail("你要去哪裏？\n");
 }
 string look_sign()
 {

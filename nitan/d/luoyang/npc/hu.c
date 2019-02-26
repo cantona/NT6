@@ -4,7 +4,7 @@ inherit F_BANKER;
 void create()
 {
         set_name("胡雪源", ({"hu xueyuan", "hu", "xueyuan"}));
-        set("title", "錢莊老板");
+        set("title", "錢莊老闆");
         set("gender", "男性");
         set("age", 34);
         set("str", 22);

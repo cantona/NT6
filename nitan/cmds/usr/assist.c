@@ -94,7 +94,7 @@ int main(object me, string arg)
         if( query("quest", me) )
         {
                 write("你現在正有任務在身，還是先忙完自己的"
-                      "事情再說吧！\n");
+                      "事情再説吧！\n");
                 return 1;
         }
 
@@ -104,7 +104,7 @@ int main(object me, string arg)
         set_temp("pending/assist", ob, me);
         if (! playerp(ob))
         {
-                message_vision("$n對$N說：“我還有別的事情哦，"
+                message_vision("$n對$N説：“我還有別的事情哦，"
                                "不用你幫忙啦！”\n", me, ob);
                 return 1;
         }
@@ -128,7 +128,7 @@ int do_right(object me, object ob)
 
         if( query_temp("pending/assist", ob) != me )
         {
-                // 對方還沒有說願意你幫助你呢
+                // 對方還沒有説願意你幫助你呢
                 write(ob->name() + "現在沒打算幫助你呀，你還是再問問吧！\n");
                 return 1;
         }
@@ -136,7 +136,7 @@ int do_right(object me, object ob)
         delete_temp("pending/assist", ob);
 
         // 對方願意你幫助你
-        message_vision("$N爽快的對$n說：“好吧！多謝了！”\n",
+        message_vision("$N爽快的對$n説：“好吧！多謝了！”\n",
                        me, ob);
         tell_object(ob, me->name(1) + "願意接受你的幫助。\n");
         set_temp("quest/assist", me, ob);
@@ -182,7 +182,7 @@ int do_refuse(object me, object ob)
 
         if( query_temp("pending/assist", ob) != me )
         {
-                // 對方還沒有說願意你幫助你呢，你幹什麼呢？
+                // 對方還沒有説願意你幫助你呢，你幹什麼呢？
                 write(ob->name() + "現在沒打算幫助你呀，你拒絕什麼？\n");
                 return 1;
         }

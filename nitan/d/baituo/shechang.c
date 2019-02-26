@@ -16,7 +16,7 @@ void create()
         set("short", "蛇場");
         set("long", @LONG
 這是歐陽世家所建的蛇場，從蛇谷捕捉來的毒蛇都在此飼養，四
-周圍以丈許來高的灰色圓牆，牆腳砌成圓弧形，光滑無縫。場裡建了
+周圍以丈許來高的灰色圓牆，牆腳砌成圓弧形，光滑無縫。場裏建了
 許多蛇窩，由歐陽世家中的蛇奴負責管理，許多劇毒的怪蛇就是在此
 雜交而得。
 LONG );
@@ -52,10 +52,10 @@ int do_manage()
                 return notify_fail("管別人家的閒事幹嘛？\n");
 
         if( query("family/master_name", me) != "歐陽鋒" )
-                return notify_fail("你還沒有資格養育自己的蛇群。\n");
+                return notify_fail("你還沒有資格養育自己的蛇羣。\n");
 
         if( (int)me->query_skill("poison", 1) < 100 )
-                return notify_fail("你對毒技了解不夠透徹，還沒有辦法培養毒蛇。\n");
+                return notify_fail("你對毒技瞭解不夠透徹，還沒有辦法培養毒蛇。\n");
 
         if( query("baituo/new_breed_time", me) )
                 return notify_fail("先等上回培養怪蛇的成果出來吧。\n");
@@ -67,7 +67,7 @@ int do_manage()
         if(! asp || asp == 0 )
                 return notify_fail("");
 
-        message_vision("\n$N將蛇群趕進蛇窩，吩咐蛇奴好好培育。\n", me);
+        message_vision("\n$N將蛇羣趕進蛇窩，吩咐蛇奴好好培育。\n", me);
         if( wizardp(me) ) write("這些蛇培育出的蛇種，預期可擁有"+asp+"的毒性。\n");
 
         set("baituo/new_breed", asp, me);
@@ -109,14 +109,14 @@ int do_count()
                 names -= ({ 0 });
 
                 if( !sizeof(names) || sizeof(names)==0 ) {
-                write("現在蛇場裡面就沒有你捕來的蛇呀。\n");
+                write("現在蛇場裏面就沒有你捕來的蛇呀。\n");
                 return notify_fail("");
                 }
 
                 else if( sizeof(names)==1 )
-                        str += "蛇場裡唯一由你捕捉到的蛇種是" + names[0] + NOR + "。\n";
+                        str += "蛇場裏唯一由你捕捉到的蛇種是" + names[0] + NOR + "。\n";
 
-                else str += sprintf("蛇場裡由你捕捉到的蛇有%s種，分別是%s和%s。\n",
+                else str += sprintf("蛇場裏由你捕捉到的蛇有%s種，分別是%s和%s。\n",
                         chinese_number(sizeof(names)),
                         implode(names[0..sizeof(names)-2], "、"),
                         names[sizeof(names)-1]);
@@ -144,7 +144,7 @@ int do_count()
                 if ( MANAGE == 0 ) write(str);
         }
         else {
-                write("現在蛇場裡面沒有你捕來的蛇。\n");
+                write("現在蛇場裏面沒有你捕來的蛇。\n");
                 return notify_fail("");
         }
 
@@ -239,7 +239,7 @@ int do_return(string arg)
         if( query("who_breed", snake) != query("id", me) )
                 return notify_fail("這條"+snake->name()+"不是你培養出來的。\n" );
 
-        message_vision("$N將$n趕回了蛇窩裡。\n", me, snake);
+        message_vision("$N將$n趕回了蛇窩裏。\n", me, snake);
 
         if(snake->name() == "小怪蛇")
         addn("baituo/snake_amount", 1, me);

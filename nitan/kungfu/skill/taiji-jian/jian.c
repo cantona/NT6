@@ -1,9 +1,9 @@
-// 太□□意
+// 太極劍意
 
 #include <ansi.h>
 #include <combat.h>
 
-string name() { return HIM "太□□意" NOR; }
+string name() { return HIM "太極劍意" NOR; }
 
 inherit F_SSERVER;
 
@@ -19,7 +19,7 @@ int perform(object me, object target)
         int xy;
 
         if( !query("reborn/times", me) )
-                return notify_fail("你尚未轉世重生，無法使用太□□意！\n");
+                return notify_fail("你尚未轉世重生，無法使用太極劍意！\n");
 
         if (! target) target = offensive_target(me);
 
@@ -27,7 +27,7 @@ int perform(object me, object target)
                 return notify_fail(name() + "只能在戰鬥中對對手使用。\n");
 
         if( me->is_busy() )
-                return notify_fail("你正忙著呢。\n");
+                return notify_fail("你正忙着呢。\n");
 
         if( !objectp(weapon=query_temp("weapon", me)) ||
             query("skill_type", weapon) != "sword" )
@@ -43,7 +43,7 @@ int perform(object me, object target)
                 return notify_fail("你沒有激發太極劍法，無法使用" + name() + "。\n");
 
         if (! living(target))
-               return notify_fail("對方都已經這樣了，用不著這麼費力吧？\n");
+               return notify_fail("對方都已經這樣了，用不着這麼費力吧？\n");
 
         addn("neili", -1000, me);
 
@@ -62,9 +62,9 @@ int perform(object me, object target)
         //target->start_busy(10);
 
         message_combatd(sort_msg(HIY "\n$N" HIY "身形一轉，手中" + weapon->name() + HIY "輕靈而出，猶如碧"
-                     "波盪漾，蜿蜒起伏，形態飄逸瀟洒之極，頗具" HIC "太□" HIY "之意" HIY "……\n" NOR), me);
+                     "波盪漾，蜿蜒起伏，形態飄逸瀟灑之極，頗具" HIC "太極" HIY "之意" HIY "……\n" NOR), me);
 
-        msg = HIM "$N" HIM "將內力灌輸于劍上，呼的一劍抖出，空氣幾欲凝固。\n" NOR;
+        msg = HIM "$N" HIM "將內力灌輸於劍上，呼的一劍抖出，空氣幾欲凝固。\n" NOR;
         if (ap + random(ap / 2) < dp)
                 msg += CYN "$n" CYN "眼明手快，斜身閃開。\n" NOR;
         else
@@ -115,7 +115,7 @@ void remove_effect(object target)
         addn_temp("apply/reduce_busy", 36, target);
         addn_temp("apply/avoid_weak", 90, target);
         addn_temp("apply/avoid_locked", 90, target);
-        tell_object(target, HIR "你的忽視虛弱，忽視忙亂、忽視絕招冷凍能力終于解除封印。\n" NOR);
+        tell_object(target, HIR "你的忽視虛弱，忽視忙亂、忽視絕招冷凍能力終於解除封印。\n" NOR);
 }
 
 string attack2(object me, object target, int damage)

@@ -366,7 +366,7 @@ varargs string create_file(string tfile, string arg, mapping dbase_data,
         int     k;              // dbase / 函數數目
         string  t;              // 當前時間
 
-        int     comment_on;     // 正在書寫注釋
+        int     comment_on;     // 正在書寫註釋
         int     dbase_on;       // 正在書寫 dbase 數據
         int     function_on;    // 正在書寫函數數據
 
@@ -458,7 +458,7 @@ varargs string create_file(string tfile, string arg, mapping dbase_data,
                                                 else
                                                         dbase = dbase_data[key];
                                         }
-                                        // 這裡有個排版的問題
+                                        // 這裏有個排版的問題
                                         content[i] = sprintf("\tset\(\"%s\", %O\);",
                                                              key, dbase);
                                                              
@@ -616,7 +616,7 @@ SUMMON;
 
         for (i = 0; i < n; i++)
         {
-                // 書寫注釋
+                // 書寫註釋
                 if( strsrch(content[i], COMMENT_ENTRY) != -1 && !comment_on)
                 {
                         comment_on = 1;
@@ -812,9 +812,9 @@ SUMMON;
                         continue;
                 }
 
-                // 檢查書寫結束標志
+                // 檢查書寫結束標誌
 
-                // 書寫注釋結束
+                // 書寫註釋結束
                 if( strsrch(content[i], COMMENT_EXIT) != -1)
                 {
                         comment_on = 0;
@@ -839,7 +839,7 @@ SUMMON;
                         continue;
                 }
 
-                // 若正在書寫注釋，忽略
+                // 若正在書寫註釋，忽略
                 if( comment_on) continue;
 
                 // 若正在書寫 dbase，忽略

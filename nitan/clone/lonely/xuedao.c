@@ -10,15 +10,15 @@ void create()
         if (clonep())
                 destruct(this_object());
         else {
-                set("long", HIR "這是一把纏在腰間的寶刀，刀鋒帶著淡淡的"
+                set("long", HIR "這是一把纏在腰間的寶刀，刀鋒帶着淡淡的"
                             "血影。\n" NOR);
                 set("unit", "柄");
                 set("value", 800000);
                 set("material", "steel");
                 set("no_sell", "這…這不是血刀門的東西嗎？我還要腦袋，你"
-                               "自個留著吧！");
+                               "自個留着吧！");
                 set("wield_msg", HIR "$N" HIR "一聲陰笑，抽出一柄血紅色"
-                               "的單刀高高揚起，空氣中頓時彌漫出一股殺氣"
+                               "的單刀高高揚起，空氣中頓時瀰漫出一股殺氣"
                                "。\n" NOR);
                 set("unwield_msg", HIR "$N" HIR "一聲輕哼，將手中血刀插"
                                "回背後。\n" NOR);

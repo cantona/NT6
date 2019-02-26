@@ -5,7 +5,7 @@ void create()
 {
     	set("short", "菜地");
     	set("long", @LONG
-這裡是塊菜地，由于長期得不到良好的照顧，菜地裡雜草
+這裏是塊菜地，由於長期得不到良好的照顧，菜地裏雜草
 叢生，種的菜都長勢不好，蔫蔫的，地都荒了。
 LONG);
         set("no_fight", 1);
@@ -32,13 +32,13 @@ int do_chu(string arg)
 
         if( query_temp("mark/鋤完了", me) )
             	return notify_fail(CYN "菜園管事嚷嚷道：喂喂喂，讓你去覆命，還留"
-                                   "在這裡幹嘛？\n" NOR);
+                                   "在這裏幹嘛？\n" NOR);
 
         if( query_temp("job_name", me) != "鋤草" )
             	return notify_fail(CYN "菜園管事對你喝道：沒事你瞎折騰什麼？\n" NOR);
 
         if (me->is_busy())
-		return notify_fail("你現在正忙著呢！\n");
+		return notify_fail("你現在正忙着呢！\n");
 
         if (me->is_fighting())
 		return notify_fail("你正在戰鬥中，無法專心幹活！\n");
@@ -57,7 +57,7 @@ int do_chu(string arg)
         if( query("jing", me)<costj
 	 || query("qi", me)<costq )
 	{
-        	message_vision(HIR "\n$N" HIR "鋤著鋤著，結果不小心手一滑，鋤在"
+        	message_vision(HIR "\n$N" HIR "鋤着鋤着，結果不小心手一滑，鋤在"
                                "了自己的腳上。\n" NOR, me);
                 me->unconcious();
                 return 1;
@@ -72,13 +72,13 @@ int do_chu(string arg)
            && present("caiyuan guanshi", environment(me)))
 	{
                 set_temp("mark/鋤完了", 1, me);
-                message_vision(CYN "\n菜園管事對$N" CYN "說：幹的不錯，好了，你可"
+                message_vision(CYN "\n菜園管事對$N" CYN "説：乾的不錯，好了，你可"
                                "以去向耶律大爺覆命(" HIY "fuming" NOR + CYN ")了"
                                "。\n" NOR, me);
                 return 1;
         }
 
-        message_vision(HIY "$N" HIY "揮起鋤頭，對著地上的雜草鋤了起來。\n" NOR, me);
+        message_vision(HIY "$N" HIY "揮起鋤頭，對着地上的雜草鋤了起來。\n" NOR, me);
         addn_temp("mark/鋤", 1, me);
 
         if ((int)me->query_skill("staff", 1) < 50
@@ -86,7 +86,7 @@ int do_chu(string arg)
            && me->can_improve_skill("staff")
            && me->can_improve_skill("cuff"))
 	{  
-                write(HIC "你在鋤草過程中對于杖法及拳法有些體會。\n" NOR);
+                write(HIC "你在鋤草過程中對於杖法及拳法有些體會。\n" NOR);
                 me->improve_skill("staff",(query("int", me)/6));
                 me->improve_skill("cuff",(query("int", me)/6));
         }

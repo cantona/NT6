@@ -37,6 +37,6 @@ mixed hit_ob(object me, object victim, int damage_bonus)
 { 
         victim->receive_damage("jing",query("str", me)*2,me);
         victim->receive_wound("jing",query("str", me)*2,me);
-         return CYN "魚腸劍夾帶著刺耳的破空聲劃出一道道長虹，霎時間$n" 
+         return CYN "魚腸劍夾帶着刺耳的破空聲劃出一道道長虹，霎時間$n" 
                CYN "只感到心神意亂。\n" NOR; 
 }

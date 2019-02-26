@@ -11,11 +11,11 @@ mapping *action = ({
         "lvl" : 0,
         "skill_name" : "中平無敵"
 ]),
-([        "action": "$N手中$w盤旋回轉，風響陣陣，屈身下蹲，反手一招"HIB"「夜叉探海」"NOR"自下向$n的$l刺去",
+([        "action": "$N手中$w盤旋迴轉，風響陣陣，屈身下蹲，反手一招"HIB"「夜叉探海」"NOR"自下向$n的$l刺去",
         "lvl" : 10,
         "skill_name" : "夜叉探海"
 ]),
-([        "action": "$N舉起$w，抖出一朵槍花，一招"HIB"「靈蛇出洞」"NOR"向$n分心紮去",
+([        "action": "$N舉起$w，抖出一朵槍花，一招"HIB"「靈蛇出洞」"NOR"向$n分心扎去",
         "lvl" : 20,
         "skill_name" : "靈蛇出洞"
 ]),
@@ -114,7 +114,7 @@ int help(object me)
         write(HIC"\n中平槍法："NOR"\n");
         write(@HELP
 
-    中平槍法是花鐵幹的成名武功。
+    中平槍法是花鐵乾的成名武功。
 
         學習要求：
                 內力70

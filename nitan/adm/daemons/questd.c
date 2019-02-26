@@ -1,5 +1,5 @@
 // questd.c 處理任務的守護進程
-// 包括師門任務函數載體和系統注冊任務(SYSREG_QUEST)
+// 包括師門任務函數載體和系統註冊任務(SYSREG_QUEST)
 
 // 更新的內容：
 // mapping mlist           - 發放任務者列表
@@ -45,7 +45,7 @@ mapping mlist = ([
         "星宿派"   : CLASS_D("xingxiu")   + "/ding.c",
         "凌霄城"   : CLASS_D("lingxiao")  + "/baizizai.c",
         "鐵掌幫"   : CLASS_D("tiezhang")  + "/qiuqianren.c",
-        "昆侖派"   : CLASS_D("kunlun")    + "/hetaichong.c",
+        "崑崙派"   : CLASS_D("kunlun")    + "/hetaichong.c",
         "青城派"   : CLASS_D("qingcheng") + "/yu.c",
         "嵩山派"   : CLASS_D("songshan")  + "/zuo.c",
         "泰山派"   : CLASS_D("taishan")   + "/tianmen.c",
@@ -196,7 +196,7 @@ void special_bonus(object me, object who, mixed arg)
 
         /*
         message_vision("$n對$N微微一笑，道：幹得不賴，辛苦"
-                       "了，正好我這裡有點東西，你就拿去吧。\n",
+                       "了，正好我這裏有點東西，你就拿去吧。\n",
                        who, me);
         */
 
@@ -288,8 +288,8 @@ void special_bonus(object me, object who, mixed arg)
 
         if( query("family/gongji", who) >= gongxian )
         {
-                message_vision(CYN "$n" CYN "對$N" CYN "微笑道：我這裡有一"
-                               + un + ob->name() + CYN "，如果你用得著就拿"
+                message_vision(CYN "$n" CYN "對$N" CYN "微笑道：我這裏有一"
+                               + un + ob->name() + CYN "，如果你用得着就拿"
                                "去吧。\n" NOR, who, me);
 
                 tell_object(who, HIW "\n獲得" + ob->name() + HIW "需要消耗"
@@ -307,7 +307,7 @@ void special_bonus(object me, object who, mixed arg)
                 set_temp("quest_gift/gongxian", gongxian, who);
         } else
                 message_vision(CYN "$n" CYN "對$N" CYN "道：正好我這"
-                               "裡有…嗯…還是算了，相信你也用不到。"
+                               "裏有…嗯…還是算了，相信你也用不到。"
                                "\n" NOR, who, me);
         destruct(ob);
 
@@ -327,7 +327,7 @@ void money_bonus(object me, object who, mixed arg)
 
         /*
         message_vision("$n對$N微微一笑，道：幹得不賴，辛苦"
-                       "了，行走江湖，總有各類開支應酬，這裡有些金子，你就拿去吧。\n",
+                       "了，行走江湖，總有各類開支應酬，這裏有些金子，你就拿去吧。\n",
                        who, me);
         */
 
@@ -348,7 +348,7 @@ varargs public void bonus(object who, mapping b, int flag)
         mixed pot;              // 獎勵的潛能
         mixed mar;              // 獎勵的實戰體會
         int shen;               // 獎勵的神
-        int score;              // 獎勵的江湖閱歷
+        int score;              // 獎勵的江湖閲歷
         int weiwang;            // 獎勵的江湖威望
         int gongxian;           // 獎勵的門派貢獻
         mixed pot_limit;        // 潛能的界限
@@ -419,14 +419,14 @@ varargs public void bonus(object who, mapping b, int flag)
         if (stringp(msg = b["prompt"]))
                 msg = HIC + msg + HIG "，你獲得了";
         else
-                msg = HIC "通過這次鍛煉，你獲得了";
+                msg = HIC "通過這次鍛鍊，你獲得了";
 
         if (exp > 0) msg += chinese_number(exp) + "點經驗、";
         if (pot > 0) msg += chinese_number(pot) + "點潛能、";
         if (mar > 0) msg += chinese_number(mar) + "點實戰體會、";
         if (shen > 0) msg += chinese_number(shen) + "點正神、";
         if (shen < 0) msg += chinese_number(-shen) + "點負神、";
-        if (score > 0) msg += chinese_number(score) + "點江湖閱歷、";
+        if (score > 0) msg += chinese_number(score) + "點江湖閲歷、";
         if (weiwang > 0) msg += chinese_number(weiwang) + "點威望、";
         if (gongxian > 0) msg += chinese_number(gongxian) + "點門派功績、";
 
@@ -444,7 +444,7 @@ varargs public void bonus(object who, mapping b, int flag)
 }
 
 // 延遲獎勵：有時候給出獎勵的時候應該是在某些事件發生以後，
-// 但是在該事件發生時給與獎勵更易于書寫程序，所以獎勵生成的
+// 但是在該事件發生時給與獎勵更易於書寫程序，所以獎勵生成的
 // 地方在事件正在發生的時候，但是要讓玩家看起來是在事件發生
 // 以後。比如殺人，人死亡的時候給與獎勵是容易做的，但是我希
 // 望玩家在看到NPC 的死亡信息以後才看到獎勵的信息，這時候就
@@ -462,7 +462,7 @@ public mixed accept_ask(object me, object who, string topic)
         my_fam=query("family/family_name", me);
 
         if (topic == "歷練" || topic == "歷煉" ||
-            topic == "鍛煉")
+            topic == "鍛鍊")
         {
                 if( my_fam != query("family/family_name", who) )
                         return "你是誰？找我有什麼事情麼？";
@@ -472,16 +472,16 @@ public mixed accept_ask(object me, object who, string topic)
 
                 if( query("combat_exp", who)<50000 )
                 {
-                        message_sort(CYN "$N" CYN "嘆了一口氣，看了看$n"
+                        message_sort(CYN "$N" CYN "歎了一口氣，看了看$n"
                                      CYN "道：“你的武功基礎還不太好，還是再"
-                                     "好好鍛煉吧！”\n", me, who);
+                                     "好好鍛鍊吧！”\n", me, who);
                         return 1;
                 }
 
                 if( query("score", who)<100 )
                 {
                         message_sort(CYN "$N" CYN "擺擺手道：“你的江湖"
-                                     "閱歷太少，現在不可外出獨自行走江湖。”\n",
+                                     "閲歷太少，現在不可外出獨自行走江湖。”\n",
                                      me, who);
                         return 1;
                 }
@@ -511,14 +511,14 @@ public mixed accept_ask(object me, object who, string topic)
 
                 message_sort("$N翻出一本小冊子來，對$n道：“今後你行走江"
                              "湖，許多山川地理，世間風情你都可以記錄在這"
-                             "本地圖冊上，以咨參考，對你多少也會有些幫助"
+                             "本地圖冊上，以諮參考，對你多少也會有些幫助"
                              "。”\n", me, who);
 
                 tell_object(me, HIY"你獲得了師傅贈給你的地圖冊，請參見幫"
                             "助(HELP QUEST)以\n獲得更詳細的信息。\n" NOR);
 
                 CHANNEL_D->do_channel(this_object(), "rumor",
-                        "聽說" + who->name(1) + "已經開始闖盪江湖。");
+                        "聽説" + who->name(1) + "已經開始闖蕩江湖。");
                 return 1;
         }
 }
@@ -541,7 +541,7 @@ public int ask_quest(object me, object who)
         fam=query("family/family_name", me);
         if( query("family/family_name", who) != fam )
         {
-                message_vision("$N瞪大眼睛看著$n，道：“你又不是我們" + fam +
+                message_vision("$N瞪大眼睛看着$n，道：“你又不是我們" + fam +
                                "的，來搗什麼亂？”\n", me, who);
                 return 1;
         }
@@ -564,11 +564,11 @@ public int ask_quest(object me, object who)
         {
                 if (q["freequest"] > 0)
                 {
-                        message_vision(CYN "$N" CYN "對$n" CYN "說道：我這裡暫"
-                                       "時也沒什麼事情，你還是自己鍛煉一段時間"
+                        message_vision(CYN "$N" CYN "對$n" CYN "説道：我這裏暫"
+                                       "時也沒什麼事情，你還是自己鍛鍊一段時間"
                                        "吧。\n" NOR, me, who);
                         tell_object(who, HIY "你突然想到：現在江湖正值動亂，何"
-                                         "不四處走訪，也許可提高自己的經驗閱歷"
+                                         "不四處走訪，也許可提高自己的經驗閲歷"
                                          "。\n" NOR);
                         return 1;
                 }
@@ -596,7 +596,7 @@ public int ask_quest(object me, object who)
                         message_vision(CYN "$N" CYN "一臉怒容對$n" CYN "道：我不是讓"
                                        "你" + CHINESE_D->chinese_monthday(q["limit"]) +
                                        "之前把信送到" NOR + HIC + q["name"] + "(" + q["id"] +
-                                       ")" + NOR + CYN "那裡的嗎？現在是" +
+                                       ")" + NOR + CYN "那裏的嗎？現在是" +
                                        CHINESE_D->chinese_monthday(time()) +
                                        "，他的回執呢？\n" NOR, me, who);
                         break;
@@ -608,7 +608,7 @@ public int ask_quest(object me, object who)
         if (query("eff_qi", me) * 2 < query("max_qi", me) ||
             query("qi", me) * 2 < query("max_qi", me))
         {
-                message_vision(HIC "$N" HIC "捂著胸口，一副非常痛苦的樣子，對你的"
+                message_vision(HIC "$N" HIC "捂着胸口，一副非常痛苦的樣子，對你的"
                                "話顯然沒有聽進去。\n" NOR, me);
                 return 1;
         }
@@ -616,16 +616,16 @@ public int ask_quest(object me, object who)
         exp=query("combat_exp", who);
         if (exp < 30000)
         {
-                message_vision(CYN "$N" CYN "嘆了一口氣，對$n" CYN "道：就你那點水平，"
+                message_vision(CYN "$N" CYN "歎了一口氣，對$n" CYN "道：就你那點水平，"
                                "我實在沒法給你派任務。\n" NOR, me, who);
                 return 1;
         }
 
         if( objectp(aob=query_temp("quest/assist", who)) )
         {
-                message_vision(CYN "$N" CYN "看了看$n" CYN "，道：我聽說你不是幫" NOR +
+                message_vision(CYN "$N" CYN "看了看$n" CYN "，道：我聽説你不是幫" NOR +
                                HIY + aob->name(1) + NOR + CYN "去了麼？先辦妥了"
-                               "再說吧！\n" NOR, me, who);
+                               "再説吧！\n" NOR, me, who);
                 return 1;
         }
 
@@ -636,7 +636,7 @@ public int ask_quest(object me, object who)
                 if( query("score", who)<20 )
                 {
                         message_vision(CYN "$N" CYN "搖搖頭，對$n" CYN "道：可惜你"
-                                       "的江湖閱歷太差，不然我還可以讓你幫我送封信"
+                                       "的江湖閲歷太差，不然我還可以讓你幫我送封信"
                                        "。\n" NOR, me, who);
                         return 1;
                 }
@@ -671,8 +671,8 @@ public int ask_quest(object me, object who)
         } else
         if (exp < 200000)
         {
-                message_vision("$N盯著$n看了半天，道：“讓你送信委屈了你，"
-                               "叫你闖盪江湖我又不放心，你還是好好練練功夫"
+                message_vision("$N盯着$n看了半天，道：“讓你送信委屈了你，"
+                               "叫你闖蕩江湖我又不放心，你還是好好練練功夫"
                                "吧！”\n", me, who);
                 return 1;
         } else
@@ -680,22 +680,22 @@ public int ask_quest(object me, object who)
                 if( !query("out_family", who) )
                 {
                         message_sort(CYN "$N" CYN "擺擺手，對$n" CYN "道：我現在"
-                                      "這裡倒是有一些事情，不過待你外出歷練段時間"
-                                      "後再說吧！\n" NOR, me, who);
+                                      "這裏倒是有一些事情，不過待你外出歷練段時間"
+                                      "後再説吧！\n" NOR, me, who);
                         return 1;
                 }
 
                 if( query("score", who)<2000 )
                 {
-                        message_sort(CYN "$N" CYN "嘆了一口氣，對$n" CYN "道：“你還"
-                                     "是在江湖上多歷練歷練，增進一些閱歷再說吧！現在"
+                        message_sort(CYN "$N" CYN "歎了一口氣，對$n" CYN "道：“你還"
+                                     "是在江湖上多歷練歷練，增進一些閲歷再説吧！現在"
                                      "我對你還不夠放心！”\n" NOR, me, who);
                         return 1;
                 }
 
                 if( query("weiwang", who)<20 )
                 {
-                        message_sort(CYN "$N" CYN "看了看$n" CYN "，嘆氣道：你在"
+                        message_sort(CYN "$N" CYN "看了看$n" CYN "，歎氣道：你在"
                                      "江湖上一點名頭都沒有，我沒法放心把任務交給"
                                      "你。\n" NOR, me, who);
                         tell_object(who, HIY "看來還是的加強自己的江湖威望才行。\n" NOR);
@@ -744,7 +744,7 @@ public int ask_quest(object me, object who)
                 place=query("place", ob);
 
                 message("vision", WHT + me->name() + WHT "小聲的對" + who->name() +
-                        WHT "吩咐著什麼，" + who->name() +
+                        WHT "吩咐着什麼，" + who->name() +
                         WHT "一邊聽，一邊不住的點頭。\n" NOR,
                         environment(who), ({ who }));
 
@@ -753,7 +753,7 @@ public int ask_quest(object me, object who)
                         set("shen", -20000, ob);
                         if( query("family/family_name", me) == "少林派" )
                                 tell_object(who, CYN + me->name() + CYN "對你道：雖"
-                                                 "然我們出家人以慈悲為懷，但是對于大"
+                                                 "然我們出家人以慈悲為懷，但是對於大"
                                                  "兇大惡之徒也不能放過。\n最近" NOR +
                                                  HIR + ob->name() + "(" + query("id", ob) +
                                                  ")" + NOR + CYN "在" + place + "作惡多端，"
@@ -762,7 +762,7 @@ public int ask_quest(object me, object who)
                                 tell_object(who, CYN + me->name() + CYN"對你道：" NOR
                                                  + HIR + ob->name() + "(" + query("id", ob) +
                                                  ")" + NOR + CYN "這個"
-                                                 "敗類打家劫舍，無惡不作，聽說他最近"
+                                                 "敗類打家劫舍，無惡不作，聽説他最近"
                                                  "在" + place + "，你去除掉他，提頭來"
                                                  "見我！\n" NOR);
                 } else
@@ -772,16 +772,16 @@ public int ask_quest(object me, object who)
                         tell_object(who, CYN + me->name() + CYN "對你道：" NOR + HIR
                                          + ob->name() + "(" + query("id", ob) + ")" +
                                          NOR + CYN "這個所謂大俠屢次"
-                                         "和我派作對，聽說他最近在" + place + "，你"
+                                         "和我派作對，聽説他最近在" + place + "，你"
                                          "去宰了他，提頭來見！\n" NOR);
                 } else
                 {
                         set("shen_type", 0, ob);
                         set("shen", 0, ob);
-                        tell_object(who, CYN + me->name() + CYN "對你說道：我早就看"
+                        tell_object(who, CYN + me->name() + CYN "對你説道：我早就看"
                                          NOR + HIR + ob->name() + "(" + query("id", ob) +
                                          ")" + NOR + CYN "不順眼"
-                                         "，聽說他最近在" + place + "，你去做了他，"
+                                         "，聽説他最近在" + place + "，你去做了他，"
                                          "帶他的人頭來交差！\n" NOR);
                 }
                 set("quest/type", "kill", who);
@@ -800,7 +800,7 @@ public int ask_quest(object me, object who)
                                        NOR, me, who);
                         break;
                 case 3:
-                        message_vision(CYN "$N" CYN "嘆了口氣，鄭重的對$n" CYN "道"
+                        message_vision(CYN "$N" CYN "歎了口氣，鄭重的對$n" CYN "道"
                                        "：這次任務兇險得緊，你不要勉強自己，不行就"
                                        "算了。\n" NOR, me, who);
                         break;
@@ -815,23 +815,23 @@ public int ask_quest(object me, object who)
                                      "急急忙忙的趕了過來，喊道：“不"
                                      "好了，不好了，" HIR + ob->name() +
                                      NOR CYN "在" + place +
-                                     "失蹤了！現在不知道去了哪裡！”"
+                                     "失蹤了！現在不知道去了哪裏！”"
                                      "$N" CYN "呆了半晌，這才對$n" CYN
                                      "道：“這事麻煩了，看來只有靠你自"
                                      "己努力了！”\n" NOR, me, who);
                         switch (random(3))
                         {
                         case 0:
-                                flee_msg = "聽說$N聽到了江湖上追殺他的風"
+                                flee_msg = "聽説$N聽到了江湖上追殺他的風"
                                            "聲，已經躲到PLACE去了。";
                                 break;
                         case 1:
-                                flee_msg = "有人說$N就在咱們這地界呢，"
-                                           "但是也有人說他在PLACE，不知道是真是假。";
+                                flee_msg = "有人説$N就在咱們這地界呢，"
+                                           "但是也有人説他在PLACE，不知道是真是假。";
                                 break;
                         default:
                                 flee_msg = "不知道...不知道...哦？好像"
-                                           "聽人說過是在PLACE。";
+                                           "聽人説過是在PLACE。";
                                 break;
                         }
                         ob->random_place(flee_msg);
@@ -854,7 +854,7 @@ public int ask_quest(object me, object who)
                 t += 4;
         t = t * ONE_DAY - 1;
         set("quest/limit", t, who);
-        message("vision", WHT + me->name() + WHT "在你耳邊悄聲說道：你務必要在"
+        message("vision", WHT + me->name() + WHT "在你耳邊悄聲説道：你務必要在"
                           NOR + HIY + CHINESE_D->chinese_monthday(t) + NOR + WHT
                          "之前完成！\n" NOR, who);
         who->start_busy(1);
@@ -890,7 +890,7 @@ public int ask_finish(object me, object who)
 int accept_object(object me, object who, object ob)
 {
         mapping q;              // WHO的任務
-        string msg;             // 掌門說的消息
+        string msg;             // 掌門説的消息
         object dob;             // 打暈敵人的人
         int bonus;              // 獎勵(正整數，1是正常)
         int t;                  // 用來計算時間的變量
@@ -898,13 +898,13 @@ int accept_object(object me, object who, object ob)
         int pot;                // 獲得的潛能
         int mar;                // 獲得的實戰體會
         int weiwang;            // 獲得的威望
-        int score;              // 獲得的江湖閱歷
+        int score;              // 獲得的江湖閲歷
         int gongxian;           // 獲得的門派貢獻
         int lvl;                // 人物的等級
         int quest_level;        // QUEST的等級
         int quest_count;        // 連續QUEST的數目
         int total_count;        // ......
-        int timeover;           // 標志：超時了？
+        int timeover;           // 標誌：超時了？
         int added;              // 做任務的時候額外出現的敵人或敵人逃走
         mixed special = 0;      // 是否有特殊獎勵
 
@@ -917,14 +917,14 @@ int accept_object(object me, object who, object ob)
         {
                if( !mapp(q) || q["master_id"] != query("id", me) )
                {
-                       tell_object(who,me->name() + "奇怪的看著你說：我沒給你什麼任務啊？\n");
+                       tell_object(who,me->name() + "奇怪的看着你説：我沒給你什麼任務啊？\n");
                        return 0;
                }
 
                if (ob->value() < 1000000)
                {
-                       tell_object(who,me->name() + "不屑一顧的說：這麼一點點錢，能用來幹什麼？你自己留著買雞腿用吧！\n");
-                       tell_object(who,me->name() + "頓了一下又說：如果你給我100兩黃金，或許我可以考慮消除了你的任務。\n");
+                       tell_object(who,me->name() + "不屑一顧的説：這麼一點點錢，能用來幹什麼？你自己留着買雞腿用吧！\n");
+                       tell_object(who,me->name() + "頓了一下又説：如果你給我100兩黃金，或許我可以考慮消除了你的任務。\n");
                        return 0;
                }
 
@@ -944,12 +944,12 @@ int accept_object(object me, object who, object ob)
 
                 if (! q || q["type"] != "letter" || query("send_to", ob) != q["id"])
                 {
-                        message_vision(CYN "$N" CYN "深深的嘆了一口氣，沒說什麼？\n" NOR, me);
+                        message_vision(CYN "$N" CYN "深深的歎了一口氣，沒説什麼？\n" NOR, me);
                         destruct(ob);
                         return 1;
                 }
 
-                message_vision(CYN "$N" CYN "瞪著$n" CYN "道：幹什麼？交給你"
+                message_vision(CYN "$N" CYN "瞪着$n" CYN "道：幹什麼？交給你"
                                "的活你不打算幹了？\n" NOR, me, who);
                 return -1;
         }
@@ -970,13 +970,13 @@ int accept_object(object me, object who, object ob)
                 }
 
                 message_vision(CYN "$N" CYN "接過" + ob->name() + NOR + CYN"，仔細看了"
-                              "看，滿意的說：很好。\n" NOR, me, who);
+                              "看，滿意的説：很好。\n" NOR, me, who);
 
                 msg = "";
                 t = time();
                 if (t > q["limit"])
                 {
-                        msg += CYN + me->name() + CYN "嘆了口氣，又道：可惜，不是讓你" +
+                        msg += CYN + me->name() + CYN "歎了口氣，又道：可惜，不是讓你" +
                                CHINESE_D->chinese_monthday(t) + "前做完嗎？算"
                                "了，將功補過，你先退下吧。\n" NOR;
                         timeover = 1;
@@ -1006,7 +1006,7 @@ int accept_object(object me, object who, object ob)
 
                 if (! stringp(query("owner_id", ob)))
                 {
-                        message_vision(CYN "$N" CYN "捂著鼻子看了看" + ob->name()
+                        message_vision(CYN "$N" CYN "捂着鼻子看了看" + ob->name()
                                        + NOR + CYN "，道：什麼臭烘烘的？快給我"
                                        "拿走。\n" NOR, me);
                         return 0;
@@ -1141,12 +1141,12 @@ int accept_object(object me, object who, object ob)
                         gongxian = gongxian / 2 + 1;
                         weiwang = weiwang / 3 + 1;
                         score = score / 4 + 1;
-                        msg += CYN + me->name() + CYN "看著你接著說道：還行吧，下"
+                        msg += CYN + me->name() + CYN "看着你接着説道：還行吧，下"
                                "次我給你個難點的任務。\n" NOR;
                         break;
                 case 1:
                         msg += CYN + me->name() + CYN "對你又道：不錯，看來我可以"
-                               "托付些重任給你了。\n" NOR;
+                               "託付些重任給你了。\n" NOR;
                         break;
                 case 2:
                         exp += exp / 4;
@@ -1173,33 +1173,33 @@ int accept_object(object me, object who, object ob)
                 total_count = quest_count % 1000;
                 if (total_count == 100)
                 {
-                        msg += CYN + me->name() + CYN "哈哈大笑兩聲道：“真有你的，連著" + chinese_number(quest_count) +
+                        msg += CYN + me->name() + CYN "哈哈大笑兩聲道：“真有你的，連着" + chinese_number(quest_count) +
                                "次任務都完成的漂漂亮亮，很好，很好。”\n" NOR;
                         special = 1;
                 } else
                 if (total_count == 200)
                 {
 
-                        msg += CYN + me->name() + CYN "大喜道：“不錯不錯，真實不錯，連著" + chinese_number(quest_count) +
-                               "次任務幹得很好。”\n NOR";
+                        msg += CYN + me->name() + CYN "大喜道：“不錯不錯，真實不錯，連着" + chinese_number(quest_count) +
+                               "次任務乾得很好。”\n NOR";
                         special = "/clone/gift/puti-zi";
                 } else
                 if (total_count == 300)
                 {
-                        msg += CYN + me->name() + CYN "嘆道：“真是長江後浪推前浪，想不到你接連著" + chinese_number(quest_count) +
+                        msg += CYN + me->name() + CYN "歎道：“真是長江後浪推前浪，想不到你接連着" + chinese_number(quest_count) +
                                "次任務都無一疏漏，不易，不易！”\n" NOR;
                         special = "/clone/gift/tianxiang";
                 } else
                 if (total_count == 500)
                 {
-                        msg += CYN + me->name() + CYN "深深嘆了口氣，道：“想不到你連著" + chinese_number(quest_count) +
+                        msg += CYN + me->name() + CYN "深深歎了口氣，道：“想不到你連着" + chinese_number(quest_count) +
                                "次任務無一失手，看來我們"+query("family/family_name", me)+
                                "真是後繼有人啊！”\n";
                         special = "/clone/gift/jiuzhuan";
                 } else
                 if (total_count == 0)
                 {
-                        msg += CYN + me->name() + CYN "深深嘆了口氣，道：“想不到你連著" + chinese_number(quest_count) +
+                        msg += CYN + me->name() + CYN "深深歎了口氣，道：“想不到你連着" + chinese_number(quest_count) +
                                "次任務無一失手，看來我們"+query("family/family_name", me)+
                                "將有宗師出世拉！”\n" NOR;
                         special = "/clone/gift/xuanhuang";
@@ -1227,8 +1227,8 @@ int accept_object(object me, object who, object ob)
                 } else
                 if ((total_count % 10) == 0)
                 {
-                        msg += CYN + me->name() + CYN "喜道：“真是不賴，居然連著" + chinese_number(quest_count) +
-                               "次都沒有失手，幹的好！”\n" NOR ;
+                        msg += CYN + me->name() + CYN "喜道：“真是不賴，居然連着" + chinese_number(quest_count) +
+                               "次都沒有失手，乾的好！”\n" NOR ;
                 }
 
                 quest_level = q["level"];
@@ -1280,7 +1280,7 @@ int accept_object(object me, object who, object ob)
                 gongxian /= 2;
         } else
         {
-                // 百分之一的幾率直接贈送物品獎勵
+                // 百分之一的機率直接贈送物品獎勵
                 if ((quest_count >= 100 && random(2000) == 1) || special)
                         special_bonus(me, who, special);
                 else
@@ -1330,7 +1330,7 @@ int accept_object(object me, object who, object ob)
 int remote_bonus(object me)
 {
         mapping q;              // WHO的任務
-        string msg;             // 掌門說的消息
+        string msg;             // 掌門説的消息
         object dob;             // 打暈敵人的人
         int bonus;              // 獎勵(正整數，1是正常)
         int t;                  // 用來計算時間的變量
@@ -1338,17 +1338,17 @@ int remote_bonus(object me)
         int pot;                // 獲得的潛能
         int mar;                // 獲得的實戰體會
         int weiwang;            // 獲得的威望
-        int score;              // 獲得的江湖閱歷
+        int score;              // 獲得的江湖閲歷
         int lvl;                // 人物的等級
         int quest_level;        // QUEST的等級
         int quest_count;        // 連續QUEST的數目
-        int timeover;           // 標志：超時了？
+        int timeover;           // 標誌：超時了？
         int added;              // 做任務的時候額外出現的敵人或敵人逃走
 
         if( !mapp(q=query("quest", me)) )
                 return 0;
 
-        msg = "你翻開信箋反面，發現師傅另有話說：\n\n又及：為師"
+        msg = "你翻開信箋反面，發現師傅另有話説：\n\n又及：為師"
               "得知";
         if (me->is_good())
                 msg += "你又除了" HIR + q["name"] + NOR "這一害，很好。";
@@ -1368,7 +1368,7 @@ int remote_bonus(object me)
         } else
         if (t > q["limit"])
         {
-                msg += "但可惜，為師是讓你于" +
+                msg += "但可惜，為師是讓你於" +
                        CHINESE_D->chinese_monthday(t) + "前完成，"
                        "將功補過，此次就記下不算。";
                 timeover = 1;
@@ -1448,7 +1448,7 @@ int remote_bonus(object me)
                 msg += "下次再給你一個較難的任務吧。";
                 break;
         case 1:
-                msg += "不錯，看來我可以托付些重任給你了。";
+                msg += "不錯，看來我可以託付些重任給你了。";
                 break;
         case 2:
                 exp += exp / 4;
@@ -1472,12 +1472,12 @@ int remote_bonus(object me)
 
         if (quest_count == 100)
         {
-                msg += "而且連著上百次任務都完成的漂漂亮亮，"
+                msg += "而且連着上百次任務都完成的漂漂亮亮，"
                        "很好。";
         } else
         if (quest_count == 200)
         {
-                msg += "而且竟一連兩百次任務都幹得很好。";
+                msg += "而且竟一連兩百次任務都乾得很好。";
         } else
         if (quest_count == 500)
         {
@@ -1486,7 +1486,7 @@ int remote_bonus(object me)
         } else
         if (quest_count >= 1000)
         {
-                msg += "想不到你連著上千次任務無一失手，看"
+                msg += "想不到你連着上千次任務無一失手，看"
                        "來我們"+query("family/family_name", me)+
                        "後繼有人矣。";
 
@@ -1514,7 +1514,7 @@ int remote_bonus(object me)
         } else
         if ((quest_count % 10) == 0)
         {
-                msg += "嗯，況且居然連著" +
+                msg += "嗯，況且居然連着" +
                        chinese_number(quest_count) +
                        "次都沒有失手。";
         }
@@ -1587,7 +1587,7 @@ int cancel_quest(object me, object who)
         case "kill":
                 if (q["notice"] == "die")
                 {
-                        message_vision(CYN "$N" CYN "點點頭，對$n" CYN "道：算了，聽說這人"
+                        message_vision(CYN "$N" CYN "點點頭，對$n" CYN "道：算了，聽説這人"
                                        "已經被殺了，你不用再辛苦了。\n" NOR, me, who);
                 } else
                 {
@@ -1637,7 +1637,7 @@ int cancel_quest(object me, object who)
                 if (dbase["experience"] > dbase["learned_experience"])
                 {
                         dbase["experience"] += (dbase["learned_experience"] - dbase["experience"]) * 2 / 3;
-                        msg += "，由于疲于奔命，你的實戰體會難以及時消化吸收";
+                        msg += "，由於疲於奔命，你的實戰體會難以及時消化吸收";
                 }
 
                 // notice place
@@ -1645,13 +1645,13 @@ int cancel_quest(object me, object who)
                 break;
 
         case "letter":
-                message_vision(CYN "$N" CYN "嘆口氣，看了看$n" CYN "道：連這點小事都幹不了？算了吧。\n" NOR,
+                message_vision(CYN "$N" CYN "歎口氣，看了看$n" CYN "道：連這點小事都幹不了？算了吧。\n" NOR,
                                me, who);
 
                 addn("score", -(15+random(10)), who);
                 if( query("score", who)<0 )
                         set("score", 0, who);
-                message("vision", HIR "你的江湖閱歷受到了損失。\n" NOR, who);
+                message("vision", HIR "你的江湖閲歷受到了損失。\n" NOR, who);
                 break;
         }
         who->start_busy(2);
@@ -1702,8 +1702,8 @@ protected void assign_quest_by_letter(object who, string killed_id, mapping new_
         {
         case 0:
                 // 出現新任務提示
-                msg = "只聽撲倏撲倏幾聲，一只白鴿飛了過來，落在"
-                      "$N肩頭，$N只見白鴿足上紅繩系著些什麼，連"
+                msg = "只聽撲倏撲倏幾聲，一隻白鴿飛了過來，落在"
+                      "$N肩頭，$N只見白鴿足上紅繩繫着些什麼，連"
                       "忙解下一看，原來竟是師傅手諭。\n";
                 // 拒絕信息
                 refuse = "$N搖了搖頭，將信函隨手一撕。\n";
@@ -1712,8 +1712,8 @@ protected void assign_quest_by_letter(object who, string killed_id, mapping new_
                          "在白鴿足上放走。\n";
                 break;
         case 1:
-                msg = "$N轉身一看，竟見到一只灰點信鴿飛至身旁，"
-                      "$N趕緊收住身形，取下信鴿腳上縛著的卷起信"
+                msg = "$N轉身一看，竟見到一隻灰點信鴿飛至身旁，"
+                      "$N趕緊收住身形，取下信鴿腳上縛着的捲起信"
                       "箋，展看便讀。\n";
                 refuse = "$N搖了搖頭，將信函隨手一撕。\n";
                 accept = "$N點了點頭，將在信函後面寫了幾個字，綁"
@@ -1724,7 +1724,7 @@ protected void assign_quest_by_letter(object who, string killed_id, mapping new_
                       "地跑了過來，邊喘氣邊道：“可叫我好找，這"
                       "是師傅派我送給你的手諭。”\n";
                 refuse = "$N皺了皺眉，道：“我還是不去了，你讓師"
-                         "傅找別的同門去吧。”那位弟子嘆了口氣，"
+                         "傅找別的同門去吧。”那位弟子歎了口氣，"
                          "轉身離開。\n";
                 accept = "$N喜道：“請你稟報師傅，我一定準時完成"
                          "。”那位弟子揮了揮手，風塵僕僕的離開了"
@@ -1735,7 +1735,7 @@ protected void assign_quest_by_letter(object who, string killed_id, mapping new_
                       "弟子急急忙忙地跑了上來，拍拍$N的肩膀，把"
                       "一封信遞上。\n";
                 refuse = "$N皺了皺眉，道：“我還是不去了，你讓師"
-                         "傅找別的同門去吧。”那位弟子嘆了口氣，"
+                         "傅找別的同門去吧。”那位弟子歎了口氣，"
                          "轉身離開。\n";
                 accept = "$N喜道：“請你稟報師傅，我一定準時完成"
                          "。”那位弟子揮了揮手，風塵僕僕的離開了"
@@ -1743,10 +1743,10 @@ protected void assign_quest_by_letter(object who, string killed_id, mapping new_
                 break;
         case 4:
                 msg = "只見$N剛想離開，一位同門裝束的弟子追了上"
-                      "來，抹了抹頭上的汗珠，說道：“原來你在這"
-                      "裡啊，快看看師傅派我送來的信。”\n";
+                      "來，抹了抹頭上的汗珠，説道：“原來你在這"
+                      "裏啊，快看看師傅派我送來的信。”\n";
                 refuse = "$N皺了皺眉，道：“我還是不去了，你讓師"
-                         "傅找別的同門去吧。”那位弟子嘆了口氣，"
+                         "傅找別的同門去吧。”那位弟子歎了口氣，"
                          "轉身離開。\n";
                 accept = "$N喜道：“請你稟報師傅，我一定準時完成"
                          "。”那位弟子揮了揮手，風塵僕僕的離開了"
@@ -1754,8 +1754,8 @@ protected void assign_quest_by_letter(object who, string killed_id, mapping new_
                 break;
         case 5:
                 msg = "$N正欲離開，忽然發現不遠處的地上一塊石頭"
-                      "上刻著些什麼，走進一看，正是本門專用的記"
-                      "認，原來石頭下壓著一封書信。\n";
+                      "上刻着些什麼，走進一看，正是本門專用的記"
+                      "認，原來石頭下壓着一封書信。\n";
                 refuse = "$N搖了搖頭，將信函隨手一撕。\n";
                 accept = "$N點了點頭，將在信函後面寫了幾個字，重"
                          "新壓在石頭下面。\n";
@@ -1806,7 +1806,7 @@ mapping prepare_quest(object me)
         name = NPC_D->get_cn_name();
         family=query("family/family_name", me);
 
-        // 師傅一般是復制出來的，載入非復制的對象也可
+        // 師傅一般是複製出來的，載入非複製的對象也可
         if (! objectp(master = find_object(mlist[family])))
         {
                 master = load_object(mlist[family]);
@@ -1889,7 +1889,7 @@ int start_quest(object me, mapping quest)
                 set("shen", 0, ob);
         }
 
-        // 1 級以上的任務有 10% 機會重新分布
+        // 1 級以上的任務有 10% 機會重新分佈
         if (level > 0 && random(10) == 1)
         {
                 string flee_msg;
@@ -1899,22 +1899,22 @@ int start_quest(object me, mapping quest)
                              "同門裝束的弟子急急忙忙的趕了過來"
                              "，喊道：“不好了，不好了，" HIR +
                              ob->name() + NOR CYN "在" + place +
-                             "失蹤了！現在不知道去了哪裡！”弟"
-                             "子嘆了口氣，續道：“這事麻煩了，"
+                             "失蹤了！現在不知道去了哪裏！”弟"
+                             "子歎了口氣，續道：“這事麻煩了，"
                              "看來只有靠你自己努力了。”\n" NOR, me);
                 switch (random(3))
                 {
                 case 0:
-                        flee_msg = "聽說$N聽到了江湖上追殺他的風"
+                        flee_msg = "聽説$N聽到了江湖上追殺他的風"
                                    "聲，已經躲到PLACE去了。";
                         break;
                 case 1:
-                        flee_msg = "有人說$N就在咱們這地界呢，"
-                                   "但是也有人說他在PLACE，不知道是真是假。";
+                        flee_msg = "有人説$N就在咱們這地界呢，"
+                                   "但是也有人説他在PLACE，不知道是真是假。";
                         break;
                 default:
                         flee_msg = "不知道...不知道...哦？好像"
-                                   "聽人說過是在PLACE。";
+                                   "聽人説過是在PLACE。";
                         break;
                 }
                 ob->random_place(flee_msg);
@@ -1925,17 +1925,17 @@ int start_quest(object me, mapping quest)
 }
 
 /***********************************************************
-  系統注冊任務概念
+  系統註冊任務概念
 
     HELL採用任務對象來管理眾多各式各樣的任務，而任務守護進程
 就是他們的管理者。為什麼需要任務對象？這是因為大部分任務都具
 有類似的處理過程：收集情報，根據線索完成某些要求，實現最終任
-務，獲得獎勵。為了能夠快速的編寫和實現多種任務，共享重復的實
+務，獲得獎勵。為了能夠快速的編寫和實現多種任務，共享重複的實
 現代碼，系統規定了任務對象的格式，只要遵循任務對象的格式，就
 可以快速的生成玩家任務。
 
     讓我們首先看一下任務的結構：一個任務實際上就是一個自動機，
-然後由玩家不斷的觸發這個自動機最後達到一個穩定狀態，一般來說
+然後由玩家不斷的觸發這個自動機最後達到一個穩定狀態，一般來説
 就是任務成功或是終止。系統可以為任務對象制定一些標準事件，然
 後由任務的設計者自己制定一些事件，這就組合成了一個任務的輸入
 事件，然後系統為任務維護一個狀態，這樣就構成了一個完整的自動
@@ -1968,7 +1968,7 @@ int start_quest(object me, mapping quest)
 物，制定它的等級，正邪，預期出現的地點，打聽的難度等等。然後
 就進入到人物生成態，同時表明自己需要接受超時事件。
 
-此時，玩家如果打聽消息，有可能打聽到這個任務，並經過反復打聽，
+此時，玩家如果打聽消息，有可能打聽到這個任務，並經過反覆打聽，
 獲得了該人出現的地點信息，則該人物對象認為消息收集完全，就真
 正的生成這個人物，等候玩家將它消滅。
 
@@ -2001,7 +2001,7 @@ int start_quest(object me, mapping quest)
                    |
                    .........
 
-打聽需要一定的江湖閱歷，當random(江湖閱歷) > 消息的時候， 就
+打聽需要一定的江湖閲歷，當random(江湖閲歷) > 消息的時候， 就
 有可能打聽到這個消息。消息可能是一個函數，如果是這樣的話，在
 打聽消息的時候系統把打聽的對象和打聽消息的人，關鍵字傳遞給該
 函數，取它的返回結果。
@@ -2181,10 +2181,10 @@ public void start_all_quest()
                 reset_eval_cost();
 
                 if (strlen(name) < 1 || name[0] == '#')
-                        // 空行或者是注釋行
+                        // 空行或者是註釋行
                         continue;
 
-                // 去掉行尾的注釋和空格
+                // 去掉行尾的註釋和空格
                 pos = strsrch(name, '#');
                 if (pos > 1) name = name[0..pos - 1];
                 name = replace_string(name, " ", "");
@@ -2286,15 +2286,15 @@ public string generate_information(object knower, object who, string topic)
         case 0:
                 return "阿嚏！有點感冒，不好意思。";
         case 1:
-                return "等...等等，你說什麼？沒聽清楚。";
+                return "等...等等，你説什麼？沒聽清楚。";
         case 2:
-                return "嗯，稍等啊，就好... 好了，你剛才說啥？";
+                return "嗯，稍等啊，就好... 好了，你剛才説啥？";
         case 3:
                 return "這個... 這個... 哦，好了，啊？你問我呢？";
         case 4:
                 return "唉呦！... 不好意思，是你問我麼？";
         case 5:
-                return "就好... 就好... 好了，你說啥？";
+                return "就好... 就好... 好了，你説啥？";
         case 7:
                 return "!@#$%^&*";
         }
@@ -2317,23 +2317,23 @@ public string generate_information(object knower, object who, string topic)
                         }
                 }
 
-                // 過濾該小二可以散布的消息
+                // 過濾該小二可以散佈的消息
                 obs = filter_array(obs, (: objectp($1) && $1->can_rumor_by($(knower)) :));
                 if (! sizeof(obs))
                 {
-                        // 該人士不能散布信息
+                        // 該人士不能散佈信息
                         switch (random(3))
                         {
                         case 0:
-                                return "我倒是聽說最近江湖上出了不少事兒。";
+                                return "我倒是聽説最近江湖上出了不少事兒。";
                         case 1:
-                                return "哎呀呀！你也知道了一些秘密？快給我說說！";
+                                return "哎呀呀！你也知道了一些祕密？快給我説説！";
                         default:
                                 return "這年頭，是越來越亂了。";
                         }
                 }
 
-                // 隨機選擇一個可以散布的任務消息
+                // 隨機選擇一個可以散佈的任務消息
                 last_ob = obs[random(sizeof(obs))];
                 set_temp("last_asked_quest", last_ob, knower);
                 if (answer = last_ob->query_prompt(knower, who))
@@ -2379,7 +2379,7 @@ public string generate_information(object knower, object who, string topic)
                         answer = last_ob->query_introduce(knower, who);
                         if (stringp(answer))
                                 return answer;
-                        return "你說的是" HIY + knower->name() +
+                        return "你説的是" HIY + knower->name() +
                                HIY "那件事情嗎？你問我算是問對人了。" NOR;
                 } else
                 // 查看最後一次被詢問的任務消息中是否有該條目

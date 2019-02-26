@@ -18,7 +18,7 @@ int accept_fight(object ob)
             || query("jing") < query("eff_jing") * 2 / 3
             || query("neili") < query("max_neili") * 2 / 3)
         {
-                // command("say 我現在有點疲倦，待我歇會兒再說。");
+                // command("say 我現在有點疲倦，待我歇會兒再説。");
                 return 0;
         }
 
@@ -89,10 +89,10 @@ int tear_and_kill(object me, object ob, string msg)
         if( random(query("combat_exp", me))>query("combat_exp", ob)/2 )
         {
                 addn_temp("caught", 1, ob);
-                message_combatd("結果$N被" + me->name() + "捉個正著！\n", ob);
+                message_combatd("結果$N被" + me->name() + "捉個正着！\n", ob);
                 if( query_temp("caught", ob) == 4 )
                 {
-                        message_combatd("\n桃谷六仙捉著$N四肢猛然一扯，$N只覺得一陣劇痛，便失去知覺了。\n", ob);
+                        message_combatd("\n桃谷六仙捉着$N四肢猛然一扯，$N只覺得一陣劇痛，便失去知覺了。\n", ob);
                         delete_temp("caught", ob);
                         ob->unconcious();
                         set_temp("die_reason", "被桃谷六仙撕成四塊了", ob);

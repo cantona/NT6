@@ -6,7 +6,7 @@ void create()
 {
         set("short", "右闕門");
         set("long", @LONG
-這是通往各部官員朝房的右門. 東廡房設的是吏、戶、禮三部.
+這是通往各部官員朝房的右門. 東廡房設的是吏、户、禮三部.
 LONG
         );
         set("outdoors", "huanggong");

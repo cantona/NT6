@@ -16,7 +16,7 @@ int main(object me, string arg)
                 return notify_fail("你的身體素質還不夠好，貿然發作有傷身體。\n");
 
         if (me->is_busy())
-                return notify_fail("你現在忙著呢。\n");
+                return notify_fail("你現在忙着呢。\n");
 
         if( query("neili", me)<1000 )
                 return notify_fail("你的內力不夠充沛，難以控制自己的情緒。\n");

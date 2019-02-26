@@ -23,14 +23,14 @@ mapping *action = ({
         "skill_name" : "風起雲湧",
         "damage_type" : "刺傷"
 ]),
-([      "action" : "$N輕吁一聲，飛身一躍而起，一招「風卷殘雲」，連續向$n刺出數劍",
+([      "action" : "$N輕籲一聲，飛身一躍而起，一招「風捲殘雲」，連續向$n刺出數劍",
         "force"  : 120,
         "attack" : 51,
         "parry"  : 18,
         "dodge"  : 53,
         "damage" : 95,
         "lvl"    : 60,
-        "skill_name" : "風卷殘雲",
+        "skill_name" : "風捲殘雲",
         "damage_type" : "刺傷"
 ]),
 ([      "action" : "$N仰天一聲清嘯，斜行向前，一招「風流雲散」，$w橫削直擊，擊向$n的$l",

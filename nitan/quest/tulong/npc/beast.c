@@ -28,7 +28,7 @@ void die ()
   {
     object ob = new ("/quest/tulong/npc/beast");
     ob->move(where);
-    message_vision ("\n突然，迷霧中又出現一只觀想獸！\n",me);   
+    message_vision ("\n突然，迷霧中又出現一隻觀想獸！\n",me);   
   }
   destruct (me);  
 }

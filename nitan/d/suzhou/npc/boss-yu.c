@@ -23,7 +23,7 @@ void create()
         set_name("玉羅剎", ({ "yu luosha", "yu","luosha" }));
         set("gender", "女性");
         set("age", 28);
-        set("long", "她看起來冷冷的，面部好象僵住了一般，沒有一點表情變化。她就是" + bunch_bad["bunch_name"] + "的門主。\n");
+        set("long", "她看起來冷冷的，面部好像僵住了一般，沒有一點表情變化。她就是" + bunch_bad["bunch_name"] + "的門主。\n");
         set("title",HIB"修羅門門主"NOR);
         set("per",30);
         set("combat_exp", 1000000);

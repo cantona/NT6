@@ -71,11 +71,11 @@ int ask_kiss()
            addn("combat_exp",2000);
            }            
            else 
-           say(query("name")+"啊的一聲,一下子跳將開去,說:不嘛,不要.\n");
+           say(query("name")+"啊的一聲,一下子跳將開去,説:不嘛,不要.\n");
            return 1;
            }
         }
-    say(query("name")+"說道:呸,我不幹!\n");
+    say(query("name")+"説道:呸,我不幹!\n");
 return 1;
 }
 int ask_go()
@@ -88,12 +88,12 @@ int ask_go()
                  sscanf(query("id"),"%s's shuang er",host_id);
                  if(query("id")==host_id)
            {say(query("name")+"睜大眼睛看了看"+
-                                query("name", me)+"，說:當然願意啦,我都聽你的。\n");
+                                query("name", me)+"，説:當然願意啦,我都聽你的。\n");
             return 1;
            }
          if( query("id", me) != host_id )
            {say(query("name")+"睜大眼睛看了看"+
-                                query("name", me)+"，說:不行的,我得聽我主人的。\n");
+                                query("name", me)+"，説:不行的,我得聽我主人的。\n");
                         return 1;
            }
          }
@@ -110,10 +110,10 @@ int ask_go()
            tell_object(me, "可用指令:\nattack sb 攻擊某人.\nsha sb 殺死某人.\nstop 停止戰鬥.\nsendto sb.--把雙兒送給sb.\n");
            set("long","這是"+new_name+"。\n"
                 "她是一個十分清秀的少女,大約十四五歲年紀;\n"
-                "一張雪白的臉龐,眉彎嘴小,笑靨如花,正笑嘻嘻地看著你。\n");
+                "一張雪白的臉龐,眉彎嘴小,笑靨如花,正笑嘻嘻地看着你。\n");
         call_out("do_chase",5);
        }
-           else say(query("name")+"睜大眼睛看著"+query("name", me)+"，說:不行的,夫人沒有同意。\n");
+           else say(query("name")+"睜大眼睛看着"+query("name", me)+"，説:不行的,夫人沒有同意。\n");
         return 1;
 }
 int do_chase()
@@ -151,11 +151,11 @@ int do_attack(string arg)
   if( query("id", me) != host_id )
   return notify_fail("雙兒連理都不理你！\n");
   if(!arg||!objectp(ob=present(arg,environment(me))))
-        return notify_fail("雙兒傻傻地望著你，不明白你的意思。\n");
-  if (userp(ob)) return notify_fail("雙兒臉龐憋的通紅的說：對不起，我不能殺玩家的！\n");
-  if( environment() && query("no_fight", environment()))return notify_fail("雙兒小心翼翼的看了你一眼說：這裡是安全區啊！\n");
+        return notify_fail("雙兒傻傻地望着你，不明白你的意思。\n");
+  if (userp(ob)) return notify_fail("雙兒臉龐憋的通紅的説：對不起，我不能殺玩家的！\n");
+  if( environment() && query("no_fight", environment()))return notify_fail("雙兒小心翼翼的看了你一眼説：這裏是安全區啊！\n");
   if(!living(ob)) 
-         return notify_fail("雙兒說:"
+         return notify_fail("雙兒説:"
               +query("name", ob)+"已經這樣啦你還要...??!!\n");
   message_vision("雙兒對主人$N點頭道: 嗯,好的.\n",me);
   fight_ob(ob);
@@ -189,12 +189,12 @@ int do_send(string arg)
         return notify_fail("你要把雙兒送給誰？\n");
   if(!living(ob) || !userp(ob)) 
          return notify_fail("你只能把雙兒給活人!\n");
- message_vision("雙兒眼淚汪汪地望著主人$N，說:\n主人待我好,是我命好;主人待我不好,是我命苦罷了.\n",me);
+ message_vision("雙兒眼淚汪汪地望着主人$N，説:\n主人待我好,是我命好;主人待我不好,是我命苦罷了.\n",me);
  set_leader(ob);
  new_name=query("name", ob)+"的丫環雙兒";
            set("long","這是"+new_name+"。\n"
                 "她是一個十分清秀的少女,大約十四五歲年紀;\n"
-                "一張雪白的臉龐,眉彎嘴小,卻象是剛受人欺負,眼淚汪汪地看著你。\n");
+                "一張雪白的臉龐,眉彎嘴小,卻象是剛受人欺負,眼淚汪汪地看着你。\n");
  new_id=query("id", ob)+"'sshuanger";
  set("name",new_name);
  set("id",new_id);
@@ -210,7 +210,7 @@ int do_sha(string arg)
         return notify_fail("你要雙兒殺誰？\n");
         if( !query("no_fight", environment(ob)) )
         {
-        message_vision("雙兒對$N點頭說道: 嗯,好的.\n",this_player());
+        message_vision("雙兒對$N點頭説道: 嗯,好的.\n",this_player());
         command("say 哼,主人要我殺了你!");
         remove_call_out("kill_ob");
         call_out("kill_ob", 1, ob); 

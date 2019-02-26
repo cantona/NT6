@@ -38,9 +38,9 @@ int perform(object me, object target)
                 return notify_fail("你的真氣不夠，難以施展" + name() + "。\n");
 
         if (! living(target))
-                return notify_fail("對方都已經這樣了，用不著這麼費力吧？\n");
+                return notify_fail("對方都已經這樣了，用不着這麼費力吧？\n");
 
-        msg = HIR "$N" HIR "嘴角泛起邪意的微笑，猛地加速前沖，左手" + weapon->name() +
+        msg = HIR "$N" HIR "嘴角泛起邪意的微笑，猛地加速前衝，左手" + weapon->name() +
               HIR "化作一道白虹，\n頓時一股凌厲無比的無形刀氣破空襲向$n" HIR "！\n"NOR;
 
         ap = attack_power(me, "blade");

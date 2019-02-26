@@ -30,7 +30,7 @@ int perform(object me, object target)
                 return notify_fail("你的迷蹤拳等級不夠，練好了再來！\n");
 
         if( objectp(weapon=query_temp("weapon", me)) )
-                return notify_fail("你拿著武器如何使用拳法絕招？\n");
+                return notify_fail("你拿着武器如何使用拳法絕招？\n");
 
         if( query("neili", me)<500 )
                 return notify_fail("你的內力不夠。\n");
@@ -57,7 +57,7 @@ int perform(object me, object target)
                 COMBAT_D->do_attack(me, target, weapon, 0);
         }
 
-        msg = HIR "\n$N" HIR "雙拳宛若布下天羅地網，招招擊向$n" HIR "的關節要害！\n" NOR;
+        msg = HIR "\n$N" HIR "雙拳宛若佈下天羅地網，招招擊向$n" HIR "的關節要害！\n" NOR;
         if (ap / 2 + random(ap) > dp || !living(target))
         {
                 limbs=query("limbs", target);

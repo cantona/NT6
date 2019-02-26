@@ -95,13 +95,13 @@ int give_job()
 
         if( query("family/family_name", me) != "唐門世家" )
         {
-                command("say “你是什麼人，為什麼會在這裡！”\n");
+                command("say “你是什麼人，為什麼會在這裏！”\n");
                 return 1;
         }
 
         if( !environment() || base_name(environment()) != query("startroom") )
         {
-                say("唐甜說道:“我現在沒心情給你派活，等我回蓮雲閣再說吧！”\n");
+                say("唐甜説道:“我現在沒心情給你派活，等我回蓮雲閣再説吧！”\n");
                 return 0;
         }
 
@@ -111,17 +111,17 @@ int give_job()
         {
                 if( query("combat_exp", me) <= 20000 )
                 {
-                        command("say “恩...好象制藥房正缺人手！你去問問吧！”\n");
+                        command("say “恩...好像製藥房正缺人手！你去問問吧！”\n");
                         set_temp("tangmen/yao", 1, me);
                 }
                 else if( query("combat_exp", me) <= 50000 )
                 {
-                        command("say “恩...好象制鏢房正缺人手！你去問問吧！”\n");
+                        command("say “恩...好像制鏢房正缺人手！你去問問吧！”\n");
                         set_temp("tangmen/biao", 1, me);
                 }
                 else if( query("combat_exp", me) <= 100000 )
                 {
-                        command("say “恩...好象制毒房正缺人手！你去問問吧！”\n");
+                        command("say “恩...好像製毒房正缺人手！你去問問吧！”\n");
                         set_temp("tangmen/du", 1, me);
                 }
                 else

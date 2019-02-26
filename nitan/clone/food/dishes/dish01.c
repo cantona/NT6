@@ -1,4 +1,4 @@
-// 神話世界﹒西遊記﹒版本４．５０
+// 神話世界·西遊記·版本４．５０
 /* <SecCrypt CPL V3R05> */
  
 // by snowcat oct 15 1997
@@ -8,7 +8,7 @@ inherit F_FOOD;
 
 void create()
 {
-  string name = "熏臘腸";
+  string name = "薰臘腸";
   set_name(name, ({"xun lachang", "lachang", "chang"}));
   set_weight(1000);
   if (clonep())

@@ -17,7 +17,7 @@ void create()
         set("value", 1000);
         set("nostrum", 16);
         set("unit", "塊");
-        set("long", "這是一塊牛膽裡取出來的牛黃，看來可以入藥。\n");
+        set("long", "這是一塊牛膽裏取出來的牛黃，看來可以入藥。\n");
         set("pour_type", "1");
         setup();
 }

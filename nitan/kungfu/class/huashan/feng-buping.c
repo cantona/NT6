@@ -20,7 +20,7 @@ void create()
         set("class", "swordsman");
         set("title", "華山劍宗第十三代弟子");
         set("age", 45);
-        set("long", "封不平是華山劍宗第一高手，滿臉戾氣一張黃焦焦的面皮。\n");
+        set("long", "封不平是華山劍宗第一高手，滿臉戾氣一張黃焦焦的麪皮。\n");
         set("attitude", "peaceful");
         set("str", 28);
         set("int", 32);
@@ -85,7 +85,7 @@ void create()
                 "劍宗"     : "我就是劍宗傳人！\n",
                 "狂風快劍" : "你想學的話還是找我成師弟吧！\n",
                 "氣宗"     : "哼！氣宗武功庸俗不堪，奉氣輕劍，亂七八糟。\n",
-                "岳不群"   : "別提那偽君子！可惡！\n",
+                "嶽不羣"   : "別提那偽君子！可惡！\n",
                 "華山劍法" : "那便是本派絕學，天下一等一的劍法！尤其是「天外飛龍」一招，飛劍殺敵，無人能擋。\n",
                 "風清揚"   : "啊！我已多年不見風師叔，不清楚他的下落。\n",
                 "劍道修養" : (: ask_sword_martial :),
@@ -115,7 +115,7 @@ int accept_ask(object me, string topic)
         {
         case "歷練" :
         case "歷煉" :
-        case "鍛煉" :
+        case "鍛鍊" :
                 return QUEST_D->accept_ask(this_object(), me, topic);
                 break;
 
@@ -176,7 +176,7 @@ void attempt_apprentice(object ob)
 void do_recruit(object ob)
 {
         if( query("int", ob)<20 )
-                command("say 我華山派以劍法為主，依我看" + RANK_D->query_respect(ob) + "不適合于學劍法。");
+                command("say 我華山派以劍法為主，依我看" + RANK_D->query_respect(ob) + "不適合於學劍法。");
         else
         {
                 command("say 好，好，好，很好。");
@@ -251,8 +251,8 @@ string ask_me()
 
         command("say 好！我便傳你「天外飛龍」。看仔細了！" );
 
-        message_vision("$N劍走龍蛇，白光如虹，凝重處如山岳巍峙，輕靈處若清風無跡，變幻莫測。\n" +
-                       "舞到急處，$N一聲大喝，長劍脫手飛出，化作一道驚虹，直沒至柄插入一株樹中。\n", me);
+        message_vision("$N劍走龍蛇，白光如虹，凝重處如山嶽巍峙，輕靈處若清風無跡，變幻莫測。\n" +
+                       "舞到急處，$N一聲大喝，長劍脱手飛出，化作一道驚虹，直沒至柄插入一株樹中。\n", me);
 
         set("can_perform/huashan-sword/long", 1, ob);
 
@@ -294,8 +294,8 @@ mixed ask_me()
 
         message_vision(HIY "$n" HIY "大喝一聲，手中粘了一個石子"
                        "奮力擊出，飛至半空突然化作粉末！\n"
-                       HIY "$n" HIY "回頭凝視著$N" HIY "道：這一"
-                       "招沒什麼稀奇，就是要舍生忘死，運足內力！"
+                       HIY "$n" HIY "回頭凝視着$N" HIY "道：這一"
+                       "招沒什麼稀奇，就是要捨生忘死，運足內力！"
                        "你雖為劍宗弟子，也要好好修煉內力！\n" NOR,
                        me, this_object());
         tell_object(me, HIG "你學會了天外飛龍。\n" NOR);
@@ -324,7 +324,7 @@ mixed ask_sword_martial()
                 return "你毫無劍道修養根基，我如何與你談其中奧妙？";
 
         if (me->query_skill("sword-cognize", 1) >= 200)
-                return "你劍道了解得已經不少了，我是沒什麼好再教你的了。";
+                return "你劍道瞭解得已經不少了，我是沒什麼好再教你的了。";
 
         if( query_temp("last_ask/murongbo/martial", me)+240>time() )
                 return "改日再談吧，今天你要多想想，好好體會體會。";

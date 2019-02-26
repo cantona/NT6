@@ -56,7 +56,7 @@ mapping *action = ({
         "skill_name"  : "春風拂柳",
         "damage_type" : "瘀傷"
 ]),
-([      "action" : "$N使出一招「逍遙世間」，一掌拍出，仿佛不食半點人間煙火",
+([      "action" : "$N使出一招「逍遙世間」，一掌拍出，彷彿不食半點人間煙火",
         "force"  : 110,
         "dodge"  : 75,
         "damage" : 25,

@@ -21,7 +21,7 @@ int main(object me, string arg)
 int help(object me)
 {
         write(@HELP
-指令說明:
+指令説明:
     檢查玩家的程式是否有啟動 MCCP(Mud Client Compression Protocol)功能
 此功能可以加速網路傳輸速度
 

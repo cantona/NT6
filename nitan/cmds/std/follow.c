@@ -25,7 +25,7 @@ int main(object me, string arg)
                 return notify_fail("你還是先從坐騎上下來後在跟隨別人吧。 \n");
 
         if( !objectp(ob = present(arg, environment(me))) )
-                return notify_fail("這裡沒有 " + arg + "。\n");
+                return notify_fail("這裏沒有 " + arg + "。\n");
 
         if( !ob->is_character() )
                 return notify_fail("什麼？跟隨...." + ob->name() + "。\n");

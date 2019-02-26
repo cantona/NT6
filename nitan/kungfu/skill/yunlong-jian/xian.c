@@ -43,13 +43,13 @@ int perform(object me, object target)
                 msg += COMBAT_D->do_damage(me, target, WEAPON_ATTACK, damage, 50,
                                            HIR "只見$N" HIR "手中劍光幻作一條金龍，騰空而"
                                            "起倏的罩向$n" HIR "，\n$p" HIR "只覺一股大力"
-                                           "舖天蓋地般壓來，登時眼前一花，兩耳轟鳴，哇的"
+                                           "鋪天蓋地般壓來，登時眼前一花，兩耳轟鳴，哇的"
                                            "噴出一口鮮血！！\n" NOR);
                 me->start_busy(2);
         } else
         {
                 msg += CYN "可是$p" CYN "猛地向前一躍，跳出了$P"
-                       CYN "的攻擊范圍。\n"NOR;
+                       CYN "的攻擊範圍。\n"NOR;
                 addn("neili", -100, me);
                 me->start_busy(4);
         }

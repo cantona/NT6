@@ -45,7 +45,7 @@ int perform(object me, object target)
                 return notify_fail("你的真氣不夠，難以施展" YING "。\n");
 
         if (! living(target))
-                return notify_fail("對方都已經這樣了，用不著這麼費力吧？\n");
+                return notify_fail("對方都已經這樣了，用不着這麼費力吧？\n");
 
         msg = WHT "$N" WHT "一聲獰笑，將手中的" + weapon->name() +
               WHT "舞動如輪，刀鋒激起層層" HIR "血浪" NOR +
@@ -55,7 +55,7 @@ int perform(object me, object target)
         if (random(me->query_skill("blade")) > target->query_skill("parry") / 2)
         {
                 msg += HIR "結果$p" HIR "被$P" HIR "逼得手忙腳"
-                       "亂，只能緊守門戶，不敢擅動。\n" NOR;
+                       "亂，只能緊守門户，不敢擅動。\n" NOR;
                 target->start_busy((int)me->query_skill("blade") / 27 + 2);
         } else
         {

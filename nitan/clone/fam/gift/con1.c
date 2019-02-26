@@ -7,7 +7,7 @@ void create()
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("long", WHT "這是一包灰黑色的藥粉，據說吃了可以增強根骨。\n" NOR);
+                set("long", WHT "這是一包灰黑色的藥粉，據説吃了可以增強根骨。\n" NOR);
                 set("base_unit", "包");
                 set("base_value", 10000);
                 set("base_weight", 50);

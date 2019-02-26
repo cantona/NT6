@@ -1,4 +1,4 @@
-// lieyan-dao.c 烈燄刀
+// lieyan-dao.c 烈焰刀
 // Last Modified by winder on Sep. 27 2001
 
 #include <ansi.h>;
@@ -15,9 +15,9 @@ mapping *action = ({
         "lvl" : 8,
         "skill_name" : "萬水千山",
 ]),
-([        "action" : "$N縱身躍落，一招「橫掃千裡」，$w帶著疾風呼的一聲便向$n橫掃過去",
+([        "action" : "$N縱身躍落，一招「橫掃千里」，$w帶着疾風呼的一聲便向$n橫掃過去",
         "lvl" : 16,
-        "skill_name" : "橫掃千裡",
+        "skill_name" : "橫掃千里",
 ]),
 ([        "action" : "$N一招「左右開弓」，$w大開大闔，左右並進，左一刀，右一刀向$n的兩肩砍落",
         "lvl" : 24,
@@ -58,7 +58,7 @@ int practice_skill(object me)
                 query("skill_type", weapon) != "blade" )
                 return notify_fail("你使用的武器不對。\n");
         if( query("qi", me)<50 )
-                return notify_fail("你的體力不夠練烈燄刀法。\n");
+                return notify_fail("你的體力不夠練烈焰刀法。\n");
         me->receive_damage("qi", 30);
         return 1;
 }
@@ -109,10 +109,10 @@ string perform_action_file(string action)
 }
 int help(object me)
 {
-        write(HIC"\n烈燄刀法："NOR"\n");
+        write(HIC"\n烈焰刀法："NOR"\n");
         write(@HELP
 
-    烈燄刀法是明教的刀法。
+    烈焰刀法是明教的刀法。
 
         學習要求：
                 九陽神功20級

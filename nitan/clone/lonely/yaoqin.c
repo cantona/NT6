@@ -53,7 +53,7 @@ mixed hit_ob(object me, object victim, int damage_bonus)
                 n = me->query_skill("sword");
                 victim->receive_damage("qi", n * 3 / 4, me);
                 victim->receive_wound("qi", n * 3 / 4, me);
-                return HIW "$N" HIW "一聲冷哼，反手拂過白玉瑤琴琴身，霎時琴音變得尖銳無比，"
+                return HIW "$N" HIW "一聲冷哼，反手拂過白玉瑤琴琴身，霎時琴音變得尖鋭無比，"
                        "猶如利箭一般射向$n" HIW "！\n" NOR;
         }
         return damage_bonus;

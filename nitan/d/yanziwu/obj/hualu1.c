@@ -9,7 +9,7 @@ void create()
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("long", "這是一瓶玫瑰花露，看來是花了不少心血泡制成的。\n");
+                set("long", "這是一瓶玫瑰花露，看來是花了不少心血泡製成的。\n");
                 set("unit", "瓶");
                 set("value", 50);
         }

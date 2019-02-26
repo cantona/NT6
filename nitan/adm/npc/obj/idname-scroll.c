@@ -123,7 +123,7 @@ int do_idname(string arg)
         ob = find_object(filename);
         if (! ob)
         {
-                write(HIR "修改出現問題，請匯報給巫師！\n" NOR);
+                write(HIR "修改出現問題，請彙報給巫師！\n" NOR);
         }
         else
         {
@@ -151,7 +151,7 @@ int legal_chinese(string str)
         return 1;
 }
 
-// 轉換字符串中的顏色標志
+// 轉換字符串中的顏色標誌
 string converts(string arg, int max_len, int no_color)
 {
         int i;

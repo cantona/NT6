@@ -3,11 +3,11 @@ inherit F_MASTER;
 #include <ansi.h>
 void create()
 {
-        set_name("歸鐘", ({ "gui zhong", "gui" }));
+        set_name("歸鍾", ({ "gui zhong", "gui" }));
         set("title", "歸心樹之子");
         set("long", 
 "一個癆病鬼，不住的咳嗽，神情卻又猶如小孩子一\n"
-"般，他便是歸心樹之子─歸鐘，從小便體弱多病。\n");
+"般，他便是歸心樹之子—歸鍾，從小便體弱多病。\n");
         set("gender", "男性");
         set("age", 34);
         set("attitude", "peaceful");
@@ -48,8 +48,8 @@ void create()
         prepare_skill("cuff", "poyu-quan");
        set("chat_chance", 80);
        set("chat_msg", ({
-                "歸鐘輕輕地咳嗽了幾聲。\n",
-                "歸鐘咳嗽了幾聲，一張臉漲得通紅。\n",
+                "歸鍾輕輕地咳嗽了幾聲。\n",
+                "歸鍾咳嗽了幾聲，一張臉漲得通紅。\n",
         }) );       
 
 

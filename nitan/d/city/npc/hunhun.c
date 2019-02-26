@@ -5,7 +5,7 @@ void greeting(object ob);
 void create()
 {
         set_name("小混混", ({ "xiao hunhun", "xiao", "hunhun" }));
-        set("long", "他是揚州裡的小混混，整天閒著沒事幹。\n");
+        set("long", "他是揚州里的小混混，整天閒着沒事幹。\n");
         set("gender", "男性");
         set("age", 15);
         set("attitude", "friendly");

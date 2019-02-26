@@ -22,7 +22,7 @@ int perform(object me, object target)
                 return notify_fail("你的醉拳還不到家，無法施展「" + PFM_NAME + "」。\n");
 
         msg = HIY "$N" HIY "忽地身形一變，雙拳虛握，使出一招「" + PFM_NAME +
-              HIY "」，猶如金杯在手。\n"
+              HIY "」，猶如金盃在手。\n"
               HIG "看似步履踉蹌，醉態可拘，但身形卻靈活之極！\n" NOR;
 
         message_combatd(msg, me);

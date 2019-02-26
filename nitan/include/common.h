@@ -32,7 +32,7 @@ mapping common_list = ([
 　　　　　　　　　　　　　　　　　 "crystal sword"　: "水晶劍", "broad sword"　: "闊劍",
 　　　　　　　　　　　　　　　　　 "two-hand sword" : "雙手劍", "claymore"　　 : "雙刃刀",
 　　　　　　　　　　　　　　　　　 "giant sword"　　: "巨劍",　 "bastard sword": "奇行劍",
-　　　　　　　　　　　　　　　　　 "flamberge"　　　: "火燄劍", "great sword"　: "巨人劍", ]),
+　　　　　　　　　　　　　　　　　 "flamberge"　　　: "火焰劍", "great sword"　: "巨人劍", ]),
 
                         "knife" : ([ "dagger" : "短劍",　 "dirk"　: "匕首",
 　　　　　　　　　　　　　　　　　 "kris"　 : "蛇刃劍", "blade" : "刀",
@@ -49,7 +49,7 @@ mapping common_list = ([
                         "club"　: ([ "club" : "棍", "spiked club"　: "釘棍", ]),
 　　　　　　　　　　　
                         "bow"　 : ([ "short bow" : "短弓", "hunter's bow"　: "獵弓",
-                        "long bow"　: "長弓", "composite bow" : "復合弓",
+                        "long bow"　: "長弓", "composite bow" : "複合弓",
 　　　　　　　　　　　　　　　　　 "short battle bow" : "短戰弓", "long battle bow" : "長戰弓",
 　　　　　　　　　　　　　　　　　 "short war bow"　　: "短戰弓", "long war bow"　　: "長戰弓", ]),
 
@@ -69,7 +69,7 @@ mapping common_list = ([
 　　　　　　　　　    "hard leather armor" : "硬皮甲", "studded armor" : "釘甲",
 　　　　　　　　　　  "ring mail"　　　　　: "環甲",　 "scale mail"　　: "鱗甲",
 　　　　　　　　　　  "chain mail"　　　　 : "鎖子甲", "breast plate"　: "胸甲",
-　　　　　　　　　    "splint mail"　　　　: "籐甲",　 "plate mail"　　: "鋼板甲",
+　　　　　　　　　    "splint mail"　　　　: "藤甲",　 "plate mail"　　: "鋼板甲",
 　　　　　　　　　　  "field plate"　　　　: "片甲",　 "gothic plate"　: "哥特甲",
 　　　　　　　　　　  "full plate mail"　　: "全身甲", "ancient armor" : "舊甲",
 　　　　　　　　　　  "light plate"　　　　: "輕甲", ]),
@@ -114,7 +114,7 @@ mapping common_list = ([
         "jewel" : "珠寶",
 ]);
 
-// 物品出現的幾率
+// 物品出現的機率
 array common_rate_table = ({ "weapon", "potion", "armor", "helmet", "shield",
 　　　　　　　　　　　　　　　 "key", "gloves", "boots", "belt", "ring", "amulet",
 　　　　　　　　　　　　　　　 "charm", "jewel", });

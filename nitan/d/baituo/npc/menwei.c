@@ -5,9 +5,9 @@ inherit F_GUARDER;
 
 void create()
 {
-        set_name("門衛", ({ "men wei", "men", "wei" }));
+        set_name("門衞", ({ "men wei", "men", "wei" }));
         set("long", @LONG
-這是個年富力強的衛兵，樣子十分威嚴。雖然
+這是個年富力強的衞兵，樣子十分威嚴。雖然
 他們武藝不高，但是經過歐陽鋒的訓練，決非
 常人可敵。
 LONG);
@@ -44,7 +44,7 @@ LONG);
                    "id"        : "ouyang feng" ]),
         }));
 
-        create_family("歐陽世家", 0, "侍衛");
+        create_family("歐陽世家", 0, "侍衞");
 
         setup();
         add_money("silver", 2);
@@ -71,14 +71,14 @@ void greeting(object ob)
 
         if (check_family(ob, "歐陽世家"))
         {
-                say(CYN "門衛笑吟吟地道：這位" + RANK_D->query_respect(ob) +
+                say(CYN "門衞笑吟吟地道：這位" + RANK_D->query_respect(ob) +
                     CYN "您辛苦了，快請進吧。\n" NOR);
                 return;
         }
 
         if( query("shen", ob)>200 )
         {
-                say(CYN "門衛兩眼一瞪道：這位" + RANK_D->query_respect(ob) +
+                say(CYN "門衞兩眼一瞪道：這位" + RANK_D->query_respect(ob) +
                     CYN "你是來找麻煩的吧？\n");
                 return;
         }

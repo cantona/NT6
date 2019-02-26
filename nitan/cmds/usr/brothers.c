@@ -38,16 +38,16 @@ int main(object me, string arg)
                     environment(ob) == environment(me))
                 {
                         // is the brother at present now?
-                        message_vision("$N一聲嘆息，看著$n，絕決道：“" + ob->name(1) +
-                                       "不必多說，從今往後，你和我再也沒有半點關系了！”\n",
+                        message_vision("$N一聲歎息，看着$n，絕決道：“" + ob->name(1) +
+                                       "不必多説，從今往後，你和我再也沒有半點關係了！”\n",
                                        me, ob);
                 }
 
                 nid=query("brothers/"+arg, me)+"("+arg+")";
-                write("你和" + nid + "斷絕了關系。\n");
+                write("你和" + nid + "斷絕了關係。\n");
                 id=query("id", me);
                 CHANNEL_D->do_channel(this_object(), "rumor",
-                        "聽說" + me->name(1) + "(" + id + ")"
+                        "聽説" + me->name(1) + "(" + id + ")"
                         "和" + nid + "割袍斷義，斷絕了來往。");
 
                 // remove the brother's association
@@ -81,7 +81,7 @@ int main(object me, string arg)
                 if (objectp(ob = find_player(id)))
                         msg += sprintf(HIY "在線   "
                                        NOR WHT "經驗：" HIC "%-9d "
-                                       NOR WHT "閱歷：" HIW "%-8d "
+                                       NOR WHT "閲歷：" HIW "%-8d "
                                        NOR WHT "威望：" HIY "%-8d\n" NOR,
                                        query("combat_exp", ob),
                                        query("score", ob),
@@ -118,7 +118,7 @@ int help(object me)
 指令格式: brothers 無參數 | out <sb>
 
 查看自己現在的結義兄弟們。如果使用 brothers out <sb> 可以解
-除結義關系。
+除結義關係。
 
 see also：swear
 HELP );

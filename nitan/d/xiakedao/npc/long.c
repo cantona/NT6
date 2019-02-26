@@ -9,7 +9,7 @@ void create()
 {
         set_name("龍亦凡", ({ "long", "dragon" }));
         set("long", "他就是天下聞之色變的俠客島島主，號稱“不死神龍”。\n"
-                   +"他須眉全白，臉色紅潤，有如孩童。看不出他的實際年紀。\n"
+                   +"他鬚眉全白，臉色紅潤，有如孩童。看不出他的實際年紀。\n"
                    );
         set("title", "俠客島主");
         set("gender", "男性");
@@ -109,7 +109,7 @@ int accept_object(object who, object ob)
              remove_call_out("close");
              call_out("close", 15, room);
              key = new("/d/xiakedao/obj/key");
-     message_vision("這是我身後石門的鑰匙，也是俠客島上的憑証，希望你妥善保管，不可隨意丟棄，" +
+     message_vision("這是我身後石門的鑰匙，也是俠客島上的憑證，希望你妥善保管，不可隨意丟棄，" +
                     "更不可交付他人，離島時應與歸還。\n", who);
              key->move(who);
              return 1;

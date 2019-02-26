@@ -15,7 +15,7 @@ i = me->query_skill("xingyi-zhang", 1)/2;        if( !target ) target = offensiv
                 return notify_fail("「日月同輝」只能在戰鬥中對對手使用。\n");
 
         if( objectp(query_temp("weapon", me)) )
-                return notify_fail("使用「日月同輝」時雙手必須空著！\n");
+                return notify_fail("使用「日月同輝」時雙手必須空着！\n");
 
         if( (int)me->query_skill("xingyi-zhang", 1) < 180 )
                 return notify_fail("你的星移掌不夠嫻熟，不會使用「日月同輝」。\n");
@@ -47,13 +47,13 @@ if( random(query("combat_exp", me))>query("combat_exp", target)/2 &&
 msg = HIR"$N雙掌收在胸前，移形換步閃電般將「"HIW"氣旋"HIR"」擊向$n的檀中穴！"NOR;
 COMBAT_D->do_attack(me,target,query_temp("weapon", me),TYPE_QUICK,msg);
         
-msg = HIG"緊接著$N抽出左掌，身形一矮，由下而上猛襲向$n的小腹！"NOR;
+msg = HIG"緊接着$N抽出左掌，身形一矮，由下而上猛襲向$n的小腹！"NOR;
 COMBAT_D->do_attack(me,target,query_temp("weapon", me),TYPE_QUICK,msg);
  
 msg = HIR"只見$N右掌隨後而至，凌空一躍，猶如晴空霹靂拍向$n的頭部！"NOR;
 COMBAT_D->do_attack(me,target,query_temp("weapon", me),TYPE_QUICK,msg);
 
-msg = HIY"$N在空中一個回轉，攜「"HIR"日月之光"HIY"」, 雙掌按向$n的丹田！"NOR;
+msg = HIY"$N在空中一個迴轉，攜「"HIR"日月之光"HIY"」, 雙掌按向$n的丹田！"NOR;
 COMBAT_D->do_attack(me,target,query_temp("weapon", me),TYPE_QUICK,msg);
 
 }
@@ -62,7 +62,7 @@ else
 msg = HIR"$N雙掌收在胸前，移形換步閃電般將「"HIW"氣旋"HIR"」擊向$n的檀中穴！"NOR;
 COMBAT_D->do_attack(me,target,query_temp("weapon", me),TYPE_QUICK,msg);
         
-msg = HIG"緊接著$N抽出左掌，身形一矮，由下而上猛襲向$n的小腹！"NOR;
+msg = HIG"緊接着$N抽出左掌，身形一矮，由下而上猛襲向$n的小腹！"NOR;
 COMBAT_D->do_attack(me,target,query_temp("weapon", me),TYPE_QUICK,msg);
  
 msg = HIR"只見$N右掌隨後而至，凌空一躍，猶如晴空霹靂拍向$n的頭部！"NOR;
@@ -95,7 +95,7 @@ if (!me || !target) return 0;
         addn_temp("apply/dex", i, me);
         addn_temp("apply/attack", i, me);
         addn_temp("apply/damage", i, me);
-msg = HIY"$N在空中一個回轉，攜「"HIR"日月之光"HIY"」, 雙掌按向$n的丹田！"NOR;
+msg = HIY"$N在空中一個迴轉，攜「"HIR"日月之光"HIY"」, 雙掌按向$n的丹田！"NOR;
 COMBAT_D->do_attack(me,target,query_temp("weapon", me),TYPE_QUICK,msg);
  
 msg = HIC"只見$N斜身半轉，陡地拍出兩掌，蓄勢凌厲，直指$n左脅！"NOR;

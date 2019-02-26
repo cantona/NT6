@@ -42,7 +42,7 @@ int perform(object me, object target)
                 return notify_fail("你的內力不夠，難以施展" HUN "。\n");
  
         if (! living(target))
-                return notify_fail("對方都已經這樣了，用不著這麼費力吧？\n");
+                return notify_fail("對方都已經這樣了，用不着這麼費力吧？\n");
 
         msg = HIG "\n$N" HIG "雙手合十，雙目微閉，太玄奧義自心底湧出，猛然間，$N"
               HIG "雙手向前推出，一股強勁的氣流襲向$n " HIG "。\n" NOR;
@@ -55,7 +55,7 @@ int perform(object me, object target)
 
         if (ap / 2 + random(ap) < dp)
         {
-                msg += HIY "然而$n" HIY "全力抵擋，終于將$N" HIY
+                msg += HIY "然而$n" HIY "全力抵擋，終於將$N" HIY
                        "發出的氣流擋住。\n" NOR;
                 me->start_busy(2);
         } else

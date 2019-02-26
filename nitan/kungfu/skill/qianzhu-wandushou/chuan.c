@@ -24,7 +24,7 @@ int perform(object me, object target)
                 return notify_fail("你所使用的外功中沒有這種功能。\n");
 
         if( me->is_busy() )
-                return notify_fail("你正忙著呢。\n");
+                return notify_fail("你正忙着呢。\n");
 
         if( objectp(query_temp("weapon", me)) )
                 return notify_fail("「萬毒穿心」只能空手才能施展。\n");
@@ -98,5 +98,5 @@ string final(object me, object target, int lvl)
                                        "id":query("id", me),
                                        "duration" : lvl / 10 + random(lvl / 10) ]));
 
-        return HIR "$n" HIR "只覺得數股毒氣透心而過，說不出的難受。\n" NOR;
+        return HIR "$n" HIR "只覺得數股毒氣透心而過，説不出的難受。\n" NOR;
 }

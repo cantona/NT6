@@ -27,7 +27,7 @@ LONG );
 int valid_leave(object me, string dir)
 {
         if ( present("soup", me) || present("rice", me))
-        return notify_fail("燒飯師傅瞪著一雙怪眼：吃不了要兜著走啊？\n");
+        return notify_fail("燒飯師傅瞪着一雙怪眼：吃不了要兜着走啊？\n");
         return ::valid_leave(me, dir);
 }
 

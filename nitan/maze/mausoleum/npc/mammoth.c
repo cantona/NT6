@@ -6,12 +6,12 @@ void do_swing();
 void set_from_me(object me);
 void create()
 {
-        string *names = ({ "青銅猛□" });
+        string *names = ({ "青銅猛獁" });
 
         ::create();
         set_name( names[random(sizeof(names))], ({ "mammoth bronze", "mammoth", "bronze" }));
         set("long", @LONG
-這是一個沉睡在皇陵青銅機關獸。身高兩丈有余，四肢極為粗壯，長鼻子左右擺動，
+這是一個沉睡在皇陵青銅機關獸。身高兩丈有餘，四肢極為粗壯，長鼻子左右擺動，
 嘴部長出一對彎曲的象牙，如同兩把彎刀，極為鋒利。在東方仙術的作用下，它的行
 動雖然遲緩，但力大無窮，長長的象鼻伸縮靈活如意，再加上毛皮刀槍不入，象牙快
 如刀刃，端的是極難對付。
@@ -103,7 +103,7 @@ void do_swing()
                                      "id":query("id", this_object()),
                                      "name"  : "七心海棠毒",
                                      "duration" : 200 ]));
-                tell_object(enemy, HIG "你中了青銅猛□的七心海棠毒。\n");
+                tell_object(enemy, HIG "你中了青銅猛獁的七心海棠毒。\n");
                 enemy->receive_damage("qi",10000+random(10000),this_object());
                 COMBAT_D->report_status(enemy);
                 if( !enemy->is_busy() && random(2) )

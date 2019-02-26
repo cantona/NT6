@@ -47,9 +47,9 @@ int perform(object me, object target)
         weapon = obj->name();
 
         pfm_msg = ({
-            "$N踏上一步，"+weapon+HIY"忽地脫手，向$n飛了過去。但見"+weapon+HIY"急轉，向$n砸到！",
+            "$N踏上一步，"+weapon+HIY"忽地脱手，向$n飛了過去。但見"+weapon+HIY"急轉，向$n砸到！",
             "$N搶身長臂，手掌在輪緣一撥，那"+weapon+HIY"就如活了一般，在空中忽地轉身，又向$n追擊過去！",
-            "$N搶上去突伸左拳，當的一聲在輪邊一擊，"+weapon+
+            "$N搶上去突伸左拳，噹的一聲在輪邊一擊，"+weapon+
             HIY"來勢並不十分迅速，但輪子未到，疾風已然撲至，勢道猛惡之極！",
             "$N盛怒之下，伸手推出"+weapon+HIY"，暗用轉勁，又將輪子飛出。這時勁力加急，輪子竟然寂然無聲！",
             "$N運起龍象之力同時雙掌齊出，拍在輪上，那"+weapon+

@@ -31,7 +31,7 @@ mapping *action = ({
         "skill_name" : "穿雲式",
         "damage_type" : "刺傷"
 ]),
-([      "action":"$N手中的$w自左而右地一晃，使出「飛雪式」帶著呼呼風聲橫打$n的章門穴",
+([      "action":"$N手中的$w自左而右地一晃，使出「飛雪式」帶着呼呼風聲橫打$n的章門穴",
         "force" : 150,
         "attack": 50,
         "dodge" : 5,
@@ -41,7 +41,7 @@ mapping *action = ({
         "skill_name" : "飛雪式",
         "damage_type" : "刺傷"
 ]),
-([      "action":"$N飛身躍起，一式「金光式」，卷起漫天筆影，$w向$n電射而去",
+([      "action":"$N飛身躍起，一式「金光式」，捲起漫天筆影，$w向$n電射而去",
         "force" : 170,
         "attack": 60,
         "dodge" : 10,

@@ -4,8 +4,8 @@ void create()
 {
         set("short", "城東箭樓");
         set("long", @LONG
-這是東城頭的箭樓，裡面布滿了一排的垛口，一排大宋的箭手們
-正警惕地監視著城外的一舉一動，隨時準備給前來偷襲的蒙古兵以迎
+這是東城頭的箭樓，裏面佈滿了一排的垛口，一排大宋的箭手們
+正警惕地監視着城外的一舉一動，隨時準備給前來偷襲的蒙古兵以迎
 頭痛擊。
 LONG );
         set("indoors", "xiangyang");
@@ -24,6 +24,6 @@ LONG );
 int valid_leave(object me, string dir)
 {
         if (dir == "east" )
-        return notify_fail("沖出去做什麼，送死啊？\n");
+        return notify_fail("衝出去做什麼，送死啊？\n");
         return ::valid_leave(me,dir);
 }

@@ -96,7 +96,7 @@ int do_bihua(string arg)
 
         if (! living(ob))
         {
-                write("你還是等人家醒了再說吧。\n");
+                write("你還是等人家醒了再説吧。\n");
                 return 1;
         }
 
@@ -115,20 +115,20 @@ int do_bihua(string arg)
 
         if( query("qi", me)*100/query("max_qi", me)<70 )
         {
-                write("你現在體力不夠充沛，何必忙著動手？\n");
+                write("你現在體力不夠充沛，何必忙着動手？\n");
                 return 1;
         }
 
         if( query("qi", ob)*100/query("max_qi", ob)<70 )
         {
-                write("人家現在似乎體力不支，還是等會兒再說吧。\n");
+                write("人家現在似乎體力不支，還是等會兒再説吧。\n");
                 return 1;
         }
 
         if( query("combat_exp", me)<10000 )
         {
                 write("公平子冷笑道：你是哪兒來的？我怎麼從來沒有"
-                      "聽說過？滾開！少在這裡添亂。\n");
+                      "聽説過？滾開！少在這裏添亂。\n");
                 return 1;
         }
 
@@ -155,7 +155,7 @@ int do_bihua(string arg)
         {
                 set_temp("pending/fight", ob, me);
                 message_vision(HIY "\n$N" HIY "朗聲對$n" HIY "道：今日幸會，我們何不一較"
-                               "高低，就由" + name() + "先生為我們見証可好？\n\n" NOR,
+                               "高低，就由" + name() + "先生為我們見證可好？\n\n" NOR,
                                me, ob);
                 return 1;
         }
@@ -183,14 +183,14 @@ void player_win(object env, object me)
         ob = me->query_competitor();
         if (! objectp(ob))
         {
-                shout_message(name() + "嘆道：這次比武，" + me->name(1) + "獲勝。");
+                shout_message(name() + "歎道：這次比武，" + me->name(1) + "獲勝。");
                 return;
         }
 
         if (environment(ob) != environment(me))
         {
                 shout_message(name() + "笑道：" + ob->name(1) +
-                              "比武時臨陣脫逃，" + me->name(1) + "不戰而勝。");
+                              "比武時臨陣脱逃，" + me->name(1) + "不戰而勝。");
         } else
         if( query("age", me)>query("age", ob) )
         {
@@ -224,7 +224,7 @@ void player_lost(object env, object me)
 
 int do_no()
 {
-        command("say " + this_player()->name() + "！這裡眾目睽睽，豈能做此不才之事？");
+        command("say " + this_player()->name() + "！這裏眾目睽睽，豈能做此不才之事？");
         return 1;
 }
 

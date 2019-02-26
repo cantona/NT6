@@ -7,7 +7,7 @@ void create()
         set_name("金環蛇", ({ "jin she", "she" }) );
         set("race", "爬蛇");
         set("age", 2);
-        set("long", "一只讓人看了起毛骨悚然的金環蛇。\n");
+        set("long", "一隻讓人看了起毛骨悚然的金環蛇。\n");
         set("attitude", "peaceful");
         set("str", 20);
         set("cor", 20);

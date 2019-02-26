@@ -145,7 +145,7 @@ mixed ask_gun()
         }
 
         if (owner == me)
-                return "南海神木現在不就在你手裡嗎？";
+                return "南海神木現在不就在你手裏嗎？";
 
         if (objectp(owner) && owner != this_object())
         {
@@ -176,8 +176,8 @@ int shang_ya()
     ob = this_player ( ) ;
     if( query("family/family_name", ob) == "日月神教" )
     {
-        message_vision("張乘風一招手，崖上落下一個大吊籃。\n",ob);
-        message_vision("$N一彎腰進了吊籃，吊籃緩緩地鉸上崖去......\n", ob);
+        message_vision("張乘風一招手，崖上落下一個大弔籃。\n",ob);
+        message_vision("$N一彎腰進了弔籃，弔籃緩緩地鉸上崖去......\n", ob);
         myenv = environment (ob) ;
         ob->move ("/d/heimuya/basket");
         call_out("goto_heimuya", 10, ob) ;
@@ -197,9 +197,9 @@ int accept_object(object who, object ob)
 
     if( query("id", ob) == "heimuling" )
     {
-        message_vision("張乘風對$N說：好！這位" + RANK_D->query_respect(who) + "不錯，那就請吧！\n" , who);
-        message_vision("張乘風一招手，崖上落下一個大吊籃。\n", who);
-        message_vision("$N一彎腰進了吊籃，吊籃緩緩地鉸上崖去......\n", who);
+        message_vision("張乘風對$N説：好！這位" + RANK_D->query_respect(who) + "不錯，那就請吧！\n" , who);
+        message_vision("張乘風一招手，崖上落下一個大弔籃。\n", who);
+        message_vision("$N一彎腰進了弔籃，弔籃緩緩地鉸上崖去......\n", who);
         myenv = environment (who) ;
         who->move ("/d/heimuya/basket");
         call_out("goto_heimuya",10,who) ;
@@ -208,7 +208,7 @@ int accept_object(object who, object ob)
 /*
     else  
     {
-        message_vision("張乘風對$N說：你敢耍我？！\n", who);
+        message_vision("張乘風對$N説：你敢耍我？！\n", who);
         this_object()->kill_ob(who);
     }
 */

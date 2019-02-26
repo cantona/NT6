@@ -6,7 +6,7 @@ void init()
        object ob;
 
        if( !objectp(ob = FUBEN_D->query_maze_mainobj(me)) ) {
-             write(HIR "TSR 物件載入出錯，請與本站 (admin) 聯系。\n" NOR);
+             write(HIR "TSR 物件載入出錯，請與本站 (admin) 聯繫。\n" NOR);
              return;
        }
 
@@ -31,12 +31,12 @@ int do_move(string arg)
              return notify_fail("你想移動什麼？\n");
 
        if( me->is_busy() || me->is_fighting() )
-             return notify_fail("等你忙完了再說吧！\n");
+             return notify_fail("等你忙完了再説吧！\n");
 
        ob = FUBEN_D->query_maze_mainobj(me);
 
        if( !objectp(ob) )
-             return notify_fail("TSR 物件載入出錯，請與巫師聯系！\n");
+             return notify_fail("TSR 物件載入出錯，請與巫師聯繫！\n");
 
        if( query("lock/unlocked", ob) )
              return notify_fail("機關已經被打開了，這樣是多此一舉。\n");
@@ -45,7 +45,7 @@ int do_move(string arg)
        room_id = query(room_id, ob);
 
        if( !stringp(ob->openlock(me, room_id)) )
-             return notify_fail("TSR 數據出錯，請與巫師聯系！\n");
+             return notify_fail("TSR 數據出錯，請與巫師聯繫！\n");
 
        me->start_busy(1 + random(2));
 

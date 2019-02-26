@@ -42,7 +42,7 @@ void incoming_request(mapping info)
                 mudinfo = DNS_MASTER->query_mud_info(info["NAME"]);
                 // send the info to the player
                 MESSAGE_D->tell_user(info["ASKWIZ"], FUN_NOTICE,
-                        sprintf("%s(%s)返回的用戶信息：\n%s",
+                        sprintf("%s(%s)返回的用户信息：\n%s",
                                 mudinfo["MUDNAME"],
                                 upper_case(ntoh(info["NAME"])),
                                 info["MSG"]));

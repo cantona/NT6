@@ -30,7 +30,7 @@ void create()
         set("con", 28);
         set("per", 27);
         set("long", HIR @LONG
-這位高大魁梧，英俊瀟洒的男子就是天下獨尊的康熙大帝。
+這位高大魁梧，英俊瀟灑的男子就是天下獨尊的康熙大帝。
 LONG NOR
         );
 
@@ -77,10 +77,10 @@ LONG NOR
         set("chat_chance", 3);
         set("chat_msg", ({
     "康熙往匾額上看了看。\n",
-                "康熙說道：普天之下，莫非王土；率土之濱，莫非王臣。\n",
-                "康熙說道：天下取士，非賢積德。我朝馬上得天下，不能馬上治天下。 \n",
-                "康熙說道：想要官職，當然問朕了。\n",
-                "康熙說道：收齊四十二章經者，朕重重有賞。\n",
+                "康熙説道：普天之下，莫非王土；率土之濱，莫非王臣。\n",
+                "康熙説道：天下取士，非賢積德。我朝馬上得天下，不能馬上治天下。 \n",
+                "康熙説道：想要官職，當然問朕了。\n",
+                "康熙説道：收齊四十二章經者，朕重重有賞。\n",
         }) );
         setup();
         carry_object(__DIR__"obj/jinduan")->wear();
@@ -95,7 +95,7 @@ int ask_officer()
         worked=query("bt/worked", ob);
         if (lv < 1) 
         {
-                command("say"+query("name", ob)+"，朕沒有給揚州知府下旨，你來此何幹？！\n");
+                command("say"+query("name", ob)+"，朕沒有給揚州知府下旨，你來此何干？！\n");
                 return 1;
   }
   if( query_temp("guard", ob) )
@@ -104,7 +104,7 @@ int ask_officer()
     return 1;
    }
   officerlvl = officer[lv-1];
-        command("chat"+query("name", ob)+"，你秉承旨意，忠君愛民，朕甚嘉許。著兵部實授"+officerlvl+"之職！\n");
+        command("chat"+query("name", ob)+"，你秉承旨意，忠君愛民，朕甚嘉許。着兵部實授"+officerlvl+"之職！\n");
         set("guard", HIY+officerlvl+NOR, ob);
         set_temp("guard", 1, ob);
         return 1;
@@ -185,7 +185,7 @@ int accept_object(object me, object ob)
              query_temp("book14/7", me) && 
              query_temp("book14/8", me) )
         {
-                command("chat"+query("name", me)+"，你找回八部四十二章經，有功于社稷，賜黃馬褂一件！\n");
+                command("chat"+query("name", me)+"，你找回八部四十二章經，有功於社稷，賜黃馬褂一件！\n");
                 cloth = new(__DIR__"obj/ycloth");
                 delete_temp("book14", me);
                 cloth -> move(me);
@@ -204,7 +204,7 @@ int accept_object(object me, object ob)
              tell_object(me,HIC"你成功得到了康熙的信任！\n在這次歷練中你獲得了"+
                       chinese_number(exp)+"點經驗、"+
                chinese_number(pot)+"點潛能以及"+
-               chinese_number(score)+"點江湖閱歷。\n\n"NOR);
+               chinese_number(score)+"點江湖閲歷。\n\n"NOR);
                 }
                 
         }

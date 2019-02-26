@@ -22,22 +22,22 @@ int exert(object me, object target)
         }
 
         if (! target)
-                return notify_fail("你要取哪只蟲的毒液練藥？\n");
+                return notify_fail("你要取哪隻蟲的毒液練藥？\n");
 
         if (! target->is_worm())
                 return notify_fail("看清楚些，那可不是毒蟲。\n");
 
         if (living(target))
-                return notify_fail("那只蟲還精神著呢，你找死啊。\n");
+                return notify_fail("那隻蟲還精神着呢，你找死啊。\n");
 
         if ((int)me->query_skill("wudu-qishu", 1) < 100)
-                return notify_fail("你的五毒奇術不夠嫻熟，不能煉制毒藥。\n");
+                return notify_fail("你的五毒奇術不夠嫻熟，不能煉製毒藥。\n");
 
         if ((int)me->query_skill("xiuluo-yinshagong", 1) < 100)
-                return notify_fail("你修羅陰煞功修為不夠，不能煉制毒藥。\n");
+                return notify_fail("你修羅陰煞功修為不夠，不能煉製毒藥。\n");
 
         if( query("neili", me)<200 )
-                return notify_fail("你現在內力不足，難以煉制毒藥。\n");
+                return notify_fail("你現在內力不足，難以煉製毒藥。\n");
 
         addn("neili", -50, me);
         me->start_busy(random(3));
@@ -80,7 +80,7 @@ int exert(object me, object target)
         msg += HIW "$N" HIW "將" + target->name() + HIW "的毒液逼出，在"
                "內力的作用下化成了一顆晶瑩剔透的藥丸。\n" NOR;
         message_vision(msg, me);
-        tell_object(me, HIC "你煉制了一顆蟲毒藥丸。\n\n" NOR);
+        tell_object(me, HIC "你煉製了一顆蟲毒藥丸。\n\n" NOR);
 
         exp = lvl / 4;
         me->improve_skill("poison", 2 + random(exp));

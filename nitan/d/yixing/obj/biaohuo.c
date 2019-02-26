@@ -11,7 +11,7 @@ void create()
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("long", "這是一份紅鏢，包裝非常仔細，不知裝著什麼東西。\n");
+                set("long", "這是一份紅鏢，包裝非常仔細，不知裝着什麼東西。\n");
                 set("unit", "份");
                 set("value", 30);
         }

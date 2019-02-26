@@ -6,7 +6,7 @@ void create()
 {
         set("short", "東籬居");
         set("long",@LONG
-這裡似乎是一處居所，不遠處有一處茅屋，四周用籬笆圍住。  
+這裏似乎是一處居所，不遠處有一處茅屋，四周用籬笆圍住。  
 放眼遠望，山影起伏，霧氣陣陣，令人無限遐思。     
 LONG);
 
@@ -15,7 +15,7 @@ LONG);
                 "southwest"        : __DIR__"caijuyuan3",
         ]));
         set("no_rideto", 1);         // 設置不能騎馬到其他地方
-        set("no_flyto", 1);          // 設置不能從起來地方騎馬來這裡
+        set("no_flyto", 1);          // 設置不能從起來地方騎馬來這裏
         set("no_die", 1);            // 死亡後移動到扁鵲居
         set("penglai", 1);           // 表示在蓬萊島
 

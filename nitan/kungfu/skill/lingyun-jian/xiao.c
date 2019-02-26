@@ -39,14 +39,14 @@ int perform(object me, object target)
                 return notify_fail("你現在的真氣不夠，難以施展" XIAO "。\n");
 
         if (! living(target))
-                return notify_fail("對方都已經這樣了，用不著這麼費力吧？\n");
+                return notify_fail("對方都已經這樣了，用不着這麼費力吧？\n");
 
         wn = weapon->name();
                            
-        msg = HIW "\n$N" HIW "長嘆一聲，語調宛然，忽然右手斜指長"
+        msg = HIW "\n$N" HIW "長歎一聲，語調宛然，忽然右手斜指長"
               "空，手中" + wn + HIW "寒光閃閃，猛然間使出絕"
               "招「" HIY "劍氣沖霄" HIW "」，剎時間劍風凌厲"
-              "，" + wn + HIW "以直沖雲霄之勢，斬向$n\n" HIW "。" NOR;
+              "，" + wn + HIW "以直衝雲霄之勢，斬向$n\n" HIW "。" NOR;
 
         message_sort(msg, me, target);
 

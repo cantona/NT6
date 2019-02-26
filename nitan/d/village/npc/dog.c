@@ -7,7 +7,7 @@ void create()
         set_name("野狗", ({ "dog" }) );
         set("race", "走獸");
         set("age", 3);
-        set("long", "一只渾身臟兮兮的野狗。\n");
+        set("long", "一隻渾身髒兮兮的野狗。\n");
         set("str", 32);
         set("dex", 36);
         set("chat_chance", 6);

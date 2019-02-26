@@ -12,8 +12,8 @@ void create()
         else {
                 set("long", HIW "一雙用白虎骨和白虎皮做成的護腕。\n" NOR
                             HIC "有效招架修正：+ 10       有效輕功修正：  + 5\n" NOR
-                            HIC "抗毒效果修正：+ 5%       防御效果等級：   10\n" NOR
-                            HIC "抗毒回避修正：+ 5%\n" NOR);
+                            HIC "抗毒效果修正：+ 5%       防禦效果等級：   10\n" NOR
+                            HIC "抗毒迴避修正：+ 5%\n" NOR);
                 set("unit", "雙");
                 set("value", 500000);
                 set("armor_prop/armor", 10);

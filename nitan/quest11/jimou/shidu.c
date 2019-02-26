@@ -48,13 +48,13 @@ p_skill=CHAR_D->get_char(ob->query_primary_id(),"skills")["shidu"];
 			write("你離敵人太遠無法施計。\n");
 			return;}
                 tell(deep_inventory(TROOP_D->find_troop(e_id)),
-	"士兵一陣喧嘩，原來是"+p_name+"對你的部隊使用施毒之計。\n",
+	"士兵一陣喧譁，原來是"+p_name+"對你的部隊使用施毒之計。\n",
                         MSG_INDENT);
                 // In future, we have to consider effects of the
                 // ablility of general, zhenxing, dixing, etc.
                 // Now the damage depends only on the No of bowman
 	ob->simple_action(SG_SKILL_D->query_use("shidu"));
-	ob->start_busy(10, "你正忙于施毒呢。");
+	ob->start_busy(10, "你正忙於施毒呢。");
 	load_object("/daemons/cast_d.c")->reg_player(ob->query_primary_id(), "shidu");	
 	ob->award_exp(ob->query_sk_level("sk_zhimou")/2+random(20) ,"shidu");
 	call_out("show_result", 5+random(5), ob, who, p_skill, p_id, e_id);

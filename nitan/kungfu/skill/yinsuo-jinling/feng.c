@@ -37,7 +37,7 @@ int perform(object me, object target)
                return notify_fail("你現在真氣不夠，難以施展" + name() + "。\n"NOR);
 
        if (! living(target))
-              return notify_fail("對方都已經這樣了，用不著這麼費力吧？\n");
+              return notify_fail("對方都已經這樣了，用不着這麼費力吧？\n");
 
         w1 = weapon->name();
         damage = damage_power(me, "whip");
@@ -46,7 +46,7 @@ int perform(object me, object target)
 
         msg = "\n" HIW "只見$N" HIW "手中" + w1
               + HIW "暮地一抖，幻出無數鞭影，霎"
-              "時破風聲驟起，" + w1 + HIW "攜著"
+              "時破風聲驟起，" + w1 + HIW "攜着"
               "風雷之勢掃向$n" HIW "！\n" NOR;
         if (ap / 2 + random(ap) > dp)
         {
@@ -64,7 +64,7 @@ int perform(object me, object target)
         ap = attack_power(me, "whip");
         dp = defense_power(target, "dodge");
 
-        msg += "\n" HIW "緊接著$N" HIW "一聲"
+        msg += "\n" HIW "緊接着$N" HIW "一聲"
                "嬌喝，" + w1 + HIW "猛地向後"
                "一撤，" + w1 + HIW "頓時化作"
                "一道長虹，已從$n" HIW "背後"
@@ -78,7 +78,7 @@ int perform(object me, object target)
         } else
         {
                 msg += CYN "$p" CYN "一聲冷哼，早預料$N"
-                       CYN "有此一著，凝神聚氣，將這招輕"
+                       CYN "有此一着，凝神聚氣，將這招輕"
                        "輕格開！\n" NOR;
         }
 
@@ -98,7 +98,7 @@ int perform(object me, object target)
                         msg += HIR "只聽“當”的一聲，" + w1 +
                                HIR "正打在$p" + w2 + HIR "上，"
                                "$p" HIR "手腕一麻，" + w2 + HIR
-                               "再也拿持不住，脫手掉在地上。\n"
+                               "再也拿持不住，脱手掉在地上。\n"
                                NOR;
                         addn("neili", -50, me);
                         weapon2->unequip();

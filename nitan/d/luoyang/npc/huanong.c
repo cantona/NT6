@@ -6,9 +6,9 @@ inherit F_DEALER;
 void create()
 {
         set_name("花農", ({ "hua nong", "hua", "nong" }));
-        set("title", HIY "洛陽苗舖" NOR); 
+        set("title", HIY "洛陽苗鋪" NOR); 
         set("gender", "男性");
-        set("long", "一個衣著樸素的老農，他在洛陽苗舖栽花\n"
+        set("long", "一個衣着樸素的老農，他在洛陽苗鋪栽花\n"
                     "種草數十年，如果你也想在此種花，可以\n"
                     "向他買一些種子。\n");
         set("str", 100);

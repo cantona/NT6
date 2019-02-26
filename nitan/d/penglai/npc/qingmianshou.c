@@ -7,7 +7,7 @@ inherit NPC;
 void create()
 {
         set_name(HIG "青面獸" NOR, ({ "qingmian shou", "qingmian", "shou" }));
-        set("long", HIG "這是一只青面獠牙的巨獸，乃酒劍仙的坐騎，看樣子是從蓬萊仙島逃出來的。\n" NOR);
+        set("long", HIG "這是一隻青面獠牙的巨獸，乃酒劍仙的坐騎，看樣子是從蓬萊仙島逃出來的。\n" NOR);
 
         set("age", 190);
         set("str", 40);
@@ -88,7 +88,7 @@ void die(object killer)
         int weiwang;            // 需要瓜分的威望
         int gongxian;           // 貢獻
         int tihui;              // 體會
-        int score;              // 需要瓜分的閱歷
+        int score;              // 需要瓜分的閲歷
         object *t;              // 殺死我的人的隊伍列表
         object tob;
         int ysg;
@@ -96,7 +96,7 @@ void die(object killer)
         object *inv;
         
         // 定義獎勵物品列表
-        // 幾率  MAX_POINT 分之 X
+        // 機率  MAX_POINT 分之 X
         mixed oblist = ([
                 "/clone/fam/gift/str4" :1,
                 "/clone/fam/gift/con4" :1,                        
@@ -184,14 +184,14 @@ void die(object killer)
                 
                 message_vision(HIG "\n青面獸一聲怪叫，癱倒在地，化作一灘綠色的液體 ...\n" NOR, this_object());
 
-                // 一定幾率掉物品在殺我的人身上dob
+                // 一定機率掉物品在殺我的人身上dob
                 if (objectp(dob) && environment(dob) == environment(this_object()))
                 {
                         key_s_gift = keys(oblist);
                         s_gift = key_s_gift[random(sizeof(key_s_gift))];
                         gift_point = oblist[s_gift];
         
-                        // 判斷幾率
+                        // 判斷機率
                         if (MEMBER_D->is_valib_member(dob->query("id")) 
                             && random(MAX_POINT / ITEM_D->gift_point()) < gift_point)
                         {

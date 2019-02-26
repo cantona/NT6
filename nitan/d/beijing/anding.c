@@ -8,7 +8,7 @@ void create()
 {
         set("short", "安定門");
         set("long", @LONG
-這裡是永定門，城門正上方刻著“安定門”三個大字，城牆上貼著
+這裏是永定門，城門正上方刻着“安定門”三個大字，城牆上貼着
 幾張官府告示 (gaoshi)。幾個官兵守在兩旁。
 LONG );
         set("outdoors", "beijing");

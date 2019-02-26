@@ -18,10 +18,10 @@ int exert(object me, object target)
         me->receive_damage("qi", 10);
 
         if( query("no_fight", environment(me)) )
-                return notify_fail("這裡不能攻擊別人! \n");
+                return notify_fail("這裏不能攻擊別人! \n");
 
         me->start_busy(5);
-        message_combatd(HIR "$N" HIR "極嘶長呼，聲音凄厲之"
+        message_combatd(HIR "$N" HIR "極嘶長呼，聲音淒厲之"
                         "極，令人毛骨悚然！\n" NOR, me);
 
         ob = all_inventory(environment(me));
@@ -44,7 +44,7 @@ int exert(object me, object target)
                         ob[i]->receive_damage("jing", damage * 2, me);
                         if( query("neili", ob[i])<skill*2 )
                                 ob[i]->receive_wound("jing", damage, me);
-                        tell_object(ob[i], "你只覺得耳膜欲破，心煩氣燥，惡心不止......\n");
+                        tell_object(ob[i], "你只覺得耳膜欲破，心煩氣燥，噁心不止......\n");
                 }
         }
         return 1;

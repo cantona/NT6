@@ -17,7 +17,7 @@ int perform(object me, object target)
                 return notify_fail("「"+HIR"烈火三絕劍"NOR+"」只能在戰鬥中使用。\n");
 
         if (me->is_busy())
-                return notify_fail("你正忙著呢！\n");
+                return notify_fail("你正忙着呢！\n");
 
         if (! objectp(weapon = query_temp("weapon", me))
         || (string)query("skill_type", weapon) != "sword")
@@ -30,7 +30,7 @@ int perform(object me, object target)
                 me->query_skill_mapped("sword") != "liehuo-jian")
                 return notify_fail("你的「烈火劍」還不到家，無法使用「"+HIR"烈火三絕劍"NOR+"」！\n");
 
-        msg = HIR "$N運起內力，頓時手中兵器火燄逼人，接著向對方連環刺去！\n" NOR;
+        msg = HIR "$N運起內力，頓時手中兵器火焰逼人，接着向對方連環刺去！\n" NOR;
         message_combatd(msg, me, target);
 
         me->clean_up_enemy();
@@ -40,7 +40,7 @@ int perform(object me, object target)
         for(i = 0; i < 3; i++)
                 if (me->is_fighting(ob) && ob->is_fighting(me) && query("eff_qi", ob)>0)
                 {
-                        set("action_msg", "緊跟著", me);
+                        set("action_msg", "緊跟着", me);
                         if (!query("equipped", weapon)) break;
                         COMBAT_D->do_attack(me, ob,weapon, 0);
                 } else break;

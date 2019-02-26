@@ -20,9 +20,9 @@ inherit F_SAVE;
 // 刪除命令
 #define RM_CMD          "/cmds/wiz/rm"
 
-// 保存版本文件的目錄：這個目錄由于需要和普通文件路徑名進行
+// 保存版本文件的目錄：這個目錄由於需要和普通文件路徑名進行
 // 連接使用，所以不能以"/"結尾，這一點和globals.h中的許多路
-// 徑名不一樣，因此這個宏也不定義在那裡。
+// 徑名不一樣，因此這個宏也不定義在那裏。
 #define VERSION_DIR     "/version"
 
 // 保存版本文件數據的變量(在DBASE變量中的路徑)
@@ -30,15 +30,15 @@ inherit F_SAVE;
 #define STATS           "/stats"
 
 // 在服務器端，數據庫信息中應該只有FILES， 記錄了所有再版本
-// 中的文件的修改時間，以供客戶端用來比較是否有差別。
-// 在客戶端，數據庫信息中有FILES和STATS， 其中FILES包含了本
+// 中的文件的修改時間，以供客户端用來比較是否有差別。
+// 在客户端，數據庫信息中有FILES和STATS， 其中FILES包含了本
 // 地使用的所有文件的版本(即在服務器上文件的最後修改時間)，
 // 含義和服務器端的FILES數據是相同的。但是STATS則是最後一次
 // 同步版本的時候，生成的文件的時間。這樣，在下一次同步版本
 // 的時候，如果FILES內的數據相同，就看STATS和本地文件的時間
-// 是否吻合，如果不吻合，說明雖然服務器沒有修改這個文件，但
+// 是否吻合，如果不吻合，説明雖然服務器沒有修改這個文件，但
 // 是本地這個文件卻已經發生過變化，所以仍然需要同步。
-// 注意：STATS和FILES是不同構的，對于所有的源文件".c"來說，
+// 注意：STATS和FILES是不同構的，對於所有的源文件".c"來説，
 // 在FILES中記錄的是".c"的路徑，而在STATS記錄的是".b"的路徑，
 // 這是因為FILES面對服務器文件，而STATS面對本地文件。
 
@@ -50,11 +50,11 @@ inherit F_SAVE;
 // 樣會顯著的降低效率而導致事實無法使用，因此可以採用變通的
 // 方式，即簡單的比較源文件和二進制文件的時間，而不檢查他的
 // 繼承對象和嵌入文件。這樣在生成版本的時候就需要格外小心。
-// 使用了增強的EFUN函數以後，也並不能保証完全正確。這是因為
-// 該函數只檢查了第一層繼承關系，如果再上一層繼承的文件過時
+// 使用了增強的EFUN函數以後，也並不能保證完全正確。這是因為
+// 該函數只檢查了第一層繼承關係，如果再上一層繼承的文件過時
 // 了，該函數就無法檢查。因此在每次修改一個文件從新編譯的時
 // 候，最好考慮使用updatei 來更新整個繼承鏈表，雖然這樣仍然
-// 有可能出現問題，但是幾率將會相當的小。如果變化比較復雜，
+// 有可能出現問題，但是機率將會相當的小。如果變化比較複雜，
 // 建議全部重新編譯。
 
 // 從版本服務器取回的文件後綴
@@ -71,7 +71,7 @@ nosave string *exclude_dir = ({ "/adm/etc", "/adm/simul_efun", "/adm/tmp",
 nosave string *include_dir = ({ "/data/e2c_dict.o", "/data/emoted.o", "/data/newsd.o",
                                 "/adm/etc/quest", "/adm/etc/preload", "/adm/etc/database.h" });
 
-// 需要發布C源程序的目錄
+// 需要發佈C源程序的目錄
 nosave string *release_src = ({ "/clone/misc/wedding-ring.c",
                                 "/clone/npc/pet.c",
                                 "/clone/npc/magic-beast.c",
@@ -85,7 +85,7 @@ nosave string bin_path;
 // 各地連接的信息
 nosave mapping socket_info;
 
-// 客戶端的連接信息
+// 客户端的連接信息
 nosave mixed *client_info = 0;
 
 // 版本通訊的SOCKET
@@ -216,7 +216,7 @@ protected void setup()
         if (stringp(RELEASE_SERVER()) &&
             sscanf(RELEASE_SERVER(), "%*s %*d") == 2)
         {
-                // 這裡是分站，嘗試和總站進行同步
+                // 這裏是分站，嘗試和總站進行同步
                 if (this_player())
                 {
                         // 不是系統自動啟動的，因此不檢查版本
@@ -241,7 +241,7 @@ protected void in_server()
 {
         int port;
 
-        // 這裡是版本發布站點，在該端口上監聽分站的請求
+        // 這裏是版本發佈站點，在該端口上監聽分站的請求
         // 創建版本通訊的SOCKET
         vfd = socket_create(STREAM_BINARY,
                             "in_read_callback",
@@ -282,7 +282,7 @@ int generate_version()
         mapping store;
 
         if (RELEASE_SERVER() != "local")
-                return notify_fail("只有在版本發布的MUD中才能生成最新版本。\n");
+                return notify_fail("只有在版本發佈的MUD中才能生成最新版本。\n");
 
         if (! is_root(previous_object()))
                 return 0;
@@ -291,7 +291,7 @@ int generate_version()
                 return notify_fail("現在正在整理版本。\n");
 
         if (! binary_valid(VERSION_D + ".c"))
-                return notify_fail("請先更新(update)版本精靈，以保証它是最新版本。\n");
+                return notify_fail("請先更新(update)版本精靈，以保證它是最新版本。\n");
 
         if (sizeof(socket_info) > 0)
                 return notify_fail("目前正在有站點和本站同步版本，你不能構造版本。\n");
@@ -316,7 +316,7 @@ int generate_version()
         // 初始化整理信息
         build_init_data();
         
-        message_system("系統正在生成可以執行的發布版本，您的遊戲速度可能會受到影響。\n");
+        message_system("系統正在生成可以執行的發佈版本，您的遊戲速度可能會受到影響。\n");
         write("開始生成版本...\n");
 
         build_version("/", store);
@@ -348,7 +348,7 @@ int build_cancel()
 
         // 停止心跳
         set_heart_beat(0);
-        write("終止了正在生成版本的操作：目前的版本介于兩種版本之間，可能會導致不穩定。\n");
+        write("終止了正在生成版本的操作：目前的版本介於兩種版本之間，可能會導致不穩定。\n");
         return 1;
 }
 
@@ -382,7 +382,7 @@ protected void heart_beat()
         percent = total_finish * 100 / total_count;
         if (percent / 10 != query_temp("last_prompt") / 10)
         {
-                // 每過10%則提示一下所有用戶。
+                // 每過10%則提示一下所有用户。
                 message_system("系統整理版本中，已經完成 " + percent + "%...");
                 set_temp("last_prompt", percent);
         } else
@@ -448,7 +448,7 @@ int build_path(string path)
                 return notify_fail("現在正在整理版本。\n");
 
         if (! binary_valid(VERSION_D + ".c"))
-                return notify_fail("請先更新(update)版本精靈，以保証它是最新版本。\n");
+                return notify_fail("請先更新(update)版本精靈，以保證它是最新版本。\n");
 
         // 如果生成了core文件，則刪除之
         rm("/core");
@@ -524,7 +524,7 @@ protected int build_pure_file(mixed *path_info)
         // 取整理的全路徑名
         path = path_info[0];
 
-        // 保証版本目錄下建立了合適的路徑(包括二進制路徑)
+        // 保證版本目錄下建立了合適的路徑(包括二進制路徑)
         assure_file(VERSION_DIR + bin_path + path + "???");
         assure_file(VERSION_DIR + path + "???");
 
@@ -586,7 +586,7 @@ protected void build_version(string path, mapping here)
                 default:
                         // 這是一個普通文件，直接生成版本信息
 
-                        // 首先保証版本目錄下建立了合適的路徑(包括二進制路徑)
+                        // 首先保證版本目錄下建立了合適的路徑(包括二進制路徑)
                         assure_file(VERSION_DIR + bin_path + path + "???");
                         assure_file(VERSION_DIR + path + "???");
 
@@ -635,7 +635,7 @@ protected void build_version(string path, mapping here)
         }
 }
 
-// 是否需要發布源程序
+// 是否需要發佈源程序
 int is_need_release_source(string path)
 {
         string *files;
@@ -673,7 +673,7 @@ protected int get_file_version(string path)
         if (last > 0 && path[last + 1] == 'c' && path[last] == '.' &&
             ! is_need_release_source(path))
         {
-                // 這是一個不能發布的c文件，我必須取它的二進
+                // 這是一個不能發佈的c文件，我必須取它的二進
                 // 制代碼文件
                 bpath = bin_path + path[0..last] + "b";
                 st = stat(bpath);
@@ -692,8 +692,8 @@ protected int get_file_version(string path)
                         // 該文件需要重新編譯
                         need_reload = 1;
 #else
-                // doing 在這裡削弱了判斷的重新編譯的條件，
-                // 只要BIN文件的生成時間不老于C文件的時間就
+                // doing 在這裏削弱了判斷的重新編譯的條件，
+                // 只要BIN文件的生成時間不老於C文件的時間就
                 // 認為不需要編譯，這是為了避免構造版本花費
                 // 太多的時間。每次修改一些文件以後建議使用
                 // updatei 編譯所有繼承文件。
@@ -708,7 +708,7 @@ protected int get_file_version(string path)
                         // 新編譯這個文件。
                         if (objectp(ob = find_object(path)))
                         {
-                                // 找到了這個OBJECT，記錄裡面的人物
+                                // 找到了這個OBJECT，記錄裏面的人物
                                 uobs = filter_array(all_inventory(ob), (: playerp :));
                                 uobs->move(VOID_OB, 1);
                                 destruct(ob);
@@ -737,20 +737,20 @@ protected int get_file_version(string path)
                         // 返回BIN文件的生成時間作為版本號
                         ver = st[1];
 
-                // 記錄需要復制的源文件名字(C需要復制BIN文件)
+                // 記錄需要複製的源文件名字(C需要複製BIN文件)
                 cpath = bpath;
         } else
         {
                 // 不是c文件，直接返回時間作為版本號
                 ver = cst[1];
 
-                // 記錄需要復制的源文件名字(普通文件直接復制)
+                // 記錄需要複製的源文件名字(普通文件直接複製)
                 cpath = path;
         }
 
         // 如果現在文件的版本和最後一次整理時的版本不一致，
-        // 或是版本目錄中沒有這個文件，則將運行中的文件復制
-        // 到版本目錄中去。注意：這裡有一個缺陷，那就是如果
+        // 或是版本目錄中沒有這個文件，則將運行中的文件複製
+        // 到版本目錄中去。注意：這裏有一個缺陷，那就是如果
         // 修改了版本目錄中的文件，那麼系統並不會檢查，而是
         // 認為該文件版本仍然正確。所以修改VERSION 下面的文
         // 件是絕對被禁止的。
@@ -772,7 +772,7 @@ protected int get_file_version(string path)
                         return ver;
         }
 
-        // 需要復制這個文件進入版本路徑
+        // 需要複製這個文件進入版本路徑
         cp(cpath, VERSION_DIR + cpath);
         last = strlen(cpath) - 2;
 
@@ -789,7 +789,7 @@ int fetch_file(string file)
         object me;
 
         if (RELEASE_SERVER() == "local")
-                return notify_fail("在版本發布站點上無需從服務器上獲得文件。\n");
+                return notify_fail("在版本發佈站點上無需從服務器上獲得文件。\n");
 
         if (arrayp(client_info) && client_info[STATUS] != STATUS_FINISHED)
                 return notify_fail("現在版本正在同步中。\n");
@@ -818,7 +818,7 @@ int synchronize_version()
         object me;
 
         if (RELEASE_SERVER() == "local")
-                return notify_fail("在版本發布站點上無需同步最新版本。\n");
+                return notify_fail("在版本發佈站點上無需同步最新版本。\n");
 
         if (arrayp(client_info) && client_info[STATUS] != STATUS_FINISHED)
                 return notify_fail("現在版本正在同步中。\n");
@@ -826,7 +826,7 @@ int synchronize_version()
         if (find_call_out("syn_reboot_mud") != -1)
                 return notify_fail("現在版本精靈正在重新啟動遊戲，無法同步。\n");
 
-        // 清除變量，保証同步版本
+        // 清除變量，保證同步版本
         fetch_file_list = 0;
 
         if (objectp(me = this_player(1)))
@@ -835,7 +835,7 @@ int synchronize_version()
         else
                 delete_temp("operator");
 
-        // 設置標志：版本還沒有成功的同步
+        // 設置標誌：版本還沒有成功的同步
         version_ok = 0;
         delete_temp("version_changed");
         
@@ -863,7 +863,7 @@ protected int connect_server()
                 return notify_fail("無法創建SOCKET.\n");
         }
 
-        // 初始化客戶端信息
+        // 初始化客户端信息
         client_info = allocate(8);
         client_info[STATUS] = STATUS_CONNECTING;
         client_info[FILE_NAME] = 0;
@@ -921,7 +921,7 @@ int clear_syn_info()
                 return 0;
         }
 
-        // 客戶端：清除同步的SOCKET和信息
+        // 客户端：清除同步的SOCKET和信息
         if (vfd)
         {
                 log_file("version", sprintf("%s 暫停了同步版本的操作。\n", log_time()));
@@ -942,7 +942,7 @@ int is_boot_synchronizing()
                 return 1;           
 }
 
-// 是否是版本發布服務器
+// 是否是版本發佈服務器
 int is_release_server() { return RELEASE_SERVER() == "local"; }
 
 // 測試
@@ -1017,7 +1017,7 @@ void send_command(int fd, string cmd)
         }
 }
 
-// 客戶端發送阻塞的消息
+// 客户端發送阻塞的消息
 protected int send_client_pending_msg()
 {
         string msg;
@@ -1046,13 +1046,13 @@ protected int send_client_pending_msg()
         }
 }
 
-// 同步時客戶端連接的讀回調函數
-// 由于服務器可能會返回兩種數據：1 普通應答信息  2 二進制文
-// 件數據。因此接收函數依據狀態中的文件名字存在與否來鑒別這
+// 同步時客户端連接的讀回調函數
+// 由於服務器可能會返回兩種數據：1 普通應答信息  2 二進制文
+// 件數據。因此接收函數依據狀態中的文件名字存在與否來鑑別這
 // 兩種狀態：如果有文件名字，那麼就認為是接收文件中，如果沒
 // 有，則是接收普通應答信息。普通應答信息一定是固定個字節，
 // 以ASCII 方式存放。如果一次接收沒有滿足期望的字節，那麼長
-// 度將保存在FILE_POS裡面。
+// 度將保存在FILE_POS裏面。
 protected void syn_receive_result(string str)
 {
         string file;
@@ -1077,7 +1077,7 @@ protected void syn_receive_result(string str)
 
         if (sscanf(str, RESULT_ERR "%s", msg))
         {
-                // 遇到了錯誤，先記錄進入日志
+                // 遇到了錯誤，先記錄進入日誌
                 log_file("version", sprintf("%s error respond: %s\n",
                                             log_time(), msg));
                 DEBUG_LOG(str + "\n");
@@ -1099,7 +1099,7 @@ protected void syn_receive_result(string str)
                         {
                                 if( !query("manual_synchronize", stringp(op) && CONFIG_D) )
                                 {
-                                        // 系統自舉，並且設置了手工同步版本的標志
+                                        // 系統自舉，並且設置了手工同步版本的標誌
                                         sys_info(sprintf("%s本地版本需要更新，但是系統"
                                                          "並不自動同步。\n"));
                                         version_ok = 1;
@@ -1343,17 +1343,17 @@ protected void syn_check_version_file()
 // 檢查並獲得某一個文件
 // 如果服務器和本地都沒有修改某個文件，則不需要同步，如果有
 // 一方修改了，則需要同步。
-// 如果服務器修改了，那麼這裡的參數ver和本地FILES中記錄的版
-// 本會有差別。如果是本地修改了， 那麼本地STATS鐘記錄的版本
+// 如果服務器修改了，那麼這裏的參數ver和本地FILES中記錄的版
+// 本會有差別。如果是本地修改了， 那麼本地STATS鍾記錄的版本
 // 和本地的文件會有差別。
-// 對于".c"文件來說，STATS 中記錄的是二進制".b"文件的時間，
+// 對於".c"文件來説，STATS 中記錄的是二進制".b"文件的時間，
 // 而不是".c"文件的時間，但是FILES 記錄的卻是".c"文件的時間，
 // 這一點需要注意。為什麼這麼做？這是因為實際上本地修改了源
 // 文件並不重要，只要二進制代碼沒有修改即可。服務器傳來的 c
 // 文件版本實際上是在服務器上的二進制文件的版本，這樣上下不
 // 就不一樣了嗎？的確是這樣，因為在服務器上即使".c"文件沒有
 // 修改，".b"文件依然有可能變化，因此傳送二進制文件的版本才
-// 更有意義，這就是服務器和客戶端不同之處。
+// 更有意義，這就是服務器和客户端不同之處。
 void syn_load_file(string file, int ver)
 {
         int len;
@@ -1398,14 +1398,14 @@ void syn_load_file(string file, int ver)
         len = strlen(file) - 2;
         if (len > 0 && file[len] == '.' && file[len + 1] == 'c')
         {
-                // 是源文件，先創建一個空的文件，一般來說服
-                // 務器會返回一個二進制文件，除非是需要發布
+                // 是源文件，先創建一個空的文件，一般來説服
+                // 務器會返回一個二進制文件，除非是需要發佈
                 // 的源文件，服務器才會返回源代碼。
                 rm(file);
                 write_file(file, "// C source file\n", 1);
         }
 
-        // 讀取這個文件的版本：如果是需要發布源程序的版本，
+        // 讀取這個文件的版本：如果是需要發佈源程序的版本，
         // 那麼服務器會返回一個源程序，否則服務器會返回一個
         // BINARY文件。
         syn_get_file(file);
@@ -1448,8 +1448,8 @@ protected void syn_load_version(string path, mapping store)
         // 獲得版本機上的所有文件
         files = keys(store);
 
-        // 找出本地多余的文件和目錄：條件，服務器傳來的版本
-        // 中沒有，並且不屬于本地不需要更新的路徑
+        // 找出本地多餘的文件和目錄：條件，服務器傳來的版本
+        // 中沒有，並且不屬於本地不需要更新的路徑
         outs = filter_array(dirs, (: undefinedp($(store)[((mixed *) $1)[0]]) &&
                                      member_array($(path) + ((mixed *) $1)[0], exclude_dir) == -1 :));
 
@@ -1538,7 +1538,7 @@ protected void syn_load_version(string path, mapping store)
                 }
         }
 
-        // 如果是額外需要更新的文件或是本目錄屬于不需更新一
+        // 如果是額外需要更新的文件或是本目錄屬於不需更新一
         // 類，則保留這些文件。
         files = filter_array(files, (: member_array($(path) + $1, include_dir) != -1 ||
                                        member_array($(path), exclude_dir) :));
@@ -1577,7 +1577,7 @@ protected void syn_finish()
                 // 這是系統自動同步的版本，需要重新啟動機器
                 if (query_temp("version_changed"))
                 {
-                        message_system("系統更新了版本，將于三十秒鐘以後重新啟動機器。\n");
+                        message_system("系統更新了版本，將於三十秒鐘以後重新啟動機器。\n");
                         call_out("syn_reboot_mud", 30);
 
                         // 重新設置版本為無效
@@ -1594,7 +1594,7 @@ protected void syn_finish()
                 save();
                 delete_temp("operator");
                 sys_info(sprintf("%s同步版本的操作失敗了，詳情"
-                                 "請查看日志(version)。", op));
+                                 "請查看日誌(version)。", op));
 
                 // 置現在的版本為有效
                 version_ok = 1;
@@ -1603,7 +1603,7 @@ protected void syn_finish()
                 set("VERSION_NO", 0);
                 save();
                 // 一分鐘以後重新啟動MUD
-                sys_info("同步版本失敗，將于一分鐘後重新啟動MUD。");
+                sys_info("同步版本失敗，將於一分鐘後重新啟動MUD。");
                 call_out("syn_reboot_mud", 60);
         }
 }
@@ -1615,7 +1615,7 @@ protected void syn_reboot_mud()
         shutdown(0);
 }
 
-// 處理客戶端接收到的來自服務器的數據
+// 處理客户端接收到的來自服務器的數據
 protected void syn_read_callback(int fd, buffer buf)
 {
         string str;
@@ -1633,10 +1633,10 @@ protected void syn_read_callback(int fd, buffer buf)
                 {
                         // 沒有文件名字，接收的是普通應答信息
         
-                        // 計算我應該從緩沖區中讀出的字節數目，因為
+                        // 計算我應該從緩衝區中讀出的字節數目，因為
                         // 可能不能一次獲得普通的應答信息，因此我將
                         // 這些信息累計到RESULT_BUFFER中， 一直到讀
-                        // 滿期望的字節為止。那麼我這次從緩沖區讀出
+                        // 滿期望的字節為止。那麼我這次從緩衝區讀出
                         // 來的應該是多少個字節，就應該計算。其中保
                         // 存在FILE_POS中的是我已經讀出的字符。
                         len = NORMAL_RESULT_LEN - client_info[FILE_POS];
@@ -1645,13 +1645,13 @@ protected void syn_read_callback(int fd, buffer buf)
                                 len = sizeof(buf);
                         client_info[FILE_POS] += len;
                         client_info[RESULT_BUFFER] += read_buffer(buf, 0, len);
-                        // 取剩余的buffer
+                        // 取剩餘的buffer
                         buf = buf[len..<1];
         
                         if (client_info[FILE_POS] >= NORMAL_RESULT_LEN)
                         {
                                 // 讀到了一條通常的返回信息，重新設
-                                // 置緩沖區。
+                                // 置緩衝區。
                                 str = client_info[RESULT_BUFFER];
                                 client_info[RESULT_BUFFER] = "";
                                 client_info[FILE_POS] = 0;
@@ -1673,7 +1673,7 @@ protected void syn_read_callback(int fd, buffer buf)
         } while (sizeof(buf) && client_info[STATUS] != STATUS_FINISHED);
 }
 
-// 同步時客戶端連接的寫回調函數
+// 同步時客户端連接的寫回調函數
 void syn_write_callback(int fd)
 {
         if (fd != vfd)
@@ -1711,7 +1711,7 @@ void syn_write_callback(int fd)
         }
 }
 
-// 同步時客戶端連接斷開的回調函數
+// 同步時客户端連接斷開的回調函數
 protected void syn_close_callback(int fd)
 {
         if (fd != vfd) return;
@@ -1738,7 +1738,7 @@ protected void debug_info(string msg)
         CHANNEL_D->do_channel(this_object(), "debug", msg);
 }
 
-// 版本發布站監聽來自分站的請求
+// 版本發佈站監聽來自分站的請求
 protected void in_listen_callback(int fd)
 {
         int new_fd;
@@ -1792,7 +1792,7 @@ protected void in_read_callback(int fd, mixed mess)
                 str = mess;
         else
         if (bufferp(mess))
-                // 接收到了緩沖區
+                // 接收到了緩衝區
                 str = read_buffer(mess, 0, sizeof(mess));
         else
                 return;
@@ -2144,7 +2144,7 @@ protected void in_close_callback(int fd)
 // 1. getver [dbase]
 // 2. get <file>
 // 3. close
-// 由于命令簡單，不採用常規的語法分析。
+// 由於命令簡單，不採用常規的語法分析。
 protected void parse_cmd(int fd)
 {
         string cmd;
@@ -2221,7 +2221,7 @@ protected void cmd_get(int fd, string arg)
         last = strlen(arg) - 2;
         if (last >= 0 && arg[last] == '.' && arg[last + 1] == 'c')
         {
-                // C文件，察看是否是需要發布版本的，如果不是，
+                // C文件，察看是否是需要發佈版本的，如果不是，
                 // 則返回BIN文件。
                 if (! is_need_release_source(arg))
                         arg = bin_path + arg[0..last] + "b";
@@ -2366,7 +2366,7 @@ protected void remove_connection(int fd)
         socket_close(fd);
 }
 
-// 為一個文件增加保証完整的鑒別ID
+// 為一個文件增加保證完整的鑑別ID
 int append_sn(string file)
 {
         string ckey;
@@ -2376,16 +2376,16 @@ int append_sn(string file)
         switch (file_valid(file))
         {
         case 0:
-                // 目前的鑒別 ID 是錯誤的
+                // 目前的鑑別 ID 是錯誤的
                 text = read_file(file);
                 len = strsrch(text, "\n");
                 text = text[len + 1..<1];
                 write_file(file, text, 1);
 
-                // 刪除鑒別ID以後繼續向下執行
+                // 刪除鑑別ID以後繼續向下執行
 
         case -2:
-                // 目前沒有鑒別ID
+                // 目前沒有鑑別ID
                 ckey = file_crypt(file);
                 text = read_file(file);
                 text = sprintf("// SN:%s\n%s", ckey, text);
@@ -2397,7 +2397,7 @@ int append_sn(string file)
                 return -1;
 
         default:
-                // 已經有了正確的鑒別ID
+                // 已經有了正確的鑑別ID
                 return 1;
         }
 }

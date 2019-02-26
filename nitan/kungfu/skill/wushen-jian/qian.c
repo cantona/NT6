@@ -35,10 +35,10 @@ int perform(object me, object target)
                 return notify_fail("你沒有激發衡山五神劍，難以施展" QIAN "。\n");
 
         if (! living(target))
-                return notify_fail("對方都已經這樣了，用不著這麼費力吧？\n");
+                return notify_fail("對方都已經這樣了，用不着這麼費力吧？\n");
 
         msg = HIW "\n$N" HIW "運轉衡山五神劍，手中" + weapon->name() +
-              HIW "迸出無數劍光，宛若飛虹擎天，席卷$n" HIW "而去。" NOR;
+              HIW "迸出無數劍光，宛若飛虹擎天，席捲$n" HIW "而去。" NOR;
 
         message_sort(msg, me, target);
 

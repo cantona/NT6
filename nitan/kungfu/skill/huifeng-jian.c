@@ -1,4 +1,4 @@
-//huifeng-jian.c 回風拂柳劍
+//huifeng-jian.c 迴風拂柳劍
 
 #include <ansi.h>;
 inherit SKILL;
@@ -14,8 +14,8 @@ mapping *action = ({
         "action" : "$N長劍圈轉，一招"HIW"「飄雪穿雲」"NOR"，手中$w平展下刺，一劍輕輕劃過$n的$l",
         "lvl" : 10
 ]),
-([        "skill_name":   "千峰競秀",
-        "action" : "$N長劍輕靈跳動，劍隨身長，右手$w使出一式"GRN"「千峰競秀」"NOR"刺向$n的$l",
+([        "skill_name":   "千峯競秀",
+        "action" : "$N長劍輕靈跳動，劍隨身長，右手$w使出一式"GRN"「千峯競秀」"NOR"刺向$n的$l",
         "lvl" : 20
 ]),
 ([        "skill_name":   "萬流歸宗",
@@ -27,7 +27,7 @@ mapping *action = ({
         "lvl" : 40
 ]),
 ([        "skill_name":   "大雁啼沙",
-        "action" : "$N屈腕雲劍，劍光如彩碟紛飛，幻出點點星光，右手$w使出一式"HIY"「大雁啼沙」"NOR"躍躍洒洒飄向$n的$l",
+        "action" : "$N屈腕雲劍，劍光如彩碟紛飛，幻出點點星光，右手$w使出一式"HIY"「大雁啼沙」"NOR"躍躍灑灑飄向$n的$l",
         "lvl" : 50
 ]),
 ([        "skill_name":   "進退龍遊",
@@ -54,7 +54,7 @@ int valid_learn(object me)
                 return notify_fail("你的基本劍法火候太淺。\n");
 
         if (me->query_skill("sword", 1) < me->query_skill("huifeng-jian"))
-                return notify_fail("你的基本劍法水平有限，無法領會更高深的回風拂柳劍。\n");
+                return notify_fail("你的基本劍法水平有限，無法領會更高深的迴風拂柳劍。\n");
 
         return 1;
 }
@@ -67,7 +67,7 @@ int practice_skill(object me)
                  || query("skill_type", weapon) != "sword" )
                 return notify_fail("你使用的武器不對。\n");
         if( query("qi", me)<50 || query("neili", me)<35 )
-                return notify_fail("你的內力或氣不夠練回風拂柳劍。\n");
+                return notify_fail("你的內力或氣不夠練迴風拂柳劍。\n");
         me->receive_damage("qi", 45);
         addn("neili", -30, me);
         return 1;
@@ -121,10 +121,10 @@ string perform_action_file(string action)
 
 int help(object me)
 {
-        write(HIC"\n回風拂柳劍："NOR"\n");
+        write(HIC"\n迴風拂柳劍："NOR"\n");
         write(@HELP
 
-    回風拂柳劍為峨嵋派武功。
+    迴風拂柳劍為峨嵋派武功。
 
         學習要求：
                 臨濟十二莊20級

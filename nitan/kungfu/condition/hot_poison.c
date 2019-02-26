@@ -15,7 +15,7 @@ int update_condition(object me, int duration)
         else
         {
                 tell_object(me,HIR"忽然一股火熱之氣襲來，燙得你手腳亂抖！\n"NOR);
-                tell_room(environment(me),HIR+me->name()+"突然全身冒出陣陣紅煙，嘴唇幹裂，雙手胡亂地揮舞著。\n"NOR, ({ me }));
+                tell_room(environment(me),HIR+me->name()+"突然全身冒出陣陣紅煙，嘴脣乾裂，雙手胡亂地揮舞着。\n"NOR, ({ me }));
         }
         me->receive_damage("qi", 25,"體內熱毒發作");
         if(userp(me)) me->receive_wound("jing", 20,"體內熱毒發作");

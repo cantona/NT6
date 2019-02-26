@@ -1,5 +1,5 @@
 // jiuyin-shengong.c 九陰神功
-// 九陰白骨爪、催心掌、大伏魔拳法、銀龍鞭法、蛇行貍翻以及易筋鍛骨合為一體所出，S級武學。
+// 九陰白骨爪、催心掌、大伏魔拳法、銀龍鞭法、蛇行狸翻以及易筋鍛骨合為一體所出，S級武學。
 // 九陰神功可以激發為基本拳腳、爪法、拳法、掌法、手法、鞭法、輕功和內功。
 // Edit By Vin On 14/2/2001 
 // modify by Rcwiz for yhonline 18/3/2003
@@ -50,7 +50,7 @@ mapping *actionf = ({
         "weapon": HIW "九陰無極勁" NOR,
         "damage_type":  "割傷"
 ]),
-([      "action":"$N身形一轉，拳頭攜著疾速旋轉的氣流揮出，疾如閃電，勢如雷霆，擊向$n",
+([      "action":"$N身形一轉，拳頭攜着疾速旋轉的氣流揮出，疾如閃電，勢如雷霆，擊向$n",
         "force" : 530,
         "attack": 175,
         "dodge" : 90,
@@ -89,7 +89,7 @@ mapping *actionf = ({
 });
 
 mapping *actionw = ({
-([      "action" : "$N攻勢忽緩而不疏，$w變化無常，捉摸不定向$n慢慢卷去",
+([      "action" : "$N攻勢忽緩而不疏，$w變化無常，捉摸不定向$n慢慢捲去",
         "force" : 470,
         "attack": 180,
         "dodge" : 75,
@@ -105,7 +105,7 @@ mapping *actionw = ({
         "damage": 210,
         "damage_type": "擦傷"
 ]),
-([      "action":"$N卷起手中的$w，就如鐵錘一般對著$n亂砍亂砸，沒有半點章法",
+([      "action":"$N捲起手中的$w，就如鐵錘一般對着$n亂砍亂砸，沒有半點章法",
         "force" : 460,
         "attack": 175,
         "dodge" : 80,
@@ -121,7 +121,7 @@ mapping *actionw = ({
         "damage": 190,
         "damage_type": "內傷"
 ]),
-([      "action":"$N含笑回轉$w，伸手一指，頗得拈花指之意，點向$n的$l",
+([      "action":"$N含笑迴轉$w，伸手一指，頗得拈花指之意，點向$n的$l",
         "force" : 540,
         "attack": 180,
         "dodge" : 70,
@@ -205,8 +205,8 @@ int get_finish(object me)
                 return 0;
         }
 
-        tell_object(me, HIW "一陣凡塵往事湧上心頭，你幾欲放聲長嘆。霎那間，你放眼回首，竟有一股莫名\n"
-                        "的悲哀。宗師泰鬥那種高出不勝寒、登泰山而小天下之感猶然而生，你只覺得以\n往的"
+        tell_object(me, HIW "一陣凡塵往事湧上心頭，你幾欲放聲長歎。霎那間，你放眼回首，竟有一股莫名\n"
+                        "的悲哀。宗師泰斗那種高出不勝寒、登泰山而小天下之感猶然而生，你只覺得以\n往的"
                         "武學現在看來是多麼的渺小可笑。\n" NOR);
         return 1;
 }
@@ -263,7 +263,7 @@ int valid_learn(object me)
         level = me->query_skill("jiuyin-shengong", 1);
 
         if ((int)me->query_skill("martial-cognize", 1) < 150)
-                return notify_fail("你覺得九陰神功過于深奧，以自己的武學修養全然無法明白。\n");
+                return notify_fail("你覺得九陰神功過於深奧，以自己的武學修養全然無法明白。\n");
 
         for (i = 0; i < sizeof(usage_skills2); i++)
                 if (me->query_skill(usage_skills2[i], 1) < level)
@@ -327,7 +327,7 @@ mixed valid_damage(object ob, object me, int damage, object weapon)
                 {
                 case 0:
                         result = HIY "$n" HIY "默運九陰神訣，護住全身。但是$N" HIY
-                                 "內力深厚無比，長嘆一聲，一招竟結實地打在$n" HIY
+                                 "內力深厚無比，長歎一聲，一招竟結實地打在$n" HIY
                                  "身上。\n" NOR;
                         break;
                 case 1:
@@ -366,7 +366,7 @@ mixed hit_ob(object me, object victim, int damage_bonus)
                 addn("neili", -((damage_bonus - random(80)) / 2), victim);
 
                 return random(2) ? HIR "$N" HIR "招式陡然一變，右手成爪，猛然間抓向$n" HIR "周身大穴。\n" NOR:
-                                   HIR "$N" HIR "快步上前，全身真氣貫于左手食指，猛地刺$n" HIR "胸口大穴！\n" NOR;
+                                   HIR "$N" HIR "快步上前，全身真氣貫於左手食指，猛地刺$n" HIR "胸口大穴！\n" NOR;
         }        
 }
 

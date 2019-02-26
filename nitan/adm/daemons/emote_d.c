@@ -13,7 +13,7 @@
 mapping emotions;
 
 string help = @HELP
-此為表情指令，請使用指令 semote 來查閱表情指令列表及使用方法。
+此為表情指令，請使用指令 semote 來查閲表情指令列表及使用方法。
 HELP;
 varargs string do_emote(object me, string verb, string arg, int option);
 
@@ -65,7 +65,7 @@ varargs mixed do_emote(object me, string verb, string arg, int option)
         {
                 int which;
 
-                // 檢查復數目標
+                // 檢查複數目標
                 if( sscanf(argument, "%d", which) && which > 1 && objectp(you = present(your_name+" "+which, me) || present(your_name+" "+which, environment(me))) )
                 {
                         your_name += " "+which;

@@ -115,7 +115,7 @@ mapping *quest = ({
         ]),
         ([
                 "id":          "zhe shan",
-                "name":        "油紙折扇",
+                "name":        "油紙摺扇",
                 "type":        "尋",
                 "bonus":       83,
                 "msg1":        "",
@@ -219,7 +219,7 @@ mapping *quest = ({
         ]),
         ([
                 "id":          "ruanwei jia",
-                "name":        "軟□甲",
+                "name":        "軟蝟甲",
                 "type":        "尋",
                 "bonus":       58,
                 "msg1":        "",
@@ -251,7 +251,7 @@ mapping *quest = ({
         ]),
         ([
                 "id":          "jindai",
-                "name":        "束發金帶",
+                "name":        "束髮金帶",
                 "type":        "尋",
                 "bonus":       58,
                 "msg1":        "",
@@ -339,7 +339,7 @@ mapping *quest = ({
         ]),
         ([
                 "id":          "diao gan",
-                "name":        "釣桿",
+                "name":        "釣杆",
                 "type":        "尋",
                 "bonus":       77,
                 "msg1":        "",

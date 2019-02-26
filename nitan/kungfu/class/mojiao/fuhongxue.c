@@ -10,7 +10,7 @@ void create()
         set("gender", "男性");
         set("age", 26);
         set("shen_type", -1);
-        set("long", "一身很普通的裝束，讓人很難把他和大名鼎鼎的傅紅雪聯系在一起。\n");
+        set("long", "一身很普通的裝束，讓人很難把他和大名鼎鼎的傅紅雪聯繫在一起。\n");
         set("attitude", "peaceful");
 
         set("per", 21);
@@ -121,7 +121,7 @@ int recognize_apprentice(object ob, string skill)
 {
         if (ob->query_skill(skill, 1) >= 400)
         {
-                command("say 夠了！我就教你到這裡吧，武功還是"
+                command("say 夠了！我就教你到這裏吧，武功還是"
                         "要靠自己多研究才是！");
                 return -1;
         }

@@ -11,13 +11,13 @@ int main(object me)
         seteuid(getuid());
 
         if( !query_temp("comedby", me) )
-                return notify_fail("已經沒有野獸跟著你了！\n");
+                return notify_fail("已經沒有野獸跟着你了！\n");
         if( me->is_fighting() )
                 return notify_fail("一邊打架一邊馴獸？你真是活膩了！\n");
         if( !objectp(ob=present(query_temp("comedby", me),environment(me))) )
-                return notify_fail("這裡沒有這只野獸吧？\n");
+                return notify_fail("這裏沒有這隻野獸吧？\n");
         if( !query_temp("owner", ob) )
-                return notify_fail(ob->name() + "是只無主野獸，你得先馴服(train)它啊！\n");
+                return notify_fail(ob->name() + "是隻無主野獸，你得先馴服(train)它啊！\n");
         if( query_temp("owner", ob) && 
            (query_temp("owner", ob) != query("id", me)) )
         {
@@ -27,11 +27,11 @@ int main(object me)
         if ( ob == me )
                 return notify_fail("你沒問題吧，自己跟自己？\n");
         if (!living(ob)) 
-                return notify_fail("這只野獸暈倒了，你怎能讓它跟你呢？\n");
+                return notify_fail("這隻野獸暈倒了，你怎能讓它跟你呢？\n");
         if (ob->is_fighting()) 
                 return notify_fail("它正在大打出手，沒空理你呢？\n");
 
-        message_vision("只見$N沖著"+ob->name()+"手中擺了個手式，它沖著你點了點頭。\n\n",me);
+        message_vision("只見$N衝着"+ob->name()+"手中擺了個手式，它衝着你點了點頭。\n\n",me);
 
         delete_temp("comedby", me);
         ob->set_leader(0);
@@ -43,7 +43,7 @@ int help(object me)
         write(@HELP
 指令格式 : stay <動物>
 
-此指令可用于讓某動物停止跟隨你。對于已經馴服的動物，可以進行下述指令：
+此指令可用於讓某動物停止跟隨你。對於已經馴服的動物，可以進行下述指令：
 
 基本指令：
         come <動物名>:                  讓動物跟隨主人行動。
@@ -55,7 +55,7 @@ int help(object me)
 特殊指令：（只對某些動物適用）
         qi(ride) <動物名>:              騎，如騎馬，虎，雕，鯊等。
         xia(unride) <動物名>:           下，離開坐騎。
-        wei(feed) <動物名>:             替動物喂食。
+        wei(feed) <動物名>:             替動物餵食。
         yin <動物名>:                   給動物飲水。
 
 HELP

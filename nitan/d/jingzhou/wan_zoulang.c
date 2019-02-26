@@ -29,7 +29,7 @@ int valid_leave(object me, string dir)
         if (!objectp(present("hu cheng", me)) &&
                 dir == "north" &&
                 objectp(present("qi fang", environment(me))))
-                return notify_fail("戚芳攔住你說：我夫君中毒臥床，請勿打擾。\n");
+                return notify_fail("戚芳攔住你説：我夫君中毒卧牀，請勿打擾。\n");
 
         return ::valid_leave(me, dir);
 }

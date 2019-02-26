@@ -7,7 +7,7 @@ void create()
         set_name("男孩",({ "boy" }) );
         set("gender", "男性" );
         set("age", 13);
-        set("long", "這是個城裡的少年。\n");
+        set("long", "這是個城裏的少年。\n");
 
         set("str", 17);
         set("dex", 16);

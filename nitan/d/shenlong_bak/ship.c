@@ -28,14 +28,14 @@ string long_desc()
 {
         string desc;
 
-        desc = "這是一艘很普通的漁船，幾名漁夫擺弄著帆篷，篙槳，繩索，和船尾木舵。\n";
-        desc += "以下指令有助于你的航行：(1)start, (2)stop, (3)go, (4)lookout, (5)locate。\n\n";
+        desc = "這是一艘很普通的漁船，幾名漁夫擺弄着帆篷，篙槳，繩索，和船尾木舵。\n";
+        desc += "以下指令有助於你的航行：(1)start, (2)stop, (3)go, (4)lookout, (5)locate。\n\n";
 
         if( !query("exits/out") )
                 switch((int)query_temp("navigate/weather"))
                 {
-                        case 1: desc += BLU"天空中彤雲密布，只有幾只海鷗還在奮力展翅，海船左右搖晃不已，你感到有\n點立足不穩。\n"NOR; break;
-                        case 2: desc += BLU"海面洶湧澎湃，幾丈高的巨浪排山倒海似得壓來，隨時都有可能將船掀翻，你\n時而不得不緊緊抱住船桿，以免落海。\n"NOR; break;
+                        case 1: desc += BLU"天空中彤雲密佈，只有幾隻海鷗還在奮力展翅，海船左右搖晃不已，你感到有\n點立足不穩。\n"NOR; break;
+                        case 2: desc += BLU"海面洶湧澎湃，幾丈高的巨浪排山倒海似得壓來，隨時都有可能將船掀翻，你\n時而不得不緊緊抱住船杆，以免落海。\n"NOR; break;
                         default: desc += BLU"四周是遼闊的海面，海風在你耳邊輕輕吹過，海浪一個接一個向船潑打過來。\n"NOR;  break;
                 }
         return desc;
@@ -62,8 +62,8 @@ int do_fast(string arg)
 
         message_vision(HIW"$N仰天長嘯：ＷＩＮＤ　ＥＬＥＭＥＮＴ！！！\n"NOR,me);
         tell_room(this_object(), HIG
-        "只見天空中烏雲密布，一個巨神的身影在天際出現，化做一股龍卷風！\n"+
-        "龍卷風帶起數百丈高的海浪向船襲來，你嚇得動也不敢動！！！\n"NOR);
+        "只見天空中烏雲密佈，一個巨神的身影在天際出現，化做一股龍捲風！\n"+
+        "龍捲風帶起數百丈高的海浪向船襲來，你嚇得動也不敢動！！！\n"NOR);
 
         switch(arg) {
                 case "east":
@@ -119,7 +119,7 @@ int do_start()
         message("vision", "漁船離了岸，駛向茫茫的大海。\n", shipside);
         delete("exits/enter", shipside);
 
-        message_vision("$N大喝一聲“開船”，于是船便離了岸。\n", me);
+        message_vision("$N大喝一聲“開船”，於是船便離了岸。\n", me);
         delete("exits/out");
 
         call_out("shipweather", 1);
@@ -152,33 +152,33 @@ int navigate()
                         break;
                 case 3 :
                         tell_room(this_object(), HIC
-                        "你看見桅桿上閃著青白色的光，哇！神跡！！！\n"NOR);
+                        "你看見桅杆上閃着青白色的光，哇！神蹟！！！\n"NOR);
                         break;
                 case 4 :
                         tell_room(this_object(), HIW
-                        "大霧迷漫，一艘破舊的大船開了過來，一會兒又消失了，船上傳來隱隱的嘆息聲，\n"+
-                        "你依稀記得船上有幾個怪字〝Titanic〝！！！\n"NOR);
+                        "大霧迷漫，一艘破舊的大船開了過來，一會兒又消失了，船上傳來隱隱的歎息聲，\n"+
+                        "你依稀記得船上有幾個怪字＂Titanic＂！！！\n"NOR);
                         break;
                 case 5 :
                         tell_room(this_object(), HIR
-                        "你看見一只燃燒著的大鳥向船沖過來，糟糕，要撞上了！！！\n"NOR);
+                        "你看見一隻燃燒着的大鳥向船衝過來，糟糕，要撞上了！！！\n"NOR);
                         break;
                 case 6 :
                         tell_room(this_object(), HIM
-                        "海面上傳來一陣美妙的歌聲，你頓時有一種按捺不住跳下海的沖動！！！\n"NOR);
+                        "海面上傳來一陣美妙的歌聲，你頓時有一種按捺不住跳下海的衝動！！！\n"NOR);
                         break;
                 case 7 :
                         tell_room(this_object(), HIG
-                        "你突然發現海中有一只青色大眼睛正瞪著你，過一會兒就不見了，你嚇得魂不附體！！！\n"NOR);
+                        "你突然發現海中有一隻青色大眼睛正瞪着你，過一會兒就不見了，你嚇得魂不附體！！！\n"NOR);
                         break;
                 case 8 :
                         tell_room(this_object(), HIY
-                        "你看見遠處一個人身魚尾的美麗少女躍出海面，哇□！美人魚咧！！！\n"NOR);
+                        "你看見遠處一個人身魚尾的美麗少女躍出海面，哇噻！美人魚咧！！！\n"NOR);
                         break;
                 case 9 :
                         tell_room(this_object(), HIG
                         "你眼前一亮，北方映出一片奇異莫可名狀的光彩，"+HIM"無數奇麗絕倫的光色，在黑暗中\n"+
-                        "忽伸忽縮，"+YEL"大片橙黃之中"+MAG"夾著絲絲淡紫，忽而紫色癒深癒長，紫色之中，迸射出一\n"+
+                        "忽伸忽縮，"+YEL"大片橙黃之中"+MAG"夾着絲絲淡紫，忽而紫色愈深愈長，紫色之中，迸射出一\n"+
                         "條條"+HIY"金光、"+HIB"藍光、"+HIG"綠光、"+HIR"紅光。\n"NOR);
                         break;
                 }
@@ -188,11 +188,11 @@ int navigate()
                 if( !random(100) ) {
                         addn_temp("navigate/wait", 1);
                         if( query_temp("navigate/wait") > 5 ) {
-                                tell_room(this_object(), "船夫們把大家都扔進了海裡。\n");
+                                tell_room(this_object(), "船伕們把大家都扔進了海里。\n");
                                 do_drop();
                                 return 1;
                         }
-                        tell_room(this_object(), "船夫們不耐煩地說：你到底走不走啊？\n");
+                        tell_room(this_object(), "船伕們不耐煩地説：你到底走不走啊？\n");
                 }                        
                 call_out("navigate", 1);
                 return 1;
@@ -218,7 +218,7 @@ int navigate()
 
         locx = query_temp("navigate/locx");
         if( locx < 0 ) {
-                tell_room(this_object(), "船夫說：“大陸到啦，上岸吧”。\n");
+                tell_room(this_object(), "船伕説：“大陸到啦，上岸吧”。\n");
                 set("exits/out", "/d/beijing/haigang");
 
                 delete_temp("navigate");
@@ -232,7 +232,7 @@ int navigate()
 
         locy = query_temp("navigate/locy");
         if( locx == 20 &&  locy == 20 ) {
-                tell_room(this_object(), "船夫說：“神龍島到啦，上岸吧”。\n");
+                tell_room(this_object(), "船伕説：“神龍島到啦，上岸吧”。\n");
                 set("exits/out", "/d/shenlong/beach");
 
                 delete_temp("navigate");
@@ -246,7 +246,7 @@ int navigate()
 
         if( locx <= 110 &&  locy <= 610 
         && locx >= 95 && locy >= 590 ) {
-                tell_room(this_object(),"船夫說：“到了一個怪島，要上去看看嗎？”。\n");
+                tell_room(this_object(),"船伕説：“到了一個怪島，要上去看看嗎？”。\n");
                 set("exits/out", "/d/changbai/icefire1");
 
                 delete_temp("navigate");
@@ -306,7 +306,7 @@ int do_go(string arg)
         }
 
         set_temp("navigate/dir", dir);
-        message_vision("$N對船夫說：船老大，請朝" + dir + "開。\n", me);
+        message_vision("$N對船伕説：船老大，請朝" + dir + "開。\n", me);
         return 1;
 }
 
@@ -322,7 +322,7 @@ int do_stop()
         if( !query_temp("navigate/dir") )
                 return notify_fail("船已經停了。\n");
 
-        message_vision("$N叫船夫們把船停一停。\n", me);
+        message_vision("$N叫船伕們把船停一停。\n", me);
         delete_temp("navigate/dir");
 
         return 1;
@@ -484,7 +484,7 @@ void do_drop()
                                 inv[i]->move("/d/changbai/icefire1");
                         else        inv[i]->move("/d/beijing/haigang");
                         message("vision",
-                        "你發現一個渾身水淋淋的家伙被海水沖上岸來，不由得走近一看，原來是"+query("name", inv[i])+"。\n",environment(inv[i]),({inv[i]}));
+                        "你發現一個渾身水淋淋的傢伙被海水衝上岸來，不由得走近一看，原來是"+query("name", inv[i])+"。\n",environment(inv[i]),({inv[i]}));
                 } else  destruct(inv[i]);
         }
 
@@ -522,7 +522,7 @@ void do_ready()
 
         delete_temp("trigger");
         delete("exits/out");
-        message("vision", "船夫們大喝一聲“開船”，于是船便離了岸。\n", this_object());
+        message("vision", "船伕們大喝一聲“開船”，於是船便離了岸。\n", this_object());
 }
 
 void reset()

@@ -151,7 +151,7 @@ void more_file(string cmd, string file, int line, int total)
 
         if (page > 301)
         {
-                show += "連續顯示的行數必須小于等于300。\n";
+                show += "連續顯示的行數必須小於等於300。\n";
                 not_show = 1;
         } else
         {
@@ -223,7 +223,7 @@ void more_file(string cmd, string file, int line, int total)
                 input_to("more_file", file, line + page, total);
         } else
         {
-                show += WHT "閱讀完畢。\n" NOR;
+                show += WHT "閲讀完畢。\n" NOR;
                 s_write(show);
         }
 }
@@ -232,7 +232,7 @@ void start_more_file(string fn)
 {
         if (file_size(fn) < 0)
         {
-                write("沒有 " + fn + " 這個文件可供閱讀。\n");
+                write("沒有 " + fn + " 這個文件可供閲讀。\n");
                 return;
         }
         write("\n");

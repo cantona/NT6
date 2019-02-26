@@ -15,6 +15,6 @@ string update_msg_others()
 
 string update_msg_self()
 {
-        return HIC "你感到一股切骨奇寒由傷口處升起，看來是中了透骨針內勁的幹擾！\n" NOR;
+        return HIC "你感到一股切骨奇寒由傷口處升起，看來是中了透骨針內勁的干擾！\n" NOR;
 }
 

@@ -25,9 +25,9 @@ void create()
         object ob;
         set_name("何太沖", ({"he taichong", "he", "taichong"}));
         set("long", @LONG
-他就是名揚江湖的昆侖派第四代掌門鐵琴先生
+他就是名揚江湖的崑崙派第四代掌門鐵琴先生
 何太沖。雖然此時他年紀已大，但仍然看得出
-他年輕時的英俊瀟洒。
+他年輕時的英俊瀟灑。
 LONG);
         set("nickname", WHT "鐵琴先生" NOR);
         set("gender", "男性");
@@ -77,7 +77,7 @@ LONG);
         prepare_skill("strike", "kunlun-zhang");
         prepare_skill("cuff", "zhentian-quan");
 
-        create_family("昆侖派", 4, "掌門");
+        create_family("崑崙派", 4, "掌門");
 
         set("inquiry", ([
                 "絕招"      : "你要問什麼絕招？",
@@ -145,7 +145,7 @@ void attempt_apprentice(object me)
 
         if( query("combat_exp", me)<150000 )
         {
-                command("say 你的江湖經驗太淺，還是鍛煉鍛煉再說吧。");
+                command("say 你的江湖經驗太淺，還是鍛鍊鍛鍊再説吧。");
                 return;
         }
 
@@ -180,13 +180,13 @@ mixed ask_skill1()
         if (me->query_skill("zhentian-quan", 1) < 80)
                 return "你的震天拳法修為還不夠，自己下去練練再來吧。";
 
-        message_vision(HIY "$n" HIY "略微點了點頭，說道：我這給你"
-                       "演示一遍，你可要看好了。\n說完便只見$n" HIY
-                       "拉開架式，提運內勁，聚力于掌一拳揮出，頓\n"
+        message_vision(HIY "$n" HIY "略微點了點頭，説道：我這給你"
+                       "演示一遍，你可要看好了。\n説完便只見$n" HIY
+                       "拉開架式，提運內勁，聚力於掌一拳揮出，頓\n"
                        "時$N" HIY "周圍呼嘯聲驟起，氣勢當真有如石"
                        "破天驚。\n" NOR, me, this_object());
         command("nod");
-        command("say 這招石破天驚招式並不復雜，下去稍加練習便成。");
+        command("say 這招石破天驚招式並不複雜，下去稍加練習便成。");
         tell_object(me, HIC "你學會了「石破天驚」。\n" NOR);
 
         if (me->can_improve_skill("cuff"))
@@ -213,7 +213,7 @@ mixed ask_skill2()
                 return RANK_D->query_respect(me) + "和本派素無瓜葛，何出此言？";
 
         if (me->query_skill("kunlun-qifa", 1) < 1)
-                return "你連昆侖器法都沒學，還談什麼絕招可言？";
+                return "你連崑崙器法都沒學，還談什麼絕招可言？";
 
         if( query("family/gongji", me)<300 )
                 return "你對本派所作出的貢獻不夠，這一招我暫時還不能傳你。";
@@ -222,10 +222,10 @@ mixed ask_skill2()
                 return "你的內功修為怎麼這麼差？練好了再來吧！";
 
         if (me->query_skill("kunlun-qifa", 1) < 120)
-                return "你的昆侖器法修為還不夠，自己下去練練再來吧。";
+                return "你的崑崙器法修為還不夠，自己下去練練再來吧。";
 
-        message_vision(HIY "$n" HIY "凝視了$N" HIY "一會，幹咳了一"
-                       "聲，其余弟子會意連忙全部退下。\n$n" HIY "這"
+        message_vision(HIY "$n" HIY "凝視了$N" HIY "一會，乾咳了一"
+                       "聲，其餘弟子會意連忙全部退下。\n$n" HIY "這"
                        "才將$N" HIY "招到面前，在$N" HIY "耳邊輕聲"
                        "嘀咕了些話，$N" HIY "一邊聽\n一邊不住的點頭"
                        "，看來對$n" HIY "的教導大有所悟。\n" NOR,
@@ -270,11 +270,11 @@ mixed ask_skill3()
                 return "你的迅雷劍法修為還不夠，自己下去練練再來吧。";
 
         message_vision(HIY "$n" HIY "點了點頭，隨手從身後的書架上取"
-                       "出一本劍經，指著其中\n一段對$N" HIY "細說了"
+                       "出一本劍經，指着其中\n一段對$N" HIY "細説了"
                        "良久，$N" HIY "一邊聽一邊點頭。\n" NOR, me,
                        this_object());
         command("nod");
-        command("say 剛才我所說的便是這迅雷一擊的精髓，你自己下去練吧。");
+        command("say 剛才我所説的便是這迅雷一擊的精髓，你自己下去練吧。");
         tell_object(me, HIC "你學會了「迅雷一擊」。\n" NOR);
 
         if (me->can_improve_skill("sword"))
@@ -301,7 +301,7 @@ mixed ask_skill4()
                 return RANK_D->query_respect(me) + "和本派素無瓜葛，何出此言？";
 
         if (me->query_skill("kunlun-jian", 1) < 1)
-                return "你連昆侖劍法都沒學，還談什麼絕招可言？";
+                return "你連崑崙劍法都沒學，還談什麼絕招可言？";
 
         if( query("family/gongji", me)<1000 )
                 return "你對本派所作出的貢獻不夠，這一招我暫時還不能傳你。";
@@ -313,11 +313,11 @@ mixed ask_skill4()
                 return "你的彈琴技法尚且不夠熟練, 學不了這一招！";
 
         if (me->query_skill("kunlun-jian", 1) < 130)
-                return "你的昆侖劍法修為還不夠，自己下去練練再來吧。";
+                return "你的崑崙劍法修為還不夠，自己下去練練再來吧。";
 
-        message_vision(HIY "$n" HIY "凝視了$N" HIY "半天，說道：“既"
-                       "然你劍術已成，我今日便\n傳你這招吧。其余不相"
-                       "幹的人都給我出去！”待其余弟子退\n下後，$n"
+        message_vision(HIY "$n" HIY "凝視了$N" HIY "半天，説道：“既"
+                       "然你劍術已成，我今日便\n傳你這招吧。其餘不相"
+                       "乾的人都給我出去！”待其餘弟子退\n下後，$n"
                        HIY "警惕的望了望四周，確定四下沒人後，這才從"
                        "\n鐵琴下抽出一柄長劍，慢慢的演示劍招。$N" HIY
                        "只覺劍招精妙奇\n巧，實乃前所謂聞。\n" NOR, me,
@@ -367,10 +367,10 @@ mixed ask_skill5()
                 return "你的正兩儀劍法修為還不夠，自己下去練練再來吧。";
 
         message_vision(HIY "$n" HIY "眉頭微微一皺，一揮手，示意其它弟"
-                       "子全部出去。待\n其余弟子陸續退下後，$n" HIY "謹"
+                       "子全部出去。待\n其餘弟子陸續退下後，$n" HIY "謹"
                        "慎的環顧下四周，確定四下\n沒人後，這才將$N" HIY
-                       "招至身邊，悄聲在$N" HIY "耳旁細說良久。待授\n招"
-                       "完畢後，$n" HIY "又緩緩的搖了搖頭，接著道：這一"
+                       "招至身邊，悄聲在$N" HIY "耳旁細説良久。待授\n招"
+                       "完畢後，$n" HIY "又緩緩的搖了搖頭，接着道：這一"
                        "招乃是\n寧為玉碎，不為瓦全的拼死一擊，使用前一"
                        "定要慎重考慮。\n" NOR, me, this_object());
         command("sigh");
@@ -395,8 +395,8 @@ mixed ask_jian()
 
         me = this_player();
 
-        if( query("family/family_name", me) != "昆侖派" )
-                return "你是哪裡來的？少在這裡跟我羅嗦！";
+        if( query("family/family_name", me) != "崑崙派" )
+                return "你是哪裏來的？少在這裏跟我羅嗦！";
 
         if( query("family/master_id", me) != "hezudao" && 
             query("family/master_id", me) != "banshuxian" && 
@@ -404,18 +404,18 @@ mixed ask_jian()
                 return "哼！你還沒有資格使用我的寶劍。";
 
         if (me->query_skill("kunlun-jian", 1) < 150)
-                return "還不快給我滾回去用心練劍，少在這裡羅嗦！";
+                return "還不快給我滾回去用心練劍，少在這裏羅嗦！";
 
         if (me->query_skill("tanqin-jifa", 1) < 100)
                 return "你連琴都彈不好，還用什麼鐵琴劍？";
 
         if (present("tieqin jian", me))
-                return "我的鐵琴劍現在不就在你手裡嗎？";
+                return "我的鐵琴劍現在不就在你手裏嗎？";
 
         ob = present("tieqin jian", this_object());
 
         if (! objectp(ob))
-                return "你來晚了，鐵琴劍現在不在我這裡。";
+                return "你來晚了，鐵琴劍現在不在我這裏。";
 
         message_vision("$N拿出" WHT "鐵琴劍" NOR "(tieqin jian)給$n。\n",
                        this_object(), me);
@@ -425,7 +425,7 @@ mixed ask_jian()
         ob->move(this_object());
         ob->wield();
 
-        return "我這柄鐵琴劍你就暫且拿去吧，多用它揚揚我們昆侖派的威風。";
+        return "我這柄鐵琴劍你就暫且拿去吧，多用它揚揚我們崑崙派的威風。";
 }
 
 mixed ask_jing()
@@ -435,8 +435,8 @@ mixed ask_jing()
         object owner;
 
         me = this_player();
-        if( query("family/family_name", me) != "昆侖派" )
-                return "你是哪裡來的？少在這裡跟我羅嗦！";
+        if( query("family/family_name", me) != "崑崙派" )
+                return "你是哪裏來的？少在這裏跟我羅嗦！";
 
         if (me->query_skill("xunlei-jian", 1) > 120)
                 return "你的迅雷劍法已經到這個地步，沒必要再去參讀劍經了。";
@@ -462,16 +462,16 @@ mixed ask_jing()
                 if (! owner->is_character())
                         return "你來晚了一步，那本「迅雷劍經」已經讓你同門師兄拿去了。";
 
-                if( query("family/family_name", owner) == "昆侖派" )
+                if( query("family/family_name", owner) == "崑崙派" )
                         return "那本「迅雷劍經」現在在你同門"+query("name", owner)+
                                "手中，你要用就去找他吧。";
                 else
-                        return "你來得正好，我正為此擔憂呢。聽說劍經落入" +
+                        return "你來得正好，我正為此擔憂呢。聽説劍經落入" +
                                query("name", owner)+"手中，你去把他做了，搶回劍經！";
         }
 
         ob->move(this_object());
-        message_vision(CYN "$N" CYN "說道：既然如此，這本「迅雷劍經」今日我便"
+        message_vision(CYN "$N" CYN "説道：既然如此，這本「迅雷劍經」今日我便"
                        "交與你，可別弄丟了。\n" NOR, this_object(), me);
         command("givexunleijianjingto"+query("id", me));
         return 1;
@@ -489,18 +489,18 @@ string ask_me()
         object ob;
         ob = this_player();
         if( !(fam=query("family", this_player()) )
-                || fam["family_name"] != "昆侖派")
+                || fam["family_name"] != "崑崙派")
                 return RANK_D->query_respect(this_player()) +
                         "與本派素無來往，不知此話從何談起？";
         if (query("book_count") < 1)
                 return "你來晚了，本派心經已被你師兄拿走了。";
 //             if(ob->query("gender")=="男性"||ob->query("per")<23)
-//                return "本派心經不在我這裡。";
+//                return "本派心經不在我這裏。";
         addn("book_count", -1);
         ob = new("/clone/book/force-book2");
         ob->move(this_player());
-        command("rumor"+query("name", this_player())+"拿到昆侖心法啦。\n");
-        return "我這裡有本「心法」，是有關吐吶吸氣的，你拿回去好好鑽研，有空多來找我哦！";
+        command("rumor"+query("name", this_player())+"拿到崑崙心法啦。\n");
+        return "我這裏有本「心法」，是有關吐吶吸氣的，你拿回去好好鑽研，有空多來找我哦！";
 }
 
 string ask_ding()
@@ -509,7 +509,7 @@ string ask_ding()
         object ob;
 
         if( !(fam=query("family", this_player()) )
-                || fam["family_name"] != "昆侖派")
+                || fam["family_name"] != "崑崙派")
                 return RANK_D->query_respect(this_player()) +
                         "與本派素無來往，不知此話從何談起？";
 
@@ -533,11 +533,11 @@ string ask_su()
         object ob;
 
         if( !(fam=query("family", this_player()) )
-                || fam["family_name"] != "昆侖派")
+                || fam["family_name"] != "崑崙派")
                 return RANK_D->query_respect(this_player()) +
                         "與本派素無來往，不知此話從何談起？";
 
         if( query_temp("kunlun/ding", this_player()) )
-                return "你還待在這裡做什麼，還不快去追蘇習之！";
-        return "蘇習之這家伙竟然敢偷看本派的兩儀神劍，我派弟子必當將其追殺。";
+                return "你還待在這裏做什麼，還不快去追蘇習之！";
+        return "蘇習之這傢伙竟然敢偷看本派的兩儀神劍，我派弟子必當將其追殺。";
 }

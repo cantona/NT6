@@ -1,7 +1,7 @@
 #include <ansi.h>
 #include <combat.h>
 
-#define CHAN "「" HIC "龍卷風" NOR "」"
+#define CHAN "「" HIC "龍捲風" NOR "」"
 
 inherit F_SSERVER;
 
@@ -33,9 +33,9 @@ int perform(object me, object target)
                 return notify_fail("你現在真氣不夠，難以施展" CHAN "。\n");
 
         if (! living(target))
-                return notify_fail("對方都已經這樣了，用不著這麼費力吧？\n");
+                return notify_fail("對方都已經這樣了，用不着這麼費力吧？\n");
 
-        msg = HIC "$N" HIC "負刀而立，猛然間，刀鋒一轉，一股強勁的刀氣奔騰而出，猶如龍卷風般呼嘯而至，將$n" HIC "籠罩。\n" NOR;
+        msg = HIC "$N" HIC "負刀而立，猛然間，刀鋒一轉，一股強勁的刀氣奔騰而出，猶如龍捲風般呼嘯而至，將$n" HIC "籠罩。\n" NOR;
 
         addn("neili", -300, me);
         if (random(level) + 200 > (int)target->query_skill("dodge", 1) / 2)

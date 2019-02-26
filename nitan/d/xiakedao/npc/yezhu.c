@@ -8,7 +8,7 @@ void create()
         set("race", "走畜");
         set("age", 4);
         set("long", 
-"這是一只兇猛的野豬，長得極為粗壯，嘴裡還不斷發出可怕的哄聲。\n");
+"這是一隻兇猛的野豬，長得極為粗壯，嘴裏還不斷髮出可怕的哄聲。\n");
         set("attitude", "peaceful");
 
         set("str", 26);
@@ -17,8 +17,8 @@ void create()
         set("shen_type", -1);
         set("chat_msg_combat", ({
                 (: this_object(), "random_move" :),
-                "野豬大口大口地喘著氣：呼哧！呼哧！呼哧！呼哧！\n",
-                "野豬突然跳了起來，眼睛惡狠狠地盯著你，看樣子想要撲過來。\n"
+                "野豬大口大口地喘着氣：呼哧！呼哧！呼哧！呼哧！\n",
+                "野豬突然跳了起來，眼睛惡狠狠地盯着你，看樣子想要撲過來。\n"
         }) );
 
         set_temp("apply/attack", 15);

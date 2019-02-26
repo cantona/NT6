@@ -71,7 +71,7 @@ void hitself(object me, object *bad_guys, int degree)
             COMBAT_D->do_attack(killer,killer,query_temp("weapon", killer));
             break;
         case 3:   // hardest
-            message_vision("$n仰天嘆道: 便似我這等孽障, 活在人間作甚！當下回手往自己死穴猛擊！\n",
+            message_vision("$n仰天歎道: 便似我這等孽障, 活在人間作甚！當下回手往自己死穴猛擊！\n",
                 killer, killer);
               addn_temp("apply/defense", -200, killer);
               addn_temp("apply/dodge", -200, killer);
@@ -114,7 +114,7 @@ void hitself(object me, object *bad_guys, int degree)
 //                /*not in same room*/
 //                killer->move(room);
         if (present(me,environment(killer))) {
-message_vision(HIR"$N沖著$n破口大罵：就憑你這樣的貨色也敢在我面前指手劃腳，還不給我滾得遠遠的！\n"NOR,killer,me);
+message_vision(HIR"$N衝着$n破口大罵：就憑你這樣的貨色也敢在我面前指手劃腳，還不給我滾得遠遠的！\n"NOR,killer,me);
 //        tell_object(me,HIR"你的正氣不夠壓制對方,反而激怒對手!"NOR);
         me->start_busy(1+random(1));
 //        if( !killer->is_killing(me) ) killer->kill_ob(me);

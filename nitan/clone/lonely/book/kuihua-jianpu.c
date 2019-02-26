@@ -12,7 +12,7 @@ void create()
                 set("material", "paper");
                 set("no_sell", 1);
                 set("long", HIW "\n這是一本用薄紙寫成的書，封皮上寫有「葵花劍"
-                            "譜」四\n字。你可以試著讀讀(read)看。\n\n" NOR, );
+                            "譜」四\n字。你可以試着讀讀(read)看。\n\n" NOR, );
         }
 }
 
@@ -44,7 +44,7 @@ int do_du(string arg)
 
         if (me->is_busy())
         {
-                write("你現在正忙著呢。\n");
+                write("你現在正忙着呢。\n");
                 return 1;
         }
 
@@ -57,7 +57,7 @@ int do_du(string arg)
         if( query("no_fight", where )
             && query("doing", me) != "scheme" )
         {
-                write("你無法在這裡靜下心來研讀葵花劍譜。\n");
+                write("你無法在這裏靜下心來研讀葵花劍譜。\n");
                 return 1;
         }
 
@@ -69,11 +69,11 @@ int do_du(string arg)
 
         if (! id(book))
         {
-                write("這裡沒有這本書。\n");
+                write("這裏沒有這本書。\n");
                 return 1;
         }
 
-        if (skill != "辟邪□影" && skill != "辟邪劍影")
+        if (skill != "辟邪劍影" && skill != "辟邪劍影")
         {
                 write("葵花劍譜上並沒有記載你打算研究的內容。\n" NOR);
                 return 1;
@@ -107,11 +107,11 @@ int do_du(string arg)
             || query("qi", me)<100
             || query("neili", me)<200 )
         {
-                write("你現在過于疲倦，無法專心下來研讀新知。\n");
+                write("你現在過於疲倦，無法專心下來研讀新知。\n");
                 return 1;
         }
 
-        write(HIW "你學會了「" HIG "辟邪□影" HIW "」。\n" NOR);
+        write(HIW "你學會了「" HIG "辟邪劍影" HIW "」。\n" NOR);
         set("can_perform/pixie-jian/jian", 1, me);
         destruct(this_object());
         return 1;

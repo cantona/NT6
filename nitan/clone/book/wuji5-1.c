@@ -11,7 +11,7 @@ void create()
                 set_default_object(__FILE__);
         else {
                 set("unit", "本");
-                set("long", HIG "這是一本殘破的舊書，上面畫著舞動的小人。\n" NOR);
+                set("long", HIG "這是一本殘破的舊書，上面畫着舞動的小人。\n" NOR);
                 set("value", 100);
                 set("material", "paper");
                 set("skill", ([

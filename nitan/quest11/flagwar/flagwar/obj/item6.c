@@ -34,10 +34,10 @@ int do_shoot(string arg) {
   if(!sscanf(base_name(environment(me)), "/d/flagwar/%*s")) return notify_fail(name()+"只能在搶旗戰場使用。\n");
   if(!sizeof(me->query_temp("flag_war"))) return notify_fail(name()+"只能在搶旗戰的時候使用。\n");
   if(!arg || sscanf(arg, "seal on %s", id) != 1) return notify_fail("指令格式：shoot seal on <目標>。\n");
-  if(!target = present(id, environment(me))) return notify_fail("這裡沒有這個人。\n");
+  if(!target = present(id, environment(me))) return notify_fail("這裏沒有這個人。\n");
   if(target == me) return notify_fail("你只能射別人。\n");
   if(!target->query_temp("flag_war")) return notify_fail("你只能對搶旗戰的人使用。\n");
-  message_vision("$N拿著$n對準"+target->name()+"，嘴中□出喃喃之聲。\n$n化作一道白光直撲"+target->name()+"而去。\n", me, ob);
+  message_vision("$N拿着$n對準"+target->name()+"，嘴中唸出喃喃之聲。\n$n化作一道白光直撲"+target->name()+"而去。\n", me, ob);
   me->want_kill(ob);
   damage = 1000+random(2000);
   target->receive_damage("qi", damage, me);

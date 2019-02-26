@@ -35,7 +35,7 @@ class zhenfa
 心跳刷新陣法狀態
 兵器的狀態變化要查詢陣法 enable zhuang xie
 陣法在戰鬥中的威力：
-        替弱者抵擋：當人 busy，氣過于少、神過于低。替人抵擋一招自己停一照
+        替弱者抵擋：當人 busy，氣過於少、神過於低。替人抵擋一招自己停一照
         陣法成員進入戰鬥狀態，陣員會全員加入、陣法開始起作用
         陣法的特攻 謎幻敵人是敵人的招數落空
 
@@ -205,7 +205,7 @@ int can_become_member(object who)
                         chinese_number(zhen->num)));
 
         if(!living(who))
-                return notify_fail(who->name()+"目前無法聽見你說話，等會兒再說吧。\n");
+                return notify_fail(who->name()+"目前無法聽見你説話，等會兒再説吧。\n");
 
         if(!zhen->zhen_fn)
         {
@@ -333,30 +333,30 @@ varargs int release_array(int flag)
 
                 case 1: // 陣主死亡
                         if(sizeof(zhen->memb))
-                                message("tell_object",sprintf("【%s】：由于陣主%s死亡，『%s』解散了。\n",
+                                message("tell_object",sprintf("【%s】：由於陣主%s死亡，『%s』解散了。\n",
                                         zhen->name,me->name(),zhen->name),zhen->memb );
                         break;
 
                 case 2: // 陣主離開遊戲
                         if(sizeof(zhen->memb))
-                                message("tell_object",sprintf("【%s】：由于陣主%s離開遊戲，『%s』解散了。\n",
+                                message("tell_object",sprintf("【%s】：由於陣主%s離開遊戲，『%s』解散了。\n",
                                         zhen->name,me->name(),zhen->name),zhen->memb );
                         break;
 
                 case 3: // 失散
                         //if(sizeof(zhen->memb))
-                        //      message("tell_object",sprintf("【%s】：由于和陣主%s失散，『%s』解散了。\n",
+                        //      message("tell_object",sprintf("【%s】：由於和陣主%s失散，『%s』解散了。\n",
                         //              zhen->name,me->name(),zhen->name),zhen->memb );
-                        tell_object(me,sprintf("由于沒有其他成員，『%s』自動解散了。\n",zhen->name));
+                        tell_object(me,sprintf("由於沒有其他成員，『%s』自動解散了。\n",zhen->name));
                         break;
                 case 4: // 昏迷不醒
                         if(sizeof(zhen->memb))
-                                message("tell_object",sprintf("【%s】：由于陣主%s昏迷不醒，『%s』解散了。\n",
+                                message("tell_object",sprintf("【%s】：由於陣主%s昏迷不醒，『%s』解散了。\n",
                                         zhen->name,me->name(),zhen->name),zhen->memb );
                         break;
                 case 5:
                         if(sizeof(zhen->memb))
-                                message("tell_object",sprintf("【%s】：由于內部成員發生內訌，『%s』解散了。\n",
+                                message("tell_object",sprintf("【%s】：由於內部成員發生內訌，『%s』解散了。\n",
                                         zhen->name,zhen->name),zhen->memb );
                         break;
         }
@@ -386,11 +386,11 @@ varargs void dismiss_array_member(object who,int flag) // 隊員離隊
 
         zhen->memb -= ({ who });
         who->init_zhen();
-        tell_object(who,sprintf("\n你脫離了『%s』。\n\n",zhen->name));
+        tell_object(who,sprintf("\n你脱離了『%s』。\n\n",zhen->name));
 
-        if(sizeof(zhen->memb) <= 1)// 由于和其他成員失散
+        if(sizeof(zhen->memb) <= 1)// 由於和其他成員失散
         {
-                tell_object(zhen->master,sprintf("\n%s脫離了『%s』。\n\n",who->name(),zhen->name));
+                tell_object(zhen->master,sprintf("\n%s脱離了『%s』。\n\n",who->name(),zhen->name));
                 release_array(3);
                 return;
         }
@@ -407,18 +407,18 @@ varargs void dismiss_array_member(object who,int flag) // 隊員離隊
                         out = "死亡";
                         break;
                 default:
-                        out = "脫離了陣法";
+                        out = "脱離了陣法";
                         break;
         }
 
         if(zhen->ready)
         {
-                message("tell_object",sprintf("【%s】：由于%s%s，『%s』的威力消失了。\n",
+                message("tell_object",sprintf("【%s】：由於%s%s，『%s』的威力消失了。\n",
                         zhen->name,who->name(),out,zhen->name),zhen->memb );
                 zhen->ready = 0;
         }
         else
-                message("tell_object",sprintf("【%s】：由于%s%s，『%s』失去了一名成員。\n",
+                message("tell_object",sprintf("【%s】：由於%s%s，『%s』失去了一名成員。\n",
                         zhen->name,who->name(),out,zhen->name),zhen->memb );
 
 }
@@ -442,7 +442,7 @@ void test_array()
 
                         zhen->memb -= lv;
 
-                        message("tell_object",sprintf("你脫離了『%s』。\n",zhen->name),lv);
+                        message("tell_object",sprintf("你脱離了『%s』。\n",zhen->name),lv);
                         lv->init_zhen();
 
                         switch (n)
@@ -462,7 +462,7 @@ void test_array()
 
                         if(sizeof(zhen->memb) <= 1)
                         {
-                                tell_object(me,sprintf("【%s】：%s脫離了陣法。\n",
+                                tell_object(me,sprintf("【%s】：%s脱離了陣法。\n",
                                         zhen->name,out));
                                 release_array(3);
                                 return;
@@ -470,12 +470,12 @@ void test_array()
 
                         else if(zhen->ready)
                         {
-                                message("tell_object",sprintf("【%s】：由于%s脫離了陣法，『%s』的威力消失了。\n",
+                                message("tell_object",sprintf("【%s】：由於%s脱離了陣法，『%s』的威力消失了。\n",
                                         zhen->name,out,zhen->name),zhen->memb);
                                 zhen->ready = 0;
                         }
                         else
-                                message("tell_object",sprintf("【%s】：%s脫離了『%s』。\n",
+                                message("tell_object",sprintf("【%s】：%s脱離了『%s』。\n",
                                         zhen->name,out,zhen->name),zhen->memb);
                 }
                 return;
@@ -499,7 +499,7 @@ void change_skill_status(string arg)
 
         if( (arg != zhen->type) && zhen->ready)
         {
-                message("tell_object",sprintf("【%s】：由于%s沒有使用%s，『%s』的威力消失了。\n",
+                message("tell_object",sprintf("【%s】：由於%s沒有使用%s，『%s』的威力消失了。\n",
                         zhen->name,
                         this_object()->name(),
                         to_chinese(zhen->type),
@@ -601,15 +601,15 @@ varargs void dismiss_team(object who)
                 if( !is_team_leader() )
                         return;
 
-                tell_object(who, "你脫離隊伍了。\n");
+                tell_object(who, "你脱離隊伍了。\n");
                 oteam->memb -= ({ who });
                 who->set_team_data(0);
                 if( sizeof(oteam->memb) <= 1 ) {
-                        tell_object(this_object(), sprintf("由于%s離開隊伍，隊伍解散了。\n",who->name()));
+                        tell_object(this_object(), sprintf("由於%s離開隊伍，隊伍解散了。\n",who->name()));
                         oteam = 0;
                         return;
                 } else {
-                        message("team", sprintf(HIW "【隊伍】%s脫離了隊伍。\n" NOR, who->name(1)), oteam->memb);
+                        message("team", sprintf(HIW "【隊伍】%s脱離了隊伍。\n" NOR, who->name(1)), oteam->memb);
                                 (oteam->memb)->set_team_data(oteam);
                         return;
                 }
@@ -686,9 +686,9 @@ int follow_me(object ob, string dir)
         me = this_object();
         if( !living(me) || !ob || ob == me ) return 0;
 
-        if( (ob==leader) && !ob->in_array() && !in_array() && !in_team() )	// array 不能和別人發生 follow 關系	
+        if( (ob==leader) && !ob->in_array() && !in_array() && !in_team() )	// array 不能和別人發生 follow 關係	
 	{
-                // 跟著別人走
+                // 跟着別人走
                 if( query("env/no_follow", ob) &&
                     me->query_dex() / 2 + random(me->query_dex()) < ob->query_dex() ) {
                         tell_object(me, ob->name() +
@@ -697,7 +697,7 @@ int follow_me(object ob, string dir)
                 }
                 return follow_path(dir);
         } else if( (in_array() && zhen->master == ob) || (in_team() && ob == oteam->leader) ) 
-                // 跟著隊伍的領袖行走
+                // 跟着隊伍的領袖行走
                 return follow_path(dir);
 }
 

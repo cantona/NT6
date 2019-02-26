@@ -7,8 +7,8 @@
 
    本房間支持兩個 JOB。
 
-   其一，殺了各族的族長時，可隨機得到該族的權杖，搜集所有
-         族的權杖，再回來這裡發呆 JOB1_NEED_IDLE 秒，即可
+   其一，殺了各族的族長時，可隨機得到該族的權杖，蒐集所有
+         族的權杖，再回來這裏發呆 JOB1_NEED_IDLE 秒，即可
          得到大量獎勵。
 
    其二，在此發呆 JOB2_NEED_IDLE 秒，即得到 幽靈武士 JOB。
@@ -53,9 +53,9 @@ void create()
     set("j2_time", JOB2_NEED_IDLE );
 
     set("room_mark",mark);
-    set("short",MAG"幻境"NOR+GRN"﹒迷失之寶物隱匿之林"NOR);
+    set("short",MAG"幻境"NOR+GRN"·迷失之寶物隱匿之林"NOR);
 
-    set("long", "你剛走過來，卻發現這裡是一小方水潭，水潭之水清幽平靜，潭邊立著一個
+    set("long", "你剛走過來，卻發現這裏是一小方水潭，水潭之水清幽平靜，潭邊立着一個
 小亭(ting)。你只見月色清風，粼光閃爍，端的是舒心暢懷，清雅無比。你似乎
 已忘了密林中的兇殺嘶喊，剛才的緊迫就似已離你而去。
                                                            [1;33m●[37;0m       
@@ -72,10 +72,10 @@ void create()
                                [37m[37;0m             [1;34m~-------------------~[37;0m   
                                [37m |[37;0m              [1;31m_|_|_|___|_|_|_[37;0m      
                                [37m###################################[37;0m  
-[42m     [30m□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□   [37;0m
+[42m     [30m▂▃▄▅▆▇▆▅▄▅▆▅▄▃▂▁▂▃▄▅▆▇█▇▆▅▄▃▂▁   [37;0m
         \n");
 
-    // 奈何注：此圖復制自哈工大BBS，顏色設置與其並無二致。亭外岸邊的一豎是我加上的，
+    // 奈何注：此圖複製自哈工大BBS，顏色設置與其並無二致。亭外岸邊的一豎是我加上的，
     // 為了一些其他的效果。
     // 忘記原作是誰了，在 HJ 毫無商業用途之時，這個圖將保留。
     // 本圖亦是奈何的單機上的 welcome 圖，HOHO。可惜我對畫這個東西
@@ -84,12 +84,12 @@ void create()
     // naihe 23:25 03-10-20
 
     set("item_desc",([
-        "亭"   : "這是一個小亭子，精致風雅。亭外岸邊立著一柄權杖(zhang)，十分粗大。\n",
-        "小亭" : "這是一個小亭子，精致風雅。亭外岸邊立著一柄權杖(zhang)，十分粗大。\n",
-        "ting" : "這是一個小亭子，精致風雅。亭外岸邊立著一柄權杖(zhang)，十分粗大。\n",
-        "杖"   : "這是一柄權杖，似乎散發著一股詭異的氣息。它上邊刻有一些小字(zi)。\n",
-        "權杖" : "這是一柄權杖，似乎散發著一股詭異的氣息。它上邊刻有一些小字(zi)。\n",
-        "zhang": "這是一柄權杖，似乎散發著一股詭異的氣息。它上邊刻有一些小字(zi)。\n",
+        "亭"   : "這是一個小亭子，精緻風雅。亭外岸邊立着一柄權杖(zhang)，十分粗大。\n",
+        "小亭" : "這是一個小亭子，精緻風雅。亭外岸邊立着一柄權杖(zhang)，十分粗大。\n",
+        "ting" : "這是一個小亭子，精緻風雅。亭外岸邊立着一柄權杖(zhang)，十分粗大。\n",
+        "杖"   : "這是一柄權杖，似乎散發着一股詭異的氣息。它上邊刻有一些小字(zi)。\n",
+        "權杖" : "這是一柄權杖，似乎散發着一股詭異的氣息。它上邊刻有一些小字(zi)。\n",
+        "zhang": "這是一柄權杖，似乎散發着一股詭異的氣息。它上邊刻有一些小字(zi)。\n",
         "字"   : "「幽靈之族權杖 -- 幽靈的武士將由此降臨，暗夜的密林即將展開激戰」\n",
         "小字" : "「幽靈之族權杖 -- 幽靈的武士將由此降臨，暗夜的密林即將展開激戰」\n",
         "zi"   : "「幽靈之族權杖 -- 幽靈的武士將由此降臨，暗夜的密林即將展開激戰」\n",
@@ -203,7 +203,7 @@ void lost_hp( object me, string id )
     call_out("lost_hp", 5+random(6), me, id);
 }
 
-// 這是搜集各族權杖的 JOB。
+// 這是蒐集各族權杖的 JOB。
 void checking_job1( object me, string id )
 {
     string *job1_ids;
@@ -245,7 +245,7 @@ void checking_job1( object me, string id )
     // 好的！獲得獎勵。
     message_vision( HIY"$N"HIY"正在凝神細思，忽地自己所帶權杖都發出了耀眼光芒，不約而同地指向幽靈族的權杖！\n"NOR,me);
     msg = HIY + "";
-    // 權杖沒有顏色的設置，所以頓號這裡也不用寫顏色了。
+    // 權杖沒有顏色的設置，所以頓號這裏也不用寫顏色了。
     for( i=0; i<sizeof( job1_obj_list ); i++ )
     {
         if( i == 0 )
@@ -254,7 +254,7 @@ void checking_job1( object me, string id )
         destruct( job1_obj_list[i] );
     }
 
-    message_vision( msg +"……\n只見各個權杖接連飛出，猶如飛蛾撲火般撞向幽靈族權杖，竟全部消失不見了！\n$N"HIY"眼看此景，奇異莫名，只驚得說不出話來。\n"NOR, me );
+    message_vision( msg +"……\n只見各個權杖接連飛出，猶如飛蛾撲火般撞向幽靈族權杖，竟全部消失不見了！\n$N"HIY"眼看此景，奇異莫名，只驚得説不出話來。\n"NOR, me );
 
     delete("checking_job1_"+ id );
     award_score = JOB1_AWARD + random( JOB1_AWARD / 10 );
@@ -278,7 +278,7 @@ void checking_job2( object me, string id )
     }
     // 這是一個特別判斷。當玩家成功從臣民處得到寶物的重要組合部分時，
     // 將可得到一個“幽靈之令”，有此令在身者，將可以加倍速度得到武士JOB。
-    // 此令必須是屬于該玩家的。如玩家身上攜帶過多的令而又發生令牌未執行
+    // 此令必須是屬於該玩家的。如玩家身上攜帶過多的令而又發生令牌未執行
     // 自毀程序的情況，則會產生令牌無效的非BUG類錯誤。
     ling = present( "youling ling", me);
     if( ling && query("my_master", ling) == me
@@ -333,14 +333,14 @@ void checking_job2( object me, string id )
     // 以 object 型來設置JOB，當該NPC死掉(destruct)時，JOB自然結束。
 
     message_vision( BLU"\n$N"NOR+BLU"正在凝神細思，忽然間只聽得幽靈之族權杖發出一陣梟叫之聲！\n"
-        "一個模糊的影子從權杖中激射而出，竟然穿過$N"NOR+BLU"的身體，往外邊急沖而去！\n"
+        "一個模糊的影子從權杖中激射而出，竟然穿過$N"NOR+BLU"的身體，往外邊急衝而去！\n"
         "$N"NOR+BLU"驚魂未定，似已呆住，恍惚中見得影子似乎是往 "HIR"\""+random_room+"\""NOR+BLU" 去了。\n\n"NOR, me);
     me->start_busy(3);
     // ok,finish.
 }
 
 // 非常難的升級制度
-// naihe 05-9-3 18:18 按：好象又不是很難。我5天沖到 lv6, lv6 是什麼概念？……很強悍了
+// naihe 05-9-3 18:18 按：好像又不是很難。我5天衝到 lv6, lv6 是什麼概念？……很強悍了
 // 提高升級難度。
 int do_lvup(string arg)
 {
@@ -353,7 +353,7 @@ int do_lvup(string arg)
     if( !me_ok(me) ) return 0;
 
     if( me->is_busy() || query_temp("hj_need_waiting", me) )
-        return notify_fail("你還忙著呢，那麼重要的事情還是等有空的時候再說吧。\n");
+        return notify_fail("你還忙着呢，那麼重要的事情還是等有空的時候再説吧。\n");
 
     next_lv=query("huanjing2003/lv", me)+1;
     if( next_lv > 9 ) return notify_fail("你現在已經是最高的等級了！\n");
@@ -558,7 +558,7 @@ int do_lvup(string arg)
     me->save();
     me->start_busy(5);
 
-    message_vision( HIW"\n\n$N"HIW"大喝一聲，念咒文道：“浮雲清風，盡納我懷，幽靈再現，予我力量！”\n\n"
+    message_vision( HIW"\n\n$N"HIW"大喝一聲，唸咒文道：“浮雲清風，盡納我懷，幽靈再現，予我力量！”\n\n"
         "只見$N"HIW"全身銀光閃耀，能力修為明顯地上了一個層次！\n\n\n"NOR, me);
 
     rooms->save_player_level(query("name", me),query("id", me),query("huanjing2003/lv", me),time());

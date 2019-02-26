@@ -3,12 +3,12 @@ inherit ROOM;
 
 void create()
 {
-        set("short", HIR "【輪回司】" NOR);
+        set("short", HIR "【輪迴司】" NOR);
         set("long", HIR @LONG
 
                  輪        回        司
 
-    這裡陰陽交匯之處，周圍一片黑暗，只有一陣陣氤氳之氣從下方湧出。
+    這裏陰陽交匯之處，周圍一片黑暗，只有一陣陣氤氲之氣從下方湧出。
 
 LONG NOR );
 

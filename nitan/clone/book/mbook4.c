@@ -9,7 +9,7 @@ void create()
                 set_default_object(__FILE__);
         else {
                 set("unit", "本");
-                set("long", YEL "孫思邈所著的醫書，囊括了許多名家學說。\n" NOR);
+                set("long", YEL "孫思邈所著的醫書，囊括了許多名家學説。\n" NOR);
                 set("value", 50000);
                 set("material", "paper");
                 set("skill",

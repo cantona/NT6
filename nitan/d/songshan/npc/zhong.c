@@ -4,7 +4,7 @@ inherit NPC;
 #include <ansi.h>;
 void create()
 {
-        set_name("鐘鎮", ({ "zhong zhen", "zhen", "zhong" }) );
+        set_name("鍾鎮", ({ "zhong zhen", "zhen", "zhong" }) );
         set("long", "他是一個壯年漢子。嵩山派掌門人的師弟。\n");
         set("nickname", HIC"九曲劍"NOR);
         set("gender", "男性");

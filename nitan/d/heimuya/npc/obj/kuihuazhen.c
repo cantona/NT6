@@ -10,7 +10,7 @@ void create()
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("long",     "葵花針是一種專門打制的暗器，外形極薄。\n");
+                set("long",     "葵花針是一種專門打製的暗器，外形極薄。\n");
                 set("unit", "把");
                 set("base_unit", "把");
                 set("base_weight", 1);

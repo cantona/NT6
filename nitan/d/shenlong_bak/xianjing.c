@@ -45,8 +45,8 @@ void dropping()
         if( interactive(me = this_player()) )
         {
                 message_vision( HIR "$N的眼前突然出現一個無底的深淵...$N掉入了陷阱之中。\n" NOR, me);
-                message_vision( HIR "陷阱中的鋼板突然冒出許多鋒利的鋼針，深深地紮入了$N的身體中...\n" NOR, me);
-//                message_vision( HIR "一聲慘嚎，$N被紮死在陷阱中。\n" NOR, me);
+                message_vision( HIR "陷阱中的鋼板突然冒出許多鋒利的鋼針，深深地扎入了$N的身體中...\n" NOR, me);
+//                message_vision( HIR "一聲慘嚎，$N被扎死在陷阱中。\n" NOR, me);
 //                if (f>=2) me->set_skill("force",f-2);
 //                if (d>=2) me->set_skill("dodge",d-2);
 //                if (p>=2) me->set_skill("parry",p-2);

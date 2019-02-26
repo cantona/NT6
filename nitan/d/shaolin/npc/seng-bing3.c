@@ -73,13 +73,13 @@ void init()
          && ((fam=query("family", ob)) && fam["family_name"] != "少林派") )
         {
                 if( !query_temp("warned", ob)){
-                        command("say 你是誰？  怎麼闖到少林寺裡來了？！");
+                        command("say 你是誰？  怎麼闖到少林寺裏來了？！");
                         command("say 快給我速速離開，下次看到決不輕饒！");
                         set_temp("warned", 1, ob);
                 }
                 else if( query_temp("stay", ob)<10)addn_temp("stay", 1, ob);
                 else {
-                        command("say 大膽狂徒，竟敢闖到少林寺裡來撒野！！！\n");
+                        command("say 大膽狂徒，竟敢闖到少林寺裏來撒野！！！\n");
                         me->set_leader(ob);
                         remove_call_out("kill_ob");
                         call_out("kill_ob", 1, ob); 

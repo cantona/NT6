@@ -53,7 +53,7 @@ private void heart_beat()
         last = query("last_check");
         if ((t / 86400) != (last / 86400))
         {
-                // 天數發生了變化：復制同盟的名望信息
+                // 天數發生了變化：複製同盟的名望信息
                 all_fam = keys(league_fame) - ({ 0 });
                 last_league_fame = ([ ]);
 
@@ -195,7 +195,7 @@ public void league_kill(object killer, object victim)
 
         if (kexp < vexp * 3 && vexp >= 100000)
         {
-                // 殺手的經驗不是遠遠的大于對方，並且被殺的
+                // 殺手的經驗不是遠遠的大於對方，並且被殺的
                 // 人有一定的經驗，這將導致同盟聲望的降低。
                 fame_delta=vexp+query("score", killer)*2+
                              query("weiwang", killer)*10;
@@ -217,7 +217,7 @@ public void league_kill(object killer, object victim)
                         // 仇恨死者，同盟獲得額外的聲望
                         if (d[1] > 2000)
                                 CHANNEL_D->do_channel(this_object(), "rumor",
-                                        "聽說" + killer->name(1) + "擊斃了" +
+                                        "聽説" + killer->name(1) + "擊斃了" +
                                         victim->name(1) + "，為" +
                                         kfam + "出了一口惡氣。");
                         fame_delta += d[1] / 3;
@@ -241,7 +241,7 @@ public void league_kill(object killer, object victim)
                 return;
 
         // 仇恨程度和聲望的變化都是在一個數量級上(K經驗)，但
-        // 是仇恨程度低于聲望的變化。
+        // 是仇恨程度低於聲望的變化。
         vexp = vexp / 1000 + 1;
         if (vexp > 5000)
                 vexp = (vexp - 5000) / 16 + 2000;
@@ -257,7 +257,7 @@ public void league_kill(object killer, object victim)
                 return;
         }
 
-        // 每個同盟最多記錄若幹個仇人
+        // 每個同盟最多記錄若干個仇人
         if (! undefinedp(d = hatred[kid]))
         {
                 if (! arrayp(d) || sizeof(d) < 2 ||
@@ -302,7 +302,7 @@ public void remove_hatred(string id)
                 // 現在還沒有仇恨信息
                 return;
 
-        // 查閱所有的同盟
+        // 查閲所有的同盟
         foreach (fam in keys(dbase))
         {
                 reset_eval_cost();
@@ -433,7 +433,7 @@ public varargs void remove_member_from_league(mixed fname, string id)
         if (sizeof(member) < 1)
         {
                 CHANNEL_D->do_channel(this_object(), "rumor",
-                        "聽說" + fname + "人才凋零，昔日好友盡皆散去，從此江湖再無此字號了。");
+                        "聽説" + fname + "人才凋零，昔日好友盡皆散去，從此江湖再無此字號了。");
 
                 // 清除名望信息
                 map_delete(league_fame, fname);

@@ -6,8 +6,8 @@ void create()
         set("short", "墓室");
         set("long", @LONG
 這是一間寬敞的墓室。墓室頂上有一顆特別大的明珠閃閃
-發光。中央放著一副玉棺，周圍則堆放了無數的奇珍異玩。有
-張供桌擺在玉前,桌上放著盤子(panzi).墓室對面掛這幅青年少
+發光。中央放着一副玉棺，周圍則堆放了無數的奇珍異玩。有
+張供桌擺在玉前,桌上放着盤子(panzi).墓室對面掛這幅青年少
 婦的畫像。畫像上的少婦巧笑嫣然，和慘白的玉棺及碧油油的
 珠光形成了一幅奇詭的畫面。
 LONG);
@@ -41,7 +41,7 @@ LONG);
 
         set("item_desc", ([
                 "panzi" : @TEXT
-    你仔細看了一下盤子，這是一個玉盤，裡面放著數顆晶瑩的
+    你仔細看了一下盤子，這是一個玉盤，裏面放着數顆晶瑩的
     明珠。這些明珠似乎可以拿出來(pick zhu)。
 TEXT
         ]) );
@@ -70,11 +70,11 @@ int do_pick(string arg)
         if( !arg || arg!="zhu" )
                 return notify_fail("你要拿什麼? \n");
                 
-        if (me->is_busy()) return notify_fail("你正在忙著呢！\n");
+        if (me->is_busy()) return notify_fail("你正在忙着呢！\n");
 
         if ( query("pick_available") )
         {
-                message_vision("$N從盤子裡拿出來一顆明珠。\n",this_player() );
+                message_vision("$N從盤子裏拿出來一顆明珠。\n",this_player() );
                 obj = new ("/d/taohua/obj/mingzhu");
                 obj->move(me);
                 addn("pick_available", -1);
@@ -89,7 +89,7 @@ int do_pick(string arg)
                 }
                 if (count < 6)
                 {
-                        message_vision("\n突然墓室中打開了一道暗門，從裡面走出一個守墓家奴。\n"
+                        message_vision("\n突然墓室中打開了一道暗門，從裏面走出一個守墓家奴。\n"
                                        "對$N喝道：賊子敢爾！連夫人的東西你也敢動！\n", me);
    
                         killer->move(environment(me));

@@ -26,11 +26,11 @@ int restore()
 
 void create()
 {
-        set_name("于小姐", ({ "miss yu", "miss", "yu" }));
+        set_name("於小姐", ({ "miss yu", "miss", "yu" }));
         set("gender", "女性");
         set("age", 20);
         set("title", HIG "武林大會" NOR);
-        set("nickname", HIY "籌備處秘書" NOR);
+        set("nickname", HIY "籌備處祕書" NOR);
         set("str", 25);
         set("con", 25);
         set("spi", 25);
@@ -166,14 +166,14 @@ int do_finish()
               return notify_fail(HIY "你還沒有名次數據，不能結束！\n" NOR);
 
         tell_object(this_player(), HIY "第" + chinese_number(n) +
-                    "屆比賽宣布結束。\n" NOR);
+                    "屆比賽宣佈結束。\n" NOR);
 
         caipiao = query("xuancp");
         if (! mapp(caipiao))
         {
-              tell_object(this_player(), HIY "沒有人參加競猜活動。\n" NOR);
+              tell_object(this_player(), HIY "沒有人蔘加競猜活動。\n" NOR);
               message("vision", HIW "【武林盛會】" + this_object()->name() +
-                      "：本屆比武大會沒有人參加彩票競猜活動。\n" NOR,
+                      "：本屆比武大會沒有人蔘加彩票競猜活動。\n" NOR,
                       all_interactive());
 
               over();
@@ -360,7 +360,7 @@ int do_baoming(string arg)
         mapping baoming_list;
 
         if( query("combat_exp", me)<500000 )
-             return notify_fail("于小姐白了你一眼：就你這兩下子，去搬個凳子坐在擂台下看看算了。\n");
+             return notify_fail("於小姐白了你一眼：就你這兩下子，去搬個凳子坐在擂台下看看算了。\n");
 
         if (! query("start_baoming"))
         {
@@ -376,14 +376,14 @@ int do_baoming(string arg)
                    return 1;
              }
              command("say 這位" + RANK_D->query_respect(me) +
-                     "別著急呀，還沒有到武林大會召開的時間呢。");
+                     "彆着急呀，還沒有到武林大會召開的時間呢。");
              return 1;
         }
 
         if (! arg || sscanf(arg, "%d %d", mca, mcb) != 2)
         {
              msg = "指令格式：baoming <欲參賽的名次一> <欲參賽的名次二>\n";
-             msg += "說明：每個ID可以參加兩個名次的角逐。\n例如：你想參加";
+             msg += "説明：每個ID可以參加兩個名次的角逐。\n例如：你想參加";
              msg += "第一名和第三名的比賽，則打入 baoming 1 3\n";
              me->start_more(msg);
              return 1;
@@ -434,15 +434,15 @@ int accept_object(object me, object ob)
                          {
                               if (bm[xs[i]][2] == query_ip_number(me))
                               {
-                                   tell_object(me, "于小姐對你道：你的IP" +
-                                       "有人參加比賽，你不能參與競猜。\n");
+                                   tell_object(me, "於小姐對你道：你的IP" +
+                                       "有人蔘加比賽，你不能參與競猜。\n");
                                    return 0;
                               }
                          }
                          piao = new(__DIR__"obj/piao");
                          set("baoming", query("baoming"), piao);
                          piao->move(me);
-                         message_vision("于小姐撕下一張彩票遞給$N。\n", me);
+                         message_vision("於小姐撕下一張彩票遞給$N。\n", me);
                          destruct(ob);
                          return 1;
                    } else
@@ -498,8 +498,8 @@ int accept_object(object me, object ob)
               {
                    if (bm[xs[i]][2] == query_ip_number(me))
                    {
-                        tell_object(me, "于小姐對你道：你的IP" +
-                                    "有人參加比賽，你不能參與競猜。\n");
+                        tell_object(me, "於小姐對你道：你的IP" +
+                                    "有人蔘加比賽，你不能參與競猜。\n");
                         return 0;
                    }
               }

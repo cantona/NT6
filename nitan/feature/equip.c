@@ -22,7 +22,7 @@ int wear()
         if( !owner || !owner->is_character() ) return 0;
 
         if( query("no_identify") )
-                return notify_fail(this_object()->name() + "需要鑒定後才可以使用。\n");
+                return notify_fail(this_object()->name() + "需要鑑定後才可以使用。\n");
 
         // Does the consistence valid ?
         if( query("consistence") < 1 )
@@ -46,32 +46,32 @@ int wear()
         if( type == "hands" &&
             weapon=query_temp("weapon", owner)){
                 if( query("flag", weapon)&TWO_HANDED )
-                        return notify_fail("你必須空出一只手來才能裝備"+this_object()->name()+"。\n");
+                        return notify_fail("你必須空出一隻手來才能裝備"+this_object()->name()+"。\n");
                 if( query_temp("secondary_weapon", owner )
                  || query_temp("armor/finger", owner )
                  || query_temp("handing", owner) )
-                        return notify_fail("你必須空出一只手來才能裝備"+this_object()->name()+"。\n");
+                        return notify_fail("你必須空出一隻手來才能裝備"+this_object()->name()+"。\n");
         }
 
         if( type == "hands" &&
             query_temp("armor/finger", owner) &&
             query_temp("handing", owner) )
-                        return notify_fail("你必須空出一只手來才能裝備"+this_object()->name()+"。\n");
+                        return notify_fail("你必須空出一隻手來才能裝備"+this_object()->name()+"。\n");
 
         if( type == "finger" &&
             weapon=query_temp("weapon", owner)){
                 if( query("flag", weapon)&TWO_HANDED )
-                        return notify_fail("你必須空出一只手來才能裝備"+this_object()->name()+"。\n");
+                        return notify_fail("你必須空出一隻手來才能裝備"+this_object()->name()+"。\n");
                 if( query_temp("secondary_weapon", owner )
                  || query_temp("armor/hands", owner )
                  || query_temp("handing", owner) )
-                        return notify_fail("你必須空出一只手來才能裝備"+this_object()->name()+"。\n");
+                        return notify_fail("你必須空出一隻手來才能裝備"+this_object()->name()+"。\n");
         }
 
         if( type == "finger" &&
             query_temp("armor/hands", owner) &&
             query_temp("handing", owner) )
-                        return notify_fail("你必須空出一只手來才能裝備"+this_object()->name()+"。\n");
+                        return notify_fail("你必須空出一隻手來才能裝備"+this_object()->name()+"。\n");
 
         if( userp(owner) && !wizardp(owner) &&
             (!query("reborn/times", owner) || query("id", owner) != this_object()->item_owner()) &&
@@ -234,7 +234,7 @@ varargs int wield(int left)
         if( !owner || !owner->is_character() ) return 0;
 
         if( query("no_identify") )
-                return notify_fail(this_object()->name() + "需要鑒定後才可以使用。\n");
+                return notify_fail(this_object()->name() + "需要鑑定後才可以使用。\n");
 
         // Does the consistence valid ?
         if( query("consistence") < 1 )
@@ -253,7 +253,7 @@ varargs int wield(int left)
         }
 
         if( query("skill_type") == "throwing" )
-                return notify_fail("暗器只能拿在手裡，無需裝備。\n");
+                return notify_fail("暗器只能拿在手裏，無需裝備。\n");
 
         // If handing it now, stop handing
         if( query_temp("handing", owner) == this_object() )
@@ -304,9 +304,9 @@ varargs int wield(int left)
                         return notify_fail("你的內力不足，無法裝備此武器。\n");
         }
 
-        flag = query("flag"); // 雙手武器標志 1:必須雙手才能裝備,2:可以不同手裝備
+        flag = query("flag"); // 雙手武器標誌 1:必須雙手才能裝備,2:可以不同手裝備
 
-        if( left ) { // 指定將兵器裝備于左手
+        if( left ) { // 指定將兵器裝備於左手
                 if( !(flag & SECONDARY) )
                         return 0;
                 if( query_temp("secondary_weapon", owner) )
@@ -326,12 +326,12 @@ varargs int wield(int left)
                 if( query_temp("armor/hands", owner) &&
                     (query_temp("armor/finger", owner) ||
                      query_temp("handing", owner)) )
-                        return notify_fail("你必須空出一只手才能裝備該武器。\n");
+                        return notify_fail("你必須空出一隻手才能裝備該武器。\n");
 
                 if( query_temp("armor/finger", owner) &&
                     (query_temp("armor/hands", owner) ||
                      query_temp("handing", owner)) )
-                        return notify_fail("你必須空出一只手才能裝備該武器。\n");
+                        return notify_fail("你必須空出一隻手才能裝備該武器。\n");
 
                 // If we are are using any weapon?
                 if( !(old_weapon=query_temp("weapon", owner)) )
@@ -358,7 +358,7 @@ varargs int wield(int left)
 
                 // We have both hands wearing something.
                 } else
-                        return notify_fail("你必須空出一只手來使用武器。\n");
+                        return notify_fail("你必須空出一隻手來使用武器。\n");
         }
 
         apply1 = keys(weapon_prop);

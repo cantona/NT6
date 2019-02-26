@@ -13,7 +13,7 @@ void create()
         set("title", HIG "回春堂" NOR);
         set("nickname",HIR "跌打名醫" NOR);
         set("long",
-                "這便是京城回春堂藥舖的跌打名醫姚春，身材幹\n"
+                "這便是京城回春堂藥鋪的跌打名醫姚春，身材幹\n"
                 "瘦，其貌不揚。當年天地會徐天川受了傷，便由\n"
                 "他醫治，此人既是名醫，擒拿短打也是一絕。\n");
         set("attitude", "heroism");
@@ -44,9 +44,9 @@ void create()
                 "徐天川"  :  "那老猴兒便是我給醫治的，怎麼你也知道。\n",
                 "煉丹"    : (:do_liandan:),
                 "liandan" : (:do_liandan:),
-                "quest"   :  "在我這裡可以幫著我「" HIR "煉丹" NOR + CYN
+                "quest"   :  "在我這裏可以幫着我「" HIR "煉丹" NOR + CYN
                              "」，如果願意可以想我詢問。\n",
-                "job"     :  "在我這裡可以幫著我「" HIR "煉丹" NOR + CYN
+                "job"     :  "在我這裏可以幫着我「" HIR "煉丹" NOR + CYN
                              "」，如果願意可以想我詢問。\n",
                 "藥材"    :  "去找我的小童，他會幫你處理。\n",
                 "原料"    :  "去找我的小童，他會幫你處理。\n",
@@ -56,14 +56,14 @@ void create()
                 "學醫術"  : (: ask_me :),
                 "學習醫術": (: ask_me :),
                 "煉丹術"  : (: ask_me :),
-                "針灸術"  : (: ask_me :),
+                "鍼灸術"  : (: ask_me :),
                 "本草術理": (: ask_me :),
                 "基本醫術": (: ask_me :),
                 "學習"    : (: ask_me :),
                 "學技"    : (: ask_me :),
                 "銀針"    : (: ask_yinzhen :),
                 "針"      : (: ask_yinzhen :),
-                "針灸"    : (: ask_yinzhen :),
+                "鍼灸"    : (: ask_yinzhen :),
         ]) );
 
         setup();
@@ -87,7 +87,7 @@ int do_liandan()
         {
                 if( query_temp("liandan", me)<4 )
                 {
-                        command("say 不是要去煉丹嗎，怎麼還在這呆著？\n");
+                        command("say 不是要去煉丹嗎，怎麼還在這呆着？\n");
                         return 1;
                 }
                 message_vision(CYN "姚春對$N" CYN "微笑道：煉丹是個修身養性的"
@@ -113,7 +113,7 @@ int do_liandan()
                 return 1;
         } else
         {
-                message_vision(CYN "姚春對$N" CYN "點了點頭，說道：煉丹是考驗"
+                message_vision(CYN "姚春對$N" CYN "點了點頭，説道：煉丹是考驗"
                                "人的定力修為，心不靜則事不成，你去向童子詢問「"
                                HIG "藥材" NOR + CYN "」吧。\n", me);
                 set_temp("liandan", 1, me);
@@ -166,7 +166,7 @@ int recognize_apprentice(object me, string skill)
         if (skill != "medical" &&
             skill != "zhenjiu-shu")
         {
-                command("say 我只能傳授基本醫術和針灸術。");
+                command("say 我只能傳授基本醫術和鍼灸術。");
                 return -1;
         }
 
@@ -183,7 +183,7 @@ string ask_yinzhen()
                 return "你走吧，我的神針可不會給你這樣的人。";
 
         if ((int)me->query_skill("zhenjiu-shu", 1) < 60)
-                return "你針灸術還不嫻熟，隨便用針會弄出人命來的。";
+                return "你鍼灸術還不嫻熟，隨便用針會弄出人命來的。";
 
         if (present("yin zhen", this_player()))
                 return "你身上不是還有一根嗎？";
@@ -191,6 +191,6 @@ string ask_yinzhen()
         ob = new("/d/beijing/obj/yinzhen");
         ob->move(me);
 
-        message_vision(HIW "\n姚春從針盒裡輕輕拈出一根銀針，遞給了$N" HIW "。\n" NOR, me);
+        message_vision(HIW "\n姚春從針盒裏輕輕拈出一根銀針，遞給了$N" HIW "。\n" NOR, me);
                 return "這針可是用來救命的，好好的利用它為人治病吧。";
 }

@@ -4,9 +4,9 @@ inherit NPC;
 
 void create()
 {
-        set_name("門衛", ({ "men wei", "wei"}));
+        set_name("門衞", ({ "men wei", "wei"}));
         set("long", 
-        "他是唐門世家的門衛，對保護唐門世家可謂忠貞不二。\n");
+        "他是唐門世家的門衞，對保護唐門世家可謂忠貞不二。\n");
         set("gender", "男性");
         set("age", 35);
         set("attitude", "peaceful");

@@ -14,7 +14,7 @@ int perform(object me, object target)
                 return notify_fail("你已經運起「九陰歸元」了。\n");
 
         if ((int)me->query_skill("shexing-lifan", 1)< 150)
-                return notify_fail("你的蛇行貍翻等級不夠，難以施展此項絕技！\n");
+                return notify_fail("你的蛇行狸翻等級不夠，難以施展此項絕技！\n");
 
         if ((int)me->query_dex() < 30)
                 return notify_fail("你的身法不夠使用「九陰歸元」絕技！\n");

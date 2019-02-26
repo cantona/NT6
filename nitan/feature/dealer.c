@@ -300,7 +300,7 @@ varargs int do_list(string arg)
                 return notify_fail("現在正在盤庫，請等一下再來。\n");
 
         if( !wizardp(me) && me->query_condition("killer") )
-                return notify_fail(CYN "店舖不做殺人犯的生意！\n" NOR);
+                return notify_fail(CYN "店鋪不做殺人犯的生意！\n" NOR);
 
         if( me->is_busy() ) {
                 write(BUSY_MESSAGE);
@@ -373,7 +373,7 @@ int do_buy(string arg)
                 return notify_fail("你想買什麼？\n");
 
         if( (me = this_player())->is_busy() ) {
-                write("你正在忙著呢！\n");
+                write("你正在忙着呢！\n");
                 return 1;
         }
 
@@ -382,7 +382,7 @@ int do_buy(string arg)
 
         if( query_temp("busy") ) {
                 write(CYN + name() + "不耐煩道：“沒看見我這"
-                      "兒正忙著麼？”\n" NOR);
+                      "兒正忙着麼？”\n" NOR);
                 return 1;
         }
 
@@ -396,7 +396,7 @@ int do_buy(string arg)
                     (room = find_object(start_room)) != environment() ) {
                         // I am not in start room.
                         message_vision("$N大叫一聲：“不好，我怎麼跑到這兒來了？”\n"
-                                       "說罷頭也不回的急急忙忙的溜走了。\n", this_object());
+                                       "説罷頭也不回的急急忙忙的溜走了。\n", this_object());
                         if( !objectp(room) ||
                             !mapp(room_obmap = query_temp("objects", room)) ||
                             member_array(this_object(), values(room_obmap)) == -1 ) {
@@ -558,7 +558,7 @@ int do_buy(string arg)
         switch (MONEY_D->player_pay(me, value))
         {
         case 0:
-                write(CYN + name() + "冷笑道：“窮光蛋，一邊呆著去！”\n" NOR);
+                write(CYN + name() + "冷笑道：“窮光蛋，一邊呆着去！”\n" NOR);
                 return 1;
         case 2:
                 write(CYN + name() + "皺眉道：“您還有沒有零"
@@ -584,10 +584,10 @@ int do_buy(string arg)
                                 command("say 既然大家都是做買賣的，就給你打點折吧。");
                                 break;
                         case 1:
-                                command("say 也罷，既然是大老板光顧，就便宜點賣給你吧。");
+                                command("say 也罷，既然是大老闆光顧，就便宜點賣給你吧。");
                                 break;
                         default:
-                                command("say 呵呵。大老板又來採購麼？那麼就給你打點折吧。");
+                                command("say 呵呵。大老闆又來採購麼？那麼就給你打點折吧。");
                                 break;
                         }
                 }
@@ -642,7 +642,7 @@ int do_buy(string arg)
                 }
 
                 all_goods[i]->amount -= amount;
-                message_vision(sprintf("$N從$n那裡買下了%s%s%s%s。%s\n",
+                message_vision(sprintf("$N從$n那裏買下了%s%s%s%s。%s\n",
                         all_goods[i]->amount == 0 ? "最後" : "",
                         chinese_number(amount),
                         all_goods[i]->unit,
@@ -866,7 +866,7 @@ int do_sell(string arg)
 
         if( ob->is_character() )
         {
-                write(CYN + name() + "道：“哼！我這裡做正經生"
+                write(CYN + name() + "道：“哼！我這裏做正經生"
                       "意，不販賣這些！”\n" NOR);
                 return 1;
         }
@@ -893,7 +893,7 @@ int do_sell(string arg)
                 return 1;
         }
 
-        if( is_vendor_good(ob) != "" ) // 可以收購當舖數量有限的商品
+        if( is_vendor_good(ob) != "" ) // 可以收購當鋪數量有限的商品
         {
                 write(CYN + name() + "笑道：“我賣給你好不好？”\n" NOR);
                 return 1;

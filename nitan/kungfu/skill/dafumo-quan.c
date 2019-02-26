@@ -20,7 +20,7 @@ mapping *action = ({
         "lvl"   : 30,
         "damage_type": "瘀傷"
 ]),
-([      "action": "$N左右雙拳齊出，風聲呼呼，一招「遊龍式」擊向$n$l",
+([      "action": "$N左右雙拳齊出，風聲呼呼，一招「游龍式」擊向$n$l",
         "force" : 310,
         "attack": 75,
         "dodge" : 100,
@@ -159,7 +159,7 @@ mixed valid_damage(object ob, object me, int damage, object weapon)
                         break;
                 case 1:
                         result += (["msg" : HIG "$n" HIG "怒喝一聲，出拳格擋，拳風呼呼，$N" HIG
-                                            "頓覺得雙臂酸麻。\n" NOR]);
+                                            "頓覺得雙臂痠麻。\n" NOR]);
                         break;
                 default:
                         result += (["msg" : HIG "$n" HIG "不退反進，一拳直出，鋼勁無比，$N"

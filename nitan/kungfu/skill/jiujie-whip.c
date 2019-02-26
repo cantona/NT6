@@ -23,9 +23,9 @@ mapping *action = ({
         "lvl" : 90,
         "skill_name" : "巨蟒翻身",
 ]),
-([        "action": "$N將手中$w向下一沉，一招"HIG"「風卷殘雲」"NOR"從下向上往$n腰部卷去",
+([        "action": "$N將手中$w向下一沉，一招"HIG"「風捲殘雲」"NOR"從下向上往$n腰部捲去",
         "lvl" : 120,
-        "skill_name" : "風卷殘雲",
+        "skill_name" : "風捲殘雲",
 ]),
 });
 

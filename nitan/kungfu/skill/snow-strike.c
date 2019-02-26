@@ -8,7 +8,7 @@ string martialtype() { return "skill"; }
 string *order = ({""HIY"", ""HIG"", ""RED"", ""MAG"", ""YEL"", ""HIC"", ""HIW"", ""HIR"",""HIB"", ""CYN"",""WHT"",""HIM"",""BLU""});
 
 mapping *action = ({
-([        "action":  "$N一招"+(order[random(13)])+"「梅林小酌」"NOR"，雙手揮洒自如，輕飄飄地點向$n$l", 
+([        "action":  "$N一招"+(order[random(13)])+"「梅林小酌」"NOR"，雙手揮灑自如，輕飄飄地點向$n$l", 
         "lvl"    : 0,
         "skill_name" : "梅林小酌"
 ]),
@@ -24,9 +24,9 @@ mapping *action = ({
         "lvl"    : 30,
         "skill_name" : "霜雪漫天"
 ]),
-([        "action":  "$N使一招"+(order[random(13)])+"「余雪殘梅」"NOR"，身隨意轉，隨手拍向$n$l",
+([        "action":  "$N使一招"+(order[random(13)])+"「餘雪殘梅」"NOR"，身隨意轉，隨手拍向$n$l",
         "lvl"    : 40,
-        "skill_name" : "余雪殘梅"
+        "skill_name" : "餘雪殘梅"
 ]),
 ([        "action":  "$N長身一笑，縱身而起，一式" +(order[random(13)])+"「寒江飄梅」"NOR"，圍繞$n的$l輕飄飄接連出掌",
         "lvl"    : 50,

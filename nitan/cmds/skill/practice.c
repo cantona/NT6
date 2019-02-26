@@ -56,7 +56,7 @@ int main(object me, string arg)
         if( n = ACTION_D->query_action("lianxi_times") )
                 c *= n;
         if( times < 1 || times > c )
-                return notify_fail("練習次數必須大于一次，但不能超過" + chinese_number(c) + "次。\n");
+                return notify_fail("練習次數必須大於一次，但不能超過" + chinese_number(c) + "次。\n");
 
         if( !stringp(skillname = me->query_skill_mapped(base_skname)) )
                 return notify_fail("你只能練習用 enable 指定的特殊技能。\n");
@@ -80,7 +80,7 @@ int main(object me, string arg)
 
         if( !XUE_CMD->can_learn(me, skillname) )
 
-        notify_fail("你試著練習" + to_chinese(skillname) + "，但是並沒有任何進步。\n");
+        notify_fail("你試着練習" + to_chinese(skillname) + "，但是並沒有任何進步。\n");
         if( !me->can_improve_skill(skillname) )
                 return notify_fail("也許是缺乏實戰經驗，你的練習總沒法進步。\n");
 
@@ -142,7 +142,7 @@ int main(object me, string arg)
                           skill_basic > skill? 0: 1);
 
         if( t3 > 0 )
-                write(HIC "你試著把" + to_chinese(skillname) +
+                write(HIC "你試着把" + to_chinese(skillname) +
                       "練了" + chinese_number(t3)+"趟。\n" NOR);
 
         if( t3 >= times )
@@ -159,7 +159,7 @@ int help(object me)
 這個指令讓你練習某個種類的技能，這個技能必須是經過 enable 的專業技能。
 
 如果你對這方面的基本技能夠高，可以經由練習直接升級，而且升級的上限只跟
-你基本技能的等級有關，換句話說，勤加練習是使你的所學「青出于藍勝于藍」
+你基本技能的等級有關，換句話説，勤加練習是使你的所學「青出於藍勝於藍」
 的唯一途徑，當然，在這之前你必須從實際運用中獲得足夠的經驗以提升你的基
 本技能。
 TEXT );

@@ -42,12 +42,12 @@ mapping miji_obj = ([
         "/clone/book/qijianpu":30,                    //靈鷲密室
         "/clone/book/qiankun_book":30,                //明教密室
         "/clone/book/pixie_book":60,                  //華山山崖
-        "/clone/book/parry_book":7,                   //書店老板購買
+        "/clone/book/parry_book":7,                   //書店老闆購買
         "/clone/book/liuyang_book2":30,               //靈鷲密室
         "/clone/book/liuyang_book1":30,               //靈鷲密室
         "/clone/book/jiuyin2":30,                     //古墓後廳、黃藥師
         "/clone/book/jiuyin1":30,                     //古墓後廳
-        "/clone/book/jiuyang-book":33,                //昆侖谷底
+        "/clone/book/jiuyang-book":33,                //崑崙谷底
         "/clone/book/jinyantu":33,                    //馬鈺
         "/clone/book/jinshe3":26,                     //華山山洞
         "/clone/book/jinshe2":26,                     //華山山洞

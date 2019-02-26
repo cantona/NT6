@@ -13,7 +13,7 @@ void create()
         else {
                 set("unit", "件");
                 set("long",
-"這是一件華貴無比的錦花袍，上面繡著各種花草，還有一股香氣．\n");
+"這是一件華貴無比的錦花袍，上面繡着各種花草，還有一股香氣．\n");
                 set("value", 5000);
                 set("material", "cloth");
                 set("armor_type", "cloth");

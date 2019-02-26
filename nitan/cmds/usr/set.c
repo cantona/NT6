@@ -143,7 +143,7 @@ int main(object me, string arg)
  
         opt_add = 0;
         opt_del = 0;
-        // mysql裡無法保存\n
+        // mysql裏無法保存\n
         arg = replace_string(arg, "\"", "~");
         arg = replace_string(arg, "\\", "");
         if (sscanf(arg, "%s -a %s", term, data) == 2 ||

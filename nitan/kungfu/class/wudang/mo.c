@@ -15,8 +15,8 @@ void create()
         set_name("莫聲谷", ({ "mo shenggu", "mo" }));
         set("nickname", "武當七俠");
         set("long",
-                "他就是張三豐的七弟子莫聲谷。\n"
-                "他看起來二十多歲，顯得稚氣未脫。\n"
+                "他就是張三丰的七弟子莫聲谷。\n"
+                "他看起來二十多歲，顯得稚氣未脱。\n"
                 "但也是江湖中行俠仗義，聲明遠播的俠客。\n");
         set("gender", "男性");
         set("age", 40);
@@ -79,9 +79,9 @@ void create()
                 // "qingshu"  : (: ask_me1 :),
                 // "teach"    : (: ask_me2 :),
                 // "指教"     : (: ask_me2 :),
-                "石柱"     : "在石柱面壁可以大有收獲的。",
-                "面壁"     : "面壁是一定要注明技能的。",
-                "張三豐"   : "我恩師學究天人，尤其是他的道學心法。"
+                "石柱"     : "在石柱面壁可以大有收穫的。",
+                "面壁"     : "面壁是一定要註明技能的。",
+                "張三丰"   : "我恩師學究天人，尤其是他的道學心法。"
         ]));
 
         create_family("武當派", 2, "弟子");
@@ -123,7 +123,7 @@ void attempt_apprentice(object ob)
         if ((int)ob->query_skill("taoism", 1) < 50)
         {
                 command("say 習武是為了強身健體，一味的練武是不可取的做！");
-                command("say 我看你還需要在修身養性方面多鍛煉鍛煉，以提高你"
+                command("say 我看你還需要在修身養性方面多鍛鍊鍛鍊，以提高你"
                         "的道德心法。");
                 return;
         }
@@ -162,7 +162,7 @@ mixed ask_skill1()
                 return "你的內力修為太淺，修煉高了再來吧。";
 
         message_vision(HIY "$n" HIY "點了點頭，將$N" HIY "招至"
-                       "身邊，在耳旁低聲細說良久，$N" HIY "聽"
+                       "身邊，在耳旁低聲細説良久，$N" HIY "聽"
                        "後會心\n的一笑，看來大有所悟。\n" NOR, me,
                        this_object());
         command("say 這招再簡單不過，自己下去練吧。");
@@ -208,7 +208,7 @@ mixed ask_skill2()
                 return "你的內力修為太淺，修煉高了再來吧。";
 
         message_vision(HIY "$n" HIY "微微一笑，從懷中輕輕取出了一本"
-                       "劍譜，指著其中一段對$N" HIY "細\n說良久，$N"
+                       "劍譜，指着其中一段對$N" HIY "細\n説良久，$N"
                        HIY "一邊聽一邊點頭。\n" NOR, me, this_object());
         command("say 你懂了嗎？");
         tell_object(me, HIC "你學會了「太極初升」。\n" NOR);

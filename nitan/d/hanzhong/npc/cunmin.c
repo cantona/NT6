@@ -21,7 +21,7 @@ void create()
         set("chat_msg", ({
 "村民道：多虧全真教的道爺們，這山上咬莊稼的獾子全讓他們給趕跑了。\n",
 "村民突然滿臉恍然的神色：今年的收成不錯，我得跟全真教的道爺們送點
-兒去，請他們嘗嘗鮮。\n",
+兒去，請他們嚐嚐鮮。\n",
         }) );
         carry_object(CLOTH_DIR"cloth")->wear();
         add_money("coin",100);

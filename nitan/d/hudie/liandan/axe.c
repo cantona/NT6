@@ -39,10 +39,10 @@ int do_kanfa()
     	 || query("id", weapon) != "futou" )
     	if( !objectp(weapon=query_temp("secondary_weapon", me) )
     	 || query("id", weapon) != "futou" )
-        	return notify_fail("你不拿著工具，找到藥材也砍不下來啊！\n");
+        	return notify_fail("你不拿着工具，找到藥材也砍不下來啊！\n");
 
   	//if( !query("outdoors", environment(me)) )
-  	//return notify_fail("你在房間裡能砍到什麼？砍人嗎？\n");
+  	//return notify_fail("你在房間裏能砍到什麼？砍人嗎？\n");
 
     if( strsrch(query("short", environment(me)),"林")<0
      && strsrch(query("short", environment(me)),"木")<0
@@ -52,7 +52,7 @@ int do_kanfa()
               && strsrch(query("long", environment(me)),"樹")<0 )
 
 
-  	return notify_fail("只有樹林裡才有可能找到藥用樹木!\n");
+  	return notify_fail("只有樹林裏才有可能找到藥用樹木!\n");
   	
 	if(me->is_busy())
   	return notify_fail("你現在正忙,等一下再砍吧!\n");
@@ -74,7 +74,7 @@ void finish(object me, object ob)
   	if(random(5)>4) 
 	{
   		me->start_busy(2);
-  		message_vision( HIW"尋找一番之後$N一無所獲，只得失望地嘆了口氣。\n"NOR, this_player());
+  		message_vision( HIW"尋找一番之後$N一無所獲，只得失望地歎了口氣。\n"NOR, this_player());
 
    	}
   

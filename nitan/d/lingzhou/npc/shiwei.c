@@ -5,10 +5,10 @@ inherit NPC;
 
 void create()
 {
-        set_name("侍衛", ({ "shi wei", "wei", "guard" }) );
+        set_name("侍衞", ({ "shi wei", "wei", "guard" }) );
         set("gender", "男性");
         set("age", 35);
-        set("long", "這是西夏黃帝的貼身侍衛，他太陽穴高高鼓起，武功不低。\n");
+        set("long", "這是西夏黃帝的貼身侍衞，他太陽穴高高鼓起，武功不低。\n");
         set("combat_exp", 500000);
         set("shen_type", -1);
         set("attitude", "aggressive");
@@ -36,7 +36,7 @@ void create()
         set_skill("parry", 150);
         set_skill("dodge", 150);
         
-        set("no_get", "侍衛對你而言太重了");
+        set("no_get", "侍衞對你而言太重了");
         setup();
         carry_object(WEAPON_DIR"gangjian")->wield();
         carry_object(ARMOR_DIR"tiejia")->wear();

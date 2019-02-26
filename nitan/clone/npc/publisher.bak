@@ -27,10 +27,10 @@ string query_save_file()
 
 void create()
 {
-        set_name("王老板", ({ "wang laobang", "publisher", "wang"}));
+        set_name("王老闆", ({ "wang laobang", "publisher", "wang"}));
         set("long", "這是一位白白胖胖的中年人，身子微微發福，是個富商豪紳模樣。\n"
-        "他手中提著一個小箱子，正笑眯眯地上下打量著你。\n"
-        "據說他曾經試過科舉，但幾次不中後便改行以販書為業了。\n");
+        "他手中提着一個小箱子，正笑眯眯地上下打量着你。\n"
+        "據説他曾經試過科舉，但幾次不中後便改行以販書為業了。\n");
         set("gender", "男性");
         set("age", 45);
         set("weight", 50000);
@@ -130,7 +130,7 @@ int do_publish(string arg)
     if( !query("publishable", this_book) )
             return notify_fail("對不起！這樣東西我無法刊印。\n");
     if(me->is_busy())
-            return notify_fail("你現在正忙著呢。\n");
+            return notify_fail("你現在正忙着呢。\n");
 
 
 
@@ -169,7 +169,7 @@ int do_discard(string arg)
         me = this_player();
 
     if(me->is_busy())
-            return notify_fail("你現在正忙著呢。\n");
+            return notify_fail("你現在正忙着呢。\n");
 
         k = 0;
                 book_found = 0;
@@ -178,7 +178,7 @@ int do_discard(string arg)
                 {
             inv = all_inventory(this_object());
                         if(!sizeof(inv))
-                            return notify_fail("你想收回的東西我這裡沒有。\n");
+                            return notify_fail("你想收回的東西我這裏沒有。\n");
             for (i = 0; i < sizeof(inv); i++) 
                      {
                 if( query("can_sell_book", inv[i]) )
@@ -192,16 +192,16 @@ int do_discard(string arg)
                                  }
                     }
                         if (!book_found)
-                                return notify_fail("你想收回的東西我這裡沒有。\n");
+                                return notify_fail("你想收回的東西我這裏沒有。\n");
                 }
                 else 
                 {
-                        return notify_fail("你想收回的東西我這裡沒有。\n");
+                        return notify_fail("你想收回的東西我這裏沒有。\n");
         }
 
                 
         if (query_temp("busy"))
-                return notify_fail("喲，抱歉啊，我這兒正忙著呢……您請稍候。\n");
+                return notify_fail("喲，抱歉啊，我這兒正忙着呢……您請稍候。\n");
 
                 if( (query("new_book", ob))["arthur_id"] != query("id", me) && !wizardp(me) )
                         return notify_fail("你又不是主人。\n");
@@ -276,7 +276,7 @@ int do_buy(string arg)
                 {
             inv = all_inventory(this_object());
                         if(!sizeof(inv))
-                            return notify_fail("你想買的東西我這裡沒有。\n");
+                            return notify_fail("你想買的東西我這裏沒有。\n");
             for (i = 0; i < sizeof(inv); i++) 
                      {
                 if( query("can_sell_book", inv[i]) )
@@ -289,27 +289,27 @@ int do_buy(string arg)
                                  }
                     }
                         if (!book_found)
-                                return notify_fail("你想買的東西我這裡沒有。\n");
+                                return notify_fail("你想買的東西我這裏沒有。\n");
                 }
                 else 
                 {
-                        return notify_fail("你想買的東西我這裡沒有。\n");
+                        return notify_fail("你想買的東西我這裏沒有。\n");
         }
 
                 
         if (query_temp("busy"))
-                return notify_fail("喲，抱歉啊，我這兒正忙著呢……您請稍候。\n");
+                return notify_fail("喲，抱歉啊，我這兒正忙着呢……您請稍候。\n");
                                 
 
         
   switch(MONEY_D->player_pay(this_player(),query("value", ob))){
         case 0:
-                return notify_fail("窮光蛋，一邊呆著去！\n");
+                return notify_fail("窮光蛋，一邊呆着去！\n");
         case 2:
                 return notify_fail("您的零錢不夠了，銀票又沒人找得開。\n");
         default:
                 set_temp("busy", 1);
-                message_vision("$N從$n那裡買下了一"+query("unit", ob)+
+                message_vision("$N從$n那裏買下了一"+query("unit", ob)+
                 query("name", ob)+"。\n",this_player(),this_object());
                                 // save the number of book sold and money made to file
                                 if(book_found) {

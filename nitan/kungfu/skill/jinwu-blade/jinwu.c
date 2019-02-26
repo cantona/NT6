@@ -52,7 +52,7 @@ int perform(object me,object target)
         if (target->query_skill_mapped("parry") == "xueshan-sword")
         {
                 msg += HIR "$n" HIR "慌忙中忙以"HIW"雪山劍法"HIR"作出抵擋，哪知$N"
-                       HIR "刀法竟似雪山劍法克星般，\n" + weapon->name() +
+                       HIR "刀法竟似雪山劍法剋星般，\n" + weapon->name() +
                        HIR "刀芒霎時又暴漲數倍，完全封鎖$n" HIR "的所"
                        "有劍招！\n" NOR;
                 ap = ap * 2;

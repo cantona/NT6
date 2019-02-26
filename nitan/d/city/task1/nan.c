@@ -7,7 +7,7 @@ void create()
 {
         set_name("南海鱷神", ({ "nanhai  eshen"}));
         set("gender", "男性");
-        set("nickname", HIG"兇神惡煞"NOR);
+        set("nickname", HIG"凶神惡煞"NOR);
         set("age", 34);
         set("str", 25);
         set("dex", 16);

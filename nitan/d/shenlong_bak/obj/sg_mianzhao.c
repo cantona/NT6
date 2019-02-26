@@ -49,7 +49,7 @@ int do_wear(string arg)
 
         set_temp("apply/name", ({"蒙面人"}), this_player());
         set_temp("apply/short", ({"蒙面人(Mengmianren)"}), this_player());
-        set_temp("apply/long", ({"一個黑布蒙面，神秘兮兮的家伙。\n"}), this_player());
+        set_temp("apply/long", ({"一個黑布蒙面，神祕兮兮的傢伙。\n"}), this_player());
 
         return 0;
 }
@@ -105,7 +105,7 @@ int do_sign(string arg)
         }
 
         set("signed", 1, obj);
-        log_file("test/ShenlongPker",sprintf("%s于%s時殺了%s(%s).\n",query("name", me),ctime(time()),v_name,v_id));
+        log_file("test/ShenlongPker",sprintf("%s於%s時殺了%s(%s).\n",query("name", me),ctime(time()),v_name,v_id));
 
         set("sg_victim/"+time(), v_id, me);
         tell_room(environment(me), "蒙面人在屍體旁寫下“逆神龍教者殺！”幾個大字。", ({me}));
@@ -122,13 +122,13 @@ int do_forcejoin(string arg)
         if( !query("sg/spy", me) )
                 return notify_fail("你不是神龍教的人，來什麼勁？\n");
         if( query("sg_ok/forcejoin", me) )
-                return notify_fail("你先回去復命吧。\n");
+                return notify_fail("你先回去覆命吧。\n");
         if( query("no_fight", environment(me)) )
-                return notify_fail("這裡不是強迫的地方。\n");
+                return notify_fail("這裏不是強迫的地方。\n");
         if ( busy = me->query_busy() )
         {
                 if (intp(busy)) me->start_busy(busy+1);
-                        return notify_fail("你現在正忙著！\n");
+                        return notify_fail("你現在正忙着！\n");
         }
         if( !arg || !(target = present(arg, environment(me))) )
                 return notify_fail("你要逼誰入神龍教？\n");
@@ -226,7 +226,7 @@ private void complete_forcejoin(object me, object target, int fp, int dp)
                 addn("sg/exp", 1, me);
                 addn("shen", -query("combat_exp", target)/100, me);
 
-                log_file("test/ForceJoin",sprintf("%s于%s時逼%s入神龍教獲得%s經驗點\n",query("name", me),ctime(time()),query("name", target),chinese_number(record)));
+                log_file("test/ForceJoin",sprintf("%s於%s時逼%s入神龍教獲得%s經驗點\n",query("name", me),ctime(time()),query("name", target),chinese_number(record)));
 
                 bonus /= 4;
                 addn("potential", bonus/3+random(bonus/3), me);
@@ -285,7 +285,7 @@ int eff_fam(object ob)
                 case "紅花會"   :
                 case "大理段家" :  return 10; break;
                 case "峨眉派"   :
-                case "昆侖派"   :
+                case "崑崙派"   :
                 case "古墓派"   :
                 case "嵩山派"   :  return  9; break;
                 case "泰山派"   :
@@ -332,7 +332,7 @@ void do_flee(object ob)
                 case "紅花會"   : ob->move("/d/huijiang/zongduo"); break;
                 case "大理段家" : ob->move("/d/dali/wangfugate"); break;
                 case "峨眉派"   : ob->move("/d/emei/hcaguangchang"); break;
-                case "昆侖派"   : ob->move("/d/kunlun/qianting"); break;
+                case "崑崙派"   : ob->move("/d/kunlun/qianting"); break;
                 case "古墓派"   : ob->move("/d/gumu/zhongting"); break;
                 case "嵩山派"   : ob->move("/d/songshan/chanyuan"); break;
                 case "泰山派"   : ob->move("/d/taishan/riguan"); break;

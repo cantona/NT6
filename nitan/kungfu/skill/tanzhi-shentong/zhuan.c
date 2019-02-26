@@ -39,9 +39,9 @@ int perform(object me, object target)
                 return notify_fail("你現在的真氣不夠，難以施展" + name() + "。\n");
 
         if (! living(target))
-                return notify_fail("對方都已經這樣了，用不著這麼費力吧？\n");
+                return notify_fail("對方都已經這樣了，用不着這麼費力吧？\n");
 
-        msg = HIC "$N" HIC "將全身功力聚于一指，指勁按照二十八宿方位雲貫而出，正"
+        msg = HIC "$N" HIC "將全身功力聚於一指，指勁按照二十八宿方位雲貫而出，正"
               "是桃花島「" HIR "轉乾坤" HIC "」絕技。\n" NOR;
 
         ap = attack_power(me, "finger") + me->query_skill("qimen-wuxing", 1);

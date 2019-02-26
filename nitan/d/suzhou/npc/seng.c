@@ -5,7 +5,7 @@ inherit NPC;
 void create()
 {
         set_name("知客僧", ({ "zhike seng", "zhike", "seng" }));
-        set("long", "他是一位未通世故的少年和尚，臉上掛著天真的稚笑。\n");
+        set("long", "他是一位未通世故的少年和尚，臉上掛着天真的稚笑。\n");
         set("gender", "男性");
         set("attitude", "peaceful");
         set("class", "bonze");

@@ -37,7 +37,7 @@ int valid_learn(object me)
 /*
         if (me->query_skill("chuixiao-jifa", 1) < 100)
                 return notify_fail("你沒有精通吹簫技法，無法"
-                                   "領會碧波神功的奧秘。\n");
+                                   "領會碧波神功的奧祕。\n");
 */
 
         return ::valid_learn(me);
@@ -76,8 +76,8 @@ int help(object me)
         write(HIC"\n碧波神功："NOR"\n");
         write(@HELP
 
-    這是東海桃花島黃藥師所創的一門內功心法。傳說當初黃藥師行
-船海上，忽見碧海潮生，碧波洶湧，聲勢驚人，在與風浪搏鬥之余，
+    這是東海桃花島黃藥師所創的一門內功心法。傳説當初黃藥師行
+船海上，忽見碧海潮生，碧波洶湧，聲勢驚人，在與風浪搏鬥之餘，
 豁然頓悟，創出一門陽剛陰柔相結合的內功，此謂碧波神功。
 
         學習要求：

@@ -28,16 +28,16 @@ string extra_long()
         switch(query("amount"))
         {
                 case 0: 
-                        str="裡面什麼也沒有。\n";
+                        str="裏面什麼也沒有。\n";
                         break;
                 case 1:
-                        str="裡面有少許的冰水。\n";
+                        str="裏面有少許的冰水。\n";
                         break;
                 case 2:
-                        str="裡面的冰水快滿了。\n";
+                        str="裏面的冰水快滿了。\n";
                         break;
                 case 3:
-                        str="裡面裝滿了冰水。\n";
+                        str="裏面裝滿了冰水。\n";
                         break;
         }
         
@@ -61,10 +61,10 @@ int do_fill(string arg)
         if (arg!="tong"&& arg!="bucket") return 0;
 
         if (me->is_busy()||me->is_fighting())
-                return notify_fail("你正忙著呢！\n");
+                return notify_fail("你正忙着呢！\n");
 
         if( query("short", environment(me)) != "碧水寒潭" )
-                return notify_fail("這裡沒有冷水。\n");
+                return notify_fail("這裏沒有冷水。\n");
 
         if (query("amount") >= max_volume)
                 return notify_fail("木桶已經裝滿水了。\n");
@@ -72,7 +72,7 @@ int do_fill(string arg)
         if( query("jing", me)<50 || query("qi", me)<50 )
                 return notify_fail("你已經精疲力竭了。\n");
 
-        message_vision("$N小心翼翼地從碧水寒潭裡舀了些冰水上來。\n",me);
+        message_vision("$N小心翼翼地從碧水寒潭裏舀了些冰水上來。\n",me);
         addn("amount",1);
         if ( random(me->query_con()) > 20)
         {
@@ -98,22 +98,22 @@ int do_pour(string arg)
                 return 0;
 
         if (me->is_busy() || me->is_fighting() )
-                return notify_fail("你正忙著呢。\n");
+                return notify_fail("你正忙着呢。\n");
 
         if ((item != "水" && item!="water") || (target!="水缸" && target!="gang"))
-                return notify_fail("你要將什麼東西倒進哪裡？\n");
+                return notify_fail("你要將什麼東西倒進哪裏？\n");
 
         if (!(gang=present("shui gang",environment(me))))
-                return notify_fail("這裡沒有水缸。\n");
+                return notify_fail("這裏沒有水缸。\n");
         
         if (!(amount = query("amount")))
-                return notify_fail("木桶裡什麼都沒有。\n");
+                return notify_fail("木桶裏什麼都沒有。\n");
 
-        message_vision("$N把木桶裡的水全部倒進大水缸裡。\n",me);
+        message_vision("$N把木桶裏的水全部倒進大水缸裏。\n",me);
         set("amount",0);
         addn("amount", amount, gang);
         addn_temp("water_amount", amount, me);
         if( query_temp("water_amount", me) >= 15 )
-                tell_object(me,HIG"你扶著酸痛的腰，心裡想應該可以回去交差了吧？\n"NOR);
+                tell_object(me,HIG"你扶着痠痛的腰，心裏想應該可以回去交差了吧？\n"NOR);
         return 1;
 }

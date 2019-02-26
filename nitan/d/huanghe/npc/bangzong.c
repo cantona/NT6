@@ -12,7 +12,7 @@ void create()
         set("str", 25);
         set("per", 15);
         set("dex", 16);
-        set("long", "一名身材高大的壯漢，滿臉殺氣，一付兇神惡煞的模樣。\n");
+        set("long", "一名身材高大的壯漢，滿臉殺氣，一付凶神惡煞的模樣。\n");
         set("combat_exp", 2000);
         set("shen_type", -1);
         set("attitude", "peaceful");

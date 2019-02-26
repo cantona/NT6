@@ -70,7 +70,7 @@ void set_from_me(object me, int scale)
 
         my["quest_count"]=query("quest_count", me);
 
-        // 這裡修改
+        // 這裏修改
         exp=query("combat_exp", me)*12/10;
         if (exp > query("combat_exp"))
                 set("combat_exp", exp);
@@ -78,7 +78,7 @@ void set_from_me(object me, int scale)
 
         if (my["combat_exp"] > 200000 && random(100) < 5)
         {
-                // 經驗 > 200K，5%幾率出現多個敵人
+                // 經驗 > 200K，5%機率出現多個敵人
                 set_temp("multi-enemy", 1);
         }
 
@@ -196,9 +196,9 @@ void do_continue_help(object ob)
 
         n = random(3) + 1;
         set_temp("quest/help_count", n, ob);
-        message("vision", HIR "說時遲，那時快！突然轉出" +
+        message("vision", HIR "説時遲，那時快！突然轉出" +
                           chinese_number(n) +
-                          "個人，一起沖上前來，看來是早"
+                          "個人，一起衝上前來，看來是早"
                           "有防備！\n" NOR, environment());
 
         // 生成幫手
@@ -336,7 +336,7 @@ void unconcious()
         {
                 if (random(100) < 8)
                 {
-                        // 10%幾率逃走
+                        // 10%機率逃走
                         switch (random(8))
                         {
                         case 0:
@@ -359,7 +359,7 @@ void unconcious()
                                 break;
                         case 2:
                                 msg = HIC "在$n" HIC "一陣狂攻之下，"
-                                      "$N" HIC "只有招架之功，哪裡還"
+                                      "$N" HIC "只有招架之功，哪裏還"
                                       "有還手之力？眼看就要命喪$n" HIC
                                       "之手，$N" HIC "忽然招式一變，"
                                       "精妙無方，竟是世上罕見！$n" HIC
@@ -383,7 +383,7 @@ void unconcious()
                                       HIC "神色神色倉皇，急切間猛地"
                                       "咬中舌尖，“噗”的吐出！$n"
                                       HIC "只見眼前一陣紅霧，待得霧"
-                                      "散去，哪裡還有$N" HIC "的影"
+                                      "散去，哪裏還有$N" HIC "的影"
                                       "子？\n" NOR;
                                 break;
                         case 5:
@@ -393,7 +393,7 @@ void unconcious()
                                       "趕上前去，忽然眼前星光閃閃"
                                       "，倉皇下急退，只聽有人哈哈"
                                       "大笑道：“$N" HIC "莫慌，我"
-                                      "來也！”說罷又是一撒手，數"
+                                      "來也！”説罷又是一撒手，數"
                                       "十根銀針飛出，待得$n" HIC
                                       "抵擋兩下，那人早扶起$N" HIC
                                       "遁去了。\n" NOR;
@@ -414,7 +414,7 @@ void unconcious()
                                 msg = HIC "$N身負重傷，已然不敵，悲"
                                       "憤間只放聲疾呼，一時震得$n"
                                       HIC "耳鼓欲破，攻勢少緩。$N"
-                                      HIC "猛然見到有機可乘，哪裡肯"
+                                      HIC "猛然見到有機可乘，哪裏肯"
                                       "放過，連出數招，殺出一條血路"
                                       "，就此不見。\n" NOR;
                                 break;
@@ -446,25 +446,25 @@ void unconcious()
                         switch (random(9))
                         {
                         case 0:
-                                msg = "聽說$N被人打傷逃走，據說是躲到PLACE去了。";
+                                msg = "聽説$N被人打傷逃走，據説是躲到PLACE去了。";
                                 break;
                         case 1:
-                                msg = "聽說$N和人動手，差點被打死，不過最"
-                                      "後還是僥幸逃走了，好像去了PLACE。";
+                                msg = "聽説$N和人動手，差點被打死，不過最"
+                                      "後還是僥倖逃走了，好像去了PLACE。";
                                 break;
                         case 2:
-                                msg = "聽說那$N和人一場血戰，最後還是全身"
+                                msg = "聽説那$N和人一場血戰，最後還是全身"
                                       "而退，好像是去了PLACE吧。";
                                 break;
                         case 3:
-                                msg = "$N聽說是在PLACE啊，不過前一陣好像來過這裡的。";
+                                msg = "$N聽説是在PLACE啊，不過前一陣好像來過這裏的。";
                                 break;
                         case 4:
-                                msg = "聽說$N被人打死了吧？咦？不過聽人說"
+                                msg = "聽説$N被人打死了吧？咦？不過聽人説"
                                       "在PLACE也見過他呀！";
                                 break;
                         case 5:
-                                msg = "這事我也不太清楚，不過聽說他好像在PLACE。";
+                                msg = "這事我也不太清楚，不過聽説他好像在PLACE。";
                                 break;
                         case 6:
                                 msg = "你找他幹啥？他不是在PLACE麼？";
@@ -473,7 +473,7 @@ void unconcious()
                                 msg = "前兩天他還來過我們這兒呢，現在應該"
                                       "是去了PLACE吧。";
                         default:
-                                msg = "$N呀，有人說在PLACE看到過他，好像還受傷了。";
+                                msg = "$N呀，有人説在PLACE看到過他，好像還受傷了。";
                                 break;
                         }
 
@@ -491,7 +491,7 @@ void unconcious()
                                 message_sort(HIR "\n眼見$N" HIR + condition[random(sizeof(condition))] +
                                         "，突然$N大喝一聲，急退幾步，\n“撲通”給$n跪了下來。"
                                         "\n" NOR, this_object(), me);
-                                tell_object(me, HIW + this_object()->name() + "突然從懷裡掏出一堆白花花的銀子，小聲"
+                                tell_object(me, HIW + this_object()->name() + "突然從懷裏掏出一堆白花花的銀子，小聲"
                                         "對你道：“這位" + RANK_D->query_respect(me) + "，\n你"
                                         "就網開一面（nod）如何，這" + chinese_number(amount) +
                                         "兩黃金就歸你了！”\n" NOR);
@@ -506,7 +506,7 @@ void unconcious()
                                 message_sort(HIR "眼見$N" HIR + condition[random(sizeof(condition))] +
                                         "，突然$N大喝一聲，急退幾步，\n“撲通”給$n跪了下來。"
                                         "\n" NOR, this_object(), me);
-                                tell_object(me, HIW + this_object()->name() + "突然從懷裡掏出一粒仙丹，小聲"
+                                tell_object(me, HIW + this_object()->name() + "突然從懷裏掏出一粒仙丹，小聲"
                                         "對你道：“這位" + RANK_D->query_respect(me) + "，\n你"
                                         "就網開一面（nod）如何，這仙丹就歸你了！”\n" NOR);
                                 clean_up_enemy();
@@ -553,7 +553,7 @@ void die(object killer)
         int exp;                // 需要瓜分的經驗
         int pot;                // 需要瓜分的潛能
         int weiwang;            // 需要瓜分的威望
-        int score;              // 需要瓜分的閱歷
+        int score;              // 需要瓜分的閲歷
         int extra_exp;          // 打暈的人的額外經驗
         int extra_pot;          // 打暈的人的額外潛能
         string quester;         // 需要完成這個任務的玩家ID
@@ -629,7 +629,7 @@ void die(object killer)
                 // 非任務所有者或是任務所有者協助的人殺死，則記錄之。
                 /*
                 CHANNEL_D->do_channel(this_object(), "rumor",
-                                      sprintf("聽說%s被人殺死了。", name()));
+                                      sprintf("聽説%s被人殺死了。", name()));
                 log_file("static/killed_die", sprintf("%s %s(%s) died at %s because %s.\n",
                                                       log_time(), name(), query("id"),
                                                       environment()->short(),
@@ -838,7 +838,7 @@ void random_move()
 
                 /*
                 CHANNEL_D->do_channel(this_object(), "rumor",
-                                      sprintf("聽說%s隱居到了深山老澤，從此不再出沒在世間。", name()));
+                                      sprintf("聽説%s隱居到了深山老澤，從此不再出沒在世間。", name()));
                 log_file("static/killed_die", sprintf("%s %s(%s) vanished because timeout(%d:%d).\n",
                                                       log_time(), name(), query("id"),
                                                       time() - query_temp("born_time"),

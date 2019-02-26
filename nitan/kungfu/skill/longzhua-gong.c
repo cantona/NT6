@@ -12,7 +12,7 @@ string *xue_name = ({
 
 int next_hit(object me, object victim, object weapon, int damage);
 mapping *action = ({
-([      "action": "在呼呼風聲中，$N使一招「捕風式」，雙手如鉤如戢，插向$n的$l",
+([      "action": "在呼呼風聲中，$N使一招「捕風式」，雙手如鈎如戢，插向$n的$l",
         "force" : 100,
         "attack": 30,
         "dodge" : 25,
@@ -89,7 +89,7 @@ mapping *action = ({
         "skill_name" : "抱殘式" ,
         "damage_type" : "內傷"
 ]),
-([      "action": "$N兩手胸前環抱，腋下含空，五指如鉤，一招「守缺式」插向$n的頂門",
+([      "action": "$N兩手胸前環抱，腋下含空，五指如鈎，一招「守缺式」插向$n的頂門",
         "force" : 260,
         "attack": 71,
         "dodge" : 52,
@@ -134,7 +134,7 @@ mapping *action = ({
         "skill_name" : "拿雲式" ,
         "damage_type" : "內傷"
 ]),
-([      "action": "$N前腳著地，一手頂天成爪，一手指地，一招「追日式」勁氣籠罩$n"
+([      "action": "$N前腳着地，一手頂天成爪，一手指地，一招「追日式」勁氣籠罩$n"
                   "的全身",
         "force" : 360,
         "attack": 90,

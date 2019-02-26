@@ -6,7 +6,7 @@ void create()
 {
         set_name("瀟湘子", ({ "xiaoxiang zi", "zi", "xiaoxiang" }));
         set("title", "湘西名宿");
-        set("long", "他身材高瘦，臉無血色，形若僵屍。臉上隱隱透著一股青氣，手持一根哭喪棒。\n");
+        set("long", "他身材高瘦，臉無血色，形若殭屍。臉上隱隱透著一股青氣，手持一根哭喪棒。\n");
         set("gender", "男性");
         set("rank_info/respect", "道長");
         create_family("丐幫", 15, "弟子");

@@ -14,7 +14,7 @@ mapping *action = ({
         "skill_name" : "合掌觀音印",
         "lvl" : 8
 ]),
-([        "action" : "$N使出一招"HIY"「準提佛母印」"NOR"，運力于指，直取$n的$l",
+([        "action" : "$N使出一招"HIY"「準提佛母印」"NOR"，運力於指，直取$n的$l",
         "skill_name" : "準提佛母印",
         "lvl" : 16
 ]),
@@ -22,7 +22,7 @@ mapping *action = ({
         "skill_name" : "紅閻婆羅印",
         "lvl" : 24
 ]),
-([        "action" : "$N使出一招"HIG"「藥師佛根本印」"NOR"，猛沖向前，掌如遊龍般攻向$n",
+([        "action" : "$N使出一招"HIG"「藥師佛根本印」"NOR"，猛衝向前，掌如游龍般攻向$n",
         "skill_name" : "藥師佛根本印",
         "lvl" : 32
 ]),
@@ -30,12 +30,12 @@ mapping *action = ({
         "skill_name" : "威德金剛印",
         "lvl" : 40
 ]),
-([        "action" : "$N使出一招"HIB"「上樂金剛印」"NOR"，飛身橫躍，雙掌前後擊出，抓向$n的嚥
+([        "action" : "$N使出一招"HIB"「上樂金剛印」"NOR"，飛身橫躍，雙掌前後擊出，抓向$n的咽
 喉",
         "skill_name" : "上樂金剛印",
         "lvl" : 48
 ]),
-([        "action" : "$N使出一招"HIW"「六臂智慧印」"NOR"，頓時勁氣彌漫，天空中出現無數掌影打
+([        "action" : "$N使出一招"HIW"「六臂智慧印」"NOR"，頓時勁氣瀰漫，天空中出現無數掌影打
 向$n的$l",
         "skill_name" : "六臂智慧印",
         "lvl" : 56
@@ -61,7 +61,7 @@ int valid_learn(object me)
                 return notify_fail("你的內功火候太淺。\n");
 
         if ((int)me->query_skill("lamaism", 1) < 20)
-                return notify_fail("你對密宗心法的知識了解太少，無法理解密宗大手印。\n");
+                return notify_fail("你對密宗心法的知識瞭解太少，無法理解密宗大手印。\n");
 
         if ((int)me->query_skill("lamaism", 1) < (int)me->query_skill("dashou-yin",1) &&
             (int)me->query_skill("lamaism", 1) < 200)

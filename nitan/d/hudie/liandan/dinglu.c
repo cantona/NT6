@@ -38,10 +38,10 @@ int do_liandan()
 	yao = all_inventory(ob);
 	lv = sizeof(yao);
 	if (lv==0)
-        	return notify_fail("先把藥材放到鼎爐裡面再煉吧。\n");
+        	return notify_fail("先把藥材放到鼎爐裏面再煉吧。\n");
 
 	if (me->is_busy())
-        	return notify_fail("你現在正忙著呢。\n");
+        	return notify_fail("你現在正忙着呢。\n");
 
 	if( query_temp("fire", me) )
         	return notify_fail("先把上次的丹煉好了在幹別的吧。\n");
@@ -49,13 +49,13 @@ int do_liandan()
     	for(i=0; i<lv; i++) 
 	{
         	if( !query("yaoxing", yao[i]) )
-        		return notify_fail("怎麼什麼亂七八糟的東西都往爐子裡放？\n");
+        		return notify_fail("怎麼什麼亂七八糟的東西都往爐子裏放？\n");
 
 		yaoxing+=query("yaoxing", yao[i]);
 		destruct(yao[i]);
        }
 
-   	message_vision(MAG"$N按照胡青牛給的配方，把藥材放進鼎爐，專心致志地煉制。\n"NOR, this_player());
+   	message_vision(MAG"$N按照胡青牛給的配方，把藥材放進鼎爐，專心致志地煉製。\n"NOR, this_player());
 
 	me->start_busy(8);
 set_temp("fire", 1, 	me);
@@ -72,17 +72,17 @@ void fire(object me)
 
 	if( query("neili", me)<40000 )
 	{
-		message_vision (HIY"過了一會，爐中的溫度似乎有些下降，$N見狀連忙添了幾根柴禾。\n"NOR,me);
+		message_vision (HIY"過了一會，爐中的温度似乎有些下降，$N見狀連忙添了幾根柴禾。\n"NOR,me);
 	}
 	else if( query("neili", me)<200000 )
 	{
-		message_vision (HIY"過了一會，爐中的溫度似乎有些下降，$N見狀連忙催動內力，爐中溫度有所回升。\n"NOR,me);
+		message_vision (HIY"過了一會，爐中的温度似乎有些下降，$N見狀連忙催動內力，爐中温度有所回升。\n"NOR,me);
 addn("neili", -10000, 		me);
 addn_temp("fire", 1, 		me);
 	}
 	else
 	{
-		message_vision (HIY"過了一會，爐中的溫度似乎有些下降，$N見狀連忙催動內力，鼓動"+HIR+"三味真火"+HIY+"，爐中火燄一下旺了起來。\n"NOR,me);
+		message_vision (HIY"過了一會，爐中的温度似乎有些下降，$N見狀連忙催動內力，鼓動"+HIR+"三味真火"+HIY+"，爐中火焰一下旺了起來。\n"NOR,me);
 addn("neili", -50000, 		me);
 addn_temp("fire", 2, 		me);
 	}
@@ -116,21 +116,21 @@ void shoudan(object me)
 	{
 		dan = new(__DIR__"/dan/wumingdan");
 		dan->move(me);
-   		message_vision(HIW"由于配方不對，$N煉出來一個無名藥品。\n"NOR, this_player());
+   		message_vision(HIW"由於配方不對，$N煉出來一個無名藥品。\n"NOR, this_player());
 	}
 
 	else if( random(query_temp("fire", me))<random(query_temp("lv", me)) )
 	{
 		dan = new(__DIR__"/dan/wumingdan");
 		dan->move(me);
-   		message_vision(HIW"盡管配方正確，但是由于人品不佳，$N煉出來一個無名藥品。\n"NOR, this_player());
+   		message_vision(HIW"儘管配方正確，但是由於人品不佳，$N煉出來一個無名藥品。\n"NOR, this_player());
  	}
 	else
 	{
 		dan=new(__DIR__"/dan/"+query("mubiao", me));
 		dan->move(me);
-   		message_vision(HIR"歷盡千辛萬苦，$N終于煉出一顆珍貴的"+query("name", dan)+HIR"！\n"NOR,this_player());
-   		message_vision(HIB"$N連忙把辛苦煉出的丹藥收在懷裡。\n"NOR, this_player());
+   		message_vision(HIR"歷盡千辛萬苦，$N終於煉出一顆珍貴的"+query("name", dan)+HIR"！\n"NOR,this_player());
+   		message_vision(HIB"$N連忙把辛苦煉出的丹藥收在懷裏。\n"NOR, this_player());
 
  	}
 delete_temp("yaoxing", 	me);

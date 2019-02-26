@@ -31,16 +31,16 @@ mapping *action = ({
         "skill_name" : "雲斷秦嶺",
         "damage_type" : "瘀傷"
 ]),
-([      "action" : "$N雙掌隱隱泛出青氣，一式「青鬆翠翠」，幻成漫天碧綠的鬆針，雨點般向$n擊去",
+([      "action" : "$N雙掌隱隱泛出青氣，一式「青松翠翠」，幻成漫天碧綠的松針，雨點般向$n擊去",
         "force" : 70,
         "dodge" : 10,
         "parry" : 20,
         "damage": 15,
         "lvl" : 30,
-        "skill_name" : "青鬆翠翠",
+        "skill_name" : "青松翠翠",
         "damage_type" : "瘀傷"
 ]),
-([      "action" : "$N身形往上一縱，使出一式「天紳倒懸」，雙掌並攏，筆直地向$n的$l插去",
+([      "action" : "$N身形往上一縱，使出一式「天紳倒懸」，雙掌併攏，筆直地向$n的$l插去",
         "force" : 75,
         "dodge" : 15,
         "parry" : 10,
@@ -49,7 +49,7 @@ mapping *action = ({
         "skill_name" : "天紳倒懸",
         "damage_type" : "瘀傷"
 ]),
-([      "action" : "$N身形一變，使一式「無邊落木」，雙掌帶著蕭剎的勁氣，猛地擊往$n的$l",
+([      "action" : "$N身形一變，使一式「無邊落木」，雙掌帶着蕭剎的勁氣，猛地擊往$n的$l",
         "force" : 80,
         "dodge" : 15,
         "parry" : 15,
@@ -67,7 +67,7 @@ mapping *action = ({
         "skill_name" : "高山流水",
         "damage_type" : "瘀傷"
 ]),
-([      "action" : "$N突地一招「金玉滿堂」，雙掌挾著一陣風雷之勢，猛地劈往$n的$l",
+([      "action" : "$N突地一招「金玉滿堂」，雙掌挾着一陣風雷之勢，猛地劈往$n的$l",
         "force" : 90,
         "dodge" : 20,
         "parry" : 20,

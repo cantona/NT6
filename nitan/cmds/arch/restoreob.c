@@ -115,7 +115,7 @@ TEXT;
         destruct(obn);
         rm("/cmds/arch/ob_dbase.c");
         
-        write(sprintf("從(%s)中復制%s的數據完畢。\n", dir, ob->name()));
+        write(sprintf("從(%s)中複製%s的數據完畢。\n", dir, ob->name()));
 
         return 1;
 }

@@ -34,11 +34,11 @@ int perform(object me, object target)
         if( query("neili", me)<800 )
                         return notify_fail("你的內力不夠。\n");
   if (! living(target)) 
-         return notify_fail("對方都已經這樣了，用不著這麼費力吧？\n"); 
+         return notify_fail("對方都已經這樣了，用不着這麼費力吧？\n"); 
 
         addn("neili", -300, me);
         msg = HIC "$N淡然一笑，本就快捷絕倫的刀法驟然變得更加凌厲！\n"
-              HIC "就在這一瞬之間，$N已劈出二十一刀！刀夾雜著風，風裡含著刀影！\n"
+              HIC "就在這一瞬之間，$N已劈出二十一刀！刀夾雜着風，風裏含着刀影！\n"
               HIC "$n只覺得心跳都停止了！" NOR;
 
         message_vision(msg, me, target);                

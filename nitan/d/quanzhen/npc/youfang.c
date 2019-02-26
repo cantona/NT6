@@ -5,7 +5,7 @@ inherit NPC;
 void create()
 {
         set_name("遊方道人", ({"youfang daoren","daoren"}));
-        set("long", "他是一位未通世故的青年道人，臉上掛著孩兒般的微笑。\n");
+        set("long", "他是一位未通世故的青年道人，臉上掛着孩兒般的微笑。\n");
 
         set("gender", "男性");
         set("attitude", "heroism");
@@ -28,7 +28,7 @@ void create()
         set("chat_chance", 30);
 
         set("chat_msg", ({
-                "遊方道人說道: 請這位施主化幾兩銀子給貧道，隨喜隨喜，造福眾生。\n",
+                "遊方道人説道: 請這位施主化幾兩銀子給貧道，隨喜隨喜，造福眾生。\n",
                 (: random_move :)
         }) );
 
@@ -68,7 +68,7 @@ int accept_object(object me, object ob)
                 ling->move(me);
                 message_vision("遊方道人給$N一塊鐵鑄令牌。\n", me);
 
-                command("say 此牌限時一日，逾時失效，請于限時前離宮，否則多有不便，切記切記！"); 
+                command("say 此牌限時一日，逾時失效，請於限時前離宮，否則多有不便，切記切記！"); 
                 return 1;
         }
 

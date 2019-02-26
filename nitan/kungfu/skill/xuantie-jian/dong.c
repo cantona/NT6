@@ -41,9 +41,9 @@ int perform(object me, object target)
                 return notify_fail("你沒有激發玄鐵劍法，難以施展" + name() + "。\n");
 
         if (! living(target))
-                return notify_fail("對方都已經這樣了，用不著這麼費力吧？\n");
+                return notify_fail("對方都已經這樣了，用不着這麼費力吧？\n");
 
-        msg = HIW "$N" HIW "暗自凝神，頓時一股氣勁由身後澎湃迸發，接著單"
+        msg = HIW "$N" HIW "暗自凝神，頓時一股氣勁由身後澎湃迸發，接着單"
               "手一振，手中" + wp + HIW "\n隨即橫空卷出，激得周圍塵沙騰起"
               "，所施正是玄鐵劍法「" HIG "大江東去" HIW "」。\n"NOR;
 

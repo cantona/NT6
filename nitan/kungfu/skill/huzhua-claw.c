@@ -7,7 +7,7 @@
 inherit SHAOLIN_SKILL;
 
 mapping *action = ({
-([      "action": "$N雙爪一張，斜身進步，腳踏中宮，一式「黑虎掏心」，疾如迅電，銳不可擋，向$n胸口猛拍過去",
+([      "action": "$N雙爪一張，斜身進步，腳踏中宮，一式「黑虎掏心」，疾如迅電，鋭不可擋，向$n胸口猛拍過去",
         "force" : 100,
         "attack": 30,
         "dodge" : 25,

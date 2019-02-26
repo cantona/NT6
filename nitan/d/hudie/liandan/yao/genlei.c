@@ -16,11 +16,11 @@ mapping *ansi= ({
 
 });
 mapping *yao= ({
-([     "name":     "丹參",
+([     "name":     "丹蔘",
        "id":       "dan shen",
        "yaoxing":  1,
 ]),
-([     "name":     "黨參",
+([     "name":     "黨蔘",
        "id":       "dang shen",
        "yaoxing":  2,
 ]),
@@ -28,7 +28,7 @@ mapping *yao= ({
        "id":       "dang gui",
        "yaoxing":  3,
 ]),
-([     "name":     "人參",
+([     "name":     "人蔘",
        "id":       "ren shen",
        "yaoxing":  4,
 ]),

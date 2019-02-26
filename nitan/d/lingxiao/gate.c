@@ -9,11 +9,11 @@ void create()
 {
         set("short", "凌霄內門");
         set("long", 
-"這裡是凌霄城的城門。本來凌霄城少有外敵入侵，但由于地
+"這裏是凌霄城的城門。本來凌霄城少有外敵入侵，但由於地
 處西域，隆冬之際常有餓狼前來侵襲，故修築此大城以做為抵擋。
 向城內望去，只見人頭攘攘，很是繁華，想不到在這西域雪山絕
-頂，卻有著一個如此去處。內門前那張厚厚的吊橋(bridge)正緊
-緊關閉著。如果想要進入的話，必須要請人開(open)才行。
+頂，卻有着一個如此去處。內門前那張厚厚的吊橋(bridge)正緊
+緊關閉着。如果想要進入的話，必須要請人開(open)才行。
 \n");
 
         set("outdoors", "lingxiao");
@@ -58,7 +58,7 @@ void close_bridge()
 int do_close(string arg)
 {
         if (! query("exits/south"))
-                return notify_fail("吊橋已經是關著的了。\n");
+                return notify_fail("吊橋已經是關着的了。\n");
 
         if (!arg || (arg != "bridge" && arg != "south"))
                 return notify_fail("你要關什麼？\n");

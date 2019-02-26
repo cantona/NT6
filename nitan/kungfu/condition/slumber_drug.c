@@ -8,7 +8,7 @@ int update_condition(object me, int duration)
 
         limit = (int)me->query("neili") / 50;
 
-        tell_object(me, "你覺得腦中昏昏沉沉，心中空盪盪的，直想躺下來睡一覺。\n");
+        tell_object(me, "你覺得腦中昏昏沉沉，心中空蕩蕩的，直想躺下來睡一覺。\n");
         message("vision", me->name() + "搖頭晃腦地站都站不穩，好像喝醉了一樣。\n",
                 environment(me), me);
         if( duration > limit ) {

@@ -45,7 +45,7 @@ int perform(object me, object target)
         if( query("neili", me)<2500 )
                 return notify_fail("你的真氣不夠，現在無法施展灰飛湮滅。\n");
 
-        msg = HIY "$N" HIY "左手化掌，右手成刀，不停翻轉向前，掌風到處，一股紫氣席卷而至，將$n" HIY "四周包圍。\n" NOR;
+        msg = HIY "$N" HIY "左手化掌，右手成刀，不停翻轉向前，掌風到處，一股紫氣席捲而至，將$n" HIY "四周包圍。\n" NOR;
 
         ap = attack_power(me, "strike") + me->query_skill("hand");
         dp = defense_power(target, "parry") + target->query_skill("unarmed");
@@ -98,7 +98,7 @@ int perform(object me, object target)
                 addn("neili", -2500, me);
                 if (me->query_skill("lingbo-weibu", 1) >= 1500 && random(100) < 15)
                 {
-                        message_combatd(HIW "$N" HIW "默念凌波微步口訣，身法忽快，絲毫不受出招的阻礙。\n" NOR, me);
+                        message_combatd(HIW "$N" HIW "默唸凌波微步口訣，身法忽快，絲毫不受出招的阻礙。\n" NOR, me);
                 }
                 else
                 {
@@ -109,7 +109,7 @@ int perform(object me, object target)
                 msg += CYN "可是$p" CYN "身法突變，左躲右閃，竟避過這招。\n" NOR;
                 if (me->query_skill("lingbo-weibu", 1) >= 1500 && random(100) < 15)
                 {
-                        message_combatd(HIW "$N" HIW "默念凌波微步口訣，身法忽快，絲毫不受出招的阻礙。\n" NOR, me);
+                        message_combatd(HIW "$N" HIW "默唸凌波微步口訣，身法忽快，絲毫不受出招的阻礙。\n" NOR, me);
                 }
                 else
                 {

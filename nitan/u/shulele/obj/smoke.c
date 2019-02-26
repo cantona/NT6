@@ -41,18 +41,18 @@ int do_smoke()
         switch(query("count")) {
                 case 1: message_vision("$N猛吸了一口剩下的"+YEL"煙屁股"+NOR"，兩根手指夾住一彈，扔掉了煙頭。\n", me);
                         break; 
-                case 2: message_vision("$N吐出一串"+HIC"煙圈"+NOR"，看著它悠閒地散開。\n", me);
+                case 2: message_vision("$N吐出一串"+HIC"煙圈"+NOR"，看着它悠閒地散開。\n", me);
                         break;
                 case 3: message_vision("$N閉上眼睛，深深地吸了一口$n，又從鼻孔中噴出來：“爽啊！爽啊！”\n", me, obj);
                         break;
                 case 4: message_vision("$N狠狠的吸了一口$n，大概是吸得太猛了，一張臉漲的通紅。\n", me, obj);
                         break;
-                case 5: message_vision("$N吸了一口$n，搖頭晃腦地說道：“飯後一支煙，賽過"+HIM"活神仙。”\n"NOR, me, obj );
+                case 5: message_vision("$N吸了一口$n，搖頭晃腦地説道：“飯後一支煙，賽過"+HIM"活神仙。”\n"NOR, me, obj );
                         break;
                 case 6: message_vision("$N翹起二郎腿，眯上眼睛，猛吸了一口$n，自言自語道：“這東西害人又害己，為啥我還那麼喜歡？”\n", me, obj);
                         break;
                 case 7: set("master", me->query("id"));
-                        message_vision("$N抽出一支$n，點著了"BLINK HIR"火"+NOR" 美滋滋地吸了起來。\n", me, obj);
+                        message_vision("$N抽出一支$n，點着了"BLINK HIR"火"+NOR" 美滋滋地吸了起來。\n", me, obj);
                         break;
                 default:
                         break;

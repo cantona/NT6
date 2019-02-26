@@ -12,7 +12,7 @@ void create()
         else {
                 set("unit", "對");
                 set("long", HIG "當年達摩祖師一葦渡江時所穿的草鞋。\n" NOR);
-                set("wear_msg", HIG "$N" HIG "將一對神草結綁于足間。\n" NOR);
+                set("wear_msg", HIG "$N" HIG "將一對神草結綁於足間。\n" NOR);
                 set("remove_msg", HIG "$N" HIG "將神草結從足間取下，放回包"
                                   "囊。\n" NOR);
                 set("no_sell", "這是啥？是烏拉草麼？");

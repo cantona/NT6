@@ -73,7 +73,7 @@ void create()
                 "tuijiao": "哈哈哈哈！退教？這麼多年我還真聽過幾起，不過他們已經都死了。",
               "貴妃回眸" : (: ask_huimou :),
               "小憐橫陳" : (: ask_hengchen :),
-              "飛燕回翔" : (: ask_huixiang :),
+              "飛燕迴翔" : (: ask_huixiang :),
         ]));
 
         set("chat_chance_combat", 50);
@@ -139,7 +139,7 @@ int accept_ask(object me, string topic)
         {
         case "歷練" :
         case "歷煉" :
-        case "鍛煉" :
+        case "鍛鍊" :
                 return QUEST_D->accept_ask(this_object(), me, topic);
                 break;
 
@@ -183,8 +183,8 @@ mixed ask_huimou()
                 return "你的內功火候不足，學不成這貴妃回眸。";
 
 
-         message_vision(HIY "$n" HIY "點頭對你說道：“你看好了！”然後，又轉身對沐劍屏說道：“劍屏，"
-                     "你過來！”說罷身子微曲，纖腰輕扭，右足反踢，向沐劍屏小腹踹去。沐"
+         message_vision(HIY "$n" HIY "點頭對你説道：“你看好了！”然後，又轉身對沐劍屏説道：“劍屏，"
+                     "你過來！”説罷身子微曲，纖腰輕扭，右足反踢，向沐劍屏小腹踹去。沐"
                      "劍屏連忙後縮相避，$n順勢反過身來，左手摟住沐劍屏的頭頸，右手竟已"
                      "輕輕點在沐劍屏後心的穴道上。"NOR, me, this_object());
 
@@ -218,12 +218,12 @@ mixed ask_hengchen()
         if (me->query_skill("force", 1) < 150)
         return "你的內功火候不足，學不成這小憐橫陳。";
 
-        message_vision(HIY"$n" HIY "翻身臥倒並讓沐劍屏伸出右足，虛踏她後腰，手中假裝持刀架住她"
-                       "頭頸。驀見$n腦袋向著她自己胸口鑽落，沐劍屏架頸中的一刀自然落空，"
-                       "她順勢在地下一個筋鬥在沐劍屏胯下鑽過，右手輕輕擊在沐劍屏後心。"NOR,
+        message_vision(HIY"$n" HIY "翻身卧倒並讓沐劍屏伸出右足，虛踏她後腰，手中假裝持刀架住她"
+                       "頭頸。驀見$n腦袋向着她自己胸口鑽落，沐劍屏架頸中的一刀自然落空，"
+                       "她順勢在地下一個筋斗在沐劍屏胯下鑽過，右手輕輕擊在沐劍屏後心。"NOR,
                        me, this_object());
 
-        command("say 這就是美女三招的第二招──「小憐橫陳」。");
+        command("say 這就是美女三招的第二招——「小憐橫陳」。");
         tell_object(me, HIG "你學會了小憐橫陳。" NOR);
         if (me->can_improve_skill("hand"))
                 me->improve_skill("hand", 150000);
@@ -252,14 +252,14 @@ mixed ask_huixiang()
                 return "你的神龍八式手法根基不夠，還得多練習練習。";
 
         if (me->query_skill("force", 1) < 160)
-                return "你的內功火候不足，學不成這飛燕回翔。";
+                return "你的內功火候不足，學不成這飛燕迴翔。";
 
         message_vision(HIY"$n" HIY "讓沐劍屏左手拿住她雙手手腕，右手虛執兵器，架在她的膚光白膩頭"
-                     "頸之中，$n笑道：“看仔細了！”右足向前輕踢，脫身而出，接著雙手回轉"
+                     "頸之中，$n笑道：“看仔細了！”右足向前輕踢，脱身而出，接着雙手迴轉"
                      "擊出一招，正中沐劍屏後心。"NOR, me, this_object());
 
-        command("say 這就是美女三招的第二招──「飛燕回翔」。");
-        tell_object(me, HIG "你學會了飛燕回翔。" NOR);
+        command("say 這就是美女三招的第二招——「飛燕迴翔」。");
+        tell_object(me, HIG "你學會了飛燕迴翔。" NOR);
         if (me->can_improve_skill("hand"))
                 me->improve_skill("hand", 150000);
         if (me->can_improve_skill("shenlong-bashi"))

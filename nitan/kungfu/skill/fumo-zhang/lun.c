@@ -39,11 +39,11 @@ int perform(object me, object target)
                 return notify_fail("你沒有激發二十四路伏魔杖，難以施展"+name()+"。\n");
 
         if (! living(target))
-                return notify_fail("對方都已經這樣了，用不著這麼費力吧？\n");
+                return notify_fail("對方都已經這樣了，用不着這麼費力吧？\n");
 
         msg = HIW "$N" HIW "一聲暴喝，手中" + weapon->name() +
               HIW "狂舞，殘影化作無數大圈，宛若" HIR "風火輪"
-              HIW "般舖天蓋地卷向$n" HIW "。\n" NOR;
+              HIW "般鋪天蓋地卷向$n" HIW "。\n" NOR;
 
         ap = attack_power(me, "staff");
         dp = defense_power(target, "parry");

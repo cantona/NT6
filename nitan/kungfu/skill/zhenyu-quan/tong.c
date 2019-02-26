@@ -38,10 +38,10 @@ int perform(object me, object target)
                 return notify_fail("你現在的真氣不夠，難以施展" TONG "。\n");
 
         if (! living(target))
-                return notify_fail("對方都已經這樣了，用不著這麼費力吧？\n");
+                return notify_fail("對方都已經這樣了，用不着這麼費力吧？\n");
 
         msg = HIR "$N" HIR "隨手揮出一拳，飄忽不定的擊向$n" HIR "，看似竟不"
-              "著半點力道。\n" NOR;
+              "着半點力道。\n" NOR;
 
         if (random(me->query_skill("cuff")) > target->query_skill("dodge") / 2)
         {
@@ -59,7 +59,7 @@ int perform(object me, object target)
                 me->start_busy(3);
                 addn("neili", -30, me);
                 msg += CYN "可是$p" CYN "識破了$P"
-                       CYN "招後更有殺著，當即向後躍開。\n" NOR;
+                       CYN "招後更有殺着，當即向後躍開。\n" NOR;
         }
         message_combatd(msg, me, target);
 

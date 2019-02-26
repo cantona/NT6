@@ -31,7 +31,7 @@ mapping *action = ({
         "lvl" : 44,
         "skill_name" : "九弧震日"
 ]),
-([        "action":"$N一式"HIW"「漫天風雪」"NOR"，手腕急抖，揮洒出萬點金光，刺向$n的$l",
+([        "action":"$N一式"HIW"「漫天風雪」"NOR"，手腕急抖，揮灑出萬點金光，刺向$n的$l",
         "lvl" : 52,
         "skill_name" : "漫天風雪"
 ]),
@@ -50,8 +50,8 @@ string *hit_msg = ({
         HIR"\n只見$N人影一閃，身形已然欺近對方，手中劍光閃爍，嗡嗡做響！\n"NOR,
         HIM"\n卻見$N一劍未定二劍已至，隨有前後之分卻同時到達，速度之快晃如兩劍同時發出！\n"NOR,
         HIG"\n不見$N手臂動作，只聽一聲龍吟之生，這第二劍已破空而至，刺至身前！\n"NOR,
-        HIB"\n緊跟著，$N又是一劍刺至，劍招雖分前後，但劍鋒幾乎同時到達，速度之快難以言表！\n"NOR,
-        HIW"\n一眨眼間$N的身形已欺至身前，若有若無，這第二劍已于電光火石間刺至身前！\n"NOR,
+        HIB"\n緊跟着，$N又是一劍刺至，劍招雖分前後，但劍鋒幾乎同時到達，速度之快難以言表！\n"NOR,
+        HIW"\n一眨眼間$N的身形已欺至身前，若有若無，這第二劍已於電光火石間刺至身前！\n"NOR,
 });
 int valid_enable(string usage) { return usage == "sword" || usage == "parry"; }
 int valid_learn(object me)

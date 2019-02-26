@@ -1,11 +1,11 @@
-// dizi5.c 銳金旗教眾
+// dizi5.c 鋭金旗教眾
 #include <ansi.h>
 inherit NPC;
 int hiting_ob(object ob);
 void moving_ob(object ob);
 void create()
 {
-        set_name("銳金旗教眾", ({"jiao zhong","zhong"}));
+        set_name("鋭金旗教眾", ({"jiao zhong","zhong"}));
         set("long", "他是身材高大，兩臂粗壯，膀闊腰圓。他手持兵刃，\n"+
                     "身穿一紅色聖衣，似乎有一身武藝。\n");
         set("gender", "男性");

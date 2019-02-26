@@ -98,10 +98,10 @@ TROOP_D->get_troop_side(id)==TROOP_D->get_troop_side(p_id))continue;
 		if( TROOP_D->get_troop_area(id) != where )continue;
 		if( (x-x2)*(x-x2)+(y-y2)*(y-y2) > 1 || TROOP_D->get_troop_side(id)==TROOP_D->get_troop_side(p_id))continue;
 		tell(deep_inventory(TROOP_D->find_troop(id)),
-			"被包圍的敵人向你軍沖了過來！\n",
+			"被包圍的敵人向你軍衝了過來！\n",
 			MSG_INDENT);		
 		tell(deep_inventory(TROOP_D->find_troop(p_id)),
-                        "奮勇的士兵沖入一支敵軍中！\n",
+                        "奮勇的士兵衝入一支敵軍中！\n",
                         MSG_INDENT);
 kill = p_skill*p_skill*100/(21*50);
 		if(kill<200)

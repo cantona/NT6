@@ -45,7 +45,7 @@ string do_unwield()
 
         lvl = me->query_skill("pixie-jian", 1) + me->query_skill("kuihua-mogong", 1);
 
-        // 這裡計算有bug
+        // 這裏計算有bug
         addn_temp("apply/attack",-lvl/2, me);
         addn_temp("apply/dodge",-lvl/2, me);
         return HIR "$N" HIR "一聲冷笑，收起了葵花針。\n" NOR;
@@ -72,7 +72,7 @@ mixed hit_ob(object me, object victim, int damage_bonus)
                                    HIR "招架頓時散亂，不由連退數步！\n" NOR:
 
                                    HIR "$N" HIR "一聲冷笑，單手輕輕一彈，紅光飛"
-                                   "射，$n" HIR "登時如遭電擊，全身酸麻！\n" NOR;
+                                   "射，$n" HIR "登時如遭電擊，全身痠麻！\n" NOR;
 
         case 1:
                 n = me->query_skill("sword");
@@ -89,7 +89,7 @@ mixed hit_ob(object me, object victim, int damage_bonus)
                        HIR "霎時只覺眼花繚亂，無從招架！\n" NOR;
 
         case 3:
-                return HIR "只見$N" HIR "驀地裡疾沖上前，瞬間已至$n" HIR
+                return HIR "只見$N" HIR "驀地裏疾衝上前，瞬間已至$n" HIR
                        "跟前，陰笑兩聲，又隨即躍開！\n" NOR;
         }
         return damage_bonus;

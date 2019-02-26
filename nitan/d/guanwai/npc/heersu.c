@@ -16,7 +16,7 @@ void create()
         set("int", 30);
         set("attitude", "friendly");
         set("inquiry", ([
-                "人參" : (: ask_me :),
+                "人蔘" : (: ask_me :),
                 "山參" : (: ask_me :),
         ]));
 
@@ -34,7 +34,7 @@ string ask_me()
 
         if (query("count") < 1)
         {
-                return "嘿嘿，你下次再來吧，現在我手裡也沒貨。\n";
+                return "嘿嘿，你下次再來吧，現在我手裏也沒貨。\n";
         } else
         if( query_temp("tmark/參", me) )
         {
@@ -52,13 +52,13 @@ int accept_object(object who, object ob)
 
         if( !query("money_id", ob) )
         {
-                write(CYN "赫爾蘇詫異地說道：你給我這個幹什麼？\n" NOR);
+                write(CYN "赫爾蘇詫異地説道：你給我這個幹什麼？\n" NOR);
                 return 0;
         }
 
         if (query("count") < 1)
         {
-                write(CYN "赫爾蘇搖頭道：你等下次吧，現在我手裡也沒貨。\n" NOR);
+                write(CYN "赫爾蘇搖頭道：你等下次吧，現在我手裏也沒貨。\n" NOR);
                 return 0;
         }
 
@@ -79,6 +79,6 @@ int accept_object(object who, object ob)
 
         addn("count", -1);
         command("givebainianrenshento"+query("id", who));
-        write(CYN "赫爾蘇說道：既然您出得起價，這株百年人參就給您吧。\n" NOR);
+        write(CYN "赫爾蘇説道：既然您出得起價，這株百年人蔘就給您吧。\n" NOR);
         return 1;
 }

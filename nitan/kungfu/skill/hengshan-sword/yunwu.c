@@ -30,7 +30,7 @@ int perform(object me, object target)
                 return  notify_fail("你要對誰使用這一絕技？\n");
 
         if( query("no_fight", environment(me)) )
-                return notify_fail("這裡不能攻擊別人! \n");
+                return notify_fail("這裏不能攻擊別人! \n");
 
   notify_fail("你不能攻擊這個人。\n");
         if (!userp(target) && !target->accept_hit(me)) return 0;
@@ -80,7 +80,7 @@ int perform(object me, object target)
 
         if( random(query("combat_exp", me)/3)>query("combat_exp", target)/4 )
         {                                             
-                msg += HIY "$p大駭之下，急向後退，嗤的一聲，胸口已給利劍割了一道長長的口子，\n衣衫盡裂，胸口肌肉也給割傷了，受傷雖然不重，卻已驚怒交集，銳氣大失。\n"+ HIR "$P一劍既佔先機，後著綿綿而至，一柄薄劍猶如靈蛇，顫動不絕，猶如鬼魅，\n一點點鮮血從長劍間濺了出來。\n" NOR;
+                msg += HIY "$p大駭之下，急向後退，嗤的一聲，胸口已給利劍割了一道長長的口子，\n衣衫盡裂，胸口肌肉也給割傷了，受傷雖然不重，卻已驚怒交集，鋭氣大失。\n"+ HIR "$P一劍既佔先機，後着綿綿而至，一柄薄劍猶如靈蛇，顫動不絕，猶如鬼魅，\n一點點鮮血從長劍間濺了出來。\n" NOR;
                 qi_wound=query("max_qi", target);
                 target->receive_damage("qi", qi_wound/2,me);
                 target->receive_wound("qi", qi_wound/2,me);

@@ -12,7 +12,7 @@ void create()
         set("str", 25);
         set("dex", 16);
         set("per", 21);
-        set("long", "他一身青袍人，長須垂胸，面目漆黑，一雙眼睜大大的，
+        set("long", "他一身青袍人，長鬚垂胸，面目漆黑，一雙眼睜大大的，
 一霎也不霎。\n");
         set("combat_exp", 3000000+ random(1000000));
         set("attitude", "peaceful");

@@ -17,7 +17,7 @@ int perform(object me)
         if( query_temp("chang", me) <= -30 )
                 return notify_fail("你已經唱得太久了，不能再唱了。\n");
 
-        message_combatd(HIR "只聽$N" HIR "口中念念有詞，頃刻"
+        message_combatd(HIR "只聽$N" HIR "口中唸唸有詞，頃刻"
                         "之間內力大漲！\n" NOR, me);
         addn_temp("apply/attack", -10, me);
         addn_temp("apply/dodge", -10, me);

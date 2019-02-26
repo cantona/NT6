@@ -82,7 +82,7 @@ int accept_kill(object who)
 
 int accept_ansuan(object who)
 {
-        return notify_fail("你剛想暗算，可是只見樓上人影晃動，根本看不清楚。\n");
+        return notify_fail("你剛想暗算，可是隻見樓上人影晃動，根本看不清楚。\n");
 }
 
 int begin()
@@ -125,14 +125,14 @@ void die()
         if (objectp(query("anti")))
         {
                 message_vision(HIR "\n只聽阿三幾聲慘嚎，全身各處關節竟然已被$n" HIR
-                                   "一一用重手折斷，大叫一聲，癱倒在地。\n" NOR,
+                                   "一一用重手摺斷，大叫一聲，癱倒在地。\n" NOR,
                                    this_object(),query("anti"));
 
-                message_vision(CYN "\n阿三倦縮在地，一張臉痛得全無血色，掙紮著說"
-                                   "道：“郡主，小的無能。”，話未說完，已暈了過去。\n" NOR,
+                message_vision(CYN "\n阿三倦縮在地，一張臉痛得全無血色，掙扎着説"
+                                   "道：“郡主，小的無能。”，話未説完，已暈了過去。\n" NOR,
                                    this_object());
 
-                message_vision(CYN "趙敏看了倒在地上的阿三一眼，面無表情地說道："
+                message_vision(CYN "趙敏看了倒在地上的阿三一眼，面無表情地説道："
                                    "“來人，給我抬下去。”\n" NOR,
                                    this_object());
 

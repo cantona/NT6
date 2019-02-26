@@ -10,7 +10,7 @@ void create()
                 set_default_object(__FILE__);
         else {
                 set("unit", "根");
-                set("long", "這是一根黑乎乎的鐵槳，屬于奇門兵器。\n");
+                set("long", "這是一根黑乎乎的鐵槳，屬於奇門兵器。\n");
                 set("value", 300);
                 set("material", "iron");
                 set("wield_msg", "$N雙手握起一根$n。\n");

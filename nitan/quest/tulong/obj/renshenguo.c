@@ -9,9 +9,9 @@ void init()
 
 void create()
 {
-        set_name(HIR"人參果"NOR, ({"guo", "renshen guo"}));
+        set_name(HIR"人蔘果"NOR, ({"guo", "renshen guo"}));
         set("unit", "朵");
-        set("long", "這是一只人參果, 已經成型, 真的象極了三周不滿的小孩。\n");
+        set("long", "這是一隻人蔘果, 已經成型, 真的象極了三週不滿的小孩。\n");
         setup();
 }
 
@@ -25,7 +25,7 @@ int do_eat(string arg)
                 set("neili",query("max_neili",  me), me);
                 set("eff_qi",query("max_qi",  me), me);
                 set("qi",query("eff_qi",  me), me);
-                message_vision("$N吃下一枚人參果，只覺得精神健旺，氣血充盈，體內真力源源滋生，甚至不再感到饑餓幹渴!\n",me);
+                message_vision("$N吃下一枚人蔘果，只覺得精神健旺，氣血充盈，體內真力源源滋生，甚至不再感到飢餓乾渴!\n",me);
 
                 destruct(this_object());
         }

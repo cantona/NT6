@@ -146,7 +146,7 @@ void attempt_apprentice(object ob)
                 return;
         }
         command("nod");
-        command("say 以後你就跟著我吧，可別給我生事。");
+        command("say 以後你就跟着我吧，可別給我生事。");
         command("recruit "+query("id", ob));
 
         if( query("class", ob) != "beggar" )
@@ -165,7 +165,7 @@ int accept_ask(object me, string topic)
         {
         case "歷練" :
         case "歷煉" :
-        case "鍛煉" :
+        case "鍛鍊" :
                 return QUEST_D->accept_ask(this_object(), me, topic);
                 break;
 

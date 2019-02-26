@@ -9,7 +9,7 @@ void create()
         int level;
         level = random(7)+1;
         set_name("丐幫弟子", ({ "gaibang dizi", "gangbang", "dizi" }));
-        set("long", "這是位衣著破爛的丐幫弟子，眉目間透出股英氣。\n");
+        set("long", "這是位衣着破爛的丐幫弟子，眉目間透出股英氣。\n");
         set("title", "丐幫"+chinese_number(level)+"袋弟子");
         set("gender", "男性");
         set("age", 15+level*5);

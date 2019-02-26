@@ -19,8 +19,8 @@ void create()
         set_name("宋遠橋", ({ "song yuanqiao", "song" }));
         set("nickname", "武當首俠");
         set("long",
-                "他就是張三豐的大弟子、武當七俠之首的宋遠橋。\n"
-                "身穿一件幹幹凈凈的灰色道袍。\n"
+                "他就是張三丰的大弟子、武當七俠之首的宋遠橋。\n"
+                "身穿一件乾乾淨淨的灰色道袍。\n"
                 "他已年過六十，身材瘦長，滿臉紅光。恬淡沖和，沉默寡言。\n");
         set("gender", "男性");
         set("age", 61);
@@ -126,7 +126,7 @@ void attempt_apprentice(object ob)
         if ((int)ob->query_skill("taoism", 1) < 80)
         {
                 command("say 習武是為了強身健體，一味的練武是不可取的。");
-                command("say 我看你還需要在修身養性方面多鍛煉鍛煉，以提高"
+                command("say 我看你還需要在修身養性方面多鍛鍊鍛鍊，以提高"
                         "你的道德心法。");
                 return;
         }
@@ -152,7 +152,7 @@ mixed ask_book1()
                 return "你俠義正事做得不夠，這本書我還不能給你。";
 
         if ((int)me->query_skill("wudang-yaoli", 1) < 50)
-                return "你對武當藥理的了解太淺，還是過段時間再說吧。";
+                return "你對武當藥理的瞭解太淺，還是過段時間再説吧。";
 
         ob = find_object(WUDANG);
         if (! ob) ob = load_object(WUDANG);
@@ -165,12 +165,12 @@ mixed ask_book1()
         }
 
         if (owner == me)
-                return "那本藥理不就是你拿著在看嗎？";
+                return "那本藥理不就是你拿着在看嗎？";
 
         if (objectp(owner) && owner != this_object())
         {
                 if (! owner->is_character())
-                        return "…嗯…武當藥理現在不在我手裡。";
+                        return "…嗯…武當藥理現在不在我手裏。";
 
                 if( query("family/family_name", owner) == "武當派" )
                         return "那書現在暫時是你同門"+query("name", owner)+
@@ -297,7 +297,7 @@ int accept_ask(object me, string topic)
         {
         case "歷練" :
         case "歷煉" :
-        case "鍛煉" :
+        case "鍛鍊" :
                 return QUEST_D->accept_ask(this_object(), me, topic);
                 break;
 

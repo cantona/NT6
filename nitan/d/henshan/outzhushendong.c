@@ -5,7 +5,7 @@ void create()
 {
         set("short", "諸神仙洞");
         set("long", @LONG
-舉目四望，周圍盡是懸崖峭壁(bi)，猛一抬頭看見洞口上寫著「
+舉目四望，周圍盡是懸崖峭壁(bi)，猛一抬頭看見洞口上寫着「
 諸神仙洞」四個大字。但是字體經過風雨的沖蝕已經磨損，周圍野草
 雜生，心中悲涼不已。
 LONG );
@@ -44,7 +44,7 @@ int do_climb(string arg)
         if ( !shilin = find_object(__DIR__"shilinfeng"))
                 shilin =load_object(__DIR__"shilinfeng");
 
-               msg = HIG "\n$N" HIG "拉著樹籐往峭壁上爬去。\n"NOR;
+               msg = HIG "\n$N" HIG "拉着樹藤往峭壁上爬去。\n"NOR;
         
                if(qi < 100)
         {

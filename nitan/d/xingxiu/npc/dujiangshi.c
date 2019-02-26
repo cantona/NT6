@@ -1,13 +1,13 @@
-// dujiangsi.c 毒僵屍
+// dujiangsi.c 毒殭屍
 
 inherit NPC;
 
 void create()
 {
-        set_name("毒僵屍", ({ "du jiangshi", "jiangshi" }) );
+        set_name("毒殭屍", ({ "du jiangshi", "jiangshi" }) );
         set("gender", "男性" );
         set("age", 30);
-        set("long", "一個星宿派練功用的毒僵屍，經藥物泡制，對練功大有好處。\n");
+        set("long", "一個星宿派練功用的毒殭屍，經藥物泡製，對練功大有好處。\n");
         set("attitude", "heroism");
 
         set("str", 25);
@@ -51,15 +51,15 @@ int accept_fight(object ob)
         if (is_fighting()) return 0;
 
         if( query("damaged", me) )
-                return notify_fail("這個毒僵屍已經被打壞了！\n");
+                return notify_fail("這個毒殭屍已經被打壞了！\n");
 
         if( random(query("fight_times", me)) >= 10){
                 set("damaged", 1, me);
-                return notify_fail("這個毒僵屍已經被打壞了！\n");
+                return notify_fail("這個毒殭屍已經被打壞了！\n");
         }
 
         if( query("last_fighter", me) == query("id", ob) )
-                return notify_fail("你剛跟這個毒僵屍練過功！\n");
+                return notify_fail("你剛跟這個毒殭屍練過功！\n");
 
         set("last_fighter",query("id",  ob), me);
         addn("fight_times", 1, me);

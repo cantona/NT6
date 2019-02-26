@@ -5,7 +5,7 @@
 #include <ansi.h>
 inherit ROOM;
 
-#define QUESTDIR3 "quest/天龍八部/蕭峰身世篇/"
+#define QUESTDIR3 "quest/天龍八部/蕭峯身世篇/"
 
 void xiaofeng1(object me);
 void xiaofeng2(object me);
@@ -20,9 +20,9 @@ void create()
 {
         set("short", "聚賢莊大廳");
         set("long", @LONG
-這是聚賢莊的大廳，大廳內很寬敞，放著幾十張桌子。東首主位的桌子旁
-放有三把黑色的太師椅，其中一個椅子上坐著一個中年男子。他身後的牆上掛
-有兩副圓盾、一柄單刀，一桿短槍。
+這是聚賢莊的大廳，大廳內很寬敞，放着幾十張桌子。東首主位的桌子旁
+放有三把黑色的太師椅，其中一個椅子上坐着一箇中年男子。他身後的牆上掛
+有兩副圓盾、一柄單刀，一杆短槍。
 LONG
         );
 		set("quest",1);
@@ -61,9 +61,9 @@ void init()
   }
   me->start_busy(2);
   me->set_temp(QUESTDIR3+"jxzhuang",1);
-  copy_person(this_object(),3);//復制情節人物，3是用來控制蕭峰有普通招數，其他npc只有絕招  
+  copy_person(this_object(),3);//複製情節人物，3是用來控制蕭峯有普通招數，其他npc只有絕招  
   obj=present("xiao feng", this_object());
-  tell_object(me,HIG"\n你走進大廳內，果然一片混亂。大廳上聚集著三百余人，大家擠在一團，真能挨到蕭峰身邊的，不過五六人而已，\n"
+  tell_object(me,HIG"\n你走進大廳內，果然一片混亂。大廳上聚集着三百餘人，大家擠在一團，真能捱到蕭峯身邊的，不過五六人而已，\n"
                       "刀槍劍戟四下舞動，一大半人倒要防備為自己人所傷。\n"NOR); 
   message_vision(HIR "\n$N微一凝神，運起混天氣功，全身骨節發出一陣爆豆般的聲響。\n" NOR, obj);
   remove_call_out("xiaofeng1");
@@ -86,8 +86,8 @@ void xiaofeng1(object me)
 	if (me->query_temp(QUESTDIR3+"help")) return;
 	if(!present(me,this_object())) 
 	{
-		tell_object(me,HIG"\n你這種情況竟然臨陣逃脫，實在違背俠義之情。你的江湖威望大幅下降。\n"NOR); 
-		me->delete_temp("quest/busy");//任務系統沖突標志
+		tell_object(me,HIG"\n你這種情況竟然臨陣逃脱，實在違背俠義之情。你的江湖威望大幅下降。\n"NOR); 
+		me->delete_temp("quest/busy");//任務系統衝突標誌
 		me->delete_temp("quest/天龍八部");   
 		me->delete(QUESTDIR3+"start");
 		me->add("mana",-200);
@@ -95,10 +95,10 @@ void xiaofeng1(object me)
 		destruct_person(this_object());//消除所有人物
 		return;
 	}
-	copy_person(this_object(),1);//復制情節人物  ,1是最激烈的戰鬥
+	copy_person(this_object(),1);//複製情節人物  ,1是最激烈的戰鬥
 	obj=present("xiao feng", this_object());
-    message_vision(HIG"\n\n$N果然了得，手掌揚處，砰砰兩聲，又有兩人中了劈空拳倒地，隨勢沖入人群，肘撞拳擊，掌劈腳踢，霎時間又打倒數人。\n\n"NOR, obj);
-    message_vision(HIG"$N對著$n冷笑一聲。\n\n"NOR, obj,me);
+    message_vision(HIG"\n\n$N果然了得，手掌揚處，砰砰兩聲，又有兩人中了劈空拳倒地，隨勢衝入人羣，肘撞拳擊，掌劈腳踢，霎時間又打倒數人。\n\n"NOR, obj);
+    message_vision(HIG"$N對着$n冷笑一聲。\n\n"NOR, obj,me);
 	remove_call_out("xiaofeng2");
 	call_out("xiaofeng2",20, me);   
 	return;
@@ -113,8 +113,8 @@ void xiaofeng2(object me)
   if (me->query_temp(QUESTDIR3+"help")) return;
   if(!present(me,this_object())) 
   {
-	  tell_object(me,HIG"\n你這種情況竟然臨陣逃脫，實在違背俠義之情。你的江湖威望大幅下降。\n"NOR); 
-	  me->delete_temp("quest/busy");//任務系統沖突標志
+	  tell_object(me,HIG"\n你這種情況竟然臨陣逃脱，實在違背俠義之情。你的江湖威望大幅下降。\n"NOR); 
+	  me->delete_temp("quest/busy");//任務系統衝突標誌
 	  me->delete_temp("quest/天龍八部");   
 	  me->delete(QUESTDIR3+"start");
 	  me->add("mana",-200);
@@ -122,25 +122,25 @@ void xiaofeng2(object me)
 	  destruct_person(this_object());//消除所有人物
 	  return;
   }
-  copy_person(this_object(),0);//復制情節人物 ,0讓所有的人物戰鬥停止
+  copy_person(this_object(),0);//複製情節人物 ,0讓所有的人物戰鬥停止
   obj1=present("xiao feng", this_object());
   obj2=present("xuan nan", this_object());
   tell_object(me,HIY"\n一會工夫，大廳情況發生變化。卻見中央讓出一塊空地，只見少林高僧玄難緩步而前，本來是數十人圍攻喬\n"
-                      "峰的局面，玄難這一出手，余人自覺在旁夾攻反而礙手礙腳，自然而然的逐一退下，各人團團圍住，以防喬\n"
-                      "峰逃脫，凝神觀看玄難和他決戰。\n"NOR);                    
+                      "峯的局面，玄難這一出手，餘人自覺在旁夾攻反而礙手礙腳，自然而然的逐一退下，各人團團圍住，以防喬\n"
+                      "峯逃脱，凝神觀看玄難和他決戰。\n"NOR);                    
   message_vision(HIY"\n$N突然深吸一口氣，目露慈光，面帶微笑，內力運轉，竟使全身上下寶光流動，是「金剛不壞體神功」！\n" NOR, obj2); 
   obj2->kill_ob(obj1);
   obj1->start_busy(3);
   obj2->start_busy(3);
-  message_vision(HIR"\n$n向$N喝道：“看我袖裡乾坤。”只見$N內力充盈，衣袖拂起，拳勁卻暗藏在袖底發出，正是少林絕技。\n" NOR, obj1,obj2); 
+  message_vision(HIR"\n$n向$N喝道：“看我袖裏乾坤。”只見$N內力充盈，衣袖拂起，拳勁卻暗藏在袖底發出，正是少林絕技。\n" NOR, obj1,obj2); 
   message_vision(HIW"\n$N料想這招衣袖便是拳勁的掩飾，使其無法看到拳勢來路，攻他個措手不及。當即全神貫注的拆解他袖底所\n"
                       "藏拳招，$N使出「蜻蜓點水」，恰好躲過了$n的攻勢。\n" NOR, obj1,obj2); 
-  message_vision(HIY"\n豈料，衣袖之上卻也蓄有極凌厲的招數和勁力，$N當即大喝一聲，孤注一擲，將全身功力匯于一袖之內揮出！\n" NOR,obj2);
-  message_vision(HIW"\n$N見他攻到，兩只寬大的衣袖鼓風而前，便如是兩道順風的船帆，威勢非同小可，大聲喝道：“袖裡乾坤，\n"
+  message_vision(HIY"\n豈料，衣袖之上卻也蓄有極凌厲的招數和勁力，$N當即大喝一聲，孤注一擲，將全身功力匯於一袖之內揮出！\n" NOR,obj2);
+  message_vision(HIW"\n$N見他攻到，兩隻寬大的衣袖鼓風而前，便如是兩道順風的船帆，威勢非同小可，大聲喝道：“袖裏乾坤，\n"
                       "果然了得！”呼的一掌，拍向他衣袖。$n的袖力廣被寬博，$N這一掌卻是力聚而凝，只聽得嗤嗤聲響，兩股\n"
-                      "力道相互激盪，突然間大廳上似有數十只灰蝶上下翻飛。\n" NOR, obj1,obj2); 
-  tell_object(me,HIB"\n你暗叫一聲“好武功”，蕭峰只如此一掌，便破了渡難的成名絕技。\n"NOR);  
-  log_file("quest/TLBB", sprintf("%s(%s)聚賢莊大混亂玄難與蕭峰單幹。經驗%d。\n", me->name(1),me->query("id"), me->query("combat_exp")) );
+                      "力道相互激盪，突然間大廳上似有數十隻灰蝶上下翻飛。\n" NOR, obj1,obj2); 
+  tell_object(me,HIB"\n你暗叫一聲“好武功”，蕭峯只如此一掌，便破了渡難的成名絕技。\n"NOR);  
+  log_file("quest/TLBB", sprintf("%s(%s)聚賢莊大混亂玄難與蕭峯單幹。經驗%d。\n", me->name(1),me->query("id"), me->query("combat_exp")) );
   remove_call_out("xiaofeng3");
   call_out("xiaofeng3",15, me);   
   return;
@@ -154,8 +154,8 @@ void xiaofeng3(object me)
   if (me->query_temp(QUESTDIR3+"help")) return;
   if(!present(me,this_object())) 
   {
-	  tell_object(me,HIG"\n你這種情況竟然臨陣逃脫，實在違背俠義之情。你的江湖威望大幅下降。\n"NOR); 
-	  me->delete_temp("quest/busy");//任務系統沖突標志
+	  tell_object(me,HIG"\n你這種情況竟然臨陣逃脱，實在違背俠義之情。你的江湖威望大幅下降。\n"NOR); 
+	  me->delete_temp("quest/busy");//任務系統衝突標誌
 	  me->delete_temp("quest/天龍八部");   
 	  me->delete(QUESTDIR3+"start");
 	  me->add("mana",-200);
@@ -163,9 +163,9 @@ void xiaofeng3(object me)
 	  destruct_person(this_object());//消除所有人物
 	  return;
   }
-  copy_person(this_object(),3);//復制情節人物 
+  copy_person(this_object(),3);//複製情節人物 
   message_vision(HIY"\n玄難突然深吸一口氣，目露慈光，面帶微笑，內力運轉，竟使全身上下寶光流動，是「金剛不壞體神功」！\n" NOR,me); 
-  message_vision(HIR"\n玄難似乎漸漸不是對手，群雄又是全部一擁而上，場面更加混亂，戰鬥越來越是激烈！\n" NOR,me); 
+  message_vision(HIR"\n玄難似乎漸漸不是對手，羣雄又是全部一擁而上，場面更加混亂，戰鬥越來越是激烈！\n" NOR,me); 
   remove_call_out("xiaofeng4");
   call_out("xiaofeng4",30, me);   
   return;
@@ -180,8 +180,8 @@ void xiaofeng4(object me)
   if (me->query_temp(QUESTDIR3+"help")) return;
   if(!present(me,this_object())) 
   {
-	  tell_object(me,HIG"\n你這種情況竟然臨陣逃脫，實在違背俠義之情。你的江湖威望大幅下降。\n"NOR); 
-	  me->delete_temp("quest/busy");//任務系統沖突標志
+	  tell_object(me,HIG"\n你這種情況竟然臨陣逃脱，實在違背俠義之情。你的江湖威望大幅下降。\n"NOR); 
+	  me->delete_temp("quest/busy");//任務系統衝突標誌
 	  me->delete_temp("quest/天龍八部");   
 	  me->delete(QUESTDIR3+"start");
 	  me->add("mana",-200);
@@ -189,12 +189,12 @@ void xiaofeng4(object me)
 	  destruct_person(this_object());//消除所有人物
 	  return;
   }
-  copy_person(this_object(),3);//復制情節人物 
+  copy_person(this_object(),3);//複製情節人物 
   obj=present("xiao feng", this_object());
-  message_vision(HIW"\n瞬間之內，$N發現蕭峰似乎背心、右胸、右肩同時中刀，更不可思議的是蕭峰竟然當即昂立不動，陡然仰天\n"
-                      "大叫，聲音直似猛獸狂吼。卻見單正正大呼而前，舉刀往蕭峰胸口刺去。\n"NOR,me);
-  tell_object(me,HIR"\n你暗道一聲“不妙”，需要你趕快去解救蕭峰（jiejiu xiao feng）。\n"NOR);
-  log_file("quest/TLBB", sprintf("%s(%s)聚賢莊大混亂需要解救蕭峰。經驗%d。\n", me->name(1),me->query("id"), me->query("combat_exp")) );
+  message_vision(HIW"\n瞬間之內，$N發現蕭峯似乎背心、右胸、右肩同時中刀，更不可思議的是蕭峯竟然當即昂立不動，陡然仰天\n"
+                      "大叫，聲音直似猛獸狂吼。卻見單正正大呼而前，舉刀往蕭峯胸口刺去。\n"NOR,me);
+  tell_object(me,HIR"\n你暗道一聲“不妙”，需要你趕快去解救蕭峯（jiejiu xiao feng）。\n"NOR);
+  log_file("quest/TLBB", sprintf("%s(%s)聚賢莊大混亂需要解救蕭峯。經驗%d。\n", me->name(1),me->query("id"), me->query("combat_exp")) );
   me->set_temp(QUESTDIR3+"can_be_help",1);
   remove_call_out("xiaofeng5");
   call_out("xiaofeng5",10, me); 
@@ -212,8 +212,8 @@ void xiaofeng5(object me)
   if (!me->query_temp(QUESTDIR3+"can_be_help")) return;
   if(!present(me,this_object())) 
   {
-	  tell_object(me,HIG"\n你這種情況竟然臨陣逃脫，實在違背俠義之情。你的江湖威望大幅下降。\n"NOR); 
-	  me->delete_temp("quest/busy");//任務系統沖突標志
+	  tell_object(me,HIG"\n你這種情況竟然臨陣逃脱，實在違背俠義之情。你的江湖威望大幅下降。\n"NOR); 
+	  me->delete_temp("quest/busy");//任務系統衝突標誌
 	  me->delete_temp("quest/天龍八部");   
 	  me->delete(QUESTDIR3+"start");
 	  me->add("mana",-200);
@@ -221,8 +221,8 @@ void xiaofeng5(object me)
 	  destruct_person(this_object());//消除所有人物
 	  return;
   }
-  copy_person(this_object(),3);//復制情節人物 
-  tell_object(me,HIR"\n你趕快去解救蕭峰（jiejiu xiao feng）啊。別發呆了！\n"NOR);
+  copy_person(this_object(),3);//複製情節人物 
+  tell_object(me,HIR"\n你趕快去解救蕭峯（jiejiu xiao feng）啊。別發呆了！\n"NOR);
   remove_call_out("xiaofeng5");
   call_out("xiaofeng5",10, me); 
   return;
@@ -237,8 +237,8 @@ void xiaofeng_over(object me)
   if (!me->query_temp(QUESTDIR3+"can_be_help")) return;
   if(!present(me,this_object())) 
   {
-	  tell_object(me,HIG"\n你這種情況竟然臨陣逃脫，實在違背俠義之情。你的江湖威望大幅下降。\n"NOR); 
-	  me->delete_temp("quest/busy");//任務系統沖突標志
+	  tell_object(me,HIG"\n你這種情況竟然臨陣逃脱，實在違背俠義之情。你的江湖威望大幅下降。\n"NOR); 
+	  me->delete_temp("quest/busy");//任務系統衝突標誌
 	  me->delete_temp("quest/天龍八部");   
 	  me->delete(QUESTDIR3+"start");
 	  me->add("mana",-200);
@@ -247,17 +247,17 @@ void xiaofeng_over(object me)
 	  return;
   }
   tell_object(me,HIC"\n突然一個黑衣人叢房頂跳下來，一個竄身向單正拿去，勢道奇急，正好碰在單正的鋼刀之上。鋼刀順勢落地。廳中登時大\n"
-                      "亂，群雄驚呼叫嚷。黑衣人順手檢起角落一團長繩，用力一甩，趁群雄紛舉兵刃擋格之際，繩頭陡轉，往蕭峰腰間一纏，\n"
+                      "亂，羣雄驚呼叫嚷。黑衣人順手檢起角落一團長繩，用力一甩，趁羣雄紛舉兵刃擋格之際，繩頭陡轉，往蕭峯腰間一纏，\n"
                       "隨即提起。黑衣人隨手倒轉長繩，繞向八九丈外的一株大樹，一拉長繩，頃刻間越過那株大樹，已在落在後院。\n"NOR);
-  tell_room(environment(me),HIC"\n突然一個人影化過，卻見單正已經昏倒在地，而蕭峰騰空而起。再仔細看時，人已經落在後院之中。\n"NOR, ({}));                       
+  tell_room(environment(me),HIC"\n突然一個人影化過，卻見單正已經昏倒在地，而蕭峯騰空而起。再仔細看時，人已經落在後院之中。\n"NOR, ({}));                       
 
   tell_object(me,HIG"\n你這種情況竟然不敢救援，實在違背俠義之情。你的江湖威望大幅下降。\n"NOR); 
-  me->delete_temp("quest/busy");//任務系統沖突標志
+  me->delete_temp("quest/busy");//任務系統衝突標誌
   me->delete_temp("quest/天龍八部");   
   me->delete(QUESTDIR3+"start");
   me->add("mana",-200);
   if(me->query("mana")<0) me->set("mana",0);
-  log_file("quest/TLBB", sprintf("%s(%s)聚賢莊大混亂沒有解救蕭峰，任務失敗。經驗%d。\n", me->name(1),me->query("id"), me->query("combat_exp")) );
+  log_file("quest/TLBB", sprintf("%s(%s)聚賢莊大混亂沒有解救蕭峯，任務失敗。經驗%d。\n", me->name(1),me->query("id"), me->query("combat_exp")) );
   destruct_person(this_object());//消除所有人物
   return;
 }
@@ -278,7 +278,7 @@ int do_jiejiu(string arg)
   }
   if (!me->query_temp(QUESTDIR3+"can_be_help"))
   {
-      tell_object(me,HIR"\n還不到時候，不需要你解救，蕭峰自能自己應付。\n"NOR);
+      tell_object(me,HIR"\n還不到時候，不需要你解救，蕭峯自能自己應付。\n"NOR);
 	  return 1; 
   }
   if(!(obj=present("xiao feng", environment(me))))
@@ -295,22 +295,22 @@ int do_jiejiu(string arg)
   if(obj->is_busy()) obj->start_busy(-1);	  
  
   tell_object(me,HIC"\n你暗道一聲“不妙”，馬上一個竄身，你勢道奇急，正好碰在單正的鋼刀之上。鋼刀順勢落地。廳中登時大亂，\n"
-                      "群雄驚呼叫嚷。你順手檢起角落一團長繩，用力一甩，趁群雄紛舉兵刃擋格之際，繩頭陡轉，往蕭峰腰間一纏，\n"
+                      "羣雄驚呼叫嚷。你順手檢起角落一團長繩，用力一甩，趁羣雄紛舉兵刃擋格之際，繩頭陡轉，往蕭峯腰間一纏，\n"
                       "隨即提起。你隨手倒轉長繩，繞向八九丈外的一株大樹，一拉長繩，頃刻間越過那株大樹，已在落在後院。\n"NOR);
-  tell_room(environment(me),HIC"\n突然一個人影化過，卻見單正已經昏倒在地，而蕭峰騰空而起。再仔細看時，人已經落在後院之中。\n"NOR, ({}));                       
+  tell_room(environment(me),HIC"\n突然一個人影化過，卻見單正已經昏倒在地，而蕭峯騰空而起。再仔細看時，人已經落在後院之中。\n"NOR, ({}));                       
   if (!(room = find_object("/d/nanyang/houyuan")))
       room = load_object("/d/nanyang/houyuan");
   if(room)
   {
   	me->move(room);  
   	obj->move(room);
-    tell_object(me,HIR"\n你跟著又甩長繩，再繞遠處大樹，如此幾個起落，已然走得無影無蹤。\n"NOR);
+    tell_object(me,HIR"\n你跟着又甩長繩，再繞遠處大樹，如此幾個起落，已然走得無影無蹤。\n"NOR);
   }
   else 
   {
 	  destruct_person(this_object());//消除所有人物
-	  tell_object(me,HIR"\n你跟著又甩長繩，再繞遠處大樹，如此幾個起落，靠，還在原地？？\n"NOR);
-	  me->delete_temp("quest/busy");//任務系統沖突標志
+	  tell_object(me,HIR"\n你跟着又甩長繩，再繞遠處大樹，如此幾個起落，靠，還在原地？？\n"NOR);
+	  me->delete_temp("quest/busy");//任務系統衝突標誌
 	  me->delete_temp("quest/天龍八部");   
 	  log_file("quest/TLBB", sprintf("%s(%s)聚賢莊缺少houyuan.c文件。\n", me->name(1),me->query("id")) );
 	  return 1;
@@ -327,13 +327,13 @@ int do_jiejiu(string arg)
   else 
   {
     destruct_person(this_object());//消除所有人物
-	me->delete_temp("quest/busy");//任務系統沖突標志
+	me->delete_temp("quest/busy");//任務系統衝突標誌
 	me->delete_temp("quest/天龍八部");   
-    tell_object(me,HIR"\n你跟著又甩長繩，再繞遠處大樹，如此幾個起落，靠，還在原地？？\n"NOR);
+    tell_object(me,HIR"\n你跟着又甩長繩，再繞遠處大樹，如此幾個起落，靠，還在原地？？\n"NOR);
 	log_file("quest/TLBB", sprintf("%s(%s)聚賢莊缺少duanya2.c文件。\n", me->name(1),me->query("id")) );
     return 1;
   }
-  log_file("quest/TLBB", sprintf("%s(%s)聚賢莊大混亂成功解救蕭峰。經驗%d。\n", me->name(1),me->query("id"), me->query("combat_exp")) );
+  log_file("quest/TLBB", sprintf("%s(%s)聚賢莊大混亂成功解救蕭峯。經驗%d。\n", me->name(1),me->query("id"), me->query("combat_exp")) );
   me->set_temp(QUESTDIR3+"help",1);
   destruct_person(this_object());//消除所有人物
   return 1;
@@ -346,19 +346,19 @@ void busy()
 int do_action(string arg)
 {
 	this_player()->start_busy(1);
-   	tell_object(this_player(),HIR"\n你正要有所動作，突然感覺這裡太過混亂，還是安靜得好！\n");
+   	tell_object(this_player(),HIR"\n你正要有所動作，突然感覺這裏太過混亂，還是安靜得好！\n");
    	return 1;
 }
 int valid_leave(object me, string dir)
 {
      if (present("xiao feng", environment(me)))
-           return notify_fail(HIR"別忘記了此行的目的，怎能不管蕭峰了，還是靜觀其變！\n"NOR);
+           return notify_fail(HIR"別忘記了此行的目的，怎能不管蕭峯了，還是靜觀其變！\n"NOR);
      return ::valid_leave(me, dir);
 }
 void copy_person(object ob,int i)
 {
 	object obj1,obj2;
-	//添加蕭峰
+	//添加蕭峯
   if(!(obj1=present("xiao feng", ob))) 
   {
  	   obj1=new(__DIR__"npc/xiaofeng");
@@ -466,7 +466,7 @@ void set_person(object obj1,object obj2,int i)
 {
   if(!obj1) return;
   if(!obj2) return;
-  //obj1是蕭峰
+  //obj1是蕭峯
   if(i>0) obj2->kill_ob(obj1);
   else obj2->remove_all_killer(); 
   if(i==2) 

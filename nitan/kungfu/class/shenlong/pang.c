@@ -15,7 +15,7 @@ void create()
         set("title", HIY"神龍教"NOR"左護法");
         set("nickname",HIR "遼東胖尊者" NOR);
         set("long", "這頭陀身材奇高，而且瘦得出奇；臉上皮包骨頭、雙\n"
-                    "目深陷，當真便如僵屍一般。\n" );
+                    "目深陷，當真便如殭屍一般。\n" );
         set("gender", "男性");
         set("age", 44);
 
@@ -33,7 +33,7 @@ void create()
         set("jiali", 60);
         set("level", 20);
         set("combat_exp", 750000);
-        set("no_get", "別人在做任務，你想把人搬到哪裡去？\n");
+        set("no_get", "別人在做任務，你想把人搬到哪裏去？\n");
         set("shen_type", -1);
         set("attitude", "peaceful");
 
@@ -100,17 +100,17 @@ mixed ask_back()
         me = this_player();
         if( query("family/family_name", me) != "神龍教" )
         {
-                message_vision("$N自顧自的賭博，好象沒有聽見$n在說什麼。\n",
+                message_vision("$N自顧自的賭博，好像沒有聽見$n在説什麼。\n",
                                this_object(), me);
                 return -1;
         }
 
         message_vision("$N猛然抬起頭來，上上下下打量了一會"
                        "兒$n，眼角微微一動，\n放下手中的排九"
-                       "，低聲道：快跟我來。\n說罷，$N領"
-                       "著$n急急忙忙的朝後面走去。\n", this_object(), me);
-        tell_object(me, "你跟著" + name() + "急急的走著，來到了"
-                    "一處秘道，" + name() + "指著前面道：“一直走"
+                       "，低聲道：快跟我來。\n説罷，$N領"
+                       "着$n急急忙忙的朝後面走去。\n", this_object(), me);
+        tell_object(me, "你跟着" + name() + "急急的走着，來到了"
+                    "一處祕道，" + name() + "指着前面道：“一直走"
                     "就行了，去吧！”\n");
         tell_object(me, HIW "你走了很久，越來越冷，忽然眼前一亮，"
                     "你已經看到了陽光，只見附近的野花映得眼花繚亂。\n" NOR);

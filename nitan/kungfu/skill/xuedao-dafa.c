@@ -137,11 +137,11 @@ int valid_learn(object me)
                 return notify_fail("你的內力修為不足，不能學血刀大法。\n");
 
         if (me->query_skill("force", 1) < me->query_skill("xuedao-dafa", 1))
-                return notify_fail("你的基本內功水平不夠，難以鍛煉更深厚的血刀大法。\n");
+                return notify_fail("你的基本內功水平不夠，難以鍛鍊更深厚的血刀大法。\n");
 
         if (me->query_skill("xuedao-dafa", 1) > 120 &&
            me->query_skill("blade", 1) < me->query_skill("xuedao-dafa", 1))
-                return notify_fail("你的基本刀法水平不夠，難以鍛煉更深厚的血刀大法。\n");
+                return notify_fail("你的基本刀法水平不夠，難以鍛鍊更深厚的血刀大法。\n");
 
         return ::valid_learn(me);
 }

@@ -7,7 +7,7 @@ void create()
         set_name("頑童",({ "kid" }) );
         set("gender", "男性" );
         set("age", 6);
-        set("long", "這是個頑皮小童，頭上紮著沖天小辮。\n");
+        set("long", "這是個頑皮小童，頭上扎着沖天小辮。\n");
         set_temp("apply/defense", 5);
         set("combat_exp", 70);
         set("shen", 100);

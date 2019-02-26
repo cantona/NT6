@@ -10,7 +10,7 @@ mapping *action = ({
         "lvl" :        0,
         "skill_name" : "聚火",
 ]),
-([        "action" : "$N向前跨上一步，左手回環，右手$w使出一式"HIW"「起光」"NOR"自斜下掃向$n的$l",
+([        "action" : "$N向前跨上一步，左手迴環，右手$w使出一式"HIW"「起光」"NOR"自斜下掃向$n的$l",
         "lvl" :        15,
         "skill_name" : "起光",
 ]),
@@ -42,7 +42,7 @@ mapping *action = ({
         "lvl" :        110,
         "skill_name" : "遮月",
 ]),
-([        "action" : "$N使出"HIY"「掩日」"NOR"，$w劃出無數個圓圈，鞭緣直出，貫注內力，綿綿不斷劃向$n的$l",
+([        "action" : "$N使出"HIY"「掩日」"NOR"，$w劃出無數個圓圈，鞭緣直出，貫注內力，綿綿不斷划向$n的$l",
         "lvl" :        120,
         "skill_name" : "掩日",
 ])

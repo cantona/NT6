@@ -143,7 +143,7 @@ mixed hit_ob(object me, object victim, int damage)
         if (random(damage) > victim->query_str()/10)
         {
                 result = ([ "damage": damage ]);
-                result += (["msg" : HIW "$N邪氣大發，頓時光芒大勝。揮著大刀向著$n身上揮來，$n" BLINK +
+                result += (["msg" : HIW "$N邪氣大發，頓時光芒大勝。揮着大刀向着$n身上揮來，$n" BLINK +
                                     HIR "鮮血" NOR + HIW "狂噴而出！\n" NOR ]);
                 return result;
         }

@@ -1,4 +1,4 @@
-// kunlun-strike.c 昆侖掌
+// kunlun-strike.c 崑崙掌
 
 #include <ansi.h>;
 inherit SKILL;
@@ -18,21 +18,21 @@ mapping *action = ({
         "lvl" : 38,
         "skill_name" : "秋風不盡"
 ]),
-([        "action" : "$N一聲清嘯，呼的一掌，一招"HIB"「山回路轉」"NOR"，自巧轉拙，卻是去勢奇快，向$n的$l猛擊過去，",
+([        "action" : "$N一聲清嘯，呼的一掌，一招"HIB"「山迴路轉」"NOR"，自巧轉拙，卻是去勢奇快，向$n的$l猛擊過去，",
         "lvl" : 55,
-        "skill_name" : "山回路轉"
+        "skill_name" : "山迴路轉"
 ]),
 ([        "action" : "$N雙掌交錯，若有若無，一招"BLU"「天衣無縫」"NOR"，拍向$n的$l",
         "lvl" : 72,
         "skill_name" : "天衣無縫"
 ]),
-([        "action" : "$N一招"GRN"「青山斷河」"NOR"，右手一拳擊出，左掌緊跟著在右拳上一搭，變成雙掌下劈，擊向$n的$l",
+([        "action" : "$N一招"GRN"「青山斷河」"NOR"，右手一拳擊出，左掌緊跟着在右拳上一搭，變成雙掌下劈，擊向$n的$l",
         "lvl" : 87,
         "skill_name" : "青山斷河"
 ]),
-([        "action" : "$N雙手齊劃，跟著雙掌齊推，一招"MAG"「北風卷地」"NOR"，一股排山倒海的掌力，直撲$n面門",
+([        "action" : "$N雙手齊劃，跟着雙掌齊推，一招"MAG"「北風捲地」"NOR"，一股排山倒海的掌力，直撲$n面門",
         "lvl" : 101,
-        "skill_name" : "北風卷地"
+        "skill_name" : "北風捲地"
 ]),
 ([        "action" : "$N突然滴溜溜的轉身，一招"HIW"「天山雪飄」"NOR"，掌影飛舞，霎時之間將$n四面八方都裹住了",
         "lvl" : 120,
@@ -44,23 +44,23 @@ int valid_enable(string usage) { return usage=="strike" || usage=="parry"; }
 int valid_learn(object me)
 {
         mapping fam=query("family", me);
-        if (fam["family_name"] != "昆侖派" || fam["generation"] != 2)
-                return notify_fail("昆侖掌只能從何足道處學到。\n");
+        if (fam["family_name"] != "崑崙派" || fam["generation"] != 2)
+                return notify_fail("崑崙掌只能從何足道處學到。\n");
         if( query_temp("weapon", me) || query_temp("secondary_weapon", me) )
-                return notify_fail("練昆侖掌必須空手。\n");
+                return notify_fail("練崑崙掌必須空手。\n");
         if ((int)me->query_skill("xuantian-wuji", 1) < 120)
-                return notify_fail("你的玄天無極功火候不夠，無法練昆侖掌。\n");
+                return notify_fail("你的玄天無極功火候不夠，無法練崑崙掌。\n");
         if( query("gender", me) != "女性" )
         {
                 if ((int)me->query_skill("zhentian-cuff", 1) < 80)
-                        return notify_fail("你的相關功夫火候不夠，無法練昆侖掌。\n");
+                        return notify_fail("你的相關功夫火候不夠，無法練崑崙掌。\n");
         } else
         {
                 if ((int)me->query_skill("chuanyun-leg", 1) < 80)
-                        return notify_fail("你的相關功夫火候不夠，無法練昆侖掌。\n");
+                        return notify_fail("你的相關功夫火候不夠，無法練崑崙掌。\n");
         }
         if( query("max_neili", me)<800 )
-                return notify_fail("你的內力修為不夠，無法練昆侖掌。\n");
+                return notify_fail("你的內力修為不夠，無法練崑崙掌。\n");
         return 1;
 }
 int practice_skill(object me)
@@ -73,7 +73,7 @@ int practice_skill(object me)
         if( query("qi", me)<50 )
                 return notify_fail("你的體力太低了。\n");
         if( query("neili", me)<20 )
-                return notify_fail("你的內力不夠練昆侖掌。\n");
+                return notify_fail("你的內力不夠練崑崙掌。\n");
         me->receive_damage("qi", 30);
         addn("neili", -15, me);
         return 1;
@@ -124,10 +124,10 @@ string perform_action_file(string action)
 
 int help(object me)
 {
-        write(HIC"\n昆侖掌法："NOR"\n");
+        write(HIC"\n崑崙掌法："NOR"\n");
         write(@HELP
 
-    昆侖掌法為昆侖派上乘絕技。
+    崑崙掌法為崑崙派上乘絕技。
 
         學習要求：
                 玄天無極功120級

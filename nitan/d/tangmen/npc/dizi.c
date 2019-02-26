@@ -11,7 +11,7 @@ void create()
         set_name(name["name"], name["id"]);
         set("gender", "男性");
         set("long",
-                "唐門世家弟子，著一身灰色的勁裝\n"
+                "唐門世家弟子，着一身灰色的勁裝\n"
         );
         set("combat_exp", random(50000));
         set("class", "tangmen");

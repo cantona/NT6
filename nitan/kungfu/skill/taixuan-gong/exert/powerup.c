@@ -21,7 +21,7 @@ int exert(object me, object target)
         addn("neili", -100, me);
         me->receive_damage("qi", 0);
 
-        message_combatd(HIW "$N" HIW "默運太玄功，將內力積聚于周身經脈，頓覺"
+        message_combatd(HIW "$N" HIW "默運太玄功，將內力積聚於周身經脈，頓覺"
                         "全身渾然有力，堅不可摧。\n" NOR, me);
         //打通任督二脈的效果
         

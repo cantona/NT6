@@ -8,8 +8,8 @@ void create()
         set("short", "黃山劍廬");
         set("long", @LONG
 好不容易過鐵索，眼前一亮，居然有間茅屋，屋上居然也有牌匾上
-書“黃山劍廬”，屋內陳設簡單，一張紅木桌上放著幾冊經卷，筆筒中
-稀疏地插著幾只狼毫，西牆一柄長劍，上書“蒼穹”二字。
+書“黃山劍廬”，屋內陳設簡單，一張紅木桌上放着幾冊經卷，筆筒中
+稀疏地插着幾隻狼毫，西牆一柄長劍，上書“蒼穹”二字。
 LONG
         );
         set("exits", ([ 
@@ -29,7 +29,7 @@ int do_climb(string arg)
 
         if(!arg || arg != "down")
         {
-                write("你要往哪裡爬？\n");
+                write("你要往哪裏爬？\n");
                 return 1;
         }
         me = this_player();
@@ -45,7 +45,7 @@ int fliping(object me)
         if( !me->is_ghost())
         {
                 me->move(__DIR__"kuzhu");
-                message_vision("$N順著崖壁爬了下來。\n", me);
+                message_vision("$N順着崖壁爬了下來。\n", me);
         }
         return 1;
 }

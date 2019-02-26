@@ -183,7 +183,7 @@ int do_kill(object me, object dest)
         if( objectp(dest) && present(dest, environment(me))
                   && !query("no_fight", environment(me)) )
         {
-                message_vision(HIR "$N對$n說道："+RANK_D->query_rude(dest)+"，想往哪裡跑！\n" NOR, me, dest);
+                message_vision(HIR "$N對$n説道："+RANK_D->query_rude(dest)+"，想往哪裏跑！\n" NOR, me, dest);
                 me->set_leader(dest);
                 me->kill_ob(dest);
                 dest->fight_ob(me);

@@ -1,4 +1,4 @@
-// 神話世界﹒西遊記﹒版本４．５０
+// 神話世界·西遊記·版本４．５０
 /* <SecCrypt CPL V3R05> */
  
 // xuelian.c 雪蓮
@@ -15,7 +15,7 @@ void create()
    if (clonep())
      set_default_object(__FILE__);
    else {
-     set("long", "一朵雪蓮花，只生長于絕峰極寒之處。\n");
+     set("long", "一朵雪蓮花，只生長於絕峯極寒之處。\n");
      set("unit", "朵");
      set("value", 300);
        }
@@ -46,7 +46,7 @@ int do_chi(string arg)
       if( query("gender", this_player()) == "男性" )
      message_vision(GRN "$N吃下一朵雪蓮花，看起來精神多了。\n" NOR, this_player());
       else
-     message_vision(GRN " $N吃下一朵雪蓮花，臉顯酡紅，倍增嬌艷。\n" NOR, this_player());
+     message_vision(GRN " $N吃下一朵雪蓮花，臉顯酡紅，倍增嬌豔。\n" NOR, this_player());
    }   
    destruct(this_object());
    return 1;

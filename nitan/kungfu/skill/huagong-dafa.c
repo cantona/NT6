@@ -30,7 +30,7 @@ int valid_learn(object me)
                 return notify_fail("你心中暗想：我雖然不是謙謙君子，但這種損人不利己的武功學來何用？\n");
 
         if( query("con", me)<30 )
-                return notify_fail("你試著運轉了一下內力，登時覺得胸悶難耐！\n");
+                return notify_fail("你試着運轉了一下內力，登時覺得胸悶難耐！\n");
 
         if ((int)me->query_skill("force", 1) < 120)
                 return notify_fail("你的基本內功火候不足，不能學化功大法。\n");

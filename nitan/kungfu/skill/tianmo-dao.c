@@ -14,7 +14,7 @@ mapping *action = ({
         "skill_name" :"刀劈乾坤",
         "damage_type":"劈傷"
 ]),
-([      "action":"只見$N倒提$w，身形急沖，就在與$n錯身之際，突然使出「曇花一現」從$n後腦斜劈而下。",
+([      "action":"只見$N倒提$w，身形急衝，就在與$n錯身之際，突然使出「曇花一現」從$n後腦斜劈而下。",
         "force" :80,
         "attack":25,
         "dodge" :50,
@@ -44,7 +44,7 @@ mapping *action = ({
         "skill_name" :"邊風飄搖",
         "damage_type":"砍傷"
 ]),
-([      "action":"$N狂喝一聲，使出一招「絕域蒼茫」，雙手緊握$w帶著逼人的殺氣，刺向$n的$l。",
+([      "action":"$N狂喝一聲，使出一招「絕域蒼茫」，雙手緊握$w帶着逼人的殺氣，刺向$n的$l。",
         "force" :130,
         "attack":62,
         "dodge" :110,
@@ -74,7 +74,7 @@ int valid_learn(object me)
 
      if( !objectp(weapon=query_temp("weapon", me)) || 
         query("skill_type", weapon) != "blade" )
-         return notify_fail("你必須手裡拿著刀才能練刀法。\n");
+         return notify_fail("你必須手裏拿着刀才能練刀法。\n");
 
      if ((int)me->query_skill("riyue-xinfa", 1) < 100)
          return notify_fail("你的內功心法火候太淺，不能學天魔刀法。\n");
@@ -114,7 +114,7 @@ int practice_skill(object me)
 
      if( !objectp(weapon=query_temp("weapon", me)) || 
         query("skill_type", weapon) != "blade" )
-         return notify_fail("你必須手裡拿著刀才能練天魔刀法。\n");
+         return notify_fail("你必須手裏拿着刀才能練天魔刀法。\n");
 
      if( query("qi", me)<100 )
             return notify_fail("你的體力不夠練天魔刀法。\n");

@@ -159,14 +159,14 @@ int hatred_check(object me)
         if( hatred < 3 * force )
                 return 0;
         else if( hatred < 4 * force )
-                write(HIY "你只覺得心血潮動，經脈之間真氣沖盪。\n" NOR);
+                write(HIY "你只覺得心血潮動，經脈之間真氣衝蕩。\n" NOR);
         else if( hatred < 5 * force )
                 write(HIR "你只覺得血脈賁張，渾身殺氣蠢蠢欲動，一時忍不住只想放聲大呼。\n" NOR);
         else if( hatred < 6 * force ) {
                 write(HIR "你心頭一痛，內息幾欲控制不住，只覺得眼前進行亂冒。\n" NOR);
                 return 1;
         } else {
-                write(RED "一時間你只覺得殺氣大長，人如狂如痴，真氣四下沖盪，幾欲破體而出。\n"
+                write(RED "一時間你只覺得殺氣大長，人如狂如痴，真氣四下衝蕩，幾欲破體而出。\n"
                           "你搖搖晃晃強支片刻，嗓眼一甜，眼前登時就是一黑，“咕咚”一下倒在地上。\n" NOR);
                 me->unconcious();
                 call_out("do_owner_die", 0, me);

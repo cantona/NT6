@@ -12,9 +12,9 @@ void create()
 {
         set("short", "曉寒廳");
         set("long", @LONG
-這是一間小廳，廳雖不大，布置倒也別致。滿廳的芳香，沁人心
-脾。只見牆上掛著幾幅條幅，筆致頗為瀟洒，但掩不住幾分柔弱之氣。
-廳內四周精巧地擺著些桌子(table)和椅子(chair)。
+這是一間小廳，廳雖不大，佈置倒也別緻。滿廳的芳香，沁人心
+脾。只見牆上掛着幾幅條幅，筆致頗為瀟灑，但掩不住幾分柔弱之氣。
+廳內四周精巧地擺着些桌子(table)和椅子(chair)。
 LONG );
         set("exits", ([
             "west" : __DIR__"qinyun",
@@ -24,8 +24,8 @@ LONG );
         ]));
 
         set("item_desc", ([
-            "table" : "一張典雅的桃木小桌，上面放著水果盤和飲茶器具。\n",
-            "chair" : "一只青竹打制的靠椅，躺上去搖搖晃晃，好舒服耶！\n",
+            "table" : "一張典雅的桃木小桌，上面放着水果盤和飲茶器具。\n",
+            "chair" : "一隻青竹打製的靠椅，躺上去搖搖晃晃，好舒服耶！\n",
         ]));
 
         set("objects",([
@@ -58,16 +58,16 @@ int do_tap(string arg)
                                    "感覺自己很無聊。\n");
 
         if( !query_temp("marks/sit", me) )
-                return notify_fail("你敲了敲桌子，卻發現素素看著你直笑，"
+                return notify_fail("你敲了敲桌子，卻發現素素看着你直笑，"
                                    "你突然感覺自己很愚蠢。\n");
 
         if( query_temp("marks/served", susu) )
         {
-            message_vision("素素不耐煩地對$N說道：我這裡忙著呢！\n", me);
+            message_vision("素素不耐煩地對$N説道：我這裏忙着呢！\n", me);
             return 1;
         }
 
-        message_vision("$N端坐在桌前，輕輕扣了下桌面，素素一笑，過來招呼。\n", me);
+        message_vision("$N端坐在桌前，輕輕釦了下桌面，素素一笑，過來招呼。\n", me);
 
         susu->serve_tea(me);
 
@@ -95,7 +95,7 @@ int do_sit(string arg)
                 return notify_fail("你已經有了個座位了。\n");
 
         set_temp("marks/sit", 1, this_player());
-        write("你找了個空位座下，等著上茶。\n");
+        write("你找了個空位座下，等着上茶。\n");
         return 1;
 }
 

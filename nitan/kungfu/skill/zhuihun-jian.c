@@ -19,7 +19,7 @@ mapping *action = ({
         "lvl"    : 40,
         "skill_name" : "望鄉回顧"
 ]),
-([        "action" : "$N手中$w一沉，一式"HIB"「孟婆灌湯」"NOR"，無聲無息地紮向$n的喉頭",
+([        "action" : "$N手中$w一沉，一式"HIB"「孟婆灌湯」"NOR"，無聲無息地扎向$n的喉頭",
         "lvl"    : 60,
         "skill_name" : "孟婆灌湯"
 ]),

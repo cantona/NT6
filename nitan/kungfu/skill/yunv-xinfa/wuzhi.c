@@ -37,7 +37,7 @@ int exert(object me, object target)
         skill += me->query_skill("martial-cognize", 1);
         skill /= 100;
 
-        message_combatd(HIY "只見$N" HIY "心靜如水，內息再無停滯，心中武學如流水般揮洒開來。\n" NOR, me);
+        message_combatd(HIY "只見$N" HIY "心靜如水，內息再無停滯，心中武學如流水般揮灑開來。\n" NOR, me);
 
         addn_temp("apply/ap_power", skill, me);
         addn_temp("apply/add_weak", skill, me);

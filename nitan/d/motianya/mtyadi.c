@@ -8,8 +8,8 @@ void create()
 {
         set("short", "崖底");
         set("long", @LONG
-你的面前是一座比直的山峰，高若千丈，峰頂在雲霧中隱約可見，
-山峰光禿禿的，更無置手足處，山峰垂下一條鐵鏈(lian)，仔細一看，
+你的面前是一座比直的山峯，高若千丈，峯頂在雲霧中隱約可見，
+山峯光禿禿的，更無置手足處，山峯垂下一條鐵鏈(lian)，仔細一看，
 鐵鏈並無鏽跡，似乎有人用它爬(climb)上爬下。
 LONG );
         set("outdoors", "motianya");
@@ -37,10 +37,10 @@ int do_climb(string arg)
 
         me = this_player();
         n = me->query_skill("dodge", 1);
-        message_vision("$N深吸了一口氣，慢慢沿著鐵鏈的向上爬。\n", me);
+        message_vision("$N深吸了一口氣，慢慢沿着鐵鏈的向上爬。\n", me);
         if (n > 80)
         {
-                message_vision("$N爬了半天，終于爬了上去，$N高興的"
+                message_vision("$N爬了半天，終於爬了上去，$N高興的"
                                "抹了抹汗。\n", me);
                 me->move(__DIR__"mtdating");
         } else

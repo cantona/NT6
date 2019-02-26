@@ -27,7 +27,7 @@ void create()
         set("race", "野獸");
         set("age", 100);
         set_weight(150000);
-        set("long", "一只面目不清的野獸。\n");
+        set("long", "一隻面目不清的野獸。\n");
         set("combat_exp", 1000);
         set("wildness", 5);
         set("loyalty", 5);
@@ -79,9 +79,9 @@ int do_gen(string arg)
 {
         object vc, me, ob = this_player();
 
-        if (!arg ) return notify_fail("你想讓誰跟著你走？\n");
+        if (!arg ) return notify_fail("你想讓誰跟着你走？\n");
         if(!objectp(me = present(arg, environment(ob))))
-                return notify_fail("這裡沒有這個生物。\n");
+                return notify_fail("這裏沒有這個生物。\n");
         if( !me->is_character() || me->is_corpse() )
                 return notify_fail("看清楚一點，那並不是活物。\n");
         if(ob==me) return notify_fail("這個好辦。\n");
@@ -104,7 +104,7 @@ int do_stop(string arg)
 
         if (!arg ) return notify_fail("你想讓誰停下來？\n");
         if(!objectp(me = present(arg, environment(ob))))
-                return notify_fail("這裡沒有這個生物。\n");
+                return notify_fail("這裏沒有這個生物。\n");
         if( !me->is_character() || me->is_corpse() )
                 return notify_fail("看清楚一點，那並不是活物。\n");
         if(ob==me) return notify_fail("用halt命令。\n");
@@ -120,7 +120,7 @@ int do_stop(string arg)
                 }
                 else
                 {
-                        message_vision("$n疑惑地看著$N。\n", ob, me);
+                        message_vision("$n疑惑地看着$N。\n", ob, me);
                         return 1;
                 }
         }
@@ -152,7 +152,7 @@ int do_yao(string victim)
                 message_vision("$N拍拍$n的頭，又指了指自己。\n", ob, me);
                 if(me->query_lord()==ob)
                 {
-                        message_vision("$n疑惑地看著$N。\n", ob, me);
+                        message_vision("$n疑惑地看着$N。\n", ob, me);
                         return 1;
                 }
                 remove_call_out("biting");
@@ -162,7 +162,7 @@ int do_yao(string victim)
         if (vc == me)
         {
                 message_vision("$N拍拍$n的頭，指了指它的尾巴。\n", ob, me);
-                message_vision("$n咬著自己的尾巴轉了一個圈。\n", ob, me);
+                message_vision("$n咬着自己的尾巴轉了一個圈。\n", ob, me);
                 return 1;
         }
 
@@ -214,7 +214,7 @@ int do_fang()
                 me->set_leader(0);
                 if (me->query("rider") == ob) me->delete("rider");
                 if (ob->query("rided") == me) ob->delete("rided");
-                message_vision("$N在$n耳邊輕聲說了幾句，$n垂首走開了。\n", ob, me);
+                message_vision("$N在$n耳邊輕聲説了幾句，$n垂首走開了。\n", ob, me);
                 me->set_temp("prelord",ob->query("id"));
                 return 1;
         }

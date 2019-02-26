@@ -25,14 +25,14 @@
 
                void read_callback(int fd, mixed message)
 
-          這裡的 fd 是要接收資料的 socket，而 message 是接收到的資料。
+          這裏的 fd 是要接收資料的 socket，而 message 是接收到的資料。
 
           write_callback 參數是給驅動程式在 socket 已準備好寫入時呼叫
           的函式名稱。這個寫入回呼函式應該是如下格式：
 
                void write_callback(int fd)
 
-          這裡的 fd 是已準備好寫入的 socket。
+          這裏的 fd 是已準備好寫入的 socket。
 
      傳回值：
           socket_connect() 傳回：

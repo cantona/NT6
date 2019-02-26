@@ -8,7 +8,7 @@ void create()
         set("race", "走畜");
         set("gender", "雄性");
         set("age", 2+random(3));
-        set("long", "這是一匹玉驄寶馬，日行千裡，夜行八百。\n");
+        set("long", "這是一匹玉驄寶馬，日行千里，夜行八百。\n");
 //                "玩家可以騎上它去任何地方(ride/down)。\n"
         set("int", 30);
         set("qi", 300);
@@ -155,7 +155,7 @@ void baituo(object ob)
 {
     ob->move("/d/baituo/damen");
     this_object()->move("/d/baituo/damen");
-    message_vision("\n只見$N騎著玉驄馬急奔而來。\n" , ob );
+    message_vision("\n只見$N騎着玉驄馬急奔而來。\n" , ob );
     message_vision("\n奔到近前，$N身行一轉，躍下馬來，姿態十分優美。\n" , ob );
     delete("rider");
     delete_temp("onhorse", ob);
@@ -165,7 +165,7 @@ void xueshan(object ob)
 {
     ob->move("/d/xueshan/shenghu") ;
     this_object()->move("/d/xueshan/shenghu");
-    message_vision("\n只見$N騎著玉驄馬急奔而來。\n" , ob );
+    message_vision("\n只見$N騎着玉驄馬急奔而來。\n" , ob );
     message_vision("\n奔到近前，$N身行一轉，躍下馬來，姿態十分優美。\n" , ob );
     delete("rider");
     delete_temp("onhorse", ob);
@@ -175,7 +175,7 @@ void taohua(object ob)
 {
     ob->move("/d/guiyun/qianyuan") ;
     this_object()->move("/d/guiyun/qianyuan");
-    message_vision("\n只見$N騎著玉驄馬急奔而來。\n" , ob );
+    message_vision("\n只見$N騎着玉驄馬急奔而來。\n" , ob );
     message_vision("\n奔到近前，$N身行一轉，躍下馬來，姿態十分優美。\n" , ob );
     delete("rider");
     delete_temp("onhorse", ob);
@@ -185,7 +185,7 @@ void huashan(object ob)
 {
     ob->move("/d/huashan/path1") ;
     this_object()->move("/d/huashan/path1") ;
-    message_vision("\n只見$N騎著玉驄馬急奔而來。\n" , ob );
+    message_vision("\n只見$N騎着玉驄馬急奔而來。\n" , ob );
     message_vision("\n奔到近前，$N身行一轉，躍下馬來，姿態十分優美。\n" , ob );
     delete("rider");
     delete_temp("onhorse", ob);
@@ -195,7 +195,7 @@ void beijing(object ob)
 {
     ob->move("/d/beijing/tian_anm") ;
     this_object()->move("/d/beijing/tian_anm") ;
-    message_vision("\n只見$N騎著玉驄馬急奔而來。\n" , ob );
+    message_vision("\n只見$N騎着玉驄馬急奔而來。\n" , ob );
     message_vision("\n奔到近前，$N身行一轉，躍下馬來，姿態十分優美。\n" , ob );
     delete("rider");
     delete_temp("onhorse", ob);
@@ -205,7 +205,7 @@ void xingxiu(object ob)
 {
     ob->move("/d/xingxiu/xxroad2") ;
     this_object()->move("/d/xingxiu/xxroad2") ;
-    message_vision("\n只見$N騎著玉驄馬急奔而來。\n" , ob );
+    message_vision("\n只見$N騎着玉驄馬急奔而來。\n" , ob );
     message_vision("\n奔到近前，$N身行一轉，躍下馬來，姿態十分優美。\n" , ob );
     delete("rider");
     delete_temp("onhorse", ob);
@@ -215,7 +215,7 @@ void shaolin(object ob)
 {
     ob->move("/d/shaolin/shanmen") ;
     this_object()->move("/d/shaolin/shanmen") ;
-    message_vision("\n只見$N騎著玉驄馬急奔而來。\n" , ob );
+    message_vision("\n只見$N騎着玉驄馬急奔而來。\n" , ob );
     message_vision("\n奔到近前，$N身行一轉，躍下馬來，姿態十分優美。\n" , ob );
     delete("rider");
     delete_temp("onhorse", ob);
@@ -225,7 +225,7 @@ void yangzhou(object ob)
 {
     ob->move("/d/beijing/guangchang") ;
     this_object()->move("/d/city/guangchang") ;
-    message_vision("\n只見$N騎著玉驄馬急奔而來。\n" , ob );
+    message_vision("\n只見$N騎着玉驄馬急奔而來。\n" , ob );
     message_vision("\n奔到近前，$N身行一轉，躍下馬來，姿態十分優美。\n" , ob );
     delete("rider");
     delete_temp("onhorse", ob);

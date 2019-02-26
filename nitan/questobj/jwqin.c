@@ -18,8 +18,8 @@ void create()
                 set("material","steel");
                 set("long","相傳這便是當年蔡文姬從火中所救出的焦木做成的美琴，琴的尾端仍可見焦黑色。\n");
                 set("wield_msg",HIY"$N伸手輕輕一揮,一張焦尾琴便已出現在$N手中.\n"NOR);
-                set("unwield_msg",HIY"$N十指一拂，琴聲曳然而止。$N收起焦尾琴，放進背著的包袱裡。\n"NOR);
-                set("unequip_msg",HIY"你十指一拂，琴聲曳然而止。你收起焦尾琴，放進背著的包袱裡。.\n"NOR);
+                set("unwield_msg",HIY"$N十指一拂，琴聲曳然而止。$N收起焦尾琴，放進揹着的包袱裏。\n"NOR);
+                set("unequip_msg",HIY"你十指一拂，琴聲曳然而止。你收起焦尾琴，放進揹着的包袱裏。.\n"NOR);
         }
         setup();
 }

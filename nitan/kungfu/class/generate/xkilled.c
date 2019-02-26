@@ -18,7 +18,7 @@ void create()
         set("title", HIB "殺人狂魔" NOR);
         set("age", 30 + random(30));
         if (sizeof(long) < 1)
-                set("long", "一個神秘的人。\n");
+                set("long", "一個神祕的人。\n");
         else
                 set("long", long[random(sizeof(long))]);
         set("attitude", "friendly");
@@ -68,7 +68,7 @@ void set_from_me(object me)
 
         if (my["combat_exp"] > 5000000 && random(100) < 21)
         {
-                // 經驗 > 200K，21%幾率出現多個敵人
+                // 經驗 > 200K，21%機率出現多個敵人
                 set_temp("multi-enemy", 1);
         }
 
@@ -137,9 +137,9 @@ void do_continue_help(object ob)
 
         n = random(3) + 1;
         set_temp("slough/help_count", n, ob);
-        message("vision", HIR "說時遲，那時快！突然轉出" +
+        message("vision", HIR "説時遲，那時快！突然轉出" +
                           chinese_number(n) +
-                          "個人，一起沖上前來，看來是早"
+                          "個人，一起衝上前來，看來是早"
                           "有防備！\n" NOR, environment());
 
         // 生成幫手
@@ -223,7 +223,7 @@ void die(object killer)
         int exp;                // 需要瓜分的經驗
         int pot;                // 需要瓜分的潛能
         int weiwang;            // 需要瓜分的威望
-        int score;              // 需要瓜分的閱歷
+        int score;              // 需要瓜分的閲歷
         int extra_exp;          // 打暈的人的額外經驗
         int extra_pot;          // 打暈的人的額外潛能
         string quester;         // 需要完成這個任務的玩家ID
@@ -259,7 +259,7 @@ void die(object killer)
 
                 // 非任務所有者或是任務所有者協助的人殺死，則記錄之。
                 CHANNEL_D->do_channel(this_object(), "info",
-                                      sprintf("聽說%s被人殺死了。", name()));
+                                      sprintf("聽説%s被人殺死了。", name()));
 
                 break;
         }
@@ -286,14 +286,14 @@ void die(object killer)
         {
                 set("slough/succeed", 1, dob);
                 tell_object(dob,
-                        HIY "由于你的卓越表現，成功的解救了當地的百姓！\n" NOR);
+                        HIY "由於你的卓越表現，成功的解救了當地的百姓！\n" NOR);
         }
 
         if( query("id", dob) == query_temp("quester") && 
             query("slough/succeed", dob) != 1 )
         {
                 tell_object(dob,
-                        HIW "由于你的失誤，未能成功解救受害百姓！\n" NOR);
+                        HIW "由於你的失誤，未能成功解救受害百姓！\n" NOR);
         }
 
         // 察看目前正在殺我的人，是否也有值得獎勵的
@@ -447,7 +447,7 @@ void random_move()
         {
                 message_vision("$N急急忙忙的走了。\n", this_object());
                 CHANNEL_D->do_channel(this_object(), "info",
-                                      sprintf("聽說%s隱居到了深山老澤，從此不再出沒在世間。", name()));
+                                      sprintf("聽説%s隱居到了深山老澤，從此不再出沒在世間。", name()));
                 log_file("static/killed_die", sprintf("%s %s(%s) vanished because timeout(%d:%d).\n",
                                                       log_time(), name(), query("id"),
                                                       time() - query_temp("born_time"),

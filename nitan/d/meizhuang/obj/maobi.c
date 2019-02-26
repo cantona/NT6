@@ -14,8 +14,8 @@ void create()
                 set("long", "一支普通的毛筆，武林中人常常用它作為打穴的兵器。\n");
                 set("value", 200);
                 set("material", "steel");
-                set("wield_msg", "$N從兜裡掏出一把$n握在手中。\n");
-                set("unwield_msg", "$N將手中的$n放回兜裡。\n");
+                set("wield_msg", "$N從兜裏掏出一把$n握在手中。\n");
+                set("unwield_msg", "$N將手中的$n放回兜裏。\n");
         }
         init_dagger(15, 0);
         setup();

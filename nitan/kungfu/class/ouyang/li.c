@@ -53,9 +53,9 @@ void create()
 
         set("chat_chance", 2);
         set("chat_msg", ({
-                "李教頭說道：勤學苦練方可出神功。\n",
+                "李教頭説道：勤學苦練方可出神功。\n",
                 "李教頭鼓勵小弟子們不畏艱苦，好好練功。\n",
-                "李教頭拍拍學徒的頭說：好樣的！\n",
+                "李教頭拍拍學徒的頭説：好樣的！\n",
         }) );
         setup();
 }
@@ -78,11 +78,11 @@ void greeting(object ob)
         if( !ob || environment(ob) != environment() ) return;
         if( query("family/family_name", ob) == "歐陽世家" )
         {
-                message_vision("李教頭沖著$N點點頭，微微笑了笑。\n",ob);
+                message_vision("李教頭衝着$N點點頭，微微笑了笑。\n",ob);
                 return;
         }
 
-        message_vision("李教頭對$N嚷道：小家伙，你瞎逛什麼呢？\n",ob);
+        message_vision("李教頭對$N嚷道：小傢伙，你瞎逛什麼呢？\n",ob);
 }
 
 

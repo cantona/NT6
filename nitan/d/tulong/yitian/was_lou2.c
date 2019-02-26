@@ -6,7 +6,7 @@ void create()
 {
         set("short", "萬安寺第二層");
         set("long", @LONG
-這裡是萬安寺的第二層，寺樓裡站著幾個身著火紅袈裟的和尚。一見你上樓，
+這裏是萬安寺的第二層，寺樓裏站着幾個身着火紅袈裟的和尚。一見你上樓，
 立馬向你撲來。
 LONG );
         set("exits", ([
@@ -22,10 +22,10 @@ LONG );
 int valid_leave(object me, string dir)
 {
         if (dir == "up" && objectp(present("zhang seng", environment(me))))
-           return notify_fail(CYN "杖僧齊聲喝道：哪裡走？滾下來！\n" NOR);
+           return notify_fail(CYN "杖僧齊聲喝道：哪裏走？滾下來！\n" NOR);
 
         if (dir == "down" && objectp(present("zhang seng", environment(me))))
-           return notify_fail(CYN "杖僧齊聲喝道：哪裡逃？納命來！\n" NOR);
+           return notify_fail(CYN "杖僧齊聲喝道：哪裏逃？納命來！\n" NOR);
 
         return ::valid_leave(me, dir);
 }

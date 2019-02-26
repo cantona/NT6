@@ -53,7 +53,7 @@ int main(object me, string file)
                 if (obj == environment(me))
                 {
                         if (file_name(obj) == VOID_OB)
-                                return notify_fail("你不能在 VOID_OB 裡重新編譯 VOID_OB。\n");
+                                return notify_fail("你不能在 VOID_OB 裏重新編譯 VOID_OB。\n");
                         inv = all_inventory(obj);
                         i = sizeof(inv);
                         while (i--)
@@ -67,7 +67,7 @@ int main(object me, string file)
                 if (obj == find_object(VERSION_D) &&
                     VERSION_D->is_release_server())
                 {
-                        // 如果是版本發布的服務器，則刪除
+                        // 如果是版本發佈的服務器，則刪除
                         // VERSION_D 的 bin 代碼，因為在沒有
                         // VERSION_D 的時候 driver 是不予編譯的。
                         bin_file = "/binaries" + base_name(obj) + ".b";
@@ -128,7 +128,7 @@ protected int update_player(object me)
 
         if( query("id", link_ob) != getuid(me) )
         {
-                write (sprintf("連接對象的ID(%s)和用戶的ID(%s)不相同，不能"
+                write (sprintf("連接對象的ID(%s)和用户的ID(%s)不相同，不能"
                        "更新該玩家。\n",query("id", link_ob),getuid(me)));
                 return 1;
         }
@@ -143,7 +143,7 @@ protected int update_player(object me)
                 equip += ([ ob[i] : query("equipped", ob[i]) ]);
         ob->move(VOID_OB);
 
-        // 保存用戶的進度
+        // 保存用户的進度
         me->save();
 
         // 如果在線，移動互動對象

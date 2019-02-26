@@ -3,7 +3,7 @@ int permit_recruit(object ob)
         if( query("detach/商家堡", ob) || query("betrayer/商家堡", ob) )
         {
                 command("sneer");
-                command("say 你吃裡爬外，反復無常，叫我如何收你？");
+                command("say 你吃裏爬外，反覆無常，叫我如何收你？");
                 return 0;
         }
 

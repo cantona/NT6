@@ -32,13 +32,13 @@ int exert(object me, object target)
                 return notify_fail("你的基本暗器火候不夠。\n");
 
         if( query("no_fight", environment(me)) )
-                return notify_fail("在這裡不能攻擊他人。\n");
+                return notify_fail("在這裏不能攻擊他人。\n");
 
         if( query("neili", me)<300 )
                 return notify_fail("你的真氣不夠。\n");
 
         if( !objectp(du=query_temp("handing", me)) )
-                return notify_fail("你得先準備(hand)好毒藥再說。\n");
+                return notify_fail("你得先準備(hand)好毒藥再説。\n");
 
         if( !mapp(query("poison", du)) )
                 return notify_fail("你手中所拿的" + du->name() + NOR
@@ -54,13 +54,13 @@ int exert(object me, object target)
                 return notify_fail("你想攻擊誰？\n");
 
         if (target->query_condition("die_guard"))
-                return notify_fail("這個人正被官府保護著，還是別去招惹。\n");
+                return notify_fail("這個人正被官府保護着，還是別去招惹。\n");
 
         if (target->query_competitor())
                 return notify_fail("比武的時候最好是正大光明的較量。\n");
 
         if (! living(target))
-                return notify_fail("對方都已經這樣了，用不著這麼費力吧？\n");
+                return notify_fail("對方都已經這樣了，用不着這麼費力吧？\n");
 
         msg = HIM "$N" HIM "一聲冷笑，默運" + to_chinese(f) +
               HIM "內勁，手指粘住" + du->name() +
@@ -89,7 +89,7 @@ int exert(object me, object target)
                 if (ap / 2 + random(ap) > dp)
                 {
                         msg += HIG "$n" HIG "急忙飛身躲避，可已然不及，霎時"
-                               "綠光閃過，$p" HIG "頓感一陣麻痹。\n" NOR;
+                               "綠光閃過，$p" HIG "頓感一陣麻痺。\n" NOR;
                         target->affect_by(query("poison_type", du),
                                           query("poison", du));
 
@@ -98,7 +98,7 @@ int exert(object me, object target)
                 } else
                 {
                         msg += CYN "可是$n" CYN "見勢不妙，急忙騰挪身形，終"
-                               "于避開了$N" CYN "的彈毒攻擊。\n" NOR;
+                               "於避開了$N" CYN "的彈毒攻擊。\n" NOR;
                 }
         }
         message_combatd(msg, me, target);

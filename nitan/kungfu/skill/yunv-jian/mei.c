@@ -35,13 +35,13 @@ int perform(object me, object target)
                 return notify_fail("你現在的真氣不夠，難以施展" + name() + "。\n");
 
         if (! living(target))
-                return notify_fail("對方都已經這樣了，用不著這麼費力吧？\n");
+                return notify_fail("對方都已經這樣了，用不着這麼費力吧？\n");
 
         wn = weapon->name();
 
         msg = HIC "\n$N" HIC "陡然間姿態萬千，身法飄逸，猶如一個婀娜"
               "多姿的女子在隨歌漫舞一樣。\n但是$N手中" + wn + HIC "卻"
-              "跟隨著身體輕盈地晃動，看似毫無章法，卻又像是隱藏著厲"
+              "跟隨着身體輕盈地晃動，看似毫無章法，卻又像是隱藏着厲"
               "害的招式。" NOR;
 
         message_combatd(msg, me, target);

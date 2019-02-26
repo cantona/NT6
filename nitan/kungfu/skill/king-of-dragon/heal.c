@@ -6,7 +6,7 @@
 int exert(object me, object target)
 {
         if( me->is_busying() )
-                return notify_fail("你現在正忙著呢，哪有空運功？\n");
+                return notify_fail("你現在正忙着呢，哪有空運功？\n");
 
         if ( !wizardp(me)) return 0 ;
         write( HIY "你全身放鬆，坐下來開始運功療傷。\n" NOR);

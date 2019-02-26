@@ -89,12 +89,12 @@ int give_job()
 
         if( !environment() || base_name(environment()) != query("startroom") )
         {
-                say("唐藥說道:“我現在沒心情給你派活，等我回制藥房再說吧！”\n");
+                say("唐藥説道:“我現在沒心情給你派活，等我回製藥房再説吧！”\n");
                 return 0;
         }
 
         if( !query_temp("tangmen/yao", me) )
-                command("say “這裡沒有活能給你幹，你聽誰說的？”");
+                command("say “這裏沒有活能給你幹，你聽誰説的？”");
         else
         {
                 if( query_temp("yao", me) )
@@ -102,7 +102,7 @@ int give_job()
                         command("say “你還沒有完成剛才給你的任務呢！”");
                         return 1;
                 }
-                write("唐藥說道:“我這裡正缺一味草藥，快去藥圃給我找(zhao)一株草藥(yao)來吧！”\n");
+                write("唐藥説道:“我這裏正缺一味草藥，快去藥圃給我找(zhao)一株草藥(yao)來吧！”\n");
                 set_temp("yao", 1, me);
         }
         return 1;
@@ -133,6 +133,6 @@ int give_yao()
 int accept_object(object who, object ob)
 {
         command("say 要是找到了，就放到儲藏室去吧！給我幹什麼?");
-        write("唐藥沖著你搖了搖頭，然後又小心翼翼的反弄著一株碧綠色的藥草。\n");
+        write("唐藥衝着你搖了搖頭，然後又小心翼翼的反弄着一株碧綠色的藥草。\n");
         return 0;
 }

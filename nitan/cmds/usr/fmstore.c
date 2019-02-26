@@ -28,9 +28,9 @@ int main(object me, string arg)
                 return GOODS_D->show_goods(me, str2);
 
         case "exchange":
-                // 防止注冊id刷物品
+                // 防止註冊id刷物品
                 if( query("combat_exp", me) < 3000000 && !MEMBER_D->is_valid_member(me) )
-                        return notify_fail("你暫時還沒有資格將貢獻點兌換為物品！\n");
+                        return notify_fail("你暫時還沒有資格將貢獻點兑換為物品！\n");
                 
                 if( sscanf(str2, "%s %d", str2, amount) != 2 )
                         amount = 1;
@@ -39,7 +39,7 @@ int main(object me, string arg)
                 if( amount < 1 ) amount = 1;        
                 if( !GOODS_D->exchange_goods(me, str2, amount))
                 {
-                        write("兌換失敗！\n");
+                        write("兑換失敗！\n");
                         return 1;
                 }
                 write("Successful!\n");
@@ -59,13 +59,13 @@ int help (object me)
         money = query("family/gongji", me);
 
         write(HIY "□ 您目前的門派貢獻為 " + money + " (NT)
-" WHT "──────────────────────────────────
+" WHT "——————————————————————————————————
 
 " HIM "輸入指令：    fmstore show all                  查看所有商城的貨物
-輸入指令：    fmstore exchange <代號> <數量>    兌換指定代號的商品
+輸入指令：    fmstore exchange <代號> <數量>    兑換指定代號的商品
 
 " WHT "<代號>  ：    可用物品的 name 或 編號
-" WHT "──────────────────────────────────\n" NOR);
+" WHT "——————————————————————————————————\n" NOR);
 
         return 1;
 }

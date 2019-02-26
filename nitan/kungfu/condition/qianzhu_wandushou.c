@@ -15,5 +15,5 @@ string update_msg_others()
 
 string update_msg_self()
 {
-        return HIB "你只覺蠱毒攻心，頭暈目眩，一陣說不出的惡心。\n" NOR;
+        return HIB "你只覺蠱毒攻心，頭暈目眩，一陣説不出的噁心。\n" NOR;
 }

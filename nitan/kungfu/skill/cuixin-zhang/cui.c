@@ -35,8 +35,8 @@ int perform(object me)
         if( query("neili", me)<800 )
                 return notify_fail("你的內力不夠，無法使出奪命催心。\n");
 
-        msg = HIR "$N" HIR "聚氣于掌，仰天一聲狂嘯，剎那間雙掌交錯，一招"
-                  "「奪命催心」帶著陰毒內勁直貫$n" HIR "！\n"NOR;
+        msg = HIR "$N" HIR "聚氣於掌，仰天一聲狂嘯，剎那間雙掌交錯，一招"
+                  "「奪命催心」帶着陰毒內勁直貫$n" HIR "！\n"NOR;
 
         ap = attack_power(me, "strike");
         dp = defense_power(target, "parry");

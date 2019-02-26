@@ -1,5 +1,5 @@
 // bishuijian.c
-// for 岳靈珊
+// for 嶽靈珊
 
 #include <ansi.h>
 #include <weapon.h>

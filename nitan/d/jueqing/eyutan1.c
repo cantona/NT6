@@ -8,11 +8,11 @@ void create()
         set("long", @LONG
 鄂魚潭深處地底，寒似冰窟。潭中(tan)一團黑子晃動，仔
 細一看竟是許多兇猛的鄂魚。 只見不遠處似有一個洞口，但由
-于深潭相隔，不知如何過去。
+於深潭相隔，不知如何過去。
 
 LONG);
         set("item_desc",([
-               "tan" : HIC "潭中鄂魚成群，兇猛無比。 恐怕只有"
+               "tan" : HIC "潭中鄂魚成羣，兇猛無比。 恐怕只有"
                        "施展輕功穿(cross)過去了。\n" NOR,
         ]));
 
@@ -50,10 +50,10 @@ int do_cross(string arg)
                 ob3 = load_object(__DIR__"eyutan3");
 
         if (me->is_busy())
-                return notify_fail("你現在正忙著呢！\n");
+                return notify_fail("你現在正忙着呢！\n");
 
         if (me->is_fighting())
-                return notify_fail("你還是先把你面前這個家伙解決了再說。\n");
+                return notify_fail("你還是先把你面前這個傢伙解決了再説。\n");
 
         n = me->query_skill("dodge");
         

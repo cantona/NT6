@@ -16,7 +16,7 @@ void create()
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("long", "一只有大又笨的鐵箱子，有些生鏽了。\n");
+                set("long", "一隻有大又笨的鐵箱子，有些生鏽了。\n");
                 set("unit", "只");
                 set("material", "steal");
         }

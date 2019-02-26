@@ -36,7 +36,7 @@ int perform(object me, object target)
                 return notify_fail("你沒有激發軟紅蛛索，無法施展" + name() + "。\n");
 
         if (! living(target))
-                return notify_fail("對方都已經這樣了，用不著這麼費力吧？\n");
+                return notify_fail("對方都已經這樣了，用不着這麼費力吧？\n");
 
         msg = YEL "$N" YEL "使出軟紅蛛索「盤鷹」訣，手腕輕輕一抖，頓時鞭"
               "影重重，完全籠罩$n" YEL "四周！\n";

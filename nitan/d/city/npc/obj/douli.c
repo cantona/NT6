@@ -17,7 +17,7 @@ void create()
                 set("armor_prop/armor",2);
                 set("armor_prop/per", 5);
                 set("wear_msg","$N戴上一頂$n。\n");
-                set("unequip_msg", "$N摘下頭上的$n，拿在手裡。\n");
+                set("unequip_msg", "$N摘下頭上的$n，拿在手裏。\n");
         }
         setup();
 }

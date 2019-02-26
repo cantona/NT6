@@ -9,7 +9,7 @@ void create()
         set("race", "昆蟲");
         set("subrace", "飛蟲");
         set("age", 20);
-        set("long", "一只色彩斑斕大個野蜂，成群結隊的。\n");
+        set("long", "一隻色彩斑斕大個野蜂，成羣結隊的。\n");
         set("attitude", "aggressive");
         set("shen_type", -1);
 

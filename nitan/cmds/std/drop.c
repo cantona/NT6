@@ -96,12 +96,12 @@ int do_drop(object me, object obj, int raw)
                 return notify_fail(stringp(no_drop) ? no_drop : "這樣東西不能隨意丟棄。\n");
 
         if( no_drop=query("no_drop", environment(me)) )
-                return notify_fail(stringp(no_drop) ? no_drop : "這裡東西丟棄下去也看不見。\n");
+                return notify_fail(stringp(no_drop) ? no_drop : "這裏東西丟棄下去也看不見。\n");
 
         switch(query("equipped", obj) )
         {
         case "worn":
-                tell_object(me, obj->name() + "必須脫下來才能丟掉。\n");
+                tell_object(me, obj->name() + "必須脱下來才能丟掉。\n");
                 return 0;
 
         case "wielded":
@@ -114,7 +114,7 @@ int do_drop(object me, object obj, int raw)
             sizeof(filter_array(all_inventory(environment(me)),
                                 (: ! $1->is_character() :))) > MAX_ITEM_IN_ROOM)
         {
-                tell_object(me, "這裡東西太多了，你亂丟恐怕" + obj->name() + "就找不到了。\n");
+                tell_object(me, "這裏東西太多了，你亂丟恐怕" + obj->name() + "就找不到了。\n");
                 return 0;
         }
 

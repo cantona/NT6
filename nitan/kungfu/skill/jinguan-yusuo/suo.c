@@ -29,9 +29,9 @@ int perform(object me, object target)
                 return notify_fail(target->name() + "目前正自顧不暇，放膽攻擊吧。\n");
 
         if (! living(target))
-                return notify_fail("對方都已經這樣了，用不著這麼費力吧？\n");
+                return notify_fail("對方都已經這樣了，用不着這麼費力吧？\n");
 
-        msg = HIY "突然間$N" HIY "雙手驀的回圈，使出「" HIR "玄門金鎖"
+        msg = HIY "突然間$N" HIY "雙手驀的迴圈，使出「" HIR "玄門金鎖"
               HIY "」絕技，企圖鎖死$n" HIY "的招數。\n" NOR;
 
         ap = attack_power(me, "parry");

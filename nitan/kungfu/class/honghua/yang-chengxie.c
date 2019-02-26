@@ -11,7 +11,7 @@ void create()
         set("title", "紅花會八當家");
         set("nickname", WHT "鐵塔" NOR);
         set("long", "他就是楊成協，只見他又肥又高，手執鋼鞭，\n"
-                    "鞭身甚是粗重，看模樣少說也有三十來斤。\n");
+                    "鞭身甚是粗重，看模樣少説也有三十來斤。\n");
         set("gender", "男性");
         set("age", 28);
         set("attitude", "peaceful");
@@ -91,7 +91,7 @@ void attempt_apprentice(object me)
         }
 
         command("nod");
-        command("say 嗯。那你以後跟著我好了。");
+        command("say 嗯。那你以後跟着我好了。");
         command("recruit "+query("id", me));
 }
 
@@ -111,7 +111,7 @@ void hit_ob(object ob)
         if (guard1 && ! guard1->is_fighting())
         {
                 message_vision (HIW "\n蔣四根大怒，喝道：居然欺到我們紅花會"
-                                "頭上來了，大家並肩子上！\n\n" NOR, guard1);
+                                "頭上來了，大家併肩子上！\n\n" NOR, guard1);
                 guard1->kill_ob(ob);
         }
 
@@ -144,7 +144,7 @@ void kill_ob(object ob)
         if (guard1 && ! guard1->is_fighting())
         {
                 message_vision (HIW "\n蔣四根大怒，喝道：居然欺到我們紅花會"
-                                "頭上來了，大家並肩子上！\n\n" NOR, guard1);
+                                "頭上來了，大家併肩子上！\n\n" NOR, guard1);
                 guard1->kill_ob(ob);
         }
 

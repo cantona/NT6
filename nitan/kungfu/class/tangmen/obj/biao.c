@@ -10,7 +10,7 @@ void create()
                 set_default_object(__FILE__);
         else
         {
-                set("long", "這是一枚四川唐門秘制的剛鏢，威力無比。\n");
+                set("long", "這是一枚四川唐門祕製的剛鏢，威力無比。\n");
                 set("value", 21);
                 set("unit", "枚");
         }

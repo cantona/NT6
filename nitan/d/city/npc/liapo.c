@@ -9,7 +9,7 @@ void create()
         set("str", 18);
         set("gender", "女性");
         set("age", 58);
-        set("long", "李阿婆在揚州活了幾十年，就靠走街串巷賣凈菜過日子。\n");
+        set("long", "李阿婆在揚州活了幾十年，就靠走街串巷賣淨菜過日子。\n");
         set("combat_exp", 250);
         set("attitude", "friendly");
         set("vendor_goods", ({

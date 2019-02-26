@@ -49,7 +49,7 @@ int main(object me, string arg)
                 si = 0;
                 printf ("result = %O\n", sizeof(objects((: stat_fun, st :))));
 
-                // 選出復制超過 50 個的物品
+                // 選出複製超過 50 個的物品
                 reset_eval_cost();
                 ks = keys(st);
                 ks = filter_array(ks, (: $(st)[$1] >= 50 :));
@@ -60,7 +60,7 @@ int main(object me, string arg)
 
                 // 選擇前100個
                 msg += "目前系統中有 " + si +
-                       " 個物品，其中復制對象超過 50 個的物品如下：\n";
+                       " 個物品，其中複製對象超過 50 個的物品如下：\n";
                 for (i = 0; i < sizeof(ks) && i < 100; i++)
                         msg += sprintf("%3d. %-40s %d\n",
                                        i + 1, ks[i], st[ks[i]]);
@@ -89,7 +89,7 @@ int help(object me)
         write(@HELP
 指令格式 : status [detail | object]
 
-利用此指令可得知有關系統的信息。
+利用此指令可得知有關係統的信息。
 HELP );
         return 1;
 }

@@ -5,7 +5,7 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "繩床");
+        set("short", "繩牀");
         set("long", @LONG
 一條掛在側廂中的細麻繩。
 LONG );

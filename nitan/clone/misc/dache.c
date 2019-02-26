@@ -15,8 +15,8 @@ mapping *sign=({
                 "value"  : 200,
                 "time"   : 10
         ]),
-        ([        "name"   : "鐵掌峰",
-                "target" : "鐵掌峰山腳下",
+        ([        "name"   : "鐵掌峯",
+                "target" : "鐵掌峯山腳下",
                 "id"     : "tiezhang",
                 "out"    : "tiezhang",
                 "file"   : "/d/tiezhang/shanjiao",
@@ -112,7 +112,7 @@ mapping *sign=({
                 "time"   : 10
         ]),
         ([        "name"   : "衡山",
-                "target" : "衡山欞星門",
+                "target" : "衡山櫺星門",
                 "id"     : "henshan",
                 "out"    : "henshan",
                 "file"   : "/d/henshan/lingxingmen",
@@ -151,8 +151,8 @@ mapping *sign=({
                 "value"  : 200,
                 "time"   : 10
         ]),
-        ([        "name"   : "昆侖山",
-                "target" : "昆侖派山門",
+        ([        "name"   : "崑崙山",
+                "target" : "崑崙派山門",
                 "id"     : "kunlun",
                 "out"    : "kunlun",
                 "file"   : "/d/kunlun/shanmen",
@@ -213,8 +213,8 @@ void create()
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("long","這是一輛半新不舊的大車，車上坐著一個半老不老的車夫。
-你可以仔細看看(kan)車上掛著的牌子，那就是你乘上大車，\n可以去(qu)的地方。\n");
+                set("long","這是一輛半新不舊的大車，車上坐着一個半老不老的車伕。
+你可以仔細看看(kan)車上掛着的牌子，那就是你乘上大車，\n可以去(qu)的地方。\n");
                 set("unit", "輛");
                 set("no_fight",1);
                 set("no_get", 1);
@@ -252,7 +252,7 @@ void do_move(object ob, int i)
 {
         delete_temp("block_msg/all", ob);
         delete_temp("noliving", ob);
-        write("終于到"+sign[i]["name"]+"了。\n\n");
+        write("終於到"+sign[i]["name"]+"了。\n\n");
         ob->move(sign[i]["file"]);
         tell_room(environment(ob), "\n忽然遠處有一輛大車飛馳而來，快到你身邊時就慢慢停了下來。\n" + ob->name() + "從大車上走了下來。\n", ({ob}));
 }
@@ -262,16 +262,16 @@ int do_go(string arg)
         object *inv, ob=this_player();
         int j, i=sizeof(sign);
 
-        if (!arg) return notify_fail("你要去哪裡？先看看(kan)再走吧！\n");
+        if (!arg) return notify_fail("你要去哪裏？先看看(kan)再走吧！\n");
         if (ob->is_busy() || ob->is_fighting())
-                return notify_fail("你正忙著呢！\n");
+                return notify_fail("你正忙着呢！\n");
 
         inv = all_inventory(ob);
         for (j = 0; j < sizeof(inv); j++)
         {
                 if (inv[j]->is_character())
                 {
-                        write("大車裡裡位置有限，擠不下那麼多人。\n");
+                        write("大車裏裏位置有限，擠不下那麼多人。\n");
                         return 1;
                 }
         }
@@ -284,20 +284,20 @@ int do_go(string arg)
                 if (arg == sign[i]["id"])
                 {
                         if( query("outdoors", environment(ob)) == sign[i]["out"] )
-                                return notify_fail("車夫笑罵道：“你糊塗啦，去什麼去！你不是已經在"HIR+ sign[i]["name"] +NOR"了嗎？！”\n");
+                                return notify_fail("車伕笑罵道：“你糊塗啦，去什麼去！你不是已經在"HIR+ sign[i]["name"] +NOR"了嗎？！”\n");
                         switch (MONEY_D->player_pay(ob, sign[i]["value"]))
                         {
                                 case 0:
-                                        return notify_fail("窮光蛋，一邊呆著去！\n");
+                                        return notify_fail("窮光蛋，一邊呆着去！\n");
                                 case 2:
                                         return notify_fail("有零錢嗎？\n");
                         }
-                        message_vision("\n$N登上了大車，一揚手丟了" + chinese_number(sign[i]["value"]/100) + "兩銀子給車夫，說了聲：“去" +sign[i]["name"]+ "。”\n$N說完掀開簾子，一哈腰鑽進車去。\n\n", ob);
+                        message_vision("\n$N登上了大車，一揚手丟了" + chinese_number(sign[i]["value"]/100) + "兩銀子給車伕，説了聲：“去" +sign[i]["name"]+ "。”\n$N説完掀開簾子，一哈腰鑽進車去。\n\n", ob);
                         write(HIC"大車內"NOR" -
-    車裡幹幹凈凈，放了兩張舒服的大椅子。窗簾半拉了下來，陽光從
-縫隙中透進來，窗外看不盡的景致，有的壯觀，有的也無趣。于是昏昏
-沉沉地睡去，也不管路上走了多久。門外掛了一串風鈴，叮呤呤響著。
-車夫坐在前面，一路趕著馬，一路得意地哼著什麼小調。\n");
+    車裏乾乾淨淨，放了兩張舒服的大椅子。窗簾半拉了下來，陽光從
+縫隙中透進來，窗外看不盡的景緻，有的壯觀，有的也無趣。於是昏昏
+沉沉地睡去，也不管路上走了多久。門外掛了一串風鈴，叮呤呤響着。
+車伕坐在前面，一路趕着馬，一路得意地哼着什麼小調。\n");
                         set_temp("noliving/journey", 1, ob);
                         set_temp("block_msg/all", 1, ob);
                         ob->move("/clone/misc/dachenei");
@@ -305,18 +305,18 @@ int do_go(string arg)
                         return 1;
                 }
         }
-        return notify_fail("你要去哪裡？\n");
+        return notify_fail("你要去哪裏？\n");
 }
 /*
 少林寺山門   (shaolin)    /d/shaolin/shanmen
 武當解劍巖   (wudang)     /d/wudang/jiejianyan
 峨眉報國寺   (emei)       /d/emei/bgs
-昆侖派山門   (kunlun)     /d/kunlun/shanmen
+崑崙派山門   (kunlun)     /d/kunlun/shanmen
 青城建福宮   (qingcheng)  /d/qingcheng/jianfugong
 嵩山太室闕   (songshan)   /d/songshan/taishique
 泰山岱宗坊   (taishan)    /d/taishan/daizong
 華山莎蘿坪   (huashan)    /d/huashan/shaluo
-衡山欞星門   (henshan)    /d/henshan/lingxingmen
+衡山櫺星門   (henshan)    /d/henshan/lingxingmen
 恆山金龍峽   (hengshan)   /d/hengshan/jinlongxia
 終南山腳下   (zhongnan)   /d/quanzhen/shanjiao
 中條山腳下   (zhongtiao)  /d/huashan/jzroad3
@@ -326,6 +326,6 @@ int do_go(string arg)
 無量山坳     (wuliang)    /d/wuliang/shanlu6
 太湖湖畔     (yanziwu)    /d/yanziwu/hupan
 梅莊大門     (meizhuang)  /d/meizhuang/gate
-鐵掌峰山腳下 (tiezhang)   /d/tiezhang/shanjiao
+鐵掌峯山腳下 (tiezhang)   /d/tiezhang/shanjiao
 黑木崖亂石坡 (heimuya)    /d/heimuya/road1
 */

@@ -4,21 +4,21 @@
 inherit SHAOLIN_SKILL;
 
 mapping *action = ({
-([      "action" : "$N內息轉動，運勁于單刀，全身骨節一陣暴響，起手一式「示誕生」向$n劈出，將$n全身籠罩在赤熱的刀風下",
+([      "action" : "$N內息轉動，運勁於單刀，全身骨節一陣暴響，起手一式「示誕生」向$n劈出，將$n全身籠罩在赤熱的刀風下",
         "skill_name" : "示誕生",
         "force" : 300,
         "lvl" : 0,
         "dodge" : 15,
         "damage_type" : "瘀傷",
 ]),
-([      "action" : "$N面帶輕笑，一招「始心鏡」，火燄刀內勁由內及外慢慢湧出，$P雙掌如寶像合十于胸前，向著$n深深一鞠",
+([      "action" : "$N面帶輕笑，一招「始心鏡」，火焰刀內勁由內及外慢慢湧出，$P雙掌如寶像合十於胸前，向着$n深深一鞠",
         "skill_name" : "始心鏡",
         "force" : 350,
         "lvl" : 20,
         "dodge" : 10, 
         "damage_type" : "震傷",
 ]),
-([      "action" : "$N刀掌相合又打開，這招「現寶蓮」以火燄刀無上功力聚出一朵紅蓮，盛開的花瓣飛舞旋轉，漫布在$n四周",
+([      "action" : "$N刀掌相合又打開，這招「現寶蓮」以火焰刀無上功力聚出一朵紅蓮，盛開的花瓣飛舞旋轉，漫布在$n四周",
         "skill_name" : "現寶蓮",
         "force" : 400,
         "lvl" : 50,
@@ -26,21 +26,21 @@ mapping *action = ({
         "weapon" : "紅蓮刀氣",
         "damage_type" : "割傷",
 ]),
-([      "action" : "$N面帶金剛相，刀氣搓圓，使無數炙熱的刀氣相聚，這招「破法執」猶如一只巨大的飛鷹，凌空向$n飛抓而下",
+([      "action" : "$N面帶金剛相，刀氣搓圓，使無數炙熱的刀氣相聚，這招「破法執」猶如一隻巨大的飛鷹，凌空向$n飛抓而下",
         "skill_name" : "破法執",
         "force" : 340,
         "lvl" : 70,
         "dodge" : 1,
         "damage_type" : "內傷",
 ]),
-([      "action" : "$N暴喝一聲，竟然使出伏魔無上的「開顯圓」，氣浪如颶風般圍著$P飛旋，炎流將$n一步步向著$P拉扯過來",
+([      "action" : "$N暴喝一聲，竟然使出伏魔無上的「開顯圓」，氣浪如颶風般圍着$P飛旋，炎流將$n一步步向着$P拉扯過來",
         "skill_name" : "開顯圓",
         "force" : 450,
         "lvl" : 120,
         "dodge" : -10,
         "damage_type" : "震傷",
 ]),
-([      "action" : "$N口念伏魔真經，鋼刀連連劈出，將$n籠罩在炙燄之下，這如刀切斧鑿般的「顯真常」氣浪似乎要將$p從中劈開",
+([      "action" : "$N口唸伏魔真經，鋼刀連連劈出，將$n籠罩在炙焰之下，這如刀切斧鑿般的「顯真常」氣浪似乎要將$p從中劈開",
         "skill_name" : "顯真常",
         "force" : 380,
         "lvl" : 140,
@@ -55,7 +55,7 @@ mapping *action = ({
         "dodge" : -15, 
         "damage_type" : "瘀傷",
 ]),
-([      "action" : "$N虛托刀柄，一式「吉祥逝」，內力運轉，跟著全身衣物無風自動，$P身體微傾，閃電一刀，斬向$n$",
+([      "action" : "$N虛託刀柄，一式「吉祥逝」，內力運轉，跟着全身衣物無風自動，$P身體微傾，閃電一刀，斬向$n$",
         "skill_name" : "吉祥逝",
         "force" : 500,
         "lvl" : 180,
@@ -105,7 +105,7 @@ int practice_skill(object me)
 
       if( !objectp(weapon=query_temp("weapon", me)) || 
           query("skill_type", weapon) != "blade" )
-                return notify_fail("你先找把刀再說吧！\n");
+                return notify_fail("你先找把刀再説吧！\n");
 
         if( query("jingli", me)<70 || query("neili", me)<50 )
                 return notify_fail("你的體力不夠，練不了戒塵刀。\n");

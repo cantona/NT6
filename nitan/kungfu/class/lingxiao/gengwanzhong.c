@@ -6,8 +6,8 @@ inherit F_MASTER;
 
 void create()
 {
-        set_name("耿萬鐘", ({"geng wanzhong", "geng", "wanzhong"}));
-        set("long", "耿萬鐘是凌宵城雪山劍派中的六代弟子，只見他身\n"
+        set_name("耿萬鍾", ({"geng wanzhong", "geng", "wanzhong"}));
+        set("long", "耿萬鍾是凌宵城雪山劍派中的六代弟子，只見他身\n"
                     "材魁梧，儀表堂堂。\n");
         set("gender", "男性");
         set("age", 34);
@@ -71,6 +71,6 @@ void attempt_apprentice(object me)
         if (! permit_recruit(me))
                 return;
 
-        command("say 很好，你以後就跟著我吧。");
+        command("say 很好，你以後就跟着我吧。");
         command("recruit "+query("id", me));
 }

@@ -9,11 +9,11 @@ void create()
 //**    set("short", "ROOM_NAME演武廳");
         set("long", @LONG
 這是盤龍居的演武廳，有時有些江湖朋友來會，想一試身手，就
-在這裡比武較量。
+在這裏比武較量。
 LONG );
 
         set("default_long", "這是ROOM_NAME的演武廳，有時有些江湖朋友來"/* EXAMPLE */
-                            "會，想一試身手，就在這裡比武較量。" );    /* EXAMPLE */
+                            "會，想一試身手，就在這裏比武較量。" );    /* EXAMPLE */
                                                                        /* EXAMPLE */
 
         set("exits", ([

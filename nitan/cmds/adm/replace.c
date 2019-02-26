@@ -111,8 +111,8 @@ Written by ken@NT. All rights reserved.
 E-mail: printken@yahoo.com.hk
 
 指令格式: replace <目錄或文件名> <原字符> to <新字符>
-將文件內容裡的所有<原字串>轉換成<新字串>。
-注意︰如果指令目錄，是會深入該目錄下的所有目錄提取文件進行
+將文件內容裏的所有<原字串>轉換成<新字串>。
+注意∶如果指令目錄，是會深入該目錄下的所有目錄提取文件進行
 慮理，要小心使用！(建意放在/cmds/adm/下)
 HELP );
 return 1;

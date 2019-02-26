@@ -47,7 +47,7 @@ int perform( object me, object target)
         if( query("jingli", me)<lvl )
                 return notify_fail("你的精力不足以使用慕容絕學參商指法！\n");
 
-        message_combatd(HIM "$N" HIM "口中默念“動靜如參商”，心隨意轉，勁跟力發。只聽得內力破空之聲呲呲作響！\n"
+        message_combatd(HIM "$N" HIM "口中默唸“動靜如參商”，心隨意轉，勁跟力發。只聽得內力破空之聲呲呲作響！\n"
                         HIM "內力化作一股劍氣直奔$n" HIM "射去！\n" NOR, me, target);
         str = me->query_str()/2;
         dex = me->query_dex()/3;
@@ -70,5 +70,5 @@ void end_perform( object me, int str, int dex)
         addn_temp("apply/dex", -dex, me);
         delete_temp("canshang", me);
 
-        tell_object(me, HIY "你緩緩收住身形，輕吁一口氣，將內力收回丹田。\n" NOR);
+        tell_object(me, HIY "你緩緩收住身形，輕籲一口氣，將內力收回丹田。\n" NOR);
 }

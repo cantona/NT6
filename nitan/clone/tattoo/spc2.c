@@ -9,11 +9,11 @@ void create()
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("long", "這是一張古舊的圖片，上面繪著些紋樣。");
+                set("long", "這是一張古舊的圖片，上面繪着些紋樣。");
                 set("unit", "張");
                 set("value", 16500);
                 set("material", "paper");
-                set("tattoo_long", "一只浴火鳳凰盤旋在雲間，令人稱奇");
+                set("tattoo_long", "一隻浴火鳳凰盤旋在雲間，令人稱奇");
                 set("can_tattoo", ({ "胸口", "後背", }));
                 set("tattoo_type", ({ "悟性" }));
                 set("tattoo_int", 4);

@@ -1,4 +1,4 @@
-// feiyan-huixiang.c 飛燕回翔
+// feiyan-huixiang.c 飛燕迴翔
 
 #include <ansi.h>;
 inherit SKILL;
@@ -21,7 +21,7 @@ int valid_learn(object me)
 int practice_skill(object me)
 {
         if( query("qi", me)<20 || query("neili", me)<4 )
-                return notify_fail("你的體力太差了，不能練飛燕回翔。\n");
+                return notify_fail("你的體力太差了，不能練飛燕迴翔。\n");
         me->receive_damage("qi", 20);
         addn("neili", -4, me);
         return 1;
@@ -38,10 +38,10 @@ int power_point(object me) { return 1.2; }
 
 int help(object me)
 {
-        write(HIC"\n飛燕回翔："NOR"\n");
+        write(HIC"\n飛燕迴翔："NOR"\n");
         write(@HELP
 
-    飛燕回翔為華山派本門輕功。
+    飛燕迴翔為華山派本門輕功。
 
         學習要求：
          紫霞神功10級

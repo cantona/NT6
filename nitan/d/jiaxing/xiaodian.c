@@ -9,17 +9,17 @@ void create()
 {
         set("short", "小酒店");
         set("long", @LONG
-這是一家已經廢棄了的小酒店，櫃台上積滿了灰，一個角落裡堆著
-一大堆幹草，旁邊斜躺著一個大鐵叉；櫃台後的櫥架上凌亂地放著幾摞
+這是一家已經廢棄了的小酒店，櫃枱上積滿了灰，一個角落裏堆着
+一大堆乾草，旁邊斜躺着一個大鐵叉；櫃枱後的櫥架上凌亂地放着幾摞
 破舊的青花瓷碗(wan)。
 LONG
         );
 
         set("item_desc", ([
-                "wan"      : "一堆很凌亂地散放著的碗。\n",
-                "bowl"     : "一堆很凌亂地散放著的碗。\n",
-                "tiewan"   : "一只奇怪的碗，好象是固定在了架子上。\n",
-                "ironbowl" : "一只奇怪的碗，好象是固定在了架子上。\n",
+                "wan"      : "一堆很凌亂地散放着的碗。\n",
+                "bowl"     : "一堆很凌亂地散放着的碗。\n",
+                "tiewan"   : "一隻奇怪的碗，好像是固定在了架子上。\n",
+                "ironbowl" : "一隻奇怪的碗，好像是固定在了架子上。\n",
         ]) );
 
         set("exits", ([
@@ -50,10 +50,10 @@ int do_move(string arg)
         object me = this_player();
 
         if (me->is_busy() || me->is_fighting())
-                return notify_fail("你正忙著呢！\n");
+                return notify_fail("你正忙着呢！\n");
         if (arg == "wan" || arg == "bowl")
         {
-                write( "你將架子上的碗使勁地摔到地上去，卻發現有一只碗竟然拿不起來。仔細一看，才發現這是一只鐵碗(tiewan)！\n");
+                write( "你將架子上的碗使勁地摔到地上去，卻發現有一隻碗竟然拿不起來。仔細一看，才發現這是一隻鐵碗(tiewan)！\n");
                 set_temp("mishi_temp", 1, me);
                 return 1;
         }
@@ -66,7 +66,7 @@ int do_turn(string arg)
         object me = this_player();
 
         if (me->is_busy() || me->is_fighting())
-                return notify_fail("你正忙著呢！\n");
+                return notify_fail("你正忙着呢！\n");
         if (arg == "tiewan left" || arg == "tiewan zuo")
         {
                 temp=query_temp("mishi_temp", me);

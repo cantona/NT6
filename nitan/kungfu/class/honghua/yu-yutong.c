@@ -7,13 +7,13 @@ inherit F_GUARDER;
 
 void create()
 {
-        set_name("余魚同", ({ "yu yutong", "yu","yutong" }));
+        set_name("餘魚同", ({ "yu yutong", "yu","yutong" }));
         set("title", "紅花會十四當家");
         set("nickname", HIY "金笛秀才" NOR);
         set("long", "一個長身玉立，眉清目秀，風流英俊的書生。\n"
-                    "余魚同乃江南望族子弟，中過秀才。他父親\n"
-                    "因和一家豪門爭一塊墳地，官司打得傾家盪\n"
-                    "產，又被豪門借故陷害，瘐死獄中。余魚同\n"
+                    "餘魚同乃江南望族子弟，中過秀才。他父親\n"
+                    "因和一家豪門爭一塊墳地，官司打得傾家蕩\n"
+                    "產，又被豪門藉故陷害，瘐死獄中。餘魚同\n"
                     "一氣出走，得遇機緣，拜馬真為師，棄文習\n"
                     "武，回來把士豪刺死，從此亡命江湖，後來\n"
                     "入了紅花會。他為人機警靈巧，多識各地鄉\n"
@@ -69,9 +69,9 @@ void create()
 
         set("guarder", ([
                 "refuse_other": CYN "$N" CYN "對$n" CYN "冷喝道："
-                                "閣下請留步，那裡下去不得。" NOR,
+                                "閣下請留步，那裏下去不得。" NOR,
                 "refuse_carry": CYN "$N" CYN "對$n" CYN "喝道：你"
-                                "居然背人下去，到底是什麼意思？" NOR,
+                                "居然揹人下去，到底是什麼意思？" NOR,
         ]));
 
         create_family("紅花會", 4, "當家");
@@ -98,5 +98,5 @@ void attempt_apprentice(object ob)
                 return;
 
         command("en");
-        command("say 我不收徒，你找其余幾位當家的好了。");
+        command("say 我不收徒，你找其餘幾位當家的好了。");
 }

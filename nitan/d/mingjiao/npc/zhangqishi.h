@@ -32,7 +32,7 @@ int accept_object(object ob, object obj)
                 if ( job_flg !=  "打造火槍" ) 
                 {
                         command("hmm"+query("id", ob));
-                        command("say 閣下沒有這項工作，哪裡來的火槍？這火槍甚是危險，我先收下了。");
+                        command("say 閣下沒有這項工作，哪裏來的火槍？這火槍甚是危險，我先收下了。");
                         destruct(obj);
                         return 1;
                 }
@@ -58,7 +58,7 @@ int accept_object(object ob, object obj)
          && !query_temp("have_letter", ob) )
         {
                 set_temp("fight_ok", 1, ob);
-                command("say 好，既然已得到教主許可，我們就來驗証一下武功。");
+                command("say 好，既然已得到教主許可，我們就來驗證一下武功。");
                 remove_call_out("destroying");
                 call_out("destroying", 1, me, obj);
                 return 1;
@@ -158,7 +158,7 @@ void attempt_apprentice(object ob)
 
         if( query("family/generation", me) >= query("family/generation", ob) )
         {
-                command("say " + RANK_D->query_respect(ob) + "，在下哪裡敢當 !");
+                command("say " + RANK_D->query_respect(ob) + "，在下哪裏敢當 !");
                 return;
         }
 

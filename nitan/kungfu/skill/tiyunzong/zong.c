@@ -33,7 +33,7 @@ int perform(object me, object target)
                 return notify_fail("你現在激發的輕身數使用「縱字訣」絕技。\n");
 
         if( query_temp("zong", me) )
-                return notify_fail("你正在使用梯雲縱的特殊防御「縱字訣」！\n");
+                return notify_fail("你正在使用梯雲縱的特殊防禦「縱字訣」！\n");
 
         message_combatd(HIY"$N突然深吸一口氣，一抬腿猛的拔高數丈，升勢剛盡，雙腿連續踢出，" +
                         "身體又上升丈許，才有如大鳥般盤旋落下！\n" NOR, me);
@@ -68,7 +68,7 @@ int help(object me)
         write(WHT"\n梯雲縱「縱」字訣："NOR"\n");
         write(@HELP
         武當輕功，當世可謂獨步武林，天下輕功無出其右，臨敵之時使出「縱」字
-        訣，可以用來大幅度提升自己的輕功有效等級，增加勝算或逃脫機率。
+        訣，可以用來大幅度提升自己的輕功有效等級，增加勝算或逃脱機率。
 
         要求：  梯雲縱等級 120 以上；
                 太極神功等級 120 以上；

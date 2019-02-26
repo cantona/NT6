@@ -4,12 +4,12 @@ inherit ITEM;
 int is_enchase_ob() { return 1; } 
 void create()
 {
-        set_name(HIW "神之寒晶﹒冰" NOR, ({"shenzhi hanjing", "shenzhi", "hanjing"}));
+        set_name(HIW "神之寒晶·冰" NOR, ({"shenzhi hanjing", "shenzhi", "hanjing"}));
         set_weight(300);
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("long", HIW "寒氣籠罩在四周，令人不敢接近，乃天界極寒之聖物，擁有著神奇的力量。\n" NOR);
+                set("long", HIW "寒氣籠罩在四周，令人不敢接近，乃天界極寒之聖物，擁有着神奇的力量。\n" NOR);
                 set("unit", "塊");
                 set("value", 12000);
                 set("can_be_enchased", 1);

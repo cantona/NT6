@@ -18,7 +18,7 @@ int exert(object me, object target)
         me->receive_damage("qi", 10);
 
         if( query("no_fight", environment(me)) )
-                return notify_fail("這裡不能攻擊別人! \n");
+                return notify_fail("這裏不能攻擊別人! \n");
 
         me->start_busy(5);
         message_combatd(HIC "$N" HIC "縱聲長笑，聲音遠遠的傳了"

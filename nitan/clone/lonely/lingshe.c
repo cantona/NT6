@@ -17,8 +17,8 @@ void create()
                 destruct(this_object());
         else {
                 set("long", @LONG
-這是一柄令人毛骨悚然的寶杖，昔年西毒歐陽峰曾憑借此杖和洪七公大戰
-三百回合。杖頭雕著個咧嘴而笑的人頭，面目猙獰，口中兩排利齒，上喂
+這是一柄令人毛骨悚然的寶杖，昔年西毒歐陽峯曾憑藉此杖和洪七公大戰
+三百回合。杖頭雕着個咧嘴而笑的人頭，面目猙獰，口中兩排利齒，上喂
 劇毒，舞動時宛如個見人即噬的厲鬼。更厲害的是纏杖盤旋的兩條毒蛇，
 吞吐伸縮，令人難防。
 LONG );
@@ -117,7 +117,7 @@ void check_npc(object me, object env)
                 if( query("shen", ob[i])<-10000 && !userp(ob[i]) )
                 {
                         message_vision(random(2) ? "$N讚道：好杖，好杖！\n" :
-                                                   "$N嘆道：也不知歐陽兄近來可好？\n",
+                                                   "$N歎道：也不知歐陽兄近來可好？\n",
                                        ob[i]);
                 } else
                 if( query("shen", ob[i])>10 && !userp(ob[i]) )
@@ -129,7 +129,7 @@ void check_npc(object me, object env)
                         {
                                 message_vision(random(2) ? "$N對$n冷冷道：滾開！少在我面前賣弄。\n" :
                                                            "$N一聲冷笑，對$n道：你以為你是誰？歐"
-                                                           "陽峰？哈哈哈哈！\n",
+                                                           "陽峯？哈哈哈哈！\n",
                                                ob[i], me);
                         } else
                         if (ob_exp > 20000)
@@ -147,7 +147,7 @@ void check_npc(object me, object env)
                         {
                                 message_vision(random(2) ? "$N撲通一聲，癱倒在地，雙手急搖"
                                                            "道：“不是我！真的不是我！”\n" :
-                                                           "$N一個哆嗦，結結巴巴的什麼也說"
+                                                           "$N一個哆嗦，結結巴巴的什麼也説"
                                                            "不上來。\n",
                                                ob[i], me);
                                 if( !query("no_fight", env) )
@@ -230,7 +230,7 @@ void return_to_feng()
                                "$N將杖交給歐陽世家弟子帶走。\n", me);
         } else
         {
-                message("vision", "忽然一個歐陽世家弟子走了過來，撿起靈蛇杖，嘆了口氣，搖搖"
+                message("vision", "忽然一個歐陽世家弟子走了過來，撿起靈蛇杖，歎了口氣，搖搖"
                                   "頭走了。\n", me);
         }
 

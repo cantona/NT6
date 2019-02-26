@@ -6,14 +6,14 @@ string ask_me2();
 
 void create()
 {
-        set_name("程老板", ({ "cheng laoban", "cheng" }));
-        set("title", "全聚德老板");
+        set_name("程老闆", ({ "cheng laoban", "cheng" }));
+        set("title", "全聚德老闆");
         set("shen_type", 1);
 
         set("str", 20);
         set("gender", "男性");
         set("age", 65);
-        set("long", "程老板經營祖傳下來的全聚德酒樓已有多年。\n");
+        set("long", "程老闆經營祖傳下來的全聚德酒樓已有多年。\n");
 
         set("combat_exp", 50000);
 

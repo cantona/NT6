@@ -12,7 +12,7 @@ void create()
         else {
                 set("unit", "把");
                 set("base_unit", "枝");
-                set("long","鐵打的蒺黎鋒利無比，刃上閃現綠色，顯是喂了毒藥。\n");
+                set("long","鐵打的蒺黎鋒利無比，刃上閃現綠色，顯是餵了毒藥。\n");
                 set("base_weight", 40);
                 set("value", 0);
                 set("base_value", 5);

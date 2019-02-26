@@ -2,10 +2,10 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "鐵舖");
+        set("short", "鐵鋪");
         set("long", @LONG
-這裡是白駝山莊下面的一家打鐵舖，不時從裡面傳來叮叮咚咚的
-響聲。鐵匠忙著打制鐵制兵器，賣給江湖俠客。
+這裏是白駝山莊下面的一家打鐵鋪，不時從裏面傳來叮叮咚咚的
+響聲。鐵匠忙着打製鐵製兵器，賣給江湖俠客。
 LONG );
         set("exits", ([
                 "north" : __DIR__"dongjie",

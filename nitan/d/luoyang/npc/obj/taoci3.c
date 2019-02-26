@@ -9,7 +9,7 @@ void create()
                 set_default_object(__FILE__);
         else {
                 set("unit", "只");
-                set("long", HIR "經唐三彩燒制的淡朱菩提樹，非常的昂貴。\n" NOR);
+                set("long", HIR "經唐三彩燒製的淡朱菩提樹，非常的昂貴。\n" NOR);
                 set("value", 1500);
         }
 }

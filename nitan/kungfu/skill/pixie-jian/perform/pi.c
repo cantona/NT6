@@ -1,7 +1,7 @@
 #include <ansi.h>
 #include <combat.h>
 
-string name() { return HIW "群邪辟易" NOR; }
+string name() { return HIW "羣邪辟易" NOR; }
 
 inherit F_SSERVER;
 
@@ -52,9 +52,9 @@ int perform(object me, object target)
                 return notify_fail("你沒有準備使用辟邪劍法，難以施展" + name() + "。\n");
 
         if (! living(target))
-                return notify_fail("對方都已經這樣了，用不著這麼費力吧？\n");
+                return notify_fail("對方都已經這樣了，用不着這麼費力吧？\n");
 
-        msg = HIW "$N" HIW "身形忽然變快，驀的沖向$n" HIW "，" + name +
+        msg = HIW "$N" HIW "身形忽然變快，驀的衝向$n" HIW "，" + name +
               HIW "幻作數道虛影，頓時無數星光一齊射向$n" HIW "！\n" NOR;
         message_combatd(msg, me, target);
 

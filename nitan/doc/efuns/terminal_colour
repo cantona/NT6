@@ -22,7 +22,7 @@
                 the mode of the terminal and not generate any
                 printable characters for the purposes of wrapping.
 
-        這個函數需要在 options 文件裡定義了 PACKAGE_CONTRIB .
+        這個函數需要在 options 文件裏定義了 PACKAGE_CONTRIB .
 
         by 發現號(Find@tx)
 

@@ -1,7 +1,7 @@
 #include <ansi.h>
 #include <combat.h>
 
-string name() { return HIW "辟邪□影" NOR; }
+string name() { return HIW "辟邪劍影" NOR; }
 
 inherit F_SSERVER;
 
@@ -15,7 +15,7 @@ int perform(object me, object target)
         int count;
 
         if( !query("reborn/times", me) )
-                return notify_fail("你還沒有轉世重生，還不能體會到" + name() + "的奧秘。\n");
+                return notify_fail("你還沒有轉世重生，還不能體會到" + name() + "的奧祕。\n");
 
         if (! target)
         {
@@ -27,7 +27,7 @@ int perform(object me, object target)
                 return notify_fail(name() + "只能對戰鬥中的對手使用。\n");
 
         if( me->is_busy() )
-                return notify_fail("你正忙著呢。\n");
+                return notify_fail("你正忙着呢。\n");
 
         weapon=query_temp("weapon", me);
 
@@ -53,10 +53,10 @@ int perform(object me, object target)
                 return notify_fail("你沒有激發辟邪劍法，難以施展" + name() + "。\n");
 
         if (! living(target))
-                return notify_fail("對方都已經這樣了，用不著這麼費力吧？\n");
+                return notify_fail("對方都已經這樣了，用不着這麼費力吧？\n");
 
         msg = HIR "$N" HIR "身形一轉，手中" + weapon->name() + HIR "寒光閃爍，猛然間，化作"
-              "萬千劍影射向$n" HIR "，正是江湖中失傳已久的驚世奇學「辟邪□影」！\n" NOR;
+              "萬千劍影射向$n" HIR "，正是江湖中失傳已久的驚世奇學「辟邪劍影」！\n" NOR;
 
         message_combatd(sort_msg(msg), me, target);
 

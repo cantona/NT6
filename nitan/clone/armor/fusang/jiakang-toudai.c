@@ -14,7 +14,7 @@ void create()
         else {
                 set("material", "steel");
                 set("unit", "頂");
-                set("long", HIY "這是德川家康所特有的頭帶，上繡有「德川﹒家康」字樣。\n" NOR);
+                set("long", HIY "這是德川家康所特有的頭帶，上繡有「德川·家康」字樣。\n" NOR);
                 set("value", 350000);
                 set("armor_prop/int", 5);
         }

@@ -50,7 +50,7 @@ int perform(object me, object target)
          } else
          {
                 msg += CYN "可是$p" CYN "猛地向後一躍，跳出了$P"
-                       CYN "的攻擊范圍。\n" NOR;
+                       CYN "的攻擊範圍。\n" NOR;
                 me->start_busy(3);
          }
          message_combatd(msg, me, target);

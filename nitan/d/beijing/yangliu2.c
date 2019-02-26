@@ -3,9 +3,9 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "楊柳胡同");
+        set("short", "楊柳衚衕");
         set("long", @LONG
-這裡是楊柳胡同的深處。走到這裡，光線越發的暗淡起來，狹窄
+這裏是楊柳衚衕的深處。走到這裏，光線越發的暗淡起來，狹窄
 的通道還在不斷的向南邊延伸。
 LONG );
        set("exits", ([

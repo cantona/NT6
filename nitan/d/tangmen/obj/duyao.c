@@ -11,7 +11,7 @@ void create()
                 set_default_object(__FILE__);
         else {
                 set("unit", "粒");
-                set("long", "這是一粒由唐門特殊秘方配置而成的毒藥，只要一丁點就可以置人于死地！\n");
+                set("long", "這是一粒由唐門特殊祕方配置而成的毒藥，只要一丁點就可以置人於死地！\n");
                 set("value", 50);
                 set("poison_type", "poison");
                 set("can_pour", 1);

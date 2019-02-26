@@ -7,7 +7,7 @@ void create()
         set_name("唐鈍", ({"tang dun"}));
         set("title","唐門長房弟子");
         set("long",
-        "這是一個唐門長房弟子，一襲青衣，渾身透著一股邪氣。本月長房輪值。\n"
+        "這是一個唐門長房弟子，一襲青衣，渾身透着一股邪氣。本月長房輪值。\n"
         );
 
         set("gender", "男性");
@@ -33,7 +33,7 @@ void create()
         map_skill("sword","shedao-qigong");
                 set("chat_chance", 3);
         set("chat_msg", ({
-            "唐鈍面無表情地說道: 江湖中無人敢侵犯唐門! \n",
+            "唐鈍面無表情地説道: 江湖中無人敢侵犯唐門! \n",
         }) );
 
         setup();

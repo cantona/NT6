@@ -49,14 +49,14 @@ mapping skill_features = ([
         "query_description" : "$S",
 ]);
 
-// 這裡是為了按順序顯示
+// 這裏是為了按順序顯示
 string *features = ({ "type", "double_attack", "main_skill", "query_description",  });
 
 // 開頭的內容，為了保持對齊而設定
 #define PREFIX_STR      "\t      "
 // 每行的長度
 #define LINE_LEN        40
-// 表示合並使用的字符
+// 表示合併使用的字符
 #define COMBINE_STR     "，"
 // 表示並列使用的字符
 #define APPOSE_STR      " - "
@@ -75,7 +75,7 @@ mapping valid_type = ([
         "hand":         "手功", "leg":          "腿功",
         "sword":        "劍法", "blade":        "刀法",
         "dagger":       "短兵", "brush":        "筆法",
-        "spear":        "槍法", "hook":         "鉤法",
+        "spear":        "槍法", "hook":         "鈎法",
         "stick":        "棒法", "staff":        "杖法",
         "club" :        "棍法", "throwing":     "暗器",
         "whip":         "鞭法", "axe":          "斧法",
@@ -144,7 +144,7 @@ int main(object me, string arg)
                                 {
                                         prefix = strlen(implode(feature_list, COMBINE_STR)) +
                                                  strlen(COMBINE_STR);
-                                        // 求取每行的余數
+                                        // 求取每行的餘數
                                         prefix %= LINE_LEN;
                                         temp = replace_string(temp, "$S",
                                                               sort_result((string)value, prefix));
@@ -441,9 +441,9 @@ int help(object me)
 該技能的絕招及作為內功的特殊功能。同時，你還可以查到技
 能相關的一些特性，比如技能的類型、是否雙倍攻擊速度、主
 技能是什麼等等，若這個技能內定義了相關的描述的話，你還
-可以查到關于這個技能的一些掌故。
+可以查到關於這個技能的一些掌故。
 
-另外，如果這個技能是一個可被演練合並的技能，則可以顯示
+另外，如果這個技能是一個可被演練合併的技能，則可以顯示
 出需用哪些技能來進行演練。
 
 相關指令：skills

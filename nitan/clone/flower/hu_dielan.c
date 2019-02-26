@@ -11,7 +11,7 @@ void create()
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("long","這是一朵燦爛的蝴蝶蘭，花形似彩蝶，花姿優美動人，隱喻著“我愛你”之意。\n");
+                set("long","這是一朵燦爛的蝴蝶蘭，花形似彩蝶，花姿優美動人，隱喻着“我愛你”之意。\n");
                 set("unit", "束");
                 set("base_value", 100);
                 set("base_unit", "朵");

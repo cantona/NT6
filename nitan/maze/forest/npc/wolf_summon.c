@@ -10,7 +10,7 @@ void create()
         set("race", "野獸");
         set("gender", "雄性");
         set("age", 20);
-        set("long", "這是一只可怕的血狼。\n");
+        set("long", "這是一隻可怕的血狼。\n");
 
         set("str", 50);
         set("con", 120);
@@ -55,10 +55,10 @@ void do_attack() {
         if (!enemies || sizeof(enemies)==0)
                         return;
         enemy = enemies[random(sizeof(enemies))];
-        msg = HIR"\n$N突然急竄，向$n的嚥喉咬去！\n"NOR;
+        msg = HIR"\n$N突然急竄，向$n的咽喉咬去！\n"NOR;
         message_combatd(msg,this_object(),enemy);
         if( random(query("combat_exp"))*6>query("combat_exp", enemy)){
-                        msg = HIR"$n躲閃不及，被咬個正著！\n"NOR;
+                        msg = HIR"$n躲閃不及，被咬個正着！\n"NOR;
                         message_combatd(msg,this_object(),enemy);
                         enemy->receive_damage("qi",50+random(50));
                         COMBAT_D->report_status(enemy);

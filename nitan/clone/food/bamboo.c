@@ -1,4 +1,4 @@
-// 神話世界﹒西遊記﹒版本４．５０
+// 神話世界·西遊記·版本４．５０
 /* <SecCrypt CPL V3R05> */
  
 // created 3/31/1997 by snowcat
@@ -18,7 +18,7 @@ void create()
     set("unit", "根");
     set("value", 120);
     set("max_liquid", 100); 
-    set("wield_msg", "$N抽出細雕青竹筒，順手晃盪了一下裡面的水。\n");
+    set("wield_msg", "$N抽出細雕青竹筒，順手晃盪了一下里面的水。\n");
     set("unwield_msg", "$N將細雕青竹筒插回腰間。\n");
   }
 

@@ -7,10 +7,10 @@ inherit F_GUARDER;
 
 void create()
 {
-        set_name("沙千裡", ({ "sha qianli", "sha", "qianli" }));
+        set_name("沙千里", ({ "sha qianli", "sha", "qianli" }));
         set("nickname", HIR "黑龍" NOR);
         set("long",@LONG
-他就是五毒教的護法弟子沙千裡，身材魁梧，方
+他就是五毒教的護法弟子沙千里，身材魁梧，方
 面大耳。在教中轉管招募教眾，教授弟子們的入
 門功夫。
 LONG);
@@ -62,7 +62,7 @@ LONG);
 
         set("guarder", ([
                 "refuse_other": CYN "$N" CYN "身形一晃，擋在$n" CYN
-                                "跟前，厲聲說道：非本教弟子，不得進"
+                                "跟前，厲聲説道：非本教弟子，不得進"
                                 "入本教禁地。" NOR,
                 "refuse_carry": CYN "$N" CYN "對$n" CYN "喝道：你"
                                 "背上背的是什麼人？快給我放下來！"

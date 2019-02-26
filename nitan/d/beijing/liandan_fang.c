@@ -8,9 +8,9 @@ int do_liandan(string arg);
 void create()
 {       set("short", HIY "煉丹房" NOR);
         set("long", @LONG
-這是姚春的煉丹房，四周堆放著煉丹的藥材，一個漆黑的煉丹爐
+這是姚春的煉丹房，四周堆放着煉丹的藥材，一個漆黑的煉丹爐
 (lu)聳立在中央，房中的藥味經久不散，並且總有一股散不盡的淡青
-色煙霧，長時間的丹藥煉制已經讓這個房間充滿了神秘的色彩。
+色煙霧，長時間的丹藥煉製已經讓這個房間充滿了神祕的色彩。
 LONG );
         set("no_fight", 1);
         set("item_desc", ([
@@ -40,7 +40,7 @@ int do_liandan(string arg)
         time = 5 + random(5);
 
         if (me->is_busy())
-                return notify_fail("等你有空了再說吧。\n");
+                return notify_fail("等你有空了再説吧。\n");
 
         if( query_temp("liandan", me)<1 )
                 return notify_fail("煉丹之地，切勿滋擾。\n");
@@ -49,14 +49,14 @@ int do_liandan(string arg)
                 return notify_fail("原料都沒有，煉什麼啊？\n");
 
         if( query_temp("liandan", me) == 3 )
-                return notify_fail("丹藥煉制中，請勿分心。\n");
+                return notify_fail("丹藥煉製中，請勿分心。\n");
 
         if( query_temp("liandan", me) == 4 )
-                return notify_fail("煉制成功，快去復命吧。\n");
+                return notify_fail("煉製成功，快去覆命吧。\n");
 
         if( query("jing", me)<80 || 
             query("qi", me)<80 )
-                return notify_fail("你現在的精神狀況無法煉制丹藥。\n");
+                return notify_fail("你現在的精神狀況無法煉製丹藥。\n");
 
         message_vision(HIY "$N" HIY "將原料藥材一一放進爐中，盤"
                        "腿坐下，閉目靜待。\n" NOR, me); 
@@ -94,14 +94,14 @@ void liandan(object me)
         {
                 set_temp("liandan", 1, me);
                 message_vision(HIR "正當$N" HIR "昏昏然的時候，一陣刺鼻"
-                               "的氣味從爐中沖出，$N" HIR "急忙開爐取藥，"
+                               "的氣味從爐中衝出，$N" HIR "急忙開爐取藥，"
                                "結果被弄得個灰頭土臉。\n"NOR,me);
         } else
         if (random(skill) > 60 && random(10) == 1)
         {
                 message_vision(HIY "爐頂青煙漸漸轉淡，驀然一道金光閃過，$N"
                                HIY "不禁吃了一驚，此時丹藥氣味漸濃，$N"
-                               HIY "趕緊把煉制而成的丹丸取出。\n" NOR, me);
+                               HIY "趕緊把煉製而成的丹丸取出。\n" NOR, me);
                 set_temp("liandan", 4, me);
                 ob = new(DAN_DIR + SM_LIST[random(sizeof(SM_LIST))]);
                 tell_object(me, HIC "你煉成了珍品「" + NOR + ob->name() + NOR + HIC "」。\n" NOR);
@@ -111,7 +111,7 @@ void liandan(object me)
                 if( stringp(query("family/family_name", me)) )
                 {                        
                         addn("family/gongji", 10+random(12), me);
-                        tell_object(me, HIC "由于你成功的煉出珍品丹藥，你在師門的功績提高了！\n" NOR);
+                        tell_object(me, HIC "由於你成功的煉出珍品丹藥，你在師門的功績提高了！\n" NOR);
                 }
 */
                 
@@ -123,7 +123,7 @@ void liandan(object me)
         } else
         {
                 message_vision(HIC "爐頂青煙漸漸轉淡，丹藥氣味漸濃，$N"
-                               HIC "高興地把煉制而成的丹丸取出。\n" NOR, me);
+                               HIC "高興地把煉製而成的丹丸取出。\n" NOR, me);
                 set_temp("liandan", 4, me);
                 ob = new(DAN_DIR + NORMAL_LIST[random(sizeof(NORMAL_LIST))]);
                 tell_object(me, HIC "你煉成了「" + NOR + ob->name() + NOR + HIC "」。\n" NOR);
@@ -133,7 +133,7 @@ void liandan(object me)
                 if( stringp(query("family/family_name", me)) )
                 {                        
                         addn("family/gongji", 5+random(6), me);
-                        tell_object(me, HIC "由于你成功的煉出丹藥，你在師門的功績提高了！\n" NOR);
+                        tell_object(me, HIC "由於你成功的煉出丹藥，你在師門的功績提高了！\n" NOR);
                 }
 */
                 

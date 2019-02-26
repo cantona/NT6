@@ -11,14 +11,14 @@ mapping *action = ({
         "skill_name" : "蜃樓鈴聲",
         "damage_type": "刺傷"
 ]),
-([      "action": "$N錯步上前，一招「紫氣氤氳」，劍意若有若無，$w淡淡刺向$n的$l",
+([      "action": "$N錯步上前，一招「紫氣氤氲」，劍意若有若無，$w淡淡刺向$n的$l",
         "force" : 140,
         "attack": 60,
         "dodge" : 25,
         "parry" : 25,
         "damage": 40,
         "lvl"   : 40,
-        "skill_name" : "紫氣氤氳",
+        "skill_name" : "紫氣氤氲",
         "damage_type": "刺傷"
 ]),
 ([      "action": "$N一式「域外來雲」，縱身飄開數尺，又猛地錯步上前，手中$w疾刺$n的$l",
@@ -31,7 +31,7 @@ mapping *action = ({
         "skill_name" : "域外來雲",
         "damage_type": "刺傷"
 ]),
-([      "action": "$N縱身輕輕躍起，一式「清風拂岡」，劍光如雨點般的洒向$n",
+([      "action": "$N縱身輕輕躍起，一式「清風拂岡」，劍光如雨點般的灑向$n",
         "force" : 220,
         "attack": 75,
         "dodge" : 20,
@@ -41,7 +41,7 @@ mapping *action = ({
         "skill_name" : "清風拂岡",
         "damage_type": "刺傷"
 ]),
-([      "action": "$N手中$w劍芒吞吐，揮洒而出，一式「濁清一潭」，對準$n的$l直直刺出",
+([      "action": "$N手中$w劍芒吞吐，揮灑而出，一式「濁清一潭」，對準$n的$l直直刺出",
         "force" : 260,
         "attack": 90,
         "dodge" : 25,

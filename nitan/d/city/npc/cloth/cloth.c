@@ -17,7 +17,7 @@ void create()
                 set("armor_type", "cloth");
                 set("armor_prop/armor", 2);
                 set("wear_msg","$N穿上一件$n。\n");
-                set("remove_msg","$N將$n脫了下來。\n");
+                set("remove_msg","$N將$n脱了下來。\n");
         }
 
         setup();

@@ -24,12 +24,12 @@ void create()
         else {
                 set("material", "tian jing");
                 set("unit", "只");
-                set("long", HIM "這是一只面具，做成了修羅鬼王的模樣。戴上後便沒人知道你的真實身份了。\n" NOR);
+                set("long", HIM "這是一隻面具，做成了修羅鬼王的模樣。戴上後便沒人知道你的真實身份了。\n" NOR);
                 set("value", 1000000);
                 /*
                 set("armor_prop/mask_name", sname[random(sizeof(sname))]);
                 set("armor_prop/mask_id",  ({ "masker xiuluo", "masker", "xiuluo"}) );
-                set("armor_prop/mask_long", "此人佩帶著修羅面具，難以看出其真實身份。\n");
+                set("armor_prop/mask_long", "此人佩帶着修羅面具，難以看出其真實身份。\n");
                 set("armor_prop/mask_flag", 1);
                 */
         }

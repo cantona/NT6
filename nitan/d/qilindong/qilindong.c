@@ -4,9 +4,9 @@ void create()
 {
         set("short", "麒麟洞");
         set("long",
-"這裡就是麒麟洞，一只火麒麟盤踞在這裡，看見有人進來，發出\n"
-"一聲震天巨吼，然後便發起了攻擊。聽說它守護著雄霸留下來的寶藏。\n"
-"有空的話，搜索(search)一下或許會有收獲。\n"
+"這裏就是麒麟洞，一隻火麒麟盤踞在這裏，看見有人進來，發出\n"
+"一聲震天巨吼，然後便發起了攻擊。聽説它守護着雄霸留下來的寶藏。\n"
+"有空的話，搜索(search)一下或許會有收穫。\n"
 );
         set("exits", ([ 
               "south" : __DIR__"dong5", 
@@ -25,7 +25,7 @@ void init()
 
 int do_train(string arg)
 {
-    write("麒麟洞裡的都是神獸，這你也想馴服？！\n");
+    write("麒麟洞裏的都是神獸，這你也想馴服？！\n");
     return 1;
 } 
 
@@ -54,7 +54,7 @@ int do_search (string arg)
      
       tu->move(who);  
       who->set("reborn_start/qilindong/tu",1);
-      message("vision", HIW"【轉世傳聞】：據說"+ who->query("name") +
+      message("vision", HIW"【轉世傳聞】：據説"+ who->query("name") +
                        "在麒麟洞內找到了一張殘破的圖樣。\n"NOR, users());
       
   }

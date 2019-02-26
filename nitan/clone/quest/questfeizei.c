@@ -139,7 +139,7 @@ int do_halt()
 
         if ( me->is_fighting(ob))
         {
-                message_vision(HIW"$N喝道：“既然被你看出身份，就休想活著離開！”\n"NOR, ob, me);
+                message_vision(HIW"$N喝道：“既然被你看出身份，就休想活着離開！”\n"NOR, ob, me);
                 return 1;
         }
         return 0;
@@ -183,11 +183,11 @@ void die()
                 addn("combat_exp", exp, me);
                 addn("potential", pot, me);
                 addn("score", score, me);
-                message_vision("$N咬牙切齒地對著天空大叫：“賊老天！”\n",ob);
+                message_vision("$N咬牙切齒地對着天空大叫：“賊老天！”\n",ob);
                 tell_object(me,HIW"你殺敵有功，得到如下獎勵：\n");
                 tell_object(me,chinese_number(exp) +"點實戰經驗\n" +
                 chinese_number(pot) + "點潛能\n" +
-                chinese_number(score)+"點江湖閱歷\n"NOR);
+                chinese_number(score)+"點江湖閲歷\n"NOR);
                 return ::die(); 
         }
 }

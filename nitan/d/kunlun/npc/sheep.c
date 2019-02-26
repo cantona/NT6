@@ -8,7 +8,7 @@ void create()
         set_name("野山羊", ({ "shan yang", "sheep" }) );
         set("race", "走畜");
         set("age", 5);
-        set("long","一只溫順可愛的野山羊。它正在低頭吃草，見了人也不驚避。\n");
+        set("long","一隻温順可愛的野山羊。它正在低頭吃草，見了人也不驚避。\n");
 
         set("combat_exp", 100);
         set_temp("apply/attack", 30);

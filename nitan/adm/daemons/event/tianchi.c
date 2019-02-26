@@ -28,12 +28,12 @@ private void do_bonus(object room)
         r = random(365);
         if (r == 0)
         {
-                msg = HIR "只聽天空驟然傳來一陣刺耳的摩擦聲，你仰望上蒼，發現穹蒼裡已豁然出現\n"
+                msg = HIR "只聽天空驟然傳來一陣刺耳的摩擦聲，你仰望上蒼，發現穹蒼裏已豁然出現\n"
                           "無數顆流星。夜隕如雨飛墜，鋒芒劃空，爾落入天池之中，又再激起萬股七\n"
-                          "色浪濤，漆黑夜穹竟猶如白晝一般。你不禁感嘆，大自然之威，當真神鬼莫\n"
+                          "色浪濤，漆黑夜穹竟猶如白晝一般。你不禁感歎，大自然之威，當真神鬼莫\n"
                           "測。\n" NOR;
 
-                msg += HIC "你仔細的觀察了流星雨的全過程，發現其中竟有很多奧秘可以融于武學。\n" NOR;
+                msg += HIC "你仔細的觀察了流星雨的全過程，發現其中竟有很多奧祕可以融於武學。\n" NOR;
 
                 for( int i=0; i<sizeof(obs); i++ )
                 {
@@ -71,7 +71,7 @@ private void do_bonus(object room)
                 MAP_D->record_rumor(obs, "天池流星雨", this_object());
 
                 CHANNEL_D->do_channel(this_object(), "rumor",
-                                      "聽說長白山天池上夜空竟現流星雨，五彩繽紛，煞為壯觀。");
+                                      "聽説長白山天池上夜空竟現流星雨，五彩繽紛，煞為壯觀。");
         } else
         if (r < 40)
         {
@@ -96,7 +96,7 @@ private void do_bonus(object room)
                         msg = WHT "眼見天邊一片明亮，但是水氣，霧氣和雲層交雜，讓你什麼都看不清楚。\n" NOR;
                         break;
                 }
-                msg += HIG "你心中連嘆：“太可惜了！”\n" NOR;
+                msg += HIG "你心中連歎：“太可惜了！”\n" NOR;
 
                 message("vision", msg, obs);
         }

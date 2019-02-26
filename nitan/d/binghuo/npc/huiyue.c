@@ -6,7 +6,7 @@ inherit NPC;
 void create()
 {
         set_name("輝月使", ({ "huiyue shi", "huiyue", "shi" }));
-        set("long", "這女子一頭黑發，和華人無異，但眸子極淡，幾乎無色，瓜
+        set("long", "這女子一頭黑髮，和華人無異，但眸子極淡，幾乎無色，瓜
 子臉型，約莫三十歲上下，雖然瞧來詭異，相貌卻是甚美。\n");
         set("title",HIG "明教總教"HIM"使者"NOR);
         set("gender", "女性");

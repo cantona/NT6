@@ -37,7 +37,7 @@ void greeting(object ob)
         if( !ob || environment(ob) != environment() ) return;
         switch( random(5) ) {
                 case 0:
-                        say( "高人說道：這位" + RANK_D->query_respect(ob)
+                        say( "高人説道：這位" + RANK_D->query_respect(ob)
                                 + "，來陪我聊一聊？\n");
                         break;
                 case 1:
@@ -54,11 +54,11 @@ int do_train(string arg)
         me = this_player();
         if(me->is_busy())
         return notify_fail("你上一個動作還沒有完成。\n");
-        if(!arg) return notify_fail("高人道：〝你要什麼呀？〝\n");
+        if(!arg) return notify_fail("高人道：＂你要什麼呀？＂\n");
         pet = present(arg,environment());
-        if(!objectp(pet)) return notify_fail("高人道：〝你要什麼呀？〝\n");
+        if(!objectp(pet)) return notify_fail("高人道：＂你要什麼呀？＂\n");
         if( query("possessed", pet) != me )
-        return notify_fail("高人道：〝那好象不是你的吧？〝\n");
+        return notify_fail("高人道：＂那好像不是你的吧？＂\n");
         switch (random(2)){
         case 0: which = "max_jing"; break;
         case 1: which = "max_qi"; break;

@@ -38,7 +38,7 @@ int perform(object me, object target)
                 return notify_fail("你沒有準備韋陀掌，難以施展" JISHI "。\n");
 
         if (! living(target))
-                return notify_fail("對方都已經這樣了，用不著這麼費力吧？\n");
+                return notify_fail("對方都已經這樣了，用不着這麼費力吧？\n");
 
         msg = HIB "只見$N" HIB "雙掌一錯，揉身而進，連環攻出數掌，一環環"
               "向$n" HIB "劈去。\n" NOR;

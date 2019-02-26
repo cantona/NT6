@@ -40,9 +40,9 @@ void create()
         set("unconcious_message", "\n$N低低地吼了一聲，滾倒在地上暈了過去。\n\n"  );
         set("revive_message",     "\n$N四肢慢慢動彈了一下，睜開眼醒了過來。\n\n"  );
         set("leave_msg",          "奔了過去"                                  );
-        set("arrive_msg",         "呼地竄了出來，警惕地四周張望著"                  );
+        set("arrive_msg",         "呼地竄了出來，警惕地四周張望着"                  );
         set("fleeout_message",    "落荒而逃，慘叫聲不斷傳來"                    );
-        set("fleein_message",     "搖搖擺擺地跑了過來，伸出舌頭呼呼地喘著粗氣");
+        set("fleein_message",     "搖搖擺擺地跑了過來，伸出舌頭呼呼地喘着粗氣");
 }
 
 void setup_beast(object ob)

@@ -91,6 +91,6 @@ void attempt_apprentice(object me)
         }
 
         command("heihei");
-        command("say 以後你就跟著老子吧。");
+        command("say 以後你就跟着老子吧。");
         command("recruit "+query("id", me));
 }

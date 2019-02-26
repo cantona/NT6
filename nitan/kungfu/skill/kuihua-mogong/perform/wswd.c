@@ -19,9 +19,9 @@ int perform(object me, object target)
         if( !target || target == me ) target = offensive_target(me);
 
         if( query("no_fight", environment(me)) )
-                return notify_fail("這裡不準打架。\n");
+                return notify_fail("這裏不準打架。\n");
 
-        if( me->is_busy()) return notify_fail("你正忙著呢。\n");
+        if( me->is_busy()) return notify_fail("你正忙着呢。\n");
 
         if( userp(me) && !query("can_perform/kuihua-mogong/ws", me) )
                 return notify_fail("你所使用的外功中沒有這種功能。\n");
@@ -44,7 +44,7 @@ int perform(object me, object target)
                 return notify_fail("你的內力不夠運用"WS"所需！\n");
 
         if (! living(target))
-                return notify_fail("對方都已經這樣了，用不著這麼費力吧？\n");
+                return notify_fail("對方都已經這樣了，用不着這麼費力吧？\n");
 
         me->start_busy(1 + random(3));
         msg = HIM "$N突然身形一轉眨眼間使用葵花魔功的終極絕招----" NOR
@@ -110,8 +110,8 @@ int perform2(object me)
         if( !target || living(target) )     return 1;
         if(!objectp(weapon)) return 1;
 
-        nextmsg = HIM "說是遲那時快，$N身形逆轉使出了" NOR WSWD "之" WD HIM
-                "式，剎那間天空陰雲密布，\n" NOR HIM "$n的心臟幾乎停止了跳動，呆呆的望著$N\n" NOR;
+        nextmsg = HIM "説是遲那時快，$N身形逆轉使出了" NOR WSWD "之" WD HIM
+                "式，剎那間天空陰雲密佈，\n" NOR HIM "$n的心臟幾乎停止了跳動，呆呆的望着$N\n" NOR;
         ap=me->query_skill("kuihua-mogong",1)*1+query("dex", me)*20+
         me->query_skill("martial-cognize", 1);
         dp=target->query_skill("parry")+query("dex", target)*8+
@@ -131,9 +131,9 @@ int perform2(object me)
                 nextmsg += COMBAT_D->do_damage(me, target, WEAPON_ATTACK, damage, 80,
                         HIY "$n" BLU "只覺身上如同萬劍穿心一般，" HIY "$N"
                         WHT "如同死神一般，勢必要取$n性命！\n" NOR
-                        HIM "此時此刻$N揮舞著手中" + weapon->name() + HIM
+                        HIM "此時此刻$N揮舞着手中" + weapon->name() + HIM
                         "，瞬間變化了幾個劍招，可是$n就是無法找出破解之法，\n" +
-                        "說時遲那時快" + weapon->name() + HIM
+                        "説時遲那時快" + weapon->name() + HIM
                         "已經刺進了$n的胸膛，鮮血濺了一地！！\n" NOR);
         }
         message_vision(nextmsg, me, target);
@@ -155,7 +155,7 @@ int check_wd(object me)
         if(a>=80){
                 tell_object(me,
                         HIW "\n你突然若有所悟，對剛才使用過的魔功之" WS
-                        HIW "式反復琢磨，\n對了，這樣也可以耶！你學會了" WSWD
+                        HIW "式反覆琢磨，\n對了，這樣也可以耶！你學會了" WSWD
                         HIW "之" WD HIW "式！\n" NOR);
                 set("can_perform/kuihua-mogong/wd", 1, me);
         }
@@ -163,7 +163,7 @@ int check_wd(object me)
 }
 /*
     } else {
-        msg += "$n邪邪的看著$N，不知不覺中$n表現出萬分的恐懼。\n"NOR;
+        msg += "$n邪邪的看着$N，不知不覺中$n表現出萬分的恐懼。\n"NOR;
         msg += HIM"\n$N猛然想到了什麼，$n立刻開始無限痛苦的呻吟起來！\n\n"NOR;
 
         ap=me->query_skill("kuihua-mogong",1)*1+query("dex", me)*10+

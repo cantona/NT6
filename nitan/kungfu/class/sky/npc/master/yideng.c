@@ -7,7 +7,7 @@ void create()
             set_name("一燈大師", ({ "yideng dashi", "yideng", "dashi" }));
             set("long", @LONG
 一燈大師乃江湖中人稱“東邪西毒，南帝北丐”中
-的南帝段皇爺，當年憑著段氏“一陽指”而獨步武
+的南帝段皇爺，當年憑着段氏“一陽指”而獨步武
 林，罕逢敵手。但卻在中年時因一段悲情而出家為
 僧，之後大徹大悟，成為一位得道高僧。
 LONG );
@@ -152,7 +152,7 @@ void die()
         return;
 }
 
-// 氣血小于1000則死亡，避免他人協助幫忙轉世
+// 氣血小於1000則死亡，避免他人協助幫忙轉世
 void heart_beat()
 {
         if (this_object()->query("qi") < 1000 || this_object()->query("eff_qi") < 1000)

@@ -11,7 +11,7 @@ string name() { return HIY "武曲轉世" NOR; }
 
 int perform(object me, string skill)
 {
-        return notify_fail("你在轉世時巧遇武曲星投胎轉世，借助昊\n"
+        return notify_fail("你在轉世時巧遇武曲星投胎轉世，藉助昊\n"
 						   "天塔神力，你獲取武曲星附體轉生，擁有\n"
 						   "常人沒有的武學領悟能力。轉生後擁有該\n"
 						   "技能可以提高所有武學研究速度百分之十，\n"

@@ -5,8 +5,8 @@ void create()
 {
         set("short","客店");
         set("long",@LONG
-這是城裡唯一的一家小客棧，專門接待過往客商，生意非常興隆。
-店小二裡裡外外忙得團團轉。此間雖偏遠，卻不因勢坑宰客人，住店一
+這是城裏唯一的一家小客棧，專門接待過往客商，生意非常興隆。
+店小二里裏外外忙得團團轉。此間雖偏遠，卻不因勢坑宰客人，住店一
 宿只要五兩銀子。
 LONG);
         set("no_fight", 1);
@@ -29,7 +29,7 @@ LONG);
 int valid_leave(object me, string dir)
 {
         if( !query_temp("rent_paid", me) && dir == "up" )
-        return notify_fail("店小二一下擋在樓梯前，白眼一翻：怎麼著，想白住啊！\n");
+        return notify_fail("店小二一下擋在樓梯前，白眼一翻：怎麼着，想白住啊！\n");
 
         if( query_temp("rent_paid", me) && dir == "west" )
         return notify_fail("店小二跑到門邊攔住：客官已經付了銀子，怎麼不住店就走了呢！

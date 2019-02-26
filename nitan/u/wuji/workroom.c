@@ -10,7 +10,7 @@ void create()
 {
         set("short", "慕容無極的工作室");
         set("long", @LONG
-這是沒有建造工作室的巫師的臨時住處，這裡的設備非常簡單，只有
+這是沒有建造工作室的巫師的臨時住處，這裏的設備非常簡單，只有
 一些常用物品。
 LONG );
 
@@ -28,7 +28,7 @@ LONG );
 int valid_leave(object me, string dir)
 {
         if (dir == "north" && ! wizardp(me))
-                return notify_fail("那裡只有巫師才能進去。\n");
+                return notify_fail("那裏只有巫師才能進去。\n");
 
         return ::valid_leave(me, dir);
 }

@@ -83,6 +83,6 @@ int do_sort_players(int day)
         destruct(login_ob);
 
         write("\n總共有 " + count + " 位使用者。\n");
-        write("為 " + succ + " 個玩家增加了鑒別 ID，另外 " + fail + " 個使用者無法處理。\n");
+        write("為 " + succ + " 個玩家增加了鑑別 ID，另外 " + fail + " 個使用者無法處理。\n");
         return 1;
 }

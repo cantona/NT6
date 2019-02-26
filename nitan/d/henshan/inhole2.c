@@ -5,7 +5,7 @@ void create()
 {
         set("short", "水簾洞內");
         set("long", @LONG
-這裡陰風瑟瑟，一片漆黑，什麼也看不見。唯有洞外有一絲光亮。
+這裏陰風瑟瑟，一片漆黑，什麼也看不見。唯有洞外有一絲光亮。
 LONG );
 
         set("exits",([                
@@ -31,12 +31,12 @@ int do_use(string arg)
     if (! arg || arg != "fire" ) return 0;
     if (! present("fire", me)) return 0;
    
-        write(HIG"\n你點燃了火折，發現這裡有出口。\n\n"); 
+        write(HIG"\n你點燃了火折，發現這裏有出口。\n\n"); 
         set_temp("marks/走1", 1, me);
 
         delete("long");
         set("long",@LONG
-借著火光你發現這裡有一些出口，但不知道通往何處。
+藉着火光你發現這裏有一些出口，但不知道通往何處。
 LONG);  
             
         set("exits/west"  ,__DIR__"zigai1");

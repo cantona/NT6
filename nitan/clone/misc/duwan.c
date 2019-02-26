@@ -10,7 +10,7 @@ void create()
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("long", RED "這是一粒由毒蟲毒液精制而成的毒藥，毒性猛烈之極。\n" NOR);
+                set("long", RED "這是一粒由毒蟲毒液精製而成的毒藥，毒性猛烈之極。\n" NOR);
                 set("base_unit", "顆");
                 set("unit", "顆");
                 set("base_value", 100);

@@ -10,7 +10,7 @@ void create()
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("long","一件普普通通的短衫，穿得臟兮兮的。\n");
+                set("long","一件普普通通的短衫，穿得髒兮兮的。\n");
                 set("unit", "套");
                 set("material", "cloth");
                 set("armor_prop/armor", 1);

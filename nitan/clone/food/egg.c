@@ -1,4 +1,4 @@
-// 神話世界﹒西遊記﹒版本４．５０
+// 神話世界·西遊記·版本４．５０
 /* <SecCrypt CPL V3R05> */
  
 // created by snowcat on 4/9/1997
@@ -15,7 +15,7 @@ void create()
     set_default_object(__FILE__);
   else
   {
-    set("long", "一只煮熟的雞蛋。\n");
+    set("long", "一隻煮熟的雞蛋。\n");
     set("unit", "只");
     set("value", 50);
     set("food_remaining", 1);

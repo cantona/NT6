@@ -1,4 +1,4 @@
-//liexingya.c                四川唐門─裂星崖
+//liexingya.c                四川唐門—裂星崖
 
 #include <ansi.h>
 #include <room.h>
@@ -8,8 +8,8 @@ void create()
 {
         set("short", "裂星崖");
         set("long",
-"這裡是蓮藕小築後山的裂星崖。據說唐門的開山祖師？？？就是在這\n"
-"裡靜坐五年，夜觀星變，終于悟出了威鎮江湖的唐門暗器絕技？？？？，\n"
+"這裏是蓮藕小築後山的裂星崖。據説唐門的開山祖師？？？就是在這\n"
+"裏靜坐五年，夜觀星變，終於悟出了威鎮江湖的唐門暗器絕技？？？？，\n"
 "一株萬年古鬆自山崖外長了上來，高聳入雲。\n"
 );
 //？？，一株萬年古鬆(shu)自山崖外長了上來，高聳入雲。
@@ -17,7 +17,7 @@ void create()
                         "southdown" : __DIR__"shandao5",
         ]));
         set("item_desc", ([
-                "shu" : "這株古鬆據說是萬年前盤古開天時生長而成的。\n",
+                "shu" : "這株古鬆據説是萬年前盤古開天時生長而成的。\n",
         ]));
         set("area", "tangmen");
         setup();
@@ -42,10 +42,10 @@ int do_climb(string arg)
                         return 1;
                 }
 
-                message_vision(HIC "$N攀著繁茂的樹枝一步步爬了上去。\n" NOR, ob);
+                message_vision(HIC "$N攀着繁茂的樹枝一步步爬了上去。\n" NOR, ob);
                 ob->move(__DIR__"shugan1");
                 return 1;
         }
         else
-                return notify_fail("你要向哪裡爬？\n");
+                return notify_fail("你要向哪裏爬？\n");
 }

@@ -9,9 +9,9 @@ void create()
 {
        set("short","海船");
        set("long", @LONG
-這是遼闊的海面，海風「呼呼」在你耳邊吹過，海浪一個接著一個向
+這是遼闊的海面，海風「呼呼」在你耳邊吹過，海浪一個接着一個向
 你潑打過來，突然一個巨浪打來幾乎把你所乘的船掀翻。你快要陷入這個
-旋渦中了，還是催促漁夫趕緊搖船走出著鬼地方吧。
+旋渦中了，還是催促漁夫趕緊搖船走出着鬼地方吧。
 LONG );
 
 
@@ -39,21 +39,21 @@ int valid_leave(object me, string dir)
          {
             me->move("/d/shenlong/tanggukou");
             delete_temp("mark/steps", me);
-             return notify_fail("終于你看見了前方的陸地，啊，謝天謝地 ！\n");
+             return notify_fail("終於你看見了前方的陸地，啊，謝天謝地 ！\n");
          }
 
      if( query_temp("mark/steps", me) == -10 )
             {
                me->move("/d/shenlong/haian");
            delete_temp("mark/steps", me);
-             return notify_fail("終于你看見了前方的陸地，啊，謝天謝地 ！\n");
+             return notify_fail("終於你看見了前方的陸地，啊，謝天謝地 ！\n");
         }
 
       if( query_temp("mark/nsteps", me) == 10 )
          {
             me->move("/d/shenlong/lushunkou");
             delete_temp("mark/nsteps", me);
-             return notify_fail("終于你看見了前方的陸地，啊，謝天謝地 ！\n");
+             return notify_fail("終於你看見了前方的陸地，啊，謝天謝地 ！\n");
          }
 
 
@@ -74,7 +74,7 @@ void init()
 
 void arrive()
 {
-        message("vision", "漁夫說：“大陸到啦，上岸吧”。\n",this_player());
+        message("vision", "漁夫説：“大陸到啦，上岸吧”。\n",this_player());
         this_player()->move("/d/shenlong/tanggu");
 }
 */

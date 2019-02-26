@@ -28,8 +28,8 @@ int main(object me, object env,string arg)
         file2 = resolve_path(file[i][0]);
         ii = sizeof(file[i][0]);
         if (!SKILL_D(file2[0..ii-3])->editor()){str+=sprintf(HIR"");iii++;}
-            str+=sprintf("□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□\n");
-        str += sprintf("□%-26s%4s%26s□\n□技能類型：%-16s所屬門派：　%18s□\n□有效值：%4d　學習值：%4d　練習值：%4d　讀書值：%4d　□\n",
+            str+=sprintf("╔════════════════════════════╗\n");
+        str += sprintf("║%-26s%4s%26s║\n║技能類型：%-16s所屬門派：　%18s║\n║有效值：%4d　學習值：%4d　練習值：%4d　讀書值：%4d　║\n",
                 to_chinese(file2[0..ii-3]),"＝＝",file2[0..ii-3],
 SKILL_D(file2[0..ii-3])->type(),
 SKILL_D(file2[0..ii-3])->family_skills(),
@@ -38,7 +38,7 @@ SKILL_D(file2[0..ii-3])->learn_bonus(),
 SKILL_D(file2[0..ii-3])->practice_bonus(),
 SKILL_D(file2[0..ii-3])->study_bonus()
 );      
-            str+=sprintf("□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□"NOR"\n");
+            str+=sprintf("╚════════════════════════════╝"NOR"\n");
         str+=sprintf("未完成數目有%d\n",iii);
         }
     if (!k)  write("沒有這個目錄。\n");

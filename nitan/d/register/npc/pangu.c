@@ -9,7 +9,7 @@ void greeting(object me);
 void create()
 {
         set_name("盤古", ({ "pan gu", }));
-        set("long", "他容貌威嚴，不可一世。哇！他就是開天辟地的神仙。\n");
+        set("long", "他容貌威嚴，不可一世。哇！他就是開天闢地的神仙。\n");
         set("gender", "男性");
         set("age", 999);
         set("attitude", "peaceful");
@@ -54,7 +54,7 @@ void greeting(object me)
                             HIC "1" NOR ".光明磊落  "
                             HIC "2" NOR ".狡黠多變  "
                             HIC "3" NOR ".心狠手辣  "
-                            HIC "4" NOR ".陰險姦詐 ("
+                            HIC "4" NOR ".陰險奸詐 ("
                             HIC "choose 1" NOR "-" HIC "4" NOR ")\n\n");
 
         } else
@@ -64,11 +64,11 @@ void greeting(object me)
                 else
                 {
                         command("kick "+query("id", me));
-                        command("say 凡人跑到這裡來幹什麼？");
+                        command("say 凡人跑到這裏來幹什麼？");
                         message_vision("$N一腳把$n踢得無影無蹤。\n\n",
                                        this_object(), me);
                         me->move(VOID_OB);
-                        message_vision("\n$N跌落地上，捂著屁股哇哇叫了幾聲。\n",
+                        message_vision("\n$N跌落地上，捂着屁股哇哇叫了幾聲。\n",
                                        me);
                 }
         }
@@ -86,7 +86,7 @@ int attempt_apprentice(object ob)
 {
         if( !query("born", ob) )
         {
-                command("say 你快投胎去，在這裡瞎攪和什麼？");
+                command("say 你快投胎去，在這裏瞎攪和什麼？");
                 return 0;
         }
 

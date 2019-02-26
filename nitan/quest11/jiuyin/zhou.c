@@ -2,7 +2,7 @@
 // Modify By River@SJ about jieyi and hubo
 // Modify by Darken for taohua quest 2000
 // Modify By River@Sj for jiuyin quest
-// Modify by yueying@SJWL屏蔽重復的互搏失敗判斷488-491,否則只能解一次
+// Modify by yueying@SJWL屏蔽重複的互搏失敗判斷488-491,否則只能解一次
 // Update by JPei 2011 for yunu-xinjing/hubo && Question_Check
 inherit NPC;
 
@@ -26,8 +26,8 @@ void create()
 {
 	set_name("周伯通", ({ "zhou botong", "zhou", "botong" }) );
 	set("nickname", "老頑童");
-	set("long", "他滿頭長發，直垂至地，長眉長須，鼻子嘴巴都被遮掩住了。\n"
-		"他須發蒼然，並未全白，只是不知有多少年不剃，就如野人一般毛茸茸地甚是嚇人。\n"
+	set("long", "他滿頭長髮，直垂至地，長眉長鬚，鼻子嘴巴都被遮掩住了。\n"
+		"他鬚髮蒼然，並未全白，只是不知有多少年不剃，就如野人一般毛茸茸地甚是嚇人。\n"
 		"他的舉止猶如孩童一樣。\n");
 	set("gender", "男性" );
 	set("age", 48);
@@ -87,10 +87,10 @@ void create()
 
 	set("inquiry", ([
 		"name": "叫我周伯通就好了。",
-		"rumors": "我被那個臭東邪關在這裡十幾年，每天就是一個啞僕來送飯。",
-		"here": "這裡是桃花島。寒雨那個小壞蛋在這裡加了無數的ｑｕｅｓｔ，看你能不能找全了。",
-		"東邪": "是黃藥師這個無恥的家伙，騙了我的九....去看。",
-		"黃藥師": "這個無恥的家伙，騙了我的九....去看。",
+		"rumors": "我被那個臭東邪關在這裏十幾年，每天就是一個啞僕來送飯。",
+		"here": "這裏是桃花島。寒雨那個小壞蛋在這裏加了無數的ｑｕｅｓｔ，看你能不能找全了。",
+		"東邪": "是黃藥師這個無恥的傢伙，騙了我的九....去看。",
+		"黃藥師": "這個無恥的傢伙，騙了我的九....去看。",
 		"中神通": "我的師兄是天下武功最高的，第一次華山論劍時公推為第一高手。",
 		"王重陽": "我的師兄是天下武功最高的，第一次華山論劍時公推為第一高手。",
 		"周伯通": "找我有什麼事嗎？",
@@ -100,13 +100,13 @@ void create()
 		"段智興": "老頑童做事對不起他，沒臉再見他了。",
 		"南帝": "老頑童做事對不起他，沒臉再見他了。",
 		"老頑童": "我就是啊，找我有什麼事嗎？",
-		"空明拳": "空明拳共七十二路，口訣是：空朦洞鬆、風通容夢、沖窮中弄、童庸弓蟲。",
-		"kongming-quan": "空明拳共七十二路，口訣是：空朦洞鬆、風通容夢、沖窮中弄、童庸弓蟲。",
+		"空明拳": "空明拳共七十二路，口訣是：空朦洞鬆、風通容夢、衝窮中弄、童庸弓蟲。",
+		"kongming-quan": "空明拳共七十二路，口訣是：空朦洞鬆、風通容夢、衝窮中弄、童庸弓蟲。",
 		"黃蓉": "是幾個月前來陪我聊天的那個小姑娘嗎？",
 		"郭靖": "那是我的結義兄弟，人雖然傻，心腸倒好。",
-		"寒雨": "說起來也是他創造了我，不過這家伙是個造ｑｕｅｓｔ狂。",
-		"jpei": "說起來也是他創造了我，不過這家伙是個造ｑｕｅｓｔ狂。",
-		"桃花島": "這裡就是桃花島。寒雨那個小壞蛋在這裡加了無數的ｑｕｅｓｔ，看你能不能找全了。",
+		"寒雨": "説起來也是他創造了我，不過這傢伙是個造ｑｕｅｓｔ狂。",
+		"jpei": "説起來也是他創造了我，不過這傢伙是個造ｑｕｅｓｔ狂。",
+		"桃花島": "這裏就是桃花島。寒雨那個小壞蛋在這裏加了無數的ｑｕｅｓｔ，看你能不能找全了。",
 		"方": "方要正方！",
 		"fang": "方要正方！",
 		"圓": "圓要渾圓！",
@@ -142,7 +142,7 @@ void init()
 	::init();
 	if (ob->query("family/family_name") == "全真教") {
 		command("angry " + ob->query("id"));
-		command("say 怎麼你到今天才來找我？！明天我就去和處機說讓他打你屁股。");
+		command("say 怎麼你到今天才來找我？！明天我就去和處機説讓他打你屁股。");
 	}
 }
 
@@ -154,7 +154,7 @@ void kill_ob(object me)
 
 void unconcious()
 {
-        command("chat* 嘆道：老頑童今日是要歸天了，到陰世玩玩兩只鬼打架，那些大頭鬼、無常鬼一定瞧得莫名其妙，鬼色大變。");
+        command("chat* 歎道：老頑童今日是要歸天了，到陰世玩玩兩隻鬼打架，那些大頭鬼、無常鬼一定瞧得莫名其妙，鬼色大變。");
         ::unconcious();
 }
 
@@ -163,9 +163,9 @@ int ask_story()
 {
         object me = this_player();
         string msg;
-        msg = CYN"周伯通聽到$N要他講故事，登時興高採烈。\n"NOR;
+        msg = CYN"周伯通聽到$N要他講故事，登時興高采烈。\n"NOR;
         msg+= CYN"周伯通開始講起九陰真經和黃裳的故事。\n"NOR;
-        msg+= CYN"周伯通看$N不問後來怎樣，便賭氣不說了。\n"NOR;
+        msg+= CYN"周伯通看$N不問後來怎樣，便賭氣不説了。\n"NOR;
         message_vision(msg, me);
         me->set_temp("thd/story",1);
         return 1;
@@ -176,10 +176,10 @@ int ask_story2()
         object me = this_player();
         string msg;
         if (me->query_temp("thd/story") == 1){
-                msg = CYN"周伯通一聽$N問他後來怎樣，又口沫橫飛的說起來。\n";
-                msg+= CYN"周伯通講完又開始對$N說起他和全真教的故事。\n";
-                msg+= CYN"$N聽著，也學到了些全真教練氣的皮毛。\n"NOR;
-                msg+= HIW"周伯通說完故事，又無聊的問道：“兄弟，有什麼好玩的武功麼？\n"NOR;
+                msg = CYN"周伯通一聽$N問他後來怎樣，又口沫橫飛的説起來。\n";
+                msg+= CYN"周伯通講完又開始對$N説起他和全真教的故事。\n";
+                msg+= CYN"$N聽着，也學到了些全真教練氣的皮毛。\n"NOR;
+                msg+= HIW"周伯通説完故事，又無聊的問道：“兄弟，有什麼好玩的武功麼？\n"NOR;
                 message_vision(msg, me);
                 me->set_temp("thd/story",2);
                 return 1;
@@ -205,18 +205,18 @@ int ask_jieyi()
 	}
 	if (ob->query("quest/jiebai/fail") >=3 && ob->query("registered") < 3){
 		command("hmm");
-		command("say 我不是說了，我沒興趣和你結拜啊！");
+		command("say 我不是説了，我沒興趣和你結拜啊！");
 		return 1;
 	}
 	if ( ob->query("quest/jiebai/time") && time < 86400 ) {
 		command("shake");
-		command("say 我現在可沒空，我忙著玩呢。");
+		command("say 我現在可沒空，我忙着玩呢。");
       tell_object(ob,HIG"看起來周伯通在"+CHINESE_D->chinese_time(86400-time)+"之內不準備理你。\n"NOR);
 		return 1;
 	}
         if ( ob->query("quest/jiebai/fail") >= i && !ob->query("cw_exp")){
 		command("shake");
-		command("say 我現在可沒空，我忙著玩呢。");
+		command("say 我現在可沒空，我忙着玩呢。");
 		return 1;
 	}
         if (!wizardp(ob) && ob->query("age") > 48 && !ob->query("cw_exp")){
@@ -241,13 +241,13 @@ int ask_jieyi()
 
 	if ( ob->query("int") > 25) {
 		command("shake");
-		command("say 你這個人鬼靈精，保不準打著什麼主意呢。");
+		command("say 你這個人鬼靈精，保不準打着什麼主意呢。");
 		return 1;
 	}
 */
 	if ( ob->query("shen") < -100000) {
 		command("shake");
-		command("say 我雖然天性隨便，但師尊教誨不敢忘，于正邪之道還是要分清的。");
+		command("say 我雖然天性隨便，但師尊教誨不敢忘，於正邪之道還是要分清的。");
 		return 1;
 	}
 	if ( ob->query("combat_exp") < 1000000) {
@@ -278,7 +278,7 @@ int ask_jieyi()
 		else
 			command("say 好吧，你我就結拜為兄妹吧。");
 	}
-	message_vision("周伯通與$N並肩而跪，朗聲說道：“老頑童周伯通，今日與" + ob->name(1) +"義結金蘭，日後有福共享，有難共當。\n"+
+	message_vision("周伯通與$N並肩而跪，朗聲説道：“老頑童周伯通，今日與" + ob->name(1) +"義結金蘭，日後有福共享，有難共當。\n"+
 			"若是違此盟誓，教我武功全失，連小狗小貓也打不過。”\n", ob);
 	log_file("quest/jiebai",
 		sprintf("%-18s失敗%s次後，成功與周伯通結拜，福：%d，悟：%d。\n",
@@ -311,21 +311,21 @@ int ask_jiuyin()
 	}
 	if( zhou->is_busy() || zhou->is_fighting()){
 		command("hmm");
-		command("say 你沒看見我正忙著麼？");
+		command("say 你沒看見我正忙着麼？");
 		return 1;
 	}
         if( ob->query("quest/jiuyin1/fail") >= 3 && ob->query("registered") < 3 && !ob->query("quest/jiuyin1/pass")){
-		command("say 我正忙著呢。");
+		command("say 我正忙着呢。");
 		return 1;
 	}
         if( time < 86400 && !ob->query("quest/jiuyin1/pass") ) {
-		command("say 我正忙著呢,你過一會兒再來吧。");
+		command("say 我正忙着呢,你過一會兒再來吧。");
        tell_object(ob,HIG"看起來周伯通在"+CHINESE_D->chinese_time(86400-time)+"之內不準備理你。\n"NOR);
 		return 1;
 	}
 
 	if ( ob->query("quest/jiuyin1/fail") >= i && ! ob->query("cw_exp") ) {
-		command("say 我正忙著呢，你還是先回去好好學學武藝吧。");
+		command("say 我正忙着呢，你還是先回去好好學學武藝吧。");
 		return 1;
 	}
 
@@ -357,8 +357,8 @@ int ask_jiuyin()
 	command("say 聽她老婆告訴他的上卷殘缺不全，下卷又被他自己徒弟偷了，這個就叫報應。");
 	command("laugh zhou");
 	ob->set_temp("jyquest", 4);
-	command("say 來來來，到洞裡面來，難得有個人找我，你別想跑了。");
-	message_vision(HIY"周伯通拉著$N說道：“乖乖的聽我說故事吧。”\n"NOR,ob);
+	command("say 來來來，到洞裏面來，難得有個人找我，你別想跑了。");
+	message_vision(HIY"周伯通拉着$N説道：“乖乖的聽我説故事吧。”\n"NOR,ob);
 	command("grin");
 	ob->move("/d/thd/neidong");
 	zhou->move("/d/thd/neidong");
@@ -383,7 +383,7 @@ int ask_skill()
 	command("say 這些功夫是我自己的創作，可厲害的很啊。");
 	message_vision(CYN"周伯通卻只是告訴$N如何施展，完全不演練給$N看。\n"NOR,me);
 
-//關于執行效率的問題，如果玩家不滿足條件，那也沒必要去先取list和玩家數據吧。
+//關於執行效率的問題，如果玩家不滿足條件，那也沒必要去先取list和玩家數據吧。
 //讀了llm寫的wiz教程，想想自己的代碼，真是汗顏啊 By Jpei 
 
 ppl = users();
@@ -398,7 +398,7 @@ total = me->query("str")+ me->query("int")+ me->query("dex")+ me->query("con");
            && random(total) > 78
            && (
                  (!me->query("y-card-vip")&&random(20) == 3) 
-               ||( me->query("y-card-vip")&&random(15) == 3)       //這裡年卡月卡一視同仁了。
+               ||( me->query("y-card-vip")&&random(15) == 3)       //這裏年卡月卡一視同仁了。
              )
            && j < 2 ){ 
 		message_vision(HIW"\n周伯通在$N練習純熟後，突然哈哈大笑起來。\n"NOR,me);
@@ -418,7 +418,7 @@ total = me->query("str")+ me->query("int")+ me->query("dex")+ me->query("con");
 		);
 		me->delete_temp("jyquest");
 		me->set("quest/jiuyin1/pass",1);
-		me->set("title",HIR"武林神話"NOR"﹒"HIC"九陰真經傳人"NOR);      //板磚侍候
+		me->set("title",HIR"武林神話"NOR"·"HIC"九陰真經傳人"NOR);      //板磚侍候
 		if(!clonep(book)){
 			command("hungry");
 			command("say 好了，都看完了，肚子都餓了，我要吃飯去了。");
@@ -486,7 +486,7 @@ int ask_hubo()
 	time = time()- ob->query("quest/hubo/time");
 
 	if(!ob->query("quest/jiebai/pass")){
-		tell_object(ob,"周伯通正盯著你看，不知道打些什麼主意。\n");
+		tell_object(ob,"周伯通正盯着你看，不知道打些什麼主意。\n");
 		command("say 你是誰啊，怎麼莫名其妙地問我雙手互搏的事啊？");
 		return 1;
 	}               
@@ -513,7 +513,7 @@ int ask_hubo()
 	}
 	hubo = ob->query_temp("zuoyou_hubo");
 	if (hubo == 22) {
-		command("say 接著練第一課！");
+		command("say 接着練第一課！");
 		return 1;
 	}
 	if (hubo == 1) {
@@ -525,10 +525,10 @@ int ask_hubo()
 		return 1;
 	}
 	if (ob->query_skill("force") < 100 || ob->query("max_neili") < 500 || ob->query("combat_exp") < 50000) {
-		command("say 你還是先打好武學基礎再說吧。");
+		command("say 你還是先打好武學基礎再説吧。");
 		return 1;
 	}
-	command("say 這門功夫是我在洞中無聊之時想出來的玩意兒，說難是難到極處，說容易也容易之至。\n"+
+	command("say 這門功夫是我在洞中無聊之時想出來的玩意兒，説難是難到極處，説容易也容易之至。\n"+
 		"有的人一學便會，有的人一輩子也學不了，越是聰明，越是不成。");
 	command("say 你先練練這第一課：左手畫方(fang)，右手畫圓(yuan)。");
 	ob->set_temp("zuoyou_hubo", 1);
@@ -541,7 +541,7 @@ int do_fangyuan()
 	int hubo;
 
 	if (ob->is_busy() || ob->is_fighting())
-		return notify_fail("你正忙著呢！\n");
+		return notify_fail("你正忙着呢！\n");
 
 	hubo = ob->query_temp("zuoyou_hubo");
 	if (!hubo) return 0;
@@ -564,7 +564,7 @@ int do_fangyuan()
                 || ( ob->query_temp("sj_credit/quest/public/hubo") &&ob->query("buyvip") && random(ob->query("pur"))>16) ){
 				message_vision("$N微微一笑，凝神守一，心地空明，隨隨便便的伸出雙手手指，左手畫了一個方塊，右手畫了一個圓圈，\n"+
 					"方者正方，圓者渾圓。\n", ob);
-				say("周伯通大吃一驚，過了半晌才道：“這定是你從娘胎裡學來的本領，那便易辦了。”\n");
+				say("周伯通大吃一驚，過了半晌才道：“這定是你從孃胎裏學來的本領，那便易辦了。”\n");
 				message_vision("周伯通將他領悟出來的這門天下無比的奇功，一古腦兒都教給了$N。\n", ob);
                            ob->delete_temp("sj_credit/quest/public/hubo");
 				ob->delete_temp("zuoyou_hubo");
@@ -614,7 +614,7 @@ int accept_object(object who, object ob)
 		if ((who->query_temp("thd/onquest") == 7)&&(who->query_temp("thd/story")==2)) {
 			message_vision(CYN"周伯通將人皮仔細查看，發現是九陰真經！\n"NOR, who);
 			message_vision(CYN"你正想拿去交給黃藥師，卻被周伯通攔住。\n"NOR, who);
-			command("say 這個等等再說，先來玩玩吧！");
+			command("say 這個等等再説，先來玩玩吧！");
 			command("sing");
 			command("say 好久沒人來陪我玩啦，你跟我練練吧！");
 			command("hit " + who->query("id"));
@@ -631,7 +631,7 @@ int accept_object(object who, object ob)
 		command("ah " + who->query("id"));
 		command("say 是黃老邪的小丫頭叫你幫忙送飯來麼？");
 		message_vision(CYN"周伯通不等$N回答，已經開始將食物塞進嘴中。\n"NOR,who);
-		message_vision(CYN"周伯通吃完，幹笑了一下，才對$N問道：“不知道你吃過了沒有？”\n"NOR,who);
+		message_vision(CYN"周伯通吃完，乾笑了一下，才對$N問道：“不知道你吃過了沒有？”\n"NOR,who);
 		who->set_temp("jyquest", 3);
 		command("say 黃老邪想要我的九陰真經，把我關了十五年啦。");
 		command("sing3");
@@ -673,10 +673,10 @@ int recognize_apprentice(object ob)
 void finish(object who)
 {
 	string msg;
-	msg = HIC"周伯通說道：“挨打沒關系，多打你就習慣啦，好久沒跟人打架了。”\n";
-	msg+= HIY"周伯通說著，便向$N打來。\n";
+	msg = HIC"周伯通説道：“捱打沒關係，多打你就習慣啦，好久沒跟人打架了。”\n";
+	msg+= HIY"周伯通説著，便向$N打來。\n";
 	msg+= HIC"周伯通高興的道：“快還手啊。”\n";
-	msg+= HIR"$N的武功不及他，終于承受不了，暈了過去。\n"; 
+	msg+= HIR"$N的武功不及他，終於承受不了，暈了過去。\n"; 
 
 	message_vision(msg, who); 
 	who->set_temp("thd/onquest",8);
@@ -692,15 +692,15 @@ int ask_xlv()
 
 
 	command("tsk ");
-	command("say 龍姑娘和楊過兩個小家伙可了不得，真是一對神仙眷侶。");
+	command("say 龍姑娘和楊過兩個小傢伙可了不得，真是一對神仙眷侶。");
  
 if( me->query_temp("marks/yufengzhen") && !me->query("gmhb") )
 {
 	message_vision(HIY"周伯通一聽你問起小龍女的事情，不由得眉飛色舞。\n"+
 			"周伯通給你講起當年他和小龍女被金輪法王的毒蜘蛛困在山洞之中，小龍女\n"+
-    	"學會左右互博，一手全真劍一手玉女劍打的金輪法王落荒而逃，說到精彩之處，\n"+
+    	"學會左右互博，一手全真劍一手玉女劍打的金輪法王落荒而逃，説到精彩之處，\n"+
     	"不由得手舞足蹈，口沫四濺。\n"+
-    "周伯通盯著你看了看，饒有興趣的問道：“不知道龍姑娘有沒有教你這門功夫？”\n"NOR, me);
+    "周伯通盯着你看了看，饒有興趣的問道：“不知道龍姑娘有沒有教你這門功夫？”\n"NOR, me);
     me->set_temp("marks/askzhou",1);
     me->delete_temp("marks/yufengzhen");
 }

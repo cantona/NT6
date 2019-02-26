@@ -18,7 +18,7 @@ int perform(object me, object target)
         if( !target
          || !target->is_character()
          || !me->is_fighting(target) )
-              return notify_fail("﹝慈悲字訣﹞只能對戰鬥中的對手使用。\n");
+              return notify_fail("［慈悲字訣］只能對戰鬥中的對手使用。\n");
 
         if( extra < 160)
               return notify_fail("你的雷鳴鞭法修為太差,還不能使用慈悲字訣！\n");
@@ -40,7 +40,7 @@ int perform(object me, object target)
           || query("skill_type", weapon) != "whip" )
               return notify_fail("你手中沒有兵器如何使用慈悲字訣。\n");
 
-        msg = RED "只見$N喃喃自語道：慈悲為懷，手中的" + weapon->name() + RED "仿佛如來出世般倒卷向$n。\n" NOR;
+        msg = RED "只見$N喃喃自語道：慈悲為懷，手中的" + weapon->name() + RED "彷彿如來出世般倒卷向$n。\n" NOR;
         
         at=query("combat_exp")*me->query_skill("leiming-bian", me)/1000;
         df=query("combat_exp")*target->query_skill("dodge", target)/1000;
@@ -61,7 +61,7 @@ int perform(object me, object target)
             target->start_busy(3);
             
             weapon=query_temp("weapon", me);
-            msg = HIG "\n緊接著$N手中的" + weapon->name() + HIG "連續晃動，竟然不知道有多少擊。\n" NOR;
+            msg = HIG "\n緊接着$N手中的" + weapon->name() + HIG "連續晃動，竟然不知道有多少擊。\n" NOR;
             message_vision(msg,me,target);
             
             lmt = random(me->query_skill("leiming-bian", 1) / 50) + 1;
@@ -81,7 +81,7 @@ int perform(object me, object target)
             me->start_busy(random(2) + 2);
         } else 
        {      
-              msg = HIG "\n$n左躲右閃，強$N的攻擊完全化于無形！\n" NOR;
+              msg = HIG "\n$n左躲右閃，強$N的攻擊完全化於無形！\n" NOR;
               message_vision(msg,me,target);
               addn("neili", -200, me);
               me->start_busy(random(2));

@@ -1,4 +1,4 @@
-// /d/yixing/npc/dingdang.c 叮叮當當
+// /d/yixing/npc/dingdang.c 叮叮噹噹
 // Last Modified by winder on Jul. 12 2002
 
 #include <ansi.h>
@@ -14,9 +14,9 @@ void create()
 {
         set_name("丁當" , ({"ding dang", "ding"}));
         set("long",
-                "只見你眼前出現了一張清麗白膩的臉龐，小嘴邊帶著俏皮的微笑。\n"
-                "她身上散發著少女的悠香，讓人聞了不由心中一盪。\n");
-        set("nickname", HIC"叮叮當當"NOR);
+                "只見你眼前出現了一張清麗白膩的臉龐，小嘴邊帶着俏皮的微笑。\n"
+                "她身上散發着少女的悠香，讓人聞了不由心中一蕩。\n");
+        set("nickname", HIC"叮叮噹噹"NOR);
         set("gender", "女性");
         set("attitude", "friendly");
         set("age", 18);
@@ -62,8 +62,8 @@ void create()
                 "石破天" : (:ask_tian:),
                 "雪山派" : "爺爺最討厭雪山派的人了，你千萬不要在他面前提起。\n",
                 "xueshan" : "爺爺最討厭雪山派的人了，你千萬不要在他面前提起。\n",
-                "name" : "我姓丁名當，大家都叫我叮叮當當。\n",
-                "名字" : "我姓丁名當，大家都叫我叮叮當當。\n",
+                "name" : "我姓丁名當，大家都叫我叮叮噹噹。\n",
+                "名字" : "我姓丁名當，大家都叫我叮叮噹噹。\n",
         ]));
         
         setup();
@@ -79,7 +79,7 @@ void init()
         if ( environment(me)==find_object("/d/forest/clbajiaoting.c")) {
         if( query_temp("find/dddd", me) )
         {
-        command("say 天哥的傷不知道什麼時候才全癒，真教人擔心。");
+        command("say 天哥的傷不知道什麼時候才全愈，真教人擔心。");
         command("sigh");
         return;
                 }
@@ -93,7 +93,7 @@ string ask_tian()
         if( query_temp("find/dddd", me) )
         {
         command("sigh");
-        return "天哥受了重傷，我剛喂了點「玄冰碧火酒」給他服用，希望他沒事。";
+        return "天哥受了重傷，我剛餵了點「玄冰碧火酒」給他服用，希望他沒事。";
         }
         else {
         return "你也認識天哥嗎？噢，對了，你是他的屬下吧。";
@@ -116,7 +116,7 @@ string ask_wine()
         add_action("do_pretty", "pretty");
         command("say 一定是爺爺派你來勸我回去的是不是？原來他已經知道我偷了他的寶貝。");
         command("sigh");
-        command("say 天哥以前風流涕淌，對人家老是油腔滑調的，可是最近不知道怎麼變傻了，連哄人家的話也不會說了。");
+        command("say 天哥以前風流涕淌，對人家老是油腔滑調的，可是最近不知道怎麼變傻了，連哄人家的話也不會説了。");
         command("disapp");
         set_temp("pretty/ding", 1, me);
         return "我真寧願他是以前那個會哄人家開心的天哥。";
@@ -142,7 +142,7 @@ int do_pretty(string arg)
         command("giggle");
         command("happy2"+query("id", me));
         command("blush");
-        command("say 謝謝你啦，不過我要留在這裡陪天哥，你幫我把這剩下的「玄冰碧火酒」帶回去給爺爺吧。");
+        command("say 謝謝你啦，不過我要留在這裏陪天哥，你幫我把這剩下的「玄冰碧火酒」帶回去給爺爺吧。");
         ob=new("/clone/unique/jiu.c");
         message_vision("丁當將一瓶「玄冰碧火酒」交了給$N。\n", me);
         ob->move(this_player());

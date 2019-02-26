@@ -30,7 +30,7 @@ int perform(object me, object target)
 
         if( objectp(weapon=query_temp("weapon", me)) || 
             objectp(weapon=query_temp("handing", me)) )
-                return notify_fail("你必須空著雙手才能使用掌法絕招。\n");
+                return notify_fail("你必須空着雙手才能使用掌法絕招。\n");
 
         if( query("neili", me)<500 )
                 return notify_fail("你的內力不夠。\n");

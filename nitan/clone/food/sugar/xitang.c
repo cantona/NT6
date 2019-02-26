@@ -23,7 +23,7 @@ int do_eat(string arg)
         if (!id(arg))  return notify_fail("你要吃什麼？\n");
         if(arg=="xi tang" || arg=="tang")
         {
-                message_vision(NOR"$N把一包"HIR"喜糖"NOR"吃個精光，分享了新郎新娘的甜蜜與溫馨。\n",me);
+                message_vision(NOR"$N把一包"HIR"喜糖"NOR"吃個精光，分享了新郎新娘的甜蜜與温馨。\n",me);
 
                 destruct(this_object());
         }

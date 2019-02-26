@@ -33,7 +33,7 @@ int cure_ob(object me)
         }
         if( random(2) == 1)
         {
-        message_vision("$N吃下一棵何首烏，嘴裡覺得甜甜的。\n", me);
+        message_vision("$N吃下一棵何首烏，嘴裏覺得甜甜的。\n", me);
         destruct(this_object());
         return 1;
         }

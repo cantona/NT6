@@ -12,7 +12,7 @@ void create()
         } else {
                 set("value", 10);
                 set("unit", "支");
-                set("long", MAG "這是一支召神香，傳說可以在五岳祭壇那裡召喚神仙出現。\n" NOR);
+                set("long", MAG "這是一支召神香，傳説可以在五嶽祭壇那裏召喚神仙出現。\n" NOR);
         }
         setup();
 }

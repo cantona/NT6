@@ -99,7 +99,7 @@ int do_answer(string arg)
         me = this_player();
         ob = this_object();
         
-        if( !arg ) return notify_fail("你說什麼？\n");
+        if( !arg ) return notify_fail("你説什麼？\n");
 
         if( !(query_temp("check_answer/" + query("id", me),ob)) )
                 return notify_fail("什麼？\n");

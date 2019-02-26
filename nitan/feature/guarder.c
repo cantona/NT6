@@ -171,7 +171,7 @@ int check_enemy(object ob, string type)
                 } else
                 {
                         message_vision("$N大喝道，好你個" + RANK_D->query_rude(ob) +
-                                       "，活得不耐煩了！來這裡撒野？\n", me, ob);
+                                       "，活得不耐煩了！來這裏撒野？\n", me, ob);
                         me->kill_ob(ob);
                 }
         } else

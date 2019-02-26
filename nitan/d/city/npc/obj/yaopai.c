@@ -5,7 +5,7 @@ inherit ITEM;
 #include <ansi.h>
 
 string *xc_msg1 =({
-        "你神秘兮兮的四處張望xc_place的每個角落，",
+        "你神祕兮兮的四處張望xc_place的每個角落，",
         "你大模大樣在xc_place轉了幾個圈子，",
         "你滿臉嚴肅的仔細查看xc_place的情況，",
         "你仔細觀察了xc_place的情況，",
@@ -18,7 +18,7 @@ string *xc_msg2 = ({
         "據你的觀察來看，xc_place，",
         "以現在的情況來看，xc_place",
         "你覺得xc_place",
-        "你默默在心裡記下---xc_place",
+        "你默默在心裏記下---xc_place",
 });
 
 string *xc_msg3 = ({
@@ -38,7 +38,7 @@ void create()
         set_default_object(__FILE__);
         else {
                 set("unit", "塊");
-                set("long", "這是一塊"HIW"屬于幫派"NOR"的巡城腰牌，帶上它可以巡邏(xunluo)幫派地盤。\n");
+                set("long", "這是一塊"HIW"屬於幫派"NOR"的巡城腰牌，帶上它可以巡邏(xunluo)幫派地盤。\n");
                 set("value", 0);
              }   
 }
@@ -71,7 +71,7 @@ int do_xunluo(object me, object ob)
                 tell_object(me, msg1+msg2+msg3+"\n馬上去巡查下一個地方吧！\n");
         }
         else
-                tell_object(me,"你沒必要在這裡巡邏啊！\n");
+                tell_object(me,"你沒必要在這裏巡邏啊！\n");
                 
         return 1;
 }

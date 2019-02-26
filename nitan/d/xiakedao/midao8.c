@@ -7,7 +7,7 @@ void create()
 {
         set("short", "密道");
         set("long", @LONG
-這是一條長長的密道，地面和石壁滿是灰塵，好象很久沒人來過了。
+這是一條長長的密道，地面和石壁滿是灰塵，好像很久沒人來過了。
 LONG );
         set("exits", ([
                 "southdown" : __DIR__"midao7"

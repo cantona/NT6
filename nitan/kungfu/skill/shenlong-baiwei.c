@@ -16,7 +16,7 @@ int ttl = 17;
 int seq = 17;
 mapping *action = ({
         ([
-                "action"      : "$N左掌護胸，右掌使一招"+(order[random(13)])+"「神龍擺尾」"NOR"上下晃動著擊向$n的$l",
+                "action"      : "$N左掌護胸，右掌使一招"+(order[random(13)])+"「神龍擺尾」"NOR"上下晃動着擊向$n的$l",
                 "skill_name"  : "神龍擺尾",
                 "dodge"       : d_e1 + (d_e2 - d_e1) * seq / ttl,
                 "parry"       : p_e1 + (p_e2 - p_e1) * seq / ttl,

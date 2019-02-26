@@ -4,11 +4,11 @@ inherit NPC;
 
 void create()
 {
-        set_name("余小星",({ "yu wife"}) );
+        set_name("餘小星",({ "yu wife"}) );
         set("gender", "女性" );
         set("age", 26);
         set("long", 
-"這是個二十六、七歲的川妹子，不知道是余老道的第幾房小妾。\n");
+"這是個二十六、七歲的川妹子，不知道是餘老道的第幾房小妾。\n");
         set_temp("apply/defense", 5);
         set("combat_exp", 70);
         set("shen_type", 1);

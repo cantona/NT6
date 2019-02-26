@@ -48,9 +48,9 @@ int perform(object me, object target)
                 return notify_fail("你必須將全身功力盡數提起才能施展" + name() + "。\n");
 
         if (! living(target))
-               return notify_fail("對方都已經這樣了，用不著這麼費力吧？\n");
+               return notify_fail("對方都已經這樣了，用不着這麼費力吧？\n");
 
-        msg = HIY "$N" HIY "運起全身功力，頓時真氣迸發，全身骨骼□啪作"
+        msg = HIY "$N" HIY "運起全身功力，頓時真氣迸發，全身骨骼噼啪作"
               "響，猛然一掌向$n" HIY "\n全力拍出，力求一擊斃敵，正是一"
               "招「佛光普照」。\n" NOR;
 
@@ -84,7 +84,7 @@ int perform(object me, object target)
         {
                 addn("neili", -500, me);
                 me->start_busy(4);
-                msg += CYN "可是$p" CYN "內力深厚，及時擺脫了"
+                msg += CYN "可是$p" CYN "內力深厚，及時擺脱了"
                        CYN "$P" CYN "內力的牽扯，躲開了這一擊！\n" NOR;
         }
         message_combatd(msg, me, target);

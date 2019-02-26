@@ -20,7 +20,7 @@ void create()
         set("age", 53 + random(20));
         set("long", @LONG
 這是一個拾荒者，看上去老實巴交的。不過聽
-說他和官府有交情，最好別去招惹。
+説他和官府有交情，最好別去招惹。
 LONG);
         set("attitude", "heroism");
         set("str", 35);
@@ -64,7 +64,7 @@ int do_walk()
                     !mapp(obmap=query_temp("objects", room)) || 
                     member_array(this_object(), values(obmap)) == -1)
                 {
-                        message_vision(CYN "$N" CYN "嘆了嘆氣，走了。\n"
+                        message_vision(CYN "$N" CYN "歎了歎氣，走了。\n"
                                        NOR, this_object());
                         destruct(this_object());
                         return 0;
@@ -106,16 +106,16 @@ int ask_quest()
 {
         int t, count;
         object ob = this_player();
-        // 閱歷不夠不能領取任務
+        // 閲歷不夠不能領取任務
         if( query("score", ob)<2000 )
         {
-                command("say 你這點閱歷，恐怕地圖都還沒有跑熟吧，別在這裡給我添亂了！\n");
+                command("say 你這點閲歷，恐怕地圖都還沒有跑熟吧，別在這裏給我添亂了！\n");
                 return 1;
         }
         // 拾荒技能不夠不能領取任務
         if (ob->query_skill("gleaning", 1) < 30)
         {
-                command("say 你估計連什麼是垃圾都不知道，還是和我學學再說吧！\n");
+                command("say 你估計連什麼是垃圾都不知道，還是和我學學再説吧！\n");
                 return 1;
         }
         // 不能連續領任務
@@ -130,7 +130,7 @@ int ask_quest()
         // 已經領過任務尚未完成
         if( query("walker_quest/count", ob) )
         {
-                command("say 你不是答應我幫我拾荒了嗎？還站在這裡羅嗦什麼？\n");
+                command("say 你不是答應我幫我拾荒了嗎？還站在這裏羅嗦什麼？\n");
                 return 1;
         }
         // 領取任務
@@ -146,10 +146,10 @@ int ask_quest()
         set("walker_quest/limit", t, ob);
 
         message("vision", WHT + name() + WHT "小聲的對" + ob->name() +
-                          WHT "吩咐著什麼，" + ob->name() +
+                          WHT "吩咐着什麼，" + ob->name() +
                           WHT "一邊聽，一邊不住的點頭。\n" NOR,
                           environment(ob), ({ ob }));
-        message("vision", WHT + name() + WHT "在你耳邊悄聲說道：你就去幫我"
+        message("vision", WHT + name() + WHT "在你耳邊悄聲説道：你就去幫我"
                                           NOR + HIY + CHINESE_D->chinese_number(count) + NOR + WHT
                                           "件垃圾來吧！\n你務必要在" NOR + HIY + CHINESE_D->chinese_monthday(t) + NOR + WHT
                           "之前完成！\n" NOR, ob);
@@ -190,7 +190,7 @@ int accept_object(object who, object ob)
         weiwang = random(2) + 1;
         if (intime)
         {
-                // 1/4的幾率獲得額外的獎勵
+                // 1/4的機率獲得額外的獎勵
                 if (random(4)==0)
                         amount++;
                 gold = new("/clone/money/gold");
@@ -228,7 +228,7 @@ int accept_object(object who, object ob)
             command("say 好了，你也累了，去休息休息吧！\n");
         }
         else
-                       message("vision", WHT + name() + WHT "在你耳邊悄聲說道：你還需要幫我揀"
+                       message("vision", WHT + name() + WHT "在你耳邊悄聲説道：你還需要幫我揀"
                                           NOR+HIY+CHINESE_D->chinese_number(query("walker_quest/count", who))+NOR+WHT
                                           "件垃圾。\n" NOR, who);
         destruct(ob);

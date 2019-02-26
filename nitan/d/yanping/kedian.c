@@ -8,7 +8,7 @@ void create()
         set("short", "山野客店");
         set("long", @LONG
 山野客店十分簡陋。一個小二臨台買賣，一片破門扇撲在地上，顯
-得相當忙亂。櫃台上貼著個牌子(paizi)。
+得相當忙亂。櫃枱上貼着個牌子(paizi)。
 LONG );
         set("exits", ([
                 "east" : __DIR__"erbapu",

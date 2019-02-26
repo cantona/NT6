@@ -13,7 +13,7 @@ void create()
                 set_default_object(__FILE__);
         else {
                 set("unit", "件");
-                set("long", HIW "一件奇異的戰衣，通體透明，飄忽不定，似乎不屬于人間。\n" NOR);
+                set("long", HIW "一件奇異的戰衣，通體透明，飄忽不定，似乎不屬於人間。\n" NOR);
                 set("material", "steel");
                 set("value", 1);
                 set("armor_prop/armor", 100);

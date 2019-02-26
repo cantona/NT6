@@ -8,7 +8,7 @@ void create()
         set_name("烏鴉", ({ "wuya", "crow" }) );
         set("race", "飛禽");
         set("age", 3);
-        set("long", "一只黑色的烏鴉，醜陋極了。\n");
+        set("long", "一隻黑色的烏鴉，醜陋極了。\n");
         set("attitude", "peaceful");
 
 //      set("limbs", ({ "頭部", "身體", "翅膀", "爪子", "尾巴" }) );

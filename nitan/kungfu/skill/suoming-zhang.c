@@ -1,7 +1,7 @@
 inherit SKILL;
 
 mapping *action = ({
-([      "action": "$N微一躬身，使出「修羅索命」，$w攜帶著刺耳風聲，擦地掃向$n的腳踝",
+([      "action": "$N微一躬身，使出「修羅索命」，$w攜帶着刺耳風聲，擦地掃向$n的腳踝",
         "force" : 100,
         "attack": 10,
         "dodge" : -5,
@@ -17,7 +17,7 @@ mapping *action = ({
         "damage": 15,
         "damage_type":"挫傷"
 ]),
-([      "action": "$N一聲狂喝，施一招「判官翻簿」，舉起$w地滿地亂敲，舖天蓋地襲向$n",
+([      "action": "$N一聲狂喝，施一招「判官翻簿」，舉起$w地滿地亂敲，鋪天蓋地襲向$n",
         "force" : 120,
         "attack": 20,
         "dodge" : -5,
@@ -25,7 +25,7 @@ mapping *action = ({
         "damage": 20,
         "damage_type":"挫傷"
 ]),
-([      "action": "$N飛身躍起，一招「吊客臨門」，身下$w往橫裡直打而出，揮向$n的襠部",
+([      "action": "$N飛身躍起，一招「弔客臨門」，身下$w往橫裏直打而出，揮向$n的襠部",
         "force" : 280,
         "attack": 50,
         "dodge" : -5,

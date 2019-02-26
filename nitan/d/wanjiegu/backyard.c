@@ -9,7 +9,7 @@ void create()
         set("short", "後院");
         set("long", @LONG
 後院是一大片開闊的草地，綠草如蔭，幾朵野花點綴其間，草地
-中間放著一塊大石刻成的棋盤，一個黃眉老僧和一個青袍客正在下棋。
+中間放着一塊大石刻成的棋盤，一個黃眉老僧和一個青袍客正在下棋。
 北邊有一間石屋，門口被一塊大石頭(rock)擋住了。
 LONG );
         set("outdoors", "wanjiegu");
@@ -38,7 +38,7 @@ void check_trigger()
         if ((int)query("trigger") == 9 &&
             !query("exits/north"))
         {
-                message("vision", HIW "大石終于被推開了，露出通向石屋的通道。\n" NOR,
+                message("vision", HIW "大石終於被推開了，露出通向石屋的通道。\n" NOR,
                         this_object());
                 set("exits/north", __DIR__"stone_room");
                 delete("trigger");

@@ -14,8 +14,8 @@ void create()
         set_name("俞岱巖", ({ "yu daiyan", "yu" }));
         set("nickname","武當三俠");
         set("long",
-                "他就是張三豐的三弟子俞岱巖。\n"
-                "身穿一件幹幹凈凈的灰色道袍。\n"
+                "他就是張三丰的三弟子俞岱巖。\n"
+                "身穿一件乾乾淨淨的灰色道袍。\n"
                 "他已年過四十，身材瘦長。恬淡沖和，沉默寡言。\n");
         set("gender", "男性");
         set("age",43);
@@ -145,7 +145,7 @@ void attempt_apprentice(object me)
         if ((int)me->query_skill("taoism", 1) < 70)
         {
                 command("say 習武是為了強身健體，一味的練武是不可取的！");
-                command("say 我看你還需要在修身養性方面多鍛煉鍛煉，以提"
+                command("say 我看你還需要在修身養性方面多鍛鍊鍛鍊，以提"
                         "高你的道德心法。");
                 return;
         }
@@ -163,13 +163,13 @@ string ask_yao1()
                 fam["family_name"] != "武當派")
                 return RANK_D->query_respect(this_player()) +"與本派素無來往，不知此話從何談起？";
         if (ob = present("jujing dan", this_player()))
-                return "你身上不是帶著本門延年聚精丹？！";
+                return "你身上不是帶着本門延年聚精丹？！";
         if (query("yao1_count") < 1)
                 return "你來晚了，本門延年聚精丹已盡數給了本派弟子。";
         addn("yao1_count", -1);
         ob = new("/clone/medicine/nostrum/jujingdan");
         ob->move(this_player());
-        return "我這裡有本門延年聚精丹，你拿去吧。";
+        return "我這裏有本門延年聚精丹，你拿去吧。";
 }
 
 string ask_yao2()
@@ -182,11 +182,11 @@ string ask_yao2()
                 return RANK_D->query_respect(this_player()) +
                 "與本派素無來往，不知此話從何談起？";
         if (ob = present("jieqi wan", this_player()))
-                return "你身上不是帶著本門九轉結氣丸？！";
+                return "你身上不是帶着本門九轉結氣丸？！";
         if (query("yao2_count") < 1)
                 return "你來晚了，本門九轉結氣丸已盡數給了本派弟子。";
         addn("yao2_count", -1);
         ob = new("/clone/medicine/nostrum/jieqiwan");
         ob->move(this_player());
-        return "我這裡有本門九轉結氣丸，你拿去吧。";
+        return "我這裏有本門九轉結氣丸，你拿去吧。";
 }

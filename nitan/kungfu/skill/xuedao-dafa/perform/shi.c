@@ -47,20 +47,20 @@ int perform(object me, object target)
                 return notify_fail("你目前真氣不足，難以施展" SHI "。\n");
 
         if (! living(target))
-                return notify_fail("對方都已經這樣了，用不著這麼費力吧？\n");
+                return notify_fail("對方都已經這樣了，用不着這麼費力吧？\n");
 
         ap=attack_power(me,"blade")+query("str", me)*10;
         dp=defense_power(target,"dodge")+query("dex", target)*10;
 
         msg = HIY "$N" HIY "陡然施出「" HIR "噬血穹蒼" HIY "」，手中" +
-              weapon->name() + HIY "騰起無邊殺意，攜著風雷之勢向$n" HIY
+              weapon->name() + HIY "騰起無邊殺意，攜着風雷之勢向$n" HIY
               "劈斬而去！\n"NOR;
 
         if (ap / 2 + random(ap) > dp)
         {
                 damage = damage_power(me, "blade");
                 msg += COMBAT_D->do_damage(me, target, WEAPON_ATTACK, damage, 75,
-                                           HIR "$n" HIR "只覺眼前一蓬血雨噴洒而出"
+                                           HIR "$n" HIR "只覺眼前一蓬血雨噴灑而出"
                                            "，已被$N" HIR "這一刀劈了個正中。\n" NOR);
         } else
         {
@@ -68,17 +68,17 @@ int perform(object me, object target)
                        "即飛身朝後躍出數尺。\n" NOR;
         }
 
-        msg += HIY "\n緊接著$N" HIY "嗔目大喝，手中" + weapon->name() +
-               HIY "一振，迸出漫天血光，舖天蓋地洒向$n" HIY "！\n"NOR;
+        msg += HIY "\n緊接着$N" HIY "嗔目大喝，手中" + weapon->name() +
+               HIY "一振，迸出漫天血光，鋪天蓋地灑向$n" HIY "！\n"NOR;
 
         if (random(me->query_skill("blade")) > target->query_skill("parry") / 2)
         {
-                msg += HIR "霎時間$n" HIR "只覺周圍殺氣彌漫，全身氣血翻"
+                msg += HIR "霎時間$n" HIR "只覺周圍殺氣瀰漫，全身氣血翻"
                        "滾，甚難招架。\n" NOR;
                 count = me->query_skill("xuedao-dafa", 1) / 4;
         } else
         {
-                msg += HIY "霎時間$n" HIY "只覺周圍殺氣彌漫，心底微微一"
+                msg += HIY "霎時間$n" HIY "只覺周圍殺氣瀰漫，心底微微一"
                        "驚，連忙奮力招架。\n" NOR;
                 count = 0;
         }

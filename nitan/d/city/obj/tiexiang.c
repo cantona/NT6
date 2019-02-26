@@ -12,7 +12,7 @@ void create()
                 set_default_object(__FILE__);
         else {
                 set("long",
-                              "這是只鐵箱，好像能打開(open)\n");
+                              "這是隻鐵箱，好像能打開(open)\n");
                 set("unit", "只");
                 set("open_count", 1);
                 set("weight", 1000);
@@ -31,7 +31,7 @@ int do_open()
         if (query("open_count") > 0)
         {
                 message_vision(
-                        HIY "$N伸手打開鐵箱，箱子裡有一本書，上寫《天魔訣》三字。\n" NOR, 
+                        HIY "$N伸手打開鐵箱，箱子裏有一本書，上寫《天魔訣》三字。\n" NOR, 
                         this_player());
                 addn("open_count", -1);
                 ob = new("/clone/book/tianmo-jue");

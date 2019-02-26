@@ -10,7 +10,7 @@ void create()
         set("short",HIG"叢林"NOR);
         set("long", @LONG
 這是一片厚厚的叢林。幾十丈高的樹木(tree)簇在一塊，密實的
-枝葉象一蓬蓬巨傘恆伸向天空，把陽光遮得絲毫也無。由于叢林歷時
+枝葉象一蓬蓬巨傘恆伸向天空，把陽光遮得絲毫也無。由於叢林歷時
 年代很久，又罕有人至，所以動植物種類很多，飛禽走獸應有盡有。
 偶爾會有吃肉獸出來傷人。你一走進這這覺得陰陰森林的。
 LONG );
@@ -46,7 +46,7 @@ int do_chop(string arg)
         me = this_player();
         weapon = me->query_temp("weapon");
         if( arg=="tree" || arg=="Tree" || arg=="樹木" ) {
-             if(me->is_busy()) return notify_fail("你正忙著呢。\n");
+             if(me->is_busy()) return notify_fail("你正忙着呢。\n");
              if(query("tree_count") < 1) return notify_fail("剩下的樹木都太大了，你還是再找找吧。\n");
              me->start_busy(1);
              if(!weapon){
@@ -94,6 +94,6 @@ string look_tree()
 ^^    ^^   |   ^^  ^^      *|*     ^^   ^^
 ------------------------------------------
 
-這裡的樹木高大茂密，樹幹結實，很適合制造船舶。\n";
+這裏的樹木高大茂密，樹幹結實，很適合製造船舶。\n";
 }
 

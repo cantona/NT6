@@ -7,7 +7,7 @@ void create()
 {
         set("short", "陰陽亭");
         set("long", @LONG
-陰陽亭一大一小、一高一低、一陰一陽，象征柳毅和龍女。在這裡
+陰陽亭一大一小、一高一低、一陰一陽，象徵柳毅和龍女。在這裏
 可以飽覽洞庭湖山景色。
 LONG );
         set("outdoors", "dongting");

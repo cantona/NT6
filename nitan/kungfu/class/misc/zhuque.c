@@ -11,7 +11,7 @@ void create()
         set("gender", "女性");
         set("age", 20);
         set("long", @LONG
-這是一只巨大的火鳳凰，渾身燃燒著熊熊的烈火，不時發出一兩聲撕心裂肺的怪叫。
+這是一隻巨大的火鳳凰，渾身燃燒着熊熊的烈火，不時發出一兩聲撕心裂肺的怪叫。
 LONG );
         set("combat_exp", 10000000);
         set("shen_type", 0);
@@ -58,7 +58,7 @@ void fight_ob(object ob)
         if (is_fighting(ob))
                 return;
 
-        message_vision(HIR "$N一聲長嘶，渾身火燄四射，"
+        message_vision(HIR "$N一聲長嘶，渾身火焰四射，"
                        "令人心膽聚裂。\n" NOR, this_object(), ob);
 
         ::fight_ob(ob);
@@ -88,7 +88,7 @@ mixed hit_ob(object me, object ob, int damage_bouns)
 {
         ob->receive_wound("qi", 160 + random(170), me);
         set("neili",query("max_neili",  me), me);
-        return HIR "$N" HIR "周圍火燄爆漲，電光四射，登時令$n"
+        return HIR "$N" HIR "周圍火焰爆漲，電光四射，登時令$n"
                HIR "痛苦不堪，難以忍受。\n" NOR;
 }
 
@@ -111,13 +111,13 @@ varargs void die(object killer)
         // 鳳凰重生
         if( !query("is_die", this_object()) )
         {
-                message_vision(HIR "\n$N" HIR "一聲長嘶，地動山搖，猛然間，周身火燄沖天，$N"
-                         HIR "騰空而起，在半空中盤旋著，隨即又回到了原地。\n" NOR, this_object());
+                message_vision(HIR "\n$N" HIR "一聲長嘶，地動山搖，猛然間，周身火焰沖天，$N"
+                         HIR "騰空而起，在半空中盤旋着，隨即又回到了原地。\n" NOR, this_object());
 
                 this_object()->start_busy(2 + random(5));
 
                 CHANNEL_D->do_channel(this_object(), "rumor",
-                        "聽說" + name() + HIM "沖出地獄，獲得了重生。\n" NOR);
+                        "聽説" + name() + HIM "衝出地獄，獲得了重生。\n" NOR);
 
                 set("max_neili", 220000);
                 set("neili", 220000);
@@ -147,7 +147,7 @@ varargs void die(object killer)
 
         str = prize[random(sizeof(prize))];
         ob = new(str);
-        command("chat 啊呀！人間居然有人能打敗我，待我回到火燄山再修煉千年再說！");
+        command("chat 啊呀！人間居然有人能打敗我，待我回到火焰山再修煉千年再説！");
         message_sort(HIR "$N" HIR "身子一扭，鑽入地心，"
                      "只聽叮玲玲的一聲，從$N" HIR "身上掉下了一" +
                      query("unit", ob)+ob->name()+
@@ -172,7 +172,7 @@ varargs void die(object killer)
                 }
         }
 
-        // 1/600幾率掉出無名銅人
+        // 1/600機率掉出無名銅人
         if (random(600) < 1)
         {
                 object ob_tongren;
@@ -191,7 +191,7 @@ void random_move()
         {
                 message_vision("$N急急忙忙的走了。\n", this_object());
                 CHANNEL_D->channel_broadcast("rumor",
-                        "聽說" + name() + HIM "覺得人間氣候惡劣，水土不服，終于又回到了火燄山。" NOR);
+                        "聽説" + name() + HIM "覺得人間氣候惡劣，水土不服，終於又回到了火焰山。" NOR);
                 destruct(this_object());
                 return;
         }

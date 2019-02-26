@@ -34,11 +34,11 @@ void greeting(object ob)
         if( !ob || environment(ob) != environment() ) return;
         switch( random(5) ) {
                 case 0:
-                        say( "老裁縫笑咪咪地說道：這位" + RANK_D->query_respect(ob)
+                        say( "老裁縫笑咪咪地説道：這位" + RANK_D->query_respect(ob)
                                 + "，進來訂身衣服吧。\n");
                         break;
                 case 1:
-                        say( "老裁縫愁眉苦臉說道：這位" + RANK_D->query_respect(ob)
+                        say( "老裁縫愁眉苦臉説道：這位" + RANK_D->query_respect(ob)
                                 + "，你又胖又矮，這幫不了你。\n");
                         break;
         }
@@ -126,7 +126,7 @@ int do_ding(string arg)
                         newfile = read_file("/obj/clothes/scarf.o");
                         break;
                 default:
-                        return notify_fail("這裡不會做你要的東西．\n");
+                        return notify_fail("這裏不會做你要的東西．\n");
         }
         timestamp = sprintf("%c%c%c%c%c%c%c",'a'+random(20),'a'+random(20),'a'+random(20),
         'a'+random(20),'a'+random(20),'a'+random(20),'a'+random(20));

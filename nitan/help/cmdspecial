@@ -1,4 +1,4 @@
-泥潭常用指令詳細解說如下：
+泥潭常用指令詳細解説如下：
 
 
     本遊戲的玩家可以使用五大類指令：系統指令、聊天指令、
@@ -24,10 +24,10 @@ $HIY$【錢莊用指令】$NOR$
 
     $HIC$convert(duihuan)$NOR$
     指令格式：convert 數量 舊貨幣 to 新貨幣。
-    兌換貨幣，例如：convert 300 silver to gold。
+    兑換貨幣，例如：convert 300 silver to gold。
 
 
-$HIY$【店舖用指令】$NOR$
+$HIY$【店鋪用指令】$NOR$
 
     $HIC$list$NOR$
     指令格式：list。在商店中查有什麼物品。

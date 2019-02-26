@@ -5,7 +5,7 @@ void create()
 {
         set("short",HIB"墓地"NOR);
         set("long",@LONG
-走到這裡越發感到荒涼，黃葉隨風亂舞，四處彌漫著朽木腐爛的氣味。沒
+走到這裏越發感到荒涼，黃葉隨風亂舞，四處瀰漫着朽木腐爛的氣味。沒
 膝的雜草中有一座土墳，墓碑(bei) 上落滿了塵土，不仔細看，很難辯出上面
 寫些什麼。墓前並無紙灰，看起來好久沒有人來祭拜了。
 LONG
@@ -64,8 +64,8 @@ int do_wa(string arg)
                 return notify_fail("你要挖什麼？\n");
 
         if( ob = present("hu fei",environment(me)) &&!me->query("quest/雪山飛狐/復仇篇/over")) {
-//              message_vision("$N用一種異樣的眼神看著$n。\n", ob,me);
-                return notify_fail(CYN"胡斐喝道：休要打擾我爹娘的清靜！\n"NOR"你不敢再有動作！\n");
+//              message_vision("$N用一種異樣的眼神看着$n。\n", ob,me);
+                return notify_fail(CYN"胡斐喝道：休要打擾我爹孃的清靜！\n"NOR"你不敢再有動作！\n");
         }
 
         if ((int)me->query("jingli") < 500)
@@ -73,7 +73,7 @@ int do_wa(string arg)
 
         if(random(10)!=6) {
                 me->add("jingli",-200);
-                return notify_fail("你看準了墓後三尺之處，運勁于指，伸手挖土。\n");
+                return notify_fail("你看準了墓後三尺之處，運勁於指，伸手挖土。\n");
         }
 
         dao = new(__DIR__"obj/lengyue-dao");

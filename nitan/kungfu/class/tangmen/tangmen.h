@@ -2,7 +2,7 @@ int permit_recruit(object ob)
 {
         if( query("detach/唐門世家", ob) || query("betrayer/唐門世家", ob) )
         {
-                command("say 你反復無常，我不能收你為徒！");
+                command("say 你反覆無常，我不能收你為徒！");
                 return 0;
         }
         

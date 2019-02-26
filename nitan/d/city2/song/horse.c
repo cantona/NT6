@@ -10,7 +10,7 @@ void create()
 
         set("combat_exp", 500000);
         set("long", 
-                "一匹高頭大馬，全身雪白的毛發，煞是神俊。\n");
+                "一匹高頭大馬，全身雪白的毛髮，煞是神俊。\n");
 
         set("limbs", ({ "頭部", "身體", "蹄子", "尾巴" }) );
         set("verbs", ({ "bite", "hoof" }) );
@@ -30,7 +30,7 @@ void create()
 
         set("chat_chance", 5);
         set("chat_msg", ({
-                 HIW"戰馬不住地低鳴，蹄子不挺地刨打著地面。\n"NOR,
+                 HIW"戰馬不住地低鳴，蹄子不挺地刨打着地面。\n"NOR,
         }) );
 
         setup();

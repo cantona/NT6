@@ -3,7 +3,7 @@
 inherit SKILL;
 
 mapping *action = ({
-([      "action" : "$N劍勢忽緩而不疏，劍意有余而不盡，化恆山劍法為一劍，向$n慢慢推去",
+([      "action" : "$N劍勢忽緩而不疏，劍意有餘而不盡，化恆山劍法為一劍，向$n慢慢推去",
         "force" : 20,
         "attack": 65,
         "dodge" : 65,
@@ -39,7 +39,7 @@ mapping *action = ({
         "lvl" : 112,
         "damage_type" : "刺傷"
 ]),
-([      "action" : "$N突然一劍點向$n的$l，雖一劍卻暗藏無數後著，$n手足無措，不知如何是好",
+([      "action" : "$N突然一劍點向$n的$l，雖一劍卻暗藏無數後着，$n手足無措，不知如何是好",
         "force" : 230,
         "attack": 115,
         "dodge" : 90,

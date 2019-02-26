@@ -11,9 +11,9 @@ void create()
         set("value", 0);
     }
 
-    set("no_drop","這東西是只屬于你一個人的。\n");
-    set("no_give","這東西是只屬于你一個人的。\n");
-    set("no_steal","這東西是只屬于別人一個人的。\n");
+    set("no_drop","這東西是隻屬於你一個人的。\n");
+    set("no_give","這東西是隻屬於你一個人的。\n");
+    set("no_steal","這東西是隻屬於別人一個人的。\n");
     set("no_get","這東西不是你的，無法拾取。\n");
     set("lost_time",1);  // 本輪已過的時間(秒)
     set("last_deng",DENG_AMOUNT);  // 還剩幾個燈
@@ -55,7 +55,7 @@ int do_wizhg()
     if( !wizardp(me) ) return 0;
     if( !me_ok(me) ) return 0;
     set("use_huigui","yes");
-    message_vision( CYN"$N"NOR+CYN"大聲叫道：“我是巫師，讓我回家！！！”\n"NOR+WHT"只見一陣白霧不知從何處飄來，癒來癒濃……\n"NOR,me);
+    message_vision( CYN"$N"NOR+CYN"大聲叫道：“我是巫師，讓我回家！！！”\n"NOR+WHT"只見一陣白霧不知從何處飄來，愈來愈濃……\n"NOR,me);
     return 1;
 }
 
@@ -155,7 +155,7 @@ void checking()
         if( debuger && query("env/hj_wizmsg", debuger) )
             tell_object( debuger, sprintf( HIR"幻境遊戲通知：%s"HIR"(%s"HIR")失敗狀態離開了遊戲。 ( <unset hj_wizmsg> 不再發送本類信息)\n"NOR,
         query("name", me),query("id", me)));
-        CHANNEL_D->channel_broadcast("rumor", sprintf("幻境: 聽說%s[%s]探險失敗，離開了幻境。",query("name", me),query("id", me)));
+        CHANNEL_D->channel_broadcast("rumor", sprintf("幻境: 聽説%s[%s]探險失敗，離開了幻境。",query("name", me),query("id", me)));
         return;
     }
 
@@ -172,7 +172,7 @@ void checking()
         if( debuger && query("env/hj_wizmsg", debuger) )
             tell_object( debuger, sprintf( HIR"幻境遊戲通知：%s"HIR"(%s"HIR")成功狀態離開了遊戲。 ( <unset hj_wizmsg> 不再發送本類信息)\n"NOR,
         query("name", me),query("id", me)));
-        CHANNEL_D->channel_broadcast("rumor", sprintf("幻境: 聽說%s[%s]探險成功，離開了幻境。",query("name", me),query("id", me)));
+        CHANNEL_D->channel_broadcast("rumor", sprintf("幻境: 聽説%s[%s]探險成功，離開了幻境。",query("name", me),query("id", me)));
         return;
     }
 
@@ -194,22 +194,22 @@ void checking()
             }
 
             if( deng > 0 )
-                message_vision("$N只聽得似有一聲微響，只見"+query("name", ob)+"裡的一個亮點熄滅了。\n",me);
-            else message_vision("$N只聽得似有一聲微響，只見"+query("name", ob)+"裡的最後一個亮點也熄滅了。\n",me);
+                message_vision("$N只聽得似有一聲微響，只見"+query("name", ob)+"裏的一個亮點熄滅了。\n",me);
+            else message_vision("$N只聽得似有一聲微響，只見"+query("name", ob)+"裏的最後一個亮點也熄滅了。\n",me);
 
 
             tell_object( me, get_deng_pic( deng ) );
 
             if(deng == 4) long_color=""HIB"";
             if(deng == 2) long_color=""BLU"";
-            longs="這是一個四四方方的小盒子，盒蓋透明，你能見到內裡有"+long_color+chinese_number(deng)+"個小點"NOR"在散發著微弱的光芒。\n";
+            longs="這是一個四四方方的小盒子，盒蓋透明，你能見到內裏有"+long_color+chinese_number(deng)+"個小點"NOR"在散發着微弱的光芒。\n";
             set_name(long_color+"七星燈"NOR, ({"qixing deng","deng"}));
             if( deng > 0 ) set("long",longs + get_deng_pic(deng) );
-            else set("long",BLU"這是一個四四方方的小盒子，盒蓋透明，裡面已經一絲亮光也見不到了。\n"NOR  + get_deng_pic(deng) );
+            else set("long",BLU"這是一個四四方方的小盒子，盒蓋透明，裏面已經一絲亮光也見不到了。\n"NOR  + get_deng_pic(deng) );
         }
     }
 
-    // 隨機讓別的玩家看到自己大概的狀態(虛擬遊戲裡也有PK哦)
+    // 隨機讓別的玩家看到自己大概的狀態(虛擬遊戲裏也有PK哦)
     // 玩家若暫時離開遊戲，則不報告
     if( !present( "hj temp leave obj", me ) )
     {
@@ -232,14 +232,14 @@ void checking()
                     HIY+query("name", me)+""HIY"似乎受了傷，看起來狀況不大好。\n"NOR,({me}));
         }
     }
-    // 這裡為了回歸之鏡的。
+    // 這裏為了迴歸之鏡的。
     if( query("use_huigui", this_object()) )
     {
         wait_over = "yes";
         time = DENG_TIME ;
     }
     // 得分 500+ 時，隨機掉分。這是為了讓玩家更緊湊地抓緊時間。
-    // 恢復之技特殊技能“克制”的唯一體現，不掉分
+    // 恢復之技特殊技能“剋制”的唯一體現，不掉分
     if( query_temp("hj_score", me)>500 && !random(3) && !query_temp("hj_special/kz", me) )
     {
         // 玩家臨時離開時，減分的速度較慢
@@ -248,7 +248,7 @@ void checking()
     }
     set("lost_time",time);
     set("last_deng",deng);
-    // 更新後的走路忙時系統，配合房間裡的增加busy語句，這裡就減少。
+    // 更新後的走路忙時系統，配合房間裏的增加busy語句，這裏就減少。
     addn_temp("hj_move_busy", -300, me);
     if( query_temp("hj_move_busy", me)<1 )
         set_temp("hj_move_busy", 1, me);
@@ -266,9 +266,9 @@ void game_over()
         call_out("delete_me",1);
         return;
     }
-    message_vision(HIR"$N"HIR"突然一副靈魂出竅的樣子，緊接著消失不見了。\n"NOR,me);
+    message_vision(HIR"$N"HIR"突然一副靈魂出竅的樣子，緊接着消失不見了。\n"NOR,me);
     me->move( HJ_OUT_ROOM );
-    message_vision(HIR"$N"HIR"身影逐漸顯現，似是回到現實裡來了。\n"NOR,me);
+    message_vision(HIR"$N"HIR"身影逐漸顯現，似是回到現實裏來了。\n"NOR,me);
     enter_time=query_temp("hj_enter_time", me);
     write(sprintf( "你進入遊戲的時間是 %s ，結束的時間是 %s ，\n遊戲時間%s 。\n",
         !enter_time ? "未知" : ctime_format( enter_time ),  ctime_format(),
@@ -300,9 +300,9 @@ void sing_song(int i, object me)
     else
     {
         set_temp("huanjing", "start", me);
-        message_vision(CYN"你聽得聲音漸弱，終于靜止下來了。\n"NOR,this_object());
+        message_vision(CYN"你聽得聲音漸弱，終於靜止下來了。\n"NOR,this_object());
         write("\n在燈滅之後，就是你歸來之時……若你氣息(ghp)已無，就將失敗而歸……\n");
-        write(HIW"在幻境裡，你只能使用特別的指令來進行攻擊。詳細請用 <help huanjing> 指令查詢。\n"NOR);
+        write(HIW"在幻境裏，你只能使用特別的指令來進行攻擊。詳細請用 <help huanjing> 指令查詢。\n"NOR);
         remove_call_out("enter_hj");
         call_out("enter_hj",1);
     }
@@ -349,7 +349,7 @@ void enter_hj()
     // 新加入的“等級”設置
     // 每1 lv，都能夠得到 0.5 power, 1 all skills, 20 hp_max 的進入加成。
     // lv 最低0級，最高9級。9級時，額外 +1。升級規則請參看 hj_room1.c .
-    // lv 與本文件的“使用累積次數”部分有聯系，請參看下文。
+    // lv 與本文件的“使用累積次數”部分有聯繫，請參看下文。
     if( !query("huanjing2003/lv", me) )
         set("huanjing2003/lv", 0, me);
     if( query("huanjing2003/lv", me)>9 )
@@ -361,16 +361,16 @@ void enter_hj()
         set("huanjing2003/lv_add",query("huanjing2003/lv",  me), me);
     // 進入時間
     set_temp("hj_enter_time", time(), me);
-    // 得分，這個是遊戲結束後重要獎勵依據之一，在遊戲裡由各種途徑增加
+    // 得分，這個是遊戲結束後重要獎勵依據之一，在遊戲裏由各種途徑增加
     set_temp("hj_score", 1, me);
     // 這是玩家在戰鬥是將使用的方式的判斷！由本目錄 6_combat_qxd.h 內調用。
     set_temp("hj_bei", ".", me);
     // 取個隨機數做標記，該標記將判斷：某個組合好的寶物是否是該玩家在這一次
-    // 遊戲裡得到的。如果不是，得分要打個折扣。
+    // 遊戲裏得到的。如果不是，得分要打個折扣。
     // 這是在測試活動時，出現了這樣的情況：幾個玩家配合，其中一個拿到組合寶物
-    // 之後直接 huigui 甚至是 hjquit fail，由于以前的設置是不讓組合寶物 checking()，
+    // 之後直接 huigui 甚至是 hjquit fail，由於以前的設置是不讓組合寶物 checking()，
     // 所以玩家可以把寶物攢起來，到一定程度後一次過帶出去，以求高記錄和高效率。
-    // 這個問題不改也行，不過對于統計數字來說，有點嚇人。還是改改吧。 :)
+    // 這個問題不改也行，不過對於統計數字來説，有點嚇人。還是改改吧。 :)
     set_temp("this_time_mark", 1+random(9999), me);
     // 力量、氣息以及技能，將在後面設置。
     // 基本設置完畢，為了描述更為顯眼，先將玩家 move room，
@@ -391,7 +391,7 @@ void enter_hj()
         set("huanjing2003/last_power",query("huanjing2003/last_power",  me)*3/4, me);
         if( query("huanjing2003/last_power", me)>30 )
             set("huanjing2003/last_power", 30, me);
-    // 如果太低，清除它。這裡與 lv 無關。
+    // 如果太低，清除它。這裏與 lv 無關。
         if( query("huanjing2003/last_power", me)<6 )
             delete("huanjing2003/last_power", me);
     }
@@ -441,7 +441,7 @@ void enter_hj()
         else
         {
             addn("huanjing2003/last_power_times", -1, me);
-            tell_object(me, sprintf("你使用了累積力量的獎勵，該獎勵還剩余 %d 次。\n",
+            tell_object(me, sprintf("你使用了累積力量的獎勵，該獎勵還剩餘 %d 次。\n",
                 query("huanjing2003/last_power_times", me)));
             set_temp("hj_game_mepower",query("huanjing2003/last_power",  me), me);
         }
@@ -461,7 +461,7 @@ void enter_hj()
         else
         {
             addn("huanjing2003/last_skills_times", -1, me);
-            tell_object(me,sprintf("你使用了累積技能的獎勵，該獎勵還剩余 %d 次。\n",
+            tell_object(me,sprintf("你使用了累積技能的獎勵，該獎勵還剩餘 %d 次。\n",
                 query("huanjing2003/last_skills_times", me)));
             set_temp("hj_game_damages",query("huanjing2003/last_skills_lv",  me), me);
             set_temp("hj_game_skills",query("huanjing2003/last_skills_name",  me), me);
@@ -524,7 +524,7 @@ void enter_hj()
     srl->move(me);
     tell_object(me,"你得到一"+query("unit", srl)+query("name", srl)+"！\n");
 
-    // 進入遊戲時，有一個 脫離水晶。( 這裡使用了同樣的變量名 )
+    // 進入遊戲時，有一個 脱離水晶。( 這裏使用了同樣的變量名 )
     srl=new(__DIR__"hj_obj_tools");
     srl->setme(2);
     srl->move(me);
@@ -537,7 +537,7 @@ void enter_hj()
     tell_object(me,"你得到一"+query("unit", srl)+query("name", srl)+"！\n");
 
 /*  此為關鍵物品，不再發放。
-// 進入遊戲時，有一個 回歸之鏡。
+// 進入遊戲時，有一個 迴歸之鏡。
     srl=new(__DIR__"hj_obj_tools");
     srl->setme(3);
     srl->move(me);
@@ -553,7 +553,7 @@ void enter_hj()
         tell_object( debuger, sprintf( HIR"幻境遊戲通知：%s"HIR"(%s"HIR")進入幻境遊戲。 ( <unset hj_wizmsg> 不再發送本類信息)\n"NOR,
             query("name", me),query("id", me)));
 
-    CHANNEL_D->channel_broadcast("rumor", sprintf("幻境: 聽說%s[%s]進入了幻境，開始探險。",query("name", me),query("id", me)));
+    CHANNEL_D->channel_broadcast("rumor", sprintf("幻境: 聽説%s[%s]進入了幻境，開始探險。",query("name", me),query("id", me)));
     remove_call_out("checking");
     call_out("checking",1);
     remove_call_out("random_dispersion");
@@ -580,7 +580,7 @@ void real_random_dispersion()
     me=query("my_master");
     if( !me || query_temp("huanjing", me) != "start" || query_temp("hj_hp", me)<1 )
         return;
-    msg="忽然一小陣輕煙掠過……這裡似乎多了一些什麼。\n";
+    msg="忽然一小陣輕煙掠過……這裏似乎多了一些什麼。\n";
     // 如果玩家是離開狀態，那就不額外發放東西。
     if( !present( "hj temp leave obj", me ) )
     {
@@ -594,7 +594,7 @@ void real_random_dispersion()
             obj=new( obj_list_all[random(sizeof(obj_list_all))] );
             obj->move(rooms);
             if( query("msg", obj))msg=query("msg", obj);
-            else msg="忽然一小陣輕煙掠過……這裡似乎多了一些什麼。\n";
+            else msg="忽然一小陣輕煙掠過……這裏似乎多了一些什麼。\n";
             tell_room(random_rooms,msg);
         }
         random_rooms = HJ_DIR +"hj_room"+(1+random( HJ_ROOM_AMOUNT ));
@@ -611,7 +611,7 @@ void real_random_dispersion()
                 npc_ashman = new( __DIR__"hj_npc_ashman");
                 npc_ashman->move(rooms);
                 if( query("msg", npc_ashman))msg=query("msg", npc_ashman);
-                else msg="忽然一小陣輕煙掠過……這裡似乎多了一些什麼。\n";
+                else msg="忽然一小陣輕煙掠過……這裏似乎多了一些什麼。\n";
                 tell_room(random_rooms,msg);
             }
         }
@@ -620,7 +620,7 @@ void real_random_dispersion()
             npc_ashman=new(__DIR__"hj_npc_kill");
             npc_ashman->move(rooms);
             if( query("msg", npc_ashman))msg=query("msg", npc_ashman);
-            else msg="忽然一小陣輕煙掠過……這裡似乎多了一些什麼。\n";
+            else msg="忽然一小陣輕煙掠過……這裏似乎多了一些什麼。\n";
             tell_room(random_rooms,msg);
         }
     }
@@ -657,14 +657,14 @@ void real_random_dispersion()
         obj_me1->setme(1);
         set("host_id",query("id",  me), obj_me2);
         obj_me2->setme(2);
-        set("host_id",query("id",  me), obj_me3);//此為NPC，拿著最重要的物品部分
+        set("host_id",query("id",  me), obj_me3);//此為NPC，拿着最重要的物品部分
 
         random_rooms = HJ_DIR +"hj_room"+(1+random( HJ_ROOM_AMOUNT ));
         rooms = find_object(random_rooms);
         if(!rooms) rooms = load_object(random_rooms);
         obj_me1->move(rooms);
         if( query("msg", obj_me1))msg=query("msg", obj_me1);
-        else msg="忽然一小陣輕煙掠過……這裡似乎多了一些什麼。\n";
+        else msg="忽然一小陣輕煙掠過……這裏似乎多了一些什麼。\n";
         tell_room(random_rooms,msg);
 
         random_rooms = HJ_DIR +"hj_room"+(1+random( HJ_ROOM_AMOUNT ));
@@ -672,7 +672,7 @@ void real_random_dispersion()
         if(!rooms) rooms = load_object(random_rooms);
         obj_me2->move(rooms);
         if( query("msg", obj_me2))msg=query("msg", obj_me2);
-        else msg="忽然一小陣輕煙掠過……這裡似乎多了一些什麼。\n";
+        else msg="忽然一小陣輕煙掠過……這裏似乎多了一些什麼。\n";
         tell_room(random_rooms,msg);
 
         random_rooms = HJ_DIR +"hj_room"+(1+random( HJ_ROOM_AMOUNT ));
@@ -680,7 +680,7 @@ void real_random_dispersion()
         if(!rooms) rooms = load_object(random_rooms);
         obj_me3->move(rooms);
         if( query("msg", obj_me3))msg=query("msg", obj_me3);
-        else msg="忽然一小陣輕煙掠過……這裡似乎多了一些什麼。\n";
+        else msg="忽然一小陣輕煙掠過……這裏似乎多了一些什麼。\n";
         tell_room(random_rooms,msg);
     }
 }

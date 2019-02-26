@@ -32,7 +32,7 @@ int do_effect(object me)
 
         if ((remain = query("liquid/remaining")) < 1)
         {
-                write(name() + "裡的" + query("liquid/name") + "已經被喝得一滴也不剩了。\n"); 
+                write(name() + "裏的" + query("liquid/name") + "已經被喝得一滴也不剩了。\n"); 
         if( query("env/auto_drinkout", me) && environment(this_object()) != environment(me) )
            {
                 message_vision("$N丟下一個$n。\n", me, this_object());  

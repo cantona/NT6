@@ -9,15 +9,15 @@ void create()
         set("short", "冰山");
         set("long", @LONG
 眼前銀光閃爍，大冰山在月光下發出青紫色的光芒，顯得又是奇
-麗，又是可怖。你站在冰山之側的一塊棱角上，一眼望去，這座冰山
-有陸地上一個小山丘大小，橫廣二十余丈，縱長八九丈，比原來的座
+麗，又是可怖。你站在冰山之側的一塊稜角上，一眼望去，這座冰山
+有陸地上一個小山丘大小，橫廣二十餘丈，縱長八九丈，比原來的座
 船寬敞得多了。遠近都是大大小小的冰山(ice)。
 LONG );
         set("no_sleep_room",1);
         set("outdoors", "binghuo");
         set("no_clean_up", 0);
         set("item_desc", ([
-                "ice" : "那是又一座冰山，好象相距不遠耶。何不跳過去看看？\n",
+                "ice" : "那是又一座冰山，好像相距不遠耶。何不跳過去看看？\n",
         ]));
         set("exits", ([
                 "east"  : __FILE__,
@@ -53,14 +53,14 @@ tell_object(me , BLU"冰山向北飄浮了。白天銀冰反射陽光，炙得�
 目更是紅腫發痛。\n" NOR) ;
                                 break;
                         case 1:
-tell_object(me , BLU"冰山向北飄浮了。說也奇怪，越是北行，白天越長，到後來每
+tell_object(me , BLU"冰山向北飄浮了。説也奇怪，越是北行，白天越長，到後來每
 天幾乎有十一個時辰是白日，黑夜卻是一晃即過。\n" NOR) ;
                                 break;
                         case 2:
 tell_object(me , BLU
 "便在此時，眼前一"WHT"亮"BLU"，北方映出一片奇異莫可名狀的光彩，無
-數奇麗絕倫的光色，在黑暗中忽伸忽縮，大片"YEL"橙黃"BLU"之中夾著絲
-絲"MAG"淡紫"BLU"，忽而"MAG"紫色"BLU"癒深癒長，"MAG"紫色"BLU"之中，迸射出一條條"HIY"金光"BLU"、
+數奇麗絕倫的光色，在黑暗中忽伸忽縮，大片"YEL"橙黃"BLU"之中夾着絲
+絲"MAG"淡紫"BLU"，忽而"MAG"紫色"BLU"愈深愈長，"MAG"紫色"BLU"之中，迸射出一條條"HIY"金光"BLU"、
 "HIB"藍光"BLU"、"HIG"綠光"BLU"、"HIR"紅光"BLU"。\n" NOR) ;
                                 break;
                         case 3:

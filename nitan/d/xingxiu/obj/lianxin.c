@@ -21,7 +21,7 @@ int throw_ob(object me, object victim)
 {
         int ap, dp;
 
-   message_vision(BLU"$N一揚手，衣袖中飛出一點藍印印的火花，如一只飛螢，向$n撲過去。\n" NOR, me, victim);
+   message_vision(BLU"$N一揚手，衣袖中飛出一點藍印印的火花，如一隻飛螢，向$n撲過去。\n" NOR, me, victim);
    ap = me->query_skill("feixing-shu", 1);
    dp = (int)victim->query_skill("dodge");
    ap*=query("combat_exp", me)/1000;

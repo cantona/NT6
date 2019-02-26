@@ -68,7 +68,7 @@ mapping *action = ({
         "lvl"    : 160,
         "damage_type" : "刺傷"
 ]),
-([      "action" : "$N輕嘆一聲，手中的$w化作一到長弧點向$n",
+([      "action" : "$N輕歎一聲，手中的$w化作一到長弧點向$n",
         "force"  : 240,
         "attack" : 230,
         "dodge"  : 170,

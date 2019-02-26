@@ -4,7 +4,7 @@ void create()
 {
         set("short", "土路");
         set("long", @LONG
-你走在湘鄂交界的土路上，偶爾會有人騎著馬匆匆而過。這裡已
+你走在湘鄂交界的土路上，偶爾會有人騎着馬匆匆而過。這裏已
 經是湖南地界，往北進入湖北境內。
 LONG );
         set("outdoors", "tiezhang");

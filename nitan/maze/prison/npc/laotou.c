@@ -31,7 +31,7 @@ void create()
 {
         set_name("牢頭", ({ "lao tou" }));
         set("title", BLU "無惡不做" NOR);
-        set("long", "監獄裡的牢頭。\n");
+        set("long", "監獄裏的牢頭。\n");
         set("gender", "男性");
         set("age", 35);
         set("attitude", "peaceful");

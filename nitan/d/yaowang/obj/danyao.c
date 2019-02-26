@@ -9,10 +9,10 @@ object me = this_object();
         object where = environment();
         if (!wizardp(this_player())) 
         {
-        set("no_get","你手裡一鬆"+query("name", this_object())+"從指間滑落！\n");
+        set("no_get","你手裏一鬆"+query("name", this_object())+"從指間滑落！\n");
         set("no_give","這麼珍貴的藥，哪能隨便給人？\n");
         set("no_drop","這麼寶貴的藥，扔了多可惜呀！\n");
-        set("no_sell","凡人哪裡知道"+query("name", this_object())+"的價值？還是自己留著吧。\n");
+        set("no_sell","凡人哪裏知道"+query("name", this_object())+"的價值？還是自己留着吧。\n");
         if( !query("my_owner", me) && interactive(who) )
         set("my_owner",query("id",  who), me);
    
@@ -49,7 +49,7 @@ void create()
         else {
         set("unit", "株");
         set("long", "一顆香氣四溢的丹藥。\n");
-        set("canoe",1); // 身份鑒定,防止假藥材
+        set("canoe",1); // 身份鑑定,防止假藥材
         set("value", 0);
         set("drug_type", "補品");
         }

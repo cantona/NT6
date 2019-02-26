@@ -29,7 +29,7 @@ int perform(object me, object target)
         addn("neili", -1000, me);
         me->receive_damage("qi", 0);
         set_temp("nuozhuan", 1, me);
-        msg = MAG "\n$N" MAG "提起真氣，默念" + name() + "心法，心中卸力拆招的法門已達發乎自然之境。\n" NOR;
+        msg = MAG "\n$N" MAG "提起真氣，默唸" + name() + "心法，心中卸力拆招的法門已達發乎自然之境。\n" NOR;
 
         message_combatd(msg, me);
 

@@ -7,7 +7,7 @@ void create()
 {
         set("short", "陶然茶居");
         set("long", @LONG
-這是專供品嘗和銷售茶葉的店舖，店裡清香四溢進門就有心曠神怡
+這是專供品嚐和銷售茶葉的店鋪，店裏清香四溢進門就有心曠神怡
 之感。牆上有一價目表(sign)。
 LONG );
         set("outdoors", "quanzhou");

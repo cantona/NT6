@@ -7,7 +7,7 @@ void create()
         set("board_id", "noname_b");
         set("noname_board", 1);
         set("private_board", 1);
-        set("long", "說吧，除了巫師沒人知道是你說的內容。\n" );
+        set("long", "説吧，除了巫師沒人知道是你説的內容。\n" );
         setup();
         set("capacity", 100);
         replace_program(BULLETIN_BOARD);

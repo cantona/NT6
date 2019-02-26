@@ -36,7 +36,7 @@ int exert(object me, object target)
 
         message_combatd(HIC "$N" HIC "縱聲長嘯，運轉「" HIW "冰"
                         HIR "火" HIW "九重天" HIC "」真氣，聚力"
-                        "于掌間，光華流動，煞為壯觀。\n" NOR, me);
+                        "於掌間，光華流動，煞為壯觀。\n" NOR, me);
 
         addn_temp("apply/unarmed_damage", skill*4, me);
         addn_temp("apply/damage", skill*4, me);

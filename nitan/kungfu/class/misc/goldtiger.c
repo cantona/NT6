@@ -11,7 +11,7 @@ void create()
         set("gender", "男性");
         set("age", 2000);
         set("long", @LONG
-這是一只巨大的老虎，渾身金黃色，頭為白色，猶如白玉。
+這是一隻巨大的老虎，渾身金黃色，頭為白色，猶如白玉。
 LONG );
         set("combat_exp", 1000000000);
         set("shen_type", 0);

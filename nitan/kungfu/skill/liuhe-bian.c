@@ -30,13 +30,13 @@ mapping *action = ({
         "skill_name"  : "剁鞭訣",
         "damage_type" : "割傷"
 ]),
-([      "action": "$N一招「鉤鞭訣」，$w大開大闔，自上而下劃出一個大弧，筆直劈向$n",
+([      "action": "$N一招「鈎鞭訣」，$w大開大闔，自上而下劃出一個大弧，筆直劈向$n",
         "force" : 60,
         "dodge" : 45,
         "parry" : 45,
         "damage": 20,
         "lvl"   : 60,
-        "skill_name"  : "鉤鞭訣",
+        "skill_name"  : "鈎鞭訣",
         "damage_type" : "割傷"
 ]),
 ([      "action": "$N手中$w一沉，一招「砍鞭訣」，雙手持刃攔腰反切，砍向$n的胸口",
@@ -87,7 +87,7 @@ int valid_learn(object me)
 {
 
         if( query("con", me)<24 )
-                  return notify_fail("你的先天根骨暗弱無法修煉六合鞭。\n");
+                  return notify_fail("你的先天根骨闇弱無法修煉六合鞭。\n");
         if( query("max_neili", me)<2000 )
                 return notify_fail("你的內力修為不夠。\n");
 

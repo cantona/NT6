@@ -60,9 +60,9 @@ void create()
         set("class", "fighter");
 
         set("inquiry", ([
-                "name": "老夫陸乘風，是這裡的莊主。",
+                "name": "老夫陸乘風，是這裏的莊主。",
                 "rumors": "很久沒有曲師兄的消息了，不知他是否出了意外？",
-                "here": "這裡是歸雲莊，你隨便轉轉吧，累了請到客房休息。",
+                "here": "這裏是歸雲莊，你隨便轉轉吧，累了請到客房休息。",
                 "畫" : "這幅畫上的詞是一位大英雄、大豪傑所作。",
                 "詞" : (: ask_ci :),
                 "藥" : "靈藥我交付小兒冠英保管了。",
@@ -70,23 +70,23 @@ void create()
                 "六壬集氣丸": "靈藥我交付小兒冠英保管了。",
                 "九花玉露丸": "靈藥我交付小兒冠英保管了。",
                 "字" : "這幅字是老朽寫的，你看怎麼樣？",
-                "大英雄": "你先看看詞再說，難道你沒有讀過這首詞嗎？",
-                "大豪傑": "你先看看詞再說，難道你沒有讀過這首詞嗎？",
+                "大英雄": "你先看看詞再説，難道你沒有讀過這首詞嗎？",
+                "大豪傑": "你先看看詞再説，難道你沒有讀過這首詞嗎？",
                 "岳飛"  : (: ask_yue :),
-                "岳武穆" : (: ask_yue :),
+                "嶽武穆" : (: ask_yue :),
                 "東邪": "那是恩師呀，雖然他打斷我們的雙腿，還逐我們出島，但一日為師，終生為父呀！",
                 "黃藥師": "那是恩師呀，雖然他打斷我們的雙腿，還逐我們出島，但一日為師，終生為父呀！",
                 "恩師" : "就是桃花島主黃藥師了，他聰明絕頂，文才武學，書畫琴棋，算數韜略，醫卜星相，奇門五行，無一不精。",
                 "家師" : "就是桃花島主黃藥師了，他聰明絕頂，文才武學，書畫琴棋，算數韜略，醫卜星相，奇門五行，無一不精。",
                 "黃蓉": "嗯，那是小師妹，是家師的掌上明珠。",
-                "桃花島": "好懷念原來大家在那裡的時光呀，曲師兄臨離島時還畫了海圖呢。",
+                "桃花島": "好懷念原來大家在那裏的時光呀，曲師兄臨離島時還畫了海圖呢。",
                 "陸乘風": "就是老夫我，有什麼事嗎？",
-                "陸冠英": "那是小犬，以前送在仙都派門下習藝，現在師父恩準在我門下學藝了。",
-                "冠英": "那是小犬，以前送在仙都派門下習藝，現在師父恩準在我門下學藝了。",
-                "歸雲莊": "這裡是花了我無數心血才建起來的，與別的莊院相比如何？",
+                "陸冠英": "那是小犬，以前送在仙都派門下習藝，現在師父恩准在我門下學藝了。",
+                "冠英": "那是小犬，以前送在仙都派門下習藝，現在師父恩准在我門下學藝了。",
+                "歸雲莊": "這裏是花了我無數心血才建起來的，與別的莊院相比如何？",
                 "太湖": "就在莊前不遠，是一個煙波浩淼的大湖。",
                 "九宮": "九宮之義，法以靈龜。二四為肩，六八為足；左三右七，戴九履一；五居中間。",
-                "八卦": "乾三連，坤六段；離中虛，坎中滿；震仰盂，艮覆碗；兌上缺，巽下斷。",
+                "八卦": "乾三連，坤六段；離中虛，坎中滿；震仰盂，艮覆碗；兑上缺，巽下斷。",
                 "五行": "金生水，水生木，木生火，火生土，土生金。金克木，木克土，土克水，水克火，火克金。",
                 "易經": "是一本講解伏羲六十四卦的奇書，一般人難得看懂。",
                 "周易": "是一本講解伏羲六十四卦的奇書，一般人難得看懂。",
@@ -95,7 +95,7 @@ void create()
 
         set("chat_chance", 5);
         set("chat_msg",({
-                "陸乘風對著那幅畫長嘆一聲，默然不語，似有滿腹心事。\n",
+                "陸乘風對着那幅畫長歎一聲，默然不語，似有滿腹心事。\n",
         }));
         setup();
 
@@ -116,11 +116,11 @@ void attempt_apprentice(object ob)
                         command("say 不過我看" + RANK_D->query_respect(ob) + "的資質還不錯，這樣吧，我寫一封推薦信，你拿去找家師吧。");
                         letter = new("/d/guiyun/obj/tuijian_xin");
                         set("owner",query("id",  ob), letter);
-                        letter_desc="這是陸乘風寫給黃藥師的一封信，上面寫著：\n恩師在上：今有"+query("name", ob)+"一名，欲拜入本派，弟子不敢擅專，又念其資質不錯，特此推薦與恩師定奪。乘風叩首\n";
+                        letter_desc="這是陸乘風寫給黃藥師的一封信，上面寫着：\n恩師在上：今有"+query("name", ob)+"一名，欲拜入本派，弟子不敢擅專，又念其資質不錯，特此推薦與恩師定奪。乘風叩首\n";
                         set("long", letter_desc, letter);
                         letter->move(ob);
                         message_vision("陸乘風掏出一封推薦信，寫上$N的名字，交給了$N。\n", ob);
-                        command("say 家師是桃花島主黃藥師，你需要從臨安附近坐船上島。至于桃花島的位置嘛，就在...在...讓我想想看...");
+                        command("say 家師是桃花島主黃藥師，你需要從臨安附近坐船上島。至於桃花島的位置嘛，就在...在...讓我想想看...");
                         command("consider");
                         command("doubt chengfeng");
                         command("sigh");
@@ -170,7 +170,7 @@ void init()
                         set("title", "桃花島棄徒", ob);
                 }
                 else if( query("shen", ob) >= 100000){
-                        message_vision("陸乘風對$N喝道：你是大俠，我早就說過，家師最恨沽名吊譽的偽君子。\n", ob);
+                        message_vision("陸乘風對$N喝道：你是大俠，我早就説過，家師最恨沽名吊譽的偽君子。\n", ob);
                         message_vision("陸乘風對$N喝道：從今天起，你再也不是桃花島的弟子了！\n", ob);
                         delete("family", ob);
                         set("title", "桃花島棄徒", ob);
@@ -194,7 +194,7 @@ int do_kill(string arg)
                 }
                 else {
                         message_vision("陸乘風向$N喝道：大膽狂徒，竟敢來歸雲莊撒野？！\n", me);
-                        message_vision("陸乘風對$N說道：你先讓開，讓我來收拾這個" + RANK_D->query_rude(me) + "！\n", ob);
+                        message_vision("陸乘風對$N説道：你先讓開，讓我來收拾這個" + RANK_D->query_rude(me) + "！\n", ob);
                         kill_ob(me);
                 }
                 set("vendetta/桃花島", 1, me);
@@ -207,7 +207,7 @@ int ask_ci()
 {
         object ob = this_player();
 
-        command("say 寫這首詞的大英雄、大豪傑就是岳武穆。\n");
+        command("say 寫這首詞的大英雄、大豪傑就是嶽武穆。\n");
         if( !query_temp("guiyun_lutemp", ob) )
                 set_temp("guiyun_lutemp", 1, ob);
         return 1;
@@ -218,11 +218,11 @@ int ask_yue()
         object ob = this_player();
 
         if( query_temp("guiyun_lutemp", ob) >= 1){
-                command("say 可惜我的字意有一句與岳武穆原意不太相符，不知" + RANK_D->query_respect(ob) + "能否看出來？\n");
+                command("say 可惜我的字意有一句與嶽武穆原意不太相符，不知" + RANK_D->query_respect(ob) + "能否看出來？\n");
                 set_temp("guiyun_lutemp", 2, ob);
         }
         else {
-                command("say 岳武穆是我非常敬重的一位大英雄。\n");
+                command("say 嶽武穆是我非常敬重的一位大英雄。\n");
         }
         return 1;
 }
@@ -232,9 +232,9 @@ int do_answer(string arg)
         object ob = this_player();
 
         if( query_temp("guiyun_lutemp", ob) == 2){
-                tell_room(environment(ob), ob->name() + "向著陸乘風侃侃而談。\n", ({ob}));
-                if (arg == "知音少,弦斷有誰聽?" || arg == "知音少，弦斷有誰聽？" 
-                || arg == "知音少,弦斷有誰聽" || arg == "知音少，弦斷有誰聽") {
+                tell_room(environment(ob), ob->name() + "向着陸乘風侃侃而談。\n", ({ob}));
+                if (arg == "知音少,絃斷有誰聽?" || arg == "知音少，絃斷有誰聽？" 
+                || arg == "知音少,絃斷有誰聽" || arg == "知音少，絃斷有誰聽") {
                         if (!present("tuifa tujie", ob) && query_temp("tuifa_give") < 5) {
                                 say("陸乘風長噓一聲：我這番心情，今日才被你看破，可謂平生一知已，這本腿法就送給你吧。\n");
                                 new("/d//guiyun/obj/tuifa")->move(ob);
@@ -247,10 +247,10 @@ int do_answer(string arg)
                 }
                 else {
                         command("?"+query("id", ob));
-                        message_vision("陸乘風疑惑地看著$N：" + RANK_D->query_respect(ob) + "似乎應該多學些書法繪畫吧？\n", ob);
+                        message_vision("陸乘風疑惑地看着$N：" + RANK_D->query_respect(ob) + "似乎應該多學些書法繪畫吧？\n", ob);
                 }
                 return 1;
         }
-//                say("陸乘風說：這一句字透紙背，你可能諶透我的心境？\n");
+//                say("陸乘風説：這一句字透紙背，你可能諶透我的心境？\n");
         return 0;
 }

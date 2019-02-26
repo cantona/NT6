@@ -1,7 +1,7 @@
 // 支持幻境內基本指令
-// 上一個文件寫不下了，寫到這裡來
+// 上一個文件寫不下了，寫到這裏來
 // 本指令參考 cmd i 而寫
-// 實話說，仔細地看了 i 指令，發現 hj 裡實在大有可精簡之處，sigh
+// 實話説，仔細地看了 i 指令，發現 hj 裏實在大有可精簡之處，sigh
 // naihe 6:39 03-11-5
 string get_msg( object *list, int type )
 {
@@ -122,7 +122,7 @@ int do_gi()
         hjinv -= list;
     }
 
-    // 如果還有剩余，即為特殊類
+    // 如果還有剩餘，即為特殊類
     if( n = sizeof( hjinv )  )
         msg += sprintf( cl+"特殊類(共 %d 件)：\n"NOR"%s\n",
                 n, get_msg( hjinv, 0 ) );
@@ -142,8 +142,8 @@ int do_hjleave(string arg)
         return errs( 
             "當你在幻境遊戲中需要暫時離開時，請使用這個指令。\n"
             "這個指令可以讓你的遊戲角色受到保護，不會受到來自任何方面的攻擊。\n"
-            "不過，關于你的一些遊戲內容會繼續，例如遊戲總時間到達後你會結束遊戲；等等。\n"
-            "每局遊戲裡只能使用三次這個指令。使用時，你必須在空閒狀態下。\n"
+            "不過，關於你的一些遊戲內容會繼續，例如遊戲總時間到達後你會結束遊戲；等等。\n"
+            "每局遊戲裏只能使用三次這個指令。使用時，你必須在空閒狀態下。\n"
             "\n          如果你確實想暫時離開，請輸入： hjleave yes\n\n"
         );
     if( query_temp("hjleave_usetimes", me) >= 3 )
@@ -153,7 +153,7 @@ int do_hjleave(string arg)
        || query_temp("hj_fighting", me )
        || query_temp("hj_need_waiting", me )
     )
-        return errs( "你還忙著呢！你必須在空閒時才能使用這個指令。\n");
+        return errs( "你還忙着呢！你必須在空閒時才能使用這個指令。\n");
     if( query("room_mark", environment(me)) == 1 )
         return errs( "你不能在 1 號地點使用這個指令。\n" );
     addn_temp("hjleave_usetimes", 1, me);

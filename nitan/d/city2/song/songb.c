@@ -11,7 +11,7 @@ void create()
 
         NPC_D->generate_cn_name(this_object());
         set("gender", "男性");
-        set("long", "這是一名大宋將軍，正威風凜凜地巡視著自己的隊伍。\n");
+        set("long", "這是一名大宋將軍，正威風凜凜地巡視着自己的隊伍。\n");
 
         set("int", 30);
         set("str", 30 + random(20));

@@ -23,7 +23,7 @@ mapping *action = ({
         "skill_name"  : "單鞭",
         "damage_type" : "瘀傷"
 ]),
-([      "action" : "$N左手回收，右手由鉤變掌，由右向左，使一招「印掌」，向$n的$l打去",
+([      "action" : "$N左手回收，右手由鈎變掌，由右向左，使一招「印掌」，向$n的$l打去",
         "force"  : 62,
         "dodge"  : 45,
         "parry"  : 57,
@@ -63,7 +63,7 @@ mapping *action = ({
         "skill_name"  : "撥雲見日",
         "damage_type" : "瘀傷"
 ]),
-([      "action" : "$N左手變掌橫于胸前，右拳由肘下穿出，一招「七星拳」，錘向$n的$l",
+([      "action" : "$N左手變掌橫於胸前，右拳由肘下穿出，一招「七星拳」，錘向$n的$l",
         "force"  : 152,
         "dodge"  : 95,
         "parry"  : 108,

@@ -32,7 +32,7 @@ int main(object me, string str)
 
         where = environment(ob);
         if (! where)
-                return notify_fail("這個人不知道在那裡耶...\n");
+                return notify_fail("這個人不知道在那裏耶...\n");
 
         /*
         write(sprintf("%s(%s)現在在%s(%s).\n",
@@ -41,7 +41,7 @@ int main(object me, string str)
                 (string)where->short(),
                 (string)file_name(where)));
         */
-        printf(YEL"\n你拿出水晶球，往裡一看，哦！%s(%s)現在在...\n\n"NOR,
+        printf(YEL"\n你拿出水晶球，往裏一看，哦！%s(%s)現在在...\n\n"NOR,
                 (string)ob->name(1),
                 query("id", ob));
         LOOK_CMD->look_room(me, where);

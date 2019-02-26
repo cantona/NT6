@@ -64,7 +64,7 @@ void wear(int phase)
 int effect_in_liquid(object ob)
 {
         if( query("liquid/type", ob) == "alcohol"){
-        tell_object(this_player(), HIG"你只覺得一股熱氣自丹田冒出，混身上下有說不出的通泰。\n"NOR);
+        tell_object(this_player(), HIG"你只覺得一股熱氣自丹田冒出，混身上下有説不出的通泰。\n"NOR);
         addn("jingli", random(10)+10*query("liquid/drunk_apply", ob), this_player());
         if( query("neili", this_player())>query("max_neili", this_player())*2 )
         set("neili",query("max_neili",  this_player())*2-1, this_player());

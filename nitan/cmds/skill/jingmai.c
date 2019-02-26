@@ -17,16 +17,16 @@ int main(object me, string arg)
                 return notify_fail(BUSY_MESSAGE);
 
         if( !arg || arg == "" ) {
-                msg  = HIC "經脈名沖穴狀態\n" NOR;
+                msg  = HIC "經脈名衝穴狀態\n" NOR;
                 msg += HIC "≡" HIY "───────────────────────" HIC "≡\n" NOR;
-                msg += HIC "\t\t小周天經脈\n" NOR;
+                msg += HIC "\t\t小週天經脈\n" NOR;
                 msg += HIC "≡" HIY "───────────────────────" HIC "≡\n" NOR;
                 msg+=HIG"陰蹺脈\t\t\t\t\t"+((query("jingmai/finish", me) || query("jingmai/陰蹺脈/chongxue_ok", me))?HIM"已打通":HIR"未打通")+"\n"NOR;
                 msg+=HIG"陽蹺脈\t\t\t\t\t"+((query("jingmai/finish", me) || query("jingmai/陽蹺脈/chongxue_ok", me))?HIM"已打通":HIR"未打通")+"\n"NOR;
                 msg+=HIG"陰維脈\t\t\t\t\t"+((query("jingmai/finish", me) || query("jingmai/陰維脈/chongxue_ok", me))?HIM"已打通":HIR"未打通")+"\n"NOR;
                 msg+=HIG"陽維脈\t\t\t\t\t"+((query("jingmai/finish", me) || query("jingmai/陽維脈/chongxue_ok", me))?HIM"已打通":HIR"未打通")+"\n"NOR;
                 msg+=HIG"帶脈\t\t\t\t\t"+((query("jingmai/finish", me) || query("jingmai/帶脈/chongxue_ok", me))?HIM"已打通":HIR"未打通")+"\n"NOR;
-                msg+=HIG"沖脈\t\t\t\t\t"+((query("jingmai/finish", me) || query("jingmai/沖脈/chongxue_ok", me))?HIM"已打通":HIR"未打通")+"\n"NOR;
+                msg+=HIG"衝脈\t\t\t\t\t"+((query("jingmai/finish", me) || query("jingmai/衝脈/chongxue_ok", me))?HIM"已打通":HIR"未打通")+"\n"NOR;
                 msg+=HIG"任外脈\t\t\t\t\t"+((query("jingmai/finish", me) || query("jingmai/任外脈/chongxue_ok", me))?HIM"已打通":HIR"未打通")+"\n"NOR;
                 msg+=HIG"督外脈\t\t\t\t\t"+((query("jingmai/finish", me) || query("jingmai/督外脈/chongxue_ok", me))?HIM"已打通":HIR"未打通")+"\n"NOR;
                 msg+=HIG"經外奇脈\t\t\t\t"+((query("jingmai/finish", me) || query("jingmai/經外奇脈/chongxue_ok", me))?HIM"已打通":HIR"未打通")+"\n"NOR;
@@ -69,10 +69,10 @@ int main(object me, string arg)
 int help(object me)
 {
         write(@HELP
-查看指定經脈沖學情況使用指令 jingmai <經脈名> 查詢。
-查看小周天銅人編號輸入 jingmai bh 查詢。
+查看指定經脈衝學情況使用指令 jingmai <經脈名> 查詢。
+查看小週天銅人編號輸入 jingmai bh 查詢。
 查看大周天銅人編號輸入 jingmai bh2 查詢。
-查看大小周天銅人編號輸入 jingmai all 查詢。
+查看大小週天銅人編號輸入 jingmai all 查詢。
 更詳細的參考文件請通過幫助文件 help zhoutian 查看。
 
 HELP

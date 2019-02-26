@@ -24,7 +24,7 @@ void create()
         set("chat_chance", 5);
 
         set("chat_msg", ({
-        "趙一仁嘆了口氣道：最近怎麼沒什麼人來送禮了，看來得想想辦法了。\n",
+        "趙一仁歎了口氣道：最近怎麼沒什麼人來送禮了，看來得想想辦法了。\n",
         }));
 
         set("inquiry", ([
@@ -43,7 +43,7 @@ int add_degree(object ob)
         if( query("degree", ob))old_degree=query("degree", ob);
         else old_degree="";
 
-        message("channel:rumor",MAG"【大宋京城】"HIY"奉天承命，皇帝詘曰："
+        message("channel:rumor",MAG"【大宋京城】"HIY"奉天承命，皇帝詔曰："
         +"策封"+old_degree+""+HIW+query("name", ob )
         +HIY" 為大宋 "NOR+degree+HIY"，欽此！\n"NOR,users());
         delete_temp("degree_jungong", ob);
@@ -97,7 +97,7 @@ int accept_object(object who, object ob)
         {
          message_vision("$N一臉憤慨：你我同朝為官，如何使這種不仁不義"
                         +"之舉？來呀，把"+query("name", who )
-                        +"給我轟出去！！\n"+"$n被一群家將連推帶打地轟"
+                        +"給我轟出去！！\n"+"$n被一羣家將連推帶打地轟"
                         +"出了尚書府！！\n"NOR,this_object(),who);
          who->move("/maze/battle3/ydmen");
          return 0;
@@ -112,7 +112,7 @@ int accept_object(object who, object ob)
           return 1;
         } else
         {
-          message_vision(HIY"$N大怒：給我滾出去！$n被一群家將連推帶打地"
+          message_vision(HIY"$N大怒：給我滾出去！$n被一羣家將連推帶打地"
            +"轟出了尚書府！！\n"NOR, this_object(),who);
           who->move("/maze/battle3/ydmen");
           return 0;

@@ -35,12 +35,12 @@ int perform(object me, object target)
                 return notify_fail("你現在的真氣不夠，難以施展" QIAN "。\n");
 
         if (! living(target))
-                return notify_fail("對方都已經這樣了，用不著這麼費力吧？\n");
+                return notify_fail("對方都已經這樣了，用不着這麼費力吧？\n");
 
         ap = me->query_skill("strike");
         dp = target->query_skill("dodge");
 
-        msg = HIC "\n$N" HIC "一聲長嘯，將內力運于雙掌之上，施出絕招"
+        msg = HIC "\n$N" HIC "一聲長嘯，將內力運於雙掌之上，施出絕招"
               "「" HIW "千掌環" HIC "」，剎時間塵土漫天飛揚，$N" HIC 
               "雙掌不斷地連續拍出，攻勢凌厲，令人不敢大意。\n" NOR;
         message_sort(msg, me, target);

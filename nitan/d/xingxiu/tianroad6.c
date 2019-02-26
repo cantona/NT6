@@ -7,9 +7,9 @@ string look_wind();
 int lian(string arg);
 void create()
 {
-        set("short", "天山頂峰");
+        set("short", "天山頂峯");
         set("long", @LONG
-這裡是天山頂峰。從這裡向周圍望去，帕米爾高原的風光盡收眼底。
+這裏是天山頂峯。從這裏向周圍望去，帕米爾高原的風光盡收眼底。
 東面一條小路可以下山。山風(wind)凜冽，極為強勁，幾乎無法站立。
 LONG
         );
@@ -20,7 +20,7 @@ LONG
         set("item_desc", ([
                 "wind" : (: look_wind :),
         ]));
-        // 可打獵標志
+        // 可打獵標誌
         set("can_hunting", 1);
         set("quarry", ([
              "can"       :  3,
@@ -69,14 +69,14 @@ int lian(string arg)
         if ( (sscanf(arg, "%s %d", arg, times)!=2 ))
                 return notify_fail("指令格式：practice|lian <技能種類> <次數>\n");
         if ( times < 1 || times > 30)
-                return notify_fail("練習次數必須大于一次，但不能超過三十次。\n");
+                return notify_fail("練習次數必須大於一次，但不能超過三十次。\n");
         if (arg!="blade")
         {
-                write("天風浩盪，你沒法練這種武功。\n");
+                write("天風浩蕩，你沒法練這種武功。\n");
                 return 1;
         }
         if (me->is_busy())
-                return notify_fail("你現在正忙著呢。\n");
+                return notify_fail("你現在正忙着呢。\n");
         if( me->is_fighting() )
                 return notify_fail("你已經在戰鬥中了，學一點實戰經驗吧。\n");
         if( !stringp(skillname = me->query_skill_mapped(arg)) )
@@ -96,7 +96,7 @@ int lian(string arg)
                 notify_fail("你現在不能練習這項技能。\n");
                 if( !SKILL_D(skillname)->valid_learn(me) ) return 0;
 
-                notify_fail("你試著練習" + to_chinese(skillname) + "，但是並沒有任何進步。\n");
+                notify_fail("你試着練習" + to_chinese(skillname) + "，但是並沒有任何進步。\n");
                 if( skill*skill*skill/10>query("combat_exp", me) )
                 {
                         return notify_fail("也許是缺乏實戰經驗，你的練習總沒法進步。\n");
@@ -105,7 +105,7 @@ int lian(string arg)
                 if( SKILL_D(skillname)->practice_skill(me) )
                 {
                         me->improve_skill(skillname, skill_basic/2 +1, skill_basic > skill? 0: 1);
-                        write(HIY"借助天風浩盪的威勢，你的"+to_chinese(skillname)+"大有進步了！\n"NOR);
+                        write(HIY"藉助天風浩蕩的威勢，你的"+to_chinese(skillname)+"大有進步了！\n"NOR);
                 }
                 else return 0;
         }

@@ -4,7 +4,7 @@ inherit NPC;
 
 int ask_job();
 int ask_fail();
-string *yz_east = ({//這裡定義強盜的可能產生地
+string *yz_east = ({//這裏定義強盜的可能產生地
         "/d/taishan/yidao1",
         "/d/quanzhou/qzroad1",
         "/d/quanzhou/qzroad4",
@@ -19,7 +19,7 @@ string *yz_east = ({//這裡定義強盜的可能產生地
         "/d/huanghe/xueguan",
         });
 
-string *yz_south = ({//這裡定義強盜的可能產生地
+string *yz_south = ({//這裏定義強盜的可能產生地
         "/d/wudang/wdroad4",
         "/d/fuzhou/fzroad6",
         "/d/henshan/hsroad1",
@@ -34,7 +34,7 @@ string *yz_south = ({//這裡定義強盜的可能產生地
         "/d/xiaoyao/shulin2",
         });
 
-string *yz_north = ({//這裡定義強盜的可能產生地
+string *yz_north = ({//這裏定義強盜的可能產生地
         "/d/shaolin/hanshui1",
         "/d/shaolin/jiulou2",
         "/d/shaolin/shijie1",
@@ -47,7 +47,7 @@ string *yz_north = ({//這裡定義強盜的可能產生地
         "/d/city2/zhuang9",
         });
 
-string *yz_west = ({//這裡定義強盜的可能產生地
+string *yz_west = ({//這裏定義強盜的可能產生地
         "/d/xiangyang/northgate2",
         "/d/xiangyang/hutong2",
         "/d/xiangyang/westjie3",
@@ -134,7 +134,7 @@ int ask_job()
                 }
         else {
                 command("nod" + me->query("id"));
-                command("say " + RANK_D->query_respect(me) + "能為江山社稷著想，真是太好了。");
+                command("say " + RANK_D->query_respect(me) + "能為江山社稷着想，真是太好了。");
                 me->set("kill_qiangdao", 1);
                 me->set("quest3/quest_type", "殺");
                 me->set("quest3/quest", "強盜");
@@ -161,7 +161,7 @@ int ask_job()
 
                 default : 
                         ob = new(__DIR__"qiangdao");                   
-                        ob->set("long", "他是星宿弟子，常常下山打劫，尖尖的下巴上掛著幾屢胡須，一看就知道他是個邪魔外道之輩。\n"
+                        ob->set("long", "他是星宿弟子，常常下山打劫，尖尖的下巴上掛着幾屢鬍鬚，一看就知道他是個邪魔外道之輩。\n"
                         "他是" + me->query("name") + "(" + me->query("id") + ")" + "的目標。\n");
                         ob->set_skill("zhaixinggong", random(skill));
                         ob->set_skill("huagong-dafa", random(skill));
@@ -226,7 +226,7 @@ int ask_fail()
         
         if (me->query("kill_qiangdao") == 1) {
                 command("haha");
-                command("say 你這身手也敢來懲姦除惡，都怪老夫當初看錯了人。");
+                command("say 你這身手也敢來懲奸除惡，都怪老夫當初看錯了人。");
                 command("chat " + me->query("name") + "狂妄自大，致使強盜危害一方。來人啦，杖責三十，逐出堂外！");
                 me->move("/d/city/yamen");
                 me->add("qi",-300);

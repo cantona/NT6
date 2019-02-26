@@ -7,7 +7,7 @@ void create()
         set_name("程玉環", ({ "cheng yuhuan", "cheng", "yuhuan" }));
         set("long", 
                 "她就是程知府的獨生女兒，長得如花似玉，貌賽天仙的程玉環。\n"
-                "據說她曾經在武當門下學過劍法。\n");
+                "據説她曾經在武當門下學過劍法。\n");
                 
         set("title", "知府千金");
         set("nickname", "玉仙姑");

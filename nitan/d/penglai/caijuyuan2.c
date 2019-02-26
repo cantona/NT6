@@ -6,7 +6,7 @@ void create()
 {
         set("short", "彩菊園");
         set("long",@LONG
-這裡花香宜人，四周菊花開得正盛，各種顏色，令人眼花繚亂，
+這裏花香宜人，四周菊花開得正盛，各種顏色，令人眼花繚亂，
 目不暇接。
 LONG);
 
@@ -16,7 +16,7 @@ LONG);
                 "southeast"        : __DIR__"dongliju",
         ]));
         set("no_rideto", 1);         // 設置不能騎馬到其他地方
-        set("no_flyto", 1);          // 設置不能從起來地方騎馬來這裡
+        set("no_flyto", 1);          // 設置不能從起來地方騎馬來這裏
         set("no_die", 1);            // 死亡後移動到扁鵲居
         set("penglai", 1);           // 表示在蓬萊島
 

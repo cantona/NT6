@@ -33,9 +33,9 @@ int exert(object me, object target)
         addn("neili", -skill*5, me);
         me->receive_damage("qi", 0);
 
-        message_combatd(HIM "$N" HIM "默念易筋經的口訣: "
-                            "元氣,氣存于內,放于外。"
-                            "易筋,孕懷于息,舒于支....\n"
+        message_combatd(HIM "$N" HIM "默唸易筋經的口訣: "
+                            "元氣,氣存於內,放於外。"
+                            "易筋,孕懷於息,舒於支....\n"
                         HIW "一股詳和的白色罡氣自頭頂迅速"
                         HIW "遊遍" HIW "$N" HIW "的奇經八脈！\n"
                         HIR "你的內傷剎那間大為好轉！！\n" NOR, me);

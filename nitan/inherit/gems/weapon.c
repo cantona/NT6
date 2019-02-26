@@ -39,9 +39,9 @@ void spec_prop(object me, string socket, int socket_level, int mode)
                 break;
         case "amethyst":
                 if (mode == 1)
-                        message_vision(MAG + query("name") + MAG"發出柔和的光芒圍繞著$N，激發了$P的戰鬥力！\n"NOR, me);
+                        message_vision(MAG + query("name") + MAG"發出柔和的光芒圍繞着$N，激發了$P的戰鬥力！\n"NOR, me);
                 else
-                        message_vision(MAG"隨著紫色光芒慢慢的散去，$N的戰鬥力又復原了。\n"NOR, me);
+                        message_vision(MAG"隨着紫色光芒慢慢的散去，$N的戰鬥力又復原了。\n"NOR, me);
                 me->add_temp("apply/attack", 50 * socket_level * mode);
                 break;
         case "diamond":
@@ -114,7 +114,7 @@ if ((int)victim->query("jing")+100 > damage)
                 break;
         case "sapphire":
                 if (!victim->is_busy()){
-                        msg = HIB"一道奇異的藍光包圍著$n，$p只覺天旋地轉，身體無法動彈！\n"NOR;
+                        msg = HIB"一道奇異的藍光包圍着$n，$p只覺天旋地轉，身體無法動彈！\n"NOR;
                         victim->start_busy(random(socket_level) + 1);
                 }
                 break;
@@ -134,7 +134,7 @@ if ((int)victim->query("jing")+100 > damage)
                         if (random(query("weapon_prop/damage")) > weapon->query("weapon_prop/damage") / 2
                         && random(me->query("str")) > victim->query("str") / 2) {
                                 if (query("skill_type") == "sword" || query("skill_type") == "blade" || query("skill_type") == "axe") {
-                                        message_vision(HIW"只聽見「□」地一聲輕響，$N手中的" + weapon->query("name") + HIW"已經被" + query("name") + HIW"削為兩截！\n"NOR, victim);
+                                        message_vision(HIW"只聽見「哐」地一聲輕響，$N手中的" + weapon->query("name") + HIW"已經被" + query("name") + HIW"削為兩截！\n"NOR, victim);
                                         weapon->unequip();
                                         weapon->move(environment(victim));
                                         weapon->set("name", "斷掉的" + weapon->query("name"));
@@ -143,7 +143,7 @@ if ((int)victim->query("jing")+100 > damage)
                                         victim->reset_action();
                                 };
                                 if (query("skill_type") == "staff" || query("skill_type") == "hammer" || query("skill_type") == "club") {
-                                        message_vision(HIW "$N只覺得手中" + weapon->query("name") + HIW"把持不定，脫手飛出！\n" NOR, victim);
+                                        message_vision(HIW "$N只覺得手中" + weapon->query("name") + HIW"把持不定，脱手飛出！\n" NOR, victim);
                                         weapon->unequip();
                                         weapon->move(environment(victim));
                                         victim->reset_action();
@@ -161,7 +161,7 @@ if ((int)victim->query("jing")+100 > damage)
                 }
                 break;
         case "skull":
-                msg = WHT"忽然間，$n只覺鬼哭狼嚎聲不絕于耳，三魂六魄都給吸了出去！\n"NOR;
+                msg = WHT"忽然間，$n只覺鬼哭狼嚎聲不絕於耳，三魂六魄都給吸了出去！\n"NOR;
                 damage = damage_bonus * socket_level / 10;
                 if (victim->query("qi") < damage)
                         damage = victim->query("qi");

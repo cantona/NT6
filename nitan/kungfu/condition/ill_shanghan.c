@@ -14,7 +14,7 @@ int update_condition(object me, int duration)
         if( duration < 1 ) return 0;
 
         message("vision", HIG + me->name() + "冷不丁打了個冷戰，頭"
-                          "昏沉沉的，好象是得傷寒病了。\n" NOR,
+                          "昏沉沉的，好像是得傷寒病了。\n" NOR,
                 environment(me), me);
 
         if( !living(me) && me->query("qi") < 3 ) {
@@ -23,7 +23,7 @@ int update_condition(object me, int duration)
                 return 0;
         }
         else
-                tell_object(me, HIB "你打了個冷戰，頭昏沉沉的，好象是得傷寒病了！\n" NOR );
+                tell_object(me, HIB "你打了個冷戰，頭昏沉沉的，好像是得傷寒病了！\n" NOR );
 
         me->receive_wound("qi", 3);
         me->receive_damage("qi", 3);

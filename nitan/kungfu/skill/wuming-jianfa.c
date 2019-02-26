@@ -4,49 +4,49 @@
 inherit SKILL;
 
 mapping *action = ({
-([      "action":HIB"\n$N默念 ≒幽≒,劍氣縱橫直直指向$n的$l"NOR,
+([      "action":HIB"\n$N默唸 ≈幽≈,劍氣縱橫直直指向$n的$l"NOR,
         "force" : 160,
         "lvl" : 0,
 "skill_name" : "★幽★字訣",
         "damage_type":        "刺傷"
 ]),
-([      "action":HIR"\n$N默念 ≒恨≒,劍氣縱橫直直指向$n的$l"NOR,
+([      "action":HIR"\n$N默唸 ≈恨≈,劍氣縱橫直直指向$n的$l"NOR,
         "force" : 240,
         "lvl" : 50,
 "skill_name" : "★恨★字訣",
         "damage_type":        "刺傷"
 ]),
-([      "action":HIY"\n$N默念 ≒怨≒,劍氣縱橫直直指向$n的$l"NOR,
+([      "action":HIY"\n$N默唸 ≈怨≈,劍氣縱橫直直指向$n的$l"NOR,
         "force" : 280,
         "lvl" : 75,
 "skill_name" : "★怨★字訣",
         "damage_type":        "刺傷"
 ]),
-([      "action":HIM"\n$N默念 ≒愛≒,劍氣縱橫直直指向$n的$l"NOR,
+([      "action":HIM"\n$N默唸 ≈愛≈,劍氣縱橫直直指向$n的$l"NOR,
         "force" : 320,
         "lvl" : 120,
 "skill_name" : "★愛★字訣",
         "damage_type":        "刺傷"
 ]),
-([      "action":HIC"\n$N默念 ≒思≒,劍氣縱橫直直指向$n的$l"NOR,
+([      "action":HIC"\n$N默唸 ≈思≈,劍氣縱橫直直指向$n的$l"NOR,
         "force" : 380,
         "lvl" : 230,
 "skill_name" : "★思★字訣",
         "damage_type":        "刺傷"
 ]),
-([      "action":HIG"\n$N默念 ≒情≒,劍氣縱橫直直指向$n的$l"NOR,
+([      "action":HIG"\n$N默唸 ≈情≈,劍氣縱橫直直指向$n的$l"NOR,
         "force" : 420,
         "lvl" : 250,
 "skill_name" : "★情★字訣",
         "damage_type":        "刺傷"
 ]),
-([      "action":CYN"\n$N默念 ≒恩≒,劍氣縱橫直直指向$n的$l"NOR,
+([      "action":CYN"\n$N默唸 ≈恩≈,劍氣縱橫直直指向$n的$l"NOR,
         "force" : 450,
         "lvl" : 330,
 "skill_name" : "★恩★字訣",
         "damage_type":        "刺傷"
 ]),
-([      "action":HIR"\n$N默念 ≒仇≒,劍氣縱橫直直指向$n的$l"NOR,
+([      "action":HIR"\n$N默唸 ≈仇≈,劍氣縱橫直直指向$n的$l"NOR,
         "force" : 480,
         "lvl" : 380,
 "skill_name" : "★仇★字訣",
@@ -95,13 +95,13 @@ int practice_skill(object me)
 {
         object weapon;
 
-        return notify_fail("無名劍法博大精深，無法靠著普通的練習提升。\n");
+        return notify_fail("無名劍法博大精深，無法靠着普通的練習提升。\n");
 
         if( !objectp(weapon=query_temp("weapon", me) )
          || query("skill_type", weapon) != "sword" )
                 return notify_fail("你使用的武器不對。\n");
         if((int)me->query_skill("wuming-jianfa",1) < 300)
-                return notify_fail("你試著練習無名劍法,但是沒有任何進步。\n");
+                return notify_fail("你試着練習無名劍法,但是沒有任何進步。\n");
         if( query("qi", me)<40 )
                 return notify_fail("你的體力不夠練無名劍法。\n");
         me->receive_damage("qi", 20);
@@ -161,7 +161,7 @@ void skill_improved(object me)
                 } else
                 {
                         tell_object(me, HIC "你通曉了無名劍法「" HIW "劍"
-                                        "動莫名" HIC "」的奧秘。\n" NOR);
+                                        "動莫名" HIC "」的奧祕。\n" NOR);
                         me->improve_skill("martial-cognize", 1500000);
                         me->improve_skill("martial-cognize", 1500000);
                         me->improve_skill("martial-cognize", 1500000);

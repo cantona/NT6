@@ -9,10 +9,10 @@ void create()
         set_name("獅子", ({ "lion", "shi zi", "shi" }) );
         set("race", "走獸");
         set("age", 25);
-        set("long", "一只黃毛長鬃的雄獅，爪牙銳利，神情威武。\n");
-        set("msg_fail", "$n沖$N呲牙吼了一聲");
+        set("long", "一隻黃毛長鬃的雄獅，爪牙鋭利，神情威武。\n");
+        set("msg_fail", "$n衝$N呲牙吼了一聲");
         set("msg_succ", "$n一面口中向$N荷荷發威，一面向後退了半步，似乎有些怯了");
-        set("msg_trained","$n低吼著在$N的面前伏了下來");
+        set("msg_trained","$n低吼着在$N的面前伏了下來");
         set("auto_follow",1);
         set("attitude", "aggressive");
 
@@ -36,9 +36,9 @@ void create()
         set("chat_chance", 10);
         set("chat_msg", ({
                 (: this_object(), "random_move" :),
-                "獅子來回走動，朝著你端相了半晌，口中荷荷的發威。\n",
+                "獅子來回走動，朝着你端相了半晌，口中荷荷的發威。\n",
                 "獅子長長吼了一聲。\n",
-                "獅子趴在地上，擺頭抖了抖鬃毛，一雙眼睛緊緊盯著你。\n",
+                "獅子趴在地上，擺頭抖了抖鬃毛，一雙眼睛緊緊盯着你。\n",
         }) );
 
         setup();
@@ -80,7 +80,7 @@ int do_look(string arg)
 
         printf(query("long", this_object())+
         COMBAT_D->eff_status_msg(query("eff_qi")* 100 / query("max_qi")) + "\n" 
-        + "它身上馱著：\n");
+        + "它身上馱着：\n");
         for (i = 0; i < sizeof(inv); i++)
                 printf("%s \n", inv[i]->short());
         return 1;

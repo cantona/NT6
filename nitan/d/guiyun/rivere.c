@@ -9,7 +9,7 @@ void create()
 {
         set("short", "小河東岸");
         set("long", @LONG
-這裡是一條小河之濱，四下都是亂墳。往周圍看去，並無橋樑可以
+這裏是一條小河之濱，四下都是亂墳。往周圍看去，並無橋樑可以
 過河(he)。
 LONG );
         set("exits", ([
@@ -44,10 +44,10 @@ int do_jump(string arg)
                 if( query_temp("guiyun_river", me) )
                 {
                         message("vision", me->name() + "飛身躍在水面，身形穩凝，河水只及小腿，一步步走過了河。\n", environment(me), ({me}) );
-                        write("你踩著水底的暗樁，慢慢的走過了小河。\n");
+                        write("你踩着水底的暗樁，慢慢的走過了小河。\n");
                         me->move(__DIR__"riverw");
                         message("vision", "只見河面上人影閃動，" + me->name() +  "如飄在水面一般，直走過來。\n", environment(me), ({me}) );
-                        write("你踩著暗樁慢慢地走過了小河。\n");
+                        write("你踩着暗樁慢慢地走過了小河。\n");
                         delete_temp("guiyun_river", me);
                         return 1;
                 }

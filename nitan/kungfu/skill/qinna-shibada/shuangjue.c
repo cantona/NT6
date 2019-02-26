@@ -59,7 +59,7 @@ int perform(object me, object target)
         if( query("neili", me)<1000 )
                 return notify_fail("你的真氣不夠，無法施展出拳腿雙絕。\n");
 
-        message_vision(RED "$N一聲清嘯，拳腳齊施，使出昆侖絕學「拳腿雙絕」迅捷無倫地攻向$n！\n"NOR,me, target);
+        message_vision(RED "$N一聲清嘯，拳腳齊施，使出崑崙絕學「拳腿雙絕」迅捷無倫地攻向$n！\n"NOR,me, target);
           addn("neili", -400, me);
                  addn_temp("apply/str", y, me);
                  addn_temp("apply/attack", y, me);

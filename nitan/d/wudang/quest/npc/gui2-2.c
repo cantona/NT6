@@ -5,7 +5,7 @@
 inherit NPC;
 
 string comeon = HIB"一陣悶響由遠及近，你急向響聲發出之處看去，" +
-                "但見一具棺木似乎被劇烈的撞動著，突然棺蓋被一股怪力擊飛。\n" +
+                "但見一具棺木似乎被劇烈的撞動着，突然棺蓋被一股怪力擊飛。\n" +
                 HIR"一股血腥之氣筆直的向你撲來。\n"NOR; 
 
 string *stya = ({ 
@@ -24,13 +24,13 @@ void check_time();
 
 void create()
 {
-    set_name("僵屍", ({ "corpse ghost", "ghost" }));
+    set_name("殭屍", ({ "corpse ghost", "ghost" }));
     set("gender", "男性");
     set("race", "妖魔");
     set("age", 200);
     set("per", 12);
     set("long",
-        "一個人死後變成的僵屍，異常兇猛，常吸食各種生靈的血，使之枯竭而亡。\n");
+        "一個人死後變成的殭屍，異常兇猛，常吸食各種生靈的血，使之枯竭而亡。\n");
     set("combat_exp", 50000);
     set("shen_type", -1);
     set("attitude", "peaceful");

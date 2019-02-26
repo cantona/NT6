@@ -6,9 +6,9 @@ void create()
 {
         set("short", "小山路");
         set("long", @LONG
-這裡是華山的一條小山路，地勢較為平緩，不似其它地方那麼險
-峻。你走在這裡，四周靜悄悄的，你就象走進了一個世外桃源。東面
-好象有一扇竹門(men)。
+這裏是華山的一條小山路，地勢較為平緩，不似其它地方那麼險
+峻。你走在這裏，四周靜悄悄的，你就象走進了一個世外桃源。東面
+好像有一扇竹門(men)。
 LONG );
         set("exits", ([ /* sizeof() == 1 */
                 "southwest" : __DIR__"xiaolu1",
@@ -49,7 +49,7 @@ int do_knock(string arg)
                 return notify_fail("你要敲什麼？\n");
 
         if (query("exits/east"))
-                return notify_fail("大門已經是開著了。\n");
+                return notify_fail("大門已經是開着了。\n");
 
         if(!( room = find_object(__DIR__"xiuxishi")) )
                 room = load_object(__DIR__"xiuxishi");
@@ -59,8 +59,8 @@ int do_knock(string arg)
                 if( query_temp("sleeping_person", room)>0 )
                 {
                 message_vision(
-"$N剛輕輕地敲了一下門，就聽見裡面傳出一陣雷鳴般的鼾聲，\n"
-"顯然裡面的人睡得跟死豬似的，怎麼敲都沒用了\n",
+"$N剛輕輕地敲了一下門，就聽見裏面傳出一陣雷鳴般的鼾聲，\n"
+"顯然裏面的人睡得跟死豬似的，怎麼敲都沒用了\n",
                         this_player());
                 }
                 else if( query_temp("person_inside", room)>0 )
@@ -69,13 +69,13 @@ int do_knock(string arg)
                         {
                                 case 0:
                                 message_vision(
-"$N輕輕地敲了敲門，只聽見裡面有人很不耐煩地吼到：\n"
-"剛躺下就來敲門！我睡著了，聽不見！！！\n",        this_player());
+"$N輕輕地敲了敲門，只聽見裏面有人很不耐煩地吼到：\n"
+"剛躺下就來敲門！我睡着了，聽不見！！！\n",        this_player());
                                         break;
                                 case 1: 
                                         message_vision(
-"$N輕輕地敲了敲門，只聽見裡面有些響動，\n"
-"好象有人在踱來踱去，拿不定主意是否開門。\n", this_player());
+"$N輕輕地敲了敲門，只聽見裏面有些響動，\n"
+"好像有人在踱來踱去，拿不定主意是否開門。\n", this_player());
                                         break;
                         }               
                 }
@@ -104,7 +104,7 @@ int do_push(string arg)
                 return notify_fail("你要推什麼？\n");
 
         if (query("exits/east"))
-                return notify_fail("門已經是開著了。\n");
+                return notify_fail("門已經是開着了。\n");
 
         if(!(room = find_object(__DIR__"xiuxishi")))
                 room = load_object(__DIR__"xiuxishi");
@@ -122,7 +122,7 @@ int do_push(string arg)
                 }
                 else 
                 {
-                        message_vision("$N想把門推開，卻發覺門被人從裡面閂上了。\n",this_player());
+                        message_vision("$N想把門推開，卻發覺門被人從裏面閂上了。\n",this_player());
                 }
         }
 
@@ -138,7 +138,7 @@ int do_kick(string arg)
                 return notify_fail("你要踢什麼？\n");
 
         if (query("exits/east"))
-                return notify_fail("大門開著，你踢它幹嗎？。\n");
+                return notify_fail("大門開着，你踢它幹嗎？。\n");
 
         if(!( room = find_object(__DIR__"xiuxishi")) )
                 room = load_object(__DIR__"xiuxishi");

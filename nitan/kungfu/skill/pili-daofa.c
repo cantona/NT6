@@ -3,7 +3,7 @@
 inherit SKILL;
 
 mapping *action = ({
-([      "action" : "$N發出一聲厲吼，手中$w以一招「翻江攪海」，帶著呼呼風聲向$n的$l砍去",
+([      "action" : "$N發出一聲厲吼，手中$w以一招「翻江攪海」，帶着呼呼風聲向$n的$l砍去",
         "force"  : 30,
         "attack" : 10,
         "dodge"  : 30,
@@ -43,7 +43,7 @@ mapping *action = ({
         "skill_name" :"攬月高塘",
         "damage_type":"砍傷"
 ]),
-([      "action":"$N一招「斜陽疏影」，身形一躍，斜沖向前，右手揮動$w向下直斬$n的$l。",
+([      "action":"$N一招「斜陽疏影」，身形一躍，斜衝向前，右手揮動$w向下直斬$n的$l。",
         "force" :100,
         "attack":65,
         "dodge" :82,
@@ -73,7 +73,7 @@ int valid_learn(object me)
 
         if( !objectp(weapon=query_temp("weapon", me)) ||
             query("skill_type", weapon) != "blade" )
-                return notify_fail("你必須手裡拿著刀才能練刀法。\n");
+                return notify_fail("你必須手裏拿着刀才能練刀法。\n");
 
         if ((int)me->query_skill("riyue-xinfa", 1) < 100)
                 return notify_fail("你的內功心法火候太淺，不能學霹靂刀法。\n");

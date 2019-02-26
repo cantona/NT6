@@ -8,7 +8,7 @@ void create()
         set_name("邊防官兵", ({ "guan bing", "bing" }));
         set("age", 32);
         set("gender", "男性");
-        set("long", "他是個長年駐守這裡的邊防兵。\n");
+        set("long", "他是個長年駐守這裏的邊防兵。\n");
         set("attitude", "peaceful");
         set("str", 33);
         set("int", 16);
@@ -58,7 +58,7 @@ void init()
                         if( query("guanbing", ob) )
                         {
                                 addn("guanbing", -1, ob);
-                                message_vision(HIY"$n對著$N看了半天，最後招了招手讓$N快走。\n"NOR, ob, me);
+                                message_vision(HIY"$n對着$N看了半天，最後招了招手讓$N快走。\n"NOR, ob, me);
                                 return;
                         }
                         message_vision(HIY"$n將$N攔住，在$N身上摸索了半天。\n"NOR, ob, me);

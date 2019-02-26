@@ -4,9 +4,9 @@ void create()
 {
         set("short", "客店");
         set("long", @LONG
-這是一家價錢低廉的客棧，生意非常興隆。外地遊客很多都選擇這裡落
-腳，你可以在這裡打聽到各地的風土人情。店小二裡裡外外忙得團團轉，接
-待著南腔北調的客人。
+這是一家價錢低廉的客棧，生意非常興隆。外地遊客很多都選擇這裏落
+腳，你可以在這裏打聽到各地的風土人情。店小二里裏外外忙得團團轉，接
+待着南腔北調的客人。
 LONG
     );
         set("valid_startroom", 1);
@@ -33,7 +33,7 @@ int valid_leave(object me, string dir)
 {
 
         if( !query_temp("rent_paid", me) && dir == "up" )
-        return notify_fail("怎麼著，想白住啊！\n");
+        return notify_fail("怎麼着，想白住啊！\n");
 
         if( query_temp("rent_paid", me) && dir == "west" )
         return notify_fail("客官已經付了銀子，怎麼不住店就走了呢！

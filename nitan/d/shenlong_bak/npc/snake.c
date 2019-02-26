@@ -9,7 +9,7 @@ void create()
         set_name("毒蛇", ({ "snake", "she" }) );
         set("race", "爬蛇");
         set("age", 4 + random(10));
-        set("long", "一只有著三角形腦袋的蛇，尾巴沙沙做響。\n");
+        set("long", "一隻有着三角形腦袋的蛇，尾巴沙沙做響。\n");
         set("attitude", "peaceful");
 
         set("str", 26);

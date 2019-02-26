@@ -62,7 +62,7 @@ void return_to_aobai()
              message_vision("忽然$N覺得身上少了件什麼東西似的。\n", me); 
      } else 
      { 
-             message("vision", "忽然一個人走了過來，撿起"+name()+"，嘆了口氣，搖搖頭走了。\n", me); 
+             message("vision", "忽然一個人走了過來，撿起"+name()+"，歎了口氣，搖搖頭走了。\n", me); 
      } 
 
         move("/clone/misc/void");

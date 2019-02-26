@@ -6,7 +6,7 @@ string type() { return "martial"; }
 string martialtype() { return "skill"; }
 
 mapping *action = ({
-([        "action":  "$N輕抖手腕，一招"HIG"「青蛇吐芯」"NOR"，手中$w抖得筆直，直向$n卷去",
+([        "action":  "$N輕抖手腕，一招"HIG"「青蛇吐芯」"NOR"，手中$w抖得筆直，直向$n捲去",
         "lvl"   :  0,
         "skill_name" : "青蛇吐芯",
 ]),
@@ -22,7 +22,7 @@ mapping *action = ({
         "lvl"   :  30,
         "skill_name" : "蟾蜍出洞",
 ]),
-([        "action":  "$N運氣于腕，一招"BLU"「蜈蚣翻身」"NOR"，手中$w轉起無數個圈圈，帶著一股陰風，直向$n撲去",
+([        "action":  "$N運氣於腕，一招"BLU"「蜈蚣翻身」"NOR"，手中$w轉起無數個圈圈，帶着一股陰風，直向$n撲去",
         "lvl"   :  40,
         "skill_name" : "蜈蚣翻身",
 ])

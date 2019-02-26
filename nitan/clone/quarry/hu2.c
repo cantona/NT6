@@ -4,7 +4,7 @@ inherit QUARRY;
 void create()
 {
         set_name(HIW "白狐" NOR, ({ "bai hu", "bai", "hu" }));
-        set("long", HIW "這是一只全身雪白的狐，雙眼隱隱發光，透出靈氣。\n" NOR);
+        set("long", HIW "這是一隻全身雪白的狐，雙眼隱隱發光，透出靈氣。\n" NOR);
         set("no_auto_kill", 1);
 
         set("age", 1);

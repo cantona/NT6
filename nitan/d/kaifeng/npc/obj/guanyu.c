@@ -10,7 +10,7 @@ void create()
                 set_default_object(__FILE__);
         else {
                 set("unit", "座");
-                set("long", "紅面長須，一手持刀，一手拿著《春秋》。\n");
+                set("long", "紅面長鬚，一手持刀，一手拿着《春秋》。\n");
                 set("value", 50);
         }
 }

@@ -36,10 +36,10 @@ int perform(object me, object target)
                 return notify_fail("你沒有激發普渡杖法，不能使用佛光普照！\n");
 
        if (! living(target))
-              return notify_fail("對方都已經這樣了，用不著這麼費力吧？\n");
+              return notify_fail("對方都已經這樣了，用不着這麼費力吧？\n");
 
         msg = HIY "$N" HIY "縱聲長笑，揮動手中的" + weapon->name() +
-              HIY "，如泰山一般壓向$n" + HIY "，令人嘆為觀止！\n" NOR;
+              HIY "，如泰山一般壓向$n" + HIY "，令人歎為觀止！\n" NOR;
 
         ap=attack_power(me,"staff")+query("max_neili", me)/10;
         dp=defense_power(target,"force")+query("max_neili", target)/10;

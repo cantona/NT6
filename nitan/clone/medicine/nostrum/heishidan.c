@@ -33,7 +33,7 @@ int do_eat(string arg)
         if (!present(this_object(), me))
                 return notify_fail("你要吃什麼？\n");
         if (me->is_busy() )
-                return notify_fail("別急，慢慢吃，小心別噎著了。\n");
+                return notify_fail("別急，慢慢吃，小心別噎着了。\n");
 
         message_vision(HIG"$N吃下一粒黑石玉洞丹，只覺一股苦澀的滋味直透心臆。\n" NOR, me);
         if (me->query_condition("chanchu_poison"))

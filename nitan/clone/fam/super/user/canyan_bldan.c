@@ -35,7 +35,7 @@ int do_use(string arg)
 		return notify_fail("你身上沒有這個東西！\n");
 
 	if (ob->query("owner") != me->query("id"))
-		return notify_fail(ob->name() + NOR "已經于其他玩家綁定！\n");
+		return notify_fail(ob->name() + NOR "已經於其他玩家綁定！\n");
 	
 	me->set_skill("literate", me->query_skill("literate", 1) + 1);
 

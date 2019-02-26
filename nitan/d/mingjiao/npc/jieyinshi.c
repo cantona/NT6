@@ -13,7 +13,7 @@ void create()
         set_name("接引使", ({"jieyin shi","jieyin","shi",}));
         set("long",
                 "他是一位精明的中年人，身穿一件白布長袍。\n"
-                "他正在上下打量著你。\n"
+                "他正在上下打量着你。\n"
                 );
 
         set("title", HIG "明教" NOR);
@@ -101,19 +101,19 @@ int accept_object(object ob, object obj)
                         set("can_apprentice_menzhu", "風字門", ob);
 
                         command("smile");
-                        tell_object(ob,"接引使者對你說道：光明聖教光明左使手下有天、地、風、雷四門，你先到風字門門主拓跋那裡學入門武功吧！\n");
+                        tell_object(ob,"接引使者對你説道：光明聖教光明左使手下有天、地、風、雷四門，你先到風字門門主拓跋那裏學入門武功吧！\n");
                         destruct(obj);
                         return 1;
                 }
 
                 if (family["family_name"] != "明教")
                 {
-                        message_vision("$N對$n搖搖頭，說道：你已經加入"
+                        message_vision("$N對$n搖搖頭，説道：你已經加入"
                                        "其他門派了，不能再入我明教。\n",
                                        me, ob);
                         return 1;
                 } else
-                        message_vision("$N搖搖頭，對$n說道：你已經是我明教"
+                        message_vision("$N搖搖頭，對$n説道：你已經是我明教"
                                        "的人了。\n", me, ob);
         }
         command("?");

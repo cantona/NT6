@@ -68,7 +68,7 @@ void fight_ob(object ob)
 
 int accept_fight(object ob)
 {
-        message_vision("$N似乎沒有聽見$n在說什麼。\n",
+        message_vision("$N似乎沒有聽見$n在説什麼。\n",
                        this_object(), ob);
         return 0;
 }
@@ -115,7 +115,7 @@ void random_move()
         {
                 message_vision("$N急急忙忙的走了。\n", this_object());
                 CHANNEL_D->channel_broadcast("rumor",
-                        "聽說" + name() + HIM "在人間反省自新，遇"
+                        "聽説" + name() + HIM "在人間反省自新，遇"
                         "赦免返回天界。" NOR);
                 destruct(this_object());
                 return;

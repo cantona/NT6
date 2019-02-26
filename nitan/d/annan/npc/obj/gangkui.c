@@ -4,7 +4,7 @@ inherit HEAD;
 
 void create()
 {
-   set_name(HIB"籐盔"NOR, ({ "tengkui"}) );
+   set_name(HIB"藤盔"NOR, ({ "tengkui"}) );
    set_weight(1000);
    if( clonep() )
      set_default_object(__FILE__);

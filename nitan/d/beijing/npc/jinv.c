@@ -18,7 +18,7 @@ void create()
         set_skill("unarmed",20);
         set("chat_chance", 1);
         set("chat_msg", ({
-                "妓女朝著你拋了個媚眼。\n",
+                "妓女朝着你拋了個媚眼。\n",
         }) );       
 
         setup();

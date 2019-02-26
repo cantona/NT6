@@ -5,7 +5,7 @@ inherit SMITH;
 void create()
 {
         set_name("鐵匠", ({ "tiejiang", "smith" }));
-        set("title", "甲胄店老板");
+        set("title", "甲胄店老闆");
         set("shen_type", 1);
         set("gender", "男性" );
         set("age", 33);

@@ -30,7 +30,7 @@ int perform(object me, object target)
                 return notify_fail("你還沒有激發葵花魔功為內功，無法施展幽冥一擊。\n");  
                  
         if (! living(target))
-                return notify_fail("對方都已經這樣了，用不著這麼費力吧？\n");
+                return notify_fail("對方都已經這樣了，用不着這麼費力吧？\n");
 
         msg = HIR "$N" HIR "忽的撲上前去，霎時便逼近$n" HIR
               "，忽的伸手猛然刺向$p的要害！\n" NOR;

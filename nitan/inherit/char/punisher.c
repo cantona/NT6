@@ -60,7 +60,7 @@ void fight_ob(object ob)
         if (ob != query_temp("punish_ob") &&
             ! is_fighting(ob))
         {
-                message_vision("$N對$n冷笑道：“我在這裡清理門戶，你插手做甚？”\n",
+                message_vision("$N對$n冷笑道：“我在這裏清理門户，你插手做甚？”\n",
                                this_object(), ob);
                 if (! ob->is_busy())
                         ob->start_busy(2);
@@ -98,7 +98,7 @@ void start_punish(object ob, string fam)
         {
                 // no chat for punish, use default
                 command("chat " + ob->name(1) + "你背叛師門，今天我就替" + fam +
-                        "清理你這個門戶敗類，留下武功，走你的路！");
+                        "清理你這個門户敗類，留下武功，走你的路！");
         }
         command("follow " + query("id", ob));
 
@@ -106,12 +106,12 @@ void start_punish(object ob, string fam)
         {
                 tell_object(ob, "你看到" + name() + "，不由大吃一驚，慌忙轉身逃走。\n");
                 message("vision", ob->name() + "看到" + name() +
-                        "，臉色大變，慌裡慌張的轉身逃走。\n" +
-                        name() + "冷笑一聲，喝道：“那裡走？”，緊隨其後追了上去。\n",
+                        "，臉色大變，慌里慌張的轉身逃走。\n" +
+                        name() + "冷笑一聲，喝道：“那裏走？”，緊隨其後追了上去。\n",
                         environment(ob), ({ ob }));
                 ob->move("/d/city/guangchang");
                 move("/d/city/guangchang");
-                tell_object(ob, HIR "...這...這是哪裡？好熟悉啊？"
+                tell_object(ob, HIR "...這...這是哪裏？好熟悉啊？"
                             "你心底一橫，轉過身來，喝道：“不是魚"
                             "死，就是網破，來吧！”。\n" NOR);
                 message("vision", ob->name() + "慌慌張張的跑了過來，只見有一人"
@@ -153,7 +153,7 @@ void punish_ob(object ob)
         }
         message_vision("$N撇下$n，揚長而去。\n", this_object(), ob);
 
-        CHANNEL_D->do_channel(this_object(), "rumor", "聽說" +
+        CHANNEL_D->do_channel(this_object(), "rumor", "聽説" +
                             ob->name(1) + HIM "因為背叛師門，被" +
                             name() + HIM "廢去一身武功。");
         destruct(this_object());

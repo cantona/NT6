@@ -126,10 +126,10 @@ int do_flatter(string arg)
                 return 0;
         }
 
-        if (! arg ) return notify_fail("你說我什麼？\n");
+        if (! arg ) return notify_fail("你説我什麼？\n");
 
         set_temp("pending/flatter", 0, this_player());
-        message_vision(CYN "$N大聲說道：" + arg + "\n" NOR,
+        message_vision(CYN "$N大聲説道：" + arg + "\n" NOR,
                        this_player());
 
         if (strsrch(arg, "萬年不老") >=0 && (strsrch(arg, "永享仙福") >=0 &&
@@ -140,7 +140,7 @@ int do_flatter(string arg)
                 command("recruit "+query("id", this_player()));
         } else
         {
-                command("say 你如此不把我放在眼裡，我又怎能容你？!");
+                command("say 你如此不把我放在眼裏，我又怎能容你？!");
                 kill_ob(this_player());
         }
         return 1;
@@ -151,7 +151,7 @@ int do_flatter(string arg)
 void die()
 {
         message_vision("\n$N奇道：“咦,居然有人能殺了我,....”"
-                       "說完睜著兩眼倒地死了。\n", this_object());
+                       "説完睜着兩眼倒地死了。\n", this_object());
         ::die();
 }
 
@@ -202,7 +202,7 @@ mixed ask_fei()
         if (me->query_skill("shedao-qigong", 1) < 100)
                 return "你的蛇島奇功學好了麼？還好意思來問我？";
 
-        message_vision(HIM "$n" HIM "點頭道：“看清楚了！”說罷以"
+        message_vision(HIM "$n" HIM "點頭道：“看清楚了！”説罷以"
                        "掌為劍“唰唰唰”接連劈出數劍，宛若數把劍在"
                        "手，真是神乎其神！\n" NOR,
                        me, this_object());
@@ -236,7 +236,7 @@ mixed ask_xian()
         if (me->query_skill("shedao-qigong", 1) < 120)
                 return "你的蛇島奇功根基不夠，豈能就窺測其中奧妙？";
 
-        message_vision(HIM "$n" HIM "點頭道：“你且看著，說罷雙掌"
+        message_vision(HIM "$n" HIM "點頭道：“你且看着，説罷雙掌"
                        "齊推，眼見招式已老，忽然間去勢一變，宛若"
                        "龍行天際，曲折婉轉不留半點痕跡。\n" NOR,
                        me, this_object());
@@ -274,7 +274,7 @@ mixed ask_cui()
         if (me->query_skill("shedao-qigong", 1) < 120)
                 return "你的蛇島奇功根基不夠，豈能就窺測其中奧妙？";
 
-        message_vision(HIM "$n" HIM "點頭道：“你且看著，只聽$n"
+        message_vision(HIM "$n" HIM "點頭道：“你且看着，只聽$n"
                        HIM "大喝一聲，一掌擊出，隱隱然有風雷之聲。\n"
                        "一時間$N" HIM "只覺得呼吸困難，$p" HIM "掌力"
                        "猶如排山倒海一般，撼天動地。\n" NOR,
@@ -303,20 +303,20 @@ void attempt_apprentice(object ob)
 
         if( query("shen", ob)>-1000 )
         {
-                command("say 林沖拜樑山還要投名狀，你不殺兩"
+                command("say 林沖拜梁山還要投名狀，你不殺兩"
                         "個白道人物怎麼表示真心？！");
                 return;
         }
 
         if( query_temp("pending/flatter", ob) )
         {
-                command("say 你如此不把我放在眼裡，我又怎能容你？");
+                command("say 你如此不把我放在眼裏，我又怎能容你？");
                 kill_ob(ob);
                 return 0;
         } else
         {
                 command("say 我洪安通比起古往今來的聖人怎麼樣啊？");
-                message_vision("洪安通微閉雙眼，手捻長須，一副"
+                message_vision("洪安通微閉雙眼，手捻長鬚，一副"
                                "等人拍馬(flatter)的樣子。\n",
                                this_player());
                 set_temp("pending/flatter", 1, ob);
@@ -337,7 +337,7 @@ int accept_ask(object me, string topic)
         {
         case "歷練" :
         case "歷煉" :
-        case "鍛煉" :
+        case "鍛鍊" :
                 return QUEST_D->accept_ask(this_object(), me, topic);
                 break;
 
@@ -380,10 +380,10 @@ int accept_ask(object me, string topic)
                            "shen"    : -50000, ]));
                 break;
 
-        case "舍身" :
+        case "捨身" :
                 return MASTER_D->teach_pfm(me, this_object(),
                         ([ "perform" : "can_perform/yingxiong-sanzhao/sheshen",
-                           "name"    : "舍身",
+                           "name"    : "捨身",
                            "sk1"     : "yingxiong-sanzhao",
                            "lv1"     : 150,
                            "sk2"     : "force",
@@ -420,7 +420,7 @@ string ask_tool()
         if( present("shenlong qiao", me) )
                 return "你現在身上不是有鍬了嘛，怎麼又來要了？真是貪得無饜！";
         if( me->query_skill("digging", 1) <= 30)
-                return "你拿著東西也沒什麼用，還是留給別人吧！";
+                return "你拿着東西也沒什麼用，還是留給別人吧！";
         if( query("count") < 1)
                 return "來晚啦，你要的東西給別人先拿走了！";
         ob = new(__DIR__"obj/shenlongqiao");

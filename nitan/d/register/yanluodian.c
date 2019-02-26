@@ -55,7 +55,7 @@ void create()
 
         set("short", HIR "閻羅殿" NOR);
         set("long", @LONG
-這裡陰深恐怖，讓人感覺到一陣陣的寒意，兩旁列著牛頭馬面，冥
+這裏陰深恐怖，讓人感覺到一陣陣的寒意，兩旁列着牛頭馬面，冥
 府獄卒，各個威嚴肅穆。十殿閻羅，盡皆在此，地藏王坐在大堂之上，
 不怒自威，你的腿腳不禁都有些軟了。
     大殿角落有一個石頭砌成的池子，其中水清澈卻不見底，不知道它
@@ -71,7 +71,7 @@ LONG );
                 __DIR__"npc/dizangwang" : 1,
         ]));
 
-        set("no_say", "閻羅殿內陰森恐怖，你哪裡敢亂說話？\n");
+        set("no_say", "閻羅殿內陰森恐怖，你哪裏敢亂説話？\n");
 
         desc = query("item_desc/paizi");
         position = keys(born);
@@ -114,7 +114,7 @@ int do_wash(string arg)
             ! userp(me))
                 return 1;
 
-        write(HIC "你跳入忘憂池，頓時被一股激流卷了進去。\n" NOR, me);
+        write(HIC "你跳入忘憂池，頓時被一股激流捲了進去。\n" NOR, me);
 
         tmpstr = tmpint = tmpcon = tmpdex = 13;
 
@@ -196,7 +196,7 @@ int do_born(string arg)
 
         if (! arg || (! stringp(dest = born[arg]) && ! mapp(dest)))
         {
-                message_vision("牛頭惡狠狠的對$N說：你要幹什麼！投胎去哪裡？\n", me);
+                message_vision("牛頭惡狠狠的對$N説：你要幹什麼！投胎去哪裏？\n", me);
                 return 1;
         }
 
@@ -259,7 +259,7 @@ int do_born(string arg)
         }
         if (! objectp(obj))
         {
-                message_vision("牛頭一呆，搔搔頭說：怎麼好像有問題...\n", me);
+                message_vision("牛頭一呆，搔搔頭説：怎麼好像有問題...\n", me);
                 return 1;
         }
 
@@ -283,7 +283,7 @@ int do_born(string arg)
         set("age", 14, me);
         me->save();
         HELP_CMD->main(me, "rules");
-        message_vision("$N揉揉眼睛，迷惘的望著這個陌生的世界。\n", me);
+        message_vision("$N揉揉眼睛，迷惘的望着這個陌生的世界。\n", me);
 
         return 1;
 }

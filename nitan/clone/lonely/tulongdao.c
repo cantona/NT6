@@ -12,7 +12,7 @@ void create()
         else {
                 set("long", NOR + CYN "這便是號稱武林至尊的屠龍寶刀，四尺來長"
                             "的單刀，竟達一百多斤之重。\n相傳其中藏有曠世的大"
-                            "秘密。\n" NOR);
+                            "祕密。\n" NOR);
                 set("unit", "柄");
                 set("value", 800000);
                 set("no_sell", "我的天…你…你知道這是啥麼？這你也敢拿來賣？");
@@ -30,6 +30,6 @@ mixed hit_ob(object me, object victim, int damage_bonus)
 {
         victim->receive_damage("jing",query("str", me)*2,me);
         victim->receive_wound("jing",query("str", me)*2,me);
-        return HIM "屠龍刀夾帶著刺耳的破空聲劃出一道道長虹，霎時間$n"
+        return HIM "屠龍刀夾帶着刺耳的破空聲劃出一道道長虹，霎時間$n"
                HIM "只感到心神意亂。\n" NOR;
 }

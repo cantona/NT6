@@ -48,7 +48,7 @@ int perform(object me, object target)
         if( (int)me->query("neili") < 3000 )
                 return notify_fail("你現在真氣太弱，使不出「轟雷雙掌」。\n");
 
-        msg = HBBLU "\n$N驀地裡轉身，使出鐵掌掌法中的“轟雷雙掌”對$n胸口雙掌推出！\n"NOR;
+        msg = HBBLU "\n$N驀地裏轉身，使出鐵掌掌法中的“轟雷雙掌”對$n胸口雙掌推出！\n"NOR;
         if (random(me->query_dex()) > target->query_dex()/3) {
              msg += HIR"\n結果一擊命中，$n向後飛出足足三四丈遠，口中鮮血狂噴！\n"NOR;
              j *= 10;

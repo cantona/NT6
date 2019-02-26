@@ -95,7 +95,7 @@ int do_cut(object me, string arg)
                                 return notify_fail("你現在的錘法修為尚且無法進行切割。\n");
                         else
                                 msg = WHT "$N" WHT "驀地揮動" + weapon->name() +
-                                      WHT "，聽得「□咚」一聲悶響，已將$n" WHT "的"
+                                      WHT "，聽得「哐咚」一聲悶響，已將$n" WHT "的"
                                       + part[NAME] + WHT "砸了下來。\n" NOR;
                 } else
                 if (query("skill_type", weapon) == "staff")
@@ -113,7 +113,7 @@ int do_cut(object me, string arg)
                                 return notify_fail("你現在的棍法修為尚且無法進行切割。\n");
                         else
                                 msg = WHT "$N" WHT "高舉過手中" + weapon->name() +
-                                      WHT "凌空劈下，隨著「噗嗤」一聲，已將" +
+                                      WHT "凌空劈下，隨着「噗嗤」一聲，已將" +
                                       part[NAME] + WHT "從$n" WHT "上劈了下來。\n" NOR;
                 } else
                 if (query("skill_type", weapon) == "whip")
@@ -122,8 +122,8 @@ int do_cut(object me, string arg)
                                 return notify_fail("你現在的鞭法修為尚且無法進行切割。\n");
                         else
                                 msg = WHT "$N" WHT "一振手中" + weapon->name() +
-                                      WHT "，頓時只聽「□」的一聲脆響，已將$n" WHT
-                                      "的" + part[NAME] + WHT "卷了下來。\n" NOR;
+                                      WHT "，頓時只聽「噼」的一聲脆響，已將$n" WHT
+                                      "的" + part[NAME] + WHT "捲了下來。\n" NOR;
                 } else
                 msg = WHT "$N" WHT "提起手中" + weapon->name() +
                       WHT "「嗤」的一聲便將$n" WHT "的" + part[NAME] +
@@ -132,7 +132,7 @@ int do_cut(object me, string arg)
         } else
         if (me->query_skill("force") < 90)
         {
-                message_vision(WHT "$N" WHT "舉起手來，對著$n" WHT "的" +
+                message_vision(WHT "$N" WHT "舉起手來，對着$n" WHT "的" +
                                part[NAME] + WHT "一掌砍了下去，結果被震"
                                "的「哇哇」怪叫了兩聲。\n" NOR, me, this_object());
 
@@ -145,7 +145,7 @@ int do_cut(object me, string arg)
 
         message_vision(msg, me, this_object());
 
-        // 割了頭的屍體取消掉戶主
+        // 割了頭的屍體取消掉户主
         if (arg == "head")
                 delete("defeated_by", this_object());
 

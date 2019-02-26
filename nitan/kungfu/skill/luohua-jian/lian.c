@@ -75,7 +75,7 @@ int perform(object me, object target)
                         attack_time = 5 + random(attack_time);
                 }
 
-                msg = YEL"結果$p被$P一輪急攻，毫無還手余裕。\n"NOR;
+                msg = YEL"結果$p被$P一輪急攻，毫無還手餘裕。\n"NOR;
                 for(i = 0; i < attack_time; i++)
                 {
                         if (flag == 1) target = offensive_target(me);

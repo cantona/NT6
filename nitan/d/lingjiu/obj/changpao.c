@@ -11,7 +11,7 @@ void create()
        set_default_object(__FILE__);
     else {
         set("unit", "件");
-        set("long", "這是件質量上佳長袍，是由[針神]親手縫制的。\n");
+        set("long", "這是件質量上佳長袍，是由[針神]親手縫製的。\n");
         set("material", "cloth");
         set("armor_prop/armor", 10);
         set("value",100);

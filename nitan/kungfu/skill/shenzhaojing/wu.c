@@ -46,9 +46,9 @@ int perform(object me, object target)
                 return notify_fail("你的真氣不夠，無法施展" WU "。\n");
 
         if (! living(target))
-                return notify_fail("對方都已經這樣了，用不著這麼費力吧？\n");
+                return notify_fail("對方都已經這樣了，用不着這麼費力吧？\n");
 
-        msg = HIR "$N" HIR "一聲暴喝，將神照功功力聚之于拳，攜著雷霆萬"
+        msg = HIR "$N" HIR "一聲暴喝，將神照功功力聚之於拳，攜着雷霆萬"
               "鈞之勢向連環$n" HIR "攻出。\n"NOR;
 
         ap=me->query_skill("force")+query("con", me)*10;

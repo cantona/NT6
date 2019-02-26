@@ -62,7 +62,7 @@ int ask_degree()
 
         if( lv <= query("degree_jungong", ob) || query("degree_jungong", ob)<8 )
         {
-                command("say 要獲得更高的策封，大人所立軍功好象不夠啊！\n");
+                command("say 要獲得更高的策封，大人所立軍功好像不夠啊！\n");
                 return 1;
         }
 
@@ -89,7 +89,7 @@ int add_degree(object ob, int lv)
                 + "......\n"NOR,
                 users());
 
-        message("channel:rumor", MAG"【大宋京城】"HIY"奉天承命，皇帝詘曰："
+        message("channel:rumor", MAG"【大宋京城】"HIY"奉天承命，皇帝詔曰："
                 +"策封"+old_degree+""+HIW+query("name", ob )
                 + HIY" 為大宋 "NOR + degree + HIY"，欽此！\n"NOR,
                 users());

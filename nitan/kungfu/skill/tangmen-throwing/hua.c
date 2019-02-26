@@ -22,7 +22,7 @@ int perform(object me, object target)
            if( !objectp(weapon=query_temp("handing", me)) || 
   (query("id", weapon) != "tang hua" &&
            query("skill_type", weapon) != "throwing") )
-   return notify_fail("你現在手中沒有拿著暗器唐花，難以施展" + name() + "。\n");
+   return notify_fail("你現在手中沒有拿着暗器唐花，難以施展" + name() + "。\n");
 
         if ((skill = me->query_skill("tangmen-throwing", 1)) < 180)
                 return notify_fail("你的唐門暗器不夠嫻熟，難以施展" + name() + "。\n");
@@ -45,11 +45,11 @@ int perform(object me, object target)
                 return notify_fail("你現在真氣不足，難以施展" + name() + "。\n");
 
         if (! living(target))
-                return notify_fail("對方都已經這樣了，用不著這麼費力吧？\n");
+                return notify_fail("對方都已經這樣了，用不着這麼費力吧？\n");
 
         addn("neili", -100, me);
 
-        msg = HIR "\n$N" HIR "手中突然多了一支花，美得妖艷，$n" HIR "覺得有點痴了，\n$N" HIR "向$n" HIR "一笑，一揚手向$n"HIR "拋去。\n" +
+        msg = HIR "\n$N" HIR "手中突然多了一支花，美得妖豔，$n" HIR "覺得有點痴了，\n$N" HIR "向$n" HIR "一笑，一揚手向$n"HIR "拋去。\n" +
               HIG "只見那花開了，五瓣齊舒，中央花心吐蕊，煞是好看。\n" NOR;
 
         ap = attack_power(me, "throwing") * 2;
@@ -88,9 +88,9 @@ int perform(object me, object target)
                         return 1;
                 }
 
-                msg = HIR"那花越開越艷，$n" HIR "不知不覺中已痴迷了，身形一慢,微笑著倒下了，那花也謝了。\n" NOR;
+                msg = HIR"那花越開越豔，$n" HIR "不知不覺中已痴迷了，身形一慢,微笑着倒下了，那花也謝了。\n" NOR;
                 tell_object(target, HIR "\n你看到那花，果真是一朵鐵花。\n你慢慢的伸出手想摘下它，但"
-                                        "那花好象變的越來越多了，依稀中你記得那上面有一個小小的“唐”字。\n" NOR);
+                                        "那花好像變的越來越多了，依稀中你記得那上面有一個小小的“唐”字。\n" NOR);
                 weapon->hit_ob(me,target,query("jiali", me)+200);
                 weapon->move(target);
 
@@ -103,7 +103,7 @@ int perform(object me, object target)
         {
                 if( query("id", weapon) == "tang hua" )
                         tell_object(target, HIR "果真是唐花，唐門中的唐花。你運足全身的內力，身形掠的更急。\n" NOR);
-                msg = HIR "$n " HIR "身形飄忽，那花劃空而過。只聽當的一聲輕響，那花謝了，輕輕地砸在地面上。\n" NOR;
+                msg = HIR "$n " HIR "身形飄忽，那花劃空而過。只聽噹的一聲輕響，那花謝了，輕輕地砸在地面上。\n" NOR;
                 message_combatd(msg, me, target);
                 if( query("neili", target)<1000 )
                         set("neili", 0, target);

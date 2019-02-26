@@ -12,7 +12,7 @@ void create()
         else {
                 set("prep", "in");
                 set("unit", "只");
-                set("long", HIR "銅鼎中燒著熊熊烈火，火燄沖起一丈來高。\n" NOR);
+                set("long", HIR "銅鼎中燒着熊熊烈火，火焰衝起一丈來高。\n" NOR);
                 set("value", 1);
         }
 }

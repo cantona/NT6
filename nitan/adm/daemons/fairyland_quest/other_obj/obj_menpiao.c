@@ -1,6 +1,6 @@
 //                標準描述長度示例                                   |
 // 遊戲內門票
-// by naihe  2002-11-03  于茂名
+// by naihe  2002-11-03  於茂名
 
 inherit ITEM;
 
@@ -8,7 +8,7 @@ int query_autoload() { return 1; }
 
 void create()
 {
-    set_name("『幻境﹒遙遠傳說之起緣﹒幽靈顯現』 的門票", ({"men piao","piao"}));
+    set_name("『幻境·遙遠傳説之起緣·幽靈顯現』 的門票", ({"men piao","piao"}));
     set_weight(10);
     if (clonep())
         set_default_object(__FILE__);

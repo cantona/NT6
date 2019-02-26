@@ -18,7 +18,7 @@ int main(object me, string arg)
         seteuid(getuid());
 
         if (! arg)
-                return notify_fail("你要連接哪裡？\n");
+                return notify_fail("你要連接哪裏？\n");
 
         m = fetch_variable("mudlist", get_object(INTERMUD2_D));
         if( sizeof(msg = INTERMUD2_D->fetch_mudname(arg,1)) ) 

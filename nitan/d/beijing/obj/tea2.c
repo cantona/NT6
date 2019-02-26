@@ -8,7 +8,7 @@ void create()
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("long", "一個藍邊粗磁大碗，裡面盛滿了烏龍茶。\n");
+                set("long", "一個藍邊粗磁大碗，裏面盛滿了烏龍茶。\n");
                 set("unit", "個");
                 set("value", 4);
         set("max_liquid", 4);

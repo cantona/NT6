@@ -7,7 +7,7 @@ void create()
 {
         set_name("徐長老", ({ "xu  zhanglao"}));
         set("nickname", "丐幫叛徒");
-        set("long", "丐幫的叛徒，據說丐幫弟子正在四處打探他的蹤跡。\n");
+        set("long", "丐幫的叛徒，據説丐幫弟子正在四處打探他的蹤跡。\n");
         set("gender", "男性");
         set("age", 66);
         set("attitude", "peaceful");

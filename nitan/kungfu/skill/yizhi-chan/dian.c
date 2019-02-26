@@ -31,7 +31,7 @@ int perform(object me, object target)
                 return notify_fail("你的內力不夠，現在無法使用「指點江山」。\n");
 
         if (! living(target))
-                return notify_fail("對方都已經這樣了，用不著這麼費力吧？\n");
+                return notify_fail("對方都已經這樣了，用不着這麼費力吧？\n");
 
         addn("neili", -100, me);
 
@@ -52,9 +52,9 @@ int perform(object me, object target)
                                 switch (random(2))
                                 {
                                 case 0:
-                                        msg += HIR " $n連續變了幾種上乘身法，終于沒能躲過，"
+                                        msg += HIR " $n連續變了幾種上乘身法，終於沒能躲過，"
                                                 "$N的這一指正點在$n的丹田上，\n$n只覺得一口"
-                                                "涼氣，自丹田而上，心裡有種說不出的難受。\n";
+                                                "涼氣，自丹田而上，心裏有種説不出的難受。\n";
                                         damage = 3;
                                         break;
                                 case 1:
@@ -112,7 +112,7 @@ int perform(object me, object target)
                 {
                         ob->move(environment(target));
                         set("consistence", 0, ob);
-                        msg+=HIR"$n忙用"+query("name", ob)+"招架，只覺得虎口劇震，兵器脫手而出！。\n"NOR;
+                        msg+=HIR"$n忙用"+query("name", ob)+"招架，只覺得虎口劇震，兵器脱手而出！。\n"NOR;
                 } else
                 {
                         msg += HIW " $n連忙招架，只聽見「啪」地一聲，$n手中的" + ob->name()

@@ -10,7 +10,7 @@ mapping *action = ({
         "lvl" : 0,
         "skill_name" : "瓶花落硯"
 ]),
-([        "action" : "$N左掌虛托，一式"MAG"「寒梅吐蕊」"NOR"，右指穿腋疾出，指向$n的胸前",
+([        "action" : "$N左掌虛託，一式"MAG"「寒梅吐蕊」"NOR"，右指穿腋疾出，指向$n的胸前",
         "lvl" : 10,
         "skill_name" : "寒梅吐蕊"
 ]),
@@ -26,7 +26,7 @@ mapping *action = ({
         "lvl" : 40,
         "skill_name" : "仰月承霖"
 ]),
-([        "action" : "$N雙掌平托胸前，十指叉開，一式"CYN"「葉底留蓮」"NOR"，指向$n的周身大穴",
+([        "action" : "$N雙掌平託胸前，十指叉開，一式"CYN"「葉底留蓮」"NOR"，指向$n的周身大穴",
         "lvl" : 50,
         "skill_name" : "葉底留蓮"
 ]),
@@ -34,7 +34,7 @@ mapping *action = ({
         "lvl" : 60,
         "skill_name" : "清風拂桂"
 ]),
-([        "action" : "$N一式"YEL"「菊圃秋霜」"NOR"，並指如刃，一束束銳利無儔的刀氣，凌虛向$n的$l砍去",
+([        "action" : "$N一式"YEL"「菊圃秋霜」"NOR"，並指如刃，一束束鋭利無儔的刀氣，凌虛向$n的$l砍去",
         "lvl" : 70,
         "skill_name" : "菊圃秋霜"
 ]),
@@ -42,7 +42,7 @@ mapping *action = ({
         "lvl" : 80,
         "skill_name" : "伽葉微笑"
 ]),
-([        "action" : "$N左掌豎立胸前，一式"HIY"「佛祖拈花」"NOR"，右手食指扣住拇指，輕輕對著$n一彈",
+([        "action" : "$N左掌豎立胸前，一式"HIY"「佛祖拈花」"NOR"，右手食指扣住拇指，輕輕對着$n一彈",
         "lvl" : 90,
         "skill_name" : "佛祖拈花"
 ])

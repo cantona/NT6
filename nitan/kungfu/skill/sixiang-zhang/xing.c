@@ -1,7 +1,7 @@
 #include <ansi.h>
 #include <combat.h>
 
-#define XING "「" HIW "星羅棋布" NOR "」"
+#define XING "「" HIW "星羅棋佈" NOR "」"
 
 inherit F_SSERVER;
  
@@ -41,7 +41,7 @@ int perform(object me)
                 return notify_fail("你現在沒有準備使用四象掌法，無法使用" XING "。\n");
 
         if (! living(target))
-                return notify_fail("對方都已經這樣了，用不著這麼費力吧？\n");
+                return notify_fail("對方都已經這樣了，用不着這麼費力吧？\n");
 
         msg = HIW "$N" HIW "一聲清嘯，雙掌紛飛貫出，掌影重重疊疊，虛實難"
               "辨，全全籠罩$n" HIW "全身。\n" NOR;

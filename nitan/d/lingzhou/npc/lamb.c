@@ -10,7 +10,7 @@ inherit NPC;
 void create()
 {
         set_name(HIY"野黃羊"NOR, ({ "lamb" }));
-        set("long","一只野黃羊，正低頭認真地吃著草。\n");
+        set("long","一隻野黃羊，正低頭認真地吃着草。\n");
         set("race", "走畜");
         set("age", 5);
         set("int", 30);

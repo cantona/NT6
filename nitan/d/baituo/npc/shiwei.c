@@ -1,10 +1,10 @@
 inherit NPC;
 void create()
 {
-        set_name("仕衛", ({"shi wei", "wei"}) );
+        set_name("仕衞", ({"shi wei", "wei"}) );
         set("gender", "男性" );
         set("age", 25);
-        set("long", "這是個樣子威嚴的仕衛。\n");
+        set("long", "這是個樣子威嚴的仕衞。\n");
         set("attitude", "friendly");
         set("shen_type", -1);
 

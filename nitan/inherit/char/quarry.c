@@ -111,7 +111,7 @@ void die(object killer)
                               query("base_unit", item) +
                               item->name() + HIC;
 
-                        // 一定幾率獲得高級物品
+                        // 一定機率獲得高級物品
                         if (query("item3") && random(skill) > 60
                            && random(5) > 3)
                         {

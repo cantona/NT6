@@ -1,11 +1,11 @@
-// sanshen.c 華岳三神峰
+// sanshen.c 華嶽三神峯
 
 #include <ansi.h>
 #include <combat.h>
 
 inherit F_SSERVER;
 
-string name() { return HIG "華岳三神峰" NOR; }
+string name() { return HIG "華嶽三神峯" NOR; }
 
 int perform(object me, object target)
 {
@@ -39,9 +39,9 @@ int perform(object me, object target)
                 return notify_fail("你還沒有激發反兩儀刀法，無法施展" + name() + "！\n");
 
         if (! living(target))
-               return notify_fail("對方都已經這樣了，用不著這麼費力吧？\n");
+               return notify_fail("對方都已經這樣了，用不着這麼費力吧？\n");
 
-        msg = HIY "\n$N" HIY "使出華山派絕技「" HIG "華岳三神峰" HIY "」，身\n"
+        msg = HIY "\n$N" HIY "使出華山派絕技「" HIG "華嶽三神峯" HIY "」，身\n"
               "法突然變得異常靈動飄忽！手中" + weapon->name() + HIY "連連卷"
               "向$n" HIY "。" NOR;
         message_combatd(msg, me, target);
@@ -61,7 +61,7 @@ int perform(object me, object target)
                                            HIR "這刀砍中肩膀，鮮血直流。\n" NOR);
         }
 
-        msg += HIW "\n$N" HIW "回轉" + weapon->name() + HIW "，猛地大步向前，直襲$n" HIW "下盤。\n" NOR;
+        msg += HIW "\n$N" HIW "迴轉" + weapon->name() + HIW "，猛地大步向前，直襲$n" HIW "下盤。\n" NOR;
         if (ap / 2 + random(ap) < dp)
                 msg += CYN "$n" CYN "縱身而起，躲過這一招。\n" NOR;
         else

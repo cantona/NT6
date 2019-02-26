@@ -21,7 +21,7 @@ mapping *action = ({
         "skill_name" : "傷肝",
         "damage_type": "劈傷"
 ]),
-([      "action": "$N運氣于腕，一招「損心」，手中$w向一根銅棍般直擊$n胸部",
+([      "action": "$N運氣於腕，一招「損心」，手中$w向一根銅棍般直擊$n胸部",
         "force" : 180,
         "dodge" : 21,
         "parry" : 19,

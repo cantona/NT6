@@ -11,7 +11,7 @@ void create ()
         set ("long", @LONG
 這是一個寬敞的練武場。你的面前是百十個設計精巧的機關木頭
 人，它們被擺放成一個八卦陣，只要有人走進陣中它們就會自動攻擊
-不時的有人被打出陣來，這裡可以練練(jin)基本的招架功夫。
+不時的有人被打出陣來，這裏可以練練(jin)基本的招架功夫。
 LONG);
         set("exits", ([
                 "west" : __DIR__"nzlange3",
@@ -47,7 +47,7 @@ int do_lian(string arg)
 
         if ( (int)me->query_skill("parry", 1) < 51 )  
         {
-                write("你運氣于周身上下，小心翼翼的走進木人陣中，不一會兒就被打的鼻青臉腫！\n可是你對基本招架有了一點了解。\n");
+                write("你運氣於周身上下，小心翼翼的走進木人陣中，不一會兒就被打的鼻青臉腫！\n可是你對基本招架有了一點了解。\n");
                 addn("jingli", jingli_cost, me);
                 addn("qi", qi_cost, me);
                 me->improve_skill("parry",(15+random(query("int", me)/2)));
@@ -55,12 +55,12 @@ int do_lian(string arg)
         else
                 if ( (int)me->query_skill("parry", 1) < 101 )  
                 {
-                write("你運氣于四肢，邁步走進木人陣中，不斷擋開木人的襲擊！\n你對基本招架有了一些認識。\n");
+                write("你運氣於四肢，邁步走進木人陣中，不斷擋開木人的襲擊！\n你對基本招架有了一些認識。\n");
                         addn("jingli", jingli_cost, me);
                         addn("qi", qi_cost, me);
                         me->improve_skill("parry",(20+random(query("int", me)/2)));
                 }
                 else
-                        write("你甩手走進木人陣中，竟沒有一個木人能夠打中你的身體！\n你在這裡已經學不到什麼了！\n");
+                        write("你甩手走進木人陣中，竟沒有一個木人能夠打中你的身體！\n你在這裏已經學不到什麼了！\n");
         return 1;
 }

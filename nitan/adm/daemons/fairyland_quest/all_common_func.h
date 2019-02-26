@@ -14,7 +14,7 @@ void reset()
 
 int block_cmds()
 {
-    write("幻境裡不允許使用這個指令。關于 hj 裡使用的一些基本指令，請輸入 help hj2003 查詢。\n");
+    write("幻境裏不允許使用這個指令。關於 hj 裏使用的一些基本指令，請輸入 help hj2003 查詢。\n");
     return 1;
 }
 
@@ -47,9 +47,9 @@ void get_out_here( object me )
 {
     if( !me ) return;
 
-    message_vision( HIR"$N"HIR"不知怎麼的闖進了幻境密林裡，一陣奇異的震盪把$N"HIR"拋了出去。\n"NOR,me);
+    message_vision( HIR"$N"HIR"不知怎麼的闖進了幻境密林裏，一陣奇異的震盪把$N"HIR"拋了出去。\n"NOR,me);
     me->move( __DIR__"room_door_hj" );
-    message_vision("一陣莫名的震盪忽來忽逝，$N不知怎麼的就忽地出現在這裡了。\n",me);
+    message_vision("一陣莫名的震盪忽來忽逝，$N不知怎麼的就忽地出現在這裏了。\n",me);
 }
 
 
@@ -67,7 +67,7 @@ int valid_leave(object me, string dir)
     string temp;
 
     if( query_temp("hj_move_busy", me)>1000 )
-        return notify_fail("密林裡糾結重重，你無法行走太快。\n");
+        return notify_fail("密林裏糾結重重，你無法行走太快。\n");
 
     temp=query_temp("hj_need_waiting", me);
     if( temp && me->is_busy() )
@@ -76,7 +76,7 @@ int valid_leave(object me, string dir)
         {
             case "healing":return notify_fail("你正在療傷呢，走不開。\n");
             case "fighting":return notify_fail("你還在戰鬥中，被纏住了走不開。\n");
-            default:return notify_fail("你正忙著呢，無法離開。\n");
+            default:return notify_fail("你正忙着呢，無法離開。\n");
         }
     }
 
@@ -117,5 +117,5 @@ void games_random_move( object me )
     if(!rooms) rooms = load_object(random_rooms);
     if( !rooms ) rooms = this_object();
     this_player()->move(rooms);
-    message_vision(HIG"$N"HIG"被一股奇怪的震盪送到了這裡來。\n"NOR,me);
+    message_vision(HIG"$N"HIG"被一股奇怪的震盪送到了這裏來。\n"NOR,me);
 }

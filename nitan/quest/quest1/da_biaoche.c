@@ -24,7 +24,7 @@ mapping default_dirs = ([
         "southwest" : "西南",
         "up"        : "上面",
         "down"      : "下面",
-        "enter"     : "裡面",
+        "enter"     : "裏面",
         "out"       : "外面",
 ]);
 
@@ -37,7 +37,7 @@ void create()
         set("unit", "輛");
         set("value", 0);
         set("long", 
-                HIM "一輛福威鏢局的大鏢車，上面結結實實蓋著蓬布，一群鏢頭趕(drive)著車，牢牢地護在一邊。" NOR); 
+                HIM "一輛福威鏢局的大鏢車，上面結結實實蓋着蓬布，一羣鏢頭趕(drive)着車，牢牢地護在一邊。" NOR); 
         set("no_clean_up", 1);
         setup();
         call_out("destroy1", 2, this_object());
@@ -65,14 +65,14 @@ int destroy2(object ob)
         if (objectp(ob))
         {
                 /*
-                message("channel:rumor", MAG "【鏢局傳聞】由于" + query("owner_name") +
+                message("channel:rumor", MAG "【鏢局傳聞】由於" + query("owner_name") +
                         "率領的鏢隊未能如期抵達，福威鏢局已派人前去接管鏢隊！\n" NOR, users());
                 */
                 
                 tell_object(all_inventory(environment(ob)),
-                            HIW "忽然，遠遠走來一群人，原來是總鏢頭派人前來了，為首的鏢師\n" +
-                            "邊走嘴裡還邊罵道：“他奶奶的！等了這麼久也還沒到，總鏢頭\n" +
-                            "還以為讓人給劫了，害老子白跑一趟！”說完，一幹人等拉起鏢\n" +
+                            HIW "忽然，遠遠走來一羣人，原來是總鏢頭派人前來了，為首的鏢師\n" +
+                            "邊走嘴裏還邊罵道：“他奶奶的！等了這麼久也還沒到，總鏢頭\n" +
+                            "還以為讓人給劫了，害老子白跑一趟！”説完，一干人等拉起鏢\n" +
                             "車，揚長而去！\n" NOR);
 
                 remove_call_out("destroy1");
@@ -125,7 +125,7 @@ int do_gan(string arg)
                 return notify_fail("指令：gan 鏢車 to 方向 \n");        
                         
         if (me->is_busy())
-                return notify_fail("你現在正忙著哩。\n");
+                return notify_fail("你現在正忙着哩。\n");
 
         flag = 0;
         killer = all_inventory(environment(me));
@@ -138,10 +138,10 @@ int do_gan(string arg)
         }
 
         if (flag)   
-                return notify_fail(CYN"你還是先把眼前的敵人解決了再說吧！\n"NOR);
+                return notify_fail(CYN"你還是先把眼前的敵人解決了再説吧！\n"NOR);
         
         env = environment(me);
-        if (! env) return notify_fail("你要去那裡？\n");
+        if (! env) return notify_fail("你要去那裏？\n");
 
         if( !mapp(exit=query("exits", env)) || undefinedp(exit[dir]) )
                 return notify_fail("這個方向過不去。\n");
@@ -151,21 +151,21 @@ int do_gan(string arg)
         if (! (obj = find_object(dest)))
                 call_other(dest, "???");
         if (! (obj = find_object(dest)))
-                return notify_fail("那裡好象過不去。\n");
+                return notify_fail("那裏好像過不去。\n");
 
         if (! undefinedp(default_dirs[dir]))
                 target = default_dirs[dir];
         else
                 target=query("short", obj);
 
-        message_vision(HIG "$N趕著鏢車往" + target + "駛去。\n" NOR, me);  
+        message_vision(HIG "$N趕着鏢車往" + target + "駛去。\n" NOR, me);  
         
         if( file_name(obj) != query("file", ob) )
         {
                 if (ob->move(obj) && me->move(obj) && parter->move(obj)) 
                 {
                         all_inventory(env)->follow_me(me, dir);
-                        message_vision(HIG "$N趕著鏢車駛了過來。\n" NOR, me);
+                        message_vision(HIG "$N趕着鏢車駛了過來。\n" NOR, me);
                         lvl = me->query_skill("driving"); 
                         if (random(lvl + 100) < 50) {
                         me->start_busy(random(2) + 1);
@@ -227,7 +227,7 @@ int do_gan(string arg)
                 reward_score2 = reward_exp1 / 40;
                 /*
                 message("channel:rumor",HIM"【鏢局傳聞】"+query("name", me)+
-                        "率領的鏢隊歷經千辛萬苦，終于順利抵達！\n" NOR,
+                        "率領的鏢隊歷經千辛萬苦，終於順利抵達！\n" NOR,
                         users());
                 */
                 tell_object(me, HIW "在此次運鏢中你獲得了" +

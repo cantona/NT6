@@ -76,7 +76,7 @@ int main(object me, string arg)
                 }
 
                 if (! objectp(obj))
-                        return notify_fail("這裡沒有這樣東西。\n");
+                        return notify_fail("這裏沒有這樣東西。\n");
 
                 if (! obj->query_amount())
                         return notify_fail( obj->name() + "不能被分開拿走。\n");
@@ -85,7 +85,7 @@ int main(object me, string arg)
                         return notify_fail("東西的個數至少是一個。\n");
 
                 if (amount > obj->query_amount())
-                        return notify_fail("這裡沒有那麼多的" + obj->name() + "。\n");
+                        return notify_fail("這裏沒有那麼多的" + obj->name() + "。\n");
 
                 else if (amount == (int)obj->query_amount())
                 {
@@ -145,7 +145,7 @@ int main(object me, string arg)
                 if (env == my_env)
                         msg = me->name() + "把地上的東西都揀了起來。\n";
                 else
-                        msg = me->name() + "把" + env->name() + "裡面的東西都拿了出來。\n";
+                        msg = me->name() + "把" + env->name() + "裏面的東西都拿了出來。\n";
                 message("vision", msg, environment(me), ({ me }));
                 write("撿好了。\n");
                 return 1;

@@ -10,7 +10,7 @@ void create()
         set("gender", "女性");
         set("age", 18);
         set("shen_type", -1);
-        set("long", "青青的侍女，十七八的年紀。實際上是魔教天美宮主派在青青身邊的臥底。\n"
+        set("long", "青青的侍女，十七八的年紀。實際上是魔教天美宮主派在青青身邊的卧底。\n"
                     "秋月的肌膚，比秋天的月亮還要皎潔、媚人。\n");
         set("attitude", "peaceful");
 

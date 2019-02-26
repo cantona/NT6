@@ -6,7 +6,7 @@ int is_snake(){return 1;}
 void create()
 {
         set_name(HIM "珊"HIY"瑚" HIC "蛇" NOR, ({ "shanhu she", "shanhu", "she" }));
-        set("long", RED "這是一條五彩斑斕的珊瑚蛇，據說毒性乃在眼鏡蛇之上。\n" NOR);
+        set("long", RED "這是一條五彩斑斕的珊瑚蛇，據説毒性乃在眼鏡蛇之上。\n" NOR);
 
         set("age", 90);
         set("str", 135);

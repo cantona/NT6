@@ -63,7 +63,7 @@ void close_men()
 int do_close(string arg)
 {
         if ( !is_open() )
-                return notify_fail("門已經是關著的了。\n");
+                return notify_fail("門已經是關着的了。\n");
 
         if (!arg || (arg != "men" && arg != "door"))
                 return notify_fail("你要關什麼？\n");
@@ -82,7 +82,7 @@ int do_open(string arg)
         object me = this_player();
 
         if (is_open())
-                return notify_fail("大門已經是開著了。\n");
+                return notify_fail("大門已經是開着了。\n");
 
         if (!arg || (arg != "men" && arg != "door" && arg != query("door_dir")))
                 return notify_fail("你要開什麼？\n");
@@ -96,9 +96,9 @@ int do_open(string arg)
                 room->open_door(__FILE__);
                 
                 if( query_temp("sleeped", me) )
-                message("vision","吱地一聲，"+query("name", me)+"精神煥發地從裡面把門打開了。\n",room);
+                message("vision","吱地一聲，"+query("name", me)+"精神煥發地從裏面把門打開了。\n",room);
                 else
-                message("vision","梆地一聲，"+query("name", me)+"從裡面把門打開，一臉的不耐煩。\n",room);
+                message("vision","梆地一聲，"+query("name", me)+"從裏面把門打開，一臉的不耐煩。\n",room);
                 
                 remove_call_out("close_men");
                 call_out("close_men", 10);

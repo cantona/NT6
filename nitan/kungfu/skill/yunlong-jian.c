@@ -19,9 +19,9 @@ mapping *action = ({
         "lvl" : 15,
         "skill_name" : "志當存高遠"
 ]),
-([        "action":"$N縱身輕輕躍起，一式"HIW"「表裡俱澄澈」"NOR"，劍光如水，一瀉千裡，洒向$n全身",
+([        "action":"$N縱身輕輕躍起，一式"HIW"「表裏俱澄澈」"NOR"，劍光如水，一瀉千里，灑向$n全身",
         "lvl" : 20,
-        "skill_name" : "表裡俱澄澈"
+        "skill_name" : "表裏俱澄澈"
 ]),
 ([        "action":"$N手中$w中宮直進，一式"BLU"「隨風潛入夜」"NOR"，無聲無息地對準$n的$l刺出一劍",
         "lvl" : 30,
@@ -35,9 +35,9 @@ mapping *action = ({
         "lvl" : 50,
         "skill_name" : "雲龍聽梵音"
 ]),
-([        "action":"$N左指凌空虛點，右手$w逼出丈許雪亮劍芒，一式"RED"「萬裡一點紅」"NOR"刺向$n的嚥喉",
+([        "action":"$N左指凌空虛點，右手$w逼出丈許雪亮劍芒，一式"RED"「萬里一點紅」"NOR"刺向$n的咽喉",
         "lvl" : 60,
-        "skill_name" : "萬裡一點紅"
+        "skill_name" : "萬里一點紅"
 ]),
 ([        "action":"$N合掌跌坐，一式"MAG"「我心化雲龍」"NOR"，$w自懷中躍出，如疾電般射向$n的胸口",
         "lvl" : 70,
@@ -55,7 +55,7 @@ mapping *action = ({
         "lvl" : 100,
         "skill_name" : "高處不勝寒"
 ]),
-([        "action" : "$N募的使一招"HIR"「紅葉舞秋山」"NOR"，頓時劍光中幾朵血花洒向$n全身",
+([        "action" : "$N募的使一招"HIR"「紅葉舞秋山」"NOR"，頓時劍光中幾朵血花灑向$n全身",
         "lvl" : 110,
         "skill_name" : "紅葉舞秋山"
 ]),

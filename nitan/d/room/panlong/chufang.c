@@ -18,7 +18,7 @@ void create()
 {
         set("short", "廚房");
         set("long", @LONG
-此處便是盤龍居的廚房，武功再高終究也不能辟谷，飯總是要吃的。
+此處便是盤龍居的廚房，武功再高終究也不能辟穀，飯總是要吃的。
 LONG );
 
         set("default_long", "此處便是ROOM_NAME的廚房，只間幾個僕人忙來"/* EXAMPLE */

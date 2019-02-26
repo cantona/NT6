@@ -7,8 +7,8 @@ void create()
         set_name(HIR "朱雀" NOR,({"zhu que", "zhu", "que", "bird"}));
 
         set("race", "野獸");
-        set("long", HIR "\n\n一只寬達丈許的浴火鳳凰，乃四神獸之一的朱雀。\n"
-                        "它全身羽毛血紅似火，整個身體便如一團火燄。\n" NOR);
+        set("long", HIR "\n\n一隻寬達丈許的浴火鳳凰，乃四神獸之一的朱雀。\n"
+                        "它全身羽毛血紅似火，整個身體便如一團火焰。\n" NOR);
         set("age", 10000);
         set("attitude", "peaceful");
 
@@ -89,7 +89,7 @@ void die()
                 addn("combat_exp", exp, me);
                 addn("potential", pot, me);
 
-                tell_object(me, HIC "由于你斬殺神獸朱雀，你獲得了" + chinese_number(exp)
+                tell_object(me, HIC "由於你斬殺神獸朱雀，你獲得了" + chinese_number(exp)
                                 + "點經驗和" + chinese_number(pot) + "點潛能。\n" NOR);
         }
         ::die();

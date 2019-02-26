@@ -4,7 +4,7 @@ void create()
 {
         set("short", "練武場");
         set("long", @LONG
-這裡是院內的練武場，黃土場地上擺放著一些練功的石鎖，沙袋。
+這裏是院內的練武場，黃土場地上擺放着一些練功的石鎖，沙袋。
 一個小頭目正在指導弟子練武。 
 LONG);
         set("outdoors", "wudujiao");

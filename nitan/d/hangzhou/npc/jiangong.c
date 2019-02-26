@@ -14,7 +14,7 @@ void create()
 {
         set_name("監工", ({ "jian gong", "jiangong" }));
         set("long", "這是一個監工，手持長鞭，眼光一眨不眨的"
-                    "盯著眾人，口中吆喝個不停。\n");
+                    "盯着眾人，口中吆喝個不停。\n");
         set("gender", "男性");
         set("age", 32);
         set_skill("unarmed", 100);
@@ -38,7 +38,7 @@ void create()
         set("chat_msg", ({
                 "監工喝道：快！快給我幹！\n",
                 "監工一揚鞭子，罵道：他奶奶的，你給我放老實點。\n",
-                "監工打量著四周，不知道在打什麼主意。 \n",
+                "監工打量着四周，不知道在打什麼主意。 \n",
                 "監工狠狠的抽了一個人幾下，罵道：怎麼把礦石掉到地上了，你這笨蛋。\n",
         }));
 
@@ -66,7 +66,7 @@ mixed ask_mine()
                 return "我看你已經快死了，還是快滾吧！";
 
         if (me->query_str() < 28)
-                return "我說你有多點力氣，也來湊熱鬧？";
+                return "我説你有多點力氣，也來湊熱鬧？";
 
         if (! interactive(me))
                 return "...";
@@ -77,7 +77,7 @@ mixed ask_mine()
                               query_temp("job/mine", $1) && 
                               query_ip_number($1) == query_ip_number($(me)) :));
         if (sizeof(obs) > 0)
-                return "現在已經有" + obs[0]->name() + "幹活呢，你歇著吧。";
+                return "現在已經有" + obs[0]->name() + "幹活呢，你歇着吧。";
 
         set_temp("job/mine", 1, me);
         return "好，你下井去採(mine)些礦石上來，放到那邊的車上，幹了活官府自然會給錢。";
@@ -90,7 +90,7 @@ int do_mine(string arg)
 
         me = this_player();
         if (me->is_busy())
-                return notify_fail("你正忙著呢，別著急。\n");
+                return notify_fail("你正忙着呢，彆着急。\n");
 
         if( !query_temp("job/mine", me) )
                 return notify_fail("你又沒領活，瞎忙活啥？\n");
@@ -100,7 +100,7 @@ int do_mine(string arg)
                            (:userp($1) && query_temp("job/step", $1):));
         if (sizeof(obs) >= 10)
                 return notify_fail("現在採礦的人好多，排"
-                                   "隊等著下井，你只好先等會兒。\n");
+                                   "隊等着下井，你只好先等會兒。\n");
 
         set_temp("job/step", 1, me);
         me->start_busy(bind((: call_other, __FILE__, "working" :), me),
@@ -139,7 +139,7 @@ int working(object me)
                 break;
         case 3:
                 me->receive_damage("qi", 1);
-                msg = "井口幾個人看了看$N，一個人擺了擺手，讓你坐到籃子裡。";
+                msg = "井口幾個人看了看$N，一個人擺了擺手，讓你坐到籃子裏。";
                 break;
         case 4:
                 me->receive_damage("qi", 1);
@@ -151,7 +151,7 @@ int working(object me)
                 break;
         case 6:
                 me->receive_damage("qi", 1);
-                msg = "忽然$N的眼前一亮，原來是一盞油燈，昏暗的火燄不斷的跳動。";
+                msg = "忽然$N的眼前一亮，原來是一盞油燈，昏暗的火焰不斷的跳動。";
                 break;
         case 7:
                 me->receive_damage("qi", 1);
@@ -179,7 +179,7 @@ int working(object me)
                 break;
         case 13:
                 me->receive_damage("qi", 1);
-                msg = "光線越來越亮，終于到了洞口，只見井口幾個人忙得滿頭大汗。";
+                msg = "光線越來越亮，終於到了洞口，只見井口幾個人忙得滿頭大汗。";
                 break;
         case 14:
                 me->receive_damage("qi", 7);
@@ -229,7 +229,7 @@ int working(object me)
         tell_object(me, msg);
         if (finish)
         {
-                tell_object(me, "你去管事的那裡領到了工錢。\n");
+                tell_object(me, "你去管事的那裏領到了工錢。\n");
                 bonus->move(me, 1);
                 return 0;
         }
@@ -240,7 +240,7 @@ int working(object me)
 
 int halt_working(object me)
 {
-        message_vision("$N搖搖頭，沒說話，只是不幹了。\n", me);
+        message_vision("$N搖搖頭，沒説話，只是不幹了。\n", me);
         delete_temp("job/mine", me);
         delete_temp("job/step", me);
         return 1;
@@ -262,7 +262,7 @@ mixed ask_transit()
         me = this_player();
 
         if( query("score", me)<1000 )
-                return "我看你這人閱歷太淺啊，可不敢讓你運貨。";
+                return "我看你這人閲歷太淺啊，可不敢讓你運貨。";
 
         if( query("combat_exp", me)<150000 )
                 return "不行不行，你這人本事太差，路上別把貨都丟了！";
@@ -279,7 +279,7 @@ mixed ask_transit()
                              "低微的份上，我不多加追究了，可"
                              "是那車銅礦石豈能就這樣白白的丟"
                              "了？你先賠了" + chinese_number(amount) +
-                             "兩黃金，沖抵銅價再說！”\n",
+                             "兩黃金，衝抵銅價再説！”\n",
                              this_object(), me);
                 return 1;
         }
@@ -299,16 +299,16 @@ mixed ask_transit()
                                this_object(), me);
         if (c < 3000)
                 message_vision("$N看到$n，招呼道：“正好，正"
-                               "打算發車呢，就你來吧！”\n",
+                               "打算髮車呢，就你來吧！”\n",
                                this_object(), me);
         else
         if (c < 8000)
-                message_vision("$N連忙道：“快準備吧，這裡已"
+                message_vision("$N連忙道：“快準備吧，這裏已"
                                "經有好幾車了！”\n",
                                this_object(), me);
         else
                 message_vision("$N看到$n，大喜道：“正好！眼"
-                               "看這庫裡就要滿了，你來的正好！”\n",
+                               "看這庫裏就要滿了，你來的正好！”\n",
                                this_object(), me);
 
         if (c > 1000) c = 1000;

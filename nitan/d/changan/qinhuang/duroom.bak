@@ -29,7 +29,7 @@ void  create  ()
 {
         set  ("short",  "骰子房");
         set  ("long",  @LONG
-屋中間擺著一張看起來相當結實的大長條桌(table)，四周圍了
+屋中間擺着一張看起來相當結實的大長條桌(table)，四周圍了
 十幾把靠背木椅。北面牆上有一塊牌子(paizi)。
 LONG);
 
@@ -39,20 +39,20 @@ LONG);
 每一輪有個莊家，輸贏只跟莊家比。兩粒骰子，成對為大。十點最小。
 開賭順序：
 一，確定莊家(用zz或zuozhuang坐莊，retire或rz,  rangzhuang讓莊)。
-二，莊家宣布開盤(start  <賭注上限>)。
+二，莊家宣佈開盤(start  <賭注上限>)。
 三，玩家下注(bet或xz,  xiazhu)。
 四，莊家下注(bet或xz,  xiazhu)，至少要押別的玩家的總和。
 五，莊家下注就開賭了。
 
 注意事項：
 一，賭中不要離開賭場，否則一切損失概不負責。
-二，坐莊時要先拿出五兩金子的保証金，讓莊時退還。非正常丟莊(如
-　　中途離開等)保証金自動失去。
-三，每一輪從莊家宣布開盤起十分鐘之內必須完成，否則取消重來。
+二，坐莊時要先拿出五兩金子的保證金，讓莊時退還。非正常丟莊(如
+　　中途離開等)保證金自動失去。
+三，每一輪從莊家宣佈開盤起十分鐘之內必須完成，否則取消重來。
 　　非莊家所下之注可被退回，而莊家則可能會有損失。
-四，如果莊家遲遲不宣布開盤，玩家可用坐莊(zz)指令要求換莊。
-　　要求換莊後兩分鐘內莊家比須宣布開盤，否則丟莊。
-五，在下注過程中可用取消(cancel)指令。莊家用此指令則宣布此局無效，
+四，如果莊家遲遲不宣佈開盤，玩家可用坐莊(zz)指令要求換莊。
+　　要求換莊後兩分鐘內莊家比須宣佈開盤，否則丟莊。
+五，在下注過程中可用取消(cancel)指令。莊家用此指令則宣佈此局無效，
 　　大家將賭注取回，莊家非正常丟莊。非莊家用此指令則表示退出此
 　　局，賭注可取回。
                 \n"  ]));
@@ -162,7 +162,7 @@ int  do_bet(string  arg)
                 //now  let's  bet.
                 this_bet=amount*query("base_value", ob)/100;
                 if(this_bet  <  total_bet)
-                        return  notify_fail("這一輪共下注"+total_bet+"兩銀子，莊家所押不能少于這個數目。\n");           
+                        return  notify_fail("這一輪共下注"+total_bet+"兩銀子，莊家所押不能少於這個數目。\n");           
 
                 total_bet  +=  this_bet;        
                 set_temp("shaizi/bet_amount", this_bet+query_temp("shaizi/bet_amount", me), me);
@@ -201,7 +201,7 @@ int  do_cancel()
 
         if( query("id", me) == zhuang_id )
         {//I  am  zhuang-jia.
-                message_vision("$N起身說道：這一把我賭不下去了，你們把錢拿回去另找人坐莊吧！\n",  me);          
+                message_vision("$N起身説道：這一把我賭不下去了，你們把錢拿回去另找人坐莊吧！\n",  me);          
                 zhuang_id  =  "no  zhuang";
                 delete_temp("shaizi", me);
 
@@ -220,7 +220,7 @@ int  do_cancel()
                                 }
                                 else
                                 {
-                                        message_vision("糟糕！有人在這裡偷錢！$N的錢沒了。\n",  inv[i]);
+                                        message_vision("糟糕！有人在這裏偷錢！$N的錢沒了。\n",  inv[i]);
                                 }
                         }
                         if( query_temp("shaizi", inv[i]))delete_temp("shaizi", inv[i]);
@@ -233,7 +233,7 @@ int  do_cancel()
         else
         {//if  I  am  not  zhuang-jia.
                 if( query_temp("shaizi/bet_amount", me) <= 0 )
-                        return  notify_fail("你又沒下注，在這裡起什麼哄？\n");  
+                        return  notify_fail("你又沒下注，在這裏起什麼哄？\n");  
                         
                 total_bet-=query_temp("shaizi/bet_amount", me);
                 if(  total_bet  >=0  )
@@ -245,7 +245,7 @@ int  do_cancel()
                 }
                 else
                 {
-                        message_vision("糟糕！有人在這裡偷錢！$N的錢沒了。\n",  me);
+                        message_vision("糟糕！有人在這裏偷錢！$N的錢沒了。\n",  me);
                 }
         }
         return  1;
@@ -280,7 +280,7 @@ int  do_zuozhuang()
                 else
                 {
                         if(  !pay_out(me,  zhuang_deposit)  )
-                                return  notify_fail("你沒有足夠的錢交坐莊保証金。\n");
+                                return  notify_fail("你沒有足夠的錢交坐莊保證金。\n");
 
                         set_temp("shaizi_zhuang_deposit", 500, me);
                         //note  this  parameter  is  not  in  "shaizi"  array.
@@ -306,7 +306,7 @@ int  do_retire()
 
         if(game_status  ==  1  ||  game_status  ==  0  )
         {
-                message_vision("$N站起來嚷道：這個霉莊我可不坐了！說罷順手將桌上的保証金揣在懷裡。\n",  me);
+                message_vision("$N站起來嚷道：這個黴莊我可不坐了！説罷順手將桌上的保證金揣在懷裏。\n",  me);
                 zhuang_id  =  "no  zhuang";
                 game_status  =  0;
                 pay_player(me,query_temp("shaizi_zhuang_deposit", me));
@@ -338,7 +338,7 @@ int  do_start(string  arg)
                         return  notify_fail("請使用：start  <賭注上限，單位：黃金>\n");
 
                 if(current_limit  <  min_limit)
-                        return  notify_fail("你也太窮了吧？還是別坐莊了。賭注上限別少于"+chinese_number(min_limit)+"兩黃金。\n");
+                        return  notify_fail("你也太窮了吧？還是別坐莊了。賭注上限別少於"+chinese_number(min_limit)+"兩黃金。\n");
                 if(current_limit  >  max_limit)
                         return  notify_fail("你也太富了吧？別超過"+chinese_number(max_limit)+"兩黃金。\n");
 
@@ -400,7 +400,7 @@ void  check_finish(int  previous_round)
                         }
                         else
                         {
-                                message_vision("糟糕！有人在這裡偷錢！$N的錢沒了。\n",  inv[i]);
+                                message_vision("糟糕！有人在這裏偷錢！$N的錢沒了。\n",  inv[i]);
                         }
                 }
                 if( query_temp("shaizi", inv[i]))delete_temp("shaizi", inv[i]);
@@ -433,15 +433,15 @@ void  show_shaizi(object  me)
 {
         string  point_msg;
         string  *sha_msg  =  ({
-                "瞪著一對紅眼，大喝一聲：殺！手中的兩粒骰子往桌子上一摔！\n",
+                "瞪着一對紅眼，大喝一聲：殺！手中的兩粒骰子往桌子上一摔！\n",
                 "往手上吹了口氣，兩粒骰子輕輕一拋．．．\n",
                 "微微一笑，兩粒骰子往桌子上一滾．．．\n",
                 "望空作了個揖：菩薩保佑！兩粒骰子戰戰噤噤地桌上一投．．．\n",
-                "拿著兩粒骰子，抖足精神：娶老婆生孩子在此一舉！\n",
-                "衣袖一卷，大聲叫道：看我的！\n",
+                "拿着兩粒骰子，抖足精神：娶老婆生孩子在此一舉！\n",
+                "衣袖一捲，大聲叫道：看我的！\n",
                 "咬牙切齒，兩粒骰子往桌子上狠狠地一砸．．．\n",
                 "滿頭大汗，自言自語道：六對，六對，該上我家了吧．．．\n",
-                "瀟洒地作了個四方揖：這把該我贏，看好了．．．\n",
+                "瀟灑地作了個四方揖：這把該我贏，看好了．．．\n",
                 });
 
         string  *shaizi_msg  =  ({
@@ -515,12 +515,12 @@ void  game_result()
 
         if(objectp(zhuang=present(zhuang_id,  this_object()))  &&  living(zhuang)  )
         {//if  the  zhuang-jia  is  here.
-                tell_room(this_object(),query("name", zhuang)+"大聲宣布：結帳！\n");
+                tell_room(this_object(),query("name", zhuang)+"大聲宣佈：結帳！\n");
                 zhuang_point=query_temp("shaizi/point", zhuang);
         }
         else  
         {
-                tell_room(this_object(),  "莊家不知道跑到哪裡去了。大家都贏了！\n");    
+                tell_room(this_object(),  "莊家不知道跑到哪裏去了。大家都贏了！\n");    
                 zhuang_point  =  -1;
                 zhuang_id  =  "no  zhuang";
         }       
@@ -539,7 +539,7 @@ void  game_result()
                                 }
                                 else
                                 {
-                                        tell_room(this_object(),"糟糕！有人在這裡偷錢！"+query("name", inv[i])+"贏的錢拿不到了。\n");
+                                        tell_room(this_object(),"糟糕！有人在這裏偷錢！"+query("name", inv[i])+"贏的錢拿不到了。\n");
                                 }
                         }
                         else
@@ -676,7 +676,7 @@ int  do_look(string  arg)
                         }
                         else  
                         {
-                                write("莊家不知道跑到哪裡去了。\n");
+                                write("莊家不知道跑到哪裏去了。\n");
                                 zhuang_id  =  "no  zhuang";
                         }               
                 }

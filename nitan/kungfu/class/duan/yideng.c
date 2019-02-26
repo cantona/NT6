@@ -15,7 +15,7 @@ void create()
             set_name("一燈大師", ({ "yideng dashi", "yideng", "dashi" }));
             set("long", @LONG
 一燈大師乃江湖中人稱“東邪西毒，南帝北丐”中
-的南帝段皇爺，當年憑著段氏“一陽指”而獨步武
+的南帝段皇爺，當年憑着段氏“一陽指”而獨步武
 林，罕逢敵手。但卻在中年時因一段悲情而出家為
 僧，之後大徹大悟，成為一位得道高僧。
 LONG );
@@ -194,7 +194,7 @@ string ask_me()
                return "你的一陽指練到了這種境界，老衲已沒什麼可教的了。";
 
         if( query("family/family_name", me) != query("family/family_name") )
-               return "不是老衲吝嗇，你不是我段家之人，若由老衲之手將這絕學傳于它處，恐怕不妥。";
+               return "不是老衲吝嗇，你不是我段家之人，若由老衲之手將這絕學傳於它處，恐怕不妥。";
 
         if( query("combat_exp", me)<500000 )
                return "武功最注重根基，切莫貪圖捷徑，你把基本功練好後老衲自會傳授給你。";
@@ -211,7 +211,7 @@ mixed ask_skill1()
                 return "你一陽指練到這種境界，老衲已沒什麼可教的了。";
 
         if( query("family/family_name", me) != query("family/family_name") )
-                return "施主與老衲素不相識，不知施主此話從何說起？";
+                return "施主與老衲素不相識，不知施主此話從何説起？";
 
         if (me->query_skill("sun-finger", 1) < 1)
                 return "你連一陽指訣都沒學，還談什麼絕招可言？";
@@ -229,13 +229,13 @@ mixed ask_skill1()
                 return "你的內力修為還不夠，練高點再來吧。";
 
         if (me->query_skill("jingluo-xue", 1) < 200)
-                return "你對經絡學的了解還不透徹，研究透了再來找我吧。";
+                return "你對經絡學的瞭解還不透徹，研究透了再來找我吧。";
 
         if (me->query_skill("sun-finger", 1) < 200)
-                return "你的一陽指訣功力還不夠，練高了再說吧。";
+                return "你的一陽指訣功力還不夠，練高了再説吧。";
 
         message_sort(HIY "\n$n" HIY "凝視了$N" HIY "好一會兒，隨即點了點"
-                     "頭，將$N" HIY "招至身邊，在耳旁低聲細說良久，$N" HIY
+                     "頭，將$N" HIY "招至身邊，在耳旁低聲細説良久，$N" HIY
                      "聽後會心的一笑，看來對$n" HIY "的教導大有所悟。\n\n"
                      NOR, me, this_object());
 
@@ -281,13 +281,13 @@ mixed ask_skill2()
                 return "你先天功的乾陽劍氣練到這種境界，老衲已沒什麼可教的了。";
 
         if( query("family/family_name", me) != query("family/family_name") )
-                return "施主與老衲素不相識，不知施主此話從何說起？";
+                return "施主與老衲素不相識，不知施主此話從何説起？";
 
         if (me->query_skill("sun-finger", 1) < 1)
                 return "你連一陽指訣都沒學，還談什麼絕招可言？";
 
         if (me->query_skill("xiantian-gong", 1) < 1)
-                return "這招暫時不能傳授于你，等你學會先天功再來找我吧。";
+                return "這招暫時不能傳授於你，等你學會先天功再來找我吧。";
 
         if( query("family/gongji", me)<2500 )
                 return "你為段氏所作出的貢獻還不夠，這招老衲暫時還不能傳你。";
@@ -302,10 +302,10 @@ mixed ask_skill2()
                 return "你的內力修為還不夠，練高點再來吧。";
 
         if (me->query_skill("xiantian-gong", 1) < 600)
-                return "你的先天功功力還不夠，練高了再說吧。";
+                return "你的先天功功力還不夠，練高了再説吧。";
 
         message_sort(HIY "\n$n" HIY "凝視了$N" HIY "好一會兒，隨即點了點"
-                     "頭，將$N" HIY "招至身邊，在耳旁低聲細說良久，$N" HIY
+                     "頭，將$N" HIY "招至身邊，在耳旁低聲細説良久，$N" HIY
                      "聽後會心的一笑，看來對$n" HIY "的教導大有所悟。\n\n"
                      NOR, me, this_object());
 
@@ -372,7 +372,7 @@ int do_answer(string arg)
                 {
                         // command("look "+getuid(me));
                         command("say 由老衲治療一次，你已經得盡天緣了，唉。。。");
-                        command("say 為人豈可貪得無厭，唉，請你離開這裡吧。");
+                        command("say 為人豈可貪得無厭，唉，請你離開這裏吧。");
                         message_vision("$N羞愧難當，面色通紅，灰溜溜地離開了。\n", me);
                         me->move("/d/heizhao/maze1");
                         return 1;
@@ -421,7 +421,7 @@ int do_answer(string arg)
                 write("食指，緩緩的向你頭頂百會穴點去。你身不由幾的微微一跳，\n");
                 write("只覺的一股熱氣從頂門直透下來。\n");
                 write("一燈一指點過，立即縮回，第二指已向點向你的百會穴後一寸五\n");
-                write("分處的後頂穴，接著強間，腦戶，風府，大錐，陶道，身柱，\n");
+                write("分處的後頂穴，接着強間，腦户，風府，大錐，陶道，身柱，\n");
                 write("神道，靈台一路點將下來。一支香燃了一半，已將你督脈的三十 \n");
                 write("大穴順次點到。\n");
                 message_vision(HIR "$N突然覺得一股暖流自頂而入，眼前一黑就什麼也看不見了！\n" NOR, me );

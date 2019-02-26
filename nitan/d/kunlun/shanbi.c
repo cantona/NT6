@@ -53,6 +53,6 @@ int do_dig()
             return 1;
           }
         }
-        message_vision("$N挖了一會，發現好象什麼也沒有，不禁恨恨地吐了口唾沫。\n",me);
+        message_vision("$N挖了一會，發現好像什麼也沒有，不禁恨恨地吐了口唾沫。\n",me);
         return 1;
 }

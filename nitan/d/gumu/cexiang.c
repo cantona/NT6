@@ -10,8 +10,8 @@ void create()
 {
         set("short", "側廂");
         set("long", @LONG
-這裡是古墓中的側廂房。房間裡面黑呼呼的，什麼東西都沒有，只
-有一條細繩(rope)，在室東的一根鐵釘上系住，拉繩橫過室中，繩子的
+這裏是古墓中的側廂房。房間裏面黑呼呼的，什麼東西都沒有，只
+有一條細繩(rope)，在室東的一根鐵釘上繫住，拉繩橫過室中，繩子的
 另端系在西壁的一口釘上，繩索離地約莫一人來高。
 LONG );
 
@@ -59,7 +59,7 @@ int do_sleep(string arg)
                 message_vision("$N輕輕縱起，發現繩上有人，只好飛身下地。\n",me);
                 return 1;
         }
-        message_vision("$N輕輕縱起，橫臥繩上，以繩為床，睡起覺來。\n", me);
+        message_vision("$N輕輕縱起，橫卧繩上，以繩為牀，睡起覺來。\n", me);
         me->move(room) ;
         call_out("back", 6 , me);
         return 1 ;

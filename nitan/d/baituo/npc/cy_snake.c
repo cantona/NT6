@@ -12,7 +12,7 @@ void create()
 {
         int poison = 10;
         set_name(HIR"赤炎"NOR, ({ "chi yan", "she", "snake" }) );
-        set("long", "這是一條遍體通紅的毒蛇，長僅數寸，細小如指。\n宋朝時於陝西清泉初次發現，劇毒無比，聽說若是被其咬到，七步必亡。\n");
+        set("long", "這是一條遍體通紅的毒蛇，長僅數寸，細小如指。\n宋朝時於陝西清泉初次發現，劇毒無比，聽説若是被其咬到，七步必亡。\n");
         set("age", 100);
         set("attitude", "aggressive");
 

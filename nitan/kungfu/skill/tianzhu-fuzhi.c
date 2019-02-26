@@ -3,7 +3,7 @@
 inherit SHAOLIN_SKILL;
 
 mapping *action = ({
-([      "action": "$N側身抬臂，右指劃了個半圈，輕輕拂向向$n$l，不著力道",
+([      "action": "$N側身抬臂，右指劃了個半圈，輕輕拂向向$n$l，不着力道",
         "force" : 100,
         "attack": 10,
         "parry" : 15,
@@ -11,7 +11,7 @@ mapping *action = ({
         "lvl"   : 0,
         "damage_type" : "點穴"
 ]),
-([      "action": "$N左掌虛托，右手中指穿腋疾出，輕拂$n胸前的諸多要穴",
+([      "action": "$N左掌虛託，右手中指穿腋疾出，輕拂$n胸前的諸多要穴",
         "force" : 140,
         "attack": 15,
         "parry" : 18,

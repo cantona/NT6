@@ -1,4 +1,4 @@
-// diezhang.c (昆侖掌法)  perform 昆山疊掌
+// diezhang.c (崑崙掌法)  perform 崑山疊掌
 // cck 21/8/97
 //cool 981010
 #include <ansi.h>
@@ -16,41 +16,41 @@ int perform(object me, object target)
         if( !target ) target = offensive_target(me);
 
         if( !target || !target->is_character() || !me->is_fighting(target) )
-                return notify_fail("「昆山疊掌」只能在戰鬥中對對手使用。\n");
+                return notify_fail("「崑山疊掌」只能在戰鬥中對對手使用。\n");
 
         if( objectp(query_temp("weapon", me)) )
-                return notify_fail("只有空手才能施展「昆山疊掌」。\n");
+                return notify_fail("只有空手才能施展「崑山疊掌」。\n");
 
         if( (int)me->query_skill("kunlun-zhang", 1) < 100 || (int)me->query_skill("finger", 1) < 100 )
-                return notify_fail("你的掌法不夠嫻熟，不會使用「昆山疊掌」。\n");
+                return notify_fail("你的掌法不夠嫻熟，不會使用「崑山疊掌」。\n");
 
         if( (int)me->query_skill("xuantian-wuji", 1) < 140 )
-                return notify_fail("你的玄天無極功等級不夠，不能使用「昆山疊掌」。\n");
+                return notify_fail("你的玄天無極功等級不夠，不能使用「崑山疊掌」。\n");
 
         if( (int)me->query_str() < 26 )
-                return notify_fail("你的膂力不夠強，不能使用「昆山疊掌」。\n");
+                return notify_fail("你的膂力不夠強，不能使用「崑山疊掌」。\n");
 
         if( arg <= 1 )
-                return notify_fail("至少要有兩招才可組成「昆山疊掌」。\n");
+                return notify_fail("至少要有兩招才可組成「崑山疊掌」。\n");
 
 if( query("max_neili",1, me)<1500 )
-                return notify_fail("你內力修為不夠，不能使用「昆山疊掌」。\n");
+                return notify_fail("你內力修為不夠，不能使用「崑山疊掌」。\n");
 
         if( query("neili",1, me)<200 )
-                return notify_fail("你現在內力太弱，不能使用「昆山疊掌」。\n");
+                return notify_fail("你現在內力太弱，不能使用「崑山疊掌」。\n");
 
         if( query("neili",1, me)<100*arg )
                 return notify_fail("你現在的內力施展不了那麼多招。\n");
 
 //        if( (int)me->query_skill("kunlun-zhang", 1) < arg * 30 )
-//                return notify_fail("你的昆侖掌法還沒有修練到那種境界！\n");
+//                return notify_fail("你的崑崙掌法還沒有修練到那種境界！\n");
 
           if (me->query_skill_prepared("strike") != "kunlun-zhang" || 
             me->query_skill_mapped("strike") != "kunlun-zhang" ||
             me->query_skill_mapped("parry") != "kunlun-zhang")
-                return notify_fail("你現在無法使用「昆山疊掌」進行攻擊。\n");                                                                                 
+                return notify_fail("你現在無法使用「崑山疊掌」進行攻擊。\n");                                                                                 
 
-        message_vision(HIG"$N深吸一口氣，大喝一聲，連續擊出"+ chinese_number(arg) +"掌，後招推著前招，掌力疊合在一起撲向$n！\n\n"NOR, me, target);
+        message_vision(HIG"$N深吸一口氣，大喝一聲，連續擊出"+ chinese_number(arg) +"掌，後招推着前招，掌力疊合在一起撲向$n！\n\n"NOR, me, target);
     if( random(query("combat_exp", me))>query("combat_exp", target)/2 )
         {
         limbs=query("limbs", target);
@@ -79,7 +79,7 @@ if( query("max_neili",1, me)<1500 )
         me->start_busy(arg/2+1);
     addn("neili", -200, me);
     addn("neili", -100, target);
-    msg =HIY"\n$n身型急速後退，順著掌風就勢一跳，躲開了這攻擊。\n" NOR;
+    msg =HIY"\n$n身型急速後退，順着掌風就勢一跳，躲開了這攻擊。\n" NOR;
                }
  message_vision(msg, me, target);
 

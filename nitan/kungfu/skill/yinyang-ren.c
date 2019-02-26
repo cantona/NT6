@@ -73,7 +73,7 @@ mapping *action = ({
         "skill_name" : "歲月無聲",
         "damage_type":  "刺傷"
 ]),
-([      "action":"$N左指凌空虛點，右手$w逼出丈許雪亮光芒，一式「流水無情」刺向$n的嚥喉",
+([      "action":"$N左指凌空虛點，右手$w逼出丈許雪亮光芒，一式「流水無情」刺向$n的咽喉",
         "force" : 342,
         "parry" : 63,
         "dodge" : 55,

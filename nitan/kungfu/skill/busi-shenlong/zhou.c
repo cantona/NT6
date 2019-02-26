@@ -18,7 +18,7 @@ int exert(object me)
         if( !me->is_fighting() )
                 return notify_fail("「咒法」只能在戰鬥中使用。\n");
         if( me->is_busy() )
-                return notify_fail("你正忙著呢。\n");
+                return notify_fail("你正忙着呢。\n");
         if( (int)me->query_skill("busi-shenlong", 1) < 200)
                 return notify_fail(HIM "你的不死神龍心法修為不足，還無法用內力念出真言! \n" NOR);
         if( query("neili", me)<1000 || query("max_neili", me)<2000 )
@@ -63,7 +63,7 @@ int exert(object me)
         }
         else
         {
-                msg = CYN "$n眼觀鼻，鼻觀心，抱元守一，終于脫離了邪咒控制！\n"NOR;
+                msg = CYN "$n眼觀鼻，鼻觀心，抱元守一，終於脱離了邪咒控制！\n"NOR;
                 if(userp(me))
                         addn("neili", -400, me);
                 me->start_busy(2);

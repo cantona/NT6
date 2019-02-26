@@ -11,7 +11,7 @@ void create()
         set("title", "日月神教前輩長老");
         set("long", @LONG
 白猿神魔張乘雲是日月神教的前輩長老，武功
-高強，位尊無比。曾一度掃除五岳劍派聯盟。
+高強，位尊無比。曾一度掃除五嶽劍派聯盟。
 LONG);
         set("gender", "男性");
         set("class", "scholar");
@@ -99,7 +99,7 @@ int recognize_apprentice(object ob, string skill)
         if( query("family/family_name", ob) != "日月神教" )
         {
                 command("killair");
-                command("say 給我滾開，少在老夫面前說三道四！");
+                command("say 給我滾開，少在老夫面前説三道四！");
                 return -1;
         }
 
@@ -121,7 +121,7 @@ int recognize_apprentice(object ob, string skill)
         if (skill != "club" && skill != "jinyuan-gun")
         {
                 command("hmm");
-                command("say 我只傳授你這套棍法，其余的找你師父學去。");
+                command("say 我只傳授你這套棍法，其餘的找你師父學去。");
                 return -1;
         }
 

@@ -7,8 +7,8 @@ inherit F_MASTER;
 void create()
 {
         set_name("傅思歸", ({ "fu sigui", "fu", "sigui" }));
-        set("title", "大理國護衛" );
-        set("long", "他是大理國四大護衛之一。\n");
+        set("title", "大理國護衞" );
+        set("long", "他是大理國四大護衞之一。\n");
         set("gender", "男性");
         set("age", 40);
         set("class", "officer");

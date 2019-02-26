@@ -19,7 +19,7 @@ void create()
         set("party/party_name", HIC"長樂幫"NOR);
         set("party/rank", "豹捷堂");
         set("age", 20 + random(10));
-        set("long", "一名身材高大的壯漢，滿臉殺氣，一付兇神惡煞的模樣。\n");
+        set("long", "一名身材高大的壯漢，滿臉殺氣，一付凶神惡煞的模樣。\n");
         set("attitude", "friendly");
         set("shen_type", -1);
 
@@ -80,7 +80,7 @@ int auto_check()
                 message("vision", me->name() + "走了過來。\n", dest, ({me}));
 
                 me->set_leader(ob);
-                message_vision("$N誠惶誠恐地說道：望幫主恕罪！\n", me);
+                message_vision("$N誠惶誠恐地説道：望幫主恕罪！\n", me);
                 return 1;
         }
 
@@ -130,7 +130,7 @@ void die()
                 record = bonus + random(bonus);
                 addn("combat_exp", record, killer);
 
-                log_file("BangJob",sprintf("%s于%s時因殺人示威得%s經驗點\n",query("name", killer),ctime(time()),chinese_number(record)));
+                log_file("BangJob",sprintf("%s於%s時因殺人示威得%s經驗點\n",query("name", killer),ctime(time()),chinese_number(record)));
 
                 bonus /= 4;
                 if( obj = present("bang ling", killer) ) {

@@ -109,7 +109,7 @@ int weapon_level()
         return lvl;
 }
 
-// 防御裝備的等級
+// 防禦裝備的等級
 int armor_level()
 {
         // More to be added
@@ -165,23 +165,23 @@ string weapon_long()
                 else
                 if (attack_lvl >= MAX_LEVEL)
                         result = HIY "它看上去讓人發自內心無限崇敬，一股"
-                               "皓然正氣悠然長存，頗具帝王風范，君臨\n"
-                               "天下，威鎮諸路兇神惡煞、難道這就是傳說中才"
+                               "皓然正氣悠然長存，頗具帝王風範，君臨\n"
+                               "天下，威鎮諸路凶神惡煞、難道這就是傳説中才"
                                "會出現的諸神之" + name() + HIY "？\n" NOR;
                 else
                 if (attack_lvl >= LEVEL8)
                         result = HIC "一眼望去，你覺得有無數的兇靈在瘋狂"
-                               "亂舞，哭天搶地，凄烈之極，似乎要重返\n"
-                               "人間。你忍不住要長嘆一聲，昔日兇魔，也難逃死劫。\n" NOR;
+                               "亂舞，哭天搶地，悽烈之極，似乎要重返\n"
+                               "人間。你忍不住要長歎一聲，昔日兇魔，也難逃死劫。\n" NOR;
                 else
                 if (attack_lvl >= LEVEL7)
-                        result = HIC "它上面附著著不知多少兇魂，無數邪派"
-                               "兇魔斃命于下，一股哀氣猶然不散，讓你\n"
+                        result = HIC "它上面附着着不知多少兇魂，無數邪派"
+                               "兇魔斃命於下，一股哀氣猶然不散，讓你\n"
                                "忍不住打了個冷戰。\n" NOR;
                 else
                 if (attack_lvl >= LEVEL6)
                         result = HIR "它看上去令人驚心動魄，這就是名動江湖的" + name() + HIR
-                               "，多少兇煞就此斃命，成就人間正義。\n" NOR;
+                               "，多少凶煞就此斃命，成就人間正義。\n" NOR;
                 else
                 if (attack_lvl >= LEVEL5)
                         result = HIR "它上面隱隱然透出一股血光，多年以來，許多"
@@ -200,7 +200,7 @@ string weapon_long()
                 else
                 if (attack_lvl >= LEVEL1)
                         result = RED "細觀之下，刃口有一絲血痕，想必是它殺人不少"
-                               "，殷血于此吧！\n" NOR;
+                               "，殷血於此吧！\n" NOR;
                 else
                         result = CYN "看得出這" + n + CYN "曾經殺過不少兇惡之徒。\n" NOR;
                 break;
@@ -212,18 +212,18 @@ string weapon_long()
                 else
                 if (attack_lvl >= MAX_LEVEL)
                         result = HIR "它看上去讓人打心底泛出陣陣寒意，隱"
-                               "隱然上面似乎附著著無數冤魂，但是全然\n被這" + n + HIR
-                               "上面的殺氣所制，難道這就是傳說中才會出現的邪神之" + name() + HIR
+                               "隱然上面似乎附着着無數冤魂，但是全然\n被這" + n + HIR
+                               "上面的殺氣所制，難道這就是傳説中才會出現的邪神之" + name() + HIR
                                "？\n" NOR;
                 else
                 if (attack_lvl >= LEVEL8)
                         result = HIC "一眼望去，你覺得有無數的冤魂向你撲"
-                               "來，哭天搶地，凄烈之極，你忍不住打了\n"
+                               "來，哭天搶地，悽烈之極，你忍不住打了\n"
                                "個寒戰，不敢再看第二眼。\n" NOR;
                 else
                 if (attack_lvl >= LEVEL7)
-                        result = HIC "它上面附著著不知多少冤魂，無數高手"
-                               "飲恨于下，一股怨氣直沖霄漢，讓你忍不\n"
+                        result = HIC "它上面附着着不知多少冤魂，無數高手"
+                               "飲恨於下，一股怨氣直衝霄漢，讓你忍不\n"
                                "住打了個冷戰。\n" NOR;
                 else
                 if (attack_lvl >= LEVEL6)
@@ -236,7 +236,7 @@ string weapon_long()
                 else
                 if (attack_lvl >= LEVEL4)
                         result = HIG "這就是江湖上著名的兇器之一：" + name() + HIG
-                               "，誰曾想那麼多仁人義士飲恨于下。\n" NOR;
+                               "，誰曾想那麼多仁人義士飲恨於下。\n" NOR;
                 else
                 if (attack_lvl >= LEVEL3)
                         result = HIG "這" + n + HIG "有一股戾氣散發出來，看來它下面遊魂不少。\n" NOR;
@@ -246,7 +246,7 @@ string weapon_long()
                 else
                 if (attack_lvl >= LEVEL1)
                         result = RED "細觀之下，刃口有一絲血痕，想必是它殺人不少"
-                               "，殷血于此吧！\n" NOR;
+                               "，殷血於此吧！\n" NOR;
                 else
                         result = CYN "看得出這" + n + CYN "曾經殺過不少俠義之士。\n" NOR;
                 break;
@@ -258,23 +258,23 @@ string weapon_long()
                 else
                 if (attack_lvl >= MAX_LEVEL)
                         result = HIC "它安然暢意，似乎就要騰空而去，跳出"
-                               "三界，不入五行。世間萬物，仿佛俱在它\n"
-                               "霸氣所及之處。冤魂不舞、群邪辟易，無不被這" + n + HIC
+                               "三界，不入五行。世間萬物，彷彿俱在它\n"
+                               "霸氣所及之處。冤魂不舞、羣邪辟易，無不被這" + n + HIC
                                "上古神兵的霸氣所制。\n" NOR;
                 else
                 if (attack_lvl >= LEVEL8)
                         result = HIM "一眼望去，你覺得有無數的遊魂向你撲"
-                               "來，哭天搶地，凄烈之極，你頓時覺得它\n"
+                               "來，哭天搶地，悽烈之極，你頓時覺得它\n"
                                "沉重無比，幾乎拿捏不住。\n" NOR;
                 else
                 if (attack_lvl >= LEVEL7)
-                        result = HIM "它上面附著著不知多少遊魂，無數正邪"
-                               "高手喪命于下，一股怨氣哀愁油然不盡，\n"
+                        result = HIM "它上面附着着不知多少遊魂，無數正邪"
+                               "高手喪命於下，一股怨氣哀愁油然不盡，\n"
                                "讓你忍不住打了個冷戰。\n" NOR;
                 else
                 if (attack_lvl >= LEVEL6)
                         result = HIR "它看上去令人驚心動魄，這就是名動江湖的" + name() + HIR
-                               "，多少正邪高手都難逃此劫，墮入輪回。\n" NOR;
+                               "，多少正邪高手都難逃此劫，墮入輪迴。\n" NOR;
                 else
                 if (attack_lvl >= LEVEL5)
                         result = HIR "它上面隱隱然透出一股血光，多年以來，許多"
@@ -282,7 +282,7 @@ string weapon_long()
                 else
                 if (attack_lvl >= LEVEL4)
                         result = HIW "這就是江湖上著名的利器之一：" + name() + HIW
-                               "，誰能想到那麼多高手飲恨于下。\n" NOR;
+                               "，誰能想到那麼多高手飲恨於下。\n" NOR;
                 else
                 if (attack_lvl >= LEVEL3)
                         result = HIW "這" + n + HIW "有一股殺氣散發出來，看來它下面遊魂不少。\n" NOR;
@@ -294,7 +294,7 @@ string weapon_long()
                 else
                 if (attack_lvl >= LEVEL1)
                         result = RED "細觀之下，刃口有一絲血痕，想必是它殺人不少"
-                               "，殷血于此吧！\n" NOR;
+                               "，殷血於此吧！\n" NOR;
                 else
                         result = CYN "看得出這" + n + CYN "曾經殺過不少人。\n" NOR;
                 break;
@@ -303,7 +303,7 @@ string weapon_long()
         if (attack_lvl == ULTRA_LEVEL)
         {
                 if (stringp(tessera_name = query("magic/tessera")))
-                        result += "它上面鑲嵌著" + tessera_name + "，閃爍著奇異的光芒。\n";
+                        result += "它上面鑲嵌着" + tessera_name + "，閃爍着奇異的光芒。\n";
                 result += HIY + name() + HIY "的等級：無上神品  LV10\n" NOR;
         } else
         if (lvl)
@@ -339,7 +339,7 @@ string weapon_long()
               result += "-------------------------------------\n";
 
               result += HIW "堅固修正： " + query("bless") + "\t" NOR;
-              result += HIW "攻﹒防修正：" + sprintf("%d", query("bless") * 2 + enchase_points) + "\n" NOR;
+              result += HIW "攻·防修正：" + sprintf("%d", query("bless") * 2 + enchase_points) + "\n" NOR;
               result += HIW "聖化次數： " + query("bless") + "\t" NOR;
               result += HIW "魔力改善值：" + query("magic/power") + "\n" NOR;
               result += HIW "魔力屬性：" + chinese_s(query("magic/type"))  + "\t" NOR;
@@ -417,7 +417,7 @@ string armor_long()
               result += HIC "套裝等級：" + TAOZHUANG_D->taozhuang_name(query("taozhuang")) + "\n" NOR;
               result += "-------------------------------------\n";
               result += HIW "堅固修正： " + query("bless") + "\t" NOR;
-              result += HIW "攻﹒防修正：" + sprintf("%d", query("bless") * 10 + enchase_points) + "\n" NOR;
+              result += HIW "攻·防修正：" + sprintf("%d", query("bless") * 10 + enchase_points) + "\n" NOR;
               result += HIW "聖化次數： " + query("bless") + "\n" NOR;
 430                   // 顯示強化等級 
 431                   if (query("qh_level")) 
@@ -541,7 +541,7 @@ int apply_damage()
     log_file("srb_bug", base_name(this_object()) + "\n");
   }
 546      
-547             // 在這裡添加強化後對鑲嵌物品提升的傷害加成 
+547             // 在這裏添加強化後對鑲嵌物品提升的傷害加成 
 548             // 強化等級1-10級，每級遞增x% 
 549             enchase_points = ITEM_D->qianghua_enchase_points("weapon", enchase_points, query("qh_level")); 
 550              
@@ -559,7 +559,7 @@ int apply_damage()
         return d + p + enchase_points * 2;
 }
 
-// 防御裝備的有效值
+// 防禦裝備的有效值
 int apply_armor()
 {
         int d;
@@ -570,7 +570,7 @@ int apply_armor()
 
         defense_lvl = armor_level();
         p = query("point");
-        d = query("bless") * 10;// 乾坤聖水聖化一次增加2點防御
+        d = query("bless") * 10;// 乾坤聖水聖化一次增加2點防禦
 
         enchase_objects = query("enchase");
   enchase_points = 0;
@@ -960,7 +960,7 @@ mixed weapon_hit_ob(object me, object victim, int damage_bonus)
         return ITEM_D->weapon_hit_ob(me, victim, this_object(), damage_bonus);
 }
 
-// 以下的函數因為執行的頻度並不高，而且具有高度重復的性質，
+// 以下的函數因為執行的頻度並不高，而且具有高度重複的性質，
 // 所以都調用ITEM_D中的執行程序。
 
 // 殺了人以後的獎勵

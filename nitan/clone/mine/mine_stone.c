@@ -68,7 +68,7 @@ string query_long()
         if(!mine_class
         || (eff_weight < 1)
         || !(cm = MINE_D->chinese_mine_class(mine_class)))
-                return "這塊石頭裡不含任何礦物成分。\n";
+                return "這塊石頭裏不含任何礦物成分。\n";
 
         return sprintf("這是一塊含有%s的礦石，\n大約含有 %d %s%s。\n",
                 cm, eff_weight, unit, cm);

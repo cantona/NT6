@@ -47,7 +47,7 @@ int perform(object me, object target)
                 return notify_fail("你現在的真氣不足，難以施展" + name() + "。\n");
 
         if (! living(target))
-                return notify_fail("對方都已經這樣了，用不著這麼費力吧？\n");
+                return notify_fail("對方都已經這樣了，用不着這麼費力吧？\n");
 
         msg = HIY "$N" HIY "雙臂左右分張，形若龍嘴，所施正是龍象般若功絕學「"
               HIR "龍吞勢" HIY "」。霎時呼\n嘯聲大作，但見一股澎湃無比的罡勁"
@@ -77,7 +77,7 @@ int perform(object me, object target)
                 me->start_busy(5);
                 addn("neili", -200, me);
                 msg += CYN "可是$p" CYN "見$P" CYN "此招來勢非凡，急"
-                       "忙向後橫移數尺，終于躲避開來。\n" NOR;
+                       "忙向後橫移數尺，終於躲避開來。\n" NOR;
         }
         message_combatd(msg, me, target);
 

@@ -37,7 +37,7 @@ int perform(object me, object target)
                 return notify_fail("你現在的真氣不夠，難以施展" JUAN "。\n");
 
         if (! living(target))
-                return notify_fail("對方都已經這樣了，用不著這麼費力吧？\n");
+                return notify_fail("對方都已經這樣了，用不着這麼費力吧？\n");
 
         msg = HIY "$N" HIY "連退數步，手中" + weapon->name() + HIY "急速旋"
               "轉，戟尖頓時激起一股氣流，直刺$n" HIY "而去！\n" NOR;

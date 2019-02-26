@@ -7,9 +7,9 @@ string type() { return "martial"; }
 string martialtype() { return "skill"; }
 
 mapping *action = ({
-([        "action": "$N單手一揚，一招"MAG"「開天辟地」"NOR"，手中$w抖得筆直，對準$n當頭罩下",
+([        "action": "$N單手一揚，一招"MAG"「開天闢地」"NOR"，手中$w抖得筆直，對準$n當頭罩下",
         "lvl" : 0,
-        "skill_name" : "開天辟地",
+        "skill_name" : "開天闢地",
 ]),
 ([        "action": "$N身形一轉，一招"BLU"「龍騰四海」"NOR"，手中$w如矯龍般騰空一卷，猛地擊向$n太陽穴",
         "lvl" : 10,
@@ -23,7 +23,7 @@ mapping *action = ({
         "lvl" : 30,
         "skill_name" : "破雲見日",
 ]),
-([        "action": "$N運氣于腕，一招"HIY"「開山裂石」"NOR"，手中$w象一根銅棍般直擊向$n",
+([        "action": "$N運氣於腕，一招"HIY"「開山裂石」"NOR"，手中$w象一根銅棍般直擊向$n",
         "lvl" : 40,
         "skill_name" : "開山裂石",
 ]),

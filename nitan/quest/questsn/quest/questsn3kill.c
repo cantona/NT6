@@ -43,7 +43,7 @@ mapping *quest = ({
         ]),
         ([
                 "id":          "yue lingshan",
-                "name":        "岳靈珊",
+                "name":        "嶽靈珊",
                 "type":        "殺",
                 "bonus":       71,
                 "msg":        "",
@@ -75,7 +75,7 @@ mapping *quest = ({
         ]),
         ([
                 "id":          "yu renhao",
-                "name":        "于人豪",
+                "name":        "於人豪",
                 "type":        "殺",
                 "bonus":       63,
                 "msg":        "",
@@ -171,7 +171,7 @@ mapping *quest = ({
         ]),
         ([
                 "id":          "zhou wushu",
-                "name":        "周五輸",
+                "name":        "週五輸",
                 "type":        "殺",
                 "bonus":       61,
                 "msg":        "",
@@ -219,7 +219,7 @@ mapping *quest = ({
         ]),
         ([
                 "id":          "zhong zhen",
-                "name":        "鐘鎮",
+                "name":        "鍾鎮",
                 "type":        "殺",
                 "bonus":       91,
                 "msg":        "",
@@ -387,7 +387,7 @@ mapping *quest = ({
         ]),
         ([
                 "id":          "bao biao",
-                "name":        "群玉樓保鏢",
+                "name":        "羣玉樓保鏢",
                 "type":        "殺",
                 "bonus":       71,
                 "msg":        "",
@@ -435,7 +435,7 @@ mapping *quest = ({
         ]),
         ([
                 "id":          "jiang shangyou",
-                "name":        "江上遊",
+                "name":        "江上游",
                 "type":        "殺",
                 "bonus":       75,
                 "msg":        "",

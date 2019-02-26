@@ -10,7 +10,7 @@ inherit F_MASTER;
 
 void create()
 {
-        set_name("余洪興", ({"yu hongxing", "yu", "hongxing"}));
+        set_name("餘洪興", ({"yu hongxing", "yu", "hongxing"}));
         set("title", "丐幫八袋弟子");
         set("gender", "男性");
         set("age", 30);
@@ -93,7 +93,7 @@ void attempt_apprentice(object ob)
                 return;
         }
         command("say 唉，本幫誠信為本，只有七公他老人家和我才特別收些聰明徒兒，");
-        command("say 大家都要為長遠著想啊！");
+        command("say 大家都要為長遠着想啊！");
         command("recruit "+query("id", ob));
 
         if( query("class", ob) != "beggar" )

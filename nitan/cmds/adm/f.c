@@ -21,12 +21,12 @@ int main(object me, string arg)
         {
                 // 沒有這個對象，查看最後一次的控制對象
                 if( !objectp(ob=query_temp("last_control", me)) )
-                        return notify_fail("這裡沒有這個人可供你控制。\n");
+                        return notify_fail("這裏沒有這個人可供你控制。\n");
                 if (stringp(target)) arg = target + " " + arg;
         }
 
         if (ob == me)
-                return notify_fail("控制自己？....你好象不太正常啊。\n");
+                return notify_fail("控制自己？....你好像不太正常啊。\n");
 
         if (wiz_level(me) <= wiz_level(ob) &&
             wiz_level(ob) && ! is_root(me))

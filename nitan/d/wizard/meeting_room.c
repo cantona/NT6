@@ -15,11 +15,11 @@ void create()
 {
         set("short", "巫師會議室");
         set("long", @LONG
-這裡就是泥潭巫師的會議室所在。剛粉刷過的四周牆壁上掛著泥
-潭□ 巫師畫像，分別有：高處不勝寒(lonely)、擇明(ken)、安全中
-心(sinb)；泥潭□巫師畫像：高處不勝寒(lonely)、一人兩角(yezh)；
-泥潭□ 巫師畫像：高處不勝寒(lonely)、風飛(wind)。 屋子的正中
-央放著一張楠木桌椅，是泥潭巫師組用來開會用的。
+這裏就是泥潭巫師的會議室所在。剛粉刷過的四周牆壁上掛着泥
+潭㈠ 巫師畫像，分別有：高處不勝寒(lonely)、擇明(ken)、安全中
+心(sinb)；泥潭㈡巫師畫像：高處不勝寒(lonely)、一人兩角(yezh)；
+泥潭㈢ 巫師畫像：高處不勝寒(lonely)、風飛(wind)。 屋子的正中
+央放着一張楠木桌椅，是泥潭巫師組用來開會用的。
 LONG );
 
         set("exits", ([ 
@@ -91,7 +91,7 @@ int do_start(string arg)
 
         set_temp("keeper", 1, me);
         
-        message_vision(HIW "\n$N大聲宣布：“會議現在開始。”\n" NOR, me);
+        message_vision(HIW "\n$N大聲宣佈：“會議現在開始。”\n" NOR, me);
 
         log_file("meeting.log", sprintf("%s(%s) start the meeting on %s.\n", 
                                         me->name(1), geteuid(me),
@@ -106,7 +106,7 @@ int do_say(string msg)
         SAY_CMD->main(this_player(), msg);
         
         if ((int)query("meeting_trigger") == 1)        
-                log_file("meeting.log", sprintf(CYN "%s(%s)說道：" + msg + "\n" NOR,
+                log_file("meeting.log", sprintf(CYN "%s(%s)説道：" + msg + "\n" NOR,
                                                 this_player()->name(1), 
                                                 query("id", this_player())));
         return 1;
@@ -136,7 +136,7 @@ int do_over()
                         delete_temp("disable_type", player);
         }
         
-        message_vision(HIW "\n$N大聲宣布：“會議現在結束。”\n" NOR, me);
+        message_vision(HIW "\n$N大聲宣佈：“會議現在結束。”\n" NOR, me);
         log_file("meeting.log", sprintf("%s(%s) over the meeting on %s.\n", 
                                         me->name(1), geteuid(me), 
                                         ctime(time())));
@@ -156,7 +156,7 @@ int do_not()
 int valid_leave(object me, string dir)
 {
         if (query("meeting_trigger"))
-                return notify_fail("現在正在開會呢，你最好哪裡也不要去。\n");
+                return notify_fail("現在正在開會呢，你最好哪裏也不要去。\n");
                 
         return ::valid_leave(me, dir);
 }

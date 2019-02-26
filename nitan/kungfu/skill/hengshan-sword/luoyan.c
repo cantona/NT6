@@ -1,9 +1,9 @@
-// luoyan.c 回風落雁
+// luoyan.c 迴風落雁
 // Last Modified by ahda on Aug.31 2001
 
 #include <ansi.h>
 inherit F_SSERVER;
-#define PNAME "「回風落雁」"
+#define PNAME "「迴風落雁」"
 
 int perform(object me,object target)
 {
@@ -53,7 +53,7 @@ int perform(object me,object target)
         if( query("neili", me)<250 )
                 return notify_fail("你的內力不夠，無法運用"PNAME"！\n");
 
-        msg = HIC"$N"HIC"一聲長嘯，劍附內力，一式「回風落雁」，"+weapon->name()+HIC"疾如閃電，瞬間罩住$n"HIC"全身各處大穴。\n劍影中，只見$N微一側身，右手翻轉，寒光中"+weapon->name()+"突然自上而下刺出，直指$n"HIC"身上要害 \n" NOR;
+        msg = HIC"$N"HIC"一聲長嘯，劍附內力，一式「迴風落雁」，"+weapon->name()+HIC"疾如閃電，瞬間罩住$n"HIC"全身各處大穴。\n劍影中，只見$N微一側身，右手翻轉，寒光中"+weapon->name()+"突然自上而下刺出，直指$n"HIC"身上要害 \n" NOR;
         message_combatd(msg, me, target);
 
         ap=query("combat_exp", me);
@@ -62,7 +62,7 @@ int perform(object me,object target)
         if( random(ap) > dp )
         {
                 if( userp(me))addn("neili", -200, me);
-                msg = HIY"$n頓時覺得眼前金光亂閃，雙耳嗡嗡內鳴，不知那裡一陣刺痛如針紮一般！\n" NOR;
+                msg = HIY"$n頓時覺得眼前金光亂閃，雙耳嗡嗡內鳴，不知那裏一陣刺痛如針扎一般！\n" NOR;
                 qi_wound = (int)me->query_skill(bskill,1) * 2;
                 qi_wound = qi_wound/2 + random(qi_wound);
 

@@ -16,7 +16,7 @@ void create()
                 set("base_value", 400000);                                               
                 set("base_weight", 50);                                                  
                 set("only_do_effect", 1);                                                                                                                                       
-                set("gift_msg", HIM "突然間你覺得自己身上好象少了點什麼。\n" NOR);
+                set("gift_msg", HIM "突然間你覺得自己身上好像少了點什麼。\n" NOR);
         }                                                                                
         setup();                                                                         
 }               
@@ -30,7 +30,7 @@ int do_effect(object me)
                        
         if( query("gift/clearcount", me) >= 3 )
         {                                                           
-                tell_object(me, "你覺得這藥好象沒什麼效果。\n");
+                tell_object(me, "你覺得這藥好像沒什麼效果。\n");
         }
         else
         {                                                           
@@ -44,7 +44,7 @@ int do_effect(object me)
                 }
                 else 
                 {
-                        tell_object(me, HIC "你覺得這藥好象沒什麼效果。\n" NOR);
+                        tell_object(me, HIC "你覺得這藥好像沒什麼效果。\n" NOR);
                 }
                 
         }             

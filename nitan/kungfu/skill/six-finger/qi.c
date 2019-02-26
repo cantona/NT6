@@ -37,7 +37,7 @@ int perform(object me, object target)
                 return notify_fail("你沒有準備六脈神劍，無法使用" + name() + "。\n");
 
         if (! living(target))
-               return notify_fail("對方都已經這樣了，用不著這麼費力吧？\n");
+               return notify_fail("對方都已經這樣了，用不着這麼費力吧？\n");
 
         msg = HIG "$N" HIG "中指一按，一股凌厲無倫的無形劍氣直奔$n" HIG "胸前射去。\n" NOR;
 
@@ -79,7 +79,7 @@ int perform(object me, object target)
                 }
         } else
         {
-                msg += CYN "可是$p" CYN "內功頗為深厚，輕輕將這道劍氣化解于無形。\n" NOR;
+                msg += CYN "可是$p" CYN "內功頗為深厚，輕輕將這道劍氣化解於無形。\n" NOR;
         }
         message_combatd(msg, me, target);
 

@@ -14,13 +14,13 @@ int main(object me, string arg)
                 return 0;
 
         if( query("no_fight", environment(me)) )
-                return notify_fail("這裡不準戰鬥。\n");
+                return notify_fail("這裏不準戰鬥。\n");
 
         if (! arg)
                 return notify_fail("你想殺誰？\n");
 
         if( !objectp(obj = present(arg, environment(me))) || !me->visible(obj) )
-                return notify_fail("這裡沒有這個人。\n");
+                return notify_fail("這裏沒有這個人。\n");
 
         if( query_temp("apply/name", me) && userp(obj) )
                 return notify_fail("你還是先取下面具吧!\n");
@@ -50,10 +50,10 @@ int main(object me, string arg)
         if( query("can_speak", obj) )
         {
             if (random(3) > 1)
-            message_vision("\n$N對著$n喝道：「" 
+            message_vision("\n$N對着$n喝道：「" 
                     + callname + "！今日不是你死就是我活！」\n\n", me, obj);
             else
-            message_vision("\n$N對著$n喝道：「" 
+            message_vision("\n$N對着$n喝道：「" 
                     + callname + "！明年今日就是你的忌日！」\n\n", me, obj);
         }
 
@@ -85,7 +85,7 @@ int help(object me)
 指令格式 : kill <人物>
  
 這個指令讓你主動開始攻擊一個人物，並且試圖殺死對方，kill 和 fight 最大的
-不同在於雙方將會真刀實槍地打鬥，也就是說，會真的受傷。由於 kill 只需單方
+不同在於雙方將會真刀實槍地打鬥，也就是説，會真的受傷。由於 kill 只需單方
 面一廂情願就可以成立，因此你對任何人使用 kill 指令都會開始戰鬥，通常如果
 對方是 NPC 的話，他們也會同樣對你使用 kill。
 

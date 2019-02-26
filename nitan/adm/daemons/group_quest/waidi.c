@@ -1,4 +1,4 @@
-// group_quest:waidi 群組任務──外敵入侵
+// group_quest:waidi 羣組任務——外敵入侵
 
 #include <ansi.h>
 #include "waidi.h"

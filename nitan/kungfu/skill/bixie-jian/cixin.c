@@ -64,7 +64,7 @@ int perform(object me, object target)
                 target->receive_wound("qi", damage,me);
     target->receive_damage("jing",damage/3+random(damage/3),me);
                 target->receive_wound("jing", damage/3,me);
-                msg += HIC "$n"HIC"大駭之下，忙伸手招架，哪裡還來得及，□的一聲，劍尖已刺中$n"HIC"心口。\n"NOR;
+                msg += HIC "$n"HIC"大駭之下，忙伸手招架，哪裏還來得及，卟的一聲，劍尖已刺中$n"HIC"心口。\n"NOR;
                 message_combatd(msg, me, target);
         } else
         {

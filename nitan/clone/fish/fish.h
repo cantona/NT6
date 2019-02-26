@@ -78,12 +78,12 @@ int broil(object me, object ob)
         me = this_player();
         if (me->is_busy())
         {
-                write("你現在忙著呢，過會兒再烤吧。\n");
+                write("你現在忙着呢，過會兒再烤吧。\n");
                 return 1;
         }
 
         message_vision("$N把" + name() + "放在" + ob->name() +
-                       "上細細的烤著，只聽畢啵畢啵的聲音，一"
+                       "上細細的烤着，只聽畢啵畢啵的聲音，一"
                        "陣誘人的香味散了出來。\n", me);
 
         write(HIY "你把魚烤好了！\n" NOR);

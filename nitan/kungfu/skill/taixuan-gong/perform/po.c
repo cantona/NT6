@@ -47,7 +47,7 @@ int perform(object me)
         if( query("neili", me)<sizeof(obs)*220 )
                 return notify_fail("你的真氣不夠，無法運用" PO "。\n");
 
-        msg = HIW "只見$N" HIW"仰望天際，心中思緒萬千。忽然間，$N" HIW "一聲長嘆，"
+        msg = HIW "只見$N" HIW"仰望天際，心中思緒萬千。忽然間，$N" HIW "一聲長歎，"
               "隨即雙掌不停地拍出，俠客島石壁上的太玄圖譜已一幅幅湧上心頭，"
               "霎那間四周狂風驟起，塵土飛揚，氣勢如虹。這正是太玄功絕招「" 
               NOR + HIC "乘風破浪" NOR + HIW "」。轉眼間，$N" HIW "雙掌越發"
@@ -116,7 +116,7 @@ int perform(object me)
                                 break;
 
                         case 3:
-                                msg = HIR "狂風卷過，" + obs[i]->name() +
+                                msg = HIR "狂風捲過，" + obs[i]->name() +
                                       HIR "只見，飛沙狂舞，卻動也動不了"
                                       "忽然間，卻癱軟在地。\n" NOR;
                                 msg += "( " + obs[i]->name() + eff_status_msg(p) + " )\n\n";

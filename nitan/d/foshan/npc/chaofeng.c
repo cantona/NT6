@@ -10,13 +10,13 @@ int redeem(string arg);
 void create()
 {
         set_name("老朝奉", ({ "lao chaofeng", "chaofeng" }));
-        set("title", "當舖老板");
+        set("title", "當鋪老闆");
         set("shen_type", 0);
 
         set("gender", "男性");
         set_max_encumbrance(100000000);
         set("age", 35);
-        set("long", "一個衣著光鮮的老朝奉。\n");
+        set("long", "一個衣着光鮮的老朝奉。\n");
         set("no_get_from", 1);
 
         set_skill("unarmed", 60);

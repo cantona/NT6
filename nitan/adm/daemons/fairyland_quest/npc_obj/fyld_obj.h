@@ -90,11 +90,11 @@ int do_zuhe(string arg)
     if(!need1 || !need2 || !need3)
         return notify_fail("所有的部分還未找全呢。\n");
 
-    message_vision(my_color+"$N"NOR""+my_color+"取出"+names[0]+my_color+"、"+names[1]+my_color+"和"+names[2]+my_color+"，把它們組合成了"+my_msg+"的寶物──"+names[4]+my_color+"！\n"NOR,me);
+    message_vision(my_color+"$N"NOR""+my_color+"取出"+names[0]+my_color+"、"+names[1]+my_color+"和"+names[2]+my_color+"，把它們組合成了"+my_msg+"的寶物——"+names[4]+my_color+"！\n"NOR,me);
 
     ok_obj=new(base_name(this_object()));
 
-    if(!ok_obj) return notify_fail(HIR"該文件路徑或文件名已經更改，無法繼續遊戲。請聯系巫師獲得幫助並申請獎勵。\n");
+    if(!ok_obj) return notify_fail(HIR"該文件路徑或文件名已經更改，無法繼續遊戲。請聯繫巫師獲得幫助並申請獎勵。\n");
 
     if( query("host_id", need1) != query("id", me) || 
         query("host_id", need2) != query("id", me) || 

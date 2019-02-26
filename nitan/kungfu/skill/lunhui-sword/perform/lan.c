@@ -23,18 +23,18 @@ int perform(object me, object target)
                 return notify_fail("你使用的武器不對，難以施展" + name() + "。\n");
 
         if ((int)me->query_skill("lunhui-sword", 1) < 600)
-                return notify_fail("你的六道輪回劍不夠嫻熟，難以施展" + name() + "。\n");
+                return notify_fail("你的六道輪迴劍不夠嫻熟，難以施展" + name() + "。\n");
 
         if( query("neili", me)<3000 )
                 return notify_fail("你的真氣不夠，難以施展" + name() + "。\n");
 
         if (me->query_skill_mapped("sword") != "lunhui-sword")
-                return notify_fail("你沒有激發六道輪回劍，難以施展" + name() + "。\n");
+                return notify_fail("你沒有激發六道輪迴劍，難以施展" + name() + "。\n");
 
         if (! living(target))
-                return notify_fail("對方都已經這樣了，用不著這麼費力吧？\n");
+                return notify_fail("對方都已經這樣了，用不着這麼費力吧？\n");
 
-        msg = HIG "$N" HIG "輕舞手中" + weapon->name() + HIG "，劍光四射間，漫天蘭花洒落，猶如仙境般美妙 ……\n" NOR;
+        msg = HIG "$N" HIG "輕舞手中" + weapon->name() + HIG "，劍光四射間，漫天蘭花灑落，猶如仙境般美妙 ……\n" NOR;
 
         ap = attack_power(me, "sword"); 
         dp = defense_power(target, "dodge");

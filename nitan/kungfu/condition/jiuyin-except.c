@@ -19,7 +19,7 @@ int update_condition(object me, int duration)
                 me->receive_wound("jing", 50);
                 tell_object(me, HIR "你覺得丹田陣陣寒冷，可是臉上卻"
                             "好像發燒一樣火熱之極。\n" NOR);
-                message("vision", me->name() + "臉色忽青忽紅，強忍著運功抗爭。\n",
+                message("vision", me->name() + "臉色忽青忽紅，強忍着運功抗爭。\n",
                         environment(me), me);
         }
 

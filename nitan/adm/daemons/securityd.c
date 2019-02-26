@@ -494,8 +494,8 @@ int valid_write(string file, mixed user, string func)
                         // check the object's file with id in dbase
                         if (euid && euid != getuid(user))
                         {
-                                write(sprintf(HIR "【保護】你的用戶標識(%s)和有效用"
-                                              "戶標識(%s)不同，檔案不正常，不能保存。\n" NOR,
+                                write(sprintf(HIR "【保護】你的用户標識(%s)和有效用"
+                                              "户標識(%s)不同，檔案不正常，不能保存。\n" NOR,
                                               getuid(user), geteuid(user)));
                                 return 0;
                         }
@@ -503,7 +503,7 @@ int valid_write(string file, mixed user, string func)
                         if ((base_name(user) == USER_OB) &&
                             getuid(user) != query("id", user) )
                         {
-                                write(sprintf(HIR "【保護】你的用戶標識(%s)和數據中"
+                                write(sprintf(HIR "【保護】你的用户標識(%s)和數據中"
                                               "的標識(%s)不同，檔案不正常，不能保存。\n" NOR,
                                               getuid(user),query("id", user)));
                                 return 0;

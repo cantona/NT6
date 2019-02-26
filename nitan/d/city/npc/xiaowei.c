@@ -54,7 +54,7 @@ void greeting()
         object me = this_player();
         if( me->query_condition("killer") )
         {
-                message_vision( "校尉對著$N大喝一聲：“殺人放火的刁民，快快受死吧！！！” \n", me );
+                message_vision( "校尉對着$N大喝一聲：“殺人放火的刁民，快快受死吧！！！” \n", me );
                 kill_ob(me);
         }
 }

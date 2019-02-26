@@ -13,7 +13,7 @@ void  create()
     set("gender",  "男性");
     set("age",  60);
     set("per",  30);
-    set("long",  "一位留著白髯的雞仙。\n");
+    set("long",  "一位留着白髯的雞仙。\n");
     set("combat_exp",  5000);
     set_skill("force",  50);
     set_skill("unarmed",  50);
@@ -40,7 +40,7 @@ void  init()
 
 void  refuse_message  (object  me,  object  who)
 {
-    message_vision  ("$N說：人鬥人？還是看雞鬥雞有趣些吧。\n",me,who);
+    message_vision  ("$N説：人鬥人？還是看雞鬥雞有趣些吧。\n",me,who);
 }
 
 int  do_fight(string  arg)

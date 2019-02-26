@@ -19,7 +19,7 @@ mapping *action = ({
         "skill_name" : "錦綢抽絲",
         "damage_type" : "瘀傷"
 ]),
-([      "action" : "$N突地一招「蠶絲綿綿」，雙掌挾著一陣風雷之勢，猛地劈往$n的$l",
+([      "action" : "$N突地一招「蠶絲綿綿」，雙掌挾着一陣風雷之勢，猛地劈往$n的$l",
         "force" : 70,
         "dodge" : 42,
         "parry" : 38,

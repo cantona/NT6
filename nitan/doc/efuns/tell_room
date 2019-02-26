@@ -7,7 +7,7 @@
         函數用法:
                 把訊息 str  送給房間 ob 中的所有物件. ob 可以是此房間的
                 檔案名稱. 如果指定第三個參數 exclude, 在 exclude 這個陣
-                列裡的物件都收不到此段訊息.
+                列裏的物件都收不到此段訊息.
         參考函數:
                 message(3), write(3), shout(3), say(3), tell_object(3)
         手冊翻譯:

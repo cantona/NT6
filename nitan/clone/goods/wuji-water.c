@@ -1,4 +1,4 @@
-// 玄兵聖水用于開孔兵器
+// 玄兵聖水用於開孔兵器
 
 #include <ansi.h>
 
@@ -59,7 +59,7 @@ int do_kuokong(string arg)
                 set("enchase/flute", 7, ob);
         
         ob->save();
-        tell_object(me, "你把一瓶" + name() + "洒在" + ob->name() + "上，"
+        tell_object(me, "你把一瓶" + name() + "灑在" + ob->name() + "上，"
                         "只見" + ob->name() + "通體紅光一閃即滅，豁然已經多出幾個凹槽！\n");
 
         destruct(this_object());

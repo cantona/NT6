@@ -8,7 +8,7 @@ void create()
         set_name("斑鳩", ({ "ban jiu", "bird"}) );
         set("race", "飛禽");
         set("age", 2);
-        set("long", "一只的小斑鳩。\n");
+        set("long", "一隻的小斑鳩。\n");
         set("attitude", "peaceful");
         
         set("combat_exp", 100);

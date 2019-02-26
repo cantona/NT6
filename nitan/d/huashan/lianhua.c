@@ -5,12 +5,12 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "蓮花峰");
+        set("short", "蓮花峯");
         set("long", @LONG
-太華西峰－又名蓮花峰，也叫芙蓉峰，峰頂有一塊巨石，狀如蓮
-花，覆蓋崖巔。該處由此得名。這裡懸崖陡峭，壁立千仞，登臨遠眺
-（tiao），秦川莽莽，渭、洛二水盤屈如帶。峰頂有石名『摘星石』，
-取『手可摘星辰』之意，以狀西峰之高。
+太華西峯－又名蓮花峯，也叫芙蓉峯，峯頂有一塊巨石，狀如蓮
+花，覆蓋崖巔。該處由此得名。這裏懸崖陡峭，壁立千仞，登臨遠眺
+（tiao），秦川莽莽，渭、洛二水盤屈如帶。峯頂有石名『摘星石』，
+取『手可摘星辰』之意，以狀西峯之高。
 LONG );
         set("exits", ([ /* sizeof() == 4 */
              "eastdown" : __DIR__"chengxiang",
@@ -43,7 +43,7 @@ int do_tiao()
         write(@LONG
 但見遠處峭壁如一座極大的屏風，沖天而起，峭壁中部離地約二十餘丈處，生
 著一塊三四丈見方的大石，便似一個平台，石上隱隱刻得有字。極目上望，瞧
-清楚乃是「劍塚」（jianzhong）兩個大字。
+清楚乃是「劍冢」（jianzhong）兩個大字。
 LONG);
 
         return 1;
@@ -60,13 +60,13 @@ int do_jump(string arg)
              return notify_fail("你力氣不加。\n");
 
         if (me->is_busy() || me->is_fighting())
-             return notify_fail("等你忙完了再說。\n");
+             return notify_fail("等你忙完了再説。\n");
 
         me->start_busy(1 + random(3));
 
         if (me->query_skill("dodge", 1) < 200 || me->query_str() < 30)
         {
-             message_vision(HIG "$N" HIG "提一口氣，竄高數尺，往蓮花峰上峭壁跳去 ……\n"
+             message_vision(HIG "$N" HIG "提一口氣，竄高數尺，往蓮花峯上峭壁跳去 ……\n"
                             HIR "$N" HIR "爬了十來丈，已然力氣不加，當即摔了下來，渾身鮮血直流。\n" NOR, me);
    
              me->receive_wound("qi",query("qi", me)/2,me);
@@ -75,7 +75,7 @@ int do_jump(string arg)
         }
 
         message_sort(HIG "\n$N" HIG "縱身躍起，竄高數尺，左足踏在峭壁上的小洞之中，跟"
-                     "著竄起，右足對準一叢青苔踢了進去，軟泥迸出，石壁上竟然又有一個"
+                     "着竄起，右足對準一叢青苔踢了進去，軟泥迸出，石壁上竟然又有一個"
                      "小穴可以容足，$N" HIG "深吸一口氣，雙臂抓住石壁上突出的石塊，猛地"
                      "用力一躍，跳上了峭壁。\n" NOR, me);
 

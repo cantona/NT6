@@ -6,7 +6,7 @@ inherit F_DEALER;
 void create()
 {
         set_name("賣花姑娘", ({"maihua guniang", "girl", "guniang"}));
-        set("shop_title", "花店老板");
+        set("shop_title", "花店老闆");
         set("gender", "女性");
         set("combat_exp", 4000);
         set("age", 17);
@@ -49,12 +49,12 @@ void greeting(object ob)
         switch( random(2) ) 
         {
         case 0:
-                message_vision("$N笑著說道：各種新"
+                message_vision("$N笑着説道：各種新"
                                "鮮花朵，買些回去給你的心上人吧。\n",
                                this_object(), ob);
                 break;
         case 1:
-                message_vision("$N笑咪咪地說道：這位" +
+                message_vision("$N笑咪咪地説道：這位" +
                                RANK_D->query_respect(ob) +
                                "要買什麼花兒？\n",
                                this_object(), ob);

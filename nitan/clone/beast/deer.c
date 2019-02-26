@@ -7,7 +7,7 @@ void create()
         set_name("梅花鹿", ({ "deer" }) );
         set("race", "家畜");
         set("age", 5);
-        set("long", "一只漂亮的梅花鹿。\n");
+        set("long", "一隻漂亮的梅花鹿。\n");
         set("attitude", "peaceful");
         
 //        set("limbs", ({ "頭部", "身體", "前腳", "後腳", "尾巴" }) );

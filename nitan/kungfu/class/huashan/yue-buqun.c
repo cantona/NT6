@@ -1,5 +1,5 @@
 // This program is a part of NITAN MudLIB
-// yue-buqun.c 岳不群
+// yue-buqun.c 嶽不羣
 
 inherit NPC;
 inherit F_MASTER;
@@ -17,20 +17,20 @@ string ask_me();
 string ask_feng();
 string ask_zixia();
 
-// 重載個人鑒定函數，保証做quest的時候是正義的quest
+// 重載個人鑑定函數，保證做quest的時候是正義的quest
 int is_bad() { return 0; }
 int is_good() { return 1; }
 
 void create()
 {
-        set_name("岳不群", ({ "yue buqun", "yue" }) );
+        set_name("嶽不羣", ({ "yue buqun", "yue" }) );
         set("title", "華山派掌門");
         set("nickname", HIC "君子劍" NOR);
         set("gender", "男性");
         set("class", "swordsman");
         set("shen_type", 1);
         set("age", 55);
-        set("long", "岳不群自幼執掌華山派，乃當今武林中一等一的高手。\n");
+        set("long", "嶽不羣自幼執掌華山派，乃當今武林中一等一的高手。\n");
         set("attitude", "peaceful");
         set("str", 26);
         set("con", 30);
@@ -52,7 +52,7 @@ void create()
                 "氣宗"           : (: ask_me :),
                 "巡山"           : (: do_xunshan :),
                 "風清揚"         : (: ask_feng :),
-                "紫霞秘籍"       : (: ask_zixia :),
+                "紫霞祕籍"       : (: ask_zixia :),
                 "思過崖"         : "那是本派弟子修行思過之處。\n",
         ]));
 
@@ -237,42 +237,42 @@ int do_xunshan()
         {
                if( !query_temp("xunshan/chaoyang", me) )
                {
-                        message_vision("$N對著$n說：你朝陽峰沒去看看？"
+                        message_vision("$N對着$n説：你朝陽峯沒去看看？"
                                        "這算巡的什麼山？\n", this_object(), me);
                         return 1;
                }
                if( !query_temp("xunshan/lianhua", me) )
                {
-                        message_vision("$N對著$n說：你蓮花峰沒去看看？"
+                        message_vision("$N對着$n説：你蓮花峯沒去看看？"
                                        "這算巡的什麼山？\n", this_object(), me);
                         return 1;
                }
                if( !query_temp("xunshan/yuntai", me) )
                {
-                        message_vision("$N對著$n說：你雲台峰沒去看看？這算"
+                        message_vision("$N對着$n説：你雲台峯沒去看看？這算"
                                        "巡的什麼山？\n", this_object(), me);
                         return 1;
                }
                if( !query_temp("xunshan/sheshen", me) )
                {
-                        message_vision("$N對著$n說：你怎麼沒去舍身崖？這算"
+                        message_vision("$N對着$n説：你怎麼沒去捨身崖？這算"
                                        "巡的什麼山？\n", this_object(), me);
                         return 1;
                }
                if( !query_temp("xunshan/siguo", me) )
                {
-                        message_vision("$N對著$n說：你到了思過崖去了？這算"
+                        message_vision("$N對着$n説：你到了思過崖去了？這算"
                                        "巡的什麼山？\n", this_object(), me);
                         return 1;
                }
                if( !query_temp("xunshan/yunu", me) )
                {
-                        message_vision("$N對著$n說：你到玉女峰後面華山小築"
+                        message_vision("$N對着$n説：你到玉女峯後面華山小築"
                                        "去看過了？這算巡的什麼山？\n",
                                        this_object(), me);
                         return 1;
                 }
-                message_vision("$N對著$n說：不錯，辛苦了。你這就去"
+                message_vision("$N對着$n説：不錯，辛苦了。你這就去"
                                "休息去吧。\n", this_object(), me);
                 delete_temp("xunshan", me);
                 addn("combat_exp", 100+random(100), me);
@@ -287,20 +287,20 @@ else
         {
                if (query("xunshan") == date)
                {
-                        message_vision("$N對著$n說：今天已經有人巡山"
+                        message_vision("$N對着$n説：今天已經有人巡山"
                                      "去了。你明天再來吧。\n", this_object(), me);
                         return 1;
                }
                if( query("family/family_name", me) != "華山派" )
                {
-                        message_vision("$N對著$n大喝一聲：本派弟子才能"
-                                     "巡山。你是哪來的姦細？\n", this_object(), me);
+                        message_vision("$N對着$n大喝一聲：本派弟子才能"
+                                     "巡山。你是哪來的奸細？\n", this_object(), me);
                         return 1;
                }
                else
                {
                         set("xunshan", date);
-                        message_vision("$N對著$n說：本派弟子例當巡山。你，很好，很"
+                        message_vision("$N對着$n説：本派弟子例當巡山。你，很好，很"
                                        "好！今天就去巡山吧。\n",
                                        this_object(), me);
                         set_temp("xunshan/start", 1, me);
@@ -316,7 +316,7 @@ int accept_ask(object me, string topic)
         {
         case "歷練" :
         case "歷煉" :
-        case "鍛煉" :
+        case "鍛鍊" :
                 return QUEST_D->accept_ask(this_object(), me, topic);
                 break;
 
@@ -339,10 +339,10 @@ int accept_ask(object me, string topic)
                            "lv2"     : 160, ]));
                 break;
 
-        case "華岳三神峰" :
+        case "華嶽三神峯" :
                 return MASTER_D->teach_pfm(me, this_object(),
                         ([ "perform" : "can_perform/fanliangyi-dao/sanshen",
-                           "name"    : "華岳三神峰",
+                           "name"    : "華嶽三神峯",
                            "sk1"     : "fanliangyi-dao",
                            "lv1"     : 100,
                            "sk2"     : "force",
@@ -448,10 +448,10 @@ string ask_me()
         if (! myfam || myfam["family_name"] != "華山派")
                 return "咱們豪無淵源，你問這事幹嘛？\n";
 
-        message_sort(HIW "\n$N" HIW "指著身後的匾額，語重心長地說道："
+        message_sort(HIW "\n$N" HIW "指着身後的匾額，語重心長地説道："
                      "“華山不幸曾分為氣劍二宗。咱們氣宗奉氣為主，以劍"
                      "為輔，以氣運劍，無堅不摧。而氣宗則倒行逆施重劍"
-                     "輕氣。二宗各持己見，終于水火不容，同門操戈！華"
+                     "輕氣。二宗各持己見，終於水火不容，同門操戈！華"
                      "山因此式微。你即入我門，盼你能潔身自愛，重振華"
                      "山！記得當年匾額上寫的是「劍氣沖霄」，結果劍宗"
                      "雖劍路縱橫，變化無方，可仍然敗在我宗「紫霞神功」"
@@ -462,7 +462,7 @@ string ask_me()
 
 string ask_feng()
 {
-        say("岳不群的臉色突然便得很難看，皺著眉頭。\n");
+        say("嶽不羣的臉色突然便得很難看，皺着眉頭。\n");
         return "他是本門的一個前輩，一向不過問本門事務，我也不清楚他的下落。\n";
 }
 
@@ -478,7 +478,7 @@ string ask_zixia()
                 return RANK_D->query_respect(me) + "與本派素無來往，不知此話從何談起？\n";
 
         set_temp("hs/askzixia", 1, me);
-        return "紫霞秘籍乃我華山至寶，前段時間不知道流落何處了。你去問問你二師兄吧。\n" ;
+        return "紫霞祕籍乃我華山至寶，前段時間不知道流落何處了。你去問問你二師兄吧。\n" ;
 }
 
 /*

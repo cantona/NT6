@@ -9,11 +9,11 @@ void create()
 {
         set("short", "茶室");
         set("long", @LONG
-這是一個玲瓏小巧的茶室，很是顯得精致。正中有一茶幾。
+這是一個玲瓏小巧的茶室，很是顯得精緻。正中有一茶几。
 LONG );
 
-        set("default_long", "是一個玲瓏小巧的茶室，很是顯得精致。正" /* EXAMPLE */
-                            "中有一茶幾，兩旁立著兩個妙齡少女，正在" /* EXAMPLE */
+        set("default_long", "是一個玲瓏小巧的茶室，很是顯得精緻。正" /* EXAMPLE */
+                            "中有一茶几，兩旁立着兩個妙齡少女，正在" /* EXAMPLE */
                             "聽候主人的吩咐(tea)。" );               /* EXAMPLE */
                                                                      /* EXAMPLE */
 

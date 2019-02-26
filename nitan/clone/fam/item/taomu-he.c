@@ -12,8 +12,8 @@ void create()
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("long", NOR + YEL "這是一個用桃木制成的盒子，可以用來存放丹藥，據說，凡是存放\n"
-                                                      "在這個盒子裡的丹藥下線後都不會丟失。\n" HIG
+                set("long", NOR + YEL "這是一個用桃木製成的盒子，可以用來存放丹藥，據説，凡是存放\n"
+                                                      "在這個盒子裏的丹藥下線後都不會丟失。\n" HIG
                                                                           "指令格式：存儲丹藥：  store cun 數量 丹藥ID\n"
                                                                           "          取出丹藥：  store qu 數量 丹藥ID\n"
                                                                           "          查看盒子：  store show \n" NOR);
@@ -58,7 +58,7 @@ int do_store(string arg)
                 return 1;
         }
 
-        // 查看所有倉庫用戶
+        // 查看所有倉庫用户
         if (arg == "list")
         {
                 if (! wizardp(me))return 0;
@@ -79,7 +79,7 @@ int do_store(string arg)
                 return notify_fail("\n輸入參數錯誤 。\n");
         
         if (amount < 1)
-                return notify_fail("\n輸入數量不能小于 1 。\n");
+                return notify_fail("\n輸入數量不能小於 1 。\n");
 
         if (para == "cun")
         {

@@ -7,8 +7,8 @@ void create()
         set("short", WHT "石室" NOR);
         set("long", @LONG
 這是一間在山腹中鑿成的小石屋，中間有一座石桌 (shizhuo)，桌上擺
-放著一盞油燈，散發出暗淡昏黃的光亮。屋內光線很暗，四周還散發著一股
-腐爛霉臭的味道。
+放着一盞油燈，散發出暗淡昏黃的光亮。屋內光線很暗，四周還散發着一股
+腐爛黴臭的味道。
 LONG );
 
         set("exits", ([
@@ -16,8 +16,8 @@ LONG );
         ]));
 
         set("item_desc",([
-                "shizhuo": WHT "\n一座石桌，桌身好象是和石屋連在一起的，上面重重的印著兩個手印。\n " NOR,
-                "shouyin": WHT "\n一雙在石桌上的手印，你可以試著把雙手嵌(qian)進去。\n " NOR,
+                "shizhuo": WHT "\n一座石桌，桌身好像是和石屋連在一起的，上面重重的印着兩個手印。\n " NOR,
+                "shouyin": WHT "\n一雙在石桌上的手印，你可以試着把雙手嵌(qian)進去。\n " NOR,
         ]));
 
         set("mishi_book", 1);

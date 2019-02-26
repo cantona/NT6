@@ -17,11 +17,11 @@ void create()
                 set_default_object(__FILE__); 
         else { 
                 set("unit", "把"); 
-                set("long", sort_msg(HIR "眾神採首山之銅為黃帝所鑄，後傳與夏禹。在劍身一面刻"
+                set("long", sort_msg(HIR "眾神采首山之銅為黃帝所鑄，後傳與夏禹。在劍身一面刻"
                                      "有日月星辰，一面刻有山川草木。柄一面書農耕畜養之術，一"
                                      "面書四海一統之策。軒轅夏禹劍！對這一把劍還能些什麼呢？"
-                                     "黃帝、夏禹！對這樣兩個人我們還能說些什麼呢。勇氣、智慧"
-                                     "、仁愛，一切在于兩個字：聖道。軒轅夏禹劍是一把聖道之劍"
+                                     "黃帝、夏禹！對這樣兩個人我們還能説些什麼呢。勇氣、智慧"
+                                     "、仁愛，一切在於兩個字：聖道。軒轅夏禹劍是一把聖道之劍"
                                      "。\n" NOR));
                 set("value", 100000); 
                 set("material", "steel");
@@ -42,6 +42,6 @@ mixed hit_ob(object me, object victim, int damage_bonus)
 {
         victim->receive_damage("jing",query("str", me)*2,me);
         victim->receive_wound("jing",query("str", me)*2,me);
-        return HIM "軒轅夏禹夾帶著刺耳的破空聲劃出一道道長虹，霎時間$n"
+        return HIM "軒轅夏禹夾帶着刺耳的破空聲劃出一道道長虹，霎時間$n"
                HIM "只感到心神意亂。\n" NOR;
 }

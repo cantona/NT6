@@ -6,7 +6,7 @@ void create()
 {
         set("short", "山洞");
         set("long", @LONG
-黑黝黝的山洞裡，有一股腥臭味。等眼睛適應了這裡的弱光後，才
+黑黝黝的山洞裏，有一股腥臭味。等眼睛適應了這裏的弱光後，才
 發現地上有一條色彩斑斕的巨蟒。巨蟒旁有許多白慘慘的骨駭，令人膽
 寒。想必都是探險之人，誤入山洞，為巨蟒所害。
 LONG
@@ -52,7 +52,7 @@ int do_zuan(string arg)
         {
                 message("vision", me->name() + "滋溜一下不知從什麼地方鑽出去了。\n", environment(me), ({me}) );
                 me->move(__DIR__"cave2");
-                message("vision", me->name() + "從石縫裡鑽了進來。\n", environment(me), ({me}) );
+                message("vision", me->name() + "從石縫裏鑽了進來。\n", environment(me), ({me}) );
                 set_temp("marks/鑽", 0, me);
                 return 1;
         }

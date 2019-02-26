@@ -9,7 +9,7 @@ void create()
 {
         set_name(HIM"桃子"NOR, ({"tao zi", "taozi","peach"}));
         set_weight(4000);
-        set("long", "一個大大的歪著嘴笑的大胖桃。\n");
+        set("long", "一個大大的歪着嘴笑的大胖桃。\n");
         set("unit", "個");
         set("life", 5);
         set("value", 0);
@@ -22,7 +22,7 @@ void create()
         set("core", "桃核");         //name
         set("core_id", ({"tao hu", "peach core", "core", "hu"}) ); //id
         set("core_unit", "個");        //unit
-        set("core_long", "一個啃得幹幹凈凈的桃核。\n"); //long
+        set("core_long", "一個啃得乾乾淨淨的桃核。\n"); //long
         set("gifts", ([
                 "per" : 1,
                 "int" : 1,

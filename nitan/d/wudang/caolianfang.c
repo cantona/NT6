@@ -6,7 +6,7 @@ void create()
         set("short", "操練房");
         set("long", @LONG
 這是二樓操練房上，四面八方都是打鬥聲，武當弟子來去匆匆，
-都在忙著操練。
+都在忙着操練。
 LONG );
         set("exits", ([
                 "south" : __DIR__"caolian1",

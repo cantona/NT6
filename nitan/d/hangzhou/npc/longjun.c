@@ -7,7 +7,7 @@ inherit NPC;
 void create()
 {
         set_name("龍駿", ({ "long jun", "long", "jun"}) );
-        set("title", "御前侍衛");
+        set("title", "御前侍衞");
         set("gender", "男性");
         set("age", 32);
         set("long",

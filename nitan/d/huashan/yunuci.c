@@ -5,7 +5,7 @@ void create()
 {
         set("short", "玉女祠");
         set("long", @LONG
-玉女祠裡供奉的到底是哪位玉女，有許多不同的說法，現在所能
+玉女祠裏供奉的到底是哪位玉女，有許多不同的説法，現在所能
 看到的只一尊呆板的石像。祠中大石上有一處深陷，凹處積水清碧，
 這是玉女的洗臉盆，碧水終年不幹。玉女祠左邊是一處山崖(cliff)，
 很是陡峭。
@@ -34,7 +34,7 @@ int do_jump(string arg)
 
         if (! arg || arg != "cliff")
         {
-                write("你打算往哪裡跳？\n");
+                write("你打算往哪裏跳？\n");
                 return 1;
         }
 
@@ -49,7 +49,7 @@ int do_jump(string arg)
                 me->unconcious();
 
                 message("vision", HIR "只聽" + me->name() + HIR "一聲慘叫"
-                                  "，從上面的山峰上重重的摔了下來。\n" NOR,
+                                  "，從上面的山峯上重重的摔了下來。\n" NOR,
                                   environment(me), ({me}) );
         } else
         {
@@ -58,7 +58,7 @@ int do_jump(string arg)
 
                 me->move(__DIR__"kuihua_2");
 
-                message("vision", HIC "只見" + me->name() + HIC "從上面的山峰輕輕"
+                message("vision", HIC "只見" + me->name() + HIC "從上面的山峯輕輕"
                                   "的落了下來。\n", environment(me), ({me}) );
         }
         return 1;

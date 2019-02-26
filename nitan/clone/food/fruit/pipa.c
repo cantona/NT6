@@ -17,8 +17,8 @@ void create()
         set("fruit_remaining", 4); 
         set("food_supply", 12);   
         set("water_supply", 24);  
-        set("eat_msg", "$N拿起$n，剝了皮，丟了一顆到嘴裡，“噗”的一聲吐出核。\n"); 
-        set("end_msg", "$N把剩下的$n吃了個幹凈。\n");  
+        set("eat_msg", "$N拿起$n，剝了皮，丟了一顆到嘴裏，“噗”的一聲吐出核。\n"); 
+        set("end_msg", "$N把剩下的$n吃了個乾淨。\n");  
         set("over_msg", "吃這麼多？小心撐破肚皮！！！！\n"); 
         set("gifts", ([
                 "spi" : 1,

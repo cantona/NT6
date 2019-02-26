@@ -89,7 +89,7 @@ string staff(){
 	me = this_player();
 	if(query("staff")){
 		tell_object(me, YEL"\n
-一柄由萬載菩提木制成的法杖，一大半已深深插入蚩尤巨像頭頂，但露出的一部分
+一柄由萬載菩提木製成的法杖，一大半已深深插入蚩尤巨像頭頂，但露出的一部分
 依舊光華奪目，不知道是否能拔出來（pull)；據傳上古時黃帝斬殺蚩尤巨兇後，
 唯恐其亡魂不散，特向佛祖借來這萬年菩提杖插入蚩尤石像，以鎮住這不世之兇，
 萬世不得翻身。\n\n"NOR);
@@ -139,12 +139,12 @@ void stone_fall(object me){
 	
 	all = all_inventory(environment(this_object()));
 	
-	message_vision("\n突然之間蚩尤秘窟有如天崩地裂般，濃雲翻滾，電閃雷鳴，山石又如疾風暴雨般\n", me);	 
+	message_vision("\n突然之間蚩尤祕窟有如天崩地裂般，濃雲翻滾，電閃雷鳴，山石又如疾風暴雨般\n", me);	 
 	message_vision("漫天砸下！\n", me); 
 	message_vision("\n$N神色大變，奮起全力在亂石風暴中苦苦尋求一線生機。\n", me);
 	for(i=0;i<sizeof(names);i++){
 		if( obj = find_object(__DIR__+names[i])) {
-		tell_object(obj,HIY "\n\n遠方傳來一陣隆隆巨響，緊跟著無數石塊砸落了下來。\n\n"NOR);
+		tell_object(obj,HIY "\n\n遠方傳來一陣隆隆巨響，緊跟着無數石塊砸落了下來。\n\n"NOR);
 		}
 	}
 	
@@ -153,7 +153,7 @@ void stone_fall(object me){
 		message_vision(HIY"$N被這突如其來的變化驚的目瞪口呆，只見無數巨石狠狠地砸了過來，\n"NOR, inv[i]);
 		message_vision(HIY"當真是擋無可擋躲無可躲。\n"NOR, inv[i]);
 		if(inv[i]->query_skill("dodge",1)>=150 && inv[i]->query_skill("parry",1)>=150){
-			message_vision(HIG"\n在這間不容發的情況下$N躲過了巨石的攻擊。\n"NOR, inv[i]);
+			message_vision(HIG"\n在這間不容髮的情況下$N躲過了巨石的攻擊。\n"NOR, inv[i]);
 		} else {
 			tell_object(inv[i], "你左擋右躲向前奔跑期望躲過巨石的襲擊。\n");
 			me->perform_busy(3);
@@ -180,7 +180,7 @@ void chiyou(object ob){
 		set("staff",1);
 		return;
 	}
-	message_vision(HIB"\n漫天亂石中，狂風乍起，天色變得一片猙獰，仿佛無數厲鬼野獸在咆哮怒吼！\n"NOR, ob);
+	message_vision(HIB"\n漫天亂石中，狂風乍起，天色變得一片猙獰，彷彿無數厲鬼野獸在咆哮怒吼！\n"NOR, ob);
 	message_vision(HIR"\n鮮紅如血般的大火熊熊燃起，一片火海中升起一個高達百尺，有如天神般的巨漢！\n"NOR,ob); 
 	message_vision(HIR"遠處，近處，空氣中每一處地方無數的兇靈邪獸齊聲膜拜，狂呼！！\n\n"NOR, ob);
 	message_vision(HIY"              －－不－世－戰－神－－蚩－尤－重－生－－  \n\n"NOR, ob);
@@ -223,12 +223,12 @@ void growup(){
 void chiyou_call(object ob){
 	if(ob->query("marks/wolfmount_chiyou_kneel")){
 		message_vision(CYN"$N仰天發出令人心膽俱裂的震天怒吼，山石雨下，烏雲翻滾！\n"NOR, this_object()); 
-		message_vision(CYN"萬道血光之間，烏雲突然裂開道長縫，$N那龐大身軀沖上雲霄。。。\n"NOR, this_object());
-		message_vision(CYN"四下歸于死一般的寂靜。。\n"NOR, this_object());
+		message_vision(CYN"萬道血光之間，烏雲突然裂開道長縫，$N那龐大身軀衝上雲霄。。。\n"NOR, this_object());
+		message_vision(CYN"四下歸於死一般的寂靜。。\n"NOR, this_object());
 		destruct(this_object());
 	} else { 
 		message_vision(HIG"$N仰天發出令人心膽俱裂的震天怒吼，山石雨下，烏雲翻滾！\n"NOR, this_object()); 
-		message_vision(RED"\n$N微微低首，散發著無窮殺機的血色赤眸盯著$n一字字道：蚩尤重生，君臨天下！\n"NOR, this_object(),ob); 
+		message_vision(RED"\n$N微微低首，散發着無窮殺機的血色赤眸盯着$n一字字道：蚩尤重生，君臨天下！\n"NOR, this_object(),ob); 
 		message_vision(RED"汝等怯懦人獸，還不匍地臣服！（kneel or reject）\n"NOR, this_object()); 
 	}
 }
@@ -244,7 +244,7 @@ int do_kneel(){
 	}
 		message_vision(RED"\n$N血眸精光四射，狂笑半晌道：不錯，某先去天界找那軒轅帝出出這萬世不得\n"NOR,this_object()); 
 		message_vision(RED"翻身的晦氣。嘿～，軒轅老鬼！ 萬道血光之間，烏雲突然裂開道長縫，蚩尤那龐\n"NOR, this_object()); 
-		message_vision(RED"大身軀沖上雲霄。。。 四下歸于死一般的寂靜。。\n", this_object()); 
+		message_vision(RED"大身軀衝上雲霄。。。 四下歸於死一般的寂靜。。\n", this_object()); 
 	destruct(this_object());
 	return 1;
 }
@@ -253,7 +253,7 @@ int do_reject(){
 	object me;
 	me = this_player();
 	set("busy", 1);
-	message_vision(HIG"$N彈衣而起，仰天長笑道：縱使血濺于此，萬劫不復，也絕不屈膝半寸！\n"NOR, me); 
+	message_vision(HIG"$N彈衣而起，仰天長笑道：縱使血濺於此，萬劫不復，也絕不屈膝半寸！\n"NOR, me); 
 	message_vision(HIR"\n$N雙眸血光暴起，喝道：順我者昌，逆我者～～亡～！\n"NOR, this_object()); 
 	me->kill_ob(this_object());
 	kill_ob(me);
@@ -293,7 +293,7 @@ void die(){
 	}
     
 	if (me) 
-		CHANNEL_D->do_sys_channel("info",sprintf("%s，%s于蚩尤秘窟擊殺蚩尤。", NATURE_D->game_time(),me->query("name")) ); 
+		CHANNEL_D->do_sys_channel("info",sprintf("%s，%s於蚩尤祕窟擊殺蚩尤。", NATURE_D->game_time(),me->query("name")) ); 
 	
 	seteuid(getuid());
 	

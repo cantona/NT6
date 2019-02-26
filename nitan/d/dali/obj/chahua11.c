@@ -5,13 +5,13 @@ inherit HEAD;
 
 void create()
 {
-        set_name(HIR"紅妝"HIW"素裹"NOR, ({"cha hua", "hua"}));
+        set_name(HIR"紅粧"HIW"素裹"NOR, ({"cha hua", "hua"}));
         if( clonep() )
                 set_default_object(__FILE__);
         else {
                 set("unit", "朵");
                 set("long", 
-"一株茶花，白色花瓣上似乎洒了些紅斑。\n");
+"一株茶花，白色花瓣上似乎灑了些紅斑。\n");
                 set("value", 50);
                 set("material", "plant");
                 set_weight(10);

@@ -6,7 +6,7 @@ void create()
 {
         set("short", "南練功房");
         set("long", @LONG
-這裡是南面的練功房，屋中立著一些練武者常用的木人。
+這裏是南面的練功房，屋中立着一些練武者常用的木人。
 LONG );
         set("exits", ([
                 "north" : __DIR__"liangong",

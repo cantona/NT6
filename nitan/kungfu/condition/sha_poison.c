@@ -15,6 +15,6 @@ string update_msg_others()
 
 string update_msg_self()
 {
-        return HIR "你只覺毒氣攻心，頓時感到一股莫名的惡心，全身癱軟無力！\n" NOR;
+        return HIR "你只覺毒氣攻心，頓時感到一股莫名的噁心，全身癱軟無力！\n" NOR;
 }
 

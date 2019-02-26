@@ -73,6 +73,6 @@ int do_cast(string arg)
         add_amount(-1);
         ob->set("hsf",this_player()->query_skill("poison",1 )
                         +this_player()->query_skill("hamagong",1));
-        set("long", "這根布條有些異樣，似乎特別的黃，且泛著熒光。\n", ob);
+        set("long", "這根布條有些異樣，似乎特別的黃，且泛着熒光。\n", ob);
         return 1;
 }

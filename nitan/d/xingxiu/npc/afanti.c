@@ -11,7 +11,7 @@ void create()
         set("gender", "男性" );
         set("age", 48);
         set("long", 
-            "他頭上包著頭巾，長著向上翹的八字胡，最喜歡捉弄巴依、幫助窮人。他常"
+            "他頭上包着頭巾，長着向上翹的八字鬍，最喜歡捉弄巴依、幫助窮人。他常"
             "給別人出謎語。\n");
         set("str", 25);
         set("dex", 20);
@@ -28,14 +28,14 @@ void create()
         set("attitude", "peaceful");
         set("inquiry", ([
             "name" : "我就是納蘇爾的阿凡提。",
-            "here" : "這裡可真是個好地方。",
+            "here" : "這裏可真是個好地方。",
             "納蘇爾" : "是我出生的地方。",
             "謎語" : "你幫我找到小毛驢，我就給你出謎語。",
-            "巴依" : "他把我關在這裡，有吃有喝，我就不走了。巴依是個壞蛋，願胡大懲罰他。",
-            "毛驢" : "我的小毛驢在我到沙漠裡騙巴依種金子時走丟了。",
-            "驢" : "我的小毛驢在我到沙漠裡騙巴依種金子時走丟了。",
-            "小毛驢" : "我的小毛驢在我到沙漠裡騙巴依種金子時走丟了。",
-            "卷簾格" : "卷簾格指謎底各字順序顛倒過來和謎面相扣。",
+            "巴依" : "他把我關在這裏，有吃有喝，我就不走了。巴依是個壞蛋，願胡大懲罰他。",
+            "毛驢" : "我的小毛驢在我到沙漠裏騙巴依種金子時走丟了。",
+            "驢" : "我的小毛驢在我到沙漠裏騙巴依種金子時走丟了。",
+            "小毛驢" : "我的小毛驢在我到沙漠裏騙巴依種金子時走丟了。",
+            "捲簾格" : "捲簾格指謎底各字順序顛倒過來和謎面相扣。",
             "胡大" : "就是真主。又名安拉或阿拉。",
             "真主" : "真主至大，萬物非主，唯有真主。穆罕默德是真主的使者。",
        ]) );
@@ -43,7 +43,7 @@ void create()
         setup();
         set("chat_chance", 10);
         set("chat_msg", ({
-             "阿凡提嘆了口氣：嗨，可惜我的驢。\n",
+             "阿凡提歎了口氣：嗨，可惜我的驢。\n",
         }) );
         carry_object(__DIR__"obj/wcloth")->wear();
         carry_object(__DIR__"obj/dongbula");
@@ -63,12 +63,12 @@ int accept_object(object who, object ob)
            call_out("destroying", 1, this_object(), ob);
 
            if( query_temp("marks/謎", who)){
-                 write("阿凡提笑了笑，說：你先把上個謎猜出來再說。\n");
+                 write("阿凡提笑了笑，説：你先把上個謎猜出來再説。\n");
 //               destruct(ob);
                  return 1;
            }
            else {
-                 write("阿凡提笑得嘴都合不上了，說：多謝這位" + 
+                 write("阿凡提笑得嘴都合不上了，説：多謝這位" + 
                        RANK_D->query_respect(who) +
                        "的幫助，咱們猜個謎語吧：\n");
                  switch(random(20)) {
@@ -89,11 +89,11 @@ int accept_object(object who, object ob)
                        set_temp("marks/謎", 4, who);
                        break;
                    case 4:
-                       write("打谷場上的NPC。(打一本泥潭玩家名)\n");
+                       write("打穀場上的NPC。(打一本泥潭玩家名)\n");
                        set_temp("marks/謎", 5, who);
                        break;
                    case 5:
-                       write("巴黎習語。(打一本泥潭技能名，卷簾格)\n");
+                       write("巴黎習語。(打一本泥潭技能名，捲簾格)\n");
                        set_temp("marks/謎", 6, who);
                        break;
                    case 6:
@@ -108,7 +108,7 @@ int accept_object(object who, object ob)
                        break;
                    case 8:
                        write("錦帆才渡兒郎去。(打一本泥潭巫師網名)\n");
-                    // this riddle made by 岳涵　（美國　密執安州）
+                    // this riddle made by 嶽涵　（美國　密執安州）
                        set_temp("marks/謎", 9, who);
                        break;
                    case 9:
@@ -136,7 +136,7 @@ int accept_object(object who, object ob)
                        set_temp("marks/謎", 14, who);
                        break;
                    case 14:
-                       write("召。□打二本泥潭NPC名)----回答時二名一起回答，中間不加任何標點。\n");
+                       write("召。(打二本泥潭NPC名)----回答時二名一起回答，中間不加任何標點。\n");
                     // this riddle made by 老哈　（美國）
                        set_temp("marks/謎", 15, who);
                        break;
@@ -165,7 +165,7 @@ int accept_object(object who, object ob)
 
                   }
                   write("想好了回答 (answer) 我。記住，不可泄露謎語或謎底。\n");
-                  message("vision", "阿凡提對著"+who->name()+"嘀咕了幾句話。\n",
+                  message("vision", "阿凡提對着"+who->name()+"嘀咕了幾句話。\n",
                           environment(who), ({who}) );
                   remove_call_out("destroying");
                   call_out("destroying", 1, this_object(), ob);
@@ -187,7 +187,7 @@ int do_answer(string arg)
         riddle=query_temp("marks/謎", this_player());
 
         if (!riddle) {
-           write("我又不是你師傅，你用不著回答我。\n");
+           write("我又不是你師傅，你用不着回答我。\n");
            return 1;
         }
 
@@ -221,13 +221,13 @@ int do_answer(string arg)
           case "逍遙洞逍遙遊" : soln=19; break;
           case "買賣提" : soln=20; break;
           default :
-              say("阿凡提大笑起來，說道：你說什麼呀，牛頭不對馬嘴。\n"
+              say("阿凡提大笑起來，説道：你説什麼呀，牛頭不對馬嘴。\n"
                   + me->name() + "的臉被臊得通紅。\n");
               return 1;
         }
         if( query("combat_exp", me)>10 )
         {
-              say("阿凡提大笑起來，說道：你還來騙經驗呀。\n" + me->name() + "的臉被臊得通紅。\n");
+              say("阿凡提大笑起來，説道：你還來騙經驗呀。\n" + me->name() + "的臉被臊得通紅。\n");
               return 1;
         }
         if (riddle==soln) {
@@ -235,7 +235,7 @@ int do_answer(string arg)
 //          gold->move(this_player());
 //          say("阿凡提給了" + me->name() + "一兩黃金。\n");
           set_temp("marks/謎", 0, this_player());
-          say ("阿凡提對" + me->name() + "豎起大姆指：居然讓你猜著了。黃金是巴依的不義之財，你拿去分給窮人吧。\n");
+          say ("阿凡提對" + me->name() + "豎起大姆指：居然讓你猜着了。黃金是巴依的不義之財，你拿去分給窮人吧。\n");
           set("combat_exp",query("combat_exp",  this_player())+80, this_player());
           write ("你的經驗增加了！\n");
 

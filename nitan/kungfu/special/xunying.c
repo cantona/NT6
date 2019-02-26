@@ -20,7 +20,7 @@ int perform(object me, string skill)
         }
         
                 if (me->query("combat_exp") < 2700000)
-                        return notify_fail("您的實戰經驗小于270萬，無法施展該技能。\n");
+                        return notify_fail("您的實戰經驗小於270萬，無法施展該技能。\n");
                 
         if (me->query_temp("special2/xunying"))
         {
@@ -37,7 +37,7 @@ int perform(object me, string skill)
                 me->set_temp("special2/xunying", 1);
         
                       return notify_fail("你在轉生過程中縱觀天象，察覺到了人世\n"
-                                                "間的諸多奧秘，眾生百態盡收眼底。此後\n"
+                                                "間的諸多奧祕，眾生百態盡收眼底。此後\n"
                                              "不再受到架力卸招之技的迷惑。轉生後使\n"
                                              "用該絕技可獲得陰陽八卦及算術等級三百\n"
                                              "級，但一生僅能使用一次，如果你決定現\n"

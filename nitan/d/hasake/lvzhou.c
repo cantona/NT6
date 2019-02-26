@@ -8,7 +8,7 @@ void create()
 {
         set("short", "回疆綠洲" NOR);
         set("long", @LONG
-在戈壁的盡頭出現了一個綠洲。這裡有口水井，可是已經幹涸了。
+在戈壁的盡頭出現了一個綠洲。這裏有口水井，可是已經乾涸了。
 LONG);
         set("no_sleep_room", 1);
         set("valid_startroom", 1);

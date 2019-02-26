@@ -28,12 +28,12 @@ mapping *action = ({
         "skill_name" : "佛界無邊",
         "damage_type" : "瘀傷"
 ]),
-([      "action" : "$N左足倏地彈出，連環六腿，分踢$n的頭部，胸部和襠部，正是一式「轉世輪回」",
+([      "action" : "$N左足倏地彈出，連環六腿，分踢$n的頭部，胸部和襠部，正是一式「轉世輪迴」",
         "force" : 350,
         "dodge" : 10,
         "parry" : 0,
         "lvl" : 120,
-        "skill_name" : "轉世輪回",
+        "skill_name" : "轉世輪迴",
         "damage_type" : "瘀傷"
 ]),
 ([      "action" : "$N左足獨立，右腿隨身形反轉橫掃，一招「西天極樂」，踢向$n的$l",
@@ -60,7 +60,7 @@ int valid_enable(string usage) { return usage=="unarmed" || usage=="parry" || us
 int valid_learn(object me)
 {
         if( query_temp("weapon", me) || query_temp("secondary_weapon", me) )
-                return notify_fail("學如影隨形腿時手裡不能拿武器。\n");
+                return notify_fail("學如影隨形腿時手裏不能拿武器。\n");
            if (me->query_skill("force", 1) < 150)
                 return notify_fail("你的內功火候不夠，無法學如影隨形腿。\n");
         if ((int)me->query_int() > 30)
@@ -87,7 +87,7 @@ mapping query_action(object me, object weapon)
         if( query_temp("sl_rysxt", me)){
                     switch(query_temp("sl_rysxt", me)){
                            case 5: msg = HIY"$N忽然躍起，左腳一勾一彈，霎時之間踢出一招「如」字訣的穿心腿，直襲$n前胸"NOR; break;
-                           case 4: msg = HIY"緊接著$N左腿勾回，將腰身一扭，那右腿的一招「影」字訣便緊隨而至，飛向$n"NOR; break;
+                           case 4: msg = HIY"緊接着$N左腿勾回，將腰身一扭，那右腿的一招「影」字訣便緊隨而至，飛向$n"NOR; break;
                            case 3: msg = HIY"只見$N右腳勁力未消，便凌空一轉，左腿順勢掃出一招「隨」字訣，如影而至"NOR; break;
                            case 2: msg = HIY"半空中$N腳未後撤，已經運起「形」字訣，內勁直透腳尖，在$n胸腹處連點了數十下"NOR; break;
                            case 1: msg = HIR"這時$N雙臂展動，帶起一股強烈的旋風，雙腿霎時齊並，「如影隨形」一擊重炮轟在$n胸堂之上"NOR; break;

@@ -32,7 +32,7 @@ int perform(object me)
 
 
         msg = HIR "$N" HIR "突然如同蝙蝠一樣，倏的欺近$n"
-              HIR "的身前，張嘴便向$n" HIR "的嚥喉咬去。\n" NOR;
+              HIR "的身前，張嘴便向$n" HIR "的咽喉咬去。\n" NOR;
         message_combatd(msg, me, target);
 
         ap = attack_power(me, "strike");
@@ -44,7 +44,7 @@ int perform(object me)
 
                 if ( query("combat_exp", me) > random(query("combat_exp", target)*10) )
                 {
-                        message_vision(HIR"只見$N的腹部微微鼓起，然後放開$n。再看時，$n已經血被吸幹，早已氣絕。\n"NOR,me,target);
+                        message_vision(HIR"只見$N的腹部微微鼓起，然後放開$n。再看時，$n已經血被吸乾，早已氣絕。\n"NOR,me,target);
                         me->receive_curing("qi",query("max_qi", target)+100);
                         addn("qi",query("max_qi", target)+100, me);
                         target->receive_damage("qi", query("max_qi", target)+100, me);
@@ -53,7 +53,7 @@ int perform(object me)
                 }
                 else
                 {
-                        message_vision(HIW"$n拼死掙紮，終于掙脫$N的控制，但受傷極重，鮮血從頸部汩汩流出。\n"NOR,me,target);
+                        message_vision(HIW"$n拼死掙扎，終於掙脱$N的控制，但受傷極重，鮮血從頸部汩汩流出。\n"NOR,me,target);
                         me->receive_curing("qi",query("max_qi", target)/3);
                         addn("qi",query("max_qi", target)/3, me);
                         target->receive_wound("qi", query("max_qi", target)/3, me);

@@ -9,7 +9,7 @@ void create()
         set("race", "爬蛇");
         set("age", 2);
         set("long", @LONG
-這毒蛇身上隱隱閃著金光，頭頂生有肉角，形狀十分怪異。
+這毒蛇身上隱隱閃着金光，頭頂生有肉角，形狀十分怪異。
 LONG
 );
         set("attitude", "peaceful");

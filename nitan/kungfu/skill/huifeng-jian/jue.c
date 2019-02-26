@@ -1,4 +1,4 @@
-// jue.c  回風拂柳劍法「絕劍」
+// jue.c  迴風拂柳劍法「絕劍」
 
 #include <ansi.h>
 #include <combat.h>
@@ -25,10 +25,10 @@ int perform(object me, object target)
                 return notify_fail("你所使用的武器不對，無法施展" + name() + "。\n");
 
         if (me->query_skill_mapped("sword") != "huifeng-jian")
-                return notify_fail("你沒有激發回風拂柳劍法，無法施展" + name() + "。\n");
+                return notify_fail("你沒有激發迴風拂柳劍法，無法施展" + name() + "。\n");
 
         if ((int)me->query_skill("huifeng-jian", 1) < 120)
-                return notify_fail("你回風拂柳劍法不夠嫻熟，無法施展" + name() + "。\n");
+                return notify_fail("你迴風拂柳劍法不夠嫻熟，無法施展" + name() + "。\n");
 
         if ((int)me->query_skill("force") < 200)
                 return notify_fail("你內功火候不夠，無法施展" + name() + "。\n");
@@ -37,7 +37,7 @@ int perform(object me, object target)
                 return notify_fail("你現在真氣不夠，無法施展" + name() + "。\n");
 
         if (! living(target))
-                return notify_fail("對方都已經這樣了，用不著這麼費力吧？\n");
+                return notify_fail("對方都已經這樣了，用不着這麼費力吧？\n");
 
         wname = weapon->name();
 
@@ -47,11 +47,11 @@ int perform(object me, object target)
         ap = attack_power(me, "sword") + me->query_str();
         dp = defense_power(target, "parry") + target->query_str();
         msg = HIC "$N" HIC "一聲暴喝，手中的" + wname + HIC "對準$n" HIC "直劈而"
-              "下，正是回風拂柳劍「" NOR + HIW "絕劍" NOR + HIC "」絕技。\n" NOR;
+              "下，正是迴風拂柳劍「" NOR + HIW "絕劍" NOR + HIC "」絕技。\n" NOR;
         if (ap / 2 + random(ap) > dp)
         {
                 msg += COMBAT_D->do_damage(me, target, WEAPON_ATTACK, damage, 50,
-                                           HIR "$p" HIR "奮力抵擋，卻哪裡招架得住，被$P"
+                                           HIR "$p" HIR "奮力抵擋，卻哪裏招架得住，被$P"
                                            HIR "這一劍劈下，登時鮮血迸流！\n" NOR);
         } else
         {
@@ -84,7 +84,7 @@ int perform(object me, object target)
         {
                 msg += COMBAT_D->do_damage(me, target, WEAPON_ATTACK, damage, 55,
                                            HIR "$p" HIR "運氣抵擋，只覺得一股透體涼意"
-                                           "襲了上來，一個激凌，丹田立刻變得空空盪盪！\n" NOR);
+                                           "襲了上來，一個激凌，丹田立刻變得空空蕩蕩！\n" NOR);
         } else
         {
                 msg += CYN "$p" CYN "一口氣自丹田運了上來，$P"
@@ -110,8 +110,8 @@ int perform(object me, object target)
         // 第五招
         ap = attack_power(me, "sword");
         dp = defense_power(target, "parry");
-        msg += "\n" HIC "$N" HIC "一聲長嘆，眼神變得寒冷無情，" + wname +
-               HIC "悠悠而轉，猶如輕風拂柳，說不清的纏綿之意。\n" NOR;
+        msg += "\n" HIC "$N" HIC "一聲長歎，眼神變得寒冷無情，" + wname +
+               HIC "悠悠而轉，猶如輕風拂柳，説不清的纏綿之意。\n" NOR;
         if (ap / 2 + random(ap) > dp)
         {
                 msg += COMBAT_D->do_damage(me, target, WEAPON_ATTACK, damage, 65,

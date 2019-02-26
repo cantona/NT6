@@ -23,7 +23,7 @@ int perform(object me, object target)
 
         if( !objectp(weapon=query_temp("handing", me) )
             || query("skill_type", weapon) != "throwing" )
-                return notify_fail("你現在手中並沒有拿著暗器。\n");
+                return notify_fail("你現在手中並沒有拿着暗器。\n");
 
         if (weapon->query_amount() < 30)
                 return notify_fail("你至少要拿有二十枚暗器才能施展" + name() + "。\n");
@@ -38,7 +38,7 @@ int perform(object me, object target)
                 return notify_fail("你現在的真氣不足，難以施展" + name() + "。\n");
 
         if (! living(target))
-               return notify_fail("對方都已經這樣了，用不著這麼費力吧？\n");
+               return notify_fail("對方都已經這樣了，用不着這麼費力吧？\n");
 
         msg = YEL "只見$N" YEL "右手一揚，施出「" HIR "金針渡劫" NOR +
               YEL "」，手中" + weapon->name() + YEL "如急風暴雨般向$n"

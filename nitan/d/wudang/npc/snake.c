@@ -8,7 +8,7 @@ void create()
         set_name("蝮蛇", ({ "snake", "she" }) );
         set("race", "爬蛇");
         set("age", 4);
-        set("long", "這是一只南方叢林裡出沒的蛇，習性與一般的蛇大為不同。\n");
+        set("long", "這是一隻南方叢林裏出沒的蛇，習性與一般的蛇大為不同。\n");
         set("attitude", "aggressive");
 
         set("str", 40);

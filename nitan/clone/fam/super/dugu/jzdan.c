@@ -7,7 +7,7 @@ void create()
         if (clonep())
                 set_default_object(__FILE__);
         else {  
-        	set("long", HIC "九轉丹乃是神農氏通過九九八十一次煉制而成。\n" + 
+        	set("long", HIC "九轉丹乃是神農氏通過九九八十一次煉製而成。\n" + 
         	                "服食(fushi jiuzhuandan)後，15分鐘內可額外提升研究效率3%。\n" HIR
         	                /*"擁有者：擁有者ID*/"\n" NOR);
                 set("unit", "顆");
@@ -37,7 +37,7 @@ int do_use(string arg)
 		return notify_fail("你身上沒有這個東西！\n");
 /*
 	if( query("owner", ob) != query("id", me) )
-		return notify_fail(ob->name() + NOR "已經于其他玩家綁定！\n");
+		return notify_fail(ob->name() + NOR "已經於其他玩家綁定！\n");
 */
 
 	if( !query("add_yanjiu_xiaolv15", me) || 
@@ -49,7 +49,7 @@ addn("add_yanjiu_xiaolv15", 900, 		me);
 	}
 
 	tell_object(me, HIG "恭喜！你服下" + ob->name() + HIG "後，15分鐘內研究效率額外提高3%！\n");
-	tell_object(me,HIG"目前該效果還剩余時間："+sprintf("%d",query("add_yanjiu_xiaolv15", me))+"秒。\n");
+	tell_object(me,HIG"目前該效果還剩餘時間："+sprintf("%d",query("add_yanjiu_xiaolv15", me))+"秒。\n");
 	
 	me->save();
 	

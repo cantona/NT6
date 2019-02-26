@@ -41,10 +41,10 @@ int perform(object me, object target)
                 return notify_fail("你現在的真氣不足，難以施展" + name() + "。\n");
 
         if (! living(target))
-                return notify_fail("對方都已經這樣了，用不著這麼費力吧？\n");
+                return notify_fail("對方都已經這樣了，用不着這麼費力吧？\n");
 
         msg = HIW "$N" HIW "施出鐵掌絕技「" HIR "陰陽磨"
-              HIW "」，左掌不著半點力道，攜著陰寒勁向$n"
+              HIW "」，左掌不着半點力道，攜着陰寒勁向$n"
               HIW "拂去。\n" NOR;
 
         ap=attack_power(me,"strike")+me->query_str()*15;
@@ -59,11 +59,11 @@ int perform(object me, object target)
         } else
         {
                 msg += CYN "$n" CYN "見$N" CYN "掌出如風，心知"
-                       "此招後著極是凌厲，當即斜跳閃開。\n" NOR;
+                       "此招後着極是凌厲，當即斜跳閃開。\n" NOR;
         }
 
-        msg += HIR "\n緊接著$N" HIR "右掌一振，掌風過處，竟席"
-               "卷起一股熱浪，向$n" HIR "胸前猛然拍落。\n" NOR;
+        msg += HIR "\n緊接着$N" HIR "右掌一振，掌風過處，竟席"
+               "捲起一股熱浪，向$n" HIR "胸前猛然拍落。\n" NOR;
 
         if (ap / 2 + random(ap) > dd)
         {

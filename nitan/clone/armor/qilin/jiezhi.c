@@ -12,7 +12,7 @@ void create()
                 set_default_object(__FILE__);
         else {
                 set("unit", "枚");
-                set("long", HIR "由火麒麟的精魄幻化而成的戒指，閃動著火燄的光芒，令人神往。\n" NOR);
+                set("long", HIR "由火麒麟的精魄幻化而成的戒指，閃動着火焰的光芒，令人神往。\n" NOR);
                 set("value", 20000000);
                 set("material", "gold");
                 set("armor_prop/dex", 20);

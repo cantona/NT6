@@ -2,469 +2,469 @@
 inherit FORCE;
 
 mapping *action = ({
-([      "name":   "六陰鬼脈﹒少商劍",
-        "action": "$N雙手拇指同時捺出，嗤嗤兩聲急響，「" HIW "六陰鬼脈﹒少商劍" NOR "」有如石破"
+([      "name":   "六陰鬼脈·少商劍",
+        "action": "$N雙手拇指同時捺出，嗤嗤兩聲急響，「" HIW "六陰鬼脈·少商劍" NOR "」有如石破"
                   "天驚、風雨大至",
         "force" : 560,
         "attack": 240,
         "dodge" : 190,
         "parry" : 190,
         "damage": 560,
-        "weapon" : HIW "六陰鬼脈﹒少商劍氣" NOR,
+        "weapon" : HIW "六陰鬼脈·少商劍氣" NOR,
         "damage_type":  "刺傷"
 ]),
-([      "name":   "六陰鬼脈﹒少商劍",
-        "action": "$N大拇指一按，嗤嗤兩指，勁道使得甚巧，「" HIW "六陰鬼脈﹒少商劍" NOR "」劍氣"
+([      "name":   "六陰鬼脈·少商劍",
+        "action": "$N大拇指一按，嗤嗤兩指，勁道使得甚巧，「" HIW "六陰鬼脈·少商劍" NOR "」劍氣"
                   "如怒潮般湧至",
         "force" : 560,
         "attack": 240,
         "dodge" : 190,
         "parry" : 190,
         "damage": 560,
-        "weapon" : HIW "六陰鬼脈﹒少商劍氣" NOR,
+        "weapon" : HIW "六陰鬼脈·少商劍氣" NOR,
         "damage_type":  "刺傷"
 ]),
-([      "name":   "六陰鬼脈﹒少商劍",
-        "action": "$N大拇指連揮，「" HIW "六陰鬼脈﹒少商劍" NOR "」便如是一幅潑墨山水，縱橫倚斜"
+([      "name":   "六陰鬼脈·少商劍",
+        "action": "$N大拇指連揮，「" HIW "六陰鬼脈·少商劍" NOR "」便如是一幅潑墨山水，縱橫倚斜"
                   "，劍路雄勁",
         "force" : 560,
         "attack": 240,
         "dodge" : 190,
         "parry" : 190,
         "damage": 560,
-        "weapon" : HIW "六陰鬼脈﹒少商劍氣" NOR,
+        "weapon" : HIW "六陰鬼脈·少商劍氣" NOR,
         "damage_type":  "刺傷"
 ]),
-([      "name":   "六陰鬼脈﹒少商劍",
-        "action": "$N雙手拇指同時捺出，「" HIW "六陰鬼脈﹒少商劍" NOR "」大開大闔，氣派宏偉，每"
+([      "name":   "六陰鬼脈·少商劍",
+        "action": "$N雙手拇指同時捺出，「" HIW "六陰鬼脈·少商劍" NOR "」大開大闔，氣派宏偉，每"
                   "一劍都有風雨大至之勢",
         "force" : 560,
         "attack": 240,
         "dodge" : 190,
         "parry" : 190,
         "damage": 560,
-        "weapon" : HIW "六陰鬼脈﹒少商劍氣" NOR,
+        "weapon" : HIW "六陰鬼脈·少商劍氣" NOR,
         "damage_type":  "刺傷"
 ]),
-([      "name":   "六陰鬼脈﹒商陽劍",
-        "action": "$N食指連動，手腕園轉，「" HIW "六陰鬼脈﹒商陽劍" NOR "」一劍又一劍的刺出，輕"
+([      "name":   "六陰鬼脈·商陽劍",
+        "action": "$N食指連動，手腕園轉，「" HIW "六陰鬼脈·商陽劍" NOR "」一劍又一劍的刺出，輕"
                   "靈迅速，劍氣縱橫",
         "force" : 540,
         "attack": 245,
         "dodge" : 110,
         "parry" : 195,
         "damage": 580,
-        "weapon" : HIW "六陰鬼脈﹒商陽劍氣" NOR,
+        "weapon" : HIW "六陰鬼脈·商陽劍氣" NOR,
         "damage_type":  "刺傷"
 ]),
-([      "name":   "六陰鬼脈﹒商陽劍",
-        "action": "$N變招奇速，右手食指疾從袖底穿出，「" HIW "六陰鬼脈﹒商陽劍" NOR "」登時幻出"
+([      "name":   "六陰鬼脈·商陽劍",
+        "action": "$N變招奇速，右手食指疾從袖底穿出，「" HIW "六陰鬼脈·商陽劍" NOR "」登時幻出"
                   "無數指影",
         "force" : 540,
         "attack": 245,
         "dodge" : 110,
         "parry" : 195,
         "damage": 580,
-        "weapon" : HIW "六陰鬼脈﹒商陽劍氣" NOR,
+        "weapon" : HIW "六陰鬼脈·商陽劍氣" NOR,
         "damage_type":  "刺傷"
 ]),
-([      "name":   "六陰鬼脈﹒商陽劍",
-        "action": "$N拇指一屈，食指隨即點出，嗤嗤兩聲急響，變成商陽劍法，「" HIW "六陰鬼脈﹒商"
+([      "name":   "六陰鬼脈·商陽劍",
+        "action": "$N拇指一屈，食指隨即點出，嗤嗤兩聲急響，變成商陽劍法，「" HIW "六陰鬼脈·商"
                   "陽劍" NOR "」激射刺出",
         "force" : 540,
         "attack": 245,
         "dodge" : 110,
         "parry" : 195,
         "damage": 580,
-        "weapon" : HIW "六陰鬼脈﹒商陽劍氣" NOR,
+        "weapon" : HIW "六陰鬼脈·商陽劍氣" NOR,
         "damage_type":  "刺傷"
 ]),
-([      "name":   "六陰鬼脈﹒商陽劍",
-        "action": "$N以食指急運「" HIW "六陰鬼脈﹒商陽劍" NOR "」之無形劍氣，卻不過是手指在數寸"
-                  "范圍內一點一戳",
+([      "name":   "六陰鬼脈·商陽劍",
+        "action": "$N以食指急運「" HIW "六陰鬼脈·商陽劍" NOR "」之無形劍氣，卻不過是手指在數寸"
+                  "範圍內一點一戳",
         "force" : 580,
         "attack": 245,
         "dodge" : 110,
         "parry" : 195,
         "damage": 580,
-        "weapon" : HIW "六陰鬼脈﹒商陽劍氣" NOR,
+        "weapon" : HIW "六陰鬼脈·商陽劍氣" NOR,
         "damage_type":  "刺傷"
 ]),
-([      "name":   "六陰鬼脈﹒中沖劍",
-        "action": "$N右手中指一豎，「" HIW "六陰鬼脈﹒中沖劍" NOR "」向前刺出。真氣鼓盪，嗤然聲"
+([      "name":   "六陰鬼脈·中衝劍",
+        "action": "$N右手中指一豎，「" HIW "六陰鬼脈·中衝劍" NOR "」向前刺出。真氣鼓盪，嗤然聲"
                   "響，無形劍氣直指$n",
         "force" : 560,
         "attack": 255,
         "dodge" : 110,
         "parry" : 170,
         "damage": 520,
-        "weapon" : HIW "六陰鬼脈﹒中沖劍氣" NOR,
+        "weapon" : HIW "六陰鬼脈·中衝劍氣" NOR,
         "damage_type":  "刺傷"
 ]),
-([      "name":   "六陰鬼脈﹒中沖劍",
-        "action": "$N將中指向上一刺，「" HIW "六陰鬼脈﹒中沖劍" NOR "」拔地而起，接著手指向下一"
+([      "name":   "六陰鬼脈·中衝劍",
+        "action": "$N將中指向上一刺，「" HIW "六陰鬼脈·中衝劍" NOR "」拔地而起，接着手指向下一"
                   "劃，劍氣如利刀般砍出",
         "force" : 560,
         "attack": 245,
         "dodge" : 110,
         "parry" : 170,
         "damage": 520,
-        "weapon" : HIW "六陰鬼脈﹒中沖劍氣" NOR,
+        "weapon" : HIW "六陰鬼脈·中衝劍氣" NOR,
         "damage_type":  "刺傷"
 ]),
-([      "name":   "六陰鬼脈﹒中沖劍",
-        "action": "電光火石之間，$N猛然翻掌，右手陡然探出，中指「" HIW "六陰鬼脈﹒中沖劍" NOR
+([      "name":   "六陰鬼脈·中衝劍",
+        "action": "電光火石之間，$N猛然翻掌，右手陡然探出，中指「" HIW "六陰鬼脈·中衝劍" NOR
                   "」向$n一豎",
         "force" : 560,
         "attack": 235,
         "dodge" : 110,
         "parry" : 170,
         "damage": 520,
-        "weapon" : HIW "六陰鬼脈﹒中沖劍氣" NOR,
+        "weapon" : HIW "六陰鬼脈·中衝劍氣" NOR,
         "damage_type":  "刺傷"
 ]),
-([      "name":   "六陰鬼脈﹒關沖劍",
-        "action": "$N右手無名指伸出，「" HIW "六陰鬼脈﹒關沖劍" NOR "」劍路拙滯古樸，一股雄渾無"
+([      "name":   "六陰鬼脈·關衝劍",
+        "action": "$N右手無名指伸出，「" HIW "六陰鬼脈·關衝劍" NOR "」劍路拙滯古樸，一股雄渾無"
                   "比的內力鼓盪而出",
         "force" : 530,
         "attack": 240,
         "dodge" : 100,
         "parry" : 195,
         "damage": 580,
-        "weapon" : HIW "六陰鬼脈﹒關沖劍氣" NOR,
+        "weapon" : HIW "六陰鬼脈·關衝劍氣" NOR,
         "damage_type":  "刺傷"
 ]),
-([      "name":   "六陰鬼脈﹒關沖劍",
-        "action": "$N俯身斜倚，無名指「" HIW "六陰鬼脈﹒關沖劍" NOR "」彈射而出，指尖已對準$n發"
+([      "name":   "六陰鬼脈·關衝劍",
+        "action": "$N俯身斜倚，無名指「" HIW "六陰鬼脈·關衝劍" NOR "」彈射而出，指尖已對準$n發"
                   "出了一縷強烈的勁風",
         "force" : 530,
         "attack": 240,
         "dodge" : 100,
         "parry" : 195,
         "damage": 580,
-        "weapon" : HIW "六陰鬼脈﹒關沖劍氣" NOR,
+        "weapon" : HIW "六陰鬼脈·關衝劍氣" NOR,
         "damage_type":  "刺傷"
 ]),
-([      "name":   "六陰鬼脈﹒關沖劍",
-        "action": "$N無名指輕輕一揮，「嗤啦」一聲，拙滯古樸的「" HIW "六陰鬼脈﹒關沖劍" NOR "」"
+([      "name":   "六陰鬼脈·關衝劍",
+        "action": "$N無名指輕輕一揮，「嗤啦」一聲，拙滯古樸的「" HIW "六陰鬼脈·關衝劍" NOR "」"
                   "劍氣向$n直射而出",
         "force" : 530,
         "attack": 240,
         "dodge" : 100,
         "parry" : 195,
         "damage": 580,
-        "weapon" : HIW "六陰鬼脈﹒關沖劍氣" NOR,
+        "weapon" : HIW "六陰鬼脈·關衝劍氣" NOR,
         "damage_type":  "刺傷"
 ]),
-([      "name":   "六陰鬼脈﹒少澤劍",
-        "action": "$N左手小指一伸，一條氣流從少沖穴中激射而出，「" HIW "六陰鬼脈﹒少澤劍" NOR
+([      "name":   "六陰鬼脈·少澤劍",
+        "action": "$N左手小指一伸，一條氣流從少衝穴中激射而出，「" HIW "六陰鬼脈·少澤劍" NOR
                   "」出手入風，指向$n",
         "force" : 500,
         "attack": 260,
         "dodge" : 195,
         "parry" : 192,
         "damage": 570,
-        "weapon" : HIW "六陰鬼脈﹒少澤劍氣" NOR,
+        "weapon" : HIW "六陰鬼脈·少澤劍氣" NOR,
         "damage_type":  "刺傷"
 ]),
-([      "name":   "六陰鬼脈﹒少澤劍",
-        "action": "忽見$N左手小指一伸，一條氣流從$P少沖穴中激射而出，一股「" HIW "六陰鬼脈﹒少"
+([      "name":   "六陰鬼脈·少澤劍",
+        "action": "忽見$N左手小指一伸，一條氣流從$P少衝穴中激射而出，一股「" HIW "六陰鬼脈·少"
                   "澤劍" NOR "」登時射向$n",
         "force" : 500,
         "attack": 260,
         "dodge" : 195,
         "parry" : 192,
         "damage": 570,
-        "weapon" : HIW "六陰鬼脈﹒少澤劍氣" NOR,
+        "weapon" : HIW "六陰鬼脈·少澤劍氣" NOR,
         "damage_type":  "刺傷"
 ]),
-([      "name":   "六陰鬼脈﹒少沖劍",
-        "action": "$N右手小指伸出，真氣自少沖穴激盪而出，「" HIW "六陰鬼脈﹒少沖劍" NOR "」橫生"
+([      "name":   "六陰鬼脈·少衝劍",
+        "action": "$N右手小指伸出，真氣自少衝穴激盪而出，「" HIW "六陰鬼脈·少衝劍" NOR "」橫生"
                   "奇變，颼的刺向$n",
         "force" : 580,
         "attack": 250,
         "dodge" : 190,
         "parry" : 195,
         "damage": 540,
-        "weapon" : HIW "六陰鬼脈﹒少沖劍氣" NOR,
+        "weapon" : HIW "六陰鬼脈·少衝劍氣" NOR,
         "damage_type":  "刺傷"
 ]),
-([      "name":   "六陰鬼脈﹒少沖劍",
-        "action": "$N掌托于胸前，伸出右小指，一招「" HIW "六陰鬼脈﹒少沖劍" NOR "」緩緩地點向$n"
+([      "name":   "六陰鬼脈·少衝劍",
+        "action": "$N掌託於胸前，伸出右小指，一招「" HIW "六陰鬼脈·少衝劍" NOR "」緩緩地點向$n"
                   "的周身大穴",
         "force" : 530,
         "attack": 270,
         "dodge" : 190,
         "parry" : 195,
         "damage": 560,
-        "weapon" : HIW "六陰鬼脈﹒少沖劍氣" NOR,
+        "weapon" : HIW "六陰鬼脈·少衝劍氣" NOR,
         "damage_type":  "刺傷"
 ]),
-([      "name":   "六陰鬼脈﹒少沖劍",
-        "action": "$N小指一彈，「" HIW "六陰鬼脈﹒少沖劍" NOR "」化式「六陰鬼脈﹒分花拂柳」，劍勢如同柳絮"
+([      "name":   "六陰鬼脈·少衝劍",
+        "action": "$N小指一彈，「" HIW "六陰鬼脈·少衝劍" NOR "」化式「六陰鬼脈·分花拂柳」，劍勢如同柳絮"
                   "一般，飄而不亂",
         "force" : 530,
         "attack": 280,
         "dodge" : 190,
         "parry" : 195,
         "damage": 580,
-        "weapon" : HIW "六陰鬼脈﹒少沖劍氣" NOR,
+        "weapon" : HIW "六陰鬼脈·少衝劍氣" NOR,
         "damage_type":  "刺傷"
 ]),
-([      "name":   "六陰鬼脈﹒少沖劍",
-        "action": "$N一招「" HIW "六陰鬼脈﹒少沖劍" NOR "」，劍氣回轉無定形，竟從左側繞了過來，"
+([      "name":   "六陰鬼脈·少衝劍",
+        "action": "$N一招「" HIW "六陰鬼脈·少衝劍" NOR "」，劍氣迴轉無定形，竟從左側繞了過來，"
                   "點向$n",
         "force" : 530,
         "attack": 280,
         "dodge" : 190,
         "parry" : 195,
         "damage": 540,
-        "weapon" : HIW "六陰鬼脈﹒少沖劍氣" NOR,
+        "weapon" : HIW "六陰鬼脈·少衝劍氣" NOR,
         "damage_type":  "刺傷"
 ]),
-([      "name":   "六陰鬼脈﹒少沖劍",
-        "action": "$N右手小指一揮，一招「" HIW "六陰鬼脈﹒少沖劍" NOR "」點點刺刺破空刺出，宛如"
+([      "name":   "六陰鬼脈·少衝劍",
+        "action": "$N右手小指一揮，一招「" HIW "六陰鬼脈·少衝劍" NOR "」點點刺刺破空刺出，宛如"
                   "雕花刺畫一般",
         "force" : 530,
         "attack": 280,
         "dodge" : 190,
         "parry" : 195,
         "damage": 580,
-        "weapon" : HIW "六陰鬼脈﹒少沖劍氣" NOR,
+        "weapon" : HIW "六陰鬼脈·少衝劍氣" NOR,
         "damage_type":  "刺傷"
 ]),
 });
 
 mapping *action2 = ({
-([      "name":   "六陰鬼脈﹒少商劍",
-        "action": "$N雙手拇指同時捺出，嗤嗤兩聲急響，「" HIW "六陰鬼脈﹒少商劍" NOR "」有如石破"
+([      "name":   "六陰鬼脈·少商劍",
+        "action": "$N雙手拇指同時捺出，嗤嗤兩聲急響，「" HIW "六陰鬼脈·少商劍" NOR "」有如石破"
                   "天驚、風雨大至",
         "force" : 480,
         "attack": 180,
         "dodge" : 120,
         "parry" : 120,
         "damage": 480,
-        "weapon" : HIW "六陰鬼脈﹒少商劍氣" NOR,
+        "weapon" : HIW "六陰鬼脈·少商劍氣" NOR,
         "damage_type":  "刺傷"
 ]),
-([      "name":   "六陰鬼脈﹒少商劍",
-        "action": "$N大拇指一按，嗤嗤兩指，勁道使得甚巧，「" HIW "六陰鬼脈﹒少商劍" NOR "」劍氣"
+([      "name":   "六陰鬼脈·少商劍",
+        "action": "$N大拇指一按，嗤嗤兩指，勁道使得甚巧，「" HIW "六陰鬼脈·少商劍" NOR "」劍氣"
                   "如怒潮般湧至",
         "force" : 480,
         "attack": 180,
         "dodge" : 120,
         "parry" : 130,
         "damage": 480,
-        "weapon" : HIW "六陰鬼脈﹒少商劍氣" NOR,
+        "weapon" : HIW "六陰鬼脈·少商劍氣" NOR,
         "damage_type":  "刺傷"
 ]),
-([      "name":   "六陰鬼脈﹒少商劍",
-        "action": "$N大拇指連揮，「" HIW "六陰鬼脈﹒少商劍" NOR "」便如是一幅潑墨山水，縱橫倚斜"
+([      "name":   "六陰鬼脈·少商劍",
+        "action": "$N大拇指連揮，「" HIW "六陰鬼脈·少商劍" NOR "」便如是一幅潑墨山水，縱橫倚斜"
                   "，劍路雄勁",
         "force" : 500,
         "attack": 170,
         "dodge" : 150,
         "parry" : 150,
         "damage": 490,
-        "weapon" : HIW "六陰鬼脈﹒少商劍氣" NOR,
+        "weapon" : HIW "六陰鬼脈·少商劍氣" NOR,
         "damage_type":  "刺傷"
 ]),
-([      "name":   "六陰鬼脈﹒少商劍",
-        "action": "$N雙手拇指同時捺出，「" HIW "六陰鬼脈﹒少商劍" NOR "」大開大闔，氣派宏偉，每"
+([      "name":   "六陰鬼脈·少商劍",
+        "action": "$N雙手拇指同時捺出，「" HIW "六陰鬼脈·少商劍" NOR "」大開大闔，氣派宏偉，每"
                   "一劍都有風雨大至之勢",
         "force" : 490,
         "attack": 200,
         "dodge" : 160,
         "parry" : 160,
         "damage": 460,
-        "weapon" : HIW "六陰鬼脈﹒少商劍氣" NOR,
+        "weapon" : HIW "六陰鬼脈·少商劍氣" NOR,
         "damage_type":  "刺傷"
 ]),
-([      "name":   "六陰鬼脈﹒商陽劍",
-        "action": "$N食指連動，手腕園轉，「" HIW "六陰鬼脈﹒商陽劍" NOR "」一劍又一劍的刺出，輕"
+([      "name":   "六陰鬼脈·商陽劍",
+        "action": "$N食指連動，手腕園轉，「" HIW "六陰鬼脈·商陽劍" NOR "」一劍又一劍的刺出，輕"
                   "靈迅速，劍氣縱橫",
         "force" : 500,
         "attack": 215,
         "dodge" : 150,
         "parry" : 175,
         "damage": 500,
-        "weapon" : HIW "六陰鬼脈﹒商陽劍氣" NOR,
+        "weapon" : HIW "六陰鬼脈·商陽劍氣" NOR,
         "damage_type":  "刺傷"
 ]),
-([      "name":   "六陰鬼脈﹒商陽劍",
-        "action": "$N變招奇速，右手食指疾從袖底穿出，「" HIW "六陰鬼脈﹒商陽劍" NOR "」登時幻出"
+([      "name":   "六陰鬼脈·商陽劍",
+        "action": "$N變招奇速，右手食指疾從袖底穿出，「" HIW "六陰鬼脈·商陽劍" NOR "」登時幻出"
                   "無數指影",
         "force" : 480,
         "attack": 145,
         "dodge" : 110,
         "parry" : 125,
         "damage": 480,
-        "weapon" : HIW "六陰鬼脈﹒商陽劍氣" NOR,
+        "weapon" : HIW "六陰鬼脈·商陽劍氣" NOR,
         "damage_type":  "刺傷"
 ]),
-([      "name":   "六陰鬼脈﹒商陽劍",
-        "action": "$N拇指一屈，食指隨即點出，嗤嗤兩聲急響，變成商陽劍法，「" HIW "六陰鬼脈﹒商"
+([      "name":   "六陰鬼脈·商陽劍",
+        "action": "$N拇指一屈，食指隨即點出，嗤嗤兩聲急響，變成商陽劍法，「" HIW "六陰鬼脈·商"
                   "陽劍" NOR "」激射刺出",
         "force" : 440,
         "attack": 145,
         "dodge" : 110,
         "parry" : 115,
         "damage": 480,
-        "weapon" : HIW "六陰鬼脈﹒商陽劍氣" NOR,
+        "weapon" : HIW "六陰鬼脈·商陽劍氣" NOR,
         "damage_type":  "刺傷"
 ]),
-([      "name":   "六陰鬼脈﹒商陽劍",
-        "action": "$N以食指急運「" HIW "六陰鬼脈﹒商陽劍" NOR "」之無形劍氣，卻不過是手指在數寸"
-                  "范圍內一點一戳",
+([      "name":   "六陰鬼脈·商陽劍",
+        "action": "$N以食指急運「" HIW "六陰鬼脈·商陽劍" NOR "」之無形劍氣，卻不過是手指在數寸"
+                  "範圍內一點一戳",
         "force" : 480,
         "attack": 125,
         "dodge" : 100,
         "parry" : 165,
         "damage": 480,
-        "weapon" : HIW "六陰鬼脈﹒商陽劍氣" NOR,
+        "weapon" : HIW "六陰鬼脈·商陽劍氣" NOR,
         "damage_type":  "刺傷"
 ]),
-([      "name":   "六陰鬼脈﹒中沖劍",
-        "action": "$N右手中指一豎，「" HIW "六陰鬼脈﹒中沖劍" NOR "」向前刺出。真氣鼓盪，嗤然聲"
+([      "name":   "六陰鬼脈·中衝劍",
+        "action": "$N右手中指一豎，「" HIW "六陰鬼脈·中衝劍" NOR "」向前刺出。真氣鼓盪，嗤然聲"
                   "響，無形劍氣直指$n",
         "force" : 460,
         "attack": 155,
         "dodge" : 80,
         "parry" : 70,
         "damage": 420,
-        "weapon" : HIW "六陰鬼脈﹒中沖劍氣" NOR,
+        "weapon" : HIW "六陰鬼脈·中衝劍氣" NOR,
         "damage_type":  "刺傷"
 ]),
-([      "name":   "六陰鬼脈﹒中沖劍",
-        "action": "$N將中指向上一刺，「" HIW "六陰鬼脈﹒中沖劍" NOR "」拔地而起，接著手指向下一"
+([      "name":   "六陰鬼脈·中衝劍",
+        "action": "$N將中指向上一刺，「" HIW "六陰鬼脈·中衝劍" NOR "」拔地而起，接着手指向下一"
                   "劃，劍氣如利刀般砍出",
         "force" : 460,
         "attack": 145,
         "dodge" : 90,
         "parry" : 70,
         "damage": 440,
-        "weapon" : HIW "六陰鬼脈﹒中沖劍氣" NOR,
+        "weapon" : HIW "六陰鬼脈·中衝劍氣" NOR,
         "damage_type":  "刺傷"
 ]),
-([      "name":   "六陰鬼脈﹒中沖劍",
-        "action": "電光火石之間，$N猛然翻掌，右手陡然探出，中指「" HIW "六陰鬼脈﹒中沖劍" NOR
+([      "name":   "六陰鬼脈·中衝劍",
+        "action": "電光火石之間，$N猛然翻掌，右手陡然探出，中指「" HIW "六陰鬼脈·中衝劍" NOR
                   "」向$n一豎",
         "force" : 460,
         "attack": 135,
         "dodge" : 100,
         "parry" : 70,
         "damage": 420,
-        "weapon" : HIW "六陰鬼脈﹒中沖劍氣" NOR,
+        "weapon" : HIW "六陰鬼脈·中衝劍氣" NOR,
         "damage_type":  "刺傷"
 ]),
-([      "name":   "六陰鬼脈﹒關沖劍",
-        "action": "$N右手無名指伸出，「" HIW "六陰鬼脈﹒關沖劍" NOR "」劍路拙滯古樸，一股雄渾無"
+([      "name":   "六陰鬼脈·關衝劍",
+        "action": "$N右手無名指伸出，「" HIW "六陰鬼脈·關衝劍" NOR "」劍路拙滯古樸，一股雄渾無"
                   "比的內力鼓盪而出",
         "force" : 530,
         "attack": 140,
         "dodge" : 100,
         "parry" : 195,
         "damage": 480,
-        "weapon" : HIW "六陰鬼脈﹒關沖劍氣" NOR,
+        "weapon" : HIW "六陰鬼脈·關衝劍氣" NOR,
         "damage_type":  "刺傷"
 ]),
-([      "name":   "六陰鬼脈﹒關沖劍",
-        "action": "$N俯身斜倚，無名指「" HIW "六陰鬼脈﹒關沖劍" NOR "」彈射而出，指尖已對準$n發"
+([      "name":   "六陰鬼脈·關衝劍",
+        "action": "$N俯身斜倚，無名指「" HIW "六陰鬼脈·關衝劍" NOR "」彈射而出，指尖已對準$n發"
                   "出了一縷強烈的勁風",
         "force" : 500,
         "attack": 140,
         "dodge" : 100,
         "parry" : 195,
         "damage": 500,
-        "weapon" : HIW "六陰鬼脈﹒關沖劍氣" NOR,
+        "weapon" : HIW "六陰鬼脈·關衝劍氣" NOR,
         "damage_type":  "刺傷"
 ]),
-([      "name":   "六陰鬼脈﹒關沖劍",
-        "action": "$N無名指輕輕一揮，「嗤啦」一聲，拙滯古樸的「" HIW "六陰鬼脈﹒關沖劍" NOR "」"
+([      "name":   "六陰鬼脈·關衝劍",
+        "action": "$N無名指輕輕一揮，「嗤啦」一聲，拙滯古樸的「" HIW "六陰鬼脈·關衝劍" NOR "」"
                   "劍氣向$n直射而出",
         "force" : 530,
         "attack": 140,
         "dodge" : 100,
         "parry" : 95,
         "damage": 520,
-        "weapon" : HIW "六陰鬼脈﹒關沖劍氣" NOR,
+        "weapon" : HIW "六陰鬼脈·關衝劍氣" NOR,
         "damage_type":  "刺傷"
 ]),
-([      "name":   "六陰鬼脈﹒少澤劍",
-        "action": "$N左手小指一伸，一條氣流從少沖穴中激射而出，「" HIW "六陰鬼脈﹒少澤劍" NOR
+([      "name":   "六陰鬼脈·少澤劍",
+        "action": "$N左手小指一伸，一條氣流從少衝穴中激射而出，「" HIW "六陰鬼脈·少澤劍" NOR
                   "」出手入風，指向$n",
         "force" : 500,
         "attack": 160,
         "dodge" : 195,
         "parry" : 192,
         "damage": 520,
-        "weapon" : HIW "六陰鬼脈﹒少澤劍氣" NOR,
+        "weapon" : HIW "六陰鬼脈·少澤劍氣" NOR,
         "damage_type":  "刺傷"
 ]),
-([      "name":   "六陰鬼脈﹒少澤劍",
-        "action": "忽見$N左手小指一伸，一條氣流從$P少沖穴中激射而出，一股「" HIW "六陰鬼脈﹒少"
+([      "name":   "六陰鬼脈·少澤劍",
+        "action": "忽見$N左手小指一伸，一條氣流從$P少衝穴中激射而出，一股「" HIW "六陰鬼脈·少"
                   "澤劍" NOR "」登時射向$n",
         "force" : 500,
         "attack": 160,
         "dodge" : 195,
         "parry" : 192,
         "damage": 520,
-        "weapon" : HIW "六陰鬼脈﹒少澤劍氣" NOR,
+        "weapon" : HIW "六陰鬼脈·少澤劍氣" NOR,
         "damage_type":  "刺傷"
 ]),
-([      "name":   "六陰鬼脈﹒少沖劍",
-        "action": "$N右手小指伸出，真氣自少沖穴激盪而出，「" HIW "六陰鬼脈﹒少沖劍" NOR "」橫生"
+([      "name":   "六陰鬼脈·少衝劍",
+        "action": "$N右手小指伸出，真氣自少衝穴激盪而出，「" HIW "六陰鬼脈·少衝劍" NOR "」橫生"
                   "奇變，颼的刺向$n",
         "force" : 520,
         "attack": 150,
         "dodge" : 190,
         "parry" : 195,
         "damage": 520,
-        "weapon" : HIW "六陰鬼脈﹒少沖劍氣" NOR,
+        "weapon" : HIW "六陰鬼脈·少衝劍氣" NOR,
         "damage_type":  "刺傷"
 ]),
-([      "name":   "六陰鬼脈﹒少沖劍",
-        "action": "$N掌托于胸前，伸出右小指，一招「" HIW "六陰鬼脈﹒少沖劍" NOR "」緩緩地點向$n"
+([      "name":   "六陰鬼脈·少衝劍",
+        "action": "$N掌託於胸前，伸出右小指，一招「" HIW "六陰鬼脈·少衝劍" NOR "」緩緩地點向$n"
                   "的周身大穴",
         "force" : 520,
         "attack": 170,
         "dodge" : 190,
         "parry" : 195,
         "damage": 520,
-        "weapon" : HIW "六陰鬼脈﹒少沖劍氣" NOR,
+        "weapon" : HIW "六陰鬼脈·少衝劍氣" NOR,
         "damage_type":  "刺傷"
 ]),
-([      "name":   "六陰鬼脈﹒少沖劍",
-        "action": "$N小指一彈，「" HIW "六陰鬼脈﹒少沖劍" NOR "」化式「六陰鬼脈﹒分花拂柳」，劍勢如同柳絮"
+([      "name":   "六陰鬼脈·少衝劍",
+        "action": "$N小指一彈，「" HIW "六陰鬼脈·少衝劍" NOR "」化式「六陰鬼脈·分花拂柳」，劍勢如同柳絮"
                   "一般，飄而不亂",
         "force" : 520,
         "attack": 280,
         "dodge" : 190,
         "parry" : 195,
         "damage": 580,
-        "weapon" : HIW "六陰鬼脈﹒少沖劍氣" NOR,
+        "weapon" : HIW "六陰鬼脈·少衝劍氣" NOR,
         "damage_type":  "刺傷"
 ]),
-([      "name":   "六陰鬼脈﹒少沖劍",
-        "action": "$N一招「" HIW "六陰鬼脈﹒少沖劍" NOR "」，劍氣回轉無定形，竟從左側繞了過來，"
+([      "name":   "六陰鬼脈·少衝劍",
+        "action": "$N一招「" HIW "六陰鬼脈·少衝劍" NOR "」，劍氣迴轉無定形，竟從左側繞了過來，"
                   "點向$n",
         "force" : 520,
         "attack": 180,
         "dodge" : 190,
         "parry" : 195,
         "damage": 520,
-        "weapon" : HIW "六陰鬼脈﹒少沖劍氣" NOR,
+        "weapon" : HIW "六陰鬼脈·少衝劍氣" NOR,
         "damage_type":  "刺傷"
 ]),
-([      "name":   "六陰鬼脈﹒少沖劍",
-        "action": "$N右手小指一揮，一招「" HIW "六陰鬼脈﹒少沖劍" NOR "」點點刺刺破空刺出，宛如"
+([      "name":   "六陰鬼脈·少衝劍",
+        "action": "$N右手小指一揮，一招「" HIW "六陰鬼脈·少衝劍" NOR "」點點刺刺破空刺出，宛如"
                   "雕花刺畫一般",
         "force" : 520,
         "attack": 180,
         "dodge" : 190,
         "parry" : 195,
         "damage": 580,
-        "weapon" : HIW "六陰鬼脈﹒少沖劍氣" NOR,
+        "weapon" : HIW "六陰鬼脈·少衝劍氣" NOR,
         "damage_type":  "刺傷"
 ]),
 });
@@ -513,13 +513,13 @@ int valid_learn(object me)
                 return notify_fail("你覺得六陰鬼脈極其深奧，不是你這種學問水平所能研究的。\n");
 
         if (me->query_skill("lamaism", 1) < 200)
-                return notify_fail("你發現這裡面有很多奧妙都和密宗心法有關，難以理解。\n");
+                return notify_fail("你發現這裏面有很多奧妙都和密宗心法有關，難以理解。\n");
 
         if (me->query_skill("buddhism", 1) < 200)
-                return notify_fail("你發現這裡面有很多奧妙都和禪宗心法有關，難以理解。\n");
+                return notify_fail("你發現這裏面有很多奧妙都和禪宗心法有關，難以理解。\n");
 
         if (me->query_skill("jingluo-xue", 1) < 200)
-                return notify_fail("你發現這裡面有很多奧妙都和人體的經絡構造有關，難以理解。\n");
+                return notify_fail("你發現這裏面有很多奧妙都和人體的經絡構造有關，難以理解。\n");
 
         if( query("max_neili", me)<6000 )
                 return notify_fail("你的內力太弱，無法學六陰鬼脈。\n");
@@ -574,7 +574,7 @@ mixed hit_ob(object me, object victim, int damage_bonus, int i, int attack_time)
                 if (userp(me) && random(3) != 1)
                                 return 0;
 
-                // 避免在使用Pfm時訊息重復
+                // 避免在使用Pfm時訊息重複
                 if( userp(me) && !query_temp("liuyin-guimai/hit_msg", me) )
                         message_vision(HIW "\n霎時間$N" HIW "只覺思緒狂湧，六陰鬼脈之神力蓄勢待發，登"
                                      "時十指紛彈，此去彼來，連綿無盡。\n" NOR, me, victim);
@@ -626,28 +626,28 @@ mapping query_action(object me, object weapon)
         if( random(15) == 1 && query("neili", me)>600 )
         {
                 addn("neili", -300, me);
-                return ([       "action": "$N縱身前撲，雙手拇指同時按出一記「" HIR "六陰鬼脈﹒少商劍" NOR
+                return ([       "action": "$N縱身前撲，雙手拇指同時按出一記「" HIR "六陰鬼脈·少商劍" NOR
                                           "」，兩道無形劍氣破空而出逼向$n",
                                         "attack": 300,
                                 "dodge" : 200,
                                 "parry" : 200,
                                 "damage": 300,
                                 "force" : 600,
-                                "weapon" : HIR "六陰鬼脈﹒無形劍氣" NOR,
+                                "weapon" : HIR "六陰鬼脈·無形劍氣" NOR,
                                 "damage_type": "刺傷"
                         ]);
         } else
         if( random(15) == 1 && query("neili", me)>600 )
         {
                 addn("neili", -300, me);
-                return ([       "action": "$N雙手手指急速彈動，頓時「" HIR "六陰鬼脈﹒商陽劍" NOR "」和「"
-                                          HIR "六陰鬼脈﹒中沖劍" NOR "」兩路劍法齊施，劍氣源源不斷湧向$n",
+                return ([       "action": "$N雙手手指急速彈動，頓時「" HIR "六陰鬼脈·商陽劍" NOR "」和「"
+                                          HIR "六陰鬼脈·中衝劍" NOR "」兩路劍法齊施，劍氣源源不斷湧向$n",
                                         "attack": 300,
                                 "dodge" : 200,
                                 "parry" : 200,
                                 "damage": 300,
                                 "force" : 600,
-                                "weapon" : HIR "六陰鬼脈﹒無形劍氣" NOR,
+                                "weapon" : HIR "六陰鬼脈·無形劍氣" NOR,
                                 "damage_type": "刺傷"
                         ]);
         } else
@@ -661,7 +661,7 @@ mapping query_action(object me, object weapon)
                                 "parry" : 200,
                                 "damage": 300,
                                 "force" : 600,
-                                "weapon" : HIR "六陰鬼脈﹒無形劍氣" NOR,
+                                "weapon" : HIR "六陰鬼脈·無形劍氣" NOR,
                                 "damage_type": "刺傷"
                         ]);
         }
@@ -677,13 +677,13 @@ string query_parry_msg(object victim_weapon)
         switch (random(4))
         {
         case 0:
-                return "$n隨意揮洒，道道六陰鬼脈劍氣縱橫交錯，宛若天網，$N唯有望洋興嘆，徒呼奈何。\n";
+                return "$n隨意揮灑，道道六陰鬼脈劍氣縱橫交錯，宛若天網，$N唯有望洋興歎，徒呼奈何。\n";
         case 1:
-                return "$n不閃不避，一招六陰鬼脈﹒中沖劍直襲$N的胸前大穴，迫得$N只有回身自救。\n";
+                return "$n不閃不避，一招六陰鬼脈·中衝劍直襲$N的胸前大穴，迫得$N只有回身自救。\n";
         case 2:
-                return "$n六劍連出，六陰鬼脈劍氣回盪，直割得$N眉毛削落，臉面生通，再也不能前進半分！\n";
+                return "$n六劍連出，六陰鬼脈劍氣迴盪，直割得$N眉毛削落，臉面生通，再也不能前進半分！\n";
         default:
-                return "$n一聲長笑，六陰鬼脈﹒無形劍氣四處散開，將$N層層裹住，惟有勉強支撐。才約略擺脫了$n的反擊。\n";
+                return "$n一聲長笑，六陰鬼脈·無形劍氣四處散開，將$N層層裹住，惟有勉強支撐。才約略擺脱了$n的反擊。\n";
         }
 }
 

@@ -123,7 +123,7 @@ mapping *quest = ({
         ]),
         ([
                 "id":          "yu renyan",
-                "name":        "余人彥",
+                "name":        "餘人彥",
                 "type":        "殺",
                 "bonus":       72,
                 "msg":        "",
@@ -339,7 +339,7 @@ mapping *quest = ({
         ]),
         ([
                 "id":          "zhong wanchou",
-                "name":        "鐘萬仇",
+                "name":        "鍾萬仇",
                 "type":        "殺",
                 "bonus":       68,
                 "msg":        "",
@@ -347,7 +347,7 @@ mapping *quest = ({
         ]),
         ([
                 "id":          "zhou wushu",
-                "name":        "周五輸",
+                "name":        "週五輸",
                 "type":        "殺",
                 "bonus":       68,
                 "msg":        "",
@@ -691,7 +691,7 @@ mapping *quest = ({
         ]),
         ([
                 "id":          "men wei",
-                "name":        "門衛",
+                "name":        "門衞",
                 "type":        "殺",
                 "bonus":       97,
                 "msg":        "",

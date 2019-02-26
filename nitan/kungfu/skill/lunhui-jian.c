@@ -61,14 +61,14 @@ mapping *action = ({
         "skill_name" : "天極道",
         "damage_type": "刺傷"
 ]),
-([      "action": "$N左指凌空虛點，右手$w逼出丈許雪亮劍芒，一式「六道輪回」翻轉向$n",
+([      "action": "$N左指凌空虛點，右手$w逼出丈許雪亮劍芒，一式「六道輪迴」翻轉向$n",
         "force" : 390,
         "attack": 190,
         "dodge" : 130,
         "parry" : 159,
         "damage": 175,
         "lvl"   : 240,
-        "skill_name" : "六道輪回",
+        "skill_name" : "六道輪迴",
         "damage_type": "刺傷"
 ]),
 });
@@ -81,16 +81,16 @@ int valid_enable(string usage)
 int valid_learn(object me)
 {
         if( query("max_neili", me)<5000 )
-                return notify_fail("你的內力修為不夠，難以修煉釋迦輪回劍。\n");
+                return notify_fail("你的內力修為不夠，難以修煉釋迦輪迴劍。\n");
 
         if ((int)me->query_skill("force") < 350)
-                return notify_fail("你的內功火候太淺，難以修煉釋迦輪回劍。\n");
+                return notify_fail("你的內功火候太淺，難以修煉釋迦輪迴劍。\n");
 
         if ((int)me->query_skill("sword", 1) < 250)
-                return notify_fail("你的劍法根基不足，難以修煉釋迦輪回劍。\n");
+                return notify_fail("你的劍法根基不足，難以修煉釋迦輪迴劍。\n");
 
         if ((int)me->query_skill("sword", 1) < (int)me->query_skill("lunhui-jian", 1))
-                return notify_fail("你的基本劍法水平有限，無法領會更高深的釋迦輪回劍。\n");
+                return notify_fail("你的基本劍法水平有限，無法領會更高深的釋迦輪迴劍。\n");
 
         return 1;
 }
@@ -121,10 +121,10 @@ int practice_skill(object me)
                 return notify_fail("你使用的武器不對。\n");
 
         if( query("qi", me)<120 )
-                return notify_fail("你的體力不夠練釋迦輪回劍。\n");
+                return notify_fail("你的體力不夠練釋迦輪迴劍。\n");
 
         if( query("neili", me)<150 )
-                return notify_fail("你的內力不夠練釋迦輪回劍。\n");
+                return notify_fail("你的內力不夠練釋迦輪迴劍。\n");
 
         me->receive_damage("qi", 100);
         addn("neili", -120, me);

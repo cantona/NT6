@@ -12,8 +12,8 @@ void create()
         set_name("遊方道人", ({ "dao ren", "dao", "daoren" }) );
         set("gender", "男性" );
         set("age", 34);
-        set("long", "一個白凈矮胖的道士，見誰都笑眯眯的，正悠\n"
-                    "閒的品著一杯香茶。\n");
+        set("long", "一個白淨矮胖的道士，見誰都笑眯眯的，正悠\n"
+                    "閒的品着一杯香茶。\n");
         set("max_qi", 1800);
         set("max_jing", 1000);
         set("max_neili", 2000);
@@ -85,16 +85,16 @@ void greeting(object ob)
         switch(random(3))
         {
         case 0:
-                say(CYN "遊方道人嘿嘿一陣姦笑道：這位" + RANK_D->query_respect(ob) +
+                say(CYN "遊方道人嘿嘿一陣奸笑道：這位" + RANK_D->query_respect(ob) +
                     CYN "，也是來住店的嗎？\n" NOR);
                 break;
         case 1:
                 say(CYN "遊方道人點了點手道：這位" + RANK_D->query_respect(ob) +
-                    CYN "請過這裡坐，這是要去那啊？\n" NOR);
+                    CYN "請過這裏坐，這是要去那啊？\n" NOR);
                 break;
         case 2:
                 say(CYN "遊方道人面現驚訝之色道：這位" + RANK_D->query_respect(ob) +
-                    CYN "眉現黑氣，近日會有大難。\n遊方道人繼續說道：貧道有一些隨身"
+                    CYN "眉現黑氣，近日會有大難。\n遊方道人繼續説道：貧道有一些隨身"
                     "丹丸可以賣給你，或許可救你一命。\n" NOR);
                 break;
         }
@@ -121,12 +121,12 @@ mixed ask_me()
         me = this_player();
 
         if( query("family/family_name", me) != "五毒教" )
-                return "你大爺的，你羅裡八嗦到底想說啥子？";
+                return "你大爺的，你羅裏八嗦到底想説啥子？";
 
         if (find_object(query("startroom")) != environment())
-                return "我這裡還有事，你就自己走回去吧。";
+                return "我這裏還有事，你就自己走回去吧。";
 
-        command("say 這位"+ RANK_D->query_respect(me) + "來的正好，這裡"
+        command("say 這位"+ RANK_D->query_respect(me) + "來的正好，這裏"
                 "正有馬車要回山辦事，就讓他們送你一程吧。\n");
 
         message_vision(HIC "遊方道人一招手，一輛馬車駛過來停在門前。\n$N"
@@ -137,11 +137,11 @@ mixed ask_me()
         ob = find_object("/d/wudu/damen");
 
         message("vision", HIC "\n遠處一輛馬車急駛而來，車門一開" +
-                          query("name", me)+HIC"從裡面鑽了出來"
+                          query("name", me)+HIC"從裏面鑽了出來"
                           "。\n\n" NOR, environment(me), ({me}));
 
         me->move("/d/wudu/damen");
-        tell_object(me, CYN "\n車把勢說道：這位" + RANK_D->query_respect(me) +
+        tell_object(me, CYN "\n車把勢説道：這位" + RANK_D->query_respect(me) +
                         CYN "已經到了，請下車吧。\n\n" NOR);
         return 1;
 

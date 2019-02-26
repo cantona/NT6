@@ -27,7 +27,7 @@ void create()
  
         set_max_encumbrance(80000000);
         set("unit", "個");
-        set("long", "一個散發著神秘光芒的寶箱。\n");
+        set("long", "一個散發着神祕光芒的寶箱。\n");
         set("closed", 1);
         set("value", 2000);
  

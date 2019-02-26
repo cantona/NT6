@@ -21,7 +21,7 @@ flute:7
 <type>weapon/sword</type>
 <name>龍泉劍</name> 
 <id>longquan jian</id>
-<long>歐冶子為楚王精心所鑄，削鐵如泥，風吹斷發，而又能伸能曲，可舞可刺。</long>
+<long>歐冶子為楚王精心所鑄，削鐵如泥，風吹斷髮，而又能伸能曲，可舞可刺。</long>
 <weight>5000</weight>
 <value>100000</value>
 <level>9</level>

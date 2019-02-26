@@ -6,14 +6,14 @@ inherit MYHEART;
 
 void create()
 {
-        set_name(NOR + YEL"神雕羽毛" NOR, ({ "shendiao yumao", "shendiao", "yumao" }) );
+        set_name(NOR + YEL"神鵰羽毛" NOR, ({ "shendiao yumao", "shendiao", "yumao" }) );
         set_weight(10);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
                 set("material", "steel");
                 set("unit", "根");
-                set("long", HIM "這是一根神雕神上的羽毛，越一米來長。\n" NOR);
+                set("long", HIM "這是一根神鵰神上的羽毛，越一米來長。\n" NOR);
                 set("value", 35000);
                 set("limit", ([
                         "exp"    :   100000,

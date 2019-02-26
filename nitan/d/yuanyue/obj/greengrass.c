@@ -10,7 +10,7 @@ void create()
                 set_default_object(__FILE__);
         else {
                 set("unit", "些");
-                set("long", "鮮嫩欲滴的綠草，似乎還有幾滴露珠在葉子上閃著微光。\n");
+                set("long", "鮮嫩欲滴的綠草，似乎還有幾滴露珠在葉子上閃着微光。\n");
                 set("value", 1);
         }
         setup();

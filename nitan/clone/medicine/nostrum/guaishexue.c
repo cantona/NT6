@@ -44,12 +44,12 @@ int do_drink(string arg)
         if(!present(this_object(), this_player()))
                 return notify_fail("你要喝什麼？\n");
         if( me->is_busy() )
-                return notify_fail("別急，慢慢喝，小心別嗆著了。\n");
+                return notify_fail("別急，慢慢喝，小心別嗆着了。\n");
 
         if ( neili_limit <= force_limit  )
         {
                 addn("max_neili", 5, me);
-                message_vision( HIR"$N只覺一股熱線從嚥喉直通到腹中，然後丹田就象有一團火般燒了起來。\n" NOR, me);
+                message_vision( HIR"$N只覺一股熱線從咽喉直通到腹中，然後丹田就象有一團火般燒了起來。\n" NOR, me);
         }
         destruct(this_object());
         return 1;

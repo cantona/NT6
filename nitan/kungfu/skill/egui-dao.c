@@ -21,7 +21,7 @@ int valid_enable(string usage)
 int valid_learn(object me)
 {
 
-        // 與12T沖突
+        // 與12T衝突
         if( me->query_skill("yinyang-shiertian",1) && !query("thborn/ok", me) )
                 return notify_fail("你感覺體內的陰陽九轉真氣跌宕起伏，似乎容納這種技能。\n");
                 

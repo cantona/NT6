@@ -33,7 +33,7 @@ int perform(object me, object target)
                 return notify_fail("你沒有準備使用怒拳，無法施展" + name() + "。\n");
 
         if (! living(target))
-              return notify_fail("對方都已經這樣了，用不著這麼費力吧？\n");
+              return notify_fail("對方都已經這樣了，用不着這麼費力吧？\n");
 
         msg = HIY "$N" HIY "拳勁如芒、使拳如雷、拳氣如風、拳風如霧，拳勁彷佛無所不在，狠狠打擊$n"
               HIY "的視、聽、聞、味、觸五覺。\n" NOR;

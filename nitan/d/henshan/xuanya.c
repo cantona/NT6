@@ -5,14 +5,14 @@ void create()
 {
         set("short","懸崖邊");
         set("long", @LONG
-這裡是紫蓋仙洞外的懸崖絕壁(xuanya)，站在此處向下望去，雲
+這裏是紫蓋仙洞外的懸崖絕壁(xuanya)，站在此處向下望去，雲
 深鎖霧，寒風吹來，你不由地打了個寒戰。
 LONG );
         set("item_desc", ([
-               "xuanya"  : HIG "\n只見從絕壁上垂下一些樹籐(teng)， 似乎可以順著"
+               "xuanya"  : HIG "\n只見從絕壁上垂下一些樹藤(teng)， 似乎可以順着"
                            "爬(climb)\n上去。而下面卻是萬丈深淵，深不見底。\n" NOR,
 
-               "teng"    : YEL"\n這些樹籐看起來很結實。\n" NOR,
+               "teng"    : YEL"\n這些樹藤看起來很結實。\n" NOR,
         ]));
 
         set("exits",([
@@ -45,7 +45,7 @@ int do_tiao(string arg)
         
         if (me->is_fighting() || me->is_busy())
         {
-                write("你現在正忙著呢。\n");
+                write("你現在正忙着呢。\n");
                 return 1;
         }        
 
@@ -84,12 +84,12 @@ int do_climb(string arg)
                 return notify_fail("\n你要往哪兒爬。\n\n");
 
         if (me->is_fighting() || me->is_busy())
-                return notify_fail("\n你正忙著呢。\n\n");
+                return notify_fail("\n你正忙着呢。\n\n");
 
-        msg = HIG "\n$N拉著樹籐往峭壁上爬去。\n\n" NOR;
+        msg = HIG "\n$N拉着樹藤往峭壁上爬去。\n\n" NOR;
 
         message_vision(msg, me);
-        write(HIW "\n你終于爬了上來。\n\n" NOR);
+        write(HIW "\n你終於爬了上來。\n\n" NOR);
         message("vision", HIG "\n" + me->name() + HIG "從峭壁下面爬了上來。\n\n" NOR,
                           room, me);
 

@@ -42,11 +42,11 @@ int perform(object me, object target)
                 return notify_fail("你的真氣不夠！\n");
 
        if (! living(target))
-              return notify_fail("對方都已經這樣了，用不著這麼費力吧？\n");
+              return notify_fail("對方都已經這樣了，用不着這麼費力吧？\n");
 
         msg = HIW "$N" HIW "狂喝一聲，手中" + weapon->name() +
-              HIW "將到之際，突然圈轉，使出三分劍術的獨得之秘"
-              "「海市蜃樓」，一招之中\n又另蘊涵三招，招式繁復狠"
+              HIW "將到之際，突然圈轉，使出三分劍術的獨得之祕"
+              "「海市蜃樓」，一招之中\n又另藴涵三招，招式繁複狠"
               "辣，劍招虛虛實實，霍霍劍光徑直逼向$n"
               HIW "！\n\n" NOR;
 
@@ -68,7 +68,7 @@ int perform(object me, object target)
                         msg += COMBAT_D->do_damage(me, target, WEAPON_ATTACK, damage, 60,
                                                    HIR "\n$N" HIR "見$n" HIR "重創之下不禁破綻迭出，"
                                                    HIR "冷笑一聲，手中" + weapon->name() +
-                                                   HIR "揮洒，又攻出一劍，正中$p" HIR "胸口。\n" NOR);
+                                                   HIR "揮灑，又攻出一劍，正中$p" HIR "胸口。\n" NOR);
                 }
         } else
         {

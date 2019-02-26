@@ -24,7 +24,7 @@ void create()
         //set("shen_type", -1);        
         //set("chat_chance", 2);
         //set("chat_msg", ({
-        //               "骷髏空洞的眼眶裡閃爍著可怕的熒光。\n"
+        //               "骷髏空洞的眼眶裏閃爍着可怕的熒光。\n"
         //}) ); 
         set("death_msg",BLU"\n$N消失不見了。\n\n"NOR);
         set("chat_chance_combat", 100);
@@ -72,7 +72,7 @@ void do_eye() {
                 if(!present(enemy, environment(this_object())))
                 return;
         
-        message_vision(HIR"\n$N中現出了$n的影子，$n不由得凝視著自己的影子...... \n"NOR, this_object(),enemy); 
+        message_vision(HIR"\n$N中現出了$n的影子，$n不由得凝視着自己的影子...... \n"NOR, this_object(),enemy); 
         yourexp=query("combat_exp", enemy);
         myexp = query("combat_exp");
         if( random(myexp + yourexp)> yourexp ) {

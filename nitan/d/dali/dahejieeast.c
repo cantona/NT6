@@ -6,7 +6,7 @@ void create()
 {
         set("short","大和街");
         set("long", @LONG
-大道旁店舖林立，長街古樸，屋舍鱗次櫛比，道上人來車往，一
+大道旁店鋪林立，長街古樸，屋舍鱗次櫛比，道上人來車往，一
 片太平熱鬧景象。路口種了倆顆大菩提樹，樹下有一個大洞(dong)。
 一踏入巷中，陣陣茶花香氣撲鼻而來。
 LONG );
@@ -44,11 +44,11 @@ int do_enter(string arg)
            if( (fam=query("family", me)) && fam["family_name"] == "丐幫" )
            {
                message("vision",
-                        me->name() + "運起丐幫縮骨功，一彎腰往狗洞裡鑽了進去。",
+                        me->name() + "運起丐幫縮骨功，一彎腰往狗洞裏鑽了進去。",
                         environment(me), ({me}) );
                me->move("/d/gaibang/underdl");
                message("vision",
-                        me->name() + "從洞裡走了進來。\n",
+                        me->name() + "從洞裏走了進來。\n",
                         environment(me), ({me}) );
                         return 1;
            }

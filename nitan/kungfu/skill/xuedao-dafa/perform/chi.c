@@ -44,19 +44,19 @@ int perform(object me, object target)
                 return notify_fail("你的真氣不夠，難以施展" CHI "。\n");
 
         if (! living(target))
-                return notify_fail("對方都已經這樣了，用不著這麼費力吧？\n");
+                return notify_fail("對方都已經這樣了，用不着這麼費力吧？\n");
 
         msg = HIW "$N" HIW "嗔目大喝，手中" + weapon->name() + HIW "一勢「"
-              HIR "赤煉神刀" HIW "」迸出漫天血光，舖天蓋地洒向$n" HIW "。\n" NOR;
+              HIR "赤煉神刀" HIW "」迸出漫天血光，鋪天蓋地灑向$n" HIW "。\n" NOR;
 
         if (random(me->query_skill("blade")) > target->query_skill("parry") / 2)
         {
-                msg += HIR "霎時間$n" HIR "只覺周圍四處殺氣彌漫，全身氣血翻"
+                msg += HIR "霎時間$n" HIR "只覺周圍四處殺氣瀰漫，全身氣血翻"
                        "滾，甚難招架。\n" NOR;
                 count = me->query_skill("xuedao-dafa", 1) / 4;
         } else
         {
-                msg += HIY "霎時間$n" HIY "只覺周圍四處殺氣彌漫，心底微微一"
+                msg += HIY "霎時間$n" HIY "只覺周圍四處殺氣瀰漫，心底微微一"
                        "驚，連忙奮力招架。\n" NOR;
                 count = 0;
         }

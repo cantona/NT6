@@ -38,7 +38,7 @@ int perform(object me, object target)
         ||      !me->is_fighting(target) )
                 return notify_fail(LEITING "只能對戰鬥中的對手使用。\n");
   if (! living(target)) 
-         return notify_fail("對方都已經這樣了，用不著這麼費力吧？\n"); 
+         return notify_fail("對方都已經這樣了，用不着這麼費力吧？\n"); 
 
         weapon=query_temp("weapon", me);
         damage = me->query_skill("hongye-daofa", 1) + random((int)me->query_skill("dodge")) / 2;
@@ -55,7 +55,7 @@ int perform(object me, object target)
         if (random(10) > 5)
         {
                 msg = COMBAT_D->do_damage(me,target, WEAPON_ATTACK, damage, 10,
-                       HIC  "\n$N刀氣好似暴雨前雷霆一般，夾雜著刺耳的尖鳴，直貫$n而去。\n" NOR);
+                       HIC  "\n$N刀氣好似暴雨前雷霆一般，夾雜着刺耳的尖鳴，直貫$n而去。\n" NOR);
                 message_combatd(msg, me, target);
         } else
         {

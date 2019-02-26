@@ -53,7 +53,7 @@ int perform(object me)
                  addn("neili", -50, me);
             msg = "$n頓時覺得壓力驟增，手腕一麻，手中";
             msg += weapon2->name();
-            msg += "脫手而出！\n" NOR;
+            msg += "脱手而出！\n" NOR;
             me->start_busy(random(2));
             target->receive_damage("qi", damage);
             target->start_busy(2);
@@ -62,7 +62,7 @@ int perform(object me)
             if( query("ownmake", weapon2) == 1 )
             {
                 weapon2->move(target);
-                msg += "那可是$n的隨身家伙！$n手一伸將它撿回來。\n" NOR;
+                msg += "那可是$n的隨身傢伙！$n手一伸將它撿回來。\n" NOR;
             }
 */
         }

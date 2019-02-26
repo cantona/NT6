@@ -11,6 +11,6 @@
 #define YOU_ALL                 4  //顯示給其他人
 #define YOU_ALL_ARG             5  //顯示給其他人, 並附加文字
 
-#define NOTE                    6  //注解欄
+#define NOTE                    6  //註解欄
 #define USE                     7  //使用次數
 

@@ -6,12 +6,12 @@ inherit NECK;
 
 void create()
 {
-   set_name(HIG"翡翠項鏈"NOR, ({ "necklace"}) );
+   set_name(HIG"翡翠項鍊"NOR, ({ "necklace"}) );
    set_weight(1000);
    if( clonep() )
      set_default_object(__FILE__);
    else {
-     set("long","這是一串名貴的翡翠項鏈。\n");
+     set("long","這是一串名貴的翡翠項鍊。\n");
      set("material", "翡翠");
      set("unit", "串");
      set("value", 1000);

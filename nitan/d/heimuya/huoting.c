@@ -6,7 +6,7 @@ void create()
 {
         set("short", "成德殿後廳");
         set("long", @LONG
-這裡是日月神教的後廳。看上去滿是灰塵，但中間有一個瓷碗 (
+這裏是日月神教的後廳。看上去滿是灰塵，但中間有一個瓷碗 (
 wan)，似乎有古怪。
 LONG );
         set("exits", ([
@@ -18,7 +18,7 @@ LONG );
              __DIR__"npc/zish" : 4,
         ]));
         set("item_desc", ([
-            "wan" : "這是一個自漢代流傳下的古董，很別致。\n",
+            "wan" : "這是一個自漢代流傳下的古董，很別緻。\n",
         ]));
 //        set("no_clean_up", 0);
         setup();

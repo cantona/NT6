@@ -24,10 +24,10 @@ void create()
 {
         set("short", "賭場");
         set("long", @LONG
-大廳裡擺滿大大小小的賭桌，只要能說出名的賭具，這裡都有。
-進來這裡你首先聽到的就是少女們吃吃的笑聲和男人們的吹牛聲，擲
-骰子聲……在這裡，你幾乎就可以聽到世上所有不規矩的聲音。牆上
-掛著一塊匾（ｓｉｇｎ）。
+大廳裏擺滿大大小小的賭桌，只要能説出名的賭具，這裏都有。
+進來這裏你首先聽到的就是少女們吃吃的笑聲和男人們的吹牛聲，擲
+骰子聲……在這裏，你幾乎就可以聽到世上所有不規矩的聲音。牆上
+掛着一塊匾（ｓｉｇｎ）。
 LONG );
         set("exits", ([ /* sizeof() == 1 */
                 "south" : "/d/changan/qixiang3",
@@ -88,7 +88,7 @@ int do_bet(string arg)
                 return notify_fail("莊家都沒有，你要和誰賭？\n");
 
         if (! living(zj))
-                return notify_fail("你還是等莊家醒了再說吧！\n");
+                return notify_fail("你還是等莊家醒了再説吧！\n");
 
         if (! arg || sscanf (arg,"%s %d %s", what, amount, money) != 3)
                 return notify_fail("請使用： bet <押骰種類> <數目> <貨幣>\n");
@@ -235,7 +235,7 @@ void gamble_prepare()
         display_bet(room,big[1]);
         tell_room(room,"莊家叫道：頭彩骰號"+chinese_number(big[0])+
         chinese_number(big[1])+"！\n");
-        tell_room(room, "接著莊家麻利地順手將玉骰從盤中收回：現在開盤押錢！\n");
+        tell_room(room, "接着莊家麻利地順手將玉骰從盤中收回：現在開盤押錢！\n");
         room_status = 1;
         call_out("gamble_start",24);
         delete_temp("better");

@@ -23,7 +23,7 @@ mapping *action = ({
         "weapon"   : HIW "手印" NOR,
         "damage_type" : "刺傷",
 ]),
-([      "action" : "$N使出一招「準提佛母印」，運力于指，直取$n的$l",
+([      "action" : "$N使出一招「準提佛母印」，運力於指，直取$n的$l",
         "force"    : 642,
         "attack"   : 321,
         "dodge"    : 197,
@@ -41,7 +41,7 @@ mapping *action = ({
         "weapon"   : HIW "手印" NOR,
         "damage_type" : "內傷",
 ]),
-([      "action" : "$N使出一招「藥師佛根本印」，猛沖向前，掌刀如遊龍般砍向$n",
+([      "action" : "$N使出一招「藥師佛根本印」，猛衝向前，掌刀如游龍般砍向$n",
         "force"    : 673,
         "attack"   : 357,
         "dodge"    : 243,
@@ -59,7 +59,7 @@ mapping *action = ({
         "weapon"   : HIW "手印" NOR,
         "damage_type" : "割傷",
 ]),
-([      "action" : "$N使出一招「上樂金剛印」，飛身橫躍，雙掌前後擊出，抓向$n的嚥"
+([      "action" : "$N使出一招「上樂金剛印」，飛身橫躍，雙掌前後擊出，抓向$n的咽"
                    "喉",
         "force"    : 680,
         "attack"   : 398,
@@ -69,7 +69,7 @@ mapping *action = ({
         "weapon"   : HIW "手印" NOR,
         "damage_type" : "刺傷",
 ]),
-([      "action" : "$N使出一招「六臂智慧印」，頓時勁氣彌漫，天空中出現無數掌影打"
+([      "action" : "$N使出一招「六臂智慧印」，頓時勁氣瀰漫，天空中出現無數掌影打"
                    "向$n",
         "force"    : 720,
         "attack"   : 435,
@@ -91,7 +91,7 @@ int valid_learn(object me)
                 return notify_fail("練手印必須空手。\n");
 
         if( query("int", me)<36 )
-                return notify_fail("你覺得手印過于艱深，難以理解。\n");
+                return notify_fail("你覺得手印過於艱深，難以理解。\n");
 
         if ((int)me->query_skill("martial-cognize", 1) < 300)
                 return notify_fail("你的武學修養太低，無法修習手印。\n");

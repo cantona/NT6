@@ -11,7 +11,7 @@ void create()
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("long", "傳說這是女媧補天剩下的五彩石，不知是真是假。\n");
+                set("long", "傳説這是女媧補天剩下的五彩石，不知是真是假。\n");
                 set("unit", "塊");
                 set("value", 10000);
                 set("item_origin", 1);

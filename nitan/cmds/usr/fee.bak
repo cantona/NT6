@@ -37,8 +37,8 @@ int main(object me,string arg)
         res=DATABASE_D->do_sql("select on_time,fee_time,subgy(f_dbase,'monfee') from users where id="+DB_STR(arg));
         line=" 請注意，本命令不是即時命令，可能會與你實際情況稍有偏差。\n";
         line+= HIC"≡"HIY"──────────────────────────────"HIC"≡\n"NOR+
-                        " 用戶 "+HIR+arg+NOR+" 的交費及使用情況如下：\n";
-        if(!res) line+="未發現指定對象("+arg+")的用戶資料！\n";
+                        " 用户 "+HIR+arg+NOR+" 的交費及使用情況如下：\n";
+        if(!res) line+="未發現指定對象("+arg+")的用户資料！\n";
         else
         {
                 int i,j;
@@ -53,7 +53,7 @@ int main(object me,string arg)
                 if(i) line+=HIY+(i/60)+NOR+" 分 ";
                 if(j) line+=(HIY+j)+NOR+" 秒";
                 if(onl>=fee)
-                        line += "\n 你購買的遊戲時間已經使用完了，請聯系Tomud小組http://www.tomud.com 繼續購買遊戲時間！\n";
+                        line += "\n 你購買的遊戲時間已經使用完了，請聯繫Tomud小組http://www.tomud.com 繼續購買遊戲時間！\n";
                 else
                         line += "\n 使用情況： " + tribar_graph(onl, fee, fee, HIY) + "\n";
                 sscanf(res[2],"%*s%d%*s",monfee);
@@ -62,7 +62,7 @@ int main(object me,string arg)
                 else
                         line += " 你從未轉過月費！你可以使用{"+HIY+"fee 交月費"+NOR+"}命令轉換為包月計費方式。\n";
                 if(fee==18)
-                        line+=ALERT("你好，你還未對此人物角色進行注冊！請及時交費注冊購買時間！$$未注冊而且連續 "+
+                        line+=ALERT("你好，你還未對此人物角色進行註冊！請及時交費註冊購買時間！$$未註冊而且連續 "+
                                 UNREG_IDLE+" 天未上線者我們將清除其檔案!");
         }
         line += HIC"≡"HIY"──────────────────────────────"HIC"≡\n"NOR;
@@ -139,7 +139,7 @@ void verify_pass(string arg,object me,int c)
                         write(ALERT("對不起，請確定你沒記錯管理密碼再來試吧！"));
                         return ;
                 }
-                write(ALERT("管理密碼不對！(請回車或輸入exit命令退出轉月費操作)")+"\n請輸入你的管理密碼以驗証操作：");
+                write(ALERT("管理密碼不對！(請回車或輸入exit命令退出轉月費操作)")+"\n請輸入你的管理密碼以驗證操作：");
                 input_to("verify_pass",me,++c);
                 return ;
         }
@@ -161,7 +161,7 @@ void verify_pass(string arg,object me,int c)
                         sql=sprintf("update users set fee_time=fee_time-300,endrgt=now() where id="+DB_STR(arg));
                         if ((DATABASE_D->do_sqlexec(sql))<1)
                         {
-                                write("扣除點數失敗，未能成功繳納月費，請盡快聯系遊戲管理員查明原因。\n");
+                                write("扣除點數失敗，未能成功繳納月費，請儘快聯繫遊戲管理員查明原因。\n");
                                 return ;
                         }
                         else
@@ -172,7 +172,7 @@ void verify_pass(string arg,object me,int c)
                                 else
                                         m["monfee"]=time()+86400*30;
                                 me->save();
-                                //重新從數據庫取，以驗証是否真的已經改變
+                                //重新從數據庫取，以驗證是否真的已經改變
                                        res=DATABASE_D->do_sql("select fee_time from users where id="+DB_STR(arg));
                                        sscanf(res[0]+"0","%d",j);
                                        write("300個遊戲點扣除成功！現在你交過的遊戲點是"+j/10+"\n");
@@ -187,7 +187,7 @@ void verify_pass(string arg,object me,int c)
                 else
                 {
                         if(i>=120)
-                                write("對不起，你目前已經包了五個月（剩余"+i+"天！）了，而包月最多只能五個月！");
+                                write("對不起，你目前已經包了五個月（剩餘"+i+"天！）了，而包月最多隻能五個月！");
                         else
                                 write("你的點數已經不夠繳月費了。請確認還有318個遊戲點。\n");
                 }

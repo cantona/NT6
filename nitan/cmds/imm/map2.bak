@@ -1,7 +1,7 @@
 // Change by Server
 // map.c
 // by snowman@SJ 16/02/2000
-// 地圖的第一行必須是 □xx地圖□。
+// 地圖的第一行必須是 〖xx地圖〗。
 // 每個地名後面必須緊跟它的英文名稱，如： 石階(shijie)
 
 #include <ansi.h>
@@ -9,7 +9,7 @@
 inherit F_CLEAN_UP;
 
 #define MAP_DIR         HELP_DIR + "map/"
-#define LINE  "\n□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□\n"
+#define LINE  "\n━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
 // 特有名稱，哈哈！
 #define ROOM_NAME "雪人找到的房間"
 
@@ -34,16 +34,16 @@ string remove_ansi(string str)
 }
 
 string n_dir = "                   
-               ＼           □           ／
-                 ＼         □         ／
-                   ＼       □       ／
-                     ＼     □     ／\n";
+               ＼           ┃           ／
+                 ＼         ┃         ／
+                   ＼       ┃       ／
+                     ＼     ┃     ／\n";
 
 string s_dir = "
-                     ／     □     ＼
-                   ／       □       ＼
-                 ／         □         ＼
-               ／           □           ＼\n";
+                     ／     ┃     ＼
+                   ／       ┃       ＼
+                 ／         ┃         ＼
+               ／           ┃           ＼\n";
                        
 
 int main(object me, string arg)
@@ -54,7 +54,7 @@ int main(object me, string arg)
         int i, j = -1;
         
         if( me->is_busy() || me->is_fighting())
-                return notify_fail("你現在正忙著呢。\n");
+                return notify_fail("你現在正忙着呢。\n");
                 
         if( !arg || arg == "?") help(me);
         
@@ -131,7 +131,7 @@ int main(object me, string arg)
                 // 用房間名稱替換掉特有名稱。
                 arg=replace_string(arg,ROOM_NAME,BLINK+HIR+remove_ansi(query("short", room))+NOR,1);
                 // 輸出。
-                write(HIC"\n你目前所在的「"HIR+name+HIC"」，以閃耀的紅色標志在下面的地圖中："NOR+ LINE + arg + LINE); 
+                write(HIC"\n你目前所在的「"HIR+name+HIC"」，以閃耀的紅色標誌在下面的地圖中："NOR+ LINE + arg + LINE); 
                 me->start_busy(2);     
         }
         
@@ -140,7 +140,7 @@ int main(object me, string arg)
                         return notify_fail("你目前所在奇特，無法顯示地圖，請通知巫師。\n");
                         
                 if( !mapp(exits=query("exits", room)) )
-                        return notify_fail("這裡沒有任何明顯的出路。\n");
+                        return notify_fail("這裏沒有任何明顯的出路。\n");
                  
                 write(map_place(room, exits));
                 me->start_busy(2);
@@ -169,7 +169,7 @@ string map_place(object room, mapping exits)
         
         place = sort_array(keys(exits), 1);
          my_room=HIW+remove_ansi(query("short", room))+NOR;
-        str = HIC"\n這裡是"+TASK_D->get_regions(base_name(room))+my_room+HIC"，共有"+chinese_number(sizeof(place))+"個出口，分別通往："NOR+LINE;
+        str = HIC"\n這裏是"+TASK_D->get_regions(base_name(room))+my_room+HIC"，共有"+chinese_number(sizeof(place))+"個出口，分別通往："NOR+LINE;
            
         for(i=0; i<sizeof(place); i++){
                 if( objectp(room = load_object(exits[place[i]])) )
@@ -190,7 +190,7 @@ string map_place(object room, mapping exits)
                                 case"east":e1=remove_ansi(query("short", room))+"(E)";break;
                                 case"eastup":e2=remove_ansi(query("short", room))+"(Eu)";break;
                                 case"eastdown":e3=remove_ansi(query("short", room))+"(Ed)";break;
-                                case"enter":o1="裡面："+remove_ansi(query("short", room))+"(Enter)";break;
+                                case"enter":o1="裏面："+remove_ansi(query("short", room))+"(Enter)";break;
                                 case"out":o2="外面："+remove_ansi(query("short", room))+"(Out)";break;
                                 case"up":o3="上面："+remove_ansi(query("short", room))+"(Up)";break;
                                 case"down":o4="下面："+remove_ansi(query("short", room))+"(Down)";break;
@@ -208,22 +208,22 @@ string map_place(object room, mapping exits)
                         str += sprintf("\n\t     ＼   \t  %-16s ／", n5 );
                 str += n_dir;                
                 str = replace_string( str, "＼", stringp(n1)?"＼":"  ");
-                str = replace_string( str, "□", stringp(n2)?"□":stringp(n4)?"□":stringp(n5)?"□":"  ");
+                str = replace_string( str, "┃", stringp(n2)?"┃":stringp(n4)?"┃":stringp(n5)?"┃":"  ");
                 str = replace_string( str, "／", stringp(n3)?"／":"  ");
              }
         // end upper pic.
                 
         // drew middle pic.
         name = sprintf("      %10s   \t\t\t    %-16s", w2, e2);
-        name += sprintf("\n      %10s ←□□  %-10s  □□→ %-16s\n", w1, my_room, e1);
+        name += sprintf("\n      %10s ←━━  %-10s  ━━→ %-16s\n", w1, my_room, e1);
         name += sprintf("      %10s   \t\t\t    %-16s", w3, e3);
         if(stringp(w1) || stringp(w2) || stringp(w3) )
-                name = replace_string( name, "←□□", "□□□");
-        else name = replace_string( name, "←□□", "      ");
+                name = replace_string( name, "←━━", "━━━");
+        else name = replace_string( name, "←━━", "      ");
        
                if(stringp(e1) || stringp(e2) || stringp(e3) )
-                name = replace_string( name, "□□→", "□□□");
-        else name = replace_string( name, "□□→", "      ");
+                name = replace_string( name, "━━→", "━━━");
+        else name = replace_string( name, "━━→", "      ");
         // end middle pic.
                 
         // drew lower pic.
@@ -237,7 +237,7 @@ string map_place(object room, mapping exits)
                        if(stringp(s5) )
                         name += sprintf("\t\t\t  %-18s\n", s5 );
                 name = replace_string( name, "＼", stringp(s3)?"＼":"  ");
-                name = replace_string( name, "□", stringp(s2)?"□":stringp(s4)?"□":stringp(s5)?"□":"  ");
+                name = replace_string( name, "┃", stringp(s2)?"┃":stringp(s4)?"┃":stringp(s5)?"┃":"  ");
                 name = replace_string( name, "／", stringp(s1)?"／":"  ");
         }
                 

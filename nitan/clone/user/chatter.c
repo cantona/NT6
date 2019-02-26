@@ -54,7 +54,7 @@ string long()
 int accept_fight(object ob)
 {
         message_vision("$N急忙對$n道：這位" + RANK_D->query_respect(ob) +
-                       "，有話好好說，怎麼可以這個樣子？\n",
+                       "，有話好好説，怎麼可以這個樣子？\n",
                        this_object(), ob);
         return 0;
 }
@@ -68,7 +68,7 @@ int accept_hit(object ob)
 
 int accept_kill(object ob)
 {
-        message_vision("$N一臉無辜的望著$n，顯得委屈極了。\n",
+        message_vision("$N一臉無辜的望着$n，顯得委屈極了。\n",
                        this_object(), ob);
         return 0;
 }

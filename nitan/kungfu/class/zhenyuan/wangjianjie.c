@@ -15,7 +15,7 @@ void create()
         set_name("王劍傑", ({ "wang jianjie", "wang", "jianjie" }));
         set("long", @LONG
 他是鎮遠鏢局總鏢頭王維揚的第二個兒子，子承
-父業，練得一身八卦門的好武功。現在鏢局裡的
+父業，練得一身八卦門的好武功。現在鏢局裏的
 各種事務由他總管，看上去他精明老練，穩重務
 實，不怒自威。
 LONG );
@@ -58,7 +58,7 @@ LONG );
 
         set("no_teach", ([
                 "wai-bagua" : "這個…外八卦神功…你還是找我爹或是我哥教你好了。",
-                "nei-bagua" : "我爹說過了，內八卦神功不能隨便傳授，你直接找我爹好了。",
+                "nei-bagua" : "我爹説過了，內八卦神功不能隨便傳授，你直接找我爹好了。",
                 "bagua-dao" : "八卦刀法向來便是由我父親親自教授。",
         ]));
 
@@ -76,7 +76,7 @@ LONG );
         set("inquiry", ([
                 "劈卦拳"   : (: ask_skill1 :),
                 "背心釘"   : (: ask_skill2 :),
-                "□蟒盤身" : (: ask_skill3 :),
+                "蝰蟒盤身" : (: ask_skill3 :),
         ]));
 
         set("coagents", ({
@@ -88,7 +88,7 @@ LONG );
                 "refuse_other": CYN "$N" CYN "對$n" CYN "冷喝道："
                                 "我不管你是怎麼進來的，但是請你馬"
                                 "上離開，否則休怪我無情！" NOR,
-                "refuse_carry": CYN "$N" CYN "對著$n" CYN "劍眉一"
+                "refuse_carry": CYN "$N" CYN "對着$n" CYN "劍眉一"
                                 "豎，喝道：你背上背的是什麼？給我"
                                 "放下來！" NOR,
         ]));
@@ -119,7 +119,7 @@ void attempt_apprentice(object me)
 
         if( query("combat_exp", me)<20000 )
             {
-                      command("say 你的江湖經驗太差了，還是在鏢局裡再摸爬滾打一段時間吧！");
+                      command("say 你的江湖經驗太差了，還是在鏢局裏再摸爬滾打一段時間吧！");
                       return;
             }
 
@@ -154,9 +154,9 @@ mixed ask_skill1()
         if (me->query_skill("bagua-quan", 1) < 70)
                 return "你的八卦拳法還練得不到家，自己下去練練再來吧！";
 
-        message_vision(HIY "$n" HIY "對$N" HIY "點了點頭，說道：“我給你演示一遍"
+        message_vision(HIY "$n" HIY "對$N" HIY "點了點頭，説道：“我給你演示一遍"
                        "，可要瞧清\n楚了。”$n" HIY "話音剛落，突然身體一側，雙掌"
-                       "頓時向下沉\n去，接著卻又向上一翻，朝著$N" HIY "的雙肩斜斜"
+                       "頓時向下沉\n去，接着卻又向上一翻，朝着$N" HIY "的雙肩斜斜"
                        "地劈去，招數甚\n為精妙，頓時將$N" HIY "攻了個措手不及。\n"
                        NOR, me, this_object());
 
@@ -231,7 +231,7 @@ mixed ask_skill3()
                 return RANK_D->query_respect(me) + "和本鏢局素無來往，何出此言？";
 
         if (me->query_skill("kuimang-dao", 1) < 1)
-                return "你連□蟒刀法都沒學，還談什麼絕招可言？";
+                return "你連蝰蟒刀法都沒學，還談什麼絕招可言？";
 
         if( query("gongxian", me)<50 )
                 return "你為鏢局出力不夠，這招我暫時不忙傳你。";
@@ -240,7 +240,7 @@ mixed ask_skill3()
                 return "你的內功火候尚需提高，練好了再來找我吧。";
 
         if (me->query_skill("kuimang-dao", 1) < 40)
-                return "你的□蟒刀法還練得不到家，自己下去練練再來吧！";
+                return "你的蝰蟒刀法還練得不到家，自己下去練練再來吧！";
 
         message_vision(HIY "$n" HIY "笑了笑，伸手將$N" HIY "招到身前，低聲在$N" HIY
                        "耳旁嘀咕了半\n天。然後又拔出腰刀翻轉數下，斜撩而出。似乎是"
@@ -248,7 +248,7 @@ mixed ask_skill3()
 
         command("nod");
         command("say 這招很簡單，稍加練習便行。");
-        tell_object(me, HIC "你學會了「□蟒盤身」。\n" NOR);
+        tell_object(me, HIC "你學會了「蝰蟒盤身」。\n" NOR);
         if (me->can_improve_skill("blade"))
                 me->improve_skill("blade", 1500000);
         if (me->can_improve_skill("kuimang-dao"))

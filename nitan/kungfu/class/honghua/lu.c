@@ -19,9 +19,9 @@ void create()
         set("long", "陸菲青，乃武當派大俠，壯年時在大江南北\n"
                     "行俠仗義，端的名震江湖。至屠龍幫瓦解冰\n"
                     "消，陸菲青遠走邊疆，當時清廷曾四下派人\n"
-                    "追拿，但他為人機警，兼之武功高強，得脫\n"
+                    "追拿，但他為人機警，兼之武功高強，得脱\n"
                     "大難，但清廷繼續嚴加查緝。\n");
-        set("nickname", HIW "綿裡針" NOR);
+        set("nickname", HIW "綿裏針" NOR);
         set("gender", "男性");
         set("class", "scholar");
         set("age", 62);
@@ -128,7 +128,7 @@ int recognize_apprentice(object ob, string skill)
         if( query("family/family_name", ob) == "武當派" )
         {
                 command("sigh");
-                command("say 我已經說過我不收徒了，這些你還是去找你師父學吧。\n");
+                command("say 我已經説過我不收徒了，這些你還是去找你師父學吧。\n");
                 return -1;
         }
 
@@ -263,7 +263,7 @@ mixed ask_skill2()
                 return "你柔雲劍法尚未修煉得精深，難以運用此招。";
 
         message_vision(HIY "$n" HIY "微微一笑，從懷中輕輕取出了一本"
-                       "劍譜，指著其中一段對$N" HIY "細\n說良久，$N"
+                       "劍譜，指着其中一段對$N" HIY "細\n説良久，$N"
                        HIY "一邊聽一邊點頭。\n" NOR, me, this_object());
 
         command("nod");
@@ -309,7 +309,7 @@ mixed ask_skill3()
                 return "你無極玄功拳尚未修煉得精深，難以運用此招。";
 
         message_vision(HIY "$n" HIY "點了點頭，將$N" HIY "招至"
-                       "身邊，在耳旁低聲細說良久，$N" HIY "聽"
+                       "身邊，在耳旁低聲細説良久，$N" HIY "聽"
                        "後會心\n的一笑，看來大有所悟。\n" NOR, me,
                        this_object());
 
@@ -346,7 +346,7 @@ mixed ask_zhen()
                 return "你芙蓉金針的手法還不到家，拿了芙蓉金針也沒什麼用。";
 
         if (query("zhen_count") < 1)
-                return "我又不是賣這個的，哪裡帶得了這麼多。";
+                return "我又不是賣這個的，哪裏帶得了這麼多。";
 
         addn("zhen_count", -1);
         ob = new("/d/kaifeng/npc/obj/jinzhen");
@@ -367,17 +367,17 @@ mixed ask_jian()
         {
                 if( query("family/family_name", me) == "紅花會" )
                         message_vision(CYN "$N" CYN "冷哼一聲，對$n" CYN "道："
-                                       "“你若再敢在我面前說三道四，小心我替紅"
+                                       "“你若再敢在我面前説三道四，小心我替紅"
                                        "花會清除你這個敗類！”\n" NOR,
                                        this_object(), me);
                 else
                 if( query("family/family_name", me) == "武當派" )
                         message_vision(CYN "$N" CYN "冷哼一聲，對$n" CYN "道："
                                        "“你身在武當，行為卻如此不恥，竟還敢在"
-                                       "我面前說三道四！”\n" NOR,
+                                       "我面前説三道四！”\n" NOR,
                                        this_object(), me);
                 else
-                        message_vision(CYN "$N" CYN "冷笑一聲，對$n" CYN "說道"
+                        message_vision(CYN "$N" CYN "冷笑一聲，對$n" CYN "説道"
                                        "：“閣下什麼來頭？居然敢打聽陸某的配劍"
                                        "？”\n" NOR,
                                        this_object(), me);
@@ -399,7 +399,7 @@ mixed ask_jian()
                 return "學武之人，自應以德義為先。我的配劍不會隨便給人，你走吧。";
 
         if (me->query_skill("rouyun-jian", 1) < 150)
-                return "你還是先在貧道這裡把柔雲劍法練成之後再說吧。";
+                return "你還是先在貧道這裏把柔雲劍法練成之後再説吧。";
 
         ob = find_object(BAILONG);
         if (! ob) ob = load_object(BAILONG);
@@ -436,7 +436,7 @@ mixed ask_jian()
         ob->move(this_object());
         ob->wield();
 
-        message_vision(CYN "$N" CYN "嘆道：“配劍你拿去吧，但切記行走"
+        message_vision(CYN "$N" CYN "歎道：“配劍你拿去吧，但切記行走"
                        "江湖俠義為重，莫壞了紅花會的名聲。”\n" NOR,
                        this_object(), me);
         command("givebailongjianto"+query("id", me));

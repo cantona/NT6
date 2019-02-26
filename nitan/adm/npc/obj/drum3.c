@@ -38,7 +38,7 @@ void create()
                 set_default_object(__FILE__);
         else {
                 set("unit", "只");
-                set("long", "這是一只牛皮制成的巨鼓，武林人士在華山論劍時敲響(knock)它開始比武。\n");
+                set("long", "這是一隻牛皮製成的巨鼓，武林人士在華山論劍時敲響(knock)它開始比武。\n");
                 set("no_get", 1); 
         }
 }
@@ -141,9 +141,9 @@ int check_out(object me)
         tell_object(me, HIR "\n你覺得眼前一陣模糊...這下完了！\n" NOR);
         if (ob = me->query_last_damage_from())
         {
-                msg = "聽說" + me->name(1) + "慘遭" + ob->name(1) + "的毒手，被一腳踢下擂台。";
+                msg = "聽説" + me->name(1) + "慘遭" + ob->name(1) + "的毒手，被一腳踢下擂台。";
         } else
-                msg = "聽說" + me->name(1) + "運氣不佳，本領有限、已經慘遭淘汰。";
+                msg = "聽説" + me->name(1) + "運氣不佳，本領有限、已經慘遭淘汰。";
         message_competition(msg);
 
         restore_status(me);
@@ -162,8 +162,8 @@ int check_out(object me)
 // overide function of quit
 int check_quit(object me)
 {
-        message_competition("聽說" + me->name(1) +
-                            "臨陣脫逃，溜走了。");
+        message_competition("聽説" + me->name(1) +
+                            "臨陣脱逃，溜走了。");
         restore_status(me);
         if (arrayp(total))
                 total -= ({ me });
@@ -610,7 +610,7 @@ void checking(object ob1, object ob2)
                 return ;
         }
         if (! ob1 && ! ob2)
-                tell_room(environment(), BOLD "由于雙方棄權,繼續下一輪比賽。\n" NOR);
+                tell_room(environment(), BOLD "由於雙方棄權,繼續下一輪比賽。\n" NOR);
         else if (ob1 && (! ob2 || ! present(ob2, room)))
         {
                 winner = ob1;
@@ -620,7 +620,7 @@ void checking(object ob1, object ob2)
                 winner = ob2;
                 message("vision", HIC + ob2->name() + "哈哈大笑幾聲，跳了下去。\n" NOR, room, ({ob2}));
         } else
-                tell_room(environment(), BOLD "由于雙方棄權,繼續下一輪比賽。\n" NOR);
+                tell_room(environment(), BOLD "由於雙方棄權,繼續下一輪比賽。\n" NOR);
         if (winner) 
         {
                 arena = query("arena");
@@ -729,7 +729,7 @@ int give_money(object *players,object *fighters)
 {
         if (query("drum_knocked"))
         {
-                message("vision", query("drum_knocked") + "笑嘻嘻地對大伙說到：哈哈，哈哈，多謝捧場！\n",
+                message("vision", query("drum_knocked") + "笑嘻嘻地對大夥説到：哈哈，哈哈，多謝捧場！\n",
                         environment());
                 foreach (object user in players)
                 {

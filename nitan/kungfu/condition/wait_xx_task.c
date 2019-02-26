@@ -7,7 +7,7 @@ int update_condition(object me, int duration)
 {
         if (duration < 1)
         {
-                message_vision(HIW"突然天空中飛下一只白鴿，降在$N的肩頭。\n"NOR, me);
+                message_vision(HIW"突然天空中飛下一隻白鴿，降在$N的肩頭。\n"NOR, me);
                 tell_object(me, HIY"這是一封新的飛鴿傳書，你又可以要求新的任務了！\n"NOR);                
                 return 0;
         }

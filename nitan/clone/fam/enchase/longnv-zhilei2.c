@@ -8,7 +8,7 @@ void create()
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("long", HIG "傳說龍女之淚乃東海小龍女心淚凝而成，擁有著令世人無法抗拒的力量。\n" NOR);
+                set("long", HIG "傳説龍女之淚乃東海小龍女心淚凝而成，擁有着令世人無法抗拒的力量。\n" NOR);
                 set("unit", "塊");
                 set("value", 5000);
                 set("enchase/name", "龍女之淚");

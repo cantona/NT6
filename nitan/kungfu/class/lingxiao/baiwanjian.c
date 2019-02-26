@@ -40,8 +40,8 @@ void create()
                 "冷劍決"   : (: ask_skill1 :),
                 "凌霄總訣" : (: ask_skill2 :),
                 "飛絮飄零" : (: ask_skill3 :),
-                "鶴沖九霄" : (: ask_skill4 :),
-                "風回雪舞" : (: ask_skill5 :),
+                "鶴衝九霄" : (: ask_skill4 :),
+                "風迴雪舞" : (: ask_skill5 :),
                 "雪花六出" : (: ask_skill6 :),
         ]));
 
@@ -113,7 +113,7 @@ void attempt_apprentice(object me)
 
         if( query("combat_exp", me)<150000 )
         {
-                command("say 你現在江湖經驗太淺，還是多鍛煉鍛煉再來吧。");
+                command("say 你現在江湖經驗太淺，還是多鍛鍊鍛鍊再來吧。");
                 return;
         }
 
@@ -140,7 +140,7 @@ mixed ask_skill1()
 
         me = this_player();
         if( query("can_perform/hanmei-jian/leng", me) )
-                return "自己下去練，別在這裡跟我羅嗦個沒完！";
+                return "自己下去練，別在這裏跟我羅嗦個沒完！";
 
         if( query("family/family_name", me) != query("family/family_name") )
                 return "閣下從何而來，這樣打聽我雪山派絕招是什麼意思？";
@@ -158,11 +158,11 @@ mixed ask_skill1()
                 return "虧你寒梅劍法練成這樣，也好意思來找我。";
 
         message_vision(HIY "$n" HIY "略微點了點頭，將$N" HIY "招至"
-                        "跟前。輕聲在$N" HIY "耳畔細說\n良久，時不"
+                        "跟前。輕聲在$N" HIY "耳畔細説\n良久，時不"
                         "時還伸手演化劍招，$N" HIY "一邊聽一邊點頭"
                         "。\n" NOR, me, this_object());
         command("nod");
-        command("say 這招很簡單，你下去照我說的練習便成。");
+        command("say 這招很簡單，你下去照我説的練習便成。");
         tell_object(me, HIC "你學會了「冷劍決」。\n" NOR);
 
         if (me->can_improve_skill("sword"))
@@ -200,7 +200,7 @@ mixed ask_skill2()
 
         message_vision(HIY "$n" HIY "打量了$N" HIY "一翻，然後微微一"
                        "笑，示以讚許。又將$N" HIY "\n招至跟前，輕聲在"
-                       "$N" HIY "耳畔細說良久，時不時還伸手比出幾\n式"
+                       "$N" HIY "耳畔細説良久，時不時還伸手比出幾\n式"
                        "拳法中的精妙之處，$N" HIY "一邊聽一邊點頭。\n"
                        NOR, me, this_object());
         command("nod");
@@ -223,7 +223,7 @@ mixed ask_skill3()
 
         me = this_player();
         if( query("can_perform/piaoxu-zhang/piao", me) )
-                return "自己下去練，別在這裡跟我羅嗦個沒完！";
+                return "自己下去練，別在這裏跟我羅嗦個沒完！";
 
         if( query("family/family_name", me) != query("family/family_name") )
                 return "閣下無故打聽我雪山派的絕招是什麼意思？";
@@ -240,12 +240,12 @@ mixed ask_skill3()
         if (me->query_skill("piaoxu-zhang", 1) < 80)
                 return "虧你飄絮掌法練成這樣，也好意思來找我。";
 
-        message_vision(HIY "$n" HIY "略微點了點頭，說道：“我給你演示"
+        message_vision(HIY "$n" HIY "略微點了點頭，説道：“我給你演示"
                       "一遍，可得瞧\n仔細了！”隨即一聲清嘯，雙掌紛飛"
                       "貫出，掌影重重疊疊\n虛實難辨，全全籠罩$N" HIY
                       "全身。\n" NOR, me, this_object());
         command("nod");
-        command("say 剛才我所演示的全是這招的精華，你下去照著練就行了。");
+        command("say 剛才我所演示的全是這招的精華，你下去照着練就行了。");
         tell_object(me, HIC "你學會了「飛絮飄零」。\n" NOR);
 
         if (me->can_improve_skill("strike"))
@@ -282,12 +282,12 @@ mixed ask_skill4()
                 return "虧你雲鶴七劍練成這樣，也好意思來找我。";
 
         message_vision(HIY "$n" HIY "點了點頭，隨手從身後的書架上取"
-                       "出一本劍經，指\n著其中一段對$N" HIY "細說了"
+                       "出一本劍經，指\n着其中一段對$N" HIY "細説了"
                        "良久，$N" HIY "一邊聽一邊點頭。\n" NOR, me,
                        this_object());
         command("nod");
-        command("say 這招很簡單，你下去照我說的練習便成。");
-        tell_object(me, HIC "你學會了「鶴沖九霄」。\n" NOR);
+        command("say 這招很簡單，你下去照我説的練習便成。");
+        tell_object(me, HIC "你學會了「鶴衝九霄」。\n" NOR);
 
         if (me->can_improve_skill("sword"))
                 me->improve_skill("sword", 1500000);
@@ -308,7 +308,7 @@ mixed ask_skill5()
                 return "這招我不是已經教過你了嗎？自己下去多練吧！";
 
         if( query("family/family_name", me) != query("family/family_name") )
-                return "你是哪裡來的？快給我快快滾開！";
+                return "你是哪裏來的？快給我快快滾開！";
 
         if (me->query_skill("xueshan-jian", 1) < 1)
                 return "你連雪山劍法都沒學，還談什麼絕招可言？";
@@ -322,13 +322,13 @@ mixed ask_skill5()
         if (me->query_skill("xueshan-jian", 1) < 30)
                 return "你雪山劍法尚未修煉得精深，沒法用這招。";
 
-        message_vision(HIY "$n" HIY "微微一笑，點了點頭。說著便在$N" HIY
-                        "耳邊輕聲述說劍\n訣精要，一邊說還一邊比劃著些什"
+        message_vision(HIY "$n" HIY "微微一笑，點了點頭。説着便在$N" HIY
+                        "耳邊輕聲述説劍\n訣精要，一邊説還一邊比劃着些什"
                        "麼。過了良久，只見$N" HIY "\n會心的一笑，似乎有"
                        "了什麼新的感悟。\n" NOR, me, this_object());
         command("smile");
-        command("say 這一招看似復雜，實卻簡潔，稍加練習便成。");
-        tell_object(me, HIC "你學會了「風回雪舞」。\n" NOR);
+        command("say 這一招看似複雜，實卻簡潔，稍加練習便成。");
+        tell_object(me, HIC "你學會了「風迴雪舞」。\n" NOR);
 
         if (me->can_improve_skill("sword"))
                 me->improve_skill("sword", 1500000);
@@ -349,7 +349,7 @@ mixed ask_skill6()
                 return "這招我不是已經教過你了嗎？自己下去多練吧！";
 
         if( query("family/family_name", me) != query("family/family_name") )
-                return "你是哪裡來的？快給我快快滾開！";
+                return "你是哪裏來的？快給我快快滾開！";
 
         if (me->query_skill("xueshan-jian", 1) < 1)
                 return "你連雪山劍法都沒學，還談什麼絕招可言？";
@@ -365,7 +365,7 @@ mixed ask_skill6()
 
         message_vision(HIY "$n" HIY "微微一笑，對$N" HIY "讚道：“想"
                        "不到今日你能有如此造\n詣，我這就傳你這招。”"
-                        "說完$n" HIY "拔出配劍，單手握住\n劍訣，頓時"
+                        "説完$n" HIY "拔出配劍，單手握住\n劍訣，頓時"
                        "只見長劍抖動，虛中有實，實中有虛，劍尖劍\n鋒"
                         "齊用，凌厲刺出。$N" HIY "只覺眼前劍光一閃而"
                        "過，隨即木屑\n紛飛，面前的紅漆門柱上竟豁然印"

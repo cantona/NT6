@@ -7,10 +7,10 @@ void create()
 {
         set_name("何太沖", ({ "he taichong", "he", "taichong" }));
         set("long", "一個五十多歲的中年男子，眉頭緊鎖，原來\n"
-                    "這就是昆侖派的掌門，人稱“鐵琴先生”的\n"
+                    "這就是崑崙派的掌門，人稱“鐵琴先生”的\n"
                     "何太沖，至六大門派圍攻光明頂之後，被趙\n"
-                    "用計擒拿，關押在這裡。\n");
-        set("title", "昆侖派第三代掌門");
+                    "用計擒拿，關押在這裏。\n");
+        set("title", "崑崙派第三代掌門");
         set("nickname", WHT "鐵琴先生" NOR);
         set("gender", "男性");
         set("age", 58);
@@ -59,7 +59,7 @@ void create()
 
         prepare_skill("strike", "cuixin-zhang");
 
-        create_family("昆侖派", 3, "掌門");
+        create_family("崑崙派", 3, "掌門");
 
         setup();
         carry_object("/clone/cloth/cloth")->wear();
@@ -92,7 +92,7 @@ int accept_kill(object who)
 
 int accept_ansuan(object who)
 {
-        return notify_fail("你剛想暗算，可是只見樓上人影晃動，根本看不清楚。\n");
+        return notify_fail("你剛想暗算，可是隻見樓上人影晃動，根本看不清楚。\n");
 }
 
 int begin()
@@ -111,7 +111,7 @@ int begin()
         command("heng");
         command("say 進招吧！");
         message_vision(HIY "$N話音未落，單手一抖，手中竹劍對準$n" HIY
-                           "當胸斜斜刺出！正是昆侖嫡傳的兩儀劍法。\n" NOR,
+                           "當胸斜斜刺出！正是崑崙嫡傳的兩儀劍法。\n" NOR,
                            obj, this_player());
 
         set_temp("bi", 1, me);

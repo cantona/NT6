@@ -4,7 +4,7 @@ inherit NPC;
 
 void create()
 {
-        set_name("凈玄", ({"jing xuan", "monk" }));
+        set_name("淨玄", ({"jing xuan", "monk" }));
         set("title","寶象寺長老");
         set("gender", "男性");
         set("age", 80);

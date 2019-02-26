@@ -102,7 +102,7 @@ void attempt_apprentice(object ob)
 
         if( query("combat_exp", ob)<500000 )
         {
-                command("say 你江湖經驗還不足，還是去多闖盪一下吧！");
+                command("say 你江湖經驗還不足，還是去多闖蕩一下吧！");
                 return;
         }
 
@@ -118,7 +118,7 @@ int accept_ask(object me, string topic)
         {
         case "歷練" :
         case "歷煉" :
-        case "鍛煉" :
+        case "鍛鍊" :
                 return QUEST_D->accept_ask(this_object(), me, topic);
                 break;
 
@@ -134,10 +134,10 @@ int accept_ask(object me, string topic)
                            "shen"    : -38000, ]));
                 break;
 
-        case "只手遮天" :
+        case "隻手遮天" :
                 return MASTER_D->teach_pfm(me, this_object(),
                         ([ "perform" : "can_perform/xuanming-zhang/zhe",
-                           "name"    : "只手遮天",
+                           "name"    : "隻手遮天",
                            "sk1"     : "xuanming-zhang",
                            "lv1"     :  130,
                            "force"   :  180,
@@ -174,7 +174,7 @@ int recognize_apprentice(object ob, string skill)
 {
         if (ob->query_skill(skill, 1) >= 600)
         {
-                command("say 夠了！我就教你到這裡吧，武功還是"
+                command("say 夠了！我就教你到這裏吧，武功還是"
                         "要靠自己多研究才是！");
                 return -1;
         }

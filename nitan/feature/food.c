@@ -45,7 +45,7 @@ string extra_long()
         str =  "物品類型    ：    食物\n";
         str += sprintf("重    量    ：    %d\n", this_object()->query_weight());
         str += sprintf("能    量    ：    %d\n", query("food_supply"));
-        str += sprintf("剩    余    ：    %d\n", query("food_remaining"));
+        str += sprintf("剩    餘    ：    %d\n", query("food_remaining"));
         str += sprintf("使用方式    ：    輸入指令 eat %s 食用。\n", query("id"));
         if( this_object()->query_autoload() )
                 str += "下線丟失    ：    否\n";
@@ -84,7 +84,7 @@ int feed_ob(object me)
         addn("food_remaining", -1);
         if( !query("food_remaining") ) {
                 if( !stringp(str = query("eat_all")) )
-                str = "$N將剩下的$n吃得乾乾凈凈。\n";
+                str = "$N將剩下的$n吃得乾乾淨淨。\n";
                 message_vision(str, this_player(),this_object());
                 if( !this_object()->finish_eat() )
                         destruct(this_object());

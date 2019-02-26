@@ -9,7 +9,7 @@ void create()
 {
         set_name("空見", ({ "kong jian", "kongjian" }));
         set("long",
-                "他是一位須發花白的老僧，身形瘦削，容貌慈和。\n"
+                "他是一位鬚髮花白的老僧，身形瘦削，容貌慈和。\n"
         );
 
         set("nickname", HIR "神僧" NOR);
@@ -100,7 +100,7 @@ int recognize_apprentice(object me, string skill)
 
         if (me->query_skill("buddhism", 1) < 250)
         {
-                command("say 唉！你還是好好修習佛法吧，不要耽于武學。");
+                command("say 唉！你還是好好修習佛法吧，不要耽於武學。");
                 return -1;
         }
 

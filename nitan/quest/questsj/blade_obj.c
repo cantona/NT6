@@ -20,7 +20,7 @@ mapping blade_obj = ([
         "/d/guiyun/npc/obj/jiandao":36,         //張阿生
         "/d/guanwai/obj/lengyue":36,            //胡斐
         "/d/guanwai/obj/cwbdao":40,             //胡斐
-        "/d/foshan/npc/obj/caidao":36,          //鐘四嫂
+        "/d/foshan/npc/obj/caidao":36,          //鍾四嫂
         "/d/dali/npc/obj/mandao":36,            //傣族首領
         "/d/dali/npc/obj/kandao":26,            //採筍人（兩個）、砍竹人（兩個）
         "/d/city/obj/gangdao":5,                //很多
@@ -30,7 +30,7 @@ mapping blade_obj = ([
         "/d/beijing/npc/obj/blade3":10,         //北京官兵（相當多）
         "/d/beijing/npc/obj/blade2":5,          //江湖豪客（四個）、毒郎中（無數）、李力世
         "/d/beijing/npc/obj/blade1":5,          //很多
-        "/d/baituo/obj/dadao":18,               //白駝山五個門衛、三個山賊、一個山賊頭
+        "/d/baituo/obj/dadao":18,               //白駝山五個門衞、三個山賊、一個山賊頭
         "/d/baituo/obj/chaidao":30,             //樵夫、老材
         "/d/baituo/npc/obj/dadao":1,            //暫時無處獲取
         "/d/baituo/npc/obj/chaidao":1,          //暫時無處獲取

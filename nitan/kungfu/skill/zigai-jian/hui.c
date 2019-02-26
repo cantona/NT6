@@ -1,7 +1,7 @@
 #include <ansi.h>
 #include <combat.h>
 
-#define HUI "「" HIC "紫蓋回翔" NOR "」"
+#define HUI "「" HIC "紫蓋迴翔" NOR "」"
 
 inherit F_SSERVER;
 
@@ -42,7 +42,7 @@ int perform(object me, object target)
                 return notify_fail("你現在的真氣不夠，難以施展" HUI "。\n");
 
         if (! living(target))
-                return notify_fail("對方都已經這樣了，用不著這麼費力吧？\n");
+                return notify_fail("對方都已經這樣了，用不着這麼費力吧？\n");
 
         wn = weapon->name();
                            

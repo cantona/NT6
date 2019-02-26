@@ -33,7 +33,7 @@ int help(object me)
         write(@HELP
 指令格式 : unride | xia
  
-這個指令可以讓你從騎著的已馴養的動物上跳下來。
+這個指令可以讓你從騎着的已馴養的動物上跳下來。
  
 HELP );
     return 1;

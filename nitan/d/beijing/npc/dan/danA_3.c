@@ -35,7 +35,7 @@ int do_effect(object me)
 
         set_temp("last_eat/dan(A)", time(), me);
 
-        message_vision(HIR "$N吃下一粒補精丹，感到靈台處無比的清凈。\n" NOR, me);
+        message_vision(HIR "$N吃下一粒補精丹，感到靈台處無比的清淨。\n" NOR, me);
         me->receive_curing("jing", 230);
         me->receive_heal("jing", 230);
 

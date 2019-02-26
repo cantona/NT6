@@ -65,7 +65,7 @@ int perform(object me,object target)
         if ( random(skill) > dp/4 ) // random(100) > 150/4  now
         {
                 if( userp(me))addn("neili", -150, me);
-                msg ="$n頓時覺得眼前蝶影飄飛，雙耳嗡嗡內鳴，全身上下一陣刺痛如針紮一般！\n" NOR;
+                msg ="$n頓時覺得眼前蝶影飄飛，雙耳嗡嗡內鳴，全身上下一陣刺痛如針扎一般！\n" NOR;
                 qi_wound = 2 * skill;
                 qi_wound = qi_wound/2 + random(qi_wound);
 
@@ -96,7 +96,7 @@ int help(object me)
 
         出手要求：
                 青冥玄功120級
-                鬆風劍法150級
+                松風劍法150級
                 內力300
 HELP
         );

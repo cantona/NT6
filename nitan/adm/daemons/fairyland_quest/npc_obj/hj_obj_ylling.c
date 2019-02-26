@@ -10,7 +10,7 @@ inherit ITEM;
 void create()
 {
     set_name( HIB"幽靈之令"NOR, ({ "youling ling", "ling" }) );
-    set("long", "這是一個幽靈族的令牌，就似正在幽幽散發著神秘的氣息，詭異莫名。\n");
+    set("long", "這是一個幽靈族的令牌，就似正在幽幽散發着神祕的氣息，詭異莫名。\n");
     set("waiting_set",1);
 // 調用時要 delete 此設置，否則會發生錯誤！
 
@@ -47,6 +47,6 @@ void check_environment()
 
 void delete_me()
 {
-    message_vision( "$N忽地發出一陣凄厲之聲，消失不見了。\n", this_object());
+    message_vision( "$N忽地發出一陣淒厲之聲，消失不見了。\n", this_object());
     destruct(this_object());
 }

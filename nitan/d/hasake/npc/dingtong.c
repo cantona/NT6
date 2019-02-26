@@ -14,7 +14,7 @@ void create()
        set("int", 20);
        set("dex", 20);
        set("env/wimpy", 60);
-       set("long","他是霍元龍手下的鏢師之一，一直在這一帶尋找著一個人。\n" );
+       set("long","他是霍元龍手下的鏢師之一，一直在這一帶尋找着一個人。\n" );
        set("combat_exp", 200000);
        set("attitude", "heroism");
        set("chat_chance", 30);

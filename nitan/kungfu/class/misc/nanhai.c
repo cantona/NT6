@@ -11,7 +11,7 @@ void create()
         set("gender", "男性");
         set("age", 23);
         set("long", @LONG
-這是一個氣勢洶洶的惡蛟，渾身纏繞著五顏六色的異彩雲祥。
+這是一個氣勢洶洶的惡蛟，渾身纏繞着五顏六色的異彩雲祥。
 LONG );
         set("combat_exp", 10000000);
         set("shen_type", 0);
@@ -59,7 +59,7 @@ void fight_ob(object ob)
                 return;
 
         message_vision(HIW "$N" HIW "冷哼一聲，渾身雲氣大盛，"
-                       "妖氣彌漫。\n" NOR, this_object(), ob);
+                       "妖氣瀰漫。\n" NOR, this_object(), ob);
 
         ::fight_ob(ob);
         if( !is_killing(query("id", ob)) )
@@ -109,7 +109,7 @@ varargs void die(object killer)
 
         str = prize[random(sizeof(prize))];
         ob = new(str);
-        command("chat 啊呀！不好，看來這次出師不利，待我回南海修煉上幾年再說！");
+        command("chat 啊呀！不好，看來這次出師不利，待我回南海修煉上幾年再説！");
         message_sort(HIR "$N" HIR "身子一扭，消失在雲氣中，"
                      "只聽叮玲玲的一聲，從$N" HIR "身上掉下了一" +
                      query("unit", ob)+ob->name()+
@@ -132,7 +132,7 @@ varargs void die(object killer)
                 }
         }
 
-        // 1/800幾率掉出無名銅人
+        // 1/800機率掉出無名銅人
         if (random(800) < 1)
         {
                 object ob_tongren;
@@ -151,7 +151,7 @@ void random_move()
         {
                 message_vision("$N急急忙忙的走了。\n", this_object());
                 CHANNEL_D->channel_broadcast("rumor",
-                        "聽說" + name() + HIM "逍遙凡世，為禍人間良久"
+                        "聽説" + name() + HIM "逍遙凡世，為禍人間良久"
                         "方才返回南海，百姓飽受荼毒。" NOR);
                 destruct(this_object());
                 return;

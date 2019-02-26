@@ -8,7 +8,7 @@ void create()
 	set("gender", "男性" );
 	set("age", 15);
 	set("long",
-		"這個小童正坐在正中的一個凳子上打著瞌睡。\n");
+		"這個小童正坐在正中的一個凳子上打着瞌睡。\n");
 	set("combat_exp", 50000);
 	set("attitude", "friendly");
 	setup();

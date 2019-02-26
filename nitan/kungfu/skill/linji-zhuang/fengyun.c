@@ -22,9 +22,9 @@ int exert(object me, object target)
                 return notify_fail("你此時四肢百骸真氣鼓盪，不必再次運功。\n");
 
         set_temp("linji/fengyun", 1, me);
-        write( HIY "你暗運風雲兩莊，心思浮雲飄空之悠閒緩慢，默想狂風盪地之迅速緊急，\n一股丹田熱氣分注四肢百骸，但覺身手敏捷了許多。\n" NOR);
+        write( HIY "你暗運風雲兩莊，心思浮雲飄空之悠閒緩慢，默想狂風蕩地之迅速緊急，\n一股丹田熱氣分注四肢百骸，但覺身手敏捷了許多。\n" NOR);
         message("vision",
-                HIY + "只見" + me->name() + "微閉雙眼，身旁凝起一圈白霧，瞬息間一股旋風卷過，"+me->name()+"身形又復清晰。\n" NOR,
+                HIY + "只見" + me->name() + "微閉雙眼，身旁凝起一圈白霧，瞬息間一股旋風捲過，"+me->name()+"身形又復清晰。\n" NOR,
                 environment(me), me);
 
         addn("neili", -level, me);

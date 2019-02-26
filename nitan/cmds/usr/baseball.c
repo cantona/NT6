@@ -67,7 +67,7 @@ int main(object me, string arg)
 		
 		msg = ({ "\n 第 "HIC+year+NOR" 球季目前共有 "HIY+sizeof(season)+NOR" 個參賽球隊，目前戰績排名如下：" });
 		msg += ({ WHT"─────────────────────────────────────"NOR });
-		msg += ({ sprintf(HIW" %-4s%-13s%-13s%4s%5s%5s%6s %-12s%s"NOR, "", "球隊名稱", "老板", "場次", "勝場", "敗場", "勝率", "目前對戰", "賽況") });
+		msg += ({ sprintf(HIW" %-4s%-13s%-13s%4s%5s%5s%6s %-12s%s"NOR, "", "球隊名稱", "老闆", "場次", "勝場", "敗場", "勝率", "目前對戰", "賽況") });
 		msg += ({ WHT"─────────────────────────────────────"NOR });
 		
 		limit = (BASEBALL_D->calculate_max_game_times(year)-10) / 2;
@@ -195,7 +195,7 @@ int main(object me, string arg)
 			case "home":
 			{
 				msg += ({ WHT"─────────────────────────────────────"NOR });
-				msg += ({ HIW" 排名 全壘打王                    球隊老板      支數"NOR });
+				msg += ({ HIW" 排名 全壘打王                    球隊老闆      支數"NOR });
 				msg += ({ WHT"─────────────────────────────────────"NOR });
 				
 				recordsort = sort_array( filter_array(keys(playerrecord), (: $(playerrecord)[$1]["hit4"] > 0 :)), (: $(playerrecord)[$1]["hit4"] > $(playerrecord)[$2]["hit4"] ? -1 : 1 :) );
@@ -219,7 +219,7 @@ int main(object me, string arg)
 			case "hit":
 			{
 				msg += ({ WHT"─────────────────────────────────────"NOR });
-				msg += ({ HIW" 排名 安打王                      球隊老板      支數       打擊率"NOR });
+				msg += ({ HIW" 排名 安打王                      球隊老闆      支數       打擊率"NOR });
 				msg += ({ WHT"─────────────────────────────────────"NOR });
 				
 				recordsort = sort_array( filter_array(keys(playerrecord), (: $(playerrecord)[$1]["hit"] > 0 :)), (: $(playerrecord)[$1]["hit"] > $(playerrecord)[$2]["hit"] ? -1 : 1 :) );
@@ -243,7 +243,7 @@ int main(object me, string arg)
 			case "hit2":
 			{
 				msg += ({ WHT"─────────────────────────────────────"NOR });
-				msg += ({ HIW" 排名 二壘安打王                  球隊老板      支數       打擊率"NOR });
+				msg += ({ HIW" 排名 二壘安打王                  球隊老闆      支數       打擊率"NOR });
 				msg += ({ WHT"─────────────────────────────────────"NOR });
 				
 				recordsort = sort_array( filter_array(keys(playerrecord), (: $(playerrecord)[$1]["hit2"] > 0 :)), (: $(playerrecord)[$1]["hit2"] > $(playerrecord)[$2]["hit2"] ? -1 : 1 :) );
@@ -267,7 +267,7 @@ int main(object me, string arg)
 			case "hit3":
 			{
 				msg += ({ WHT"─────────────────────────────────────"NOR });
-				msg += ({ HIW" 排名 三壘安打王                  球隊老板      支數       打擊率"NOR });
+				msg += ({ HIW" 排名 三壘安打王                  球隊老闆      支數       打擊率"NOR });
 				msg += ({ WHT"─────────────────────────────────────"NOR });
 				
 				recordsort = sort_array( filter_array(keys(playerrecord), (: $(playerrecord)[$1]["hit3"] > 0 :)), (: $(playerrecord)[$1]["hit3"] > $(playerrecord)[$2]["hit3"] ? -1 : 1 :) );
@@ -291,7 +291,7 @@ int main(object me, string arg)
 			case "run":
 			{
 				msg += ({ WHT"─────────────────────────────────────"NOR });
-				msg += ({ HIW" 排名 打點王                      球隊老板      打點"NOR });
+				msg += ({ HIW" 排名 打點王                      球隊老闆      打點"NOR });
 				msg += ({ WHT"─────────────────────────────────────"NOR });
 				
 				recordsort = sort_array( filter_array(keys(playerrecord), (: $(playerrecord)[$1]["rbi"] > 0 :)), (: $(playerrecord)[$1]["rbi"] > $(playerrecord)[$2]["rbi"] ? -1 : 1 :) );
@@ -315,7 +315,7 @@ int main(object me, string arg)
 			case "k":
 			{
 				msg += ({ WHT"─────────────────────────────────────"NOR });
-				msg += ({ HIW" 排名 三振王                      球隊老板      三振       三振率"NOR });
+				msg += ({ HIW" 排名 三振王                      球隊老闆      三振       三振率"NOR });
 				msg += ({ WHT"─────────────────────────────────────"NOR });
 				
 				recordsort = sort_array( filter_array(keys(playerrecord), (: $(playerrecord)[$1]["strikeout"] > 0 :)), (: $(playerrecord)[$1]["strikeout"] > $(playerrecord)[$2]["strikeout"] ? -1 : 1 :) );
@@ -339,7 +339,7 @@ int main(object me, string arg)
 			case "era":
 			{
 				msg += ({ WHT"─────────────────────────────────────"NOR });
-				msg += ({ HIW" 排名 防御率王                    球隊老板       局數(>45)     自責分率"NOR });
+				msg += ({ HIW" 排名 防禦率王                    球隊老闆       局數(>45)     自責分率"NOR });
 				msg += ({ WHT"─────────────────────────────────────"NOR });
 				
 				recordsort = sort_array( filter_array(keys(playerrecord), (: $(playerrecord)[$1]["out"] > 135 :)), (: to_float($(playerrecord)[$1]["run"])/$(playerrecord)[$1]["out"] > to_float($(playerrecord)[$2]["run"])/$(playerrecord)[$2]["out"] ? 1 : -1 :) );
@@ -365,7 +365,7 @@ int main(object me, string arg)
 				mapping specialrecord = record[year][RECORD_SPECIAL];
 				
 				msg += ({ WHT"─────────────────────────────────────"NOR });
-				msg += ({ HIW" 特殊紀錄             紀錄   達成隊伍 / 球員               老板"NOR });
+				msg += ({ HIW" 特殊紀錄             紀錄   達成隊伍 / 球員               老闆"NOR });
 				msg += ({ WHT"─────────────────────────────────────"NOR });
 
 				if( stringp(specialrecord["champion"]) )
@@ -614,7 +614,7 @@ int main(object me, string arg)
 				if( ((game[INNING]%2) > 0 && game[TEAM2] == myid) || ((game[INNING]%2) == 0 && game[TEAM1] == myid) )
 				{
 					tell(me, pnoun(2, me)+"下達暗號鼓舞正在打擊的打者，這一輪打席的打擊威力短暫提升。\n");
-					BASEBALL_D->add_message(myid, me->query_idname()+"緊張地對著打者比了三個連打者都看不太懂的手勢“ "+signal+" ”");
+					BASEBALL_D->add_message(myid, me->query_idname()+"緊張地對着打者比了三個連打者都看不太懂的手勢“ "+signal+" ”");
 					setup["hint"] = HINTTYPE_BATTER;
 					
 					setup["hinttimes"]--;
@@ -627,7 +627,7 @@ int main(object me, string arg)
 				if( (game[INNING]%2) > 0 && game[TEAM2] == myid || ((game[INNING]%2) == 0 && game[TEAM1] == myid) )
 				{
 					tell(me, pnoun(2, me)+"下達暗號給正在打擊的打者，要求其進行觸擊短打以掩護壘上跑者推進。\n");
-					BASEBALL_D->add_message(myid, me->query_idname()+"緊張地對著打者比了三個連打者都看不太懂的手勢“ "+signal+" ”");
+					BASEBALL_D->add_message(myid, me->query_idname()+"緊張地對着打者比了三個連打者都看不太懂的手勢“ "+signal+" ”");
 					setup["hint"] = HINTTYPE_BUNT;
 				}
 				else
@@ -642,7 +642,7 @@ int main(object me, string arg)
 				if( (game[INNING]%2) == 0 && game[TEAM2] == myid || ((game[INNING]%2) > 0 && game[TEAM1] == myid) )
 				{
 					tell(me, pnoun(2, me)+"下達暗號鼓舞正在投球的投手，面對目前打者的投球威力短暫提升。\n");
-					BASEBALL_D->add_message(myid, me->query_idname()+"緊張地對著投手比了三個連投手都看不太懂的手勢“ "+signal+" ”");
+					BASEBALL_D->add_message(myid, me->query_idname()+"緊張地對着投手比了三個連投手都看不太懂的手勢“ "+signal+" ”");
 					setup["hint"] = HINTTYPE_PITCHER;
 					
 					setup["hinttimes"]--;
@@ -655,7 +655,7 @@ int main(object me, string arg)
 				if( (game[INNING]%2) == 0 && game[TEAM2] == myid || ((game[INNING]%2) > 0 && game[TEAM1] == myid) )
 				{
 					tell(me, pnoun(2, me)+"下達暗號鼓舞正在投球的投手，要求其敬遠四壞保送目前打者。\n");
-					BASEBALL_D->add_message(myid, me->query_idname()+"緊張地對著投手比了三個連投手都看不太懂的手勢“ "+signal+" ”");
+					BASEBALL_D->add_message(myid, me->query_idname()+"緊張地對着投手比了三個連投手都看不太懂的手勢“ "+signal+" ”");
 					setup["hint"] = HINTTYPE_WALK;
 				}
 				else

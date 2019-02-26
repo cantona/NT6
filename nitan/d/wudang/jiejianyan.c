@@ -34,7 +34,7 @@ int valid_leave(object me, string dir)
         {
             message_vision(CYN "\n張翠山喝道：各色人等，到解劍巖都需解劍，千百"
                                "年來概無例外！\n" NOR, me);
-            return notify_fail(HIC "你懾于武當山規，不敢硬爭，只得退了一步。\n"
+            return notify_fail(HIC "你懾於武當山規，不敢硬爭，只得退了一步。\n"
                                NOR);
         }
         return ::valid_leave(me, dir);

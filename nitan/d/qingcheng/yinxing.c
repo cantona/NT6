@@ -6,7 +6,7 @@ void create()
 {
         set("short", "古銀杏樹");
         set("long", @LONG
-觀前古銀杏樹相傳為張天師手植，高可十余丈，腰圍七、八人
+觀前古銀杏樹相傳為張天師手植，高可十餘丈，腰圍七、八人
 合抱，枝葉扶疏，蒼蓋如雲。
 LONG );
         set("outdoors","qingcheng");

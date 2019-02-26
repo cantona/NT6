@@ -3,13 +3,13 @@ inherit ITEM;
 
 void create()
 {
-        set_name(HIR "朸吤悛" NOR, ({ "god blood", "god", "blood" }));
+        set_name(HIR "神聖血清" NOR, ({ "god blood", "god", "blood" }));
         set_weight(1000);
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("long", HIR "稛岆珨朸吤悛ㄛ侔綱褫眕蚚﹝\n" NOR);
-                set("unit", "");
+                set("long", HIR "這是一瓶神聖血清，似乎可以飲用。\n" NOR);
+                set("unit", "瓶");
                 set("value", 300000);
         }
         setup();
@@ -32,24 +32,24 @@ int do_drink(string arg)
         un = query("unit");
 
         if (! arg || ! id(arg))
-                return notify_fail("斕猁瘓妦繫陲昹ˋ\n");
+                return notify_fail("你要喝什麼東西？\n");
 
         if (me->is_busy())
-                return notify_fail("摹妦繫ㄛ苤陑梗珥覂賸﹝\n");
+                return notify_fail("急什麼，小心別噎着了。\n");
 
         my = me->query_entire_dbase();
 
         if( time()-query_temp("last_eat/blood", me)<1800 )
         {
-                write("斕試督蚚徹狻ㄛ剒狻俶楷閨俇虴蚚眕綴符夔樟哿督蚚﹝\n");
+                write("你剛服用過藥，需藥性發揮完效用以後才能繼續服用。\n");
                 return 1;
         }
 
         set_temp("last_eat/blood", time(), me);
 
 
-        message_vision(HIY "$N" HIY "珨欯盛ㄛ蔚珨淕" + un + na +
-                       HIY "窊狟ㄛ婬珩覜橇祥善睡措﹝\n" NOR, me);
+        message_vision(HIY "$N" HIY "一仰脖，將一整" + un + na +
+                       HIY "飲下，再也感覺不到任何疲憊。\n" NOR, me);
 
         my["jing"]     = my["max_jing"];
         my["qi"]       = my["max_qi"];

@@ -20,7 +20,7 @@ void create()
         "他是一位看上去很精幹的中年男子，身穿一件白布長袍。\n"
         "他天生神力，手中的兩頭狼牙棒有萬夫不當之勇，真是一條威風凜凜的漢子。\n"
         );
-        set("title", HIG "明教" HIW "銳金旗" NOR "掌旗副使");
+        set("title", HIG "明教" HIW "鋭金旗" NOR "掌旗副使");
         set("gender", "男性");
         set("attitude", "friendly");
         set("class", "fighter");
@@ -55,11 +55,11 @@ void create()
         map_skill("parry", "jingang-quan");
 
         prepare_skill("cuff", "jingang-quan");
-        create_family("明教", 37, "銳金旗掌旗副使");
+        create_family("明教", 37, "鋭金旗掌旗副使");
 
 
         set("inquiry", ([
-                "name" : "在下就是明教銳金旗掌旗副使吳勁草，不知閣下有何指教。",
+                "name" : "在下就是明教鋭金旗掌旗副使吳勁草，不知閣下有何指教。",
                 "打鐵" : (: ask_job :),
                 "datie": (: ask_job :),
                 "精鐵儲藏" : (: ask_jingtie_num :),
@@ -175,7 +175,7 @@ string ask_jingtie()
 
         job_flg = judge_jobmsg(me,1);
         if (job_flg != "打造火槍")
-                return "這位"+RANK_D->query_respect(me)+"好象沒有造火槍的任務吧。\n";
+                return "這位"+RANK_D->query_respect(me)+"好像沒有造火槍的任務吧。\n";
 
         if (present("jing tie",me) )
         {
@@ -184,7 +184,7 @@ string ask_jingtie()
         }
 
         if ( get_jingtie_num() <= 0 )
-                return "對不起，我這裡已經沒有精鐵了。\n";
+                return "對不起，我這裏已經沒有精鐵了。\n";
 
         command("nod"+query("id", me));
         message_vision("吳勁草拿了一塊精鐵給$N\n",me);

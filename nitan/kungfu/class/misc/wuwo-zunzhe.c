@@ -301,7 +301,7 @@ void die(object killer)
         int gift_point, ran;
 
         // 定義獎勵物品列表
-        // 幾率  X / 百分之
+        // 機率  X / 百分之
         mixed oblist = ([
                 "/clone/fam/max/naobaijin"               : 1,
                 "/clone/fam/pill/sheli4"                 : 1,
@@ -433,7 +433,7 @@ void die(object killer)
                         }
                 }
                 
-                // 20%幾率再追加一件物品
+                // 20%機率再追加一件物品
                 if (random(10) < 2)
                 {
                         s_gift = key_s_gift[random(sizeof(key_s_gift))];
@@ -452,7 +452,7 @@ void die(object killer)
                 }
         }
         
-        // 50%幾率掉出鐵英石頭
+        // 50%機率掉出鐵英石頭
         if (random(100) < 25)
         {
                 ob_tys = new("/clone/fam/item/tieying-shi");
@@ -472,7 +472,7 @@ void die(object killer)
         }
         
 /*      
-        // 5/100幾率掉出無名銅人
+        // 5/100機率掉出無名銅人
         if (random(100) < 5)
         {
                 object ob_tongren;

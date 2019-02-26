@@ -38,7 +38,7 @@ int perform(object me, object target)
                 return notify_fail("你現在真氣不夠，難以施展" FENG "。\n"NOR);
 
         if (! living(target))
-                return notify_fail("對方都已經這樣了，用不著這麼費力吧？\n");
+                return notify_fail("對方都已經這樣了，用不着這麼費力吧？\n");
 
         wname = weapon->name();
 
@@ -66,7 +66,7 @@ int perform(object me, object target)
         ap = me->query_skill("hammer");
         dp = target->query_skill("dodge");
         msg += "\n" WHT "$N" WHT "喝道：“狂風驟雨！”手中" + wname + WHT "一"
-               "陣狂舞，氣勢如虹，舖天蓋地連續向$n" HIW "攻去。\n" NOR;
+               "陣狂舞，氣勢如虹，鋪天蓋地連續向$n" HIW "攻去。\n" NOR;
         if (ap / 2 + random(ap) > dp)
         {
                 msg += COMBAT_D->do_damage(me, target, WEAPON_ATTACK, damage, 32,
@@ -83,7 +83,7 @@ int perform(object me, object target)
         ap = me->query_skill("hammer");
         dp = target->query_skill("force");
         msg += "\n" HIM "$N" HIM "喝道：“雷霆萬鈞！”躍至半空，手中" + wname
-               + HIM "一個盤旋，攜著萬鈞之勁凌空貫向$n" HIM "。\n" NOR;
+               + HIM "一個盤旋，攜着萬鈞之勁凌空貫向$n" HIM "。\n" NOR;
         if (ap / 2 + random(ap) > dp)
         {
                 msg += COMBAT_D->do_damage(me, target, WEAPON_ATTACK, damage, 33,
@@ -99,7 +99,7 @@ int perform(object me, object target)
         // 電閃雷鳴
         ap = me->query_skill("hammer");
         dp = target->query_skill("parry");
-        msg += "\n" HIY "$N" HIY "喝道：“電閃雷鳴！”猛地向前直沖數尺，手中"
+        msg += "\n" HIY "$N" HIY "喝道：“電閃雷鳴！”猛地向前直衝數尺，手中"
                + wname + HIY "幻出一道黃芒，閃電一般射出。\n" NOR;
         if (ap / 2 + random(ap) > dp)
         {

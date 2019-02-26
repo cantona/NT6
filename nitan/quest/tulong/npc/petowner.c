@@ -36,11 +36,11 @@ void greeting(object ob)
         if( !ob || environment(ob) != environment() ) return;
         switch( random(5) ) {
                 case 0:
-                        say( "瀟江說道：這位" + RANK_D->query_respect(ob)
+                        say( "瀟江説道：這位" + RANK_D->query_respect(ob)
                                 + "，要買小貓小狗麼？\n");
                         break;
                 case 1:
-                        say( "瀟江說道：這位" + RANK_D->query_respect(ob)
+                        say( "瀟江説道：這位" + RANK_D->query_respect(ob)
                                 + "，你太窮酸了，我不賣給你。\n");
                         break;
         }
@@ -140,7 +140,7 @@ int do_yang(string arg)
                         set("dex", 5+random(2), newpet);
                         break;
                 default:
-                        return notify_fail("這裡沒有你要的東西．\n");
+                        return notify_fail("這裏沒有你要的東西．\n");
         }
         set("owner",query("id",  me), newpet);
         set("possessed", me, newpet);
@@ -151,7 +151,7 @@ int do_yang(string arg)
         gold->add_amount(-100);
         addn("score", -500, me);
         me->start_busy(1);
-        command("say 你試著吹一聲口哨（ｗｈｉｓｔｌｅ），你的小寶寶就會跑過來的！\n");
+        command("say 你試着吹一聲口哨（ｗｈｉｓｔｌｅ），你的小寶寶就會跑過來的！\n");
         seteuid(getuid());
         return 1;
 }

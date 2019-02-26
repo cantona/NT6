@@ -28,7 +28,7 @@ void create()
         set("armor_prop/cuff", 5);
         set("armor_prop/unarmed_damage", 8);
         set("wear_msg", (: do_wear :));
-        set("remove_msg", HIG "$N" HIG "把$n" HIG "脫了下來。\n" );
+        set("remove_msg", HIG "$N" HIG "把$n" HIG "脱了下來。\n" );
         if (! check_clone()) return 0;
 
         set("stable", 0);
@@ -57,17 +57,17 @@ void set_attrib()
         {
                 if (lvl >= 300)
                 {
-                        desc += HIG "上面鑲嵌著" + tname + HIG
+                        desc += HIG "上面鑲嵌着" + tname + HIG
                                 "，巧奪天工，美得異乎尋常，讓" + name() +
-                                HIG "越發顯得精致。\n" NOR;
+                                HIG "越發顯得精緻。\n" NOR;
                 } else
                 if (lvl >= 200)
                 {
-                        desc += HIG "上面鑲嵌著" + tname + HIG
+                        desc += HIG "上面鑲嵌着" + tname + HIG
                                 "，幾乎沒有瑕疵，可謂人間罕見的珍品。\n" NOR;
                 } else
                 {
-                        desc += HIG "上面鑲嵌著" + tname + HIG
+                        desc += HIG "上面鑲嵌着" + tname + HIG
                                 "，襯托出" + name() + HIG +
                                 "的不俗，只是有些少瑕疵顯得美中不足。\n" NOR;
                 }
@@ -99,7 +99,7 @@ string do_wear()
                         else
                         if (point >= 100)
                                 msg += HIG "只見" + tname + HIG "閃閃"
-                                       "發光，襯托得$N" HIG "說不出的"
+                                       "發光，襯托得$N" HIG "説不出的"
                                        "嬌媚。\n" NOR;
                         else
                                 msg += HIG "只見" + tname + HIG "閃了"
@@ -193,7 +193,7 @@ int do_enchase(object me, object tessera)
                 return notify_fail("這件物品也太重了，你怎麼鑲嵌上去啊？\n");
 
         if (query("equipped"))
-                return notify_fail("你現在正戴著它呢，怎麼鑲嵌呢？先脫下來吧。\n");
+                return notify_fail("你現在正戴着它呢，怎麼鑲嵌呢？先脱下來吧。\n");
 
         if( !query("can_be_enchased", tessera) )
                 return notify_fail("天啊，你還沒有這手藝把" +

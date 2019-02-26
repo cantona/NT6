@@ -24,7 +24,7 @@ void create()
                 set("wield_neili", 500);
                 set("wield_maxneili", 1000);;
                 set("wield_str", 25);;
-                set("wield_msg", HIM"只見黑光一閃，$N手中已提著一把黑沉沉的大刀，正是號稱“武林至尊”的寶刀屠龍！\n"NOR);            
+                set("wield_msg", HIM"只見黑光一閃，$N手中已提着一把黑沉沉的大刀，正是號稱“武林至尊”的寶刀屠龍！\n"NOR);            
                 set("unwield_msg", HIM"黑光忽滅，$n躍入$N懷中。\n"NOR);
                 set("treasure",1);
         }

@@ -16,7 +16,7 @@ mapping *action = ({
         "damage": 80,
         "damage_type":  "砸傷"
 ]),
-([      "action": "$N一招燕青拳的「白鶴亮翅」，身子已向左轉成弓箭步，兩臂向後成鉤手，呼\n"
+([      "action": "$N一招燕青拳的「白鶴亮翅」，身子已向左轉成弓箭步，兩臂向後成鈎手，呼\n"
                   "的一聲輕響，反擊$n$l",
         "force" : 512,
         "attack": 145,
@@ -25,7 +25,7 @@ mapping *action = ({
         "damage": 85,
         "damage_type":  "瘀傷"
 ]),
-([      "action": "$N往後一縱，施展小擒拿手的手法，雙手對著$n$l處的關節直直抓去",
+([      "action": "$N往後一縱，施展小擒拿手的手法，雙手對着$n$l處的關節直直抓去",
         "force" : 410,
         "attack": 170,
         "dodge" : 35,
@@ -33,7 +33,7 @@ mapping *action = ({
         "damage": 178,
         "damage_type":  "抓傷"
 ]),
-([      "action": "$N左拳拉開，右拳轉臂回擾，一招少林的少林長拳突然擊出，帶著許許風聲貫向$n",
+([      "action": "$N左拳拉開，右拳轉臂回擾，一招少林的少林長拳突然擊出，帶着許許風聲貫向$n",
         "force" : 460,
         "attack": 150,
         "dodge" : 62,
@@ -42,7 +42,7 @@ mapping *action = ({
         "lvl"   : 30,
         "damage_type":  "瘀傷"
 ]),
-([      "action": "只見$N運足氣力，使出八極拳中的「八極翻手式」，雙掌對著$n的$l平平攻去",
+([      "action": "只見$N運足氣力，使出八極拳中的「八極翻手式」，雙掌對着$n的$l平平攻去",
         "force" : 480,
         "attack": 160,
         "dodge" : 40,
@@ -74,7 +74,7 @@ mapping *action = ({
         "damage": 105,
         "damage_type":  "瘀傷"
 ]),
-([      "action": "$N突然飛身一躍而起，雙手握做爪狀，朝著$n的$l猛然抓去，凜然是鷹爪功的招式",
+([      "action": "$N突然飛身一躍而起，雙手握做爪狀，朝着$n的$l猛然抓去，凜然是鷹爪功的招式",
         "force" : 470,
         "attack": 185,
         "dodge" : 60,
@@ -273,7 +273,7 @@ int power_point() { return 1.0; }
 int practice_skill(object me)
 {
         if( query("qi", me)<100 )
-                return notify_fail("你現在手足酸軟，休息一下再練吧。\n");
+                return notify_fail("你現在手足痠軟，休息一下再練吧。\n");
 
         if( query("neili", me)<150 )
                 return notify_fail("你的內力不夠了。\n");
@@ -310,7 +310,7 @@ mixed hit_ob(object me, object victim, int damage_bonus)
         {
                 victim->receive_wound("qi", (damage_bonus - 100) / 3, me);
                 result = ([ "damage" : damage_bonus ]);
-                result += ([ "msg" : HIR "只聽$n" HIR "前胸「□嚓」一聲脆響，竟像是"
+                result += ([ "msg" : HIR "只聽$n" HIR "前胸「咔嚓」一聲脆響，竟像是"
                                      "肋骨斷折的聲音。\n" NOR ]);
                 return result;
         }

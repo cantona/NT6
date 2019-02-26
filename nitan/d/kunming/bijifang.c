@@ -4,7 +4,7 @@ void create()
 {
         set("short",  "碧雞枋" );
         set("long", @LONG
-昆明名勝之一，碧雞枋，傳說在每年的一天，其影子和金
+昆明名勝之一，碧雞枋，傳説在每年的一天，其影子和金
 馬枋的影子交相輝印，稱為金碧交輝，巍巍奇觀。
 LONG);
         set("outdoors", "kunming");

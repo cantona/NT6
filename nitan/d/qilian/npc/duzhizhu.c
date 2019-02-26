@@ -9,7 +9,7 @@ void create()
         set("race", "昆蟲");
         set("subrace", "爬蟲");
         set("age", random(10));
-        set("long", "一只生活在大漠邊緣的毒蜘蛛。\n");
+        set("long", "一隻生活在大漠邊緣的毒蜘蛛。\n");
         set("attitude", "aggressive");
         set("str", 20);
         set("cor", 20);

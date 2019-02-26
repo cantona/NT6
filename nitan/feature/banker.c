@@ -34,10 +34,10 @@ int do_convert(string arg)
         me = this_player();
 
         if( me->is_busy() )
-                return notify_fail("你還是等有空了再說吧！\n");
+                return notify_fail("你還是等有空了再説吧！\n");
 
         if( this_object()->is_fighting() )
-                return notify_fail("喲，抱歉啊，我這兒正忙著呢……您請稍候。\n");
+                return notify_fail("喲，抱歉啊，我這兒正忙着呢……您請稍候。\n");
 
         if( !arg || sscanf(arg, "%d %s to %s", amount, from, to) != 3 )
                 return notify_fail("命令格式：convert|duihuan <數量> <貨幣單位> to <新貨幣單位>\n");
@@ -46,7 +46,7 @@ int do_convert(string arg)
         to_ob = present(to + "_money", me);
 
         if( !to_ob && file_size("/clone/money/" + to + ".c") < 0 )
-                return notify_fail("你想兌換成什麼？\n");
+                return notify_fail("你想兑換成什麼？\n");
 
         if( !from_ob )
                 return notify_fail("你身上沒有帶這種錢。\n");
@@ -109,10 +109,10 @@ int do_deposit(string arg)
         me = this_player();
 
         if( me->is_busy() )
-                return notify_fail("你還是等有空了再說吧！\n");
+                return notify_fail("你還是等有空了再説吧！\n");
 
         if( this_object()->is_fighting() )
-                return notify_fail("喲，抱歉啊，我這兒正忙著呢……您請稍候。\n");
+                return notify_fail("喲，抱歉啊，我這兒正忙着呢……您請稍候。\n");
 
         if( !arg || (sscanf(arg, "%d %s", amount, what) != 2 &&
             sscanf(arg, "all %s", what) != 1) )
@@ -152,10 +152,10 @@ int do_withdraw(string arg)
         me = this_player();
 
         if( me->is_busy() )
-                return notify_fail("你還是等有空了再說吧！\n");
+                return notify_fail("你還是等有空了再説吧！\n");
 
         if( this_object()->is_fighting() )
-                return notify_fail("喲，抱歉啊，我這兒正忙著呢……您請稍候。\n");
+                return notify_fail("喲，抱歉啊，我這兒正忙着呢……您請稍候。\n");
 
         if( !arg || sscanf(arg, "%d %s", amount, what) != 2 )
                 return notify_fail("命令格式：withdraw|qu <數量> <貨幣單位>\n");
@@ -187,8 +187,8 @@ int do_withdraw(string arg)
         addn("balance",  -v, me);
         //MONEY_D->pay_player(me, v, what);
 
-        //message_vision(sprintf("$N從銀號裡取出%s。\n", MONEY_D->money_str(v)), me);
-        message_vision(sprintf("$N從銀號裡取出%s%s%s。\n",
+        //message_vision(sprintf("$N從銀號裏取出%s。\n", MONEY_D->money_str(v)), me);
+        message_vision(sprintf("$N從銀號裏取出%s%s%s。\n",
                 chinese_number(amount), query("base_unit", what_ob),
                 query("name", what_ob)), me);
 
@@ -206,10 +206,10 @@ int do_transfer(string arg)
         me = this_player();
 
         if( me->is_busy() )
-                return notify_fail("你還是等有空了再說吧！\n");
+                return notify_fail("你還是等有空了再説吧！\n");
 
         if( this_object()->is_fighting() )
-                return notify_fail("喲，抱歉啊，我這兒正忙著呢……您請稍候。\n");
+                return notify_fail("喲，抱歉啊，我這兒正忙着呢……您請稍候。\n");
 
         if( REBOOT_CMD->is_rebooting() )
                 return notify_fail("現在本站正在準備重新啟動，本錢莊暫停轉帳功能。\n");
@@ -242,8 +242,8 @@ int do_transfer(string arg)
         me->save();
         ob->save();
         tell_object(ob, "\a", 0);
-        tell_object(ob, HIR + me->query_idname(1) + HIR "從銀號裡劃轉"+ MONEY_D->money_str(value) + "到你的帳戶上。\n" NOR);
-        tell_object(me, HIR "你從銀號裡劃轉"+ MONEY_D->money_str(value) + "到" + ob->query_idname(1) + HIR "的帳戶上。\n" NOR);
+        tell_object(ob, HIR + me->query_idname(1) + HIR "從銀號裏劃轉"+ MONEY_D->money_str(value) + "到你的帳户上。\n" NOR);
+        tell_object(me, HIR "你從銀號裏劃轉"+ MONEY_D->money_str(value) + "到" + ob->query_idname(1) + HIR "的帳户上。\n" NOR);
         UPDATE_D->global_destruct_player(ob, 1);
         return 1;
 }
@@ -266,7 +266,7 @@ int do_cw(string arg)
                 return 1;
         }
         switch( cmd ) {
-        case "open":    //開帳戶
+        case "open":    //開帳户
                 STORAGE_D->OpenAccount(me,arg);
                 break;
         case "put":

@@ -1,4 +1,4 @@
-//yaofang.c                四川唐門─藥房
+//yaofang.c                四川唐門—藥房
 
 #include <ansi.h>
 #include <room.h>
@@ -9,12 +9,12 @@ int do_putin(object me, object obj);
 
 void create()
 {
-        set("short", "制藥房");
+        set("short", "製藥房");
         set("long",
-"這裡是唐門的煉藥房。屋中沒有什麼擺設，只是靠牆擺著三個木架，\n"
+"這裏是唐門的煉藥房。屋中沒有什麼擺設，只是靠牆擺着三個木架，\n"
 "架子上擺滿了藥瓶藥罐，屋子正中用上好的青石壘成了一個灶台一個怕有\n"
-"千斤重的紫銅藥爐重重的壓在上面，讓人奇怪的是兩丈見方的屋子裡竟沒\n"
-"有一個窗戶。\n"
+"千斤重的紫銅藥爐重重的壓在上面，讓人奇怪的是兩丈見方的屋子裏竟沒\n"
+"有一個窗户。\n"
 );
         set("exits", ([
                         "southeast" : __DIR__"houroad2",
@@ -106,7 +106,7 @@ int do_putin(object me, object obj)
 
         if( !query_temp("duyao", me) )
         {
-                message_vision("唐毒一伸手打落了$N手上的" + obj->name() + "，叫到：“什麼東西就往藥爐裡放。”\n", me);
+                message_vision("唐毒一伸手打落了$N手上的" + obj->name() + "，叫到：“什麼東西就往藥爐裏放。”\n", me);
                 obj->move(this_object());
                 return 1;
         }        
@@ -115,7 +115,7 @@ int do_putin(object me, object obj)
         {
                 message_vision("$N拿出" + obj->name() + "放進藥爐。\n", me);
                 destruct(obj);
-                message_vision("唐毒對著$N點了點頭，說到：“好，你幹的很好，快去休息吧。”\n", me);
+                message_vision("唐毒對着$N點了點頭，説到：“好，你乾的很好，快去休息吧。”\n", me);
                 delete_temp("tangmen", me);
                 delete_temp("duyao", me);
                 addn("combat_exp", 150+random(150), me);
@@ -124,7 +124,7 @@ int do_putin(object me, object obj)
         }
         else
         {
-                message_vision("唐毒一伸手打落了$N手上的" + obj->name() + "，叫到：“什麼東西就往藥爐裡放。”\n快去找" + targ+ "回來！\n", me);
+                message_vision("唐毒一伸手打落了$N手上的" + obj->name() + "，叫到：“什麼東西就往藥爐裏放。”\n快去找" + targ+ "回來！\n", me);
                 obj->move(this_object());
 //                destruct(obj);
                 return 1;

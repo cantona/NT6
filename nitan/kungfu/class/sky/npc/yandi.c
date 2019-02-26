@@ -5,7 +5,7 @@ inherit NPC;
 void create()
 {
         set_name(HIY "炎帝" NOR, ({ "yan di", "yan", "di"}));
-        set("long", HIY "    此人身穿黃色龍袍，氣宇軒昂，乃遠古傳說中的炎帝。\n" NOR);
+        set("long", HIY "    此人身穿黃色龍袍，氣宇軒昂，乃遠古傳説中的炎帝。\n" NOR);
 
         set("gender", "男性");
         set("age", 40);
@@ -121,7 +121,7 @@ void die()
         return;
 }
 
-// 氣血小于1000則死亡，避免他人協助幫忙轉世
+// 氣血小於1000則死亡，避免他人協助幫忙轉世
 void heart_beat()
 {
         if (this_object()->query("qi") < 1000 || this_object()->query("eff_qi") < 1000)

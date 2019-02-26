@@ -84,11 +84,11 @@ int do_gk(string arg)
 
     target = present( arg, environment(me) );
 
-    if(!target) return errs("這裡沒有這個人。\n");
+    if(!target) return errs("這裏沒有這個人。\n");
     if(!target->is_character()) return errs("這不是活物！\n");
     if( !query_temp("hj_hp", target) || query_temp("hj_hp", target)<1 )
-        return errs(query("name", target)+"沒有絲毫幻境裡的氣息，不必攻擊了吧。\n");
-    if(!living(target)) return errs("這個遊戲裡必須是清醒的對手才能攻擊。\n");
+        return errs(query("name", target)+"沒有絲毫幻境裏的氣息，不必攻擊了吧。\n");
+    if(!living(target)) return errs("這個遊戲裏必須是清醒的對手才能攻擊。\n");
     if(target == me ) return errs("攻擊自己？沒必要吧……\n");
 
 /*  允許任何玩家對殺。
@@ -98,21 +98,21 @@ int do_gk(string arg)
 
 // 不允許殺得分低的玩家
     if( query_temp("hj_score", target)<200 && !query("hj_game/npc", target) )
-        return errs(query("name", target)+"的遊戲得分太低，這樣做好象不太好吧？\n");
+        return errs(query("name", target)+"的遊戲得分太低，這樣做好像不太好吧？\n");
 */
 
 
     if( query("gender", me) == "男性" )
-        message_vision(HIR"\n只聽得$N"HIR"大喝道：『納命來！』，朝著$n"HIR"搶上便攻！\n\n"NOR, me, target );
+        message_vision(HIR"\n只聽得$N"HIR"大喝道：『納命來！』，朝着$n"HIR"搶上便攻！\n\n"NOR, me, target );
     else if( query("gender", me) == "女性" )
-        message_vision(HIR"\n只聽得$N"HIR"一聲矯呼：『受死吧！』，朝著$n"HIR"搶上便攻！\n\n"NOR, me, target );
-    else message_vision(HIR"\n只聽得$N"HIR"陰側側地一笑，更不打話，朝著$n"HIR"搶上便攻！\n\n"NOR, me, target );
+        message_vision(HIR"\n只聽得$N"HIR"一聲矯呼：『受死吧！』，朝着$n"HIR"搶上便攻！\n\n"NOR, me, target );
+    else message_vision(HIR"\n只聽得$N"HIR"陰側側地一笑，更不打話，朝着$n"HIR"搶上便攻！\n\n"NOR, me, target );
 
 
     set_temp("hj_fighting", target, me);
     set_temp("hj_need_waiting", "fighting", me);
 
-    // 這裡不用 remove_call_out(), 因為該函數內有判斷句，多余的 call_out 不作處理。
+    // 這裏不用 remove_call_out(), 因為該函數內有判斷句，多餘的 call_out 不作處理。
     call_out("fighting", 1);
     return 1;
 }
@@ -160,7 +160,7 @@ void fighting()
     if( !me || !me_ok(me) ) return;
 
     // 玩家已收式(halt)。
-    // 這個句子不行，有很小的幾率會造成錯誤。
+    // 這個句子不行，有很小的機率會造成錯誤。
     //    if( !me->query_temp("hj_fighting") || me->query_temp("hj_need_waiting") != "fighting")
     // 這就可以了 :)
     if( !query_temp("hj_need_waiting", me )
@@ -177,12 +177,12 @@ void fighting()
          || query_temp("huanjing", target) != "start"
          || !query_temp("hj_hp", target) || query_temp("hj_hp", target)<1
          || !query_temp("hj_hp_max", target)) )
-             return hj_halt( HIW"\n$N"HIW"擺了一個收式，對著$n"HIW"哈哈一笑，停下手來。\n\n"NOR );
+             return hj_halt( HIW"\n$N"HIW"擺了一個收式，對着$n"HIW"哈哈一笑，停下手來。\n\n"NOR );
 
     // 目標不是玩家，已死亡
     if( query("hj_game/npc", target) && 
         (!query_temp("hj_hp", target) || query_temp("hj_hp", target)<1) )
-             return hj_halt( HIW"\n$N"HIW"擺了一個收式，對著$n"HIW"哈哈一笑，停下手來。\n\n"NOR );
+             return hj_halt( HIW"\n$N"HIW"擺了一個收式，對着$n"HIW"哈哈一笑，停下手來。\n\n"NOR );
 
     inv_target = environment( target );
     if( !inv_target || inv_target != environment(me) || !query("room_mark", inv_target) )
@@ -237,7 +237,7 @@ void fighting()
             else tell_object( me, pfm_info[ "err_msg" ] + "！\n");
         }
         // 否則無錯誤，允許使用該 pfm 。
-        // 下邊的描述程序中，將完全使用 pfm_info 裡提供的數據。
+        // 下邊的描述程序中，將完全使用 pfm_info 裏提供的數據。
         else figh_type = "pfm";
     }
     // 開始判斷其他的情況
@@ -296,7 +296,7 @@ void fighting()
         }
     }
 
-    // 防止未知的錯誤，理論上來說不會出現
+    // 防止未知的錯誤，理論上來説不會出現
     if( figh_type != "tools" && figh_type != "skills" && figh_type != "pfm" )
         figh_type = "hand";
     // **********************************
@@ -386,7 +386,7 @@ void fighting()
     if( figh_type == "skills" )
     {
         // 確定攻擊力及忙時等
-        // 這是一個特殊的地方，使用技能時最多只能有力量的 1/2
+        // 這是一個特殊的地方，使用技能時最多隻能有力量的 1/2
         damages = me_power / 4 + random( me_power / 4 ) +  
             (query_temp("hj_game_damages/"+use_skills, me)*3/4)+
               random(query_temp("hj_game_damages/"+use_skills, me)/4);
@@ -442,8 +442,8 @@ void fighting()
     // 絕技攻擊
     if( figh_type == "pfm" )
     {
-        // 絕技攻擊時，攻擊力等完全由絕技函數判定，這裡只是加上力量的基本攻擊。
-        // 絕技攻擊的基本攻擊力與使用技能時一樣，最多只能有力量的 1/2
+        // 絕技攻擊時，攻擊力等完全由絕技函數判定，這裏只是加上力量的基本攻擊。
+        // 絕技攻擊的基本攻擊力與使用技能時一樣，最多隻能有力量的 1/2
         damages = me_power / 4 + random( me_power / 4 ) + pfm_info[ "damages" ];
         me_busy = pfm_info[ "me_busy" ];
         addn_temp("hj_hp", -pfm_info["lost_hp"], me);
@@ -500,14 +500,14 @@ void fighting()
         tell_object( target, HIR"你突然兩眼發直，整個人呆住了似的。 (造成忙時 "+target_busy+" 秒)\n"NOR );
         tell_object( me, HIR+target->name(1)+HIR+"突然兩眼發直，整個人呆住了似的。 (造成忙時 "+target_busy+" 秒)\n"NOR );
     }
-    // 這裡才判斷是否要 delete use_tools.
+    // 這裏才判斷是否要 delete use_tools.
     if( figh_type == "tools" && use_tools && query("use_times", use_tools) <= 0 )
         use_tools->delete_me();
     // 搞定！
     // 電之國度主動技能效果  戰鬥中可能附加攻擊
     if( random(8) == 2 && query_temp("hj_game_find", me) == "dian" )
     {
-        message_vision( GRN"忽然不知從哪裡引出一道"BLINK+HIG"閃電"NOR+GRN"劈向$N"NOR+GRN"，打個正中！\n"NOR, target );
+        message_vision( GRN"忽然不知從哪裏引出一道"BLINK+HIG"閃電"NOR+GRN"劈向$N"NOR+GRN"，打個正中！\n"NOR, target );
         damages=(query_temp("hj_game_damages/ydzj", me)/2);
         if( damages < 5 )
             damages = 5;
@@ -518,18 +518,18 @@ void fighting()
         do_attack( me, target, damages );
         // ################################################
     }
-    // 這裡再加一次判斷，如果對方死了，直接就 return 了。
+    // 這裏再加一次判斷，如果對方死了，直接就 return 了。
     // 目標是玩家，已死亡或有意外
     if( !query("hj_game/npc", target) && 
         (!query_temp("huanjing", target )
          || query_temp("huanjing", target) != "start"
          || !query_temp("hj_hp", target) || query_temp("hj_hp", target)<1
          || !query_temp("hj_hp_max", target)) )
-             return hj_halt( HIW"\n$N"HIW"擺了一個收式，對著$n"HIW"哈哈一笑，停下手來。\n\n"NOR );
+             return hj_halt( HIW"\n$N"HIW"擺了一個收式，對着$n"HIW"哈哈一笑，停下手來。\n\n"NOR );
     // 目標不是玩家，已死亡
     if( query("hj_game/npc", target) && 
         (!query_temp("hj_hp", target) || query_temp("hj_hp", target)<1) )
-             return hj_halt( HIW"\n$N"HIW"擺了一個收式，對著$n"HIW"哈哈一笑，停下手來。\n\n"NOR );
+             return hj_halt( HIW"\n$N"HIW"擺了一個收式，對着$n"HIW"哈哈一笑，停下手來。\n\n"NOR );
 
     // 好了，循環 :)
     // 如果是更特別的道具，迅隱之劍，將直接調用下一次，而不等待1秒

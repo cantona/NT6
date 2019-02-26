@@ -11,9 +11,9 @@ string ask_me1();
 
 void create()
 {
-        set_name("范遙", ({ "fan yao", "fan", "yao" }));
+        set_name("範遙", ({ "fan yao", "fan", "yao" }));
         set("long",
-                "他是一位帶發修行的頭陀，身穿白布長袍。\n"
+                "他是一位帶髮修行的頭陀，身穿白布長袍。\n"
                 "他的臉上七七八八的全是傷疤，簡直看不出本來面目了。\n"
         );
 
@@ -119,7 +119,7 @@ string ask_me1()
                 return "你不是剛拿了黑玉斷續膏了嗎，怎麼還要？";
 
         if (present("heiyu duanxugao", this_player()))
-                return "你身上不是帶著黑玉斷續膏嗎，怎麼還要？";
+                return "你身上不是帶着黑玉斷續膏嗎，怎麼還要？";
 
         if( query("eff_qi", this_player()) == query("max_qi", this_player()) )
                 return "你現在不需要用黑玉斷續膏。";

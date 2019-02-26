@@ -18,8 +18,8 @@ void create()
                 "biqiu",
         }));
         set("long",
-                "他是一位體格強健的壯年僧人，他生得虎背熊腰，全身似乎蘊含\n"
-                "著無窮勁力。他身穿一襲白布黑邊袈裟，似乎身懷武藝。\n"
+                "他是一位體格強健的壯年僧人，他生得虎背熊腰，全身似乎藴含\n"
+                "着無窮勁力。他身穿一襲白布黑邊袈裟，似乎身懷武藝。\n"
         );
 
 
@@ -89,7 +89,7 @@ string ask_for_join()
                 return "阿彌陀佛！善哉！善哉！這位公公，你還是回去伺候皇上吧。\n";
 
         if( query("gender", me) == "女性" )
-                return "阿彌陀佛！善哉！善哉！女施主若真心皈依我佛，可去後山庵裡受戒。\n";
+                return "阿彌陀佛！善哉！善哉！女施主若真心皈依我佛，可去後山庵裏受戒。\n";
 
         set_temp("pending/join_bonze", 1, me);
         return "阿彌陀佛！善哉！善哉！施主若真心皈依我佛，請跪下(kneel)受戒。\n";
@@ -100,8 +100,8 @@ int do_kneel()
         object me = this_player();
 
         string *prename =
-         ({ "虛", "空", "明", "凈" });
-//       ({ "虛", "空", "明", "圓", "凈", "悟", "法" });
+         ({ "虛", "空", "明", "淨" });
+//       ({ "虛", "空", "明", "圓", "淨", "悟", "法" });
         string name, new_name;
 
         if( !query_temp("pending/join_bonze", me) )
@@ -109,7 +109,7 @@ int do_kneel()
 
         message_vision(
                 "$N雙手合十，恭恭敬敬地跪了下來。\n\n"
-                "$n伸出手掌，在$N頭頂輕輕地摩挲了幾下，將$N的頭發盡數剃去。\n\n",
+                "$n伸出手掌，在$N頭頂輕輕地摩挲了幾下，將$N的頭髮盡數剃去。\n\n",
                 me, this_object() );
         name=query("name", me);
         new_name = prename[random(sizeof(prename))] + name[0..1];

@@ -28,7 +28,7 @@ int exert(object me, object target)
         if ((int)me->query_skill("huntian-qigong", 1) < 150)
                 return notify_fail("你的混天氣功的修為不夠，不能使用混元天罡! \n");
 
-        msg = WHT "$N使出混天氣功絕學「混元天罡」，一股白氣自頂心泥丸發散而下，全身彌漫在白色薄霧中！\n" NOR;
+        msg = WHT "$N使出混天氣功絕學「混元天罡」，一股白氣自頂心泥丸發散而下，全身瀰漫在白色薄霧中！\n" NOR;
 
         qi=query("qi", me);
         maxqi=query("max_qi", me);

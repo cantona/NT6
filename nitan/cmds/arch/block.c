@@ -3,7 +3,7 @@
 
 #include <ansi.h>
 
-string head="\t---- "+"用戶賬號管理器"+" ----";
+string head="\t---- "+"用户賬號管理器"+" ----";
 
 nomask int main(object me, string arg)
 {
@@ -13,14 +13,14 @@ nomask int main(object me, string arg)
                 return 0;
         
         if (! SECURITY_D->valid_grant(me, "(arch)"))
-                return notify_fail("只有(arch)以上的巫師才能執行對用戶賬號的管理\n");
+                return notify_fail("只有(arch)以上的巫師才能執行對用户賬號的管理\n");
                 
         seteuid(ROOT_UID);
 
-        write("\n" + head + "\n\n\n\t1> 封鎖一個用戶賬號。");
-        write("\n\n\t2> 將一個已封鎖的用戶賬號解封。");
-        write("\n\n\t3> 查詢一個用戶賬號是否被封鎖。");
-        write("\n\n\t4> 列出所有被封鎖的用戶賬號。\n\n\n");
+        write("\n" + head + "\n\n\n\t1> 封鎖一個用户賬號。");
+        write("\n\n\t2> 將一個已封鎖的用户賬號解封。");
+        write("\n\n\t3> 查詢一個用户賬號是否被封鎖。");
+        write("\n\n\t4> 列出所有被封鎖的用户賬號。\n\n\n");
 
         write("選擇數字(1-4)，[return] 返回上級，q 退出>");
         input_to("do_select", 0, me);
@@ -42,7 +42,7 @@ protected void do_select(string arg,object me)
         if( (s<1) || (s>4) )
         {
                 printf(CUP(2));
-                write(HIY"<可選擇的數字范圍(1-4)>                                \n"NOR);
+                write(HIY"<可選擇的數字範圍(1-4)>                                \n"NOR);
                 write("選擇數字(1-4)，[return] 返回上級，q 退出>");
                 input_to("do_select",0,me);
                 return;
@@ -51,13 +51,13 @@ protected void do_select(string arg,object me)
         switch (s)
         {
                 case 1:
-                        promot = "請輸入你要封鎖的用戶賬號：";
+                        promot = "請輸入你要封鎖的用户賬號：";
                         break;
                 case 2:
-                        promot = "請輸入你要解封的用戶賬號：";
+                        promot = "請輸入你要解封的用户賬號：";
                         break;
                 case 3:
-                        promot = "請輸入你要查詢的用戶賬號：";
+                        promot = "請輸入你要查詢的用户賬號：";
                         break;
                 case 4:
                         me->start_more(AHACK_D->blocked_list());
@@ -84,10 +84,10 @@ protected void do_process(string arg,int s,object me)
 
         if(arg == "")
         {
-                write("\n"+head+"\n\n\n\t1> 封鎖一個用戶賬號。");
-                write("\n\n\t2> 將一個已封鎖的用戶賬號解封。");
-                write("\n\n\t3> 查詢一個用戶賬號是否被封鎖。");
-                write("\n\n\t4> 列出所有被封鎖的用戶賬號。\n\n\n");
+                write("\n"+head+"\n\n\n\t1> 封鎖一個用户賬號。");
+                write("\n\n\t2> 將一個已封鎖的用户賬號解封。");
+                write("\n\n\t3> 查詢一個用户賬號是否被封鎖。");
+                write("\n\n\t4> 列出所有被封鎖的用户賬號。\n\n\n");
                 write("選擇數字1-4，[return] 返回上級，q 退出>");
                 input_to("do_select",0,me);
                 return;
@@ -133,7 +133,7 @@ protected void do_process(string arg,int s,object me)
                 case 3:
                         printf(CUP(2));
                         if(AHACK_D->query_block(arg))
-                                write(HIY"<賬號 "+arg+" 目前處于被封鎖狀態。>\n"NOR);
+                                write(HIY"<賬號 "+arg+" 目前處於被封鎖狀態。>\n"NOR);
                         else
                                 write(HIY"<賬號 "+arg+" 沒有被封鎖。>\n"NOR);
                         write("選擇數字1-4，[return] 返回上級，q 退出>");
@@ -146,10 +146,10 @@ protected void do_process(string arg,int s,object me)
 
 protected void break_point(string arg,object me)
 {
-        write("\n"+head+"\n\n\n\t1> 封鎖一個用戶賬號。");
-        write("\n\n\t2> 將一個已封鎖的用戶賬號解封。");
-        write("\n\n\t3> 查詢一個用戶賬號是否被封鎖。");
-        write("\n\n\t4> 列出所有被封鎖的用戶賬號。\n\n\n");
+        write("\n"+head+"\n\n\n\t1> 封鎖一個用户賬號。");
+        write("\n\n\t2> 將一個已封鎖的用户賬號解封。");
+        write("\n\n\t3> 查詢一個用户賬號是否被封鎖。");
+        write("\n\n\t4> 列出所有被封鎖的用户賬號。\n\n\n");
 
         write("選擇數字1-4，[return] 返回上級，q 退出>");
         input_to("do_select",0,me);
@@ -162,7 +162,7 @@ int help(object me)
         write(@HELP
 指令格式 : block
 
-對賬戶的禁止登陸的管理。
+對賬户的禁止登陸的管理。
 
 HELP
     );

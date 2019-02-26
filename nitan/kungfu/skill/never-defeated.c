@@ -35,7 +35,7 @@ mapping *action_default = ({
         "damage": 210,
         "damage_type":  "擦傷"
 ]),
-([      "action":"$N舉起手中的$w，對著$n亂砍亂砸，沒有半點章法",
+([      "action":"$N舉起手中的$w，對着$n亂砍亂砸，沒有半點章法",
         "force" : 430,
         "attack": 170,
         "dodge" : 70,
@@ -51,7 +51,7 @@ mapping *action_default = ({
         "damage": 190,
         "damage_type":  "內傷"
 ]),
-([      "action":"$N含笑回轉$w，伸手一指，頗得拈花指之意，點向$n的$l",
+([      "action":"$N含笑迴轉$w，伸手一指，頗得拈花指之意，點向$n的$l",
         "force" : 530,
         "attack": 176,
         "dodge" : 75,
@@ -59,7 +59,7 @@ mapping *action_default = ({
         "damage": 200,
         "damage_type":  "刺傷"
 ]),
-([      "action":"$N長嘆一聲，將$w隨手遞出，連自己也不知道也攻向哪裡",
+([      "action":"$N長歎一聲，將$w隨手遞出，連自己也不知道也攻向哪裏",
         "force" : 440,
         "attack": 170,
         "dodge" : 80,
@@ -110,7 +110,7 @@ mapping *action_default = ({
 });
 
 mapping *action_whip = ({
-([      "action" : "$N攻勢忽緩而不疏，$w變化無常，捉摸不定向$n慢慢卷去",
+([      "action" : "$N攻勢忽緩而不疏，$w變化無常，捉摸不定向$n慢慢捲去",
         "force" : 430,
         "attack": 180,
         "dodge" : 75,
@@ -126,7 +126,7 @@ mapping *action_whip = ({
         "damage": 210,
         "damage_type": "擦傷"
 ]),
-([      "action":"$N卷起手中的$w，就如鐵錘一般對著$n亂砍亂砸，沒有半點章法",
+([      "action":"$N捲起手中的$w，就如鐵錘一般對着$n亂砍亂砸，沒有半點章法",
         "force" : 440,
         "attack": 175,
         "dodge" : 80,
@@ -142,7 +142,7 @@ mapping *action_whip = ({
         "damage": 190,
         "damage_type": "內傷"
 ]),
-([      "action":"$N含笑回轉$w，伸手一指，頗得拈花指之意，點向$n的$l",
+([      "action":"$N含笑迴轉$w，伸手一指，頗得拈花指之意，點向$n的$l",
         "force" : 510,
         "attack": 180,
         "dodge" : 70,
@@ -196,7 +196,7 @@ int valid_learn(object me)
                                    "憑自己的戰鬥經驗一時間難以領會。\n");
 
         if ((int)me->query_skill("martial-cognize", 1) < 50)
-                return notify_fail("你覺得不敗神功過于深奧，以"
+                return notify_fail("你覺得不敗神功過於深奧，以"
                                    "自己的武學修養全然無法明白。\n");
 
         if( query("character", me) != "狡黠多變" && 
@@ -205,7 +205,7 @@ int valid_learn(object me)
                                    "緊，不合常理，根本無法領會。");
 
         if( query("int", me)<22 )
-                return notify_fail("你覺得不敗神功過于深奧，絕"
+                return notify_fail("你覺得不敗神功過於深奧，絕"
                                    "非自己的智力所能理解。\n");
 
         if( query("gender", me) == "無性" && 
@@ -283,7 +283,7 @@ mixed valid_damage(object ob, object me, int damage, object weapon)
                 case 0:
                         result += (["msg" : HIC "$n" HIC "毫不理會$N的攻勢，劍意無窮，以攻為守。"
                                             "$N攻勢被破，大感驚訝，頓時破綻百出。\n"
-                                            "$n劍鋒一指，劍招源源而出，對著$N反攻數劍！\n" NOR]);
+                                            "$n劍鋒一指，劍招源源而出，對着$N反攻數劍！\n" NOR]);
                         COMBAT_D->do_attack(me,ob,query_temp("weapon", me));
                         COMBAT_D->do_attack(me,ob,query_temp("weapon", me));
                         COMBAT_D->do_attack(me,ob,query_temp("weapon", me));
@@ -304,11 +304,11 @@ mixed valid_damage(object ob, object me, int damage, object weapon)
                         break;
                 case 4:
                         result += (["msg" : HIC "$n" HIC "突然一劍點向$N" HIC "，雖一劍"
-                                            "卻暗藏無數後著，$N" HIC "頓時手足無措，攻"
+                                            "卻暗藏無數後着，$N" HIC "頓時手足無措，攻"
                                             "勢不由自主停了下來。\n" NOR]);
                         break;
                 default:
-                        result += (["msg" : HIC "$n" HIC "眼見避無可避，盡然力求同歸于盡，劍氣疾刺$N雙眼，"
+                        result += (["msg" : HIC "$n" HIC "眼見避無可避，盡然力求同歸於盡，劍氣疾刺$N雙眼，"
                                             "居然出乎意料地將$N的攻擊止住。\n" NOR]);
                         break;
                 }
@@ -358,7 +358,7 @@ mixed hit_ob(object me, object victim, int damage_bonus, int factor)
                 victim->receive_wound("qi", (damage_bonus - 88) / 2, me);
                 addn("neili", -((damage_bonus-random(80))/2), victim);
 
-                return HIR "緊接著$N" HIR "隨心所欲一招襲向$n" HIR "，$n" HIR "根本無法抵擋，立受重傷，鮮血狂吐！\n" NOR;
+                return HIR "緊接着$N" HIR "隨心所欲一招襲向$n" HIR "，$n" HIR "根本無法抵擋，立受重傷，鮮血狂吐！\n" NOR;
         }
 }
 

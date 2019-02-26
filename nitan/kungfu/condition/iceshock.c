@@ -17,5 +17,5 @@ string update_msg_others()
 
 string update_msg_self()
 {
-        return HIB "你覺得就像掉到了冰窖裡一樣，看來是寒毒發作了！\n" NOR;
+        return HIB "你覺得就像掉到了冰窖裏一樣，看來是寒毒發作了！\n" NOR;
 }

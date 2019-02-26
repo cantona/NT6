@@ -10,7 +10,7 @@ void create()
                 set_default_object(__FILE__);
         else
         {
-                set("long", "這是一枚四川唐門秘制的暗器心有千千結，一條飛索，有無數個結，威力無比。\n");
+                set("long", "這是一枚四川唐門祕製的暗器心有千千結，一條飛索，有無數個結，威力無比。\n");
                 set("unit", "條");
                 set("value", 21);
         }

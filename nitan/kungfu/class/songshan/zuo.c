@@ -14,7 +14,7 @@ void create()
         object ob;
 
         set_name("左冷禪", ({ "zuo lengchan", "zuo" }) );
-        set("title", HIR"五岳劍派盟主"HIY"嵩山派第十三代掌門"NOR);
+        set("title", HIR"五嶽劍派盟主"HIY"嵩山派第十三代掌門"NOR);
         set("gender", "男性");
         set("class", "swordsman");
         set("age", 55);
@@ -61,7 +61,7 @@ void create()
 
         prepare_skill("strike", "hanbing-zhang");
         set("inquiry",([
-                "秘籍"       : (: ask_book :),
+                "祕籍"       : (: ask_book :),
                 "掌譜"       : (: ask_book :),
                 "大嵩陽掌譜" : (: ask_book :),
                 "劍譜"       : (: ask_book1 :),
@@ -126,7 +126,7 @@ void attempt_apprentice(object ob)
 
         if ((int)ob->query_skill("songshan-jian", 1) < 160)
         {
-                command("say 我嵩山劍派乃五岳劍派之一，最為重視劍法。");
+                command("say 我嵩山劍派乃五嶽劍派之一，最為重視劍法。");
                 command("say 你的嵩山劍法還不夠熟練，下去練練再來吧。");
                 return;
         }
@@ -151,7 +151,7 @@ int accept_ask(object me, string topic)
         {
         case "歷練" :
         case "歷煉" :
-        case "鍛煉" :
+        case "鍛鍊" :
                 return QUEST_D->accept_ask(this_object(), me, topic);
                 break;
 
@@ -232,7 +232,7 @@ string ask_book()
         if( query("family/family_name", this_player()) != "嵩山派" )
                 return RANK_D->query_respect(this_player()) +
                 "與本派毫無瓜葛，我派的武功典籍可不能交給你。";
-        if (query("book_count") < 1) return "你來晚了，本派的秘籍不在此處。";
+        if (query("book_count") < 1) return "你來晚了，本派的祕籍不在此處。";
         addn("book_count", -1);
         ob = new("/clone/book/songyang-zhangpu");
         ob->move(this_player());
@@ -247,7 +247,7 @@ string ask_book1()
         if( query("family/family_name", this_player()) != "嵩山派" )
                 return RANK_D->query_respect(this_player()) +
                 "與本派毫無瓜葛，我派的武功典籍可不能交給你。";
-        if (query("book_count1") < 1) return "你來晚了，本派的秘籍不在此處。";
+        if (query("book_count1") < 1) return "你來晚了，本派的祕籍不在此處。";
         addn("book_count1", -1);
         ob = new("/clone/book/sword_book4");
         ob->move(this_player());

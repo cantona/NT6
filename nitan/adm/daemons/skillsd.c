@@ -136,7 +136,7 @@ nosave mapping family_name = ([
         "honghua"  : "紅花",
         "yunlong"  : "雲龍",
         "wudu"     : "五毒",
-        "kunlun"   : "昆侖",
+        "kunlun"   : "崑崙",
 ]);
 
 void create()
@@ -167,7 +167,7 @@ void load_skill()
         file = read_file(SKILL_FILE);
         if( !stringp(file) ) return;
 
-        // 去掉"\r"保証和MSDOS的文件格式兼容
+        // 去掉"\r"保證和MSDOS的文件格式兼容
         file = replace_string(file, "\r", "");
 
         tmp = explode(file, "\n");
@@ -177,12 +177,12 @@ void load_skill()
                 // 去掉行首的空格
                 while( strlen(line) && line[0] == ' ' ) line = line[1..<1];
                 if( line[0] == '#' )
-                        // 注釋
+                        // 註釋
                         continue;
 
                 if( line[0] == '&' )
                 {
-                        // 被系統注釋的
+                        // 被系統註釋的
                         line = line[1..<1];
                         while( strlen(line) && line[0] == ' ' ) line = line[1..<1];
                 }
@@ -307,20 +307,20 @@ public string skill_mix_stats(object me)
 
 
         msg += "\n\n\n\n\n\n";
-        msg += sprintf(NOR HIW "□□□□□□□□□□□□\n" NOR);
-        msg += sprintf(NOR HIW "□輕功->%-14s" NOR HIW "□\n" NOR, to_chinese(temp->dodge));
-        msg += sprintf(NOR HIW "□招架->%-14s" NOR HIW "□\n" NOR, to_chinese(temp->parry));
-        msg += sprintf(NOR HIW "□內功->%-14s" NOR HIW "□\n" NOR, to_chinese(temp->force));
+        msg += sprintf(NOR HIW "┏━━━━━━━━━━┓\n" NOR);
+        msg += sprintf(NOR HIW "┃輕功->%-14s" NOR HIW "┃\n" NOR, to_chinese(temp->dodge));
+        msg += sprintf(NOR HIW "┃招架->%-14s" NOR HIW "┃\n" NOR, to_chinese(temp->parry));
+        msg += sprintf(NOR HIW "┃內功->%-14s" NOR HIW "┃\n" NOR, to_chinese(temp->force));
 
         need = temp->need;
         keys_need = keys(need);
         for (i=0;i<sizeof(keys_need);i++)
-                msg += sprintf(NOR HIW "□其他->%-14s" NOR HIW "□\n" NOR,
+                msg += sprintf(NOR HIW "┃其他->%-14s" NOR HIW "┃\n" NOR,
                                need[keys_need[i]] + to_chinese(keys_need[i]));
 
-        msg += sprintf(NOR HIW "□□□□□□□□□□□□\n" NOR);
+        msg += sprintf(NOR HIW "┗━━━━━━━━━━┛\n" NOR);
         msg += sprintf(" %-22s\n" NOR, trans_color(temp->name, 3));
-        msg += sprintf(NOR HIC "□□□□□□□□□□□□" NOR "\n" );
+        msg += sprintf(NOR HIC "┏━━━━━━━━━━┓" NOR "\n" );
 
         stats = temp->stats;
         keys_stats = keys(stats);
@@ -330,9 +330,9 @@ public string skill_mix_stats(object me)
 #ifndef LONELY_IMPROVED
                 len = color_len(str);
 #endif
-                msg += sprintf(NOR HIC "□" NOR "%-" + (20 + len) + "s" NOR HIC "□" NOR "\n", str);
+                msg += sprintf(NOR HIC "┃" NOR "%-" + (20 + len) + "s" NOR HIC "┃" NOR "\n", str);
         }
-        msg += sprintf(NOR HIC "□□□□□□□□□□□□" NOR "\n");
+        msg += sprintf(NOR HIC "┗━━━━━━━━━━┛" NOR "\n");
 
         return msg;
 }
@@ -997,7 +997,7 @@ int defense_power(object me, string skill)
                      me->query_skill("martial-cognize", 1) +
                      query("level", me)*30;
 
-                /* 攻擊計算時候已經加入轉世比較，防御時候就沒有必要再次比較
+                /* 攻擊計算時候已經加入轉世比較，防禦時候就沒有必要再次比較
                 if( objectp(ob) )
                         dp += dp *
                               (query("reborn/times", me) - query("reborn/times", ob))*20/100;
@@ -1054,7 +1054,7 @@ int defense_power(object me, string skill)
              me->query_skill("martial-cognize", 1) +
              query("level", me)*30;
 
-        /* 攻擊計算時候已經加入轉世比較，防御時候就沒有必要再次比較
+        /* 攻擊計算時候已經加入轉世比較，防禦時候就沒有必要再次比較
         if( objectp(ob) )
                 dp += dp *
                       (query("reborn/times", me) - query("reborn/times", ob))*20/100;
@@ -1369,7 +1369,7 @@ void broadcast_news()
 
                 CHANNEL_D->channel_broadcast("mess",
                                         "武學大宗師" + (ob ? ob->name(1) : "無名老人") + "閉關修行研究" +
-                                        to_chinese(skill) + "，終于悟出其破解之術，並廣為流傳。");
+                                        to_chinese(skill) + "，終於悟出其破解之術，並廣為流傳。");
         }
 
         if( sizeof(add_skills) > 0 )
@@ -1395,7 +1395,7 @@ void broadcast_news()
 
                 CHANNEL_D->channel_broadcast("mess",
                                         "武學大宗師" + (ob ? ob->name(1) : "無名老人") + "閉關修行研究" +
-                                        to_chinese(skill) + "，終于完善其破綻之處，並廣為流傳。");
+                                        to_chinese(skill) + "，終於完善其破綻之處，並廣為流傳。");
         }
         save();
 }

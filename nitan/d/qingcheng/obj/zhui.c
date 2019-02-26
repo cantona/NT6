@@ -14,9 +14,9 @@ void create()
                 set("count", 12);
                 set("value", 100);
                 set("material", "iron");
-                set("long", HIC"此鐵錐長六七寸許，錐尖曲了兩曲。裡面共有"+chinese_number(query("count"))+"支青蜂釘可以射出(shoot)。\n"NOR);
+                set("long", HIC"此鐵錐長六七寸許，錐尖曲了兩曲。裏面共有"+chinese_number(query("count"))+"支青蜂釘可以射出(shoot)。\n"NOR);
                 set("wield_msg", HIC"$N將左手伸入右手衣袖，隨即將手伸出，手中已握了一柄鐵錐！\n"NOR);
-                set("unwield_msg",HIC"$N將手裡鐵錐往袖中一塞就不見了。\n"NOR);
+                set("unwield_msg",HIC"$N將手裏鐵錐往袖中一塞就不見了。\n"NOR);
         }
         init_dagger(5);
         setup();
@@ -35,13 +35,13 @@ int do_shoot(string arg)
         if (environment(this_object())!=me)
                 return 0;
         if( query("no_fight", environment(me)) )
-                return notify_fail("這裡禁止戰鬥。\n");
+                return notify_fail("這裏禁止戰鬥。\n");
         if( (me->is_busy() ))
-                return notify_fail("你現在正忙著呢，沒得閒用「青蜂釘」。\n");
+                return notify_fail("你現在正忙着呢，沒得閒用「青蜂釘」。\n");
         if( !arg )
                 return notify_fail("你要射擊誰？\n");
         if( !objectp(obj = present(arg, environment(me)) ))
-                return notify_fail("這裡沒有這個人！\n");
+                return notify_fail("這裏沒有這個人！\n");
         if( !obj->is_character() || obj->is_corpse() )
                 return notify_fail("看清楚一點，那並不是活物。\n");
         if( !me->is_fighting(obj) )
@@ -107,12 +107,12 @@ int do_shoot(string arg)
         if( attacklvl < (int)(parrylvl/2) + random((int)(parrylvl/2)) )
         {
                 weapon->move(obj);
-                message_vision(HIY"$N嘴角露出一絲冷笑，一抬手便將青蜂釘收籠在衣袖裡。\n"NOR, obj);
+                message_vision(HIY"$N嘴角露出一絲冷笑，一抬手便將青蜂釘收籠在衣袖裏。\n"NOR, obj);
                 return 1;
         }
         if( attacklvl < dodgelvl )
         {
-                message_vision(HIY"$N瀟洒地一轉身，避開了青蜂釘。\n"NOR, obj);
+                message_vision(HIY"$N瀟灑地一轉身，避開了青蜂釘。\n"NOR, obj);
                 return 1;
         }
         if( attacklvl < parrylvl )
@@ -126,7 +126,7 @@ int do_shoot(string arg)
 
         if( attacklvl > parrylvl + dodgelvl + random((parrylvl + dodgelvl) * 2))
         {
-                message_vision(HIR"$N一楞神，一聲悶哼，喉頭赫然釘著一支青蜂釘！\n"NOR, obj);
+                message_vision(HIR"$N一楞神，一聲悶哼，喉頭赫然釘着一支青蜂釘！\n"NOR, obj);
                 obj->die();
         }
         else

@@ -4,7 +4,7 @@ inherit ITEM;
 
 void create()
 {
-        set_name("□刀法簡介□", ({"blade book", "book"}));
+        set_name("〖刀法簡介〗", ({"blade book", "book"}));
         set_weight(600);
         if (clonep())
                 set_default_object(__FILE__);

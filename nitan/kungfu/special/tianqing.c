@@ -1,5 +1,5 @@
 
-// guimai.c 天擎秘氣
+// guimai.c 天擎祕氣
 // Created by rcwiz for yhonline
 
 #include <ansi.h>
@@ -8,7 +8,7 @@ inherit F_CLEAN_UP;
 
 int is_scborn() { return 1; }
 
-string name() { return HIM "天擎秘氣" NOR; }
+string name() { return HIM "天擎祕氣" NOR; }
 
 int perform(object me, string skill)
 {

@@ -36,7 +36,7 @@ int help (object me)
         write(@HELP
 指令格式: build <路徑名> | version | cancel | new
 
-編譯生成用于發布的MUDLIB版本，如果輸入了路徑名，就更新當前版
+編譯生成用於發佈的MUDLIB版本，如果輸入了路徑名，就更新當前版
 本的某一個路徑。更新路徑名的方式將無條件覆蓋版本目錄下的文件。
 
 build version 生成當前MUDLIB的最新發布版本。

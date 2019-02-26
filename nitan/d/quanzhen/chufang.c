@@ -8,9 +8,9 @@ void create()
 {
         set("short", "廚房");
         set("long", @LONG
-這裡是全真教的廚房，屋角上堆著一大堆手臂粗細的木柴，看
-來還沒有劈好。一位火工道人正愁眉苦臉地坐在那裡，看著那堆柴。
-牆上掛著一塊牌子(paizi)，牆邊扔著一把柴刀。
+這裏是全真教的廚房，屋角上堆着一大堆手臂粗細的木柴，看
+來還沒有劈好。一位火工道人正愁眉苦臉地坐在那裏，看着那堆柴。
+牆上掛着一塊牌子(paizi)，牆邊扔着一把柴刀。
 LONG
         );
         set("exits",([
@@ -43,7 +43,7 @@ int do_kan(string arg)
                 return notify_fail("今天的活幹完了，明天再來吧！\n");
 
         if (!arg || arg != "柴")
-                return notify_fail("別亂砍，小心傷著自個兒。\n");
+                return notify_fail("別亂砍，小心傷着自個兒。\n");
 
         if(present("huogong", environment(me)) && living(present("huogong", environment(me))))
         {
@@ -55,20 +55,20 @@ int do_kan(string arg)
 
         if (random(3)<2) {
                 me->receive_damage("jing",20+random(20));
-                message_vision("結果$N用力過猛，柴刀一下子嵌在了柴裡。$N用盡吃奶
-的力氣把柴刀拔出來，又摔了個大跟鬥。\n",me);
+                message_vision("結果$N用力過猛，柴刀一下子嵌在了柴裏。$N用盡吃奶
+的力氣把柴刀拔出來，又摔了個大跟斗。\n",me);
         }
         else {
                 me->receive_damage("jing",20+random(40));
                 ob = new("/clone/money/silver");
                 ob->set_amount(10);
                 ob->move(me);
-                message_vision("結果木柴應聲被劈成兩半。火工道人笑著對$N說，你工
+                message_vision("結果木柴應聲被劈成兩半。火工道人笑着對$N説，你工
 作的不錯呀，這是你的酬勞。\n",me);
                 message_vision("火工道人給$N一些銀子。\n",me);
         }
         return 1;
         }
         else
-                return notify_fail("老板都不見了，你為誰白幹啊？\n");
+                return notify_fail("老闆都不見了，你為誰白乾啊？\n");
 }

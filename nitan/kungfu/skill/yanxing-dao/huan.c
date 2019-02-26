@@ -34,11 +34,11 @@ int perform(object me, object target)
                 return notify_fail(HIC"你現在真氣不夠，難以施展" + name() + "。\n");
 
         if (! living(target))
-                return notify_fail("對方都已經這樣了，用不著這麼費力吧？\n");
+                return notify_fail("對方都已經這樣了，用不着這麼費力吧？\n");
 
         msg = HIC "$N" HIC "大喝一聲，全場四處遊動，$n"
               HIC "只看到$N" HIC "化做數團身影，漫天刀"
-              HIC "光席卷而來！\n"NOR;
+              HIC "光席捲而來！\n"NOR;
         message_combatd(msg, me, target);
 
         for (i = 0; i < 5; i++)

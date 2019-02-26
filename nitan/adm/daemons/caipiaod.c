@@ -82,7 +82,7 @@ void do_kaijiang(string type)
         if (type=="kaijiang")
         {
                 cpb->restore();
-                message("sendto_alluser",HIW"□泥潭福彩□：下面將開出本期彩票大獎！\n"NOR,users());
+                message("sendto_alluser",HIW"〖泥潭福彩〗：下面將開出本期彩票大獎！\n"NOR,users());
                 i=0;
                 z=0;
                 while(p!=7)
@@ -98,8 +98,8 @@ void do_kaijiang(string type)
                 for(i=0;i<sizeof(jieguo);i++)
                         str+=jieguo[i]+" ";
 
-                message("system",HIW"□泥潭福彩□：第"+chinese_number(query("times", cpb))+"期兌獎號碼為"+BLINK+HIR+str+"！\n"NOR,users());
-                message("system",HIW"□泥潭福彩□：可以去揚州賭場彩票投注中心read biao來查看得獎名單。\n"NOR,users());
+                message("system",HIW"〖泥潭福彩〗：第"+chinese_number(query("times", cpb))+"期兑獎號碼為"+BLINK+HIR+str+"！\n"NOR,users());
+                message("system",HIW"〖泥潭福彩〗：可以去揚州賭場彩票投注中心read biao來查看得獎名單。\n"NOR,users());
 
                 set("last_z_num", jieguo, cpb);
                 set("last_z_num_str", str, cpb);
@@ -118,17 +118,17 @@ void do_kaijiang(string type)
                 else set("all_gold",500000, cpb);
                 cpb->save();
 
-                message("system",HIW"□泥潭福彩□：下期彩票將于"+query("start_cdate", cpb)+"開始發行，歡迎購買。\n"NOR,users());
-                message("system",HIW"□泥潭福彩□：第"+chinese_number(query("times", cpb))+"期預計獎金"+chinese_number(query("all_gold", cpb))+"兩黃金。\n"NOR,users());
+                message("system",HIW"〖泥潭福彩〗：下期彩票將於"+query("start_cdate", cpb)+"開始發行，歡迎購買。\n"NOR,users());
+                message("system",HIW"〖泥潭福彩〗：第"+chinese_number(query("times", cpb))+"期預計獎金"+chinese_number(query("all_gold", cpb))+"兩黃金。\n"NOR,users());
                 cpb->auto_post(
-                        sprintf(HIR"□泥潭福彩□：本期彩票開獎號碼為"+str+"！"NOR),
+                        sprintf(HIR"〖泥潭福彩〗：本期彩票開獎號碼為"+str+"！"NOR),
                         sprintf("中獎名單如下：%s",cpb->show_player()),
                 );
                 rm("/data/caipiao/call");
                 write_file("/data/caipiao/call",sprintf(
-                        "□賭場消息□：本期彩票大獎已開出，兌獎號碼為"+str+"\n" +
-                        "□賭場消息□：下期彩票將于"+query("start_cdate", cpb)+"開始發行，歡迎購買。\n"+
-                        "□賭場消息□：下期彩票預計獎金"+chinese_number(query("all_gold", cpb))+"兩黃金。\n"));
+                        "〖賭場消息〗：本期彩票大獎已開出，兑獎號碼為"+str+"\n" +
+                        "〖賭場消息〗：下期彩票將於"+query("start_cdate", cpb)+"開始發行，歡迎購買。\n"+
+                        "〖賭場消息〗：下期彩票預計獎金"+chinese_number(query("all_gold", cpb))+"兩黃金。\n"));
                 return;
         }
         else if(type=="end" )
@@ -140,12 +140,12 @@ void do_kaijiang(string type)
                 delete("end_date", cpb);
                 delete("end_cdate", cpb);
                 cpb->save();
-                message("system",HIW"□泥潭福彩□：本期彩票停止購買，請關注開獎結果！\n"NOR,users());
-                message("system",HIW"□泥潭福彩□：本期彩票將于"+query("kaijiang_cdate", cpb)+"開獎！\n"NOR,users());
+                message("system",HIW"〖泥潭福彩〗：本期彩票停止購買，請關注開獎結果！\n"NOR,users());
+                message("system",HIW"〖泥潭福彩〗：本期彩票將於"+query("kaijiang_cdate", cpb)+"開獎！\n"NOR,users());
                 rm("/data/caipiao/call");
                 write_file("/data/caipiao/call",sprintf(
-                        "□賭場消息□：本期彩票已停止購買，請關注開獎結果！\n" +
-                        "□賭場消息□：本期彩票將于"+query("kaijiang_cdate", cpb)+"開獎！\n"));
+                        "〖賭場消息〗：本期彩票已停止購買，請關注開獎結果！\n" +
+                        "〖賭場消息〗：本期彩票將於"+query("kaijiang_cdate", cpb)+"開獎！\n"));
                 return;
         }
         else if(type=="start")
@@ -156,8 +156,8 @@ void do_kaijiang(string type)
                 if (!query("all_gold", cpb))
                         set("all_gold",500000,cpb);
 
-                message("system",HIW"□泥潭福彩□：第"+chinese_number(query("times", cpb))+"期彩票開始發行，歡迎大家前來購買。\n"NOR,users());
-                message("system",HIW"□泥潭福彩□：第"+chinese_number(query("times", cpb))+"期預計獎金"+chinese_number(query("all_gold", cpb))+"兩黃金。\n"NOR,users());
+                message("system",HIW"〖泥潭福彩〗：第"+chinese_number(query("times", cpb))+"期彩票開始發行，歡迎大家前來購買。\n"NOR,users());
+                message("system",HIW"〖泥潭福彩〗：第"+chinese_number(query("times", cpb))+"期預計獎金"+chinese_number(query("all_gold", cpb))+"兩黃金。\n"NOR,users());
 
                 delete("end_ya", cpb);
                 delete("duijiang", cpb);
@@ -172,12 +172,12 @@ void do_kaijiang(string type)
                 cpb->save();
                 cpb->restore();
 
-                message("system",HIW"□泥潭福彩□：第"+chinese_number(query("times",cpb))+"期彩票將于"+query("end_cdate", cpb)+"停止發行。\n"NOR,users());
+                message("system",HIW"〖泥潭福彩〗：第"+chinese_number(query("times",cpb))+"期彩票將於"+query("end_cdate", cpb)+"停止發行。\n"NOR,users());
                 rm("/data/caipiao/call");
                 write_file("/data/caipiao/call",sprintf(
-                        "□賭場消息□：第"+chinese_number(query("times", cpb))+"期彩票已經發行，歡迎大家前來購買。\n" +
-                        "□賭場消息□：第"+chinese_number(query("times", cpb))+"期累計獎金"+chinese_number(query("all_gold", cpb))+"兩黃金。\n" +
-                        "□賭場消息□：第"+chinese_number(query("times", cpb))+"期彩票將于"+query("end_cdate", cpb)+"停止發行。\n"));
+                        "〖賭場消息〗：第"+chinese_number(query("times", cpb))+"期彩票已經發行，歡迎大家前來購買。\n" +
+                        "〖賭場消息〗：第"+chinese_number(query("times", cpb))+"期累計獎金"+chinese_number(query("all_gold", cpb))+"兩黃金。\n" +
+                        "〖賭場消息〗：第"+chinese_number(query("times", cpb))+"期彩票將於"+query("end_cdate", cpb)+"停止發行。\n"));
                 return;
         }
         return;

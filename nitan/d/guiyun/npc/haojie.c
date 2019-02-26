@@ -50,8 +50,8 @@ int ask_back()
 {
         object ob = this_player();
         delete("exits/out", environment(ob));
-        message_vision("船上群盜齊聲應道：扯帆，回去慶功嘍！\n", ob);
-        message_vision("船夫升起帆，船就向歸雲莊航行。\n", ob);
+        message_vision("船上羣盜齊聲應道：扯帆，回去慶功嘍！\n", ob);
+        message_vision("船伕升起帆，船就向歸雲莊航行。\n", ob);
         tell_object(ob, CYN "你率船在湖上破浪前行，威風凜凜.......\n" NOR ) ;
         call_out("rguiyun", 10 , ob );
         return 1 ;

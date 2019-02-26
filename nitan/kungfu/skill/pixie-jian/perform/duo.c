@@ -41,7 +41,7 @@ int perform(object me, object target)
                 return notify_fail("你沒有準備使用辟邪劍法，難以施展" + name() + "。\n");
 
         if (! living(target))
-                return notify_fail("對方都已經這樣了，用不著這麼費力吧？\n");
+                return notify_fail("對方都已經這樣了，用不着這麼費力吧？\n");
 
         if( query_temp("block_msg/all", target) )
                 return notify_fail("對方現在什麼也看不見，放膽攻擊吧。\n");
@@ -49,7 +49,7 @@ int perform(object me, object target)
         if( !objectp(weapon=query_temp("weapon", me)) ||
             query("skill_type", weapon) != "sword" )
         {
-                msg = HIR "$N" HIR "一聲陰笑，揉身而上，左手兩指並攏，手臂"
+                msg = HIR "$N" HIR "一聲陰笑，揉身而上，左手兩指併攏，手臂"
                       "暴長，迅捷異常分刺$n" HIR "的雙目！\n" NOR;
         } else
         {
@@ -98,11 +98,11 @@ void cimu_end(object me, object target)
         {
                 if (living(target))
                 {
-                        message_combatd(HIC "$N" HIC "抹了抹流著的"
-                                        HIR "鮮血" HIC "，終于能看"
+                        message_combatd(HIC "$N" HIC "抹了抹流着的"
+                                        HIR "鮮血" HIC "，終於能看"
                                         "見了。\n" NOR, target);
 
-                        tell_object(target, HIR "你終于抹掉了眼前的"
+                        tell_object(target, HIR "你終於抹掉了眼前的"
                                             "鮮血，能看見了。\n" NOR);
                         set_temp("block_msg/all", 0, target);
                 }

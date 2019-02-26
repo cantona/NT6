@@ -42,7 +42,7 @@ int perform(object me, object target)
         if( query("neili", me)<300 )
                 return notify_fail("你現在內力太弱，不能使用「天女散花」。\n");
 
-        msg = CYN "\n$N凝神息氣，手腕疾抖，挽出千萬個劍花，舖天蓋地飛向$n。\n" NOR;
+        msg = CYN "\n$N凝神息氣，手腕疾抖，挽出千萬個劍花，鋪天蓋地飛向$n。\n" NOR;
 
         ap = attack_power(me, "sword");
         dp = defense_power(target, "dodge");
@@ -59,7 +59,7 @@ int perform(object me, object target)
                 me->start_busy(2);
         } else
         {
-                msg += CYN "可是$p猛地向前一躍,跳出了$P的攻擊范圍。\n" NOR;
+                msg += CYN "可是$p猛地向前一躍,跳出了$P的攻擊範圍。\n" NOR;
                 addn("neili", -100, me);
                 me->start_busy(3);
         }

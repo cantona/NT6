@@ -7,7 +7,7 @@ inherit NPC;
 void create()
 {
   set_name("小姐", ({"girl"}));
-  set("long","這是高麗的一個小姐，正在這裡閒逛。\n");
+  set("long","這是高麗的一個小姐，正在這裏閒逛。\n");
   set("gender", "女性");
   set("combat_exp", 3000);
   set("age", 18);

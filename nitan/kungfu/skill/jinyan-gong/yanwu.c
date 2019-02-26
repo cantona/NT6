@@ -42,7 +42,7 @@ int perform(object me, object target)
         if( query("neili", me)<600 )
                 return notify_fail("你的內力不夠，勁力不足以施展「鷹飛雁舞」輕功絕技！\n");
 
-        msg = HIC "$N清嘯一聲，身法陡然加快。$N的身影時如鷹擊長空、時如群雁飛舞，令人眼花撩亂，煞是好看。\n\n" NOR;
+        msg = HIC "$N清嘯一聲，身法陡然加快。$N的身影時如鷹擊長空、時如羣雁飛舞，令人眼花撩亂，煞是好看。\n\n" NOR;
 
         lvl1 = (int)me->query_skill("dodge");
         lvl2 = (int)me->query_skill("force");

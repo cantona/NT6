@@ -8,7 +8,7 @@ void create()
         set("race", "昆蟲");
         set("subrace", "飛蟲");
         set("age", 2);
-        set("long", "一只飛來飛去的小蜜蜂。\n");
+        set("long", "一隻飛來飛去的小蜜蜂。\n");
         
         set("str", 30);
         set("dex", 40);

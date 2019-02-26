@@ -13,7 +13,7 @@ void init()
 
 void create()
 {
-        set_name(WHT "千蛛萬毒手秘芨" NOR, ({ "qianzhu miji", "miji", "book"}));
+        set_name(WHT "千蛛萬毒手祕芨" NOR, ({ "qianzhu miji", "miji", "book"}));
         set_weight(500);
         if( clonep() )
                 set_default_object(__FILE__);
@@ -22,7 +22,7 @@ void create()
                 set("material", "paper");
                 set("no_sell", 1);
                 set("long", WHT
-        "這是失傳已久的千蛛萬毒手秘芨下半部，你可以從中研究一些千蛛萬毒手的絕招。\n\n" NOR, );
+        "這是失傳已久的千蛛萬毒手祕芨下半部，你可以從中研究一些千蛛萬毒手的絕招。\n\n" NOR, );
         }
 }
 
@@ -34,7 +34,7 @@ int do_du(string arg)
 
         if( arg == "miji" || arg == "qianzhu miji" || arg == "book" )
         {
-                write(HIY "\n秘芨裡記載了不少千蛛萬毒手的絕招竅門，你可以試著研究研究。\n" NOR);
+                write(HIY "\n祕芨裏記載了不少千蛛萬毒手的絕招竅門，你可以試着研究研究。\n" NOR);
                 return 1;
         }
 }
@@ -49,16 +49,16 @@ int do_yanjiu(string arg)
 
         if(! arg)
         {
-                write("研究千蛛萬毒手秘芨指令格式：\n"
-                      "research|yanjiu <絕技> from <千蛛萬毒手秘芨>\n");
+                write("研究千蛛萬毒手祕芨指令格式：\n"
+                      "research|yanjiu <絕技> from <千蛛萬毒手祕芨>\n");
                 return 1;
         }
         if(arg == "suck"  || arg == "wan"  
         || arg == "zhugu" || arg == "miji" 
         || arg == "book"  || arg == "qianzhu miji" )
         {
-                write("研究千蛛萬毒手秘芨指令格式：\n"
-                      "research|yanjiu <絕技> from <千蛛萬毒手秘芨>\n");
+                write("研究千蛛萬毒手祕芨指令格式：\n"
+                      "research|yanjiu <絕技> from <千蛛萬毒手祕芨>\n");
                 return 1;
         }
 
@@ -67,7 +67,7 @@ int do_yanjiu(string arg)
 
         if( me->is_busy())
         {
-                write("你現在正忙著呢。\n");
+                write("你現在正忙着呢。\n");
                 return 1;
         }
 
@@ -85,7 +85,7 @@ int do_yanjiu(string arg)
 
         if (! id(book))
         {
-                write("這裡沒有這本書。\n");
+                write("這裏沒有這本書。\n");
                 return 1;
         }
 
@@ -93,7 +93,7 @@ int do_yanjiu(string arg)
           && skill != "zhugu"  
           && skill != "wan" )
         {
-                write(WHT "你可以從千蛛萬毒手秘芨裡研究到吸毒練功法"
+                write(WHT "你可以從千蛛萬毒手祕芨裏研究到吸毒練功法"
                       "門（suck）、蛛蠱決（zhugu）以及萬蠱噬天絕"
                       "技（wan）。\n\n" NOR,);
                 return 1;
@@ -101,7 +101,7 @@ int do_yanjiu(string arg)
 
         if( query("jing", me)<50 || query("qi", me)<50 )
         {
-                write("你現在過于疲倦，無法專心研讀。\n");
+                write("你現在過於疲倦，無法專心研讀。\n");
                 return 1;
         }
 
@@ -119,8 +119,8 @@ int do_yanjiu(string arg)
                         return 1;
                 }
 
-                message("vision", me->name() + "正專心地研讀千蛛萬毒手秘芨。\n", environment(me), me);
-                tell_object(me, "\n你仔細的研讀千蛛萬毒手秘芨吸毒練功這一章節。\n");
+                message("vision", me->name() + "正專心地研讀千蛛萬毒手祕芨。\n", environment(me), me);
+                tell_object(me, "\n你仔細的研讀千蛛萬毒手祕芨吸毒練功這一章節。\n");
                 me->receive_damage("qi", 30);
                 me->receive_damage("jing", 30);
                 addn("potential", -1, me);
@@ -144,8 +144,8 @@ int do_yanjiu(string arg)
                         return 1;
                 }
 
-                message("vision", me->name() + "正專心地研讀千蛛萬毒手秘芨。\n", environment(me), me);
-                tell_object(me, "\n你仔細的研讀千蛛萬毒手秘芨蛛蠱決這一章節。\n");
+                message("vision", me->name() + "正專心地研讀千蛛萬毒手祕芨。\n", environment(me), me);
+                tell_object(me, "\n你仔細的研讀千蛛萬毒手祕芨蛛蠱決這一章節。\n");
                 me->receive_damage("qi", 30);
                 me->receive_damage("jing", 30);
                 addn("potential", -1, me);
@@ -169,8 +169,8 @@ int do_yanjiu(string arg)
                         return 1;
                 }
 
-                message("vision", me->name() + "正專心地研讀千蛛萬毒手秘芨。\n", environment(me), me);
-                tell_object(me, "\n你仔細的研讀千蛛萬毒手秘芨萬蠱噬天這一章節。\n");
+                message("vision", me->name() + "正專心地研讀千蛛萬毒手祕芨。\n", environment(me), me);
+                tell_object(me, "\n你仔細的研讀千蛛萬毒手祕芨萬蠱噬天這一章節。\n");
                 me->receive_damage("qi", 30);
                 me->receive_damage("jing", 30);
                 addn("potential", -1, me);
@@ -223,7 +223,7 @@ int suck(object me)
                 me->improve_skill("poison", 5000000);
                 set("can_perform/qianzhu-wandushou/suck", 1, me);
                 tell_object(me, HIC "你學會了如何運用千蛛萬毒手吸毒練功。\n" NOR);
-                write(HIW "\n你仔細研讀千蛛萬毒手秘芨，終于領悟了吸毒練功的竅門所在。\n" NOR);
+                write(HIW "\n你仔細研讀千蛛萬毒手祕芨，終於領悟了吸毒練功的竅門所在。\n" NOR);
                 return 1;
         }
 }
@@ -270,7 +270,7 @@ int zhugu(object me)
                 me->improve_skill("poison", 5000000);
                 set("can_perform/qianzhu-wandushou/zhugu", 1, me);
                 tell_object(me, HIC "你學會了「蛛蠱決」這一招。\n" NOR);
-                write(HIW "\n你仔細研讀千蛛萬毒手秘芨，終于領悟了蛛蠱決的竅門所在。\n" NOR);
+                write(HIW "\n你仔細研讀千蛛萬毒手祕芨，終於領悟了蛛蠱決的竅門所在。\n" NOR);
                 return 1;
         }
 }
@@ -317,7 +317,7 @@ int wan(object me)
                 me->improve_skill("poison", 5000000);
                 set("can_perform/qianzhu-wandushou/wan", 1, me);
                 tell_object(me, HIC "你學會了「萬蠱噬天」這一招。\n" NOR);
-                write(HIW "\n你仔細研讀千蛛萬毒手秘芨，終于領悟了萬蠱噬天的竅門所在。\n" NOR);
+                write(HIW "\n你仔細研讀千蛛萬毒手祕芨，終於領悟了萬蠱噬天的竅門所在。\n" NOR);
                 return 1;
         }
 }

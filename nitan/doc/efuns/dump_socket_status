@@ -8,7 +8,7 @@
                 string dump_socket_status();
                 字符串 dump_socket_status()
 
-        說明：
+        説明：
                 此函數已取消，由 socket_status 函數代替。
 
         by 發現號(Find@tx)

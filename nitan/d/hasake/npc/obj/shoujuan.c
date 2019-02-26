@@ -38,7 +38,7 @@ int do_look(string arg)
         if(id(arg)){
         if(query("blood_soaked") >= 2 && random(query("kar,me")) < 10 && !query("blooded"))
            {
-            message_vision("$N正拿著張手絹仔細地端詳著。\n", me);
+            message_vision("$N正拿着張手絹仔細地端詳着。\n", me);
             if(!query_temp("blooded")){            
                  tell_object(me, HIY "\n你突然發現這張手絹有點奇怪，被染過血的地方有了點變化！\n\n"NOR);
                  set_temp("blooded", 1);
@@ -55,7 +55,7 @@ int do_look(string arg)
                  delete_temp("blooded");
                  if( query("owner") == query("id", me) )
                    set_temp("li_meet", 2, me);
-                 set("long", "這是一張被血染紅了的手絹，上面的圖象有些奇怪，好象是張地圖。\n");
+                 set("long", "這是一張被血染紅了的手絹，上面的圖象有些奇怪，好像是張地圖。\n");
                  return 1;
                 }
             }

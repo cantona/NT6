@@ -11,7 +11,7 @@ string ask_skill();
 void create()
 {
         set_name("史婆婆", ({"shi popo", "shi", "popo"}));
-        set("long", "她是雪山派掌門人白自在的妻子，雖說現在人已顯\n"
+        set("long", "她是雪山派掌門人白自在的妻子，雖説現在人已顯\n"
                     "得蒼老，十年前提起“江湖一枝花”史小翠來，武\n"
                     "林中卻是無人不知。\n");
         set("title", "金烏派開山祖師");
@@ -33,7 +33,7 @@ void create()
         set("inquiry",([
                 "金烏刀譜":(:ask_book:),
                 "金烏墜地":(:ask_skill:),
-  "赤燄暴長" : (: ask_skill1 :),
+  "赤焰暴長" : (: ask_skill1 :),
         ]));
 
         set_skill("force", 220);
@@ -104,7 +104,7 @@ void attempt_apprentice(object me)
 
         if( query("combat_exp", me)<200000 )
         {
-                command("say 你現在江湖經驗太淺，還是多鍛煉鍛煉再來吧。");
+                command("say 你現在江湖經驗太淺，還是多鍛鍊鍛鍊再來吧。");
                 return;
         }
 
@@ -127,7 +127,7 @@ mixed ask_skill1()
                 return "這招我不是已經教過你了嗎？自己下去多練吧！";
 
         if( query("family/family_name", me) != query("family/family_name") )
-                return "你是哪裡來的？給我滾開！";
+                return "你是哪裏來的？給我滾開！";
 
  if (me->query_skill("jinwu-blade", 1) < 1)
                 return "你連金烏刀法都沒學，還談什麼絕招可言？";
@@ -145,8 +145,8 @@ mixed ask_skill1()
                        "算不錯。今日我\n傳你雪山劍法的破解之法，你"
                        "可記牢了。雪山派劍法有\n七十二招，我金烏派"
                        "武功處處勝他一籌，卻有七十三招。\n咱們七十"
-                       "三招破他七十二招，最後一招瞧仔細了！”說\n"
-                       "著拔出腰間柴刀從上而下直劈下來，又道：“你"
+                       "三招破他七十二招，最後一招瞧仔細了！”説\n"
+                       "着拔出腰間柴刀從上而下直劈下來，又道：“你"
                        "使這招\n之時，須得躍起半空，和身直劈！”當"
                        "下又教將如何運\n勁，如何封死對方逃遁的空隙"
                        "等竅門慢慢傳給$N" HIY "，$N" HIY "凝\n思半"
@@ -156,7 +156,7 @@ mixed ask_skill1()
                        "驚人。\n" NOR, me, this_object());
         command("heng");
         command("say 這一招可盡破雪山劍法，你自己下去練吧。");
-        tell_object(me, HIC "你學會了「赤燄暴長」。\n" NOR);
+        tell_object(me, HIC "你學會了「赤焰暴長」。\n" NOR);
 
         if (me->can_improve_skill("blade"))
                 me->improve_skill("blade", 1500000);
@@ -211,7 +211,7 @@ int recognize_apprentice(object ob)
         myfam=query("family", ob);
 //      if ( myfam["family_name"] == "凌霄城") return 1 ;
         if( query_temp("tmark/shi", ob) == 1 )
-        message_vision("史婆婆哼了一聲，對$N說道：老身今天不想再教了，你下次再來吧。\n", ob);
+        message_vision("史婆婆哼了一聲，對$N説道：老身今天不想再教了，你下次再來吧。\n", ob);
         if( !query_temp("tmark/shi", ob))return 0;
         addn_temp("tmark/shi", -1, ob);
         return 1;
@@ -223,7 +223,7 @@ int accept_object(object who, object ob)
         {
                 if( !query_temp("tmark/shi", who) )
                         set_temp("tmark/shi", 0, who);
-                message_vision("史婆婆接過金烏杖，“呵呵”笑了兩聲，摸摸杖身，說道：\n好！好！好！難得你幫我乖孫女辦事，真不錯，好吧！\n老身今天正好有空，就教你一會工夫吧。\n", who);
+                message_vision("史婆婆接過金烏杖，“呵呵”笑了兩聲，摸摸杖身，説道：\n好！好！好！難得你幫我乖孫女辦事，真不錯，好吧！\n老身今天正好有空，就教你一會工夫吧。\n", who);
                 addn_temp("tmark/shi", 900, who);
                 return 1;
         }
@@ -254,8 +254,8 @@ string ask_skill()
                        "算不錯。今日我\n傳你雪山劍法的破解之法，你"
                        "可記牢了。雪山派劍法有\n七十二招，我金烏派"
                        "武功處處勝他一籌，卻有七十三招。\n咱們七十"
-                       "三招破他七十二招，最後一招瞧仔細了！”說\n"
-                       "著拔出腰間柴刀從上而下直劈下來，又道：“你"
+                       "三招破他七十二招，最後一招瞧仔細了！”説\n"
+                       "着拔出腰間柴刀從上而下直劈下來，又道：“你"
                        "使這招\n之時，須得躍起半空，和身直劈！”當"
                        "下又教將如何運\n勁，如何封死對方逃遁的空隙"
                        "等竅門慢慢傳給$N" HIY "，$N" HIY "凝\n思半"

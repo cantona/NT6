@@ -12,7 +12,7 @@ void create()
 {
         set_name(HIC "翡翠蘭" NOR, ({"hua4", "feicui"}));
         set("unit", "朵");
-        set("long", "這是一朵千年難得一見的翡翠蘭，據說能解百毒。\n");
+        set("long", "這是一朵千年難得一見的翡翠蘭，據説能解百毒。\n");
         setup();
 }
 
@@ -23,7 +23,7 @@ int do_eat(string arg)
         if(!present(this_object(), me))
                 return notify_fail("你要吃什麼？\n");
         if( me->is_busy() )
-                return notify_fail("別急，慢慢吃，小心別噎著了。\n");
+                return notify_fail("別急，慢慢吃，小心別噎着了。\n");
         set_temp("nopoison", 1, this_player());
         set("eff_jing",query("max_jing",  this_player()), this_player());
         set("jing",query("max_jing",  this_player()), this_player());

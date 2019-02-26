@@ -11,7 +11,7 @@ int ask_job()
 
         if (! myfam || myfam["family_name"] != "唐門世家")
         {
-                command("say 你是我們的人嗎？再說我的任務你不一定肯做啊，回去吧！");
+                command("say 你是我們的人嗎？再説我的任務你不一定肯做啊，回去吧！");
                 return 1;
         }
 
@@ -40,13 +40,13 @@ int ask_job()
         
         if (me->query_condition("tmagain") > 0)
         {       command("heng");
-                command("say 做不了說一下，你等等吧！");
+                command("say 做不了説一下，你等等吧！");
                 return 1;
         }        
 
         if( query_temp("jobok", me) == 1 )
         {
-                command("say 好好，幹的好，你下去歇歇吧。");
+                command("say 好好，乾的好，你下去歇歇吧。");
                 addn("combat_exp", 3000, me);
                 delete_temp("started", me);
                 delete_temp("find_wz", me);
@@ -57,9 +57,9 @@ int ask_job()
         }
         
 
-        command("say 你去給我抓一只蚊子回來吧。");
-        command("say 此事不可馬虎，關系到你的前程，一定要全力去做。");
-        command("say 找不到的話就問問別人，說不定有收獲啊");
+        command("say 你去給我抓一隻蚊子回來吧。");
+        command("say 此事不可馬虎，關係到你的前程，一定要全力去做。");
+        command("say 找不到的話就問問別人，説不定有收穫啊");
 
         set_temp("started", 1, me);
         remove_call_out("putting");

@@ -24,7 +24,7 @@ int accept_object(object who, object ob)
 
 int accept_ask()
 {
-        message_vision("$N半答不理的說：有啥事問我師傅去，別煩我。\n",
+        message_vision("$N半答不理的説：有啥事問我師傅去，別煩我。\n",
                        this_object());
         return 1;
 }

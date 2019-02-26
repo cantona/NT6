@@ -10,7 +10,7 @@ void create()
 {
         set_name("殷錦", ({ "yin jin", "yin"}));
         set("title", HIY"神龍教"YEL"黃龍使"NOR);
-        set("long", "這是個漢子, 一臉姦相, 明顯是個小人.\n" );
+        set("long", "這是個漢子, 一臉奸相, 明顯是個小人.\n" );
         set("gender", "男性");
         set("age", 44);
         set("str", 22);

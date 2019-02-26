@@ -9,7 +9,7 @@ void create()
     else {
             set("unit", "本");
             set("material", "paper");
-            set("long", "一本關于腿法的無功秘笈。\n");
+            set("long", "一本關於腿法的無功祕笈。\n");
           }
     set("owner", "黎生");
     setup();

@@ -33,10 +33,10 @@ int perform(object me, object target)
                 return notify_fail("你的杖法還不到家，無法使用「靈蛇纏身」！\n");
 
         if (target->is_busy())
-                return notify_fail("對方正忙著呢，你還是加緊進攻吧！\n");
+                return notify_fail("對方正忙着呢，你還是加緊進攻吧！\n");
 
         if (! living(target))
-              return notify_fail("對方都已經這樣了，用不著這麼費力吧？\n");
+              return notify_fail("對方都已經這樣了，用不着這麼費力吧？\n");
 
         msg = HIG "$N" HIG "手中的" + weapon->name() +
               HIG "不住的顫動，活現一條靈蛇，纏向$n" HIG "，難以捉摸。\n" NOR;
@@ -46,7 +46,7 @@ int perform(object me, object target)
 
         if (ap / 2 + random(ap) > dp)
         {
-                msg += HIY "$n" HIY "倉皇之下只有嚴守門戶，無暇反擊！\n" NOR;
+                msg += HIY "$n" HIY "倉皇之下只有嚴守門户，無暇反擊！\n" NOR;
                 target->start_busy(ap / 80 + 2);
         } else
         {

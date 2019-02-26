@@ -52,7 +52,7 @@ int do_sa(string arg)
 	string msg;
 	
 	if (!(ob1 = present("shihui", ob)))
-		return notify_fail("袋裡又沒石灰，你撒啥？！\n");
+		return notify_fail("袋裏又沒石灰，你撒啥？！\n");
 
 	if (!arg)
 		return notify_fail("你想要用石灰粉幹什麼?\n");
@@ -75,7 +75,7 @@ int do_attack(object me, object ob2, object ob3, string msg)
 {
           ob2 = present("shi song",environment(me));
 	if (random(me->query_str()) > 20 && !me->query("fail")) {
-		msg += RED"$n募地白影晃動，無數粉末沖進眼裡，鼻裡，口裡，一時氣為之窒，跟著雙\n"+
+		msg += RED"$n募地白影晃動，無數粉末衝進眼裏，鼻裏，口裏，一時氣為之窒，跟着雙\n"+
 			"眼劇痛，猶似萬枚鋼針同時刺一般，待欲張口大叫，滿嘴粉末，連喉頭嗌住了，\n"+
 			"再也叫不出聲來。\n"NOR;
 		msg += CYN"$N隨手撿起地上單刀，順手插入了$n肚中。\n"NOR;
@@ -101,10 +101,10 @@ int do_finish(object me, object ob)
 {
 	object ob1;
 	
-	tell_object(me,HIY"茅十八道：“你為什麼用石灰撒在那史鬆的眼裡？”聲音嚴厲，神態更是兇惡。\n\n"+
+	tell_object(me,HIY"茅十八道：“你為什麼用石灰撒在那史鬆的眼裏？”聲音嚴厲，神態更是兇惡。\n\n"+
 			"    你心中十分害怕，當下茅十八便將撒石灰、下蒙汗藥等這些江湖人所不齒的卑鄙手段\n"+
-			"告訴了你。隨後又說：“我這裡有一本我派刀法的秘籍，你拿去自行好好鑽研。只要你能\n"+
-			"勤學苦練，將來未始不能練成一身好武藝。咱們後會有期了！”說完轉身離去了。\n"NOR);
+			"告訴了你。隨後又説：“我這裏有一本我派刀法的祕籍，你拿去自行好好鑽研。只要你能\n"+
+			"勤學苦練，將來未始不能練成一身好武藝。咱們後會有期了！”説完轉身離去了。\n"NOR);
 	ob1 = new(SHU);
 	ob1->move(me);
 	ob1->set_temp("mao18/book",me->query("id"));

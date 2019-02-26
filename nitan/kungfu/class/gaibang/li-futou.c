@@ -16,7 +16,7 @@ void create()
         set("gender", "男性");
         set("age", 32);
         set("long",
-                "李斧頭生性豪爽，擅使大板斧，當著無敵，是丐幫有名的豪傑之士。\n");
+                "李斧頭生性豪爽，擅使大板斧，當着無敵，是丐幫有名的豪傑之士。\n");
 
         set("attitude", "heroism");
         set("class", "beggar");

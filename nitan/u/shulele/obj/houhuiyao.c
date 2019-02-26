@@ -9,10 +9,10 @@ void init();
 void init()                                                                                 
 {                                                                                           
   if (!wizardp(this_player())) {                                                            
-    set("no_get","你手裡一鬆，後悔藥從指間滑落！\n");                                       
+    set("no_get","你手裏一鬆，後悔藥從指間滑落！\n");                                       
     set("no_give","這麼珍貴的藥，哪能隨便給人？\n");                                        
     set("no_drop","這麼寶貴的藥，扔了多可惜呀！\n");                                        
-    set("no_sell","凡人哪裡知道"+this_object()->query("name")+"的價值？還是自己留著吧。\n");
+    set("no_sell","凡人哪裏知道"+this_object()->query("name")+"的價值？還是自己留着吧。\n");
   }                                                                                         
   add_action("do_eat", "eat");                                                              
 }                                                                                           
@@ -49,7 +49,7 @@ int do_eat(string arg)
   me->set("kee", (int)me->query("max_kee"));                                                
   me->set("mana", (int)me->query("max_mana"));                                              
   me->set("force", (int)me->query("max_force"));                                            
-   message_vision(HIM "$N把後悔藥往嘴裡一放，苦的眼淚鼻涕一起流了下來。                     
+   message_vision(HIM "$N把後悔藥往嘴裏一放，苦的眼淚鼻涕一起流了下來。                     
 \n" NOR, me);                                                                               
   destruct(this_object());                                                                  
   return 1;                                                                                 

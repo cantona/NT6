@@ -9,7 +9,7 @@ void create()
         set_name("竹葉青", ({ "qing she", "she", "qing" }) );
         set("race", "野獸");
         set("age", 2);
-        set("long", "一只讓人看了起雞皮疙瘩的竹葉青蛇。\n");
+        set("long", "一隻讓人看了起雞皮疙瘩的竹葉青蛇。\n");
         set("attitude", "peaceful");
         set("str", 20);
         set("cor", 20);

@@ -41,10 +41,10 @@ int perform(object me)
                 return notify_fail("你沒有激發清涼打穴法，難以施展" + name() + "。\n");
 
         if (! living(target))
-                return notify_fail("對方都已經這樣了，用不著這麼費力吧？\n");
+                return notify_fail("對方都已經這樣了，用不着這麼費力吧？\n");
 
         msg = HIC "$N" HIC "側身將手中" + weapon->name() + HIC "斜刺而出，一式「"
-              HIR "透骨釘" NOR + HIC "」卷帶著呼呼風聲，將$n" HIC "包圍緊裹。\n" NOR;
+              HIR "透骨釘" NOR + HIC "」卷帶着呼呼風聲，將$n" HIC "包圍緊裹。\n" NOR;
 
         ap = attack_power(me, "dagger");
         dp = defense_power(target, "parry");

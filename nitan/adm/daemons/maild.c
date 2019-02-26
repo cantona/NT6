@@ -79,7 +79,7 @@ int queue_mail(object me, string mail_from, string mail_to, string topic, string
         int next_next;
 
         if (strlen(data) > 65536)
-                return notify_fail("你不能發送大于64K的郵件。\n");
+                return notify_fail("你不能發送大於64K的郵件。\n");
 
         log_file("mail", sprintf("%s %s try to send mail <%s> Size:%d\n",
                                  log_time(),(me?query("id", me):"SYSTEM"),
@@ -237,7 +237,7 @@ private void read_callback(int fd, mixed message)
 
         mail = mail_queue[queue_pointer];
 
-        // SMTP客戶端自動機
+        // SMTP客户端自動機
         switch (status)
         {
         default:
@@ -261,14 +261,14 @@ private void read_callback(int fd, mixed message)
                             /*
                         if( query("smtpauthuser", CONFIG_D) )
                         {
-                                // 配置為需要認証：發送認証命令
+                                // 配置為需要認證：發送認證命令
                                 status = STATUS_START_AUTH;
                                 write_message(fd, "AUTH LOGIN");
                                 return;
                         }
                         */                        
 
-                        // 配置為不需要認証，發送MAILFROM命令
+                        // 配置為不需要認證，發送MAILFROM命令
                             status = STATUS_MAIL_FROM_OK;
                         write_message(fd, "MAIL FROM:<" + mail[MAIL_FROM] + ">");
                             return;
@@ -279,7 +279,7 @@ private void read_callback(int fd, mixed message)
                 // 成功接收到AUTH命令的響應
                 if (sscanf(message, "334%*s"))
                 {
-                        // 發送用戶名
+                        // 發送用户名
                         status = STATUS_USERNAME_SENT;
                         write_message(fd, encode64("lonely"));
                         return;
@@ -287,7 +287,7 @@ private void read_callback(int fd, mixed message)
                 break;
 
         case STATUS_USERNAME_SENT:
-                // 成功接收到發送用戶名的響應
+                // 成功接收到發送用户名的響應
                 if (sscanf(message, "334%*s"))
                 {
                         // 發送口令

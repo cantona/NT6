@@ -46,7 +46,7 @@ void create()
         set_skill("blade", 150);             // 基本刀法
         set_skill("liuhe-dao", 150);       // 四象六合刀
         set_skill("begging", 100);           // 叫化絕活
-        set_skill("checking", 100);          // 道聽途說
+        set_skill("checking", 100);          // 道聽途説
         set_skill("training", 100);          // 馭獸術
         
         map_skill("force", "huntian-qigong");
@@ -84,7 +84,7 @@ int accept_ask(object ob, string topic)
        {
                set_temp("give_for_ask", 1, ob);
         set_temp("pending/ask_value", 10000, ob);
-               command("say 重名的人可多著呢，我得多花點心思，先拿點黃金出來。");
+               command("say 重名的人可多着呢，我得多花點心思，先拿點黃金出來。");
         return 1;
       }
       
@@ -102,7 +102,7 @@ int accept_ask(object ob, string topic)
               if (!fob)
                                 {
 //                command("shake");
-//          command("say 我從沒聽說過江湖上有這號人物。");
+//          command("say 我從沒聽説過江湖上有這號人物。");
 //          return 1;
             return 0;
         }
@@ -117,14 +117,14 @@ int accept_ask(object ob, string topic)
         if (! fob || ! ob->visible(fob) )
         {
 //                command("shake");
-//          command("say 我從沒聽說過江湖上有這號人物。");
+//          command("say 我從沒聽説過江湖上有這號人物。");
 //          return 1;
             return 0;
         }
         if ( ! environment(fob) )
         {
                 message_vision(CYN "$N" CYN "對$n" CYN "小"
-                               "聲道：好像是聽說有這麼個人物，不過沒有弟子向我匯報過他的行蹤。\n" NOR, this_object(), ob);
+                               "聲道：好像是聽説有這麼個人物，不過沒有弟子向我彙報過他的行蹤。\n" NOR, this_object(), ob);
                 return 1;
                 
         }
@@ -155,7 +155,7 @@ int accept_ask(object ob, string topic)
                 set_temp("pending/ask_about", topic, ob);
                 set_temp("pending/ask_who", file_name(fob), ob);
                 set_temp("pending/ask_value", 30000, ob);
-                message_vision(CYN "$N" CYN "嘿嘿姦笑兩聲，對$n" CYN "小"
+                message_vision(CYN "$N" CYN "嘿嘿奸笑兩聲，對$n" CYN "小"
                                "聲道：沒有問題，不過得要三兩黃金，不二"
                                "價！\n" NOR, this_object(), ob);
                 return 1;
@@ -173,7 +173,7 @@ int accept_ask(object ob, string topic)
                 set_temp("pending/ask_about", topic, ob);
                 set_temp("pending/ask_who", file_name(fob), ob);
                 set_temp("pending/ask_value", 100000, ob);
-                message_vision(CYN "$N" CYN "嘿嘿姦笑兩聲，對$n" CYN "小"
+                message_vision(CYN "$N" CYN "嘿嘿奸笑兩聲，對$n" CYN "小"
                                "聲道：沒有問題，不過得要十兩黃金，不二"
                                "價！\n" NOR, this_object(), ob);
                 return 1;        
@@ -182,7 +182,7 @@ int accept_ask(object ob, string topic)
                 set_temp("pending/ask_about", topic, ob);
                 set_temp("pending/ask_who", file_name(fob), ob);
                 set_temp("pending/ask_value", 1000000, ob);
-                message_vision(CYN "$N" CYN "嘿嘿姦笑兩聲，對$n" CYN "小"
+                message_vision(CYN "$N" CYN "嘿嘿奸笑兩聲，對$n" CYN "小"
                                "聲道：找玩家也沒有問題，不過得要一百兩黃金，不二"
                                "價！\n" NOR, this_object(), ob);
                 return 1;
@@ -210,7 +210,7 @@ int accept_object(object me, object ob)
         {
           case 0:
                 command("heihei");
-                command("say 這種破爛你留著吧。");
+                command("say 這種破爛你留着吧。");
                 set_temp("beichou_refused", 1, me);
                 return 0;
 
@@ -252,7 +252,7 @@ int accept_object(object me, object ob)
             {
        delete_temp("give_for_ask", me);
        set_temp("pay_for_ask", 1, me);
-                     command("say 好吧，說說你想找誰。");
+                     command("say 好吧，説説你想找誰。");
                      return 1;
            }
      if( stringp(wid=query_temp("pending/ask_about", me)) )
@@ -295,7 +295,7 @@ int accept_object(object me, object ob)
 //          command("whisper " + me->query("id") +" 剛剛有弟子前來報告：");     
           log_file("xiang",me->name()+"詢問"+fob->name()+"("+query("id", fob)+")\n");
 
-          str = this_object()->name()+"在你的耳邊悄聲說道："+fob->name()+"剛才在";
+          str = this_object()->name()+"在你的耳邊悄聲説道："+fob->name()+"剛才在";
           if( stringp(query("place", fob)) )
                   str += env+"的";
           str+=query("short", environment(fob))+"附近出沒。\n";

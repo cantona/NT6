@@ -11,7 +11,7 @@ int exert(object me, object target)
         int skill;
 
         if (target != me)
-                return notify_fail("你只能用五鬥米神功提升自己的戰鬥力。\n");
+                return notify_fail("你只能用五斗米神功提升自己的戰鬥力。\n");
 
         if( query("neili", me)<100 )
                 return notify_fail("你的內力不夠了。");
@@ -46,6 +46,6 @@ void remove_effect(object me, int amount)
                 addn_temp("apply/attack", -amount, me);
                 addn_temp("apply/defense", -amount, me);
                 delete_temp("powerup", me);
-                tell_object(me, "你的五鬥米神功運行完畢，將內力收回丹田。\n");
+                tell_object(me, "你的五斗米神功運行完畢，將內力收回丹田。\n");
         }
 }

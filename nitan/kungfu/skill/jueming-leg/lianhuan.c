@@ -29,7 +29,7 @@ int perform(object me, object target)
                 return notify_fail(PNAME"只能對戰鬥中的對手使用。\n");
                 
         if( target->is_busy() )
-                return notify_fail(target->name() + "目前正暈頭轉向，乘機進攻吧□\n");
+                return notify_fail(target->name() + "目前正暈頭轉向，乘機進攻吧ⅵ\n");
 
                 //兵器空手均可使用
 
@@ -74,7 +74,7 @@ int perform(object me, object target)
                 target->receive_wound("qi", damage/3,me);
                 addn("neili", -damage/10, me);
                 if( damage < 40 )
-                        msg += HIY"結果$n"HIY"被$N"HIY"的連環腿踢得暈頭轉向！□\n" NOR;
+                        msg += HIY"結果$n"HIY"被$N"HIY"的連環腿踢得暈頭轉向！ⅵ\n" NOR;
                 else msg += HIR"結果$n"HIY"被$N"HIY"的連環腿踢中要害，「哇！」的一口鮮血噴湧而出！\n"NOR;
         }
         else

@@ -62,9 +62,9 @@ int main(object me, string arg)
                                return notify_fail("人家沒跟你申請加入，你是光桿司令啊？\n");
                        i=LEAGUE_D->add_member_into_league(query("league/league_name", me),query("id", who));
                        if(i==-1)
-                               return notify_fail("錯誤！請與巫師聯系！\n");
+                               return notify_fail("錯誤！請與巫師聯繫！\n");
                        if(i==-2)
-                               return notify_fail("錯誤！"+who->name()+"已經在同盟裡啦！\n");
+                               return notify_fail("錯誤！"+who->name()+"已經在同盟裏啦！\n");
                        if(i==-3)
                                return notify_fail("錯誤！同盟人數已經滿100人了！\n");
                        if(i==1)
@@ -76,12 +76,12 @@ int main(object me, string arg)
                                return 1;
                        }
                        else
-                               return notify_fail("出現錯誤，請聯系管理員。\n");
+                               return notify_fail("出現錯誤，請聯繫管理員。\n");
         case "join":
                 if(sizeof(args)<2)
                         return notify_fail("參數不夠！\n");
                 if( fname=query("league/league_name", me) )
-                        return notify_fail("一個人只能屬于一個同盟！你必須先退出原來的同盟才行！\n");
+                        return notify_fail("一個人只能屬於一個同盟！你必須先退出原來的同盟才行！\n");
                 if (! objectp(who = present(args[1], environment(me))))
                         return notify_fail("你要加入誰的同盟？？？\n");
                 str=query_temp("pending/attemp_join_league", me);
@@ -104,11 +104,11 @@ int main(object me, string arg)
                         // 同盟的聲望下降
                         LEAGUE_D->add_league_fame(fname, -LEAGUE_D->query_league_fame(fname) / 10);
                         CHANNEL_D->do_channel(this_object(), "rumor",
-                                "聽說"+me->name(1)+"("+query("id", me)+
+                                "聽説"+me->name(1)+"("+query("id", me)+
                                 ")義無反顧，已經背離" + fname + "而去。");
                         delete_temp("pending/out_league", me);
 
-                        // 清除該用戶在同盟中的信息
+                        // 清除該用户在同盟中的信息
                         UPDATE_D->clear_user_data(query("id", me),"league");
                         return 1;
                 }
@@ -150,7 +150,7 @@ mixed select_league(object me, string arg)
                 }
 
                 if (! stringp(fam))
-                        return notify_fail("沒有這個玩家，不能查閱相關的同盟。\n");
+                        return notify_fail("沒有這個玩家，不能查閲相關的同盟。\n");
         }
 
         if (! fam)
@@ -304,7 +304,7 @@ int show_league_info(object me, string arg)
                 if (objectp(ob = find_player(id)))
                         msg += sprintf(HIY "在線   "
                                        NOR WHT "經驗：" HIC "%-9d "
-                                       NOR WHT "閱歷：" HIW "%-8d "
+                                       NOR WHT "閲歷：" HIW "%-8d "
                                        NOR WHT "威望：" HIY "%-8d\n" NOR,
                                        query("combat_exp", ob),
                                        query("score", ob),

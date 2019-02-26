@@ -1,7 +1,7 @@
 #include <ansi.h>
 #include <combat.h>
 
-string name() { return HIY "赤燄暴長" NOR; }
+string name() { return HIY "赤焰暴長" NOR; }
 
 inherit F_SSERVER;
 
@@ -33,7 +33,7 @@ int perform(object me, object target)
                 return notify_fail("你沒有激發金烏刀法，無法施展" + name() + "。\n");
 
         if (! living(target))
-               return notify_fail("對方都已經這樣了，用不著這麼費力吧？\n");
+               return notify_fail("對方都已經這樣了，用不着這麼費力吧？\n");
 
         msg = HIY "$N" HIY "凝神聚氣，將全身之力注入" + weapon->name() +
               HIY "刀身順勢劈下，頓時一股凌厲的刀芒直貫$n" HIY "而去。\n"
@@ -48,8 +48,8 @@ int perform(object me, object target)
            && target->query_skill_mapped("sword") == "xueshan-jian")
         {
                 msg += HIY "$n" HIY "慌忙中忙以雪山劍法作出抵擋，哪知$N"
-                       HIY "刀法竟似雪山劍法克星般，" + weapon->name() +
-                       HIY "燄芒霎時\n又暴漲數倍，完全封鎖$n" HIY "的所"
+                       HIY "刀法竟似雪山劍法剋星般，" + weapon->name() +
+                       HIY "焰芒霎時\n又暴漲數倍，完全封鎖$n" HIY "的所"
                        "有劍招！\n" NOR;
                 ap += ap / 2;
         }

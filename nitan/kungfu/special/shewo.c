@@ -5,7 +5,7 @@ inherit F_CLEAN_UP;
 
 int is_scborn() { return 1; }
 
-string name() { return HIG "舍我其誰" NOR; }
+string name() { return HIG "捨我其誰" NOR; }
 
 int perform(object me, string skill, string arg)
 {
@@ -37,7 +37,7 @@ int perform(object me, string skill, string arg)
                 if (sizeof(t) <= 1)
                                 return notify_fail("該技能只能在多人組隊的時候施展。\n");
                         
-        if (me->is_busy())return notify_fail("等你忙完再說吧！\n");
+        if (me->is_busy())return notify_fail("等你忙完再説吧！\n");
 
         message_vision(HIC "$N" HIC "雙目微閉，頓時全身上下被一道金光籠罩，慢慢地，金光擴散開來 …………\n" NOR, me);
 
@@ -47,7 +47,7 @@ int perform(object me, string skill, string arg)
 
                         if (1)
                         {                        
-                                tell_object(tob, HIW + me->name() + "施展出絕招「舍我其誰」，恢復所有隊友的精力及氣血。\n" NOR);
+                                tell_object(tob, HIW + me->name() + "施展出絕招「捨我其誰」，恢復所有隊友的精力及氣血。\n" NOR);
                                 qi = 500 + me->query_joblv() * 50 + me->query("lhpoint/special/shewo")* 400;
                                 jing = 200 + me->query_joblv() * 30 + me->query("lhpoint/special/shewo") * 300;
 

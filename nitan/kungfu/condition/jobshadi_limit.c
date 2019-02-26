@@ -17,14 +17,14 @@ int update_condition(object me, int duration)
         if( query_temp("guo_shoucheng/where", me) != room
          && !query_temp("guo_shoucheng/job_over", me) )
         {
-                message_vision(HIY "一個宋兵跑過來對$N說道：叫你守城，你卻到處閒逛，我去報告郭大人！\n" NOR, me);
+                message_vision(HIY "一個宋兵跑過來對$N説道：叫你守城，你卻到處閒逛，我去報告郭大人！\n" NOR, me);
                 set_temp("guo_shoucheng/failed", 1, me);
                 me->apply_condition("jobshadi_limit", 0);  
         }
 
         if( query_temp("guo_shoucheng/start_job", me )
          && query_temp("guo_shoucheng/where", me) == room )
-         message_vision(HIY"$N正站在城牆上密切注視著城下"HIR"蒙古兵"HIY"的一舉一動。\n"NOR,me);
+         message_vision(HIY"$N正站在城牆上密切注視着城下"HIR"蒙古兵"HIY"的一舉一動。\n"NOR,me);
 
         if (me->is_ghost())
         {
@@ -37,7 +37,7 @@ int update_condition(object me, int duration)
         {
                 message_vision(HIW "這時從蒙古軍營傳來陣陣戰鼓聲音，攻城的蒙古大軍忽然開始撤退了！\n" NOR, me);   
 
-                message_vision(CYN "\n一個守城宋兵跑過來說道：蒙古靼子暫時被擊退了，$N可以回去復命了！\n" NOR, me);
+                message_vision(CYN "\n一個守城宋兵跑過來説道：蒙古靼子暫時被擊退了，$N可以回去覆命了！\n" NOR, me);
                 if( query_temp("guo_shoucheng/start_job", me) )
                         set_temp("guo_shoucheng/job_over", 1, me);
                 delete_temp("guo_shoucheng/start_job", me);

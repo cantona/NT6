@@ -15,7 +15,7 @@ int exert(object me, object target)
                 return notify_fail("戰鬥中運功療傷？找死嗎？\n");
 
         if( me->is_busy() )
-                return notify_fail("你現在正忙著呢，哪有空運功？\n");
+                return notify_fail("你現在正忙着呢，哪有空運功？\n");
 
         if( (int)me->query_skill("hamagong", 1) < 20)
                 return notify_fail("你的蛤蟆功修為還不夠。\n");

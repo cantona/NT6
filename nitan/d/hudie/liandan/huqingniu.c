@@ -74,16 +74,16 @@ int accept_object(object who, object ob)
 {
     
        if( !query("peifang", who) )
-       	return notify_fail("胡青牛皺眉說道：你不是明教弟子，給我錢，我就會給你治病嗎？\n");
+       	return notify_fail("胡青牛皺眉説道：你不是明教弟子，給我錢，我就會給你治病嗎？\n");
 
     	if( query("money_id", ob) && ob->value()<100000 )
     	{
-	       return notify_fail("胡青牛皺眉說道：這麼一點點錢，還不夠給煉藥童子的零用呢！\n");
+	       return notify_fail("胡青牛皺眉説道：這麼一點點錢，還不夠給煉藥童子的零用呢！\n");
     	}
 
     	else if( query("money_id", ob) && ob->value() >= 100000 )
     	{
-        	message_vision ("胡青牛說道："+RANK_D->query_respect(who)+"，上次的配方煉不出來？沒關系，我這裡的藥方還多著呢。\n");
+        	message_vision ("胡青牛説道："+RANK_D->query_respect(who)+"，上次的配方煉不出來？沒關係，我這裏的藥方還多着呢。\n");
         delete("peifang", 	who);
         delete("mubiao", 	who);
         	return 1;
@@ -107,13 +107,13 @@ int ask_puti()
 
 	if((int)who->query_skill("liandan-shu",1) < 200)
 	{
-		message_vision ("$N說道："+RANK_D->query_respect(who)+"，你的煉丹能力不足，不能煉制菩提子。\n",me);
+		message_vision ("$N説道："+RANK_D->query_respect(who)+"，你的煉丹能力不足，不能煉製菩提子。\n",me);
 		return 1;
 	}
 
 	if( query("peifang", who) )
 	{
-		message_vision ("$N說道："+RANK_D->query_respect(who)+"，我上次給你的配方煉好了嗎？\n",me);
+		message_vision ("$N説道："+RANK_D->query_respect(who)+"，我上次給你的配方煉好了嗎？\n",me);
 		return 1;
 	}
 
@@ -127,7 +127,7 @@ int ask_puti()
 set("peifang", peifang, 	who);
 set("mubiao", "putizi", 	who);
 
-   	message_vision("$N露出深思的神色，對$n說道：菩提子的配方嗎？我這裡正好有一個，但是需要"+query("name", gen)+"、"
+   	message_vision("$N露出深思的神色，對$n説道：菩提子的配方嗎？我這裏正好有一個，但是需要"+query("name", gen)+"、"
 	+query("name", mu)+"、"+query("name", cao)+"、"+query("name", hua)+"、"+query("name", guo)+"這五味藥材才能煉成。\n",me,who);
 	destruct(gen);
 	destruct(mu);
@@ -152,13 +152,13 @@ int ask_yuqing()
 
 	if((int)who->query_skill("liandan-shu",1) < 200)
 	{
-		message_vision ("$N說道："+RANK_D->query_respect(who)+"，你的煉丹能力不足，不能煉制玉清散。\n",me);
+		message_vision ("$N説道："+RANK_D->query_respect(who)+"，你的煉丹能力不足，不能煉製玉清散。\n",me);
 		return 1;
 	}
 
 	if( query("peifang", who) )
 	{
-		message_vision ("$N說道："+RANK_D->query_respect(who)+"，我上次給你的配方煉好了嗎？\n",me);
+		message_vision ("$N説道："+RANK_D->query_respect(who)+"，我上次給你的配方煉好了嗎？\n",me);
 		return 1;
 	}
 
@@ -173,7 +173,7 @@ set("peifang", peifang, 	who);
 set("mubiao", "yuqingsan", 	who);
 
 
-   	message_vision("$N露出深思的神色，對$n說道：玉清散的配方嗎？我這裡正好有一個，但是需要"+query("name", gen)+"、"
+   	message_vision("$N露出深思的神色，對$n説道：玉清散的配方嗎？我這裏正好有一個，但是需要"+query("name", gen)+"、"
 	+query("name", mu)+"、"+query("name", cao)+"、"+query("name", hua)+"、"+query("name", guo)+"這五味藥材才能煉成。\n",me,who);
 	destruct(gen);
 	destruct(mu);
@@ -195,7 +195,7 @@ int ask_yangjing()
 
 	if( query("peifang", who) )
 	{
-		message_vision ("$N說道："+RANK_D->query_respect(who)+"，我上次給你的配方煉好了嗎？\n",me);
+		message_vision ("$N説道："+RANK_D->query_respect(who)+"，我上次給你的配方煉好了嗎？\n",me);
 		return 1;
 	}
 
@@ -206,7 +206,7 @@ set("peifang", peifang, 	who);
 set("mubiao", "yangjing", 	who);
 
 
-   	message_vision("$N露出深思的神色，對$n說道：養精丹的配方嗎？我這裡正好有一個，但是需要"+query("name", gen)+"、"
+   	message_vision("$N露出深思的神色，對$n説道：養精丹的配方嗎？我這裏正好有一個，但是需要"+query("name", gen)+"、"
 	+query("name", mu)+"這兩味藥材才能煉成。\n",me,who);
 	destruct(gen);
 	destruct(mu);
@@ -224,7 +224,7 @@ int ask_jinchuang()
 
 	if( query("peifang", who) )
 	{
-		message_vision ("$N說道："+RANK_D->query_respect(who)+"，我上次給你的配方煉好了嗎？\n",me);
+		message_vision ("$N説道："+RANK_D->query_respect(who)+"，我上次給你的配方煉好了嗎？\n",me);
 		return 1;
 	}
 
@@ -235,7 +235,7 @@ addn("peifang", peifang, 	who);
 set("mubiao", "jinchuang", 	who);
 
 
-   	message_vision("$N露出深思的神色，對$n說道：金創藥的配方嗎？我這裡正好有一個，但是需要"+query("name", gen)+"、"
+   	message_vision("$N露出深思的神色，對$n説道：金創藥的配方嗎？我這裏正好有一個，但是需要"+query("name", gen)+"、"
 	+query("name", cao)+"這兩味藥材才能煉成。\n",me,who);
 	destruct(gen);
 	destruct(cao);
@@ -255,13 +255,13 @@ int ask_jiuhua()
 
 	if((int)who->query_skill("liandan-shu",1) < 50)
 	{
-		message_vision ("$N說道："+RANK_D->query_respect(who)+"，你的煉丹能力不足，不能煉制九花玉露丸。\n",me);
+		message_vision ("$N説道："+RANK_D->query_respect(who)+"，你的煉丹能力不足，不能煉製九花玉露丸。\n",me);
 		return 1;
 	}
 
 	if( query("peifang", who) )
 	{
-		message_vision ("$N說道："+RANK_D->query_respect(who)+"，我上次給你的配方煉好了嗎？\n",me);
+		message_vision ("$N説道："+RANK_D->query_respect(who)+"，我上次給你的配方煉好了嗎？\n",me);
 		return 1;
 	}
 
@@ -274,7 +274,7 @@ set("peifang", peifang, 	who);
 set("mubiao", "jiuhuawan", 	who);
 
 
-   	message_vision("$N露出深思的神色，對$n說道：九花玉露丸的配方嗎？我這裡正好有一個，但是需要"+query("name", gen)+"、"
+   	message_vision("$N露出深思的神色，對$n説道：九花玉露丸的配方嗎？我這裏正好有一個，但是需要"+query("name", gen)+"、"
 	+query("name", mu)+"、"+query("name", cao)+"這三味藥材才能煉成。\n",me,who);
 	destruct(gen);
 	destruct(mu);
@@ -295,13 +295,13 @@ int ask_jifeng()
 
 	if((int)who->query_skill("liandan-shu",1) < 50)
 	{
-		message_vision ("$N說道："+RANK_D->query_respect(who)+"，你的煉丹能力不足，不能煉制疾風驟雨丹。\n",me);
+		message_vision ("$N説道："+RANK_D->query_respect(who)+"，你的煉丹能力不足，不能煉製疾風驟雨丹。\n",me);
 		return 1;
 	}
 
 	if( query("peifang", who) )
 	{
-		message_vision ("$N說道："+RANK_D->query_respect(who)+"，我上次給你的配方煉好了嗎？\n",me);
+		message_vision ("$N説道："+RANK_D->query_respect(who)+"，我上次給你的配方煉好了嗎？\n",me);
 		return 1;
 	}
 
@@ -314,7 +314,7 @@ set("peifang", peifang, 	who);
 set("mubiao", "jifengdan", 	who);
 
 
-   	message_vision("$N露出深思的神色，對$n說道：疾風驟雨丹的配方嗎？我這裡正好有一個，但是需要"+query("name", gen)+"、"
+   	message_vision("$N露出深思的神色，對$n説道：疾風驟雨丹的配方嗎？我這裏正好有一個，但是需要"+query("name", gen)+"、"
 	+query("name", mu)+"、"+query("name", cao)+"這三味藥材才能煉成。\n",me,who);
 	destruct(gen);
 	destruct(mu);
@@ -336,13 +336,13 @@ int ask_zhengqi()
 
 	if((int)who->query_skill("liandan-shu",1) < 100)
 	{
-		message_vision ("$N說道："+RANK_D->query_respect(who)+"，你的煉丹能力不足，不能煉制正人君子丹。\n",me);
+		message_vision ("$N説道："+RANK_D->query_respect(who)+"，你的煉丹能力不足，不能煉製正人君子丹。\n",me);
 		return 1;
 	}
 
 	if( query("peifang", who) )
 	{
-		message_vision ("$N說道："+RANK_D->query_respect(who)+"，我上次給你的配方煉好了嗎？\n",me);
+		message_vision ("$N説道："+RANK_D->query_respect(who)+"，我上次給你的配方煉好了嗎？\n",me);
 		return 1;
 	}
 
@@ -356,7 +356,7 @@ set("peifang", peifang, 	who);
 set("mubiao", "zhengrendan", 	who);
 
 
-   	message_vision("$N露出深思的神色，對$n說道：正人君子丹的配方嗎？我這裡正好有一個，但是需要"+query("name", gen)+"、"
+   	message_vision("$N露出深思的神色，對$n説道：正人君子丹的配方嗎？我這裏正好有一個，但是需要"+query("name", gen)+"、"
 	+query("name", mu)+"、"+query("name", cao)+"、"+query("name", hua)+"這四味藥材才能煉成。\n",me,who);
 	destruct(gen);
 	destruct(mu);
@@ -378,13 +378,13 @@ int ask_xieqi()
 
 	if((int)who->query_skill("liandan-shu",1) < 100)
 	{
-		message_vision ("$N說道："+RANK_D->query_respect(who)+"，你的煉丹能力不足，不能煉制心狠手辣丹。\n",me);
+		message_vision ("$N説道："+RANK_D->query_respect(who)+"，你的煉丹能力不足，不能煉製心狠手辣丹。\n",me);
 		return 1;
 	}
 
 	if( query("peifang", who) )
 	{
-		message_vision ("$N說道："+RANK_D->query_respect(who)+"，我上次給你的配方煉好了嗎？\n",me);
+		message_vision ("$N説道："+RANK_D->query_respect(who)+"，我上次給你的配方煉好了嗎？\n",me);
 		return 1;
 	}
 
@@ -398,7 +398,7 @@ set("peifang", peifang, 	who);
 set("mubiao", "xinhendan", 	who);
 
 
-   	message_vision("$N露出深思的神色，對$n說道：心狠手辣丹的配方嗎？我這裡正好有一個，但是需要"+query("name", gen)+"、"
+   	message_vision("$N露出深思的神色，對$n説道：心狠手辣丹的配方嗎？我這裏正好有一個，但是需要"+query("name", gen)+"、"
 	+query("name", mu)+"、"+query("name", cao)+"、"+query("name", guo)+"這四味藥材才能煉成。\n",me,who);
 	destruct(gen);
 	destruct(mu);
@@ -422,13 +422,13 @@ int ask_longxi()
 
 	if((int)who->query_skill("liandan-shu",1) < 200)
 	{
-		message_vision ("$N說道："+RANK_D->query_respect(who)+"，你的煉丹能力不足，不能煉制龍犀百草丹。\n",me);
+		message_vision ("$N説道："+RANK_D->query_respect(who)+"，你的煉丹能力不足，不能煉製龍犀百草丹。\n",me);
 		return 1;
 	}
 
 	if( query("peifang", who) )
 	{
-		message_vision ("$N說道："+RANK_D->query_respect(who)+"，我上次給你的配方煉好了嗎？\n",me);
+		message_vision ("$N説道："+RANK_D->query_respect(who)+"，我上次給你的配方煉好了嗎？\n",me);
 		return 1;
 	}
 
@@ -443,7 +443,7 @@ set("peifang", peifang, 	who);
 set("mubiao", "longxidan", 	who);
 
 
-   	message_vision("$N露出深思的神色，對$n說道：龍犀百草丹的配方嗎？我這裡正好有一個，但是需要"+query("name", gen)+"、"
+   	message_vision("$N露出深思的神色，對$n説道：龍犀百草丹的配方嗎？我這裏正好有一個，但是需要"+query("name", gen)+"、"
 	+query("name", mu)+"、"+query("name", cao)+"、"+query("name", hua)+"、"+query("name", guo)+"這五味藥材才能煉成。\n",me,who);
 	destruct(gen);
 	destruct(mu);
@@ -466,13 +466,13 @@ int ask_xiaoke()
 
 	if((int)who->query_skill("liandan-shu",1) < 50)
 	{
-		message_vision ("$N說道："+RANK_D->query_respect(who)+"，你的煉丹能力不足，不能煉制消渴止餓丹。\n",me);
+		message_vision ("$N説道："+RANK_D->query_respect(who)+"，你的煉丹能力不足，不能煉製消渴止餓丹。\n",me);
 		return 1;
 	}
 
 	if( query("peifang", who) )
 	{
-		message_vision ("$N說道："+RANK_D->query_respect(who)+"，我上次給你的配方煉好了嗎？\n",me);
+		message_vision ("$N説道："+RANK_D->query_respect(who)+"，我上次給你的配方煉好了嗎？\n",me);
 		return 1;
 	}
 
@@ -485,7 +485,7 @@ set("peifang", peifang, 	who);
 set("mubiao", "xiaokedan", 	who);
 
 
-   	message_vision("$N露出深思的神色，對$n說道：消渴止餓丹的配方嗎？我這裡正好有一個，但是需要"+query("name", gen)+"、"
+   	message_vision("$N露出深思的神色，對$n説道：消渴止餓丹的配方嗎？我這裏正好有一個，但是需要"+query("name", gen)+"、"
 	+query("name", mu)+"、"+query("name", cao)+"這三味藥材才能煉成。\n",me,who);
 	destruct(gen);
 	destruct(mu);

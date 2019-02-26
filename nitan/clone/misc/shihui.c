@@ -30,10 +30,10 @@ int do_guo(string arg)
 
         if( !arg ) return notify_fail("你要用石灰粉包裹什麼東西？\n");
         if(!present(this_object(), me)) return 0;
-        if( me->is_busy() ) return notify_fail("你正忙著其它事呢。\n");
+        if( me->is_busy() ) return notify_fail("你正忙着其它事呢。\n");
 
         if( !objectp(ob = present(arg, me)) )
-                return notify_fail("這裡沒有這樣東西。\n");
+                return notify_fail("這裏沒有這樣東西。\n");
         if( living(ob) || !ob->id("head") )
                 return notify_fail("石灰粉只能用來包裹頭顱。\n");
         message_vision("$N掏出一把石灰粉，把$n厚厚實實地包上。\n", me, ob);

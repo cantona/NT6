@@ -90,22 +90,22 @@ void attempt_apprentice(object ob)
 
         if( query("family/family_name", ob) == "唐門世家" && query("combat_exp", ob)>1000000 )
         {
-                message_vision("唐老爺子微微一笑，對$N說道:“想拜師的話去找老太太吧，我已經不收徒弟了！”\n",ob);
-                message_vision("唐老爺子微微一頓，又道:“不過，既然你已經找到我這裡了，我就指點你幾招吧！”\n",ob);
+                message_vision("唐老爺子微微一笑，對$N説道:“想拜師的話去找老太太吧，我已經不收徒弟了！”\n",ob);
+                message_vision("唐老爺子微微一頓，又道:“不過，既然你已經找到我這裏了，我就指點你幾招吧！”\n",ob);
                 command("say 好吧，從今天起你就是我的關門弟子了。\n");
                 command("recruit "+query("id", ob));
         }
         else
                 if( query("family/family_name", ob) != "唐門世家" )
                 {
-                        message_vision("\n唐老爺子微微一笑，對$N說道:“你不知我唐門乃是世家，不收外姓弟子嘛！”\n",ob);
-                        message_vision("唐老爺子微微一頓，又道:“不過，既然你已經找到我這裡了，就喝杯茶再走吧！”\n",ob);
-                        tell_object(ob, "唐老爺子見你有些猶豫，說道:“這茶可是極其珍貴，喝了可以固本培元，對習武之人可是大大的有益啊！”\n\n");
+                        message_vision("\n唐老爺子微微一笑，對$N説道:“你不知我唐門乃是世家，不收外姓弟子嘛！”\n",ob);
+                        message_vision("唐老爺子微微一頓，又道:“不過，既然你已經找到我這裏了，就喝杯茶再走吧！”\n",ob);
+                        tell_object(ob, "唐老爺子見你有些猶豫，説道:“這茶可是極其珍貴，喝了可以固本培元，對習武之人可是大大的有益啊！”\n\n");
                         write(YEL"你要喝嗎？請輸入選擇（y)/n ："NOR);
                         input_to("accept_cha", 1, ob, 1);
                 }
                 else
-                        tell_object(ob, "唐老爺子惋惜的對你說:“可惜你的功夫還不到家，不能使用我的絕技！你以後再來吧！”\n");
+                        tell_object(ob, "唐老爺子惋惜的對你説:“可惜你的功夫還不到家，不能使用我的絕技！你以後再來吧！”\n");
         return;
 }
 
@@ -114,13 +114,13 @@ void accept_cha(string want, object ob, int forever)
         if ( want == "" || want == "y" || want == "Y" )
         {
                 message_vision("唐老爺子微一抬手，便有一家丁給$N奉上了一杯香茶！\n",ob);
-                tell_object(ob, "只見茶水發出淡淡的綠色，正冒著熱氣，幾片不知名的葉片漂在杯中，聞起來清香撲鼻。\n");
+                tell_object(ob, "只見茶水發出淡淡的綠色，正冒着熱氣，幾片不知名的葉片漂在杯中，聞起來清香撲鼻。\n");
                 message_vision("$N將茶杯端起，美美的喝了一口。\n", ob);
                 call_out("dead", 120, ob);
         }
         else
         {
-                message_vision("\n唐老爺子勃然大怒，對$N喝道:“讓你好死你不要，非要我動手嗎！我這裡是不能被外人知道的！”\n",ob);
+                message_vision("\n唐老爺子勃然大怒，對$N喝道:“讓你好死你不要，非要我動手嗎！我這裏是不能被外人知道的！”\n",ob);
                 this_object()->kill_ob(ob);
                 ob->fight_ob(this_object());
         }
@@ -132,5 +132,5 @@ int dead(object ob)
         tell_room(environment(ob),HIR+query("name", ob)+"突然一頭栽倒在地上！"NOR,ob);
         set_temp("die_reason", "中唐門奇毒而死", ob);
         ob->die();
-        tell_room( environment(this_object()), "唐老爺子長嘆一聲:“唉！外人怎麼會闖進來了呢！”");
+        tell_room( environment(this_object()), "唐老爺子長歎一聲:“唉！外人怎麼會闖進來了呢！”");
 }

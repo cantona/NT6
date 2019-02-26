@@ -6,8 +6,8 @@ void create()
         set("short", "獨木橋");
         set("long", @LONG
 這是一條寬約七寸的獨木橋(bridge)，天風凜冽，吹的人
-衣襟頭發齊飛，只要一不留神，稍一失足，立刻便要粉身碎骨。
-兩崖相隔，約有五十余丈，往下看，峭壁如刀削，雲卷霧湧深
+衣襟頭髮齊飛，只要一不留神，稍一失足，立刻便要粉身碎骨。
+兩崖相隔，約有五十餘丈，往下看，峭壁如刀削，雲卷霧湧深
 不見底，投塊石子下去，也聽不到回聲！
 LONG);
         set("exits", ([ 
@@ -35,7 +35,7 @@ int do_zou(string arg)
 
         if (me->query_skill("dodge", 1) < 100)
                 return notify_fail(HIY "\n你戰戰兢兢地向前邁出兩"
-                                   "步，可突然間谷風刮過，危橋一"
+                                   "步，可突然間穀風刮過，危橋一"
                                    "陣狂\n顫，嚇得你趕忙收回了腳"
                                    "步。\n" NOR);
 
@@ -49,6 +49,6 @@ int do_zou(string arg)
                        "去。\n" NOR, me);
         me->move(room);
         message_vision(HIW "$N" HIW "從獨木橋上飄然而下，來到了山"
-                       "峰的對面。\n" NOR, me);
+                       "峯的對面。\n" NOR, me);
         return 1;
 }

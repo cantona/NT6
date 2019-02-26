@@ -6,7 +6,7 @@ void create()
 {
         set("short", "山谷");
         set("long", @LONG
-這裡是一處山谷，上面種植著草坪。南面是『日月神教』的青龍
+這裏是一處山谷，上面種植着草坪。南面是『日月神教』的青龍
 堂。向西有一條上山的石道。
 LONG );
         set("outdoors", "heimuya");

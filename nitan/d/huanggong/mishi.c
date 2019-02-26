@@ -53,7 +53,7 @@ int do_open(string arg)
         object room;
 
         if (query("exits/south"))
-                return notify_fail("暗門已經是開著了。\n");
+                return notify_fail("暗門已經是開着了。\n");
 
         if (!arg || (arg != "door" && arg != "south"))
                 return notify_fail("你要開什麼？\n");
@@ -66,7 +66,7 @@ int do_open(string arg)
                 set("exits/south", __DIR__"yushufang");
                 message_vision("$N使勁把暗門打了開來。\n",this_player());
                 set("exits/north", __FILE__, room);
-                message("vision","裡面有人把暗門打開了。\n",room);
+                message("vision","裏面有人把暗門打開了。\n",room);
                 remove_call_out("close_gate");
                 call_out("close_gate", 10);
         }

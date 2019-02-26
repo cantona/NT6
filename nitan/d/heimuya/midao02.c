@@ -6,9 +6,9 @@ inherit ROOM;
 
 void create()
 {
-     set("short", "秘道");
+     set("short", "祕道");
         set("long", @LONG
-這是日月神教極其秘密的通道。日月神教武功多為詭秘異功，為
+這是日月神教極其祕密的通道。日月神教武功多為詭祕異功，為
 免外人打擾，故教中弟子多在此地練功。
 LONG );
      set("exits", ([

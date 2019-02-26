@@ -7,9 +7,9 @@ void create()
 {
         set("short", "王盤山漁港");
         set("long", @LONG
-這裡就是王盤島山漁港了。北邊是一望無際的大海；往西北是一
-片樹林。島上的空氣似乎又熱又悶，咸濕的海風中帶著一股腥臭。海
-邊泊著幾艘大船(chuan)。
+這裏就是王盤島山漁港了。北邊是一望無際的大海；往西北是一
+片樹林。島上的空氣似乎又熱又悶，鹹濕的海風中帶着一股腥臭。海
+邊泊着幾艘大船(chuan)。
 LONG );
         set("outdoors", "wangpan");
         set("no_clean_up", 0);
@@ -61,7 +61,7 @@ void fore1( object ob )
 {
         tell_object(ob , "四周一望無際的大海。你不禁有點心下惴惴。\n" ) ;
         ob->move (__DIR__"eastboat2") ;
-        tell_object(ob, BLU "這船去哪裡呢？你不禁有點緊張......\n" NOR ) ;
+        tell_object(ob, BLU "這船去哪裏呢？你不禁有點緊張......\n" NOR ) ;
         call_out("fore2", 10 , ob );
 }
 void fore2( object ob )

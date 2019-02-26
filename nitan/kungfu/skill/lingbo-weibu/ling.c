@@ -58,7 +58,7 @@ int perform(object me, object target)
 
         if (ap / 2 + random(ap) > dp)
         {
-                msg = HIW "$N猶如神仙下凡，$n跟隨著$N的舞步轉了個頭暈眼花\n" NOR;
+                msg = HIW "$N猶如神仙下凡，$n跟隨着$N的舞步轉了個頭暈眼花\n" NOR;
                 if (! target->is_busy())
                 target->start_busy(ap / 60 + 4);
                 addn("neili", -400, me);

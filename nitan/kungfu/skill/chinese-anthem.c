@@ -62,9 +62,9 @@ void do_effect(object me)
         }
 
         message("vision", HIY "你聽了這首慷慨激昂的國歌，不禁激"
-                "動萬分，說不出的興奮。\n" NOR, obs, ({ me }));
+                "動萬分，説不出的興奮。\n" NOR, obs, ({ me }));
         tell_object(me, HIY "你演奏完了這首慷慨激昂的國歌，不禁激"
-                "動萬分，說不出的興奮。\n" NOR);
+                "動萬分，説不出的興奮。\n" NOR);
         if (attacker)
         {
                 if( query("gender", attacker) == "女性" )

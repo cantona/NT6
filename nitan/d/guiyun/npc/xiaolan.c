@@ -5,7 +5,7 @@ inherit NPC;
 void create()
 {
         set_name("小蘭", ({ "xiao lan", "lan" }));
-        set("long", "一個模樣乖巧的小丫環，紮兩個發環，眼睛大大的，嘴角淺淺一對酒窩。\n");
+        set("long", "一個模樣乖巧的小丫環，扎兩個發環，眼睛大大的，嘴角淺淺一對酒窩。\n");
         set("gender", "女性");
         set("age", 15);
         set("combat_exp", 1000);

@@ -8,7 +8,7 @@ void create()
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("long", YEL "傳說上古時期大禹治水曾使用的奇異土壤。\n" NOR);
+                set("long", YEL "傳説上古時期大禹治水曾使用的奇異土壤。\n" NOR);
                 set("unit", "盤");
                 set("value", 50000);
         }

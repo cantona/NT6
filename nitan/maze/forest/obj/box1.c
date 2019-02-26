@@ -7,7 +7,7 @@ void create()
         set_weight(300);
         set_max_encumbrance(80000000);
         set("unit", "些");
-        set("long", "一個散發著神秘光芒的寶箱，或許可以打開(open)它。\n");
+        set("long", "一個散發着神祕光芒的寶箱，或許可以打開(open)它。\n");
         set("closed", 1);
         set("no_get", 1);
         set("base_value", 200);

@@ -11,12 +11,12 @@ void create()
         ]));
 
         set("long", @LONG
-這是一間空曠的石室，不遠處有個一石凳，你不禁想象這裡曾經
+這是一間空曠的石室，不遠處有個一石凳，你不禁想象這裏曾經
 像是有人在上面來打坐或者參悟武學至高境界。你隱約發現前方石壁
-（bi）上像是刻著什麼東西。
+（bi）上像是刻着什麼東西。
 LONG );
         set("item_desc", ([
-               "bi"  :   HIW "\n\t\t□\n\t\t招\n\t\t勝\n\t\t有\n\t\t招\n\n」" NOR,
+               "bi"  :   HIW "\n\t\t無\n\t\t招\n\t\t勝\n\t\t有\n\t\t招\n\n」" NOR,
         ]));                       
         
         set("no_clean_up", 0);

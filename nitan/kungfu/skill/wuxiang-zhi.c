@@ -26,7 +26,7 @@ mapping *action = ({
         "lvl"   : 100,
         "skill_name" : "穎悟無相劫"
 ]),
-([        "action" : "但聞哧哧兩聲，$n臉色突變，$N卻悠閒自在，並無動過手的跡象，這好象是那招"HIW"「圓覺無相劫」"NOR"",
+([        "action" : "但聞哧哧兩聲，$n臉色突變，$N卻悠閒自在，並無動過手的跡象，這好像是那招"HIW"「圓覺無相劫」"NOR"",
         "lvl"   : 150,
         "skill_name" : "圓覺無相劫"
 ]),
@@ -44,14 +44,14 @@ mapping *action = ({
        "skill_name" : "無聲無息",
        "damage_type" : "刺傷"
 ]),
-([     "action": "$N一招「無欲無望」，輕唱一聲佛號，左右看似隨意一彈，一屢勁風已射向$n",
+([     "action": "$N一招「無慾無望」，輕唱一聲佛號，左右看似隨意一彈，一屢勁風已射向$n",
        "force" : 90,
        "attack": 30,
        "parry" : 5,
        "dodge" : 20,
        "damage": 50,
        "lvl"   : 40,
-       "skill_name" : "無欲無望",
+       "skill_name" : "無慾無望",
        "damage_type" : "刺傷"
 ]),
 ([     "action": "$N身形飄忽不定，一式「無法無天」，右指擊向$n的$l",
@@ -94,7 +94,7 @@ mapping *action = ({
        "skill_name" : "佛法無邊",
        "damage_type" : "刺傷"
 ]),
-([     "action": "$N雙目緊閉，一招「無色無相」，聚集全身內力于一指射出一道無色勁氣直逼$n",
+([     "action": "$N雙目緊閉，一招「無色無相」，聚集全身內力於一指射出一道無色勁氣直逼$n",
        "force" : 250,
        "attack": 100,
        "parry" : 50,

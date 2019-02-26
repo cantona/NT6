@@ -12,7 +12,7 @@ void create()
         set("gender", "男性");
         set("age", 22+random(23));
         set("long", @LONG
-他帶著一副冰冷的面具，無法辨識模樣。
+他帶着一副冰冷的面具，無法辨識模樣。
 LONG);
         set("attitude", "friendly");
         set("str", 80);

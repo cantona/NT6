@@ -9,7 +9,7 @@ void create()
         set("gender", "男性");
         set("title", HIW "人道守護者" NOR);
         set("age", 200);
-        set("long", HIC "守衛六道中的人道的佛。\n\n" NOR);
+        set("long", HIC "守衞六道中的人道的佛。\n\n" NOR);
 
         set("age", 50);
         set("str", 91);
@@ -119,8 +119,8 @@ void win()
         if (! objectp(ob = query_competitor()))
                 return;
 
-        message_vision(HIB "$N看了看$n，嘿嘿笑道：“你知道你打不敗我意味著什麼嗎？"
-                       "就意味著死亡！哈哈！！！”\n" NOR,
+        message_vision(HIB "$N看了看$n，嘿嘿笑道：“你知道你打不敗我意味着什麼嗎？"
+                       "就意味着死亡！哈哈！！！”\n" NOR,
                        this_object(), ob);
                        
         call_out("ob_die", 1, ob);  
@@ -140,9 +140,9 @@ void lost()
         if (! objectp(ob = query_competitor()))
                 return;
 
-        message_vision( HIB "$N哎呀一聲，對$n怒道：“這次算你僥幸，下次可沒有這麼便宜了！”\n" NOR,
+        message_vision( HIB "$N哎呀一聲，對$n怒道：“這次算你僥倖，下次可沒有這麼便宜了！”\n" NOR,
                         this_object(), ob );
-        message_vision( HIB "$N說完隨手一揮，一道強風包圍你，你發現來到了閻羅殿！\n" NOR, 
+        message_vision( HIB "$N説完隨手一揮，一道強風包圍你，你發現來到了閻羅殿！\n" NOR, 
                         this_object(), ob );
                      
         set("reborn_lunhui", "rendao", ob);

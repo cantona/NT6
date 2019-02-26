@@ -45,13 +45,13 @@ void main(object ob, string who)
 			write("你離敵人太遠無法施計。\n");
 			return;}
                 tell(deep_inventory(TROOP_D->find_troop(e_id)),
-	"士兵一陣喧嘩，原來是"+p_name+"對你的部隊使用牽制之計。\n",
+	"士兵一陣喧譁，原來是"+p_name+"對你的部隊使用牽制之計。\n",
                         MSG_INDENT);
                 // In future, we have to consider effects of the
                 // ablility of general, zhenxing, dixing, etc.
                 // Now the damage depends only on the No of bowman
 	ob->simple_action(SG_SKILL_D->query_use("jiaoma"));
-	ob->start_busy(10, "你正忙于牽制敵方士氣呢。");
+	ob->start_busy(10, "你正忙於牽制敵方士氣呢。");
 	load_object("/daemons/cast_d.c")->reg_player(ob->query_primary_id(),"jiaoma");
         ob->award_exp(ob->query_sk_level("sk_zhimou")/2+random(20), "jiaoma");
 	call_out("show_result", 5+random(5), ob, who, p_id, e_id);

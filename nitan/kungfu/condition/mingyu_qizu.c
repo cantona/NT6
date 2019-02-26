@@ -13,12 +13,12 @@ int update_condition(object me, int duration)
         if (me->query_condition("killer") &&
             query("no_fight", environment(me)) )
         {
-                tell_object(me, HIR "你發現你的明玉功好象受到限制，氣血未能自動恢復！\n" NOR );
+                tell_object(me, HIR "你發現你的明玉功好像受到限制，氣血未能自動恢復！\n" NOR );
         }
         else
         {
                 tell_object(me, HIR "你的明玉功發揮了奇效，感覺損失的氣血在慢慢恢復！\n" NOR );
-                message_vision(HIW "$N眼睛中射出異樣光芒，身上的傷口奇跡般地癒合了。\n" NOR, me);
+                message_vision(HIW "$N眼睛中射出異樣光芒，身上的傷口奇蹟般地癒合了。\n" NOR, me);
         
                 set("eff_qi",query("max_qi",  me), me);
                 set("qi",query("eff_qi",  me), me);

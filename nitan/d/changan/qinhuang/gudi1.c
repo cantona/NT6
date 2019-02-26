@@ -11,7 +11,7 @@ void create()
         set("long", @LONG
 頭頂幾道陽光照在地上，腳下是一片很厚的草地，走在上面軟綿
 綿的，很是恰意，四周看上去高不可攀，怪石嶙峋，你心中不由一驚，
-要不是這片厚厚的草堆墊著，在好的輕功也會摔得變成一堆肉泥。
+要不是這片厚厚的草堆墊着，在好的輕功也會摔得變成一堆肉泥。
 LONG );
         setup();
 }
@@ -79,7 +79,7 @@ int do_enter(string arg)
         write("你想去那啊？\n");
         return 1;
         }
-        message_vision("$N恭了恭身體，鑽進了巖洞裡。\n", me);
+        message_vision("$N恭了恭身體，鑽進了巖洞裏。\n", me);
         me->move("/d/changan/mudong0");
         message_vision("“隆隆”，洞口已經封死了。\n", me);
         return 1;
@@ -88,7 +88,7 @@ void close(object room)
 {
     object me;
     me = this_player();
-    message("vision","似乎有股神秘的力量將掉落的巖石又拉了上去。\n", room);
+    message("vision","似乎有股神祕的力量將掉落的巖石又拉了上去。\n", room);
     delete_temp("braek", me);
     delete_temp("climb", me);
 }

@@ -6,7 +6,7 @@ void create()
 {
         set("short", "花園");
         set("long", @LONG
-這裡是遊府的花園。院子裡種了各色名貴的牡丹。
+這裏是遊府的花園。院子裏種了各色名貴的牡丹。
 LONG );
         set("outdoors", "luoyang");
         set("region", "luoyang");

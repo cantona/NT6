@@ -14,9 +14,9 @@ void create()
                 set_default_object(__FILE__);
         else {
                 set("long", GRN "\n這是一面由整塊墨玉雕琢而成的英雄壁。上面"
-                            "刻著當今武林中\n武功最為高強的十位英雄人物，你"
-                            "可以通過(view)來查閱排名。\n" NOR);
-                set("no_get", "好家伙，連牆都想抗起來。\n");
+                            "刻着當今武林中\n武功最為高強的十位英雄人物，你"
+                            "可以通過(view)來查閲排名。\n" NOR);
+                set("no_get", "好傢伙，連牆都想抗起來。\n");
                 set("unit", "面");
                 set("value", 1000000);
                 set("material", "stone");
@@ -39,7 +39,7 @@ int do_view(string arg)
         me = this_player();
 
         if (arg != "heros wall" && arg != "heros" && arg != "wall")
-                return notify_fail("你打算閱讀什麼？\n");
+                return notify_fail("你打算閲讀什麼？\n");
 
         // 防止系統資源消耗過大，限時瀏覽。
         if (! wizardp(me) && time() - me->query_temp("last_view") < 100)
@@ -50,20 +50,20 @@ int do_view(string arg)
 
         list = sort_array(ob, (: top_list :));
 
-        msg =  HIW "\n            □□□『" HIG " 英 雄 壁 " HIW "』□□□\n";
-        msg += "□□□□□□□□□□□□□□□□□□□□□□□□□□\n";
-        msg += "□ " HIG "排名" HIW " │    " HIG "姓        氏" HIW
-               "    │ " HIG "門  派" HIW " │ " HIG "評  價" HIW " □\n";
-        msg += "□───┴──────────┴────┴────□\n";
+        msg =  HIW "\n            ┏━━『" HIG " 英 雄 壁 " HIW "』━━┓\n";
+        msg += "┏━━━┯━┻━━━━━━━━┯━━┻━┯━━━━┓\n";
+        msg += "┃ " HIG "排名" HIW " │    " HIG "姓        氏" HIW
+               "    │ " HIG "門  派" HIW " │ " HIG "評  價" HIW " ┃\n";
+        msg += "┠───┴──────────┴────┴────┨\n";
 
         for (i = 0; i < 10; i++)
         {
                 if (i >= sizeof(list))
                 {
-                        msg += HIW "□暫時空缺。 \n" NOR;
+                        msg += HIW "┃暫時空缺。 \n" NOR;
                         continue;
                 }
-                msg += sprintf(HIW "□" HIG "  %-5s %-22s%-10s %5d  " HIW "□\n" NOR,
+                msg += sprintf(HIW "┃" HIG "  %-5s %-22s%-10s %5d  " HIW "┃\n" NOR,
                         chinese_number(i + 1),
                         list[i]->query("name") + "(" +
                         capitalize(list[i]->query("id")) + ")",
@@ -71,9 +71,9 @@ int do_view(string arg)
                         list[i]->query("family/family_name") : "江湖浪人",
                         get_score(list[i]));
         }
-        msg += HIW "□□□□□□□□□□□□□□□□□□□□□□□□□□\n" NOR;
+        msg += HIW "┗━━━━━━━━━━━━━━━━━━━━━━━━┛\n" NOR;
         msg += HIG + NATURE_D->game_time() + "記。\n" NOR;
-        msg += WHT "英雄壁下面有一行小字刻著：" + me->query("name") + "，目前評價：" +
+        msg += WHT "英雄壁下面有一行小字刻着：" + me->query("name") + "，目前評價：" +
                get_score(me) + "。\n\n" NOR;
 
         write(msg);

@@ -156,7 +156,7 @@ int do_kneel()
 
         message_vision("$N雙手合十，恭恭敬敬地跪了下來。\n\n"
                        "$n伸出手掌，在$N頭頂輕輕地摩挲了幾下，將"
-                       "$N的頭發盡數剃去。\n\n", me, this_object());
+                       "$N的頭髮盡數剃去。\n\n", me, this_object());
 
         set("class", "bonze", me);
         set("title", HIY"喇嘛"NOR, me);

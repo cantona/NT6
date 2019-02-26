@@ -10,8 +10,8 @@ void create()
         set("short","鐵琴居");
         set("long",@long
 這兒便是“鐵琴先生”何太沖的居處。房間陳設頗為精巧，物品與
-中土所見別是不同。幾個昆侖派弟子守在這裡，個個深有憂色。東邊通
-往臥室。
+中土所見別是不同。幾個崑崙派弟子守在這裏，個個深有憂色。東邊通
+往卧室。
 long );
         set("objects",([
                 CLASS_D("kunlun")+"/hetaichong" : 1,
@@ -36,9 +36,9 @@ int valid_leave(object me, string dir)
 
         if (dir == "east" &&
                 objectp(present("he taichong", environment(me))) &&
-                (!fam || fam["family_name"] != "昆侖派") &&
+                (!fam || fam["family_name"] != "崑崙派") &&
                 !query_temp("kl_pass", me) )
-                return notify_fail("何太沖攔住你，說道：裡側為內眷居住，還是請勿打擾為是。\n");
+                return notify_fail("何太沖攔住你，説道：裏側為內眷居住，還是請勿打擾為是。\n");
 
         return ::valid_leave(me, dir);
 }

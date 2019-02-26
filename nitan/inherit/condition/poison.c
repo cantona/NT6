@@ -43,7 +43,7 @@ string update_msg_self()
 
 string die_msg_others()
 {
-        return RED "$N" RED "嘶啞著叫了兩聲，就不再喘氣了。\n" NOR;
+        return RED "$N" RED "嘶啞着叫了兩聲，就不再喘氣了。\n" NOR;
 }
 
 mapping mixed_poison(mapping p1, mapping p2)
@@ -187,7 +187,7 @@ int dispel(object me, object ob, mapping cnd)
                                     "驅散" + pos + "，然而似乎沒有半點效果。"
                                     "\n" NOR);
                         tell_object(ob, MAG + me->name() + "將內力緩緩的輸"
-                                    "入你的體力，你覺得一陣惡心，幾欲嘔吐。"
+                                    "入你的體力，你覺得一陣噁心，幾欲嘔吐。"
                                     "\n" NOR);
                         me->start_busy(1);
                         if (! ob->is_busy())
@@ -390,7 +390,7 @@ int update_condition(object me, mapping cnd)
 
                 if (cnd["remain"] <= cnd["level"])
                 {
-                        message("vision", HIM + me->name() + "長長的吁"
+                        message("vision", HIM + me->name() + "長長的籲"
                                 "了一口氣，看起來神色好多了。\n" NOR,
                                 environment(me), ({ me }));
                         tell_object(me, HIM "你覺得身上的" + cnd["name"] +

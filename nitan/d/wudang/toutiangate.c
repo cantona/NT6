@@ -4,8 +4,8 @@ void create()
 {
         set("short", "頭天門");
         set("long", @LONG
-只見有石梯無數通往山巔，一座石坊上寫著頭天門三個大字，這
-是攀登武當絕頂天柱峰的起點。
+只見有石梯無數通往山巔，一座石坊上寫着頭天門三個大字，這
+是攀登武當絕頂天柱峯的起點。
 LONG );
         set("exits", ([
                 "north" : __DIR__"huixianqiao",

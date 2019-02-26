@@ -35,11 +35,11 @@ int perform(object me, object target)
 
         if (weapon)
                 msg = HIC "\n$N" HIC "舞動手中的" + weapon->name() +
-                      HIC "，朝著" + target->name() + HIC "的七寸打"
+                      HIC "，朝着" + target->name() + HIC "的七寸打"
                       "了過去。\n" NOR;
         else
                 msg = HIC "\n$N" HIC "伸出雙指，出指如風，迅躋無比的"
-                      "朝著" + target->name() + HIC "的七寸點了過去"
+                      "朝着" + target->name() + HIC "的七寸點了過去"
                       "。\n" NOR;
 
         lvl = (int) me->query_skill("shedu-qiqiao", 1) +
@@ -62,8 +62,8 @@ int perform(object me, object target)
                         target->unconcious(me);
                 } else
                 {
-                        msg += HIR + "哪裡想到" + target->name() +
-                               HIR "挨了這一擊，竟然若無其事，頓時一個翻"
+                        msg += HIR + "哪裏想到" + target->name() +
+                               HIR "捱了這一擊，竟然若無其事，頓時一個翻"
                                "身，直撲向$N" HIR "！\n\n" NOR;
                         message_combatd(msg, me);
                         target->kill_ob(me);

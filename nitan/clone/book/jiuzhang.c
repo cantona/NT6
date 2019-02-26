@@ -12,7 +12,7 @@ void create()
                 set_default_object(__FILE__);
         else {
                 set("unit", "本");
-                set("long", "這是一本薄薄的小冊子，上面寫著"
+                set("long", "這是一本薄薄的小冊子，上面寫着"
                             "“九章算術”四個古篆小字。\n");
                 set("value", 0);
                 set("material", "paper");

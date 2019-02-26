@@ -60,7 +60,7 @@ void do_wait()
         }
         else
         {
-                message_vision("$N說道：風緊！風緊！大爺先走了！\n$N一陣哄向遠處逃了開去。\n",this_object());
+                message_vision("$N説道：風緊！風緊！大爺先走了！\n$N一陣哄向遠處逃了開去。\n",this_object());
                 destruct(me);
         }
 }
@@ -74,7 +74,7 @@ void do_sha()
         remove_call_out("do_sha");
         if (! living(me) || me->fighting() )
         {
-                message_vision("$N咬牙切齒地對著天空大叫：“賊老天！”\n",me);
+                message_vision("$N咬牙切齒地對着天空大叫：“賊老天！”\n",me);
 
                 call_out("do_sha",1);
         }
@@ -85,14 +85,14 @@ void do_sha()
                         wmsg = weapon_msg[random(sizeof(weapon_msg))];
                         weapon = new(wmsg);
                         weapon->move(me);
-                        message_vision(HIW"\n$N沖著$n大喊道：你還不死！！看我的手段！\n"NOR,me, ob);
+                        message_vision(HIW"\n$N衝着$n大喊道：你還不死！！看我的手段！\n"NOR,me, ob);
                         command("shot"+query("id", ob));
                         addn("combat_num", 1, ob);
                         call_out("do_sha",1);
                 }
                 else
                 {
-                        message_vision("$N說道：大功告成！大爺先走了！\n$N一陣大哄向遠處飛馳而去。\n",me);
+                        message_vision("$N説道：大功告成！大爺先走了！\n$N一陣大哄向遠處飛馳而去。\n",me);
                         if ( cart = present("cart",environment(me)))
                         destruct(cart);
                         destruct(me);

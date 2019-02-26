@@ -71,7 +71,7 @@ void create()
 
         set("chat_chance", 20);
         set("chat_msg", ({
-                "空空兒說道: 好心的大爺哪～ 賞我要飯的幾個銅板吧～\n",
+                "空空兒説道: 好心的大爺哪～ 賞我要飯的幾個銅板吧～\n",
                 "空空兒懶洋洋地打了個哈欠。\n",
                 "空空兒伸手捉住了身上的蝨子，罵道: 老子身上沒幾兩肉，全叫你們給咬糜了。 \n",
                 (: random_move :)
@@ -160,7 +160,7 @@ int accept_object(object me, object obj)
 
 int accept_fight(object me)
 {
-        command("say " + RANK_D->query_respect(me) + "饒命□小的這就離開□\n");
+        command("say " + RANK_D->query_respect(me) + "饒命ⅵ小的這就離開ⅵ\n");
         return 0;
 }
 
@@ -188,7 +188,7 @@ void attempt_apprentice(object ob)
 void die()
 {
         object ob;
-        message_vision("$N倒在地上，掙紮了兩下，死了。\n", this_object());
+        message_vision("$N倒在地上，掙扎了兩下，死了。\n", this_object());
         ob = new("/kungfu/class/gaibang/kongkong");
         ob->move("/d/city/nandajie2");
         destruct(this_object());

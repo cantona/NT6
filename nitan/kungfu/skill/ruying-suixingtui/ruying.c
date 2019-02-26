@@ -21,7 +21,7 @@ int perform(object me, object target)
                 return notify_fail("「如影隨形」只能在戰鬥中對對手使用。\n");
 
         if( objectp(query_temp("weapon", me)) )
-                return notify_fail("使用「如影隨形」時雙手必須空著！\n");
+                return notify_fail("使用「如影隨形」時雙手必須空着！\n");
 
         if( (int)me->query_skill("ruying-suixingtui", 1) < 160 )
                 return notify_fail("你的如影隨形腿不夠嫻熟，不會使用「如影隨形」。\n");
@@ -58,7 +58,7 @@ int perform(object me, object target)
              msg = HIY "$N忽然躍起，左腳一勾一彈，霎時之間踢出一招「如」字訣的穿心腿，直襲$n前胸！"NOR;
              COMBAT_D->do_attack(me,target,query_temp("weapon", me),TYPE_QUICK,msg);
         
-             msg = HIY "緊接著$N左腿勾回，將腰身一扭，那右腿的一招「影」字訣便緊隨而至，飛向$n！"NOR;
+             msg = HIY "緊接着$N左腿勾回，將腰身一扭，那右腿的一招「影」字訣便緊隨而至，飛向$n！"NOR;
              COMBAT_D->do_attack(me,target,query_temp("weapon", me),1,msg);
  
              msg = HIY"只見$N右腳勁力未消，便凌空一轉，左腿順勢掃出一招「隨」字訣，如影而至！"NOR;
@@ -74,7 +74,7 @@ int perform(object me, object target)
              msg = HIY"$N忽然躍起，左腳一勾一彈，霎時之間踢出一招「如」字訣的穿心腿，直襲$n前胸！"NOR;
              COMBAT_D->do_attack(me,target,query_temp("weapon", me),TYPE_QUICK,msg);
         
-             msg = HIY"緊接著$N左腿勾回，將腰身一扭，那右腿的一招「影」字訣便緊隨而至，飛向$n！"NOR;
+             msg = HIY"緊接着$N左腿勾回，將腰身一扭，那右腿的一招「影」字訣便緊隨而至，飛向$n！"NOR;
              COMBAT_D->do_attack(me,target,query_temp("weapon", me),1,msg);
  
              msg = HIY"只見$N右腳勁力未消，便凌空一轉，左腿順勢掃出一招「隨」字訣，如影而至！"NOR;

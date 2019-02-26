@@ -18,7 +18,7 @@ void create()
                 set("value", 0);
                 set("material", "blacksteel");
                 set("wield_msg", 
-"只聽見「颼」地一聲，$N的手中已經多了一把寒光四射的寶劍──$n。\n");
+"只聽見「颼」地一聲，$N的手中已經多了一把寒光四射的寶劍——$n。\n");
                 set("unequip_msg", "$N將手中的$n插入腰間的劍鞘。\n");
         }
         setup();

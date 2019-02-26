@@ -25,19 +25,19 @@ int perform(object me, object target)
                 return notify_fail("你所使用的武器不對，難以施展" LUO "。\n");
 
         if ((int)me->query_skill("luoyan-jian", 1) < 150)
-                return notify_fail("你的回風落雁劍不夠嫻熟，難以施展" LUO "。\n");
+                return notify_fail("你的迴風落雁劍不夠嫻熟，難以施展" LUO "。\n");
 
         if (me->query_skill_mapped("sword") != "luoyan-jian")
-                return notify_fail("你沒有激發回風落雁劍法，難以施展" LUO "。\n");
+                return notify_fail("你沒有激發迴風落雁劍法，難以施展" LUO "。\n");
 
         if( query("neili", me)<400 )
                 return notify_fail("你目前的真氣不夠，難以施展" LUO "。\n");
 
         if (! living(target))
-                return notify_fail("對方都已經這樣了，用不著這麼費力吧？\n");
+                return notify_fail("對方都已經這樣了，用不着這麼費力吧？\n");
 
         msg = HIW "\n$N" HIW "驀的一聲清嘯，施出衡山派絕學「" HIR "一劍落九雁"
-              HIW "」，手中" + weapon->name() + HIW "青光盪漾。霎時間回風"
+              HIW "」，手中" + weapon->name() + HIW "青光盪漾。霎時間迴風"
               "落雁劍劍招連綿湧出，有如神助，劍氣籠罩$n" HIW "四方。" NOR;
 
         message_sort(msg, me, target);

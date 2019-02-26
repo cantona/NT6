@@ -29,8 +29,8 @@ int clean_up() { return 1; }
 nosave mapping mazelist;                                  // 所有迷宮列表
 nosave int mazeindex = 0;                                 // 所有迷宮索引  
 nosave int show_local_room = 1;                           // 是否顯示玩家所在的位置   
-nosave mixed dead_room_list;                              // 在創建迷宮時記錄死胡同       
-nosave object *all_dead_room;                             // 記錄所有在死胡同中的房間    
+nosave mixed dead_room_list;                              // 在創建迷宮時記錄死衚衕       
+nosave object *all_dead_room;                             // 記錄所有在死衚衕中的房間    
  
 // 定義提供給外部調用的接口函數
 public void check_maze(string mazename);                  // 檢查迷宮的狀態 
@@ -262,13 +262,13 @@ public object create_maze(object npc)
         
         tempmaze["roomlist"] = mazeroom;
     
-        // 給迷宮分布寶箱和陷阱
+        // 給迷宮分佈寶箱和陷阱
         init_special_room(tempmaze);
 
         // 將迷宮交給守護進程管理
         mazelist[mazename] = tempmaze;
 
-        // 創建迷宮布局
+        // 創建迷宮佈局
         init_maze(mazename);
     
         // 返回迷宮的出口房間
@@ -500,7 +500,7 @@ public void init_maze(string mazename)
         // 初始化迷宮路線
         init_road(mazeroom[maze["entry"][0]][maze["entry"][1]], maze);
     
-        // 給路線上的房間制造岔路
+        // 給路線上的房間製造岔路
         roomlist = ({ });
         for ( i = 0; i < sizeof(mazeroom); i++ )
         {
@@ -724,7 +724,7 @@ void init_wall(object room, mapping maze)
         w = room->query("maze/x");
         l = room->query("maze/y");
     
-        // 向NORTH方向制造岔路
+        // 向NORTH方向製造岔路
         if ( w > 0 && room->query("maze/north") == NOT_DEFINED )
         {
                 next_w = w - 1;
@@ -750,7 +750,7 @@ void init_wall(object room, mapping maze)
                 }
         }
     
-        // 向SOUTH方向制造岔路
+        // 向SOUTH方向製造岔路
         if ( w < HEIGHT - 1 && room->query("maze/south") == NOT_DEFINED )
         {
                 next_w = w + 1;
@@ -776,7 +776,7 @@ void init_wall(object room, mapping maze)
                 }
         }
 
-        // 向EAST方向制造岔路
+        // 向EAST方向製造岔路
         if ( l < LENGTH - 1 && room->query("maze/east") == NOT_DEFINED )
         {
                 next_w = w;
@@ -802,7 +802,7 @@ void init_wall(object room, mapping maze)
                 }
         }
 
-        // 向WEST方向制造岔路
+        // 向WEST方向製造岔路
         if ( l > 0 && room->query("maze/west") == NOT_DEFINED )
         {
                 next_w = w;
@@ -844,7 +844,7 @@ object *finish_room(object room, mapping maze)
         w = room->query("maze/x");
         l = room->query("maze/y");
     
-        // 給房間加上一個臨時標記，保証在遞歸過程中不會被重復調用
+        // 給房間加上一個臨時標記，保證在遞歸過程中不會被重複調用
         room->set("maze/finish_room", 1);
     
         dirs = ({ });
@@ -970,7 +970,7 @@ void init_special_room(mapping maze)
                 }
         }
         
-        // 分布寶箱
+        // 分佈寶箱
         box_num = 0;
         // 首先放置地圖，這是必須有的
         room = allroom[random(sizeof(allroom))];
@@ -1040,7 +1040,7 @@ void init_special_room(mapping maze)
                 box_num ++;        
         }
 
-        // 分布陷阱
+        // 分佈陷阱
         xianjing_num = 0;
     
         while ( xianjing_num < XIANJING_NUM )

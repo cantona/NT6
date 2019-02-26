@@ -15,7 +15,7 @@ int help(object me)
         write(HIC"\n基本陣法："NOR"\n");
         write(@HELP
 
-    桃花島弟子布陣所用基本技能。
+    桃花島弟子佈陣所用基本技能。
 
         學習要求：
                 無

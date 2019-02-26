@@ -19,7 +19,7 @@ void create()
         set("long",
                 "她就是唐門第二代掌門唐老太太，在她的經營下，\n"
                 "唐門在江湖中聲名更加顯赫。\n"
-                "她大約七十有余，一頭銀發，紅光滿面。\n");
+                "她大約七十有餘，一頭銀髮，紅光滿面。\n");
         set("gender", "女性");
         set("age", 72);
         set("class", "tangmen");
@@ -141,7 +141,7 @@ int do_pull()
         object me, room;
         me = this_player();
         room = environment(this_object());
-        message_vision(YEL"\n唐老太太一轉身在床頭扳動了一下。\n只聽“滋滋”幾聲輕響床腳的地面移開了一個洞口。\n"NOR, me);
+        message_vision(YEL"\n唐老太太一轉身在牀頭扳動了一下。\n只聽“滋滋”幾聲輕響牀腳的地面移開了一個洞口。\n"NOR, me);
         set("exits/down", "/d/tangmen/didao1", room);
         remove_call_out("close");
         call_out("close", 3, environment(this_object()));
@@ -176,7 +176,7 @@ string ask_me()
         }
         else
         {
-                return "瓜娃子，你說啥子？老太婆聽不懂哦！\n";
+                return "瓜娃子，你説啥子？老太婆聽不懂哦！\n";
         }
 
 
@@ -188,7 +188,7 @@ int accept_ask(object me, string topic)
         {
         case "歷練" :
         case "歷煉" :
-        case "鍛煉" :
+        case "鍛鍊" :
                 return QUEST_D->accept_ask(this_object(), me, topic);
                 break;
 
@@ -226,10 +226,10 @@ int accept_ask(object me, string topic)
                            "neili"   : 1400, ]));
                 break;
 
-        case "回夢" :
+        case "迴夢" :
                 return MASTER_D->teach_pfm(me, this_object(),
                         ([ "perform" : "can_perform/boyun-suowu/meng",
-                           "name"    : "回夢",
+                           "name"    : "迴夢",
                            "sk1"     : "boyun-suowu",
                            "lv1"     : 160,
                            "sk2"     : "biyun-xinfa",

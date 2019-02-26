@@ -9,7 +9,7 @@ void create()
         set("long", @LONG
 這是老槐樹底部，四周光線昏暗，人影晃晃，似乎有幾個黑暗的洞
 口在你身邊，通向四面八方。一位老乞丐大咧咧地坐在正中的地上。不
-經意中你發現牆壁上畫著幅粗糙的路線草圖（map）。
+經意中你發現牆壁上畫着幅粗糙的路線草圖（map）。
 LONG );
         set("no_fight", 1);
         set("exits", ([
@@ -68,7 +68,7 @@ void init()
         {
                 message_vision("\n粱長老看到$N闖進來，大喝一聲：你不是丐幫弟子，給我滾出去！\n\n", ob);
                 ob->move("/d/gaibang/inhole");
-                message("vision","只聽“乒”地一聲，"+query("name", ob)+"從小門裡飛了出來。\n",environment(ob),ob);
+                message("vision","只聽“乒”地一聲，"+query("name", ob)+"從小門裏飛了出來。\n",environment(ob),ob);
         }
 }
 int valid_leave(object me, string dir)

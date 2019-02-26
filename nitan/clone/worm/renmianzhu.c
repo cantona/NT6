@@ -4,7 +4,7 @@ inherit WORM;
 void create()
 {
         set_name(HIY "人面蛛" NOR, ({ "renmian zhu", "renmian", "zhu" }));
-        set("long", HIY "一只臉盆大小的毒蜘蛛，面部便如嬰臉一般。\n" NOR);
+        set("long", HIY "一隻臉盆大小的毒蜘蛛，面部便如嬰臉一般。\n" NOR);
         set("race", "野獸");
         set("age", random(10));
         set("attitude", "peaceful");

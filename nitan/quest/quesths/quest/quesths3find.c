@@ -139,7 +139,7 @@ mapping *quest = ({
         ]),
         ([
                 "id":          "shell lace",
-                "name":        "貝殼項鏈",
+                "name":        "貝殼項鍊",
                 "type":        "尋",
                 "bonus":       86,
                 "msg1":        "",

@@ -15,10 +15,10 @@ int main(object me, string arg)
 
         env = environment(me);
         if( query("no_fight", env) )
-                return notify_fail("這裡禁止行竊。\n");
+                return notify_fail("這裏禁止行竊。\n");
 
         if( query("no_steal", env) )
-                return notify_fail("這裡禁止行竊。\n");
+                return notify_fail("這裏禁止行竊。\n");
 
         if( query_temp("stealing", me) )
                 return notify_fail("你已經在找機會下手了！\n");
@@ -31,7 +31,7 @@ int main(object me, string arg)
 
         victim = present(who, environment(me));
         if (! victim || victim == me)
-                return notify_fail("你想行竊的對象不在這裡。\n");
+                return notify_fail("你想行竊的對象不在這裏。\n");
 
         if( !me->visible(victim) )
                 return notify_fail("你看不到"+query("name", victim)+"。\n");
@@ -86,7 +86,7 @@ int main(object me, string arg)
         {
                 set("no_newbie", 1, me);
                 delete("newbie", me);
-                tell_object(me, HIR "由于你偷竊其他玩家物品，所以取消對你的新手保護！\n" NOR);
+                tell_object(me, HIR "由於你偷竊其他玩家物品，所以取消對你的新手保護！\n" NOR);
         }
 
         set_temp("stealing", 1, me);
@@ -123,7 +123,7 @@ void compelete_steal(object me, object victim, object ob, int sp, int dp)
         if (environment(ob) != victim)
         {
                 tell_object(me, "你摸了半天，發現" + ob->name() +
-                            "已經不在那裡了。\n");
+                            "已經不在那裏了。\n");
                 return;
         }
 
@@ -190,14 +190,14 @@ void compelete_steal(object me, object victim, object ob, int sp, int dp)
                 }
 
                 tell_object(me, HIR "糟糕！你失手了！\n\n" NOR);
-                message_vision("$N一回頭，正好發現$n的手正抓著$P身上的" +
+                message_vision("$N一回頭，正好發現$n的手正抓着$P身上的" +
                                ob->name() + "！\n$N喝道：「幹什麼！」\n",
                                victim, me);
                 me->improve_skill("stealing", 1, 1);
 
                 if (userp(victim))
                 {
-                        message_vision("$N狠狠的敲著$n的頭，嚇得$n嗚嗚直叫。\n",
+                        message_vision("$N狠狠的敲着$n的頭，嚇得$n嗚嗚直叫。\n",
                                        victim, me);
                 } else
                 {

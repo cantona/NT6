@@ -5,8 +5,8 @@ void create()
 {
         set("short", "匯英酒樓");
         set("long", @LONG
-匯英酒樓裡桌椅潔凈，座中客人衣飾豪奢，十九都是富商
-大賈。這裡可以俯瞰整個紫禁城的全景。
+匯英酒樓裏桌椅潔淨，座中客人衣飾豪奢，十九都是富商
+大賈。這裏可以俯瞰整個紫禁城的全景。
 LONG);
         set("exits", ([
                 "down" : "/d/beijing/huiying",
@@ -47,10 +47,10 @@ void check()
         if (! npc1 || ! npc2)
                 return 0;
 
-        message_vision(CYN "$N" CYN "打了個哈欠，說道：時間不"
+        message_vision(CYN "$N" CYN "打了個哈欠，説道：時間不"
                        "早了，我們回去吧。\n$n" CYN "點了點頭"
-                       "道：甚好，我們這就走吧。\n\n" HIY "說"
-                       "罷便見幾人一齊站起，護著$N" HIY "離開"
+                       "道：甚好，我們這就走吧。\n\n" HIY "説"
+                       "罷便見幾人一齊站起，護着$N" HIY "離開"
                        "了酒樓。\n\n" NOR, npc1, npc2);
 
         if (objectp(npc1))

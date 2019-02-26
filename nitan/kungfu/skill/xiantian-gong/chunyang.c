@@ -22,7 +22,7 @@ int exert(object me, object target)
         skill = me->query_skill("force");
         addn("neili", -100, me);
         message_combatd(HIY "$N微一凝神，運起先天功，足底塵土泛起，全身純陽真"
-                        "氣沖關欲出。\n" NOR,me);
+                        "氣衝關欲出。\n" NOR,me);
         addn_temp("apply/attack", skill*2/5, me);
         addn_temp("apply/dodge", skill*1/5, me);
         addn_temp("apply/parry", skill*1/5, me);

@@ -19,8 +19,8 @@ void create()
                 "dashi",
         }));
         set("long",
-                "他是一位白須白眉的老僧，身穿一襲金絲繡紅袈裟。\n"
-                "他身材略顯佝僂，但卻滿面紅光，目蘊慈笑，顯得神完氣足。\n"
+                "他是一位白鬚白眉的老僧，身穿一襲金絲繡紅袈裟。\n"
+                "他身材略顯佝僂，但卻滿面紅光，目藴慈笑，顯得神完氣足。\n"
         );
 
         set("nickname", "少林寺方丈");
@@ -116,25 +116,25 @@ int say_msg(object me, int index)
 
         switch( index ) {
         case(1):
-                message_vision(CYN"$N說道：阿彌陀佛，老衲當年犯下無數罪孽，終此一生，可能也難以補償，哪裡還能再去過問紅塵中的腥風血雨啊。\n"NOR, this_object(), me);
+                message_vision(CYN"$N説道：阿彌陀佛，老衲當年犯下無數罪孽，終此一生，可能也難以補償，哪裏還能再去過問紅塵中的腥風血雨啊。\n"NOR, this_object(), me);
                 break;
         case(2):
-                message_vision(WHT"<$N一臉拒人千裡的模樣，于是$n開始發揮你舌粲蓮花、才辯無雙的本領。>\n"NOR, this_object(), me);
+                message_vision(WHT"<$N一臉拒人千里的模樣，於是$n開始發揮你舌粲蓮花、才辯無雙的本領。>\n"NOR, this_object(), me);
                 break;
         case(3):
-                message_vision(CYN"$N說道：唉，既然徐長老和施主誠心相邀，那好吧，到武林大會那日我會派玄難、玄寂兩位師弟前去聚賢莊，代表少林派參加大會。\n"NOR, this_object(), me);
+                message_vision(CYN"$N説道：唉，既然徐長老和施主誠心相邀，那好吧，到武林大會那日我會派玄難、玄寂兩位師弟前去聚賢莊，代表少林派參加大會。\n"NOR, this_object(), me);
                 break;
         case(4):
-                message_vision(CYN"$N說道：人緣常滿，歡喜無量，阿彌托佛，善哉善哉！施主若無其他事情，可以回洛陽將我的意思轉達(report)給徐長老了。\n"NOR, this_object(), me);
+                message_vision(CYN"$N説道：人緣常滿，歡喜無量，阿彌託佛，善哉善哉！施主若無其他事情，可以回洛陽將我的意思轉達(report)給徐長老了。\n"NOR, this_object(), me);
                 break;
         case(5):
-                message_vision(WHT"<$N說完後便閉目入定，獨自誦起佛經。>\n"NOR, this_object(), me);
+                message_vision(WHT"<$N説完後便閉目入定，獨自誦起佛經。>\n"NOR, this_object(), me);
                 break;
         case(6):
                 message_vision(CYN"$N念道：我獨經行時，見佛在大眾，名聞滿十方，廣饒益眾生。自惟失此利，我為自欺誑。\n"NOR, this_object(), me);
                 break;
         case(7):
-                message_vision(CYN"$N念道：我常于日夜，每思惟是事，欲以問世尊，為失為不失，我常見世尊，稱讚諸菩薩，以是于日夜，籌量此是事……。\n"NOR, this_object(), me);
+                message_vision(CYN"$N念道：我常於日夜，每思惟是事，欲以問世尊，為失為不失，我常見世尊，稱讚諸菩薩，以是於日夜，籌量此是事……。\n"NOR, this_object(), me);
                 break;
         default:
                 set_temp("juxianzhuang_step", 5, me);
@@ -154,7 +154,7 @@ int accept_ask(object me, string topic)
         {
         case "歷練" :
         case "歷煉" :
-        case "鍛煉" :
+        case "鍛鍊" :
                 return QUEST_D->accept_ask(this_object(), me, topic);
                 break;
 
@@ -301,10 +301,10 @@ int accept_ask(object me, string topic)
                            "gongxian": 500, ]));
                 break;
 
-        case "群山疊影" :
+        case "羣山疊影" :
                 return MASTER_D->teach_pfm(me, this_object(),
                         ([ "perform" : "can_perform/xumishan-zhang/ying",
-                           "name"    : "群山疊影",
+                           "name"    : "羣山疊影",
                            "sk1"     : "xumishan-zhang",
                            "lv1"     : 120,
                            "sk2"     : "force",
@@ -356,10 +356,10 @@ int accept_ask(object me, string topic)
                            "gongxian": 1000, ]));
                 break;
 
-        case "盪妖除魔" :
+        case "蕩妖除魔" :
                 return MASTER_D->teach_pfm(me, this_object(),
                         ([ "perform" : "can_perform/yingzhua-gong/chumo",
-                           "name"    : "盪妖除魔",
+                           "name"    : "蕩妖除魔",
                            "sk1"     : "yingzhua-gong",
                            "lv1"     : 150,
                            "sk2"     : "force",
@@ -389,10 +389,10 @@ int accept_ask(object me, string topic)
                            "gongxian": 500, ]));
                 break;
 
-        case "舍身喂鷹" :
+        case "捨身喂鷹" :
                 return MASTER_D->teach_pfm(me, this_object(),
                         ([ "perform" : "can_perform/cibei-dao/sheshen",
-                           "name"    : "舍身喂鷹",
+                           "name"    : "捨身喂鷹",
                            "sk1"     : "cibei-dao",
                            "lv1"     : 150,
                            "sk2"     : "force",

@@ -9,7 +9,7 @@ int exert(object me, object target)
         int skill;
 
         if (target != me)
-                return notify_fail("你只能用聖火神功來提升自己的防御力。\n");
+                return notify_fail("你只能用聖火神功來提升自己的防禦力。\n");
 
         if ((int)query("neili", me) < 100)
                 return notify_fail("你的真氣不夠。\n");
@@ -24,7 +24,7 @@ int exert(object me, object target)
         addn("neili", -100, me);
         me->receive_damage("qi", 0);
 
-        message_combatd(HIG "$N" HIG "默念聖火神功口訣，一股真氣流至奇經八脈，護住全身。\n" NOR, me);
+        message_combatd(HIG "$N" HIG "默唸聖火神功口訣，一股真氣流至奇經八脈，護住全身。\n" NOR, me);
 
         addn_temp("apply/armor", skill/2, me);
         set_temp("shield", 1, me);

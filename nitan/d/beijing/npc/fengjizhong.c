@@ -55,16 +55,16 @@ add_action("do_join","join");
 
 void die()
 {
-message_vision("\n$N大怒道：“你敢砍老子！兄弟們會替我報仇的！”說完倒地死了。\n", this_object());
+message_vision("\n$N大怒道：“你敢砍老子！兄弟們會替我報仇的！”説完倒地死了。\n", this_object());
 ::die();
 }
 
 int ask_weiwang()
 {
 command("tell"+query("id", this_player())+"你現在的江湖威望是"+(query("weiwang", this_player())));
-say("\n風際中說：如果你威望值很高，有些人見了你不但不會殺你，還會教你武功，送你寶貝。\n"
+say("\n風際中説：如果你威望值很高，有些人見了你不但不會殺你，還會教你武功，送你寶貝。\n"
 +"而且你還可以加入幫會，率領會眾去攻打目標，就連去錢莊取錢也會有利息 。。。。。\n");
-say("風際中又說：殺某些壞人或救某些好人可以提高江湖威望。\n");
+say("風際中又説：殺某些壞人或救某些好人可以提高江湖威望。\n");
 return 1;
 }
 #include "/kungfu/class/yunlong/tiandihui.h";

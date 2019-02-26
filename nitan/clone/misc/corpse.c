@@ -96,7 +96,7 @@ void create()
                                          0, 0, 0, }),
                         "nose"      : ({ 1, "只", "鼻子", "鼻子", "nose",
                                          0, 0, 0, }),
-                        "hair"      : ({ 1, "束", "頭發", "頭發", 0,
+                        "hair"      : ({ 1, "束", "頭髮", "頭髮", 0,
                                          0, 0, "/clone/misc/hair", }),
                         "tongue"    : ({ 1, "條", "舌頭", "舌頭", 0,
                                          0, 0, 0, }),
@@ -148,14 +148,14 @@ void decay(int phase)
                 default:
                         set_name("腐爛的屍體", ({ "corpse", "屍體" }));
                 }
-                set("long",        "這具屍體顯然已經躺在這裡有一段時間了，正散發著一股腐屍的味道。\n");
+                set("long",        "這具屍體顯然已經躺在這裏有一段時間了，正散發著一股腐屍的味道。\n");
                 call_out("decay", 60, phase + 1);
                 break;
         case 2:
                 delete("parts");
                 msg = name(1) + "被風吹乾了，變成一具骸骨。\n";
                 set_name("枯乾的骸骨", ({ "skeleton", "骸骨" }) );
-                set("long", "這副骸骨已經躺在這裡很久了。\n");
+                set("long", "這副骸骨已經躺在這裏很久了。\n");
                 call_out("decay", 5, phase + 1);
                 break;
         case 3:
@@ -211,7 +211,7 @@ int make_corpse(object victim, object killer)
         set_name(victim->name(1) + "的屍體", ({ "corpse" }));
         set("long", victim->long()
                 +"然而，"+gender_pronoun(query("gender", victim) )
-                + "已經死了，只剩下一具屍體靜靜地躺在這裡。\n");
+                + "已經死了，只剩下一具屍體靜靜地躺在這裏。\n");
         set("class",query("class", victim));
         set("age",query("age", victim));
         set("combat_exp",query("combat_exp", victim));
@@ -254,7 +254,7 @@ int make_corpse(object victim, object killer)
         }
  
         if( query("class", victim) == "bonze" )
-                set("no_cut/hair", "它沒有頭發啊，等它再長出來好像來不及了。\n");
+                set("no_cut/hair", "它沒有頭髮啊，等它再長出來好像來不及了。\n");
 
         switch(query("gender", victim) )
         {

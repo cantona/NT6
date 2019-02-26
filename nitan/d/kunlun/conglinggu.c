@@ -1,4 +1,4 @@
-// Room: /d/kunlun/conglinggu.c 蔥嶺谷
+// Room: /d/kunlun/conglinggu.c 葱嶺谷
 // Last Modified by winder on Nov. 14 2000
 
 #include <ansi.h>
@@ -7,10 +7,10 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "蔥嶺谷");
+        set("short", "葱嶺谷");
         set("long",@long
 你的眼前突然為之一亮，只見一條象被一刀劈開的峽谷巖石間，高
-山的雪水瀉落到千丈以下的山澗裡去，濺起的密密的飛沫激起一種驚心
+山的雪水瀉落到千丈以下的山澗裏去，濺起的密密的飛沫激起一種驚心
 動魄的震憾。就在這深山野谷的溪流邊，卻長滿了各種各樣的花草樹木，
 春天繁花開遍峽谷秋天果實壓滿山腰，人跡罕至，正是鳥獸們(bird)的
 樂園。
@@ -52,7 +52,7 @@ int do_tou(string arg)
         }
         me->receive_damage("qi", random(25));
         message_vision("$N正在用石頭打鳥。\n", me);
-        write("你專心致志的向鳥群投擲石頭，感覺基本暗器又進了一步。\n");
+        write("你專心致志的向鳥羣投擲石頭，感覺基本暗器又進了一步。\n");
         me->improve_skill("throwing", me->query_int());
         return 1;
 } 

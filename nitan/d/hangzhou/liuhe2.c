@@ -6,7 +6,7 @@ void create()
 {
         set("short", "六和塔");
         set("long", @LONG
-這裡是六和塔的二層。窗(window)外是濃妝淡抹的西子湖，塔
+這裏是六和塔的二層。窗(window)外是濃粧淡抹的西子湖，塔
 中玲瓏八角，青磚砌地，雕欄飛檐間粘連了些許蛛網。
 LONG);
         set("exits", ([
@@ -30,10 +30,10 @@ int valid_leave(object me, string dir)
 {
         if (dir == "up" &&
             objectp(present("xin yan", environment(me)))) 
-            return notify_fail("心硯哈哈一笑：這裡還沒打過呢，就想上樓。\n");
+            return notify_fail("心硯哈哈一笑：這裏還沒打過呢，就想上樓。\n");
         if (dir == "up" &&
             objectp(present("zhou yi", environment(me))))
-            return notify_fail("周綺俏眼一瞪：沒看見本姑娘在這裡嗎？\n");
+            return notify_fail("周綺俏眼一瞪：沒看見本姑娘在這裏嗎？\n");
 
         return ::valid_leave(me, dir);
 }

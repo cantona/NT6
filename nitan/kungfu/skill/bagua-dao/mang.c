@@ -40,10 +40,10 @@ int perform(object me, object target)
                 return notify_fail("你的真氣不夠，難以施展" MANG "。\n");
 
         if (! living(target))
-               return notify_fail("對方都已經這樣了，用不著這麼費力吧？\n");
+               return notify_fail("對方都已經這樣了，用不着這麼費力吧？\n");
 
         msg = HIW "$N" HIW "腳踏八卦四方之位，陡然一振手中" + weapon->name() +
-              HIW "，刀身頓時卷起陣陣雪亮刀芒，將$n" + HIW "團團裹住！\n" NOR;
+              HIW "，刀身頓時捲起陣陣雪亮刀芒，將$n" + HIW "團團裹住！\n" NOR;
 
         ap = attack_power(me, "blade");
         dp = defense_power(target, "parry");
@@ -60,7 +60,7 @@ int perform(object me, object target)
         {
                 addn("neili", -60, me);
                 me->start_busy(3);
-                msg += CYN "可是$p" CYN "眼明手快，只聽叮叮當當響起了一串"
+                msg += CYN "可是$p" CYN "眼明手快，只聽叮叮噹噹響起了一串"
                        CYN "刀鳴，$p" CYN "將$P" CYN "的招式全部擋開！\n" NOR;
         }
         message_combatd(msg, me, target);

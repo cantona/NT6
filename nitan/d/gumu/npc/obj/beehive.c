@@ -16,7 +16,7 @@ void create()
                 set_default_object(__FILE__);
         else {
                 set("unit", "個");
-                set("long", HIW "這是古墓派木制的玉蜂箱。裡面嗡嗡的，不知道有多少玉蜂。\n" NOR);
+                set("long", HIW "這是古墓派木製的玉蜂箱。裏面嗡嗡的，不知道有多少玉蜂。\n" NOR);
                 set("base_unit", "個");
                 set("value", 1000);
                 set("material", "wood");
@@ -58,17 +58,17 @@ int do_fang(string arg)
         if(!arg || (arg != "feng xiang" && arg != "beehive" && arg != "box" && arg != "xiang"))
                 return 0;
         if( query("down", ob))return notify_fail("你糊塗了？\n");
-        if( !ob) return notify_fail("你並沒有拿著蜂箱啊？\n");
+        if( !ob) return notify_fail("你並沒有拿着蜂箱啊？\n");
         if(strsrch(query("short", environment(me)), "樹林") == -1)
                 return notify_fail("你找不到合適的地方放蜂箱！ \n");
         if( query("owner", ob) != me)return notify_fail("這你的蜂箱嗎？\n");
-        if(present("feng xiang", environment(me))) return notify_fail("這裡已經有別人在放養玉蜂了。\n");
-        if( query("lastplace", ob) == environment(me))return notify_fail("玉蜂剛在這裡採過蜜！\n");
+        if(present("feng xiang", environment(me))) return notify_fail("這裏已經有別人在放養玉蜂了。\n");
+        if( query("lastplace", ob) == environment(me))return notify_fail("玉蜂剛在這裏採過蜜！\n");
 
         ob = present("feng xiang", me);
 
         if(me->is_busy())
-                return notify_fail("你正忙著呢! \n");
+                return notify_fail("你正忙着呢! \n");
 
         message_vision(HIB"$N在樹林中找了一塊兒空地，輕輕地把蜂箱放在地上。\n"NOR,me);
 
@@ -88,10 +88,10 @@ int do_open(string arg){
                 return 0;
         if( query("open", ob))return notify_fail("你糊塗了？\n");
         if( query("owner", ob) != me)return notify_fail("這你的蜂箱嗎？\n");
-        if(me->is_busy()) return notify_fail("你正忙著呢！ \n");
+        if(me->is_busy()) return notify_fail("你正忙着呢！ \n");
         if( !query("down", ob))return notify_fail("你得先把玉蜂箱放下！\n");
-        if( query("open", ob))return notify_fail("玉蜂箱門開著呢！\n");
-//      if(query("bee_out")) return notify_fail("你的玉蜂群忙著呢！\n");
+        if( query("open", ob))return notify_fail("玉蜂箱門開着呢！\n");
+//      if(query("bee_out")) return notify_fail("你的玉蜂羣忙着呢！\n");
 
         remove_call_out("auto_check");
         call_out("auto_check", 5+random(5),me,ob);
@@ -114,12 +114,12 @@ int do_close(string arg){
                 return 0;
         if( !query("open", ob))return notify_fail("你糊塗了？\n");
         if( query("owner", ob) != me)return notify_fail("這是你的蜂箱嗎？\n");
-        if(me->is_busy()) return notify_fail("你正忙著呢！ \n");
+        if(me->is_busy()) return notify_fail("你正忙着呢！ \n");
         if( !query("down", ob))return notify_fail("你得先把玉蜂箱放下！\n");
-        if( !query("open", ob))return notify_fail("玉蜂箱門關著呢！\n");
+        if( !query("open", ob))return notify_fail("玉蜂箱門關着呢！\n");
         if( query("qi", me)<100)return notify_fail("你已經精疲力竭，無法召喚玉蜂回來了！\n");
 
-        message_vision(HIG"$N口中念念有詞，一會兒玉蜂陸陸續續地都飛了回來，$N輕輕關上玉蜂箱門,把蜂箱背在身上。\n"NOR,me);
+        message_vision(HIG"$N口中唸唸有詞，一會兒玉蜂陸陸續續地都飛了回來，$N輕輕關上玉蜂箱門,把蜂箱背在身上。\n"NOR,me);
 
         set("open", 0, ob);
         set("down", 0, ob);
@@ -162,19 +162,19 @@ int auto_check(object me,object ob)
         {
                 if (random(3) == 0)
                 {
-                        message_vision("$N看見一些玉蜂在一個地方奇怪地舞著，也許有什麼藥材可以採(cai yao)吧。\n",me);
+                        message_vision("$N看見一些玉蜂在一個地方奇怪地舞着，也許有什麼藥材可以採(cai yao)吧。\n",me);
                         set("yaocai_h", 1, environment(me));
                 }
                 else
                 {
-                        message_vision("$N看見一些玉蜂在一個地方奇怪地舞著，也許有什麼藥材可以採(cai yao)吧。\n",me);
+                        message_vision("$N看見一些玉蜂在一個地方奇怪地舞着，也許有什麼藥材可以採(cai yao)吧。\n",me);
                         set("yaocai", 1, environment(me));
                 }
 
         }
         else if( query("mi", ob)%2 == 0 && random(2) == 0 )
         {
-                message_vision(HIY"$N嘴裡不斷發出嗡嗡聲，指導玉蜂更有效率的採蜜。\n"NOR, me);
+                message_vision(HIY"$N嘴裏不斷髮出嗡嗡聲，指導玉蜂更有效率的採蜜。\n"NOR, me);
                 me->start_busy(random(3));
                 addn("qi", -(2+random(3)), me);
                 if (lvl < 600)
@@ -207,9 +207,9 @@ int do_give(string arg)
         if ( item != "beehive" && item !="box" && item != "xiang" ) return 0;
         if ( target != "sun" && target !="nanny" ) return 0;
         if ( !objectp(obj = present(item, me)) ) return notify_fail("你身上沒有這樣東西。\n");
-        if (me->is_busy()) return notify_fail("你正忙著呢。\n");
+        if (me->is_busy()) return notify_fail("你正忙着呢。\n");
     if (!objectp(who = present(target, environment(me))) || !living(who))
-        return notify_fail("這裡沒有這個人。\n");
+        return notify_fail("這裏沒有這個人。\n");
         if ( userp(who) ) return notify_fail("對方不接受這樣東西。\n");
         if( query("race", who) != "人類" )
                 return notify_fail("別找碴兒！怎麼把玉蜂箱交給畜生？\n");
@@ -221,20 +221,20 @@ int do_give(string arg)
         {
                 if(query("escaped")) {
                         message_vision(CYN"$N不好意思地搔了搔頭。\n"NOR, me, who);
-                        message_vision(CYN"$N紅著臉對孫婆婆說道，這次工作沒幹好。\n"NOR, me, who);
+                        message_vision(CYN"$N紅着臉對孫婆婆説道，這次工作沒幹好。\n"NOR, me, who);
                         message_vision(CYN"$n輕輕拍了拍$N的頭。\n"NOR, me, who);
-                        message_vision(CYN"$n和藹地對$N說道：沒關系，下次注意就好。\n"NOR, me, who);
+                        message_vision(CYN"$n和藹地對$N説道：沒關係，下次注意就好。\n"NOR, me, who);
                         if( query_temp("gm_xunfeng", me) ) delete_temp("gm_xunfeng", me);
                 }
                 else if( query("mi", obj)<25 )
                 {
-                        message_vision(CYN"$n說道：蜂蜜沒有採滿啊，沒關系，下次注意就好。\n"NOR,me,who);
+                        message_vision(CYN"$n説道：蜂蜜沒有采滿啊，沒關係，下次注意就好。\n"NOR,me,who);
                         if( query_temp("gm_xunfeng", me) ) delete_temp("gm_xunfeng", me);
                 }
                 else
                 {
                         message_vision(CYN"$n輕輕拍了拍$N的頭。\n"NOR, me, who);
-                        message_vision(CYN"$n和藹地對$N說道：辛苦$N啦，下去休息一下吧。\n"NOR, me, who);
+                        message_vision(CYN"$n和藹地對$N説道：辛苦$N啦，下去休息一下吧。\n"NOR, me, who);
                         exp = 140+random(40);
                         qn = 40 + random(40);
                         gj = 5 + random(5);
@@ -255,7 +255,7 @@ int do_give(string arg)
                                         if( query("name", inv[i]) == CYN"青瓷瓶"NOR )
                                         j += 1;
                                 if (j > 4)
-                                tell_object(me,"孫婆婆對你說：你已經有好多青瓷瓶了，我就不給你了。\n");
+                                tell_object(me,"孫婆婆對你説：你已經有好多青瓷瓶了，我就不給你了。\n");
                                 else if (random(5)==0)
                                 {
                                         ping = new("/d/gumu/npc/obj/qingci-ping");
@@ -280,7 +280,7 @@ int do_give(string arg)
         else
         {
                 message_vision(CYN"$n對$N微微笑了笑。\n"NOR, me, who);
-                message_vision(CYN"$n說道：多謝啦！\n"NOR, me, who);
+                message_vision(CYN"$n説道：多謝啦！\n"NOR, me, who);
         }
 
         destruct(obj);

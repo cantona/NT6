@@ -23,7 +23,7 @@ mapping default_dirs = ([
         "southwest":    "西南",
         "up":           "上面",
         "down":         "下面",
-        "enter":        "裡面",
+        "enter":        "裏面",
         "out":          "外面",
 ]);
 
@@ -63,7 +63,7 @@ int main(object me, string arg)
                 return notify_fail("你的動作還沒有完成，不能移動。\n");
 
         env = environment(me);
-        if (! env) return notify_fail("你哪裡也去不了。\n");
+        if (! env) return notify_fail("你哪裏也去不了。\n");
 
         if (me->is_fighting())
         {
@@ -124,7 +124,7 @@ int main(object me, string arg)
                                 } else
                                 {
                                         message_vision("$N剛想離開，被$n一把"
-                                                       "攔住：慢著！想打我這"
+                                                       "攔住：慢着！想打我這"
                                                        "兒過，沒門！\n",
                                                        me, g_ob);
                                         tell_object(me, "你被攔住了去路。\n");
@@ -141,8 +141,8 @@ int main(object me, string arg)
 
                                         if (force_power > target_power * 3)
                                         {
-                                                message_vision("$N縱聲長笑：“鼠輩！安敢欺吾？”說罷"
-                                                               "往前一沖，將$n帶出數步，跌倒在地。\n",
+                                                message_vision("$N縱聲長笑：“鼠輩！安敢欺吾？”説罷"
+                                                               "往前一衝，將$n帶出數步，跌倒在地。\n",
                                                                me, g_ob);
                                                 g_ob->unconcious();
                                         } else
@@ -155,7 +155,7 @@ int main(object me, string arg)
                                         } else
                                         if (force_power > target_power)
                                         {
-                                                message_vision("$N一聲冷笑，大踏步的向前沖"
+                                                message_vision("$N一聲冷笑，大踏步的向前衝"
                                                                "去，乓的一下將$n撞到了一邊。",
                                                                me, g_ob);
                                                 g_ob->receive_wound("qi", 50 + random(50));
@@ -196,7 +196,7 @@ int main(object me, string arg)
                                                    "法向 %s 移動。\n", dest ) );
         
         if (function_exists("valid_enter", obj) && ! obj->valid_enter(me))
-                return notify_fail(obj->short() + "那裡現在不允許你進入。\n"); 
+                return notify_fail(obj->short() + "那裏現在不允許你進入。\n"); 
 
         /*
         if (my_temp["is_riding"] &&
@@ -225,7 +225,7 @@ int main(object me, string arg)
         } else
         {
                 if (objectp(thing = my_armor["cloth"]))
-                        thing_msg="身著"+query("name", thing);
+                        thing_msg="身着"+query("name", thing);
                 else
                 if (userp(me))
                         thing_msg = "一絲不掛的";
@@ -244,15 +244,15 @@ int main(object me, string arg)
                         if( min = query("arrive_msg", me) )
                                 min = me->name() + min + " 。\n";
                         else
-                                min = me->name() + "呼地竄了出來，警惕地四周張望著。\n";
+                                min = me->name() + "呼地竄了出來，警惕地四周張望着。\n";
                 } else
                 {
                         //if (objectp(riding = my_temp["is_riding"]))
                         if (objectp(riding))
                         {
-                                mout = me->name() + "騎著" + riding->name() +
+                                mout = me->name() + "騎着" + riding->name() +
                                        "向" + dir + "疾馳而去。\n";
-                                min = me->name() + thing_msg + "騎著" +
+                                min = me->name() + thing_msg + "騎着" +
                                       riding->name() + "一路疾馳而來。\n";
                         } else
                         {

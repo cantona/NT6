@@ -19,7 +19,7 @@ void create()
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("long", "一只肥大的公雞。\n");
+                set("long", "一隻肥大的公雞。\n");
                 set("unit", "只");
                 set("value", 50);
                 set("food_remaining", 2);
@@ -61,12 +61,12 @@ int do_cut(string arg)
                  || query("skill_type", weapon) != "blade")){
                         message_vision("$N用"+query("name", weapon)+"剖開"+query("name", ji)+"肚子。\n",me);
                         set("step", 1, ji);
-                        set("long", "一只剖開肚子的大公雞。\n", ji);
+                        set("long", "一隻剖開肚子的大公雞。\n", ji);
                         return 1;
                 }
 
                 else {
-                        message_vision( "$N用手扯開一只大公雞。\n", me);
+                        message_vision( "$N用手扯開一隻大公雞。\n", me);
                         set("fake", 1, ji);
                         return 1;
                 } 
@@ -84,8 +84,8 @@ int do_wash(string arg)
         if ( !arg || arg == "") return 0;
 
         if ( arg == "公雞" || arg == "chicken" || arg == "內臟" || arg == "intestine" ) {
-                message_vision("$N將"+query("name", ji)+"內臟洗剝幹凈。\n",me);
-                set("long", "一只肚子剖開，內臟洗幹凈的大公雞。\n", ji);
+                message_vision("$N將"+query("name", ji)+"內臟洗剝乾淨。\n",me);
+                set("long", "一隻肚子剖開，內臟洗乾淨的大公雞。\n", ji);
 
                 if( query("step", ji) != 1 )
                         set("fake", 1, ji);
@@ -115,7 +115,7 @@ int do_wrap(string arg)
                         destruct(ni);
                 }
                         
-                set("long", "一只裹在濕泥裡的公雞。\n", ji);
+                set("long", "一隻裹在濕泥裏的公雞。\n", ji);
 
                 if( query("step", ji) != 2 )
                         set("fake", 1, ji);
@@ -166,20 +166,20 @@ int cooking(object me, object ji, int cook_time)
         if ( cook_time == 25 ) {
                 if( !query("mud", ji)){
                         message_vision( "烤得一會兒，雞中透出香甜。\n", me);
-                        set("long", "一只烤得香甜的公雞。\n", ji);
+                        set("long", "一隻烤得香甜的公雞。\n", ji);
                 }
                 else {
-                        message_vision( "烤得一會兒，泥中透出香甜，濕泥漸漸幹透。\n", me);
-                        set("long", "一只裹著幹泥，烤得香甜的公雞。\n", ji);
+                        message_vision( "烤得一會兒，泥中透出香甜，濕泥漸漸乾透。\n", me);
+                        set("long", "一隻裹着幹泥，烤得香甜的公雞。\n", ji);
                 }
         }
 
         if ( cook_time == 50 ) {
                 message_vision( "再烤得一會兒，你似乎嗅到什麼東西烤糊了。\n", me);
                 if( !query("mud", ji) )
-                        set("long", "一只烤糊了的公雞。\n", ji);
+                        set("long", "一隻烤糊了的公雞。\n", ji);
                 else
-                        set("long", "一只裹著幹泥，烤糊了的公雞。\n", ji);
+                        set("long", "一隻裹着幹泥，烤糊了的公雞。\n", ji);
         }
 
         if ( cook_time < 50) {

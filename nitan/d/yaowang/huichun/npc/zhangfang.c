@@ -37,7 +37,7 @@ void create()
                 "join" : (: ask_join :),
                 "加入" : (: ask_join :),
                 "打工" : (: ask_join :),
-                "針灸盒" : (: ask_box :),
+                "鍼灸盒" : (: ask_box :),
                 "box" : (: ask_box :),
         ]));
 
@@ -130,7 +130,7 @@ int ask_box()
 
         if( query("family/family_name", me) != "藥王谷"){
                 command("say "+RANK_D->query_respect(me)+
-                        "你不是藥王谷的弟子，針灸盒不能隨便給你！\n");
+                        "你不是藥王谷的弟子，鍼灸盒不能隨便給你！\n");
                 return 1; }
 
         if( present("zhenjiu he", me) ) {
@@ -140,7 +140,7 @@ int ask_box()
 
         if( (int)me->query_skill("medical",1)<40 ) {
                 command("say "+RANK_D->query_respect(me)+
-                        "你現在還不會使用針灸盒！\n");
+                        "你現在還不會使用鍼灸盒！\n");
                 return 1; }
 
         ob = new(__DIR__"obj/zhenjiu");

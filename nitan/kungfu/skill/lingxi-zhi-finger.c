@@ -53,7 +53,7 @@ mapping *action = ({
 	"skill_name" : "定江山"
  ]),
 // ZHAOSHI : 4
-([      "action" : "$N雙掌十指並齊，一式「千軍破」，帶著罡風死死的鎖住$n。",
+([      "action" : "$N雙掌十指並齊，一式「千軍破」，帶着罡風死死的鎖住$n。",
 	"attack" : 260,
 	"damage" : 260,
 	"force" : 260,

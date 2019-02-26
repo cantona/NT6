@@ -16,7 +16,7 @@ void create()
 {
         set_name(BLU "恆山府君" NOR, ({ "hengshan fujun", "hengshan", "fujun" }));
         set("long", "他就是恆山府君。\n");
-        set("title", HIW "北岳" NOR);
+        set("title", HIW "北嶽" NOR);
         set("gender", "男性");
         set("age", 50);
         set("str", 91);
@@ -110,7 +110,7 @@ int ask_offer()
                 
         if( !objectp( ob = present("contract", me) ) ||
             query("owner", ob) != query("id", me)){
-                tell_object(me, BLU "恆山府君說道：「你還沒有去領取閻王契(contract)，我不會接受你的獻祭請求。」\n" NOR);
+                tell_object(me, BLU "恆山府君説道：「你還沒有去領取閻王契(contract)，我不會接受你的獻祭請求。」\n" NOR);
                 return 1;
         }
         
@@ -190,7 +190,7 @@ void do_broadcast(int index)
                 break;
         case(2):
                 tell_room(environment(),
-                        BLU "恆山府君提筆揮洒，只見絲絲紫光滲入閻王契上，片刻即成。\n" NOR);
+                        BLU "恆山府君提筆揮灑，只見絲絲紫光滲入閻王契上，片刻即成。\n" NOR);
                 break;
         case(3):
                 tell_room(environment(),
@@ -224,10 +224,10 @@ int do_offer(string arg)
 
         if( !objectp( ob = present("contract", me) ) ||
                 query("owner", ob) != query("id", me) )
-                return notify_fail(BLU "恆山府君說道：「你還沒有去領取閻王契(contract)，我不會接受你的獻祭請求。」\n" NOR);
+                return notify_fail(BLU "恆山府君説道：「你還沒有去領取閻王契(contract)，我不會接受你的獻祭請求。」\n" NOR);
 
         if( query("offer_hengshan", ob) )
-                return notify_fail(BLU "恆山府君說道：「你已經在恆山獻祭過了，就不用再來獻祭吧。」\n" NOR);
+                return notify_fail(BLU "恆山府君説道：「你已經在恆山獻祭過了，就不用再來獻祭吧。」\n" NOR);
                 
         if( !query_temp("can_offer", me) || 
                 query_temp("can_offer", me) != query("id", this_object()) )
@@ -240,7 +240,7 @@ int do_offer(string arg)
                 return notify_fail(BLU "恆山府君皺眉道：「你這門技能沒有這麼高的等級。」\n" NOR);
         
         if( !objectp(weapon=query_temp("weapon", me)) )
-                return notify_fail(BLU "恆山府君皺眉道：「你先把你的兵器裝備上再說。」\n" NOR);
+                return notify_fail(BLU "恆山府君皺眉道：「你先把你的兵器裝備上再説。」\n" NOR);
                     
         if( me->query_skill_mapped(query("skill_type", weapon)) != skill )
                 return notify_fail(BLU "恆山府君皺眉道：「你還是先把這個技能激發到兵器技能上吧。」\n" NOR);
@@ -251,7 +251,7 @@ int do_offer(string arg)
         
         message_vision( HIR "$N" HIR "略一沉思道：「既然如此，為顯誠意，我決定獻祭" + to_chinese(skill) + level + "級。」\n" NOR, me );
         tell_object(me, BLU "恆山府君凌空一掏，你忽然覺得自己身上少了什麼。\n" NOR);                  
-        msg = HIW + NATURE_D->game_time() + "，" + me->query_idname() + HIW "于恆山獻祭" + to_chinese(skill) + level + "級。\n";
+        msg = HIW + NATURE_D->game_time() + "，" + me->query_idname() + HIW "於恆山獻祭" + to_chinese(skill) + level + "級。\n";
         
         rec=query("offer", ob);
         if( ! rec ) rec = ({});

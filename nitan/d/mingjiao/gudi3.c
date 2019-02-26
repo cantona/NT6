@@ -4,7 +4,7 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "昆侖仙境");
+        set("short", "崑崙仙境");
         set("long", @LONG
 出得洞來，面前竟是個花團錦簇的翠谷，紅花綠樹，交相掩映。
 腳下踏著的是柔軟細草，鼻中聞到的是清幽花香，鳴禽間關，鮮果懸
@@ -37,7 +37,7 @@ int do_enter(string arg)
                 write("你想幹什麼呀?\n");
                 return 1;
         }
-        message_vision("$N深吸了一口氣，慢慢沿著洞壁往外爬。\n", me);
+        message_vision("$N深吸了一口氣，慢慢沿着洞壁往外爬。\n", me);
         me->move(__DIR__"gudi2");
         return 1;
 }

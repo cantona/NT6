@@ -11,7 +11,7 @@ void create()
 {
         set_name("童兆和", ({ "tong zhaohe", "tong", "zhaohe"}));
           set("long", "此人相貌猥瑣，身材瘦削，一副有氣沒力的樣子。"
-                    "是鎮遠鏢局裡赫赫有名的混混。\n");
+                    "是鎮遠鏢局裏赫赫有名的混混。\n");
         set("title", "鎮遠鏢局鏢師");
           set("gender", "男性");
           set("age", 35);
@@ -60,7 +60,7 @@ void create()
 
         set("guarder", ([
                 "refuse_other": CYN "$N" CYN "對$n" CYN "皺眉道："
-                                "喂！你這倒是往哪裡走啊？" NOR,
+                                "喂！你這倒是往哪裏走啊？" NOR,
                 "refuse_carry": CYN "$N" CYN "對$n" CYN "嬉皮笑臉"
                                 "地道：你背上背的是個啥？扔下來給"
                                 "咱瞧瞧。" NOR,

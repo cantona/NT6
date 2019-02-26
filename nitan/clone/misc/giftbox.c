@@ -11,7 +11,7 @@ void create()
                 set_default_object(__FILE__);
         else {
                 set("unit", "盒");
-                set("long", "一盒禮品盒。盒裡裝著巫師的新年賀禮。\n\n    "HIR"新年快樂！！\n\n"NOR);
+                set("long", "一盒禮品盒。盒裏裝着巫師的新年賀禮。\n\n    "HIR"新年快樂！！\n\n"NOR);
                 set("value", 0);
         }
 }

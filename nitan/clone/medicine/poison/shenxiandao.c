@@ -38,7 +38,7 @@ int do_pour(string arg)
         if( !arg || sscanf(arg, "%s in %s", who, what)!=2 ||victim == me)
                 return notify_fail("命令格式: pour <人物> in <物品>。\n");
         if( query("no_fight", environment(me)) )
-                return notify_fail("這裡不能下毒的哦。\n");
+                return notify_fail("這裏不能下毒的哦。\n");
         victim = present(who, environment(me));
         if( !victim || victim==me) return notify_fail("沒有你想下毒的人哦。\n");
         if( query("family/family_name", me) != "五毒教" )
@@ -75,14 +75,14 @@ int do_pour(string arg)
                 f = (: call_other, __FILE__, "drink_drug" :);
                 set("liquid/drink_func", bind(f,ob), ob);
                 addn("liquid/slumber_effect", 1000, ob);
-                message("vision","你與" + victim->name() + "擦身而過，偷偷將《" + name() + "》洒進他的" + ob->name()+ "裡面。\n", this_player());
+                message("vision","你與" + victim->name() + "擦身而過，偷偷將《" + name() + "》灑進他的" + ob->name()+ "裏面。\n", this_player());
                 add_amount(-1);
                 me->start_busy(2);
                 if( random(myskill) < skill/2 )
-                        message("vision","你看到"+me->name()+"鬼鬼祟祟地在"+victim->name()+"身上的一"+query("unit", ob)+ob->name()+"裡洒入了一些"+name()+"！\n",environment(me),({me,victim}));
+                        message("vision","你看到"+me->name()+"鬼鬼祟祟地在"+victim->name()+"身上的一"+query("unit", ob)+ob->name()+"裏灑入了一些"+name()+"！\n",environment(me),({me,victim}));
                 return 1;
         }
-        else return notify_fail("毒只能下在飲水裡面！\n");
+        else return notify_fail("毒只能下在飲水裏面！\n");
         return 1;
 }
 

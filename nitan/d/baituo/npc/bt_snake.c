@@ -12,9 +12,9 @@ void create()
         set("age", 4);
         set("attitude", "peaceful");
 
-        set("msg_fail", "$n沖$N嘶地一吐舌頭");
-        set("msg_succ", "$n嘶嘶做響，蛇頭隨著$N的手動了起來");
-        set("msg_trained","$n悄無聲息地遊到$N的腳下不動了");
+        set("msg_fail", "$n衝$N嘶地一吐舌頭");
+        set("msg_succ", "$n嘶嘶做響，蛇頭隨着$N的手動了起來");
+        set("msg_trained","$n悄無聲息地游到$N的腳下不動了");
         set("wildness", 9);
 
         set("str", 26);
@@ -41,7 +41,7 @@ void set_kind(int poison)
         {
         case 0:
                 set_name("毒蛇", ({ "snake", "she" }) );
-                set("long", "一只有著三角形腦袋的蛇，尾巴沙沙做響。\n");
+                set("long", "一隻有着三角形腦袋的蛇，尾巴沙沙做響。\n");
                 set("combat_exp", 1000);
                 break;
         case 1:
@@ -50,11 +50,11 @@ void set_kind(int poison)
                 break;
         case 2:
                 set_name("竹葉青", ({ "zhuye qing", "snake" }) );
-                set("long", "一只身體碧綠的蛇，顯得特別細小。\n");
+                set("long", "一隻身體碧綠的蛇，顯得特別細小。\n");
                 break;
         case 3:
                 set_name("百步蛇", ({ "baibu she", "she", "snake" }) );
-                set("long", "一條青色長蛇，黃鱗覆體。據說被百步蛇咬了，走出一百步必死無疑。\n");
+                set("long", "一條青色長蛇，黃鱗覆體。據説被百步蛇咬了，走出一百步必死無疑。\n");
                 break;
         case 4:
                 set_name("青花蛇", ({ "qinghua she", "she", "snake" }) );
@@ -157,7 +157,7 @@ int convert(string arg)
                 kill_ob(me);
                 return 1;
         }
-        message_vision("$N左手按住蛇頭，右手輕撫其七寸，口中念念有詞，片刻間將蛇化為一根蛇杖。\n",
+        message_vision("$N左手按住蛇頭，右手輕撫其七寸，口中唸唸有詞，片刻間將蛇化為一根蛇杖。\n",
                 me,);
                 ob = new("/d/xingxiu/obj/shezhang");
         ob->move(environment(this_object()));

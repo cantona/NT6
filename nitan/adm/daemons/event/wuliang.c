@@ -29,7 +29,7 @@ private void do_bonus(object room)
         if (r == 0)
         {
                 msg = HIW  "只見皎潔的月光下，兩個飄逸絕倫的身影倒映在對面山壁之上，持劍翩翩起\n"
-                           "舞，劍光頓挫，仙影回翔。你不由驚嘆：寰宇之中，竟有如此絕奧之技，今\n"
+                           "舞，劍光頓挫，仙影迴翔。你不由驚歎：寰宇之中，竟有如此絕奧之技，今\n"
                            "日有緣得見仙人之姿，實在是福分非淺。\n" NOR;
 
                 message("vision", msg, obs);
@@ -69,7 +69,7 @@ private void do_bonus(object room)
                 MAP_D->record_rumor(obs, "無量山玉壁劍舞", this_object());
 
                 CHANNEL_D->do_channel(this_object(), "rumor",
-                                      "聽說大理無量山又出仙人劍舞，仙影玄奇，令人匪夷所思。");
+                                      "聽説大理無量山又出仙人劍舞，仙影玄奇，令人匪夷所思。");
         } else
         if (r < 60)
         {
@@ -100,13 +100,13 @@ private void do_bonus(object room)
                         msg = WHT "眼見皎潔的月光升起，可是一團雲飄過，遮蓋了月光，你眼前頓時一片漆黑。\n" NOR;
                         break;
                 case 1:
-                        msg = WHT "你目不轉睛的注視著對面的玉壁，可剎那間雷聲轟鳴，山風卷雲，將月光遮了個嚴實。\n" NOR;
+                        msg = WHT "你目不轉睛的注視着對面的玉壁，可剎那間雷聲轟鳴，山風捲雲，將月光遮了個嚴實。\n" NOR;
                         break;
                 default:
-                        msg = WHT "夜晚已至，可一團團濃厚的雲層卻籠罩著天空，你連對面的山頭都無法看清。\n" NOR;
+                        msg = WHT "夜晚已至，可一團團濃厚的雲層卻籠罩着天空，你連對面的山頭都無法看清。\n" NOR;
                         break;
                 }
-                msg += HIG "你不禁嘆息道：“怎奈緣分未至，無緣窺視仙影！”\n" NOR;
+                msg += HIG "你不禁歎息道：“怎奈緣分未至，無緣窺視仙影！”\n" NOR;
 
                 message("vision", msg, obs);
         }

@@ -23,7 +23,7 @@ mapping exits_name=([
         "southwest":       "西南方",
         "up":              "上方",
         "down":            "下方",
-        "enter":           "裡邊",
+        "enter":           "裏邊",
         "out":             "外邊",
 ]);
 
@@ -63,7 +63,7 @@ void create()
         if(clonep())
                 set_default_object(__FILE__);
         else {
-                set("long", "一把寒鐵制的組合弓弩，威力巨大無比。\n");
+                set("long", "一把寒鐵製的組合弓弩，威力巨大無比。\n");
                 set("unit", "把");
                 set("value", 80000);
                 set("consistence", 75);
@@ -93,7 +93,7 @@ int do_she(string arg)
            bow=query_temp("weapon", me);
 
     if( query("no_fight", room) )
-                   return notify_fail("這裡不許戰鬥！\n");
+                   return notify_fail("這裏不許戰鬥！\n");
 
            if( !bow || !query("is_bow", bow) )
                    return notify_fail("弓還在背上呢，怎麼射呀！\n");
@@ -103,14 +103,14 @@ int do_she(string arg)
 
            if( query("consistence", bow)<0 )
            {
-                    message_vision(HIW"$N手中的"+query("name", bow)+HIW"“□”地一聲斷了！\n",me);
+                    message_vision(HIW"$N手中的"+query("name", bow)+HIW"“嘣”地一聲斷了！\n",me);
                     bow->unequip();
                     destruct(bow);
                     return 1;
            }
 
            if (me->is_busy())
-                   return notify_fail("你現在正忙著呢！\n");
+                   return notify_fail("你現在正忙着呢！\n");
 
            if( query("qi", me)<200 || query("jing", me)<100 )
                    return notify_fail("你現在精氣不夠充盈，硬拉功怕有危險啊！\n"); 
@@ -131,12 +131,12 @@ int do_she(string arg)
         }
 
         if (room == environment(me))
-                      return notify_fail("看清楚點，朝哪裡射呀你？\n");
+                      return notify_fail("看清楚點，朝哪裏射呀你？\n");
                       
         if (objectp(room))
              {
             if( query("have_quest", room) || query("no_fight", room) )
-                              return notify_fail("那裡有神明佐佑，不容你胡來也！\n"); 
+                              return notify_fail("那裏有神明佐佑，不容你胡來也！\n"); 
                               
             "/cmds/std/look.c"->look_room(me, room);  
                       
@@ -147,11 +147,11 @@ int do_she(string arg)
             tell_object(all_inventory(room), HIB"你覺得一股猛烈的殺機從"HIR
                                        + exits_name[exits_reverse(what)] + HIB"傳來！！\n"NOR);
 
-                      tell_object(me, HIR + exits_name[what] + HIW"的情景你一目了然，"
-                                + "你把利箭漸漸瞄準了──>\n"NOR);   
+                      tell_object(me, HIR + exits_name[what] + HIW"的情景你一目瞭然，"
+                                + "你把利箭漸漸瞄準了——>\n"NOR);   
                       me->start_busy(2 + random(3));  
             input_to("do_shoot", me, bow, room, what, m);
-             } else return notify_fail("看清楚點，朝哪裡射呀你？\n");  
+             } else return notify_fail("看清楚點，朝哪裏射呀你？\n");  
 
             return 1;
 }
@@ -163,7 +163,7 @@ int do_shoot(string id, object me, object bow, object room, string what, int m)
 
             if (! id || id == "") 
             {
-                     message_vision("$N嘆了口氣，將箭從"+query("name", bow)+"上又取了下來。\n",me);
+                     message_vision("$N歎了口氣，將箭從"+query("name", bow)+"上又取了下來。\n",me);
                      return 1;
             }
 
@@ -280,7 +280,7 @@ int do_shoot(string id, object me, object bow, object room, string what, int m)
                                         obj->receive_wound("qi",damage-query_temp("apply/armor", obj),me);
                                 COMBAT_D->report_status(obj, random(2));  
 
-                                tell_object(me,HIB"糟糕，箭好象射到別人了，好好練箭法吧！\n"NOR);
+                                tell_object(me,HIB"糟糕，箭好像射到別人了，好好練箭法吧！\n"NOR);
                                } else
                                {
                                 message_vision(HIY"一枚"HIW"羽箭從"HIR + exits_name[exits_reverse(what)]
@@ -296,7 +296,7 @@ int do_shoot(string id, object me, object bow, object room, string what, int m)
                         tell_object(me,HIW"哎呀，箭射飛了，好好練箭法吧！\n"NOR);
                       }
             } else
-                     tell_object(me, "可惜，目標現在不在那裡了，你的箭飛了耶！\n");
+                     tell_object(me, "可惜，目標現在不在那裏了，你的箭飛了耶！\n");
 
              addn("consistence", -1, bow);
              me->receive_damage("jing", 50, me);

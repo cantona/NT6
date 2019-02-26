@@ -47,7 +47,7 @@ void init()
 void greeting(object ob)
 {
         if( !ob || environment(ob) != environment() ) return;
-             say("賣花姑娘說道：這位" + RANK_D->query_respect(ob)
+             say("賣花姑娘説道：這位" + RANK_D->query_respect(ob)
              + "，買一朵花吧。\n");
         return;
 }

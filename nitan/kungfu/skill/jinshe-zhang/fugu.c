@@ -54,7 +54,7 @@ int perform(object me, object target)
         {
                 me->start_busy(2);
                 msg = CYN "可是$p" CYN "識破了$P"
-                      CYN "這一招，手肘一送，擺脫了對方控制。\n"NOR;
+                      CYN "這一招，手肘一送，擺脱了對方控制。\n"NOR;
         }
         message_combatd(msg, me, target);
 

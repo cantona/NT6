@@ -43,10 +43,10 @@ int perform(object me, object target)
                 return notify_fail("你現在真氣不夠，難以施展" ZHUO "。\n");
 
         if (! living(target))
-                return notify_fail("對方都已經這樣了，用不著這麼費力吧？\n");
+                return notify_fail("對方都已經這樣了，用不着這麼費力吧？\n");
 
         msg = WHT "$N" WHT "手腕一探，平平推出一掌，頓時掌風激進，塵沙四起，直"
-              "刮得$n" WHT "面龐隱隱生疼。\n" NOR;
+              "颳得$n" WHT "面龐隱隱生疼。\n" NOR;
         addn("neili", -150, me);
 
         ap = me->query_skill("strike");

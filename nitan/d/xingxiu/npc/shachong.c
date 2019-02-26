@@ -8,7 +8,7 @@ void create()
         set("race", "昆蟲");
         set("subrace", "爬蟲");
         set("age", 3);
-        set("long", "一只黃褐色的小甲蟲，尾巴上有黃藍相間的環紋。你的直覺告訴\n"
+        set("long", "一隻黃褐色的小甲蟲，尾巴上有黃藍相間的環紋。你的直覺告訴\n"
 "你它一定有毒。\n");
         set("attitude", "peaceful");
         set("combat_exp", 300);

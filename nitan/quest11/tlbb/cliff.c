@@ -2,13 +2,13 @@
 
 #include <ansi.h>
 inherit ROOM;
-#define QUESTDIR3 "quest/天龍八部/蕭峰身世篇/"
+#define QUESTDIR3 "quest/天龍八部/蕭峯身世篇/"
 
 void create()
 {
 	set("short", HIC"峭壁"NOR);
 	set("long", @LONG
-這裡是頌摩崖之峭壁，從這裡望去，北面正是星宿一帶，南面是雁門關。
+這裏是頌摩崖之峭壁，從這裏望去，北面正是星宿一帶，南面是雁門關。
 站在高處，你不由感到風光無限好。
 LONG
 	);
@@ -23,9 +23,9 @@ void init()
 	object me = this_player();
   if(me->query_condition("killer")||me->query_condition("job_busy"))
   {
-     message_vision(HIC"\n突然，不知道從哪裡傳來一個聲音道：這裡不歡迎$N。\n"NOR,me); 
-     tell_object(me,HIR"跟著，不知道哪裡來的一只神腳飛起一腳，將你一腳踢飛出去！\n"NOR);
-     tell_room(environment(me),HIR"\n不知道哪裡來的一只神腳飛起一腳，將"+ me->name()+ "踢飛出去！\n"NOR, ({ me }));
+     message_vision(HIC"\n突然，不知道從哪裏傳來一個聲音道：這裏不歡迎$N。\n"NOR,me); 
+     tell_object(me,HIR"跟着，不知道哪裏來的一隻神腳飛起一腳，將你一腳踢飛出去！\n"NOR);
+     tell_room(environment(me),HIR"\n不知道哪裏來的一隻神腳飛起一腳，將"+ me->name()+ "踢飛出去！\n"NOR, ({ me }));
      if(random(2)) me->move("/d/xingxiu/silk3");
      else me->move("/d/xingxiu/jyg");
      tell_room(environment(me), HIR"\n只見"+ me->name()+ "大叫一聲飛過來，摔了個狗吃屎！好帥哦~~~~~~~~\n"NOR, ({ me }));
@@ -44,17 +44,17 @@ int do_look(string arg)
 	if (me->query(QUESTDIR3+"start")&&me->query_temp(QUESTDIR3+"askxiao") && !me->query_temp(QUESTDIR3+"lookcliff")&& !me->query(QUESTDIR3+"over")) {
 	 if (!arg) {
 		set("long", @LONG
-這裡是頌摩崖之峭壁，從這裡望去，北面正是星宿一帶，南面是雁門關。
+這裏是頌摩崖之峭壁，從這裏望去，北面正是星宿一帶，南面是雁門關。
 站在高處，你不由感到風光無限好。只是側面一大片光滑之處非常奇怪。
 LONG
 );
 		me->look(arg);
 	 }
          else if (arg == "光滑之處"||arg == "側面"||arg == "cliff" ||arg == "stone") {
-		tell_object(me,HIR"你仔細地觀察著峭壁，只見那一片山壁天生的平凈光滑，但正中一大片山石上卻盡是斧鑿的印痕，\n"
+		tell_object(me,HIR"你仔細地觀察着峭壁，只見那一片山壁天生的平淨光滑，但正中一大片山石上卻盡是斧鑿的印痕，\n"
 		                  "顯而易見，是有人故意將留下的字跡削去了。\n"NOR);
     tell_room(environment(me),HIC"\n"+me->name()+"湊近峭壁，似乎在尋找什麼。\n"NOR, ({ me }));                       
-		tell_object(me,HIC"你暗暗想道：只怕這蕭峰真的是契丹人了。\n"NOR);
+		tell_object(me,HIC"你暗暗想道：只怕這蕭峯真的是契丹人了。\n"NOR);
 		me->set_temp(QUESTDIR3+"lookcliff",1);
 		me->start_busy(5);
 		remove_call_out("xiaofeng");
@@ -65,7 +65,7 @@ LONG
 	else
 	{
 		set("long", @LONG
-這裡是頌摩崖之峭壁，從這裡望去，北面正是星宿一帶，南面是雁門關。
+這裏是頌摩崖之峭壁，從這裏望去，北面正是星宿一帶，南面是雁門關。
 站在高處，你不由感到風光無限好。
 LONG
 );

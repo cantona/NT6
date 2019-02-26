@@ -9,7 +9,7 @@ void create()
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("long", "普通的蔬菜，很新鮮，上面還滴著許許露水。\n");
+                set("long", "普通的蔬菜，很新鮮，上面還滴着許許露水。\n");
                 set("unit", "捆");
                 set("value", 2);
                 set("food_remaining", 1);

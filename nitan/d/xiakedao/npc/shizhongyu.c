@@ -52,15 +52,15 @@ void create()
 //                "road"   : "呀！你是誰呀? 怎麼連她都知道哇。她是新月的姐姐呀。\n"
 //                           "她可是個好孩子，還是個研究生呢！唉，新月能有她的一半就好了。\n",
 //                "xinyue" : "別提他了，一天遊手好閒，一點也不象他的姐姐。\n",
-                "叮當"   : "我好久沒見到她了，不知道她現在怎麼樣了。\n",
+                "叮噹"   : "我好久沒見到她了，不知道她現在怎麼樣了。\n",
                 "賞善罰惡令" : "有了它，你可以到俠客島學武功呀。\n",
         ]) );
         set("chat_chance", 8);
         set("chat_msg", ({
-                "\n石中玉說道: 叮當，你在哪呀，我好想你呀。\n",
-                "\n石中玉嘆道: 也不知道我的叮當怎麼樣了。\n",
-                "\n石中玉說道: 臘八粥可是好東西...\n",
-                "\n石中玉說道: 唉，誰能幫我殺了外面的老頭，兄弟我謝謝你了！\n",
+                "\n石中玉説道: 叮噹，你在哪呀，我好想你呀。\n",
+                "\n石中玉歎道: 也不知道我的叮噹怎麼樣了。\n",
+                "\n石中玉説道: 臘八粥可是好東西...\n",
+                "\n石中玉説道: 唉，誰能幫我殺了外面的老頭，兄弟我謝謝你了！\n",
 
         }) );
         setup();
@@ -83,14 +83,14 @@ void greeting(object ob)
         int change=0;
         if( !ob || environment(ob) != environment() )
                 return;
-        message_vision( "\n石中玉哈哈大笑道：我終于看見救我的人來了。\n",this_object());
+        message_vision( "\n石中玉哈哈大笑道：我終於看見救我的人來了。\n",this_object());
 }
 
 void die()
 {
-        say("\n石中玉說道：我還有個心願沒了，希望你能幫我照顧叮當！\n");
+        say("\n石中玉説道：我還有個心願沒了，希望你能幫我照顧叮噹！\n");
 
-        message_vision("石中玉喊著叮當的名字，死了！\n", this_object());
+        message_vision("石中玉喊着叮噹的名字，死了！\n", this_object());
         ::die();
 }
 
@@ -110,7 +110,7 @@ int accept_object(object who, object ob)
                 remove_call_out("destroy");
                 call_out("destroy", 1, who, ob);
 
-                message_vision("\n石中玉感動的熱淚迎眶：終于知道了她的消息了！\n",who);
+                message_vision("\n石中玉感動的熱淚迎眶：終於知道了她的消息了！\n",who);
                 obn = new("/d/xiakedao/obj/shane-bu");
                 obn->move(who);
                 return 1;

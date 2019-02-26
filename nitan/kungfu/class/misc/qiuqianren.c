@@ -11,7 +11,7 @@ void create()
         set_name("裘千仞", ({ "qiu qianren", "qiu", "qianren", "ren"}));
         set("nickname", WHT "鐵掌水上漂" NOR);
         set("long", "他就是威震川湘的鐵掌幫的幫主鐵掌水上漂裘千仞。\n"
-                    "他頭須皆白，身穿黃葛短衫，右手揮著一把大蒲扇。\n" );
+                    "他頭須皆白，身穿黃葛短衫，右手揮着一把大蒲扇。\n" );
 
         set("gender", "男性");
         set("age", 60);
@@ -66,12 +66,12 @@ void create()
         set("inquiry", ([
                 "絕招"    : "你要問什麼絕招？",
                 "絕技"    : "你要問什麼絕技？",
-                "鐵掌掌譜": "這本秘籍不在我手裡，想必已經失落很久了。",
+                "鐵掌掌譜": "這本祕籍不在我手裏，想必已經失落很久了。",
                 "上官劍南": "他是我的授業恩師，你問這個幹嘛？",
-                "裘千丈"  : "哼，大哥老是打著我的名號到處招搖撞騙，總有一天我要……",
+                "裘千丈"  : "哼，大哥老是打着我的名號到處招搖撞騙，總有一天我要……",
                 "裘千尺"  : "三妹下嫁到絕情谷去了，你問這個有什麼事嗎？",
-                "絕情谷"  : "絕情谷公孫止那家伙不是個東西，你問這個幹嘛？",
-                "華山論劍": "哼，去年的華山論劍要不是因為我在閉觀，哪裡輪得上王重陽那牛鼻子。",
+                "絕情谷"  : "絕情谷公孫止那傢伙不是個東西，你問這個幹嘛？",
+                "華山論劍": "哼，去年的華山論劍要不是因為我在閉觀，哪裏輪得上王重陽那牛鼻子。",
         ]));
 
         set("chat_chance_combat", 120);
@@ -110,7 +110,7 @@ void attempt_apprentice(object me)
                 command("nod");
                 command("say 原來是三妹的後裔，這樣也好，我們本來就是一家人。且讓"
                 "我先看看你的能力。\n");
-                set("move_party/絕情谷─鐵掌幫", 1, me);
+                set("move_party/絕情谷—鐵掌幫", 1, me);
         }
 
         if( query("shen", me)>-60000 )
@@ -123,7 +123,7 @@ void attempt_apprentice(object me)
         if( query("combat_exp", me)<800000 )
         {
                 command("heng");
-                command("say 你這點能力怎能繼承我的衣砵？");
+                command("say 你這點能力怎能繼承我的衣缽？");
                 return;
         }
 
@@ -144,7 +144,7 @@ void attempt_apprentice(object me)
         command("say 我就收下你了，希望你苦練鐵掌神功，將之發揚光大。");
         command("recruit"+query("id", me));
 
-        if( query("move_party/絕情谷─鐵掌幫", me) && 
+        if( query("move_party/絕情谷—鐵掌幫", me) && 
              query("surname", me) == "公孫" )
         {
                 name=query("name", me);
@@ -154,9 +154,9 @@ void attempt_apprentice(object me)
 
                 set("surname", "裘", me);
                 set("name", new_name, me);
-                delete("move_party/絕情谷─鐵掌幫", me);
+                delete("move_party/絕情谷—鐵掌幫", me);
 
-                command("say 公孫止那老家伙不是個東西，你以後還是跟你娘親姓為好。");
+                command("say 公孫止那老傢伙不是個東西，你以後還是跟你孃親姓為好。");
                 command("say 從今以後你就叫作" + new_name + "吧。");
         }
 }
@@ -188,15 +188,15 @@ mixed ask_skill3()
                 return "你的門派貢獻不夠，這招我不能傳你！";
 
         message_vision(HIY "$n" HIY "默默注視了$N" HIY "良"
-                       "久，說道：“既然如此，今日我便傳你"
+                       "久，説道：“既然如此，今日我便傳你"
                        "這招！我只演示一遍，你可要看仔細了"
-                       "！”\n\n" NOR + HIR "$n" HIR "說完"
+                       "！”\n\n" NOR + HIR "$n" HIR "説完"
                        "一聲怒喝，體內所積存數十載的天雷真"
                        "氣澎湃而發，衣衫鼓動，雙臂陡然暴\n"
                        "長數尺。只聽四周破空之聲驟然響之，"
-                       "$n" HIR "雙掌幻出漫天掌影，舖天蓋"
+                       "$n" HIR "雙掌幻出漫天掌影，鋪天蓋"
                        "地向四面八方\n雲湧而出，當真氣勢磅"
-                       "礡，無與倫比！\n" NOR,
+                       "礴，無與倫比！\n" NOR,
                        me, this_object());
         command("nod");
         command("say 這招「九穹絕剎掌」是我鐵掌幫最為精深的招式，你明白了多少？");
@@ -240,13 +240,13 @@ mixed ask_skill4()
                 return "你的門派貢獻不夠，這招我不能傳你！";
 
         message_vision(HIY "$n" HIY "微微點了點頭，對$N" HIY
-                       "說道：“看好了！”隨即順手抄起一根鋼"
+                       "説道：“看好了！”隨即順手抄起一根鋼"
                        "杖，注力入腕，「颼」的\n一聲擲出，剎"
-                       "那只見一道銀光飛逝而過，同時只聽「撲"
+                       "那隻見一道銀光飛逝而過，同時只聽「撲"
                        "哧」一聲碎響，鋼杖已沒入$N" HIY "身"
                        "後的柱\n子數尺之深。\n" NOR, me, this_object());
         command("nod");
-        command("say 這招「龍飛勢」並不復雜，下來後自己多加練習就行了！");
+        command("say 這招「龍飛勢」並不複雜，下來後自己多加練習就行了！");
         tell_object(me, HIC "你學會了「龍飛勢」這一招。\n" NOR);
         if (me->can_improve_skill("staff"))
                 me->improve_skill("staff", 960000);
@@ -262,7 +262,7 @@ int accept_ask(object me, string topic)
         {
         case "歷練" :
         case "歷煉" :
-        case "鍛煉" :
+        case "鍛鍊" :
                 return QUEST_D->accept_ask(this_object(), me, topic);
                 break;
 
@@ -271,7 +271,7 @@ int accept_ask(object me, string topic)
                         ([ "perform" : "can_perform/tie-zhang/lei",
                            "name"    : "掌心雷",
                            "msg1"    : HIY "$N" HIY "投以讚許的"
-                                       "一笑，說道：“看好了！”"
+                                       "一笑，説道：“看好了！”"
                                        "隨即只見$N" HIY "猛催內"
                                        "力，雙掌登時變得火紅，你"
                                        "正驚詫之際$N" HIY "雙掌幻"
@@ -291,16 +291,16 @@ int accept_ask(object me, string topic)
                         ([ "perform" : "can_perform/tie-zhang/juesha",
                            "name"    : "九穹絕剎掌",
                            "msg1"    : HIY "$N" HIY "默默注視了你"
-                                       "良久，說道：“既然如此，今"
+                                       "良久，説道：“既然如此，今"
                                        "日我便傳你這招！我只演示一"
-                                       "遍，你可要看仔細了！”說完"
+                                       "遍，你可要看仔細了！”説完"
                                        "一聲怒喝，體內所積存數十載"
                                        "的天雷真氣澎湃而發，衣衫鼓"
                                        "動，雙臂陡然暴長數尺。只聽"
                                        "四周破空之聲驟然響之，$N" HIY
-                                       "雙掌幻出漫天掌影，舖天蓋地向"
+                                       "雙掌幻出漫天掌影，鋪天蓋地向"
                                        "四面八方雲湧而出，當真氣勢磅"
-                                       "礡，無與倫比！",
+                                       "礴，無與倫比！",
                            "sk1"     : "tie-zhang",
                            "lv1"     : 200,
                            "force"   : 300,
@@ -369,7 +369,7 @@ int accept_ask(object me, string topic)
                            "shen"    : -75000, ]));
                 break;
 /*
-        case "鎮岳尚方" :
+        case "鎮嶽尚方" :
                 return MASTER_D->give_item(me, this_object(),
                         ([ "item"    : ZHENYUE,
                            "master"  : 1,
@@ -392,12 +392,12 @@ int recognize_apprentice(object ob, string skill)
 {
         if (ob->query_skill(skill, 1) >= 400)
         {
-                command("say 夠了！我就教你到這裡吧，武功還是"
+                command("say 夠了！我就教你到這裏吧，武功還是"
                         "要靠自己多研究才是！");
                 return -1;
         }
 
-        if( query("character", ob) != "陰險姦詐" && 
+        if( query("character", ob) != "陰險奸詐" && 
             query("character", ob) != "心狠手辣" && 
             query("character", ob) != "國士無雙" )
         {

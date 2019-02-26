@@ -4,7 +4,7 @@ void create()
 {
         set("short", "小路");
         set("long", @LONG
-這裡是一條上山的小路。山路周圍很是僻靜，連個人影也沒有。
+這裏是一條上山的小路。山路周圍很是僻靜，連個人影也沒有。
 往西南是東街，東北處是一塊墳地。
 LONG );
         set("outdoors", "baituo");

@@ -10,7 +10,7 @@ void create()
         set_name("黑冠巨蟒", ({ "snake", "she" }) );
         //set("race", "蛇類");
         set("age", 20);
-        set("long", "一只龐然大物，它眼中噴火,好象要一口把你吞下。\n");
+        set("long", "一隻龐然大物，它眼中噴火,好像要一口把你吞下。\n");
         set("attitude", "aggressive");
         set("qi", 4000);
         set("max_qi", 4000);

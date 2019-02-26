@@ -12,7 +12,7 @@ void create()
         set_name("鬼三", ({ "gui san", "san", "gui" }));
         set("gender", "男性");
         set("age", 65);
-        set("long", HIB"他就是神秘的鬼三。\n"NOR);
+        set("long", HIB"他就是神祕的鬼三。\n"NOR);
         set("combat_exp", 30000);
         set("shen_type", -1000);
         set("max_neili", 500);

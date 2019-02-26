@@ -13,7 +13,7 @@ void create()
         else {
                 set("material", "steel");
                 set("unit", "串");
-                set("long", "這是一串鐵質的項鏈，用以保護頸部。\n");
+                set("long", "這是一串鐵質的項鍊，用以保護頸部。\n");
                 set("value", 1800);
                 set("armor_prop/dodge", 5);
         }

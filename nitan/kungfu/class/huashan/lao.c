@@ -14,7 +14,7 @@ void create()
         set("nickname", "老好人");
         set("gender", "男性");
         set("age", 61);
-        set("long", "勞德諾是岳不群的二弟子，武藝也是不凡。\n");
+        set("long", "勞德諾是嶽不羣的二弟子，武藝也是不凡。\n");
         set("attitude", "peaceful");
 
         set("str", 26);
@@ -70,9 +70,9 @@ void create()
         set_temp("apply/armor", 100);
 
         set("inquiry", ([
-                "岳不群"     :  "他是我尊師，你找他有事嗎？\n",
-                "寧中則"     :  "她是我師母！\n",
-                "紫霞秘籍" : (: ask_me :),
+                "嶽不羣"     :  "他是我尊師，你找他有事嗎？\n",
+                "甯中則"     :  "她是我師母！\n",
+                "紫霞祕籍" : (: ask_me :),
         ]));
 
         set("apply/dodge", 100);
@@ -132,10 +132,10 @@ int accept_ask(object me, string topic)
                            "shen"    : 600, ]));
                 break;
 
-        case "蒼鬆式" :
+        case "蒼松式" :
                 return MASTER_D->teach_pfm(me, this_object(),
                         ([ "perform" : "can_perform/huashan-quan/song",
-                           "name"    : "蒼鬆式",
+                           "name"    : "蒼松式",
                            "sk1"     : "huashan-quan",
                            "lv1"     : 40,
                            "gongxian": 100,

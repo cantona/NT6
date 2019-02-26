@@ -2,7 +2,7 @@
 inherit SKILL;
 
 mapping *action = ({
-([      "action": "在呼呼風聲中，$N使一招「上步劈坤勢」，雙手如鉤如戢，插向$n的$l",
+([      "action": "在呼呼風聲中，$N使一招「上步劈坤勢」，雙手如鈎如戢，插向$n的$l",
         "force" : 100,
         "attack": 28,
         "dodge" : 17,
@@ -32,7 +32,7 @@ mapping *action = ({
         "skill_name" : "追雲手" ,
         "damage_type" : "抓傷"
 ]),
-([      "action": "$N使出一招「崩山嘯海勢」，猛的沖至$n跟前，雙爪暴風驟雨般抓向$n",
+([      "action": "$N使出一招「崩山嘯海勢」，猛的衝至$n跟前，雙爪暴風驟雨般抓向$n",
         "force" : 172,
         "attack": 42,
         "dodge" : 38,
@@ -72,14 +72,14 @@ mapping *action = ({
         "skill_name" : "紫電穿雲勢" ,
         "damage_type" : "抓傷"
 ]),
-([      "action": "$N使出「破岳疾勁勢」，雙爪如狂風驟雨般對準$n的$l連續抓出",
+([      "action": "$N使出「破嶽疾勁勢」，雙爪如狂風驟雨般對準$n的$l連續抓出",
         "force" : 270,
         "attack": 61,
         "dodge" : 58,
         "parry" : 38,
         "damage": 45,
         "lvl"   : 180,
-        "skill_name" : "破岳疾勁勢" ,
+        "skill_name" : "破嶽疾勁勢" ,
         "damage_type" : "抓傷"
 ])
 });
@@ -91,19 +91,19 @@ int valid_combine(string combo) { return combo == "zhenyu-quan"; }
 int valid_learn(object me)
 {
         if( query_temp("weapon", me) || query_temp("secondary_weapon", me) )
-                return notify_fail("練破岳神爪必須空手。\n");
+                return notify_fail("練破嶽神爪必須空手。\n");
 
         if ((int)me->query_skill("force") < 30)
-                return notify_fail("你的內功火候不夠，無法學破岳神爪。\n");
+                return notify_fail("你的內功火候不夠，無法學破嶽神爪。\n");
 
         if( query("max_neili", me)<300 )
-                return notify_fail("你的內力太弱，無法練破岳神爪。\n");
+                return notify_fail("你的內力太弱，無法練破嶽神爪。\n");
 
         if ((int)me->query_skill("claw", 1) < 20)
-                return notify_fail("你的基本爪法等級太低，無法學破岳神爪。\n");
+                return notify_fail("你的基本爪法等級太低，無法學破嶽神爪。\n");
 
         if ((int)me->query_skill("claw", 1) < (int)me->query_skill("poyue-zhao", 1))
-                return notify_fail("你的基本爪法火候水平有限，無法領會更高深的破岳神爪。\n");
+                return notify_fail("你的基本爪法火候水平有限，無法領會更高深的破嶽神爪。\n");
 
         return 1;
 }
@@ -130,13 +130,13 @@ int practice_skill(object me)
 {
         if( query_temp("weapon", me) || 
             query_temp("secondary_weapon", me) )
-                return notify_fail("破岳神爪必須空手練習！\n");
+                return notify_fail("破嶽神爪必須空手練習！\n");
 
         if( query("qi", me)<70 )
                 return notify_fail("你的體力太低了。\n");
 
         if( query("neili", me)<80 )
-                return notify_fail("你的內力不夠練破岳神爪。\n");
+                return notify_fail("你的內力不夠練破嶽神爪。\n");
 
         me->receive_damage("qi", 60);
         addn("neili", -69, me);

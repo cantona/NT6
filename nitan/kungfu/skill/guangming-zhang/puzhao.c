@@ -36,8 +36,8 @@ int perform(object me, object target)
                 return notify_fail("你現在內息不足，無法用內力施展聖火普照      。\n");
 
         msg = HIR "只見$N" HIR "面色端莊，無喜無怒，無慈無悲，口中喃喃不絕，渾身紅光大盛！\n\n"
-              "$N" HIR "雙掌緩緩抬起，兩團耀眼的血色光芒籠罩著手掌，看起來詭異絕倫！\n\n"
-              "猛然間，$N" HIR "吐氣長嘯，雙掌迅猛推出，紅色光芒帶著滾滾熱浪將$n整個包圍起來！\n\n"NOR;
+              "$N" HIR "雙掌緩緩抬起，兩團耀眼的血色光芒籠罩着手掌，看起來詭異絕倫！\n\n"
+              "猛然間，$N" HIR "吐氣長嘯，雙掌迅猛推出，紅色光芒帶着滾滾熱浪將$n整個包圍起來！\n\n"NOR;
 
         me->start_busy(1 + random(2));
         addn("neili", -50, me);
@@ -51,11 +51,11 @@ int perform(object me, object target)
         if (ap < dp)
         {
                 msg += HIY "$n" HIY "屏氣凝神，不受滿眼紅芒的困擾"
-                       "，身形急閃，掙脫了$N" HIY "這烈燄滔天的可怕一掌。\n\n";
+                       "，身形急閃，掙脱了$N" HIY "這烈焰滔天的可怕一掌。\n\n";
         } else
         {
                 msg += HIR "$n" HIR "只覺得眼前紅光一片，再也看不到$N的身形，"
-                               "大驚失色下，火浪已經席卷而止，接著胸口給重重印上一掌，不由鮮血狂噴！\n\n" NOR;
+                               "大驚失色下，火浪已經席捲而止，接着胸口給重重印上一掌，不由鮮血狂噴！\n\n" NOR;
                         target->receive_damage("qi", damage, me );
                         target->receive_wound("qi", random(damage/2), me);
                         if (! target->is_busy())

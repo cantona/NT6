@@ -104,17 +104,17 @@ mixed ask_back()
                 return "你不是長腳了嗎？難道上山還要我來抬你？";
 
         if( query("age", me) >= 118 )
-                return "我說你呀，年紀這麼大了還要我帶你上山麼？";
+                return "我説你呀，年紀這麼大了還要我帶你上山麼？";
 
         command("say 好吧，看在同門的分上，我就帶你上山吧。");
 
-        message_vision(HIC "$N" HIC "拉著$n" HIC "的手向山頂上走去。\n\n" NOR,
+        message_vision(HIC "$N" HIC "拉着$n" HIC "的手向山頂上走去。\n\n" NOR,
                        this_object(), me);
         tell_object(me, HIY "你覺得省力多了，毫不費勁的就上了金頂。\n" NOR);
 
         me->move("/d/emei/jinding");
 
-        message("vision", HIC + name() + HIC "一手拉著" + me->name() +
+        message("vision", HIC + name() + HIC "一手拉着" + me->name() +
                           HIC "快步的向山上走去，一會兒就不見影子了。\n" NOR,
                           environment());
         move("/d/emei/jinding");

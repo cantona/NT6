@@ -15,7 +15,7 @@ mapping *action = ({
         "damage_type" : "割傷",
         "skill_name"  : "龍戰四方",
 ]),
-([      "action" : "$N身行猛地向前一沖,腳下虛晃一掃,舉刀一招[龍騰四海]向$n的$l砍去！",
+([      "action" : "$N身行猛地向前一衝,腳下虛晃一掃,舉刀一招[龍騰四海]向$n的$l砍去！",
         "force"  : 150,
         "attack" : 45,
         "dodge"  : -40,

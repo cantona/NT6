@@ -157,7 +157,7 @@ void create()
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("long", "一張桌子，上面放著一些牌，使用方法請使用(helppai)命令。\n");
+                set("long", "一張桌子，上面放着一些牌，使用方法請使用(helppai)命令。\n");
                 set("unit", "張");
                 set("value", 1);
                 set("no_get", 1);
@@ -310,7 +310,7 @@ int do_xipai(string arg)
         
         pai = get_pais(arg);
         if(pai==0)
-                return notify_fail("沒有這種牌，請參閱幫助。\n");
+                return notify_fail("沒有這種牌，請參閲幫助。\n");
         
         sum = pai[0];
         rand = sum;
@@ -350,7 +350,7 @@ int do_sortpai(string arg)
 
         pai = get_pais(arg);
         if(pai==0)
-                return notify_fail("沒有這種牌，請參閱幫助。\n");
+                return notify_fail("沒有這種牌，請參閲幫助。\n");
         
         sum = pai[0];
         
@@ -416,7 +416,7 @@ int do_movepai(string arg)
                 where2 = this_player()->query("id")+" "+where2;
         
         if(get_pais(where2)==0)
-                return notify_fail("目的錯誤，請參閱幫助。\n");
+                return notify_fail("目的錯誤，請參閲幫助。\n");
 
         whichs = explode(which,"+");
         pstr = "";
@@ -436,7 +436,7 @@ int do_movepai(string arg)
 
                 if(wi==-1)
                 {
-                        err = "源或者牌號/序號錯誤，請參閱幫助。\n";
+                        err = "源或者牌號/序號錯誤，請參閲幫助。\n";
                         continue;
                 }
 
@@ -641,7 +641,7 @@ int do_view(string arg)
         
         pai = get_pais(arg);
         if(pai==0)
-                return notify_fail("沒有這種牌，請參閱幫助。\n");
+                return notify_fail("沒有這種牌，請參閲幫助。\n");
         
         write(id_to_name(arg)+":"+view_pai(this_player(),arg)+"\n");
         return 1;
@@ -908,11 +908,11 @@ int do_nextone(string arg)
         ob = get_player(id);
         
         if(ob==0)
-                return notify_fail("沒有設置好順序。請參閱幫助。\n");
+                return notify_fail("沒有設置好順序。請參閲幫助。\n");
         if(this_player()->query("id")!=id)
-                msg(this_player()->name()+"對"+ob->name()+"說道：到你了。\n");
+                msg(this_player()->name()+"對"+ob->name()+"説道：到你了。\n");
         else
-                msg(this_player()->name()+"對自己說道：到我啦！\n");
+                msg(this_player()->name()+"對自己説道：到我啦！\n");
         return 1;
 }
 
@@ -971,7 +971,7 @@ int do_pass(string arg)
 
         if(!arg)
                 arg = "ＰＡＳＳ！！";
-        msg(this_player()->name()+"說道："+arg+"\n");
+        msg(this_player()->name()+"説道："+arg+"\n");
         old = who_play;
         who_play = player[who_play];
 
@@ -1033,7 +1033,7 @@ int do_end(string arg)
                 if(!pai||sizeof_pai(pai)!=0)
                         return notify_fail("還沒有擺完啊！\n");
                 
-                msg(this_player()->name()+"說道：擺完牌了！！\n");
+                msg(this_player()->name()+"説道：擺完牌了！！\n");
                 if(player[this_player()->query("id")]!="F")
                 {
                         player[this_player()->query("id")]="F";
@@ -1050,7 +1050,7 @@ int do_end(string arg)
         }
         else
         {
-                msg(this_player()->name()+"說道：出完牌了！！\n");
+                msg(this_player()->name()+"説道：出完牌了！！\n");
                 who_play = "完了";
         }
         return 1;

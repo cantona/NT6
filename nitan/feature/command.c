@@ -71,10 +71,10 @@ nomask int evaluate_command(string verb, string arg)
         if( stringp(file = find_command(verb)) && call_other(file, "main", me, arg) )
                 ; else
         if( me->is_in_prison() ) 
-                return notify_fail("獄卒喝道：你老老實實的呆著別動！" + appromix_time(me->query_time_to_leave(), 1) + "放你出去！\n")
+                return notify_fail("獄卒喝道：你老老實實的呆着別動！" + appromix_time(me->query_time_to_leave(), 1) + "放你出去！\n")
                 ; else
         if( query("id") == "guest" )
-                return notify_fail("既然僅僅是來參觀，還是不要說話了！\n")
+                return notify_fail("既然僅僅是來參觀，還是不要説話了！\n")
                 ; else
         if( EMOTE_D->do_emote(me, verb, arg) )
                 ; else

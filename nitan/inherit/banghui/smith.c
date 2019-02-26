@@ -186,7 +186,7 @@ int do_sell(string arg)
 		return notify_fail( "你要賣什麼物品？\n" );
 
 	if(!ob->is_weapon() && !ob->is_armor())
-		return notify_fail(name()+"搖搖頭說道：“這裡只收購兵器和護甲。”\n");
+		return notify_fail(name()+"搖搖頭説道：“這裏只收購兵器和護甲。”\n");
 
 	if(ob->query("no_drop") || ob->query("no_sell"))
 		return notify_fail("這樣東西不能賣。\n");
@@ -220,23 +220,23 @@ int do_sell(string arg)
 		value = value*(W_MAX_MANGLE-mangle)/W_MAX_MANGLE;
 
 		if(value < 10)
-			return notify_fail(sprintf("%s說道：“%s已經不值錢了。”\n",
+			return notify_fail(sprintf("%s説道：“%s已經不值錢了。”\n",
 				this_object()->name(),ob->name()));
 
 		if(mangle == W_MAX_MANGLE)
-			return notify_fail(sprintf("%s說道：“%s已經破舊的一錢不值了。”\n",
+			return notify_fail(sprintf("%s説道：“%s已經破舊的一錢不值了。”\n",
 				this_object()->name(),ob->name()));
 		else
 			write(sprintf("你把%s賣掉，得到%s。\n",ob->name(),chinese_value(value)));
 
 		if(mangle >= W_MAX_MANGLE/2)
-			write(sprintf("%s說道：“%s已經破舊的不像樣子了，只能值這幾個錢了。”\n",
+			write(sprintf("%s説道：“%s已經破舊的不像樣子了，只能值這幾個錢了。”\n",
 				this_object()->name(),ob->name()));
 		else if(mangle >= W_MAX_MANGLE/5)
-			write(sprintf("%s說道：“%s有一些破舊，所以只能值這些錢。”\n",
+			write(sprintf("%s説道：“%s有一些破舊，所以只能值這些錢。”\n",
 				this_object()->name(),ob->name()));
 		else if(mangle >0)
-			write(sprintf("%s說道：“%s稍微有一點損壞，這個價錢已經不錯了。”\n",
+			write(sprintf("%s説道：“%s稍微有一點損壞，這個價錢已經不錯了。”\n",
 				this_object()->name(),ob->name()));
 
 		pay_player(me, value, ob->query_credit_point_flag()?1:0);
@@ -273,23 +273,23 @@ int do_sell(string arg)
 		value = value*(A_MAX_MANGLE-mangle)/A_MAX_MANGLE;
 
 		if(value < 10)
-			return notify_fail(sprintf("%s說道：“%s已經不值錢了。”\n",
+			return notify_fail(sprintf("%s説道：“%s已經不值錢了。”\n",
 				this_object()->name(),ob->name()));
 
 		if(mangle == A_MAX_MANGLE)
-			return notify_fail(sprintf("%s說道：“%s已經破舊的一錢不值了。”\n",
+			return notify_fail(sprintf("%s説道：“%s已經破舊的一錢不值了。”\n",
 				this_object()->name(),ob->name()));
 		else
 			write(sprintf("你把%s賣掉，得到%s。\n",ob->name(),chinese_value(value)));
 
 		if(mangle >= A_MAX_MANGLE/2)
-			write(sprintf("%s說道：“%s已經破舊的不像樣子了，只能值這幾個錢了。”\n",
+			write(sprintf("%s説道：“%s已經破舊的不像樣子了，只能值這幾個錢了。”\n",
 				this_object()->name(),ob->name()));
 		else if(mangle >= A_MAX_MANGLE/5)
-			write(sprintf("%s說道：“%s有一些破舊，所以只能值這些錢。”\n",
+			write(sprintf("%s説道：“%s有一些破舊，所以只能值這些錢。”\n",
 				this_object()->name(),ob->name()));
 		else if(mangle >0)
-			write(sprintf("%s說道：“%s稍微有一點損壞，這個價錢已經不錯了。”\n",
+			write(sprintf("%s説道：“%s稍微有一點損壞，這個價錢已經不錯了。”\n",
 				this_object()->name(),ob->name()));
 
 		pay_player(me, value, ob->query_credit_point_flag()?1:0);
@@ -318,10 +318,10 @@ int do_fix(string arg)
 	}
 
 	if(!arg || !ob = present(arg,me))
-		return notify_fail(this_object()->name()+"看著你說道：“你要修理什麼？”\n");
+		return notify_fail(this_object()->name()+"看着你説道：“你要修理什麼？”\n");
 
 	if(!ob->is_weapon() && !ob->is_armor())
-		return notify_fail(this_object()->name()+"搖搖頭說道：“咱這只修理兵器和護甲。”\n");
+		return notify_fail(this_object()->name()+"搖搖頭説道：“咱這隻修理兵器和護甲。”\n");
 
 	if(ob->query("base_value")) /* combined ob */
 		value = ob->value();
@@ -329,23 +329,23 @@ int do_fix(string arg)
 		value = ob->query("value");
 
 	if( !value )
-		return notify_fail(this_object()->name()+"說道：這東西不值錢還修什麼，扔了算了！\n");
+		return notify_fail(this_object()->name()+"説道：這東西不值錢還修什麼，扔了算了！\n");
 	if(value < 10)
 		return notify_fail(this_object()->name()+
-			"說道："+ob->name()+"值不了幾個錢，這不修。\n");
+			"説道："+ob->name()+"值不了幾個錢，這不修。\n");
 
 	if(ob->is_weapon())
 	{
 		mangle = ob->query("weapon_mangle");
 
 		if(!mangle)
-			return notify_fail(this_object()->name()+"說道：嶄新的"+
+			return notify_fail(this_object()->name()+"説道：嶄新的"+
 				ob->name()+"還修什麼。\n");
 
 		if(me->query_banghui_id() == b_id)
 		{
 			ob->delete("weapon_mangle");
-			write(sprintf("%s點點頭說道：%s修好了，拿著它為我們%s多出力。\n",
+			write(sprintf("%s點點頭説道：%s修好了，拿着它為我們%s多出力。\n",
 				name(), ob->name(), b_name));
 			return 1;
 		}
@@ -355,13 +355,13 @@ int do_fix(string arg)
 			fee = MIN_FEE;
 
 		if(!f=player_pay(me,fee) || f == 2)
-			return notify_fail(this_object()->name()+"說道：修理這件兵器需要"+
+			return notify_fail(this_object()->name()+"説道：修理這件兵器需要"+
 				chinese_value(fee)+"，你身上的錢不夠。\n");
 
 		else
 		{
 			ob->delete("weapon_mangle");
-			write(sprintf("%s說道：“%s修好了，修理費一共%s，看你跑江湖也不容易，這回真便宜你了。”\n",
+			write(sprintf("%s説道：“%s修好了，修理費一共%s，看你跑江湖也不容易，這回真便宜你了。”\n",
 				this_object()->name(),ob->name(),chinese_value(fee)));
 			return 1;
 		}
@@ -372,13 +372,13 @@ int do_fix(string arg)
 		mangle = ob->query("armor_mangle");
 
 		if(!mangle)
-			return notify_fail(this_object()->name()+"說道：嶄新的"+
+			return notify_fail(this_object()->name()+"説道：嶄新的"+
 				ob->name()+"還修什麼。\n");
 
 		if(me->query_banghui_id() == b_id)
 		{
 			ob->delete("armor_mangle");
-			write(sprintf("%s點點頭說道：%s修好了，穿戴著它為我們%s多出力。\n",
+			write(sprintf("%s點點頭説道：%s修好了，穿戴着它為我們%s多出力。\n",
 				name(), ob->name(), b_name));
 			return 1;
 		}
@@ -388,13 +388,13 @@ int do_fix(string arg)
 			fee = MIN_FEE;
 
 		if(!f=player_pay(me,fee) || f == 2)
-			return notify_fail(this_object()->name()+"說道：修理這件護具需要"+
+			return notify_fail(this_object()->name()+"説道：修理這件護具需要"+
 				chinese_value(fee)+"，你身上的錢不夠。\n");
 
 		else
 		{
 			ob->delete("armor_mangle");
-			write(sprintf("%s說道：“%s修好了，修理費一共%s，看你跑江湖也不容易，這回真便宜你了。”\n",
+			write(sprintf("%s説道：“%s修好了，修理費一共%s，看你跑江湖也不容易，這回真便宜你了。”\n",
 				this_object()->name(),ob->name(),chinese_value(fee)));
 			return 1;
 		}
@@ -415,9 +415,9 @@ void setup()
 		find_banghui_master();
 
 	if(!mapp(inq = this_object()->query("inquiry",1)))
-		inq = ([ "鑒定" : (: call_other, this_object(), "identify_mine_stone" :) ]);
-	else if(undefinedp(inq["鑒定"]))
-		inq += ([ "鑒定" : (: call_other, this_object(), "identify_mine_stone" :) ]);
+		inq = ([ "鑑定" : (: call_other, this_object(), "identify_mine_stone" :) ]);
+	else if(undefinedp(inq["鑑定"]))
+		inq += ([ "鑑定" : (: call_other, this_object(), "identify_mine_stone" :) ]);
 	else
 		return;
 
@@ -432,10 +432,10 @@ string identify_mine_stone(object who)
 		return 0;
 
 	if(!sizeof(inv = filter_array(all_inventory(who), (: $1->is_mine_stone() && !$1->query_check() :))))
-		return "你身上沒有需要鑒定的礦石。\n";
+		return "你身上沒有需要鑑定的礦石。\n";
 
 	inv->set_check_flag(1);
-	return sprintf("都鑒定好了%s。\n",!random(3)?"，沒什麼值錢的東西":"");
+	return sprintf("都鑑定好了%s。\n",!random(3)?"，沒什麼值錢的東西":"");
 }
 
 int do_epurate(string arg)
@@ -452,7 +452,7 @@ int do_epurate(string arg)
 	}
 
 	if(do_nothing)
-		return notify_fail(sprintf("%s說道：等會兒，正忙著呢。\n", name()));
+		return notify_fail(sprintf("%s説道：等會兒，正忙着呢。\n", name()));
 
 	if(!arg || !objectp(ob = present(arg, me)))
 		return notify_fail("你要提煉什麼？\n");
@@ -465,13 +465,13 @@ int do_epurate(string arg)
 		if( !(mcs = ob->query_mine_class())
 		|| !(cmcs = MINE_D->chinese_mine_class(mcs))
 		|| (member_array(mcs, can_epurate) == -1) )
-			return notify_fail(sprintf("%s搖搖頭說道：這裡不含任何礦物成份。\n", name()));
+			return notify_fail(sprintf("%s搖搖頭説道：這裏不含任何礦物成份。\n", name()));
 
 		if( (ew = ob->query_eff_weight()) < 1 )
-			return notify_fail(sprintf("%s搖搖頭說道：這裡含的%s太少了，沒法提煉。\n", name(), cmcs));
+			return notify_fail(sprintf("%s搖搖頭説道：這裏含的%s太少了，沒法提煉。\n", name(), cmcs));
 
 		if(!objectp(tg = MINE_D->query_mine_class_up_ob(mcs)))
-			return notify_fail(sprintf("%s搖搖頭說道：這塊礦石沒法提煉。\n", name()));
+			return notify_fail(sprintf("%s搖搖頭説道：這塊礦石沒法提煉。\n", name()));
 
 		if(me->query_banghui_id() != b_id)
 		{
@@ -482,13 +482,13 @@ int do_epurate(string arg)
 			if(!(rtn=player_pay(me,value)) || (rtn == 2))
 			{
 				destruct(tg);
-				return notify_fail(sprintf("%s說道：提煉這塊礦石裡的%s需要%s。\n",
+				return notify_fail(sprintf("%s説道：提煉這塊礦石裏的%s需要%s。\n",
 					name(), cmcs, chinese_value(value)));
 			}
 		}
 
 		do_nothing = 1;
-		message_vision("$N朝著$n點點頭說道：等一會兒。\n", this_object(), me);
+		message_vision("$N朝着$n點點頭説道：等一會兒。\n", this_object(), me);
 
 		call_out("epurate_it", 1+random(2), me, ob, tg);
 		return 1;
@@ -502,14 +502,14 @@ int do_epurate(string arg)
 		|| !(cmcs = MINE_D->chinese_mine_class(mcs))
 		|| (member_array(mcs, can_epurate) == -1)
 		|| !(upq = MINE_D->query_mine_class_up_quantity(mcs)) )
-			return notify_fail(sprintf("%s搖搖頭說道：這東西沒法再精煉了。\n", name()));
+			return notify_fail(sprintf("%s搖搖頭説道：這東西沒法再精煉了。\n", name()));
 
 		if( (ew = ob->query_weight()/100) < upq )
-			return notify_fail(sprintf("%s搖搖頭說道：對%s精煉至少需要 %d 兩，這塊%s不夠。\n",
+			return notify_fail(sprintf("%s搖搖頭説道：對%s精煉至少需要 %d 兩，這塊%s不夠。\n",
 				cmcs, upq, cmcs));
 
 		if(!objectp(tg = MINE_D->query_mine_class_up_ob(mcs)))
-			return notify_fail(sprintf("%s搖搖頭說道：我這沒法對%s進行精煉了。\n", name(), cmcs));
+			return notify_fail(sprintf("%s搖搖頭説道：我這沒法對%s進行精煉了。\n", name(), cmcs));
 
 		ew /= upq;
 
@@ -524,7 +524,7 @@ int do_epurate(string arg)
 			if(!(rtn=player_pay(me,value)) || (rtn == 2))
 			{
 				destruct(tg);
-				return notify_fail(sprintf("%s說道：對這塊%s進行精煉需要%s。\n",
+				return notify_fail(sprintf("%s説道：對這塊%s進行精煉需要%s。\n",
 					name(), cmcs, chinese_value(value)));
 			}
 		}
@@ -538,12 +538,12 @@ int do_epurate(string arg)
 		}
 
 		rong_he(me, tg);
-		write(sprintf("%s點點頭說道：好了，拿去吧。\n", name()));
+		write(sprintf("%s點點頭説道：好了，拿去吧。\n", name()));
 		return 1;
 	}
 
 	else
-		return notify_fail(sprintf("%s搖搖頭說道：這東西沒法提煉。\n", name()));
+		return notify_fail(sprintf("%s搖搖頭説道：這東西沒法提煉。\n", name()));
 }
 
 protected void epurate_it(object me, object ob, object tg)
@@ -573,7 +573,7 @@ protected void epurate_it(object me, object ob, object tg)
 
 	rong_he(me, tg);
 	do_nothing = 0;
-	message_vision("$N朝著$n點點頭說道：提煉好了，拿去吧。\n", this_object(), me);
+	message_vision("$N朝着$n點點頭説道：提煉好了，拿去吧。\n", this_object(), me);
 }
 
 int do_ronghe(string arg)
@@ -587,7 +587,7 @@ int do_ronghe(string arg)
 		return notify_fail("你要熔合什麼？\n");
 
 	rong_he(me, ob);
-	write(sprintf("%s點點頭說道：好了。\n", name()));
+	write(sprintf("%s點點頭説道：好了。\n", name()));
 	return 1;
 }
 
@@ -643,13 +643,13 @@ nomask int do_make_self(string arg)
 	}
 
 	if(me->query_banghui_id() != b_id)
-		return notify_fail(sprintf("%s搖搖頭說道：你不是我們%s的人。\n", name(), b_name));
+		return notify_fail(sprintf("%s搖搖頭説道：你不是我們%s的人。\n", name(), b_name));
 
 #ifdef WIZARD_FLAG
 	if(wizardp(me))
 		return notify_fail("巫師不允許打造兵器。\n");
 	if(query_wiz_flag() && !wizardp(me))
-		return notify_fail(sprintf("%s搖搖頭說道：我不能為玩家打造兵器。\n", name()));
+		return notify_fail(sprintf("%s搖搖頭説道：我不能為玩家打造兵器。\n", name()));
 #endif
 
 	if(!arg)	// 初始打造兵器
@@ -657,7 +657,7 @@ nomask int do_make_self(string arg)
 		string out, *can;
 
 		if(!make_weapon_ability || !sizeof(make_weapon_ability))
-			return notify_fail(sprintf("%s搖搖頭說道：我不會打造兵器。\n", name()));
+			return notify_fail(sprintf("%s搖搖頭説道：我不會打造兵器。\n", name()));
 
 		if(!sizeof(inv = filter_array(all_inventory(me), (: is_money :))))
 			return notify_fail("打造兵器需要 5 兩白銀，你身上沒錢。\n");
@@ -733,7 +733,7 @@ nomask int do_make_self(string arg)
 		ob->add("weapon_prop/damage", 1);
 		ob->set_weapon_weight();
 		ob->set_weapon_value();
-		write(sprintf("%s點點頭說道：鍛造好了，歡迎下次再光顧。\n", name()));
+		write(sprintf("%s點點頭説道：鍛造好了，歡迎下次再光顧。\n", name()));
 		return 1;
 	}
 }
@@ -976,7 +976,7 @@ protected void get_self_weapon_id(string str, object me, object ob)
 	if( !(n = sizeof(words = explode(str, " ") - ({ "" }))) || (n > 4) )
 	{
 		tell_object(me, "
-  兵器的 ID 最多只能使用 4 個英文單詞
+  兵器的 ID 最多隻能使用 4 個英文單詞
                          ~~~~
   每個單詞最多 7 個英文字母組成
 設定兵器的 ID [q退出]：\n");
@@ -989,7 +989,7 @@ protected void get_self_weapon_id(string str, object me, object ob)
 		if(sizeof(tmp) > 7)
 		{
 			tell_object(me, "
-  兵器的 ID 最多只能使用 4 個英文單詞
+  兵器的 ID 最多隻能使用 4 個英文單詞
   每個單詞最多 7 個英文字母組成
                ~~~~
 設定兵器的 ID [q退出]：\n");
@@ -1000,7 +1000,7 @@ protected void get_self_weapon_id(string str, object me, object ob)
 		if(!regexp(tmp, "^[a-zA-Z]+$"))
 		{
 			tell_object(me, "
-  兵器的 ID 最多只能使用 4 個英文單詞
+  兵器的 ID 最多隻能使用 4 個英文單詞
   每個單詞最多 7 個英文字母組成
                    ~~~~~~~~
 設定兵器的 ID [q退出]：\n");
@@ -1013,7 +1013,7 @@ protected void get_self_weapon_id(string str, object me, object ob)
 
 	ob->set_name(ob->query("name"), ({ str }) );
 
-	tell_object(me, "請設定兵器的描述：\n﹒描述內容不能超過三行\n﹒每行不超過20個漢字
+	tell_object(me, "請設定兵器的描述：\n·描述內容不能超過三行\n·每行不超過20個漢字
 請輸入('.'結束輸入，'q'退出)：\n------------------------------------------------------\n");
 	input_to((: get_self_weapon_desc :), me, ob, "");
 }
@@ -1061,8 +1061,8 @@ protected void get_self_weapon_desc(string str, object me, object ob, string des
 
 		if( sizeof(explode(desc, "\n")) > 3)
 		{
-			tell_object(me, HBCYN HIG"﹒兵器的描述內容不能超過三行，請重新設定兵器描述。
-﹒描述內容不能超過三行\n﹒每行不超過20個漢字
+			tell_object(me, HBCYN HIG"·兵器的描述內容不能超過三行，請重新設定兵器描述。
+·描述內容不能超過三行\n·每行不超過20個漢字
 請輸入('.'結束輸入，'q'退出)：\n------------------------------------------------------\n"NOR);
 			input_to((: get_self_weapon_desc :), me, ob, "");
 			return;
@@ -1101,8 +1101,8 @@ protected void get_self_weapon_desc(string str, object me, object ob, string des
 
 			if( sizeof(explode(desc, "\n")) > 3)
 			{
-				tell_object(me, HBCYN HIG"﹒兵器的描述內容不能超過三行，請重新設定兵器描述。
-﹒描述內容不能超過三行\n﹒每行不超過20個漢字
+				tell_object(me, HBCYN HIG"·兵器的描述內容不能超過三行，請重新設定兵器描述。
+·描述內容不能超過三行\n·每行不超過20個漢字
 請輸入('.'結束輸入，'q'退出)：\n------------------------------------------------------\n"NOR);
 				input_to((: get_self_weapon_desc :), me, ob, "");
 				return;
@@ -1120,8 +1120,8 @@ protected void get_self_weapon_desc(string str, object me, object ob, string des
 
 		if( sizeof(explode(desc, "\n")) > 2)
 		{
-			tell_object(me, HBCYN HIG"﹒兵器的描述內容不能超過三行，請重新設定兵器描述。
-﹒描述內容不能超過三行\n﹒每行不超過20個漢字
+			tell_object(me, HBCYN HIG"·兵器的描述內容不能超過三行，請重新設定兵器描述。
+·描述內容不能超過三行\n·每行不超過20個漢字
 請輸入('.'結束輸入，'q'退出)：\n------------------------------------------------------\n"NOR);
 			input_to((: get_self_weapon_desc :), me, ob, "");
 			return;
@@ -1369,10 +1369,10 @@ protected void get_self_weapon_unwield_msg(string str, object me, object ob)
 
 	if( !ob->move(me) && !ob->move(environment()) )
 	{
-		tell_object(me, sprintf("%s說道：你拿不了你的%s了，沒辦法。\n", name(), ob->name()));
+		tell_object(me, sprintf("%s説道：你拿不了你的%s了，沒辦法。\n", name(), ob->name()));
 		destruct(ob);
 		return;
 	}
 
-	tell_object(me, sprintf("%s說道：%s打造好了，看看滿意不滿意。\n", name(), ob->name()));
+	tell_object(me, sprintf("%s説道：%s打造好了，看看滿意不滿意。\n", name(), ob->name()));
 }

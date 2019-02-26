@@ -14,7 +14,7 @@ void create()
     else {
       set("long", "這是一根折斷的大樹幹。\n");
         set("unit","根");
-        set("wield_msg","$N舉起一根大樹幹托在手中。\n");
+        set("wield_msg","$N舉起一根大樹幹託在手中。\n");
         set("material", "wood");
     }
     init_staff(random(2));

@@ -2,10 +2,10 @@ inherit NPC;
 
 void create()
 {
-        set_name("御前侍衛", ({ "shi wei", "shi", "wei" }));
+        set_name("御前侍衞", ({ "shi wei", "shi", "wei" }));
         set("age", 32);
         set("gender", "男性");
-        set("long", "御前侍衛個個都是是紫禁城中的好手，千萬別去招惹。\n");
+        set("long", "御前侍衞個個都是是紫禁城中的好手，千萬別去招惹。\n");
         set("attitude", "peaceful");
 
         set("str", 30);
@@ -25,7 +25,7 @@ void create()
 
        set("chat_chance_combat", 10);
         set("chat_msg_combat", ({
-                "御前侍衛喝道：亡命狂徒，京城之中，豈得由你猖狂？\n",
+                "御前侍衞喝道：亡命狂徒，京城之中，豈得由你猖狂？\n",
         }));
         setup();
         carry_object("/d/beijing/npc/obj/sword4")->wield();

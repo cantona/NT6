@@ -33,7 +33,7 @@ int perform(object me, object target)
                 return notify_fail("你沒有激發峨嵋劍法，無法施展" + name() + "。\n");
 
         if (! living(target))
-               return notify_fail("對方都已經這樣了，用不著這麼費力吧？\n");
+               return notify_fail("對方都已經這樣了，用不着這麼費力吧？\n");
 
         msg = HIY "$N" HIY "跨步上前，手中" + weapon->name() +
               HIY "將峨眉劍法運轉如飛，劍光霍霍徑直逼向$n"

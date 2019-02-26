@@ -4,7 +4,7 @@ inherit NPC;
 
 void create()
 {
-        set_name("素衣衛士", ({ "wei shi", "shi", "wei" }));
+        set_name("素衣衞士", ({ "wei shi", "shi", "wei" }));
         set("age", 32);
         set("gender", "男性");
         set("long", "這是位身懷絕技的武士。\n");

@@ -11,7 +11,7 @@ void create()
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("long","這是一件太監服飾，聞起來有一股說不出的惡臭。\n");
+                set("long","這是一件太監服飾，聞起來有一股説不出的惡臭。\n");
                 set("unit", "件");
                 set("value", 60);
                 set("material", "cloth");

@@ -46,7 +46,7 @@ int accept_object(object me, object ob)
         if( query("id", ob) == "bushou jia" )
         {
                 command("nod");
-                command("say 這個我正用得著，在下無以為報，如果你願意，我\n可以"
+                command("say 這個我正用得着，在下無以為報，如果你願意，我\n可以"
                         "教你一些捕獵的技巧。");
                  set_temp("marks/hunter", 1, me);
                 return 1;
@@ -75,7 +75,7 @@ mixed teach_hunting()
 
         if (me->is_busy() || me->is_fighting())
         {
-                write("你現在正忙著。\n");
+                write("你現在正忙着。\n");
                 return 1;
         }
 
@@ -134,11 +134,11 @@ string ask_chushengdao()
         if( !query("lunhui-sword_quest/chushengdao/give_quest", me) )
         {
                 command("look"+query("id", me));
-                command("say 閣下看來並非泛泛之輩，既然你有求于我，那你得先幫我一個忙！");
+                command("say 閣下看來並非泛泛之輩，既然你有求於我，那你得先幫我一個忙！");
                 command("tan");
                 command("say 前方不遠處有一片樹林，在下三代在此狩獵，一直風平浪靜，也算落得個豐衣足食，自在快活！");
-                command("say 前不久，樹林裡出現一只猛獸，將樹林裡的其他動物全都趕跑了，不少獵人也慘糟其毒手。");
-                command("say 據說，那是一只存活千年的黃金白玉虎，兇猛非常，不少武林高手前去都無一生還 ……");
+                command("say 前不久，樹林裏出現一隻猛獸，將樹林裏的其他動物全都趕跑了，不少獵人也慘糟其毒手。");
+                command("say 據説，那是一隻存活千年的黃金白玉虎，兇猛非常，不少武林高手前去都無一生還 ……");
                 command("look"+query("id", me));
                 command("say 閣下如果有本事收拾那畜生，我這祖傳絕學便可傾囊相受。");
                 tell_object(me, this_object()->name() + HIG "讓你幫他解決掉黃金白玉虎！\n" NOR);
@@ -155,7 +155,7 @@ string ask_chushengdao()
         command("nod"+query("id", me));
         command("say 好！好！好！閣下武功非凡，在下佩服，這就傳你「畜生道」……");
 
-        message_sort(HIC "\n$N" HIC "走上前去，在$n" HIC "耳邊悄悄說了幾句，然後又拿出一本書，指指點點，"
+        message_sort(HIC "\n$N" HIC "走上前去，在$n" HIC "耳邊悄悄説了幾句，然後又拿出一本書，指指點點，"
                      "$n" HIC "不住地點頭，忽而眉頭深鎖，忽而低頭沉思 ……\n良久，$n" HIC "大笑一聲，似乎"
                      "對剛才的疑慮有所頓悟。\n", this_object(), me);
 

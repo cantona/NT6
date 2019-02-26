@@ -19,7 +19,7 @@ int do_tu(string arg)
         set("poisoned", query("pour_type"), ob);
         set("poison_number",query("poison_number",  ob)+i, ob);
 
-        set_temp("apply/long", ({query("long", ob)+"但看上去"+query("drug_color")+"，好象是被喂了劇毒。\n"}), ob);
+        set_temp("apply/long", ({query("long", ob)+"但看上去"+query("drug_color")+"，好像是被餵了劇毒。\n"}), ob);
         message_vision("$N背過身去，將"+query("name")+"塗在$n上。\n", me, ob);
         me->start_busy(2);
         add_amount(-1);

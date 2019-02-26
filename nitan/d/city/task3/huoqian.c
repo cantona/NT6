@@ -20,10 +20,10 @@ int is_container() { return 1; }
 
 void create()
 {
-        set_name(HIR"火簽"NOR, ({"huo qian","hq" }));
+        set_name(HIR"火籤"NOR, ({"huo qian","hq" }));
         set_max_encumbrance(10);
         set("unit", "塊");
-        set("long", "這是一塊朱紅的火簽，精鋼打造，用來証明官府人士的身份。\n帶著它你就有權搜尋罪犯(guancha/watch)，逮捕嫌疑犯(daibu/catch)。\n");
+        set("long", "這是一塊硃紅的火籤，精鋼打造，用來證明官府人士的身份。\n帶着它你就有權搜尋罪犯(guancha/watch)，逮捕嫌疑犯(daibu/catch)。\n");
         set("value", 0);
         set("no_drop", "這樣東西不能離開你。\n");
         set("no_get", "這是官府的東西，平常人拿了會惹麻煩的。\n");
@@ -47,7 +47,7 @@ int do_watch(string arg)
         if (!ob=present("huo qian",me))
                 return notify_fail("什麼？\n");
         if( query_temp("bt/finish", me) )
-                return notify_fail("程大人等著回話哪，你還在磨蹭什麼？\n");
+                return notify_fail("程大人等着回話哪，你還在磨蹭什麼？\n");
         if (!arg||!obj=present(arg,environment(me)))
                 return notify_fail("你要觀察誰？\n");
         if (!obj->is_character() || obj->is_corpse() )
@@ -55,10 +55,10 @@ int do_watch(string arg)
         if (!present("picture",ob))
                 return notify_fail("你早已經發現了嫌疑犯，還磨蹭什麼？\n");
         if (me->is_busy() )
-                return notify_fail("你正忙著。\n");
+                return notify_fail("你正忙着。\n");
 
         targ=query("name", obj);
-        tell_object(me,"你用銳利的眼神盯著"+targ+"。\n\n");
+        tell_object(me,"你用鋭利的眼神盯着"+targ+"。\n\n");
         me->start_busy(1);
         if( query("bt_tufei", obj) == query_temp("bt/npc", me) && 
                 random(query("kar", me)+15)>20 && 
@@ -105,7 +105,7 @@ tell_object(me,"只見"+targ+"滿臉橫肉，嘴臉兇頑。\n\n");
 tell_object(me,"只見"+targ+"悲痛欲絕，哭的象個淚人似的。\n\n");
                                 break;
                         case 5:
-tell_object(me,"只見"+targ+"手足僵硬，渾身散發著金屬光澤。\n\n");
+tell_object(me,"只見"+targ+"手足僵硬，渾身散發着金屬光澤。\n\n");
                                 break;
                         case 6:
 tell_object(me,"只見"+targ+"面無表情，呆若木雞。\n\n");
@@ -114,7 +114,7 @@ tell_object(me,"只見"+targ+"面無表情，呆若木雞。\n\n");
 tell_object(me,"只見"+targ+"長得尖嘴猴腮，目光狡詐。\n\n");
                                 break;
                         case 8:
-tell_object(me,"只見"+targ+"幹笑幾聲，臉上擠出一絲媚笑。\n\n");
+tell_object(me,"只見"+targ+"乾笑幾聲，臉上擠出一絲媚笑。\n\n");
                                 break;
                         case 9:
 tell_object(me,"只見"+targ+"挺胸疊肚，一臉傲慢的神色。\n\n");
@@ -132,22 +132,22 @@ int do_catch(string arg)
         object me = this_player();
         object ob = this_object();                        //100
         if( query("no_fight", environment(me)) )
-                return notify_fail("這裡禁止戰鬥。\n");
+                return notify_fail("這裏禁止戰鬥。\n");
 
         if (!ob=present("huo qian",me))
                 return notify_fail("什麼？\n");
         if( !query("officerlvl", me) )
                 return notify_fail("你並非朝廷官員，何必操這份閒心？\n");
         if( query_temp("bt/finish", me) )
-                return notify_fail("程大人等著回話哪，你還在磨蹭什麼？\n");
+                return notify_fail("程大人等着回話哪，你還在磨蹭什麼？\n");
         if (!arg||!obj=present(arg,environment(me)))
                 return notify_fail("你要逮捕誰？\n");
         if( !obj->is_character() || obj->is_corpse() )
                 return notify_fail("你只能逮捕一個活人。\n");
         if( !query_temp("bt/faxian", me )
                  || query_temp("bt_faxianed", obj) != query("id", me) )
-                return notify_fail("揚州紀律嚴明，沒有証據怎好拿人？\n");
-        message_vision ("$N對著$n冷笑一聲道：閣下的案子發了，老老實實跟本官走一趟。\n\n",me,obj);
+                return notify_fail("揚州紀律嚴明，沒有證據怎好拿人？\n");
+        message_vision ("$N對着$n冷笑一聲道：閣下的案子發了，老老實實跟本官走一趟。\n\n",me,obj);
         message_vision (RED"$n大叫一聲揭開偽裝，露出本來面目。\n$n大喝道：老子和你拼了！\n\n"NOR,me,obj);
         delete_temp("bt_faxianed", obj);
         destruct(obj);

@@ -31,7 +31,7 @@ int main(object me, string arg)
         case "exchange":
                 if( !GOODS_D->exchange_goods(me, str2))
                 {
-                        write("兌換失敗！\n");
+                        write("兑換失敗！\n");
                         return 1;
                 }
                 write("Successful!\n");
@@ -51,13 +51,13 @@ int help (object me)
         money = query("honors", me);
 
         write(HIY "□ 您目前的榮譽為 " + money + " (NT)
-" WHT "──────────────────────────────────
+" WHT "——————————————————————————————————
 
 " HIM "輸入指令：    rystore show all                  查看所有商城的貨物
-輸入指令：    rystore exchange <代號>           兌換指定代號的商品
+輸入指令：    rystore exchange <代號>           兑換指定代號的商品
 
 " WHT "<代號>  ：    可用物品的 name 或 編號
-" WHT "──────────────────────────────────\n" NOR);
+" WHT "——————————————————————————————————\n" NOR);
 
         return 1;
 }

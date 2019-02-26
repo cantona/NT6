@@ -11,7 +11,7 @@ void create()
         set("age", random(10) + 30);
         set("str", 25);
         set("dex", 16);
-        set("long","入侵我天朝寶島台灣的荷蘭紅毛鬼。他手上端著一支火槍，槍口還冒著青煙。\n");
+        set("long","入侵我天朝寶島台灣的荷蘭紅毛鬼。他手上端着一支火槍，槍口還冒着青煙。\n");
         set("combat_exp", 25000);
         set("shen_type", 1);
         set("attitude", "peaceful");
@@ -41,7 +41,7 @@ void init()
 void greeting(object ob)
 {
         if( environment(ob) != environment() ) return;
-        say("紅毛鬼抬手就是一槍：砰！槍口一團火燄噴出。\n");
+        say("紅毛鬼抬手就是一槍：砰！槍口一團火焰噴出。\n");
         ob->receive_damage("qi",50);
         ob->receive_wound("qi",50);
 }

@@ -22,7 +22,7 @@ int main(object me, string arg)
                 return help();
 
         if (me->is_fighting())
-                return notify_fail("你正忙著打架呢，哪有時間做這種事？\n");
+                return notify_fail("你正忙着打架呢，哪有時間做這種事？\n");
 
         if (me->is_busy())
                 return notify_fail("你正忙，沒法靜下心來。\n");
@@ -70,7 +70,7 @@ int main(object me, string arg)
                 switch (random(6))
                 {
                 case 0:
-                        tell_object(me, HIR "你又想起了很多溫馨"
+                        tell_object(me, HIR "你又想起了很多温馨"
                                     "的往事，不由得沉浸其中。\n" NOR);
                         break;
                 case 1:
@@ -78,16 +78,16 @@ int main(object me, string arg)
                                     "的童年，一時忘卻了塵世間的煩惱。\n" NOR);
                         break;
                 case 2:
-                        tell_object(me, HIR "你黯然一聲長嘆，只覺"
+                        tell_object(me, HIR "你黯然一聲長歎，只覺"
                                     "得自己為了武學荒廢一生，實在無謂。\n" NOR);
                         break;
                 case 3:
                         tell_object(me, HIR "你心如止水，所有的"
-                                    "武功都仿佛離自己遠去了。\n" NOR);
+                                    "武功都彷彿離自己遠去了。\n" NOR);
                         break;
                 case 4:
                         tell_object(me, HIR "你抬頭仰望天空，發"
-                                    "現它明亮透析，說不出的嬌媚，令你身心俱化。\n" NOR);
+                                    "現它明亮透析，説不出的嬌媚，令你身心俱化。\n" NOR);
                         break;
                 default:
                         tell_object(me, HIR "你腦海中晃過當年無"
@@ -143,7 +143,7 @@ int main(object me, string arg)
                 SKILLS_D->remove_id_from_abandon(me, skill);
                 me->delete_skill(skill);
                 me->reset_action();
-                write("你集中精力不再想" + name + "，結果終于將它徹底忘記了。\n");
+                write("你集中精力不再想" + name + "，結果終於將它徹底忘記了。\n");
         } else
         {
                 me->set_skill(skill, lvl);
@@ -188,7 +188,7 @@ varargs void check_password(string passwd, object me, string skill, int lvl, str
                 switch (random(6))
                 {
                 case 0:
-                        tell_object(me, HIR "你又想起了很多溫馨"
+                        tell_object(me, HIR "你又想起了很多温馨"
                                     "的往事，不由得沉浸其中。\n" NOR);
                         break;
                 case 1:
@@ -196,16 +196,16 @@ varargs void check_password(string passwd, object me, string skill, int lvl, str
                                     "的童年，一時忘卻了塵世間的煩惱。\n" NOR);
                         break;
                 case 2:
-                        tell_object(me, HIR "你黯然一聲長嘆，只覺"
+                        tell_object(me, HIR "你黯然一聲長歎，只覺"
                                     "得自己為了武學荒廢一生，實在無謂。\n" NOR);
                         break;
                 case 3:
                         tell_object(me, HIR "你心如止水，所有的"
-                                    "武功都仿佛離自己遠去了。\n" NOR);
+                                    "武功都彷彿離自己遠去了。\n" NOR);
                         break;
                 case 4:
                         tell_object(me, HIR "你抬頭仰望天空，發"
-                                    "現它明亮透析，說不出的嬌媚，令你身心俱化。\n" NOR);
+                                    "現它明亮透析，説不出的嬌媚，令你身心俱化。\n" NOR);
                         break;
                 default:
                         tell_object(me, HIR "你腦海中晃過當年無"
@@ -239,7 +239,7 @@ varargs void check_password(string passwd, object me, string skill, int lvl, str
                 SKILLS_D->remove_id_from_abandon(me, skill);
                 me->delete_skill(skill);
                 me->reset_action();
-                write("你集中精力不再想" + name + "，結果終于將它徹底忘記了。\n");
+                write("你集中精力不再想" + name + "，結果終於將它徹底忘記了。\n");
         } else
         {
                 int add;
@@ -265,7 +265,7 @@ int help()
 放棄你的實戰經驗或是某一項你所學過的技能到指定的數值，成功率
 和你的天賦有關，只有能夠休息的地方才能夠靜下心來忘記武功。
 
-有時候因為武功相克或者你不再打算在某項技能上再下功夫，就可以
+有時候因為武功相剋或者你不再打算在某項技能上再下功夫，就可以
 使用這條指令放棄它。
 TEXT );
         return 1;

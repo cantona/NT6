@@ -7,7 +7,7 @@ void create()
 {
         set_name("顧憲成", ({ "gu xiancheng", "gu" }));
         set("gender", "男性");
-        set("long", "顧憲成重于學識，講究品行，受到各地學者仰慕。\n");
+        set("long", "顧憲成重於學識，講究品行，受到各地學者仰慕。\n");
         set("age", 45);
         set("no_get", 1);
         set_skill("literate", 300);
@@ -23,7 +23,7 @@ void create()
         set("shen_type", 1);
         set("inquiry", ([
                 "書"   : "唉！書到用時方恨少。",
-                "借書" : "借？你不還我到哪裡找你？哼！",
+                "借書" : "借？你不還我到哪裏找你？哼！",
         ]));
         setup();
 

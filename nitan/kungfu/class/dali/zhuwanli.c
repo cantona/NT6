@@ -1,4 +1,4 @@
-// zhuwanli.c 褚萬裡
+// zhuwanli.c 褚萬里
 
 #include <ansi.h>
 inherit NPC;
@@ -10,9 +10,9 @@ int ask_me();
 int ask_for_toushen();
 void create()
 {
-        set_name("褚萬裡", ({ "zhu wanli", "zhu" }));
-        set("title",  "大理國護衛" );
-        set("long", "他是大理國四大護衛之一。身穿黃衣，臉上英氣逼人。手持一根鐵桿。\n");
+        set_name("褚萬里", ({ "zhu wanli", "zhu" }));
+        set("title",  "大理國護衞" );
+        set("long", "他是大理國四大護衞之一。身穿黃衣，臉上英氣逼人。手持一根鐵桿。\n");
         set("gender", "男性");
         set("age", 33);
         set("class", "officer");
@@ -71,7 +71,7 @@ void create()
         carry_object(__DIR__"obj/diaogan")->wield();
         add_money("silver", 10);
 
-        create_family("大理段家",19,"護衛");
+        create_family("大理段家",19,"護衞");
 }
 int ask_for_toushen()
 {
@@ -81,23 +81,23 @@ int ask_for_toushen()
 
         if( query("class", me) == "eunach" )
         {
-                command("say 公公？我們府裡不收公公。\n");
+                command("say 公公？我們府裏不收公公。\n");
                 return 1;
         }
         if( query("class", me) == "bonze" )
         {
-                say( "褚萬裡說道：這位" + RANK_D->query_respect(me)
+                say( "褚萬里説道：這位" + RANK_D->query_respect(me)
                         + "，出家人哪還能再有家？\n");
                 return 1;
         }
         if( (int)me->query_str() < 20)
         {
-                say( "褚萬裡說道：這位" + RANK_D->query_respect(me)
-                        + "這麼文弱，怎麼能在府裡承值？\n");
+                say( "褚萬里説道：這位" + RANK_D->query_respect(me)
+                        + "這麼文弱，怎麼能在府裏承值？\n");
                 return 1;
         }
-        say( "褚萬裡說道：這位" + RANK_D->query_respect(me)
-                + "就委屈你先在府裡聽用吧。\n");
+        say( "褚萬里説道：這位" + RANK_D->query_respect(me)
+                + "就委屈你先在府裏聽用吧。\n");
         set("guard", "鎮南王府家奴", me);
         return 1;
 }

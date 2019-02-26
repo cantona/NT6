@@ -4,7 +4,7 @@ void create()
 {
         set("short", "淺灘");
         set("long",@LONG
-這是神龍島東部沿岸淺灘，你半身置身于水中。
+這是神龍島東部沿岸淺灘，你半身置身於水中。
 LONG);
 
 	set("exits", ([

@@ -16,7 +16,7 @@ int update_condition(object me, int duration)
                 else
                 {
                         tell_object(me, HIB "你忽然感到體內精元流泄，頭昏沉沉的。\n" NOR );
-                        message("vision", me->name() + "突然兩腿發軟，兩手抱成一團，冷得直發抖。\n",
+                        message("vision", me->name() + "突然兩腿發軟，兩手抱成一團，冷得直髮抖。\n",
                                 environment(me), me);
                 }
                 

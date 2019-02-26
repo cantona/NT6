@@ -1,7 +1,7 @@
 inherit SHAOLIN_SKILL;
 
 mapping *action = ({
-([      "action": "在呼呼風聲中，$N飛身一躍，雙手如鉤如戢，插向$n的$l",
+([      "action": "在呼呼風聲中，$N飛身一躍，雙手如鈎如戢，插向$n的$l",
         "force" : 60,
         "dodge" : 20,
         "parry" : 35,
@@ -53,7 +53,7 @@ int valid_enable(string usage)
 int practice_skill(object me)
 {
         if( query("qi", me)<100 )
-                return notify_fail("你現在手足酸軟，休息一下再練吧。\n");
+                return notify_fail("你現在手足痠軟，休息一下再練吧。\n");
 
         if( query("neili", me)<80 )
                 return notify_fail("你的內力不夠了。\n");

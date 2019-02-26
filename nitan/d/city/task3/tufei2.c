@@ -4,7 +4,7 @@ inherit NPC;
 
 void create()
 {
-        set_name("臥虎花紋", ({ "picture"}) );
+        set_name("卧虎花紋", ({ "picture"}) );
         set("gender", "男性" );
         set("age", 34);
         set("long",

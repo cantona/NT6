@@ -97,7 +97,7 @@ int main(object me, string arg)
                                 }
                         }
                         if (i==sizeof(dirs))
-                                return notify_fail(HIG"這裡不能查看地圖，請到室外。\n"NOR);
+                                return notify_fail(HIG"這裏不能查看地圖，請到室外。\n"NOR);
                 }
                 name=filter_color(query("short", room1));
                 if( strsrch(file, "_zone") != -1 )
@@ -112,7 +112,7 @@ int main(object me, string arg)
                                 return 1;
                         }
                 }
-                return notify_fail(HIY"暫時還沒有開放這裡的地圖查詢。\n"NOR);
+                return notify_fail(HIY"暫時還沒有開放這裏的地圖查詢。\n"NOR);
         }
         else
         {
@@ -132,18 +132,18 @@ int main(object me, string arg)
 string make_color(string map)
 {
         map = replace_string(map, "★", HIR"★"NOR);
-        map = replace_string(map, "≒", HIC"≒"NOR);
+        map = replace_string(map, "≈", HIC"≈"NOR);
         map = replace_string(map, "～", HIC"～"NOR);
-        map = replace_string(map, "Λ", HIG"Λ"NOR);
+        map = replace_string(map, "∧", HIG"∧"NOR);
         map = replace_string(map, "ψ", GRN"ψ"NOR);
         map = replace_string(map, "♀", HIR"♀"NOR);
         map = replace_string(map, "±", HIM"±"NOR);
         map = replace_string(map, "＋", HIG"＋"NOR);
         map = replace_string(map, "∴", YEL"∴"NOR);
-        map = replace_string(map, "□", YEL"□"NOR);
-        map = replace_string(map, "□", HIW"□"NOR);
+        map = replace_string(map, "∷", YEL"∷"NOR);
+        map = replace_string(map, "≌", HIW"≌"NOR);
         map = replace_string(map, "＊", MAG"＊"NOR);
-        map = replace_string(map, "─", HIY"─"NOR);
+        map = replace_string(map, "—", HIY"—"NOR);
         map = replace_string(map, "｜", HIY"｜"NOR);
         map = replace_string(map, "＼", HIY"＼"NOR);
         map = replace_string(map, "／", HIY"／"NOR);
@@ -171,8 +171,8 @@ string make_color(string map)
         map = replace_string(map, ">", ">"NOR);
         map = replace_string(map, "【", YEL"【");
         map = replace_string(map, "】", "】"NOR);
-        map = replace_string(map, "□", CYN"□"NOR);
-        map = replace_string(map, "□", CYN"□"NOR);
+        map = replace_string(map, "〖", CYN"〖"NOR);
+        map = replace_string(map, "〗", CYN"〗"NOR);
         return map;
 }
 

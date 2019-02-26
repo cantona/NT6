@@ -32,7 +32,7 @@ set("max_neili", max_limit, 			me);
 		message_vision(HIY "$N吃下一枚百花腹蛇膏，頓然間只覺一股清涼之氣直沁心肺...\n" NOR, this_player());
 	}
 	else
-		message_vision(HIY "$N吃下一枚百花腹蛇膏，但是好象沒什麼用.\n" NOR, this_player());
+		message_vision(HIY "$N吃下一枚百花腹蛇膏，但是好像沒什麼用.\n" NOR, this_player());
 
 	destruct(this_object());
 	return 1;

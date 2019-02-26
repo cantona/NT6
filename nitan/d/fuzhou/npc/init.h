@@ -77,7 +77,7 @@ void do_check()
         {
                if( ! living(me)&& ob = present("biao tou",environment(me)))
                 {
-                    message_vision("$N咬牙切齒地對著天空大叫：“賊老天！”\n",me);
+                    message_vision("$N咬牙切齒地對着天空大叫：“賊老天！”\n",me);
                     addn("combat_num", 1, ob);
                     return;
                 }
@@ -95,7 +95,7 @@ void do_check()
                         if( !query("no_fight", environment()) )
                         {
                                 me->set_leader(ob);
-                                message_vision("$N對著$n大喝一聲：你這"+RANK_D->query_rude(ob)+"，拿命來！\n",me,ob);
+                                message_vision("$N對着$n大喝一聲：你這"+RANK_D->query_rude(ob)+"，拿命來！\n",me,ob);
                                 command("kill"+query("id", ob));
                         //      ob -> addn("combat_num",1);
                        //       if(!ob->is_busy())  ob->start_busy(20);
@@ -117,7 +117,7 @@ void do_jiefei()
         object me = this_object();
         remove_call_out("do_jiefei");
         message_vision(HIY"$N冷笑道：哈哈，我的幫手來啦！\n"NOR,me);
-        message_vision(HIR"猛地一陣腳步亂響，黃河幫劫匪沖了過來！\n"NOR,me);
+        message_vision(HIR"猛地一陣腳步亂響，黃河幫劫匪衝了過來！\n"NOR,me);
         ob = new(__DIR__"jiefei");
         ob ->move(environment(me));
 }
@@ -145,7 +145,7 @@ void do_wait()
                 }
                 else
                 {
-                        message_vision("$N自言自語地說道：看來鏢車不會從這裡來了，我還是回去吧。\n$N滿面無奈地向遠處走了開去。\n",this_object());
+                        message_vision("$N自言自語地説道：看來鏢車不會從這裏來了，我還是回去吧。\n$N滿面無奈地向遠處走了開去。\n",this_object());
                         destruct(me);
                 }
         }
@@ -157,7 +157,7 @@ void killed_enemy(object victim)
 
         if( query("id", victim) == "biaotou" )
         {
-                message_vision("$N仰天狂笑一聲：哈哈，“終于得手了！我看你怎麼交差！”幾個起落，飛身不見了。\n",me);
+                message_vision("$N仰天狂笑一聲：哈哈，“終於得手了！我看你怎麼交差！”幾個起落，飛身不見了。\n",me);
                 destruct(me);
         }
 }

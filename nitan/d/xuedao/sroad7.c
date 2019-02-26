@@ -5,7 +5,7 @@ void create()
 {
         set("short", "大雪山口");
         set("long", @LONG
-群山環繞，四周積雪終年不化。南邊不遠處有一個山谷。
+羣山環繞，四周積雪終年不化。南邊不遠處有一個山谷。
 LONG );
         set("exits", ([
                 "north"     : __DIR__"sroad6",
@@ -34,7 +34,7 @@ int valid_leave(object me, string dir)
                         me->receive_wound("qi", 70);
                 }
 
-                tell_object(me, HIW "只見大片的積雪從山峰上奔騰而下，舖"
+                tell_object(me, HIW "只見大片的積雪從山峯上奔騰而下，鋪"
                                 "天蓋地撲來，沿途並夾\n帶了不少巖石。趕"
                                 "緊逃命吧！\n\n" NOR);
 

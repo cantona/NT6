@@ -169,14 +169,14 @@ int accept_object(object me, object ob)
         if( query("can_perform/badao/san-2", me) )
         {
                 command("say 謝謝你上次的美酒。");
-                tell_object(me, HIR "聽說神龍島觀龍亭隱藏著一位高人，要學阿鼻道第三刀可以找他試試。\n" NOR);
+                tell_object(me, HIR "聽説神龍島觀龍亭隱藏着一位高人，要學阿鼻道第三刀可以找他試試。\n" NOR);
                 return 0;
         }
 
         command("say 這不是天乙神酒嗎！既然你能找到這失傳已久的美酒，我便傳你阿鼻道第二刀，你可聽好了 ...");
 
         tell_object(me, HIG "恭喜你，領悟了阿鼻道第二刀！\n" NOR);
-        tell_object(me, HIR "聽說神龍島觀龍亭隱藏著一位高人，要學阿鼻道第三刀可以找他試試。\n" NOR);
+        tell_object(me, HIR "聽説神龍島觀龍亭隱藏着一位高人，要學阿鼻道第三刀可以找他試試。\n" NOR);
         set("can_perform/badao/san-2", 1, me);
 
         me->save();

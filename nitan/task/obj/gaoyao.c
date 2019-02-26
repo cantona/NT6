@@ -9,7 +9,7 @@ void create()
         else { 
                 set("unit", "張"); 
                 set("material", "paper"); 
-                set("long", "這是一張特制的膏藥，彌漫著淡淡的草藥氣味。\n"); 
+                set("long", "這是一張特製的膏藥，瀰漫着淡淡的草藥氣味。\n"); 
         } 
         set("owner", "徐天川"); 
         setup(); 

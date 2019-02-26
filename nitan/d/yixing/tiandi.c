@@ -7,8 +7,8 @@ void create()
 {
         set("short", "田地");
         set("long", @LONG
-這裡是一片農田。不遠處有一些村莊，炊煙裊裊升起。村莊周圍是
-一塊塊的田地，很有次序的排成一個個井字，田裡有一些正在耕作的農
+這裏是一片農田。不遠處有一些村莊，炊煙裊裊升起。村莊周圍是
+一塊塊的田地，很有次序的排成一個個井字，田裏有一些正在耕作的農
 人，過路人貪近路也可以從田間井字分割的小徑穿過。
 LONG );
         set("outdoors", "yixing");
@@ -31,12 +31,12 @@ int valid_leave(object me, string dir)
         if (dir == "west" )
         {
                 me->receive_damage("qi", 10);
-                tell_object(me,"你走上田間突起的小土□，覺的很是狹窄，慢慢的走了進去。\n");
+                tell_object(me,"你走上田間突起的小土壠，覺的很是狹窄，慢慢的走了進去。\n");
         }
         else
         {
                 me->receive_damage("qi", 10);
-                message_vision("$N踩著田間的小土□，慢慢向前走去。\n", me);
+                message_vision("$N踩着田間的小土壠，慢慢向前走去。\n", me);
         }
         return 1;
 }

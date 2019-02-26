@@ -2,13 +2,13 @@
 
 inherit ROOM;
 #include <ansi.h>
-#define QUESTDIR "quest/射雕英雄傳/風雪驚變/"
+#define QUESTDIR "quest/射鵰英雄傳/風雪驚變/"
 
 void create()
 {
 	set("short", GRN "前院" NOR);
 	set("long",@long
-這裡是楊鐵心家的前院，院子由籬笆和竹子編成的柵欄，院子裡放著一個鐵犁，顯得格外蒼涼。
+這裏是楊鐵心家的前院，院子由籬笆和竹子編成的柵欄，院子裏放着一個鐵犁，顯得格外蒼涼。
 long);
   set("outdoors", "蘭州");
 	set("exits",([
@@ -22,9 +22,9 @@ long);
 int valid_leave(object me, string dir)
 {
     if (dir == "north" && !me->query(QUESTDIR+"over"))
-          return notify_fail(RED"沒有主人的允許你不可以去人家家裡。\n"NOR);
+          return notify_fail(RED"沒有主人的允許你不可以去人家家裏。\n"NOR);
         if(dir == "north" &&me->query_condition("killer")) 
-   		          return notify_fail(RED"沒有主人的允許你不可以去人家家裡。\n"NOR);
+   		          return notify_fail(RED"沒有主人的允許你不可以去人家家裏。\n"NOR);
     return ::valid_leave(me, dir);
 }
 
@@ -73,19 +73,19 @@ void goyangjia(object me)
     return;
 }
 
-     tell_object(me,YEL"\n你聽到楊鐵心低說道：“官家不知為了何事，竟來污害良民。跟官府是辯不清楚的，咱們只好逃命。你別慌，憑我這桿槍，定能保你沖出重圍。”\n"NOR); 
-	   tell_room(environment(me), YEL+me->name()+"一想大俠楊鐵心要突受危難，猛然沖進楊家去救楊鐵心！\n" NOR, ({me}));
+     tell_object(me,YEL"\n你聽到楊鐵心低説道：“官家不知為了何事，竟來污害良民。跟官府是辯不清楚的，咱們只好逃命。你別慌，憑我這杆槍，定能保你衝出重圍。”\n"NOR); 
+	   tell_room(environment(me), YEL+me->name()+"一想大俠楊鐵心要突受危難，猛然衝進楊家去救楊鐵心！\n" NOR, ({me}));
         log_file("quest/SheDiao", sprintf("%s(%s)初進牛家村楊家前院。經驗%d。\n", me->name(1),me->query("id"), me->query("combat_exp")) );
 	   me->move(__DIR__"yangjia");  
 }
 int do_save()
 {
-	write("這裡不準存盤！\n");
+	write("這裏不準存盤！\n");
 	return 1;
 }
 int do_quit()
 {
-	write("這裡不準退出！\n");
+	write("這裏不準退出！\n");
 	return 1;
 }
 

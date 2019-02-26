@@ -2,7 +2,7 @@ int permit_recruit(object ob)
 {
         if( query("detach/丐幫", ob) || query("betrayer/丐幫", ob) )
         {
-                command("say 嘿嘿，你當初走的時候是怎麼說的？");
+                command("say 嘿嘿，你當初走的時候是怎麼説的？");
                 return 0;
         }
 

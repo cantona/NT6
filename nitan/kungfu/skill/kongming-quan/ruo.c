@@ -34,7 +34,7 @@ int perform(object me, object target)
                 return notify_fail("你現在的真氣太弱，難以施展" + name() + "。\n");
 
         if (! living(target))
-                return notify_fail("對方都已經這樣了，用不著這麼費力吧？\n");
+                return notify_fail("對方都已經這樣了，用不着這麼費力吧？\n");
 
         msg = WHT "$N" WHT "使出空明拳「" HIG "空明若玄" NOR + WHT "」，雙手"
               "吞吐不定，運轉如意，試圖擾亂$n" WHT "的攻勢。\n" NOR;

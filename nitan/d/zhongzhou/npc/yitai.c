@@ -6,7 +6,7 @@ void create()
         set("gender", "女性" );
         set("age", 22);
         set("shen_type", -1);
-        set("long", "她是周鬆天的姨太太，打扮得非常的妖艷。\n");
+        set("long", "她是周鬆天的姨太太，打扮得非常的妖豔。\n");
 
         set("combat_exp", 100);
         set("attitude", "peaceful");

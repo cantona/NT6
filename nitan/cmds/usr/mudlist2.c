@@ -7,7 +7,7 @@ inherit F_CLEAN_UP;
 
 string help = @HELP
     列出主要 Mud 即時監測列表。
-    另可由 http://www.muds.cn 隨時查閱即時資料
+    另可由 http://www.muds.cn 隨時查閲即時資料
 
 HELP;
 
@@ -21,7 +21,7 @@ string online_user_record()
         int *realtime = TIME_D->query_realtime_array();
         int i, j, hour = realtime[HOUR];
         string str,b="□";
-        //string str,b="□";
+        //string str,b="█";
         string s="                                                                                                            ";
         string *list=({s,s,s,s,s,s,s,s,s,s,s,s,s,s});
         mapping record; 
@@ -56,7 +56,7 @@ string online_user_record()
                                         list[i+1][j*4..j*4+3]=" "+b+" ";
                         }
                 }
-                str +=NOR WHT"□"NOR+list[i]+"\n";
+                str +=NOR WHT"∣"NOR+list[i]+"\n";
         }
 
         str += NOR WHT"└────────────────────────────────────────────────→\n"NOR;
@@ -123,7 +123,7 @@ int main(object me, string arg)
         msg += NOR "──────────────────────────────────────────────────\n";
         msg += "* 網頁瀏覽永久位址為 http://www.muds.cn\n";
         msg += "* 玩家顯示 NA 代表系統無法直接查詢得到此 Mud 線上玩家數量\n";
-        msg += "* 若您的 Mud 欲加入列表、修改或是不希望在列表出現，請至 muds.cn 5000 與 Lonely 聯系\n"NOR;
+        msg += "* 若您的 Mud 欲加入列表、修改或是不希望在列表出現，請至 muds.cn 5000 與 Lonely 聯繫\n"NOR;
         msg += "──────────────────────────────────────────────────\n"NOR;
         msg += NOR WHT"共有 "HIW+sizeof(mudnamesort)+NOR WHT" 個 Mud，"HIW+allmuders+NOR WHT" 位玩家在列表中\n"NOR;
         msg += "──────────────────────────────────────────────────\n"NOR;

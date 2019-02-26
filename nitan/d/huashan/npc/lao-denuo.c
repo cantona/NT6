@@ -11,7 +11,7 @@ void create()
         set("nickname", "老好人");
         set("gender", "男性");
         set("age", 61);
-        set("long", "勞德諾是岳不群的二弟子。\n");
+        set("long", "勞德諾是嶽不羣的二弟子。\n");
         set("attitude", "peaceful");
 
         set("str", 26);

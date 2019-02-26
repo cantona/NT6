@@ -6,7 +6,7 @@ void create()
 {
         set_name("察合台",({"cha hetai","cha","hetai"}));
         set("gender","男性");
-        set("long","鐵木真的二兒子，生性粗魯，兩顆獠牙露在嘴唇外！\n");
+        set("long","鐵木真的二兒子，生性粗魯，兩顆獠牙露在嘴脣外！\n");
         set("mingwang",-15000);
         set("combat_exp", 200000);
         set("age",34);

@@ -65,13 +65,13 @@ int ask_go()
                 if(query("id")==host_id)
                 {
                         say(query("name")+"睜大眼睛看了看"+
-                                query("name", me)+"，說:當然願意啦,我都聽你的。\n");
+                                query("name", me)+"，説:當然願意啦,我都聽你的。\n");
                         return 1;
                 }
                 if( query("id", me) != host_id )
                 {
                         say(query("name")+"睜大眼睛看了看"+
-                                query("name", me)+"，說:不行的,我得聽我主人的。\n");
+                                query("name", me)+"，説:不行的,我得聽我主人的。\n");
                         return 1;
                    }
         }
@@ -87,9 +87,9 @@ int ask_go()
                 set("id",new_id);
                 set("long","這是"+new_name+"。\n"
                 "她是一個十分清秀的少女,大約十四五歲年紀;\n"
-                "一張雪白的臉龐,眉彎嘴小,笑靨如花,正笑嘻嘻地看著你。\n");
+                "一張雪白的臉龐,眉彎嘴小,笑靨如花,正笑嘻嘻地看着你。\n");
         }
-        else say(query("name")+"睜大眼睛看著"+
-                query("name", me)+"，說:不行的,夫人沒有同意。\n");
+        else say(query("name")+"睜大眼睛看着"+
+                query("name", me)+"，説:不行的,夫人沒有同意。\n");
         return 1;
 }

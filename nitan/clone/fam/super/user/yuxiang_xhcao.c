@@ -7,7 +7,7 @@ void create()
         if (clonep())
                 set_default_object(__FILE__);
         else {  
-        	set("long", HIG "仙魂草長于昆侖山溶洞之中，傳說吸收了修仙之人的魂魄！\n" + 
+        	set("long", HIG "仙魂草長於崑崙山溶洞之中，傳説吸收了修仙之人的魂魄！\n" + 
         	                "服食(fushi xianhuncao)後可永久提升武學修養1級。\n" HIC
         	                "擁有者：yuxiang\n" NOR);
                 set("unit", "束");
@@ -35,7 +35,7 @@ int do_use(string arg)
 		return notify_fail("你身上沒有這個東西！\n");
 
 	if (ob->query("owner") != me->query("id"))
-		return notify_fail(ob->name() + NOR "已經于其他玩家綁定！\n");
+		return notify_fail(ob->name() + NOR "已經於其他玩家綁定！\n");
 	
 	me->set_skill("martial-cognize", me->query_skill("martial-cognize", 1) + 1);
 

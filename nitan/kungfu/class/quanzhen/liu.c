@@ -104,7 +104,7 @@ void attempt_apprentice(object ob)
         }
         if( query("shen", ob)<6000 )
         {
-                command("say 多做一些行俠仗義的事情再說吧！。\n");
+                command("say 多做一些行俠仗義的事情再説吧！。\n");
                 return;
         }
         command("say 好吧，我就收下你這個徒弟了。");
@@ -121,7 +121,7 @@ mixed ask_skill1()
                 return "這招我不是已經教會你了嗎？";
 
         if( query("family/family_name", me) != query("family/family_name") )
-                return "閣下與貧道素不相識，不知此話從何說起？";
+                return "閣下與貧道素不相識，不知此話從何説起？";
 
         if (me->query_skill("chongyang-shenzhang", 1) < 1)
                 return "你連重陽神掌都沒學，何談絕招可言？";

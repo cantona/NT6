@@ -5,7 +5,7 @@ mapping fam_info = ([
 
       "武當派"    :     ([ "shen_type"     :    1,                               // 門派神類型1為正神，-1為負神
                            "master_id"     :    "zhang sanfeng",                 // 門派最高Master ID
-                           "master_name"   :    "張三豐",                        // 門派最高Master name
+                           "master_name"   :    "張三丰",                        // 門派最高Master name
                            "master_rank"   :    "張真人",                        // 門派最高Master rank
                            "master_file"   :    CLASS_D("wudang") + "/zhang",    // 門派最高Master所屬文件
                            "master_room"   :    "/d/wudang/xiaoyuan",            // 門派最高Master起始房間
@@ -13,8 +13,8 @@ mapping fam_info = ([
                            "fir_room_nm"   :    "頭天門",
                            "tar_room_fi"   :    "/d/wudang/xiaoyuan",            // 挑畔者奪取目標地點
                            "tar_room_nm"   :    "後山小院",
-                           "guard_room_fi" :    "/d/wudang/wulaofeng",           // 門派NPC守衛地點
-                           "guard_room_nm" :    "五老峰",
+                           "guard_room_fi" :    "/d/wudang/wulaofeng",           // 門派NPC守衞地點
+                           "guard_room_nm" :    "五老峯",
                            "npc_list"      :    ({ 
                                                    "yu lianzhou",                // 門派中的其他NPC參與接受挑畔
                                                    "yin litin",                  // 這些NPC均會在開始時移動到
@@ -134,7 +134,7 @@ mapping fam_info = ([
                                                    "south",
                                                    "south",
                                                  }),
-                          "skill"          :     "回風拂柳劍和峨嵋九陽神功",
+                          "skill"          :     "迴風拂柳劍和峨嵋九陽神功",
                           "family"         :     "峨嵋派",
                         ]),
 
@@ -145,7 +145,7 @@ mapping fam_info = ([
                            "master_file"   :    CLASS_D("lingjiu") + "/xuzhu",
                            "master_room"   :    "/d/lingjiu/dating",
                            "fir_room_fi"   :    "/d/lingjiu/shanjiao",
-                           "fir_room_nm"   :    "縹緲峰山腳",
+                           "fir_room_nm"   :    "縹緲峯山腳",
                            "tar_room_fi"   :    "/d/lingjiu/dating",
                            "tar_room_nm"   :    "獨尊廳",
                            "guard_room_fi" :    "/d/lingjiu/xianchou",

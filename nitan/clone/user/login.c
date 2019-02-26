@@ -9,7 +9,7 @@ inherit F_SAVE;
 void create()
 {
         dbase = allocate_mapping(0);
-        // 復制對象必須調用 LOGON 函數或者是設置連接身體
+        // 複製對象必須調用 LOGON 函數或者是設置連接身體
         // if (clonep()) call_out("time_out", 0);
 }
 

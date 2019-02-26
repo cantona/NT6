@@ -8,7 +8,7 @@ void create()
             set_default_object(__FILE__);
         else {
             set("unit", "本");
-            set("long","一本薄薄的《精靈物語》，扉頁上寫著：\n\n      "HIC"夢與現實的交界\n\n"NOR);
+            set("long","一本薄薄的《精靈物語》，扉頁上寫着：\n\n      "HIC"夢與現實的交界\n\n"NOR);
             set("value", 2000000);
             set("material", "paper");
             set("skill", ([
@@ -41,7 +41,7 @@ int do_getblade(string arg)
                 return notify_fail("你身上不是有一把嗎？\n");  
         if( query("jing", me)<100 )
                 return notify_fail("你的精神無法集中，不要勉強！\n");
-        message_vision(HIY"$N"+HIY"攤開"NOR+HIW"《精靈物語》"NOR+HIY"，口中念念有詞。\n"NOR, me); 
+        message_vision(HIY"$N"+HIY"攤開"NOR+HIW"《精靈物語》"NOR+HIY"，口中唸唸有詞。\n"NOR, me); 
         message_vision(HIY"光芒乍起，一柄薄如羽翼，輕如曉風的精靈刀出現在光芒中。\n"NOR, me);
 
          me->receive_damage("jing", 90);

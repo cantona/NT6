@@ -21,7 +21,7 @@ string *dodge_skill = ({
 
 string *weapon_list = ({ "chui","sword","blade","whip","gun","sword","gangzhang","blade" }); 
 
-string *first_name = ({ "蒙面客","黑衣人","神秘人","黑衣忍者","山賊","探子","死士" }); 
+string *first_name = ({ "蒙面客","黑衣人","神祕人","黑衣忍者","山賊","探子","死士" }); 
 
 void create()
 {
@@ -38,7 +38,7 @@ void create()
         set_name(name, ({ "attacker"}));
         set("gender", "男性");
         set("age", 20 + random(40));
-        set("long", "這家伙一付兇神惡煞的模樣，時不時發出邪惡的陰笑。\n");
+        set("long", "這傢伙一付凶神惡煞的模樣，時不時發出邪惡的陰笑。\n");
         set("combat_exp", 20000);
         set("attitude", "peaceful");
         set("str", 30);

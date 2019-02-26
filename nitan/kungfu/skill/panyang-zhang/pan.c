@@ -35,7 +35,7 @@ int perform(object me, object target)
                 return notify_fail("你現在沒有準備使用攀陽掌，難以施展" PAN "。\n");
 
         if (! living(target))
-                return notify_fail("對方都已經這樣了，用不著這麼費力吧？\n");
+                return notify_fail("對方都已經這樣了，用不着這麼費力吧？\n");
 
         msg = HIR "只聽$N" HIR "一聲斷喝，雙掌紛飛，一式「攀陽邀月」接"
               "二連三向$n" HIR "攻去。\n" NOR;

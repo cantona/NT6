@@ -3,7 +3,7 @@
 inherit SKILL;
 
 mapping *action = ({
-([   "action" : "$N面露微笑，手中$w一抖，一招「德無量」，劍光暴長，洒向$n的$l",
+([   "action" : "$N面露微笑，手中$w一抖，一招「德無量」，劍光暴長，灑向$n的$l",
      "force"  : 50,
      "attack" : 15,
      "dodge"  : 10,

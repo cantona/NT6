@@ -9,7 +9,7 @@ void create()
         set("no_get", 1);
         set_max_encumbrance(80000000);
         set("unit", "輛");
-        set("long", "一輛黑漆漆的鏢車，上面插著福威鏢局的大旗。\n");
+        set("long", "一輛黑漆漆的鏢車，上面插着福威鏢局的大旗。\n");
         set("closed", 1);
         set("value", 2000);
     

@@ -14,7 +14,7 @@ void create()
 {
         set_name("沙蟲殼", ({"shachong ke", "ke"}));
         set("unit", "只");
-        set("long", "這是一只沙蟲的幹殼，是制備毒藥的原料。\n");
+        set("long", "這是一隻沙蟲的幹殼，是製備毒藥的原料。\n");
         set("value", 300);
 //        setup();
 }

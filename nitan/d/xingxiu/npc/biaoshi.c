@@ -79,7 +79,7 @@ int do_copy(object me)
         i = (i + random(i))/2;
         if( i < 60) i = 60;
         
-        message_vision(HIR"突然從商隊後竄出$N，二話不說就撲向了$n！\n"NOR, ob, me);
+        message_vision(HIR"突然從商隊後竄出$N，二話不説就撲向了$n！\n"NOR, ob, me);
         addn_temp("biaoshi", 1, me);
         set("combat_exp", query("combat_exp",me)/2+random(query("combat_exp",me))/2,ob); 
         ob->set_skill("force", i);

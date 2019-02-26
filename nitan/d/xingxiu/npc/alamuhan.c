@@ -47,10 +47,10 @@ int ask_me()
 {
         if( query_temp("marks/馬", this_player())){
                 say(
-"阿拉木罕對" + this_player()->name() + "說：你這孩子怎麼老纏著本姑娘。\n");
+"阿拉木罕對" + this_player()->name() + "説：你這孩子怎麼老纏着本姑娘。\n");
                 return 1;
         } else {
-        say("阿拉木罕看了" + this_player()->name() + "一眼，用不太標準的漢話說道：\n本姑娘在這裡的鞭法也小有點兒名氣，這位漢族" + RANK_D->query_respect(this_player()) + "\n想不想和我切磋幾下？\n");
+        say("阿拉木罕看了" + this_player()->name() + "一眼，用不太標準的漢話説道：\n本姑娘在這裏的鞭法也小有點兒名氣，這位漢族" + RANK_D->query_respect(this_player()) + "\n想不想和我切磋幾下？\n");
         set_temp("marks/馬1", 1, this_player());
         return 1;
         }
@@ -63,7 +63,7 @@ int accept_fight(object ob)
         me = this_object();
       
         if( query_temp("marks/馬1", ob)){
-           say(ob->name() + "對阿拉木罕說：好吧，那" 
+           say(ob->name() + "對阿拉木罕説：好吧，那" 
              "我就同你切搓幾招吧，點到為止。\n");
           remove_call_out("checking");
           call_out("checking", 1, me, ob);
@@ -93,7 +93,7 @@ int checking(object me, object ob)
         if( (query("qi", me)*100/my_max_qi) <= 50 )
         {
                 say(
-                  "阿拉木罕說：中原武學果然不一般，小女子十分佩服。\n"
+                  "阿拉木罕説：中原武學果然不一般，小女子十分佩服。\n"
                   "送你一匹伊犁馬略表寸心。\n"
                 );
                 horse = new(__DIR__"obj/horse"); 
@@ -105,7 +105,7 @@ int checking(object me, object ob)
         if( (query("qi", ob)*100/his_max_qi)<50 )
         {
                 say(
-                   "阿拉木罕沖著" + ob->name() + "撇了撇嘴，說道：中原武學不過如此。\n"
+                   "阿拉木罕衝着" + ob->name() + "撇了撇嘴，説道：中原武學不過如此。\n"
                 );
                 message("vision",
                    ob->name() + "對阿拉木罕恭恭敬敬地磕了一個頭，離開賽馬場。\n", environment(ob), ({ob}) );

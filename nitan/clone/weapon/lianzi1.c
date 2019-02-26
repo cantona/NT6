@@ -18,7 +18,7 @@ void create()
                 set("material", "iron");
                 set("long", HIW"鐵蓮子是一種以量取勝的暗器，沉顛顛的。\n"NOR);
                 set("wield_msg", HIC"$N迅速地從暗器袋中掏出一些鐵蓮子，捏在手中就待發出！\n"NOR);
-                set("unwield_msg",HIC"$N將手裡剩下的鐵蓮子盡數放回暗器袋中。\n"NOR);
+                set("unwield_msg",HIC"$N將手裏剩下的鐵蓮子盡數放回暗器袋中。\n"NOR);
         }
         set_amount(100);
         init_throwing(100);

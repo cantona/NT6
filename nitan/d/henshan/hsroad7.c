@@ -4,7 +4,7 @@ void create()
 {
         set("short", "林間大道");
         set("long", @LONG
-這裡是一條林間大道，在樹叢中蜿蜒。這裡已是湖北境內。南邊
+這裏是一條林間大道，在樹叢中蜿蜒。這裏已是湖北境內。南邊
 是便湖南。
 LONG );
         set("outdoors", "hengyang");

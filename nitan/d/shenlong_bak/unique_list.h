@@ -14,10 +14,10 @@ mapping unique_list = ([
         "匕首"     : "/clone/weapon/treasure/bishou.c",
         "屠龍刀"   : "/clone/weapon/treasure/dragonblade.c",
         "伏魔刀"   : "/clone/weapon/treasure/fumo-dao.c",
-        "幹將劍"   : "/clone/weapon/treasure/ganjiang-jian.c",
+        "干將劍"   : "/clone/weapon/treasure/ganjiang-jian.c",
         "碧水劍"   : "/clone/weapon/treasure/greenwater-sword.c",
         "五毒剪"   : "/clone/weapon/treasure/jiandao.c",
-        "金鳳鉤"   : "/clone/weapon/treasure/jinfenggou.c",
+        "金鳳鈎"   : "/clone/weapon/treasure/jinfenggou.c",
         "奪命金花" : "/clone/weapon/treasure/jinhua.c",
         "金輪"     : "/clone/weapon/treasure/jinlun.c",
         "金蛇劍"   : "/clone/weapon/treasure/jinshe-jian.c",
@@ -36,7 +36,7 @@ mapping unique_list = ([
         "玄鐵劍"   : "/clone/weapon/treasure/xuantie-sword.c",
         "玄鐵重劍" : "/clone/weapon/treasure/xuantie-jian.c",
         "銀輪"     : "/clone/weapon/treasure/yinlun.c",
-        "遊龍劍"   : "/clone/weapon/treasure/youlong-jian.c",
+        "游龍劍"   : "/clone/weapon/treasure/youlong-jian.c",
         "魚腸劍"   : "/clone/weapon/treasure/yuchang-jian.c",
         "越王劍"   : "/clone/weapon/treasure/yuewang-jian.c",
         "湛盧劍"   : "/clone/weapon/treasure/zhanlu-jian.c",
@@ -46,7 +46,7 @@ mapping unique_list = ([
 
         "真絲寶甲" : "/clone/armor/treasure/baojia.c",
         "金剛罩"   : "/d/shaolin/obj/jingang-zhao.c",
-        "軟□甲"   : "/kungfu/class/taohua/obj/ruanwei.c",
+        "軟蝟甲"   : "/kungfu/class/taohua/obj/ruanwei.c",
         "烏蠶衣"   : "/d/jiangling/obj/wucanyi.c",
 
 ]);

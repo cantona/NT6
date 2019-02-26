@@ -4,7 +4,7 @@ inherit SNAKE;
 void create()
 {
         set_name(HIC "菜花蛇" NOR, ({ "caihua she", "caihua", "she" }));
-        set("long", HIC "這是一只青幽幽的菜花蛇，頭部呈橢圓形。\n" NOR);
+        set("long", HIC "這是一隻青幽幽的菜花蛇，頭部呈橢圓形。\n" NOR);
 
         set("age", 1);
         set("str", 15);

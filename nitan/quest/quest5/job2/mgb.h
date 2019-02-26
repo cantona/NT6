@@ -26,12 +26,12 @@ void checking(object me,object ob)
                   }
                   else
                         addn_temp("help_killed", 1, ob);
-              message_vision("$N撲在地上掙紮了幾下，口中噴出幾口"HIR"鮮血"NOR"，死了！\n",me);
+              message_vision("$N撲在地上掙扎了幾下，口中噴出幾口"HIR"鮮血"NOR"，死了！\n",me);
                        remove_call_out("destroy");
                  call_out("destroy",1, me);
                   if(ob->query_condition("jobshadi_limit")==0)
                   {
-                        message_vision(CYN"\n一個守城宋兵跑過來說道：蒙古靼子暫時被擊退了，$N可以回去復命了！\n"NOR,ob);
+                        message_vision(CYN"\n一個守城宋兵跑過來説道：蒙古靼子暫時被擊退了，$N可以回去覆命了！\n"NOR,ob);
                         set_temp("job_over", 1, ob);
                         delete_temp("start_job", ob);
                   }

@@ -9,7 +9,7 @@ void create()
         set("age", random(10) + 30);
         set("str", 25);
         set("dex", 16);
-        set("long", "他就是延平王府的宿將，台海安危的幹城，台灣三虎的劉大將軍。\n");
+        set("long", "他就是延平王府的宿將，台海安危的干城，台灣三虎的劉大將軍。\n");
         set("combat_exp", 75000);
         set("shen_type", 1);
         set("attitude", "peaceful");

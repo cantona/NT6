@@ -24,16 +24,16 @@ protected void cancle_die_protect(object ob);
 nosave int admin_flag = 0;              // 是否是特殊的管理員？
 
 // 數據是否完整？
-nosave int user_cracked = 0;            // RESTORE 時檢查數據並設置該標志
+nosave int user_cracked = 0;            // RESTORE 時檢查數據並設置該標誌
 
-nosave int net_dead;                    // 標志：是否斷開了連接
+nosave int net_dead;                    // 標誌：是否斷開了連接
 nosave int last_age_set = 0;            // 上一次更新AGE的時間
 nosave int user_say = 0;                // 一定時間以內玩家做的say-action
 nosave int user_command = 0;            // 一定時間以內玩家發送的命令
 nosave int attach_flag = 0;             // 是否正在和系統聯絡
 int        at_time = 0;                 // 在什麼時間計算的
 int        ban_to = 0;                  // 在什麼時間解禁玩家
-string     ban_say_msg = "";            // 禁止說話的消息
+string     ban_say_msg = "";            // 禁止説話的消息
 
 nosave string my_defeater_id;           // 上一次打暈你的人ID
 nosave string my_killer_id;             // 上一次殺你的人的ID
@@ -90,10 +90,14 @@ int set_USER(mapping data)
         return 1;
 }
 
-// 判斷是否具有管理權限：如果是版本發布站點或是通過 PASSWD
+// 判斷是否具有管理權限：如果是版本發佈站點或是通過 PASSWD
 // 命令設置過，則具有管理權限。具有該權限的巫師可是使用諸如
 // clone、call、log、smash、copyskill等命令。
-int is_admin()  { return /*VERSION_D->is_release_server() ||*/ admin_flag == 21 ||getuid() == "lonely" ||getuid() == "shulele" || getuid() == "cqpkzaz"; } 
+int is_admin()  { return /*VERSION_D->is_release_server() ||*/
+	admin_flag == 21 ||
+	getuid() == "cantona";
+	//getuid() == "lonely" ||getuid() == "shulele" || getuid() == "cqpkzaz";
+} 
 int set_admin() { if( is_root(previous_object()) ) admin_flag = 21; }
 
 void create()
@@ -185,7 +189,7 @@ varargs mixed set(string idx, mixed para, object ob)
                         // 等級封印
                         if( !UPDATE_D->can_improve_level(level) &&
                             para > to_int(pow(level, 3.0)*10000) ) {
-                                //tell_object(ob, HIR "由于你處于等級封印中，你的實戰經驗無法提升！\n" NOR);
+                                //tell_object(ob, HIR "由於你處於等級封印中，你的實戰經驗無法提升！\n" NOR);
                                 return;
                         }
 
@@ -367,7 +371,7 @@ void update_age()
             !query("env/halt_age") ) {
                 // Update age
                 addn("mud_age", delta);
-                if( query("monfee") < time() ) // 月費控制，非月費用戶才在這裡扣點
+                if( query("monfee") < time() ) // 月費控制，非月費用户才在這裏扣點
                         addn("on_time", delta);
                 if( time_to_leave )
                         time_to_leave -= delta;
@@ -456,10 +460,10 @@ void user_dump(int type)
 
         case DUMP_IDLE:
                 if( query_temp("learned_idle_force") ) {
-                        message_vision("$N狂笑三聲，道：我終于明白了！\n",
+                        message_vision("$N狂笑三聲，道：我終於明白了！\n",
                                        this_object());
                         tell_object(this_object(), "你經過長時間的發"
-                                    "呆，終于對發呆神功的理解又深了一層！\n");
+                                    "呆，終於對發呆神功的理解又深了一層！\n");
                         improve_skill("idle-force", 360000);
                         delete_temp("learned_idle_force");
                 } else
@@ -506,7 +510,7 @@ protected void net_dead()
                 call_out("user_dump", NET_DEAD_TIMEOUT, DUMP_NET_DEAD);
                 tell_room(environment(), query("name") + "斷線了。\n", this_object());
                 // CHANNEL_D->do_channel(this_object(), "sys", "斷線了。");
-                // 副本裡斷線不取消戰鬥狀態
+                // 副本里斷線不取消戰鬥狀態
                 if( base_name(environment())[0..1] != "/f" && !this_object()->query_condition("killer") )
                 remove_all_enemy(1);
         } else {
@@ -891,7 +895,7 @@ int accept_fight(object ob)
                     ob->name() + "("+ (string)query("id", ob)+")"+
                     "下一次 fight 指令。\n" NOR);
 
-        tell_object(ob, YEL "由于對方是由玩家控制的人物，你必須等對方同意才" +
+        tell_object(ob, YEL "由於對方是由玩家控制的人物，你必須等對方同意才" +
               "能進行比試。\n" NOR);
 
         return 0;
@@ -944,7 +948,7 @@ int accept_touxi(object who)
                 break;
 
         default:
-                message_vision("$N倉皇之間，不及說話，只得接下$n"
+                message_vision("$N倉皇之間，不及説話，只得接下$n"
                                "這一招。\n", this_object(), who);
                 break;
         }
@@ -996,14 +1000,14 @@ int die_protect(object ob)
 
         if( query("newbie") )
         {
-                message_vision("$N處于新手保護時期，$n不能進行攻擊。\n",
+                message_vision("$N處於新手保護時期，$n不能進行攻擊。\n",
                                me, ob);
                 return 0;
         }
 
-        // 被攻擊者處于保護時期，本攻擊失敗
+        // 被攻擊者處於保護時期，本攻擊失敗
         if( query("die_protect/last_dead") + query("die_protect/duration") > time() ) {
-                message_vision("$N處于被保護時期，$n不能進行攻擊。\n",
+                message_vision("$N處於被保護時期，$n不能進行攻擊。\n",
                                me, ob);
                 return 0;
         }
@@ -1065,7 +1069,7 @@ int ban_say(int raw)
 
         t = time() & 0xFFFFFFFE;
         if( ban_to > t ) {
-                notify_fail(ban_say_msg + "，請于" +
+                notify_fail(ban_say_msg + "，請於" +
                             appromix_time(ban_to - t) + "以後再嘗試。\n");
                 return 1;
         }
@@ -1084,9 +1088,9 @@ int ban_say(int raw)
                 ban_say_until(BAN_SAY_PERIOD, "系統禁止你送出信息");
                 /*
                 CHANNEL_D->do_channel(find_object(MASTER_OB), "rumor",
-                        "聽說" + query("name") + "因為太羅嗦，被人堵住了嘴。");
+                        "聽説" + query("name") + "因為太羅嗦，被人堵住了嘴。");
                 */
-                notify_fail(HIR "由于你發布的信息太多，因此系統暫時"
+                notify_fail(HIR "由於你發佈的信息太多，因此係統暫時"
                             "禁止你發出信息。\n" NOR);
                 return 1;
         }
@@ -1105,7 +1109,7 @@ void permit_say(int n)
                 ban_to -= n;
 
         if( ban_to <= time() )
-                tell_object(this_object(), "你可以繼續發布信息了！\n");
+                tell_object(this_object(), "你可以繼續發佈信息了！\n");
 }
 
 // thow the person into prison
@@ -1121,7 +1125,7 @@ void get_into_prison(object ob, string p, int time)
                 time_to_leave += time * 60;
                 if( ob && time )
                         CHANNEL_D->do_channel(find_object(MASTER_OB), "rumor",
-                                "聽說" + query("name") + "的刑期被" +
+                                "聽説" + query("name") + "的刑期被" +
                                 query("name", ob)+"加長了"+
                                 appromix_time(time * 60) + "。");
                 return;
@@ -1137,7 +1141,7 @@ void get_into_prison(object ob, string p, int time)
                         me->enable_player();
 
                 CHANNEL_D->do_channel(find_object(MASTER_OB), "rumor",
-                        "聽說" + query("name") + "越獄潛逃，結果被抓"
+                        "聽説" + query("name") + "越獄潛逃，結果被抓"
                         "回去了。");
 
                 save();
@@ -1148,7 +1152,7 @@ void get_into_prison(object ob, string p, int time)
 
         if( ob ) {
                 CHANNEL_D->do_channel(find_object(MASTER_OB), "rumor",
-                        "聽說" + query("name") + "被" + query("name", ob)+
+                        "聽説" + query("name") + "被" + query("name", ob)+
                         "送進了" + p->short() + HIM "，禁閉" +
                         appromix_time(time * 60) + "。");
         }
@@ -1182,7 +1186,7 @@ void leave_prison(object ob, int time)
                 time_to_leave -= time * 60;
                 if( time_to_leave > 0 ) {
                         CHANNEL_D->do_channel(find_object(MASTER_OB), "rumor",
-                                "聽說" + query("name") + "的刑期被" +
+                                "聽説" + query("name") + "的刑期被" +
                                 query("name", ob)+"縮短了"+
                                 appromix_time(time * 60) + "。");
                         return;
@@ -1204,11 +1208,11 @@ void leave_prison(object ob, int time)
 
         if( ob )
                 CHANNEL_D->do_channel(find_object(MASTER_OB), "rumor",
-                        "聽說" + query("name") + "被" + ob->name() +
+                        "聽説" + query("name") + "被" + ob->name() +
                         "提前釋放了。");
         else
                 CHANNEL_D->do_channel(find_object(MASTER_OB), "rumor",
-                        "聽說" + query("name") + "已經刑滿釋放了。");
+                        "聽説" + query("name") + "已經刑滿釋放了。");
 }
 
 /*
@@ -1302,7 +1306,7 @@ int query_max_craze()
         }
 }
 
-// 現在是否處于最憤怒的狀態
+// 現在是否處於最憤怒的狀態
 int is_most_craze()
 {
         return (craze > 0) && (craze >= query_max_craze());
@@ -1414,7 +1418,7 @@ string query_vip()
         if( vip_date < date )
                 return "零（已過期）";
         else
-                return to_chinese(vip_type)+"（剩余 "+to_chinese((vip_date-date)/86400)+" 天）";
+                return to_chinese(vip_type)+"（剩餘 "+to_chinese((vip_date-date)/86400)+" 天）";
 }
 
 int is_vip()
@@ -1537,7 +1541,7 @@ void guest_count()
 
 protected void do_guest_leave()
 {
-        tell_object(this_object(), "\n您參觀時間已到，如您需要注冊正式賬號，請使用其它 ID 進入遊戲。\n\n");
+        tell_object(this_object(), "\n您參觀時間已到，如您需要註冊正式賬號，請使用其它 ID 進入遊戲。\n\n");
         command("quit");
 }
 

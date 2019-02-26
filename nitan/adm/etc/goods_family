@@ -11,7 +11,7 @@
 菩提子:200:object:/clone/gift/puti-zi
 #菩提子:200:object:/clone/fam/pill/puti4
 聖舍利:200:object:/clone/fam/pill/sheli4
-百年人參:200:object:/clone/fam/pill/renshen1
+百年人蔘:200:object:/clone/fam/pill/renshen1
 百年靈芝:200:object:/clone/fam/pill/lingzhi1
 天山雪蓮:200:object:/clone/fam/pill/xuelian1
 百年參心丹:300:object:/clone/fam/pill/renshen3
@@ -33,9 +33,9 @@
 九轉金丹:1000:object:/clone/gift/jiuzhuan
 玄黃紫清丹:5000:object:/clone/gift/xuanhuang
 神聖血清:5000:object:/clone/fam/etc/prize5:恢復全身不良狀態的藥品
-明玉神功秘籍:2000000:object:/clone/book/mingyu-book:可學明玉神功
+明玉神功祕籍:2000000:object:/clone/book/mingyu-book:可學明玉神功
 七色瓔珞:100000:object:/d/death/obj/qise:用來合成寰宇天晶
-如意通天□:500:object:/clone/fam/etc/lv7d
+如意通天钁:500:object:/clone/fam/etc/lv7d
 五彩玲瓏珠:500:object:/clone/fam/etc/lv7a
 青龍牙:500:object:/clone/fam/etc/lv7c
 極北寒玉:500:object:/clone/fam/etc/lv5f

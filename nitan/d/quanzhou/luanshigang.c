@@ -7,7 +7,7 @@ void create()
 {
         set("short", "亂石崗");
         set("long", @LONG
-這裡樹木陰森，礫石嶙峋，坡陡坑深，地勢險要，歷來是土匪盤據
+這裏樹木陰森，礫石嶙峋，坡陡坑深，地勢險要，歷來是土匪盤據
 的地方。
 LONG );
         set("outdoors", "quanzhou");

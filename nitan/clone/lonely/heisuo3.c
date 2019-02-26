@@ -18,7 +18,7 @@ void create()
                 set("no_sell", "這是啥破玩藝，上吊用的？");
                 set("material", "steel");
                 set("wield_msg", WHT "$N" WHT "一伸手，悄無聲息的將黑索握在手中。\n" NOR);
-                set("unwield_msg", WHT "$N" WHT "將手中的黑索卷起，放回腰間。\n" NOR);
+                set("unwield_msg", WHT "$N" WHT "將手中的黑索捲起，放回腰間。\n" NOR);
                 set("stable", 100);
         }
         init_whip(120);

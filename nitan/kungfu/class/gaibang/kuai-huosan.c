@@ -15,7 +15,7 @@ void create()
         set("gender", "男性");
         set("age", 25);
         set("long",
-                "他是個長得十分結實的青年乞丐，正笑咪咪的盯著你瞧，不知他為啥這麼高興。\n");
+                "他是個長得十分結實的青年乞丐，正笑咪咪的盯着你瞧，不知他為啥這麼高興。\n");
 
         set("attitude", "heroism");
         set("class", "beggar");

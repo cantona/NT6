@@ -8,7 +8,7 @@ void create()
         set("short", "甬道");
         set("long", @LONG
 前面山石阻路，已到盡頭。只見盡頭處閃閃生光，走近看
-時，卻是一玉石巨門。這門高達丈許，那裡像門，直是一塊巨
+時，卻是一玉石巨門。這門高達丈許，那裏像門，直是一塊巨
 大的巖石。石門(gate)上下左右還有四個門環，均有兩尺多長
 的粗大鐵鈕緊緊扣住。
 LONG);
@@ -29,7 +29,7 @@ void init()
         {
                 set("item_desc",([
                         "gate": WHT "\n兩扇厚厚的大石門，似乎不可能打破它。只見"
-                                "石門的門環上插\n著一把" NOR + YEL "黃金斧" NOR
+                                "石門的門環上插\n着一把" NOR + YEL "黃金斧" NOR
                                 + WHT "(huangjin fu)" WHT "。\n\n" NOR,
 
                         "huangjin fu" : YEL "這是一柄純黃鑄造的大斧，斧柄末端似"
@@ -106,7 +106,7 @@ int do_break(string arg)
 
             if (! ob)
         {
-                message_vision(HIY "\n$N" HIY "氣沉丹田紮穩馬步，大吼一聲，雙拳"
+                message_vision(HIY "\n$N" HIY "氣沉丹田扎穩馬步，大吼一聲，雙拳"
                                "猛的擊向石門！\n" NOR, me);
 
                     if ((int)me->query_skill("force", 1) < 200)
@@ -132,7 +132,7 @@ int do_break(string arg)
            || base_name(ob) != HUANGJINFU)
         {
                 message_vision(HIR "結果只聽「鐺」的一聲，$N" HIR "虎口一震，"
-                               +query("name", ob)+HIR"禁不住脫手飛出。\n\n"
+                               +query("name", ob)+HIR"禁不住脱手飛出。\n\n"
                                NOR, me);
                 ob->move(environment(me));
                 return 1;

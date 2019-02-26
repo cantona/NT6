@@ -33,7 +33,7 @@ int perform(object me, object target)
                 return notify_fail("你沒有激發三無三不手，無法施展 " + name() + "！\n");
 
        if (! living(target))
-              return notify_fail("對方都已經這樣了，用不著這麼費力吧？\n");
+              return notify_fail("對方都已經這樣了，用不着這麼費力吧？\n");
 
         msg = HIY "\n$N暴喝一聲，潛運體內真氣，施出絕招「" HIG "無所不為" HIY
               "」將" + weapon->name() + HIY "揮舞得呼呼直響，\n忽左忽右，將$n"

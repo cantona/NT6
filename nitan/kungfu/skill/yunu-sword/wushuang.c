@@ -40,7 +40,7 @@ int perform(object me, object target)
 
         msg = HIY "$N" HIY "雙手握起" + weapon->name() + HIY
               "，劍芒暴長，一式「無雙無對」，馭劍猛烈絕倫地往$n"
-              HIY "沖刺！\n"NOR;
+              HIY "衝刺！\n"NOR;
 
         ap = attack_power(me, "sword");
         dp = defense_power(target, "dodge");

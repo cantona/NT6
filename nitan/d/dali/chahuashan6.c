@@ -6,7 +6,7 @@ void create()
 {
         set("short","茶花山南");
         set("long", @LONG
-這兒是茶花山的南面，仍然有大量的茶花盛開著。但顯然不如山
+這兒是茶花山的南面，仍然有大量的茶花盛開着。但顯然不如山
 上的品種好了，都是凡品。
 LONG );
         set("outdoors", "dalic");

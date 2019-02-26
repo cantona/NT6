@@ -13,7 +13,7 @@ void create()
         set_name(NOR"莽牯"HIR"朱"NOR"蛤", ({"ha"}));
         set("unit", "只");
         set("value", 40000);
-        set("long","莽牯朱蛤是瘟神爺的坐騎，那也是說說罷了。文殊菩薩騎獅子，普賢菩薩騎白象，太上老君騎青牛，這莽牯朱蛤是萬毒之王，神通廣大，毒性厲害，故老相傳，就說它是瘟菩薩的坐騎。\n");
+        set("long","莽牯朱蛤是瘟神爺的坐騎，那也是説説罷了。文殊菩薩騎獅子，普賢菩薩騎白象，太上老君騎青牛，這莽牯朱蛤是萬毒之王，神通廣大，毒性厲害，故老相傳，就説它是瘟菩薩的坐騎。\n");
         set("pour_type", "1");
         setup();
 }
@@ -28,7 +28,7 @@ int do_eat(string arg)
         if (me->is_busy() || random(2)==1 )
                 return notify_fail("別急，慢慢吃，小心別毒死了。\n");
 
-        message_vision(HIG"$N吃下一只"+name()+HIG"，頓覺精力漸生，全身委頓漸漸消去。\n" NOR, me);
+        message_vision(HIG"$N吃下一隻"+name()+HIG"，頓覺精力漸生，全身委頓漸漸消去。\n" NOR, me);
         if (me->query_condition("drunk"))
                 me->apply_condition("drunk",0);
         if (me->query_condition("flower_poison"))

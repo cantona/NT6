@@ -6,17 +6,17 @@ void create()
 {
         set("short", "書房");
         set("long", @LONG
-這裡是苗人鳳的書房，房間內整整齊齊的堆放著各類書籍。
-書房的中央橫放著一張案台，案台上擺著幾本攤開的書冊，旁
-邊還有未燃盡的蠟燭，似乎苗人鳳常在這裡挑燈夜讀。牆壁上
-懸掛著幾幅圖(tu)畫，像是出自苗人鳳本人的手筆。
+這裏是苗人鳳的書房，房間內整整齊齊的堆放着各類書籍。
+書房的中央橫放着一張案台，案台上擺着幾本攤開的書冊，旁
+邊還有未燃盡的蠟燭，似乎苗人鳳常在這裏挑燈夜讀。牆壁上
+懸掛着幾幅圖(tu)畫，像是出自苗人鳳本人的手筆。
 LONG);
         set("exits", ([
                   "north" : __DIR__"miaojia_houting",
         ]));
         set("no_clean_up", 0);
         set("item_desc", ([
-                "tu" : HIC "\n只見圖畫中繪著一些正在打鬥的小人，似是"
+                "tu" : HIC "\n只見圖畫中繪着一些正在打鬥的小人，似是"
                        "與掌法有關。\n" NOR,
         ]) );
         set("coor/x", -8990);
@@ -43,20 +43,20 @@ int do_think(string arg)
                 return notify_fail("你要幹什麼？\n");
 
         if (me->is_busy())
-                return notify_fail("你現在正忙著呢。\n");
+                return notify_fail("你現在正忙着呢。\n");
 
         if ((int)me->query_skill("strike", 1) < 30 ||
            (int)me->query_skill("chongtian-zhang", 1) < 30)
-                return notify_fail("你發現圖中所記載的掌法過于高深，自"
+                return notify_fail("你發現圖中所記載的掌法過於高深，自"
                                    "己無法領會到任何東西。\n");
 
         if ((int)me->query_skill("strike", 1) > 149 &&
            (int)me->query_skill("chongtian-zhang", 1) > 149)
-                return notify_fail("你發現圖中所記載的掌法過于膚淺，自"
+                return notify_fail("你發現圖中所記載的掌法過於膚淺，自"
                                    "己無法領會到任何東西。\n");
 
         if( query("jing", me)<50 )
-                return notify_fail("你現在精神不濟，過于疲倦，還是休息"
+                return notify_fail("你現在精神不濟，過於疲倦，還是休息"
                                    "一會吧。\n");
 
         me->receive_damage("jing", 30);
@@ -86,16 +86,16 @@ int do_canwu(string arg)
                 return notify_fail("你要參悟什麼？\n");
 
         if( query("can_perform/panlong-zhao/tan", me) )
-                return notify_fail(WHT "你隨手翻閱案台上的書籍，發現上"
+                return notify_fail(WHT "你隨手翻閲案台上的書籍，發現上"
                                    "面已經沒什麼東西值得研究了。\n" NOR);
 
         if (! (int)me->query_skill("panlong-zhao"))
-                return notify_fail(WHT "你隨手翻閱案台上的書籍，發現書"
+                return notify_fail(WHT "你隨手翻閲案台上的書籍，發現書"
                                    "中所記載的東西和你所習的武學沒什麼"
                                    "瓜葛，參悟不出什麼。\n" NOR);
 
         if ((int)me->query_skill("panlong-zhao", 1) < 130)
-                return notify_fail(WHT "你隨手翻閱案台上的書籍，發現書"
+                return notify_fail(WHT "你隨手翻閲案台上的書籍，發現書"
                                    "中所記載的爪法甚是精妙，可卻是太過"
                                    "深奧，自己一時無法領悟。\n" NOR);
 
@@ -114,7 +114,7 @@ int do_canwu(string arg)
                 addn("learned_points", 10, me);
                 me->start_busy(2);
                 message_vision(WHT "$N" WHT "仔細翻看案台上的諸多書籍"
-                               "，閱讀其中每個細節。\n" NOR, me);
+                               "，閲讀其中每個細節。\n" NOR, me);
                 tell_object(me, HIY "你對越空盤龍爪有了更深的理解，但"
                                "尚需進一步的參悟。\n" NOR);
                 return 1;
@@ -124,11 +124,11 @@ int do_canwu(string arg)
                 addn("learned_points", 10, me);
                 me->start_busy(2);
                 message_vision(WHT "$N" WHT "仔細翻看案台上的諸多書籍"
-                               "，閱讀其中每個細節。\n" NOR, me);
+                               "，閲讀其中每個細節。\n" NOR, me);
 
-                tell_object(me, HIY "過得良久，陡然間你雙目一亮，終于"
+                tell_object(me, HIY "過得良久，陡然間你雙目一亮，終於"
                                 "領悟了書中記載越空盤\n龍爪「雲中探爪"
-                                "」絕技的奧秘！\n" NOR + HIC "你學會了"
+                                "」絕技的奧祕！\n" NOR + HIC "你學會了"
                                 "「雲中探爪」。\n" NOR);
                 if (me->can_improve_skill("claw"))
                         me->improve_skill("claw", 1500000);

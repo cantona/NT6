@@ -13,8 +13,8 @@ int power_point(object me) { return 1; }
 int valid_force(string force) { return 1; }
 string *dodge_msg = ({
         "$n體內太玄真氣迸發，忽見$n左手拍出，勁風到處，把$N震到一邊。\n",
-        "$n手臂回轉，抓住$N手肘一推，將$N遠遠擲開。\n",
-        "$n默念太玄口訣，兩腿輕蹬，激躍而出，竟已落在十數丈外。\n",
+        "$n手臂迴轉，抓住$N手肘一推，將$N遠遠擲開。\n",
+        "$n默唸太玄口訣，兩腿輕蹬，激躍而出，竟已落在十數丈外。\n",
         "$N只覺眼前一花，只見到$n身形一幌，自己的招數居然莫名其妙就落空了。\n",
 });
 
@@ -93,7 +93,7 @@ mapping *actionw = ({
         "damage": 310,
         "damage_type": "刺傷"
 ]),
-([      "action":"$N卷起手中的$w，宛如翻江倒海直射向$n而去",
+([      "action":"$N捲起手中的$w，宛如翻江倒海直射向$n而去",
         "force" : 532,
         "attack": 225,
         "dodge" : 120,
@@ -120,7 +120,7 @@ mapping *actionw = ({
 });
 
 mapping *actionbad = ({
-([      "action" : "$N正欲施招，卻又突然覺得好象忘記了招式，只好胡亂使出。",
+([      "action" : "$N正欲施招，卻又突然覺得好像忘記了招式，只好胡亂使出。",
         "force" : 10,
         "attack": 10,
         "dodge" : -10,
@@ -170,7 +170,7 @@ mapping query_action(object me, object weapon)
                 addn("neili", -50, me);
                 return ([
         "action": HIR "$N的心中突然一片茫然，只覺得經脈中象有無數的蝌蚪在串來串去，難過非常，
-當下不及多想，順著蝌蚪的走向一陣拳打腳踢！四周頓時勁風亂颮，好不熱鬧！"NOR,
+當下不及多想，順着蝌蚪的走向一陣拳打腳踢！四周頓時勁風亂颮，好不熱鬧！"NOR,
         "damage": 1000,
         "parry" : -180,
         "dodge" : -140,
@@ -277,8 +277,8 @@ mixed valid_damage(object ob, object me, int damage, object weapon)
                 switch (random(2))
                 {
                 case 0:
-                        result += (["msg" : HIR "$n" HIR "默念太玄功口訣，太玄內"
-                                            "勁齊聚于全身，$N" HIR "只覺這招攻在"
+                        result += (["msg" : HIR "$n" HIR "默唸太玄功口訣，太玄內"
+                                            "勁齊聚於全身，$N" HIR "只覺這招攻在"
                                             "$n" HIR "身上，猶如碰到銅牆鐵壁一般，"
                                             "絲毫不起作用。\n"NOR]);
                         break;
@@ -355,14 +355,14 @@ mixed hit_ob(object me, object victim, int damage_bonus, int factor)
 
                 if( query("can_learned/taixuan-gong/enable_weapon", me) && objectp(weapon) )
                 {
-                        msg = random(2) ? HIM "$N" HIM "一招攻出，竟卷起千層氣浪，太玄內勁"
+                        msg = random(2) ? HIM "$N" HIM "一招攻出，竟捲起千層氣浪，太玄內勁"
                                            "頓時源源不絕透過" + weapon->name() + HIM "湧入$n" HIM "體"
                                            "內！\n" NOR:
                                            HIM "$N" HIM "太玄內勁迸發，$n" HIM "只感全身一震，登時一"
                                            "股灼熱之氣透胸而過，" + weapon->name() + HIM "鮮血淋漓！\n" NOR;
                 } else
                 {
-                        msg = random(2) ? HIW "$N" HIW "一招攻出，竟卷起千層氣浪，太玄內勁"
+                        msg = random(2) ? HIW "$N" HIW "一招攻出，竟捲起千層氣浪，太玄內勁"
                                            "頓時源源不絕湧入$n" HIW "體內！\n" NOR:
                                            HIW "$N" HIW "太玄內勁迸發，$n" HIW "只感全身一"
                                            "震，登時“喀喀喀”斷了數根肋骨！\n" NOR;

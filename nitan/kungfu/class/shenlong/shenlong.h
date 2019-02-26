@@ -23,7 +23,7 @@ int do_join(string arg)
 
         if( query("party", ob) && query("party/party_name", ob) != "神龍教" )
         {
-                message_vision("$N搖搖頭，對$n說道：你已經加入"
+                message_vision("$N搖搖頭，對$n説道：你已經加入"
                                "其他幫會了，不能再入我神龍教。\n",
                                me, ob);
                 return 1;
@@ -31,7 +31,7 @@ int do_join(string arg)
 
         if( query("party/party_name", ob) == "神龍教" )
         {
-                message_vision("$N搖搖頭，對$n說道：你已經"
+                message_vision("$N搖搖頭，對$n説道：你已經"
                                "是我神龍教的人了。\n",
                                me, ob);
                 return 1;
@@ -56,7 +56,7 @@ int do_join(string arg)
         set("party", party, ob);
 
         command("smile");
-        message_vision("$N對$n說道：你就暫時在" + men +
+        message_vision("$N對$n説道：你就暫時在" + men +
                        "龍使"NOR + "座下效力吧！\n", me, ob);
         return 1;
 }

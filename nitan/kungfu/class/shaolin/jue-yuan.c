@@ -4,8 +4,8 @@ inherit NPC;
 void create()
 {
         set_name("覺遠", ({ "jue yuan", "jue", "yuan" }));
-        set("long", "一位衣著樸素、須發花白的老僧。只見他正挑著一\n"
-                    "對大鐵桶，比之尋常水桶大了兩倍有余，那僧人頸\n"
+        set("long", "一位衣着樸素、鬚髮花白的老僧。只見他正挑着一\n"
+                    "對大鐵桶，比之尋常水桶大了兩倍有餘，那僧人頸\n"
                     "中、手上、腳上，更繞滿了粗大的鐵鏈，行走時鐵\n"
                     "鏈拖地，不停發出聲響。這對大鐵桶本身只怕便有\n"
                     "二百來斤，桶中裝滿了水，重量更是驚人。\n" );
@@ -70,7 +70,7 @@ void create()
 
 void attempt_apprentice(object ob)
 {
-        message_vision(CYN "$N" CYN "搖了搖頭，對$n" CYN "說道：“貧僧乃帶"
+        message_vision(CYN "$N" CYN "搖了搖頭，對$n" CYN "説道：“貧僧乃帶"
                        "罪之身，豈能收徒。”\n" NOR, this_object(), ob);
 }
 
@@ -109,10 +109,10 @@ int accept_object(object who, object ob)
                                                "：施主宅心仁厚，日後必有大成，貧僧多"
                                                "謝了。\n" NOR, this_object(), who);
                                 command("sigh");
-                                command("say 無數好事之人貪圖于此，乃是為了這本經書裡"
+                                command("say 無數好事之人貪圖於此，乃是為了這本經書裏"
                                         "所記載的一門武功。");
                                 command("say 施主為人忠厚正直，倘若不嫌棄，貧僧倒是可"
-                                        "以將這門武功的一部分傳授于你。");
+                                        "以將這門武功的一部分傳授於你。");
 
                                 set("can_learn/jiuyang-shengong/shaolin", 1, who);
                                 tell_object(who, HIC "覺遠同意傳授你「少林九陽功」。\n" NOR);

@@ -5,9 +5,9 @@ void create()
         set("short","峭壁");
         set("long",@LONG
 這個峭壁有如一座極大的屏風，沖天而起，峭壁中央離
-地約二十余丈處，生著一塊三四丈見方的大石，便似一個平
-台，石上隱隱刻得有字。極目望去，是「劍塚」二字。峭壁
-上每隔數尺就生著一叢青苔，不知道如何形成的。
+地約二十餘丈處，生着一塊三四丈見方的大石，便似一個平
+台，石上隱隱刻得有字。極目望去，是「劍冢」二字。峭壁
+上每隔數尺就生着一叢青苔，不知道如何形成的。
 LONG
         );
         set("exits",([
@@ -36,7 +36,7 @@ int do_climb(string arg)
         if((arg!="峭壁")&&(arg!="bi")&&(arg!="qiaobi")) return notify_fail("你要爬什麼？\n");
         if( !query("dig_qingtai", this_object()) || (query("dig_qingtai", this_object()) == 0) )
                 return notify_fail("峭壁上長滿青苔，不先挖去，如何能爬？\n");
-        message_vision("$N順著挖出的二十來個小坑，嘗試著向峭壁上爬去。\n",me);
+        message_vision("$N順着挖出的二十來個小坑，嘗試着向峭壁上爬去。\n",me);
         me->start_busy(1);
         call_out("check_trigger",1,me);
         return 1;
@@ -94,7 +94,7 @@ void climb_finish(object me,object room)
         message_vision("$N稍吸了口氣，又繼續向上爬，一邊爬一邊挖去上面小坑中的青苔。\n",me);
         me->move(__DIR__"jianzhong");
         set("climb_trigger", 0, room);
-        message("vision","你終于爬上了峭壁上的「劍塚」。\n",me);
+        message("vision","你終於爬上了峭壁上的「劍冢」。\n",me);
         message("vision",query("name", me)+"從峭壁下爬了上來。\n",environment(me),me);
 }
 int do_wa(string arg)

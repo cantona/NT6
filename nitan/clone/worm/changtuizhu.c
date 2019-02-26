@@ -4,7 +4,7 @@ inherit WORM;
 void create()
 {
         set_name(WHT "長腿蛛" NOR, ({ "changtui zhu", "changtui", "zhu" }));
-        set("long", WHT "這是只腿長寸許，全身毛茸茸的毒蜘蛛。\n" NOR);
+        set("long", WHT "這是隻腿長寸許，全身毛茸茸的毒蜘蛛。\n" NOR);
         set("race", "野獸");
         set("age", random(10));
         set("attitude", "peaceful");

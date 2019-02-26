@@ -10,7 +10,7 @@ inherit NECK;
 void create()
 {
 //**    set_name("$name", ({ "$id", }));                /* NAME_ENTRY */
-        set_name("項鏈", ({ "neck", }));                /* NAME_EXIT  */ 
+        set_name("項鍊", ({ "neck", }));                /* NAME_EXIT  */ 
 
         if (clonep())
                 set_default_object(__FILE__);

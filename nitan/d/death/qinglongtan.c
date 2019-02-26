@@ -8,8 +8,8 @@ void create()
 
                     青         龍         洞
 
-    這裡是陰司碧水寒潭最深處的一個洞穴，洞的上部空曠，存有少量
-的空氣，你終于可以換氣了。傳說四神獸之首的青龍就棲息于此地。洞
+    這裏是陰司碧水寒潭最深處的一個洞穴，洞的上部空曠，存有少量
+的空氣，你終於可以換氣了。傳説四神獸之首的青龍就棲息於此地。洞
 內幽暗無比，令你根本看不清周圍的事物，很難追尋(xun) 到青龍的蹤
 影。潭水冰冷刺骨，令人難以忍受，你只覺得氣力在一點一點消失。洞
 穴深處有一股凜冽的寒流形成了一個急速流動的旋渦(xuanwo)。
@@ -71,7 +71,7 @@ int do_xun(string arg)
                 return notify_fail("青龍已經被宰了，你再怎麼尋也是尋不到的！\n");
 
         if (me->is_busy())
-                return notify_fail("你現在正忙著呢。\n");
+                return notify_fail("你現在正忙着呢。\n");
        
         if( query("jing", me)<100 )
                 return notify_fail("你太累了，稍微休息一下吧。\n");
@@ -80,7 +80,7 @@ int do_xun(string arg)
                 return notify_fail("你太累了，稍微休息一下吧。\n");
 
         message_vision(HIC "\n$N" HIC "在洞內四處遊走，不放過半點蛛"
-                       "絲馬跡，仔細的搜尋著洞穴內的一切。\n" NOR, me); 
+                       "絲馬跡，仔細的搜尋着洞穴內的一切。\n" NOR, me); 
         remove_call_out("xun"); 
         call_out("xun", 5, me);
         me->start_busy(5);
@@ -98,7 +98,7 @@ int xun(object me)
                 me->start_busy(5);
                 message_vision(WHT "$N" WHT "尋覓了半天，還是沒發現青"
                                "龍出沒的跡象，一口氣再也憋不住，連忙"
-                               "遊到洞的上部換氣。\n" NOR, me);
+                               "游到洞的上部換氣。\n" NOR, me);
                 return 1;
         }
 
@@ -108,7 +108,7 @@ int xun(object me)
                 me->receive_damage("qi", 50 + random(50));
                 me->start_busy(5);
                 message_vision(HIY "結果$N" HIY "一轉身，雙腳不小心被"
-                              "巖壁上伸出的水藻纏住，費了好大勁才掙紮"
+                              "巖壁上伸出的水藻纏住，費了好大勁才掙扎"
                               "開。\n" NOR, me);
                 return 1;
         }
@@ -133,10 +133,10 @@ int xun(object me)
                 addn("qinglong", -1);
                 message_vision(HIW "\n\n只聽洞穴深處傳來震天動地的一聲"
                                    "怒嚎，叫聲震得你兩耳轟鳴，鼓膜隱隱"
-                                   "作\n痛。你周圍的碧潭寒水急速卷動，"
+                                   "作\n痛。你周圍的碧潭寒水急速捲動，"
                                    "激起滔天波浪，眼前一花，一個龐然大"
                                    "物\n出現在你面前，四神獸之首的青龍"
-                                   "終于現身了。\n\n" NOR, me); 
+                                   "終於現身了。\n\n" NOR, me); 
                 return 1;
         }
        

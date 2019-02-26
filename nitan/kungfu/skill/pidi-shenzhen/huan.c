@@ -26,13 +26,13 @@ int perform(object me, object target)
 
         if( !objectp(weapon=query_temp("handing", me)) || 
             query("skill_type", weapon) != "throwing" )
-                return notify_fail("你現在手中並沒有拿著暗器。\n");
+                return notify_fail("你現在手中並沒有拿着暗器。\n");
 
         if (weapon->query_amount() < 20)
                 return notify_fail("至少要有二十枚暗器才能施展" HUAN "。\n");
 
         if ((skill = me->query_skill("pidi-shenzhen", 1)) < 140)
-                return notify_fail("你的辟地神針不夠嫻熟，難以施展" HUAN "。\n");
+                return notify_fail("你的闢地神針不夠嫻熟，難以施展" HUAN "。\n");
 
         if ((int)me->query_skill("force") < 200)
                 return notify_fail("你的內功火候不夠，難以施展" HUAN "。\n");
@@ -41,10 +41,10 @@ int perform(object me, object target)
                 return notify_fail("你現在真氣不足，難以施展" HUAN "。\n");
 
         if (! living(target))
-               return notify_fail("對方都已經這樣了，用不著這麼費力吧？\n");
+               return notify_fail("對方都已經這樣了，用不着這麼費力吧？\n");
 
         msg = HIR "只聽$N" HIR "一聲陰笑，身體急速旋轉，頓時將手中所有的"
-              + weapon->name() + HIR "朝著四面八方打了出去！\n" NOR;
+              + weapon->name() + HIR "朝着四面八方打了出去！\n" NOR;
 
         my_exp=query("combat_exp", me)/100+skill*skill/1000*skill;
         ob_exp=(query("combat_exp", target)/100);

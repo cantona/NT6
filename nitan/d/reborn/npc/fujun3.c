@@ -16,7 +16,7 @@ void create()
 {
         set_name(BLU "衡山府君" NOR, ({ "henshan fujun", "henshan", "fujun" }));
         set("long", "他就是衡山府君。\n");
-        set("title", HIW "南岳" NOR);
+        set("title", HIW "南嶽" NOR);
         set("gender", "男性");
         set("age", 50);
         set("str", 91);
@@ -104,13 +104,13 @@ int ask_offer()
 
         if( !objectp( ob = present("contract", me) ) ||
             query("owner", ob) != query("id", me)){
-                tell_object(me, BLU "衡山府君說道：「你還沒有去領取閻王契(contract)，我不會接受你的獻祭請求。」\n" NOR);
+                tell_object(me, BLU "衡山府君説道：「你還沒有去領取閻王契(contract)，我不會接受你的獻祭請求。」\n" NOR);
                 return 1;
         }
 
         message_vision(CYN "$N" CYN "訝道：「既是身懷閻王契，本府君這便給你一個機會吧。」\n"
                        CYN "$N" CYN "思索片刻後笑道：「近日各地災情頻傳，本府君四處奔波，廣施善財，庫房頗有不堪負荷。」\n"
-                       CYN "$N" CYN "續道：「俗話說有錢能使鬼推磨，本府君現下急欠周轉，你可願出份力氣？」\n" NOR,
+                       CYN "$N" CYN "續道：「俗話説有錢能使鬼推磨，本府君現下急欠週轉，你可願出份力氣？」\n" NOR,
                        this_object(), me);
 
         tell_object(me, BLU "衡山府君想要你供奉金錢，你是否同意(answer yes/no)？\n" NOR);
@@ -200,7 +200,7 @@ void do_broadcast(int index)
                 break;
         case(2):
                 tell_room(environment(),
-                        BLU "衡山府君提筆揮洒，只見絲絲紫光滲入閻王契上，片刻即成。\n" NOR);
+                        BLU "衡山府君提筆揮灑，只見絲絲紫光滲入閻王契上，片刻即成。\n" NOR);
                 break;
         case(3):
                 tell_room(environment(),
@@ -234,10 +234,10 @@ int do_offer(string arg)
 
         if( !objectp( ob = present("contract", me) ) ||
                 query("owner", ob) != query("id", me) )
-                return notify_fail(BLU "衡山府君說道：「你還沒有去領取閻王契(contract)，我不會接受你的獻祭請求。」\n" NOR);
+                return notify_fail(BLU "衡山府君説道：「你還沒有去領取閻王契(contract)，我不會接受你的獻祭請求。」\n" NOR);
 
         if( query("offer_henshan", ob) )
-                return notify_fail(BLU "衡山府君說道：「你已經在衡山獻祭過了，就不用再來獻祭吧。」\n" NOR);
+                return notify_fail(BLU "衡山府君説道：「你已經在衡山獻祭過了，就不用再來獻祭吧。」\n" NOR);
 
         if( !query_temp("can_offer", me) || 
                 query_temp("can_offer", me) != query("id", this_object()) )

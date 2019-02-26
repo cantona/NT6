@@ -13,12 +13,12 @@ int main(object me, string arg)
             ! living(ob) ||
             ! ob->is_character() ||
             ob == me)
-                return notify_fail("你想和誰成為伙伴？\n");
+                return notify_fail("你想和誰成為夥伴？\n");
 
         if (! pointerp(me->query_team()) || me->is_team_leader())
         {
                 if (sizeof(me->query_team()) >= 12)
-                        return notify_fail("你這個隊伍裡面的人實在是太多"
+                        return notify_fail("你這個隊伍裏面的人實在是太多"
                                            "了，大家都照顧不過來了。\n");
 
                 if( me == query_temp("pending/team", ob) )

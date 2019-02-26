@@ -12,11 +12,11 @@ void create()
         set_name("冷謙", ({ "leng qian", "leng", "qian", }));
         set("long",
         "他是一位冷冷的老者，身穿一件白布長袍。\n"
-        "他說話極為簡捷，便是殺了他的頭也不肯多說半句廢話。\n"
+        "他説話極為簡捷，便是殺了他的頭也不肯多説半句廢話。\n"
         );
 
         set("title", HIG "明教" NOR "五散人");
-        set("nickname", "冷面先生");
+        set("nickname", "冷麪先生");
         set("gender", "男性");
         set("attitude", "friendly");
         set("class", "fighter");

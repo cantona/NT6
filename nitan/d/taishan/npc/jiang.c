@@ -59,7 +59,7 @@ int accept_fight(object ob)
         if ( !present(ob, environment()) ) return 0;
 
         if( query("fight_times", me) >= 10 )
-                return notify_fail("江百勝已經全身脫力，趴在地上大口地喘著粗氣！\n");        
+                return notify_fail("江百勝已經全身脱力，趴在地上大口地喘着粗氣！\n");        
 
         addn("fight_times", 1, me);
 
@@ -83,9 +83,9 @@ int checking(object me, object ob)
         {
                 if( (query("qi", me)*100/my_max_qi) <= 80 )
                 {
-                        say(GRN "\n江百勝說道： 魏盟主澤被天下，福濟蒼生， 他老人家算無遺策，功無不克，克無不勝！\n" NOR);
-                        say(GRN "\n江百勝說道： 魏盟主一句話，屬下辦事戳力，勇往直前！ 冰天雪地往裡闖，刀山火海就敢去！\n" NOR);
-                        message_vision(HIY "\n江百勝說完，全身不知打哪裡冒出來的一股力氣，不但功力盡復，拳力也威猛好多倍！\n" NOR, ob);
+                        say(GRN "\n江百勝説道： 魏盟主澤被天下，福濟蒼生， 他老人家算無遺策，功無不克，克無不勝！\n" NOR);
+                        say(GRN "\n江百勝説道： 魏盟主一句話，屬下辦事戳力，勇往直前！ 冰天雪地往裏闖，刀山火海就敢去！\n" NOR);
+                        message_vision(HIY "\n江百勝説完，全身不知打哪裏冒出來的一股力氣，不但功力盡復，拳力也威猛好多倍！\n" NOR, ob);
 
                         set("eff_qi",query("max_qi",  me), me);
                         set("qi",query("max_qi",  me), me);
@@ -94,7 +94,7 @@ int checking(object me, object ob)
                 }
                 else if( (query("qi", ob)*100/his_max_qi)<50 )
                 {
-                        say(GRN "\n江百勝說道： 看來你小子跟我還差著一大截呢，回去練上十年再來吧！\n");
+                        say(GRN "\n江百勝説道： 看來你小子跟我還差着一大截呢，回去練上十年再來吧！\n");
                         return 1;
                 }
 

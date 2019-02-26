@@ -66,7 +66,7 @@ mixed hit_ob(object me, object victim, int damage_bonus)
              if (! victim->is_busy()) 
                      victim->start_busy(me->query_skill("staff") / 10 + 2); 
              return HIC "$N跨前一步，手中的" NOR+HIG "綠玉杖" NOR+HIC "幻化成無數圓圈，" 
-                    "竹棒有如舖天蓋地般壓向$n，直逼\n" 
+                    "竹棒有如鋪天蓋地般壓向$n，直逼\n" 
                     "得$n手忙腳亂，禁不住連連倒退。\n" NOR; 
 
      case 1: 
@@ -79,7 +79,7 @@ mixed hit_ob(object me, object victim, int damage_bonus)
              victim->receive_wound("jing", n / 2, me); 
              return random(2) ? HIG "$N一聲長嘯，手中的綠玉杖化作一到青芒，“唰”的掃" 
                                 HIG "過$n。\n" NOR: 
-                                HIG "$N突然大聲喝道：“鼠輩，哪裡跑？”手中綠玉杖忽地" 
+                                HIG "$N突然大聲喝道：“鼠輩，哪裏跑？”手中綠玉杖忽地" 
                                 HIG "一抖，$n登時覺得眼前一花。\n" NOR; 
      } 
 
@@ -118,7 +118,7 @@ void return_to_hong()
                             "$N將綠玉杖交給丐幫弟子帶走了。\n", me); 
      } else 
      { 
-             message("vision", "忽然一個丐幫弟子走了過來，撿起綠玉杖，嘆了口" 
+             message("vision", "忽然一個丐幫弟子走了過來，撿起綠玉杖，歎了口" 
                                "氣，搖搖頭走了。\n", me); 
      } 
 

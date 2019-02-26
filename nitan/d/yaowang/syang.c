@@ -11,7 +11,7 @@ void create()
 {
         set("short", "飼養場");
         set("long",@LONG
-這裡是藥王谷的飼養場，用于飼養一些可以取藥材的動物，你可以把動物
+這裏是藥王谷的飼養場，用於飼養一些可以取藥材的動物，你可以把動物
 捉(zhuo)到屠宰場去殺了取藥。
 LONG );
         set("exits", ([
@@ -60,14 +60,14 @@ int do_zhiliao(string arg)
                 return notify_fail("這個東西不能捉！\n");
 
         if( me->is_fighting() || me->is_busy() )
-                return notify_fail("你正忙著呢！\n");
+                return notify_fail("你正忙着呢！\n");
           if (random(lvl)>lvl*2/3)
         {       
         ob->set_leader(me);
         me->start_busy(2);
-        message_vision("$N對$n召喚了兩聲，$n就乖乖得跟著$N。\n", me, ob);
+        message_vision("$N對$n召喚了兩聲，$n就乖乖得跟着$N。\n", me, ob);
                 me->improve_skill("hunting",(query("int", me)/6));
-                write(HIC "你在召喚過程中對于狩獵技巧有了些體會。\n" NOR);
+                write(HIC "你在召喚過程中對於狩獵技巧有了些體會。\n" NOR);
                    set("owner",query("id",  me), ob);
                      addn("combat_exp", exp, me);
                      me->improve_potential(pot);

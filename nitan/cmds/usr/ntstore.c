@@ -54,7 +54,7 @@ int help (object me)
         buyvalue = MEMBER_D->db_query_member(me, "buyvalue");
 
         write(HIY "□ 您目前的王者幣為 " + money + " (NT)
-" WHT "──────────────────────────────────
+" WHT "——————————————————————————————————
 
 " HIM "輸入指令：    ntstore show all                  查看所有商城的貨物
 輸入指令：    ntstore show object               顯示所有商城物品類
@@ -70,8 +70,8 @@ int help (object me)
 輸入指令：    ntstore look <代號>               查看指定物品的屬性
 
 " WHT "<代號>  ：    可用物品的 name 或 id 或 編號
-" WHT "──────────────────────────────────
-" HIC "淘寶沖值鏈接地址: " HIR "http://shop61698067.taobao.com\n
+" WHT "——————————————————————————————————
+" HIC "淘寶衝值鏈接地址: " HIR "http://shop61698067.taobao.com\n
 " HIY "您總共在遊戲商城消費 " + buyvalue + " (NT)。
 
 " HIG "相關參考文件：help member\n\n" NOR);

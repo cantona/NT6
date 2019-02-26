@@ -11,7 +11,7 @@ void create()
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("long","一把桃木制成的長劍，一般是用來寫咒畫符的．\n");
+                set("long","一把桃木製成的長劍，一般是用來寫咒畫符的．\n");
                 set("unit", "把");
                 set("value", 200);
 

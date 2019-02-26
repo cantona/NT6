@@ -8,7 +8,7 @@ void create()
         set("gender", "男性");
         set("nickname", "巨人");
         set("age", 19);
-        set("long", "他是一個滿洲巨人，手腳粗大，善于相撲，卻生性純樸。\n");
+        set("long", "他是一個滿洲巨人，手腳粗大，善於相撲，卻生性純樸。\n");
         
         set("combat_exp", 100000);
         set("shen_type", 0);

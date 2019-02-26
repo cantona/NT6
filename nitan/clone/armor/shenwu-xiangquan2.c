@@ -1,4 +1,4 @@
-// necklace.c 金項鏈
+// necklace.c 金項鍊
 
 #include <armor.h>
 #include <ansi.h>

@@ -5,11 +5,11 @@ inherit F_DEALER;
 
 void create()
 {
-        set_name("小伙計", ({"huo ji"}));
+        set_name("小夥計", ({"huo ji"}));
         set("age", 18);
         set("gender", "男性");
-        set("long","包子舖的伙計，懶洋洋的看著你。\n");
-        set("shop_title", "包子舖伙計");
+        set("long","包子鋪的夥計，懶洋洋的看着你。\n");
+        set("shop_title", "包子鋪夥計");
         set("attitude", "friendly");
         set("combat_exp", 10000);
         set("shen_type", 1);
@@ -54,6 +54,6 @@ void greeting(object ob)
         if (! ob || ! visible(ob) || environment(ob) != environment())
                 return;
 
-        say(name()+"帶理不理地說道：這位" +RANK_D->query_respect(ob) +
+        say(name()+"帶理不理地説道：這位" +RANK_D->query_respect(ob) +
             "，進來吃幾個包子吧。\n");
 }

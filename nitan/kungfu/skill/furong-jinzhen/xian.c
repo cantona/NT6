@@ -22,7 +22,7 @@ int perform(object me, object target)
 
         if( !objectp(weapon=query_temp("handing", me)) || 
             query("skill_type", weapon) != "throwing" )
-                return notify_fail("你現在手中並沒有拿著暗器。\n");
+                return notify_fail("你現在手中並沒有拿着暗器。\n");
 
         if ((int)me->query_skill("furong-jinzhen", 1) < 80)
                 return notify_fail("你的芙蓉金針不夠嫻熟，難以施展" XIAN "。\n");
@@ -34,7 +34,7 @@ int perform(object me, object target)
                 return notify_fail("你內力不夠了。\n");
 
         if (! living(target))
-                return notify_fail("對方都已經這樣了，用不著這麼費力吧？\n");
+                return notify_fail("對方都已經這樣了，用不着這麼費力吧？\n");
 
         addn("neili", -100, me);
         weapon->add_amount(-1);
@@ -70,7 +70,7 @@ int perform(object me, object target)
         } else
         {
                 msg += CYN "可是$p" CYN "早料得$P" CYN
-                       "有此一著，急忙飛身躍起，躲閃開來。"
+                       "有此一着，急忙飛身躍起，躲閃開來。"
                        "\n" NOR;
                 message_combatd(msg, me, target);
         }

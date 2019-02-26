@@ -3,7 +3,7 @@ inherit F_DEALER;
 
 void create()
 {
-        set_name("書店老板", ({ "shudian laoban", "laoban", "shudian" }) );
+        set_name("書店老闆", ({ "shudian laoban", "laoban", "shudian" }) );
         set("gender", "男性" );
         set("age", 62);
         set("long", "一個讓孩子們一見就覺得可親的老翁。\n");

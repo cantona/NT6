@@ -19,11 +19,11 @@ string resolvePath(string path,int op)
         {
                 //dn=dn-({dn[sizeof(dn)-1]});
                 //tmp=implode(dn,"/")+"/";
-                //上面的程序不好，不能對同名路徑正確處理，比如不能在/log/log文件裡搜索
+                //上面的程序不好，不能對同名路徑正確處理，比如不能在/log/log文件裏搜索
                 tmp="/";
                 for(i=0;i<sizeof(dn)-1;i++)
                 {
-                        //write("合並"+dn[i]+"\n");
+                        //write("合併"+dn[i]+"\n");
                         tmp+=dn[i]+"/";
                 }
                 return tmp;
@@ -77,7 +77,7 @@ int do_grep(string path,string wild,int level)
         //int i;
         //string *fs;
         string sbuffer,file;
-        reset_eval_cost();//重新設置剩余執行時間，必須設置！
+        reset_eval_cost();//重新設置剩餘執行時間，必須設置！
         if( query("env/debug", this_player()) )
                 write("開始搜索"+path+wild+"\n");
         if(level<0)
@@ -113,7 +113,7 @@ int do_grep(string path,string wild,int level)
                                         return 0;
                                 }
                                 if(strsrch(sbuffer,pattern)!=-1)
-                                        result=result+"在"+path+file+"裡找到"+pattern+"\n";//應該是記錄下來，最後再輸出
+                                        result=result+"在"+path+file+"裏找到"+pattern+"\n";//應該是記錄下來，最後再輸出
                         /*
                                 if(strsrch(read_file(path+file),pattern)!=-1)
                                         write(path+file+"\n");
@@ -135,11 +135,11 @@ X grep 命令 v0.1  Write By JackyBoy@CuteRabbit for CCTX & SDXL 1999/6/1
 
 
 指令格式 : xgrep [-d[0-15]] 路徑 想要搜索的字符串
-此指令可讓你在指定(除了目錄，可以用通配符來指定)檔案或目錄裡尋找含有要
+此指令可讓你在指定(除了目錄，可以用通配符來指定)檔案或目錄裏尋找含有要
 搜索的字符串的文件，並將其位置顯示出來。
 注意，默認僅搜索當前目錄！
 已知BUG：
-對二進制文件進行搜索將會出錯，因為禁止將'\0'設置到一個string裡！
+對二進制文件進行搜索將會出錯，因為禁止將'\0'設置到一個string裏！
 HELP
     );
     return 1;

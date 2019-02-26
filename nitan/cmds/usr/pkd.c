@@ -12,13 +12,13 @@ int main(object me, string arg)
         int i;
 
         if (PK_D->is_ready())
-                return notify_fail("現在正在報名呢，等會兒再說。\n");
+                return notify_fail("現在正在報名呢，等會兒再説。\n");
 
         obs = PK_D->query_all_competitor();
         if (! arrayp(obs) || ! sizeof(obs))
         {
                 if (PK_D->is_pking())
-                        return notify_fail("無法和 PK DAEMON 進行正常的聯系。\n");
+                        return notify_fail("無法和 PK DAEMON 進行正常的聯繫。\n");
                 return notify_fail("現在屠人場內並沒有什麼人。\n");
         }
 

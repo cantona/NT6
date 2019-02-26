@@ -19,7 +19,7 @@ int main(object me, string arg)
         seteuid(getuid());
 
         if (! VERSION_D->is_release_server())
-                return notify_fail("只有版本發布站點才能修改表情動詞。\n");
+                return notify_fail("只有版本發佈站點才能修改表情動詞。\n");
 
         if (! arg || sscanf(arg, "%s %s", from, to) != 2)
                 return help(me);
@@ -45,7 +45,7 @@ int help(object me)
 改命令將原名為 <from> 的 emote 改成名字為 <to> 的新 emote。
 注意：原先必須不能存在名為 <to> 的表情動詞。
 
-由于表情動詞會在版本同步時更新，因此只有版本發布站點才能夠使
+由於表情動詞會在版本同步時更新，因此只有版本發佈站點才能夠使
 用這個命令。
 
 see also：edemote、cpemote

@@ -7,7 +7,7 @@ void create()
 {
         set("short", HIM"百花谷內"NOR);
         set("long", 
-HIG"只見□紫嫣紅，滿山錦繡，彩蝶紛飛，群蜂輕舞。縱是宇外瓊地，
+HIG"只見奼紫嫣紅，滿山錦繡，彩蝶紛飛，羣蜂輕舞。縱是宇外瓊地，
 世外桃源，也不過如此。\n"NOR);
         set("outdoors", "baihuagu");
         set("exits", ([

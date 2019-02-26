@@ -50,7 +50,7 @@ string ask_me()
 
         if (query("count") < 1)
         {
-                return "實在對不住，現在我手裡也沒貨了。\n";
+                return "實在對不住，現在我手裏也沒貨了。\n";
         } else
         if( query_temp("tmark/藥", me) )
         {
@@ -68,25 +68,25 @@ int accept_object(object who, object ob)
 
         if( !query("money_id", ob) )
         {
-                write(CYN "小販詫異地說道：你給我這個幹什麼？\n" NOR);
+                write(CYN "小販詫異地説道：你給我這個幹什麼？\n" NOR);
                 return 0;
         }
 
         if (query("count") < 1)
         {
-                write(CYN "小販抱歉地說道：實在對不住，現在我手裡也沒貨了？\n" NOR);
+                write(CYN "小販抱歉地説道：實在對不住，現在我手裏也沒貨了？\n" NOR);
                 return 0;
         }
 
         if( !query_temp("tmark/藥", who) )
         {
-                write(CYN "小販疑惑地說道：我又不是乞丐，你沒事給我錢幹嘛？\n" NOR);
+                write(CYN "小販疑惑地説道：我又不是乞丐，你沒事給我錢幹嘛？\n" NOR);
                 return 0;
         }
 
         if (ob->value() < 10000)
         {
-                write(CYN "小販陰笑著說道：嘿嘿，給我這麼多錢哪。\n" NOR);
+                write(CYN "小販陰笑着説道：嘿嘿，給我這麼多錢哪。\n" NOR);
                 return 0;
         }
 
@@ -95,6 +95,6 @@ int accept_object(object who, object ob)
 
         addn("count", -1);
         command("giveheshouwuto"+query("id", who));
-        write(CYN "小販說道：既然您出得起價錢，這味藥可就歸您了。\n" NOR);
+        write(CYN "小販説道：既然您出得起價錢，這味藥可就歸您了。\n" NOR);
         return 1;
 }

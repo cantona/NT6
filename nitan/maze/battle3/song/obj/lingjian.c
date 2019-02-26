@@ -95,7 +95,7 @@ int do_escort()
                 return notify_fail("元帥並未分派你押解糧草的任務，不要擅自行動！\n");  
 
         if( query_temp("jun_quest/move", me) )
-                return notify_fail("號令已經發布下去了！\n");   
+                return notify_fail("號令已經發佈下去了！\n");   
 
         ob->start_move(me, ob);
         set("no_get", 1, me);
@@ -137,7 +137,7 @@ void move_me(object me, object ob)
                 if (site == "/d/bianliang/chengmen")
                 {
                         me->start_busy(10 + random(10));   
-                        message_vision(HIY "$N率領的解糧大軍終于到達了京師汴樑，"
+                        message_vision(HIY "$N率領的解糧大軍終於到達了京師汴梁，"
                                 + "$N將糧草載上馬車，又立刻開始了行軍的奔程....\n" NOR, me);
                         set_temp("jun_quest/move", "backward", me);
                         move_way = backward_way;
@@ -148,7 +148,7 @@ void move_me(object me, object ob)
                 move_way = backward_way;
                 if (site == "/quest/quest_jun/sying1")
                 {
-                        message_vision(HIY "$N率領的解糧大軍終于到達了襄陽軍營，"
+                        message_vision(HIY "$N率領的解糧大軍終於到達了襄陽軍營，"
                                 + "$N的糧草及時支援了大軍的補給....\n" NOR, me);
                         delete_temp("jun_quest/escort", me);
                         delete_temp("jun_quest/move", me);
@@ -189,7 +189,7 @@ void move_me(object me, object ob)
         if( query_temp("jun_quest/last_move", me) )
                 me->move(query_temp("jun_quest/last_move", me));
 
-        message_vision(YEL "$N率領著解糧大隊人馬不分晝夜地行進著.....\n", me);
+        message_vision(YEL "$N率領着解糧大隊人馬不分晝夜地行進着.....\n", me);
         me->start_busy(2 + random(2));
         remove_call_out("move_me");
         call_out("move_me", 4, me, ob);
@@ -208,15 +208,15 @@ int do_attack(string arg)
         if (! arg) return notify_fail("你要指揮部隊朝誰發起進攻？\n");
 
         if( query_temp("jun_quest/attack", me) )
-                return notify_fail("你的隊伍正在列陣進攻，不要亂發號令了！\n"); 
+                return notify_fail("你的隊伍正在列陣進攻，不要亂髮號令了！\n"); 
 
         if( query_temp("jun_quest/group", me)<1 )
-                return notify_fail("你的隊伍已經損失殆盡，無法列陣沖鋒了！\n"); 
+                return notify_fail("你的隊伍已經損失殆盡，無法列陣衝鋒了！\n"); 
  
         if( query_temp("jun_quest/train", me) == "infantry" )
         {
                 if( query("no_fight", env) )
-                        return notify_fail("這裡不許戰鬥！！\n");
+                        return notify_fail("這裏不許戰鬥！！\n");
 
                 if (objectp(obb = present(arg, env)))
                 {
@@ -225,7 +225,7 @@ int do_attack(string arg)
 
                         message_vision(HIW "$N大聲下令道：步兵營列陣！隊伍開始"
                                 + "排出整齊的方陣，在一片閃爍的刀光\n中，$N指揮隊伍發起"
-                                + "了可怕的沖鋒！\n" NOR, me);
+                                + "了可怕的衝鋒！\n" NOR, me);
 
                         set_temp("jun_quest/attack", 1, me);
                         call_out("attack_over", 10, me);
@@ -252,7 +252,7 @@ int do_attack(string arg)
                                         if (room)  
                                         {
                                                 if( query("no_fight", room) )
-                                                        return notify_fail("那裡不允許撕殺！！\n");
+                                                        return notify_fail("那裏不允許撕殺！！\n");
 
                                                 if (! objectp(obb = present(who, room)))
                                                         return notify_fail(
@@ -265,7 +265,7 @@ int do_attack(string arg)
                                                 call_out("attack_over", 10, me);    
                                                 me->move(room);
                                                 message_vision(
-                                                        HIR "$N率領著一支宋軍騎兵朝$n沖殺過來！\n" NOR,
+                                                        HIR "$N率領着一支宋軍騎兵朝$n衝殺過來！\n" NOR,
                                                         me, obb);
                                                 attack_begin(me, obb, room, env, "");
                                                 return 1;
@@ -293,7 +293,7 @@ int do_attack(string arg)
                                         if (room)  
                                         {
                                                 if( query("no_fight", room) )
-                                                        return notify_fail("那裡不允許撕殺！！\n");
+                                                        return notify_fail("那裏不允許撕殺！！\n");
 
                                                 if (! objectp(obb = present(who, room)))
                                                         return notify_fail(
@@ -303,7 +303,7 @@ int do_attack(string arg)
                                                         return notify_fail("你軍務在身，還是不要輕易招惹是非的好！\n");
 
                                                 message_vision(HIB "$N大聲下令道：神弩營準備！一排排利箭在陽"
-                                                        + "光下閃閃發光──射擊！！\n$N一聲令下，萬弩齊發！\n" NOR, me);  
+                                                        + "光下閃閃發光——射擊！！\n$N一聲令下，萬弩齊發！\n" NOR, me);  
                                                 set_temp("jun_quest/attack", 1, me);
                                                 call_out("attack_over", 10, me);    
                                                 attack_begin(me, obb, room, env, dir);
@@ -346,7 +346,7 @@ void attack_begin(object me, object target, object room, object env, string dir)
 
         if( query_temp("jun_quest/train", me) == "cavalry" )
         {
-                message_vision(HIW "一陣沖殺過後，$N率領著宋軍騎兵如風"
+                message_vision(HIW "一陣衝殺過後，$N率領着宋軍騎兵如風"
                         + "一般消失了！\n" NOR, me);
                 me->move(env);
         }                         
@@ -374,7 +374,7 @@ int do_train()
 
         if (! environment(me) || 
             file_name(environment(me)) != "/quest/quest_jun/sying1")
-                return notify_fail("你必須到元帥那裡領命才可以訓練隊伍！\n");
+                return notify_fail("你必須到元帥那裏領命才可以訓練隊伍！\n");
 
         if( query_temp("jun_quest/train_begin", me) )
                 return notify_fail("你不是正在訓練隊伍嗎？！\n");
@@ -443,12 +443,12 @@ void train_begin(object me)
         {
                 remove_call_out("train_begin");
                 delete_temp("jun_quest/train_begin", me);
-                tell_object(me,"你帶兵的能力不足，訓練不了更精銳的隊伍了！\n");
+                tell_object(me,"你帶兵的能力不足，訓練不了更精鋭的隊伍了！\n");
 
                 if (objectp(master) && environment(master)
                 &&  master->query_condition("junquest_song"))
                 {
-                        tell_object(master, HIY "你又訓練出一營的精銳部隊了！\n" NOR);
+                        tell_object(master, HIY "你又訓練出一營的精鋭部隊了！\n" NOR);
                 }                                    
                 return;
         }
@@ -459,19 +459,19 @@ void train_begin(object me)
         {
                 remove_call_out("train_begin");
                 delete_temp("jun_quest/train_begin", me);
-                tell_object(me, "請你到指定的兵營裡面訓練隊伍！\n"); 
+                tell_object(me, "請你到指定的兵營裏面訓練隊伍！\n"); 
                 return;
         }
 
         if( random(query("degree_jungong", me))>1 )
         {
                 message_vision(HIW "$N將手中令旗一揮，隊伍開始集結，"
-                        + "開始排列著不同的陣形，忽又散開，\n合時井然有序，分"
+                        + "開始排列着不同的陣形，忽又散開，\n合時井然有序，分"
                         + "時雜而不亂，看來$N真乃深諳用兵之道的良將啊！\n" NOR, me);
                 addn("eff_qi", 200, me);
         } else
-                message_vision(HIY "$N將手中令旗一揮，可是隊伍好象亂哄哄的，"
-                        + "根本不聽$N的指揮調遣，\n$N直氣得吹胡子瞪眼！！！\n" NOR, me);
+                message_vision(HIY "$N將手中令旗一揮，可是隊伍好像亂哄哄的，"
+                        + "根本不聽$N的指揮調遣，\n$N直氣得吹鬍子瞪眼！！！\n" NOR, me);
 
         liangcao -= 2;
         temp = sprintf("%d", liangcao);
@@ -501,7 +501,7 @@ void check_me(object me)
     
         if( num>0 && query_temp("jun_quest/train", me) )
         {
-                tell_object(me, HIR "你的隊伍精銳度提高了！\n" NOR);
+                tell_object(me, HIR "你的隊伍精鋭度提高了！\n" NOR);
                 addn_temp("jun_quest/group", num, me);
         }
 
@@ -550,7 +550,7 @@ void check_me(object me)
                                                                 call_out("attack_over", 10, me);    
                                                                 me->move(room);
                                                                 message_vision(
-                                                                        HIR "$N率領著一支宋軍騎兵朝$n沖殺過來！\n" NOR,
+                                                                        HIR "$N率領着一支宋軍騎兵朝$n衝殺過來！\n" NOR,
                                                                         me, obb);
                                                                 attack_begin(me, obb, room, env, "");
                                                                 break;
@@ -573,7 +573,7 @@ void check_me(object me)
                                 if( query_temp("jun_quest/party", obb) == "meng" )
                                 {
                                         message_vision(HIW "$N大聲下令道：步兵營列陣！隊伍開始排出整齊"
-                                                + "的方陣，在一片閃爍的刀光\n中，$N指揮隊伍發起了可怕的沖鋒！\n" NOR, me);
+                                                + "的方陣，在一片閃爍的刀光\n中，$N指揮隊伍發起了可怕的衝鋒！\n" NOR, me);
                                         set_temp("jun_quest/attack", 1, me);
                                         call_out("attack_over", 10, me);
                                         attack_begin(me, obb, room, env, "");   
@@ -613,7 +613,7 @@ void check_me(object me)
                                                                 if( !query_temp("weapon", me) )
                                                                         me->command("wield bow");
                                                                 message_vision(HIB "$N大聲下令道：神弩營準備！一排排利箭在陽"
-                                                                        + "光下閃閃發光──射擊！！\n$N一聲令下，萬弩齊發！\n" NOR,
+                                                                        + "光下閃閃發光——射擊！！\n$N一聲令下，萬弩齊發！\n" NOR,
                                                                         me);  
                                                                 set_temp("jun_quest/attack", 1, me);
                                                                 call_out("attack_over", 10, me);    
@@ -646,7 +646,7 @@ int do_order(string arg)
                 return notify_fail("請用 order sb to do sth. 來發布號令！\n");
 
         if (! objectp(ob = present(who,environment(me))))
-                return notify_fail("這裡沒有你可以調度的這名將領！\n");
+                return notify_fail("這裏沒有你可以調度的這名將領！\n");
 
         if( query_temp("jun_quest/party", ob) != "song" )
                 return notify_fail("對方不是宋軍，如何供你調度？！\n");

@@ -88,7 +88,7 @@ void kill_ob (object ob)
         if (guard1 && ! guard1->is_fighting())
         {
                 message_vision (HIW "\n聞萬夫大怒，喝道：居然欺到我們凌宵"
-                                "城頭上來了，大家並肩子上！\n\n" NOR,
+                                "城頭上來了，大家併肩子上！\n\n" NOR,
                                 guard1);
                 guard1->kill_ob(ob);
         }

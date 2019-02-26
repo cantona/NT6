@@ -41,7 +41,7 @@ void select_family()
         string fam;        
         fams = keys(fam_info);
         
-        // 保証不是上次出現過的門派
+        // 保證不是上次出現過的門派
         while(1)
         {
               fam = fams[random(sizeof(fams))];
@@ -57,33 +57,33 @@ string show_time()
 {
         select_family();
         change_status(WAITING); // 等待調遣，暫不進攻和QUEST
-        return "紛亂江湖，群雄逐鹿。武林中人都欲一統中原武林，成就一番霸業。";
+        return "紛亂江湖，羣雄逐鹿。武林中人都欲一統中原武林，成就一番霸業。";
 }
 
 string show_info(int i)
 {
         string* msg = ({
-             "神秘組織首領：聽說" + family + "在中原聲名顯赫，門徒眾多，" + FAM["master_name"] +
+             "神祕組織首領：聽説" + family + "在中原聲名顯赫，門徒眾多，" + FAM["master_name"] +
              "武功超卓，\n而" + FAM["skill"] + "更是威力驚人，不可小覷。",
 
-             "神秘組織護法：看來" + family + "不除，始終是我們統一中原武林的心腹大患。",
+             "神祕組織護法：看來" + family + "不除，始終是我們統一中原武林的心腹大患。",
 
-             "神秘組織首領：就依你的計策行事，立即召集人手到" HIR + FAM["fir_room_nm"] + NOR + WHT "集合。",
+             "神祕組織首領：就依你的計策行事，立即召集人手到" HIR + FAM["fir_room_nm"] + NOR + WHT "集合。",
 
-             "神秘組織護法：是！一柱香後屬下召集人手在" HIR + FAM["fir_room_nm"] + NOR + WHT "聽候首領調遣！",
+             "神祕組織護法：是！一柱香後屬下召集人手在" HIR + FAM["fir_room_nm"] + NOR + WHT "聽候首領調遣！",
 
-             family + "弟子：稟告" + FAM["master_rank"] + "，有一群不明身份的江湖人氏聚集在"HIR + 
-             FAM["fir_room_nm"] + NOR + WHT "，揚言要鏟平我們" + family + "！",
+             family + "弟子：稟告" + FAM["master_rank"] + "，有一羣不明身份的江湖人氏聚集在"HIR + 
+             FAM["fir_room_nm"] + NOR + WHT "，揚言要剷平我們" + family + "！",
     
              FAM["master_name"] + "怒道：“豈有此理，我堂堂" + family + "豈能容他們撒野！"
              "你立即傳令下去，召集\n本門弟子在" HIY + FAM["guard_room_nm"] + NOR + WHT "集合。”",
              
              family + "弟子：“是！”",                 // i == 6
 
-             "神秘組織護法：啟稟首領，" + family + "門下弟子已經聚集在" HIY + FAM["guard_room_nm"] +
+             "神祕組織護法：啟稟首領，" + family + "門下弟子已經聚集在" HIY + FAM["guard_room_nm"] +
              NOR + WHT "，看來他們要反抗到底！",
 
-             FAM["master_name"] + "：" + family + "弟子聽命，誓死保衛" + family + "，別讓那些狂妄小人得逞！", 
+             FAM["master_name"] + "：" + family + "弟子聽命，誓死保衞" + family + "，別讓那些狂妄小人得逞！", 
 
              family + "眾弟子：是！", 
 
@@ -100,7 +100,7 @@ string show_info(int i)
         if (i == 99)
         {
               CHANNEL_D->do_channel(this_object(), "rumor", 
-                                    "聽說神秘組織決定在三分鐘後進攻" HIW + family  + HIM + "！\n");
+                                    "聽説神祕組織決定在三分鐘後進攻" HIW + family  + HIM + "！\n");
 
               return "";
         }
@@ -117,8 +117,8 @@ void start_attack()
 {
        object *listeners;
        listeners = filter_array(users(), (: filter_listener :));
-       message("story",  NOR + WHT "\n【幫派挑畔】神秘組織首領：時辰已到，開始行動！" + "\n" NOR, listeners);
-       CHANNEL_D->do_channel(this_object(), "rumor", "聽說神秘組織開始攻打" HIW + family + HIM "！\n");
+       message("story",  NOR + WHT "\n【幫派挑畔】神祕組織首領：時辰已到，開始行動！" + "\n" NOR, listeners);
+       CHANNEL_D->do_channel(this_object(), "rumor", "聽説神祕組織開始攻打" HIW + family + HIM "！\n");
        change_status(ATTACKING);
        return;
 }
@@ -138,7 +138,7 @@ void notify_npc()
         if (sizeof(obs) <= 0)
         {
                 CHANNEL_D->do_channel(this_object(), "rumor", 
-                                      "聽說神秘組織行跡敗露，被官府剿滅了。\n");
+                                      "聽説神祕組織行跡敗露，被官府剿滅了。\n");
 
                 change_status(OVER);
                 stop = 1;
@@ -173,7 +173,7 @@ void notify_npc()
 
                if (environment(fam_ob))
                {
-                       message("vision", HIW + fam_ob->name() + "慌慌張張地說道：師們有事，恕"
+                       message("vision", HIW + fam_ob->name() + "慌慌張張地説道：師們有事，恕"
                                "不奉陪，我先走一步了！\n" NOR,
                                environment(fam_ob));
                }
@@ -187,25 +187,25 @@ void notify_npc()
                 string title;
                 int para;
 
-                // 先初始化神秘組織首領
+                // 先初始化神祕組織首領
                 for (i = 0; i < 11; i ++)
                 {
                       war_ob = new(CLASS_D("generate") + "/spekilled.c");
 
                       if (i == 0) // 首領
                       {
-                             title = HIR "神秘組織﹒首領" NOR;
+                             title = HIR "神祕組織·首領" NOR;
                              set("is_leader", 1, war_ob);
                              para = 5;
                       }
                       else if (i > 0 && i < 5) // 護法
                       {
-                             title = HIW "神秘組織﹒護法" NOR;
+                             title = HIW "神祕組織·護法" NOR;
                              para = 3;
                       }
                       else 
                       {
-                             title = HIC "神秘組織﹒高手" NOR;
+                             title = HIC "神祕組織·高手" NOR;
                              para = 2;
                       }
 
@@ -215,13 +215,13 @@ void notify_npc()
                       addn_temp("apply/parry", master_ob->query_skill("force")*para/20, war_ob);
                       addn_temp("apply/damage", para*30, war_ob);
                       addn_temp("apply/unarmed_damage", para*30, war_ob);
-                      addn_temp("apply/armor", para*500, war_ob);//很高的防御
+                      addn_temp("apply/armor", para*500, war_ob);//很高的防禦
                       set("fam_info", FAM, war_ob);//記錄攻打門派信息
                       set_temp("move", 0, war_ob);//記錄移動次數
                       set("title", title, war_ob);
                       set("team_num", 1, war_ob);//設置team_num以便任何一個NPC受到攻擊
-                                                  // 時所有有team_num標志的NPC都會參與反擊
-                                                  // 還可以保証入侵者不攻擊帶有team_num標志
+                                                  // 時所有有team_num標誌的NPC都會參與反擊
+                                                  // 還可以保證入侵者不攻擊帶有team_num標誌
                                                   // 的同伴
                       set("shen", 0, war_ob);
 
@@ -232,7 +232,7 @@ void notify_npc()
        else
        {
                      CHANNEL_D->do_channel(this_object(), "rumor", 
-                                           "聽說神秘組織被官府剿滅了。\n");
+                                           "聽説神祕組織被官府剿滅了。\n");
                      
                      change_status(OVER);
                      stop = 1;
@@ -241,11 +241,11 @@ void notify_npc()
 
 nosave mixed *story = ({
         (: show_time :),
-        "一個神秘的組織悄然壯大，出現在中原。",
+        "一個神祕的組織悄然壯大，出現在中原。",
         (: show_info, 0 :),
         (: show_info, 1 :),
-        "神秘組織首領：的確如此，那你有何高見？",
-        "神秘組織護法：盡快召集人手，攻它個措手不及，斬草除根，否則後患無窮！",
+        "神祕組織首領：的確如此，那你有何高見？",
+        "神祕組織護法：儘快召集人手，攻它個措手不及，斬草除根，否則後患無窮！",
         (: show_info, 2 :),
         (: show_info, 3 :),
         "一柱香後　……",
@@ -254,14 +254,14 @@ nosave mixed *story = ({
         (: show_info, 6 :),
         "一柱香後 ……",
         (: show_info, 7 :),
-        "神秘組織首領：很好！那就等他們全到到齊了，我們來個一網打盡，斬草除根！",
-        "神秘組織護法：哈哈！首領真是深謀遠慮，中原武林必將是首領的囊中之物！",
+        "神祕組織首領：很好！那就等他們全到到齊了，我們來個一網打盡，斬草除根！",
+        "神祕組織護法：哈哈！首領真是深謀遠慮，中原武林必將是首領的囊中之物！",
         (: show_info, 8 :),
         (: show_info, 9 :),
-        "神秘組織首領：左右護法聽命！",
-        "神秘組織左右護法：屬下在！",       
-        "神秘組織首領：傳我號令，一柱香後開始行動！",
-        "神秘組織左右護法：是！",       
+        "神祕組織首領：左右護法聽命！",
+        "神祕組織左右護法：屬下在！",       
+        "神祕組織首領：傳我號令，一柱香後開始行動！",
+        "神祕組織左右護法：是！",       
 });
 
 void create()

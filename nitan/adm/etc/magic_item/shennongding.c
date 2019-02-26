@@ -7,7 +7,7 @@ inherit ITEM;
 
 int is_magic_item() { return 1; }
 
-// 煉制的丹藥
+// 煉製的丹藥
 string *gifts = ({
         "/clone/fam/pill/neili1",
         "/clone/fam/pill/neili2",
@@ -102,10 +102,10 @@ void create()
         else
         {
                 set("unit", "個");
-                set("long", HIG "這是一個具有神奇作用的鼎，據說上古神農嘗百草煉奇藥，所用"
-                                "之煉制器具就是這個神農鼎。\n"
-                                "你可以用它來煉制(lianzhi)出神奇的丹藥，使用liandan ? "
-                                "查看可使用次數。\n煉制丹藥需要煉丹術一百級。\n" NOR);
+                set("long", HIG "這是一個具有神奇作用的鼎，據説上古神農嘗百草煉奇藥，所用"
+                                "之煉製器具就是這個神農鼎。\n"
+                                "你可以用它來煉製(lianzhi)出神奇的丹藥，使用liandan ? "
+                                "查看可使用次數。\n煉製丹藥需要煉丹術一百級。\n" NOR);
         }
 
         setup();
@@ -141,11 +141,11 @@ int do_lianzhi(string arg)
         ob = new(gift);
         if (! objectp(ob))
         {
-                write(HIR "物件 " + gift + " 復制出錯！\n" NOR);
+                write(HIR "物件 " + gift + " 複製出錯！\n" NOR);
         }
         else
         {
-                write(HIG "你煉制出了 " + ob->name() + HIG + " 。\n" NOR);
+                write(HIG "你煉製出了 " + ob->name() + HIG + " 。\n" NOR);
                 ob->move(me, 1);
         }
              

@@ -12,7 +12,7 @@ void create()
                 set("unit", "束");
                 set("long",
                         "這是小冊易筋經修行篇\n"
-                        "由一束薄絹釘成，裡面密密麻麻的畫了不少打坐吐吶的姿勢。\n");
+                        "由一束薄絹釘成，裏面密密麻麻的畫了不少打坐吐吶的姿勢。\n");
                 set("value", 500);
                 set("material", "silk");
                 set("skill", ([

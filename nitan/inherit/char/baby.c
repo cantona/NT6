@@ -249,7 +249,7 @@ void die()
                           killer->apply_condition("killer", 1000 + killer->query_condition("killer"));
         } else
                 message("channel:rumor",HIM "【江湖謠言】某人：" + NOR + HIW +
-                        "聽說" + this_object()->name() +
+                        "聽説" + this_object()->name() +
                         "死了，死狀慘不忍睹！\n" NOR, users());
 
         if (objectp(corpse = CHAR_D->make_corpse(this_object(), killer)))

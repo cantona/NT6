@@ -7,8 +7,8 @@ void create()
 {
         set("short", "大廳");
         set("long", @LONG
-這是『俠客島』的大廳，四周點滿了牛油蠟燭，南面放著一個
-大屏風。洞內擺著一百來張桌子，賓客正絡繹進來，數百名黃衣漢
+這是『俠客島』的大廳，四周點滿了牛油蠟燭，南面放着一個
+大屏風。洞內擺着一百來張桌子，賓客正絡繹進來，數百名黃衣漢
 子穿索般來去，引導賓客入座。
 LONG );
 //        set("valid_startroom",1);
@@ -46,12 +46,12 @@ int do_push(string arg)
         {
                 if( (query("id", inv[i]) == "pai1") && 
                     (query_temp("own", inv[i]) != query("id", me)) )
-                    return notify_fail("俠客島弟子說道：這位" +
-                      RANK_D->query_respect(me) + "好象不是俠客島的客人吧？\n");
+                    return notify_fail("俠客島弟子説道：這位" +
+                      RANK_D->query_respect(me) + "好像不是俠客島的客人吧？\n");
                 if( (query("id", inv[i]) == "pai2") && 
                     (query_temp("own", inv[i]) != query("id", me)) )
-                    return notify_fail("俠客島弟子說道：這位" +
-                      RANK_D->query_respect(me) + "好象不是俠客島的客人吧？\n");
+                    return notify_fail("俠客島弟子説道：這位" +
+                      RANK_D->query_respect(me) + "好像不是俠客島的客人吧？\n");
         }
         if( !arg || arg!="pingfeng")
         {

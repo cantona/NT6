@@ -89,7 +89,7 @@ void greeting(object ob)
         int i;
 
         obj = all_inventory(environment(me));
-        command("say 芷若，縱死俠骨香，除魔衛道定要此精神。");
+        command("say 芷若，縱死俠骨香，除魔衞道定要此精神。");
         for(i=0; i<sizeof(obj); i++)
         {
                 if( query("id", obj[i]) == "zhou-zhiruo" )

@@ -7,10 +7,10 @@
 inherit F_CLEAN_UP;
 
 string help = @HELP
-蹈堤跪笱齬俴埤ㄩ
+列出各種排行榜：
 
-top gaoshou             - 岍賜詢忒齬俴埤
-top average             - 岍賜詢忒褶髡厒僅齬俴埤
+top gaoshou             - 世界高手排行榜
+top average             - 世界高手練功速度排行榜
 HELP;
 
 int top_list(object ob1,object ob2);
@@ -27,7 +27,7 @@ int main(object me, string arg)
         string *res;
 
         if( time()-query_temp("last_top", me)<10 )
-              return notify_fail("炵苀揚剟華抩耋ㄩ鞣鞣懂 ....\n");
+              return notify_fail("系統氣喘噓地歎道：慢慢來 ....\n");
 
         if( !wizardp(me) )
                 set_temp("last_top", time(), me);
@@ -61,60 +61,60 @@ int main(object me, string arg)
         }
 
         if( n < 1 || n > 200 )
-                return notify_fail("珆尨齬靡杅講祥腕苤衾 1 麼湮衾 200﹝\n");
+                return notify_fail("顯示排名數量不得小於 1 或大於 200。\n");
 
         switch( arg1 )
         {
         case "average":
-                if( !wizardp(me) ) return notify_fail("褶髡遼齬靡脤戙髡夔祥勤俙模羲溫﹝\n");
-                msg = NOR YEL"岍賜"HIY" "+n+" 褶髡遼"NOR YEL"齬俴埤ㄩ\n"NOR;
-                msg += NOR WHT"岸岸岸岸岸岸岸岸岸岸岸岸岸岸岸岸岸岸岸岸岸岸岸岸岸岸岸岸岸岸岸岸岸岸岸岸岸岸岸岸\n"NOR;
-                msg += sprintf(HIW"%4s %-28s %-12s %12s %12s\n"NOR, "齬靡", "俙模", "冪桄", "夔", "极頗");
-                msg += NOR WHT"岸岸岸岸岸岸岸岸岸岸岸岸岸岸岸岸岸岸岸岸岸岸岸岸岸岸岸岸岸岸岸岸岸岸岸岸岸岸岸岸\n"NOR;
+                if( !wizardp(me) ) return notify_fail("練功狂人排名查詢功能不對玩家開放。\n");
+                msg = NOR YEL"世界"HIY"前 "+n+" 練功狂人"NOR YEL"排行榜：\n"NOR;
+                msg += NOR WHT"────────────────────────────────────────\n"NOR;
+                msg += sprintf(HIW"%4s %-28s %-12s %12s %12s\n"NOR, "排名", "玩家", "經驗", "潛能", "體會");
+                msg += NOR WHT"────────────────────────────────────────\n"NOR;
 
                 ob = filter_array(users(), (: playerp($1) && living($1) && !wizardp($1) :));
                 list = sort_array(ob, (: top_average :));
                 for (i = 0 ;i < n ; i++)
                 {
                         if( i >= sizeof(list))
-                                msg += sprintf("岫  %-5s 婃奀諾﹝﹛﹛﹛﹛﹛﹛﹛﹛﹛﹛﹛﹛﹛﹛﹛岫\n"NOR,chinese_number(i+1));
+                                msg += sprintf("│  %-5s 暫時空缺。　　　　　　　　　　　　　　　│\n"NOR,chinese_number(i+1));
                         else {
                                 res = query_temp("average", list[i]);
                                 if( list[i] == me ) msg += BBLU HIY;
-                                msg+=sprintf("岫%-5s%-22s%-12d%12d%12d岫\n"NOR,chinese_number(i+1),query("name", list[i])+"("+
+                                msg+=sprintf("│%-5s%-22s%-12d%12d%12d│\n"NOR,chinese_number(i+1),query("name", list[i])+"("+
                                                         capitalize(query("id", list[i]))+")",
                                                         res[0],
                                                         res[1],
                                                         res[2]);
                         }
                 }
-                msg += "弩岸岸岸拵呇﹜剿盄﹜阯蹺﹜餉譎歙祥輛齬靡埤岸岸岸彼\n";
-                msg += "  " + NATURE_D->game_time() + "暮﹝\n";
+                msg += "└───巫師、斷線、睡眠、昏迷均不進入排名榜───┘\n";
+                msg += "  " + NATURE_D->game_time() + "記。\n";
                 write(msg);
                 break;
         case "gaoshou":
                 ob = filter_array(users(), (: playerp($1) && living($1) && !wizardp($1) :));
                 list = sort_array(ob, (: top_list :));
-                msg = HIR "\n\t  ======== 虷偭蔬綬婓盄詢忒齬俴埤 ========\n" NOR;
+                msg = HIR "\n\t  ======== 笑傲江湖在線高手排行榜 ========\n" NOR;
                 msg += HIR "\t  /                                      \\\n" NOR;   
-                msg += sprintf(HIY "%-10s%-20s%-22s%-20s\n" NOR, "詢忒齬靡", "郬俷湮靡", "垀扽藷巖", "歎");
+                msg += sprintf(HIY "%-10s%-20s%-22s%-20s\n" NOR, "高手排名", "尊姓大名", "所屬門派", "評價");
                 msg += HIM "---------------------------------------------------------------\n"NOR;
                 for (i = 0 ;i < n ; i++)
                 {
                         if( i >= sizeof(list))
-                                msg += sprintf(HIW"   %-7s 婃奀諾﹝﹛﹛﹛﹛﹛﹛﹛﹛﹛﹛﹛﹛﹛﹛﹛\n"NOR,chinese_number(i+1));
+                                msg += sprintf(HIW"   %-7s 暫時空缺。　　　　　　　　　　　　　　　\n"NOR,chinese_number(i+1));
                         else {
                                 if( list[i] == me ) msg += BBLU HIY;
                                 msg+=sprintf(HIW"   %-7s%-20s%-22s%-20s\n"NOR,chinese_number(i+1),query("name", list[i])+"("+
                                                         capitalize(query("id", list[i]))+")",
-                                                        query("family/family_name", list[i])?list[i]->query_family():"籵啃俷",
-                                                        "祥晞芵繞");
+                                                        query("family/family_name", list[i])?list[i]->query_family():"普通百姓",
+                                                        "不便透露");
                         }
                 }
                 msg += HIM "---------------------------------------------------------------\n"NOR;
                 msg += HIR "\t  \\                                      /\n" NOR;
                 msg += HIR "\t  ========================================\n" NOR;
-                msg += HIC + NATURE_D->game_time() + "暮﹝\n" NOR;
+                msg += HIC + NATURE_D->game_time() + "記。\n" NOR;
                 write(msg);
                 break;
         default:

@@ -23,7 +23,7 @@ int perform(object me, object target)
 
         if( !objectp(weapon=query_temp("handing", me)) || 
             (string)query("skill_type", weapon) != "throwing")
-                return notify_fail("你現在手中並沒有拿著暗器。\n");
+                return notify_fail("你現在手中並沒有拿着暗器。\n");
 
         if (weapon->query_amount() < 10)
                 return notify_fail("至少要有十枚暗器你才能施展" + name() + "。\n");

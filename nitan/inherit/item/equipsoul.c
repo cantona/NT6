@@ -8,7 +8,7 @@ string chinese_s(int arg)
 {
       if( arg == 1 ) return HIK "劣質的"; 
       if( arg == 2 ) return HIB "普通的"; 
-      if( arg == 3 ) return HIR "精致的"; 
+      if( arg == 3 ) return HIR "精緻的"; 
       if( arg == 4 ) return HIM "卓越的"; 
       if( arg == 5 ) return HIY "無暇的"; 
       if( arg == 6 ) return HIY "完美的";

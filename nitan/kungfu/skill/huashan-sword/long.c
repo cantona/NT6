@@ -36,7 +36,7 @@ int perform(object me, object target)
         if (me->query_skill_mapped("sword") != "huashan-sword")
                 return notify_fail("你沒有激發華山劍法，無法使用「天外飛龍」。\n");
 
-        msg = HIC "$N" HIC "心念電閃，一提內力，勒手仗劍，運勁于臂，呼"
+        msg = HIC "$N" HIC "心念電閃，一提內力，勒手仗劍，運勁於臂，呼"
               "的一聲向$n" HIC "擲了出去，\n" NOR;
 
         ap = attack_power(me, "sword");
@@ -48,7 +48,7 @@ int perform(object me, object target)
                 //damage = damage_power(me, "sword") * 3 / 2;
                 msg += COMBAT_D->do_damage(me, target, WEAPON_ATTACK, damage, 60,
                                            HIC "$n疾忙躍起，但劍如電閃，只覺一陣劇痛，劍刃"
-                                           "攔腰而過，鮮血飛濺，皮肉卷起！\n" NOR);
+                                           "攔腰而過，鮮血飛濺，皮肉捲起！\n" NOR);
                 addn("neili", -400, me);
         } else
         {

@@ -8,9 +8,9 @@ void create()
 {
         set("short", "海岸");
         set("long", @LONG
-這是神龍島的出海口，浪花拍打著礁石，發出陣陣響聲，海面上一
-群群海鷗『歐歐..』地叫著，不時有魚兒躍出海面，濺起層層的浪花。
-邊上有艘大船(chuan)， 船上坐著幾個船夫打扮的人，乘船可渡過大海
+這是神龍島的出海口，浪花拍打着礁石，發出陣陣響聲，海面上一
+羣羣海鷗『歐歐..』地叫着，不時有魚兒躍出海面，濺起層層的浪花。
+邊上有艘大船(chuan)， 船上坐着幾個船伕打扮的人，乘船可渡過大海
 到達海的另一端。東面是神龍島的海灘。
 LONG
         );
@@ -20,7 +20,7 @@ LONG
                 "east" : __DIR__"haitan",
         ]));
         set("item_desc", ([
-                "chuan" : "這是神龍島對外聯系的大船。島上的客人或弟子只要\n上船(enter)就可以回中原。\n",
+                "chuan" : "這是神龍島對外聯繫的大船。島上的客人或弟子只要\n上船(enter)就可以回中原。\n",
         ]));
         set("exits",([
                 "east" :__DIR__"haitan",
@@ -46,8 +46,8 @@ int do_enter ( string arg )
                 return 1 ;
         }
         ob = this_player () ;
-        message_vision("船夫一見有人上船，忙叫了一聲：開船嘍！\n", ob);
-        message_vision("船夫升起帆，船就向西方航行。\n", ob);
+        message_vision("船伕一見有人上船，忙叫了一聲：開船嘍！\n", ob);
+        message_vision("船伕升起帆，船就向西方航行。\n", ob);
         ob ->move(__DIR__"dahai") ;
         tell_object(ob, BLU "你在海上航行了很久很久.......\n" NOR ) ;
         call_out("home", 10 , ob );
@@ -55,6 +55,6 @@ int do_enter ( string arg )
 }
 void home( object ob )
 {
-        tell_object(ob , "大船終于抵達了中原的一個繁華城市。你走下船來。\n" ) ;
+        tell_object(ob , "大船終於抵達了中原的一個繁華城市。你走下船來。\n" ) ;
         ob->move ("/d/beijing/haigang") ;
 }

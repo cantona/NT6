@@ -94,7 +94,7 @@ command("say 既能到此，既為你我有緣，我這有樣東西，你拿去�
                                         obn->move(ob);
 command("say 到俠客島來，想必是學武功吧，我在助你一臂之力。\n");
                                         ob->move("/d/xiakedao/neiting");
-tell_object(ob,HIR"你只覺眼前一黑，什麼也不知道了，醒來卻神秘的出現在一個大廳內。\n"NOR);
+tell_object(ob,HIR"你只覺眼前一黑，什麼也不知道了，醒來卻神祕的出現在一個大廳內。\n"NOR);
                                 }
 command("say 既能到此，既為有緣，在後洞有一把劍，如有緣，你拿去吧。\n");
                         }

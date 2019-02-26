@@ -10,11 +10,11 @@ void create()
         set("short", "前庭");             /* EXAMPLE */
 //**    set("short", "ROOM_NAME前庭");
         set("long", @LONG
-這裡似乎非常安靜，倒是時不時聽見鳥兒唧唧喳喳的叫。院中不少樹
+這裏似乎非常安靜，倒是時不時聽見鳥兒唧唧喳喳的叫。院中不少樹
 木已然有遮天之勢，肅穆非常。
 LONG );
 
-        set("default_long", "這裡似乎非常安靜，聽不到什麼聲響，到是時不" /* EXAMPLE */
+        set("default_long", "這裏似乎非常安靜，聽不到什麼聲響，到是時不" /* EXAMPLE */
                             "時聽見鳥兒唧唧喳喳的叫。院中不少樹木已然有" /* EXAMPLE */
                             "遮天之勢，肅穆非常。");                     /* EXAMPLE */
                                                                          /* EXAMPLE */
@@ -66,7 +66,7 @@ int do_push()
         object room;
 
         if (query("gate") == "open")
-                return notify_fail("大門開著呢，你還推什麼？\n");
+                return notify_fail("大門開着呢，你還推什麼？\n");
 
         me = this_player();
         ob = present("saodi laopu", this_object());
@@ -111,7 +111,7 @@ int do_close(string arg, int n)
         object room;
 
         if (query("gate") == "close")
-                return notify_fail("大門關著呢，你還再關一遍？\n");
+                return notify_fail("大門關着呢，你還再關一遍？\n");
 
         me = this_player();
         ob = present("saodi laopu", this_object());
@@ -154,10 +154,10 @@ string long()
         string msg;
         msg = "    ";
         if (present("lao jiaren"))
-                msg += "一老家人慢慢的揮舞著掃把，打掃著落葉。";
+                msg += "一老家人慢慢的揮舞着掃把，打掃着落葉。";
 
         if (query("gate") != "open")
-                msg += "向北望去，有一扇大門緊緊的關閉著。";
+                msg += "向北望去，有一扇大門緊緊的關閉着。";
         else
                 msg += "大門暢開，遠遠望去，隱然可見迎客廳。";
 

@@ -40,7 +40,7 @@ int do_ts(string arg)
 
     if( !arg ) return errs("輸入參數。
 
- high          -- 所有玩家 各自的成功單局最高分(用于獎項1)
+ high          -- 所有玩家 各自的成功單局最高分(用於獎項1)
 
  xiaolv        -- 最高效率的得分(人名請看TOP 公告版)
 

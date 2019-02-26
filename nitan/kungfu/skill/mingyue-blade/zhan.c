@@ -37,10 +37,10 @@ int perform(object me, object target)
                 return notify_fail("你沒有激發天涯明月刀，難以施展" + name() + "。\n");
 
         if (! living(target))
-                return notify_fail("對方都已經這樣了，用不著這麼費力吧？\n");
+                return notify_fail("對方都已經這樣了，用不着這麼費力吧？\n");
 
 
-        msg= HIC "$N" HIC "心中湧起沖天豪氣，就如馳騁沙場，殺將于千軍萬馬之間的壯烈情懷，一聲長嘯，離地而起，疾若閃電般往$n掠去。\n"
+        msg= HIC "$N" HIC "心中湧起沖天豪氣，就如馳騁沙場，殺將於千軍萬馬之間的壯烈情懷，一聲長嘯，離地而起，疾若閃電般往$n掠去。\n"
              HIC "同時，手中" + weapon->name() + HIC"由橫擺變成直指，強大和森寒徹骨的刀氣朝$n狂湧而去。\n" NOR;
 
         ap = attack_power(me, "blade");

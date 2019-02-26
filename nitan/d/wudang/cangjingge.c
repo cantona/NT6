@@ -19,7 +19,7 @@ void create()
 {
         set("short", "藏經閣");
         set("long", @LONG
-這裡是藏經閣，靠牆是一排書架，擺滿了道教的典籍。中央有一
+這裏是藏經閣，靠牆是一排書架，擺滿了道教的典籍。中央有一
 個長方形的大桌子，上面也堆滿了書。一個道童正在整理書籍。幾個
 老道盤膝而做，正在此地靜修(jingxiu)。
 LONG );
@@ -49,7 +49,7 @@ int do_jingxiu(string arg)
 
         me = this_player();
         if (me->is_busy())
-                return notify_fail("等你忙完了手頭的事情再說！\n");
+                return notify_fail("等你忙完了手頭的事情再説！\n");
 
         if (me->is_fighting())
                 return notify_fail("你邊打架一邊靜修？真有你的。\n");

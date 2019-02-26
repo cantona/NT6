@@ -10,7 +10,7 @@ void init()
         && !present("tieyan ling", ob) 
          && ((fam=query("family", ob)) && fam["family_name"] != "明教")){
              if( !query_temp("warned", ob)){
-                   command("say 你是誰？  怎麼闖到光明頂裡來了？！");
+                   command("say 你是誰？  怎麼闖到光明頂裏來了？！");
                    command("say 快給我速速離開，下次看到決不輕饒！");
                    set_temp("warned", 1, ob);
                    }

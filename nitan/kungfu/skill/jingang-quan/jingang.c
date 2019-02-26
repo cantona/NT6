@@ -37,7 +37,7 @@ int perform(object me, object target)
                 return notify_fail("你沒有激發金剛拳，無法使用大金剛神通！\n");
 
        if (! living(target))
-              return notify_fail("對方都已經這樣了，用不著這麼費力吧？\n");
+              return notify_fail("對方都已經這樣了，用不着這麼費力吧？\n");
 
         msg = HIY "$N" HIY "使出大金剛拳的絕技「大金剛神通」，臂力陡然增加！\n" NOR;
 
@@ -60,7 +60,7 @@ int perform(object me, object target)
         } else
         {
                 msg = HIR "$N" HIR "拼盡畢生功力使出了大金剛拳的終"
-                      "極絕技, 全身骨骼一陣爆響, 欲與$n" HIR "同歸于盡！\n" NOR;
+                      "極絕技, 全身骨骼一陣爆響, 欲與$n" HIR "同歸於盡！\n" NOR;
                 message_combatd(msg, me, target);
                 addn_temp("apply/str", count*9, me);
                 set_temp("jingang", 1, me);

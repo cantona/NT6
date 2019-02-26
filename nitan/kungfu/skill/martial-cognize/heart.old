@@ -85,7 +85,7 @@ int perform(object me, object target)
           !sizeof(can_perform) || 
           member_array("heart",can_perform) == -1
           )
-                return notify_fail("你還沒有學會使用﹝天龍之心﹞！\n");
+                return notify_fail("你還沒有學會使用［天龍之心］！\n");
 
 
         lvl = (int)me->query_skill("martial-cognize",1);
@@ -103,7 +103,7 @@ int perform(object me, object target)
                 return notify_fail("你的精神狀態不好！\n");
 
         if( !target )
-                return notify_fail("你要對誰使用﹝天龍之心﹞？\n");
+                return notify_fail("你要對誰使用［天龍之心］？\n");
 
         if( !userp(target) )
                 return notify_fail("對方沒有獨立的思維，你對其用天龍之心有何效果？\n");
@@ -122,10 +122,10 @@ int perform(object me, object target)
 
         message("vision",HIY + me->name() + HIY +"渾身金光流轉，目光深深注入" + 
                          target->name() + HIY + "眼中，雖只輕輕一瞥，卻令人感覺" + 
-                         "仿佛已過了千萬年。\n" NOR, environment(me), ({me, target}));
+                         "彷彿已過了千萬年。\n" NOR, environment(me), ({me, target}));
 
         tell_object(me, HIY "你運轉天龍之心，思感蔓延至四周空間，集中注入" + target->name() + 
-                        HIY + "眼中，頃刻遊走于" + target->name() + HIY + "體內。\n" + 
+                        HIY + "眼中，頃刻遊走於" + target->name() + HIY + "體內。\n" + 
                         "一陣奇妙的感覺擁來，你似乎看透了" + target->name() + HIY + 
                         "的全部記憶，腦海中豁然一亮！\n");
         tell_object(target, HIY+me->name()+HIY+"目芒閃爍，深邃無比，直直的看入你心底深處！\n" +

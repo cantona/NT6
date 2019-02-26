@@ -2,9 +2,9 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "小胡同");
+        set("short", "小衚衕");
         set("long", @LONG
-這裡是一條小胡同，就在白天這裡也是昏暗不堪。
+這裏是一條小衚衕，就在白天這裏也是昏暗不堪。
 LONG);
         set("outdoors", "zhongzhou");
 

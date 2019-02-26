@@ -12,7 +12,7 @@ void create()
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("long","一包以蛇毒、斷腸草等為原料制成的腥紅色的毒粉。可以用來生成(make)火堆(huodui)。也可以倒(pour)進酒水裡，或塗(tu)在兵器上。（塗之前必須先點燃(dian)它）\n" );
+                set("long","一包以蛇毒、斷腸草等為原料製成的腥紅色的毒粉。可以用來生成(make)火堆(huodui)。也可以倒(pour)進酒水裏，或塗(tu)在兵器上。（塗之前必須先點燃(dian)它）\n" );
 //                set("unit", "些");
                 set("unit", "包");
 //                set("base_value", 5000);

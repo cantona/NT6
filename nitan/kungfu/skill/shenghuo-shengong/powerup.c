@@ -19,7 +19,7 @@ int exert(object me, object target)
 
         skill = me->query_skill("force");
         addn("neili", -150, me);
-        message_combatd(HIM "$N默運聖火神功，臉色先由黃翻紫，緊接著由紫翻藍，再由藍翻紅，最後又恢"
+        message_combatd(HIM "$N默運聖火神功，臉色先由黃翻紫，緊接着由紫翻藍，再由藍翻紅，最後又恢"
                         "復為黃色，甚為詭異。\n" NOR,me);
         addn_temp("apply/attack", skill*2/5, me);
         addn_temp("apply/dodge", skill*2/5, me);

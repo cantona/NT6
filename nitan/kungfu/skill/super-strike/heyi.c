@@ -48,7 +48,7 @@ int perform(object me, object target)
                 return notify_fail("你正在使用掌刀。\n");
 
 	j = me->query_skill("super-strike", 1)/3;
-        message_vision(HIW"\n$N退了兩步，突然身子微側，緊跟著身形猛進直擊$n！\n"NOR, me, target);
+        message_vision(HIW"\n$N退了兩步，突然身子微側，緊跟着身形猛進直擊$n！\n"NOR, me, target);
 
         me->add_temp("apply/strike", j);
         me->add_temp("apply/damage", j/2);
@@ -67,7 +67,7 @@ int perform(object me, object target)
         me->add_temp("apply/damage", -j/2);
         me->add_temp("apply/attack", -j);
         if( j * 4 > 250 && random(2) ){
-        	tell_object(me, HIY"\n緊接著你掌勢一變，開始凝聚秘傳的“天雷氣”……\n"NOR);
+        	tell_object(me, HIY"\n緊接着你掌勢一變，開始凝聚祕傳的“天雷氣”……\n"NOR);
         	me->start_call_out( (: call_other, __DIR__"tianlei", "tianlei_hit", me, 2 :), 1 );
         }
         me->add("neili", -500);
@@ -81,7 +81,7 @@ int help(object me)
         write(WHT"\n鐵掌掌法「陰陽合一」："NOR"\n");
         write(@HELP
         這是裘千仞鐵掌功的十三絕招之一，叫作「陰陽合一」，最是猛惡無比。
-        而且據幫中護法說，還看過幫主在此招之後出過一式殺招！
+        而且據幫中護法説，還看過幫主在此招之後出過一式殺招！
         
         要求：  內力 1000 以上；      
                 最大內力 1500 以上；

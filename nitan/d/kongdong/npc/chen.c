@@ -47,10 +47,10 @@ void say_hi(object ob)
         if(ob->query("family/family_name")!="崆峒派")
         {
                 message_vision("陳漢京向$N一拱手：這位"+RANK_D->query_respect(ob)+"，"
-                "家師就在裡面，快請進吧。\n",ob);
+                "家師就在裏面，快請進吧。\n",ob);
 			return;
         }
-        message_vision("陳漢京笑著拍拍$N的肩膀：怎麼樣，功夫有長進嗎？好好練吧。\n",ob);
+        message_vision("陳漢京笑着拍拍$N的肩膀：怎麼樣，功夫有長進嗎？好好練吧。\n",ob);
 		return;
 }
 
@@ -63,7 +63,7 @@ int accept_object( object ppl, object obj )
         return 0;
     if ( query( "box" ) )               
     {
-        message_vision( "陳漢京沖著$N大喝道：“周老太爺怎麼會讓你送兩個禮盒？！"
+        message_vision( "陳漢京衝着$N大喝道：“周老太爺怎麼會讓你送兩個禮盒？！"
             + RANK_D->query_rude( ppl ) + "竟敢欺騙老夫！”\n", ppl );
         kill_ob( ppl );
         ppl->fight_ob( this_object() );

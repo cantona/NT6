@@ -15,9 +15,9 @@ mapping *action = ({
         "lvl" : 10,
         "skill_name" : "風起雲湧",
 ]),
-([        "action" : "$N一招"+HIY"「風卷殘雲」"NOR+"，手臂一掄，刀鋒一卷，自上而下斬向$n",
+([        "action" : "$N一招"+HIY"「風捲殘雲」"NOR+"，手臂一掄，刀鋒一卷，自上而下斬向$n",
         "lvl" : 20,
-        "skill_name" : "風卷殘雲",
+        "skill_name" : "風捲殘雲",
 ]),
 ([        "action" : "$N一招"+HIC"「風流雲散」"NOR+"，側身而退，$w卻在胸前劃出一道圓弧，橫劈$n的$l",
         "lvl" : 32,
@@ -43,7 +43,7 @@ mapping *action = ({
         "lvl" : 101,
         "skill_name" : "風雨飄搖",
 ]),
-([        "action" : "$N挪步小退，一招"+HIC"「風花雪月」"NOR+"，手中$w輕描淡寫地揮出一刀，隨即又“唰唰”連劈出兩刀，後發先至，洒向$n的$l",
+([        "action" : "$N挪步小退，一招"+HIC"「風花雪月」"NOR+"，手中$w輕描淡寫地揮出一刀，隨即又“唰唰”連劈出兩刀，後發先至，灑向$n的$l",
         "lvl" : 120,
         "skill_name" : "風花雪月",
 ]),
@@ -148,7 +148,7 @@ void skill_improved(object me)
         if( lvl >= 150 && 
             !query("can_perform/kuangfeng-blade/kuang", me) )  
         { 
-                tell_object(me, HIC "你通曉了狂風刀法「" HIR "狂風二十一式" HIC "」的奧秘。\n" NOR);     
+                tell_object(me, HIC "你通曉了狂風刀法「" HIR "狂風二十一式" HIC "」的奧祕。\n" NOR);     
                 set("can_perform/kuangfeng-blade/kuang", 1, me); 
                 me->improve_skill("martial-cognize", 1500000);   
                 me->improve_skill("martial-cognize", 1500000);   

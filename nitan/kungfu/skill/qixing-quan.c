@@ -25,15 +25,15 @@ mapping *action = ({
         "skill_name" : "星過長空",
         "damage_type" : "瘀傷"
 ]),
-([      "action" : "$N一招「群星閃爍」，雙拳數分數合，$n只覺到處是$N的拳影",
+([      "action" : "$N一招「羣星閃爍」，雙拳數分數合，$n只覺到處是$N的拳影",
         "force"  : 160,
         "dodge"  : 18,
         "damage" : 22,
         "lvl"    : 60,
-        "skill_name" : "群星閃爍",
+        "skill_name" : "羣星閃爍",
         "damage_type" : "瘀傷"
 ]),
-([      "action" : "$N施展開「千變萬化」繞著$n一轉，飛身遊走，拳出如風，不住的擊向$n。",
+([      "action" : "$N施展開「千變萬化」繞着$n一轉，飛身遊走，拳出如風，不住的擊向$n。",
         "force"  : 170,
         "dodge"  : 21,
         "damage" : 26,
@@ -50,12 +50,12 @@ mapping *action = ({
         "skill_name" : "點石成金",
         "damage_type" : "瘀傷"
 ]),
-([      "action" : "$N一招「北鬥生採」，拳影交錯，上中下一齊攻向$n。",
+([      "action" : "$N一招「北斗生採」，拳影交錯，上中下一齊攻向$n。",
         "force"  : 250,
         "dodge"  : 25,
         "damage" : 35,
         "lvl"    : 120,
-        "skill_name" : "北鬥生採",
+        "skill_name" : "北斗生採",
         "damage_type" : "瘀傷"
 ]),
 });

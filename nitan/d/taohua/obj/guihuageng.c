@@ -7,12 +7,12 @@ void do_eat();
 
 void create()
 {
-        set_name(HIM"桂花鮮栗羹"NOR,({"guihua geng", "soup", "geng"}));
+        set_name(HIM"桂花鮮慄羹"NOR,({"guihua geng", "soup", "geng"}));
         set_weight(50);
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("long", "一碗稠稠的桂花羹，悠悠地冒著香氣～～～\n");
+                set("long", "一碗稠稠的桂花羹，悠悠地冒着香氣～～～\n");
                 set("unit", "碗");
                 set("value", 120);
         set("remaining", 3);
@@ -81,11 +81,11 @@ int do_drink(string arg)
     addn("remaining", -1);
         if ( query("remaining") )
         {
-                    message_vision("$N端起碗桂花鮮栗羹，有滋有味地品了幾口。\n"+
+                    message_vision("$N端起碗桂花鮮慄羹，有滋有味地品了幾口。\n"+
                       "一股桂花香直入心脾，$N覺得精神好多了。\n", this_player());
         } else 
         { 
-                    message_vision("$N端起碗，把剩下的桂花鮮栗羹一飲而盡。\n"+
+                    message_vision("$N端起碗，把剩下的桂花鮮慄羹一飲而盡。\n"+
                       "一股桂花香直入心脾，$N覺得精神好多了。\n", this_player());
                 
                 destruct(this_object());

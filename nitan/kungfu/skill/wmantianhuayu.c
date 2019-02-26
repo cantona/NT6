@@ -2,7 +2,7 @@
 #include <combat.h>
 inherit SKILL;
 mapping *action = ({
-([  "action":"$N將$w扣在拇指上用力一彈，一招「"+MAG+"飛花逐蝶"+NOR+"」$w夾雜著絲絲勁風射向$n的$l",
+([  "action":"$N將$w扣在拇指上用力一彈，一招「"+MAG+"飛花逐蝶"+NOR+"」$w夾雜着絲絲勁風射向$n的$l",
     "force" : 180,
     "lvl" : 0,
     "skill_name" : MAG "飛花逐蝶" NOR,

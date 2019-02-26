@@ -10,7 +10,7 @@ void create()
         set("nickname", "丐幫六老");
         set("gender", "男性");
         set("age", 50);
-        set("long", "他是一個白須老者，是本幫外家奇門兵器高手。\n");
+        set("long", "他是一個白鬚老者，是本幫外家奇門兵器高手。\n");
         set("attitude", "peaceful");
         set("class", "beggar");
          set("beggarlvl", 9);

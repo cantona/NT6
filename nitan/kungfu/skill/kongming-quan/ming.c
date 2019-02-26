@@ -24,7 +24,7 @@ int perform(object me, object target)
                 return notify_fail("你已在使用三花聚頂了！\n");
 
         if( query_temp("kongming", me) )
-                return notify_fail("你已在使用靈台空明了！\n");
+                return notify_fail("你已在使用靈台空明瞭！\n");
 
         if( objectp(query_temp("weapon", me)) )
                 return notify_fail("空手才能施展靈台空明！\n");
@@ -53,7 +53,7 @@ int perform(object me, object target)
                 return notify_fail("你的精不夠使用靈台空明！\n");
 
 
-        msg = HIY"$N深吸一口氣，目光猛然清澈無比，接著雙拳十字交錯，緩緩向$n推了過去！\n\n"NOR;
+        msg = HIY"$N深吸一口氣，目光猛然清澈無比，接着雙拳十字交錯，緩緩向$n推了過去！\n\n"NOR;
         message_vision(msg, me, target);
 
         set_temp("kongming", 1, me);

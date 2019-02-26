@@ -6,8 +6,8 @@ inherit MEDAL;
 
 void create()
 {
-        set_name(HIW "新銳白銀勛章" NOR, ({ "xinrui silver medal", "xinrui", "xunzhang" }));
-        set("long", HIW "華山論劍新銳組第二獲得的勛章，非常珍貴，乃少年強者的象征。\n" NOR);
+        set_name(HIW "新鋭白銀勛章" NOR, ({ "xinrui silver medal", "xinrui", "xunzhang" }));
+        set("long", HIW "華山論劍新鋭組第二獲得的勛章，非常珍貴，乃少年強者的象徵。\n" NOR);
         set_weight(500);
         if (clonep())
                 set_default_object(__FILE__);

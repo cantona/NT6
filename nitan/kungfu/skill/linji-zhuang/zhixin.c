@@ -23,7 +23,7 @@ int exert(object me, object target)
         set_temp("linji/zhixin", 1, me);
         write( HIY "你微一凝神，運動之心兩莊，去濁氣出體外，收清氣入心中，只覺靈台清明，領悟力似乎有所增加。\n" NOR);
         message("vision",
-                HIY + "只見" + me->name() + "微一凝神，吞吐幾口長氣，一對眼眸靈動晶亮，神採弈弈。\n" NOR,
+                HIY + "只見" + me->name() + "微一凝神，吞吐幾口長氣，一對眼眸靈動晶亮，神采弈弈。\n" NOR,
                 environment(me), me);
 
         addn("neili", -4*level, me);
@@ -42,5 +42,5 @@ void recover(object me, int level)
         addn_temp("apply/int", -level, me);
         delete_temp("linji/zhixin", me);
 
-        tell_object(me, HIG"你體內已積過多濁氣，似乎領悟力又歸于尋常。\n"NOR);
+        tell_object(me, HIG"你體內已積過多濁氣，似乎領悟力又歸於尋常。\n"NOR);
 }

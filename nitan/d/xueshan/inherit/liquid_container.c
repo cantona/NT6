@@ -150,7 +150,7 @@ int do_pour(string arg)
                 }
                 // if no liquid
                 if (!(liquid_found))
-                return  notify_fail("那裡是空的，倒什麼？\n");
+                return  notify_fail("那裏是空的，倒什麼？\n");
 
                 // now check the destination bottle
                 if( query("liquid/container", bottle2)){
@@ -174,7 +174,7 @@ int do_pour(string arg)
                          } 
                 }
         else 
-                 return  notify_fail("你不能往那裡倒。\n");
+                 return  notify_fail("你不能往那裏倒。\n");
                 
         }
         else 
@@ -190,7 +190,7 @@ int do_fill(string arg)
         if( this_player()->is_busy() )
                 return notify_fail("你上一個動作還沒有完成。\n");
         if( !query("resource/water", environment(this_player())) )
-                return notify_fail("這裡沒有地方可以裝水。\n");
+                return notify_fail("這裏沒有地方可以裝水。\n");
         return 1;
 }
 
@@ -213,6 +213,6 @@ int do_empty(string arg)
                            destruct(inv[i]);
         }
         bottle->set_current_liquid(0);
-    message_vision("$N將$n倒的一幹二凈。\n"NOR, this_player(), this_object());
+    message_vision("$N將$n倒的一乾二淨。\n"NOR, this_player(), this_object());
         return 1;
 }

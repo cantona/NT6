@@ -54,7 +54,7 @@ int main(object me, string arg)
                         return 1;
                 }
                 write("你現在的任務是去尋找線索知情人" + name + "(" + npc + ")。\n" +
-                      "聽說他前段日子在"+query("ultraquest/place", me)+"出現過。\n");
+                      "聽説他前段日子在"+query("ultraquest/place", me)+"出現過。\n");
                 return 1;
         } else
         {
@@ -67,16 +67,16 @@ int main(object me, string arg)
 
                 case "give":
                         write(name + "(" + npc + ")吩咐你去把包裹送到" HIR +
-                              q["name"] + "(" + q["id"] + ")" + NOR "的手裡，回來交差。\n");
+                              q["name"] + "(" + q["id"] + ")" + NOR "的手裏，回來交差。\n");
                         return 1;
 
                 case "send":
                         write(name + "(" + npc + ")吩咐你去把信送到" HIR +
-                              q["name"] + "(" + q["id"] + ")" + NOR "的手裡，回來交差。\n");
+                              q["name"] + "(" + q["id"] + ")" + NOR "的手裏，回來交差。\n");
                         return 1;
 
                 case "guard":
-                        write(name + "(" + npc + ")吩咐你留在他那裡保護他。\n");
+                        write(name + "(" + npc + ")吩咐你留在他那裏保護他。\n");
                         return 1;
 
                 case "mathematics":

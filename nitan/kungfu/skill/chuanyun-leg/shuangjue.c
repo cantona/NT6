@@ -70,7 +70,7 @@ int perform(object me, object target)
         j = me->query_skill(bskill,1);
         z = me->query_skill("force",1);
         y = (i+j+z)/20;
-        message_combatd(RED"$N"RED"一聲清嘯，拳腳齊施，使出昆侖絕學「拳腿雙絕」迅捷無倫地攻向$n"RED"！\n"NOR,me, target);
+        message_combatd(RED"$N"RED"一聲清嘯，拳腳齊施，使出崑崙絕學「拳腿雙絕」迅捷無倫地攻向$n"RED"！\n"NOR,me, target);
         addn("neili", -400, me);
         addn_temp("apply/str", y, me);
         addn_temp("apply/attack", y, me);

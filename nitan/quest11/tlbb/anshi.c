@@ -4,7 +4,7 @@
 #include <room.h>
 
 inherit ROOM;
-#define QUESTDIR3 "quest/天龍八部/蕭峰身世篇/"
+#define QUESTDIR3 "quest/天龍八部/蕭峯身世篇/"
 #define QUESTDIR4 "quest/天龍八部/大遼救援篇/"
 #define QUESTDIR5 "quest/天龍八部/復興天下篇/"
 
@@ -52,6 +52,6 @@ int do_push(string arg)
 void close_path()
 {
         if( !query("exits/east") ) return;
-        message("vision","一會會，□的一聲，牆又恢復原樣。\n", this_object() );
+        message("vision","一會會，嗵的一聲，牆又恢復原樣。\n", this_object() );
         delete("exits/east");
 }

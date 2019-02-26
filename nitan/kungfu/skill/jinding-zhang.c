@@ -15,7 +15,7 @@ mapping *action = ({
         "lvl"   : 11
 ]),
 ([        "skill_name" : "罡風推雲" ,
-        "action" : "$N左手前引，右手倏出，搶在頭裡，一招"CYN"「罡風推雲」"NOR"，疾抓向$n的$l",
+        "action" : "$N左手前引，右手倏出，搶在頭裏，一招"CYN"「罡風推雲」"NOR"，疾抓向$n的$l",
         "lvl"   : 22
 ]),
 ([        "skill_name" : "逆流捧沙" ,
@@ -31,11 +31,11 @@ mapping *action = ({
         "lvl"   : 55
 ]),
 ([        "skill_name" : "梵心降魔" ,
-        "action" : "$N一幅寶像莊嚴，使出"YEL"「梵心降魔」"NOR"，掌勢如虹，繞著$n漂移不定",
+        "action" : "$N一幅寶像莊嚴，使出"YEL"「梵心降魔」"NOR"，掌勢如虹，繞着$n漂移不定",
         "lvl"   : 66
 ]),
 ([        "skill_name" : "法尊八荒" ,
-        "action" : "$N全場遊走，雙臂疾舞，化為點點掌影，一招"HIC"「法尊八荒」"NOR"舖天蓋地襲向$n全身各處大穴",
+        "action" : "$N全場遊走，雙臂疾舞，化為點點掌影，一招"HIC"「法尊八荒」"NOR"鋪天蓋地襲向$n全身各處大穴",
         "lvl"   : 77
 ]),
 });
@@ -104,7 +104,7 @@ mapping query_action(object me, object weapon)
             if (jiali > px_info["neili_damage"])
                 jiali = px_info["neili_damage"];
             if( query("neili", ob)>0){
-                message_vision(HIY "\n$n摸不透$P的內力虛實，只好大耗真力，把全身都布滿真氣。\n" NOR, me, victim);
+                message_vision(HIY "\n$n摸不透$P的內力虛實，只好大耗真力，把全身都佈滿真氣。\n" NOR, me, victim);
                 addn("neili", -jiali, ob);
             } else {
                 message_vision(HIY "\n$n一口真氣提不上來，被$P掌風掃中，腳下踉蹌，差點兒倒下。\n" NOR, me, victim);

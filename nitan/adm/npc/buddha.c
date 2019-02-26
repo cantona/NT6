@@ -13,8 +13,8 @@ nosave string *reborn_skill = ({
 nosave string *words = ({
         "班", "若", "菠", "蘿", "密", "啊", "嗎", "咪", "哄",
         "度", "眾", "生", "者", "應", "明", "以", "何", "得",
-        "有", "空", "凈", "相", "我", "虛", "妄", "情", "少",
-        "福", "如", "□", "法", "金", "思", "悟", "滅", "失",
+        "有", "空", "淨", "相", "我", "虛", "妄", "情", "少",
+        "福", "如", "來", "法", "金", "思", "悟", "滅", "失",
 });
 // 存盤文檔
 string query_save_file() {
@@ -158,7 +158,7 @@ int do_decide()
         if( !query_temp("reborn/ask", me) )
                 return 0;
 
-        tell_object(me, HIW "佛祖在你耳邊說道：我告訴你一句揭語，"
+        tell_object(me, HIW "佛祖在你耳邊説道：我告訴你一句揭語，"
                 "你可參悟一下是啥意思，\n來世你若有緣再見到我，"
                 "憑此揭語我會給你開啟前生記憶！\n"
                 "此揭語須當謹記在心，切記切記！\n" NOR);
@@ -166,7 +166,7 @@ int do_decide()
         for( i = 0; i < 5; i++)
                 msg += words[random(sizeof(words))];
 
-        tell_object(me, HIY "\n佛祖在你耳邊說道，給你的揭語是：" HIR + msg + "\n" NOR);
+        tell_object(me, HIY "\n佛祖在你耳邊説道，給你的揭語是：" HIR + msg + "\n" NOR);
         tell_object(me, HIY "記下了嗎？我即刻就送你去投胎了！\n\n"NOR);
 
         remove_call_out("reborn_player");

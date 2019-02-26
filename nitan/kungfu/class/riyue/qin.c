@@ -96,7 +96,7 @@ void attempt_apprentice(object ob)
         }
 
         command("nod2");
-        command("say 那你就跟著我吧，入教之後的各種規矩可要多注意。");
+        command("say 那你就跟着我吧，入教之後的各種規矩可要多注意。");
         command("recruit "+query("id", ob));
         return;
 }
@@ -129,7 +129,7 @@ mixed ask_skill1()
                 return "你的丹碇刀法還練得不到家，自己下去練練再來吧！";
 
         message_sort(HIY "\n$n" HIY "點了點頭，將$N" HIY "招至身邊，在耳"
-                     "旁低聲細說良久，$N" HIY "聽後不禁會心地一笑，看來大"
+                     "旁低聲細説良久，$N" HIY "聽後不禁會心地一笑，看來大"
                      "有所悟。\n\n" NOR, me, this_object());
 
         command("nod");

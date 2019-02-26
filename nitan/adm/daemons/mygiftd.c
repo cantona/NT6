@@ -22,7 +22,7 @@ mapping gift_name = ([
         "training"    :  "馭獸術",     
         "hunting"     :  "狩獵技巧",
         "weiwang"     :  "威望",
-        "score"       :  "閱歷",
+        "score"       :  "閲歷",
         "tianfu"      :  "先天天賦",
         "horse"       :  "騎馬記錄點",
         "quitsave"    :  "下線保存所有物品",
@@ -30,7 +30,7 @@ mapping gift_name = ([
 
 mapping gift_list = ([
 
-        "1"   :   ([ "達成條件" : "了解如何開始玩遊戲",
+        "1"   :   ([ "達成條件" : "瞭解如何開始玩遊戲",
                      "條件標識" : "newbie_mygift/help",
                      "條件數值" : 1,
                      "條件描述" : "輸入指令 help start 查看相關資訊",
@@ -59,7 +59,7 @@ mapping gift_list = ([
                      "獎勵描述" : "/clone/goods/zhufu_head:1,/clone/gift/xisuidan:8",
                      "下個獎勵" : "5", ]),
 
-        "5"   :   ([ "達成條件" : "閱讀文選",
+        "5"   :   ([ "達成條件" : "閲讀文選",
                      "條件標識" : "newbie_mygift/wenxuan",
                      "條件數值" : 1,
                      "條件描述" : "輸入指令 wenxuan 顯示年度文選信息",
@@ -87,14 +87,14 @@ mapping gift_list = ([
                      "獎勵描述" : "/clone/goods/zhufu_sword:1,quitsave:8035200,exp:100000,pot:50000",
                      "下個獎勵" : "9", ]),
                      
-        "9"   :   ([ "達成條件" : "了解能力點作用",
+        "9"   :   ([ "達成條件" : "瞭解能力點作用",
                      "條件標識" : "newbie_mygift/ability",
                      "條件數值" : 1,
-                     "條件描述" : "輸入指令 help ability 了解能力點作用",
+                     "條件描述" : "輸入指令 help ability 瞭解能力點作用",
                      "獎勵描述" : "/clone/goods/zhufu_blade:1,tianfu:4,/adm/npc/obj/gift:1",
                      "下個獎勵" : "10", ]),
                                           
-        "10"  :   ([ "達成條件" : "闖盪江湖",
+        "10"  :   ([ "達成條件" : "闖蕩江湖",
                      "條件標識" : "newbie_quest_completed/can_out",
                      "條件數值" : 1,    
                      "條件描述" : "從古村離開（完成所有古村任務並離開）\n" 
@@ -103,11 +103,11 @@ mapping gift_list = ([
                      "獎勵描述" : "/clone/goods/dizangshi:1,pot:50000,riding:100,training:100,fuzhong:1",
                      "下個獎勵" : "12", ]),
                      
-        "12"  :   ([ "達成條件" : "制造如意乾坤袋",
+        "12"  :   ([ "達成條件" : "製造如意乾坤袋",
                      "條件標識" : "can_summon/qiankun",
                      "條件數值" : 1,    
-                     "條件描述" : "制造如意乾坤袋\n" 
-                                  HIR "              提示：在揚州城醉仙樓找到狂風，ask kuang about all，制作如意乾坤袋。\n" NOR,
+                     "條件描述" : "製造如意乾坤袋\n" 
+                                  HIR "              提示：在揚州城醉仙樓找到狂風，ask kuang about all，製作如意乾坤袋。\n" NOR,
                      "獎勵描述" : "/clone/fam/gift/int3:3,gold:2",
                      "下個獎勵" : "14", ]),
 
@@ -135,10 +135,10 @@ mapping gift_list = ([
                      "獎勵描述" : "/clone/fam/gift/dex3:3",
                      "下個獎勵" : "20", ]),
                      
-        "20"  :   ([ "達成條件" : "了解 bug 回報",  
+        "20"  :   ([ "達成條件" : "瞭解 bug 回報",  
                      "條件標識" : "newbie_mygift/bug",
                      "條件數值" : 1,
-                     "條件描述" : "使用指令 help bug 了解bug回報\n",
+                     "條件描述" : "使用指令 help bug 瞭解bug回報\n",
                      "獎勵描述" : "/clone/goods/study-emblem:1",
                      "下個獎勵" : "25", ]),     
 
@@ -153,7 +153,7 @@ mapping gift_list = ([
         "30"  :   ([ "達成條件" : "使用儲物櫃",
                      "條件標識" : "newbie_mygift/cangku",
                      "條件數值" : 1,
-                     "條件描述" : "到揚州錢莊的儲物櫃看看吧，了解下怎麼使用儲物櫃\n" 
+                     "條件描述" : "到揚州錢莊的儲物櫃看看吧，瞭解下怎麼使用儲物櫃\n" 
                                   HIR "              提示：揚州錢莊，輸入指令"HIY"cw help"HIR"查看即可。" NOR,
                      "獎勵描述" : "/clone/armor/jinsi-shoutao2:1",
                      "下個獎勵" : "35", ]),
@@ -181,10 +181,10 @@ mapping gift_list = ([
                      "獎勵描述" : "neili:1000,gongxian:2000",
                      "下個獎勵" : "50", ]),
 
-        "50"  :   ([ "達成條件" : "造訪神雕",
+        "50"  :   ([ "達成條件" : "造訪神鵰",
                      "條件標識" : "newbie_mygift/shendiao",
                      "條件數值" : 1,
-                     "條件描述" : "造訪新人練功法寶神雕\n" 
+                     "條件描述" : "造訪新人練功法寶神鵰\n" 
                                   HIR "              提示：輸入"HIY"rideto"HIR"查看騎馬可到達地方，然後"HIY"rideto shendiao"HIR"前往。" NOR,
                      "獎勵描述" : "neili:1500,jingli:1000,gongxian:2000",
                      "下個獎勵" : "55", ]),
@@ -193,7 +193,7 @@ mapping gift_list = ([
                      "條件標識" : "bunch",
                      "條件數值" : 1,
                      "條件描述" : "加入任意幫派\n" 
-                                  HIR "              提示：可以在聊天頻道"HIY"chat 想說的話"HIR"找人入幫，詳情查看 help bunch.2\n"
+                                  HIR "              提示：可以在聊天頻道"HIY"chat 想説的話"HIR"找人入幫，詳情查看 help bunch.2\n"
                                       "                    如果沒有玩家幫派可以參加npc幫派，詳情查看help bunch_quest" NOR,
                      "獎勵描述" : "pot:20000,weiwang:5000,neili:500,jingli:500",
                      "下個獎勵" : "60", ]),
@@ -209,7 +209,7 @@ mapping gift_list = ([
         "65"  :   ([ "達成條件" : "完成師門任務",
                      "條件標識" : "quest_count",
                      "條件數值" : 1,
-                     "條件描述" : "找到門派掌門或任務發布師傅領取師門任務並完成\n" 
+                     "條件描述" : "找到門派掌門或任務發佈師傅領取師門任務並完成\n" 
                                   HIR "              提示：有關師門任務的詳情參見 help quest" NOR,
                      "獎勵描述" : "exp:10000,pot:10000,gongxian:5000",
                      "下個獎勵" : "70", ]),
@@ -230,10 +230,10 @@ mapping gift_list = ([
                      "獎勵描述" : "exp:20000,pot:20000",
                      "下個獎勵" : "80", ]),
                      
-        "80"  :   ([ "達成條件" : "造訪幹將、莫邪",
+        "80"  :   ([ "達成條件" : "造訪干將、莫邪",
                      "條件標識" : "newbie_mygift/ganjiang",
                      "條件數值" : 1,
-                     "條件描述" : "拜訪一下幹將莫邪吧，以後還得經常到這裡改造兵器\n" 
+                     "條件描述" : "拜訪一下干將莫邪吧，以後還得經常到這裏改造兵器\n" 
                                   HIR "              提示：輸入"HIY"rideto"HIR"查看騎馬可到達地方，然後"HIY"rideto ganjiang"HIR"前往。" NOR,
                      "獎勵描述" : "exp:20000,pot:20000,/clone/money/gold:1",
                      "下個獎勵" : "85", ]),
@@ -241,7 +241,7 @@ mapping gift_list = ([
         "85"  :   ([ "達成條件" : "裝備簽名",
                      "條件標識" : "newbie_mygift/makeweapon",
                      "條件數值" : 1,
-                     "條件描述" : "是時候擁有一把屬于自己的裝備了，裝備簽名說明參見help weapon", 
+                     "條件描述" : "是時候擁有一把屬於自己的裝備了，裝備簽名説明參見help weapon", 
                      "獎勵描述" : "/clone/armor/shuijing-guan:1",
                      "下個獎勵" : "90", ]),
 
@@ -249,7 +249,7 @@ mapping gift_list = ([
                      "條件標識" : "newbie_mygift/kaiguang",
                      "條件數值" : 1,
                      "條件描述" : "將剛簽名的裝備開光吧，這樣隨時可以召喚(summon)回來\n" 
-                                  HIR "              提示：幹將附近找到張天師，使用指令"HIY"show <武器ID>"HIR"，按\n"
+                                  HIR "              提示：干將附近找到張天師，使用指令"HIY"show <武器ID>"HIR"，按\n"
                                       "                    照後續提示操作即可進行開光。" NOR,
                      "獎勵描述" : "/clone/armor/zhanyao-xunzhang:1",
                      "下個獎勵" : "95", ]),
@@ -266,7 +266,7 @@ mapping gift_list = ([
                      "條件標識" : "newbie_mygift/notch",
                      "條件數值" : 1,
                      "條件描述" : "將裝備進行開孔，開孔後可以鑲嵌寶石\n" 
-                                  HIR "              提示：幹將處notch <裝備>，開孔需要的符文詳情參見 help rune" NOR,
+                                  HIR "              提示：干將處notch <裝備>，開孔需要的符文詳情參見 help rune" NOR,
                      "獎勵描述" : "exp:1000000,pot:1000000,/clone/armor/wushi-pifeng:1",
                      "下個獎勵" : "110", ]),
                                           
@@ -282,14 +282,14 @@ mapping gift_list = ([
                      "條件標識" : "is_alchemy",
                      "條件數值" : 1,
                      "條件描述" : "提升煉丹術到300級\n" 
-                                  HIR "              提示：煉丹術到300級後，到平一指那裡鑒定煉藥師品級。" NOR,
+                                  HIR "              提示：煉丹術到300級後，到平一指那裏鑑定煉藥師品級。" NOR,
                      "獎勵描述" : "exp:100000,pot:100000,/clone/armor/shuijing-guan:1",
                      "下個獎勵" : "130", ]),
 
         "130"  :  ([ "達成條件" : "武學宗師",
                      "條件標識" : "opinion/ultra",
                      "條件數值" : 1,
-                     "條件描述" : "挑戰成為武學大宗師，說明可參見help feature\n" 
+                     "條件描述" : "挑戰成為武學大宗師，説明可參見help feature\n" 
                                   HIR "              提示：騎馬依次造訪四大宗師，使用指令"HIY"ask <宗師NPC ID> about 評價"HIR"後，根據提示\n"
                                       "                    再輸入指令"HIY"fight <宗師NPC ID>"HIR"進行挑戰。" NOR,
                      "獎勵描述" : "exp:2000000,pot:2000000,mar:2000000",
@@ -305,16 +305,16 @@ mapping gift_list = ([
         "150"  :  ([ "達成條件" : "打通陰蹺脈",
                      "條件標識" : "newbie_mygift/yinqiaomai",
                      "條件數值" : 1,
-                     "條件描述" : "購買陰蹺脈所有銅人，打通第一條小周天經脈--陰蹺脈\n" 
+                     "條件描述" : "購買陰蹺脈所有銅人，打通第一條小週天經脈--陰蹺脈\n" 
                                   HIR "              提示：在英雄商店購買陰蹺脈所有銅人，詳情參見 help chongxue" NOR,
                      "獎勵描述" : "/clone/goods/tianshi-charm:1",
                      "下個獎勵" : "160", ]),
                                           
-        "160"  :  ([ "達成條件" : "打通大小周天經脈",
+        "160"  :  ([ "達成條件" : "打通大小週天經脈",
                      "條件標識" : "breakup",
                      "條件數值" : 1,
-                     "條件描述" : "沖穴打通大小周天經脈，你的能力將更大提升。\n" 
-                                  HIR "              提示：閉關說明可參見 help zhoutian" NOR,
+                     "條件描述" : "衝穴打通大小週天經脈，你的能力將更大提升。\n" 
+                                  HIR "              提示：閉關説明可參見 help zhoutian" NOR,
                      "獎勵描述" : "mar:3000000,neili:1000,jingli:1000",
                      "下個獎勵" : "170", ]),
                      
@@ -322,7 +322,7 @@ mapping gift_list = ([
                      "條件標識" : "newbie_mygift/qianghua",
                      "條件數值" : 1,
                      "條件描述" : "將裝備進行強化，強化後的裝備屬性大幅度提升\n" 
-                                  HIR "              提示：幹將處先shou <裝備>，看完要求後qianghua <裝備>，強化裝備詳情參見 help qianghua" NOR,
+                                  HIR "              提示：干將處先shou <裝備>，看完要求後qianghua <裝備>，強化裝備詳情參見 help qianghua" NOR,
                      "獎勵描述" : "pot:3000000,neili:1000,jingli:1000",
                      "下個獎勵" : "180", ]),
 
@@ -330,7 +330,7 @@ mapping gift_list = ([
                      "條件標識" : "newbie_mygift/dosuit",
                      "條件數值" : 1,
                      "條件描述" : "將裝備進行綠化，綠化後的裝備組成套裝，擁有極品屬性\n" 
-                                  HIR "              提示：先給幹將王者之心，然後dosuit <裝備>，綠化裝備詳情參見 help suit" NOR,
+                                  HIR "              提示：先給干將王者之心，然後dosuit <裝備>，綠化裝備詳情參見 help suit" NOR,
                      "獎勵描述" : "exp:5000000,pot:5000000,mar:5000000,/clone/armor/yecha1:1",
                      "下個獎勵" : "190", ]),
         /*
@@ -338,7 +338,7 @@ mapping gift_list = ([
                      "條件標識" : "animaout",
                      "條件數值" : 1,
                      "條件描述" : "提升你的能力，閉關修煉元嬰出世\n" 
-                                  HIR "              提示：閉關說明可參見 help closed" NOR,
+                                  HIR "              提示：閉關説明可參見 help closed" NOR,
                      "獎勵描述" : "pot:3000000,neili:1000,jingli:1000",
                      "下個獎勵" : "180", ]),
             
@@ -346,7 +346,7 @@ mapping gift_list = ([
                      "條件標識" : "death",
                      "條件數值" : 1,
                      "條件描述" : "提升你的能力，閉關打通生死玄關\n" 
-                                  HIR "              提示：閉關說明可參見 help closed" NOR,
+                                  HIR "              提示：閉關説明可參見 help closed" NOR,
                      "獎勵描述" : "exp:5000000,pot:5000000,mar:5000000,/clone/armor/yecha1:1",
                      "下個獎勵" : "190", ]),                 
         */
@@ -354,11 +354,11 @@ mapping gift_list = ([
                      "條件標識" : "reborn/times",
                      "條件數值" : 1,
                      "條件描述" : "武學無止境，唯轉世重生突破瓶頸\n" 
-                                  HIR "              提示：轉世說明可參見 help reborn" NOR,
+                                  HIR "              提示：轉世説明可參見 help reborn" NOR,
                      "獎勵描述" : "exp:10000000,pot:10000000,mar:10000000",
                      "下個獎勵" : "200", ]),
 
-        "200"  :  ([ "達成條件" : "等待下一個挑戰", // 這個版本開發至此，後續開發則從這裡開始
+        "200"  :  ([ "達成條件" : "等待下一個挑戰", // 這個版本開發至此，後續開發則從這裏開始
                      "條件標識" : "newbie_mygift/waitfor_next1",
                      "條件數值" : 1,
                      "條件描述" : "等待下一個挑戰吧，敬請留意後續挑戰內容！\n" 
@@ -368,7 +368,7 @@ mapping gift_list = ([
 ]);
 
 
-// 外部調用，用于判斷是否有指定任務且觸發了完成任務條件檢測
+// 外部調用，用於判斷是否有指定任務且觸發了完成任務條件檢測
 public void check_mygift(object me, string quest_flag)
 {
         string nquest;
@@ -527,7 +527,7 @@ string sub_gift_send(object me, string arg)
                 if( !objectp(ob) )
                 {
                         write(HIR + sgift + "讀取錯誤-2！\n");
-                        log_file("mygiftd", "來自mygiftd：" + sgift + "復制物品錯誤！\n");
+                        log_file("mygiftd", "來自mygiftd：" + sgift + "複製物品錯誤！\n");
                         return;                 
                 }
                 if( !ob->query_amount() )
@@ -711,7 +711,7 @@ int mygift(object me, string arg)
         {
                 if( !wizardp(me) ) return 0;
                 
-                // 顯示所有獎勵任務的詳細內容，主要用于校驗
+                // 顯示所有獎勵任務的詳細內容，主要用於校驗
                 squest = "【校驗所有任務】\n";
 
                 for( i = 0; i < sizeof(keys_gift_list); i ++ )

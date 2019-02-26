@@ -17,9 +17,9 @@ void create()
         set("short", "大廳");
         set("long", @LONG
 你來到了一個大廳之中，這廳碩大無朋，足可容得下千人之眾，一
-群群少男少女分五色站好，青、白、黑、黃四色的都是少年，穿紅的卻
-是少女，背上各負短劍，每一隊約有百人。每個隊列之前都站著一個頭
-目。大廳四周有很多出口。四周豎著一排兵器架(shelf)。
+羣羣少男少女分五色站好，青、白、黑、黃四色的都是少年，穿紅的卻
+是少女，背上各負短劍，每一隊約有百人。每個隊列之前都站着一個頭
+目。大廳四周有很多出口。四周豎着一排兵器架(shelf)。
 LONG
         );
         set("exits", ([
@@ -112,7 +112,7 @@ string look_jia()
         string msg;
 
         msg ="這是一個兵器架，十八般武器是應有盡有。\n";
-        msg+="目前存放有劍(sword)，刀(blade)，鉤(hook)，棒(stick)，杖(staff)，錘(hammer)，鞭(whip)。還有一些鐵甲(armor)。\n";
+        msg+="目前存放有劍(sword)，刀(blade)，鈎(hook)，棒(stick)，杖(staff)，錘(hammer)，鞭(whip)。還有一些鐵甲(armor)。\n";
         msg+= "請用指令“get 種類 from shelf”拿取你稱手的兵器或甲胄。\n";
         return msg;
 }

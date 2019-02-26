@@ -36,7 +36,7 @@ int perform(object me, object target)
                 return notify_fail("你沒有準備六合掌法，難以施展"+name()+"。\n");
 
         if (! living(target))
-                return notify_fail("對方都已經這樣了，用不著這麼費力吧？\n");
+                return notify_fail("對方都已經這樣了，用不着這麼費力吧？\n");
 
         msg = HIC "$N" HIC "履步沉身，雙肩蓄力，陡然間單掌颼的探出，一招「烏龍"
               "探海勢」向$n" HIC "胸前拍落！\n" NOR;

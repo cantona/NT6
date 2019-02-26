@@ -7,7 +7,7 @@ void create()
         if (clonep())
                 set_default_object(__FILE__);
         else {  
-        	set("long", HIC "傳說鼠仙果乃田鼠偷吃了蓬萊仙果後，鑽入地底死亡，經數百年生長而成。\n" + 
+        	set("long", HIC "傳説鼠仙果乃田鼠偷吃了蓬萊仙果後，鑽入地底死亡，經數百年生長而成。\n" + 
         	                "服食(fushi shuxianguo)後可永久提升氣血上限20點。\n" HIC
         	                "擁有者：wulong\n" NOR);
                 set("unit", "顆");
@@ -35,7 +35,7 @@ int do_use(string arg)
 		return notify_fail("你身上沒有這個東西！\n");
 
 	if (ob->query("owner") != me->query("id"))
-		return notify_fail(ob->name() + NOR "已經于其他玩家綁定！\n");
+		return notify_fail(ob->name() + NOR "已經於其他玩家綁定！\n");
 	
 	me->add("drug_addqi", 20);
 

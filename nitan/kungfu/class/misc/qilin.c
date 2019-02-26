@@ -13,8 +13,8 @@ void create()
 {
         set_name(HIR "火麒麟" NOR, ({ "huo qilin", "huo", "qilin" }) );
         set("title", HIY "上古神獸" NOR);
-        set("long", HIR "這是一只傳說中的上古神獸─火麒麟，只見它渾身似火，散射著令人窒息的熾熱。\n"
-                        "仔細一看，這只火麒麟經過千萬年修煉，已經化為人形，威風無比，令人敬畏。\n" NOR);
+        set("long", HIR "這是一隻傳説中的上古神獸—火麒麟，只見它渾身似火，散射着令人窒息的熾熱。\n"
+                        "仔細一看，這隻火麒麟經過千萬年修煉，已經化為人形，威風無比，令人敬畏。\n" NOR);
 
         set("gender", "男性");
         set("age", 999);
@@ -116,7 +116,7 @@ void create()
               (: check_time :),
         }));
 
-        set("my_life", 1); // 當氣血低于10%的時候補滿一次，設置該參數為0
+        set("my_life", 1); // 當氣血低於10%的時候補滿一次，設置該參數為0
 
         setup();
 
@@ -182,7 +182,7 @@ void check_environment()
 
         if (base_name(environment(this_object())) != query("startroom"))
         {
-                command("say 咦？我怎麼會在這裡，有人作弊，有人作弊，巫師快出來！");
+                command("say 咦？我怎麼會在這裏，有人作弊，有人作弊，巫師快出來！");
                 destruct(this_object());
         }
         */
@@ -233,7 +233,7 @@ void check_weapon()
                 me->clear_condition();
         }
 
-        // 很小幾率恢復氣血
+        // 很小几率恢復氣血
         if (random(50) == 1)
         {
                 //log_file("qilin", "成功恢復氣血。\n");
@@ -305,7 +305,7 @@ void new_life()
 
         delete("my_life", me);
 
-        message_vision(HIG "\n$N" HIG "大叫一聲，渾身散發著火紅的金光，剎那間，如獲重生！\n\n" NOR, me);
+        message_vision(HIG "\n$N" HIG "大叫一聲，渾身散發着火紅的金光，剎那間，如獲重生！\n\n" NOR, me);
 
         return;
 }
@@ -366,7 +366,7 @@ void die(object killer)
         int exp;                // 需要瓜分的經驗
         int pot;                // 需要瓜分的潛能
         int weiwang;            // 需要瓜分的威望
-        int score;              // 需要瓜分的閱歷
+        int score;              // 需要瓜分的閲歷
         object *t;              // 殺死我的人的隊伍列表
         object tob;
         int mar;                //  需要瓜分的體會
@@ -380,7 +380,7 @@ void die(object killer)
 
 
         // 定義獎勵物品列表
-        // 幾率  X / 百分之
+        // 機率  X / 百分之
         mixed oblist = ([
                 "/clone/armor/qilin/jixing"              :              20,
                 "/clone/armor/qilin/jinghua"             :              20,
@@ -530,7 +530,7 @@ void die(object killer)
                 }
         }
 
-        // 20%幾率掉出火眼之戒
+        // 20%機率掉出火眼之戒
         if (random(10) < 2)
         {
                 gift_huoyan = new(huoyan);
@@ -540,7 +540,7 @@ void die(object killer)
                 message_vision(HIW "叮~~一聲，從$N" HIW "身上掉出" + gift_huoyan->name() +
                                HIW "，落在地上。\n" NOR, this_object());
 
-                //log_file("qilin_gift", "火麒麟于 " + ctime(time()) + " 掉出火眼之戒。\n");
+                //log_file("qilin_gift", "火麒麟於 " + ctime(time()) + " 掉出火眼之戒。\n");
         }
 
         where = environment();

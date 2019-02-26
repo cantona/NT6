@@ -7,12 +7,12 @@ void create()
 { 
         set("short", "山壁");
         set("long", @LONG
-這裡嫣紅□紫，遍山遍野都是鮮花，春光浪漫已極，轉了幾個彎，
+這裏嫣紅奼紫，遍山遍野都是鮮花，春光浪漫已極，轉了幾個彎，
 卻見迎面一塊山壁，路途已盡。旁邊是一排花叢(huacong)。
 LONG );
 
         set("item_desc", ([
-                "huacong" : "這是一排漂亮的花叢，幾只蝴蝶從花從裡鑽了進去。\n",
+                "huacong" : "這是一排漂亮的花叢，幾隻蝴蝶從花從裏鑽了進去。\n",
         ]));
 
         set("outdoors", "蝴蝶谷");
@@ -43,14 +43,14 @@ int do_bo(string arg)
         if(!living(me) ) return 0;
 
         if ( me->is_busy() || me->is_fighting())
-              return notify_fail("你正忙著哪！\n");
+              return notify_fail("你正忙着哪！\n");
 
         if( !arg || arg != "huacong" ) return 0;
 
         if( arg == "huacong" ){
             if( (!fam || fam["family_name"] != "明教") && (!query_temp("hdq", me)) )
                 return notify_fail("你撥了撥花叢，並沒有什麼發現，不禁有些悵然。\n");
-            message_vision(HIC"$N撥了撥周圍的花叢，突然發現右邊"HIY"(Right)"HIC"好象有一條小路。\n"NOR, me);
+            message_vision(HIC"$N撥了撥周圍的花叢，突然發現右邊"HIY"(Right)"HIC"好像有一條小路。\n"NOR, me);
             if(!(room = find_object(__DIR__"shanbi")))
               room = load_object(__DIR__"shanbi");
               set("exits/right", __DIR__"huacong1");

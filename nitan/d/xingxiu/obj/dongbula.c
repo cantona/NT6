@@ -19,7 +19,7 @@ void create()
                 set_default_object(__FILE__);
         else {
                 set("unit", "把");
-                set("long", "這是一把維吾爾族的弦樂器冬不拉。你可以演奏(play)它。\n");
+                set("long", "這是一把維吾爾族的絃樂器冬不拉。你可以演奏(play)它。\n");
                 set("value", 100);
         }
 //        setup();
@@ -41,9 +41,9 @@ int do_play(string arg)
                         break;
                 case 1:
                         say(this_player()->name() + "彈起冬不拉，快樂地唱道：\n"
-"大□城的石頭圓又硬嘍西瓜大又甜嘍，大□城的姑娘辮子長嘍兩只眼睛真漂亮。\n");
+"大阪城的石頭圓又硬嘍西瓜大又甜嘍，大阪城的姑娘辮子長嘍兩隻眼睛真漂亮。\n");
                         write(this_player()->name() + "彈起冬不拉，快樂地唱道：\n"
-"大□城的石頭圓又硬嘍西瓜大又甜嘍，大□城的姑娘辮子長嘍兩只眼睛真漂亮。\n");
+"大阪城的石頭圓又硬嘍西瓜大又甜嘍，大阪城的姑娘辮子長嘍兩隻眼睛真漂亮。\n");
 
                         break;
                 case 2:

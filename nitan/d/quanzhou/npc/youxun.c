@@ -28,7 +28,7 @@ void create()
 
         set("inquiry", ([
                 "name"   : "小的就是遊訊，不知您要打聽點什麼？",
-                "歐冶子" : "您問可以幫玩家造兵器的歐冶老爺子呀！據說他現在帶著徒弟到西域去\n居住了，有人說他現在本事更大了，也不知真假。\n",
+                "歐冶子" : "您問可以幫玩家造兵器的歐冶老爺子呀！據説他現在帶着徒弟到西域去\n居住了，有人説他現在本事更大了，也不知真假。\n",
                 "news" : (: ask_news :),
                 "新聞" : (: ask_news :),
         ]) );
@@ -68,7 +68,7 @@ int ask_news()
         temp = read_file(__DIR__"news.txt", 2, 1);
         rows = atoi(temp);
         temp = read_file(__DIR__"news.txt", 3, rows);
-        temp = "遊訊說道：\n"+temp+"\n";
+        temp = "遊訊説道：\n"+temp+"\n";
         write(temp);
 
         return 1 ;

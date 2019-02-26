@@ -24,7 +24,7 @@ void create()
                 set_default_object(__FILE__);
         else {
                 set("unit", "壺");
-                set("long","一壺金黃的粘稠藥酒，是凌霄城的珍藏，飲之于學武大有裨益。\n");
+                set("long","一壺金黃的粘稠藥酒，是凌霄城的珍藏，飲之於學武大有裨益。\n");
                 set("value", 0);
                 set("drug_type", "補品");
         }
@@ -41,7 +41,7 @@ int do_drink(string arg)
         if(!present(this_object(), this_player()))
                 return notify_fail("你要喝什麼？\n");
         if( me->is_busy() )
-                return notify_fail("別急，慢慢喝，小心別嗆著了。\n");
+                return notify_fail("別急，慢慢喝，小心別嗆着了。\n");
 
         if( query("eff_jing", me) >= query("max_jing", me) && 
                 query("eff_qi", me) >= query("max_qi", me) )
@@ -54,7 +54,7 @@ int do_drink(string arg)
         set("eff_qi",query("max_qi",  me), me);
         set("qi",query("max_qi",  me), me);
         set("neili",query("max_neili",  me), me);
-        message_vision(HIW "$N舉杯飲下參陽玉酒，只覺小腹間熱氣上沖，跟著胸口間便\n如火燒般熱了起來，只覺通體融和，四骸俱泰。\n" NOR, me);
+        message_vision(HIW "$N舉杯飲下參陽玉酒，只覺小腹間熱氣上衝，跟着胸口間便\n如火燒般熱了起來，只覺通體融和，四骸俱泰。\n" NOR, me);
         destruct(this_object());
         return 1;
 }

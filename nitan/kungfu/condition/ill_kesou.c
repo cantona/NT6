@@ -13,17 +13,17 @@ int update_condition(object me, int duration)
 {
         if( duration < 1 ) return 0;
 
-        message("vision", HIG + me->name() + "嘶啞著嗓子咳了兩聲，然後"
+        message("vision", HIG + me->name() + "嘶啞着嗓子咳了兩聲，然後"
                           "又連續咳了好一陣，看來是病的不輕！\n" NOR,
                 environment(me), me);
 
         if( !living(me) && me->query("qi") < 1 ) {
-                me->set_temp("die_reason", "咳嗽久病不癒，吐血身亡了");
+                me->set_temp("die_reason", "咳嗽久病不愈，吐血身亡了");
                 me->die();
                 return 0;
         }
         else
-                tell_object(me, HIB "你嘶啞著嗓子咳了兩聲，然後"
+                tell_object(me, HIB "你嘶啞着嗓子咳了兩聲，然後"
                                 "又連續咳了好一陣，看來是病的不輕！\n" NOR );
 
         me->receive_wound("qi", 1);

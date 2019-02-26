@@ -25,7 +25,7 @@ int do_effect(object me)
                 me->improve_jingli(2 + random(1));
         } else
         {
-                write(HIC "你吃下了一支何首烏，但是好象沒什麼用。\n" NOR);
+                write(HIC "你吃下了一支何首烏，但是好像沒什麼用。\n" NOR);
         }
         destruct(this_object());
         me->unconcious();

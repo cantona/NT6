@@ -18,9 +18,9 @@ mapping *action = ({
         "lvl" : 20,
         "skill_name" : "浮世滄桑遠"
 ]),
-([        "action":"$N縱身輕輕躍起，一式"BLU"「輪回法舟輕」"NOR"，劍光如輪疾轉，霍霍斬向$n的$l",
+([        "action":"$N縱身輕輕躍起，一式"BLU"「輪迴法舟輕」"NOR"，劍光如輪疾轉，霍霍斬向$n的$l",
         "lvl" : 30,
-        "skill_name" : "輪回法舟輕"
+        "skill_name" : "輪迴法舟輕"
 ]),
 ([        "action":"$N手中$w中宮直進，一式"HIW"「水月通禪寂」"NOR"，無聲無息地對準$n的$l刺出一劍",
         "lvl" : 40,
@@ -30,9 +30,9 @@ mapping *action = ({
         "lvl" : 50,
         "skill_name" : "魚龍聽梵音"
 ]),
-([        "action":"$N左指凌空虛點，右手$w逼出丈許雪亮劍芒，一式"GRN "「千裡一葦去」"NOR"刺向$n的$l",
+([        "action":"$N左指凌空虛點，右手$w逼出丈許雪亮劍芒，一式"GRN "「千里一葦去」"NOR"刺向$n的$l",
         "lvl" : 60,
-        "skill_name" : "千裡一葦去"
+        "skill_name" : "千里一葦去"
 ]),
 ([        "action":"$N合掌跌坐，一式"HIG"「禪心頓自明」"NOR"，$w自懷中躍出，如疾電般射向$n的胸口",
         "lvl" : 70,

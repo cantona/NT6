@@ -41,7 +41,7 @@ int perform(object me, object target)
                 return notify_fail("你沒有準備使用混元霹靂手，無法施展" + name() + "！\n");
 
        if (! living(target))
-              return notify_fail("對方都已經這樣了，用不著這麼費力吧？\n");
+              return notify_fail("對方都已經這樣了，用不着這麼費力吧？\n");
 
         msg = HIC "$N" HIC "怒喝一聲，施出絕招「" HIW "天地混元" HIC "」，雙掌交錯"
               "襲向$n" HIC "，掌風凌厲，隱隱帶有風雷之勢。\n" NOR;

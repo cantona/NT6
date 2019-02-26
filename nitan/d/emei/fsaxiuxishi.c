@@ -7,7 +7,7 @@ void create()
         set("long", @LONG
 這是福壽庵接待峨嵋女俠們的休息室，峨嵋女弟子回山之前通常
 在此借宿一宿，好備足體力上山。房內擺有一張桌，靠牆設有幾張木
-床。
+牀。
 LONG );
         set("exits", ([
                 "south" : __DIR__"fsazhaitang",

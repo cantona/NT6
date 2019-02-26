@@ -19,7 +19,7 @@ mapping knowledge_obj = ([
         "/d/emei/obj/fojing":33,                      //滅絕師太
         "/d/city/npc/obj/lbook3":1,                   //暫時無處獲取
         "/d/changan/npc/obj/book":40,                 //蕭員外
-        "/clone/book/zhengpu":36,                     //歐陽峰
+        "/clone/book/zhengpu":36,                     //歐陽峯
         "/clone/book/yljing2":1,                      //暫時無處獲取
         "/clone/book/yljing1":1,                      //暫時無處獲取
         "/clone/book/yljing":1,                       //暫時無處獲取

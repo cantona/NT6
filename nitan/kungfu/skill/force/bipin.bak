@@ -17,7 +17,7 @@ int exert(object me, string arg)
         if(!arg) return notify_fail("你想和誰比拼內力？\n");
 
         if(!objectp(target = present(arg, environment(me))))
-                return notify_fail("這裡沒有這個人。\n"); 
+                return notify_fail("這裏沒有這個人。\n"); 
 
         if( !target->is_fighting() ||
                 !target->is_character() ||
@@ -173,7 +173,7 @@ int start_bipin(object me)
                 delete_temp("neili/bipin", me);
                 delete_temp("neili/bipin", target);
                 message_combatd(HIW"此時$N臉上都已無半點血色，看來已經到了油盡燈枯之時！\n"NOR, me);
-                set_temp("last_damage_from", "和"+target->name()+"同歸于盡", me);
+                set_temp("last_damage_from", "和"+target->name()+"同歸於盡", me);
                 me->die();
                 return 0;
         }

@@ -55,7 +55,7 @@ int perform(object me, object target)
         if ( ap / 2 + random(ap) > dp )
         {
                 msg += HIR "$n" HIR "被$N" HIR
-                       "這一變化攻了個措手不及，“□□□”連中數掌，" HIR
+                       "這一變化攻了個措手不及，“嘭嘭嘭”連中數掌，" HIR
                        "噴出幾口鮮血，臉色變得煞白！\n" NOR;
                 count = ap / 28; 
                 bsy = 2;

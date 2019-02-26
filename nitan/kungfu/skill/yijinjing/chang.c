@@ -20,7 +20,7 @@ int exert(object me, object target)
                 return notify_fail("佛門梵唱需要高深的定力，你氣色不正，難以施展！\n");
 
         if( query("no_fight", environment(me)) )
-                return notify_fail("在這裡不能攻擊他人。\n");
+                return notify_fail("在這裏不能攻擊他人。\n");
 
         if( me->query_skill("buddhism", 1) < 100 )
                 return notify_fail("你連禪宗心法還未完全領悟，何以施展佛門梵唱絕學？\n");
@@ -31,7 +31,7 @@ int exert(object me, object target)
         addn("neili", -skill/2, me);
         me->start_busy(1);
 
-        message_combatd(YEL"\n$N深深地吸一口氣，面露寶象，一聲"BLINK+HIY"阿…彌…陀…佛…"YEL"梵音回旋環繞，所有人都為之一震！\n\n" NOR, me);
+        message_combatd(YEL"\n$N深深地吸一口氣，面露寶象，一聲"BLINK+HIY"阿…彌…陀…佛…"YEL"梵音迴旋環繞，所有人都為之一震！\n\n" NOR, me);
 
         if( intp(j=query_temp("yueyin", me) )
         && me->query_skill("yijinjing", 1) > 200
@@ -91,7 +91,7 @@ int exert(object me, object target)
                         if(random(2) == 1)
                                 ob[i]->apply_condition("no_perform", 2+random(2)+ob[i]->query_condition("no_perform"));
                         else    ob[i]->apply_condition("no_exert", 2+ob[i]->query_condition("no_exert"));
-                        tell_object(ob[i], "你一驚，總覺得這梵唱有一股說不出的壓迫感，使你感到很不舒服！\n");
+                        tell_object(ob[i], "你一驚，總覺得這梵唱有一股説不出的壓迫感，使你感到很不舒服！\n");
                         continue;
                 }
 

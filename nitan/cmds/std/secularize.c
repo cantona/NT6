@@ -20,9 +20,9 @@ int main(object me, string arg)
         if( query_temp("pending/secularize", me) )
         {
                 CHANNEL_D->do_channel(this_object(), "rumor",
-                        "聽說" + me->name(1) + "厭倦了清貧枯燥的生活，決定還俗。");
+                        "聽説" + me->name(1) + "厭倦了清貧枯燥的生活，決定還俗。");
                 delete("class", me);
-                write("你摸了摸腦袋，嘆了口氣，決定回塵世好好享受享受。\n");
+                write("你摸了摸腦袋，歎了口氣，決定回塵世好好享受享受。\n");
 
                 if( stringp(query("purename", me)) )
                         me->set_name();

@@ -17,7 +17,7 @@ void create()
                 set_default_object(__FILE__); 
         else { 
                 set("unit", "把"); 
-                set("long", sort_msg(HIW "純鈞劍，又名純鉤劍。此劍依然是歐冶子在湛盧山上所鑄。"
+                set("long", sort_msg(HIW "純鈞劍，又名純鈎劍。此劍依然是歐冶子在湛盧山上所鑄。"
                                      "尊貴華美之劍。\n" NOR));
                                      
                 set("value", 100000); 
@@ -39,6 +39,6 @@ mixed hit_ob(object me, object victim, int damage_bonus)
 {
         victim->receive_damage("jing",query("str", me)*2,me);
         victim->receive_wound("jing",query("str", me)*2,me);
-        return HIM "純鈞夾帶著刺耳的破空聲劃出一道道長虹，霎時間$n"
+        return HIM "純鈞夾帶着刺耳的破空聲劃出一道道長虹，霎時間$n"
                HIM "只感到被優雅的氣勢所迷住。\n" NOR;
 }

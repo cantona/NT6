@@ -31,7 +31,7 @@ int valid_learn(object me)
                 return notify_fail("你不是星宿派門人，無法學習此神功。\n");
 
         if (me->query_skill("force", 1) < 50)
-                return notify_fail("你的基本內功火候不夠，難以鍛煉冰蠶寒功！\n");
+                return notify_fail("你的基本內功火候不夠，難以鍛鍊冰蠶寒功！\n");
 
 /*
         if (me->query_skill("yijinjing", 1))
@@ -39,7 +39,7 @@ int valid_learn(object me)
 */
 
         if (me->query_skill("force", 1) < me->query_skill("freezing-force", 1))
-                return notify_fail("你的基本內功水平不夠，難以鍛煉更深厚的冰蠶寒功！\n");
+                return notify_fail("你的基本內功水平不夠，難以鍛鍊更深厚的冰蠶寒功！\n");
 
         return ::valid_learn(me);
 }
@@ -73,7 +73,7 @@ mixed hit_ob(object me, object victim, int damage_bonus, int factor)
 
                         return ([ "damage" : result * 2,
                                   "msg" : HIW "霎時$n" HIW "只覺得寒風襲"
-                                          "體，有種說不出的難受。\n" NOR ]);
+                                          "體，有種説不出的難受。\n" NOR ]);
                 }
         }
 
@@ -89,10 +89,10 @@ string *fanzhen_msg = ({
         "只震得$N胸內腹中，有如五臟一齊翻轉！\n",
         "搶先反震，將$N震得臉如白紙，全無血色！\n",
         "震得$N心肺欲裂，騰騰騰連退數步！\n",
-        "功力已布滿全身，將$N的力量反震回去！\n",
+        "功力已佈滿全身，將$N的力量反震回去！\n",
         "震得$N天旋地轉，騰騰騰連退七八步！\n",
         "和$N一撞，只震的$p胸口氣血翻湧！\n",
-        "$N便如撞在一堵棉花作面，鋼鐵為裡的厚牆上一般，震退數步！\n",
+        "$N便如撞在一堵棉花作面，鋼鐵為裏的厚牆上一般，震退數步！\n",
         "$N剛碰到$p，突然身子一震，登時飛了出去！\n",
 });
 mixed valid_damage(object ob, object me, int damage, object weapon)
@@ -140,13 +140,13 @@ mixed valid_damage(object ob, object me, int damage, object weapon)
                         case 1:
                         case 2:
                         case 3:                                                
-                                result += ([ "msg" : HIR "好似有一堵無形的牆在$n面前阻擋著，結果"
+                                result += ([ "msg" : HIR "好似有一堵無形的牆在$n面前阻擋着，結果"
                                                      "$N" HIR "一下子被反彈，震得$N" 
                                                      HIR "手臂發麻！\n" NOR ]);
                                 break;
                         default:
                                 result += ([ "msg" : HIR "結果$n身上生出一股反震之力，$N只覺虎口一熱，" + 
-                                                     weapon1->name() + HIR "頓時脫手而出，飛出丈外！\n" NOR]);
+                                                     weapon1->name() + HIR "頓時脱手而出，飛出丈外！\n" NOR]);
                                 weapon1->unequip();
                                 weapon1->move(environment(ob));
                                 ob->reset_action();

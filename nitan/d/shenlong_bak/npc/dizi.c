@@ -7,7 +7,7 @@ void create()
 {
         set_name("弟子", ({"dizi"}));
         set("title", HIY"神龍教"NOR);
-        set("long", "這是一個神龍教弟子，混身透著一股邪氣。\n");
+        set("long", "這是一個神龍教弟子，混身透着一股邪氣。\n");
 
         set("gender", "男性");
         set("attitude", "peaceful");

@@ -69,7 +69,7 @@ int dragonbreath ()	{
 int hurting()	{
 	int i,dam;
 	object *inv;
-	message_vision(HIR"\n\n$N一張嘴，無數道烈燄迎面向你撲來，閃無可閃，避無可避。\n\n"NOR,this_object());
+	message_vision(HIR"\n\n$N一張嘴，無數道烈焰迎面向你撲來，閃無可閃，避無可避。\n\n"NOR,this_object());
 	inv = all_inventory(environment(this_object()));
         for(i=sizeof(inv)-1; i>=0; i--)
 		if( living(inv[i]))
@@ -136,7 +136,7 @@ void die()
 	// the stone ... one at time, give whoever you want :D
 	if(objectp(me)) { 
 		CHANNEL_D->do_channel("rumor","一個新的武林神話的誕生。。。。");
-		CHANNEL_D->do_channel("rumor",sprintf("%s，%s于%s%s%s。", NATURE_D->game_time(),
+		CHANNEL_D->do_channel("rumor",sprintf("%s，%s於%s%s%s。", NATURE_D->game_time(),
 				me->query("name"), environment(this_object())->query("short"),"斬殺", name())); 
 	    
 	    hate = query_hate_list();

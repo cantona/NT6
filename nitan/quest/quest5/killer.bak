@@ -30,7 +30,7 @@ void create()
 
         set("dex", 23);
 
-        set("long", "一個穿著黑色夜行衣的人。\n");
+        set("long", "一個穿着黑色夜行衣的人。\n");
 
         set("combat_exp", 80000 + random(40000)); 
 

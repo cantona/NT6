@@ -26,7 +26,7 @@ int perform(object me, object target)
         if( query("neili", me)<200 )
                 return notify_fail("你現在真氣不夠，無法使用「流氓發惡」。\n");
 
-        msg = HIY "$N" HIY "突然抽劍待步，左手耍出一個白色氣團，叱□的氣團看起來就像一個無極盤旋向$n" HIY "。\n" NOR;
+        msg = HIY "$N" HIY "突然抽劍待步，左手耍出一個白色氣團，叱吒的氣團看起來就像一個無極盤旋向$n" HIY "。\n" NOR;
 
         addn("neili", -50, me);
         ap = me->query_skill("sword", 1) / 2 +

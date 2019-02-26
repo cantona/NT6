@@ -37,7 +37,7 @@ int perform(object me, object target)
                 return notify_fail("你沒有激發韓王青刀，難以施展" YING "。\n");
 
         if (! living(target))
-                return notify_fail("對方都已經這樣了，用不著這麼費力吧？\n");
+                return notify_fail("對方都已經這樣了，用不着這麼費力吧？\n");
 
         msg = HIC "霎時只見$N" HIC "手中" + weapon->name() +
               HIC "一振，頓時幻出重重刀影，將$n" HIC "團團裹住！\n" NOR;

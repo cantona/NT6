@@ -5,7 +5,7 @@ void create()
         set("short", "青石大道");
         set("long", @LONG
 你走在一條青石大道上，南邊隱約可見到洛陽城的城牆。北面兩
-條土路分岔通向山裡。
+條土路分岔通向山裏。
 LONG );
         set("outdoors", "village");
         set("exits", ([

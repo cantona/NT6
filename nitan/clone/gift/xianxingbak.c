@@ -13,7 +13,7 @@ void create()
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("long", "聽說這是可以讓人原形畢露的炸彈。\n");
+                set("long", "聽説這是可以讓人原形畢露的炸彈。\n");
                 set("value", 1);
                 set("no_sell", 1);
                 set("unit", "顆");
@@ -32,7 +32,7 @@ int do_bomb()
         string msg;
 
         me = this_player();
-        message_vision(HIM "$N大喝道：“統統給我現形！”說罷把手中的炸彈"
+        message_vision(HIM "$N大喝道：“統統給我現形！”説罷把手中的炸彈"
                        "一扔，就聽“轟”的一聲！\n" NOR, me);
 
         ob = filter_array(all_inventory(environment(me)), (: filter_user :));
@@ -68,7 +68,7 @@ int filter_user(object ob)
         if( query("env/invisible", ob) )
         {
                 delete("env/invisible", ob);
-                CHANNEL_D->do_channel(this_object(), "rumor", "聽說" + ob->name(1) +
+                CHANNEL_D->do_channel(this_object(), "rumor", "聽説" + ob->name(1) +
                                       HIM "被炸得現了形。");
                 return 1;
         }
@@ -78,7 +78,7 @@ int filter_user(object ob)
                 object mask;
                 string msg;
 
-                msg = "聽說" + ob->name(1) + HIM "假扮" + ob->name() +
+                msg = "聽説" + ob->name(1) + HIM "假扮" + ob->name() +
                       HIM "被炸出了原形，渾身上下都是小煙";
                 delete_temp("apply/name", ob);
                 delete_temp("apply/id", ob);

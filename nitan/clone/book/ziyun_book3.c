@@ -1,10 +1,10 @@
-// ziyun_book3.c  紫氳外譜
+// ziyun_book3.c  紫氲外譜
 #include <ansi.h>
 inherit ITEM;
 
 void create()
 {
-        set_name(HIM"紫氳外譜"NOR, ({ "ziyun_book", "book" }));
+        set_name(HIM"紫氲外譜"NOR, ({ "ziyun_book", "book" }));
         set_weight(600);
         if( clonep() )
                 set_default_object(__FILE__);

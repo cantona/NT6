@@ -29,7 +29,7 @@ void create()
                 (: shot_arrow :),
         }));
 
-        // 蒙古士兵標志
+        // 蒙古士兵標誌
         set("mgbing", 1);
 
         set_temp("apply/armor", 5000);
@@ -124,7 +124,7 @@ void check_time()
 
         if (me->is_busy())me->interrupt_busy(this_object(),1000); 
 
-        // 很小幾率恢復氣血
+        // 很小几率恢復氣血
         if (random(20) == 1)
         {
                 if (me->query("eff_qi") < me->query("max_qi") / 3)me->add("eff_qi", me->query("max_qi") / 5);
@@ -161,7 +161,7 @@ void die(object killer)
         int pot;                // 需要瓜分的潛能
         int tihui;              // 需要瓜分的體會
         int weiwang;            // 需要瓜分的威望
-        int score;              // 需要瓜分的閱歷
+        int score;              // 需要瓜分的閲歷
 
         object *t;              // 殺死我的人的隊伍列表
         object tob;
@@ -237,7 +237,7 @@ void die(object killer)
                         {
                                    if (objectp(tob) && living(tob))
                                    {
-                                                     // 設置殺敵標志，最為最終獎勵依據
+                                                     // 設置殺敵標誌，最為最終獎勵依據
                                                      tob->set("xywar/xy_" + sprintf("%d", XYWAR_D->get_ran_num()), pot);
 
                                                   GIFT_D->delay_bonus(tob,
@@ -251,7 +251,7 @@ void die(object killer)
                 }
                 else
                 {
-                        // 設置殺敵標志，最為最終獎勵依據
+                        // 設置殺敵標誌，最為最終獎勵依據
                         dob->set("xywar/xy_" + sprintf("%d", XYWAR_D->get_ran_num()), pot);
                         
                         GIFT_D->delay_bonus(dob,
@@ -275,7 +275,7 @@ void uncoucious()
         die(query_last_damage_from());
 }
 
-// 弓箭手特有函數，用于使用弓箭攻擊敵人
+// 弓箭手特有函數，用於使用弓箭攻擊敵人
 void shot_arrow()
 {
                 object me = this_object();
@@ -316,10 +316,10 @@ void random_move()
 
         if (! objectp(env))return;
         
-        // 如果到達中央廣場宣告襄陽保衛戰失敗
+        // 如果到達中央廣場宣告襄陽保衞戰失敗
         if (base_name(env) == "/d/xiangyang/guangchang")
         {                        
-               XYWAR_D->arrived_center();// 保衛戰失敗
+               XYWAR_D->arrived_center();// 保衞戰失敗
                return;
         }
 

@@ -9,7 +9,7 @@ void create()
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("long", "這是傳說中的御膳，一雞一鴨經精心烤炙，再配以各種珍膳，不易吃到哦。\n");
+                set("long", "這是傳説中的御膳，一雞一鴨經精心烤炙，再配以各種珍膳，不易吃到哦。\n");
                 set("unit", "碟");
                 set("value", 120);
                 set("food_remaining", 30);

@@ -2,7 +2,7 @@
 inherit SHAOLIN_SKILL;
 
 mapping *action = ({
-([        "action" : "$N一聲大喝，左掌疊于右掌之上，劈向$n",
+([        "action" : "$N一聲大喝，左掌疊於右掌之上，劈向$n",
         "force" : 210,
         "attack": 22,
         "dodge" : 30,
@@ -20,7 +20,7 @@ mapping *action = ({
         "lvl"   : 20,
         "damage_type" : "內傷"
 ]),
-([        "action" : "$N氣沉丹田，雙掌幻化一片掌影，將$n籠罩于內。",
+([        "action" : "$N氣沉丹田，雙掌幻化一片掌影，將$n籠罩於內。",
         "force" : 320,
         "attack": 62,
         "dodge" : 43,
@@ -65,7 +65,7 @@ mapping *action = ({
         "lvl"   : 120,
         "damage_type" : "內傷"
 ]),
-([        "action" : "$N左掌虛晃，右掌攜著千鈞之力猛然向$n的頭部擊落",
+([        "action" : "$N左掌虛晃，右掌攜着千鈞之力猛然向$n的頭部擊落",
         "force" : 530,
         "attack": 125,
         "dodge" : 77,
@@ -143,10 +143,10 @@ mixed hit_ob(object me, object victim, int i, int damage_bonus)
            || me->query_skill("rulai-zhang", 1) < 180)
                 return 0;
 
-        // 避免在使用Pfm時訊息重復
+        // 避免在使用Pfm時訊息重複
         if( !query_temp("rulai-zhang/hit_msg", me) )
                 message_sort(HIY "\n$N" HIY "忽然喝道：「" HIR + RANK_D->query_respect(victim) +
-                             HIR "，接" + RANK_D->query_self(me) + HIR "一掌。" HIY "」說罷輕飄"
+                             HIR "，接" + RANK_D->query_self(me) + HIR "一掌。" HIY "」説罷輕飄"
                              "飄拍出一掌，招式甚為尋常。但掌到中途，忽然微微搖晃，登時一掌變兩"
                              "掌，兩掌又變四掌，四勢連環，盡數籠罩$n" HIY "周身。\n",
                              me, victim);

@@ -10,7 +10,7 @@ mapping head_obj = ([
         "/d/xiakedao/obj/xuantie":1,                  //俠客島一律廉價
         "/d/xiakedao/obj/lingpai1":1,                 //俠客島一律廉價
         "/d/xiakedao/obj/lingpai":1,                  //俠客島一律廉價
-        "/d/wanjiegu/npc/obj/xiu-scarf":33,           //鐘靈
+        "/d/wanjiegu/npc/obj/xiu-scarf":33,           //鍾靈
         "/d/wanjiegu/npc/obj/scarf":1,                //暫時無處獲取
         "/d/wanjiegu/npc/obj/hat":1,                  //暫時無處獲取
         "/d/taohuacun/obj/rose":1,                    //暫時無處獲取

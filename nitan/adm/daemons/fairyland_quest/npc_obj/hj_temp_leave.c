@@ -7,7 +7,7 @@ inherit ITEM;
 
 void create()
 {
-    set_name( "幻境物件﹒臨時離開時用", ({ "hj temp leave obj" }) );
+    set_name( "幻境物件·臨時離開時用", ({ "hj temp leave obj" }) );
     set_weight(1);
     if (clonep())
         set_default_object(__FILE__);

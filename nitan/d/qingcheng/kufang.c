@@ -7,9 +7,9 @@ void create()
 {
         set("short", "庫房");
         set("long", @LONG
-這裡是青城一派的庫房，收藏著各種途徑得來的珍寶。庫房北邊壁
-上櫃掛著一些白章虎皮、花格豹皮和其它不知名的皮毛，南邊壁櫃裡擺
-放著一些奇石和銅鐵制品，看來還是值點錢的。東壁下是一個大鐵箱，
+這裏是青城一派的庫房，收藏着各種途徑得來的珍寶。庫房北邊壁
+上櫃掛着一些白章虎皮、花格豹皮和其它不知名的皮毛，南邊壁櫃裏擺
+放着一些奇石和銅鐵製品，看來還是值點錢的。東壁下是一個大鐵箱，
 鎖得甚是嚴實。
 LONG );
         set("objects", ([
@@ -33,7 +33,7 @@ int do_qiao(string arg)
                 set("exits/west", __DIR__"zoulang2");
                 message_vision("$N費了半天勁，把門撬開了。\n",me);
                 set("exits/east", __FILE__, room);
-                message("vision","裡面有人把庫門打開了。\n",room);
+                message("vision","裏面有人把庫門打開了。\n",room);
                 remove_call_out("close_gate");
                 call_out("close_gate", 10);
         }

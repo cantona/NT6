@@ -80,13 +80,13 @@ void do_check()
         {
                 if(cart = present("cart",environment(me)))
                 {
-                        message_vision(HIY"\n$N對著$n大喝一聲：“你這"+RANK_D->query_rude(ob)+"，你大爺我可走了！”\n",me,ob);
-                        message_vision(HIR"\n鏢車給黃河幫劫匪一路推著，一陣“轟隆隆”響著駛了開去。\n\n"NOR,me);
+                        message_vision(HIY"\n$N對着$n大喝一聲：“你這"+RANK_D->query_rude(ob)+"，你大爺我可走了！”\n",me,ob);
+                        message_vision(HIR"\n鏢車給黃河幫劫匪一路推着，一陣“轟隆隆”響着駛了開去。\n\n"NOR,me);
                         if( mapp(exits=query("exits", environment(me))) )
                                 dirs = keys(exits);
                         command("go " + dirs[random(sizeof(dirs))]);
                         cart->move(environment(me));
-                        message_vision(HIR"\n鏢車給黃河幫劫匪一路推著，一陣“轟隆隆”響著駛了開去。\n"NOR,me);
+                        message_vision(HIR"\n鏢車給黃河幫劫匪一路推着，一陣“轟隆隆”響着駛了開去。\n"NOR,me);
                 }
 
                 call_out("do_check", 1);

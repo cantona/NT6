@@ -35,7 +35,7 @@ int perform(object me, object target)
                 return notify_fail("你沒有激發陰風刀，無法使用" + name() + "絕技！\n");
 
        if (! living(target))
-              return notify_fail("對方都已經這樣了，用不著這麼費力吧？\n");
+              return notify_fail("對方都已經這樣了，用不着這麼費力吧？\n");
 
         msg = HIW "$N" HIW "使出陰風刀「" HIR "絕 殺" HIW"」絕技，掌勁幻出一片片切骨寒"
               "氣如颶風般裹向$n全身！\n" NOR;

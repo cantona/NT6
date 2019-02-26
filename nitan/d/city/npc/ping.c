@@ -18,7 +18,7 @@ int do_decide();
 void create()
 {
         set_name("平一指", ({ "ping yizhi", "ping", "yizhi" }));
-        //set("title", "藥舖老板");
+        //set("title", "藥鋪老闆");
         set("title", HIW"煉藥師協會"HIR"會長"NOR);
         set("nickname", HIB "殺人神醫" NOR);
         set("gender", "男性");
@@ -50,13 +50,13 @@ void create()
                 "job"    : (: ask_job :),
                 "療傷"   : (: ask_me  :),
                 "日月神教" : (: ask_riyue :),
-                "入會"     : "在我這裡，可以加入(" HIY "join" NOR +
+                "入會"     : "在我這裏，可以加入(" HIY "join" NOR +
                              CYN ")煉藥師協會。\n" NOR,
-                "加入"     : "在我這裡，可以加入(" HIY "join" NOR +
+                "加入"     : "在我這裏，可以加入(" HIY "join" NOR +
                              CYN ")煉藥師協會。\n" NOR,
-                "鑒定"     : "在我這裡，可以鑒定(" HIY "jianding" NOR +
+                "鑑定"     : "在我這裏，可以鑑定(" HIY "jianding" NOR +
                              CYN ")煉藥師品級。\n" NOR,
-                "煉藥師協會" : "在我這裡，可以加入(" HIY "join" NOR +
+                "煉藥師協會" : "在我這裏，可以加入(" HIY "join" NOR +
                              CYN ")煉藥師協會。\n" NOR,
         ]));
 
@@ -75,7 +75,7 @@ void create()
                 HERB("hafen"),          // 蛤粉
                 HERB("heshouwu"),       // 何首烏
                 HERB("honghua"),        // 紅花
-                HERB("huangqi"),        // 黃□
+                HERB("huangqi"),        // 黃芪
                 HERB("lurong"),         // 鹿茸
                 HERB("xiongdan"),       // 熊膽
                 HERB("juhua"),          // 菊花
@@ -87,7 +87,7 @@ void create()
                 HERB("niuhuang"),       // 牛黃
                 HERB("niuxi"),          // 牛膝
                 HERB("qianjinzi"),      // 千金子
-                HERB("renshen"),        // 人參
+                HERB("renshen"),        // 人蔘
                 HERB("ruxiang"),        // 乳香
                 HERB("shadan"),         // 鯊膽
                 HERB("shancha"),        // 山茶花
@@ -96,7 +96,7 @@ void create()
                 HERB("shenglg"),        // 生龍骨
                 HERB("sumu"),           // 蘇木
                 HERB("taoxian"),        // 桃仙
-                HERB("tenghuang"),      // 籐黃
+                HERB("tenghuang"),      // 藤黃
                 HERB("tianqi"),         // 田七
                 HERB("tugou"),          // 土狗
                 HERB("wulingzhi"),      // 五靈脂
@@ -111,7 +111,7 @@ void create()
                 HERB("zihua"),          // 紫花
                 HERB("zzfen"),          // 珍珠粉
                 HERB("hugu"),           // 虎骨
-                "/clone/misc/yanbo",    // 研砵
+                "/clone/misc/yanbo",    // 研缽
                 "/clone/drug/tianqi-san",
                 "/d/city/obj/shanshen",
                 "/clone/medicine/jinmisan",
@@ -141,7 +141,7 @@ string ask_job()
 
         me = this_player();
         if( query_temp("job/peiyao", me) )
-                return "讓你幹的活你幹完了麼？";
+                return "讓你乾的活你幹完了麼？";
 
         if( query("combat_exp", me)>30000 )
                 return "讓你幹這活，也太屈就你了吧。";
@@ -173,11 +173,11 @@ int do_peiyao(string arg)
 
         me = this_player();
         if (me->is_busy())
-                return notify_fail("你正忙著呢，別著急。\n");
+                return notify_fail("你正忙着呢，彆着急。\n");
 
         if( !query_temp("job/peiyao", me) )
         {
-                message_vision("$N剛想抓幾味藥配制，就聽見$n怒喝道："
+                message_vision("$N剛想抓幾味藥配製，就聽見$n怒喝道："
                                "給我放下，別亂動。\n",
                                me, this_object());
                 return 1;
@@ -295,7 +295,7 @@ int accept_object(object who, object ob)
         object obj ;
         if( !query_temp("何首烏", who) )
         {
-        message_vision("平一指對$N說：醫一人，殺一人，老夫不收錢！\n", who);
+        message_vision("平一指對$N説：醫一人，殺一人，老夫不收錢！\n", who);
                 return 0 ;
         }
         if( query("money_id", ob) && ob->value() >= 50000 )
@@ -325,7 +325,7 @@ int ask_me()
         }
         else
         {
-                message_vision("平一指手指微屈，單指一彈，一粒藥丸疾射入$N的嚥喉，$N"
+                message_vision("平一指手指微屈，單指一彈，一粒藥丸疾射入$N的咽喉，$N"
                                 "不由“咕嚕”一聲吞入腹中，頓感神清氣爽，精神飽滿。\n", ob);
                 set("eff_qi",query("max_qi",  ob), ob);
                 set("eff_jing",query("max_jing",  ob), ob);
@@ -343,7 +343,7 @@ int ask_riyue()
 
         message("vision", "平一指飛起一腳，已將" + ob->name() + "踢得無影無蹤。\n", environment(ob), ob);
         ob->move("/d/heimuya/midao7");
-        tell_object(ob, "平一指飛起一腳，將你踢進了秘道。\n");
+        tell_object(ob, "平一指飛起一腳，將你踢進了祕道。\n");
         return 1;
 }
 
@@ -352,23 +352,23 @@ int do_join(string arg)
         object me = this_player();
 
         if (! arg || arg != "煉藥師協會")
-                return notify_fail(CYN "平一指一楞，說道：你要加入什麼？我"
-                                   "這裡是煉藥師協會。\n" NOR);
+                return notify_fail(CYN "平一指一楞，説道：你要加入什麼？我"
+                                   "這裏是煉藥師協會。\n" NOR);
 
         if( me->query_skillo("liandan-shu", 1) < 300 )
-                return notify_fail(CYN "平一指皺了皺眉，說道：想加入煉藥師"
+                return notify_fail(CYN "平一指皺了皺眉，説道：想加入煉藥師"
                                    "協會，必須具備一品煉藥師資格，你可以先"
-                                   "從我這裡學點煉丹技藝(liandan-shu)。\n" NOR);
+                                   "從我這裏學點煉丹技藝(liandan-shu)。\n" NOR);
 
         if( query("is_alchemy", me) )
-                return notify_fail(CYN "平一指皺了皺眉，說道：你不是已經加"
+                return notify_fail(CYN "平一指皺了皺眉，説道：你不是已經加"
                                    "入煉藥師協會了麼？\n" NOR);
 
         if( query("bad_alchemy", me) )
-                return notify_fail(CYN "平一指冷笑一聲，說道：既然你已經脫"
+                return notify_fail(CYN "平一指冷笑一聲，説道：既然你已經脱"
                                    "離了煉藥師協會，又回來作甚？\n" NOR);
 
-        tell_object(me, CYN "\n平一指點了點頭，說道：你真的打算(" HIY "dec"
+        tell_object(me, CYN "\n平一指點了點頭，説道：你真的打算(" HIY "dec"
                         "ide" NOR + CYN ")加入煉藥師協會麼？可考慮清楚了？"
                         "\n" NOR);
         set_temp("want_join", 1, me);
@@ -380,13 +380,13 @@ int do_unjoin(string arg)
         object me = this_player();
 
         if (! arg || arg != "煉藥師協會")
-                return notify_fail(CYN "平一指皺了皺眉，說道：你打算脫離什"
-                                   "麼？說話不清不楚的。\n" NOR);
+                return notify_fail(CYN "平一指皺了皺眉，説道：你打算脱離什"
+                                   "麼？説話不清不楚的。\n" NOR);
 
         if( !query("is_alchemy", me) )
                 return notify_fail(CYN "平一指冷笑一聲，沒理你。\n" NOR);
 
-        tell_object(me, CYN "\n平一指嘆了口氣，說道：如果脫離煉藥師協會，以後"
+        tell_object(me, CYN "\n平一指歎了口氣，説道：如果脱離煉藥師協會，以後"
                         "可不能反悔。你真打算(" HIY "decide" NOR + CYN ")"
                         "這麼做麼？\n" NOR);
         set_temp("want_tuoli", 1, me);
@@ -402,7 +402,7 @@ int do_decide()
 
         if( query_temp("want_join", me) )
         {
-                message_vision(HIC "$N" HIC "對著$n" HIC "微笑道：煉藥師"
+                message_vision(HIC "$N" HIC "對着$n" HIC "微笑道：煉藥師"
                                "可是最榮耀的職業，以後好好幹吧。\n" NOR,
                                this_object(), me);
 
@@ -431,7 +431,7 @@ int do_decide()
         } else
         if( query_temp("want_tuoli", me) )
         {
-                message_vision(HIC "$N" CYN "對著$n" HIC "點點頭，人各有"
+                message_vision(HIC "$N" CYN "對着$n" HIC "點點頭，人各有"
                                "志，從此以後你我再無瓜葛。\n" NOR,
                                this_object(), me);
 
@@ -446,7 +446,7 @@ int do_decide()
                 if (objectp(ob = present("yaoshi zheng", me)));
                 {
                         message_vision(HIR "$N" HIR "將$n" HIR "的" NOR +
-                                       ob->name(1) + HIR "注銷了。\n" NOR,
+                                       ob->name(1) + HIR "註銷了。\n" NOR,
                                        this_object(), me);
                         destruct(ob);
                 }
@@ -497,9 +497,9 @@ int recognize_apprentice(object ob, string skill)
 
         if (ob->query_skillo("liandan-shu", 1) >= 300)
         {
-                write(CYN "平一指點了點頭，說道：煉丹技藝的提"
+                write(CYN "平一指點了點頭，説道：煉丹技藝的提"
                       "高需要不斷從實踐中來提升的，煉丹技藝的\n"
-                      "基本功我就教到這裡，剩下看你的天賦和修行了。\n" NOR);
+                      "基本功我就教到這裏，剩下看你的天賦和修行了。\n" NOR);
                 return -1;
         }
         return 1;

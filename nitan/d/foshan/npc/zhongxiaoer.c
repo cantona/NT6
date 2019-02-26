@@ -4,10 +4,10 @@ inherit NPC;
 
 void create()
 {
-        set_name("鐘小二",({ "zhong xiaoer", "zhong", "xiaoer" }) );
+        set_name("鍾小二",({ "zhong xiaoer", "zhong", "xiaoer" }) );
         set("gender", "男性" );
         set("age", 3);
-        set("long", "他是鐘阿四的二兒子，幾只狼狗在追著撕咬他。\n");
+        set("long", "他是鍾阿四的二兒子，幾隻狼狗在追着撕咬他。\n");
         set("combat_exp", 50);
 //        set("shen", 50);
         set("shen_type", 1);

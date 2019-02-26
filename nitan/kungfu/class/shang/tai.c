@@ -187,9 +187,9 @@ mixed ask_skill1()
         if (me->query_skill("bagua-quan", 1) < 70)
                 return "你的八卦拳法還練得不到家，自己下去練練再來吧！";
 
-        message_vision(HIY "$n" HIY "對$N" HIY "點了點頭，說道：“我給你演示一遍"
+        message_vision(HIY "$n" HIY "對$N" HIY "點了點頭，説道：“我給你演示一遍"
                        "，可要瞧清\n楚了。”$n" HIY "話音剛落，突然身體一側，雙掌"
-                       "頓時向下沉\n去，接著卻又向上一翻，朝著$N" HIY "的雙肩斜斜"
+                       "頓時向下沉\n去，接着卻又向上一翻，朝着$N" HIY "的雙肩斜斜"
                        "地劈去，招數甚\n為精妙，頓時將$N" HIY "攻了個措手不及。\n"
                        NOR, me, this_object());
 
@@ -282,7 +282,7 @@ mixed ask_skill3()
                 return "你的十二路潭腿還練得不到家，自己下去練練再來吧！";
 
         message_vision(HIY "$n" HIY "哼了一聲，沉聲道：“潭腿本身威力並不強，但卻被"
-                       "\n喻為武林四大家之一，倒也有它的獨到之處。”說完便隨即\n起身"
+                       "\n喻為武林四大家之一，倒也有它的獨到之處。”説完便隨即\n起身"
                        "而立，左腿連變數中方位，“砰”的一聲陡然踢出，頓\n時將$N" HIY
                        "面前的那張木幾踢得粉碎。\n" NOR, me, this_object());
 

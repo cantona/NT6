@@ -60,7 +60,7 @@ int main(object me, string arg)
         if( query("enchase/increase", item) )
                 return notify_fail("改造過的裝備不可以用來分解屬性元素。\n");
 
-        tell_object(me, HIM "\n你雙目微閉，將分解卷軸與"+item->name()+HIM"凝于身前，運轉內勁迫"
+        tell_object(me, HIM "\n你雙目微閉，將分解卷軸與"+item->name()+HIM"凝於身前，運轉內勁迫"
                         "使它們空中旋轉交融。\n" NOR);
 
         me->start_busy(1);
@@ -86,7 +86,7 @@ int main(object me, string arg)
                 "光華閃過，但轉瞬即逝，似乎發生了什麼不同尋常的"
                 "事情。\n\n" NOR, environment(me), ({me}));
 
-        tell_object(me, HIW "霎時間只見萬道光華疾閃而過，你急忙伸出雙手，發現掌心蘊漾著七色霞光。\n\n" NOR);
+        tell_object(me, HIW "霎時間只見萬道光華疾閃而過，你急忙伸出雙手，發現掌心藴漾着七色霞光。\n\n" NOR);
 
         addn("max_jingli", -1, me);
         destruct(scroll);

@@ -23,14 +23,14 @@ int main(object me, string arg)
                                 return notify_fail("有人向你下任務了嗎？\n");
 
                         if (! objectp(ob = present(master, environment(me))))
-                                return notify_fail("給你下任務的那個人現在不在這裡吧？\n");
+                                return notify_fail("給你下任務的那個人現在不在這裏吧？\n");
                 } else
                 if (! objectp(ob = present(arg, environment(me))))
-                        return notify_fail("這裡沒有這個人，你怎麼領任務？\n");
+                        return notify_fail("這裏沒有這個人，你怎麼領任務？\n");
 
                 if (! living(ob))
                         return notify_fail("你還是等" + ob->name() +
-                                           "醒了再說吧！\n");
+                                           "醒了再説吧！\n");
 
                 if (me->is_fighting())
                         return notify_fail("專心打你的架！\n");
@@ -41,13 +41,13 @@ int main(object me, string arg)
 
                 if (ob->is_fighting())
                         return notify_fail("你還是等" + ob->name() +
-                                           "打完架再說吧！\n");
+                                           "打完架再説吧！\n");
 
                 if (ob->is_busy())
                         return notify_fail(ob->name() +
-                                           "正忙著呢，沒功夫理你。\n");
+                                           "正忙着呢，沒功夫理你。\n");
 
-                notify_fail(ob->name() + "望著你呵呵的傻笑。\n");
+                notify_fail(ob->name() + "望着你呵呵的傻笑。\n");
                 return (arg == "cancel" ? ob->cancel_quest(me)
                                         : ob->ask_quest(me));
         }
@@ -79,7 +79,7 @@ int main(object me, string arg)
                 }
          }
 
-        if (!flag_bh) write("你目前沒有從幫會那裡接任務！\n");
+        if (!flag_bh) write("你目前沒有從幫會那裏接任務！\n");
 
         write(HIR + "\n門派任務系統：\n" + NOR);
         if( query("quest_count", me) )
@@ -93,7 +93,7 @@ int main(object me, string arg)
                   case "kill":
                         write(q["master_name"] + "吩咐你在" + CHINESE_D->chinese_monthday(q["limit"]) +
                       "之前割下" HIR + q["name"] + NOR "的人頭，回" + q["family"] + "交差。\n" +
-                      "據說此人前不久曾經在" + q["place"] + "出沒。\n");
+                      "據説此人前不久曾經在" + q["place"] + "出沒。\n");
                       tag_fam = 1;
                       break;
                 case "letter":
@@ -168,7 +168,7 @@ int main(object me, string arg)
                 write("你剛才領的任務：\n"+msg+"\n");
          }
 
-        if (!flag_zs) write("你目前沒有從任何宗師那裡接任務！\n");
+        if (!flag_zs) write("你目前沒有從任何宗師那裏接任務！\n");
         return 1;
 }
 
@@ -197,7 +197,7 @@ int help(object me)
 指令格式 : quest  這個指令可以用來向你的門派的掌門或世家長輩
 領取任務，如果不加任何參數則顯示出你當前的任務。
 
-從宗師那裡領取任務只需要到宗師所在地方輸入quest，不需要加任何
+從宗師那裏領取任務只需要到宗師所在地方輸入quest，不需要加任何
 參數。
 
 HELP );

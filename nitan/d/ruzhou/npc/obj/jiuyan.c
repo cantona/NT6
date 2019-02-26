@@ -13,8 +13,8 @@ void create()
    {
                 set("long", "這是一桌五色齊全、香味四溢、豐盛的酒席。\n"
    HIG"八味拼盤(pingpan)  珍品杲羹(guogeng)  紅燒蹄膀(tipang)\n"
-      "鬆子桂魚(guiyu)    香菇菜心(caixing)  清燉甲魚(jiayu)\n"
-      "人參雞湯(jitang)   翠玉豆腐(doufu)    海參青蟹(qingxie)\n"NOR);
+      "松子桂魚(guiyu)    香菇菜心(caixing)  清燉甲魚(jiayu)\n"
+      "人蔘雞湯(jitang)   翠玉豆腐(doufu)    海蔘青蟹(qingxie)\n"NOR);
                 set("unit", "桌");
                 set("value",1000);
 set("no_drop",1);
@@ -38,7 +38,7 @@ int do_eat(string arg)
         switch(arg)
    {
            case "pingpan":
-         message_vision("$N輕輕挑出一塊拼盤冷菜，夾進嘴裡津津有味地嚼起來。\n",me);
+         message_vision("$N輕輕挑出一塊拼盤冷菜，夾進嘴裏津津有味地嚼起來。\n",me);
                    addn("food", 8, me);
          if( query("water", me)<me->max_water_capacity() )
                            addn("water", 1, me);
@@ -56,37 +56,37 @@ int do_eat(string arg)
                            addn("water", 2, me);
          break;
       case "guiyu":
-              message_vision("$N夾出一塊鬆子桂魚，只覺入嘴滑嫩，鮮美無比。\n",me);
+              message_vision("$N夾出一塊松子桂魚，只覺入嘴滑嫩，鮮美無比。\n",me);
                    addn("food", 10, me);
          if( query("water", me)<me->max_water_capacity() )
                            addn("water", 2, me);
          break;
       case "caixing":
-              message_vision("$N細心地挑了一些色香俱全的香菇菜心，慢慢地品味著，真香。\n",me);
+              message_vision("$N細心地挑了一些色香俱全的香菇菜心，慢慢地品味着，真香。\n",me);
                    addn("food", 10, me);
          if( query("water", me)<me->max_water_capacity() )
                            addn("water", 2, me);
          break;
       case "jiayu":
-              message_vision("$N一下子挖出一塊甲魚，急不可耐地塞進嘴裡。\n",me);
+              message_vision("$N一下子挖出一塊甲魚，急不可耐地塞進嘴裏。\n",me);
                    addn("food", 20, me);
          if( query("water", me)<me->max_water_capacity() )
                            addn("water", 4, me);
          break;
       case "jitang":
-              message_vision("$N湊著香味大大地嘗了一口人參雞湯，果真是鮮美無比。\n",me);
+              message_vision("$N湊着香味大大地嚐了一口人蔘雞湯，果真是鮮美無比。\n",me);
                    addn("food", 2, me);
          if( query("water", me)<me->max_water_capacity() )
                            addn("water", 15, me);
          break;
       case "doufu":
-              message_vision("$N夾起一筷翠玉豆腐含在嘴裡，一臉的幸福滿足的神情。\n",me);
+              message_vision("$N夾起一筷翠玉豆腐含在嘴裏，一臉的幸福滿足的神情。\n",me);
                    addn("food", 8, me);
          if( query("water", me)<me->max_water_capacity() )
                            addn("water", 1, me);
          break;
       case "qingxie":
-              message_vision("$N悶著頭，剝開青蟹殼，一口一口地吮吸裡面鮮美的汁肉。\n",me);
+              message_vision("$N悶着頭，剝開青蟹殼，一口一口地吮吸裏面鮮美的汁肉。\n",me);
                    addn("food", 10, me);
          if( query("water", me)<me->max_water_capacity() )
                            addn("water", 1, me);

@@ -62,11 +62,11 @@ int do_join(string arg)
         if( !arg || arg!="yipintang" )
                 return notify_fail("努兒海問道：“你要加入什麼組織？”\n");
            if( query("yipin/joined", ob) )
-                return notify_fail("努兒海奇怪地說道：“你開什麼玩笑？你已經是堂中人了。”\n");
+                return notify_fail("努兒海奇怪地説道：“你開什麼玩笑？你已經是堂中人了。”\n");
            if( query("combat_exp", ob)<1000 )
                 return notify_fail("努兒海哈的一聲大笑起來：“我們只要江湖中的成名英雄。你算什麼材料？”\n");
         command("gongxi"+query("id", ob));
-        message_vision("努兒海沖著$N笑道：“那好，咱們現在就是一殿之臣，一家人了！”\n",ob);
+        message_vision("努兒海衝着$N笑道：“那好，咱們現在就是一殿之臣，一家人了！”\n",ob);
         set("yipin/joined", 1, ob);
         return 1;
 }

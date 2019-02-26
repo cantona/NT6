@@ -77,7 +77,7 @@ int perform(object me, object target)
                         case 1:
                                 tell_object(obs[i], HIW "你眼前一切漸漸的模糊起來，好像是到"
                                                     "了仙境，然而你卻覺得內息越來越亂，\n"
-                                                    "四肢一陣酸痛，幾乎要站立不住。\n" NOR);
+                                                    "四肢一陣痠痛，幾乎要站立不住。\n" NOR);
                                 break;
                         default:
                                 tell_object(obs[i], HIR "你耳邊忽然響起一個霹靂，眼見雷神揮"
@@ -111,7 +111,7 @@ int perform(object me, object target)
                                 break;
                         case 1:
                                 msg = HIR "卻見" + obs[i]->name() +
-                                      HIR "容貌哀戚，似乎想起了什"
+                                      HIR "容貌哀慼，似乎想起了什"
                                       "麼傷心之事，身子一晃，嘔出數口鮮血！\n" NOR;
                                 msg += "( " + obs[i]->name() + eff_status_msg(p) + " )\n\n";
                                 break;

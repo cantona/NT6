@@ -4,7 +4,7 @@ void create()
 { 
         set("short", "大殿"); 
         set("long", @LONG 
-這裡是BOSS挑戰區。
+這裏是BOSS挑戰區。
 
 LONG
 ); 

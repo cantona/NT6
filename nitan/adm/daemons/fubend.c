@@ -134,7 +134,7 @@ public int enter_fuben(object me, string fbname)
                 }
 
                 if( !objectp(me->query_team_leader()) ) {
-                        tell_object(me, "你的隊伍好象出現了問題！\n");
+                        tell_object(me, "你的隊伍好像出現了問題！\n");
                         return 0;
                 }
                 owner=(query("id", me->query_team_leader()));
@@ -143,7 +143,7 @@ public int enter_fuben(object me, string fbname)
                         owner=query("id", me);
                 } else {
                         if( !objectp(me->query_team_leader()) ) {
-                                tell_object(me, "你的隊伍好象出現了問題！\n");
+                                tell_object(me, "你的隊伍好像出現了問題！\n");
                                 return 0;
                         }
                         owner=(query("id", me->query_team_leader()));
@@ -536,7 +536,7 @@ public int close_fuben(object me, string fbname)
                         valid_fbname += ({ fbname });
                         tell_object(me, HIC "關閉副本<"+fbname+">任務完畢。\n" NOR);
                 } else
-                        tell_object(me, HIC "副本<"+fbname+">已經處于關閉中。\n" NOR);
+                        tell_object(me, HIC "副本<"+fbname+">已經處於關閉中。\n" NOR);
                 return 1;
         }
 }
@@ -557,7 +557,7 @@ public int open_fuben(object me, string fbname)
                         valid_fbname -= ({ fbname });
                         tell_object(me, HIC "開啟副本<"+fbname+">任務完畢。\n" NOR);
                 } else
-                        tell_object(me, HIC "副本<"+fbname+">已經處于開啟中。\n" NOR);
+                        tell_object(me, HIC "副本<"+fbname+">已經處於開啟中。\n" NOR);
                 return 1;
         }
 }

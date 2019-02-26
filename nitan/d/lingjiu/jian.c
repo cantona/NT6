@@ -44,6 +44,6 @@ int do_zou(string arg)
                        "去。\n" NOR, me);
         me->move(room);
         message_vision(HIW "$N" HIW "從鐵索上飄然而下，來到這縹"
-                       "緲峰絕頂。\n" NOR, me);
+                       "緲峯絕頂。\n" NOR, me);
         return 1;
 }

@@ -9,7 +9,7 @@ void create()
         set("short", "齊門");
         set("long", @LONG
 這是蘇州府的北城門。出門遠遠可見西面的虎丘山。放眼望去盡是
-綠的田，翠的草和清清的小河。門邊官兵身後貼著一份告示(gaoshi)。
+綠的田，翠的草和清清的小河。門邊官兵身後貼着一份告示(gaoshi)。
 南北一條筆直的官道。
 LONG );
         set("outdoors", "suzhou");

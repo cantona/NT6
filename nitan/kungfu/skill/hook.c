@@ -1,4 +1,4 @@
-// hook.c 基本鉤法
+// hook.c 基本鈎法
 // Last Modified by winder on Mar. 10 2000
 
 #include <ansi.h>;
@@ -13,10 +13,10 @@ int power_point(object me) { return 1; }
 
 int help(object me)
 {
-        write(HIC"\n基本鉤法："NOR"\n");
+        write(HIC"\n基本鈎法："NOR"\n");
         write(@HELP
 
-    鉤類武技的基本功。
+    鈎類武技的基本功。
 
         學習要求：
                 無

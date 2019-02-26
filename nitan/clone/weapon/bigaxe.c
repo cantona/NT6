@@ -10,7 +10,7 @@ void create()
                 set_default_object(__FILE__);
         else {
                 set("unit", "把");
-                set("long", "這是盤古用來開天辟地的巨斧，傳說有神奇的力量。\n");
+                set("long", "這是盤古用來開天闢地的巨斧，傳説有神奇的力量。\n");
                 set("value", 1);
                 set("flag", 1);
                 set("no_sell", 1);

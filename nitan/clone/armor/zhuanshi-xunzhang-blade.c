@@ -7,7 +7,7 @@ inherit MEDAL2;
 void create()
 {
         set_name(HIC "轉世勛章（金刀）" NOR, ({ "jindao xunzhang", "jindao", "xunzhang" }));
-        set("long", HIC "轉世後獲得的勛章，上繪金刀劈海圖，閃閃發亮，甚是精致。\n" NOR);
+        set("long", HIC "轉世後獲得的勛章，上繪金刀劈海圖，閃閃發亮，甚是精緻。\n" NOR);
         set_weight(500);
         if (clonep())
                 set_default_object(__FILE__);

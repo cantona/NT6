@@ -116,7 +116,7 @@ void create()
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("long", "一張桌子，上面放著一些牌，使用方法請使用(helppai)命令。\n");
+                set("long", "一張桌子，上面放着一些牌，使用方法請使用(helppai)命令。\n");
                 set("unit", "張");
                 set("value", 1);
         }
@@ -320,7 +320,7 @@ string extra_long()
         me = this_player();
         idx = keys(player);
         
-        r = sprintf("牌盒裡面有%d張牌\n",remain);
+        r = sprintf("牌盒裏面有%d張牌\n",remain);
         
         if(sizeof(player)>0)
         {
@@ -432,9 +432,9 @@ int do_nextone(string arg)
                 return msg(0,0,"有玩家缺場了，請重新開始遊戲(reset pai)。\n");
 
         if(this_player()->query("id")!=id)
-                msg(this_player(),ob,"$N對$n說道：到你了。\n");
+                msg(this_player(),ob,"$N對$n説道：到你了。\n");
         else
-                msg(this_player(),0,"對自己說道：到我啦！\n");
+                msg(this_player(),0,"對自己説道：到我啦！\n");
         return 1;
 }
 
@@ -453,7 +453,7 @@ int do_pass(string arg)
 
         if(!arg)
                 arg = "ＰＡＳＳ！！";
-        msg(this_player(),0,"$N說道："+arg+"\n");
+        msg(this_player(),0,"$N説道："+arg+"\n");
         old = who_play;
         who_play = player[who_play];
 
@@ -698,36 +698,36 @@ int do_help(string arg)
 {
         this_player()->start_more( @HELP
 玩21點牌桌使用方法:
-──[開始遊戲]───────────────
+——[開始遊戲]———————————————
 幫助命令：helppai
 加入命令：join　　　　　加入遊戲
 開始命令：start 　　　　開始以後不能再加入
 重置命令：reset pai 　　結束遊戲
 
-──[遊戲命令]───────────────
+——[遊戲命令]———————————————
 重新遊戲：restart
 　　摸牌：play　　　　　進行遊戲
 不再要牌: pass
 
-──[其它命令]───────────────
+——[其它命令]———————————————
 洗牌命令：xipai
 看牌命令：view [玩家ID] 觀察玩家手上的牌
 催促命令：next　　　　　催促正在出牌的人
 
-──[計數牌使用]──────────────
+——[計數牌使用]——————————————
 顯示: showc
 重置: reset counter
 
 
 
 
-──[遊戲規則]───────────────
+——[遊戲規則]———————————————
 遊戲開始以後，每人輪流摸牌直到不摸為止。
 最後根據每人手上的點數決定勝負。
 點數 > 21 為輸，點數<21的時候點數大者勝。
 J，Q，k為10點，A可以為1點或者為11點。
 
-──────────────────────
+——————————————————————
                         make by 貓部貓(Catyboy) v1.0
 HELP
         );

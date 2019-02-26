@@ -48,7 +48,7 @@ int valid_learn(object me)
         if( query("character", me) == "心狠手辣" )
                 return notify_fail("你心中暗道：此功一點氣勢也無，何苦費力學它。。\n");
 
-        if( query("character", me) == "陰險姦詐" )
+        if( query("character", me) == "陰險奸詐" )
                 return notify_fail("你心中暗道：此功平淡無奇，何苦為它花費心思。\n");
 
         if( query("int", me)<30 )

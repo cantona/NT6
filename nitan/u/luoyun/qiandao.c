@@ -52,7 +52,7 @@ int do_daka()
 	
 	if (query_temp("qiandao_time", ob) >time())
 	{
-		tell_object(me,CYN"簽到員說道：慢慢來，讓我喘口氣。\n"NOR);
+		tell_object(me,CYN"簽到員説道：慢慢來，讓我喘口氣。\n"NOR);
 		return 1;
 	}
 	
@@ -62,7 +62,7 @@ int do_daka()
 	
 	if(data && localtime[LT_MDAY]  == localtime2[LT_MDAY])
 	{
-		tell_object(me, CYN"簽到員說道：你今天已經簽過到了，明天再來吧。\n"NOR);
+		tell_object(me, CYN"簽到員説道：你今天已經簽過到了，明天再來吧。\n"NOR);
 		return 1;
 	}
 	
@@ -191,7 +191,7 @@ void die()
 	set("neili", 90000);
 	set("max_jingli",10000);
 	
-	say( me->name() + CYN "說道：我是不死的，你的行為已經被記錄在案。\n"NOR);
+	say( me->name() + CYN "説道：我是不死的，你的行為已經被記錄在案。\n"NOR);
 	return;
 	
 }

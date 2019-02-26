@@ -67,7 +67,7 @@ int attempt_apprentice(object ob)
 {
         if( !query("born", ob) )
         {
-                command("say 你快投胎去，在這裡瞎攪和什麼？");
+                command("say 你快投胎去，在這裏瞎攪和什麼？");
                 return 0;
         }
 
@@ -137,7 +137,7 @@ mixed ask_zhuan()
         */
         if( !query("HellZhenPass", who) )
         {
-                message_vision("$N對$n一拱手，道：你想轉世先過了十八層地獄這一關再說！\n", 
+                message_vision("$N對$n一拱手，道：你想轉世先過了十八層地獄這一關再説！\n", 
                                this_object(), who);
                 return 1;
         }
@@ -149,11 +149,11 @@ mixed ask_zhuan()
                 return 1;
         }
      
-        message_vision("$N對$n陰陰地笑了幾聲，說：天堂有路你不走，地獄無門你闖進來。\n",
+        message_vision("$N對$n陰陰地笑了幾聲，説：天堂有路你不走，地獄無門你闖進來。\n",
                        this_object(), who);         
 
         message("channel:rumor",HIB"【陰曹地府】"+query("name", who)+
-                "要闖幽冥地府考驗最後一關，哼！等著收屍吧！\n" NOR, users());                                          
+                "要闖幽冥地府考驗最後一關，哼！等着收屍吧！\n" NOR, users());                                          
         
         set("no_fight", 0, environment(this_object()));
         competition_with(who);
@@ -180,8 +180,8 @@ void win()
         if (! objectp(ob = query_competitor()))
                 return;
 
-        message_vision(HIB "$N看了看$n，嘿嘿笑道：“你知道你打不敗我意味著什麼嗎？"
-                       "就意味著死亡！哈哈！！！”\n" NOR,
+        message_vision(HIB "$N看了看$n，嘿嘿笑道：“你知道你打不敗我意味着什麼嗎？"
+                       "就意味着死亡！哈哈！！！”\n" NOR,
                        this_object(), ob);
                        
         call_out("ob_die", 1, ob);  
@@ -201,9 +201,9 @@ void lost()
         if (! objectp(ob = query_competitor()))
                 return;
 
-        message_vision(HIB "$N哎呀一聲，對$n怒道：“這次算你僥幸，下次可沒有這麼便宜了！”\n" NOR,
+        message_vision(HIB "$N哎呀一聲，對$n怒道：“這次算你僥倖，下次可沒有這麼便宜了！”\n" NOR,
                        this_object(), ob);
-        message_sort(HIB "$N說完從懷裡掏出生死薄，拿出判官筆在上面勾畫一會，完畢對$n說道："
+        message_sort(HIB "$N説完從懷裏掏出生死薄，拿出判官筆在上面勾畫一會，完畢對$n説道："
                      "想轉世過了我這關還不夠，你須得進入十二重天將精元丹取來，我方能幫"
                      "你打開轉世之門！十二重天把手森嚴，老夫只能助你到天門，其他的路靠"
                      "你自己闖了！\n" NOR, this_object(), ob);
@@ -242,7 +242,7 @@ int accept_object(object me, object ob)
 
         if( !query("SkyPass", me) || !query("DiZangPass", me) )
         {
-                message_vision(CYN "地藏王道：無功不受祿，這個你還是自己留著吧。\n"
+                message_vision(CYN "地藏王道：無功不受祿，這個你還是自己留着吧。\n"
                                NOR, me);
                 return 0;
         }
@@ -251,11 +251,11 @@ int accept_object(object me, object ob)
                        "老夫也只能順天意而行了，去吧。\n"
                        NOR, me);
                        
-        message_vision(CYN "地藏王隨手一招，突然刮起一陣陰風，精元丹護住你的元神幫你進入六道輪回。\n"
+        message_vision(CYN "地藏王隨手一招，突然颳起一陣陰風，精元丹護住你的元神幫你進入六道輪迴。\n"
                        NOR, me);
 
         message("channel:rumor",HIB"【陰曹地府】恭喜"+query("name", me)+
-                "闖過天界十二重天，進入六道輪回時空，天意？人為？！！！\n" NOR, users());                             
+                "闖過天界十二重天，進入六道輪迴時空，天意？人為？！！！\n" NOR, users());                             
               
         destruct(ob);
         

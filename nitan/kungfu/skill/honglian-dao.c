@@ -10,13 +10,13 @@ mapping *action = ({
         "skill_name"  : "怒火燎原",
         "damage_type" : "割傷"
 ]),
-([      "action": "$N一招「赤燄沖天」，左右腿虛點，$w一提一收，平刃揮向$n的頸部",
+([      "action": "$N一招「赤焰沖天」，左右腿虛點，$w一提一收，平刃揮向$n的頸部",
         "force" : 30,
         "dodge" : 30,
         "parry" : 40,
         "damage": 10,
         "lvl"   : 20,
-        "skill_name"  : "赤燄沖天",
+        "skill_name"  : "赤焰沖天",
         "damage_type" : "割傷"
 ]),
 ([      "action": "$N展身虛步，提腰躍落，一招「洪爐翻騰」，刀鋒一卷，攔腰斬向$n",

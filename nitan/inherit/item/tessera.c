@@ -28,7 +28,7 @@ mapping dict = ([
         "whip"          :"鞭",
         "xsword"        :"簫",
         "head"          :"頭盔",
-        "neck"          :"項鏈",
+        "neck"          :"項鍊",
         "cloth"         :"衣服",
         "charm"         :"符文",
         "rings"         :"戒指",

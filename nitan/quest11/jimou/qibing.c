@@ -27,7 +27,7 @@ void main(object ob)
 		load_object("/daemons/cast_d.c")->reg_player(p_name, "qibing");
 		ob->award_exp(ob->query_sk_level("sk_zhimou")/2+random(20),"qibing");
 		ob->simple_action(SG_SKILL_D->query_use("qibing"));
-		ob->start_busy(10, "你正忙于使用奇兵之計。");
+		ob->start_busy(10, "你正忙於使用奇兵之計。");
 
 		call_out("show_result", 5+random(5), ob, p_skill, p_id);
 	}

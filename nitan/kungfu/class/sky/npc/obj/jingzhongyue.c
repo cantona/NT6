@@ -10,7 +10,7 @@ void create()
                 set_default_object(__FILE__);
         else {
                 set("unit", "柄");
-                set("long", CYN "一柄四尺來長的單刀，重達百斤，刀身散發著烏黑的光澤。\n" NOR);
+                set("long", CYN "一柄四尺來長的單刀，重達百斤，刀身散發着烏黑的光澤。\n" NOR);
                 set("value", 100000);
                 set("rigidity", 8000);   
                 set("material", "steel");

@@ -12,7 +12,7 @@ void create()
 {
         set_name("符敏儀", ({ "fu mingyi", "fu", "mingyi"}));
         set("long", @LONG
-符敏儀乃是縹緲峰靈鷲宮中九天九部中陽天部
+符敏儀乃是縹緲峯靈鷲宮中九天九部中陽天部
 的副首領。只見她已經四十開外，卻仍是風華
 不減，頗有韻味。
 LONG);
@@ -101,7 +101,7 @@ void attempt_apprentice(object ob)
         }
 
         command("nod2");
-        command("say 那你以後就跟著我吧。");
+        command("say 那你以後就跟着我吧。");
         command("recruit "+query("id", ob));
 
         if( query("class", ob) != "dancer" )

@@ -5,11 +5,11 @@ void create()
 {
         set_name("北醜", ({ "bei chou", "bei", "chou", "xizi" }) );
         set("nickname", HIW "北戲子" NOR);
-        set("title", HIC "武林泰鬥" NOR);
+        set("title", HIC "武林泰斗" NOR);
         set("gender", "男性" );
         set("age", 68);
-        set("long", HIC "這是一個身著戲子打扮的瘦小老頭，長得尖\n"
-                        "嘴猴腮，天生一副姦相。這便是當今武林中\n"
+        set("long", HIC "這是一個身着戲子打扮的瘦小老頭，長得尖\n"
+                        "嘴猴腮，天生一副奸相。這便是當今武林中\n"
                         "號稱「" HIR "南賢北醜" HIC "」戲子北醜。"
                         "\n" NOR);
         set("attitude", "friendly");
@@ -169,7 +169,7 @@ void die()
 
         return;
 }
-// 氣血小于1000則死亡，避免他人協助幫忙轉世
+// 氣血小於1000則死亡，避免他人協助幫忙轉世
 void heart_beat()
 {
         if (this_object()->query("qi") < 1000 || this_object()->query("eff_qi") < 1000)

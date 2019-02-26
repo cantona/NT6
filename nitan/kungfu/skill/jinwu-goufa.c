@@ -1,4 +1,4 @@
-// jinwu-goufa.c 金蜈鉤法
+// jinwu-goufa.c 金蜈鈎法
 
 #include <ansi.h>
 inherit SKILL;
@@ -110,10 +110,10 @@ int valid_learn(object me)
                 return notify_fail("你的內功火候太淺。\n");
 
         if ((int)me->query_skill("sword", 1) < 100)
-                return notify_fail("你的基本劍法火候不夠，無法學習金蜈鉤法。\n");
+                return notify_fail("你的基本劍法火候不夠，無法學習金蜈鈎法。\n");
 
         if ((int)me->query_skill("sword", 1) < (int)me->query_skill("jinwu-goufa", 1))
-                return notify_fail("你的基本劍法水平有限，無法領會更高深的金蜈鉤法。\n");
+                return notify_fail("你的基本劍法水平有限，無法領會更高深的金蜈鈎法。\n");
 
         return 1;
 }
@@ -171,10 +171,10 @@ int practice_skill(object me)
                 return notify_fail("你使用的武器不對。\n");
 
         if( query("qi", me)<60 )
-                return notify_fail("你的體力目前沒有辦法練習金蜈鉤法。\n");
+                return notify_fail("你的體力目前沒有辦法練習金蜈鈎法。\n");
 
         if( query("neili", me)<70 )
-                return notify_fail("你的內力不夠，無法練習金蜈鉤法。\n");
+                return notify_fail("你的內力不夠，無法練習金蜈鈎法。\n");
 
         addn("qi", -50, me);
         addn("neili", -62, me);

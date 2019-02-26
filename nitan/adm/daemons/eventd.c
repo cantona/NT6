@@ -83,7 +83,7 @@ int at_when(int year, int month, int day, int hour, mixed para)
 }
 
 // 登記在一段時間以後啟動事件
-// 如果傳入的參數是負數，則標志了一個絕對的時間
+// 如果傳入的參數是負數，則標誌了一個絕對的時間
 // 比如：Y = 0 month = 0 day = 1 hour = -5 表示明天5點鐘
 int at_after(int year, int month, int day, int hour, mixed para)
 {

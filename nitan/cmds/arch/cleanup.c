@@ -29,7 +29,7 @@ int help(object me)
         write(@HELP
 指令格式：cleanup <檔名>
 
-對所有指定檔名的物件呼叫 clean_up，並且清除所有被復制出來的，但是又沒有
+對所有指定檔名的物件呼叫 clean_up，並且清除所有被複製出來的，但是又沒有
 被放在另一個物件中的散失物件。
 HELP );
         return 1;

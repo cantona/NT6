@@ -58,7 +58,7 @@ int main(object me, string arg)
                         // write(dir[i] +" 文轉換完成。\n");
                 }
         }
-        write("\n目錄︰" + file + "內所有文件轉換完成。\n");
+        write("\n目錄∶" + file + "內所有文件轉換完成。\n");
 
         if (total > 0)
                 write(HIC "總共有 " + HIW + total + HIC " 個檔案被成功轉換為 UNIX 格式！\n" NOR);

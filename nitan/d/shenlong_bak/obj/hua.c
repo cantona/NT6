@@ -12,7 +12,7 @@ void create()
 {
         set_name(HIG"百香花"NOR, ({"hua", "baixiang"}));
         set("unit", "朵");
-        set("long", "這是一朵鮮艷的花，花香濃鬱異常。\n");
+        set("long", "這是一朵鮮豔的花，花香濃郁異常。\n");
         setup();
 }
 
@@ -28,7 +28,7 @@ int do_eat(string arg)
         if(!present(this_object(), me))
                 return notify_fail("你要吃什麼？\n");
         if( me->is_busy() )
-                return notify_fail("別急，慢慢吃，小心別噎著了。\n");
+                return notify_fail("別急，慢慢吃，小心別噎着了。\n");
         if ( neili_limit <= force_limit  )
                 addn("max_neili", 1, me);
         me->unconcious();

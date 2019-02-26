@@ -10,7 +10,7 @@ void create()
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("long", RED "這是一塊炎晶，地肺熔巖受南明離火所化，色赤紅，溫度極高。\n" NOR);
+                set("long", RED "這是一塊炎晶，地肺熔巖受南明離火所化，色赤紅，温度極高。\n" NOR);
                 set("value", 2000);
                 set("unit", "塊");
                 set("magic/element", "fire");

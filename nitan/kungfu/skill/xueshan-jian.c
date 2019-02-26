@@ -38,7 +38,7 @@ mapping *action = ({
         "lvl" : 150,
         "skill_name" : "飛沙走石"
 ]),
-([        "action": "$N舉劍和身躍出，一式" +(order[random(13)])+"「胡馬越嶺」"NOR"，$w幻出萬道劍芒，于劍光中疾取$n的$l",
+([        "action": "$N舉劍和身躍出，一式" +(order[random(13)])+"「胡馬越嶺」"NOR"，$w幻出萬道劍芒，於劍光中疾取$n的$l",
         "lvl" : 150,
         "skill_name" : "胡馬越嶺"
 ]),
@@ -46,7 +46,7 @@ mapping *action = ({
         "lvl" : 160,
         "skill_name" : "嶺上雙梅"
 ]),
-([        "action": "$N一式" +(order[random(13)])+"「明月羌笛」"NOR"，$w劃了一個半月弧形，洒出點點銀光，飛向$n的$l",
+([        "action": "$N一式" +(order[random(13)])+"「明月羌笛」"NOR"，$w劃了一個半月弧形，灑出點點銀光，飛向$n的$l",
         "lvl" : 160,
         "skill_name" : "明月羌笛"
 ]),
@@ -58,11 +58,11 @@ mapping *action = ({
         "lvl" : 180,
         "skill_name" : "梅雪爭春"
 ]),
-([        "action": "$N手中$w甩出，一招" +(order[random(13)])+"「鶴飛九天」"NOR"，在空中盤旋回饒，如閃電般向$n刺出九九\n八十一劍，然後飛回$N手中",
+([        "action": "$N手中$w甩出，一招" +(order[random(13)])+"「鶴飛九天」"NOR"，在空中盤旋迴饒，如閃電般向$n刺出九九\n八十一劍，然後飛回$N手中",
         "lvl" : 190,
         "skill_name" : "鶴飛九天"
 ]),
-([        "action": "$N長嘯一聲，身法加快，一招"+(order[random(13)])+"「暗影浮香」"NOR"，$w如梅幹彎彎遞出，$n正驚疑間，\n劍上突然豪光綻放,道道劍氣向$n籠罩而去",
+([        "action": "$N長嘯一聲，身法加快，一招"+(order[random(13)])+"「暗影浮香」"NOR"，$w如梅乾彎彎遞出，$n正驚疑間，\n劍上突然豪光綻放,道道劍氣向$n籠罩而去",
         "lvl" : 200,
         "skill_name" : "暗影浮香"
 ]),

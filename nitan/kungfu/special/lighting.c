@@ -7,9 +7,9 @@
 inherit F_CLEAN_UP;
 inherit F_SSERVER;
 
-string name() { return HIW "□□□□" NOR; }
+string name() { return HIW "連鎖閃電" NOR; }
 
-#define LIGHTING "「" HIW "□□□□" NOR "」"
+#define LIGHTING "「" HIW "連鎖閃電" NOR "」"
 
 int perform(object me, object target)
 {
@@ -29,10 +29,10 @@ int perform(object me, object target)
                 return notify_fail("你打算對誰施展" LIGHTING  "？\n");
 
         if (! living(target))
-                return notify_fail("對方都已經這樣了，用不著這麼費力吧？\n");
+                return notify_fail("對方都已經這樣了，用不着這麼費力吧？\n");
 
-        msg = WHT "$N" WHT "施展法□「" HIW "□□□□" NOR +
-              WHT "」，高□念□道：比迪姆﹒□特蒙﹒泰裡阿普﹒埃控。\n" NOR;
+        msg = WHT "$N" WHT "施展法術「" HIW "連鎖閃電" NOR +
+              WHT "」，高聲念誦道：比迪姆·亞特蒙·泰裏阿普·埃控。\n" NOR;
 
         me->start_busy(1);
 
@@ -43,12 +43,12 @@ int perform(object me, object target)
                 target->receive_wound("qi", damage, me);
                 target->receive_wound("jing", damage / 2, me);
 
-                msg += HIW "霎□只□□道□□□天而降，□□劈在$n"
-                       HIW "身上，直劈得$n" HIW "七□生□、血肉四□。\n" NOR;
+                msg += HIW "霎時只見數道閃電從天而降，盡數劈在$n"
+                       HIW "身上，直劈得$n" HIW "七竅生煙、血肉四濺。\n" NOR;
         } else
         {
-                msg += HIW "霎□只□□道□□□天而降，□□劈在$n"
-                       HIW "身上，青□散□，$n" HIW "□是一□事情也□有。\n" NOR;
+                msg += HIW "霎時只見數道閃電從天而降，盡數劈在$n"
+                       HIW "身上，青煙散過，$n" HIW "卻是一點事情也沒有。\n" NOR;
         }
         message_combatd(msg, me, target);
         me->want_kill(target);

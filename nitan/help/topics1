@@ -1,66 +1,66 @@
-                      $HIW$ 【本遊戲的說明文件】$NOR$
+                      $HIW$ 【本遊戲的説明文件】$NOR$
 
-$GRN$ 以下是說明文件，你可以用 $NOR$ $HIY$help$NOR$ $HIR$<主題>$NOR$ $GRN$ 得到更進一步的說明。$NOR$
-$YEL$□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□$NOR$
-$YEL$□$NOR$$HIW$$BBLU$                               【遊戲概況】                           $NOR$$YEL$□$NOR$
-$YEL$□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□$NOR$
-$YEL$□$NOR$$HIY$□feature    □  泥潭與其他俠客行類ＭＵＤ的不同之處。$NOR$                 $YEL$□$NOR$
-$YEL$□$NOR$$HIY$□skills     □  泥潭武功的說明，練功者務必先看再練。$NOR$                 $YEL$□$NOR$
-$YEL$□$NOR$$HIY$□poison     □  泥潭毒功技能的說明。$NOR$                                 $YEL$□$NOR$
-$YEL$□$NOR$$HIY$□family     □  泥潭門派特點的介紹。$NOR$                                 $YEL$□$NOR$
-$YEL$□$NOR$$HIY$□mysql.2    □  泥潭採用的數據庫系統及支持同步和漫遊說明。$NOR$           $YEL$□$NOR$
-$YEL$□$NOR$$HIY$□faq        □  泥潭常見問題之解答。$NOR$                                 $YEL$□$NOR$
-$YEL$□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□$NOR$
-$YEL$□$NOR$$HIW$$BBLU$                               【遊戲指令】                           $NOR$$YEL$□$NOR$
-$YEL$□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□$NOR$
-$YEL$□$NOR$$GRN$□cmds       □  常用指令              □cmdtalk    □  聊天命令      $NOR$$YEL$□$NOR$
-$YEL$□$NOR$$GRN$□cmdaction  □  冒險命令              □cmdsystem  □  系統命令      $NOR$$YEL$□$NOR$
-$YEL$□$NOR$$GRN$□cmdskill   □  武功命令              □cmdspecial □  特殊命令      $NOR$$YEL$□$NOR$
-$YEL$□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□$NOR$
-$YEL$□$NOR$$HIW$$BBLU$                               【遊戲介紹】                           $NOR$$YEL$□$NOR$
-$YEL$□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□$NOR$
-$YEL$□$NOR$$GRN$□intro      □  遊戲說明              □newbie     □  新手指南      $NOR$$YEL$□$NOR$
-$YEL$□$NOR$$GRN$□rules      □  玩家規則              □wiz_rules  □  巫師規則      $NOR$$YEL$□$NOR$
-$YEL$□$NOR$$GRN$□maps       □  遊戲地圖              □transport  □  交通工具      $NOR$$YEL$□$NOR$
-$YEL$□$NOR$$GRN$□settings   □  環境設置              □channels   □  聊天頻道      $NOR$$YEL$□$NOR$
-$YEL$□$NOR$$GRN$□room       □  住房系統              □backup     □  備份系統      $NOR$$YEL$□$NOR$
-$YEL$□$NOR$$GRN$□combat     □  戰鬥系統              □jieti      □  天魔解體      $NOR$$YEL$□$NOR$
-$YEL$□$NOR$$GRN$□weapon     □  煉制武器              □$HIR$beast$NOR$$GRN$      □  幻獸說明      $NOR$$YEL$□$NOR$
-$YEL$□$NOR$$GRN$□marry      □  婚姻說明              □baby       □  生兒育女      $NOR$$YEL$□$NOR$
-$YEL$□$NOR$$GRN$□league.2   □  結義聯盟              □hunting    □  狩獵說明      $NOR$$YEL$□$NOR$
-$YEL$□$NOR$$GRN$□bunch.2    □  幫派系統              □trade      □  商業系統      $NOR$$YEL$□$NOR$
-$YEL$□$NOR$$GRN$□leitai     □  演武系統              □closed     □  閉關說明      $NOR$$YEL$□$NOR$
-$YEL$□$NOR$$GRN$□$HIR$meskills$NOR$$GRN$   □  自創武功              □schedule   □  計劃說明      $NOR$$YEL$□$NOR$
-$YEL$□$NOR$$GRN$□allskill   □  鳥瞰天賦              □enchase    □  鑲嵌系統      $NOR$$YEL$□$NOR$
-$YEL$□$NOR$$GRN$□rune       □  神符物語                                             $NOR$$YEL$□$NOR$
-$YEL$□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□$NOR$
-$YEL$□$NOR$$HIW$$BBLU$                               【任務說明】                           $NOR$$YEL$□$NOR$
-$YEL$□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□$NOR$
-$YEL$□$NOR$$GRN$□work       □  簡單任務              □free_quest □  自由任務      $NOR$$YEL$□$NOR$ 
-$YEL$□$NOR$$GRN$□quest      □  門派任務              □party_quest□  幫派任務      $NOR$$YEL$□$NOR$
-$YEL$□$NOR$$GRN$□ultra_quest□  宗師任務              □group_quest□  群組任務      $NOR$$YEL$□$NOR$
-$YEL$□$NOR$$GRN$□challenge  □  挑戰任務              □kingwar    □  王朝戰爭      $NOR$$YEL$□$NOR$
-$YEL$□$NOR$$GRN$□tasks      □  使命任務              □maze       □  副本任務      $NOR$$YEL$□$NOR$
-$YEL$□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□$NOR$
-$YEL$□$NOR$$HIW$$BBLU$                               【門派介紹】                           $NOR$$YEL$□$NOR$
-$YEL$□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□$NOR$
-$YEL$□$NOR$$GRN$□shaolin    □  少 林 派              □wudang     □  武 當 派      $NOR$$YEL$□$NOR$
-$YEL$□$NOR$$GRN$□emei       □  峨 嵋 派              □huashan    □  華 山 派      $NOR$$YEL$□$NOR$
-$YEL$□$NOR$$GRN$□gaibang    □  丐    幫              □taohua     □  桃 花 島      $NOR$$YEL$□$NOR$
-$YEL$□$NOR$$GRN$□xingxiu    □  星 宿 派              □xiaoyao    □  逍 遙 派      $NOR$$YEL$□$NOR$
-$YEL$□$NOR$$GRN$□gumu       □  古 墓 派              □quanzhen   □  全 真 教      $NOR$$YEL$□$NOR$
-$YEL$□$NOR$$GRN$□shenlong   □  神 龍 教              □xuedao     □  血 刀 門      $NOR$$YEL$□$NOR$
-$YEL$□$NOR$$GRN$□mingjiao   □  明    教              □xueshan    □  大 輪 寺      $NOR$$YEL$□$NOR$
-$YEL$□$NOR$$GRN$□lingjiu    □  靈 鷲 宮              □riyue      □  日月神教      $NOR$$YEL$□$NOR$
-$YEL$□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□$NOR$
-$YEL$□$NOR$$HIW$$BBLU$                               【世家介紹】                           $NOR$$YEL$□$NOR$
-$YEL$□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□$NOR$
-$YEL$□$NOR$$GRN$□ouyang     □  歐陽世家              □hujia      □  關外胡家      $NOR$$YEL$□$NOR$
-$YEL$□$NOR$$GRN$□murong     □  慕容世家              □duanshi    □  段氏皇族      $NOR$$YEL$□$NOR$
-$YEL$□$NOR$$GRN$□tangmen    □  唐門世家                                             $NOR$$YEL$□$NOR$
-$YEL$□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□$NOR$
-$YEL$□$NOR$$HIW$$BBLU$                               【附屬遊戲】                           $NOR$$YEL$□$NOR$
-$YEL$□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□$NOR$
-$YEL$□$NOR$$GRN$□pig_cmds   □  拱豬命令              □pig_rules  □  拱豬規則      $NOR$$YEL$□$NOR$
-$YEL$□$NOR$$GRN$□huanjing   □  幻境2003              □hanghai    □  航海時代      $NOR$$YEL$□$NOR$
-$YEL$□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□$NOR$
+$GRN$ 以下是説明文件，你可以用 $NOR$ $HIY$help$NOR$ $HIR$<主題>$NOR$ $GRN$ 得到更進一步的説明。$NOR$
+$YEL$┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓$NOR$
+$YEL$┃$NOR$$HIW$$BBLU$                               【遊戲概況】                           $NOR$$YEL$┃$NOR$
+$YEL$┣━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┫$NOR$
+$YEL$┃$NOR$$HIY$〖feature    〗  泥潭與其他俠客行類ＭＵＤ的不同之處。$NOR$                 $YEL$┃$NOR$
+$YEL$┃$NOR$$HIY$〖skills     〗  泥潭武功的説明，練功者務必先看再練。$NOR$                 $YEL$┃$NOR$
+$YEL$┃$NOR$$HIY$〖poison     〗  泥潭毒功技能的説明。$NOR$                                 $YEL$┃$NOR$
+$YEL$┃$NOR$$HIY$〖family     〗  泥潭門派特點的介紹。$NOR$                                 $YEL$┃$NOR$
+$YEL$┃$NOR$$HIY$〖mysql.2    〗  泥潭採用的數據庫系統及支持同步和漫遊説明。$NOR$           $YEL$┃$NOR$
+$YEL$┃$NOR$$HIY$〖faq        〗  泥潭常見問題之解答。$NOR$                                 $YEL$┃$NOR$
+$YEL$┣━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┫$NOR$
+$YEL$┃$NOR$$HIW$$BBLU$                               【遊戲指令】                           $NOR$$YEL$┃$NOR$
+$YEL$┣━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┫$NOR$
+$YEL$┃$NOR$$GRN$〖cmds       〗  常用指令              〖cmdtalk    〗  聊天命令      $NOR$$YEL$┃$NOR$
+$YEL$┃$NOR$$GRN$〖cmdaction  〗  冒險命令              〖cmdsystem  〗  系統命令      $NOR$$YEL$┃$NOR$
+$YEL$┃$NOR$$GRN$〖cmdskill   〗  武功命令              〖cmdspecial 〗  特殊命令      $NOR$$YEL$┃$NOR$
+$YEL$┣━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┫$NOR$
+$YEL$┃$NOR$$HIW$$BBLU$                               【遊戲介紹】                           $NOR$$YEL$┃$NOR$
+$YEL$┣━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┫$NOR$
+$YEL$┃$NOR$$GRN$〖intro      〗  遊戲説明              〖newbie     〗  新手指南      $NOR$$YEL$┃$NOR$
+$YEL$┃$NOR$$GRN$〖rules      〗  玩家規則              〖wiz_rules  〗  巫師規則      $NOR$$YEL$┃$NOR$
+$YEL$┃$NOR$$GRN$〖maps       〗  遊戲地圖              〖transport  〗  交通工具      $NOR$$YEL$┃$NOR$
+$YEL$┃$NOR$$GRN$〖settings   〗  環境設置              〖channels   〗  聊天頻道      $NOR$$YEL$┃$NOR$
+$YEL$┃$NOR$$GRN$〖room       〗  住房系統              〖backup     〗  備份系統      $NOR$$YEL$┃$NOR$
+$YEL$┃$NOR$$GRN$〖combat     〗  戰鬥系統              〖jieti      〗  天魔解體      $NOR$$YEL$┃$NOR$
+$YEL$┃$NOR$$GRN$〖weapon     〗  煉製武器              〖$HIR$beast$NOR$$GRN$      〗  幻獸説明      $NOR$$YEL$┃$NOR$
+$YEL$┃$NOR$$GRN$〖marry      〗  婚姻説明              〖baby       〗  生兒育女      $NOR$$YEL$┃$NOR$
+$YEL$┃$NOR$$GRN$〖league.2   〗  結義聯盟              〖hunting    〗  狩獵説明      $NOR$$YEL$┃$NOR$
+$YEL$┃$NOR$$GRN$〖bunch.2    〗  幫派系統              〖trade      〗  商業系統      $NOR$$YEL$┃$NOR$
+$YEL$┃$NOR$$GRN$〖leitai     〗  演武系統              〖closed     〗  閉關説明      $NOR$$YEL$┃$NOR$
+$YEL$┃$NOR$$GRN$〖$HIR$meskills$NOR$$GRN$   〗  自創武功              〖schedule   〗  計劃説明      $NOR$$YEL$┃$NOR$
+$YEL$┃$NOR$$GRN$〖allskill   〗  鳥瞰天賦              〖enchase    〗  鑲嵌系統      $NOR$$YEL$┃$NOR$
+$YEL$┃$NOR$$GRN$〖rune       〗  神符物語                                             $NOR$$YEL$┃$NOR$
+$YEL$┣━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┫$NOR$
+$YEL$┃$NOR$$HIW$$BBLU$                               【任務説明】                           $NOR$$YEL$┃$NOR$
+$YEL$┣━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┫$NOR$
+$YEL$┃$NOR$$GRN$〖work       〗  簡單任務              〖free_quest 〗  自由任務      $NOR$$YEL$┃$NOR$ 
+$YEL$┃$NOR$$GRN$〖quest      〗  門派任務              〖party_quest〗  幫派任務      $NOR$$YEL$┃$NOR$
+$YEL$┃$NOR$$GRN$〖ultra_quest〗  宗師任務              〖group_quest〗  羣組任務      $NOR$$YEL$┃$NOR$
+$YEL$┃$NOR$$GRN$〖challenge  〗  挑戰任務              〖kingwar    〗  王朝戰爭      $NOR$$YEL$┃$NOR$
+$YEL$┃$NOR$$GRN$〖tasks      〗  使命任務              〖maze       〗  副本任務      $NOR$$YEL$┃$NOR$
+$YEL$┣━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┫$NOR$
+$YEL$┃$NOR$$HIW$$BBLU$                               【門派介紹】                           $NOR$$YEL$┃$NOR$
+$YEL$┣━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┫$NOR$
+$YEL$┃$NOR$$GRN$〖shaolin    〗  少 林 派              〖wudang     〗  武 當 派      $NOR$$YEL$┃$NOR$
+$YEL$┃$NOR$$GRN$〖emei       〗  峨 嵋 派              〖huashan    〗  華 山 派      $NOR$$YEL$┃$NOR$
+$YEL$┃$NOR$$GRN$〖gaibang    〗  丐    幫              〖taohua     〗  桃 花 島      $NOR$$YEL$┃$NOR$
+$YEL$┃$NOR$$GRN$〖xingxiu    〗  星 宿 派              〖xiaoyao    〗  逍 遙 派      $NOR$$YEL$┃$NOR$
+$YEL$┃$NOR$$GRN$〖gumu       〗  古 墓 派              〖quanzhen   〗  全 真 教      $NOR$$YEL$┃$NOR$
+$YEL$┃$NOR$$GRN$〖shenlong   〗  神 龍 教              〖xuedao     〗  血 刀 門      $NOR$$YEL$┃$NOR$
+$YEL$┃$NOR$$GRN$〖mingjiao   〗  明    教              〖xueshan    〗  大 輪 寺      $NOR$$YEL$┃$NOR$
+$YEL$┃$NOR$$GRN$〖lingjiu    〗  靈 鷲 宮              〖riyue      〗  日月神教      $NOR$$YEL$┃$NOR$
+$YEL$┣━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┫$NOR$
+$YEL$┃$NOR$$HIW$$BBLU$                               【世家介紹】                           $NOR$$YEL$┃$NOR$
+$YEL$┣━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┫$NOR$
+$YEL$┃$NOR$$GRN$〖ouyang     〗  歐陽世家              〖hujia      〗  關外胡家      $NOR$$YEL$┃$NOR$
+$YEL$┃$NOR$$GRN$〖murong     〗  慕容世家              〖duanshi    〗  段氏皇族      $NOR$$YEL$┃$NOR$
+$YEL$┃$NOR$$GRN$〖tangmen    〗  唐門世家                                             $NOR$$YEL$┃$NOR$
+$YEL$┣━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┫$NOR$
+$YEL$┃$NOR$$HIW$$BBLU$                               【附屬遊戲】                           $NOR$$YEL$┃$NOR$
+$YEL$┣━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┫$NOR$
+$YEL$┃$NOR$$GRN$〖pig_cmds   〗  拱豬命令              〖pig_rules  〗  拱豬規則      $NOR$$YEL$┃$NOR$
+$YEL$┃$NOR$$GRN$〖huanjing   〗  幻境2003              〖hanghai    〗  航海時代      $NOR$$YEL$┃$NOR$
+$YEL$┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛$NOR$

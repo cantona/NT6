@@ -19,7 +19,7 @@ int main(object me, string arg)
         seteuid(getuid());
 
         if (! VERSION_D->is_release_server())
-                return notify_fail("只有版本發布站點才能修改表情動詞。\n");
+                return notify_fail("只有版本發佈站點才能修改表情動詞。\n");
 
         if (! arg || sscanf(arg, "%s %s", from, to) != 2)
                 return help(me);
@@ -37,7 +37,7 @@ int main(object me, string arg)
                 toemote[ks[i]] = emote[ks[i]];
 
         EMOTE_D->set_emote(to, toemote);
-        printf("表情動詞(%s)復制到了(%s)。\n", from, to);
+        printf("表情動詞(%s)複製到了(%s)。\n", from, to);
         return 1;
 }
 
@@ -46,11 +46,11 @@ int help(object me)
         write(@HELP
 指令格式 : cpemote <from> <to>
 
-這個命令將原名為 <from> 的表情動詞復制成為名字為 <to> 的新表
+這個命令將原名為 <from> 的表情動詞複製成為名字為 <to> 的新表
 情動詞。注意：原先必須不能存在名為 <to> 的表情動詞，該操作不
 能覆蓋原先已經存在的表情動詞。
 
-由于表情動詞會在版本同步時更新，因此只有版本發布站點才能夠使
+由於表情動詞會在版本同步時更新，因此只有版本發佈站點才能夠使
 用這個命令。
 
 see also：edemote、rnemote

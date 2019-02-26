@@ -8,9 +8,9 @@ void create()
         object con, item;
         set("short", "精舍前");
         set("long", @LONG
-此處一片空曠，淺草如茵，整齊如剪。一片新綠之上，羅列著十
+此處一片空曠，淺草如茵，整齊如剪。一片新綠之上，羅列着十
 數件白玉色的琴幾，玉墩，棋案之屬。紅塵間的煙火喧嚷，似乎早以
-被群山所阻。
+被羣山所阻。
 LONG );
         set("exits", ([ /* sizeof() == 4 */
                 "eastup" : __DIR__"gu2",

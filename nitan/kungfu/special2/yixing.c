@@ -22,7 +22,7 @@ int perform(object me, string skill)
         if (! me->is_fighting())
                 return notify_fail("你又不是在打架，沒事自言自語幹什麼？\n");
 
-        message_vision(HIM "$N" HIM "情急生智，對著$n" HIM
+        message_vision(HIM "$N" HIM "情急生智，對着$n" HIM
                        "滔滔不絕，亂吹一通，當真是天花亂墜……遲疑間，你已施展出鬼魅般的身法逃之夭夭。\n",
                        me, target);
 

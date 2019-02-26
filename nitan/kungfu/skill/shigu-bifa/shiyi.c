@@ -44,10 +44,10 @@ int perform(object me, object target)
                 return notify_fail("你沒有激發石鼓打穴筆法，難以施展" SHIYI "。\n");
 
         if (! living(target))
-                return notify_fail("對方都已經這樣了，用不著這麼費力吧？\n");
+                return notify_fail("對方都已經這樣了，用不着這麼費力吧？\n");
 
         msg = HIW "$N" HIW "縱步上前，手中" + weapon->name() + HIW "大開大"
-              "合，招數連綿不絕，盪氣回腸，瞬間向$n" HIW "攻出數招！\n" NOR;
+              "合，招數連綿不絕，蕩氣迴腸，瞬間向$n" HIW "攻出數招！\n" NOR;
         message_combatd(msg, me, target);
         addn("neili", -80, me);
 

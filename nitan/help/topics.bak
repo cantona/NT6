@@ -1,32 +1,32 @@
 【遊戲概況介紹】
-$BLINK$$WHT$□feature    □$NOR$$BLINK$$HIY$ 遊戲亮點總匯  $NOR$$BLINK$$WHT$□member     □$NOR$$BLINK$$HIY$ 會員制度說明  $NOR$$WHT$□skills     □$NOR$$HIY$ 武功說明總匯$NOR$
-$WHT$□reborn     □$NOR$$HIY$ 轉世重生綜述  $NOR$$WHT$□weapon     □$NOR$$HIY$ 煉制武器說明  $NOR$$WHT$□enchase    □$NOR$$HIY$ 鑲嵌系統說明$NOR$
-$WHT$□module_eq  □$NOR$$HIY$ 套裝系統說明  $NOR$$WHT$□myskill    □$NOR$$HIY$ 自創武功說明  $NOR$$WHT$□combatd    □$NOR$$HIY$ 戰鬥系統詳析$NOR$
-$WHT$□random_eq  □$NOR$$HIY$ 動態裝備系統  $NOR$$WHT$□skill_mix  □$NOR$$HIY$ 技能組合特效  $NOR$
+$BLINK$$WHT$〖feature    〗$NOR$$BLINK$$HIY$ 遊戲亮點總彙  $NOR$$BLINK$$WHT$〖member     〗$NOR$$BLINK$$HIY$ 會員制度説明  $NOR$$WHT$〖skills     〗$NOR$$HIY$ 武功説明總彙$NOR$
+$WHT$〖reborn     〗$NOR$$HIY$ 轉世重生綜述  $NOR$$WHT$〖weapon     〗$NOR$$HIY$ 煉製武器説明  $NOR$$WHT$〖enchase    〗$NOR$$HIY$ 鑲嵌系統説明$NOR$
+$WHT$〖module_eq  〗$NOR$$HIY$ 套裝系統説明  $NOR$$WHT$〖myskill    〗$NOR$$HIY$ 自創武功説明  $NOR$$WHT$〖combatd    〗$NOR$$HIY$ 戰鬥系統詳析$NOR$
+$WHT$〖random_eq  〗$NOR$$HIY$ 動態裝備系統  $NOR$$WHT$〖skill_mix  〗$NOR$$HIY$ 技能組合特效  $NOR$
 
-$WHT$□intro      □$NOR$ 泥潭總體簡介  $NOR$$WHT$□cmds       □$NOR$ 泥潭常用指令  $NOR$$WHT$□maps       □$NOR$ 泥潭地圖總冊
-$WHT$□schedule   □$NOR$ 計劃練功說明  $NOR$$WHT$□poison     □$NOR$ 泥潭毒功說明  $NOR$$WHT$□closed     □$NOR$ 宗師閉關說明
-$WHT$□event      □$NOR$ 特殊事件說明  $NOR$$WHT$□league.2   □$NOR$ 結義聯盟說明  $NOR$$WHT$□bunch.2    □$NOR$ 幫派系統說明
-$WHT$□trade      □$NOR$ 商業系統說明  $NOR$$WHT$□gift       □$NOR$ 天賦加權說明  $NOR$$WHT$□contest    □$NOR$ 演武系統說明
-$WHT$□marry      □$NOR$ 婚姻系統說明  $NOR$$WHT$□room       □$NOR$ 住房系統說明  $NOR$$WHT$□baby       □$NOR$ 生兒育女說明
-$WHT$□beast      □$NOR$ 幻獸系統介紹  $NOR$$WHT$□rules      □$NOR$ 玩家規則列表  $NOR$$WHT$□newbie     □$NOR$ 泥潭新手指南
-$WHT$□protect    □$NOR$ $HIC$死亡保護介紹$NOR$
+$WHT$〖intro      〗$NOR$ 泥潭總體簡介  $NOR$$WHT$〖cmds       〗$NOR$ 泥潭常用指令  $NOR$$WHT$〖maps       〗$NOR$ 泥潭地圖總冊
+$WHT$〖schedule   〗$NOR$ 計劃練功説明  $NOR$$WHT$〖poison     〗$NOR$ 泥潭毒功説明  $NOR$$WHT$〖closed     〗$NOR$ 宗師閉關説明
+$WHT$〖event      〗$NOR$ 特殊事件説明  $NOR$$WHT$〖league.2   〗$NOR$ 結義聯盟説明  $NOR$$WHT$〖bunch.2    〗$NOR$ 幫派系統説明
+$WHT$〖trade      〗$NOR$ 商業系統説明  $NOR$$WHT$〖gift       〗$NOR$ 天賦加權説明  $NOR$$WHT$〖contest    〗$NOR$ 演武系統説明
+$WHT$〖marry      〗$NOR$ 婚姻系統説明  $NOR$$WHT$〖room       〗$NOR$ 住房系統説明  $NOR$$WHT$〖baby       〗$NOR$ 生兒育女説明
+$WHT$〖beast      〗$NOR$ 幻獸系統介紹  $NOR$$WHT$〖rules      〗$NOR$ 玩家規則列表  $NOR$$WHT$〖newbie     〗$NOR$ 泥潭新手指南
+$WHT$〖protect    〗$NOR$ $HIC$死亡保護介紹$NOR$
 
-$WHT$□family     □$NOR$$HIY$ 江湖門派介紹  $NOR$$WHT$□fam_feature□$NOR$$HIY$ 門派特點介紹  $NOR$$WHT$□fam_stunt  □$NOR$$HIY$ 門派特技介紹$NOR$
-$WHT$□work       □$NOR$ 簡單工作介紹  $NOR$$WHT$□free_quest □$NOR$ 公眾任務介紹  $NOR$$WHT$□quest      □$NOR$ 門派任務介紹
-$WHT$□party_quest□$NOR$ 幫派任務介紹  $NOR$$WHT$□ultra_quest□$NOR$ 宗師任務介紹  $NOR$$WHT$□group_quest□$NOR$ 群組任務介紹
-$WHT$□kingwar    □$NOR$ 王朝戰爭介紹  $NOR$$WHT$□task       □$NOR$ 江湖使命介紹  $NOR$$WHT$□instance   □$NOR$$HIC$ 副本任務介紹$NOR$
-$WHT$□boss       □$NOR$$HIC$ 挑戰BOSS介紹$NOR$
+$WHT$〖family     〗$NOR$$HIY$ 江湖門派介紹  $NOR$$WHT$〖fam_feature〗$NOR$$HIY$ 門派特點介紹  $NOR$$WHT$〖fam_stunt  〗$NOR$$HIY$ 門派特技介紹$NOR$
+$WHT$〖work       〗$NOR$ 簡單工作介紹  $NOR$$WHT$〖free_quest 〗$NOR$ 公眾任務介紹  $NOR$$WHT$〖quest      〗$NOR$ 門派任務介紹
+$WHT$〖party_quest〗$NOR$ 幫派任務介紹  $NOR$$WHT$〖ultra_quest〗$NOR$ 宗師任務介紹  $NOR$$WHT$〖group_quest〗$NOR$ 羣組任務介紹
+$WHT$〖kingwar    〗$NOR$ 王朝戰爭介紹  $NOR$$WHT$〖task       〗$NOR$ 江湖使命介紹  $NOR$$WHT$〖instance   〗$NOR$$HIC$ 副本任務介紹$NOR$
+$WHT$〖boss       〗$NOR$$HIC$ 挑戰BOSS介紹$NOR$
 
-$WHT$□quest_step □$NOR$$HIR$ 任務流程介紹  $NOR$$WHT$□fam_skill  □$NOR$$HIR$ 門派技能解密  $NOR$$WHT$□pub_skill  □$NOR$$HIR$ 公共技能解密$NOR$
-$WHT$□skill_gift □$NOR$$HIR$ 技能天賦說明  $NOR$$WHT$□fam_gift   □$NOR$$HIR$ 門派天賦指南  $NOR$$WHT$□path       □$NOR$$HIR$ 泥潭路徑幫助  $NOR$
-$WHT$□add_gift   □$NOR$$HIR$ 加先天的迷題  $NOR$$WHT$□start      □$NOR$$HIR$ 王者新手指北  $NOR$$WHT$□continue   □$NOR$$HIR$ 王者新手進階  $NOR$
-$WHT$□advance    □$NOR$$HIR$ 王者新手深入  $NOR$$WHT$□wash_equip □$NOR$$HIR$ 老鳥裝備指南  $NOR$$WHT$□item       □$NOR$$HIR$ 物品功效一覽  $NOR$
+$WHT$〖quest_step 〗$NOR$$HIR$ 任務流程介紹  $NOR$$WHT$〖fam_skill  〗$NOR$$HIR$ 門派技能解密  $NOR$$WHT$〖pub_skill  〗$NOR$$HIR$ 公共技能解密$NOR$
+$WHT$〖skill_gift 〗$NOR$$HIR$ 技能天賦説明  $NOR$$WHT$〖fam_gift   〗$NOR$$HIR$ 門派天賦指南  $NOR$$WHT$〖path       〗$NOR$$HIR$ 泥潭路徑幫助  $NOR$
+$WHT$〖add_gift   〗$NOR$$HIR$ 加先天的迷題  $NOR$$WHT$〖start      〗$NOR$$HIR$ 王者新手指北  $NOR$$WHT$〖continue   〗$NOR$$HIR$ 王者新手進階  $NOR$
+$WHT$〖advance    〗$NOR$$HIR$ 王者新手深入  $NOR$$WHT$〖wash_equip 〗$NOR$$HIR$ 老鳥裝備指南  $NOR$$WHT$〖item       〗$NOR$$HIR$ 物品功效一覽  $NOR$
 
 【附屬遊戲介紹】
-$WHT$□pig_game   □$NOR$ 拱豬遊戲說明  $NOR$$WHT$□huanjing   □$NOR$ 幻境遊戲說明  $NOR$$WHT$□hanghai    □$NOR$ 航海時代說明
-$WHT$□sjszhuang  □$NOR$ 試劍山莊說明
+$WHT$〖pig_game   〗$NOR$ 拱豬遊戲説明  $NOR$$WHT$〖huanjing   〗$NOR$ 幻境遊戲説明  $NOR$$WHT$〖hanghai    〗$NOR$ 航海時代説明
+$WHT$〖sjszhuang  〗$NOR$ 試劍山莊説明
 
- 你可以用：$HIC$help $NOR$$HIR$<主題>$NOR$ 得到更進一步的說明，以上是說明文件的主題。
+ 你可以用：$HIC$help $NOR$$HIR$<主題>$NOR$ 得到更進一步的説明，以上是説明文件的主題。
  你可以用：$HIC$grep <help/news/all> 查找內容$NOR$ 搜索指定查找的內容的文件。
 

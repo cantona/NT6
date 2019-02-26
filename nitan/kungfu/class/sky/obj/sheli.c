@@ -16,8 +16,8 @@ void create()
                 set_default_object(__FILE__);
         else {
                 set("unit", "個");
-                set("long", CYN "一個渾圓的暗色球體，通體透明。這便是傳說\n"
-                            "中的魔教至寶──魔尊舍利。相傳其中蘊藏著\n"
+                set("long", CYN "一個渾圓的暗色球體，通體透明。這便是傳説\n"
+                            "中的魔教至寶——魔尊舍利。相傳其中藴藏着\n"
                             "無比巨大的能量，武功高強者可以吸取(xi)其\n"
                             "中的能量來增強功力。\n" NOR);
                 set("value", 1000000);
@@ -34,10 +34,10 @@ int do_eat(string arg)
                 return notify_fail("你要幹什麼？\n");
 
         if( me->is_busy() )
-                return notify_fail("你現在正忙著呢。\n");
+                return notify_fail("你現在正忙着呢。\n");
 
         if( me->query("power/魔尊舍利") )
-                return notify_fail("你已經吸取過一次了，恐怕不能再次經受能量的沖擊。\n");
+                return notify_fail("你已經吸取過一次了，恐怕不能再次經受能量的衝擊。\n");
 
         message_vision (HIY "\n$N" HIY "將雙手緊緊貼住魔尊舍利，"
                         "只見一股光芒從中透出，甚至可以看到能"
@@ -65,7 +65,7 @@ void xiqu2(string arg)
         object me = this_player();
 
         message_vision(HIY "\n幾許後，又一股光芒從$N" HIY "的身"
-                       "體裡流出，進入魔尊舍利……\n" NOR, me);
+                       "體裏流出，進入魔尊舍利……\n" NOR, me);
         remove_call_out("xiqu3");
         call_out("xiqu3", 4, me);
 }
@@ -111,7 +111,7 @@ void xiqu6(string arg)
 
         message_vision(HIW "\n只見$N" HIW "和舍利同時發出無"
                         "比耀眼的光華。剎那間空氣熾熱，幾欲"
-                        "沸騰，仿佛連天地都快被燒焦一般……\n" NOR, me);
+                        "沸騰，彷彿連天地都快被燒焦一般……\n" NOR, me);
         remove_call_out("xiqu7");
         call_out("xiqu7", 2, me);
 }
@@ -145,7 +145,7 @@ void xiqu7(string arg)
                 me->set("potential", me->query_potential_limit());
 
                 tell_object(me, HIY "你感到魔尊舍利中的能量源源不絕的流"
-                                "入了你的丹田，頓時有一陣說不出的舒服。\n"
+                                "入了你的丹田，頓時有一陣説不出的舒服。\n"
                                 NOR);
 
                 max = me->query("max_qi");
@@ -172,7 +172,7 @@ void xiqu7(string arg)
         } else
         {
                 message_vision(HIR "\n只聽$N" HIR "一聲慘叫，經受不住能"
-                               "量的沖擊，頓時全身筋脈盡斷，鮮血狂噴，身"
+                               "量的衝擊，頓時全身筋脈盡斷，鮮血狂噴，身"
                                "體被炸了個粉碎。\n" NOR, me);
                 me->set_temp("die_reason", "妄圖吸取魔尊舍利，結果全身筋脈盡斷而亡。");
                 me->die(); 

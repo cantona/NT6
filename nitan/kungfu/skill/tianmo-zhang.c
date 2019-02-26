@@ -24,7 +24,7 @@ mapping *action =({
         "skill_name" :"分身化影",
         "damage_type":"瘀傷"
 ]),
-([      "action":"$N左跨一步，右跨一步，瞬間來到$n的面前，一招「魔天穹剎」，雙掌內蘊真力，按向$n。",
+([      "action":"$N左跨一步，右跨一步，瞬間來到$n的面前，一招「魔天穹剎」，雙掌內藴真力，按向$n。",
         "force" :80,
         "attack":38,
         "parry" :80,
@@ -64,7 +64,7 @@ mapping *action =({
         "skill_name" :"魔影重重",
         "damage_type":"內傷"
 ]),
-([      "action":"$N使出「虛敲實應」，右掌上引，左掌由後而上，形成一股氣流沖向$n",
+([      "action":"$N使出「虛敲實應」，右掌上引，左掌由後而上，形成一股氣流衝向$n",
         "force" :180,
         "attack":100,
         "parry" :150,

@@ -1,4 +1,4 @@
-// 神話世界﹒西遊記﹒版本４．５０
+// 神話世界·西遊記·版本４．５０
 /* <SecCrypt CPL V3R05> */
  
 
@@ -21,7 +21,7 @@ void create()
 
   set("liquid", ([
         "type": "alcohol",
-        "name": "老白幹",
+        "name": "老白乾",
         "remaining": 15,
         "drunk_supply": 15,
       ]));

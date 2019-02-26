@@ -27,7 +27,7 @@ mapping *action = ({
         "damage": 220,
         "damage_type" : "刺傷"
 ]),
-([      "action": "$N手中$w光芒閃爍，在許許劍芒中遞出殺著，完全出自$n意料之外",
+([      "action": "$N手中$w光芒閃爍，在許許劍芒中遞出殺着，完全出自$n意料之外",
         "force" : 390,
         "attack": 168,
         "parry" : -193,

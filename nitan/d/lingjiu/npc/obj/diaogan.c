@@ -9,7 +9,7 @@ void create()
                 set_default_object(__FILE__);
         else {
                 set("unit", "根");
-                set("long", "這是一根樺木制的釣竿，制作得頗為奇特。\n");
+                set("long", "這是一根樺木製的釣竿，製作得頗為奇特。\n");
                 set("value", 50);
                 set("material", "steel");
                 set("wield_msg", "$N抽出一根$n握在手中。\n");

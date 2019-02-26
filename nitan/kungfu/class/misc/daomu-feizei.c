@@ -11,7 +11,7 @@ void death_msg();
 void create()
 {
         set_name(HIM "盜墓飛賊" NOR, ({ "daomu feizei", "daomu", "feizei" }) );
-        set("title", HIC "「神秘人」" NOR);
+        set("title", HIC "「神祕人」" NOR);
         set("gender", random(2) == 1 ? "男性" : "女性");
         set("age", 25);
         set("long", @LONG
@@ -155,14 +155,14 @@ void death_msg()
         {
                 command("chat* grin");
                 command("chat 想抓我沒那麼容易，後會無期...！");
-                CHANNEL_D->do_channel(this_object(), "rumor", "聽說" + name() + HIM "從古墓中盜得珍寶後，奪路而逃。" NOR);
+                CHANNEL_D->do_channel(this_object(), "rumor", "聽説" + name() + HIM "從古墓中盜得珍寶後，奪路而逃。" NOR);
         }
         else
         {
                 message_vision(HIG "猛然間，$N " HIG " 向後一跳，隨手仍出一顆黑色小丸，頓時騰起一片煙霧 ...\n" NOR,
                                this_object());
                 command("chat 哼，雕蟲小技，不陪你們玩了，告辭！");
-                CHANNEL_D->do_channel(this_object(), "rumor", "聽說" + name() + HIM "從古墓中盜得珍寶後，奪路而逃。" NOR);
+                CHANNEL_D->do_channel(this_object(), "rumor", "聽説" + name() + HIM "從古墓中盜得珍寶後，奪路而逃。" NOR);
         }
 }
 
@@ -186,7 +186,7 @@ void die(object killer)
                 if( query("qi") > query("max_qi") ) set("qi", query("max_qi"));
                 addn("eff_qi", query("max_qi") / 10);
                 if( query("eff_qi") > query("max_qi") ) set("eff_qi", query("max_qi"));
-                message_vision(HIR "\n$N" HIR "大喝一聲，運用秘法，氣血有所回升！\n\n" NOR, this_object());
+                message_vision(HIR "\n$N" HIR "大喝一聲，運用祕法，氣血有所回升！\n\n" NOR, this_object());
                 return;
         }
 

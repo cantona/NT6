@@ -35,11 +35,11 @@ int perform(object me, object target)
                 return notify_fail("你沒有激發倚天劍法，無法施展" + name() + "。\n");
 
         if (! living(target))
-               return notify_fail("對方都已經這樣了，用不著這麼費力吧？\n");
+               return notify_fail("對方都已經這樣了，用不着這麼費力吧？\n");
 
         msg = HIW "$N" HIW "一聲冷哼，手中" + weapon->name() +
-              HIW "一振，劍身微顫，聲若龍吟，劍光攜著數個劍花"
-              "同時洒向$n" HIW "。\n" NOR;
+              HIW "一振，劍身微顫，聲若龍吟，劍光攜着數個劍花"
+              "同時灑向$n" HIW "。\n" NOR;
 
         addn("neili", -150, me);
         ap = attack_power(me, "sword");

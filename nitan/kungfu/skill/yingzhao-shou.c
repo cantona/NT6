@@ -1,7 +1,7 @@
 inherit SKILL;
 
 mapping *action = ({
-([      "action": "在呼呼風聲中，$N使一招「蒼鷹襲兔」，雙手如鉤如戢，插向$n的$l",
+([      "action": "在呼呼風聲中，$N使一招「蒼鷹襲兔」，雙手如鈎如戢，插向$n的$l",
         "force" : 60,
         "dodge" : 17,
         "parry" : 1,
@@ -43,7 +43,7 @@ mapping *action = ({
         "damage": 9,
         "damage_type" : "抓傷"
 ]),
-([      "action": "$N使出「鷹揚萬裡」，雙爪如狂風驟雨般對準$n的$l連續抓出",
+([      "action": "$N使出「鷹揚萬里」，雙爪如狂風驟雨般對準$n的$l連續抓出",
         "force" : 151,
         "dodge" : 58,
         "parry" : 38,
@@ -86,7 +86,7 @@ mapping query_action(object me, object weapon)
 int practice_skill(object me)
 {
         if( query("qi", me)<100 )
-                return notify_fail("你現在手足酸軟，休息一下再練吧。\n");
+                return notify_fail("你現在手足痠軟，休息一下再練吧。\n");
 
         if( query("neili", me)<80 )
                 return notify_fail("你的內力不夠了。\n");

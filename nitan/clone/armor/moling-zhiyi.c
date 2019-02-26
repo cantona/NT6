@@ -8,7 +8,7 @@ void create()
 {
         set_name(HIG "魔靈之翼" NOR, ({ "moling zhiyi", "moling", "zhiyi" }) );
         set_weight(2000);
-        set("long", HIG "這是一件形似傳說中怪鳥羽翼般的披風，看起來盛氣逼人。\n" NOR);
+        set("long", HIG "這是一件形似傳説中怪鳥羽翼般的披風，看起來盛氣逼人。\n" NOR);
         if( clonep() )
                 set_default_object(__FILE__);
         else {

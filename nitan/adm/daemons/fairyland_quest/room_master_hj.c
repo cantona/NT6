@@ -15,7 +15,7 @@ inherit ROOM;
 // 道具及NPC列表
 
 #include    "npc_obj/hj_settings/room_amount_hj.h"
-// 隨機發放物品時，需要用到這裡面一個變量 幻境總房間數 HJ_ROOM_AMOUNT
+// 隨機發放物品時，需要用到這裏面一個變量 幻境總房間數 HJ_ROOM_AMOUNT
 
 int is_gameing = 0;
 // 遊戲當前狀態，即“未啟動”
@@ -36,7 +36,7 @@ int is_gameing = 0;
 // 每隔一段時間沒有新玩家進入 hj，那麼有必要補充一些物品以防止冷場。
 #define        ROUND_DISPERSION_AMOUNT_MIN      30
 #define        ROUND_DISPERSION_AMOUNT_RANDOM   10
-// 補充的數量范圍是 MIN + random( RANDOM )
+// 補充的數量範圍是 MIN + random( RANDOM )
 
 
 int dispersion( object me );
@@ -52,7 +52,7 @@ void c_msg( string msg )
     naihe = find_player( "naihe" );
     if( !naihe || !userp(naihe) || query("env/no_hj_wizmsg", naihe) )
         CHANNEL_D->do_channel( this_object(), "sys", YEL+ msg + NOR);
-    else tell_object( naihe, HIR"□幻境系統通知□："+msg + "\n"NOR );
+    else tell_object( naihe, HIR"〖幻境系統通知〗："+msg + "\n"NOR );
 }
 
 void create()
@@ -85,7 +85,7 @@ void init()
 
 int do_nocmds()
 {
-    write("這裡禁止使用這個指令。\n");
+    write("這裏禁止使用這個指令。\n");
     return 1;
 }
 
@@ -103,10 +103,10 @@ int valid_leave(object me, string dir)
             return notify_fail("豬頭不得入內。\n");
 
         //if( !me->query_temp("enter_hj") )
-            //return notify_fail("請從幻境正門進入這裡，才可以繼續進入下一個地方！\n");
+            //return notify_fail("請從幻境正門進入這裏，才可以繼續進入下一個地方！\n");
 
         // 允許進入
-        // 如果遊戲未啟動，啟動它，並發放物件
+        // 如果遊戲未啟動，啟動它，併發放物件
         if( !is_gameing )
         {
             remove_call_out("start_game");
@@ -169,7 +169,7 @@ int do_mewiz(string arg)
         write("
 可使用之強制指令：
 
-<mewiz dispersion>      隨機派發 50 -60 個隨機物品至所有隨機房間裡
+<mewiz dispersion>      隨機派發 50 -60 個隨機物品至所有隨機房間裏
                             本指令只能在 is_gameing 狀態(遊戲啟動中) 才可以使用。
 <mewiz del_all>         強制清除所有 幻境 所有房間內存在的物件（玩家除外）
                             本指令將直接更改遊戲狀態為 !is_gameing 。
@@ -215,7 +215,7 @@ void start_game()
 
     times = 50+random(21);
 
-    c_msg( "幻境遊戲自動啟動！正在清除殘余境內物件……" );
+    c_msg( "幻境遊戲自動啟動！正在清除殘餘境內物件……" );
     remove_call_out("clean_hj");
     clean_hj();
     c_msg( "幻境遊戲自動啟動！正在給境內地點發放各類道具或人物(共"+times+"件)……");
@@ -242,7 +242,7 @@ void reset_game()
 }
 
 
-// 這個函數用于不斷地往幻境裡添加 quest 型 npc
+// 這個函數用於不斷地往幻境裏添加 quest 型 npc
 void random_dispersion_questnpc()
 {
     if( !is_gameing ) return;
@@ -253,7 +253,7 @@ void random_dispersion_questnpc()
 }
 
 
-// 這個函數用于不斷地往幻境裡添加殺戮型NPC
+// 這個函數用於不斷地往幻境裏添加殺戮型NPC
 void random_dispersion_killer()
 {
     if( !is_gameing ) return;
@@ -281,11 +281,11 @@ void random_dispersion_to_hj( string *dis_list, int times )
         rs = find_object( r );
         if( !rs ) rs = load_object( r );
 
-        // 這裡不進行 file_size 的判斷。
+        // 這裏不進行 file_size 的判斷。
         obj=new( dis_list[random(sizeof(dis_list))] );
         obj->move(rs);
         if( query("msg", obj))msg=query("msg", obj);
-        else msg="忽然一小陣輕煙掠過……這裡似乎多了一些什麼。\n";
+        else msg="忽然一小陣輕煙掠過……這裏似乎多了一些什麼。\n";
         tell_room( r ,msg);
     }
 

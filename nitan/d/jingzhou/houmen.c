@@ -4,7 +4,7 @@ void create()
 {
         set("short", "後門");
         set("long", @LONG
-這裡是關帝廟的後門，朝望北去，不遠處是一個小山坡。
+這裏是關帝廟的後門，朝望北去，不遠處是一個小山坡。
 LONG );
         set("exits", ([
                 "south" : __DIR__"houdian",

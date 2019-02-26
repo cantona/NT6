@@ -42,10 +42,10 @@ int perform(object me, object target)
                 return notify_fail("你現在真氣不足，難以施展" + name() + "。\n");
 
         if (! living(target))
-                return notify_fail("對方都已經這樣了，用不著這麼費力吧？\n");
+                return notify_fail("對方都已經這樣了，用不着這麼費力吧？\n");
 
         msg = HIM "$N" HIM "深深吸進一口氣，單手揮出，掌緣頓時霞光萬道，漾出"
-              "七色虹彩向$n" HIM "席卷而至。\n" NOR;
+              "七色虹彩向$n" HIM "席捲而至。\n" NOR;
 
         ap = attack_power(me, "hand") + me->query_skill("dodge");
         dp = defense_power(target, "parry") + target->query_skill("dodge");
@@ -98,7 +98,7 @@ int perform(object me, object target)
         } else
         {
                 msg += CYN "$p" CYN "見狀大驚失色，完全勘破不透$P"
-                       CYN "招中奧秘，當即飛身躍起丈許，躲閃開來。\n" NOR;
+                       CYN "招中奧祕，當即飛身躍起丈許，躲閃開來。\n" NOR;
                 addn("neili", -200, me);
                 me->start_busy(3);
         }

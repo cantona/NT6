@@ -27,7 +27,7 @@ int exert(object me, object target)
                 return notify_fail("你的靈元心法火候不夠，還不會使用「以柔破鋼」。\n");
 
         msg = HIC "$N" HIC "沉肩滑步，自丹田中升起一股陰柔之氣"
-              "順著血脈經絡傳至雙手勞宮穴，接著這股陰柔之氣就"
+              "順着血脈經絡傳至雙手勞宮穴，接着這股陰柔之氣就"
               "激射而出，噴向$n" HIC "手中的兵刃！\n" NOR;
         me->start_busy(2);
 

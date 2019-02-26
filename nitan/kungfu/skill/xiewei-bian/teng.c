@@ -33,7 +33,7 @@ int perform(object me, object target)
                 return notify_fail("你沒有激發蠍尾鞭，無法施展" + name() + "。\n");
 
         if (! living(target))
-                return notify_fail("對方都已經這樣了，用不著這麼費力吧？\n");
+                return notify_fail("對方都已經這樣了，用不着這麼費力吧？\n");
 
         msg = WHT "$N" WHT "陡然施展出「騰蛇」訣，手腕輕輕一抖，" + weapon->name() +
               WHT "頓時拔地彈起，如同活物一般悄然襲向$n" + WHT "！\n" NOR;

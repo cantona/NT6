@@ -42,17 +42,17 @@ int accept_object(object who, object ob)
 {
     if( query("combat_exp", who) >= 50000 )
     {
-        message_vision("老賬房望著$N說：你的武功應該歷練江湖才能再長進，不能埋沒在這裡了。\n", who);
+        message_vision("老賬房望着$N説：你的武功應該歷練江湖才能再長進，不能埋沒在這裏了。\n", who);
         return 0;
     }
     if( query("money_id", ob) && ob->value() >= 500 )
     {
         set_temp("marks/jinniu_paied", 1, who);
-        message_vision("老賬房對$N說：好！既然這位" + RANK_D->query_respect(who)
+        message_vision("老賬房對$N説：好！既然這位" + RANK_D->query_respect(who)
           + "如此上進，那就進去找師傅學吧！\n" , who);
                return 1;
     }
     else
-        message_vision("老賬房皺眉對$N說：您給的也太少了點兒吧？\n", who);
+        message_vision("老賬房皺眉對$N説：您給的也太少了點兒吧？\n", who);
         return 0;
 }

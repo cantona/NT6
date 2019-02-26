@@ -42,7 +42,7 @@ int perform(object me, object target)
                 return notify_fail("你現在真氣不夠，難以施展" ZHEN "。\n");
 
         if (! living(target))
-                return notify_fail("對方都已經這樣了，用不著這麼費力吧？\n");
+                return notify_fail("對方都已經這樣了，用不着這麼費力吧？\n");
 
         msg = HIW "陡然間$N" HIW "施出「" HIY "璞" HIW "」字訣，雙掌向$n"
               HIW "平平推去，招數樸實無華，毫無半點花巧可言。\n" NOR;  
@@ -63,7 +63,7 @@ int perform(object me, object target)
                        "輕易招架，當即飛身縱躍閃開。\n" NOR;
         }
 
-        msg += HIW "\n緊接著$N" HIW "變招「" HIY "真" HIW "」字訣，霎"
+        msg += HIW "\n緊接着$N" HIW "變招「" HIY "真" HIW "」字訣，霎"
                "時只見$N" HIW "雙掌紛飛，化出漫天掌影籠罩$n" HIW "四面"
                "八方。\n"NOR;
         message_combatd(msg, me, target);

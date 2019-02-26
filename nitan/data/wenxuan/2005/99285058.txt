@@ -1,4 +1,4 @@
-subject : 証明題
+subject : 證明題
 author_name : 高處不勝寒
 author_id : lonely
 time : 1069565435
@@ -6,7 +6,7 @@ board : 泥潭「問道」
 file : /data/analecta/2003/99285058.txt
 add_time : 1069565877
 content : 
-証明題：姑娘 = 惡魔
+證明題：姑娘 = 惡魔
 首先，我們知道和姑娘交往需要時間和金錢就是
 　　　　姑娘 = 時間 * 金錢
 同時，我們還知道“時間就是金錢”，

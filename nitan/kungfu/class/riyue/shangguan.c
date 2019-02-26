@@ -68,7 +68,7 @@ LONG);
 
         set("inquiry", ([
                 "無痕殺" : (: ask_skill1 :),
-                "斷脈破岳" : (: ask_skill2 :),
+                "斷脈破嶽" : (: ask_skill2 :),
                 "百鬼慟哭" : (: ask_skill3 :),
         ]));
 
@@ -185,7 +185,7 @@ mixed ask_skill2()
                 return "你又不是我日月神教的，跑來搗什麼亂？";
 
         if (me->query_skill("poyue-zhao", 1) < 1)
-                return "你連破岳神爪都沒學，還談什麼絕招可言？";
+                return "你連破嶽神爪都沒學，還談什麼絕招可言？";
 
         if( query("family/gongji", me)<100 )
                 return "你在教內甚無作為，這招我暫時還不能傳你。";
@@ -197,17 +197,17 @@ mixed ask_skill2()
                 return "你的內功火候尚需提高，練好了再來找我吧。";
 
         if (me->query_skill("poyue-zhao", 1) < 80)
-                return "你的破岳神爪還練得不到家，自己下去練練再來吧！";
+                return "你的破嶽神爪還練得不到家，自己下去練練再來吧！";
 
-        message_sort(HIY "\n$n" HIY "望著$N" HIY "讚許的點了點頭，笑道："
+        message_sort(HIY "\n$n" HIY "望着$N" HIY "讚許的點了點頭，笑道："
                      "“不錯，不錯。老夫念你平時練功努力，今日就傳你此招"
-                     "，可瞧好了。”說完便只見$n" HIY "身形一展，雙爪疾攻"
+                     "，可瞧好了。”説完便只見$n" HIY "身形一展，雙爪疾攻"
                      "而上，霎時間爪影層層疊疊，虛實難辯，招數甚為巧妙。"
                      "\n\n" NOR, me, this_object()); 
 
         command("nod");
-        command("say 這招的招式並不復雜，你下去後需勤加練習。");
-        tell_object(me, HIC "你學會了「斷脈破岳」。\n" NOR);
+        command("say 這招的招式並不複雜，你下去後需勤加練習。");
+        tell_object(me, HIC "你學會了「斷脈破嶽」。\n" NOR);
         if (me->can_improve_skill("claw"))
                 me->improve_skill("claw", 1500000);
         if (me->can_improve_skill("poyue-zhao"))

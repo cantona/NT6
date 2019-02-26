@@ -16,7 +16,7 @@ void create()
       set("cps", 30);
       set("con", 30);
 
-      set("long", "你看到的是一只長毛的小狗。\n");
+      set("long", "你看到的是一隻長毛的小狗。\n");
       set("combat_exp", 2000000);
       set("attitude", "friendly");
 
@@ -45,15 +45,15 @@ void init()
 void wangwang(object ob)
 {
       if( query("id", ob) == "night" )
-            message_vision("小狗高興地沖你直搖尾巴。\n",ob);
+            message_vision("小狗高興地衝你直搖尾巴。\n",ob);
       else
-            message_vision("小狗不高興地地沖你汪汪兩聲。\n",ob);
+            message_vision("小狗不高興地地衝你汪汪兩聲。\n",ob);
 }
 
 int do_pat(string arg)
 {
       set("chanxin/save", 1, this_player());
-      message_vision("小狗高興地沖你搖了兩下尾巴。\n",this_player());
+      message_vision("小狗高興地衝你搖了兩下尾巴。\n",this_player());
       return 1;
 }
 
@@ -62,12 +62,12 @@ int do_wei(string arg)
       if( query("chanxin/save", this_player()) >= 1 )
       {
             set("chanxin/save", 2, this_player());
-            message_vision("小狗高興地沖你搖了兩下尾巴。\n",this_player());
+            message_vision("小狗高興地衝你搖了兩下尾巴。\n",this_player());
             return 1;
       }
       else
       {
-            message_vision("小狗高興地沖你搖了兩下尾巴。\n",this_player());
+            message_vision("小狗高興地衝你搖了兩下尾巴。\n",this_player());
             return 1;
       }
 }

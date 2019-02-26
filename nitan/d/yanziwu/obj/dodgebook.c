@@ -12,7 +12,7 @@ void create()
                 set("unit", "本");
                 set("long",
                         "輕功篇\n"
-                        "這是一本還施水閣的輕功藏本，書色泛黃，有不少的批注。\n");
+                        "這是一本還施水閣的輕功藏本，書色泛黃，有不少的批註。\n");
                 set("value", 500);
                 set("material", "paper");
                 set("skill", ([

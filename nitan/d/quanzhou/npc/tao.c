@@ -8,10 +8,10 @@ void create()
 {
         set_name("陶老人", ({ "tao laoran", "tao", "laoren" }));
         set("gender", "男性");
-        set("title", "陶然茶居老板");
+        set("title", "陶然茶居老闆");
         set("age", 53);
         set("long","陶老人是出名的老好人，他賣的茶又香又好，價錢公道，
-所以城裡的人都喜歡到他那買茶。\n");
+所以城裏的人都喜歡到他那買茶。\n");
         set("combat_exp", 200);
         set("attitude", "friendly");
 

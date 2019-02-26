@@ -15,6 +15,6 @@ string update_msg_others()
 
 string update_msg_self()
 {
-        return HIR "你只感到五臟六腑翻騰不止，劇毒攻心，看來是中了催心掌掌勁的幹擾！\n" NOR;
+        return HIR "你只感到五臟六腑翻騰不止，劇毒攻心，看來是中了催心掌掌勁的干擾！\n" NOR;
 }
 

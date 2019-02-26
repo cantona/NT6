@@ -7,12 +7,12 @@ inherit F_CLEAN_UP;
 string query_inquiry(object me, object ob);
 
 string *msg_dunno = ({
-        "$n搖搖頭，說道：沒聽說過。\n",
-        "$n疑惑地看著$N，搖了搖頭。\n",
-        "$n睜大眼睛望著$N，顯然不知道$P在說什麼。\n",
-        "$n聳了聳肩，很抱歉地說：無可奉告。\n",
-        "$n說道：嗯....這我可不清楚，你最好問問別人吧。\n",
-        "$n想了一會兒，說道：對不起，你問的事我實在沒有印象。\n"
+        "$n搖搖頭，説道：沒聽説過。\n",
+        "$n疑惑地看着$N，搖了搖頭。\n",
+        "$n睜大眼睛望着$N，顯然不知道$P在説什麼。\n",
+        "$n聳了聳肩，很抱歉地説：無可奉告。\n",
+        "$n説道：嗯....這我可不清楚，你最好問問別人吧。\n",
+        "$n想了一會兒，説道：對不起，你問的事我實在沒有印象。\n"
 });
 
 int main(object me, string arg)
@@ -50,7 +50,7 @@ int main(object me, string arg)
         }
 
         if (! objectp(ob = present(dest, env)))
-                return notify_fail("這裡沒有這個人。\n");
+                return notify_fail("這裏沒有這個人。\n");
 
         /*
         if (me->ban_say(1) && playerp(ob))
@@ -59,7 +59,7 @@ int main(object me, string arg)
 
         if (! ob->is_character())
         {
-                message_vision("$N對著$n自言自語....\n", me, ob);
+                message_vision("$N對着$n自言自語....\n", me, ob);
                 return 1;
         }
 
@@ -111,8 +111,8 @@ int main(object me, string arg)
 
                 if (stringp(msg))
                 {
-                        // message_vision(CYN "$N對$n說道：" + msg + "\n" NOR, ob, me);
-                        tell_object(me, CYN + ob->name() + CYN "對你說道：" + msg + "\n" NOR);
+                        // message_vision(CYN "$N對$n説道：" + msg + "\n" NOR, ob, me);
+                        tell_object(me, CYN + ob->name() + CYN "對你説道：" + msg + "\n" NOR);
                         return 1;
                 }
         } else
@@ -142,12 +142,12 @@ string query_inquiry(object me, object ob)
                         //str = indexs[i] + " " + str;
                         str += HIY "第"+chinese_number(i+1)+"條："HIG+indexs[i]+"\n" NOR;
                 }
-                str = "有關于\n" + str + "\n這些事情，你若想知道的話可以問我！";
-                tell_room(environment(me), CYN + ob->name() + "在" + me->name() + "耳邊小聲地說了些話。\n" NOR, ({ me, ob }));
-                tell_object( me, GRN + ob->name() + "在你的耳邊悄聲說道：" + str + "\n" NOR);
+                str = "有關於\n" + str + "\n這些事情，你若想知道的話可以問我！";
+                tell_room(environment(me), CYN + ob->name() + "在" + me->name() + "耳邊小聲地説了些話。\n" NOR, ({ me, ob }));
+                tell_object( me, GRN + ob->name() + "在你的耳邊悄聲説道：" + str + "\n" NOR);
                 return "\n";
         }
-        tell_object( me, ob->name(1) + "對你說道：實在是對不起，我什麼也不知道呀！\n");
+        tell_object( me, ob->name(1) + "對你説道：實在是對不起，我什麼也不知道呀！\n");
         return "\n";
 }
 

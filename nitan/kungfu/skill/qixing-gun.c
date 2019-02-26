@@ -17,7 +17,7 @@ mapping *action = ({
         "lvl" : 0,
         "damage_type" : "刺傷"
 ]),
-([      "action" : "$N一招「花前月下」，模擬冰輪橫空，清光舖地之光景，自上而下搏擊",
+([      "action" : "$N一招「花前月下」，模擬冰輪橫空，清光鋪地之光景，自上而下搏擊",
         "force" : 170,
         "dodge" : 15,
         "damage" : 40,
@@ -31,7 +31,7 @@ mapping *action = ({
         "lvl" : 19,
         "damage_type" : "刺傷"
 ]),
-([      "action" : "$N使出「撫琴按簫」，$w提至唇邊，如同清音出簫，劍掌直出，劃向$n的$l",
+([      "action" : "$N使出「撫琴按簫」，$w提至脣邊，如同清音出簫，劍掌直出，划向$n的$l",
         "force" : 240,
         "dodge" : 10,
         "damage" : 60,

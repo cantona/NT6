@@ -30,7 +30,7 @@ int do_eat(string arg)
                 return notify_fail("你要吃什麼？\n");
         if (!id(arg)) return notify_fail("你要吃什麼？\n");
         if( me->is_busy() )
-                return notify_fail("別急，慢慢喝，小心別嗆著了。\n");
+                return notify_fail("別急，慢慢喝，小心別嗆着了。\n");
 
         if( query("age", me) <= 39 )
         {

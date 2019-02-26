@@ -8,7 +8,7 @@ void create()
 {
         set("short", "暗道");
         set("long", @LONG
-這是丐幫極其秘密的地下通道，乃用丐幫幾輩人之心血掘成。 
+這是丐幫極其祕密的地下通道，乃用丐幫幾輩人之心血掘成。 
 LONG );
         set("exits", ([
                 "northeast" : __DIR__"zlandao2",

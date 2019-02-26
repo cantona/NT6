@@ -15,7 +15,7 @@ void create()
                 set("unit", "支");
                 set("value", 300);
                 set("material", "steel");
-                set("long", "一柄普通鐵制洞簫，沉甸甸的有些墜手。\n");
+                set("long", "一柄普通鐵製洞簫，沉甸甸的有些墜手。\n");
         }
         setup();
 

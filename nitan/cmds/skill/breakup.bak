@@ -30,13 +30,13 @@ int main(object me, string arg)
                 return notify_fail("巫師也要打通任督二脈？是不是燒得慌？\n");
 
         if( !query("no_fight", where) )
-                return notify_fail("在這裡打通任督二脈？不太安全吧？\n");
+                return notify_fail("在這裏打通任督二脈？不太安全吧？\n");
 
         if( !query("sleep_room", where) )
                 return notify_fail("你得找一個能夠休息的地方閉關修行。\n");
 
         if (me->is_busy())
-                return notify_fail("你現在正忙著呢。\n");
+                return notify_fail("你現在正忙着呢。\n");
 
         if( query("potential", me)-query("learned_points", me)<100 )
                 return notify_fail("你的潛能不夠，沒法閉關修行以打通任督二脈。\n");
@@ -56,7 +56,7 @@ int main(object me, string arg)
 
         if ((int)me->query_skill("force") < 400)
                 return notify_fail("你覺得自己的內功火候還有限，看來需"
-                                   "要先鍛煉好內功才行。\n");
+                                   "要先鍛鍊好內功才行。\n");
 
         message_vision("$N盤膝坐下，開始冥神運功，閉關修行。\n", me);
         set("startroom", base_name(where), me);
@@ -112,7 +112,7 @@ int breaking(object me)
                 message_vision("$N睜開雙目，緩緩吐了一口氣，站了起來。\n", me);
                 CLOSE_D->user_opened(me);
                 CHANNEL_D->do_channel(this_object(), "rumor",
-                                      sprintf("聽說%s(%s)閉關結束，似乎沒有太大的進展。",
+                                      sprintf("聽説%s(%s)閉關結束，似乎沒有太大的進展。",
                                       me->name(1),query("id", me)));
                 if (! interactive(me))
                 {
@@ -134,14 +134,14 @@ int breaking(object me)
                                "如同籠罩在雲中，看來已經到了三花聚頂、"
                                "五氣朝元、龍虎相濟、天人交會的緊要關頭！\n" NOR, me);
                 tell_object(me, HIR "你覺得內力在丹田源源而生，不斷"
-                            "沖擊諸處大穴，渾身燥熱難當，幾欲大聲呼喊。\n" NOR);
+                            "衝擊諸處大穴，渾身燥熱難當，幾欲大聲呼喊。\n" NOR);
                 message_vision(HIC "突然$N" HIC "大喝一聲，一股無形氣浪"
-                               "陡然散布開來，四周空氣登時變得燥熱。\n" NOR, me);
+                               "陡然散佈開來，四周空氣登時變得燥熱。\n" NOR, me);
                 tell_object(me, HIG "你頓時覺得渾身一陣輕鬆，一股清涼之意油然"
                             "而起，心靈一片空明，內力沒有絲毫阻滯，舒泰之極。\n" NOR);
                 set("breakup", 1, me);
                 CHANNEL_D->do_channel(this_object(), "rumor",
-                                      sprintf("聽說%s(%s)經過閉關苦修，終于打通"
+                                      sprintf("聽説%s(%s)經過閉關苦修，終於打通"
                                               "了任督二脈，窺視到了無上的武學境界。",
                                       me->name(1),query("id", me)));
                 if (me->can_improve_skill("force"))
@@ -158,7 +158,7 @@ int breaking(object me)
                 break;
 
         case 1:
-                msg = "你將內力運出丹田，過紫宮、入泥丸、透十二重樓，遍布奇筋八脈，然後收回丹田。\n";
+                msg = "你將內力運出丹田，過紫宮、入泥丸、透十二重樓，遍佈奇筋八脈，然後收回丹田。\n";
                 break;
 
         case 2:
@@ -182,9 +182,9 @@ int halt_breaking(object me)
 {
         CLOSE_D->user_opened(me);
         tell_object(me, "你中止了閉關。\n");
-        message_vision(HIY "$N" HIY "輕輕嘆了一口氣，緩緩的睜開眼。\n\n" NOR, me);
+        message_vision(HIY "$N" HIY "輕輕歎了一口氣，緩緩的睜開眼。\n\n" NOR, me);
         //addn("potential", (query("learned_points", me)-query("potential", me))/2, me);
-        CHANNEL_D->do_channel(this_object(), "rumor", "聽說" + me->name(1) +
+        CHANNEL_D->do_channel(this_object(), "rumor", "聽説" + me->name(1) +
                               "閉關中途突然復出。");
         return 1;
 }

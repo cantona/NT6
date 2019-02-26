@@ -7,7 +7,7 @@ void create()
 {
         set("short", "山洞");
         set("long", @LONG
-這是一個毫不起眼的山洞，但是裡面的石壁上卻畫滿了五岳劍派
+這是一個毫不起眼的山洞，但是裏面的石壁上卻畫滿了五嶽劍派
 所有已經失傳的精妙絕招。花崗巖石壁(wall)上很多小人，全是用利
 器刻制，想見當初運力之人內力十分深厚。
 LONG );
@@ -51,10 +51,10 @@ int do_think(string msg)
           return notify_fail("你想參悟什麼？\n");
 
     if (where != "wall")
-          return notify_fail("這裡沒什麼給你參悟的啊！\n");
+          return notify_fail("這裏沒什麼給你參悟的啊！\n");
 
     if (me->is_busy())
-          return notify_fail("你現在正忙著呢。\n");
+          return notify_fail("你現在正忙着呢。\n");
 
     if (me->is_fighting())
           return notify_fail("你在戰鬥哦？！小心，來了！！！\n");
@@ -84,7 +84,7 @@ int do_think(string msg)
     me->start_busy(2 + random(4));
 
     write(HIM "猛然間，你一聲長嘯，胸中豁然貫通，再無疑慮。\n" NOR);
-    write(HIC "你終于通曉了絕學「萬劍焚雲」。\n" NOR);
+    write(HIC "你終於通曉了絕學「萬劍焚雲」。\n" NOR);
 
     set("can_perform/zhurong-jian/wan", 1, me);
 
@@ -108,7 +108,7 @@ int do_mianbi()
         c_skill = (int)ob->query_skill("zhurong-jian", 1);
         if (ob->query_skill("sword", 1) <= c_skill)
         {
-                write("你對劍法的了解顯然太低，無法領悟石壁內容。\n", ob);
+                write("你對劍法的瞭解顯然太低，無法領悟石壁內容。\n", ob);
                 return 1; 
         }
 
@@ -130,7 +130,7 @@ int do_mianbi()
                 return 1;
         }
 
-        message_vision("$N面對著石壁趺坐靜思，良久，對「祝融劍法」"
+        message_vision("$N面對着石壁趺坐靜思，良久，對「祝融劍法」"
                         "似有所悟。\n", ob);
         ob->improve_skill("zhurong-jian",1+random(query("int", ob)));
         ob->receive_damage("jing", 35);

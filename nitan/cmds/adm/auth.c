@@ -46,7 +46,7 @@ int main(object me, string arg)
         cew = SECURITY_D->query_security("exclude_write");
         if (! arg)
         {
-                msg = "目前文件關于安全的配置信息(青色表示缺省配置)：\n";
+                msg = "目前文件關於安全的配置信息(青色表示缺省配置)：\n";
                 msg += HIR + title("讀取禁止") + NOR;
                 msg += auth_msg(cer, der, 0, 0);
                 msg += HIC + title("讀取許可") + NOR;
@@ -60,7 +60,7 @@ int main(object me, string arg)
         } else
         if (arg == "read")
         {
-                msg = "目前文件關于安全的配置信息中讀取的設置(青色表示缺省配置)：\n";
+                msg = "目前文件關於安全的配置信息中讀取的設置(青色表示缺省配置)：\n";
                 msg += HIR + title("讀取禁止") + NOR;
                 msg += auth_msg(cer, der, 0, 0);
                 msg += HIC + title("讀取許可") + NOR;
@@ -70,7 +70,7 @@ int main(object me, string arg)
         } else
         if (arg == "write")
         {
-                msg = "目前文件關于安全的配置信息中寫入的設置(青色表示缺省配置)：\n";
+                msg = "目前文件關於安全的配置信息中寫入的設置(青色表示缺省配置)：\n";
                 msg += HIR + title("寫入禁止") + NOR;
                 msg += auth_msg(cew, dew, 0, 0);
                 msg += HIC + title("寫入許可") + NOR;
@@ -102,7 +102,7 @@ int main(object me, string arg)
                 SECURITY_D->set_security("extend_exclude_write", eew);
                 reset_security();
 
-                write("清除了該用戶所有的訪問信息，採用缺省配置。\n");
+                write("清除了該用户所有的訪問信息，採用缺省配置。\n");
                 return 1;
         }
 
@@ -124,7 +124,7 @@ int main(object me, string arg)
 
         if (! dir)
         {
-                msg = "目前關于" CYN + euid + status +
+                msg = "目前關於" CYN + euid + status +
                       NOR "的權限(青色表示缺省配置)：\n";
                 msg += HIR + title("讀取禁止") + NOR;
                 msg += auth_msg(cer, der, euid, status);
@@ -162,14 +162,14 @@ int main(object me, string arg)
                 if (in_map(usr, dtr, dir))
                 {
                         write("缺省配置中<可以讀取規則>中已經包含了對"
-                              "該用戶(組)對目錄的訪問權限說明。\n");
+                              "該用户(組)對目錄的訪問權限説明。\n");
                         break;
                 }
 
                 if (in_map(usr, der, dir))
                 {
                         write("缺省配置中<禁止讀取規則>中已經包含了對"
-                              "該用戶(組)對目錄的訪問權限說明。\n");
+                              "該用户(組)對目錄的訪問權限説明。\n");
                         break;
                 }
 
@@ -194,14 +194,14 @@ int main(object me, string arg)
                 if (in_map(usr, dtw, dir))
                 {
                         write("缺省配置中<可以寫入規則>中已經包含了對"
-                              "該用戶(組)對目錄的訪問權限說明。\n");
+                              "該用户(組)對目錄的訪問權限説明。\n");
                         return 1;
                 }
 
                 if (in_map(usr, dew, dir))
                 {
                         write("缺省配置中<禁止寫入規則>中已經包含了對"
-                              "該用戶(組)對目錄的訪問權限說明。\n");
+                              "該用户(組)對目錄的訪問權限説明。\n");
                         return 1;
                 }
 
@@ -232,7 +232,7 @@ int main(object me, string arg)
                 flag |= remove_from_map(usr, eew, dir);
                 if (! flag)
                 {
-                        write("原先沒有關于該用戶(組)對目錄的訪問權限設置。\n");
+                        write("原先沒有關於該用户(組)對目錄的訪問權限設置。\n");
                         break;
                 }
 
@@ -389,16 +389,16 @@ int help(object me)
 這個命令用來查詢或設置巫師的權限。 如果指明 read | write  表明查詢
 讀取或是寫入的權限信息。
 
-如果指定一個用戶或是組，表示查詢或是設置該用戶(組)的安全權限，如果
-使用了參數 -clear 表示要清除該用戶或是組的的所有權限。如果指明了目
-錄則設置該用戶(組)對目錄的訪問權限。其中 unknow 表示不針對該目錄進
+如果指定一個用户或是組，表示查詢或是設置該用户(組)的安全權限，如果
+使用了參數 -clear 表示要清除該用户或是組的的所有權限。如果指明瞭目
+錄則設置該用户(組)對目錄的訪問權限。其中 unknow 表示不針對該目錄進
 行設置，即繼承上級目錄的權限。
 
 注意：所有配置信息的修改均不能違反缺省配置，即如果缺省配置指明某個
-用戶(組)不能或是可以訪問某個目錄，你不能再重新設置。當然，缺省配置
-如果指明的是組，你可以對用戶在進行配置。比如：
+用户(組)不能或是可以訪問某個目錄，你不能再重新設置。當然，缺省配置
+如果指明的是組，你可以對用户在進行配置。比如：
 缺省配置：(arch)不能訪問/backup/
-你可以設置 test 用戶訪問/backup/
+你可以設置 test 用户訪問/backup/
 
 HELP
     );

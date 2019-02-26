@@ -14,7 +14,7 @@ int exert(object me, object target)
                 return notify_fail("你的真氣不夠。\n");
 
         if( query("no_fight", environment(me)) )
-                return notify_fail("在這裡不能攻擊他人。\n");
+                return notify_fail("在這裏不能攻擊他人。\n");
 
         skill = me->query_skill("force");
 
@@ -23,7 +23,7 @@ int exert(object me, object target)
 
         me->start_busy(5);
         message_combatd(HIY "$N" HIY "深吸一囗氣，運足內力，發出一陣"
-                        "長嘯，音傳百裡，懾人心神！\n" NOR, me);
+                        "長嘯，音傳百里，懾人心神！\n" NOR, me);
 
         ob = all_inventory(environment(me));
         for (i = 0; i < sizeof(ob); i++)

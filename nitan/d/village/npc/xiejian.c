@@ -7,7 +7,7 @@ inherit BUNCHER;
 void create()
 {
         set_name("李四", ({ "li si", "li" }) );
-        set("title", "小店老板");
+        set("title", "小店老闆");
         set("gender", "男性" );
         set("shen_type", -1);
         set("age", 40);
@@ -18,13 +18,13 @@ void create()
         set("dex", 30);
 
         set("long",
-                "這是整天笑咪咪的小店老板，雖然不賣什麼東西，卻也過得自在。\n" );
+                "這是整天笑咪咪的小店老闆，雖然不賣什麼東西，卻也過得自在。\n" );
 
         set("combat_exp", 100000);
         set("attitude", "peaceful");
         set("chat_chance", 1);
         set("chat_msg", ({
-                "李四說道: 這位客官，您想買些什麼東西嗎 ?\n",
+                "李四説道: 這位客官，您想買些什麼東西嗎 ?\n",
         }) );
 
         set("inquiry", ([

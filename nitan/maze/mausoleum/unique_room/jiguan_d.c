@@ -15,7 +15,7 @@ LONG );
         set("no_clean_up", 1);
         set("room_id", "number/lockroom4");
         set("item_desc", ([
-                "desk" : NOR + WHT "一張形狀奇特的石桌，似乎連接著什麼機關！\n" NOR,
+                "desk" : NOR + WHT "一張形狀奇特的石桌，似乎連接着什麼機關！\n" NOR,
         ]));
         setup();
 }

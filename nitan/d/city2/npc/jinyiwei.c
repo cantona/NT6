@@ -2,7 +2,7 @@
 inherit NPC;
 void create()
 {
-        set_name("錦衣衛", ({ "jinyi wei", "wei"}));
+        set_name("錦衣衞", ({ "jinyi wei", "wei"}));
         set("gender", "男性");
         set("age", random(20) + 20);
         set("str", 160);
@@ -10,7 +10,7 @@ void create()
         set("con", 160);
 
         set("long", 
-"這是一個京城皇宮中的一名錦衣衛，正威風凜凜地巡視著過往的人群。\n");
+"這是一個京城皇宮中的一名錦衣衞，正威風凜凜地巡視着過往的人羣。\n");
 
         set("combat_exp", 8000000);
         set("attitude", "peaceful");

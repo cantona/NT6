@@ -8,10 +8,10 @@ void create()
 {
         set("short", "南山腳下");
         set("long",@LONG
-這是通往蓬萊島南山的必經之路，傳說南山乃仙人修煉仙法的
-地方，屬于禁地。雖無人看守，但若沒有仙人的指引外人是無論如
-何也無法進入的。四周植物蔥鬱，仙氣圍繞，景致甚是迷人。抬頭
-仰望南山，山峰高聳，仙氣繚繞，再一細看又若隱若現，令人難以
+這是通往蓬萊島南山的必經之路，傳説南山乃仙人修煉仙法的
+地方，屬於禁地。雖無人看守，但若沒有仙人的指引外人是無論如
+何也無法進入的。四周植物葱鬱，仙氣圍繞，景緻甚是迷人。抬頭
+仰望南山，山峯高聳，仙氣繚繞，再一細看又若隱若現，令人難以
 琢磨。
 LONG);
 
@@ -19,7 +19,7 @@ LONG);
                 "north"    : __DIR__"xianrenzhilu",
         ]));
         set("no_rideto", 1);         // 設置不能騎馬到其他地方
-        set("no_flyto", 1);          // 設置不能從起來地方騎馬來這裡
+        set("no_flyto", 1);          // 設置不能從起來地方騎馬來這裏
         set("no_die", 1);            // 死亡後移動到扁鵲居
         set("penglai", 1);           // 表示在蓬萊島
         set("no_fight", 1);
@@ -50,11 +50,11 @@ void init ()
         
         if (! this_player()->query("penglai/nanshan_quest/ok"))
         {
-                tell_object(this_player(), HIG "\n你正欲進入南山，卻發現這裡根本沒有上山之路，奇哉！。\n" NOR);
+                tell_object(this_player(), HIG "\n你正欲進入南山，卻發現這裏根本沒有上山之路，奇哉！。\n" NOR);
         }
         else
         {
-                tell_object(this_player(), HIG "\n要進入南山，閉上你的眼睛(closeeye)，默念守路仙人教給你的咒語。\n" NOR);
+                tell_object(this_player(), HIG "\n要進入南山，閉上你的眼睛(closeeye)，默唸守路仙人教給你的咒語。\n" NOR);
         }
 }
 
@@ -88,20 +88,20 @@ int do_closeeye(string arg)
                 return 1;
         }
                         
-        // 把背起的用戶放下來
+        // 把背起的用户放下來
         inv = deep_inventory(me);
         for (i = 0; i < sizeof(inv); i++)
         {
                 if (! playerp(inv[i])) continue;
 
-                // 被人背起的用戶
+                // 被人揹起的用户
                 inv[i]->move(__FILE__);                
         }
 
         if (this_player()->query("penglai/nanshan_quest/ok"))
         {
                 i = 20;
-                tell_object(this_player(), HIG "\n你閉上你的眼睛，默念守路仙人教給你的咒語...\n" NOR);
+                tell_object(this_player(), HIG "\n你閉上你的眼睛，默唸守路仙人教給你的咒語...\n" NOR);
                 if (! MEMBER_D->is_valib_member(this_player()->query("id")))
                         return notify_fail("對不起，南山地圖只對有效會員開放。\n");
                         

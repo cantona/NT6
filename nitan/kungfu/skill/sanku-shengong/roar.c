@@ -10,10 +10,10 @@ int exert(object me, object target)
         int i, skill, damage;
 
         if( query("no_fight", environment(me)) )
-                return notify_fail("這裡不能攻擊別人! \n");
+                return notify_fail("這裏不能攻擊別人! \n");
 
         if( (query("neili", me)<500) || me->query_skill("sanku-shengong",1)<50 )
-                return notify_fail("你鼓足真氣\"喵\"的吼了一聲, 結果嚇走了幾只老鼠。\n");
+                return notify_fail("你鼓足真氣\"喵\"的吼了一聲, 結果嚇走了幾隻老鼠。\n");
 
         skill = me->query_skill("force");
 
@@ -22,7 +22,7 @@ int exert(object me, object target)
 
         me->start_busy(1);
         message_combatd(
-                HIY "$N深深地吸一囗氣，真力迸發，發出一聲驚天動地的巨吼" + HIR "唐門無敵啊" NOR + "□\n" NOR, me);
+                HIY "$N深深地吸一囗氣，真力迸發，發出一聲驚天動地的巨吼" + HIR "唐門無敵啊" NOR + "ⅵ\n" NOR, me);
 
         ob = all_inventory(environment(me));
         for (i = 0; i < sizeof(ob); i++)
@@ -47,7 +47,7 @@ int exert(object me, object target)
                         ob[i]->receive_damage("jing", damage * 2, me);
                         if( query("neili", ob[i])<skill*2 )
                                 ob[i]->receive_wound("jing", damage, me);
-                        tell_object(ob[i], "你覺得眼前一陣金星亂冒，耳朵痛得像是要裂開一樣□\n");
+                        tell_object(ob[i], "你覺得眼前一陣金星亂冒，耳朵痛得像是要裂開一樣ⅵ\n");
                 }
         }
 

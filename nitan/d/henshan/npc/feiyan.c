@@ -6,12 +6,12 @@ void create()
 {
         set_name("緋胭", ({ "fei yan", "fei", "yan" }));
         set("nickname", HIM "八音狐仙" NOR);
-        set("title", "老板娘");
+        set("title", "老闆娘");
         set("long", @LONG
 緋胭原本在青樓以賣唱為生，因為被逼無奈，誤殺縣老
-爺的公子，險被處死，後來據說她被狐仙所救，從此隱
-姓埋名，做起這樂器的買賣。還有的說她本身就是狐仙
-所化，又由于她的一曲《戀八音》，所以人人都稱她為
+爺的公子，險被處死，後來據説她被狐仙所救，從此隱
+姓埋名，做起這樂器的買賣。還有的説她本身就是狐仙
+所化，又由於她的一曲《戀八音》，所以人人都稱她為
 「八音狐仙」。
 LONG);
         set("shen_type", 1);
@@ -76,7 +76,7 @@ void greeting(object ob)
 {
         if (! ob || environment(ob) != environment()) return;
 
-        say(CYN "緋胭笑著說道：這位" + RANK_D->query_respect(ob)+ "這裡"
+        say(CYN "緋胭笑着説道：這位" + RANK_D->query_respect(ob)+ "這裏"
             "各種樂器應有盡有，請隨便看看。\n" NOR);
 
         return;

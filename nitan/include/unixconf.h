@@ -2,7 +2,7 @@
 #define LONELY_IMPROVED
 #endif
 
-//多少天後清除未上線的未交費用戶
+//多少天后清除未上線的未交費用户
 #define UNLOG_IDLE      90
 
 //支持網絡傳輸壓縮功能
@@ -11,14 +11,14 @@
 //支持binary運行
 #undef BINARY_SUPPORT
 
-//分站是否不接受新玩家注冊
+//分站是否不接受新玩家註冊
 #undef REFUSE_NEW_PLAYER
 
-//是否使用MYSQL數據庫儲用戶數據，不使用數據庫則#undef DB_SAVE！
+//是否使用MYSQL數據庫儲用户數據，不使用數據庫則#undef DB_SAVE！
 #define DB_SAVE          1
 #undef  DB_SAVE
 
-//是否存儲用戶數據到文本文件裡，定義了 1 就表示是，如果定義了 0 就表示否！
+//是否存儲用户數據到文本文件裏，定義了 1 就表示是，如果定義了 0 就表示否！
 #define TX_SAVE         1
 
 //是否定時為玩家保存檔案!
@@ -36,7 +36,7 @@
 //定義最多有多少個圖標可以使用!
 #define MAX_ICONS 2159
 
-//客戶端要求版本號!
+//客户端要求版本號!
 #define CURRENT_CLIENT_VERSION "2060"
 
 #define TMA ""

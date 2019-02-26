@@ -50,7 +50,7 @@ void greeting(object ob)
         switch(random(3))
         {
         case 0:
-                say("莊家笑咪咪地說道：這位" + RANK_D->query_respect(ob) +
+                say("莊家笑咪咪地説道：這位" + RANK_D->query_respect(ob) +
                     "，過來賭兩手，看看運氣如何？\n");
                 break;
         case 1:
@@ -59,7 +59,7 @@ void greeting(object ob)
                     "，別猶豫了。來下一注吧！\n");
                 break;
         case 2:
-                say("莊家說道：這位" + RANK_D->query_respect(ob) +
+                say("莊家説道：這位" + RANK_D->query_respect(ob) +
                     "，來！來！來！ 先押一把！\n");
                 break;
         }

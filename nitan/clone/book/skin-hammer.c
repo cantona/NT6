@@ -11,7 +11,7 @@ void create()
                 set_default_object(__FILE__);
         else {
                 set("unit", "本");
-                set("long", "這是一張羊皮質地的卷軸，上面畫著一些古怪的符號。\n");
+                set("long", "這是一張羊皮質地的卷軸，上面畫着一些古怪的符號。\n");
                 set("material", "paper");
                 set("skill", ([
                         "name": "hammer",        // name of the skill

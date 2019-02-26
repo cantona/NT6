@@ -22,7 +22,7 @@ int perform(object me, object target)
 
         if( !objectp(anqi=query_temp("handing", me)) || 
             query("skill_type", anqi) != "throwing" )
-                return notify_fail("你現在手中並沒有拿著暗器。\n");
+                return notify_fail("你現在手中並沒有拿着暗器。\n");
 
         if ((int)me->query_skill("huilong-bifa", 1) < 120)
                 return notify_fail("你的回龍璧法不夠嫻熟，難以施展" CANG "。\n");
@@ -34,7 +34,7 @@ int perform(object me, object target)
                 return notify_fail("你內力不夠了。\n");
 
         if (! living(target))
-                return notify_fail("對方都已經這樣了，用不著這麼費力吧？\n");
+                return notify_fail("對方都已經這樣了，用不着這麼費力吧？\n");
 
         msg = HIY "$N" HIY "一聲輕喝，單手一揚，袖底頓時迸出一股氣勁，袖中" +
               query("name", anqi)+NOR+HIY"便如蛟龍般射向$n"HIY"！\n"

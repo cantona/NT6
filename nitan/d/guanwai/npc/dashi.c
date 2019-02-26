@@ -67,7 +67,7 @@ string ask_huijia()
 object me=this_player();
 object ob = this_object();
 if( query("kill_yunlong", me) == 0 )
-return "我看你是清狗派來的那姦細吧。。。\n";
+return "我看你是清狗派來的那奸細吧。。。\n";
 set_leader(me);
 set("lingsong", 10, ob);
 return "地振高岡，一派溪山千古秀,反清義士和你對上了喑號.\n";
@@ -80,7 +80,7 @@ string ask_daojia()
  ob = this_object();
 me = this_player();
 if( query("kill_yunlong", me) == 0 )
-return "我看你是清狗派來的那姦細吧。。。\n";
+return "我看你是清狗派來的那奸細吧。。。\n";
  if( query("short", environment(ob)) == "春來茶館" )
          {
 

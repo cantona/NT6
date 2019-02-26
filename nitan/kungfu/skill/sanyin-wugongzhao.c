@@ -15,7 +15,7 @@ mapping *action = ({
         "lvl"    : 10,
         "skill_name" : "鬼影連爪" ,
 ]),
-([        "action" : "$N身形圍$n一轉，爪影縱橫毫不留情對著$n的$l抓下",
+([        "action" : "$N身形圍$n一轉，爪影縱橫毫不留情對着$n的$l抓下",
         "lvl"    : 20,
         "skill_name" : "旋風毒爪" ,
 ]),

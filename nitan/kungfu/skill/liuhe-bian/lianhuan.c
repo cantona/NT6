@@ -48,7 +48,7 @@ int perform(object me, object target)
                 return notify_fail("你的內力不夠施展連環訣！\n");
         
         if (! living(target))
-                return notify_fail("對方都已經這樣了，用不著這麼費力吧？\n");
+                return notify_fail("對方都已經這樣了，用不着這麼費力吧？\n");
         if ( me->query_skill("dodge", 1) < 180 )
                 return notify_fail("你輕功修為不足，無法快速攻擊！\n");
 
@@ -61,7 +61,7 @@ int perform(object me, object target)
 
         dp = target->query_skill("parry", 1) + target->query_skill("dodge", 1);
         
-        msg = HIR "\n$N大喝一聲，口中輕輕念誦佛經，手中" + 
+        msg = HIR "\n$N大喝一聲，口中輕輕唸誦佛經，手中" + 
                        weapon->name() + "霍霍，招招連環，"
                        "快如電閃！\n\n" NOR;
         if (random(ap) > dp)
@@ -99,7 +99,7 @@ int perform(object me, object target)
              damage = hurt / i;
              msg += COMBAT_D->do_damage(me, target, WEAPON_ATTACK, damage, 50, 
                     HIG "\n【神合】，$N手中" + weapon->name() + HIG "似有靈性一般"
-                    "死追著$n而去。\n" NOR);
+                    "死追着$n而去。\n" NOR);
              i = 2;
              damage = hurt / i;
              msg += COMBAT_D->do_damage(me, target, WEAPON_ATTACK, damage, 50, 

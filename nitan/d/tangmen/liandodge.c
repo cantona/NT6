@@ -56,6 +56,6 @@ int do_lian(string arg)
                         me->improve_skill("dodge",(20+random(query("int", me)/2)));
                 }
                 else
-                        write("你隨意的在木樁上飛奔跳躍，感到已經沒有困難。\n你在這裡已經學不到什麼了！\n");
+                        write("你隨意的在木樁上飛奔跳躍，感到已經沒有困難。\n你在這裏已經學不到什麼了！\n");
         return 1;
 }

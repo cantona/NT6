@@ -12,7 +12,7 @@ void create()
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("long", "這是一根青柏樹幹，是制造香火的好材料。\n");
+                set("long", "這是一根青柏樹幹，是製造香火的好材料。\n");
                 set("unit", "根");
                 set("value", 100);
                 set("material", "wood");

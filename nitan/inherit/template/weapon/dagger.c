@@ -24,7 +24,7 @@ void create()
                 set("value", 200);
                 set("material", "steel");
                 set("wield_msg", "$N「唰」的一聲抽出一把$n握在手中。\n");
-                set("unwield_msg", "$N將手中的$n藏于袖間。\n");
+                set("unwield_msg", "$N將手中的$n藏於袖間。\n");
         }
 
 //**    $function_name($argument);                      /* FUNCTION_ENTRY */

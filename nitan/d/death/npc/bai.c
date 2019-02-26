@@ -7,11 +7,11 @@ inherit NPC;
 string ask_diyudao();
 
 string *death_msg = ({
-        HIW "白無常說道：喂！新來的，你叫什麼名字？\n\n" NOR,
+        HIW "白無常説道：喂！新來的，你叫什麼名字？\n\n" NOR,
         HIW "白無常用奇異的眼光盯著你，好像要看穿你的一切似的。\n\n" NOR,
         HIW "白無常「哼」的一聲，從袖中掏出一本像帳冊的東西翻看著。\n\n" NOR,
-        HIW "白無常合上冊子，說道：咦？陽壽未盡？怎麼可能？\n\n" NOR,
-        HIW "白無常搔了搔頭，嘆道：罷了罷了，你走吧。\n\n"
+        HIW "白無常合上冊子，説道：咦？陽壽未盡？怎麼可能？\n\n" NOR,
+        HIW "白無常搔了搔頭，歎道：罷了罷了，你走吧。\n\n"
                 "一股陰冷的濃霧突然出現，很快地包圍了你。\n\n" NOR,
 });
 
@@ -24,7 +24,7 @@ void create()
         set("chat_chance", 15);
         set("chat_msg", ({
                 CYN "白無常狠狠的敲了敲你的腦袋，你覺得頭暈暈的。\n", NOR,
-                CYN "白無常嘿嘿姦笑兩聲。\n" NOR,
+                CYN "白無常嘿嘿奸笑兩聲。\n" NOR,
         }) );
         set("age", 217);
 
@@ -64,7 +64,7 @@ void create()
 
         set("inquiry", ([
                 "地獄道" : (: ask_diyudao :),
-                "錦鑭袈裟" : "此乃袈裟中的上品，穿戴者可不墜地獄，不入輪回！\n",                
+                "錦鑭袈裟" : "此乃袈裟中的上品，穿戴者可不墜地獄，不入輪迴！\n",                
         ]));
         setup();
 
@@ -114,7 +114,7 @@ void death_stage(object ob, int stage)
         
         ob->move(REVIVE_ROOM);
         set("startroom", REVIVE_ROOM, ob);
-        message("vision", HIW "你忽然發現前面多了一個人影，不過那人影又好像已經在那裡\n"
+        message("vision", HIW "你忽然發現前面多了一個人影，不過那人影又好像已經在那裏\n"
                           "很久了，只是你一直沒發覺。\n" NOR, environment(ob), ob);
 }
 
@@ -148,7 +148,7 @@ string ask_diyudao()
         command("say 閻王爺吩咐過了，叫我在此等候有緣者，既然如此，這「地獄道」就傳你吧！");
         
         message_sort(HIC "\n$N" HIC "掏出一根哭喪棒，揮舞了幾下，然後猛然點向$n" HIC "周身大穴，招式"
-                     "$n" HIC "平凡簡單之極，但卻蘊藏著任何人難以招架的力量，$n" HIC "倒退幾步，雙手"
+                     "$n" HIC "平凡簡單之極，但卻藴藏着任何人難以招架的力量，$n" HIC "倒退幾步，雙手"
                      "捂住胸口，一口鮮血吐出 ……。\n" NOR, this_object(), me);
                         
         command("heng");

@@ -35,10 +35,10 @@ int perform(object me, object target)
                 return notify_fail("你目前的真氣不夠，難以施展" + name() + "。\n");
 
         if (! living(target))
-                return notify_fail("對方都已經這樣了，用不著這麼費力吧？\n");
+                return notify_fail("對方都已經這樣了，用不着這麼費力吧？\n");
 
         msg = HIM "$N" HIM "使出慕容家絕技「" HIW "劍轉七星" HIM "」，手中"
-              + weapon->name() + HIM "暗合北鬥七星方位，忽伸忽縮，變化莫測！\n" NOR;
+              + weapon->name() + HIM "暗合北斗七星方位，忽伸忽縮，變化莫測！\n" NOR;
 
         addn("neili", -210, me);
 

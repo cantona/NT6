@@ -11,7 +11,7 @@ void create()
         set("title", HIR "紅花會"HIG"十一當家" NOR);
         set("nickname", HIG "鴛鴦刀" NOR);
         set("long", 
-"她是一個秀美的少婦。一手短刀，一手握著一柄長刀。\n");
+"她是一個秀美的少婦。一手短刀，一手握着一柄長刀。\n");
         set("gender", "女性");
         set("class", "fighter");
         set("age", 24);

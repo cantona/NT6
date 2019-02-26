@@ -51,11 +51,11 @@ int perform(object me, object target)
         */
 
         if (! living(target))
-                return notify_fail("對方都已經這樣了，用不著這麼費力吧？\n");
+                return notify_fail("對方都已經這樣了，用不着這麼費力吧？\n");
 
         msg = HIR "$N" HIR "一聲怒喝，猛然施出鐵掌掌法絕技「" NOR + WHT
               "九穹絕剎掌" NOR + HIR "」！體內天雷真氣急速運轉，雙臂陡"
-              "然\n暴長數尺。只聽破空之聲驟響，雙掌幻出漫天掌影，舖天"
+              "然\n暴長數尺。只聽破空之聲驟響，雙掌幻出漫天掌影，鋪天"
               "蓋地向$n" HIR "連環拍出！\n\n" NOR;
 
         ap=attack_power(me,"strike")+me->query_str()*20;

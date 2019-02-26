@@ -11,7 +11,7 @@ void create()
         if (clonep())
                 destruct(this_object());
         else {
-                set("long", HIW "一根通體銀白的長索，索頭上系有一個鋼球。\n" NOR);
+                set("long", HIW "一根通體銀白的長索，索頭上繫有一個鋼球。\n" NOR);
                 set("unit", "根");
                 set("value", 800000);
                 set("no_sell", 1);
@@ -47,7 +47,7 @@ mixed hit_ob(object me, object victim, int damage_bonus)
                 n = me->query_skill("whip");
                 victim->receive_damage("qi", n * 2 / 3, me);
                 victim->receive_wound("qi", n * 2 / 3, me);
-                return HIW "只見$N" HIW "聚力于腕，便聽得“颼”的一聲，劍盾珠"
+                return HIW "只見$N" HIW "聚力於腕，便聽得“颼”的一聲，劍盾珠"
                        "索竟若活物一般，直襲$n" HIW "而去！\n" NOR;
         }
         return damage_bonus;

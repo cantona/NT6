@@ -5,9 +5,9 @@ inherit SKILL;
 string *dodge_msg = ({
         "$n身子一扭，姿勢頗為怪異，躲過了$N這一招。\n",
         "可是$n突然抱頭滾地而走，躲過了$N這一招。\n",
-        "$n突然身邊彌漫起一團白霧，讓$N失去了方向。\n",
+        "$n突然身邊瀰漫起一團白霧，讓$N失去了方向。\n",
         "$n忽然身形加快，使$N失去了$n的蹤跡。\n",
-        "$n突然匍匐于地，使$N招數全然落空。\n",
+        "$n突然匍匐於地，使$N招數全然落空。\n",
 });
 
 int valid_enable(string usage) { return (usage == "dodge") || (usage == "move"); }

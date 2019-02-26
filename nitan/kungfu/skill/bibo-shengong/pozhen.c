@@ -14,9 +14,9 @@ int exert(object me, object target)
 
         env = environment(me);
         if (!env)
-                return notify_fail("這裡什麼地方也不是！\n");
+                return notify_fail("這裏什麼地方也不是！\n");
         if( !query("th_buzhen", env) )
-                return notify_fail("這裡並無布有奇門陣法。\n");
+                return notify_fail("這裏並無布有奇門陣法。\n");
         
         if( !objectp(owner=find_player(query("th_zhen_owner", env))) || 
             environment(owner) != env)
@@ -31,7 +31,7 @@ int exert(object me, object target)
                 delete("th_pozhen", env);
                 delete("th_zhen_owner", env);
         
-                tell_object(env, CYN"一陣青霧升騰而起又四散而去，四面景致猛然一變。\n"NOR);
+                tell_object(env, CYN"一陣青霧升騰而起又四散而去，四面景緻猛然一變。\n"NOR);
                 return 1;
         }
 
@@ -60,7 +60,7 @@ int exert(object me, object target)
                 return 1;
         }
 
-        msg = HIW"$N凝思片刻，陣法的種種生克變化已全盤了然于胸，仰天一聲長笑，袍袖一拂，\n";
+        msg = HIW"$N凝思片刻，陣法的種種生克變化已全盤瞭然於胸，仰天一聲長笑，袍袖一拂，\n";
         msg += "掠入陣中，掌劈腳挑，頓時飛沙走石，不一刻，陣中陰霾戾氣已消散得無影無蹤！\n"NOR;
         message_vision(msg, me);
         

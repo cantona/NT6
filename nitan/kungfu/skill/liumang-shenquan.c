@@ -6,7 +6,7 @@
 inherit SKILL;
 
 mapping *action = ({
-([      "action" : "$N沉腰坐馬，左拳護身，右拳直擊，一招「黑虎掏心」，挾著風聲擊向$n的$l",
+([      "action" : "$N沉腰坐馬，左拳護身，右拳直擊，一招「黑虎掏心」，挾着風聲擊向$n的$l",
         "force" : 120,
         "dodge" : 20,
         "parry" : 20,
@@ -54,7 +54,7 @@ mapping *action = ({
         "skill_name" : "拔草尋蛇",
         "damage_type" : "瘀傷"
 ]),
-([      "action" : "$N口裡一聲怪吼，雙拳虛握，狀如虎爪，一招「猛虎跳澗」，對準$n的$l抓去",
+([      "action" : "$N口裏一聲怪吼，雙拳虛握，狀如虎爪，一招「猛虎跳澗」，對準$n的$l抓去",
          "force" : 220,
         "dodge" : -10,
         "parry" : -10,

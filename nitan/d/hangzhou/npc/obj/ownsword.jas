@@ -49,7 +49,7 @@ int do_put(string arg)
 void owner_is_killed()
 {
         object me = this_player();
-        write(HIY"只見眼前金光一閃...好象是.....\n"NOR);
+        write(HIY"只見眼前金光一閃...好像是.....\n"NOR);
         write("人在劍在,人亡劍亡。\n");
         query_temp("done_s", me);
         delete_temp("done_s", me);

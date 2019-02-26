@@ -23,7 +23,7 @@ int main(object me, string arg)
         seteuid(getuid(me));
 
         if( !wizardp(me) && time()-query_temp("last_stats", me)<5 )
-                return notify_fail("系統氣喘噓地嘆道：慢慢來 ....\n");
+                return notify_fail("系統氣喘噓地歎道：慢慢來 ....\n");
 
         set_temp("last_stats", time(), me);
         MYGIFT_D->check_mygift(me, "newbie_mygift/istat");
@@ -93,11 +93,11 @@ int main(object me, string arg)
                       jingmai_effect(ob, "derive_effect")+query_temp("apply/derive_effect", ob)+"%","1500%");
 
         sp += sprintf(WHT "【攻擊等級】" HIW " %9d / %-9d"
-                      WHT "【防御等級】" HIW " %9d / %d\n"
+                      WHT "【防禦等級】" HIW " %9d / %d\n"
                       WHT "【躲閃等級】" HIW " %9d / %-9d"
                       WHT "【招架等級】" HIW " %9d / %d\n"
                       WHT "【絕招命中】" HIW " %9s / %-9s"
-                      WHT "【絕招防御】" HIW " %9s / %s\n"
+                      WHT "【絕招防禦】" HIW " %9s / %s\n"
                       WHT "【兵器傷害】" HIG " %9d / %-9d"
                       WHT "【空手傷害】" HIG " %9d / %d\n"
                       WHT "【絕招傷害】" HIG " %9s / %-9s"
@@ -209,7 +209,7 @@ int main(object me, string arg)
 
         sp += HIC "≡" HIY "───────────────────────────────" HIC "≡\n" NOR;
 
-        sp += sprintf(HIG + (ob == me ? "你" : ob->name()) + HIG "在%s裡已經歷練了 " NOR + HIC "%s\n" NOR,
+        sp += sprintf(HIG + (ob == me ? "你" : ob->name()) + HIG "在%s裏已經歷練了 " NOR + HIC "%s\n" NOR,
                         LOCAL_MUD_NAME(), time_period(query("online_time", ob)));
 
         /*
@@ -224,9 +224,9 @@ int main(object me, string arg)
                               time_period(query("online_time", ob)/3-query("offline_time", ob)));
         }
 
-        sp += sprintf(HIG + (ob == me ? "你" : ob->name()) + HIG "今天的雙倍經驗時間還余 " NOR + HIW "%s\n" NOR,
+        sp += sprintf(HIG + (ob == me ? "你" : ob->name()) + HIG "今天的雙倍經驗時間還餘 " NOR + HIW "%s\n" NOR,
                       time_period(query("time_reward/quest", ob)));
-        sp += sprintf(HIG + (ob == me ? "你" : ob->name()) + HIG "今天的高效練功時間還余 " NOR + HIM "%s\n" NOR,
+        sp += sprintf(HIG + (ob == me ? "你" : ob->name()) + HIG "今天的高效練功時間還餘 " NOR + HIM "%s\n" NOR,
                       time_period(query("time_reward/study", ob)));
 
 

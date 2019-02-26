@@ -16,7 +16,7 @@
                 指標、或是指標指向的超越函式會對 this_object  做
                 一些處理時,  bind() 就很有用.
 
-                范例:
+                範例:
 
                 void make_living(object ob) {
                         function f;

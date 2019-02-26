@@ -128,7 +128,7 @@ mixed hit_ob(object me, object victim, int damage_bonus)
         if( random(damage_bonus) > victim->query_str()/10 )
         {
                 victim->receive_wound("qi", damage_bonus / 3, me);
-                return HIC "你聽到一聲脆響，仿佛是梅枝折斷的聲音！\n" NOR;
+                return HIC "你聽到一聲脆響，彷彿是梅枝折斷的聲音！\n" NOR;
         }
 }
 int learn_bonus() { return 0; }

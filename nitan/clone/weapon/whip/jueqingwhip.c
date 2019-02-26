@@ -12,7 +12,7 @@ void create()
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("long","一條藍色的長帶，細看由無數細如毛發的長絲聚成，雖輕若無物，卻無孔不入。\n");
+                set("long","一條藍色的長帶，細看由無數細如毛髮的長絲聚成，雖輕若無物，卻無孔不入。\n");
                 set("unit", "條");
                 set("value", 12000);
                 set("wield_msg", "$N左手輕揚，一條藍色綢帶忽地甩了出來。\n");

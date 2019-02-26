@@ -37,11 +37,11 @@ int perform(object me)
                 return notify_fail("你沒有激發太極拳，難以施展" + name() + "。\n");
 
         if (! living(target))
-                return notify_fail("對方都已經這樣了，用不著這麼費力吧？\n");
+                return notify_fail("對方都已經這樣了，用不着這麼費力吧？\n");
 
         msg = HIW "$N" HIW "連消帶打，雙手成圓形擊出，這"
               "正是太極拳「圓轉不斷」四字的精意。只\n見$N"
-              HIW "隨即平圈、立圈、正圈、斜圈，一個跟著一"
+              HIW "隨即平圈、立圈、正圈、斜圈，一個跟着一"
               "個，一個個太極圓圈頓時籠\n罩$n" HIW "四面"
               "八方。\n" NOR;
 

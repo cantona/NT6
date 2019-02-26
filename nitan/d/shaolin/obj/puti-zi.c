@@ -32,7 +32,7 @@ int do_effect(object me)
 /*
         if ((int)me->query_condition("putizi_drug") > 0)
         {
-                write("你覺得現在內息未定，經脈隱隱還能感到真氣沖盪，不"
+                write("你覺得現在內息未定，經脈隱隱還能感到真氣衝蕩，不"
                       "敢貿然服食。\n");
                 return 1;
         } else
@@ -45,7 +45,7 @@ int do_effect(object me)
                 set("neili",query("max_neili",  me), me);
 
                 message_vision(HIY "$N" HIY "吃下一顆菩提子，頓然間只覺一股浩"
-                               "盪無比的真氣直沖頂門，連忙運功吸納。\n" NOR,
+                               "蕩無比的真氣直衝頂門，連忙運功吸納。\n" NOR,
                                me);
                 // me->apply_condition("putizi_drug", 1000);
         } else

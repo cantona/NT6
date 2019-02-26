@@ -1,4 +1,4 @@
-// wu.c 群魔亂舞
+// wu.c 羣魔亂舞
 
 #include <ansi.h>
 
@@ -19,13 +19,13 @@ int perform(object me, object target)
         }
 
         if( userp(me) && !query("can_perform/pixie-jian/wu", me) )
-                return notify_fail("你還不會使用「群魔亂舞」。\n");
+                return notify_fail("你還不會使用「羣魔亂舞」。\n");
 
         if( query("gender", me) != "無性" && !query("tianmo_jieti", me) )
                 return notify_fail("你的性別與日月內功相斥，無法使用此絕招！\n");  
 
         if (! target || ! me->is_fighting(target))
-                return notify_fail("群魔亂舞只能對戰鬥中的對手使用。\n");
+                return notify_fail("羣魔亂舞只能對戰鬥中的對手使用。\n");
 
         if( !objectp(weapon=query_temp("weapon", me)) || 
             query("skill_type", weapon) != "sword" )
@@ -35,10 +35,10 @@ int perform(object me, object target)
                 return notify_fail("你並沒有使用辟邪劍法，無法使用此絕招！\n"); 
 
         if( query("neili", me)<300 )
-                return notify_fail("你的真氣不夠，無法施展群魔亂舞！\n");
+                return notify_fail("你的真氣不夠，無法施展羣魔亂舞！\n");
 
         if ((lvl = (int)me->query_skill("pixie-jian", 1)) < 350)
-                return notify_fail("你的辟邪劍法火候不夠，無法施展群魔亂舞！\n");
+                return notify_fail("你的辟邪劍法火候不夠，無法施展羣魔亂舞！\n");
 
         msg = HIR "$N" HIR "一聲長吟，身形變得奇快無比，接連向$n"
               HIR "攻出數招！\n" NOR;
@@ -54,7 +54,7 @@ int perform(object me, object target)
                 i += random(6);
         } else
         {
-                msg += CYN "$n" CYN "見$N" CYN "身法好快，哪裡"
+                msg += CYN "$n" CYN "見$N" CYN "身法好快，哪裏"
                        "敢怠慢，連忙打起精神小心應對。\n" NOR;
                 count = 0;
         }

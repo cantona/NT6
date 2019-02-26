@@ -16,7 +16,7 @@
 #define STATUS_WAIT_COMMAND     2               // 等待命令
 #define STATUS_SENDING          3               // 發送文件
 
-// VERSION-FTP客戶端的狀態
+// VERSION-FTP客户端的狀態
 #define STATUS_CONNECTING       101             // 連接中
 #define STATUS_GET_VERSION      102             // 獲得版本
 #define STATUS_GET_VERSION_DATA 103             // 獲得版本數據
@@ -31,8 +31,8 @@
 #define FILE_SIZE               3               // 文件大小
 #define CMD_QUEUE               4               // 待處理的命令
 #define PENDING_WRITE           5               // 等待發送的信息
-#define CMD_BUFFER              6               // (服務器端)緩沖區
-#define RESULT_BUFFER           6               // (客戶端)緩沖區
+#define CMD_BUFFER              6               // (服務器端)緩衝區
+#define RESULT_BUFFER           6               // (客户端)緩衝區
 #define SUB_SITES               7               // 分站站點名字
 
 // 每次通常應答返回的長度

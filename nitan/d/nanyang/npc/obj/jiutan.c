@@ -6,12 +6,12 @@ inherit ITEM;
 inherit F_LIQUID;
 void create()
 {
-        set_name(YEL "黃酒壇子" NOR, ({"jiu tanzi", "tanzi", "pot"}));
+        set_name(YEL "黃酒罈子" NOR, ({"jiu tanzi", "tanzi", "pot"}));
         set_weight(8000);
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("long", "一個用來裝黃酒的大泥壇子，封口上貼著紅紙。\n");
+                set("long", "一個用來裝黃酒的大泥罈子，封口上貼着紅紙。\n");
                 set("unit", "個");
                 set("value", 800);
                 set("max_liquid", 120);

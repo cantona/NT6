@@ -4,7 +4,7 @@
 inherit SKILL; 
 
 mapping *action = ({
-([      "action":"$N身形稍退，手中$w迎風一抖，一招「月黑風高」，朝著$n劈頭蓋臉地砸將下來。",
+([      "action":"$N身形稍退，手中$w迎風一抖，一招「月黑風高」，朝着$n劈頭蓋臉地砸將下來。",
         "force" :120,
         "attack":15,
         "dodge" :40,
@@ -14,24 +14,24 @@ mapping *action = ({
         "skill_name" :"月黑風高",
         "damage_type":"砸傷"
 ]),
-([      "action":"$N面帶戚色，手中$w以一招「凄風長號」狂風驟雨般地向$n的$l連連掃去。",
+([      "action":"$N面帶戚色，手中$w以一招「悽風長號」狂風驟雨般地向$n的$l連連掃去。",
         "force" :150,
         "attack":25,
         "dodge" :48,
         "parry" :35,
         "damage":30,
         "lvl"   :20,
-        "skill_name" :"凄風長號",
+        "skill_name" :"悽風長號",
         "damage_type":"挫傷"
 ]),
-([      "action":"$N身形一轉，手中$w往後一拖，就在這將退未退之際，一招「峰回路轉」，向$n當頭砸下。",
+([      "action":"$N身形一轉，手中$w往後一拖，就在這將退未退之際，一招「峯迴路轉」，向$n當頭砸下。",
         "force" :180,
         "attack":40,
         "dodge" :60,
         "parry" :50,
         "damage":48,
         "lvl"   :50,
-        "skill_name" :"峰回路轉",
+        "skill_name" :"峯迴路轉",
         "damage_type":"砸傷"
 ]),
 ([      "action":"$N身形一轉，一招「寒風起兮」$w幻出滿天棍影，虛虛實實地襲向$n的$l。",
@@ -44,7 +44,7 @@ mapping *action = ({
         "skill_name" :"寒風起兮",
         "damage_type":"瘀傷"
 ]),
-([      "action":"$N袖舞時幻起花雨滿天，$w落處化作斷霞千縷，一式「生死相隨」，著著搶攻，全然不顧$n進招。",
+([      "action":"$N袖舞時幻起花雨滿天，$w落處化作斷霞千縷，一式「生死相隨」，着着搶攻，全然不顧$n進招。",
         "force" :230,
         "attack":70,
         "dodge" :90,
@@ -54,14 +54,14 @@ mapping *action = ({
         "skill_name" :"生死相隨",
         "damage_type":"瘀傷"
 ]),
-([      "action":"$n忽然不見$N，猛一抬頭只見$N一式「策□□川」，急風驟雨一般徑直掃向$n$l。",
+([      "action":"$n忽然不見$N，猛一抬頭只見$N一式「策馬長川」，急風驟雨一般徑直掃向$n$l。",
         "force" :280,
         "attack":90,
         "dodge" :105,
         "parry" :100,
         "damage":80,
         "lvl"   :150,
-        "skill_name" :"策□□川",
+        "skill_name" :"策馬長川",
         "damage_type":"挫傷"
 ]),
 });

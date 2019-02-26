@@ -40,10 +40,10 @@ int perform(object me, object target)
                 return notify_fail("你沒有準備使用混元掌，無法施展" + name() + "！\n");
 
        if (! living(target))
-              return notify_fail("對方都已經這樣了，用不著這麼費力吧？\n");
+              return notify_fail("對方都已經這樣了，用不着這麼費力吧？\n");
 
         msg = HIC "$N" HIC "怒喝一聲，潛運「" HIW "混元無極" HIC "」，雙拳挾"
-              "著隱隱的風雷之聲向$n" HIC "擊去。\n" NOR;
+              "着隱隱的風雷之聲向$n" HIC "擊去。\n" NOR;
 
         ap = attack_power(me, "strike");
         dp = defense_power(target, "force");

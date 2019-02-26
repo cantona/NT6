@@ -12,7 +12,7 @@ int perform(object me, object target)
 
         if( !objectp(ob=query_temp("handing", me)) ||
             ! ob->valid_as_xiao())
-                return notify_fail("你手裡沒有拿蕭，無法使出這個絕招！\n");
+                return notify_fail("你手裏沒有拿蕭，無法使出這個絕招！\n");
 
         if (! target)
         {
@@ -43,12 +43,12 @@ int perform(object me, object target)
         msg = HIC "$N" HIC "手按玉簫，腳踏八卦方位，奏出" NOR
               HIW "§" NOR+HIC "碧海潮生按玉簫" NOR+HIW "§" NOR
               HIC "............\n" NOR;
-        msg += HIW "\n只聽得如鳴琴，如擊玉，發了幾聲，接著悠悠"
+        msg += HIW "\n只聽得如鳴琴，如擊玉，發了幾聲，接着悠悠"
                    "揚揚，飄下一陣清亮柔和的洞簫聲來。\n" NOR;
 
         if (dp < random(ap * 2))
         {
-                msg += HIR "$n" HIR "心頭一盪，臉上不自禁的露出微笑！\n" NOR;
+                msg += HIR "$n" HIR "心頭一蕩，臉上不自禁的露出微笑！\n" NOR;
                 jing=query("max_jing", target);
                 target->receive_damage("jing", jing * lvl / 300, me);
                 target->receive_wound("jing", jing * lvl / 500, me);
@@ -60,7 +60,7 @@ int perform(object me, object target)
         }
 
         msg = HIW "那洞簫聲情致飄忽，纏綿宛轉，便似一個女子一會"
-                  "兒嘆息，一會兒呻吟，一會兒又軟語溫存或\n"
+                  "兒歎息，一會兒呻吟，一會兒又軟語温存或\n"
                   "柔聲叫喚。\n" NOR;
 
         if (dp < random(ap))
@@ -76,13 +76,13 @@ int perform(object me, object target)
                 message_vision(msg, me, target);
         }
 
-        msg = HIW  "那簫聲清亮宛如大海浩淼，萬裡無波，遠處潮水緩緩推近，漸近漸快，其後洪濤洶湧，白浪連\n"
-                   "山，而潮水中魚躍鯨浮，海面上風嘯鷗飛，再加上水妖海怪，群魔弄潮，忽而冰山飄至，忽而\n"
+        msg = HIW  "那簫聲清亮宛如大海浩淼，萬里無波，遠處潮水緩緩推近，漸近漸快，其後洪濤洶湧，白浪連\n"
+                   "山，而潮水中魚躍鯨浮，海面上風嘯鷗飛，再加上水妖海怪，羣魔弄潮，忽而冰山飄至，忽而\n"
                    "熱海如沸，極盡變幻之能事。\n" NOR;
 
         if (dp < random(ap / 2))
         {
-                msg+= HIR "$n" HIR "只感心頭滾熱，喉幹舌燥！\n" NOR;
+                msg+= HIR "$n" HIR "只感心頭滾熱，喉乾舌燥！\n" NOR;
                 jing=query("max_jing", target);
                 target->receive_damage("jing", jing * lvl / 50, me);
                 target->receive_wound("jing", jing * lvl / 120, me);
@@ -93,12 +93,12 @@ int perform(object me, object target)
                 message_vision(msg, me, target);
         }
 
-        msg = HIW "簫聲癒來癒細，幾乎難以聽聞，尤如潮退後水平如"
+        msg = HIW "簫聲愈來愈細，幾乎難以聽聞，尤如潮退後水平如"
                   "鏡，海底卻又是暗流湍急。\n" NOR;
 
         if (dp < random(ap / 4))
         {
-                msg+= HIR "$n" HIR "此時已陷絕境，再也無法脫身！\n" NOR;
+                msg+= HIR "$n" HIR "此時已陷絕境，再也無法脱身！\n" NOR;
                 jing=query("max_jing", target);
                 target->receive_damage("jing", jing * lvl / 25, me);
                 target->receive_wound("jing", jing * lvl / 50, me);

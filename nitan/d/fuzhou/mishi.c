@@ -13,9 +13,9 @@ void create()
 {
         set("short","密室");
         set("long", @LONG
-這是一間黑□□的小房間，牆上的磚頭(zhuan) 已經掉渣子了，房
+這是一間黑黢黢的小房間，牆上的磚頭(zhuan) 已經掉渣子了，房
 樑(liang) 也已經朽爛不堪。牆腳處有一個鐵箱子，上面積滿了塵土。
-左首處懸掛著一幅畫(hua)，角落處斜放著幾捆幹柴。
+左首處懸掛着一幅畫(hua)，角落處斜放着幾捆乾柴。
 LONG );
         set("exits", ([
                 "out" : __DIR__"midao",
@@ -51,7 +51,7 @@ string look_hua()
         if( query("score", me)<3000 )
                 return HIR "\n一幅陳舊的畫卷，畫中達摩老祖左手握個劍訣，慈祥安和。\n" NOR;
 
-        set_temp("marks/辟1", 1, me);
+        set_temp("marks/闢1", 1, me);
         return HIR "\n一幅陳舊的畫卷，畫中達摩老祖左手握個劍訣，正指向房樑(liang)處。\n" NOR;
 }
 
@@ -59,13 +59,13 @@ string look_liang()
 {
         object me = this_player();
 
-        if( !query_temp("marks/辟1", me) )
+        if( !query_temp("marks/闢1", me) )
                 return "你要看什麼？\n";
 
         if (query("move"))
                 return WHT "一根楠木做的房樑，上面有嶄新的刮痕，似乎不久前才有人動過。\n" NOR;
 
-        set_temp("marks/辟2", 1, me);
+        set_temp("marks/闢2", 1, me);
         return WHT "一根楠木做的房樑，可惜年代太久，已經腐爛得不成樣子了。\n" NOR;
 }
 
@@ -95,7 +95,7 @@ int do_jump(string arg)
                 return 1;
            }
 
-           if( query_temp("marks/辟2", me) )
+           if( query_temp("marks/闢2", me) )
            {
                 if (me->query_dex() < 40)
                         write(HIC "你試圖跳上房樑，無奈身法不夠敏捷，只好做罷。\n" NOR);
@@ -123,8 +123,8 @@ int do_jump(string arg)
 
 int valid_leave(object me, string dir)
 {
-        delete_temp("marks/辟1", me);
-        delete_temp("marks/辟2", me);
+        delete_temp("marks/闢1", me);
+        delete_temp("marks/闢2", me);
         delete_temp("marks/跳1", me);
         return ::valid_leave(me, dir);
 }

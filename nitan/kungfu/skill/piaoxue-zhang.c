@@ -2,7 +2,7 @@
 inherit SKILL;
 
 mapping *action = ({
-([        "action" : "$N劃身錯步，一式「追風逐電」，雙掌內攏外托，同時攻向$n的左肩",
+([        "action" : "$N劃身錯步，一式「追風逐電」，雙掌內攏外託，同時攻向$n的左肩",
         "force"  : 170,
         "attack" : 85,
         "dodge"  :-38,
@@ -22,7 +22,7 @@ mapping *action = ({
         "skill_name" : "雲飄四海",
         "damage_type" : "內傷"
 ]),
-([        "action" : "$N使一式「八方雲湧」，勁氣彌漫，雙掌如輪，一環環向$n的後背斫去",
+([        "action" : "$N使一式「八方雲湧」，勁氣瀰漫，雙掌如輪，一環環向$n的後背斫去",
         "force"  : 280,
         "attack" : 103,
         "dodge"  :-51,
@@ -32,24 +32,24 @@ mapping *action = ({
         "skill_name" : "八方雲湧",
         "damage_type" : "內傷"
 ]),
-([        "action" : "$N一式「龍卷暴伸」，雙掌似讓非讓，似頂非頂，氣浪如急流般使$n陷身其中",
+([        "action" : "$N一式「龍捲暴伸」，雙掌似讓非讓，似頂非頂，氣浪如急流般使$n陷身其中",
         "force"  : 340,
         "attack" : 125,
         "dodge"  :-65,
         "parry"  :-65,
         "damage" : 67,
         "lvl"    : 120,
-        "skill_name" : "龍卷暴伸",
+        "skill_name" : "龍捲暴伸",
         "damage_type" : "內傷"
 ]),
-([        "action" : "$N一式「冰封萬裡」，掌影層層疊疊，飄飄渺渺，凌厲的掌風直湧$n而去",
+([        "action" : "$N一式「冰封萬里」，掌影層層疊疊，飄飄渺渺，凌厲的掌風直湧$n而去",
         "force"  : 370,
         "attack" : 131,
         "dodge"  :-68,
         "parry"  :-68,
         "damage" : 71,
         "lvl"    : 160,
-        "skill_name" : "冰封萬裡",
+        "skill_name" : "冰封萬里",
         "damage_type" : "內傷"
 ]),
 ([        "action" : "$N雙手變幻，五指輕彈，一招「穹寰飛仙」，力分五路，招劃十方籠罩$n",

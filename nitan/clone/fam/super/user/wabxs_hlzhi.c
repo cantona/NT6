@@ -7,7 +7,7 @@ void create()
         if (clonep())
                 set_default_object(__FILE__);
         else {  
-        	set("long", HIC "火靈芝生長于新疆最酷熱的地下深處，吸收了大地之氣！\n" + 
+        	set("long", HIC "火靈芝生長於新疆最酷熱的地下深處，吸收了大地之氣！\n" + 
         	                "服食(fushi huolingzhi)後可永久提升內力上限10點。\n" HIC
         	                "擁有者：wabxs\n" NOR);
                 set("unit", "顆");
@@ -35,7 +35,7 @@ int do_use(string arg)
 		return notify_fail("你身上沒有這個東西！\n");
 
 	if (ob->query("owner") != me->query("id"))
-		return notify_fail(ob->name() + NOR "已經于其他玩家綁定！\n");
+		return notify_fail(ob->name() + NOR "已經於其他玩家綁定！\n");
 	
 	me->add("drug_addneili", 10);
 

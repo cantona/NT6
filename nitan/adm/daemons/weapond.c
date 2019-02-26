@@ -46,7 +46,7 @@ mapping weapon_actions = ([
              "dodge"       : -10,
              "parry"       : -10, ]),
 
-"strike": ([ "action"      : "$N一個大舒臂掄起$w，對著$n的$l往下一砸",
+"strike": ([ "action"      : "$N一個大舒臂掄起$w，對着$n的$l往下一砸",
              "damage_type" : "築傷",
              "dodge"       : -10,
              "parry"       : -10, ]),
@@ -120,7 +120,7 @@ void bash_weapon(object me, object victim, object weapon, int damage)
                 if( wap > 2 * wdp )
                 {
                         message_vision(HIW "$N" HIW "只覺得手中" + ob->name() +
-                                       HIW "把持不定，脫手飛出！\n" NOR, victim);
+                                       HIW "把持不定，脱手飛出！\n" NOR, victim);
                         ob->unequip();
                         ob->move(environment(victim));
                         victim->reset_action();
@@ -128,7 +128,7 @@ void bash_weapon(object me, object victim, object weapon, int damage)
                 if (wap > wdp)
                 {
                         message_vision(HIY "$N" HIY "只覺得手中" + ob->name() +
-                                       HIY "一震，險些脫手！\n" NOR, victim);
+                                       HIY "一震，險些脱手！\n" NOR, victim);
                 } else
                 if (wap > wdp / 2 && !ob->is_item_make() && query("material", ob) == "no name" && query("material", ob) == "tian jing" ) 
                 {

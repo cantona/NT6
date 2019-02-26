@@ -72,7 +72,7 @@ int do_out(string arg)
            return 0;
                } 
      message_vision("$N掀起帷簾，跳下了車。\n",me);     me->move(environment(who));
-     message_vision("馬車的帷簾掀了起來，$N從車裡跳到地上。\n",me);
+     message_vision("馬車的帷簾掀了起來，$N從車裏跳到地上。\n",me);
      return 1;     
 } 
 
@@ -138,7 +138,7 @@ tell_object(me,"       |______________________|\n");
  
            room = environment(who);
            if( !query("exits", room)){
-                    str += "\n    這裡已經沒有路了。\n";
+                    str += "\n    這裏已經沒有路了。\n";
                              }
            else {
            str1=query("exits", room);
@@ -160,7 +160,7 @@ tell_object(me,"       |______________________|\n");
                  }
            objcon = sizeof(all_inventory(who));
            sth = all_inventory(who);
-           str += WHT"    鏢車裡面有：\n"NOR;
+           str += WHT"    鏢車裏面有：\n"NOR;
            for (i=0; i<objcon; i++) {
                 if (!objectp(sth[i])) {
                         continue;
@@ -205,7 +205,7 @@ int do_move(string arg)
              return notify_fail("你要去哪兒？\n");
                }
      if( !query("exits", environment(who))){
-             return notify_fail("這裡已經沒有路了，你哪兒也去不了。\n");
+             return notify_fail("這裏已經沒有路了，你哪兒也去不了。\n");
                }
       exi=query("exits", environment(who));
      key = keys(exi);
@@ -216,8 +216,8 @@ int do_move(string arg)
                 filename = val[i] + ".c";
                 if (file_size(filename)<=0) continue;
                 end = load_object(filename);
-                tell_room(environment(who),"拉車的馬一聲長嘶，放開四蹄，如離弦之箭般的向著"+query("short", end)+"奔去……\n\n"+NOR);
-                tell_room(who,"馬車輕微晃了一下，如離弦之箭般的向著"+query("short", end)+"奔去……\n\n");
+                tell_room(environment(who),"拉車的馬一聲長嘶，放開四蹄，如離弦之箭般的向着"+query("short", end)+"奔去……\n\n"+NOR);
+                tell_room(who,"馬車輕微晃了一下，如離弦之箭般的向着"+query("short", end)+"奔去……\n\n");
                 who->move(end);
                 if (environment(who)!=end) return 0;
                 tell_room(who,"很快，馬車已到了目的地。("+query("short", end)+")\n"+NOR);
@@ -250,7 +250,7 @@ int do_open(string arg)
     message_vision("$N打開鏢車，取出了"+query("name", silver)+"。\n",me);
       silver->set_amount(20000+random(20000));
       silver->move(me);  
-    message("vision",HIM"\n【謠言】某人：聽說"+HIM+query("name", me)+HIM"在"+HIM+query("short", env)+HIM"把鏢銀劫走啦！\n\n"NOR,users());
+    message("vision",HIM"\n【謠言】某人：聽説"+HIM+query("name", me)+HIM"在"+HIM+query("short", env)+HIM"把鏢銀劫走啦！\n\n"NOR,users());
 
       return 1;
 }

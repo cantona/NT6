@@ -14,7 +14,7 @@ mapping value_2_props = ([
         "dex"           : "身法",       // weapon/armor/rings a
         "kar"           : "福緣",       // weapon/armor/rings a
         "per"           : "容貌",       // rings              a
-        "gold_find"     : "獲取黃金幾率",     // weapon/rings a
+        "gold_find"     : "獲取黃金機率",     // weapon/rings a
         
 
         "max_jingli"    : "精力最大值", // weapon/armor/rings a
@@ -38,7 +38,7 @@ mapping value_2_props = ([
         "attack"        : "攻擊",       // weapon             a
         "parry"         : "招架",       // armor              a
         "dodge"         : "躲閃",       // armor              a
-        "defense"       : "防御",       // armor              a
+        "defense"       : "防禦",       // armor              a
 
         "research_times": "研究次數",   // weapon/armor/rings a
         "learn_times"   : "學習次數",   // weapon/armor/rings a
@@ -82,15 +82,15 @@ mapping value_3_props = ([
 mapping value_5_props = ([             
         "magic_find"    : "尋寶率(MF值)",       // weapon/rings             c
         "ap_power"      : "絕招攻擊力",         // weapon/rings             c
-        "dp_power"      : "絕招防御力",         // armor                    c
+        "dp_power"      : "絕招防禦力",         // armor                    c
         "da_power"      : "絕招傷害力",         // weapon/rings             c
-        "avoid_defense" : "攻擊無視目標防御",   // weapon/rings             c
+        "avoid_defense" : "攻擊無視目標防禦",   // weapon/rings             c
         "avoid_parry"   : "攻擊無視目標招架",   // weapon/rings             c
         "avoid_dodge"   : "攻擊無視目標躲閃",   // weapon/rings             c
-        "avoid_force"   : "攻擊無視內功防御",   // weapon/rings             c
+        "avoid_force"   : "攻擊無視內功防禦",   // weapon/rings             c
         "avoid_attack"  : "無視目標特殊攻擊",   // armor                    c
-        "suck_neili"    : "偷取內力",           // weapon 命中偷取內力幾率：命中敵人時按傷害值的10%率回復內力   c
-        "suck_qi"       : "偷取生命",           // weapon 命中偷取生命幾率：命中敵人時按傷害值的10%比率回復生命 c
+        "suck_neili"    : "偷取內力",           // weapon 命中偷取內力機率：命中敵人時按傷害值的10%率回覆內力   c
+        "suck_qi"       : "偷取生命",           // weapon 命中偷取生命機率：命中敵人時按傷害值的10%比率回覆生命 c
         "double_damage" : "雙倍傷害",           // weapon/rings 增加殺氣：加一點殺氣，暴擊（雙倍傷害）的概率增加1%  c
         "through_armor" : "破甲",               // weapon/rings 破甲-攻擊時無視目標防具的保護力through_armor        c        
         "qi_vs_neili"   : "受損的生命轉為內力", // rings 30%的機會受損的生命x%轉換為內力  c   
@@ -105,7 +105,7 @@ mapping value_5_props = ([
 
 mapping value_10_props = ([          
         "clear_force"   : "破氣",                       // weapon 破除對手所有內力，讓對手內力為0 d       
-        "add_freeze"    : "冰凍",                       // weapon 終極兵器 冰凍-遲緩，減緩對方攻擊，攻擊pfm速度降低，無任何防御，無躲閃，無招架，就是挨打 d
+        "add_freeze"    : "冰凍",                       // weapon 終極兵器 冰凍-遲緩，減緩對方攻擊，攻擊pfm速度降低，無任何防禦，無躲閃，無招架，就是捱打 d
         "add_dizziness" : "眩暈",                       // weapon 終極兵器 眩暈，不能進行任何行動，受到攻擊會醒來，否則5秒內一直不動，解除戰鬥狀態 d
         "add_forget"    : "遺忘",                       // weapon 終極防具 遺忘-使對方忘記所有技能的絕招add_oblivion    d
         "add_weak"      : "虛弱",                       // weapon 終極兵器 讓對手攻防傷害減半，包括絕招                 d
@@ -118,15 +118,15 @@ mapping value_10_props = ([
         "avoid_busy"    : "忽視忙亂",                   // armor/rings 終極防具 d
         "reduce_busy"   : "化解忙亂",                   // armor/rings 終極防具 d
 
-        "fatal_blow"    : "必殺率",                     // weapon 終極兵器 必殺率-擁有20%的幾率損傷目標的生命x%     d
-        "slaughter"     : "殺戮",                       // weapon 殺戮-攻擊時有幾率對當前房間所有敵人進行一次攻擊   d  
+        "fatal_blow"    : "必殺率",                     // weapon 終極兵器 必殺率-擁有20%的機率損傷目標的生命x%     d
+        "slaughter"     : "殺戮",                       // weapon 殺戮-攻擊時有機率對當前房間所有敵人進行一次攻擊   d  
         "add_skill"     : "提升技能",                   // weapon/rings 終極兵器                                    d
         "add_damage"    : "追加傷害",                   // weapon 終極兵器                                          d
         "reduce_damage" : "化解傷害",                   // armor 終極防具                                           d
         "full_self"     : "戰神附體",                   // armor 終極防具 戰神附體-氣血內力自動恢復                 d
-        "avoid_die"     : "浴血重生",                   // armor/ring 鳳凰涅□，浴血重生，忽視死亡                  d
-        "counter_damage": "傷害反射",                   // armor 終極防具 傷害反射受到傷害時30%幾率的傷害x%反射給對方 d
+        "avoid_die"     : "浴血重生",                   // armor/ring 鳳凰涅槃，浴血重生，忽視死亡                  d
+        "counter_damage": "傷害反射",                   // armor 終極防具 傷害反射受到傷害時30%機率的傷害x%反射給對方 d
 ]);
 
-以上屬性，玩家在商城裡購買屬性元素時候，對應此表
+以上屬性，玩家在商城裏購買屬性元素時候，對應此表
 

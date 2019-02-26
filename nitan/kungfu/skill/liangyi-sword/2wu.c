@@ -66,7 +66,7 @@ int perform(object me,object target)
         
         skill = me->query_skill(bskill,1);
 
-        msg = HIB "$N輕吸一口氣，突然使出一招“無聲無色”，手中"+weapon1->name()+HIB"灌注兩道相同內勁， 但勁力恰恰相反，劍上所生的盪激之力、破空之聲，一齊相互抵消，無聲無息疾向$n背後刺去。\n";
+        msg = HIB "$N輕吸一口氣，突然使出一招“無聲無色”，手中"+weapon1->name()+HIB"灌注兩道相同內勁， 但勁力恰恰相反，劍上所生的蕩激之力、破空之聲，一齊相互抵消，無聲無息疾向$n背後刺去。\n";
         message_combatd(msg, me, target);
 
         ap = skill * 3;

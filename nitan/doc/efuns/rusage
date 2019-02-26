@@ -7,9 +7,9 @@
                 映射 rusage( 無參數 );
         函數用法:
                 這個超越函式 (efun) 透過 getrusage() 的系統呼叫收集資訊.
-                請參閱 getrusage() 線上手冊的說明以查詢收集的資訊種類. 
+                請參閲 getrusage() 線上手冊的説明以查詢收集的資訊種類. 
                 有的系統沒有 getrusage(), 但是有 times() 的系統呼叫. 在
-                這種系統裡只有 utime 和 stime 兩項資料. 報告的時間單位
+                這種系統裏只有 utime 和 stime 兩項資料. 報告的時間單位
                 是微秒 (millisecond). 
                 以下是 rusage() 的□例:
                 void

@@ -27,7 +27,7 @@ int do_eat(string arg)
         if(!present(this_object(), me))
                 return notify_fail("你要吃什麼？\n");
         if( me->is_busy() )
-                return notify_fail("別急，慢慢吃，小心別噎著了。\n");
+                return notify_fail("別急，慢慢吃，小心別噎着了。\n");
 
         if( (query("food", me) >= food_limit) || (query("water", me) >= water_limit) )
                 return notify_fail("你已經吃飽了，再也吃不下任何一點東西。\n");

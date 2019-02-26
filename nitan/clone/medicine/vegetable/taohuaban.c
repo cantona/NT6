@@ -17,7 +17,7 @@ void create()
         set("value", 40);
         set("nostrum", 16);
         set("unit", "片");
-        set("long", "這是一片風幹保存的桃花瓣，看來可以入藥。\n");
+        set("long", "這是一片風乾保存的桃花瓣，看來可以入藥。\n");
         set("pour_type", "1");
         setup();
 }
@@ -30,7 +30,7 @@ int do_eat(string arg)
         if(!present(this_object(), me))
                 return notify_fail("你要吃什麼？\n");
         if( me->is_busy() )
-                return notify_fail("別急，慢慢吃，小心別噎著了。\n");
+                return notify_fail("別急，慢慢吃，小心別噎着了。\n");
 
         write("人家只有蜜蜂和蝴蝶對花瓣有興趣，原來你也......\n");
         return 1;

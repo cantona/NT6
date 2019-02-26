@@ -59,7 +59,7 @@ int perform(object me, object target)
         }
         else
         {
-                msg += HIY"$p沉著應戰，沒有受到“奪魄”攻擊的影響！\n"NOR;
+                msg += HIY"$p沉着應戰，沒有受到“奪魄”攻擊的影響！\n"NOR;
         }
         message_combatd(msg, me, target);
         return 1;
@@ -71,6 +71,6 @@ void end(object target,int damage)
         delete_temp("sword", target);
         addn_temp("apply/attack", 0-damage, target);
         addn_temp("apply/defense", 0-damage, target);
-        message_vision(RED"$N終于從奪魄的陰影裡恢復了出來。\n"NOR,target);
+        message_vision(RED"$N終於從奪魄的陰影裏恢復了出來。\n"NOR,target);
 }
 

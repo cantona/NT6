@@ -25,14 +25,14 @@ int main(object me, string arg)
                         if (cob->query_leader() == me)
                                 cob->set_leader(0);
                 } else
-                        return notify_fail("已經有野獸跟著你了！\n");
+                        return notify_fail("已經有野獸跟着你了！\n");
         }
 
         if (! arg)
                 return notify_fail("你要讓什麼野獸跟隨你？\n");
 
         if (! objectp(ob = present(arg, environment(me))))
-                return notify_fail("這裡沒有這只野獸吧？\n");
+                return notify_fail("這裏沒有這隻野獸吧？\n");
 
         if (userp(ob)) 
                 return notify_fail("人家也是玩家，你搞什麼搞啊？\n");
@@ -47,7 +47,7 @@ int main(object me, string arg)
                 return notify_fail(ob->name() + "正在忙乎，沒空理你！\n");
 
         if( !query_temp("owner", ob) )
-                return notify_fail(ob->name() + "是只無主野獸，你得先馴服(train)它啊！\n");
+                return notify_fail(ob->name() + "是隻無主野獸，你得先馴服(train)它啊！\n");
 
         if( query_temp("owner", ob) != query("id", me) )
         {
@@ -59,14 +59,14 @@ int main(object me, string arg)
                 return notify_fail("你沒問題吧，自己跟自己？\n");
 
         if (! living(ob)) 
-                return notify_fail("這只野獸暈倒了，你怎能讓它跟你呢？\n");
+                return notify_fail("這隻野獸暈倒了，你怎能讓它跟你呢？\n");
 
         cost=query("max_jing", me)/(me->query_skill("training",1)/10)-10;
 
         if( query("jing", me) <= cost )
                 return notify_fail("現在你太累了，無法讓野獸跟隨。\n");
 
-        message_vision("只見$N沖著" + ob->name() +
+        message_vision("只見$N衝着" + ob->name() +
                        "手中擺了個手式，它一竄就跟上了。\n\n",me);
 
         me->receive_damage("jing", cost);
@@ -80,7 +80,7 @@ int help(object me)
         write(@HELP
 指令格式 : come <動物>
 
-此指令可用于讓某動物跟隨你。對于已經馴服的動物，可以進行下述指令：
+此指令可用於讓某動物跟隨你。對於已經馴服的動物，可以進行下述指令：
 
 基本指令：
         come <動物名>           讓動物跟隨主人行動。

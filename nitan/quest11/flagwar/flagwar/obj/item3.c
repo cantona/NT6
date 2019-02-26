@@ -24,7 +24,7 @@ int do_apply(object me) {
   if(environment() != me) return notify_fail(name()+"不在你身上。\n");
   if(!sizeof(me->query_temp("flag_war"))) return notify_fail(name()+"只能在搶旗戰的時候使用。\n");
   if(!sscanf(base_name(environment(me)), "/d/flagwar/%*s")) return notify_fail(name()+"只能在搶旗戰場使用。\n");
-  message_vision("$N拿起$n，口中喃喃□著聽不懂的音節，手指著$n胡亂揮舞著。\n突然從$n冒出微微的光芒，$N看起來不知道那裡變的有些不同了。\n", me, ob);
+  message_vision("$N拿起$n，口中喃喃唸着聽不懂的音節，手指着$n胡亂揮舞着。\n突然從$n冒出微微的光芒，$N看起來不知道那裏變的有些不同了。\n", me, ob);
 	me->add_temp("flag_war/guard", 1);
   destruct(ob);
   return 1;

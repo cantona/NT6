@@ -11,7 +11,7 @@ void create()
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("long","這是一朵秋海棠，又名斷腸花，象征苦戀。當人們愛情遇到波折、男\n女離別時，常以秋海棠自喻。 \n");
+                set("long","這是一朵秋海棠，又名斷腸花，象徵苦戀。當人們愛情遇到波折、男\n女離別時，常以秋海棠自喻。 \n");
                 set("unit", "束");
                 set("base_value", 35);
                 set("base_unit", "朵");

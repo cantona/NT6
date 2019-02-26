@@ -19,9 +19,9 @@ void create()
         if (random(10) > 2) name += name_words[random(sizeof(name_words))];
         set_name(name, ({"shi wei","shi","wei"}));
         set("long",
-                "這是位守護皇宮的帶刀侍衛，身穿勁裝，手持鋼"
-                "刀。他雙目精光炯炯，警惕地巡視著四周的情形。\n");
-        set("title", HIR"二品帶刀侍衛"NOR);
+                "這是位守護皇宮的帶刀侍衞，身穿勁裝，手持鋼"
+                "刀。他雙目精光炯炯，警惕地巡視着四周的情形。\n");
+        set("title", HIR"二品帶刀侍衞"NOR);
         set("age", 25);
         set("combat_exp", 200000);
         set("attitude", "heroism");

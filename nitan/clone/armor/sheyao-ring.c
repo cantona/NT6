@@ -12,7 +12,7 @@ void create()
                 set_default_object(__FILE__);
         else {
                 set("unit", "個");
-                set("long", HIG "蛇妖指環是傳說中蛇精佩帶的指環，擁有神秘的力量！\n" NOR);
+                set("long", HIG "蛇妖指環是傳説中蛇精佩帶的指環，擁有神祕的力量！\n" NOR);
                 set("value", 200000);
                 set("material", "gold");
                 set("armor_prop/dex", 6);

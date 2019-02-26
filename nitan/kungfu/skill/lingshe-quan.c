@@ -19,7 +19,7 @@ mapping *action = ({
         "skill_name" : "虎頭蛇尾",
         "damage_type" : "瘀傷"
 ]),
-([        "action": "$N一式「畫蛇添足」，右手環攏成爪，一出手就向扣$n的嚥喉要害",
+([        "action": "$N一式「畫蛇添足」，右手環攏成爪，一出手就向扣$n的咽喉要害",
         "force" : 130,
         "attack": 50,
         "dodge" : 40,

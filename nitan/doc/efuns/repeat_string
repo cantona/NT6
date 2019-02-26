@@ -3,7 +3,7 @@
         repeat_string()           MudOS v22
 
         名稱:
-                repeat_string() - 以一定的次數重復一個字符串,
+                repeat_string() - 以一定的次數重複一個字符串,
                                         生成一個新的字符串.
 
         語法:
@@ -12,13 +12,13 @@
                 字符串 repeat_string(字符串 str , 正整數 times);
 
         用法:
-                把字符串 str 重復 times 次連接返回一個新的字符串.
+                把字符串 str 重複 times 次連接返回一個新的字符串.
                 例如:
                         repeat_string("ab",5)
                         返回: "ababababab" 這個字符串.
 
 
-        這個函數需要在 options 文件裡定義了 PACKAGE_CONTRIB .
+        這個函數需要在 options 文件裏定義了 PACKAGE_CONTRIB .
 
         by 發現號(Find@tx)
 

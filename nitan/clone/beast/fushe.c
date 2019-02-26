@@ -47,7 +47,7 @@ int convert(string arg)
                 kill_ob(me);
                 return 1;
         }
-        message_vision("$N左手按住蝮蛇的頭，右手輕撫其七寸，口中念念有詞，片刻間將蛇化為一根蛇杖。\n",
+        message_vision("$N左手按住蝮蛇的頭，右手輕撫其七寸，口中唸唸有詞，片刻間將蛇化為一根蛇杖。\n",
                 me,);
                 ob = new("/d/baituo/obj/shezhang");
         ob->move(environment(this_object()));

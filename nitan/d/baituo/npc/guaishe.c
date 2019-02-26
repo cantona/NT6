@@ -27,7 +27,7 @@ mapping default_dirs = ([
                   "up":           "上",
                   "down":         "下",
                   "out":          "外",
-                  "enter":        "裡",
+                  "enter":        "裏",
 ]);
 
 void set_owner(object owner);
@@ -88,7 +88,7 @@ string long_desc()
                   string desc ;
                   object snake = this_object();
 
-                  desc = HIW"一條全身銀鱗的小蛇，是西域歐陽峰用幾十種最毒的蛇雜交培育出來的，奇毒無比，它正伸出血紅的毒舌盯住你。\n"NOR;
+                  desc = HIW"一條全身銀鱗的小蛇，是西域歐陽峯用幾十種最毒的蛇雜交培育出來的，奇毒無比，它正伸出血紅的毒舌盯住你。\n"NOR;
 
                   if( query("food", snake)<50 )
                          desc += RED"它看起來胃癟癟的，恐怕餓得正慌。\n"NOR;
@@ -227,8 +227,8 @@ void do_leave(object ob)
                         {
                                 message_vision("$N向後一跳，跳出戰圈！\n",ob);
                                 if(present("guai she",environment(ob)))
-                                  message_vision("$N說道：沒想到老毒物的寶貝玩意還真有兩下子。"+RANK_D->query_self(ob)+"改日再來奉陪！\n",ob);
-                                else message_vision("$N說道：哈蛤，老毒物的寶貝玩意到底不是"+RANK_D->query_self(ob)+"的對手！\n",ob);
+                                  message_vision("$N説道：沒想到老毒物的寶貝玩意還真有兩下子。"+RANK_D->query_self(ob)+"改日再來奉陪！\n",ob);
+                                else message_vision("$N説道：哈蛤，老毒物的寶貝玩意到底不是"+RANK_D->query_self(ob)+"的對手！\n",ob);
                         }
                         if(!living(ob))ob->revive(0);
                         message_vision("$N急急忙忙離開了。\n",ob);
@@ -446,7 +446,7 @@ int do_drive(string arg)
 
         ob = present(victim, environment(me));
 
-        if (!ob) return notify_fail("這裡並無此人！\n");
+        if (!ob) return notify_fail("這裏並無此人！\n");
         if (!living(ob)) return notify_fail("這不是活物！\n");
 
 
@@ -482,7 +482,7 @@ int do_drive(string arg)
 
         if( random(20) != 0)
         {
-                message("vision", HIR "只見"+ob->name()+"乖乖的向"+target_dir+"遊過去。\n" NOR, environment(ob), ({ob}));
+                message("vision", HIR "只見"+ob->name()+"乖乖的向"+target_dir+"游過去。\n" NOR, environment(ob), ({ob}));
 
                 if( ob->move(obj) ) {
                         message( "vision", HIR "只見"+ob->name()+"遊了過來。\n" NOR, environment(ob), ({ob}));
@@ -505,12 +505,12 @@ int do_yao(string arg)
 
         victim = arg;
 
-        if( victim == query("id", me))return notify_fail("怪蛇疑惑地看著你。\n");
+        if( victim == query("id", me))return notify_fail("怪蛇疑惑地看着你。\n");
 
         ob = present(victim, environment(me));
         snake = present("guai she",environment(me));
 
-        if (!ob) return notify_fail("這裡並無此人！\n");
+        if (!ob) return notify_fail("這裏並無此人！\n");
 
 
 
@@ -546,7 +546,7 @@ int do_yao(string arg)
                 snake->kill_ob(ob);
                 if(random(4)!=0 && living(ob) )
                 {
-                        message_vision( HIR "$N對著$n"+HIR"冷笑一聲："+RANK_D->query_rude(me)+HIR"居然敢縱蛇傷我，看招！\n" NOR, ob,me );
+                        message_vision( HIR "$N對着$n"+HIR"冷笑一聲："+RANK_D->query_rude(me)+HIR"居然敢縱蛇傷我，看招！\n" NOR, ob,me );
                         ob->kill_ob(me);
                 }
         }
@@ -569,7 +569,7 @@ int do_stop(string arg)
 
         ob = present(victim, environment(me));
 
-        if (!ob) return notify_fail("這裡並無此物！\n");
+        if (!ob) return notify_fail("這裏並無此物！\n");
 
         if ( present("shezhang",me) || present("guai shezhang",me))
                 message_vision(HIR "$N用蛇杖示意$n停下來。\n" NOR, me,ob);
@@ -608,13 +608,13 @@ int convert(string arg)
 
         if( query("jingli", me)<50)return notify_fail("你的精力不足。\n");
 
-        message_vision("$N左手持怪蛇杖伸到$n面前，右手對著$n做著奇怪的手勢，口中念念有詞。\n",
+        message_vision("$N左手持怪蛇杖伸到$n面前，右手對着$n做着奇怪的手勢，口中唸唸有詞。\n",
                 me,snake);
 
         addn("jingli", -20, me);
 
         if( query("food", snake)<200 )
-                return notify_fail("怪蛇還沒喂飽，不肯進蛇杖。\n");
+                return notify_fail("怪蛇還沒餵飽，不肯進蛇杖。\n");
 
         if( query("snake", ob) >= 2)return notify_fail("蛇杖上已有兩條蛇了，怪蛇擠不上去！\n");
 
@@ -787,11 +787,11 @@ int auto_perform()
                 return random_walk();
         }
 
-        message_vision("\n$N"+HIW"突然閃電般地躍起，象一條白箭似的射向$n"+HIW"的嚥喉。\n"NOR,me,target);
+        message_vision("\n$N"+HIW"突然閃電般地躍起，象一條白箭似的射向$n"+HIW"的咽喉。\n"NOR,me,target);
 
         if( random(query("combat_exp", me))>random(query("combat_exp", target)) || !living(target) )
         {
-                        message_vision(HIR"結果$N"+HIR"一口咬住$n"+HIR"的嚥喉，猛猛地吸起血來。\n\n"NOR,me,target);
+                        message_vision(HIR"結果$N"+HIR"一口咬住$n"+HIR"的咽喉，猛猛地吸起血來。\n\n"NOR,me,target);
                         damage=random(me->query_skill("force")+me->query_skill("hamagong")+query("jiali", me))*(1+random(3));
                         if(damage > 1000) damage = 1000;
                         if(damage < 100) damage = 100;

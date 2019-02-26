@@ -16,7 +16,7 @@ void create()
         set_name("楊逍", ({"yang xiao","yang","xiao",}));
         set("long",
         "他是一位中年書生，身穿白布長袍。\n"
-        "他相貌俊雅，只是雙眉略向下垂，嘴邊露出幾條深深的皺紋，不免略帶衰老凄苦\n"
+        "他相貌俊雅，只是雙眉略向下垂，嘴邊露出幾條深深的皺紋，不免略帶衰老悽苦\n"
         "之相。他不言不動，神色漠然，似乎心馳遠方，正在想什麼事情。\n"
         );
 
@@ -105,10 +105,10 @@ int accept_ask(object me, string topic)
         switch (topic)
         {
         /*
-        case "醉裡乾坤" :
+        case "醉裏乾坤" :
                 return MASTER_D->teach_pfm(me, this_object(),
                         ([ "perform" : "can_perform/pomopima-jian/zui",
-                           "name"    : "醉裡乾坤",
+                           "name"    : "醉裏乾坤",
                            "sk1"     : "pomopima-jian",
                            "lv1"     : 120,
                            "force"   : 180,

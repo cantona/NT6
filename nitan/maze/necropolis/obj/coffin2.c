@@ -31,13 +31,13 @@ int do_push(string arg) {
                 return notify_fail("你要推什麼？\n");
                 
         if(query_generate_monk()) {
-                message_vision("$N推開了棺材，但是裡面什麼都沒有。\n",this_player());
+                message_vision("$N推開了棺材，但是裏面什麼都沒有。\n",this_player());
                 return 1;
         } else {
-                message_vision("$N推開了棺材，裡面居然有個和尚。\n",this_player());
+                message_vision("$N推開了棺材，裏面居然有個和尚。\n",this_player());
                 monk = new("/maze/necropolis/npc/monk");
                 monk->move(environment(this_player()));
-                message_vision("$N嘆了口氣道：還是被找著了。\n",monk);
+                message_vision("$N歎了口氣道：還是被找着了。\n",monk);
                 set_generate_monk(1);
                 return 1;
         }

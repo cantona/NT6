@@ -35,8 +35,8 @@ int do_qiao(string arg)
 
                         break;
                 case 1:
-                        say(this_player()->name() + "使勁敲敲銅鑼：□～～～，真是震耳欲聾。\n");
-                        write(this_player()->name() + "使勁敲敲銅鑼：□～～～，真是震耳欲聾。\n");
+                        say(this_player()->name() + "使勁敲敲銅鑼：咣～～～，真是震耳欲聾。\n");
+                        write(this_player()->name() + "使勁敲敲銅鑼：咣～～～，真是震耳欲聾。\n");
 
                         break;
         }

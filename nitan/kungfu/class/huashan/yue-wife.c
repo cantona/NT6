@@ -1,5 +1,5 @@
 // This program is a part of NITAN MudLIB
-// yue-wife.c 岳夫人
+// yue-wife.c 嶽夫人
 
 inherit NPC;
 inherit F_MASTER;
@@ -9,13 +9,13 @@ inherit F_QUESTER;
 
 void create()
 {
-        set_name("寧中則", ({ "ning zhongze", "ning", "zhongzhe", "yue wife" }) );
+        set_name("甯中則", ({ "ning zhongze", "ning", "zhongzhe", "yue wife" }) );
         set("nickname", "淑女劍");
         set("gender", "女性");
         set("class", "swordsman");
         set("age", 50);
-        set("long", "岳夫人原姓寧，閨名寧中則，"
-                    "是岳不群的師妹，也是他的妻子。\n");
+        set("long", "嶽夫人原姓寧，閨名甯中則，"
+                    "是嶽不羣的師妹，也是他的妻子。\n");
         set("attitude", "peaceful");
         set("shen_type", 1);
 
@@ -153,7 +153,7 @@ int accept_ask(object me, string topic)
         {
         case "歷練" :
         case "歷煉" :
-        case "鍛煉" :
+        case "鍛鍊" :
                 return QUEST_D->accept_ask(this_object(), me, topic);
                 break;
 

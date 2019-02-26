@@ -32,7 +32,7 @@ int do_dissolve(string arg)
                 return notify_fail("你要用化屍粉溶解什麼東西？\n");
 
         if (! objectp(ob = present(arg, environment(this_player()))))
-                return notify_fail("這裡沒有這樣東西。\n");
+                return notify_fail("這裏沒有這樣東西。\n");
 
         if (! ob->is_corpse() && ! ob->is_body_part() && ! ob->is_head())
                 return notify_fail("化屍粉只能用來溶解屍體。\n");

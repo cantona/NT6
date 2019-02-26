@@ -15,7 +15,7 @@ void create()
 {
         set_name("朱熹", ({ "zhu xi", "zhu" }));
         set("long", "朱先生被稱為當世第一大文學家，肚子"
-                    "裡的墨水比海還要深。\n");
+                    "裏的墨水比海還要深。\n");
         set("gender", "男性");
         set("age", 65);
         set("no_get", 1);
@@ -36,7 +36,7 @@ void create()
                 "抄書" : (: ask_job :),
                 "job"  : (: ask_job :),
                 "書"   : "唉！書到用時方恨少。",
-                "借書" : "借？你不還我到哪裡找你？哼！",
+                "借書" : "借？你不還我到哪裏找你？哼！",
         ]));
         set("vendor_goods", ({
                 "/clone/book/lbook1",
@@ -47,10 +47,10 @@ void create()
 
         set("chat_chance", 1);
         set("chat_msg", ({
-                "朱熹說道：普天之下，莫非王土；率土之濱，莫非王臣。\n",
-                "朱熹說道：出家人，小過損益焉；無妄大過，未濟咸困之。\n",
-                "朱熹說道：大學之道，在明明德。在親民，在止于至善。 \n",
-                "朱熹說道：格物致知，誠意正心，修身齊家，治國平天下。\n",
+                "朱熹説道：普天之下，莫非王土；率土之濱，莫非王臣。\n",
+                "朱熹説道：出家人，小過損益焉；無妄大過，未濟鹹困之。\n",
+                "朱熹説道：大學之道，在明明德。在親民，在止於至善。 \n",
+                "朱熹説道：格物致知，誠意正心，修身齊家，治國平天下。\n",
         }) );
 }
 
@@ -103,7 +103,7 @@ string ask_job()
                 return "讓你抄的書你抄完了？";
 
         if( query("combat_exp", me)<20000 )
-                return "雖然我這裡只是抄抄書，可是你戰鬥經驗這麼差，要"
+                return "雖然我這裏只是抄抄書，可是你戰鬥經驗這麼差，要"
                        "是有小流氓搗亂你怎麼辦？";
 
         if( query("combat_exp", me)>100000 )
@@ -116,7 +116,7 @@ string ask_job()
                 return "我看你精神不行啊，能抄得了書麼？";
 
         if (me->query_int() < 25 && me->query_skill("literate", 1) < 20)
-                return "我說你腦子這麼笨！也來抄書？";
+                return "我説你腦子這麼笨！也來抄書？";
 
         if (! interactive(me))
                 return "...";
@@ -141,7 +141,7 @@ int do_copy(string arg)
 
         me = this_player();
         if (me->is_busy())
-                return notify_fail("你正忙著呢，別著急。\n");
+                return notify_fail("你正忙着呢，彆着急。\n");
 
         if( !query_temp("job/copy", me) )
         {
@@ -196,10 +196,10 @@ int working(object me)
         case 5:
                 msg = "$N蘸了蘸墨，繼續仔細地抄寫。";
         case 7:
-                msg = "$N不斷翻動著書籍，紙張越來越厚。";
+                msg = "$N不斷翻動着書籍，紙張越來越厚。";
                 break;
         default:
-                msg = "$N把書籍抄好，將紙上墨吹幹，裝訂成冊，遞給$n。";
+                msg = "$N把書籍抄好，將紙上墨吹乾，裝訂成冊，遞給$n。";
                 finish = 1;
                 break;
         }
@@ -208,7 +208,7 @@ int working(object me)
         if (finish)
         {
                 msg += "$n看了$N抄寫的書，滿意道：還行，儒子可教！"
-                       "這是給你的報酬！你可以在我這裡學點文化。\n";
+                       "這是給你的報酬！你可以在我這裏學點文化。\n";
                 delete_temp("job/copy", me);
                 delete_temp("job/step", me);
 
@@ -250,7 +250,7 @@ int working(object me)
 int halt_working(object me)
 {
         message_vision("$N把手中的筆墨紙硯丟到一旁，牢騷道："
-                       "什麼呀，根本就不是人幹的活！\n", me);
+                       "什麼呀，根本就不是人乾的活！\n", me);
         delete_temp("job/copy", me);
         delete_temp("job/step", me);
         return 1;

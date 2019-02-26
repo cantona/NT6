@@ -25,7 +25,7 @@ int perform(object me, object target)
 
         if( !objectp(anqi=query_temp("handing", me) )
             || query("skill_type", anqi) != "throwing" )
-                return notify_fail("你現在手中並沒有拿著暗器。\n");
+                return notify_fail("你現在手中並沒有拿着暗器。\n");
 
         if (me->query_skill_mapped("strike") != "bagua-zhang") 
                 return notify_fail("你沒有激發八卦掌，難以施展" XIAN "。\n");
@@ -49,10 +49,10 @@ int perform(object me, object target)
                 return notify_fail("你現在真氣不足，難以施展" XIAN "。\n");
 
         if (! living(target))
-                return notify_fail("對方都已經這樣了，用不著這麼費力吧？\n");
+                return notify_fail("對方都已經這樣了，用不着這麼費力吧？\n");
 
         msg = HIY "突然只聽$N" HIY "喝道：“$n" HIY "看招！”"
-              "說完單手一揚，袖底頓時竄出一道金光，直射$n" HIY
+              "説完單手一揚，袖底頓時竄出一道金光，直射$n" HIY
               "而去！\n" NOR;
 
         ap = me->query_skill("strike", 1) +

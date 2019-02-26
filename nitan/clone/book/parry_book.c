@@ -10,7 +10,7 @@ void create()
                 set_default_object(__FILE__);
         else {
                 set("unit", "本");
-                set("long","這是一本走江湖武師寫的關于趨避招架的書籍。\n");
+                set("long","這是一本走江湖武師寫的關於趨避招架的書籍。\n");
                 set("value", 1500);
                 set("material", "paper");
                 set("skill", ([

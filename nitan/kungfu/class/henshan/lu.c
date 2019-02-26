@@ -90,7 +90,7 @@ void attempt_apprentice(object ob)
 
         if ((int)ob->query_skill("henshan-jian", 1) < 50)
         {
-                command("say 我衡山乃五岳劍派之一，最為重視劍法。");
+                command("say 我衡山乃五嶽劍派之一，最為重視劍法。");
                 command("say 你的衡山劍法還不夠熟練，下去練練再來吧。");
                 return;
         }
@@ -117,7 +117,7 @@ int accept_ask(object me, string topic)
                            "sk1"     : "henshan-jian",
                            "msg1"    : "$N點了點頭，喝道：“看清楚了"
                                        "。”話音剛落，便見$N突將體內"
-                                       "真氣運于劍身，身法陡然加快，"
+                                       "真氣運於劍身，身法陡然加快，"
                                        "手中長劍劍隨人動如夢如幻，竟"
                                        "似無數利刃一齊襲出一般，招式"
                                        "甚為巧妙。",

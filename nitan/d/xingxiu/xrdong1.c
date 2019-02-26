@@ -7,8 +7,8 @@ void create()
 {
         set("short", "仙人洞");
         set("long", @LONG
-這個洞高七尺，裡面光線暗淡，你看不清是否洞裡有任何器物，
-只有洞口堆著半尺來高的山羊糞。
+這個洞高七尺，裏面光線暗淡，你看不清是否洞裏有任何器物，
+只有洞口堆着半尺來高的山羊糞。
 LONG );
         set("exits", ([
                 "down" : "/d/xingxiu/xrdong",
@@ -49,7 +49,7 @@ int do_zuan(string arg)
 "滋溜一下不知從什麼地方鑽出去了。\n",
                     environment(me), ({me}) );
             me->move("/d/xingxiu/icecave1");
-            message("vision", me->name() + "從石縫裡鑽了出來。\n",
+            message("vision", me->name() + "從石縫裏鑽了出來。\n",
                     environment(me), ({me}) );
             delete_temp("marks/鑽", this_player());
         return 1;

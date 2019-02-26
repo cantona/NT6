@@ -59,7 +59,7 @@ int perform(object me, object target)
         }
 
         msg = YEL "\n$N" YEL "的劍勢忽然變慢了，很慢。一劍揮出，似乎永遠沒有終點。 \n"
-              "$n" YEL "終于從先前的狂風暴雨中解脫出來，兀自心有余悸，驚恐不定。\n"
+              "$n" YEL "終於從先前的狂風暴雨中解脱出來，兀自心有餘悸，驚恐不定。\n"
               "不料未及$n" YEL "喘過氣來，這笨拙而遲鈍的一劍忽然化作了滿天月光籠罩下來。 \n\n" NOR; 
 
         if (ap / 2 + random(ap) > dp || !living(target))
@@ -72,7 +72,7 @@ int perform(object me, object target)
                 target->start_busy(1);
         } else
         {
-                msg += HIW "$n" HIW "大驚之下呆若木雞，不料這恰好正是殘月劍法唯一生門，竟僥幸逃過一劫。\n" NOR;
+                msg += HIW "$n" HIW "大驚之下呆若木雞，不料這恰好正是殘月劍法唯一生門，竟僥倖逃過一劫。\n" NOR;
         }
 
         me->start_busy(2 + random(2));

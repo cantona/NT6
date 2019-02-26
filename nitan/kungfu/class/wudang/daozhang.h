@@ -24,7 +24,7 @@ void attempt_apprentice(object ob)
 
         if( query("class", ob) == "bonze" )
         {
-                command ("say 佛家道家所信不同，你既然已經已經出了家，來我們這裡做什麼呢？");
+                command ("say 佛家道家所信不同，你既然已經已經出了家，來我們這裏做什麼呢？");
                 return;
         }
         if( query("shen", ob)<0 )
@@ -60,7 +60,7 @@ void attempt_apprentice(object ob)
          {
                 command("say 我武當之所以能在武林中興不衰，全靠各弟子自覺效力。");
                 command("say 入門習武以前，" + RANK_D->query_respect(ob) + "是否願意為武當主動做些事情？");
-                tell_object(ob, HIY"如果你答應的話，鍵入〝願意〝二字。\n"NOR);
+                tell_object(ob, HIY"如果你答應的話，鍵入＂願意＂二字。\n"NOR);
                 add_action("do_yes", "願意");
                 return;
         }
@@ -92,7 +92,7 @@ int do_yes()
         ob = this_player();
 
         set("wudang/offerring", 1, ob);
-        message_vision("$N大聲說道：願意！\n", ob);
+        message_vision("$N大聲説道：願意！\n", ob);
         set("title", "武當道童", ob);
         delete_temp("pending/apprentice", ob);
         command("haha ");

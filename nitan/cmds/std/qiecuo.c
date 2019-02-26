@@ -10,7 +10,7 @@ int main(object me, string arg)
         object ob;
         int i;
         if( !query("bunch/bunch_name", me) )
-                return notify_fail("你沒有參加任何幫會，無法通過切蹉武功征招NPC。\n");
+                return notify_fail("你沒有參加任何幫會，無法通過切蹉武功徵招NPC。\n");
                 
         if (! arg)
                 return notify_fail("你要和誰切磋武功？\n");
@@ -24,22 +24,22 @@ int main(object me, string arg)
         if (playerp(ob))
                 return notify_fail("你只能與NPC切蹉武功。\n");
                 
-        if (! living(ob)) return notify_fail("你得先把他弄醒再說。\n");
+        if (! living(ob)) return notify_fail("你得先把他弄醒再説。\n");
         
         if (me->is_fighting() || me->is_busy())
-                return notify_fail("你正忙著呢。\n");
+                return notify_fail("你正忙着呢。\n");
                 
         if( query("bunch/zhengzhao", ob) != 1 )
-                return notify_fail("這個NPC不能用切磋武功的方式征招。\n");
+                return notify_fail("這個NPC不能用切磋武功的方式徵招。\n");
                 
         if( query("bunch/bunch_name", ob) == query("bunch/bunch_name", me) )
-                return notify_fail("這個NPC已經是本幫兄弟，不必通過切蹉武功來征招。\n");
+                return notify_fail("這個NPC已經是本幫兄弟，不必通過切蹉武功來徵招。\n");
                 
         if ((object)query_temp("invite/target", ob) != me)
                 return notify_fail("你必須要先邀請(yaoqing)這個NPC。\n");
                 
         if (ob->is_fighting() || ob->is_busy())
-                return notify_fail("對方正忙著呢。\n");
+                return notify_fail("對方正忙着呢。\n");
                 
         if( query("bunch/bunch_name", ob) && query("bunch/zhongcheng", ob)>query("meili", me) )
                 return notify_fail("看樣子對方不想和你切蹉武藝。\n");
@@ -80,7 +80,7 @@ void check_qi(object me,object ob)
         
         if( query("qi", ob)>query("max_qi", ob)/2 )
         {
-                message_vision("$N哈哈一笑，沖著$n道：“看來" + RANK_D->query_respect(me)
+                message_vision("$N哈哈一笑，衝着$n道：“看來" + RANK_D->query_respect(me)
                                + "還得苦練才行啊。”\n", ob, me);                
         }
         

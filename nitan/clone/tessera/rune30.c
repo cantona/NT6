@@ -1,6 +1,6 @@
 //rune30.c
 
-// Ber□
+// Ber貝
 
 #include <ansi.h>
 

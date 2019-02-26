@@ -171,13 +171,13 @@ mixed ask_skill1()
                 return "我不是已經教給你了嗎？";
 
         if( query("family/family_name", me) != query("family/family_name") )
-                return ("哪來的野小子敢在這裡撒野！\n");
+                return ("哪來的野小子敢在這裏撒野！\n");
 
         if (me->query_skill("lingshe-zhangfa",1 ) < 100)
                 return ("你的杖法還不到家，學不了「靈蛇纏身」！\n");
 
         command("say 好吧，你看好了。");
-        tell_object(me, HIR"歐陽峰將「靈蛇纏身」演練了一遍，你心裡默默暗記，心中驚嘆不已。\n"NOR);
+        tell_object(me, HIR"歐陽峯將「靈蛇纏身」演練了一遍，你心裏默默暗記，心中驚歎不已。\n"NOR);
 
         if (me->can_improve_skill("staff"))
                 me->improve_skill("staff", 1500000);
@@ -201,13 +201,13 @@ mixed ask_skill2()
                 return "你還不快去練功去？好好把我們歐陽家發揚光大！";
 
         if( query("family/family_name", me) != query("family/family_name") )
-                return ("哪來的野小子敢在這裡撒野！\n");
+                return ("哪來的野小子敢在這裏撒野！\n");
 
         if (me->query_skill("lingshe-zhangfa", 1) < 100)
                 return ("你的杖法還不到家，學不了「橫行無忌」！\n");
 
         command("say 好吧，你看好了。");
-        tell_object(me, HIR"歐陽峰將「橫行無忌」演練了一遍，你心裡默默暗記，心中驚嘆不已。\n"NOR);
+        tell_object(me, HIR"歐陽峯將「橫行無忌」演練了一遍，你心裏默默暗記，心中驚歎不已。\n"NOR);
         if (me->can_improve_skill("staff"))
                 me->improve_skill("staff", 1500000);
         if (me->can_improve_skill("staff"))
@@ -236,9 +236,9 @@ mixed ask_me()
                 return "你這人手段不夠狠毒，我現在還不能傳你絕招！";
 
         if (me->query_skill("lingshe-zhangfa", 1) < 120)
-                return "你先好好把靈蛇杖法練好了再說！";
+                return "你先好好把靈蛇杖法練好了再説！";
 
-        message_vision(HIY "$n" HIY "喝道：看仔細了！說把盪"
+        message_vision(HIY "$n" HIY "喝道：看仔細了！説把蕩"
                        "臂橫掃，伸伸縮縮，當真是變幻無窮！把$N"
                        HIY "的眼睛都看直了。\n" NOR,
                        me, this_object());
@@ -266,7 +266,7 @@ string ask_shenshe(string name)
 
         if( !(fam=query("family", this_player())) || fam["family_name"] != "歐陽世家" )
                 return RANK_D->query_respect(this_player()) +
-                "，你並不是本山莊的人，此話從何說起？";
+                "，你並不是本山莊的人，此話從何説起？";
 
         if (  present("shen she", this_player()) )
                 return RANK_D->query_respect(this_player()) +
@@ -306,7 +306,7 @@ int lv,cost;
 
         if( query("family/family_name", me) != "歐陽世家" && query("combat_exp", me)>100000){
                 command("sneer"+query("id", me));
-                command("say 白駝山蛇谷的秘密，豈能透露給外人知曉？"+RANK_D->query_rude(me)+"，你太多嘴了！");
+                command("say 白駝山蛇谷的祕密，豈能透露給外人知曉？"+RANK_D->query_rude(me)+"，你太多嘴了！");
                 kill_ob(me);
                 command("performbite"+query("id", me));//hasweapon
                 command("performpuji"+query("id", me));//noweapon
@@ -322,7 +322,7 @@ int lv,cost;
    if( query("family/first", me) ) cost = 250; 
              else cost = 500; 
              if( query("family/gongji", me) < cost ) 
-                     return "你為我白駝山效力還不夠，等你擁有足夠的師門功績再來兌換靈蛇杖使用時間吧。";
+                     return "你為我白駝山效力還不夠，等你擁有足夠的師門功績再來兑換靈蛇杖使用時間吧。";
              ob = find_object(ZHANG);
              if (! ob) ob = load_object(ZHANG);
              owner = environment(ob);
@@ -365,7 +365,7 @@ addn("family/gongji", -cost, me);
         lv = (int)me->query_skill("poison", 1);
 
         if( lv < 80 ) {
-                command("say 憑你這點使毒本事，想進蛇谷還早得很。乖乖的在莊裡修煉！");
+                command("say 憑你這點使毒本事，想進蛇谷還早得很。乖乖的在莊裏修煉！");
                 return 1;
         }
 
@@ -404,7 +404,7 @@ string ask_lingshe()
         if (query("lingshe_count") < 1) {
                 return ("靈蛇馴養不易，現在沒有！");
         }
-        message_vision(CYN"$N撮唇作嘯，袖中緩緩遊出一條銀色小蛇，對著$n搖頭擺尾，似在示意問好。\n"NOR,
+        message_vision(CYN"$N撮脣作嘯，袖中緩緩游出一條銀色小蛇，對着$n搖頭擺尾，似在示意問好。\n"NOR,
         this_object(), me);
         obj = new("/d/baituo/npc/lingshe.c");
         obj->move(environment());
@@ -432,7 +432,7 @@ int accept_ask(object me, string topic)
         {
         case "歷練" :
         case "歷煉" :
-        case "鍛煉" :
+        case "鍛鍊" :
                 return QUEST_D->accept_ask(this_object(), me, topic);
                 break;
 

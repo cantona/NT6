@@ -7,14 +7,14 @@ inherit F_MASTER;
 
 void create()
 {
-	set_name("澄凈", ({
+	set_name("澄淨", ({
 		"chengjing luohan",
 		"chengjing",
 		"jingjing",
 		"luohan",
 	}));
 	set("long",
-		"他是一位須發花白的老僧，身穿一襲金邊黑布袈裟。他身材瘦高，\n"
+		"他是一位鬚髮花白的老僧，身穿一襲金邊黑布袈裟。他身材瘦高，\n"
 		"太陽穴高高鼓起，似乎身懷絕世武功。\n"
 	);
 

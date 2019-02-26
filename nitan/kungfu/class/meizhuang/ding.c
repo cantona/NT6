@@ -98,7 +98,7 @@ void attempt_apprentice(object me)
                 command("ah");
                 command("say 原來是東方教主的弟子，興會，興會！");
                 command("say 這件事非同小可，我做不了主，你還是去找幾位莊主吧。");
-                set("move_party/日月神教─梅莊", 1, me);
+                set("move_party/日月神教—梅莊", 1, me);
                 return;
         }
 
@@ -144,9 +144,9 @@ mixed ask_skill1()
         if (me->query_skill("force") < 150)
                 return "你的內功火候尚不精純，是學不會這招的。";
 
-        message_vision(HIY "$n" HIY "點了點頭，說道：這疾電劍法的電光"
-                       "四射其實是懾人聲勢使其無所施其\n技，我這裡給你"
-                       "演示一遍，你可看好了。$n" HIY "說完手中長劍一"
+        message_vision(HIY "$n" HIY "點了點頭，説道：這疾電劍法的電光"
+                       "四射其實是懾人聲勢使其無所施其\n技，我這裏給你"
+                       "演示一遍，你可看好了。$n" HIY "説完手中長劍一"
                        "抖，將這套劍\n法施展出來，霎時之間，滿室都是電"
                        "光，耀人眼目。$N" HIY "看後雙目一亮，頓時\n大"
                        "有所悟。\n" NOR, me, this_object());

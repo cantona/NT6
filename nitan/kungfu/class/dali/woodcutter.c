@@ -9,7 +9,7 @@ int ask_me();
 void create()
 {
         set_name("樵夫", ({ "qiao fu", "qiao", "woodcutter" }));
-        set("long", "一個中年樵夫，看起來普普通通，但眼中隱隱閃動著一股霸氣。\n");
+        set("long", "一箇中年樵夫，看起來普普通通，但眼中隱隱閃動着一股霸氣。\n");
         set("gender", "男性");
         set("age", 35);
         set("attitude", "peaceful");
@@ -40,7 +40,7 @@ void create()
         prepare_skill("finger", "sun-finger");
 
         set("inquiry", ([
-                "上山" : "要想上山，先過了我這關再說。\n",
+                "上山" : "要想上山，先過了我這關再説。\n",
         ]));
 
         setup();

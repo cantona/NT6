@@ -2,7 +2,7 @@
 mapping soul_list = ([
         "weapon"        :"武器",
         "head"          :"頭盔",
-        "neck"          :"項鏈",
+        "neck"          :"項鍊",
         "cloth"         :"戰衣",
         "armor"         :"護甲",
         "surcoat"       :"披風",

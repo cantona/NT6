@@ -5,9 +5,9 @@ void create()
 {
     set("short", "馬房");
     set("long", @LONG
-這裡是郭府內的馬房，馬房裡面臭烘烘的，還養了幾十匹
-馬。你看過去，馬身上都很臟了，早該洗洗了，馬房的旁邊有
-個水池，裡面有些清水。
+這裏是郭府內的馬房，馬房裏面臭烘烘的，還養了幾十匹
+馬。你看過去，馬身上都很髒了，早該洗洗了，馬房的旁邊有
+個水池，裏面有些清水。
 LONG);
         set("no_fight", 1);
         set("exits", ([
@@ -33,13 +33,13 @@ int do_sao(string arg)
 
         if( query_temp("mark/掃完了", me) )
             	return notify_fail(CYN "馬房管事嚷嚷道：喂喂喂，讓你去覆命，還留"
-                                   "在這裡幹嘛？\n" NOR);
+                                   "在這裏幹嘛？\n" NOR);
 
         if( query_temp("job_name", me) != "打掃馬房" )
             	return notify_fail(CYN "馬房管事對你喝道：沒事你瞎折騰什麼？\n" NOR);
 
         if (me->is_busy())
-		return notify_fail("你現在正忙著呢！\n");
+		return notify_fail("你現在正忙着呢！\n");
 
         if (me->is_fighting())
 		return notify_fail("你正在戰鬥中，無法專心幹活！\n");
@@ -58,7 +58,7 @@ int do_sao(string arg)
         if( query("jing", me)<costj
 	 || query("qi", me)<costq )
 	{
-             	message_vision(HIR "\n$N" HIR "腳一滑，結果不小心滑倒在糞堆裡，吃"
+             	message_vision(HIR "\n$N" HIR "腳一滑，結果不小心滑倒在糞堆裏，吃"
                                "了一大口馬糞。\n" NOR, me);
              addn("food", 100, 	me);
              	me->unconcious();
@@ -74,7 +74,7 @@ int do_sao(string arg)
            && present("mafang guanshi", environment(me)))
 	{
               set_temp("mark/掃完了", 1, 	me);
-              	message_vision(CYN "\n馬房管事對$N" CYN "說：幹的不錯，好了，你可"
+              	message_vision(CYN "\n馬房管事對$N" CYN "説：乾的不錯，好了，你可"
                                "以去向耶律大爺覆命(" HIY "fuming" NOR + CYN ")了"
                                "。\n" NOR, me);
               	return 1;

@@ -15,7 +15,7 @@ void create()
 {
         set_name("李秋水", ({ "li qiushui", "li", "qiushui" }));
         set("long",
-            "她身著白色衣衫，身形苗條婀娜，臉上蒙了塊白綢，瞧不見她面容。\n");
+            "她身着白色衣衫，身形苗條婀娜，臉上蒙了塊白綢，瞧不見她面容。\n");
         set("title", "西夏國皇太妃");
         set("gender", "女性");
         set("per", 13);
@@ -110,7 +110,7 @@ int ask_youming()
                 return 1;
         }
         if (ob->query_skill("claw", 1) < 99) {
-                command("say 要使用這樣的武功需要高深的爪法，你還是多練習練習再說吧。");
+                command("say 要使用這樣的武功需要高深的爪法，你還是多練習練習再説吧。");
                 return 1;
         }
         
@@ -138,11 +138,11 @@ int ask_guizhao()
                 return 1;
         }
         if (ob->query_skill("claw", 1) < 180) {
-                command("say 要使用這樣的絕招需要高深的爪法，你還是多練習練習再說吧。");
+                command("say 要使用這樣的絕招需要高深的爪法，你還是多練習練習再説吧。");
                 return 1;
         }
         if (ob->query_skill("youming-guizhao", 1) < 180) {
-                command("say 要使用這樣的絕招需要高深的爪法，你還是多練習練習“幽冥鬼爪”再說吧。");
+                command("say 要使用這樣的絕招需要高深的爪法，你還是多練習練習“幽冥鬼爪”再説吧。");
                 return 1;
         }
 
@@ -171,11 +171,11 @@ int ask_guiying()
                 return 1;
         }
         if (ob->query_skill("claw", 1) < 180) {
-                command("say 要使用這樣的絕招需要高深的爪法，你還是多練習練習再說吧。");
+                command("say 要使用這樣的絕招需要高深的爪法，你還是多練習練習再説吧。");
                 return 1;
         }
         if (ob->query_skill("youming-guizhao", 1) < 180) {
-                command("say 要使用這樣的絕招需要高深的爪法，你還是多練習練習“幽冥鬼爪”再說吧。");
+                command("say 要使用這樣的絕招需要高深的爪法，你還是多練習練習“幽冥鬼爪”再説吧。");
                 return 1;
         }
 

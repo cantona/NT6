@@ -6,7 +6,7 @@ inherit ITEM;
 
 void create()
 {
-        set_name(HIY"子午針灸經"NOR,({"ziwu zhenjiujing","ziwu","jing"}));
+        set_name(HIY"子午鍼灸經"NOR,({"ziwu zhenjiujing","ziwu","jing"}));
         set_weight(10);
         if( clonep() )
                 set_default_object(__FILE__);

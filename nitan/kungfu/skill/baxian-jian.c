@@ -3,7 +3,7 @@
 inherit SKILL;
 
 mapping *action = ({
-([      "action" : "$N面露微笑，一招「撥雲見日」，手中$w一抖，劍光暴長，洒向$n的$l",
+([      "action" : "$N面露微笑，一招「撥雲見日」，手中$w一抖，劍光暴長，灑向$n的$l",
         "force"  : 50,
         "attack" : 15,
         "dodge"  : 10,
@@ -83,14 +83,14 @@ mapping *action = ({
         "skill_name" : "漢鍾離陰陽寶扇",
         "damage_type":  "刺傷"
 ]),
-([      "action" : "$N緩緩低首，接著一招「鐵拐李葫蘆系腰」，手中$w中宮直進，迅捷無比地往$n刺去",
+([      "action" : "$N緩緩低首，接着一招「鐵枴李葫蘆繫腰」，手中$w中宮直進，迅捷無比地往$n刺去",
         "force"  : 165,
         "attack" : 53,
         "dodge"  : 20,
         "parry"  : 34,
         "damage" : 43,
         "lvl"    : 160,
-        "skill_name" : "鐵拐李葫蘆系腰",
+        "skill_name" : "鐵枴李葫蘆繫腰",
         "damage_type":  "刺傷"
 ]),
 });

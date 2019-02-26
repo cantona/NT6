@@ -106,7 +106,7 @@ void greeting(object ob)
                 {
                    if( query("shen", ob)>-1000 )
                         {
-                        command("say 這裡是唐門內堂，不要在這兒胡亂走動");
+                        command("say 這裏是唐門內堂，不要在這兒胡亂走動");
                         obj = all_inventory(environment(me));
                         for(i=0; i<sizeof(obj); i++)
                         {

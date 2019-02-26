@@ -30,10 +30,10 @@ int perform(object me, object target)
                 return notify_fail("你現在真氣（要求15的內力）不夠，難以施展" SHENG "。\n");
 
         if (! living(target))
-                return notify_fail("對方都已經這樣了（對方已死亡），用不著這麼費力吧？\n");
+                return notify_fail("對方都已經這樣了（對方已死亡），用不着這麼費力吧？\n");
 
         msg = HIY "$N" HIY "身法忽快，手中" + weapon->name() +
-              HIY "回轉，突然「唰！唰！」數劍，連連刺向$n" HIY "。\n" NOR;
+              HIY "迴轉，突然「唰！唰！」數劍，連連刺向$n" HIY "。\n" NOR;
 
         message_combatd(msg, me, target);
 

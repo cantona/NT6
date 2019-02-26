@@ -13,16 +13,16 @@ void create()
         set("short", "茶室");
         set("long", @LONG
 這是一個石洞，三枝紅燭照耀得全洞明亮。洞內坐滿了人，一
-個童子忙前忙後，滿屋的果香和茶香，沁人心脾。屋裡四周得體地
-擺著些桌子(table)和椅子(chair)。
+個童子忙前忙後，滿屋的果香和茶香，沁人心脾。屋裏四周得體地
+擺着些桌子(table)和椅子(chair)。
 LONG );
         set("no_fight", 1);
         set("exits", ([
                 "east" : __DIR__"neiting",
         ]));
         set("item_desc", ([
-            "table" : "一張精致的木制小桌，上面放著一些茶具。\n",
-            "chair" : "一只青竹打制的靠椅，躺上去搖搖晃晃，好舒服耶！\n",
+            "table" : "一張精緻的木製小桌，上面放着一些茶具。\n",
+            "chair" : "一隻青竹打製的靠椅，躺上去搖搖晃晃，好舒服耶！\n",
         ]));
 
         set("objects",([
@@ -51,7 +51,7 @@ int do_sit(string arg)
                 return notify_fail("你已經有了個座位了。\n");
 
         set_temp("marks/sit", 1, this_player());
-        return notify_fail("你找了個空位座下，等著上茶。\n");
+        return notify_fail("你找了個空位座下，等着上茶。\n");
 }
 
 int valid_leave(object me, string dir)
@@ -65,7 +65,7 @@ int valid_leave(object me, string dir)
         {
         case 0:
          return notify_fail
-                ("童子把嘴一撇：吃飽了喝足了還不夠，臨走懷裡還揣上一些！\n");
+                ("童子把嘴一撇：吃飽了喝足了還不夠，臨走懷裏還揣上一些！\n");
         case 1:
          message_vision("童子對$N鞠了個躬：島主吩咐，飲食不得帶出茶房。", me);
          return notify_fail("\n");

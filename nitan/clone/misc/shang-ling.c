@@ -9,7 +9,7 @@ void create()
         set("unit", "張");
         set("value", 5);
         set("material", "paper");
-        set("no_sell", "這年頭，你把吃飯的家伙也拿來賣錢？");
+        set("no_sell", "這年頭，你把吃飯的傢伙也拿來賣錢？");
         setup();
 }
 

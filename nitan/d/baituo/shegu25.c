@@ -9,7 +9,7 @@ void create()
 {
         set("short", "蛇谷樹林");
         set("long", @LONG
-這是白駝山的蛇谷之中，林木蔥鬱，四下一片靜謐。
+這是白駝山的蛇谷之中，林木葱鬱，四下一片靜謐。
 LONG );
 
         set("exits", ([ 

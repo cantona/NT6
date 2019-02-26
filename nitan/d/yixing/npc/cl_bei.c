@@ -13,12 +13,12 @@ string ask_salary();
 void create()
 {
         set_name("貝海石", ({ "bei haishi", "bei" }));
-        set("nickname", "著手成春");
+        set("nickname", "着手成春");
         set("party/party_name", HIC"長樂幫"NOR);
         set("party/rank", "總管");
         set("long", 
-                "他是一個身穿黃衫的老人，看上去臉色蒼白，說話有氣無力，\n"
-                "還不停的咳嗽著，便似身患重病一般。\n");
+                "他是一個身穿黃衫的老人，看上去臉色蒼白，説話有氣無力，\n"
+                "還不停的咳嗽着，便似身患重病一般。\n");
         set("gender", "男性");
         set("age", 50);
         set("attitude", "friendly");
@@ -58,7 +58,7 @@ void create()
                 "幫務" : (: ask_job :),
                 "job"   : (: ask_job :),
                 "武功" : "幫主老人家的武功比我強多了，你還是向幫主學吧。",
-                "香主" : "各位香主的任命由幫主老人家說了算。",
+                "香主" : "各位香主的任命由幫主老人家説了算。",
                 "司徒橫" : "我對我們幫主老人家的景仰之情，有如滔滔江水連綿不絕。",
                 "幫主" : "我家幫主司徒大爺乃威鎮江南的“東霸天”也。",
                 "療傷" : (: ask_cure :),
@@ -79,7 +79,7 @@ string ask_cure()
 
         myfam = (string)query("party/party_name");
         if( query("party/party_name", me) != myfam )
-                return RANK_D->query_rude(me) + "莫非是想打聽我幫的秘密吧。";  
+                return RANK_D->query_rude(me) + "莫非是想打聽我幫的祕密吧。";  
 
         if( time()<query("bangs/curetime", me)+60 )
                 return RANK_D->query_rude(me) + "不是剛問過我嗎？";
@@ -94,7 +94,7 @@ string ask_cure()
                 return RANK_D->query_rude(me) + "不為幫中出力，光知道撈好處。";
 
         if( query("eff_qi", me)*10>query("max_qi", me)*8 )
-                return "傷不重的話，挨兩天就自癒了。";
+                return "傷不重的話，挨兩天就自愈了。";
 
         command("nod");
         addn("score", -2, ling);
@@ -113,7 +113,7 @@ string ask_salary()
 
         myfam = (string)query("party/party_name");
         if( query("party/party_name", me) != myfam )
-                return RANK_D->query_rude(me) + "莫非是想打聽我幫的秘密吧。";
+                return RANK_D->query_rude(me) + "莫非是想打聽我幫的祕密吧。";
 
 //        if( me->query_temp("bangs/pos") )
         if( query("bangs/pos", me) )

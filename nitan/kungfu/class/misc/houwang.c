@@ -6,7 +6,7 @@ void create()
         set_name("猴王", ({ "hou wang", "hou", "wang", "monkey" }));
         set("race", "野獸");
         set("age", 23);
-        set("long", "這是一只身材碩壯的大馬猴，眼神中透露出一股霸\n"
+        set("long", "這是一隻身材碩壯的大馬猴，眼神中透露出一股霸\n"
                     "氣，看起來極不好惹。\n");
         set("rank_info/rude", "孽畜");
         set("rank_info/respect", "大猴子");
@@ -98,7 +98,7 @@ int accept_object(object me, object ob)
 
 int accept_fight(object ob)
 {
-        message_vision(CYN "$N" CYN "朝著$n" CYN "吱吱吱吱一陣亂叫。"
+        message_vision(CYN "$N" CYN "朝着$n" CYN "吱吱吱吱一陣亂叫。"
                        "\n" NOR, this_object(), ob);
         return 0;
 }
@@ -134,7 +134,7 @@ mixed hit_ob(object me, object ob, int damage_bouns)
                            "爪竟似幻作兩道金光，宛若星劃長空，颼的抓向"
                            "$n" HIY "而去。\n" NOR:
 
-                           HIY "$N" HIY "驀地裡一聲清嘯，雙拳回圈斜揮"
+                           HIY "$N" HIY "驀地裏一聲清嘯，雙拳迴圈斜揮"
                            "而出，招式煞為精奇。$n" HIY "登時只覺眼花"
                            "繚亂，難以招架。\n" NOR;
 }

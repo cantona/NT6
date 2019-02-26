@@ -9,7 +9,7 @@ void create()
         set("age", 200);
         set("long",
 "這是一條全身赤紅，吸天地之間的火氣而長大的孽龍！
-它全身散發著赤紅色的火燄。\n");
+它全身散發着赤紅色的火焰。\n");
 
         set("str", 248);
         set("con", 252);
@@ -83,7 +83,7 @@ int hurting()
         int i;
         int dam;
         object *inv;
-        message_vision( HIR "\n\n烈火孽龍吐出一股熾可焚金的火燄．．整個天地似乎都被燃燒著！！！\n\n",this_object());
+        message_vision( HIR "\n\n烈火孽龍吐出一股熾可焚金的火焰．．整個天地似乎都被燃燒着！！！\n\n",this_object());
         inv = all_inventory(environment(this_object()));
         for(i=sizeof(inv)-1; i>=0; i--)
         if( living(inv[i]))
@@ -144,8 +144,8 @@ void die()
                         addn("potential", 50000, killer);
                         message("channel:chat",HBMAG"【精靈神界】"+query("name", killer)+"成功地殺死了惡龍，解開了封印!得到無數經驗和潛能及寶石.\n"NOR,users());
 
-                message_vision(MAG "一道紅光從天而降，照耀著$N。\n" NOR, killer);
-                message_vision(HIR "一團火燄猛地升騰，一個聲音說道：謝謝你們解開了第七個封印，這些寶石就作為謝禮吧！！！\n" NOR, this_object());
+                message_vision(MAG "一道紅光從天而降，照耀着$N。\n" NOR, killer);
+                message_vision(HIR "一團火焰猛地升騰，一個聲音説道：謝謝你們解開了第七個封印，這些寶石就作為謝禮吧！！！\n" NOR, this_object());
 
                 for (i = 0; i < 7; i++)
                 {
@@ -193,7 +193,7 @@ mixed hit_ob(object me, object ob, int damage_bouns)
         ob->receive_damage("qi", damage, me);
         ob->receive_wound("qi", damage, me);
         set("neili",query("max_neili",  me), me);
-        return HIR "$N" HIR "“吼”的一聲吐出一鼓火燄，登時令$n"
-               HIR "感覺猶如整個天地似乎都被燃燒著。\n" NOR;
+        return HIR "$N" HIR "“吼”的一聲吐出一鼓火焰，登時令$n"
+               HIR "感覺猶如整個天地似乎都被燃燒着。\n" NOR;
 }
 

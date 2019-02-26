@@ -165,7 +165,7 @@ int accept_ask(object me, string topic)
         {
         case "歷練" :
         case "歷煉" :
-        case "鍛煉" :
+        case "鍛鍊" :
                 return QUEST_D->accept_ask(this_object(), me, topic);
                 break;
 
@@ -219,10 +219,10 @@ int accept_ask(object me, string topic)
                            "name"    : "魂飛魄散",
                            "sk1"     : "jueqing-zhang",
                            "msg1"    : this_object()->name() + "點了"
-                                       "點頭，說道：“好，我給你演示"
-                                        "一遍，你看清楚了。”說完" +
+                                       "點頭，説道：“好，我給你演示"
+                                        "一遍，你看清楚了。”説完" +
                                        this_object()->name() + "運轉"
-                                       "真氣，將內力注于掌風之中，雙"
+                                       "真氣，將內力注於掌風之中，雙"
                                        "掌猛然拍向虛空，掌風凌厲無比"
                                        "，氣勢凌人，直可驚天地，泣鬼"
                                        "神。",

@@ -11,7 +11,7 @@ mapping *action = ({
         "skill_name" : "碧海青天",
         "damage_type" : "割傷"
 ]),
-([      "action" : "$N左掌虛托右肘，一招「碧玉丹心」，手中$w筆直劃向$n的$l",
+([      "action" : "$N左掌虛託右肘，一招「碧玉丹心」，手中$w筆直划向$n的$l",
         "force" : 30,
         "attack": 16,
         "dodge" : 3,

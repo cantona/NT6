@@ -43,7 +43,7 @@ mapping *action = ({
         "skill_name" : "一臂擎天",
         "damage_type" : "瘀傷"
 ]),
-([        "action" : "$N一聲長嘯，雙拳交錯擊出，一招「石破天驚」，拳風密布$n的前後左右",
+([        "action" : "$N一聲長嘯，雙拳交錯擊出，一招「石破天驚」，拳風密佈$n的前後左右",
         "force" : 310,
         "dodge" : 10,
        "parry" : 10,

@@ -7,7 +7,7 @@ inherit F_LIQUID;
 
 void create()
 {
-        string *order = ({HIW "五糧液" NOR,HIM "劍南春" NOR, HIY "全興大曲" NOR, HIR "文君" NOR, HIG "古井貢酒" NOR});
+        string *order = ({HIW "五糧液" NOR,HIM "劍南春" NOR, HIY "全興大麴" NOR, HIR "文君" NOR, HIG "古井貢酒" NOR});
         set_name( (order[random(5)]), ({ "wine" }) );
         set_weight(10);
         if( clonep() )

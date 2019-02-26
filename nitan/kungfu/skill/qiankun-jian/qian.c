@@ -39,7 +39,7 @@ int perform(object me, object target)
                 return notify_fail("你沒有激發乾坤神劍，難以施展" QIAN "。\n");
 
         if (! living(target))
-                return notify_fail("對方都已經這樣了，用不著這麼費力吧？\n");
+                return notify_fail("對方都已經這樣了，用不着這麼費力吧？\n");
 
         msg = HIY "$N" HIY "身形一展，施展乾坤劍法絕技，手中"
               + weapon->name() + HIY "斜斜刺出，劍尖頓時閃出"
@@ -54,7 +54,7 @@ int perform(object me, object target)
                 addn("neili", -150, me);
                 me->start_busy(2);
                 msg += COMBAT_D->do_damage(me, target, WEAPON_ATTACK, damage, 60,
-                                           HIR "$n" HIR "見狀連忙格擋，可哪裡來得"
+                                           HIR "$n" HIR "見狀連忙格擋，可哪裏來得"
                                            "及，只覺全身一麻，劍氣已透胸而過。\n"
                                            NOR);
         } else

@@ -97,14 +97,14 @@ int do_goto(string arg)
         int pay;
 
         if (! arg)
-                return notify_fail("你要去哪裡？\n");
+                return notify_fail("你要去哪裏？\n");
 
         if (undefinedp(pay = query("trans/" + arg)))
-                return notify_fail("看清楚牌子(paizi)，上面哪裡有這個地方？\n");
+                return notify_fail("看清楚牌子(paizi)，上面哪裏有這個地方？\n");
 
         me = this_player();
         if (me->is_busy())
-                return notify_fail("什麼都等你忙完了再說吧。\n");
+                return notify_fail("什麼都等你忙完了再説吧。\n");
 
         if (me->query_condition("killer"))
                 return notify_fail("你有命案在身呢，你想肆無忌憚的在官道上溜達？！\n");
@@ -112,30 +112,30 @@ int do_goto(string arg)
         pos = MAP_D->query_trans_info(arg);
         if (! mapp(pos) || ! stringp(pos["name"]))
         {
-                write("馬夫大呼道：“BUG！BUG！”\n");
+                write("馬伕大呼道：“BUG！BUG！”\n");
                 return 1;
         }
 
         if (! stringp(pos["room"]))
         {
-                write("馬夫大苦笑道：“那個地方去不了哦。”\n");
+                write("馬伕大苦笑道：“那個地方去不了哦。”\n");
                 return 1;
         }
 
         if (wiz_level(me) > 0)
         {
-                write("馬夫笑道：“原來是巫師啊，你不會飛麼？既然非要走路，那就不收錢了。”\n");
+                write("馬伕笑道：“原來是巫師啊，你不會飛麼？既然非要走路，那就不收錢了。”\n");
                 pay = 0;
         } else
         if( query("family/family_name", me) == "段氏皇族" )
         {
                 pay = 0;
-                write("馬夫道：“呦，是您啊，您就走吧，我怎好意思收您的錢。”\n");
+                write("馬伕道：“呦，是您啊，您就走吧，我怎好意思收您的錢。”\n");
         } else
         if( query("age", me) <= 14 )
         {
                 pay = 0;
-                write("馬夫訝道：“小小年紀就出來了？算了，我就不收你的錢了。”\n");
+                write("馬伕訝道：“小小年紀就出來了？算了，我就不收你的錢了。”\n");
         } else
         if (me->query_skill("higgling", 1) >= 30)
         {
@@ -147,7 +147,7 @@ int do_goto(string arg)
                         break;
 
                 case 1:
-                        write("你道：你們老板可是我的熟人啊。\n");
+                        write("你道：你們老闆可是我的熟人啊。\n");
                         break;
 
                 case 2:
@@ -166,7 +166,7 @@ int do_goto(string arg)
                 pay /= 10;
                 pay *= 10;
                 if (pay < 10) pay = 10;
-                write("馬夫無奈道：“好吧，好吧，那就" + MONEY_D->price_str(pay) +
+                write("馬伕無奈道：“好吧，好吧，那就" + MONEY_D->price_str(pay) +
                       "算了。”\n");
         }
 
@@ -174,10 +174,10 @@ int do_goto(string arg)
         {
                 if (MONEY_D->player_pay(me, pay) != 1)
                         return 0;
-                message_vision("$N付了帳，對馬夫說了兩句什麼。\n", me);
+                message_vision("$N付了帳，對馬伕説了兩句什麼。\n", me);
         }
 
-        message_vision("馬夫一聲招呼，開過來一輛大車，$N"
+        message_vision("馬伕一聲招呼，開過來一輛大車，$N"
                        "上了車就出發了。\n", me);
         cart = new("/clone/misc/trans_cart");
         obs = filter_array(all_inventory(),
@@ -211,7 +211,7 @@ void arrival(object me, object cart, mapping pos)
 
         if (sizeof(obs = all_inventory(cart)) > 0)
         {
-                message("vision", "只聽稀裡嘩啦一陣響，從車上扔下一堆東西來。\n",
+                message("vision", "只聽稀里嘩啦一陣響，從車上扔下一堆東西來。\n",
                         environment(me), me);
                 obs->move(pos["room"]);
         }

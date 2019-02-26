@@ -16,7 +16,7 @@ int ttl = 17;
 int seq = 15;
 mapping *action = ({
         ([
-                "action"      : "$N門戶大開，一招"+(order[random(13)])+"「履霜冰至」"NOR"向$n的$l劈去",
+                "action"      : "$N門户大開，一招"+(order[random(13)])+"「履霜冰至」"NOR"向$n的$l劈去",
                 "skill_name" : "履霜冰至",
                 "dodge"       : d_e1 + (d_e2 - d_e1) * seq / ttl,
                 "parry"       : p_e1 + (p_e2 - p_e1) * seq / ttl,

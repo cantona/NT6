@@ -18,7 +18,7 @@ void create()
                 set("armor_prop/armor", 4);
                 set("armor_prop/dodge", -1);
                 set("wear_msg","$N戴上一頂$n。\n");
-                set("remove_msg","$N將$n脫了下來。\n");
+                set("remove_msg","$N將$n脱了下來。\n");
         }
 
         setup();

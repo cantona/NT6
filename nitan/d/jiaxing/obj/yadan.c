@@ -11,7 +11,7 @@ void create()
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("long", "臭鴨蛋聞著臭，吃著香。\n");
+                set("long", "臭鴨蛋聞着臭，吃着香。\n");
                 set("unit", "顆");
                 set("value", 80);
                 set("food_remaining", 1);

@@ -38,7 +38,7 @@ string *query_notes()
 
         if (! pointerp(snotes) || ! sizeof(snotes))
         {
-                tell_object(this_player(), "由于網絡問題，訪問數據庫速度有些遲緩，請重新查看新聞。\n");
+                tell_object(this_player(), "由於網絡問題，訪問數據庫速度有些遲緩，請重新查看新聞。\n");
                 return ({});
         }
 
@@ -63,7 +63,7 @@ void mud_shutdown()
         save();
 }
 
-// 添加新聞的點擊 / 閱讀次數
+// 添加新聞的點擊 / 閲讀次數
 #ifdef DB_SAVE
 void add_view_time(mixed* news, int i)
 {
@@ -78,7 +78,7 @@ void add_view_time(mixed* news, int i)
 }
 #endif
 
-// 提示用戶
+// 提示用户
 void prompt_user(object me)
 {
         int num;
@@ -91,7 +91,7 @@ void prompt_user(object me)
         {
                 tell_object(me, WHT "\n歡迎您進入" + LOCAL_MUD_NAME() +
                                 WHT "，今後請使用" HIY " news " NOR WHT
-                                "命令查閱發布的新聞信息。\n" NOR);
+                                "命令查閲發佈的新聞信息。\n" NOR);
                 set("last_read_news", 971000000, me);
                 return;
         }
@@ -117,11 +117,11 @@ void prompt_user(object me)
                         break;
         }
         if (! total)
-                tell_object(me, "\n你目前沒有未曾閱讀過的新聞。\n");
+                tell_object(me, "\n你目前沒有未曾閲讀過的新聞。\n");
         else
                 tell_object(me, sprintf(WHT "\n你目前一共有 " HIY "%d" NOR
-                                        WHT " 條新聞還沒有閱讀，請使用("
-                                        HIY "news" NOR WHT ")命令閱讀。\n" NOR, total));
+                                        WHT " 條新聞還沒有閲讀，請使用("
+                                        HIY "news" NOR WHT ")命令閲讀。\n" NOR, total));
 
         // 開始定時通知
         if (previous_object() == find_object(LOGIN_D))
@@ -285,13 +285,13 @@ void done_post(object me, mapping note, int n, string text)
 
         set("notes", notes);
 #endif
-        tell_object(me, "新聞發布完畢。\n");
+        tell_object(me, "新聞發佈完畢。\n");
         message("system", BLINK HIW "\n【新聞精靈】有了最新新聞！各位玩家請用 news 查看。\n\n" NOR,
                 users());
         save();
 }
 
-// 發布新聞
+// 發佈新聞
 void do_post(object me, string arg)
 {
         int n;
@@ -303,20 +303,20 @@ void do_post(object me, string arg)
         /*
         if (! VERSION_D->is_release_server())
         {
-                tell_object(me, "只有在版本發布的站點才能發布新聞。\n");
+                tell_object(me, "只有在版本發佈的站點才能發佈新聞。\n");
                 return;
         }
         */
 
         if (! wizardp(me) || ! interactive(me))
         {
-                tell_object(me, "只有巫師才能發布新聞。\n");
+                tell_object(me, "只有巫師才能發佈新聞。\n");
                 return;
         }
 
         if (! arg)
         {
-                tell_object(me, "發布新聞請指定一個標題。\n");
+                tell_object(me, "發佈新聞請指定一個標題。\n");
                 return;
         }
 
@@ -342,7 +342,7 @@ void do_post(object me, string arg)
         me->edit(bind((: call_other, __FILE__, "done_post", me, note, n :), me));
 }
 
-// 閱讀新聞
+// 閲讀新聞
 void do_read(object me, string arg)
 {
         int num;
@@ -405,9 +405,9 @@ void do_read(object me, string arg)
                                // num + 1, notes[num][TITLE], notes[num][AUTHOR],
                                num + 1, notes[num][TITLE], NITAN_VER,
                                TIME_D->replace_ctime(notes[num][TIME])) + notes[num][MSG]);
-        // 添加點擊 / 閱讀次數
+        // 添加點擊 / 閲讀次數
         add_view_time(notes[num], 1);
-        // 記錄玩家上次閱讀新聞的時間
+        // 記錄玩家上次閲讀新聞的時間
         if (notes[num][TIME] > (int)last_read_time)
                 set("last_read_news", notes[num][TIME], me);
 #else
@@ -459,7 +459,7 @@ void do_discard(object me, string arg)
              aid != query("id", me)) && !is_root(me) )
             //(string)SECURITY_D->get_status(me) != "(admin)")
         {
-                tell_object(me, "只有天神才能去掉他人發布的新聞。\n");
+                tell_object(me, "只有天神才能去掉他人發佈的新聞。\n");
                 return;
         }
         sql = sprintf("DELETE FROM %s WHERE title = \"%s\" AND time = %d AND author = \"%s\" AND msg = \"%s\"",
@@ -473,7 +473,7 @@ void do_discard(object me, string arg)
              aid != query("id", me)) && 
             (string)SECURITY_D->get_status(me) != "(admin)")
         {
-                tell_object(me, "只有天神才能去掉他人發布的新聞。\n");
+                tell_object(me, "只有天神才能去掉他人發佈的新聞。\n");
                 return;
         }
 
@@ -539,12 +539,12 @@ void auto_notice(object me)
         switch (random(5))
         {
         case 0:
-                msg = HIM "一陣煙霧過後，新聞精靈出現在你的面前，手裡"
-                      "捏著一張破破爛爛的紙頭，對你宣讀起來。\n" NOR;
+                msg = HIM "一陣煙霧過後，新聞精靈出現在你的面前，手裏"
+                      "捏着一張破破爛爛的紙頭，對你宣讀起來。\n" NOR;
                 break;
         case 1:
                 msg = HIM "地上突然開了一個裂縫，冒出一個鬼鬼祟祟的新"
-                      "聞精靈，對著你就喋喋不休的羅嗦起來。\n" NOR;
+                      "聞精靈，對着你就喋喋不休的羅嗦起來。\n" NOR;
                 break;
         case 2:
                 msg = HIM "你忽然聽見有人喊你，你回頭一看，原來是新聞"
@@ -552,7 +552,7 @@ void auto_notice(object me)
                 break;
         case 3:
                 msg = HIM "你剛打了一個哈欠，忽然前面冒出一股煙霧，散"
-                      "去以後只見一個新聞精靈懶洋洋的看著你，口中念念有詞。\n" NOR;
+                      "去以後只見一個新聞精靈懶洋洋的看着你，口中唸唸有詞。\n" NOR;
                 break;
         default:
                 msg = HIM "“啪啦”一聲，新聞精靈狼狽不堪的摔在地上，"
@@ -571,10 +571,10 @@ void auto_notice(object me)
                                // num + 1, notes[num][TITLE], notes[num][AUTHOR],
                                num + 1, notes[num][TITLE], NITAN_VER,
                                TIME_D->replace_ctime(notes[num][TIME])) + notes[num][MSG]);
-        // 添加點擊 / 閱讀次數
+        // 添加點擊 / 閲讀次數
         add_view_time(notes[num], 1);
 
-        // 記錄玩家上次閱讀新聞的時間
+        // 記錄玩家上次閲讀新聞的時間
         if (notes[num][TIME] > (int)last_read_time)
                 set("last_read_news", notes[num][TIME], me);
 #else
@@ -591,7 +591,7 @@ void auto_notice(object me)
         if (notes[num]["time"] > (int)last_read_time)
                 set("last_read_news", notes[num]["time"], me);
 #endif
-        tell_object(me, HIM "新聞精靈說完後，消失在一陣煙霧之中。\n" NOR);
+        tell_object(me, HIM "新聞精靈説完後，消失在一陣煙霧之中。\n" NOR);
 }
 
 void do_search(object me, string arg)
@@ -691,7 +691,7 @@ void do_search(object me, string arg)
 #endif
                 if (j > 99)
                 {
-                        msg += HIW "\n由于搜索到的結果太多，因此只顯示一百條新聞，請使用更明確的關鍵字|詞。\n" NOR;
+                        msg += HIW "\n由於搜索到的結果太多，因此只顯示一百條新聞，請使用更明確的關鍵字|詞。\n" NOR;
                         break;
                 }
         }

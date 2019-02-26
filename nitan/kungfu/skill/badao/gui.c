@@ -34,10 +34,10 @@ int perform(object me, object target)
                 return notify_fail("你沒有激發霸刀，無法施展" LONG "。\n");
 
        if (! living(target))
-              return notify_fail("對方都已經這樣了，用不著這麼費力吧？\n");
+              return notify_fail("對方都已經這樣了，用不着這麼費力吧？\n");
 
         msg = HIC "\n$N" HIC "面露苦色，舉手一刀，自上而下，剎那間，天地哭嚎，萬千刀氣猶如潮水海"
-              "浪般壯觀，舖天蓋地的向前卷進，忽然，無數刀氣化為一道刀芒，猶如閃電般劈向$n" HIC "。\n" NOR;
+              "浪般壯觀，鋪天蓋地的向前捲進，忽然，無數刀氣化為一道刀芒，猶如閃電般劈向$n" HIC "。\n" NOR;
 
         ap=me->query_skill("blade")+me->query_skill("martial-cognize",1);
         dp=target->query_skill("dodge")+target->query_skill("martial-cognize",1);

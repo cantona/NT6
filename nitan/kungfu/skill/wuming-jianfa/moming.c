@@ -31,7 +31,7 @@ int perform(object me, object target)
         if( query("max_neili", me)<50000)return notify_fail("你的內力修為不夠！\n");
         if ( me->is_busy() ) return notify_fail("你上一個動作還沒有完成！\n");
 
-        msg = MAG "\n$N臉現幽思,往事如潮湧上心頭,手中劍望空斜指一股怨氣從劍尖散發彌漫開來！\n" NOR;
+        msg = MAG "\n$N臉現幽思,往事如潮湧上心頭,手中劍望空斜指一股怨氣從劍尖散發瀰漫開來！\n" NOR;
         message_combatd(msg, me);
         ob = target;
         addn_temp("apply/str", i, me);

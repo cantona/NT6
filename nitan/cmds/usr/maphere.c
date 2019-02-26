@@ -2,7 +2,7 @@
 // Modify by zjpwxh@sjpl 2004.4.24
 // Modify by zjpwxh@sjpl 2004.6.2
 // 改進了搜索算法，以廣度遍歷代替遞歸
-// 由于嚴重影響速度（遞歸調用導致！），所以進行此命令的使用者應該減少氣血
+// 由於嚴重影響速度（遞歸調用導致！），所以進行此命令的使用者應該減少氣血
 
 #include <ansi.h>
 #define MaxX 11
@@ -48,10 +48,10 @@ int main(object me, string arg)
 
         where=environment(me);
         if(!objectp(where))
-                return notify_fail("對不起，不知道你到底在哪裡呀！找巫師吧！\n");
+                return notify_fail("對不起，不知道你到底在哪裏呀！找巫師吧！\n");
 
         if(base_name(where)[0..1] == "/f")
-                return notify_fail("副本裡無法通過該指令獲取地圖信息！\n");
+                return notify_fail("副本里無法通過該指令獲取地圖信息！\n");
 
         tmp = HIY"即時地圖"HIW"(地圖大小："HIM+X+HIW"/"HIR+Y+HIW")"HIM"[建議使用 1024 X 768 分辨率]：\n\n"NOR;
         m = allocate(2*X+1);
@@ -123,7 +123,7 @@ int main(object me, string arg)
         text=explode(tmp, "\n");
         for(i=k; k<sizeof(text); k++)
                 write(text[k] + "\n");
-        write(HIM"["HIC"溫磬提示："HIG"("HIB"藍底"HIG"亮綠色的代表你目前所處房間)，"HIY"(黃色的代表有不規則出口的房間)，"HIM"]\n"NOR);
+        write(HIM"["HIC"温磬提示："HIG"("HIB"藍底"HIG"亮綠色的代表你目前所處房間)，"HIY"(黃色的代表有不規則出口的房間)，"HIM"]\n"NOR);
 
         return 1;
 }
@@ -136,7 +136,7 @@ object find_room(string path)
         return 0;
 }
 
-//←↑→↓□□□□
+//←↑→↓↖↗↘↙
 int draw_path(int x,int y,string direc)
 {
         string str;
@@ -150,7 +150,7 @@ int draw_path(int x,int y,string direc)
                 case "southup":            str="   ↑   ";break;
                 case "northdown":          str="   ↓   ";break;
                 case "east":
-                case "west":               str="─";break;
+                case "west":               str="—";break;
                 case "eastdown":
                 case "eastup":             str="→";break;
                 case "westdown":
@@ -310,9 +310,9 @@ int help(object me)
         write(@HELP
 指令格式：maphere [-m]
 
-本命令幫助玩家了解周圍的房間地圖的分布狀況，並標志出房間之間的連接情況。
-連接標志中箭頭所指方向地勢更高，有不規范出口的房間以黃色標志，你所處的
-房間以藍底亮綠色來標志！由于房間可能重疊的緣故，有些房間將無法顯示出來。
+本命令幫助玩家瞭解周圍的房間地圖的分佈狀況，並標誌出房間之間的連接情況。
+連接標誌中箭頭所指方向地勢更高，有不規範出口的房間以黃色標誌，你所處的
+房間以藍底亮綠色來標誌！由於房間可能重疊的緣故，有些房間將無法顯示出來。
 本命令默認以x=7,y=14 的地圖大小顯示，使用-m選項將以最大化x=11,y=22 顯示。
 HELP);
         return 1;

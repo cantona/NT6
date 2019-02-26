@@ -39,7 +39,7 @@ void greeting(object me)
         command("hi"+query("id", me));
         command("say 這位" + RANK_D->query_respect(me) +
                 "，此處前去，你就能做一個光明磊落的人，想\n"
-                "那郭靖、蕭峰，皆是我輩中人！");
+                "那郭靖、蕭峯，皆是我輩中人！");
 }
 
 void check_leave(object me, string dir)

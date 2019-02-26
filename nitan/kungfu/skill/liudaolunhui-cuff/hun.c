@@ -1,4 +1,4 @@
-// hun.c 無間輪回
+// hun.c 無間輪迴
 
 #include <ansi.h>
 
@@ -17,19 +17,19 @@ int perform(object me, object target)
         skill = me->query_skill("liudaolunhui-cuff", 1);
 
         if (! me->is_fighting(target))
-                return notify_fail("無間輪回只能對戰鬥中的對手使用。\n");
+                return notify_fail("無間輪迴只能對戰鬥中的對手使用。\n");
 
         if(me->query_skill_mapped("cuff") != "liudaolunhui-cuff") 
-                return notify_fail("你沒有用六道輪回拳法，無法使用無間輪回絕招！\n");
+                return notify_fail("你沒有用六道輪迴拳法，無法使用無間輪迴絕招！\n");
 
         if( me->query_skill_prepared("cuff") != "liudaolunhui-cuff" ) 
-                return notify_fail("你所備的並非六道輪回拳法，不能使用無間輪回絕招！\n"); 
+                return notify_fail("你所備的並非六道輪迴拳法，不能使用無間輪迴絕招！\n"); 
 
         if (skill < 100)
-                return notify_fail("你的六道輪回拳法等級不夠，練好了再來！\n");
+                return notify_fail("你的六道輪迴拳法等級不夠，練好了再來！\n");
 
         if( objectp(weapon=query_temp("weapon", me)) )
-                return notify_fail("你拿著武器如何使用拳法絕招？\n");
+                return notify_fail("你拿着武器如何使用拳法絕招？\n");
 
         if( query("neili", me)<500 )
                 return notify_fail("你的內力不夠。\n");
@@ -44,7 +44,7 @@ int perform(object me, object target)
         dp = dp*3/2;
 
         msg = HIY "$N" HIY "左手斜指天際，右手沉掌向地，嘴中低沉吟唱：『天上地下，惟我獨尊』\n" 
-              "$n" HIY "只覺一股渾厚的勁氣旋繞而來，頓時胸口鬱悶，口鼻難于呼吸。\n\n" NOR;
+              "$n" HIY "只覺一股渾厚的勁氣旋繞而來，頓時胸口鬱悶，口鼻難於呼吸。\n\n" NOR;
 
         msg += HIY "$N" HIY "突然騰身而起，身形幻化出眾生相，翻滾沉浮，如地獄魔煞撲向$n" HIY "，閃電般發出數招。\n\n" NOR;
 
@@ -60,7 +60,7 @@ int perform(object me, object target)
         }
 
         msg = HIW "\n在$n" HIW "踉蹌後退時，$N" HIW "口中輕誦『" HIC "天" HIW "、" HIG "人" HIW  "、" HIB "阿修羅" HIW "、" HIY "畜牲" HIW "、" HIM "餓鬼" HIW "、" HIR "地獄" HIW "』"
-              HIW "\n每念一字便有重重" NOR BLU "鬼影" HIW "閃現，待到念完，無數鬼影遁入往生輪回。\n\n"NOR;
+              HIW "\n每念一字便有重重" NOR BLU "鬼影" HIW "閃現，待到唸完，無數鬼影遁入往生輪迴。\n\n"NOR;
 
         if (ap / 2 + random(ap) > dp || !living(target))
         {
@@ -72,7 +72,7 @@ int perform(object me, object target)
                 target->start_busy(1);
         } else
         {
-                msg += HIW "$n" HIW "閉目靜神，憑借思感左右閃避，終于躲過這驚怖一擊。\n" NOR;
+                msg += HIW "$n" HIW "閉目靜神，憑藉思感左右閃避，終於躲過這驚怖一擊。\n" NOR;
         }
 
         me->start_busy(2 + random(2));

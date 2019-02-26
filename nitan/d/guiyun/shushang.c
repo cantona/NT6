@@ -13,7 +13,7 @@ void create()
 {
         set("short", "樹上");
         set("long",@LONG
-這裡是大樹的樹頂。往周圍看，四面都是樹，往下看，枝葉繁盛，
+這裏是大樹的樹頂。往周圍看，四面都是樹，往下看，枝葉繁盛，
 透過樹葉的空隙，你能約略看到樹下(down)的情景。
 LONG
 );
@@ -50,9 +50,9 @@ void init()
                                 me->move(DOWN_TREE, 1);
                                 ob[i]->move(DOWN_TREE, 1);
                                 message_vision("只聽“唏哩嘩啦”一陣亂響，$N和$n從樹上掉了下來。\n", me, ob[i]);
-                                message_vision("$N大怒，沖$n嚷道：“" + RANK_D->query_self_rude(ob[i]) + "在上面呆的好好的，你個" + RANK_D->query_rude(me) + "幹嘛來搗亂？”\n", ob[i], me);
+                                message_vision("$N大怒，衝$n嚷道：“" + RANK_D->query_self_rude(ob[i]) + "在上面呆的好好的，你個" + RANK_D->query_rude(me) + "幹嘛來搗亂？”\n", ob[i], me);
                                 message_vision("$N也不服氣地反駁道：“你躲在上面，一看就知道不是好人！”\n", me);
-                                message_vision("兩人越說越僵，終于拳腳相加！\n", me);
+                                message_vision("兩人越説越僵，終於拳腳相加！\n", me);
                                 me->fight_ob(ob[i]);
                                 ob[i]->fight_ob(me);
                                 return;
@@ -82,8 +82,8 @@ int do_climb(string arg)
         object me = this_player();
 
         if (arg != "down")
-                return notify_fail("你要爬到哪裡？\n");
-        message_vision("$N順著樹幹爬了下去。\n", me);
+                return notify_fail("你要爬到哪裏？\n");
+        message_vision("$N順着樹幹爬了下去。\n", me);
         me->move(DOWN_TREE);
         message("vision", me->name() + "從樹上爬了下來。\n", DOWN_TREE, ({me}));
         return 1;
@@ -97,7 +97,7 @@ int do_kill(string arg)
         string callname;
 
         if (me->is_busy())
-                return notify_fail("你正忙著哪！\n");
+                return notify_fail("你正忙着哪！\n");
 
         if (!arg || !(room = find_object(DOWN_TREE)))
                 return notify_fail("你要偷襲誰？\n");
@@ -132,7 +132,7 @@ int do_kill(string arg)
                 return notify_fail("你的心腸太黑了, 對手無縛雞之力的玩家也下得了手。\n");
         callname = RANK_D->query_rude(ob);
 
-        message_vision("\n$N對著$n喝道：「" + callname + "！今日不是你死就是我活！」\n\n", me, ob);
+        message_vision("\n$N對着$n喝道：「" + callname + "！今日不是你死就是我活！」\n\n", me, ob);
 
         delete_temp("guarding", me);
         set_temp("guarding", 1, ob);

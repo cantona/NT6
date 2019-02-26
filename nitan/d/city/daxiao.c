@@ -8,13 +8,13 @@ void create()
 {
         set("short", "賭場");
         set("long", @LONG
-這裡是賭(gamble)「大小」的房間，牆上掛著一塊牌子(paizi)。
+這裏是賭(gamble)「大小」的房間，牆上掛着一塊牌子(paizi)。
 LONG );
         set("item_desc", ([
                 "paizi" :
-"本賭場新開放賭「大小」正處于測試階段。\n"
+"本賭場新開放賭「大小」正處於測試階段。\n"
 "「大小」賭法：\n"
-"共用三粒色子撒在一只碗裡，色子點數總和：\n"
+"共用三粒色子撒在一隻碗裏，色子點數總和：\n"
 "       四 至 十 為「小」，\n"
 "       十一 至 十七 為「大」，\n"
 "       三粒色子點數相同，則大小通吃。\n"
@@ -54,7 +54,7 @@ int do_gamble(string arg)
         me = this_player();
 
         if( query_temp("casino/mark", me) )
-                return notify_fail("你這麼著急啊? 還是再多休息一會兒吧 -:)\n");
+                return notify_fail("你這麼着急啊? 還是再多休息一會兒吧 -:)\n");
 
         if (!arg || sscanf(arg, "%s %s %s %d", wtype0, wtype1, wtype2, wager) !=4)
                 return notify_fail("gamble big|small money|skill <type> <amount>\n"
@@ -70,7 +70,7 @@ int do_gamble(string arg)
                 if( wager*(query("base_value", mtype))<min || 
                     wager*(query("base_value", mtype))>max )
                         return notify_fail("你的賭注不在限額之內!\n"
-                        "這裡的限額是" + chinese_number(min) + "至" + chinese_number(max) + "。\n");
+                        "這裏的限額是" + chinese_number(min) + "至" + chinese_number(max) + "。\n");
         }
         else    return notify_fail("本賭場不接受這種賭注。\n");
 

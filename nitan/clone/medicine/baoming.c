@@ -9,7 +9,7 @@ void create()
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("long", YEL "這是一顆淡黃的的藥丸，是神龍島的秘藥，功效奇妙無比。\n" NOR);
+                set("long", YEL "這是一顆淡黃的的藥丸，是神龍島的祕藥，功效奇妙無比。\n" NOR);
                 set("base_unit", "顆");
                 set("base_value", 8000);
                 set("base_weight", 80);

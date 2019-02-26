@@ -22,7 +22,7 @@ mapping *suoha_cards=({
 "mingpai":({}),
 ]),//對家的牌
 });
-string *all_card=({"８","９","□","Ｊ","Ｑ","Ｋ","Ａ" });
+string *all_card=({"８","９","⒑","Ｊ","Ｑ","Ｋ","Ａ" });
 string *all_sort=({HIB"黑桃",HIR"方片",HIC"草花",HIR"紅桃",});
 string *all_pai=({"散牌","一對","兩對","三條","順子","同花","飛機","炸彈","同花順"});
 
@@ -92,7 +92,7 @@ mapping juesuan(int *ob_allcard)//決算出牌的類型
             ]);
         break;
     case 3:
-        if(DIAN(L[0])==DIAN(L[2]))//第一與第三點數相同是三只
+        if(DIAN(L[0])==DIAN(L[2]))//第一與第三點數相同是三隻
             pai=([
                 "lv": 3,
                 "max" : L[2],//隨便取一牌
@@ -301,7 +301,7 @@ int do_sit()
                 return 1;
         }
         else
-                return notify_fail("這裡已經滿人了！\n");
+                return notify_fail("這裏已經滿人了！\n");
 }
 
 void suoha_init()
@@ -319,13 +319,13 @@ void deal_an_card()//發暗牌
     suoha_cards[0]["anpai"]=cards[i];//發到手中暗牌
     message_vision("\n$N拿到了一張暗牌，看了一眼後，迅速地蓋在桌上！\n",player[0]);
     tell_object(player[0],"這張暗牌是："+type_card(cards[i])+"！\n");
-    cards-=({cards[i]});//桌上這張牌被發掉
+    cards-=({cards[i]});//桌上這張牌被髮掉
 
     i=random(sizeof(cards));//從剩下來的牌中隨機再取一張
     suoha_cards[1]["anpai"]=cards[i];//發到手中暗牌
     message_vision("\n$N拿到了一張暗牌，看了一眼後，迅速地蓋在桌上！\n",player[1]);
     tell_object(player[1],"這張暗牌是："+type_card(cards[i])+"！\n");
-    cards-=({cards[i]});//桌上這張牌被發掉
+    cards-=({cards[i]});//桌上這張牌被髮掉
     tell_room(this_object(), HIM"    現在開始給每個人發明牌了！\n"NOR);
         remove_call_out("deal_ming_card");//一秒後發第二張
         call_out("deal_ming_card",1);//一秒後發第二張
@@ -340,11 +340,11 @@ void deal_ming_card()//發明牌
     i=random(sizeof(cards));//隨機取一張
     suoha_cards[0]["mingpai"]+=({cards[i]});//發到手中的明牌
     message_vision("\n$N拿到了一張：" +type_card(cards[i])+"！\n",player[0]);
-    cards-=({cards[i]});//桌上這張牌被發掉
+    cards-=({cards[i]});//桌上這張牌被髮掉
     i=random(sizeof(cards));//剩下的牌中隨機取一張
     suoha_cards[1]["mingpai"]+=({cards[i]});//發到手中第一張明牌
     message_vision("\n$N拿到了一張：" +type_card(cards[i])+"！\n",player[1]);
-    cards-=({cards[i]});//桌上這張牌被發掉
+    cards-=({cards[i]});//桌上這張牌被髮掉
 
     card1=juesuan(suoha_cards[0]["mingpai"]);//決算出牌型
     card2=juesuan(suoha_cards[1]["mingpai"]);//決算出牌型
@@ -353,7 +353,7 @@ void deal_ming_card()//發明牌
     tell_object(player[1],type_paiju(player[1]));
     if(j) arg=type_cards(card2);
     else arg=type_cards(card1);
-    message_vision(HIY"\n　　$N的"+arg+HIY"說話！\n"NOR,player[j]);
+    message_vision(HIY"\n　　$N的"+arg+HIY"説話！\n"NOR,player[j]);
     set_temp("suoha/shuohua", 1, player[j]);
     tell_object(player[j],"\n　想押就ya <籌碼數>,不押(buya)就認輸！\n");
         yazhu=1;//可以押注了
@@ -387,14 +387,14 @@ int do_yazhu(string arg)
     object me,ob;
     me=this_player();
     if(!yazhu) return notify_fail("現在不是下注的時候！\n");
-    if( !query_temp("suoha/shuohua", me))//是否為說話的方向
-        return notify_fail("現在不是你說話！\n");
+    if( !query_temp("suoha/shuohua", me))//是否為説話的方向
+        return notify_fail("現在不是你説話！\n");
      if(!arg||sscanf(arg,"%d",i)!=1||(i!=5&&i!=10&&i!=20))
         return notify_fail("你要押多少籌碼？可選5個,10個,20個籌碼。\n");
     remove_call_out("check_player");//清除延時呼叫
     addn_temp("duchang_chouma", -i, me);
     yazhu_chouma=i;
-    message_vision("$N哼了一聲，推上去一些籌碼說：“我押 "+i+" 個！敢跟嗎？”\n",me);
+    message_vision("$N哼了一聲，推上去一些籌碼説：“我押 "+i+" 個！敢跟嗎？”\n",me);
     ob=gen_ob(me);
     tell_object(ob,"你要跟(gen)的話，就是再上"+i+"個籌碼，不押(buya)就是認輸！\n");
     delete_temp("suoha/shuohua", me);
@@ -410,13 +410,13 @@ int do_gen()
     me=this_player();
     if(!yazhu) return notify_fail("現在不是跟注的時候！\n");
     if( !query_temp("suoha/genhua", me) )
-        return notify_fail("現在不是你說話！\n");
+        return notify_fail("現在不是你説話！\n");
     remove_call_out("check_player");//清除延時呼叫
     i=yazhu_chouma;//前面人押下的籌碼數
     addn_temp("duchang_chouma", -i, me);
     chouma+=(i*2);//兩個人的籌碼都加進去
     yazhu_chouma=0;//清零
-    message_vision("$N微微一笑，也推了一些籌碼上去，說：“我跟 ！”\n",me);
+    message_vision("$N微微一笑，也推了一些籌碼上去，説：“我跟 ！”\n",me);
     delete_temp("suoha/genhua", me);
     if(sizeof(suoha_cards[0]["mingpai"])==4)//牌發完了
     {
@@ -516,13 +516,13 @@ int do_buya()
     object me,ob;
     me=this_player();
     if(!yazhu) return notify_fail("現在不是跟注的時候！\n");
-    if( !query_temp("suoha/shuohua", me) && !query_temp("suoha/genhua", me))//是否為說話的方向
-        return notify_fail("現在不是你說話！\n");
+    if( !query_temp("suoha/shuohua", me) && !query_temp("suoha/genhua", me))//是否為説話的方向
+        return notify_fail("現在不是你説話！\n");
     remove_call_out("check_player");//清除延時呼叫
 
     chouma+=yazhu_chouma;//加進前面人押下的籌碼數
     yazhu_chouma=0;//清零
-    message_vision("$N皺了皺眉，突然一笑，說：“我不跟了 ！”\n",me);
+    message_vision("$N皺了皺眉，突然一笑，説：“我不跟了 ！”\n",me);
     yazhu=0;
     message_vision("$N放棄跟牌，大家亮底牌！\n",me);
     ob=gen_ob(me);
@@ -572,12 +572,12 @@ int do_quansuo()//全梭
     if(quansuo)
         return notify_fail("對方已經showhand了，你只要決定跟(gen)還是不跟(buya)！\n");
     if( !query_temp("suoha/shuohua", me) && !query_temp("suoha/genhua", me) )
-        return notify_fail("現在不是你說話！\n");
+        return notify_fail("現在不是你説話！\n");
     remove_call_out("check_player");//清除延時呼叫
     quansuo=1;
-    if( query_temp("suoha/shuohua", me))//說話方
+    if( query_temp("suoha/shuohua", me))//説話方
     {
-    i=(200-chouma/2);//最高是200,台面上有一半
+    i=(200-chouma/2);//最高是200,枱面上有一半
     addn_temp("duchang_chouma", -i, me);
         delete_temp("suoha/shuohua", me);
     yazhu_chouma=i;
@@ -640,7 +640,7 @@ string type_paiju(object me)
     str=sprintf("　　%s的牌：%s%s\n"
 "┌───┐┌───┐┌───┐┌───┐┌───┐\n"
 "│※※※││　　　││　　　││　　　││　　　│\n"
-"│%s│",name1,(query_temp("suoha/shuohua", player[0])?HIW"說話"NOR:""),
+"│%s│",name1,(query_temp("suoha/shuohua", player[0])?HIW"説話"NOR:""),
     (query_temp("suoha/genhua", player[0])?HIW"跟話"NOR:""),an1);
     for(k=0;k<4;k++)
     {
@@ -655,7 +655,7 @@ string type_paiju(object me)
 "　　%s的牌：%s%s\n"
 "┌───┐┌───┐┌───┐┌───┐┌───┐\n"
 "│※※※││　　　││　　　││　　　││　　　│\n"
-"│%s│",name2,(query_temp("suoha/shuohua", player[1])?HIW"說話"NOR:""),
+"│%s│",name2,(query_temp("suoha/shuohua", player[1])?HIW"説話"NOR:""),
     (query_temp("suoha/genhua", player[1])?HIW"跟話"NOR:""),an2);
     for(k=0;k<4;k++)
     {

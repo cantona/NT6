@@ -35,7 +35,7 @@ int perform(object me, object target)
                 return notify_fail("你沒有準備使用飄雪穿雲掌，無法施展" + name() + "。\n");
 
         if (! living(target))
-               return notify_fail("對方都已經這樣了，用不著這麼費力吧？\n");
+               return notify_fail("對方都已經這樣了，用不着這麼費力吧？\n");
 
         msg = HIW "$N" HIW "一聲暴喝，陡然施出飄雪穿雲掌絕技「雲海明燈」，瞬"
               "間連續攻出數招。\n" NOR;

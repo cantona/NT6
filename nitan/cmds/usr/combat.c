@@ -5,7 +5,7 @@ inherit F_CLEAN_UP;
 int main(object me, string arg)
 {
         if( !wizardp(me) && time()-query_temp("last_combat", me)<10 )
-                return notify_fail("系統氣喘噓地嘆道：慢慢來 ....\n");   
+                return notify_fail("系統氣喘噓地歎道：慢慢來 ....\n");   
 
         set_temp("last_combat", time(), me);
         SKILLS_D->query_skill_power(me, arg);

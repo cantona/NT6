@@ -14,7 +14,7 @@ void create()
                 set_default_object(__FILE__);
         else {
                 set("unit", "柄");
-                set("long", "這是一柄奇門兵器，好似一只大剪刀，上面喂了劇毒。\n");
+                set("long", "這是一柄奇門兵器，好似一隻大剪刀，上面餵了劇毒。\n");
                 set("value", 10000);
                 set("material", "steel");
                 set("wield_msg", "$N「唰」的一聲掏出一柄$n握在手中。\n");

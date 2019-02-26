@@ -12,7 +12,7 @@ void create()
         set("gender", "男性");
         set("age", 43);
         set("long", @LONG
-張召重人稱“火手判官”，身材魁梧，留一叢短胡子。江湖盛言“寧
+張召重人稱“火手判官”，身材魁梧，留一叢短鬍子。江湖盛言“寧
 挨一槍，莫遇一張”就是指他了。他熱衷功名利祿，投身朝廷，此人
 辦事賣力，這些年來更是青雲直上。
 LONG );
@@ -128,12 +128,12 @@ void start_catch(object ob)
         {
                 tell_object(ob, "你看到" + name() + "，不由大吃一驚，慌忙轉身逃走。\n");
                 message("vision", ob->name() + "看到" + name() +
-                        "，臉色大變，慌裡慌張的轉身逃走。\n" +
-                        name() + "冷笑一聲，喝道：“那裡走？”，緊隨其後追了上去。\n",
+                        "，臉色大變，慌里慌張的轉身逃走。\n" +
+                        name() + "冷笑一聲，喝道：“那裏走？”，緊隨其後追了上去。\n",
                         environment(ob), ({ ob }));
                 ob->move("/d/city/guangchang");
                 move("/d/city/guangchang");
-                tell_object(ob, HIR "...這...這是哪裡？好熟悉啊？"
+                tell_object(ob, HIR "...這...這是哪裏？好熟悉啊？"
                             "你心底一橫，轉過身來，喝道：“不是魚死，就是網破，來吧！”。\n" NOR);
                 message("vision", ob->name() + "慌慌張張的跑了過來，只見有一人"
                         "緊隨其後而來。\n", environment(ob), ({ ob }));
@@ -156,9 +156,9 @@ void catch_ob(object ob)
                                "差，你們幾個我改日再收拾！”\n",
                                this_object());
         }
-        message_vision("$N拎著$n轉身離去。\n", this_object(), ob);
+        message_vision("$N拎着$n轉身離去。\n", this_object(), ob);
 
-        CHANNEL_D->do_channel(this_object(), "rumor", "聽說" +
+        CHANNEL_D->do_channel(this_object(), "rumor", "聽説" +
                             ob->name(1) + HIM "因為妄殺無辜，現已被"
                             "火手判官張召重緝拿歸案，押入大牢。");
         ob->get_into_prison(0, "/d/changan/prison", 30);
@@ -191,7 +191,7 @@ void die()
 {
         command("chat 天哪！我" + name() + "忠心耿耿，可是...不是我沒用，而是敵人太強大了。");
         message_vision(HIM "$N" HIM "狂吐幾口鮮血，扔下一個煙霧彈，"
-                       HIM "借著混亂逃走了。\n", this_object());
+                       HIM "藉着混亂逃走了。\n", this_object());
         destruct(this_object());
 }
 

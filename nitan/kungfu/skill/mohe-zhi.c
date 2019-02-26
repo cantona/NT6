@@ -10,14 +10,14 @@ mapping *action = ({
         "skill_name" : "葉不歸根",
         "damage_type" : "刺傷"
 ]),
-([        "action" : "$N全身之力聚于一指，一式「我心向佛」，指向$n的胸前",
+([        "action" : "$N全身之力聚於一指，一式「我心向佛」，指向$n的胸前",
         "force" : 140,
         "dodge" : 10,
         "lvl" : 15,
         "skill_name" : "我心向佛",
         "damage_type" : "刺傷"
 ]),
-([        "action" : "$N左掌貼于神道穴，右手一式「以慈度心」，向$n的$l劃過",
+([        "action" : "$N左掌貼於神道穴，右手一式「以慈度心」，向$n的$l劃過",
         "force" : 180,
         "dodge" : 15,
         "lvl" : 25,   
@@ -38,11 +38,11 @@ mapping *action = ({
         "skill_name" : "天衣無縫",
         "damage_type" : "刺傷"
 ]),
-([        "action" : "$N右手伸出，十指叉開，一式「念經誦佛」，小指拂向$n的太淵穴",
+([        "action" : "$N右手伸出，十指叉開，一式「唸經誦佛」，小指拂向$n的太淵穴",
         "force" : 330,
         "dodge" : 30,
         "lvl" : 70,
-        "skill_name" : "念經送佛",
+        "skill_name" : "唸經送佛",
         "damage_type" : "刺傷"
 ]),
 ([        "action" : "$N雙迸出無數道勁氣，一式「我佛慈悲」射向$n的全身",

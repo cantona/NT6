@@ -8,7 +8,7 @@ void create()
         set_name("商業執照", ({ "shangye zhizhao", "zhizhao" }) );
         set_weight(1);
         if( clonep() )
-        set("long", "一張紅底金邊帖子，上面寫著四個金燦燦的大字：商業執照，左下角是黃真的親筆簽名。\n");
+        set("long", "一張紅底金邊帖子，上面寫着四個金燦燦的大字：商業執照，左下角是黃真的親筆簽名。\n");
         set("unit", "份");
         set("value", 0);
         set("material", "paper");
@@ -33,7 +33,7 @@ int do_bantan()
         me = this_player();
 
         if( !query("is_vendor", me))return notify_fail("你又不是商人，瞎折騰什麼啊！\n");
-        if (!present("shangye zhizhao",me)) return notify_fail("你的商業執照不在身上，難道想無証搬攤？\n");
+        if (!present("shangye zhizhao",me)) return notify_fail("你的商業執照不在身上，難道想無證搬攤？\n");
         if( query_temp("on_bantan", me))return notify_fail("你已經佔了一個攤位，還想怎的？\n");
 
         message_vision(HIW "$N找了一塊空地，一屁股坐了下來，隨後掏出一塊布攤開在地。\n" +NOR,me);
@@ -51,7 +51,7 @@ int do_shoutan()
 
         if( !query("is_vendor", me))return notify_fail("你又不是商人，瞎折騰什麼啊！\n");
         if (!present("shangye zhizhao",me)) return notify_fail("你的商業執照不在身上，請退線後重新連線並申請一個新的。\n");
-        if( !query_temp("on_bantan", me))return notify_fail("你並沒有擺攤，哪裡來的攤子給你收啊？\n");
+        if( !query_temp("on_bantan", me))return notify_fail("你並沒有擺攤，哪裏來的攤子給你收啊？\n");
 
         message_vision(HIW "$N提起攤布的四個角，把貨物一股腦的收了起來，站起身來。\n" +NOR,me);
         delete_temp("on_bantan", me);

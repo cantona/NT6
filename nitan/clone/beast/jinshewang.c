@@ -4,7 +4,7 @@ inherit SNAKE;
 void create()
 {
         set_name(NOR + YEL "金蛇" NOR, ({ "jin she", "jin", "she" }));
-        set("long", YEL "這是一條幾寸長的小蛇，通體金黃。\n" NOR);
+        set("long", YEL "這是一條几寸長的小蛇，通體金黃。\n" NOR);
 
         set("age", 15);
         set("str", 30);

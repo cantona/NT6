@@ -15,7 +15,7 @@ void create()
         set("gender", "男性");
         set("age", 18);
         set("long",
-                "這是少年乞丐，長得眉青目秀，似乎是家世淪落，被迫浪盪街頭。\n");
+                "這是少年乞丐，長得眉青目秀，似乎是家世淪落，被迫浪蕩街頭。\n");
 
         set("attitude", "heroism");
         set("class", "beggar");

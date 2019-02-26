@@ -61,7 +61,7 @@ protected int create_title(string arg)
         ts = UPDATE_D->query_title_base();
         if (! arrayp(ts)) ts = ({ });
         if (n + sizeof(ts) >= 100)
-                return notify_fail("系統中最多只能有一百個稱號，所以請你考慮先取消一些。\n");
+                return notify_fail("系統中最多隻能有一百個稱號，所以請你考慮先取消一些。\n");
 
         if (! stringp(arg = check_title(arg)))
                 return 0;
@@ -271,7 +271,7 @@ protected int grant_title(string arg)
         item = ts[i];
 
         if (! objectp(nob = UPDATE_D->global_find_player(user)))
-                return notify_fail("你只能授予稱號給已經注冊的玩家。\n");
+                return notify_fail("你只能授予稱號給已經註冊的玩家。\n");
 
         if (item[1] == user)
         {
@@ -373,7 +373,7 @@ int help(object me)
            title -s <玩家> <新稱號>
            title -l
  
-這個指令可以讓你為某人取一個響亮的頭銜，但是只有巫
+這個指令可以讓你為某人取一個響亮的頭銜，但是隻有巫
 師才可以使用，你如果希望在外號中使用 ANSI 的控制字
 元改變顏色，可以用以下的控制字串：
 

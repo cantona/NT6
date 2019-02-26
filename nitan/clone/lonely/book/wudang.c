@@ -27,7 +27,7 @@ void create()
                         "liuhe"    : 80,         // 六合返精散
                         "qingxin"  : 100,        // 清心定神散
                         "zhending" : 150,        // 固元鎮定散
-                        "dieda"    : 80,         // 跌打傷癒膏
+                        "dieda"    : 80,         // 跌打傷愈膏
                         "huojin"   : 100,        // 活筋舒血丸
                         "tongmai"  : 150,        // 貫氣通脈丹
                         "jiedu"    : 100,        // 牛黃解毒丸

@@ -9,7 +9,7 @@ void create()
 {
         set("short",YEL"兵器庫"NOR);
         set("long", @long
-這裡應該是一個練武場或者兵器室，地上散滿了亂七八糟的兵器，十之八
+這裏應該是一個練武場或者兵器室，地上散滿了亂七八糟的兵器，十之八
 九都是古劍，或長逾七尺，或短僅數寸，只是大多鐵口斑駁。
 long);
         set("exits", ([
@@ -33,7 +33,7 @@ int do_search(string arg)
 	object me,obj;
   me = this_player();
 	if (me->is_busy() || me->is_fighting())
-		      return notify_fail("你正忙著哪！\n");
+		      return notify_fail("你正忙着哪！\n");
   message_vision(HIY"$N蹲在地上，四處尋找。\n"NOR, me);
   if(!wizardp(me)) me->start_busy(1);
   if(me->query(QUESTDIR5+"bingqiku")>=2||random(2))

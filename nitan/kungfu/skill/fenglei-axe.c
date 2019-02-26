@@ -51,7 +51,7 @@ mixed hit_ob(object me, object victim, int damage)
         if (random(damage / 2) > 50) 
         {
                 result = ([ "damage": damage ]);                 
-                result += (["msg" : HIR "只見紫芒閃過，$n□血四□，被$N" HIR "斧上聚集的玄天紫電勁所傷！\n" NOR]);
+                result += (["msg" : HIR "只見紫芒閃過，$n鮮血四濺，被$N" HIR "斧上聚集的玄天紫電勁所傷！\n" NOR]);
                 return result;
         }
 }

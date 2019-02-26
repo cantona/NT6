@@ -13,7 +13,7 @@ void create()
                 set_default_object(__FILE__);
         else {
                 set("unit", "本");
-                set("long", "這是一本線裝書，裡面有各式圖譜和詳細說明。\n");
+                set("long", "這是一本線裝書，裏面有各式圖譜和詳細説明。\n");
                 set("value", 300);
                 set("material", "paper");
         }
@@ -37,7 +37,7 @@ int do_study(string arg)
         }
         if (me->is_busy())
         {
-                write("你現在正忙著呢。\n");
+                write("你現在正忙着呢。\n");
                 return 1;
         }
         if( me->is_fighting() )
@@ -67,7 +67,7 @@ int do_study(string arg)
         }
         if( query("jing", me)<120 )
         {
-                write("你的精神欠佳，捧著醫經連打呵欠。\n");
+                write("你的精神欠佳，捧着醫經連打呵欠。\n");
                 return 1;
         }
         cost=40+800/query("int", me);
@@ -76,7 +76,7 @@ int do_study(string arg)
 
         me->improve_skill("medicine", random(2 * me->query_int()));
         me->receive_damage("jing", cost, "心力絞瘁死了");
-        message_vision("$N一會兒翻閱著『十四經發揮』，一會兒苦思冥想。\n", me);
+        message_vision("$N一會兒翻閲着『十四經發揮』，一會兒苦思冥想。\n", me);
 
         return 1;
 }

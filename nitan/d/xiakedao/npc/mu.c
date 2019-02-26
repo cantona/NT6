@@ -9,7 +9,7 @@ void create()
 {
         set_name("木丹鳳", ({ "mu", "wood" }));
         set("long", "他就是天下聞之色變的俠客島島主，號稱“葉上秋露”。\n"
-                   +"只見他長須稀稀落落，兀自黑多白少，但一張臉卻滿是皺紋。\n"
+                   +"只見他長鬚稀稀落落，兀自黑多白少，但一張臉卻滿是皺紋。\n"
                    +"看不出他的實際年紀。\n"
                    );
         set("title", "俠客島主");
@@ -106,7 +106,7 @@ int accept_object(object who, object ob)
                  room=environment(who);
                  remove_call_out("close");
                  key = new("/d/xiakedao/obj/key");
-message_vision("這是我身後石門的鑰匙，也是俠客島上的憑証，希望你妥善保管，不可隨意丟棄，" +
+message_vision("這是我身後石門的鑰匙，也是俠客島上的憑證，希望你妥善保管，不可隨意丟棄，" +
                     "更不可交付他人，離島時應與歸還。\n", who);
                  key->move(who);
                  call_out("close", 15, room);

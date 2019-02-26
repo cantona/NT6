@@ -39,13 +39,13 @@ int perform(object me, object target)
                 return notify_fail("你現在的真氣太弱，難以施展" ZHEN "。\n");
 
         if (! living(target))
-                return notify_fail("對方都已經這樣了，用不著這麼費力吧？\n");
+                return notify_fail("對方都已經這樣了，用不着這麼費力吧？\n");
 
         msg = HIW "$N" HIW "將手中" + weapon->name() + HIW "緩緩壓向$n"
-              HIW "，棍體隱隱帶著風雷之勁，正是取經棍法殺著「" HIR "震"
+              HIW "，棍體隱隱帶着風雷之勁，正是取經棍法殺着「" HIR "震"
               "雷乾坤" HIW "」！\n電光火石間，棍端竟全被紫電所籠罩，" +
               weapon->name() + HIW "幻作千百根相似，奔雷掣電般向$n" HIW
-              "席卷而去。\n" NOR;
+              "席捲而去。\n" NOR;
 
         ap = me->query_skill("club");
         dp = target->query_skill("parry");

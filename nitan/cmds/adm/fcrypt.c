@@ -26,24 +26,24 @@ int main(object me, string arg)
                 return notify_fail("沒有這個文件或是路徑。\n");
         case -2:
                 if (arg[strlen(arg) - 1] != '/') arg += "/";
-                write("為 " + build_path(arg) + " 個文件增加了鑒別ID。\n");
+                write("為 " + build_path(arg) + " 個文件增加了鑑別ID。\n");
                 return 1;
         }
 
         if (strlen(arg) < 2)
-                return notify_fail("這個文件沒有必要增加鑒別ID。\n");
+                return notify_fail("這個文件沒有必要增加鑑別ID。\n");
 
         affix = arg[strlen(arg) - 2..<1];
         if (affix != ".c" && affix != ".h")
-                return notify_fail("這個文件沒有必要增加鑒別ID。\n");
+                return notify_fail("這個文件沒有必要增加鑑別ID。\n");
 
         if (VERSION_D->append_sn(arg) == 1)
         {
-                write("成功的增加了鑒別ID。\n");
+                write("成功的增加了鑑別ID。\n");
                 return 1;
         }
 
-        write("增加鑒別ID失敗了。\n");
+        write("增加鑑別ID失敗了。\n");
         return 1;
 }
 

@@ -1,4 +1,4 @@
-// 上古十大神器之 昆侖鏡
+// 上古十大神器之 崑崙鏡
 // Create by Rcwiz for Hero.cn 2003/09
 
 #include <ansi.h>
@@ -41,14 +41,14 @@ mapping place = ([
 
 void create()
 {
-        set_name(HIW "昆侖鏡" NOR, ({ "kunlun jing", "kunlun", "jing" }) );
+        set_name(HIW "崑崙鏡" NOR, ({ "kunlun jing", "kunlun", "jing" }) );
         set_weight(100);
         if (clonep())
                 set_default_object(__FILE__);
         else
         {
                 set("unit", "面");
-                set("long", HIW "這是一面通體銀光的鏡子，據說擁有穿梭時空的能力。\n"                               
+                set("long", HIW "這是一面通體銀光的鏡子，據説擁有穿梭時空的能力。\n"                               
                                 "可借用其穿梭(trans)到各大城市馬廄，可以輸入 trans 查看\n"
                                 "可穿梭的地點，使用 trans ? 查看使用次數。\n" NOR);                
 
@@ -92,8 +92,8 @@ int do_trans(string arg)
         if (member_array(arg, places) == -1)
                  return notify_fail("看清楚，沒有你要到的地方。\n");                
 
-        message_sort(HIW "\n$N" HIW "揮舞著手中的昆侖鏡，剎那間光華萬道，$N" HIW "借"
-                         "著萬道光芒消失在天際 ……\n" NOR, me);
+        message_sort(HIW "\n$N" HIW "揮舞着手中的崑崙鏡，剎那間光華萬道，$N" HIW "借"
+                         "着萬道光芒消失在天際 ……\n" NOR, me);
 
         write(HIG "你從天而下，落在了地上。\n" NOR);
         
@@ -102,7 +102,7 @@ int do_trans(string arg)
         this_object()->add("count", 1);
         if (this_object()->query("count") >= 30)
         {
-                write(HIW "只聽得一陣清脆的破碎聲，昆侖鏡已經損壞了！\n" NOR);
+                write(HIW "只聽得一陣清脆的破碎聲，崑崙鏡已經損壞了！\n" NOR);
                 destruct(this_object());                                
         }
         

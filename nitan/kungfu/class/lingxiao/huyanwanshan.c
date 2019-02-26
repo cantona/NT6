@@ -71,6 +71,6 @@ void attempt_apprentice(object me)
         if (! permit_recruit(me))
                 return;
 
-        command("say 很好，你以後就跟著我吧。");
+        command("say 很好，你以後就跟着我吧。");
         command("recruit "+query("id", me));
 }

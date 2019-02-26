@@ -2,16 +2,16 @@ $HIR$注：很多命令都是有多個單詞對應的，如果要了解某個命
     況，就輸入$HIY$(help xxxx) $HIR$以查詢$HIC$xxxx$HIR$命令的詳情，包括參數和可
     以用的同義詞。$NOR$
 
-$HIY$【用戶命令】$NOR$
+$HIY$【用户命令】$NOR$
 
 alias           定義命令的縮寫。
 assist          幫助同門的人完成任務。
 bjtime          現在的北京時間。
-boss            老板保護屏幕。
-bossgone        取消老板保護屏幕。
+boss            老闆保護屏幕。
+bossgone        取消老闆保護屏幕。
 brothers        查看兄弟的信息、絕交。
 cls             清屏幕。
-describe        對自己的描述說明。
+describe        對自己的描述説明。
 exit            當你想暫時離開遊戲時, 可利用此一指令。
 femote          根據關鍵字查找表情動詞。
 finger          顯示線上玩家資料。
@@ -24,7 +24,7 @@ idle            使一個人發呆。
 inventory       列出你目前身上所攜帶的所有物品。
 league          查看結義同盟的信息。
 miss            追尋自己的物品。
-news            閱讀目前的新聞。
+news            閲讀目前的新聞。
 nick            為自己取一個響亮的名號或頭銜或取消綽號。
 passwd          這個指令可以修改你的人物密碼。
 pkd             這個指令可以讓你查看目前在屠人場中人物。
@@ -48,7 +48,7 @@ wizlist         列出目前所有的巫師名單。
 
 $HIY$【交流探險命令】$NOR$
 
-ansuan          暗算位于<方向>的<人物>。
+ansuan          暗算位於<方向>的<人物>。
 apply           使用一個物品。
 ask             打聽，解謎。
 attack          讓動物攻擊敵人。
@@ -60,7 +60,7 @@ come            讓動物跟隨主人行動。
 daub            在身上、武器、防具上面塗抹東西。
 drive           趕車。
 drop            讓你丟下你所攜帶的物品。
-drug            在食物裡面下毒。
+drug            在食物裏面下毒。
 emote           表情動詞。參照$HIY$semote$NOR$。
 fight           讓你向一個人物「討教」或者是「切磋武藝」。
 fill            為某個容器續水。
@@ -75,18 +75,18 @@ hit             直接向一個人物「進招」。
 kill            你主動開始攻擊一個人物，並且試圖殺死對方。
 look            查看你所在的環境、某件物品、生物、或是方向。
 makelove        和某人做愛。
-map             繪制地圖。
+map             繪製地圖。
 open            可以讓你打開門。
 pour            將某樣毒品下到一個容器中的飲食中。
 push            將他人推開。
 put             將某樣物品放進一個容器。
 refuse          拒絕某人提出的要求。
 release         結束主奴狀態，將動物放離。
-remove          脫掉身上某件防具。
-reply           和剛才用 $HIY$tell$NOR$ 和你說話的使用者說話。
+remove          脱掉身上某件防具。
+reply           和剛才用 $HIY$tell$NOR$ 和你説話的使用者説話。
 ride            你騎上代步的已馴養的動物。
 right           同意某人提出的要求。
-say             所有跟你在同一個房間的人都會聽到你說的話。
+say             所有跟你在同一個房間的人都會聽到你説的話。
 secularize      還俗，不做和尚尼姑小喇嘛了。
 sleep           睡覺。在可以睡覺的地方睡覺，恢復體力。
 stab            讓你將一件道具插在地上。
@@ -95,15 +95,15 @@ steal           偷他人身上的東西。
 stop            讓動物停止對人的攻擊。 
 surrender       投降終止戰鬥。
 team            隊伍指令。
-tell            和其他地方的使用者說話。
+tell            和其他地方的使用者説話。
 to              可以一次輸出多行以上的文字, <指令>通常是輸出
                 訊息的指令如$HIY$say, tell, describe, chat, reply$NOR$。
 touch           觸摸一件道具，看看會發生什麼特殊的事情。
 touxi           向敵人偷襲。偷襲不成時，則會招至反擊。
-                特別適合于經驗低的玩家向經驗高的玩家拚命。
+                特別適合於經驗低的玩家向經驗高的玩家拚命。
 train           馴化某動物。
 tune            讓你選擇是否要收聽某一頻道的訊息。
-unride          讓你從騎著的已馴養的動物上跳下來。
+unride          讓你從騎着的已馴養的動物上跳下來。
 unwield         這個指令讓你放下手中的武器。
 vote            此命令提議對某人採取行動，由大家投票決定。
 wash            洗手，物品、防具。
@@ -118,7 +118,7 @@ apprentice      讓你拜某人為師。
 berserk         發作，另自己發怒。
 burning         發泄憤怒，提升戰鬥力。
 closed          大宗師可以用這條指令進行閉關修煉。
-combine         合並物品，生成新的物品。
+combine         合併物品，生成新的物品。
 derive          汲取實戰體會，以提升自己的武學修養。
 detach          請求師傅把你開除。
 enable          指定所要用的技能，需指明技能種類和技能名稱。
@@ -141,14 +141,14 @@ research        你對某一種技能進行研究。
 respirate       打坐修行，將你的精轉變成精力。
 san             使一個物品聖化以激發它的潛能。
 skills          讓你查詢所學過的技能。
-study           通過閱讀秘笈或其他物品自學某些技巧。
+study           通過閲讀祕笈或其他物品自學某些技巧。
 teach           向你的弟子解釋有關某一種技能的疑難問題。
 
 $HIY$【巫師常用命令簡介】$NOR$
 
 $HIM$精靈(immortal)$NOR$
 
-cpemote         復制表情動詞。
+cpemote         複製表情動詞。
 edemote         編寫、刪除表情動詞。
 flyto           飛到某個場景或某個玩家所在的地方。
 rnemote         更換表情動詞的名字。
@@ -160,14 +160,14 @@ finger          查看目前使用者的IP地址。
 $HIC$巫師(apprentice)$NOR$
 
 cd              更換當前所在的路徑。
-cp              復制文件。
+cp              複製文件。
 mv              移動檔案。
 rm              刪除文件或路徑。
 edit            在線編輯檔案。
-more            查閱大檔案。
+more            查閲大檔案。
 who1            瀏覽在線玩家的簡略狀態。
 who2            瀏覽在線玩家所出的地點。
-copyskill       復制一個NPC或是其他玩家的屬性和武功技能。
+copyskill       複製一個NPC或是其他玩家的屬性和武功技能。
 
 $HIY$大巫師(arch)$NOR$
 

@@ -7,7 +7,7 @@ inherit MEDAL2;
 void create()
 {
         set_name(HIW "轉世勛章（無極）" NOR, ({ "wuji xunzhang", "wuji", "xunzhang" }));
-        set("long", HIW "轉世後獲得的勛章，上繪天地無極圖，閃閃發亮，甚是精致。\n" NOR);
+        set("long", HIW "轉世後獲得的勛章，上繪天地無極圖，閃閃發亮，甚是精緻。\n" NOR);
         set_weight(500);
         if (clonep())
                 set_default_object(__FILE__);

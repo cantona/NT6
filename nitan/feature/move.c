@@ -95,8 +95,8 @@ varargs int move(mixed dest, int raw)
         // object in the bag and encumbrance checking is unessessary.
         // ----------------------
         // 檢查目標是否能夠包容住該物品
-        // 在檢查前，我們先檢查是否目標OBJ是該物件的環境（或者是它的環境的環境），如果是，那就好象是
-        // 從一個玩家身上背著的包裡取出一個物品，既然玩家可以背起這個包，那麼我們可以想當然的認為他也
+        // 在檢查前，我們先檢查是否目標OBJ是該物件的環境（或者是它的環境的環境），如果是，那就好像是
+        // 從一個玩家身上揹着的包裏取出一個物品，既然玩家可以背起這個包，那麼我們可以想當然的認為他也
         // 可以背起這個OBJ並且超重檢查是不必要的。 By JackyBoy@TOMUD 2001/5/6
         env = me;
         while( env = environment(env) )
@@ -104,7 +104,7 @@ varargs int move(mixed dest, int raw)
         if( !env && (int) ob->query_encumbrance() + weight() >
             (int) ob->query_max_encumbrance() ) {
                 if( raw && environment(ob) && !query("bindable", me) ) {
-                        message_vision("由于$n對于$N而言是在"
+                        message_vision("由於$n對於$N而言是在"
                                        "是太重了，只好先扔在一旁。\n",
                                        ob, this_object());
                         ob = environment(ob);
@@ -195,7 +195,7 @@ varargs int move(mixed dest, int raw)
                                         tell_object(user, REM0(this_object()));
 
                                 // tell_room(env,REM0(this_object()),this_object() );
-                                // 如果是從房間裡移動走，則應該是REM0
+                                // 如果是從房間裏移動走，則應該是REM0
                         }
                         // else log_file("move.log",ctime(time())+"：不知道如何顯示REM消息---"+base_name(env)+"\n");
                 }
@@ -212,7 +212,7 @@ varargs int move(mixed dest, int raw)
                                 foreach( user in users )
                                         tell_object(user, ADD0(this_object()));
                                 // tell_room(ob, ADD0(this_object()),this_object() );
-                                // 如果是移動到房間裡，則應該是ADD0
+                                // 如果是移動到房間裏，則應該是ADD0
                         }
                 }
         }
@@ -291,7 +291,7 @@ void remove(string euid)
                         if( sizeof(users) > 0 )
                         foreach( user in users )
                                 tell_object(user, REM0(me));
-                        // tell_room(ob, REM0(me), me );//如果是從房間裡移動走，則應該是REM0
+                        // tell_room(ob, REM0(me), me );//如果是從房間裏移動走，則應該是REM0
                 }
 
                 if( is_magic_move() && userp(ob) ) {

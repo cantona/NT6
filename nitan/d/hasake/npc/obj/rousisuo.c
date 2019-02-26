@@ -19,7 +19,7 @@ void create()
                 set("value", 10000);
                 set("material", "leather");
                 set("wield_msg", "$N輕輕抽出一摞$n套在手上。\n");
-                set("unwield_msg", "$N將手中的$n卷成一團，放入袖中。\n");
+                set("unwield_msg", "$N將手中的$n捲成一團，放入袖中。\n");
         }
         init_whip(10);
         setup();
@@ -40,7 +40,7 @@ int do_tao(object me, object target)
                 return notify_fail("你只能在戰鬥中的偷襲對手用。\n");
 
         if (me->is_busy()) 
-                return notify_fail("你現在正忙著呢。\n");
+                return notify_fail("你現在正忙着呢。\n");
 
         if (me->query_skill_prepared("strike") != "chousui-zhang" ||
             me->query_skill_mapped("strike") != "chousui-zhang" ||

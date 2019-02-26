@@ -16,7 +16,7 @@ int main(object me, string arg)
         int damage;
 
         if( query("no_fight", environment(me)) )
-                return notify_fail("這裡不能戰鬥。\n");
+                return notify_fail("這裏不能戰鬥。\n");
 
         if (me->is_busy())
                 return notify_fail("( 你上一個動作還沒有完成，不能施用憤怒一擊。)\n");
@@ -33,7 +33,7 @@ int main(object me, string arg)
 
         if (! living(target))
                 return notify_fail("人家都已經這個樣子了，你"
-                                   "還用得著這麼費力氣麼？\n");
+                                   "還用得着這麼費力氣麼？\n");
 
         if ((craze = me->query_craze()) < 500)
                 return notify_fail("你現在心平氣和，談不上什麼憤怒。\n");
@@ -81,10 +81,10 @@ int main(object me, string arg)
                 addn_temp("apply/damage", damage, me);
                 addn_temp("apply/unarmed_damage", damage, me);
                 COMBAT_D->do_attack(me,target,query_temp("weapon", me),0);
-                msg = HIR "\n$N" HIR "一招攻出，竟不罷休，隨即舍身撲上又是一招！\n" NOR;
+                msg = HIR "\n$N" HIR "一招攻出，竟不罷休，隨即捨身撲上又是一招！\n" NOR;
                 if (! me->is_fighting(target) && living(target))
                 {
-                        msg += HIY "$n" HIY "見$N" HIY "舍生忘死，全然"
+                        msg += HIY "$n" HIY "見$N" HIY "捨生忘死，全然"
                                "不顧自己已經認輸做罷，不由大吃一驚，慌"
                                "忙抵擋。\n" NOR;
                 }
@@ -201,7 +201,7 @@ void hate_attack(object me, object target)
                                       "厲害啊！不過又豈能奈我何？");
                 else
                         shout_message(target->name(1) + "哈哈大笑道：你的" +
-                                      "來勢好兇啊，可惜本事太差，也罷，也罷，哈哈！");
+                                      "來勢好凶啊，可惜本事太差，也罷，也罷，哈哈！");
 
                 tell_object(me, HIR "你目眥俱裂，心中燃起的重重怒火，絲毫沒有減弱。\n" NOR);
         } else
@@ -230,9 +230,9 @@ int help (object me)
         write(@HELP
 指令格式：crattack <對象>
 
-如果你處于憤怒狀態，就可以利用自己的憤怒充分發揮自己的能力，
+如果你處於憤怒狀態，就可以利用自己的憤怒充分發揮自己的能力，
 予以正在交手的對手沉重的打擊。當然你還得使用剛猛或是殺傷力高
-的武功才能收到良好的效果。你的怒氣達到了頂峰的時候，威力更是
+的武功才能收到良好的效果。你的怒氣達到了頂峯的時候，威力更是
 不同凡響。
 
 如果你被人打暈或是殺死，則打暈你和殺死你的人將成為你憎恨的對

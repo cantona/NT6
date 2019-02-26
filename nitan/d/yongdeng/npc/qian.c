@@ -14,7 +14,7 @@ void create()
         set("dex", 16);
         set("per", 16);
         set("long", "錢青健是黃河四鬼的老四，是鬼門龍王沙通天的四弟子，擅
-于斧法。\n");
+於斧法。\n");
         set("combat_exp", 20000);
         set("shen_type", -1);
         set("attitude", "peaceful");

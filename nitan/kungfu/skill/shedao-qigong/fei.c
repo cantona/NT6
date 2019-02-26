@@ -39,7 +39,7 @@ int perform(object me, object target)
                 return notify_fail("你的蛇島奇功的修為法還不到家，無法使用飛仙術！\n");
 
        if (! living(target))
-              return notify_fail("對方都已經這樣了，用不著這麼費力吧？\n");
+              return notify_fail("對方都已經這樣了，用不着這麼費力吧？\n");
 
         switch (random(3))
         {
@@ -49,7 +49,7 @@ int perform(object me, object target)
                 break;
 
         case 1:
-                msg = HIY "$N" HIY "口中念念有詞，手中的" + weapon->name() +
+                msg = HIY "$N" HIY "口中唸唸有詞，手中的" + weapon->name() +
                       HIY "越使越快，漸漸形成一團光芒，籠罩了$n" HIY "！\n" NOR;
                 break;
 

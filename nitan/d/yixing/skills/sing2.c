@@ -45,20 +45,20 @@ int exert(object me, object target)
                 return notify_fail("你的龍象般若功功力不夠！\n");
 
         if( query("no_fight", environment(me)) )
-                return notify_fail("在這裡不能唱。\n");
+                return notify_fail("在這裏不能唱。\n");
 
         if( query_temp("cursed", target) || 
                 query_temp("block_msg/all", target) )
                 return notify_fail("此人已被降伏！\n");
 
         if( query_temp("curser", me) )
-                return notify_fail("你降伏著另一各人！\n");
+                return notify_fail("你降伏着另一各人！\n");
 
         addn("neili", -50, me);
         me->receive_damage("qi", 50);
 
         message_vision( BLU "$N搖頭晃腦，口中背誦大乘佛經，夾雜以密宗六字咒。聲音陰陽頓挫，有起有伏，暗含音律。\n" NOR, me);
-        tell_object(target, "你覺得那密咒比鬼哭還難聽，腦袋裡一團絮亂，眼前一堆鬼影在亂跳，胸氣阻塞，四肢無力，混然欲睡。\n");
+        tell_object(target, "你覺得那密咒比鬼哭還難聽，腦袋裏一團絮亂，眼前一堆鬼影在亂跳，胸氣阻塞，四肢無力，混然欲睡。\n");
                 
         ap=query("neili", me)+query("max_neili", me)+
                 (int)me->query_skill("necromancy", 1) * 10 +
@@ -77,7 +77,7 @@ int exert(object me, object target)
 //                target->set_temp("block_msg/all", 1);
                 set_temp("curser", 1, me);
 
-                message_vision(HIR"\n$N突然開始兩眼發直，呆呆地望著前方。\n"NOR, target);
+                message_vision(HIR"\n$N突然開始兩眼發直，呆呆地望着前方。\n"NOR, target);
 
                 remove_call_out("del_sung");
                 call_out("del_sung", 3 + random(3), me, target);

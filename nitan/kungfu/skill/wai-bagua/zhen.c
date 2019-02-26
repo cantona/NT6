@@ -31,7 +31,7 @@ int perform(object me, object target)
                 return notify_fail("你現在真氣不足，難以施展" ZHEN  "。\n");
 
         if (! living(target))
-                return notify_fail("對方都已經這樣了，用不著這麼費力吧？\n");
+                return notify_fail("對方都已經這樣了，用不着這麼費力吧？\n");
 
         msg = WHT "$N" WHT "深吸一口氣，雙掌交錯，一招「八卦震」平平拍出，企"
               "圖以內力震傷$n" WHT "。\n" NOR;

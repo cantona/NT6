@@ -8,7 +8,7 @@ void create()
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("long", HIC "東海之寶，千年難求。據說是東海龍女嫁妝。\n" NOR);
+                set("long", HIC "東海之寶，千年難求。據説是東海龍女嫁粧。\n" NOR);
                 set("unit", "塊");
                 set("value", 5000);
                 set("enchase/name", "海藍石");

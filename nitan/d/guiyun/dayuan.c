@@ -7,15 +7,15 @@ void create()
 {
         set("short", "大院");
         set("long", @LONG
-這裡是歸雲莊的大院，整個院子相當寬敞。左右靠牆各建有幾間低
-矮的平房，像是家人的住處。正前方幾棵樹木，湖中清風吹來，落葉蕭
+這裏是歸雲莊的大院，整個院子相當寬敞。左右靠牆各建有幾間低
+矮的平房，像是家人的住處。正前方几棵樹木，湖中清風吹來，落葉蕭
 蕭而下。樹木再往後是一間大廳。
 LONG );
         set("outdoors", "guiyun");
         set("no_clean_up", 0);
         set("valid_startroom", 1);
 /*
-右首有一對白雕(diao)。原來這裡是桃花島為方便弟子回島的。
+右首有一對白雕(diao)。原來這裏是桃花島為方便弟子回島的。
         set("item_desc", ([
                 "diao" : "一對白雕正展翅欲飛。如果是桃花島的弟子，\n"
                 "騎上(ride)就可以飛回桃花島。\n",
@@ -56,7 +56,7 @@ int do_ride ( )
         if( room = find_object("/d/taohua/lantian") ) 
         if( query_temp("tian_trigger", room) == 1 )
         {
-                message_vision("現在白雕正忙著,請過一會再乘坐!\n" , ob) ;
+                message_vision("現在白雕正忙着,請過一會再乘坐!\n" , ob) ;
                 return 1 ;
         }
         set_temp("tian_trigger", 1, room);
@@ -70,7 +70,7 @@ int do_ride ( )
 }
 void taohua( object ob )
 {
-        tell_object(ob, "你終于飛到了桃花山莊，白雕落了下來。\n\n"  ) ;
+        tell_object(ob, "你終於飛到了桃花山莊，白雕落了下來。\n\n"  ) ;
         ob -> move ("/d/taohua/damen") ; 
 }
 void reset()

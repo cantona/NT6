@@ -4,10 +4,10 @@ inherit NPC;
 void create()
 {
         set_name("趙齊賢", ({ "zhao qixian", "zhao", "qixian" }));
-        set("title", HIR "御前侍衛" NOR);
+        set("title", HIR "御前侍衞" NOR);
         set("age", 32);
         set("gender", "男性");
-        set("long", "一個其貌不揚的中年男子，但身上竟著御前侍\n衛的裝束。他便是御前侍衛趙齊賢。\n");
+        set("long", "一個其貌不揚的中年男子，但身上竟着御前侍\n衞的裝束。他便是御前侍衞趙齊賢。\n");
         set("attitude", "peaceful");
 
         set("str", 30);

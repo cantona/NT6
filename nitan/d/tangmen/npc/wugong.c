@@ -8,7 +8,7 @@ void create()
         set_name("蜈蚣", ({ "wugong", "gong", "wu" }) );
         set("race", "野獸");
         set("age", 2);
-        set("long", "一只赤紅色的毒蜈蚣，竟有一尺來長。\n");
+        set("long", "一隻赤紅色的毒蜈蚣，竟有一尺來長。\n");
         set("attitude", "peaceful");
 
         set("limbs", ({ "頭部", "背殼", "尾鉗" }) );

@@ -12,7 +12,7 @@ mapping *action = ({
     "skill_name" : "山陰手" ,
     "damage_type" : "瘀傷"
 ]),
-([  "action": "$N使出一招「千層刃」，雙掌急運內力，帶著凜冽的掌風直拍$n的$l",
+([  "action": "$N使出一招「千層刃」，雙掌急運內力，帶着凜冽的掌風直拍$n的$l",
     "force" : 80,
     "attack": 55,
     "dodge" : 15,

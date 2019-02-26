@@ -7,7 +7,7 @@ inherit "/inherit/char/punisher";
 void create()
 {
         set_name("雪山老僧", ({ "lao seng", "seng" }));
-        set("long",  "此人一副雪山派的打扮，神採飄逸，一看便是得道高僧。\n");
+        set("long",  "此人一副雪山派的打扮，神采飄逸，一看便是得道高僧。\n");
         set("gender", "男性");
         set("age", 62);
         set("attitude", "peaceful");

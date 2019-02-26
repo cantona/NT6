@@ -7,7 +7,7 @@ void create()
         set("age", 6);
         set("con", 100);
         set("str", 100);
-        set("long", "一只毛長身巨，狀如大牯牛的大白熊。\n");
+        set("long", "一隻毛長身巨，狀如大牯牛的大白熊。\n");
         set("attitude", "aggressive");
         set("limbs", ({ "頭部", "身體", "前爪", "後爪", "尾巴" }) );
         set("verbs", ({ "bite", "claw" }) );

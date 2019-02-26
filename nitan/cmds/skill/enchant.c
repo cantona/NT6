@@ -78,10 +78,10 @@ int main(object me, string arg)
         scroll = present("enchant scroll", me);
 
         if( objectp(scroll) )
-                tell_object(me, HIW "\n你雙目微閉，將"+item->name()+HIW"和"+obj->name()+HIW"置于附魔卷軸上凝于身前，運轉內勁迫"
+                tell_object(me, HIW "\n你雙目微閉，將"+item->name()+HIW"和"+obj->name()+HIW"置於附魔卷軸上凝於身前，運轉內勁迫"
                         "使它們空中旋轉交融。\n" NOR);
         else
-                tell_object(me, HIW "\n你雙目微閉，將"+item->name()+HIW"和"+obj->name()+HIW"凝于身前，運轉內勁迫"
+                tell_object(me, HIW "\n你雙目微閉，將"+item->name()+HIW"和"+obj->name()+HIW"凝於身前，運轉內勁迫"
                         "使它們空中旋轉交融。\n" NOR);
 
         me->start_busy(1);
@@ -95,7 +95,7 @@ int main(object me, string arg)
                         "事情。\n\n" NOR, environment(me), ({me}));
 
                 tell_object(me, HIW "霎時間只見萬道光華疾閃而過，你急忙伸出雙手將"+obj->name()+HIW"接住，"
-                        "發現掌心"+obj->name()+HIW"蘊漾著七色霞光。\n\n" NOR);
+                        "發現掌心"+obj->name()+HIW"藴漾着七色霞光。\n\n" NOR);
 
                 if( objectp(scroll) )
                 {
@@ -114,11 +114,11 @@ int main(object me, string arg)
         }
         else
         {
-                tell_object(me, HIW"但見"+item->name()+HIW"瞬間破裂，變成片片碎片洒落一地。\n");
+                tell_object(me, HIW"但見"+item->name()+HIW"瞬間破裂，變成片片碎片灑落一地。\n");
                 destruct(item);
         }
 
-        tell_object(me, HIR "你不禁一聲長嘆。\n" NOR);
+        tell_object(me, HIR "你不禁一聲長歎。\n" NOR);
 
         return 1;
 }

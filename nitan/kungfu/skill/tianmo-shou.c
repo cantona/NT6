@@ -14,7 +14,7 @@ mapping *action = ({
         "skill_name" :"覆雨翻雲",
         "damage_type":"瘀傷"
 ]),
-([      "action":"$N雙手一錯，右手向外橫推而出，一招「風起雲湧」帶著一股勁風拍向$n的$l。",
+([      "action":"$N雙手一錯，右手向外橫推而出，一招「風起雲湧」帶着一股勁風拍向$n的$l。",
         "force" :120,
         "attack":28,
         "parry" :40,
@@ -44,14 +44,14 @@ mapping *action = ({
         "skill_name" :"兩處茫茫",
         "damage_type":"瘀傷"
 ]),
-([      "action":"$N使出「出沒風波裡」，雙手滑溜異常對準$n的$l抓去。",
+([      "action":"$N使出「出沒風波里」，雙手滑溜異常對準$n的$l抓去。",
         "force" :220,
         "attack":74,
         "parry" :130,
         "dodge" :150,
         "damage":90,
         "lvl"   :160,
-        "skill_name" :"出沒風波裡",
+        "skill_name" :"出沒風波里",
         "damage_type":"抓傷"
 ]),
 ([      "action":"$N右手在$n$l劃過，隨後一招「捕風捉影」左手又向同一方位抓去。",

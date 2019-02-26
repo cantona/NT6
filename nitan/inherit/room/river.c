@@ -91,7 +91,7 @@ void arrival(object me, object boat, object arrive)
                            && ! playerp($1)
                            && ! $1->is_killing(query("id", $(me))) :));
 
-        tell_object(me, CYN "\n艄公說道：「到啦，上岸吧。」隨即把"
+        tell_object(me, CYN "\n艄公説道：「到啦，上岸吧。」隨即把"
                         "一塊踏腳板搭上堤岸。\n\n" NOR);
 
         obs->move(arrive);
@@ -154,7 +154,7 @@ int do_cross()
 
         msg = HIW "\n只見$N" HIW "身形微微一晃，已然飄出丈許，以"
               "足尖輕點水面向對岸踏波掠去，漾起層層微瀾。身形洋洋"
-              "洒洒，若彩蝶飛揚，甚是逍遙。便在眾人驚嘆輕功絕妙間"
+              "灑灑，若彩蝶飛揚，甚是逍遙。便在眾人驚歎輕功絕妙間"
               "，早已沒了蹤影。\n\n" NOR;
         message_sort(msg, me);
 

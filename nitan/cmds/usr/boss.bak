@@ -8,7 +8,7 @@ int main(object me, string arg)
         write(CLR);
         set_temp("block_msg/all", 1, me);
         set_temp("boss_screen", 1, me);
-//        message("channel:chat",RED"【警鈴】"+me->name(1)+"匆匆關上屏幕，回頭就跑。看來是老板來了。\n"NOR,users());
+//        message("channel:chat",RED"【警鈴】"+me->name(1)+"匆匆關上屏幕，回頭就跑。看來是老闆來了。\n"NOR,users());
         return 1;
 }
 
@@ -17,7 +17,7 @@ int help(object me)
         write(@HELP
 指令格式: boss <arg>
 
-    這個指令讓你在老板出現前一秒鐘時將屏幕上所有的中文消
+    這個指令讓你在老闆出現前一秒鐘時將屏幕上所有的中文消
 除，如果 <arg>不是零的話，俠客行會在你的屏幕上顯示出一些
 文章。與此同時，你將受不到任何來自風雲的訊息，直到你輸入
 bossgone指令。

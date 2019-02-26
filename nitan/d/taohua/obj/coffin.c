@@ -64,7 +64,7 @@ int do_open(string arg)
         message_vision("$N用力搬開白玉石棺蓋。\n", me);
         addn("tomb_thief", 1, me);
         set("opened", 1, ob);
-              set("long", "這是一具由整塊白玉雕成的石棺，晶瑩光潔，實是曠世難尋的珍物，棺中躺著一具骸骨。\n", ob);
+              set("long", "這是一具由整塊白玉雕成的石棺，晶瑩光潔，實是曠世難尋的珍物，棺中躺着一具骸骨。\n", ob);
         book = new("/clone/book/jiuyin3");
         if (book) book->move(ob); 
         book1 = new(__DIR__"hetu");
@@ -81,16 +81,16 @@ int shoot_arrow(object me)
 
         switch ((int)query("arrow_count")) {
         case 3:
-                message_vision(HIY"忽然間幾支短箭從棺後一個機關裡射出來，直射向$N的面門！\n"NOR, me);
+                message_vision(HIY"忽然間幾支短箭從棺後一個機關裏射出來，直射向$N的面門！\n"NOR, me);
                 break;
         case 2:
-                message_vision(HIY"忽然間幾支短箭從棺後一個機關裡射出來，直射向$N的嚥喉！\n"NOR, me);
+                message_vision(HIY"忽然間幾支短箭從棺後一個機關裏射出來，直射向$N的咽喉！\n"NOR, me);
                 break;
         case 1:
-                message_vision(HIY"忽然間幾支短箭從棺後一個機關裡射出來，直射向$N的前胸！\n"NOR, me);
+                message_vision(HIY"忽然間幾支短箭從棺後一個機關裏射出來，直射向$N的前胸！\n"NOR, me);
                 break;
         default:
-                message_vision(HIY"忽然間幾支短箭從棺後一個機關裡射出來，直射向$N的面門！\n"NOR, me);
+                message_vision(HIY"忽然間幾支短箭從棺後一個機關裏射出來，直射向$N的面門！\n"NOR, me);
                 break;
         }
         addn("arrow_count", -1);

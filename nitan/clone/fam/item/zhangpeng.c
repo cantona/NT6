@@ -62,7 +62,7 @@ int do_out()
                 ob = this_object();
 
                 if (environment(me) != ob)
-                        return notify_fail("你並沒有在帳篷裡啊。\n");
+                        return notify_fail("你並沒有在帳篷裏啊。\n");
 
                 if (! ob->query("out"))
                         return notify_fail("目前無法出帳篷。\n");
@@ -100,10 +100,10 @@ int do_open()
                                 return notify_fail("這個地方不能再打開單人帳篷了。\n");        
 
                 if (! env->query("outdoors"))
-                                return notify_fail("帳篷只能在戶外打開。\n");
+                                return notify_fail("帳篷只能在户外打開。\n");
                 
                 if (me->is_busy() || me->is_fighting())
-                                return notify_fail("你現在正忙于做其他事情，無法打開帳篷。\n");
+                                return notify_fail("你現在正忙於做其他事情，無法打開帳篷。\n");
                 
                 // 一個地點只能開一個帳篷
                 obs = all_inventory(env);
@@ -138,7 +138,7 @@ int do_open()
                 me->move(obt);
                 obt->move(env);
 
-                // 設置特殊標志
+                // 設置特殊標誌
                 me->set("danren_zhangpeng/flag", 1);
                 me->set("danren_zhangpeng/ob", obt);
                 
@@ -159,12 +159,12 @@ int do_close(string arg)
                 obt = this_object();
 
                 if (! obt->query("opening"))
-                                return notify_fail("單人帳篷不是關閉著的麼？\n");
+                                return notify_fail("單人帳篷不是關閉着的麼？\n");
 
                 if (obt->query("opening") != me->query("id"))
                                 return notify_fail("你沒有權利收起這個帳篷。\n");
 
-                // 復制一個帳篷給該玩家
+                // 複製一個帳篷給該玩家
                 newob = new("/clone/fam/item/zhangpeng");
                 
                 message_vision(HIW "$N將帳篷收了起來，裝進行囊。\n" NOR, me);
@@ -177,10 +177,10 @@ int do_close(string arg)
                                 return 1;
                 }
 
-                // 想將帳篷裡的人移出來，然後摧毀帳篷，最後復制一個帳篷給該玩家
+                // 想將帳篷裏的人移出來，然後摧毀帳篷，最後複製一個帳篷給該玩家
                 obs = all_inventory(obt);
 
-            // 將帳篷裡的人都移出來
+            // 將帳篷裏的人都移出來
                 if (sizeof(obs))
                 {
                         foreach(obj in obs)
@@ -189,7 +189,7 @@ int do_close(string arg)
                         }
                 }
 
-        // 將復制的帳篷給該玩家
+        // 將複製的帳篷給該玩家
                 newob->move(me, 1);
 
                 me->delete("danren_zhangpeng");

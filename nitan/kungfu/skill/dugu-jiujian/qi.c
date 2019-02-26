@@ -43,7 +43,7 @@ int perform(object me, object target)
         */
         
         if (! living(target))
-                return notify_fail("對方都已經這樣了，用不著這麼費力吧？\n");
+                return notify_fail("對方都已經這樣了，用不着這麼費力吧？\n");
 
         msg = HIW "$N" HIW "施出獨孤九劍「破氣式」，手中" + weapon->name() +
               HIW "中攻直進，遙指$n" HIW "的氣海要穴。\n" NOR;

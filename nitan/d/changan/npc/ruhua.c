@@ -6,7 +6,7 @@ inherit F_DEALER;
 void create()
 {
         set_name("如花", ({"ru hua"}));
-        set("shop_title", "老板娘");
+        set("shop_title", "老闆娘");
         set("gender", "女性");
         set("combat_exp", 4000);
         set("age", 34);
@@ -43,6 +43,6 @@ void greeting(object ob)
 {
         if (! ob || environment(ob) != environment())
                 return;
-        say("如花笑咪咪地說道：這位" + RANK_D->query_respect(ob) +
-            "，奴家給你倒杯酒嘗嘗吧!\n");
+        say("如花笑咪咪地説道：這位" + RANK_D->query_respect(ob) +
+            "，奴家給你倒杯酒嚐嚐吧!\n");
 }

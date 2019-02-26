@@ -18,7 +18,7 @@ int main(object me, string arg)
         if (! arg)
                 return notify_fail("你要修改哪一個玩家的中文名字？\n");
 
-        // 強制修改名字的標志
+        // 強制修改名字的標誌
         opt_force = 0;
         opts = explode(arg, " ");
         for (i = 0; i < sizeof(opts); i++)

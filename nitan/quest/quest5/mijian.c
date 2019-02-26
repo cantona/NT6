@@ -10,7 +10,7 @@ void create()
         else {
                 set("unit", "封");
                 set("long",
-                        "一封軍機密件,記載著襄陽城守軍的兵力部署。\n");
+                        "一封軍機密件,記載着襄陽城守軍的兵力部署。\n");
                 set("value", 0);
                 set("material", "paper");
                  
@@ -28,14 +28,14 @@ int do_xiaohui(string arg)
               
                 me=this_player();
         ob=this_object();
-                if(!arg||arg!="mi jian") return notify_fail("你要銷毀什麼？\n");
+                if(!arg||arg!="mi jian") return notify_fail("你要銷燬什麼？\n");
         if( query_temp("host", ob) != query("id", me )
                          || !me->query_condition("zzz_busy") || !query_temp("team_count", me) )
-                return notify_fail("這件事好像和你沒關系吧?\n");
+                return notify_fail("這件事好像和你沒關係吧?\n");
                 if (!present("mi jian",me) )
         return notify_fail("你身上沒有密件。\n"); 
         //check ok
-                message_vision("$N從懷中掏出一只火折點燃了密件。\n"+HIR"只聽「轟」的一聲，密件在火中慢慢化為灰燼 。\n"NOR, me);
+                message_vision("$N從懷中掏出一隻火折點燃了密件。\n"+HIR"只聽「轟」的一聲，密件在火中慢慢化為灰燼 。\n"NOR, me);
         count=query_temp("team_count", me);
                 if (count<2) count=2;        
        base_exp=3000/count;

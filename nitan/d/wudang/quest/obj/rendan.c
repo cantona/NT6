@@ -8,7 +8,7 @@ void create()
 { 
      set_name(HIG"仁丹"NOR, ({"ren dan", "dan"}));
      set("unit", "粒"); 
-     set("long", "這是一顆泛著淡綠色光芒的藥丸，由妖魔的精氣凝聚而成。\n"); 
+     set("long", "這是一顆泛着淡綠色光芒的藥丸，由妖魔的精氣凝聚而成。\n"); 
      set("no_drop", "這樣東西不能離開你。\n"); 
      set("no_sell", "這樣東西不能離開你。\n"); 
      set("no_put", "這樣東西不能放在那兒。\n"); 
@@ -31,12 +31,12 @@ int do_effect(object me)
                 addn("max_neili", 1+random(5), me);
                 break;  
          case 1:  
-                write(HIG"你感覺全身說不出的舒服受用。\n"NOR);
+                write(HIG"你感覺全身説不出的舒服受用。\n"NOR);
                 my["eff_jing"] = my["max_jing"]; 
                 my["jing"] = my["max_jing"]; 
                 break;  
          case 2:  
-                write(HIG"你感覺全身說不出的舒服受用。\n"NOR);
+                write(HIG"你感覺全身説不出的舒服受用。\n"NOR);
                 my["eff_qi"] = my["max_qi"]; 
                 my["qi"] = my["max_qi"]; 
                 break;  
@@ -46,7 +46,7 @@ int do_effect(object me)
                 my["water"] = me->max_water_capacity(); 
                 break;  
          default: 
-                write(HIC"你吞得太快，什麼味道也沒有嘗出來。\n"NOR);
+                write(HIC"你吞得太快，什麼味道也沒有嚐出來。\n"NOR);
                 break;  
     } 
     destruct(this_object()); 

@@ -16,7 +16,7 @@ void create()
                 set("value", 800000);
                 set("no_sell", 1);
                 set("material", "steel");
-                set("wield_msg", WHT "$N" WHT "從兜裡掏出一柄匕首，空氣中頓時沁"
+                set("wield_msg", WHT "$N" WHT "從兜裏掏出一柄匕首，空氣中頓時沁"
                                  "出一絲寒氣。\n" NOR);
                 set("unwield_msg", WHT "$N" WHT "手中的魚腸劍一轉，眨眼間已然不"
                                  "見影蹤。\n" NOR);

@@ -5,11 +5,11 @@
 inherit NPC;
 
 string *death_msg = ({
-        HIW "黑無常說道：喂！新來的，你叫什麼名字？\n\n" NOR,
+        HIW "黑無常説道：喂！新來的，你叫什麼名字？\n\n" NOR,
         HIW "黑無常用奇異的眼光盯著你，好像要看穿你的一切似的。\n\n" NOR,
         HIW "黑無常「哼」的一聲，從袖中掏出一本像帳冊的東西翻看著。\n\n" NOR,
-        HIW "黑無常合上冊子，說道：咦？陽壽未盡？怎麼可能？\n\n" NOR,
-        HIW "黑無常搔了搔頭，嘆道：罷了罷了，你走吧。\n\n"
+        HIW "黑無常合上冊子，説道：咦？陽壽未盡？怎麼可能？\n\n" NOR,
+        HIW "黑無常搔了搔頭，歎道：罷了罷了，你走吧。\n\n"
                 "一股陰冷的濃霧突然出現，很快地包圍了你。\n\n" NOR,
 });
 
@@ -21,7 +21,7 @@ void create()
         set("attitude", "peaceful");
         set("chat_chance", 15);
         set("chat_msg", ({
-                CYN "黑無常嘿嘿幹笑數聲：你可終于落到我的手裡了……\n" NOR,
+                CYN "黑無常嘿嘿乾笑數聲：你可終於落到我的手裏了……\n" NOR,
                 CYN "黑無常東張西望，不知道在打什麼主意。\n" NOR,
         }) );
         set("age", 217);
@@ -100,6 +100,6 @@ void death_stage(object ob, int stage)
         
         ob->move(REVIVE_ROOM);
         set("startroom", REVIVE_ROOM, ob);
-        message("vision", HIW "你忽然發現前面多了一個人影，不過那人影又好像已經在那裡\n"
+        message("vision", HIW "你忽然發現前面多了一個人影，不過那人影又好像已經在那裏\n"
                           "很久了，只是你一直沒發覺。\n" NOR, environment(ob), ob);
 }

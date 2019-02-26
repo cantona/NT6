@@ -18,12 +18,12 @@
                 參數)沒有設定過阻隔物件或者阻隔物件已被摧毀，
                 則傳回 0。
 
-        說明：
-                由于原 MudOS 的 shadow 部分有些不合理，使用不
+        説明：
+                由於原 MudOS 的 shadow 部分有些不合理，使用不
                 方便，而且存在安全隱患，因此這部分的程序重新寫
                 過，shadow 部分的函數的使用和原 MudOS 提供的函
                 數有很大的不同，如要在其它 MudOS 支持的遊戲中
-                使用 shadow 請參考它的 MudOS 的說明。
+                使用 shadow 請參考它的 MudOS 的説明。
 
         參考:
                 shadow(), query_shadowing()

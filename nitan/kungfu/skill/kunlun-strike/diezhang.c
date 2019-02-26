@@ -1,11 +1,11 @@
-// diezhang.c 昆侖掌法  perform 昆山疊掌
+// diezhang.c 崑崙掌法  perform 崑山疊掌
 
 #include <ansi.h>
 #include <combat.h>
 
 inherit F_SSERVER;
 #include "/kungfu/skill/eff_msg.h";
-#define PNAME "「昆山疊掌」"
+#define PNAME "「崑山疊掌」"
 int perform(object me, object target)
 {
         string msg, *limbs;
@@ -57,10 +57,10 @@ int perform(object me, object target)
         {
                 if (me->query_skill_prepared("strike") != "kunlun-strike" || 
                         me->query_skill_mapped("parry") != "kunlun-strike")
-                        return notify_fail("你現在無法使用「昆山疊掌」進行攻擊。\n");
+                        return notify_fail("你現在無法使用「崑山疊掌」進行攻擊。\n");
         }
         if( (int)me->query_str() < 26 )
-                return notify_fail("你的膂力不夠強，不能使用「昆山疊掌」。\n");
+                return notify_fail("你的膂力不夠強，不能使用「崑山疊掌」。\n");
         arg = (int)(me->query_skill(bskill, 1) / 30);
 
         if( arg <= 1 )
@@ -75,7 +75,7 @@ int perform(object me, object target)
         if( query("neili", me)<100*arg )
                 return notify_fail("你現在的內力施展不了那麼多招。\n");
 
-        message_combatd(HIG"$N"HIG"深吸一口氣，大喝一聲，連續擊出"+ chinese_number(arg) +"掌，後招推著前招，掌力疊合在一起撲向$n"HIG"！\n\n"NOR, me, target);
+        message_combatd(HIG"$N"HIG"深吸一口氣，大喝一聲，連續擊出"+ chinese_number(arg) +"掌，後招推着前招，掌力疊合在一起撲向$n"HIG"！\n\n"NOR, me, target);
         if( random(query("combat_exp", me))>query("combat_exp", target)/2 )
         {
                 limbs=query("limbs", target);
@@ -100,7 +100,7 @@ int perform(object me, object target)
                 me->start_busy(arg/2+1);
                 addn("neili", -200, me);
                 addn("neili", -100, target);
-                msg =HIY"\n$n"HIY"身形急速後退，順著掌風就勢一跳，躲開了這攻擊。\n" NOR;
+                msg =HIY"\n$n"HIY"身形急速後退，順着掌風就勢一跳，躲開了這攻擊。\n" NOR;
         }
         message_combatd(msg, me, target);
 
@@ -117,13 +117,13 @@ int help(object me)
                 傷敵氣血，並使敵受內傷
 
         出手要求：
-                昆侖掌法100級
+                崑崙掌法100級
                 基本掌法100級
                 玄天無極140級
                 後天膂力26
                 內力1500
-                激發昆侖掌法為招架技能
-                激發昆侖掌法為掌法技能
+                激發崑崙掌法為招架技能
+                激發崑崙掌法為掌法技能
                 指定掌法技能(prepare)
 HELP
         );

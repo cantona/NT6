@@ -30,7 +30,7 @@ int do_drink(string arg)
         if(!present(this_object(), this_player()))
                 return notify_fail("你要喝什麼？\n");
         if( me->is_busy() )
-                return notify_fail("別急，慢慢喝，小心別嗆著了。\n");
+                return notify_fail("別急，慢慢喝，小心別嗆着了。\n");
 
         message_vision("$N仰頭咕嘟咕嘟灌下一瓶" + name() + "。\n", me);
         set_temp("die_reason", "喝下鶴頂紅，自殺身亡了", me);

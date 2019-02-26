@@ -6,9 +6,9 @@ void create()
 {
         set("short", "廚房");
         set("long", @LONG
-這裡是衡山派長廊東北側的一間廚房，平常衡山的弟子們餓了便
-可以到這裡來要(serve)些食物吃。房中灶火正旺，一個廚師正忙的滿
-頭大汗。屋角放著一個大水缸。  
+這裏是衡山派長廊東北側的一間廚房，平常衡山的弟子們餓了便
+可以到這裏來要(serve)些食物吃。房中灶火正旺，一個廚師正忙的滿
+頭大汗。屋角放着一個大水缸。  
 LONG );
         set("exits", ([
                  "southwest" : __DIR__"changlang",
@@ -39,13 +39,13 @@ int do_serve()
         me = this_player();
 
         if( query("family/family_name", me) != "衡山派" )
-                return notify_fail(CYN "廚師大眼一瞪，說道：你又不是衡山派的，吃白食啊？\n" NOR);
+                return notify_fail(CYN "廚師大眼一瞪，説道：你又不是衡山派的，吃白食啊？\n" NOR);
 
         if (present("man tou", this_player())) 
-                return notify_fail(CYN "廚師眉頭一皺，說道：吃完了再拿，別浪費食物。\n" NOR);
+                return notify_fail(CYN "廚師眉頭一皺，説道：吃完了再拿，別浪費食物。\n" NOR);
 
         if (present("water", this_object())) 
-                return notify_fail(CYN "廚師眉頭一皺，說道：吃完了再拿，別浪費食物。\n" NOR);
+                return notify_fail(CYN "廚師眉頭一皺，説道：吃完了再拿，別浪費食物。\n" NOR);
 
         if (query("ricewater") > 0)
         {

@@ -14,7 +14,7 @@ void create()
         else
         {
                 set("unit", "枚");
-                set("long", "這是一枚四川唐門秘制的暗器，威力無比。\n");
+                set("long", "這是一枚四川唐門祕製的暗器，威力無比。\n");
                 set("value", 0);
         }
         setup();
@@ -48,7 +48,7 @@ int do_perform(string arg)
                 return notify_fail("你的內力修為不夠，無法使用心有千千鏢。\n");
 
         if( query_temp("xinqian", me) )
-                return notify_fail("你忙于戰鬥，無法分神使用心有千千鏢了。\n");
+                return notify_fail("你忙於戰鬥，無法分神使用心有千千鏢了。\n");
 
         if( query("neili", me)<1500 )
                 return notify_fail("你的內力不夠。\n");
@@ -56,7 +56,7 @@ int do_perform(string arg)
         if( query("yanli", me)<100 )
                 return notify_fail("你的眼力太差了，目標不精確！\n");       
 
-        msg = HIR"\n$N突然身行一止，從懷中摸出一枚手掌大小的暗器，一揚手向$n擲去。\n只見$n的周身飛舞著無數的光影，卻聽不到一絲聲音。\n"NOR;
+        msg = HIR"\n$N突然身行一止，從懷中摸出一枚手掌大小的暗器，一揚手向$n擲去。\n只見$n的周身飛舞着無數的光影，卻聽不到一絲聲音。\n"NOR;
         message_vision(msg, me, target);
         addn("neili", -1500, me);
         set_temp("xinqian", 1, me);
@@ -90,8 +90,8 @@ int effect_biao(object me, object target)
                 }
         else
                 {
-                        tell_object(target, HIR"忽然那無數的光影一閃而沒，你心中一驚急忙運內力于全身。\n"NOR);
-                        msg = HIR"$n雙臂急舞，衣袖帶起破風之聲。只聽當的一聲輕響，竟將那枚暗器磕飛開去。\n"NOR;
+                        tell_object(target, HIR"忽然那無數的光影一閃而沒，你心中一驚急忙運內力於全身。\n"NOR);
+                        msg = HIR"$n雙臂急舞，衣袖帶起破風之聲。只聽噹的一聲輕響，竟將那枚暗器磕飛開去。\n"NOR;
                         message_vision(msg, me, target);
                         if( query("neili", target)<800 )
                                 set("neili", 0, target);

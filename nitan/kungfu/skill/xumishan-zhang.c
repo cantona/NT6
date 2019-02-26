@@ -52,7 +52,7 @@ mapping *action = ({
           "damage_type" : "瘀傷",
           "skill_name" : "山高雲淡"
 ]),
-([        "action": "$N雙掌合十，深吸一口氣，一式「蒙蒙群山」，雙掌驟然化出一片掌影，擊向$n的前胸",
+([        "action": "$N雙掌合十，深吸一口氣，一式「濛濛羣山」，雙掌驟然化出一片掌影，擊向$n的前胸",
           "force" : 280,
           "attack": 50,
           "dodge" : 25,
@@ -60,7 +60,7 @@ mapping *action = ({
           "damage": 40,
           "lvl"   : 125,
           "damage_type" : "瘀傷",
-          "skill_name" : "蒙蒙群山"
+          "skill_name" : "濛濛羣山"
 ]),
 ([        "action": "$N向上高高躍起，一式「高山流水」，居高臨下，掌力籠罩$n的全身",
           "force" : 300,
@@ -72,7 +72,7 @@ mapping *action = ({
           "damage_type" : "瘀傷",
           "skill_name" : "高山流水"
 ]),
-([        "action": "$N使一式「峰回路轉」，勁氣彌漫，雙掌如輪，一掌強過一掌的向$n劈去",
+([        "action": "$N使一式「峯迴路轉」，勁氣瀰漫，雙掌如輪，一掌強過一掌的向$n劈去",
           "force" : 350,
           "attack": 70,
           "dodge" : 30,
@@ -80,7 +80,7 @@ mapping *action = ({
           "damage": 50,
           "lvl"   : 175,
           "damage_type" : "劈傷",
-          "skill_name" : "峰回路轉"
+          "skill_name" : "峯迴路轉"
 ]),
 ([        "action": "$N兩掌上下護胸，一式「山窮水盡」，驟然化為滿天掌雨，攻向$n",
           "force" : 400,

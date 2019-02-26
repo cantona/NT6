@@ -9,7 +9,7 @@ void create()
 {
         set_name("馬五德", ({ "ma wude", "ma" }));
         set("title","金牛武館館長");
-        set("long", "馬老爺子是武館的締造者，辛苦一輩子了，仍勇于提攜後生。\n");
+        set("long", "馬老爺子是武館的締造者，辛苦一輩子了，仍勇於提攜後生。\n");
         set("gender", "男性");
         set("age", 65);
 

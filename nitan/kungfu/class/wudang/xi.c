@@ -11,10 +11,10 @@ mixed ask_me();
 
 void create()
 {
-        set_name("張鬆溪", ({ "zhang songxi", "zhang" }));
+        set_name("張松溪", ({ "zhang songxi", "zhang" }));
         set("nickname", "武當四俠");
         set("long",
-                "他就是張三豐的四弟子張鬆溪。\n"
+                "他就是張三丰的四弟子張松溪。\n"
                 "他今年四十歲，精明能幹，以足智多謀著稱。\n");
         set("gender", "男性");
         set("age", 40);
@@ -119,7 +119,7 @@ void attempt_apprentice(object ob)
         if ((int)ob->query_skill("taoism", 1) < 60)
         {
                 command("say 習武是為了強身健體，一味的練武是不可取的。");
-                command("say 我看你還需要在修身養性方面多鍛煉鍛煉，以提"
+                command("say 我看你還需要在修身養性方面多鍛鍊鍛鍊，以提"
                         "高你的道德心法。");
                 return;
         }

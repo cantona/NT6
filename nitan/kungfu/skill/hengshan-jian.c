@@ -7,15 +7,15 @@ string type() { return "martial"; }
 string martialtype() { return "skill"; }
 
 mapping *action = ({
-([        "action":"$N意帶神閒，一式"HIG"「蒼鬆迎客」"NOR"，$w輕輕飛動，幻起一片劍光，圍掠$n全身",
+([        "action":"$N意帶神閒，一式"HIG"「蒼松迎客」"NOR"，$w輕輕飛動，幻起一片劍光，圍掠$n全身",
         "lvl" : 0,
-        "skill_name" : "蒼鬆迎客"
+        "skill_name" : "蒼松迎客"
 ]),
 ([        "action":"$N使一招"HIR"「撥雲見日」"NOR"，身形向上飄起，手中$w虛虛實實幻出點點寒光射向$n$l",
         "lvl" : 20,
         "skill_name" : "撥雲見日"
 ]),
-([        "action":"$N身形一轉，猛然一式"HIY"「日入空山」"NOR"，舞出滿天劍影，挾著勁風向$n的$l掃去",
+([        "action":"$N身形一轉，猛然一式"HIY"「日入空山」"NOR"，舞出滿天劍影，挾着勁風向$n的$l掃去",
         "lvl" : 40,
         "skill_name" : "日入空山"
 ]),
@@ -24,7 +24,7 @@ mapping *action = ({
         "lvl" : 50,
         "skill_name" : "輕雲蔽月"
 ]),
-([        "action":"$N左手捏著劍訣，右足踏開一招"HIC"「星劃長空」"NOR"向上斜刺，長劍鏘然躍出倏的化作幾點星光射向$n的$l",
+([        "action":"$N左手捏着劍訣，右足踏開一招"HIC"「星劃長空」"NOR"向上斜刺，長劍鏘然躍出倏的化作幾點星光射向$n的$l",
         "lvl" : 80,
         "skill_name" : "星劃長空"
 ]),
@@ -49,9 +49,9 @@ mapping *action = ({
         "lvl" : 160,
         "skill_name" : "日照高林"
 ]),
-([        "action":"$N忽然身形高高躍起，使出"RED"「雲裡乾坤」"NOR"，$w幻出漫天花瓣，迅如雷霆射向$n的$l",
+([        "action":"$N忽然身形高高躍起，使出"RED"「雲裏乾坤」"NOR"，$w幻出漫天花瓣，迅如雷霆射向$n的$l",
         "lvl" : 180,
-        "skill_name" : "雲裡乾坤"
+        "skill_name" : "雲裏乾坤"
 ])
 });
 

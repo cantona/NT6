@@ -59,16 +59,16 @@ int valid_leave(object me, string dir)
                 return notify_fail("桃幹仙側身攔路道：你還沒跟我比劃喲！\n");
 
         if( !query_temp("win/tao3", me) && present("tao zhixian",environment(me)) )
-                return notify_fail("桃枝仙閃身攔道說：你怎麼把我給忘了呀！\n");
+                return notify_fail("桃枝仙閃身攔道説：你怎麼把我給忘了呀！\n");
 
         if( !query_temp("win/tao4", me) && present("tao yexian",environment(me)) )
-                return notify_fail("桃葉仙雙手一攤說：你想到那兒去呀？！\n");
+                return notify_fail("桃葉仙雙手一攤説：你想到那兒去呀？！\n");
 
         if( !query_temp("win/tao5", me) && present("tao huaxian",environment(me)) )
-                return notify_fail("桃花仙笑嘻嘻地說：該輪到我來陪你過兩招了吧！\n");
+                return notify_fail("桃花仙笑嘻嘻地説：該輪到我來陪你過兩招了吧！\n");
 
         if( !query_temp("win/tao6", me) && present("tao shixian",environment(me)) )
-                return notify_fail("桃實仙強壯膽色說：打得過我便讓你去見風前輩！\n");
+                return notify_fail("桃實仙強壯膽色説：打得過我便讓你去見風前輩！\n");
 
     }           
 

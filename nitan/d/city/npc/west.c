@@ -7,7 +7,7 @@ void create()
         set("age", 30);
         set("gender", "女性");
         set("title", "西家");
-        set("long","她就是紅娘子，雖然他老公被人切了頭，成了李闖王自毀的長城，她在這裡堆起長城也是毫不含糊。\n");
+        set("long","她就是紅娘子，雖然他老公被人切了頭，成了李闖王自毀的長城，她在這裏堆起長城也是毫不含糊。\n");
         set("attitude", "peaceful");
         set("str", 24);
         set("dex", 16);

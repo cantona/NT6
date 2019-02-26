@@ -4,7 +4,7 @@ void create()
 {
     set("short", "刀俑");
         set("long", @LONG
-這裡的陶俑手裡都拿著刀，擺著各種姿勢，神態各異。
+這裏的陶俑手裏都拿着刀，擺着各種姿勢，神態各異。
 LONG );
     set("exits", ([
            "east":__DIR__"shidao3",
@@ -39,6 +39,6 @@ int do_xue(string arg)
         set("blade", 1, me);
         return 1;
     }
-    write("你對著秦俑瞧了一回兒，發現已經沒有什麼好學的了。\n");
+    write("你對着秦俑瞧了一回兒，發現已經沒有什麼好學的了。\n");
     return 1;
 }

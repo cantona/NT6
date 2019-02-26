@@ -11,7 +11,7 @@ void create()
                 set_default_object(__FILE__);
         else {
                 set("unit", "副");
-                set("long", HIW "一副全銀制的重鎧甲，在中原很難見到。\n" NOR);
+                set("long", HIW "一副全銀製的重鎧甲，在中原很難見到。\n" NOR);
                 set("value", 20000);
                 set("material", "boots");
                 set("armor_prop/armor", 200);

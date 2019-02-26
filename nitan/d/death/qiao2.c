@@ -9,9 +9,9 @@ void create()
 
                     奈         河         橋
 
-    這裡就是著名的陰間通道「奈河橋」，你走在這長長的石制拱橋上
-面，許多亡魂正哭哭啼啼地從你身旁擦身而過，橋的另一端站著一個牛
-頭人身的守衛，仔細的查看著過往的亡魂。
+    這裏就是著名的陰間通道「奈河橋」，你走在這長長的石制拱橋上
+面，許多亡魂正哭哭啼啼地從你身旁擦身而過，橋的另一端站着一個牛
+頭人身的守衞，仔細的查看着過往的亡魂。
 
 
 LONG NOR );
@@ -25,7 +25,7 @@ LONG NOR );
                 __DIR__"npc/ghost":1,
         ]));
         set("item_desc", ([
-                "north": HIW "\n奈河橋的另一端被煙霧所籠罩，仿佛沒有"
+                "north": HIW "\n奈河橋的另一端被煙霧所籠罩，彷彿沒有"
                          "盡頭，你什麼都看不清。\n" NOR
         ]));
 
@@ -44,7 +44,7 @@ int valid_leave(object me, string dir)
                 if (objectp(present("niu tou", environment(me))) &&
                     !query("hell_quest/鎖陽丹", me) )
                         return notify_fail(CYN "牛頭看了你一眼，喝道：你還不滾"
-                                           "回去還陽，來這裡湊什麼熱鬧！\n" NOR);
+                                           "回去還陽，來這裏湊什麼熱鬧！\n" NOR);
         }
         return ::valid_leave(me, dir);
 }

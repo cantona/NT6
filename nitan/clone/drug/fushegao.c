@@ -23,7 +23,7 @@ void create()
                 set_default_object(__FILE__);
         else {
                 set("unit", "塊");
-                set("long", "這是一塊百花蝮蛇膏，看上去黑乎乎的，還透著紅光，用來對付敵人最好了。\n");
+                set("long", "這是一塊百花蝮蛇膏，看上去黑乎乎的，還透着紅光，用來對付敵人最好了。\n");
                 set("value", 10000);
                 set("no_sell", 1);
                 set("medicine", 1);
@@ -46,7 +46,7 @@ int do_use(string arg)
         if (!me->is_fighting())
                 return notify_fail("百花蝮蛇膏只能在戰鬥中使用!\n");
 
-        message_vision(HIG "$N揚手洒開一些不知什麼，愕 ？  啊...！ \n" NOR, me);
+        message_vision(HIG "$N揚手灑開一些不知什麼，愕 ？  啊...！ \n" NOR, me);
 
         enemy = this_player()->query_enemy();
         exp1=query("combat_exp", this_player());
@@ -168,7 +168,7 @@ int do_use(string arg)
 //              if( userp(ob[i]) ) ob[i]->fight_ob(me);
 //              else if( !ob[i]->is_killing(me) ) ob[i]->kill_ob(me);
 
-//              command("chat 這下你們可著了我的道道了，哈哈 ！");
+//              command("chat 這下你們可着了我的道道了，哈哈 ！");
 
 */
                 destruct(this_object());

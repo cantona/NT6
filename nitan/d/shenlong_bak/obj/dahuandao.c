@@ -13,10 +13,10 @@ void create()
                 set_default_object(__FILE__);
         else {
                 set("unit", "把");
-                set("long", "這是一把明晃晃的大環刀，刀背上還有幾個圓環穿在上面，“嘩棱棱”直響。\n");
+                set("long", "這是一把明晃晃的大環刀，刀背上還有幾個圓環穿在上面，“譁稜稜”直響。\n");
                 set("value", 1000);
                 set("material", "steel");
-                set("wield_msg", "$N「嘩棱棱」的一聲舉起一把$n握在手中。\n");
+                set("wield_msg", "$N「譁稜稜」的一聲舉起一把$n握在手中。\n");
                 set("unwield_msg", "$N將手中的$n放下。\n");
         }
         init_blade(40);

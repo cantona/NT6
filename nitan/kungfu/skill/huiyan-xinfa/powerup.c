@@ -26,7 +26,7 @@ int exert(object me, object target)
         addn("neili", -100, me);
         me->receive_damage("qi",0);
 
-        message_combatd(RED"$N大吼一聲，運起回雁心法，臉色由紅轉白，緊接著，又由白轉紅！一時間，體內真氣遊走全身，似要迸發。\n" NOR, me);
+        message_combatd(RED"$N大吼一聲，運起回雁心法，臉色由紅轉白，緊接着，又由白轉紅！一時間，體內真氣遊走全身，似要迸發。\n" NOR, me);
 
         addn_temp("apply/attack", skill/3, me);
         addn_temp("apply/dodge", skill/3, me);
@@ -50,7 +50,7 @@ int help(object me)
         write(@HELP
 
         使用功效：
-                提升自己的攻擊防御能力
+                提升自己的攻擊防禦能力
 
         出手要求：
                 內力100

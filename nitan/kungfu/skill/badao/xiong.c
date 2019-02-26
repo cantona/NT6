@@ -40,7 +40,7 @@ int perform(object me, object target)
                 return notify_fail("你沒有激發霸刀，無法施展" LIAN "。\n");
 
         if (! living(target))
-               return notify_fail("對方都已經這樣了，用不著這麼費力吧？\n");
+               return notify_fail("對方都已經這樣了，用不着這麼費力吧？\n");
 
         msg = HIY "$N" HIY "使出失傳已久的霸刀絕技「" HIW "雄霸天下" HIY"」，刀法陡然加快，眨眼間，八刀劈出 ……\n" NOR;
 

@@ -7,13 +7,13 @@ inherit F_DEALER;
 void create()
 {
         set_name("陳阿大", ({ "chen ada", "chen", "ada" }));
-        set("title", "雜貨舖老板");
+        set("title", "雜貨鋪老闆");
         set("shen_type", 1);
 
         set("str", 20);
         set("gender", "男性");
         set("age", 35);
-        set("long", "陳阿大久居泉州城，據說他非常豪爽。\n");
+        set("long", "陳阿大久居泉州城，據説他非常豪爽。\n");
         set("attitude", "friendly");
         set_skill("unarmed", 50);
         set_skill("dodge", 50);

@@ -1,11 +1,11 @@
-// huixiang.c 飛燕回翔
+// huixiang.c 飛燕迴翔
 
 #include <ansi.h>
 #include <combat.h>
 
 inherit F_SSERVER;
 
-string name() { return "飛燕回翔"; }
+string name() { return "飛燕迴翔"; }
 
 int perform(object me)
 {
@@ -20,26 +20,26 @@ int perform(object me)
         }
 
         if (! me->is_fighting(target))
-                return notify_fail("「飛燕回翔」只能對戰鬥中的對手使用。\n");
+                return notify_fail("「飛燕迴翔」只能對戰鬥中的對手使用。\n");
 
         skill = me->query_skill("shenlong-bashi", 1);
 
         if( !objectp(weapon2=query_temp("weapon", target)) )
-                return notify_fail("對方沒有使用兵器，不能使用「飛燕回翔」。\n");
+                return notify_fail("對方沒有使用兵器，不能使用「飛燕迴翔」。\n");
 
         if (skill < 160)
-                return notify_fail("你的神龍八式等級不夠, 不能使用「飛燕回翔」。\n");
+                return notify_fail("你的神龍八式等級不夠, 不能使用「飛燕迴翔」。\n");
 
         if( query("max_neili", me)<1500 )
-                return notify_fail("你的內力修為不足，不能使用「飛燕回翔」。\n");
+                return notify_fail("你的內力修為不足，不能使用「飛燕迴翔」。\n");
 
         if( query("neili", me)<500 )
-                return notify_fail("你的真氣不夠，不能使用「飛燕回翔」。\n");
+                return notify_fail("你的真氣不夠，不能使用「飛燕迴翔」。\n");
 
         if (! living(target))
-                return notify_fail("對方都已經這樣了，用不著這麼費力吧？\n");
+                return notify_fail("對方都已經這樣了，用不着這麼費力吧？\n");
 
-        msg = HIM "突然$N" HIM "右足向前輕踢，接著順勢一勾" +
+        msg = HIM "突然$N" HIM "右足向前輕踢，接着順勢一勾" +
               weapon2->name() + HIM "，輕輕在柄上一點。\n" NOR;
         message_combatd(msg, me, target);
 
@@ -66,7 +66,7 @@ int perform(object me)
                 } else
                 {
                         addn("neili", -100, me);
-                        msg = CYN "$n" CYN "眼一花，" + weapon2->name() + "脫手而"
+                        msg = CYN "$n" CYN "眼一花，" + weapon2->name() + "脱手而"
                               "出，不過$n" CYN "不慌不忙，仰天一個鐵板橋，撲的一"
                               "聲，" + weapon2->name() +" 在他胸口掠過。\n" NOR;
                         me->start_busy(3);

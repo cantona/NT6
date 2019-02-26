@@ -7,7 +7,7 @@ void create()
         set("title", HIC "綠林霸主" NOR);
         set("gender", "男性" );
         set("age", random(30)+20);
-        set("long", "迷霧森林的賊盜首領，有著一身不凡的武藝，窮兇惡極手下罕有十合之將。\n");
+        set("long", "迷霧森林的賊盜首領，有着一身不凡的武藝，窮兇惡極手下罕有十合之將。\n");
         set("attitude", "aggressive");
         set("class", "lvlin");
         set("str", 30);

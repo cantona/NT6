@@ -8,8 +8,8 @@ void create()
 {
         set("short", HIC"石室"NOR);
         set("long", @LONG
-這是一間密閉的石室，室中點著燈火，石室奇小，僅容一人周轉，
-牆上刻著一些圖譜，供古墓弟子修煉入門輕功時參看。
+這是一間密閉的石室，室中點着燈火，石室奇小，僅容一人週轉，
+牆上刻着一些圖譜，供古墓弟子修煉入門輕功時參看。
 LONG        );
 
         set("exits", ([
@@ -37,13 +37,13 @@ int do_cankan(string arg)
         c_exp=query("combat_exp", me);
         if( !arg ) return notify_fail("你東張西望地亂看什麼？\n");
         if( arg != "picture" || arg != "tu" )
-                return notify_fail("這裡沒有你想看的東西。\n");
+                return notify_fail("這裏沒有你想看的東西。\n");
         if( query("jing", me)<30 )
                 return notify_fail("你覺得太累了，不如歇會吧？\n");
         me->receive_damage("jing", random(10));
         if( random((int)c_skill/10) + 1 < 2)
         {
-                message_vision("$N認真地看牆上的圖譜，可是光線實在太暗，眼睛生痛，好象也沒看到什麼特別的東西。\n", me);
+                message_vision("$N認真地看牆上的圖譜，可是光線實在太暗，眼睛生痛，好像也沒看到什麼特別的東西。\n", me);
                 return 1;
         }
         message_vision("$N正在仔細察看牆上的圖譜。\n", me);

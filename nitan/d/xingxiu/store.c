@@ -5,9 +5,9 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "雜貨舖");
+        set("short", "雜貨鋪");
         set("long", @LONG
-這是一個雜貨舖。房屋內舖著地毯。店老板坐在地毯上，旁邊堆著
+這是一個雜貨鋪。房屋內鋪着地毯。店老闆坐在地毯上，旁邊堆着
 他的貨。牆上有個牌子，是個價目表(sign)。
 LONG
         );
@@ -23,7 +23,7 @@ LONG
 中原錢幣通用。
 
        馬奶酒壺(hu)           一百文
-       □(nang)                      五十文
+       饢(nang)                      五十文
        火折(fire)             一百文
        哈密瓜(gua)            四十文
        冬不拉(dongbula)       一百文

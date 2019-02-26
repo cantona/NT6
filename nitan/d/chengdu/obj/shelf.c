@@ -20,7 +20,7 @@ void create()
         {
                 set("prep", "in");
                 set("unit", "只");
-                set("long", WHT "一只破爛的書架，腐朽不堪，也不知擱在這裡多久了。\n" NOR);
+                set("long", WHT "一隻破爛的書架，腐朽不堪，也不知擱在這裏多久了。\n" NOR);
                 set("value", 1);
         }
         set("no_get", 1);

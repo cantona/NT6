@@ -7,7 +7,7 @@ void create()
         set_name( "野鹿", ({ "ye lu", "lu", "deer"}) );
         set("race", "野獸");
         set("age", 2 + random(3));
-        set("long", "一只滿身斑點的小野鹿，不停的蹦蹦跳跳。\n");
+        set("long", "一隻滿身斑點的小野鹿，不停的蹦蹦跳跳。\n");
         set("attitude", "peaceful");
         set("str",30);
         set("max_qi",500);

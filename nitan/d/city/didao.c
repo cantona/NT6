@@ -9,7 +9,7 @@ void create()
 { 
        set("short","地道");
         set("long", @LONG
-這裡是在一條地道中。兩旁的牆壁上掛著些油燈，有的已經熄滅
+這裏是在一條地道中。兩旁的牆壁上掛着些油燈，有的已經熄滅
 了。壁上和腳下的潮氣讓人很不舒服。東面的牆似乎可以(pull)。
 LONG );
         set("exits", ([
@@ -33,7 +33,7 @@ int do_pull()
         if (query("open_count") > 0) 
         { 
                 message_vision(HIY  
-                        "$N伸手在牆上拍了幾下，不一會兒，東面的牆慢慢陷了下去，一只鐵箱露了出來。\n" NOR, 
+                        "$N伸手在牆上拍了幾下，不一會兒，東面的牆慢慢陷了下去，一隻鐵箱露了出來。\n" NOR, 
                         this_player()); 
                 addn("open_count", -1); 
                 ob = new("/d/city/obj/tiexiang"); 
@@ -41,5 +41,5 @@ int do_pull()
                 return 1; 
         } 
         else 
-                return notify_fail("這裡已經被別人打開過了。\n"); 
+                return notify_fail("這裏已經被別人打開過了。\n"); 
 } 

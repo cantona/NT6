@@ -1,8 +1,8 @@
-// bajiao.h 群玉八嬌
+// bajiao.h 羣玉八嬌
 
 int accept_fight(object me)
 {
-        command("say 小女子哪裡是您的對手？");
+        command("say 小女子哪裏是您的對手？");
         return 0;
 }
 
@@ -16,8 +16,8 @@ void init()
 void says(object me)
 {
           string *msgs = ({
-                    "$N吃吃一笑，抿嘴看著你。\n",
-                    "$N含情脈脈地對你說“……你……你還不明白妾身的心意嗎？\n",
+                    "$N吃吃一笑，抿嘴看着你。\n",
+                    "$N含情脈脈地對你説“……你……你還不明白妾身的心意嗎？\n",
                     "看來$N很想跟你(shuijiao)一次\n",
                     "$N很想跟你……\n",
                     "$N對你婉爾一笑。\n",
@@ -53,7 +53,7 @@ int do_sleep()
         }
 
         if (is_busy() || is_fighting())
-                return notify_fail("你沒看見人家正忙著呢嗎？\n");
+                return notify_fail("你沒看見人家正忙着呢嗎？\n");
 
         if (query_temp("makelove_with") == who)
         {
@@ -64,9 +64,9 @@ int do_sleep()
         if (query_temp("makelove_with"))
                 return notify_fail("兩個一起上？你還是饒了人家吧！\n");
 
-          message_vision(HIM "$N" HIM "輕輕摟著$n" HIM "柔軟的"
+          message_vision(HIM "$N" HIM "輕輕摟着$n" HIM "柔軟的"
                        "身體，不由得一陣陣發麻的快感傳遍全身，"
-                       "不知不覺的開始扭動著……\n\n"NOR, who, me);
+                       "不知不覺的開始扭動着……\n\n"NOR, who, me);
           who->command_function("remove all");
           who->start_busy(999);
 
@@ -95,7 +95,7 @@ void get_fainted(object who, object me)
         if (! who || environment(who) != environment())
                 return;
 
-        message_vision("$N對$n神秘地一笑。\n", me, who);
+        message_vision("$N對$n神祕地一笑。\n", me, who);
         who->unconcious();
         while (i--)
         {
@@ -113,7 +113,7 @@ void get_fainted(object who, object me)
 
         if (i < 0)
                 // Get nothing
-                command("chat 氣死老娘了，原來是一個窮鬼！");
+                command("chat 氣死老孃了，原來是一個窮鬼！");
 }
 
 int accept_kill(object me)
@@ -129,7 +129,7 @@ int accept_kill(object me)
                 ob=new(__DIR__"baobiao");
                 ob->move(environment());
         }
-        message_vision(HIC "\n忽然從門外沖進來幾個保鏢，對"
+        message_vision(HIC "\n忽然從門外衝進來幾個保鏢，對"
                        "$N" HIC "大喊一聲“幹什麼？在這兒鬧"
                        "事，想找死嗎？\n\n"NOR, me);
         ob->kill_ob(me);

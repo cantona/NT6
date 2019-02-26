@@ -1,10 +1,10 @@
 【文件處理】
 cd(目錄轉移)    ls(列示文件)    more(分頁看檔)  cat(快速看檔)   tail(讀文件最未幾行)
-mkdir(創建目錄) rmdir(刪除目錄) edit(編輯文件)  cp(復制文件)    rm(刪除文件)  
-mv(文件搬移)    xcp(復制多個文件) log(編輯查看修改信息)
+mkdir(創建目錄) rmdir(刪除目錄) edit(編輯文件)  cp(複製文件)    rm(刪除文件)  
+mv(文件搬移)    xcp(複製多個文件) log(編輯查看修改信息)
 
 【物件處理】
-update(更新)    clone(復制物品) call(修改指令)  dest(清除物體)  localcmds(命令提供)
+update(更新)    clone(複製物品) call(修改指令)  dest(清除物體)  localcmds(命令提供)
 ilist(物體繼承)
 
 【查詢指令】

@@ -114,12 +114,12 @@ void create()
         }));
         */
         set("inquiry", ([
-                "鎖陽丹" : "鎖陽丹乃地獄神品，只有牛頭王懂得制作，不過沒有本王的允許他也不敢擅自制作鎖陽丹。\n",
-                "允許"   : "本王生前有一遺憾，愧對了自己的女兒，使之飽受輪回之苦，天下只有聖物\n" + 
-                           "錦鑭袈裟方可助她脫離苦海，重新投胎做人，如果閣下能幫助本王找到錦鑭袈裟，本王到\n" +
-                           "是可以破例一次，讓牛頭王幫你制作鎖陽丹。\n",
-                "錦鑭袈裟" : "此乃袈裟中的上品，穿戴者可不墜地獄，不入輪回！\n"
-                             "不過，聽說世間上也只有莫邪能制作出錦鑭袈裟。\n",  
+                "鎖陽丹" : "鎖陽丹乃地獄神品，只有牛頭王懂得製作，不過沒有本王的允許他也不敢擅自制作鎖陽丹。\n",
+                "允許"   : "本王生前有一遺憾，愧對了自己的女兒，使之飽受輪迴之苦，天下只有聖物\n" + 
+                           "錦鑭袈裟方可助她脱離苦海，重新投胎做人，如果閣下能幫助本王找到錦鑭袈裟，本王到\n" +
+                           "是可以破例一次，讓牛頭王幫你製作鎖陽丹。\n",
+                "錦鑭袈裟" : "此乃袈裟中的上品，穿戴者可不墜地獄，不入輪迴！\n"
+                             "不過，聽説世間上也只有莫邪能製作出錦鑭袈裟。\n",  
                 "雄霸天下" : (: ask_xiongba :),
                 "霸刀"     : "霸刀乃當世絕學，練成之人當可雄霸天下，不過此間仍無人練成...\n",
         ]));
@@ -146,7 +146,7 @@ mixed ask_xiongba()
         
         if( !query("can_perform/badao/can_xiong", me) )
         {
-                tell_object(me, HIG "王方平告訴你：我雖已得到錦鑭袈裟讓我亡女免受輪回之苦，但仍配合‘神聖血清’\n"
+                tell_object(me, HIG "王方平告訴你：我雖已得到錦鑭袈裟讓我亡女免受輪迴之苦，但仍配合‘神聖血清’\n"
                                     "的力量方能成事，如果閣下能幫我找到神聖血清，我便傳授你雄霸天下和阿鼻道第\n"
                                     "一招的絕招。\n" NOR);
                 return "如何？";                 
@@ -158,14 +158,14 @@ mixed ask_xiongba()
         if (me->query_skill("badao", 1) < 700)
                 return "看來你霸刀火候還不夠，給你講了也是白講。\n";
                 
-        message_vision(HIY "$N" HIY "說道：既然如此，這雄霸天下的絕招就傳你了，你可看好了，我只施展一次 ....\n", 
+        message_vision(HIY "$N" HIY "説道：既然如此，這雄霸天下的絕招就傳你了，你可看好了，我只施展一次 ....\n", 
                        this_object());
                        
         tell_object(me, HIG "恭喜你，領悟了「雄霸天下」！\n" NOR);
         tell_object(me, HIG "恭喜你，領悟了阿鼻道第一刀！\n" NOR);
         
-        tell_object(me, HIM "王方平悄悄對你說道：據說，只要你霸刀達到800級，這阿鼻道第二刀可找陰長生學習。\n" NOR);
-        tell_object(me, HIM "王方平又對你說道：可是陰長生不會白教你，需要找到天下第一神酒--天乙神酒與他交換。\n" NOR);
+        tell_object(me, HIM "王方平悄悄對你説道：據説，只要你霸刀達到800級，這阿鼻道第二刀可找陰長生學習。\n" NOR);
+        tell_object(me, HIM "王方平又對你説道：可是陰長生不會白教你，需要找到天下第一神酒--天乙神酒與他交換。\n" NOR);
 
         set("can_perform/badao/xiong", 1, me);
         set("can_perform/badao/san-1", 1, me);
@@ -187,7 +187,7 @@ int accept_object(object me, object obj)
                         return 0;
                 }
                 command("nod"+query("id", me));
-                command("say 既然你能幫我找到神□血清，我也會履行我的諾言。");
+                command("say 既然你能幫我找到神聖血清，我也會履行我的諾言。");
                 command("ke");
                 command("say 我得趕去超度我亡女了，多謝！");
                 tell_object(me, HIY "一陣聲音從遠處飄來：這雄霸天下和阿鼻道第刀的絕招你隨時可以來找\n"
@@ -212,7 +212,7 @@ int accept_object(object me, object obj)
                 command("yi"+query("id", me));
                 command("say 這.. 這.. 不是錦鑭袈裟嗎，閣下居然能找到 ...");
                 command("tan");
-                command("say 既然如此，本王心願已了，你去找牛頭王幫你制作鎖陽丹吧。");
+                command("say 既然如此，本王心願已了，你去找牛頭王幫你製作鎖陽丹吧。");
                 
                 set("badao_quest/suoyangdan_allow", 1, me);
                 me->save();

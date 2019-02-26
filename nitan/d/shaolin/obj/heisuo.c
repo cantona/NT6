@@ -19,7 +19,7 @@ void create()
                 set("value", 50000);
                 set("material", "steel");
                 set("wield_msg", BLK "$N" BLK "一伸手，悄無聲息的將$n握在手中。\n" NOR);
-                set("unwield_msg", WHT "$N" WHT "將手中的$n卷起收好。\n" NOR);
+                set("unwield_msg", WHT "$N" WHT "將手中的$n捲起收好。\n" NOR);
                 set("stable", 70);
         }
 

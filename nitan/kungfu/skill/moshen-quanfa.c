@@ -21,7 +21,7 @@ mapping *action = ({
         "skill_name" : "拔草尋蛇",
         "damage_type":  "瘀傷"
 ]),
-([      "action": "$N縱身躍起，雙腿一掃，接著一個跟鬥，右拳猛地朝$n的$l處打來",
+([      "action": "$N縱身躍起，雙腿一掃，接着一個跟斗，右拳猛地朝$n的$l處打來",
         "force" : 100,
         "attack": 28,
         "dodge" : 45,
@@ -85,7 +85,7 @@ mapping query_action(object me, object weapon)
 int practice_skill(object me)
 {
         if( query("qi", me)<70 )
-                return notify_fail("你現在手足酸軟，休息一下再練吧。\n");
+                return notify_fail("你現在手足痠軟，休息一下再練吧。\n");
 
         if( query("neili", me)<60 )
                 return notify_fail("你的內力不夠了。\n");

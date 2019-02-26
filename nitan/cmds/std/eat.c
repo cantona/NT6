@@ -26,7 +26,7 @@ int main(object me, string arg)
                 if (sscanf(from, "all %s", from))
                 {
                         if (me->is_busy())
-                                return notify_fail("你忙著呢，沒有功夫找東西。\n");
+                                return notify_fail("你忙着呢，沒有功夫找東西。\n");
 
                         search_flag = 0;
                         foreach (from_ob in all_inventory(me))
@@ -71,7 +71,7 @@ int main(object me, string arg)
                         return notify_fail("你要搶劫啊？\n");
                 else
                 if (sizeof(all_inventory(from_ob)) < 1)
-                        return notify_fail(from_ob->name() + "裡面什麼都沒有啊。\n");
+                        return notify_fail(from_ob->name() + "裏面什麼都沒有啊。\n");
 
                 prefix = "從" + from_ob->name() + "中";
         } else
@@ -131,7 +131,7 @@ int main(object me, string arg)
  
                 if( query("material", ob) == "plant" )
                 {
-                        message_vision("$N把$n塞進嘴裡，嚼了幾口吞下肚。\n",
+                        message_vision("$N把$n塞進嘴裏，嚼了幾口吞下肚。\n",
                                        me, ob);
                         destruct(ob);
                         return 1;
@@ -150,7 +150,7 @@ int main(object me, string arg)
                 ob->do_effect(me);
                 if( query("food_remaining", ob)<1 )
                 {
-                        message_vision("$N將剩下的" + ob->name() + "吃得幹幹凈凈。\n", me);
+                        message_vision("$N將剩下的" + ob->name() + "吃得乾乾淨淨。\n", me);
                         ob->clear_effect();
                         if (! ob->finish_eat())
                                 destruct(ob);
@@ -174,11 +174,11 @@ int help(object me)
 這個指令可以讓你吃食物。如果你沒有設置環境變量 careful，並且
 你身上沒有帶這種食物就會自動在周圍的環境尋找你指定的食物。
 
-如果你指明了 in， 那麼你將從包裹取出食物食用。倘若你身上沒有
+如果你指明瞭 in， 那麼你將從包裹取出食物食用。倘若你身上沒有
 指明的包裹並且沒有設置環境變量 careful 的話， 就會自動在附近
 的環境尋找。
 
-如果你指明了 all，那麼你將在身上所有指定的包裹中尋找想要的食
+如果你指明瞭 all，那麼你將在身上所有指定的包裹中尋找想要的食
 物，這需要花費你一些時間。
 
 see also : drink

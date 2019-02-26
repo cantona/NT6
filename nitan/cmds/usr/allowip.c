@@ -12,7 +12,7 @@ varargs void allow_ip_list(string *allow_ip,string name)
     if (!name)
         name="你";
     if (allow_ip && sizeof(allow_ip)){
-        write("\n"+name+"所設定的登錄地址范圍有：\n");
+        write("\n"+name+"所設定的登錄地址範圍有：\n");
         for (i=0;i<sizeof(allow_ip);i++)
                     printf("\t%s\n", allow_ip[i]);
     }else{
@@ -126,22 +126,22 @@ int main(object me, string arg)
 int help()
 {
         write(@TEXT
-指令格式：allowip [-?] [-d] [IP地址或范圍]
+指令格式：allowip [-?] [-d] [IP地址或範圍]
  
 設定自己的登錄IP地址，如
       allowip 202.96.138.138
 
-也可設定一個IP地址范圍，如
+也可設定一個IP地址範圍，如
       allowip 202.96.138.*
 
-也可同時設定多個地址范圍(不超過五個)，中間用"|"隔開，如
+也可同時設定多個地址範圍(不超過五個)，中間用"|"隔開，如
       allowip 202.96.138.138|202.98.100.*|172.21.*.*
 
 即使別人知道你的密碼，也不能從其他ip地址登錄。
 
 其他參數:
 
--?  : 驗証某個IP地址是否能登錄
+-?  : 驗證某個IP地址是否能登錄
 -d  : 刪除某個登錄地址
 
 TEXT

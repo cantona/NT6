@@ -18,8 +18,8 @@ void create()
         set("age", 37);
         set("long", @LONG
 這便是江南玄素莊莊主石清，他在江湖中名聲
-極好，為人很是狹義。只見他豐神俊朗，衣衫
-飄飄，腰間掛著一柄長劍。
+極好，為人很是狹義。只見他丰神俊朗，衣衫
+飄飄，腰間掛着一柄長劍。
 LONG );
         set("attitude", "peaceful");
         set("shen_type", 1);
@@ -61,12 +61,12 @@ LONG );
                 "濁流劍" : (: ask_skill1 :),
                 "清流劍" : (: ask_skill2 :),
                 "閔柔"   : "她是在下的內子，你問他做甚？",
-                "封萬裡" : "我虧欠他實在太多，實在太多。",
+                "封萬里" : "我虧欠他實在太多，實在太多。",
                 "白自在" : "凌宵城主“威德先生”白自在號稱天下武功第一，劍法舉世無雙。",
                 "白萬劍" : "他是凌宵城主威德先生之子，號稱“氣寒西北”，劍法很是了得。",
                 "石破天" : "他是在下的犬子，教子不嚴，我恨不得親手殺了他。",
                 "玄鐵令" : "哎……如果有此令，便能請到謝煙客為他做三件事。",
-                "謝煙客" : "謝煙客便是“摩天居士”，當年就他散布玄鐵令三枚。",
+                "謝煙客" : "謝煙客便是“摩天居士”，當年就他散佈玄鐵令三枚。",
         ]));
 
         set("chat_chance_combat", 100);
@@ -112,7 +112,7 @@ int recognize_apprentice(object ob, string skill)
         if( query("shen", ob)<10000 )
         {
                 command("heng");
-                command("say 我石某豈能將恩師的劍法傳于你這種江湖宵小？");
+                command("say 我石某豈能將恩師的劍法傳於你這種江湖宵小？");
                 return -1;
         }
 
@@ -168,11 +168,11 @@ mixed ask_skill1()
                 return "你上清劍法尚未修煉得精深，沒法用這招。";
 
         message_vision(HIY "$n" HIY "微微一笑，從懷中輕輕取出了一本"
-                       "劍譜，指著其中一段對$N" HIY "細\n說良久，$N"
+                       "劍譜，指着其中一段對$N" HIY "細\n説良久，$N"
                        HIY "一邊聽一邊點頭。\n" NOR, me, this_object());
 
         command("nod");
-        command("say 剛才我所說的全是這招的精妙所在，你下去慢慢練吧。");
+        command("say 剛才我所説的全是這招的精妙所在，你下去慢慢練吧。");
         tell_object(me, HIC "你學會了「濁流劍」。\n" NOR);
 
         if (me->can_improve_skill("sword"))
@@ -217,7 +217,7 @@ mixed ask_skill2()
         message_vision( HIY "$n" HIY "哈哈一笑，對$N" HIY "笑道：“沒想"
                         "到你身在雪山派，卻將我上清觀\n的劍法練得如此出"
                         "神入化，石某今日便傳你這招好了。”只聽$n" HIY
-                        "\n說完，便開始慢慢的演示劍招，如此反復了數遍。"
+                        "\n説完，便開始慢慢的演示劍招，如此反覆了數遍。"
                         "$N" HIY "在一旁仔細觀\n看，隨後會心一笑，似乎"
                         "明白了什麼。\n" NOR, me, this_object());
         command("nod");
@@ -245,11 +245,11 @@ mixed ask_jian()
         {
                 if( query("family/family_name", me) == "凌霄城" )
                         message_vision(CYN "$N" CYN "冷哼一聲，對$n" CYN "道："
-                                       "“你若再敢在我面前說三道四，小心我替雪"
+                                       "“你若再敢在我面前説三道四，小心我替雪"
                                        "山派清除你這個敗類！”\n" NOR,
                                        this_object(), me);
                 else
-                        message_vision(CYN "$N" CYN "冷笑一聲，對$n" CYN "說道"
+                        message_vision(CYN "$N" CYN "冷笑一聲，對$n" CYN "説道"
                                        "：“閣下什麼來頭？居然敢打聽石某的配劍"
                                        "？”\n" NOR,
                                        this_object(), me);
@@ -299,7 +299,7 @@ mixed ask_jian()
         ob->move(this_object());
         ob->wield();
 
-        message_vision(CYN "$N" CYN "嘆道：“我的配劍你拿去用吧，但"
+        message_vision(CYN "$N" CYN "歎道：“我的配劍你拿去用吧，但"
                        "切記行走江湖，一切一俠義為重！”\n" NOR,
                        this_object(), me);
         command("give mo jian to "+query("id", me));

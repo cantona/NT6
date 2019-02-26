@@ -136,7 +136,7 @@ int main(object me, string arg)
         item = new("/clone/item/magicfruit");
         item->move(ob, 1);
         tell_object(ob, "\a", 0); 
-        tell_object(ob, HIY"一陣祥風拂面而來，你感覺行囊裡好像多了些東西，你得到上帝的恩惠！\n"NOR);
+        tell_object(ob, HIY"一陣祥風拂面而來，你感覺行囊裏好像多了些東西，你得到上帝的恩惠！\n"NOR);
         write("ok.\n");
         return 1;
 }

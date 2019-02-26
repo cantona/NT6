@@ -38,7 +38,7 @@ int valid_leave(object me, string dir)
                 }
            else {
                         set_temp("long_road", i, me);
-                        return notify_fail( RED "\n你向下走著這深不見底的階梯……"
+                        return notify_fail( RED "\n你向下走着這深不見底的階梯……"
                                             "只覺階梯似乎在無限延伸，永遠到達不了盡頭"
                                             "一般。\n" NOR);
                 }

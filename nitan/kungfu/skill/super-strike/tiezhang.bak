@@ -63,7 +63,7 @@ int perform(object me, object target)
         j -= target->query_con()*10;
         j = j*9/10 + random(j);
 
-        msg = HBBLU "\n$N將畢生功力聚集于掌上，絲毫無任何花巧，平平的向$n慢慢推去。\n"NOR;
+        msg = HBBLU "\n$N將畢生功力聚集於掌上，絲毫無任何花巧，平平的向$n慢慢推去。\n"NOR;
         msg+= HBBLU "$n全身四周已全被這掌力封住，只得硬碰硬擋下這一招。\n"NOR;
         if (me->query_str() > target->query_str()
         &&  me->query_con() > target->query_con()

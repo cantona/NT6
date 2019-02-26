@@ -6,7 +6,7 @@ void create()
 {
     set("short", "兵馬俑");
         set("long", @LONG
-來到這裡似乎已經無路可走了，左面有個石台，不知是做什麼用
+來到這裏似乎已經無路可走了，左面有個石台，不知是做什麼用
 的，石台的上方可以看到許多植物的根，盤根錯節，有些已經長到了
 石台上了。
 LONG );
@@ -61,6 +61,6 @@ int do_pa(string arg)
 void go_up(object me)
 {
         if(!me) return;
-        tell_object(me, "你順著樹根爬呀...爬呀......\n你爬了很久，終于你又見到了陽光。\n");
+        tell_object(me, "你順着樹根爬呀...爬呀......\n你爬了很久，終於你又見到了陽光。\n");
         me->move("/d/changan/caodi.c");
 }       

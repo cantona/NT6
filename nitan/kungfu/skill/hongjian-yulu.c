@@ -1,4 +1,4 @@
-// dragon-strike.c 降龍十八掌之鴻漸于陸
+// dragon-strike.c 降龍十八掌之鴻漸於陸
 // Last Modified by sega on Mar. 10 2000
 
 #include <ansi.h>;
@@ -16,8 +16,8 @@ int ttl = 17;
 int seq = 3;
 mapping *action = ({
         ([
-                "action"      : "$N雙掌施出一招"+(order[random(13)])+"「鴻漸于陸」"NOR"，隱隱帶著風聲拍向$n的$l",
-                "skill_name" : "鴻漸于陸",
+                "action"      : "$N雙掌施出一招"+(order[random(13)])+"「鴻漸於陸」"NOR"，隱隱帶着風聲拍向$n的$l",
+                "skill_name" : "鴻漸於陸",
                 "dodge"       : d_e1 + (d_e2 - d_e1) * seq / ttl,
                 "parry"       : p_e1 + (p_e2 - p_e1) * seq / ttl,
                 "force"       : f_e1 + (f_e2 - f_e1) * seq / ttl,
@@ -84,7 +84,7 @@ int power_point(object me) {
 
 int help(object me)
 {
-        write(HIC"\n降龍十八掌之鴻漸于陸："NOR"\n");
+        write(HIC"\n降龍十八掌之鴻漸於陸："NOR"\n");
         write(@HELP
 
     降龍十八掌是丐幫鎮幫之寶，是天下最剛猛的武功。

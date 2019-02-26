@@ -10,7 +10,7 @@ class pawn_ob
         string master;          // 當主 ID
         string pob_file;        // 當品文件名
         int time;               // 到期時間
-        string hockshop;        // 當舖文件名
+        string hockshop;        // 當鋪文件名
         string ps_long;         // 當票描述
 }
 

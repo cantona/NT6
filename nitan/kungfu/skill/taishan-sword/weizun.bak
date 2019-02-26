@@ -1,9 +1,9 @@
-// weizun.c  五岳為尊
+// weizun.c  五嶽為尊
 // Last Modified by winder on Aug. 25 2001
 
 #include <ansi.h>;
 inherit F_SSERVER;
-#define PNAME "「五岳為尊」"
+#define PNAME "「五嶽為尊」"
 int perform(object me,object target)
 {
         string msg;
@@ -50,13 +50,13 @@ int perform(object me,object target)
                 return notify_fail("你的"+to_chinese(sskill)+"修為不夠, 不能使用"+PNAME+"。\n");
 
         if( query("neili", me)<300 )
-                return notify_fail("你的內力不夠，無法運用五岳為尊！\n");
+                return notify_fail("你的內力不夠，無法運用五嶽為尊！\n");
 
         if( query("max_neili", me)<400 )
-                return notify_fail("你的內力修為不夠，無法運用五岳為尊！\n");
+                return notify_fail("你的內力修為不夠，無法運用五嶽為尊！\n");
 
         skill = me->query_skill(bskill,1);
-        message_combatd(HIW"$N使出泰山劍法的「五岳為尊」，身法陡然加快，劍鋒一轉，從五個方向連出數劍！\n" NOR, me, target);
+        message_combatd(HIW"$N使出泰山劍法的「五嶽為尊」，身法陡然加快，劍鋒一轉，從五個方向連出數劍！\n" NOR, me, target);
 
         addn("neili", -100, me);
         attack_time = 3 + random(3);

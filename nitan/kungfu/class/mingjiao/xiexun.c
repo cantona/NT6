@@ -18,7 +18,7 @@ void create()
         set("title", HIG "明教" HIY "金毛獅王" NOR);
 
         set("long", "他就是明教的四大護法之一的金毛獅王。\n"+
-                    "他身材魁偉異常，滿頭金發散披肩頭。但雙目已瞎。\n"+
+                    "他身材魁偉異常，滿頭金髮散披肩頭。但雙目已瞎。\n"+
                     "在你面前一站，威風凜凜，真如天神一般。\n");
         set("age", 56);
         set("attitude", "peaceful");
@@ -123,10 +123,10 @@ string ask_me()
         object me = this_player();
 
         if( !(fam=query("family", me)) || fam["family_name"] != "明教" )
-                return "七傷拳經？沒聽說過。";
+                return "七傷拳經？沒聽説過。";
 
         if (fam["master_name"] != "張無忌")
-                return RANK_D->query_respect(me) + "還是請回吧，你說的是崆峒派的絕技，我怎麼會知道？";
+                return RANK_D->query_respect(me) + "還是請回吧，你説的是崆峒派的絕技，我怎麼會知道？";
 
         if( query("can_lean/xiexun/qishang-quan", me) )
                 return "我不是答應傳了你這拳經了嗎？怎麼還要問！";
@@ -136,7 +136,7 @@ string ask_me()
 
         command("consider");
         command("say 無忌這孩子，怎麼可將七傷拳傳予他人呢！");
-        command("say 也罷，無忌既然讓你來到這裡，我就傳了你吧。");
+        command("say 也罷，無忌既然讓你來到這裏，我就傳了你吧。");
         set("can_learn/xiexun/qishang-quan", 1, me);
         delete_temp("marks/七傷", me);
         command("whisper"+query("id", me)+"五行之氣調陰陽，損心傷肺摧肝腸，藏離精失意恍惚，三焦齊逆兮魂魄飛揚！");
@@ -148,7 +148,7 @@ string ask_boat()
         object me = this_player();
 
         if( !query("can_learn/xiexun/qishang-quan", me) )
-                return "船？這極北冰火島離開中原萬裡，哪來的船舶？";
+                return "船？這極北冰火島離開中原萬里，哪來的船舶？";
 
         command("say 當年我幫義弟義妹他們在後山叢林中砍伐(chop)樹木，然後才搬到海邊造船(make)。");
         return "也不知道現在他們和我那無忌孩兒都怎麼樣了。";
@@ -165,9 +165,9 @@ string ask_dao()
         {
                 command("wield dao");
                 command("say 武林至尊，寶刀屠龍，號令天下，莫敢不從，倚天不出，誰與爭鋒。");
-                write("\n謝遜棒著屠龍寶刀，低頭冥思刀口之秘。\n\n");
+                write("\n謝遜棒着屠龍寶刀，低頭冥思刀口之祕。\n\n");
                 set_temp("xie_tld", 1, this_player());
-                return "不尋到寶刀中之秘，我之大仇如何得報？唉......";
+                return "不尋到寶刀中之祕，我之大仇如何得報？唉......";
         } else
                 return "武林至尊，寶刀屠龍，號令天下，莫敢不從！";
 }
@@ -191,7 +191,7 @@ int accept_object(object who, object ob)
 
         if( query("killed_by", ob) != query("id", who) )
         {
-                command("say 但他好象不是你殺的吧？你是怎麼得到這塊人頭的？");
+                command("say 但他好像不是你殺的吧？你是怎麼得到這塊人頭的？");
                 return 1;
         }
           if( query_temp("xie_tld", who) && present("tulong dao",me) )
@@ -203,7 +203,7 @@ int accept_object(object who, object ob)
                 return 1;
         } else
         {
-                command("say 你讓我大仇得報，我這裡只有我的金毛送給你了，只可惜不能手刃了那惡賊。");
+                command("say 你讓我大仇得報，我這裏只有我的金毛送給你了，只可惜不能手刃了那惡賊。");
                 obj = new ("/d/mingjiao/obj/jinmao");
                 obj->move(this_player());
                 return 1;

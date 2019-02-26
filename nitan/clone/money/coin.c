@@ -23,7 +23,7 @@ void create()
                 set("weapon_prop/damage", 10);
                 set("flag", 2);
                 set("wield_msg", "$N從袖口取出一串$n拋了拋，握在手中。\n");
-                set("unwield_msg", "$N將手中的$n放回兜裡。\n");
+                set("unwield_msg", "$N將手中的$n放回兜裏。\n");
                 set("skill_type", "throwing");
                 if( !query("actions") ) {
                     set("actions", (: call_other,WEAPON_D, "query_action" :));

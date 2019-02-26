@@ -39,7 +39,7 @@ int kan_tu()
         object me;
         me=this_player();
         tell_object(me,
-    "傳說中的絕世好劍就在五當山上！\n");
+    "傳説中的絕世好劍就在五當山上！\n");
         return 1;
 }
 

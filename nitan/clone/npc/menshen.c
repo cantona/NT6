@@ -42,13 +42,13 @@ void init()
                 return;
 
         message_vision("門神大喝一聲：“何方妖孽，也"
-                       "敢來此？”說罷手中銅錘一盪，"
+                       "敢來此？”説罷手中銅錘一蕩，"
                        "將$N一錘打得飛了出去！\n", me);
         
         if( query("id", me) != "rcwiz" )
                  me->move(query("startroom", env));
 
-        else message_vision(HIC "門神見闖了禍，退在一邊再也不敢說什麼了！\n" NOR, me);
+        else message_vision(HIC "門神見闖了禍，退在一邊再也不敢説什麼了！\n" NOR, me);
         me->start_busy(3);
     
         if( query("id", me) != "rcwiz" )

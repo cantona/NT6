@@ -53,9 +53,9 @@ int perform(object me, object target)
                 return notify_fail("你現在的真氣不夠，難以施展" + name() + "。\n");
 
         if (! living(target))
-                return notify_fail("對方都已經這樣了，用不著這麼費力吧？\n");
+                return notify_fail("對方都已經這樣了，用不着這麼費力吧？\n");
 
-        msg = HIW "$N一聲怒嚎，將太極神功提運極至，雙拳頓時攜著雷霆萬鈞之勢接二連三得攻向$n。。" + "\n" + NOR;
+        msg = HIW "$N一聲怒嚎，將太極神功提運極至，雙拳頓時攜着雷霆萬鈞之勢接二連三得攻向$n。。" + "\n" + NOR;
 
         ap = attack_power(me, "cuff");
         dp = defense_power(target, "dodge");

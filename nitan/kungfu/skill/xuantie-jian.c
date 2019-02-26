@@ -7,12 +7,12 @@ string martialtype() { return "skill"; }
 
 string *msg = ({
 BLU "$N當胸平平刺出一劍，實在是毫無任何變化，而卻有轟轟之聲，$n"BLU"只覺\n一股大力由$w"BLU"直逼周身",
-BLU "$N凌空躍起，身隨劍起，借助下行之勢向下猛劈一劍，將$n"BLU"周身籠于劍氣之下",
-BLU "$N輕嘆一聲，隨手橫劈一劍，緩緩指向$n"BLU"，看似無絲毫變化，卻盡得劍\n法精髓，當真平淡中蘊涵所有變化，無招勝有招",
+BLU "$N凌空躍起，身隨劍起，藉助下行之勢向下猛劈一劍，將$n"BLU"周身籠於劍氣之下",
+BLU "$N輕歎一聲，隨手橫劈一劍，緩緩指向$n"BLU"，看似無絲毫變化，卻盡得劍\n法精髓，當真平淡中藴涵所有變化，無招勝有招",
 BLU "$N迅疾挑出一劍，但見劍勢如虹，快似閃電，無可當鋒！此劍之快，匪夷所\n思，$n"BLU"無法分辨出劍路去來",
-BLU "$N仰首長嘯，令風雲變幻，狂風遽起，旋及一劍平指，劍氣彌漫于$n"BLU"周\n身各處，$n"BLU"只覺身處驚濤駭浪之中，驚怖中更覺$N劍力有如海潮一般，一波\n一浪陣陣湧來，綿延不絕，癒發癒強",
-BLU "$N祭起$w"BLU"，左手捏成劍訣置于胸前，咄喝一聲，正是劍法至尊的“御劍\n式”，空中滿是劍影，宛若千道銀鏈，只在$n"BLU"身邊遊動",
-BLU "$N$w"BLU"連出十余劍，一時迅疾如流星劃空，一時凝重遲緩，招招無跡可尋，\n平淡至極又匪思至極，順刺，逆擊，橫削，倒劈，無不是劍法的入門，當真返樸\n歸真，卻已不再存任何破綻",
+BLU "$N仰首長嘯，令風雲變幻，狂風遽起，旋及一劍平指，劍氣瀰漫於$n"BLU"周\n身各處，$n"BLU"只覺身處驚濤駭浪之中，驚怖中更覺$N劍力有如海潮一般，一波\n一浪陣陣湧來，綿延不絕，愈發愈強",
+BLU "$N祭起$w"BLU"，左手捏成劍訣置於胸前，咄喝一聲，正是劍法至尊的“御劍\n式”，空中滿是劍影，宛若千道銀鏈，只在$n"BLU"身邊遊動",
+BLU "$N$w"BLU"連出十餘劍，一時迅疾如流星劃空，一時凝重遲緩，招招無跡可尋，\n平淡至極又匪思至極，順刺，逆擊，橫削，倒劈，無不是劍法的入門，當真返樸\n歸真，卻已不再存任何破綻",
 });
 
 mapping *action = ({
@@ -52,7 +52,7 @@ mapping *action = ({
         "lvl"   : 120,
         "damage_type": "刺傷"
 ]),
-([      "action": "$N橫過$w，驀然橫掃$n，氣勢如虹，盪氣回腸",
+([      "action": "$N橫過$w，驀然橫掃$n，氣勢如虹，蕩氣迴腸",
         "force" : 340,
         "attack": 297,
         "dodge" :-47,
@@ -61,7 +61,7 @@ mapping *action = ({
         "lvl"   : 160,
         "damage_type": "割傷"
 ]),
-([      "action": "$N手中的$w連削帶刺，夾帶著一陣旋風掠過$n全身",
+([      "action": "$N手中的$w連削帶刺，夾帶着一陣旋風掠過$n全身",
         "force" : 380,
         "attack": 300,
         "dodge" :-50,
@@ -86,7 +86,7 @@ int valid_learn(object me)
         if( query("character", me) == "心狠手辣" )
                 return notify_fail("你一心想殺盡敵人，沒能理解玄鐵劍法的的真正含義。\n");
 
-        if( query("character", me) == "陰險姦詐" )
+        if( query("character", me) == "陰險奸詐" )
                 return notify_fail("你一心想怎麼學好劍法去害人，結果沒能理解玄鐵劍法。\n");
 
         if ((int)me->query_skill("force") < 180)
@@ -140,7 +140,7 @@ int practice_skill(object me)
         addn("neili", -70, me);
 
         if( query("can_practice_xiantie-jian", env) )
-        message_vision(HIW "\n$N" HIW"屏氣凝息，揮舞著手中的"+ weapon->name() + HIW "，奮力與洪流相抗。\n\n", me);
+        message_vision(HIW "\n$N" HIW"屏氣凝息，揮舞着手中的"+ weapon->name() + HIW "，奮力與洪流相抗。\n\n", me);
 
         return 1;
 }

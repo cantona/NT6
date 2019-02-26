@@ -16,7 +16,7 @@ mapping *combat_action = ({
         "damage_type":        "咬傷",
 ]),
 ([
-        "action":                "$N支起身猛地往$n的$l卷了上來",
+        "action":                "$N支起身猛地往$n的$l捲了上來",
         "damage":                30,
         "damage_type":        "瘀傷",
 ]),
@@ -36,7 +36,7 @@ void create()
         set("leave_msg",          "嗖地一聲鑽了出去"                      );
         set("arrive_msg",         "蜿蜒地遊了過來"                              );
         set("fleeout_message",    "嗖地一聲鑽了出去"                      );
-        set("fleein_message",     "緩緩地遊了過來，軟耷耷地在地上趴著"          );
+        set("fleein_message",     "緩緩地遊了過來，軟耷耷地在地上趴着"          );
 }
 
 void setup_snake(object ob)

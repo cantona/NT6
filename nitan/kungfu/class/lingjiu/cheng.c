@@ -12,7 +12,7 @@ void create()
 {
         set_name("程青霜", ({ "cheng qingshuang", "cheng"}));
         set("long", @LONG
-程青霜乃是縹緲峰靈鷲宮中九天九部中鈞天部
+程青霜乃是縹緲峯靈鷲宮中九天九部中鈞天部
 的副首領。只見她三十開外，長得頗有姿色。
 LONG);
         set("title", "縹緲縫靈鷲宮");
@@ -101,7 +101,7 @@ void attempt_apprentice(object ob)
         }
 
         command("nod2");
-        command("say 那你以後就跟著我吧。");
+        command("say 那你以後就跟着我吧。");
         command("recruit "+query("id", ob));
 
         if( query("class", ob) != "dancer" )

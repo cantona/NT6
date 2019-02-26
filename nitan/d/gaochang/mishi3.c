@@ -39,7 +39,7 @@ int do_use(string arg)
         if( !arg || arg=="" ) return 0;
         if (!present("fire", me))  return 0;
         if( arg=="fire" ) {
-             message_vision("$N點燃了火折，發現牆壁上有一小洞(hole)，似乎有什麼東西在裡面。\n",me);
+             message_vision("$N點燃了火折，發現牆壁上有一小洞(hole)，似乎有什麼東西在裏面。\n",me);
          set_temp("marks/fire", 1, me);
          return 1;
        }
@@ -56,10 +56,10 @@ int do_search(string arg)
                         if( !query_temp("marks/fire", me) )
                         return 0;
                         if (!arg || (arg!="hole" && arg!="小洞"))
-                        return notify_fail("你要搜哪裡？\n");
+                        return notify_fail("你要搜哪裏？\n");
                         if (query("count")<1)
                                 {
-                                        return notify_fail("洞裡面什麼也沒有了。\n");
+                                        return notify_fail("洞裏面什麼也沒有了。\n");
                                         }
                         if( query("cor", me)<25 )
                                         return notify_fail("你剛想伸手，忽然有點害怕，想了想還是算了。\n");
@@ -72,7 +72,7 @@ int do_search(string arg)
         }
                         if (random(4)>0 && book)
                                 {
-                                        message_vision("$N往洞裡摸了摸，摸出一本古書來。\n",me);
+                                        message_vision("$N往洞裏摸了摸，摸出一本古書來。\n",me);
                                          message("channel:rumor",MAG"【謠言】某人："+query("name", me)+"拿到一本"+query("name", book)+"啦。\n"NOR,users());
                                         book->move(me);
                                 }
@@ -80,14 +80,14 @@ int do_search(string arg)
                                 {
                                         ob=new("clone/money/gold");
                                         ob->set_amount(random(30));
-                                        message_vision("$N往洞裡摸了摸，摸出了一些黃金。\n",me);
+                                        message_vision("$N往洞裏摸了摸，摸出了一些黃金。\n",me);
                                         ob->move(me);
                                         }
                         else 
                                 {
                                         ob=new("clone/money/silver");
                                         ob->set_amount(random(30));
-                                        message_vision("$N往洞裡摸了摸，摸出了一些白銀。\n",me);
+                                        message_vision("$N往洞裏摸了摸，摸出了一些白銀。\n",me);
                                         ob->move(me);
                                         }
                         

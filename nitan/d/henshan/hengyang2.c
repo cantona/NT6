@@ -4,7 +4,7 @@ void create()
 {
         set("short", "衡陽東街");
         set("long", @LONG
-這裡是衡陽東街，再往東走便出衡陽城了，北面是一家雜貨舖，
+這裏是衡陽東街，再往東走便出衡陽城了，北面是一家雜貨鋪，
 南邊是一條偏僻的小巷。
 LONG );
         set("outdoors", "henshan");

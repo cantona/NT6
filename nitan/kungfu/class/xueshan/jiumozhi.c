@@ -105,7 +105,7 @@ mixed ask_me()
                 return "既然不是我們雪山寺之人，有什麼好談的。";
 
         if (me->query_skill("huoyan-dao", 1) < 120)
-                return "你的火燄刀法修為還不夠，等你練好了再說吧！";
+                return "你的火焰刀法修為還不夠，等你練好了再説吧！";
 
         if( query("family/gongji", me)<300 )
                 return "你為雪山寺效力不夠，這招暫時還不能傳你。";
@@ -180,7 +180,7 @@ mixed ask_skill()
                 return "我又不認識你，打聽這個幹什麼？";
 
         if (me->query_skill("huoyan-dao", 1) < 1)
-                return "你連無上火燄刀都沒學，哪裡來絕招？";
+                return "你連無上火焰刀都沒學，哪裏來絕招？";
 
         if( query("family/gongji", me)<400 )
                 return "你為雪山寺效力不夠，這招暫時還不能傳你。";
@@ -195,12 +195,12 @@ mixed ask_skill()
                 return "你的內力修為不足，還是修煉高點再來吧。";
 
         if (me->query_skill("huoyan-dao", 1) < 80)
-                return "等你把火燄刀練熟了再來找我。";
+                return "等你把火焰刀練熟了再來找我。";
 
         message_sort(HIY "\n$n" HIY "對$N" HIY "點了點頭，喝道：“瞧仔"
                      "細了。”話音剛落，只見$n" HIY "高舉手中的剛刀，在"
                      "空中揮舞成盤，氣勢驚人！便在此時，那柄剛刀已攜帶"
-                     "著震天撞擊之聲猛然擊落。直把$N" HIY "看得目瞪口呆"
+                     "着震天撞擊之聲猛然擊落。直把$N" HIY "看得目瞪口呆"
                      "。\n\n" NOR, me, this_object());
 
         command("nod");
@@ -224,7 +224,7 @@ int accept_ask(object me, string topic)
         {
         case "歷練" :
         case "歷煉" :
-        case "鍛煉" :
+        case "鍛鍊" :
                 return QUEST_D->accept_ask(this_object(), me, topic);
                 break;
 

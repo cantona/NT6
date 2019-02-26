@@ -39,7 +39,7 @@ void greeting(object ob)
                 return;
           if( query("id", ob) == "qigai" )
         {
-                message_vision(CYN "$N" CYN "對著$n" CYN "連連揮袖：去，去"
+                message_vision(CYN "$N" CYN "對着$n" CYN "連連揮袖：去，去"
                                "去，一邊去！" NOR, this_object(), ob);
                     return;
           }

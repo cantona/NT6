@@ -12,7 +12,7 @@ void create()
 		set_default_object(__FILE__);
 	else {
 		set("unit", "本");
-		set("long", "這就是武林第一秘籍「葵花寶典」，相傳是一位宮中太監所作。\n");
+		set("long", "這就是武林第一祕籍「葵花寶典」，相傳是一位宮中太監所作。\n");
 		set("value", 5000);
 		set("unique", 1);
 		set("no_give", 1);
@@ -41,7 +41,7 @@ int do_du(string arg)
 		return notify_fail("你要讀什麼？\n");
 if (arg=="pixie-jian") {
 	if ( me->is_busy() || me->is_fighting())
-		return notify_fail("你正忙著呢。\n");
+		return notify_fail("你正忙着呢。\n");
 
 	if ( !me->query("quest/pixie/pass") || me->query("gender") == "女性" )
 		return notify_fail("你是怎麼得到「葵花寶典」的啊？\n");
@@ -62,7 +62,7 @@ if (arg=="pixie-jian") {
 		return notify_fail("此地不宜研習「葵花寶典」！\n");
 
 	if (environment(me)->query("sleep_room"))
-		return notify_fail("臥室不宜修練，會影響別人休息。\n");
+		return notify_fail("卧室不宜修練，會影響別人休息。\n");
  
 	if (environment(me)->query("no_fight"))
 		return notify_fail("此地不宜研習「葵花寶典」！\n");
@@ -100,20 +100,20 @@ if (arg=="pixie-jian") {
 			return notify_fail("你沒用繡花針，感到無法理解這種陰柔靈活的武功。\n");
 
 		if ( me->query_skill("pixie-jian", 1) > 240 )
-			return notify_fail("你研讀了一會兒，但是發現上面所說的對你而言都太淺了，沒有學到任何東西。\n");
+			return notify_fail("你研讀了一會兒，但是發現上面所説的對你而言都太淺了，沒有學到任何東西。\n");
 
 		me->receive_damage("jing", 30 );
 		me->add("neili", - 50);
 		me->improve_skill("pixie-jian", me->query_int());
 		if (!random(8))
-			message("vision", me->name() + "仔細研讀著「葵花寶典」的精妙之處。\n", environment(me), me); 
-		tell_object(me, "你仔細研讀著「葵花寶典」的精妙之處。\n");
+			message("vision", me->name() + "仔細研讀着「葵花寶典」的精妙之處。\n", environment(me), me); 
+		tell_object(me, "你仔細研讀着「葵花寶典」的精妙之處。\n");
 	}
 	return 1;
   }
   if (arg=="kuihua-shengong") {
 	if ( me->is_busy() || me->is_fighting())
-		return notify_fail("你正忙著呢。\n");
+		return notify_fail("你正忙着呢。\n");
 
 	if ( !me->query("quest/pixie/pass") || me->query("gender") == "女性" )
 		return notify_fail("你是怎麼得到「葵花寶典」的啊？\n");
@@ -134,7 +134,7 @@ if (arg=="pixie-jian") {
 		return notify_fail("此地不宜研習「葵花寶典」！\n");
 
 	if (environment(me)->query("sleep_room"))
-		return notify_fail("臥室不宜修練，會影響別人休息。\n");
+		return notify_fail("卧室不宜修練，會影響別人休息。\n");
  
 	if (environment(me)->query("no_fight"))
 		return notify_fail("此地不宜研習「葵花寶典」！\n");
@@ -172,15 +172,15 @@ if (arg=="pixie-jian") {
 			return notify_fail("你沒用繡花針，感到無法理解這種陰柔靈活的武功。\n");
 
 		if ( me->query_skill("kuihua-shengong", 1) > 220 )
-			return notify_fail("你研讀了一會兒，但是發現上面所說的對你而言都太淺了，沒有學到任何東西。\n");
+			return notify_fail("你研讀了一會兒，但是發現上面所説的對你而言都太淺了，沒有學到任何東西。\n");
 
 		me->receive_damage("jing", 30 );
 		me->set("quest/pixie/pass","pass");
 		me->add("neili", - 50);
 		me->improve_skill("kuihua-shengong", me->query_int());
 		if (!random(8))
-			message("vision", me->name() + "仔細研讀著「葵花寶典」的精妙之處。\n", environment(me), me); 
-		tell_object(me, "你仔細研讀著「葵花寶典」的精妙之處。\n");
+			message("vision", me->name() + "仔細研讀着「葵花寶典」的精妙之處。\n", environment(me), me); 
+		tell_object(me, "你仔細研讀着「葵花寶典」的精妙之處。\n");
 	}
 	return 1;
   }
@@ -191,7 +191,7 @@ private void cut_jj(string arg, object me)
 	if( arg[0]=='y' || arg[0]=='Y' ) {
 		me->set("gender", "無性");
 		me->set("class", "eunuch");
-		CHANNEL_D->do_channel( this_object(), "rumor", sprintf("聽說%s為了修練"HIR"辟邪劍法"HIM"而引刀自宮了！"NOR, me->name(1)));
+		CHANNEL_D->do_channel( this_object(), "rumor", sprintf("聽説%s為了修練"HIR"辟邪劍法"HIM"而引刀自宮了！"NOR, me->name(1)));
 		log_file("quest/pixie",sprintf(HIR"%-18s為研讀「葵花寶典」，而引刀自宮。"NOR, me->name(1)+"("+capitalize(getuid(me))+")", ), me);
 		tell_object(me, HIR"你只覺得兩腿間一陣劇痛，鮮血激噴而出……\n"NOR);
 		me->receive_wound("qi", 4000, "引刀自宮不慎，失血過多而");

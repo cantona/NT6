@@ -14,7 +14,7 @@ void create()
         else {
                 set("unit", "本");
                 set("long",
-                "這是本很普通的書，書裡面好象有一些小人飛舞的圖形。\n",
+                "這是本很普通的書，書裏面好像有一些小人飛舞的圖形。\n",
                 );
                 set("value", 0);
                 set("material", "paper");

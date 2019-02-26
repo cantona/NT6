@@ -104,18 +104,18 @@ int start_log_player(string id, string me)
 
         by = query("log_by/" + id);
         if (stringp(by) && (wiz_level(by) > wiz_level(me)))
-                return notify_fail("已經有權限比你高的人記錄該玩家的日志了。\n");
+                return notify_fail("已經有權限比你高的人記錄該玩家的日誌了。\n");
 
         if (stringp(by) && by == me)
-                return notify_fail("你已經開始記錄這個玩家的日志了。\n");
+                return notify_fail("你已經開始記錄這個玩家的日誌了。\n");
 
         ob = find_player(id);
         if (! by && ob && ob->is_loging_now() && wizhood(me) != "(admin)")
-                return notify_fail("EXAMINE DAEMON 正在記錄這個玩家的日志，你無權幹涉。\n");
+                return notify_fail("EXAMINE DAEMON 正在記錄這個玩家的日誌，你無權干涉。\n");
 
         if (wizhood(id) == "(admin)" &&
             (!this_player() || !query("env/admin", this_player())) )
-                return notify_fail("不能記錄 admin 的日志。\n");
+                return notify_fail("不能記錄 admin 的日誌。\n");
 
         set("log_by/" + id, me);
 
@@ -139,7 +139,7 @@ int end_log_player(string id, string euid)
         by = query("log_by/" + id);
 
         if (! by && (! ob || ! ob->is_loging_now()))
-                return notify_fail("系統現在並沒有記錄這個玩家的日志。\n");
+                return notify_fail("系統現在並沒有記錄這個玩家的日誌。\n");
 
         if (euid == ROOT_UID || wizhood(euid) == "(admin)" ||
             stringp(by) && (by == euid || wiz_level(by) <= wiz_level(euid)))
@@ -152,7 +152,7 @@ int end_log_player(string id, string euid)
                 return 1;
         }
 
-        return notify_fail("你不是 ROOT 或是開始記錄日志的巫師，不能中止記錄。\n");
+        return notify_fail("你不是 ROOT 或是開始記錄日誌的巫師，不能中止記錄。\n");
 }
 
 varargs mixed query(string idx, object ob)

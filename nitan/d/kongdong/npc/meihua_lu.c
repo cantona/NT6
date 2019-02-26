@@ -9,7 +9,7 @@ void create()
 	set_name("梅花鹿", ({ "meihua lu", "lu" }) );
 	set("race", "野獸");
 	set("age", 5);
-	set("long", "一只美麗可愛，四處蹦蹦跳跳的梅花鹿。\n");
+	set("long", "一隻美麗可愛，四處蹦蹦跳跳的梅花鹿。\n");
 	set("attitude", "peaceful");
 	
 	set("limbs", ({ "犄角", "身體", "前蹄", "後蹄" }) );
@@ -46,13 +46,13 @@ void greeting(object ob)
 {
         if(!ob||!present(ob,environment(this_object()) )||
         is_fighting() ||random(4)<2)return;
-        say("梅花鹿仿佛受了什麼驚嚇，撒開蹄子跑開了。\n");
+        say("梅花鹿彷彿受了什麼驚嚇，撒開蹄子跑開了。\n");
         this_object()->random_move();
 }
 */
 void die()
 {
-        message_vision("$N發出幾聲凄慘的叫聲，躺到地上不動了。\n",
+        message_vision("$N發出幾聲悽慘的叫聲，躺到地上不動了。\n",
         this_object() );
 	::die();
 }

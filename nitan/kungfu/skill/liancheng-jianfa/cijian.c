@@ -39,7 +39,7 @@ int perform(object me, object target)
         if (!weapon
                  || query("skill_type", weapon) != "sword"
                 || me->query_skill_mapped("sword") != "liancheng-jianfa")
-                return notify_fail("你手裡沒有劍，無法使用「"HIM"刺肩式"NOR"」！\n");
+                return notify_fail("你手裏沒有劍，無法使用「"HIM"刺肩式"NOR"」！\n");
 
         if( (int)me->query_skill("liancheng-jianfa",1) < 150 )
                 return notify_fail("你的連城劍法不夠嫻熟，不能使用「"HIM"刺肩式"NOR"」！\n");
@@ -57,7 +57,7 @@ int perform(object me, object target)
                 return notify_fail("你的內力太少了，無法使用出！\n");
 
         msg = WHT "\n$N身子一晃，抽起"+weapon->name()+WHT"，猶如疾風驟雨般一陣猛攻，$n擋得幾招，發劍回攻，\n"
-              "$N突然間"+weapon->name()+WHT"抖動，□的一聲輕響，從不可思議的角度刺向了$n的肩頭\n"NOR;
+              "$N突然間"+weapon->name()+WHT"抖動，卟的一聲輕響，從不可思議的角度刺向了$n的肩頭\n"NOR;
 
         msg = replace_string( msg, "song", songs[random(sizeof(songs))] );
 

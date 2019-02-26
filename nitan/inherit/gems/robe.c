@@ -39,7 +39,7 @@ void spec_prop(object me, string socket, int socket_level, int mode)
                 break;
         case "amethyst":
                 if (mode == 1)
-                        message_vision(MAG + query("name") + MAG"散出一片紫色雲光環繞著$N，漸漸$P的身形顯得越來越朦朧！\n"NOR, me);
+                        message_vision(MAG + query("name") + MAG"散出一片紫色雲光環繞着$N，漸漸$P的身形顯得越來越朦朧！\n"NOR, me);
                 else
                         message_vision(MAG"紫色越來越淡，$N的身形又顯露了出來。\n"NOR, me);
                 me->add_temp("apply/defense", 50 * socket_level * mode);
@@ -179,7 +179,7 @@ void spec_recover(object me, string socket, int socket_level)
                 break;
         case "sapphire":
                 if (me->is_busy() && (me->query_busy() <= socket_level + 1 )) {
-                        message_vision(HIB"$N只覺一股勁力引導著內氣遊走全身，被阻塞的穴道在它的沖擊下已一貫而通！\n"NOR, me);
+                        message_vision(HIB"$N只覺一股勁力引導着內氣遊走全身，被阻塞的穴道在它的衝擊下已一貫而通！\n"NOR, me);
                         me->start_busy(0);
                 }
                 break;

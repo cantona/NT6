@@ -35,10 +35,10 @@ int perform(object me, object target)
                 return notify_fail("你沒有準備使用倚天屠龍掌，難以施展" + name() + "。\n");
 
         if (! living(target))
-                return notify_fail("對方都已經這樣了，用不著這麼費力吧？\n");
+                return notify_fail("對方都已經這樣了，用不着這麼費力吧？\n");
 
         msg = HIY "$N" HIY "神氣貫通，將倚天屠龍掌二十四字一氣呵成，雙掌"
-              "攜帶著排山倒海之勁貫向$n" HIY "。\n\n" NOR;
+              "攜帶着排山倒海之勁貫向$n" HIY "。\n\n" NOR;
         addn("neili", -150, me);
 
         ap = attack_power(me, "strike");
@@ -53,7 +53,7 @@ int perform(object me, object target)
         } else
         {
                 msg += HIC "$n" HIC "深吸一口氣，凝神抵擋，猶如輕舟立"
-                       "于驚濤駭浪之中，左右顛簸，卻是不倒。\n" NOR;
+                       "於驚濤駭浪之中，左右顛簸，卻是不倒。\n" NOR;
                 count = 0;
         }
         message_combatd(msg, me, target);

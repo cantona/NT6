@@ -12,7 +12,7 @@ void create()
         set("title", HIY"神龍教"HIR"赤龍使"NOR);
         set("gender", "男性" );
         set("age", 55);
-        set("long", "這是個五十來歲的黑須道長，相貌威武，眼中略帶殺氣。\n");
+        set("long", "這是個五十來歲的黑鬚道長，相貌威武，眼中略帶殺氣。\n");
 
         set("str", 30);
         set("int", 25);

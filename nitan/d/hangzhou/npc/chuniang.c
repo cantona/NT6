@@ -80,10 +80,10 @@ string ask_job()
                 return "這位女俠，你這不是折殺小的嗎！你還是去前面用餐吧！飯菜馬上就好！";
 
         if (me->query_skill("cooking") < 30)
-                return "你的炒菜手藝那麼差，那裡能幫我？";
+                return "你的炒菜手藝那麼差，那裏能幫我？";
 
         if (me->query_skill_mapped("cooking") != "chuancai-jiyi")
-                return "我說你知不知道來的客人可都是吃川菜的，亮出你川菜的活兒再說！";
+                return "我説你知不知道來的客人可都是吃川菜的，亮出你川菜的活兒再説！";
 
         if (random(30) == 0)
         {
@@ -125,13 +125,13 @@ int accept_object(object who, object ob)
 
         if( query("money_id", ob) && ob->value() >= 2000 )
         {
-                message_vision("廚娘同意指點$N一些關于炒菜的常識和技巧。\n", who);
+                message_vision("廚娘同意指點$N一些關於炒菜的常識和技巧。\n", who);
                 addn_temp("mark/廚娘", ob->value()/50, who);
                 destruct(ob);
                 return 1;
         }
 
-        command("say 雖說炒菜對闖盪江湖沒什麼用，我也不能白白教你"
+        command("say 雖説炒菜對闖蕩江湖沒什麼用，我也不能白白教你"
                 "啊！拿來，辛苦費紋銀二十兩，童叟無欺！");
         return 0;
 }
@@ -142,11 +142,11 @@ int do_cook(string arg)
 
         me = this_player();
         if (me->is_busy())
-                return notify_fail("你正忙著呢，別著急。\n");
+                return notify_fail("你正忙着呢，彆着急。\n");
 
         if( !query_temp("job/cook", me) )
         {
-                tell_object(me, "廚娘喝道：你要幹什麼？不要來搗亂，我忙著呢！\n");
+                tell_object(me, "廚娘喝道：你要幹什麼？不要來搗亂，我忙着呢！\n");
                 return 1;
         }
 
@@ -180,7 +180,7 @@ int cooking(object me)
                 msg = "$N看看菜差不多夠了，站起身來走到水盆邊開始洗菜。";
                 break;
         case 2:
-                msg = "嘩----，$N將水盆中的污水倒掉，菜也洗幹凈了。";
+                msg = "譁----，$N將水盆中的污水倒掉，菜也洗乾淨了。";
                 break;
         case 3:
                 msg = "$N走到灶台前開始切菜，嚓----嚓-----。";
@@ -205,8 +205,8 @@ int cooking(object me)
         if (finish)
         {
                 object ob;
-                msg += "$n看了$N炒的菜，又夾了兩片嘗了嘗，滿意的點點頭"
-                       "這是給你的報酬！你可以在我這裡學點炒菜技術。\n";
+                msg += "$n看了$N炒的菜，又夾了兩片嚐了嚐，滿意的點點頭"
+                       "這是給你的報酬！你可以在我這裏學點炒菜技術。\n";
                 delete_temp("job/cook", me);
                 delete_temp("job/step", me);
                 gain_money = 60 + random(60);
@@ -264,8 +264,8 @@ int cooking(object me)
 
 int halt_cooking(object me)
 {
-        message_vision("$N揉揉腰部，又扭了扭，嘆到："
-                       "這也太難了，我還是去闖盪江湖吧！\n", me);
+        message_vision("$N揉揉腰部，又扭了扭，歎到："
+                       "這也太難了，我還是去闖蕩江湖吧！\n", me);
         delete_temp("job/cook", me);
         delete_temp("job/step", me);
         return 1;

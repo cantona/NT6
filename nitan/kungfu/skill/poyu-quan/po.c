@@ -37,7 +37,7 @@ int perform(object me, object target)
                 return notify_fail("你沒有準備使用劈石破玉拳，無法施展" + name() + "。\n");
 
         if (! living(target))
-                return notify_fail("對方都已經這樣了，用不著這麼費力吧？\n");
+                return notify_fail("對方都已經這樣了，用不着這麼費力吧？\n");
 
         msg = HIY "$N" HIY "大喝一聲，握緊的拳頭蒙上一層淡淡的紫色霧氣，閃電般重重的擊向$n" HIY "。\n"NOR;
 

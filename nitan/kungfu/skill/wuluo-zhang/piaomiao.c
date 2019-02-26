@@ -51,7 +51,7 @@ int perform(object me, object target)
         if( query("neili", me)<800 )
                 return notify_fail(HIW "你的內力不夠，內勁不足以施展雲煙飄渺！\n" NOR);
 
-        if(me->is_busy()) return notify_fail(HIW "你正忙著呢,沒辦法施展雲煙飄渺！\n" NOR);
+        if(me->is_busy()) return notify_fail(HIW "你正忙着呢,沒辦法施展雲煙飄渺！\n" NOR);
 
         message_vision(HIB"$N運起內功心法，將真氣凝聚運往手掌，頓時$N手掌反白，掌中泛起一陣"NOR HIW"白煙"NOR HIB"。\n" NOR, me);
 

@@ -23,7 +23,7 @@ int exert(object me, object target)
         addn("neili", -100, me);
         me->receive_damage("qi", 0);
 
-        message_combatd(HIW "$N" HIW "長嘯一聲，全身真氣迸發，頓時一股陰寒氣流彌漫四周。\n" NOR, me);
+        message_combatd(HIW "$N" HIW "長嘯一聲，全身真氣迸發，頓時一股陰寒氣流瀰漫四周。\n" NOR, me);
 
         addn_temp("apply/attack", skill/3, me);
         addn_temp("apply/defense", skill/3, me);

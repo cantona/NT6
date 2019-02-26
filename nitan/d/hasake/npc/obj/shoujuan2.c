@@ -15,7 +15,7 @@ void create()
                 set("unit", "方");
                 set("material", "cloth");
                 set("long", "這是一方雪白的手絹，上面有些字：
-     跟著手絹上的圖案走，你就可以走出大戈壁。。。\n");               
+     跟着手絹上的圖案走，你就可以走出大戈壁。。。\n");               
                 set("armor_type", "bandage");
                 set("armor_prop/attack", -10);
                 set("armor_prop/defense", -10);

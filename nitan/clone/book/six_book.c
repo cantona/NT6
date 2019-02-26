@@ -57,7 +57,7 @@ int do_yanjiu(string arg)
 
         if (me->is_busy() || me->is_fighting())
         {
-                write("你正忙著呢。\n");
+                write("你正忙着呢。\n");
                 return 1;
         }
 
@@ -76,7 +76,7 @@ int do_yanjiu(string arg)
         if (skill != "此去彼來" && skill != "馭劍氣" 
            && skill != "ciqu" && skill != "yuqi")
         {
-                write("書上並沒有介紹關于"+skill+"的內容。\n");
+                write("書上並沒有介紹關於"+skill+"的內容。\n");
                 return 1;
         }
 
@@ -90,7 +90,7 @@ int do_yanjiu(string arg)
             query("qi", me)<100 || 
             query("neili", me)<200 )
   {
-          write("你現在過于疲倦，無法專心下來研讀新知。\n");
+          write("你現在過於疲倦，無法專心下來研讀新知。\n");
           return 1;
   }
   
@@ -119,8 +119,8 @@ int do_yanjiu(string arg)
            msg = HIG "$N" HIG "翻看劍譜，仔細研究上面所記載的武學，霎那間忽有所悟"
                      "……\n" NOR;
            msg += HIW "$N" HIW "攤開雙手，手指連彈，霎時間空氣炙熱，幾"
-                  "欲沸騰，六道劍氣分自六穴，一起沖向天際" HIW "！\n" NOR;
-           msg += HIG "$N" HIG "長嘆一聲，感慨萬千，將內力收回丹田。\n" NOR; 
+                  "欲沸騰，六道劍氣分自六穴，一起衝向天際" HIW "！\n" NOR;
+           msg += HIG "$N" HIG "長歎一聲，感慨萬千，將內力收回丹田。\n" NOR; 
            message_vision(msg, me); 
 
                    me->improve_skill("finger", 1500000);
@@ -159,7 +159,7 @@ int do_yanjiu(string arg)
            msg += HIM "$N" HIM "一聲清嘯，十指紛彈，頓覺六脈劍氣已湧上心頭，此起"
                   "彼伏、連綿不絕。霎時劍氣如奔，連綿無盡的萬道劍氣豁然貫向虛空" HIM 
                   "！\n" NOR;
-           msg += HIG "$N" HIG "長嘆一聲，感慨萬千，將內力收回丹田。\n" NOR; 
+           msg += HIG "$N" HIG "長歎一聲，感慨萬千，將內力收回丹田。\n" NOR; 
            message_vision(msg, me); 
 
                    me->improve_skill("finger", 1500000);

@@ -10,7 +10,7 @@ void create()
         else {
                 set("unit", "個");
                 set("prep", "on");
-                set("long", "一個蝴蝶風箏，放風箏的線上幫著一個小小的竹哨。 \n");
+                set("long", "一個蝴蝶風箏，放風箏的線上幫着一個小小的竹哨。 \n");
                 set("value", 2000);
         }
 }

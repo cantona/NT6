@@ -48,7 +48,7 @@ mapping *action = ({
         "lvl"   : 80,
         "damage_type" : "刺傷"
 ]),
-([      "action": "$N大喝一聲，$w便如閃電般刺出，攜著一股旋風刺向$n",
+([      "action": "$N大喝一聲，$w便如閃電般刺出，攜着一股旋風刺向$n",
         "force" : 240,
         "attack": 52,
         "dodge" : 25,

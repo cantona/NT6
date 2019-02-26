@@ -13,10 +13,10 @@ void create()
 {
     set("short", "長灘");
         set("long", @LONG
-這片長灘不時有日月教教眾乘船(boat)往來，灘頭插著一面日月
-教的旗幟，表明這裡是日月教的所控制的，所以盡管江面上往來的船
-只很多，但是並沒有船敢在這裡停留，要過對岸只有靠日月教自己的
-船只了。
+這片長灘不時有日月教教眾乘船(boat)往來，灘頭插着一面日月
+教的旗幟，表明這裏是日月教的所控制的，所以儘管江面上往來的船
+只很多，但是並沒有船敢在這裏停留，要過對岸只有靠日月教自己的
+船隻了。
 LONG );
     set("item_desc", ([
         "he" : "一葉小舟靜森森地靠在蘆葦畔，喊(yell)一聲試看。\n",
@@ -63,13 +63,13 @@ void check_trigger()
             }
             else
                 message("vision", "只聽得風浪中隱隱傳來：“別急嘛，"
-                    "這兒正忙著吶……”\n",this_object() );
+                    "這兒正忙着吶……”\n",this_object() );
         }
         else
             message("vision", "ERROR: boat not found\n", this_object() );
     }
     else 
-        message("vision", "岸邊一只渡船上的老艄公說道：正等著你呢，上來吧。\n",
+        message("vision", "岸邊一隻渡船上的老艄公説道：正等着你呢，上來吧。\n",
             this_object() );
 }
 
@@ -86,7 +86,7 @@ void on_board()
     if( room = find_object(__DIR__"duchuan1") )
     {
         delete("exits/out", room);
-        message("vision", "艄公把踏腳板收起來，說了一聲“坐穩嘍”，"
+        message("vision", "艄公把踏腳板收起來，説了一聲“坐穩嘍”，"
             "竹篙一點，扁舟向\n河中撐去。\n", room );
     }
     delete("exits/enter");
@@ -101,7 +101,7 @@ void arrive()
     if( room = find_object(__DIR__"duchuan1") )
     {
         set("exits/out", __DIR__"xingxingtan", room);
-        message("vision", "艄公說“到啦，上岸吧”，隨即把一塊踏腳板"
+        message("vision", "艄公説“到啦，上岸吧”，隨即把一塊踏腳板"
             "搭上堤岸。\n",room );
     }
     remove_call_out("close_passage");
@@ -164,13 +164,13 @@ int do_cross()
     if (me->query_skill("piaomiao-shenfa",1) < 100) 
     {
          tell_object(me, random(2) ? "你覺得江面太寬，沒有十足的把握躍過去。\n"
-                     : "你看著波濤洶湧的江面，心裡不禁打了個突，沒敢亂來。\n");
+                     : "你看着波濤洶湧的江面，心裏不禁打了個突，沒敢亂來。\n");
          return 1;
     }
 
     if( query("neili", me)<100 )
     {
-         tell_object(me, "你的內力不夠，還是休息一下再說吧。\n");
+         tell_object(me, "你的內力不夠，還是休息一下再説吧。\n");
          return 1;
     }
 

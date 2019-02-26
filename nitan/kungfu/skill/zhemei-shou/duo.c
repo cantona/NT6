@@ -50,12 +50,12 @@ int perform(object me, object target)
         if (ap / 2 + random(ap) > dp)
         {
                 addn("neili", -50, me);
-                msg = "$N使出空手入白刃的絕招, $n頓時覺得眼前一花，手腕一麻，手中兵刃脫手而出！\n" NOR;
+                msg = "$N使出空手入白刃的絕招, $n頓時覺得眼前一花，手腕一麻，手中兵刃脱手而出！\n" NOR;
                 weapon2->move(me);
                 if (weapon2->is_item_make() && random(2))
                 {
                         weapon2->move(target);
-                        msg += "那可是$n的隨身家伙！$n手一伸將它奪回來。\n" NOR;
+                        msg += "那可是$n的隨身傢伙！$n手一伸將它奪回來。\n" NOR;
                 }
                 me->start_busy(2);
         }

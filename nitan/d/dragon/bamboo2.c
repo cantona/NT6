@@ -11,8 +11,8 @@ void create()
 {
         set("short", "竹徑");
         set("long",
-"這裡竹子很茂密，光線極暗。空氣中有淡淡的竹子的清香。在這樣的\n"
-"地方，會隱藏著什麼嗎？\n"
+"這裏竹子很茂密，光線極暗。空氣中有淡淡的竹子的清香。在這樣的\n"
+"地方，會隱藏着什麼嗎？\n"
 );
         set("exits", ([
                 "east" : __DIR__"bamboo",
@@ -37,7 +37,7 @@ int do_use(string arg)
         if (!present("moonsoul", me))  return 0;
         if( arg=="moonsoul" ) {
              write(
-             "你掏出懷中的"+HIC"月魄"NOR+"，"+HIC"月魄"NOR+"發出幽藍的光芒。巖壁上似乎有道暗門，也許可以試著推(tui)一下。\n"
+             "你掏出懷中的"+HIC"月魄"NOR+"，"+HIC"月魄"NOR+"發出幽藍的光芒。巖壁上似乎有道暗門，也許可以試着推(tui)一下。\n"
              );
              set_temp("marks/鑽1", 1, this_player());
              return 1;
@@ -53,7 +53,7 @@ int do_tui(string arg)
             message("vision", me->name() + "一下子就不見了。\n",
                     environment(me), ({me}) );
             me->move(__DIR__"moonroom");
-            message("vision", me->name() + "從巖縫暗門裡跌了出來。\n",
+            message("vision", me->name() + "從巖縫暗門裏跌了出來。\n",
                     environment(me), ({me}) );
             delete_temp("marks/鑽1", this_player());
 

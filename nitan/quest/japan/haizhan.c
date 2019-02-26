@@ -10,7 +10,7 @@ void create()
 {
         set("short", "大海中");
         set("long", @LONG
-茫茫大海之中，左右艦隊跟隨浩浩盪盪沖向日本艦隊。
+茫茫大海之中，左右艦隊跟隨浩浩蕩蕩衝向日本艦隊。
 LONG);
         set("no_steal", "1");
         set("no_sleep_room", "1");
@@ -43,13 +43,13 @@ int do_game(string arg)
 
 int valid_leave(object me, string dir)
 {
-        if( query_temp("job/haizhan", me))return notify_fail("戰事已經開始，不能臨陣脫逃。\n");
+        if( query_temp("job/haizhan", me))return notify_fail("戰事已經開始，不能臨陣脱逃。\n");
 
         return ::valid_leave(me, dir);
 }
 
 int do_quit()
 {
-        write("這裡不能退出遊戲。\n");
+        write("這裏不能退出遊戲。\n");
         return 1;
 }

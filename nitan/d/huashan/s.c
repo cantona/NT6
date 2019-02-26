@@ -22,13 +22,13 @@ void create()
 
         set("long", @LONG
 四周懸崖峭壁，只見前方隱然是一個山洞，但是被一個巨大的石
-門（door）封住了，石門上卻插著六把形狀奇特火炬（huoju）。 細
+門（door）封住了，石門上卻插着六把形狀奇特火炬（huoju）。 細
 看石門周圍，只見有六個像是人工開鑿小山洞。
 LONG );
 
         set("item_desc", ([
                "door"   : (: look_door :),
-               "huoju"  : HIR "這些火炬看來很奇怪，似乎連接著什麼機關！\n" NOR,
+               "huoju"  : HIR "這些火炬看來很奇怪，似乎連接着什麼機關！\n" NOR,
         ]));
 
         set("no_clean_up", 0);
@@ -61,12 +61,12 @@ string look_door()
         ob = find_object(TSROB);
 
         if (! objectp(ob))
-               return "TSR 物件出錯，請與巫師聯系！\n";
+               return "TSR 物件出錯，請與巫師聯繫！\n";
 
         opened=query("lock/opened", ob);
 
         if (opened == "" || ! stringp(opened))
-               return "只見石門緊閉，上面插著六把火炬（huoju），但都熄滅了！\n";
+               return "只見石門緊閉，上面插着六把火炬（huoju），但都熄滅了！\n";
 
         if( query("lock/unlocked", ob) && sizeof(opened) == 6 )
                return NOR + WHT "\n只見石門陷入地下，六把火炬燒得正旺！一個入口露了出來。\n" NOR;
@@ -78,7 +78,7 @@ string look_door()
               msg += change_num[temp];
               if (n < sizeof(opened) - 1)msg += "、" ;              
         }
-        msg += "把火炬燃燒著！\n" NOR;
+        msg += "把火炬燃燒着！\n" NOR;
  
         return msg;
 

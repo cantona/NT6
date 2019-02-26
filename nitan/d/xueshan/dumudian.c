@@ -15,7 +15,7 @@ void create()
 {
         set("short", "度母殿");
         set("long", @LONG
- 這裡是雪山寺的度母殿，正中五尊大座佛，均為高肉髻、外披袒
+ 這裏是雪山寺的度母殿，正中五尊大座佛，均為高肉髻、外披袒
 右袈裟、結跏趺坐、執手印須弭坐各異。殿內對稱排列四根大柱，上
 雕忍冬紋，下刻連珠紋。北壁上供有兩尊金剛像：馬頭明王和閻魔護
 法。
@@ -69,7 +69,7 @@ int introduce_robber(object current_player)
 //        printf("test3\n");
 //        message("vision", "一個"+robber->name(1)+"急急忙忙走了過來。\n", this_object(), robber);
         message_vision(HIC"一個$N急急忙忙走了過來。\n"NOR, robber);
-        message_vision(HIR"$N說道：聽說這個銅缸裡存著喇嘛用的酥油，老子今天特地來看看，識相的趕快給我滾開！\n" NOR, robber, current_player);
+        message_vision(HIR"$N説道：聽説這個銅缸裏存着喇嘛用的酥油，老子今天特地來看看，識相的趕快給我滾開！\n" NOR, robber, current_player);
         robber->start_checking(current_player);
 //        printf("test4\n");
     }

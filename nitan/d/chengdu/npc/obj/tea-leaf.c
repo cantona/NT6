@@ -19,7 +19,7 @@ void create()
                 set("damage", 1);        //Here the damage=int_throwing, added by King
                 set("material", "wood");
                 set("wield_msg", HIC"$N迅速地從暗器袋中掏出一些茶葉，捏在手中就待發出！\n"NOR);
-                set("unwield_msg",HIC"$N將手裡剩下的茶葉盡數放回暗器袋中。\n"NOR);
+                set("unwield_msg",HIC"$N將手裏剩下的茶葉盡數放回暗器袋中。\n"NOR);
         }
         set_amount(50);
         init_throwing(1);

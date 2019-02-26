@@ -31,7 +31,7 @@ void create()
         set("long", @LONG
 這便是當年名震江湖的華山名宿風清揚。他身
 著青袍，神氣抑鬱臉如金紙。身材瘦長，眉宇
-間一直籠罩著一股淡淡的憂傷神色，顯然對當
+間一直籠罩着一股淡淡的憂傷神色，顯然對當
 年的劍氣之爭一直難以忘懷。
 LONG);
         set("gender", "男性");
@@ -147,7 +147,7 @@ int auto_kill(object ob)
 {
         object me = this_object();
 
-        command("say 好家伙竟敢謀害桃谷六仙，納命來吧！");
+        command("say 好傢伙竟敢謀害桃谷六仙，納命來吧！");
         me->kill_ob(ob);
         ob->fight(me);
         return 1;
@@ -160,7 +160,7 @@ int improve_sword(object ob)
         if (! objectp(ob)) return 1;
         my_sword = ob->query_skill("sword", 1);
         command("say " + RANK_D->query_respect(ob) + "既然一場來到，你我可謂有緣，待我指點你一些劍法吧。");
-        message_vision("風清揚開始為$N解說基本劍法的精義。\n", ob);
+        message_vision("風清揚開始為$N解説基本劍法的精義。\n", ob);
 
         if (my_sword < 100)
         {
@@ -178,9 +178,9 @@ int improve_sword(object ob)
                 tell_object( ob, "你的基本劍法增加了五級！\n");
         }
         else {
-                message_vision("風清揚對著$N驚訝地「啊！」了一聲。\n", ob);
+                message_vision("風清揚對着$N驚訝地「啊！」了一聲。\n", ob);
                 command("say " + RANK_D->query_respect(ob) + "的劍法已然登堂入室，老朽不勝佩服！\n");
-                tell_object(ob, "你的基本劍法已躊爐火純青之境，風清揚已沒什麼可指點于你的了！\n");
+                tell_object(ob, "你的基本劍法已躊爐火純青之境，風清揚已沒什麼可指點於你的了！\n");
                 set("see_feng", 1, ob);
                 return 1;
         }
@@ -223,7 +223,7 @@ mixed teach_lonely_sword()
 
         set_temp("learnd_lonely_sword", 1, me);
         command("say 很好，很好。這門劍法重在劍意，不在招式。");
-        command("say 倘若學習，切不可拘泥于形式。");
+        command("say 倘若學習，切不可拘泥於形式。");
         return 0;
 }
 
@@ -277,7 +277,7 @@ int recognize_apprentice(object ob, string skill)
                 return -1;
         }
 
-        if( query("character", ob) == "陰險姦詐"
+        if( query("character", ob) == "陰險奸詐"
             || query("character", ob) == "心狠手辣" )
         {
                 command("heng");
@@ -331,7 +331,7 @@ int recognize_apprentice(object ob, string skill)
         {
                 if (skill == "sword")
                 {
-                        command("say 好吧，我就教你一點關于劍法的知識。");
+                        command("say 好吧，我就教你一點關於劍法的知識。");
                         set("can_learn/feng/sword", 1, ob);
                         return 1;
                 }
@@ -350,7 +350,7 @@ int recognize_apprentice(object ob, string skill)
         if (check_skill(skill) == -1)
                 return -1;
 
-        message_sort(HIW "\n$N" HIW "點了點頭，對$n" HIW "說道：“甚"
+        message_sort(HIW "\n$N" HIW "點了點頭，對$n" HIW "説道：“甚"
                      "好，甚好。雖然我不收徒，不過看你天資實在不錯，"
                      "就傳你一點劍法吧。這套獨孤九劍共分為九勢，我先"
                      "傳你總訣式，其他破劍式、破刀式、破槍式、破鞭式"
@@ -432,14 +432,14 @@ string ask_skill()
         if( query("potential", me)-query("learned_points", me)<10 )
         {
                 set("learned_points",query("potential",  me), me);
-                return "獨孤九劍要旨在于「悟」，不可拘泥不化，講究料敵機先，出奇制勝。\n"+
+                return "獨孤九劍要旨在於「悟」，不可拘泥不化，講究料敵機先，出奇制勝。\n"+
                 HIG "你聽了風清揚的教導，頗覺迷茫，看"
                         "來是潛能不夠了。" NOR;
         }
         addn("leaned_points", 10, me);
         if (random(5) > 2)
         {
-                return "獨孤九劍要旨在于「悟」，不可拘泥不化，講究料敵機先，出奇制勝。\n"HIY "你聽了風清揚的教導，頗有心得。" NOR;
+                return "獨孤九劍要旨在於「悟」，不可拘泥不化，講究料敵機先，出奇制勝。\n"HIY "你聽了風清揚的教導，頗有心得。" NOR;
         }
         return MASTER_D->teach_pfm(this_player(),this_object(),([
                                         "perform"       : "can_perform/lonely-sword/po",            //pfm的代碼
@@ -468,14 +468,14 @@ string ask_skill1()
         if( query("potential", me)-query("learned_points", me)<10 )
         {
                 set("learned_points",query("potential",  me), me);
-                return "獨孤九劍要旨在于「悟」，不可拘泥不化，講究料敵機先，出奇制勝。\n"+
+                return "獨孤九劍要旨在於「悟」，不可拘泥不化，講究料敵機先，出奇制勝。\n"+
                 HIG "你聽了風清揚的教導，頗覺迷茫，看"
                         "來是潛能不夠了。" NOR;
         }
         addn("leaned_points", 10, me);
         if (random(5) > 2)
         {
-                return "獨孤九劍要旨在于「悟」，不可拘泥不化，講究料敵機先，出奇制勝。\n"HIY "你聽了風清揚的教導，頗有心得。" NOR;
+                return "獨孤九劍要旨在於「悟」，不可拘泥不化，講究料敵機先，出奇制勝。\n"HIY "你聽了風清揚的教導，頗有心得。" NOR;
         }
         return MASTER_D->teach_pfm(this_player(),this_object(),([
                                         "perform"       : "can_perform/lonely-sword/xiao",            //pfm的代碼
@@ -504,14 +504,14 @@ string ask_skill2()
         if( query("potential", me)-query("learned_points", me)<10 )
         {
                 set("learned_points",query("potential",  me), me);
-                return "獨孤九劍要旨在于「悟」，不可拘泥不化，講究料敵機先，出奇制勝。\n"+
+                return "獨孤九劍要旨在於「悟」，不可拘泥不化，講究料敵機先，出奇制勝。\n"+
                 HIG "你聽了風清揚的教導，頗覺迷茫，看"
                         "來是潛能不夠了。" NOR;
         }
         addn("leaned_points", 10, me);
         if (random(5) > 2)
         {
-                return "獨孤九劍要旨在于「悟」，不可拘泥不化，講究料敵機先，出奇制勝。\n"HIY "你聽了風清揚的教導，頗有心得。" NOR;
+                return "獨孤九劍要旨在於「悟」，不可拘泥不化，講究料敵機先，出奇制勝。\n"HIY "你聽了風清揚的教導，頗有心得。" NOR;
         }
         return MASTER_D->teach_pfm(this_player(),this_object(),([
                                         "perform"       : "can_perform/lonely-sword/hun",            //pfm的代碼
@@ -542,14 +542,14 @@ string ask_skill3()
         if( query("potential", me)-query("learned_points", me)<10 )
         {
                 set("learned_points",query("potential",  me), me);
-                return "獨孤九劍要旨在于「悟」，不可拘泥不化，講究料敵機先，出奇制勝。\n"+
+                return "獨孤九劍要旨在於「悟」，不可拘泥不化，講究料敵機先，出奇制勝。\n"+
                 HIG "你聽了風清揚的教導，頗覺迷茫，看"
                         "來是潛能不夠了。" NOR;
         }
         addn("leaned_points", 10, me);
         if (random(5) > 2)
         {
-                return "獨孤九劍要旨在于「悟」，不可拘泥不化，講究料敵機先，出奇制勝。\n"HIY "你聽了風清揚的教導，頗有心得。" NOR;
+                return "獨孤九劍要旨在於「悟」，不可拘泥不化，講究料敵機先，出奇制勝。\n"HIY "你聽了風清揚的教導，頗有心得。" NOR;
         }
         return MASTER_D->teach_pfm(this_player(),this_object(),([
                                         "perform"       : "can_perform/lonely-sword/jian",            //pfm的代碼

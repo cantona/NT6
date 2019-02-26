@@ -5,7 +5,7 @@
                 object find_player( string str );
                 物件 find_player( 字串 str );
         函數用法:
-                與 find_living()  相似, 但是只尋找可互動的 (interactive)
+                與 find_living()  相似, 但是隻尋找可互動的 (interactive)
                 或是曾經為可互動的物件.
         參考函數:
                 lower_case(3), find_living(3), livings(3), users(3),

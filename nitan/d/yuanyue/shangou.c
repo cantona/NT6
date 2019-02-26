@@ -8,8 +8,8 @@ void create()
 {
         set("short", "山溝"); 
         set("long", @LONG
-這裡是圓月山莊後園的一個山溝，旁邊是一片密密的鬆木林，四
-周一片寂靜。
+這裏是圓月山莊後園的一個山溝，旁邊是一片密密的松木林，四
+週一片寂靜。
 LONG);
         set("outdoors", "wansong");
         set("type","forest");
@@ -40,7 +40,7 @@ string long()
  
         if (NATURE_D->query_month() == 7 &&
             NATURE_D->query_day() == 15)
-                msg += HIW "山溝中的洪水滾滾而過，氣勢非凡，你見此情形頓時有想要跳入洪水中(jump hongshui)的沖動。" NOR;
+                msg += HIW "山溝中的洪水滾滾而過，氣勢非凡，你見此情形頓時有想要跳入洪水中(jump hongshui)的衝動。" NOR;
         
         return sort_string(msg, 60, 4); 
 }

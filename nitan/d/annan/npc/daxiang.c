@@ -9,7 +9,7 @@ void create()
         set("race", "野獸");
         set("age", 20);
         set("long", @LONG
-一只大象，雄偉極了。安南特產。大地之王。
+一隻大象，雄偉極了。安南特產。大地之王。
 
 LONG);
         set("attitude", "aggressive");

@@ -11,13 +11,13 @@ string chinese_name() { return "傷神之擾"; }
 string update_msg_others()
 {
         return HIM "$N" HIM "搖頭晃腦，連眼睛都睜不開了，看上"
-               "去困倦之極。\n" NOR;
+               "去睏倦之極。\n" NOR;
 }
 
 string update_msg_self()
 {
         return HIR "只覺得自己精神不濟，疲憊不堪，看來是受到達"
-               "摩傷神劍的幹擾。\n" NOR;
+               "摩傷神劍的干擾。\n" NOR;
 }
 
 string die_msg_others()

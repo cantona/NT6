@@ -33,8 +33,8 @@ int ask_hbd(object me, object ob)
      if( query("bunch/bunch_name", me) != "黑白道" && query("shen", me) <= 0 )
      { 
            command("whisper"+query("id", me)+"兄弟是想加入咱們黑白道的吧！隨我來吧！");
-           tell_object(me,HIB"老漢帶你到了後院，移開一塊石板，你順著石階走了下去。\n"NOR);
-           message("vision", me->name() + "帶著老漢急急忙忙的走了。\n", 
+           tell_object(me,HIB"老漢帶你到了後院，移開一塊石板，你順着石階走了下去。\n"NOR);
+           message("vision", me->name() + "帶着老漢急急忙忙的走了。\n", 
                               environment(me), ({me}) ); 
            me->move("/d/beijing/hbd_bjzb");
            return 1; 
@@ -45,7 +45,7 @@ int ask_hbd(object me, object ob)
            return 1; 
      } 
 
-     tell_object(me,"老漢說道：“既然是本幫兄弟，就隨我來吧！”\n");
+     tell_object(me,"老漢説道：“既然是本幫兄弟，就隨我來吧！”\n");
      me->move("/d/beijing/hbd_bjzb"); 
      return 1; 
 } 

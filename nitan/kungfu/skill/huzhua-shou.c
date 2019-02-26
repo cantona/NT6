@@ -2,7 +2,7 @@
 inherit SKILL;
 
 mapping *action = ({
-([      "action": "在呼呼風聲中，$N使一招「虎口奪食」，雙手如鉤如戢，插向$n的$l",
+([      "action": "在呼呼風聲中，$N使一招「虎口奪食」，雙手如鈎如戢，插向$n的$l",
         "force" : 100,
         "attack": 28,
         "dodge" : 17,
@@ -62,14 +62,14 @@ mapping *action = ({
         "skill_name" : "惡林虎嘯" ,
         "damage_type" : "抓傷"
 ]),
-([      "action": "$N右腿斜插$n二腿之間，一招「虎爪絕戶」，上手取目，下手反勾$n的襠部",
+([      "action": "$N右腿斜插$n二腿之間，一招「虎爪絕户」，上手取目，下手反勾$n的襠部",
         "force" : 245,
         "attack": 56,
         "dodge" : 53,
         "parry" : 27,
         "damage": 41,
         "lvl"   : 100,
-        "skill_name" : "虎爪絕戶" ,
+        "skill_name" : "虎爪絕户" ,
         "damage_type" : "抓傷"
 ]),
 ([      "action": "$N使出「困獸猶鬥」，雙爪如狂風驟雨般對準$n的$l連續抓出",
@@ -89,19 +89,19 @@ int valid_enable(string usage) { return usage == "claw" ||  usage == "parry"; }
 int valid_learn(object me)
 {
         if( query_temp("weapon", me) || query_temp("secondary_weapon", me) )
-                return notify_fail("練虎抓絕戶手必須空手。\n");
+                return notify_fail("練虎抓絕户手必須空手。\n");
 
         if ((int)me->query_skill("force") < 50)
-                return notify_fail("你的內功火候不夠，無法學虎抓絕戶手。\n");
+                return notify_fail("你的內功火候不夠，無法學虎抓絕户手。\n");
 
         if( query("max_neili", me)<250 )
-                return notify_fail("你的內力太弱，無法練虎抓絕戶手。\n");
+                return notify_fail("你的內力太弱，無法練虎抓絕户手。\n");
 
         if ((int)me->query_skill("claw") < 30)
-                return notify_fail("你的基本爪法等級太低，無法學虎抓絕戶手。\n");
+                return notify_fail("你的基本爪法等級太低，無法學虎抓絕户手。\n");
 
         if ((int)me->query_skill("claw", 1) < (int)me->query_skill("huzhua-shou", 1))
-                return notify_fail("你的基本爪法火候水平有限，無法領會更高深的虎抓絕戶手。\n");
+                return notify_fail("你的基本爪法火候水平有限，無法領會更高深的虎抓絕户手。\n");
 
         return 1;
 }
@@ -134,7 +134,7 @@ int practice_skill(object me)
                 return notify_fail("你的體力太低了。\n");
 
         if( query("neili", me)<80 )
-                return notify_fail("你的內力不夠練虎抓絕戶手。\n");
+                return notify_fail("你的內力不夠練虎抓絕户手。\n");
 
         me->receive_damage("qi", 60);
         addn("neili", -69, me);

@@ -25,7 +25,7 @@ void main(object ob)
 		load_object("/daemons/cast_d.c")->reg_player(p_name, "sugong");
 	ob->award_exp(ob->query_sk_level("sk_zhimou")/2+random(20),"sugong");
 		ob->simple_action(SG_SKILL_D->query_use("sugong"));
-		ob->start_busy(10, "你正忙于使用速攻之計。");
+		ob->start_busy(10, "你正忙於使用速攻之計。");
 
 		call_out("show_result", 5+random(5), ob, p_skill, p_id);
 	}

@@ -13,11 +13,11 @@ create_food(string nmstr, string* idlist, string longstr)
         obj->set_name(nmstr, idlist);
         if (longstr)
         set("long", @LONG
-進門繞過一道淡紅綢屏風，迎面牆上掛著一副『牡丹爭艷』圖，
+進門繞過一道淡紅綢屏風，迎面牆上掛着一副『牡丹爭豔』圖，
 牡丹是中國國花，素以富貴著稱。圖側對聯： 幽徑天姿呈獨秀，古園
-國色冠群芳。襯托了那一莖牡丹分外精神。廳內陳列奢華，正中央一
+國色冠羣芳。襯托了那一莖牡丹分外精神。廳內陳列奢華，正中央一
 張雕花楠木青漆嵌玉大圓桌，四周十二張鑲銀象牙扶手紅木椅，杯碗
-勺箸，入眼生輝。    這裡便是醉仙樓的玫瑰廳，桌上平舖著一份菜
+勺箸，入眼生輝。    這裏便是醉仙樓的玫瑰廳，桌上平鋪着一份菜
 單(menu)。
 LONG );
         else
@@ -59,11 +59,11 @@ void create()
 {
         set("short", HIR"牡丹宴廳"NOR);
         set("long", @LONG
-進門繞過一道淡紅綢屏風，迎面牆上掛著一副『牡丹爭艷』圖，牡丹是中國
-國花，素以富貴著稱。圖側對聯: 幽徑天姿呈獨秀，古園國色冠群芳。襯托了那
+進門繞過一道淡紅綢屏風，迎面牆上掛着一副『牡丹爭豔』圖，牡丹是中國
+國花，素以富貴著稱。圖側對聯: 幽徑天姿呈獨秀，古園國色冠羣芳。襯托了那
 一莖牡丹分外精神。廳內陳列奢華，正中央一張雕花楠木青漆嵌玉大圓桌，四周
 十二張鑲銀象牙扶手紅木椅，杯碗勺箸，入眼生輝。
-    這裡便是醉仙樓的玫瑰廳，桌上平舖著一份菜單(menu)。
+    這裏便是醉仙樓的玫瑰廳，桌上平鋪着一份菜單(menu)。
 LONG );
         set("exits", ([ /* sizeof() == 1 */
             "north" : "/d/city/zxlpath",
@@ -77,7 +77,7 @@ LONG );
 
         order marry:    訂婚宴        (3兩黃金)
 
-        order player:   群豪宴        (5兩黃金)
+        order player:   羣豪宴        (5兩黃金)
 
         order end:      結  束
 
@@ -154,7 +154,7 @@ int do_order(string arg)
                 return 1;
         }
         if (mesg)
-                return notify_fail("這裡已經被人包租了.\n");
+                return notify_fail("這裏已經被人包租了.\n");
          notify_fail("你沒有足夠的錢或零錢不夠.\n");
         if (arg == "marry") {
                 mesg = me->name() + "現在在醉仙樓牡丹廳舉行訂婚酒宴了  !!!\n";
@@ -167,16 +167,16 @@ int do_order(string arg)
                 create_wine(GRN"竹葉青"NOR, ({ "wine" }), GRN"翡翠杯"NOR );
                 create_wine(YEL"紹興黃酒"NOR, ({ "wine" }), HIY"象牙杯"NOR );
                 create_wine(HIR"女兒紅"NOR, ({ "wine" }), MAG"紫檀杯"NOR );
-                create_wine(WHT"茅台酒"NOR, ({ "wine" }), YEL"鎏金杯"NOR );
+                create_wine(WHT"茅台酒"NOR, ({ "wine" }), YEL"鎏金盃"NOR );
                 create_wine(RED"桂花酒"NOR, ({ "wine" }), WHT"琉璃杯"NOR );
                 create_food(YEL"香酥花生"NOR,({"peanut"}) );
                 create_food(HIR"酒糟紅棗"NOR,({"jujube"}) );
                 create_food(RED"喜糖"NOR,({"sugar"}) );
                 create_food(HIW"奶油瓜子"NOR,({"melon seeds","seeds"}) );
-                create_food(HIG"碧螺春卷"NOR, ({ "spring roll","roll" }) );
+                create_food(HIG"碧螺春捲"NOR, ({ "spring roll","roll" }) );
                 create_food(HIC"香片蒸魚"NOR, ({"fish"}) );
                 create_food(HIW"麻辣手撕雞"NOR, ({"chicken"}) );
-                create_food(HIR"幹煸尤魚"NOR, ({"fish"}) );
+                create_food(HIR"乾煸尤魚"NOR, ({"fish"}) );
                 create_food(HIY"東北水餃"NOR, ({ "dumpling" }) );
                 create_food(RED"麻辣火鍋"NOR, ({ "chafing dish","dish" }) );
                 create_food(HIR"油煎螃蟹"NOR, ({ "crab" }) );
@@ -196,7 +196,7 @@ int do_order(string arg)
                 create_wine(HIR"杜康酒"NOR, ({ "wine" }), HIG"青銅爵"NOR  );
                 create_wine(HIW"透瓶香"NOR, ({ "wine" }), WHT"琉璃杯"NOR  );
                 create_food(HIY"德州扒雞"NOR, ({ "chicken" }) );
-                create_food(HIG"碧螺春卷"NOR, ({ "spring roll","roll" }) );
+                create_food(HIG"碧螺春捲"NOR, ({ "spring roll","roll" }) );
                 create_food(HIC"香片蒸魚"NOR, ({"fish"}) );
                 create_food(YEL"咖喱飯"NOR, ({"rice"}) );
                 create_food(RED"蠔油肉片"NOR, ({"fish meat","meat"}) );
@@ -212,7 +212,7 @@ int do_order(string arg)
                 me->pay_money(40000);
                 create_food(YEL"叫花雞"NOR, ({ "chicken" }) );
                 create_food(HIW"四喜豆腐"NOR, ({ "bean curd" }) );
-                create_food(HIG"碧螺春卷"NOR, ({ "spring","roll" }) );
+                create_food(HIG"碧螺春捲"NOR, ({ "spring","roll" }) );
                 create_food(HIC"香片蒸魚"NOR, ({"fish"}) );
                 create_food(RED"羊肉串"NOR, ({ "mutton" }) );
                 create_food(HIY"花枝飯卷"NOR, ({"rice"}) );
@@ -227,7 +227,7 @@ int do_order(string arg)
                 create_food(RED"蠔油肉片"NOR, ({"fish meat","meat"}) );
                 create_food(YEL"咖喱飯"NOR, ({"rice"}) );
                 create_food(HIW"麻辣手撕雞"NOR, ({"chicken"}) );
-                create_food(HIR"幹煸尤魚"NOR, ({"fish"}) );
+                create_food(HIR"乾煸尤魚"NOR, ({"fish"}) );
                 create_food(HIY"東北水餃"NOR, ({ "dumpling" }) );
                 create_water(HIW"羊奶"NOR, ({ "milk" }), CYN"青花碗"NOR );
                 create_water(GRN"雲霧茶"NOR, ({ "tea" }), MAG"紫砂茶盅"NOR );
@@ -238,7 +238,7 @@ int do_order(string arg)
                 create_wine(WHT"關外白酒"NOR, ({ "wine" }), YEL"犀角杯"NOR );
                 create_wine(RED"葡萄酒"NOR, ({ "wine" }), HIW"夜光杯"NOR );
                 create_wine(WHT"高粱酒"NOR, ({ "wine" }), CYN"青銅爵"NOR );
-                create_wine(HIG"百草酒"NOR, ({ "wine" }), RED"古籐杯"NOR );
+                create_wine(HIG"百草酒"NOR, ({ "wine" }), RED"古藤杯"NOR );
                 create_wine(HIR"狀元紅"NOR, ({ "wine" }), WHT"古瓷杯"NOR );
                 create_wine(GRN"梨花酒"NOR, ({ "wine" }), HIG"翡翠杯"NOR );
                 create_wine(HIW"玉露酒"NOR, ({ "wine" }), WHT"琉璃杯"NOR );

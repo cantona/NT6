@@ -6,7 +6,7 @@ void create()
 {
         set_name("辛雙清", ({ "xin shuangqing", "xin", "shuangqing"}));
         set("long",
-                "她是一位的四十左右的中年道姑，鐵青著臉，嘴唇緊閉。\n");
+                "她是一位的四十左右的中年道姑，鐵青着臉，嘴脣緊閉。\n");
         set("gender", "女性");
         set("attitude", "friendly");
         set("class", "taoist");
@@ -39,7 +39,7 @@ void create()
         map_skill("parry", "damo-jian");
 
         set("inquiry", ([
-                "無量玉壁"  : "那是本派禁地，任何外人不得擅入。幹犯禁忌，可叫你死葬身之地。",
+                "無量玉壁"  : "那是本派禁地，任何外人不得擅入。干犯禁忌，可叫你死葬身之地。",
         ]));
 
         create_family("無量劍西宗", 4, "掌門");

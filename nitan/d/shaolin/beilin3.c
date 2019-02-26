@@ -7,10 +7,10 @@ void create()
 {
         set("short", NOR + WHT "地下室" NOR);
         set("long", @LONG
-這裡是佛塔底下的地下密室。密室雖小，卻也五臟俱全，石桌石
-椅，石幾石床，連室內放的幾件器皿，也都是石制的。看來似乎很久
-以前有人在這裡住過。正中的石桌 (table)上平放著一塊薄弧的石板，
-上面好象刻著些什麼。
+這裏是佛塔底下的地下密室。密室雖小，卻也五臟俱全，石桌石
+椅，石几石牀，連室內放的幾件器皿，也都是石制的。看來似乎很久
+以前有人在這裏住過。正中的石桌 (table)上平放着一塊薄弧的石板，
+上面好像刻着些什麼。
 LONG );
         set("exits", ([
                 "up" : __DIR__"beilin2",
@@ -60,7 +60,7 @@ int do_study(string arg)
                 if ((int)me->query_skill("finger", 1) < 100)
                 {
                         me->improve_skill("finger", 2 + random(me->query_int()));
-                        msg += "你對著石桌琢磨了一回兒，似乎對指法有點心得。\n";
+                        msg += "你對着石桌琢磨了一回兒，似乎對指法有點心得。\n";
                         set_temp("stone_learned", 1, me);
                 }
                 break;
@@ -69,7 +69,7 @@ int do_study(string arg)
                 if ((int)me->query_skill("claw", 1) < 100)
                 {
                         me->improve_skill("claw", 2 + random(me->query_int()));
-                        msg += "你對著石桌琢磨了一回兒，似乎對爪法有點心得。\n";
+                        msg += "你對着石桌琢磨了一回兒，似乎對爪法有點心得。\n";
                         set_temp("stone_learned", 1, me);
                 }
                 break;
@@ -78,7 +78,7 @@ int do_study(string arg)
                 if ((int)me->query_skill("strike", 1) < 100)
                 {
                         me->improve_skill("strike", 2 + me->query_int());
-                        msg += "你對著石桌琢磨了一回兒，似乎對掌法有點心得。\n";
+                        msg += "你對着石桌琢磨了一回兒，似乎對掌法有點心得。\n";
                         set_temp("stone_learned", 1, me);
                 }
                 break;
@@ -87,7 +87,7 @@ int do_study(string arg)
                 if ((int)me->query_skill("cuff", 1) < 100)
                 {
                         me->improve_skill("cuff", 2 + random(me->query_int()));
-                        msg += "你對著石桌琢磨了一回兒，似乎對拳法有點心得。\n";
+                        msg += "你對着石桌琢磨了一回兒，似乎對拳法有點心得。\n";
                         set_temp("stone_learned", 1, me);
                 }
                 break;
@@ -96,13 +96,13 @@ int do_study(string arg)
                 if ( (int)me->query_skill("hand", 1) < 100)
                 {
                         me->improve_skill("hand", 2 + random(me->query_int()));
-                        msg += "你對著石桌琢磨了一回兒，似乎對手法有點心得。\n";
+                        msg += "你對着石桌琢磨了一回兒，似乎對手法有點心得。\n";
                         set_temp("stone_learned", 1, me);
                 }
         }
 
         if( !query_temp("stone_learned", me) )
-                msg += HIY "你對著石桌琢磨了一回兒，發現上面所說的已經太"
+                msg += HIY "你對着石桌琢磨了一回兒，發現上面所説的已經太"
                        "過淺顯了。\n" NOR;
 
         write(msg);

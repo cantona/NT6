@@ -18,7 +18,7 @@ void create()
         set_temp("apply/damage", 25);
 
         set("inquiry", ([
-                "狐仙"   : "聽說狐能化成狐仙，我倒是遇見過一回。\n",
+                "狐仙"   : "聽説狐能化成狐仙，我倒是遇見過一回。\n",
                 "緋胭"   : "緋胭姑娘好久沒有來買我的畫了，不知道她現在怎麼樣了？\n",
                 "餓鬼道" : (: ask_eguidao :),
                 
@@ -50,7 +50,7 @@ void create()
 }
 
 // 餓鬼道
-// 需要100張狐貍皮
+// 需要100張狐狸皮
 string ask_eguidao()
 {
         object me;
@@ -74,7 +74,7 @@ string ask_eguidao()
         if (me->query_skill("lunhui-sword",1))
                 return "哼，凡夫俗子，竟然如此貪心！\n";
                                 
-        // 是否閱讀過狐仙書
+        // 是否閲讀過狐仙書
         if( !query("lunhui-sword_quest/read_huxian_book", me) )
         {
                     
@@ -84,28 +84,28 @@ string ask_eguidao()
         
         // 已經完成任務
         if( query("lunhui-sword_quest/eguidao/finish", me) )
-                return "呵呵，你上次找的那些狐貍皮質地不錯，緋胭她很是喜歡。\n";
+                return "呵呵，你上次找的那些狐狸皮質地不錯，緋胭她很是喜歡。\n";
 
         // 分配任務
         if( !query("lunhui-sword_quest/eguidao/give_quest", me) )
         {
                 command("tan");
-                command("say 我現在急需五十張白狐皮來縫制狐皮大衣，緋胭應該會很高興的！");
+                command("say 我現在急需五十張白狐皮來縫製狐皮大衣，緋胭應該會很高興的！");
                 command("ke");
                 command("say 能幫我完成這個心願嗎？");
-                tell_object(me, this_object()->name() + HIG "讓你幫他搜集50張白狐皮，趕快去吧！\n" NOR);
+                tell_object(me, this_object()->name() + HIG "讓你幫他蒐集50張白狐皮，趕快去吧！\n" NOR);
                 set("lunhui-sword_quest/eguidao/give_quest", 1, me);
                 me->save();
-                return "事成之後，我會告訴你一個天大的秘密！";
+                return "事成之後，我會告訴你一個天大的祕密！";
         }
         
         // 完成任務
         
         if (! objectp(ob_hlp = present("baihu pi", me)))
-                return "怎麼樣，50張白狐皮搜集夠了嗎？\n";
+                return "怎麼樣，50張白狐皮蒐集夠了嗎？\n";
                 
         if (base_name(ob_hlp) != "/clone/quarry/item/lipi2")
-                return "怎麼樣，50張白狐皮搜集夠了嗎？\n";
+                return "怎麼樣，50張白狐皮蒐集夠了嗎？\n";
  
         if (ob_hlp->query_amount() >= 50)
         {
@@ -114,14 +114,14 @@ string ask_eguidao()
         }
         else
         {
-                return "怎麼樣，50張白狐皮搜集夠了嗎？\n";
+                return "怎麼樣，50張白狐皮蒐集夠了嗎？\n";
         }
         
         command("hehe");
         command("nod");
-        command("say 既然你幫我了這個忙，我就告訴你一個秘密 ...");
+        command("say 既然你幫我了這個忙，我就告訴你一個祕密 ...");
         
-        message_sort(HIC "\n$N" HIC "走上前去，在$n" HIC "耳邊悄悄說了幾句，然後又拿出一本書，指指點點，"
+        message_sort(HIC "\n$N" HIC "走上前去，在$n" HIC "耳邊悄悄説了幾句，然後又拿出一本書，指指點點，"
                      "$n" HIC "不住地點頭，忽而眉頭深鎖，忽而低頭沉思 ……\n良久，$n" HIC "大笑一聲，似乎"
                      "對剛才的疑慮有所頓悟。\n", this_object(), me);
                      

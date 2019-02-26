@@ -32,12 +32,12 @@ int perform(object me, object target)
                 return notify_fail("你的內力不夠。\n");
 
         if (! living(target))
-               return notify_fail("對方都已經這樣了，用不著這麼費力吧？\n");
+               return notify_fail("對方都已經這樣了，用不着這麼費力吧？\n");
 
         addn("neili", -200, me);
         msg = HIW "\n$N" HIW "淡然一笑，本就快捷絕倫的刀法驟然變"
               "得更加凌厲！就在這一瞬之間，$N" HIW "已劈出二十"
-              "一刀！\n刀夾雜著風，風裡含著刀影！$n"
+              "一刀！\n刀夾雜着風，風裏含着刀影！$n"
               HIW "只覺得心跳都停止了！\n" NOR;
 
         if (random(10) < 2)

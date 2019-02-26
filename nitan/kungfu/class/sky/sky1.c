@@ -8,7 +8,7 @@ void create()
 
                 一         重         天
 
-    這裡一片天際，茫茫雲海，四周不見任何事物。遠方一重雲彩從
+    這裏一片天際，茫茫雲海，四周不見任何事物。遠方一重雲彩從
 地面升起，架起了一座雲梯(yunti)，似乎連接上層的天際…………
 
 
@@ -34,7 +34,7 @@ void init()
         
         if (! me->query("sky12/tianmen") && userp(me))
         {
-                tell_object(me, HIG "鐵傳甲對你說道：你沒有使用過東皇鐘，是怎麼到天界來的，哼！\n" NOR);
+                tell_object(me, HIG "鐵傳甲對你説道：你沒有使用過東皇鍾，是怎麼到天界來的，哼！\n" NOR);
 
                 me->delete("sky12");
                 me->save();
@@ -68,8 +68,8 @@ int do_move(string arg)
                               "，請停步。”\n" NOR);
                         return 1;
                 }
-                message_vision(HIW "\n$N" HIW "順著雲梯輕輕一"
-                               "縱，身體便隨著氣流飄了上去……\n"
+                message_vision(HIW "\n$N" HIW "順着雲梯輕輕一"
+                               "縱，身體便隨着氣流飄了上去……\n"
                                NOR, this_player());
                 me->move("/kungfu/class/sky/sky2"); 
                 return 1;

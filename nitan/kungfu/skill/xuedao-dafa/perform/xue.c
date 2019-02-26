@@ -46,12 +46,12 @@ int perform(object me, object target)
                 return notify_fail("你目前真氣不足，難以施展" XUE "。\n");
 
         if (! living(target))
-                return notify_fail("對方都已經這樣了，用不著這麼費力吧？\n");
+                return notify_fail("對方都已經這樣了，用不着這麼費力吧？\n");
 
         ap = attack_power(me, "blade");
         dp = defense_power(target, "parry");
 
-        msg = HIR "$N" HIR "揮刀向左肩一勒，血珠頓時濺滿刀面，緊接著右臂"
+        msg = HIR "$N" HIR "揮刀向左肩一勒，血珠頓時濺滿刀面，緊接着右臂"
               "掄出一片血光向$n" HIR "當頭劈落。\n" NOR;
 
         if (ap / 2 + random(ap) > dp)

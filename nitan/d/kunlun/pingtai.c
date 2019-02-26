@@ -9,9 +9,9 @@ void create()
         set("short", HIW"大平台"NOR);
         set("long", @LONG
 前面是一堵屏風也似的大山壁。眼前茫茫雲海，更無去路，你竟是
-置身在一個三面皆空的極高平台上。那平台倒有十余丈方圓，可是半天
+置身在一個三面皆空的極高平台上。那平台倒有十餘丈方圓，可是半天
 臨空，上既不得，下又不能，當真是死路一條。這大平台上白皚皚的都
-是冰雪，既無樹林，更無野獸。唯有平台下有一株鬆樹(tree)。
+是冰雪，既無樹林，更無野獸。唯有平台下有一株松樹(tree)。
     你向前滑出一步，但見左側山壁黑黝黝的似乎有個洞穴，山壁側黑
 黝黝似乎有個小山洞(dong)。
 LONG );
@@ -19,7 +19,7 @@ LONG );
                 "west" : __DIR__"xsxiepo2",
         ]));
         set("item_desc", ([
-                "tree": "一株挺拔健碩的鬆樹。\n",
+                "tree": "一株挺拔健碩的松樹。\n",
                 "dong": "一個不知深淺的山洞。\n",
         ]));
         set("no_clean_up", 0);
@@ -43,7 +43,7 @@ int do_enter(string arg)
                 write("你想幹什麼呀?\n");
                 return 1;
         }
-        message_vision("$N深吸了一口氣，慢慢沿著洞壁往裡爬。\n", me);
+        message_vision("$N深吸了一口氣，慢慢沿着洞壁往裏爬。\n", me);
         if(n < 20 || wizardp(me))
         {
                 message_vision("$N爬進數丈，忽見前面透進光亮，心中大喜，手足兼施，加速前行。\n", me);
@@ -65,7 +65,7 @@ int do_climb(string arg)
                 write("你想幹什麼呀？\n");
                 return 1;
         }
-        message_vision("$N手攀鬆樹，搖了兩搖，試試是否結實。\n", me);
+        message_vision("$N手攀松樹，搖了兩搖，試試是否結實。\n", me);
         message_vision("$N忽然一個失手，向懸崖下直跌下去。\n", me);
         me->move(__DIR__"xuedi");
         me->receive_damage("qi",100 - me->query_dex());

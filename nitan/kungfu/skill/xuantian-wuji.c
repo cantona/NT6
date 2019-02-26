@@ -41,7 +41,7 @@ int help(object me)
         write(HIC"\n玄天無極功："NOR"\n");
         write(@HELP
 
-    玄天無極功是昆侖派的本門內功。
+    玄天無極功是崑崙派的本門內功。
 
         學習要求：
                 基本內功10級

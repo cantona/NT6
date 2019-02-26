@@ -1,7 +1,7 @@
 inherit SKILL;
 
 mapping *action = ({
-([        "action": "$N劍尖向右，繞身一周，一式「百鶴鳴曉」，$w突然向$n的$l刺去，",
+([        "action": "$N劍尖向右，繞身一週，一式「百鶴鳴曉」，$w突然向$n的$l刺去，",
         "force" : 35,
         "dodge" : -40,
         "parry" : -40,
@@ -31,14 +31,14 @@ mapping *action = ({
         "skill_name" : "乘鶴東歸",
         "damage_type":"刺傷"
 ]),
-([        "action": "$N撤步縮身，$w按藏于臂下，一招「一鶴沖宵」，快如閃電般刺向$n的$l",
+([        "action": "$N撤步縮身，$w按藏於臂下，一招「一鶴衝宵」，快如閃電般刺向$n的$l",
         "force" : 83,
         "dodge" : -18,
         "parry" : -18,
         "attack": 9,
         "damage": 10,
         "lvl"   : 60,
-        "skill_name" : "一鶴沖宵",
+        "skill_name" : "一鶴衝宵",
         "damage_type":"刺傷"
 ]),
 ([        "action": "$N踏步向前，一式「鶴貝相爭」，手中長劍擺動，劍尖刺向$n的$l",
@@ -61,7 +61,7 @@ mapping *action = ({
         "skill_name" : "雲鶴三舞",
         "damage_type":"劈傷"
 ]),
-([        "action": "$N一式「雲鶴七舞」，劍走中鋒，氣勢威嚴，將$n籠罩于重重劍氣之中",
+([        "action": "$N一式「雲鶴七舞」，劍走中鋒，氣勢威嚴，將$n籠罩於重重劍氣之中",
         "force" : 217,
         "dodge" : 5,
         "parry" : 5,

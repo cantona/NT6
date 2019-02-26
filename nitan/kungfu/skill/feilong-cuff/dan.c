@@ -29,7 +29,7 @@ int perform(object me, object target)
 
         if( objectp(weapon=query_temp("weapon", me)) || 
             objectp(weapon=query_temp("handing", me)) )
-                return notify_fail("你必須空著雙手才能使用掌法絕招。\n");
+                return notify_fail("你必須空着雙手才能使用掌法絕招。\n");
 
         if ((int)me->query_skill("feilong--cuff", 1) < 200)
                 return notify_fail("你的飛龍神拳不夠嫻熟，不會使用「飛龍斬」。\n");
@@ -62,7 +62,7 @@ int perform(object me, object target)
         {
                 addn("neili", -damage/2, me);
 
-                msg += HIR "\n只聽“□嚓”一聲悶響！$n" HIR "噴出一口鮮血，軟塌塌的搖搖欲墜……\n" NOR;
+                msg += HIR "\n只聽“咔嚓”一聲悶響！$n" HIR "噴出一口鮮血，軟塌塌的搖搖欲墜……\n" NOR;
                 target->receive_damage("qi",damage,me);
                 target->receive_wound("qi",damage/2 + random(damage/2),me);
                 str=COMBAT_D->status_msg(query("qi", target)*100/query("max_qi", target));

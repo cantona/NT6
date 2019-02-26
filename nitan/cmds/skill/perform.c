@@ -29,7 +29,7 @@ int main(object me, string arg)
                 return notify_fail(HIR "你只覺全身力道竟似渙散了一般，全然無法控制。\n" NOR);
 
         if (query_temp("freeze", me) && time()-query_temp("last_perform_time", me) < 1)
-                return notify_fail(HIR "你處于冰凍不良的狀態下，動作緩慢，無法如此快速連續使用絕招。\n" NOR);
+                return notify_fail(HIR "你處於冰凍不良的狀態下，動作緩慢，無法如此快速連續使用絕招。\n" NOR);
 
         if (sscanf(arg, "%s and %s", arg, and) == 2 ||
             sscanf(arg, "%s twice", arg) == 1 && (and = arg))
@@ -176,7 +176,7 @@ int help (object me)
 
 perform sword.chan
 
-換句話說，只要是 enable 中的武功有特殊招式的，都可以用這個指
+換句話説，只要是 enable 中的武功有特殊招式的，都可以用這個指
 令使用。
 
 如果你精通左右互搏，可以同時使用兩個招式攻擊同一對手或則分別

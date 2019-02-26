@@ -6,7 +6,7 @@ void create()
 {
         set_name("陳滸", ({ "chen hu", "chen" }));
         set("title","金牛武館教習");
-        set("long", "陳老爺子在武館也忙了幾十年了，仍勇于提攜後生。\n");
+        set("long", "陳老爺子在武館也忙了幾十年了，仍勇於提攜後生。\n");
         set("gender", "男性");
         set("age", 65);
 

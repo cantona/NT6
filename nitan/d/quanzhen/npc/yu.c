@@ -1,10 +1,10 @@
-// yu.c 于道顯
+// yu.c 於道顯
 
 inherit NPC;
 
 void create()
 {
-        set_name("于道顯", ({"yu daoxian", "yu"}));
+        set_name("於道顯", ({"yu daoxian", "yu"}));
         set("gender", "男性");
         set("age", 24);
         set("class", "swordman");

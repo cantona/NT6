@@ -41,7 +41,7 @@ void create()
                 set_default_object(__FILE__);
         else {
                 set("unit", "粒");
-                set("long", "一粒淡褐色的草籽，種在田地裡(zhong)會長成草藥。\n");
+                set("long", "一粒淡褐色的草籽，種在田地裏(zhong)會長成草藥。\n");
                 set("value", 10);
         }
         setup();
@@ -71,10 +71,10 @@ int do_zhong(string arg)
                 return notify_fail("指令格式：zhong cao zi\n");
 
         if( !query("yaotian", where) )
-                return notify_fail("只能種在藥田裡。\n");
+                return notify_fail("只能種在藥田裏。\n");
 
         if( query("zhongyao", where) >= 10 )
-                return notify_fail("這裡已經沒地方種藥材了。\n");
+                return notify_fail("這裏已經沒地方種藥材了。\n");
 
         if( query("jingli", me) <= 20 )
                 return notify_fail("你太累了，還是先休息一下吧！\n");
@@ -86,9 +86,9 @@ int do_zhong(string arg)
                 return notify_fail("你已經在種植草藥了！\n");
                 
         if( query("value", ob) != 10 )
-                return notify_fail("已經種在地裡了！\n");
+                return notify_fail("已經種在地裏了！\n");
 
-        message_vision("$N輕輕將$n種在地裡！\n", me, ob);
+        message_vision("$N輕輕將$n種在地裏！\n", me, ob);
 
         ob->move(where);
 
@@ -139,8 +139,8 @@ int grow_b(object ob, object me)
                 return 1;
         }else
         {
-                message_vision(WHT"由于主人沒有管理，小青草枯萎了。\n"NOR, ob);
-                tell_object(me, HIC "由于你沒有加強對小青草的管理，小青草枯萎了。\n" NOR);
+                message_vision(WHT"由於主人沒有管理，小青草枯萎了。\n"NOR, ob);
+                tell_object(me, HIC "由於你沒有加強對小青草的管理，小青草枯萎了。\n" NOR);
                 delete_temp("growing", me);
                 destruct(ob);
         }
@@ -156,8 +156,8 @@ int grow_c(object ob, object me)
                 return 1;
         }else
         {
-                message_vision(WHT"由于主人沒有管理，青草枯萎了。\n"NOR, ob);
-                tell_object(me, HIC "由于你沒有加強對青草的管理，青草枯萎了。\n" NOR);
+                message_vision(WHT"由於主人沒有管理，青草枯萎了。\n"NOR, ob);
+                tell_object(me, HIC "由於你沒有加強對青草的管理，青草枯萎了。\n" NOR);
                 delete_temp("growing", me);
                 destruct(ob);
         }
@@ -175,8 +175,8 @@ int grow_d(object ob, object me)
                 return 1;
         }else
         {
-                message_vision(WHT"由于主人沒有管理，大青草枯萎了。\n"NOR, ob);
-                tell_object(me, HIC "由于你沒有加強對大青草的管理，大青草枯萎了。\n" NOR);
+                message_vision(WHT"由於主人沒有管理，大青草枯萎了。\n"NOR, ob);
+                tell_object(me, HIC "由於你沒有加強對大青草的管理，大青草枯萎了。\n" NOR);
                 delete_temp("growing", me);
                 destruct(ob);
         }
@@ -198,8 +198,8 @@ int grow_e(object ob, object me)
                 
         if (environment(ob)!=environment(me))
         {                       
-                message_vision(WHT"由于主人沒有管理，大青草枯萎了。\n"NOR, ob);
-                tell_object(me, HIC "由于你沒有加強對大青草的管理，大青草枯萎了。\n" NOR);
+                message_vision(WHT"由於主人沒有管理，大青草枯萎了。\n"NOR, ob);
+                tell_object(me, HIC "由於你沒有加強對大青草的管理，大青草枯萎了。\n" NOR);
                 delete_temp("growing", me);
                 destruct(ob);
                 return 1;
@@ -226,7 +226,7 @@ int grow_e(object ob, object me)
         {
                 if (random(skill) > 300 && random(5) == 1)
                 {
-                        message_vision(HIY "$N種植的草藥長成了，可以挖起來了(dig)。$N忽然發現上面好象懸浮著一道金光。\n"NOR, me);
+                        message_vision(HIY "$N種植的草藥長成了，可以挖起來了(dig)。$N忽然發現上面好像懸浮着一道金光。\n"NOR, me);
                 delete_temp("growing", me);
                         obj = new(CAO_MEM_SM + MEM_SM_LIST[random(sizeof(MEM_SM_LIST))]);
                         tell_object(me, HIC "你種成了稀有草藥「" + NOR + obj->name() + NOR + HIC "」。\n" NOR);                
@@ -313,7 +313,7 @@ int grow_e(object ob, object me)
 
         if (random(skill) > 300 && random(10) == 1)
         {
-                message_vision(HIY "$N種植的草藥長成了，可以挖起來了(dig)。$N忽然發現上面好象懸浮著一道金光。\n"NOR, me);
+                message_vision(HIY "$N種植的草藥長成了，可以挖起來了(dig)。$N忽然發現上面好像懸浮着一道金光。\n"NOR, me);
                         delete_temp("growing", me);
                 obj = new(CAO_SM + SM_LIST[random(sizeof(SM_LIST))]);
                 tell_object(me, HIC "你種成了稀有草藥「" + NOR + obj->name() + NOR + HIC "」。\n" NOR);                

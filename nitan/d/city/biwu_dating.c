@@ -8,9 +8,9 @@ void create()
 {
     set("short", HIY"演武大廳"NOR);
         set("long", @LONG
-這是一個寬敞的大房間，靠北牆搭著一個巨大的擂台(leitai)，
+這是一個寬敞的大房間，靠北牆搭着一個巨大的擂台(leitai)，
 擂台後被一塊布簾遮擋的密密實實，但是一股濃厚的殺氣仍然從布簾
-後散發出來，彌漫在空氣裡，直鑽入你內心。在東面牆上，懸掛著偌
+後散發出來，瀰漫在空氣裏，直鑽入你內心。在東面牆上，懸掛着偌
 大的一個大匾(dabian)。
 LONG );
 
@@ -53,7 +53,7 @@ int do_no()
     me = this_player();
     if (wizardp(me)) return 0;
 
-    tell_object(me,"在這裡你想幹什麼？\n");
+    tell_object(me,"在這裏你想幹什麼？\n");
     return 1;
 }
 
@@ -86,7 +86,7 @@ int do_jump(string arg)
 
     if (arg != "leitai")
     {
-            tell_object(me,"你要往哪裡跳啊？\n");
+            tell_object(me,"你要往哪裏跳啊？\n");
             return 1;
     }
 

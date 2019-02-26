@@ -91,7 +91,7 @@ int help(object me)
 write(@HELP
 指令格式 : zhuanhuan <原文件> to <目標文件>
 
-    用途 : 轉換文本文件裡的ansi顏色代碼。
+    用途 : 轉換文本文件裏的ansi顏色代碼。
 HELP
         );
         return 1;

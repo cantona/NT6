@@ -59,11 +59,11 @@ void greeting(object ob)
             find_object(startroom) == environment())
         {
                 say(CYN "吳三桂喝道：“什麼人！居然敢擅闖本王府！”\n\n" NOR +
-                    HIR "只見吳三桂舉手一抬，聽得“轟”的一聲，一團火燄從槍口竄出。\n" NOR);
+                    HIR "只見吳三桂舉手一抬，聽得“轟”的一聲，一團火焰從槍口竄出。\n" NOR);
                 tell_object(ob, HIR "你躲避不及，只覺胸口一陣劇疼，鮮血狂湧而出！\n" NOR);
                 ob->receive_wound("qi", 90);
         } else
-                say(CYN "吳三桂瞪著你，磨了磨牙。\n" NOR);
+                say(CYN "吳三桂瞪着你，磨了磨牙。\n" NOR);
 }
 
 void unconcious()

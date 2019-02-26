@@ -30,7 +30,7 @@ int valid_learn(object me)
                 return notify_fail("你無根無性，陰陽不調，難以領會高深的太極神功。\n");
 
         if( query("class", me) == "bonze" )
-                return notify_fail("太極神功講究陰陽調合，有違佛家六根清凈之意，"
+                return notify_fail("太極神功講究陰陽調合，有違佛家六根清淨之意，"
                         + RANK_D->query_respect(me) + "欲修此功，已是罪過。\n");
 
         if( lvl>10 && query("shen", me)<lvl*100
@@ -55,7 +55,7 @@ int help(object me)
         write(HIC"\n太極神功："NOR"\n");
         write(@HELP
 
-    太極神功乃武當不傳之秘，講究「沖」、「虛」、「圓」、「
+    太極神功乃武當不傳之祕，講究「衝」、「虛」、「圓」、「
 通」，是修習武當派各種高深武功的根基。武當弟子配合太極神功
 和道學心法可以養精練氣，有延年益壽之功效。
 

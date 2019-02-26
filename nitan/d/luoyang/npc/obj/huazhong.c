@@ -32,7 +32,7 @@ int do_zhonghua()
         where = environment(me);
 
         if( query("short", where) != "苗園" )
-                return notify_fail("這裡似乎不適合種花吧？\n");
+                return notify_fail("這裏似乎不適合種花吧？\n");
 
         if( query("combat_exp", me)<8000 )
         {

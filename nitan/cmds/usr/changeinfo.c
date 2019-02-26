@@ -43,7 +43,7 @@ int main(object me, string arg)
         }
         if( !flag ) flag = DEFAULT;
         tell_object(me, "跳過請輸入 [ENTER]，取消請輸入 '~q'，色彩協助請輸入 '~h'\n");
-        tell_object(me, WHT"["HIW"Change Information"NOR + WHT"]────────────────\n"NOR);
+        tell_object(me, WHT"["HIW"Change Information"NOR + WHT"]————————————————\n"NOR);
         change_prompt(me, flag);
         return 1;
 }
@@ -114,7 +114,7 @@ protected void change_input(object me, int flag, string arg)
                         len = strlen(arg);
                         if( len > 10 || len < 2 )
                         {
-                                tell_object(me, "中文名稱必須在 1 到 5 個中文字之間，請重新設定。\n");
+                                tell_object(me, "中文名稱必須在 1 到 5 箇中文字之間，請重新設定。\n");
                                 return change_prompt(me, flag);
                         }
                         if (! is_chinese(filter_color(arg)))

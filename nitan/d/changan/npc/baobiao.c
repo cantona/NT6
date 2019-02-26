@@ -4,7 +4,7 @@ inherit NPC;
 
 void create()
 {
-        set_name("群玉樓保鏢", ({ "bao biao","baobiao" }));
+        set_name("羣玉樓保鏢", ({ "bao biao","baobiao" }));
         set("gender", "男性");
         set("age", random(10) + 20);
         set("str", 25);
@@ -13,7 +13,7 @@ void create()
         set("dex", 25);
         set("int", 25);
         set("shen_type", -1);
-        set("long", "他殺氣騰騰，負責群玉樓所有女人的安全。\n");
+        set("long", "他殺氣騰騰，負責羣玉樓所有女人的安全。\n");
         set("combat_exp", 100000);
         set("class", "fighter");
         set("attitude", "herosim");
@@ -37,7 +37,7 @@ void create()
 
 int accept_fight(object me)
 {
-        message_vision("群玉樓保鏢對$N喝道：是不是想死啊！\n\n", me);
+        message_vision("羣玉樓保鏢對$N喝道：是不是想死啊！\n\n", me);
         return 0;
 }
 
@@ -58,7 +58,7 @@ void leave()
         if( query("time", this_object()) >= 3 )
         {
                 message("vision", name() + "嘿嘿一笑:“老子要回去"
-                        "睡覺了，再有人來群玉樓鬧事就叫我！”\n",
+                        "睡覺了，再有人來羣玉樓鬧事就叫我！”\n",
                         environment());
                 destruct(this_object());
         }

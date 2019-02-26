@@ -26,7 +26,7 @@ int accept_object(object who, object ob)
         {
                 command("bow"+query("id", this_player()));
                 set_temp("marks/guiyun", 1, this_player());
-                write("家丁說道：" + RANK_D->query_respect(ob) + "原來是少莊主的朋友，快快請進。\n");
+                write("家丁説道：" + RANK_D->query_respect(ob) + "原來是少莊主的朋友，快快請進。\n");
                 return 1;
         }
         return 0;

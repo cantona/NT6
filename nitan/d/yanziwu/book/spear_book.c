@@ -25,13 +25,13 @@ int do_study(string arg)
         if ( (arg != "book") && (arg != "spear book"))
                 return notify_fail("你要學什麼？\n");
         if (level >= 150)
-                return notify_fail("你研讀了一會兒，但是發現上面所說的對你而言都太淺了，沒有學到任何東西。\n");
+                return notify_fail("你研讀了一會兒，但是發現上面所説的對你而言都太淺了，沒有學到任何東西。\n");
         if (level <= 50)
-                return notify_fail("你研讀了一會兒，但是發現上面所說的對你而言都太深奧了，毫無收獲。\n");
+                return notify_fail("你研讀了一會兒，但是發現上面所説的對你而言都太深奧了，毫無收穫。\n");
         if( query("combat_exp", me)<(level*level*level/10) )
                 return notify_fail("你的實戰經驗不足，再怎麼讀也沒用。\n");
         if( query("jing", me)<25 )
-                return notify_fail("你現在過于疲倦，無法專心下來研讀新知。\n");
+                return notify_fail("你現在過於疲倦，無法專心下來研讀新知。\n");
         me->receive_damage("jing", 25);
         me->improve_skill("spear", (int)me->query_skill("literate",1)/5+1); 
         write("你研讀了有關基本槍法的技巧，似乎有點心得。\n");

@@ -3,12 +3,12 @@ inherit ITEM;
 
 void create()
 {
-        set_name(HIM "幹將聖符" NOR, ({ "ganjiang charm", "charm" }));
+        set_name(HIM "干將聖符" NOR, ({ "ganjiang charm", "charm" }));
         set_weight(3000);
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("long", HIM "幹將聖符可以將普通道具升級為可SUMMON道具，以後可以隨時\n"
+                set("long", HIM "干將聖符可以將普通道具升級為可SUMMON道具，以後可以隨時\n"
                             "召喚(SUMMON)升級後的道具。\n"
                             "指令格式： upd <欲升級道具ID> to <SUMMON的代號> \n" NOR);
                         
@@ -82,7 +82,7 @@ int do_integrate(string arg)
         message_sort(HIR "\n$N" HIR "用利刃將雙手手心劃破，雙掌貼在" + ob->name() + HIR "上，"
                      "漸漸地，" + ob->name() + HIR "將$N" HIR "的鮮血吸收……\n\n" NOR, me);
 
-        tell_object(me, "你把" + name() + "蓋在" + ob->name() + "上，然後口中念念有詞，\n"
+        tell_object(me, "你把" + name() + "蓋在" + ob->name() + "上，然後口中唸唸有詞，\n"
                         "只見聖符化作一道紅光飛入" + ob->name() + "體內！\n");
 
         tell_object(me, HIC "你感受" + ob->name() + HIC"發生了不可言喻的變化。\n" NOR);
@@ -106,7 +106,7 @@ TEXT;
                 ob = find_object(filename);      
                 if (! ob)
                 {
-                        write("文件出錯，請與巫師聯系！\n");
+                        write("文件出錯，請與巫師聯繫！\n");
                         log_file("static/template", sprintf("%s %s creating  %s(%s) had errors.\n",
                                  log_time(),log_id(me),filter_color(ob->name(1)),query("id", ob)));
                         return 1;

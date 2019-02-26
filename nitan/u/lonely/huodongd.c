@@ -1,17 +1,17 @@
-/*固定活動管理系統，用于管理每日每周定時活動的啟動和通知
+/*固定活動管理系統，用於管理每日每週定時活動的啟動和通知
 周：
   1、擂台打榜           20:00-23:00  無需啟動
   2、自由戰場           19:30-22:30  無需啟動
   3、幫戰之冰火島遠征   20:00-21:30  需要啟動
-  4、襄陽保衛戰         20:30-21:30  需要啟動
+  4、襄陽保衞戰         20:30-21:30  需要啟動
   5、幫派大作戰         20:30-22:00  需要啟動
-     繽紛周末活動       20:00-23:59  無需啟動
+     繽紛週末活動       20:00-23:59  無需啟動
   6、幫戰之冰火島遠征   20:00-21:30  需要啟動
      自由戰場           13:00-20:00  無需啟動
-     繽紛周末活動       00:00-23:59  無需啟動
-  7、襄陽保衛戰         20:30-21:30  需要啟動
+     繽紛週末活動       00:00-23:59  無需啟動
+  7、襄陽保衞戰         20:30-21:30  需要啟動
      幫派大作戰         20:30-22:00  需要啟動
-     繽紛周末活動       00:00-23:59  無需啟動
+     繽紛週末活動       00:00-23:59  無需啟動
 */
 #pragma optimize
 #pragma save_binary
@@ -24,7 +24,7 @@ inherit F_DBASE;
 #define MEMBER_D     "/adm/daemons/memberd"
 #define STR_SPRINTF    "%-10s%-20s%-20s%-20s\n"
 
-// 記錄周活動顯示的信息，避免重復計算
+// 記錄周活動顯示的信息，避免重複計算
 nosave string strshow = "";
 // 記錄time對應的天數
 nosave int current_day = 0;
@@ -46,25 +46,25 @@ nosave mapping week_time = ([
         "Sun"  : "7",
 ]);
 
-// 用于顯示的活動列表，不參與計算，僅做顯示
+// 用於顯示的活動列表，不參與計算，僅做顯示
 nosave mapping huodong_list = ([
-        "1"   :  sprintf(STR_SPRINTF, "周一", "擂台打榜", "19:00-23:00", "help biwu"),
+        "1"   :  sprintf(STR_SPRINTF, "週一", "擂台打榜", "19:00-23:00", "help biwu"),
         
-        "2"   :  sprintf(STR_SPRINTF, "周二", "自由戰場", "19:00-20:30", "help war_free"),
+        "2"   :  sprintf(STR_SPRINTF, "週二", "自由戰場", "19:00-20:30", "help war_free"),
         
-        "3"   :  sprintf(STR_SPRINTF, "周三", "冰火島遠征", "20:00-21:30", "help league.war"),
+        "3"   :  sprintf(STR_SPRINTF, "週三", "冰火島遠征", "20:00-21:30", "help league.war"),
         
-        "4"   :  sprintf(STR_SPRINTF, "周四", "襄陽保衛戰", "21:30-22:30", "help xywar"),
+        "4"   :  sprintf(STR_SPRINTF, "週四", "襄陽保衞戰", "21:30-22:30", "help xywar"),
         
-        "5"   :  sprintf(STR_SPRINTF, "周五", "繽紛周末活動", "20:00-23:59", "help wkgift") +
+        "5"   :  sprintf(STR_SPRINTF, "週五", "繽紛週末活動", "20:00-23:59", "help wkgift") +
                  sprintf(STR_SPRINTF, "    ", "幫派大作戰", "20:00-21:30", "help league.fight"),
                  
-        "6"   :  sprintf(STR_SPRINTF, "周六", "繽紛周末活動", "00:00-23:59", "help wkgift") +
+        "6"   :  sprintf(STR_SPRINTF, "週六", "繽紛週末活動", "00:00-23:59", "help wkgift") +
                  sprintf(STR_SPRINTF, "    ", "自由戰場", "13:00-20:00", "help war_free") +
                  sprintf(STR_SPRINTF, "    ", "冰火島遠征", "20:00-21:30", "help league.war"),
 
-        "7"   :  sprintf(STR_SPRINTF, "周日", "繽紛周末活動", "00:00-23:59", "help wkgift") +
-                 sprintf(STR_SPRINTF, "    ", "襄陽保衛戰", "21:30-22:30", "help xywar") +
+        "7"   :  sprintf(STR_SPRINTF, "週日", "繽紛週末活動", "00:00-23:59", "help wkgift") +
+                 sprintf(STR_SPRINTF, "    ", "襄陽保衞戰", "21:30-22:30", "help xywar") +
                  sprintf(STR_SPRINTF, "    ", "幫派大作戰", "20:00-21:30", "help league.fight"),
 ]);
 
@@ -111,7 +111,7 @@ public void show_week_huodong(string sday)
         write(str);
 }
 
-// 返回當前時間是周幾，用字符串返回，周一則是“1”
+// 返回當前時間是周幾，用字符串返回，週一則是“1”
 public string get_week_num(int dtime)
 {
         int strweek, strtemp;
@@ -131,7 +131,7 @@ void create()
 
 void remove(){save();}
 
-// 發布全屏通告
+// 發佈全屏通告
 public void do_channel(string ch, string msg)
 {
         CHANNEL_D->do_channel(this_object(), ch, msg);
@@ -139,9 +139,9 @@ public void do_channel(string ch, string msg)
 
 public void mud_shutdown(){save();}
 
-/* 每1分鐘次的心跳 用于檢查活動開啟
-   通過dbase記錄每個活動上次舉辦的時間，避免因為當機等引起的重復舉行或未舉行
-   sday 代表周幾 如周一則sday = "1"
+/* 每1分鐘次的心跳 用於檢查活動開啟
+   通過dbase記錄每個活動上次舉辦的時間，避免因為當機等引起的重複舉行或未舉行
+   sday 代表周幾 如週一則sday = "1"
    query("huodong_info/sday, ([
         "活動名1"  : 啟動時間,
         "活動名2"  : 啟動時間,
@@ -196,7 +196,7 @@ void heart_beat()
                 }
         break;
         
-        case "3": // "周三", "冰火島遠征",20:00-21:30"
+        case "3": // "週三", "冰火島遠征",20:00-21:30"
                 if (! query("huodong_info/" + today + "/冰火島遠征")) // 還未舉行
                 {
                         if (nhour == 20)
@@ -210,8 +210,8 @@ void heart_beat()
                 }
         break;
 
-        case "4": // "周四", "襄陽保衛戰", "21:30-22:30",
-                if (! query("huodong_info/" + today + "/襄陽保衛戰")) // 還未舉行
+        case "4": // "週四", "襄陽保衞戰", "21:30-22:30",
+                if (! query("huodong_info/" + today + "/襄陽保衞戰")) // 還未舉行
                 {
                         if (nhour == 21 && nmin == 30)
                         {
@@ -219,12 +219,12 @@ void heart_beat()
                                 if (XYWAR_D->now_status() == 0)
                                         XYWAR_D->start_xywar();
                                 // 記錄開始時間
-                                set("huodong_info/" + today + "/襄陽保衛戰", ntime);
+                                set("huodong_info/" + today + "/襄陽保衞戰", ntime);
                         }
                 }
         break;
         
-        case "5": //"周五", "繽紛周末活動", "20:00-23:59"
+        case "5": //"週五", "繽紛週末活動", "20:00-23:59"
                   //        "幫派大作戰", "20:00-22:00"
                 if (! query("huodong_info/" + today + "/幫派大作戰")) // 還未舉行
                 {
@@ -238,8 +238,8 @@ void heart_beat()
                 }               
         break;
         
-        case "6": // 周六
-                  //        "周六", "繽紛周末活動", "00:00-23:59"
+        case "6": // 週六
+                  //        "週六", "繽紛週末活動", "00:00-23:59"
                   //        "自由戰場", "13:00-20:00"
                   //        "冰火島遠征", "20:00-21:30"
                 if (! query("huodong_info/" + today + "/自由戰場")) // 還未舉行
@@ -268,11 +268,11 @@ void heart_beat()
                 }
         break;
 
-        case "7":  // 周日
-                  //        "周日", "繽紛周末活動", "00:00-23:59"
-                  //        "襄陽保衛戰", "21:30-22:30"
+        case "7":  // 週日
+                  //        "週日", "繽紛週末活動", "00:00-23:59"
+                  //        "襄陽保衞戰", "21:30-22:30"
                   //        "幫派大作戰", "20:00-22:30"
-                if (! query("huodong_info/" + today + "/襄陽保衛戰")) // 還未舉行
+                if (! query("huodong_info/" + today + "/襄陽保衞戰")) // 還未舉行
                 {
                         if (nhour == 21 && nmin == 30)
                         {
@@ -280,7 +280,7 @@ void heart_beat()
                                 if (XYWAR_D->now_status() == 0)
                                         XYWAR_D->start_xywar();
                                 // 記錄開始時間
-                                set("huodong_info/" + today + "/襄陽保衛戰", ntime);
+                                set("huodong_info/" + today + "/襄陽保衞戰", ntime);
                         }
                 }
                 if (! query("huodong_info/" + today + "/幫派大作戰")) // 還未舉行
@@ -335,7 +335,7 @@ public int can_start_huodong(string huodong)
         break;
         case "league.fight":
         break;  
-        case "war_free": // "周二", "自由戰場", "19:00-22:00" 周六 "自由戰場", "13:00-20:00"
+        case "war_free": // "週二", "自由戰場", "19:00-22:00" 週六 "自由戰場", "13:00-20:00"
                 if (wk == "2" &&
                    nhour >= 19&& 
                    nhour < 22)return 1;

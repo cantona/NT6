@@ -63,7 +63,7 @@ max_jing:3000
 <type>armor/armor</type>
 <name>$WHT$文曲星甲</name>
 <id>wisdom armor</id>
-<long>蘊含了文曲星的精元和無上智慧(凡)。</long>
+<long>藴含了文曲星的精元和無上智慧(凡)。</long>
 <value>10000000</value>
 <mod>M0000</mod>
 <enchase>
@@ -78,7 +78,7 @@ apply_prop/int:3
 <type>armor/surcoat</type>
 <name>$WHT$文曲星披風</name>
 <id>wisdom surcoat</id>
-<long>蘊含了文曲星的精元和無上智慧(凡)。</long>
+<long>藴含了文曲星的精元和無上智慧(凡)。</long>
 <value>10000000</value>
 <mod>M0000</mod>
 <enchase>
@@ -93,7 +93,7 @@ apply_prop/int:3
 <type>armor/wrists</type>
 <name>$WHT$文曲星護腕</name>
 <id>wisdom wrists</id>
-<long>蘊含了文曲星的精元和無上智慧(凡)。</long>
+<long>藴含了文曲星的精元和無上智慧(凡)。</long>
 <value>10000000</value>
 <mod>M0000</mod>
 <enchase>
@@ -108,7 +108,7 @@ apply_prop/int:3
 <type>armor/waist</type>
 <name>$WHT$文曲星束帶</name>
 <id>wisdom waist</id>
-<long>蘊含了文曲星的精元和無上智慧(凡)。</long>
+<long>藴含了文曲星的精元和無上智慧(凡)。</long>
 <value>10000000</value>
 <mod>M0000</mod>
 <enchase>
@@ -123,7 +123,7 @@ apply_prop/int:3
 <type>armor/head</type>
 <name>$WHT$文曲星頭盔</name>
 <id>wisdom head</id>
-<long>蘊含了文曲星的精元和無上智慧(凡)。</long>
+<long>藴含了文曲星的精元和無上智慧(凡)。</long>
 <value>10000000</value>
 <mod>M0000</mod>
 <enchase>
@@ -138,7 +138,7 @@ apply_prop/int:3
 <type>armor/boots</type>
 <name>$WHT$文曲星靴</name>
 <id>wisdom boots</id>
-<long>蘊含了文曲星的精元和無上智慧(凡)。</long>
+<long>藴含了文曲星的精元和無上智慧(凡)。</long>
 <value>10000000</value>
 <mod>M0000</mod>
 <enchase>

@@ -1,7 +1,7 @@
 #include <ansi.h>
 #include <combat.h>
 
-#define KAI "「" WHT "五岳為開" NOR "」"
+#define KAI "「" WHT "五嶽為開" NOR "」"
 
 inherit F_SSERVER;
 
@@ -39,7 +39,7 @@ int perform(object me, object target)
                 return notify_fail("你現在真氣太弱，難以施展" KAI "。\n");
 
         if (! living(target))
-                return notify_fail("對方都已經這樣了，用不著這麼費力吧？\n");
+                return notify_fail("對方都已經這樣了，用不着這麼費力吧？\n");
 
         msg = WHT "只見$N" WHT "身形猛轉，霎那間雙腿流星般連環踢出，足帶風塵，腿影將$n"
               WHT "團團籠罩。\n" NOR;
@@ -55,7 +55,7 @@ int perform(object me, object target)
         } else
         {
                 msg += HIC "可是$n" HIC "凝神頓氣，奮力抵擋，絲毫不"
-                       "受腿影的幹擾，。\n" NOR;
+                       "受腿影的干擾，。\n" NOR;
                 count = 0;
         }
         message_combatd(msg, me, target);

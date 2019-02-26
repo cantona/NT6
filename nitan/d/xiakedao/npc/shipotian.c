@@ -11,7 +11,7 @@ void create()
         set("title", "長樂幫幫主");
         set("gender", "男性");
         set("age", 20);
-        set("long", "他大約二十多歲，穿著一身破爛的衣服，卻也擋不住他一身的英氣。\n");
+        set("long", "他大約二十多歲，穿着一身破爛的衣服，卻也擋不住他一身的英氣。\n");
 
         set("attitude", "peaceful");
 
@@ -39,7 +39,7 @@ void create()
         set_skill("xiaoyaoyou", 150);            // 逍遙遊
         set_skill("parry", 100);                 // 基本招架
         set_skill("begging", 50);               // 叫化絕活
-        set_skill("checking", 50);              // 道聽途說
+        set_skill("checking", 50);              // 道聽途説
 
         map_skill("force", "huntian-qigong");
         map_skill("unarmed", "xianglong-zhang");
@@ -47,11 +47,11 @@ void create()
         map_skill("parry", "xianglong-zhang");
         set("chat_chance", 8);
         set("chat_msg", ({
-        "石破天說道: 我來俠客島這麼多天了，也不知道阿繡和婆婆現在怎麼樣了。\n",
-        "石破天說: 江湖威望很重要，威望高大有好處啊。\n",
-        "石破天突然說道: 不行，我不放心阿繡，我要去看看她。\n",
-        "石破天突然說道: 矣！我的體內怎麼好象有一群蝌蚪在動呢。\n",
-        "石破天說道: 你能給我玄冰碧火酒嗎? \n",
+        "石破天説道: 我來俠客島這麼多天了，也不知道阿繡和婆婆現在怎麼樣了。\n",
+        "石破天説: 江湖威望很重要，威望高大有好處啊。\n",
+        "石破天突然説道: 不行，我不放心阿繡，我要去看看她。\n",
+        "石破天突然説道: 矣！我的體內怎麼好像有一羣蝌蚪在動呢。\n",
+        "石破天説道: 你能給我玄冰碧火酒嗎? \n",
         }));
         set("inquiry", ([
                 "臘八粥" :  "\n你去問龍島主，試試你的運氣吧。\n",
@@ -70,9 +70,9 @@ void create()
 int ask_weiwang()
 {
         command("tell"+query("id", this_player())+"你現在的江湖威望是"+(query("weiwang", this_player())));
-        say("\n石破天說：如果你威望值很高，有些人見了你不但不會殺你，還會教你武功，送你寶貝。\n"
+        say("\n石破天説：如果你威望值很高，有些人見了你不但不會殺你，還會教你武功，送你寶貝。\n"
                 +"而且你還可以加入幫會，率領會眾去攻打目標，就連去錢莊取錢也會有利息 。。。。。\n");
-        say("\n石破天又說：殺某些壞人或救某些好人可以提高江湖威望。\n");
+        say("\n石破天又説：殺某些壞人或救某些好人可以提高江湖威望。\n");
         return 1;
 }
 
@@ -109,13 +109,13 @@ int do_skills(string arg)
         }
         command("tell"+query("id", ob)+"我所有的武功如下：\n"+
 "  叫化絕活 (begging)                       - 出類拔萃  50/   \n"+
-"  道聽途說 (checking)                      - 出類拔萃  50/   \n"+
+"  道聽途説 (checking)                      - 出類拔萃  50/   \n"+
 "  基本輕功 (dodge)                         - 一代宗師  100/   \n"+
 "  基本內功 (force)                         - 一代宗師  100/   \n"+
 "□混天氣功 (huntian-qigong)                - 一代宗師  150/   \n"+
-"  基本招架 (parry)                         - 登峰造極  100/   \n"+
+"  基本招架 (parry)                         - 登峯造極  100/   \n"+
 "  基本拳腳 (unarmed)                       - 一代宗師  100/   \n"+
-"□降龍十八掌 (xianglong-zhang)             - 登峰造極  150/   \n"+
+"□降龍十八掌 (xianglong-zhang)             - 登峯造極  150/   \n"+
 "□逍遙遊 (xiaoyaoyou)                      - 一代宗師  150/   \n");
         return 1;
 }
@@ -135,7 +135,7 @@ int accept_object(object who, object ob)
                 remove_call_out("destroy");
                 call_out("destroy", 1, who, ob);
 
-                message_vision( "\n石破天激動的說：這位大哥，我該怎麼謝你呢。\n",who);
+                message_vision( "\n石破天激動的説：這位大哥，我該怎麼謝你呢。\n",who);
                 obn = new("/d/xiakedao/obj/xuantie");
                 obn->move(who);
                 return 1;

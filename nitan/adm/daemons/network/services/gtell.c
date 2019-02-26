@@ -34,7 +34,7 @@ int send_gtell(string mud, string wiz_to, object source, string msg)
         minfo = (mapping)DNS_MASTER->query_mud_info(mud);
         if (! minfo)
         {
-                write(LOCAL_MUD_NAME() + "並沒有和 " + mud + " 聯系上。\n");
+                write(LOCAL_MUD_NAME() + "並沒有和 " + mud + " 聯繫上。\n");
                 return 0;
         }
 

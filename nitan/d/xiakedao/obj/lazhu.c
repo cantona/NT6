@@ -9,7 +9,7 @@ void create()
                 set_default_object(__FILE__);
         else {
                 set("unit", "只");
-                set("long", "這是一只普通的蠟燭，上面鏤著一些花紋，還比較精致。\n");
+                set("long", "這是一隻普通的蠟燭，上面鏤着一些花紋，還比較精緻。\n");
                 set("value", 0);
         }
         setup();

@@ -17,9 +17,9 @@ void create()
         set("attitude", "friendly");
         set("chat_chance", 1);
         set("chat_msg", ({
-                CYN "金花哭泣著：我的命怎麼這麼苦喲。\n" NOR,
-                CYN "金花抹著眼淚：娘呀，我好想你呀！\n" NOR,
-                CYN "金花嘆口氣說道：不知今生今世能否再見到我娘。\n" NOR
+                CYN "金花哭泣着：我的命怎麼這麼苦喲。\n" NOR,
+                CYN "金花抹着眼淚：娘呀，我好想你呀！\n" NOR,
+                CYN "金花歎口氣説道：不知今生今世能否再見到我娘。\n" NOR
         }));
 
         set("inquiry",([
@@ -68,24 +68,24 @@ int accept_object(object who, object ob)
                 return notify_fail("你沒有這件東西。\n");
 
         if( query("id", ob) != "xiuhuaxie" )
-                return notify_fail(CYN "金花說道：你給我這個東西幹嘛？\n" NOR);
+                return notify_fail(CYN "金花説道：你給我這個東西幹嘛？\n" NOR);
 
         if (query("gold_times") < 1)
-                return notify_fail(CYN "金花說道：我已經有繡花鞋了。\n" NOR);
+                return notify_fail(CYN "金花説道：我已經有繡花鞋了。\n" NOR);
 
-        write (CYN "\n金花雙手捧著繡花鞋，淚如雨下道：娘，您還"
-               "掛著女兒啊。\n" NOR);
+        write (CYN "\n金花雙手捧着繡花鞋，淚如雨下道：娘，您還"
+               "掛着女兒啊。\n" NOR);
 
         message_sort(CYN "\n金花抹了把眼淚，不好意思道：這位" +
                      RANK_D->query_respect(who) + CYN "見笑了"
                      "。我實在沒什麼東西報答你，不過我知道山賊"
-                     "頭有個錢箱藏在床下。我這就搬出來給你。\n"
+                     "頭有個錢箱藏在牀下。我這就搬出來給你。\n"
                      NOR, who);
 
-        message_sort(HIY "\n$N" HIY "幫金花從床下搬出來一只錢"
-                     "箱，迫不及待地打開一看，裡面竟然擱著一大"
+        message_sort(HIY "\n$N" HIY "幫金花從牀下搬出來一隻錢"
+                     "箱，迫不及待地打開一看，裏面竟然擱着一大"
                      "堆白銀。$N" HIY "毫不客氣地把白銀裝進衣"
-                     "服裡。\n\n" NOR, who);
+                     "服裏。\n\n" NOR, who);
 
         obn = new("/clone/money/silver");
         obn->set_amount(20);

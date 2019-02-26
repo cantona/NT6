@@ -16,7 +16,7 @@ void dest_me1()
 
 void create()
 {
-        set_name("本門秘籍", ({ "family book", "book" }));
+        set_name("本門祕籍", ({ "family book", "book" }));
         set_weight(600);
         if( clonep() )
                 set_default_object(__FILE__);

@@ -8,6 +8,6 @@ void create()
                 set_default_object(__FILE__);
         else {
                 set("unit", "把");
-                set("long","這是一把用來的打掃衛生的掃把。\n");
+                set("long","這是一把用來的打掃衞生的掃把。\n");
              }
 }

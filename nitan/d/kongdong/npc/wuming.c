@@ -61,7 +61,7 @@ int valid_teach( object ppl, string skill )
    
     if (ppl->query("family/family_name") != "崆峒派")      //如果沒有學功夫的標記
     {
-        command( "say “呵呵，好久沒人和老夫說話啦！”" );
+        command( "say “呵呵，好久沒人和老夫説話啦！”" );
         return 0;
     }
    
@@ -93,7 +93,7 @@ int valid_teach( object ppl, string skill )
         command( "say “可惜你修為不夠，領悟不了我家傳的胡家刀法！”" );
         return 0;
     }  
-    command( "say “終于找到一個可以發揚我胡家刀法的後輩了。”" );
+    command( "say “終於找到一個可以發揚我胡家刀法的後輩了。”" );
     command( "haaa" );
     return 1; 
 

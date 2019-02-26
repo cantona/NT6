@@ -1,6 +1,6 @@
 // /job/japan/haizhan_master.c
 // by akuma 10:57 AM 11/30/2003
-// source by naihe  2003-06-19  于茂名
+// source by naihe  2003-06-19  於茂名
 
 #include <ansi.h>
 inherit ITEM;
@@ -8,7 +8,7 @@ inherit ITEM;
 #define B1                "吉野的艦旗"                // 金劍  - YEL, HIY
 #define B2                "敵艦的主炮"                // 寶箱  - MAG, HIM
 #define B3                "輪機油箱"                // 皇冠  - YEL, HIY
-#define B4                "敵軍官的頭盔"                // 項鏈  - CYN, HIC
+#define B4                "敵軍官的頭盔"                // 項鍊  - CYN, HIC
 
 string game_now = "等待指示命令……";
 string att_now = "not_ok";
@@ -35,7 +35,7 @@ int finded_baowu( int which, string name )
         addn("be_finded", 1);
         set("b" + which, HIW + query("b" + which) );
         map();
-        write(HIC"太幸運了，終于找到了" + name + "。\n"NOR);
+        write(HIC"太幸運了，終於找到了" + name + "。\n"NOR);
 
         if ( query("be_finded") == 4 ) {
                 message_vision("$N成功地找到全部四件戰利品，獲得兩百量黃金的獎勵。\n", me);
@@ -161,7 +161,7 @@ void new_game(object me)
 
 void new_game_set( int amount, string mark )
 {
-        int x, y;        // 這裡的 x, y ， x是豎數第幾橫，y是橫數第幾個。
+        int x, y;        // 這裏的 x, y ， x是豎數第幾橫，y是橫數第幾個。
 
         while ( amount-- ) {
                 x = 1 + random(100);
@@ -217,7 +217,7 @@ int do_game(string arg)
                 delete_temp("haizhan_cond", me);
                 message_vision("$N中途退出海戰。\n", me);
                 exp = 1000 + random(1000);
-                write(HIR"\n由於臨陣脫逃，損失經驗值" + exp + "點。\n"NOR);
+                write(HIR"\n由於臨陣脱逃，損失經驗值" + exp + "點。\n"NOR);
                 addn("combat_exp", -exp, me);
                 remove_call_out("del_me");
                 call_out("del_me", 1);
@@ -281,9 +281,9 @@ int do_go(string arg)
                 addn("att_魚雷", 1);
                 addn("hp", 20 + random(11));
                 map();
-                write(HIG"發現島嶼！得到了彈藥補給和船只修理。\n"NOR);
+                write(HIG"發現島嶼！得到了彈藥補給和船隻修理。\n"NOR);
                 if ( random(100) > 80 ) {
-                        write(HIG"突然，一名日本武士從島上隱蔽處沖上了你的坐船……\n"NOR);
+                        write(HIG"突然，一名日本武士從島上隱蔽處衝上了你的坐船……\n"NOR);
                         obj = new(__DIR__"killer3");
                         set("target",query("id",  me), obj);
                         obj->move(environment(me));
@@ -291,7 +291,7 @@ int do_go(string arg)
                 return 1;
         }
         if ( here == "登陸艇" ) {
-                write(HIG"突然，一名日本武士從登陸艇沖上了你的坐船……\n"NOR);
+                write(HIG"突然，一名日本武士從登陸艇衝上了你的坐船……\n"NOR);
                 obj = new(__DIR__"killer3");
                 map();
                 set("target",query("id",  me), obj);
@@ -301,7 +301,7 @@ int do_go(string arg)
         if ( here == "補給船" ) {
                 addn("hp", 30 + random(21));
                 map();
-                write(HIC"發現修補材料！船只得到了修理。\n"NOR);
+                write(HIC"發現修補材料！船隻得到了修理。\n"NOR);
                 return 1;
         }
         if ( here == B1 ) return finded_baowu( 1, B1 );
@@ -313,9 +313,9 @@ int do_go(string arg)
         if ( here == B4 ) return finded_baowu( 4, B4 );
 
         if ( here == "望遠鏡" ) {
-                game_now = "了望中 （指令： liaowang x y）";
+                game_now = "瞭望中 （指令： liaowang x y）";
                 map();
-                write(HIM"發現了望遠鏡！輸入 (liaowang x y) 指令查看該點周邊海域的情形！ \n"NOR);
+                write(HIM"發現瞭望遠鏡！輸入 (liaowang x y) 指令查看該點周邊海域的情形！ \n"NOR);
                 set_temp("haizhan_cond", "wangyuanjing", me);
                 return 1;
         }
@@ -378,7 +378,7 @@ void map()
 
                         if ( query( "aaa" + temp2 ) == "島嶼" ) temp_map = HIG"▲"NOR;
                         if ( query( "aaa" + temp2 ) == "舊的島嶼" ) temp_map = HIG"△"NOR;
-                        if ( query( "aaa" + temp2 ) == "當前旗艦位置" ) temp_map = BLINK+HIY"□"NOR;
+                        if ( query( "aaa" + temp2 ) == "當前旗艦位置" ) temp_map = BLINK+HIY"≌"NOR;
 
                         the_map += temp_map;
                         temp++;
@@ -406,7 +406,7 @@ void check_hp()
 
         if ( query("hp") > 0 ) return;
 
-        the_map = HIR"\n  -- 失敗結果公布(共尋得" + query("be_finded") + "件戰利品)\n\n        "NOR;
+        the_map = HIR"\n  -- 失敗結果公佈(共尋得" + query("be_finded") + "件戰利品)\n\n        "NOR;
 
         for( x = 1; x < 11; x++ ) {
                 for ( y = 1; y < 17; y++ ) {
@@ -427,7 +427,7 @@ void check_hp()
 
                         if ( temp2 == "島嶼" ) temp_map = HIG"▲"NOR;
                         if ( temp2 == "舊的島嶼" ) temp_map = HIG"△"NOR;
-                        if ( temp2 == "當前旗艦位置" ) temp_map = BLINK+HIB"□"NOR;
+                        if ( temp2 == "當前旗艦位置" ) temp_map = BLINK+HIB"≌"NOR;
 
                         if ( temp2 == B1 || temp2 == B2 || temp2 == B3 || temp2 == B4 )
                                 temp_map = HIY"品"NOR;
@@ -453,7 +453,7 @@ void check_hp()
                 me->die();
         }
         else {
-                tell_object(me, CYN"你奮力向岸邊遊去，雖然根本就看不見岸在哪裡……\n"NOR);
+                tell_object(me, CYN"你奮力向岸邊游去，雖然根本就看不見岸在哪裏……\n"NOR);
                 me->unconcious();
         }
         remove_call_out("game_over_over");
@@ -481,12 +481,12 @@ int do_liaowang( string arg )
 
         if( query_temp("haizhan_cond", me) != "wangyuanjing")return 0;
 
-        if ( !arg || sscanf( arg, "%d %d", x, y ) != 2 ) return notify_fail("請輸入正確坐標！x -> 豎著數第幾橫  y -> 橫著數第幾個\n");
+        if ( !arg || sscanf( arg, "%d %d", x, y ) != 2 ) return notify_fail("請輸入正確座標！x -> 豎着數第幾橫  y -> 橫着數第幾個\n");
 
-        if ( x < 1 || x > 10 || y < 1 || y > 16 ) return notify_fail("請輸入正確坐標！x -> 豎著數第幾橫  y -> 橫著數第幾個\n");
+        if ( x < 1 || x > 10 || y < 1 || y > 16 ) return notify_fail("請輸入正確座標！x -> 豎着數第幾橫  y -> 橫着數第幾個\n");
 
 
-        msg = HIM"了望中……你決定查看 " + x + "," + y + " 區域的情況。\n\n";
+        msg = HIM"瞭望中……你決定查看 " + x + "," + y + " 區域的情況。\n\n";
 
         msg += get_msg( x-1,y-1, "wyj" );
         msg += get_msg( x-1,y,   "wyj" );
@@ -546,15 +546,15 @@ void xunbaotu()
 void fight_start( string who )
 {
         switch ( who ) {
-                case "炮艇": pic_target = "□"; target_damage = 1; break;
-                case "驅逐艦": pic_target = "□"; target_damage = 2; break;
-                case "巡洋艦": pic_target = "□"; target_damage = 4; break;
+                case "炮艇": pic_target = "≌"; target_damage = 1; break;
+                case "驅逐艦": pic_target = "≌"; target_damage = 2; break;
+                case "巡洋艦": pic_target = "∝"; target_damage = 4; break;
                 case "潛艇": pic_target = "※"; target_damage = 6; break;
                 case "吉野號": pic_target = "∮"; target_damage = 10; break;
         }
         if ( who == "吉野號" ) target_hp = 110 + random(31);
         else target_hp = 70 + random(31);
-        pic_me = "□";
+        pic_me = "≌";
 
         remove_call_out("be_attack");
         call_out("be_attack", 1);
@@ -569,12 +569,12 @@ void be_attack()
         addn("hp", -damage);
 
         pic1 = HIR + pic_target + " " + query("who_name") + "("+ target_hp + ")"NOR;
-        pic2 = sprintf("    "HIG"(%|4d)航海者 "HIR"□"NOR, query("hp"), pic_me);
+        pic2 = sprintf("    "HIG"(%|4d)航海者 "HIR"¤"NOR, query("hp"), pic_me);
 
-        write( sprintf("\n                     _ _ _ _ _ _ _ _ _ _       ATTACK！\n            "HIR"-%-2d"NOR"    /                     `"HIY"□"NOR +
-                "\n%s                        %s\n≒≒≒≒≒≒≒≒≒≒≒≒≒≒≒≒≒≒≒≒≒≒≒≒≒≒≒≒≒≒≒\n\n", damage, pic2,  pic1));
+        write( sprintf("\n                     _ _ _ _ _ _ _ _ _ _       ATTACK！\n            "HIR"-%-2d"NOR"    /                     `"HIY"¤"NOR +
+                "\n%s                        %s\n≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈\n\n", damage, pic2,  pic1));
 
-        write(HIY"你的坐船受到了" + query("who_name") +  "的攻擊，船只損壞" + damage + "。\n"NOR);
+        write(HIY"你的坐船受到了" + query("who_name") +  "的攻擊，船隻損壞" + damage + "。\n"NOR);
         check_hp();
         call_out("can_att", 1);
 }
@@ -584,7 +584,7 @@ void can_att()
         if ( query("hp") < 1 ) return;
 
         write(HIY"輪到你攻擊了。(fire 方式)\n"NOR);
-        write( sprintf(HIG"武器剩余：    肉搏：無限    弓箭：%d    石炮：%d    火炮：%d    燃燒彈：%d    魚雷：%d\n"NOR,
+        write( sprintf(HIG"武器剩餘：    肉搏：無限    弓箭：%d    石炮：%d    火炮：%d    燃燒彈：%d    魚雷：%d\n"NOR,
                 query("att_弓箭"), query("att_石炮"), query("att_火炮"), query("att_燃燒彈"), query("att_魚雷") ) );
         game_now = "與 " + query("who_name") + " 戰鬥中。等待攻擊指令……";
         att_now = "ok";
@@ -654,11 +654,11 @@ int do_attack(string arg)
                         if ( target_name == "吉野號" ) damage = damage(5);
                         break;
         }
-        pic1 = HIR"□" + " " + query("who_name") + "("+ target_hp + ")"NOR;
+        pic1 = HIR"¤" + " " + query("who_name") + "("+ target_hp + ")"NOR;
         pic2 = sprintf("    "HIG"(%|4d)航海者 %s"NOR, query("hp"), pic_me);
 
-        write( sprintf("\n       %|8s！    _ _ _ _ _ _ _ _ _ _\n                   "HIY"□"NOR"                     \\    "HIR"-%d"NOR +
-                "\n%s                        %s\n≒≒≒≒≒≒≒≒≒≒≒≒≒≒≒≒≒≒≒≒≒≒≒≒≒≒≒≒≒≒≒\n\n", temp, damage, pic2,  pic1));
+        write( sprintf("\n       %|8s！    _ _ _ _ _ _ _ _ _ _\n                   "HIY"¤"NOR"                     \\    "HIR"-%d"NOR +
+                "\n%s                        %s\n≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈\n\n", temp, damage, pic2,  pic1));
         if ( random(100) > miss ) {
                 target_hp -= damage;
                 write(HIY"使用" + temp + "對" + query("who_name") + "進行攻擊！損害對方" + damage + "。\n"NOR);

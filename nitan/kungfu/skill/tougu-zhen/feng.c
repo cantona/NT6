@@ -35,10 +35,10 @@ int perform(object me, object target)
                 return notify_fail("你沒有準備使用透骨針，無法使用" + name() + "！\n");
 
        if (! living(target))
-              return notify_fail("對方都已經這樣了，用不著這麼費力吧？\n");
+              return notify_fail("對方都已經這樣了，用不着這麼費力吧？\n");
 
         msg = HIW "$N" HIW "使出透骨針「" HIR "封 殺" HIW "」絕技，手指揮舞，幻出漫天寒星"
-              "，攜帶著陰寒之勁直封$n" HIW "各處要穴！\n" NOR;
+              "，攜帶着陰寒之勁直封$n" HIW "各處要穴！\n" NOR;
 
         lvl = me->query_skill("tougu-zhen", 1);
 
@@ -72,5 +72,5 @@ string final(object me, object target, int lvl)
                            "id"       : query("id", me),
                            "duration" : lvl / 50 + random(lvl / 20) ]));
 
-        return HIR "結果只聽$n一聲慘嚎，被攻個正著，透骨針極寒之勁攻心，全身癱麻，鮮血狂噴！\n" NOR;
+        return HIR "結果只聽$n一聲慘嚎，被攻個正着，透骨針極寒之勁攻心，全身癱麻，鮮血狂噴！\n" NOR;
 }

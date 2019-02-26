@@ -6,7 +6,7 @@ void create()
         set_name("菜園管事", ({ "caiyuan guanshi", "guanshi" }) );
         set("gender", "男性" );
         set("age", 50);
-        set("long", "他是菜園管事，專管菜園裡大小雜事！\n");
+        set("long", "他是菜園管事，專管菜園裏大小雜事！\n");
         set("combat_exp", 2500);
         set("attitude", "friendly");
         set("inquiry", ([

@@ -13,7 +13,7 @@ void create()
                 set_default_object(__FILE__);
         else {
                 set("unit", "面");
-                set("long","這是一面青竹削制的令牌，正面青光發亮，燒蝕著「丐幫」兩個大字。\n");
+                set("long","這是一面青竹削制的令牌，正面青光發亮，燒蝕着「丐幫」兩個大字。\n");
                 set("material", "bamboo");
         }
 }
@@ -39,7 +39,7 @@ int do_bihua(string arg)
         return notify_fail("你想跟誰比劃？\n");  
 
         if( query_temp("busy", this_object()) )
-        return notify_fail("每次只能有兩人參加比武。\n");
+        return notify_fail("每次只能有兩人蔘加比武。\n");
 
         if( !objectp( ob2 = present(arg, environment(ob1)) ) ) 
         return notify_fail("你想跟誰比劃？\n");
@@ -72,7 +72,7 @@ int do_bihua(string arg)
         return notify_fail("你已經戰勝同門一次，不必繼續比試武藝。\n");
 
         if( userp(ob2) && query_temp("pending/fight", ob2) != ob1){
-                message_vision("\n$N對著$n說道：" 
+                message_vision("\n$N對着$n説道：" 
                         + RANK_D->query_self(ob1) 
                         + ob1->name() + "領教師兄的高招！\n\n", ob1, ob2);
                 if( objectp(old_target=query_temp("pending/fight", ob1)) )
@@ -80,7 +80,7 @@ int do_bihua(string arg)
                 set_temp("pending/fight", ob2, ob1);
                 tell_object(ob2,YEL"如果你願意和對方進行比試，請你也對"+ob1->name()+"("+query("id", ob1)+")"+"下一次bihua指令。\n"NOR);
 
-                write(YEL "由于對方是由玩家控制的人物，你必須等對方同意才能進行比試。\n" NOR);
+                write(YEL "由於對方是由玩家控制的人物，你必須等對方同意才能進行比試。\n" NOR);
                 return 1;
         }
             
@@ -186,14 +186,14 @@ int do_look(string arg)
 
         if( query_temp("win_times", ob)){
                 tell_object( this_player(), 
-                "這是一面青竹削制的令牌，正面青光發亮，燒蝕著「丐幫」兩個大字，\n" +
+                "這是一面青竹削制的令牌，正面青光發亮，燒蝕着「丐幫」兩個大字，\n" +
                 "青竹令的背面刻著一道表示勝利的記號。反面是"+query_temp("loser", ob)+
                 "的簽名。\n");
 
-                tell_object(this_player(),"\n這塊青竹令由簡長老簽發，屬于"+query_temp("owner", ob)+"。\n");
+                tell_object(this_player(),"\n這塊青竹令由簡長老簽發，屬於"+query_temp("owner", ob)+"。\n");
         }
         else         tell_object( this_player(), 
-                "這是一面青竹削制的令牌，正面青光發亮，燒蝕著「丐幫」兩個大字。\n" );
+                "這是一面青竹削制的令牌，正面青光發亮，燒蝕着「丐幫」兩個大字。\n" );
 
         return 1;
 }

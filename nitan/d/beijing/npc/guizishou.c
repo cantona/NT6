@@ -4,7 +4,7 @@ void create()
 {
         set_name("劊子手", ({ "guizi shou", "guizi", "shou" }));
         set("long", 
-                "一個身材剽悍的男子，手裡提著柄鋼刀。\n"
+                "一個身材剽悍的男子，手裏提着柄鋼刀。\n"
               "在刑場中專門負責屠人。\n");
         set("gender", "男性");
         set("age", 30);

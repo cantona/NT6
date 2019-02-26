@@ -31,10 +31,10 @@ int perform(object me, object target)
                 return notify_fail("你沒有激發神龍八式手法，不能使用神龍初現。\n");
 
        if (! living(target))
-              return notify_fail("對方都已經這樣了，用不著這麼費力吧？\n");
+              return notify_fail("對方都已經這樣了，用不着這麼費力吧？\n");
 
-        msg = HIG "$N" HIG "腳下輕浮，踉踉蹌蹌，似倒非倒，跌跌撞撞的沖向$n"
-              HIG "，同時伸手就是一招，詭秘之極。\n" NOR;
+        msg = HIG "$N" HIG "腳下輕浮，踉踉蹌蹌，似倒非倒，跌跌撞撞的衝向$n"
+              HIG "，同時伸手就是一招，詭祕之極。\n" NOR;
 
         me->start_busy(2);
         ap = attack_power(me, "hand");

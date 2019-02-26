@@ -74,8 +74,8 @@ void jingyan_open()
                 //不是c文件的也濾過
                 i = sizeof(s_place);
                 if ( s_place[(i-2)..i] != ".c" ) continue;
-                //如果該房間已經調出在內存裡的直接find
-                //find不到說明沒調出在內存裡，那就load出來 
+                //如果該房間已經調出在內存裏的直接find
+                //find不到説明沒調出在內存裏，那就load出來 
                 //load也load不出來大概就有問題了，那就找下一個了   
                 if ( ! objectp(n_place = find_object(city + s_place)))
                
@@ -90,10 +90,10 @@ void jingyan_open()
        CHANNEL_D->do_channel(this_object(), 
          "wiz", "驚雁宮入口連接到了" + c_place[num] + city + s_place + "請注意。");
                 
-       set("jingyan/out", city + s_place); //主文件裡記錄下迷宮的連接處
+       set("jingyan/out", city + s_place); //主文件裏記錄下迷宮的連接處
                                           
        message("vision", HIG"【" HIR "江湖傳言" HIG"】" HIW 
-               "：神秘的驚雁宮重現江湖了，似乎在"
+               "：神祕的驚雁宮重現江湖了，似乎在"
                + c_place[num] + "方向。\n" + NOR,users());
        //10分鐘後關閉，時間可以設置
 
@@ -106,7 +106,7 @@ void jingyan_close(object n_place)
      if (n_place && n_place->query("exits/jingyangong"))
      {       
        n_place->delete("exits/jingyangong");       
-       message("vision", HIG"【" HIR"江湖傳言" HIG"】" HIW"：神秘的驚雁宮又消失了。\n" 
+       message("vision", HIG"【" HIR"江湖傳言" HIG"】" HIW"：神祕的驚雁宮又消失了。\n" 
                       NOR,users());
      }
      remove_call_out("jingyan_open");
@@ -131,8 +131,8 @@ void wudie_open()
                 //不是c文件的也濾過
                 i = sizeof(s_place);
                 if ( s_place[(i-2)..i] != ".c" ) continue;
-                //如果該房間已經調出在內存裡的直接find
-                //find不到說明沒調出在內存裡，那就load出來 
+                //如果該房間已經調出在內存裏的直接find
+                //find不到説明沒調出在內存裏，那就load出來 
                 //load也load不出來大概就有問題了，那就找下一個了   
                 if ( ! objectp(n_place = find_object(city + s_place)))
                
@@ -147,10 +147,10 @@ void wudie_open()
        CHANNEL_D->do_channel(this_object(), 
          "wiz", "舞蝶山莊連接到了" + c_place[num] + city + s_place + "請注意。");
                 
-       set("wudie/out", city + s_place); //主文件裡記錄下迷宮的連接處
+       set("wudie/out", city + s_place); //主文件裏記錄下迷宮的連接處
                                           
-       message("vision", HIG"【" HIR "神秘門派" HIG"】" HIW 
-               "：傳說中的舞蝶山莊重現江湖了，似乎在"
+       message("vision", HIG"【" HIR "神祕門派" HIG"】" HIW 
+               "：傳説中的舞蝶山莊重現江湖了，似乎在"
                + c_place[num] + "方向。\n" + NOR,users());
        //10分鐘後關閉，時間可以設置
 
@@ -163,7 +163,7 @@ void wudie_close(object n_place)
      if (n_place && n_place->query("exits/wudie"))
      {       
        n_place->delete("exits/wudie");       
-       message("vision", HIG"【" HIR"神秘門派" HIG"】" HIW"：傳說中的舞蝶山莊又消失了。\n" 
+       message("vision", HIG"【" HIR"神祕門派" HIG"】" HIW"：傳説中的舞蝶山莊又消失了。\n" 
                       NOR,users());
      }
      remove_call_out("wudie_open");

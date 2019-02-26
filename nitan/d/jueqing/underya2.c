@@ -6,10 +6,10 @@ void create()
 {
         set("short", "寒潭盡頭");
         set("long", @LONG
-這裡只覺陽光耀眼，花香撲鼻，竟是別有天地，遊目四顧，
+這裏只覺陽光耀眼，花香撲鼻，竟是別有天地，遊目四顧，
 只見繁花青草，便如同一個極大的花園，然花影不動，幽谷無
-人。十余丈外有一間茅屋(house)， 側耳傾聽，四下裡靜悄悄
-的，絕無人聲鳥語，惟有蜜蜂的嗡嗡微響。身後寒潭透著陣陣
+人。十餘丈外有一間茅屋(house)， 側耳傾聽，四下裏靜悄悄
+的，絕無人聲鳥語，惟有蜜蜂的嗡嗡微響。身後寒潭透着陣陣
 寒氣。
 LONG);
         set("item_desc", ([
@@ -40,12 +40,12 @@ int do_jump(string arg)
                 return notify_fail("你要往哪兒跳？\n");
 
         if (me->is_busy())
-                return notify_fail("你現在正忙著呢！\n");
+                return notify_fail("你現在正忙着呢！\n");
 
         if (me->is_fighting())
-                return notify_fail("你還是先把你面前這個家伙解決了再說。\n");
+                return notify_fail("你還是先把你面前這個傢伙解決了再説。\n");
 
-        write(HIC "你縱身入潭，順勢而下忙，向光亮處遊去，過不多時，便到了\n"
+        write(HIC "你縱身入潭，順勢而下忙，向光亮處游去，過不多時，便到了\n"
                   "寒潭另一側，你迫不及待，縱身躍出水面。\n\n" NOR);
 
         if (! ob = find_object(__DIR__"underya"))

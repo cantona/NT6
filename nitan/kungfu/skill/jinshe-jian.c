@@ -70,7 +70,7 @@ int valid_learn(object me)
         if( query("character", me) == "心狠手辣" )
                 return notify_fail("你一心想殺盡敵人，沒能理解金蛇劍法。\n");
 
-        if( query("character", me) == "陰險姦詐" )
+        if( query("character", me) == "陰險奸詐" )
                 return notify_fail("你一心想怎麼學好劍法去害人，結果沒能理解金蛇劍法。\n");
 
         if( query("character", me) == "光明磊落" )
@@ -207,7 +207,7 @@ mixed hit_ob(object me, object victim, int damage_bonus)
                  ! victim->is_busy())
              {
                  message_sort(HIW "\n$N" HIW "劍鋒一轉，手中" + weapon->name() + HIW
-                              "猶如靈蛇般地舞動著，竟將$n" HIW "周身纏繞。\n" NOR);
+                              "猶如靈蛇般地舞動着，竟將$n" HIW "周身纏繞。\n" NOR);
                  me->start_busy(1);
                  victim->start_busy(1 + random(lvl / 20));
              }
@@ -247,8 +247,8 @@ int help(object me)
         write(HIC"\n金蛇劍法："NOR"\n");
         write(@HELP
 
-    金蛇劍法載于「金蛇密笈」，乃金蛇郎君夏雪宜的獨門武功。
-夏雪宜幼時全家不幸被溫家五老劫掠滅門，立志報仇。後于苗疆得
+    金蛇劍法載於「金蛇密笈」，乃金蛇郎君夏雪宜的獨門武功。
+夏雪宜幼時全家不幸被温家五老劫掠滅門，立志報仇。後於苗疆得
 識五毒教教主之妹何紅藥，並得其助獲得五毒教的「三寶」──金
 蛇劍、金蛇錐及藏寶圖，因而練成絕世武功。
     夏雪宜性情古怪，為人陰狠，武功便正如其人般詭異難測。江

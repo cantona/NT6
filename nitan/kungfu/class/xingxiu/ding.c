@@ -115,7 +115,7 @@ LONG );
                 "解毒" : (: ask_poison :),
                 "book" : (: ask_book :),
                 "易筋經殘篇" : (: ask_book :),
-//                "火燄" : (: ask_huoyan :),
+//                "火焰" : (: ask_huoyan :),
                 "銀磷粉"        : (:ask_yinlinfen:),
                 "yinlin fen" : (:ask_yinlinfen:),
                 "紅磷粉" : (:ask_honglinfen:),
@@ -181,14 +181,14 @@ void init()
         && (!present("yu di", this_player()))){
                 ob1=new("/d/xingxiu/obj/yudi");
                 ob1->move(this_player());
-                command("say 這只玉笛是咱們星宿弟子的護身符，你好好拿著，不可弄丟。");
-                write("丁春秋給你一只玉笛。\n");
+                command("say 這隻玉笛是咱們星宿弟子的護身符，你好好拿着，不可弄丟。");
+                write("丁春秋給你一隻玉笛。\n");
         }
 
         /*
         if (living(this_object()) && present("shenmuwang ding", me))
         {
-                command("say 好家伙，原來你偷了我的神木王鼎！受死吧！");
+                command("say 好傢伙，原來你偷了我的神木王鼎！受死吧！");
                 kill_ob(me);
                 return;
         }
@@ -203,7 +203,7 @@ int ask_book()
        object me=this_player();
 
        if( query("canbook", me) == 1 && (!present("yijinjing",me))){
-                tell_object(me,"丁春秋說道：“好徒兒，還沒參透這本易筋經的奧秘麼？\n");
+                tell_object(me,"丁春秋説道：“好徒兒，還沒參透這本易筋經的奧祕麼？\n");
                 tell_object(me,"那好吧。這本副本給你，拿回去好好參悟吧！\n");
                 tell_object(me,"徒兒你一定要記住，千萬配合神木王鼎一起修煉，要不然很容易走火入魔。”\n");
                 ob=new("/clone/book/yjj_book2.c");
@@ -281,7 +281,7 @@ void no_answer(object user)
         }
 else {
         command("tell"+query("id", user)+""+user->name(1)+"，你以為你裝馬虎我就治不了你了嗎！");
-        command("tell"+query("id", user)+"你暫時用不著給老仙做事了！");
+        command("tell"+query("id", user)+"你暫時用不着給老仙做事了！");
 }
         addn("ding_robot", 1, user);
         set("robot_ding",query("mud_age",  user)+query("ding_robot", user)*600, user);
@@ -292,7 +292,7 @@ void attempt_apprentice(object me)
 
         if( query("shen", me)>-12000 )
         {
-                command("say 老仙我越看你越象白道派來臥底的。");
+                command("say 老仙我越看你越象白道派來卧底的。");
                 return;
         }
 
@@ -316,12 +316,12 @@ void attempt_apprentice(object me)
 
         if( query_temp("pending/flatter", me) )
         {
-                command("say 你如此不把老仙放在眼裡，老仙怎會收你？");
+                command("say 你如此不把老仙放在眼裏，老仙怎會收你？");
                 return;
         } else
         {
                 command("say 我星宿老仙比起古往今來的聖人怎麼樣啊？");
-                message_vision("星宿老怪微閉雙眼，手捻長須，一副等人拍馬(flatter)的樣子。\n",
+                message_vision("星宿老怪微閉雙眼，手捻長鬚，一副等人拍馬(flatter)的樣子。\n",
                 this_player());
                 set_temp("pending/flatter", 1, me);
         }
@@ -332,9 +332,9 @@ int do_flatter(string arg)
         if( !query_temp("pending/flatter", this_player()) )
                 return 0;
 
-        if (! arg) return notify_fail("你說老仙什麼？\n");
+        if (! arg) return notify_fail("你説老仙什麼？\n");
         set_temp("pending/flatter", 0, this_player());
-        message_vision("$N大聲說道：" + arg + "\n", this_player());
+        message_vision("$N大聲説道：" + arg + "\n", this_player());
         if( strsrch(arg, "星宿老仙") >=0 && (strsrch(arg, "德配天地") >=0
          || strsrch(arg, "威震寰宇") >=0 || strsrch(arg, "古今無比") >=0 )) {
                 command("smile");
@@ -343,7 +343,7 @@ int do_flatter(string arg)
                 command("recruit "+query("id", this_player()));
         } else
         {
-                command("say 你如此不把我放在眼裡，我怎能收你？");
+                command("say 你如此不把我放在眼裏，我怎能收你？");
         }
         return 1;
 }
@@ -415,13 +415,13 @@ string ask_xiangliao()
                 return RANK_D->query_respect(this_player()) + "與本派素無來往，不知此話從何談起？\n";
 
         if (is_busy() || is_fighting())
-                return "等會兒，沒看我這正忙著呢麼？\n";
+                return "等會兒，沒看我這正忙着呢麼？\n";
 
         if( query_temp("get_xiangliao", this_player()) )
                 return "剛才不是給了你嗎？不會這麼快就用完了吧？\n";
 
         if (this_player()->query_skill("poison", 1) < 40)
-                return "你的毒技火候太差，還是練練再說吧！\n";
+                return "你的毒技火候太差，還是練練再説吧！\n";
 
         if (query("xiangliao_count") < 1)
                 return "你來晚了，現在沒什麼剩下的香料了，你還是去倉庫找找看吧！\n";
@@ -459,7 +459,7 @@ int accept_ask(object me, string topic)
         {
              case "歷練" :
              case "歷煉" :
-             case "鍛煉" :
+             case "鍛鍊" :
                  return QUEST_D->accept_ask(this_object(), me, topic);
 
              case "奪魂勢":
@@ -504,10 +504,10 @@ int accept_ask(object me, string topic)
                                  "family/gongji" :  300 ]));
                   break;
 
-             case "碧燄滔天":
+             case "碧焰滔天":
                  return MASTER_D->teach_pfm(me, this_object(),
                                (["perform"  :  "can_perform/chousui-zhang/tao",
-                                 "name"     :  "碧燄滔天",
+                                 "name"     :  "碧焰滔天",
                                  "sk1"      :  "chousui-zhang",
                                  "lv1"      :  220,
                                  "sk2"      :  "poison",
@@ -519,10 +519,10 @@ int accept_ask(object me, string topic)
                                  "family/gongji" :  1200 ]));
                   break;
 
-             case "彈射火燄":
+             case "彈射火焰":
                  return MASTER_D->teach_pfm(me, this_object(),
                                (["perform"  :  "can_perform/chousui-zhang/huoyan",
-                                 "name"     :  "彈射火燄",
+                                 "name"     :  "彈射火焰",
                                  "sk1"      :  "chousui-zhang",
                                  "lv1"      :  140,
                                  "sk2"      :  "force",
@@ -553,10 +553,10 @@ int accept_ask(object me, string topic)
                                  "family/gongji" :  950 ]));
                   break;
 
-             case "彈射碧燄":
+             case "彈射碧焰":
                  return MASTER_D->teach_pfm(me, this_object(),
                                (["perform"  :  "can_perform/chousui-zhang/biyan",
-                                 "name"     :  "彈射碧燄",
+                                 "name"     :  "彈射碧焰",
                                  "sk1"      :  "chousui-zhang",
                                  "lv1"      :  140,
                                  "sk2"      :  "force",
@@ -637,12 +637,12 @@ int ask_staff()
         }
 
         if (me->query_str() < 50) {
-                command("say 你的體能太低了，好好鍛煉鍛煉在來問我吧。");
+                command("say 你的體能太低了，好好鍛鍊鍛鍊在來問我吧。");
                 return 1;
         }
 
         if (me->query_con() < 50) {
-                command("say 你的內功修為太低了，好好鍛煉鍛煉在來問我吧。");
+                command("say 你的內功修為太低了，好好鍛鍊鍛鍊在來問我吧。");
                 return 1;
         }
 
@@ -684,7 +684,7 @@ int ask_job(){
         if( query("robot_answer", me))return notify_fail("快給老夫把先前的問題答了！\n");
 
         if( random(4) == 1 && !query("passed_ding", me)){
-                command("say 昨夜老夫受仙人告戒，說你" + me->name(1) + "做事不老實。用寫機器來欺騙老夫");
+                command("say 昨夜老夫受仙人告戒，説你" + me->name(1) + "做事不老實。用寫機器來欺騙老夫");
                 command("say 所以老夫現在要問你一問，你聽好了！");
                 ANTI_ROBOT->get_question(me, this_object());
                 return 1;
@@ -750,8 +750,8 @@ int accept_object(object who, object ob){
         }
         if( query("id", ob) == "a zi"){
 
-                        command("say 太好了，終于有把這個孽徒抓回來了！\n");
-                        command("say 來人哪！把這個孽徒給我先關到牢房裡面去！\n");
+                        command("say 太好了，終於有把這個孽徒抓回來了！\n");
+                        command("say 來人哪！把這個孽徒給我先關到牢房裏面去！\n");
                         tell_object(me,"門外進來兩名星宿弟子把阿紫拖出去了。\n");
                         pot = random(300)+80;
                         exp = 500 + random( 20 );
@@ -766,7 +766,7 @@ int accept_object(object who, object ob){
         if( query("id", ob) == "noname book" )
         {
         if( !query("my_owner", ob) || query("my_owner", ob) != me )
-                return notify_fail("丁春秋怒道：這是你哪裡揀來的破東西，還不扔了！\n");
+                return notify_fail("丁春秋怒道：這是你哪裏揀來的破東西，還不扔了！\n");
                 // if(me->query("ask/ding")==1)
                 if(me)
                 {
@@ -828,7 +828,7 @@ string ask_huoyan()
         addn("huoyan_count", -1);
         ob = new("/d/xingxiu/npc/obj/huoyan.c");
         ob->move(this_player());
-        return "好吧，我就給你堆火燄吧。";
+        return "好吧，我就給你堆火焰吧。";
 }
 
 string ask_yinlinfen()

@@ -38,7 +38,7 @@ int perform(object me, object target)
                 return notify_fail("你沒有準備使用九陰神功，無法施展" ZHI "。\n");
 
         if (! living(target))
-               return notify_fail("對方都已經這樣了，用不著這麼費力吧？\n");
+               return notify_fail("對方都已經這樣了，用不着這麼費力吧？\n");
 
         addn("neili", -100, me);
 
@@ -68,7 +68,7 @@ int perform(object me, object target)
                         if( weapon && random(ap)/2>dp && query("type", weapon) != "pin" )
                         {
                                 msg = HIW "$n" HIW "覺得眼前眼花繚亂，手中的" + weapon->name() +
-                                      HIW "一時竟然拿捏不住，脫手而出！\n" NOR;
+                                      HIW "一時竟然拿捏不住，脱手而出！\n" NOR;
                                 weapon->move(environment(me));
                         } else
                         {
@@ -86,7 +86,7 @@ int perform(object me, object target)
                 }
         } else
         {
-                msg += HIC "不過$n" HIC "緊守門戶，不露半點破綻。\n" NOR;
+                msg += HIC "不過$n" HIC "緊守門户，不露半點破綻。\n" NOR;
                 me->start_busy(3 + random(2));
         }
 

@@ -47,7 +47,7 @@ int perform(object me, object target)
                 return notify_fail("你沒有激發九陽神功為劍法，難以施展" + name() + "。\n");
 
         if (! living(target))
-                return notify_fail("對方都已經這樣了，用不著這麼費力吧？\n");
+                return notify_fail("對方都已經這樣了，用不着這麼費力吧？\n");
 
         msg = HIY "\n$N" HIY "一聲長吟，內力瀑漲，全身真氣貫與劍柄。手中" + weapon->name() + HIY
               "光芒四射，剎那間一股強勁的劍氣已湧向$n" HIY "！\n" NOR;

@@ -35,7 +35,7 @@ int perform(object me, object target)
                 return notify_fail("你沒有運用逍遙派內功！\n");
 
         if ((int)me->query_skill("liuyang-zhang", 1) < 150)
-                return notify_fail("你的天山六陽掌功力不夠，不能種生死符！□n");
+                return notify_fail("你的天山六陽掌功力不夠，不能種生死符！\n");
 
         if( query("neili", me)<1000 )
                 return notify_fail("你的內力不夠，不能種生死符。\n");
@@ -43,7 +43,7 @@ int perform(object me, object target)
         message_combatd(
                 WHT "$N突然從背後掏出一個酒袋，往自己掌心倒了些酒水。"
                 "$N左掌掌心中暗運內功，逆轉真氣，\n不多時已將掌中酒水化成七八片寒冰，右掌"
-                "蘊出一縷白線，猛地向$n的胸口射了過去！\n\n" NOR,
+                "藴出一縷白線，猛地向$n的胸口射了過去！\n\n" NOR,
                 me, target );
 
         ap = attack_power(me, "strike") + me->query_str()*10;

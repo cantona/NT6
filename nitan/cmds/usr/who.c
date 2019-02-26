@@ -44,7 +44,7 @@ mixed main(object me, string arg, int remote)
         cur_time = time(); 
         if( !wizardp(me) && cur_time-query_temp("last_who", me)<5 )
         {
-              return notify_fail("系統氣喘噓地嘆道：慢慢來 ....\n"); 
+              return notify_fail("系統氣喘噓地歎道：慢慢來 ....\n"); 
         } 
         set_temp("last_who", cur_time, me);
 

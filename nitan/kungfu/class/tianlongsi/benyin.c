@@ -13,7 +13,7 @@ void create()
         set_name("本因", ({ "ben yin","yin"}) );
         set("gender", "男性" );
         set("title", "天龍寺第十七代住持");
-        set("long", "一個神情瀟洒的僧人，他是天龍寺住持方丈。\n");
+        set("long", "一個神情瀟灑的僧人，他是天龍寺住持方丈。\n");
         set("class", "bonze");
         set("age", 43);
         set("shen_type", 1);

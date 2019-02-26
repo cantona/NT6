@@ -31,11 +31,11 @@ void greeting(object ob)
         if( !ob || environment(ob) != environment() ) return;
         switch( random(2) ) {
                 case 0:
-                        say( "店小二笑咪咪地說道：這位" + RANK_D->query_respect(ob)
+                        say( "店小二笑咪咪地説道：這位" + RANK_D->query_respect(ob)
                                 + "，進來喝杯茶，歇歇腿吧。\n");
                         break;
                 case 1:
-                        say( "店小二用脖子上的毛巾抹了抹手，說道：這位" + RANK_D->query_respect(ob)
+                        say( "店小二用脖子上的毛巾抹了抹手，説道：這位" + RANK_D->query_respect(ob)
                                 + "，請進請進。\n");
                         break;
         }
@@ -46,7 +46,7 @@ int accept_object(object who, object ob)
         
         if( query("money_id", ob) && ob->value() >= 500 )
         {
-                tell_object(who, "小二一哈腰，說道：多謝您老，客官請上樓歇息。\n");
+                tell_object(who, "小二一哈腰，説道：多謝您老，客官請上樓歇息。\n");
 
                 set_temp("rent_paid", 1, who);
 

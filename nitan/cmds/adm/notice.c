@@ -51,9 +51,9 @@ int main(object me, string msg)
         lines = explode(msg, "\n");
         for( int i=0; i<sizeof(lines); i++ )
                 if ( i % 2 == 0)
-                        lines[i] = BLINK + REDYEL "□" NOR "  " + lines[i];
+                        lines[i] = BLINK + REDYEL "█" NOR "  " + lines[i];
                 else
-                        lines[i] = BLINK + YELRED "□" NOR "  " + lines[i];
+                        lines[i] = BLINK + YELRED "█" NOR "  " + lines[i];
 
         msg = implode(lines, "\n") + "\n";
         msg = color_filter(msg);
@@ -68,7 +68,7 @@ int help(object me)
         write(@HELP
 指令格式: notice <通知內容>
 
-改指令用來添加玩家連線後的通知信息，如無必要盡量少用
+改指令用來添加玩家連線後的通知信息，如無必要儘量少用
 notice -rm 用來清除信息。
 HELP
         );

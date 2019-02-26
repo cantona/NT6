@@ -23,19 +23,19 @@ int perform(object me, object target)
                 return notify_fail("你使用的武器不對，難以施展" +name()+ "。\n");
         
         if (me->query_skill("lunhui-sword", 1) < 1200)
-                return notify_fail("你的六道輪回劍修為不夠，難以施展" +name()+ "。\n");
+                return notify_fail("你的六道輪迴劍修為不夠，難以施展" +name()+ "。\n");
         
         if (me->query_skill_mapped("sword") != "lunhui-sword")
-                return notify_fail("你沒有激發六道輪回劍，難以施展" +name()+ "。\n");
+                return notify_fail("你沒有激發六道輪迴劍，難以施展" +name()+ "。\n");
         
         if (me->query_skill_mapped("sword") != "lunhui-sword")
-                return notify_fail("你沒有激發六道輪回劍，難以施展" +name()+ "。\n");
+                return notify_fail("你沒有激發六道輪迴劍，難以施展" +name()+ "。\n");
         
         if( query("neili", me)<3000 )
                 return notify_fail("你的真氣不夠，難以施展" +name()+ "。\n");
         
         if (! living(target))
-                return notify_fail("對方都已經這樣了，用不著這麼費力吧？\n");
+                return notify_fail("對方都已經這樣了，用不着這麼費力吧？\n");
         
         msg = HIC "$N" HIC "輕嘯一聲，手中" + weapon->name() + HIC "平平一劍刺出，速度之快，有如電閃雷鳴一般！\n" NOR;
         
@@ -77,9 +77,9 @@ int perform(object me, object target)
                 // 追加一次武器傷害
                 if (random(100) < ran || wizardp(me))
                 {
-                        msg = msg + HIG + weapon->name() + HIG "發出雷鳴般的響聲，伴隨著一道劍光再次穿透" +
+                        msg = msg + HIG + weapon->name() + HIG "發出雷鳴般的響聲，伴隨着一道劍光再次穿透" +
                               target->name() + HIG "身體……\n" NOR +
-                              HIR "一股鮮血順著" + weapon->name() + HIR "噴射而出！\n" NOR;
+                              HIR "一股鮮血順着" + weapon->name() + HIR "噴射而出！\n" NOR;
                         target->receive_damage("qi", weapon->apply_damage() / 2, me);
                         target->receive_wound("qi", weapon->apply_damage() / 2, me);
                 }

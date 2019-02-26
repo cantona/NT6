@@ -12,7 +12,7 @@ void create()
         set("str", 25);
         set("dex", 16);
         set("per", 21);
-        set("long", "他一身長須垂胸，性子狠辣，性好酒。\n");
+        set("long", "他一身長鬚垂胸，性子狠辣，性好酒。\n");
         set("combat_exp", 3000000+ random(1000000));
         set("attitude", "peaceful");
         set("neili", 2000);

@@ -31,11 +31,11 @@ int perform(object me, object target)
                 return notify_fail("你沒有激發化骨綿掌，無法施展化骨掌。\n");
 
        if (! living(target))
-              return notify_fail("對方都已經這樣了，用不著這麼費力吧？\n");
+              return notify_fail("對方都已經這樣了，用不着這麼費力吧？\n");
 
         addn("neili", -100, me);
 
-        msg = BLU "$N"BLU"面無表情，驀然遊身而上，繞著$n"BLU"疾轉數圈，猛地身形一縮，轉到$n"BLU"身前，\n"
+        msg = BLU "$N"BLU"面無表情，驀然遊身而上，繞着$n"BLU"疾轉數圈，猛地身形一縮，轉到$n"BLU"身前，\n"
               "右手劃出一道光圈，往$n"BLU"丹田印了下去！\n"NOR;
 
         ap = attack_power(me, "strike");
@@ -54,7 +54,7 @@ int perform(object me, object target)
         } else
         {
                 me->start_busy(2);
-                msg += HIY"可是$p也隨著縱身斜躍，避開了丹田要害。\n"NOR;
+                msg += HIY"可是$p也隨着縱身斜躍，避開了丹田要害。\n"NOR;
         }
         message_combatd(msg, me, target);
         return 1;

@@ -23,7 +23,7 @@ mapping bingfa = ([
                      ]),
                      
         "siegecity": ([ "jinglan"    : "井闌",
-                        "chongche"   : "沖車",
+                        "chongche"   : "衝車",
                         "fashi"      : "發石",
                         "xiangbing"  : "象兵",
                         "luoshi"     : "落石",
@@ -76,7 +76,7 @@ void create()
                 set("no_sell", 1);
                 set("no_store", 1);
         }
-        set("master", "高□不□寒");
+        set("master", "高處不勝寒");
         set("owner", "lonely");
         setup();
 }
@@ -165,13 +165,13 @@ int do_attack(string arg)
                 return notify_fail("你已經設置為由系統自動指揮作戰！如想自己操作，請修改設置。\n");
         */
         if( query_temp("warquest/attack", me) )
-                return notify_fail("你的隊伍正在列陣進攻，不要亂發號令了！\n");
+                return notify_fail("你的隊伍正在列陣進攻，不要亂髮號令了！\n");
 
         if( !query_temp("warquest/train", me) )
                 return notify_fail("你未帶一兵一卒，指揮個什麼呀？\n");
 
         if( query_temp("warquest/group", me)<1 )
-                return notify_fail("你的隊伍已經損失殆盡，無法列陣沖鋒了！\n");
+                return notify_fail("你的隊伍已經損失殆盡，無法列陣衝鋒了！\n");
 
         if (sscanf(arg, "%s with %s & %s on %s", who, zhen, craft, dir) != 4 &&
             sscanf(arg, "%s with %s & %s", who, zhen, craft) != 3)
@@ -186,7 +186,7 @@ int do_attack(string arg)
                         return notify_fail("你目前還沒有通曉「步兵系兵法」中「" + bingfa[craft] + "」這種兵法！\n");
 
                 if( query("no_fight", env) )
-                        return notify_fail("這裡不許戰鬥！！\n");
+                        return notify_fail("這裏不許戰鬥！！\n");
 
                 if (! objectp(ob = present(who, env)))
                         return notify_fail("無法找到目標，請用 attack <sb.> with <array> & <craft> 指揮你的隊伍！\n");
@@ -195,7 +195,7 @@ int do_attack(string arg)
                         return notify_fail("你軍務在身，還是不要輕易招惹是非的好！\n");
 
                 message_vision(HIY "$N將手中寶劍一揮，大喝道：步兵營列陣「" + zhenfa[zhen] +
-                        "」，準備向敵軍發起沖鋒──>" + bingfa[craft] + "！！\n" NOR, me, ob);
+                        "」，準備向敵軍發起衝鋒——>" + bingfa[craft] + "！！\n" NOR, me, ob);
 
                 set_temp("warquest/attack", 1, me);
                 set_temp("warquest/array", zhenfa[zhen], me);
@@ -225,7 +225,7 @@ int do_attack(string arg)
                 if (! room)  return notify_fail("無法找到目標，請用 attack <sb.> with <array> & <craft> on <dir>  指揮你的隊伍！\n");
 
                 if( query("no_fight", room) )
-                        return notify_fail("那裡不允許撕殺！！\n");
+                        return notify_fail("那裏不允許撕殺！！\n");
 
                 if (! objectp(ob = present(who, room)))
                         return notify_fail("無法找到目標，請用 attack <sb.> with <array> & <craft> on <dir>  指揮你的隊伍！\n");
@@ -241,13 +241,13 @@ int do_attack(string arg)
                                 if (! WIELD_CMD->main(ob, "bow"))
                                         return notify_fail("你身上沒有弓弩，如何放箭攻擊敵人！\n");
                         message_vision(HIB "$N大聲下令道：神弩營列陣「" + zhenfa[zhen] +
-                                "」！一排排利箭在陽光下閃閃發光──>" +
+                                "」！一排排利箭在陽光下閃閃發光——>" +
                                 bingfa[craft] + "！！\n$N" HIB "一聲令下，萬弩齊發！\n" NOR, me);
                 } else
                 {
                         me->move(room);
                         message_vision(HIY "$N將手中寶劍一揮，大喝道：車騎營列陣「" + zhenfa[zhen] +
-                                "」，準備向敵軍發起沖鋒──>" + bingfa[craft] + "！！\n" NOR,
+                                "」，準備向敵軍發起衝鋒——>" + bingfa[craft] + "！！\n" NOR,
                                 me, ob);
                 }
 
@@ -275,7 +275,7 @@ int do_stock(string arg)
                 return notify_fail("元帥並未分派你購置軍備的任務，不要擅自行動！\n");
                 
         if( query_temp("warquest/move", me) )
-                return notify_fail("號令已經發布下去了！\n");
+                return notify_fail("號令已經發佈下去了！\n");
 
         set_temp("warquest/move", "forward", me);
         set_temp("warquest/move_from", "/d/city2/sying1", me);
@@ -322,7 +322,7 @@ int do_train(string arg)
 
         if (! environment(me) ||
             base_name(environment(me)) != "/d/city2/sying1")
-                return notify_fail("你必須到元帥那裡領命才可以訓練隊伍！\n");
+                return notify_fail("你必須到元帥那裏領命才可以訓練隊伍！\n");
 
         if( query_temp("warquest/train_begin", me) )
                 return notify_fail("你不是正在訓練隊伍嗎？！\n");
@@ -362,7 +362,7 @@ int do_order(string arg)
                 return notify_fail("請用 order sb to do sth. 來發布號令！\n");
 
         if (! objectp(ob = present(who, env)))
-                return notify_fail("這裡沒有你可以調度的這名將領！\n");
+                return notify_fail("這裏沒有你可以調度的這名將領！\n");
 
         if( query_temp("warquest/party", ob) != "song" )
                 return notify_fail("對方不是宋軍，如何供你調度？！\n");

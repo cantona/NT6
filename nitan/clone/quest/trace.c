@@ -125,7 +125,7 @@ string ask_1_for_2()
         case 1:
                 return "他是我同生共死的兄弟，可現在卻不知他生在何處。";
         default:
-                return "知道他在哪裡麼？快請他過來，跟他說兄弟這裡危險。";
+                return "知道他在哪裏麼？快請他過來，跟他説兄弟這裏危險。";
         }
 }
 
@@ -144,7 +144,7 @@ mixed ask_2_for_1(object npc2, object npc1, string npc1_name)
                 return "唉，你也一樣有要事在身，我怎麼好麻煩你？";
 
         if (! query_temp("trace/" + query_temp("trace", npc2),me))
-                return "你…你是從哪裡聽來的？這不幹你的事。";
+                return "你…你是從哪裏聽來的？這不干你的事。";
 
         follow = npc2->query_leader();
 
@@ -157,11 +157,11 @@ mixed ask_2_for_1(object npc2, object npc1, string npc1_name)
                         return "咱們快別耽擱了，萬一我兄弟有個三長"
                                "兩短可…唉。";
                 else
-                        return "現在" + follow->name() + "正在幫著"
+                        return "現在" + follow->name() + "正在幫着"
                                "尋找我兄弟，就不麻煩你了。";
         }
         message_vision(CYN "$N" CYN "一驚，緊握住$n" CYN "的雙手道"
-                       "：你…你知道我兄弟在哪裡？快…快帶我去。\n"
+                       "：你…你知道我兄弟在哪裏？快…快帶我去。\n"
                        NOR, npc2, me);
 
         npc2->set_leader(me);
@@ -190,7 +190,7 @@ void cancel_follow(object npc2, object me)
                        "兄弟的下落？算了，我還是自己找吧。\n"
                        NOR, npc2);
 
-        message_vision(HIC "$N" HIC "嘆了口氣，頭也不回的走了。"
+        message_vision(HIC "$N" HIC "歎了口氣，頭也不回的走了。"
                        "\n" NOR, npc2);
 
         // 返回故地
@@ -215,23 +215,23 @@ string ask_npc1(object knower, object me)
         if (! objectp(NPC1) && ! objectp(NPC2))
         {
                 call_out("cancel_quest", 1);
-                return CYN "嘿嘿，據說" HIY + NPC1_NAME + NOR +
+                return CYN "嘿嘿，據説" HIY + NPC1_NAME + NOR +
                        CYN "和" HIY + NPC2_NAME + NOR + CYN "哥"
-                       "倆終于見面了。嘖嘖，真不錯。" NOR;
+                       "倆終於見面了。嘖嘖，真不錯。" NOR;
         }
 
         if (! objectp(NPC1))
-                return CYN "唉…據說" HIY + NPC1_NAME + NOR +
-                       CYN "還是被仇家給做掉了，到死也沒見著"
+                return CYN "唉…據説" HIY + NPC1_NAME + NOR +
+                       CYN "還是被仇家給做掉了，到死也沒見着"
                        HIY + NPC2_NAME + NOR + CYN "的面。" NOR;
 
         set_temp("trace/"+NPC1_ID, 1, me);
 
         return CYN "這人武功不高，可是極重義氣，跟他兄弟" HIY +
                NPC2_NAME + NOR + CYN "失散後，便四處躲避仇家"
-               "的追殺。\n" + knower->name() + CYN "又接著道"
-               "：今上午聽吃飯的幾個家伙提起" HIY + NPC1_NAME +
-               NOR + CYN "，據說是躲到" + PLACE1 + NOR + CYN
+               "的追殺。\n" + knower->name() + CYN "又接着道"
+               "：今上午聽吃飯的幾個傢伙提起" HIY + NPC1_NAME +
+               NOR + CYN "，據説是躲到" + PLACE1 + NOR + CYN
                "去了。" NOR;
 }
 
@@ -251,15 +251,15 @@ string ask_npc2(object knower, object me)
         if (! objectp(NPC1) && ! objectp(NPC2))
         {
                 call_out("cancel_quest", 1);
-                return CYN "嘿嘿，據說" HIY + NPC1_NAME + NOR +
+                return CYN "嘿嘿，據説" HIY + NPC1_NAME + NOR +
                        CYN "和" HIY + NPC2_NAME + NOR + CYN "哥"
-                       "倆終于見面了。嘖嘖，真不錯。" NOR;
+                       "倆終於見面了。嘖嘖，真不錯。" NOR;
         }
 
         if (! objectp(NPC2))
-                return CYN "唉…據說那" HIY + NPC2_NAME + NOR +
+                return CYN "唉…據説那" HIY + NPC2_NAME + NOR +
                        CYN "最後還是被仇家給做掉了，臨死前還惦"
-                       "記著" HIY + NPC1_NAME + NOR + CYN "呢。" NOR;
+                       "記着" HIY + NPC1_NAME + NOR + CYN "呢。" NOR;
 
         return "那人跟他兄弟" HIY + NPC1_NAME + NOR + CYN "失散"
                "後，擔心得不得了。喏，現在還在" + PLACE2 + NOR +
@@ -274,16 +274,16 @@ void do_whisper(object knower, object me)
 
         if( query("score", me)<500 )
                 tell_object(me, WHT + knower->name() + WHT "悄悄的和你"
-                                "說：算了吧，憑你這兩下子，別人不會理你"
+                                "説：算了吧，憑你這兩下子，別人不會理你"
                                 "的。\n" NOR);
         else
                 tell_object(me, WHT + knower->name() + WHT "悄悄的和你"
-                                "說：我說呢，你也有事情做，何必去幹涉別"
+                                "説：我説呢，你也有事情做，何必去幹涉別"
                                 "人的私事。\n" NOR);
 
         delete_temp("trace/have_ask", me);
         message("vision", knower->name() + "在" + me->name() + "的耳邊"
-                "悄悄的說了些什麼。\n", environment(me), ({ me }));
+                "悄悄的説了些什麼。\n", environment(me), ({ me }));
 }
 
 // 任務介紹
@@ -294,23 +294,23 @@ string query_introduce(object knower)
         if (! objectp(NPC1) && ! objectp(NPC2))
         {
                 call_out("cancel_quest", 1);
-                return CYN "嘿嘿，據說" HIY + NPC1_NAME + NOR +
+                return CYN "嘿嘿，據説" HIY + NPC1_NAME + NOR +
                        CYN "和" HIY + NPC2_NAME + NOR + CYN "哥"
-                       "倆終于見面了。嘖嘖，真不錯。" NOR;
+                       "倆終於見面了。嘖嘖，真不錯。" NOR;
         }
 
-        return CYN "聽說" HIY + NPC2_NAME + NOR + CYN "和"
+        return CYN "聽説" HIY + NPC2_NAME + NOR + CYN "和"
                HIY + NPC1_NAME + NOR + CYN "在" + PLACE2 +
                CYN "被仇家圍追堵殺，雙方火拼了幾個時辰，真"
-               "是壯烈。\n" + knower->name() + CYN "又接著"
-               "說道：唉…那幾個仇家倒是被幹掉了，可是這麼"
+               "是壯烈。\n" + knower->name() + CYN "又接着"
+               "説道：唉…那幾個仇家倒是被幹掉了，可是這麼"
                "一對同生共死的兄弟也因此失散了。" NOR;
 }
 
-// 這個消息能夠被散布嗎？
+// 這個消息能夠被散佈嗎？
 int can_rumor_by(object knower)
 {
-        // 20%的幾率被散布
+        // 20%的機率被散佈
         return (random(10) < 2);
 }
 

@@ -47,14 +47,14 @@ mapping *action = ({
         "skill_name" : "風起雲湧",
         "damage_type":  "刺傷"
 ]),
-([      "action" : "$N運氣于腕，一招「風卷殘雲」，手中$w向一根銅棍般直擊向$n",
+([      "action" : "$N運氣於腕，一招「風捲殘雲」，手中$w向一根銅棍般直擊向$n",
         "force"  : 220,
         "attack" : 50,
         "dodge"  : 66,
         "parry"  : 38,
         "damage" : 80,
         "lvl" : 120,
-        "skill_name" : "風卷殘雲",
+        "skill_name" : "風捲殘雲",
         "damage_type":  "內傷"
 ]),
 ([      "action" : "$N單臂一揮，一招「欲擒故縱」，手中$w直擊向$n腰肋",

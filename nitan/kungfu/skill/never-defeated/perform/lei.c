@@ -27,7 +27,7 @@ int perform(object me, object target)
                 return notify_fail("你的真氣不夠！\n");
 
        if (! living(target))
-              return notify_fail("對方都已經這樣了，用不著這麼費力吧？\n");
+              return notify_fail("對方都已經這樣了，用不着這麼費力吧？\n");
 
         msg = HIC "$N" HIC "大喝一聲，手中的" + weapon->name() +
               HIC "長劈而下，看似簡單，竟然封住了$n"
@@ -67,7 +67,7 @@ int perform(object me, object target)
         } else
         {
                 msg += HIM "$n" HIM "大吃一驚，連忙胡亂抵擋，居"
-                                "然沒有一點傷害，僥幸得脫！\n" NOR;
+                                "然沒有一點傷害，僥倖得脱！\n" NOR;
 
                 me->start_busy(1 + random(3));
         }

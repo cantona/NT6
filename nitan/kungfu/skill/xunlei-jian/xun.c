@@ -34,7 +34,7 @@ int perform(object me, object target)
                 return notify_fail("你的真氣不夠，無法施展" XUN "。\n");
 
         if (! living(target))
-                return notify_fail("對方都已經這樣了，用不著這麼費力吧？\n");
+                return notify_fail("對方都已經這樣了，用不着這麼費力吧？\n");
 
         msg = HIY "$N" HIY "飛身一躍而起，手中" + weapon->name() + NOR + HIY
               "一抖，劍身頓時幻作一道電光，直直射向$n" HIY "而去！\n" NOR;
@@ -54,7 +54,7 @@ int perform(object me, object target)
         {
                 addn("neili", -60, me);
                 me->start_busy(3);
-                msg += CYN "可是$p" CYN "奮力格擋，終于架開了$P"
+                msg += CYN "可是$p" CYN "奮力格擋，終於架開了$P"
                        CYN "凌厲的劍招。 \n" NOR;
         }
         message_combatd(msg, me, target);

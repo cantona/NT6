@@ -4,7 +4,7 @@ void create()
 {
         set("short", "前院");
         set("long", @LONG
-這裡是前院的小廣場，用青磚舖就的地面非常整潔。
+這裏是前院的小廣場，用青磚鋪就的地面非常整潔。
 LONG
         );
         set("exits", ([ /* sizeof() == 4 */

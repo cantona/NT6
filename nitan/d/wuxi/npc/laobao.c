@@ -5,7 +5,7 @@ void create()
 {
         set_name("老鴇", ({ "lao bao", "laobao" }) );
         set("gender", "女性" );
-        set("title", "群玉院老板娘");
+        set("title", "羣玉院老闆娘");
         set("age", 42);
         set("str", 25);
         set("dex", 25);

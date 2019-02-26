@@ -2,9 +2,9 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "舍身崖");
+        set("short", "捨身崖");
         set("long", @LONG
-這是一處險峻的懸崖峭壁，相傳真武帝在此舍身得道。崖上立有
+這是一處險峻的懸崖峭壁，相傳真武帝在此捨身得道。崖上立有
 鐵柵欄，防止有人自殺步真武帝的後塵。
 LONG );
         set("exits", ([

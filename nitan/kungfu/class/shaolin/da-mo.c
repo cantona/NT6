@@ -21,8 +21,8 @@ void create()
                 "mo",
         }));
         set("long",
-                "他是一位卷發絡腮須的天竺老僧，身穿一襲邋遢金絲繡紅袈裟。\n"
-                "但卻滿面紅光，目蘊慈笑，眼現智珠，一派得道高僧氣勢。\n"
+                "他是一位捲髮絡腮須的天竺老僧，身穿一襲邋遢金絲繡紅袈裟。\n"
+                "但卻滿面紅光，目藴慈笑，眼現智珠，一派得道高僧氣勢。\n"
                 "他就是少林派開山鼻祖、當今武林的隱世高僧達摩祖師。\n"
         );
 
@@ -178,14 +178,14 @@ void attempt_apprentice(object ob)
         if ((int)ob_fam["generation"] != 36)
         {
                 command("say " + RANK_D->query_respect(ob) +
-                        "，貧僧哪裡敢當 !");
+                        "，貧僧哪裏敢當 !");
                 return;
         }
 
         if ((int)ob->query_int() < 35)
         {
                 command("say " + RANK_D->query_respect(ob) + "悟性仍有不足，"
-                        "需要進一步鍛煉才能領悟更高深的佛法。");
+                        "需要進一步鍛鍊才能領悟更高深的佛法。");
         }
 
         if( query("WPK", ob)>3 )
@@ -260,7 +260,7 @@ mixed ask_luan()
                        RANK_D->query_respect(me) + "見諒。";
 
         if( query("shen", me)<120000 )
-                return "此招用于降妖除魔，你既然不擅于此道，又何必學它？";
+                return "此招用於降妖除魔，你既然不擅於此道，又何必學它？";
 
         if (me->query_skill("damo-jian", 1) < 200)
                 return "你的達魔劍法還不到家，無法領會其中奧妙！";
@@ -269,8 +269,8 @@ mixed ask_luan()
                 return "你為我少林派效力還不夠，這招我先不忙傳你。";
 
         message_vision(HIY "$n" HIY "看看$N" HIY
-                       "，道：“好吧，你且聽仔細了！”說罷在$N"
-                       HIY "耳邊輕聲說了些什麼。\n" NOR,
+                       "，道：“好吧，你且聽仔細了！”説罷在$N"
+                       HIY "耳邊輕聲説了些什麼。\n" NOR,
                        me, this_object());
         command("say 記住，除非降妖除魔萬不得已，勿要輕易使用。");
         tell_object(me, HIG "你學會了達魔亂氣劍。\n" NOR);
@@ -302,7 +302,7 @@ mixed ask_qingxin()
                        RANK_D->query_respect(me) + "見諒。";
 
         if( query("shen", me)<120000 )
-                return "此招用于降妖除魔，你既然不擅于此道，又何必學它？";
+                return "此招用於降妖除魔，你既然不擅於此道，又何必學它？";
 
         if (me->query_skill("damo-jian", 1) < 200)
                 return "你的達魔劍法還不到家，無法領會其中奧妙！";
@@ -311,8 +311,8 @@ mixed ask_qingxin()
                 return "你為我少林派效力還不夠，這招我先不忙傳你。";
 
         message_vision(HIY "$n" HIY "看看$N" HIY
-                       "，道：“好吧，你且聽仔細了！”說罷在$N"
-                       HIY "耳邊輕聲說了些什麼。\n" NOR,
+                       "，道：“好吧，你且聽仔細了！”説罷在$N"
+                       HIY "耳邊輕聲説了些什麼。\n" NOR,
                        me, this_object());
         command("say 記住，除非降妖除魔萬不得已，勿要輕易使用。");
         tell_object(me, HIG "你學會了達魔清心劍。\n" NOR);
@@ -343,7 +343,7 @@ mixed ask_shang()
                        RANK_D->query_respect(me) + "見諒。";
 
         if( query("shen", me)<120000 )
-                return "此招用于降妖除魔，你既然不擅于此道，又何必學它？";
+                return "此招用於降妖除魔，你既然不擅於此道，又何必學它？";
 
         if (me->query_skill("damo-jian", 1) < 200)
                 return "你的達魔劍法還不到家，無法領會其中奧妙！";
@@ -352,8 +352,8 @@ mixed ask_shang()
                 return "你為我少林派效力還不夠，這招我先不忙傳你。";
 
         message_vision(HIY "$n" HIY "看看$N" HIY
-                       "，道：“好吧，你且聽仔細了！”說罷在$N"
-                       HIY "耳邊輕聲說了些什麼。\n" NOR,
+                       "，道：“好吧，你且聽仔細了！”説罷在$N"
+                       HIY "耳邊輕聲説了些什麼。\n" NOR,
                        me, this_object());
         command("say 記住，除非降妖除魔萬不得已，勿要輕易使用。");
         tell_object(me, HIG "你學會了達魔傷神劍。\n" NOR);
@@ -386,7 +386,7 @@ mixed ask_zhe()
                        RANK_D->query_respect(me) + "見諒。";
 
         if( query("shen", me)<120000 )
-                return "此招用于降妖除魔，你既然不擅于此道，又何必學它？";
+                return "此招用於降妖除魔，你既然不擅於此道，又何必學它？";
 
         if (me->query_skill("damo-jian", 1) < 200)
                 return "你的達魔劍法還不到家，無法領會其中奧妙！";
@@ -395,8 +395,8 @@ mixed ask_zhe()
                 return "你為我少林派效力還不夠，這招我先不忙傳你。";
 
         message_vision(HIY "$n" HIY "看看$N" HIY
-                       "，道：“好吧，你且聽仔細了！”說罷在$N"
-                       HIY "耳邊輕聲說了些什麼。\n" NOR,
+                       "，道：“好吧，你且聽仔細了！”説罷在$N"
+                       HIY "耳邊輕聲説了些什麼。\n" NOR,
                        me, this_object());
         command("say 記住，除非降妖除魔萬不得已，勿要輕易使用。");
         tell_object(me, HIG "你學會了達魔折元劍。\n" NOR);
@@ -418,7 +418,7 @@ int accept_ask(object me, string topic)
         {
         case "歷練" :
         case "歷煉" :
-        case "鍛煉" :
+        case "鍛鍊" :
                 return QUEST_D->accept_ask(this_object(), me, topic);
                 break;
 
@@ -435,10 +435,10 @@ int accept_ask(object me, string topic)
                            "gongxian": 600, ]));
                 break;
 
-        case "燃木真燄" :
+        case "燃木真焰" :
                 return MASTER_D->teach_pfm(me, this_object(),
                         ([ "perform" : "can_perform/ranmu-daofa/zhenyan",
-                           "name"    : "燃木真燄",
+                           "name"    : "燃木真焰",
                            "sk1"     : "ranmu-daofa",
                            "lv1"     : 120,
                            "sk2"     : "force",
@@ -531,10 +531,10 @@ int accept_ask(object me, string topic)
                            "gongxian": 1000, 
                            "shen"    : 100000, ])); 
                 break; 
-        case "六道輪回" : 
+        case "六道輪迴" : 
                 return MASTER_D->teach_pfm(me, this_object(), 
                         ([ "perform" : "can_perform/lunhui-jian/lun", 
-                           "name"    : "六道輪回", 
+                           "name"    : "六道輪迴", 
                            "sk1"     : "lunhui-jian", 
                            "lv1"     : 240, 
                            "neili"   : 5000, 

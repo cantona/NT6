@@ -52,7 +52,7 @@ int valid_learn(object me)
 int practice_skill(object me)
 {
         if (me->query_skill("wai-bagua", 1) < 100)
-                return notify_fail("你對外八卦神功的了解甚淺，還不足以自行鍛煉。\n");
+                return notify_fail("你對外八卦神功的瞭解甚淺，還不足以自行鍛鍊。\n");
 
         if( query("qi", me)<70 )
                 return notify_fail("你的體力太低了。\n");
@@ -92,7 +92,7 @@ mixed valid_damage(object ob, object me, int damage, object weapon)
                         break;
                 case 1:
                         result += ([ "msg" : WHT "$n" WHT "單掌利用八卦四方的"
-                                             "巧勁輕輕一托，$N" WHT "登時拿捏"
+                                             "巧勁輕輕一託，$N" WHT "登時拿捏"
                                              "不準力道，不禁泛起一陣有心無力"
                                              "的感覺。\n" NOR ]);
                         break;
@@ -101,7 +101,7 @@ mixed valid_damage(object ob, object me, int damage, object weapon)
                         result += ([ "msg" : WHT "$N" WHT "一招眼看擊中了$n"
                                              WHT "，然而$n" WHT "輕輕一格，"
                                              "將$N" WHT "的攻擊利用八卦巧勁"
-                                             "化于無形。\n" NOR ]);
+                                             "化於無形。\n" NOR ]);
                         break;
                 }
                 return result;

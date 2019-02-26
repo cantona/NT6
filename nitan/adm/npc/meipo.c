@@ -65,11 +65,11 @@ int accept_object(object me, object ob)//交錢
         if( !query_temp("ask_money", me))//由下面判斷交錢的人是否符合結婚條件。
                    return notify_fail("媒婆迷惑地問：“你想幹什麼？白給我錢？”\n");
           if( query_temp("marry/money", meipo))//已經有人交了錢了
-                  return notify_fail("媒婆說：“等我忙完了一對再說。”\n");
+                  return notify_fail("媒婆説：“等我忙完了一對再説。”\n");
           if(ob->value() < 500000)
-                return notify_fail("媒婆皺了皺眉頭說道：“錢太少了吧？50 gold，結婚這麼大的事，再少就不行了。”\n");
-        message_vision("媒婆接過錢對$N說：“這位"+RANK_D->query_respect(me)+"我可沒賺你的錢，呆會兒我還要張羅喜堂、還\n"
-                   "要雇人、還有辦酒宴，搞不好我還得賠上一點的！而且我還可以幫你發請束，\n"
+                return notify_fail("媒婆皺了皺眉頭説道：“錢太少了吧？50 gold，結婚這麼大的事，再少就不行了。”\n");
+        message_vision("媒婆接過錢對$N説：“這位"+RANK_D->query_respect(me)+"我可沒賺你的錢，呆會兒我還要張羅喜堂、還\n"
+                   "要僱人、還有辦酒宴，搞不好我還得賠上一點的！而且我還可以幫你發請束，\n"
         "你可以輸入"HIC"‘請 <某人的中名>’"NOR"請你的朋友來參加婚禮。”\n",me);
         set_temp("marry/money", me->name(), meipo);//記錄給過錢的人
         log_file("static/MARRY",sprintf("%s(%s)結婚交錢in%s。\n",query("name", me),
@@ -86,15 +86,15 @@ int do_name(string target)//請客人
         all = users();
 
         if (me->is_busy())
-                return notify_fail("媒婆說道：“你忙完後再和我說話吧！”\n");
+                return notify_fail("媒婆説道：“你忙完後再和我説話吧！”\n");
         if( ob->is_fighting()||me->is_fighting() )
-                return notify_fail("媒婆說道：“現在沒功夫！”\n");
+                return notify_fail("媒婆説道：“現在沒功夫！”\n");
         if( !living(ob) )
                 return notify_fail("你還是先想辦法把媒婆救醒吧。\n");
         if( query_temp("marry/money", ob) != me->name() )
       return notify_fail("媒婆眼睛斜了斜你：“你又沒交錢！”\n");
         if( query("marry/waiting_que", ob) )
-                return notify_fail("媒婆笑笑說：“不要急，我的小喜鵲們還沒有飛回來呢！”\n");
+                return notify_fail("媒婆笑笑説：“不要急，我的小喜鵲們還沒有飛回來呢！”\n");
         if( !target || target==" ")
                 return notify_fail("媒婆抽出一張請柬寫了幾筆問：“你想請誰來參加你的婚禮？告訴我他(她)的名字！”\n");
         for(i=0; i<sizeof(all); i++)
@@ -112,7 +112,7 @@ int do_name(string target)//請客人
                    return notify_fail("媒婆婉惜地地告訴你：“據我們所知，您要請的人已經死了，您請節哀順便！”\n");
         set("marry/waiting_que", 1, ob);//等鵲
         set("marry/me_name", me->name()+"("+query("id", me)+")", ob);//主人名
-        message_vision(HIG"媒婆一張喜柬上寫上幾個字，雙手一拍，從東廊就飛出一只小喜鵲，銜著喜帖，\n"
+        message_vision(HIG"媒婆一張喜柬上寫上幾個字，雙手一拍，從東廊就飛出一隻小喜鵲，銜着喜帖，\n"
                 "撲愣愣地一下子消失在天空中了。\n" NOR,me);
         call_out("do_chase", 1, ob,dest);
         return 1;
@@ -127,7 +127,7 @@ int do_chase(object ob,object dest)//喜鵲送請柬
                 call_out("do_ok",1,ob,1);//加一個失敗的參數回去
                 return 1;
         }
-        message_vision(HIY"\n天空中突然飛過來一只花喜鵲，落在$N肩頭，將銜著的一張喜柬遞給$N。\n" NOR, dest);
+        message_vision(HIY"\n天空中突然飛過來一隻花喜鵲，落在$N肩頭，將銜着的一張喜柬遞給$N。\n" NOR, dest);
         obj = new("/d/ruzhou/npc/obj/xitie");
         obj->set_name(HIR+query("marry/me_name", ob)+"的結婚請帖"NOR);
         obj->move(dest);
@@ -138,10 +138,10 @@ int do_chase(object ob,object dest)//喜鵲送請柬
 int do_ok(object ob,int flag)//喜鵲送柬成功回來
 {
         if(flag)
-                message_vision("花喜鵲從窗外撲楞楞地飛進來，落在媒婆身旁，媒婆哦了一聲說：“剛才的那個人沒找到，你先請其它人吧！”\n",ob);
+                message_vision("花喜鵲從窗外撲楞楞地飛進來，落在媒婆身旁，媒婆哦了一聲説：“剛才的那個人沒找到，你先請其它人吧！”\n",ob);
         else
-                message_vision("突然看見花喜鵲從窗外飛進來，落在媒婆身旁，媒婆笑眯眯地撫著花喜鵲的頭後\n"
-                        "說道：“請柬剛才已經都送到了！您還想請誰？不想請了就開始結婚手續(marry <你的對象>)吧！”\n",ob);
+                message_vision("突然看見花喜鵲從窗外飛進來，落在媒婆身旁，媒婆笑眯眯地撫着花喜鵲的頭後\n"
+                        "説道：“請柬剛才已經都送到了！您還想請誰？不想請了就開始結婚手續(marry <你的對象>)吧！”\n",ob);
           delete("marry/waiting_que", ob);
         delete("marry/me_name", ob);
         return 1;
@@ -159,7 +159,7 @@ int do_marry(string arg) //判斷結婚
     if (! objectp(room))  room = load_object("/d/city/zxlpath");
     xlf = present("xi laifu", room);
     if (objectp(xlf))
-         return notify_fail("媒婆笑道：“啊呀真不湊巧！喜老板正在主持婚宴，" +
+         return notify_fail("媒婆笑道：“啊呀真不湊巧！喜老闆正在主持婚宴，" +
                             "要不今天你們先去喝杯喜酒，明兒再給你們辦？”\n");
 
 /*
@@ -168,41 +168,41 @@ int do_marry(string arg) //判斷結婚
         if( (query("age", me)<14) && (query("gender", me) == "男性" )
                  || (query("age", me)<14) && (query("gender", me) == "無性" )
                  || (query("age", me)<14) && (query("gender", me) == "女性") )
-                return notify_fail("媒婆笑嘻嘻地說道：“你們現在還年輕，以後再說吧！”\n");
+                return notify_fail("媒婆笑嘻嘻地説道：“你們現在還年輕，以後再説吧！”\n");
 */
         if (me->is_busy())
-                return notify_fail("媒婆說道：“你現在不是正忙著嗎？”\n");
+                return notify_fail("媒婆説道：“你現在不是正忙着嗎？”\n");
         if( me->is_fighting(ob) )
         {
                 if( !ob->is_killing(me) )
                         ob->kill_ob(me);
-                return notify_fail("媒婆說道：“好，好，老娘送你去陰間成婚！”\n");
+                return notify_fail("媒婆説道：“好，好，老孃送你去陰間成婚！”\n");
         }
         if( ob->is_fighting() )
-                return notify_fail("媒婆說道：“沒看見這兒有人搗亂嗎！“\n");
+                return notify_fail("媒婆説道：“沒看見這兒有人搗亂嗎！“\n");
         if( !living(ob) )
                 return notify_fail("你還是先想辦法把媒婆救醒吧。\n");
         if( me->is_fighting() )
-                return notify_fail("媒婆說道：嘿嘿，你先還是料理完你的朋友再說吧！\n");
+                return notify_fail("媒婆説道：嘿嘿，你先還是料理完你的朋友再説吧！\n");
         if( !environment() || base_name(environment()) != query("startroom"))
-                return notify_fail("媒婆說道：“真抱歉，我現在很忙，請您等一會到紅娘堂來找我吧。”\n");
+                return notify_fail("媒婆説道：“真抱歉，我現在很忙，請您等一會到紅娘堂來找我吧。”\n");
         if( query("class", me) == "bonze" || query("jobname", me) == "bonze" )
                 return notify_fail("媒婆笑道：“哈哈！怎麼，信佛的也想開色戒了嗎?”\n");
         if( query("jobname", me) == "taoist" )
                 return notify_fail("媒婆搖了搖頭道：“你修了道竟還是凡心不泯，唉！你要是真想，還是還了俗再來吧！”\n");
         if(!arg ||!objectp(obj = present(arg, environment(me))))
-                return notify_fail("媒婆說道：“結婚可是要兩個人一起來的呀！”\n");
+                return notify_fail("媒婆説道：“結婚可是要兩個人一起來的呀！”\n");
         if( query_temp("pending/pro", me) )
                 return notify_fail("媒婆奇道：“咦？你的婚禮不是正在進行中嗎？還要問什麼？”\n");
         if( query_temp("pending/pro", obj) )
-                return notify_fail("媒婆說道：“你想給別人攪局嗎？”\n");
+                return notify_fail("媒婆説道：“你想給別人攪局嗎？”\n");
         if( !obj->is_character() )
-                return notify_fail("媒婆說道：“你這不是拿自己開涮嗎。”\n");
+                return notify_fail("媒婆説道：“你這不是拿自己開涮嗎。”\n");
 
         if( mapp(query("couple", me)) )
         {
                 if( query("couple/married", me)>2 )
-                        return notify_fail("媒婆翻了翻姻緣簿，板下臉說道：“我早就跟你說過，怎麼又來了？\n"
+                        return notify_fail("媒婆翻了翻姻緣簿，板下臉説道：“我早就跟你説過，怎麼又來了？\n"
                                 "這次我實在不能幫你什麼了，你結婚次數太多了，按朝廷綱紀，是不準再給你們\n"
                                 "辦結婚手續了，你們自己去做對野鴛鴦吧！\n");
                 if( query("couple/have_couple", me) )
@@ -210,34 +210,34 @@ int do_marry(string arg) //判斷結婚
                         if( obj == present(query("couple/couple_id", me),environment(me)) )
                                 return notify_fail("媒婆奇道：“你們本來就是夫妻呀！幹嘛還要再來？”\n");
                         if( query("couple/couple_gender", me) == "丈夫" )
-                                return notify_fail("媒婆說道：“你已經是有夫之婦了，這裡不允許重婚的。”\n");
+                                return notify_fail("媒婆説道：“你已經是有夫之婦了，這裏不允許重婚的。”\n");
                         else
-                                return notify_fail("媒婆說道：“你已經是有婦之夫了，這裡不允許重婚的。”\n");
+                                return notify_fail("媒婆説道：“你已經是有婦之夫了，這裏不允許重婚的。”\n");
                 }
         }
         if( mapp(query("couple", obj)) )
         {
       if( query("couple/married", obj)>2 )
-              return notify_fail("媒婆翻了翻姻緣簿，嘆了口氣道：“早跟你們說過，怎麼又離了，這\n"
+              return notify_fail("媒婆翻了翻姻緣簿，歎了口氣道：“早跟你們説過，怎麼又離了，這\n"
               "次我實在不能幫你們什麼了，你是沒問題，但"+obj->name()+"結婚次數太多了，\n"
               "按朝廷綱紀，是不準再辦理結婚手續了，你們去做對野鴛鴦吧！\n");
              if( query("couple/have_couple", obj) )
                 {
                         //if( query("couple/couple_gender", obj) == "丈夫" )
                         if( query("gender", obj) == "男性" )
-                                return notify_fail("媒婆說道：可惜她已經是有夫之婦了，這裡不允許重婚的。\n");
+                                return notify_fail("媒婆説道：可惜她已經是有夫之婦了，這裏不允許重婚的。\n");
                         else
-                                return notify_fail("媒婆說道：可惜他已經是有婦之夫了，這裡不允許重婚的。\n");
+                                return notify_fail("媒婆説道：可惜他已經是有婦之夫了，這裏不允許重婚的。\n");
                 }
         }
         if( !living(obj) )
-                return notify_fail("媒婆搖搖頭說道：“"+ obj->name()+"現在還沒清醒過來，我還不能確定你們雙方都是自願的。”\n");
+                return notify_fail("媒婆搖搖頭説道：“"+ obj->name()+"現在還沒清醒過來，我還不能確定你們雙方都是自願的。”\n");
         if(obj == me)
-                return notify_fail("媒婆說道：“你這不是拿自己開涮嗎？”\n");
+                return notify_fail("媒婆説道：“你這不是拿自己開涮嗎？”\n");
         if( query("gender", obj) == query("gender", me) )
                 return notify_fail("媒婆驚道：“哇！你是同性戀？對不起，老婆子處理不了這事！”\n");
         if( !userp(obj) )
-                return notify_fail("媒婆說道：“對不起，你只能和玩家結婚。”\n");
+                return notify_fail("媒婆説道：“對不起，你只能和玩家結婚。”\n");
         if( query_temp("marry/money", ob) != me->name( )
                     && query_temp("marry/money", ob) != obj->name())//只要其中有一個人給過就行
            {
@@ -247,8 +247,8 @@ int do_marry(string arg) //判斷結婚
         }
         if( !query_temp("marry/answer", me) )
         {
-                message_vision(HIG"媒婆攤開姻緣簿，絮絮叨叨地說道：“結婚是一輩子的終身大事，可不能\n"
-                           "隨隨便便，否則，這世道就亂了。每個人只能在我這裡辦三次結婚手續。\n"
+                message_vision(HIG"媒婆攤開姻緣簿，絮絮叨叨地説道：“結婚是一輩子的終身大事，可不能\n"
+                           "隨隨便便，否則，這世道就亂了。每個人只能在我這裏辦三次結婚手續。\n"
                         "讓我看看："HIC""+me->name()+"結過"+query("couple/married", me)+"次婚；"+obj->name()+"結過"+query("couple/married", obj)+"次婚；"
                         HIG"好的，\n最後，你們再認真考慮一下：是不是真心願意和對方結婚？”\n"NOR,me);
                 set_temp("marry/answer", 1, obj);
@@ -270,12 +270,12 @@ int do_marry(string arg) //判斷結婚
                 else
                         tell_object(obj, MAG "如果你願意娶她，請你也對" + me->name() +
                         "("+query("id", me)+")"+"下一次marry"+query("id", me)+"的指令。\n"NOR);
-                write(MAG"現在你急切盼望著你的心上人說同意...\n" NOR);
+                write(MAG"現在你急切盼望着你的心上人説同意...\n" NOR);
                 return 1;
         }
-        message_vision(MAG "\n$N對著$n大聲說道：我願意！\n\n"NOR, me,obj);
+        message_vision(MAG "\n$N對著$n大聲説道：我願意！\n\n"NOR, me,obj);
         message_vision(MAG "媒婆呵呵笑道：“那就好，那就好，都跟我到東邊的姻緣堂來準備拜堂吧！”\n"
-                "說完，媒婆一扭一扭地走進了東邊的大堂。\n" NOR, obj, me);
+                "説完，媒婆一扭一扭地走進了東邊的大堂。\n" NOR, obj, me);
         me->delete_temp("ask_marry");//玩家取消問結婚的參數
         obj->delete_temp("ask_marry");//玩家取消問結婚的參數
 
@@ -309,8 +309,8 @@ int meipo_waiting(object ob,object me,object obj)//媒婆等拜堂
 {
         if( query_temp("wait_time", ob) == 200 )
         {
-                say( "媒婆疑惑地說道：“小夫妻連拜堂也不急？難道真是有緣無份？唉，婚禮還是取消罷！\n"
-              "老娘可是白賺了50 gold了，呵呵呵...”\n\n");
+                say( "媒婆疑惑地説道：“小夫妻連拜堂也不急？難道真是有緣無份？唉，婚禮還是取消罷！\n"
+              "老孃可是白賺了50 gold了，呵呵呵...”\n\n");
                 call_out("do_back", 0, ob);
                 return 1;
         }
@@ -351,16 +351,16 @@ int ready_marry(object ob,object me,object obj)//準備婚禮
         if(!( room = find_object("/d/city/yinyuan-tang")) )
         room = load_object("/d/city/yinyuan-tang");
 
-        message("vision", HIY "\n媒婆高聲叫道：“快快快，幹活的都出來了，馬上布置喜堂！”\n" NOR, room);
-        message("vision", HIC"\n只聽堂後響起一陣腳步聲，十幾個穿得五彩鮮艷衣服的少男少女嘻嘻哈哈地跑進來，\n"
-                "嘰嘰喳喳地議論著，又分頭跑開了，時不時地笑著看一看"+me->name()+"和"+obj->name()+"。\n\n"NOR, room);
-        say("媒婆對兩位新人說道：“不要著急，我們都是很有經驗的，很快就會布置好的！”\n"
+        message("vision", HIY "\n媒婆高聲叫道：“快快快，幹活的都出來了，馬上佈置喜堂！”\n" NOR, room);
+        message("vision", HIC"\n只聽堂後響起一陣腳步聲，十幾個穿得五彩鮮豔衣服的少男少女嘻嘻哈哈地跑進來，\n"
+                "嘰嘰喳喳地議論着，又分頭跑開了，時不時地笑着看一看"+me->name()+"和"+obj->name()+"。\n\n"NOR, room);
+        say("媒婆對兩位新人説道：“不要着急，我們都是很有經驗的，很快就會佈置好的！”\n"
                 CYN"只見身邊的人跑來跑去，忙得不得了。\n"NOR);
         call_out("wait_marry", 1, ob,me,obj);
         return 1;
 }
 
-int wait_marry(object ob,object me,object obj) //布置喜堂
+int wait_marry(object ob,object me,object obj) //佈置喜堂
 {
         object room,m_cloth,w_cloth;
         if(!( room = find_object("/d/city/yinyuan-tang")) )
@@ -369,18 +369,18 @@ int wait_marry(object ob,object me,object obj) //布置喜堂
         switch(query_temp("wait_time", ob) )
         {
            case 0:
-            say(RED"\n一個小家伙跑過來，叫道：“媒婆，買紅紙的錢不夠了！”媒婆趕緊給他一些錢。\n\n"NOR);
+            say(RED"\n一個小傢伙跑過來，叫道：“媒婆，買紅紙的錢不夠了！”媒婆趕緊給他一些錢。\n\n"NOR);
                 break;
         case 1:
              say(MAG"\n突然，那邊的小姑娘叫道：“媒婆，紅鴛鴦貼這邊正不正？”媒婆一看：“右邊再上去點！”\n\n"NOR);
                   call_out("wait_marry", 1, ob,me,obj);
                 break;
         case 2:
-             say(CYN"\n四個家伙哼喲嘿喲地抬著一只大箱子從屋外你身邊走過，媒婆叮囑道：“慢些、輕點！”\n\n"NOR);
+             say(CYN"\n四個傢伙哼喲嘿喲地抬着一隻大箱子從屋外你身邊走過，媒婆叮囑道：“慢些、輕點！”\n\n"NOR);
                   call_out("wait_marry", 1, ob,me,obj);
                 break;
         case 3:
-                say("\n媒婆一把拉住身邊跑過的一個小伙子：“迎賓樓的喜宴訂了嗎？快去！”\n\n"NOR);
+                say("\n媒婆一把拉住身邊跑過的一個小夥子：“迎賓樓的喜宴訂了嗎？快去！”\n\n"NOR);
                   call_out("wait_marry", 1, ob,me,obj);
                 break;
         case 4:
@@ -413,11 +413,11 @@ int wait_marry(object ob,object me,object obj) //布置喜堂
                   call_out("wait_marry", 1, ob,me,obj);
                 break;
         case 9:
-                    say("\n幾個小姑娘笑嘻嘻地一邊擦著桌椅，一邊互相咬著耳朵，不時地偷眼看看新人。\n\n");
+                    say("\n幾個小姑娘笑嘻嘻地一邊擦着桌椅，一邊互相咬着耳朵，不時地偷眼看看新人。\n\n");
                   call_out("wait_marry", 1, ob,me,obj);
                 break;
         case 10:
-                    say("\n兩位彩衣少女過來將一套大紅金邊滾龍袍遞給新郎，一套青邊戴花水雲袖交給新娘道：“有請新郎新娘穿喜裝”。\n\n");
+                    say("\n兩位綵衣少女過來將一套大紅金邊滾龍袍遞給新郎，一套青邊戴花水雲袖交給新娘道：“有請新郎新娘穿喜裝”。\n\n");
                     m_cloth = new("/d/ruzhou/npc/obj/longpao");
                     w_cloth = new("/d/ruzhou/npc/obj/yunxiu");
                     //if( query("couple/couple_gender", me) == "妻子" )
@@ -437,7 +437,7 @@ int wait_marry(object ob,object me,object obj) //布置喜堂
                 message("vision", HIY "\n媒婆高聲問了一聲：“都準備好了嗎？”眾人應道：“好了！”\n"
                 "媒婆立刻拖長了聲音喊道：“有請月老主持婚禮……！”\n"
                 HIM"頓時，鼓樂齊鳴，鞭炮大作，伴郎伴娘擁過來，七手八腳給新郎、新娘換上新衣，\n"
-                        "綴擁著向大堂中央走去。\n"NOR, room);
+                        "綴擁着向大堂中央走去。\n"NOR, room);
                 call_out("start_marry", 1, ob,me,obj);
                 break;
    }
@@ -452,13 +452,13 @@ int start_marry(object ob,object me,object obj) //開始婚禮
                 room = load_object("/d/city/yinyuan-tang");
         moon=new("/d/ruzhou/npc/yuelao");
         moon->move(room);
-        message("vision", "\n隨著一陣哈哈大笑，一位紅面白須的老者，快步踱進堂中，在場的少年男女都躬身相拜：\n"
+        message("vision", "\n隨着一陣哈哈大笑，一位紅面白鬚的老者，快步踱進堂中，在場的少年男女都躬身相拜：\n"
            "“恭請月老爺爺！”月老擺擺手，笑呵呵地看看"+me->name()+"和"+obj->name()+"，點點頭道：\n"
       "“好！好！郎才女貌，天作之合！天作之合呀！”\n"
-           HIY"\n媒婆一揮手，喜樂又高起，只聽見月老高聲宣布：“新郎…新娘…拜…天地……！”\n"NOR,room, moon);
+           HIY"\n媒婆一揮手，喜樂又高起，只聽見月老高聲宣佈：“新郎…新娘…拜…天地……！”\n"NOR,room, moon);
         CHANNEL_D->do_channel(moon, "mudnews",
            sprintf("恭賀%s和%s喜結良緣，拜堂大禮即時開始！\n",me->name(),obj->name()));
-        say("媒婆又小聲地對兩個新人說：“按順序輸入‘拜 天地、拜 高堂和拜 對方的名字’。”\n");
+        say("媒婆又小聲地對兩個新人説：“按順序輸入‘拜 天地、拜 高堂和拜 對方的名字’。”\n");
         set_temp("pending/bai", 1, me);
         set_temp("pending/bai", 1, obj);
         return 1;
@@ -482,26 +482,26 @@ int do_bai(string arg)//拜堂
         me = this_player();
         ob = this_object();
         if (me->is_busy())
-                return notify_fail("媒婆說道：“你現在不是正忙著嗎？忙完再說！”\n");
+                return notify_fail("媒婆説道：“你現在不是正忙着嗎？忙完再説！”\n");
 
         if( me->is_fighting(this_object()) )
         {
                 if( !this_object()->is_killing(me) )
                         this_object()->kill_ob(me);
-                return notify_fail("媒婆說道：“老娘好心給你辦婚事，你敢動武，送你去陰間成婚吧！”\n");
+                return notify_fail("媒婆説道：“老孃好心給你辦婚事，你敢動武，送你去陰間成婚吧！”\n");
         }
 
         if( this_object()->is_fighting() )
-                return notify_fail("媒婆說道：沒看見這兒有人搗亂嗎！\n");
+                return notify_fail("媒婆説道：沒看見這兒有人搗亂嗎！\n");
 
         if( !living(this_object()) )
                 return notify_fail("你還是先想辦法把媒婆救醒吧。\n");
 
         if( me->is_fighting() )
-                return notify_fail("媒婆說道：“嘿嘿，你先還是料理完你的朋友再說吧！”\n");
+                return notify_fail("媒婆説道：“嘿嘿，你先還是料理完你的朋友再説吧！”\n");
 
         if( !environment()||base_name(environment()) != ("/d/city/yinyuan-tang") )
-                return notify_fail("媒婆說道：“你這人真是的，拜堂是要到姻緣堂才行的呀！”\n");
+                return notify_fail("媒婆説道：“你這人真是的，拜堂是要到姻緣堂才行的呀！”\n");
 
         if( !query_temp("pending/bai", me) )
                 return notify_fail("媒婆笑道：“哈哈，你犯什麼傻呀！”\n");
@@ -509,7 +509,7 @@ int do_bai(string arg)//拜堂
         if( !objectp(obj=present(query("couple/couple_id", me),environment(me)) )
                  || !find_player(query("couple/couple_id", me)) )
         {
-                message_vision("媒婆轉身一看，驚訝地說道：“唉呀！你的愛人怎麼突然跑了？婚禮怎麼舉行？大伙散攤吧。”\n"
+                message_vision("媒婆轉身一看，驚訝地説道：“唉呀！你的愛人怎麼突然跑了？婚禮怎麼舉行？大夥散攤吧。”\n"
                         "在一片惋惜聲，大家紛紛離場，喜堂上的東西也是一收而空。\n",me);
                 call_out("do_back",1,ob);
                 return 1;
@@ -526,14 +526,14 @@ int do_bai(string arg)//拜堂
         {
                 if( query_temp("pending/bai", me) != 3 )
                 {
-                        tell_object(obj, MAG"你的伴侶正等著和你拜 " + arg + " 呢...\n" NOR);
-                        write(MAG "現在你正等待著你的伴侶...\n" NOR);
+                        tell_object(obj, MAG"你的伴侶正等着和你拜 " + arg + " 呢...\n" NOR);
+                        write(MAG "現在你正等待着你的伴侶...\n" NOR);
                         set_temp("pending/act", arg, me);
                 }
                 else
                 {
-                        tell_object(obj, MAG"你的伴侶正等著和你互拜（拜他的名字）呢...\n" NOR);
-                        write(MAG "現在你正等待著你的伴侶...\n" NOR);
+                        tell_object(obj, MAG"你的伴侶正等着和你互拜（拜他的名字）呢...\n" NOR);
+                        write(MAG "現在你正等待着你的伴侶...\n" NOR);
                         set_temp("pending/act", me->name(), me);
                 }
                 return 1;
@@ -555,13 +555,13 @@ int do_bai(string arg)//拜堂
         else if( query_temp("pending/bai", me) == 3 )
         {
                   message_vision("“夫妻…對…拜……”$N和$n在相互深深拜了一拜......\n",me,obj);
-                message_vision(HIY "月老笑呵呵地說道：“好，$N和$n，現在正式結為夫妻! \n" NOR, obj, me);
+                message_vision(HIY "月老笑呵呵地説道：“好，$N和$n，現在正式結為夫妻! \n" NOR, obj, me);
                 CHANNEL_D->do_channel(this_object(), "chat",
                         sprintf( "恭喜%s和%s，一對璧人喜結良緣。\n        各位親朋好友，可攜禮到揚州醉仙樓參加他們的婚宴！\n", me->name(), obj->name()));
 
                 addn("couple/married", 1, me);//結婚次數
-                set("couple/have_couple", 1, me);//處于已婚狀態
-                set_temp("married_party", 1, me);//做上記號，喜來福老板看到就會同意開酒席
+                set("couple/have_couple", 1, me);//處於已婚狀態
+                set_temp("married_party", 1, me);//做上記號，喜來福老闆看到就會同意開酒席
                 set_temp("married_party", 1, obj);//兩人都做，但只有男性才有用
                 addn("couple/married", 1, obj);//結婚次數
                 set("couple/have_couple", 1, obj);//已婚狀態
@@ -586,7 +586,7 @@ int do_right(object me, object ob)
         string fc;
         object ring;
 
-        message("visoin", name() + "笑著對二人說：“今個兒是你們"
+        message("visoin", name() + "笑着對二人説：“今個兒是你們"
                 "大喜的日子，我沒有什麼禮物，只好送給你"
                 "們這對新人一對結婚戒指吧！”\n\n", environment(me));
 
@@ -641,14 +641,14 @@ int last_marry(object ob,object me,object obj)//拜堂結束
         delete_temp("wait_time", ob);
         ob = this_object();
         delete_temp("marry/money", ob);
-        say("媒婆喊道：“轎夫！快將新人送到迎賓樓舉行婚宴，我和月老就不去了，呵呵！”\n說完一扭一扭地向西邊走去。\n");
+        say("媒婆喊道：“轎伕！快將新人送到迎賓樓舉行婚宴，我和月老就不去了，呵呵！”\n説完一扭一扭地向西邊走去。\n");
         write_file("/log/static/MARRY",sprintf("%s(%s)and%s(%s)marriedin%s。\n",query("name", me),query("id", me),
                 query("name", obj),query("id", obj),ctime(time())));
         delete("have_couple", ob);
         delete_temp("marry", ob);
         delete("marry", ob);
         ob->move("/d/city/hongniang-zhuang");
-        message_vision(HIR"伴郎伴娘擁著兩位新人，上了門口的兩頂大紅花轎，只聽轎夫們一聲“起轎！”\n"
+        message_vision(HIR"伴郎伴娘擁着兩位新人，上了門口的兩頂大紅花轎，只聽轎伕們一聲“起轎！”\n"
                    "一行人吹吹打打地奔向迎賓樓......\n"NOR,me,obj);
         me->move("/d/ruzhou/jiao1");
         obj->move("/d/ruzhou/jiao2");
@@ -659,9 +659,9 @@ int last_marry(object ob,object me,object obj)//拜堂結束
 int go_lou(object me,object obj)
 {
         object npc;
-        message_vision("\n    過了好長一會兒，只聽轎夫們一聲“到啦！”轎子整個兒一震，想是落到了地上，\n"
-           "$N和$n從轎子中下來一看，原來已經到了迎賓樓。兩人又被擁扶著一直上了二樓福滿堂。\n"
-      "只聽一陣呵呵笑聲，迎賓樓老板喜來福笑容滿面地迎出來：“恭喜兩位新人！恭喜恭喜！”\n",me,obj);
+        message_vision("\n    過了好長一會兒，只聽轎伕們一聲“到啦！”轎子整個兒一震，想是落到了地上，\n"
+           "$N和$n從轎子中下來一看，原來已經到了迎賓樓。兩人又被擁扶着一直上了二樓福滿堂。\n"
+      "只聽一陣呵呵笑聲，迎賓樓老闆喜來福笑容滿面地迎出來：“恭喜兩位新人！恭喜恭喜！”\n",me,obj);
         npc=new("/d/ruzhou/npc/xi-laifu");
         set("name1", me->name(), npc);
         set("name2", obj->name(), npc);//雙方姓名

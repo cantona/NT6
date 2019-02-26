@@ -48,10 +48,10 @@ int do_search(string arg) {
                         notify_fail("你上一個動作還沒有完成。\n"); 
                         
                 if (me->is_fighting()) return
-                        notify_fail("您先吧敵人料理了在說吧。:)\n");
+                        notify_fail("您先吧敵人料理了在説吧。:)\n");
                         
                 if( query_temp("found", me) == 1)return 
-                        notify_fail("你最好先回去復命，別讓老仙等急了。\n");
+                        notify_fail("你最好先回去覆命，別讓老仙等急了。\n");
                                        
                 //if (me->query_temp("bug_out")==1)
                 //        return notify_fail("毒蟲已經出來了，趕快抓吧！\n");
@@ -76,7 +76,7 @@ int do_search(string arg) {
                                 
                         room = load_object(n[random(sizeof(n))]);
                         
-                        message_vision("$N又找了找，發現沒有絲毫毒蟲的蹤跡，只好離開這裡，到別的地方尋找。\n",me);
+                        message_vision("$N又找了找，發現沒有絲毫毒蟲的蹤跡，只好離開這裏，到別的地方尋找。\n",me);
                         message_vision("$N急急忙忙地離開了。\n",me);
                         me->move(room);
                         message_vision("$N走了過來。\n",me);                        
@@ -92,7 +92,7 @@ int do_search(string arg) {
                 
                 if ((kar3>kar2 && find>10) || (find>=30)) {
 
-                        message_vision(HIG"突然間一只小蟲子鑽了出來，迅速地爬動著。\n"NOR, me);
+                        message_vision(HIG"突然間一隻小蟲子鑽了出來，迅速地爬動着。\n"NOR, me);
                         bug=new("/d/xingxiu/npc/duchong");
                         bug->move(environment(me));
                         set("playerid",query("id",  me), bug);
@@ -109,7 +109,7 @@ int do_search(string arg) {
                 
                    if( query("combat_exp", random(50) <= 3 && count_ge(me),150000) && query_temp("xx_job", me)){
 
-                        message_vision(HIR"突然間從樹後越出一個人，高喊一聲：“星宿姦人，拿命來！”\n"NOR,me);
+                        message_vision(HIR"突然間從樹後越出一個人，高喊一聲：“星宿奸人，拿命來！”\n"NOR,me);
                      fighter = new(CLASS_D("generate") + "/xxnpc.c");
                      NPC_D->set_from_me(fighter, me, 110 + random(20));
                      fighter->addn_temp("apply/attack",fighter->query_skill("force")*
@@ -174,7 +174,7 @@ int do_search(string arg) {
                                 
                         room = load_object(n[random(sizeof(n))]);
                         
-                        message_vision("$N又找了找，發現沒有絲毫毒蟲的蹤跡，只好離開這裡，到別的地方尋找。\n",me);
+                        message_vision("$N又找了找，發現沒有絲毫毒蟲的蹤跡，只好離開這裏，到別的地方尋找。\n",me);
                         message_vision("$N急急忙忙地離開了。\n",me);
                         me->move(room);
                         message_vision("$N走了過來。\n",me);                        

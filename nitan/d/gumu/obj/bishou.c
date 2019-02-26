@@ -11,7 +11,7 @@ void create()
                 set_default_object(__FILE__);
         else {
                 set("unit", "把");
-                set("long", "這是一把邊緣鋒利的匕首，好象可以斬(zhan)東西。\n");
+                set("long", "這是一把邊緣鋒利的匕首，好像可以斬(zhan)東西。\n");
                 set("value", 0);
                 set("material", "iron");
         }

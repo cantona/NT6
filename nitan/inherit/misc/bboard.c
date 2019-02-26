@@ -27,7 +27,7 @@ inherit F_SAVE;
 #define NEED_EXP                10000
 #define NEED_AGE                15
 
-// 返回note[num]的內容和回文內容
+// 返回note[num]的內容和迴文內容
 string content(mapping *notes, int num);
 string makeup_space(string s, int max);
 
@@ -196,7 +196,7 @@ void done_post(object me, mapping note, int n, string text)
 
         if( i > 20 && strlen(text) / i < 10 )
         {
-                tell_object(me, "你的留言中短句太多了，請調整一下以便他人閱讀。\n");
+                tell_object(me, "你的留言中短句太多了，請調整一下以便他人閲讀。\n");
                 return;
         }
 
@@ -205,7 +205,7 @@ void done_post(object me, mapping note, int n, string text)
                 // scan all lines
                 if( strlen(lines[i]) > 200 )
                 {
-                        tell_object(me, "你留言中有些行太長了，請分行以便他人閱讀。\n");
+                        tell_object(me, "你留言中有些行太長了，請分行以便他人閲讀。\n");
                         return;
                 }
         }
@@ -262,8 +262,8 @@ void done_post(object me, mapping note, int n, string text)
 
         if( sizeof(query("notes")) > MAX_PLAN )
         {
-                // DEL_TO 以前的貼子將保存到 /data/board/這裡的board_id 文件中
-                // 刪除目前 board 裡的 DEL_TO 以前的貼子
+                // DEL_TO 以前的貼子將保存到 /data/board/這裏的board_id 文件中
+                // 刪除目前 board 裏的 DEL_TO 以前的貼子
                 // 需對mark文章保留
                 i = 0;
                 j = 0;
@@ -326,7 +326,7 @@ int do_post(string arg, int n)
         if( query("avoid_flood")
                 && query("combat_exp", me) < NEED_EXP
                 && query("age", me) < NEED_AGE )
-                return notify_fail("你暫時還沒有權力在這裡發表文章，需要 " WHT +
+                return notify_fail("你暫時還沒有權力在這裏發表文章，需要 " WHT +
                                    NEED_EXP + NOR " 點經驗值或者 " WHT + NEED_AGE + NOR " 歲的年齡。\n");
 
         if( !arg ) return notify_fail("新貼子請指定一個標題。\n");
@@ -398,18 +398,18 @@ int do_followup(string arg)
         if( query("avoid_flood")
                 && query("combat_exp", me) < NEED_EXP
                 && query("age", me) < NEED_AGE )
-                return notify_fail("你暫時還沒有權力在這裡發表文章，需要 " WHT +
+                return notify_fail("你暫時還沒有權力在這裏發表文章，需要 " WHT +
                                    NEED_EXP + NOR " 點經驗值或者 " WHT + NEED_AGE + NOR " 歲的年齡。\n");
 
         if( !arg )
-                return notify_fail("請輸入欲回復的文章編號或 last 回復最後一篇文章。\n");
+                return notify_fail("請輸入欲回覆的文章編號或 last 回覆最後一篇文章。\n");
 
         notes = query("notes");
 
         if( arg == "last" ) num = sizeof(notes);
         else
         if( sscanf(arg, "%d %s", num, title) < 1 )
-                return notify_fail("請輸入欲回復的文章編號。\n");
+                return notify_fail("請輸入欲回覆的文章編號。\n");
 
         if( sscanf(arg, "%d %s with %d", num, title, n) != 3
                 && sscanf(arg, "%d with %d", num, n) != 2 )
@@ -439,7 +439,7 @@ int do_followup(string arg)
 
         note = allocate_mapping(5);
         if( !title )
-                title = (notes[num]["title"][0..5] != "回復：" ? "回復：" : "") + notes[num]["title"];
+                title = (notes[num]["title"][0..5] != "回覆：" ? "回覆：" : "") + notes[num]["title"];
 
         note["title"] = title;
         if( noname_board )
@@ -499,7 +499,7 @@ int do_read(string arg)
                 else
                 {
                         if( private_board && !wizardp(me) )
-                                return notify_fail("對不起，由于舊貼涉及到一些個人隱私，故不開放閱讀。\n");
+                                return notify_fail("對不起，由於舊貼涉及到一些個人隱私，故不開放閲讀。\n");
 
                         msg = read_file(file);
                         me->start_more(msg);
@@ -533,13 +533,13 @@ int do_read(string arg)
         num--;
 
         if( !wizardp(me) && private_board && strcmp(query("id", me), notes[num]["owner"]) )
-                return notify_fail("這個帖子不是你留的，所以你不能閱讀。\n");
+                return notify_fail("這個帖子不是你留的，所以你不能閲讀。\n");
 
         msg = sprintf(  CYN "----------------------------------------------------------------------\n"
                         BWHT BLU " 標 題 " BBLU WHT " %-62s\n"
-                        BWHT BLU " 作 者 " BBLU WHT " %-19s   □□□□□□□□□□□□□□□□□□□□\n"
-                        BWHT BLU " 篇 數 " BBLU WHT " %-11d           □"HIR"請文明使用，否則"HIY"你"HIR"或"HIY"帖子"HIR"可能會被刪除"NOR BBLU WHT"□\n"
-                        BWHT BLU " 時 間 " BBLU WHT " %-19s   □□□□□□□□□□□□□□□□□□□□\n" NOR
+                        BWHT BLU " 作 者 " BBLU WHT " %-19s   ╭══════════════════╮\n"
+                        BWHT BLU " 篇 數 " BBLU WHT " %-11d           ║"HIR"請文明使用，否則"HIY"你"HIR"或"HIY"帖子"HIR"可能會被刪除"NOR BBLU WHT"║\n"
+                        BWHT BLU " 時 間 " BBLU WHT " %-19s   ╰══════════════════╯\n" NOR
                         CYN "----------------------------------------------------------------------\n\n" NOR "%s\n",
                         notes[num]["title"], notes[num]["author"] + "(" + notes[num]["owner"] + ")", num + 1, TIME_D->replace_ctime(notes[num]["time"]),
                         notes[num]["msg"]);
@@ -692,7 +692,7 @@ int do_mark(string arg)
         if( notes[num]["mark"] == "M" )
         {
                 notes[num]["mark"] = " ";
-                write("去除第 " + (num+1) + " 號貼子的保留標志成功。\n");
+                write("去除第 " + (num+1) + " 號貼子的保留標誌成功。\n");
         }
         else
         {
@@ -815,7 +815,7 @@ int do_search(string arg)
         }
 
         if( j > 19 )
-                msg += "由于搜索到的結果太多，因此只顯示二十條留言，請使用更明確的關鍵字|詞。\n";
+                msg += "由於搜索到的結果太多，因此只顯示二十條留言，請使用更明確的關鍵字|詞。\n";
 
         me->start_more(msg);
         return 1;

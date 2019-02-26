@@ -10,7 +10,7 @@ string *dodge_msg = ({
         HIW "只見$n" HIW "身子輕輕晃動，$N" HIW "眼前頓時出現了無數個$n" HIW
         "的幻影，令$N" HIW "完全無法辨出虛實。\n" NOR,
         HIW "$n" HIW "往旁邊歪歪斜斜的邁出一步，卻恰好令$N" HIW "的攻擊失之"
-        "毫厘。\n" NOR,
+        "毫釐。\n" NOR,
         HIW "$N" HIW "這一招來的好快，然後$n" HIW "一閃，似乎不費半點力氣，"
         "卻將$N" HIW "這一招剛好避開。\n" NOR,
         HIW "但見$n" HIW "輕輕一躍，已不見了蹤影，$N" HIW "心中大駭，卻又見"
@@ -32,7 +32,7 @@ int query_neili_improve(object me)
 
 mapping *action = ({
 ([
-        "action": HIW "$N" HIW "單手一揮，剎那間狂風驟起， 令人不寒而栗。" NOR,
+        "action": HIW "$N" HIW "單手一揮，剎那間狂風驟起， 令人不寒而慄。" NOR,
         "attack": 999,
         "dodge" : 999,
         "parry" : 999,
@@ -103,7 +103,7 @@ mixed hit_ob(object me, object victim, int damage_bonus)
                       }
                       else 
                       {
-                           message_vision(HIR "$N" HIR "對著$n" HIR "需點幾下，$n" HIR 
+                           message_vision(HIR "$N" HIR "對着$n" HIR "需點幾下，$n" HIR 
                                           "竟無法動彈了。\n" NOR, me, victim);
                                      
                            victim->start_busy(20 + random(20));                                            

@@ -10,7 +10,7 @@ void create()
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("long","這是龍的內丹，雞蛋大小，如火燄般赤紅。用法：boost\n");
+                set("long","這是龍的內丹，雞蛋大小，如火焰般赤紅。用法：boost\n");
                 set("unit", "顆");
                 set("value", 50000);
                 set("no_drop",1);

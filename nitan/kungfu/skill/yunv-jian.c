@@ -17,7 +17,7 @@ mapping *action = ({
         "lvl" : 9,
         "skill_name" :  "浪跡天涯"
 ]),
-([        "action" : "$N使"+(order[random(13)])+"「花前月下」"NOR"一招自上而下搏擊，模擬冰輪橫空、清光舖地的光景",
+([        "action" : "$N使"+(order[random(13)])+"「花前月下」"NOR"一招自上而下搏擊，模擬冰輪橫空、清光鋪地的光景",
         "lvl" : 14,
         "skill_name" :  "花前月下"
 ]),
@@ -37,11 +37,11 @@ mapping *action = ({
         "lvl" : 34,
         "skill_name" :  "撫琴按蕭"
 ]),
-([        "action" : "$N一招"+(order[random(13)])+"「鬆下對弈」"NOR"，$w自右向左揮一個大弧，刺向$n的$l",
+([        "action" : "$N一招"+(order[random(13)])+"「松下對弈」"NOR"，$w自右向左揮一個大弧，刺向$n的$l",
         "lvl" : 39,
-        "skill_name" :  "鬆下對弈"
+        "skill_name" :  "松下對弈"
 ]),
-([        "action" : "$N左手如拂五弦，竟以掌為劍攻向$n，卻是一招"+(order[random(13)])+"「池邊調鶴」"NOR"",
+([        "action" : "$N左手如拂五絃，竟以掌為劍攻向$n，卻是一招"+(order[random(13)])+"「池邊調鶴」"NOR"",
         "lvl" : 44,
         "skill_name" :  "池邊調鶴"
 ]),
@@ -61,7 +61,7 @@ mapping *action = ({
         "lvl" : 64,
         "skill_name" :  "柳蔭聯句"
 ]),
-([        "action" : "$N手中$w由下而上卷起，猶如打起竹簾一般，卻是"+(order[random(13)])+"「竹簾臨池」"NOR"",
+([        "action" : "$N手中$w由下而上捲起，猶如打起竹簾一般，卻是"+(order[random(13)])+"「竹簾臨池」"NOR"",
         "lvl" : 70,
         "skill_name" :  "竹簾臨池"
 ]),
@@ -105,13 +105,13 @@ mapping *action = ({
         "lvl" : 124,
         "skill_name" :  "皓腕玉鐲"
 ]),
-([        "action" : "$N一招"+(order[random(13)])+"「牡丹含淚」"NOR"，$w繞出數個銀圈，平平地向$n的$l卷去",
+([        "action" : "$N一招"+(order[random(13)])+"「牡丹含淚」"NOR"，$w繞出數個銀圈，平平地向$n的$l捲去",
         "lvl" : 131,
         "skill_name" :  "牡丹含淚"
 ]),
-([        "action" : "$N左腳輕點地面，身形往前一撲，一招"+(order[random(13)])+"「芍藥蘊珠」"NOR"，$w向$n的$l刺去",
+([        "action" : "$N左腳輕點地面，身形往前一撲，一招"+(order[random(13)])+"「芍藥藴珠」"NOR"，$w向$n的$l刺去",
         "lvl" : 138,
-        "skill_name" :  "芍藥蘊珠"
+        "skill_name" :  "芍藥藴珠"
 ]),
 ([        "action" : "$N一招"+(order[random(13)])+"「檐前飛燕」"NOR"，身形躍起，手中$w掃向$n的$l",
         "lvl" : 145,
@@ -225,7 +225,7 @@ int help(object me)
         write(@HELP
 
     古墓派開山祖師林朝英自創劍法，不但劍招凌厲，而且講究豐
-神脫俗、姿勢嫻雅，端的是美輪美奐、曼妙已極。
+神脱俗、姿勢嫻雅，端的是美輪美奐、曼妙已極。
 
         學習要求：
                 玉女心法15級

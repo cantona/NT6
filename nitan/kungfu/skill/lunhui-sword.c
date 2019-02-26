@@ -4,12 +4,12 @@ inherit FORCE;
 string *dodge_msg = ({
         HIW "$n" HIW "身前一道劍光閃過，竟與劍光合為一體，$N" HIW "目瞪口呆，一時難以找出其間破綻。\n" NOR,
         HIW "只見$n" HIW "以氣御劍，劍中生劍，頓時，無數劍影令$N" HIW "眼花繚亂，無從攻擊。\n" NOR,
-        HIW "$n" HIW "運氣內功，呵氣成劍，以神御劍，劍花乍現將將$N" HIW "團團圍住，哪裡還有機會攻擊。\n" NOR,
+        HIW "$n" HIW "運氣內功，呵氣成劍，以神御劍，劍花乍現將將$N" HIW "團團圍住，哪裏還有機會攻擊。\n" NOR,
 });
 
 string *parry_msg = ({
         HIG "$N" HIG "一招攻出，$n" HIG "不退不避，無數劍芒飛射而出，將此招竟數化解與無形。\n" NOR,
-        HIG "$n" HIG "面露微笑，身體猛然間幻化為一把氣劍，任$N" HIG "怎樣攻擊都無法傷之毫厘。\n" NOR,
+        HIG "$n" HIG "面露微笑，身體猛然間幻化為一把氣劍，任$N" HIG "怎樣攻擊都無法傷之毫釐。\n" NOR,
         HIG "$n" HIG "不慌不忙，手中劍光在面前畫出一道優美的弧線，竟將$N" HIG "攻勢全部化解。\n" NOR,
 });
 
@@ -80,7 +80,7 @@ mapping *action = ({
         "skill_name" : "修羅道",
         "damage_type": "刺傷"
 ]),
-([      "action": HIY "$N" HIY "高舉$w" HIY "，劍芒吞吐不定，一式「畜生道」使出，劍氣夾雜著驚天地怒吼，猶狂風般襲向$n" NOR,
+([      "action": HIY "$N" HIY "高舉$w" HIY "，劍芒吞吐不定，一式「畜生道」使出，劍氣夾雜着驚天地怒吼，猶狂風般襲向$n" NOR,
         "force" : 600,
         "attack": 650,
         "dodge" : 110,
@@ -89,13 +89,13 @@ mapping *action = ({
         "skill_name" : "畜生道",
         "damage_type": "刺傷"
 ]),
-([      "action": HIY "$N" HIY "面露微笑，挽出一個劍花，一式「" HIR "六道輪回" HIY "」使出，劍花花瓣頓時化作六色劍芒射向$n",
+([      "action": HIY "$N" HIY "面露微笑，挽出一個劍花，一式「" HIR "六道輪迴" HIY "」使出，劍花花瓣頓時化作六色劍芒射向$n",
         "force" : 700,
         "attack": 650,
         "dodge" : 110,
         "parry" : 650,
         "damage": 650,
-        "skill_name" : "六道輪回",
+        "skill_name" : "六道輪迴",
         "damage_type": "刺傷"
 ]),
 });
@@ -158,13 +158,13 @@ int get_finish(object me)
 
         if( !query("lunhui", ob) )
         {
-                tell_object(me, "演練六道輪回劍必須在輪回司中，需要借助上古神器昊天塔之力。\n");
+                tell_object(me, "演練六道輪迴劍必須在輪迴司中，需要藉助上古神器昊天塔之力。\n");
                 return 0;
         }
         
         if( query("reborn/times", me) < 3 )
         {
-                tell_object(me, "你轉世次數不夠，無法領悟輪回的精髓！\n");
+                tell_object(me, "你轉世次數不夠，無法領悟輪迴的精髓！\n");
                 return 0;
         }
 
@@ -182,7 +182,7 @@ int get_finish(object me)
         }
         if( query("str", me)<40 )
         {
-                tell_object(me, "你演練完畢，只覺雙臂酸疼，全身發軟。\n");
+                tell_object(me, "你演練完畢，只覺雙臂痠疼，全身發軟。\n");
                 return 0;
         }
         
@@ -194,40 +194,40 @@ int get_finish(object me)
 
         if (random(100) != 1 && ! wizardp(me))
         {
-                tell_object(me, "你覺得有所感悟，或許再演練一次就能融會貫通，練成六道輪回劍。\n");
+                tell_object(me, "你覺得有所感悟，或許再演練一次就能融會貫通，練成六道輪迴劍。\n");
                 return 0;
         }
 
         if (me->query_skill("sword", 1) < 700)
         {
-                tell_object(me, "你基本劍法火候不足，難以演練成六道輪回劍。\n");
+                tell_object(me, "你基本劍法火候不足，難以演練成六道輪迴劍。\n");
                 return 0;
         }
         if (me->query_skill("force", 1) < 700)
         {
-                tell_object(me, "你基本內功火候不足，難以演練成六道輪回劍。\n");
+                tell_object(me, "你基本內功火候不足，難以演練成六道輪迴劍。\n");
                 return 0;                
         }
         if (me->query_skill("martial-cognize", 1) < 700)        
         {
-                tell_object(me, "你武學修養火候不足，難以演練成六道輪回劍。\n");
+                tell_object(me, "你武學修養火候不足，難以演練成六道輪迴劍。\n");
                 return 0;                
         }
         if (me->query_skill("dodge", 1) < 700)        
         {
-                tell_object(me, "你基本輕功火候不足，難以演練成六道輪回劍。\n");
+                tell_object(me, "你基本輕功火候不足，難以演練成六道輪迴劍。\n");
                 return 0;                
         }        
         if ((int)me->query_skill("buddhism", 1) < 200)
         {
-                tell_object(me, "你禪宗心法修為不足，難以演練成六道輪回劍。\n");
+                tell_object(me, "你禪宗心法修為不足，難以演練成六道輪迴劍。\n");
                 return 0;        
         }
         /*
-        // 消耗輪回點
+        // 消耗輪迴點
         if( query("scborn/cur_lunhui_point", me)<6 && !query("thborn/ok", me) )
         {
-                tell_object(me, "你輪回點不足，無法演練成六道輪回劍。\n");
+                tell_object(me, "你輪迴點不足，無法演練成六道輪迴劍。\n");
                 return 0;
         }
         if( !query("thborn/ok", me) )
@@ -235,11 +235,11 @@ int get_finish(object me)
         */
         me->save();
 
-        tell_object(me, HIW "一陣凡塵往事湧上心頭，你幾欲放聲長嘆。霎那間，你放眼回首，竟有一股莫名\n"
-                        "的悲哀。宗師泰鬥那種高出不勝寒、登泰山而小天下之感猶然而生，你只覺得以\n往的"
+        tell_object(me, HIW "一陣凡塵往事湧上心頭，你幾欲放聲長歎。霎那間，你放眼回首，竟有一股莫名\n"
+                        "的悲哀。宗師泰斗那種高出不勝寒、登泰山而小天下之感猶然而生，你只覺得以\n往的"
                         "武學現在看來是多麼的渺小可笑。\n" NOR);
 
-        CHANNEL_D->do_channel(this_object(), "rumor", "聽說" + me->name() + "演練出"HIY"六道輪回劍"HIM"。\n");
+        CHANNEL_D->do_channel(this_object(), "rumor", "聽説" + me->name() + "演練出"HIY"六道輪迴劍"HIM"。\n");
         return 1;
 }
 
@@ -251,7 +251,7 @@ mapping query_sub_skills()
 int valid_learn(object me)
 {
 
-        // 與12T沖突
+        // 與12T衝突
         if( me->query_skill("yinyang-shiertian",1) && query("reborn/times", me) < 4 )
                 return notify_fail("你感覺體內的陰陽九轉真氣跌宕起伏，似乎容納這種內功。\n");
                 
@@ -268,40 +268,40 @@ int valid_learn(object me)
                 return notify_fail("你先天根骨不足。\n");                        
                 
         if( query("max_neili", me)<8000 )
-                return notify_fail("你的內力修為不夠，難以修煉六道輪回劍。\n");
+                return notify_fail("你的內力修為不夠，難以修煉六道輪迴劍。\n");
 
         if ((int)me->query_skill("force", 1) < 700)
-                return notify_fail("你的內功火候太淺，難以修煉六道輪回劍。\n");
+                return notify_fail("你的內功火候太淺，難以修煉六道輪迴劍。\n");
 
         if ((int)me->query_skill("sword", 1) < 700)
-                return notify_fail("你的劍法根基不足，難以修煉六道輪回劍。\n");
+                return notify_fail("你的劍法根基不足，難以修煉六道輪迴劍。\n");
 
         if ((int)me->query_skill("dodge", 1) < 700)
-                return notify_fail("你的輕功根基不足，難以修煉六道輪回劍。\n");
+                return notify_fail("你的輕功根基不足，難以修煉六道輪迴劍。\n");
     
         if ((int)me->query_skill("martial-cognize", 1) < 700)
-                return notify_fail("你的武學修養不足，難以修煉六道輪回劍。\n");
+                return notify_fail("你的武學修養不足，難以修煉六道輪迴劍。\n");
                     
         if ((int)me->query_skill("buddhism", 1) < 200)
-                return notify_fail("你的禪宗心法修為不足，難以修煉六道輪回劍。\n");
+                return notify_fail("你的禪宗心法修為不足，難以修煉六道輪迴劍。\n");
                                             
         if ((int)me->query_skill("sword", 1) < (int)me->query_skill("lunhui-sword", 1))
-                return notify_fail("你的基本劍法水平有限，無法領會更高深的六道輪回劍。\n");
+                return notify_fail("你的基本劍法水平有限，無法領會更高深的六道輪迴劍。\n");
 
         if ((int)me->query_skill("sword", 1) < (int)me->query_skill("lunhui-sword", 1))
-                return notify_fail("你的基本劍法水平有限，無法領會更高深的六道輪回劍。\n");
+                return notify_fail("你的基本劍法水平有限，無法領會更高深的六道輪迴劍。\n");
                 
         if ((int)me->query_skill("martial-cognize", 1) < (int)me->query_skill("lunhui-sword", 1))
-                return notify_fail("你的武學修養水平有限，無法領會更高深的六道輪回劍。\n");                
+                return notify_fail("你的武學修養水平有限，無法領會更高深的六道輪迴劍。\n");                
 
         if ((int)me->query_skill("dodge", 1) < (int)me->query_skill("lunhui-sword", 1))
-                return notify_fail("你的基本輕功水平有限，無法領會更高深的六道輪回劍。\n"); 
+                return notify_fail("你的基本輕功水平有限，無法領會更高深的六道輪迴劍。\n"); 
 
         if ((int)me->query_skill("force", 1) < (int)me->query_skill("lunhui-sword", 1))
-                return notify_fail("你的基本內功水平有限，無法領會更高深的六道輪回劍。\n"); 
+                return notify_fail("你的基本內功水平有限，無法領會更高深的六道輪迴劍。\n"); 
                                                 
         if ((int)me->query_skill("parry", 1) < (int)me->query_skill("lunhui-sword", 1))
-                return notify_fail("你的基本招架水平有限，無法領會更高深的六道輪回劍。\n"); 
+                return notify_fail("你的基本招架水平有限，無法領會更高深的六道輪迴劍。\n"); 
                                                                 
         return 1;
 }
@@ -321,7 +321,7 @@ mapping query_action(object me, object weapon)
 
 int practice_skill(object me)
 {
-        return notify_fail("六道輪回劍博大精深，無法簡單的通過練習進步。\n");
+        return notify_fail("六道輪迴劍博大精深，無法簡單的通過練習進步。\n");
 }
 
 int query_effect_dodge(object attacker, object me)
@@ -360,7 +360,7 @@ mixed hit_ob(object me, object victim, int damage_bonus)
         desc = ({
                 HIY "$N" HIY "微笑一聲，輕描淡寫間手中" + weapon->name() + HIY "猶如一道閃電般射向$n" HIY "。\n" NOR,
                 HIG "$N" HIG "運起六道真氣，以氣御劍，道道劍光化做雨點般地將$n" HIG "籠罩。\n" NOR,
-                HIR "$N" HIR "祭起手中" + weapon->name() + HIR "，煞時天雲突變，狂風襲來，$n" HIR "只覺心中有說不出的難受。\n" NOR,
+                HIR "$N" HIR "祭起手中" + weapon->name() + HIR "，煞時天雲突變，狂風襲來，$n" HIR "只覺心中有説不出的難受。\n" NOR,
         });
         
         if (me->is_busy() 
@@ -448,7 +448,7 @@ void skill_improved(object me)
         if( lvl >= 500 && 
             !query("can_perform/lunhui-sword/xiuluo", me) )  
         { 
-                tell_object(me, HIC "你通曉了輪回劍「" HIR "修羅劍神" HIC "」的奧秘。\n" NOR);     
+                tell_object(me, HIC "你通曉了輪迴劍「" HIR "修羅劍神" HIC "」的奧祕。\n" NOR);     
                 set("can_perform/lunhui-sword/xiuluo", 1, me); 
                 me->improve_skill("martial-cognize", 1500000);   
                 me->improve_skill("martial-cognize", 1500000);   
@@ -458,7 +458,7 @@ void skill_improved(object me)
         if( lvl >= 600 && 
             !query("can_perform/lunhui-sword/lan", me) )  
         { 
-                tell_object(me, HIC "你通曉了輪回劍「" HIR "蘭劍舞" HIC "」的奧秘。\n" NOR);     
+                tell_object(me, HIC "你通曉了輪迴劍「" HIR "蘭劍舞" HIC "」的奧祕。\n" NOR);     
                 set("can_perform/lunhui-sword/lan", 1, me); 
                 me->improve_skill("martial-cognize", 1500000);   
                 me->improve_skill("martial-cognize", 1500000);   

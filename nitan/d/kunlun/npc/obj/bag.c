@@ -36,7 +36,7 @@ int do_open(string arg)
         if ( !arg ) return 0;
         if ( query("book_count") < 1)
         {
-                return notify_fail("油布包裡面什麼也沒有了。\n");
+                return notify_fail("油布包裏面什麼也沒有了。\n");
         }
 
         me = this_player();
@@ -45,7 +45,7 @@ int do_open(string arg)
                 where = environment(me);
 message("channel:rumor",MAG"【謠言】某人："+query("name", this_player())+"找到九陽真經啦。\n"NOR,users());
                 message_vision(
-"$N輕輕地把油布包來看時，裡面原來是四本薄薄的經書，只因油布包得緊密，雖
+"$N輕輕地把油布包來看時，裏面原來是四本薄薄的經書，只因油布包得緊密，雖
 長期藏在猿腹之中，書頁仍然完好無損。\n", me);
                 book = new("/clone/book/jiuyang1");
                 book->move(file_name(where));

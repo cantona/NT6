@@ -20,7 +20,7 @@ string *gems_level = ({
         "細碎的",
         "粗糙的",
         "標準的",
-        "精致的",
+        "精緻的",
         "完美的",
         "帝王的",
         "魔王的",
@@ -50,7 +50,7 @@ mapping armor_effect = ([
         "topaz":        "戰鬥中自動恢復精氣",
         "sapphire":        "減短你的忙亂時間",
         "emerald":        "讓打中你的對手中毒",
-        "amethyst":        "提升你的防御力",
+        "amethyst":        "提升你的防禦力",
         "diamond":        "提升防具的防護力，並減輕你受到的傷害",
         "skull":        "讓打中你的對手受傷",
 ]);
@@ -61,5 +61,5 @@ mapping ring_effect = ([
         "emerald":        "提升你的運氣",
         "amethyst":        "提升你的身法",
         "diamond":        "提升你的臂力",
-        "skull":        "提升魔法石發揮效用的幾率",
+        "skull":        "提升魔法石發揮效用的機率",
 ]);

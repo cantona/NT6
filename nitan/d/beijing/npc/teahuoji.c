@@ -3,11 +3,11 @@ inherit F_VENDOR;
 
 void create()
 {
-        set_name("茶舖伙計", ({ "chapu huoji", "chapu", "huoji" }) );
+        set_name("茶鋪夥計", ({ "chapu huoji", "chapu", "huoji" }) );
         set("gender", "男性" );
         set("age", 18);
         set("long",
-                "一個在茶館裡跑堂的伙計。\n");
+                "一個在茶館裏跑堂的夥計。\n");
         set("shen_type", 1);
         set("combat_exp", 10000);
        set("str", 10);
@@ -19,7 +19,7 @@ void create()
        set_skill("unarmed",20);
        set("chat_chance", 2);
        set("chat_msg", ({
-                "茶舖伙計對著你說道：這位客官，喝茶嗎？\n",
+                "茶鋪夥計對着你説道：這位客官，喝茶嗎？\n",
         }) );       
 
         set("vendor_goods", ({

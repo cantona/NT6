@@ -11,7 +11,7 @@ void create()
                 set_default_object(__FILE__);
         else {
                 set("unit", "雙");
-                set("long", HIC "這是一雙泛著七彩光芒的寶靴，據說並非產自東土。\n");
+                set("long", HIC "這是一雙泛着七彩光芒的寶靴，據説並非產自東土。\n");
                 set("value", 2000000);
                 
                 set("armor_prop/dex", 60); //後天身法+60

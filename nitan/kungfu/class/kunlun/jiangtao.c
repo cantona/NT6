@@ -50,7 +50,7 @@ void create()
         prepare_skill("strike", "kunlun-zhang");
         prepare_skill("cuff", "zhentian-quan");
 
-        create_family("昆侖派", 5, "弟子");
+        create_family("崑崙派", 5, "弟子");
 
         set("chat_chance_combat", 100);
         set("chat_msg_combat", ({
@@ -74,7 +74,7 @@ void attempt_apprentice(object me)
 
         if( query("gender", me) == "女性" )
         {
-                command("say 師傅不準我收女弟子，你去找我師姊吧。");
+                command("say 師傅不准我收女弟子，你去找我師姊吧。");
                 return;
         }
 

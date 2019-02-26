@@ -37,11 +37,11 @@ int perform(object me, object target)
                 return notify_fail("你現在的真氣不足，難以施展" + name() + "。\n");
 
         if (! living(target))
-                return notify_fail("對方都已經這樣了，用不著這麼費力吧？\n");
+                return notify_fail("對方都已經這樣了，用不着這麼費力吧？\n");
 
         wn = weapon->name();
 
-        msg = HIW "$N" HIW "嗔目大喝，將全身勁力運于右臂，掌中" + wn +
+        msg = HIW "$N" HIW "嗔目大喝，將全身勁力運於右臂，掌中" + wn +
               HIW "頓時離手射出，朝$n" HIW "飛去！\n" NOR;
 
         ap = attack_power(me, "staff");
@@ -64,7 +64,7 @@ int perform(object me, object target)
                 addn("neili", -200, me);
         }
 
-        msg += HIY "只見那根" + wn + HIY "余勢不盡，又向前飛出數"
+        msg += HIY "只見那根" + wn + HIY "餘勢不盡，又向前飛出數"
                "丈，方才沒入土中。\n" NOR;
         weapon->move(environment(me));
 

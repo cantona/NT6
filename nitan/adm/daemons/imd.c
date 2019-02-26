@@ -202,7 +202,7 @@ protected void read_callback(int fd,mixed message)
                                                 switch(msg)
                                         {
                                         case "The nick is (probably) not registered":
-                                                tell_object(users[fd]["obj"],"\n[IM Message]:第一次使用該精靈，自動注冊帳號！\n");
+                                                tell_object(users[fd]["obj"],"\n[IM Message]:第一次使用該精靈，自動註冊帳號！\n");
                                                 socket_write(fd,"PRIVMSG #bitlbee :register "+crypt(users[fd]["id"],users[fd]["id"])[0..10]+"\r\n");
                                                 break;
                                         case "Incorrect password":
@@ -228,7 +228,7 @@ protected void read_callback(int fd,mixed message)
                                                 tell_object(users[fd]["obj"],"\n[IM Message]:YAHOO 登入成功！\n");
                                                 break;
                                         case "No accounts known. Use 'account add' to add one.":
-                                                tell_object(users[fd]["obj"],"\n[IM Message]:請使用 im register msn 或是 im register yahoo 注冊帳號！\n");
+                                                tell_object(users[fd]["obj"],"\n[IM Message]:請使用 im register msn 或是 im register yahoo 註冊帳號！\n");
                                                 break;
                                         case "MSN - Login error: Error during Passport authentication":
                                                 tell_object(users[fd]["obj"],"\n[IM Message]:MSN密碼錯誤！\n");
@@ -288,7 +288,7 @@ void socket_write(int fd,mixed message)
         i = efun::socket_write(fd,message);
         switch(i)
         {
-        case EEFDRANGE:       TELL("描述值 (descriptor) 超出范圍。"); break;
+        case EEFDRANGE:       TELL("描述值 (descriptor) 超出範圍。"); break;
         case EEBADF:          TELL("無效的描述值。"); break;
         case EESECURITY:      TELL("企圖違反安全。"); break;
         case EENOADDR:        TELL("socket 未指定位址。"); break;

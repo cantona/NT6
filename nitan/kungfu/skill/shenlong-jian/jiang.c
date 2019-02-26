@@ -42,7 +42,7 @@ int perform(object me, object target)
         ap = attack_power(me, "sword");
         dp = defense_power(target, "dodge");
 
-        msg = CYN "$N後躍一步，手捏劍決，口中念念有詞，突然大喝一聲「神龍天降」！！\n"NOR;
+        msg = CYN "$N後躍一步，手捏劍決，口中唸唸有詞，突然大喝一聲「神龍天降」！！\n"NOR;
 
         if (ap / 2 + random(ap) > dp || !living(target))
         {
@@ -60,12 +60,12 @@ int perform(object me, object target)
                 target->receive_wound("jing", damage,me);
                 addn("neili", -damage, me);
                 msg += HIY"$N的劍法頓時變得詭異十分，幻出朵朵劍花，猶如數條金龍，迅速向$n飛去！\n"
-                       "$n試圖避開劍招，可全身僵硬不能動彈，疑惑中已經身中數劍，精神癒加恍惚起來！\n"NOR;
+                       "$n試圖避開劍招，可全身僵硬不能動彈，疑惑中已經身中數劍，精神愈加恍惚起來！\n"NOR;
                 me->start_busy(3);
         }
         else
         {
-                msg += CYN"$n頓感身體被制，情知不妙，立刻攝守神元，終于突破對方控制。\n"NOR;
+                msg += CYN"$n頓感身體被制，情知不妙，立刻攝守神元，終於突破對方控制。\n"NOR;
                 addn("neili", -100, me);
                 me->start_busy(4);
         }

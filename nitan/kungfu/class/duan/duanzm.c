@@ -84,7 +84,7 @@ void create()
                 // "五絕劍"     : (: ask_skill5 :),
                 // "王叔和脈經" : (: ask_maijing1 :),
                 // "玉顴神脈經" : (: ask_maijing2 :),
-                "陽關三疊"   : "唉…說來慚愧，這一招連我自己都還未領悟透徹。",
+                "陽關三疊"   : "唉…説來慚愧，這一招連我自己都還未領悟透徹。",
         ]));
 
         set("chat_chance_combat", 120);
@@ -155,7 +155,7 @@ mixed ask_skill1()
                 return "你連段家劍法都沒學，還談什麼絕招可言？";
 
         if( query("family/gongji", me)<400 )
-                return "你在族裡碌碌無為，叫我如何信得過你？";
+                return "你在族裏碌碌無為，叫我如何信得過你？";
 
         if( query("shen", me)<0 )
                 return "算了吧，傳你絕招只怕你又去作惡！";
@@ -164,7 +164,7 @@ mixed ask_skill1()
                 return "你的內功的修為不夠，練高了再來吧。";
 
         if (me->query_skill("duanjia-jian", 1) < 120)
-                return "你的段家劍法還不行，練練再說吧！";
+                return "你的段家劍法還不行，練練再説吧！";
 
         message_sort(HIY "\n$n" HIY "點了點頭，喝道：“看好了！”忽然欺上前"
                      "來，以手為劍，接連攻出數招，招式精奇無比，$N" HIY "大"
@@ -199,7 +199,7 @@ mixed ask_skill2()
                 return "你連一陽指訣都沒學，還談什麼絕招可言？";
 
         if( query("family/gongji", me)<800 )
-                return "你在族裡碌碌無為，叫我如何信得過你？";
+                return "你在族裏碌碌無為，叫我如何信得過你？";
 
         if (me->query_skill("force") < 150)
                 return "你內功的修為還不夠，練高了再來吧。";
@@ -209,15 +209,15 @@ mixed ask_skill2()
 
         /*
         if (me->query_skill("jingluo-xue", 1) < 100)
-                return "你對經絡學的了解還不透徹，研究透了再來找我吧。";
+                return "你對經絡學的瞭解還不透徹，研究透了再來找我吧。";
         */
 
         if (me->query_skill("sun-finger", 1) < 100)
-                return "你的一陽指訣功力還不夠，練高了再說吧。";
+                return "你的一陽指訣功力還不夠，練高了再説吧。";
 
         message_sort(HIY "\n$n" HIY "微微一笑，伸出一指，出手如風，瞬間"
                      "拂過$N" HIY "胸前諸多大穴，$N" HIY "頓時只覺$n" HIY
-                     "內力源源不絕的湧入，全身一陣酸麻，不禁大驚失色。\n"
+                     "內力源源不絕的湧入，全身一陣痠麻，不禁大驚失色。\n"
                      "\n" NOR, me, this_object());
 
         command("smile");
@@ -254,7 +254,7 @@ mixed ask_skill3()
                 return "你連一陽指訣都沒學，還談什麼絕招可言？";
 
         if( query("family/gongji", me)<400 )
-                return "你在族裡碌碌無為，叫我如何信得過你？";
+                return "你在族裏碌碌無為，叫我如何信得過你？";
 
         if( query("shen", me)<20000 )
                 return "你俠義正事做得不夠，這招我暫時還不能傳你！";
@@ -267,13 +267,13 @@ mixed ask_skill3()
 
         /*
         if (me->query_skill("jingluo-xue", 1) < 120)
-                return "你對經絡學的了解還不透徹，研究透了再來找我吧。";
+                return "你對經絡學的瞭解還不透徹，研究透了再來找我吧。";
         */
 
         if (me->query_skill("sun-finger", 1) < 120)
-                return "你的一陽指訣功力還不夠，練高了再說吧。";
+                return "你的一陽指訣功力還不夠，練高了再説吧。";
 
-        message_sort(HIY "\n$n" HIY "略微點了點頭，說道：“看好了！”說罷$n"
+        message_sort(HIY "\n$n" HIY "略微點了點頭，説道：“看好了！”説罷$n"
                      HIY "凝聚一陽指訣功力，陡然點出一指，變化多端，巧逼$N"
                      HIY "諸處大穴，招式煞為精妙。\n\n" NOR, me, this_object());
 
@@ -310,7 +310,7 @@ mixed ask_skill4()
                 return "你連一陽指訣都沒學，還談什麼絕招可言？";
 
         if( query("family/gongji", me)<1000 )
-                return "你在族裡碌碌無為，叫我如何信得過你？";
+                return "你在族裏碌碌無為，叫我如何信得過你？";
 
         if( query("shen", me)<30000 )
                 return "你俠義正事做得不夠，這招我暫時還不能傳你！";
@@ -323,14 +323,14 @@ mixed ask_skill4()
 
         /*
         if (me->query_skill("jingluo-xue", 1) < 160)
-                return "你對經絡學的了解還不透徹，研究透了再來找我吧。";
+                return "你對經絡學的瞭解還不透徹，研究透了再來找我吧。";
         */
 
         if (me->query_skill("sun-finger", 1) < 120)
-                return "你的一陽指訣功力還不夠，練高了再說吧。";
+                return "你的一陽指訣功力還不夠，練高了再説吧。";
 
         message_sort(HIY "\n$n" HIY "凝視了$N" HIY "好一會兒，隨即點了點"
-                     "頭，將$N" HIY "招至身邊，在耳旁低聲細說良久，$N" HIY
+                     "頭，將$N" HIY "招至身邊，在耳旁低聲細説良久，$N" HIY
                      "聽後會心的一笑，看來對$n" HIY "的教導大有所悟。\n\n"
                      NOR, me, this_object());
 
@@ -367,7 +367,7 @@ mixed ask_skill5()
                 return "算了吧，傳你絕招只怕你又去作惡！";
 
         if (me->query_skill("duanjia-jian", 1) < 100)
-                return "你的段家劍法還不行，練練再說吧！";
+                return "你的段家劍法還不行，練練再説吧！";
 
         message_vision(HIC "$n" HIC "點點頭，忽然欺上前來，以"
                        "手為劍連出幾招，招式精奇無比，$N"
@@ -394,16 +394,16 @@ mixed ask_maijing1()
                 return "你又不是我們段家的傳人，這話是什麼意思？";
 
         if( query("family/master_id", me) != query("id") )
-                return "…嗯…等你成為我的弟子後再說吧。";
+                return "…嗯…等你成為我的弟子後再説吧。";
 
         if( query("shen", me)<10000 )
                 return "你俠義正事做得不夠，這脈經我不能給你。";
 
         if( query("combat_exp", me)<10000 )
-                return "你現在經驗太淺，不用忙著去閱讀脈經。";
+                return "你現在經驗太淺，不用忙着去閲讀脈經。";
 
         if (me->query_skill("jingluo-xue", 1) > 149)
-                return "你對經絡學的了解已經很透徹，遠勝脈經中所述。";
+                return "你對經絡學的瞭解已經很透徹，遠勝脈經中所述。";
 
         ob = find_object(MAIJING);
         if (! ob) ob = load_object(MAIJING);
@@ -416,12 +416,12 @@ mixed ask_maijing1()
         }
 
         if (owner == me)
-                return "我那本王叔和脈經不就是你拿著在看嗎？";
+                return "我那本王叔和脈經不就是你拿着在看嗎？";
 
         if (objectp(owner) && owner != this_object())
         {
                 if (! owner->is_character())
-                        return "…嗯…脈經現在不在我手裡。";
+                        return "…嗯…脈經現在不在我手裏。";
 
                 if( query("family/family_name", owner) == "段氏皇族" )
                         return "那書現在暫時是你兄弟"+query("name", owner)+
@@ -448,16 +448,16 @@ mixed ask_maijing2()
                 return "你又不是我們段家的傳人，這話是什麼意思？";
 
         if( query("family/master_id", me) != query("id") )
-                return "…嗯…等你成為我的弟子後再說吧。";
+                return "…嗯…等你成為我的弟子後再説吧。";
 
         if( query("shen", me)<80000 )
                 return "你俠義正事做得不夠，這脈經我不能給你。";
 
         if( query("combat_exp", me)<300000 )
-                return "你現在經驗太淺，不用忙著去閱讀脈經。";
+                return "你現在經驗太淺，不用忙着去閲讀脈經。";
 
         if (me->query_skill("jingluo-xue", 1) > 199)
-                return "你對經絡學的了解已經很透徹，遠勝脈經中所述。";
+                return "你對經絡學的瞭解已經很透徹，遠勝脈經中所述。";
 
         ob = find_object(MAIJING2);
         if (! ob) ob = load_object(MAIJING2);
@@ -470,12 +470,12 @@ mixed ask_maijing2()
         }
 
         if (owner == me)
-                return "我那本玉顴神脈經不就是你拿著在看嗎？";
+                return "我那本玉顴神脈經不就是你拿着在看嗎？";
 
         if (objectp(owner) && owner != this_object())
         {
                 if (! owner->is_character())
-                        return "…嗯…脈經現在不在我手裡。";
+                        return "…嗯…脈經現在不在我手裏。";
 
                 if( query("family/family_name", owner) == "段氏皇族" )
                         return "那書現在暫時是你兄弟"+query("name", owner)+

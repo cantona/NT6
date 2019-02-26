@@ -11,7 +11,7 @@ void create()
         set("age", 22);
         set("long",@LONG
 翩翩姓張，後嫁給一小土財主，財主過世後就開使每天背一個小筐賣寵物。你要
-喜歡寵物的話，不妨也養(yang)一只玩玩。
+喜歡寵物的話，不妨也養(yang)一隻玩玩。
 LONG );
         set("title",HIW"寵物小販"NOR);
         set("combat_exp", 5);
@@ -38,11 +38,11 @@ void greeting(object ob)
         if( !ob || environment(ob) != environment() ) return;
         switch( random(5) ) {
                 case 0:
-                        say( "翩翩說道：這位" + RANK_D->query_respect(ob)
+                        say( "翩翩説道：這位" + RANK_D->query_respect(ob)
                                 + "，要買小貓小狗麼？\n");
                         break;
                 case 1:
-                        say( "翩翩說道：這位" + RANK_D->query_respect(ob)
+                        say( "翩翩説道：這位" + RANK_D->query_respect(ob)
                                 + "，你太窮酸了，我不賣給你。\n");
                         break;
         }
@@ -72,7 +72,7 @@ int do_yang(string arg)
         $HIY$ - 黃色    $MAG$ - 淺紫色  $HIM$ - 粉紅色
         $HIB$ - 藍色    $HIC$ - 天青色  $CYN$ - 藍綠色
         $HIW$ - 白色    $WHT$ - 淺灰色  $NOR$ - 正常顏色
-其它與寵物有關的介紹請help pet參考相關的說明。
+其它與寵物有關的介紹請help pet參考相關的説明。
 LONG );                
                 return 1;
         }
@@ -169,19 +169,19 @@ LONG );
                         set("dex", 5+random(2), newpet);
                         break;
                 default:
-                        return notify_fail("這裡沒有你要的東西。\n");
+                        return notify_fail("這裏沒有你要的東西。\n");
         }
         set("owner",query("id",  me), newpet);
         set("possessed", me, newpet);
         set("name", cname, newpet);
         set("id", cid, newpet);
-        set("long", "一只"+ownername+"養的"+query("title", newpet)+"。", newpet);
+        set("long", "一隻"+ownername+"養的"+query("title", newpet)+"。", newpet);
         newpet->save();
         destruct(newpet);
         gold->add_amount(-100);
         addn("score", -500, me);
         me->start_busy(1);
-        command("say 你試著吹一聲口哨(whistle)，你的小寶寶就會跑過來的！");
+        command("say 你試着吹一聲口哨(whistle)，你的小寶寶就會跑過來的！");
         seteuid(getuid());
         return 1;
 }

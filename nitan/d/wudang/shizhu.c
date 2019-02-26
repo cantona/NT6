@@ -33,14 +33,14 @@ int do_mianbi(string arg)
 
         if (! arg)
         {
-                message_vision("$N面對著石柱趺坐靜思良久，白"
+                message_vision("$N面對着石柱趺坐靜思良久，白"
                                "忙一場，一無所獲。\n",ob);
                 return 1;
         }
 
         if ((int)ob->query_skill("literate", 1) < 100)
         {
-                message_vision("$N面對著石柱上滿面蝌蚪文，沒"
+                message_vision("$N面對着石柱上滿面蝌蚪文，沒"
                                "一個字認識。\n",ob);
                 return 1;
         }
@@ -48,7 +48,7 @@ int do_mianbi(string arg)
         if ((int)ob->query_skill("taoism", 1) < 100)
         {
                 message_vision("$N對石柱上每一個字都認識，就"
-                               "是不知道說的是什麼。\n",ob);
+                               "是不知道説的是什麼。\n",ob);
                 return 1;
         }
 
@@ -85,14 +85,14 @@ int do_mianbi(string arg)
                 }
                 ob->improve_skill(arg,1+random(query("int", ob)));
                 addn("jing", -100-random(50), ob);
-                message_vision(HIY "$N" HIY "面對著石柱趺坐靜思，過得良"
+                message_vision(HIY "$N" HIY "面對着石柱趺坐靜思，過得良"
                                "久，似有所悟。\n" NOR, ob);
                 write(HIC "你對「" + to_chinese(arg) + HIC "」有了新的理"
                       "解。\n" NOR);
                 return 1;
         } else 
 
-        message_vision(HIY "$N" HIY "面對著石柱趺坐靜思良久，但似乎沒什"
+        message_vision(HIY "$N" HIY "面對着石柱趺坐靜思良久，但似乎沒什"
                        "麼啟發。\n" NOR, ob);
         return 1;
 }

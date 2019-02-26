@@ -1,4 +1,4 @@
-// qi.c 戚長發
+// qi.c 戚長髮
 
 #include <ansi.h>
 #include <command.h>
@@ -10,15 +10,15 @@ int do_answer();
 
 void create()
 {
-        set_name("戚長發", ({ "qi changfa", "qi" }));
+        set_name("戚長髮", ({ "qi changfa", "qi" }));
         set("title", "躺屍劍門傳人");
-        set("nickname", HIR "宰人不用刀，" HIC "願" HIR "者上鉤" NOR);
+        set("nickname", HIR "宰人不用刀，" HIC "願" HIR "者上鈎" NOR);
 
         set("gender", "男性");
         set("age", 48);
         set("str", 100);
         set("long",
-                "戚老板最近是爆發橫財，所謂是三年不開張，開張管三年。\n");
+                "戚老闆最近是爆發橫財，所謂是三年不開張，開張管三年。\n");
         set_skill("unarmed", 50);
         set_skill("dodge", 50);
         set_skill("higgling", 800);
@@ -32,7 +32,7 @@ void create()
                 "買賣" : (: do_answer :),
                 "生意" : (: do_answer :),
                 "東西" : "扔掉就沒了！嘿嘿。",
-                "還我錢"     : "哼！我這裡是有進無出！",
+                "還我錢"     : "哼！我這裏是有進無出！",
                 "我的錢"     : "什麼你的錢，地上的就是我的！",
                 "錢"         : "想錢啊？自己去掙！",
                 "我的東西"   : "扔掉就沒了！嘿嘿。",
@@ -143,12 +143,12 @@ int do_drop(string arg)
                 {
                         message_vision("$N大怒道：：“好你個" +
                                        RANK_D->query_rude(ob) +
-                                       "，還來添亂！”\n說罷只見$N"
+                                       "，還來添亂！”\n説罷只見$N"
                                        "飛起一腳，將$n和" + ob->name() +
                                        "一起踢出門外。\n", this_object(), me);
                         ob->move("/d/city/beidajie1");
                         me->move("/d/city/beidajie1");
-                        message("vision", "只聽叮叮□光一陣向，" + me->name() +
+                        message("vision", "只聽叮叮咣光一陣向，" + me->name() +
                                           "被人一腳踢了出來。\n",
                                 environment(me), me);
 /*
@@ -159,11 +159,11 @@ int do_drop(string arg)
                 }
 
                 message_vision("$N怒道：“滾開，少給我添亂，影響我的生意。”\n"
-                               "說罷只見$N飛起一腳，將$n和" + ob->name() +
+                               "説罷只見$N飛起一腳，將$n和" + ob->name() +
                                "一起踢出門外。\n", this_object(), me);
                 ob->move("/d/city/beidajie1");
                 me->move("/d/city/beidajie1");
-                message("vision", "只聽叮叮□光一陣向，" + me->name() +
+                message("vision", "只聽叮叮咣光一陣向，" + me->name() +
                                   "被人一腳踢了出來。\n",
                         environment(me), me);
 /*
@@ -209,7 +209,7 @@ int do_drop(string arg)
 
 int do_answer()
 {
-        write(name() + "在你耳邊輕聲說道：我");
+        write(name() + "在你耳邊輕聲説道：我");
         ::do_list();
         write("這可真是貨真價實，童叟無欺啊！\n");
         return 1;

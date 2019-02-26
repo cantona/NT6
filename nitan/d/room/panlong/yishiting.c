@@ -10,12 +10,12 @@ void create()
         set("short", "議事廳");
         set("long", @LONG
 這就是盤龍居主人和重要人物商量大事之處，正中有不少桌椅，側
-面是屏風，廳堂中掛著兩個條幅，兩旁通往演武廳。
+面是屏風，廳堂中掛着兩個條幅，兩旁通往演武廳。
 LONG );
 
         set("default_long", "這就是ROOM_NAME主人ROOM_OWNER和重要人物"  /* EXAMPLE */
                             "商量江湖大事之處，正中有不少桌椅，側面是" /* EXAMPLE */
-                            "屏風，廳堂中掛著兩個條幅，兩旁通往演武廳" /* EXAMPLE */
+                            "屏風，廳堂中掛着兩個條幅，兩旁通往演武廳" /* EXAMPLE */
                             "。");                                     /* EXAMPLE */
                                                                        /* EXAMPLE */
 

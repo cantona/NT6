@@ -11,7 +11,7 @@ void create()
                 set("unit", "張");
                 set("material", "wood");
                 set("value", 2000);
-                set("long", "這張破桌子放在這裡很久了，上面放了一個八卦盤，和一個簽筒。\n" );
+                set("long", "這張破桌子放在這裏很久了，上面放了一個八卦盤，和一個籤筒。\n" );
                 set("no_sell", "這樣東西不能隨便買賣。");
         }
         setup();

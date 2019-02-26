@@ -4,7 +4,7 @@ inherit NPC;
 
 void create()
 {
-        set_name("伙計", ({ "huo ji", "huo", "ji" }) );
+        set_name("夥計", ({ "huo ji", "huo", "ji" }) );
         set("title", HIB"藥王谷"NOR+YEL"跑堂"NOR);
         set("gender", "男性" );
         set("age", 22);
@@ -39,19 +39,19 @@ int greeting(object ob)
         if (i<=30) {
                 command("wa"+query("id", ob));
                 command("say "+RANK_D->query_respect(ob)
-                        +"，你受了重傷啊！快請到裡面讓藥王谷醫師給你看看吧！\n");
+                        +"，你受了重傷啊！快請到裏面讓藥王谷醫師給你看看吧！\n");
                 return 1;}
 
         if (i<=60) {
                 command("look"+query("id", ob));
                 command("say "+RANK_D->query_respect(ob)
-                        +"，你傷得不輕啊！快請到裡面療傷吧！\n");
+                        +"，你傷得不輕啊！快請到裏面療傷吧！\n");
                 return 1;}
 
         if (i<=90) {
                 command("pat"+query("id", ob));
                 command("say "+RANK_D->query_respect(ob)
-                        +"，你受了點傷！到裡面買包藥服下就沒事了！\n");
+                        +"，你受了點傷！到裏面買包藥服下就沒事了！\n");
                 return 1;}
 
         else {

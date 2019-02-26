@@ -2,7 +2,7 @@ inherit FORCE;
 #include <ansi.h>
 
 mapping *action = ({
-([      "action" : "$N身形一轉，拳頭攜著疾速旋轉的氣流揮出，疾如閃電，勢如雷霆，擊向$n",
+([      "action" : "$N身形一轉，拳頭攜着疾速旋轉的氣流揮出，疾如閃電，勢如雷霆，擊向$n",
         "dodge"  : 50,
         "force"  : 300,
         "attack" : 100,
@@ -11,7 +11,7 @@ mapping *action = ({
         "lvl"    : 0,
         "damage_type": "震傷" 
 ]), 
-([      "action" : "$N身形一轉，拳頭攜著疾速旋轉的氣流揮出，疾如閃電，勢如雷霆，擊向$n",
+([      "action" : "$N身形一轉，拳頭攜着疾速旋轉的氣流揮出，疾如閃電，勢如雷霆，擊向$n",
         "dodge"  : 50,
         "force"  : 332,
         "attack" : 112,
@@ -47,7 +47,7 @@ mapping *action = ({
         "lvl"    : 220,
         "damage_type": "震傷"
 ]),
-([      "action" : "$N攻勢忽緩而不疏，$w變化無常，捉摸不定向$n慢慢卷去",
+([      "action" : "$N攻勢忽緩而不疏，$w變化無常，捉摸不定向$n慢慢捲去",
         "dodge"  : 75,
         "force"  : 410,
         "attack" : 243,
@@ -184,11 +184,11 @@ int get_finish(object me)
                 return 0;
         }
 
-        tell_object(me, HIW "一陣凡塵往事湧上心頭，你默念九陰蛤蟆功，一股莫名的真氣由兩足湧至頭部百匯穴。\n"
+        tell_object(me, HIW "一陣凡塵往事湧上心頭，你默唸九陰蛤蟆功，一股莫名的真氣由兩足湧至頭部百匯穴。\n"
                         "不由心意零亂，隨即兩手撐地，雙腳倒立向上，“嘎”一聲長嗚，聲音猶若蛙叫。響徹天地。\n"
                         "蛙嗚數聲後，你但覺全身無比舒暢!似乎功力比以往提升了數倍!\n" NOR);
         CHANNEL_D->do_channel(me,"rumor",sprintf("忽然%s“嘎”一聲長嗚，聲音猶若蛙叫,響徹天地。",query("name", me)));
-        CHANNEL_D->do_channel(me,"rumor",sprintf("%s因禍得福經歷萬難，終于逆轉經脈領悟出西毒歐陽峰不傳秘技九陰蛤蟆功了。",query("name", me)));
+        CHANNEL_D->do_channel(me,"rumor",sprintf("%s因禍得福經歷萬難，終於逆轉經脈領悟出西毒歐陽峯不傳祕技九陰蛤蟆功了。",query("name", me)));
         return 1;
 }
 

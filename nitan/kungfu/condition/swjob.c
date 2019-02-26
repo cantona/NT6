@@ -7,7 +7,7 @@ int update_condition(object me, int duration)
 {
         if( duration<1 && query_temp("defend_quest", me) )
         {
-                tell_object(me, HIY "你的守衛門派任務結束。\n" NOR);
+                tell_object(me, HIY "你的守衞門派任務結束。\n" NOR);
                 set_temp("defend_quest/finish", 1, me);
                 return 0;
         }

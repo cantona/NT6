@@ -220,9 +220,9 @@ void check(object me)
         {
             addn("money", 10000, me);
         }
-        write(HIR"你中了"+chinese_number(money)+"兩黃金,已經撥入你的賬戶！\n");
-        message("system",HIW"□泥潭福彩□："+HIC" "+query("name",me)+HIW" 中了"+HIY" "+chinese_number(money)+HIW" 兩黃金，已經撥入帳戶！\n"NOR,users());
-        all_biao[query_temp("num",me)]["jieguo"]="已兌獎";
+        write(HIR"你中了"+chinese_number(money)+"兩黃金,已經撥入你的賬户！\n");
+        message("system",HIW"〖泥潭福彩〗："+HIC" "+query("name",me)+HIW" 中了"+HIY" "+chinese_number(money)+HIW" 兩黃金，已經撥入帳户！\n"NOR,users());
+        all_biao[query_temp("num",me)]["jieguo"]="已兑獎";
         //all_biao-=({query_temp("num", all_biao[me)]});
         save();//存盤
         restore();
@@ -249,7 +249,7 @@ int do_read(string arg)
         write("投注請用touzhu\n");
         write("查詢請用read biao\n");
         write("查詢規則請用read duijiang\n");
-        write("請使用duijiang指令，你的獎金將自動進入你帳戶。\n");
+        write("請使用duijiang指令，你的獎金將自動進入你帳户。\n");
         return 1;
     }
     if(arg == "biao")
@@ -265,16 +265,16 @@ int do_read(string arg)
     }
     if(arg == "duijiang")
     {
-        write("兌獎細則：\n");
-        write("特等獎：七個數字全部吻合。      ──全部累計獎金.\n");
-        write("一等獎：共有六個數字吻合。      ──全部累計獎金/5.\n");
-        write("二等獎：共有五個數字吻合        ──全部累計獎金/50.\n");
-        write("三等獎：共有四個數字吻合        ──全部累計獎金/100.\n");
-        write("四等獎：僅有三個數字吻合        ──全部累計獎金/1000.\n");
+        write("兑獎細則：\n");
+        write("特等獎：七個數字全部吻合。      ——全部累計獎金.\n");
+        write("一等獎：共有六個數字吻合。      ——全部累計獎金/5.\n");
+        write("二等獎：共有五個數字吻合        ——全部累計獎金/50.\n");
+        write("三等獎：共有四個數字吻合        ——全部累計獎金/100.\n");
+        write("四等獎：僅有三個數字吻合        ——全部累計獎金/1000.\n");
         write("祝您玩得痛快!\n");
         return 1;
     }
-    else        write("你要看什麼？購買規則請read rules，購買情況請read biao,兌獎規則請read duijiang。\n");
+    else        write("你要看什麼？購買規則請read rules，購買情況請read biao,兑獎規則請read duijiang。\n");
     return 1;
 }
 string show_player()
@@ -289,34 +289,34 @@ string show_player()
     {
         h=sizeof(all_biao);
         str+=HIW"本期彩票已有 "HIG+chinese_number(sizeof(all_biao))+HIW" 位玩家投注，投注狀況如下：\n"NOR;
-        str+="□□□□□□□□□□□□□□□□□□□□□□□□\n";
+        str+="┏━━━━━━┳━━━━━━━━━━━┳━━━┓\n";
         while (i<h)
         {
             name=all_biao[i];
             /*if (strlen(name["name"])==6)
-                str+= sprintf("□%-28s□%22s□%-6s□\n",HIR+name["name"]+NOR,(int)name["z_num"],name["jieguo"],);//刪除name["jieguo"]前(int)name["t_num"]  by wenwu
+                str+= sprintf("┃%-28s┃%22s┃%-6s┃\n",HIR+name["name"]+NOR,(int)name["z_num"],name["jieguo"],);//刪除name["jieguo"]前(int)name["t_num"]  by wenwu
             else if(strlen(name["name"])==4)
-                str+= sprintf("□%-27s □%22s□%-6s□\n",HIR+name["name"]+" "NOR,(int)name["z_num"],name["jieguo"],);
+                str+= sprintf("┃%-27s ┃%22s┃%-6s┃\n",HIR+name["name"]+" "NOR,(int)name["z_num"],name["jieguo"],);
             else if(strlen(name["name"])==8)
-                str+= sprintf("□%-27s □%22s□%-6s□\n",HIR+name["name"]+NOR,(int)name["z_num"],name["jieguo"],);
+                str+= sprintf("┃%-27s ┃%22s┃%-6s┃\n",HIR+name["name"]+NOR,(int)name["z_num"],name["jieguo"],);
            else if(strlen(name["name"])==1)
-                str+= sprintf("□%-27s □%22s□%-6s□\n",HIR+name["name"]+NOR,(int)name["z_num"],name["jieguo"],);
+                str+= sprintf("┃%-27s ┃%22s┃%-6s┃\n",HIR+name["name"]+NOR,(int)name["z_num"],name["jieguo"],);
            else if(strlen(name["name"])==3)
-                str+= sprintf("□%-27s □%22s□%-6s□\n",HIR+name["name"]+NOR,(int)name["z_num"],name["jieguo"],);
+                str+= sprintf("┃%-27s ┃%22s┃%-6s┃\n",HIR+name["name"]+NOR,(int)name["z_num"],name["jieguo"],);
            else if(strlen(name["name"])==5)
-                str+= sprintf("□%-27s □%22s□%-6s□\n",HIR+name["name"]+NOR,(int)name["z_num"],name["jieguo"],);
+                str+= sprintf("┃%-27s ┃%22s┃%-6s┃\n",HIR+name["name"]+NOR,(int)name["z_num"],name["jieguo"],);
            else if(strlen(name["name"])==7)
-                str+= sprintf("□%-27s □%22s□%-6s□\n",HIR+name["name"]+NOR,(int)name["z_num"],name["jieguo"],);
+                str+= sprintf("┃%-27s ┃%22s┃%-6s┃\n",HIR+name["name"]+NOR,(int)name["z_num"],name["jieguo"],);
            else if(strlen(name["name"])==9)
-                str+= sprintf("□%-27s □%22s□%-6s□\n",HIR+name["name"]+NOR,(int)name["z_num"],name["jieguo"],);
+                str+= sprintf("┃%-27s ┃%22s┃%-6s┃\n",HIR+name["name"]+NOR,(int)name["z_num"],name["jieguo"],);
             else if(strlen(name["name"])==10)
-                str+= sprintf("□%-27s □%22s□%-6s□\n",HIR+name["name"]+NOR,(int)name["z_num"],name["jieguo"],);
+                str+= sprintf("┃%-27s ┃%22s┃%-6s┃\n",HIR+name["name"]+NOR,(int)name["z_num"],name["jieguo"],);
             else if(strlen(name["name"])==2)
-                str+= sprintf("□%-27s □%22s□%-6s□\n",HIR+name["name"]+NOR,(int)name["z_num"],name["jieguo"],);*/
-                        str+= sprintf("□%-12s□%22s□%-6s□\n",HIR+name["name"]+NOR,(int)name["z_num"],name["jieguo"],);
+                str+= sprintf("┃%-27s ┃%22s┃%-6s┃\n",HIR+name["name"]+NOR,(int)name["z_num"],name["jieguo"],);*/
+                        str+= sprintf("┃%-12s┃%22s┃%-6s┃\n",HIR+name["name"]+NOR,(int)name["z_num"],name["jieguo"],);
                         i++;
         }
-        str+="□□□□□□□□□□□□□□□□□□□□□□□□\n"NOR;
+        str+="┗━━━━━━┻━━━━━━━━━━━┻━━━┛\n"NOR;
         if (query("end_cdate")) str+=HIW"本期投注截止時間："HIY+query("end_cdate")+HIW"\n本期彩票開獎時間："HIM+query("kaijiang_cdate")+"\n"NOR;
         else str+=HIR"本期彩票已經截止購買,"HIW"開獎時間："HIG+query("kaijiang_cdate")+HIW"。\n"NOR;
         str+=HIW"本期彩票累計獎金："HIY+query("all_gold")+HIG" 兩黃金。\n"NOR;
@@ -336,7 +336,7 @@ string show_player()
             if(member_array(z,query("last_z_num"))!=-1) k++;
         }
 
-                if ( all_biao[i]["jieguo"] == "已兌獎")
+                if ( all_biao[i]["jieguo"] == "已兑獎")
                         str_old+=({i});
                 else
                 {
@@ -371,9 +371,9 @@ string show_player()
     save();
     list+=str_te+str_1+str_2+str_3+str_4+str_old;
     str_te=str_1=str_2=str_3=str_4=str_5=str_old=({});
-    str+="□□□□□□□□□□□□□□□□□□□□□□□□\n";
-    str+= sprintf("□%-12s□%-22s□%-6s□\n","玩家名","  投   注   號   碼   ","所中獎");
-    str+="□□□□□□□□□□□□□□□□□□□□□□□□\n";
+    str+="┏━━━━━━┳━━━━━━━━━━━┳━━━┓\n";
+    str+= sprintf("┃%-12s┃%-22s┃%-6s┃\n","玩家名","  投   注   號   碼   ","所中獎");
+    str+="┣━━━━━━╋━━━━━━━━━━━╋━━━┫\n";
     z=0;
     h=sizeof(list);
     set("zhongjiang_num",h);
@@ -383,45 +383,45 @@ string show_player()
         i=list[z];
         name=all_biao[i];
         /*if (strlen(name["name"])==6)
-            str+= sprintf("□%-28s□%22s□%-6s□\n",HIR+name["name"]+NOR,(int)name["z_num"],name["jieguo"],);
+            str+= sprintf("┃%-28s┃%22s┃%-6s┃\n",HIR+name["name"]+NOR,(int)name["z_num"],name["jieguo"],);
         else if(strlen(name["name"])==4)
-            str+= sprintf("□%-27s □%22s□%-6s□\n",HIR+name["name"]+" "NOR,(int)name["z_num"],name["jieguo"],);
+            str+= sprintf("┃%-27s ┃%22s┃%-6s┃\n",HIR+name["name"]+" "NOR,(int)name["z_num"],name["jieguo"],);
         else if(strlen(name["name"])==8)
-            str+= sprintf("□%-27s □%22s□%-6s□\n",HIR+name["name"]+NOR,(int)name["z_num"],name["jieguo"],);
+            str+= sprintf("┃%-27s ┃%22s┃%-6s┃\n",HIR+name["name"]+NOR,(int)name["z_num"],name["jieguo"],);
         else if(strlen(name["name"])==1)
-            str+= sprintf("□%-27s □%22s□%-6s□\n",HIR+name["name"]+NOR,(int)name["z_num"],name["jieguo"],);
+            str+= sprintf("┃%-27s ┃%22s┃%-6s┃\n",HIR+name["name"]+NOR,(int)name["z_num"],name["jieguo"],);
         else if(strlen(name["name"])==2)
-            str+= sprintf("□%-27s □%22s□%-6s□\n",HIR+name["name"]+NOR,(int)name["z_num"],name["jieguo"],);
+            str+= sprintf("┃%-27s ┃%22s┃%-6s┃\n",HIR+name["name"]+NOR,(int)name["z_num"],name["jieguo"],);
         else if(strlen(name["name"])==3)
-            str+= sprintf("□%-27s □%22s□%-6s□\n",HIR+name["name"]+NOR,(int)name["z_num"],name["jieguo"],);
+            str+= sprintf("┃%-27s ┃%22s┃%-6s┃\n",HIR+name["name"]+NOR,(int)name["z_num"],name["jieguo"],);
         else if(strlen(name["name"])==5)
-            str+= sprintf("□%-27s □%22s□%-6s□\n",HIR+name["name"]+NOR,(int)name["z_num"],name["jieguo"],);
+            str+= sprintf("┃%-27s ┃%22s┃%-6s┃\n",HIR+name["name"]+NOR,(int)name["z_num"],name["jieguo"],);
         else if(strlen(name["name"])==7)
-            str+= sprintf("□%-27s □%22s□%-6s□\n",HIR+name["name"]+NOR,(int)name["z_num"],name["jieguo"],);
+            str+= sprintf("┃%-27s ┃%22s┃%-6s┃\n",HIR+name["name"]+NOR,(int)name["z_num"],name["jieguo"],);
         else if(strlen(name["name"])==9)
-            str+= sprintf("□%-27s □%22s□%-6s□\n",HIR+name["name"]+NOR,(int)name["z_num"],name["jieguo"],);
+            str+= sprintf("┃%-27s ┃%22s┃%-6s┃\n",HIR+name["name"]+NOR,(int)name["z_num"],name["jieguo"],);
         else if(strlen(name["name"])==10)
-            str+= sprintf("□%-27s □%22s□%-6s□\n",HIR+name["name"]+NOR,(int)name["z_num"],name["jieguo"],);*/
-                str+= sprintf("□%-12s□%22s□%-6s□\n",HIR+name["name"]+NOR,(int)name["z_num"],name["jieguo"],);
-                if ( name["jieguo"] != "已兌獎" )
+            str+= sprintf("┃%-27s ┃%22s┃%-6s┃\n",HIR+name["name"]+NOR,(int)name["z_num"],name["jieguo"],);*/
+                str+= sprintf("┃%-12s┃%22s┃%-6s┃\n",HIR+name["name"]+NOR,(int)name["z_num"],name["jieguo"],);
+                if ( name["jieguo"] != "已兑獎" )
                         m++;
         z++;
     }
     list=({});
-    str+="□□□□□□□□□□□□□□□□□□□□□□□□\n"NOR;
-        str+=HIW"本期尚未兌獎注數："HIM+chinese_number(m)+HIW"\n"NOR;
+    str+="┗━━━━━━┻━━━━━━━━━━━┻━━━┛\n"NOR;
+        str+=HIW"本期尚未兑獎注數："HIM+chinese_number(m)+HIW"\n"NOR;
     str+=HIW"下期彩票發行時間："HIG+query("start_cdate")+HIW"\n"NOR;
     str+=HIW"下期彩票預計獎金："HIY+query("all_gold")+HIW" 兩黃金。\n"NOR;
     return "/feature/more.c"->start_more(str);
 }
-int do_duijiang()//兌獎指令
+int do_duijiang()//兑獎指令
 {
     int i,j,k,m,n,money;
     object me;
     me = this_player();
     restore();
     if(!query("duijiang"))
-        return notify_fail("還未到兌獎時間！\n");
+        return notify_fail("還未到兑獎時間！\n");
     if (query_temp("busy"))
         return notify_fail("稍候........\n");
     set_temp("busy",1);
@@ -435,12 +435,12 @@ int do_duijiang()//兌獎指令
         if( all_biao[i]["id"] == query("id", me) && all_biao[i]["name"] == query("name", me) )
         {
                         n = 1;
-                        if ( all_biao[i]["jieguo"] != "已兌獎" && all_biao[i]["jieguo"] != "無獎" )
+                        if ( all_biao[i]["jieguo"] != "已兑獎" && all_biao[i]["jieguo"] != "無獎" )
                         {
                                 k = i + 1;
                                 break;
                         }
-                        else if ( all_biao[i]["jieguo"] == "已兌獎" )
+                        else if ( all_biao[i]["jieguo"] == "已兑獎" )
                                 m = 1;
                         else if ( all_biao[i]["jieguo"] == "無獎" )
                                 m = 2;
@@ -459,8 +459,8 @@ int do_duijiang()//兌獎指令
                 check(me);
         return 1;
     }
-        else if( m == 1 ) return notify_fail("你已經兌過獎了！\n");
-    else if( m == 2 ) return notify_fail("你根本沒中獎，來兌個屁！\n");
+        else if( m == 1 ) return notify_fail("你已經兑過獎了！\n");
+    else if( m == 2 ) return notify_fail("你根本沒中獎，來兑個屁！\n");
 }
 
 void auto_post(string title,string body)
@@ -469,7 +469,7 @@ void auto_post(string title,string body)
     note = allocate_mapping(4);
     note["title"] = title;
     note["author"] ="彩票板";
-   // "/cmds/std/news.c"->done_post(this_object(),note,body);暫注釋掉新聞提醒領獎 by wenwu
+   // "/cmds/std/news.c"->done_post(this_object(),note,body);暫註釋掉新聞提醒領獎 by wenwu
     return;
 }
 void clean_data()

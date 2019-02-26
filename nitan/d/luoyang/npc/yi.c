@@ -8,8 +8,8 @@ void create()
 {
         set_name("易師爺", ({ "yi shiye", "yi", "shiye"}));
         set("long",
-"易師爺是個瘦瘦小小、五十來歲的漢子，頦下留著一部稀稀疏
-疏的胡子，衣履甚是整潔。\n");
+"易師爺是個瘦瘦小小、五十來歲的漢子，頦下留着一部稀稀疏
+疏的鬍子，衣履甚是整潔。\n");
         set("gender", "男性");
         set("age", 55);
         set("attitude", "peaceful");
@@ -47,7 +47,7 @@ void create()
 int ask_lvzhuweng()
 {
         object me = this_player();
-        message_vision(CYN"易師爺猛地睜圓眯眯眼，對$N說道：你也想去見識他的琴簫？那我們一起去吧。\n"NOR,me);
+        message_vision(CYN"易師爺猛地睜圓眯眯眼，對$N説道：你也想去見識他的琴簫？那我們一起去吧。\n"NOR,me);
         set_leader(me);
         return 1;
 }

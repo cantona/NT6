@@ -4,10 +4,10 @@ inherit NPC;
 
 void create()
 {
-        set_name("說書老人", ({"shuoshu laoren", "laoren"}) );
+        set_name("説書老人", ({"shuoshu laoren", "laoren"}) );
         set("gender", "男性" );
         set("age", 53);
-        set("long","一位慈眉善目的老人，正在說書。\n");
+        set("long","一位慈眉善目的老人，正在説書。\n");
         set("combat_exp", 6000);
         set("str", 30);
         set("attitude","heroism");
@@ -26,11 +26,11 @@ void init()
 void says(object me)
 {
         string *msgs = ({
-                "$N繪聲繪色地說著書。\n",
-                "$N滔滔不絕地說著書。\n",
-                "$N說得眉飛色舞。\n",
-                "$N說道：“欲知後事如何，且聽下回分解。”\n",
-                "$N端起茶碗喝了幾口茶水，又開始接著說書。\n",
+                "$N繪聲繪色地説着書。\n",
+                "$N滔滔不絕地説着書。\n",
+                "$N説得眉飛色舞。\n",
+                "$N説道：“欲知後事如何，且聽下回分解。”\n",
+                "$N端起茶碗喝了幾口茶水，又開始接着説書。\n",
         });
         message_vision (msgs[random(sizeof(msgs))], me);
         remove_call_out("says");

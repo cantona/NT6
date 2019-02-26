@@ -161,7 +161,7 @@ protected void get_new_pass(string pass, object ob)
 
         if (strlen(pass) < 3)
         {
-                write("對不起，你的普通密碼長度必須大于三位，請重新輸入：");
+                write("對不起，你的普通密碼長度必須大於三位，請重新輸入：");
                 input_to("get_new_pass", 1, ob);
                 return;
         }
@@ -243,7 +243,7 @@ protected void get_new_ad_pass(string pass, object ob)
 
         if (strlen(pass) < 5)
         {
-                write(HIR "\n對不起，為了安全起見，你的普通密碼長度必須大于五位。\n\n" NOR);
+                write(HIR "\n對不起，為了安全起見，你的普通密碼長度必須大於五位。\n\n" NOR);
                 write("請重新輸入新的管理密碼：");
                 input_to("get_new_ad_pass", 1, ob);
                 return;
@@ -307,7 +307,7 @@ protected void confirm_new_ad_pass(string pass, object ob, string new_pass)
                                                           : 0,
                                           ctime(time())));
 
-        // 查找並發送mail
+        // 查找併發送mail
         if( geteuid(me) == query("id", ob) )
         {
                 // 是本人在修改
@@ -317,7 +317,7 @@ protected void confirm_new_ad_pass(string pass, object ob, string new_pass)
         {
                 // 是其他人修改
                 set("password", "55AA", ob);
-                write("清除用戶原有的普通密碼。\n");
+                write("清除用户原有的普通密碼。\n");
                 ob->save();
         }
 
@@ -344,7 +344,7 @@ LONG ;
                 //MAIL_D->queue_mail(me, 0, email, "Password chanaged", msg);
         }
 
-        write("你成功的修改了用戶("+query("id", ob)+")的管理密碼。\n");
+        write("你成功的修改了用户("+query("id", ob)+")的管理密碼。\n");
 
         if( query_temp("create_temp", ob) )
                 destruct(ob);
@@ -356,7 +356,7 @@ int help(object me)
 指令格式 : passwd <玩家>
  
 這個指令可以修改你的人物密碼。如果是巫師，可以使用這個命令來
-修改他人的管理密碼，修改以後系統會自動發信到玩家所注冊信箱通
+修改他人的管理密碼，修改以後系統會自動發信到玩家所註冊信箱通
 知新的管理密碼。
 
 HELP );

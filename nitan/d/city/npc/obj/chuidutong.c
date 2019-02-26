@@ -40,12 +40,12 @@ int do_shot(string arg)
         if( me->is_busy() )
                 return notify_fail("你上一個動作還沒有完成！\n");
         if( !objectp(obj = present(arg, environment(me)) ))
-                return notify_fail("這裡沒有這個人！\n");
+                return notify_fail("這裏沒有這個人！\n");
         if( !obj->is_character() || obj->is_corpse() )
                 return notify_fail("看清楚一點，那並不是活物。\n");
         if (obj == me) return notify_fail("對自己下毒手？別想不開啊。\n");
 
-        message_vision(HIW "$N把吹毒筒放到嘴邊，對著$n用力一吹，$n只覺得一陣頭昏眼花，站立不穩，好象中毒了！\n" NOR, me, obj);
+        message_vision(HIW "$N把吹毒筒放到嘴邊，對着$n用力一吹，$n只覺得一陣頭昏眼花，站立不穩，好像中毒了！\n" NOR, me, obj);
         tired=query("total_tired", obj);
         obj->apply_condition("xx_poison",random(max_poison) + random(least_poison * tired));
         destruct(this_object());

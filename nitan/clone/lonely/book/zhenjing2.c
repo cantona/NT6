@@ -13,7 +13,7 @@ void create()
                 set("no_sell", 1);
                 set("long", WHT "\n這是一本用薄紙寫成的書，封皮上寫有「九陰真經」下\n"
                             "冊六字。書皮泛黃，看來已經保存很久了。真經中記載\n"
-                            "有催心掌、九陰白骨爪和銀龍鞭法等絕技，你可以試著\n"
+                            "有催心掌、九陰白骨爪和銀龍鞭法等絕技，你可以試着\n"
                             "讀讀(read)看。\n\n" NOR, );
         }
 }
@@ -46,7 +46,7 @@ int do_du(string arg)
 
         if (me->is_busy())
         {
-                write("你現在正忙著呢。\n");
+                write("你現在正忙着呢。\n");
                 return 1;
         }
 
@@ -59,7 +59,7 @@ int do_du(string arg)
         if( query("no_fight", where )
             && query("doing", me) != "scheme" )
         {
-                write("你無法在這裡靜下心來研讀真經。\n");
+                write("你無法在這裏靜下心來研讀真經。\n");
                 return 1;
         }
 
@@ -71,7 +71,7 @@ int do_du(string arg)
 
         if (! id(book))
         {
-                write("這裡沒有這本書。\n");
+                write("這裏沒有這本書。\n");
                 return 1;
         }
 
@@ -89,7 +89,7 @@ int do_du(string arg)
 
         if (me->query_skill("sanscrit", 1) < 200)
         {
-                write("你的梵文水平太低，無法看懂真經裡所記載的內容。\n");        
+                write("你的梵文水平太低，無法看懂真經裏所記載的內容。\n");        
                 return 1;
         }
 
@@ -103,7 +103,7 @@ int do_du(string arg)
             || query("qi", me)<100
             || query("neili", me)<200 )
         {
-                write("你現在過于疲倦，無法專心下來研讀新知。\n");
+                write("你現在過於疲倦，無法專心下來研讀新知。\n");
                 return 1;
         }
 
@@ -253,7 +253,7 @@ int do_du(string arg)
 
         if (lv >= 180)
         {
-                write("你研讀了一會兒，但是發現上面所說的對你而言都太淺了。\n");
+                write("你研讀了一會兒，但是發現上面所説的對你而言都太淺了。\n");
                 return 1;
         }
 

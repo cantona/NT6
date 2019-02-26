@@ -4,7 +4,7 @@ void create()
 {
         set_name("老鴇婆", ({ "laobao po", "laobao", "po" }) );
         set("gender", "女性" );
-         set("title", "怡紅院老板娘");
+         set("title", "怡紅院老闆娘");
         set("age", 42);
         set("long", 
             "\n這老鴇婆雖是徐娘半老，但仍風韻尤存，只不過臉上的粉太厚了。\n");
@@ -43,12 +43,12 @@ void greeting(object me)
     command("look"+query("id", me));
 
     if( query("gender", me) == "無性"){
-       command("say 你當老娘是爛婊子嗎？辣塊媽媽，老娘滿漢蒙藏回都接，就是不伺候太監！");
+       command("say 你當老孃是爛婊子嗎？辣塊媽媽，老孃滿漢蒙藏回都接，就是不伺候太監！");
        command("kick"+query("id", me));
        message("vision", me->name() +"被老鴇婆一腳踢出門外。\n",
                 environment(me), ({me}));
        me->move("/d/beijing/wang_8");
-       message("vision", me->name() +"被人從怡紅院裡踢了出來，栽倒在地上，磕掉兩顆門牙。\n", 
+       message("vision", me->name() +"被人從怡紅院裏踢了出來，栽倒在地上，磕掉兩顆門牙。\n", 
                 environment(me), ({me}));
 
     }
@@ -56,7 +56,7 @@ void greeting(object me)
     if( query("class", me) == "bonze"){
        command("say 呦，" + RANK_D->query_respect(me) 
                 +"也來光顧我們怡紅院啊。");
-       command("say 想當年我接過一個西藏喇嘛，他上床前一定要念經，一面念經，眼珠子就骨溜溜的瞧著我。");
+       command("say 想當年我接過一個西藏喇嘛，他上牀前一定要念經，一面唸經，眼珠子就骨溜溜的瞧着我。");
     }
     if( query("gender", me) == "女性"){
        command("say 哎呀，這年月大姑娘也逛窯子，成何體統。");

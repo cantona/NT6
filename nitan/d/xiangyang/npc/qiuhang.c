@@ -8,7 +8,7 @@ inherit F_DEALER;
 void create()
 {
         set_name("邱航", ({ "qiu hang", "qiu" }));
-        set("title", "當舖老板");
+        set("title", "當鋪老闆");
         set("nickname", "老滑頭");
         set("shen_type", 0);
 
@@ -16,7 +16,7 @@ void create()
         set_max_encumbrance(100000000);
         set("age", 55);
         set("str", 100);
-        set("long", "一個老姦商，你要被宰了！\n");
+        set("long", "一個老奸商，你要被宰了！\n");
         set("no_get_from", 1);
 
         set_skill("unarmed", 60);

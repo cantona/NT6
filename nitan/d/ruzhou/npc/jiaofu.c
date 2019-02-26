@@ -4,7 +4,7 @@ inherit NPC;
 
 void create()
 {
-        set_name("腳夫", ({ "jiao fu", "fu" }) );
+        set_name("腳伕", ({ "jiao fu", "fu" }) );
         set("gender", "男性" );
         set("age", 20+random(15));
         set("long",

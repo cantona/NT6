@@ -10,7 +10,7 @@ void create()
                 set_default_object(__FILE__);
         else
         {
-                set("long", "一支牛角，閃著點點金光。\n");
+                set("long", "一支牛角，閃着點點金光。\n");
                 set("unit", "支");
                 set("value", 1000);
         }

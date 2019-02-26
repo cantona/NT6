@@ -13,7 +13,7 @@ int main(object me, string arg)
         seteuid(getuid());
 
         if( query("no_fight", (env=environment(me))) )
-                return notify_fail("這裡不許打鬥！\n");
+                return notify_fail("這裏不許打鬥！\n");
 
         if( query("jing", me) <= 30 )
                 return notify_fail("現在你太累了，無法讓野獸幫你咬人。\n");
@@ -22,7 +22,7 @@ int main(object me, string arg)
                 return notify_fail("你要讓什麼野獸幫你咬誰？\n");
 
         if (! objectp(ob = present(arg, env)))
-                return notify_fail("這裡沒有這個東西吧？\n");
+                return notify_fail("這裏沒有這個東西吧？\n");
 
         inv = all_inventory(env);
         i = sizeof(inv);
@@ -47,7 +47,7 @@ int main(object me, string arg)
                                 return notify_fail("你的馭獸術還不純熟，無法"
                                                    "讓野獸幫你咬人！\n");
 
-                        message_vision("只見$N沖著" +inv[i]->name()+
+                        message_vision("只見$N衝着" +inv[i]->name()+
                                        "口中一聲呼哨，它一竄就向$n撲了上去。\n",
                                        me, ob);
                         me->receive_damage("jing", 30);
@@ -66,7 +66,7 @@ int help(object me)
         write(@HELP
 指令格式 : attack <動物>
 
-此指令可用于讓某動物幫你攻擊，咬別人。對于已經馴服的動物，可以進行
+此指令可用於讓某動物幫你攻擊，咬別人。對於已經馴服的動物，可以進行
 下述指令：
 
 基本指令：

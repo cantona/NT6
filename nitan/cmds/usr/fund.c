@@ -83,10 +83,10 @@ int main(object me,string arg)
                 UPDATE_D->global_destruct_player(target, 1);
 
                 // 記錄
-                log_file("fund", me->query_id(1) + " 于 " + ctime(time()) + " 從泥潭基金分配 " +
+                log_file("fund", me->query_id(1) + " 於 " + ctime(time()) + " 從泥潭基金分配 " +
                           amount + " 給 " + who + "。\n");
 
-                // 發布
+                // 發佈
                 CHANNEL_D->channel_broadcast("chat", HIW + me->name(1) + "(" +
                               me->query_id(1) + ")" HIC "從泥潭基金中分配 "  + HIY +
                               MONEY_D->money_str(amount) + HIC " 給 " + tar_name + " 。\n" NOR);

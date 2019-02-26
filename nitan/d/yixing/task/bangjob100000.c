@@ -22,7 +22,7 @@ mapping *bangjobs = ({
                 "score" :  10,
         ]),
 
-        ([      "name"  :  "戚長發",
+        ([      "name"  :  "戚長髮",
                 "file"  :  "/d/foshan/npc/changfa",
                 "area"  :  "湘西",
                 "type"  :  "殺",

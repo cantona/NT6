@@ -1,7 +1,7 @@
 #include <ansi.h>
 #include <combat.h>
 
-#define BEI "「" HIW "萬裡鯨濤大悲神訣" NOR "」"
+#define BEI "「" HIW "萬里鯨濤大悲神訣" NOR "」"
 
 inherit F_SSERVER;
 
@@ -42,9 +42,9 @@ int perform(object me, object target)
                 return notify_fail("你現在真氣不夠，難以施展" BEI "。\n");
 
         if (! living(target))
-                return notify_fail("對方都已經這樣了，用不著這麼費力吧？\n");
+                return notify_fail("對方都已經這樣了，用不着這麼費力吧？\n");
 
-        msg = HIW "$N" HIW "凄然一聲長嘯，施出「" HIG "萬裡鯨濤大悲神訣"
+        msg = HIW "$N" HIW "悽然一聲長嘯，施出「" HIG "萬里鯨濤大悲神訣"
               HIW "」，雙掌翻滾出漫天掌影，盡數拍向$n" HIW "。\n" NOR;  
 
         ap = attack_power(me, "strike") + me->query_int();

@@ -42,7 +42,7 @@ int perform(object me, object target)
                 return notify_fail("你現在的真氣不夠，難以施展" + name() + "。\n");
 
         if (! living(target))
-                return notify_fail("對方都已經這樣了，用不著這麼費力吧？\n");
+                return notify_fail("對方都已經這樣了，用不着這麼費力吧？\n");
 
         ap = attack_power(me, "blade") + me->query_str()*10;
         if( query("character", me) == "光明磊落" || query("character", me) == "國土無雙" )
@@ -51,7 +51,7 @@ int perform(object me, object target)
                       HIR "義無反顧的猛然橫掃$n" HIR "，全然不顧生死，浩氣悵然！\n" NOR;
                 ap += ap * 1 / 4;
         } else
-                msg = HIR "$N" HIR "狂提內勁，將全身力道灌注于" + weapon->name() +
+                msg = HIR "$N" HIR "狂提內勁，將全身力道灌注於" + weapon->name() +
                       HIR "之上疾斬劈出，“唰”的一聲掃向$n" HIR "而去！\n" NOR;
 
         dp = defense_power(target, "force")  + target->query_str()*10;
@@ -79,7 +79,7 @@ string final(object me, object target, int ap, int dp)
         object weapon;
         string msg;
 
-        msg = HIR "$n" HIR "連忙抵擋，卻那裡招架得住，整個人"
+        msg = HIR "$n" HIR "連忙抵擋，卻那裏招架得住，整個人"
               "被這一擊打得飛身而起，遠落平沙。";
         if (ap / 3 > dp)
         {

@@ -8,7 +8,7 @@ void create()
         set("race", "野獸");
         set("gender", "雄性");
         set("age", 20);
-        set("long", "這是一只殘忍的惡狼。\n");
+        set("long", "這是一隻殘忍的惡狼。\n");
 
         set("str", 40);
         set("cor", 100);

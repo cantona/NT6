@@ -20,7 +20,7 @@ int do_smear(string arg)
         if (!id(arg))  return notify_fail("你擦塗什麼？\n");
 
         if ( this_player()->qeury("eff_qi") >= this_player()->qeury("max_qi") )
-                return notify_fail("搞什麼鬼！？你又沒受傷，用不著塗它！\n");
+                return notify_fail("搞什麼鬼！？你又沒受傷，用不着塗它！\n");
 
         this_player()->receive_curing("qi", 250);
         tell_object(this_player(), HIG "你把黑色的膏藥塗在了傷口上，頓時覺的一股清涼之意

@@ -4,24 +4,24 @@ string type() { return "martial"; }
 string martialtype() { return "skill"; }
 
 mapping *action = ({
-([      "action": "$N使一招「雲裡乾坤」，右拳至左拳之底穿出，對準$n$l猛然攻去",
+([      "action": "$N使一招「雲裏乾坤」，右拳至左拳之底穿出，對準$n$l猛然攻去",
         "force" : 50,
         "dodge" : 20,
         "parry" : 20,
         "attack": 15,
         "damage": 20,
         "lvl"   : 0,
-        "skill_name" : "雲裡乾坤",
+        "skill_name" : "雲裏乾坤",
         "damage_type": "瘀傷"
 ]),
-([      "action": "$N左拳突然張開，拳開變掌，一招「霧裡看花」便往$n的$l招呼過去",
+([      "action": "$N左拳突然張開，拳開變掌，一招「霧裏看花」便往$n的$l招呼過去",
         "force" : 65,
         "dodge" : 25,
         "parry" : 25,
         "attack": 17,
         "damage": 23,
         "lvl"   : 20,
-        "skill_name" : "霧裡看花",
+        "skill_name" : "霧裏看花",
         "damage_type":  "瘀傷"
 ]),
 ([      "action": "$N兩手虎口相對，往內一圈，一招「金鼓齊鳴」往$n的$l擊出",

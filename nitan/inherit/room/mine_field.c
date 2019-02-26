@@ -8,8 +8,8 @@
 1。是否有出口
 2。單邊長
 3。含礦種類
-4。總蘊藏量
-5。開採幾率
+4。總藴藏量
+5。開採機率
 6。礦石中有效礦物的含量比例
 7。再生期
 8，礦石物件
@@ -52,9 +52,9 @@ protected nosave mapping reverse_dir = ([
 // 一些可儲存的變量
 protected int maze_built = 0;        // 建立標記
 protected mixed *all;                // 全迷宮出口陣列.
-protected class coordinate enter;        // 入口坐標
-protected class coordinate leave;        // 出口坐標
-protected class coordinate *mine_room_positions;        // 礦眼分布
+protected class coordinate enter;        // 入口座標
+protected class coordinate leave;        // 出口座標
+protected class coordinate *mine_room_positions;        // 礦眼分佈
 protected int out_mine;                // 已開採的量
 protected int built_time;        // 最後一次的更新時間
 
@@ -69,7 +69,7 @@ protected nosave string mine_room;                // 有礦房間
 protected nosave string no_mine_room;                // 無礦房間
 protected nosave string mine_class;                // 礦藏種類
 protected nosave int contain_persent;                // 礦石中有效礦物的含量比例
-protected nosave int contain_quantity;                // 初始總蘊藏量
+protected nosave int contain_quantity;                // 初始總藴藏量
 protected nosave int reset_time_sect;                // 礦場再生期（單位：Game年）
 protected nosave int is_outdoors = 0;      
 /******************* ---- END ---- *********************/
@@ -199,7 +199,7 @@ protected int random_out(int x,int y,int n) // 選擇隨機出口函數.
 }
 
 
-// 礦眼分布密度監測
+// 礦眼分佈密度監測
 protected int valid_mine_position(int x, int y)
 {
         int n;
@@ -220,7 +220,7 @@ protected int valid_mine_position(int x, int y)
         return 1;
 }
 
-// 創建礦眼分布陣列
+// 創建礦眼分佈陣列
 protected void create_mine_room()
 {
         int num, x, y;
@@ -276,7 +276,7 @@ protected void create_maze()
         switch (entry_dir)
         {
                 case "south":
-                        // enter 入口坐標.
+                        // enter 入口座標.
                         enter->x = to_int(l/2); // 取中迷宮比較平衡。
                         enter->y = 0;
                         all[enter->x][enter->y] |= S;
@@ -432,7 +432,7 @@ protected void link_to_west(int x,int y)        // The west room is (x-1,y)
         temp->x = x-1;
         temp->y = y;
 
-        // 西面的房間已經于 path 中,或者 已在待處理列表 newpath 中.
+        // 西面的房間已經於 path 中,或者 已在待處理列表 newpath 中.
         if(all[temp->x][temp->y] /*|| member_array(temp,newpath)*/)
                 return;
 
@@ -452,7 +452,7 @@ protected void link_to_east(int x,int y)        // The east room is (x+1,y)
         temp->x = x+1;
         temp->y = y;
 
-        // 東面的房間已經于 path 中,或者 已在待處理列表 newpath 中.
+        // 東面的房間已經於 path 中,或者 已在待處理列表 newpath 中.
         if(all[temp->x][temp->y] /*|| member_array(temp,newpath)*/)
                 return;
 
@@ -472,7 +472,7 @@ protected void link_to_south(int x,int y)        // The south room is (x,y-1)
         temp->x = x;
         temp->y = y-1;
 
-        // 南端的房間已經于 path 中,或者 已在待處理列表 newpath 中.
+        // 南端的房間已經於 path 中,或者 已在待處理列表 newpath 中.
         if(all[temp->x][temp->y] /*|| member_array(temp,newpath)*/)
                 return;
 
@@ -492,7 +492,7 @@ protected void link_to_north(int x,int y)        // The north room is (x,y+1)
         temp->x = x;
         temp->y = y+1;
 
-        // 北端的房間已經于 path 中,或者 已在待處理列表 newpath 中.
+        // 北端的房間已經於 path 中,或者 已在待處理列表 newpath 中.
         if(all[temp->x][temp->y] /*|| member_array(temp,newpath)*/)
                 return;
 
@@ -568,7 +568,7 @@ void set_no_mine_room(string room_files)
         no_mine_room = room_files;
 }
 
-// 設定初始總蘊藏量
+// 設定初始總藴藏量
 void set_contain_quantity(int num)
 {
         if(!intp(num) || (num <= 0))
@@ -576,7 +576,7 @@ void set_contain_quantity(int num)
         contain_quantity = num;
 }
 
-// 設定蘊藏比例
+// 設定藴藏比例
 void set_contain_persent(int num)
 {
         if(!intp(num)

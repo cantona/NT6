@@ -7,7 +7,7 @@ void create()
         set_name("流氓頭", ({ "liumang tou", "liumang", "liu" }));
         set("gender", "男性");
         set("age", 25);
-        set("long", "他長得姦嘴猴腮的，一看就不像是個好人。\n");
+        set("long", "他長得奸嘴猴腮的，一看就不像是個好人。\n");
         
         set("combat_exp", 7000);
         set("shen_type", -1);

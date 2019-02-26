@@ -8,9 +8,9 @@ void create()
 {
         set("short", HIG"墓道"NOR);
         set("long", @LONG
-這裡是古墓中的墓道，四周密不透風，借著牆上昏暗的燈光，你能
+這裏是古墓中的墓道，四周密不透風，藉着牆上昏暗的燈光，你能
 勉強分辨出方向。牆是用整塊的青石砌合起來的，接合得甚是完美，難
-以從中找出一絲縫隙。燈光照在青石壁上，閃爍著碧幽幽的光點。
+以從中找出一絲縫隙。燈光照在青石壁上，閃爍着碧幽幽的光點。
     北邊是一扇石門(door)。
 LONG        );
         set("exits", ([
@@ -39,16 +39,16 @@ int do_an(string arg)
 
         if( !arg || arg != "niu" )
         {
-                message_vision("你在石壁上亂按一氣，除了一手灰，啥也沒摸著。\n", me);
+                message_vision("你在石壁上亂按一氣，除了一手灰，啥也沒摸着。\n", me);
                 return 1;
         }
         if( query("exits/north"))
         {
-                return notify_fail("石門已經是開著的，你還按個啥？\n");
+                return notify_fail("石門已經是開着的，你還按個啥？\n");
         }
         if( me->query_skill("yunv-xinfa", 1) > 10)
         {
-                message_vision("$N站在石門前，也不知在哪裡按了一下，石門吱吱響著，緩緩打開了。\n", me);
+                message_vision("$N站在石門前，也不知在哪裏按了一下，石門吱吱響着，緩緩打開了。\n", me);
                 if( !(room = find_object(__DIR__"xiaoting")) )
                         room = load_object(__DIR__"xiaoting");
                 set("exits/north", __DIR__"xiaoting");
@@ -58,7 +58,7 @@ int do_an(string arg)
                 call_out("close", 5, me);
         }
         else
-                message_vision("$N試著在石壁上按來按去，可是石門紋絲不動，只得罷了。\n", me);
+                message_vision("$N試着在石壁上按來按去，可是石門紋絲不動，只得罷了。\n", me);
         return 1;
 }
 

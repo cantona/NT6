@@ -14,7 +14,7 @@ void create()
         set("gender", "男性");
         set("age", 52);
         set("shen_type", -1);
-        set("long", "一個又黑又瘦又小的老頭，身青灰色的粗布衣服，站在那裡，比別人坐著也高不了多少。\n"
+        set("long", "一個又黑又瘦又小的老頭，身青灰色的粗布衣服，站在那裏，比別人坐着也高不了多少。\n"
                     "和鐵燕夫人站在一起看起來就像是一對剛從鄉下來的老夫妻，完全沒有一點特別的地方。\n");
         set("attitude", "peaceful");
 
@@ -105,7 +105,7 @@ int accept_ask(object me, string topic)
         {
         case "歷練" :
         case "歷煉" :
-        case "鍛煉" :
+        case "鍛鍊" :
                 return QUEST_D->accept_ask(this_object(), me, topic);
                 break;
 

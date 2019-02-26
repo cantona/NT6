@@ -1,7 +1,7 @@
 // object.c
 
 /* 傳回跟 ob 在同一環境或同一座標內之物件陣列, 包括 ob 本身 */
-/* 此 simul_efun 對于 mud 效率有很大的影響, 若有必要, 需改寫成真正的 efun */
+/* 此 simul_efun 對於 mud 效率有很大的影響, 若有必要, 需改寫成真正的 efun */
 object *present_objects(object ob)
 {
         // env 為目前物件所在的空間

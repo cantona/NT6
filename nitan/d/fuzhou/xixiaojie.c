@@ -8,7 +8,7 @@ void create()
         set("short", "西小街");
         set("long", @LONG
 青石板路筆直地伸展出去，直通西門。街北望去，好一片的瀲灩水
-色，街南卻是一片叢林，佛號鐘呤，悠遠傳音。
+色，街南卻是一片叢林，佛號鍾呤，悠遠傳音。
 LONG );
         set("exits", ([
                 "west"  : __DIR__"ximen",

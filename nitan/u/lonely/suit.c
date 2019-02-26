@@ -22,7 +22,7 @@ int main(object me, string arg)
 		"armor"      :  "戰甲",
 		"cloth"      :  "戰衣",
 		"wrists"     :  "護腕",
-		"neck"       :  "項鏈",
+		"neck"       :  "項鍊",
 		"rings"      :  "戒指",
 		"myheart"    :  "左符",
 		"myheart2"   :  "右符",
@@ -40,7 +40,7 @@ int main(object me, string arg)
 		tz = me->query("tzlist");
 
 		if (! sizeof(tz))
-			return notify_fail("你還沒有自定義套裝列表，詳情見 help taozhuang 說明。\n");
+			return notify_fail("你還沒有自定義套裝列表，詳情見 help taozhuang 説明。\n");
 		/*
 		if (sizeof(tz) < 12 && ! wizardp(me)) // 巫師測試的時候可不用穿12件
 			return notify_fail("你還未完成12件套裝部件的定義，請使用 suit show 查看！\n");
@@ -81,7 +81,7 @@ int main(object me, string arg)
 		result = HIG "-----------自定義套裝列表-------------\n" NOR;
 
 		if (! sizeof(me->query("tzlist")))
-			return notify_fail("你還沒有自定義套裝列表，詳情見 help taozhuang 說明。\n");
+			return notify_fail("你還沒有自定義套裝列表，詳情見 help taozhuang 説明。\n");
 
 		if (sizeof(me->query("tzlist/weapon")))
 		{
@@ -136,9 +136,9 @@ int main(object me, string arg)
 		if (! objectp(ob = present(tzx, me)))
 			return notify_fail("你身上沒有這件裝備！\n");
 
-		// 判斷裝備是否屬于自己
+		// 判斷裝備是否屬於自己
 		if (ob->item_owner() != me->query("id"))
-			return notify_fail("這個，這個……，好象不屬于你吧！\n");
+			return notify_fail("這個，這個……，好像不屬於你吧！\n");
 
 		// 判斷是否為12件裝備中的類型
 		if (ob->query("skill_type") || ob->query("armor_type") == "hands") // 武器
@@ -147,10 +147,10 @@ int main(object me, string arg)
 			return notify_fail("添加自定義套裝成功，可使用 suit show 查看。\n");
 		}
 		if (! ob->query("armor_type"))
-			return notify_fail("這件物品不屬于裝備類型！\n");
+			return notify_fail("這件物品不屬於裝備類型！\n");
 
 		if (member_array(ob->query("armor_type"), keys_tzlist) == -1)
-			return notify_fail("這件物品不屬于套裝部件！\n");
+			return notify_fail("這件物品不屬於套裝部件！\n");
 
 		me->set("tzlist/" + ob->query("armor_type"), tzx);
 		return notify_fail("添加自定義套裝成功，可使用 suit show 查看。\n");

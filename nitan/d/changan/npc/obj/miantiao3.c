@@ -5,13 +5,13 @@ inherit F_FOOD;
 
 void create()
 {
-        set_name("排骨面", ({"paigu mian", "miantiao", "mian"}));
+        set_name("排骨麪", ({"paigu mian", "miantiao", "mian"}));
         set_weight(100);
         if (clonep())
                 set_default_object(__FILE__);
         else
         {
-                set("long", "一碗熱氣騰騰的面條。\n");
+                set("long", "一碗熱氣騰騰的麪條。\n");
                 set("unit", "碗");
                 set("value", 200);
                 set("food_remaining", 5);

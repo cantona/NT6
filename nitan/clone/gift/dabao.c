@@ -11,7 +11,7 @@ void create()
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("long", "一顆金燦燦的丹藥，據說可以養血美顏。\n");
+                set("long", "一顆金燦燦的丹藥，據説可以養血美顏。\n");
                 set("value", 50000);
                 set("unit", "顆");
                 set("per",10);

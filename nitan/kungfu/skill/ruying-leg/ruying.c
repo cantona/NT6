@@ -29,7 +29,7 @@ int perform(object me, object target)
           !living(target) || query_temp("noliving", target) )
                 return notify_fail(PNAME"只能對戰鬥中的對手使用。\n");
         if( objectp(query_temp("weapon", me)) )
-                return notify_fail("使用「如影隨形」時雙手必須空著！\n");
+                return notify_fail("使用「如影隨形」時雙手必須空着！\n");
         fskill = "zhanzhuang-gong";
         bskill = "leg";
         if (SCBORN_D->valid_perform(me,sskill,pfname))

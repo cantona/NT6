@@ -32,11 +32,11 @@ int perform(object me, object target)
                 return notify_fail("你現在的真氣不足，難以施展" + name() + "。\n");
 
         if (! living(target))
-                return notify_fail("對方都已經這樣了，用不著這麼費力吧？\n");
+                return notify_fail("對方都已經這樣了，用不着這麼費力吧？\n");
 
         level = me->query_skill("tianyu-qijian", 1);
 
-        msg = HIY "$N" HIY "凝神息氣，手腕疾抖，挽出千萬個劍花，舖天蓋地飛向$n"
+        msg = HIY "$N" HIY "凝神息氣，手腕疾抖，挽出千萬個劍花，鋪天蓋地飛向$n"
               HIY "。\n" NOR;
 
         message_combatd(msg, me, target);

@@ -49,7 +49,7 @@ mapping query_action(object me, object weapon)
 mixed hit_ob(object me, object victim, int damage_bonus)
 {
         victim->receive_wound("qi", damage_bonus * 3, me);
-        return HIR "只聽“轟”的一聲巨響，一團火燄已穿透$n"
+        return HIR "只聽“轟”的一聲巨響，一團火焰已穿透$n"
                HIR "的胸膛，鮮血頓時狂湧而出。\n" NOR;
 
 }

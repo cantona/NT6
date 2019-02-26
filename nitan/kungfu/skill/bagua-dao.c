@@ -34,7 +34,7 @@ mapping *action = ({
         "skill_name" : "反身劈山",
         "damage_type" : "割傷",
 ]),
-([      "action" : "$N腳下踏著先天八卦的圖式，身隨意轉，手隨心動，一式「鐵牛耕地」，$w緩緩的斜著向$n推去",
+([      "action" : "$N腳下踏着先天八卦的圖式，身隨意轉，手隨心動，一式「鐵牛耕地」，$w緩緩的斜着向$n推去",
         "force"  : 220,
         "attack" : 48,
         "dodge"  : 75,
@@ -74,7 +74,7 @@ mapping *action = ({
         "skill_name" : "下歪門",
         "damage_type" : "割傷",
 ]),
-([      "action" : "$N使出「回身劈山」，身法陡變，輕靈飄忽，乘$n眼花耳鳴之際，突然右手刀光反卷向$n的$l",
+([      "action" : "$N使出「回身劈山」，身法陡變，輕靈飄忽，乘$n眼花耳鳴之際，突然右手刀光反捲向$n的$l",
         "force"  : 283,
         "attack" : 63,
         "dodge"  : 87,
@@ -195,7 +195,7 @@ mapping query_action(object me, object weapon)
                 break;
         case 4:
                 return ([ "action": WHT "$N" WHT "身法陡然加快，手中$w" WHT "隨"
-                                    "著" HIY "『震』" NOR + WHT "字訣方位斬出，"
+                                    "着" HIY "『震』" NOR + WHT "字訣方位斬出，"
                                     "數道刀芒直劈向$n" WHT "要害所在",
                            "force"  : 220,
                            "damage" : 87,
@@ -206,7 +206,7 @@ mapping query_action(object me, object weapon)
                         ]);
                 break;
         case 5:
-                return ([ "action": WHT "接著$N" WHT "一聲長嘆，依照八卦方位施"
+                return ([ "action": WHT "接着$N" WHT "一聲長歎，依照八卦方位施"
                                     "出" HIY "『坎』" NOR + WHT "字訣，$w" WHT
                                     "刀身頓時迸出道金光射向$n" WHT,
                            "force"  : 223,
@@ -219,7 +219,7 @@ mapping query_action(object me, object weapon)
                 break;
         case 6:
                 return ([ "action": WHT "$N" WHT "飛身一躍而起，凌空施一式" HIY
-                                    "『兌』" NOR + WHT "字訣，頓時刀光爍爍猶如"
+                                    "『兑』" NOR + WHT "字訣，頓時刀光爍爍猶如"
                                     "千萬柄$w" WHT "齊罩向$n" WHT,
                            "force"  : 210,
                            "damage" : 85,
@@ -230,8 +230,8 @@ mapping query_action(object me, object weapon)
                         ]);
                 break;
         case 7:
-                return ([ "action": WHT "$N" WHT "緊接著施展出" HIY "『離』" NOR +
-                                    WHT "字訣，$w" WHT "猶如九天神雷，攜著呼嘯"
+                return ([ "action": WHT "$N" WHT "緊接着施展出" HIY "『離』" NOR +
+                                    WHT "字訣，$w" WHT "猶如九天神雷，攜着呼嘯"
                                     "破空之聲直貫向$n" WHT "而去",
                            "force"  : 253,
                            "damage" : 63,

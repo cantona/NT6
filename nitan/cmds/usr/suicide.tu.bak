@@ -59,9 +59,9 @@ int main(object me, string arg)
         if(!real_suicide&&!is_member)
                 return notify_fail("對不起，只有交費會員才可以使用投胎功能。\n");
         if(real_suicide)//自殺模式
-                write(ALERT("請注意，如果你已經為這個帳號購買了遊戲時間，$$自殺將會把購買的時間一並清除！$$")+
+                write(ALERT("請注意，如果你已經為這個帳號購買了遊戲時間，$$自殺將會把購買的時間一併清除！$$")+
                         HIR+"請注意，如果你已經為這個帳號購買了遊戲時間，永遠自殺將會把購\n"+
-                        "買的時間一並清除！\n"+NOR+
+                        "買的時間一併清除！\n"+NOR+
                         "您選擇了"+HIG+"永遠死掉"+NOR+"的自殺方式，這個人物的資料將永遠刪除，請務必\n"+
                         "考慮清楚，確定的話請輸入正確的密碼，否則輸入錯誤的密碼退出。\n請輸入您的管理密碼：");
         else//投胎模式
@@ -88,7 +88,7 @@ private void check_password(string passwd, object me, int forever)
         }
 
         tell_object(me, HIR "\n你決定要"+((forever)?"自殺":"重新投胎")+"了，如果三十秒"
-                    "鐘內不後悔，就真的不可挽回了。\n\n" NOR);
+                    "鍾內不後悔，就真的不可挽回了。\n\n" NOR);
         set_temp("suicide/time", time(), me);
         set_temp("suicide/last", 0, me);
         set_temp("suicide/forever", forever, me);
@@ -186,7 +186,7 @@ private int slow_suicide(object me)
                 set_temp("body_ob", user, ob);
                 //顯示信息
                 tell_room(environment(me),query("name", me)+"突然跌倒在地，身形越縮越小，痛苦萬分。一晃眼，竟然憑空消失了......\n");
-                CHANNEL_D->do_channel(this_object(),"rumor","聽說"+query("name", me)+"("+query("id", me)+")活不下去了。自殺重新投胎去了。\n");
+                CHANNEL_D->do_channel(this_object(),"rumor","聽説"+query("name", me)+"("+query("id", me)+")活不下去了。自殺重新投胎去了。\n");
                 if(exec(user,me)) //將控制權轉移到user上。
                 {
                         write("重新投胎成功！\n");
@@ -201,7 +201,7 @@ private int slow_suicide(object me)
                 LOGIN_D->init_new_player(user);
                 UPDATE_D->check_user(user);
                 //DATABASE_D->db_new_player(ob,user);
-                user->move(REGISTER_ROOM);//移動到注冊處重新投胎
+                user->move(REGISTER_ROOM);//移動到註冊處重新投胎
                 set("startroom", REGISTER_ROOM, user);
                 user->save();
 
@@ -222,7 +222,7 @@ int help (object me)
 指令格式: suicide [-f]
 
 請注意，如果你已經為這個帳號購買了遊戲時間，
-自殺將會把購買的時間一並清除！
+自殺將會把購買的時間一併清除！
 如果因為某種原因你不想活了, 你可以選擇自殺.
 自殺分兩種:
  

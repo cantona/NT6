@@ -33,7 +33,7 @@ int main(object me, string arg)
         }
 
          message_system("系統進行數據處理中，請耐心等候...\n");
-        write(HIG "現在系統將檢查所有玩家，稍後匯報。\n"
+        write(HIG "現在系統將檢查所有玩家，稍後彙報。\n"
               HIG "進度：" + process_bar(0) + "\n");
         if (me)
         {

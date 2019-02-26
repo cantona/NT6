@@ -4,7 +4,7 @@ void create()
 {
         set("short", "潭下");
         set("long",
-"[1;32m潭水很深，冰涼的潭水浸得你骨頭都發麻，一只隨你一快兒\n"
+"[1;32m潭水很深，冰涼的潭水浸得你骨頭都發麻，一隻隨你一快兒\n"
 "掉下來的朽木一起一伏，在水中盪漾。一線天光從你頭頂上射下來，那樣\n"
 "微弱，你都不知道還有沒有生還的機會……不過，還是想法子往上爬(cli\n"
 "mb)吧。\n"
@@ -55,8 +55,8 @@ void do_flush(object me)
 
    if(!me || environment(me) != this_object())
    return;
-   tell_object(me,"\n你突然發覺潭裡的水居然在流動！\n\n");
-   tell_object(me,"水流好象帶著你從潭底的一個暗道裡湧出……\n");
+   tell_object(me,"\n你突然發覺潭裏的水居然在流動！\n\n");
+   tell_object(me,"水流好像帶着你從潭底的一個暗道裏湧出……\n");
    tell_object(me,"你陷入一片完全的黑暗之中，心中充滿了恐懼……\n\n");
     room = find_object(__DIR__"lake");
     if(!objectp(room)) room= load_object(__DIR__"lake");

@@ -1,7 +1,7 @@
 inherit SKILL;
 
 mapping *action = ({
-([        "action" : "$N劃身錯步，一式「洪爐焚天」，雙掌內攏外托，攻向$n的左肩",
+([        "action" : "$N劃身錯步，一式「洪爐焚天」，雙掌內攏外託，攻向$n的左肩",
         "force" : 70,
         "attack": 5,
         "dodge" : 38,
@@ -21,7 +21,7 @@ mapping *action = ({
         "skill_name" : "舉火燒天",
         "damage_type" : "瘀傷"
 ]),
-([        "action" : "$N使一式「偷星換日」，勁氣彌漫，雙掌如輪，一環環向$n的後背斫去",
+([        "action" : "$N使一式「偷星換日」，勁氣瀰漫，雙掌如輪，一環環向$n的後背斫去",
         "force" : 120,
         "attack": 13,
         "dodge" : 51,

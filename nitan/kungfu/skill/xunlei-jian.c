@@ -1,7 +1,7 @@
 inherit SKILL;
 
 mapping *action = ({
-([        "action": "$N劍尖向右，繞身一周，一式「仙人指路」，$w突然向$n的$l刺去，",
+([        "action": "$N劍尖向右，繞身一週，一式「仙人指路」，$w突然向$n的$l刺去，",
         "force" : 35,
         "dodge" : -40,
         "parry" : -40,
@@ -31,7 +31,7 @@ mapping *action = ({
         "skill_name" : "海底尋針",
         "damage_type":"刺傷"
 ]),
-([        "action": "$N撤步縮身，$w按藏于臂下，一招「靈猿探洞」，快如閃電般刺向$n的$l",
+([        "action": "$N撤步縮身，$w按藏於臂下，一招「靈猿探洞」，快如閃電般刺向$n的$l",
         "force" : 63,
         "dodge" : -18,
         "parry" : -18,
@@ -61,7 +61,7 @@ mapping *action = ({
         "skill_name" : "斜插神枝",
         "damage_type":"劈傷"
 ]),
-([        "action": "$N一式「電閃雷動」，劍走中鋒，氣勢威嚴，將$n籠罩于重重劍氣之中",
+([        "action": "$N一式「電閃雷動」，劍走中鋒，氣勢威嚴，將$n籠罩於重重劍氣之中",
         "force" : 87,
         "dodge" : 5,
         "parry" : 5,

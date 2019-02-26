@@ -35,7 +35,7 @@ int main(object me, string arg)
 
         if( query_temp("pending/team_doing", me) && 
             query_temp("pending/team_doing", me) != "bunch" )
-                return notify_fail("你還是等目前隊伍中的提議結束了再說吧。\n");
+                return notify_fail("你還是等目前隊伍中的提議結束了再説吧。\n");
 
         // 判斷命令的合法性
         if (arg == "cancel")
@@ -56,7 +56,7 @@ int main(object me, string arg)
 
         if( mapp(query_temp("pending/team_bunch", me)) )
         {
-                write("你正倡議大家創建幫派呢！還是等大家回應吧。\n");
+                write("你正倡議大家創建幫派呢！還是等大家迴應吧。\n");
                 return 1;
         }
 
@@ -73,7 +73,7 @@ int main(object me, string arg)
         } else
         if( query("weiwang", me)<50000 )
         {
-                write("你這點名望還不夠振臂一呼，聚幫結眾，還是以後再說吧。\n");
+                write("你這點名望還不夠振臂一呼，聚幫結眾，還是以後再説吧。\n");
                 return 1;
         } else
         if( query("weiwang", me)<80000 )
@@ -119,7 +119,7 @@ int main(object me, string arg)
                         return notify_fail("你想結義，只怕" + tob->name(1) + "不答應。\n");
 
                 if (tob->is_fighting())
-                        return notify_fail("現在你隊伍中" + tob->name(1) + "正忙著打架呢。\n");
+                        return notify_fail("現在你隊伍中" + tob->name(1) + "正忙着打架呢。\n");
 
                 if( mapp(query("league", tob)) || mapp(query("bunch", tob)) )
                         return notify_fail("現在你隊伍中"+ tob->name(1) + "已經加入別的組織了。\n");
@@ -168,14 +168,14 @@ int do_right(object me, object ob)
                 return notify_fail("可惜啊，人家已經不在這兒了。\n");
 
         if (! living(ob))
-                return notify_fail("人家現在聽不到你說的話，還是算了吧。\n");
+                return notify_fail("人家現在聽不到你説的話，還是算了吧。\n");
 
         t=query_temp("pending/team_bunch/member", ob);
         if (! arrayp(t))
                 return notify_fail("人家現在已經不打算創建幫派了。\n");
 
         if (member_array(me, t) == -1)
-                return notify_fail("你現在已經不在人家的創建幫派考慮范圍之內了。\n");
+                return notify_fail("你現在已經不在人家的創建幫派考慮範圍之內了。\n");
 
         switch (random(8))
         {
@@ -192,10 +192,10 @@ int do_right(object me, object ob)
                 msg = "$N只是熱淚盈眶，道：“甚好！他日行走江湖，那是何等的威風？”\n";
                 break;
         case 4:
-                msg = "$N點頭頷首，伸出一指點點大家，道：“天下豪傑，盡皆于此，可喜啊！”\n";
+                msg = "$N點頭頷首，伸出一指點點大家，道：“天下豪傑，盡皆於此，可喜啊！”\n";
                 break;
         case 5:
-                msg = "$N一聲長嘆，道：“$l此言極是，道出我心中多年之願！”\n";
+                msg = "$N一聲長歎，道：“$l此言極是，道出我心中多年之願！”\n";
                 break;
         case 6:
                 msg = "$N環顧四方，豪氣頓發，道：“$l之言我謹隨無異！”\n";
@@ -274,7 +274,7 @@ int do_right(object me, object ob)
                 switch (random(3))
                 {
                 case 0:
-                        msg = "聽說" + implode(t->name(1), "、") + "創建『" +
+                        msg = "聽説" + implode(t->name(1), "、") + "創建『" +
                               bunch_name + "』，縱橫江湖。";
                         break;
                 case 1:
@@ -282,7 +282,7 @@ int do_right(object me, object ob)
                               "組成了『" + bunch_name + "』，震動江湖。";
                         break;
                 default:
-                        msg = "傳說" + implode(t->name(1), "、") + "情投意合，" +
+                        msg = "傳説" + implode(t->name(1), "、") + "情投意合，" +
                               "創建幫派，共創『" + bunch_name + "』。";
                         break;
                 }
@@ -305,14 +305,14 @@ int do_refuse(object me, object ob)
                 return notify_fail("可惜啊，人家已經不在這兒了。\n");
 
         if (! living(ob))
-                return notify_fail("人家現在聽不到你說的話，還是算了吧。\n");
+                return notify_fail("人家現在聽不到你説的話，還是算了吧。\n");
 
         t=query_temp("pending/team_bunch/member", ob);
         if (! arrayp(t))
                 return notify_fail("人家現在已經不打算創建幫派了。\n");
 
         if (member_array(me, t) == -1)
-                return notify_fail("你現在已經不在人家的創建幫派考慮范圍之內了。\n");
+                return notify_fail("你現在已經不在人家的創建幫派考慮範圍之內了。\n");
 
         delete_temp("pending/team_bunch", ob);
         message_vision("$N搖了搖頭，對$n道：“你們的事情我不管，但是我沒有興趣。”\n",

@@ -15,7 +15,7 @@ void init()
 
 void create()
 {
-        set_name(YEL"「金蛇秘芨」" NOR "上冊", ({ "jinshe book1","book1", }));
+        set_name(YEL"「金蛇祕芨」" NOR "上冊", ({ "jinshe book1","book1", }));
         set_weight(500);
         if (clonep())
                 set_default_object(__FILE__);
@@ -23,7 +23,7 @@ void create()
                 set("unit", "本");
                 set("material", "paper");
                 set("long",
-        "這是一本用薄紙寫成的書。上書：「金蛇秘芨」。\n"
+        "這是一本用薄紙寫成的書。上書：「金蛇祕芨」。\n"
         "書皮泛黃，看來已經保存很久了。\n", );
                 set("skill", ([
                         "name"        : "jinshe-jian",
@@ -46,19 +46,19 @@ int do_du(string arg)
 
         if (! arg)
         {
-                write("研讀金蛇秘芨指令格式：read <技能> from <金蛇秘芨>\n");
+                write("研讀金蛇祕芨指令格式：read <技能> from <金蛇祕芨>\n");
                 return 1;
         }
 
         if (sscanf(arg, "%s from %s", skill, book) != 2)
         {
-                write("研讀金蛇秘芨指令格式：read <技能> from <金蛇秘芨>\n");
+                write("研讀金蛇祕芨指令格式：read <技能> from <金蛇祕芨>\n");
                 return 1;
         }
 
         if (me->is_busy())
         {
-                write("你現在正忙著呢。\n");
+                write("你現在正忙着呢。\n");
                 return 1;
         }
 
@@ -71,7 +71,7 @@ int do_du(string arg)
         if( query("no_fight", where )
             && query("doing", me) != "scheme" )
         {
-                write("你無法在這裡靜下心來研讀金蛇秘芨。\n");
+                write("你無法在這裏靜下心來研讀金蛇祕芨。\n");
                 return 1;
         }
 
@@ -83,14 +83,14 @@ int do_du(string arg)
 
         if (! id(book))
         {
-                write("這裡沒有這本書。\n");
+                write("這裏沒有這本書。\n");
                 return 1;
         }
 
         if (skill != "蛇困愁城" && skill != "蛇影萬道"
            && skill != "金蛇噬天")
         {
-                write("金蛇秘芨上並沒有記載你打算研究的內容。\n" NOR);
+                write("金蛇祕芨上並沒有記載你打算研究的內容。\n" NOR);
                 return 1;
         }
 
@@ -120,10 +120,10 @@ int do_du(string arg)
                 set("jing", 1, me);
                 return 1;
            }
-           msg = HIG "$N" HIG "翻看秘芨，仔細研究上面所記載的武學，霎那間忽有所悟"
+           msg = HIG "$N" HIG "翻看祕芨，仔細研究上面所記載的武學，霎那間忽有所悟"
                      "……\n" NOR;
 
-           msg += HIG "$N" HIG "長嘆一聲，感慨萬千。\n" NOR; 
+           msg += HIG "$N" HIG "長歎一聲，感慨萬千。\n" NOR; 
            message_vision(msg, me); 
 
            if (me->can_improve_skill("sword"))
@@ -161,9 +161,9 @@ int do_du(string arg)
                 set("jing", 1, me);
                 return 1;
            }
-           msg = HIG "$N" HIG "翻看秘芨，仔細研究上面所記載的武學，霎那間忽有所悟"
+           msg = HIG "$N" HIG "翻看祕芨，仔細研究上面所記載的武學，霎那間忽有所悟"
                      "……\n" NOR;
-           msg += HIG "$N" HIG "長嘆一聲，感慨萬千。\n" NOR; 
+           msg += HIG "$N" HIG "長歎一聲，感慨萬千。\n" NOR; 
 
            message_vision(msg, me); 
 
@@ -204,7 +204,7 @@ int do_du(string arg)
            }
            msg = HIG "$N" HIG "翻看劍譜，仔細研究上面所記載的武學，霎那間忽有所悟"
                      "……\n" NOR;
-           msg += HIG "$N" HIG "長嘆一聲，感慨萬千。\n" NOR; 
+           msg += HIG "$N" HIG "長歎一聲，感慨萬千。\n" NOR; 
            message_sort(msg, me); 
 
            if (me->can_improve_skill("sword"))

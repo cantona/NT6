@@ -15,7 +15,7 @@ void create()
 {
         set_name("白世鏡", ({ "bai shijing", "bai", "shijing" }));
         set("long", @LONG
-這是一位須眉皆白的老丐，雙目間透出一絲寒
+這是一位鬚眉皆白的老丐，雙目間透出一絲寒
 氣。他就是丐幫的傳功長老白世鏡，所擅的纏
 絲擒拿手在武林中享名已久。
 LONG);
@@ -158,7 +158,7 @@ mixed ask_skill1()
                 return "這招我不是已經教會你了嗎？";
 
         if( query("family/family_name", me) != query("family/family_name") )
-                return "閣下與在下素不相識，不知此話從何說起？";
+                return "閣下與在下素不相識，不知此話從何説起？";
 
         if (me->query_skill("chansi-shou", 1) < 1)
                 return "你連纏絲擒拿手都沒學，何談絕招可言？";
@@ -178,7 +178,7 @@ mixed ask_skill1()
         message_sort(HIY "\n$n" HIY "冷笑一聲，大袖一揮，隨即只見其"
                      "雙手忽折忽扭，或抓或甩，直瑣$N" HIY "各處要脈"
                      "。$N" HIY "見狀不由大驚，連忙左閃右避，招架拆"
-                     "解，可始終未能擺脫$n" HIY "的糾纏，心下甚為折"
+                     "解，可始終未能擺脱$n" HIY "的糾纏，心下甚為折"
                      "服。\n\n" NOR, me, this_object());
 
         command("say 明白了麼。");

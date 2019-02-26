@@ -29,7 +29,7 @@ int main(object me, string arg)
                 if( !t ) {
                         tell_object(me, WHT "歡迎您進入" + LOCAL_MUD_NAME() +
                                         WHT "，今後請使用" HIY " msg " NOR WHT
-                                        "命令查閱郵件信息。\n" NOR);
+                                        "命令查閲郵件信息。\n" NOR);
                         set("msg/time", time(), me);
                         return 1;
                 }
@@ -48,11 +48,11 @@ int main(object me, string arg)
                                 break;
                 }
                 if( !total )
-                        tell_object(me, HIY "你目前沒有未曾閱讀過的郵件。\n" NOR);
+                        tell_object(me, HIY "你目前沒有未曾閲讀過的郵件。\n" NOR);
                 else
                         tell_object(me, sprintf(WHT "你目前一共有 " HIY "%d" NOR
-                                        WHT " 條郵件還沒有閱讀，請使用("
-                                        HIY "msg" NOR WHT ")命令閱讀。\n" NOR, total));
+                                        WHT " 條郵件還沒有閲讀，請使用("
+                                        HIY "msg" NOR WHT ")命令閲讀。\n" NOR, total));
                 return 1;
         }
         if( arg == "info" ) {
@@ -172,7 +172,7 @@ void done(object me, string id, string msg)
 
         // 檢查長度
         if( sizeof(msg) > 1000 ) {
-                write("短消息過長，最長不能大于1000個字節。\n");
+                write("短消息過長，最長不能大於1000個字節。\n");
                 return;
         }
 

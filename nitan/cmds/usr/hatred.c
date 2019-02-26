@@ -38,7 +38,7 @@ int main(object me, string arg)
         {
                 fam = FAMILY_D->query_family_name(arg);
                 if (strlen(fam) < 2 || fam[0] < 160)
-                        // 如果不是中文名字，則意味著沒有還確定門派
+                        // 如果不是中文名字，則意味着沒有還確定門派
                         fam = 0;
 
                 if (! stringp(fam) && objectp(ob = find_player(arg)))
@@ -51,7 +51,7 @@ int main(object me, string arg)
                 }
 
                 if (! stringp(fam))
-                        return notify_fail("沒有這個玩家，不能查閱相關的門派。\n");
+                        return notify_fail("沒有這個玩家，不能查閲相關的門派。\n");
         }
 
         if (! fam)

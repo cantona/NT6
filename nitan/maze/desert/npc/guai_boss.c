@@ -8,7 +8,7 @@ void create()
         set("title", HIY "綠林豪傑" NOR);
         set("gender", "男性" );
         set("age", random(30)+20);
-        set("long", "無盡大漠邊緣活動的賊盜小頭目，佔著一身武藝經常領著一幫小嘍羅搶劫過往行人。\n");
+        set("long", "無盡大漠邊緣活動的賊盜小頭目，佔着一身武藝經常領着一幫小嘍羅搶劫過往行人。\n");
         set("attitude", "aggressive");
         set("class", "lvlin");
         set("str", 30);

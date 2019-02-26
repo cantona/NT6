@@ -4,7 +4,7 @@ inherit COMBINED_ITEM;
 
 void create()
 {
-        set_name(HIW"小雲丹"NOR, ({"xiaoyun dan", "dan"}));
+        set_name(HIW"小云丹"NOR, ({"xiaoyun dan", "dan"}));
         if (clonep())
                 set_default_object(__FILE__);
         else {
@@ -39,7 +39,7 @@ int do_effect(object me)
 
         set_temp("last_eat/dan(C)", time(), me);
 
-        message_vision(HIW "$N吃下一粒小雲丹，精神隨之一震，精力有所提高。\n" NOR, me);
+        message_vision(HIW "$N吃下一粒小云丹，精神隨之一震，精力有所提高。\n" NOR, me);
         addn("jingli", 100, me);
 
         me->start_busy(1);

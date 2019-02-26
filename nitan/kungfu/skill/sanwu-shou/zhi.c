@@ -32,11 +32,11 @@ int perform(object me, object target)
                 return notify_fail("你現在的真氣不夠，難以施展" + name() + "。\n");
 
         if (! living(target))
-                return notify_fail("對方都已經這樣了，用不著這麼費力吧？\n");
+                return notify_fail("對方都已經這樣了，用不着這麼費力吧？\n");
 
         msg = HIM "\n$N" HIM "長嘯一聲，騰空而起，施出絕招 「" HIW "無"
               "所不至" HIM "」，\n手中" + weapon->name() + HIM "化出無數"
-              "光點，猶如滿天花雨般洒向$n全身各處" HIM "。" NOR;
+              "光點，猶如滿天花雨般灑向$n全身各處" HIM "。" NOR;
 
         message_combatd(msg, me, target);
 

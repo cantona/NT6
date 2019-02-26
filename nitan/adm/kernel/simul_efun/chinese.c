@@ -11,6 +11,12 @@ string to_chinese(string str)
 
 int is_chinese(string str)
 {
+	return 1;
+}
+
+#if 0
+int is_chinese(string str)
+{
         int i;
 
         if( strlen(str) < 2 ) return 0;
@@ -22,6 +28,7 @@ int is_chinese(string str)
 
         return 1;
 }
+#endif
 
 /*
 int is_chinese(string str)

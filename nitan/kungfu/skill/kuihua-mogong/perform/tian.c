@@ -1,5 +1,5 @@
 // wu.c 無法無天
-// 武器或者空手，手裡拿劍或者針都可以
+// 武器或者空手，手裏拿劍或者針都可以
 
 #include <ansi.h>
 
@@ -40,7 +40,7 @@ int perform(object me, object target)
         {
                 if( query("skill_type", weapon) != "sword" && 
                     query("skill_type", weapon) != "pin" )
-                        return notify_fail("你手裡拿的不是劍，怎麼施"
+                        return notify_fail("你手裏拿的不是劍，怎麼施"
                                            "展" WU "？\n");
         } else
         {
@@ -56,7 +56,7 @@ int perform(object me, object target)
                 return notify_fail("你沒有準備使用葵花魔功，難以施展" WU "。\n");
 
        if (! living(target))
-              return notify_fail("對方都已經這樣了，用不著這麼費力吧？\n");
+              return notify_fail("對方都已經這樣了，用不着這麼費力吧？\n");
 
         msg = HIR "$N" HIR "默運葵花魔功，身形變得奇快無比，接連從不同的方位向$n"
               HIR "攻出數招！\n" NOR;
@@ -73,7 +73,7 @@ int perform(object me, object target)
                 i += random(6);
         } else
         {
-                msg += CYN "$n" CYN "見$N" CYN "身法好快，哪裡"
+                msg += CYN "$n" CYN "見$N" CYN "身法好快，哪裏"
                        "敢怠慢，連忙打起精神小心應對。\n" NOR;
                 count = 0;
         }

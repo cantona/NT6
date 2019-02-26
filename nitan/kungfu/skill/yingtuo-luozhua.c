@@ -4,7 +4,7 @@
 inherit SHAOLIN_SKILL;
 
 mapping *action = ({
-([      "action": "$N全身拔地而起，半空中一個筋鬥，一式「鷹飛式」，迅猛地抓向$n的$l",
+([      "action": "$N全身拔地而起，半空中一個筋斗，一式「鷹飛式」，迅猛地抓向$n的$l",
         "force" : 200,
         "attack": 80,
         "dodge" : 20,
@@ -24,7 +24,7 @@ mapping *action = ({
         "skills_name" : "雄鷹式",
         "damage_type" : "內傷"
 ]),
-([      "action": "$N一式「鎖骨爪」，全身向斜裡平飛，右腿一繃，雙爪搭向$n的肩頭",
+([      "action": "$N一式「鎖骨爪」，全身向斜裏平飛，右腿一繃，雙爪搭向$n的肩頭",
         "force" : 250,
         "attack": 150,
         "dodge" : 60,

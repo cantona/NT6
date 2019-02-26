@@ -32,7 +32,7 @@ mapping armor_obj = ([
         "/d/city/obj/shield":1,               //暫時無處獲取
         "/d/city/obj/huyao":1,                //暫時無處獲取
         "/d/city/obj/huwan":1,                //暫時無處獲取
-        "/d/city/obj/goldring":8,             //福州、泉州雜貨舖陳阿婆購買
+        "/d/city/obj/goldring":8,             //福州、泉州雜貨鋪陳阿婆購買
         "/d/city/npc/obj/zhitao":10,          //楊永福、高麗商人購買
         "/d/city/npc/obj/tieshou":5,          //楊永福、高麗商人購買
         "/d/city/npc/obj/tiejia":5,           //很多
@@ -44,18 +44,18 @@ mapping armor_obj = ([
         "/d/city/npc/obj/goldring":33,        //程玉環
         "/d/city/npc/cloth/jade-belt":3,      //曾柔購買
         "/d/city/npc/cloth/belt":8,           //曾柔購買
-        "/d/changan/npc/obj/zuanjie":18,      //陳老板購買
+        "/d/changan/npc/obj/zuanjie":18,      //陳老闆購買
         "/d/changan/npc/obj/zhanjia":22,      //有不少
-        "/d/changan/npc/obj/yinjie":7,        //陳老板購買
+        "/d/changan/npc/obj/yinjie":7,        //陳老闆購買
         "/d/changan/npc/obj/wrists":8,        //金復還購買
         "/d/changan/npc/obj/shield":7,        //劉老實購買
         "/d/changan/npc/obj/ring":6,          //金復還購買
-        "/d/changan/npc/obj/jinjie":15,       //陳老板購買
-        "/d/changan/npc/obj/baojie":15,       //陳老板購買
-        "/d/changan/npc/obj/baijie":15,       //陳老板購買
+        "/d/changan/npc/obj/jinjie":15,       //陳老闆購買
+        "/d/changan/npc/obj/baojie":15,       //陳老闆購買
+        "/d/changan/npc/obj/baijie":15,       //陳老闆購買
         "/d/beijing/npc/obj/baojia":36,       //鰲拜
         "/clone/weapon/tiejia":1,             //暫時無處獲取
-        "/clone/cloth/yaodai":30,             //陳家洛、余魚同
+        "/clone/cloth/yaodai":30,             //陳家洛、餘魚同
         "/clone/cloth/tiejia":5,              //很多
         "/clone/book/book-iron":18,           //打鐵僧、神龍小屋、俠客島書房、雪山藏經閣、燕子鎢還施水閣
 ]);

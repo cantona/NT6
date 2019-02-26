@@ -5,27 +5,27 @@ string type() { return "martial"; }
 string martialtype() { return "skill"; }
 
 mapping *action = ({
-([        "action" : "$N面帶微笑，一招"HIR"「烈火燒身」"NOR"，舉$w對著$n連砍了八八六十四刀，刀氣縱橫，迅雷不可擋",
+([        "action" : "$N面帶微笑，一招"HIR"「烈火燒身」"NOR"，舉$w對着$n連砍了八八六十四刀，刀氣縱橫，迅雷不可擋",
         "lvl"    : 0,
         "skill_name"  : "烈火燒身",
 ]),
-([        "action" : "$N運起內功一招"GRN"「點木生火」"NOR"，$w上帶著無比勁氣，劃了一個大弧，從上而下劈向$n的$l",
+([        "action" : "$N運起內功一招"GRN"「點木生火」"NOR"，$w上帶着無比勁氣，劃了一個大弧，從上而下劈向$n的$l",
         "lvl"    : 20,
         "skill_name"  : "點木生火",
 ]),
-([        "action" : "$N手臂一沉，一招"HIM"「張弓望月」"NOR"，雙手持$w劃出一道雪亮刀光，接著攔腰反切，砍向$n的$l",
+([        "action" : "$N手臂一沉，一招"HIM"「張弓望月」"NOR"，雙手持$w劃出一道雪亮刀光，接着攔腰反切，砍向$n的$l",
         "lvl"    : 40,
         "skill_name"  : "張弓望月",
 ]),
-([        "action" : "$N揮舞$w上劈下撩，左擋右開，使出一招"RED"「烈火騰雲」"NOR"，卷起陣陣刀風，齊齊罩向$n",
+([        "action" : "$N揮舞$w上劈下撩，左擋右開，使出一招"RED"「烈火騰雲」"NOR"，捲起陣陣刀風，齊齊罩向$n",
         "lvl"    : 60,
         "skill_name"  : "烈火騰雲",
 ]),
-([        "action" : "$N一招"MAG"「火中取栗」"NOR"，左腳躍步落地，手中$w單刀往前，挾著炙熱的風聲劈向$n的$l",
+([        "action" : "$N一招"MAG"「火中取栗」"NOR"，左腳躍步落地，手中$w單刀往前，挾着炙熱的風聲劈向$n的$l",
         "lvl"    : 80,
         "skill_name"  : "火中取栗",
 ]),
-([        "action" : "$N騰空而起，半空中一招"HIW"「玉石俱焚」"NOR"，手中$w揮出滿天流光般的刀影，向$n的全身卷去",
+([        "action" : "$N騰空而起，半空中一招"HIW"「玉石俱焚」"NOR"，手中$w揮出滿天流光般的刀影，向$n的全身捲去",
         "lvl"    : 100,
         "skill_name"  : "玉石俱焚",
 ]),
@@ -143,7 +143,7 @@ mixed hit_ob(object me, object victim, int damage)
         if (random(damage) > victim->query_str()/10)
         {
                 result = ([ "damage": damage ]);
-                result += (["msg" : HIW "$N手中的大刀頓時化作一團火燄，激盪的炙流竄入$n體內，$n" BLINK +
+                result += (["msg" : HIW "$N手中的大刀頓時化作一團火焰，激盪的炙流竄入$n體內，$n" BLINK +
                                     HIR "鮮血" NOR + HIW "狂噴而出！\n" NOR ]);
                 return result;
         }

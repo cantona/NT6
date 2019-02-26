@@ -14,9 +14,9 @@ void create()
                 set("unit", "把");
                 set("value", 700);
                 set("material", "steel");
-                set("long", "這是一把又細又長的劍，反手插在胡琴裡。是衡山派掌門莫大先生的配劍。\n");
-                set("wield_msg", "只聽“叮當”一聲輕響，$N從琴底抽出一把極細極亮的劍來。\n");
-                set("unequip_msg", "“叮當”一聲響，$N反手把劍插回胡琴底。\n");
+                set("long", "這是一把又細又長的劍，反手插在胡琴裏。是衡山派掌門莫大先生的配劍。\n");
+                set("wield_msg", "只聽“叮噹”一聲輕響，$N從琴底抽出一把極細極亮的劍來。\n");
+                set("unequip_msg", "“叮噹”一聲響，$N反手把劍插回胡琴底。\n");
                 set("weapon_prop/courage", -4);
         }
         init_sword(50);

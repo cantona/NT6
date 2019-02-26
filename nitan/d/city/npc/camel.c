@@ -32,7 +32,7 @@ void create()
         set("chat_chance", 3);
         set("chat_msg", ({
                 HIW"白駱駝"NOR"掙了掙轡頭，翻了翻白眼沒理你。\n",
-                HIW"白駱駝"NOR"站起來嚼了口幹草，然後又屈腿蹲了下來。\n",
+                HIW"白駱駝"NOR"站起來嚼了口乾草，然後又屈腿蹲了下來。\n",
         }) );
 
         setup();

@@ -25,7 +25,7 @@ int perform(object me, object target)
         if( weapon=query_temp("weapon", me) )
         {
                 if( query("skill_type", weapon) != "staff" )
-                        return notify_fail("你手裡拿的不是杖，怎麼施展" HAI "？\n");
+                        return notify_fail("你手裏拿的不是杖，怎麼施展" HAI "？\n");
         } else
         {
                 if (me->query_skill_prepared("finger") != "bluesea-force")
@@ -49,7 +49,7 @@ int perform(object me, object target)
                 return notify_fail("你沒有準備使用南海玄功，難以施展" HAI "。\n");
 
         if (! living(target))
-                return notify_fail("對方都已經這樣了，用不著這麼費力吧？\n");
+                return notify_fail("對方都已經這樣了，用不着這麼費力吧？\n");
 
         /*
         if (target->query_condition("no_exert"))
@@ -61,7 +61,7 @@ int perform(object me, object target)
         else
                 name = finger_name[random(sizeof(finger_name))];
 
-        msg = HIB "$N" HIB "氣貫雙臂，向地一擊，一股氣浪卷著飛石如狂濤般襲向$n" HIB "，對方驚魂未定之際，忽聞三聲輕響。\n"
+        msg = HIB "$N" HIB "氣貫雙臂，向地一擊，一股氣浪卷着飛石如狂濤般襲向$n" HIB "，對方驚魂未定之際，忽聞三聲輕響。\n"
               HIB "自$N" HIB "的" + name + HIB "中射出三道玄勁，分襲$n" HIB "三處死穴“雲門穴、章門穴、啞門穴”。\n\n" NOR;
 
         ap = attack_power(me, "force");
@@ -78,7 +78,7 @@ int perform(object me, object target)
         } else
         {
                 msg += CYN "$n" CYN "慌亂中一個鴿子翻身，躍出數丈，"
-                       "僥幸躲開了這一招。\n" NOR;
+                       "僥倖躲開了這一招。\n" NOR;
                 me->start_busy(3);
                 addn("neili", -350, me);
         }

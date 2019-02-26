@@ -11,8 +11,8 @@ void create()
         set("age", 20);
         set("long",@LONG
 她就是精靈界之主，世間所有精靈的帝王。她的背後有一對透明的羽
-翼，散發著晶亮的光芒。在她的手中，拿著一把薄薄的透明的長刀。
-那就是精靈界的寶物──精靈刀。她微微漂浮在空中，雖然並沒有逼
+翼，散發着晶亮的光芒。在她的手中，拿着一把薄薄的透明的長刀。
+那就是精靈界的寶物——精靈刀。她微微漂浮在空中，雖然並沒有逼
 人的氣勢，但卻自有一種無上的威嚴。
 LONG);        
         set("str", 18);
@@ -127,7 +127,7 @@ int curing()
         int i;
         int dam;
         object *inv;
-        message_vision( HIY "\n\n夜"+HIG"辰"+HIC"雙手環于胸前，光芒緩緩撒下！！！\n\n",this_object()); 
+        message_vision( HIY "\n\n夜"+HIG"辰"+HIC"雙手環於胸前，光芒緩緩撒下！！！\n\n",this_object()); 
                 fw = (int)me->max_food_capacity();
                 set("food", fw, me);
                 fw = (int)me->max_water_capacity();
@@ -145,7 +145,7 @@ int curing()
         if(dam <0) dam = 0;
         inv[i]->receive_curing("qi",dam); 
         inv[i]->receive_heal("qi",dam);
-  tell_object(inv[i], HIG "你沐浴在光芒裡，覺得自己被恢復了！\n"NOR);
+  tell_object(inv[i], HIG "你沐浴在光芒裏，覺得自己被恢復了！\n"NOR);
          }
         return 1;
 }  

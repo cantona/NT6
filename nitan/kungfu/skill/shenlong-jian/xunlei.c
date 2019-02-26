@@ -91,7 +91,7 @@ int perform(object me, object target)
                 return;
         }
         if( environment(target) != environment(me) ) {
-                tell_object(me, "你見對方已經不在這裡，當下停止了迅雷劍的攻勢。\n");
+                tell_object(me, "你見對方已經不在這裏，當下停止了迅雷劍的攻勢。\n");
                     call_out("xunlei_end", 6, me);
                 delete_temp("xunlei", me);
                 return;
@@ -103,7 +103,7 @@ int perform(object me, object target)
                 if( query_temp("xunlei", me) == 4)message_combatd(HIY"\n$N縱身近前，"+weapon->name()+HIY"陡然彎彎彈出，劍尖直刺$n，出招之快真乃為任何劍法所不及！\n"NOR,me,target);
                 if( query_temp("xunlei", me) == 3)message_combatd(HIW"\n$N伸指在"+weapon->name()+HIW"上一彈，劍聲嗡嗡，有若龍吟，"+weapon->name()+HIW"顫處，劍鋒來勢神妙無方！\n"NOR,me,target);
                 if( query_temp("xunlei", me) == 2)message_combatd(HIG"\n$N陡然間大喝一聲，"+weapon->name()+HIG"上寒光閃動，喝道：「"+target->name()+HIG"，可小心了！」\n"NOR,me,target);
-                if( query_temp("xunlei", me) == 1)message_combatd(HIR"\n□見$N隨手揮劍，"+weapon->name()+HIR"顫處，前後左右，瞬息之間已攻出了四四一十六招！\n"NOR,me,target);
+                if( query_temp("xunlei", me) == 1)message_combatd(HIR"\n見$N隨手揮劍，"+weapon->name()+HIR"顫處，前後左右，瞬息之間已攻出了四四一十六招！\n"NOR,me,target);
                 addn("neili", -30, me);
 
                 COMBAT_D->do_attack(me,target,query_temp("weapon", me));

@@ -48,7 +48,7 @@ int perform(object me, object target)
 
         message_combatd(HIW "$N突然面色莊重，雙目清澄，手中" +
                        query("name", weapon)+HIW+"蒙上了一層白霜，寒氣逼人！\n\n"NOR,me);
-        message_combatd(HIW "$N騰身而起，姿態無比婀娜飄逸，揮劍向$n直刺過去，快癒流星！\n\n"NOR,me,target);
+        message_combatd(HIW "$N騰身而起，姿態無比婀娜飄逸，揮劍向$n直刺過去，快愈流星！\n\n"NOR,me,target);
 
         ap = attack_power(me, "sword") + me->query_skill("force");
         dp = defense_power(target, "parry") + me->query_skill("force");

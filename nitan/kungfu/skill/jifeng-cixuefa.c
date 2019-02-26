@@ -31,14 +31,14 @@ mapping *action = ({
         "skill_name" : "電光勁",
         "damage_type" : "刺傷"
 ]),
-([      "action":"$N手中$w閃電般一晃，陡然使出一招「回峰蜿蜒勢」，颼的刺向$n$l",
+([      "action":"$N手中$w閃電般一晃，陡然使出一招「回峯蜿蜒勢」，颼的刺向$n$l",
         "force" : 98,
         "attack": 35,
         "dodge" : 15,
         "parry" : 13,
         "damage": 54,
         "lvl"   : 40,
-        "skill_name" : "回峰蜿蜒勢",
+        "skill_name" : "回峯蜿蜒勢",
         "damage_type" : "刺傷"
 ]),
 ([      "action":"$N飛身躍起，一式「九轉連環勢」，手中$w連環九刺，盡數射向$n而去",

@@ -5,7 +5,7 @@
 
 #define CRUISE_USER_DATA        0               // 玩家DBASE數據
 
-// 認証信息
+// 認證信息
 #define USER_ID                 0
 #define USER_SITE               1
 #define USER_MAGIC_NUMBER       2
@@ -23,7 +23,7 @@
 #define STATUS_WAIT_COMMAND     2               // 等待命令
 #define STATUS_SENDING          3               // 發送文件
 
-// CRUISE-FTP客戶端的狀態
+// CRUISE-FTP客户端的狀態
 #define STATUS_CONNECTING       101             // 連接中
 #define STATUS_GET_ITEM         102             // 獲得版本
 #define STATUS_GET_ITEM_ID      103             // 獲得版本數據
@@ -38,8 +38,8 @@
 #define FILE_SIZE               3               // 文件大小
 #define CMD_QUEUE               4               // 待處理的命令
 #define PENDING_WRITE           5               // 等待發送的信息
-#define CMD_BUFFER              6               // (服務器端)緩沖區
-#define RESULT_BUFFER           6               // (客戶端)緩沖區
+#define CMD_BUFFER              6               // (服務器端)緩衝區
+#define RESULT_BUFFER           6               // (客户端)緩衝區
 #define SUB_SITES               7               // 站點名字
 
 // 每次通常應答返回的長度

@@ -14,7 +14,7 @@ void create()
                 set("long", "這是一柄普通的拂塵。\n");
                 set("value", 100);
                 set("wield_msg", "$N「唰」的一聲抖出一柄$n握在手中。\n");
-                set("unwield_msg", "$N將手中的$n卷回腰間。\n");
+                set("unwield_msg", "$N將手中的$n捲回腰間。\n");
         }
         init_whip(20);
         setup();

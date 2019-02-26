@@ -7,7 +7,7 @@ void create()
         set_name(HIG"魔界魔王"NOR, ({"yao wang", "yao", "wang"}) );
         set("gender", "男性" );
         set("age", random(30)+20);
-        set("long", "魔界魔王,剛從封印中逃脫出。\n");
+        set("long", "魔界魔王,剛從封印中逃脱出。\n");
         set("attitude", "aggressive");
         set("class", "lvlin");
         set("str", 130);

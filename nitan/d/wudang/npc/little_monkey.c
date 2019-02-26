@@ -8,7 +8,7 @@ void create()
         set("gender", "雄性");
         set("race", "野獸");
         set("age", 1);
-        set("long", "這是一只調皮的小猴子，雖是畜牲，卻喜歡模仿人樣。\n");
+        set("long", "這是一隻調皮的小猴子，雖是畜牲，卻喜歡模仿人樣。\n");
         set("combat_exp", 500);
         set("shen_type", -1);
         set("str", 11);

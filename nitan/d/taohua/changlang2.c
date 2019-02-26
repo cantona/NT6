@@ -41,10 +41,10 @@ int valid_leave(object me, string dir)
         myfam=query("family", me);
 
         if ( (!myfam || myfam["family_name"] != "桃花島") && dir == "north" )
-                return notify_fail("桃花島不留外客，你不能住在這裡！\n");
+                return notify_fail("桃花島不留外客，你不能住在這裏！\n");
 
         if( query("gender", me) == "無性" && dir == "north" )
-                return notify_fail("你不能住在這裡！\n");
+                return notify_fail("你不能住在這裏！\n");
 
         return ::valid_leave(me, dir);
 }

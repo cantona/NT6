@@ -5,10 +5,10 @@ void create()
 {
         set("short", "苗園");
         set("long", @LONG
-這裡是苗舖主人用來養花的花棚，一個大大的溫室，將各種樣的奇花
+這裏是苗鋪主人用來養花的花棚，一個大大的温室，將各種樣的奇花
 異草呵護在其中，當然花叢中更多的是牡丹，只見那牡丹紅的，白的，黑
-的，紫的，黃的，各色各樣，爭奇鬥艷，嬌艷欲滴，不愧和白馬寺一起成
-為了洛陽的象征。你也可以在這裡種花。
+的，紫的，黃的，各色各樣，爭奇鬥豔，嬌豔欲滴，不愧和白馬寺一起成
+為了洛陽的象徵。你也可以在這裏種花。
 LONG);
         set("outdoors", "luoyang");
         set("no_fight",1);
@@ -61,7 +61,7 @@ int do_peiyu()
 
         if( query("jing", me)<70 )
         {
-                tell_object(me, "你已經很疲憊了，休息一下再接著種吧。\n");
+                tell_object(me, "你已經很疲憊了，休息一下再接着種吧。\n");
                 return 1;
         }
 
@@ -82,12 +82,12 @@ int do_jiaoshui()
 
         if( query("jing", me)<70 )
         {
-                tell_object(me, "你已經很疲憊了，休息一下再接著種吧。\n");
+                tell_object(me, "你已經很疲憊了，休息一下再接着種吧。\n");
                 return 1;
         }
         if (me->is_busy())
         {
-                tell_object(me, "你正忙著呢，別著急。\n");
+                tell_object(me, "你正忙着呢，彆着急。\n");
                 return 1;
         }
         if( !query_temp("peiyu", me) == 1 )
@@ -129,10 +129,10 @@ int do_jiaoshui()
                                 message_vision(HIY "$N" HIY "種出了一朵無名花。\n" NOR,me);
                                 return 1;
                         }
-                        message_vision(HIC "$N" HIC "十分小心的給小坑裡澆了一些"
+                        message_vision(HIC "$N" HIC "十分小心的給小坑裏澆了一些"
                                        "水，突然一朵"+query("name", ob)+HIC
-                                       "從坑裡冒了出來。\n" NOR, me);   
-                        message_vision(HIY "$N" HIY "把它摘了下來，拿在手裡。\n" NOR, me);
+                                       "從坑裏冒了出來。\n" NOR, me);   
+                        message_vision(HIY "$N" HIY "把它摘了下來，拿在手裏。\n" NOR, me);
                         ob->move(me, 1);
                         delete_temp("jiaoshui", me);
                         delete_temp("peiyu", me);
@@ -152,8 +152,8 @@ int do_jiaoshui()
                                         NOR);
                         return 1; 
                 }
-                message_vision(HIR "$N" HIR "笨手笨腳的拿起水壺給小坑裡澆水，結"
-                               "果水洒的太多把花給毀了。\n", me); 
+                message_vision(HIR "$N" HIR "笨手笨腳的拿起水壺給小坑裏澆水，結"
+                               "果水灑的太多把花給毀了。\n", me); 
                 delete_temp("jiaoshui", me);
                 delete_temp("zhonghua", me);
                 delete_temp("peiyu", me);

@@ -1,7 +1,7 @@
 #include <ansi.h>
 #include <combat.h>
 
-#define LIAN "「" HIG "峰連碧羅" NOR "」"
+#define LIAN "「" HIG "峯連碧羅" NOR "」"
 
 inherit F_SSERVER;
 
@@ -38,12 +38,12 @@ int perform(object me, object target)
                 return notify_fail("你現在的真氣不夠，難以施展" LIAN "。\n");
 
         if (! living(target))
-                return notify_fail("對方都已經這樣了，用不著這麼費力吧？\n");
+                return notify_fail("對方都已經這樣了，用不着這麼費力吧？\n");
 
         ap = me->query_skill("strike");
         dp = target->query_skill("parry");
 
-        msg = HIC "\n$N" HIC "雙掌陡然連續反轉，一招「" HIG "峰連碧羅"
+        msg = HIC "\n$N" HIC "雙掌陡然連續反轉，一招「" HIG "峯連碧羅"
               HIC "」，雙掌帶風，已將$n" HIC "籠罩在掌風之中。" NOR;
 
         message_sort(msg, me, target);

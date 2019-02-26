@@ -10,13 +10,13 @@ string show_aoxian();
 
 void create()
 {
-        set("short", HIR "火燄洞" NOR);
+        set("short", HIR "火焰洞" NOR);
         set("long",@LONG
 一進入此處幽深之氣息突然被一陣無比熾熱的氣息掩蓋，只見四
-周巖壁使勁地泛著紅光，似乎是經歷幾千幾萬年的熾烤。洞內深邃無
-比，前方黑乎乎的一片，只有借助著巖石泛出的火光才能看清楚四周
-景致。不遠處，有一塊碑石（bei）， 遠看上上面刻著一些文字。據
-說，這裡隱藏著一只已經修煉成人形的遠古火燄巨獸。
+周巖壁使勁地泛着紅光，似乎是經歷幾千幾萬年的熾烤。洞內深邃無
+比，前方黑乎乎的一片，只有藉助着巖石泛出的火光才能看清楚四周
+景緻。不遠處，有一塊碑石（bei）， 遠看上上面刻着一些文字。據
+説，這裏隱藏着一隻已經修煉成人形的遠古火焰巨獸。
 LONG);
 
 
@@ -43,9 +43,9 @@ string show_bei()
         ob = find_living("huo qilin");
         if (objectp(ob) && environment(ob) == this_object())
         {
-                return HIG "這是一塊隱藏著機關的碑石，碑石中央凹陷的部分被斬妖勛章填滿，正閃閃發光！\n" NOR;
+                return HIG "這是一塊隱藏着機關的碑石，碑石中央凹陷的部分被斬妖勛章填滿，正閃閃發光！\n" NOR;
         }
-        return NOR + WHT "上面刻著一些奇特的符號，從未見過，不過在碑石中央有一塊地方已經凹"
+        return NOR + WHT "上面刻着一些奇特的符號，從未見過，不過在碑石中央有一塊地方已經凹"
                          "陷(aoxian)下去，似乎是一個機關\n" NOR;
 }
 
@@ -84,9 +84,9 @@ void init()
         }
 
         // 設置參加時間
-        tell_object(me, HIG "\n你進入火燄洞準備參加對抗火麒麟戰鬥，請不要離開，否則" +
+        tell_object(me, HIG "\n你進入火焰洞準備參加對抗火麒麟戰鬥，請不要離開，否則" +
                         sprintf("%d", TIME_LIMIT) + "小時內無法再次進入。\n" NOR);
-        tell_object(me, HIR "你已經設置為免死狀態，在火燄洞死亡後可自動在武廟復活，不損失任何物品和技能。\n\n" NOR);
+        tell_object(me, HIR "你已經設置為免死狀態，在火焰洞死亡後可自動在武廟復活，不損失任何物品和技能。\n\n" NOR);
         set("boss/qilin", time(), me);
 
         // 不需要設置，房間自動免死
@@ -110,7 +110,7 @@ int do_putin(string arg)
         if (objectp(ob_qilin))
         {
                 if (environment(ob_qilin) == this_object() )
-                        return notify_fail(HIG "石碑中的斬妖勛章正閃閃發光，透射出神秘而詭異的氣息！\n" NOR);
+                        return notify_fail(HIG "石碑中的斬妖勛章正閃閃發光，透射出神祕而詭異的氣息！\n" NOR);
         }
         // 正在清場則不能扔
         env = environment(me);
@@ -169,7 +169,7 @@ void qilin_coming(object me)
         ob = environment(me);
         if( query("doing", ob))return ;
 
-        message_vision(HIY "\n猛然間，石碑劇烈的顫動，整個山洞也開始晃動，伴隨著一陣巨響，一團火燄從山"
+        message_vision(HIY "\n猛然間，石碑劇烈的顫動，整個山洞也開始晃動，伴隨着一陣巨響，一團火焰從山"
                        "洞深處竄出 ……\n" NOR, me);
 
         ob_qilin = new(__DIR__"npc/qilin");
@@ -196,7 +196,7 @@ void start_move()
 
         ob = all_inventory(this_object());
 
-        // 清出清場標志
+        // 清出清場標誌
         delete("doing");
 
         if (! sizeof(ob))return;
@@ -222,7 +222,7 @@ void start_move()
 }
 
 // 來自BOSS的呼叫，當麒麟死亡後延遲將所有房間內的ID
-// 移動到火燄洞外，如delay_time = 0 則不延遲
+// 移動到火焰洞外，如delay_time = 0 則不延遲
 void move_all_player_out(int delay_time)
 {
         if (! delay_time)

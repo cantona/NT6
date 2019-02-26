@@ -36,6 +36,6 @@ void init()
         message_vision(HIY "紅花會眾興奮地悄悄告訴$N：總舵主把狗皇帝扣在六和塔上了！\n" NOR, 
                 this_player());
         else
-        message_vision(HIY "紅花會眾沖著$N說：十幾個當家的分層把守，狗皇帝跑不了的！\n" NOR, 
+        message_vision(HIY "紅花會眾衝着$N説：十幾個當家的分層把守，狗皇帝跑不了的！\n" NOR, 
                 this_player());
 }

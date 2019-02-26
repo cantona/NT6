@@ -95,7 +95,7 @@ protected void decide_action_do(string str, object who, object env, mixed *acts)
 	{
 		if(sizeof(acts) >= max_action_per_room)
 		{
-			tell_object(who, sprintf("這裡已經設定了%s個動作，不能再設定了。\n非法操作錯誤。\n", chinese_number(max_action_per_room)));
+			tell_object(who, sprintf("這裏已經設定了%s個動作，不能再設定了。\n非法操作錯誤。\n", chinese_number(max_action_per_room)));
 			return;
 		}
 		tell_object(who, "請設你要加入動作的動詞[3-10英文字母](q 退出)：\n");
@@ -266,7 +266,7 @@ protected void set_action_verb(string str, object who, object env, mixed *acts)
 		for(int i=0;i<sizeof(acts);i++)
 			if(acts[i][0] == str)
 			{
-				tell_object(who, "這個動詞已經在這裡存在了。\n非法操作。\n");
+				tell_object(who, "這個動詞已經在這裏存在了。\n非法操作。\n");
 				return;
 			}
 	}
@@ -413,7 +413,7 @@ protected void move_get_arg(string str, object who, object env, string verb, map
 
 	if(sizeof(str) && (str[0] == '0'))
 	{
-		string out = "目前這裡的出口：\n";
+		string out = "目前這裏的出口：\n";
 		actarg["action_arg"] = 0;
 		actarg["fail_msg"] = 0;
 
@@ -470,7 +470,7 @@ protected void move_get_fail_msg(string str, object who, object env, string verb
 	}
 
 	actarg["fail_msg"] = str[<1]=='\n'?str:str+"\n";
-	out = "目前這裡的出口：\n";
+	out = "目前這裏的出口：\n";
 	foreach(string dir, string dest in exits)
 	{
 		if(!stringp(dest) || !sizeof(dest))
@@ -497,7 +497,7 @@ protected void move_get_dest(string str, object who, object env, string verb, ma
 	{
 		string out;
 
-		out = "目前這裡的出口：\n";
+		out = "目前這裏的出口：\n";
 		foreach(string dir, string dest in exits)
 		{
 			if(!stringp(dest) || !sizeof(dest))

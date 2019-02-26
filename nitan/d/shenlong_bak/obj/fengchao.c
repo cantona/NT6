@@ -7,7 +7,7 @@ void create()
 {
         set_name("蜂巢", ({ "fengchao", "chao" }));
         set("unit", "只");
-        set("long", "這是一只六角形的毒蜂巢，是稀有的藥材。\n");
+        set("long", "這是一隻六角形的毒蜂巢，是稀有的藥材。\n");
         set("value", 2000);
         setup();
 }

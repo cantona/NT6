@@ -13,7 +13,7 @@ void create()
    set("attitude", "peaceful");
    set("chat_chance",50);
    set("chat_msg",({
-           "流氓頭說道：這裡就是我們說了算！\n",
+           "流氓頭説道：這裏就是我們説了算！\n",
            "流氓頭罵道：都給我閃開，看什麼看！\n",
    }));
    setup();

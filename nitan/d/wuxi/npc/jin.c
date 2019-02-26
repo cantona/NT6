@@ -1,18 +1,18 @@
-// jin. 金老板
+// jin. 金老闆
 
 inherit NPC;
 inherit F_DEALER;
 
 void create()
 {
-        set_name("金老板", ({ "jin laoban", "jin" }));
-        set("title", "鬆鶴樓老板");
+        set_name("金老闆", ({ "jin laoban", "jin" }));
+        set("title", "松鶴樓老闆");
         set("shen_type", 1);
 
         set("str", 20);
         set("gender", "男性");
         set("age", 45);
-        set("long", "金老板經營祖傳下來的鬆鶴樓已有多年。\n");
+        set("long", "金老闆經營祖傳下來的松鶴樓已有多年。\n");
         set("combat_exp", 50000);
         set("qi", 300);
         set("max_qi", 300);

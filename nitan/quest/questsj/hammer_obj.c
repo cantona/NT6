@@ -17,13 +17,13 @@ mapping hammer_obj = ([
         "/d/wanjiegu/npc/obj/muyu":34,        //黃眉大師
         "/d/village/npc/obj/hothammer":33,    //馮鐵匠
         "/d/village/npc/obj/hammer":5,        //馮鐵匠購買
-        "/d/tulong/yitian/npc/obj/tongbo":18, //砵僧
+        "/d/tulong/yitian/npc/obj/tongbo":18, //缽僧
         "/d/tulong/tulong/obj/stone":5,       //海灘
         "/d/tulong/tulong/npc/obj/hammer":36, //常金鵬
         "/d/shaolin/obj/muchui":25,           //少林東側殿、西側殿
         "/d/quanzhen/npc/obj/jitui":5,        //購買
         "/d/mingjiao/obj/shigu":22,           //戈壁灘（六根）
-        "/d/mingjiao/obj/mutang":22,          //山門門衛（兩個）、巫士四個
+        "/d/mingjiao/obj/mutang":22,          //山門門衞（兩個）、巫士四個
         "/d/heimuya/obj/zijinchui":1,         //暫時無處獲取
         "/d/heimuya/npc/obj/zijinchui":33,    //童百熊
         "/d/hangzhou/obj/shitou":20,          //杭州寶石山
@@ -40,7 +40,7 @@ mapping hammer_obj = ([
         "/d/city/npc/obj/jitui":5,            //可以購買
         "/d/city/npc/obj/hammer":1,           //暫時無處獲取
         "/d/changan/npc/obj/jitui":5,         //可以購買
-        "/d/changan/npc/obj/hammer":26,       //慕容豪、張衡、蕭群
+        "/d/changan/npc/obj/hammer":26,       //慕容豪、張衡、蕭羣
         "/d/beijing/npc/obj/hammer":25,       //北京鐵匠
         "/clone/weapon/hammer":5,             //很多
         "/clone/weapon/falun":5,              //很多

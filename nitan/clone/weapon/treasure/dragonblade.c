@@ -20,7 +20,7 @@ void create()
                 set("no_get", "送人？虧你想的出來！\n");
                 set("no_put", "珍惜它吧。\n");
                 set("value",100);
-                set("wield_msg", HIB "猛見黑光一閃，屠龍刀躍入$N掌中。瞬時天地間彌漫著\n一片黑暗的殺意中。\n" NOR);
+                set("wield_msg", HIB "猛見黑光一閃，屠龍刀躍入$N掌中。瞬時天地間瀰漫着\n一片黑暗的殺意中。\n" NOR);
                 set("unwield_msg", HIB "$N掌中刀氣漸斂，天地間的肅殺之氣慢慢散去。\n" NOR);
         }
         init_blade(300);

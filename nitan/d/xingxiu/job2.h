@@ -12,6 +12,6 @@ int valid_leave(object me, string dir)
                 query("target", ob) == me )
                 return notify_fail("護鏢鏢師閃身攔住你的去路，看來是想把你給廢了！\n");  
         if( query_temp("xx_rob", me) && objectp(present("shangdui",environment(me))) )
-                return notify_fail("商隊在這裡呢，快搶(qiang)啊！\n");  
+                return notify_fail("商隊在這裏呢，快搶(qiang)啊！\n");  
         return ::valid_leave(me, dir);
 } 

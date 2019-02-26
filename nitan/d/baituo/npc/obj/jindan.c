@@ -12,7 +12,7 @@ void create()
 {
         set_name("金蛇膽", ({"jin", "jin dan"}));
         set("unit", "只");
-        set("long", "這是一只黃燦燦的金蛇膽，是制備『蛇膽膏』的原料。\n");
+        set("long", "這是一隻黃燦燦的金蛇膽，是製備『蛇膽膏』的原料。\n");
         set("value", 200);
         setup();
 }

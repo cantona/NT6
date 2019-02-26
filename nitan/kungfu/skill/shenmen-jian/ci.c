@@ -36,7 +36,7 @@ int perform(object me)
                 return notify_fail("你的內力不夠，無法施展神門刺！\n");
 
         msg = HIY "突然$N" HIY "一聲冷哼，手中" +weapon->name()+ NOR + HIY
-                  "中攻直進，直刺$n拿著的" +weapon2->name()+ NOR + HIY"的"
+                  "中攻直進，直刺$n拿着的" +weapon2->name()+ NOR + HIY"的"
                   "手腕。\n" NOR;
 
         message_combatd(msg, me, target);
@@ -48,7 +48,7 @@ int perform(object me)
         {
                 addn("neili", -120, me);
                 msg = HIR "$n只覺手腕一陣刺痛，手中" +weapon2->name()+ NOR + HIR
-                      "再也捉拿不住，脫手而飛！\n" NOR;
+                      "再也捉拿不住，脱手而飛！\n" NOR;
                 me->start_busy(1 + random(2));
                 if (! target->is_busy())
                         target->start_busy(2);

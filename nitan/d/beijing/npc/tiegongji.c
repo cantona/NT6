@@ -4,7 +4,7 @@ inherit F_BANKER;
 void create()
 {
         set_name("鐵公雞", ({"tie gongji", "tie", "gongji"}));
-        set("title", "錢莊老板");
+        set("title", "錢莊老闆");
         set("gender", "男性");
         set("age", 34);
         set("str", 22);
@@ -23,7 +23,7 @@ void create()
         set("env/wimpy", 50);
         set("chat_chance", 2);
         set("chat_msg", ({
-        "鐵公雞白眼一翻，說道：本錢莊是京城中最大的錢莊。\n",
+        "鐵公雞白眼一翻，説道：本錢莊是京城中最大的錢莊。\n",
         }));
         set_skill("unarmed", 50);
         set_skill("dodge", 50);

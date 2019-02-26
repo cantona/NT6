@@ -61,7 +61,7 @@ void main(object ob, string who)
                 // ablility of general, zhenxing, dixing, etc.
                 // Now the damage depends only on the No of bowman
 	ob->simple_action(SG_SKILL_D->query_use("shoushi"));
-	ob->start_busy(10, "你正忙于收拾呢。");
+	ob->start_busy(10, "你正忙於收拾呢。");
 	load_object("/daemons/cast_d.c")->reg_player(ob->query_primary_id(),"shoushi");
         ob->award_exp(ob->query_sk_level("sk_zhimou")/2+random(20), "shoushi");	
 	call_out("show_result", 5+random(5), ob, who, p_skill, p_id, e_id);

@@ -33,10 +33,10 @@ int perform(object me, object target)
                 return notify_fail("你沒有激發軟紅蛛索，無法施展" + name() + "。\n");
 
         if (! living(target))
-                return notify_fail("對方都已經這樣了，用不著這麼費力吧？\n");
+                return notify_fail("對方都已經這樣了，用不着這麼費力吧？\n");
 
         msg = HIY "$N" HIY "一聲暴喝，使出「搏虎」訣，手中" + weapon->name() +
-              HIY "狂舞，漫天鞭影幻作無數小圈，舖天蓋地罩向$n" + HIY "！\n" NOR;
+              HIY "狂舞，漫天鞭影幻作無數小圈，鋪天蓋地罩向$n" + HIY "！\n" NOR;
 
         ap = attack_power(me, "whip") + me->query_skill("force");
         dp = defense_power(target, "parry") + target->query_skill("force");

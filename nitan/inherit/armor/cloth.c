@@ -26,7 +26,7 @@ int do_tear(string str)
                 return notify_fail("你只能撕布料的衣服。\n");
     
         if( (int)query("teared_count") >= 4 )
-                return notify_fail( name() + "的袖口，下□已經沒有多余的布可撕了。\n");
+                return notify_fail( name() + "的袖口，下□已經沒有多餘的布可撕了。\n");
     
         message_vision("$N從" + name() + "撕下一條布條。\n", this_player() );       
         addn("teared_count", 1);

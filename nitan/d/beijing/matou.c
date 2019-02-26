@@ -31,10 +31,10 @@ void create()
 {
         set("short", "通州碼頭");
         set("long", @long
-這裡是古老的運河的起始點，運河由此南下，橫穿華北大平原，溝
+這裏是古老的運河的起始點，運河由此南下，橫穿華北大平原，溝
 通海河、黃河、淮河、長江和錢塘江五大水系，縱橫中國南北，是帝都
-命脈。河裡來來往往的，都是江南運來的糧米貨物。帆影蔽日，十分繁
-華。你走進碼頭，就看見一位老船夫，起身向你迎來，手上掛著一個木
+命脈。河裏來來往往的，都是江南運來的糧米貨物。帆影蔽日，十分繁
+華。你走進碼頭，就看見一位老船伕，起身向你迎來，手上掛着一個木
 牌(sign)。
 long);
         set("exits",([
@@ -88,7 +88,7 @@ int do_go(string arg)
 
         if (!arg) return 0;
         if (ob->is_busy() || ob->is_fighting())
-                return notify_fail("你正忙著呢！\n");
+                return notify_fail("你正忙着呢！\n");
         while(i--)
         {
                 if (arg == sign[i]["id"])
@@ -96,7 +96,7 @@ int do_go(string arg)
                         switch (MONEY_D->player_pay(ob, sign[i]["value"]))
                         {
                                 case 0:
-                                        return notify_fail("窮光蛋，一邊呆著去！\n");
+                                        return notify_fail("窮光蛋，一邊呆着去！\n");
                                 case 2:
                                         return notify_fail("有零錢嗎？\n");
                         }
@@ -109,5 +109,5 @@ int do_go(string arg)
                         return 1;
                 }
         }
-        return notify_fail("你要去哪裡？\n");
+        return notify_fail("你要去哪裏？\n");
 }

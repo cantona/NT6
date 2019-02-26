@@ -15,7 +15,7 @@ void create()
                 set("unit", "件");
                 set("value", 100);
                 set("armor_prop/huibi", 1000);
-                set("armor_prop/T_bagua", 1); // 套裝計數標志
+                set("armor_prop/T_bagua", 1); // 套裝計數標誌
         }
         setup();
 }

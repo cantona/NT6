@@ -11,7 +11,7 @@ void create()
                set_default_object(__FILE__);
        else{
        set("unit", "具");
-       set("long", "這是一具女子的骸骨。在其胸部插著一把短劍。\n");
+       set("long", "這是一具女子的骸骨。在其胸部插着一把短劍。\n");
        set("value", 0);
        set("material","wood");
        set("no_get",1);

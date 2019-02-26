@@ -3,7 +3,7 @@
 #include <ansi.h>
 #include <combat.h>
 
-string name() { return HIW "真﹒般若極" NOR; }
+string name() { return HIW "真·般若極" NOR; }
 
 inherit F_SSERVER;
 
@@ -42,11 +42,11 @@ int perform(object me, object target)
                 return notify_fail("你現在的真氣不足，難以施展" + name() + "。\n");
 
         if (! living(target))
-                return notify_fail("對方都已經這樣了，用不著這麼費力吧？\n");
+                return notify_fail("對方都已經這樣了，用不着這麼費力吧？\n");
 
         msg = HIY "$N" HIY "仰天一聲怒嚎，將龍象般若功提運至極限，全身頓時罡勁"
               "迸發，真氣蒸騰而出，籠罩$N" HIY "\n四方！電光火石間，$N" HIY "雙"
-              "拳已攜著雷霆萬鈞之勢崩擊而出，卷起萬裡塵埃，正是密宗絕學：\n" NOR;
+              "拳已攜着雷霆萬鈞之勢崩擊而出，捲起萬里塵埃，正是密宗絕學：\n" NOR;
 
         msg += HIW
         "        般      般般般           若        若           極    極極極極極極\n"
@@ -59,9 +59,9 @@ int perform(object me, object target)
         "    般    般     般般       若   若          若         極   極     極\n"
         "   般    般   般般  般般         若若若若若若若         極  極  極極極極極\n\n" NOR;
 
-        msg += HIY "$N" HIY "一道掌力打出，接著便湧出了第二道、第三道掌力，掌勢"
+        msg += HIY "$N" HIY "一道掌力打出，接着便湧出了第二道、第三道掌力，掌勢"
                "連綿不絕，氣勢如虹！直到$N" HIY "\n第十三道掌力打完，四周所籠罩"
-               "著的罡勁方才慢慢消退！而$n" HIY "此時卻已是避無可避！\n\n" NOR;
+               "着的罡勁方才慢慢消退！而$n" HIY "此時卻已是避無可避！\n\n" NOR;
 
         ap = attack_power(me, "unarmed") + me->query_con()*10;
         dp = defense_power(target, "parry") + target->query_dex()*10;

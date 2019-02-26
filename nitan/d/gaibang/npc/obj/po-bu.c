@@ -24,8 +24,8 @@ string long()
         if (query("owner") && query("from"))
         {
                 msg = WHT "這是一塊從" HIW + query("from") + NOR +
-                      WHT "處得來的破布，散發著一陣油臭。憑此可直"
-                      "接向簡長老要求升袋。只見破布上寫著「今日接"
+                      WHT "處得來的破布，散發着一陣油臭。憑此可直"
+                      "接向簡長老要求升袋。只見破布上寫着「今日接"
                       "受" HIW + query("owner") + NOR + WHT "挑戰"
                       "技勝一籌，同意升袋」幾個歪歪斜斜的字。" NOR;
         } else

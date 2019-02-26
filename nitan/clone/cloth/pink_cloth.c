@@ -13,7 +13,7 @@ void create()
                 set_default_object(__FILE__);
         else {
                 set("long",
-"這件粉紅色的綢衫上面繡著幾只黃鵲，聞起來還有一股淡香。\n");
+"這件粉紅色的綢衫上面繡着幾隻黃鵲，聞起來還有一股淡香。\n");
                 set("unit", "件");
                 set("value", 0);
                 set("material", "cloth");

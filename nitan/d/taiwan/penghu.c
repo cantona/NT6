@@ -10,7 +10,7 @@ void create()
         set("long", @LONG
 澎湖為台灣屬島，海峽中砥，台島屏障。馬公港內多為本地漁民，
 早晚勞作，與世無爭。
-    港內有舟(zhou)船(chuan) 往返大陸台島，沖波激浪中，自有漁家
+    港內有舟(zhou)船(chuan) 往返大陸台島，衝波激浪中，自有漁家
 滋味。
 LONG );
         set("item_desc", ([
@@ -44,8 +44,8 @@ int do_enter ( string arg )
         }
         if (arg == "chuan")
         {
-                message_vision("船夫一見有人上船，忙叫了一聲：開船嘍！\n", ob);
-                message_vision("船夫升起帆，船就向西方順風航行。\n", ob);
+                message_vision("船伕一見有人上船，忙叫了一聲：開船嘍！\n", ob);
+                message_vision("船伕升起帆，船就向西方順風航行。\n", ob);
                 call_out("tdalu", 10 , ob );
         }
         else
@@ -60,11 +60,11 @@ int do_enter ( string arg )
 }
 void tdalu( object ob )
 {
-        tell_object(ob , "大船終于抵達了福建的一個繁華海港。你走下船來。\n" ) ;
+        tell_object(ob , "大船終於抵達了福建的一個繁華海港。你走下船來。\n" ) ;
         ob->move("/d/quanzhou/houzhu") ;
 }
 void ttaiwan( object ob )
 {
-        tell_object(ob , "戰舟終于抵達了台灣的一個港口城市。你走下船來。\n" ) ;
+        tell_object(ob , "戰舟終於抵達了台灣的一個港口城市。你走下船來。\n" ) ;
         ob->move(__DIR__"lugang") ;
 }

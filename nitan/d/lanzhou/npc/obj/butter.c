@@ -10,7 +10,7 @@ void create()
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("long", "一碗用□牛奶煉制的酥油。\n");
+                set("long", "一碗用犛牛奶煉製的酥油。\n");
                 set("unit", "碗");
                 set("value", 100);
                 set("food_remaining", 3);

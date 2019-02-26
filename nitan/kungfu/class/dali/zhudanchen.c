@@ -13,9 +13,9 @@ mixed ask_skill1();
 void create()
 {
         set_name("朱丹臣", ({ "zhu danchen", "zhu", "danchen" }));
-        set("title", "大理國護衛" );
+        set("title", "大理國護衞" );
         set("nickname", CYN "筆硯生" NOR);
-        set("long", "他是大理國四大護衛之一。一副書生酸溜溜的打扮行頭。\n");
+        set("long", "他是大理國四大護衞之一。一副書生酸溜溜的打扮行頭。\n");
         set("gender", "男性");
         set("age", 40);
         set("class", "officer");
@@ -87,7 +87,7 @@ void attempt_apprentice(object ob)
 
         command("smile");
         command("say 世子殿下何需如此，只要有事吩咐在下一聲便是。");
-        command("say 若世子不嫌棄，我這裡倒是有一套筆法可以傳授予你。");
+        command("say 若世子不嫌棄，我這裏倒是有一套筆法可以傳授予你。");
 
         return;
 }
@@ -98,7 +98,7 @@ int recognize_apprentice(object ob, string skill)
         if( query("family/family_name", ob) != "段氏皇族" )
         {
                 command("sneer");
-                command("say 我與閣下素不相識，不知閣下此話從何說起？");
+                command("say 我與閣下素不相識，不知閣下此話從何説起？");
                 return -1;
         }
 
@@ -129,7 +129,7 @@ mixed ask_skill1()
                 return RANK_D->query_respect(me) + "和我素無瓜葛，何出此言？";
 
         if (me->query_skill("qingliang-daxuefa", 1) < 1)
-                return "你連我清涼打穴法都未學，怎麼來絕招一說？";
+                return "你連我清涼打穴法都未學，怎麼來絕招一説？";
 
         if( query("family/gongji", me)<400 )
                 return "恕在下無禮，王爺吩咐過，不得傳功給無功子弟。";

@@ -34,7 +34,7 @@ int valid_learn(object me)
         object ob;
 
         if( query("gender", me) != "女性" )
-                return notify_fail("玉女金針十三劍是只有女子才能練的武功。\n");
+                return notify_fail("玉女金針十三劍是隻有女子才能練的武功。\n");
 
         if( !(ob=query_temp("weapon", me) )
          || query("skill_type", ob) != "sword" )
@@ -117,7 +117,7 @@ int help(object me)
         write(HIC"\n玉女金針十三劍："NOR"\n");
         write(@HELP
 
-    玉女金針十三劍是岳夫人寧中則傳給女弟子的華山派劍法。
+    玉女金針十三劍是嶽夫人甯中則傳給女弟子的華山派劍法。
 
         學習要求：
                 女性

@@ -20,8 +20,8 @@ void create()
         set("long", @LONG
 這是一位極高極瘦的黑衣老者，這就是梅莊四
 位莊主排行第二的黑白子。這人眉清目秀，只
-是臉色泛白，似乎是一具僵屍模樣，令人一見
-之下，心中便感到一陣涼意。他頭發極黑而皮
+是臉色泛白，似乎是一具殭屍模樣，令人一見
+之下，心中便感到一陣涼意。他頭髮極黑而皮
 膚極白，果然是黑白分明。
 LONG);
         set("title", "梅莊二莊主");
@@ -77,7 +77,7 @@ LONG);
                 "任我行"      : "任我行乃日月神教上代教主，不過已經失蹤很久了。",
                 "東方不敗"    : "東方教主武功深不可測，天下無敵。",
                 "日月神教"    : "我們梅莊四友和日月神教已無瓜葛，你提它作甚？",
-                "嘔血譜"      : "那是傳說中的東西，根本不存在。",
+                "嘔血譜"      : "那是傳説中的東西，根本不存在。",
                 "射日訣"      : (: ask_skill1 :),
                 "風雷四擊"    : (: ask_skill2 :),
                 "冰堅地獄"    : (: ask_skill3 :),
@@ -134,13 +134,13 @@ void attempt_apprentice(object me)
                 command("ah");
                 command("say 原來是東方教主的弟子，收你…這個倒沒什麼問題。");
                 command("say 但是在收你之前，我得先考察一下你的能力。");
-                set("move_party/日月神教─梅莊", 1, me);
+                set("move_party/日月神教—梅莊", 1, me);
         }
 
         if( query("combat_exp", me)<200000 )
         {
                 command("sigh");
-                command("say 你的江湖經驗太淺，還是先多鍛煉鍛煉再說吧。");
+                command("say 你的江湖經驗太淺，還是先多鍛鍊鍛鍊再説吧。");
                 return;
         }
 
@@ -154,9 +154,9 @@ void attempt_apprentice(object me)
         command("say 我就收下你了，不過千萬別招惹是非，給我梅莊添亂。");
         command("recruit "+query("id", me));
 
-        if( query("move_party/日月神教─梅莊", me) )
+        if( query("move_party/日月神教—梅莊", me) )
         {
-                delete("move_party/日月神教─梅莊", me);
+                delete("move_party/日月神教—梅莊", me);
                 command("say 現在你成為我梅莊中人，望你專心練武，別再去過問教中事物。");
         }
 }
@@ -226,13 +226,13 @@ mixed ask_skill2()
                 return "你的風雷盤法還練得不到家，自己下去練練再來吧！";
 
         message_vision(HIY "$n" HIY "點了點頭，將$N" HIY "招至"
-                       "身邊，在耳旁低聲細說良久，$N" HIY "聽了"
-                       "半天，忽然說道：“我明白了，所謂四\n擊"
+                       "身邊，在耳旁低聲細説良久，$N" HIY "聽了"
+                       "半天，忽然説道：“我明白了，所謂四\n擊"
                        "便是抬手似疾風、起勢如驟雨、出招若雷鳴"
                        "、收勢如電閃。”\n" NOR, me, this_object());
 
         command("haha");
-        command("say 不錯，不錯。這就是風雷四擊的奧秘，你自己下去練吧。");
+        command("say 不錯，不錯。這就是風雷四擊的奧祕，你自己下去練吧。");
         tell_object(me, HIC "你學會了「風雷四擊」。\n" NOR);
 
         if (me->can_improve_skill("force"))
@@ -274,7 +274,7 @@ mixed ask_skill3()
 
         message_vision( HIW "$n" HIW "點了點頭，默運玄天無極功，伸出右手"
                        "食指，插入桌上的花瓶\n中。片刻間花瓶水面便浮起一"
-                       "絲絲白氣，過不多時，瓶口上起了一層\n白箱，跟著水"
+                       "絲絲白氣，過不多時，瓶口上起了一層\n白箱，跟着水"
                        "面結成一片片薄冰，冰越結越厚，只一盞茶時分，整個"
                        "\n花瓶內的清水都化成了寒冰。\n" NOR, me,
                        this_object());
@@ -322,7 +322,7 @@ mixed ask_qipan()
         ob = present("xuantie qipan", this_object());
 
         if (! objectp(ob))
-                return "現在玄鐵棋盤已經不在我這裡了。";
+                return "現在玄鐵棋盤已經不在我這裏了。";
 
         ob->move(this_object());
         command("givexuantieqipanto"+query("id", me));

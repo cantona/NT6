@@ -22,7 +22,7 @@ int do_effect(object me)
                 return notify_fail("你現在吃『蛇膽膏』並無效用！\n");
 
         me->receive_curing("jing", 30);
-        message_vision("$N吃下一塊蛇膽膏，頓覺一股浩盪真氣直湧上來，"
+        message_vision("$N吃下一塊蛇膽膏，頓覺一股浩蕩真氣直湧上來，"
                        "精神立刻好轉！\n", me);
         destruct(this_object());
         return 1;

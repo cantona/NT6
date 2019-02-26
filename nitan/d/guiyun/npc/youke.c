@@ -8,7 +8,7 @@ void create()
         set_name("遊客", ({ "you ke", "you", "ke" }));
         set("gender", "男性");
         set("age", 28);
-        set("long", "他是一個來此遊玩的人，似乎已經陶醉于山水之中。\n");
+        set("long", "他是一個來此遊玩的人，似乎已經陶醉於山水之中。\n");
         
         set("combat_exp", 3500);
         set("shen_type", 0);

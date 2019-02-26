@@ -14,7 +14,7 @@ void create()
         {
                 set("unit", "個");
                 set("value", 2000);
-                set("long", "一枚玉佩，上面雕刻著龍鳳圖案．\n");
+                set("long", "一枚玉佩，上面雕刻着龍鳳圖案．\n");
                 set("no_sell", 1);
                 set("material", "steel");
                 set("armor_prop/dodge", 10);

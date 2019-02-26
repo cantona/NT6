@@ -7,8 +7,8 @@ void create()
 {
         set("short", MAG"百花谷"NOR);
         set("long", 
-HIR"來到此處，你突然眼前一亮，但覺青青翠谷，點綴著或紅或紫，
-或黃或白的鮮花，竟是換了一個世界。道旁有一株桃樹，開得正艷。\n"NOR);  
+HIR"來到此處，你突然眼前一亮，但覺青青翠谷，點綴着或紅或紫，
+或黃或白的鮮花，竟是換了一個世界。道旁有一株桃樹，開得正豔。\n"NOR);  
         set("outdoors", "baihuagu");
         set("exits", ([
                 "enter": __DIR__"huagu2",

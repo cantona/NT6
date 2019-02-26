@@ -30,8 +30,8 @@ int do_eat(string arg)
         if(!present(this_object(), me))
                 return notify_fail("你要吃什麼？\n");
         if( me->is_busy() )
-                return notify_fail("別急，慢慢吃，小心別噎著了。\n");
+                return notify_fail("別急，慢慢吃，小心別噎着了。\n");
 
-        write("記得韋爵爺說過：戰馬吃了芍藥花，能全身活血。你吃藏紅花圖個啥呦！\n");
+        write("記得韋爵爺説過：戰馬吃了芍藥花，能全身活血。你吃藏紅花圖個啥呦！\n");
         return 1;
 }

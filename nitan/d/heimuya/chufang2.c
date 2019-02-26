@@ -5,13 +5,13 @@ void create()
   set("short","廚房");
         set("long", @LONG
 這是白虎堂的廚房，一位美麗侍女滿臉堆笑。整個房間菜香胭脂
-香迷漫。牆上貼著一張醒目的啟事(note)。
+香迷漫。牆上貼着一張醒目的啟事(note)。
 LONG );
   set("exits",([
       "west" : __DIR__"chitang",
   ]));
   set("item_desc",([
-      "note" : "最難消受女人福，紅顏禍水。----->岳不群題\n",
+      "note" : "最難消受女人福，紅顏禍水。----->嶽不羣題\n",
   ]));
 
   set("objects",([

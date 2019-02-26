@@ -65,7 +65,7 @@ int perform(object me,object target)
         {
                 msg = HIY"$n"HIY"只覺得虎口劇痛，手中";
                 msg += weapon2->name();
-                msg += HIY"頓時把捏不住脫手飛了出去！\n" NOR;
+                msg += HIY"頓時把捏不住脱手飛了出去！\n" NOR;
                 addn("neili", -150, me);
                 target->start_busy(2);
                 weapon2->move(environment(me));

@@ -30,11 +30,11 @@ mapping *action = ({
         "lvl"   : 100,
         "skill_name" : "雪原冰凌",
 ]),
-([        "action" : "$N使出"RED"「旋風蔽日」"NOR"，驀然遊身而上，繞著$n疾轉數圈，$n正眼花繚亂間，$N已悄然停在$n身後，右手劃出一道光圈，接著右手沖出光圈猛拍$n的後背",
+([        "action" : "$N使出"RED"「旋風蔽日」"NOR"，驀然遊身而上，繞着$n疾轉數圈，$n正眼花繚亂間，$N已悄然停在$n身後，右手劃出一道光圈，接着右手衝出光圈猛拍$n的後背",
         "lvl"   : 120,
         "skill_name" : "旋風蔽日",
 ]),
-([        "action" : "$N突然雙手平舉，$n一呆，正在猜測間，便見$N嗖的一下將雙手收回胸前，接著一招"HIG"「回首銀川」"NOR"，雙掌如電，直拍向$n的腰間",
+([        "action" : "$N突然雙手平舉，$n一呆，正在猜測間，便見$N嗖的一下將雙手收回胸前，接着一招"HIG"「回首銀川」"NOR"，雙掌如電，直拍向$n的腰間",
         "lvl"   : 140,
         "skill_name" : "回首銀川",
 ]),
@@ -147,7 +147,7 @@ mixed hit_ob(object me, object victim, int damage_bonus, int factor)
                                  "id":query("id", me),
                                  "duration" : lvl / 100 + random(lvl / 10) ])))
         {
-                return HIR "只聽$n" HIR "悶哼了一聲，看來是受到了催心掌掌勁的幹擾！\n" NOR;
+                return HIR "只聽$n" HIR "悶哼了一聲，看來是受到了催心掌掌勁的干擾！\n" NOR;
         }
 }
 
@@ -158,7 +158,7 @@ void skill_improved(object me)
                if( lvl >= 80 &&  
                    !query("can_perform/cuixin-zhang/gu", me) )   
                {  
-                       tell_object(me, HIC "你通曉了催心掌「" HIR "孤注一擲" HIC "」的奧秘。\n" NOR);     
+                       tell_object(me, HIC "你通曉了催心掌「" HIR "孤注一擲" HIC "」的奧祕。\n" NOR);     
                         set("can_perform/cuixin-zhang/gu", 1, me);  
                        me->improve_skill("martial-cognize", 1500000); 
                        me->improve_skill("martial-cognize", 1500000); 
@@ -167,7 +167,7 @@ void skill_improved(object me)
              if( lvl >= 150 &&  
                  !query("can_perform/cuixin-zhang/cui", me) )   
              {  
-                     tell_object(me, HIC "你通曉了催心掌「" HIR "奪命催心" HIC "」的奧秘。\n" NOR);     
+                     tell_object(me, HIC "你通曉了催心掌「" HIR "奪命催心" HIC "」的奧祕。\n" NOR);     
                       set("can_perform/cuixin-zhang/cui", 1, me);  
                      me->improve_skill("martial-cognize", 1500000);    
                      me->improve_skill("martial-cognize", 1500000);    

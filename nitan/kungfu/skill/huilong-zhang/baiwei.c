@@ -38,7 +38,7 @@ int perform(object me, object target)
         if( query("neili", me)<600 )
                 return notify_fail("你現在內力太弱，不能使用「神龍擺尾」。\n");
 
-        msg = HIY "$N長嘯一聲，將內力聚于手中鋼杖，突然一個轉身，手中鋼杖點向$n！\n" NOR;
+        msg = HIY "$N長嘯一聲，將內力聚於手中鋼杖，突然一個轉身，手中鋼杖點向$n！\n" NOR;
 
         message_vision(msg, me, target); 
 

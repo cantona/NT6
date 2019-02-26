@@ -15,7 +15,7 @@ void create()
         set_skill("dodge",80); 
       set("inquiry", ([
             "精靈之王" : (: ask_me :),
-            "唱曲" : "“我是唱著玩的，讓你見笑了。”\n",
+            "唱曲" : "“我是唱着玩的，讓你見笑了。”\n",
         ]) );
 
         setup();
@@ -54,7 +54,7 @@ int singing (object ob)
    call_out("singing",2,ob);
                break;
             case 1:
-               message_vision("        一聚一離別，一喜一悲。一榻一身臥，一生一夢裡。\n",ob);
+               message_vision("        一聚一離別，一喜一悲。一榻一身卧，一生一夢裏。\n",ob);
                set_temp("marks/songa", 2, ob);
    call_out("singing",2,ob);
                break;
@@ -70,7 +70,7 @@ int singing (object ob)
          switch(songa) {
             case 0:
    message_vision("$N輕敲竹板，婉聲唱道：\n",this_object());
-   message_vision("  東邊路、西邊路、南邊路。五裡舖、七裡舖、十裡舖。\n",this_object());
+   message_vision("  東邊路、西邊路、南邊路。五里鋪、七裏鋪、十里鋪。\n",this_object());
                set_temp("marks/songa", 1, ob);
    call_out("singing",2,ob);
                break;
@@ -80,7 +80,7 @@ int singing (object ob)
    call_out("singing",2,ob);
                break;
             case 2:
-   message_vision("  斜陽滿地舖，回首生煙霧。兀的不山無數、水無數、情無數。\n",this_object());
+   message_vision("  斜陽滿地鋪，回首生煙霧。兀的不山無數、水無數、情無數。\n",this_object());
                kid = present("kid", environment(ob));
                if(objectp(kid)) {
                   delete_temp("marks/sing", kid);
@@ -111,14 +111,14 @@ int ask_for_help()
       object where, obj;
       where=environment(me); 
       ob->move(where);command("tell"+query("id", me)+"不好了，三清湖有魚怪出現。求你幫幫我們！");
-      command("say 我這裡有些東西，也許能派上用場。");
+      command("say 我這裏有些東西，也許能派上用場。");
       obj=new("/quest/tulong/obj/string");
       obj->move(ob); 
       command("givestringto"+query("id", me));
-      command("say 我家裡的東西你請隨意取用。請一定要制服魚怪！");
+      command("say 我家裏的東西你請隨意取用。請一定要制服魚怪！");
    ob->set("inquiry",([
-            "魚怪" : "“聽說它已經成了精，會吃人的。”\n", 
+            "魚怪" : "“聽説它已經成了精，會吃人的。”\n", 
             "精靈之王" : (: ask_me :),
-            "唱曲" : "“我是唱著玩的，讓你見笑了。”\n",        ]));
+            "唱曲" : "“我是唱着玩的，讓你見笑了。”\n",        ]));
       return 1;
 }

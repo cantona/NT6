@@ -34,7 +34,7 @@ string send_gfinger_q(string mud, string wiz, mixed them)
 
         // make sure we have an entry for the recipient
         minfo = DNS_MASTER->query_mud_info(mud);
-        if (!minfo) return LOCAL_MUD_NAME() + "目前並沒有和" + mud + "聯系上。\n";
+        if (!minfo) return LOCAL_MUD_NAME() + "目前並沒有和" + mud + "聯繫上。\n";
 
         // send the finger
         DNS_MASTER->send_udp(minfo["HOSTADDRESS"], minfo["PORTUDP"],

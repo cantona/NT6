@@ -6,8 +6,8 @@ void create()
         set("short", "內廳");
         set("long", @LONG
 這是一個石洞，此洞碩大無朋，四周點滿了火把，把整個大廳照
-耀得十分明亮，中間放著很多石桌和石凳，有很多的江湖人物在石室
-在參悟武功之余，在這裡休息一會。
+耀得十分明亮，中間放着很多石桌和石凳，有很多的江湖人物在石室
+在參悟武功之餘，在這裏休息一會。
 LONG );
 // 大廳門口靠左有一個小洞(hole)。
         set("exits", ([
@@ -43,11 +43,11 @@ int do_enter(string arg)
                 if( (fam=query("family", me)) && fam["family_name"] == "丐幫" )
                 {
                         message("vision",
-                                me->name() + "運起丐幫縮骨功，一彎腰往洞裡鑽了進去。\n",
+                                me->name() + "運起丐幫縮骨功，一彎腰往洞裏鑽了進去。\n",
                                 environment(me), ({me}) );
                         me->move("/d/gaibang/undersld");
                         message("vision",
-                                me->name() + "從洞裡走了進來。\n", environment(me), ({me}) );
+                                me->name() + "從洞裏走了進來。\n", environment(me), ({me}) );
                         return 1;
                 }
                 else

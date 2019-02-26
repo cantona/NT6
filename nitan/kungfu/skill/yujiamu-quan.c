@@ -34,7 +34,7 @@ mapping *action = ({
         "skill_name" : "明心",
         "lvl" : 48
 ]),
-([        "action" : "$N飛身一躍，使出一招"HIC"「制勝」"NOR"，一拳猛擊$n嚥喉",
+([        "action" : "$N飛身一躍，使出一招"HIC"「制勝」"NOR"，一拳猛擊$n咽喉",
         "skill_name" : "制勝",
         "lvl" : 56
 ]),

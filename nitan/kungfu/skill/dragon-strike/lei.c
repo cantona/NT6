@@ -40,7 +40,7 @@ int perform(object me, object target)
                 return notify_fail("你現在真氣不夠，難以施展" + name() + "。\n");
 
         if (! living(target))
-                return notify_fail("對方都已經這樣了，用不著這麼費力吧？\n");
+                return notify_fail("對方都已經這樣了，用不着這麼費力吧？\n");
 
         msg = HIC "$N" HIC "默運內功，施展出" + name() + HIC "，全身急速轉動起來，"
               "越來越快，就\n猶如一股旋風，驟然間，$N" HIC "已卷向正看"
@@ -57,7 +57,7 @@ int perform(object me, object target)
                 msg += COMBAT_D->do_damage(me, target, UNARMED_ATTACK, damage, 85,
                                            HIR "$p" HIR "只見一陣旋風影中陡然現出$P"
                                            HIR "的雙拳，根本來不及躲避，被重重擊中，\n五"
-                                           "臟六腑翻騰不休，口中鮮血如箭般噴出！\n" NOR);
+                                           "髒六腑翻騰不休，口中鮮血如箭般噴出！\n" NOR);
                 me->start_busy(2);
         } else
         {

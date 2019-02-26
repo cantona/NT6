@@ -290,7 +290,7 @@ string *info =
 });
 
 nosave mapping replace_word = ([
-        "幹你娘":       "******",
+        "幹你孃":       "******",
         "媽逼":         "******",
         "媽的逼":       "******", 
         "媽個逼":       "******",
@@ -373,7 +373,7 @@ varargs int do_channel(object me, string channel, string msg, mixed raw)
         else
                 channel_title = ch->msg;
 
-        // 假如是使用者, 則檢查頻道注冊
+        // 假如是使用者, 則檢查頻道註冊
         if( interactive(me) && !(ch->number & users[me]) )
         {
                 if( wiz_level(my_id) < ch->level ) return 0;
@@ -459,7 +459,7 @@ delete("channels", fit_users[i]);
                 {
                         if( addn_temp("lastchat/warning", 1, me) > 100 )
                         {
-                                tell(me, "由于"+pnoun(2, me)+"大量重覆嘗試不合法的頻道發言動作，從現在起將自動封鎖"+pnoun(2, me)+"的指令功能。\n");
+                                tell(me, "由於"+pnoun(2, me)+"大量重覆嘗試不合法的頻道發言動作，從現在起將自動封鎖"+pnoun(2, me)+"的指令功能。\n");
                                 set("cmdlimit", 30, me);
                                 CHANNEL_D->channel_broadcast("sys", me->query_idname()+"大量重覆嘗試不合法的頻道發言動作，從現在起將自動限制指令速度。\n");
                         }
@@ -471,7 +471,7 @@ delete("channels", fit_users[i]);
                         {
                                 if( addn_temp("lastchat/warning", 1, me) > 100 )
                                 {
-                                        tell(me, "由于"+pnoun(2, me)+"大量重覆嘗試不合法的頻道發言動作，從現在起將自動封鎖"+pnoun(2, me)+"的指令功能。\n");
+                                        tell(me, "由於"+pnoun(2, me)+"大量重覆嘗試不合法的頻道發言動作，從現在起將自動封鎖"+pnoun(2, me)+"的指令功能。\n");
                                         set("cmdlimit", 30, me);
                                         CHANNEL_D->channel_broadcast("sys", me->query_idname()+"大量重覆嘗試不合法的頻道發言動作，從現在起將自動限制指令速度。\n");
                                 }
@@ -527,7 +527,7 @@ delete("channels", fit_users[i]);
 	//send_msg = replace_usa_ansi(send_msg);
 
         fit_users -= ({ 0 });
-        // 使用者權限處理, 等級高等于說話者直接顯示名稱
+        // 使用者權限處理, 等級高等於説話者直接顯示名稱
         if( ch->extra["wizlevel"] && me->is_character() )
         {
                 int my_level = wiz_level(my_id);
@@ -592,7 +592,7 @@ delete("channels", fit_users[i]);
         if( userp(me) && random(100) < 20 )
         {
                 addn("active", 1, me);
-                tell_object(me, HIY "\n由于您的踴躍發言讓笑傲江湖更加熱絡，特別為您增加活躍值一點。\n" NOR);
+                tell_object(me, HIY "\n由於您的踴躍發言讓笑傲江湖更加熱絡，特別為您增加活躍值一點。\n" NOR);
         }
 
         fit_users->add_msg_log(channel, send_msg);
@@ -658,7 +658,7 @@ void register_relay_channel(string channel)
         else    ch->extra["listener"] = ({ ob });
 }
 
-/* 注冊頻道 */
+/* 註冊頻道 */
 nomask void register_channel(object me, int channel)
 {
         if( !channel ) return;
@@ -666,7 +666,7 @@ nomask void register_channel(object me, int channel)
         else users[me] |= channel;
 }
 
-/* 移除注冊 */
+/* 移除註冊 */
 nomask void remove_register(object me, int channel)
 {
         if( !channel ) return;
@@ -680,7 +680,7 @@ nomask void remove_user(object me)
         map_delete(users, me);
 }
 
-/* 所有玩家重新注冊頻道 */
+/* 所有玩家重新註冊頻道 */
 nomask void reset_all_register()
 {
         users = allocate_mapping(0);
@@ -752,7 +752,7 @@ varargs void channel_broadcast(string channel, string msg, mixed arg)
 
 varargs void announce(object me, string msg)
 {
-        shout("\n\a"HIR + (objectp(me) ? me->query_idname() + HIR"發布":"") + "系統公告 ("HIW + ctime(time()) + NOR + HIR")：\n\n"NOR + msg + NOR"\n\n");
+        shout("\n\a"HIR + (objectp(me) ? me->query_idname() + HIR"發佈":"") + "系統公告 ("HIW + ctime(time()) + NOR + HIR")：\n\n"NOR + msg + NOR"\n\n");
 }
 
 

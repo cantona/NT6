@@ -12,7 +12,7 @@ void create()
         set_name(HIM "胡一刀" NOR, ({ "hu yidao"}) );
         set("title", HIR "曠世絕刀" NOR);
         set("long", HIC "這是一個剽悍粗獷的北方大漢，雙眼炯炯有神。\n"
-                        "據說他的刀法當世無雙。\n" NOR);
+                        "據説他的刀法當世無雙。\n" NOR);
 
         set("gender", "男性");
         set("age", 39);
@@ -109,11 +109,11 @@ void create()
 
         }));
 
-        set("my_life", 1); // 當氣血低于10%的時候補滿一次，設置該參數為0
+        set("my_life", 1); // 當氣血低於10%的時候補滿一次，設置該參數為0
 
         //set("auto_perform", 1);
         //set("clear_fuben", 1);
-        set("end_time", 1800);  // 必須戰鬥不少于1800秒後死亡
+        set("end_time", 1800);  // 必須戰鬥不少於1800秒後死亡
         set("rewards", ([
                 "exp"   : 30000,
                 "pot"   : 10000,
@@ -209,7 +209,7 @@ void check_friend()
                 }
         }
 
-        // 如果同伴的HP小于20%,且我的HP大于60%則保護對方
+        // 如果同伴的HP小於20%,且我的HP大於60%則保護對方
         if( query("eff_qi", ob) <= query("max_qi", ob)/10 && 
             query("eff_qi", me) >= query("max_qi", me)/5*3 )
         {
@@ -272,7 +272,7 @@ void check_weapon()
                 me->clear_condition();
         }
 
-        // 很小幾率恢復氣血
+        // 很小几率恢復氣血
         if (random(1000) == 1)
         {
                 if (query("eff_qi") < query("max_qi") / 3) addn("eff_qi", query("max_qi") / 5);
@@ -377,14 +377,14 @@ varargs void die(object killer)
                 if( query("qi") > query("max_qi") ) set("qi", query("max_qi"));
                 addn("eff_qi", query("max_qi") / 10);
                 if( query("eff_qi") > query("max_qi") ) set("eff_qi", query("max_qi"));
-                message_vision(HIR "\n$N" HIR "大喝一聲，運用秘法，氣血有所回升！\n\n" NOR, this_object());
+                message_vision(HIR "\n$N" HIR "大喝一聲，運用祕法，氣血有所回升！\n\n" NOR, this_object());
                 return;
         }
 
         if( !objectp(present("miao renfeng", environment(this_object()))) )
                 set("clear_fuben", 1);
 
-        message_vision(HIR "\n$N" HIR "長嘆一聲，消失在山林之中 ……\n\n" NOR, this_object());
+        message_vision(HIR "\n$N" HIR "長歎一聲，消失在山林之中 ……\n\n" NOR, this_object());
 
         return ::die(killer);
 }

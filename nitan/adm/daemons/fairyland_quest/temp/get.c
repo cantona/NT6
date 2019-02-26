@@ -1,5 +1,5 @@
 // get.c
-// last updated by April 2001.09.27     禁止在睡房裡拿睡覺人的東西
+// last updated by April 2001.09.27     禁止在睡房裏拿睡覺人的東西
 // last updated by naihe 2002.09.25 
 // 各文件可使用set("no_get","信息") 格式自定義no_get信息，
 // 使用 set("no_get","1") 格式將使用默認信息：這個東西拿不起來。
@@ -34,22 +34,22 @@ int main(object me, string arg)
         } 
         else env = environment(me);
         
-        // 不能在睡房裡拿睡覺人的東西
+        // 不能在睡房裏拿睡覺人的東西
         if (!wizardp(me) && living(env) && env->query_lord() != me)
                 return notify_fail("光天化日的想搶劫啊？\n");
         else if( !wizardp(me) && query("no_get_from", env) )
-                return notify_fail("邊上有人看著呢，不如等人家醒了搶劫吧！\n");
+                return notify_fail("邊上有人看着呢，不如等人家醒了搶劫吧！\n");
 
         // Check if a certain amount is specified.
         if(sscanf(arg, "%d %s", amount, item)==2) {
                 if( !objectp(obj = present(item, env)) )
-                        return notify_fail("這裡沒有這樣東西。\n");
+                        return notify_fail("這裏沒有這樣東西。\n");
                 if( !obj->query_amount() )
                         return notify_fail( obj->name() + "不能被分開拿走。\n");
                 if( amount < 1 )
                         return notify_fail("東西的個數至少是一個。\n");
                 if( amount > obj->query_amount() )
-                        return notify_fail("這裡沒有那麼多的" + obj->name() + "。\n");
+                        return notify_fail("這裏沒有那麼多的" + obj->name() + "。\n");
                 else if( amount == (int)obj->query_amount() ) {
                         return do_get(me, obj);
                }else {
@@ -72,7 +72,7 @@ int main(object me, string arg)
 
                 inv = all_inventory(env);
                 if( !sizeof(inv) )
-                        return notify_fail("那裡面沒有任何東西。\n");
+                        return notify_fail("那裏面沒有任何東西。\n");
 
                 for(i=0; i<sizeof(inv); i++) {
                         if( inv[i]->is_character() || query("no_get", inv[i]))continue;
@@ -85,7 +85,7 @@ int main(object me, string arg)
         if( !objectp(obj = present(arg, env)) || living(obj) )
                 return notify_fail("你附近沒有這樣東西。\n");
 
-// 修改一下這裡的描述。
+// 修改一下這裏的描述。
         if( query("no_get", obj) )
     {
         no_get_message=query("no_get", obj);
@@ -108,7 +108,7 @@ int do_get(object me, object obj)
         if( obj->is_character() ) {
                 if( living(obj) ) return 0;
                 //      if( !userp(obj) && !obj->is_corpse() )
-                //              return notify_fail("你只能背負其他玩家的身體。\n");
+                //              return notify_fail("你只能揹負其他玩家的身體。\n");
                 // If we try to save someone from combat, take the risk :P
         }
     else if( query("no_get", obj) )

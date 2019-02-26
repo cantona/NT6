@@ -5,7 +5,7 @@ void create()
         set_name("摔跤手", ({ "shuaijiao shou", "shou", "shuaijiao" }));
         set("long", 
                 "一名上身半裸的男人，身材魁梧，滿臉彪捍。\n"
-              "他是宮中摔跤手，對于格鬥很是在行。\n");
+              "他是宮中摔跤手，對於格鬥很是在行。\n");
         set("gender", "男性");
         set("age", 30);
         set("attitude", "heroism");

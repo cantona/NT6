@@ -19,7 +19,7 @@ mapping dict = ([
         "whip"          :"鞭",
         "xsword"        :"簫",
         "head"          :"頭盔",
-        "neck"          :"項鏈",
+        "neck"          :"項鍊",
         "cloth"         :"衣服",
         "charm"         :"符文",
         "rings"         :"戒指",
@@ -49,7 +49,7 @@ void create()
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("long", HIM "表面泛著粉色光芒的能力水晶，可以將簽名後的裝備的鑲嵌寶石屬性、強化效果\n"
+                set("long", HIM "表面泛着粉色光芒的能力水晶，可以將簽名後的裝備的鑲嵌寶石屬性、強化效果\n"
                             HIM "改造及套裝效果儲存(store)起來，然後可以無損失注入(infuse)到新的簽名裝備上。\n" NOR);
                 set("value", 50000);
                 set("unit", "塊");
@@ -86,10 +86,10 @@ int do_store(string arg)
                 return notify_fail("能力水晶只可存儲已簽名裝備的能力。\n");
 
         if( !wizardp(me) && ob->item_owner() != query("id", me) )
-                return notify_fail("這個，好象不屬于你吧，這樣不大合適。\n");
+                return notify_fail("這個，好像不屬於你吧，這樣不大合適。\n");
 
         if( query("equipped", ob) ) 
-                return notify_fail("你先解除" + ob->name() + "的裝備再說！\n"); 
+                return notify_fail("你先解除" + ob->name() + "的裝備再説！\n"); 
                 
         if( !mapp(enchase = query("enchase", ob)) || !mapp(insert=query("insert", ob)) )
                 return notify_fail("能力水晶只能存儲鑲嵌過寶石的裝備屬性。\n");
@@ -159,20 +159,20 @@ int do_infuse(string arg)
         me = this_player();
         
         if( !arg || arg == "" )  
-                return notify_fail("你要給什麼裝備注入能力？\n");
+                return notify_fail("你要給什麼裝備註入能力？\n");
 
         if( !objectp(ob = present(arg, me)) && 
             !objectp(ob = present(arg, environment(me)))) 
                 return notify_fail("你身上和附近沒有這樣裝備啊。\n"); 
 
         if( !ob->is_item_make() )
-                return notify_fail("能力水晶只可給已簽名裝備注入能力。\n");
+                return notify_fail("能力水晶只可給已簽名裝備註入能力。\n");
 
         if( !wizardp(me) && ob->item_owner() != query("id", me) ) 
-                return notify_fail("這個，好象不屬于你吧，這樣不大合適。\n");
+                return notify_fail("這個，好像不屬於你吧，這樣不大合適。\n");
 
         if( query("equipped", ob) ) 
-                return notify_fail("你先解除" + ob->name() + "的裝備再說！\n"); 
+                return notify_fail("你先解除" + ob->name() + "的裝備再説！\n"); 
                         
         enchase = query("enchase");
         if( !mapp(enchase) || sizeof(enchase) < 1 )
@@ -185,7 +185,7 @@ int do_infuse(string arg)
         /*        
         flute = enchase["flute"];
         if( query("enchase/flute", ob) < flute )
-                return notify_fail(ob->name()+"的已開孔數必須不小于能力水晶中存儲能力的孔數("+flute+")！\n");
+                return notify_fail(ob->name()+"的已開孔數必須不小於能力水晶中存儲能力的孔數("+flute+")！\n");
         */
         
         if( (status = query("status")) > 1 ) // 改造

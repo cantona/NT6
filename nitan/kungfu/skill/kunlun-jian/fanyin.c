@@ -26,7 +26,7 @@ int perform(object me)
                 return notify_fail("你的彈琴技法尚且不夠熟練, 發不出「域外梵音」！\n");
 
         if (me->query_skill("kunlun-jian", 1) < 120)
-                return notify_fail("你的昆侖劍法等級不夠, 發不出「域外梵音」！\n");
+                return notify_fail("你的崑崙劍法等級不夠, 發不出「域外梵音」！\n");
 
         if( query("max_neili", me)<800 )
                 return notify_fail("你的內力修為尚且無法達到使用「域外梵音」所需的境界！\n");
@@ -52,7 +52,7 @@ int perform(object me)
         } else
         {
                 addn("neili", -50, me);
-                msg += HIG "可是$n趕忙寧心靜氣，收斂心神，絲毫不受$N琴音的幹擾。\n"NOR;
+                msg += HIG "可是$n趕忙寧心靜氣，收斂心神，絲毫不受$N琴音的干擾。\n"NOR;
                 me->start_busy(3);
         }
         message_combatd(msg, me, target);

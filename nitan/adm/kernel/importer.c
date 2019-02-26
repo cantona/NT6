@@ -1,5 +1,5 @@
 // importer.c
-// 用戶檔案導入器
+// 用户檔案導入器
 
 #include <ansi.h>
 
@@ -10,12 +10,12 @@ inherit F_SAVE;
 #define SUFFIX_NAME     "fr"
 #define SUFFIX_SIZE     26
 
-// 日志等級分為 3 級，如何界定一段消息應該記錄在
-// 哪一級的日志中？
+// 日誌等級分為 3 級，如何界定一段消息應該記錄在
+// 哪一級的日誌中？
 
-// LV 1: 無法復制文件、載入用戶等錯誤信息
-// LV 2: 對用戶有損的刪除一類的操作信息
-// LV 3: 復制或者修改這樣的無損操作信息
+// LV 1: 無法複製文件、載入用户等錯誤信息
+// LV 2: 對用户有損的刪除一類的操作信息
+// LV 3: 複製或者修改這樣的無損操作信息
 
 #define LOG_LEVEL       3
 #define LOG(lv, msg)    log_file(sprintf("transfer/LV%d", lv), msg);
@@ -45,7 +45,7 @@ void create()
         seteuid(getuid());
         restore();
 
-        set_name("用戶檔案導入器", ({ "data importer", "importer", }));
+        set_name("用户檔案導入器", ({ "data importer", "importer", }));
         set_weight(1);
 
         if (clonep())
@@ -53,8 +53,8 @@ void create()
         else
         {
                 set("unit", "台");
-                set("long", "這是一台用戶檔案導入器，請輸入 help "
-                            "importer 查看詳細使用說明。\n");
+                set("long", "這是一台用户檔案導入器，請輸入 help "
+                            "importer 查看詳細使用説明。\n");
         }
         setup();
 
@@ -84,8 +84,8 @@ int do_help(string arg)
         {
         case "importer":
                 write(@HELP
-在這裡你可以使用以下這些和用戶檔案導入器相關的命令：
-    batch        批量導入用戶數據。
+在這裏你可以使用以下這些和用户檔案導入器相關的命令：
+    batch        批量導入用户數據。
 HELP );
                 break;
 
@@ -93,7 +93,7 @@ HELP );
                 write(@HELP_BATCH
 指令格式 : batch
 
-批量導入用戶數據。
+批量導入用户數據。
 
 相關指令：import, merge
 HELP_BATCH );
@@ -103,7 +103,7 @@ HELP_BATCH );
                 write(@HELP_BATCH
 指令格式 : merge dbase
 
-將另外站點的數據庫並入目前站點的數據庫。
+將另外站點的數據庫併入目前站點的數據庫。
 
 相關指令：batch
 HELP_BATCH );
@@ -116,7 +116,7 @@ HELP_BATCH );
         return 1;
 }
 
-// 獲得一個不重復的用戶名
+// 獲得一個不重複的用户名
 mapping assure_user_file(string user, int flag)
 {
 #if 0
@@ -161,7 +161,7 @@ mapping assure_user_file(string user, int flag)
         return 0;
 }
 
-// 獲得指定目錄下所有的用戶列表
+// 獲得指定目錄下所有的用户列表
 string *get_user_list(string dir)
 {
         string *sub_dir_list;
@@ -195,7 +195,7 @@ string *get_user_list(string dir)
 }
 
 // 尋找或調入某一個玩家，本來可以使用 UPDATE_D 中的同名函數，
-// 但因為這裡直接析構了 login_ob，無法對 login_ob  做改名操
+// 但因為這裏直接析構了 login_ob，無法對 login_ob  做改名操
 // 作。所以需要用到這個函數。
 
 // 如果程序處理中需要更新那些不在線的玩家，則可以使用該函數
@@ -267,8 +267,8 @@ void global_destruct_player(object ob, int raw)
 // 如果繼續載入勢必影響其他的玩家，所以必須刪
 // 除 autoload。 現在看來，似乎只有這一種，考
 // 慮到這一種並不需要把文件載入就可以查出，所
-// 以這裡可以簡單的通過 sscanf & filter_array
-// 來處理用戶的 autoload 列表， 過濾掉 /data/
+// 以這裏可以簡單的通過 sscanf & filter_array
+// 來處理用户的 autoload 列表， 過濾掉 /data/
 // 目錄下的文件。
 void transfer_autoload(object user, string card_file)
 {
@@ -297,7 +297,7 @@ int do_merge(string arg)
         int     ok;
 
         if (arg != "dbase")
-                return notify_fail("你要並入什麼？\n");
+                return notify_fail("你要併入什麼？\n");
 
         foreach (key in keys(save_dbase))
         {
@@ -352,12 +352,12 @@ int do_batch()
 
         user_list = get_user_list(save_dir);
 
-        write(WHT "開始遷移用戶數據...\n\n" NOR);
+        write(WHT "開始遷移用户數據...\n\n" NOR);
         
         i = 0;
         foreach (user in user_list)
         {
-                /* 開始轉換的日志
+                /* 開始轉換的日誌
                 for (i = 1; i < LOG_LEVEL + 1; i++)
                         LOG(i, "Start transfering (" + user + ")'s data...\n");
                  */
@@ -372,8 +372,8 @@ int do_batch()
                 else write(sprintf("%-15s: " WHT "Failed" NOR "\n", user));
         }
         
-        write(WHT "\n遷移用戶數據完成，共 " + sizeof(user_list) + 
-              " 名用戶，成功遷移 " + i + " 名用戶。\n" NOR);
+        write(WHT "\n遷移用户數據完成，共 " + sizeof(user_list) + 
+              " 名用户，成功遷移 " + i + " 名用户。\n" NOR);
         return 1;
 }
 
@@ -381,7 +381,7 @@ int do_batch()
 #define user_file(x)    sprintf("%suser/%c/%s.o", save_dir, x[0], x)
 #define login_file(x)   sprintf("%slogin/%c/%s.o", save_dir, x[0], x)
 
-// 轉換指定的用戶
+// 轉換指定的用户
 int transfer_user(string arg)
 {
         object  user;
@@ -407,7 +407,7 @@ int transfer_user(string arg)
 
         int     is_ok;
 
-        // 找到舊的用戶文件
+        // 找到舊的用户文件
 
         login_from = login_file(arg);
         user_from = user_file(arg);
@@ -419,7 +419,7 @@ int transfer_user(string arg)
                 return 0;
         }
 
-        // 復制用戶文件到 DATA_DIR
+        // 複製用户文件到 DATA_DIR
 
         file = assure_user_file(arg, 0);
         if (! file)
@@ -460,9 +460,9 @@ int transfer_user(string arg)
 
         // 轉換房屋為建房卡
 
-        // 注意玩家手裡的鑰匙要收走，但是考慮到所有的
+        // 注意玩家手裏的鑰匙要收走，但是考慮到所有的
         // autoload 物品， 除了一些特殊情況外都要清除，
-        // 所以這裡暫不考慮。
+        // 所以這裏暫不考慮。
 
         switch (user->query("private_room/type"))
         {
@@ -480,7 +480,7 @@ int transfer_user(string arg)
                 LOG(3, "User (" + arg + ") get a free card.\n");
         }
 
-        // 刪除結義、同盟關系
+        // 刪除結義、同盟關係
         if (user->query("brothers"))
         {
                 user->delete("brothers");
@@ -498,12 +498,12 @@ int transfer_user(string arg)
 
         // ...on 08/01 21:35.
 
-        // 確認婚姻關系，考慮到配偶的 ID 有可能變化，
-        // 所以這裡要取得一個配偶唯一可能的 ID， 確
-        // 保此用戶的婚姻關系不出現問題，但問題在于，
+        // 確認婚姻關係，考慮到配偶的 ID 有可能變化，
+        // 所以這裏要取得一個配偶唯一可能的 ID， 確
+        // 保此用户的婚姻關係不出現問題，但問題在於，
         // 倘若在尋找這個配偶唯一可能的 ID 時，該配
         // 偶的文件已經轉移到了 /data/ 下呢？就會弄
-        // 糊塗了，因此，對于已經轉移過的，要修改源
+        // 糊塗了，因此，對於已經轉移過的，要修改源
         // 目錄內的文件名。
         couple_id = user->query("couple/id");
         
@@ -568,7 +568,7 @@ int transfer_user(string arg)
                         // 生成新的物品文件名
                         item_file = sprintf("%sitem/%c/%s-%s.c", DATA_DIR, uid[0], uid,
                                             item_name);
-                        // 復制文件
+                        // 複製文件
                         is_ok = cp(sprintf("%sitem/%c/%s-%s.c", save_dir, arg[0], arg, item_name), 
                                    item_file);
 
@@ -578,7 +578,7 @@ int transfer_user(string arg)
                                        ").\n");
                         } else
                         {
-                                // 將文件中全部的原來的用戶 ID
+                                // 將文件中全部的原來的用户 ID
                                 // 字樣全部替換為新的
                                 if (arg != uid)
                                 {
@@ -597,7 +597,7 @@ int transfer_user(string arg)
                                         is_ok = DBASE_D->set_object_data(item_file, item_data);
                                 }
         
-                                // 更新用戶身上的物品列表
+                                // 更新用户身上的物品列表
                                 user->set("can_summon/" + item_name, item_file);
 
                                 LOG(3, "Item " + item_name + " of (" + arg + ") successfully "
@@ -605,7 +605,7 @@ int transfer_user(string arg)
                         }
                 }
         }
-        // 轉換用戶的 autoload 信息，去掉無法繼續
+        // 轉換用户的 autoload 信息，去掉無法繼續
         // 使用的，如果獲得了卡片，則增加卡片的載
         // 入信息
         transfer_autoload(user, card_file);
@@ -613,7 +613,7 @@ int transfer_user(string arg)
         // raw : 1，給 user 存一下盤
         global_destruct_player(user, 1);
 
-        // 修改文件名，表示此用戶已經轉換
+        // 修改文件名，表示此用户已經轉換
         rename(login_file(arg), login_file(arg) + ".bak");
         rename(user_file(arg), user_file(arg) + ".bak");
 

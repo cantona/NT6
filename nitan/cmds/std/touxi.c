@@ -9,7 +9,7 @@ int main(object me, string arg)
         int skill, count;
 
         if( query("no_fight", environment(me)) )
-                return notify_fail("這裡禁止戰鬥。\n");
+                return notify_fail("這裏禁止戰鬥。\n");
 
         if (! arg || !objectp(obj = present(arg, environment(me))) || !me->visible(obj) )
                 return notify_fail("你想偷襲誰？\n");
@@ -25,7 +25,7 @@ int main(object me, string arg)
 
         if (! living(obj))
                 return notify_fail(obj->name() + "都已經這樣了，你還用"
-                                   "得著偷襲嗎？\n"); 
+                                   "得着偷襲嗎？\n"); 
 
         if (obj == me)
                 return notify_fail("偷襲自己？別這麼想不開。\n");
@@ -80,7 +80,7 @@ int help(object me)
   write(@HELP
 指令格式 : touxi <人物>
  
-這個指令用來向敵人偷襲。偷襲不成時，則會招至反擊。特別適合于
+這個指令用來向敵人偷襲。偷襲不成時，則會招至反擊。特別適合於
 經驗低的玩家向經驗高的玩家拚命。:)
 
 其他相關指令: fight, kill, hit

@@ -14,7 +14,7 @@ void create()
         {
                 set("unit", "本");
                 set("no_sell", 1);
-                set("long", "這是一本記載了慕容家紫徽心法的秘籍。\n");
+                set("long", "這是一本記載了慕容家紫徽心法的祕籍。\n");
                 set("value", 1000);
                 set("material", "paper");
                 set("skill", ([

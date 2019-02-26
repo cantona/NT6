@@ -65,8 +65,8 @@ void create()
         create_family("華山派", 12, "弟子");
 
         set("inquiry", ([
-                "紫霞神功" : "那是本門無上的內功心法。據說紫霞密笈缺了最後一頁，可惜我至今仍無法三透，唉！\n",
-                "密室"     : "你胡說八道些甚麼？\n",
+                "紫霞神功" : "那是本門無上的內功心法。據説紫霞密笈缺了最後一頁，可惜我至今仍無法叁透，唉！\n",
+                "密室"     : "你胡説八道些甚麼？\n",
         ]));
 
         set("env/wimpy", 60);
@@ -97,7 +97,7 @@ void attempt_apprentice(object ob)
         if (ob_fam == "華山派" && ob->query_skill("zixia-shengong", 1) < 120)
         {
                 command("say 我看你的紫霞神功還沒學到家吧，本派有本的"
-                        "紫霞秘籍，你可曾研讀？");
+                        "紫霞祕籍，你可曾研讀？");
                 return;
         }
 
@@ -141,14 +141,14 @@ int accept_ask(object me, string topic)
         {
         case "歷練" :
         case "歷煉" :
-        case "鍛煉" :
+        case "鍛鍊" :
                 return QUEST_D->accept_ask(this_object(), me, topic);
                 break;
 
-        case "華岳三神峰" :
+        case "華嶽三神峯" :
                 return MASTER_D->teach_pfm(me, this_object(),
                         ([ "perform" : "can_perform/fanliangyi-dao/sanshen",
-                           "name"    : "華岳三神峰",
+                           "name"    : "華嶽三神峯",
                            "sk1"     : "fanliangyi-dao",
                            "lv1"     : 100,
                            "sk2"     : "force",
@@ -161,7 +161,7 @@ int accept_ask(object me, string topic)
         case "雙刀和璧" :
                 return MASTER_D->teach_pfm(me, this_object(),
                         ([ "perform" : "can_perform/fanliangyi-dao/hebi",
-                           "name"    : "華岳三神峰",
+                           "name"    : "華嶽三神峯",
                            "sk1"     : "fanliangyi-dao",
                            "lv1"     : 100,
                            "sk2"     : "force",

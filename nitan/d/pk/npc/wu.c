@@ -48,16 +48,16 @@ string ask_me()
         if (PK_D->is_ready())
                 return "很好，現在屠人大賽正要開始，你要報名麼(sign)？";
 
-        return "屠人大賽？你慢慢等著吧。要是無聊，現在要是想進去玩玩(join)也行。";
+        return "屠人大賽？你慢慢等着吧。要是無聊，現在要是想進去玩玩(join)也行。";
 }
 
 int do_join()
 {
         if (PK_D->is_pking())
-                return notify_fail("烏老大眼睛一彈，喝道：“現在裡面正比賽呢，你這些人等等吧。”\n");
+                return notify_fail("烏老大眼睛一彈，喝道：“現在裏面正比賽呢，你這些人等等吧。”\n");
 
         if (PK_D->is_ready())
-                return notify_fail("烏老大懶懶道：“要想正式比賽就進去，其他人先等著。”\n");
+                return notify_fail("烏老大懶懶道：“要想正式比賽就進去，其他人先等着。”\n");
 
         message_vision("$N賠笑對$n道：“我進去溜達溜達，放行可好？”\n",
                        this_player(), this_object());
@@ -79,7 +79,7 @@ int do_sign()
         object ob;
 
         me = this_player();
-        message_vision("$N陪著笑臉對$n道：“您好，您好，我也來簽個到。”\n",
+        message_vision("$N陪着笑臉對$n道：“您好，您好，我也來籤個到。”\n",
                        me, this_object());
         if( query("combat_exp", me)<1000 )
         {

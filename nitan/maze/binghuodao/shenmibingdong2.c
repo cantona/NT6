@@ -2,7 +2,7 @@ inherit __DIR__"binghuodao";
 
 void create()
 {
-        set("short", "神秘冰洞");
+        set("short", "神祕冰洞");
         set("long",
 "這是冰火島上隱藏的一處冰洞，冰洞內冰錐縱橫，寒冷異常。\n"
 );

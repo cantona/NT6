@@ -11,7 +11,7 @@ void create()
 
         set_name("蒙古軍官",({ "menggu junguan", "junguan" }) );
         set("gender", "男性" );
-        set("long","這是一名蒙古將領，正帶著軍馬執行著戰鬥任務。\n");
+        set("long","這是一名蒙古將領，正帶着軍馬執行着戰鬥任務。\n");
 
         set("int", 30);
         set("str", 30 + random(20));
@@ -132,7 +132,7 @@ varargs void die(object killer)
                 GIFT_D->delay_war_bonus(killer, ([ "prompt" : "因殲滅蒙古騎兵", "exp" : 500, "pot" : 200, "mar" : 20, "gold" : 2 ])); 
         }
 
-        message_vision("$N率領的蒙古騎兵在幾經頑抗後，終于被徹底" +
+        message_vision("$N率領的蒙古騎兵在幾經頑抗後，終於被徹底" +
                         HIR "消滅了" NOR "！\n",
                         this_object());
 

@@ -9,7 +9,7 @@ int main(object me, string str)
         int p, mp;
 
         if (! str)
-                return notify_fail("你要熔煉什麼物品？\n");
+                return notify_fail("你要熔鍊什麼物品？\n");
 
         if (me->is_busy())
                 return notify_fail("先忙完了你的事情再做這件事情吧。\n");
@@ -21,21 +21,21 @@ int main(object me, string str)
                 return notify_fail("你身上沒有這件物品。\n");
 
         if (me->query_skill("force") < 300)
-                return notify_fail("你的內功修為不夠，難以熔煉物品。\n");
+                return notify_fail("你的內功修為不夠，難以熔鍊物品。\n");
 
         if( query("max_neili", me)<5000 )
-                return notify_fail("你的內力修為不夠，難以熔煉物品。\n");
+                return notify_fail("你的內力修為不夠，難以熔鍊物品。\n");
 
         if( query("neili", me)<3000 )
-                return notify_fail("你現在的內力不足，難以熔煉物品。\n");
+                return notify_fail("你現在的內力不足，難以熔鍊物品。\n");
 
         if( !query("can_make", ob) || !query("item_origin", ob) )
-                return notify_fail("這東西似乎熔煉不出什麼。\n");
+                return notify_fail("這東西似乎熔鍊不出什麼。\n");
 
         p=query("power_point", ob);
 
         message_vision(HIM "$N" HIM "將" + ob->name() +
-                       HIM "握于掌中，默默運轉內力，迫"
+                       HIM "握於掌中，默默運轉內力，迫"
                        "使其熔化。\n" NOR, me);
 
         if (p < 50)
@@ -71,7 +71,7 @@ int main(object me, string str)
                 if (mp > 100) mp = 100;
 
                 addn("magic_points", mp, me);
-                tell_object(me, HIC "你通過熔煉"+ stone->name() +
+                tell_object(me, HIC "你通過熔鍊"+ stone->name() +
                                 HIC "的過程，從而獲得了" +
                                 chinese_number(mp) + "點靈慧。\n" NOR);
         }
@@ -90,9 +90,9 @@ int help(object me)
 write(@HELP
 指令格式：fuse <物品ID>
 
-此指令可讓你將某些物品熔化。一般來說能夠鑄造武器的原料都可以
-被熔煉，不過熔煉物品需要比較高的內功等級和內力修為，每次成功
-的熔煉都會增加一定數量的靈慧，但是會消耗一點最大內力。
+此指令可讓你將某些物品熔化。一般來説能夠鑄造武器的原料都可以
+被熔鍊，不過熔鍊物品需要比較高的內功等級和內力修為，每次成功
+的熔鍊都會增加一定數量的靈慧，但是會消耗一點最大內力。
 HELP);
         return 1;
 }

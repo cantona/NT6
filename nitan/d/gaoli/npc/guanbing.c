@@ -7,7 +7,7 @@ void create()
    set_name("官兵",({ "bing" }) );
    set("gender", "男性" );
    set("age", 32);
-   set("long", "這是守衛高麗的官兵，在這裡檢查來往的行人。\n");
+   set("long", "這是守衞高麗的官兵，在這裏檢查來往的行人。\n");
        
    set("combat_exp",800000);
    

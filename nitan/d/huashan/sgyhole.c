@@ -6,7 +6,7 @@ void create()
 {
         set("short", "山洞");
         set("long", @LONG
-這是一個毫不起眼的山洞，但是裡面的石壁上卻畫滿了五岳劍派
+這是一個毫不起眼的山洞，但是裏面的石壁上卻畫滿了五嶽劍派
 所有已經失傳的精妙絕招。花崗巖石壁(wall)上很多小人，全是用利
 器刻制，想見當初運力之人內力十分深厚。
 LONG );
@@ -42,11 +42,11 @@ int do_mianbi()
 
         ob = this_player();
 
-        if (ob->is_busy()) return notify_fail("你正忙著呢！\n");
+        if (ob->is_busy()) return notify_fail("你正忙着呢！\n");
         c_skill = (int)ob->query_skill("sword", 1);
         if (c_skill < 20)
         {
-                message_vision("$N對劍法的了解顯然太低，無"
+                message_vision("$N對劍法的瞭解顯然太低，無"
                                "法領悟石壁內容。\n", ob);
                 return 1; 
         }
@@ -70,7 +70,7 @@ int do_mianbi()
                 return 1;
         }
 
-        message_vision("$N面對著石壁趺坐靜思，良久，對基本"
+        message_vision("$N面對着石壁趺坐靜思，良久，對基本"
                        "劍法似有所悟。\n", ob);
         ob->improve_skill("sword",1+random(query("int", ob)));
         ob->receive_damage("jing", 15);

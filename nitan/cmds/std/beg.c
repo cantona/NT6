@@ -20,7 +20,7 @@ int main(object me, string arg)
 
         if( query("no_beg", environment(me)) || 
             query("no_fight", environment(me)) )
-                return notify_fail("這裡不是你叫化子能來討飯的地方！\n");
+                return notify_fail("這裏不是你叫化子能來討飯的地方！\n");
 
         if( query_temp("begging", me) )
                 return notify_fail("你已經在向人家乞討了！\n");
@@ -33,7 +33,7 @@ int main(object me, string arg)
                 return notify_fail("你只能乞討硬通貨 :)\n");
 
         if (! victim || victim == me)
-                return notify_fail("你想乞討的對象不在這裡。\n");
+                return notify_fail("你想乞討的對象不在這裏。\n");
 
         if (! living(victim) || ! objectp(victim))
                 return notify_fail("你要向誰乞討？\n");
@@ -48,7 +48,7 @@ int main(object me, string arg)
                 return notify_fail(victim->name() + "對你的乞討理都不理！。\n");
 
         if (me->is_busy())
-                return notify_fail("你現在正忙著呢。\n");
+                return notify_fail("你現在正忙着呢。\n");
 
         if (me->is_fighting())
                 return notify_fail("一邊打架一邊要飯？你真是活膩了！\n");
@@ -65,7 +65,7 @@ int main(object me, string arg)
                 return notify_fail( victim->name() + "身上看起來沒有什麼讓你感興趣的東西。\n");
 
         if( query("equipped", ob) || query("no_drop", ob) )
-                return notify_fail("這是那人的隨身家伙，肯定不會給你。\n");
+                return notify_fail("這是那人的隨身傢伙，肯定不會給你。\n");
 
         sp = (int)me->query_skill("begging");
         sp = sp * sp * sp / 10;
@@ -75,10 +75,10 @@ int main(object me, string arg)
 
         tell_object(me, "你裝出可憐巴巴的樣子，慢慢地向" + victim->name() + "走過去，伸出雙手，想要"
                         +query("unit", ob)+ob->name()+"...\n\n");
-        tell_object(victim, me->name() + "可憐巴巴地向你慢慢走過來，伸出手，說道：" + RANK_D->query_respect(victim) + "行行好，給我"
+        tell_object(victim, me->name() + "可憐巴巴地向你慢慢走過來，伸出手，説道：" + RANK_D->query_respect(victim) + "行行好，給我"
                         +query("unit", ob)+ob->name()+"吧...！\n\n");
         message("vision", "只見" + me->name() + "裝出可憐巴巴的樣子，慢慢地向"
-                + victim->name() + "走過去，\n伸出雙手，說道："
+                + victim->name() + "走過去，\n伸出雙手，説道："
                 + RANK_D->query_respect(victim) + "，行行好吧 ...\n\n", environment(me), ({ me, victim}) );
 
         set_temp("begging", 1, me);
@@ -117,7 +117,7 @@ protected void compelete_beg(object me, object victim, object ob, int sp, int dp
                 if( !query("money_id", ob) || !(amount=ob->query_amount()) )
                 {
                         tell_object(me, "看來還是走吧，這家"
-                                    "伙身上已經沒有多少油水可榨了。\n");
+                                    "夥身上已經沒有多少油水可榨了。\n");
                         return;
                 }
 
@@ -129,9 +129,9 @@ protected void compelete_beg(object me, object victim, object ob, int sp, int dp
                 ob1->set_amount(bcount);
                 ob1->move(me);
 
-                tell_object(me, victim->name() + "低頭想了一會，又看了看你，搖搖頭，嘆了口氣，丟給你一" +
+                tell_object(me, victim->name() + "低頭想了一會，又看了看你，搖搖頭，歎了口氣，丟給你一" +
                                 query("unit", ob1)+ob1->name()+"。\n");
-                tell_object(victim, "你看著" +  me->name() +"的可憐樣，嘆了口氣，丟給他一" +
+                tell_object(victim, "你看着" +  me->name() +"的可憐樣，歎了口氣，丟給他一" +
                                 query("unit", ob1)+ob1->name()+"。\n");
 
                       if (me->can_improve_skill("begging"))

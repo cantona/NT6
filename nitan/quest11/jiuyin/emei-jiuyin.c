@@ -42,10 +42,10 @@ int do_study(string arg)
        if (!arg) return notify_fail("你要讀什麼？\n");
 
        if (me->is_busy())
-            return notify_fail("你現在正忙著呢。\n");
+            return notify_fail("你現在正忙着呢。\n");
 
        if(where->query("sleep_room")|| where->query("no_fight"))
-          return notify_fail("這裡你不能讀書。\n");
+          return notify_fail("這裏你不能讀書。\n");
 
        if( me->is_fighting() )
             return notify_fail("你無法在戰鬥中專心下來研讀新知！\n");
@@ -54,10 +54,10 @@ int do_study(string arg)
             return notify_fail("你是個文盲，先學點文化(literate)吧。\n");
 
        if(! me->query("quest/jiuyin2/pass"))
-          return notify_fail("你從哪裡偷來的九陰真經，無法研讀。\n");
+          return notify_fail("你從哪裏偷來的九陰真經，無法研讀。\n");
 
        if( this_object()->query("owner") != me->query("id"))
-          return notify_fail("你從哪裡偷來的九陰真經，無法研讀。\n");
+          return notify_fail("你從哪裏偷來的九陰真經，無法研讀。\n");
 
        if( (int)me->query("potential") < 1 )
             return notify_fail("你的潛能已經用完了，再怎麼讀也沒用。\n");
@@ -81,8 +81,8 @@ int do_study(string arg)
             if( my_skill >= 180)
                 return notify_fail("你覺得這經書上所寫的已經太淺了，不能學到什麼東西。\n");
             if( my_skill * my_skill * my_skill / 10 > (int)me->query("combat_exp") ) 
-                return notify_fail("也許是缺乏實戰經驗，你對經書上面所說的東西總是無法領會。\n");
-            else write("你研讀著有關九陰白骨爪的技巧，似乎有些心得。\n");
+                return notify_fail("也許是缺乏實戰經驗，你對經書上面所説的東西總是無法領會。\n");
+            else write("你研讀着有關九陰白骨爪的技巧，似乎有些心得。\n");
             me->improve_skill("jiuyin-baiguzhua", ((int)me->query_skill("literate", 1)/5+1) );
             me->receive_damage("jing", cost );
             me->add("neili", -cost * 2);
@@ -93,8 +93,8 @@ int do_study(string arg)
             if( my_skill >= 180)
                 return notify_fail("你覺得這經書上所寫的已經太淺了，不能學到什麼東西。\n");
             if( my_skill * my_skill * my_skill / 10 > (int)me->query("combat_exp") ) 
-                return notify_fail("也許是缺乏實戰經驗，你對經書上面所說的東西總是無法領會。\n");
-            else write("你研讀著有關催心掌的技巧，似乎有些心得。\n");
+                return notify_fail("也許是缺乏實戰經驗，你對經書上面所説的東西總是無法領會。\n");
+            else write("你研讀着有關催心掌的技巧，似乎有些心得。\n");
             me->improve_skill("cuixin-zhang", ((int)me->query_skill("literate", 1)/5+1) );
             me->add("neili", -cost * 2);
             me->receive_damage("jing", cost );
@@ -108,8 +108,8 @@ int do_study(string arg)
                 return notify_fail("你的道德經太淺，不能學到什麼東西。\n");
             else
             if( my_skill * my_skill * my_skill / 10 > (int)me->query("combat_exp") ) 
-                return notify_fail("也許是缺乏實戰經驗，你對經書上面所說的東西總是無法領會。\n");
-            else write("你研讀著有關九陰身法的技巧，似乎有些心得。\n");
+                return notify_fail("也許是缺乏實戰經驗，你對經書上面所説的東西總是無法領會。\n");
+            else write("你研讀着有關九陰身法的技巧，似乎有些心得。\n");
             me->improve_skill("jiuyin-shenfa", ((int)me->query_skill("literate", 1)/5+1) );
             me->add("neili", -cost * 2);
             me->receive_damage("jing", cost );
@@ -123,8 +123,8 @@ int do_study(string arg)
                 return notify_fail("你的道德經太淺，不能學到什麼東西。\n");
             else
             if( my_skill * my_skill * my_skill / 10 > (int)me->query("combat_exp") ) 
-                return notify_fail("也許是缺乏實戰經驗，你對經書上面所說的東西總是無法領會。\n");
-            else write("你研讀著有關九陰真功的技巧，似乎有些心得。\n");
+                return notify_fail("也許是缺乏實戰經驗，你對經書上面所説的東西總是無法領會。\n");
+            else write("你研讀着有關九陰真功的技巧，似乎有些心得。\n");
             me->improve_skill("jiuyin-zhengong", ((int)me->query_skill("literate", 1)/5+1) );
             me->add("neili", -cost * 2);
             me->receive_damage("jing", cost );
@@ -138,8 +138,8 @@ int do_study(string arg)
                 return notify_fail("你的道德經太淺，不能學到什麼東西。\n");
             else
             if( my_skill * my_skill * my_skill / 10 > (int)me->query("combat_exp") ) 
-                return notify_fail("也許是缺乏實戰經驗，你對經書上面所說的東西總是無法領會。\n");
-            else write("你研讀著有關九陰銀龍鞭的技巧，似乎有些心得。\n");
+                return notify_fail("也許是缺乏實戰經驗，你對經書上面所説的東西總是無法領會。\n");
+            else write("你研讀着有關九陰銀龍鞭的技巧，似乎有些心得。\n");
             me->improve_skill("yinlong-bian", ((int)me->query_skill("literate", 1)/5+1) );
             me->add("neili", -cost * 2);
             me->receive_damage("jing", cost );
@@ -149,7 +149,7 @@ int do_study(string arg)
             my_skill = me->query_skill("daode-jing", 1);
             if( my_skill >= 180)
                 return notify_fail("你覺得這經書上所寫的已經太淺了，不能學到什麼東西。\n");
-            write("你研讀著道德經，似乎有些心得。\n");
+            write("你研讀着道德經，似乎有些心得。\n");
             me->improve_skill("daode-jing", ((int)me->query_skill("literate", 1)/5+5) );
             me->receive_damage("jing", cost );
             me->add("potential", - random(2));

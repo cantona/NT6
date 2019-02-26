@@ -6,7 +6,7 @@ inherit CLOTH;
 
 void create()
 {
-        set_name(HIM "幻彩衣" NOR, ({"huan caiyi", "huan", "caiyi"}));
+        set_name(HIM "幻綵衣" NOR, ({"huan caiyi", "huan", "caiyi"}));
         set_weight(1);
         if( clonep() )
                 set_default_object(__FILE__);

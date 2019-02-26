@@ -7,7 +7,7 @@ void create()
 {
         set_name("全二風", ({ "quan  erfeng"}));
 //        set("nickname", "");
-        set("long","昆侖派的叛徒，曾一度投靠朝廷，有著一張黑漆漆的臉，面目可憎。\n");
+        set("long","崑崙派的叛徒，曾一度投靠朝廷，有着一張黑漆漆的臉，面目可憎。\n");
         set("gender", "男性");
         set("age", 45);
         set("attitude", "peaceful");

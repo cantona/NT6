@@ -22,7 +22,7 @@ mapping *action = ({
         "skill_name" : "龍神探影",
         "damage_type" : "內傷"
 ]),
-([      "action" : "$N身行繞著$n急速轉動，忽然出掌，正是一招「飛天幻掌」打向$n的$l",
+([      "action" : "$N身行繞着$n急速轉動，忽然出掌，正是一招「飛天幻掌」打向$n的$l",
         "force" : 150,
         "dodge" : -30,
         "parry" : -30,

@@ -37,7 +37,7 @@ mapping cloth_obj = ([
         "/d/wanjiegu/npc/obj/qi-dress":28,            //東方不敗
         "/d/wanjiegu/npc/obj/pink-dress":28,          //木婉清
         "/d/wanjiegu/npc/obj/pink-cloth":26,          //甘寶寶
-        "/d/wanjiegu/npc/obj/moon-dress":26,          //鐘靈
+        "/d/wanjiegu/npc/obj/moon-dress":26,          //鍾靈
         "/d/wanjiegu/npc/obj/mini-dress":26,          //進喜兒
         "/d/wanjiegu/npc/obj/marry-dress":1,          //暫時無處獲取
         "/d/wanjiegu/npc/obj/liu-dress":1,            //暫時無處獲取
@@ -46,7 +46,7 @@ mapping cloth_obj = ([
         "/d/wanjiegu/npc/obj/feature":1,              //暫時無處獲取
         "/d/wanjiegu/npc/obj/dress":1,                //暫時無處獲取
         "/d/wanjiegu/npc/obj/color-dress":1,          //暫時無處獲取
-        "/d/wanjiegu/npc/obj/cloth":22,               //來福兒、黃眉大師、鐘萬仇
+        "/d/wanjiegu/npc/obj/cloth":22,               //來福兒、黃眉大師、鍾萬仇
         "/d/wanjiegu/npc/obj/blake-cloth":24,         //萬劫谷山路江湖豪客
         "/d/village/npc/obj/cloth":4,                 //很多
         "/d/tulong/yitian/npc/obj/jiaofu":1,          //暫時無處獲取
@@ -109,7 +109,7 @@ mapping cloth_obj = ([
         "/d/fuzhou/npc/obj/cloth":8,                  //福州男孩女孩
         "/d/fuzhou/npc/obj/bluecloth":1,              //暫時無處獲取
         "/d/foshan/npc/obj/magcloth":24,              //佛山胖商人、瘦商人
-        "/d/foshan/npc/obj/goupi":12,                 //佛山狼狗（四只）
+        "/d/foshan/npc/obj/goupi":12,                 //佛山狼狗（四隻）
         "/d/emei/obj/ycloth":24,                      //袁紫衣、周芷若
         "/d/emei/npc/obj/cloth":28,                   //窮漢
         "/d/dali/npc/obj/xiaoao":24,                  //台夷獵手、漁夫
@@ -119,13 +119,13 @@ mapping cloth_obj = ([
         "/d/dali/npc/obj/wchangqun":18,               //養花女、牧羊女、牧羊人、少女
         "/d/dali/npc/obj/tongqun":16,                 //採筍人、台夷婦女、台夷姑娘、祭司、台夷農婦、族長
         "/d/dali/npc/obj/tduanqun":20,                //村婦、台夷商販
-        "/d/dali/npc/obj/qun":4,                      //薛老板購買
+        "/d/dali/npc/obj/qun":4,                      //薛老闆購買
         "/d/dali/npc/obj/maotan":20,                  //採筍人、砍竹人、農夫
-        "/d/dali/npc/obj/kenao":4,                    //歌女、薛老板購買
+        "/d/dali/npc/obj/kenao":4,                    //歌女、薛老闆購買
         "/d/dali/npc/obj/junfu":8,                    //很多
-        "/d/dali/npc/obj/jjunfu":24,                  //錦衣衛士（兩個）
+        "/d/dali/npc/obj/jjunfu":24,                  //錦衣衞士（兩個）
         "/d/dali/npc/obj/hupi":28,                    //傣族首領
-        "/d/dali/npc/obj/guazi":4,                    //薛老板購買
+        "/d/dali/npc/obj/guazi":4,                    //薛老闆購買
         "/d/dali/npc/obj/doupeng":1,                  //暫時無處獲取
         "/d/dali/npc/obj/cynrobe":22,                 //小道姑（兩個）、刀白鳳
         "/d/dali/npc/obj/bduanqun":16,                //台夷商販、採桑女、紡紗女、老祭司、養蠶女
@@ -165,29 +165,29 @@ mapping cloth_obj = ([
         "/d/changan/npc/obj/skirt":12,                //相當多
         "/d/changan/npc/obj/sengyi":24,               //寶象寺知客僧(兩個)
         "/d/changan/npc/obj/sengpao":22,              //慧通禪師、靜明、靜玄
-        "/d/changan/npc/obj/linen":4,                 //伙計、店小二
+        "/d/changan/npc/obj/linen":4,                 //夥計、店小二
         "/d/changan/npc/obj/jinzhuang":4,             //很多
         "/d/changan/npc/obj/cloth":4,                 //很多
         "/d/changan/npc/obj/choupao":10,              //相當多
-        "/d/changan/npc/obj/changpao":12,             //管家、說書老人、劉老實、香客、戲子
+        "/d/changan/npc/obj/changpao":12,             //管家、説書老人、劉老實、香客、戲子
         "/d/changan/npc/obj/bingfu":8,                //很多
         "/d/changan/npc/obj/beixin":4,                //劉老實購買
         "/d/beijing/npc/obj/nvcloth":10,              //相當多
         "/d/beijing/npc/obj/jinvcloth":24,            //妓女（兩個）
         "/d/beijing/npc/obj/jiasha":8,                //很多
-        "/d/beijing/npc/obj/hupi":26,                 //歸鐘、喜來福
+        "/d/beijing/npc/obj/hupi":26,                 //歸鍾、喜來福
         "/d/beijing/npc/obj/guanfu6":8,               //很多
-        "/d/beijing/npc/obj/guanfu5":20,              //城門督察（四個）、馮錫范
+        "/d/beijing/npc/obj/guanfu5":20,              //城門督察（四個）、馮錫範
         "/d/beijing/npc/obj/guanfu4":15,              //東廠官兵、西廠官兵
-        "/d/beijing/npc/obj/guanfu3":24,              //驍騎營侍衛(兩個）
+        "/d/beijing/npc/obj/guanfu3":24,              //驍騎營侍衞(兩個）
         "/d/beijing/npc/obj/guanfu2":22,              //多隆、張康年、趙齊賢
-        "/d/beijing/npc/obj/guanfu1":15,              //御前侍衛（八個）
+        "/d/beijing/npc/obj/guanfu1":15,              //御前侍衞（八個）
         "/d/beijing/npc/obj/goldcloth2":28,           //康親王
         "/d/beijing/npc/obj/goldcloth1":22,           //鰲拜、多隆、鄭克爽
         "/d/beijing/npc/obj/diaoqiu":24,              //鰲拜、韋小寶
         "/d/beijing/npc/obj/cloth6":24,               //齊元凱、麥鯨、過三拳、元廣波
         "/d/beijing/npc/obj/cloth5":28,               //歸辛樹
-        "/d/beijing/npc/obj/cloth4":20,               //獨臂神尼、歸二娘、富家弟子、殷素素
+        "/d/beijing/npc/obj/cloth4":20,               //獨臂神尼、歸二孃、富家弟子、殷素素
         "/d/beijing/npc/obj/cloth3":1,                //暫時無處獲取
         "/d/beijing/npc/obj/cloth2":22,               //酸秀才（三個）
         "/d/beijing/npc/obj/cloth1":8,                //毒郎中、柳大洪、書生、張翠山

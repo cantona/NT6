@@ -25,7 +25,7 @@ mapping *action = ({
         "damage_type":  "刺傷",
 ]),
 ([      
-        "action" :  "$N不進反退，一式「逆水行舟」，$w倒握于手中，卻斜身一劍指向$n",
+        "action" :  "$N不進反退，一式「逆水行舟」，$w倒握於手中，卻斜身一劍指向$n",
         "force"  :  120, 
         "dodge"  :  30,
         "damage" :  35,

@@ -4,7 +4,7 @@ inherit CLOTH;
 
 void create()
 {
-        set_name("青布道袍", ({ "dao pao","pao" }) );
+        set_name("青佈道袍", ({ "dao pao","pao" }) );
         set_weight(300);
         if( clonep() )
                 set_default_object(__FILE__);

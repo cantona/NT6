@@ -9,7 +9,7 @@ void create()
 {
         set("short", "鰲拜書房");
         set("long", @LONG
-這裡是鰲拜書房，卻沒有一本書。各種古玩琳琅滿目，商
+這裏是鰲拜書房，卻沒有一本書。各種古玩琳琅滿目，商
 周青銅、漢瓦當、唐三彩，珍珠寶石，應有盡有，只要擁有其
 中一件，就夠你吃一輩子了。北面牆上有一副畫(hua)。
 LONG);
@@ -58,7 +58,7 @@ int do_xian(string arg)
         if( !query_temp("marks/畫1", me) )
                 return 0;
 
-        write(HIC "\n你掀開畫卷，發現後面竟隱藏著一個把"
+        write(HIC "\n你掀開畫卷，發現後面竟隱藏着一個把"
               "手，似乎可以轉動。\n" NOR);
         set_temp("marks/畫2", 1, me);
         return 1;

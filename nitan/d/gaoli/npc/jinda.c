@@ -8,7 +8,7 @@ void create()
         set_name("金大善人", ({ "jin dashanren", "jin", "dashanren" }));
         set("age", 50);
         set("gender", "男性");
-        set("long","這是高麗有名的大善人，但有人說他是一個江洋大盜,/n");
+        set("long","這是高麗有名的大善人，但有人説他是一個江洋大盜,/n");
         set("attitude", "peaceful");
    set("str", 20);
         set("combat_exp", 800000);

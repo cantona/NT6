@@ -7,8 +7,8 @@ void create()
 {
         set("short", "後廂");
         set("long", @LONG
-這裡是桃源寺的廚房，一個老和尚正在灶邊忙來忙去，看來他
-就是這裡的大師傅了。如果你的肚子餓了，就趕快要 (serve)些吃
+這裏是桃源寺的廚房，一個老和尚正在灶邊忙來忙去，看來他
+就是這裏的大師傅了。如果你的肚子餓了，就趕快要 (serve)些吃
 的吧。
 LONG );
         set("no_clean_up", 0);
@@ -57,6 +57,6 @@ return notify_fail("老和尚道：吃完了再拿，別浪費食物。\n");
 int valid_leave(object me,string dir)
 {
         if(dir=="south" && (present("mifang", me) || present("qingtang", me))) 
-             return notify_fail("老和尚說道：吃了就別帶走。\n");
+             return notify_fail("老和尚説道：吃了就別帶走。\n");
         return ::valid_leave(me,dir);
 }

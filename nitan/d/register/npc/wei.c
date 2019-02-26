@@ -7,7 +7,7 @@ void greeting(object me);
 void create()
 {
         set_name("韋小寶", ({"wei xiaobao", "wei"}));
-        set("long", "他一臉頑皮像，眼神中透露著狡黠，沒有半點正經。\n");
+        set("long", "他一臉頑皮像，眼神中透露着狡黠，沒有半點正經。\n");
         set("gender", "男性");
         set("age", 21);
         set("attitude", "peaceful");

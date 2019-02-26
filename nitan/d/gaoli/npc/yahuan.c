@@ -43,7 +43,7 @@ void welcome(object ob)
      command("say 奴家這廂有禮了！");
      break;
     case 1:
-     command("say 據說老爺要把我納做小妾，不知道是真是假。");
+     command("say 據説老爺要把我納做小妾，不知道是真是假。");
    }
    
 }

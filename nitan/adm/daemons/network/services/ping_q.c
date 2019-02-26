@@ -24,7 +24,7 @@ void create()
         seteuid(ROOT_UID);
         my_address = query_host_name();
         my_port = udp_port();
-        set("channel_id", "網路回應精靈");
+        set("channel_id", "網路迴應精靈");
 }
 
 // Someone has ping'd us

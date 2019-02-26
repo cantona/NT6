@@ -13,8 +13,8 @@ void create()
         set_name("陳家洛", ({ "chen jialuo", "chen","jialuo" }));
         set("title", HIR "紅花會總舵主" NOR);
         set("long", 
-"他一副模樣直是個富貴人家的紈褲子弟，豐姿如玉，目朗似星，輕
-袍緩帶，手中搖著一柄折扇，神採飛揚，氣度閒雅，吐屬斯文。服
+"他一副模樣直是個富貴人家的紈褲子弟，丰姿如玉，目朗似星，輕
+袍緩帶，手中搖着一柄摺扇，神采飛揚，氣度閒雅，吐屬斯文。服
 飾儼然是個貴介公子。\n");
         set("nickname", HIW"玉面神龍"NOR);
         set("gender", "男性");
@@ -83,7 +83,7 @@ int accept_ask(object me, string topic)
         {
         case "歷練" :
         case "歷煉" :
-        case "鍛煉" :
+        case "鍛鍊" :
                 return QUEST_D->accept_ask(this_object(), me, topic);
                 break;
 
@@ -147,7 +147,7 @@ int recognize_apprentice(object ob, string skill)
 {
         if (ob->query_skill(skill, 1) >= 600)
         {
-                command("say 夠了！我就教你到這裡吧，武功還是"
+                command("say 夠了！我就教你到這裏吧，武功還是"
                         "要靠自己多研究才是！");
                 return -1;
         }              

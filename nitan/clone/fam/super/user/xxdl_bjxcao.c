@@ -7,7 +7,7 @@ void create()
         if (clonep())
                 set_default_object(__FILE__);
         else {  
-        	set("long", HIG "冰肌仙草乃長于昆侖山頂，千年方可成形，草色如同人體肌膚且潔白似雪，冰心透骨！\n" + 
+        	set("long", HIG "冰肌仙草乃長於崑崙山頂，千年方可成形，草色如同人體肌膚且潔白似雪，冰心透骨！\n" + 
         	                "服食(fushi bingjixiancao)後可永久提升基本內功1級。\n" HIC
         	                "擁有者：xxdl\n" NOR);
                 set("unit", "束");
@@ -35,7 +35,7 @@ int do_use(string arg)
 		return notify_fail("你身上沒有這個東西！\n");
 		
 	if (ob->query("owner") != me->query("id"))
-		return notify_fail(ob->name() + NOR "已經于其他玩家綁定！\n");
+		return notify_fail(ob->name() + NOR "已經於其他玩家綁定！\n");
 	
 	me->set_skill("force", me->query_skill("force", 1) + 1);
 	

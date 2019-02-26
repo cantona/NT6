@@ -56,7 +56,7 @@ void check_trigger()
 
         if( query("exits/enter", this_object()) )
         {
-                message("vision", "岸邊一只渡船上的老艄公說道：正等著你呢，上來吧。\n",
+                message("vision", "岸邊一隻渡船上的老艄公説道：正等着你呢，上來吧。\n",
                         this_object());
                 return;
         }
@@ -73,7 +73,7 @@ void check_trigger()
         if( query("yell_trigger", room) )
         {
                 message("vision","只聽得"+query("name", this_object())+"面上隱隱傳來：“別急嘛，"
-                        "這兒正忙著吶……”\n", this_object() );
+                        "這兒正忙着吶……”\n", this_object() );
                 return;
         }
 
@@ -103,7 +103,7 @@ void on_board()
         if (room = find_object(query("boat"))) 
         {
                 delete("exits/out", room);
-                message("vision", "艄公把踏腳板收起來，說了一聲“坐穩嘍”，"
+                message("vision", "艄公把踏腳板收起來，説了一聲“坐穩嘍”，"
                         "竹篙一點，扁舟向\n"+query("name", this_object())+"心駛去。\n",
                         room);
         }
@@ -123,7 +123,7 @@ void arrive()
         if (room = find_object(myboat)) 
         {
                 set("exits/out", myopp, room);
-                message("vision", "艄公說“到啦，上岸吧”，隨即把一塊踏腳板"
+                message("vision", "艄公説“到啦，上岸吧”，隨即把一塊踏腳板"
                         "搭上堤岸。\n", 
                         room );
         }

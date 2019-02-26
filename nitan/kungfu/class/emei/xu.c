@@ -95,21 +95,21 @@ int do_nod(string arg)
         command("smile");
         command("say 我講個故事你聽：\n");
 
-        message("vision", "靜虛師太對著"+me->name()+"講了幾句話。\n",
+        message("vision", "靜虛師太對着"+me->name()+"講了幾句話。\n",
                         environment(me), ({me}) );
 
         switch(random(2)) {
                 case 0:
-                write("靜虛師太說：大承和尚曾住在峨嵋山。
-            有個僧人問他：什麼是勝峰？　大承說；直聳煙嵐。
-            僧人又問：向上事（即脫俗之事）如何？　他答：立地三尺五。
-            僧人又問：什麼是佛法？　他就說：興義門前咚咚鼓。
-            那僧說：這我不懂。　大承和尚是怎樣回答他的呢？\n\n");
+                write("靜虛師太説：大承和尚曾住在峨嵋山。
+            有個僧人問他：什麼是勝峯？　大承説；直聳煙嵐。
+            僧人又問：向上事（即脱俗之事）如何？　他答：立地三尺五。
+            僧人又問：什麼是佛法？　他就説：興義門前咚咚鼓。
+            那僧説：這我不懂。　大承和尚是怎樣回答他的呢？\n\n");
 
                 if ((int)me->query_skill("mahayana", 1) > 50 + random(8)) {
-                        write("你想起在一部經書裡讀到過這個故事。\n");
-                        write("你說：朝打三千，暮打八百。\n\n");
-                        message("vision", me->name()+"想了一下，跟靜虛師太說了幾句話。\n",
+                        write("你想起在一部經書裏讀到過這個故事。\n");
+                        write("你説：朝打三千，暮打八百。\n\n");
+                        message("vision", me->name()+"想了一下，跟靜虛師太説了幾句話。\n",
                                 environment(me), ({me}) );
 
                         command("say 阿彌陀佛，善哉！善哉！好吧，我就收下你了。");
@@ -123,15 +123,15 @@ int do_nod(string arg)
                 break;
 
                 case 1:
-                write("靜虛師太說：慧真廣悟曾在峨嵋山出家。
+                write("靜虛師太説：慧真廣悟曾在峨嵋山出家。
             慧真廣悟開堂那天，有個僧人出來問：什麼是佛法大意？
-            慧真廣悟說：日出方知天下朗，無油哪點佛前燈？
-            僧人又問：什麼是雙峰境？　慧真廣悟是怎樣回答他的呢？\n\n");
+            慧真廣悟説：日出方知天下朗，無油哪點佛前燈？
+            僧人又問：什麼是雙峯境？　慧真廣悟是怎樣回答他的呢？\n\n");
 
                 if ((int)me->query_skill("mahayana", 1) > 50 + random(8)) {
-                        write("你想起在一部經書裡讀到過這個典故。\n");
+                        write("你想起在一部經書裏讀到過這個典故。\n");
                         write("你答道：夜聽水流庵後竹，晝起看雲面前山。\n\n");
-                        message("vision", me->name()+"想了一下，跟靜虛師太說了幾句話。\n",
+                        message("vision", me->name()+"想了一下，跟靜虛師太説了幾句話。\n",
                                 environment(me), ({me}) );
 
                         command("say 阿彌陀佛，善哉！善哉！好吧，我就收下你了。");
@@ -191,13 +191,13 @@ int liandan()
         int i;
         if(!objectp(present("liuhuang",me)))
         {
-                command("say 你的身上沒有煉制霹靂彈用的硫磺。");
+                command("say 你的身上沒有煉製霹靂彈用的硫磺。");
                 return 1;
         }
         obj=present("liuhuang",me);
         destruct(obj);
         command("smile");
-        command("say 好吧，我就給你煉制一粒霹靂彈。");
+        command("say 好吧，我就給你煉製一粒霹靂彈。");
         obj=new("/d/emei/obj/pilidan");
         obj->move(me);
         message_vision("靜慈師太給$N一粒霹靂彈。\n",me);

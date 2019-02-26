@@ -19,7 +19,7 @@ int main(object me, string arg)
                 return notify_fail("你現在精神不佳，歇會吧。\n");
 
         if (me->is_busy()) 
-                return notify_fail("你現在正忙著呢。\n");
+                return notify_fail("你現在正忙着呢。\n");
  
         if (! arg || arg == "")
                 return notify_fail("你是打算呼叫誰？\n");

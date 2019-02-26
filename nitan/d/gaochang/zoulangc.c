@@ -8,9 +8,9 @@ void create()
 {
         set("short", "走廊");
         set("long", @LONG
-這裡是殿堂走廊。房頂一側支在南面的高牆上，另一側則與北邊殿
+這裏是殿堂走廊。房頂一側支在南面的高牆上，另一側則與北邊殿
 堂的屋頂相連。彩樑畫棟，抬眼望去，連頂棚也用彩漆繪滿了各種
-飛天的圖形，每幅畫似乎都在訴說一個娓娓動人的故事。
+飛天的圖形，每幅畫似乎都在訴説一個娓娓動人的故事。
 LONG
         );
 
@@ -32,7 +32,7 @@ int valid_leave(object me, string dir)
 {
         if (dir == "north" && (me->query_kar()<25) && !wizardp(me))
                 return notify_fail("\n突然之間，前面一個陰森森的聲音喝道：
-「我在這裡已安安靜靜的住了一千年，誰也不敢來打擾我。那一個大膽過來，立刻就死！」
+「我在這裏已安安靜靜的住了一千年，誰也不敢來打擾我。那一個大膽過來，立刻就死！」
 你只覺得心頭一寒，腳下直哆嗦，再也往前走不了一步。\n ");
         return 1;
 }
@@ -86,19 +86,19 @@ int do_study(string arg)
              if( query("jing", me)>cost )
               {
                       me->improve_skill("literate",(query("int", me)/4));
-                write("你對著牆壁琢磨了一回兒，似乎對讀書識字有點心得。\n");
+                write("你對着牆壁琢磨了一回兒，似乎對讀書識字有點心得。\n");
                 set_temp("stone_learned", 1, me);
                }
              else
                {
                 cost=query("jing", me);
-                write("你現在過于疲倦，無法專心下來研讀讀書識字。\n");
+                write("你現在過於疲倦，無法專心下來研讀讀書識字。\n");
                }
         }
 
         if( !query_temp("stone_learned", me) )
         {
-                write("你對著牆壁琢磨了一回兒，發現上面所說的太過淺顯，對你來說已毫無意義了。\n");
+                write("你對着牆壁琢磨了一回兒，發現上面所説的太過淺顯，對你來説已毫無意義了。\n");
         }
         return 1;
 }

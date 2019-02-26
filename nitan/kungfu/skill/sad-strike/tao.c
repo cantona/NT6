@@ -56,11 +56,11 @@ int perform(object me, object target)
 
         skill=me->query_skill("sad-strike",1);
 
-        message_combatd(HIW"\n$N的掌風隱隱帶著潮湧之聲，掌風鼓盪，竟似有狂潮湧來，這正是神雕大俠當年在海邊練出的絕技。 \n\n"NOR,me,target);
+        message_combatd(HIW"\n$N的掌風隱隱帶着潮湧之聲，掌風鼓盪，竟似有狂潮湧來，這正是神鵰大俠當年在海邊練出的絕技。 \n\n"NOR,me,target);
 
         if (ap/2 + random(ap) > dp)
         {
-                message_combatd(HIR"$n哪裡躲避得開，大驚下已經給$N的掌風印上胸口，一口鮮血狂噴而出！\n\n",me,target);
+                message_combatd(HIR"$n哪裏躲避得開，大驚下已經給$N的掌風印上胸口，一口鮮血狂噴而出！\n\n",me,target);
                 target->receive_damage("qi",damage,me);
                 target->receive_wound("qi",damage/2,me);
                 if (! target->is_busy())
@@ -70,12 +70,12 @@ int perform(object me, object target)
                 message_combatd(HIY"$n見狀不妙，立刻就地一個打滾，雖然姿勢難看以及，不過總算避開了$N這一掌。\n\n"NOR,me,target);
         }
 
-        message_combatd(HIW"\n$N在掌風達到頂峰之時，跟著“魂不守舍”、“倒行逆施”、“若有所失”，連出三招。\n\n"NOR,me,target);
+        message_combatd(HIW"\n$N在掌風達到頂峯之時，跟着“魂不守舍”、“倒行逆施”、“若有所失”，連出三招。\n\n"NOR,me,target);
 
         dp = defense_power(target, "dodge") + target->query_skill("force");
         if (ap/2 + random(ap) > dp)
         {
-                message_combatd(HIR"$n驚魂未定，正喘氣之際，不提防又一陣猛烈的氣浪撲面沖來，復遭$N掌風重創！\n\n",me,target);
+                message_combatd(HIR"$n驚魂未定，正喘氣之際，不提防又一陣猛烈的氣浪撲面衝來，復遭$N掌風重創！\n\n",me,target);
                 target->receive_damage("qi",damage,me);
                 target->receive_wound("qi",damage/2,me);
                 if (! target->is_busy())
@@ -85,12 +85,12 @@ int perform(object me, object target)
                 message_combatd(HIY"$n顧不得反擊，急身後退三丈，臉頰給$N的掌風掃到，微微發紅，不過總算避開了$N這三掌。\n\n"NOR,me,target);
         }
 
-        message_combatd(HIW"跟著$N騰身而起，一招“行屍走肉”，閃電般踢出一腳。\n\n"NOR,me);
+        message_combatd(HIW"跟着$N騰身而起，一招“行屍走肉”，閃電般踢出一腳。\n\n"NOR,me);
 
         dp = defense_power(target, "force") + target->query_skill("force");
         if (ap/2 + random(ap) > dp)
         {
-                message_combatd(HIR"$n眼看著這霸氣沖天的一腳，已然放棄了抵抗，整個臉部給$N重重踹上，牙齒皆碎，面目血色猙獰！\n\n",me,target);
+                message_combatd(HIR"$n眼看着這霸氣沖天的一腳，已然放棄了抵抗，整個臉部給$N重重踹上，牙齒皆碎，面目血色猙獰！\n\n",me,target);
                 target->receive_damage("qi",damage,me);
                 target->receive_wound("qi",damage/2,me);
                 if (! target->is_busy())

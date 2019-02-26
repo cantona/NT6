@@ -1,4 +1,4 @@
-// 昆侖正兩儀劍之雙劍合壁
+// 崑崙正兩儀劍之雙劍合壁
 // Last Modified by Winder on Jun. 23 2001
 
 #include <ansi.h>
@@ -26,7 +26,7 @@ int perform(object me, string arg)
 
         if(!arg) return notify_fail("你想和誰一起合璧？\n");
         if(!objectp(target = present(arg, environment(me))))
-                return notify_fail("這裡沒有這個人。\n");
+                return notify_fail("這裏沒有這個人。\n");
 /*需要判斷是否攻擊同一個人*/
         if( !target->is_fighting() ||
                 !target->is_character() ||

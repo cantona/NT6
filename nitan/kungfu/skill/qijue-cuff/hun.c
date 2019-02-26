@@ -30,7 +30,7 @@ int perform(object me, object target)
 
         if( objectp(weapon=query_temp("weapon", me)) || 
             objectp(weapon=query_temp("handing", me)) )
-                return notify_fail("你必須空著雙手才能使用拳法絕招。\n");
+                return notify_fail("你必須空着雙手才能使用拳法絕招。\n");
 
         if( query("neili", me)<500 )
                 return notify_fail("你的內力不夠。\n");
@@ -57,11 +57,11 @@ int perform(object me, object target)
                 COMBAT_D->do_attack(me, target, 0, 0);
         }
 
-        msg = HIW "一陣拳雨過去，$n" HIW "正待緩過氣來，不料$N" HIW "布滿內家真力的雙拳又迎面擊來！\n\n" NOR;
+        msg = HIW "一陣拳雨過去，$n" HIW "正待緩過氣來，不料$N" HIW "佈滿內家真力的雙拳又迎面擊來！\n\n" NOR;
 
         if (ap / 2 + random(ap) > dp || !living(target))
         {
-                msg += HIY "只聽得“□嚓”一聲，$n" HIY "一陣劇痛，哇地一聲吐出一口" HIR "鮮血" HIY "，結結實實地被命中一拳。\n" NOR;
+                msg += HIY "只聽得“咔嚓”一聲，$n" HIY "一陣劇痛，哇地一聲吐出一口" HIR "鮮血" HIY "，結結實實地被命中一拳。\n" NOR;
                 target->receive_damage("qi", damage, me);
                 target->receive_wound("qi", damage/2, me);
                 str=COMBAT_D->status_msg(query("qi", target)*100/query("max_qi", target));
@@ -69,7 +69,7 @@ int perform(object me, object target)
                 target->start_busy(1);
         } else
         {
-                msg += HIW "$n" HIW "急運內功，全身布滿真氣，迎著$N" HIW "的拳路，“砰砰”幾響，與$N" HIW "鬥了一個旗鼓相當！\n" NOR;
+                msg += HIW "$n" HIW "急運內功，全身佈滿真氣，迎着$N" HIW "的拳路，“砰砰”幾響，與$N" HIW "鬥了一個旗鼓相當！\n" NOR;
         }
 
         me->start_busy(2 + random(2));

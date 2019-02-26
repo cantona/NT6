@@ -50,7 +50,7 @@ int do_use(string arg)
         poison_sk = me->query_skill("poison", 1);
 
         if( query("no_fight", env) )
-                return notify_fail("這裡不適合你用神木王鼎練功。\n");
+                return notify_fail("這裏不適合你用神木王鼎練功。\n");
 
         if( !objectp(target = present(targetname, env)) )
                 return notify_fail("你附近沒有這個人。\n");
@@ -80,7 +80,7 @@ int do_use(string arg)
                 return notify_fail("戰鬥中無法才能使用神木王鼎！\n");
 
         if( me->is_busy() )
-                return notify_fail("你正忙著呢！哪有空做這水磨功夫？\n");
+                return notify_fail("你正忙着呢！哪有空做這水磨功夫？\n");
 
 //        add("count", -1);
         skpoint = poison_sk + random(hgdf_sk);
@@ -88,15 +88,15 @@ int do_use(string arg)
         switch( random(5))
         {
                 case 0:
-                        bugunit = HIR"一條紅艷艷的";
+                        bugunit = HIR"一條紅豔豔的";
                         bugname = HIR"大蜈蚣"HIG;
                         break;
                 case 1:
-                        bugunit = HIC"一只青灰色的";
+                        bugunit = HIC"一隻青灰色的";
                         bugname = HIC"大蜘蛛"HIG;
                         break;
                 case 2:
-                        bugunit = BLK"一只花斑黑格";
+                        bugunit = BLK"一隻花斑黑格";
                         bugname = BLK"大蠍子"HIG;
                         break;
                 default:
@@ -105,9 +105,9 @@ int do_use(string arg)
         }
 
         message_vision(HIG"
-$N取了一只深黃色的小木鼎出來，放在地下，又從鼎底取出一個小小
-布包，打了開來，裡面是幾塊黃色、黑色、紫色的香料。$N從每一塊
-香上捏了少許，放入鼎中，用火刀、火石打著了火，燒了起來，然後合
+$N取了一隻深黃色的小木鼎出來，放在地下，又從鼎底取出一個小小
+布包，打了開來，裏面是幾塊黃色、黑色、紫色的香料。$N從每一塊
+香上捏了少許，放入鼎中，用火刀、火石打着了火，燒了起來，然後合
 上鼎蓋。
 
 過了一陣，忽聽得草叢中瑟瑟聲響，綠草中"+bugunit+bugname+"徑直爬
@@ -119,7 +119,7 @@ $N把$n的手伸進木鼎，"+bugname+"一伸嘴，就一口咬住了$n的中指
 
 過得片刻，木鼎的孔中有一滴滴黑血滴了下來。$N臉現喜色，忙伸掌
 將血液接住，盤膝運功，將血液都吸入掌內。過了好一會，木鼎再無黑
-色滴下，$N雙掌一搓，瞧自己手掌時，但見兩只手掌如白玉無瑕，更
+色滴下，$N雙掌一搓，瞧自己手掌時，但見兩隻手掌如白玉無瑕，更
 無半點血污。\n"NOR, me, target);
 
         target->receive_wound("qi", 40); 

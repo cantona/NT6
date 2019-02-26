@@ -1,12 +1,12 @@
 // This program is a part of NITAN MudLIB
-// 力盪群魔
+// 力蕩羣魔
 
 #include <ansi.h>
 #include <combat.h>
 
 inherit F_SSERVER;
 
-string name() { return RED"力盪群魔"NOR; }
+string name() { return RED"力蕩羣魔"NOR; }
 
 int perform(object me, object target)
 {
@@ -20,33 +20,33 @@ int perform(object me, object target)
         ||  ! target->is_character()
         ||  ! me->is_fighting(target))
                 return notify_fail(
-                        "「"RED"力盪群魔"NOR"」只能對戰鬥中的對手使用。\n");
+                        "「"RED"力蕩羣魔"NOR"」只能對戰鬥中的對手使用。\n");
 
         if( !objectp(weapon=query_temp("weapon", me) )
          || query("skill_type", weapon) != "sword" )
                 return notify_fail("你使用的武器不對。\n");
 
         if (target->is_busy())
-                return notify_fail(target->name() + "目前正自顧不暇，加緊攻擊吧□\n");
+                return notify_fail(target->name() + "目前正自顧不暇，加緊攻擊吧ⅵ\n");
 
         if((int)me->query_skill("xuantie-jian", 1) < 120)
                 return notify_fail(
-                        "你的玄鐵劍法不夠嫻熟，不會使用「"RED"力盪群魔"NOR"」。\n");
+                        "你的玄鐵劍法不夠嫻熟，不會使用「"RED"力蕩羣魔"NOR"」。\n");
 
         if ((int)me->query_skill("surge-force", 1) < 120
         &&  (int)me->query_skill("surge-force", 1) < 120)
                 return notify_fail(
-                        "你的古墓內功修為太淺，不會使用「"RED"力盪群魔"NOR"」。\n");
+                        "你的古墓內功修為太淺，不會使用「"RED"力蕩羣魔"NOR"」。\n");
 
         if (me->query_str() < 40)
                 return notify_fail(
-                        "你的臂力不夠，使用「"RED"力盪群魔"NOR"」過于艱難。\n");
+                        "你的臂力不夠，使用「"RED"力蕩羣魔"NOR"」過於艱難。\n");
 
         if( query("neili", me)<300 )
                 return notify_fail("你的內力不夠！\n");
 
-        msg=HIB"驟然間，$N手中"NOR+query("name", weapon)+HIB"發出一陣轟鳴，帶著隆隆"+
-              "的風雷之聲，挾雷霆萬均之勢，\n一式「"NOR+BLINK+RED"力盪群魔"NOR+HIB"」，" +
+        msg=HIB"驟然間，$N手中"NOR+query("name", weapon)+HIB"發出一陣轟鳴，帶着隆隆"+
+              "的風雷之聲，挾雷霆萬均之勢，\n一式「"NOR+BLINK+RED"力蕩羣魔"NOR+HIB"」，" +
               "手中"NOR+query("name", weapon)+HIB"朝$n當頭直壓下去！\n";
 
         ap = attack_power(me, "sword") + me->query_str()*10;

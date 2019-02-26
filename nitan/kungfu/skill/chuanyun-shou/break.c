@@ -49,7 +49,7 @@ int perform(object me,object target)
         if( query("max_neili", me)<1000 )
                 return notify_fail("你的內力修為不夠，無法運功！\n");
  
-        msg = HIC"$N"HIC"沉肩滑步，自丹田中升起一股陰柔之氣順著血脈經絡傳至雙手勞宮穴，接著這股陰柔之氣就激射而出，噴向$n"HIC"手中的兵刃！\n"; 
+        msg = HIC"$N"HIC"沉肩滑步，自丹田中升起一股陰柔之氣順着血脈經絡傳至雙手勞宮穴，接着這股陰柔之氣就激射而出，噴向$n"HIC"手中的兵刃！\n"; 
 
         ap=query("combat_exp", me);
         dp=query("combat_exp", target)/2;

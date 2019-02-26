@@ -186,7 +186,7 @@ int main(object me,string arg)
 //        || !objectp(female = get_object ( id2 ) ) )
     if(!objectp(male = present(id1, environment(me))) ||
        !objectp(female = present(id2, environment(me))))
-        return notify_fail("這裡沒有這兩個人哦~~\n");
+        return notify_fail("這裏沒有這兩個人哦~~\n");
 
     if ( ! living( male ) || ! living (female) )
         return notify_fail("看清楚點，那不是活的。\n");
@@ -232,7 +232,7 @@ void show_flower(string name1, string name2)
     str = "天空中突然閃出一道絢麗的火花，一個巨大的圖案逐漸\n"
           "顯現：\n";
     str += color1[random(sizeof(color1))] + pic[random(sizeof(pic))] + NOR;
-    str += YEL "四下裡隱隱傳來眾人深沉的祝福聲：\n"
+    str += YEL "四下裏隱隱傳來眾人深沉的祝福聲：\n"
         "     “"HIM + name1 + NOR""YEL"和"NOR""HIM +
         name2 + NOR""YEL"永遠幸福...\n"
         "                                           永遠幸福！！”\n\n\n";

@@ -8,7 +8,7 @@ void create()
         set("short", "閩贛古道");
         set("long", @LONG
 進入江西，還是不盡的山坎和密林幽谷，終日不見天光。放眼山中
-毒蟲猛獸出沒無常，行路艱辛。一到這裡就聞到一股腥風撲鼻而來。
+毒蟲猛獸出沒無常，行路艱辛。一到這裏就聞到一股腥風撲鼻而來。
 LONG );
         set("exits", ([
                 "northwest" : "/d/henshan/hsroad2",

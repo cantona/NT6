@@ -11,7 +11,7 @@ void create()
                 set_default_object(__FILE__);
         else {
                 set("unit", "雙");
-                set("long", RED "傳說中的上古神器。\n" NOR);
+                set("long", RED "傳説中的上古神器。\n" NOR);
                 set("value", 100000);
                 set("rigidity", 8000);
                 set("material", "steel");

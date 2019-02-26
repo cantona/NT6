@@ -8,7 +8,7 @@ void  create  ()
         set("short",  "孟津渡口");
         set("long",  @LONG
 這是洛陽城郊的孟津渡口，眼前就是黃河，濁浪濤天，近岸邊稀稀
-落落長了不少蘆葦。碼頭上正泊著一艘烏篷船。
+落落長了不少蘆葦。碼頭上正泊着一艘烏篷船。
 LONG);
         set("exits",  ([  /*  sizeof()  ==  2  */
                 "east"      : __DIR__"futusi",

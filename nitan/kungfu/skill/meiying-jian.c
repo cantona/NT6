@@ -4,7 +4,7 @@
 inherit SKILL;
 
 mapping *action = ({
-([  "action" : "$N手中$w虛晃了數下，跟著猛然刺向$n的$l，去勢疾若閃電",
+([  "action" : "$N手中$w虛晃了數下，跟着猛然刺向$n的$l，去勢疾若閃電",
     "force" : 60,
     "damage":100,
     "dodge" : 20,
@@ -36,7 +36,7 @@ mapping *action = ({
     "skill_name" : "化虛為實",
     "damage_type" : "刺傷"
 ]),
-([  "action" : "$N滑步錯身，手中$w一沉一收，跟著斜斜揮出，疾挑$n的$l",
+([  "action" : "$N滑步錯身，手中$w一沉一收，跟着斜斜揮出，疾挑$n的$l",
     "force"  : 140,
     "dodge"  : 90,
     "damage" : 100,

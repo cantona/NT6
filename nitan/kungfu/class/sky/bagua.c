@@ -8,7 +8,7 @@ void create()
 
                 八        卦        陣
 
-    這裡是諸葛亮所布之八卦陣，陣內四處亂石嶙峋，看不出
+    這裏是諸葛亮所佈之八卦陣，陣內四處亂石嶙峋，看不出
 到底出口在何處。
 
 LONG NOR );
@@ -37,7 +37,7 @@ void init()
         if (me->query_temp("bagua") >= 10000 ||
             random(10000 - me->query_temp("bagua")) == 0 )
         {
-                 write(HIG "\n你終于走出了八卦陣，你對八卦陣法有了新的認識。\n" NOR);
+                 write(HIG "\n你終於走出了八卦陣，你對八卦陣法有了新的認識。\n" NOR);
                  me->move(__DIR__"sky9");
                  me->add_temp("baguazhen", 1);
                  me->delete_temp("bagua");

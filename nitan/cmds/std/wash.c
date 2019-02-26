@@ -19,7 +19,7 @@ int main(object me, string arg)
         target = arg;
 
         if( !query("resource/water", environment(me)) )
-                return notify_fail("這裡沒水，你怎麼洗？\n");
+                return notify_fail("這裏沒水，你怎麼洗？\n");
 
         if (me->is_busy())
                 return notify_fail("先忙玩了你的事情再洗吧！\n");
@@ -36,7 +36,7 @@ int main(object me, string arg)
                 dest = present(target, me);
                 if (! dest) dest = present(target, environment(me));
                 if (! dest)
-                        return notify_fail("這裡沒有這樣東西。\n");
+                        return notify_fail("這裏沒有這樣東西。\n");
 
                 if (dest->is_character())
                 {
@@ -88,7 +88,7 @@ int main(object me, string arg)
                 if (! dest || ! me)
                         return 1;
 
-                message_vision("$N將脫下來的$n好好的洗了洗" + msg, me, dest);
+                message_vision("$N將脱下來的$n好好的洗了洗" + msg, me, dest);
                 dest->washed(120 + random(120));
                 return 1;
         }

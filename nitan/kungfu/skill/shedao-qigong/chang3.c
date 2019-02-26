@@ -21,7 +21,7 @@ int perform(object me, object target)
                 return notify_fail("你的蛇島奇功不夠嫻熟，不會使用唱仙法吼字決。\n");
 
         if( query("no_fight", environment(me)) )
-                return notify_fail("在這裡不能攻擊他人。\n");
+                return notify_fail("在這裏不能攻擊他人。\n");
 
         if( query("neili", me)<500 )
                 return notify_fail("你已經精疲力竭，真氣不夠了。\n");
@@ -44,7 +44,7 @@ int perform(object me, object target)
                         "聲狂叫：不死神龍，唯我不敗！\n" NOR, me);
 
         if( neili/2+random(neili/2)<query("max_neili", target) )
-                return notify_fail("敵人的內力不遜于你，傷不了！\n");
+                return notify_fail("敵人的內力不遜於你，傷不了！\n");
 
         ap = attack_power(me, "unarmed");
         dp = defense_power(target, "force");

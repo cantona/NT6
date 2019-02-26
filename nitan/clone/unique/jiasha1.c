@@ -12,9 +12,9 @@ void create()
                 destruct(this_object());
         else {
                 set("unit", "件");
-                set("long", HIR "這是一件陳舊的袈裟，通體血紅，印有龍象紋樣。著"
+                set("long", HIR "這是一件陳舊的袈裟，通體血紅，印有龍象紋樣。着"
                             "手處堅韌\n無比，想必是由金剛絲混及雪蠶絲編織而成。"
-                            "更有傳聞說密宗\n神功龍象般若功便是記載于這件袈裟之"
+                            "更有傳聞説密宗\n神功龍象般若功便是記載於這件袈裟之"
                             "上。\n" NOR);
                 set("value", 100000);
                 set("no_sell", "我…我的天…蒙古國師的衣服你也敢拿來賣？");
@@ -49,16 +49,16 @@ int do_force(string arg)
         object me = this_player();
 
         if (! arg || ! id(arg))
-                return notify_fail("你打算往哪裡注入內力？\n");
+                return notify_fail("你打算往哪裏注入內力？\n");
 
         if (me->is_fighting())
                 return notify_fail("你現在正在打架，哪有時間忙這個？\n"); 
 
         if (me->is_busy())
-                return notify_fail("你現在正忙著呢。\n"); 
+                return notify_fail("你現在正忙着呢。\n"); 
 
         if (query("equipped"))
-                return notify_fail("你必須先將" + name() + "脫下。\n");
+                return notify_fail("你必須先將" + name() + "脱下。\n");
 
         if ((int)me->query_skill("longxiang-gong", 1) < 280)
                 return notify_fail("你龍象般若功修為不夠，難以將真氣注入袈裟。\n");
@@ -93,7 +93,7 @@ mixed valid_damage(object ob, object me, int damage)
                 addn("force", -1);
                 return ([ "damage" : -damage,
                           "msg" : HIY "霎時只見" + name() + HIY "上一道光華閃"
-                                  "過，竟然將$N" HIY "這一招化于無形。\n" NOR ]);
+                                  "過，竟然將$N" HIY "這一招化於無形。\n" NOR ]);
         }
 }
 

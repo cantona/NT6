@@ -1,7 +1,7 @@
 inherit SKILL;
 
 mapping *action = ({
-([      "action": "$N單手上抬，一招查拳的﹝沖天炮﹞，對準$n的$l猛擊下去",
+([      "action": "$N單手上抬，一招查拳的［沖天炮］，對準$n的$l猛擊下去",
         "force" : 120,
         "attack": 30,
         "dodge" : 5,
@@ -11,7 +11,7 @@ mapping *action = ({
         "skill_name" : "查拳",
         "damage_type":  "砸傷"
 ]),
-([      "action": "$N一招燕青拳的﹝白鶴亮翅﹞，身子已向左轉成弓箭步，兩臂向後成鉤手，呼\n"
+([      "action": "$N一招燕青拳的［白鶴亮翅］，身子已向左轉成弓箭步，兩臂向後成鈎手，呼\n"
                   "的一聲輕響，反擊$n$l",
         "force" : 180,
         "attack": 35,
@@ -22,7 +22,7 @@ mapping *action = ({
         "skill_name" : "燕青拳",
         "damage_type":  "瘀傷"
 ]),
-([      "action": "$N往後一縱，施展小擒拿手的手法，雙手對著$n$l處的關節直直抓去",
+([      "action": "$N往後一縱，施展小擒拿手的手法，雙手對着$n$l處的關節直直抓去",
         "force" : 220,
         "attack": 40,
         "dodge" : 15,
@@ -32,7 +32,7 @@ mapping *action = ({
         "skill_name" : "小擒拿手",
         "damage_type":  "抓傷"
 ]),
-([      "action": "$N左拳拉開，右拳轉臂回擾，一招少林的大金剛拳突然擊出，帶著許許風聲貫向$n",
+([      "action": "$N左拳拉開，右拳轉臂回擾，一招少林的大金剛拳突然擊出，帶着許許風聲貫向$n",
         "force" : 280,
         "attack": 60,
         "dodge" : 22,
@@ -42,7 +42,7 @@ mapping *action = ({
         "skill_name" : "少林大金剛拳",
         "damage_type":  "瘀傷"
 ]),
-([      "action": "只見$N運足氣力，使出八極拳中的﹝八極翻手式﹞，雙掌對著$n的$l平平攻去",
+([      "action": "只見$N運足氣力，使出八極拳中的［八極翻手式］，雙掌對着$n的$l平平攻去",
         "force" : 340,
         "attack": 55,
         "dodge" : 40,
@@ -62,7 +62,7 @@ mapping *action = ({
         "skill_name" : "八卦掌",
         "damage_type":  "瘀傷"
 ]),
-([      "action": "$N提氣遊走，左手護胸，右手一招遊身八卦掌的﹝遊空探爪﹞，迅速拍向$n$l",
+([      "action": "$N提氣遊走，左手護胸，右手一招遊身八卦掌的［遊空探爪］，迅速拍向$n$l",
         "force" : 420,
         "attack": 80,
         "dodge" : 45,
@@ -82,7 +82,7 @@ mapping *action = ({
         "skill_name" : "武當綿掌",
         "damage_type":  "瘀傷"
 ]),
-([      "action": "$N突然飛身一躍而起，雙手握做爪狀，朝著$n的$l猛然抓去，凜然是鷹爪功的招式",
+([      "action": "$N突然飛身一躍而起，雙手握做爪狀，朝着$n的$l猛然抓去，凜然是鷹爪功的招式",
         "force" : 440,
         "attack": 105,
         "dodge" : 90,
@@ -92,7 +92,7 @@ mapping *action = ({
         "skill_name" : "鷹爪功",
         "damage_type":  "抓傷"
 ]),
-([      "action": "只見$N身形一矮，雙手翻滾，一招太極拳﹝雲手﹞直拿$n$l",
+([      "action": "只見$N身形一矮，雙手翻滾，一招太極拳［雲手］直拿$n$l",
         "force" : 450,
         "attack": 90,
         "dodge" : 90,
@@ -183,7 +183,7 @@ mapping query_action(object me, object weapon)
 int practice_skill(object me)
 {
         if( query("qi", me)<60 )
-                return notify_fail("你現在手足酸軟，休息一下再練吧。\n");
+                return notify_fail("你現在手足痠軟，休息一下再練吧。\n");
 
         if( query("neili", me)<120 )
                 return notify_fail("你的內力不夠了。\n");

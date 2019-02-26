@@ -1,4 +1,4 @@
-// lunhui.c 六道杖法絕招：輪回罔生
+// lunhui.c 六道杖法絕招：輪迴罔生
 // By Alf, Last Update 2001.10
 
 #include <ansi.h>
@@ -10,7 +10,7 @@ int perform(object me, object target)
     int damage,sk1,sk2,exp1,exp2,stf;
 
     if( !target || !target->is_character() || !me->is_fighting(target) )
-        return notify_fail("「輪回罔生」只能對戰鬥中的對手使用。\n");
+        return notify_fail("「輪迴罔生」只能對戰鬥中的對手使用。\n");
 
     sk1 = (int)me->query_skill("staff");
     if(target->query_skill_mapped("parry")==target->query_attack_skill())
@@ -26,10 +26,10 @@ int perform(object me, object target)
         return notify_fail("你使用的武器不對。\n");
                 
     if(stf < 100 )
-        return notify_fail("你的六道杖法不夠嫻熟，無法使出「輪回罔生」。\n");
+        return notify_fail("你的六道杖法不夠嫻熟，無法使出「輪迴罔生」。\n");
                                 
      if( query("neili", me)<300 )
-        return notify_fail("你現在內力太弱，不能使用「輪回罔生」。\n");
+        return notify_fail("你現在內力太弱，不能使用「輪迴罔生」。\n");
 
     msg = 
 HIY"$N突然冷哼一聲，手腕一挺，勁氣貫處，"+weapon->name()+HIY"去勢如箭，向$n當胸疾刺！\n"NOR;

@@ -225,7 +225,7 @@ void escape_me(object ob,object me)
 {
         message_vision(
                        "$N獰笑了幾聲：“今天心情好，" + RANK_D->query_self_rude(ob) +
-                       "就放過你，不陪你玩了。”說罷，一個筋鬥跳出戰圈，不知去向。\n", ob);
+                       "就放過你，不陪你玩了。”説罷，一個筋斗跳出戰圈，不知去向。\n", ob);
 
         destruct(ob);
 }
@@ -250,7 +250,7 @@ void unconcious()
                                 message_vision(HIR "眼見$N" HIR + condition[random(sizeof(condition))]
                                                 +"，突然$N大喝一聲，急退幾步，\n“撲通”給$n跪了下來。"
                                                 "\n" NOR, ob, me);
-                                tell_object(me, HIW + ob->name() + "突然從懷裡掏出一堆白花花的銀子，小聲"
+                                tell_object(me, HIW + ob->name() + "突然從懷裏掏出一堆白花花的銀子，小聲"
                                                 "對你道：“這位" + RANK_D->query_respect(me) + "，\n你"
                                                 "就網開一面（nod）如何，這" + chinese_number(amount) +
                                                 "兩白銀就歸你了！”\n" NOR);
@@ -266,7 +266,7 @@ void unconcious()
                                 message_vision(HIR "眼見$N" HIR + condition[random(sizeof(condition))]
                                                 +"，突然$N大喝一聲，急退幾步，\n“撲通”給$n跪了下來。"
                                                 "\n" NOR, ob, me);
-                                tell_object(me, HIW + ob->name() + "突然從懷裡掏出一塊寶石，小聲"
+                                tell_object(me, HIW + ob->name() + "突然從懷裏掏出一塊寶石，小聲"
                                                 "對你道：“這位" + RANK_D->query_respect(me) + "，\n你"
                                                 "就網開一面（nod）如何，這寶石就歸你了！”\n" NOR);
                                 remove_all_enemy(0); 

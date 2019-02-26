@@ -10,7 +10,7 @@ void create()
 {
         set("short", HIR"戰場入口"NOR);
         set("long", @LONG
-這裡是戰場的入口。。。
+這裏是戰場的入口。。。
 LONG);
         set("outdoors", "battle");
         set("invalid_startroom", 1);

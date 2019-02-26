@@ -7,9 +7,9 @@ void create()
         set_name("鍾兆英", ({ "zhong zhaoying", "zhong", "zhaoying", "ying" }));
         set("long", @LONG
 這人是鍾氏三雄的老二鍾兆英。只見他身穿白
-色粗麻布衣服，白帽白鞋，衣服邊上露著毛頭，
+色粗麻布衣服，白帽白鞋，衣服邊上露着毛頭，
 竟是剛死了父母的孝子服色，臉色慘白，鼻子
-又扁又大，鼻孔朝天，留著黑胡子。
+又扁又大，鼻孔朝天，留着黑鬍子。
 LONG );
         set("nickname", HIR "鍾氏三雄" NOR);
         set("title", "鄂北鍾氏兄弟");

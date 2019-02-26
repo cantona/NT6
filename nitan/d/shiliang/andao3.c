@@ -8,8 +8,8 @@ void create()
 {
         set("short", "暗道盡頭");
         set("long",@LONG
-這裡是暗道的盡頭，有扇鐵門(door)看起來很陳舊，不知道通往
-哪裡。
+這裏是暗道的盡頭，有扇鐵門(door)看起來很陳舊，不知道通往
+哪裏。
 LONG                
         );
         set("no_clean_up", 0);

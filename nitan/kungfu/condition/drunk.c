@@ -61,7 +61,7 @@ int update_condition(object me, int duration)
                 me->receive_damage("jing", 10);
         } else if (duration > limit/4)
         {
-                tell_object(me, "你覺得一陣酒意上沖，眼皮有些沉重了。\n");
+                tell_object(me, "你覺得一陣酒意上衝，眼皮有些沉重了。\n");
                 message("vision", me->name() + "臉上已經略顯酒意了。\n",
                         environment(me), me);
                 me->receive_healing("jing", 10);

@@ -38,7 +38,7 @@ int perform(object me, object target)
         for(i = 0; i < 5; i++)
         if( me->is_fighting(ob) && ob->is_fighting(me) && query("eff_qi", ob)>0 )
         {
-              set_temp("action_msg", "緊接著", me);
+              set_temp("action_msg", "緊接着", me);
               if( !query("equipped", weapon))break;
               
               COMBAT_D->do_attack(me, ob,weapon, 0);

@@ -4,12 +4,12 @@
 #include <ansi.h>
 inherit NPC;
 
-string comeon = HIB"你突然聽到一聲厲嘯，仿佛感到一個長發怪物一閃而過。\n"NOR; 
+string comeon = HIB"你突然聽到一聲厲嘯，彷彿感到一個長髮怪物一閃而過。\n"NOR; 
 
 string *stya = ({ 
-HIB"$N感到長發從臉上掃過，頓時一陣火辣辣的疼痛。\n"NOR, 
-HIB"$N忽覺嘴唇被緊緊吸住，一股"HIR"鮮血"HIB"從口內急瀉而出。\n"NOR, 
-HIR"$n張開正滴著血的大口，在$N身上一陣亂咬。\n"NOR, 
+HIB"$N感到長髮從臉上掃過，頓時一陣火辣辣的疼痛。\n"NOR, 
+HIB"$N忽覺嘴脣被緊緊吸住，一股"HIR"鮮血"HIB"從口內急瀉而出。\n"NOR, 
+HIR"$n張開正滴着血的大口，在$N身上一陣亂咬。\n"NOR, 
 HIB"$N突然覺得身上被緊緊抓住，大驚失色，連忙後退數步。\n"NOR
 }); 
 
@@ -28,7 +28,7 @@ void create()
     set("age", 200);
     set("per", 25);
     set("long",
-        "一種專門吸食人血的鬼魂。常常變成美麗的女子迷惑多情的男人，吸幹他的血。\n");
+        "一種專門吸食人血的鬼魂。常常變成美麗的女子迷惑多情的男人，吸乾他的血。\n");
     set("combat_exp", 100000);
     set("shen_type", -1);
     set("attitude", "peaceful");

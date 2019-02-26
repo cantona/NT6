@@ -5,7 +5,7 @@ void create()
 {
         set("short", "大海");
         set("long", @LONG
-這裡是一望無際的大海；
+這裏是一望無際的大海；
 LONG);
 
         set("no_flyto", 1);

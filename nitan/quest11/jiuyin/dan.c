@@ -4,7 +4,7 @@ inherit ITEM;
 
 void create()
 {
-        set_name(HIW"Quest秘籍"NOR, ({ "yangjing dan","dan" }) );
+        set_name(HIW"Quest祕籍"NOR, ({ "yangjing dan","dan" }) );
         set_weight(10);
                 set("unit", "本");
                 set("long", "一本可以增加Quest機會的書籍。\n");
@@ -33,10 +33,10 @@ int do_read(string arg)
 	
 	if(arg!="miji")
              return notify_fail("你要服用什麼?\n");
-       if (me->is_busy()) {return notify_fail("你正忙著呢。\n");}
+       if (me->is_busy()) {return notify_fail("你正忙着呢。\n");}
 	if (!me->query("wizard/jiemi")<10)
 	{
-		tell_object(me, HIR"你讀完Quest秘籍，朦朧間你仿佛看到了如下選擇：\n"NOR);
+		tell_object(me, HIR"你讀完Quest祕籍，朦朧間你彷彿看到了如下選擇：\n"NOR);
 		tell_object(me, HIR"1：九陰上Quest解謎。\n"NOR);
 		tell_object(me, HIR"2：九陰下Quest解迷。\n"NOR);
 		tell_object(me, HIR"3：冷泉神功Quest解謎。\n"NOR);
@@ -201,7 +201,7 @@ void get_gift(string arg)
 			input_to("get_gift", 1);
 			return;
 	}
-	tell_object(me, HIR"你已經將Quest解謎秘籍。\n"NOR);
+	tell_object(me, HIR"你已經將Quest解謎祕籍。\n"NOR);
 	tell_object(me, HIR + str + NOR);
 	destruct(this_object());
 	return;

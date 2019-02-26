@@ -3,9 +3,9 @@ inherit ROOM;
 
 void create()
 {
-        set("short", HIM "紹鍾斻" NOR);
+        set("short", HIM "殘破靈堂" NOR);
         set("long", @LONG
-紹鍾斻ㄐ
+殘破靈堂！
 LONG);
         
         set("maze", 1);

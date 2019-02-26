@@ -4,7 +4,7 @@ void create()
 {
         set("short", "洞口");
         set("long", @LONG
-這裡是山賊的老窩的洞口，幾個山賊把守在洞前，來回的巡視著，
+這裏是山賊的老窩的洞口，幾個山賊把守在洞前，來回的巡視着，
 守備很是森嚴。
 LONG );
         set("outdoors", "baituo");

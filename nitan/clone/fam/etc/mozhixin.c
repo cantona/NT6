@@ -4,12 +4,12 @@ inherit ITEM;
 int is_enchase_ob() { return 1; } 
 void create()
 {
-        set_name(HIY "聖魔之心﹒魔" NOR, ({"mozhi xin", "mozhi", "xin"}));
+        set_name(HIY "聖魔之心·魔" NOR, ({"mozhi xin", "mozhi", "xin"}));
         set_weight(300);
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("long", HIY "霎那間天地變色，萬物隱匿，乃魔界至高無上的寶物，支配著魔界萬物。\n" NOR);
+                set("long", HIY "霎那間天地變色，萬物隱匿，乃魔界至高無上的寶物，支配着魔界萬物。\n" NOR);
                 set("unit", "塊");
                 set("value", 13000);
                 set("can_be_enchased", 1);

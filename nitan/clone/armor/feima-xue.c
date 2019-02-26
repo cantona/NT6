@@ -11,7 +11,7 @@ void create()
                 set_default_object(__FILE__);
         else {
                 set("unit", "雙");
-                set("long", HIW "一雙做工奇特人間罕見的寶靴子，蘊藏著神奇的力量。\n");
+                set("long", HIW "一雙做工奇特人間罕見的寶靴子，藴藏着神奇的力量。\n");
                 set("value", 2000000);
                 set("armor_prop/armor", 200);
                 set("armor_prop/dex", 1); //後天身法+1

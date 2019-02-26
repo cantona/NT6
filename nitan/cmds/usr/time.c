@@ -27,7 +27,7 @@ mapping *solarfete = ({
         ([        "month" :  4, "day" :  1, "name" : GRN"愚人節"NOR]),
         ([        "month" :  4, "day" :  5, "name" : CYN"清明節"NOR]),
         ([        "month" :  4, "day" :  6, "name" : RED"廈門大學校慶"NOR]),
-        ([        "month" :  4, "day" :  7, "name" : CYN"世界衛生日"NOR]),
+        ([        "month" :  4, "day" :  7, "name" : CYN"世界衞生日"NOR]),
         ([        "month" :  4, "day" :  9, "name" : CYN"耶酥受難日"NOR]),
         ([        "month" :  4, "day" : 12, "name" : CYN"復活節星期一"NOR]),
         ([        "month" :  4, "day" : 22, "name" : CYN"世界地球日"NOR]),
@@ -48,7 +48,7 @@ mapping *solarfete = ({
         ([        "month" :  6, "day" : 25, "name" : MAG"全國土地日"NOR]),
         ([        "month" :  6, "day" : 26, "name" : MAG"國際禁毒日"NOR]),
         ([        "month" :  7, "day" :  1, "name" : RED"中共建黨節"NOR]),
-        ([        "month" :  7, "day" :  1, "name" : HIR"香港回歸日"NOR]),
+        ([        "month" :  7, "day" :  1, "name" : HIR"香港迴歸日"NOR]),
         ([        "month" :  7, "day" :  1, "name" : HIY"世界建築日"NOR]),
         ([        "month" :  7, "day" :  7, "name" : RED"抗戰紀念日"NOR]),
         ([        "month" :  7, "day" : 11, "name" : GRN"世界人口日"NOR]),
@@ -72,7 +72,7 @@ mapping *solarfete = ({
         ([        "month" : 11, "day" : 25, "name" : HIY"感恩節"NOR]),
         ([        "month" : 12, "day" :  5, "name" : BLU"國際志願人員日"NOR]),
         ([        "month" : 12, "day" : 10, "name" : BLU"世界人權日"NOR]),
-        ([        "month" : 12, "day" : 20, "name" : HIG"澳門回歸日"NOR]),
+        ([        "month" : 12, "day" : 20, "name" : HIG"澳門迴歸日"NOR]),
         ([        "month" : 12, "day" : 24, "name" : BLU"聖誕夜"NOR]),
         ([        "month" : 12, "day" : 25, "name" : BLU"聖誕節"NOR]),
 });
@@ -232,7 +232,7 @@ int main(object me, string arg)
                         printf(solarfete[i]["name"]+NOR);
         }
         write("\n");
-        write( "現在的 農歷 日期 "+HIC"黃帝歷"+lunar(now[LT_YEAR]+" "+(string)(now[LT_MON]+1)+" "+now[LT_MDAY])+NOR);
+        write( "現在的 農曆 日期 "+HIC"黃帝歷"+lunar(now[LT_YEAR]+" "+(string)(now[LT_MON]+1)+" "+now[LT_MDAY])+NOR);
 
         prepare();
         return 1;
@@ -405,9 +405,9 @@ int help(object me)
         write(@HELP
 指令格式: time
 
-    這個指令讓你知道現在的遊戲時間、現實的北京時間和農歷、節日，以
+    這個指令讓你知道現在的遊戲時間、現實的北京時間和農曆、節日，以
 及遊戲已經連續進行的時間。
-    這個指令還能讓你換算農歷。如： time 1999-12-31，將得到當天的農
+    這個指令還能讓你換算農曆。如： time 1999-12-31，將得到當天的農
 歷日期。
 
 HELP

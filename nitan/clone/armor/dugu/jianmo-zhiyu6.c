@@ -12,7 +12,7 @@ void create()
                 set_default_object(__FILE__);
         else {
                 set("unit", "件");
-                set("long", HIW "這是由獨孤求敗取神雕羽毛精心制作而成的頭飾，其中似乎蘊涵了高深的武學真諦。\n" NOR);
+                set("long", HIW "這是由獨孤求敗取神鵰羽毛精心製作而成的頭飾，其中似乎藴涵了高深的武學真諦。\n" NOR);
                 set("value", 1500000);
                 set("armor_prop/dex", 50);
                 set("armor_prop/str", 50);

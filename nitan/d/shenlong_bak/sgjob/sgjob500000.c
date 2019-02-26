@@ -6,7 +6,7 @@
 inherit F_CLEAN_UP;
 
 mapping *sgjobs = ({
-        ([      "sgjob":          "藍玉砵",
+        ([      "sgjob":          "藍玉缽",
                 "sgjob_type":           "尋",
                 "exp_bonus":             500,
                 "score":                 10,
@@ -42,19 +42,19 @@ mapping *sgjobs = ({
                 "score":                 15,
         ]),
 
-        ([      "sgjob":          "少林秘籍",
+        ([      "sgjob":          "少林祕籍",
                 "sgjob_type":           "尋",
                 "exp_bonus":             300,
                 "score":                 10,
         ]),
 
-        ([      "sgjob":          "少林秘籍",
+        ([      "sgjob":          "少林祕籍",
                 "sgjob_type":           "尋",
                 "exp_bonus":             300,
                 "score":                 10,
         ]),
 
-        ([      "sgjob":          "少林秘籍",
+        ([      "sgjob":          "少林祕籍",
                 "sgjob_type":           "尋",
                 "exp_bonus":             300,
                 "score":                 10,

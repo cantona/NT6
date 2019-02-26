@@ -13,7 +13,7 @@ string* names = ({
 });
 
 string* longs = ({
-        "這是一冊厚重的古書，文字極多，卻很少注解。\n",
+        "這是一冊厚重的古書，文字極多，卻很少註解。\n",
         "這是一冊破舊的古書，有些字跡已經模糊不清，難以理解。\n",
         "這是一冊薄皮古書，寫滿了蠅頭小字，不易看得清楚。\n",
 });
@@ -43,19 +43,19 @@ int do_qingjiao(string arg)
         me = this_player();
         jing_cost=150/query("int", me)+1;
         if (me->is_busy())
-                return notify_fail("你現在正忙著呢。\n");
+                return notify_fail("你現在正忙着呢。\n");
         if( me->is_fighting() )
                 return notify_fail("先把這場架打完吧。\n");
         if( !arg )
                 return notify_fail("你想請教誰？\n");
         if(!objectp(ob = present(arg, environment(this_player()))))
-                return notify_fail("這裡沒有這個人。\n");
+                return notify_fail("這裏沒有這個人。\n");
         if (me == ob)
                 return notify_fail("自己請教自己？\n");
         if( !ob->is_character() || ob->is_corpse() )
                 return notify_fail("看清楚一點，那並不是活物。\n");
         if( !living(ob) )
-                return notify_fail("嗯....你得先把" + ob->name() + "弄醒再說。\n");
+                return notify_fail("嗯....你得先把" + ob->name() + "弄醒再説。\n");
         if( query("potential", me)<2 )
                 return notify_fail("你的潛能不足，無法領會任何東西。\n");
 

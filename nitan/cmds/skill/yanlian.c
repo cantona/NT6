@@ -14,16 +14,16 @@ int main(object me, string arg)
         seteuid(getuid());
 
         if (me->is_busy())
-                return notify_fail("你現在正忙著呢。\n");
+                return notify_fail("你現在正忙着呢。\n");
 
         if( query("no_fight", environment(me)) )
-                return notify_fail("你在這裡演練也不怕吵到別人？\n");
+                return notify_fail("你在這裏演練也不怕吵到別人？\n");
 
         if (! arg)
                 return notify_fail("你想演練什麼？\n");
 
         if (file_size(SKILL_D(arg) + ".c") <= 0)
-                return notify_fail("沒聽說過有這種武功。\n");
+                return notify_fail("沒聽説過有這種武功。\n");
                
         if (! mapp(SKILL_D(arg)->query_sub_skills()))
                 return notify_fail("這種武功無需演練，還是勤加練習吧。\n");

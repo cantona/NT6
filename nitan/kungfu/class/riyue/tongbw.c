@@ -15,7 +15,7 @@ void create()
         set("gender", "男性" );
         set("age", 75);
         set("title", "日月神教風雷堂長老");
-        set("long", "他白發披散, 銀髯戟張, 臉上的肌肉牽動, \n"
+        set("long", "他白髮披散, 銀髯戟張, 臉上的肌肉牽動, \n"
                     "圓睜雙眼, 身上的鮮血已然凝結, 神情甚是可怖。\n");
         set("attitude", "friendly");
         set("shen_type", -1);
@@ -65,13 +65,13 @@ void create()
         set("chat_chance", 2);
         set("chat_msg", ({
             "童百熊怒瞪雙眼道: “我沒錯, 我沒有叛教! 東方兄弟你不能冤枉我呀! ”\n",
-            "童百熊嘆了一口氣說：“我和東方兄弟出生入死, 共歷患難的時候, 你們還沒生下來哪!”\n"
+            "童百熊歎了一口氣説：“我和東方兄弟出生入死, 共歷患難的時候, 你們還沒生下來哪!”\n"
         }));
 
         set("inquiry",([
             "紫金錘"   : (: ask_zijinchui :),
             "紫金錘法" : (: ask_zijinchuifa :),
-            "秘籍"     : (: ask_zijinchuifa :),
+            "祕籍"     : (: ask_zijinchuifa :),
         ]));
         set("zijin_book", 1);
 
@@ -100,7 +100,7 @@ void attempt_apprentice(object ob)
 string ask_zijinchui()
 {
     set_temp("zijin_chuifa", 1, this_player());
-    message_vision("童百熊嘆了口氣，說道：“這柄紫金錘是當年一位"
+    message_vision("童百熊歎了口氣，説道：“這柄紫金錘是當年一位"
                    "武林前輩送給我的。”\n", this_object());
     return "唉，只可惜我未能將錘法練成。";
 }
@@ -116,7 +116,7 @@ string ask_zijinchuifa()
     {
         if (query("zijin_book"))
         {
-            message_vision("童百熊嘆了口氣，說道：“我習練紫金錘法多年，仍不能"
+            message_vision("童百熊歎了口氣，説道：“我習練紫金錘法多年，仍不能"
                            "悟出其中要領，只習得十之一二。”\n", me);
             msg = "這位" + RANK_D->query_respect(me) + "，你我一見如故，這" +
                   "本書我就送你吧，希望你能領悟其中精要。";

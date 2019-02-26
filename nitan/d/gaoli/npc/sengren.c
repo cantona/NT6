@@ -7,7 +7,7 @@ inherit NPC;
 void create()
 {
   set_name("僧人", ({"seng ren","seng","ren"}));
-  set("long","這是靈靜寺的僧人，在這裡掌管寺內事物。\n");
+  set("long","這是靈靜寺的僧人，在這裏掌管寺內事物。\n");
   set("gender", "男性");
   set("class","bonze");
   set("combat_exp", 90000);

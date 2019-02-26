@@ -18,25 +18,25 @@ mapping *action = ({
         "lvl"    : 20,
         "skill_name" :  "霧中初見"
 ]),
-([        "action" : "$N手中$w輕輕揮洒，一招"HIB"「雨後乍逢」"NOR"直刺向$n的雙眼",
+([        "action" : "$N手中$w輕輕揮灑，一招"HIB"「雨後乍逢」"NOR"直刺向$n的雙眼",
         "lvl"    : 30,
         "skill_name" :   "雨後乍逢"
 ]),
-([        "action" : "$N使一招"HIC"「一見鐘情」"NOR"，手中$w劍光暴長，向$n的$l刺去",
+([        "action" : "$N使一招"HIC"「一見鍾情」"NOR"，手中$w劍光暴長，向$n的$l刺去",
         "lvl"    : 40,
-        "skill_name" :   "一見鐘情"
+        "skill_name" :   "一見鍾情"
 ]),
 ([        "action" : "$N劍隨身轉，一招"HIM"「兩小無猜」"NOR"罩向$n的$l",
         "lvl"    : 50,
         "skill_name" : "兩小無猜"
 ]),
-([        "action" : "$N手中$w劍光暴長，飛身而起，一招"MAG"「同生共死」"NOR"往$n嚥喉刺去",
+([        "action" : "$N手中$w劍光暴長，飛身而起，一招"MAG"「同生共死」"NOR"往$n咽喉刺去",
         "lvl"    : 60,
         "skill_name" :  "同生共死"
 ]),
-([        "action" : "$N手中$w化成一道光弧，直指$n$l，一招"HIG"「難舍難分」"NOR"發出虎哮龍吟刺去",
+([        "action" : "$N手中$w化成一道光弧，直指$n$l，一招"HIG"「難捨難分」"NOR"發出虎哮龍吟刺去",
         "lvl"    : 70,
-        "skill_name" :   "難舍難分"
+        "skill_name" :   "難捨難分"
 ]),
 });
 
@@ -45,9 +45,9 @@ int valid_learn(object me)
 {
         object ob;
         if( query("max_neili", me)<50 )
-                return notify_fail("你的內力不夠，沒有辦法練沖靈劍法。\n");
+                return notify_fail("你的內力不夠，沒有辦法練衝靈劍法。\n");
         if( (string)me->query_skill_mapped("force")!= "zixia-shengong")
-                return notify_fail("沖靈劍法必須配合紫霞神功才能練。\n");
+                return notify_fail("衝靈劍法必須配合紫霞神功才能練。\n");
         if( !(ob=query_temp("weapon", me)) ||
                 query("skill_type", ob) != "sword" )
                 return notify_fail("你必須先找一把劍才能練劍法。\n");
@@ -56,10 +56,10 @@ int valid_learn(object me)
 int practice_skill(object me)
 {
         if( query("qi", me)<30 || query("neili", me)<10 )
-                return notify_fail("你的內力或氣不夠，無法練習沖靈劍法。\n");
+                return notify_fail("你的內力或氣不夠，無法練習衝靈劍法。\n");
         me->receive_damage("qi", 30);
         addn("neili", -10, me);
-        write("你按著所學練了一遍沖靈劍法。\n");
+        write("你按着所學練了一遍衝靈劍法。\n");
         return 1;
 }
 string query_skill_name(int level)
@@ -111,13 +111,13 @@ string perform_action_file(string action)
 
 int help(object me)
 {
-        write(HIC"\n沖靈劍法："NOR"\n");
+        write(HIC"\n衝靈劍法："NOR"\n");
         write(@HELP
 
-    這是令狐沖和小師妹岳靈珊兩人在華山練劍時共創的“沖靈劍
-法”。“沖”是令狐沖，“靈”是岳靈珊，是二人好玩而共同鑽研
+    這是令狐沖和小師妹嶽靈珊兩人在華山練劍時共創的“衝靈劍
+法”。“衝”是令狐沖，“靈”是嶽靈珊，是二人好玩而共同鑽研
 出來的劍術。令狐沖的天份比師妹高得多，不論做甚麼事都喜不拘
-成法，別創新意，這路劍法雖說是二人共創，十之八九卻是令狐沖
+成法，別創新意，這路劍法雖説是二人共創，十之八九卻是令狐沖
 想出來的。當時二人武功造詣尚淺，這路劍法中也並沒甚麼厲害的
 招式，只是二人常在無人處拆解，練得卻十分純熟。
 

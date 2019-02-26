@@ -7,7 +7,7 @@ void create()
         set_name("木人", ({ "mu ren", "mu", "wood man", "wood" }) );
         set("gender", "男性" );
         set("age", 30);
-        set("long", "一個練功用的比武木人，制作精巧，如同真人一般。\n");
+        set("long", "一個練功用的比武木人，製作精巧，如同真人一般。\n");
         set("attitude", "heroism");
 
         set("no_get", "1");

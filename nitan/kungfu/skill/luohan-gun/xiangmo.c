@@ -26,7 +26,7 @@ int perform(object me, object target)
         return notify_fail("你現在真氣不夠，無法運用「羅漢降魔」。\n");
                 
         if (! living(target))
-              return notify_fail("對方都已經這樣了，用不著這麼費力吧？\n");
+              return notify_fail("對方都已經這樣了，用不着這麼費力吧？\n");
 
         msg = HIY "$N" HIY "嗨的一聲，一棍平平朝$n"
               HIY "掃出，招式雖然簡單，但是卻也是力道極重。\n" NOR;
@@ -39,7 +39,7 @@ int perform(object me, object target)
                 addn("neili", -50, me);
                 msg += COMBAT_D->do_damage(me, target, WEAPON_ATTACK, damage, 20,
                                            HIR "只見$n" HIR "一個招架失誤，登時"
-                                           "被這棍打了個正著，悶哼一聲，退了一步。\n" NOR);
+                                           "被這棍打了個正着，悶哼一聲，退了一步。\n" NOR);
                 me->start_busy(2);
         } else 
         {

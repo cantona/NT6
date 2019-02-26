@@ -42,7 +42,7 @@ mapping *action = ({
                 "damage_type" : "內傷"
                 ]),
                 ([      
-                "action":"$N中指劃動，無形指力彌漫四周。$n頓時上躥下跳狼狽躲避",
+                "action":"$N中指划動，無形指力瀰漫四周。$n頓時上躥下跳狼狽躲避",
                 "force" : 500,
                 "dodge" : 50,
                 "parry" : 50,

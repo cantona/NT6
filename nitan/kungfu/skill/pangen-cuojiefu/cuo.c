@@ -40,9 +40,9 @@ int perform(object me, object target)
                 return notify_fail("你沒有激發盤根錯節斧，難以施展" + name() + "。\n");
 
         if (! living(target))
-                return notify_fail("對方都已經這樣了，用不著這麼費力吧？\n");
+                return notify_fail("對方都已經這樣了，用不着這麼費力吧？\n");
 
-        msg = HIR "$N" HIR "高舉手中" + weapon->name() + HIR "，陡然一聲斷喝，朝著$n"
+        msg = HIR "$N" HIR "高舉手中" + weapon->name() + HIR "，陡然一聲斷喝，朝着$n"
               HIR "猛揮數斧，氣勢如虹。\n" NOR;
 
         addn("neili", -30, me);

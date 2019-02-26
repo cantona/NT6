@@ -72,7 +72,7 @@ void greeting(object ob)
         int i;
 
         obj = all_inventory(environment(me));
-//一燈大師哈哈大笑，對著黃藥師拱了拱手道：老爺子過獎了!
+//一燈大師哈哈大笑，對着黃藥師拱了拱手道：老爺子過獎了!
         command("nali huang");
         command("say 勁力內含，發之無形，傷人與不覺之中。");
         for(i=0; i<sizeof(obj); i++)

@@ -39,7 +39,7 @@ int do_eat(string arg)
         if( me->query_skill("linji-zhuang", 1) < 180 )
                 return notify_fail("你未曾修成幽冥莊，恐怕吃不得此丹。\n");
         if( me->is_busy() )
-                return notify_fail("別急，慢慢吃，小心別噎著了。\n");
+                return notify_fail("別急，慢慢吃，小心別噎着了。\n");
         message_vision("$N吃下一粒" + name() + "。\n", me);
         log_file("eat_dan", sprintf("[%s] %s eat guiyuan \n", ctime(time()), geteuid(me)));
         delete("dietime", me);

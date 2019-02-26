@@ -6,7 +6,7 @@ inherit MI_QIN;
 
 void create()
 {
-        set_name(HIY "蕉葉古琴﹒明朝" NOR, ({ "jiaoye qin", "jiaoye", "qin" }));
+        set_name(HIY "蕉葉古琴·明朝" NOR, ({ "jiaoye qin", "jiaoye", "qin" }));
         set_weight(700);
 
         if (clonep())

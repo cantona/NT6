@@ -22,7 +22,7 @@ void create()
                 set("no_sell", "我的天...這...這你也拿來賣...官...官府呢？");
                 set("food_supply", 10);
                 set("food_remaining", 4);
-                set("long", RED "一顆鮮血淋淋的首級，須發散亂，余血正緩緩滲出。\n" NOR);
+                set("long", RED "一顆鮮血淋淋的首級，鬚髮散亂，餘血正緩緩滲出。\n" NOR);
         }
 }
 

@@ -10,7 +10,7 @@ void create()
         set("title", HIW "大宗師" NOR);
         set("gender", "男性");
         set("age", 91);
-        set("long", "他身著奇裝異服，相貌平平，便似一般的西域人士。\n");
+        set("long", "他身着奇裝異服，相貌平平，便似一般的西域人士。\n");
         set("attitude", "peaceful");
         set("class", "fighter");
         set("str", 30);
@@ -131,7 +131,7 @@ void die()
 
         return;
 }
-// 氣血小于1000則死亡，避免他人協助幫忙轉世
+// 氣血小於1000則死亡，避免他人協助幫忙轉世
 void heart_beat()
 {
         if (this_object()->query("qi") < 1000 || this_object()->query("eff_qi") < 1000)

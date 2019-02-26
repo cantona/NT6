@@ -7,7 +7,7 @@ void create()
 {
         set("short", "銅門");
         set("long", @LONG
-這是一個月形的銅門，門旁的壁上鑿著“琅環福地”四個大字。
+這是一個月形的銅門，門旁的壁上鑿着“琅環福地”四個大字。
 LONG );
         set("exits", ([
                 "south" : __DIR__"shiji3",

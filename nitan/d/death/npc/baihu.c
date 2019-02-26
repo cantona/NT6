@@ -7,7 +7,7 @@ void create()
         set_name(HIW "白虎" NOR,({"bai hu", "bai", "hu", "tiger"}));
 
         set("race", "野獸");
-        set("long", HIW "\n\n一只長達丈許的巨型猛虎，乃四神獸之一的白虎。\n"
+        set("long", HIW "\n\n一隻長達丈許的巨型猛虎，乃四神獸之一的白虎。\n"
                         "它全身毛皮潔白無暇，很是高貴。\n" NOR);
         set("age", 10000);
         set("attitude", "peaceful");
@@ -95,7 +95,7 @@ void die()
                 addn("combat_exp", exp, me);
                 addn("potential", pot, me);
 
-                tell_object(me, HIC "由于你斬殺神獸白虎，你獲得了" + chinese_number(exp)
+                tell_object(me, HIC "由於你斬殺神獸白虎，你獲得了" + chinese_number(exp)
                                 + "點經驗和" + chinese_number(pot) + "點潛能。\n" NOR);
         }
 
@@ -111,7 +111,7 @@ void die()
                 if( query("potential", me)>me->query_potential_limit() )
                 set("potential", me->query_potential_limit(), me);
 
-                tell_object(me, HIC "由于你斬殺神獸白虎，你獲得了" + chinese_number(exp)
+                tell_object(me, HIC "由於你斬殺神獸白虎，你獲得了" + chinese_number(exp)
                                 + "點經驗和" + chinese_number(pot) + "點潛能。\n" NOR);
         }
 

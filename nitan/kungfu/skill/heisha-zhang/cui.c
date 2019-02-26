@@ -39,10 +39,10 @@ int perform(object me, object target)
                 return notify_fail("你的真氣不夠，難以施展" CUI "。\n");
 
         if (! living(target))
-                return notify_fail("對方都已經這樣了，用不著這麼費力吧？\n");
+                return notify_fail("對方都已經這樣了，用不着這麼費力吧？\n");
 
         msg = HIB "$N" HIB "冷笑數聲，單掌陡然一振，催魂般悄然拍至$n"
-              HIB "前胸，不著半點力道。\n" NOR;  
+              HIB "前胸，不着半點力道。\n" NOR;  
 
         lvl = me->query_skill("heisha-zhang", 1);
 
@@ -60,12 +60,12 @@ int perform(object me, object target)
                                   "duration" : lvl / 50 + random(lvl / 20) ]));
                                   msg += COMBAT_D->do_damage(me, target, UNARMED_ATTACK,
                                          damage, 20, HIR "$n" HIR "只覺$N" HIR "掌勁穿"
-                                         "胸而過，一時說不出的難受，嘔出一大口黑血。\n"
+                                         "胸而過，一時説不出的難受，嘔出一大口黑血。\n"
                                          NOR);
         } else
         {
                 msg += CYN "$n" CYN "見$N"
-                       CYN "來勢洶湧，奮力格擋，終于化解開來。\n" NOR;
+                       CYN "來勢洶湧，奮力格擋，終於化解開來。\n" NOR;
         }
         message_combatd(msg, me, target);
 

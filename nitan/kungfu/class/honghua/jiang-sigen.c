@@ -111,7 +111,7 @@ void hit_ob(object ob)
         if (guard1 && ! guard1->is_fighting())
         {
                 message_vision (HIW "\n楊成協大怒，喝道：居然欺到我們紅花會"
-                                "頭上來了，大家並肩子上！\n\n" NOR, guard1);
+                                "頭上來了，大家併肩子上！\n\n" NOR, guard1);
                 guard1->kill_ob(ob);
         }
 
@@ -144,7 +144,7 @@ void kill_ob(object ob)
         if (guard1 && ! guard1->is_fighting())
         {
                 message_vision (HIW "\n楊成協大怒，喝道：居然欺到我們紅花會"
-                                "頭上來了，大家並肩子上！\n\n" NOR, guard1);
+                                "頭上來了，大家併肩子上！\n\n" NOR, guard1);
                 guard1->kill_ob(ob);
         }
 

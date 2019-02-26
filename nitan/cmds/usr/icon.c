@@ -45,7 +45,7 @@ int help()
         write("命令格式："+HIY+"icon [圖標編號]\n"+NOR+
                 "    你可以用本命令查詢和修改自己的頭像編號。\n"+
                 "    你可以去[http://www.qqchat.net]查詢和選擇自己的頭像圖標編號。\n"+
-                "    目前圖標可以選擇范圍是"+HIR+" 1 - "+MAX_ICONS+NOR+" 。\n");
+                "    目前圖標可以選擇範圍是"+HIR+" 1 - "+MAX_ICONS+NOR+" 。\n");
         return 1;
 }
 

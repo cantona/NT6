@@ -41,7 +41,7 @@ int perform(object me, object target)
 　　　　　　　　   I@@I I@@_I@@II@@P 　　　　 `~~~~~~I@@I~~~~~' 
 　　　　　　　　   I@@I '~~'I@@I~~'  　　　　~~~~~~~~@@@@~~~~~~~
 　　　　　　　　   I@@I     I@@I     　　　　   I-z_z@@@P       \n"NOR;
-        msg += HIY"\n跟著拳隨聲至，勢如急風驟雨一般，逕直擊往$n的胸腹要害！！！\n"NOR;  
+        msg += HIY"\n跟着拳隨聲至，勢如急風驟雨一般，逕直擊往$n的胸腹要害！！！\n"NOR;  
 
         if( random(query("combat_exp", me))>query("combat_exp", target)/2 )
         { 

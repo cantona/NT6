@@ -6,7 +6,7 @@ void create()
    set_name("武將",({ "wu jiang","jiang","wu" }) );
    set("gender", "男性" );
    set("age", 32);
-   set("long", "這是守衛高麗的武將，看起來十分威風。\n");
+   set("long", "這是守衞高麗的武將，看起來十分威風。\n");
        
    set("combat_exp",800000);
    set("guard","高麗");

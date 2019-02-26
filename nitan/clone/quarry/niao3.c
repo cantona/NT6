@@ -4,7 +4,7 @@ inherit QUARRY;
 void create()
 {
         set_name(NOR + CYN "烏鴉" NOR, ({ "wu ya", "wu", "ya" }));
-        set("long", CYN "這是一只黑烏鴉，呱呱叫個不停。\n" NOR);
+        set("long", CYN "這是一隻黑烏鴉，呱呱叫個不停。\n" NOR);
         set("no_auto_kill", 1);
         set("aves", 1);
 

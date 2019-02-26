@@ -14,7 +14,7 @@ void create()
 如果你要出村，可以找他（ask hua about 出村）。
 LONG);        
         set("gender", "男性" );
-        set("title", HIR "古村守衛" NOR); 
+        set("title", HIR "古村守衞" NOR); 
         set("age", 88);
         set("attitude", "friendly");
         set("max_jing", 5000000);
@@ -141,7 +141,7 @@ mixed ask_chucun()
         msg+= HIC "3. 拜師（到門派入門師傅處）\n" NOR;
         msg+= HIC "4. 我還是先在古村四處逛逛吧。\n" NOR;
         msg+= HIW "--------------------------------------------\n" NOR;
-        msg+= HIR "請輸入1─4編號。\n\n" NOR;
+        msg+= HIR "請輸入1—4編號。\n\n" NOR;
 
         tell_object(me, msg);
 
@@ -158,7 +158,7 @@ void get_select(string arg, object me)
 
         if (arg != "1" && arg != "2" && arg != "3")
         {
-                tell_object(me, HIG "請輸入 1─4 中的數字！\n");
+                tell_object(me, HIG "請輸入 1—4 中的數字！\n");
                 input_to("get_select", me);
                 return;
         }
@@ -174,7 +174,7 @@ void get_select(string arg, object me)
                 addn("potential", 100000, me);
                 tell_object(HIG "新手獎勵：你成功出古村，獲得5萬經驗和10萬潛能的獎勵！\n" NOR);
                         
-                // 取消拜師標志
+                // 取消拜師標誌
                 delete("family", me);
                 delete("title", me);
                 set("title", "普通百姓", me);
@@ -195,7 +195,7 @@ void get_select(string arg, object me)
                 addn("potential", 100000, me);
                 tell_object(HIG "新手獎勵：你成功出古村，獲得5萬經驗和10萬潛能的獎勵！\n" NOR);
                                 
-                // 取消拜師標志
+                // 取消拜師標誌
                 delete("family", me);
                 delete("title", me);
                 set("title", "普通百姓", me);
@@ -219,14 +219,14 @@ void get_select(string arg, object me)
                           "f9.  星宿派            f23. 梅  莊\n" 
                           "f10. 古墓派            f24. 雪山派\n"
                           "f11. 全真派            f25. 鎮遠鏢局\n"
-                          "f12. 昆侖派            f26. 絕情谷\n"
+                          "f12. 崑崙派            f26. 絕情谷\n"
                           "f13. 桃花島            f27. 日月神教\n"
                           "f14. 藥王谷\n\n"
                           "s1.  歐陽世家          s2.  中原苗家\n"
                           "s3.  慕容世家          s4.  八卦刀商家堡\n"
                           "s5.  關外胡家          s6.  大理段氏\n\n" NOR;
                msg+= HIW "--------------------------------------\n" NOR;
-               msg+= HIR "請輸入f1─f15，s1─s6編號。\n\n" NOR;
+               msg+= HIR "請輸入f1—f15，s1—s6編號。\n\n" NOR;
 
                tell_object(me, msg);
                input_to("get_sel_fam", me);
@@ -323,7 +323,7 @@ void get_sel_fam(string arg, object me)
         tell_object(HIG "新手獎勵：你成功出古村，獲得5萬經驗和10萬潛能的獎勵！\n"
                         "到揚州武廟(南賢)處輸入指令 ask nanxian 新手福利 還可領取新手福利!\n" NOR);
                 
-        // 取消拜師標志
+        // 取消拜師標誌
         delete("family", me);
         delete("title", me);
                 set("title", "普通百姓", me);
@@ -346,7 +346,7 @@ void init()
 
         me = this_player();
 
-        tell_object(me, HIG "\n花伯對你說道：這位" + RANK_D->query_respect(me) +
+        tell_object(me, HIG "\n花伯對你説道：這位" + RANK_D->query_respect(me) +
                 "，如果要出村輸入 " HIR "ask hua about 出村 \n\n" NOR);
 
         return;

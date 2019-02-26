@@ -82,7 +82,7 @@ void get_book_title(string book_title, object ob)
               return;
         }
 
-        message_vision("$N想了半天，終于在封皮上題了一個書名。\n"NOR,me);
+        message_vision("$N想了半天，終於在封皮上題了一個書名。\n"NOR,me);
 
                 new_book["title"] = book_title;
         new_book["arthur"]=me->name(1)+"("+query("id", me)+")";
@@ -90,7 +90,7 @@ void get_book_title(string book_title, object ob)
  
         set("titled", 1, this_book);
         this_book->set_name(book_title, ({"book"}));
-                set("long", "一本未寫完的書，你可以在上面接著寫。(writebook)\n", this_book);
+                set("long", "一本未寫完的書，你可以在上面接着寫。(writebook)\n", this_book);
         set("book_content", new_book, this_book);
 
         return;        
@@ -113,10 +113,10 @@ int do_write(string arg)
                   if (page_no > 20 || page_no < 1) 
               return  notify_fail("寫書在 1 到 20 頁之間。\n");
           if( !query("titled", this_book) )
-                      return  notify_fail("你還沒有給書題名呢，先想個書名再說把 (title book)。\n");
+                      return  notify_fail("你還沒有給書題名呢，先想個書名再説把 (title book)。\n");
                   else 
                   {
-              message_vision("$N拿出一支筆，舖開書本，開始寫作.....\n"NOR,me);
+              message_vision("$N拿出一支筆，鋪開書本，開始寫作.....\n"NOR,me);
                           start_book_text(me, page_no);
                   }
           return 1;

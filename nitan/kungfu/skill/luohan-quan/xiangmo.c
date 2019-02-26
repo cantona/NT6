@@ -33,10 +33,10 @@ int perform(object me, object target)
                 return notify_fail("你沒有激發羅漢拳，無法使用羅漢降魔！\n");
 
        if (! living(target))
-              return notify_fail("對方都已經這樣了，用不著這麼費力吧？\n");
+              return notify_fail("對方都已經這樣了，用不着這麼費力吧？\n");
 
         msg = HIY "$N" HIY "嗨的一聲，一拳平平朝$n"
-              HIY "打出，姿勢有板有眼，頗具風范。\n" NOR;
+              HIY "打出，姿勢有板有眼，頗具風範。\n" NOR;
 
         ap = attack_power(me, "cuff"); 
         dp = defense_power(target, "parry"); 
@@ -47,7 +47,7 @@ int perform(object me, object target)
                 addn("neili", -30, me);
                 msg += COMBAT_D->do_damage(me, target, UNARMED_ATTACK, damage, 50,
                                            HIR "只見$n" HIR "一個招架失誤，登時"
-                                           "被這拳打了個正著，悶哼一聲，退了一步。\n" NOR);
+                                           "被這拳打了個正着，悶哼一聲，退了一步。\n" NOR);
                 me->start_busy(1 + random(2));
         } else 
         {

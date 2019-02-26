@@ -45,9 +45,9 @@ int perform(object me, object target)
                 return notify_fail("你的內力不夠，難以施展" + name() + "。\n");
 
         if (! living(target))
-                return notify_fail("對方都已經這樣了，用不著這麼費力吧？\n");
+                return notify_fail("對方都已經這樣了，用不着這麼費力吧？\n");
 
-        msg = HIR "$N" HIR "跨前一步，雙手回圈，頗得太極之意。掌心頓時閃"
+        msg = HIR "$N" HIR "跨前一步，雙手迴圈，頗得太極之意。掌心頓時閃"
               "出一個氣團，向$n" HIR "電射而去。\n" NOR;
 
         ap = attack_power(me, "force") + me->query_con();
@@ -57,7 +57,7 @@ int perform(object me, object target)
 
         if (ap / 2 + random(ap) < dp)
         {
-                msg += HIY "然而$n" HIY "全力抵擋，終于將$N" HIY
+                msg += HIY "然而$n" HIY "全力抵擋，終於將$N" HIY
                        "發出的氣團撥開。\n" NOR;
                 me->start_busy(3);
         } else

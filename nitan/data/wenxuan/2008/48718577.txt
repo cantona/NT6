@@ -1,4 +1,4 @@
-subject : 獨孤劍塚
+subject : 獨孤劍冢
 author_name : 薇大呆
 author_id : vivi
 time : 1206624626
@@ -9,7 +9,7 @@ content :
 第一段：
 rideto xiangyang;#2 e;#3 n;#2 w;#3 n;w;#3 s;#6 wu;#4 {ed;wu}
 
-有時候最後的ed,wu可能要多重復幾次，所以在此分段。
+有時候最後的ed,wu可能要多重複幾次，所以在此分段。
 
 第二段：
 l xiaowu;enter muwu;zhao 枯樹枝;out;l shanlu;climb shanlu;sw;nw;e;sw;#2 se;ne;#wa 2000;n;sw;w;s;n;sw;se;w;#2 nw;enter;use huoshi;l tai;ca qingtai;l bi;l mu;#wa 2000;kneel mu;move stone;zuan shifeng;n;#10 l shitai;#4 climb shitai;move stone;get all

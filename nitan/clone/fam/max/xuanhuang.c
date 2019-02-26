@@ -11,8 +11,8 @@ void create()
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("long", HIM "一顆紫中泛黃的精致奇丹，具有著神話般的功效，傳\n"
-                                "說吃了之後能平增數十年的功力，乃是練武之人夢寐\n"
+                set("long", HIM "一顆紫中泛黃的精緻奇丹，具有着神話般的功效，傳\n"
+                                "説吃了之後能平增數十年的功力，乃是練武之人夢寐\n"
                                 "以求的神丹妙藥。本物品第一次吃效果最佳！\n" NOR);
                 set("value", 100000);
                 set("no_sell", 1);

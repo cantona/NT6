@@ -10,7 +10,7 @@ void create()
 {
         set_name("菩斯曲蛇", ({ "pusiqu she", "snake", "she", "pusiqu" }) );
         set("age", 100);
-        set("long", "這蛇身上金光閃閃，頭頂生有肉角，形狀十分怪異。\n佛經上曾有記載，稱為菩斯曲蛇，聽說此蛇行走如風，極難捕捉。\n");
+        set("long", "這蛇身上金光閃閃，頭頂生有肉角，形狀十分怪異。\n佛經上曾有記載，稱為菩斯曲蛇，聽説此蛇行走如風，極難捕捉。\n");
         set("attitude", "peaceful");
 
         set_weight(13800);

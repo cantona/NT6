@@ -45,7 +45,7 @@ void create()
         map_skill("unarmed", "yinyang-shiertian");
         
         set("inquiry", ([
-                "超脫"   :   (: start_thborn :),
+                "超脱"   :   (: start_thborn :),
         ]));
         set("chat_chance_combat", 120);
         set("chat_msg_combat", ({
@@ -72,13 +72,13 @@ mixed start_thborn()
         
         if (me->query("thborn/ok"))
         {
-                if (! me->query("thborn/repeat")) // 有repeat標志可再次2轉
+                if (! me->query("thborn/repeat")) // 有repeat標誌可再次2轉
                         return "你不是已經二轉過了嗎，快快離開吧，不要打攪我的雅興！\n";
         }
 
         // 判斷負重，超過30%不能轉
         if ((int)me->query_encumbrance() * 100 / (int)me->query_max_encumbrance() > 30)
-                return "為了你物品數據安全，負重不能超過30%，請清理一下背包再來吧！\n";
+                return "為了你物品數據安全，負重不能超過30%，請清理一下揹包再來吧！\n";
 
         // 數據已經清理完畢，職業如果已經選擇即可2轉
         if (me->query("check_yhjob"))
@@ -88,8 +88,8 @@ mixed start_thborn()
 
                 if (! me->query("thborn/ok")) // 非重新2轉才做提示和設置special
                 {
-                        CHANNEL_D->do_channel(this_object(), "rumor", HIY + me->name() + "(" + me->query("id") + ")" HIY "借助天神"
-                                                                      "之力，超脫意識，完成了第二次轉生！\n" NOR);
+                        CHANNEL_D->do_channel(this_object(), "rumor", HIY + me->name() + "(" + me->query("id") + ")" HIY "藉助天神"
+                                                                      "之力，超脱意識，完成了第二次轉生！\n" NOR);
                         tell_object(me, HIC "\n恭喜你二轉成功：你獲得了特殊技能「日月齊輝」！\n" NOR);
                         me->set("special_skill/riyue", 1);
                 }
@@ -98,10 +98,10 @@ mixed start_thborn()
                 
                 command("say 後會有期，祝你好運！");
                 me->move("/d/city/wumiao");
-                me->delete("thborn/repeat"); // 刪除允許重新2轉標志
+                me->delete("thborn/repeat"); // 刪除允許重新2轉標誌
                 me->set("thborn/times", time()); // 記錄2轉時間
                 
-               // 十周年活動期間，轉世成功獲得特殊獎勵
+               // 十週年活動期間，轉世成功獲得特殊獎勵
                me->add("combat_exp", 10000000);
                me->add("potential", 10000000);
                me->add("experience", 2000000);
@@ -133,7 +133,7 @@ mixed start_thborn()
                 me->save();
         }
         
-        if (! me->query("thborn/ok")) // 再次2轉不返回輪回點
+        if (! me->query("thborn/ok")) // 再次2轉不返回輪迴點
         {
                 // 清除LHD使用加成，單指先天悟性，因為技能和SPECIALJOB技能都要DELETE
                 // 1、計算12T花費的LHD
@@ -154,7 +154,7 @@ mixed start_thborn()
                         if (me->query("can_perform/badao/san"))
                                 sk_bd_add += 8;
                 }
-                // 3、計算輪回劍花費的LHD
+                // 3、計算輪迴劍花費的LHD
                 if (me->query_skill("lunhui-sword", 1))
                 {
                         sk_lhj_add += 6;
@@ -175,15 +175,15 @@ mixed start_thborn()
         
                 total_lhd = sk_12t_add + sk_bd_add + sk_lhj_add + job_add;
                 
-                // 反還輪回點
+                // 反還輪迴點
                 if (total_lhd >= 18)
                 {
                         total_lhd = 18;
                         log_file("thborn_lhd", me->query("id") + " " + ctime(time()) + " " + sk_12t_add + " " + sk_bd_add + " " + sk_lhj_add + " " + job_add + " \n");
-                        //return "輪回點數據出錯，請聯系遊戲管理員！\n";        
+                        //return "輪迴點數據出錯，請聯繫遊戲管理員！\n";        
                 }        
                 
-                // 清除輪回點使用記錄
+                // 清除輪迴點使用記錄
                 me->delete("lhpoint/special");        
                         
                 if (total_lhd + me->query("scborn/cur_lunhui_point") >= 18)
@@ -191,12 +191,12 @@ mixed start_thborn()
                 else
                         me->add("scborn/cur_lunhui_point", total_lhd);
                         
-                tell_object(me, HIY "\n你總共獲得" + chinese_number(total_lhd) + "點輪回點返還。\n" NOR);
+                tell_object(me, HIY "\n你總共獲得" + chinese_number(total_lhd) + "點輪迴點返還。\n" NOR);
                 
-                // 輪回點總數設置為18，2轉後就不會再獲得
+                // 輪迴點總數設置為18，2轉後就不會再獲得
                 me->set("scborn/total_lunhui_point", 18);
         }
-        else// 重新2轉的單獨返回職業技能的輪回點
+        else// 重新2轉的單獨返回職業技能的輪迴點
         {
                 // 4、清除強化職業special的LHD
                 job_special = me->query("lhpoint/special");
@@ -212,15 +212,15 @@ mixed start_thborn()
         
                 total_lhd = job_add;
 
-                // 反還輪回點
+                // 反還輪迴點
                 if (total_lhd >= 18)
                 {
                         total_lhd = 18;
                         log_file("thborn_lhd", me->query("id") + " " + ctime(time()) + " " + sk_12t_add + " " + sk_bd_add + " " + sk_lhj_add + " " + job_add + " \n");
-                        //return "輪回點數據出錯，請聯系遊戲管理員！\n";        
+                        //return "輪迴點數據出錯，請聯繫遊戲管理員！\n";        
                 }
 
-                // 清除輪回點使用記錄
+                // 清除輪迴點使用記錄
                 me->delete("lhpoint/special");
 
                 if (total_lhd + me->query("scborn/cur_lunhui_point") >= 18)
@@ -228,9 +228,9 @@ mixed start_thborn()
                 else
                         me->add("scborn/cur_lunhui_point", total_lhd);
 
-                tell_object(me, HIY "\n你總共獲得" + chinese_number(total_lhd) + "點輪回點返還。\n" NOR);
+                tell_object(me, HIY "\n你總共獲得" + chinese_number(total_lhd) + "點輪迴點返還。\n" NOR);
 
-                // 輪回點總數設置為18，2轉後就不會再獲得
+                // 輪迴點總數設置為18，2轉後就不會再獲得
                 me->set("scborn/total_lunhui_point", 18);                
         }
         
@@ -265,7 +265,7 @@ mixed start_thborn()
         // lhj 記錄 
         me->delete("lunhui-sword_quest");
         
-        // 清除判師，脫離記錄
+        // 清除判師，脱離記錄
         me->delete("detach");
         me->delete("betrayer");
         
@@ -325,7 +325,7 @@ mixed start_thborn()
         me->delete("can_learn/dugu-jiujian/nothing");
         
         // 提示重新選擇職業
-        tell_object(me, HIG "\n相關數據清理完畢，請重新選擇職業（指令：yhjob <職業>）後再于天神對話！\n" NOR); 
+        tell_object(me, HIG "\n相關數據清理完畢，請重新選擇職業（指令：yhjob <職業>）後再於天神對話！\n" NOR); 
         me->set("check_yhjob", 1);
         me->delete("chose_yhjob");
         
@@ -371,7 +371,7 @@ int do_yhjob(string arg)
                 msg += HIM "魔師: 令世人畏懼的職業，擁有邪異類攻擊特技。\n" NOR;
                 msg += HIG "隱士: 被世人所遺忘，隱居世外，擁有多種輔助類特技。\n" NOR;
                 msg += HIY "具體職業介紹請參見轉世職業幫助文件 help scborn_yhjob\n" NOR;
-                msg += HIY "請輸入指令" HIR " yhjob 職業 " HIY "來選擇您轉世後的職業，選擇前請認真閱讀轉世職業幫助文件。\n\n" NOR;
+                msg += HIY "請輸入指令" HIR " yhjob 職業 " HIY "來選擇您轉世後的職業，選擇前請認真閲讀轉世職業幫助文件。\n\n" NOR;
 
                 write(msg);
                 return 1;        

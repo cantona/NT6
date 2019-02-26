@@ -36,10 +36,10 @@ int valid_leave(object me, string dir)
 
         inv = deep_inventory(me);
         if (dir == "south"){
-          write("南面是一片花圃，裡面種滿了諸般花草。\n");
+          write("南面是一片花圃，裏面種滿了諸般花草。\n");
           ob = filter_array(inv,(:get_object:));        
           if (myfam && myfam["family_name"] =="明教" && myfam["generation"] == 35 && ! sizeof(ob))
-          write("由于你已聽聞張教主的教誨，走慣了這片花圃，所以信步走了出去。\n");
+          write("由於你已聽聞張教主的教誨，走慣了這片花圃，所以信步走了出去。\n");
           else {
              tell_room(environment(me), me->name()+"往南面的牛棚快步離開。\n"NOR, ({ me }));
              me->move(__DIR__"huapu1");

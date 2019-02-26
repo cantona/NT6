@@ -7,7 +7,7 @@ void create()
         set("nickname", HIW "長樂幫主" NOR);
         set("gender", "男性");
         set("age", 20);
-        set("long", "他大約二十多歲，穿著一身破爛的衣服，卻"
+        set("long", "他大約二十多歲，穿着一身破爛的衣服，卻"
                     "也擋不住他一身的英氣。\n");
         set("max_qi", 8000);
         set("max_jing", 6000);

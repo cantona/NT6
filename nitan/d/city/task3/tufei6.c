@@ -8,7 +8,7 @@ void create()
         set("gender", "男性" );
         set("age", 34);
         set("long",
-                "這是全身都罩在黑紗中的神秘人，全身散發著一股陰森的氣息。\n");
+                "這是全身都罩在黑紗中的神祕人，全身散發着一股陰森的氣息。\n");
         set("max_qi", 5000);
         set("max_jing", 5000);
         set("max_neili", 5000);
@@ -104,7 +104,7 @@ void init()
                         carry_object("/clone/weapon/changjian")->wield();
                 set("title", "替天行道", obj);
                 obj->set_weight(500000);
-                set_name("神秘人", ({ "shenmi ren","sr"}) );
+                set_name("神祕人", ({ "shenmi ren","sr"}) );
                 remove_call_out ("destroy_npc");
                 call_out ("destroy_npc", 900); // 15 min
         }

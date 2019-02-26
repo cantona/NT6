@@ -9,8 +9,8 @@ void create()
 {
        set("short","密道");
        set("long", @LONG
-這是水井裡的一個密道。周圍都是些機關，只有出口很明顯在哪裡。濕漉
-漉的牆壁上有掛著四塊石板，分別刻著１、２、３、４。水井旁邊還有一塊鐵
+這是水井裏的一個密道。周圍都是些機關，只有出口很明顯在哪裏。濕漉
+漉的牆壁上有掛着四塊石板，分別刻着１、２、３、４。水井旁邊還有一塊鐵
 板(tieban)扔在地上。
 LONG
      );
@@ -19,7 +19,7 @@ LONG
         ]));
         set("item_desc", ([
                 "tieban" :
-        		"鐵板歪歪斜斜地寫著：方人智到此一遊，空手悻悻而歸。\n"
+        		"鐵板歪歪斜斜地寫着：方人智到此一遊，空手悻悻而歸。\n"
         ]) );
    	setup();
 }
@@ -43,7 +43,7 @@ int do_press(string arg)
 		message_vision("只聽得一陣隆隆的響聲由遠及近。\n", this_player());
 		message_vision("石板緩緩移了開來，露出一個洞。\n", this_player());
 		set("exits/enter", __DIR__"mishi");
-		write("\n\n一個聲音提醒你：記住你的密碼，以後你就靠它來進出這裡了！\n\n");
+		write("\n\n一個聲音提醒你：記住你的密碼，以後你就靠它來進出這裏了！\n\n");
 
 		remove_call_out("close");
 		call_out("close", 5, this_object());
@@ -51,7 +51,7 @@ int do_press(string arg)
 		return 1;
 	}
 	else {
-		write("你心想：老天保佑這次能蒙著！\n");
+		write("你心想：老天保佑這次能蒙着！\n");
 		if (random(10)!=8) {
 			message_vision("$N一陣亂按，什麼反應也沒有。\n", this_player());
 			return 1;

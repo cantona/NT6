@@ -10,7 +10,7 @@ void create()
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("long", "做菜的原料，青菜蘿卜、雞鴨魚肉。\n");
+                set("long", "做菜的原料，青菜蘿蔔、雞鴨魚肉。\n");
                 set("base_unit", "份");
                 set("base_value", 50);
                 set("base_weight", 80);

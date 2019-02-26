@@ -64,21 +64,21 @@ public int add_push_msg(string title, string info, int delay, int times)
         else
                 key = keys(push_msg);
 
-        // 檢查標題是否重復
+        // 檢查標題是否重複
         if (sizeof(key))
         {
                 if (member_array(title, key) != -1)
-                        return notify_fail("標題重復！\n");
+                        return notify_fail("標題重複！\n");
         }
 
         if (sizeof(info) > 300)
                 return notify_fail("信息長度超長" + sprintf("%d", sizeof(info) - 88) + "個字符！\n");
 
         if (delay < 1)
-                return notify_fail("間隔時間不能低于1秒。\n");
+                return notify_fail("間隔時間不能低於1秒。\n");
 
         if (times < 1)
-                return notify_fail("循環次數不能小于1。\n");
+                return notify_fail("循環次數不能小於1。\n");
 
         if( !mapp(push_msg) ) push_msg = ([]);
         push_msg += ([
@@ -129,7 +129,7 @@ public int delete_push_msg(string title)
         else
                 key = keys(push_msg);
 
-        // 檢查標題是否重復
+        // 檢查標題是否重複
         if (sizeof(key))
         {
                 if (member_array(title, key) == -1)

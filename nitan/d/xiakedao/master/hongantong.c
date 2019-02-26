@@ -90,7 +90,7 @@ void greeting(object ob)
         int i;
 
         obj = all_inventory(environment(me));
-        command("say 夫人所說甚是有理，但這句似更含深意。");
+        command("say 夫人所説甚是有理，但這句似更含深意。");
         for(i=0; i<sizeof(obj); i++)
         {
                 if( query("id", obj[i]) == "su-quan" )

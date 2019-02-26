@@ -23,7 +23,7 @@ LONG );
 "西湖醋魚(Fish)           ：一兩白銀又二十文銅板
 龍井蝦仁(Shrimp)         ：五十文銅板
 叫化童雞(Chicken)        ：一兩白銀又二十文銅板
-桂花鮮栗羹(Guihua geng)  ：一兩白銀又二十文銅板
+桂花鮮慄羹(Guihua geng)  ：一兩白銀又二十文銅板
 酒瓶(Jiuping)            ：十六兩白銀\n"
         ]));
 
@@ -38,7 +38,7 @@ LONG );
 int valid_leave(object me, string dir)
 {
         if ( present("soup", me) || present("baozi", me))
-        return notify_fail("大師傅瞪了你一眼: 吃不了要兜著走啊？\n");
+        return notify_fail("大師傅瞪了你一眼: 吃不了要兜着走啊？\n");
         return ::valid_leave(me, dir);
 }
 

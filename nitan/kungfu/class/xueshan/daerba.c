@@ -123,7 +123,7 @@ void attempt_apprentice(object ob)
                 return;
         }
 
-        command("say 這個…那你以後就跟著我練武吧！");
+        command("say 這個…那你以後就跟着我練武吧！");
         command("recruit "+query("id", ob));
 }
 
@@ -140,7 +140,7 @@ mixed ask_skill1()
                 return "我又不認識你，打聽這個幹什麼？";
 
         if (me->query_skill("dali-chu", 1) < 1)
-                return "你連無上大力杵都沒學，哪裡來絕招？";
+                return "你連無上大力杵都沒學，哪裏來絕招？";
 
         if( query("family/gongji", me)<100 )
                 return "你為雪山寺效力不夠，這招暫時還不能傳你。";
@@ -160,7 +160,7 @@ mixed ask_skill1()
         message_sort(HIY "\n$n" HIY "對$N" HIY "點了點頭，喝道：“瞧仔"
                      "細了。”話音剛落，只見$n" HIY "高舉手中的鋼杵，在"
                      "空中揮舞成盤，氣勢驚人！便在此時，那柄鋼杵已攜帶"
-                     "著震天撞擊之聲猛然擊落。直把$N" HIY "看得目瞪口呆"
+                     "着震天撞擊之聲猛然擊落。直把$N" HIY "看得目瞪口呆"
                      "。\n\n" NOR, me, this_object());
 
         command("nod");
@@ -191,7 +191,7 @@ mixed ask_skill2()
                 return "我又不認識你，打聽這個幹什麼？";
 
         if (me->query_skill("xiangmo-chu", 1) < 1)
-                return "你連金剛降魔杵都沒學，哪裡來絕招？";
+                return "你連金剛降魔杵都沒學，哪裏來絕招？";
 
         if( query("family/gongji", me)<200 )
                 return "你為雪山寺效力不夠，這招暫時還不能傳你。";
@@ -211,11 +211,11 @@ mixed ask_skill2()
         message_sort(HIY "\n$n" HIY "對$N" HIY "點了點頭，喝道：“看清"
                      "楚了。”話音剛落，只見$n" HIY "高舉手中的鋼杵，在"
                      "空中揮舞成盤，寶相莊嚴，氣度萬千。霎時間幻出重重"
-                     "杵影，朝四面八方砸下。招式精奇，令人嘆為觀止。\n"
+                     "杵影，朝四面八方砸下。招式精奇，令人歎為觀止。\n"
                      "\n" NOR, me, this_object());
 
         command("nod");
-        command("say 這招看似復雜，其實並不難，你下去體會吧。");
+        command("say 這招看似複雜，其實並不難，你下去體會吧。");
         tell_object(me, HIC "你學會了「鎮魂舞」。\n" NOR);
 
         if (me->can_improve_skill("hammer"))

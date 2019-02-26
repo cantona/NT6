@@ -13,7 +13,7 @@ int perform(object me, object target)
 
         if( !target ) target = offensive_target(me);
         if( !target ||        !me->is_fighting(target) )
-                return notify_fail("﹝天竺絕殺﹞只能對戰鬥中的對手使用。\n");
+                return notify_fail("［天竺絕殺］只能對戰鬥中的對手使用。\n");
 
 
         if( !objectp(weapon=query_temp("weapon", me) )
@@ -31,7 +31,7 @@ int perform(object me, object target)
         weapon=query_temp("weapon", me);
         addn("neili", -400, me);
         addn("jingli", -100, me);
-        msg = HIY  "$N使出天竺絕刀中的﹝天竺絕殺﹞，一招連環三式，手中的"+ 
+        msg = HIY  "$N使出天竺絕刀中的［天竺絕殺］，一招連環三式，手中的"+ 
                   weapon->name()+ HIY"閃電般向$n攻出！\n"
                   "第一刀！" NOR;
         message_vision(msg,me,target);

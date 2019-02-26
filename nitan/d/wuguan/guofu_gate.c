@@ -14,8 +14,8 @@ void create()
               ※                  ※
               ※※※※※※※※※※※" NOR "
 
-你從大門瞧進去，好象裡面人來人往，都很繁忙的樣子。這裡
-站著位青年，神情威嚴。接待前來保衛襄陽的各方義士。
+你從大門瞧進去，好像裏面人來人往，都很繁忙的樣子。這裏
+站着位青年，神情威嚴。接待前來保衞襄陽的各方義士。
 ");
         set("outdoors", "wuguan");
 	set("exits", ([
@@ -49,7 +49,7 @@ int valid_leave(object me, string dir)
            && present("wu dunru", environment(me)) 
            && dir == "north")
              return notify_fail(CYN "\n武敦儒笑道：你再留在郭府已"
-                                "無多大的用處，還是多去闖盪闖盪吧"
+                                "無多大的用處，還是多去闖蕩闖蕩吧"
                                 "。\n" NOR);
 
         if( query("combat_exp", me)>5000

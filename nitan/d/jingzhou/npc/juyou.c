@@ -6,7 +6,7 @@ void create()
 {
         set_name("菊友", ({ "juyou" }));
         set("long",
-                "她是一個長得很好看的小姑娘，正在忙著澆一盆菊花。\n");
+                "她是一個長得很好看的小姑娘，正在忙着澆一盆菊花。\n");
         set("title","丫鬟");
         set("gender", "女性");
         set("age", 15);

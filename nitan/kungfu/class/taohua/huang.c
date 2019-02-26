@@ -126,7 +126,7 @@ void create()
 
         set("inquiry", ([
                 "離島"       : (: ask_leave :),
-                "桃花藥理"   : (: ask_book1 :),
+                "桃花葯理"   : (: ask_book1 :),
                 "簫譜"       : (: ask_book2 :),
                 "旋風掃葉腿" : (: ask_book3 :),
                 "河圖"       : (: ask_book4 :),
@@ -138,7 +138,7 @@ void create()
                 "天外清音"   : (: ask_skill4 :),
                 "天地情長"   : (: ask_skill5 :),
                 "碧海潮生"   : (: ask_skill6 :),
-                "定昆侖"     : (: ask_skill7 :),
+                "定崑崙"     : (: ask_skill7 :),
                 "嘯滄海"     : (: ask_skill8 :),
                 "破九域"     : (: ask_skill9 :),
                 "轉乾坤"     : (: ask_skill10 :),
@@ -155,8 +155,8 @@ void create()
                 "彈指神通"   : "…唉…我一身絕藝竟然無人可以繼承？",
                 "玉蕭劍法"   : "不是性情中人，如何能夠領會這劍法？",
                 "碧波神功"   : "…唉…我桃花島的內功何等厲害，可惜…",
-                "九花玉露丸" : "這個東西難制得緊，你好好學學桃花藥理，以後自己制吧。",
-                "無常丹"     : "…嗯…等你學通了桃花藥理的奧妙，自己慢慢制吧。",
+                "九花玉露丸" : "這個東西難製得緊，你好好學學桃花葯理，以後自己制吧。",
+                "無常丹"     : "…嗯…等你學通了桃花葯理的奧妙，自己慢慢制吧。",
         ]));
 
         create_family("桃花島", 1, "島主");
@@ -214,7 +214,7 @@ void init()
                 {
                         command("sneer"+query("id", ob));
                         command("say 孽徒好大膽子，居然同門弟子手足相殘！");
-                        message_vision(HIR "黃藥師說完一抬手，一指戳在$N的" +
+                        message_vision(HIR "黃藥師説完一抬手，一指戳在$N的" +
                                        xuedao[random(sizeof(xuedao))] + "上。\n" NOR, ob);
                         call_out("move_it", 1, ob);
                 }
@@ -320,7 +320,7 @@ void attempt_apprentice(object ob)
 
         if( query("short", environment(this_object())) != "黃藥師居處" )
         {
-                write("說完，黃藥師飄然而去。\n");
+                write("説完，黃藥師飄然而去。\n");
                 destruct(this_object());
         }
 }
@@ -329,7 +329,7 @@ int recognize_apprentice(object me, string skill)
 {
         if( !query("can_learn/huang/count", me) )
         {
-                command("say 你是誰？哪裡來的？要幹啥？");
+                command("say 你是誰？哪裏來的？要幹啥？");
                 return -1;
         }
 
@@ -500,8 +500,8 @@ mixed ask_skill3()
         if (me->query_skill("lanhua-shou", 1) < 140)
                 return "等你把蘭花拂穴手練熟了再來找老夫。";
 
-        message_sort(HIY "\n$n" HIY "一聲長嘆，伸手將$N" HIY "招至他身旁，低聲"
-                     "在$N" HIY "耳邊細說良久。$N" HIY "一邊聽一邊點頭，看來對"
+        message_sort(HIY "\n$n" HIY "一聲長歎，伸手將$N" HIY "招至他身旁，低聲"
+                     "在$N" HIY "耳邊細説良久。$N" HIY "一邊聽一邊點頭，看來對"
                      "$n" HIY "的教導大有所悟。\n\n" NOR, me, this_object());
 
         command("say 唉…你自己下去練吧。");
@@ -635,13 +635,13 @@ mixed ask_skill6()
                 return "你的碧海潮生曲練好了嗎？";
 
         message_sort(HIY "\n$n" HIY "更不答話，單手撫按玉簫，只聽得簫聲如鳴琴擊"
-                     "玉，發了幾聲，接著悠悠揚揚，飄下清亮柔和的洞簫聲來。只聽那"
-                     "洞簫聲情致飄忽，纏綿宛轉，便似一女子一會兒嘆息，一會兒又似"
-                     "呻吟，一會兒卻又軟語溫存或柔聲叫喚。緊跟著那簫聲清亮宛如大"
-                     "海浩淼，萬裡無波，遠處潮水緩緩推近，漸近漸快，其後洪濤洶湧"
+                     "玉，發了幾聲，接着悠悠揚揚，飄下清亮柔和的洞簫聲來。只聽那"
+                     "洞簫聲情致飄忽，纏綿宛轉，便似一女子一會兒歎息，一會兒又似"
+                     "呻吟，一會兒卻又軟語温存或柔聲叫喚。緊跟着那簫聲清亮宛如大"
+                     "海浩淼，萬里無波，遠處潮水緩緩推近，漸近漸快，其後洪濤洶湧"
                      "，白浪連山，而潮水中魚躍鯨浮，海面上風嘯鷗飛，再加上水妖海"
-                     "怪，群魔弄潮，忽而冰山飄至，忽而熱海如沸，極盡變幻之能事。"
-                     "時至最後，卻聽那簫聲癒來癒細，幾乎難以聽聞，便尤如大海潮退"
+                     "怪，羣魔弄潮，忽而冰山飄至，忽而熱海如沸，極盡變幻之能事。"
+                     "時至最後，卻聽那簫聲愈來愈細，幾乎難以聽聞，便尤如大海潮退"
                      "後水平如鏡一般，但海底卻又是暗流湍急，洶湧澎湃。直待$n" HIY
                      "這首碧海潮生曲奏完，卻發現$N" HIY "早已陶醉在這簫聲之中，完"
                      "全無法自拔。\n\n" NOR, me, this_object());
@@ -696,11 +696,11 @@ mixed ask_skill7()
         message_sort(HIY "\n$n" HIY "轉過頭看了$N" HIY "一眼，更不答話，只是輕"
                      "輕伸出兩指，合指輕彈，頓時只聽“颼”的一聲，一縷若有若無"
                      "的罡氣已至$n" HIY "指尖射出，朝$N" HIY "電射而去。$N" HIY
-                     "頓覺脅下一麻，已被$n" HIY "的指氣射中，全身酸軟無力，呆立"
+                     "頓覺脅下一麻，已被$n" HIY "的指氣射中，全身痠軟無力，呆立"
                      "當場。\n\n" NOR, me, this_object());
 
-        command("say 招式便是如此，你站在這裡琢磨一下吧。");
-        tell_object(me, HIC "你學會了「定昆侖」。\n" NOR);
+        command("say 招式便是如此，你站在這裏琢磨一下吧。");
+        tell_object(me, HIC "你學會了「定崑崙」。\n" NOR);
         if (me->can_improve_skill("finger"))
                 me->improve_skill("finger", 1500000);
         if (me->can_improve_skill("tanzhi-shentong"))
@@ -737,8 +737,8 @@ mixed ask_skill8()
         if (me->query_skill("tanzhi-shentong", 1) < 200)
                 return "你的彈指神通火候還不夠，等你練熟了再來找我。";
 
-        message_sort(HIY "\n$n" HIY "一聲長嘆，伸手將$N" HIY "招至他身旁，低聲"
-                     "在$N" HIY "耳邊細說良久。$N" HIY "一邊聽一邊點頭，看來對"
+        message_sort(HIY "\n$n" HIY "一聲長歎，伸手將$N" HIY "招至他身旁，低聲"
+                     "在$N" HIY "耳邊細説良久。$N" HIY "一邊聽一邊點頭，看來對"
                      "$n" HIY "的教導大有所悟。\n\n" NOR, me, this_object());
 
         command("nod2");
@@ -839,8 +839,8 @@ mixed ask_skill10()
                 return "你的彈指神通火候還不夠，等你練熟了再來找我。";
 
         message_sort(HIY "\n$n" HIY "凝視了$N" HIY "半天，方道：“想不到我桃花"
-                     "島居然還有你這等人才，想必日後繼承老夫衣砵非你莫屬了。”"
-                     "$n" HIY "說完哈哈一笑，將$N" HIY "招至身旁，低聲細說講解"
+                     "島居然還有你這等人才，想必日後繼承老夫衣缽非你莫屬了。”"
+                     "$n" HIY "説完哈哈一笑，將$N" HIY "招至身旁，低聲細説講解"
                      "良久，全是$N" HIY "平生從未涉入的境界，$N" HIY "一邊聽一"
                      "邊點頭，看來對$n" HIY "的教導大有所悟。\n\n" NOR,
                      me, this_object());
@@ -905,8 +905,8 @@ mixed ask_skill11()
                 return "你的彈指神通火候還不夠，等你練熟了再來找我。"; 
         
         message_sort(HIY "\n$n" HIY "凝視了$N" HIY "半天，方道：“想不到我桃花" 
-                     "島居然還有你這等人才，想必日後繼承老夫衣砵非你莫屬了。”" 
-                     "$n" HIY "說完哈哈一笑，將$N" HIY "招至身旁，低聲細說講解" 
+                     "島居然還有你這等人才，想必日後繼承老夫衣缽非你莫屬了。”" 
+                     "$n" HIY "説完哈哈一笑，將$N" HIY "招至身旁，低聲細説講解" 
                      "良久，全是$N" HIY "平生從未涉入的境界，$N" HIY "一邊聽一" 
                      "邊點頭，看來對$n" HIY "的教導大有所悟。\n\n" NOR, 
                      me, this_object());  
@@ -975,7 +975,7 @@ mixed ask_book1()
                 return "只有老夫的弟子才配借讀此書。";
 
         if ((int)me->query_skill("taohua-yaoli", 1) < 60)
-                return "你對桃花藥理的了解太淺，等你有所領悟後再說。";
+                return "你對桃花葯理的瞭解太淺，等你有所領悟後再説。";
 
         ob = find_object(TAOHUA);
         if (! ob) ob = load_object(TAOHUA);
@@ -988,22 +988,22 @@ mixed ask_book1()
         }
 
         if (owner == me)
-                return "那本藥理不就是你拿著在看嗎？";
+                return "那本藥理不就是你拿着在看嗎？";
 
         if (objectp(owner) && owner != this_object())
         {
                 if (! owner->is_character())
-                        return "…嗯…桃花藥理現在不在我手裡。";
+                        return "…嗯…桃花葯理現在不在我手裏。";
 
                 if( query("family/family_name", owner) == "桃花島" )
                         return "那書現在暫時是你同門"+query("name", owner)+
                                "在看，你要用就去找他吧。";
                 else
-                return "桃花藥理現在落在了"+query("name", owner)+
+                return "桃花葯理現在落在了"+query("name", owner)+
                        "手中，你去找他索回吧。";
         }
         ob->move(this_object());
-        command("say 這本桃花藥理你就拿去看吧，可要認真研讀。");
+        command("say 這本桃花葯理你就拿去看吧，可要認真研讀。");
         command("give taohua yaoshu to "+query("id", me));
         return 1;
 }
@@ -1036,7 +1036,7 @@ mixed ask_book2()
         }
 
         if (owner == me)
-                return "那本簫譜不就是你拿著在看嗎？";
+                return "那本簫譜不就是你拿着在看嗎？";
 
         if (objectp(owner) && owner != this_object())
         {
@@ -1072,7 +1072,7 @@ mixed ask_book3()
         if (! query("xfsy_xinfa_given") || query("xfsy_xinfa_given") < 10)
         {
                 command("say 我如今有一套心法，相煩" + RANK_D->query_respect(me) +
-                        "交與乘風，照著我這功訣去做，和常人一般慢慢行走卻是不難，唉，……");
+                        "交與乘風，照着我這功訣去做，和常人一般慢慢行走卻是不難，唉，……");
                 ob = new(XUANFENG);
                 ob->move(me);
                 set("xfsy_xinfa_given", 1);
@@ -1115,10 +1115,10 @@ int cost;
                 return "給我滾開！";
 
         if( query("family/master_id", me) != query("id") )
-                return "等你成了老夫的弟子再說。";
+                return "等你成了老夫的弟子再説。";
 
         if (me->query_skill("yuxiao-jianfa", 1) < 150)
-                return "你還是先將你的玉蕭劍法練練高再說。";
+                return "你還是先將你的玉蕭劍法練練高再説。";
 
         if (me->query_skill("chuixiao-jifa", 1) < 150)
                 return "哼！你連簫都吹不好，拿玉蕭又有何用？";
@@ -1126,7 +1126,7 @@ int cost;
    if( query("family/first", me) ) cost = 250; 
              else cost = 500; 
              if( query("family/gongji", me) < cost ) 
-                     return "你為我桃花島效力還不夠，等你擁有足夠的師門功績再來兌換玉簫使用時間吧。";
+                     return "你為我桃花島效力還不夠，等你擁有足夠的師門功績再來兑換玉簫使用時間吧。";
         ob = find_object(YUXIAO);
         if (! ob) ob = load_object(YUXIAO);
         owner = environment(ob);
@@ -1143,7 +1143,7 @@ int cost;
         if (objectp(owner) && owner != this_object())
         {
                 if (! owner->is_character())
-                        return "玉簫現在不在老夫這裡。";
+                        return "玉簫現在不在老夫這裏。";
 
                 if( query("family/family_name", owner) == "桃花島" )
                         return "玉簫現在暫時是你同門"+query("name", owner)+
@@ -1174,9 +1174,9 @@ int accept_object(object me, object ob)
                 return 0;
         }
 
-        message_sort("黃藥師看了看$N送來的秘籍，點了點頭，說道：\n"
+        message_sort("黃藥師看了看$N送來的祕籍，點了點頭，説道：\n"
                      "難得你將真經送回。你送我的東西我就收下了。\n"
-                     "作為補償, 你可以從我這裡學點功夫。\n", me);
+                     "作為補償, 你可以從我這裏學點功夫。\n", me);
 
         command("heihei");
         command("say 好吧，既然這樣，我就傳你陰陽八卦，你可以隨時來問我！");

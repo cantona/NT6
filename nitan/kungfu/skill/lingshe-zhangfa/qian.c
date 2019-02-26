@@ -39,7 +39,7 @@ int perform(object me, object target)
                 return notify_fail("你沒有激發靈蛇杖法，無法使用" + name() + "！\n");
 
         if (! living(target))
-                return notify_fail("對方都已經這樣了，用不著這麼費力吧？\n");
+                return notify_fail("對方都已經這樣了，用不着這麼費力吧？\n");
 
         msg = HIW "$N" HIW "大喝一聲，撲身上前，手中的" + weapon->name() +
               HIW "化作萬道光芒，一齊射向$n" HIW "！\n" NOR;

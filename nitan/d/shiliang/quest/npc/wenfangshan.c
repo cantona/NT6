@@ -6,12 +6,12 @@ inherit FIGHTER;
 
 void create()
 {
-	set_name("溫方山", ({ "wen fangshan", "wen", "fangshan" }));
+	set_name("温方山", ({ "wen fangshan", "wen", "fangshan" }));
         set("gender", "男性");
-        set("title", "溫家五老");
+        set("title", "温家五老");
         set("long", 
-	"他就是溫家五老的老三溫方山。\n"
-	"一個五十來歲的老者，圓圓的臉上，流露著陰險的神情。\n");
+	"他就是温家五老的老三温方山。\n"
+	"一個五十來歲的老者，圓圓的臉上，流露着陰險的神情。\n");
         set("str", 25);
         set("dex", 25);
         set("con", 25);
@@ -131,7 +131,7 @@ int checking(object me, object ob)
         call_out("checking", 1, me, ob);
   if( !living(me) && living(ob) && query("jing", ob)>0 && query("jingli", ob)>0 && query("qi", ob)>0){
                 remove_call_out("checking");
-                tell_room(environment(me), HIB"\n"+me->name()+"眼看就是不敵，突然一股勁風襲來，五行陣一頓出現一道間隙，"+me->name()+"順勢闖出溫家堡莊。\n"NOR);
+                tell_room(environment(me), HIB"\n"+me->name()+"眼看就是不敵，突然一股勁風襲來，五行陣一頓出現一道間隙，"+me->name()+"順勢闖出温家堡莊。\n"NOR);
                 me->move("/d/xiangyang/ncx3");
                 tell_room(environment(me), HIB"\n一個身影突然飛來，待你仔細看來，原來是"+me->name()+"，只見"+me->name()+"突然一頓，竟然昏倒在地。\n"NOR);
                 me->delete_tem(QUESTJINSHE+"start_kill");

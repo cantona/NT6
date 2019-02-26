@@ -75,7 +75,7 @@ mapping *quest = ({
         ]),
         ([
                 "id":          "buzhen xiang",
-                "name":        "布陣箱",
+                "name":        "佈陣箱",
                 "type":        "尋",
                 "bonus":       120,
                 "msg1":        "",
@@ -91,7 +91,7 @@ mapping *quest = ({
         ]),
         ([
                 "id":          "du jing1",
-                "name":        "『星宿毒經□上冊□』",
+                "name":        "『星宿毒經〖上冊〗』",
                 "type":        "尋",
                 "bonus":       90,
                 "msg1":        "",
@@ -123,7 +123,7 @@ mapping *quest = ({
         ]),
         ([
                 "id":          "lubo",
-                "name":        BLU"顱砵"NOR,
+                "name":        BLU"顱缽"NOR,
                 "type":        "尋",
                 "bonus":       90,
                 "msg1":        "",
@@ -219,7 +219,7 @@ mapping *quest = ({
         ]),
         ([
                 "id":          "cloth",
-                "name":        "[1;33m一品侍衛裝[2;37;0m",
+                "name":        "[1;33m一品侍衞裝[2;37;0m",
                 "type":        "尋",
                 "bonus":       72,
                 "msg1":        "",

@@ -8,7 +8,7 @@ void create()
         set_name("星宿派弟子", ({ "xingxiu dizi", "dizi"}));
         set("gender", "男性" );
         set("age", 26);
-        set("long","他是星宿派的惡徒, 燒殺搶姦賭, 無惡不作。\n");
+        set("long","他是星宿派的惡徒, 燒殺搶奸賭, 無惡不作。\n");
 
         set_temp("apply/attack", 15);
         set_temp("apply/defense", 15);

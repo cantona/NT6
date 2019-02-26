@@ -1,7 +1,7 @@
 
 /*
 尹志平左劍平刺，右掌正擊，同時左腿橫掃而出，正是全真派中的「三連環」絕招。趙志敬高縱丈餘，
-揮劍下削。尹志平長劍脫手，猛往對方擲去，跟著「嘿」的一聲，雙掌齊出。
+揮劍下削。尹志平長劍脱手，猛往對方擲去，跟著「嘿」的一聲，雙掌齊出。
 
 楊過見這幾招凌厲變幻，已非己之所知，不禁手心人全是冷汗，眼見趙志敬身在半空，一個勢虛，一
 個勢實，看來這兩掌要打得他筋折骨斷。豈知趙志敬竟在這情勢危急異常之際忽然空中翻身，急退尋
@@ -76,7 +76,7 @@ int perform(object me, object target)
         if( query_temp("restore", me))me->prepare_skill("finger","zhongnan-zhi");
         addn_temp("apply/attack", -skill, me);
 
-        message_combatd( HIY "\n緊跟著$N突然騰空飛起，使出一招鴛鴦連環腿，兩腿風馳電掣連環踢向$n\n" NOR,me,target);
+        message_combatd( HIY "\n緊跟着$N突然騰空飛起，使出一招鴛鴦連環腿，兩腿風馳電掣連環踢向$n\n" NOR,me,target);
         ap = attack_power(me, "strike");
         dp = defense_power(target, "dodge");
         pp = defense_power(target, "parry");

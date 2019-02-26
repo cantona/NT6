@@ -61,7 +61,7 @@ int accept_object(object who, object ob)
 
         if( query("count", this_object())<0 )
         {
-                write("小販說道：“既然您出得起價錢，還愁沒地買？我這是沒了。”\n");
+                write("小販説道：“既然您出得起價錢，還愁沒地買？我這是沒了。”\n");
                 return 1;
         }
         if( (query("money_id", ob)) && (ob->value() >= 10000) && 
@@ -70,18 +70,18 @@ int accept_object(object who, object ob)
                 obj = new(VEGETABLE_DIR"heshouwu");
                 obj->move(who);
                 addn_temp("tmark/藥", 0, who);
-                write("小販說道：“既然您出得起價錢，這味藥可就歸您了。”\n");
+                write("小販説道：“既然您出得起價錢，這味藥可就歸您了。”\n");
                 addn("count", -1);
                 return 1;
         }
         else
                 if( query("money_id", ob) )
                 {
-                        write("小販陰笑一聲，說道：“嘿嘿，給我這麼多錢哪。”\n");
+                        write("小販陰笑一聲，説道：“嘿嘿，給我這麼多錢哪。”\n");
                         return 1;
                 }
                 else
                 {
-                        return notify_fail("小販詫異地說道：“給我這個幹什麼？”\n");
+                        return notify_fail("小販詫異地説道：“給我這個幹什麼？”\n");
                 }
 }

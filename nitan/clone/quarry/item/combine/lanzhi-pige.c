@@ -8,7 +8,7 @@ void create()
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("long", HIC  "這是一張藍色的皮革，是制作甲衣的上好材料。\n" NOR);
+                set("long", HIC  "這是一張藍色的皮革，是製作甲衣的上好材料。\n" NOR);
                 set("base_unit", "張");
                 set("unit", "張");
                 set("base_value", 100);

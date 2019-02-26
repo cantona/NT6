@@ -43,7 +43,7 @@ int do_think(string arg)
         else
         {
                 write("你悶頭苦思，突然發現地上有一塊方磚(brick)似乎邊緣特別的光
-滑。好象可以(uncover)\n");
+滑。好像可以(uncover)\n");
                 set_temp("marks/xanadu_hall1", 1, me);
         }
         return 1;
@@ -73,7 +73,7 @@ int do_uncover(string arg)
                         k=random(6);
                         l=random(6);
                         set_temp("marks/xanadu_hall2", l*1000+k*100+j*10+i, me);
- write("你驚魂甫定，發現地板翻起來的背面刻著一行小字："+s1[i]+s1[9+j]+s1[18+k]+s1[18+l]+"\n");
+ write("你驚魂甫定，發現地板翻起來的背面刻着一行小字："+s1[i]+s1[9+j]+s1[18+k]+s1[18+l]+"\n");
 
 
                 }

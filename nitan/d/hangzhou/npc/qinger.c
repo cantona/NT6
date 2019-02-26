@@ -17,13 +17,13 @@ void create()
          set("per", 30);
         set("long",
 "一個常駐月老祠附近的小姑娘，賣一些稀
-罕的東西，懸奇古怪，據說有助姻緣。\n"
+罕的東西，懸奇古怪，據説有助姻緣。\n"
 );
         set("combat_exp", 2500);
         set("attitude", "friendly");
         set("chat_chance", 1);
         set("chat_msg", ({
-                "情兒笑眯眯地說道：“求姻緣啊？來看看我賣的東西吧！”\n",
+                "情兒笑眯眯地説道：“求姻緣啊？來看看我賣的東西吧！”\n",
         }));
 
         set("vendor_goods", ({

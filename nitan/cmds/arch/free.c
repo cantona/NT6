@@ -61,7 +61,7 @@ int main(object me, string arg)
                 if (! objectp(card = present("help card", me)))
                         return notify_fail("你沒有權利把人放出來。\n");
 
-                message_vision("$N摸出一張卡片，拼命念叨：太上老君救命啊，" +
+                message_vision("$N摸出一張卡片，拼命唸叨：太上老君救命啊，" +
                                ob->name(1) + "真是無辜啊！\n", me);
                 destruct(card);
         }

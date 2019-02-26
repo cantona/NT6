@@ -39,7 +39,7 @@ int perform(object me, object target)
                 return notify_fail("你沒有激發獨孤九劍，難以施展" YI "。\n");
 
         if (! living(target))
-                return notify_fail("對方都已經這樣了，用不著這麼費力吧？\n");
+                return notify_fail("對方都已經這樣了，用不着這麼費力吧？\n");
 
         switch (random(3))
         {

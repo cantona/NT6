@@ -48,7 +48,7 @@ int exert(object me, object target)
         message_combatd(
                   HIW "$N運起純陽神通功，片刻之間，白氣籠罩全身，雙眼精光四射，身手分外矯健，進退神速，與平時判若兩人。\n" NOR, me);
         message_combatd(
-                  HIG "\n你不禁詫異，難道這就是王重陽獨步武林，打遍天下無敵手的不傳絕技：純陽神通功。據說當年連全真七子和周伯通也沒練成。\n" NOR, me);
+                  HIG "\n你不禁詫異，難道這就是王重陽獨步武林，打遍天下無敵手的不傳絕技：純陽神通功。據説當年連全真七子和周伯通也沒練成。\n" NOR, me);
 
         skill = me->query_skill("force");
         addn("neili", -skill/2, me);

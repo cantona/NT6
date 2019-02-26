@@ -22,7 +22,7 @@ int main(object me, string arg)
                 if( !target || !target->is_character() || !me->is_fighting(target) )
                                return notify_fail("乾坤大挪移大法只能對戰鬥中的對手使用。\n");
                 if( !victim || !victim->is_character() || victim==me) 
-                        return notify_fail("你想挪移攻擊的對象不在這裡。\n");
+                        return notify_fail("你想挪移攻擊的對象不在這裏。\n");
                 form = 3;
         }
         else 
@@ -131,7 +131,7 @@ int main(object me, string arg)
         else
         {
                 write( CYN"可惜沒成功。\n"NOR);
-                tell_object(target, CYN"你強用心神，終于控制住自己。\n"NOR);
+                tell_object(target, CYN"你強用心神，終於控制住自己。\n"NOR);
                 addn("neili", -100, me);
         }
         return 1;

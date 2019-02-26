@@ -24,7 +24,7 @@ int perform(object me, object target)
 
         if( !objectp(weapon=query_temp("handing", me)) ||
             query("skill_type", weapon) != "throwing" )
-                return notify_fail("你現在手中並沒有拿著暗器。\n");
+                return notify_fail("你現在手中並沒有拿着暗器。\n");
 
         if (weapon->query_amount() < 20)
                 return notify_fail("至少要有二十枚暗器你才能施展花雨金針。\n");
@@ -39,12 +39,12 @@ int perform(object me, object target)
                 return notify_fail("你內力不夠了。\n");
 
         if (! living(target))
-              return notify_fail("對方都已經這樣了，用不著這麼費力吧？\n");
+              return notify_fail("對方都已經這樣了，用不着這麼費力吧？\n");
 
         addn("neili", -100, me);
         weapon->add_amount(-10);
 
-        msg= HIY "$N" HIY "飛身躍起，右手一張，頓時洒出一片金芒，"
+        msg= HIY "$N" HIY "飛身躍起，右手一張，頓時灑出一片金芒，"
              "手中" + weapon->name() + HIY "如急風暴雨一般直射$n"
              HIY "而去！\n" NOR;
 

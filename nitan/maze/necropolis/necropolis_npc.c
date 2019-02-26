@@ -29,7 +29,7 @@ void die() {
                         set("quest/killed/"+name(), finished, mazeobj);
                         tell_object(killer,HIW"殺死 "+name()+": "+finished+"/"+count+"。\n"NOR);
                 }
-                //第6個任務，守衛丁一，殺二十個亡靈
+                //第6個任務，守衞丁一，殺二十個亡靈
                 if( query("quest/quest_index", mazeobj) == 6 && is_undead() && 
                    environment() && query("short", environment()) == HIY"聚靈法陣"NOR){
                                 count=query("quest/to_kill/亡靈", mazeobj);

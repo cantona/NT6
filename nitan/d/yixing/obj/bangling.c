@@ -96,8 +96,8 @@ int do_find(string arg)
         case "買賣":
                 result += "將" + job["name"] + "賣個好價錢";
                 break;
-        case "伙計":
-                result += "在天寶閣做伙計";
+        case "夥計":
+                result += "在天寶閣做夥計";
                 break;
         default:
                 write("你現在沒有被指派幫務。\n");
@@ -137,7 +137,7 @@ int do_collect(string arg)
         if( !living(victim) )
                 return notify_fail("你還是等此人醒來後再收括錢吧。\n");
         if( victim->is_busy() || victim->is_fighting() )
-                return notify_fail("此人正忙著。\n");
+                return notify_fail("此人正忙着。\n");
 
         message_vision(HIR"\n$N向$n大聲吆喝道：我是" + (string)query("fam") + "來收攤費的，識時務的趕快給錢！！！\n"NOR, me, victim);
 
@@ -158,13 +158,13 @@ int do_collect(string arg)
                 message_vision("$N大怒道：什麼" + (string)query("party/party_name") + "，還不快滾！！！\n", victim);
                 return 1;
         }
-        message_vision("$N對$n說道：" + RANK_D->query_respect(me) + "辛苦了，這一點攤費是小的該付的。\n", victim, me);
-        message_vision("$N接著說道：" + RANK_D->query_respect(me) + "請放心，我馬上派人將錢送到貴幫！！！\n", victim);
+        message_vision("$N對$n説道：" + RANK_D->query_respect(me) + "辛苦了，這一點攤費是小的該付的。\n", victim, me);
+        message_vision("$N接着説道：" + RANK_D->query_respect(me) + "請放心，我馬上派人將錢送到貴幫！！！\n", victim);
 
         bonus = 1 + yourexp * 2 / (myexp + 10000);
         record = bonus + random(bonus);
         addn("combat_exp", record, me);
-        log_file("test/BangJob",sprintf("%-10s于%-20s時因收攤費得%-5s經驗點\n",query("name", me),ctime(time()),chinese_number(record)));
+        log_file("test/BangJob",sprintf("%-10s於%-20s時因收攤費得%-5s經驗點\n",query("name", me),ctime(time()),chinese_number(record)));
 
         bonus /= 4;
         addn("shen", -bonus, me);
@@ -200,7 +200,7 @@ int do_sign(string arg)
         bonus=job["bonus"]*job["max"]/(1000+query("combat_exp", me));
         record = bonus + random(bonus);
         addn("combat_exp", record, me);
-        log_file("test/BangJob",sprintf("%-10s于%-20s時殺%-10s得%-5s經驗點\n",query("name", me),ctime(time()),job["name"],chinese_number(record)));
+        log_file("test/BangJob",sprintf("%-10s於%-20s時殺%-10s得%-5s經驗點\n",query("name", me),ctime(time()),job["name"],chinese_number(record)));
 
         bonus = job["score"];
         addn("shen", -bonus, me);
@@ -227,37 +227,37 @@ int do_bargain(string arg)
         if( !(target = present(arg, environment(me))) )
                 return notify_fail("這兒沒有這個人。\n");
         if( !living(target) )
-                return notify_fail("你還是等此人醒來後再說吧\n");
+                return notify_fail("你還是等此人醒來後再説吧\n");
         if( userp(target) )
                 return notify_fail("玩家不會出好價錢的。\n");
         if( target->is_busy() || target->is_fighting() )
-                return notify_fail(target->name() + "正忙著。\n");
+                return notify_fail(target->name() + "正忙着。\n");
         if( (exp=query("combat_exp", target))<10000 )
         {
-                message_vision("$N擺了擺手說道：我買不起，你賣給別人吧。\n", target);
+                message_vision("$N擺了擺手説道：我買不起，你賣給別人吧。\n", target);
                 return 1;
         }
         if( !(obj = present(job["good"], me)) )
                 return notify_fail("你把" + job["name"] + "弄丟了。\n");
         if( time()<query("trader/time", target)+600){
-                message_vision("$N擺了擺手說道：我剛買了一"+query("unit", obj)+obj->name()+"。\n",target);
+                message_vision("$N擺了擺手説道：我剛買了一"+query("unit", obj)+obj->name()+"。\n",target);
                 return 1;
         }
         if( (bonus = (int)job["prices"][explode(base_name(environment(target)), "/")[1]]) < 5 ) {
-                message_vision("$N擺了擺手說道：這東西現在在此地一點也不值錢，你自己用吧。\n", target);
+                message_vision("$N擺了擺手説道：這東西現在在此地一點也不值錢，你自己用吧。\n", target);
                 return 1;
         }
         set("trader/time", time(), target);
         bonus*=(1+query("combat_exp", target)/100000);
-        message_vision("$N想了想說道：好吧，" + chinese_number(bonus) + "兩銀子，再貴我不買了。\n", target);
+        message_vision("$N想了想説道：好吧，" + chinese_number(bonus) + "兩銀子，再貴我不買了。\n", target);
         message_vision("$N點了點頭，將"+query("unit", obj)+obj->name()+"交給$n。\n",me,target);
         obj->move(CANGKU);
-        message_vision("$N說道：下次貴幫來人時我再付款。\n", target);
-        message_vision("$N說道：沒關系，下次還有更好的貨。\n", me);
+        message_vision("$N説道：下次貴幫來人時我再付款。\n", target);
+        message_vision("$N説道：沒關係，下次還有更好的貨。\n", me);
 
         bonus /= 20;
         addn("combat_exp", bonus, me);
-        log_file("test/BangJob",sprintf("%-10s于%-20s時因賣%-10s得%-5s經驗點\n",query("name", me),ctime(time()),obj->name(),chinese_number(bonus)));
+        log_file("test/BangJob",sprintf("%-10s於%-20s時因賣%-10s得%-5s經驗點\n",query("name", me),ctime(time()),obj->name(),chinese_number(bonus)));
         addn("score", bonus/4);
         delete("job");
         return 1;

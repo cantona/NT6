@@ -13,7 +13,7 @@ void create()
         set("gender", "男性" );
         set("age", 52);
         set("long", "一個衣衫襤褸的落魄書生。焦黃臉皮，一個酒糟鼻，疏疏落落的
-幾根胡子，兩眼無神。衣衫上一片油光，右手拿了一把破折扇。\n");
+幾根鬍子，兩眼無神。衣衫上一片油光，右手拿了一把破摺扇。\n");
         set("combat_exp", 400000);
         set("attitude", "friendly");
 
@@ -47,7 +47,7 @@ string ask_me()
 
         if (uptime() < 1000)
                 return "這位"+RANK_D->query_respect(this_player()) +
-                "，續命八丸還在老頭子那裡，我怎麼給你？";
+                "，續命八丸還在老頭子那裏，我怎麼給你？";
         if (random(10) < 3)
                 return "這位"+RANK_D->query_respect(this_player()) +
                 "，續命八丸給令狐公子吃掉了，我拿什麼給你？";
@@ -60,7 +60,7 @@ string ask_me()
         ob = new("/clone/medicine/nostrum/xuming8wan");
         ob->move(this_player());
         command("rumor"+query("name", this_player())+"拿到續命八丸了啦。\n");
-        return "好吧，看在聖姑份上就給你嘗嘗續命八丸的味道吧。";
+        return "好吧，看在聖姑份上就給你嚐嚐續命八丸的味道吧。";
 }
 
 */

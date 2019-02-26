@@ -1,8 +1,8 @@
-// yuyin.c 余音繞樑
+// yuyin.c 餘音繞樑
 // Last Modified by winder on Aug. 13 2000
 
 #include <ansi.h>
-#define PNAME "「余音繞樑」"
+#define PNAME "「餘音繞樑」"
 inherit F_SSERVER;
 int perform(object me, object target)
 {
@@ -54,7 +54,7 @@ int perform(object me, object target)
         if( query("neili", me)<300 )
                 return notify_fail("你的內力不夠，不能使用"PNAME"。\n");
 
-        msg = HIG"$N"HIG"使出「余音繞樑」，將手中劍搭在$n"HIG"兵刃上，劍隨意轉，連綿不絕，使$n"HIG"一時無法變招。\n";
+        msg = HIG"$N"HIG"使出「餘音繞樑」，將手中劍搭在$n"HIG"兵刃上，劍隨意轉，連綿不絕，使$n"HIG"一時無法變招。\n";
 
         addn("neili", -200, me);
 

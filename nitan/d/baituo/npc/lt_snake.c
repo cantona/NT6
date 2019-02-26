@@ -13,7 +13,7 @@ void create()
         int poison = 10;
         set_name("兩頭蛇", ({ "liangtou she", "she", "snake" }) );
         set("age", 100);
-        set("long", "這條蛇花紋斑斕，頸子兩邊分岔，竟然有兩個頭，極是猙獰。\n據說看到兩頭蛇的人，一定會死。\n");
+        set("long", "這條蛇花紋斑斕，頸子兩邊分岔，竟然有兩個頭，極是猙獰。\n據説看到兩頭蛇的人，一定會死。\n");
         set("attitude", "aggressive");
 
         set_weight(poison*600 + 9000);

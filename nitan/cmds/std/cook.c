@@ -23,12 +23,12 @@ int main(object me, string arg)
                 if (! menu || sizeof(menu) < 1)
                 {
                         write("你不會利用" + to_chinese(skill) +
-                        "做任何菜肴。\n");
+                        "做任何菜餚。\n");
                         return 1;
                 }
 
                 msg = "你現在使用" + to_chinese(skill) + "會做" +
-                      implode(keys(menu), "、") + "這些菜肴。";
+                      implode(keys(menu), "、") + "這些菜餚。";
                 write(sort_string(msg, 64));
                 return 1;
         }
@@ -57,12 +57,12 @@ int main(object me, string arg)
                 return 1;
         }
 
-        message_vision("$N卷起袖子，運用鍋鏟瓢盆、醬油茶"
-                       "醋，精心調制出一份" + arg + "來。\n", me);
+        message_vision("$N捲起袖子，運用鍋鏟瓢盆、醬油茶"
+                       "醋，精心調製出一份" + arg + "來。\n", me);
         cailiao->add_amount(-1);
         ob = new("/clone/food/dish");
         ob->set_name(arg, menu[arg] + ({ "dish" }));
-        ob->set("long","一份由"+me->name(1)+"精心烹制的"+
+        ob->set("long","一份由"+me->name(1)+"精心烹製的"+
                         ob->name() + "。\n");
         set("skill", skill, ob);
         set("level", me->query_skill(skill,1), ob);
@@ -74,7 +74,7 @@ int main(object me, string arg)
 int help(object me)
 {
         write(@HELP
-指令格式 : cook [<菜肴名稱>]
+指令格式 : cook [<菜餚名稱>]
 
 HELP );
         return 1;

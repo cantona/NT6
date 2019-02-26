@@ -18,7 +18,7 @@ void create()
                 set("material", "iron");
                 set("long", HIG"碧磷針是星宿派淬毒暗器，針長寸許，發出詭異的光。\n"NOR);
                 set("wield_msg", HIC"$N迅速地從身上摸出一些碧磷針，捏在手中就待發出！\n"NOR);
-                set("unwield_msg",HIC"$N將手裡剩下的碧磷針一抖就不見了。\n"NOR);
+                set("unwield_msg",HIC"$N將手裏剩下的碧磷針一抖就不見了。\n"NOR);
         }
         set_amount(50);
         init_throwing(50);

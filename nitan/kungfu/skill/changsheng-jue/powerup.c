@@ -22,7 +22,7 @@ int exert(object me, object target)
         me->receive_damage("qi", 0);
 
         message_combatd(HIW "$N" HIW "微一凝神，運起長生決，將真氣"
-                        "凝聚在丹田之中，沿奇經八脈遍布全身！\n" NOR, me);
+                        "凝聚在丹田之中，沿奇經八脈遍佈全身！\n" NOR, me);
 
         addn_temp("apply/attack", skill*2/5, me);
         addn_temp("apply/parry", skill*2/5, me);

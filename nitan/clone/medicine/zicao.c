@@ -12,7 +12,7 @@ void create()
         set_default_object(__FILE__);
     else
     {
-        set("long", "這是昆侖山中出產的紫草，食之據說能延年益壽。\n");
+        set("long", "這是崑崙山中出產的紫草，食之據説能延年益壽。\n");
         set("unit", "株");
         set("value", 80);
     }
@@ -27,7 +27,7 @@ int do_eat(string arg)
 {
     object me = this_player();
     if (me->is_busy())
-        return notify_fail("別急，慢慢吃，小心別噎著了。\n");
+        return notify_fail("別急，慢慢吃，小心別噎着了。\n");
     if (!id(arg))
         return notify_fail("你要吃什麼？\n");
     if(arg=="zi cao" || "zicao") 

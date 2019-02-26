@@ -43,7 +43,7 @@ int perform(object me, object target)
                 return notify_fail("你的真氣不夠，無法運用" JIU "。\n");
 
         if (! living(target))
-                return notify_fail("對方都已經這樣了，用不著這麼費力吧？\n");
+                return notify_fail("對方都已經這樣了，用不着這麼費力吧？\n");
 
         msg = HIG "$N" HIG "大喝一聲，施出絕招「" HIR "避雲遮日" HIG "」，頓時真題迸發，衣衫鼓動，雙拳"
               "猛然如閃電般地拍向$n" HIG "。\n" NOR;

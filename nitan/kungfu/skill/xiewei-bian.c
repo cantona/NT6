@@ -11,7 +11,7 @@ mapping *action = ({
         "lvl"   : 0,
         "damage_type": "刺傷"
 ]),
-([      "action": "$N力貫鞭梢，一招「蠍尾鉤」，手中$w舞出滿天鞭影，橫掃$n腰間",
+([      "action": "$N力貫鞭梢，一招「蠍尾鈎」，手中$w舞出滿天鞭影，橫掃$n腰間",
         "force" : 130,
         "dodge" : 17,
         "parry" : 15,
@@ -19,7 +19,7 @@ mapping *action = ({
         "lvl"   : 20,
         "damage_type": "劈傷"
 ]),
-([      "action": "$N運氣于腕，一招「毒蠍蝕月」，手中$w向一根銅棍般直擊$n胸部",
+([      "action": "$N運氣於腕，一招「毒蠍蝕月」，手中$w向一根銅棍般直擊$n胸部",
         "force" : 150,
         "dodge" : 21,
         "parry" : 19,

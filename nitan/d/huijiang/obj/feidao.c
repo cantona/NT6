@@ -10,7 +10,7 @@ void create()
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("long", "特制的飛刀，每只都磨得十分鋒銳。\n");
+                set("long", "特製的飛刀，每隻都磨得十分鋒鋭。\n");
                 set("unit", "把");
                 set("value", 0);
                 set("base_unit", "把");

@@ -41,7 +41,7 @@ int main(object me,string arg)
                         if( mapp(temp) && sizeof(temp) ) {
                                 os = keys(temp);
                                 for( j=0;j<sizeof(os);j++ )
-                                        msg += sprintf("副本名稱：%-33s剩余時間：%s\n",
+                                        msg += sprintf("副本名稱：%-33s剩餘時間：%s\n",
                                                 data[ks[i]]["name"]+"<"+ks[i]+">("+os[j]+")",
                                                 appromix_time(temp[os[j]] - time()) );
                         }
@@ -78,7 +78,7 @@ int main(object me,string arg)
                                 temp = all[fbname];
                                 ks = keys(temp);
                                 for( i=0;i<sizeof(ks);i++ ) {
-                                        msg += sprintf("副本名稱：%-33s剩余時間：%s\n",
+                                        msg += sprintf("副本名稱：%-33s剩餘時間：%s\n",
                                                data[fbname]["name"]+"<"+fbname+">("+ks[i]+")",
                                                appromix_time(temp[ks[i]] - time()) );
                                 }
@@ -116,8 +116,8 @@ int help (object me)
 fuben list [all]              查看當前遊戲中所有的副本詳細信息
 fuben list 副本名稱           查看指定副本的詳細信息
 fuben open|dest all|副本名稱  查看指定副本的詳細信息
-fuben dest 副本名稱           銷毀指定類型副本的所有副本
-fuben dest 副本名稱 副本主人  銷毀指定類型副本的某人副本
+fuben dest 副本名稱           銷燬指定類型副本的所有副本
+fuben dest 副本名稱 副本主人  銷燬指定類型副本的某人副本
 
 HELP );
                       return 1;

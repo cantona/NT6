@@ -8,7 +8,7 @@ void create()
         set("short", "林間小道");
         set("long", @LONG
 這是一條長長的林間小道，從東邊一直通到西邊，一眼望去，看不
-到路的盡頭。兩旁百花爭艷。令人留連忘返。
+到路的盡頭。兩旁百花爭豔。令人留連忘返。
 LONG
         );
         set("exits", ([
@@ -29,6 +29,6 @@ LONG
 int valid_leave(object me,string dir)
 {
         if( dir == "west" && (!query("family", me) || query("family", me)["family_name"] != "逍遙派") )
-                return notify_fail("路中間豎著一個“小牌”，上面寫到：非逍遙派弟子，請勿進入。\n");
+                return notify_fail("路中間豎着一個“小牌”，上面寫到：非逍遙派弟子，請勿進入。\n");
         return ::valid_leave(me,dir);
 }

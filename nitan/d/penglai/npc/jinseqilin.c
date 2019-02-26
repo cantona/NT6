@@ -6,7 +6,7 @@ int is_pld_npc(){return 1;}
 void create()
 {
         set_name(HIY "金色麒麟" NOR, ({ "jinse qilin", "jinse", "qilin" }));
-        set("long", HIY "這是一只渾身長滿了金毛的麒麟，金光射的你有些睜不開眼睛。\n" NOR);
+        set("long", HIY "這是一隻渾身長滿了金毛的麒麟，金光射的你有些睜不開眼睛。\n" NOR);
 
         set("age", 190);
         set("str", 40);

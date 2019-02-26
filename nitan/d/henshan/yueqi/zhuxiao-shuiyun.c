@@ -6,7 +6,7 @@ inherit MI_XIAO;
 
 void create()
 {
-        set_name(HIG "碧玉洞蕭﹒水雲" NOR, ({ "shuiyun xiao", "shuiyun", "xiao" }));
+        set_name(HIG "碧玉洞蕭·水雲" NOR, ({ "shuiyun xiao", "shuiyun", "xiao" }));
         set_weight(600);
 
         if (clonep())

@@ -359,7 +359,7 @@ varargs void unconcious(object defeater)
         if( !living(me) ) return;
         if( wizardp(me) && query("env/immortal") ) return;
 
-        // 朱雀重生效果 50%幾率 瞬間爆發恢復氣血精力到60%
+        // 朱雀重生效果 50%機率 瞬間爆發恢復氣血精力到60%
         // 如超過60%則不恢復
         if( query("special_skill/zhuque", me) && random(10) < 5)
         {
@@ -371,7 +371,7 @@ varargs void unconcious(object defeater)
                 if( query("jingli", me) < query("max_jingli", me) * 3 / 5)
                         set("jingli", query("max_jingli", me) * 3 / 5, me);
 
-                message_vision(HIR "\n突然間，$N身後紅光爆現，猶如傳說中的鳳凰般美妙！\n" NOR, me);
+                message_vision(HIR "\n突然間，$N身後紅光爆現，猶如傳説中的鳳凰般美妙！\n" NOR, me);
                 return;
         }
 
@@ -499,7 +499,7 @@ varargs void revive(int quiet)
                 defeated_by = 0;
                 defeated_by_who = 0;
                 COMBAT_D->announce(this_object(), "revive");
-                message("vision", HIY "\n慢慢地你終于又有了知覺....\n\n" NOR, me);
+                message("vision", HIY "\n慢慢地你終於又有了知覺....\n\n" NOR, me);
                 // 不能把 npc 搬進安全區。
                 if( !userp(this_object()) && query("no_fight", env) &&
                     stringp(room = query("startroom")) && base_name(env) != room ) {
@@ -540,7 +540,7 @@ varargs void die(object killer)
         delete_temp("sleeped");
         delete("last_sleep");
 
-        // 朱雀重生效果 50%幾率 瞬間爆發恢復氣血精力到60%
+        // 朱雀重生效果 50%機率 瞬間爆發恢復氣血精力到60%
         // 如超過60%則不恢復
         if( query("special_skill/zhuque", me) && random(10) < 5)
         {
@@ -552,7 +552,7 @@ varargs void die(object killer)
                 if( query("jingli", me) < query("max_jingli", me) * 3 / 5)
                         set("jingli", query("max_jingli", me) * 3 / 5, me);
 
-                message_vision(HIR "\n突然間，$N身後紅光爆現，猶如傳說中的鳳凰般美妙！\n" NOR, me);
+                message_vision(HIR "\n突然間，$N身後紅光爆現，猶如傳説中的鳳凰般美妙！\n" NOR, me);
                 return;
         }
         
@@ -652,11 +652,11 @@ varargs void die(object killer)
                     (dob_name != killer_name || dob != killer) ) {
                         if( dob && playerp(dob) && dob->is_want_kill(query("id")) ) {
                                 if( !dob->query_condition("killer") ) {
-                                        follow_msg = "聽說官府發下海捕文書，緝拿殺人肇事兇手" +
+                                        follow_msg = "聽説官府發下海捕文書，緝拿殺人肇事兇手" +
                                                      dob->name(1) + "。";
                                         dob->apply_condition("killer", 500);
                                 } else {
-                                        follow_msg = "聽說官府加緊捉拿累犯重案的肇事暴徒" +
+                                        follow_msg = "聽説官府加緊捉拿累犯重案的肇事暴徒" +
                                                      dob->name(1) + "。";
                                         dob->apply_condition("killer", 800 +
                                                      (int)dob->query_condition("killer"));
@@ -876,7 +876,7 @@ int heal_up()
                         my["jing"] -= 30 + random(20);
                         switch (random(8))
                         {
-                        case 0: message_vision("$N緊張的盯著四周來往的行人。\n", me);
+                        case 0: message_vision("$N緊張的盯着四周來往的行人。\n", me);
                                 break;
 
                         case 1: message_vision("$N打了個哈欠，隨即振作精神繼續觀察附近情況。\n", me);

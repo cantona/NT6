@@ -6,7 +6,7 @@ inherit NPC;
 void create()
 {
         set_name(HIW "鬼丈夫" NOR, ({ "gzf" }));
-        set("title", HIR "沖動之神" NOR);
+        set("title", HIR "衝動之神" NOR);
         set("gender", "男性");
         set("age", 35);
         set("no_get", 1);

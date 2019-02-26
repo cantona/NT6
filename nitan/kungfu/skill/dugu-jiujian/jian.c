@@ -38,7 +38,7 @@ int perform(object me, object target)
         if( query("neili", me)<250 )
                 return notify_fail("你此時的內力不足，難以施展" HUA "。\n");
 
-        msg = MAG "$N" MAG "凝神聚氣，揮洒手中兵器，進入無招無我，劍心通明境界！\n\n" NOR;
+        msg = MAG "$N" MAG "凝神聚氣，揮灑手中兵器，進入無招無我，劍心通明境界！\n\n" NOR;
 
         message_combatd(msg, me, target);
 

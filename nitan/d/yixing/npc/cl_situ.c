@@ -31,7 +31,7 @@ void create()
         set("nickname", HIY"八爪金龍"NOR);
         set("party/party_name", HIC"長樂幫"NOR);
         set("party/rank", "幫主");
-        set("long","他是一個身材高大，但有些幹瘦的中年人，雙臂很長，飛抓功夫在武林中也堪稱一絕。\n");
+        set("long","他是一個身材高大，但有些乾瘦的中年人，雙臂很長，飛抓功夫在武林中也堪稱一絕。\n");
         set("gender", "男性");
         set("age", 45);
         set("attitude", "friendly");
@@ -101,7 +101,7 @@ string ask_job()
         object ob = this_player();
 
         if( query("party/party_name", ob) != HIC"長樂幫"NOR )
-                return RANK_D->query_rude(ob) + "莫非是想打聽我幫的秘密吧。";
+                return RANK_D->query_rude(ob) + "莫非是想打聽我幫的祕密吧。";
 
         return "有關具體幫務方面的事你去問貝先生。";
 }
@@ -113,11 +113,11 @@ string ask_position()
         int i, score, bonus, period, record;
 
         if( is_fighting() )
-                return RANK_D->query_rude(me) + "瞎了眼沒見我正忙著？！";
+                return RANK_D->query_rude(me) + "瞎了眼沒見我正忙着？！";
 
         myfam = (string)query("party/party_name");
         if( query("party/party_name", me) != query("party/party_name") )
-                return RANK_D->query_rude(me) + "莫非是想打聽我幫的秘密吧。";
+                return RANK_D->query_rude(me) + "莫非是想打聽我幫的祕密吧。";
 
         if( !(ling = present("bang ling", me)) )
                 return RANK_D->query_rude(me) + "竟連自己的幫令都管不住！";
@@ -153,7 +153,7 @@ string ask_position()
                 wage->set_amount(record);
                 wage->move(me);
                 message_vision("$N轉身拿出一個紅包遞給$n。\n", this_object(), me);
-                log_file("test/BangPos",sprintf("%s于%s時因管轄%s%s獲利%s兩銀子\n",query("name", me),ctime(time()),myfam,pos,chinese_number(record)));
+                log_file("test/BangPos",sprintf("%s於%s時因管轄%s%s獲利%s兩銀子\n",query("name", me),ctime(time()),myfam,pos,chinese_number(record)));
 
                 bonus /= 3;
                 addn("combat_exp", bonus+random(bonus), me);
@@ -176,7 +176,7 @@ string ask_position()
         }
 
         if( !sizeof(poss) )
-                return "現在所有的香主之位都有人佔著。";
+                return "現在所有的香主之位都有人佔着。";
 
         pos = poss[random(sizeof(poss))];
         set_temp("bangs/pos", pos, me);
@@ -185,9 +185,9 @@ string ask_position()
         
         me->set_temp("apply/short",
    ({ HIR + myfam + pos + "香主"NOR + query("name",me)+"("+capitalize(query("id",me))+")" }));
-        log_file("test/BangPos",sprintf("%s于%s時當上%s%s香主\n",query("name", me),ctime(time()),myfam,pos));
+        log_file("test/BangPos",sprintf("%s於%s時當上%s%s香主\n",query("name", me),ctime(time()),myfam,pos));
         command("congra");
-        return "我把" + pos + "托付給你，你可要不負眾望。";
+        return "我把" + pos + "託付給你，你可要不負眾望。";
 }
 
 string ask_life()
@@ -196,11 +196,11 @@ string ask_life()
         string myfam, *beautys, beauty;
 
         if( is_fighting() )
-                return RANK_D->query_rude(me) + "瞎了眼沒見我正忙著？！";
+                return RANK_D->query_rude(me) + "瞎了眼沒見我正忙着？！";
 
         myfam = (string)query("party/party_name");
         if( query("party/party_name", me) != myfam )
-                return RANK_D->query_rude(me) + "莫非是想打聽我幫的秘密吧。";
+                return RANK_D->query_rude(me) + "莫非是想打聽我幫的祕密吧。";
 
         if( uptime() < (int)query("joytime") + 20 + random(20) ) {
                 command("lazy");
@@ -227,10 +227,10 @@ int accept_object(object who, object ob)
                 return notify_fail(name() + "大怒道：大膽！想謀害本幫主？！\n");
 
         if( !(room = environment()) )
-                return notify_fail(name() + "大怒道：等我回總舵再說吧！\n");
+                return notify_fail(name() + "大怒道：等我回總舵再説吧！\n");
 
         if( base_name(room) != OFFICE )
-                return notify_fail(name() + "大怒道：等我回總舵再說吧！\n");
+                return notify_fail(name() + "大怒道：等我回總舵再説吧！\n");
 
         if( !stringp(beauty=query_temp("bangs/beauty", who)) )
                 return notify_fail(name() + "大怒道：滾！老夫的私事不用你操心！\n");
@@ -245,7 +245,7 @@ int accept_object(object who, object ob)
                 return notify_fail(name() + "大怒道：連老夫的話都記不住！");
 
         if( userp(ob) )
-                return notify_fail(name() + "大怒道：滾！隨便找個人回來竟想蒙騙老夫！");
+                return notify_fail(name() + "大怒道：滾！隨便找個人回來竟想矇騙老夫！");
 
         if( query("eff_qi", ob)*10<query("max_qi", ob)*9
          || query("eff_jing", ob)*10<query("max_jing", ob)*9 )
@@ -259,14 +259,14 @@ int accept_object(object who, object ob)
         record = bonus + random(bonus);
         addn("combat_exp", record, who);
         addn("shen", -record, who);
-        log_file("test/BangWomen",sprintf("%-10s于%-20s時上貢%-10s得%-5s經驗點\n",query("name", who),ctime(time()),beauty,chinese_number(record)));
+        log_file("test/BangWomen",sprintf("%-10s於%-20s時上貢%-10s得%-5s經驗點\n",query("name", who),ctime(time()),beauty,chinese_number(record)));
 
         if( ling = present("bang ling", who) ) {
                 if( query("owner", ling) == query("id", who) )
                         addn("score", bonus+random(bonus), ling);
         }
 
-        message_vision("$N說道：好！好！好！" + myfam + "上上下下幾千人中數你最討幫主的歡心！",this_object());
+        message_vision("$N説道：好！好！好！" + myfam + "上上下下幾千人中數你最討幫主的歡心！",this_object());
         return 1;
 }       
 

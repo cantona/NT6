@@ -3,17 +3,17 @@
 inherit SHAOLIN_SKILL;
         
 mapping *action = ({
-([     "action": "$N一招「橫雲斷峰」左掌佯攻，右掌蓄勢擊向$n的$l",
+([     "action": "$N一招「橫雲斷峯」左掌佯攻，右掌蓄勢擊向$n的$l",
        "force" : 120,
        "attack": 40,
        "parry" : 20,
        "dodge" : -15,
        "damage": 20,
        "lvl"   : 0,
-       "skill_name" : "橫雲斷峰",
+       "skill_name" : "橫雲斷峯",
        "damage_type" : "淤傷"
 ]),
-([     "action": "$N飛身上前，雙掌同時擊出，一招「三羊開泰」，將$n籠罩于掌風之中",
+([     "action": "$N飛身上前，雙掌同時擊出，一招「三羊開泰」，將$n籠罩於掌風之中",
        "force" : 150,
        "attack": 50,
        "parry" : 15,

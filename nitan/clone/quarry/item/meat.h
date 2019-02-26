@@ -21,12 +21,12 @@ int broil(object me, object ob)
 
         if (me->is_busy())
         {
-                write("你現在忙著呢，過會兒再烤吧。\n");
+                write("你現在忙着呢，過會兒再烤吧。\n");
                 return 1;
         }
 
         message_sort(HIM "$N" HIM "把" + name() + HIM "放在" + ob->name() +
-                     HIM "上細細烤著，只聽畢啵畢啵幾聲，聞得一陣誘人的香味"
+                     HIM "上細細烤着，只聽畢啵畢啵幾聲，聞得一陣誘人的香味"
                      "漸漸散了出來。$P見狀連忙把烤好的" + name() + HIM "取"
                      "下。\n\n" NOR, me);
 

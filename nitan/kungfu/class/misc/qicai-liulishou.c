@@ -15,7 +15,7 @@ void create()
         set("gender", "男性");
         set("age", 8888);
         set("long", @LONG
-這是一只長相奇特怪獸，全身幻出七彩之色，頭大身小，一對渾圓的眼
+這是一隻長相奇特怪獸，全身幻出七彩之色，頭大身小，一對渾圓的眼
 珠閃爍出攝人的光芒。
 LONG );
         set("combat_exp", 2000000000);
@@ -121,9 +121,9 @@ void random_move()
         if (time() - query_temp("born_time") > 1800)
         {
                 env = environment(this_object());
-                message_vision("$N長嘯一聲，化作一團火燄，消失在天際。\n", this_object());
+                message_vision("$N長嘯一聲，化作一團火焰，消失在天際。\n", this_object());
                 
-                CHANNEL_D->channel_broadcast("mess", "聽說"+
+                CHANNEL_D->channel_broadcast("mess", "聽説"+
                         env->short() + HIW "(" + LOOK_CMD->locate(base_name(env)) + ")一帶出現的" +
                         HIR + this_object()->short() + HIG "消失了。\n" NOR);
 
@@ -136,7 +136,7 @@ void random_move()
 void death_msg()
 {
         command("chat 看來這趟東方之行實在是自討沒趣！");
-        message_vision("$N長嘯一聲，化作一團火燄，消失在天際。\n", this_object());
+        message_vision("$N長嘯一聲，化作一團火焰，消失在天際。\n", this_object());
         CHANNEL_D->channel_broadcast("rumor",
-                        "聽說" + name() + HIM "被一群武林異士打敗，敗興而歸。" NOR);
+                        "聽説" + name() + HIM "被一羣武林異士打敗，敗興而歸。" NOR);
 }

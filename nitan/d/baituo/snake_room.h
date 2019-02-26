@@ -32,7 +32,7 @@ string look_bush()
 string look_crack()
 {
         string desc;
-        if(!query("searched/crack")) desc = "樹根間的裂縫，旁邊生著叢叢亂草。\n";
+        if(!query("searched/crack")) desc = "樹根間的裂縫，旁邊生着叢叢亂草。\n";
         else desc = "樹根間的裂縫，附近的雜草倒向兩邊，似乎被撥動過。\n";        
         return desc;
 }
@@ -55,7 +55,7 @@ int do_search(string arg)
         weapon=query_temp("weapon", me);
 
         if( me->is_busy() || query_temp("pending/exercising", me) )
-                return notify_fail("你現在正忙著呢。\n");
+                return notify_fail("你現在正忙着呢。\n");
 
         if( !objectp(weapon) || (query("skill_type", weapon) != "staff"
          && query("skill_type", weapon) != "club"
@@ -72,7 +72,7 @@ int do_search(string arg)
         
         else if(arg == "bush" && query("bush") ) {
                 place = "樹叢";
-                message_vision("$N揮著"+weapon->name()+"，打動四周的樹叢枝葉，發出沙沙的輕響。\n", me);
+                message_vision("$N揮着"+weapon->name()+"，打動四周的樹叢枝葉，發出沙沙的輕響。\n", me);
                 addn("jingli", -40, me);
                 set("searched/bush", 1);
         }
@@ -84,7 +84,7 @@ int do_search(string arg)
 
         else if(arg == "cave" && query("cave") ) {
                 place = "洞";
-                message_vision("$N用"+weapon->name()+"在洞口地面□托、托□地輕敲著。\n", me);
+                message_vision("$N用"+weapon->name()+"在洞口地面u託、託v地輕敲着。\n", me);
                 addn("jingli", -10, me);
         }
         else return notify_fail("你要搜索哪個地方？\n");
@@ -98,7 +98,7 @@ int do_search(string arg)
         if(query("hide_snake") > 0) {
                 check_snake(me, place);
         }
-        else return notify_fail("找了這麼久，你覺得"+place+"中應該是不會藏著蛇了。\n");
+        else return notify_fail("找了這麼久，你覺得"+place+"中應該是不會藏着蛇了。\n");
 
         return 1;
 }
@@ -158,13 +158,13 @@ int do_burn(string arg)
         if (!present("fire", me))  return 0;
 
         if( me->is_busy() || query_temp("pending/exercising", me) )
-                return notify_fail("你現在正忙著呢。\n");
+                return notify_fail("你現在正忙着呢。\n");
 
         if( !objectp(branch = present(arg, me))  && !objectp(branch = present(arg, environment(me)))  )
                 return notify_fail("你要燒什麼？\n");
 
         if( query("id", branch) != "shuzhi" )
-                return notify_fail("如果你想熏蛇，找些樹枝之類的東西來燒吧。\n");
+                return notify_fail("如果你想薰蛇，找些樹枝之類的東西來燒吧。\n");
 
         if( query("burning", branch) )
                 return notify_fail("樹枝已經點燃了。\n");
@@ -174,13 +174,13 @@ int do_burn(string arg)
                 if(!query("searched/crack")) message_vision("$N將樹根前的雜草撥開。\n", me);
         }
         else if( query("cave") ) place = "洞";
-        else return notify_fail("在這裡燒樹枝也沒什麼用。\n");
+        else return notify_fail("在這裏燒樹枝也沒什麼用。\n");
 
         message_vision(HIR"$N將"+branch->name()+HIR"堆在"+place+"前，用火折點燃。\n"NOR, me);
-        message_vision(WHT"一股濃煙慢慢湧入"+place+"裡........\n\n"NOR, me);
+        message_vision(WHT"一股濃煙慢慢湧入"+place+"裏........\n\n"NOR, me);
         
         set("name", "點燃的"+branch->name(), branch);
-        set("long",query("long",  branch)+"現在正燃燒著，冒出濃濃的煙霧。\n", branch);
+        set("long",query("long",  branch)+"現在正燃燒着，冒出濃濃的煙霧。\n", branch);
         set("burning", 1, branch);
         set("no_get", 1, branch);
         branch->move(this_object());
@@ -200,7 +200,7 @@ void smoke_snake(object me, object branch, string place)
         here = this_object();
 
         if(query("hide_snake") < 1 ) {
-                message_vision("煙熏了老半天，樹枝都燒成灰了，"+place+"裡卻一點動靜也沒有。\n", me);
+                message_vision("煙燻了老半天，樹枝都燒成灰了，"+place+"裏卻一點動靜也沒有。\n", me);
                 destruct(branch);
                 return;
         }
@@ -221,7 +221,7 @@ void smoke_snake(object me, object branch, string place)
         set("frightened", 1, snake);
         snake->set_kind(i);
         snake->move(here);
-        message_vision(HIR"忽聽一陣颼颼異聲，一條$N忍不住煙熏，從"+place+"中竄了出來！\n"NOR, snake);
+        message_vision(HIR"忽聽一陣颼颼異聲，一條$N忍不住煙燻，從"+place+"中竄了出來！\n"NOR, snake);
         if(environment(me) == this_object())
         snake->kill_ob(me);
 

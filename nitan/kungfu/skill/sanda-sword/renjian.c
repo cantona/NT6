@@ -55,9 +55,9 @@ int perform(object me, object target)
                 return notify_fail("你現在的真氣不夠，難以施展" + name() + "。\n");
 
         if (! living(target))
-                return notify_fail("對方都已經這樣了，用不著這麼費力吧？\n");
+                return notify_fail("對方都已經這樣了，用不着這麼費力吧？\n");
 
-        msg = HIW "$N面露悲憫，雙腳站立不動，劍柄抵住額頭，口中念念有辭，持劍如持香，只見$N兩手掌心向外，以黏勁吸住劍柄，內力發動，劍刃旋轉如盤，望之如同月輪。這劍轉動快速勁急，卻不聞分毫破空之聲，金輪蓋頂，熱氣飄盪，彷佛佛頂光暈一般，便在此時，那光暈往外膨脹，登將$n整個人包在圈內" + "\n" + NOR;
+        msg = HIW "$N面露悲憫，雙腳站立不動，劍柄抵住額頭，口中念念有辭，持劍如持香，只見$N兩手掌心向外，以黏勁吸住劍柄，內力發動，劍刃旋轉如盤，望之如同月輪。這劍轉動快速勁急，卻不聞分毫破空之聲，金輪蓋頂，熱氣飄蕩，彷佛佛頂光暈一般，便在此時，那光暈往外膨脹，登將$n整個人包在圈內" + "\n" + NOR;
 
         ap = attack_power(me, "sword");
         dp = defense_power(target, "parry");
@@ -65,7 +65,7 @@ int perform(object me, object target)
         if (ap * 2 / 3 + random(ap) > dp)
         {
                 damage = damage_power(me, "sword");
-                msg += COMBAT_D->do_damage(me, target, attack, damage, 90, HIM "只聽叮叮當當之聲不絕于耳，無數斷劍已然跌落地面，一聲慘嚎，跟著$n口吐鮮血，跪倒在地。" + "\n" NOR);
+                msg += COMBAT_D->do_damage(me, target, attack, damage, 90, HIM "只聽叮叮噹噹之聲不絕於耳，無數斷劍已然跌落地面，一聲慘嚎，跟着$n口吐鮮血，跪倒在地。" + "\n" NOR);
                 addn("neili", -200, me);
                 me->start_busy(1);
                 /*

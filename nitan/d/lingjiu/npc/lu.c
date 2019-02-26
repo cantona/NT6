@@ -6,7 +6,7 @@ void create()
         set_name("梅花鹿", ({ "meihua lu", "lu" }) );
         set("race", "走畜");
         set("age", 2);
-        set("long", "一只可愛的梅花鹿，它的血是大補之物。\n");
+        set("long", "一隻可愛的梅花鹿，它的血是大補之物。\n");
         set("attitude", "peaceful");
  
         set("str", 30);
@@ -24,7 +24,7 @@ void create()
 void die()
 {
         object ob, corpse;
-        message_vision("$N發出凄婉的哀鳴，靜靜倒在地上，死去了。\n", this_object());
+        message_vision("$N發出悽婉的哀鳴，靜靜倒在地上，死去了。\n", this_object());
         if( objectp(corpse = CHAR_D->make_corpse(this_object())) )
                 ob = new("/clone/medicine/vegetable/lurong");
         ob->move(corpse);

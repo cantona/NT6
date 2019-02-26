@@ -14,7 +14,7 @@ void create()
                 set("unit", "柄");
                 set("long",
 "這是一柄拂塵，做工精細，本來只是抹灰驅蠅的工具
-後來成立道士手裡的道具，就漸漸失去原來的作用了。\n");
+後來成立道士手裏的道具，就漸漸失去原來的作用了。\n");
                 set("value", 300);
                 set("material", "leather");
                 set("wield_msg",

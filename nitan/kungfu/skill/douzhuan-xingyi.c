@@ -1,4 +1,4 @@
-// douzhuan-xingyi.c 鬥轉星移
+// douzhuan-xingyi.c 斗轉星移
 
 #include <ansi.h>;
 #include <combat.h>
@@ -7,24 +7,24 @@ string type() { return "martial"; }
 string martialtype() { return "skill"; }
 
 string *parry_msg = ({
-        YEL"驀地裡一股力道飛來，將$n一引一帶，$n身子輕輕越起，身行落在一旁。\n"NOR,
-        BLU"$n當下一股內力沖向$l，$N擊向$n的$l的招數莫名奇妙的溜滑向一旁。\n"NOR,
+        YEL"驀地裏一股力道飛來，將$n一引一帶，$n身子輕輕越起，身行落在一旁。\n"NOR,
+        BLU"$n當下一股內力衝向$l，$N擊向$n的$l的招數莫名奇妙的溜滑向一旁。\n"NOR,
         HIW"$n雙手前探，左臂搭上$N右臂，右臂使出$N的招數將$N此招化去。\n"NOR,
-        HIY"$n星移鬥轉，$N這招莫名其妙的在中途轉了方向，直奔自己襲來。\n"NOR,
+        HIY"$n星移斗轉，$N這招莫名其妙的在中途轉了方向，直奔自己襲來。\n"NOR,
         YEL"$n作壁上觀，雙手與對方相交數掌，談笑間竟使出$N成名技藝，使得$N不知如何是好。\n"NOR,
-        BLU"$n凝神運氣向$N猛攻快打，使出的招數好似$N的成名絕技，把$N的招數化于無行。\n"NOR,
+        BLU"$n凝神運氣向$N猛攻快打，使出的招數好似$N的成名絕技，把$N的招數化於無行。\n"NOR,
         HIW"只見$n身如飄風，恰似漫天星移，詭異地一式，雙掌動向無定不可捉摸地拍向$N的$l。\n"NOR,
-        HIY"$n身行飄忽不定，在星移鬥轉之間反用$N的招數擊向$N，卻令人$N百思不得其解。\n"NOR,
+        HIY"$n身行飄忽不定，在星移斗轉之間反用$N的招數擊向$N，卻令人$N百思不得其解。\n"NOR,
         HIY"$n輕輕一帶，$N發現自己招數回擊過來，嚇得往後倒退幾步。\n"NOR,
-        HIY"$n手臂回轉，在$N手肘下輕輕一推，$N招數落空。\n"NOR,
+        HIY"$n手臂迴轉，在$N手肘下輕輕一推，$N招數落空。\n"NOR,
         HIY"$n右手伸出，在$N手腕上輕輕一拉，$N收勢不住，直往前撲去。\n"NOR,
-        HIY"$n雙手回圈，$N只覺得前面好象有一堵牆，再也攻不進去。\n"NOR,
+        HIY"$n雙手迴圈，$N只覺得前面好像有一堵牆，再也攻不進去。\n"NOR,
 });
 
 string *unarmed_parry_msg = ({
         "但是被$p雙掌一推，$N的攻勢頓時變了方向。\n",
         "$n身形一轉，$N只覺得的所有的力道全部都落到了空處。\n",
-        "但是$N感覺像打到棉花上一樣，說不出的怪異。\n",
+        "但是$N感覺像打到棉花上一樣，説不出的怪異。\n",
 });
 
 int valid_enable(string usage) { return usage=="parry"; }
@@ -44,22 +44,22 @@ int valid_learn(object me)
         int l_lvl = (int) me->query_skill("literate",1);
 
         if ((int)me->query_skill("parry", 1) < 100)
-                return notify_fail("你的基本招架技巧掌握的還不夠熟練，無法學習鬥轉星移。\n");
+                return notify_fail("你的基本招架技巧掌握的還不夠熟練，無法學習斗轉星移。\n");
         if( (int)me->query_int() < 40 )
                 return notify_fail("你仔細地想了一會，還是沒明白借力用力的道理。\n");
         if( query("max_neili", me)<600 )
-                return notify_fail("你的內力不夠，沒有辦法練鬥轉星移。\n");
+                return notify_fail("你的內力不夠，沒有辦法練斗轉星移。\n");
         if( s_lvl < 100)
-                return notify_fail("鬥轉星移必須先學好神元功才能練習。\n");
+                return notify_fail("斗轉星移必須先學好神元功才能練習。\n");
         if( s_lvl + 30 < d_lvl)
-                return notify_fail("你的內功級別不夠你真正領會更高級的鬥轉星移。\n");
+                return notify_fail("你的內功級別不夠你真正領會更高級的斗轉星移。\n");
         if( l_lvl + 50 < d_lvl)
-                return notify_fail("你的讀書寫字水平不夠你領會更高級的鬥轉星移。\n");
+                return notify_fail("你的讀書寫字水平不夠你領會更高級的斗轉星移。\n");
         return 1;
 }
 int practice_skill(object me)
 {
-        return notify_fail("鬥轉星移只能通過學習來提高。\n");
+        return notify_fail("斗轉星移只能通過學習來提高。\n");
 }
 int learn_bonus() { return 30; }
 int practice_bonus() { return 30; }
@@ -90,7 +90,7 @@ mixed valid_damage(object ob, object me, int damage, object weapon)
 
           lvl = me->query_skill("douzhuan-xingyi", 1);
 
-          // 特殊反傷害幾率
+          // 特殊反傷害機率
           if (lvl > 280)ran = 50;
           if (lvl > 300)ran = 45;
           if (lvl > 320)ran = 35;
@@ -113,7 +113,7 @@ mixed valid_damage(object ob, object me, int damage, object weapon)
           {
              if (app > 1500)app=1500;
 
-             //等級差別特殊反傷害幾率調整系數
+             //等級差別特殊反傷害機率調整係數
 
                 opp = 10;
              if (lvl > 280)opp = 30;
@@ -134,7 +134,7 @@ mixed valid_damage(object ob, object me, int damage, object weapon)
              if (ran > rantemp)ran = rantemp;
            }
 
-              // 鬥轉星移反傷效果
+              // 斗轉星移反傷效果
 
               if (query_temp("yixinghuanyue", me) || (lvl > 280 &&
                me->query_skill("zihui-xinfa", 1) > 300 &&
@@ -170,7 +170,7 @@ mixed valid_damage(object ob, object me, int damage, object weapon)
                                                   HIC "這一招竟然無從下手。\n" NOR ]);
                           break;
                           case 1:
-                             result += ([ "msg" : HIC "$n" HIC "單掌一托，$N"
+                             result += ([ "msg" : HIC "$n" HIC "單掌一託，$N"
                                                   HIC "登時拿捏不準力道，不禁"
                                                   "泛起一陣有心無力的感覺。\n" NOR ]);
                           break;
@@ -178,7 +178,7 @@ mixed valid_damage(object ob, object me, int damage, object weapon)
                           default:
                              result += ([ "msg" : HIC "$N" HIC "一招眼看擊中了$n"
                                                   HIC "，然而$n" HIC "輕輕一卸，"
-                                                  "將$N" HIC "的攻擊化解于無形。\n" NOR ]);
+                                                  "將$N" HIC "的攻擊化解於無形。\n" NOR ]);
                           break;
                         }
                      return result;
@@ -194,7 +194,7 @@ mixed valid_damage(object ob, object me, int damage, object weapon)
                                break;
 
                               case 1:
-                               result = HIY "$n" HIY "單掌一托，$N"
+                               result = HIY "$n" HIY "單掌一託，$N"
                                         HIY "忽感拿捏不準力道，驀然警醒，登時變化招式。\n" NOR;
                                break;
 
@@ -229,7 +229,7 @@ void xingyi(object ob, object me)
         {
            damage = ap+random(ap) / 2;
 
-           msg = HIY "\n$N" HIY "施展起絕學「鬥轉星移」  " HIR "----以彼之道，還施彼身----\n" NOR;
+           msg = HIY "\n$N" HIY "施展起絕學「斗轉星移」  " HIR "----以彼之道，還施彼身----\n" NOR;
 
               switch (menpai)
                {
@@ -276,7 +276,7 @@ void xingyi(object ob, object me)
                                 HIY "$N" HIY "陡然使出「" HIR "一指乾坤" HIY "」絕技，單指勁"
                                 "點$n" HIY "檀中要穴，招式變化精奇之極！\n" NOR );
                          msg += HIR "$n" HIR "只覺胸口一麻，已被$N"
-                                HIR "一指點中，頓時氣血上湧，全身酸軟"
+                                HIR "一指點中，頓時氣血上湧，全身痠軟"
                                 "。\n" NOR;
                          ob->start_busy(5+random(2));
 
@@ -289,7 +289,7 @@ void xingyi(object ob, object me)
                       if( objectp(query_temp("weapon", me)) )
                       {
                          msg += COMBAT_D->do_damage(me, ob, REMOTE_ATTACK, damage/3, 100,
-                                HIC "$N" HIC "使出柔雲劍法「三環套月」，一招之中另蘊三招，舖天"
+                                HIC "$N" HIC "使出柔雲劍法「三環套月」，一招之中另藴三招，鋪天"
                                 "蓋地罩向$n" HIC "！\n" NOR );
                          msg += COMBAT_D->do_damage(me, ob, REMOTE_ATTACK, damage/3, 100,"");
                          msg += COMBAT_D->do_damage(me, ob, REMOTE_ATTACK, damage/3, 100,"");
@@ -299,7 +299,7 @@ void xingyi(object ob, object me)
                        {
                          msg += COMBAT_D->do_damage(me, ob, REMOTE_ATTACK, damage, 100,
                                 HIW "$N" HIW "使出太極拳「震」字訣，左手高，右手低，陡然"
-                                "回圈，企圖以內力震傷$n" HIW "。\n" NOR );
+                                "迴圈，企圖以內力震傷$n" HIW "。\n" NOR );
 
                          addn("neili", -500, me);
                          me->start_busy(2);
@@ -319,7 +319,7 @@ void xingyi(object ob, object me)
                        {
                          msg += COMBAT_D->do_damage(me, ob, REMOTE_ATTACK, 0, 0,
                                 HIC "$N" HIC "使出天罡指穴法絕技「凌空指穴」，左手"
-                                "一連七指向著$n" HIC "胸前大穴接連戳出。\n" NOR );
+                                "一連七指向着$n" HIC "胸前大穴接連戳出。\n" NOR );
                          msg += HIR "結果$p" HIR "不及攻敵，拼力躲避$P"
                                 HIR "指力頓時動作大亂！\n" NOR;
                          ob->start_busy(3+random(3));
@@ -355,7 +355,7 @@ void xingyi(object ob, object me)
                          msg += COMBAT_D->do_damage(me, ob, REMOTE_ATTACK, damage, 100,
                                 HIR "$N" HIR "悄然遊走至$n" HIR "跟前，陡然使出"
                                 "三陰手絕技「損筋訣」，單掌輕輕拂過$n" HIR "太陽"
-                                "穴，不著半點力道。\n" NOR );
+                                "穴，不着半點力道。\n" NOR );
                          msg += HIY "$n大吃一驚，卻又突然發現，雖然招式套路完全一樣，"
                                 "但自己卻未中半分毒，不禁舒了口長氣。\n" NOR;
                          addn("neili", -500, me);
@@ -368,7 +368,7 @@ void xingyi(object ob, object me)
                       {
                          msg += COMBAT_D->do_damage(me, ob, REMOTE_ATTACK, damage/3, 100,
                                 HIW "$N" HIW "嗔目大喝，將手中武器橫握做刀" HIW "一勢「"
-                                HIR "赤煉神刀" HIW "」迸出漫天血光，舖天蓋地洒向$n"
+                                HIR "赤煉神刀" HIW "」迸出漫天血光，鋪天蓋地灑向$n"
                                 HIW "。\n" NOR );
                          msg += COMBAT_D->do_damage(me, ob, REMOTE_ATTACK, damage/3, 100,"");
                          msg += COMBAT_D->do_damage(me, ob, REMOTE_ATTACK, damage/3, 100,"");
@@ -390,8 +390,8 @@ void xingyi(object ob, object me)
                        break;
 
                        default :
-                         msg = HIM "\n$N" HIM "默運紫徽心法，施展起絕學「鬥轉星移」，\n"
-                               HIM "一股真氣在體內迅速慣行，巧妙地牽引著$n \n"
+                         msg = HIM "\n$N" HIM "默運紫徽心法，施展起絕學「斗轉星移」，\n"
+                               HIM "一股真氣在體內迅速慣行，巧妙地牽引着$n \n"
                                HIM "的招式。\n" NOR;
                          msg += COMBAT_D->do_damage(me, ob, REMOTE_ATTACK, damage, 200,
                                HIR "\n$n" HIR "大吃一驚，不料$N" HIR "竟將"
@@ -418,7 +418,7 @@ string perform_action_file(string action)
 }
 int help(object me)
 {
-        write(HIC"\n鬥轉星移："NOR"\n");
+        write(HIC"\n斗轉星移："NOR"\n");
         write(@HELP
 
     姑蘇慕容家最拿手的絕技，乃是一門借力打力之技，叫做“鬥
@@ -427,7 +427,7 @@ int help(object me)
 然天下各門各派的絕技，姑蘇慕容氏無一不會，無一不精。其實武
 林中絕技千千萬萬，任他如何聰明淵博，決難將每一項絕技都學會
 了，何況既是絕技，自非朝夕之功所能練成。但慕容氏有了這一門
-巧妙無比的“鬥轉星移”之術，不論對方施出何種功夫來，都能將
+巧妙無比的“斗轉星移”之術，不論對方施出何種功夫來，都能將
 之轉移力道，反擊到對方自身。出手的人武功越高，死法就越是巧
 妙。慕容氏若非單打獨鬥，若不是有把握定能致敵死命，這“鬥轉
 星移”的功夫便決不使用，是以姑蘇慕容氏名震江湖，真正的功夫
@@ -441,8 +441,8 @@ int help(object me)
                 慕容復的嫡傳弟子
                 後天悟性40
                 神元功100級
-                神元功不能低于鬥轉星移30級
-                讀書寫字不能低于鬥轉星移50級
+                神元功不能低於斗轉星移30級
+                讀書寫字不能低於斗轉星移50級
                 內力600
 HELP
         );

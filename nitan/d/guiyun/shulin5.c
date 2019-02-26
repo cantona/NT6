@@ -12,10 +12,10 @@ void create()
 {
         set("short", "樹林深處");
         set("long",@LONG
-這是一片小樹林的深處。地面上綠草如蔭，茂密地生長著。四周安
-靜得令人毛骨悚然，看來還是趕緊離開這裡的為妙。樹叢中有一棵老樹
-(tree)，相對于其它樹顯得十分的粗壯，樹上的樹葉(leaf)非常茂密，
-有幾只不知名的小鳥在其中竄來竄去。
+這是一片小樹林的深處。地面上綠草如蔭，茂密地生長着。四周安
+靜得令人毛骨悚然，看來還是趕緊離開這裏的為妙。樹叢中有一棵老樹
+(tree)，相對於其它樹顯得十分的粗壯，樹上的樹葉(leaf)非常茂密，
+有幾隻不知名的小鳥在其中竄來竄去。
 LONG
 );
         set("exits",([
@@ -66,7 +66,7 @@ int do_zhai(string arg)
         if (arg != "leaf" && arg != "shuye" && arg != "ye")
                 return notify_fail("你要摘什麼？\n");
 
-        message_vision("$N伸手去夠樹上的葉子，發現手臂需要再長幾十尺才行！\n", me);
+        message_vision("$N伸手去夠樹上的葉子，發現手臂需要再長几十尺才行！\n", me);
         return 1;
 }
 
@@ -80,10 +80,10 @@ int do_sling(string arg)
         if (arg != "leaf" && arg != "shuye" && arg != "ye")
                 return notify_fail("你要射什麼？\n");
         if (me->is_busy() || me->is_fighting())
-                return notify_fail("你正忙著哪！\n");
+                return notify_fail("你正忙着哪！\n");
         weapon=query_temp("weapon", me);
         if (!weapon) {
-                message_vision("$N對著樹上的葉子運氣，又蹦又跳試圖把它摘下來，卻始終沒法夠到。\n", me);
+                message_vision("$N對着樹上的葉子運氣，又蹦又跳試圖把它摘下來，卻始終沒法夠到。\n", me);
                 return 1;
         }
         weapon_name=query("name", weapon);
@@ -104,8 +104,8 @@ int do_sling(string arg)
                         {
                                 if (userp(ob[i]))
                                 {
-                                        tell_object(ob[i], me->name() + "掏出一顆" + weapon_name + "，對著樹上彈來，卻正好擊中你，你腳下一個不穩，掉了下去。\n");
-                                        tell_room(room, me->name() + "掏出一顆" + weapon_name + "，對著樹上彈來，卻正好擊中" + ob[i]->name() + "，" + ob[i]->name() + "腳下一個不穩，掉了下去。\n", ({ob[i]}));
+                                        tell_object(ob[i], me->name() + "掏出一顆" + weapon_name + "，對着樹上彈來，卻正好擊中你，你腳下一個不穩，掉了下去。\n");
+                                        tell_room(room, me->name() + "掏出一顆" + weapon_name + "，對着樹上彈來，卻正好擊中" + ob[i]->name() + "，" + ob[i]->name() + "腳下一個不穩，掉了下去。\n", ({ob[i]}));
                                         write("你掏出一顆" + weapon_name + "，對準樹葉彈去，只聽“啊”地一聲慘叫，一個人從樹上掉了下來，仔細一看，卻是" + ob[i]->name() + "。\n");
                                         tell_room(this_object(), me->name() + "掏出一顆" + weapon_name + "，對準樹葉彈去，只聽“啊”地一聲慘叫，一個人從樹上掉了下來，仔細一看，卻是" + ob[i]->name() + "。\n", ({me}));
                                         ob[i]->move(this_object());
@@ -163,7 +163,7 @@ int do_shake(string arg)
         if (arg != "tree" && arg != "shu" && arg != "dashu")
                 return notify_fail("你要搖什麼？\n");
         if (me->is_busy() || me->is_fighting())
-                return notify_fail("你正忙著哪！\n");
+                return notify_fail("你正忙着哪！\n");
         if (room = find_object(__DIR__"shushang"))
         {
 //                room = load_object(__DIR__"shushang");
@@ -175,10 +175,10 @@ int do_shake(string arg)
                         {
                                 if (userp(ob[i]))
                                 {
-                                        tell_object(ob[i],me->name()+"使勁地搖晃著大樹，你腳下一個不穩，掉了下去。\n");
-                                        tell_room(room, me->name()+"使勁地搖晃著大樹，" + ob[i]->name() + "腳下一個不穩，掉了下去。\n", ({ob[i]}));
-                                        write( "你使勁地搖晃著大樹，忽聽“嘩啦”一聲，一個人從樹上掉了下來，仔細一看，卻是" + ob[i]->name() + "。\n");
-                                        tell_room(this_object(),me->name()+"使勁地搖晃著大樹，忽聽“嘩啦”一聲，一個人從樹上掉了下來，仔細一看，卻是"+ob[i]->name() + "。\n", ({me}));
+                                        tell_object(ob[i],me->name()+"使勁地搖晃着大樹，你腳下一個不穩，掉了下去。\n");
+                                        tell_room(room, me->name()+"使勁地搖晃着大樹，" + ob[i]->name() + "腳下一個不穩，掉了下去。\n", ({ob[i]}));
+                                        write( "你使勁地搖晃着大樹，忽聽“嘩啦”一聲，一個人從樹上掉了下來，仔細一看，卻是" + ob[i]->name() + "。\n");
+                                        tell_room(this_object(),me->name()+"使勁地搖晃着大樹，忽聽“嘩啦”一聲，一個人從樹上掉了下來，仔細一看，卻是"+ob[i]->name() + "。\n", ({me}));
                                         ob[i]->move(this_object());
                                         if (!random(3))
                                         {
@@ -202,19 +202,19 @@ int do_shake(string arg)
         }
         if (level < 30)
         {
-                write( "你使勁地搖晃著大樹，大樹卻紋絲不動，你不禁想到那句“蚍蜉撼樹”的成語來。\n");
+                write( "你使勁地搖晃着大樹，大樹卻紋絲不動，你不禁想到那句“蚍蜉撼樹”的成語來。\n");
                 return 1;
         }
         if (level > 100)
         {
-                write("你使勁地搖晃著大樹，把樹上的果子都搖得落到幾丈開外去了。\n");
+                write("你使勁地搖晃着大樹，把樹上的果子都搖得落到幾丈開外去了。\n");
                 return 1;
         }
         me->receive_damage("qi", qicost);
         if (!random(5))
-                message_vision("$N使勁地搖著大樹，從樹上掉下幾個果子來，砸向$N的頭臉，$N趕忙伸臂架開。\n", me);
+                message_vision("$N使勁地搖着大樹，從樹上掉下幾個果子來，砸向$N的頭臉，$N趕忙伸臂架開。\n", me);
         else
-                write( "你使勁地搖著大樹，從樹上掉下幾個果子來，砸向你的頭臉，你趕忙伸臂架開。\n");
+                write( "你使勁地搖着大樹，從樹上掉下幾個果子來，砸向你的頭臉，你趕忙伸臂架開。\n");
         if ( level * level * level /10 < exp)
                 me->improve_skill("parry",query("int", me));
         return 1;
@@ -230,7 +230,7 @@ int do_strike(string arg)
                 return notify_fail("你要拍什麼？\n");
 
         if (me->is_busy() || me->is_fighting())
-                return notify_fail("你正忙著哪！\n");
+                return notify_fail("你正忙着哪！\n");
 
         if (room = find_object(__DIR__"shushang"))
         {
@@ -281,9 +281,9 @@ int do_strike(string arg)
         }
         me->receive_damage("qi", qicost);
         if (!random(5))
-                message_vision("$N一掌拍向大樹，大樹晃了幾晃，$N對于自己的掌法更有自信了。\n", me);
+                message_vision("$N一掌拍向大樹，大樹晃了幾晃，$N對於自己的掌法更有自信了。\n", me);
         else
-                write( "你一掌拍向大樹，大樹晃了幾晃，你對于自己的掌法更有自信了。\n");
+                write( "你一掌拍向大樹，大樹晃了幾晃，你對於自己的掌法更有自信了。\n");
         if ( level * level * level /10 < exp)
                 me->improve_skill("strike",query("int", me));
         return 1;
@@ -296,8 +296,8 @@ int do_climb(string arg)
         if (arg != "tree" && arg != "shu" && arg != "dashu" && arg != "up")
                 return notify_fail("你要爬什麼？\n");
         if (me->is_busy() || me->is_fighting())
-                return notify_fail("你正忙著哪！\n");
-        message_vision("$N往手心裡啐了兩口唾沫，運了運氣，順著樹幹爬了上去。\n", me);
+                return notify_fail("你正忙着哪！\n");
+        message_vision("$N往手心裏啐了兩口唾沫，運了運氣，順着樹幹爬了上去。\n", me);
         me->move(__DIR__"shushang", 1);
         message("vision", me->name() + "從樹下爬了上來。\n", __DIR__"shushang", ({me}));
         return 1;

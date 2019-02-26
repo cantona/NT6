@@ -7,7 +7,7 @@ string type() { return "martial"; }
 string martialtype() { return "skill"; }
 
 mapping *action = ({
-([        "action" : "$N端坐不動，一招"HIC"「秋風拂葉」"NOR"，手中$w帶著一股勁風，擊向$n的臉頰",
+([        "action" : "$N端坐不動，一招"HIC"「秋風拂葉」"NOR"，手中$w帶着一股勁風，擊向$n的臉頰",
         "lvl"    : 0,
         "skill_name" : "秋風拂葉",
 ]),

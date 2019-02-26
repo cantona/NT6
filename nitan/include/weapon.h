@@ -18,7 +18,7 @@
 #define DAGGER          "/inherit/weapon/dagger"        // 矛
 #define FORK            "/inherit/weapon/fork"          // 叉
 #define HAMMER          "/inherit/weapon/hammer"        // 錘
-#define HOOK            "/inherit/weapon/hook"          // 鉤
+#define HOOK            "/inherit/weapon/hook"          // 鈎
 #define MACE            "/inherit/weapon/mace"          // 鞭
 #define RAKE            "/inherit/weapon/rake"          // 耙
 #define PIN             "/inherit/weapon/pin"           // 針
@@ -28,7 +28,7 @@
 #define SPEAR           "/inherit/weapon/spear"         // 槍
 #define THROWING        "/inherit/weapon/throwing"      // 暗器
 #define WHIP            "/inherit/weapon/whip"          // 軟鞭
-#define M_WEAPON        "/inherit/weapon/weapon"        // 制造兵器
+#define M_WEAPON        "/inherit/weapon/weapon"        // 製造兵器
 #define XSWORD          "/inherit/weapon/xsword"        // 蕭
 
 #define F_AXE           "/inherit/weapon/_axe"

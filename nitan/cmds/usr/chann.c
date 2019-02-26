@@ -162,14 +162,14 @@ int help()
 如果位置設置為沒有（none），則表示要關閉該頻道。
 
 命令串格式為：<頻道> < main | public | none>
-頻道為你要進行操作的頻道名稱，後面跟著的是none表示要關閉該
-頻道，跟著main表示要打開頻道並將信息顯示在主區域窗口，如果
+頻道為你要進行操作的頻道名稱，後面跟着的是none表示要關閉該
+頻道，跟着main表示要打開頻道並將信息顯示在主區域窗口，如果
 是public則顯示到公共信息區域窗口。
 
 直接指定的命令模式例子：
-chann chat none    ── 此操作為將chat頻道關閉
-chann chat main    ── 此操作將打開chat頻道並顯示到主窗口
-chann rumor public ── 此操作將在公共窗口打開rumor頻道
+chann chat none    —— 此操作為將chat頻道關閉
+chann chat main    —— 此操作將打開chat頻道並顯示到主窗口
+chann rumor public —— 此操作將在公共窗口打開rumor頻道
 HELP );
     return 1;
 }

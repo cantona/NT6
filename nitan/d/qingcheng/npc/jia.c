@@ -7,7 +7,7 @@ void create()
         set_name("賈人達", ({ "jia renda", "jia", "renda" }));
         set("gender", "男性");
         set("age", 25);
-        set("long", "他就是「青城派」中最為同門不齒、最下達的家伙。\n");
+        set("long", "他就是「青城派」中最為同門不齒、最下達的傢伙。\n");
 
         set("combat_exp", 30000);
         set("shen_type", -1);

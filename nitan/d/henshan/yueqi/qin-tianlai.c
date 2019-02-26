@@ -6,7 +6,7 @@ inherit MI_QIN;
 
 void create()
 {
-        set_name(WHT "七玄流銀﹒天籟" NOR, ({ "tianlai qin", "tianlai", "qin" }));
+        set_name(WHT "七玄流銀·天籟" NOR, ({ "tianlai qin", "tianlai", "qin" }));
         set_weight(1000);
 
         if (clonep())

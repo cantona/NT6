@@ -5,7 +5,7 @@ void create()
 {
         set_name(HIG "毒囊" NOR, ({"du nang", "dunang", "du", "nang"}));
         set("unit", "個");
-        set("long", HIG "這是一個毒蟲的毒囊，囊中充滿了毒液，發著磷光。\n" NOR);
+        set("long", HIG "這是一個毒蟲的毒囊，囊中充滿了毒液，發着磷光。\n" NOR);
         set("value", 100);
         set_weight(10);
         set("only_do_effect", 1);

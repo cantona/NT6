@@ -5,7 +5,7 @@ inherit NPC;
 void create()
 {
         set_name("秦教頭", ({ "qin jiaotou", "qin", "jiaotou" }));
-        set("long","一個四十多歲的漢子，一看就是個會家子，渾身透著一股英氣。\n");
+        set("long","一個四十多歲的漢子，一看就是個會家子，渾身透着一股英氣。\n");
         set("gender", "男性");
         set("age", 45);
         set_skill("dodge", 80);
@@ -35,19 +35,19 @@ int accept_object(object who, object ob)
 {
     if( query("combat_exp", who) >= 3500 )
     {
-        message_vision("秦教頭望著$N說：你的武功應該歷練江湖才能再長進，不能埋沒
-在這裡了。\n", who);
+        message_vision("秦教頭望着$N説：你的武功應該歷練江湖才能再長進，不能埋沒
+在這裏了。\n", who);
         return 0;
     }
     if( query("money_id", ob) && ob->value() >= 500 )
     {
         set_temp("marks/qin_paied", 1, who);
-        message_vision("秦教頭對$N說：好！這位" + RANK_D->query_respect(who) 
+        message_vision("秦教頭對$N説：好！這位" + RANK_D->query_respect(who) 
 + "想學什麼呢？\n" , who);
         return 1;
     }
     else
-        message_vision("秦教頭皺眉對$N說：錢我不在乎。可你也給的也太少了點兒吧？\n", who);
+        message_vision("秦教頭皺眉對$N説：錢我不在乎。可你也給的也太少了點兒吧？\n", who);
         return 0;
 }
 

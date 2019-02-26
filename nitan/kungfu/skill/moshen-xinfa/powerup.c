@@ -23,7 +23,7 @@ int exert(object me, object target)
         addn("neili", -100, me);
         me->receive_damage("qi", 0);
         
-        message_combatd(HIY "$N" HIY "深吸一口氣，待到呼出之時，雙目已經射出赤紅的光芒，周圍的空氣中彌漫著陣陣的戰意！\n" NOR, me);
+        message_combatd(HIY "$N" HIY "深吸一口氣，待到呼出之時，雙目已經射出赤紅的光芒，周圍的空氣中瀰漫着陣陣的戰意！\n" NOR, me);
         addn_temp("apply/attack", skill/3, me);
         addn_temp("apply/defense", skill/3, me);
         set_temp("powerup", 1, me);

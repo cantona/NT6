@@ -8,7 +8,7 @@ void create()
 {
         set_name(NOR + CYN "捕獸夾" NOR, ({ "bushou jia", "bushou", "jia" }));
         set_weight(3000);
-        set("long", NOR + CYN "夾齒鋒利的捕獸夾，你可通過它布置("
+        set("long", NOR + CYN "夾齒鋒利的捕獸夾，你可通過它佈置("
                     HIY "snare" NOR + CYN ")陷阱來捕獵。\n" NOR);
         set("unit", "只");
         set("value", 10000);
@@ -30,7 +30,7 @@ int do_snare(string arg)
         me = this_player();
 
         if (me->query_skill("hunting", 1) < 20)
-                return notify_fail("你的狩獵技巧不夠嫻熟，難以布置陷阱。\n");
+                return notify_fail("你的狩獵技巧不夠嫻熟，難以佈置陷阱。\n");
 
         if( query_temp("id") != query("id", me )
            && query_temp("id")
@@ -39,25 +39,25 @@ int do_snare(string arg)
 
         if( query("no_fight", environment(me) )
             || query("no_quarry", environment(me)) )
-                return notify_fail("在這裡放置捕獸夾？不太好吧。\n");
+                return notify_fail("在這裏放置捕獸夾？不太好吧。\n");
 
         if (query_temp("snare"))
-                return notify_fail("捕獸夾已安置妥善，就等獵物上鉤了。\n");
+                return notify_fail("捕獸夾已安置妥善，就等獵物上鈎了。\n");
 
         if (me->is_busy())
-                return notify_fail("你現在正忙著呢，等一會兒吧。\n");
+                return notify_fail("你現在正忙着呢，等一會兒吧。\n");
 
         if (me->is_fighting())
-                return notify_fail("還是先把你面前的家伙放倒再說吧。\n");
+                return notify_fail("還是先把你面前的傢伙放倒再説吧。\n");
 
         if (! objectp(ob = present("shi er", me))
            || ! ob->query_amount())
-                return notify_fail("現在你身上沒有食餌，難以布置陷阱。\n");
+                return notify_fail("現在你身上沒有食餌，難以佈置陷阱。\n");
 
         ob->add_amount(-1);
 
-        message_vision(HIR "\n$N" HIR "在" + name() + HIR "裡放上食餌，輕輕"
-                       "安置在地上，等待獵物上鉤。\n\n" NOR, me);
+        message_vision(HIR "\n$N" HIR "在" + name() + HIR "裏放上食餌，輕輕"
+                       "安置在地上，等待獵物上鈎。\n\n" NOR, me);
 
         set_temp("snare", 1);
         set_temp("id",query("id", me));
@@ -117,7 +117,7 @@ void catch_quarry(object me)
         {
                 message_vision(CYN "等了半天，只聽「喀嚓」一聲，捕獸"
                                "夾自動合攏了，啥也沒抓到。\n" HIC "看"
-                               "來這個地方捕捉不了什麼，$N" HIC "嘆了"
+                               "來這個地方捕捉不了什麼，$N" HIC "歎了"
                                "口氣，將捕獸夾收回。\n" NOR, me);
                 back_owner(me);
                 return;
@@ -178,7 +178,7 @@ void catch_quarry(object me)
                         if (lvm / 2 + random(lvm) < lvq && lvq > 20)
                         {
                                 msg += HIY "便在這個時候，忽然聽得「喀嚓」"
-                                       "一聲，那只捕獸夾竟然自動合上了。$n"
+                                       "一聲，那隻捕獸夾竟然自動合上了。$n"
                                        HIY "受驚之下勃然大怒，朝$N" HIY "直"
                                        "撲而去。\n\n" NOR;
                                 message_sort(msg, me, quarry);
@@ -189,7 +189,7 @@ void catch_quarry(object me)
                                 msg += HIY "只聽「啪」的一聲，$n" HIY "只顧"
                                        "覓食，不留神間已中了捕獸夾上的陷阱。"
                                        "那陷阱設得頗為精妙，那$n" HIY "不住"
-                                       "掙紮，鮮血濺得四處都是。但只過得片刻"
+                                       "掙扎，鮮血濺得四處都是。但只過得片刻"
                                        "，就再沒了動靜。\n" NOR;
                                 message_sort(msg, me, quarry);
                                 quarry->die(me);
@@ -199,7 +199,7 @@ void catch_quarry(object me)
                                 msg += HIY "只聽「啪」的一聲，$n" HIY "只顧"
                                        "覓食，不留神間已中了捕獸夾上的陷阱，"
                                        "登時被夾得鮮血直流。那$n" HIY "不停"
-                                       "掙紮企圖逃跑，結果觸動傷口，頓時痛得"
+                                       "掙扎企圖逃跑，結果觸動傷口，頓時痛得"
                                        "昏了過去。\n" NOR;
                                 message_sort(msg, me, quarry);
                                 quarry->unconcious(me);

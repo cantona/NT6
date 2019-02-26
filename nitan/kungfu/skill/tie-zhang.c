@@ -8,11 +8,11 @@ mapping *action = ({
         "lvl"    : 0,
         "skill_name" : "推窗望月"
 ]),
-([        "action" : "$N使一招"YEL"「分水擒龍」"NOR"，左掌陡然沿著伸長的右臂，飛快的一削而出，斬向$n的$l",
+([        "action" : "$N使一招"YEL"「分水擒龍」"NOR"，左掌陡然沿着伸長的右臂，飛快的一削而出，斬向$n的$l",
         "lvl"    : 10,
         "skill_name" : "分水擒龍"
 ]),
-([        "action" : "$N突然使一式"HIW"「白雲幻舞」"NOR"，雙臂如旋風一般一陣狂舞，刮起一陣旋轉的氣浪。 ",
+([        "action" : "$N突然使一式"HIW"「白雲幻舞」"NOR"，雙臂如旋風一般一陣狂舞，颳起一陣旋轉的氣浪。 ",
         "lvl"    : 20,
         "skill_name" : "白雲幻舞"
 ]),
@@ -54,7 +54,7 @@ mapping *action = ({
         "skill_name" : "推窗望月",
         "damage_type": "瘀傷"
 ]),
-([      "action": "$N施出「分水擒龍」，左掌陡然沿著伸長的右臂一削而出，斬向$n的$l",
+([      "action": "$N施出「分水擒龍」，左掌陡然沿着伸長的右臂一削而出，斬向$n的$l",
         "force"  : 212,
         "attack" : 53,
         "dodge"  : 34,
@@ -64,7 +64,7 @@ mapping *action = ({
         "skill_name" : "推窗望月",
         "damage_type": "瘀傷"
 ]),
-([      "action": "$N一招「白雲幻舞」，雙臂如旋風一般一陣狂舞，刮起一陣旋轉的氣浪",
+([      "action": "$N一招「白雲幻舞」，雙臂如旋風一般一陣狂舞，颳起一陣旋轉的氣浪",
         "force"  : 224,
         "attack" : 67,
         "dodge"  : 45,
@@ -239,10 +239,10 @@ mixed hit_ob(object me, object victim, int damage_bonus)
         {
                 victim->receive_wound("qi", (damage_bonus - 90) / 2, me);
 
-                return random(2) ? HIR "只聽$n" HIR "前胸「□嚓」一聲脆響，竟像是"
+                return random(2) ? HIR "只聽$n" HIR "前胸「咔嚓」一聲脆響，竟像是"
                                    "肋骨斷折的聲音。\n" NOR:
 
-                                   HIR "$n" HIR "一聲慘叫，胸前「□嚓□嚓」幾聲脆"
+                                   HIR "$n" HIR "一聲慘叫，胸前「咔嚓咔嚓」幾聲脆"
                                    "響，口中鮮血狂噴。\n" NOR;
         }
 }

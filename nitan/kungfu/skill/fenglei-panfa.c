@@ -2,7 +2,7 @@
 inherit SKILL;
 
 mapping *action = ({
-([      "action" : "$N一招「秋風起夕」，右手立掌而出，左手單臂掄起$w，夾雜著陣陣風聲向$n$l砸去",
+([      "action" : "$N一招「秋風起夕」，右手立掌而出，左手單臂掄起$w，夾雜着陣陣風聲向$n$l砸去",
         "skill_name" : "秋風起夕",
         "force" : 320,
         "attack": 27,
@@ -32,7 +32,7 @@ mapping *action = ({
         "damage": 70,
         "damage_type" : "挫傷",
 ]),
-([      "action" : "$N雙眼磕閉，全身衣物卻在內勁沖擊下漲如氣球，那$w在這「八方雲湧」的推動下，向$n緩緩壓來",
+([      "action" : "$N雙眼磕閉，全身衣物卻在內勁衝擊下漲如氣球，那$w在這「八方雲湧」的推動下，向$n緩緩壓來",
         "skill_name" : "八方雲湧",
         "force" : 340,
         "attack": 51,
@@ -42,7 +42,7 @@ mapping *action = ({
         "damage": 75,
         "damage_type" : "挫傷",
 ]),
-([      "action" : "$N雙手畫圈，光幕宛如一輪明月，將$P籠罩，這「九天雷動」的勁力帶著$w以排山倒海之勢飛旋而出",
+([      "action" : "$N雙手畫圈，光幕宛如一輪明月，將$P籠罩，這「九天雷動」的勁力帶着$w以排山倒海之勢飛旋而出",
         "skill_name" : "九天雷動",
         "force" : 380,
         "attack": 55,

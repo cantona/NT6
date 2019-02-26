@@ -35,13 +35,13 @@ void create()
                 "頭部",        "頸部",        "後背",        "腹部",        "腳爪",        "翅膀"
         }) );
 
-        set("dead_message",       "\n$N發出一聲凄厲的鳴叫，從半空中跌了下來。\n\n"    );
+        set("dead_message",       "\n$N發出一聲淒厲的鳴叫，從半空中跌了下來。\n\n"    );
         set("unconcious_message", "\n$N從半空中砰地跌下來，暈了過去。\n\n"            );
         set("revive_message",     "\n$N醒過來動彈了一下，雙翅一振，又飛了起來。\n\n"  );
         set("leave_msg",          "疾飛而去"                                      );
         set("arrive_msg",         "飛了過來"                                      );
-        set("fleeout_message",    "凄鳴著疾飛而去"                        );
-        set("fleein_message",     "緩緩地飛了過來，沉重地在半空中打著旋兒"        );
+        set("fleeout_message",    "悽鳴着疾飛而去"                        );
+        set("fleein_message",     "緩緩地飛了過來，沉重地在半空中打着旋兒"        );
 }
 
 void setup_bird(object ob)
@@ -85,12 +85,12 @@ void setup_bird(object ob)
         if( !ob->query_weight() ) ob->set_weight(BASE_WEIGHT + (my["str"] - 5)* 1000);
 
         if( query("subrace", ob) == "走禽"){
-                set("dead_message",       "\n$N發出一聲凄厲的鳴叫，栽倒在地上死了。\n\n"      );
-                set("unconcious_message", "\n$N凄鳴一聲栽倒在地，暈了過去。\n\n"              );
+                set("dead_message",       "\n$N發出一聲淒厲的鳴叫，栽倒在地上死了。\n\n"      );
+                set("unconcious_message", "\n$N悽鳴一聲栽倒在地，暈了過去。\n\n"              );
                 set("revive_message",     "\n$N醒過來動彈了一下，雙翅撲騰了幾下站了起來。\n\n");
                 set("comeout_message",    "往$d疾奔而去。\n"                                      );
                 set("comein_message",     "跑了過來。\n"                                      );
-                set("fleeout_message",    "一聲凄鳴，往$d疾奔而去。\n"                        );
+                set("fleeout_message",    "一聲悽鳴，往$d疾奔而去。\n"                        );
                 set("fleein_message",     "搖搖擺擺的跑了過來。\n"                            );
         }
 }

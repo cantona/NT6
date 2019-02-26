@@ -98,7 +98,7 @@ mapping family = ([
         "凌霄城" : ({ "/d/lingxiao/cheng","/d/lingxiao/didi",
                        "/d/lingxiao/stone","/d/lingxiao/wave2",
                        "/d/lingxiao/fenghuo","/d/lingxiao/houyuan1",  }),
-        "昆侖派" : ({ "/d/kunlun/shanbi","/d/kunlun/nanwoshi",
+        "崑崙派" : ({ "/d/kunlun/shanbi","/d/kunlun/nanwoshi",
                        "/d/kunlun/lianwu","/d/kunlun/xianjing",
                        "/d/kunlun/xuedi","/d/kunlun/kunlun3",  }),
         "青城派" : ({ "/d/qingcheng/maguchi","/d/qingcheng/qiandian",
@@ -435,7 +435,7 @@ string *nations = ({ "日本", "荷蘭", "天竺", "日本", "日本",
 string *foreigner = ({ "傭兵團", "探險隊", "侵略軍", "亡命團伙", "流竄犯" });
 
 string *chinese = ({ "黑風寨", "斧頭幫", "山西土匪", "山東響馬", "湘西土匪",
-                     "烏龍崗強盜", "太行山土匪", "落日峰毛賊", "荒漠大盜" });
+                     "烏龍崗強盜", "太行山土匪", "落日峯毛賊", "荒漠大盜" });
 
 void add_killer(object killer);
 void be_killed(int num);
@@ -512,7 +512,7 @@ void create()
 {
         seteuid(ROOT_UID);
         set("channel_id", "任務精靈");
-        CHANNEL_D->do_channel( this_object(), "sys", "群組任務系統已經啟動。");
+        CHANNEL_D->do_channel( this_object(), "sys", "羣組任務系統已經啟動。");
         ready_to_start();
 }
 
@@ -604,7 +604,7 @@ void start_quest()
 
         ready_to_start();
         if( nowtime[1] < 9 ) return;
-        CHANNEL_D->do_channel(this_object(), "sys", "群組任務系統開始選擇任務。");
+        CHANNEL_D->do_channel(this_object(), "sys", "羣組任務系統開始選擇任務。");
 
         all_quest = quest_name;
 
@@ -613,7 +613,7 @@ void start_quest()
                 name = all_quest[random(sizeof(all_quest))];
 
                 CHANNEL_D->do_channel(this_object(), "sys",
-                                      "群組任務系統選擇了任務(" + name + ")。");
+                                      "羣組任務系統選擇了任務(" + name + ")。");
 
                 all_quest -= ({ name });
                 name = GROUP_QUEST_DIR + name;
@@ -653,8 +653,8 @@ void process_quest(object ob)
         step++;
 
         prompt = ob->prompt();
-        //if (! prompt) prompt = HIR "【群組任務】" NOR;
-        if (! prompt) prompt = HIR "【群組】" NOR;
+        //if (! prompt) prompt = HIR "【羣組任務】" NOR;
+        if (! prompt) prompt = HIR "【羣組】" NOR;
         if (functionp(line)) catch(line = evaluate(line));
         if (stringp(line))
         {
@@ -835,7 +835,7 @@ void set_enemy(int num)
 {
         all_enemy = num;
 }
-//本函數用于查找地點列表的錯誤
+//本函數用於查找地點列表的錯誤
 void check_all_place()
 {
         int i,j;

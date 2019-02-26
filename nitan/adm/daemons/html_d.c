@@ -172,7 +172,7 @@ string translate_to_html(string content)
 {
 	// 替代字元
 	content = replace_string(content, "  ", "&nbsp;&nbsp;&nbsp;&nbsp;");
-	content = replace_string(content,"□","□");
+	content = replace_string(content,"□","█");
 	content = replace_string(content,"Γ","Ｔ");
 	content = replace_string(content,"ω","ｗ");
 	content = replace_string(content, "\n", "<br>\n");
@@ -256,7 +256,7 @@ void create_mudlist_html()
         
         text  = "<DIV style='BORDER-BOTTOM: #aaa 3px double; WIDTH: 200px; COLOR: #333; FONT-SIZE: 16px'><IMG src='muds/mudlist/subtitle.gif'>中文泥巴列表</DIV><BR>";
         text += "<P>　以下列出目前大陸大部份已知的泥巴 <ACRONYM title=泥巴遊戲>MUD</ACRONYM>"; 
-        text += "的即時列表，並偵測連線狀況與線上玩家人數供各位參考，若您想推薦某個中文泥巴站台，請用Zmud登錄遊戲 muds.cn 5000 與 Lonely 聯系。</P>";
+        text += "的即時列表，並偵測連線狀況與線上玩家人數供各位參考，若您想推薦某個中文泥巴站台，請用Zmud登錄遊戲 muds.cn 5000 與 Lonely 聯繫。</P>";
         text += "<UL><LI class=level1><DIV class=li>若您的網頁瀏覽器支持 JavaScript ，按欄位可依選擇排序。</DIV>";
         text += "<LI class=level1><DIV class=li>上線人數 N/A 為系統無從得知此間 <ACRONYM title=泥巴遊戲>MUD</ACRONYM> 之人數。</DIV></LI></UL><P>";
         text += "<SCRIPT language=javascript type=text/javascript src='muds/mudlist/sorttable.js'></SCRIPT></P><P>";
@@ -269,7 +269,7 @@ void create_mudlist_html()
         text += "<TD style='BORDER-BOTTOM: #555 1px solid; PADDING-BOTTOM: 3px; PADDING-LEFT: 3px; PADDING-RIGHT: 3px; PADDING-TOP: 3px' bgColor=#efefdf>網絡位置</TD>";
         text += "<TD style='BORDER-BOTTOM: #555 1px solid; PADDING-BOTTOM: 3px; PADDING-LEFT: 3px; PADDING-RIGHT: 3px; PADDING-TOP: 3px' bgColor=#efefdf align=center>連接埠</TD>";
         text += "<TD style='BORDER-BOTTOM: #555 1px solid; PADDING-BOTTOM: 3px; PADDING-LEFT: 3px; PADDING-RIGHT: 3px; PADDING-TOP: 3px' bgColor=#efefdf align=center>目前狀態</TD>";
-        text += "<TD style='BORDER-BOTTOM: #555 1px solid; PADDING-BOTTOM: 3px; PADDING-LEFT: 3px; PADDING-RIGHT: 3px; PADDING-TOP: 3px' bgColor=#efefdf align=center>線上人□</TD>";
+        text += "<TD style='BORDER-BOTTOM: #555 1px solid; PADDING-BOTTOM: 3px; PADDING-LEFT: 3px; PADDING-RIGHT: 3px; PADDING-TOP: 3px' bgColor=#efefdf align=center>線上人數</TD>";
         text += "<TD style='BORDER-BOTTOM: #555 1px solid; PADDING-BOTTOM: 3px; PADDING-LEFT: 3px; PADDING-RIGHT: 3px; PADDING-TOP: 3px' bgColor=#efefdf align=center>最後接觸時間</TD></TR>"; 
         
         mudnamesort = sort_array(keys(muds)-({0}), (: mudlist_sort($(muds), $1, $2) :)) ;
@@ -310,7 +310,7 @@ void create_mudlist_html()
                 msg += "<TD style='BORDER-BOTTOM: #fff 1px solid; FONT-SIZE: 15px' "+str+">";
                 msg += "<A href='telnet://"+ip+":"+port+"/'><FONT color=#000000>"+ip+"</FONT></A></TD>";
                 msg += "<TD style='BORDER-BOTTOM: #fff 1px solid' "+str+" align=center>"+port+"</TD>";
-                msg += "<TD style='BORDER-BOTTOM: #fff 1px solid; "+(status?"COLOR: #5f5' bgColor=#005f00":"COLOR: #f55' bgColor=#5f0000")+" align=center>"+(status?"○":"□")+"</TD>";
+                msg += "<TD style='BORDER-BOTTOM: #fff 1px solid; "+(status?"COLOR: #5f5' bgColor=#005f00":"COLOR: #f55' bgColor=#5f0000")+" align=center>"+(status?"○":"╳")+"</TD>";
                 msg += "<TD style='BORDER-BOTTOM: #fff 1px solid' "+str+" align=center>"+(users<0?"<FONT color=#aaaaaa>N/A</FONT>":users)+"</TD>";
                 msg += "<TD style='BORDER-BOTTOM: #fff 1px solid' "+str+" align=center>"+lasttime+"</TD></TR>";
                 
@@ -318,8 +318,8 @@ void create_mudlist_html()
         }
         text += "</TBODY></TABLE></TD></TR></TBODY></TABLE></P><!-- SECTION [1-3357] -->";
 
-        text += "<A name=中文泥巴玩家分布狀況></A>";
-        text += "<DIV style='BORDER-BOTTOM: #aaa 3px double; WIDTH: 200px; COLOR: #333; FONT-SIZE: 16px'><IMG src='muds/mudlist/subtitle.gif'>中文泥巴玩家分布狀況</DIV><BR>";
+        text += "<A name=中文泥巴玩家分佈狀況></A>";
+        text += "<DIV style='BORDER-BOTTOM: #aaa 3px double; WIDTH: 200px; COLOR: #333; FONT-SIZE: 16px'><IMG src='muds/mudlist/subtitle.gif'>中文泥巴玩家分佈狀況</DIV><BR>";
         text += "<P><CENTER><IMG src='muds/mudlist/chart.png'></CENTER>";
             
         text += "<P></P><!-- SECTION [3358-4159] --><A name=中文泥巴玩家即時統計></A>";

@@ -57,7 +57,7 @@ int perform(object me, object target)
                 target->receive_damage("qi", (int)((i*(2*damage))/3), me);
                 target->receive_wound("qi", (int)((i*damage)/3), me);
 
-                msg += HIY"結果$n抵受不住$N的"+chinese_number(i)+"種勁氣在體內來回的撞擊。"+GRN"\n($n"+HIR"所受的內傷著實不輕。"+GRN")\n"NOR;
+                msg += HIY"結果$n抵受不住$N的"+chinese_number(i)+"種勁氣在體內來回的撞擊。"+GRN"\n($n"+HIR"所受的內傷着實不輕。"+GRN")\n"NOR;
                 str = COMBAT_D->status_msg((int)query("qi", target) * 100 /(int)query("max_qi", target));
                 msg += "($n"+str+")\n";
         } else

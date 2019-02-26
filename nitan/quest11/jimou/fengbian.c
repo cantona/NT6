@@ -33,9 +33,9 @@ void main(object ob, string wind)
 	// In the furture, We have to consider the player's ablility
 	// add the exp of this jimou, reduce mp, etc.
 
-	ob->simple_action("$N盤膝而坐，口中念念有詞。\n");
-	ob->simple_action("轉眼間，烏雲密布，狂風四起。\n");
-	ob->start_busy(10, "你正忙于作法呢。");
+	ob->simple_action("$N盤膝而坐，口中唸唸有詞。\n");
+	ob->simple_action("轉眼間，烏雲密佈，狂風四起。\n");
+	ob->start_busy(10, "你正忙於作法呢。");
 	load_object("/daemons/cast_d.c")->reg_player(ob->query_primary_id(), "fengbian");
         ob->award_exp(ob->query_sk_level("sk_zhimou")/2+random(20), "fengbian");
 	call_out("show_result", 5+random(5), ob, where, member_array(wind, winds));
@@ -44,7 +44,7 @@ void show_result(object ob, string where, int wind)
 {
 	ob->stop_busy();
 	if( random(2) == 1 ){
-		ob->simple_action("一道閃電從天而降，接著一聲巨響，風向改變了。\n");
+		ob->simple_action("一道閃電從天而降，接着一聲巨響，風向改變了。\n");
 		AREA_D->set_area(where, "wind", wind);
 		show_wind(where, wind);
 	} else {

@@ -1,7 +1,7 @@
 inherit SKILL;
 
 mapping *action = ({
-([        "action" : "$N劃身錯步，雙掌內攏外托，緩緩向$n的左肩處拍去",
+([        "action" : "$N劃身錯步，雙掌內攏外託，緩緩向$n的左肩處拍去",
         "force" : 70,
         "attack": 5,
         "dodge" : 38,
@@ -21,7 +21,7 @@ mapping *action = ({
         "skill_name" : "雷洞霹靂",
         "damage_type" : "瘀傷"
 ]),
-([        "action" : "$N單掌突起，勁氣彌漫，雙掌如輪，一環環向$n的後背斫去",
+([        "action" : "$N單掌突起，勁氣瀰漫，雙掌如輪，一環環向$n的後背斫去",
         "force" : 120,
         "attack": 13,
         "dodge" : 51,

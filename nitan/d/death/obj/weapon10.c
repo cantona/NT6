@@ -5,7 +5,7 @@ inherit CLUB;
 
 void create()
 {
-        set_name(HIC "定海神針﹒破九域" NOR, ({ "po jiuyu", "club", "gun", "shenzhen" }));
+        set_name(HIC "定海神針·破九域" NOR, ({ "po jiuyu", "club", "gun", "shenzhen" }));
         set_weight(20000);
         if( clonep() )
                 set_default_object(__FILE__);
@@ -13,7 +13,7 @@ void create()
                 set("unit", "支");
                 set("value", 3400000);
                 set("material", "steel");
-                set("long", HIW "\n定海神針﹒破九域乃九穹七獄神兵之一。\n" NOR);
+                set("long", HIW "\n定海神針·破九域乃九穹七獄神兵之一。\n" NOR);
                 set("wield_msg", HIR "$N輕輕抖出$n" HIR "，剎時雷聲轟鳴，一股殺氣直聶九霄。\n" NOR);
         }
         init_club(220);

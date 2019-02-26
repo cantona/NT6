@@ -13,7 +13,7 @@
 
 #include "4_cmds_qxd.h"         // 支持玩家基本指令
 
-#include "4-1_cmds_qxd.h"       // 越寫越多，寫不下了，放到這裡
+#include "4-1_cmds_qxd.h"       // 越寫越多，寫不下了，放到這裏
 
 //#include "5_help_qxd.h"         // help 函數   help 函數取消了。
 

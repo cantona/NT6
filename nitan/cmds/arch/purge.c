@@ -64,7 +64,7 @@ protected int do_purge_players(object me, int day)
         if (day < 1) return notify_fail("您還是手下留情。別連他們都殺了。\n");
         
         message_system(sprintf("系統開始整理玩家儲存檔中，並清除超過 %d 天不上線的使用者...", day));
-        write(HIG "現在系統將檢查所有玩家，稍後匯報。\n"
+        write(HIG "現在系統將檢查所有玩家，稍後彙報。\n"
               HIG "進度：" + process_bar(0) + "\n");
         
         if (me)

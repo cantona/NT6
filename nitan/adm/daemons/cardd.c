@@ -134,7 +134,7 @@ public int db_make_card(object me, int amount, int ctype)
         mixed res, ret;
         string sql;
 
-        // 注冊碼組合序列
+        // 註冊碼組合序列
         string *codes = ({
                "A", "B", "C", "D", "E", "F", "G", "H", "I",
                "J", "K", "L", "M", "N", "O", "P", "Q", "R",
@@ -152,10 +152,10 @@ public int db_make_card(object me, int amount, int ctype)
         if( amount <= 0 )
                 return 0;
 
-        // 為保証數據存儲沒有問題，每次最多生成500個卡號
+        // 為保證數據存儲沒有問題，每次最多生成500個卡號
         if( amount > 500 )
         {
-                write("為保証數據存儲沒有問題，每次最多生成500個卡號！\n");
+                write("為保證數據存儲沒有問題，每次最多生成500個卡號！\n");
                 return 0;
         }
 
@@ -317,12 +317,12 @@ public int db_card_pay(object me, string CardSn, string CardPass)
         // 活動期間
         money = value + value / 5;
 
-        // 處理卡沖值後標記
+        // 處理卡衝值後標記
         sql = "UPDATE cards SET sale = 1, paytime = " + time() + ", payid = " + DB_STR(query("id", me)) + " WHERE card = '" + CardSn + "'";
         ret = DATABASE_D->db_query(sql);
         if( !intp(ret) )
         {
-                write(HIR "充值失敗(0000)，並盡快與ADMIN聯系。\n" NOR);
+                write(HIR "充值失敗(0000)，並儘快與ADMIN聯繫。\n" NOR);
                 return 0;
         }
 

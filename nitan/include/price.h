@@ -1,6 +1,6 @@
 private nosave string PRICES = @PRICE
 ############
-谷物
+穀物
 ############
 稻米 rice 石 20
 小麥 wheat 石 15
@@ -35,11 +35,11 @@ private nosave string PRICES = @PRICE
 金華火腿 harm 斤 50
 桂圓 guiy 斤 105
 臘肉 meat 斤 45
-咸魚 fish 斤 30
+鹹魚 fish 斤 30
 柑橘 orange 斤 35
 茶葉 tea 斤 55
 煙葉 yye 斤 80
-人三 shen 斤 800
+人叁 shen 斤 800
 鹿茸 deer 斤 600
 蛇膽 sdan 斤 700
 毛竹 bamboo 根 15
@@ -58,7 +58,7 @@ private nosave string PRICES = @PRICE
 ###############
 兵器
 ###############
-長矛 spear 桿 80
+長矛 spear 杆 80
 精鐵劍 sword 柄 80
 精鐵刀 blade 柄 100
 盾牌 shield 把 60

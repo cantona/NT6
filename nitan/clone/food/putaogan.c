@@ -1,4 +1,4 @@
-// 神話世界﹒西遊記﹒版本４．５０
+// 神話世界·西遊記·版本４．５０
 /* <SecCrypt CPL V3R05> */
  
 inherit ITEM;
@@ -7,12 +7,12 @@ void eat();
 
 void create()
 {
-        set_name("葡萄幹", ({"putao gan", "gan"}));
+        set_name("葡萄乾", ({"putao gan", "gan"}));
         set_weight(300);
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("long", "葡萄幹是西北邊疆的特產，吃起來香甜可口．\n");
+                set("long", "葡萄乾是西北邊疆的特產，吃起來香甜可口．\n");
                 set("unit", "把");
                 set("value", 60);
                 set("food_remaining", 4);
@@ -39,7 +39,7 @@ int do_chi(string arg)
         if( query("food", this_player()) >= this_player()->max_food_capacity() )
                 return notify_fail("你已經吃太飽了，再也塞不下任何東西了。\n");
 
-        message_vision("$N從兜裡掏出把葡萄幹，一顆一顆的塞到嘴裡，\n一顆，一顆，又一顆．．．\n" , this_player());
+        message_vision("$N從兜裏掏出把葡萄乾，一顆一顆的塞到嘴裏，\n一顆，一顆，又一顆．．．\n" , this_player());
    addn("food", 30, this_player());
    destruct(this_object());
         return 1;

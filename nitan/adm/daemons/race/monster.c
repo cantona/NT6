@@ -52,6 +52,6 @@ void setup_monster(object ob)
         set("revive_message",     "\n$N慢慢睜開眼睛，清醒了過來。\n\n"            );
         set("leave_msg",          "離開"                                  );
         set("arrive_msg",         "緩緩地走了過來"                            );
-        set("fleeout_message",    "咆哮著落荒而逃了"                  );
-        set("fleein_message",     "搖搖擺擺地跑了過來，伸出舌頭呼呼地喘著粗氣");
+        set("fleeout_message",    "咆哮着落荒而逃了"                  );
+        set("fleein_message",     "搖搖擺擺地跑了過來，伸出舌頭呼呼地喘着粗氣");
 }

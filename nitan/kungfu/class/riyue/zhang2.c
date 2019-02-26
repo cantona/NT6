@@ -99,7 +99,7 @@ mixed ask_pfm()
 
       message_vision(HIW "$n" HIW "對$N" HIW "點了點頭：注意看清楚了。\n" HIW
                      "只見$n" HIW "雙拳一錯，頓時一股氣旋向$N" HIW
-                     "卷來，$N" HIW "感覺胸口似有重壓，不由連退數步。\n" NOR,
+                     "捲來，$N" HIW "感覺胸口似有重壓，不由連退數步。\n" NOR,
                      me, this_object());
       command("say 看懂沒有？");
       tell_object(me, HIC "你學會了「風起雲湧」這一招。\n" NOR);

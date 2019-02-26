@@ -24,7 +24,7 @@ int perform(object me, object target)
                 return notify_fail("你的一陽指訣不夠嫻熟，難以施展" + name() + "。\n");
 
         if ((int)me->query_skill("jingluo-xue", 1) < 100)
-                return notify_fail("你對經絡學的了解不夠，難以施展" + name() + "。\n");
+                return notify_fail("你對經絡學的瞭解不夠，難以施展" + name() + "。\n");
 
         if (me->query_skill_mapped("finger") != "sun-finger")
                 return notify_fail("你沒有激發一陽指，難以施展" + name() + "。\n");

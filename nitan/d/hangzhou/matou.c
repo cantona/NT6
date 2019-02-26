@@ -31,11 +31,11 @@ void create()
 {
         set("short", "臨安碼頭");
         set("long", @long
-這裡是古老的運河的終點，運河自燕山腳下的帝都南下，橫穿中國
-的華北大平原，連綿海河、黃河、淮河、長江和錢塘江五大水系，止于
+這裏是古老的運河的終點，運河自燕山腳下的帝都南下，橫穿中國
+的華北大平原，連綿海河、黃河、淮河、長江和錢塘江五大水系，止於
 號稱天堂和魚米之鄉的杭州城。運河中滿是來來往往的檣影，江南的豐
 厚的產出經此國家命脈，源源北上。
-    你走進碼頭，就看見一位老船夫站在船邊，手上高舉著一個寫滿字
+    你走進碼頭，就看見一位老船伕站在船邊，手上高舉着一個寫滿字
 的木牌(sign)。
 long);
         set("exits",([
@@ -89,7 +89,7 @@ int do_go(string arg)
 
         if (!arg) return 0;
         if (ob->is_busy() || ob->is_fighting())
-                return notify_fail("你正忙著呢！\n");
+                return notify_fail("你正忙着呢！\n");
         while(i--)
         {
                 if (arg == sign[i]["id"])
@@ -97,7 +97,7 @@ int do_go(string arg)
                         switch (MONEY_D->player_pay(ob, sign[i]["value"]))
                         {
                                 case 0:
-                                        return notify_fail("窮光蛋，一邊呆著去！\n");
+                                        return notify_fail("窮光蛋，一邊呆着去！\n");
                                 case 2:
                                         return notify_fail("有零錢嗎？\n");
                         }
@@ -110,5 +110,5 @@ int do_go(string arg)
                         return 1;
                 }
         }
-        return notify_fail("你要去哪裡？\n");
+        return notify_fail("你要去哪裏？\n");
 }

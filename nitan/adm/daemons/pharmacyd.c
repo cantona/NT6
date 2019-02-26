@@ -57,8 +57,8 @@ void create()
         seteuid(ROOT_UID);
         initialize(); // 初始化，包括載入數據，刷新映射等
 
-        set("channel_id", "制藥精靈");
-        CHANNEL_D->do_channel( this_object(), "sys", "制藥系統已經啟動。");
+        set("channel_id", "製藥精靈");
+        CHANNEL_D->do_channel( this_object(), "sys", "製藥系統已經啟動。");
 }
 
 // 初始化，包括載入數據，刷新映射等
@@ -91,7 +91,7 @@ string query_save_file() { return DATA_DIR "pharmacyd"; }
                        以下為增加、刪除數據的接口
 *********************************************************************/
 
-// 注冊藥材id及對應中文名稱
+// 註冊藥材id及對應中文名稱
 int register_herb(int id, string name)
 {
         object ob;
@@ -136,7 +136,7 @@ int set_relation(int id, mapping rt)
         return 1;
 }
 
-// 注冊藥物id及對應名稱(由藥物物件取得)
+// 註冊藥物id及對應名稱(由藥物物件取得)
 int register_medicine(int id)
 {
         object obj;
@@ -166,7 +166,7 @@ int register_medicine(int id)
         return 1;
 }
 
-// 注冊所有藥物
+// 註冊所有藥物
 int register_all_medicine()
 {
         int i, id;
@@ -186,7 +186,7 @@ int register_all_medicine()
         return 1;
 }
 
-// 注銷某一藥材或藥物
+// 註銷某一藥材或藥物
 int unregister(string type, int id)
 {
 
@@ -263,7 +263,7 @@ string check_name(string type, int id)
         return fname[id];
 }
 
-// 查詢該類型(藥材或藥物)某一id是否已注冊
+// 查詢該類型(藥材或藥物)某一id是否已註冊
 int already_registerd(string type, int id)
 {
         if (type != "herb" && type != "medicine")
@@ -365,8 +365,8 @@ string list_prescription()
 
                 其中，每件藥材的屬性都是唯一的，形式如下：
 
-                味性(Taste)     ：苦、咸、酸、甘、辛
-                藥性(Officinal) ：寒、涼、平、溫、熱
+                味性(Taste)     ：苦、鹹、酸、甘、辛
+                藥性(Officinal) ：寒、涼、平、温、熱
                 毒性(toXicity)  ：有、無
 
                 所以，以 {x,y,z} 形式的數組對應唯一一種藥
@@ -435,9 +435,9 @@ object clone_herb(int id)
 /*********************************************************************
                        以下為按處方生成藥物的接口
 
-                每次制藥的成功率大約為50%，
-                能否制藥的能力限制暫時未予以考慮。
-                若制藥失敗，有一定機會得到 催化劑 煉金水 黃金
+                每次製藥的成功率大約為50%，
+                能否製藥的能力限制暫時未予以考慮。
+                若製藥失敗，有一定機會得到 催化劑 鍊金水 黃金
                 中的一種，否則將得到廢料。
 
 *********************************************************************/

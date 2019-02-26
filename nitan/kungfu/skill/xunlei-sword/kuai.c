@@ -28,7 +28,7 @@ int perform(object me, object target)
                 return notify_fail(PNAME"只能對戰鬥中的對手使用。\n");
                 
         if( query_temp("pfm-target/xunlei-kuai", target) )
-                return notify_fail("對手已被昆侖「快劍」心法所困。\n");        
+                return notify_fail("對手已被崑崙「快劍」心法所困。\n");        
 
         weapon=query_temp("weapon", me);
 
@@ -69,7 +69,7 @@ int perform(object me, object target)
         sword = me->query_skill(bskill, 1)/3;
         busy_time = me->query_skill(bskill, 1)/30;        
         
-        message_combatd(HIW"$N飄身而起，使出昆侖絕技「快劍」心法，頓時劍意空靈飄逸，似萬千柳絮飛舞，\n" NOR, me, target);
+        message_combatd(HIW"$N飄身而起，使出崑崙絕技「快劍」心法，頓時劍意空靈飄逸，似萬千柳絮飛舞，\n" NOR, me, target);
         
         if( random(query("combat_exp", me))>query("combat_exp", target)/5 )
         { 

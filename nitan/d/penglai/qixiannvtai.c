@@ -6,7 +6,7 @@ void create()
 {
         set("short", "七仙女台");
         set("long",@LONG
-這裡是一處高聳的平台，傳說，七仙女常在這裡修煉仙法。放
+這裏是一處高聳的平台，傳説，七仙女常在這裏修煉仙法。放
 眼望去，天際之處，一道彩虹劃空而過，七位美貌無比的仙女正翩
 翩起舞，舞姿婀娜，如此美景，令人留戀忘返。
 LONG);
@@ -15,7 +15,7 @@ LONG);
                 "down"    : __DIR__"nanshanjiaoxia",
         ]));
         set("no_rideto", 1);         // 設置不能騎馬到其他地方
-        set("no_flyto", 1);          // 設置不能從起來地方騎馬來這裡
+        set("no_flyto", 1);          // 設置不能從起來地方騎馬來這裏
         set("no_die", 1);            // 死亡後移動到扁鵲居
         set("penglai", 1);           // 表示在蓬萊島
 
@@ -55,7 +55,7 @@ void init ()
                 {
                         tell_object(this_player(), HIR "\n你看到了七仙女起舞的盛景，受益不淺。\n" NOR);
                         tell_object(this_player(), HIC "你的「容貌」提升了！\n\n" NOR);                        
-                        CHANNEL_D->do_channel(this_object(), "rumor", "聽說" HIY + this_player()->name() + "(" + 
+                        CHANNEL_D->do_channel(this_object(), "rumor", "聽説" HIY + this_player()->name() + "(" + 
                                                              this_player()->query("id") + ")" HIM "在蓬萊仙島"
                                                              "看到了七仙女起舞的盛景，受益不淺。\n" NOR);   
                         this_player()->add("per", 1);

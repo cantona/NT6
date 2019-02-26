@@ -26,8 +26,8 @@ int perform(object me, object target)
                 if( !objectp(ob=query_temp("weapon", me) )
                    || ! ob->valid_as_xiao())
                 {
-                        // 手裡的兵器也不能作為蕭使用
-                        return notify_fail("你手裡沒有拿蕭，難以施展" + name() + "。\n");
+                        // 手裏的兵器也不能作為蕭使用
+                        return notify_fail("你手裏沒有拿蕭，難以施展" + name() + "。\n");
                 }
         }
 
@@ -49,7 +49,7 @@ int perform(object me, object target)
                 return notify_fail("你現在的內力不夠，難以施展" + name() + "。\n");
 
         if (! living(target))
-                return notify_fail("對方都已經這樣了，用不著這麼費力吧？\n");
+                return notify_fail("對方都已經這樣了，用不着這麼費力吧？\n");
 
         ap = attack_power(me, "sword") +
              me->query_skill("bihai-chaosheng", 1);
@@ -60,7 +60,7 @@ int perform(object me, object target)
 
         msg = HIW "\n只見$N" HIW "手按玉簫，腳踏八卦四方之位，奏出"
               "一曲「碧海潮生按玉簫」。便聽得那簫聲如鳴琴擊玉，輕輕"
-              "發了幾聲，接著悠悠揚揚，飄下清亮柔和的洞簫聲來。\n" NOR;
+              "發了幾聲，接着悠悠揚揚，飄下清亮柔和的洞簫聲來。\n" NOR;
 
         if (ap + random(ap) > dp)
         {
@@ -72,7 +72,7 @@ int perform(object me, object target)
                        "裕如。\n" NOR;
 
         msg += HIW "\n突然又聽那洞簫聲情致飄忽，纏綿宛轉，便似一個女"
-               "子一會兒嘆息，一會兒又似呻吟，一會兒卻又軟語溫存或柔"
+               "子一會兒歎息，一會兒又似呻吟，一會兒卻又軟語温存或柔"
                "聲叫喚。\n" NOR;
 
         if (ap + random(ap / 2) > dp)
@@ -84,28 +84,28 @@ int perform(object me, object target)
                 msg += HIC "$n" HIC "暗暗凝神守一，對這簫聲自是應付"
                        "裕如。\n" NOR;
 
-        msg += HIW "\n那簫聲清亮宛如大海浩淼，萬裡無波，遠處潮水緩緩"
+        msg += HIW "\n那簫聲清亮宛如大海浩淼，萬里無波，遠處潮水緩緩"
                "推近，漸近漸快，其後洪濤洶湧，白浪連山，而潮水中魚躍"
-               "鯨浮，海面風嘯鷗飛，水妖海怪群魔弄潮，極盡變幻之能事"
+               "鯨浮，海面風嘯鷗飛，水妖海怪羣魔弄潮，極盡變幻之能事"
                "。\n" NOR;
 
         if (ap / 2 + random(ap) > dp)
         {
-                msg += HIR "霎時間$n" HIR "只感心頭滾熱，喉幹舌燥，"
-                       "說不出的難受。\n" NOR;
+                msg += HIR "霎時間$n" HIR "只感心頭滾熱，喉乾舌燥，"
+                       "説不出的難受。\n" NOR;
                 damage += damage_power(me, "sword");
         } else
                 msg += HIC "$n" HIC "暗暗凝神守一，對這簫聲自是應付"
                        "裕如。\n" NOR;
 
-        msg += HIW "\n時至最後，卻聽那簫聲癒來癒細，幾乎難以聽聞，便"
+        msg += HIW "\n時至最後，卻聽那簫聲愈來愈細，幾乎難以聽聞，便"
                "尤如大海潮退後水平如鏡一般，但海底卻又是暗流湍急，洶"
                "湧澎湃。\n" NOR;
 
         if (ap / 2 + random(ap / 2) > dp)
         {
                 msg += HIR "此時$n" HIR "已身陷絕境，全身氣血逆流，"
-                       "再也無法脫身。\n" NOR;
+                       "再也無法脱身。\n" NOR;
                 damage += damage_power(me, "sword");
         } else
                 msg += HIC "$n" HIC "暗暗凝神守一，對這簫聲自是應付"

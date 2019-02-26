@@ -20,10 +20,10 @@ void create()
         set("age", 37);
         set("long", @LONG
 三十三年前，一字慧劍門滿門師徒給童姥殺得
-精光，當時卓不凡不在福建，幸免于難，從此
+精光，當時卓不凡不在福建，倖免於難，從此
 再也不敢回去，逃到長白山中荒僻極寒之地苦
 研劍法，無意中得了前輩高手遺下來的一部劍
-經，勤練劍法三十余年，終于劍術大成，自信
+經，勤練劍法三十餘年，終於劍術大成，自信
 天下無敵。
 LONG );
         set("attitude", "peaceful");
@@ -99,7 +99,7 @@ int recognize_apprentice(object ob, string skill)
         if( query("family/master_id", ob) != "xuzhu zi" )
         {
                 command("hmm");
-                command("say 恐怕這靈鷲宮裡，還輪不到你說話。");
+                command("say 恐怕這靈鷲宮裏，還輪不到你説話。");
                 return -1; 
 
         }
@@ -133,7 +133,7 @@ mixed ask_me()
 
         me = this_player();
         if( query("can_perform/zhougong-jian/mang", me) )
-                return "我已經說得夠多了，別跟我糾纏不休。";
+                return "我已經説得夠多了，別跟我糾纏不休。";
 
         if( query("family/family_name", me) != "靈鷲宮" && 
            query("family/family_name", me) != "一字慧劍門" )
@@ -157,7 +157,7 @@ mixed ask_me()
 
         message_sort(HIY "$n" HIY "更不答話，拔出腰間佩劍，長劍一"
                      "挺，劍尖上突然生出半尺吞吐不定的青芒。當真"
-                     "氣勢如虹，一展王者風范。$N" HIY "的目光頓"
+                     "氣勢如虹，一展王者風範。$N" HIY "的目光頓"
                      "時一亮，似乎明白了什麼。\n" NOR, me,
                      this_object());
         command("hmm");

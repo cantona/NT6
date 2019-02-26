@@ -35,15 +35,15 @@ int perform(object me, object target)
                 return notify_fail("你現在的真氣不夠，難以施展" HAN "。\n");
 
         if (! living(target))
-                return notify_fail("對方都已經這樣了，用不著這麼費力吧？\n");
+                return notify_fail("對方都已經這樣了，用不着這麼費力吧？\n");
 
         ap = me->query_skill("strike");
         dp = target->query_skill("parry");
 
-        msg = HIY "\n$N" HIY "運轉真氣，將內力注于掌上，施出"
+        msg = HIY "\n$N" HIY "運轉真氣，將內力注於掌上，施出"
               "絕招「" HIW "極天寒掌" HIY "」，雙掌猛然拍向$n" 
               HIY "，掌風陰寒無比，透出陣陣寒氣，猶如置身冰天"
-              "雪地中一般，令人不寒而栗。\n" NOR;
+              "雪地中一般，令人不寒而慄。\n" NOR;
 
         if (ap / 2 + random(ap) > dp)
         {

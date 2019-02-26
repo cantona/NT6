@@ -9,7 +9,7 @@ void create()
         set("short", "後山小徑");
         set("long", @LONG
 這是華山後山的一條小徑，人跡鮮至。兩旁野草生得密密麻麻，
-要不是有人帶領，誰也想不到這裡竟然有條小徑。
+要不是有人帶領，誰也想不到這裏竟然有條小徑。
 LONG );
 
         set("outdoors", "huashan");

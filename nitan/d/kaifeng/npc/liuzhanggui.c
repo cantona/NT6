@@ -6,7 +6,7 @@ void create()
         set_name("劉掌櫃", ({ "liu zhanggui", "liu", "zhanggui" }) );
         set("gender", "男性" );
         set("age", 25);
-        set("title", "雅琪軒老板");
+        set("title", "雅琪軒老闆");
         set("combat_exp", 5000);
         set("attitude", "friendly");
         set_temp("apply/attack", 20);

@@ -1,13 +1,13 @@
 inherit SKILL;
 
 mapping *action = ({
-([      "action": "$N手中$w斜指，一招「風回雪舞」，反身一頓，一刀向$n的$l撩去",
+([      "action": "$N手中$w斜指，一招「風迴雪舞」，反身一頓，一刀向$n的$l撩去",
         "force" : 20,
         "dodge" : 10,
         "parry" : 25,
         "damage": 5,
         "lvl"   : 0,
-        "skill_name"  : "風回雪舞",
+        "skill_name"  : "風迴雪舞",
         "damage_type" : "割傷"
 ]),
 ([      "action": "$N一招「大雪紛飛」，左右腿虛點，$w一提一收，平刃揮向$n的頸部",

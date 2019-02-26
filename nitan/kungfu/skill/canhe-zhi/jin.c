@@ -36,7 +36,7 @@ int perform(object me, object target)
                 return notify_fail("你的真氣不夠，難以施展" + name() + "。\n");
 
         if (! living(target))
-                return notify_fail("對方都已經這樣了，用不著這麼費力吧？\n");
+                return notify_fail("對方都已經這樣了，用不着這麼費力吧？\n");
 
         msg = HIY "$N" HIY "雙手合十，微微一笑，頗得拈花之意。食指並中指"
               "輕輕一彈，頓時一屢罡氣電射而出，朝$n" HIY "襲去。\n" NOR;

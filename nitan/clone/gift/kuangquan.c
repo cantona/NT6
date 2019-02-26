@@ -13,7 +13,7 @@ void create()
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("long", "這是一瓶礦泉水，可以治療口幹舌"
+                set("long", "這是一瓶礦泉水，可以治療口乾舌"
                             "燥，遭受飛彈襲擊以後感覺格外良好。\n");
                 set("value", 8000);
                 set("no_sell", 1);
@@ -35,7 +35,7 @@ int do_drink(string arg)
 
         me = this_player();
         message_vision(HIG "$N掏出一瓶" + name() + HIG
-                       "，“咕咚咕咚”喝了個幹幹凈凈。\n" NOR, me);
+                       "，“咕咚咕咚”喝了個乾乾淨淨。\n" NOR, me);
         set("water", me->max_water_capacity(), me);
         me->permit_say(6000);
         destruct(this_object());

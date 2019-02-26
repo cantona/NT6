@@ -7,7 +7,7 @@ string type() { return "martial"; }
 string martialtype() { return "skill"; }
 
 mapping *action = ({
-([        "action" : "$N雙指並攏，一式"MAG"「道行般若」"NOR"，和身緩緩而上，左右手一前一後彈向$n$l",
+([        "action" : "$N雙指併攏，一式"MAG"「道行般若」"NOR"，和身緩緩而上，左右手一前一後彈向$n$l",
         "lvl"   : 0,
         "skill_name" : "道行般若"
 ]),
@@ -15,11 +15,11 @@ mapping *action = ({
         "lvl"   : 20,
         "skill_name" : "小品般若"
 ]),
-([        "action" : "$N身形閃動，一式"HIW"「光讚般若」"NOR"，雙手食指端部各射出一道青光，射向$n的全身要穴",
+([        "action" : "$N身形閃動，一式"HIW"「光贊般若」"NOR"，雙手食指端部各射出一道青光，射向$n的全身要穴",
         "lvl"   : 40,
-        "skill_name" : "光讚般若"
+        "skill_name" : "光贊般若"
 ]),
-([        "action" : "$N盤膝跌坐，一式"HIC"「放光般若」"NOR"，全身罡氣密布，左手握拳托肘，右手拇指直立，遙遙對著$n一捺",
+([        "action" : "$N盤膝跌坐，一式"HIC"「放光般若」"NOR"，全身罡氣密佈，左手握拳託肘，右手拇指直立，遙遙對着$n一捺",
         "lvl"   : 60,
         "skill_name" : "放光般若"
 ]),
@@ -27,7 +27,7 @@ mapping *action = ({
         "lvl"   : 100,
         "skill_name" : "摩訶般若"
 ]),
-([        "action" : "$N口念佛經，內息激發，衣衫漸漸脹鼓，身若金剛，便立指一式"HIY"「金剛般若」"NOR"，對著$n點去",
+([        "action" : "$N口唸佛經，內息激發，衣衫漸漸脹鼓，身若金剛，便立指一式"HIY"「金剛般若」"NOR"，對着$n點去",
         "lvl"   : 150,
         "skill_name" : "金剛般若"
 ])

@@ -1,9 +1,9 @@
 // yijian by snowyu, 2002/4 snowyu
 /*
-  岳夫人長劍使得興發，突然間一聲清嘯，劍鋒閃爍不定，
-圍著令狐沖身圍疾刺，銀光飛舞，眾人看得眼都花了。猛地裡
+  嶽夫人長劍使得興發，突然間一聲清嘯，劍鋒閃爍不定，
+圍着令狐沖身圍疾刺，銀光飛舞，眾人看得眼都花了。猛地裏
 她一劍挺出，直刺令狐沖心口，當真是捷如閃電，勢若奔雷。
-   岳夫人右手向前疾送，長劍護手已碰到令狐沖的胸
+   嶽夫人右手向前疾送，長劍護手已碰到令狐沖的胸
 膛，眼見這一劍是在他身上對穿而過，直沒至柄。
 */
 
@@ -57,7 +57,7 @@ int perform(object me, object target)
 
         dodge_skill = target->query_skill_mapped("dodge");
 
-        message_vision(HIY "$N突然間一聲清嘯，"+ weapon->name() +HIY"劍鋒閃爍不定，圍著$n身圍疾刺，紫芒飛舞,猛地裡$N一劍挺出\n\n"NOR, me, target);
+        message_vision(HIY "$N突然間一聲清嘯，"+ weapon->name() +HIY"劍鋒閃爍不定，圍着$n身圍疾刺，紫芒飛舞,猛地裏$N一劍挺出\n\n"NOR, me, target);
         message_vision(HIY "直刺$n心口，當真是捷如閃電，勢若奔雷。當真是捷如閃電，勢若奔雷。。\n\n"NOR, me, target);
 
         if( query_temp("powerup", me))//為以後開運紫霞做好準備

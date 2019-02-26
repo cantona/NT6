@@ -51,7 +51,7 @@ int do_effect(object me)
         set_temp("last_eat/sanhuang", time(), me);
 
         message_vision(YEL "$N" YEL "吃下一粒" + name() +
-                       YEL "，頭上"MAG"紫氣"YEL"氤氳升起。\n", me);
+                       YEL "，頭上"MAG"紫氣"YEL"氤氲升起。\n", me);
         tell_object(me, YEL "不一會兒你只覺得精神飽滿，神氣完足，內力充沛之極。\n" NOR);
 
         my = me->query_entire_dbase();

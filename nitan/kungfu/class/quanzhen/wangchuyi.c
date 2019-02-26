@@ -20,7 +20,7 @@ void create()
         set("nickname",RED"玉陽子"NOR);
         set("long",
                 "他就是全真七子之五王處一王真人。他身材修長，服飾整潔，\n"
-                "三綹黑須飄在胸前，神態瀟洒。\n");
+                "三綹黑鬚飄在胸前，神態瀟灑。\n");
         set("attitude", "peaceful");
         set("shen_type",1);
         set("str", 32);
@@ -132,7 +132,7 @@ string ask_me()
         if( query_temp("tmark/指", me) == 1 )
         {
                 addn_temp("tmark/指", 1, me);
-                return("去年師傅去過段皇爺那裡，據說段皇爺把他最厲害的一陽指功夫傳授給我師傅了。\n");
+                return("去年師傅去過段皇爺那裏，據説段皇爺把他最厲害的一陽指功夫傳授給我師傅了。\n");
         } else
         {
                 set_temp("tmark/指", 0, me);
@@ -150,7 +150,7 @@ mixed ask_skill1()
                 return "這招我不是已經教會你了嗎？";
 
         if( query("family/family_name", me) != query("family/family_name") )
-                return "閣下與貧道素不相識，不知此話從何說起？";
+                return "閣下與貧道素不相識，不知此話從何説起？";
 
         if (me->query_skill("quanzhen-jian", 1) < 1)
                 return "你連全真劍法都沒學，何談絕招可言？";
@@ -167,14 +167,14 @@ mixed ask_skill1()
         if (me->query_skill("force") < 100)
                 return "你的內功修為不夠，修煉高後再來找我吧。";
 
-        message_sort(HIY "\n$n" HIY "微笑著點了點頭，說道：“看好了。”說"
+        message_sort(HIY "\n$n" HIY "微笑着點了點頭，説道：“看好了。”説"
                      "罷即抽出腰間長劍，慢慢演示起來。只見$n" HIY "劍招緊"
                      "密圓動，連綿不絕，內力便如細絲般從長劍劍鋒透出，帶出"
                      "陣陣風聲。直看得$N" HIY "目瞪口呆。\n\n" NOR, me,
                      this_object());
 
         command("nod");
-        command("say 此招無非是以劍招迷惑對手，並無復雜之舉。");
+        command("say 此招無非是以劍招迷惑對手，並無複雜之舉。");
         tell_object(me, HIC "你學會了「纏字訣」。\n" NOR);
         if (me->can_improve_skill("sword"))
                 me->improve_skill("sword", 1500000);
@@ -197,7 +197,7 @@ mixed ask_skill2()
                 return "這招我不是已經教會你了嗎？";
 
         if( query("family/family_name", me) != query("family/family_name") )
-                return "閣下與貧道素不相識，不知此話從何說起？";
+                return "閣下與貧道素不相識，不知此話從何説起？";
 
         if (me->query_skill("quanzhen-jian", 1) < 1)
                 return "你連全真劍法都沒學，何談絕招可言？";
@@ -216,7 +216,7 @@ mixed ask_skill2()
 
         message_sort(HIY "\n$n" HIY "點了點頭，喝道：“看仔細了。”話音剛"
                      "落，只見$n" HIY "腳下左弓右箭，深深吸入一口氣，神氣"
-                     "完足如雷霆五岳，電光火石間一劍斜斜刺出，頓時只聽得“"
+                     "完足如雷霆五嶽，電光火石間一劍斜斜刺出，頓時只聽得“"
                      "哧”的一聲，$N" HIY "腳下的方磚竟然應聲而碎，裂成了"
                      "數塊。\n\n" NOR, me, this_object());
 

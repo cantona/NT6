@@ -14,7 +14,7 @@ int perform(object me, object target)
         if (! target) target = offensive_target(me);
 
         if (! target || ! me->is_fighting(target))
-                return notify_fail("隔山打牛只能對戰鬥中的對手使用。\n");
+                return notify_fail("隔山打牛隻能對戰鬥中的對手使用。\n");
 
         if( objectp(query_temp("weapon", me)) )
                 return notify_fail("你必須空手才能使用隔山打牛！\n");

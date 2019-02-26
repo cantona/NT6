@@ -5,14 +5,14 @@ inherit NPC;
 #include <ansi.h>;
 void create()
 {
-        set_name("葉二娘", ({ "ye erniang", "ye" }));
+        set_name("葉二孃", ({ "ye erniang", "ye" }));
         set("gender", "女性");
         set("nickname", HIR"無惡不作"NOR);
         set("age", 43);
         set("str", 25);
         set("dex", 16);
         set("per", 21);
-        set("long", "一個中年女子，身穿淡青色長袍，左右臉頰上各有三條血痕。\n");
+        set("long", "一箇中年女子，身穿淡青色長袍，左右臉頰上各有三條血痕。\n");
         set("combat_exp", 300000);
         set("shen_type", 1);
         set("attitude", "peaceful");

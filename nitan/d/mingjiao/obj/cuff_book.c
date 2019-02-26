@@ -11,7 +11,7 @@ void create()
         else {
                 set("unit", "本");
                 set("long", 
-"這是一本七傷拳譜，是崆峒派的武功秘籍。\n"
+"這是一本七傷拳譜，是崆峒派的武功祕籍。\n"
                 );                                
                 set("value", 1000);
                 set("material", "paper");

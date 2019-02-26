@@ -9,7 +9,7 @@ void create()
 {
  
   set_name("賈大夫", ({"jia daifu", "jia", "daifu"}));
-        set("title", "藥舖掌櫃");
+        set("title", "藥鋪掌櫃");
         set("gender", "男性");
   set("shop_id",({"jia dafu", "jia", "dafu"}));
   set("age", 37);

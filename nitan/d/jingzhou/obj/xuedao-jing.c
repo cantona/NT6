@@ -14,7 +14,7 @@ void create()
         else {
                 set("unit", "本");
                 set("long",
-"封面上寫著 "+HIR "【血刀刀譜】" NOR+"，還畫著一些奇形怪狀的倒立人形。\n");
+"封面上寫著 "+HIR "【血刀刀譜】" NOR+"，還畫着一些奇形怪狀的倒立人形。\n");
                 set("value", 0);
                 set("material", "paper");
                 set("skill", ([

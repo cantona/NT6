@@ -1,7 +1,7 @@
 #include <ansi.h>
 #include <combat.h>
 
-#define HUI "「" HIR "□□九天" NOR "」"
+#define HUI "「" HIR "龍嘯九天" NOR "」"
 #define HUIP "「" HIR "亢龍有悔" HIW "」"
 
 inherit F_SSERVER;
@@ -47,10 +47,10 @@ int perform(object me, object target)
                 return notify_fail("你現在真氣不夠，難以施展" HUI "。\n");
 
         if (! living(target))
-                return notify_fail("對方都已經這樣了，用不著這麼費力吧？\n");
+                return notify_fail("對方都已經這樣了，用不着這麼費力吧？\n");
 
-        message_combatd(sort_msg(HIG "\n$N" HIG "凝神聚氣，神態淡然，左手虛劃，右手回轉，聚氣于胸前，猛地雙"
-                         "手推出，剎那間，一招變為數招，同時使出，正是降龍十八掌「" HIR "□□九天" HIG "」，"
+        message_combatd(sort_msg(HIG "\n$N" HIG "凝神聚氣，神態淡然，左手虛劃，右手迴轉，聚氣於胸前，猛地雙"
+                         "手推出，剎那間，一招變為數招，同時使出，正是降龍十八掌「" HIR "龍嘯九天" HIG "」，"
                          "氣勢恢弘，勢不可擋 ……\n" NOR), me, target);
 
         // 第一掌
@@ -60,7 +60,7 @@ int perform(object me, object target)
 
         message_combatd(sort_msg(HIW "忽然$N" HIW "身形激進，左手一劃，右手呼的一掌"
                      "拍向$n" HIW "，力自掌生之際"
-                     "說到便到，以排山倒海之勢向$n" HIW "狂湧而去，當真石"
+                     "説到便到，以排山倒海之勢向$n" HIW "狂湧而去，當真石"
                      "破天驚，威力無比。\n" NOR), me, target);
 
         damage = damage_power(me, "strike");
@@ -83,7 +83,7 @@ int perform(object me, object target)
         ap *= 2;
 
         message_combatd(sort_msg(HIW "$N" HIW "一掌既出，身子已然搶到離$n" HIW "三"
-                     "四丈之外，後掌推前掌兩股掌力道合並，掌力猶如怒潮狂"
+                     "四丈之外，後掌推前掌兩股掌力道合併，掌力猶如怒潮狂"
                      "湧，勢不可當。霎時$p便覺氣息窒"
                      "滯，立足不穩。\n" NOR), me, target);
 
@@ -95,7 +95,7 @@ int perform(object me, object target)
         } else
         {
                 msg = HIC "可是$p全力抵擋招架，竟似遊刃有"
-                      "余，將$P的掌力卸于無形。\n" NOR;
+                      "餘，將$P的掌力卸於無形。\n" NOR;
         }
         message_combatd(msg, me, target);
 
@@ -104,9 +104,9 @@ int perform(object me, object target)
         dp = defense_power(target, "force") + target->query_con() * 15;
         ap *= 2;
 
-        message_combatd(sort_msg(HIW "緊跟著$N" HIW "右掌斜揮，前招掌力未消，此招掌"
+        message_combatd(sort_msg(HIW "緊跟着$N" HIW "右掌斜揮，前招掌力未消，此招掌"
                      "力又到，竟然又攻出一招，掌夾風勢，勢如破竹，"
-                     "便如一堵無形氣牆，向前疾沖而去。$n" HIW "只覺氣血翻"
+                     "便如一堵無形氣牆，向前疾衝而去。$n" HIW "只覺氣血翻"
                      "湧，氣息沉濁。\n" NOR), me, target);
 
         if (ap *11 / 20 + random(ap) > dp)
@@ -117,11 +117,11 @@ int perform(object me, object target)
         } else
         {
                 msg = HIC "$p眼見來勢兇猛，身形疾退，瞬間"
-                      "飄出三丈，脫出掌力之外。\n" NOR;
+                      "飄出三丈，脱出掌力之外。\n" NOR;
         }
         message_combatd(msg, me, target);
 
-        message_combatd(sort_msg(HIY "$N" HIY "毫無停頓，雙掌翻滾，宛如一條神龍攀蜒于九天之上"
+        message_combatd(sort_msg(HIY "$N" HIY "毫無停頓，雙掌翻滾，宛如一條神龍攀蜒於九天之上"
                         "。\n" NOR), me, target);
 
         me->add_temp("apply/attack", 100000);
@@ -153,7 +153,7 @@ int perform(object me, object target)
                 {
                         me->add("neili", -300);
                         msg = HIR "$n" HIR "只覺周圍氣流湧動，手中" + weapon->name()
-                               + HIR "竟然拿捏不住，向$N" HIR "掌心脫手飛去。\n" NOR;
+                               + HIR "竟然拿捏不住，向$N" HIR "掌心脱手飛去。\n" NOR;
                         weapon->move(me, 1);
                 } else
                 {

@@ -81,7 +81,7 @@ mapping *action = ({
         "skill_name"  : "翻天弒穹勢",
         "damage_type" : "割傷"
 ]),
-([      "action": "$N回首施出一招「十二轉破神勢」，$w頓時卷起無數閃耀的刀芒籠罩$n全身",
+([      "action": "$N回首施出一招「十二轉破神勢」，$w頓時捲起無數閃耀的刀芒籠罩$n全身",
         "force" : 240,
         "dodge" : 90,
         "parry" : 90,

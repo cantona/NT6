@@ -40,9 +40,9 @@ int perform(object me, object target)
                 return notify_fail("你現在沒有準備使用無極玄功拳，無法使用" XUAN "。\n");
 
         if (! living(target))
-                return notify_fail("對方都已經這樣了，用不著這麼費力吧？\n");
+                return notify_fail("對方都已經這樣了，用不着這麼費力吧？\n");
 
-        msg = HIW "只見$N" HIW "雙手回圈，慢慢的引動氣流，正當$n"
+        msg = HIW "只見$N" HIW "雙手迴圈，慢慢的引動氣流，正當$n"
               HIW "吃驚間，$P" HIW "雙拳已陡然破空貫出。\n" NOR;
         addn("neili", -100, me);
 

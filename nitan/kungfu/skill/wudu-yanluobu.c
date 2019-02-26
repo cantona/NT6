@@ -9,9 +9,9 @@ string martialtype() { return "dodge"; }
 string *dodge_msg = ({
 HIB"$n不慌不忙，一式「江水橫流」，身行倏的向一旁平移數尺，堪堪躲過了$N的功勢。\n"NOR,
 HIB"$n身行如鬼魅般一晃，剎那間已遠去數丈之外，$N頓時撲了個空。\n"NOR,
-BLU"$n身行忽的加快，如一縷青煙般繞著$N飛快旋轉，看得$N一陣頭暈眼花，急忙收招跳開。\n"NOR,
+BLU"$n身行忽的加快，如一縷青煙般繞着$N飛快旋轉，看得$N一陣頭暈眼花，急忙收招跳開。\n"NOR,
 BLU"$n怪異的一笑，身行忽的變得朦朧不清，$N的凌厲招式竟然透體而過，原來竟是一具幻影。\n"NOR,
-BLU"$n的身行頓時變得如蛇一般柔軟，隨著$N的招式左右擺動，竟使得$N招招落空。\n"NOR,
+BLU"$n的身行頓時變得如蛇一般柔軟，隨着$N的招式左右擺動，竟使得$N招招落空。\n"NOR,
 });
 
 int valid_enable(string usage) { return (usage=="dodge") || (usage=="move"); }

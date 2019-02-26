@@ -19,7 +19,7 @@ int perform(object me, object target)
 
         if( !objectp(weapon=query_temp("handing", me)) || 
             query("skill_type", weapon) != "throwing" )
-                return notify_fail("你現在手中並沒有拿著飛刀。\n");
+                return notify_fail("你現在手中並沒有拿着飛刀。\n");
 
         if ((skill = me->query_skill("xiaoli-feidao", 1)) < 100)
                 return notify_fail("你的小李飛刀不夠嫻熟。\n");
@@ -31,7 +31,7 @@ int perform(object me, object target)
         weapon->add_amount(-1);
 
         msg= HIW "忽然間只見$N" HIW "手中寒光一閃，正是小李飛刀，例無虛發！\n\n"
-             NOR + HIR "一股鮮血從$n" HIR "嚥喉中噴出……\n" NOR;
+             NOR + HIR "一股鮮血從$n" HIR "咽喉中噴出……\n" NOR;
         message_combatd(msg, me, target);
 
 

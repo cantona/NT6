@@ -32,7 +32,7 @@ int perform(object me, object target)
         if( query("neili", me)<300 )
                 return notify_fail("你現在內力太弱，不能使用" LING "。\n");
 
-        msg = CYN "$N默念佛經，只見手指微動，幾道指氣急射向$n，意欲以指力擊暈$n。\n"NOR;
+        msg = CYN "$N默唸佛經，只見手指微動，幾道指氣急射向$n，意欲以指力擊暈$n。\n"NOR;
 
         ap = me->query_skill("force", 1) + me->query_skill("finger", 1) + 
              me->query_skill("qufannao-zhi",1)+query("neili", me)/50;

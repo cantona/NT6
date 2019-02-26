@@ -18,7 +18,7 @@ int main(object me,string arg)
                 return notify_fail("map 節點數\n節點數 最好是5，到底系統能承受多少，不知道:(\n");
 
         if(max_node>20) 
-                return notify_fail("不要亂來，小心系統崩潰!\n 最好是5，到底系統能承受多少，不知道:(\n");
+                return notify_fail("不要亂來，小心繫統崩潰!\n 最好是5，到底系統能承受多少，不知道:(\n");
 
         if(max_node<=0) 
                 return notify_fail("負數行嗎？");

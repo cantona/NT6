@@ -5,7 +5,7 @@ inherit F_DEALER;
 
 void create()
 {
-        set_name("伙計", ({ "huo ji", "huo", "ji" }) );
+        set_name("夥計", ({ "huo ji", "huo", "ji" }) );
         set("title", HIB"藥王谷"NOR+YEL"跑堂"NOR);
         set("gender", "男性" );
         set("age", 22);
@@ -49,22 +49,22 @@ int greeting(object ob)
                 case 0:
                         command("bow"+query("id", ob));
                         command("say "+RANK_D->query_respect(ob)
-                +"，你要買些藥嗎？常用藥這裡出售，特殊藥請到內屋選購！\n");
+                +"，你要買些藥嗎？常用藥這裏出售，特殊藥請到內屋選購！\n");
                         break;
                 case 1:
                         command("nod"+query("id", ob));
                         command("say "+RANK_D->query_respect(ob)
-                +"，你要買些藥嗎？常用藥這裡出售，特殊藥請到內屋選購！\n");
+                +"，你要買些藥嗎？常用藥這裏出售，特殊藥請到內屋選購！\n");
                         break;
                 case 2:
                         command("hi"+query("id", ob));
                         command("say "+RANK_D->query_respect(ob)
-                +"，你要買些藥嗎？常用藥這裡出售，特殊藥請到內屋選購！\n");
+                +"，你要買些藥嗎？常用藥這裏出售，特殊藥請到內屋選購！\n");
                         break;
                 case 3:
                         command("welcome"+query("id", ob));
                         command("say "+RANK_D->query_respect(ob)
-                +"，你要買些藥嗎？常用藥這裡出售，特殊藥請到內屋選購！\n");
+                +"，你要買些藥嗎？常用藥這裏出售，特殊藥請到內屋選購！\n");
                         break;
         }
         }

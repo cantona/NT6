@@ -4,7 +4,7 @@
 inherit SKILL;
 
 mapping *action = ({
-([      "action": HIW "$N大喝一聲，一招「流氓霸市」，手中$w平空橫掃，一條劍氣劃向$n的$l" NOR,
+([      "action": HIW "$N大喝一聲，一招「流氓霸市」，手中$w平空橫掃，一條劍氣划向$n的$l" NOR,
         "force" : 25,
         "dodge" : 20,
         "parry" : 25,
@@ -18,7 +18,7 @@ mapping *action = ({
         "lvl"   : 6,
         "damage_type" : "刺傷"
 ]),
-([      "action": HIW "$N身形往右一挫，右手$w使出一式「沖心劍」刺向$n的$l" NOR,
+([      "action": HIW "$N身形往右一挫，右手$w使出一式「衝心劍」刺向$n的$l" NOR,
         "force" : 30,
         "dodge" : 35,
         "parry" : 35,
@@ -67,14 +67,14 @@ mapping *action = ({
         "lvl"   : 30,
         "damage_type" : "刺傷"
 ]),
-([      "action": HIW "$N使出「套月式」，$w劃出三個圓圈，劍鋒直出，綿綿不斷劃向$n的$l" NOR,
+([      "action": HIW "$N使出「套月式」，$w劃出三個圓圈，劍鋒直出，綿綿不斷划向$n的$l" NOR,
         "force" : 45,
         "dodge" : 70,
         "parry" : 70,
         "lvl"   : 35,
         "damage_type" : "刺傷"
 ]),
-([      "action": HIW "$N一招「卷風式」，$w輕靈地劃出幾個圓弧，迅速地向$n的$l揮去" NOR,
+([      "action": HIW "$N一招「捲風式」，$w輕靈地劃出幾個圓弧，迅速地向$n的$l揮去" NOR,
         "force" : 50,
         "dodge" : 75,
         "parry" : 80,
@@ -95,7 +95,7 @@ mapping *action = ({
         "lvl"   : 50,
         "damage_type" : "刺傷"
 ]),
-([      "action": HIW "$N左腳踏實，右腳虛點，一招「惡人指路」，右手$w帶著一團劍花，逼向$n的$l" NOR,
+([      "action": HIW "$N左腳踏實，右腳虛點，一招「惡人指路」，右手$w帶着一團劍花，逼向$n的$l" NOR,
         "force" : 55,
         "dodge" : 95,
         "parry" : 80,

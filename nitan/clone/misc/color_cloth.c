@@ -11,7 +11,7 @@ void create()
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("long", "這件粉紅色的披風上面繡著幾只鳳凰，煞是性感。\n");
+                set("long", "這件粉紅色的披風上面繡著幾隻鳳凰，煞是性感。\n");
                 set("unit", "塊");
                 set("material", "cloth");
                 set("armor_prop/con",20);

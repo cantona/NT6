@@ -15,7 +15,7 @@ void create() { seteuid(ROOT_UID); }
 /*
 ≡───────────────────────────────≡
 職    業：                         職業評價：
-命中等級：                  	   回避等級：
+命中等級：                  	   迴避等級：
 傷害等級：                  	   防護等級：
 
 ≡───────────────────────────────≡
@@ -71,7 +71,7 @@ int main(object me, string arg)
 {
 	string line;
 	int job_score, attack, parry_points, dodge_points, damage, damage_bonus, defense;
-	int huibi_points; // 回避綜合點數
+	int huibi_points; // 迴避綜合點數
 	object weapon;
    	mapping prepare;
     	string *sk;	
@@ -102,7 +102,7 @@ int main(object me, string arg)
 	if (arg)
 	{
 
-        	// 使用輪回點
+        	// 使用輪迴點
 		if (sscanf(arg, "lhpoint add %s", para1) == 1)
 		{
 			if (member_array(para1, add_keys) == -1)
@@ -113,10 +113,10 @@ int main(object me, string arg)
 			// 增加先天屬性
 			if (member_array(para1, add_keys2) != -1)
 			{
-				// 檢查輪回點是否足夠
+				// 檢查輪迴點是否足夠
 				if (me->query("scborn/cur_lunhui_point") < 4)
 				{
-					return notify_fail("你的輪回點不夠。\n");
+					return notify_fail("你的輪迴點不夠。\n");
 				}
 				
 				// 減少1點悟性
@@ -143,10 +143,10 @@ int main(object me, string arg)
 				return notify_fail("你不會這樣技能。\n");
 			}
 
-				// 檢查輪回點是否足夠
+				// 檢查輪迴點是否足夠
 				if (me->query("scborn/cur_lunhui_point") < 1)
 				{
-					return notify_fail("你的輪回點不夠。\n");
+					return notify_fail("你的輪迴點不夠。\n");
 				}			
 
 				me->add("lhpoint/special/" + para1, 1);
@@ -165,26 +165,26 @@ int main(object me, string arg)
 			line += HIC +
 				"【實戰經驗】                       【先天身法】\n" NOR +
 				" 命中等級：★                       命中等級：★★★★★★\n"
-				" 回避等級：★                       回避等級：★★★★★★\n\n" HIC +
+				" 迴避等級：★                       迴避等級：★★★★★★\n\n" HIC +
 				"【先天臂力】                       【後天身法】\n" NOR +
 				" 傷害等級：★★★★★★             命中等級：★★★★★\n"
-				"                                    回避等級：★★★★★\n\n" HIC +
+				"                                    迴避等級：★★★★★\n\n" HIC +
 				"【後天臂力】                       【武功等級及相關屬性】\n" NOR +
 				" 傷害等級：★★★★★               命中等級：★★★★★★\n"
-				"                                    回避等級：★★★★★★\n"
+				"                                    迴避等級：★★★★★★\n"
 				"                                    傷害等級：★★★★★★\n"
 				"                                    防護等級：★★★★★★\n\n" HIC +
 				"【運功效果】                       【兵器效果】\n" NOR +
 				" 命中等級：★★★★                 傷害等級：★★★★★★\n"
-				" 回避等級：★★★★\n"
+				" 迴避等級：★★★★\n"
 				" 傷害等級：★★★★\n"
 				" 防護等級：★★★★\n\n" HIC +
 				"【防具效果】                       【加力效果】\n" NOR +
-				" 回避等級：★★★★★★             傷害等級：★★★★\n"
+				" 迴避等級：★★★★★★             傷害等級：★★★★\n"
 				" 防護等級：★★★★★★\n\n" HIC +
 				"【其他效果】\n" NOR +
 				" 命中等級：★\n"
-				" 回避等級：★\n"
+				" 迴避等級：★\n"
 				" 傷害等級：★\n"
 				" 防護等級：★\n\n" NOR;
 			line += LINE;
@@ -229,14 +229,14 @@ int main(object me, string arg)
 
 		}
 
-       		 // 顯示輪回點使用情況
+       		 // 顯示輪迴點使用情況
 		if (arg == "-l")
 		{
-			line = HIY "以下是您輪回點使用情況：\n" NOR;
+			line = HIY "以下是您輪迴點使用情況：\n" NOR;
 			line += LINE;
-			line += "當前輪回點：" + sprintf("%d", me->query("scborn/cur_lunhui_point")) + "\n";
-			line += "累積輪回點：" + sprintf("%d", me->query("scborn/total_lunhui_point")) + "\n";
-			line += "已用輪回點：" + sprintf("%d", 
+			line += "當前輪迴點：" + sprintf("%d", me->query("scborn/cur_lunhui_point")) + "\n";
+			line += "累積輪迴點：" + sprintf("%d", me->query("scborn/total_lunhui_point")) + "\n";
+			line += "已用輪迴點：" + sprintf("%d", 
 				                     me->query("scborn/total_lunhui_point") - me->query("scborn/cur_lunhui_point")) + "\n";
 
 			line += LINE;
@@ -258,10 +258,10 @@ int main(object me, string arg)
 					}
 				}
 				else 
-					line += HIR "\n您目前還沒有使用輪回點增加職業技能等級。\n\n" NOR;
+					line += HIR "\n您目前還沒有使用輪迴點增加職業技能等級。\n\n" NOR;
 			}
 			else
-				line += HIR "\n您目前還沒有使用輪回點增加職業技能等級。幫助文件 help scborn。\n\n" NOR;
+				line += HIR "\n您目前還沒有使用輪迴點增加職業技能等級。幫助文件 help scborn。\n\n" NOR;
 			
 			line += LINE;
 
@@ -314,7 +314,7 @@ int main(object me, string arg)
         }
                 
 /*
-	// 昆侖無極的威力 + 命中
+	// 崑崙無極的威力 + 命中
 	if (weapon && weapon->query("skill_type") == "sword" 
 	    && me->query_skill_mapped(skill_type) == "qiankun-jian"
    	    && me->query_skill("kunlun-wuji", 1) >= 100)
@@ -333,7 +333,7 @@ int main(object me, string arg)
 	// 傷害等級
 	if (weapon)
 	{
-	      // 將附加沖穴效果      
+	      // 將附加衝穴效果      
 	      damage = me->query_temp("apply/damage") + 
 	               me->query_temp("apply/damage") * me->query("jingmai/jingmai_weapon") / 100;
 	}
@@ -344,7 +344,7 @@ int main(object me, string arg)
 	damage1 = damage / 10;
 	damage2 = damage / 10;
 
-	// 昆侖無極的威力
+	// 崑崙無極的威力
 	if (weapon && weapon->query("skill_type") == "sword" 
 	    && me->query_skill_mapped(skill_type) == "qiankun-jian"
    	    && me->query_skill("kunlun-wuji", 1) >= 100)
@@ -428,7 +428,7 @@ int main(object me, string arg)
 		attack += 300;			
 	}
 	
-	// 沖穴提高傷害
+	// 衝穴提高傷害
 	damage = damage + me->query("jingmai/jingmai_damage") * 100;
 	
 	
@@ -443,7 +443,7 @@ int main(object me, string arg)
 
 	// 防護等級
 	defense = me->query_temp("apply/armor");
-	// 沖穴提高防御
+	// 衝穴提高防禦
 	defense = defense + me->query("jingmai/jingmai_armor") * 100;
 	
 	// 發揮披風鑲嵌的作用
@@ -457,7 +457,7 @@ int main(object me, string arg)
 	{
 		switch(mater->query("types"))
 		{
-			case "防御型":
+			case "防禦型":
 				defense = defense + mater->query("level") * 5;
 				break;
 			case "攻擊型":
@@ -498,9 +498,9 @@ int main(object me, string arg)
                         job_score);
 
 
-	// 回避點數
+	// 迴避點數
 	huibi_points = dodge_points + (weapon? parry_points: (parry_points / 10));
-	// 移形換位提升戰鬥回避率15%
+	// 移形換位提升戰鬥迴避率15%
 	if (me->query("special_skill/yixing"))
 		huibi_points = huibi_points + huibi_points * 3 / 20;
 	
@@ -516,7 +516,7 @@ int main(object me, string arg)
 	}
 	if (! me->query("yuanshen/status"))
 	{
-		line += sprintf(NOR + WHT "命中等級：%-25d回避等級：%d\n" NOR, 
+		line += sprintf(NOR + WHT "命中等級：%-25d迴避等級：%d\n" NOR, 
                 	        attack / 100 + 1, huibi_points / 100 + 1);
         }
         else
@@ -524,7 +524,7 @@ int main(object me, string arg)
         	attack_up += 1000; // 初始元神有+10命中
         	if (me->query("yuanshen/QHmingzhong"))
         		attack_up = attack_up + yuanshen_level(me, 0) * 100 * 2; 	
-        	line += sprintf(NOR + WHT "命中等級：%-46s回避等級：%s\n" NOR, 
+        	line += sprintf(NOR + WHT "命中等級：%-46s迴避等級：%s\n" NOR, 
         	        sprintf("%d", attack / 100) + HIG " + " + sprintf("%d", attack_up / 100) + NOR + WHT,
         	        sprintf("%d", huibi_points / 100 + 1) + HIG " + 10" WHT);
         }
@@ -532,10 +532,10 @@ int main(object me, string arg)
 	if (! me->query("yuanshen/status"))
 	{
 		if (damage + damage2 < 100000)
-			line += sprintf(NOR + WHT "傷害等級：%-3d─ %-19d防護等級：%d\n" WHT, 
+			line += sprintf(NOR + WHT "傷害等級：%-3d— %-19d防護等級：%d\n" WHT, 
                 		        (damage - damage1) / 100, (damage + damage2) / 100, defense / 100 + 1);
 		else
-			line += sprintf(NOR + WHT "傷害等級：%-3d─ %-18d防護等級：%d\n" WHT, 
+			line += sprintf(NOR + WHT "傷害等級：%-3d— %-18d防護等級：%d\n" WHT, 
                 		        (damage - damage1) / 100, (damage + damage2) / 100, defense / 100 + 1);                		       
         }
         else
@@ -549,7 +549,7 @@ int main(object me, string arg)
         		defense_up = defense_up + yuanshen_level(me, 0) * 100 * 4;    
         			  	
         	line += sprintf(NOR + WHT "傷害等級：%-46s防護等級：%s\n" WHT, 
-        	        sprintf("%-3d─ %-19d", (damage - damage1) / 100, (damage + damage2) / 100) + HIG " + " + 
+        	        sprintf("%-3d— %-19d", (damage - damage1) / 100, (damage + damage2) / 100) + HIG " + " + 
         	                sprintf("%d", damage_up / 100) + NOR + WHT,
         	        sprintf("%d", defense / 100 + 1) + HIG " + " + sprintf("%d", defense_up / 100) + WHT);        	
         }
@@ -575,7 +575,7 @@ int main(object me, string arg)
 	if (COMBAT_D->enchased_surcoat_special(me, "貓妖石"))
 	{
 		line = line + HIM "無視對手" + COMBAT_D->enchased_surcoat_special(me, "貓妖石") + 
-		       "%防御給予攻擊。\n" NOR;
+		       "%防禦給予攻擊。\n" NOR;
 	}
 	
 	// 增加元神查看
@@ -601,10 +601,10 @@ int main(object me, string arg)
 	line += sprintf(NOR + WHT "經驗分成：%-24s屬性變更：%s\n" NOR, 
                        "20%" , 
                        me->query("yuanshen/status") ? 
-                           sprintf("剩余 %d 小時", (me->query("yuanshen/last_change_wuxing") + 15* 3600 * 24 - time()) / 3600) : 
-                           	                   "剩余 0 小時");
+                           sprintf("剩餘 %d 小時", (me->query("yuanshen/last_change_wuxing") + 15* 3600 * 24 - time()) / 3600) : 
+                           	                   "剩餘 0 小時");
                        
-	line += sprintf(NOR + WHT "強化學習：%-24s強化防御：%s\n" NOR, 
+	line += sprintf(NOR + WHT "強化學習：%-24s強化防禦：%s\n" NOR, 
                        me->query("yuanshen/QHxuexi") ? "√" : "----" , me->query("yuanshen/QHfangyu") ? "√" : "----");	
                        
         line += sprintf(NOR + WHT "強化攻擊：%-24s強化修養：%s\n" NOR, 
@@ -622,7 +622,7 @@ int main(object me, string arg)
 	line += NOR + WHT "套裝狀態：" + TAOZHUANG_D->taozhuang_name(tzlv) + "\n";
 	line += sprintf(NOR + WHT "傷害等級：+%-24d防護等級：+%d\n" NOR, 
                         tz["damage"],tz["defense"]);
- 	line += sprintf(NOR + WHT "回避等級：+%-24d命中等級：+%d\n" NOR, 
+ 	line += sprintf(NOR + WHT "迴避等級：+%-24d命中等級：+%d\n" NOR, 
                         tz["huibi"],tz["attack"]);    
  	line += sprintf(NOR + WHT "研究效率：+%-24s汲取效率：+%s\n" NOR, 
                         sprintf("%d", tz["yanjiu"]) + "%",sprintf("%d", tz["jiqu"]) + "%");   
@@ -643,7 +643,7 @@ int main(object me, string arg)
 */	
 	//line += HIR "各項屬性的評價標準請輸入指令 power -p 查看。\n" NOR;
 	//line += HIC "有關元神的介紹及使用詳見 help yuanshen 。\n" NOR;
-	line += HIY "輪回點使用情況請用 power -l 查看。\n" NOR;
+	line += HIY "輪迴點使用情況請用 power -l 查看。\n" NOR;
 	line += HIG "當前購買的服務(help yhshop_srv）請輸入指令 power -s 查看。\n" NOR;
 
 	

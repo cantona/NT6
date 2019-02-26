@@ -5,7 +5,7 @@ void create()
         set_name("波斯生意人", ({ "shengyi ren", "dealer", "ren" }));
         set("gender", "男性");
         set("age", 40 + random(10));
-        set("long", "一個精明的波斯生意人。高鼻藍眼的, 看著你臉上露出狡詐的笑容。\n");
+        set("long", "一個精明的波斯生意人。高鼻藍眼的, 看着你臉上露出狡詐的笑容。\n");
         set("attitude", "friendly");
         set("combat_exp", 3000);
         set_skill("unarmed", 30);

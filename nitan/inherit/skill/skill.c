@@ -107,7 +107,7 @@ int exert_function(object me, string arg)
         if( sscanf(arg, "%s %s", func, target)==2 ) {
                 target_ob = present(target, environment(me));
                 if( !target_ob )
-                        return notify_fail("這裡沒有 " + target + "。\n");
+                        return notify_fail("這裏沒有 " + target + "。\n");
         } else {
                 func = arg;
                 target_ob = me;
@@ -131,7 +131,7 @@ int perform_action(object me, string arg)
         if( sscanf(arg, "%s %s", action, target) == 2 ) {
                 target_ob = present(target, environment(me));
                 if( !target_ob )
-                        return notify_fail("這裡沒有" + target + "。\n");
+                        return notify_fail("這裏沒有" + target + "。\n");
         } else {
                 action = arg;
         }
@@ -169,16 +169,16 @@ int perform_action(object me, string arg)
                                 if( target_ob->query_skill_mapped("parry") == "qiankun-danuoyi" )
                                         tell_object(all_inventory(environment(me)),
                                                 sprintf(HIG+query("name", target_ob)+
-                                                        "施展出絕技── 「" NOR + BLINK + HIR +
+                                                        "施展出絕技—— 「" NOR + BLINK + HIR +
                                                         "乾坤大挪移" NOR + HIG "」\n" +
-                                                        "竟將" + me->name(1) + "的成名絕技盡數挪移于" +
+                                                        "竟將" + me->name(1) + "的成名絕技盡數挪移於" +
                                                         me->name(1) + "自身！！！\n" NOR));
                                 else
                                         tell_object(all_inventory(environment(me)),
                                                 sprintf(HIG+query("name", target_ob)+
-                                                        "施展出姑蘇慕容家傳絕技── 「" NOR + BLINK + HIR +
+                                                        "施展出姑蘇慕容家傳絕技—— 「" NOR + BLINK + HIR +
                                                         "以彼之道 * * * 還施彼身" NOR + HIG "」\n" +
-                                                        "竟將" + me->name(1) + "的成名絕技盡數返施于" +
+                                                        "竟將" + me->name(1) + "的成名絕技盡數返施於" +
                                                         me->name(1) + "自身！！！\n" NOR));
 
                                 addn("neili", -300, target_ob);

@@ -139,7 +139,7 @@ void kicking(object ob)
 
         ob->move("/d/gaibang/inhole");
         message("vision","只聽“乒”地一聲，"+query("name", ob)+
-                "從小門裡飛了出來。\n", environment(ob), ob);
+                "從小門裏飛了出來。\n", environment(ob), ob);
 }
 
 void attempt_apprentice(object ob)
@@ -168,7 +168,7 @@ void attempt_apprentice(object ob)
                 return;
         }
         command("grin");
-        command("say 那你以後就跟著我吧。");
+        command("say 那你以後就跟着我吧。");
         command("recruit "+query("id", ob));
 
         if( query("class", ob) != "beggar" )
@@ -191,7 +191,7 @@ mixed ask_skill1()
                 return "這招我不是已經教會你了嗎？";
 
         if( query("family/family_name", me) != query("family/family_name") )
-                return "閣下與在下素不相識，不知此話從何說起？";
+                return "閣下與在下素不相識，不知此話從何説起？";
 
         if (me->query_skill("liuhe-dao", 1) < 1)
                 return "你連六合刀都沒學，何談絕招可言？";
@@ -205,7 +205,7 @@ mixed ask_skill1()
         if (me->query_skill("force") < 150)
                 return "你現在的內功修為不足，還是練高點再來吧。";
 
-        message_sort(HIY "\n$n" HIY "點了點頭，對$N" HIY "說道：“給"
+        message_sort(HIY "\n$n" HIY "點了點頭，對$N" HIY "説道：“給"
                      "我看清楚了。”突然陡聽$n" HIY "一聲暴喝，手中鋼"
                      "刀一陣亂舞，竟似毫無章理，揮舞出數道刀影，氣勢"
                      "澎湃，力不可擋。正是六合刀的精要所在。\n\n" NOR,
@@ -244,8 +244,8 @@ string ask_xhwan()
 
         if( query("xhwan", me)<1 )
         {
-                message_vision("然後$N伸手入懷，但摸索良久，似乎沒找著。\n", me);
-                return "我身上此刻沒有雄黃丸，你還是快到城裡去找大夫吧！\n\n";
+                message_vision("然後$N伸手入懷，但摸索良久，似乎沒找着。\n", me);
+                return "我身上此刻沒有雄黃丸，你還是快到城裏去找大夫吧！\n\n";
         }
 
         addn("xhwan", -1, me);
@@ -269,15 +269,15 @@ string ask_baicao()
          && query("eff_jing", ob) == query("max_jing", ob) )
         {
                 message_vision("$N向$n臉上仔細地打量了一陣，便皺起眉頭。\n", me, ob);
-                return "你並未受傷，要百草丹幹嗎？\n\n";
+                return "你並未受傷，要百草丹干嗎？\n\n";
         }
 
         message_vision("$N向$n臉上仔細地打量了一陣，抓起$n手腕打脈。\n", me, ob);
 
         if( query("baicao", me)<1 )
         {
-                message_vision("然後$N伸手入懷，但摸索良久，似乎沒找著。\n", me);
-                return "我身上此刻沒有百草丹，你還是快到城裡去找大夫吧！\n\n";
+                message_vision("然後$N伸手入懷，但摸索良久，似乎沒找着。\n", me);
+                return "我身上此刻沒有百草丹，你還是快到城裏去找大夫吧！\n\n";
         }
 
         addn("baicao", -1, me);

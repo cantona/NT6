@@ -16,7 +16,7 @@ void create()
         set("gender", "男性");
         set("age", 8888);
         set("long", @LONG
-這是一只代表月（Moon），掌管著Vampire Land，其能力為吸入垂耳兔獸並分解他們的資料使自己擁有不死之身的魔族。
+這是一隻代表月（Moon），掌管着Vampire Land，其能力為吸入垂耳兔獸並分解他們的資料使自己擁有不死之身的魔族。
 不受任何挪移、致命一擊、致暈攻擊、忙亂的效果影響。
 LONG );
         set("combat_exp", 500000);
@@ -231,7 +231,7 @@ void death_msg()
         command("chat 人間居然有如此厲害的角色，看來我魔族在人間無立身之地了！");
         message_vision("$N長嘯一聲，響徹天地，然後身體慢慢變得透明，消失在無盡魔氣之中。\n", this_object());
         CHANNEL_D->do_channel(this_object(), "rumor",
-                        "聽說" + name() + HIM "在人間受辱後，回到了魔族，從此不再出沒人間。" NOR);
+                        "聽説" + name() + HIM "在人間受辱後，回到了魔族，從此不再出沒人間。" NOR);
 }
 
 void random_move()
@@ -240,7 +240,7 @@ void random_move()
         {
                 message_vision("$N長嘯一聲，響徹天地，然後身體慢慢變得透明，消失在無盡魔氣之中。\n", this_object());
                 CHANNEL_D->do_channel(this_object(), "rumor",
-                        "聽說" + name() + HIM "在人間走了一遭後，百無聊奈，又返回了魔界。" NOR);
+                        "聽説" + name() + HIM "在人間走了一遭後，百無聊奈，又返回了魔界。" NOR);
                 destruct(this_object());
                 return;
         }

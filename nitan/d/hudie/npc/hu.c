@@ -62,7 +62,7 @@ void create()
 	prepare_skill("hand","sougu-yingzhua");
 
 	set("inquiry", ([
-		"針灸": "針灸的學問可是很深奧啊。",
+		"鍼灸": "鍼灸的學問可是很深奧啊。",
 		"治療" : (:ask_me:),
 		"療傷" : (:ask_me:),
 		"解毒" : (:ask_me:),
@@ -110,7 +110,7 @@ int ask_me()
 	 && query("eff_jing", ob) >= query("max_jing", ob )
 	) {
 		command("?"+query("id", ob));
-		command("say 你根本沒受傷，跑我這裡添亂！");
+		command("say 你根本沒受傷，跑我這裏添亂！");
 		command("knock"+query("id", ob));
 		return 1;
 	}
@@ -130,7 +130,7 @@ void recover(object ob)
 	if (!ob) return;
 set("eff_qi",query("max_qi",  ob), 	ob);
 set("eff_jing",query("max_jing",  ob), 	ob);
-	message_vision("過了一會兒，$N覺得傷勢完全回復了！\n",ob);
+	message_vision("過了一會兒，$N覺得傷勢完全回覆了！\n",ob);
 	command("hehe"+query("id", ob));
 }
 
@@ -161,7 +161,7 @@ int ask_quest()
 		  book = new("/d/mingjiao/obj/jingmai-book9")->move(me);
 		  addn("book9",-1);
 		return 1;}
-		command("say 唉，我那可憐的妹子，被華山那家伙。。。");
+		command("say 唉，我那可憐的妹子，被華山那傢伙。。。");
 		command("say 可惜我武功實在不如。");
 		command("sigh");
 set_temp("hu/quest1", 1, 		me);
@@ -172,13 +172,13 @@ set_temp("hu/quest1", 1, 		me);
 		command("say 既然他實在無法分身前來，也就罷了。");
 		command("say 他要我傳你醫術？");
 		command("ok hu");
-		command("say 這本子午針灸經是我一生心血所寄，你好好研究吧。");
+		command("say 這本子午鍼灸經是我一生心血所寄，你好好研究吧。");
 		  destruct(present("tieyan ling",me));
 		  book = new("/d/mingjiao/obj/jingmai-book10")->move(me);
 		  addn("book10",-1);
 		return 1;}
 		command("say 無忌那孩子殺了鮮于通，報了我的大仇。");
-		command("say 聽說他已經身為明教教主了。我實在是想見他一面啊。");
+		command("say 聽説他已經身為明教教主了。我實在是想見他一面啊。");
 		command("hmm");
 set_temp("hu/quest2", 1, 		me);
 		return 1;}

@@ -26,7 +26,7 @@ int exert(object me, object target)
                 return notify_fail("你已經運功調節精氣大小了。\n");
 
         set_temp("linji/daxiao", 1, me);
-        write( HIY "你屏息靜氣，交錯運行大小二莊，只覺一股暖流出天門，穿地戶，沿著全身經脈運行一周，匯入丹田氣海。\n" NOR);
+        write( HIY "你屏息靜氣，交錯運行大小二莊，只覺一股暖流出天門，穿地户，沿着全身經脈運行一週，匯入丹田氣海。\n" NOR);
         message_combatd(
                 HIY + "只見" + me->name() + "屏息靜氣，頭頂飄起一縷縷白氣，神態略現疲乏。\n" NOR,
                 me);

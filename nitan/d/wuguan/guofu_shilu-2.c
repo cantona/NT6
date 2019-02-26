@@ -5,7 +5,7 @@ void create()
         set("short", "石板路");
         set("long", @LONG
 你走在一條石板路上，北面和南面都是習武堂，不少人在
-這裡進進出出的，東面是郭府的客廳。
+這裏進進出出的，東面是郭府的客廳。
 LONG);
         set("no_fight", 1);
         set("exits", ([

@@ -19,7 +19,7 @@ void create()
         set("combat_exp", 10000);
         set("attitude", "friendly");
         set("inquiry", ([
-                "婚約" : "是啊……這裡就可以締結和解除婚約",
+                "婚約" : "是啊……這裏就可以締結和解除婚約",
         ]) );
         set_skill("literate", 70);
         set_skill("dodge", 200);
@@ -59,7 +59,7 @@ int do_marry(string arg) {
         while (i--) {
               if( (query("id", list[i])) == "marrycard" )
                 return notify_fail(
-                "你已經和別人有婚約了吧?這裡不允許重婚的。\n");
+                "你已經和別人有婚約了吧?這裏不允許重婚的。\n");
         }
 
         if(!arg || !objectp(obj = present(arg, environment(me)))
@@ -80,7 +80,7 @@ int do_marry(string arg) {
         if(obj==me)     return notify_fail("你不能和自己締結婚約。\n");
 
         if( userp(obj) && !(query("marks/"+me->name(1, obj)))){
-                message_vision(MAG "\n$N對著$n說道："
+                message_vision(MAG "\n$N對著$n説道："
                     + RANK_D->query_self(me)
                     + me->name() + "，願意和"
                + RANK_D->query_respect(obj) +
@@ -90,7 +90,7 @@ int do_marry(string arg) {
                         +me->name()+"("+query("id", me)+
                         ")"+ "下一次 marry 指令。\n" NOR);
                 write(MAG
-                        "現在你急切盼望著你的心上人說同意……\n" NOR);
+                        "現在你急切盼望着你的心上人説同意……\n" NOR);
                 return 1;
         }
 
@@ -102,7 +102,7 @@ int do_marry(string arg) {
         set("name", "你和"+query("id", me)+"的婚約", marry_card2);
         marry_card2->move(obj);
 
-     message_vision(MAG "恭喜 $N 和 $n ，一對璧人終于喜結良緣。\n" NOR,obj,me);
+     message_vision(MAG "恭喜 $N 和 $n ，一對璧人終於喜結良緣。\n" NOR,obj,me);
         CHANNEL_D->do_channel(this_object(), "chat",
         sprintf( "%s 和 %s 現在開始是夫婦啦! \n",
         me->name(1), obj->name(1)));
@@ -159,10 +159,10 @@ int do_unmarry(string arg)
         }
         if (have_marry = 0) {
                 destruct(marry_card1);
-        message_vision(MAG " $N 和 $n 從現在開始解除婚約,互不相幹!\n" NOR,
+        message_vision(MAG " $N 和 $n 從現在開始解除婚約,互不相干!\n" NOR,
         couple_ob, me);
         CHANNEL_D->do_channel(this_object(), "chat",
-        sprintf( "%s 和 %s 從現在開始解除婚約,互不相幹! \n",
+        sprintf( "%s 和 %s 從現在開始解除婚約,互不相干! \n",
         me->name(1), couple_ob->name(1)));
 
                 return 1;
@@ -170,7 +170,7 @@ int do_unmarry(string arg)
 
         if( userp(couple_ob) && !(couple_ob->query("marks/"
                 + "unmarry" +me->name(1))) ) {
-                message_vision(MAG "\n$N對著$n說道："
+                message_vision(MAG "\n$N對著$n説道："
                         + RANK_D->query_self(me)
                         + me->name() + "，咱們解除婚約吧!好嗎?\n\n"
                         NOR, me, couple_ob);
@@ -178,16 +178,16 @@ int do_unmarry(string arg)
            tell_object(couple_ob, MAG "如果你願意解除婚約，請你也"
                 + "下一次 unmarry 指令。\n" NOR);
                 write(MAG
-                "現在你只有等著" +str2 +" 同意啦...\n" NOR);
+                "現在你只有等着" +str2 +" 同意啦...\n" NOR);
                 return 1;
         }
         destruct(marry_card1);
         destruct(marry_card2);
 
-        message_vision(MAG " $N 和 $n 從現在開始解除婚約,互不相幹!\n" NOR,
+        message_vision(MAG " $N 和 $n 從現在開始解除婚約,互不相干!\n" NOR,
         couple_ob, me);
         CHANNEL_D->do_channel(this_object(), "chat",
-        sprintf( "%s 和 %s 從現在開始解除婚約,互不相幹! \n",
+        sprintf( "%s 和 %s 從現在開始解除婚約,互不相干! \n",
         me->name(1), couple_ob->name(1)));
 
         return 1;

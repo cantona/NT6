@@ -4,13 +4,13 @@ inherit NPC;
 
 void create()
 {
-        set_name("神雕", ({ "shen diao", "diao" }) );
+        set_name("神鵰", ({ "shen diao", "diao" }) );
         set("race", "飛禽");
         set("subrace", "走禽");
         set("age", 20);
         set("long", @LONG
     這雕身形甚巨，比人還高，形貌醜陋之極，全身羽毛疏疏落
-落，似是被人拔去了一大半似的，毛色黃黑，顯得甚是骯臟，雕
+落，似是被人拔去了一大半似的，毛色黃黑，顯得甚是骯髒，雕
 釣嘴彎曲，頭頂生著個血紅的大肉瘤，雙腿奇粗，羽翼甚短。
 LONG
 );

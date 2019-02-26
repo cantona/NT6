@@ -16,7 +16,7 @@ void create()
                 set("no_sell", 1);
                 set("material", "steel");
                 set("wield_msg", WHT "$N" WHT "縱聲大笑，從腰間抽出一柄頗為古舊的彎刀。\n" NOR);
-                set("unwield_msg", WHT "$N" WHT "環顧四周，輕嘆一聲，將闖王軍刀插回腰間。\n" NOR);
+                set("unwield_msg", WHT "$N" WHT "環顧四周，輕歎一聲，將闖王軍刀插回腰間。\n" NOR);
                 set("stable", 100);
         }
         init_blade(120);

@@ -9,7 +9,7 @@ void create()
         set("short", "黃河");
         set("long", @LONG
 黃河沿蒙古高原南邊向東流淌，遇太行山脈的阻攔，便轉頭南下，
-形成晉陝的分界。東北方向好象有個渡口。
+形成晉陝的分界。東北方向好像有個渡口。
 LONG );
         set("exits", ([
                 "south"     : __DIR__"weifen",

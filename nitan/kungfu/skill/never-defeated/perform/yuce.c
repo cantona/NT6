@@ -20,7 +20,7 @@ int perform(object me, object target)
         if( !objectp(weapon=query_temp("handing", me)) || 
             query("skill_type", weapon) != "throwing" || 
             weapon->query_amount() < 1)
-                return notify_fail("你現在手中並沒有拿著暗器，怎麼施展御策訣？\n");
+                return notify_fail("你現在手中並沒有拿着暗器，怎麼施展御策訣？\n");
 
         if ((skill = me->query_skill("never-defeated", 1)) < 100)
                 return notify_fail("你的不敗神功火候不夠，不會施展御策訣。\n");
@@ -29,7 +29,7 @@ int perform(object me, object target)
                 return notify_fail("你內力不夠了。\n");
 
         if (! living(target))
-              return notify_fail("對方都已經這樣了，用不著這麼費力吧？\n");
+              return notify_fail("對方都已經這樣了，用不着這麼費力吧？\n");
 
         addn("neili", -120, me);
         weapon->add_amount(-1);

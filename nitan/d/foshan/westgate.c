@@ -4,7 +4,7 @@ void create()
 {
         set("short", "西門");
         set("long", @LONG
-這裡乃是佛山鎮的西門。嶺南以西經由廣西可至大理。東面一條
+這裏乃是佛山鎮的西門。嶺南以西經由廣西可至大理。東面一條
 東西向的大街是佛山鎮的主要街道。
 LONG );
         set("outdoors", "foshan");

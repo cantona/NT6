@@ -51,7 +51,7 @@ mapping *action = ({
         "skill_name" : "天地定位",
         "damage_type": "割傷"
 ]),
-([      "action": "$N手中的$w連削帶刺，一招「山澤通氣」，夾帶著一陣旋風掠過$n全身",
+([      "action": "$N手中的$w連削帶刺，一招「山澤通氣」，夾帶着一陣旋風掠過$n全身",
         "force" : 224,
         "attack": 62,
         "dodge" : 85,
@@ -71,7 +71,7 @@ mapping *action = ({
         "skill_name" : "雷風相薄",
         "damage_type": "割傷"
 ]),
-([      "action": "$N手中的$w連削帶刺，一招「水火不射」，夾帶著一陣旋風掠過$n全身",
+([      "action": "$N手中的$w連削帶刺，一招「水火不射」，夾帶着一陣旋風掠過$n全身",
         "force" : 257,
         "attack": 75,
         "dodge" : 95,
@@ -91,7 +91,7 @@ mapping *action = ({
         "skill_name" : "八卦相錯",
         "damage_type": "割傷"
 ]),
-([      "action": "$N手中的$w連削帶刺，一招「乾坤無極」，夾帶著一陣旋風掠過$n全身",
+([      "action": "$N手中的$w連削帶刺，一招「乾坤無極」，夾帶着一陣旋風掠過$n全身",
         "force" : 285,
         "attack": 85,
         "dodge" : 115,

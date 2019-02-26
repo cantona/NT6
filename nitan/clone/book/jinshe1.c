@@ -12,7 +12,7 @@ void init()
 }
 void create()
 {
-        set_name(YEL"「金蛇秘芨」"NOR"上冊", ({ "jinshe book1","book1", }));
+        set_name(YEL"「金蛇祕芨」"NOR"上冊", ({ "jinshe book1","book1", }));
         set_weight(500);
         if( clonep() )
                 set_default_object(__FILE__);
@@ -23,7 +23,7 @@ void create()
                 set("no_get", "這樣東西不能離開那兒。\n");
                 set("no_put", "這樣東西不能放在那兒。\n");
                 set("long",
-        "這是一本用薄紙寫成的書。上書：「金蛇秘芨」。\n"
+        "這是一本用薄紙寫成的書。上書：「金蛇祕芨」。\n"
         "書皮泛黃，看來已經保存很久了。\n", );
         }
 }
@@ -46,7 +46,7 @@ int do_du(string arg)
         }
         if (me->is_busy())
         {
-                write("你現在正忙著呢。\n");
+                write("你現在正忙着呢。\n");
                 return 1;
         }
         if( me->is_fighting() )
@@ -67,7 +67,7 @@ int do_du(string arg)
         message("vision", me->name() + "正專心地研讀金蛇密芨。\n", environment(me), me);
         if( query("jing", me)<25 )
         {
-                write("你現在過于疲倦，無法專心下來研讀新知。\n");
+                write("你現在過於疲倦，無法專心下來研讀新知。\n");
                 return 1;
         }
         neili_lost = 5;
@@ -83,12 +83,12 @@ int do_du(string arg)
         }
         if( me->query_skill("jinshe-jian", 1) < 50)
         {
-                write("你研讀了一會兒，但是發現上面所說的對你而言都太深奧了，沒有學到任何東西。\n");
+                write("你研讀了一會兒，但是發現上面所説的對你而言都太深奧了，沒有學到任何東西。\n");
                 return 1;
         }
         if( me->query_skill("jinshe-jian", 1) > 199)
         {
-                write("你研讀了一會兒，但是發現上面所說的對你而言都太淺了，沒有學到任何東西。\n");
+                write("你研讀了一會兒，但是發現上面所説的對你而言都太淺了，沒有學到任何東西。\n");
                 return 1;
         }
         me->receive_damage("jing", 15);

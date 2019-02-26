@@ -11,7 +11,7 @@ void create()
                                "sen" : 20 ]));
         set("apply_condition", ([ "drunk" : 20 ]));
         set("env_message", RED"$N取出一顆紅色的丸子，一仰頭吃了下去，頓時臉色變得紅火。");
-        set("prv_message", HIR"你覺得腹內好象有火在燒，一股熱氣順著血行匯入了奇經百脈。");
+        set("prv_message", HIR"你覺得腹內好像有火在燒，一股熱氣順着血行匯入了奇經百脈。");
 
         setup();
 }

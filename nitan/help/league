@@ -21,7 +21,7 @@ grant    ：修改成員權限。
                   3 ：league kick [] 權限。
                   4 ：待擴展。
             注：權限是從0到4遞增，比如賦予了某人（league grant who 3）的權限，
-                那麼該人不但有kick的權限，而且低于kick以下的權限（add, kill）
+                那麼該人不但有kick的權限，而且低於kick以下的權限（add, kill）
                 都將擁有。
 
 set      ： 參數設置。

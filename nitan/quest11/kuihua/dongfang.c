@@ -13,8 +13,8 @@ void create()
 	object ob;
 	set_name("東方不敗", ({ "dongfang bubai", "dongfang", "bubai"}));
 	set("long", "他就是武林之中一位驚天動地，威震當世的怪傑。\n"+
-		"此刻他剃光了胡須，臉上竟然施了脂粉，身上那件衣衫式樣男不男，女不女，\n"+
-		"顏色之妖，便穿在少女身上，也顯得太嬌艷、太刺眼了些。\n");
+		"此刻他剃光了鬍鬚，臉上竟然施了脂粉，身上那件衣衫式樣男不男，女不女，\n"+
+		"顏色之妖，便穿在少女身上，也顯得太嬌豔、太刺眼了些。\n");
 
 	set("title",HIY"日月神教教主"NOR);         
 	set("nickname", HIR"日出東方 唯我不敗"NOR);
@@ -99,7 +99,7 @@ string ask_me()
 	int i, time;
 
 	if ( is_busy() || is_fighting())
-	 	return "你沒看到我正忙著麼？";
+	 	return "你沒看到我正忙着麼？";
 
 	if ( me->query("gender") == "女性")
 		return "倘若我和你一樣，生為女兒身，那就好了。";
@@ -119,7 +119,7 @@ string ask_me()
 	ob = present("kuihua baodian", this_object());
 
 	if ( ! ob)
-		return "耶？「葵花寶典」給我放到那裡去了？";
+		return "耶？「葵花寶典」給我放到那裏去了？";
 
 	time = time() - me->query("quest/pixie/pxj_time");
 	if ( me->query("quest/pixie/pxj_time") && time < 86400 && !wizardp(me))
@@ -128,7 +128,7 @@ string ask_me()
 	quest = me->query("quest/pixie");
 
 	if ( ! quest || ! quest["pxj_passwd"])
-		return "你從哪裡聽說到「葵花寶典」的？";
+		return "你從哪裏聽説到「葵花寶典」的？";
 
 	if ( quest["pass"] ) {
 		if ( ob ) {

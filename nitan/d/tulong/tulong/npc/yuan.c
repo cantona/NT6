@@ -44,7 +44,7 @@ int accept_kill(object who)
 
 int accept_ansuan(object who)
 {
-        return notify_fail("你剛想暗算，可是只見會場裡黑壓壓的擠滿了人，根本看不清楚。\n");
+        return notify_fail("你剛想暗算，可是隻見會場裏黑壓壓的擠滿了人，根本看不清楚。\n");
 }
 
 int begin()
@@ -71,7 +71,7 @@ void die()
         if (objectp(query("anti")))
         {
                 command("say 佩服，佩服......");
-                message_vision(HIR "\n$N嘶啞著嗓子幹嚎了兩聲，雙眼翻白，跌倒在地，口中吐出一些白沫，就再也沒動了。\n" NOR,
+                message_vision(HIR "\n$N嘶啞着嗓子乾嚎了兩聲，雙眼翻白，跌倒在地，口中吐出一些白沫，就再也沒動了。\n" NOR,
                                    this_object());
                 set_temp("win_yuan", 1, query("anti"));
                 delete_temp("bi", query("anti"));
@@ -84,7 +84,7 @@ void unconcious()
         if (objectp(query("anti")))
         {
                 command("say 佩服，佩服......");
-                message_vision(HIR "\n$N嘶啞著嗓子幹嚎了兩聲，雙眼翻白，跌倒在地，口中吐出一些白沫，就再也沒動了。\n" NOR,
+                message_vision(HIR "\n$N嘶啞着嗓子乾嚎了兩聲，雙眼翻白，跌倒在地，口中吐出一些白沫，就再也沒動了。\n" NOR,
                                    this_object());
                 set_temp("win_yuan", 1, query("anti"));
                 delete_temp("bi", query("anti"));
@@ -112,7 +112,7 @@ int do_get(string arg)
                 message_vision(CYN "$N喝道：無恥小賊，給我住手！你憑什麼得此寶刀？\n" NOR,
                                    obj,this_player());
 
-                message_vision(CYN "$N冷冷地說道：要得此刀，先比(bi)贏了我再說！\n" NOR,
+                message_vision(CYN "$N冷冷地説道：要得此刀，先比(bi)贏了我再説！\n" NOR,
                                    obj,this_player());
 
                 delete_temp("bi", this_player());

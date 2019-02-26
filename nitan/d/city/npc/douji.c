@@ -14,7 +14,7 @@ void  create()
         set("race", "飛禽");
         set("gender",  "雄性");
         set("age",  2);
-        set("long",  "一只雄赳赳的鬥雞。\n");
+        set("long",  "一隻雄赳赳的鬥雞。\n");
         set("attitude",  "friendly");
         set("max_qi",200+random2(2));
         set("max_jing",200+random2(2));

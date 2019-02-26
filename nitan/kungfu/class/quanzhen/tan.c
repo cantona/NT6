@@ -84,7 +84,7 @@ void create()
         set("inquiry", ([
                 "全真教"   :  "我全真教是天下道家玄門正宗。\n",
                 "三花聚頂" : (: ask_skill1 :),
-                "秘籍" : (: ask_me :),
+                "祕籍" : (: ask_me :),
         ]) );
         set("book_count", 1);
         set("master_ob",3);
@@ -123,7 +123,7 @@ mixed ask_skill1()
                 return "這招我不是已經教會你了嗎？";
 
         if( query("family/family_name", me) != query("family/family_name") )
-                return "閣下與貧道素不相識，不知此話從何說起？";
+                return "閣下與貧道素不相識，不知此話從何説起？";
 
         if (me->query_skill("haotian-zhang", 1) < 1)
                 return "你連昊天掌都沒學，何談絕招可言？";

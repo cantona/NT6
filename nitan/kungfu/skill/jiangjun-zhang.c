@@ -18,7 +18,7 @@ mapping *action = ({
         "skill_name" : "如"
 ]),
 ([      "action":               
-"$N橫過$w，寫了個"HIC"「猛」"NOR"字，對著$n斜掃過去！",
+"$N橫過$w，寫了個"HIC"「猛」"NOR"字，對着$n斜掃過去！",
         "lvl" : 20,
         "skill_name" : "猛"
 ]),
@@ -28,17 +28,17 @@ mapping *action = ({
         "skill_name" : "將"
 ]),
 ([        "action":
-"$N身形微轉，$w向著$n的$l橫掃過去，順勢帶出個"HIC"「龍」"NOR"字！",
+"$N身形微轉，$w向着$n的$l橫掃過去，順勢帶出個"HIC"「龍」"NOR"字！",
         "lvl" : 40,
         "skill_name" : "龍"
 ]),
 ([        "action":
-"$N高高躍起，手中$w劃出個"HIC"「壯」"NOR"字，向著$n的$l撞了過來！",
+"$N高高躍起，手中$w劃出個"HIC"「壯」"NOR"字，向着$n的$l撞了過來！",
         "lvl" : 50,
         "skill_name" : "壯"
 ]),
 ([        "action":
-"$N怒喝一聲，手中$w急舞正是個"HIC"「騰」"NOR"字，將$n$l罩于杖下！",
+"$N怒喝一聲，手中$w急舞正是個"HIC"「騰」"NOR"字，將$n$l罩於杖下！",
         "lvl" : 60,
         "skill_name" : "騰"
 ]),

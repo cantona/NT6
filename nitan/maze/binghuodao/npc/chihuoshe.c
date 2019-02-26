@@ -4,7 +4,7 @@ inherit __DIR__"bhd_npc.c";
 void create()
 {
         set_name(HIR "赤火蛇" NOR, ({ "chihuo she", "chihuo", "she" }));
-        set("long", HIW "這是一只渾身火紅的巨蛇，似乎在這裡生存了數千年。\n" NOR);
+        set("long", HIW "這是一隻渾身火紅的巨蛇，似乎在這裏生存了數千年。\n" NOR);
 
         set("age", 1900);
         set("str",80);

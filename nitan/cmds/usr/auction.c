@@ -20,7 +20,7 @@ int main(object me, string arg)
         if (! arg) return help(me);
 
         if( query("no_bid", environment(me)) )
-                return notify_fail("這裡禁止參與拍賣，省省吧！\n");
+                return notify_fail("這裏禁止參與拍賣，省省吧！\n");
 
         if (me->is_ghost() || domain_file(base_name(environment(me))) == "death")
                 return notify_fail("都做鬼了，還想參與拍賣？省省吧！\n");

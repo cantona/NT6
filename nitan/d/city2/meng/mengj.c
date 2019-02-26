@@ -9,9 +9,9 @@ void create()
         int skill, nl, lvl;
         int exp;
 
-        set_name("蒙古衛隊",({ "menggu weidui", "weidui" }) );
+        set_name("蒙古衞隊",({ "menggu weidui", "weidui" }) );
         set("gender", "男性" );
-        set("long", "這就是此次領兵南侵的負責防衛的蒙古衛隊。\n");
+        set("long", "這就是此次領兵南侵的負責防衞的蒙古衞隊。\n");
 
         set("int", 30);
         set("str", 30 + random(20));
@@ -125,10 +125,10 @@ varargs void die(object killer)
         if (objectp(killer) && playerp(killer)) 
         {
                 addn_temp("warquest/reward", 200, killer);
-                GIFT_D->delay_war_bonus(killer, ([ "prompt" : "因殲滅蒙古衛隊", "exp" : 1000, "pot" : 400, "mar" : 40, "gold" : 4 ])); 
+                GIFT_D->delay_war_bonus(killer, ([ "prompt" : "因殲滅蒙古衞隊", "exp" : 1000, "pot" : 400, "mar" : 40, "gold" : 4 ])); 
         }
 
-        message_vision("$N率領的蒙古衛隊在幾經頑抗後，終于被徹底" +
+        message_vision("$N率領的蒙古衞隊在幾經頑抗後，終於被徹底" +
                         HIR "消滅了" NOR "！\n",
                         this_object());
         

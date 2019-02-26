@@ -46,34 +46,34 @@ int ask_riddle()
 
         if( query("trill_marks/guessing", me) )
         {
-                write("陸麗仙笑了笑，說：你先把上個謎猜出來再說。\n");
+                write("陸麗仙笑了笑，説：你先把上個謎猜出來再説。\n");
                 return 1;
         }
         else
         {
                 switch(query("trill_marks/guess", me)){
                 case 0:
-                        message_vision("陸麗仙巧笑著對$N說：咱們猜個謎語吧：\n", me);
+                        message_vision("陸麗仙巧笑着對$N説：咱們猜個謎語吧：\n", me);
                         write("遙望山家正午炊 打《紅樓夢》人名一\n");
                         set("trill_marks/guessing", 1, me);
                         break;
                 case 1:
-                        message_vision("陸麗仙巧笑著對$N說：咱們猜個謎語吧：\n", me);
+                        message_vision("陸麗仙巧笑着對$N説：咱們猜個謎語吧：\n", me);
                         write("飛渡蓬萊我不懼 打《紅樓夢》詩句一\n");
                         set("trill_marks/guessing", 2, me);
                         break;
                 case 2:
-                        message_vision("陸麗仙巧笑著對$N說：咱們猜個謎語吧：\n", me);
+                        message_vision("陸麗仙巧笑着對$N説：咱們猜個謎語吧：\n", me);
                         write("潘金蓮嫌武大   打《詩經》詩句一\n");
                         set("trill_marks/guessing", 3, me);
                         break;
                 default :
                         command("sigh");
-                        message_vision("陸麗仙對$N說道：謎都被你猜光了，等我制出新的再說吧！\n", me);
+                        message_vision("陸麗仙對$N説道：謎都被你猜光了，等我製出新的再説吧！\n", me);
                 return 1;
         }
         write("想好了回答 (answer) 我。記住，不可泄露謎語或謎底。\n");
-        message("vision", "陸麗仙對著"+me->name()+"嘀咕了幾句話。\n", environment(me), ({me}));
+        message("vision", "陸麗仙對着"+me->name()+"嘀咕了幾句話。\n", environment(me), ({me}));
         return 1;
         }
 }
@@ -103,7 +103,7 @@ int do_answer(string arg)
         case "任憑弱水三千" : soln=2; break;
         case "不如叔也" : soln=3; break;
         default :
-                say("陸麗仙掩著嘴笑了起來，說道：不對，不對。\n"
+                say("陸麗仙掩着嘴笑了起來，説道：不對，不對。\n"
                  + me->name() + "的臉唰的紅了起來。\n");
         return 1;
         }
@@ -111,10 +111,10 @@ int do_answer(string arg)
         if ( riddle == soln )
         {
                 set("trill_marks/guess", riddle, me);
-                message_vision("陸麗仙愉快的對$N微笑著。\n", me);
+                message_vision("陸麗仙愉快的對$N微笑着。\n", me);
                 set("score",query("score",  me)+80, me);
                 delete("trill_marks/guessing", me);
-                write ("你的江湖閱歷增加了！\n");
+                write ("你的江湖閲歷增加了！\n");
         }
         else
                 write ("不對，不對！！瞎猜可不好！\n");
@@ -134,7 +134,7 @@ int do_enjoy()
         me_msg="果然";
         if ( objectp( present( "zizhu xiao",me) ) )
                 me_msg = "$N吹簫和之，聲調清亮，音韻悠然，\n果然";
-        msg = "陸麗仙笑了一聲，徐將寶鴨添香，然後四弦入抱，半面遮羞，嘈嘈切切，錯雜彈來。\n"+me_msg+"吹彈的清風徐來，枝鳥徐啼，悄然曲盡而尚裊余音。\n";
+        msg = "陸麗仙笑了一聲，徐將寶鴨添香，然後四弦入抱，半面遮羞，嘈嘈切切，錯雜彈來。\n"+me_msg+"吹彈的清風徐來，枝鳥徐啼，悄然曲盡而尚裊餘音。\n";
         message_vision(msg, me);
         jin=query("jing", me);
         e_jin=query("eff_jing", me);

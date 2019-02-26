@@ -1,6 +1,6 @@
 //                標準描述長度示例                                   |
 // 每個進入“幻境”遊戲的player必須攜帶的物品   _qxd_.c
-// by naihe  2002-10-24 至 10-31  于茂名
+// by naihe  2002-10-24 至 10-31  於茂名
 
 #include <ansi.h>
 inherit ITEM;

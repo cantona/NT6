@@ -43,8 +43,8 @@ int perform(object me, object target)
 
         if (ap / 2 + random(ap) > dp)
         {
-                message_combatd(HIC"激鬥中，卻見$N"HIC"忙中不亂，沖著$n"HIC"輕輕展顏露齒一笑，端的是艷若桃李、燦若明霞，容色柔媚無限，\n"
-                        "$n心中不覺一盪，油然升起一股親近的感覺，眼神也漸漸迷茫起來。\n" NOR, me, target);
+                message_combatd(HIC"激鬥中，卻見$N"HIC"忙中不亂，衝着$n"HIC"輕輕展顏露齒一笑，端的是豔若桃李、燦若明霞，容色柔媚無限，\n"
+                        "$n心中不覺一蕩，油然升起一股親近的感覺，眼神也漸漸迷茫起來。\n" NOR, me, target);
                 set_temp("shenlong/fengzi", 1, target);
                 addn_temp("apply/defense", -level, target);
                 if( !target->is_busy() )
@@ -53,7 +53,7 @@ int perform(object me, object target)
         }
         else
         {
-                message_combatd(HIY"只見$N"HIY"沖著$n"HIY"輕輕露齒一笑，露出了牙縫中一絲沒嚥下去的"HIG"菜葉"HIY"。\n" NOR, me, target);
+                message_combatd(HIY"只見$N"HIY"衝着$n"HIY"輕輕露齒一笑，露出了牙縫中一絲沒嚥下去的"HIG"菜葉"HIY"。\n" NOR, me, target);
         }
         return 1;
 }

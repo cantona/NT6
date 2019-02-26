@@ -36,7 +36,7 @@ int perform(object me, object target)
                 return notify_fail("你現在真氣不足，難以施展" + name() + "。\n");
 
         if (! living(target))
-                return notify_fail("對方都已經這樣了，用不著這麼費力吧？\n");
+                return notify_fail("對方都已經這樣了，用不着這麼費力吧？\n");
 
         msg = HIB "$N" HIB "揮手疾舞，施出逍遙折梅手「海淵式」，手法"
               "縹緲，虛虛實實罩向$n" HIB "要害。\n" NOR;

@@ -7,7 +7,7 @@ void create()
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("long", HIM"這是一枝嬌艷的桃花。\n"NOR);
+                set("long", HIM"這是一枝嬌豔的桃花。\n"NOR);
                 set("unit", "枝");
                 set("value", 100);
         }

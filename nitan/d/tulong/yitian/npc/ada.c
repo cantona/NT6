@@ -8,7 +8,7 @@ void create()
         set("long", "八臂神劍方東白是丐幫四大長老之首，劍術\n"
                     "之精，名動江湖，只因他出劍奇快，有如生\n"
                     "了七八條手臂一般，因此上得了這個外號。\n"
-                    "十多年前聽說他身染重病身亡，當時人人都\n"
+                    "十多年前聽説他身染重病身亡，當時人人都\n"
                     "感惋惜，不覺他竟尚在人世。\n");
         set("title", "丐幫四大長老之首");
         set("nickname", HIW "八臂神劍" NOR);
@@ -88,7 +88,7 @@ int accept_kill(object who)
 
 int accept_ansuan(object who)
 {
-        return notify_fail("你剛想暗算，可是只見樓上人影晃動，根本看不清楚。\n");
+        return notify_fail("你剛想暗算，可是隻見樓上人影晃動，根本看不清楚。\n");
 }
 
 int begin()
@@ -122,7 +122,7 @@ int begin()
                 command("nod");
                 command("bow");
 
-                message_vision(CYN "突然趙敏喝道：“慢著！拿著倚天劍和$n" CYN
+                message_vision(CYN "突然趙敏喝道：“慢着！拿着倚天劍和$n" CYN
                                    "鬥！”\n" NOR,
                                    obj, this_player());
 
@@ -165,23 +165,23 @@ void unconcious()
         if (objectp(query("anti")))
         {
                 message_vision(HIR "\n$n" HIR 
-                                   "暗自摸索阿大劍招中的破綻，手中兵器揮洒，將阿大手中的倚天劍牢牢圈住，"
+                                   "暗自摸索阿大劍招中的破綻，手中兵器揮灑，將阿大手中的倚天劍牢牢圈住，"
                                    "阿大頓感不妙，剛要撤劍回\n防，只覺胸口一陣冰涼，$n" HIR 
                                    "的劍身已經貫胸而入。\n\n" NOR,
                                    this_object(),query("anti"));
 
                 message_vision(HIR "$n" HIR
-                                   "得勢不饒人，緊接著連攻出數劍，將阿大全身各處筋脈盡數削斷。\n\n" NOR,
+                                   "得勢不饒人，緊接着連攻出數劍，將阿大全身各處筋脈盡數削斷。\n\n" NOR,
                                    this_object(),query("anti"));
 
-                message_vision(CYN "\n趙敏一張俏臉頓時慘白，嘆了口氣，說道：“很好，這倚天劍你就拿去吧！”\n" NOR,
+                message_vision(CYN "\n趙敏一張俏臉頓時慘白，歎了口氣，説道：“很好，這倚天劍你就拿去吧！”\n" NOR,
                                    this_object());
 
-                message_vision(CYN "趙敏對著$n" CYN 
-                                   "嫣然一笑，隨即輕輕伸了伸腰，輕聲說道：“鹿先生，鶴先生，我累了。”\n" NOR,
+                message_vision(CYN "趙敏對着$n" CYN 
+                                   "嫣然一笑，隨即輕輕伸了伸腰，輕聲説道：“鹿先生，鶴先生，我累了。”\n" NOR,
                                    this_object(), query("anti"));
 
-                message_vision(HIR "只見趙敏身後閃出兩個人影，相互使了個眼神，二話不說，對著$n" HIR 
+                message_vision(HIR "只見趙敏身後閃出兩個人影，相互使了個眼神，二話不説，對着$n" HIR 
                                    "直撲過來。”\n" NOR,
                                    this_object(), query("anti"));
 

@@ -24,7 +24,7 @@ string extra_long()
 {
         int amount=query("amount");
 
-        return "裡面有"+chinese_number(amount)+"升水。\n";
+        return "裏面有"+chinese_number(amount)+"升水。\n";
 }
 
 void reset()

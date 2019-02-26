@@ -2,7 +2,7 @@
 inherit SHAOLIN_SKILL; 
 
 mapping *action = ({ 
-([      "action": "$N棍勢連綿，著著俱是進攻招式，手中$w一連幾棍，劈頭蓋臉地朝著$n砸下", 
+([      "action": "$N棍勢連綿，着着俱是進攻招式，手中$w一連幾棍，劈頭蓋臉地朝着$n砸下", 
         "dodge" : 30, 
         "attack": 33, 
         "force" : 89, 
@@ -11,7 +11,7 @@ mapping *action = ({
         "lvl" : 0, 
         "damage_type": "砸傷" 
 ]),
-([      "action": "$N點、紮、纏、掃、棍風呼呼，攻勢極為凌厲，舞起一團棍影齊齊罩向$n", 
+([      "action": "$N點、扎、纏、掃、棍風呼呼，攻勢極為凌厲，舞起一團棍影齊齊罩向$n", 
         "dodge" : 35, 
         "attack": 33, 
         "force" : 116, 
@@ -29,7 +29,7 @@ mapping *action = ({
         "lvl" : 60, 
         "damage_type": "砸傷" 
 ]),
-([      "action": "$N大喝一聲，手中$w高高舉起，掛著風聲劈頭蓋臉的砸向$n的$l", 
+([      "action": "$N大喝一聲，手中$w高高舉起，掛着風聲劈頭蓋臉的砸向$n的$l", 
         "dodge" : 40, 
         "attack": 58, 
         "force" : 200, 

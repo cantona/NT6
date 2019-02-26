@@ -15,7 +15,7 @@ int update_condition(object me, int duration)
 	}
 	else
 	{
-		tell_object(me, HIR "你只覺自己被置于火山之中，身體開始自燃，氣血和內力開始不停的下降。！\n" NOR );
+		tell_object(me, HIR "你只覺自己被置於火山之中，身體開始自燃，氣血和內力開始不停的下降。！\n" NOR );
 	}
 	
 	me->receive_damage("qi", 2000);

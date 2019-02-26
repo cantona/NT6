@@ -5,7 +5,7 @@ void greeting(object ob);
 void create()
 {
         set_name("看門僧", ({ "kanmen seng", "seng" })); 
-        set("long", "一個中年僧人，卻是一臉的疲態，一雙眼睛倒不象是出家人，勢利得很。\n");
+        set("long", "一箇中年僧人，卻是一臉的疲態，一雙眼睛倒不象是出家人，勢利得很。\n");
         set("gender", "男性");
         set("class", "bonze");
         set("title", "禪智寺和尚");

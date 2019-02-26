@@ -13,7 +13,7 @@ void create()
                 set_default_object(__FILE__);
         else {
                 set("unit", "個");
-                set("long", "這似乎是一個由人皮制成的面具。\n"
+                set("long", "這似乎是一個由人皮製成的面具。\n"
                             "使用方法：pretend <人物ID>\n"
                             "取消方法：pretend cancel\n");
                 
@@ -54,14 +54,14 @@ int do_pretend(string arg)
                 me->delete_temp("apply/name");
                 me->delete_temp("apply/short");
                 me->delete_temp("apply/long");
-                me->delete_temp("apply/mask2_flag"); // 是否是mask2.c的標志
+                me->delete_temp("apply/mask2_flag"); // 是否是mask2.c的標誌
                 message_vision("$N從臉上取下了一個人皮面具。\n", me);
                 return 1;
         }
         
 /*
         if (me->query_skill("pretending", 1) < 100)
-                return notify_fail("你拿著面具摸來摸去，就是不會使用。\n");
+                return notify_fail("你拿着面具摸來摸去，就是不會使用。\n");
 
         if (me->query("age") >= 60 &&
             ! me->query("special_skill/youth"))
@@ -78,8 +78,8 @@ int do_pretend(string arg)
                 return notify_fail("假扮" + who->name() + "？好像太難了點。\n");
 
         // 因為呼叫short()有時候會表述對方的狀態，所以不直接
-        // 拷貝who->short()，而是直接看復制對方的應用short()，
-        // 如果沒有就復制對方的真實short()。
+        // 拷貝who->short()，而是直接看複製對方的應用short()，
+        // 如果沒有就複製對方的真實short()。
         if (sizeof(mask = who->query_temp("apply/short")))
                 pshort = mask[sizeof(mask) - 1];
         else

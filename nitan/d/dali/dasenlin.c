@@ -6,7 +6,7 @@ void create()
 {
         set("short","大森林");
         set("long", @LONG
-此去向北是無量山區和大森林，這裡已經林木茂密人跡罕至了，
+此去向北是無量山區和大森林，這裏已經林木茂密人跡罕至了，
 南面是大理到中原的官道大路。
 LONG );
         set("outdoors", "dalic");

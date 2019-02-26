@@ -16,8 +16,8 @@ void create()
         );
         set("chat_chance", 10);
         set("chat_msg", ({
-                "萬青山說道：鏢局的人手越來越少了！\n",
-                "萬青山說道：護鏢真是一件很危險的事！\n",
+                "萬青山説道：鏢局的人手越來越少了！\n",
+                "萬青山説道：護鏢真是一件很危險的事！\n",
         }) );
         set("attitude", "peaceful");
         set_skill("unarmed", 40);

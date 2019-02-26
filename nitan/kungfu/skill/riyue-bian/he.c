@@ -32,7 +32,7 @@ int perform(object me, object target)
                 return notify_fail("你沒有激發日月鞭法，無法使用「合」字訣。\n");
 
        if (! living(target))
-              return notify_fail("對方都已經這樣了，用不著這麼費力吧？\n");
+              return notify_fail("對方都已經這樣了，用不着這麼費力吧？\n");
 
         msg = HIY "$N" HIY "將手中的" + weapon->name() +
               HIY "一抖，使出日月鞭法「合」字訣，舞起漫天鞭影！\n" NOR;
@@ -44,7 +44,7 @@ int perform(object me, object target)
         if (ap / 2 + random(ap) > dp)
         {
                 msg += HIC "結果$p" HIC "被$P" HIC
-                       "攻了個措手不及，目接不暇，疲于奔命！\n" NOR;
+                       "攻了個措手不及，目接不暇，疲於奔命！\n" NOR;
                 count = ap / 10;
                 addn_temp("apply/attack", count, me);
                 attack_time += random(ap / 45);

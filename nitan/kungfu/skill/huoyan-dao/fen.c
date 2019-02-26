@@ -26,7 +26,7 @@ int perform(object me)
         skill = me->query_skill("huoyan-dao", 1);
 
         if (skill < 120)
-                return notify_fail("你的火燄刀等級不夠，還不能使出「焚身」！\n");
+                return notify_fail("你的火焰刀等級不夠，還不能使出「焚身」！\n");
 
         if (me->query_skill("force") < 120)
                 return notify_fail("你的內功火候不夠，不能使用這樣絕技。\n");
@@ -35,9 +35,9 @@ int perform(object me)
                 return notify_fail("你的內力不夠，無法運功！\n");
 
         if (! living(target))
-              return notify_fail("對方都已經這樣了，用不著這麼費力吧？\n");
+              return notify_fail("對方都已經這樣了，用不着這麼費力吧？\n");
 
-        msg = HIR "$N" HIR "聚氣于掌，使出一招「焚身」，無形刀氣向$n"
+        msg = HIR "$N" HIR "聚氣於掌，使出一招「焚身」，無形刀氣向$n"
               HIR "的胸口擊去。\n"NOR;
 
         ap = attack_power(me, "force");

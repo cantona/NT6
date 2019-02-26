@@ -7,7 +7,7 @@ void create()
 {
         set_name("鮮于通", ({ "xianyu  tong"}));
         set("nickname", "華山叛徒");
-        set("long", "長的眉目清秀，俊雅瀟洒，但是實際上是個陰狠歹毒的人。\n");
+        set("long", "長的眉目清秀，俊雅瀟灑，但是實際上是個陰狠歹毒的人。\n");
         set("gender", "男性");
         set("age", 45);
         set("attitude", "peaceful");

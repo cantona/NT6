@@ -24,7 +24,7 @@ void create()
         //set("shen_type", -1);        
         //set("chat_chance", 2);
         //set("chat_msg", ({
-        //               "骷髏空洞的眼眶裡閃爍著可怕的熒光。\n"
+        //               "骷髏空洞的眼眶裏閃爍着可怕的熒光。\n"
         //}) ); 
         set("death_msg",BLU"\n$N消失不見了。\n\n"NOR);
         set("chat_chance_combat", 100);
@@ -70,7 +70,7 @@ void do_transfer() {
         if(!enemies || sizeof(enemies)==0)
                 return;
         
-        message_vision(HIM"\n$N仿佛在你的心底裡呼喚，來吧...來吧...冥界在召喚你... \n"NOR, this_object(),enemy); 
+        message_vision(HIM"\n$N彷彿在你的心底裏呼喚，來吧...來吧...冥界在召喚你... \n"NOR, this_object(),enemy); 
         myexp = query("combat_exp");
         foreach(enemy in enemies)  {
                 if(!enemy)

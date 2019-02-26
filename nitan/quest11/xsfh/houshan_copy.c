@@ -9,8 +9,8 @@ void create()
 {
         set("short","後山");
         set("long", @LONG
-古樹參天，荊棘密布，一不小心就會被掛到了手腳。濃密寬厚的樹葉遮蔽
-了日月星辰，地上零星散落著捕蛇人踩過的腳印，四周死一般的寂靜，只有風
+古樹參天，荊棘密佈，一不小心就會被掛到了手腳。濃密寬厚的樹葉遮蔽
+了日月星辰，地上零星散落着捕蛇人踩過的腳印，四周死一般的寂靜，只有風
 吹過樹梢的沙沙之聲。遍地爬滿了各種毒蟲，你不禁產生了退縮之心。
 LONG
         );
@@ -36,12 +36,12 @@ void greeting(object me)
 	object obj;
 	if(!me) return;
 	if(!present(me,this_object())) return;
-	tell_object(me,HIG"你看了看四周，發現這裡根本沒有人行的痕跡，或許是路走錯了。\n"NOR);
+	tell_object(me,HIG"你看了看四周，發現這裏根本沒有人行的痕跡，或許是路走錯了。\n"NOR);
 	if(random(2))
 	{
 		      j=me->query_skill("force");
           obj=new("/d/sld/npc/dushe");
-          message_vision(HIC"突然，草叢中鑽出一只"+obj->name()+"。\n"NOR,me);
+          message_vision(HIC"突然，草叢中鑽出一隻"+obj->name()+"。\n"NOR,me);
 		      obj->set("combat_exp", me->query("combat_exp"));
 		      obj->set("max_qi", me->query("max_qi")*3);
 		      obj->set("eff_qi", me->query("max_qi")*3);

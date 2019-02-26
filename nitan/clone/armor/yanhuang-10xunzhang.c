@@ -7,7 +7,7 @@ inherit MEDAL3;
 void create()
 {
         set_name(HIY "炎黃風雨十年紀念勛章" NOR, ({ "yhhero year10", "yhhero", "year10" }));
-        set("long", HIY "為紀念炎黃運營十周年，“風雨十年”活動特別限量發行的紀念勛章！\n" NOR);
+        set("long", HIY "為紀念炎黃運營十週年，“風雨十年”活動特別限量發行的紀念勛章！\n" NOR);
         set_weight(1);
         if (clonep())
                 set_default_object(__FILE__);

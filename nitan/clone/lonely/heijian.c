@@ -17,8 +17,8 @@ void create()
                 set("no_sell", 1);
                 set("material", "steel");
                 set("wield_msg", HIY "$N" HIY "抽出一柄黑色的寶劍，頓覺寒氣彌"
-                               "漫于四周。\n" NOR);
-                set("unwield_msg", HIC "$N" HIC "劍轉三周，插劍入鞘，寒氣隱于"
+                               "漫於四周。\n" NOR);
+                set("unwield_msg", HIC "$N" HIC "劍轉三週，插劍入鞘，寒氣隱於"
                                    "劍鞘之中。\n" NOR);
                 set("stable", 100);
         }                                                                                                                    

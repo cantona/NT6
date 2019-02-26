@@ -19,7 +19,7 @@ int accept_object(object ob, object obj)
          && !query_temp("have_letter", ob) )
         {
                 set_temp("fight_ok", 1, ob);
-                command("say 好，既然已有掌門真人許可，我們就來驗証一下武功。");
+                command("say 好，既然已有掌門真人許可，我們就來驗證一下武功。");
                 remove_call_out("destroying");
                 call_out("destroying", 1, me, obj);
                 return 1;
@@ -127,7 +127,7 @@ void attempt_apprentice(object ob)
         }
         if ( ob_fam["generation"] <= my_fam["generation"] )
         {
-                command("say "+RANK_D->query_respect(ob)+"，貧道哪裡敢當！");
+                command("say "+RANK_D->query_respect(ob)+"，貧道哪裏敢當！");
                 return;
         }
         if ( ob_fam["generation"] == (my_fam["generation"] + 1))

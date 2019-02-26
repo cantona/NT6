@@ -38,9 +38,9 @@ int perform(object me, object target)
                 return notify_fail("你現在真氣不夠，難以施展" GUA "。\n");
 
         if (! living(target))
-                return notify_fail("對方都已經這樣了，用不著這麼費力吧？\n");
+                return notify_fail("對方都已經這樣了，用不着這麼費力吧？\n");
 
-        msg = HIM "$N" HIM "突然身體一側，雙掌向下一沉，忽又向上一翻，朝著$n"
+        msg = HIM "$N" HIM "突然身體一側，雙掌向下一沉，忽又向上一翻，朝着$n"
               HIM "的雙肩斜斜地劈去！\n" NOR;
 
         ap = attack_power(me, "cuff");

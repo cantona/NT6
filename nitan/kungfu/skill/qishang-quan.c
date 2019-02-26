@@ -150,7 +150,7 @@ mixed hit_ob(object me, object victim, int damage_bonus)
                         msg = HIB"$N深吸一口氣，左拳再使出七傷拳總訣中的「"HIR"傷肺訣"HIB"」，雙拳飄忽不定，$n頓時感覺一股陰柔之力迎面而來。\n"NOR;
                         break;
                 case 2 :
-                        msg = HIC"$N右拳接著使出七傷拳總訣中的「"HIR"摧肝腸訣"HIC"」，雙拳剛中有柔，向$n擊去。\n"NOR;
+                        msg = HIC"$N右拳接着使出七傷拳總訣中的「"HIR"摧肝腸訣"HIC"」，雙拳剛中有柔，向$n擊去。\n"NOR;
                         break;
                 case 3 :
                         msg = HIG"$N凝神定氣，使出七傷拳總訣中的「"HIR"藏離訣"HIG"」，雙拳柔中有剛，打出一股內縮之力！向$n擊去。\n"NOR;
@@ -162,7 +162,7 @@ mixed hit_ob(object me, object victim, int damage_bonus)
                         msg = HIM"$N凝神定氣，使出七傷拳總訣中的「"HIR"意恍惚訣"HIM"」，向$n送出一股橫出之力。\n"NOR;
                         break;
                 case 6:
-                        msg = HIR"$N大喝一聲，須發俱張，使出「七傷總訣」，左右雙拳連續擊出，威猛無儔，打向$n。\n"NOR;
+                        msg = HIR"$N大喝一聲，鬚髮俱張，使出「七傷總訣」，左右雙拳連續擊出，威猛無儔，打向$n。\n"NOR;
                         break;
                 }
                 msg += HIW"$n只覺得$N這一拳之中共有七股不同勁力，變幻百端，猶豫間已被這股力道籠罩全身，頓時身受嚴重的內傷。\n" NOR;
@@ -185,7 +185,7 @@ void skill_improved(object me)
                         addn("max_neili", -random(100), me);
                         break;
                 case 1 :
-                        tell_object(me, HIR"你腿上無裡穴突然酸痛難當，是肝脈傷了！\n"NOR);
+                        tell_object(me, HIR"你腿上無裏穴突然痠痛難當，是肝脈傷了！\n"NOR);
                         addn("combat_exp", -random(7000), me);
                         break;
                 case 2 :
@@ -215,7 +215,7 @@ int help(object me)
         write(HIC"\n七傷拳："NOR"\n");
         write(@HELP
 
-    七傷拳，拳出必傷。是崆峒派的不傳之秘，但後來謝遜為報家
+    七傷拳，拳出必傷。是崆峒派的不傳之祕，但後來謝遜為報家
 仇，從崆峒派手中盜出《七傷拳譜》，從而練成。名為七傷，實則
 為每出一拳可以有七種不同內勁，使人不知如何與之相抗。
 

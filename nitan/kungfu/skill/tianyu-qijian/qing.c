@@ -54,7 +54,7 @@ int perform(object me, object target)
         } else
         {
                 msg += CYN "可是$p" CYN "猛地向前一躍,跳出了$P"
-                       CYN "的攻擊范圍。\n"NOR;
+                       CYN "的攻擊範圍。\n"NOR;
                 addn("neili", -100, me);
                 me->start_busy(3);
         }

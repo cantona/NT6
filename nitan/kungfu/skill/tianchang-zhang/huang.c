@@ -37,9 +37,9 @@ int perform(object me, object target)
                 return notify_fail("你的真氣不夠，無法運用「地老天荒」！\n");
 
         if (! living(target))
-              return notify_fail("對方都已經這樣了，用不著這麼費力吧？\n");
+              return notify_fail("對方都已經這樣了，用不着這麼費力吧？\n");
 
-        msg = HIR "$N" HIR "“□”的一聲震喝，提起掌來，只見掌心一片血紅，倏的凌空拍出，"
+        msg = HIR "$N" HIR "“嚯”的一聲震喝，提起掌來，只見掌心一片血紅，倏的凌空拍出，"
               HIR "一股熱風登時襲向$n" HIR "的胸前大穴。\n" NOR;
 
         ap = attack_power(me, "strike");

@@ -116,7 +116,7 @@ int show_trans(object me)
                         places = ({});
                         places = keys(self_flag);
                         for (i = 0; i < sizeof(places); i ++)
-                                write(sprintf(HIG "%-20s%-20s\n" NOR, places[i], "用戶記錄地點"));
+                                write(sprintf(HIG "%-20s%-20s\n" NOR, places[i], "用户記錄地點"));
                 }
         }
 
@@ -246,7 +246,7 @@ int move_to(object me, string place)
         me->set_temp("running", 1);
 
         message("vision",  "\n" + this_object() ->name() + HIW "一聲長"
-                  "嘶，箭一般地沖出 ……\n" NOR, environment(me), ({horse}));
+                  "嘶，箭一般地衝出 ……\n" NOR, environment(me), ({horse}));
 
         call_out("arrived_dest", trans_times, me, follower, running, horse, trans_path);
 

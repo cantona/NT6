@@ -4,7 +4,7 @@ void create()
 {
         set("short", "農舍");
         set("long", @LONG
-這裡是一間小農舍，家具很新。看來主人比較富裕。
+這裏是一間小農舍，傢俱很新。看來主人比較富裕。
 LONG );
         set("exits", ([
                 "west" : __DIR__"guangchang",

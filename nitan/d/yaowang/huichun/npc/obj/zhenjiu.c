@@ -1,15 +1,15 @@
-// 針灸盒 藥王莊醫療施毒的道具。
+// 鍼灸盒 藥王莊醫療施毒的道具。
 
 #include <ansi.h>
 inherit ITEM;
 
 void create()
 {
-        set_name( CYN "針灸盒" NOR , ({"zhenjiu he", "zhenjiu", "box"}));
+        set_name( CYN "鍼灸盒" NOR , ({"zhenjiu he", "zhenjiu", "box"}));
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("long", CYN"這是一個針灸盒，是藥王谷弟子醫療和施毒的工具。\n"
+                set("long", CYN"這是一個鍼灸盒，是藥王谷弟子醫療和施毒的工具。\n"
                                 "       xiadu   下毒\n"
                                 "       heal    療傷\n"
                                 "       jiedu   解毒\n"NOR);
@@ -38,7 +38,7 @@ int do_heal(string arg)
         i=( 100 - (int)me->query_skill("medical",1) );
 
         if( query("family/family_name", me) != "藥王谷" )
-                return notify_fail("你不能使用這個針灸盒！\n");
+                return notify_fail("你不能使用這個鍼灸盒！\n");
 
         if( query("shen", me)<0 )
                 return notify_fail("你不會使用這項技能！\n");
@@ -47,13 +47,13 @@ int do_heal(string arg)
                 return notify_fail("指令格式：heal <ID> \n");
 
         if(!objectp(ob = present(arg, environment(me))))
-                return notify_fail("這裡沒有這個人！\n");
+                return notify_fail("這裏沒有這個人！\n");
 
         if( me->is_fighting() || me->is_busy() )
-                return notify_fail("你正忙著呢！\n");
+                return notify_fail("你正忙着呢！\n");
 
         if( ob->is_fighting() || ob->is_busy() )
-                return notify_fail("他正忙著呢！\n");
+                return notify_fail("他正忙着呢！\n");
 
         if( i<5 ) i=5;
         if( i>80 ) i=80;
@@ -64,7 +64,7 @@ int do_heal(string arg)
                 set("max_qi", (query("eff_qi", ob)+(i*2)), ob);
         } else { set("eff_qi",(query("max_qi",ob)),ob); } 
 
-        message_vision(CYN"$N從針灸盒中拿出一根銀針在$n穴位上紮了幾下。\n"NOR, me, ob);
+        message_vision(CYN"$N從鍼灸盒中拿出一根銀針在$n穴位上紮了幾下。\n"NOR, me, ob);
         message_vision(WHT"$N吐出一口淤血，臉色看起來好多了。\n"NOR, ob);
         me->improve_skill("medical", ((int)me->query_skill("medical",1)));
         addn("jing", -i, me);
@@ -80,29 +80,29 @@ int do_xiadu(string arg)
         i=( 100 - (int)me->query_skill("medical",1) );
 
         if( query("family/family_name", me) != "藥王谷" )
-                return notify_fail("你不能使用這個針灸盒！\n");
+                return notify_fail("你不能使用這個鍼灸盒！\n");
 
         if( query("shen", me)>0 )
-                return notify_fail("你不會使用著項技能！\n");
+                return notify_fail("你不會使用着項技能！\n");
 
         if( (query("no_fight", environment(me))) )
-                return notify_fail("這裡禁止戰鬥！\n");
+                return notify_fail("這裏禁止戰鬥！\n");
 
         if( !arg )
                 return notify_fail("指令格式：xiadu <ID> \n");
 
         if(!objectp(ob = present(arg, environment(me))))
-                return notify_fail("這裡沒有這個人！\n");
+                return notify_fail("這裏沒有這個人！\n");
 
         if( me->is_fighting() || me->is_busy() )
-                return notify_fail("你正忙著呢！\n");
+                return notify_fail("你正忙着呢！\n");
 
         if( i<5 ) i=5;
         if( i>80 ) i=80;
         if( query("jing", me) <= i )
                 return notify_fail("你太累了，先休息一下吧！\n");
 
-        message_vision(HIR"$N輕輕按了一下針灸盒。突然從盒中射出幾支"
+        message_vision(HIR"$N輕輕按了一下鍼灸盒。突然從盒中射出幾支"
                 HIW"銀針"HIR"盡數打在$n身上。\n"NOR, me, ob);
         ob->receive_damage("qi",(int)me->query_skill("medical",1));
         if(random(10)<5)
@@ -143,29 +143,29 @@ int do_jiedu(string arg)
         i=( 100 - (int)me->query_skill("medical",1) );
 
         if( query("family/family_name", me) != "藥王谷" )
-                return notify_fail("你不能使用這個針灸盒！\n");
+                return notify_fail("你不能使用這個鍼灸盒！\n");
 
         if( query("shen", me)>0 )
-                return notify_fail("你不會使用著項技能！\n");
+                return notify_fail("你不會使用着項技能！\n");
 
         if( !arg )
                 return notify_fail("指令格式：jiedu <ID> \n");
 
         if(!objectp(ob = present(arg, environment(me))))
-                return notify_fail("這裡沒有這個人！\n");
+                return notify_fail("這裏沒有這個人！\n");
 
         if( me->is_fighting() || me->is_busy() )
-                return notify_fail("你正忙著呢！\n");
+                return notify_fail("你正忙着呢！\n");
 
         if( ob->is_fighting() || ob->is_busy() )
-                return notify_fail("他正忙著呢！\n");
+                return notify_fail("他正忙着呢！\n");
 
         if( i<5 ) i=5;
         if( i>80 ) i=80;
         if( query("jing", me) <= i )
                 return notify_fail("你太累了，先休息一下吧！\n");
 
-        message_vision(CYN"$N從針灸盒中拿出一根銀針在$n穴位上紮了幾下。\n"NOR, me, ob);
+        message_vision(CYN"$N從鍼灸盒中拿出一根銀針在$n穴位上紮了幾下。\n"NOR, me, ob);
 
 //解 凍傷
         if( (int)ob->query_condition("ill_dongshang")>=1 ) 

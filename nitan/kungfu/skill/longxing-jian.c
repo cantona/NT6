@@ -25,7 +25,7 @@ mapping *action = ({
         "damage_type": "刺傷",
         "skill_name" : "龍形萬裂"
 ]),
-([        "action" : "$N使一式「神龍初現」，身子往下一縮,$w掠過其嚥喉,急奔$n急射而來",
+([        "action" : "$N使一式「神龍初現」，身子往下一縮,$w掠過其咽喉,急奔$n急射而來",
         "damage" : 170,
         "force" : 450,
         "dodge" : 90,
@@ -33,7 +33,7 @@ mapping *action = ({
         "damage_type" : "刺傷",
         "skill_name" : "神龍初現"
 ]),
-([        "action": "$N忽的在地上一個筋鬥,使一招「金龍騰空」,從$n胯下鑽過,手中$w直擊$n",
+([        "action": "$N忽的在地上一個筋斗,使一招「金龍騰空」,從$n胯下鑽過,手中$w直擊$n",
         "damage" : 180,
         "dodge": 80,
         "parry": 70,
@@ -49,7 +49,7 @@ mapping *action = ({
         "damage_type": "內傷",
         "skill_name" : "龍飛鳳舞"
 ]),
-([        "action": "$N突然一個倒翻筋鬥，一招「狄青降龍」，雙腿一分，跨在肩頭，雙掌直擊$n",
+([        "action": "$N突然一個倒翻筋斗，一招「狄青降龍」，雙腿一分，跨在肩頭，雙掌直擊$n",
         "dodge": 90,
         "damage" : 90,
         "parry": 30,

@@ -35,7 +35,7 @@ int perform(object me)
                 return notify_fail("你沒有激發寂滅抓，無法使用「眾生無我」！\n"); 
 
          if (! living(target)) 
-                 return notify_fail("對方都已經這樣了，用不著這麼費力吧？\n"); 
+                 return notify_fail("對方都已經這樣了，用不着這麼費力吧？\n"); 
          msg = HIY "$N" HIY "猛地撲上前來，雙抓分兩路$n" HIY "抓出，平淡" 
                "的一擊，卻顯示出紮實的基本功！\n" NOR; 
 

@@ -5,7 +5,7 @@ void create()
         set("short", "中州衙門");
         set("long", @LONG
 這就是中州縣衙門，兩旁的肅靜和威武的牌子讓你有點心
-驚膽顫。兩邊的侍衛冷冷的看著你，看你要狀告何人。
+驚膽顫。兩邊的侍衞冷冷的看着你，看你要狀告何人。
 LONG);
         set("outdoors", "zhongzhou");
         set("exits", ([

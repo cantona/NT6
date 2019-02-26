@@ -15,7 +15,7 @@ void create()
         set("gender", "男性");
         set("age", 38);
         set("long", @LONG
-此人乃朝廷通緝的死囚，據說，越獄潛逃，亡命天涯，十分兇悍。
+此人乃朝廷通緝的死囚，據説，越獄潛逃，亡命天涯，十分兇悍。
 LONG );
         set("combat_exp", 1000000);
         set("shen_type", 0);
@@ -149,7 +149,7 @@ void random_move()
                         env->short() + HIW "(" + LOOK_CMD->locate(base_name(env)) + ")一帶出現的" +
                         HIR + this_object()->short() + HIR "消失了。\n" NOR, users());
 */
-                CHANNEL_D->channel_broadcast("mess", "聽說" + env->short() + HIW "(" + LOOK_CMD->locate(base_name(env)) + ")一帶出現的" +
+                CHANNEL_D->channel_broadcast("mess", "聽説" + env->short() + HIW "(" + LOOK_CMD->locate(base_name(env)) + ")一帶出現的" +
                         HIR + this_object()->short() + HIG "消失了。\n" NOR);
 
                 destruct(this_object());
@@ -164,7 +164,7 @@ void death_msg()
         int money;
 
         command("chat 哼，老子十八年後又是一條好漢 ...");
-        CHANNEL_D->channel_broadcast("rumor", "聽說" + name() + HIM "被江湖人士所殺。" NOR);
+        CHANNEL_D->channel_broadcast("rumor", "聽説" + name() + HIM "被江湖人士所殺。" NOR);
 
         dob = query_last_damage_from();
         // 得到朝廷獎賞

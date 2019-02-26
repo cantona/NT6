@@ -19,7 +19,7 @@ int perform(object me, object target)
                 return notify_fail("你不在戰鬥中！\n");
 
 //      if (target->is_busy())
-//              return notify_fail(target->name() + "目前正自顧不暇，放膽攻擊吧□\n");
+//              return notify_fail(target->name() + "目前正自顧不暇，放膽攻擊吧ⅵ\n");
 
         weapon=query_temp("weapon", me);
         if( !objectp(weapon) || query("skill_type", weapon) != "sword" )

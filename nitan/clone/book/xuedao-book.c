@@ -4,13 +4,13 @@ inherit BOOK;
 
 void create()
 {
-        set_name("血刀秘籍", ({ "xuedao book", "book" }));
+        set_name("血刀祕籍", ({ "xuedao book", "book" }));
         set_weight(200);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
                 set("unit", "本");
-                set("long","這是一本薄薄的小冊子，上面寫著血刀秘籍四個小字。\n");
+                set("long","這是一本薄薄的小冊子，上面寫着血刀祕籍四個小字。\n");
                 set("no_sell", 1);
                 set("material", "silk");
                 set("skill", ([

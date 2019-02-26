@@ -36,7 +36,7 @@ int perform(object me, object target)
                 return notify_fail("你現在沒有準備使用凌霄拳法，難以施展" + name() + "。\n");
 
         if (! living(target))
-                return notify_fail("對方都已經這樣了，用不著這麼費力吧？\n");
+                return notify_fail("對方都已經這樣了，用不着這麼費力吧？\n");
 
         damage = damage_power(me, "cuff");
         ap = attack_power(me, "cuff");
@@ -57,7 +57,7 @@ int perform(object me, object target)
 
         ap = attack_power(me, "cuff");
         dp = defense_power(target, "dodge");
-        msg += "\n" HIR "緊接著$N" HIR "“噫”的一聲，左手猛然探出，如閃電般抓向$n"
+        msg += "\n" HIR "緊接着$N" HIR "“噫”的一聲，左手猛然探出，如閃電般抓向$n"
                HIR "的前胸。\n" NOR;
         if (ap / 2 + random(ap) > dp)
         {
@@ -73,8 +73,8 @@ int perform(object me, object target)
 
         attack_power(me, "cuff");
         dp = defense_power(target, "force");
-        msg += "\n" HIR "又見$N" HIR "身子一矮，將力道聚于腿部，右腳猛掃$n"
-               HIR "下盤，左腳隨著絆去。\n" NOR;
+        msg += "\n" HIR "又見$N" HIR "身子一矮，將力道聚於腿部，右腳猛掃$n"
+               HIR "下盤，左腳隨着絆去。\n" NOR;
         if (ap / 2 + random(ap) > dp)
         {
                 msg += COMBAT_D->do_damage(me, target, UNARMED_ATTACK, damage, 50,

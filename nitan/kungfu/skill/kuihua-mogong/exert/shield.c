@@ -12,7 +12,7 @@ int exert(object me, object target)
         int skill;
 
         if (target != me)
-                return notify_fail("你只能用葵花魔功來提升自己的防御力。\n");
+                return notify_fail("你只能用葵花魔功來提升自己的防禦力。\n");
 
         if( query("neili", me)<100 )
                 return notify_fail("你的內力不夠。\n");

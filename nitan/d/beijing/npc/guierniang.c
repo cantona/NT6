@@ -3,12 +3,12 @@ inherit F_MASTER;
 #include <ansi.h>
 void create()
 {
-        set_name("歸二娘", ({ "gui erniang", "gui" }));
+        set_name("歸二孃", ({ "gui erniang", "gui" }));
         set("title", "華山派三十二代高手");
         set("long", 
-"一個年邁的老婦，頭發半白，但看起來卻是精神抖擻，\n"
-"脾氣相當的火暴。他便是神拳無敵歸心樹的內人──歸\n"
-"二娘。\n");
+"一個年邁的老婦，頭髮半白，但看起來卻是精神抖擻，\n"
+"脾氣相當的火暴。他便是神拳無敵歸心樹的內人——歸\n"
+"二孃。\n");
         set("gender", "女性");
         set("age", 68);
         set("attitude", "peaceful");
@@ -53,7 +53,7 @@ void create()
         prepare_skill("cuff", "poyu-quan");
        set("chat_chance", 2);
        set("chat_msg", ({
-                "歸二娘望了歸鐘一眼，深深的嘆了口氣。\n",
+                "歸二孃望了歸鍾一眼，深深的歎了口氣。\n",
         }) );       
 
 

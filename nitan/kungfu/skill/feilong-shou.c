@@ -1,7 +1,7 @@
 inherit SKILL;
 
 mapping *action = ({
-([      "action": "在呼呼風聲中，$N使一招「捕風捉影」，雙手如鉤如戢，插向$n的$l",
+([      "action": "在呼呼風聲中，$N使一招「捕風捉影」，雙手如鈎如戢，插向$n的$l",
         "force" : 80,
         "attack": 25,
         "dodge" : 20,
@@ -28,7 +28,7 @@ mapping *action = ({
         "lvl"   : 60,
         "damage_type" : "瘀傷"
 ]),
-([      "action": "$N左手護胸，腋下含空，右手五指如鉤，一招「抱殘守缺」插向$n的頂門",
+([      "action": "$N左手護胸，腋下含空，右手五指如鈎，一招「抱殘守缺」插向$n的頂門",
         "force" : 150,
         "attack": 33,
         "dodge" : 30,

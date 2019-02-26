@@ -9,7 +9,7 @@ void create()
         set_weight(500);
         set_max_encumbrance(800000);
         set("unit", "副");
-        set("long", "這副骸骨已經躺在這裡很久了。\n");
+        set("long", "這副骸骨已經躺在這裏很久了。\n");
         set("value", 1);
         set("no_get", "這東西一碰就散，還是別揀吧！\n");
         if (clonep())

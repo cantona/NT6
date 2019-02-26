@@ -20,7 +20,7 @@ void create()
                 set("material", "iron");
                 set("long", "奪命金花是金花婆婆的獨門暗器，既狠且毒。\n");
                 set("wield_msg", HIC"$N迅速地從袖中摸出一把奪命金花，扣在手中！\n"NOR);
-                set("unwield_msg",HIC"$N將手裡剩下的奪命金花收回袖中。\n"NOR);
+                set("unwield_msg",HIC"$N將手裏剩下的奪命金花收回袖中。\n"NOR);
         }
         set_amount(20);
         init_throwing(100);

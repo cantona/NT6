@@ -12,7 +12,7 @@ mapping *action = ({
         "damage_type" :  "刺傷",
         "skill_name"  :  "千溝萬壑",
 ]),
-([      "action" :  "$N越攻越猛，突然間手中$w劍光暴漲，一招「峰回路轉」已然使出\n"
+([      "action" :  "$N越攻越猛，突然間手中$w劍光暴漲，一招「峯迴路轉」已然使出\n"
                     "$n只覺眼前劍光耀眼，不由得心中一驚",
         "force"  :  90,
         "dodge"  :  26,
@@ -21,7 +21,7 @@ mapping *action = ({
         "damage" :  35,
         "lvl"    :  25,
         "damage_type" :  "刺傷",
-        "skill_name"  :  "峰回路轉",
+        "skill_name"  :  "峯迴路轉",
 ]),
 ([     
         "action" :  "$N以攻為守，以進為退，手中$w刷的一劍「天外飛鳳」，向$n$l刺去",

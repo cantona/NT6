@@ -19,7 +19,7 @@ mapping *action_unarmed = ({
         "skill_name" : "弦外有音",
         "damage_type" : "刺傷"
 ]),
-([      "action": "$N使出一招「吳陽琴音」，彈指向上一刺，接著再向下直劃而出，頓時兩股劍氣如利刀般砍向$n",
+([      "action": "$N使出一招「吳陽琴音」，彈指向上一刺，接着再向下直劃而出，頓時兩股劍氣如利刀般砍向$n",
         "force" : 370,
         "attack": 81,
         "dodge" : 65,
@@ -30,7 +30,7 @@ mapping *action_unarmed = ({
         "skill_name" : "吳陽琴音",
         "damage_type" : "刺傷"
 ]),
-([      "action": "$N一聲暴喝，陡然一招「天河紫氣」，單手向$n凌空一劈，頓時一股勁氣伴隨著破空之聲襲向$p$l",
+([      "action": "$N一聲暴喝，陡然一招「天河紫氣」，單手向$n凌空一劈，頓時一股勁氣伴隨着破空之聲襲向$p$l",
         "force" : 410,
         "attack": 85,
         "dodge" : 55,
@@ -98,7 +98,7 @@ mapping *action_sword = ({
         "lvl" : 0,
         "damage_type" : "刺傷",
 ]),
-([      "action": "$N伸指在$w上一彈，一招「吳陽琴音」，整個劍身頓時發出一聲龍吟，呼嘯著斬向$n的$l",
+([      "action": "$N伸指在$w上一彈，一招「吳陽琴音」，整個劍身頓時發出一聲龍吟，呼嘯着斬向$n的$l",
         "force" : 150,
         "attack": 80,
         "dodge" : 60,
@@ -165,31 +165,31 @@ int valid_enable(string usage)
 int valid_learn(object me)
 {
         if ((int)me->query_skill("force") < 270)
-                return notify_fail("你的內功火候不夠，無法修煉七弦無形劍。\n");
+                return notify_fail("你的內功火候不夠，無法修煉七絃無形劍。\n");
 
         if( query("max_neili", me)<3000 )
-                return notify_fail("你的內力太弱，無法修煉七弦無形劍。\n");
+                return notify_fail("你的內力太弱，無法修煉七絃無形劍。\n");
 
         if ((int)me->query_skill("unarmed", 1) < 180)
-                return notify_fail("你的基本拳腳火候不夠，無法修煉七弦無形劍。\n");
+                return notify_fail("你的基本拳腳火候不夠，無法修煉七絃無形劍。\n");
 
         if ((int)me->query_skill("sword", 1) < 180)
-                return notify_fail("你的基本劍法火候不夠，無法修煉七弦無形劍。\n");
+                return notify_fail("你的基本劍法火候不夠，無法修煉七絃無形劍。\n");
 
         if ((int)me->query_skill("tanqin-jifa", 1) < 100)
-                return notify_fail("彈琴技法水平有限，無法修煉七弦無形劍。\n");
+                return notify_fail("彈琴技法水平有限，無法修煉七絃無形劍。\n");
 
         if ((int)me->query_skill("force", 1) < (int)me->query_skill("qixian-wuxingjian", 1))
-                return notify_fail("你的內功修為有限，無法領會更高深的七弦無形劍。\n");
+                return notify_fail("你的內功修為有限，無法領會更高深的七絃無形劍。\n");
 
         if ((int)me->query_skill("unarmed", 1) < (int)me->query_skill("qixian-wuxingjian", 1))
-                return notify_fail("你的基本拳腳水平有限，無法領會更高深的七弦無形劍。\n");
+                return notify_fail("你的基本拳腳水平有限，無法領會更高深的七絃無形劍。\n");
 
         if ((int)me->query_skill("sword", 1) < (int)me->query_skill("qixian-wuxingjian", 1))
-                return notify_fail("你的基本劍法水平有限，無法領會更高深的七弦無形劍。\n");
+                return notify_fail("你的基本劍法水平有限，無法領會更高深的七絃無形劍。\n");
 
         if ((int)me->query_skill("tanqin-jifa", 1) < (int)me->query_skill("qixian-wuxingjian", 1) / 2)
-                return notify_fail("你對琴學的了解不夠深入，無法領會更高深的七弦無形劍。\n");
+                return notify_fail("你對琴學的瞭解不夠深入，無法領會更高深的七絃無形劍。\n");
 
         return 1;
 }
@@ -222,10 +222,10 @@ mapping query_action(object me, object weapon)
 int practice_skill(object me)
 {
         if( query("qi", me)<70 )
-                return notify_fail("你的體力不夠練七弦無形劍！\n");
+                return notify_fail("你的體力不夠練七絃無形劍！\n");
 
         if( query("neili", me)<120 )
-                return notify_fail("你的內力不夠練七弦無形劍！\n");
+                return notify_fail("你的內力不夠練七絃無形劍！\n");
 
         me->receive_damage("qi", 60);
         addn("neili", -100, me);
@@ -254,7 +254,7 @@ mixed hit_ob(object me, object victim, int damage_bonus)
         addn("neili", -100, me);
         victim->receive_damage("qi", me->query_skill("qixian-wuxingjian", 1) / 5 + damage_bonus / 3);
         victim->receive_wound("qi", me->query_skill("qixian-wuxingjian", 1) / 8 + damage_bonus / 5);
-                return HIW "只聽一陣淳厚的弦音從$N" HIW "處傳來，$n" HIY "『" + name + "』"
+                return HIW "只聽一陣淳厚的絃音從$N" HIW "處傳來，$n" HIY "『" + name + "』"
                        NOR + HIW "頓時受震，兩耳轟鳴，全身真氣亂竄不止！\n" NOR;
 }
 

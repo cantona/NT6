@@ -25,7 +25,7 @@ int exert(object me, object target)
         addn("neili", -100, me);
         me->receive_damage("qi",0);
 
-        message_combatd(YEL"$N猛地一聲長嘯，丹田一團熱氣直沖頂門，如"HIR"火球"YEL"東升，毛發直豎，頓時神威浩盪，大異此前。\n" NOR, me);
+        message_combatd(YEL"$N猛地一聲長嘯，丹田一團熱氣直衝頂門，如"HIR"火球"YEL"東昇，毛髮直豎，頓時神威浩蕩，大異此前。\n" NOR, me);
 
         addn_temp("apply/attack", skill/3, me);
         addn_temp("apply/dodge", skill/3, me);
@@ -49,7 +49,7 @@ int help(object me)
         write(@HELP
 
         使用功效：
-                提升自己的攻擊防御能力
+                提升自己的攻擊防禦能力
 
         出手要求：
                 內力100

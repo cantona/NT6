@@ -7,8 +7,8 @@ void create()
 {
         set("short", "酒家");
         set("long", @LONG
-這裡是樹林中的一間小小的酒家，地方雖然不大，但是也有不少逍
-遙派的弟子光顧這裡。你終于找到香味的來源了，看著可口的飯菜，你
+這裏是樹林中的一間小小的酒家，地方雖然不大，但是也有不少逍
+遙派的弟子光顧這裏。你終於找到香味的來源了，看着可口的飯菜，你
 忍不住也想叫 (order)一份了。
 LONG );
         set("exits",([
@@ -34,10 +34,10 @@ int do_order(string arg)
         object food;
         object water;
         me=this_player();
-        if (arg)  return notify_fail("小二哥跑出來道: 這樣東西這裡沒有啊。\n");
+        if (arg)  return notify_fail("小二哥跑出來道: 這樣東西這裏沒有啊。\n");
         if (query("ricewater")>0)
         {
-                message_vision("小二哥連聲答應，從內廳一溜煙跑出來，端著一碗米飯和一碗水拿了給$N。\n",me);
+                message_vision("小二哥連聲答應，從內廳一溜煙跑出來，端着一碗米飯和一碗水拿了給$N。\n",me);
                 food=new(__DIR__"obj/rice");
                 water=new(__DIR__"obj/bowl");
                 food->move(me);
@@ -52,6 +52,6 @@ int valid_leave(object me,string dir)
 {
         me=this_player();
         if(dir=="north" && (present("bowl",this_player()) || present("rice",this_player()))) 
-             return notify_fail("小二說道：真抱歉，我們這裡沒有打包服務。\n");
+             return notify_fail("小二説道：真抱歉，我們這裏沒有打包服務。\n");
         return ::valid_leave(me,dir);
 }

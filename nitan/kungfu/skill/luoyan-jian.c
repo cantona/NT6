@@ -42,7 +42,7 @@ mapping *action = ({
         "damage_type" : "刺傷",
         "skill_name"  : "雁翔式",
 ]),
-([      "action" : "$N劍峰忽轉，一劍筆直地向$n$l刺來，內勁十足，正是一招「平劍式」",
+([      "action" : "$N劍峯忽轉，一劍筆直地向$n$l刺來，內勁十足，正是一招「平劍式」",
         "force"  : 106,
         "dodge"  : 27,
         "parry"  : 38,
@@ -52,7 +52,7 @@ mapping *action = ({
         "damage_type" : "刺傷",
         "skill_name"  : "平劍式",
 ]),
-([      "action" : "$N手中$w猛然回撤，緊接著一劍，氣勢磅礡，劍氣縱橫，正是「凝劍式」",
+([      "action" : "$N手中$w猛然回撤，緊接着一劍，氣勢磅礴，劍氣縱橫，正是「凝劍式」",
         "force"  : 120,
         "dodge"  : 30,
         "parry"  : 40,
@@ -73,16 +73,16 @@ int valid_learn(object me)
                 return notify_fail("你必須先找一把劍才能練劍法。\n");
 
         if( query("max_neili", me)<800 )
-                return notify_fail("你的內力修為不夠，無法學習回風落雁劍。\n");
+                return notify_fail("你的內力修為不夠，無法學習迴風落雁劍。\n");
 
         if ((int)me->query_skill("force") < 150)
-                return notify_fail("你的內功火候太淺，無法學習回風落雁劍。\n");
+                return notify_fail("你的內功火候太淺，無法學習迴風落雁劍。\n");
 
         if ((int)me->query_skill("sword", 1) < 100)
-                return notify_fail("你的基本劍法火候不夠，無法學習回風落雁劍。\n");
+                return notify_fail("你的基本劍法火候不夠，無法學習迴風落雁劍。\n");
 
         if (me->query_skill("sword", 1) < me->query_skill("luoyan-jian", 1))
-                return notify_fail("你的基本劍法火候有限，無法領會更高深的回風落雁劍。\n");
+                return notify_fail("你的基本劍法火候有限，無法領會更高深的迴風落雁劍。\n");
 
         return 1;
 }
@@ -119,10 +119,10 @@ int practice_skill(object me)
                 return notify_fail("你使用的武器不對。\n");
 
        if( query("neili", me)<30 )
-                   return notify_fail("你的內力不足，沒有辦法練習回風落雁劍。\n");
+                   return notify_fail("你的內力不足，沒有辦法練習迴風落雁劍。\n");
 
        if( query("qi", me)<35 )
-                   return notify_fail("你的體力不夠練回風落雁劍。\n");
+                   return notify_fail("你的體力不夠練迴風落雁劍。\n");
 
        me->receive_damage("qi", 40);
        addn("neili", -50, me);

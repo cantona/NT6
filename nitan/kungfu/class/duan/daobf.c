@@ -17,7 +17,7 @@ void create()
 這是個容貌秀麗的中年道姑，是個擺夷族女子，頗
 有雍容氣質。她本是大理國皇帝段正淳的正房原配
 夫人。因惱丈夫風流不羈，沾花惹草，一怒之下跑
-到這裡出了家。
+到這裏出了家。
 LONG );
         set("age", 35);
         set("class", "royal");
@@ -69,7 +69,7 @@ LONG );
         prepare_skill("strike", "wuluo-zhang");
 
         set("inquiry", ([
-                "鳳棲于梧"   : (: ask_skill1 :),
+                "鳳棲於梧"   : (: ask_skill1 :),
         ]));
 
         create_family("段氏皇族", 15, "王妃");
@@ -127,14 +127,14 @@ int recognize_apprentice(object ob, string skill)
 
         if (skill != "feifeng-bian" && skill != "whip")
         {
-                command("say 我只傳授你這套飛鳳鞭法，其余的還是去找你爹爹學吧。");
+                command("say 我只傳授你這套飛鳳鞭法，其餘的還是去找你爹爹學吧。");
                 return -1;
         }
 
         if( !query_temp("can_learn/daobaifeng", ob) )
         {
                 command("sigh");
-                command("say 既然你還念念不忘娘親，今日我就教你好了。");
+                command("say 既然你還念念不忘孃親，今日我就教你好了。");
                 set_temp("can_learn/daobaifeng", 1, ob);
         }
         return 1;
@@ -152,13 +152,13 @@ mixed ask_skill1()
                 return RANK_D->query_respect(me) + "和我素無瓜葛，何出此言？";
 
         if (me->query_skill("feifeng-bian", 1) < 1)
-                return "你連我飛鳳鞭法都未學，怎麼來絕招一說？";
+                return "你連我飛鳳鞭法都未學，怎麼來絕招一説？";
 
         if( query("shen", me)<0 )
                 return "哼，你還嫌你在外面惹的禍事不夠麼？";
 
         if( query("family/gongji", me)<300 )
-                return "你在族裡碌碌無為，叫我如何信得過你？";
+                return "你在族裏碌碌無為，叫我如何信得過你？";
 
         if (me->query_skill("force") < 150)
                 return "你的內功修為太差，學不了這一招。";
@@ -176,7 +176,7 @@ mixed ask_skill1()
 
         command("nod");
         command("say 這招看似花巧，其實並不難練，下去後仍需勤加練習。");
-        tell_object(me, HIC "你學會了「鳳棲于梧」。\n" NOR);
+        tell_object(me, HIC "你學會了「鳳棲於梧」。\n" NOR);
         if (me->can_improve_skill("whip"))
                 me->improve_skill("whip", 1500000);
         if (me->can_improve_skill("feifeng-bian"))

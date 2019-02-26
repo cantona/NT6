@@ -3,7 +3,7 @@ inherit NPC;
 void create()
 {
         set_name("孔大官人", ({"kong guanren", "kong"}));
-        set("long", "開封府中的富戶。\n" );
+        set("long", "開封府中的富户。\n" );
         set("gender", "男性");
         set("attitude", "peace");
         set("age", 42);

@@ -7,7 +7,7 @@ void create()
         set_name("蜜蜂", ({"bee"}) );
         set("race", "野獸");
         set("age", 8);
-        set("long", "這是一只蜜蜂，正忙著採蜜。\n");
+        set("long", "這是一隻蜜蜂，正忙着採蜜。\n");
         
         set("str", 40);
         set("dex", 50);

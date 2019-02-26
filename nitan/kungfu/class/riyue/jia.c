@@ -116,7 +116,7 @@ void attempt_apprentice(object ob)
         }
 
         command("nod2");
-        command("say 那你以後就跟著我好了。");
+        command("say 那你以後就跟着我好了。");
         command("say 教內事務繁多，切莫亂了規矩。");
         command("recruit "+query("id", ob));
         return;
@@ -149,13 +149,13 @@ mixed ask_skill1()
         if (me->query_skill("canghong-bifa", 1) < 100)
                 return "你的蒼虹筆法還練得不到家，自己下去練練再來吧！";
 
-        message_sort(HIY "\n$n" HIY "哈哈一笑，說道：不錯，不錯，孺子可"
-                     "教也。今天老夫就傳你這招。$n" HIY "說完便將$N" HIY
-                     "招至身前，嘀嘀咕咕說了半天。\n\n" NOR, me,
+        message_sort(HIY "\n$n" HIY "哈哈一笑，説道：不錯，不錯，孺子可"
+                     "教也。今天老夫就傳你這招。$n" HIY "説完便將$N" HIY
+                     "招至身前，嘀嘀咕咕説了半天。\n\n" NOR, me,
                      this_object());
 
         command("nod");
-        command("say 剛才我所說的便是這筆法的精要，你聽懂了多少？");
+        command("say 剛才我所説的便是這筆法的精要，你聽懂了多少？");
         tell_object(me, HIC "你學會了「驚虹一筆」。\n" NOR);
         if (me->can_improve_skill("dagger"))
                 me->improve_skill("dagger", 1500000);

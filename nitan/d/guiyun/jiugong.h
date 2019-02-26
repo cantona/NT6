@@ -59,7 +59,7 @@ int do_move(object ob)
                 ob->move(__DIR__"road4", 1);
         else 
                 ob->move(__DIR__"shiqiao", 1);
-        message("vision","卻見花影閃爍，樹叢忽然現出一個缺口，幾個莊丁將一個昏迷不醒的家伙扔了出來。\n", environment(ob), ob);
+        message("vision","卻見花影閃爍，樹叢忽然現出一個缺口，幾個莊丁將一個昏迷不醒的傢伙扔了出來。\n", environment(ob), ob);
         return 1;
 }
 
@@ -119,8 +119,8 @@ int do_get(string arg)
         if (taohua != "taohua") return 0;
         
         herenum=query_temp("jiugong_"+HERENO, ob);
-        if (herenum < 1) return notify_fail("這裡根本沒有桃花。\n");
-        if (amount > herenum) return notify_fail("這裡沒有那麼多株桃花。\n");
+        if (herenum < 1) return notify_fail("這裏根本沒有桃花。\n");
+        if (amount > herenum) return notify_fail("這裏沒有那麼多株桃花。\n");
         set_temp("jiugong_"+HERENO, herenum-amount, ob);
         addn_temp("jiugong_0", amount, ob);
         write("你撿起" + chinese_number(amount) + "株桃花。\n");
@@ -140,8 +140,8 @@ int do_drop(string arg)
         
         for (i = 0; i <= 9; i++)
                 num[i]=query_temp("jiugong_"+i, ob);
-        if (num[0] < 1) return notify_fail("你的背囊裡根本沒有桃花。\n");
-        if (amount>num[0]) return notify_fail("你的背囊裡沒有那麼多株桃花。\n");
+        if (num[0] < 1) return notify_fail("你的背囊里根本沒有桃花。\n");
+        if (amount>num[0]) return notify_fail("你的背囊裏沒有那麼多株桃花。\n");
         num[HERENO] += amount;
         num[0] -= amount;
         set_temp("jiugong_"+HERENO, num[HERENO], ob);

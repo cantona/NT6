@@ -39,13 +39,13 @@ int perform(object me, object target)
                 return notify_fail("你現在的真氣不夠，難以施展" + name() + "。\n");
 
         if (! living(target))
-                return notify_fail("對方都已經這樣了，用不著這麼費力吧？\n");
+                return notify_fail("對方都已經這樣了，用不着這麼費力吧？\n");
 
         wn = weapon->name();
 
         msg = HIW "\n$N" HIW "將" + wn + HIW "斜指長空，猛地飛身躍起，"
               + wn + HIW "忽左忽右，飄忽不定，猛然間破空長響，" + wn + HIW
-              "直指向$n" HIW "嚥喉。\n這正是逍遙劍法之「" HIG "奇劍訣" HIW "」，"
+              "直指向$n" HIW "咽喉。\n這正是逍遙劍法之「" HIG "奇劍訣" HIW "」，"
               "當真是招招精奇，神妙無比。" NOR;
 
         message_combatd(msg, me, target);

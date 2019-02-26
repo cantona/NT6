@@ -12,8 +12,8 @@ void create()
         set("str", 25);
         set("dex", 20);
         set("long", "這是一位白衣女尼，手握拂塵，目視前方。\n"+
-                "一只長袖空空如也，顯是斷了一臂，盡管如此，\n"+
-                "仍然掩不住她迷人的風採。\n");
+                "一隻長袖空空如也，顯是斷了一臂，儘管如此，\n"+
+                "仍然掩不住她迷人的風采。\n");
         set("combat_exp", 200000);
         set("shen_type", 1);
         set("attitude", "peaceful");
@@ -37,7 +37,7 @@ void create()
         set("max_neili", 1800);
         set("jiali", 100);
         set("inquiry", ([
-                "阿珂" : "神尼嘆了一口氣，說道：她是我的得意弟子，\n"
+                "阿珂" : "神尼歎了一口氣，説道：她是我的得意弟子，\n"
                          "人長得挺美，唉，只可惜被韋小寶騙去了。\n",
         ]) );
         setup();
@@ -86,10 +86,10 @@ void greeting(object ob)
                 {
                         set_temp("saved_by_others", 1);
                         set("can_learn/dubi/shenxing-baibian", 1, ob);
-                        message_vision("\n白衣女尼對$N說道：“多謝這位" +
+                        message_vision("\n白衣女尼對$N説道：“多謝這位" +
                                        RANK_D->query_respect(ob)+
                                        "拔刀相助，貧尼感激不盡，無以為報。\n"
-                                       "這裡有一套神行百變身法，你若願學，貧"
+                                       "這裏有一套神行百變身法，你若願學，貧"
                                        "尼定傾囊以授。”\n", ob);
                         if( query("weiwang", ob)<60 )
                         {

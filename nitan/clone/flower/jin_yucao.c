@@ -11,7 +11,7 @@ void create()
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("long","這是一朵花型別致，似咧嘴微笑的金魚草，象征有金有余，鴻運當頭。\n");
+                set("long","這是一朵花型別致，似咧嘴微笑的金魚草，象徵有金有餘，鴻運當頭。\n");
                 set("unit", "束");
                 set("base_value", 25);
                 set("base_unit", "朵");

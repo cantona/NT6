@@ -28,7 +28,7 @@ mapping *action = ({
         "skill_name" : "電破長空",
         "damage_type":  "刺傷"
 ]),
-([      "action": "$N縱身輕輕躍起，一式「天龍探爪」，劍光如水，一瀉千裡，洒向$n全身",
+([      "action": "$N縱身輕輕躍起，一式「天龍探爪」，劍光如水，一瀉千里，灑向$n全身",
         "force" : 187,
         "parry" : 23,
         "dodge" : 19,
@@ -55,13 +55,13 @@ mapping *action = ({
         "skill_name" : "龍翔鳳舞",
         "damage_type":  "刺傷"
 ]),
-([      "action":"$N手中$w一沉，一式「天外遊龍」，劍勢頓時無聲無息地滑向$n$l而去",
+([      "action":"$N手中$w一沉，一式「天外游龍」，劍勢頓時無聲無息地滑向$n$l而去",
         "force" : 239,
         "parry" : 52,
         "dodge" : 45,
         "damage": 72,
         "lvl"   : 150,
-        "skill_name" : "天外遊龍",
+        "skill_name" : "天外游龍",
         "damage_type":  "刺傷"
 ]),
 });

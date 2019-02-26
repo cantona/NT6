@@ -30,7 +30,7 @@ int perform(object me, object target)
                 return notify_fail("你現在真氣不夠，無法施展" + name() + "。\n");
 
         if (! living(target))
-               return notify_fail("對方都已經這樣了，用不著這麼費力吧？\n");
+               return notify_fail("對方都已經這樣了，用不着這麼費力吧？\n");
 
         msg = HIM "\n猛然間$N" HIM "雙掌不斷拍向$n" HIM "出，風聲呼呼，攻到途中忽又左\n"
               "手虛出右手作勢欲發，虛虛實實，飄渺不定，正是華山絕招「" HIG  "飛絮飄渺" HIM

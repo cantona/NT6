@@ -6,13 +6,13 @@ inherit NECK;
  
 void create()
 {
-        set_name(HBGRN "刑天項鏈" NOR, ({ "xingtian neck", "neck" }) );
+        set_name(HBGRN "刑天項鍊" NOR, ({ "xingtian neck", "neck" }) );
         set_weight(500);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
                 set("unit", "個");
-                set("long", HIY "這便是刑天戴過的項鏈，通體血光滔天。\n" NOR);
+                set("long", HIY "這便是刑天戴過的項鍊，通體血光滔天。\n" NOR);
                 set("value", 3000); 
                 set("no_sell", "這樣東西不能賣。\n");
                 set("rigidity",8000);   

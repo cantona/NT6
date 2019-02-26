@@ -31,9 +31,9 @@ int do_kneel()
                 return notify_fail("你在地上跪了一會兒，沒人理你。\n");
 
         message_vision(HIC "\n$N" HIC "你雙手合十，恭恭敬敬地跪了下來。\n\n"
-                       NOR + CYN "$n" CYN "看著$N" CYN "說道：好吧，以後你就"
+                       NOR + CYN "$n" CYN "看着$N" CYN "説道：好吧，以後你就"
                        "在本庵修行吧。\n\n" HIY "$n" HIY "伸出手掌，在$N" HIY
-                       "頭頂輕輕地摩挲了幾下，隨即便將$N" HIY "的頭發盡數剃"
+                       "頭頂輕輕地摩挲了幾下，隨即便將$N" HIY "的頭髮盡數剃"
                        "去。\n\n" NOR, me, this_object());
 
         name=query("purename", me);

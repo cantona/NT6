@@ -6,7 +6,7 @@ void create()
         set_name("陶紅英", ({ "tao hongying", "tao", "hongying"}) );
         set("gender", "女性" );
         set("age", 41);
-        set("long", "她是前明長公主留在宮裡的貼身宮女. \n");
+        set("long", "她是前明長公主留在宮裏的貼身宮女. \n");
         set("shen_type", 1);
         set("combat_exp", 200000);
         set("per", 25);

@@ -8,7 +8,7 @@ void create()
         set("short", "樹林");
         set("long", @LONG
 叢林中一片黑暗。你瞪大眼睛，勉強看清楚了一點。一條細細
-的光線(light)透過層疊的樹葉的縫中射下來，似乎預示著生的希望。
+的光線(light)透過層疊的樹葉的縫中射下來，似乎預示着生的希望。
 LONG);
         set("outdoors", "baihuagu");
         set("exits", ([ 

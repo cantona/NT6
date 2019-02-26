@@ -78,7 +78,7 @@ void persuade_leave(object zhong_ob, object ob)
         if( !query_temp("yield", zhong_ob) )
                 set_temp("yield", 1, zhong_ob);
 
-        message_vision("\n$N對$n苦苦規勸道：既然教主不再信任你，你還是盡快離開神龍教吧。\n", zhong_ob, ob);
+        message_vision("\n$N對$n苦苦規勸道：既然教主不再信任你，你還是儘快離開神龍教吧。\n", zhong_ob, ob);
         if( !query_temp("zhong/nod", ob) )
                 set_temp("zhong/nod", 1, ob);
         tell_object(ob, "你只要打一個指令：leave shenlong，就算離開神龍了。\n");

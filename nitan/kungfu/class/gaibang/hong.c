@@ -38,12 +38,12 @@ void create()
         set_name("洪七公", ({"hong qigong", "hong", "qigong"}));
         set("long", @LONG
 他就是丐幫第十七任幫主，號稱九指神丐的洪
-七公老爺子。只見他須眉皆白，周身上下邋遢
+七公老爺子。只見他鬚眉皆白，周身上下邋遢
 不已，模樣甚是齷齪。可是他目光如電，顯得
 正義凜然，不怒而自威。
 他一張長方臉，頜下微須，粗手大腳，身上衣
-服東一塊西一塊的打滿了補丁，卻洗得幹幹凈
-凈。
+服東一塊西一塊的打滿了補丁，卻洗得乾乾淨
+淨。
 LONG);
 
         set("nickname", HIW "北丐" NOR);
@@ -94,7 +94,7 @@ LONG);
         set_skill("throwing", 700);          // 基本暗器
         set_skill("pomie-jinzhen", 700);     // 破滅金針
         set_skill("begging", 700);           // 叫化絕活
-        set_skill("checking", 700);          // 道聽途說
+        set_skill("checking", 700);          // 道聽途説
         set_skill("training", 700);          // 馭獸術
         set_skill("literate", 700);          // 讀書寫字
         set_skill("bixue-danxin", 700);
@@ -163,10 +163,10 @@ LONG);
 
         set("chat_chance", 1);
         set("chat_msg", ({
-                "洪七公摸著肚皮嘆道：“唉，好久沒吃到蓉兒燒的小菜了……”\n",
+                "洪七公摸着肚皮歎道：“唉，好久沒吃到蓉兒燒的小菜了……”\n",
                 "洪七公往地下角落一躺，開始睡覺，邊睡邊喃喃道：“啊，叫化雞……好香！好香！”\n",
-                "洪七公說道：“俗話說「吃在江南」，所以老叫化特地跑來揚州看看。”\n",
-                "洪七公搖頭嘆道：“如今這幫小叫化怎麼好像都不會燒菜了？”\n",
+                "洪七公説道：“俗話説「吃在江南」，所以老叫化特地跑來揚州看看。”\n",
+                "洪七公搖頭歎道：“如今這幫小叫化怎麼好像都不會燒菜了？”\n",
                 "洪七公喃喃道：“我們丐幫的「降龍十八掌」是天下最霸道的掌法。”\n",
         }));
 
@@ -229,7 +229,7 @@ void attempt_apprentice(object ob)
         if (ob->query_str() < 40 && ob->query_int() < 40
             && ob->query_con() < 40 && ob->query_dex() < 40)
         {
-                command("say 我說你這人體格也不行，腦筋也不靈光，還能和我學什麼？");
+                command("say 我説你這人體格也不行，腦筋也不靈光，還能和我學什麼？");
                 return;
         }
 
@@ -243,7 +243,7 @@ void attempt_apprentice(object ob)
         if( query("max_neili", ob)<2000 )
         {
                 command("hmm");
-                command("say 就你那點內力哪裡學得了什麼上乘武功？");
+                command("say 就你那點內力哪裏學得了什麼上乘武功？");
                 return;
         }
         command("say 念你平時用功努力，今日老叫花就收下你。");
@@ -265,7 +265,7 @@ int recognize_apprentice(object me, string skill)
         if( !query("can_learn/hong/dragon-strike", me )
              && !query("can_learn/hong/xiaoyaoyou", me) )
         {
-                command("say 你是誰？哪裡來的？要幹啥？");
+                command("say 你是誰？哪裏來的？要幹啥？");
                 return -1;
         }
 
@@ -339,14 +339,14 @@ int try_to_learn_ds()
         if( query("family/family_name", me) == query("family/family_name" )
              && query("family/beggarlvl", me)<9 )
         {
-                command("say 你要學降龍十八掌？等你升到本幫長老再說吧！");
+                command("say 你要學降龍十八掌？等你升到本幫長老再説吧！");
                 return -1;
         }
 
         if( query("family/family_name", me) != query("family/family_name" )
              && !query("can_learn/hong/dragon-strike", me) )
         {
-                command("say 你是哪裡來的？一邊呆著去。");
+                command("say 你是哪裏來的？一邊呆着去。");
                 return -1;
         }
 
@@ -393,11 +393,11 @@ int try_to_learn_ds()
 
         if (! flag)
         {
-                command("say 不是說了待到你融會貫通再來向我討教嗎？");
+                command("say 不是説了待到你融會貫通再來向我討教嗎？");
                 return -1;
         }
 
-        command("say 你先將這十八路掌法融會貫通，合而為一再說吧。");
+        command("say 你先將這十八路掌法融會貫通，合而為一再説吧。");
         notify_fail("你自己下去好好練習吧。\n");
         return -1;
 }
@@ -418,7 +418,7 @@ int accept_object(object who, object ob)
 
         if( !query("food_supply", ob) )
         {
-                command("say 這東西看上去也沒啥特別的，你自個留著吧。");
+                command("say 這東西看上去也沒啥特別的，你自個留着吧。");
                 return -1;
         }
 
@@ -426,14 +426,14 @@ int accept_object(object who, object ob)
             || lv < 1
              || !stringp(by=query("by", ob)) )
         {
-                command("say 這東西看上去也沒啥特別的，你自個留著吧。");
+                command("say 這東西看上去也沒啥特別的，你自個留着吧。");
                 return -1;
         }
 
         if (lv < 100)
         {
                 message_vision(CYN "$N" CYN "嗅了嗅" + ob->name() +
-                               CYN "，皺眉道：這東西你還是自個留著"
+                               CYN "，皺眉道：這東西你還是自個留着"
                                "吧。\n" NOR, me);
                 return -1;
         }
@@ -447,7 +447,7 @@ int accept_object(object who, object ob)
         }
 
         message_vision(HIW "$N" HIW "嗅了嗅$n" HIW "遞來的" + ob->name() +
-                       HIW "，嘗了幾口，直咂舌頭，連聲稱讚。\n" NOR, me, who);
+                       HIW "，嚐了幾口，直咂舌頭，連聲稱讚。\n" NOR, me, who);
 
         if (! who->id(by))
         {
@@ -465,7 +465,7 @@ int accept_object(object who, object ob)
 
         if( query("family/family_name", who) != query("family/family_name") )
         {
-                command("say 可惜你不是本幫裡的人，否則到可以傳授你一些功夫。");
+                command("say 可惜你不是本幫裏的人，否則到可以傳授你一些功夫。");
                 return 1;
         }
 
@@ -556,7 +556,7 @@ mixed ask_skill1()
                 return "你打聽這個幹嘛？我認識你麼？";
 
         if (me->query_skill("xiaoyaoyou", 1) < 1)
-                return "你連逍遙遊拳法都沒學過，哪裡來絕招？";
+                return "你連逍遙遊拳法都沒學過，哪裏來絕招？";
 
         if( query("family/family_name", me) == "丐幫"
              && query("family/gongji", me)<300 )
@@ -602,10 +602,10 @@ mixed ask_skill2()
                 return "我不是已經教過你了麼？還羅嗦什麼？";
 
         if( query("family/family_name", me) != query("family/family_name") )
-                return "幹啥？我什麼時候說過要教你？";
+                return "幹啥？我什麼時候説過要教你？";
 
         if (me->query_skill("pomie-jinzhen", 1) < 1)
-                return "你連漫天花雨都沒學過，哪裡來絕招？";
+                return "你連漫天花雨都沒學過，哪裏來絕招？";
 
         if( query("family/gongji", me)<500 )
                 return "你在幫中無所作為，還想讓我傳功給你？。";
@@ -647,10 +647,10 @@ mixed ask_skill3()
                 return "我不是已經教過你了麼？還羅嗦什麼？";
 
         if( query("family/family_name", me) != query("family/family_name") )
-                return "幹啥？我什麼時候說過要教你？";
+                return "幹啥？我什麼時候説過要教你？";
 
         if (me->query_skill("dagou-bang", 1) < 1)
-                return "你連打狗棒法都沒學過，哪裡來絕招？";
+                return "你連打狗棒法都沒學過，哪裏來絕招？";
 
         if( query("family/gongji", me)<300 )
                 return "你在幫中無所作為，還想讓我傳功給你？。";
@@ -694,10 +694,10 @@ mixed ask_skill4()
                 return "我不是已經教過你了麼？還羅嗦什麼？";
 
         if( query("family/family_name", me) != query("family/family_name") )
-                return "幹啥？我什麼時候說過要教你？";
+                return "幹啥？我什麼時候説過要教你？";
 
         if (me->query_skill("dagou-bang", 1) < 1)
-                return "你連打狗棒法都沒學過，哪裡來絕招？";
+                return "你連打狗棒法都沒學過，哪裏來絕招？";
 
         if( query("family/gongji", me)<600 )
                 return "你在幫中無所作為，還想讓我傳功給你？。";
@@ -741,10 +741,10 @@ mixed ask_skill5()
                 return "我不是已經教過你了麼？還羅嗦什麼？";
 
         if( query("family/family_name", me) != query("family/family_name") )
-                return "幹啥？我什麼時候說過要教你？";
+                return "幹啥？我什麼時候説過要教你？";
 
         if (me->query_skill("dagou-bang", 1) < 1)
-                return "你連打狗棒法都沒學過，哪裡來絕招？";
+                return "你連打狗棒法都沒學過，哪裏來絕招？";
 
         if( query("family/gongji", me)<1700 )
                 return "你在幫中無所作為，還想讓我傳功給你？。";
@@ -788,10 +788,10 @@ mixed ask_skill6()
                 return "我不是已經教過你了麼？還羅嗦什麼？";
 
         if( query("family/family_name", me) != query("family/family_name") )
-                return "幹啥？我什麼時候說過要教你？";
+                return "幹啥？我什麼時候説過要教你？";
 
         if (me->query_skill("dagou-bang", 1) < 1)
-                return "你連打狗棒法都沒學過，哪裡來絕招？";
+                return "你連打狗棒法都沒學過，哪裏來絕招？";
 
         if( query("family/gongji", me)<1800 )
                 return "你在幫中無所作為，還想讓我傳功給你？。";
@@ -832,13 +832,13 @@ mixed ask_skill7()
         me = this_player();
 
         if( query("can_perform/dagou-bang/tian", me) )
-                return "自己去練吧，老纏著我幹什麼？";
+                return "自己去練吧，老纏着我幹什麼？";
 
         if( query("family/family_name", me) != query("family/family_name") )
-                return "幹啥？我什麼時候說過要教你？";
+                return "幹啥？我什麼時候説過要教你？";
 
         if (me->query_skill("dagou-bang", 1) < 1)
-                return "你連打狗棒法都沒學過，哪裡來絕招？";
+                return "你連打狗棒法都沒學過，哪裏來絕招？";
 
         if( query("family/gongji", me)<2000 )
                 return "你在幫中無所作為，還想讓我傳功給你？。";
@@ -847,13 +847,13 @@ mixed ask_skill7()
                 return "你俠義之事做得不夠，我可不放心傳功予你。";
 
         if( query("family/beggarlvl", me)<9 )
-                return "你在幫中的輩分還不夠，等成為長老再說吧。";
+                return "你在幫中的輩分還不夠，等成為長老再説吧。";
 
         if( !query("can_perform/dagou-bang/chan", me )
             || !query("can_perform/dagou-bang/chuo", me )
             || !query("can_perform/dagou-bang/feng", me )
             || !query("can_perform/dagou-bang/ban", me) )
-                return "你打狗棒法的四個棒訣都了解透徹了麼？";
+                return "你打狗棒法的四個棒訣都瞭解透徹了麼？";
 
         if (me->query_skill("force") < 300)
                 return "你的內功火候不足，回去練高點再來。";
@@ -862,9 +862,9 @@ mixed ask_skill7()
                 return "你的打狗棒法火候未到，再回去練練。";
 
         message_sort(HIY "\n$n" HIY "凝視了$N" HIY "好一會，方才"
-                     "點了點頭，隨手抄起玉竹杖，驀地一卷，帶起陣"
+                     "點了點頭，隨手抄起玉竹杖，驀地一捲，帶起陣"
                      "陣風聲，便猶若千百根相似，層層疊疊將$N" HIY
-                     "籠罩于勁風之中，招式精奇，無與倫比，令人嘆"
+                     "籠罩於勁風之中，招式精奇，無與倫比，令人歎"
                      "為觀止。\n\n" NOR, me, this_object());
 
         command("stuff");
@@ -903,11 +903,11 @@ mixed ask_skill7()
                 return "你的打狗棒法學得怎麼樣啊？我看還差得遠呢！";
 
         if (query("book_count") <1)
-                return "你來晚了，打狗棒秘籍我已經借出去了。";
+                return "你來晚了，打狗棒祕籍我已經借出去了。";
         obj = new(__DIR__"obj/book.c");
         set("master",query("id",  me), obj);
         obj->move(me);
-        tell_object(me, "洪七公說道：“好吧，這本秘籍你拿去好好研究吧！”\n");
+        tell_object(me, "洪七公説道：“好吧，這本祕籍你拿去好好研究吧！”\n");
         addn("book_count", -1);
         return 1;
 }
@@ -925,7 +925,7 @@ mixed ask_skill8()
                 return "你打聽這個幹嘛？我認識你麼？";
 
         if (me->query_skill("dragon-strike", 1) < 1)
-                return "你連降龍十八掌都沒學過，哪裡來絕招？";
+                return "你連降龍十八掌都沒學過，哪裏來絕招？";
 
         if( query("family/family_name", me) == "丐幫"
             && query("family/gongji", me)<800 )
@@ -940,7 +940,7 @@ mixed ask_skill8()
         if (me->query_skill("dragon-strike", 1) < 150)
                 return "你的降龍十八掌火候未到，再下去練練。";
 
-        message_sort(HIY "\n$n" HIY "點了點頭，轉過身來對$N" HIY "說"
+        message_sort(HIY "\n$n" HIY "點了點頭，轉過身來對$N" HIY "説"
                      "道：“我給你演示一遍，看好了。”話音剛落，聽得"
                      "$n" HIY "一聲暴喝，全身內勁迸發，氣貫右臂奮力外"
                      "扯。一時間你只覺周圍氣流湧動，地上塵土盡數向$n"
@@ -975,7 +975,7 @@ mixed ask_skill9()
                 return "你打聽這個幹嘛？我認識你麼？";
 
         if (me->query_skill("dragon-strike", 1) < 1)
-                return "你連降龍十八掌都沒學過，哪裡來絕招？";
+                return "你連降龍十八掌都沒學過，哪裏來絕招？";
 
         if( query("family/family_name", me) == "丐幫"
             && query("family/gongji", me)<2000 )
@@ -990,12 +990,12 @@ mixed ask_skill9()
         if (me->query_skill("dragon-strike", 1) < 150)
                 return "你的降龍十八掌火候未到，再下去練練。";
 
-        message_sort(HIY "\n$n" HIY "點了點頭，轉過身來對$N" HIY "說"
+        message_sort(HIY "\n$n" HIY "點了點頭，轉過身來對$N" HIY "説"
                      "道：“我給你演示一遍，看好了。”話音剛落，聽得"
                      "$n" HIY "一聲暴喝，全身真氣鼓動，雙掌排山倒海般"
                      "壓出。頓時只聽“喀嚓”一聲脆響，$n" HIY "身前那"
-                     "棵碗口粗的鬆樹應聲而倒，直看得$N" HIY "目瞪口呆"
-                     "，半天說不出話來。\n\n" NOR, me, this_object());
+                     "棵碗口粗的松樹應聲而倒，直看得$N" HIY "目瞪口呆"
+                     "，半天説不出話來。\n\n" NOR, me, this_object());
 
         command("sweat");
         command("say 招式便是如此，你自己下去領悟吧。");
@@ -1027,7 +1027,7 @@ mixed ask_skill10()
                 return "你打聽這個幹嘛？我認識你麼？";
 
         if (me->query_skill("dragon-strike", 1) < 1)
-                return "你連降龍十八掌都沒學過，哪裡來絕招？";
+                return "你連降龍十八掌都沒學過，哪裏來絕招？";
 
         if( query("family/family_name", me) == "丐幫"
             && query("family/gongji", me)<3000 )
@@ -1045,8 +1045,8 @@ mixed ask_skill10()
         message_sort(HIY "\n$n" HIY "沉思良久，方才緩緩點了點頭，伸"
                      "手將$N" HIY "招至身旁，低聲講解了良久。過得片"
                      "刻，卻見$n" HIY "驀地起身而立，深深吸入一口氣"
-                     "，雙掌猛然翻滾，宛如一條神龍攀蜒于九天之上，氣"
-                     "勢恢弘，盪氣回腸。\n\n" NOR, me, this_object());
+                     "，雙掌猛然翻滾，宛如一條神龍攀蜒於九天之上，氣"
+                     "勢恢弘，蕩氣迴腸。\n\n" NOR, me, this_object());
 
         command("nod");
         command("say 修煉這招頗為不易，你下去後需勤加練習。");
@@ -1078,7 +1078,7 @@ mixed ask_skill11()
                 return "你打聽這個幹嘛？我認識你麼？";
 
         if (me->query_skill("dragon-strike", 1) < 1)
-                return "你連降龍十八掌都沒學過，哪裡來絕招？";
+                return "你連降龍十八掌都沒學過，哪裏來絕招？";
 
         if( query("family/family_name", me) == "丐幫"
             && query("family/gongji", me)<3000 )
@@ -1097,7 +1097,7 @@ mixed ask_skill11()
                      "手將$N" HIY "招至身旁，低聲講解了良久。過得片"
                      "刻，忽然$n" HIY "身形激進，左手一劃，右手呼的一掌"
                      "拍向虛空，正是降龍十八掌“亢龍有悔” 。力自掌生之"
-                     "際說到便到，以排山倒海之勢向虛空狂湧而去，當真石"
+                     "際説到便到，以排山倒海之勢向虛空狂湧而去，當真石"
                      "破天驚，威力無比。\n\n" NOR, me, this_object());
 
         command("nod");
@@ -1130,7 +1130,7 @@ mixed ask_skill12()
                 return "你打聽這個幹嘛？我認識你麼？";
 
         if (me->query_skill("dragon-strike", 1) < 1)
-                return "你連降龍十八掌都沒學過，哪裡來絕招？";
+                return "你連降龍十八掌都沒學過，哪裏來絕招？";
 
         if( query("family/family_name", me) == "丐幫"
             && query("family/gongji", me)<1000 )
@@ -1185,17 +1185,17 @@ mixed ask_skill13()
         
         /*
         if( !query("can_perform/dragon-strike/qu", me) )
-                return "你還未學會雙龍取水，無法領悟□□九天。";
+                return "你還未學會雙龍取水，無法領悟龍嘯九天。";
         if( !query("can_perform/dragon-strike/zhen", me) )
-                return "你還未學會震驚百裡，無法領悟□□九天。";
+                return "你還未學會震驚百里，無法領悟龍嘯九天。";
         if( !query("can_perform/dragon-strike/hui", me) )
-                return "你還未學會亢龍有悔，無法領悟□□九天。";
+                return "你還未學會亢龍有悔，無法領悟龍嘯九天。";
         if( !query("can_perform/dragon-strike/long", me) )
-                return "你還未學會飛龍在天，無法領悟□□九天。";                                                
+                return "你還未學會飛龍在天，無法領悟龍嘯九天。";                                                
         */
         
         if (me->query_skill("dragon-strike", 1) < 1)
-                return "你連降龍十八掌都沒學過，哪裡來絕招？";
+                return "你連降龍十八掌都沒學過，哪裏來絕招？";
 
         if( query("family/family_name", me) == "丐幫"
             && query("family/gongji", me)<10000 )
@@ -1219,7 +1219,7 @@ mixed ask_skill13()
 
         command("nod");
         command("say 修煉這招頗為不易，你下去後需勤加練習。");
-        tell_object(me, HIC "你學會了「□□九天」。\n" NOR);
+        tell_object(me, HIC "你學會了「龍嘯九天」。\n" NOR);
         addn("str", 1, me);
         tell_object(me, HIY "你的先天臂力永久增加一點。\n" NOR);
 
@@ -1261,7 +1261,7 @@ mixed ask_me()
    if( query("family/first", me) ) cost = 250; 
              else cost = 500; 
              if( query("family/gongji", me) < cost ) 
-                     return "你為我丐幫效力還不夠，等你擁有足夠的師門功績再來兌換玉竹杖使用時間吧。";
+                     return "你為我丐幫效力還不夠，等你擁有足夠的師門功績再來兑換玉竹杖使用時間吧。";
         ob = find_object(YUZHU);
         if (! ob) ob = load_object(YUZHU);
         owner = environment(ob);
@@ -1274,12 +1274,12 @@ mixed ask_me()
         }
 
         if (owner == me)
-                return "玉竹杖不就是你拿著嗎，怎麼還反倒問起我來了？";
+                return "玉竹杖不就是你拿着嗎，怎麼還反倒問起我來了？";
 
         if (objectp(owner) && owner != this_object())
         {
                 if (! owner->is_character())
-                        return "玉竹杖現在不在我這裡。";
+                        return "玉竹杖現在不在我這裏。";
 
                 if( query("family/family_name", owner) == "丐幫" )
                         return "玉竹杖現在暫時是你同門"+query("name", owner)+

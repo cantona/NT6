@@ -15,7 +15,7 @@ void create()
         set("no_get", 1);
         set("no_drop","哇？天書都想丟掉,小心遭天譴。\n\n");
         set("long",@LONG
-此乃當年仙人贈于"蛋生"的寶物,因為蛋生不識字,仙人施了法,
+此乃當年仙人贈於"蛋生"的寶物,因為蛋生不識字,仙人施了法,
 把天書變成了無字天書,呵呵!就是文盲也能讀懂,快看看(kan)吧！
 LONG );
         if( clonep() )
@@ -48,17 +48,17 @@ int kan_book()
                 return 0;
 
         tell_object(me,
-    "法訣□                   功能
+    "法訣                    功能
 
-辟谷(bigu)        三天三夜不吃不喝\n
+辟穀(bigu)        三天三夜不吃不喝\n
 
 康復(body)        立馬恢復精神體力\n
 
-筋鬥雲(cloud)     到想去的地方\n");
+筋斗雲(cloud)     到想去的地方\n");
         return 1;
 }
 
-// 辟谷
+// 辟穀
 
 int bigu_eat()
 {
@@ -73,7 +73,7 @@ int bigu_eat()
 
         if( !me->query_condition("f_condi") )
         {
-                write(HIY"你口中念念有詞,那咦咪哞嘻...\n"NOR);
+                write(HIY"你口中唸唸有詞,那咦咪哞嘻...\n"NOR);
                 tell_object(me, "你只覺神清氣爽,可以不吃飯了...\n" );
 
                 fw = (int)me->max_food_capacity();
@@ -98,7 +98,7 @@ int bigu_eat()
 
         return 1;
 }
-// 筋鬥雲
+// 筋斗雲
 
 int cloud_goto(string arg)
 {
@@ -111,11 +111,11 @@ int cloud_goto(string arg)
         if (!present(this_object(), this_player()))
                 return 0;
 
-        if( !arg ) return notify_fail("你要去哪裡？\n");
+        if( !arg ) return notify_fail("你要去哪裏？\n");
 
         if( sscanf(arg, "-i %s", arg) ) goto_inventory = 1;
 
-        if( !arg ) return notify_fail("你要去哪裡？\n");
+        if( !arg ) return notify_fail("你要去哪裏？\n");
 
         obj = find_player(arg);
         if(!obj) obj = find_living(arg);
@@ -133,12 +133,12 @@ int cloud_goto(string arg)
                 obj = environment(obj);
 
         if( !obj ) return notify_fail("這個物件沒有環境可以 goto。\n");
-        tell_object(mme,HIM"你一個筋鬥竄向空中,只見眼前紅雲飛過,耳邊風呼呼作響 .
+        tell_object(mme,HIM"你一個筋斗竄向空中,只見眼前紅雲飛過,耳邊風呼呼作響 .
 .\n\n"NOR);
         tell_object(mme,"哇喔,好痛快,好爽,爽歪歪!\n\n");
         mme->move(obj);
 
-        tell_object(mme,"你駕著雲緩緩下降,叭嘰一聲,嘿!安全著陸...\n");
+        tell_object(mme,"你駕着雲緩緩下降,叭嘰一聲,嘿!安全着陸...\n");
         return 1;
 }
 // 恢復
@@ -156,6 +156,6 @@ int body_recover()
 }
 void owner_is_killed() {
 
-        write(HIY"只見眼前金光一閃...好象是.....\n"NOR);
+        write(HIY"只見眼前金光一閃...好像是.....\n"NOR);
         destruct(this_object());
 }

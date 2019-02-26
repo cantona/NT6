@@ -9,9 +9,9 @@ void create()
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("long", HIR "這一是個新年紅包，上面用金色的字體寫著" HIY "「豬年吉祥 萬事如意」" HIR " ！\n"
+                set("long", HIR "這一是個新年紅包，上面用金色的字體寫着" HIY "「豬年吉祥 萬事如意」" HIR " ！\n"
                                 "拆開(chai)紅包可以獲得新年壓歲錢及小小的經驗潛能獎勵。\n"
-                                "*請于2007年4月28日前使用紅包，過期則使用無效！！！\n\n" NOR);
+                                "*請於2007年4月28日前使用紅包，過期則使用無效！！！\n\n" NOR);
                 set("value", 1);
                 set("unit", "個"); 
         }
@@ -54,7 +54,7 @@ int do_chai(string arg)
         
         me->save();
         
-        log_file("hongbao", me->query("id") + " 于 " + ctime(time()) + " 打開紅包。(/clone/misc/hongbao) \n");
+        log_file("hongbao", me->query("id") + " 於 " + ctime(time()) + " 打開紅包。(/clone/misc/hongbao) \n");
 
         destruct(this_object());
         return 1;

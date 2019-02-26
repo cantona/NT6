@@ -8,7 +8,7 @@ void create()
         set_name("管家", ({ "guan jia", "guanjia" }));
         set("age", 48);
         set("gender", "男性");
-        set("long","這是金府的大管家,裡裡外外的事大部分由他做主.□/n");
+        set("long","這是金府的大管家,裏裏外外的事大部分由他做主.\/n");
         set("attitude", "peaceful");
    set("str", 20);
         set("combat_exp", 200000);

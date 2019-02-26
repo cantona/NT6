@@ -17,7 +17,7 @@ string update_msg_others()
 
 string update_msg_self()
 {
-        return HIW "你只覺全身酸軟無比，竟使不出絲毫氣力。\n" NOR;
+        return HIW "你只覺全身痠軟無比，竟使不出絲毫氣力。\n" NOR;
 }
 
 string die_msg_others()

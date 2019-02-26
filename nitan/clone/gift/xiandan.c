@@ -11,7 +11,7 @@ void create()
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("long", "一顆園園的仙丹，據說吃了可以增強智力。"
+                set("long", "一顆園園的仙丹，據説吃了可以增強智力。"
                     "增加先天屬性至五點\n");
                 set("value", 10000);
                 set("unit", "顆");
@@ -27,7 +27,7 @@ int do_effect(object me)
             query("gift/int/succeed", me) >= 5 )
         {
                 message_vision("$N忽然“哇哇”，吐了一地。\n", me);
-                tell_object(me, "你覺得嘴裡非常的苦。\n");
+                tell_object(me, "你覺得嘴裏非常的苦。\n");
         } else
         if (random(5) == 0)
         {

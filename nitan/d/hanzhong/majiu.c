@@ -6,7 +6,7 @@ void create()
       set("short","馬廄");
         set("long", @LONG
 這是武功鎮的馬廄，因為平時來往的人不多，顯得有些破舊。馬
-廄雨檐下的爛木柱上釘著一塊破木牌 (paizi)。廄中堆放著幾堆草料，
+廄雨檐下的爛木柱上釘着一塊破木牌 (paizi)。廄中堆放著幾堆草料，
 正中有一口泔槽。
 LONG );
       set("outdoors", "hanzhong");

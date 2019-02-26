@@ -14,8 +14,8 @@ void create()
         set("int", 19);
         set("attitude", "friendly");
         set("chat_msg", ({
-        "農夫呸了一口，說道：溫家沒個好東西！活該女兒被糟蹋。\n",
-        "農夫咬牙切齒地說道：溫家橫行霸道，不會有好報！\n"
+        "農夫呸了一口，説道：温家沒個好東西！活該女兒被糟蹋。\n",
+        "農夫咬牙切齒地説道：温家橫行霸道，不會有好報！\n"
         }));
         setup();
         carry_object("/clone/misc/cloth")->wear();

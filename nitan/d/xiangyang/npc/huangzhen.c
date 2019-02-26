@@ -14,7 +14,7 @@ void create()
         set("title", HIW"商業協會"HIR"會長"NOR);
         set("long", @LONG
 黃真是神劍仙猿穆人清的開門大弟子，也是這
-個錢莊的老板，管理襄陽軍餉。
+個錢莊的老闆，管理襄陽軍餉。
 LONG);
         set("nickname", HIY "銅筆鐵算盤" NOR);
         set("gender", "男性");
@@ -66,11 +66,11 @@ LONG);
         prepare_skill("strike", "hunyuan-zhang");
 
         set("inquiry", ([
-                "入會"     : "在我這裡，可以加入(" HIY "join" NOR +
+                "入會"     : "在我這裏，可以加入(" HIY "join" NOR +
                              CYN ")商業協會。\n" NOR,
-                "加入"     : "在我這裡，可以加入(" HIY "join" NOR +
+                "加入"     : "在我這裏，可以加入(" HIY "join" NOR +
                              CYN ")商業協會。\n" NOR,
-                "商業協會" : "在我這裡，可以加入(" HIY "join" NOR +
+                "商業協會" : "在我這裏，可以加入(" HIY "join" NOR +
                              CYN ")商業協會。\n" NOR,
         ]));
 
@@ -102,18 +102,18 @@ int do_join(string arg)
         object me = this_player();
 
         if (! arg || arg != "商業協會")
-                return notify_fail(CYN "黃真一楞，說道：你要加入什麼？我"
-                                   "這裡是商業協會。\n" NOR);
+                return notify_fail(CYN "黃真一楞，説道：你要加入什麼？我"
+                                   "這裏是商業協會。\n" NOR);
 
         if( query("is_vendor", me) )
-                return notify_fail(CYN "黃真皺了皺眉，說道：你不是已經加"
+                return notify_fail(CYN "黃真皺了皺眉，説道：你不是已經加"
                                    "入商業協會了麼？\n" NOR);
 
         if( query("bad_vendor", me) )
-                return notify_fail(CYN "黃真冷笑一聲，說道：既然你已經脫"
+                return notify_fail(CYN "黃真冷笑一聲，説道：既然你已經脱"
                                    "離了商業協會，又回來作甚？\n" NOR);
 
-        tell_object(me, CYN "\n黃真點了點頭，說道：你真的打算(" HIY "dec"
+        tell_object(me, CYN "\n黃真點了點頭，説道：你真的打算(" HIY "dec"
                         "ide" NOR + CYN ")加入商業協會麼？可考慮清楚了？"
                         "\n" NOR);
         set_temp("want_join", 1, me);
@@ -125,13 +125,13 @@ int do_unjoin(string arg)
         object me = this_player();
 
         if (! arg || arg != "商業協會")
-                return notify_fail(CYN "黃真皺了皺眉，說道：你打算脫離什"
-                                   "麼？說話不清不楚的。\n" NOR);
+                return notify_fail(CYN "黃真皺了皺眉，説道：你打算脱離什"
+                                   "麼？説話不清不楚的。\n" NOR);
 
         if( !query("is_vendor", me) )
                 return notify_fail(CYN "黃真冷笑一聲，沒理你。\n" NOR);
 
-        tell_object(me, CYN "\n黃真嘆了口氣，說道：如果脫離商業協會，以後"
+        tell_object(me, CYN "\n黃真歎了口氣，説道：如果脱離商業協會，以後"
                         "可不能反悔。你真打算(" HIY "decide" NOR + CYN ")"
                         "這麼做麼？\n" NOR);
         set_temp("want_tuoli", 1, me);
@@ -146,7 +146,7 @@ int do_decide()
 
         if( query_temp("want_join", me) )
         {
-                message_vision(HIC "$N" HIC "對著$n" HIC "微笑道：如今世"
+                message_vision(HIC "$N" HIC "對着$n" HIC "微笑道：如今世"
                                "道錢乃萬能之物，以後好好幹吧。\n" NOR,
                                this_object(), me);
 
@@ -164,7 +164,7 @@ int do_decide()
         } else
         if( query_temp("want_tuoli", me) )
         {
-                message_vision(HIC "$N" CYN "對著$n" HIC "點點頭，人各有"
+                message_vision(HIC "$N" CYN "對着$n" HIC "點點頭，人各有"
                                "志，從此以後你我再無瓜葛。\n" NOR,
                                this_object(), me);
 
@@ -178,7 +178,7 @@ int do_decide()
                 if (objectp(ob = present("shang ling", me)));
                 {
                         message_vision(HIR "$N" HIR "將$n" HIR "的" NOR +
-                                       ob->name(1) + HIR "注銷了。\n" NOR,
+                                       ob->name(1) + HIR "註銷了。\n" NOR,
                                        this_object(), me);
                         destruct(ob);
                 }
@@ -201,7 +201,7 @@ int do_yao()
 
         if (present("shang ling", me))
                 return notify_fail(CYN "黃真皺了皺眉道：我的天，你連這都"
-                                   "要騙？果然是姦商的料。\n" NOR);
+                                   "要騙？果然是奸商的料。\n" NOR);
 
         if( query_temp("shang-ling", me) )
                 return notify_fail(CYN "黃真皺眉道：剛才我不是才給了你一"
@@ -215,6 +215,6 @@ int do_yao()
         ob->move(this_object());
         set_temp("shang-ling", 1, me);
         command("give shang ling to "+query("id", me));
-        command("say 吃飯的家伙自己保管好，別老是來煩我。");
+        command("say 吃飯的傢伙自己保管好，別老是來煩我。");
         return 1;
 }

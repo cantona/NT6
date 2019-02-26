@@ -36,10 +36,10 @@ int perform(object me, object target)
                 return notify_fail("你沒有激發雪山劍法，難以施展" + name() + "。\n");
 
         if (! living(target))
-                return notify_fail("對方都已經這樣了，用不著這麼費力吧？\n");
+                return notify_fail("對方都已經這樣了，用不着這麼費力吧？\n");
 
         msg = HIW "只聽$N" HIW "一聲清嘯，手中" + weapon->name() +
-              HIW "龍吟不止，迸出萬道光華，疾閃而過，無數勁風席卷"
+              HIW "龍吟不止，迸出萬道光華，疾閃而過，無數勁風席捲"
               "$n" HIW "而去！\n" NOR;
 
         ap = attack_power(me, "sword");
@@ -58,11 +58,11 @@ int perform(object me, object target)
         {
                 addn("neili", -50, me);
                 msg += CYN "可是$n" CYN "看破" CYN "$N" CYN
-                       "的招數，飛身躍開丈許，終于將這陰寒劍"
-                       "氣驅于無形。\n"NOR;
+                       "的招數，飛身躍開丈許，終於將這陰寒劍"
+                       "氣驅於無形。\n"NOR;
         }
 
-        msg = HIW"$N隨即長嘯一聲，手中" + weapon->name() + HIW"疾卷，掀起萬朵雪花向前舖天蓋地地撒去。\n"
+        msg = HIW"$N隨即長嘯一聲，手中" + weapon->name() + HIW"疾卷，掀起萬朵雪花向前鋪天蓋地地撒去。\n"
               "在白茫茫的一片中，忽然出現萬朵梅花形劍花，穿透雪幕，朝四面八方狂射而出。\n" NOR;
 
         ap = attack_power(me, "sword");

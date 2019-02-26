@@ -6,7 +6,7 @@ void create()
         set("short","廚房");
         set("long", @LONG
 這是間寬敞的廚房，廚師們在展示各自的烹飪絕活。整個房間彌
-漫著令人垂涎欲滴的菜香。牆上貼著一張醒目的啟事(note)。
+漫着令人垂涎欲滴的菜香。牆上貼着一張醒目的啟事(note)。
 LONG );
 
         set("exits",([
@@ -38,7 +38,7 @@ int valid_leave(object me, string dir)
         if (( present("jiang", me)||present("cake", me))
         && objectp(present("fei fei", environment(me))) )
                 return notify_fail("肥肥一把拽住你的衣領，"
-                                   "著急地叫到：飯菜不能帶出去，"
-                                   "這裡蟑螂已經夠多了。\n");
+                                   "着急地叫到：飯菜不能帶出去，"
+                                   "這裏蟑螂已經夠多了。\n");
         return ::valid_leave(me, dir);
 }

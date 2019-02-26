@@ -58,7 +58,7 @@ void skill_improved(object me)
 
         if( skill == 200 && !query("sl/yijinjing", me) )
         {
-                tell_object(me, HIW "\n忽然，你感道體內內息奔走，越轉越快，瞬時間已經在全身上下運行了一周天，復匯聚于丹田之中！\n" NOR);
+                tell_object(me, HIW "\n忽然，你感道體內內息奔走，越轉越快，瞬時間已經在全身上下運行了一週天，復匯聚于丹田之中！\n" NOR);
                 addn("max_neili", random(lit+skill), me);
 
                 if( query("max_neili", me)>me->query_neili_limit() )
@@ -68,7 +68,7 @@ void skill_improved(object me)
         }
         if (skill == 400)
         {
-                tell_object(me, HIW "\n忽然，你感道體內內息奔走，越轉越快，瞬時間已經在全身上下運行了十周天，復匯聚于丹田之中！\n" NOR);
+                tell_object(me, HIW "\n忽然，你感道體內內息奔走，越轉越快，瞬時間已經在全身上下運行了十週天，復匯聚于丹田之中！\n" NOR);
                 tell_object(me, HIW "你修煉成百毒不侵神功了。\n" NOR);
                 set_temp("nopoison", 1, me);
         }
@@ -79,10 +79,10 @@ string *fanzhen_msg = ({
         "只震得$N胸內腹中，有如五臟一齊翻轉！\n",
         "搶先反震，將$N震得臉如白紙，全無血色！\n",
         "震得$N心肺欲裂，騰騰騰連退數步！\n",
-        "功力已布滿全身，將$N的力量反震回去！\n",
+        "功力已佈滿全身，將$N的力量反震回去！\n",
         "震得$N天旋地轉，騰騰騰連退七八步！\n",
         "和$N一撞，只震的$p胸口氣血翻湧！\n",
-        "$N便如撞在一堵棉花作面，鋼鐵為裡的厚牆上一般，震退數步！\n",
+        "$N便如撞在一堵棉花作面，鋼鐵為裏的厚牆上一般，震退數步！\n",
         "$N剛碰到$p，突然身子一震，登時飛了出去！\n",
 });
 /*
@@ -97,17 +97,17 @@ mixed valid_damage(object me,object victim,int damage_bonus,int factor)
         if( random(ap/2)>dp && query("neili", me)>2000 )
         {
 
-                if (random(10)==1) tell_object(victim, "你只覺得如同擊在金屬上，頭腦裡閃過一個念頭：金屬罩！\n");
+                if (random(10)==1) tell_object(victim, "你只覺得如同擊在金屬上，頭腦裏閃過一個念頭：金屬罩！\n");
                 else tell_object(victim,HIY"你只覺得勁力如同擊在金屬罩，根本無法傷他分毫！\n"NOR);
-                tell_object(me, HIY"你只覺得勁力襲體，急忙運起金鐘罩神功，一股真氣彌漫全身！\n"NOR);
+                tell_object(me, HIY"你只覺得勁力襲體，急忙運起金鐘罩神功，一股真氣瀰漫全身！\n"NOR);
                 addn("neili", -2*damage_bonus, me);
                 return -damage_bonus;
         }
         else if( (random(ap*2)>dp) && query("neili", me)>1500 )
         {
-                if (random(10)==1) tell_object(victim,HIY"你只覺得如同擊在金屬上，頭腦裡閃過一個念頭：“金屬罩”！\n"NOR);
+                if (random(10)==1) tell_object(victim,HIY"你只覺得如同擊在金屬上，頭腦裏閃過一個念頭：“金屬罩”！\n"NOR);
                 else tell_object(victim,HIY"你只覺得勁力如同擊在金屬上，虎口隱隱作痛！\n"NOR);
-                tell_object(me, HIY"你只覺得勁力襲體，勉力運起金鐘罩，一股真氣彌漫全身！\n"NOR);
+                tell_object(me, HIY"你只覺得勁力襲體，勉力運起金鐘罩，一股真氣瀰漫全身！\n"NOR);
                 addn("neili", -damage_bonus, me);
                 return -random(damage_bonus);
         }
@@ -162,13 +162,13 @@ mixed valid_damage(object ob, object me, int damage, object weapon)
                         case 1:
                         case 2:
                         case 3:
-                                result += ([ "msg" : HIR "好似有一堵無形的牆在$n面前阻擋著，結果"
+                                result += ([ "msg" : HIR "好似有一堵無形的牆在$n面前阻擋着，結果"
                                                      "$N" HIR "一下子被反彈，震得$N"
                                                      HIR "手臂發麻！\n" NOR ]);
                                 break;
                         default:
                                 result += ([ "msg" : HIR "結果$n身上生出一股反震之力，$N只覺虎口一熱，" +
-                                                     weapon1->name() + HIR "頓時脫手而出，飛出丈外！\n" NOR]);
+                                                     weapon1->name() + HIR "頓時脱手而出，飛出丈外！\n" NOR]);
                                 weapon1->unequip();
                                 weapon1->move(environment(ob));
                                 ob->reset_action();
@@ -205,7 +205,7 @@ mixed hit_ob(object me, object victim, int damage_bonus, int factor)
 
         j = me->query_skill("yijinjing", 1) / 2;
         i += j;
-        message_combatd(HIR"$N"+HIR+"高喧一聲佛號，將體內九陽真氣聚于雙臂，狹雷霆之勢攻向$n！\n" NOR, me,victim);
+        message_combatd(HIR"$N"+HIR+"高喧一聲佛號，將體內九陽真氣聚於雙臂，狹雷霆之勢攻向$n！\n" NOR, me,victim);
 
         return i;
 }
@@ -221,7 +221,7 @@ string query_description()
         "易筋經乃少林寺頭等絕技，由內及外，為無上伏魔神功。此內功是少林鎮寺"
         "之寶，毅力一般者無法學成，其三階段分別為：0-200，200-400，>400。初"
         "級易筋經可強身健體，提高修為；中級可降妖伏魔，成金剛之體；高級可砍"
-        "妖除魔于無形，御力修身，百毒不侵。";
+        "妖除魔於無形，御力修身，百毒不侵。";
 }
 
 int help(object me)
@@ -230,7 +230,7 @@ int help(object me)
         write(@HELP
 
     《易筋》，《洗髓》二經向為少林鎮寺之寶，相傳為達摩祖師
-所創，載有不少天竺高僧的瑜伽秘術，但由于其習練艱難，須得勘
+所創，載有不少天竺高僧的瑜伽祕術，但由於其習練艱難，須得勘
 破“我相，人相”，心中不存修習武功之念，故歷代弟子罕有練成
 者。
     《洗髓》記載天下所有武功的精要，《易筋》則是一門極其高

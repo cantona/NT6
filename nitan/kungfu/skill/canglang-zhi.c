@@ -22,7 +22,7 @@ mapping *action = ({
         "damage_type" : "點穴",
         "skill_name"  : "翻江倒海"
 ]),
-([      "action": "只見$N一轉身，正是一式「龍騰萬裡」，一指由脅下穿出，疾刺$n的$l",
+([      "action": "只見$N一轉身，正是一式「龍騰萬里」，一指由脅下穿出，疾刺$n的$l",
         "force" : 55,
         "attack": 6,
         "parry" : 7,
@@ -30,7 +30,7 @@ mapping *action = ({
         "damage": 4,
         "lvl"   : 20,
         "damage_type" : "點穴",
-        "skill_name"  : "龍騰萬裡"
+        "skill_name"  : "龍騰萬里"
 ]),
 ([      "action": "只見$N一招「巨浪滔天」，十指如穿花蝴蝶一般上下翻飛，全全籠罩$n",   
         "force" : 71,

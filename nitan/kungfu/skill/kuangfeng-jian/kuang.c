@@ -16,7 +16,7 @@ int perform(object me, object target)
         if (! target
         ||  ! target->is_character()
         ||  ! me->is_fighting(target))
-                return notify_fail("﹝天外狂龍﹞只能對戰鬥中的對手使用。\n");
+                return notify_fail("［天外狂龍］只能對戰鬥中的對手使用。\n");
 
         if( !weapon=query_temp("weapon", me) )
                 return notify_fail("你沒裝兵器怎麼打！\n");
@@ -36,7 +36,7 @@ int perform(object me, object target)
         extra = me->query_skill("kuangfeng-jian", 1);
 
         msg = HIY "$N" HIY "劍斜斜刺出，激起股股劍氣，拔劍，收劍。在那一瞬間，天地變幻，人影竟似已縮小，\n"
-              "但見劍夾雜著風，風裡含著劍影！那劍氣幻作無數條金黃色的龍舖天蓋地襲向$n！\n" NOR;
+              "但見劍夾雜着風，風裏含着劍影！那劍氣幻作無數條金黃色的龍鋪天蓋地襲向$n！\n" NOR;
 
         ap = attack_power(me, "sword");
         dp = defense_power(target, "dodge");
@@ -48,7 +48,7 @@ int perform(object me, object target)
 
                 msg += COMBAT_D->do_damage(me, target, WEAPON_ATTACK, damage, 50,
                                            HIR "$n" HIR "只覺得腦中轟的一下，"
-                                           "身子往後倒飛出去，跌倒在地，不禁“哇”的吐了一口鮮血！□n" NOR);
+                                           "身子往後倒飛出去，跌倒在地，不禁“哇”的吐了一口鮮血！\n" NOR);
                 me->start_busy(2);
         } else
         {

@@ -7,7 +7,7 @@ void create()
 {
         set("short", "蛇舍");
         set("long", @LONG
-這是歐陽世家的蛇舍，屋裡到處都是毒蛇，牆上有一張「蛇經」
+這是歐陽世家的蛇舍，屋裏到處都是毒蛇，牆上有一張「蛇經」
 (shejing)，角落擺了一堆捕蛇用的竹簍(zhulou)。
 LONG );
         set("exits", ([ 
@@ -18,7 +18,7 @@ LONG );
                 "shejing" : 
                 "歐陽世家訓蛇密法：當馭獸術達到三十級以上，可嘗試將毒蛇變(bian)成蛇杖，\n"
                 "蛇杖乃是歐陽世家的獨門兵器。也可以把蛇杖變回毒蛇，驅使害人。\n",
-                "zhulou" : "一堆捕蛇用的竹簍，歐陽世家的人想要捕蛇時，可以來這裡拿(take)。\n",
+                "zhulou" : "一堆捕蛇用的竹簍，歐陽世家的人想要捕蛇時，可以來這裏拿(take)。\n",
         ]));
         set("objects", ([ 
                 __DIR__"npc/snake" : 3,
@@ -52,7 +52,7 @@ int do_lingwu(string arg)
                 return notify_fail("你是未入白駝，難悟白駝蛇經。\n");
 
         if ( level < 30) 
-                return notify_fail("經中所言對你過于高深，你無法領悟。\n");
+                return notify_fail("經中所言對你過於高深，你無法領悟。\n");
 
         if ( level > 100) 
                 return notify_fail("經中所言對你太淺，沒有任何幫助。\n");
@@ -86,7 +86,7 @@ int do_take(string arg)
         set("keeper",query("id",  me), obj);
         obj->set("long",
                 "一個竹條編成的簍子，是歐陽世家的人專門用來捕(catch)蛇的。\n"
-                "簍子外邊貼了一張小紙片，上面寫著□"+me->name()+"□。\n"
+                "簍子外邊貼了一張小紙片，上面寫着u"+me->name()+"v。\n"
         );
         message_vision("$N在蛇舍角落找出了一個竹簍。\n", me );
         set_temp("zhulou_last_taked", time(), me);

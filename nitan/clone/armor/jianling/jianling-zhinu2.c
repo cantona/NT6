@@ -20,12 +20,12 @@ void create()
                 set("armor_prop/sword", 300);
                 set("armor_prop/T_jianling", 1);
                 set("special/desc", "【劍靈套裝】部件之一（劍靈之怒、劍靈之痕、劍靈之力、劍靈之魂）。\n"
-                                    "                  關于劍靈套裝的傳說參見 help boss\n"
+                                    "                  關於劍靈套裝的傳説參見 help boss\n"
                                     "                  有效劍法提高300級。\n");
                 set("limit", ([
                          "exp" : 100000000,
                          "thborn" : 1,
-                         "jianling": 1, // equip.c裡限制，必須要調整成功劍靈1次後才能裝備
+                         "jianling": 1, // equip.c裏限制，必須要調整成功劍靈1次後才能裝備
                 ]));
         }
         setup();

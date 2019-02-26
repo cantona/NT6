@@ -146,11 +146,11 @@ void start_flag_war_count(int num) {
       		// check player have click html?
 
       	if(sizeof(all_player) < 5) {
-      		message_flag("由于人數過少本場搶旗戰取消。");
+      		message_flag("由於人數過少本場搶旗戰取消。");
       		foreach(string id in all_player) {
       			if(!me = find_player(id)) continue;
       			me->add("balance", 500000);
-      			tell_object(me, HIY"由于人數過少本場搶旗戰取消，退還報名費用。\n"NOR);
+      			tell_object(me, HIY"由於人數過少本場搶旗戰取消，退還報名費用。\n"NOR);
       		}
           clear_all_data();
           add_flag_round();
@@ -162,7 +162,7 @@ void start_flag_war_count(int num) {
           if(be = load_object(BLUE_START)) be->delete("exits");
           if(re = load_object(RED_START)) re->delete("exits");
 
-      		// 這裡開始分配隊伍      		
+      		// 這裏開始分配隊伍      		
       		foreach(string id in all_player) {
  	        if(!me = find_player(id)) {
  	         leave_player(id);
@@ -259,7 +259,7 @@ void leave_player(string id) {
       	if(!me->is_net_dead()) {
       	tell_object(me, "你一口氣逃出了戰場，來到揚州中央廣場。\n");   	
       	me->move("/d/city/guangchang");
-      	message("vision", "只見" + me->name() + "慌裡慌張的跑了過來。\n", environment(me), ({ me }));
+      	message("vision", "只見" + me->name() + "慌里慌張的跑了過來。\n", environment(me), ({ me }));
         }
       } else {
       	me->add("balance", 490000);
@@ -411,8 +411,8 @@ void drop_flag(object me, object ob)
 
 void end_flag_war()
 {
-	if(!sizeof(red)) message_flag_tell("由于"+party_str["red"]+HIG+"已經沒有人了，本場搶旗戰將在 "+END_TIME_COUNT+" 分鐘後提早結束。");
-	else if(!sizeof(blue)) message_flag_tell("由于"+party_str["blue"]+HIG+"已經沒有人了，本場搶旗戰將在 "+END_TIME_COUNT+" 分鐘後提早結束。");
+	if(!sizeof(red)) message_flag_tell("由於"+party_str["red"]+HIG+"已經沒有人了，本場搶旗戰將在 "+END_TIME_COUNT+" 分鐘後提早結束。");
+	else if(!sizeof(blue)) message_flag_tell("由於"+party_str["blue"]+HIG+"已經沒有人了，本場搶旗戰將在 "+END_TIME_COUNT+" 分鐘後提早結束。");
   message_flag_tell("本場搶旗戰將在 "+END_TIME_COUNT+" 分鐘後結束。");
   SCHEDULE_D->set_event(MIN_TIME, 0, this_object(), "end_flag_war_count", END_TIME_COUNT);		
 }
@@ -607,7 +607,7 @@ void stab_flag(object me, object ob) {
 }
 void stab_flag_count(int num, object me, object ob) {
   int reward, pa, stab_event_id;
-  string *msgs = ({"$N努力的將$n插上旗台，卻不知怎麼的插不進去。","$N用力的將$n搬上旗台，但是$N太累了偷懶休息。","$N默默的放空發著呆，不知道在想些什麼。","$N不斷的忙碌著，但卻不知道在忙些什麼。"});
+  string *msgs = ({"$N努力的將$n插上旗台，卻不知怎麼的插不進去。","$N用力的將$n搬上旗台，但是$N太累了偷懶休息。","$N默默的放空發着呆，不知道在想些什麼。","$N不斷的忙碌着，但卻不知道在忙些什麼。"});
 	if(!me || !ob || !num || !startnow) return;
 	if(me->is_fighting() || !environment(me)->query("stab_flag")) {
 		message_vision(HIY"$N裝設旗子的動作被打斷了。\n"NOR, me);

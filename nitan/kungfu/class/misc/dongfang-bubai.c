@@ -12,7 +12,7 @@ void create()
         set_name(HIR "東方不敗" NOR, ({ "dongfang bubai", "dongfang", "bubai" }) );
         set("title", HIG "影魔" NOR);
         set("long", HIR "東方不敗一生未真正敗過，若非楊蓮亭令其分心，令狐沖和\n"
-                        "任我行等人，必將死在其手下。乃金庸十四部裡出場角色武\n"
+                        "任我行等人，必將死在其手下。乃金庸十四部裏出場角色武\n"
                         "功最高者之一，不在獨孤求敗之下。\n" NOR);
 
         set("gender", "無性");
@@ -121,7 +121,7 @@ void create()
 
         }));
 
-        set("my_life", 1); // 當氣血低于10%的時候補滿一次，設置該參數為0
+        set("my_life", 1); // 當氣血低於10%的時候補滿一次，設置該參數為0
 
         setup();
 
@@ -138,13 +138,13 @@ void create()
 // 全屏傷害 毀滅一擊
 /*
 東方不敗具備毀滅一擊，隨機發動，全場100%命中，傷血及上限80%
--- 套裝對其具備克制作用，如下：$HIG$
-   -= 通玄套裝: 50%幾率抵御毀滅一擊，同時毀滅一擊若抵御失敗，傷血及上限50%$HIM$
+-- 套裝對其具備剋制作用，如下：$HIG$
+   -= 通玄套裝: 50%機率抵禦毀滅一擊，同時毀滅一擊若抵禦失敗，傷血及上限50%$HIM$
    -= 鴻鈞套裝: 具備通玄套裝的特性。同時，命中東方不敗後對其追加一次傷害和
                 忙亂效果。
                 例如本次命中東方不敗傷害為10萬，則再追加10萬傷害，同時令其
                 忙亂5至10秒。$HIR$
-   -= 造化套裝:90%幾率抵御毀滅一擊，同時毀滅一擊若抵御失敗，傷血及上限30%
+   -= 造化套裝:90%機率抵禦毀滅一擊，同時毀滅一擊若抵禦失敗，傷血及上限30%
                命中東方不敗後對其追加二次傷害和忙亂效果。例如本次命中東方不
                敗傷害為10萬，則再追加20萬傷害，同時令其忙亂5至10秒。
                命中東方不敗後70%追加封招10秒。$NOR$
@@ -161,8 +161,8 @@ void damage_all()
                 return;
         }
         
-        msg = HIG "$N" HIG "一聲尖嘯，化作兩道殘影，伴隨著此起彼伏的尖嘯，兩道殘影化作四道，四道"
-                  "化作八道，十六道，三十二道，六十四道……萬千鬼影彌漫四周，快捷無比，鬼魅怪異。"
+        msg = HIG "$N" HIG "一聲尖嘯，化作兩道殘影，伴隨着此起彼伏的尖嘯，兩道殘影化作四道，四道"
+                  "化作八道，十六道，三十二道，六十四道……萬千鬼影瀰漫四周，快捷無比，鬼魅怪異。"
                   "忽然間，金光一閃，無數銀針從四面八方激射而來，令所有人都窒息！\n" NOR;
         
         message_vision(sort_msg(msg), this_object());
@@ -188,11 +188,11 @@ void damage_all()
                 }
                 else if (tzlv == 2)
                 {
-                        // 50%抵御，若未成功，則傷害為50%
+                        // 50%抵禦，若未成功，則傷害為50%
                         if (random(2))
                         {
                                 message_vision("$N" HIG "驚恐萬分，已經毫無招架之力，突然全身一道綠光籠罩，其"
-                                                   "身穿的【通玄套裝】將所有傷害全部抵御！\n" NOR, obs[i]);
+                                                   "身穿的【通玄套裝】將所有傷害全部抵禦！\n" NOR, obs[i]);
                         }
                         else
                         {
@@ -208,7 +208,7 @@ void damage_all()
                         if (random(2))
                         {
                                 message_vision("$N" HIC "驚恐萬分，已經毫無招架之力，突然全身一道青光籠罩，其"
-                                                   "身穿的【鴻鈞套裝】將所有傷害全部抵御！\n" NOR, obs[i]);
+                                                   "身穿的【鴻鈞套裝】將所有傷害全部抵禦！\n" NOR, obs[i]);
                         }
                         else
                         {
@@ -224,8 +224,8 @@ void damage_all()
                         
                         if (1)
                         {
-                                message_vision(HIM "$N" HIM "凝神抵御，一道紫色的光芒纏繞在其周圍，【造化套裝】"
-                                                    "叮叮作響，竟將所有傷害化解于無形！\n" NOR, obs[i]);
+                                message_vision(HIM "$N" HIM "凝神抵禦，一道紫色的光芒纏繞在其周圍，【造化套裝】"
+                                                    "叮叮作響，竟將所有傷害化解於無形！\n" NOR, obs[i]);
                         }
                         else
                         {
@@ -315,7 +315,7 @@ void check_weapon()
                 me->clear_condition();
         }
 
-        // 很小幾率恢復氣血
+        // 很小几率恢復氣血
         if (random(800) == 1)
         {
                 //log_file("qilin", ctime(time()) + " 成功恢復氣血。\n");
@@ -452,7 +452,7 @@ void check_life()
         {
                 message_vision(HIR "\n$N" HIR "悲涼尖嘯：蓮亭，我去也 ……\n" NOR, this_object());
                 // 記錄
-                log_file("dongfang_die", "東方不敗于 " + ctime(time()) + " 被殺死！\n");
+                log_file("dongfang_die", "東方不敗於 " + ctime(time()) + " 被殺死！\n");
 
                 destruct(this_object());
         }
@@ -465,7 +465,7 @@ void die(object killer)
         int exp;                // 需要瓜分的經驗
         int pot;                // 需要瓜分的潛能                                                                                        
         int weiwang;            // 需要瓜分的威望
-        int score;              // 需要瓜分的閱歷
+        int score;              // 需要瓜分的閲歷
         object *t;              // 殺死我的人的隊伍列表                                                                                  
         object tob;       
         object ob;
@@ -473,7 +473,7 @@ void die(object killer)
         int i;
 
         // 定義獎勵物品列表
-        // 幾率  X / 百分之
+        // 機率  X / 百分之
         mixed oblist = ([
                 "/clone/fam/super/dugu/bldan"        : 1,
                 "/clone/fam/super/dugu/bhxdan"        : 1,
@@ -632,7 +632,7 @@ void die(object killer)
                         }
                 }
                 
-                // 30%幾率再追加一件物品
+                // 30%機率再追加一件物品
                 if (random(10) < 3)
                 {
                         s_gift = key_s_gift[random(sizeof(key_s_gift))];
@@ -650,7 +650,7 @@ void die(object killer)
                                 log_file("gift-none", s_gift + " from " + __FILE__ + "\n");
                         }                       
                 }
-                // 10%幾率再追加一件
+                // 10%機率再追加一件
                 if (random(10) == 1)
                 {
                         s_gift = key_s_gift[random(sizeof(key_s_gift))];
@@ -669,7 +669,7 @@ void die(object killer)
                         }
                 }
 */
-                // 40%的幾率掉東西
+                // 40%的機率掉東西
                 if (random(100) < 40) 
                 {
                         ran = random(100);
@@ -713,7 +713,7 @@ void die(object killer)
                                 }
                         }
 
-                        if (random(100) < 5)// 魅影劍法或天擎秘氣 5% 隨機一件
+                        if (random(100) < 5)// 魅影劍法或天擎祕氣 5% 隨機一件
                         {
                                 switch(random(3))
                                 {
@@ -741,7 +741,7 @@ void die(object killer)
                 }
         }
         
-        // 5/100幾率掉出無名銅人
+        // 5/100機率掉出無名銅人
         if (random(100) < (5+5*query_temp("apply/magic_find", dob)/100))
         {
                 object ob_tongren;
@@ -756,8 +756,8 @@ void die(object killer)
         GIFT_D->fuben_boss_gift(this_object()); 
                                 
 /*
-        // 20%幾率掉出特殊物品
-        // 同時有50%幾率掉出2件
+        // 20%機率掉出特殊物品
+        // 同時有50%機率掉出2件
         if (random(10) < 2)
         {       
                 gift_huoyan = new(huoyan);
@@ -767,7 +767,7 @@ void die(object killer)
                 message_vision(HIW "叮~~一聲，從$N" HIW "身上掉出" + gift_huoyan->name() + 
                                HIW "，落在地上。\n" NOR, this_object());
 
-                //log_file("qilin_gift", "火麒麟于 " + ctime(time()) + " 掉出火眼之戒。\n");
+                //log_file("qilin_gift", "火麒麟於 " + ctime(time()) + " 掉出火眼之戒。\n");
         }
 */
         // 檢查生命

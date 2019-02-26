@@ -27,7 +27,7 @@ void reset_buginfo()
                 buginfo += ({ restore_variable(read_file(DATA_PATH+file)) });
 }
 
-// 蹈堤 Bug 蹈桶
+// 列出 Bug 列表
 string list_bug(int options)
 {
         int len;
@@ -45,10 +45,10 @@ string list_bug(int options)
                 list_buginfo = buginfo;
 
         list_buginfo = sort_array(list_buginfo, (: (to_int($1["number"]) < to_int($2["number"])) ? 1 : -1 :));
-        listmsg =  "\n"+MUD_FULL_NAME+HIY" 堪單隙惆炵苀\n"NOR;
-        listmsg += WHT"岸岸岸岸岸岸岸岸岸岸岸岸岸岸岸岸岸岸岸岸岸岸岸岸岸岸岸岸岸岸岸岸岸岸岸岸岸\n"NOR;
-        listmsg += "晤瘍 隙惆氪                   翋枙                          揭燴袨怓  隙茼\n";
-        listmsg += WHT"岸岸岸岸岸岸岸岸岸岸岸岸岸岸岸岸岸岸岸岸岸岸岸岸岸岸岸岸岸岸岸岸岸岸岸岸岸\n"NOR;
+        listmsg =  "\n"+MUD_FULL_NAME+HIY" 臭蟲回報系統\n"NOR;
+        listmsg += WHT"─────────────────────────────────────\n"NOR;
+        listmsg += "編號 回報者                   主題                          處理狀態  迴應\n";
+        listmsg += WHT"─────────────────────────────────────\n"NOR;
 
         foreach( mapping data in list_buginfo )
         {
@@ -61,23 +61,23 @@ string list_bug(int options)
                                    data["author_idname"], data["title"], data["status"],
                                    sizeof(data["reply"]) ? sizeof(data["reply"])+"" : "");
         }
-        listmsg += WHT"岸岸岸岸岸岸岸岸岸岸岸岸岸岸岸岸岸岸岸岸岸岸岸岸岸岸岸岸岸岸岸岸岸岸岸岸岸\n"NOR;
+        listmsg += WHT"─────────────────────────────────────\n"NOR;
 
         if( options & LIST_OPT_ALL )
-                listmsg += "蹈堤垀衄隙惆訧蹋\n";
+                listmsg += "列出所有回報資料\n";
         else
-                listmsg += "蹈堤郔輪 "+DEFAULT_LOAD+" 砐隙惆訧蹋\n";
+                listmsg += "列出最近 "+DEFAULT_LOAD+" 項回報資料\n";
 
         return listmsg;
 }
 
-// 陔崝 Bug 訧蹋
+// 新增 Bug 資料
 string add_bug(object me, string title, string content)
 {
         mapping bugdata = allocate_mapping(0);
 
         if( !objectp(me) || !stringp(title) || !stringp(content) )
-                error("BUG_D add_bug() 渣昫怀統杅");
+                error("BUG_D add_bug() 錯誤輸入參數");
 
         bugdata["time"] = time();
         bugdata["where"] = base_name(environment(me));
@@ -89,7 +89,7 @@ string add_bug(object me, string title, string content)
         bugdata["title"] = title;
         bugdata["content"] = content;
 
-        bugdata["status"] = HIR"帤揭燴"NOR;
+        bugdata["status"] = HIR"未處理"NOR;
 
         bugdata["reply"] = allocate(0);
 
@@ -97,28 +97,28 @@ string add_bug(object me, string title, string content)
         if( write_file(DATA_PATH+bugdata["number"], save_variable(bugdata)) )
                 reset_buginfo();
         else
-                error("BUG_D 拸楊揣湔陔崝 bug 訧蹋");
+                error("BUG_D 無法儲存新增 bug 資料");
 
-        CHANNEL_D->channel_broadcast("sys", HIW+me->query_idname()+HIW"陔崝 Bug 隙惆ㄛ※"+title+NOR+HIW"§ㄛ晤瘍ㄩ"+bugdata["number"]+"﹝");
+        CHANNEL_D->channel_broadcast("sys", HIW+me->query_idname()+HIW"新增 Bug 回報，“"+title+NOR+HIW"”，編號："+bugdata["number"]+"。");
 
         return bugdata["number"];
 }
 
-// 隙茼 Bug 揭燴倛
+// 迴應 Bug 處理情形
 varargs void reply_bug(object me, string number, string status, string message)
 {
         mapping data;
 
         if( !bug_exists(number) )
-                error("BUG_D reply_bug() 拸森紫偶");
+                error("BUG_D reply_bug() 無此檔案");
         else
                 data = restore_variable(read_file(DATA_PATH+number));
 
         data["status"] = status;
-        CHANNEL_D->channel_broadcast("sys", me->query_idname()+"党蜊晤瘍菴 "+number+" 瘍 Bug 揭燴袨錶峈※"+status+"§");
+        CHANNEL_D->channel_broadcast("sys", me->query_idname()+"修改編號第 "+number+" 號 Bug 處理狀況為“"+status+"”");
 
         if( find_player(data["author_id"]) )
-                tell_object(find_player(data["author_id"]), me->query_idname()+"隙茼晤瘍菴 "+number+" 瘍 Bug 揭燴袨錶峈※"+status+"§﹝\n");
+                tell_object(find_player(data["author_id"]), me->query_idname()+"迴應編號第 "+number+" 號 Bug 處理狀況為“"+status+"”。\n");
 
         if( !undefinedp(message) )
         {
@@ -126,28 +126,28 @@ varargs void reply_bug(object me, string number, string status, string message)
                         data["reply"] = allocate(0);
 
                 data["reply"] += ({ ({ me->query_idname(), message }) });
-                CHANNEL_D->channel_broadcast("sys", me->query_idname()+"怀晤瘍菴 "+number+" 瘍 Bug 揭燴隙茼");
+                CHANNEL_D->channel_broadcast("sys", me->query_idname()+"輸入編號第 "+number+" 號 Bug 處理迴應");
         }
 
         write_file(DATA_PATH+number, save_variable(data), 1);
         reset_buginfo();
 }
 
-// 痄壺 Bug 訧蹋
+// 移除 Bug 資料
 varargs void remove_bug(object me, string number, int reply)
 {
         if( !bug_exists(number) )
-                error("BUG_D remove_bug() 拸森紫偶");
+                error("BUG_D remove_bug() 無此檔案");
 
-        // 刉壺淕跺 Bug 訧捅
+        // 刪除整個 Bug 資訊
         if( undefinedp(reply) )
         {
                 if( !rm(DATA_PATH+number) )
-                        error("BUG_D remove_bug() 拸楊刉壺紫偶");
+                        error("BUG_D remove_bug() 無法刪除檔案");
 
                 reset_buginfo();
         }
-        // 刉壺笢珨跺隙茼訧蹋
+        // 刪除其中一個迴應資料
         else
         {
                 mapping data = restore_variable(read_file(DATA_PATH+number));
@@ -167,7 +167,7 @@ varargs void remove_bug(object me, string number, int reply)
         }
 }
 
-// 脤戙 Bug 訧蹋
+// 查詢 Bug 資料
 string query_bug(string number)
 {
         string bugmsg;
@@ -175,7 +175,7 @@ string query_bug(string number)
         int len;
 
         if( !bug_exists(number) )
-                error("BUG_D query_bug() 拸森紫偶");
+                error("BUG_D query_bug() 無此檔案");
         else
                 data = restore_variable(read_file(DATA_PATH+number));
 
@@ -185,11 +185,11 @@ string query_bug(string number)
                 len = color_len(data["status"]);
 #endif
 
-        bugmsg =  sprintf(HIM"晤瘍"NOR" %-20s "HIM"翋枙"NOR" %s\n"NOR, data["number"], data["title"]);
-        bugmsg += sprintf(HIM"奀潔"NOR" %-20s "HIM"隙惆"NOR" %s\n", TIME_D->replace_ctime(data["time"]), data["author_idname"]);
-        bugmsg += sprintf(HIM"袨錶"NOR" %-"+(20+len)+"s "HIM"隙茼"NOR" %d\n", data["status"], sizeof(data["reply"]));
-        bugmsg += sprintf(HIM"華萸"NOR" %s\n", data["where"]);
-        bugmsg += WHT"岸岸岸岸岸岸岸岸岸岸岸岸岸岸岸岸岸岸岸岸岸岸岸岸岸岸岸岸岸岸岸岸岸岸岸岸岸\n"NOR;
+        bugmsg =  sprintf(HIM"編號"NOR" %-20s "HIM"主題"NOR" %s\n"NOR, data["number"], data["title"]);
+        bugmsg += sprintf(HIM"時間"NOR" %-20s "HIM"回報"NOR" %s\n", TIME_D->replace_ctime(data["time"]), data["author_idname"]);
+        bugmsg += sprintf(HIM"狀況"NOR" %-"+(20+len)+"s "HIM"迴應"NOR" %d\n", data["status"], sizeof(data["reply"]));
+        bugmsg += sprintf(HIM"地點"NOR" %s\n", data["where"]);
+        bugmsg += WHT"─────────────────────────────────────\n"NOR;
         bugmsg += data["content"]+"\n";
 
         if( sizeof(data["reply"]) )
@@ -199,12 +199,12 @@ string query_bug(string number)
                 foreach( string *reply in data["reply"] )
                 {
                         replies++;
-                        bugmsg += HIY"\n\n*** 菴 "+replies+" 隙茼ㄩ"+reply[REPLY_AUTHOR]+HIY+" ***\n"NOR;
+                        bugmsg += HIY"\n\n*** 第 "+replies+" 篇迴應："+reply[REPLY_AUTHOR]+HIY+" ***\n"NOR;
                         bugmsg += reply[REPLY_MESSAGE]+NOR"\n";
                 }
         }
 
-        bugmsg += WHT"岸岸岸岸岸岸岸岸岸岸岸岸岸岸岸岸岸岸岸岸岸岸岸岸岸岸岸岸岸岸岸岸岸岸岸岸岸\n"NOR;
+        bugmsg += WHT"─────────────────────────────────────\n"NOR;
 
         return bugmsg;
 }
@@ -215,5 +215,5 @@ void create()
 }
 string query_name()
 {
-        return "堪單隙惆炵苀(BUG_D)";
+        return "臭蟲回報系統(BUG_D)";
 }

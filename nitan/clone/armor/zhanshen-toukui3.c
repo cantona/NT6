@@ -14,7 +14,7 @@ void create()
         else {
                 set("material", "steel");
                 set("unit", "頂");
-                set("long", HIM "這是一頂鐵制的頭盔，用以保護頭部。\n" NOR);
+                set("long", HIM "這是一頂鐵製的頭盔，用以保護頭部。\n" NOR);
                 set("value", 1500000);
                 set("armor_prop/armor", 300);
         }

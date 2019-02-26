@@ -5,7 +5,7 @@ void create()
 {
         set("short", "塔頂");
         set("long", @LONG
-這是舍利塔塔頂，室中孤零零地放著一張供桌(zhuozi)。
+這是舍利塔塔頂，室中孤零零地放着一張供桌(zhuozi)。
 LONG );
         set("outdoors", "tianlongsi");
         set("exits", ([

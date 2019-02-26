@@ -6,7 +6,7 @@ void create()
         set("short", "石洞");
         set("long", @LONG
 這是一個石洞，也不知走了多久，只覺越走越低，洞中出現了
-流水之聲，淙淙爭爭，清脆悅耳，如擊玉磬。
+流水之聲，淙淙爭爭，清脆悦耳，如擊玉磬。
 LONG );
         set("exits", ([
                "east" : __DIR__"dongmen",

@@ -4,7 +4,7 @@ void create()
         set_name("幽冥大鵬", ({ "death roc" }) );
         set("race", "野獸");
         set("age", 25);
-        set("long", "一只外形十分兇猛的大鵬鳥。\n");
+        set("long", "一隻外形十分兇猛的大鵬鳥。\n");
         set("str",100);
         set("limbs", ({ "頭部", "身體", "尾巴" }) );
        set("verbs", ({ "bite", "claw" }) );

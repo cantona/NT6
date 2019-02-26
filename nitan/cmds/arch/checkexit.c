@@ -1,7 +1,7 @@
 // checkexit.c
 // Created by jjgod
 // Updated by Lonely (06/17/2002)
-// 用于檢查一個目錄下的所有房間文件的出口連接是否正確
+// 用於檢查一個目錄下的所有房間文件的出口連接是否正確
 // 不包括該目錄的子目錄
 
 #include <ansi.h>

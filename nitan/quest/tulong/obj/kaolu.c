@@ -9,7 +9,7 @@ void create()
             set("unit", "個");
             set("value", 100);
             set("material", "stone");
-            set("long", "一個紅泥制成的小烤爐，你似乎可以用它烤（ｆｒｙ）些什麼\n");
+            set("long", "一個紅泥製成的小烤爐，你似乎可以用它烤（ｆｒｙ）些什麼\n");
           }
 
     setup();
@@ -56,7 +56,7 @@ int do_kao(string arg)
            set("decayed", decayed, meat);
            meat->move(me);
             }
-        message_vision("$N將$n切成片放到小烤爐裡，$n一會兒就變成了一串香噴噴的烤
+        message_vision("$N將$n切成片放到小烤爐裏，$n一會兒就變成了一串香噴噴的烤
 肉串。\n", me, tar);
         tar->move(environment(me));
         destruct(tar);

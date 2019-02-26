@@ -2,10 +2,10 @@ inherit NPC;
 
 void create()
 {
-        set_name("鰲府侍衛", ({ "shi wei", "shi", "wei" }));
+        set_name("鰲府侍衞", ({ "shi wei", "shi", "wei" }));
         set("age", 22);
         set("gender", "男性");
-        set("long", "一個身材彪悍的官兵，提著刀守衛著鰲拜府。\n");
+        set("long", "一個身材彪悍的官兵，提着刀守衞着鰲拜府。\n");
         set("attitude", "peaceful");
 
         set("str", 25);

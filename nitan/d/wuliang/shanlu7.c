@@ -7,8 +7,8 @@ void create()
 {
         set("short", "山路");
         set("long", @LONG
-上山的山路從這裡開始有了青石舖墊。不過腳底仍是生澀難耐。
-向下的山路轉入一個山坳。山坳裡冒著青煙，竟有十幾束之多，在這
+上山的山路從這裏開始有了青石鋪墊。不過腳底仍是生澀難耐。
+向下的山路轉入一個山坳。山坳裏冒着青煙，竟有十幾束之多，在這
 山清水秀的地方，隱隱覺得有點不對勁。
 LONG );
         set("outdoors", "wuliang");
@@ -32,6 +32,6 @@ int valid_leave(object me, string dir)
 
         if (objectp(present("rong ziju", environment(me))) &&
                 dir == "northup")
-           return notify_fail("容子矩攔住你說：神農幫肆虐，你是何人？難保不是姦細，不得上山！\n");
+           return notify_fail("容子矩攔住你説：神農幫肆虐，你是何人？難保不是奸細，不得上山！\n");
         return ::valid_leave(me, dir);
 }

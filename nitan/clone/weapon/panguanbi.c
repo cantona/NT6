@@ -15,7 +15,7 @@ void create()
                 "筆頭縛有一簇沾過墨的羊毛。\n");
         set("unit","支");
         set("value",200);
-        set("wield_msg","$N把判官筆取在手中，說：你我好朋友，我這禿筆上就不蘸墨了。\n");
+        set("wield_msg","$N把判官筆取在手中，説：你我好朋友，我這禿筆上就不蘸墨了。\n");
         set("unwield_msg","$N把收了起來。\n");
         set("material", "iron");
     }

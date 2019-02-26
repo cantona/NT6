@@ -14,7 +14,7 @@ void create()
                 set_default_object(__FILE__);
         else {
                 set("unit", "把");
-                set("long", HIR "這是一把纏在腰間的寶刀，刀鋒帶著淡淡的血影。\n" NOR );
+                set("long", HIR "這是一把纏在腰間的寶刀，刀鋒帶着淡淡的血影。\n" NOR );
                 set("value", 1000);
                 set("material", "steel");
                 set("wield_msg", "$N「唰」的一聲抽出一柄$n握在手中。\n");
@@ -68,7 +68,7 @@ int do_unwield(string arg)
         string str;
         int i;
 
-        if( !arg ) return notify_fail("你要脫掉什麼？\n");
+        if( !arg ) return notify_fail("你要脱掉什麼？\n");
 
         if( !objectp(ob = present(arg, me)) )
                 return notify_fail("你身上沒有這樣東西。\n");

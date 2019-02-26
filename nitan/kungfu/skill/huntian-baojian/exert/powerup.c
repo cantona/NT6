@@ -14,7 +14,7 @@ int exert(object me, object target)
         name = force_name[random(sizeof(force_name))];
 
         if (target != me)
-                return notify_fail("你只能用渾天寶鑒來提升自己的戰鬥力。\n");
+                return notify_fail("你只能用渾天寶鑑來提升自己的戰鬥力。\n");
 
         if( query("neili", me)<150 )
                 return notify_fail("你的內力不夠。\n");
@@ -26,7 +26,7 @@ int exert(object me, object target)
         addn("neili", -100, me);
         me->receive_damage("qi", 0);
 
-        message_combatd(HIW "$N" HIW "微一凝神，運起渾天寶鑒之「" + name +
+        message_combatd(HIW "$N" HIW "微一凝神，運起渾天寶鑑之「" + name +
                         HIW "」心法，一股氣流頓將你震退數步。\n" NOR, me);
 
         addn_temp("apply/attack", skill/2, me);
@@ -49,6 +49,6 @@ void remove_effect(object me, int amount)
                 addn_temp("apply/attack", -amount, me);
                 addn_temp("apply/defense", -amount, me);
                 delete_temp("powerup", me);
-                tell_object(me, "你的渾天寶鑒運行完畢，將內力收回丹田。\n");
+                tell_object(me, "你的渾天寶鑑運行完畢，將內力收回丹田。\n");
         }
 }

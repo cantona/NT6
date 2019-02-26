@@ -25,7 +25,7 @@ mapping *bangjobs = ({
 
         ([      "name"  :  "回回",
                 "file"  :  "/d/quanzhou/npc/huihui",
-                "area"  :  "清凈寺",
+                "area"  :  "清淨寺",
                 "type"  :  "殺",
                 "bonus" :  15,
                 "score" :  8,
@@ -113,7 +113,7 @@ mapping *bangjobs = ({
                 "score" :  8,
         ]),
 
-        ([      "name"  :  "人參果",
+        ([      "name"  :  "人蔘果",
                 "file"  :  "/clone/medicine/nostrum/renshenguo",
                 "type"  :  "尋",
                 "bonus" :  60,
@@ -162,7 +162,7 @@ mapping *bangjobs = ({
                 "score" :  8,
         ]),
 
-        ([      "name"  :  "人參",
+        ([      "name"  :  "人蔘",
                 "file"  :  "/clone/medicine/vegetable/renshen",
                 "type"  :  "尋",
                 "bonus" :  40,
@@ -204,7 +204,7 @@ mapping *bangjobs = ({
                 "score" :  3,
         ]),
 
-        ([      "name"  :  "藍玉砵",
+        ([      "name"  :  "藍玉缽",
                 "file"  :  "/d/xingxiu/obj/lanyubo",
                 "type"  :  "尋",
                 "bonus" :  10,

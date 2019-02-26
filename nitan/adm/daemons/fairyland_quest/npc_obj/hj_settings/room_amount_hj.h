@@ -7,7 +7,7 @@
 // 務必注意，該數字必須整十，沒有糾錯設置！
 
 
-// 本文件必須放置于  npc_obj 目錄內。
+// 本文件必須放置於  npc_obj 目錄內。
 // 主目錄調用時，使用如： #include "npc_obj/hj_settings/room_amount_hj.h" 語句。
 
 #define        HJ_ROOM_AMOUNT        60

@@ -8,7 +8,7 @@ void create()
 
         set("race", "野獸");
         set("long", GRN "\n\n一條長達數十丈的神龍，乃四神獸之一。它騰\n"
-                        "雲駕霧，張牙舞爪，口中噴著熊熊烈火。\n" NOR);
+                        "雲駕霧，張牙舞爪，口中噴着熊熊烈火。\n" NOR);
         set("age", 10000);
         set("attitude", "peaceful");
 
@@ -87,7 +87,7 @@ void die()
             userp(me) )
         {
                 message_vision(HIC "$N" HIC "從青龍的屍體上除下了一根龍筋和"
-                               "一只龍膽。\n", me);
+                               "一隻龍膽。\n", me);
                 jin->move(me);
                 dan->move(me);
                 delete("wang_get/龍膽", me);
@@ -97,7 +97,7 @@ void die()
                 if( query("potential", me)>me->query_potential_limit() )
                 set("potential", me->query_potential_limit(), me);
 
-                tell_object(me, HIC "由于你斬殺神獸青龍，你獲得了" + chinese_number(exp)
+                tell_object(me, HIC "由於你斬殺神獸青龍，你獲得了" + chinese_number(exp)
                                 + "點經驗和" + chinese_number(pot) + "點潛能。\n" NOR);
         }
 
@@ -105,13 +105,13 @@ void die()
             query("wang_get/龍膽", me) && 
             userp(me) )
         {
-                message_vision(HIC "$N" HIC "從青龍的屍體上除下了一只龍膽。\n", me);
+                message_vision(HIC "$N" HIC "從青龍的屍體上除下了一隻龍膽。\n", me);
                 dan->move(me);
                 delete("wang_get/龍膽", me);
                 addn("combat_exp", exp, me);
                 addn("potential", pot, me);
 
-                tell_object(me, HIC "由于你斬殺神獸青龍，你獲得了" + chinese_number(exp)
+                tell_object(me, HIC "由於你斬殺神獸青龍，你獲得了" + chinese_number(exp)
                                 + "點經驗和" + chinese_number(pot) + "點潛能。\n" NOR);
         }
 

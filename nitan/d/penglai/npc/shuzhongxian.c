@@ -16,7 +16,7 @@ void create()
 {
         set_name(HIW "書中仙" NOR, ({ "shuzhong xian", "shuzhong", "xian" }));
                 
-        set("long", HIW "這位仙人乃大名鼎鼎的書中仙，據說天上地下之事他無所不知，神通廣大。\n" NOR);
+        set("long", HIW "這位仙人乃大名鼎鼎的書中仙，據説天上地下之事他無所不知，神通廣大。\n" NOR);
 
         set("gender", "男性");
         set("age", 9999);
@@ -48,11 +48,11 @@ void create()
         map_skill("unarmed", "yinyang-shiertian");
         
         set("inquiry", ([
-                "如何不被仙氣困擾"       :   "這仙氣的困擾對于你們凡人來說是無可避免的，不過只要你能回答我的幾個難題，\n"
+                "如何不被仙氣困擾"       :   "這仙氣的困擾對於你們凡人來説是無可避免的，不過只要你能回答我的幾個難題，\n"
                                              "本仙人到是可以教你如何減少仙氣對你的困擾。\n",
-                "難題"                   :   "我這裡總共有六道難題，如果你能按順序逐一解決，我便教你如何減少被仙氣困擾的方法。\n",                            
-                "解決難題"               :   "你想好了就在這裡找我吧，按照順序如第一道題你就 ask xian about 難題一 。\n",
-                "如何答復"               :   "每道題目都是一首詩的一部分，答案是一樣物品，你找到這個物品交給我就行了。\n",
+                "難題"                   :   "我這裏總共有六道難題，如果你能按順序逐一解決，我便教你如何減少被仙氣困擾的方法。\n",                            
+                "解決難題"               :   "你想好了就在這裏找我吧，按照順序如第一道題你就 ask xian about 難題一 。\n",
+                "如何答覆"               :   "每道題目都是一首詩的一部分，答案是一樣物品，你找到這個物品交給我就行了。\n",
                 "蓬萊仙島"               :   "這不是你該來的地方，我看你還是快走吧。\n",
                 "難題一"                 :   (: ask_nanti1 :),
                 "難題二"                 :   (: ask_nanti2 :),
@@ -122,7 +122,7 @@ string ask_nanti3()
         string str;
         
         me = this_player();
-        str = HIC "“彩衣天授浮生夢，粉翅風憐浪客詩。”\n“獨步尋花花謝早，相思寄月月難知。”" NOR;
+        str = HIC "“綵衣天授浮生夢，粉翅風憐浪客詩。”\n“獨步尋花花謝早，相思寄月月難知。”" NOR;
         
         if (me->query("penglai/go_quest/ok"))
                 return "我的六道難題你都解決了，不錯，不錯。";
@@ -194,7 +194,7 @@ string ask_nanti6()
         string str;
         
         me = this_player();
-        str = HIC "“勸君莫嗟嘆，精神可勝兵；”\n“充塞天和地，懷抱浪與星。”" NOR;
+        str = HIC "“勸君莫嗟歎，精神可勝兵；”\n“充塞天和地，懷抱浪與星。”" NOR;
         
         if (me->query("penglai/go_quest/ok"))
                 return "我的六道難題你都解決了，不錯，不錯。";
@@ -216,7 +216,7 @@ int accept_object(object me, object obj)
         
         if (me->query("penglai/go_quest/ok"))
         {
-                command("say 閣下智慧超群，佩服佩服。");
+                command("say 閣下智慧超羣，佩服佩服。");
                 return 0;
         }
         
@@ -282,7 +282,7 @@ int accept_object(object me, object obj)
                             command("say 本仙人從不亂收別人東西。");
                             return 0;                
                         break;                
-                // 鬆葉
+                // 松葉
                 case 5:
                         if (obj->query("id") == "penglai songye" &&
                                 base_name(obj) == "/d/penglai/obj/songye")
@@ -303,7 +303,7 @@ int accept_object(object me, object obj)
                                 base_name(obj) == "/d/penglai/obj/zhuye")
                             {
                                     command("nod");
-                                    command("say 很好，很好，閣下智慧超群，將老仙難題逐一解答。");
+                                    command("say 很好，很好，閣下智慧超羣，將老仙難題逐一解答。");
                                     destruct(obj);
                                     command("say 本仙人便教你如何減少仙氣的困擾，你可記好了 ……");
                                     tell_object(me, HIG "恭喜你，已經學會了如何減少島上仙氣對你的困擾。\n" NOR);

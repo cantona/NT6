@@ -1,10 +1,10 @@
 
 /*
  * 物件： 城市精靈(City Maker) V1.0
- * 作者： 冰河 (Glacier@﹝雪域．黑潮﹞)
+ * 作者： 冰河 (Glacier@［雪域．黑潮］)
  * 日期： 2001/01/11
- * 備注： ES_Base_Code
- * 修改： 功能模塊修改成向導方式，加入地圖檔錯誤判斷。
+ * 備註： ES_Base_Code
+ * 修改： 功能模塊修改成嚮導方式，加入地圖檔錯誤判斷。
  *        任何時候輸入點 "."，都可以放棄編輯。
  *                            Glacier -- 2001.2.20
  *
@@ -69,7 +69,7 @@ int process_map(string file)
                 if (strsrch(icons1[i],"\t")!=-1 || strsrch(icons1[i],".")==-1)
                 {
                 write("[ Citymaker ]：房間標識位錯誤，請檢查地圖第一行標識位[ "+ j +" == "+icons1[i]+" ]處。\n");
-                write("[ Citymaker ]：含有制表符或者<房間標識.房間名稱>之間不含分割符\".\"。\n");
+                write("[ Citymaker ]：含有製表符或者<房間標識.房間名稱>之間不含分割符\".\"。\n");
                 return 0;
                 }            
             }
@@ -102,7 +102,7 @@ int process_map(string file)
                 if (strsrch(line[i],"\t")!=-1)
                 {
                 write("[ Citymaker ]：房間標識位錯誤，請檢查地圖第["+j+"]行[ "+line[i]+" ]處。\n");
-                write("[ Citymaker ]：含有制表符。\n");
+                write("[ Citymaker ]：含有製表符。\n");
                 return 0;
                 }               
                 for (_Tcol=sizeof(line[i]);_Tcol<_Mcol;_Tcol++)
@@ -281,7 +281,7 @@ int set_path(string arg)
                 {
                         current_path=dir;
                         write("[ Citymaker ]：自動設定存儲檔案目錄為當前目錄[ "+current_path+" ]。\n");
-                        write("[ Citymaker ]：請設定戶外房間類型(例如：c,g 則地圖為 c、g 的房間將被設定為戶外)：");
+                        write("[ Citymaker ]：請設定户外房間類型(例如：c,g 則地圖為 c、g 的房間將被設定為户外)：");
                         input_to("set_outdoors_room");
                         return 1;
                 } else return notify_fail("[ Citymaker ]：無法自動設定目錄，放棄操作。\n");
@@ -293,7 +293,7 @@ int set_path(string arg)
                 if(dir[strlen(dir)-1]!='/') dir += "/";
                 current_path=dir;
                 write("[ Citymaker ]：設定存儲檔案目錄為[ "+current_path+" ]。\n");
-                write("[ Citymaker ]：請設定戶外房間類型(例如：c,g 則地圖為 c、g 的房間將被設定為戶外)：");
+                write("[ Citymaker ]：請設定户外房間類型(例如：c,g 則地圖為 c、g 的房間將被設定為户外)：");
                 input_to("set_outdoors_room");                
         }
                 return 1;        
@@ -306,8 +306,8 @@ int set_outdoors_room(string arg)
         if (arg == ".") { write ("[ Citymaker ]：放棄本次操作。\n"); return 1; }     
         if (strsrch(argt," ")!=-1 )
         {
-        write("[ Citymaker ]：戶外房間類型設定錯誤，不允許出現\" \"。\n");
-        write("[ Citymaker ]：請設定戶外房間類型(例如：c,g 則地圖為 c、g 的房間將被設定為戶外)：");      
+        write("[ Citymaker ]：户外房間類型設定錯誤，不允許出現\" \"。\n");
+        write("[ Citymaker ]：請設定户外房間類型(例如：c,g 則地圖為 c、g 的房間將被設定為户外)：");      
         input_to ( "set_outdoors_room" );       
         return 1;
         }
@@ -316,21 +316,21 @@ int set_outdoors_room(string arg)
         {
         test=tmp[i];
         if (strlen(test)>1) {
-                write("[ Citymaker ]：戶外房間設定錯誤，房間標識長度應為單個字符。\n");
-                write("[ Citymaker ]：請設定戶外房間類型(例如：c,g 則地圖為 c、g 的房間將被設定為戶外)：");
+                write("[ Citymaker ]：户外房間設定錯誤，房間標識長度應為單個字符。\n");
+                write("[ Citymaker ]：請設定户外房間類型(例如：c,g 則地圖為 c、g 的房間將被設定為户外)：");
                 input_to ( "set_outdoors_room" );       
                 return 1;               
                 }
         }
         if(!arg) 
         {
-        write ("[ Citymaker ]：設定所有房間為戶外...OK。\n");
+        write ("[ Citymaker ]：設定所有房間為户外...OK。\n");
         }
         outdoors_room=(explode(lower_case(arg),","));
         for (i=0;i<sizeof(outdoors_room);i++)
         {
         outdoors=outdoors_room[i];
-        write("[ Citymaker ]：設定房間[ "+outdoors+" ]為戶外...OK。\n");
+        write("[ Citymaker ]：設定房間[ "+outdoors+" ]為户外...OK。\n");
         }
         write("[ Citymaker ]：設定完成，Citymaker 將會生成城市檔案，請確認(y/n)：");
         input_to("confirm_make");   
@@ -372,16 +372,16 @@ int do_help(string arg)
         if(arg=="citymaker" ||arg== "maker")
         {
                 write(@HELP_LONG
-城市精靈 V1.1 ( 2001.2)            - By Glacier@﹝雪域．黑潮﹞
+城市精靈 V1.1 ( 2001.2)            - By Glacier@［雪域．黑潮］
                                      Email:wizard@game.com.cn
                                      
 這個是一個為方便巫師工作的城市工具，可以快速建立完整的區域結構。
 
-1.編輯地圖檔, 范例如下：
+1.編輯地圖檔, 範例如下：
 -----------------------------------------------------------------
 a.客房.kefang b.廂房.xiangfang c.走廊.zoulang d.大廳.dating
 e.廚房.chufang f.花園.huayuan g.大門.damen h.內室.neishi
-(注意：上兩行應合並為一行，由于過寬，為了便于顯示，所以在這裡分為兩行)
+(注意：上兩行應合併為一行，由於過寬，為了便於顯示，所以在這裏分為兩行)
   g   b
   |  / \
 b-c-b   b
@@ -390,23 +390,24 @@ a-d-a b
   |
 h-f-e
 ------------------------------------------------------------------
-地圖說明：   本地圖檔所加邊框(---)，為解釋地圖所用，實際地圖中沒有。
+地圖説明：   本地圖檔所加邊框(---)，為解釋地圖所用，實際地圖中沒有。
              地圖第一行為圖例，採用<房間標識.房間名稱.房間文件名>的
              方式，即a代表客房，地圖中所有a均被處理成客房。 房間標
-             識、房間名稱和房間文件名之間用〝.〝分割。
-             用〝-、\、/、|〝來表示常用的的八中通路(不考慮地形)即：
+             識、房間名稱和房間文件名之間用＂.＂分割。
+             用＂-、\、/、|＂來表示常用的的八中通路(不考慮地形)即：
              west、east、northwest、southeast、northeast、southwest
              north、south。
-注意事項：   所有房間均應在第一行有圖例說明，否則將無法正常生成房間。
-             地圖中所有字符均為半角字符，只允許出現空格〝 〝，不允許
-             出現制表符 \t 。為避免出錯請嚴格按造本地圖檔建立。
+注意事項：   所有房間均應在第一行有圖例説明，否則將無法正常生成房間。
+             地圖中所有字符均為半角字符，只允許出現空格＂ ＂，不允許
+             出現製表符 \t 。為避免出錯請嚴格按造本地圖檔建立。
 2. 指令格式：make <地圖檔>  ( 最好把城市名作為地圖檔名稱， 這是因為
              Citymaker 在設置outdoors房間的時候使用地圖檔名作為房間
              的所屬城市。)
 3. Citymaker 需要設定存放檔案的路徑： <目錄名> (默認為當前所在目錄)。
-4. Citymaker 需要設定戶外的房間：<戶外房間標識,戶外房間標識,...
-             所設定的房間將被設定為戶外(默認為室內)。       
-5. 如果以上設定無誤，確認後 Citymaker 會批量生成城市檔案。(確認後本□             序將直接改寫重名文件，所以請注意你所者設置的存儲目錄。
+4. Citymaker 需要設定户外的房間：<户外房間標識,户外房間標識,...
+             所設定的房間將被設定為户外(默認為室內)。       
+5. 如果以上設定無誤，確認後 Citymaker 會批量生成城市檔案。(確認後本
+             序將直接改寫重名文件，所以請注意你所者設置的存儲目錄。
 6. 本程序歡迎修改，但請保留原作者名。       
 
 HELP_LONG);

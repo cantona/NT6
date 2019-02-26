@@ -168,14 +168,14 @@ void checking(object ob)
         if( !living(me) || is_fighting() ) return;
         if( environment() != environment(ob) ) return;
         if( !random(2) )
-                message_vision("$N雙手抱拳，牛裡牛氣地說道：見到本幫主，難道沒有任何表示嗎？\n", me);
-        else    message_vision("$N說道：還不趕快加入" + query("party/party_name") + "！！！\n", me);
+                message_vision("$N雙手抱拳，牛裏牛氣地説道：見到本幫主，難道沒有任何表示嗎？\n", me);
+        else    message_vision("$N説道：還不趕快加入" + query("party/party_name") + "！！！\n", me);
 }
 
 int ask_me(string arg)
 {
         message_vision("$N「哈哈哈」大笑幾聲。\n", this_object());
-        message_vision("$N說道：" + arg + "威震江湖，指日可待！哈！哈！哈！\n", this_object());
+        message_vision("$N説道：" + arg + "威震江湖，指日可待！哈！哈！哈！\n", this_object());
         return 1;
 }
 
@@ -202,7 +202,7 @@ int accept_kill(object me)
         object *follower, *obj = ({}), room;
         int i, temp;
 
-        say(name() + "說道：你想謀害本幫主，當真是吃了熊心豹子膽了！！\n");
+        say(name() + "説道：你想謀害本幫主，當真是吃了熊心豹子膽了！！\n");
 
         follower = query("follower");
         room = environment();
@@ -215,10 +215,10 @@ int accept_kill(object me)
 
         if( !(temp = sizeof(obj)) ) return 1;
 
-        say(name() + "說道：各位幫眾何在！\n");
+        say(name() + "説道：各位幫眾何在！\n");
 
         for(i = 0; i < temp; i++) {
-                say(obj[i]->name() + "說道：在！\n");
+                say(obj[i]->name() + "説道：在！\n");
                 obj[i]->kill_ob(me);
         }
 
@@ -255,8 +255,8 @@ int check_bang()
         if( !userp(ob) ) return 1;
         for(i = 0; i < temp; i++) {
                 if( obj[i]->is_fighting(ob) ) continue;
-                message_vision("$N對著$n吼道：還楞著幹嗎？\n", this_object(), obj[i]);
-                message_vision("$N誠惶誠恐地說道：望幫主恕罪！\n", obj[i]);
+                message_vision("$N對着$n吼道：還楞着幹嗎？\n", this_object(), obj[i]);
+                message_vision("$N誠惶誠恐地説道：望幫主恕罪！\n", obj[i]);
                 obj[i]->kill_ob(ob);
         }
         return 1;

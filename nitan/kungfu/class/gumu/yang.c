@@ -23,7 +23,7 @@ void create()
         set("age", 26);
         set("long", @LONG
 他看上去眉目之間有一股清秀之氣，然而隱隱約約卻讓人感到一陣哀傷之情，
-左袖空盪盪的，顯然已是殘疾。
+左袖空蕩蕩的，顯然已是殘疾。
 LONG );
         set("attitude", "friendly");
 
@@ -86,7 +86,7 @@ LONG );
         set("inquiry", ([
                 "王重陽" : "嘿...嘿！",
                 "郭靖"   : "他可真是真正的大俠。",
-                "黃蓉"   : "黃師叔麼...真不好說啊。",
+                "黃蓉"   : "黃師叔麼...真不好説啊。",
                 "小龍女" : "你打聽我妻子幹什麼？",
                 "楊康"   : "算了，不替他也罷。",
                 "玉蜂針" : "我手頭可沒有，很久沒有用它了。",
@@ -189,7 +189,7 @@ void attempt_apprentice(object ob)
 
         if( query("max_neili", ob)<1000 )
         {
-                command("say 你把內力鍛煉好了再來也不遲啊！");
+                command("say 你把內力鍛鍊好了再來也不遲啊！");
                 return;
         }
 
@@ -204,13 +204,13 @@ string ask_sword()
         if (! fam || fam["family_name"] != "古墓派")
                 return RANK_D->query_respect(ob) + "非我古墓傳人，不知道此話怎講？";
         if (fam["generation"] > 4)
-                return RANK_D->query_respect(ob) + "非我神雕俠侶傳人，還是等以後再說吧。";
+                return RANK_D->query_respect(ob) + "非我神鵰俠侶傳人，還是等以後再説吧。";
         if( query("ygpass", ob) )
                 return "我不是已經告訴你玄鐵劍法的運氣之道了麼？";
         if( query("gender", ob) == "男性" )
         {
                 command("pat"+query("id", ob));
-                command("say 當年我在襄陽城南，得遇神雕的相助，于獨孤大俠墓前練成玄鐵劍法。");
+                command("say 當年我在襄陽城南，得遇神鵰的相助，於獨孤大俠墓前練成玄鐵劍法。");
                 set("ygpass", 1, ob);
                 return "屏氣具息，凝氣守中，意守丹田，這就是在洪水中運氣的訣竅，你好好去領悟一下吧。";
         }
@@ -220,11 +220,11 @@ string ask_sword()
         if ((int)ob->query_dex() < 35)
                 return "這位" + RANK_D->query_respect(ob) + "，在洪水中練習玄鐵劍法需要極高的身法，你還是再努力一翻吧。";
         if ((int)ob->query_skill("sword", 1) < 200)
-                return "這位" + RANK_D->query_respect(ob) + "的基本劍法還需繼續修煉，否則難以抵擋洪水的沖擊。";
+                return "這位" + RANK_D->query_respect(ob) + "的基本劍法還需繼續修煉，否則難以抵擋洪水的衝擊。";
         if ((int)ob->query_int() < 35)
                 return "這位" + RANK_D->query_respect(ob) + "的悟性還不夠高，難以理解我所要講的口訣。";
                   command("pat"+query("id", ob));
-                  command("say 當年我在襄陽城南，得遇神雕的相助，于獨孤大俠墓前練成玄鐵劍法。");
+                  command("say 當年我在襄陽城南，得遇神鵰的相助，於獨孤大俠墓前練成玄鐵劍法。");
                   set("ygpass", 1, ob);
                   return "屏氣具息，凝氣守中，意守丹田，這就是在洪水中運氣的訣竅，你好好去領悟一下吧。";
         }
@@ -240,7 +240,7 @@ int ask_youju()
         }
         if( query("family/master_name", ob) == "李莫愁"){
                 command("say 這是“美女拳法”最後一招的收式，是我所自創的。");
-                command("say 你是我師伯李莫愁的弟子，我本不該指點于你。");
+                command("say 你是我師伯李莫愁的弟子，我本不該指點於你。");
                 command("say 既然一場來到，如果你願意讓我為化去你身上的邪氣，指點你這招“古墓幽居”。你願意(yuanyi)否？");
                 set_temp("mark/youju", 1, ob);
                 return 1;
@@ -250,7 +250,7 @@ int ask_youju()
                 return 1;
         }
         if ((int)ob->query_skill("unarmed", 1) < 120) {
-                command("say 要使用這樣的絕招需要高深的拳法，你還是多練習練習“美女拳法”再說吧。");
+                command("say 要使用這樣的絕招需要高深的拳法，你還是多練習練習“美女拳法”再説吧。");
                 return 1;
         }
         command("say 這是“美女拳法”最後一招的收式，是我所自創的。");
@@ -301,7 +301,7 @@ string ask_nuhai()
         set("can_perform/surge-force/quest/step", 1, me);
         me->save();
         
-        return "聽說金輪法王最近在絕情谷出沒，你可以上那去看看。\n";    
+        return "聽説金輪法王最近在絕情谷出沒，你可以上那去看看。\n";    
 }
 mixed teach_sad()
 {
@@ -326,10 +326,10 @@ mixed teach_sad()
                 return 1;
         }
 
-        if( query("character", ob) == "陰險姦詐" || 
+        if( query("character", ob) == "陰險奸詐" || 
             query("character", ob) == "心狠手辣" )
         {
-                command("say 你一心想著去害人，無法領悟黯然銷魂的境界！");
+                command("say 你一心想着去害人，無法領悟黯然銷魂的境界！");
                 return 1;
         }
 
@@ -390,7 +390,7 @@ int accept_ask(object me, string topic)
         {
         case "歷練" :
         case "歷煉" :
-        case "鍛煉" :
+        case "鍛鍊" :
                 return QUEST_D->accept_ask(this_object(), me, topic);
                 break;
 
@@ -431,10 +431,10 @@ int accept_ask(object me, string topic)
                          ]));
                 break;
 
-        case "力盪群魔" :
+        case "力蕩羣魔" :
                 return MASTER_D->teach_pfm(me, this_object(),
                         ([ "perform" : "can_perform/xuantie-jian/dang",
-                           "name"    : "力盪群魔",
+                           "name"    : "力蕩羣魔",
                            "sk1"     : "xuantie-jian",
                            "lv1"     : 70,
                            "sk2"     : "force",
@@ -524,7 +524,7 @@ int not_to_learn_ss(object ob)
 
         if( query("family/family_name", ob) != query("family/family_name") )
         {
-                command("say " + RANK_D->query_respect(ob) + "你不是我的親傳弟子，找我何幹？");
+                command("say " + RANK_D->query_respect(ob) + "你不是我的親傳弟子，找我何干？");
                 return 1;
         }
 
@@ -592,7 +592,7 @@ int accept_object(object me, object ob)
 
         if( query("can_perform/surge-force/new", me) )
         {
-                tell_object(me, HIG "楊過告訴你：多謝閣下上次仗義相助，這東西還是你自己留著吧。\n" NOR);
+                tell_object(me, HIG "楊過告訴你：多謝閣下上次仗義相助，這東西還是你自己留着吧。\n" NOR);
                 return 0;
         }
         
@@ -601,7 +601,7 @@ int accept_object(object me, object ob)
         
         if( query("reborn/times", me) < 3 )
         {               
-                tell_object(me, HIG "楊過告訴你：你還未經歷輪回轉世的磨練，恐怕難以學成怒海狂濤。這丹我要不得。\n" NOR);
+                tell_object(me, HIG "楊過告訴你：你還未經歷輪迴轉世的磨練，恐怕難以學成怒海狂濤。這丹我要不得。\n" NOR);
                 return 0;
         }
                 
@@ -645,15 +645,15 @@ int accept_object(object me, object ob)
 
         command("thank "+query("id", me));
         
-        message_sort(HIM "\n$N" HIM "對$n說道：多虧了閣下仗義相助，龍兒這下有救了，楊某無以為謝，便"
-                     "將這怒海狂濤絕學傳授于你，你可聽好了 ...\n\n" NOR, this_object(), me);
+        message_sort(HIM "\n$N" HIM "對$n説道：多虧了閣下仗義相助，龍兒這下有救了，楊某無以為謝，便"
+                     "將這怒海狂濤絕學傳授於你，你可聽好了 ...\n\n" NOR, this_object(), me);
 
                                 
-        tell_object(me, HIG "楊過將怒海狂濤絕學修煉要決一一傳授于你...\n" NOR);
+        tell_object(me, HIG "楊過將怒海狂濤絕學修煉要決一一傳授於你...\n" NOR);
 
         tell_object(me, HIC "\n恭喜你！領悟了怒海狂濤（新）。\n");
 
-        CHANNEL_D->do_channel(this_object(), "rumor", "\n聽說楊過將怒海狂濤絕學傳授給了" HIY + me->name() + HIM "。" NOR);
+        CHANNEL_D->do_channel(this_object(), "rumor", "\n聽説楊過將怒海狂濤絕學傳授給了" HIY + me->name() + HIM "。" NOR);
 
         me->set_skill("surge-force", 200);
         set("can_perform/surge-force/new", 1, me);

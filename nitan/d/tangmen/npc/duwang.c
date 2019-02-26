@@ -8,7 +8,7 @@ void create()
         set_name("千年毒王", ({ "duwang", "wang" }) );
         set("race", "野獸");
         set("age", random(10));
-        set("long", "它看起來更象是一只老鼠，但是渾身卻沒有一根毛，又和青蛙一般光滑。\n");
+        set("long", "它看起來更象是一隻老鼠，但是渾身卻沒有一根毛，又和青蛙一般光滑。\n");
         set("attitude", "peaceful");
         set("str", 20);
         set("cor", 20);

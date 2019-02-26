@@ -28,7 +28,7 @@
 
                void read_callback(int fd, mixed message)
 
-          這裡的 fd 是接收資料的 socket，而 message 是接收到的資料。
+          這裏的 fd 是接收資料的 socket，而 message 是接收到的資料。
 
           close_callback 這個參數是給驅動程式在 socket 不正常關閉時
           呼叫的函式名稱，如不同於 socket_close() 的呼叫結果。這個關
@@ -36,7 +36,7 @@
 
                void close_callback(int fd)
 
-          這裡的 fd 是已被開閉的 socket。注意：close_callback 不能用
+          這裏的 fd 是已被開閉的 socket。注意：close_callback 不能用
           在 DATAGRAM 型態的 socket 上。
 
      傳回值：

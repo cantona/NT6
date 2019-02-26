@@ -1,17 +1,17 @@
-//Room: dgtsheshenya.c 睹光台舍身崖
+//Room: dgtsheshenya.c 睹光台捨身崖
 //Date: Oct. 2 1997 by That
 
 inherit ROOM;
 
 void create()
 {
-        set("short", "睹光台舍身崖");
+        set("short", "睹光台捨身崖");
         set("long", @LONG
-從臥雲庵出來，這裡是看日出、雲海、佛光、神燈之地。台下深
-崖萬丈，陡徹無底，雲遮霧掩。極目四望，數百裡外的大小雪山皆歷
-歷在目。因為這裡至高至潔，至險至奇，又至美至幻，常有人在這裡
+從卧雲庵出來，這裏是看日出、雲海、佛光、神燈之地。台下深
+崖萬丈，陡徹無底，雲遮霧掩。極目四望，數百里外的大小雪山皆歷
+歷在目。因為這裏至高至潔，至險至奇，又至美至幻，常有人在這裏
 投身雲海，舍此肉身塵世。　　金頂雲海，迷迷茫茫，籠罩四野，遠
-接天際。雲海輕盪時，你在金頂，腳踏白雲，大有飄飄欲仙之感；當
+接天際。雲海輕蕩時，你在金頂，腳踏白雲，大有飄飄欲仙之感；當
 雲濤迅猛湧來時，整個金頂都似在向前浮動，令人有乘舟欲風之意。
 LONG );
         set("outdoors", "emei");
@@ -67,15 +67,15 @@ void clone_ji(object me)
 int do_sheshen(object me)
 {
         me = this_player();
-        message_vision("$N覺得活著太沒意思了，決定舍身成仁。\n", me);
-        message_vision("$N毅然跳出舍身崖，長聲尖叫，凄厲的聲音響徹山谷，隨著$N的的下落也急劇向下拉長。\n", me);
+        message_vision("$N覺得活着太沒意思了，決定捨身成仁。\n", me);
+        message_vision("$N毅然跳出捨身崖，長聲尖叫，淒厲的聲音響徹山谷，隨着$N的的下落也急劇向下拉長。\n", me);
         if (me->query_skill("dodge", 1) >= 220)
         {
                 me->move(__DIR__"st0");
                 me->unconcious();
         } else
         {
-                command("chat 有人跳下舍身崖自殺了。\n\n");
+                command("chat 有人跳下捨身崖自殺了。\n\n");
                 me->move(__DIR__"st0");
                 me->die();
         }

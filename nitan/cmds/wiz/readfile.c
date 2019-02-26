@@ -28,7 +28,7 @@ int main(object me, string arg)
 
                 b = x - a + 1;
 
-        message("", HIG "您所閱讀的文件為"HIY + file + NOR "\n"
+        message("", HIG "您所閲讀的文件為"HIY + file + NOR "\n"
                                 HIG "您所選取的是從第"  HIW + a + NOR  HIG "行到第"  HIW + x + NOR HIG"行\n"
                                 HIG "具體內容如下：\n"NOR,me);
         result = HIC + read_file(file,a,b) + "\n";

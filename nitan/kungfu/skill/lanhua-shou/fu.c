@@ -34,7 +34,7 @@ int perform(object me, object target)
                 return notify_fail("你現在真氣不足，難以施展" + name() + "。\n");
 
         if (! living(target))
-                return notify_fail("對方都已經這樣了，用不著這麼費力吧？\n");
+                return notify_fail("對方都已經這樣了，用不着這麼費力吧？\n");
 
         msg = HIC "$N" HIC "反手輕輕伸出三指，婉轉如一朵盛開的蘭花，輕點$n"
               HIC "脅下要穴。\n";
@@ -45,7 +45,7 @@ int perform(object me, object target)
         if (ap / 2 + random(ap) > dp)
         {
                 msg +=  HIR "$p" HIR "只覺脅下一麻，已被$P"
-                        HIR "點個正著，頓時全身酸軟，呆立當場。\n" NOR;
+                        HIR "點個正着，頓時全身痠軟，呆立當場。\n" NOR;
                 target->start_busy(ap / 100 + 2);
                 addn("neili", -100, me);
                 me->start_busy(1);

@@ -55,7 +55,7 @@ int perform(object me, object target)
 
         if( !objectp(weapon=query_temp("weapon", me)) || 
                 query("skill_type", weapon) != "sword" )
-                msg = HIC"$N"HIC"左手兩指並攏，手臂暴長，迅捷異常分刺$n"HIC"雙目，\n"NOR;
+                msg = HIC"$N"HIC"左手兩指併攏，手臂暴長，迅捷異常分刺$n"HIC"雙目，\n"NOR;
         else msg = HIC"$N"HIC"手中長劍一振，劍尖一點暴長，分刺$n"HIC"左右雙目，\n"NOR;
 
 
@@ -107,9 +107,9 @@ int perform(object me, object target)
 
 void cimu_end(object target)
 {
-        message_combatd(HIY"$N"HIY"抹了抹流著"HIR"鮮血"HIY"，終于能看見了。\n"NOR, target);
+        message_combatd(HIY"$N"HIY"抹了抹流着"HIR"鮮血"HIY"，終於能看見了。\n"NOR, target);
         set_temp("block_msg/all", 0, target);
-        tell_object(target,HIR"你終于抹掉了眼前的鮮血，能看見了。\n"NOR);
+        tell_object(target,HIR"你終於抹掉了眼前的鮮血，能看見了。\n"NOR);
         delete_temp("bixie/cimu", target);
 
         return;

@@ -4,7 +4,7 @@ inherit NPC;
 void create()
 {
         set_name("老秀才", ({ "lao xiucai", "lao" }));
-        set("long", "一個窮困潦倒的落第秀才，在這裡開堂授課為生。\n");
+        set("long", "一個窮困潦倒的落第秀才，在這裏開堂授課為生。\n");
         set("gender", "男性");
         set("age", 65);
 

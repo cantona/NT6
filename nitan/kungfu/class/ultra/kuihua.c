@@ -24,7 +24,7 @@ string time_period(int timep);
 mixed ask_maze();
 string  *my_opinions = ({ "dodge" });
 
-// 該頭文件必須在這裡嵌入
+// 該頭文件必須在這裏嵌入
 #include <ultra.h>
 
 void create()
@@ -50,11 +50,11 @@ void create()
         set("combat_exp", 50000000);
 
         set("inquiry", ([
-                "葵花寶典" : "那是我寫的一本關于輕功方面的心得，怎麼，你有興趣？",
+                "葵花寶典" : "那是我寫的一本關於輕功方面的心得，怎麼，你有興趣？",
                 "評價"     : (: ask_opinion :),
                 "opinion"  : (: ask_opinion :),
                 "武學修養" : "學習深奧武功，沒有深厚的武學修養(martial-cognize)，提也休提！",
-                "任務"     : "葵花太監低了頭，撫摩著手中的玉如意，全神貫注，理都不理。”\n",
+                "任務"     : "葵花太監低了頭，撫摩着手中的玉如意，全神貫注，理都不理。”\n",
                 "maze"     : (: ask_maze :),
                 "迷宮"     : (: ask_maze :),
         ]));
@@ -128,9 +128,9 @@ mixed ask_maze()
         if ( !mapp(maze) || undefinedp(maze["entry"]) )
         */
         if( !(find_object("/f/ultra/"+query("id", me)+"/maze/exit")) )
-                return "真是該死，那個迷宮據說已經消失，你還有臉來見我？";
+                return "真是該死，那個迷宮據説已經消失，你還有臉來見我？";
 
-        message_vision("$N對$n點頭道：“既然你已經準備好要去那裡，那就千萬別失手！”\n", ob, me);
+        message_vision("$N對$n點頭道：“既然你已經準備好要去那裏，那就千萬別失手！”\n", ob, me);
         //me->move(maze["entry"]);
         FUBEN_D->enter_fuben(me, "ultra");
 
@@ -160,12 +160,12 @@ mixed ask_opinion()
         {
                 if (ob == me)
                 {
-                        command("say 你著什麼急？不要煩我。");
+                        command("say 你着什麼急？不要煩我。");
                         return 1;
                 }
 
                 message_vision(CYN "$N" CYN "頗為惱怒的對$n"
-                               CYN "道：“沒看我正忙著嗎？”\n" NOR,
+                               CYN "道：“沒看我正忙着嗎？”\n" NOR,
                                this_object(), me);
                 return 1;
         }
@@ -264,7 +264,7 @@ int accept_kill(object me)
         if( query("combat_exp", me)<500000000 )
         {
                 message_vision(CYN "$N" CYN "大怒道：“無名小輩搗"
-                               "什麼亂？給我滾！”說罷一掌把$n" CYN
+                               "什麼亂？給我滾！”説罷一掌把$n" CYN
                                "劈倒在地。\n" NOR, this_object(), me);
                 me->unconcious();
                 return -1;
@@ -276,7 +276,7 @@ int accept_kill(object me)
 
 int recognize_apprentice(object me, string skill)
 {
-        if( query("character", me) != "陰險姦詐" && 
+        if( query("character", me) != "陰險奸詐" && 
             query("character", me) != "國士無雙" )
         {
                 command("say 你這人沒有領會立世的精妙之理，還"
@@ -290,13 +290,13 @@ int recognize_apprentice(object me, string skill)
         if (! ultrap(me))
         {
                 command("say 想學我的葵花神功？你還不夠資格，"
-                        "等你成了大宗師再說吧！");
+                        "等你成了大宗師再説吧！");
                 return -1;
         }
 
         if (me->query_skill(skill, 1) >= 180)
         {
-                command("say 夠了！我就教你到這裡吧，武功還是"
+                command("say 夠了！我就教你到這裏吧，武功還是"
                         "要靠自己多研究才是！");
                 return -1;
         }
@@ -355,17 +355,17 @@ int give_quest()
     ob = this_player();
     exp=query("combat_exp", ob);
 
-    if( (query("character", ob) != "陰險姦詐") && 
+    if( (query("character", ob) != "陰險奸詐") && 
             (query("character", ob) != "國士無雙") && 
             (query("character", ob) != "心狠手辣") )
     {
-        message_vision("葵花太監抬頭看了$N一眼，尖著嗓子道：“你這號假仁假義的貨色，再不馬上給我滾開，我讓你血濺五步！”\n", ob);
+        message_vision("葵花太監抬頭看了$N一眼，尖着嗓子道：“你這號假仁假義的貨色，再不馬上給我滾開，我讓你血濺五步！”\n", ob);
         return 1;
     }
     /*
     if( query("shen", ob) >= 0 )
     {
-        write("葵花太監頭也不抬，輕輕嘆了口氣，道：“好好一個人，偏要棄暗投明，竟還敢到這裡來，真是不想活啦？”\n");
+        write("葵花太監頭也不抬，輕輕歎了口氣，道：“好好一個人，偏要棄暗投明，竟還敢到這裏來，真是不想活啦？”\n");
         return 1;
     }
     */
@@ -376,12 +376,12 @@ int give_quest()
     }
     if( mapp(query("quest_kh", ob)) )
     {
-       write("葵花太監把玩著手中古玩，微微點頭來，道：“你手頭的任務可是完成了？”\n");
+       write("葵花太監把玩着手中古玩，微微點頭來，道：“你手頭的任務可是完成了？”\n");
         return 1;
     }
     if( mapp(query("quest_sn", ob)) )
     {
-        write("葵花太監把玩著手中古玩，冷笑搖頭，道：“南海神尼那個老不死的總和我作對，你敢帶著她的任務來找我？”\n");
+        write("葵花太監把玩着手中古玩，冷笑搖頭，道：“南海神尼那個老不死的總和我作對，你敢帶着她的任務來找我？”\n");
         return 1;
     }
 
@@ -422,7 +422,7 @@ int give_quest()
     {
         questkill = QUESTKILL_D->query_questkill();
         msg = questkill["msg"];
-        write("葵花太監用眼角瞟了你一眼，微露訝色，道：“你倒是好象挺能幹的嘛，嗯？”\n");
+        write("葵花太監用眼角瞟了你一眼，微露訝色，道：“你倒是好像挺能幹的嘛，嗯？”\n");
         write(msg+"\n");
         time = questkill["time"]/2+random(questkill["time"]/2);
         write("葵花太監回頭看了看你，又道：“我給你"+time_period(time)+"時間，你快去罷。”\n");
@@ -463,8 +463,8 @@ int give_quest()
             set("auto_perform", 5, npc);
 
             set("shen",query("combat_exp",  npc)/2000, npc);
-            msg="葵花太監恨恨地說：“"+npc->name(1)+
-                "這個所謂的大俠屢次和我作對，聽說他最近躲在迷宮中，你去宰了他，提頭來見！”\n";
+            msg="葵花太監恨恨地説：“"+npc->name(1)+
+                "這個所謂的大俠屢次和我作對，聽説他最近躲在迷宮中，你去宰了他，提頭來見！”\n";
 
             questkh = ([
                 "maze" : maze_object,
@@ -530,7 +530,7 @@ int give_quest()
     if (questkh["type"] == "殺" && (random(6) == 3 || wizardp(ob)))
     {
         robot_quest = ANTI_ROBOT->get_question();
-        msg = "葵花太監陰笑著說道：“我剛將出入宮門的口令更改了一下，你去通知一下" + questkh["name"] + NOR"，新口令是：\n";
+        msg = "葵花太監陰笑着説道：“我剛將出入宮門的口令更改了一下，你去通知一下" + questkh["name"] + NOR"，新口令是：\n";
         msg += robot_quest["question"];
         msg += "你只需要將口令用"HIR"普通的數字形式"NOR"傳送過去就行了，傳送的指令是：whisper。\n";
         questkh["type"]   = "傳";
@@ -560,7 +560,7 @@ int accept_object(object who, object ob)
    me = this_object();
    if( !(questkh=query("quest_kh", who)) )
    {
-      return notify_fail("葵花太監滿臉不耐煩的沖你說：“走開，不要來煩我。”\n");
+      return notify_fail("葵花太監滿臉不耐煩的衝你説：“走開，不要來煩我。”\n");
    }
 
    if( query("money_id", ob) )
@@ -568,7 +568,7 @@ int accept_object(object who, object ob)
            if (ob->value() < 1000000)
            {
                    tell_object(who,"葵花太監勃然大怒道：你拿這麼點錢來哄我啊？再不給我滾遠點，我扒了你的皮！\n");
-                   return notify_fail("葵花太監輕蔑的說：如果能給個100兩黃金，或許我就消除了你的任務。\n");
+                   return notify_fail("葵花太監輕蔑的説：如果能給個100兩黃金，或許我就消除了你的任務。\n");
            }
            delete("quest_kh", who);
            tell_object(who,"葵花太監拋了拋手中的" + ob->name(1) + "，冷冷道：那你這個任務不做就算了吧。\n");
@@ -588,18 +588,18 @@ int accept_object(object who, object ob)
       case "殺"  :
          if(!ob->is_head() && !ob->is_corpse())
          {
-            tell_object(who,"葵花太監斜著眼睛描了一下，斥道：“這是個什麼東西？你想來糊弄我麼！”\n");
-            return notify_fail("葵花太監白了你一眼，甩甩手，道：“你還站在這裡幹什麼？還不快去！”\n");
+            tell_object(who,"葵花太監斜着眼睛描了一下，斥道：“這是個什麼東西？你想來糊弄我麼！”\n");
+            return notify_fail("葵花太監白了你一眼，甩甩手，道：“你還站在這裏幹什麼？還不快去！”\n");
          }
          else if( !stringp(query("victim_name", ob)) || query("victim_name", ob) != questkh["name"] )
             {
-                tell_object(who,"葵花太監捂著鼻子揮手說道：“什麼臭烘烘的？快給我拿走！”\n");
+                tell_object(who,"葵花太監捂着鼻子揮手説道：“什麼臭烘烘的？快給我拿走！”\n");
                 return notify_fail("葵花太監白了你一眼，甩甩手，道：“我給你的任務你是否不想做了？”\n");
             }
             else if( query("killed_by", ob) != query("id", who) )
             {
-                tell_object(who,"葵花太監哼了一聲道：“你是從哪裡撿來的？你自己做不了麼？”\n");
-                return notify_fail("葵花太監白了你一眼，甩甩手，道：“你還站在這裡幹什麼？還不快出去！”\n");
+                tell_object(who,"葵花太監哼了一聲道：“你是從哪裏撿來的？你自己做不了麼？”\n");
+                return notify_fail("葵花太監白了你一眼，甩甩手，道：“你還站在這裏幹什麼？還不快出去！”\n");
              }
          break ;
       default    :
@@ -610,14 +610,14 @@ int accept_object(object who, object ob)
             ob->is_item_make() ||
             ob->query_save_file())
     {
-        write("葵花太監大怒道：“好你個小雜種，竟然想蒙騙本宮！來人！把他給我抓起來！”\n");
+        write("葵花太監大怒道：“好你個小雜種，竟然想矇騙本宮！來人！把他給我抓起來！”\n");
         who->get_into_prison(this_object(), 0, 30);
-        log_file("static/QUEST_DIJIAO",sprintf("%s(%s)(葵花任務)制造%s(%s)(%s)作弊\n",query("name", who),
+        log_file("static/QUEST_DIJIAO",sprintf("%s(%s)(葵花任務)製造%s(%s)(%s)作弊\n",query("name", who),
              query("id", who),ob->name(),query("id", ob),ctime(time())));
         return 1;
     }
 
-//   message_vision("$N將$n交給葵花太監。\n",who,ob);與give信息重復haiyan
+//   message_vision("$N將$n交給葵花太監。\n",who,ob);與give信息重複haiyan
    tell_object(who,"葵花太監冷笑了一聲，抬頭看了看你，點頭道：“嗯，你可以去了。”\n");
     destruct(ob);
    if( (i=query("questkh_times", who))<15)i=15-i;
@@ -652,7 +652,7 @@ int accept_object(object who, object ob)
       if(i>30) i=30;
       gold=new("/clone/money/gold");
       gold->set_amount(i);
-      tell_object(who,"突然一錠黃金飛入你的手中，背後葵花太監冷冷說道：“這些金子拿去，日後辦事賣力點！”\n"
+      tell_object(who,"突然一錠黃金飛入你的手中，背後葵花太監冷冷説道：“這些金子拿去，日後辦事賣力點！”\n"
           HIW"\n你被獎勵了 "+i+" 兩黃金。\n"NOR);
        if(!gold->move(who))
        {
@@ -670,8 +670,8 @@ int accept_object(object who, object ob)
    total_count = quest_count % 500;
    if (total_count == 50)
    {
-       msg = "$N嘿嘿冷笑兩聲道：“你小子還可以，連著"+chinese_number(quest_count)+
-       "次任務都完成的幹凈利索，還算有點前途。”\n";
+       msg = "$N嘿嘿冷笑兩聲道：“你小子還可以，連着"+chinese_number(quest_count)+
+       "次任務都完成的乾淨利索，還算有點前途。”\n";
         special = 1;
            } else
        if (total_count == 100)
@@ -682,26 +682,26 @@ int accept_object(object who, object ob)
    } else
     if (total_count == 150)
     {
-        msg = "$N嘆道：“真是長江後浪推前浪，想不到你接連"+chinese_number(quest_count)+
+        msg = "$N歎道：“真是長江後浪推前浪，想不到你接連"+chinese_number(quest_count)+
                "次任務都無一疏漏，不易，不易！”\n";
         money = 1;
     } else
     if (total_count == 200)
     {
-        msg = "$N嘆道：“真是長江後浪推前浪，想不到你接連"+chinese_number(quest_count)+
+        msg = "$N歎道：“真是長江後浪推前浪，想不到你接連"+chinese_number(quest_count)+
                "次任務都無一疏漏，不易，不易！”\n";
         money = 1;
     } else
     if (total_count == 250)
     {
-        msg = "$N嘆道：“真是長江後浪推前浪，想不到你接連"+chinese_number(quest_count)+
+        msg = "$N歎道：“真是長江後浪推前浪，想不到你接連"+chinese_number(quest_count)+
                "次任務都無一疏漏，不易，不易！”\n";
         money = 1;
     } else
 
     if (total_count == 300)
     {
-        msg = "$N嘆道：“真是長江後浪推前浪，想不到你接連"+chinese_number(quest_count)+
+        msg = "$N歎道：“真是長江後浪推前浪，想不到你接連"+chinese_number(quest_count)+
                "次任務都無一疏漏，不易，不易！”\n";
          special = "/clone/gift/tianxiang";
     } else
@@ -713,7 +713,7 @@ int accept_object(object who, object ob)
     } else
     if (total_count == 400)
     {
-        msg = "$N嘆道：“真是一個武學天才啊，想不到你接連"+chinese_number(quest_count)+
+        msg = "$N歎道：“真是一個武學天才啊，想不到你接連"+chinese_number(quest_count)+
                "次任務都無一疏漏，不易，不易！”\n";
          special = "/clone/gift/jiuzhuan";
     } else
@@ -725,7 +725,7 @@ int accept_object(object who, object ob)
     } else
        if (total_count == 0)
    {
-       msg = "$N深深嘆了口氣，道：“想不到你連著"+chinese_number(quest_count)+
+       msg = "$N深深歎了口氣，道：“想不到你連着"+chinese_number(quest_count)+
        "次任務無一失手，看來以後的江湖就是你的天下啦！”\n";
        special = "/clone/gift/jiuzhuan";
 #ifdef DB_SAVE
@@ -751,7 +751,7 @@ int accept_object(object who, object ob)
    } else
        if ((total_count % 10) == 0)
    {
-       msg = "$N微微點頭：“幹的不錯，居然連著" +chinese_number(quest_count)+
+       msg = "$N微微點頭：“乾的不錯，居然連着" +chinese_number(quest_count)+
        "次都沒有失手，繼續給我好好表現！”\n";
    }
 
@@ -776,7 +776,7 @@ int accept_object(object who, object ob)
    if (all_quest_kh == 1000)
    {
        obj = new("/clone/tessera/gem.c");
-       tell_object(who,this_object()->name() + "又對你點了點頭：你已經從我這裡接了一千個任務，我這裡正好\n" +
+       tell_object(who,this_object()->name() + "又對你點了點頭：你已經從我這裏接了一千個任務，我這裏正好\n" +
                    "有個"+query("name", obj)+"，就獎給你了！\n");
        if (!obj->move(who))
                obj->move(environment());
@@ -804,7 +804,7 @@ int give_up()
       /*
       if (questkh["type"] == "傳")
       {
-         message_vision("$N勃然大怒，指著$n鼻子罵道：『不就是傳一個口令麼？這麼點小事都完成不了？還不快滾！\n",this_object(),ob);
+         message_vision("$N勃然大怒，指着$n鼻子罵道：『不就是傳一個口令麼？這麼點小事都完成不了？還不快滾！\n",this_object(),ob);
          return 1;
       }
       */
@@ -832,7 +832,7 @@ int give_up()
    }
    else
    {
-      message_vision("葵花太監專心把玩手中的古董，好象根本沒看見$N\n", ob);
+      message_vision("葵花太監專心把玩手中的古董，好像根本沒看見$N\n", ob);
    }
    delete("quest_kh", ob);
    set("questkh_giveup_time", time(), ob);
@@ -958,10 +958,10 @@ int accept_ask(object me, string topic)
                            "free"    : 1,
                            "shen"    : 38000, ]));
                 break;
-        case "群魔亂舞" :
+        case "羣魔亂舞" :
                 return MASTER_D->teach_pfm(me, this_object(),
                         ([ "perform" : "can_perform/kuihua-mogong/wu",
-                           "name"    : "群魔亂舞",
+                           "name"    : "羣魔亂舞",
                            "sk1"     : "kuihua-mogong",
                            "lv1"     : 120,
                            "sword"   : 120,

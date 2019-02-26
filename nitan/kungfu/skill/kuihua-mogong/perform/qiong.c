@@ -32,7 +32,7 @@ int perform(object me, object target)
         {
                 if( query("skill_type", weapon) != "sword" && 
                     query("skill_type", weapon) != "pin" )
-                        return notify_fail("你手裡拿的不是劍，怎麼施"
+                        return notify_fail("你手裏拿的不是劍，怎麼施"
                                            "展" QIONG "？\n");
         } else
         {
@@ -47,7 +47,7 @@ int perform(object me, object target)
                 return notify_fail("你沒有準備使用葵花魔功，難以施展" QIONG "。\n");
 
         if (! living(target))
-               return notify_fail("對方都已經這樣了，用不著這麼費力吧？\n");
+               return notify_fail("對方都已經這樣了，用不着這麼費力吧？\n");
 
         msg = HIR "\n$N" HIR "尖嘯一聲，猛然進步欺前，一招竟直襲$n" HIR "要害，速度之快，令"
               "人見所未見，聞所未聞。\n" NOR;
@@ -88,7 +88,7 @@ int perform(object me, object target)
 
         } else
                 msg += HIM "$n" HIM "大吃一驚，連忙退後，居然"
-                                "僥幸躲開著這一招！\n" NOR;
+                                "僥倖躲開着這一招！\n" NOR;
 
         me->start_busy(1 + random(2));
         message_combatd(msg, me, target);

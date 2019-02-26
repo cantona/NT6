@@ -22,19 +22,19 @@ int perform(object me, object target)
                 return notify_fail("你所使用的武器不對，難以施展" +name()+ "。\n");
 
         if ((int)me->query_skill("pichen-jian", 1) < 100)
-                return notify_fail("你辟塵劍法不夠嫻熟，難以施展" +name()+ "。\n");
+                return notify_fail("你闢塵劍法不夠嫻熟，難以施展" +name()+ "。\n");
 
         if (me->query_skill_mapped("sword") != "pichen-jian")
-                return notify_fail("你沒有激發辟塵劍法，難以施展" +name()+ "。\n");
+                return notify_fail("你沒有激發闢塵劍法，難以施展" +name()+ "。\n");
 
         if( query("neili", me)<200 )
                 return notify_fail("你現在的真氣不足，難以施展" +name()+ "。\n");
 
         if (! living(target))
-                return notify_fail("對方都已經這樣了，用不著這麼費力吧？\n");
+                return notify_fail("對方都已經這樣了，用不着這麼費力吧？\n");
 
         msg = HIY "$N" HIY "一陣狂笑，激得周圍塵砂飛揚，手中" + weapon->name() +
-              HIY "攜著排山倒海之勢朝$n" HIY "劈去。\n" NOR;
+              HIY "攜着排山倒海之勢朝$n" HIY "劈去。\n" NOR;
 
         ap = attack_power(me, "sword");
         dp = defense_power(target, "parry");

@@ -36,11 +36,11 @@ int perform(object me, object target)
                 return notify_fail("你現在真氣不夠，無法使用「截手式」。\n");
 
         if (! living(target))
-               return notify_fail("對方都已經這樣了，用不著這麼費力吧？\n");
+               return notify_fail("對方都已經這樣了，用不着這麼費力吧？\n");
 
         msg = HIW "\n但見$N" HIW "長劍一勒，使出華山劍法絕技之"
               "「" HIG "截手式" HIW "」，轉折之際天衣無縫，一\n"
-              "劍既出，後著源源傾瀉，如大浪躍灘，層層疊疊，迅"
+              "劍既出，後着源源傾瀉，如大浪躍灘，層層疊疊，迅"
               "然撲向$n" HIW "！\n" NOR;
 
         addn("neili", -50, me);

@@ -5,7 +5,7 @@ inherit SWORD;
 
 void create()
 {
-        set_name(HIC "蹊雲寒□" NOR, ({ "qiyun jian", "qiyun", "jian", "sword" }) );
+        set_name(HIC "蹊雲寒钁" NOR, ({ "qiyun jian", "qiyun", "jian", "sword" }) );
         set_weight(4000);
         if( clonep() )
                 set_default_object(__FILE__);

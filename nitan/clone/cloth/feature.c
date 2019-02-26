@@ -15,7 +15,7 @@ void create()
                 set_default_object(__FILE__);
         else {
                 set("long", HIW "這是一件出自天宮織女妙手神裁的羽"
-                            "紗輕衣。款式新穎別致，\n輕柔飄逸的。"
+                            "紗輕衣。款式新穎別緻，\n輕柔飄逸的。"
                             "放在手中簡直輕若無物，真是一件服飾極品。\n" NOR);
 
                 set("unit", "件");

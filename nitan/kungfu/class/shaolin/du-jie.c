@@ -68,7 +68,7 @@ void create()
 
         set("inquiry", ([
                 "金剛罩"     : (: ask_me :),
-                "錦□袈裟"   : (: ask_jia :),
+                "錦襴袈裟"   : (: ask_jia :),
                 "袈裟"       : (: ask_jia :),
         ]));
 
@@ -112,7 +112,7 @@ mixed ask_me()
 
         if( !query_temp("valid_in_fumoquan", this_player()) )
         {
-                command("say 大膽鼠輩，乳臭未幹，竟敢偷入金剛伏魔圈，且讓老衲來超度與你！");
+                command("say 大膽鼠輩，乳臭未乾，竟敢偷入金剛伏魔圈，且讓老衲來超度與你！");
                 kill_ob(this_player());
                 return 1;
         }
@@ -129,7 +129,7 @@ mixed ask_me()
 
         if (present("jingang zhao", environment()))
                 return RANK_D->query_respect(this_player()) +
-                "寶罩只有一件，而且就在這裡任你取走，真是貪得無饜！";
+                "寶罩只有一件，而且就在這裏任你取走，真是貪得無饜！";
 
         ob = get_object("/d/shaolin/obj/jingang-zhao");
         if (! ob || environment(ob) && environment(ob) != this_object())
@@ -137,7 +137,7 @@ mixed ask_me()
 
         ob->move(this_player());
 
-        message_vision("\n渡劫一聲不吭地瞧了$N半餉，扭過身，從樹洞裡取出金剛罩遞給$N。\n\n", this_player());
+        message_vision("\n渡劫一聲不吭地瞧了$N半餉，扭過身，從樹洞裏取出金剛罩遞給$N。\n\n", this_player());
 
         return "你能挨我們三個老不死的三招日月神鞭不死，確實是命大，這件金剛罩就是你的了！";
 }
@@ -188,7 +188,7 @@ mixed ask_jia()
         }
 
         if (objectp(owner) && owner != this_object())
-                return "此時錦□袈裟並不在老衲手中。";
+                return "此時錦襴袈裟並不在老衲手中。";
 
         ob->move(this_object());
 
@@ -210,7 +210,7 @@ int accept_ask(object me, string topic)
         {
         case "歷練" :
         case "歷煉" :
-        case "鍛煉" :
+        case "鍛鍊" :
                 return QUEST_D->accept_ask(this_object(), me, topic);
                 break;
 

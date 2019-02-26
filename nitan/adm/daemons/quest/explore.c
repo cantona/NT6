@@ -25,7 +25,7 @@ string * lost_objs = ({
         "/clone/questob/zizhubi",
 });
 
-// 接受供應的NPC：要求這些人必須在指定的場景，所以這裡指明的
+// 接受供應的NPC：要求這些人必須在指定的場景，所以這裏指明的
 // 是場景和NPC的ID。
 mapping rcv_npcs = ([
         "/d/chengdu/jiudian"      : "tang",

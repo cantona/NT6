@@ -38,7 +38,7 @@ int exert(object me, object target)
                 return notify_fail("對方武功強你十倍，不會有用的，還是快跑吧！\n");
 
         message_combatd( HIC
- "$N雙目血紅，披頭散發，仰天發出一聲悲嘯！\n\n$N把心一橫，在自己舌尖狠命一咬，將畢生功力化做一道奇毒血箭向$n噴了過去！\n" NOR,me,target);
+ "$N雙目血紅，披頭散髮，仰天發出一聲悲嘯！\n\n$N把心一橫，在自己舌尖狠命一咬，將畢生功力化做一道奇毒血箭向$n噴了過去！\n" NOR,me,target);
 
         success = 1;
         ap = me->query_skill("force",1)+me->query_skill("wudu-shengong",1);
@@ -56,7 +56,7 @@ int exert(object me, object target)
 
         if(success == 1 )
         {
-                message_combatd(HIR"結果$n促不及防被血箭射個正著，頓時發出一聲慘叫！$N見狀哈哈大笑一聲，眼前一黑倒在地上。\n" NOR,me,target);
+                message_combatd(HIR"結果$n促不及防被血箭射個正着，頓時發出一聲慘叫！$N見狀哈哈大笑一聲，眼前一黑倒在地上。\n" NOR,me,target);
 
                 target->kill_ob(me);
                 me->kill_ob(target);
@@ -72,7 +72,7 @@ int exert(object me, object target)
                 COMBAT_D->report_status(me);
         }
         else {
-                message_combatd(HIR"但是血箭被$n內力反震，化做一蓬血霧四散飄去！\n$N一聲慘笑，長嘆一聲，眼前一黑倒在地上。\n" NOR,me,target);
+                message_combatd(HIR"但是血箭被$n內力反震，化做一蓬血霧四散飄去！\n$N一聲慘笑，長歎一聲，眼前一黑倒在地上。\n" NOR,me,target);
                 target->kill_ob(me);
                 me->kill_ob(target);
 

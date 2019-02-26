@@ -10,7 +10,7 @@ int permit_recruit(object ob)
 
         if( query("betrayer/times", ob) )
         {
-                command("say 嘿！咱鏢局留著你這樣的背信棄義之徒肯定是吃裡爬外！");
+                command("say 嘿！咱鏢局留着你這樣的背信棄義之徒肯定是吃裏爬外！");
                 return 0;
         }
 

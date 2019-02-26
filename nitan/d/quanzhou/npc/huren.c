@@ -9,7 +9,7 @@ void create()
         set("shen_type", 1);
         set("gender", "男性");
         set("age", 35);
-        set("long", "一個金發碧眼的胡人，正趾高氣揚的吆喝著。\n");
+        set("long", "一個金髮碧眼的胡人，正趾高氣揚的吆喝着。\n");
         set("combat_exp", 3800);
         set("attitude", "friendly");
         setup();

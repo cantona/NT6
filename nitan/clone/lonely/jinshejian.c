@@ -55,7 +55,7 @@ mixed hit_ob(object me, object victim, int damage_bonus)
                 n = me->query_skill("sword");
                 victim->receive_damage("qi", n * 3 / 4, me);
                 victim->receive_wound("qi", n * 3 / 4, me);
-                return  HIY "$N" HIY "飛身而起，金蛇劍自天而下，猶如靈蛇般地舞動著卷向$n" HIY
+                return  HIY "$N" HIY "飛身而起，金蛇劍自天而下，猶如靈蛇般地舞動着卷向$n" HIY
                         "周身各處大穴！\n" NOR;
 
         }

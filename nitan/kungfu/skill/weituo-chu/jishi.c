@@ -34,7 +34,7 @@ int perform(object me, object target)
         if( query("neili", me) <= 600 )
                 return notify_fail("你的內力不夠，勁力不足以施展「雷動九天」！\n");
 
-        message_combatd(BLU "\n突然$N大喝一聲：「即世即空」，面色唰的變得通紅，須發皆飛，真氣溶入" +
+        message_combatd(BLU "\n突然$N大喝一聲：「即世即空」，面色唰的變得通紅，鬚髮皆飛，真氣溶入" +
                            weapon->name() + BLU "當中，“嗡”的一聲，發出" HIW " 閃閃光亮 " BLU "！\n " NOR, me);
 
         damage = me->query_skill("weituo-chu", 1) + me->query_skill("buddhism",1);

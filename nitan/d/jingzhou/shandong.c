@@ -6,7 +6,7 @@ void create()
         set("short", "山洞");
         set("long", @LONG
 洞中有戚芳用黏土捏的泥人，狄雲用來彈鳥的彈弓，捉山兔的扳機，
-戚芳放牛時吹的短笛，放在洞裡的石上。那邊是戚芳的針線籃。籃中的
+戚芳放牛時吹的短笛，放在洞裏的石上。那邊是戚芳的針線籃。籃中的
 剪刀已生滿了黃鏽。針線籃中還有一本舊書，那是戚芳用來夾鞋樣、繡
 花樣的。
 LONG );
@@ -34,10 +34,10 @@ int do_pick(string arg)
                 obj = new (__DIR__"obj/tangshi");
                 obj->move(me);
                 addn("book_count", -1);
-                message_vision("$N隨手從針線籃中拿起一本舊書，書的封面上寫著“唐詩選輯”四個字。\n",me );
+                message_vision("$N隨手從針線籃中拿起一本舊書，書的封面上寫着“唐詩選輯”四個字。\n",me );
 message("channel:rumor",MAG"【謠言】某人："+query("name", me)+"拿到唐詩選輯啦。\n"NOR,users());
         }
         else
-                return notify_fail("你要拿起那本書，卻發現你看花了眼，其實那裡什麼都沒有。\n");
+                return notify_fail("你要拿起那本書，卻發現你看花了眼，其實那裏什麼都沒有。\n");
         return 1;
 }

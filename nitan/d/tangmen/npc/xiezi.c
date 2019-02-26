@@ -8,7 +8,7 @@ void create()
         set_name("毒蠍子", ({ "duxie", "xiezi" }) );
         set("race", "野獸");
         set("age", 3);
-        set("long", "一只紅黃兩色相間的毒蠍子，聽說巨毒無比。\n");
+        set("long", "一隻紅黃兩色相間的毒蠍子，聽説巨毒無比。\n");
         set("attitude", "peaceful");
 
         set("limbs", ({ "頭部", "身體", "前螯", "尾巴" }) );

@@ -8,8 +8,8 @@ void create()
 {
         set("short", "皇宮大門");
         set("long", @LONG
-這裡就是西夏皇宮正門，四扇寬闊的朱紅大門，上面包著拳頭大的
-銅釘。門的兩邊站著兩排衣甲鮮明的武士，戒備深嚴。
+這裏就是西夏皇宮正門，四扇寬闊的硃紅大門，上面包着拳頭大的
+銅釘。門的兩邊站着兩排衣甲鮮明的武士，戒備深嚴。
 LONG );
         set("exits", ([
                 "north"  : __DIR__"gongsquare",
@@ -30,7 +30,7 @@ int valid_leave(object me, string dir)
 {
         if (dir == "north" && 
             objectp(present("wei shi", environment(me))))
-           return notify_fail("衛士對你大吼一聲：放肆！那不是你能進去的地方。\n");
+           return notify_fail("衞士對你大吼一聲：放肆！那不是你能進去的地方。\n");
 
         return ::valid_leave(me, dir);
 }

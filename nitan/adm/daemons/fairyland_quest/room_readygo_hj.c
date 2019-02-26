@@ -18,13 +18,13 @@ void sing_song(int i);
 string *context=({
     " ",   // 這個莫要刪了
     "親愛的勇士啊  既然你來到了這個地方",
-    "就請聽我敘述我曾知道的故事",
-    "讓我告訴你  那古老的傳說吧……",
+    "就請聽我敍述我曾知道的故事",
+    "讓我告訴你  那古老的傳説吧……",
     "相傳在遠古的時候",
-    "大地上有著四個古老的國度",
+    "大地上有着四個古老的國度",
     "他們是風、雨、雷、電之國度",
-    "他們都有著自己的寶物",
-    "用于維系自身  生活于各自的領土",
+    "他們都有着自己的寶物",
+    "用於維繫自身  生活於各自的領土",
     "時光變遷  混亂出現",
     "他們之間爆發了戰爭",
     "不復停留在原本的家園",
@@ -34,7 +34,7 @@ string *context=({
     "寶物們也四散消藏。",
     "親愛的勇士啊",
     "你是否願意尋求寶物",
-    "來見識那古老國度的神秘光芒？",
+    "來見識那古老國度的神祕光芒？",
     "來吧  踏出你選擇的步伐",
     "進入你將走向的未知之端。",
 });
@@ -43,7 +43,7 @@ string singing="no";
 string look_shuijing();
 
 string pler1,pler2,pler3,pler4,id1,id2,id3,id4,
-pler1="風翔",pler2="雨洒",pler3="雷鳴",pler4="電閃",
+pler1="風翔",pler2="雨灑",pler3="雷鳴",pler4="電閃",
 id1="aa",id2="bb",id3="cc",id4="dd";
 
 int *pler_data1=({
@@ -90,7 +90,7 @@ void hjset_long()
                       . \\/  *
 
 
-  "NOR"這裡一片漆黑，你只見得面前空中懸浮著一塊"+cl+"水晶"NOR"(shuijing)。\n");
+  "NOR"這裏一片漆黑，你只見得面前空中懸浮着一塊"+cl+"水晶"NOR"(shuijing)。\n");
 }
 
 void create()
@@ -126,7 +126,7 @@ void init()
 
 int do_nocmds()
 {
-    write("這裡禁止使用這個指令。\n");
+    write("這裏禁止使用這個指令。\n");
     return 1;
 }
 
@@ -136,7 +136,7 @@ void get_out_here(object me)
 
     message_vision( HIR"一陣奇異震盪襲來，$N"HIR"還未及反應，已發現自己身處別處了。\n"NOR, me);
     me->move( __DIR__"room_door_hj" );
-    message_vision("一陣莫名的震盪忽來忽逝，$N不知怎麼的就忽地出現在這裡了。\n",me);
+    message_vision("一陣莫名的震盪忽來忽逝，$N不知怎麼的就忽地出現在這裏了。\n",me);
 }
 
 void reset()
@@ -147,7 +147,7 @@ void reset()
 
 string look_shuijing()
 {
-    write("水晶散發著幽幽的光芒。");
+    write("水晶散發着幽幽的光芒。");
     if( singing == "yes" || !query_temp("hj2003-valid_enter", this_player()) )
         return "\n";
 
@@ -172,7 +172,7 @@ void sing_song(int i)
     else
     {
         singing="no";
-        message("vision",CYN"歌聲漸弱，似是漸漸遠去般，終于聽不見聲息了。\n"NOR,this_object());
+        message("vision",CYN"歌聲漸弱，似是漸漸遠去般，終於聽不見聲息了。\n"NOR,this_object());
         message("vision","你將要選擇(xuanze)哪一個國度？ 例如：風之國度 <xuanze feng>\n"NOR,this_object());
     }
 }
@@ -203,7 +203,7 @@ int do_xuanze(string arg)
     if( arg!="feng" && arg!="yu" && arg!="lei" && arg!="dian" )
         return notify_fail("你將要選擇(xuanze)哪一個國度？ 例如：風之國度 <xuanze feng>\n");
     delete_temp("hj2003-valid_enter", me);
-    all_mine = deep_inventory(me); // 原來是  all，現在改為 deep ，BUG 哪裡逃
+    all_mine = deep_inventory(me); // 原來是  all，現在改為 deep ，BUG 哪裏逃
     if( all_mine && sizeof( all_mine ) > 0 )
     {
         for(i=0;i<sizeof(all_mine);i++)

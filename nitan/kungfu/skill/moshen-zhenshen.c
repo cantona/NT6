@@ -50,7 +50,7 @@ mixed valid_damage(object ob, object me, int damage, object weapon)
         }
         else if (mp >= 100)
         {
-                result = HIY "$n身前仿佛有一道無形氣牆，但$N早已看破$n破綻，直攻向$n要害。\n";
+                result = HIY "$n身前彷彿有一道無形氣牆，但$N早已看破$n破綻，直攻向$n要害。\n";
 
                 COMBAT_D->set_bhinfo(result);
         }
@@ -75,7 +75,7 @@ int practice_skill(object me)
 {
         return notify_fail("魔神真身只能用學習或研究來提高。\n"); 
         if (me->query_skill("moshen-zhenshen", 1) < 100)
-                return notify_fail("你對魔神真身的了解甚淺，還不足以自行鍛煉。\n");
+                return notify_fail("你對魔神真身的瞭解甚淺，還不足以自行鍛鍊。\n");
 
         if( query("qi", me)<70 )
                 return notify_fail("你的體力太低了。\n");

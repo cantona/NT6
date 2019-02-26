@@ -40,5 +40,5 @@ void init()
 void greeting(object ob)
 {
         if( !ob || environment(ob) != environment() ) return;
-        say("鐵匠說道：歡迎這位"+RANK_D->query_respect(ob)+"光臨，請隨便參觀。\n");
+        say("鐵匠説道：歡迎這位"+RANK_D->query_respect(ob)+"光臨，請隨便參觀。\n");
 }

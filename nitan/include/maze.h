@@ -12,7 +12,7 @@
 // 迷宮守護進程的心跳間隔
 #define HEART_TIME 30           /* 五分鐘檢查一次       */
 
-// 迷宮的生命周期
+// 迷宮的生命週期
 #define MAZE_LIFT_CYCLE 1800    /* 半個小時             */
 
 // 迷宮的宏定義
@@ -24,8 +24,8 @@
 #define SOUTH   2               /* 朝南方向             */
 #define WEST    3               /* 朝西方向             */
 #define EAST    4               /* 朝東方向             */
-#define IS_ROAD 1               /* 房間位于路線上       */
-#define IS_ROOM 2               /* 房間不位于路線上     */
+#define IS_ROAD 1               /* 房間位於路線上       */
+#define IS_ROOM 2               /* 房間不位於路線上     */
 #define CAN_WALK    1           /* 指定方向有出路       */
 #define IS_WALL 9               /* 指定方向是牆壁       */
 #define NOT_DEFINED 0           /* 尚未初始化           */
@@ -56,7 +56,7 @@
 void collect_all_maze_information();            /* 將所有的迷宮房間清理     */
 void init_line(mapping maze);                   /* 初始化迷宮地圖           */
 void init_road(object room, mapping maze);      /* 初始化迷宮路線           */
-void init_wall(object room, mapping maze);      /* 給路線上的房間制造岔路   */
+void init_wall(object room, mapping maze);      /* 給路線上的房間製造岔路   */
 object *finish_room(object room, mapping maze); /* 將呆死的房間打通         */
 void init_room_exits(mapping maze);             /* 將房間的出口刷新         */
 void init_special_room(mapping maze);           /* 給迷宮初始化寶箱和陷阱   */

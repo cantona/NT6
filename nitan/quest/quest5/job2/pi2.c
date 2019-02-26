@@ -61,7 +61,7 @@ void greeting(object ob)
         if( query_temp("guo_shoucheng/mark_shadi", ob) == 2
          && !query_temp("guo_shoucheng/job_over", ob) )
         {
-                say("裨將拱手說道：這位" + RANK_D->query_respect(ob) + "，你來得正是時候，蒙古靼子已經快攻上城了。\n");
+                say("裨將拱手説道：這位" + RANK_D->query_respect(ob) + "，你來得正是時候，蒙古靼子已經快攻上城了。\n");
                 
                 set("env/combatd", 4, ob);
                 ob->apply_condition("jobshadi_limit", 10 + random(5));
@@ -72,7 +72,7 @@ void greeting(object ob)
         } else
         if( query_temp("guo_shoucheng/job_over", ob) )
         {
-                say("裨將拱手說道：這位" + RANK_D->query_respect(ob) + "，你已經可以回去復命了。\n");
+                say("裨將拱手説道：這位" + RANK_D->query_respect(ob) + "，你已經可以回去覆命了。\n");
                 return;
         } 
 
@@ -102,7 +102,7 @@ void to_rob(object ob)
 
 int accept_kill(object me) 
 {
-        message_vision(CYN "$N" CYN "大怒道：“給我滾！”說罷一掌把$n" CYN "劈倒在地。\n" NOR, this_object(), me); 
+        message_vision(CYN "$N" CYN "大怒道：“給我滾！”説罷一掌把$n" CYN "劈倒在地。\n" NOR, this_object(), me); 
         me->unconcious(); 
         return -1; 
 }
@@ -115,7 +115,7 @@ int accept_ansuan(object who)
 int accept_hit(object me) 
 {
 
-        message_vision(CYN "$N" CYN "大怒道：“給我滾！”說罷一掌把$n" CYN "劈倒在地。\n" NOR, this_object(), me); 
+        message_vision(CYN "$N" CYN "大怒道：“給我滾！”説罷一掌把$n" CYN "劈倒在地。\n" NOR, this_object(), me); 
         me->unconcious(); 
         return -1; 
 }
@@ -128,7 +128,7 @@ int accept_fight(object who)
 
 void fight_ob(object ob) 
 {
-        message_vision(CYN "$N" CYN "大怒道：“給我滾！”說罷一掌把$n" CYN "劈倒在地。\n" NOR, this_object(), ob); 
+        message_vision(CYN "$N" CYN "大怒道：“給我滾！”説罷一掌把$n" CYN "劈倒在地。\n" NOR, this_object(), ob); 
         ob->unconcious(); 
         return; 
 }

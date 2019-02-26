@@ -9,10 +9,10 @@
                 mixed filter(mixed x, function f, mixed extra, ...);
                 混合型 filter(混合型 x, 函數 f, 混合型 extra, ...);
         用法:
-                第一種格式中的 (ob, fun) 語法等同于 (: call_other, ob, fun :)，
+                第一種格式中的 (ob, fun) 語法等同於 (: call_other, ob, fun :)，
                 和第二種格式中的 函數 f 傳遞方式相同。此函數會返回一個新的結構，
                 這個新的結構只包含 x 中的成員經過函數 f 過濾返回值非零的元素組。
-                此函數一般用于過濾 array 和 mapping 類型。當 x 是 mapping 類型，
+                此函數一般用於過濾 array 和 mapping 類型。當 x 是 mapping 類型，
                 它的 key 和 value 都會傳遞給過濾函數。extra 和所有以後的參數都
                 會跟在 x 的成員之後傳遞給過濾函數。
                 例如：filter(arr, fun, 2, 3) 將會首先呼叫過濾函數 fun(arr[0],2,3)，

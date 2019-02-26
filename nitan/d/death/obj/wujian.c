@@ -14,8 +14,8 @@ void create()
                 set_default_object(__FILE__); 
         else { 
                 set("unit", "把"); 
-                set("long", sort_msg(HIR "眾神採首山之天石為天帝所鑄，對這一把劍還能些什麼呢？"
-                                     "天帝！勇氣、智慧、仁愛，一切在于兩個字：聖道。無間閃電"
+                set("long", sort_msg(HIR "眾神采首山之天石為天帝所鑄，對這一把劍還能些什麼呢？"
+                                     "天帝！勇氣、智慧、仁愛，一切在於兩個字：聖道。無間閃電"
                                      "是一把無敵之劍，使用方法：裝備後用 smash id 來摧毀對手。\n" NOR));
                 set("value", 100000); 
                 set("material", "steel");
@@ -34,6 +34,6 @@ mixed hit_ob(object me, object victim, int damage_bonus)
 {
         victim->receive_damage("jing", me->query_str() * 200, me);
         victim->receive_wound("jing", me->query_str() * 200, me);
-        return HIM "無間閃電夾帶著刺耳的破空聲劃出一道道閃電，霎時間$n"
+        return HIM "無間閃電夾帶着刺耳的破空聲劃出一道道閃電，霎時間$n"
                HIM "只感到死神來臨。\n" NOR;
 }

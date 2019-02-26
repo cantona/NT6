@@ -23,14 +23,14 @@ int main(object me, string arg)
                 return notify_fail("瘋了...你真的瘋了...\n");
 
         if( arg != query("couple/couple_id", me) )
-                return notify_fail("這人和你現在並不是夫妻關系啊！\n");
+                return notify_fail("這人和你現在並不是夫妻關係啊！\n");
 
         if (objectp(witness = present("marriage witness", environment(me))))
                 return witness->do_divorce(me);
 
         if( !query_temp("pending/want_divorce", me) )
         {
-                write("你身邊連個証婚的人都沒有，就像草草的離了"
+                write("你身邊連個證婚的人都沒有，就像草草的離了"
                       "算了？要是這樣，你就在輸入一次這個指令表示決心。\n");
                 set_temp("pending/want_divorce", 1, me);
                 return 1;
@@ -40,7 +40,7 @@ int main(object me, string arg)
 
         CHANNEL_D->do_channel(me, "chat",
                 "我" + me->name(1) + "從今天起就和" + couple["couple_name"] +
-                "(" + couple["couple_id"] + ")徹底斷絕關系！");
+                "(" + couple["couple_id"] + ")徹底斷絕關係！");
 
         user = find_player(couple["couple_id"]);
         if (user)
@@ -57,11 +57,11 @@ int main(object me, string arg)
                         break;
 
                 case "心狠手辣":
-                        msg = "好你個" + me->name(1) + "，咱們走著瞧！";
+                        msg = "好你個" + me->name(1) + "，咱們走着瞧！";
                         break;
 
                 default:
-                        msg = "很好，" + me->name(1) + "你等著吧！";
+                        msg = "很好，" + me->name(1) + "你等着吧！";
                         break;
                 }
 

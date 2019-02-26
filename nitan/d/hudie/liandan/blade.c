@@ -39,7 +39,7 @@ int do_search()
     	 || query("id", weapon) != "liandao" )
     	if( !objectp(weapon=query_temp("secondary_weapon", me) )
     	 || query("id", weapon) != "liandao" )
-        	return notify_fail("你不拿著工具，找到藥材也割不下來啊！\n");
+        	return notify_fail("你不拿着工具，找到藥材也割不下來啊！\n");
 
         if( strsrch(query("short", environment(me)),"草")<0
          && strsrch(query("short", environment(me)),"叢")<0
@@ -69,7 +69,7 @@ void finish(object me, object ob)
   	if(random(5)>3) 
 	{
   		me->start_busy(2);
-  		message_vision( HIW"尋找一番之後$N一無所獲，只得失望地嘆了口氣。\n"NOR, this_player());
+  		message_vision( HIW"尋找一番之後$N一無所獲，只得失望地歎了口氣。\n"NOR, this_player());
 
    	}
   

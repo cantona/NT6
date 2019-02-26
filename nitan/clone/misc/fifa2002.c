@@ -35,7 +35,7 @@ string *code=({
 
 void create()
 {
-        set_name(HIY"世界杯競猜版"NOR, ({ "board", "ban"}) );
+        set_name(HIY"世界盃競猜版"NOR, ({ "board", "ban"}) );
         set("long", "這是一個記錄玩家的競猜押注情況的版。
 押注請read rules，查看目前的投注情況請read ban。\n");
         set("unit", "張");
@@ -70,7 +70,7 @@ int do_ya(string arg)
         object ob, me = this_player();
         mapping biao;
         
-// 表示停止下注，由巫師在do_post()函數裡加入
+// 表示停止下注，由巫師在do_post()函數里加入
         if(query("end_ya"))
                 return notify_fail("截止時間已過，下回趕早。\n");
 // 防止多人同意押注產生意外
@@ -90,10 +90,10 @@ int do_ya(string arg)
                 return notify_fail("你想白賺啊？\n");
 // 上限，可以自由調整
         if(i > 1000)
-            return notify_fail("押得太多，請少于1000。\n");
+            return notify_fail("押得太多，請少於1000。\n");
         if( i>query("balance", me)/10000 )
 // 錢莊的存款不夠押的錢
-                return notify_fail("這裡不收現金！到錢莊存夠了錢再來！\n");
+                return notify_fail("這裏不收現金！到錢莊存夠了錢再來！\n");
 
 // 押冠軍
         switch ( t )
@@ -209,7 +209,7 @@ int do_ya(string arg)
         tell_object(me,"錢莊已經扣除了你押下的"+chinese_number(i)+"兩黃金。請等候結果吧！\n");
         if( !pointerp(all_biao) ) all_biao = ({ biao });
         else all_biao += ({ biao });
-// 儲存進這個文件對應的.o文件裡
+// 儲存進這個文件對應的.o文件裏
         save();
         remove_call_out("enough_rest");
 // 1秒後取消busy
@@ -242,10 +242,10 @@ int do_post(string arg)
         switch ( i )
         {
                 case 1:
-                        message("channel:sys", HIM"【謠言】"HIR"某人：競猜版冠軍結果公布，是 "HIY+codetoteam(c)+HIR" ！押對的快去兌獎啊！\n"NOR, users());
+                        message("channel:sys", HIM"【謠言】"HIR"某人：競猜版冠軍結果公佈，是 "HIY+codetoteam(c)+HIR" ！押對的快去兑獎啊！\n"NOR, users());
                         break;
                 case 2:
-                        message("channel:sys", HIM"【謠言】"HIR"某人：競猜版亞軍結果公布，是 "HIY+codetoteam(c)+HIR" ！押對的快去兌獎啊！\n"NOR, users());
+                        message("channel:sys", HIM"【謠言】"HIR"某人：競猜版亞軍結果公佈，是 "HIY+codetoteam(c)+HIR" ！押對的快去兑獎啊！\n"NOR, users());
                         break;
                 case 4:
                         c=ordercode(c, 4);
@@ -259,7 +259,7 @@ int do_post(string arg)
                                 return notify_fail("沒有"HIR+c3+NOR"這國家代碼！\n");
                         if(codetoteam(c4) == "未知國名")
                                 return notify_fail("沒有"HIR+c4+NOR"這國家代碼！\n");
-                        message("channel:sys", HIM"【謠言】"HIR"某人：競猜版四強結果公布，是 "HIY+codetoteam(c1)+"、"+codetoteam(c2)+"、"+codetoteam(c3)+"、"+codetoteam(c4)+HIR" ！押對的快去兌獎啊！\n"NOR, users());
+                        message("channel:sys", HIM"【謠言】"HIR"某人：競猜版四強結果公佈，是 "HIY+codetoteam(c1)+"、"+codetoteam(c2)+"、"+codetoteam(c3)+"、"+codetoteam(c4)+HIR" ！押對的快去兑獎啊！\n"NOR, users());
                         break;
                 case 8: 
                         c=ordercode(c, 8);
@@ -281,7 +281,7 @@ int do_post(string arg)
                                 return notify_fail("沒有"HIR+c7+NOR"這國家代碼！\n");
                         if(codetoteam(c8) == "未知國名")
                                 return notify_fail("沒有"HIR+c8+NOR"這國家代碼！\n");
-                        message("channel:sys", HIM"【謠言】"HIR"某人：競猜版八強結果公布，是 "HIY+codetoteam(c1)+"、"+codetoteam(c2)+"、"+codetoteam(c3)+"、"+codetoteam(c4)+"、"+codetoteam(c5)+"、"+codetoteam(c6)+"、"+codetoteam(c7)+"、"+codetoteam(c8)+HIR" ！押對的快去兌獎啊！\n"NOR, users());
+                        message("channel:sys", HIM"【謠言】"HIR"某人：競猜版八強結果公佈，是 "HIY+codetoteam(c1)+"、"+codetoteam(c2)+"、"+codetoteam(c3)+"、"+codetoteam(c4)+"、"+codetoteam(c5)+"、"+codetoteam(c6)+"、"+codetoteam(c7)+"、"+codetoteam(c8)+HIR" ！押對的快去兑獎啊！\n"NOR, users());
                         break;
                 default : return notify_fail(HIR"哪有這個類別！\n"NOR);
         }
@@ -290,7 +290,7 @@ int do_post(string arg)
                 "type" : i,
                 "code" : c,
         ]);
-// 最終結果儲存進這個文件對應的.o文件裡
+// 最終結果儲存進這個文件對應的.o文件裏
         if( !pointerp(end_biao) ) end_biao = ({ end });
         else end_biao += ({ end });
         jieguo = 1;
@@ -310,7 +310,7 @@ int do_read(string arg)
         {
 //這個規則根據每次巫師設計的定
                 write("
-    世界杯的冠軍、亞軍、四強、八強分別誰屬？歡迎在此押注：
+    世界盃的冠軍、亞軍、四強、八強分別誰屬？歡迎在此押注：
 押注者以黃金為單位，最高可押一千黃金，最少也要押一兩黃金。現金
 不收，必須先存進錢莊。押賭後錢莊直接扣錢。押賭時間到六月十日截
 止。押對八強的一賠二十，四強的一賠十，冠亞軍的一賠八，比賽揭曉，
@@ -333,14 +333,14 @@ int do_read(string arg)
            G組 意大利IT  墨西哥MX  克羅地亞HR  厄瓜多爾EC
            H組 日本JP    俄羅斯RU  比利時BE    突尼斯TN
 \n"NOR);
-                write("開獎後請使用duixian <類別> 指令，你的獎金將自動進入你帳戶。\n");
+                write("開獎後請使用duixian <類別> 指令，你的獎金將自動進入你帳户。\n");
                 return 1;
         }
         if(arg == "ban")
         {
 //有了分數的參數
-                if(num) write( "★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★\n"HIG"世界杯賽投注競猜版  ");
-                write(!jieguo ? RED"還在投注中！":HIR"開始兌獎(duijiang)了！");
+                if(num) write( "★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★\n"HIG"世界盃賽投注競猜版  ");
+                write(!jieguo ? RED"還在投注中！":HIR"開始兑獎(duijiang)了！");
 //表示還沒有數據
                 if( !pointerp(end_biao) || !sizeof(end_biao) )
                         write(HIY"\n巫師尚未設定結果。\n"NOR);
@@ -369,9 +369,9 @@ int do_read(string arg)
                 }
                 write(HIG"\n\n已有 "+sizeof(all_biao)+" 個玩家投注：\n"
                 HIY"玩家名         投注類別 押黃金數  　             國家名\n"
-                HIG"───────────────────────────────────\n"NOR);
-                str1 = HIM"已經兌過獎的玩家：                \n"NOR;
-                str2 = HIM"還未兌過獎的玩家：                \n"NOR;
+                HIG"———————————————————————————————————\n"NOR);
+                str1 = HIM"已經兑過獎的玩家：                \n"NOR;
+                str2 = HIM"還未兑過獎的玩家：                \n"NOR;
 // all_biao也是全局變量，看文件頭
                 for(i=0; i<sizeof(all_biao); i++)
                 {
@@ -388,7 +388,7 @@ int do_read(string arg)
                         for (j=0; j<sizeof(code); j++)
                                 if (strsrch(all_biao[i]["code"], code[j]) >= 0)
                                         str += team[j]+" ";
-// dui這個參數是在兌獎後加入的，這表示沒兌獎的，加入str2
+// dui這個參數是在兑獎後加入的，這表示沒兑獎的，加入str2
                         if(!(int)all_biao[i]["dui"]) str2 += str+"\n";
 // 有dui參數的，記入str1
                         else str1 += str+"\n";
@@ -406,7 +406,7 @@ void enough_rest()
 {
         delete_temp("busy");
 }
-// 兌獎指令
+// 兑獎指令
 int do_duijiang(string arg)
 {
         int i, j, k, item, t;
@@ -414,9 +414,9 @@ int do_duijiang(string arg)
         object ob, me = this_player();
         mapping biao, fifa2002;
 
-// 沒有jieguo就表示沒有開始兌獎
-        if(!jieguo) return notify_fail("還未到兌獎時間！\n");
-        if(!query("end_ya")) return notify_fail("還未到兌獎時間！\n");
+// 沒有jieguo就表示沒有開始兑獎
+        if(!jieguo) return notify_fail("還未到兑獎時間！\n");
+        if(!query("end_ya")) return notify_fail("還未到兑獎時間！\n");
         if(query_temp("busy")) return notify_fail("稍候........\n");
         set_temp("busy",1);
         k = 0;
@@ -437,10 +437,10 @@ int do_duijiang(string arg)
                         all_biao[i]["id"] == query("id", me) )
                 {
                         if (all_biao[i]["dui"] )
-                                return notify_fail("你已兌過獎啦！\n");
+                                return notify_fail("你已兑過獎啦！\n");
                         result = all_biao[i]["code"];
                         j = all_biao[i]["gold"];
-// 表示此人兌過獎了
+// 表示此人兑過獎了
                         all_biao[i]["dui"] = 1;
 // 存盤
                         save();
@@ -457,9 +457,9 @@ int do_duijiang(string arg)
         if(k>0)
 // 中獎就給吧
         {
-                write("你押 "+j+" 兩黃金，按規定得獎金 "+k+" 兩黃金，已劃入你的錢莊帳戶！\n");
+                write("你押 "+j+" 兩黃金，按規定得獎金 "+k+" 兩黃金，已劃入你的錢莊帳户！\n");
                 addn("balance", k*10000, me);
-                 message("channel:sys", HIM"【謠言】"HIR"某人："+me->name()+"兌獎得到 "+chinese_number(k)+" 兩黃金！\n"NOR, users());
+                 message("channel:sys", HIM"【謠言】"HIR"某人："+me->name()+"兑獎得到 "+chinese_number(k)+" 兩黃金！\n"NOR, users());
                 return 1;
         }
         else

@@ -5,8 +5,8 @@ void create()
 {
         set("short", "後堂");
         set("long", @long
-這裡是書場的後堂，裡面有一張桌子和一張矮床，牆上的窗戶半掩
-著，牆上掛著一副年畫(picture)。
+這裏是書場的後堂，裏面有一張桌子和一張矮牀，牆上的窗户半掩
+着，牆上掛着一副年畫(picture)。
 long);
         set("item_desc", ([
                 "picture" : "這一張尋常農家過年時貼的年畫。\n",

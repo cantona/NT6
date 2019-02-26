@@ -6,7 +6,7 @@ void create()
 {
         set("short", "六和塔");
         set("long", @LONG
-這裡是六和塔的八層。窗(window)外是濃妝淡抹的西子湖，塔
+這裏是六和塔的八層。窗(window)外是濃粧淡抹的西子湖，塔
 中玲瓏八角，青磚砌地，雕欄飛檐間粘連了些許蛛網。
 LONG);
         set("exits", ([

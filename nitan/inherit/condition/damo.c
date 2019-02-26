@@ -117,7 +117,7 @@ int dispel(object me, object ob, mapping cnd)
                                     "化解" + pos + "，然而似乎沒有半點效果。"
                                     "\n" NOR);
                         tell_object(ob, MAG + me->name() + "將內力緩緩的輸"
-                                    "入你的體力，你覺得一陣惡心，幾欲嘔吐。"
+                                    "入你的體力，你覺得一陣噁心，幾欲嘔吐。"
                                     "\n" NOR);
                         if (! me->is_busy())
                         me->start_busy(1);
@@ -212,7 +212,7 @@ string die_reason(string name)
         if (! name || name == "毒")
                 return "毒發身亡了";
         else
-                return name + HIM "發作身亡了□;
+                return name + HIM "發作身亡了";
 }
 
 int update_condition(object me, mapping cnd)
@@ -278,7 +278,7 @@ int update_condition(object me, mapping cnd)
         {
                 if (cnd["remain"] <= cnd["level"])
                 {
-                        message("vision", HIM + me->name() + "長長的吁"
+                        message("vision", HIM + me->name() + "長長的籲"
                                 "了一口氣，看起來神色好多了。\n" NOR,
                                 environment(me), ({ me }));
                         tell_object(me, HIM "你覺得身上的" + cnd["name"] +

@@ -98,7 +98,7 @@ void attempt_apprentice(object ob)
                 return;
 
         command("hmm");
-        command("say 嗯…也好。你以後就跟著我吧。");
+        command("say 嗯…也好。你以後就跟着我吧。");
         command("recruit "+query("id", ob));
 
         if( query("class", ob) != "beggar" )

@@ -7,7 +7,7 @@ void create()
         set_name("小賊", ({ "xiao zei","xiao","zei" }) );
         set("gender", "男性" );
         set("age", 15);
-        set("long", "一個笑嘻嘻看著你的小孩。\n");
+        set("long", "一個笑嘻嘻看着你的小孩。\n");
 
         set("str", 25);
         set("con", 25);
@@ -42,7 +42,7 @@ void create()
         setup();
         set("chat_chance", 15);
         set("chat_msg", ({
-                "小賊說道: 好心的大爺哪～ 賞我要飯的幾個銅板吧～\n",
+                "小賊説道: 好心的大爺哪～ 賞我要飯的幾個銅板吧～\n",
                 "小賊懶洋洋地打了個哈欠。\n",
                 "小賊伸手捉住了身上的蝨子，罵道: 小爺身上沒幾兩肉，叫你們還咬! \n",
                 (: random_move :)
@@ -117,6 +117,6 @@ int accept_object(object me, object obj)
 
 int accept_fight(object me)
 {
-        command("say " + RANK_D->query_respect(me) + "饒命□小的這就離開□\n");
+        command("say " + RANK_D->query_respect(me) + "饒命ⅵ小的這就離開ⅵ\n");
         return 0;
 }

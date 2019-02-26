@@ -4,7 +4,7 @@ void create()
 {
         set("short", "火浣室");
         set("long", @LONG
-這裡便是絕情谷的火浣室。谷主規定每日有一個時辰焚燒
+這裏便是絕情谷的火浣室。谷主規定每日有一個時辰焚燒
 烈火。
 LONG);
         set("exits", ([

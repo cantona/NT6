@@ -7,7 +7,7 @@ void create()
         set_name("蝴蝶", ({ "hu die", "hu" }) );
         set("race", "野獸");
         set("age", 4);
-        set("long", "一只美麗的蝴蝶，看到它，你不覺有些感傷。\n");
+        set("long", "一隻美麗的蝴蝶，看到它，你不覺有些感傷。\n");
         set("attitude", "peaceful");
 
         set("str", 26);

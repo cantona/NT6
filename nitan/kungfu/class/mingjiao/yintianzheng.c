@@ -13,7 +13,7 @@ void create()
         set_name("殷天正", ({"yin tianzheng", "yin", "tianzheng", }));
         set("long",
         "他是一位身材魁梧的禿老者，身穿一件白色長袍。\n"
-        "他長眉勝雪，垂下眼角，鼻子鉤曲，猶如鷹嘴。\n"
+        "他長眉勝雪，垂下眼角，鼻子鈎曲，猶如鷹嘴。\n"
         );
 
         set("title",HIG "明教" HIW "白眉鷹王" NOR);

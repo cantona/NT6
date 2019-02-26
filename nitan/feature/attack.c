@@ -195,13 +195,13 @@ void kill_ob(object ob)
                                        HIW "發動了攻擊。\n" NOR, gob, me);
                         break;
                 case 1:
-                        message_vision(HIW "$N" HIW "一聲怒吼，沖上前"
+                        message_vision(HIW "$N" HIW "一聲怒吼，衝上前"
                                        "去，看來是要和$n" HIW "拼命。\n" NOR,
                                        gob, me);
                         break;
                 case 2:
                         message_vision(HIW "$N" HIW "冷笑了一聲，道："
-                                       "“接招吧！”說罷就對$n" HIW
+                                       "“接招吧！”説罷就對$n" HIW
                                        "發動了攻擊。\n" NOR, gob, me);
                         break;
                 case 3:
@@ -220,8 +220,8 @@ void kill_ob(object ob)
                                        "取人的性命！\n" NOR, gob, me);
                         break;
                 case 6:
-                        message_vision(HIW "緊接著$N" HIW "已經攻上！"
-                                       "招招進逼$n" HIW "，毫無容情余"
+                        message_vision(HIW "緊接着$N" HIW "已經攻上！"
+                                       "招招進逼$n" HIW "，毫無容情餘"
                                        "地！\n" NOR, gob, me);
                         break;
                 default:
@@ -269,7 +269,7 @@ void want_kill(object ob)
                 set("no_newbie", 1);
                 if( query("newbie") ) {
                         delete("newbie");
-                        tell_object(me, BLINK + HIR "\n由于你主動攻擊其他玩家，所以取消對你的新手保護！\n\n" NOR);
+                        tell_object(me, BLINK + HIR "\n由於你主動攻擊其他玩家，所以取消對你的新手保護！\n\n" NOR);
                 }
         }
 }

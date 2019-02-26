@@ -24,9 +24,9 @@ void create()
         set("short", "菩提院");
 
         set("long", @LONG
-這裡是少林寺的菩提院。殿上並列這三尊銅像，佛像之前安著一
-座屏風，屏風上裝著一面極大的銅鏡，擦得晶光凈亮，鏡中將你的人
-影照了出來，銅鏡(jing)上鐫著四句經偈，佛像前點著幾盞油燈，昏
+這裏是少林寺的菩提院。殿上並列這三尊銅像，佛像之前安着一
+座屏風，屏風上裝着一面極大的銅鏡，擦得晶光淨亮，鏡中將你的人
+影照了出來，銅鏡(jing)上鐫着四句經偈，佛像前點着幾盞油燈，昏
 黃的燈光之下，依稀看到的是：『一切有為法，如夢幻泡影，如露亦
 如電，當作如是觀。』
 LONG );
@@ -75,12 +75,12 @@ string look_hole()
         string msg;
 
         if (query("status") != 4)
-                return "哪裡有什麼洞？抓老鼠麼？\n";
+                return "哪裏有什麼洞？抓老鼠麼？\n";
 
         if (query("book_count"))
-                return "這是銅鏡下面的一個小洞，裡面放著一本殘破的舊經書(book)。\n";
+                return "這是銅鏡下面的一個小洞，裏面放着一本殘破的舊經書(book)。\n";
 
-        return "這是銅鏡下面的一個小洞，裡面空空如也，什麼也沒有。\n";
+        return "這是銅鏡下面的一個小洞，裏面空空如也，什麼也沒有。\n";
 }
 
 int do_xian(string arg)
@@ -131,7 +131,7 @@ int do_xian(string arg)
         // 只要掀“一”就還原
         if (arg == "一") right = 1;
         set("status", right);
-        message("vision", "你聽到“□啦”一聲響聲，似乎"
+        message("vision", "你聽到“咔啦”一聲響聲，似乎"
                           "有什麼機關觸動了。\n", this_object());
         if (right == 4)
         {
@@ -162,11 +162,11 @@ int do_get(string arg)
         if (query("status") != 4)
                 return 0;
 
-        // 已經存在秘本，或者書已經被拿走
+        // 已經存在祕本，或者書已經被拿走
         if (objectp(ob = find_object(THE_BOOK)) &&
             environment(ob) || query("book_count") < 1)
         {
-                write("你想書想暈了頭嗎？那裡並沒有什麼書呀！\n");
+                write("你想書想暈了頭嗎？那裏並沒有什麼書呀！\n");
                 return 1;
         }
 
@@ -174,7 +174,7 @@ int do_get(string arg)
         ob = load_object(THE_BOOK);
         if (! objectp(ob))
         {
-                write("系統出現故障 - 找不到應該在這裡的秘籍了 :)\n");
+                write("系統出現故障 - 找不到應該在這裏的祕籍了 :)\n");
                 return 1;
         }
 

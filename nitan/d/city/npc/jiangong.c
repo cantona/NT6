@@ -12,7 +12,7 @@ void create()
         set("gender", "男性");
         set("str", 26);
         set("dex", 25);
-        set("long", "監工面無表情的站在碼頭邊上，手裡握著一根鞭子。\n");
+        set("long", "監工面無表情的站在碼頭邊上，手裏握着一根鞭子。\n");
         set("max_jing", 500);
         set("max_qi", 500);
         set("attitude", "heroism");

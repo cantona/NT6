@@ -12,7 +12,7 @@ void create()
       set("unit", "顆");
       set("value", 4000);
                 set("no_sell", 1);
-      set("long", "這是一顆丐幫特制能解百毒的雄黃丸，尤其對蛇嗤蟲咬之傷更見神效。\n");
+      set("long", "這是一顆丐幫特製能解百毒的雄黃丸，尤其對蛇嗤蟲咬之傷更見神效。\n");
       set("medicine", 1);
    }
    setup();

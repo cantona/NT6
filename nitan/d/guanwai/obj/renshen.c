@@ -4,7 +4,7 @@ inherit ITEM;
 
 void create()
 {
-        set_name("人參", ({"renshen", "shen"}));
+        set_name("人蔘", ({"renshen", "shen"}));
         if (clonep())
                 set_default_object(__FILE__);
         else {

@@ -24,13 +24,13 @@ int do_lianxi(string arg)
                 return notify_fail("你還是專心拱豬吧！\n");
 
         if( query("sleep_room", where) )
-                return notify_fail("在睡房裡不能練習演奏樂器，這會影響他人。\n");
+                return notify_fail("在睡房裏不能練習演奏樂器，這會影響他人。\n");
 
         if( query("no_fight", where) )
-                return notify_fail("這裡不適合練習演奏樂器。\n");
+                return notify_fail("這裏不適合練習演奏樂器。\n");
 
         if (me->is_busy())
-                return notify_fail("你現在正忙著呢。\n");
+                return notify_fail("你現在正忙着呢。\n");
 
         if( me->is_fighting() )
                 return notify_fail("你無法在戰鬥中專心下來練習演奏！\n");
@@ -49,7 +49,7 @@ int do_lianxi(string arg)
                 if( query("shape", ob) == "zither" )
                 message_vision("$N手撫$n，彈了幾下，所成調子嚴重走音。\n"NOR, me, ob);
                 if( query("shape", ob) == "flute" )
-                message_vision("$N將$n放在唇邊一吹，結果發出一陣五音不全的聲響。\n"NOR, me, ob);
+                message_vision("$N將$n放在脣邊一吹，結果發出一陣五音不全的聲響。\n"NOR, me, ob);
                 return 1;
         }
 
@@ -79,7 +79,7 @@ int do_lianxi(string arg)
         else {
                 cost=query("jing", me);
                 if (cost < 0) cost = 0;
-                write("你現在過于疲倦，無法專心下來練習演奏樂器。\n");
+                write("你現在過於疲倦，無法專心下來練習演奏樂器。\n");
                 return 1;
         }
 

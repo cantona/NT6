@@ -15,7 +15,7 @@ int perform(object me, object target)
         if (! target) target = offensive_target(me);
 
         if( query_temp("weapon", me) )
-                return notify_fail("你拿著武器怎麼能準確的點中對方的穴道呢！\n");
+                return notify_fail("你拿着武器怎麼能準確的點中對方的穴道呢！\n");
 
         if (!target || ! me->is_fighting(target))
              return notify_fail(name() + "只能對戰鬥中的對手使用。\n");
@@ -30,7 +30,7 @@ int perform(object me, object target)
                 return notify_fail("你沒有準備彈指神通，難以施展" + name() + "。\n");
 
         if (! living(target))
-                return notify_fail("對方都已經這樣了，用不著這麼費力吧？\n");
+                return notify_fail("對方都已經這樣了，用不着這麼費力吧？\n");
 
         if((int)me->query_skill("tanzhi-shentong",1) < 200)
                 return notify_fail("你的彈指神通修為不夠， 目前不能使用隔空點穴! \n");
@@ -51,7 +51,7 @@ int perform(object me, object target)
                 xw = random(8);
         }
 
-        msg = HIY "\n陡見$N" HIY "耐心的繞著$n旋走，突然只聽見$N大喊一聲:看我桃花" NOR+name()+HIY"，著 !\n" NOR;
+        msg = HIY "\n陡見$N" HIY "耐心的繞着$n旋走，突然只聽見$N大喊一聲:看我桃花" NOR+name()+HIY"，着 !\n" NOR;
 
         // 伏兔穴
         //if (xw == 1)
@@ -105,7 +105,7 @@ int perform(object me, object target)
                         msg += HIW "$n趕緊退了一步，才閃了過去。\n" NOR;
                 else
                 {
-                        msg += HIR "$n一被點中，一股熱氣直沖丹田，體內的真氣被打散了開去！\n" NOR;
+                        msg += HIR "$n一被點中，一股熱氣直衝丹田，體內的真氣被打散了開去！\n" NOR;
                         set_temp("thd/tz", 1, me);
                         addn("neili", -lvl*3, target);
                         addn("neili", -150, me);

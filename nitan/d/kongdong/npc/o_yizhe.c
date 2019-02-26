@@ -29,7 +29,7 @@ void create()
         set("max_force", 3000);
         set("force", 3000);
 
-        set("long",     "這是一個精神矍鑠的老者，雙目有神，閃爍著睿智的光芒。\n");
+        set("long",     "這是一個精神矍鑠的老者，雙目有神，閃爍着睿智的光芒。\n");
 
 
         set("combat_exp", 999999);

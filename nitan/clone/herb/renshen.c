@@ -2,11 +2,11 @@
 
 void create()
 {
-        set_name(HIW "人參" NOR, ({ "ren shen", "ren", "shen", "herb_renshen" }));
+        set_name(HIW "人蔘" NOR, ({ "ren shen", "ren", "shen", "herb_renshen" }));
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("long", HIW "人參是頗為名貴的中藥藥材。\n" NOR);
+                set("long", HIW "人蔘是頗為名貴的中藥藥材。\n" NOR);
                 set("base_unit", "根");
                 set("base_value", 10000);
                 set("base_weight", 90);

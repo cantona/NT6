@@ -11,7 +11,7 @@ void create()
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("long", "一顆同時泛著奇異魔光和佛光的果實，據說吃了以後可以清除吃丹留下的後遺症。\n");
+                set("long", "一顆同時泛着奇異魔光和佛光的果實，據説吃了以後可以清除吃丹留下的後遺症。\n");
                 set("value", 10000);
                 set("unit", "顆");
                 set("no_sell", 1);

@@ -27,8 +27,8 @@ mapping family_punishers = ([
 
 void create()
 {
-        set_name("墮落的錦衣衛", ({ "jinyi wei", "jinyi", "wei" }));
-        set("long", "一個墮落的錦衣衛。\n");
+        set_name("墮落的錦衣衞", ({ "jinyi wei", "jinyi", "wei" }));
+        set("long", "一個墮落的錦衣衞。\n");
         set("gender", "男性");
         set("age", 30);
         set("str", 20);

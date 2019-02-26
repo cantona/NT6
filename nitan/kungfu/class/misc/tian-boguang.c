@@ -14,7 +14,7 @@ int  is_stay_in_room()  { return 1; }
 void create()
 {
         set_name("田伯光", ({ "tian boguang", "tian", "boguang" }));
-        set("nickname", HIM "萬裡獨行" NOR);
+        set("nickname", HIM "萬里獨行" NOR);
         set("long", "田伯光為江湖中臭名昭彰的採花賊，一手快刀絕技，天下無雙。輕功在武林中也是一等的。\n");
         set("gender", "男性");
         set("age", 35);
@@ -211,8 +211,8 @@ void death_msg()
 {
         command("chat* heng");
        	command("chat 今日真是冤家路窄，你爺爺我還有事，不奉陪了 ……");
-	CHANNEL_D->channel_broadcast("rumor", "聽說" + name() + HIM "被江湖人"
-			                     "士追殺，但卻奮力拼殺，突出重圍，死裡逃生。" NOR);
+	CHANNEL_D->channel_broadcast("rumor", "聽説" + name() + HIM "被江湖人"
+			                     "士追殺，但卻奮力拼殺，突出重圍，死裏逃生。" NOR);
 }
 
 void random_move()
@@ -224,7 +224,7 @@ void random_move()
                 env = environment(this_object());
                 message_vision("$N急急忙忙的走了。\n", this_object());
 
-                CHANNEL_D->channel_broadcast("mess", "聽說" +
+                CHANNEL_D->channel_broadcast("mess", "聽説" +
                         env->short() + HIW "(" + LOOK_CMD->locate(base_name(env)) + ")一帶出現的" +
                         HIR + this_object()->short() + HIG "消失了。\n" NOR);
 

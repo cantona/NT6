@@ -35,7 +35,7 @@ int perform(object me, object target)
                 return notify_fail("你沒有激發上清劍法，難以施展" + name() + "。\n");
 
         if (! living(target))
-                return notify_fail("對方都已經這樣了，用不著這麼費力吧？\n");
+                return notify_fail("對方都已經這樣了，用不着這麼費力吧？\n");
 
         wname = weapon->name();
 
@@ -49,7 +49,7 @@ int perform(object me, object target)
         if (ap / 2 + random(ap) > dp)
         {
                 msg += COMBAT_D->do_damage(me, target, WEAPON_ATTACK, damage, 20,
-                                           HIR "$p" HIR "奮力抵擋，卻哪裡招架得住，被$P"
+                                           HIR "$p" HIR "奮力抵擋，卻哪裏招架得住，被$P"
                                            HIR "這一劍刺中要脈，鮮血四處飛濺！\n" NOR);
         } else
         {

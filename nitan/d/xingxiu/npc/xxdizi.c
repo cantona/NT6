@@ -5,7 +5,7 @@ inherit NPC;
 void create()
 {
         set_name("星宿派弟子", ({ "xingxiu dizi", "dizi"}));
-        set("long", "他是星宿派的惡徒, 燒殺搶姦賭, 無惡不作。\n");
+        set("long", "他是星宿派的惡徒, 燒殺搶奸賭, 無惡不作。\n");
         set("gender", "男性");
         set("age", 30 + random(10));
         set("attitude", "peaceful");

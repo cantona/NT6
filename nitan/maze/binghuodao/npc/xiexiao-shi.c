@@ -9,7 +9,7 @@ void create()
 {
         set_name(HIM "謝曉詩" NOR, ({ "xiexiao shi", "xiexiao", "shi" }));
         set("title", HIW "冰" HIR "火" HIC "使者");
-        set("long", "她是負責護送玩家到冰火島的秘密使者。\n");
+        set("long", "她是負責護送玩家到冰火島的祕密使者。\n");
         set("gender", "女性");
         set("age", 20);
         set("max_qi", 99999);

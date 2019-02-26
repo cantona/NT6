@@ -8,8 +8,8 @@ void create()
 {
         set("short", "書房大門");
         set("long", @LONG
-這是書房門口，只見大門旁貼著副對聯 (duilian)，抬頭上望。
-門楣上一塊大匾(bian)上寫著幾個大字。
+這是書房門口，只見大門旁貼着副對聯 (duilian)，抬頭上望。
+門楣上一塊大匾(bian)上寫着幾個大字。
 LONG );
         set("outdoors", "lingjiu");
         set("exits", ([

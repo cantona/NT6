@@ -75,5 +75,5 @@ void create()
 void attempt_apprentice(object ob)
 {
         command("hmm");
-        command("say 你不收徒，你找其余當家的吧。");
+        command("say 你不收徒，你找其餘當家的吧。");
 }

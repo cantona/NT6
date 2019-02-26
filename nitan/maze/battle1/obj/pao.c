@@ -34,8 +34,8 @@ mapping default_dirs = ([
         "up":                "上",
         "down":                "下",
         "out":                "外",
-        "enter":        "裡",
-        "in":                "裡",
+        "enter":        "裏",
+        "in":                "裏",
         "left":                "左",
         "right":        "右",
 ]);
@@ -77,7 +77,7 @@ int do_load(string arg)
         if ( !arg || (arg!="powder" && arg!="huo yao" && arg!="dan tou" ) )
            return notify_fail( "你想要加載什麼？\n");
 
-        if( me->is_busy() ) return notify_fail("你還在忙著呢！\n") ;
+        if( me->is_busy() ) return notify_fail("你還在忙着呢！\n") ;
 
         if( arg=="powder" || arg =="huo yao" )
         {
@@ -88,7 +88,7 @@ int do_load(string arg)
 
                 if( huoyao && objectp(huoyao) && query("load", huoyao)>0 )
                 {
-                        message_vision("$N往炮筒裡加入一些火藥。\n",me);
+                        message_vision("$N往炮筒里加入一些火藥。\n",me);
                         set("load",query("load",  huoyao)-1, huoyao);
                         if( query("load", huoyao) <= 0)destruct(huoyao);
                         addn_temp("yao_loaded",1);
@@ -102,7 +102,7 @@ int do_load(string arg)
 
                 if( query_temp("dan_loaded") > 0 )return notify_fail("大炮已經裝有彈頭了。\n");
 
-                message_vision("$N往炮筒裡加入一枚彈頭。\n",me);
+                message_vision("$N往炮筒里加入一枚彈頭。\n",me);
                 destruct(dantou);
                 addn_temp("dan_loaded",1);
                 me->start_busy(1);
@@ -121,7 +121,7 @@ string look_room(object me, object env)
                   string str, *dirs;
 
                   if( !env ) {
-                                         return "你的四周灰蒙蒙地一片，什麼也沒有。\n";
+                                         return "你的四周灰濛濛地一片，什麼也沒有。\n";
                   }
                   str = sprintf( "%s - %s\n    %s%s",
                                          query("short", env),
@@ -136,11 +136,11 @@ string look_room(object me, object env)
                                                                                   dirs[i] = 0;
                                          dirs -= ({ 0 });
                                          if( sizeof(dirs)==0 )
-                                                                str += "    這裡沒有任何明顯的出路。\n";
+                                                                str += "    這裏沒有任何明顯的出路。\n";
                                          else if( sizeof(dirs)==1 )
-                                                                str += "    這裡唯一的出口是 " + BOLD + dirs[0] + NOR + "。\n";
+                                                                str += "    這裏唯一的出口是 " + BOLD + dirs[0] + NOR + "。\n";
                 else
-                        str += sprintf("    這裡明顯的出口是 " + BOLD + "%s" + NOR + " 和 " + BOLD + "%s" + NOR + "。\n",
+                        str += sprintf("    這裏明顯的出口是 " + BOLD + "%s" + NOR + " 和 " + BOLD + "%s" + NOR + "。\n",
                                 implode(dirs[0..sizeof(dirs)-2], "、"), dirs[sizeof(dirs)-1]);
                   }
 //      str += env->door_description();
@@ -155,13 +155,13 @@ string look_room(object me, object env)
                                                                 str += "  " + inv[i]->short() + "騎在" +
                                                                 (query("rided", inv[i]))->name()+"上";
                                          if( stringp(query_temp("exit_blocked", inv[i])) )
-                                                                str+="擋著往"+query_temp("exit_blocked", inv[i])+
+                                                                str+="擋着往"+query_temp("exit_blocked", inv[i])+
                                                                 "去的路";
                                                                 str += "\n";
                                          }
                                          else {
                                                                 if( stringp(query_temp("exit_blocked", inv[i])) )
-                                                                str+=""+inv[i]->short()+"擋著往"+query_temp("exit_blocked", inv[i] )
+                                                                str+=""+inv[i]->short()+"擋着往"+query_temp("exit_blocked", inv[i] )
                                                                                   +"去的路\n";
                                                                 else
                                                                 str += "  " + inv[i]->short() + "\n";
@@ -180,7 +180,7 @@ int do_aim(string arg)
         string str, dest;
         mapping exit;
 
-        if( me->is_busy() ) return notify_fail("你還在忙著呢！\n") ;
+        if( me->is_busy() ) return notify_fail("你還在忙着呢！\n") ;
 
         cur_target = query_temp("target");
 
@@ -255,7 +255,7 @@ int explode(object me, object ob)
                 if (!objectp(env))return notify_fail("找不到目標。\n");
         }
 
-        message_vision(HIY"只聽的一聲驚天動地的爆響，$N"+HIY"發射了，彈頭帶著一道火線飛向"+query("short", env)+HIY"，四周一片硝煙禰漫。\n"NOR,ob);
+        message_vision(HIY"只聽的一聲驚天動地的爆響，$N"+HIY"發射了，彈頭帶着一道火線飛向"+query("short", env)+HIY"，四周一片硝煙禰漫。\n"NOR,ob);
 
         owner = query_temp("owner");
 

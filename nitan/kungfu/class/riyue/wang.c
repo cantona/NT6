@@ -90,5 +90,5 @@ void attempt_apprentice(object ob)
         if (! permit_recruit(ob))
                 return;
 
-             command("say 我不收徒，你去找教內的其余長老好了。");
+             command("say 我不收徒，你去找教內的其餘長老好了。");
 }

@@ -11,7 +11,7 @@ void create()
 {
         set("short", "石礦");
         set("long", @LONG
-這裡郊外一座荒山，怪石嶙峋，在山的另一邊不斷傳來一陣陣的
+這裏郊外一座荒山，怪石嶙峋，在山的另一邊不斷傳來一陣陣的
 爆炸聲，原來已經有很多人在那邊炸(zha)山開採礦石。
 LONG );
         set("outdoors","city");
@@ -34,16 +34,16 @@ int do_zha(string arg)
                 return notify_fail(HIY"你要做什麼？\n"NOR);
 
         if( (!arg) || !((arg == "山") ))
-                return notify_fail(CYN"你拿著雷管沒事幹呀！\n"NOR);
+                return notify_fail(CYN"你拿着雷管沒事幹呀！\n"NOR);
 
         if( query_temp("caiend", me) == 1 )
-                return notify_fail(HIR"這裡已經被你炸平了，還想來破壞環境呀？\n"NOR);
+                return notify_fail(HIR"這裏已經被你炸平了，還想來破壞環境呀？\n"NOR);
 
         if( query("zha/山", me) == 1 )
                 return notify_fail(HIM"雷管已經點燃了，你還要幹什麼？\n"NOR);
 
         if( me->is_busy()) 
-                return notify_fail("你正忙著呢！！\n");
+                return notify_fail("你正忙着呢！！\n");
 
         if( (query("qi", me)<25) || (query("jing", me)<25) )
                 return notify_fail(MAG"你太累了，賺錢也不急在一時。\n"NOR);
@@ -63,7 +63,7 @@ int do_zha(string arg)
 int valid_leave(object me, string dir)
 {
         if( (dir == "southdown" || dir == "northeast") && query("zha/山", me) == 1 )
-                return notify_fail(HIW"你的雷管還插在那裡，想留下來害人嗎？\n"NOR);
+                return notify_fail(HIW"你的雷管還插在那裏，想留下來害人嗎？\n"NOR);
         return 1;
 }
 
@@ -93,7 +93,7 @@ void bao()
         return;
 }       
         if( query("cps", me)<random(25)+5){
-        message_vision(BLU"$N閉著眼睛、捂著耳朵等了老半天，卻什麼都沒發生，原來雷管受潮死火了。\n"NOR,me);
+        message_vision(BLU"$N閉着眼睛、捂着耳朵等了老半天，卻什麼都沒發生，原來雷管受潮死火了。\n"NOR,me);
         me->receive_damage("qi", random(10)); 
         me->receive_damage("jing", random(10)); 
         me->start_busy(random(8) +3);

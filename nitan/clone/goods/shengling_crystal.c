@@ -12,7 +12,7 @@ void create()
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("long", HIM "聖靈水晶，可以保証在強化裝備失敗時候不掉星級，帶在身上即可。\n" NOR);
+                set("long", HIM "聖靈水晶，可以保證在強化裝備失敗時候不掉星級，帶在身上即可。\n" NOR);
                 set("value", 50000);
                 set("unit", "塊");
         }

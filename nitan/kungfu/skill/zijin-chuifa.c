@@ -5,7 +5,7 @@
 inherit SKILL;
 
 mapping *action = ({
-([      "action" : "$N雙手一震，手中$w夾帶著悶雷般的響聲，劈頭蓋臉地就向$n砸了過去。",
+([      "action" : "$N雙手一震，手中$w夾帶着悶雷般的響聲，劈頭蓋臉地就向$n砸了過去。",
         "force"  : 100,
         "dodge"  : -3,
         "parry"  : 15,
@@ -29,7 +29,7 @@ mapping *action = ({
         "lvl"    : 50,
         "damage_type": "瘀傷"
 ]),
-([      "action" : "$N全然不顧$n的招式，舉起$w朝著$n當頭就是一錘。",
+([      "action" : "$N全然不顧$n的招式，舉起$w朝着$n當頭就是一錘。",
         "force"  : 210,
         "dodge"  : -12,
         "parry"  : 30,

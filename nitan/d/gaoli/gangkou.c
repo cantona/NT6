@@ -8,9 +8,9 @@ void create()
 {
         set("short", "港口");
         set("long", @LONG
-這裡是一個港口，這裡非常熱鬧，停泊著各種船只，有貨船，商船
-等等。很多旅客從這裡進出港口，有從中原來的，也有從其他地方來的。
-許多小販在這裡叫賣。有舟船可以通往日本(chuan) 十分方便。
+這裏是一個港口，這裏非常熱鬧，停泊着各種船隻，有貨船，商船
+等等。很多旅客從這裏進出港口，有從中原來的，也有從其他地方來的。
+許多小販在這裏叫賣。有舟船可以通往日本(chuan) 十分方便。
 LONG
         );
 set("outdoors", "gaoli");
@@ -40,8 +40,8 @@ int do_enter ( string arg )
          return 1 ;
        }
     ob = this_player () ;
-    message_vision("船夫一見有人上船，忙叫了一聲：開船嘍！\n", ob);
-    message_vision("船夫升起帆，船就向東南方航行。\n", ob);
+    message_vision("船伕一見有人上船，忙叫了一聲：開船嘍！\n", ob);
+    message_vision("船伕升起帆，船就向東南方航行。\n", ob);
     ob ->move("/d/quanzhou/dahai") ;
     tell_object(ob, BLU "你在海上航行了很久很久.......\n" NOR ) ;
     call_out("tpenghu", 10 , ob );
@@ -49,7 +49,7 @@ int do_enter ( string arg )
 }
 void tpenghu(object ob )
 {
-    tell_object(ob , "大船終于抵達了倭島。你走下船來。\n" ) ;
+    tell_object(ob , "大船終於抵達了倭島。你走下船來。\n" ) ;
     ob->move ("/d/japan/haigang") ;
 }
 

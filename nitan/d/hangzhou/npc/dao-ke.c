@@ -10,7 +10,7 @@ void create()
         set("gender", "男性");
         set("age", 20);
         set("long",
-                "這家伙滿臉橫肉，一付兇神惡煞的模樣，令人望而生畏。\n");
+                "這傢伙滿臉橫肉，一付凶神惡煞的模樣，令人望而生畏。\n");
         set("combat_exp", 15000);
         set("shen_type", -1);
         set("attitude", "heroism");
@@ -40,7 +40,7 @@ void init()
         mengzhu=query("winner", ob);
 
         if( query("id", this_player()) == mengzhu){
-                message_vision(HIY "刀客向$N躬身為禮，說道：盟主您老人家好！\n" NOR, 
+                message_vision(HIY "刀客向$N躬身為禮，説道：盟主您老人家好！\n" NOR, 
                 this_player());
         }        
 }

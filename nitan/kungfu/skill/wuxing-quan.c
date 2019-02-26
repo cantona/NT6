@@ -10,7 +10,7 @@ mapping *action = ({
         "skill_name" : "赤火手",
         "damage_type" : "瘀傷"
 ]),
-([      "action" : "$N左腳虛踏，全身右轉，一招" HIW "『行風腿』" NOR "，右腿攜著旋風勁猛地踢向$n的$l",
+([      "action" : "$N左腳虛踏，全身右轉，一招" HIW "『行風腿』" NOR "，右腿攜着旋風勁猛地踢向$n的$l",
         "force" : 200,
         "dodge" : 10,
         "damage": 20,
@@ -34,7 +34,7 @@ mapping *action = ({
         "skill_name" : "爍金掌",
         "damage_type" : "瘀傷"
 ]),
-([      "action" : "$N左掌圈花揚起，屈肘當胸，右手虎口朝上，一招" WHT "『土霸拳』" NOR "呼嘯著打向$n的$l",
+([      "action" : "$N左掌圈花揚起，屈肘當胸，右手虎口朝上，一招" WHT "『土霸拳』" NOR "呼嘯着打向$n的$l",
         "force" : 260,
         "dodge" : 20,
         "damage": 35,
@@ -51,7 +51,7 @@ mapping *action = ({
         "skill_name" : "神木指",
         "damage_type" : "刺傷"
 ]),
-([      "action" : "$N雙拳劃弧，一記" RED "『五行總訣』" NOR "，招出如電，幻出漫天掌影，舖天蓋地襲向$n全身",
+([      "action" : "$N雙拳劃弧，一記" RED "『五行總訣』" NOR "，招出如電，幻出漫天掌影，鋪天蓋地襲向$n全身",
         "force" : 320,
         "dodge" : 0,
         "damage": 40,

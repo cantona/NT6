@@ -68,9 +68,9 @@ int do_insert(string arg)
         if (!objectp(ob = present(item_name, me)))
                 return notify_fail("你想把它鑲嵌在什麼東西上？\n");
         if (index > ob->query("sockets/max"))
-                return notify_fail(ob->name() + "上好象並沒有這個接孔呀！\n");
+                return notify_fail(ob->name() + "上好像並沒有這個接孔呀！\n");
         if (ob->query("equipped"))
-                return notify_fail(ob->name() + "正裝備著呢！\n");
+                return notify_fail(ob->name() + "正裝備着呢！\n");
         if (me->query("max_neili") < 1000 || me->query("neili") < 1500)
                 return notify_fail("以你現在的內力修為，還無法運功鑲嵌寶石！\n");
 
@@ -96,12 +96,12 @@ int do_combine(string arg)
         object *inv, gem, me = this_player();
 
         if (!arg || arg == "")
-                return notify_fail("你想合並什麼寶石？\n");
+                return notify_fail("你想合併什麼寶石？\n");
         if (arg != query("id")) return 0;
         if (query("level") == 8)
                 return notify_fail("這個寶石已經是最高等級了！\n");
         if (me->query("max_neili") < 500 || me->query("neili") < 800)
-                return notify_fail("以你現在的內力修為，還無法運功合並寶石！\n");
+                return notify_fail("以你現在的內力修為，還無法運功合併寶石！\n");
 
         inv = all_inventory(me);
         for(i = 0; i < sizeof(inv); i++)
@@ -121,5 +121,5 @@ int do_combine(string arg)
                                 return 1;
                         }
                 }
-        return notify_fail("你必須有三塊同樣的寶石才能進行合並！\n");
+        return notify_fail("你必須有三塊同樣的寶石才能進行合併！\n");
 }

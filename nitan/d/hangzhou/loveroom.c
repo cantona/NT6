@@ -54,7 +54,7 @@ void create()
 樓外樓的相約軒，四面通窗。湖風拂面，淡淡生暖。遠望蘇堤一
 線，映波，鎖瀾，望山，壓堤，東浦，跨虹六橋斷續連沿，煙柳籠紗，
 流鶯嬌啼。近處白堤橫亙湖上，堤上楊柳覆地，芳草寒茵如一段碧綢
-飄然湖面。室內一張精巧的小桌。桌上一紙精致的菜單(menu)。
+飄然湖面。室內一張精巧的小桌。桌上一紙精緻的菜單(menu)。
 LONG
         );
         set("exits", ([ /* sizeof() == 1 */
@@ -126,7 +126,7 @@ int do_order(string arg)
         env = this_object();
         mesg = query("order_owner");
         if( mesg && (arg == "end") && (mesg == query("id", me))){
-                mesg = "幽會終于結束了 !!!!!!\n";
+                mesg = "幽會終於結束了 !!!!!!\n";
                 message("channel:chat", RED+"【通告】"+mesg+NOR, users() );
                 delete_temp("plugin");
                 delete("order_owner");
@@ -142,7 +142,7 @@ int do_order(string arg)
                 return 1;
         }
         if (mesg)
-                return notify_fail("這裡已經被人包租了.\n");
+                return notify_fail("這裏已經被人包租了.\n");
         notify_fail("你沒有足夠的錢或零錢不夠.\n");
         if (arg == "party") {
                 mesg = me->name() + "和某人在杭州樓外樓幽會 !!!!!!\n";
@@ -158,7 +158,7 @@ int do_order(string arg)
                 create_food(HIB"西湖醋魚"NOR, ({ "fish" }) );
                 create_food(HIR"龍井蝦仁"NOR, ({ "shrimp" }) );
                 create_food(YEL"叫化童雞"NOR, ({ "chicken" }) );
-                create_food(HIR"桂花鮮栗羹"NOR, ({ "guihua geng" }) );
+                create_food(HIR"桂花鮮慄羹"NOR, ({ "guihua geng" }) );
                 create_food(HIY"百果油包"NOR, ({ "baozi" }) );
                 }
          else {
@@ -178,7 +178,7 @@ int do_close(string arg)
         object room;
         if(arg!="door") return notify_fail("你要幹什麼？\n");
         if (me->is_busy() || me->is_fighting())
-                 return notify_fail("你正忙著呢。\n");
+                 return notify_fail("你正忙着呢。\n");
         room=this_object();
         delete("exits/down", room);
         query_temp("plugin", me);
@@ -194,13 +194,13 @@ int do_open(string arg)
         object room;
         if(arg!="door") return notify_fail("你要幹什麼？\n");
         if (me->is_busy() || me->is_fighting())
-                 return notify_fail("你正忙著呢。\n");
+                 return notify_fail("你正忙着呢。\n");
         room=this_object();
         set("exits/down", __DIR__"jiulou", room);
         query_temp("plugin", me);
         delete_temp("plugin", me);
         me->start_busy(10);
-        message("channel:chat", HIR+"【通告】"+me->name()+"終于打開門啦 !!!!\n"NOR, users() );
+        message("channel:chat", HIR+"【通告】"+me->name()+"終於打開門啦 !!!!\n"NOR, users() );
         return 1;
 }
 

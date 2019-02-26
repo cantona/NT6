@@ -25,7 +25,7 @@ int exert(object me, object target)
         me->receive_damage("qi", 0);
 
         message_combatd(HIC "$N" HIC "大喝一聲，一股氣浪登時如波"
-                        "濤一般散布開來，直吹得四周飛沙走石！\n" NOR, me);
+                        "濤一般散佈開來，直吹得四周飛沙走石！\n" NOR, me);
 
         addn_temp("apply/attack", skill*2/5, me);
         addn_temp("apply/defense", skill*2/5, me);

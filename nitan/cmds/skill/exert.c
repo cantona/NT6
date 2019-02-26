@@ -22,7 +22,7 @@ int main(object me, string arg)
        if( !environment(me) ) return notify_fail("你在虛空中無法運功。\n");
        if( query("no_fight", environment(me)) && 
                   query("doing", me) != "scheme" )
-                      return notify_fail("你無法在這裡使用內功。\n"); 
+                      return notify_fail("你無法在這裏使用內功。\n"); 
 
 
         if (me->query_condition("no_exert"))
@@ -66,8 +66,8 @@ int help (object me)
 在你使用某一種內功的特異功能之前，你必須先用 enable 指令來指定你要使用
 的內功。
 
-請參考 help force 可得知一些大部分內功都有的功能，至于你所用的內功到底
-有沒有該功能，試一試或參考其他說明便知。
+請參考 help force 可得知一些大部分內功都有的功能，至於你所用的內功到底
+有沒有該功能，試一試或參考其他説明便知。
 
 注：如果你改變自己的內功，你原本蓄積的內力並不能直接轉換過去，必須
     從０開始。

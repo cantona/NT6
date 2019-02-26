@@ -145,7 +145,7 @@ void heart_beat()
                         if( my["eff_qi"] > 0 && my["qi"] * 100 / my["eff_qi"] <= 50 )
                                 SKILL_D("force/recover")->exert(me, me);
 
-                        // 如果不在打架而且處于受傷狀態，則自行療傷
+                        // 如果不在打架而且處於受傷狀態，則自行療傷
                         if( !is_fighting() ) {
                                 if( my["eff_jing"] < my["max_jing"] )
                                         SKILL_D("force/inspire")->exert(me, me);
@@ -250,7 +250,7 @@ void heart_beat()
                         string msg;
                         // msg = HIG "【檔案存儲】您的檔案已經自動存盤。\n" NOR;
                         if( !me->save() )
-                                msg = HIR "【數據保護】由于數據異常，您的檔"
+                                msg = HIR "【數據保護】由於數據異常，您的檔"
                                           "案本次存盤失敗。\n" NOR;
                         set("last_save", t);
                         if( msg )
@@ -323,7 +323,7 @@ int visible(object ob)
         return 1;
 }
 
-// 這裡應該區分是否帶面具名字，而不是大小寫
+// 這裏應該區分是否帶面具名字，而不是大小寫
 varargs string query_idname(int raw)
 {
         if( !raw ) return query("name") + "(" + query("id") + ")";

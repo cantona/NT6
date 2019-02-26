@@ -74,10 +74,10 @@ int perform(object me, object target)
         count = me->query_skill("sword-cognize", 1) + me->query_skill("martial-cognize", 1);
         count /= 500;
 
-        msg = HIW "$N" HIW "神態寫意，溫柔撫弄手中的" + weapon->name() + HIW "，只見" + weapon->name() +
+        msg = HIW "$N" HIW "神態寫意，温柔撫弄手中的" + weapon->name() + HIW "，只見" + weapon->name() +
               HIW "表面掠過一絲光影，微微顫動，整把劍竟靈動起來、有若生物。\n" NOR
               HIM"$N"HIM"將手中"+query("name", weapon)+HIM"緩緩刺出，劍招隨意無章！\n"NOR
-              HIM "這招看似緩慢，其實疾如閃電，看似隨意無章，卻是和" + weapon->name() + HIM "融為一體，無懈可擊，蘊涵著返璞歸真的意境。\n" NOR;
+              HIM "這招看似緩慢，其實疾如閃電，看似隨意無章，卻是和" + weapon->name() + HIM "融為一體，無懈可擊，藴涵着返璞歸真的意境。\n" NOR;
 
         message_combatd(msg, me);
 
@@ -114,7 +114,7 @@ int perform(object me, object target)
                                 {
                                         ob[i]->receive_damage("qi", query("qi", ob[i]) * query_temp("apply/fatal_blow", me)/100, me);
                                         ob[i]->receive_wound("qi", query("qi", ob[i]) * query_temp("apply/fatal_blow", me)/200, me);
-                                        msg += HIR "緊接著，$N" HIR "追加了致命一擊，給$n" HIR "造成更嚴重的創傷。\n" NOR;
+                                        msg += HIR "緊接着，$N" HIR "追加了致命一擊，給$n" HIR "造成更嚴重的創傷。\n" NOR;
                                 }
                         }
                         p=query("qi", ob[i])*100/query("max_qi", ob[i]);
@@ -123,7 +123,7 @@ int perform(object me, object target)
                 } else
                 {
                         ob[i]->start_busy(2);
-                        msg = HIC "$n" HIC "情急之下，不及考慮，倒地一滾，僥幸避開$N" HIC "這一招的攻擊，冷汗直淋！\n" NOR;
+                        msg = HIC "$n" HIC "情急之下，不及考慮，倒地一滾，僥倖避開$N" HIC "這一招的攻擊，冷汗直淋！\n" NOR;
                         message_vision(msg, me, ob[i]);
                 }
         } ;

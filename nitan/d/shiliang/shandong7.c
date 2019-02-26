@@ -6,9 +6,9 @@ void create()
 {
         set("short", "山洞盡頭");
         set("long", @LONG
-你繼續往裡面走去，這裡越發地黑起來，伸手不見五指，許
+你繼續往裏面走去，這裏越發地黑起來，伸手不見五指，許
 多蝙蝠在你耳邊不停地怪笑，真令人毛骨悚然，你茫然不知道如
-何是好。這裡已經山洞盡頭了，無路可走。
+何是好。這裏已經山洞盡頭了，無路可走。
 LONG
         );
         set("exits", ([
@@ -47,7 +47,7 @@ int do_zuan(string arg)
                     environment(me), ({me}) );
             me->move(__DIR__"midao");
             me->unconcious();
-            message("vision", me->name() + "從山洞裡掉了下來。\n",
+            message("vision", me->name() + "從山洞裏掉了下來。\n",
                     environment(me), ({me}) );
             delete_temp("marks/鑽1", this_player());
             return 1;

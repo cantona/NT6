@@ -1,4 +1,4 @@
-// xiaofeng.c 蕭峰(喬峰)
+// xiaofeng.c 蕭峯(喬峯)
 
 #include <ansi.h>
 
@@ -12,15 +12,15 @@ int do_kill(object me, object dest);
 
 void create()
 {
-        set_name("蕭峰", ({"xiao feng", "xiao", "feng"}));
+        set_name("蕭峯", ({"xiao feng", "xiao", "feng"}));
         set("gender", "男性");
         set("nickname",HIB "鐵掌降龍" NOR);
         set("age", 28);
         set("long", 
                 "他就是丐幫前任幫主，因被發現是契丹人而眾叛親離。\n"
-                "在江湖上與燕子塢的慕榮復並稱為「北喬峰，南慕榮」。\n"
+                "在江湖上與燕子塢的慕榮復並稱為「北喬峯，南慕榮」。\n"
                 "他身穿一件普通的粗布褂子，腰間用一條麻繩隨便一系。\n"
-                "他身高六尺有余，體格十分魁梧，長有一張線條粗曠、十\n"
+                "他身高六尺有餘，體格十分魁梧，長有一張線條粗曠、十\n"
                 "分男性化的臉龐，雙目如電，炯炯有神。\n");
         set("attitude", "peaceful");
         
@@ -31,8 +31,8 @@ void create()
 
         set("chat_chance", 1);
         set("chat_msg", ({
-                "蕭峰嘆了口氣道：“唉……想不到我蕭峰大好男兒，居然被馬夫人這樣一個女子所騙！\n",
-                "蕭峰喃喃道：“我們丐幫的「降龍十八掌」是天下最霸道的掌法。”\n",
+                "蕭峯歎了口氣道：“唉……想不到我蕭峯大好男兒，居然被馬伕人這樣一個女子所騙！\n",
+                "蕭峯喃喃道：“我們丐幫的「降龍十八掌」是天下最霸道的掌法。”\n",
                 (: random_move :),
         }));
         set("inquiry", ([
@@ -60,7 +60,7 @@ void create()
         set_skill("xiaoyaoyou", 120);        // 逍遙遊
         set_skill("parry", 120);             // 基本招架
         set_skill("begging", 50);            // 叫化絕活
-        set_skill("checking", 50);           // 道聽途說
+        set_skill("checking", 50);           // 道聽途説
         
         map_skill("force", "huntian-qigong");
         map_skill("strike", "dragon-strike");
@@ -135,7 +135,7 @@ int do_kill(object me, object dest)
         if (objectp(dest) && present(dest, environment(me))
          && !query("no_fight", environment(me)) )
         {
-                message_vision(HIR "$N對$n說道：老子一見一品堂高手就生氣。"
+                message_vision(HIR "$N對$n説道：老子一見一品堂高手就生氣。"
                         +RANK_D->query_rude(dest)+"，納命來！\n" NOR, me, dest);
                 me->set_leader(dest);
                 me->kill_ob(dest);
@@ -201,7 +201,7 @@ int do_back(object me)
 
         me->move("/d/city/dongdajie2");
         set("combat_exp", 1000000, me);
-        message("vision", "蕭峰走了過來，拍了拍身上的塵土，微微一笑說道：又除了一個壞蛋。\n", 
+        message("vision", "蕭峯走了過來，拍了拍身上的塵土，微微一笑説道：又除了一個壞蛋。\n", 
                 environment(), me );
 
         me->set_leader(0);

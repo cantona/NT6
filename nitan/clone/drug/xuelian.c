@@ -16,7 +16,7 @@ void create()
                 set_default_object(__FILE__);
         else {
                 set("unit", "朵");
-                set("long", HIW"這是一朵晶瑩的雪蓮，她傲然于銀白色的雪山之巔綻放，清澈靈動，如清風\n般撫慰你的心田。\n"NOR);
+                set("long", HIW"這是一朵晶瑩的雪蓮，她傲然於銀白色的雪山之巔綻放，清澈靈動，如清風\n般撫慰你的心田。\n"NOR);
                 set("value", 20000);
                 set("no_sell", 1);
                 set("no_put",1);
@@ -25,8 +25,8 @@ void create()
                 set("armor_prop/per", 5);
                 set("armor_prop/per", 2); 
                 set("wear_msg",         
-                        HIM"$N輕輕的戴上那朵傳說中的雪蓮花，自己仿佛也變成了一朵傲然綻放于雪山\n"
-                        "之顛的雪蓮──不食人間煙火般的清澈，晶瑩剔透的眼波流轉，如一縷輕風\n"
+                        HIM"$N輕輕的戴上那朵傳説中的雪蓮花，自己彷彿也變成了一朵傲然綻放於雪山\n"
+                        "之顛的雪蓮——不食人間煙火般的清澈，晶瑩剔透的眼波流轉，如一縷輕風\n"
                         "般的身影夜夜徘徊在情人的夢鄉……\n"NOR);
                 set("remove_msg", WHT"$N輕輕地把$n"WHT"從頭上摘了下來，頓時黯然失色，不復婉轉靈動。\n"NOR); 
         }

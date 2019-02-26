@@ -37,8 +37,8 @@ if (!wizardp(me))
     }
     else
     {
-    message("vision", CYN + target->name() + "好象突然覺得有一股勁氣向自己的要穴射了過來，不及細想閃了一閃。\n" NOR,environment(me),({target}));
-    tell_object(target, CYN "你好象突然覺得有一股勁氣向自己的要穴射了過來，不及細想閃了一閃。\n" NOR);
+    message("vision", CYN + target->name() + "好像突然覺得有一股勁氣向自己的要穴射了過來，不及細想閃了一閃。\n" NOR,environment(me),({target}));
+    tell_object(target, CYN "你好像突然覺得有一股勁氣向自己的要穴射了過來，不及細想閃了一閃。\n" NOR);
     message_vision(CYN "$n從勁氣來向看到原來是$N在點自己的穴位，不禁大怒：敢暗算我，看招！\n" NOR,me,target);
 //  if (target->query("shen") < -100 ) target->kill_ob(me);
 target->fight_ob(me);
@@ -60,8 +60,8 @@ else
     }
     else
     {
-    message("vision", CYN + target->name() + "好象突然覺得有一股勁氣向自己的要穴射了過來，不及細想閃了一閃。\n" NOR,environment(me),({target}));
-    tell_object(target, CYN "你好象突然覺得有一股勁氣向自己的要穴射了過來，不及細想閃了一閃。\n" NOR);
+    message("vision", CYN + target->name() + "好像突然覺得有一股勁氣向自己的要穴射了過來，不及細想閃了一閃。\n" NOR,environment(me),({target}));
+    tell_object(target, CYN "你好像突然覺得有一股勁氣向自己的要穴射了過來，不及細想閃了一閃。\n" NOR);
     message_vision(CYN "$n從勁氣來向看到原來是$N在點自己的穴位，不禁大怒：敢暗算我，看招！\n" NOR,me,target);
 //  if (target->query("shen") < -100 ) target->kill_ob(me);
 target->fight_ob(me);

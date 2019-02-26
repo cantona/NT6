@@ -63,7 +63,7 @@ int ask_qiao()
         }
            else
            {
-                command("say 老喬就住在少室山山腳下，好象是"
+                command("say 老喬就住在少室山山腳下，好像是"
                         "在東頭…還是西頭？看我這記性！\n");
                 set_temp("marks/問過老喬", 1, this_player());
         }

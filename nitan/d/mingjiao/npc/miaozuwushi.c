@@ -11,7 +11,7 @@ void create()
         set("gender", "男性" );
 
         set("age", 45);
-        set("long", "詭異的苗人巫士，好象想殺了你祭神。\n");
+        set("long", "詭異的苗人巫士，好像想殺了你祭神。\n");
         set("shen_type",-1);
         set("combat_exp", 6000);
 

@@ -140,7 +140,7 @@ mapping show_trans = ([
 "family_24": "雪山派",
 "family_11": "全真派",  
 "family_25": "鎮遠鏢局",
-"family_12": "昆侖派", 
+"family_12": "崑崙派", 
 "family_26": "絕情谷",
 "family_13": "桃花島",   
 "family_27-1": "日月神教（男）",
@@ -157,10 +157,10 @@ mapping show_trans = ([
 "comm_3"  :  "醉仙樓",
 "comm_4"  :  "倉庫",
 "comm_5"  :  "郭府外",///d/wuguan/guofu_gate
-"comm_6"  :  "幹將莫邪",
+"comm_6"  :  "干將莫邪",
 "comm_7"  :  "張天師",
 "comm_8"  :  "海龜",
-"comm_9"  :  "神雕",
+"comm_9"  :  "神鵰",
 "comm_10"  :  "接引使",
 "comm_11"  :  "宗師獨孤求敗",
 "comm_12"  :  "宗師黃裳",
@@ -285,7 +285,7 @@ int show_trans(object me)
 
 		if (mapp(self_flag))
 		{
-			show_places += HIR "\n<用戶記錄地點>\n" NOR;
+			show_places += HIR "\n<用户記錄地點>\n" NOR;
 			if (sizeof(self_flag))
 			{
 				places = ({});
@@ -401,7 +401,7 @@ int move_to(object me, string place)
 	if (sscanf(trans_path, "/d/newbie/%s", temp) == 1)
 	{
 		write("你無法騎馬達到這個地方。\n");
-		log_file("horse",query("id", me)+"于"+ctime(time())+"試圖利用記錄點回到新手村。\n");
+		log_file("horse",query("id", me)+"於"+ctime(time())+"試圖利用記錄點回到新手村。\n");
 		return 1;
 	}	
 	// 神龍島上不能到達(超影馬除外)
@@ -495,7 +495,7 @@ set_temp("running", 1, 	horse);
 set_temp("running", 1, 	me);
 
 	message("vision",  "\n" + this_object() ->name() + HIW "一聲長"
-                  "嘶，箭一般地沖出 ……\n" NOR, environment(me), ({horse}));
+                  "嘶，箭一般地衝出 ……\n" NOR, environment(me), ({horse}));
 
 	call_out("arrived_dest", trans_times, me, follower, running, horse, trans_path);
 

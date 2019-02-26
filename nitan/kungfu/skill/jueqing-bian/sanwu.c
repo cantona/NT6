@@ -17,7 +17,7 @@ int perform(object me, object target)
                 return notify_fail("你未經高人指點，雖聽過這「三無三不手」，卻不知怎樣施展。\n");
 
         if( query_temp("sanwu_busy", me) )
-                return notify_fail("你微一運勁，卻發現自己雙臂酸軟，一時無法施展「三無三不手」！\n");
+                return notify_fail("你微一運勁，卻發現自己雙臂痠軟，一時無法施展「三無三不手」！\n");
 
         if( !target || !target->is_character() ||  !me->is_fighting(target) )
                 return notify_fail("「三無三不手」只能對戰鬥中的對手使用。\n");

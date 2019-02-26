@@ -26,7 +26,7 @@ int do_effect(object me)
    }
 
    message_vision("$N吃下一包" + name() + "。\n", me);
-   tell_object(me, "你覺得嘴裡非常的苦。\n");
+   tell_object(me, "你覺得嘴裏非常的苦。\n");
 
    if ((int)me->query_condition("hsf_poison") < 100) {
       me->clear_condition("hsf_poison");

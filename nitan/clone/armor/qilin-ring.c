@@ -12,7 +12,7 @@ void create()
                 set_default_object(__FILE__);
         else {
                 set("unit", "個");
-                set("long", HIR "麒麟指環乃火麒麟之化身，象征著「力量」！\n" NOR);
+                set("long", HIR "麒麟指環乃火麒麟之化身，象徵着「力量」！\n" NOR);
                 set("value", 200000);
                 set("material", "gold");
                 set("armor_prop/str", 10);

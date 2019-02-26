@@ -6,7 +6,7 @@ string type() { return "martial"; }
 string martialtype() { return "skill"; }
 
 mapping *action = ({
-([        "action":"$N微一躬身，一招"HIG"「庸人自擾」"NOR"，$w帶著刺耳的吱吱聲，擦地掃向$n的腳踝",
+([        "action":"$N微一躬身，一招"HIG"「庸人自擾」"NOR"，$w帶着刺耳的吱吱聲，擦地掃向$n的腳踝",
         "lvl" : 0,
         "skill_name" : "庸人自擾"
 ]),
@@ -22,15 +22,15 @@ mapping *action = ({
         "lvl" : 20,
         "skill_name" : "面無人色"
 ]),
-([        "action":"$N將$w頂住自己的胸膛，一端指向$n，一招"HIB"「心驚肉跳」"NOR"，大聲叫喊著沖向$n",
+([        "action":"$N將$w頂住自己的胸膛，一端指向$n，一招"HIB"「心驚肉跳」"NOR"，大聲叫喊着衝向$n",
         "lvl" : 25,
         "skill_name" : "心驚肉跳"
 ]),
-([        "action":"$N一招"HIC"「行屍走肉」"NOR"，全身僵直，蹦跳著持杖前行，冷不防舉杖攔腰向$n劈去",
+([        "action":"$N一招"HIC"「行屍走肉」"NOR"，全身僵直，蹦跳着持杖前行，冷不防舉杖攔腰向$n劈去",
         "lvl" : 30,
         "skill_name" : "行屍走肉"
 ]),
-([        "action":"$N面帶戚色，一招"HIM"「飲恨吞聲」"NOR"，趁$n說話間，一杖向$n張大的嘴巴捅了過去",
+([        "action":"$N面帶戚色，一招"HIM"「飲恨吞聲」"NOR"，趁$n説話間，一杖向$n張大的嘴巴捅了過去",
         "lvl" : 35,
         "skill_name" : "飲恨吞聲"
 ]),
@@ -38,7 +38,7 @@ mapping *action = ({
         "lvl" : 40,
         "skill_name" : "力不從心"
 ]),
-([        "action":"$N伏地裝死，一招"HIG"「窮途沒路」"NOR"，一個翻滾，身下$w往橫裡打出，揮向$n的襠部",
+([        "action":"$N伏地裝死，一招"HIG"「窮途沒路」"NOR"，一個翻滾，身下$w往橫裏打出，揮向$n的襠部",
         "lvl" : 45,
         "skill_name" : "窮途沒路"
 ]),

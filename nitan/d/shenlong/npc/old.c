@@ -10,7 +10,7 @@ void create()
 	set("title",HIY "神龍教" NOR "老者");
 	set("long", @LONG
 這是一個神龍教老者，太陽穴高聳，兩眼炯炯有神，顯然武功甚高。
-然而神色鬱鬱，對一幫年輕男女頗為有禮，似乎害怕什麼，樣子十分可憐。
+然而神色鬱郁，對一幫年輕男女頗為有禮，似乎害怕什麼，樣子十分可憐。
 LONG );
 	set("gender", "男性");
 	set("attitude", "peaceful");

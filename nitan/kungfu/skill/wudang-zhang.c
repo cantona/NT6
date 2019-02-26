@@ -1,28 +1,28 @@
 inherit SKILL;
 
 mapping *action = ({
-([      "action": "$N一招「蒼鬆迎客」，單掌平推，拍向$n的$l",
+([      "action": "$N一招「蒼松迎客」，單掌平推，拍向$n的$l",
         "force" : 10,
         "dodge" : 5,
         "parry" : 2,
         "lvl"   : 0,
-        "skill_name" : "蒼鬆迎客",
+        "skill_name" : "蒼松迎客",
         "damage_type": "瘀傷"
 ]),
-([      "action": "$N使一招「峰回路轉」，右手劃了一個圈子，左手揮出，劈向$n的$l",
+([      "action": "$N使一招「峯迴路轉」，右手劃了一個圈子，左手揮出，劈向$n的$l",
         "force" : 15,
         "dodge" : 18,
         "parry" : 17,
         "lvl"   : 10,
-        "skill_name" : "峰回路轉",
+        "skill_name" : "峯迴路轉",
         "damage_type": "瘀傷"
 ]),
-([      "action": "$N右手由鉤變掌，使一招「奇峰突現」，橫掃$n的$l",
+([      "action": "$N右手由鈎變掌，使一招「奇峯突現」，橫掃$n的$l",
         "force" : 15,
         "dodge" : 16,
         "parry" : 19,
         "lvl"   : 20,
-        "skill_name" : "奇峰突現",
+        "skill_name" : "奇峯突現",
         "damage_type": "瘀傷"
 ]),
 ([      "action": "$N雙手劃弧，右手向上，左手向下，使一招「白鶴亮翅」，分擊$n的面門和$l",
@@ -49,7 +49,7 @@ mapping *action = ({
         "skill_name" : "靈猴採桃",
         "damage_type": "瘀傷"
 ]),
-([      "action": "$N左手橫于胸前，右掌直擊$n的$l，正是一招「仙人指路」",
+([      "action": "$N左手橫於胸前，右掌直擊$n的$l，正是一招「仙人指路」",
         "force" : 35,
         "dodge" : 24,
         "parry" : 21,
@@ -120,7 +120,7 @@ mapping query_action(object me, object weapon)
 int practice_skill(object me)
 {
         if( query("qi", me)<100 )
-                return notify_fail("你現在手足酸軟，休息一下再練吧。\n");
+                return notify_fail("你現在手足痠軟，休息一下再練吧。\n");
 
         if( query("neili", me)<80 )
                 return notify_fail("你的內力不夠了。\n");

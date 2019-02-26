@@ -8,7 +8,7 @@ void create()
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("long", "一本紙頁發黃的古書，裡面還夾著幾張做鞋和繡花的紙樣。\n");
+                set("long", "一本紙頁發黃的古書，裏面還夾着幾張做鞋和繡花的紙樣。\n");
                 set("unit", "本");
                 set("material", "paper");
         }

@@ -44,7 +44,7 @@ int do_du(string arg)
 	if( !id(arg) ) return 0;
 
 	if( me->is_busy() )
-		return notify_fail("你現在正忙著呢。\n");
+		return notify_fail("你現在正忙着呢。\n");
 
 	if( me->is_fighting() )
 		return notify_fail("你無法在戰鬥中專心下來研讀新知！\n");
@@ -56,10 +56,10 @@ int do_du(string arg)
 		return notify_fail("你是個文盲，先學點文化(literate)吧。\n");        
 
 	if( me->query("jing") < 30 )
-		return notify_fail("你現在過于疲倦，無法專心下來研讀新知。\n");
+		return notify_fail("你現在過於疲倦，無法專心下來研讀新知。\n");
 
 	if( me->query_int() < 32 )
-		return notify_fail("由于你的悟性不夠，無法研習山羊皮。\n");
+		return notify_fail("由於你的悟性不夠，無法研習山羊皮。\n");
 
 	if( me->query("combat_exp") < 1500000 )
 		return notify_fail("你的實戰經驗不夠，無法領會山羊皮上的文字。\n");

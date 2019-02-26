@@ -36,7 +36,7 @@ void setup()
                 if (i) msg += "、";
                 msg += MEDICINE(ks[i])->name();
         }
-        msg += "的煉制方法，倒是可以仔細讀讀(read)，琢磨一下。\n";
+        msg += "的煉製方法，倒是可以仔細讀讀(read)，琢磨一下。\n";
         msg = sort_string(msg, 64);
         set("long", msg);
 }
@@ -62,7 +62,7 @@ int do_read(string arg)
                 return notify_fail("你要讀什麼？\n");
 
         if (sscanf(arg, "%s from %s", m_name, arg) != 2)
-                return notify_fail("研究配制藥物：read 藥名 from " +
+                return notify_fail("研究配製藥物：read 藥名 from " +
                                    query("id") + "\n");
 
         if (! id(arg))
@@ -79,7 +79,7 @@ int do_read(string arg)
         me = this_player();
         if (query("can_make/" + m_name, me))
         {
-                write("你已經通曉了「" + m_name + "」的秘密，沒什麼好研究的了。\n");
+                write("你已經通曉了「" + m_name + "」的祕密，沒什麼好研究的了。\n");
                 return 1;
         }
 
@@ -121,7 +121,7 @@ int do_read(string arg)
         if (lvl < (int)med[ks[i]])
         {
                 write("你覺得" + fm_name + "實在是"
-                      "太復雜了，以你目前的" + to_chinese(skill) +
+                      "太複雜了，以你目前的" + to_chinese(skill) +
                       "的學識恐怕還難以弄明白。\n");
                 return 1;
         }
@@ -129,15 +129,15 @@ int do_read(string arg)
         if (random(lvl) < (int)med[ks[i]])
         {
                 write(random(2) ? "你研究了一會兒有關" + fm_name +
-                                  "的內容，有些收獲，不過還沒有徹底明白。\n"
-                                : "你仔細閱讀了一會兒有關" + m_name +
+                                  "的內容，有些收穫，不過還沒有徹底明白。\n"
+                                : "你仔細閲讀了一會兒有關" + m_name +
                                   "的內容，明白了不少其中奧妙。\n");
                 return 1;
         }
 
         write("你細細的研讀了有關" + fm_name +
-              "的內容，終于恍然大悟，徹底明白了其中的奧妙。\n");
-        write(HIC "你學會了煉制" + fm_name + HIC "的方法。\n");
+              "的內容，終於恍然大悟，徹底明白了其中的奧妙。\n");
+        write(HIC "你學會了煉製" + fm_name + HIC "的方法。\n");
         set("can_make/"+m_name, ks[i], me);
         return 1;
 }

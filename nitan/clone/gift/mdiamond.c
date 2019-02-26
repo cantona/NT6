@@ -14,7 +14,7 @@ void create()
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("long", HIW "一顆煥發著奇異的光彩的鑽石，"
+                set("long", HIW "一顆煥發着奇異的光彩的鑽石，"
                     "給人以不同尋常的感覺。\n" NOR);
                 set("value", 200000);
                         set("unit", "顆");

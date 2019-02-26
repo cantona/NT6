@@ -21,7 +21,7 @@ int perform(object me, object target)
                 return notify_fail("太玄神功「星河影動」只能在戰鬥中對對手使用。\n");
  
         if( query_temp("weapon", me) || query_temp("secondary_weapon", me) )
-                return notify_fail("你手中拿著兵器，無法施展「星河影動」。\n");
+                return notify_fail("你手中拿着兵器，無法施展「星河影動」。\n");
                 
         if (me->query_skill_prepared("unarmed") != "taixuan-shengong")
                 return notify_fail("你現在沒有準備使用太玄神功，無法使用「星河影動」！\n");
@@ -52,7 +52,7 @@ int perform(object me, object target)
                        "卻發現已被一股巨大的勁力包圍，無從閃避。\n" NOR;
         } else
         {
-                msg += HIC "$n" HIC "凝神應戰，聚真氣于雙臂，奮力化解$P" HIC
+                msg += HIC "$n" HIC "凝神應戰，聚真氣於雙臂，奮力化解$P" HIC
                        "這幾招。\n" NOR;
                 count = 0;
         }

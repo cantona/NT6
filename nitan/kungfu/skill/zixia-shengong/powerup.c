@@ -23,7 +23,7 @@ int exert(object me, object target)
         me->receive_damage("qi", 0);
 
         message_combatd(MAG "$N微一凝神，運起紫霞神功，背轉身去，臉上突然紫氣大盛！"
-                        "只是那紫氣一現即隱，轉過身來，臉上又回復如常。\n" NOR, me);
+                        "只是那紫氣一現即隱，轉過身來，臉上又回覆如常。\n" NOR, me);
 
         addn_temp("apply/attack", skill*2/5, me);
         addn_temp("apply/defense", skill*2/5, me);

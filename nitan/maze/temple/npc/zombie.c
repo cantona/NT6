@@ -4,9 +4,9 @@ inherit BOSS;
 void do_bite();
 void create()
 {
-        set_name("僵屍", ({ "zombie" }));
+        set_name("殭屍", ({ "zombie" }));
         set("vendetta_mark","zombie");
-        set("long", "這是一個腐爛的僵屍。\n");
+        set("long", "這是一個腐爛的殭屍。\n");
         set("title", HIB "(鬼氣)" NOR); 
 
         set("str", 50);

@@ -13,7 +13,7 @@ void create()
                 set_default_object(__FILE__);
         else {
                 set("unit", "柄");
-                set("no_sell", "這柄爛劍你自個留著吧。\n");
+                set("no_sell", "這柄爛劍你自個留着吧。\n");
                 set("value", 100000);
                 set("material", "xuantie");
                 set("wield_msg", HIR "$N" HIR "抽出一柄黑黝黝的"

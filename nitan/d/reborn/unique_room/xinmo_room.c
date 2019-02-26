@@ -7,7 +7,7 @@ void create()
 {
         set("short", HIM "心魔深處" NOR);
         set("long", @LONG
-幻境裡到處是迷霧彌漫，周邊的景物似有似無，虛無縹緲。
+幻境裏到處是迷霧瀰漫，周邊的景物似有似無，虛無縹緲。
 LONG );
 
         set("maze", 1);

@@ -84,7 +84,7 @@ int do_enter(string arg)
                 return notify_fail("沒有這個聊天室。\n");
 
         if( objectp(ride=query_temp("is_riding", me)) )
-                return notify_fail("沒聽說過有人能騎" + ride->name() +
+                return notify_fail("沒聽説過有人能騎" + ride->name() +
                                     "進聊天室的。\n");
 
         message_vision("$N快步往" + ob->short() + "走去。\n", me);
@@ -136,7 +136,7 @@ int do_clean(string arg)
         int i;
 
         if (! is_root(this_player()))
-                return notify_fail("你沒有權限在這裡清除聊天室。\n");
+                return notify_fail("你沒有權限在這裏清除聊天室。\n");
 
         rooms = query_chat_room();
         if (! sizeof(rooms))
@@ -181,9 +181,9 @@ int do_help(string arg)
         {
         case "here":
                 write(@HELP
-在這裡你可以使用以下這些和聊天室相關的命令：
+在這裏你可以使用以下這些和聊天室相關的命令：
     enter        進入一個聊天室
-    chathere     查閱這裡的聊天室
+    chathere     查閲這裏的聊天室
     newchat      建立新的聊天室
 HELP );
                 break;
@@ -192,7 +192,7 @@ HELP );
                 write(@HELP_ENTER
 指令格式 : enter <聊天室ID>
 
-此指令讓你進入指定的聊天室，參與聊天，當然前提的保証你不是不
+此指令讓你進入指定的聊天室，參與聊天，當然前提的保證你不是不
 受歡迎的人物。
 
 相關指令：chathere，newchat
@@ -203,7 +203,7 @@ HELP_ENTER );
                 write(@HELP_CHATHERE
 指令格式 : herechat
 
-此指令讓你查閱這裡都有哪些聊天室，其中看上去是紅色的表示你不
+此指令讓你查閲這裏都有哪些聊天室，其中看上去是紅色的表示你不
 受歡迎，請勿入內。
 
 相關指令：enter，newchat

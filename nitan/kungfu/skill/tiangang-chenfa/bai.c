@@ -36,7 +36,7 @@ int perform(object me, object target)
                 return notify_fail("你沒有激發天罡塵法，難以施展" BAI "。\n");
 
         if (! living(target))
-                return notify_fail("對方都已經這樣了，用不著這麼費力吧？\n");
+                return notify_fail("對方都已經這樣了，用不着這麼費力吧？\n");
 
         msg=HIY"但見$N"HIY"手中"+query("name", weapon)+HIY"竄動不"
               "已，接連變幻了數種招式，分襲$n" HIY "各處要害。\n";

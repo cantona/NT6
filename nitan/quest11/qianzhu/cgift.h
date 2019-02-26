@@ -5,7 +5,7 @@
 
 // Exp在 100K 以上可以修改屬性。
 #define MIN_EXP 100000
-// 剩余EXP比率等于100%減去每點扣除比率
+// 剩餘EXP比率等於100%減去每點扣除比率
 // 當前修改每點屬性，扣除exp比率為5%
 #define RATE 0.9500
 
@@ -76,10 +76,10 @@ int do_change(string arg)
 			return notify_fail("你的"+gift_desc[from]+"不能再減少了。\n");
 
 		if ( ((int)me->query(from) - num) < 10)
-			return notify_fail("你的"+gift_desc[from]+"減少"+num+"點後將少于10點，不能修改。\n");
+			return notify_fail("你的"+gift_desc[from]+"減少"+num+"點後將少於10點，不能修改。\n");
 
 		if (me->query(to) >= 30 )
-			return notify_fail("你的"+gift_desc[to]+"已經大于30點，不能再增加了。\n");
+			return notify_fail("你的"+gift_desc[to]+"已經大於30點，不能再增加了。\n");
 
 		if ( ((int)me->query(to) + num) > 30)
 			return notify_fail("你的"+gift_desc[to]+"增加"+num+"點後將超過30點，不能修改。\n");
@@ -122,22 +122,22 @@ int do_change(string arg)
 			msg += HIR"抱歉：修改"+num+"點屬性後經驗將不夠 "+MIN_EXP+" ，建議你一次少修改幾點屬性。\n"NOR;
 
 		if (me->query_skill("jinshe-zhangfa",1) || me->query_skill("jinshe-jianfa",1))
-			msg += HIR"注意：如果修改臂力高于20，金蛇劍法和金蛇掌法將被刪除。\n"NOR;
+			msg += HIR"注意：如果修改臂力高於20，金蛇劍法和金蛇掌法將被刪除。\n"NOR;
 
 		if (me->query("double_attack") && me->query("zhou"))
-			msg += HIR"注意：如果修改悟性高于25，左右互搏將被刪除。\n"NOR;
+			msg += HIR"注意：如果修改悟性高於25，左右互搏將被刪除。\n"NOR;
 
 		if (me->query("dali") && me->query_skill("lingbo-weibu", 1))
-			msg += HIR"注意：如果修改悟性低于22，凌波微步將被刪除。\n"NOR;
+			msg += HIR"注意：如果修改悟性低於22，凌波微步將被刪除。\n"NOR;
 
 		if ( me->query("quest/qianzhu/pass") )
-			msg += HIR"注意：如果修改根骨低于15或悟性低于20，千蛛萬毒手將被刪除。\n"NOR;
+			msg += HIR"注意：如果修改根骨低於15或悟性低於20，千蛛萬毒手將被刪除。\n"NOR;
 
 		if ( me->query("quest/pixie/pass") )
-			msg += HIR"注意：如果修改身法低于15或悟性低于20，葵花神功將被刪除。\n"NOR;
+			msg += HIR"注意：如果修改身法低於15或悟性低於20，葵花神功將被刪除。\n"NOR;
 
 		if ( me->query("quest/ningxue/pass") )
-			msg += HIR"注意：如果修改身法低于15或根骨低于15，凝血神爪將被刪除。\n"NOR;
+			msg += HIR"注意：如果修改身法低於15或根骨低於15，凝血神爪將被刪除。\n"NOR;
 
 		write(msg);
 		return 1;
@@ -166,7 +166,7 @@ private void confirm_passwd(string pass, object me, string from, string to, int 
 	me->add(to, num);
 	me->add("combat_exp", -tmpexp);
 
-	// 膂力限制金蛇秘籍
+	// 膂力限制金蛇祕籍
 	if ( me->query("str") > 20) {
 		me->delete_skill("jinshe-zhangfa");
 		me->delete_skill("jinshe-jianfa");
@@ -214,7 +214,7 @@ private void confirm_passwd(string pass, object me, string from, string to, int 
 	log_file("nosave/ADJUST",
 		me->query("name")+"("+capitalize(geteuid(me))+")"
 		+"調整"+num+"點"+gift_desc[from]
-		+"到"+gift_desc[to]+"上，扣除 "+tmpexp+" 點經驗，剩余"+newexp+"\n",
+		+"到"+gift_desc[to]+"上，扣除 "+tmpexp+" 點經驗，剩餘"+newexp+"\n",
 		me,
 		({ me })
 	);

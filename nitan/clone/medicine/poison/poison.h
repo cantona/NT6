@@ -20,20 +20,20 @@ int do_make(string arg)
                 return notify_fail("你身上沒有火種，怎麼升火？\n");
         if(me->query_skill("poison", 1) < 60)
         {
-                message_vision("$N打著火折將$n點燃，冒出一縷奇異的毒煙！\n",me,this_object());
+                message_vision("$N打着火折將$n點燃，冒出一縷奇異的毒煙！\n",me,this_object());
                 message_vision("$N嚇了一大跳，連忙將$n胡亂一扔，遠遠躲了開去！\n",me,this_object());
 //                this_object()->add_amount(-1);
                 destruct(obj);
                 return 1;
         }
         if(present("huo yan", environment(me)))
-                return notify_fail("這裡已經有火燄了，還要升什麼火？\n");
+                return notify_fail("這裏已經有火焰了，還要升什麼火？\n");
         if(!fire)
         {
                 addn("neili", -100, me);
-                message_vision(HIR"\n$N口中吐出一口青煙，將手中$n"HIR"用內力一搓一拋，轟地一聲燃起一堆熊熊火燄！\n\n"NOR, me, this_object());
+                message_vision(HIR"\n$N口中吐出一口青煙，將手中$n"HIR"用內力一搓一拋，轟地一聲燃起一堆熊熊火焰！\n\n"NOR, me, this_object());
         }
-        else message_vision( HIR"\n$N將手中$n"HIR"用火種點燃，然後向地下使勁一扔，燃起了一堆熊熊火燄！\n\n"NOR, me, this_object());    
+        else message_vision( HIR"\n$N將手中$n"HIR"用火種點燃，然後向地下使勁一扔，燃起了一堆熊熊火焰！\n\n"NOR, me, this_object());    
         new("/d/xingxiu/npc/obj/huoyan")->move(environment(me));
 //        this_object()->add_amount(-1);
         destruct(obj);
@@ -70,7 +70,7 @@ int do_dian(string arg)
         if(!objectp(ob1 = present("fire", me)))
                 return notify_fail("你先要找個火種。\n");
 
-        message_vision("$N打著火折將$n點燃，冒出一縷奇異的毒煙！\n",me,ob);
+        message_vision("$N打着火折將$n點燃，冒出一縷奇異的毒煙！\n",me,ob);
         if(me->query_skill("poison", 1) > 79)
         {
                 new(query("drug2", ob))->move(me);

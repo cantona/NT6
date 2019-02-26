@@ -7,8 +7,8 @@ void create()
 {
         set("short", "河船");
         set("long", @LONG
-這是一艘裝飾華麗的河船，艙中布置得尤如名門閨房。你走了其中
-便是到了苗家一般，不油得暗暗驚訝不已。四周迷漫著奇異藥氣，你感
+這是一艘裝飾華麗的河船，艙中佈置得尤如名門閨房。你走了其中
+便是到了苗家一般，不油得暗暗驚訝不已。四周迷漫着奇異藥氣，你感
 覺四肢發軟雙眼渾濁。
 LONG
         );
@@ -53,5 +53,5 @@ void recover(object me, int lose)
          addn_temp("apply/damage", lose, me);
          addn_temp("apply/attack", lose, me);
          addn_temp("apply/dodge", lose, me);
-         write("你運功片刻，終于將余毒逼出感到全身舒坦。\n");
+         write("你運功片刻，終於將餘毒逼出感到全身舒坦。\n");
 }

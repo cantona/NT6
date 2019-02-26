@@ -13,7 +13,7 @@ int exert(object me, object target)
                 return notify_fail("你的內力不夠。\n");
 
         if( query("no_fight", environment(me)) )
-                return notify_fail("這裡不能攻擊別人! \n");
+                return notify_fail("這裏不能攻擊別人! \n");
 
         skill = me->query_skill("force", 1);
 

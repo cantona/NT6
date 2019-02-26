@@ -51,7 +51,7 @@ int do_rehab(string arg)
                 return notify_fail("你身上沒有這樣道具。\n");         
         
         if (! ob->query("enchase"))
-                return notify_fail(ob->name() + "好象沒有鑲嵌什麼吧！\n" NOR);
+                return notify_fail(ob->name() + "好像沒有鑲嵌什麼吧！\n" NOR);
 
         if (! ob->query("enchase/" + enid))
                 return notify_fail(ob->name() + "上沒有這個鑲嵌物品。\n" NOR);

@@ -11,7 +11,7 @@ void reset_me(object me);// 初始化武功、經驗、title 等
 void create_identity (mixed master, mixed where);//為弟子重置準備(只一次)
 int init_identity (object me, object master, object where);//重置弟子restore
 int do_clone(object me, object ob);//完全拷貝ob的武功等給me 並保存
-void self_adjust (object me); //設所有武功60 氣血同reset  用于copy from master後恢復
+void self_adjust (object me); //設所有武功60 氣血同reset  用於copy from master後恢復
 string zm_apply();// 處理ask about 掌門事件
 int do_recopy (object me); // 開始打架之前 恢復狀態
 void find_master (object me, object ob); // 帶去掌門路上循環檢測
@@ -125,7 +125,7 @@ int init_identity (object me, object master, object where)
         return 1;
 }
 
-// 復制數據
+// 複製數據
 int do_clone(object me, object ob)
 {
         object *inv, newob,weapon;
@@ -413,7 +413,7 @@ void time_out (object me, object ob)
 {
         if( !query("fighting") ) return;
         if( objectp(ob) && same_environment(me, ob) )
-                message_vision ("$N很不高興的對$n說道，讓你帶我一起去拜見掌門，你墨跡到現在也沒有去，如此還是算了吧！\n\n",me,ob);
+                message_vision ("$N很不高興的對$n説道，讓你帶我一起去拜見掌門，你墨跡到現在也沒有去，如此還是算了吧！\n\n",me,ob);
         else if( objectp(ob) )
                 tell_object(ob, "首席大弟子很不高興的傳話給你，讓你帶他一起去拜見掌門，你墨跡到現在也沒有去，如此還是算了吧！\n");
         else
@@ -469,8 +469,8 @@ void master_announce (object me, object who, object ob)
                 ling = new( "/d/xiakedao/obj/tongpai2" );
                 set("own",query("id",  ob), ling);
                 ling->move( ob );
-                message_vision( HIY"$N對$n說道：俠客島昨日送來賞善罰惡令，邀請為師上島。\n                你是本門首席大弟子，就代為師走一趟吧。\n"NOR, who, ob );
-                message_vision( HIC"說完，$N把兩塊令牌交到$n手裡。\n"NOR, who, ob );
+                message_vision( HIY"$N對$n説道：俠客島昨日送來賞善罰惡令，邀請為師上島。\n                你是本門首席大弟子，就代為師走一趟吧。\n"NOR, who, ob );
+                message_vision( HIC"説完，$N把兩塊令牌交到$n手裏。\n"NOR, who, ob );
                 set("xkd/ling", 1, ob);
                 set("xkd/time", time()+86400, ob);
         }

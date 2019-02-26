@@ -9,7 +9,7 @@ void create()
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("long", "一碗熱氣騰騰的湯面。\n");
+                set("long", "一碗熱氣騰騰的湯麪。\n");
                 set("unit", "碗");
                 set("value", 100);
                 set("remaining", 2);
@@ -35,7 +35,7 @@ int do_effect(object me)
 
         addn("remaining", -1);
         if (query("remaining"))
-                message_vision("$N端起湯面，狼吞虎嚥地吃起來。\n", me);
+                message_vision("$N端起湯麪，狼吞虎嚥地吃起來。\n", me);
         else 
         { 
                 message_vision("$N端起碗來，把剩下的面連湯吞了。\n"

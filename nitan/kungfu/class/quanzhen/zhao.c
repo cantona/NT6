@@ -26,8 +26,8 @@ void create()
         set("class", "taoist");
         set("long",
                 "他就是全真教第三代弟子中的好手，王處一的大弟子趙志敬。 \n"
-                "他相貌端正，但眉宇間似乎隱藏著一絲狡猾的神色。\n"
-                "他是一個長須道人，看起來卻有些煞氣。\n");
+                "他相貌端正，但眉宇間似乎隱藏着一絲狡猾的神色。\n"
+                "他是一個長鬚道人，看起來卻有些煞氣。\n");
         set("attitude", "friendly");
         set("shen_type",-1);
         set("str", 25);
@@ -84,7 +84,7 @@ void create()
 
         set("inquiry", ([
                 "全真教" :  "我全真教是天下道家玄門正宗。\n",
-                 "天罡北鬥陣" : (: ask_beidouzhen :),
+                 "天罡北斗陣" : (: ask_beidouzhen :),
                 "beidouzhen" : (: ask_beidouzhen :),
         ]) );
 
@@ -113,19 +113,19 @@ string ask_beidouzhen()
 
         if( !query("family", me) || query("family/family_name", me) != "全真教" )
           {
-                msg = "「天罡北鬥陣」是我全真教的劍陣，威力無窮!";
+                msg = "「天罡北斗陣」是我全真教的劍陣，威力無窮!";
                 return msg;
           }
 
         if( query_temp("asked_beidouzhen", me) )
         {
-                msg="急什麼？時辰一到就會開始練習「天罡北鬥陣」！\n";
+                msg="急什麼？時辰一到就會開始練習「天罡北斗陣」！\n";
                 return msg;
         }
 
         if( query_temp("pending/beidouzhen", me) )
         {
-                msg="好好練習「天罡北鬥陣」！\n";
+                msg="好好練習「天罡北斗陣」！\n";
                 command("addoil"+query("id", me));
                 return msg;
         }
@@ -152,12 +152,12 @@ string ask_beidouzhen()
              query("combat_exp", me)<50000 || 
              me->query_skill("dodge") <60)
         {
-                msg="可惜"+query("name", me)+"武功太差，不夠練習「天罡北鬥陣」。\n";
+                msg="可惜"+query("name", me)+"武功太差，不夠練習「天罡北斗陣」。\n";
                 return msg;
         }
 
         set_temp("asked_beidouzhen", 1, me);
-        msg = "好，你先做好準備，等一會兒就讓你跟隨貧道一起練習「天罡北鬥陣」！\n";
+        msg = "好，你先做好準備，等一會兒就讓你跟隨貧道一起練習「天罡北斗陣」！\n";
         set_temp("fighter/"+time(),query("id", me));
         delete_temp("qz/bdgranted", me);
         addn_temp("count",1);
@@ -274,7 +274,7 @@ int start()
                 query("id", ob3)+","+query("id", ob4)+","+query("id", ob5)+","+
                 query("id", ob6);
 
-        message_vision(HIG"$N清了清喉嚨，大聲說道：好，時辰已到，現在開始練習「天罡北鬥陣」！\n"NOR,me);
+        message_vision(HIG"$N清了清喉嚨，大聲説道：好，時辰已到，現在開始練習「天罡北斗陣」！\n"NOR,me);
 
         "/d/quanzhen/dajiaochang"->do_beidouzhen2( arg );
 

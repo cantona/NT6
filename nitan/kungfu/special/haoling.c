@@ -37,7 +37,7 @@ int perform(object me, string skill, string arg)
         if (sizeof(t) <= 1)
                 return notify_fail("該技能只能在多人組隊的時候施展。\n");
                         
-        if (me->is_busy())return notify_fail("等你忙完再說吧！\n");
+        if (me->is_busy())return notify_fail("等你忙完再説吧！\n");
 
         message_vision(HIR "$N" HIR "雙目發光，振臂高呼，“魔由心生，號令八方！” ，聲音激盪四周，令人生畏。\n" NOR, me);
 
@@ -49,7 +49,7 @@ int perform(object me, string skill, string arg)
                         attack = 100 + me->query_joblv() * 20 + me->query("lhpoint/special/haoling") * 60;
                         damage = 100 + me->query_joblv() * 30 + me->query("lhpoint/special/haoling") * 80;
 
-                              // 不能重復施展
+                              // 不能重複施展
                         if (! tob->query_temp("special2/haoling"))
                         {
                                 tob->set_temp("special2/haoling", joblv);

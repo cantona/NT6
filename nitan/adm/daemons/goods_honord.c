@@ -37,7 +37,7 @@ int query_rate() { return rate; }
 void create()
 {
         seteuid(ROOT_UID);
-        set("name", HIC"榮譽兌換商城"NOR);
+        set("name", HIC"榮譽兑換商城"NOR);
         init_goods();
 }
 
@@ -119,13 +119,13 @@ public varargs int show_goods(object me, string arg)
         int len = 0;
 
         if( !sizeof(all_goods) ) {
-                tell_object(me, sprintf("目前%s沒有可以兌換的東西。\n", query("name")));
+                tell_object(me, sprintf("目前%s沒有可以兑換的東西。\n", query("name")));
                 return 1;
         }
 
         if( !arg ) arg = "all";
 
-        msg  = sprintf("%s目前可以兌換以下貨物：\n\n" NOR, query("name"));
+        msg  = sprintf("%s目前可以兑換以下貨物：\n\n" NOR, query("name"));
         msg += sprintf(HIW "%-6s%-16s%-11s%-10s%s\n" NOR,
                       "編號", "名稱", "榮譽點", "種類", "功能簡要");
         msg += HIG "------------------------------------------------------------------------------------------\n\n" NOR;
@@ -145,7 +145,7 @@ public varargs int show_goods(object me, string arg)
         }
 
         msg += "\n";
-        msg += HIG "請認真閱讀有關說明，兌換前請考慮清楚， 如無差錯，恕不退貨！\n" NOR;
+        msg += HIG "請認真閲讀有關説明，兑換前請考慮清楚， 如無差錯，恕不退貨！\n" NOR;
         msg += HIG "------------------------------------------------------------------------------------------\n" NOR;
         me->start_more(msg);
         return 1;
@@ -161,7 +161,7 @@ public int exchange_goods(object ob, string arg)
 
         n = sizeof(all_goods);
         if( !n ) {
-                write(sprintf("目前%s沒有可以兌換的東西。\n", query("name")));
+                write(sprintf("目前%s沒有可以兑換的東西。\n", query("name")));
                 return 1;
         }
 
@@ -177,13 +177,13 @@ public int exchange_goods(object ob, string arg)
         }
 
         if( i >= n ) {
-                write(HIR "你想兌換什麼？ 請使用 rystore show all 查詢。\n" NOR);
+                write(HIR "你想兑換什麼？ 請使用 rystore show all 查詢。\n" NOR);
                 return 1;
 
         }
 
         if( all_goods[i]->type == "manual" ) {
-                write("對不起，該服務必須由 admin 手動實現，請及時與 admin 聯系！\n");
+                write("對不起，該服務必須由 admin 手動實現，請及時與 admin 聯繫！\n");
                 return 1;
         }
 
@@ -211,7 +211,7 @@ public int exchange_goods(object ob, string arg)
                 which = all_goods[i]->name;
                 item = new(all_goods[i]->file);
                 if( !objectp(item) ) {
-                        write("復制物品失敗，請與本站ADMIN聯系！\n");
+                        write("複製物品失敗，請與本站ADMIN聯繫！\n");
                         return 1;
                 }
 

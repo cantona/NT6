@@ -1,7 +1,7 @@
 #include <ansi.h>
 #include <combat.h>
 
-#define DING "「" HIY "定岳七方" NOR "」"
+#define DING "「" HIY "定嶽七方" NOR "」"
 
 inherit F_SSERVER;
 
@@ -41,9 +41,9 @@ int perform(object me, object target)
                 return notify_fail("你現在的真氣不夠，難以施展" DING "。\n");
 
         if (! living(target))
-                return notify_fail("對方都已經這樣了，用不著這麼費力吧？\n");
+                return notify_fail("對方都已經這樣了，用不着這麼費力吧？\n");
 
-        msg = HIY "$N" HIY "身形一轉，施出中平槍法絕技「" HIR "定岳七方"
+        msg = HIY "$N" HIY "身形一轉，施出中平槍法絕技「" HIR "定嶽七方"
               HIY "」，手中" + weapon->name() + HIY "接連七刺，槍槍不離"
              "$n" HIY "要害！\n" NOR;
 

@@ -41,8 +41,8 @@ int perform(object me, object target)
         if( query("neili", me) <= 400 )
                 return notify_fail("你的內力不夠使用追魂爪！\n");
 
-        message_combatd(HIB "$N忽然嘿嘿幹笑幾聲，雙袖狂舞卷起地上黃沙飛揚令人看不出要從何處出招，\n"
-                        "突然$N尖叫一聲，聲未停影先至向著$n撲來，雙爪連抓數爪，其速之快令$n無從躲閃。\n"
+        message_combatd(HIB "$N忽然嘿嘿乾笑幾聲，雙袖狂舞捲起地上黃沙飛揚令人看不出要從何處出招，\n"
+                        "突然$N尖叫一聲，聲未停影先至向着$n撲來，雙爪連抓數爪，其速之快令$n無從躲閃。\n"
                         NOR, me, target);
 
         level = me->query_skill("sanyin-zhua", 1) + me->query_skill("finger", 1);

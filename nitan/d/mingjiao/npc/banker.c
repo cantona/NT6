@@ -6,7 +6,7 @@ inherit F_BANKER;
 
 void create()
 {
-        set_name("龍卷風", ({"long juanfeng", "long", "juanfeng"}));
+        set_name("龍捲風", ({"long juanfeng", "long", "juanfeng"}));
         set("title", "錢莊掌櫃");
         set("gender", "男性");
         set("age", 40);
@@ -42,7 +42,7 @@ void init()
 {
         ::init();
         add_action("do_check", ({"check", "chazhang", "查帳"}));
-        add_action("do_convert", ({"convert", "duihuan", "兌換"}));
+        add_action("do_convert", ({"convert", "duihuan", "兑換"}));
         add_action("do_deposit", ({"deposit", "cun", "存"})); 
         add_action("do_withdraw", ({"withdraw", "qu", "取"}));
 }

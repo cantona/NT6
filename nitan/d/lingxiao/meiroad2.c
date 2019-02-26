@@ -7,9 +7,9 @@ void create()
         set("long",@LONG 
 這也是一條充滿梅花清香的小道。與殿外不同的是，這兒
 種滿了梅樹，而且全是如鮮血般燦爛的紅梅，花瓣片片飄落到
-潔白的雪地上，就如一個溫婉和順的美人，在給自己的心上人
+潔白的雪地上，就如一個温婉和順的美人，在給自己的心上人
 刺繡時，不小心刺破了手指而流出的一滴血，浸到了白絹上樣。
-一只通體雪白的雪鶴在地上翩然起舞，逍遙自得。
+一隻通體雪白的雪鶴在地上翩然起舞，逍遙自得。
 LONG);
         set("outdoors", "lingxiao");
         set("exits", ([
@@ -36,7 +36,7 @@ int do_pick(string arg)
         if (arg == "mei hua" || arg == "meihua")
         {
                 if (query("count") < -5)
-                        return notify_fail("這裡的梅花已經被摘光了。\n");
+                        return notify_fail("這裏的梅花已經被摘光了。\n");
 
                 ob = new(__DIR__"obj/mei");
                 ob->move(me, 1);

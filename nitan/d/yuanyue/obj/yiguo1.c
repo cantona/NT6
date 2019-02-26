@@ -32,7 +32,7 @@ int do_eat(string arg)
         my = me->query_entire_dbase(); 
 
         if(arg=="yiguo"||arg=="異果") {
-                message_vision("$N感到快美異常，仿佛吃了什麼靈丹妙藥！！\n", me);
+                message_vision("$N感到快美異常，彷彿吃了什麼靈丹妙藥！！\n", me);
                 set("food", me->max_food_capacity(), me);
                 set("water", me->max_water_capacity(), me);
                 my["jing"]     = my["max_jing"];

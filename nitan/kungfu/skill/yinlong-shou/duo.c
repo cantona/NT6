@@ -32,9 +32,9 @@ int perform(object me, object target)
                 return notify_fail("你沒有準備使用銀龍手，無法施展" + name() + "。\n");
 
         if (! living(target))
-               return notify_fail("對方都已經這樣了，用不著這麼費力吧？\n");
+               return notify_fail("對方都已經這樣了，用不着這麼費力吧？\n");
 
-        msg = HIY "$N" HIY "雙手匯集了全身的內力，頓時全身衣衫鼓脹，雙目放出驚人的殺氣，\n"
+        msg = HIY "$N" HIY "雙手彙集了全身的內力，頓時全身衣衫鼓脹，雙目放出驚人的殺氣，\n"
               HIY "在$n" HIY "吃驚之際，$N" HIY "的雙手已如流星閃電般揮出，只見一股強大的氣流朝$n" HIY "心臟插去！\n" NOR;
 
         ap = attack_power(me, "strike");
@@ -73,7 +73,7 @@ int perform(object me, object target)
         } else
         {
                 msg += HIM "$n" HIM "大吃一驚，連忙胡亂抵擋，居"
-                                "然沒有一點傷害，僥幸得脫！\n" NOR;
+                                "然沒有一點傷害，僥倖得脱！\n" NOR;
 
                 me->start_busy(1 + random(3));
         }

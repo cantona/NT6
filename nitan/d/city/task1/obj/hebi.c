@@ -11,7 +11,7 @@ void create()
                 set_default_object(__FILE__);
         else {
                 set("unit", "支");
-                set("long", "這是一支筆端銳如鶴嘴，卻是晶光閃亮的兵器。\n");
+                set("long", "這是一支筆端鋭如鶴嘴，卻是晶光閃亮的兵器。\n");
                 set("value", 1500);
                 set("rigidity",100);
                 set("material", "steel");

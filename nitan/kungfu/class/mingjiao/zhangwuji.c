@@ -27,7 +27,7 @@ void create()
         seteuid(getuid());
         set_name("張無忌", ({ "zhang wuji", "zhang", "wuji" }));
         set("long", @LONG
-明教教主張無忌，統領天下十萬教眾，豪氣幹雲，叱□千秋，
+明教教主張無忌，統領天下十萬教眾，豪氣干雲，叱吒千秋，
 「九陽神功」、「乾坤大挪移」獨步天下，是江湖中不世出的
 少年英雄。
 LONG );
@@ -130,9 +130,9 @@ LONG );
 
         set("chat_chance", 2);
         set("chat_msg",({
-                "張無忌憤然說道“大丈夫當以國為家, 捐軀沙場, 抗元大業未成, 同輩仍需努力!”\n",
-                "張無忌嘆道“人生失一知己, 生亦何歡, 死亦何憂, 敏兒, 你在哪裡?”\n",
-                "張無忌道“我教兄弟聽了: 生于亂世, 當克己為公, 行俠仗義, 盪寇驅魔!”\n",
+                "張無忌憤然説道“大丈夫當以國為家, 捐軀沙場, 抗元大業未成, 同輩仍需努力!”\n",
+                "張無忌歎道“人生失一知己, 生亦何歡, 死亦何憂, 敏兒, 你在哪裏?”\n",
+                "張無忌道“我教兄弟聽了: 生於亂世, 當克己為公, 行俠仗義, 蕩寇驅魔!”\n",
         }));
 
         set("inquiry",([
@@ -141,18 +141,18 @@ LONG );
                 "謝遜"     : "他就是我義父的大號。\n",
                 "張翠山"   : "你想找我父親有事麼? \n",
                 "殷素素"   : "我媽是明尊座下紫微堂主。\n",
-                "張三豐"   : "我太師父近來可好? \n",
-                "趙敏"     : "人生失一知己, 生亦何歡, 死亦何憂, 敏兒, 你在哪裡?\n",
-                "小昭"     : "小昭我可一直念著她的好處。\n",
+                "張三丰"   : "我太師父近來可好? \n",
+                "趙敏"     : "人生失一知己, 生亦何歡, 死亦何憂, 敏兒, 你在哪裏?\n",
+                "小昭"     : "小昭我可一直念着她的好處。\n",
                 "周芷若"   : "找她就去峨嵋山, 別來煩我。\n",
-                "九陽秘籍" : (: ask_jiuyang :),
-                "鐵燄令"   : (: ask_ling :),
+                "九陽祕籍" : (: ask_jiuyang :),
+                "鐵焰令"   : (: ask_ling :),
                 "乾坤大挪移" : (: ask_qiankun :),
                 "鮮于通"   : (: ask_hu_quest :),
                 "胡青牛"   : (: ask_hu :),
                 "蝴蝶谷"   : (: ask_hdg :),
                 "七傷拳經" : (: ask_qishang :),
-                "秘籍"     : (: ask_book :),
+                "祕籍"     : (: ask_book :),
 
         ]));
         set_temp("apply/attack", 180);
@@ -197,7 +197,7 @@ void greeting(object ob)
         } else
         if( query("shen", ob)<-5000 )
         {
-                command("say 魔從心起，于武學不利，其道必誅，勸君放下屠刀，"
+                command("say 魔從心起，於武學不利，其道必誅，勸君放下屠刀，"
                         "立地成佛。");
         } else
         if( query("shen", ob)<-100 )
@@ -223,7 +223,7 @@ int accept_fight(object ob)
                                "回去吧。\n",ob);
                 return 0;
         }
-        message_vision("張無忌一拱手說道：這位" + RANK_D->query_respect(ob) +
+        message_vision("張無忌一拱手説道：這位" + RANK_D->query_respect(ob) +
                        "，在下領教了。\n", ob);
         return 1;
 }
@@ -259,7 +259,7 @@ void attempt_apprentice(object ob)
 
         if( query("combat_exp", ob)<1000000 )
         {
-                command("say 你的經驗太少，好好再去江湖闖盪闖盪，可別給我明教丟臉啊 !");
+                command("say 你的經驗太少，好好再去江湖闖蕩闖蕩，可別給我明教丟臉啊 !");
                 return;
         }
 
@@ -288,7 +288,7 @@ int accept_object(object who, object ob)
 
           if( query("id", ob) == "jin mao" )
         {
-                tell_object(who, GRN "張無忌激動地說道：你找到我的義父了。\n" NOR);
+                tell_object(who, GRN "張無忌激動地説道：你找到我的義父了。\n" NOR);
                 if( !query_temp("marks/義父", who) )
                         set_temp("marks/義父", 1, who);
                 remove_call_out("destrory");
@@ -323,7 +323,7 @@ int accept_object(object who, object ob)
                 }
                 command("ah"+query("id", who));
                 command("say 你竟找回了本教聖物，不愧是我的弟子！");
-                command("say 上代陽教主有遺命，尋回聖物者當可修習本教神功，你去秘道中試試吧。");
+                command("say 上代陽教主有遺命，尋回聖物者當可修習本教神功，你去祕道中試試吧。");
                 set_temp("mj_jiaozhu", 1, who);
                 set("mj_jiaozhu", 1, me);
                 call_out("destroy", 1,  ob);
@@ -340,7 +340,7 @@ int accept_ask(object me, string topic)
         {
         case "歷練" :
         case "歷煉" :
-        case "鍛煉" :
+        case "鍛鍊" :
                 return QUEST_D->accept_ask(this_object(), me, topic);
                 break;
 
@@ -355,10 +355,10 @@ int accept_ask(object me, string topic)
                            "shen"    : 50000, ]));
                 break;
 
-        case "吸燄令" :
+        case "吸焰令" :
                 return MASTER_D->teach_pfm(me, this_object(),
                         ([ "perform" : "can_perform/shenghuo-ling/xi",
-                           "name"    : "吸燄令",
+                           "name"    : "吸焰令",
                            "sk1"     : "shenghuo-ling",
                            "lv1"     : 140,
                            "neili"   : 2000,
@@ -507,7 +507,7 @@ mixed ask_jiuyang()
                 return "你知道“經在油中”此話的含義了麼？";
 
         set("jiuyang/zhang", 1, me);
-        return "想當年太師傅在少林曾聽聞昆侖派“昆侖三聖”何足道帶話到少林說“經在油中”，\n"+
+        return "想當年太師傅在少林曾聽聞崑崙派“崑崙三聖”何足道帶話到少林説“經在油中”，\n"+
                "不知道此話有何含義。";
 }
 
@@ -530,9 +530,9 @@ mixed ask_ling()
 
    ob = new("/d/mingjiao/obj/tieyanling");
         ob->move(this_player());
-        message_vision("$N要得一面鐵燄令。\n",this_player());
+        message_vision("$N要得一面鐵焰令。\n",this_player());
 
-        return "好吧，憑這面鐵燄令，你可自由向你的尊長挑戰。";
+        return "好吧，憑這面鐵焰令，你可自由向你的尊長挑戰。";
 }
 */
 mixed ask_ling()
@@ -552,14 +552,14 @@ mixed ask_ling()
         {
                 if (skl[sname[i]] < 30)
                 return RANK_D->query_respect(this_player()) +
-                "功力不夠，不能領取鐵燄令。";
+                "功力不夠，不能領取鐵焰令。";
         }
 
         ob = new("d/mingjiao/obj/tieyanling");
         ob->move(this_player());
-        message_vision("$N要得一面鐵燄令。\n",this_player());
+        message_vision("$N要得一面鐵焰令。\n",this_player());
 
-        return "好吧，憑這面鐵燄令，你可自由向你的尊長挑戰。";
+        return "好吧，憑這面鐵焰令，你可自由向你的尊長挑戰。";
 
 }
 
@@ -590,8 +590,8 @@ mixed ask_qiankun()
         }
         else
         {
-                command("say 好吧，我就準許你進入秘室修煉乾坤大挪移。以後你要發揚光大明教。");
-                // command("say 你到張中前輩那裡去就說是我準許的。");
+                command("say 好吧，我就准許你進入祕室修煉乾坤大挪移。以後你要發揚光大明教。");
+                // command("say 你到張中前輩那裏去就説是我准許的。");
                 command("pat"+query("id", me));
                 command("addoil"+query("id", me));
                 set_temp("marks/挪移", 1, this_player());
@@ -611,7 +611,7 @@ int ask_hu_quest()
         {
                 command("say 原來胡先生還健在？");
                 command("jump");
-                command("say 我幫胡先生狠狠的罵了這個家伙一頓，而且他也自己中了自己的毒死了。");
+                command("say 我幫胡先生狠狠的罵了這個傢伙一頓，而且他也自己中了自己的毒死了。");
                 command("say 胡先生若是能親自看到，想必會很高興。");
                 set_temp("hu/quest1", 3, me);
                 return 1;
@@ -643,7 +643,7 @@ int ask_hdg()
 {
         object me = this_player();
         command("say 蝴蝶谷是胡青牛神醫的居所。");
-        command("say 那在長江南岸附近，跟著蝴蝶就能找到了。");
+        command("say 那在長江南岸附近，跟着蝴蝶就能找到了。");
         set_temp("hdg", 1, me);
         return 1;
 }
@@ -667,7 +667,7 @@ string ask_qishang()
         set_temp("marks/七傷", 1, me);
 
         command("hmm");
-        command("whisper"+query("id", me)+"我義父在極北冰火島上，大概位于黃道帶以北九百五十、以東二百個距離的地方。");
+        command("whisper"+query("id", me)+"我義父在極北冰火島上，大概位於黃道帶以北九百五十、以東二百個距離的地方。");
         // new("/d/mingjiao/obj/luopan")->move(this_object());
         // command("give luo pan to " + me->query("id"));
         return "這七傷拳，是當年我義父親自傳我的絕技，你如果真有信心和毅力，就出海去拜訪我義父吧！\n";
@@ -682,7 +682,7 @@ string ask_book()
         if (! fam || fam["family_name"] != "明教" || fam["master_name"] != "張無忌")
                 return "我有一本太極拳經，是當年我武當的太師父送給我的。";
 
-        set_temp("marks/秘1", 1, me);
+        set_temp("marks/祕1", 1, me);
         return "我有一本太極拳經，是當年我武當的太師父送給我的，現我交張散人了。";
 }
 

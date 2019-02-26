@@ -22,17 +22,17 @@ mapping *action = ({
         "lvl"    : 30,
         "skill_name" : "神龍擺尾"
 ]),
-([        "action" : "$N使一式"CYN"「風卷殘雲」"NOR"，全身飛速旋轉，雙掌一前一後，猛地拍向$n的胸口",
+([        "action" : "$N使一式"CYN"「風捲殘雲」"NOR"，全身飛速旋轉，雙掌一前一後，猛地拍向$n的胸口",
         "lvl"    : 40,
-        "skill_name" : "風卷殘雲"
+        "skill_name" : "風捲殘雲"
 ]),
 ([        "action" : "$N忽的使出"HIW"「乾坤倒旋」"NOR"，以手支地，雙腿翻飛踢向$n",
         "lvl"    : 50,
         "skill_name" : "乾坤倒旋"
 ]),
-([        "action" : "$N大吼一聲，使出"BLU"「同歸于盡」"NOR"，不顧一切般撲向$n",
+([        "action" : "$N大吼一聲，使出"BLU"「同歸於盡」"NOR"，不顧一切般撲向$n",
         "lvl"    : 60,
-        "skill_name" : "同歸于盡"
+        "skill_name" : "同歸於盡"
 ]),
 ([        "action" : "$N深吸一口氣，使出"HIW"「流星趕月」"NOR"身體漲成球狀，猛然流星趕月般直撞向$n",
         "lvl"    : 70,

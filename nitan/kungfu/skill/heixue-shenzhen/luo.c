@@ -1,7 +1,7 @@
 #include <ansi.h>
 #include <combat.h>
 
-#define LUO "「" HIR "星羅棋布" NOR "」"
+#define LUO "「" HIR "星羅棋佈" NOR "」"
 
 inherit F_SSERVER;
 
@@ -26,7 +26,7 @@ int perform(object me, object target)
 
         if( !objectp(weapon=query_temp("handing", me)) || 
             query("skill_type", weapon) != "throwing" )
-                return notify_fail("你現在手中並沒有拿著暗器。\n");
+                return notify_fail("你現在手中並沒有拿着暗器。\n");
 
         if (weapon->query_amount() < 20)
                 return notify_fail("至少要有二十枚暗器才能施展" LUO "。\n");
@@ -41,7 +41,7 @@ int perform(object me, object target)
                 return notify_fail("你現在真氣不足，難以施展" LUO "。\n");
 
         if (! living(target))
-               return notify_fail("對方都已經這樣了，用不著這麼費力吧？\n");
+               return notify_fail("對方都已經這樣了，用不着這麼費力吧？\n");
 
         msg= HIR "$N" HIR "縱身躍起，陡然間十指猛張，竟將手中所有的"
              + weapon->name() + HIR "打出，籠罩$n" HIR "四方！\n" NOR;

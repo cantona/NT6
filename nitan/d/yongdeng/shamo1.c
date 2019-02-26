@@ -10,7 +10,7 @@ void create()
         set("short", "沙漠");
         set("long", @LONG
 這是一片沒邊際的沙漠，到處是近百米高的巨大沙丘。你一走進來
-就仿佛迷了路。地下有個石洞。
+就彷彿迷了路。地下有個石洞。
 LONG );
         set("exits", ([
                 "north" : __DIR__"shamo",
@@ -33,7 +33,7 @@ void init()
                 set("water",query("water",  ob)-10, ob);
         else
                 set("water", 0, ob);
-        message_vision(HIY"滿天黃沙，$N感到喉嚨冒煙，幹渴難熬！\n"NOR, ob);
+        message_vision(HIY"滿天黃沙，$N感到喉嚨冒煙，乾渴難熬！\n"NOR, ob);
 }
 
 int valid_leave(object me, string dir)
@@ -47,14 +47,14 @@ int valid_leave(object me, string dir)
         {
                 me->move(__DIR__"jingyuan");
                 delete_temp("shamo/steps", me);
-                tell_object(me, "你走了半天，終于走出了西夏沙漠。\n");
+                tell_object(me, "你走了半天，終於走出了西夏沙漠。\n");
                 return -1;
         }
         if( query_temp("shamo/steps", me) == -total_steps )
         {
                 me->move(__DIR__"qingcheng");
                 delete_temp("shamo/steps", me);
-                tell_object(me, "你走了半天，終于走出了西夏沙漠。\n");
+                tell_object(me, "你走了半天，終於走出了西夏沙漠。\n");
                 return -1;
              }
         return ::valid_leave(me,dir);

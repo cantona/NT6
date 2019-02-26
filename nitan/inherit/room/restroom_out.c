@@ -39,7 +39,7 @@ int do_knock(string arg)
         object room;
 
         if (is_open())
-        return notify_fail(query("door_name")+"已經是開著了。\n");
+        return notify_fail(query("door_name")+"已經是開着了。\n");
 
         if (!arg || (arg != "door" && arg != "men"))
         return notify_fail("你要敲什麼？\n");
@@ -54,8 +54,8 @@ int do_knock(string arg)
                 if (room->query_sleeping_person() > 0)
                 {
                 message_vision(
-"$N剛輕輕地敲了一下門，就聽見裡面傳出一陣雷鳴般的鼾聲，\n"
-"顯然裡面的人睡得跟死豬似的，怎麼敲都沒用了。\n",
+"$N剛輕輕地敲了一下門，就聽見裏面傳出一陣雷鳴般的鼾聲，\n"
+"顯然裏面的人睡得跟死豬似的，怎麼敲都沒用了。\n",
                         this_player());
                 }
                 else if (room->query_inside_person() > 0)
@@ -64,13 +64,13 @@ int do_knock(string arg)
                         {
                                 case 0:
                                 message_vision(
-"$N輕輕地敲了敲門，只聽見裡面有人很不耐煩地吼到：\n"
-"“剛躺下就來敲門！我睡著了，聽不見！！！”\n",        this_player());
+"$N輕輕地敲了敲門，只聽見裏面有人很不耐煩地吼到：\n"
+"“剛躺下就來敲門！我睡着了，聽不見！！！”\n",        this_player());
                                         break;
                                 case 1: 
                                         message_vision(
-"$N輕輕地敲了敲門，只聽見裡面有些響動，\n"
-"好象有人在踱來踱去，拿不定主意是否開門。\n", this_player());
+"$N輕輕地敲了敲門，只聽見裏面有些響動，\n"
+"好像有人在踱來踱去，拿不定主意是否開門。\n", this_player());
                                         break;
                         }                   
                 }
@@ -87,7 +87,7 @@ int do_push(string arg)
         object room;
 
         if (is_open())
-        return notify_fail("門已經是開著了。\n");
+        return notify_fail("門已經是開着了。\n");
 
         if (!arg || (arg != "door" && arg != "men"))
         return notify_fail("你要推什麼？\n");
@@ -108,7 +108,7 @@ int do_push(string arg)
                 }
                 else 
                 {
-                        message_vision("$N想把門推開，卻發覺門被人從裡面閂上了。\n",this_player());
+                        message_vision("$N想把門推開，卻發覺門被人從裏面閂上了。\n",this_player());
                 }
         }
 

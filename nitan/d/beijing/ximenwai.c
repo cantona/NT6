@@ -4,7 +4,7 @@ void create()
 {
         set("short", "西門外");
         set("long", @LONG
-這裡是北京的西城門外。人來人往，煞是熱鬧。
+這裏是北京的西城門外。人來人往，煞是熱鬧。
 LONG );
         set("exits", ([
                 "east" : "/d/beijing/xichengmen",

@@ -10,13 +10,13 @@ void create()
 {
         set("short", HIR "祭壇" NOR);
         set("long",
-"這裡是冰火島的中心，也是一處祭壇，這個祭壇沒有名字，但\n"
-"從其建造的復雜度和氣勢來講，並不輸于嵩山的封禪台。祭壇四周\n"
-"角落燃著藍色的火燄，正中擺放著一個巨大的香爐和祭台(jitai)。\n"
+"這裏是冰火島的中心，也是一處祭壇，這個祭壇沒有名字，但\n"
+"從其建造的複雜度和氣勢來講，並不輸於嵩山的封禪台。祭壇四周\n"
+"角落燃着藍色的火焰，正中擺放着一個巨大的香爐和祭台(jitai)。\n"
 );
 
         set("no_rideto", 1);         // 設置不能騎馬到其他地方
-        set("no_flyto", 1);          // 設置不能從起來地方騎馬來這裡
+        set("no_flyto", 1);          // 設置不能從起來地方騎馬來這裏
         set("binghuo", 1);           // 表示在冰火島
 
         set("no_clean_up", 1);
@@ -30,8 +30,8 @@ void create()
         ]));
         
         set("item_desc", ([ 
-                "jitai"   :  HIC "祭台旁竟隱藏著一個奇怪的拉環，轉動(turn)拉環（lahuan）可能會開啟什麼機關。\n" NOR,
-                "lahuan"  :  HIM "一個半圓形的拉環，古銅色，似乎連接著什麼機關。\n" NOR,
+                "jitai"   :  HIC "祭台旁竟隱藏着一個奇怪的拉環，轉動(turn)拉環（lahuan）可能會開啟什麼機關。\n" NOR,
+                "lahuan"  :  HIM "一個半圓形的拉環，古銅色，似乎連接着什麼機關。\n" NOR,
         ]));
 
         setup();
@@ -51,7 +51,7 @@ int do_turn(string arg)
                 return notify_fail("你要轉動什麼東西！\n");
                 
         if( query("exits/enter") )
-                return notify_fail("密道入口已經開著了，你沒事吧？。。。\n");
+                return notify_fail("密道入口已經開着了，你沒事吧？。。。\n");
 
         // 讀取幫戰控制文件，判斷是否密道開啟了，否則不能拉動拉環
         if( !BUNCH_D->is_battle_start() && !TEST_FLAG )
@@ -60,7 +60,7 @@ int do_turn(string arg)
         // 金毛獅王存在則不能開啟
         if (objectp(ob = present("jinmao shiwang", this_object())))
         {
-                message_vision(HIM "一陣光芒閃過，" + ob->name() + HIM "攔在$N" HIM "面前，喝道：”哼，先過了我這關再說！“\n" NOR, me);
+                message_vision(HIM "一陣光芒閃過，" + ob->name() + HIM "攔在$N" HIM "面前，喝道：”哼，先過了我這關再説！“\n" NOR, me);
                 return 1;
         }
 
@@ -111,11 +111,11 @@ int valid_leave(object me, string dir)
                 if( !BUNCH_D->is_battle_start() && !TEST_FLAG )
                         return notify_fail("現在不是幫戰期間，不能進入密道！\n");
                 
-                // 金毛獅王未死亡的標志不能進入
+                // 金毛獅王未死亡的標誌不能進入
                 if (present("xie xun", this_object()))
-                        return notify_fail("金毛獅王守護著祭壇密道，不能進入！\n" NOR);
+                        return notify_fail("金毛獅王守護着祭壇密道，不能進入！\n" NOR);
                 
-                // 如有幫派優先標志，標志不是ALL_LEAGUE，我不是標志指示幫派，則標志存在時不能進入
+                // 如有幫派優先標誌，標誌不是ALL_LEAGUE，我不是標誌指示幫派，則標誌存在時不能進入
                 if( query("league_flag") != "ALL_LEAGUE" && query("bunch/bunch_name", me) != query("league_flag") && !TEST_FLAG )
                         return notify_fail("你現在暫時不能進入，還是稍微等等吧！\n");
         }

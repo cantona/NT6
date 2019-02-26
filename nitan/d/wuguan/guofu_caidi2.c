@@ -5,8 +5,8 @@ void create()
 {
     	set("short", "菜地");
         set("long", @LONG
-這裡是塊菜地，菜地旁有幾口大缸，裡面盛滿了水，可是
-菜地看起來都幹裂了，幾棵菜蔫蔫的長著，看樣子是因為缺水
+這裏是塊菜地，菜地旁有幾口大缸，裏面盛滿了水，可是
+菜地看起來都乾裂了，幾棵菜蔫蔫的長着，看樣子是因為缺水
 太多的緣故吧。
 LONG);
         set("no_fight", 1);
@@ -33,13 +33,13 @@ int do_jiao(string arg)
 
         if( query_temp("mark/澆完了", me) )
             	return notify_fail(CYN "菜園管事嚷嚷道：喂喂喂，讓你去覆命，還留"
-                                   "在這裡幹嘛？\n" NOR);
+                                   "在這裏幹嘛？\n" NOR);
 
         if( query_temp("job_name", me) != "澆菜地" )
             	return notify_fail(CYN "菜園管事對你喝道：沒事你瞎折騰什麼？\n" NOR);
 
         if (me->is_busy())
-		return notify_fail("你現在正忙著呢！\n");
+		return notify_fail("你現在正忙着呢！\n");
 
         if (me->is_fighting())
 		return notify_fail("你正在戰鬥中，無法專心幹活！\n");
@@ -58,8 +58,8 @@ int do_jiao(string arg)
         if( query("jing", me)<costj
 	 || query("qi", me)<costq )
 	{
-              	message_vision(HIR "\n$N" HIR "彎腰到大缸裡舀水，結果一失足栽進了缸"
-                               "裡。\n" NOR, me);
+              	message_vision(HIR "\n$N" HIR "彎腰到大缸裏舀水，結果一失足栽進了缸"
+                               "裏。\n" NOR, me);
               set("water", 600, 	me);
               	me->unconcious();
               	return 1;
@@ -74,13 +74,13 @@ int do_jiao(string arg)
            && present("caiyuan guanshi", environment(me)))
 	{
                 set_temp("mark/澆完了", 1, me);
-                message_vision(CYN "\n菜園管事對$N" CYN "說：幹的不錯，好了，你可"
+                message_vision(CYN "\n菜園管事對$N" CYN "説：乾的不錯，好了，你可"
                                "以去向耶律大爺覆命(" HIY "fuming" NOR + CYN ")了"
                                "。\n" NOR, me);
                 return 1;
         }
 
-        message_vision(HIG "$N" HIG "用瓢從缸裡舀起水，在菜地裡澆起水來。\n" NOR, me);
+        message_vision(HIG "$N" HIG "用瓢從缸裏舀起水，在菜地裏澆起水來。\n" NOR, me);
         addn_temp("mark/澆", 1, me);
 
         if ((int)me->query_skill("whip", 1) < 50

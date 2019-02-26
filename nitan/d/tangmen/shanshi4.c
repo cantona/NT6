@@ -10,10 +10,10 @@ void create ()
 {
         set ("short", "山道");
         set ("long", @LONG
-這裡是後山一條昏暗的山道。山道的兩旁已不象剛才那麼樹木繁
-茂，反而是光禿禿的沒有一棵植物，這裡的山石竟發出深深的赤紅色
+這裏是後山一條昏暗的山道。山道的兩旁已不象剛才那麼樹木繁
+茂，反而是光禿禿的沒有一棵植物，這裏的山石竟發出深深的赤紅色
 光澤，不知與處別的石頭有什麼不同，空氣中飄這一股腥臊的氣味，
-可能有毒物潛伏在附近，離開這裡吧。
+可能有毒物潛伏在附近，離開這裏吧。
 LONG);
         set("area","tangmen");
         set("outdoors", "tangmen");
@@ -58,7 +58,7 @@ int do_qiao(string arg)
                 message_vision(YEL"$N揚起手中的鐵錘重重的砸在道旁的山石上。\n"NOR, me);
                 if( random(1+query("kar", me)-10) >= 3 )
                 {
-                        message_vision(HIG"$N聽到山石發出清脆的碎裂聲，終于給你敲下來了一大塊！\n$N低頭剛要抱起礦石，突然一只毒蠍從石後爬了出來！\n"NOR, me);
+                        message_vision(HIG"$N聽到山石發出清脆的碎裂聲，終於給你敲下來了一大塊！\n$N低頭剛要抱起礦石，突然一隻毒蠍從石後爬了出來！\n"NOR, me);
                         enemy = new(__DIR__"npc/xiezi");
                         enemy->move(this_object());
                         new(__DIR__"obj/kuangshi")->move(this_object());

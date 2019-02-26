@@ -30,7 +30,7 @@ int perform(object me, object target)
 
         if( objectp(weapon=query_temp("weapon", me)) || 
             objectp(weapon=query_temp("handing", me)) )
-                return notify_fail("你必須空著雙手才能使用拳法絕招。\n");
+                return notify_fail("你必須空着雙手才能使用拳法絕招。\n");
 
         if( query("neili", me)<500 )
                 return notify_fail("你的內力不夠。\n");
@@ -61,7 +61,7 @@ int perform(object me, object target)
 
         if (ap / 2 + random(ap) > dp || !living(target))
         {
-                msg += HIW "$n" HIW "躲閃不急，慘叫一聲，面門被打了個正著。\n" NOR;
+                msg += HIW "$n" HIW "躲閃不急，慘叫一聲，面門被打了個正着。\n" NOR;
                 target->receive_damage("qi", damage, me);
                 target->receive_wound("qi", damage/2, me);
                 str=COMBAT_D->status_msg(query("qi", target)*100/query("max_qi", target));

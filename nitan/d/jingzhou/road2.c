@@ -5,7 +5,7 @@ void create()
         set("short", "大道");
         set("long", @LONG
 這是一條青石大道。東面隱約可以看到襄陽城的城牆。向西看去，
-只見群山起伏，青翠碧綠，不知通向哪裡。
+只見羣山起伏，青翠碧綠，不知通向哪裏。
 LONG );
         set("exits", ([
                 "northeast" : __DIR__"road1",

@@ -10,7 +10,7 @@ void create()
         set_weight(90);
         set("race", "野獸");
         set("age", 5);
-        set("long", "一只巨大的，五顏六色的大蜘蛛。\n");
+        set("long", "一隻巨大的，五顏六色的大蜘蛛。\n");
         set("attitude", "peaceful");
         set("str", 18);
         set("con", 25);

@@ -43,9 +43,9 @@ void create()
         prepare_skill("strike", "hanbing-mianzhang");
         set("shen_type", 0);
         set("inquiry", ([
-                "name": "奴家叫做"+this_object()->name()+"，從十五歲起便投在這裡學藝。",
-                "rumors": "聽說故教主一身渾厚的內力都是得自昆侖山的一次奇遇。",
-                "here": "這裡是明教總壇，你沒事還是不要隨便亂轉的好。",
+                "name": "奴家叫做"+this_object()->name()+"，從十五歲起便投在這裏學藝。",
+                "rumors": "聽説故教主一身渾厚的內力都是得自崑崙山的一次奇遇。",
+                "here": "這裏是明教總壇，你沒事還是不要隨便亂轉的好。",
                 "明教": "問什麼問，不懂用help mingjiao嗎？！",
         ]));
         setup();

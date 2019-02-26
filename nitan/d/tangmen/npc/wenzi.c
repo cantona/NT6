@@ -7,7 +7,7 @@ inherit NPC;
 void create()
 {
         set_name("蚊子", ({ "wen zi" }) );
-        set("long",     "一只長嘴的小蟲正笑嘻嘻的看著你。\n");
+        set("long",     "一隻長嘴的小蟲正笑嘻嘻的看著你。\n");
 
         set("race", "野獸");
         set("age", 1);
@@ -74,7 +74,7 @@ int do_zha(string arg)
            return notify_fail("你想抓什麼啊? \n");
         
         if( query_temp("find_wz", ob) )
-           return notify_fail("心不要太黑！你要幾只啊！\n");
+           return notify_fail("心不要太黑！你要幾隻啊！\n");
         
         if( query_temp("minchen", ob) != query("short") )
            return notify_fail("你不要見到蚊子就抓啊！\n");   

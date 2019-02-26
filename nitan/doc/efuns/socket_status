@@ -8,7 +8,7 @@
                 mixed *socket_status(void | int);
                 混合陣列 dump_socket_status(無參數 | 整數)
 
-        說明：
+        説明：
                 當無參數會返回每一個 LPC 套接口的狀態。
                 當有參數，如果參數是一個有效的套接口文件描述符，
                 回傳回此套接口的狀態，否則傳回 0。

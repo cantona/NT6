@@ -31,13 +31,13 @@ int update_condition(object me, int duration)
         if (duration == 7)
         {
                 if (me->query("food") <= 0 && me->query("water") <= 0)
-                        tell_object(me, HIR "你又饑又渴，覺得自己快要死了。\n"NOR);
+                        tell_object(me, HIR "你又飢又渴，覺得自己快要死了。\n"NOR);
                 else
                 if (me->query("food") <= 0)
                         tell_object(me, HIR "你餓得快死了。\n"NOR);
                 else
                 if (me->query("water") <= 0)
-                        tell_object(me, HIR "你渴得要虛脫了。\n"NOR);
+                        tell_object(me, HIR "你渴得要虛脱了。\n"NOR);
         }
         else
         if (duration >= 13)
@@ -63,7 +63,7 @@ int update_condition(object me, int duration)
                 }
 
                 if (me->query("food") <= 0 && me->query("water") == 0)
-                        tell_object(me, HIR "你又饑又渴，終于暈了過去。\n"NOR);
+                        tell_object(me, HIR "你又飢又渴，終於暈了過去。\n"NOR);
                 else
                 if (me->query("food") <= 0)
                         tell_object(me, HIR "你餓得暈了過去。\n"NOR);

@@ -43,7 +43,7 @@ int perform(object me, object target)
                 return notify_fail("你現在真氣不足，難以施展" + name() + "。\n");
 
         if (! living(target))
-                return notify_fail("對方都已經這樣了，用不著這麼費力吧？\n");
+                return notify_fail("對方都已經這樣了，用不着這麼費力吧？\n");
 
         msg = HIR "$N" HIR "將八荒六合唯我獨尊功提運至極限，全身真氣迸發，呼的一掌"
               "向$n" HIR "頭頂猛然貫落。\n" NOR;

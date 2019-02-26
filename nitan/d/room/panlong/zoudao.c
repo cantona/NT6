@@ -9,7 +9,7 @@ void create()
 {
         set("short", "走道");
         set("long", @LONG
-這是連接正廳和大門的一條走道，兩旁都是木制牆板，前面就是
+這是連接正廳和大門的一條走道，兩旁都是木製牆板，前面就是
 迎客廳。
 LONG );
 
@@ -50,7 +50,7 @@ int do_push(string arg)
         object room;
 
         if (query("gate") == "open")
-                return notify_fail("大門開著呢，你還推什麼？\n");
+                return notify_fail("大門開着呢，你還推什麼？\n");
 
         me = this_player();
         message("vision",  "你用力推了推大門，就聽大門“吱呀呀”的被人推開了。\n",
@@ -73,7 +73,7 @@ int do_close(string arg, int n)
         object room;
 
         if (query("gate") == "close")
-                return notify_fail("大門關著呢，你還再關一遍？\n");
+                return notify_fail("大門關着呢，你還再關一遍？\n");
 
         if (! n)
         {

@@ -19,8 +19,8 @@ void two(object me,object victim,object weapon,int damage);
 mapping *action = ({
 //1-8招是情劍
 //1
-([ "action" :NOR"                                  "HBRED"==那一劍的驚艷=="NOR"\n"NOR+
-             HIW"$N已□了$w"HIW"在手，劍如流水，見風就長，劍美，劍法更美，美的像一個受寵若驚，\n"
+([ "action" :NOR"                                  "HBRED"==那一劍的驚豔=="NOR"\n"NOR+
+             HIW"$N已挐了$w"HIW"在手，劍如流水，見風就長，劍美，劍法更美，美的像一個受寵若驚，\n"
             +HIW"那一劍不是勾魂，也不是奪魄，而是一種魂盡天涯無飄泊，轉成了電的速度，雷的震愕，向$n"HIW"刺來！"NOR,
                "dodge"  :        -15,
                "move"   :        -30,
@@ -32,8 +32,8 @@ mapping *action = ({
 ]),
 //2
 ([ "action" :NOR"                                  "HBRED"==那一劍的浪漫=="NOR"\n"NOR+
-             HIW"$w"HIW"迎著冷月閃出愛情一般奇詭的冷芒，在冷月下浮沉了幾道寒芒，就像凄美得可以讓人\n"
-            +HIW"一口逼進的鯨吞，有如劍花般的寂莫，繚繞在$n"HIW"腦裡，迂回在$n"HIW"心中，直攻入愁腸！"NOR,
+             HIW"$w"HIW"迎着冷月閃出愛情一般奇詭的冷芒，在冷月下浮沉了幾道寒芒，就像悽美得可以讓人\n"
+            +HIW"一口逼進的鯨吞，有如劍花般的寂莫，繚繞在$n"HIW"腦裏，迂迴在$n"HIW"心中，直攻入愁腸！"NOR,
                "dodge"  :         20,
                "move"   :          0,
                "damage" :        200,
@@ -43,7 +43,7 @@ mapping *action = ({
                "damage_type":  "愁怨劍傷",
 ]),
 //3
-([ "action" :NOR"                                  "HBRED"==那一劍的凄然=="NOR"\n"NOR+
+([ "action" :NOR"                                  "HBRED"==那一劍的悽然=="NOR"\n"NOR+
              HIW"$N心靜，手穩，悶哼一聲，手中$w"HIW"已刺出點點銀光，像一記無意的顧盼，刻意的雷極，\n"
             +HIW"直擊$n，劍影如深深的恨，淺淺的夢，又似歲月的淚\痕！"NOR,
                "dodge"  :        -10,
@@ -79,7 +79,7 @@ mapping *action = ({
                "damage_type":  "點點刺傷",
 ]),
 //6
-([ "action" :NOR"                                  "HBRED"==那一劍的瀟洒=="NOR"\n"NOR+
+([ "action" :NOR"                                  "HBRED"==那一劍的瀟灑=="NOR"\n"NOR+
              HIW"$N手中的$w"HIW"發出一道淡淡的藍光，淡的就像是黎明初現的那一抹曙色，來勢奇快，無影無形，\n"
             +HIW"劍氣激盪，凌厲無比，令$n"HIW"難以抵擋，劍氣的鋒芒砍入肌骨！"NOR,
                "dodge"  :        -20,
@@ -92,8 +92,8 @@ mapping *action = ({
 ]),
 //7
 ([ "action" :NOR"                                  "HBRED"==那一劍的哀愁=="NOR"\n"NOR+
-             HIW"滄涼古老的劍聲，就仿佛和晨霧從虛無縹緲中散發出來的，縹緲的劍聲，像是遠方伊人的呼喚，\n"
-            +HIW"又像是在訴說一種說不出的哀愁，無可奈何的哀愁，卻又帶著說不出的寧靜！"NOR,
+             HIW"滄涼古老的劍聲，就彷彿和晨霧從虛無縹緲中散發出來的，縹緲的劍聲，像是遠方伊人的呼喚，\n"
+            +HIW"又像是在訴説一種説不出的哀愁，無可奈何的哀愁，卻又帶着説不出的寧靜！"NOR,
                "dodge"  :        -10,
                "move"   :        -10,
                "damage" :        200,
@@ -104,8 +104,8 @@ mapping *action = ({
 ]),
 //8
 ([ "action" :NOR"                                  "HBRED"==那一劍的寂寞=="NOR"\n"NOR+
-             HIW"凄美的劍光讓$n"HIW"心神糾纏化成鬱結，不哭一聲，不訴一聲，就把$n"HIW"的記憶導引向要忘了的那一段浮沉，\n"
-            +HIW"把白晝換上黃昏的寂寞，讓$n"HIW"逐漸失去自己的感覺，而在歲月的微光裡平添害怕，而且不甚快樂！"NOR,
+             HIW"悽美的劍光讓$n"HIW"心神糾纏化成鬱結，不哭一聲，不訴一聲，就把$n"HIW"的記憶導引向要忘了的那一段浮沉，\n"
+            +HIW"把白晝換上黃昏的寂寞，讓$n"HIW"逐漸失去自己的感覺，而在歲月的微光裏平添害怕，而且不甚快樂！"NOR,
                "dodge"  :          0,
                "move"   :          0,
                "damage" :        250,
@@ -165,7 +165,7 @@ void two(object me,object victim,object weapon,int damage)
          {
                    message_vision(HIW"\n       刀像一陣風，劍像一縷\煙，來得就像是流水那麼自然，不但有了生命，也有了靈氣，更有了殺氣\n\n"
                                HIW"                          美麗．光華在閃動．變幻．高高在上．輕雲飄忽\n\n"
-                                 HIW"                   $n只覺得這道光華仿佛就在自己眉宇間，又仿佛在虛無縹緲間\n\n"
+                                 HIW"                   $n只覺得這道光華彷彿就在自己眉宇間，又彷彿在虛無縹緲間\n\n"
                                  HIW"                   它的變化，幾乎已超越了人類能力的極限，幾乎已令人無法相信\n\n"NOR,me,victim);
                 for(i=0;i<=mk1;i++)
                 {
@@ -191,42 +191,42 @@ if( !query_temp("lovekill", me) )
 "HIW"                        "BLINK"‘ 挽留天涯挽留人．挽留歲月挽留你 ’"NOR"
 
 "HIY"--在天願做比翼鳥．在地願為連理枝--"NOR"
-"HIR"                                       劍意縱橫，分影倏忽，仿佛斬出了歲月驚心\n"NOR,me,victim);
+"HIR"                                       劍意縱橫，分影倏忽，彷彿斬出了歲月驚心\n"NOR,me,victim);
              victim->receive_damage("qi",skillb);
              COMBAT_D->report_status(victim);
 
 message_vision("
 
 "HIY"--兩情若在長久時．又豈在朝朝暮暮--"NOR"
-"HIR"                                       平凡一劍，陷溺迷惘，仿佛帶出了歲月痴情\n"NOR,me,victim);
+"HIR"                                       平凡一劍，陷溺迷惘，彷彿帶出了歲月痴情\n"NOR,me,victim);
              victim->receive_damage("qi",skillb);
              COMBAT_D->report_status(victim);
 
 message_vision("
 
 "HIY"--天涯地角有窮時．只有相思無盡處--"NOR"
-"HIR"                                       劍如彩雲，燦爛奪目，仿佛舞出了歲月華彩\n"NOR,me,victim);
+"HIR"                                       劍如彩雲，燦爛奪目，彷彿舞出了歲月華彩\n"NOR,me,victim);
              victim->receive_damage("qi",skillb);
              COMBAT_D->report_status(victim);
 
 message_vision("
 
 "HIY"--衣帶漸寬終不悔．為伊消得人憔悴--"NOR"
-"HIR"                                       劍光閃爍，左右飄盪，仿佛動出了歲月無情\n"NOR,me,victim);
+"HIR"                                       劍光閃爍，左右飄蕩，彷彿動出了歲月無情\n"NOR,me,victim);
              victim->receive_damage("qi",skillb);
              COMBAT_D->report_status(victim);
 
 message_vision("
 
 "HIY"--無情不似多情苦．一寸還成千萬縷\--"NOR"
-"HIR"                                       劍意孤獨，灰飛煙滅，仿佛幻出了歲月無奈\n"NOR,me,victim);
+"HIR"                                       劍意孤獨，灰飛煙滅，彷彿幻出了歲月無奈\n"NOR,me,victim);
              victim->receive_damage("qi",skillb);
              COMBAT_D->report_status(victim);
 
 message_vision("
 
 "HIY"--此情可待成追憶．只是當時已惘然--"NOR"
-"HIR"                                       劍光一道，奪人心魄，仿佛照出了歲月光華\n"NOR,me,victim);
+"HIR"                                       劍光一道，奪人心魄，彷彿照出了歲月光華\n"NOR,me,victim);
              victim->receive_damage("qi",2*skillb);
              victim->start_busy(random(2));
              COMBAT_D->report_status(victim);
@@ -253,7 +253,7 @@ void lockman(object me,object victim,object weapon,int damage)
                victim->start_busy(2);
                if( random(mecor) >= random(victimcor))
                 {
-                   message_vision(CYN"劍意已奪去$n"CYN"的心志，使$n"CYN"遁入記憶的愴涼裡，悲憤的不惜向自己的夢中殺去．．\n"NOR , me , victim );
+                   message_vision(CYN"劍意已奪去$n"CYN"的心志，使$n"CYN"遁入記憶的愴涼裏，悲憤的不惜向自己的夢中殺去．．\n"NOR , me , victim );
                    victim->receive_damage("qi",3*sk,me);
  //                  victim->receive_damage("sen",1*(victim->query("max_sen")/10));
                    victim->receive_damage("jing",1*(query("max_jing", victim)/10));
@@ -316,7 +316,7 @@ int five_kill(object me,object victim,object weapon,int damage)
  if(bell < 50 && random(10)>4)
   {
 
-   message_vision(HIR"              血花耀眼又燦爛，燦爛的婉如流星，流星一現即逝，血花也很快的洒下\n"NOR, me);
+   message_vision(HIR"              血花耀眼又燦爛，燦爛的婉如流星，流星一現即逝，血花也很快的灑下\n"NOR, me);
         addn("neili", -1*query("max_neili", victim)/5, victim);
         victim->receive_damage("qi",1*(query("max_qi", victim)/5));
 //        victim->receive_damage("sen",1*(victim->query("max_sen")/5));
@@ -326,7 +326,7 @@ int five_kill(object me,object victim,object weapon,int damage)
   }
    else
   {
-   message_vision(HIR"              血花耀眼又燦爛，燦爛的婉如流星，流星一現即逝，血花也很快的洒下\n"NOR, me);
+   message_vision(HIR"              血花耀眼又燦爛，燦爛的婉如流星，流星一現即逝，血花也很快的灑下\n"NOR, me);
         addn("neili", -1*query("max_neili", victim)/10, victim);
         victim->receive_damage("qi",1*(query("max_qi", victim)/10));
 //        victim->receive_damage("sen",1*(victim->query("max_sen")/10));
@@ -357,15 +357,15 @@ void power_slash(object me,object victim, object weapon,int damage)
      break;
      case 2 :
      message_vision(sprintf("\n                               "HBWHT"．．上天不負有心人．．\n"NOR),me,victim);
-     message_vision(sprintf(HIW"半空劍光化作電光，霹靂擊下，劍意切入了$n中，卷入了劍氣，劍光一閃而歿\．． \n"NOR),me,victim);
+     message_vision(sprintf(HIW"半空劍光化作電光，霹靂擊下，劍意切入了$n中，捲入了劍氣，劍光一閃而歿\．． \n"NOR),me,victim);
      break;
      case 3 :
-     message_vision(sprintf("\n                               "HBMAG"．．多情自古空余恨．．\n"NOR),me,victim);
-     message_vision(sprintf(HIW"一片紫色劍光仿若海浪般卷向$n，$n眼裡沒有痛苦，沒有悔意，甚至沒有一點表情．．\n"NOR),me,victim);
+     message_vision(sprintf("\n                               "HBMAG"．．多情自古空餘恨．．\n"NOR),me,victim);
+     message_vision(sprintf(HIW"一片紫色劍光仿若海浪般卷向$n，$n眼裏沒有痛苦，沒有悔意，甚至沒有一點表情．．\n"NOR),me,victim);
      break;
      case 4 :
      message_vision(sprintf("\n                               "HBGRN"．．情到深處無怨由．．\n"NOR),me,victim);
-     message_vision(sprintf(HIW"這一劍之勢令$n無法閃躲，就像命宮裡的一顆魔星，八字裡注定了那麼一劍攔在命運裡．．\n"NOR),me,victim);
+     message_vision(sprintf(HIW"這一劍之勢令$n無法閃躲，就像命宮裏的一顆魔星，八字裏註定了那麼一劍攔在命運裏．．\n"NOR),me,victim);
      break;
     }
      COMBAT_D->report_status(victim);
@@ -383,10 +383,10 @@ void seven(object me,object victim,object weapon,int damage)
   else { da=100; }
  if( query("bellicosity", me)<200 && mk<10000 )
  {
-    message_vision(HIW"\n      $N手中握的"+weapon->name()+""HIW"仿佛是殺人的利器，精華，致命的一招，這一招不但詭異．毒辣．準確\n\n"
+    message_vision(HIW"\n      $N手中握的"+weapon->name()+""HIW"彷彿是殺人的利器，精華，致命的一招，這一招不但詭異．毒辣．準確\n\n"
                  HIW"        $n所有的動作，竟在這一劍使出時忽然間全部停頓，然後蒼穹間就濺出了一片花雨\n\n"
                  HIW"                    滿天的劍影，滿天的血花，劍花又轉，由慢轉快，由純變混\n\n"
-                 HIW"               忽然又化作一道匹練般的彩紅，七色彩紅，七劍，多採多姿，千變萬化\n\n"NOR,me,victim);
+                 HIW"               忽然又化作一道匹練般的彩紅，七色彩紅，七劍，多采多姿，千變萬化\n\n"NOR,me,victim);
     for(i=1;i<=7;i++)
   {
     switch(i)
@@ -395,10 +395,10 @@ void seven(object me,object victim,object weapon,int damage)
 message_vision(sprintf(HIR"                       --<<紅>>劍意有如風不定．傷遮流景．落紅應滿徑--\n"NOR),me,victim);
      break;
      case 2:
-message_vision(sprintf(YEL"                       --<<橙>>劍意有如拋棄久．惆悵依舊．鏡裡人顏瘦--\n"NOR),me,victim);
+message_vision(sprintf(YEL"                       --<<橙>>劍意有如拋棄久．惆悵依舊．鏡里人顏瘦--\n"NOR),me,victim);
      break;
      case 3:
-message_vision(sprintf(HIY"                       --<<黃>>劍意有如雨初歇．曉風殘月．更與何人說--\n"NOR),me,victim);
+message_vision(sprintf(HIY"                       --<<黃>>劍意有如雨初歇．曉風殘月．更與何人説--\n"NOR),me,victim);
      break;
      case 4:
 message_vision(sprintf(HIG"                       --<<綠>>劍意有如黯天際．望極春愁．強樂還無味--\n"NOR),me,victim);
@@ -434,10 +434,10 @@ message_vision(sprintf(HIC"$n被$N的七色劍意所困，全身上下傷痕累�
 
 
 
-//殺氣小于200,殺人數小于10000,機率約6成,傷害約480
+//殺氣小於200,殺人數小於10000,機率約6成,傷害約480
 
 
-//連接四殺,殺氣須小于50威力才會大,機率約55%
+//連接四殺,殺氣須小於50威力才會大,機率約55%
 
 
 
@@ -467,7 +467,7 @@ void dream(object me,object victim,object weapon,int damage)
     if(random(100)>50)
      {
        message_vision(HIW"\n
-         $N右手自左腋出手一刀，刀光．一閃．一閃的刀光．刀上藍燄大盛！\n
+         $N右手自左腋出手一刀，刀光．一閃．一閃的刀光．刀上藍焰大盛！\n
         "HIW"天地間飄曳起一道幽幽藍光，似真似幻，如沉靜的月光投入深邃的大海 \n
                "HIW"這一刀，極快、極速、極簡單、看去極平凡無奇．．． \n
                "HIW"然而卻是“相思碎夢”一千零一式中所有的精華和殺招！\n
@@ -483,7 +483,7 @@ void dream(object me,object victim,object weapon,int damage)
         message_vision(HIW"\n
            一種乍看令人心動，細看足以讓人心血賁動的紅光，自刀身透了出來\n
                     "HIW"血紅般的刀氣有如太陽西下般撩繞在$n的周圍\n
-              "HIW"$n只覺得又快、又奇、又絕、驚艷、瀟洒、惆悵、不可一世\n
+              "HIW"$n只覺得又快、又奇、又絕、驚豔、瀟灑、惆悵、不可一世\n
                                   "HIW"‘"HIC"烽火紅塵路"HIW"’\n"NOR,me,victim);
 
         message_vision(HBRED"\n$N的烽火刀氣讓$n亂了方寸，迷失在烽火紅塵之中！\n"NOR,me,victim);
@@ -498,7 +498,7 @@ void dream(object me,object victim,object weapon,int damage)
 void heartkill(object me,object victim,object weapon,int damage)
 {
   int i;
-  message_vision(HIC"\n\n\t只見$N的身形隨著刀式一變，刀身閃出無數耀眼的光芒，震出了一片茫茫的刀幕\n\n"
+  message_vision(HIC"\n\n\t只見$N的身形隨着刀式一變，刀身閃出無數耀眼的光芒，震出了一片茫茫的刀幕\n\n"
                  HIW"\t～～"BLINK""HIR"   忘棄紅塵．相思八律  "NOR""HIW"  ～～\n\n"NOR,me,victim);
     for(i=1;i<=8;i++)
   {
@@ -508,10 +508,10 @@ void heartkill(object me,object victim,object weapon,int damage)
 message_vision(sprintf(HIY"$N心如刀割，黯然神傷，使出"HIR"忘棄紅塵"HIW"之"+NOR+""+RED+"「傷心律”"+NOR+""+HIY+"，刀勢如亂麻般攻向$n！\n"NOR),me,victim);
      break;
      case 2:
-message_vision(sprintf(HIY"$N心煩意亂，念念不忘，使出"HIR"忘棄紅塵"HIW"之"+NOR+""+GRN+"「扣心弦”"+NOR+""+HIY+"，刀勢如惋傷般緊扣$n！\n"NOR),me,victim);
+message_vision(sprintf(HIY"$N心煩意亂，念念不忘，使出"HIR"忘棄紅塵"HIW"之"+NOR+""+GRN+"「扣心絃”"+NOR+""+HIY+"，刀勢如惋傷般緊扣$n！\n"NOR),me,victim);
      break;
      case 3:
-message_vision(sprintf(HIY"$N心力交悴，悵然若失，使出"HIR"忘棄紅塵"HIW"之"YEL"「碎心聲”"+NOR+""+HIY+"，刀勢如凄愴般席卷$n！\n"NOR),me,victim);
+message_vision(sprintf(HIY"$N心力交悴，悵然若失，使出"HIR"忘棄紅塵"HIW"之"YEL"「碎心聲”"+NOR+""+HIY+"，刀勢如悽愴般席捲$n！\n"NOR),me,victim);
      break;
      case 4:
 message_vision(sprintf(HIY"$N心不在焉，神不守舍，使出"HIR"忘棄紅塵"HIW"之"MAG"「失心樂”"+NOR+""+HIY+"，刀勢如忘情般幻惑$n！\n"NOR),me,victim);
@@ -523,7 +523,7 @@ message_vision(sprintf(HIY"$N心不由主，失魂落魄，使出"HIR"忘棄紅�
 message_vision(sprintf(HIY"$N心如死灰，情至義盡，使出"HIR"忘棄紅塵"HIW"之"HIB"「葬心曲”"+NOR+""+HIY+"，刀勢如怒濤般湧向$n！\n"NOR),me,victim);
      break;
      case 7:
-message_vision(sprintf(HIY"$N心有余悸，恨海難填，使出"HIR"忘棄紅塵"HIW"之"HIC"「余心韻”"+NOR+""+HIY+"，刀勢如悲涼般牽引$n！\n"NOR),me,victim);
+message_vision(sprintf(HIY"$N心有餘悸，恨海難填，使出"HIR"忘棄紅塵"HIW"之"HIC"「餘心韻”"+NOR+""+HIY+"，刀勢如悲涼般牽引$n！\n"NOR),me,victim);
      break;
      case 8:
 message_vision(sprintf(HIY"$N心凝形釋，平心靜氣，使出"HIR"忘棄紅塵"HIW"之"HIW"「定心調”"+NOR+""+HIY+"，刀勢如無形般直取$n。\n"NOR),me,victim);
@@ -553,33 +553,33 @@ void fast(object me,object victim,object weapon,int damage)
     if( userp(me) && !query("yi/dream", me))return ;
     if( (query("force", me)>300) && query("force_factor", me) && query("bellicosity", me)<200 && damage>0 )
     {
-       message_vision(CYN"\n\n\t$N笑意微泛，眼裡仿佛出現一道陰影，一瞬而過，刀光一閃。。。\n\n"
-                            HIW"\t～～"BLINK""HIR"  碎夢奧義．回天夢舞"NOR""HIW"  ～～\n\n"NOR,me,victim);
+       message_vision(CYN"\n\n\t$N笑意微泛，眼裏彷彿出現一道陰影，一瞬而過，刀光一閃。。。\n\n"
+                            HIW"\t～～"BLINK""HIR"  碎夢奧義．迴天夢舞"NOR""HIW"  ～～\n\n"NOR,me,victim);
        for(i=1;i<=3;i++)
        {
          switch(i)
          {
             case 1:
             message_vision(HIY"\n＝＝"HIR"醉   夢"HIY"＝＝\n"NOR,me,victim);
-            message_vision(HIW"刀盪刀風，刀美如夢，彩色繽紛，絕美的刀光，如同驚艷遇著風華，\n空間為奇彩所充滿，"
-                                       +"五彩光華，如痴如醉，似一連串的迷夢在空中閃現，\n迷絢于一連串夢一般的幻像裡。。\n"NOR,me,victim);
+            message_vision(HIW"刀蕩刀風，刀美如夢，彩色繽紛，絕美的刀光，如同驚豔遇着風華，\n空間為奇彩所充滿，"
+                                       +"五彩光華，如痴如醉，似一連串的迷夢在空中閃現，\n迷絢於一連串夢一般的幻像裏。。\n"NOR,me,victim);
              break;
 
             case 2:
             message_vision(HIY"\n＝＝"HIR"驚   夢"HIY"＝＝\n"NOR,me,victim);
-            message_vision(HIW"刀光綽約，騰起一陣凌厲而且艷麗的殺意，刀氣如浪分濤裂似排山倒海的擊出，\n"+
-                                         "刀光散開，發出奪目的光彩，血似的鮮紅色，凄艷亮烈，驚醒彩色的夢。。\n"NOR,me,victim);
+            message_vision(HIW"刀光綽約，騰起一陣凌厲而且豔麗的殺意，刀氣如浪分濤裂似排山倒海的擊出，\n"+
+                                         "刀光散開，發出奪目的光彩，血似的鮮紅色，悽豔亮烈，驚醒彩色的夢。。\n"NOR,me,victim);
              break;
 
             case 3:
             message_vision(HIY"\n＝＝"HIR"碎   夢"HIY"＝＝\n"NOR,me,victim);
             message_vision(HIW"天雷忽起，大地浮沉，刀光摒出一道道的強光，裂蒼天而出，震蒼生而鳴，狂飆忽起，\n"+
-                                        " 仿佛潛伏地底的怒龍，裂夢而起，上七重天，升九萬裡，勢所無匹。。\n"NOR,me,victim);
+                                        " 彷彿潛伏地底的怒龍，裂夢而起，上七重天，升九萬里，勢所無匹。。\n"NOR,me,victim);
              break;
            }
            if( me->query_skill("dream-blade",1) > random(60)+100)
            {
-                  message_vision(MAG"\n$N的刀法舞的如夢似幻，$n身上著了一道深可見骨的傷痕卻不自知！\n"NOR,me,victim);
+                  message_vision(MAG"\n$N的刀法舞的如夢似幻，$n身上着了一道深可見骨的傷痕卻不自知！\n"NOR,me,victim);
                   victim->receive_wound("qi",400,me);
                   addn("force", -50, me);
                   if(i != 3)
@@ -614,7 +614,7 @@ void disenforce(object me, object victim, object weapon, int damage)
              $N的刀劍本來是平淡毫無變化，卻忽然間，劍尖起了一種很奇異的震動\n\n"
 HIR"              刀勢本來很快，就在這時忽然慢了下來，很慢，雖然慢，卻還是在變\n\n"
 HIR"                        光芒在現，劍鋒迥異，刀光如幻，詭異的閃動\n\n"
-HIR"                $n覺得這份詭異仿佛就在自己眉睫間，又仿佛在虛無的縹緲間\n\n"
+HIR"                $n覺得這份詭異彷彿就在自己眉睫間，又彷彿在虛無的縹緲間\n\n"
 NOR"            "HBBLU"刀光劍意已侵入$n神志，粉碎了$n的鬥志，讓$n盡往回憶的傷悲處走\n"NOR, me, victim);
                 set_temp("disenforce", 1, me);
                 set("force_factor", 0, victim);
@@ -634,24 +634,24 @@ int valid_learn(object me)
         skill =me->query_skill("love-sword", 1);
         if( query("get-2skill-s", me) != 1)//解love-sword的mark
         {
-         tell_object(me, HIY"王小石說道：你我既無師徒之實，怎麼叫我傳授劍法給你！\n"NOR);
+         tell_object(me, HIY"王小石説道：你我既無師徒之實，怎麼叫我傳授劍法給你！\n"NOR);
          return 0;
          }
          else
          {
          if( query("family/master_name", me) != "王小石" )
          {
-                tell_object(me, HIY"王小石說道：你我既無師徒之實，怎麼叫我傳授劍法給你！\n"NOR);
+                tell_object(me, HIY"王小石説道：你我既無師徒之實，怎麼叫我傳授劍法給你！\n"NOR);
                 return 0;
          }
          if( query("max_force", me)<2000 )
          {
-                tell_object(me, HIY"王小石說道：你的內力修為似乎不足以修練「情劍”！\n"NOR);
+                tell_object(me, HIY"王小石説道：你的內力修為似乎不足以修練「情劍”！\n"NOR);
                 return 0;
          }
          if( !(ob=query_temp("weapon", me)) || query("skill_type", ob) != "sword" )
          {
-                tell_object(me, HIY"王小石說道：沒拿劍怎麼練劍法啊！\n"NOR);
+                tell_object(me, HIY"王小石説道：沒拿劍怎麼練劍法啊！\n"NOR);
                 return 0;
          }
          if( (query("potential", me)-query("learned_points", me))<5){
@@ -660,10 +660,10 @@ int valid_learn(object me)
          }
          if( bell > 100 )
          {
-                tell_object(me, HIY"王小石說道：你心存殺念, 怎麼能夠學習情劍呢！\n");
+                tell_object(me, HIY"王小石説道：你心存殺念, 怎麼能夠學習情劍呢！\n");
                 return 0;
          }
-        tell_object(me, HIY"王小石說道：學此劍法需扣潛能、精、氣各五點。\n");
+        tell_object(me, HIY"王小石説道：學此劍法需扣潛能、精、氣各五點。\n");
         addn("jing", -5, me);
         addn("qi", -5, me);
 //        me->add("sen", -5);

@@ -9,7 +9,7 @@ void create()
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("long", HIR "閃爍著陣陣紫光的綢緞，不知由何物所織，堅韌有如玄鐵。\n" NOR);
+                set("long", HIR "閃爍着陣陣紫光的綢緞，不知由何物所織，堅韌有如玄鐵。\n" NOR);
                 set("unit", "張");
                 set("value", 30000);
                 set("item_origin", 1);

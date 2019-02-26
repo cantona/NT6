@@ -6,7 +6,7 @@ void create()
         set("gender", "男性" );
         set("age", 32);
         set("long",
-                "一個在茶館裡以說書為生的老頭。\n");
+                "一個在茶館裏以説書為生的老頭。\n");
         set("shen_type", 1);
         set("combat_exp", 10000);
        set("str", 10);
@@ -18,7 +18,7 @@ void create()
        set_skill("unarmed",20);
        set("chat_chance", 1);
        set("chat_msg", ({
-                "茶博士搖頭晃腦的說著書。\n",
+                "茶博士搖頭晃腦的説着書。\n",
         }) );       
         setup();
        carry_object("/d/beijing/npc/obj/cloth")->wear();

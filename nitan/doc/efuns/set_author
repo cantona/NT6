@@ -20,7 +20,7 @@
                 是釋放陣列的空間. 這樣一來, 統計數字上減去的項目就不
                 是原來作者的值, 而是另一個作者的.
                 要解決這個問題, 只可以在 create(4) 中使用 set_author()
-                , 而且盡量用在任何陣列宣告之前.
+                , 而且儘量用在任何陣列宣告之前.
         參考函數:
                 author_file(4), domain_file(4), author_stats(3),
                 set_author(3), domain_stats(3)

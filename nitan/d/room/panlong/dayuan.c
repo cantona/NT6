@@ -8,12 +8,12 @@ void create()
         set("short", "大院");             /* EXAMPLE */
 //**    set("short", "ROOM_NAME大院");
         set("long", @LONG
-這是一個寬闊的院落，種著各種樹木，陽光照下來透過樹蔭投下層層
-影子。有一條大路通向裡面。
+這是一個寬闊的院落，種着各種樹木，陽光照下來透過樹蔭投下層層
+影子。有一條大路通向裏面。
 LONG );
 
-        set("default_long", "這是一個寬闊的院落，種著各種樹木，陽光照"   /* EXAMPLE */
-                            "下來透過樹蔭投下層層影子。一條大路通向裡"   /* EXAMPLE */
+        set("default_long", "這是一個寬闊的院落，種着各種樹木，陽光照"   /* EXAMPLE */
+                            "下來透過樹蔭投下層層影子。一條大路通向裏"   /* EXAMPLE */
                             "面，踩得非常平滑的，看來是經常有人來往。"); /* EXAMPLE */
                                                                          /* EXAMPLE */
 

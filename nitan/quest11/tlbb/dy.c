@@ -1,7 +1,7 @@
 // duanyu.c 段譽
 // COOL@SJ,990827
 // Modified by tangfeng 2004
-// 這裡的段譽涉及到三個場景，一個在無量玉像，一個在石屋裡，一個在大倫寺暗室裡
+// 這裏的段譽涉及到三個場景，一個在無量玉像，一個在石屋裏，一個在大倫寺暗室裏
 // By Spiderii@ty 加入時間限制
 inherit F_MASTER;
 #include <ansi.h>
@@ -10,7 +10,7 @@ inherit NPC;
 #define QUESTDIR "quest/天龍八部/"
 #define QUESTDIR1 "quest/天龍八部/凌波微步篇/"
 #define QUESTDIR2 "quest/天龍八部/天龍營救篇/"
-#define QUESTDIR3 "quest/天龍八部/蕭峰身世篇/"
+#define QUESTDIR3 "quest/天龍八部/蕭峯身世篇/"
 #define QUESTDIR4 "quest/天龍八部/大遼救援篇/"
 #define QUESTDIR5 "quest/天龍八部/復興天下篇/"
 #define QUESTDIR6 "quest/天龍八部/武功/"
@@ -30,7 +30,7 @@ void create()
         set_name("青年男子", ({"qingnian nanzi", "nanzi", "man"}));
         set("gender", "男性");
         set("age", 20);
-        set("long", "這是一個青年男子，披頭散發，赤裸著上身，下身只系著一條短褲，露出\n"
+        set("long", "這是一個青年男子，披頭散髮，赤裸着上身，下身只繫着一條短褲，露出\n"
                     "了兩條大腿，臉孔略尖，眼神似乎有些發狂。\n");
         set("attitude", "peaceful");
         set("str", 15);
@@ -55,10 +55,10 @@ void create()
 		"大理" : "大理是我家，我家在大理。",
 		"天龍寺" : "天龍寺是大理段家武學的最高之地。",
 		"天龍有難" : (: tianlonghelp :),
-		"蕭峰" : "我大哥蕭峰啊，端得一條好漢。",
-		"營救蕭峰" : (: askxiaofeng :),
-		"慕容復" : "慕容公子確是其江南文採，詩琴書畫無所不精，武功更是冠絕天下。",
-		"慕容博" : "我聽說是，姑蘇慕容不出的傑才，可惜英年早逝。",
+		"蕭峯" : "我大哥蕭峯啊，端得一條好漢。",
+		"營救蕭峯" : (: askxiaofeng :),
+		"慕容復" : "慕容公子確是其江南文采，詩琴書畫無所不精，武功更是冠絕天下。",
+		"慕容博" : "我聽説是，姑蘇慕容不出的傑才，可惜英年早逝。",
 		"鳩摩智" : (: askjiumozhi :),
 		"六脈神劍" : "天龍寺最高絕學。",
 		"段正淳" : "那是我爹爹。",
@@ -125,7 +125,7 @@ void greeting(object me)
 			&& me->query_temp(QUESTDIR1+"jianying"))
     {
 		//玉像處
-		  message_vision(HIC"\n$N一轉身大吃一驚，卻發現身旁卻見一個男子站在玉像前，痴痴的呆看著，那表情竟然由愛生敬，由敬成痴。\n"NOR, me);  
+		  message_vision(HIC"\n$N一轉身大吃一驚，卻發現身旁卻見一個男子站在玉像前，痴痴的呆看着，那表情竟然由愛生敬，由敬成痴。\n"NOR, me);  
 		  log_file("quest/TLBB", sprintf("%s(%s) 凌波微步玉像處遇見段譽。經驗：%d。\n", me->name(1),me->query("id"), me->query("combat_exp")) );
 		  me->set_temp(QUESTDIR1+"see_duanyu2",1);
 		  me->start_busy(1);
@@ -138,7 +138,7 @@ void greeting(object me)
 		&& me->query_temp(QUESTDIR2+"pushdown") 
 		&& !me->query(QUESTDIR2+"over"))
     {
-		  message_vision(HIC"\n$N擠進暗室，發現一個中年男子，正炯炯有神地盯著你看，感覺不到一點被囚困的樣子。\n\n"NOR, me);                      
+		  message_vision(HIC"\n$N擠進暗室，發現一箇中年男子，正炯炯有神地盯着你看，感覺不到一點被囚困的樣子。\n\n"NOR, me);                      
 		  command("ah "+me->query("id"));
 		  command("look "+me->query("id"));
 		  command("heng");
@@ -151,7 +151,7 @@ string ask_name()
 {
 		set_name("段譽", ({ "duan yu", "duan","yu"}) );
 		set("title",HIG"大理國鎮南王世子"NOR);
-		set("long", HIG"雖身處暗室，卻依舊風採宜人，料想也是富貴子弟、世家豪傑。"NOR); 
+		set("long", HIG"雖身處暗室，卻依舊風采宜人，料想也是富貴子弟、世家豪傑。"NOR); 
 		command("nod");
 		return "在下便是段譽。";
 }
@@ -198,7 +198,7 @@ void outroom(object me)
   {
   	command("say 人呢？"+me->name()+"剛才不是還在嗎？");
 	me->delete("quest/天龍八部/凌波微步篇");
-  	command("say 我還是先回去了，爹爹和伯父一定著急了。");
+  	command("say 我還是先回去了，爹爹和伯父一定着急了。");
   	command("sigh");
     me->set(QUESTDIR+"time",time());
  	me->set(QUESTDIR+"combat_exp",me->query("combat_exp")); 	
@@ -214,14 +214,14 @@ void outroom(object me)
 	  {
 		  command("say 這位姐姐，竟然也這麼漂亮，真是有得和這玉像一拼，不過這玉像精工也太神色動人了。");
 		  command("points");
-		  tell_object(me,HIC"\n你側過身子看那玉像時，只見她眼光跟著轉將過來，便似活了一般。你大吃一驚，側頭向右，玉像的眼光似乎也對著你移動。不論\n"
-			  "你站在那一邊，玉像的眼光始終向著你，眼光中的神色更是難以捉摸，似喜似愛，似是情意深摯，又似黯然神傷。\n"NOR);
+		  tell_object(me,HIC"\n你側過身子看那玉像時，只見她眼光跟着轉將過來，便似活了一般。你大吃一驚，側頭向右，玉像的眼光似乎也對着你移動。不論\n"
+			  "你站在那一邊，玉像的眼光始終向着你，眼光中的神色更是難以捉摸，似喜似愛，似是情意深摯，又似黯然神傷。\n"NOR);
 		  tell_room(environment(me),HIC"轉頭卻見"+me->query("name")+"也是一復神色怪怪的樣子，也似乎被什麼吸引住了似的。\n"NOR, ({ me })); 
-		  tell_object(me,HIC"\n你又向玉像呆望良久，這才轉頭，見東壁上刮磨平整，刻著數十行字，都是“莊子”中的句子，大都出自“逍遙遊”、“養生主”、\n"
-			  "“秋水”、“至樂”幾篇，筆法飄逸，似以極強腕力用利器刻成，每一筆都深入石壁幾近半寸。文末題著一行字雲：“逍遙子為秋\n"
+		  tell_object(me,HIC"\n你又向玉像呆望良久，這才轉頭，見東壁上刮磨平整，刻着數十行字，都是“莊子”中的句子，大都出自“逍遙遊”、“養生主”、\n"
+			  "“秋水”、“至樂”幾篇，筆法飄逸，似以極強腕力用利器刻成，每一筆都深入石壁幾近半寸。文末題着一行字雲：“逍遙子為秋\n"
 			  "水妹書。洞中無日月，人間至樂也。”！\n"NOR);
-		  tell_object(me,HIR"\n過了一會，禁不住脫口而出：“真是天仙下凡啊，這等姿色，別說是男子見了，心神不定，就是我身為女兒身，也是神色恍惚。”\n"
-			  HIY"\n你突然竟然有雙膝跪倒拜下去的沖動。 \n"NOR);
+		  tell_object(me,HIR"\n過了一會，禁不住脱口而出：“真是天仙下凡啊，這等姿色，別説是男子見了，心神不定，就是我身為女兒身，也是神色恍惚。”\n"
+			  HIY"\n你突然竟然有雙膝跪倒拜下去的衝動。 \n"NOR);
 		  command("ah "+me->query("id"));
 		  command("touch "+me->query("id"));	  
 	  }
@@ -229,14 +229,14 @@ void outroom(object me)
 	  {
 		  command("say "+me->query("name")+"，這位姐姐，你且仔細看看這玉像，真是太神色動人了。");
 		  command("points");
-		  tell_object(me,HIC"\n你側過身子看那玉像時，只見她眼光跟著轉將過來，便似活了一般。你大吃一驚，側頭向右，玉像的眼光似乎也對著你移動。不論\n"
-			  "你站在那一邊，玉像的眼光始終向著你，眼光中的神色更是難以捉摸，似喜似愛，似是情意深摯，又似黯然神傷。\n"NOR);
+		  tell_object(me,HIC"\n你側過身子看那玉像時，只見她眼光跟着轉將過來，便似活了一般。你大吃一驚，側頭向右，玉像的眼光似乎也對着你移動。不論\n"
+			  "你站在那一邊，玉像的眼光始終向着你，眼光中的神色更是難以捉摸，似喜似愛，似是情意深摯，又似黯然神傷。\n"NOR);
 		  tell_room(environment(me),HIC"轉頭卻見"+me->query("name")+"也是一復神色怪怪的樣子，也似乎被什麼吸引住了似的。\n"NOR, ({ me })); 
-		  tell_object(me,HIC"\n你又向玉像呆望良久，這才轉頭，見東壁上刮磨平整，刻著數十行字，都是“莊子”中的句子，大都出自“逍遙遊”、“養生主”、\n"
-			  "“秋水”、“至樂”幾篇，筆法飄逸，似以極強腕力用利器刻成，每一筆都深入石壁幾近半寸。文末題著一行字雲：“逍遙子為秋\n"
+		  tell_object(me,HIC"\n你又向玉像呆望良久，這才轉頭，見東壁上刮磨平整，刻着數十行字，都是“莊子”中的句子，大都出自“逍遙遊”、“養生主”、\n"
+			  "“秋水”、“至樂”幾篇，筆法飄逸，似以極強腕力用利器刻成，每一筆都深入石壁幾近半寸。文末題着一行字雲：“逍遙子為秋\n"
 			  "水妹書。洞中無日月，人間至樂也。”！\n"NOR);
-		  tell_object(me,HIR"\n過了一會，禁不住脫口而出：“真是天仙下凡啊，這等姿色，別說是男子見了，心神不定，就是我身為女兒身，看了真是自慚行愧啊。”\n"
-			  HIY"\n你突然竟然有雙膝跪倒拜下去的沖動。 \n"NOR);
+		  tell_object(me,HIR"\n過了一會，禁不住脱口而出：“真是天仙下凡啊，這等姿色，別説是男子見了，心神不定，就是我身為女兒身，看了真是自慚行愧啊。”\n"
+			  HIY"\n你突然竟然有雙膝跪倒拜下去的衝動。 \n"NOR);
 		  command("ah "+me->query("id"));
 		  command("shrug "+me->query("id"));	  
 	  }
@@ -245,23 +245,23 @@ void outroom(object me)
   {
  	  command("say "+me->query("name")+"，也是同道中人，你且仔細看看這玉像，真是太神色動人了。");
 	  command("points");
-	  tell_object(me,HIC"\n你側過身子看那玉像時，只見她眼光跟著轉將過來，便似活了一般。你大吃一驚，側頭向右，玉像的眼光似乎也對著你移動。不論\n"
-	  "你站在那一邊，玉像的眼光始終向著你，眼光中的神色更是難以捉摸，似喜似愛，似是情意深摯，又似黯然神傷。\n"NOR);
+	  tell_object(me,HIC"\n你側過身子看那玉像時，只見她眼光跟着轉將過來，便似活了一般。你大吃一驚，側頭向右，玉像的眼光似乎也對着你移動。不論\n"
+	  "你站在那一邊，玉像的眼光始終向着你，眼光中的神色更是難以捉摸，似喜似愛，似是情意深摯，又似黯然神傷。\n"NOR);
 	  tell_room(environment(me),HIC"轉頭卻見"+me->query("name")+"也是一復神色怪怪的樣子，也似乎被什麼吸引住了似的。\n"NOR, ({ me })); 
-	  tell_object(me,HIC"\n你又向玉像呆望良久，這才轉頭，見東壁上刮磨平整，刻著數十行字，都是“莊子”中的句子，大都出自“逍遙遊”、“養生主”、\n"
-		  "“秋水”、“至樂”幾篇，筆法飄逸，似以極強腕力用利器刻成，每一筆都深入石壁幾近半寸。文末題著一行字雲：“逍遙子為秋\n"
+	  tell_object(me,HIC"\n你又向玉像呆望良久，這才轉頭，見東壁上刮磨平整，刻着數十行字，都是“莊子”中的句子，大都出自“逍遙遊”、“養生主”、\n"
+		  "“秋水”、“至樂”幾篇，筆法飄逸，似以極強腕力用利器刻成，每一筆都深入石壁幾近半寸。文末題着一行字雲：“逍遙子為秋\n"
 		  "水妹書。洞中無日月，人間至樂也。”！\n"NOR);
       if(me->query("gender")=="無性") tell_object(me,HIR"\n你暗想：“我要是真能做個女人，就是死一千遍，一萬遍，也如身登極樂，歡喜無限。” \n"NOR);
-	  tell_object(me,HIR"\n過了一會，禁不住脫口而出：“神仙姊姊，你若能活過來跟我說一句話，我便為你死一千遍，一萬遍，也如身登極樂，歡喜無限。”\n"
-		  HIY"\n你突然竟然有雙膝跪倒拜下去的沖動。 \n"NOR);
+	  tell_object(me,HIR"\n過了一會，禁不住脱口而出：“神仙姊姊，你若能活過來跟我説一句話，我便為你死一千遍，一萬遍，也如身登極樂，歡喜無限。”\n"
+		  HIY"\n你突然竟然有雙膝跪倒拜下去的衝動。 \n"NOR);
 	  command("ah "+me->query("id"));
 	  command("touch "+me->query("id"));
   } 
   command("sigh");
-  command("say 我還是先回去了，爹爹和伯父一定著急了。");
+  command("say 我還是先回去了，爹爹和伯父一定着急了。");
   command("chat* bye "+me->query("id"));	 
   command("wave "+me->query("id"));
-  tell_room(environment(me),HIG"\n只見，段譽匆匆忙忙地離開，只是神色似乎很是留戀不舍。\n\n"NOR, ({}));
+  tell_room(environment(me),HIG"\n只見，段譽匆匆忙忙地離開，只是神色似乎很是留戀不捨。\n\n"NOR, ({}));
   me->set_temp(QUESTDIR1+"see_duanyu1",1);
   destruct(ob);
   return;
@@ -298,27 +298,27 @@ int ask_save()
 	{
 		command("nod "+me->query("id"));
 		message_vision(HIC"$N道：“今日相救無以回報，壯士是學武之人，我身上有卷帛卷，乃昔日\n"
-			+"奇遇獲得，今日贈于你，略表解救之謝意。”說完，$N從懷裡摸出一團物事。\n"
+			+"奇遇獲得，今日贈於你，略表解救之謝意。”説完，$N從懷裏摸出一團物事。\n"
 			+"突然，$N大失驚色，“啊喲！怎麼會變成這個樣子？罷了！罷了！莫非天意？。”\n"
-			+"拿去吧，能領會多少就看你的造化了。說完，$N把它交給$n。\n"NOR, ob, me);
+			+"拿去吧，能領會多少就看你的造化了。説完，$N把它交給$n。\n"NOR, ob, me);
 		obj=new("/d/dali/obj/dodge_book");
               obj->set("owner", me->query("id"));//By Spiderii@ty 加個標記,防止BUG
               me->set("quest/天龍八部/武功/time", time()); //加個限制。禁止連續翻,只為防備以前開lbwb的玩家 By Spiderii@ty
 
 		obj->move(me);
-		//設定標志
+		//設定標誌
 		me->set(QUESTDIR+"time",time());
 		me->set(QUESTDIR+"combat_exp",me->query("combat_exp")); 	
 		me->delete_temp("quest/天龍八部");
 		me->set(QUESTDIR1+"over",1);//結束
-		me->delete_temp("quest/busy");//任務沖突標志取消
+		me->delete_temp("quest/busy");//任務衝突標誌取消
 		me->add_busy(4);
 		i=10+random(10);
 		me->add("max_neili",i);
 		me->add("combat_exp",me->query_skill("force")+400);
 		me->add("mana",me->query_skill("force")/3);
 		command("thank "+me->query("id"));
-		tell_object(me,HIY"\n你于"+NATURE_D->game_time()+"經過千辛萬苦終于段譽從萬劫谷解救出來，獲得"+i+"點最大內力、"+(me->query_skill("force")+400)+"點經驗和"+(int)me->query_skill("force")/3+"點聲望。\n\n");
+		tell_object(me,HIY"\n你於"+NATURE_D->game_time()+"經過千辛萬苦終於段譽從萬劫谷解救出來，獲得"+i+"點最大內力、"+(me->query_skill("force")+400)+"點經驗和"+(int)me->query_skill("force")/3+"點聲望。\n\n");
 		log_file("quest/TLBB", sprintf("%s(%s) 凌波微步篇完成。獎勵：%d點最大內力，%d點經驗，%d點聲望。\n", me->name(1),me->query("id"), i,(me->query_skill("force")+400),me->query_skill("force")/3) );
 		remove_call_out("dest");
 		call_out("dest",5,me,ob);
@@ -326,7 +326,7 @@ int ask_save()
 	}
 	if(me->query(QUESTDIR2+"start") && me->query_temp(QUESTDIR2+"pushdown") && !me->query(QUESTDIR2+"over"))
 	{
-		command("say "+me->query("name")+"已經是第二次相救了，真的非常感激，我這裡正好有塊礦石，你且拿去。");
+		command("say "+me->query("name")+"已經是第二次相救了，真的非常感激，我這裏正好有塊礦石，你且拿去。");
 		obj=new("/d/zhiye/obj/kuangshi1");
 		obj->set_level(5+random(3));
 		obj->move(me);
@@ -334,17 +334,17 @@ int ask_save()
     	command("chat* thank "+me->query("id"));
     	command("wave "+me->query("id"));
     	command("bye "+me->query("id"));
-		//設定標志
+		//設定標誌
 		me->set(QUESTDIR+"time",time());
 		me->set(QUESTDIR+"combat_exp",me->query("combat_exp")); 	
 		me->set(QUESTDIR2+"over",1);  //結束 	
 		me->delete_temp("quest/天龍八部");
-		me->delete_temp("quest/busy");//任務沖突標志取消
+		me->delete_temp("quest/busy");//任務衝突標誌取消
 		i=10+random(10);
 		me->add("max_neili",i);
 		me->add("combat_exp",(me->query_skill("force")+500));
 		me->add("mana",me->query_skill("force")/3);
-		tell_object(me,HIY"\n你于"+NATURE_D->game_time()+"經過千辛萬苦終于段譽從天龍寺解救出來，獲得"+i+"點最大內力、"+((int)me->query_skill("force")+500)+"點經驗和"+(int)me->query_skill("force")/3+"點聲望。\n\n");
+		tell_object(me,HIY"\n你於"+NATURE_D->game_time()+"經過千辛萬苦終於段譽從天龍寺解救出來，獲得"+i+"點最大內力、"+((int)me->query_skill("force")+500)+"點經驗和"+(int)me->query_skill("force")/3+"點聲望。\n\n");
 		log_file("quest/TLBB", sprintf("%s(%s) 天龍營救篇完成。獎勵：%d點最大內力，%d點經驗，%d點聲望和%s。\n", me->name(1),me->query("id"), i,(me->query_skill("force")+500),me->query_skill("force")/3,obj->query("name")) );
 		destruct(this_object());
 		return 1;
@@ -363,13 +363,13 @@ void dest(object me,object ob)
 	  return;
   }
   environment(ob)->set("exits/down","/d/dali/wuliang/midao1");
-  message_vision(HIY"$n忽然看見角落裡泥土翻飛，有三個身穿貼身緊靠的人從地裡鑽了出來 \n"
-		+"$n仔細一看，原來是大理國的華赫艮、巴天石和范驊。范驊上前向段譽 \n"
+  message_vision(HIY"$n忽然看見角落裏泥土翻飛，有三個身穿貼身緊靠的人從地裏鑽了出來 \n"
+		+"$n仔細一看，原來是大理國的華赫艮、巴天石和範驊。範驊上前向段譽 \n"
 		+"鞠了個躬,道：“公子，我們來救你來了。”眼角一瞥，看見了$n，道：\n"
 		+"“敢問這位台兄？”，段譽道：“這位台兄也是來救我的，他殺了四大惡人\n"
-		+"從前面推開巨石而入。”范、巴、華等人聽了又驚又佩，，范驊道：“四。\n"
+		+"從前面推開巨石而入。”範、巴、華等人聽了又驚又佩，，範驊道：“四。\n"
 		+"大惡人黨羽眾多，恐怕還會有援兵來到，此地不宜久留，還是隨我從地道。\n"
-		+"趕緊離開吧。”眾人點頭稱是，于是范、巴、華、段譽跳下地道離開了了\n"NOR, ob, me);
+		+"趕緊離開吧。”眾人點頭稱是，於是範、巴、華、段譽跳下地道離開了了\n"NOR, ob, me);
   destruct(ob);
 }
 string askjiumozhi()
@@ -379,7 +379,7 @@ string askjiumozhi()
 	if (me->query(QUESTDIR1+"over") && !me->query(QUESTDIR2+"start"))
 	{
   	  command("nod "+me->query("id"));
-		  return "聽說，大輪寺第一高僧鳩摩智將來我天龍寺佛法交流，真是我大理之幸啊。";
+		  return "聽説，大輪寺第一高僧鳩摩智將來我天龍寺佛法交流，真是我大理之幸啊。";
   }
 	if (me->query(QUESTDIR2+"start") && !me->query(QUESTDIR2+"over"))
 	{
@@ -392,7 +392,7 @@ string askjiumozhi()
 		  return "鳩摩智妄為西域第一佛法高僧，所謂口生蓮花，全是一派胡言。";
   }
   command("nod");
-	return "大輪明王鳩摩智是吐蕃國的護國法王，但聽說他具大智慧，精通佛法，好想見識一下。";
+	return "大輪明王鳩摩智是吐蕃國的護國法王，但聽説他具大智慧，精通佛法，好想見識一下。";
 }
 string askxiaofeng()
 {
@@ -401,29 +401,29 @@ string askxiaofeng()
   if(!me->query(QUESTDIR3+"start"))
   {
   	  command("nod");
-  		return "我大哥蕭峰如此英雄，何來援救之說。";
+  		return "我大哥蕭峯如此英雄，何來援救之説。";
   }
 	if (me->query(QUESTDIR3+"start") && !me->query(QUESTDIR3+"over"))
 	{
   	  command("nod "+me->query("id"));
-		  return "聽說這件事情，哼，我既可前往大遼。";
+		  return "聽説這件事情，哼，我既可前往大遼。";
   }
 
 	if (me->query(QUESTDIR3+"bad"))
 	{
   	  command("heng");
   	  command("? "+me->query("id"));
-		  return "蕭峰，難不是你所迫出中原，今日所謂搭救不知什麼意思。假惺惺！";
+		  return "蕭峯，難不是你所迫出中原，今日所謂搭救不知什麼意思。假惺惺！";
   }
 	if (me->query(QUESTDIR3+"start") && me->query(QUESTDIR3+"over")&& !me->query(QUESTDIR4+"start"))
 	{
   	  command("heng");
-		  return "聽說這件事情，哼，我既可前往大遼。";
+		  return "聽説這件事情，哼，我既可前往大遼。";
   }
 	if (me->query(QUESTDIR4+"start")&& !me->query(QUESTDIR4+"over"))
 	{
   	  command("heng");
-		  return "聽說這件事情，哼，我既可前往大遼。";
+		  return "聽説這件事情，哼，我既可前往大遼。";
   }
 	if (me->query(QUESTDIR4+"start") && me->query(QUESTDIR4+"over"))
 	{
@@ -431,7 +431,7 @@ string askxiaofeng()
 		  return "這一戰真是痛快，"+me->query("name")+"更是威震武林，端得厲害啊。";
   }
   command("hoho");
-	return "江湖人稱南慕容、北蕭峰，這蕭峰正是我大哥，如此英雄好漢，何來援救之說。";
+	return "江湖人稱南慕容、北蕭峯，這蕭峯正是我大哥，如此英雄好漢，何來援救之説。";
 }
 string tianlonghelp()
 {
@@ -445,7 +445,7 @@ string tianlonghelp()
 	if (me->query(QUESTDIR1+"over") && !me->query(QUESTDIR2+"start"))
 	{
   	  command("nod "+me->query("id"));
-		  return "聽說，大輪寺高僧鳩摩智不日將來我天龍寺，不知是喜是禍。";
+		  return "聽説，大輪寺高僧鳩摩智不日將來我天龍寺，不知是喜是禍。";
   }
 	if (me->query(QUESTDIR2+"start") && !me->query(QUESTDIR2+"over"))
 	{

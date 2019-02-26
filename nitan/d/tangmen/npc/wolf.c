@@ -7,7 +7,7 @@ void create()
         set_name("野狼", ({ "wolf","lang" }) );
         set("race", "野獸");
         set("age", 3);
-        set("long", "一只瘦骨如柴的灰色餓狼。\n");
+        set("long", "一隻瘦骨如柴的灰色餓狼。\n");
         set("attitude", "heroism");
 
         set("str",35);
@@ -23,8 +23,8 @@ void create()
         set("chat_chance", 6);
         set("chat_msg", ({
                 (: this_object(), "random_move" :),
-                "野狼張著血盆大嘴象你沖來。\n",
-                "野狼對著你齜了齜牙。\n",
+                "野狼張着血盆大嘴象你衝來。\n",
+                "野狼對着你齜了齜牙。\n",
         }) );                
 
         set("combat_exp", 50000);

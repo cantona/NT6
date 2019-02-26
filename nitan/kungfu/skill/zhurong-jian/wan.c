@@ -40,7 +40,7 @@ int perform(object me, object target)
                 return notify_fail("你現在的真氣不夠，難以施展" WAN "。\n");
 
         if (! living(target))
-                return notify_fail("對方都已經這樣了，用不著這麼費力吧？\n");
+                return notify_fail("對方都已經這樣了，用不着這麼費力吧？\n");
 
         wn = weapon->name();
                             
@@ -64,7 +64,7 @@ int perform(object me, object target)
         } else
         {
                  msg = CYN "$n" CYN "眼劍" +wn + CYN"已至，強自鎮定，"
-                      "側身躲過，但對$N" CYN "這招仍是心有余悸。\n" NOR;
+                      "側身躲過，但對$N" CYN "這招仍是心有餘悸。\n" NOR;
 
                        me->start_busy(4);
                  addn("neili", -100, me);

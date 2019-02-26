@@ -4,7 +4,7 @@ void create()
 {
         set("short", "巖洞內");
         set("long", @LONG
-這裡是巖洞內部，洞頂上懸掛著潔白的鐘乳石。
+這裏是巖洞內部，洞頂上懸掛着潔白的鐘乳石。
 LONG );
         set("exits",([
                 "out" : __DIR__"cave",

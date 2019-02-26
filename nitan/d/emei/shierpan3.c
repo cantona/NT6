@@ -5,7 +5,7 @@ void create()
 {
       set("short", "十二盤");
         set("long", @LONG
-這裡石階陡折多彎，號稱「十二盤」。你見路邊有個八音池，有
+這裏石階陡折多彎，號稱「十二盤」。你見路邊有個八音池，有
 人正在向池中擊掌(clap)。由此西上可達華嚴頂，東下則到萬年庵。
 LONG );
       set("outdoors", "emei");
@@ -27,8 +27,8 @@ void init()
 
 int do_clap()
 {
-      message_vision(HIC "\n池內忽然有蛙大鳴一聲，接著群蛙次第相"
-                     "合，最後又是一蛙大\n鳴，群蛙便嘎然而止，其"
+      message_vision(HIC "\n池內忽然有蛙大鳴一聲，接着羣蛙次第相"
+                     "合，最後又是一蛙大\n鳴，羣蛙便嘎然而止，其"
                      "數正好為八。\n", this_player());
       return 1;
 }

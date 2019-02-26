@@ -63,7 +63,7 @@ mapping default_dirs = ([
         "up":           "上",
         "down":         "下",
         "out":          "外",
-        "enter":        "裡",
+        "enter":        "裏",
 ]);
 
         mapping exits;
@@ -79,7 +79,7 @@ mapping default_dirs = ([
         else dir =dirs[i];
         message_vision("$N一聲長鳴，振翅向"+dir+"飛去。\n",this_object());
         move(where[i]);
-        tell_room(where[i],"一只大白雕飛了過來，在雲層中盤旋。\n");
+        tell_room(where[i],"一隻大白雕飛了過來，在雲層中盤旋。\n");
         return;
         return 1;
 }

@@ -11,7 +11,7 @@ void create()
         set("age", 25);
         set("long",
 "他身材魁梧，濃眉大眼。\n"
-"他是樑山泊好漢地佑星賽仁貴郭盛的後代。\n");
+"他是梁山泊好漢地佑星賽仁貴郭盛的後代。\n");
         set("combat_exp", 160000);
         set("shen_type",  1);
         set("attitude", "friendly");

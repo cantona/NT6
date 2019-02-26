@@ -12,7 +12,7 @@ void create()
         set_name("禿筆翁", ({ "tubi weng", "tubi", "tu", "bi", "weng" }));
         set("long", @LONG
 他就是梅莊四位莊主排行第三的禿筆翁。只見
-他身穿一件幹幹凈凈的白色長袍。他已年癒五
+他身穿一件乾乾淨淨的白色長袍。他已年愈五
 旬，身材矮小，頂上光光，一看就知道是個極
 易動怒的人。
 LONG);
@@ -93,14 +93,14 @@ void attempt_apprentice(object me)
                 command("yi");
                 command("say 我道是誰，原來是東方教主的弟子。");
                 command("say 這件事我不便插手，你去找我大哥、二哥好了。");
-                set("move_party/日月神教─梅莊", 1, me);
+                set("move_party/日月神教—梅莊", 1, me);
                 return;
         }
 
         if( query("combat_exp", me)<50000 )
         {
                 command("sigh");
-                command("say 你的江湖經驗太淺，還是先多鍛煉鍛煉再說吧。");
+                command("say 你的江湖經驗太淺，還是先多鍛鍊鍛鍊再説吧。");
                 return;
         }
 
@@ -142,12 +142,12 @@ mixed ask_skill1()
         if (me->query_skill("force") < 150)
                 return "你的內功火候尚不精純，學不了，學不了。";
 
-        message_vision(HIY "$n" HIY "哈哈一笑，說道：不錯，不錯，孺子可"
-                       "教也。今天我就傳你這招。\n$n" HIY "說完便將$N"
-                       HIY "招至身前，嘀嘀咕咕說了半天。\n" NOR, me,
+        message_vision(HIY "$n" HIY "哈哈一笑，説道：不錯，不錯，孺子可"
+                       "教也。今天我就傳你這招。\n$n" HIY "説完便將$N"
+                       HIY "招至身前，嘀嘀咕咕説了半天。\n" NOR, me,
                        this_object());
         command("nod");
-        command("say 剛才我所說的便是這神筆封穴的精要，懂了就下去練吧。");
+        command("say 剛才我所説的便是這神筆封穴的精要，懂了就下去練吧。");
         tell_object(me, HIC "你學會了「神筆封穴」。\n" NOR);
 
         if (me->can_improve_skill("dagger"))
@@ -188,13 +188,13 @@ mixed ask_skill2()
         if (me->query_skill("force") < 150)
                 return "你的內功火候尚不精純，學不了，學不了。";
 
-        message_vision(HIY "$n" HIY "點了點頭，說道：這一套筆法乃是從顏真"
+        message_vision(HIY "$n" HIY "點了點頭，説道：這一套筆法乃是從顏真"
                        "卿所書詩帖中變化出來\n的，一共二十三字，每字三招至"
                        "十六招不等，你可聽好了。只聽$n" HIY "\n搖頭晃腦的"
                        "念道：裴將軍！大君制六合，猛將清九垓。戰馬若龍虎，"
                        "騰\n陵何壯哉……\n" NOR, me, this_object());
         command("nod"+query("id", me));
-        command("say 剛才我說的都記住了嗎？自己下去練吧。");
+        command("say 剛才我説的都記住了嗎？自己下去練吧。");
         tell_object(me, HIC "你學會了「詩意縱橫」。\n" NOR);
 
         if (me->can_improve_skill("dagger"))

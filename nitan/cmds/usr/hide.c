@@ -24,8 +24,8 @@ int main(object me, string str)
 
         if (! ob->hide_anywhere(me))
         {
-                message_vision(HIM "$N" HIM "舉著" + ob->name() +
-                               HIM "，口中念念有詞。\n然而"
+                message_vision(HIM "$N" HIM "舉着" + ob->name() +
+                               HIM "，口中唸唸有詞。\n然而"
                                "什麼也沒有發生 :)\n", me);
         }
 

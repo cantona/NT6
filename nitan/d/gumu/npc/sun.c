@@ -13,9 +13,9 @@ void create()
         set("gender", "女性");
         set("age", 55);
 
-        set("long", sort_msg("她是小龍兒的貼身奶媽。她長著一張生滿雞皮"
-                "疙瘩的醜臉，正瞪眼瞧著你，她的笑容更是十分醜陋，但奇"
-                "醜之中卻含仁慈溫柔之意，登時叫你心中感到一陣溫暖。\n"));
+        set("long", sort_msg("她是小龍兒的貼身奶媽。她長着一張生滿雞皮"
+                "疙瘩的醜臉，正瞪眼瞧着你，她的笑容更是十分醜陋，但奇"
+                "醜之中卻含仁慈温柔之意，登時叫你心中感到一陣温暖。\n"));
 
         set("attitude", "friendly");
 
@@ -109,7 +109,7 @@ string ask_job()
         }
 
         if (present("feng xiang", environment(ob)))
-                return "你還是先把你手裡的蜂箱銷毀了再來要任務！\n";
+                return "你還是先把你手裏的蜂箱銷燬了再來要任務！\n";
         /*
         if( time()<query("mp_job_time", ob)+180 )
         {

@@ -11,7 +11,7 @@ void create()
         set("short", "石洞");
         set("long", @LONG
 這是一個石室，隱約可以感覺到四周是堅硬的石壁(bi)，
-石洞內幹幹凈凈，一塵不染。
+石洞內乾乾淨淨，一塵不染。
 LONG );
         set("exits", ([
                 "east" : __DIR__"shidong9",
@@ -44,11 +44,11 @@ string look_bi()
 
         if( me->query_skill("literate", 1)
          || query("learned_literate", me)){
-                msg = HIC "\n你走到石壁前，仔細觀看石壁上的內容，發現石壁布滿\n"
+                msg = HIC "\n你走到石壁前，仔細觀看石壁上的內容，發現石壁佈滿\n"
                         "蝌蚪形狀的文字。你仔細推敲這些文字卻一無所獲。\n" NOR;
         } else {
-                msg = HIW "\n你走到石壁前，仔細觀看石壁上的內容，發現石壁布滿\n"
-                        "蝌蚪形狀的文字，由于你從未讀過書，所以你並沒有在\n"
+                msg = HIW "\n你走到石壁前，仔細觀看石壁上的內容，發現石壁佈滿\n"
+                        "蝌蚪形狀的文字，由於你從未讀過書，所以你並沒有在\n"
                         "意那些文字。你猛然看到文字下面有很多圖畫，是用利\n"
                         "器所刻。但見畫中人物神情怪異，手舞足蹈，似乎是什\n"
                         "麼厲害的神功絕技。你禁不住想……\n" NOR;
@@ -69,7 +69,7 @@ int do_canwu(string msg)
                 return notify_fail("幹什麼？\n");
 
         if (me->is_busy())
-                return notify_fail("你現在正忙著呢。\n");
+                return notify_fail("你現在正忙着呢。\n");
 
         if (me->is_fighting())
                 return notify_fail("你在戰鬥哦？！小心，來了！！！\n");
@@ -80,11 +80,11 @@ int do_canwu(string msg)
                 return notify_fail("你想參悟什麼？\n");
 
         if (where != "bi")
-                return notify_fail("這裡沒什麼給你參悟的啊！\n");
+                return notify_fail("這裏沒什麼給你參悟的啊！\n");
 
         if (me->query_skill("literate", 1)
          || query("learned_literate", me) )
-                return notify_fail("你對著石壁想了半天也沒發現什麼！\n");
+                return notify_fail("你對着石壁想了半天也沒發現什麼！\n");
 
         if ((int)me->query_skill("force", 1) < 240)
                 return notify_fail("你的內功修為不夠，無法貫通石壁上的絕學！\n");
@@ -123,7 +123,7 @@ int do_canwu(string msg)
                 if( query("taixuan_perform/xuan/count", me) >= 60 )
                 {
                         write(HIM "猛然間，你一聲長嘯，胸中豁然貫通，再無疑慮。\n" NOR);
-                        write(HIC "你終于通曉了絕學「太玄激勁」。\n" NOR);
+                        write(HIC "你終於通曉了絕學「太玄激勁」。\n" NOR);
 
                         set("can_perform/taixuan-gong/xuan", 1, me);
                         delete("taixuan_perform/xuan/count", me);
@@ -151,7 +151,7 @@ int do_canwu(string msg)
                 if( query("taixuan_perform/hun/count", me) >= 30 )
                 {
                         write(HIM "猛然間，你一聲長嘯，胸中豁然貫通，再無疑慮。\n" NOR);
-                        write(HIC "你終于通曉了絕學「混天一氣」。\n" NOR);
+                        write(HIC "你終於通曉了絕學「混天一氣」。\n" NOR);
 
                         set("can_perform/taixuan-gong/hun", 1, me);
                         delete("taixuan_perform/hun/count", me);
@@ -179,7 +179,7 @@ int do_canwu(string msg)
                 if( query("taixuan_perform/po/count", me) >= 70 )
                 {
                         write(HIM "猛然間，你一聲長嘯，胸中豁然貫通，再無疑慮。\n" NOR);
-                        write(HIC "你終于通曉了絕學「乘風破浪」。\n" NOR);
+                        write(HIC "你終於通曉了絕學「乘風破浪」。\n" NOR);
 
                         set("can_perform/taixuan-gong/po", 1, me);
                         delete("taixuan_perform/po/count", me);
@@ -206,7 +206,7 @@ int do_canwu(string msg)
 int valid_leave(object me,string dir)
 {
         if (dir == "out")
-                tell_object(me,"你走出了石洞，神秘地出現在大廳之中。\n");
+                tell_object(me,"你走出了石洞，神祕地出現在大廳之中。\n");
 
         return ::valid_leave(me,dir);
 }

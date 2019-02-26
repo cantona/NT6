@@ -11,7 +11,7 @@ mapping *action = ({
         "lvl"   : 0,
         "skill_name" : "行雲流水"
 ]),
-([      "action" : "$N一式"BLU"「披雲戴月」"NOR"，兩掌一並，疾向$n的$l戳去",
+([      "action" : "$N一式"BLU"「披雲戴月」"NOR"，兩掌一併，疾向$n的$l戳去",
         "lvl"   : 10,
         "skill_name" : "披雲戴月"
 ]),
@@ -27,7 +27,7 @@ mapping *action = ({
         "lvl"   : 40,
         "skill_name" : "烏雲敝日"
 ]),
-([      "action" : "$N身形一變，使一式"HIB"「重雲深鎖」"NOR"，雙掌帶著蕭剎的勁氣，猛地擊往$n的$l",
+([      "action" : "$N身形一變，使一式"HIB"「重雲深鎖」"NOR"，雙掌帶着蕭剎的勁氣，猛地擊往$n的$l",
         "lvl"   : 50,
         "skill_name" : "重雲深鎖"
 ]),
@@ -35,7 +35,7 @@ mapping *action = ({
         "lvl"   : 60,
         "skill_name" : "撕天排雲"
 ]),
-([      "action" : "$N突地一招"HIM"「雲海波濤」"NOR"，雙掌挾著一陣風雷之勢，猛地劈往$n的$l",
+([      "action" : "$N突地一招"HIM"「雲海波濤」"NOR"，雙掌挾着一陣風雷之勢，猛地劈往$n的$l",
         "lvl"   : 70,
         "skill_name" : "雲海波濤"
 ]),
@@ -43,7 +43,7 @@ mapping *action = ({
         "lvl"   : 80,
         "skill_name" : "變雲無定"
 ]),
-([      "action" : "$N一式"HIR"「殃雲天降」"NOR"，身形向上竄起丈余，雙掌一高一低，看似簡單，卻令$n無法躲閃",
+([      "action" : "$N一式"HIR"「殃雲天降」"NOR"，身形向上竄起丈餘，雙掌一高一低，看似簡單，卻令$n無法躲閃",
         "lvl"   : 90,
         "skill_name" : "殃雲天降"
 ]),

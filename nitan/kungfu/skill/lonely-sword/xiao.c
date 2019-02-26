@@ -36,7 +36,7 @@ int perform(object me, object target)
                 return notify_fail("你的內功火候不夠，難以施展" + name() + "。\n");
 
         if( !living(target) )
-                return notify_fail("對方都已經這樣了，用不著這麼費力吧？\n");
+                return notify_fail("對方都已經這樣了，用不着這麼費力吧？\n");
 
         if( query("neili", me)<500 ) 
                 return notify_fail("你此時的內力不足，難以施展" + name() + "。\n"); 
@@ -63,8 +63,8 @@ int perform(object me, object target)
                 {
                         addn("neili", -100, me);
                         msg += HIR "$n" HIR "大駭，連忙舉起手中兵器胡亂抵擋，卻不想虎口劇痛，手中" + weapon2->name() +
-                               HIR "捏不住，脫手而出。\n" NOR
-                               HIC "$N" HIC "大笑道：$n" HIC "不過如此，嘗嘗下面這招滋味如何？\n \n" NOR;
+                               HIR "捏不住，脱手而出。\n" NOR
+                               HIC "$N" HIC "大笑道：$n" HIC "不過如此，嚐嚐下面這招滋味如何？\n \n" NOR;
 
                         weapon2->unequip();
                         weapon2->move(environment(me));
@@ -86,7 +86,7 @@ int perform(object me, object target)
         }
 
         msg = HIC "$N" HIC "繼續歌道：" HBWHT" 蒼天笑，紛紛世上潮，誰負誰勝出天知曉 \n" NOR
-              HIC "$N" HIC "隨意揮洒手中的" + weapon->name() +"發出道道" HIW "劍氣"HIC"，寒光閃閃，\n" NOR
+              HIC "$N" HIC "隨意揮灑手中的" + weapon->name() +"發出道道" HIW "劍氣"HIC"，寒光閃閃，\n" NOR
               HIC "從四面八方朝$n" HIC" 直射而去！\n" NOR;
 
         damage = damage_power(me, "sword");
@@ -107,7 +107,7 @@ int perform(object me, object target)
                                 {
                                         target->receive_damage("qi", query("qi", target) * query_temp("apply/fatal_blow", me)/100, me);
                                         target->receive_wound("qi", query("qi", target) * query_temp("apply/fatal_blow", me)/200, me);
-                                        msg += HIR "緊接著，$N" HIR "追加了致命一擊，給$n" HIR "造成更嚴重的創傷。\n" NOR;
+                                        msg += HIR "緊接着，$N" HIR "追加了致命一擊，給$n" HIR "造成更嚴重的創傷。\n" NOR;
                                 }
                         }
 
@@ -130,9 +130,9 @@ int perform(object me, object target)
 
         if( hp<query("max_qi", target)/10 )
         {
-                msg  = HIR "$N" HIR "見$n" HIR"渾身浴血，已是搖搖欲墜，嘆了一聲道： \n" NOR
+                msg  = HIR "$N" HIR "見$n" HIR"渾身浴血，已是搖搖欲墜，歎了一聲道： \n" NOR
                        HIR "人生苦短，還是早早投胎去吧！手中" + weapon->name() +" 一揮！\n" NOR
-                       HIR "$n" HIR "喉中咯咯作響，面上盡是不甘之色，終于倒了下去。 \n\n" NOR;
+                       HIR "$n" HIR "喉中咯咯作響，面上盡是不甘之色，終於倒了下去。 \n\n" NOR;
                 msg += HIC"$N" HIC "青衫飄飄而去，歌聲如風：蒼生笑，不再寂寥，豪情仍在痴痴笑笑~~ \n\n\n" NOR;
                 message_combatd(msg, me, target);
                 target->die(me);

@@ -11,7 +11,7 @@ void create()
         set("title", HIC "鐵膽莊莊主" NOR);
         set("nickname", HIW "鐵膽" NOR);
         set("long", 
-"他白發飄動，精神矍鑠，乃是西北武林的領袖人物鐵膽周仲英。\n");
+"他白髮飄動，精神矍鑠，乃是西北武林的領袖人物鐵膽周仲英。\n");
         set("gender", "男性");
         set("class", "fighter");
         set("age", 61);

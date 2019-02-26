@@ -11,7 +11,7 @@ void create()
                 set_default_object(__FILE__);
         else {
                 set("unit", "冊");
-                set("long", "這是一本線裝書，裡面密密麻麻的畫了不少舞棒的姿勢。\n");
+                set("long", "這是一本線裝書，裏面密密麻麻的畫了不少舞棒的姿勢。\n");
                 set("value", 200);
                 set("material", "paper");
                 set("skill", ([

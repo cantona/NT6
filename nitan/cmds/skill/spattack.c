@@ -24,7 +24,7 @@ int main(object me, string arg)
         object target;
 
         if( query("no_fight", environment(me)) )
-                return notify_fail("這裡不能戰鬥。\n");
+                return notify_fail("這裏不能戰鬥。\n");
 
         if (! arg)
         {
@@ -78,7 +78,7 @@ void do_remote_fight(object me, object couple, object target, int n)
         if( query("jingli", me)<need )
         {
                 write("你試圖和你的伴侶進行心靈上的溝通，但是"
-                      "一時覺得精力不濟，難以聯系。\n");
+                      "一時覺得精力不濟，難以聯繫。\n");
                 return;
         }
 
@@ -96,11 +96,11 @@ void do_remote_fight(object me, object couple, object target, int n)
         }
 
         if (random(2))
-                tell_object(me, HIM "你心中默默的念著" + couple->name(1) +
+                tell_object(me, HIM "你心中默默的念着" + couple->name(1) +
                             HIM "的名字，隱隱感到那若即若離的"
                             "靈覺，穿透了無盡的虛空，和你心心相連。\n\n" NOR);
         else
-                tell_object(me, HIM "穿過了縹緲的虛空，你仿佛看到" + couple->name(1) +
+                tell_object(me, HIM "穿過了縹緲的虛空，你彷彿看到" + couple->name(1) +
                             HIM "，給予你無上的鼓舞和無盡的力量。\n\n" NOR);
 
         if (random(2))
@@ -112,7 +112,7 @@ void do_remote_fight(object me, object couple, object target, int n)
         else
                 tell_object(couple, HIM "冥冥你感到了" + me->name(1) +
                             HIM "對你的呼喚，這一剎那，你們在心靈上"
-                            "全然相通，讓你把無形的力量注入給對方，鼓舞著" +
+                            "全然相通，讓你把無形的力量注入給對方，鼓舞着" +
                             gender_pronoun(query("gender", me))+"。\n"NOR);
 
         addn("jingli", -cost, me);
@@ -127,12 +127,12 @@ void do_remote_fight(object me, object couple, object target, int n)
                               HIG "。\n" NOR;
                 else
                         msg = HIC "$N持" + chinese_type + "而進，竟然視$n" HIC "有若無物，手中" +
-                              weapon->name() + HIC "揮洒自如，盪起層層" +
+                              weapon->name() + HIC "揮灑自如，蕩起層層" +
                               chinese_type + "影，將$p" HIC "困在當中。\n" NOR;
         } else
         {
                 if( query("gender", me) == "女性" )
-                        msg = HIG "$N" HIG "輕聲淺笑，飄然而進，身法驚艷"
+                        msg = HIG "$N" HIG "輕聲淺笑，飄然而進，身法驚豔"
                               "絕倫，有若九天玄女踏足紅塵，舉手投足之間沒有任何破綻。\n" NOR;
                 else
                         msg = HIC "$N" HIC "縱聲長嘯，一股殺氣凜然而起，天"
@@ -222,7 +222,7 @@ int help (object me)
 即使你的伴侶不在你的身邊，也可以運用靈力穿過遙遠的時空給與你
 支持，當然這需要耗費精力，兩個人靈肉結合的次數越多，耗費的精
 力就越少。如果你的伴侶就在你的身邊，則可以一起施展招數攻擊對
-手，不需要耗費精力，招數的威力與兩的人靈肉結合的次數于伴侶的
+手，不需要耗費精力，招數的威力與兩的人靈肉結合的次數於伴侶的
 內功等級相關。
 HELP );
         return 1;

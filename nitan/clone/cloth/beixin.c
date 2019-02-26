@@ -11,7 +11,7 @@ void create()
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("long", "一件水牛皮制的背心，雖不精致，但很結實。\n");
+                set("long", "一件水牛皮製的背心，雖不精緻，但很結實。\n");
                 set("unit", "件");
                 set("value", 400);
                 set("material", "leather");

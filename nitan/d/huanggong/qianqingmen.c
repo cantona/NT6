@@ -36,7 +36,7 @@ int valid_leave(object me, string dir)
 {
         if ((dir=="north") &&
         objectp(present("duo long", environment(me))))
-                return notify_fail("多隆攔住你說：此處禁地，請止步。\n");
+                return notify_fail("多隆攔住你説：此處禁地，請止步。\n");
 
         return ::valid_leave(me, dir);
 }

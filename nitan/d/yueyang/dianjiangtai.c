@@ -9,7 +9,7 @@ void create()
         set("long", @LONG
 下了石階來到水邊一個平台，此台便是三國大將魯肅在此點兵發令
 的“點將台”。點將台南側不遠有一系鐵鏈的大鐵枷，這條碩大無朋的
-大鐵枷據說是攔江御敵用的。
+大鐵枷據説是攔江禦敵用的。
 LONG );
         set("outdoors", "yueyang");
         set("no_clean_up", 0);

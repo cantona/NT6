@@ -11,7 +11,7 @@ void create()
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("long", "一碗洞庭春茶，熱乎乎地冒著一股茶香味。\n");
+                set("long", "一碗洞庭春茶，熱乎乎地冒着一股茶香味。\n");
                 set("unit", "碗");
                 set("value", 100);
                 set("max_liquid", 15);

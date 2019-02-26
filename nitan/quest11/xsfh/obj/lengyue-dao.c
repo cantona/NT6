@@ -14,7 +14,7 @@ void create()
                 set_default_object(__FILE__);
         else {
                 set("unit", "柄");
-                set("long", HIB"刀光如水，在冷月下流轉不定。刀柄上用金絲銀絲鑲著一鉤眉毛彎月。\n"NOR);
+                set("long", HIB"刀光如水，在冷月下流轉不定。刀柄上用金絲銀絲鑲着一鈎眉毛彎月。\n"NOR);
                 set("value", 1);
                 set("unique", 1);
                 set("rigidity", 4);
@@ -83,14 +83,14 @@ int do_yanjiu(string arg)
      			return notify_fail("你感覺全身氣血翻騰，看來以你當前的功力無法繼續研究！\n");
 
 	   me->start_busy(1);
-       message_vision(HIC"$N將"+this_object()->name()+HIC"翻來覆去地研究著！\n"NOR, me);
+       message_vision(HIC"$N將"+this_object()->name()+HIC"翻來覆去地研究着！\n"NOR, me);
        me->add("neili", -150);
        me->add_temp(QUESTDIR5+"yanjiu",1);
       if(me->query_temp(QUESTDIR5+"yanjiu")>6)
       {
       	me->set(QUESTDIR5+"time",time());
       	me->set(QUESTDIR5+"combat_exp",me->query("combat_exp"));
-      	tell_object(me,YEL"你發現"+obj->name()+YEL"刀身上刻有著數條脈路，似乎和藏寶圖可以對照。\n"NOR);
+      	tell_object(me,YEL"你發現"+obj->name()+YEL"刀身上刻有着數條脈路，似乎和藏寶圖可以對照。\n"NOR);
 		tell_object(me,YEL"你感覺全身氣血翻騰，看來剛才的研究只怕已經大傷你的精神！\n"NOR);
       	me->set_temp(QUESTDIR5+"yanjiu_ok",1);
       	me->delete_temp(QUESTDIR5+"yanjiu");
@@ -134,10 +134,10 @@ int do_search()
      if(me->query_temp(QUESTDIR5+"search_ok"))
      	return notify_fail("你已經發現找到藏寶地址了！\n");
      if((string)file_name(environment(me))!=me->query_temp(QUESTDIR5+"map_where"))
-	    return notify_fail(HIW"你繞著"+environment(me)->query("short")+HIW"走了一圈，這裡沒有寶藏！\n"NOR);
+	    return notify_fail(HIW"你繞着"+environment(me)->query("short")+HIW"走了一圈，這裏沒有寶藏！\n"NOR);
      me->start_busy(2);
-     if(random(2)) message_vision(HIW"$N繞著"+environment(me)->query("short")+HIW"走來走去，仔細觀察著什麼！\n"NOR, me);
-	 else message_vision(HIW"$N似乎發現"+environment(me)->query("short")+HIW"一些什麼特別的地方，繞著"+environment(me)->query("short")+HIW"走來走去！\n"NOR, me);
+     if(random(2)) message_vision(HIW"$N繞着"+environment(me)->query("short")+HIW"走來走去，仔細觀察着什麼！\n"NOR, me);
+	 else message_vision(HIW"$N似乎發現"+environment(me)->query("short")+HIW"一些什麼特別的地方，繞着"+environment(me)->query("short")+HIW"走來走去！\n"NOR, me);
      me->add_temp(QUESTDIR5+"search",1);
 
       if(me->query_temp(QUESTDIR5+"search")==4||me->query_temp(QUESTDIR5+"search")==8)
@@ -150,7 +150,7 @@ int do_search()
       	if(me->query_temp(QUESTDIR5+"search")==4) obj->set("title",HIB"黑風寨三當家"NOR);
       	else obj->set("title",HIB"黑風寨寨主"NOR);
       	obj->move(environment(me));
-        message_vision(HIC"突然從角落裡跳出一個人，$n對著$N嚷道：“我就是"+obj->query("title")+HIC"，趕快離開"+environment(me)->query("short")+HIC"。”\n"NOR, me,obj);
+        message_vision(HIC"突然從角落裏跳出一個人，$n對着$N嚷道：“我就是"+obj->query("title")+HIC"，趕快離開"+environment(me)->query("short")+HIC"。”\n"NOR, me,obj);
       	if(me->query_temp(QUESTDIR5+"search")==8)
       	{
       	    obj=new("/d/xingxiu/baozang/npc/gaoshou");
@@ -158,7 +158,7 @@ int do_search()
             obj->set("fight_id",me->query("id"));
       	    obj->set("title",HIB"黑風寨二當家"NOR);
       	    obj->move(environment(me));
-            message_vision(HIC"跟著又出來一個人，竟然是"+obj->query("title")+HIC"$N，嚷道：“我們老大的話，沒聽清楚？小子找死。”\n"NOR, obj);
+            message_vision(HIC"跟着又出來一個人，竟然是"+obj->query("title")+HIC"$N，嚷道：“我們老大的話，沒聽清楚？小子找死。”\n"NOR, obj);
             log_file("quest/FEIHU", sprintf("%s(%s)尋找寶藏的過程中遇到黑風寨寨主。經驗%d。\n", me->name(1),me->query("id"), me->query("combat_exp")) );
       	}
       }
@@ -168,7 +168,7 @@ int do_search()
       	me->set(QUESTDIR5+"combat_exp",me->query("combat_exp"));
         tell_object(me,YEL"你發現"+environment(me)->query("short")+YEL"似乎正合乎刀身上刻的脈路，你心念一動走到"+environment(me)->query("short")+YEL"的一個角落。\n"NOR);
       	message_vision(HIY"$N意外地發現一個可以通向地下的通道。\n"NOR, me);
-        message("channel:rumor", HIW"【謠言】"HIG + "傳說在"+environment(me)->query("short")+HIG"，有人找到闖王寶藏的進口！\n"NOR,users() );
+        message("channel:rumor", HIW"【謠言】"HIG + "傳説在"+environment(me)->query("short")+HIG"，有人找到闖王寶藏的進口！\n"NOR,users() );
         log_file("quest/FEIHU", sprintf("%s(%s)尋找寶藏成功。經驗%d。\n", me->name(1),me->query("id"), me->query("combat_exp")) );
         if( !environment(me)->query("exits/down") ) {
            environment(me)->set("exits/down","/d/xingxiu/baozang/tiantan");

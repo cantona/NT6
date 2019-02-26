@@ -32,14 +32,14 @@ mixed ask_me()
                 return "你是誰？請問我認識你麼？";
 
         if (find_object(query("startroom")) != environment())
-                return "我這裡還有事，你就自己走回去吧。";
+                return "我這裏還有事，你就自己走回去吧。";
 
         command("hehe");
         command("say 既然是平四爺朋友的事，我怎麼可能不幫？");
 
-        message_sort(HIC "\n便見參客指著$N" HIC "對馬夫道「這是我"
-                     "朋友，現在要回關外，你找個伙計送他，路費伙食"
-                     "全部由我擔負，一切以三倍計算。」馬夫聽後立忙"
+        message_sort(HIC "\n便見參客指着$N" HIC "對馬伕道「這是我"
+                     "朋友，現在要回關外，你找個夥計送他，路費伙食"
+                     "全部由我擔負，一切以三倍計算。」馬伕聽後立忙"
                      "連聲稱是，將$N" HIC "送上馬車，絕塵而去。\n"
                      "\n" NOR, me);
 
@@ -48,10 +48,10 @@ mixed ask_me()
         me->move("/d/guanwai/xiaoyuan");
 
         message("vision", HIC "\n遠處一輛馬車急駛而來，車門一開" +
-                          query("name", me)+HIC"從裡面鑽了出"
+                          query("name", me)+HIC"從裏面鑽了出"
                           "來。\n\n" NOR, environment(me), ({me}));
 
-        tell_object(me, CYN "\n馬夫笑道：這位" + RANK_D->query_respect(me) +
+        tell_object(me, CYN "\n馬伕笑道：這位" + RANK_D->query_respect(me) +
                         CYN "已經到了，請下車吧。\n\n" NOR );
         return 1;
 

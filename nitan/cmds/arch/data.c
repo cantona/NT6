@@ -131,14 +131,14 @@ int help(object  me)
 {
         write(@LONG
 指令格式: data <-t|-d> <玩家|物件|here> <in 玩家或生物>
-指令范例: data                  <--  看自己的所有  data  base
+指令範例: data                  <--  看自己的所有  data  base
           data -t               <--  看自己的暫存資料
           data -d               <--  看自己的永久資料
           data -t here          <--  看所在房間的暫時資料
           data wade             <--  看  wade  這個玩家(或物件)的所有資料
           data board            <--  看版子的資料
           data cloth in wade    <--  看  wade  身上的  cloth  的資料
-指令說明:
+指令説明:
         此命令讓你可以觀看所指定物件的資料，且將會以 more 的
 方式輸出，如果沒有指定數，則自動以使用者為參數。其中的 -t 選
 項可以顯示暫時變數, -d 選項可以只顯示永久變數， 所要看的對象

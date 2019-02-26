@@ -37,11 +37,11 @@ int do_slash(string arg)
         if (me->is_busy()
          || query_temp("pending/exercising", me )
          || query_temp("exit_blocked", me) )
-                return notify_fail("你現在正忙著呢。\n");
+                return notify_fail("你現在正忙着呢。\n");
 
         if( !objectp(ob1=query_temp("weapon", me) )
          || query("skill_type", ob1) != "axe" )
-                return notify_fail("你沒有稱手家伙如何伐木？！\n");        
+                return notify_fail("你沒有稱手傢伙如何伐木？！\n");        
 
         if( query("name", ob1) != "小鐵斧"){
                 message_vision(CYN"$N一聲大喝，手持"+query("name", ob1)+"目露兇光，對桃樹惡狠狠的砍了過去！\n"NOR,me);
@@ -56,7 +56,7 @@ int do_slash(string arg)
         if (query("slashed"))
                 return notify_fail("這株桃樹已經被修整過了！\n");         
 
-        message_vision(CYN"$N衣袖一卷，抽出一把小鐵斧，“吭喲！吭喲”的劈下一段段的桃枝......\n"NOR, me);
+        message_vision(CYN"$N衣袖一捲，抽出一把小鐵斧，“吭喲！吭喲”的劈下一段段的桃枝......\n"NOR, me);
 
         message_vision(CYN"$N擦了擦汗，拾起幾根桃木枝。\n"NOR, me);
         ob2 = new(__DIR__"taomu");

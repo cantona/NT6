@@ -4,7 +4,7 @@ void create()
 {
         set("short", "戈壁");
         set("long", @LONG
-這裡是臨近沙漠的戈壁灘，荒無人煙。東邊是一望無際的大沙漠，
+這裏是臨近沙漠的戈壁灘，荒無人煙。東邊是一望無際的大沙漠，
 西北方可以看見一座小鎮。
 LONG );
         set("outdoors", "baituo");

@@ -23,7 +23,7 @@ int exert(object me, object target)
         addn("neili", -50, me);
         me->receive_damage("qi", 0);
         message_combatd(HIY "$N" HIY "暗自凝神，運起段氏心法，"
-                        "臉上顯出一股祥和之意，頗具王者風范。\n" NOR, me);
+                        "臉上顯出一股祥和之意，頗具王者風範。\n" NOR, me);
         addn_temp("apply/attack", skill/3, me);
         addn_temp("apply/defense", skill/3, me);
         set_temp("powerup", 1, me);

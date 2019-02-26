@@ -35,10 +35,10 @@ int perform(object me, object target)
                 return notify_fail("你現在沒有準備使用震天拳法，難以施展" SHI "。\n");
 
         if (! living(target))
-                return notify_fail("對方都已經這樣了，用不著這麼費力吧？\n");
+                return notify_fail("對方都已經這樣了，用不着這麼費力吧？\n");
 
-        msg = HIY "$N" HIY "猛提內勁，聚力于掌一拳揮出，氣勢有如石破天驚，"
-              "攜著呼嘯之聲向$n" HIY "直貫而去！\n" NOR;
+        msg = HIY "$N" HIY "猛提內勁，聚力於掌一拳揮出，氣勢有如石破天驚，"
+              "攜着呼嘯之聲向$n" HIY "直貫而去！\n" NOR;
 
         if (random(me->query_skill("cuff")) > target->query_skill("dodge") / 2)
         {

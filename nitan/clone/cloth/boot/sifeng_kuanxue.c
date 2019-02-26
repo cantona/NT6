@@ -11,7 +11,7 @@ void create()
         if ( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("long", "一雙縫制精細的厚底布鞋，舒適合腳。\n");
+                set("long", "一雙縫製精細的厚底布鞋，舒適合腳。\n");
                 set("unit", "雙");
                 set("value", 500);
                 set("material", "cloth");

@@ -27,7 +27,7 @@ void create()
                 set("wield_str", 22);        
                 set("enchase/flute", 5);        
                 set("wield_msg",HIW"$N[噌]的一聲抽出一把真武劍,空氣中頓時充滿了無邊的殺氣。\n"NOR);
-                set("unwield_msg",HIW"$N把手中的寶劍插入劍鞘。四周的殺氣也跟著消失了。\n"NOR);
+                set("unwield_msg",HIW"$N把手中的寶劍插入劍鞘。四周的殺氣也跟着消失了。\n"NOR);
         }
         init_sword(400,2);
         setup();

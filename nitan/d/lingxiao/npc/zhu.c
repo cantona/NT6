@@ -7,7 +7,7 @@ void create()
         set_name("褚萬春", ({"zhu wanchun", "zhu", "wanchun"}));
         set("gender", "男性");
         set("long", "他是凌霄城第六代弟子褚萬春，和孫萬年一樣，賊眉鼠眼。\n"
-                    "也因為行止不端，被關在這裡。\n");
+                    "也因為行止不端，被關在這裏。\n");
         set("age", 24);
         set("attitude", "peaceful");
 
@@ -64,5 +64,5 @@ void create()
 
 void attempt_apprentice(object ob)
 {
-        command("say 快滾！快滾！沒看見你爺爺被關在這裡嗎？");
+        command("say 快滾！快滾！沒看見你爺爺被關在這裏嗎？");
 }

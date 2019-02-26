@@ -12,7 +12,7 @@ void create()
         else {
                 set("unit", "本");
                 set("long",
-"這是一本薄薄的密集，記載著無敵于天下的明玉功秘訣。\n",
+"這是一本薄薄的密集，記載着無敵於天下的明玉功祕訣。\n",
         );
                 set("value", 1);
                 set("no_sell", 1);

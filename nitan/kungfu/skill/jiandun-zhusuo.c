@@ -23,7 +23,7 @@ mapping *action = ({
         "skill_name" : "刺鶴訣",
         "damage_type": "抽傷"
 ]),
-([      "action": "$N力貫鞭梢，一招「拌馬訣」，手中$w舞出滿天鞭影，舖天蓋地襲向$n全身",
+([      "action": "$N力貫鞭梢，一招「拌馬訣」，手中$w舞出滿天鞭影，鋪天蓋地襲向$n全身",
         "force" : 160,
         "attack": 45,
         "dodge" : 63,
@@ -43,7 +43,7 @@ mapping *action = ({
         "skill_name" : "打蛇訣",
         "damage_type": "抽傷"
 ]),
-([      "action":"$N飛身一躍而起，凌空一招「獵豹訣」，$w宛如蛟龍通天，攜著颼颼破空之聲襲向$n",
+([      "action":"$N飛身一躍而起，凌空一招「獵豹訣」，$w宛如蛟龍通天，攜着颼颼破空之聲襲向$n",
         "force" : 210,
         "attack": 53,
         "dodge" : 76,

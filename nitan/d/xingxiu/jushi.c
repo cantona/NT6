@@ -51,10 +51,10 @@ int do_xxdazuo(string arg)
         fam=query("family", this_player());
 
 //        if (!fam || fam["family_name"] != "星宿派")
-//               return notify_fail("你偷上星宿派禁地，還敢在這裡打坐？\n");
+//               return notify_fail("你偷上星宿派禁地，還敢在這裏打坐？\n");
     
         if (me->is_busy())
-                return notify_fail("你現在正忙著呢。\n");
+                return notify_fail("你現在正忙着呢。\n");
 
         if( query("max_qi", me)<400 )
                 return notify_fail("你現在的氣太少了，無法在此練功。\n");
@@ -66,7 +66,7 @@ int do_xxdazuo(string arg)
         return notify_fail("你必須先用 enable 選擇你要用的特殊內功。\n");
 
               if( (me->query_skill("force")*8+query("combat_exp", me)/1000) <= query("max_neili", me) )
-              return notify_fail("這裡已經無助于你的修為了。\n");
+              return notify_fail("這裏已經無助於你的修為了。\n");
 
         if( !arg || !sscanf(arg, "%d", xxdazuo_cost))
                 return notify_fail("你要花多少氣練功？\n");
@@ -104,7 +104,7 @@ int xxdazuo(object me)
 
         delete_temp("pending/exercise", me);
         delete_temp("pending/xxdazuo", me);
-        message_vision("山風漸漸加強，$N終于忍耐不住，雙眼一睜，站了起來。\n", me);    
+        message_vision("山風漸漸加強，$N終於忍耐不住，雙眼一睜，站了起來。\n", me);    
 //        me->improve_skill("huagong-dafa", 1);
         if ((int)me->query_skill("force",1)<150)
             me->improve_skill("force", 1); 

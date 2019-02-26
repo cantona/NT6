@@ -4,11 +4,11 @@ inherit "/maze/necropolis/necropolis_npc";
 void do_summon();
 void create()
 {
-        string *names = ({"僵屍王"}); 
+        string *names = ({"殭屍王"}); 
         // set_name( names[random(sizeof(names))], ({ "lord zombie","zombie"}));
         set_name( names[random(sizeof(names))], ({ "lord zombie" }));
         set("vendetta_mark","zombie");
-        set("long", "這是一個腐爛的僵屍。\n");
+        set("long", "這是一個腐爛的殭屍。\n");
         set("title", HIB "(鬼氣)" NOR); 
 
         set("str", 50);
@@ -24,7 +24,7 @@ void create()
         set("chat_chance", 1);
         //set("chat_chance", 2);
         //set("chat_msg", ({
-        //                "骷髏空洞的眼眶裡閃爍著可怕的熒光。\n"
+        //                "骷髏空洞的眼眶裏閃爍着可怕的熒光。\n"
         //}) ); 
 
         set("chat_chance_combat", 50);
@@ -69,7 +69,7 @@ void do_summon() {
    object zombie,me,enemy, *enemies;
         me = this_object();
         
-        message_vision(HIM "\n$N□□幹嚎，周圍的僵屍應聲而來。\n" NOR, me); 
+        message_vision(HIM "\n$N嗬嗬乾嚎，周圍的殭屍應聲而來。\n" NOR, me); 
         seteuid(getuid());   
         if(random(2))
                 zombie = new(__DIR__"zombie_blood");

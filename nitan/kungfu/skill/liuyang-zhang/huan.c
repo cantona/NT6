@@ -36,7 +36,7 @@ int perform(object me, object target)
                 return notify_fail("你的真氣不夠，難以施展" + name() + "。\n");
 
         if (! living(target))
-                return notify_fail("對方都已經這樣了，用不著這麼費力吧？\n");
+                return notify_fail("對方都已經這樣了，用不着這麼費力吧？\n");
 
         msg = HIR "$N" HIR "雙掌一振，施出天山六陽掌「寰陽式」，幻出"
               "滿天掌影，團團罩住$n" HIR "。\n" NOR;

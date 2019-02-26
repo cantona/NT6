@@ -32,8 +32,8 @@ void create()
         set("combat_exp", 3500000);
 
         set("inquiry",([
-                "風回雪舞" : "這招你讓吾兒教你便成，用不著來麻煩老夫。",
-                "雪花六出" : "這招你讓吾兒教你便成，用不著來麻煩老夫。",
+                "風迴雪舞" : "這招你讓吾兒教你便成，用不着來麻煩老夫。",
+                "雪花六出" : "這招你讓吾兒教你便成，用不着來麻煩老夫。",
                 "劍氣封喉" : (: ask_skill1 :),
                 "三連環"   : (: ask_skill2 :),
                 "神倒鬼跌三連環" : (: ask_skill2 :),
@@ -138,7 +138,7 @@ mixed ask_skill1()
                 return "這招我不是已經教過你了嗎？自己下去多練吧！";
 
         if( query("family/family_name", me) != query("family/family_name") )
-                return "你是哪裡來的？快給我快快滾開！";
+                return "你是哪裏來的？快給我快快滾開！";
 
         if (me->query_skill("xueshan-jian", 1) < 1)
                 return "你連雪山劍法都沒學，還談什麼絕招可言？";
@@ -183,7 +183,7 @@ mixed ask_skill2()
                 return "自己下去練，別老跟我糾纏不休！";
 
         if( query("family/family_name", me) != query("family/family_name") )
-                return "你是哪裡來的？快給我快快滾開！";
+                return "你是哪裏來的？快給我快快滾開！";
 
         if (me->query_skill("lingxiao-quan", 1) < 1)
                 return "你連凌霄拳法都沒學，還談什麼絕招可言？";
@@ -197,15 +197,15 @@ mixed ask_skill2()
         if (me->query_skill("lingxiao-quan", 1) < 180)
                 return "虧你凌霄拳法練成這樣，也好意思來找我。";
 
-        message_vision(HIY "$n" HIY "望著$N" HIY "哈哈一笑，道：“好！好！"
+        message_vision(HIY "$n" HIY "望着$N" HIY "哈哈一笑，道：“好！好！"
                        "好！你過來，我傳你此\n招。”$N" HIY "聽罷走至他跟"
-                       "前，便聽$n" HIY "說道：“你瞧著，我這麼\n伸手，揪"
+                       "前，便聽$n" HIY "説道：“你瞧着，我這麼\n伸手，揪"
                        "住你的後頸，便摔你一個筋……”右手一探，果然已揪\n"
                        "住了$N" HIY "後頸。這一下出手既快，方位又奇，$N"
                        HIY "如何避得，只覺白\n自在手上力道大得出奇，給他一"
                        "抓之下，身子便騰空而起，跌在\n了地上。$n" HIY "一"
                        "笑，左手隨即探出，又已抓住$N" HIY "胸口，順勢一\n"
-                       "甩，再次將$N" HIY "摔倒。此時卻見$n" HIY "左腳隨著"
+                       "甩，再次將$N" HIY "摔倒。此時卻見$n" HIY "左腳隨着"
                        "絆去，剎那間把快\n要倒地的$N" HIY "又給絆了一跤。\n"
                        NOR, me, this_object());
         command("haha");

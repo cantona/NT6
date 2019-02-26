@@ -10,7 +10,7 @@ void create()
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("long", "據說這是月老釀制的瓊漿，喝下去可以保佑姻緣，真是懸乎！\n");
+                set("long", "據説這是月老釀製的瓊漿，喝下去可以保佑姻緣，真是懸乎！\n");
                 set("unit", "瓶");
                 set("value", 10000);
                 set("no_get", "1");

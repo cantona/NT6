@@ -44,15 +44,15 @@ int do_swab(string arg)
                 return notify_fail("看清楚了，那不是活人！\n");
 
         if( !query("can_speak", ob) )
-                return notify_fail("自古以來沒有聽說過給" +
+                return notify_fail("自古以來沒有聽説過給" +
                                    ob->name() + "擦鞋的！\n");
 
         if (! living(ob))
-                return notify_fail("你還是等別人醒了再說吧！\n");
+                return notify_fail("你還是等別人醒了再説吧！\n");
 
         if (ob == me)
         {
-                message_vision("$N舉著手中的刷子，看著自己，想起"
+                message_vision("$N舉着手中的刷子，看着自己，想起"
                                "自己真是好命苦，一時忍不住就要落淚！\n",
                                this_player());
                 return 1;
@@ -65,7 +65,7 @@ int do_swab(string arg)
         }
 
         if (me->is_busy())
-                return notify_fail("你現在正忙著呢，還是等一會兒再說吧！\n");
+                return notify_fail("你現在正忙着呢，還是等一會兒再説吧！\n");
 
         me->start_busy(2);
 
@@ -76,7 +76,7 @@ int do_swab(string arg)
                 if( query("couple/couple_id", me) == query("id", ob) )
                 {
                         message_vision("$N跪下來一臉諂媚的把$n的鞋擦得亮晶晶"
-                                       "的。$n拍了拍$N的頭說道：“" +
+                                       "的。$n拍了拍$N的頭説道：“" +
                                        (query("gender", me) == "男性"?
                                         "老公，你的鞋擦得好好哦。" :
                                         "老婆，你的鞋擦的真漂亮！") +
@@ -85,7 +85,7 @@ int do_swab(string arg)
                 }
 
                 message_vision("$N一臉諂媚的替$n把鞋擦得油亮，只見$n"
-                               "笑眯眯看著$P，道：“好，好！”\n",
+                               "笑眯眯看着$P，道：“好，好！”\n",
                                me, ob);
                 if (ob->is_fighting(me))
                 {

@@ -13,7 +13,7 @@ void create()
         else {
                 set("unit", "個");
                 set("value", 1);
-                set("long", HIM "這是一個蓬萊蟠桃，據說每二百年才結果。\n" NOR);
+                set("long", HIM "這是一個蓬萊蟠桃，據説每二百年才結果。\n" NOR);
         }
 
         setup();

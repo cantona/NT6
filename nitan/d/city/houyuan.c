@@ -7,9 +7,9 @@ void create()
 {
 	set("short", "財主後院");
         set("long", @LONG
-這裡是財主後院，各種古玩琳琅滿目，商周青銅、漢瓦當、唐三
+這裏是財主後院，各種古玩琳琅滿目，商周青銅、漢瓦當、唐三
 彩……，應有盡有，只要擁有一件，就夠你吃一輩子了。崔員外正坐
-在琉璃榻上，慢悠悠地喝著參湯。東側有一扇門(men)。
+在琉璃榻上，慢悠悠地喝着蔘湯。東側有一扇門(men)。
 LONG );
 	set("item_desc", ([
 		"men" : "這扇門似乎通向一間密室。\n",
@@ -45,7 +45,7 @@ int do_unlock(string arg)
 	if (!(ob = present("laofang key", this_player())))
 		return notify_fail("你不會撬鎖。\n");
 	set("exits/east", "/d/city/dongxiang");
-	message_vision("$N用一把鑰匙打開了秘門，可是鑰匙卻斷了。\n", this_player());
+	message_vision("$N用一把鑰匙打開了祕門，可是鑰匙卻斷了。\n", this_player());
 	destruct(ob);
 	return 1;
 }

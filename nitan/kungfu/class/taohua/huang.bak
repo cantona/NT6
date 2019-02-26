@@ -40,7 +40,7 @@ void create()
 
         set("chat_chance", 1);
         set("chat_msg", ({
-                "黃藥師嘆了口氣道：“唉 …… 蓉兒這苦命的孩子，從小就沒了娘 ……”\n",
+                "黃藥師歎了口氣道：“唉 …… 蓉兒這苦命的孩子，從小就沒了娘 ……”\n",
                 "黃藥師低頭沉思，悠然不語。\n",
         }));
 
@@ -79,7 +79,7 @@ void create()
         set_skill("bihai-chaosheng", 300);   // 碧海潮生
         set_skill("taohua-yuan", 250);       // 桃花怨
         set_skill("medical", 300);           // 基本醫術
-        set_skill("taohua-yaoli", 300);      // 桃花藥理
+        set_skill("taohua-yaoli", 300);      // 桃花葯理
 
         map_skill("force"  , "bibo-shengong");
         map_skill("finger" , "tanzhi-shentong");
@@ -104,7 +104,7 @@ void create()
 
         set("inquiry", ([
                 "旋風掃葉腿法" : (: ask_me :),
-                "秘籍"      : (: ask_me :),
+                "祕籍"      : (: ask_me :),
                 "離島"      : (: ask_leave :),
                 "黃蓉"      : "你敢直稱我女兒的閨名？ ",
                 "九陰真經"  : "如果你能幫我取得真經上冊，我一定重重謝你。",
@@ -116,10 +116,10 @@ void create()
                 "天地情長"  : (: ask_qing :),
                 "絕招"      : (: ask_qing :),
                 "絕技"      : (: ask_qing :),
-                "桃花藥理"  : (: ask_medicine :),
-                "制藥"      : (: ask_medicine :),
-                "九花玉露丸": "這個東西難制得緊，你好好學學桃花藥理，以後自己制吧。",
-                "無常丹"    : "嗯...等你學通了桃花藥理的奧妙，自己慢慢制吧。",
+                "桃花葯理"  : (: ask_medicine :),
+                "製藥"      : (: ask_medicine :),
+                "九花玉露丸": "這個東西難製得緊，你好好學學桃花葯理，以後自己制吧。",
+                "無常丹"    : "嗯...等你學通了桃花葯理的奧妙，自己慢慢制吧。",
                 "簫譜"      : (: ask_music_book :),
         ]));
 
@@ -271,7 +271,7 @@ string ask_me()
                 return RANK_D->query_respect(this_player()) + 
                 "非我弟子，不知此話從何談起？";
         if (query("book_count") < 1)
-                return "你來晚了，本派的秘籍不在此處。";
+                return "你來晚了，本派的祕籍不在此處。";
         addn("book_count", -1);
         ob = new("/clone/book/xuanfeng_book");
         ob->move(this_player());
@@ -292,7 +292,7 @@ int ask_leave()
         }
 
         command("say 好吧，我就送你一程。");
-        message_vision("$N說罷，一掌拍在$n的屁股上，就見$n一"
+        message_vision("$N説罷，一掌拍在$n的屁股上，就見$n一"
                        "個平沙落雁式飛了出去。\n", this_object(), me);
         me->move("/d/taohua/haitan");
         message_vision("$N一跤摔在沙灘上，哼哼呀呀半天才起來。\n", me);
@@ -340,8 +340,8 @@ int ask_medicine()
 
         if ((int)me->query_skill("taohua-yaoli", 1) < 100)
         {
-                command("say 你對桃花藥理的了解太淺，等你學得再"
-                        "好一些我才能把秘本傳與你。");
+                command("say 你對桃花葯理的瞭解太淺，等你學得再"
+                        "好一些我才能把祕本傳與你。");
                 return 1;
         }
 
@@ -380,7 +380,7 @@ int accept_object(object who, object ob)
                         if( query("combat_exp", who)<500000 )
                         {
                                 command("say 我倒想教你一門絕技，可惜"
-                                        "你現在武功太差、經驗不足，還是以後再說吧！");
+                                        "你現在武功太差、經驗不足，還是以後再説吧！");
                                 return 1;
                         }
                         command("haha");

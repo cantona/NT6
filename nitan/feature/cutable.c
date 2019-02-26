@@ -105,7 +105,7 @@ int do_cut(object me, string arg)
                       part[NAME] + "給" + (stringp(part[VERB]) ? part[VERB] : "割了下") +
                       "來。\n";
         } else if( me->query_skill("force") < 90 ) {
-                message_vision("$N舉起手來，對著$n的" + part[NAME] + "一掌"
+                message_vision("$N舉起手來，對着$n的" + part[NAME] + "一掌"
                                "砍了下去，結果被震的“哇哇”怪叫了兩聲。\n",
                                me, this_object());
                 write("好好練練內功再來吧！\n");

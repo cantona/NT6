@@ -34,7 +34,7 @@ int perform(object me, object target)
 
         if( objectp(weapon=query_temp("weapon", me)) || 
             objectp(weapon=query_temp("handing", me)) )
-                return notify_fail("你必須空著雙手才能使用拳法絕招。\n");
+                return notify_fail("你必須空着雙手才能使用拳法絕招。\n");
 
         if( (int)me->query_skill("luorishenquan-cuff", 1) < 220 )
                 return notify_fail("你的落日神拳法還不夠嫻熟，使不出「落霞滿天」絕技。\n");

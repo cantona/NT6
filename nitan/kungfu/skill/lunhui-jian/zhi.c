@@ -32,16 +32,16 @@ int perform(object me, object target)
                 return notify_fail("你的內功火候不夠，難以施展" CHAN "。\n"); 
 
         if ((int)me->query_skill("lunhui-jian", 1) < 120) 
-                return notify_fail("你的釋迦輪回劍還不到家，難以施展" CHAN "。\n"); 
+                return notify_fail("你的釋迦輪迴劍還不到家，難以施展" CHAN "。\n"); 
 
         if (me->query_skill_mapped("sword") != "lunhui-jian") 
-                return notify_fail("你沒有激發釋迦輪回劍，難以施展" CHAN "。\n"); 
+                return notify_fail("你沒有激發釋迦輪迴劍，難以施展" CHAN "。\n"); 
 
         if( query("neili", me)<100 )
                 return notify_fail("你的真氣不夠，難以施展" CHAN "。\n"); 
 
         if (! living(target)) 
-                return notify_fail("對方都已經這樣了，用不著這麼費力吧？\n"); 
+                return notify_fail("對方都已經這樣了，用不着這麼費力吧？\n"); 
 
         msg = HIY "$N" HIY "內息澎湃，手中" + weapon->name() + HIY "遙遙指向$n，" 
               "一股勁氣自"+ weapon->name() + HIY "上激射而出，直指向$n的周身大穴。\n" NOR; 

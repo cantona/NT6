@@ -44,7 +44,7 @@ int perform(object me)
                 return notify_fail("你沒有激發蒼虹筆法，難以施展" JING "。\n");
 
         if (! living(target))
-                return notify_fail("對方都已經這樣了，用不著這麼費力吧？\n");
+                return notify_fail("對方都已經這樣了，用不着這麼費力吧？\n");
 
         msg = HIM "$N" HIM "手中" + weapon->name() + HIM "大開大合，宛若天馬行"
               "空，難測陰陽，化作一道道疾光射向$n" HIM "！\n" NOR;

@@ -8,7 +8,7 @@ void create()
         set_name("雪雞", ({ "xue ji","ji" }) );
         set("race", "飛禽");
         set("age", 2);
-        set("long", "一只肥肥白白的雪雞。\n");
+        set("long", "一隻肥肥白白的雪雞。\n");
 
         set("combat_exp", 100);
         set_temp("apply/attack", 20);

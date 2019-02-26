@@ -9,7 +9,7 @@ void create()
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("long", "一塊晾幹了的胡籮卜幹，比較方便儲藏。\n");
+                set("long", "一塊晾乾了的胡籮卜幹，比較方便儲藏。\n");
                 set("unit", "塊");
                 set("value", 20);
                 set("food_remaining", 3);

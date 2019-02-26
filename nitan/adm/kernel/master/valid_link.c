@@ -8,8 +8,8 @@
 
         整數 valid_link( 字串 from, 字串 to );
 用法：
-        驅動程式回從 link(from, to) 外部函式裡面呼叫主宰物件 (master
-        object) 裡面的 valid_link(from, to) 函式。如果 valid_link() 傳回 0
+        驅動程式回從 link(from, to) 外部函式裏面呼叫主宰物件 (master
+        object) 裏面的 valid_link(from, to) 函式。如果 valid_link() 傳回 0
         ，則 link() 的動作失敗。如果傳回 1，還需要以同樣的參數呼叫
         rename() 成功。
 參考：

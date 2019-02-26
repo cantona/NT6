@@ -6,11 +6,11 @@ inherit THROWING;
 
 void create()
 {
-        set_name("銅扣", ({"kouzi"}));
+        set_name("銅釦", ({"kouzi"}));
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("long", "一枚小銅扣");
+                set("long", "一枚小銅釦");
                 set("unit", "些");
                 set("base_unit", "枚");
                 set("base_weight", 40);

@@ -5,9 +5,9 @@ void create()
 {
         set("short",  "王俯大門" );
         set("long", @LONG
-這裡便是雲南平西王俯的大門，兩邊個有一個威武的大石
-獅子，高大的朱漆大門緊緊的閉著，幾個親兵嚴密的注視著來
-往的人，沒什麼事，最好別在這裡溜達。
+這裏便是雲南平西王俯的大門，兩邊個有一個威武的大石
+獅子，高大的朱漆大門緊緊的閉着，幾個親兵嚴密的注視着來
+往的人，沒什麼事，最好別在這裏溜達。
 LONG);
         set("outdoors", "kunming");
         set("exits", ([
@@ -28,7 +28,7 @@ int valid_leave(object me, string dir)
 {
         if (dir == "north" &&
            objectp(present("qin bing", environment(me))))
-                return notify_fail(CYN "親兵攔住你說道：王府大院，閒雜人"
-                                   "等一律回避。\n" NOR);                
+                return notify_fail(CYN "親兵攔住你説道：王府大院，閒雜人"
+                                   "等一律迴避。\n" NOR);                
         return ::valid_leave(me, dir);
 }

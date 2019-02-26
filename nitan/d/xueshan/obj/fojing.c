@@ -41,7 +41,7 @@ int do_du(string arg)
                 return 1;
         }
         if (me->is_busy()) {
-                write("你現在正忙著呢。\n");
+                write("你現在正忙着呢。\n");
                 return 1;
         }
 
@@ -66,7 +66,7 @@ if( query("family/family_name", me) != "雪山寺"
 
         message("vision", me->name() + "仔細地研讀《八埋茶剎羅經》。\n", environment(me), me);
         if( query("jing", me)<15){
-                write("你現在過于疲倦，無法專心下來研讀新知。\n");
+                write("你現在過於疲倦，無法專心下來研讀新知。\n");
                 return 1;
         }
 
@@ -82,25 +82,25 @@ if( query("family/family_name", me) != "雪山寺"
 
             if ((!objectp(ob = present("kulou guan", me)) ) ||
                (!query("equipped", ob))){
-                write("你覺得頭上仿佛少了點什麼，讀得頭昏眼花。\n");
+                write("你覺得頭上彷彿少了點什麼，讀得頭昏眼花。\n");
                 return 1;
         }
             if ((!objectp(ob = present("rentou lian", me)) ) ||
                (!query("equipped", ob))){
-                write("你覺得身上仿佛少了點什麼，讀得頭昏眼花。\n");
+                write("你覺得身上彷彿少了點什麼，讀得頭昏眼花。\n");
                 return 1;
         }
             if ((!objectp(ob = present("lubo", me)) ) ||
                (!query("equipped", ob))){
-                write("你覺得手中仿佛少了點什麼，讀得頭昏眼花。\n");
+                write("你覺得手中彷彿少了點什麼，讀得頭昏眼花。\n");
                 return 1;
         }
         if(me->query_skill("lamaism", 1) < 30){
-                write("你研讀了一會兒，但是發現上面所說的對你而言太深奧了。\n");
+                write("你研讀了一會兒，但是發現上面所説的對你而言太深奧了。\n");
                 return 1;
         }
         if( me->query_skill("necromancy", 1) > 300){
-                write("你研讀了一會兒，但是發現上面所說的對你而言都太淺了，沒有學到任何東西。\n");
+                write("你研讀了一會兒，但是發現上面所説的對你而言都太淺了，沒有學到任何東西。\n");
                 return 1;
         }
         if ( me->query_skill("necromancy", 1) >= me->query_skill("lamaism", 1)){ 

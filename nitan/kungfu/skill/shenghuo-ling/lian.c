@@ -43,9 +43,9 @@ int perform(object me)
                 return notify_fail("你沒有激發聖火令法，不能使用聖火令法之" + name() + "。\n");
 
         if (! living(target))
-                return notify_fail("對方都已經這樣了，用不著這麼費力吧？\n");
+                return notify_fail("對方都已經這樣了，用不着這麼費力吧？\n");
 
-        msg = HIW "$N" HIW "一個筋鬥猛翻至$n" HIW "跟前，陡然使出聖火"
+        msg = HIW "$N" HIW "一個筋斗猛翻至$n" HIW "跟前，陡然使出聖火"
               "令法之斂心令，手中" + weapon->name() + NOR + HIW "忽伸"
               "忽縮，招式詭異無比。\n" NOR;
 
@@ -68,7 +68,7 @@ int perform(object me)
                 addn("neili", -100, me);
                 msg += CYN "$n" CYN "見眼前寒光顫動，連忙振作精神勉強"
                       "抵擋，向後疾退數步，好不容易閃在了$N" CYN "攻"
-                      "擊范圍之外。\n" NOR;
+                      "擊範圍之外。\n" NOR;
                 me->start_busy(4);
         }
         message_combatd(msg, me, target);

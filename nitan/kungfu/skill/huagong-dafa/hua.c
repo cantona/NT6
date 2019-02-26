@@ -14,7 +14,7 @@ int exert(object me, object target)
 
         if (! environment(me)) return 0;
         if( query("no_fight", environment(me)) )
-                return notify_fail("在這裡不能攻擊他人。\n");
+                return notify_fail("在這裏不能攻擊他人。\n");
 
         if (! objectp(target))
                 return notify_fail("你要化誰的內力？\n");
@@ -48,7 +48,7 @@ int exert(object me, object target)
 
         if( query("max_neili", target)>query("max_neili", me)*4/3 )
                 return notify_fail( target->name() +
-                        "的內功修為遠勝于你，你無法從化他的內力！\n");
+                        "的內功修為遠勝於你，你無法從化他的內力！\n");
 
         message_combatd(HIR "$N" HIR "全身骨節爆響，雙臂暴長數尺，手掌"
                         "刷的一抖，粘向$n！\n" NOR,

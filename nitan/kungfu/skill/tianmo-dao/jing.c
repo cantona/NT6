@@ -49,7 +49,7 @@ int perform(object me)
                                            HIR "忽而招式一變，手中" + weapon->name() +
                                            HIR "斜上揮向$n" HIR "的雙腿。\n"
                                            HIR "只聽$n" HIR "連聲慘呼，已被砍中，點點血"
-                                           HIR "滴如雨點般漫天洒下。\n" NOR);
+                                           HIR "滴如雨點般漫天灑下。\n" NOR);
                 me->start_busy(1 + random(3));
         } else
         {

@@ -4,10 +4,10 @@ void create()
 {
         set("short", "藏經閣二樓");
         set("long", @LONG
-千余年來少林寺執中原武林之牛耳，自達摩老祖以下，歷代人材
-輩出。其中有不少高僧遺著留存，匯集至今，終成名震天下的少林七
-十二絕藝。少林精華，盡集于此。二樓四面開窗，確保通風。中間排
-列著五排大書架。四周則陳列矮幾，以供閱讀。幾位老僧手執經卷，
+千餘年來少林寺執中原武林之牛耳，自達摩老祖以下，歷代人材
+輩出。其中有不少高僧遺著留存，彙集至今，終成名震天下的少林七
+十二絕藝。少林精華，盡集於此。二樓四面開窗，確保通風。中間排
+列着五排大書架。四周則陳列矮几，以供閲讀。幾位老僧手執經卷，
 正在閉目凝思。房樑(fangliang)上滿是灰塵。
 LONG );
         set("exits", ([
@@ -58,7 +58,7 @@ int do_jump(string arg)
 
         if( !arg || arg=="" ) 
         {
-                write("你想跳哪裡去？\n");
+                write("你想跳哪裏去？\n");
                 return 1;
         }
 
@@ -90,7 +90,7 @@ int valid_leave(object me, string dir)
         ob = deep_inventory(me);
         for (i = 0; i < sizeof(ob); i++)
                 if (ob[i]->id("shaolin wuji")) 
-                        return notify_fail("慧真說道：武功秘籍只許在藏經閣"
+                        return notify_fail("慧真説道：武功祕籍只許在藏經閣"
                                            "內研習，不得攜帶外出！\n");
         return ::valid_leave(me, dir);
 }

@@ -20,7 +20,7 @@ void create()
 
 int do_effect(object me)
 {
-        message_vision("$N把" + name() + "扔進嘴裡，幾下就吞了下去。\n", me);
+        message_vision("$N把" + name() + "扔進嘴裏，幾下就吞了下去。\n", me);
         set_temp("die_reason", "服下斷腸花，中毒身亡了", me);
 	me->die();
 	destruct(this_object());

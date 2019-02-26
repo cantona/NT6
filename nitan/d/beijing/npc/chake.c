@@ -6,7 +6,7 @@ void create()
         set("gender", "男性" );
         set("age", 25);
         set("long",
-              "一個在茶舖喝茶的人。\n");
+              "一個在茶鋪喝茶的人。\n");
         set("shen_type", 1);
         set("combat_exp", 10000);
         set("str", 17);
@@ -18,7 +18,7 @@ void create()
         set_skill("unarmed",20);
         set("chat_chance", 1);
         set("chat_msg", ({
-                "茶客低著頭喝了口茶。\n",
+                "茶客低着頭喝了口茶。\n",
         }) );       
         setup();
         carry_object("/d/beijing/npc/obj/cloth")->wear();

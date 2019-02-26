@@ -6,7 +6,7 @@ inherit NECK;
 
 void create()
 {
-        set_name("貝殼項鏈", ({ "shell lace", "lace" }));
+        set_name("貝殼項鍊", ({ "shell lace", "lace" }));
         set_weight(500);
         if (clonep())
                 set_default_object(__FILE__);

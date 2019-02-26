@@ -60,7 +60,7 @@ int perform(object me, object target)
                                          return notify_fail("你的精力不夠！\n");
 
         set_temp("xianglong", 1, me);
-        message_combatd(HIR "$N氣聚丹田，雙掌自外向裡轉了個圓圈，緩緩的凝聚全身功力。\n\n" NOR, me,target);
+        message_combatd(HIR "$N氣聚丹田，雙掌自外向裏轉了個圓圈，緩緩的凝聚全身功力。\n\n" NOR, me,target);
         addn("neili", -lvl/2, me);
         addn("jingli", -lvl/5, me);
         lvl = (int)(lvl / 5);
@@ -99,7 +99,7 @@ void msg_display(object me, object target, int lvl)
 
         circle = ({
                 "掌力未到，$p已感胸口呼吸不暢，頃刻之間，$N的掌力如怒潮般洶湧而至。",
-                "只一瞬之間，$p便覺氣息窒滯，$N掌力竟如怒潮狂湧，勢不可當，又如是一堵無形的高牆，向$p身前疾沖。"
+                "只一瞬之間，$p便覺氣息窒滯，$N掌力竟如怒潮狂湧，勢不可當，又如是一堵無形的高牆，向$p身前疾衝。"
         });
 
         msg += HIG"\n"+ circle[random(sizeof(circle))] +"\n" NOR;
@@ -159,7 +159,7 @@ void remove_effect(object me, object target, int lvl)
                 printf("ap=%d,pp=%d,dp=%d,query_temp(apply/defense, me)=%d,lvl=%d.\n",ap,pp,dp,query_temp("apply/defense", me),lvl);
 
         if( ap/2 + random(ap) > dp + pp ) {
-            message_combatd(HIM"$N的雙掌已跟著擊到，砰的一聲呼，重重打中$p胸口，跟著喀喇喇幾聲，肋骨斷了幾根。\n"NOR, me, target);
+            message_combatd(HIM"$N的雙掌已跟着擊到，砰的一聲呼，重重打中$p胸口，跟着喀喇喇幾聲，肋骨斷了幾根。\n"NOR, me, target);
             dmg = ap;
             dmg += jiali + jianu*5;
             dmg += random(dmg/2);
@@ -186,10 +186,10 @@ void remove_effect(object me, object target, int lvl)
         } else {
             if ( objectp(weapon) )
             {
-                message_combatd(HIC "$n大驚之下，$p連劃三個半圓護住身前，同時足尖著力，飄身後退，避開了$N的一掌。\n" NOR, me, target, weapon);
+                message_combatd(HIC "$n大驚之下，$p連劃三個半圓護住身前，同時足尖着力，飄身後退，避開了$N的一掌。\n" NOR, me, target, weapon);
             }
             else {
-                message_combatd(HIC "$n大驚之下，雙掌連劃三個半圓護住身前，同時足尖著力，飄身後退，避開了$N的一掌。\n" NOR, me, target);
+                message_combatd(HIC "$n大驚之下，雙掌連劃三個半圓護住身前，同時足尖着力，飄身後退，避開了$N的一掌。\n" NOR, me, target);
             }
         }
         }

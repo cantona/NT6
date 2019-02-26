@@ -1,7 +1,7 @@
 inherit SKILL;
 
 mapping *action = ({
-([        "action":"$N一式「順水推舟」，$N手中$w指向自己左胸口，劍柄斜斜向右外，緩緩劃向$n的$l",
+([        "action":"$N一式「順水推舟」，$N手中$w指向自己左胸口，劍柄斜斜向右外，緩緩划向$n的$l",
         "force" : 85,
         "dodge" : 35,
         "parry" : 35,
@@ -11,7 +11,7 @@ mapping *action = ({
         "skill_name" : "順水推舟",
         "damage_type":"刺傷"
 ]),
-([        "action":"$N身形微側，左手後擺，右手$w一招「橫掃千軍」，直向$n的腰間揮去",
+([        "action":"$N身形微側，左手後襬，右手$w一招「橫掃千軍」，直向$n的腰間揮去",
         "force" : 109,
         "dodge" : 41,
         "parry" : 43,
@@ -21,7 +21,7 @@ mapping *action = ({
         "skill_name" : "橫掃千軍",
         "damage_type":"刺傷"
 ]),
-([        "action":"$N縱身近前，$w鬥然彎彎彈出，劍光爆長，一招「峭壁斷雲」，猛地刺向$n的胸口",
+([        "action":"$N縱身近前，$w斗然彎彎彈出，劍光爆長，一招「峭壁斷雲」，猛地刺向$n的胸口",
         "force" : 121,
         "dodge" : 43,
         "parry" : 45,
@@ -41,7 +41,7 @@ mapping *action = ({
         "skill_name" : "仙人指路",
         "damage_type":"刺傷"
 ]),
-([        "action":"$N劍招忽變，使出一招「雨打飛花」，全走斜勢，但七八招斜勢中偶爾又挾著一招正勢，教人極難捉摸",
+([        "action":"$N劍招忽變，使出一招「雨打飛花」，全走斜勢，但七八招斜勢中偶爾又挾着一招正勢，教人極難捉摸",
         "force" : 143,
         "dodge" : 57,
         "parry" : 59,
@@ -81,7 +81,7 @@ mapping *action = ({
         "skill_name" : "江河不竭",
         "damage_type":"刺傷"
 ]),
-([        "action":"$N左手劍鞘一舉，快逾電光石光，一招「高塔掛雲」，用劍鞘套住$n手中兵器，$w直指$n的嚥喉",
+([        "action":"$N左手劍鞘一舉，快逾電光石光，一招「高塔掛雲」，用劍鞘套住$n手中兵器，$w直指$n的咽喉",
         "force" : 205,
         "dodge" : 78,
         "parry" : 85,

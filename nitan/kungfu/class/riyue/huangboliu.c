@@ -11,7 +11,7 @@ void create()
         set("title", "日月神教風雷堂香主");
         set("nickname", HIW"銀髯蛟"NOR);
         set("age", 85);
-        set("long", "一部白須，直垂至胸，身材魁梧之極。\n");
+        set("long", "一部白鬚，直垂至胸，身材魁梧之極。\n");
         set("attitude", "peaceful");
         set("shen_type", -1);
 

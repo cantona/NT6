@@ -7,12 +7,12 @@ void create()
 {
         set("short", "大義分舵");
         set("long", @LONG
-這裡是杏子林中的丐幫大義分舵。分舵群丐分坐草地上，次序和職
+這裏是杏子林中的丐幫大義分舵。分舵羣丐分坐草地上，次序和職
 司前後井然。林子邊有一個大草堆(dui) ，看似十分平常，可是你總覺
 得有點奇怪。
 LONG );
         set("item_desc", ([
-                "dui"  : "你仔細一看，發現秘密了：呵呵，草堆下面有個黑乎乎的大洞口！\n",
+                "dui"  : "你仔細一看，發現祕密了：呵呵，草堆下面有個黑乎乎的大洞口！\n",
         ]));
         set("exits", ([
                 "south" : __DIR__"xinlin1",
@@ -47,10 +47,10 @@ int do_enter(string arg)
                 if( (fam=query("family", me)) && fam["family_name"] == "丐幫" )
                 {
                         message("vision",
-                                me->name() + "運起丐幫縮骨功，一彎腰往草堆下的洞裡鑽了進去。\n",
+                                me->name() + "運起丐幫縮骨功，一彎腰往草堆下的洞裏鑽了進去。\n",
                                 environment(me), ({me}) );
                         me->move("/d/gaibang/underwx");
-                        message("vision", me->name() + "從洞裡走了進來。\n", environment(me), ({me}) );
+                        message("vision", me->name() + "從洞裏走了進來。\n", environment(me), ({me}) );
                         return 1;
                 }
                 else 

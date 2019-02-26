@@ -1,11 +1,11 @@
 // This program is a part of NITAN MudLIB
-// sheshen.c 「舍身喂鷹」
+// sheshen.c 「捨身喂鷹」
 
 #include <ansi.h>
 
 inherit F_CLEAN_UP;
 
-string name() { return "舍身喂鷹"; }
+string name() { return "捨身喂鷹"; }
 void remove_effect(object me, int a_amount, int d_amount);
 
 int perform(object me)
@@ -15,10 +15,10 @@ int perform(object me)
         string msg;
 
         if ((int)me->query_skill("cibei-dao", 1) < 60)
-                return notify_fail("你的慈悲刀法不夠嫻熟，不會使用「舍身喂鷹」。\n");
+                return notify_fail("你的慈悲刀法不夠嫻熟，不會使用「捨身喂鷹」。\n");
 
         if( query("neili", me)<200 )
-                return notify_fail("你的真氣不夠，無法使用「舍身喂鷹」。\n");
+                return notify_fail("你的真氣不夠，無法使用「捨身喂鷹」。\n");
 
         if( query_temp("cbd_sheshen", me) )
                 return notify_fail("你已經在運功中了。\n");
@@ -28,7 +28,7 @@ int perform(object me)
                 return notify_fail("你使用的武器不對。\n");
 
         skill = me->query_skill("cibei-dao", 1);
-        msg = HIR "$N" HIR "使出慈悲刀法「舍身喂鷹」，將渾身的功力都運到" +
+        msg = HIR "$N" HIR "使出慈悲刀法「捨身喂鷹」，將渾身的功力都運到" +
               weapon->name() + HIR "上！\n" NOR;
         message_combatd(msg, me);
 
@@ -52,6 +52,6 @@ void remove_effect(object me, int a_amount, int d_amount)
                 addn_temp("apply/attack", -a_amount, me);
                 addn_temp("apply/defense", d_amount, me);
                 delete_temp("cbd_sheshen", me);
-                tell_object(me, "你的「舍身喂鷹」運行完畢，將內力收回丹田。\n");
+                tell_object(me, "你的「捨身喂鷹」運行完畢，將內力收回丹田。\n");
         }
 }

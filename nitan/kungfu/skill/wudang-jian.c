@@ -7,7 +7,7 @@ string martialtype() { return "skill"; }
 
 mapping *action = ({
 ([        "skill_name" :  "飛燕入林",
-        "action" : "$N身體左轉，左手劍指，兩腿屈膝，右前臂內旋，劍尖前端一寸處短促抖腕發力，一招"HIB"「飛燕入林」"NOR"，手中$w輕輕顫動，一劍自上而下紮向$n的$l",
+        "action" : "$N身體左轉，左手劍指，兩腿屈膝，右前臂內旋，劍尖前端一寸處短促抖腕發力，一招"HIB"「飛燕入林」"NOR"，手中$w輕輕顫動，一劍自上而下扎向$n的$l",
         "lvl" : 0
 ]),
 ([        "skill_name" :  "青龍吐水",

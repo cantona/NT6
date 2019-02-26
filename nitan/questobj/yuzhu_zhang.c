@@ -13,7 +13,7 @@ void create()
                 set_default_object(__FILE__);
         else {
                 set("unit", "根");
-                set("long", "一根泛著淡淡青光的竹杖。\n");
+                set("long", "一根泛着淡淡青光的竹杖。\n");
                 set("value", 0);
                 set("material", "bamboo");
                 set("wield_msg", "$N抽出一根青光閃閃的$n抓在手中。\n");

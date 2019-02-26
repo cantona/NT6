@@ -25,7 +25,7 @@ int perform(object me, object target)
                 return notify_fail(name() + "只能對戰鬥中的對手使用。\n");
 
         if( me->is_busy() )
-                return notify_fail("你正忙著呢。\n");
+                return notify_fail("你正忙着呢。\n");
 
         if (me->query_skill_prepared("finger") != "six-finger")
                 return notify_fail("你沒有準備使用六脈神劍，無法施展" + name() + "。\n");
@@ -48,7 +48,7 @@ int perform(object me, object target)
                 return notify_fail("你必須是空手才能施展" + name() + "！\n");
 
         if (! living(target))
-                return notify_fail("對方都已經這樣了，用不著這麼費力吧？\n");
+                return notify_fail("對方都已經這樣了，用不着這麼費力吧？\n");
 
 
         msg = HIM "$N" HIM "一聲清嘯，右手五指紛彈，頓覺六脈劍譜已湧上心頭，此起"
@@ -61,7 +61,7 @@ int perform(object me, object target)
         // 提高20%
         ap = ap + ap / 5 + me->query_skill("martial-cognize", 1) + me->query_skill("jingluo-xue", 1);
 
-        // 有20%幾率施展無BUSY
+        // 有20%機率施展無BUSY
         if (random(5) != 1) me->start_busy(2 + random(3));
 
         if ((int)target->query_skill("martial-cognize", 1) >= 2000
@@ -94,7 +94,7 @@ int perform(object me, object target)
                        "招架，急忙提氣躍開。\n" NOR;
         }
 
-        msg += HIG "\n緊接著，$N" HIG "一聲清嘯，左手五指紛彈，頓覺六脈劍譜已湧上心頭，此起"
+        msg += HIG "\n緊接着，$N" HIG "一聲清嘯，左手五指紛彈，頓覺六脈劍譜已湧上心頭，此起"
               "彼伏、連綿不絕。\n霎時劍氣如奔，連綿無盡的萬道劍氣豁然貫向$n" HIG
               "！\n" NOR;
 

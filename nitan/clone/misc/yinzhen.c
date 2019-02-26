@@ -15,7 +15,7 @@ void create()
         else
         {
                 set("unit", "把");
-                set("long", HIW"這是三寸長的銀針，細而柔韌，多為醫家刺穴療傷之用。\n能運用這種銀針的醫者多為曠世神醫，並有深厚的內功。\n你可以試著用它來針灸(zhenjiu)療傷。\n" NOR);
+                set("long", HIW"這是三寸長的銀針，細而柔韌，多為醫家刺穴療傷之用。\n能運用這種銀針的醫者多為曠世神醫，並有深厚的內功。\n你可以試着用它來鍼灸(zhenjiu)療傷。\n" NOR);
                 set("value", 0);
                 set("yingdu", 50);
                 set("base_unit", "枚");
@@ -40,16 +40,16 @@ int do_heal(string arg)
         string msg, s;
 
         if (me->query_skill("acupuncture", 1) < 1 )
-                return notify_fail("你針灸術都沒學，去殺人啊？\n");
+                return notify_fail("你鍼灸術都沒學，去殺人啊？\n");
         if( query("equipped", this_object()) != "wielded" )
-                return notify_fail("你必須把銀針拿在手裡才能針灸。\n");
+                return notify_fail("你必須把銀針拿在手裏才能鍼灸。\n");
         if (! arg || ! objectp(ob = present(arg, environment(me))))
-                return notify_fail("你想對誰施行針灸術？\n");
+                return notify_fail("你想對誰施行鍼灸術？\n");
         if (! ob->is_character() )
                 return notify_fail("看清楚了，那不是活人！\n"); 
         if( query_temp("noliving", ob) || !living(ob) )
                 return notify_fail("你還是等他醒了之後再治療吧。\n");
-        if (me->is_busy()) return notify_fail("你現在正忙著呢。\n");
+        if (me->is_busy()) return notify_fail("你現在正忙着呢。\n");
         if (me->is_fighting() || ob->is_fighting())
                 return notify_fail("戰鬥中還想療傷，你找死啊？\n");
         if( ob->is_killing(query("id", me)) )
@@ -58,36 +58,36 @@ int do_heal(string arg)
           return notify_fail("你要當獸醫？\n");
         if (ob != me && userp(ob))
         {
-                        tell_object(me, YEL "你不能為玩家針灸。\n" NOR);
+                        tell_object(me, YEL "你不能為玩家鍼灸。\n" NOR);
                         return 1;
         }
         if( !userp(ob) && random(me->query_skill("acupuncture",1)+query("cor", me))<1 )
         {
-                        message_vision( HIY "$N" HIY "正想給$n" HIY "療傷，可$n" HIY "望著$N" HIY "那不停顫抖的雙手，臉上露出害怕的神色。\n" NOR + CYN "$n" CYN "皺了皺眉頭，對$N" CYN "說道：你那點手藝還是算了吧。\n"NOR, me, ob);
+                        message_vision( HIY "$N" HIY "正想給$n" HIY "療傷，可$n" HIY "望着$N" HIY "那不停顫抖的雙手，臉上露出害怕的神色。\n" NOR + CYN "$n" CYN "皺了皺眉頭，對$N" CYN "説道：你那點手藝還是算了吧。\n"NOR, me, ob);
                         return 1;
         }
         if (me!=ob && ob->query_skill("force") >= 150)
                 return notify_fail("人家內功深厚，不指望你替他療傷。\n");
         if( (query("max_qi", ob)*5/100>query("eff_qi", ob)) )
-                return notify_fail("現在此人受傷過重，施行針灸太危險了！\n");
+                return notify_fail("現在此人受傷過重，施行鍼灸太危險了！\n");
         if( query("neili", me)<80 )
-                return notify_fail("你的內力不足，無法使用針灸術為人療傷！\n");
+                return notify_fail("你的內力不足，無法使用鍼灸術為人療傷！\n");
         if( query("jing", me)<50 )
                 return notify_fail("你的精不足，無法集中精力！\n");
         if( time()-query_temp("last/zhenjiu", ob)<60 )
-                return notify_fail("人家剛剛接收過針灸治療，現在不需要你幫忙。\n");
+                return notify_fail("人家剛剛接收過鍼灸治療，現在不需要你幫忙。\n");
         if( query("max_qi", ob) == query("eff_qi", ob) )
         {
                 if(me != ob) return notify_fail("這人並沒有受傷！\n");
                 else
-                        message_vision(HIW"$N"HIW"決定用自己來做試驗，來提高自己針灸術的水平。\n" NOR, me);
+                        message_vision(HIW"$N"HIW"決定用自己來做試驗，來提高自己鍼灸術的水平。\n" NOR, me);
         }
         set_temp("last/zhenjiu", time(), ob);
         addn("neili", -50, me);
         addn("jing", -30, me);
         me->start_busy(1 + random(1));
         me->improve_skill("acupuncture", 5 + random(me->query_skill("acupuncture",1)));
-        tell_object(me, HIC "在實踐過程中你的「針灸術」提高了！\n" NOR);
+        tell_object(me, HIC "在實踐過程中你的「鍼灸術」提高了！\n" NOR);
         if (me == ob) s = "$N";
                  else s = "$n";
         msg = HIW"$N"HIW"手捏銀針，小心翼翼地向"+s+HIW"的穴道刺去，\n"NOR;
@@ -101,7 +101,7 @@ int do_heal(string arg)
                 else
                 {
                         if (i > 40)
-                                msg += RED"但是$N"RED"用力過猛，竟然刺出了血，這可是針灸中的大忌！"NOR;
+                                msg += RED"但是$N"RED"用力過猛，竟然刺出了血，這可是鍼灸中的大忌！"NOR;
                         else
                                 msg += RED"$N"RED"刺了下去才發現刺錯了穴道，"+s+RED"「哇」的噴出了一口鮮血！"NOR;
                 }
@@ -111,7 +111,7 @@ int do_heal(string arg)
         }
         else
         {
-                msg += HIW"$N"HIW"的銀針準確無誤地刺入穴道，隨著銀針的緩緩轉動，"+s+HIW"長長地出了一口氣，臉色好看多了。"NOR;
+                msg += HIW"$N"HIW"的銀針準確無誤地刺入穴道，隨着銀針的緩緩轉動，"+s+HIW"長長地出了一口氣，臉色好看多了。"NOR;
                 damage = -1;
                 if( me != ob/* && query("combat_exp", me)<200000*/ )
                 {
@@ -145,9 +145,9 @@ int do_heal(string arg)
                         if (userp(ob))
                         {
                                 if (me == ob)
-                                        message_vision(HIR"好險啊！$N"HIR"差一點把自己紮死。\n"NOR, me);
+                                        message_vision(HIR"好險啊！$N"HIR"差一點把自己扎死。\n"NOR, me);
                                 else
-                                        message_vision(HIR"好險啊！$N"HIR"差一點把$n"HIR"紮死。\n"NOR, me, ob);
+                                        message_vision(HIR"好險啊！$N"HIR"差一點把$n"HIR"扎死。\n"NOR, me, ob);
                         }
                 }
                 else

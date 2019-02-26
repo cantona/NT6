@@ -75,7 +75,7 @@ string do_unwield()
                 return HIC "$N隨手將血魂神刀插回刀鞘。\n" NOR;
         else
         if( query("shen", me)>10000 )
-                return HIG "$N把$n" HIG "收了起來，感覺心神不寧，全身虛脫。\n" NOR;
+                return HIG "$N把$n" HIG "收了起來，感覺心神不寧，全身虛脱。\n" NOR;
         else
                 return HIG "$N一曬，把$n" HIG "插回刀鞘。\n" NOR;
 }
@@ -128,7 +128,7 @@ void check_npc(object me, object env)
                 if( query("shen", ob[i])<-10000 && !userp(ob[i]) )
                 {
                         message_vision(random(2) ? "$N讚道：好刀，好刀！\n" :
-                                                   "$N嘆道：也不知血刀老祖那老家伙近來怎麼樣了？\n",
+                                                   "$N歎道：也不知血刀老祖那老傢伙近來怎麼樣了？\n",
                                        ob[i]);
                 } else
                 if( query("shen", ob[i])>10 && !userp(ob[i]) )
@@ -158,7 +158,7 @@ void check_npc(object me, object env)
                         {
                                 message_vision(random(2) ? "$N撲通一聲，癱倒在地，雙手急搖"
                                                            "道：“不是我！真的不是我！”\n" :
-                                                           "$N一個哆嗦，結結巴巴的什麼也說"
+                                                           "$N一個哆嗦，結結巴巴的什麼也説"
                                                            "不上來。\n",
                                                ob[i], me);
                                 if( !query("no_fight", env) )
@@ -235,13 +235,13 @@ void return_to_laozu()
                         return;
                 }
 
-                message_vision("忽然一個血刀門的弟子走了過來，看到$N，忙招呼道：“老祖說"
+                message_vision("忽然一個血刀門的弟子走了過來，看到$N，忙招呼道：“老祖説"
                                "這把刀不能丟了，放在你手上不大放心，讓我來找你拿回血魂神刀，你現在不用了麼？”\n"
                                "$N道：“好了，好了，你就拿回去吧。”\n"
                                "$N將神刀交給血刀門弟子帶走。\n", me);
         } else
         {
-                message("vision", "忽然一個血刀門弟子走了過來，撿起血魂神刀，嘆了口氣，搖搖"
+                message("vision", "忽然一個血刀門弟子走了過來，撿起血魂神刀，歎了口氣，搖搖"
                                   "頭走了。\n", me);
         }
 

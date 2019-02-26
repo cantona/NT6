@@ -58,7 +58,7 @@ int do_eat(string arg)
                 addn("max_neili", 100, me);
                 addn("neili", 100, me);
 
-                message_vision(HIY "$N吃下一顆菩提子，頓然間只覺一股浩盪無比的真氣直沖頂門...\n" NOR, this_player());
+                message_vision(HIY "$N吃下一顆菩提子，頓然間只覺一股浩蕩無比的真氣直衝頂門...\n" NOR, this_player());
                 me->apply_condition("bonze_drug", 1000);
         }
 

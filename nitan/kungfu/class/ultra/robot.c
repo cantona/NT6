@@ -116,7 +116,7 @@ mapping get_question()
                 question = make_msg(num);
         } else
         {
-                //兩個漢字採用相同的前景和背景可能幹擾效果更好一些:)
+                //兩個漢字採用相同的前景和背景可能干擾效果更好一些:)
                 //smallfish@huaxia
                 j = random(sizeof(the_color));
                 for (i = 0;i < 2;i ++)
@@ -141,7 +141,7 @@ mapping get_question()
         return quest;
 }
 
-//漢字點陣圖幹擾象素添加函數
+//漢字點陣圖干擾象素添加函數
 string *trouble(string *str_point)
 {
         int i,j,random_col,random_line,get_it;
@@ -185,7 +185,7 @@ string *trouble(string *str_point)
         return str_point;
 }
 
-//下面這個函數沒有實際作用，只是用于CALL檢查漢字表是否有錯誤
+//下面這個函數沒有實際作用，只是用於CALL檢查漢字表是否有錯誤
 void check_chn()
 {
         int i,j;

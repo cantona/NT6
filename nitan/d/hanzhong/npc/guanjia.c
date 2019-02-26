@@ -5,7 +5,7 @@ inherit NPC;
 void create()
 {
         set_name("管家", ({ "guan jia", "guan" }));
-        set("long","這是一位尖嘴候腮的老管家，一對小綠豆眼總在不停地轉動著。\n");
+        set("long","這是一位尖嘴候腮的老管家，一對小綠豆眼總在不停地轉動着。\n");
         set("gender", "男性");
         set("age", 65);
 

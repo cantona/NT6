@@ -18,7 +18,7 @@ void create()
 
 int do_effect(object me)
 {
-        message_vision(HIR "$N" HIG "服下一只朱睛冰蟾，只覺一股丹田一片火熱，"
+        message_vision(HIR "$N" HIG "服下一隻朱睛冰蟾，只覺一股丹田一片火熱，"
                        "內息運轉無比順暢！\n" NOR, me);
         set_temp("nopoison", 3);
         destruct(this_object());

@@ -4,7 +4,7 @@ inherit SNAKE;
 void create()
 {
         set_name(NOR + GRN "竹葉青蛇" NOR, ({ "qing she", "qing", "she" }));
-        set("long", GRN "這是一只讓人看了起雞皮疙瘩的竹葉青蛇。\n" NOR);
+        set("long", GRN "這是一隻讓人看了起雞皮疙瘩的竹葉青蛇。\n" NOR);
 
         set("age", 1);
         set("str", 15);
@@ -40,5 +40,5 @@ int convert(string arg)
         if (arg!="snake" && arg!="she" && arg!="qing she") return 0;
         if( query("family/family_name", me) != "歐陽世家" )
                 return notify_fail("你不能化蛇為杖。\n");
-        return notify_fail("竹葉青過于細小，不能化為杖。\n");
+        return notify_fail("竹葉青過於細小，不能化為杖。\n");
 }

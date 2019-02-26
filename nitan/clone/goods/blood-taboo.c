@@ -35,7 +35,7 @@ int do_remove(string arg)
         me = this_player();
 
         if( !query("warcraft", me) )
-                return notify_fail("你沒有和任何一只魔幻獸簽訂契約，無需解除血之盟約。\n");
+                return notify_fail("你沒有和任何一隻魔幻獸簽訂契約，無需解除血之盟約。\n");
         
         filename = "/data/warcraft/" + query("id", me);
         if (file_size(filename + ".c") > 0) 

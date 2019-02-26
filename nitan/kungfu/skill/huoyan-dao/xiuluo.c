@@ -22,13 +22,13 @@ int perform(object me, object target)
                 return notify_fail("「修羅降世」攻擊只能對戰鬥中的對手使用。\n");
 
         if( query_temp("weapon", me) )
-                return notify_fail("「修羅降世」是空手絕技，你拿著武器是使不出來的！\n");
+                return notify_fail("「修羅降世」是空手絕技，你拿着武器是使不出來的！\n");
 
         if ( me->query_skill_mapped("strike") != "huoyan-dao")
-                return notify_fail("你必須使用火燄刀來施展「修羅降世」。\n");
+                return notify_fail("你必須使用火焰刀來施展「修羅降世」。\n");
 
         if(me->query_skill("huoyan-dao", 1) < 150 )
-                return notify_fail("你的火燄刀火候還嫌不夠，這「修羅降世」絕技不用也罷。\n");
+                return notify_fail("你的火焰刀火候還嫌不夠，這「修羅降世」絕技不用也罷。\n");
 
         if(me->query_skill("strike", 1) < 150 )
                 return notify_fail("你的基本掌法還不夠嫻熟，使不出「修羅降世」絕技。\n");
@@ -48,8 +48,8 @@ int perform(object me, object target)
 
 
         addn("jing", -20, me);
-        msg =HIR "突然" HIR "$N" HIR "雙掌搓了幾搓，只聽得嗤嗤聲響，「火燄刀」在" HIR "$N" HIR "極強內勁的鬥然沖擊之下\n"
-             HIR "威勢大盛，激射而出的無形刀氣組成了一片刀網，宛如修羅降世，向著" HIR "$n" HIR "直劈而下! \n" NOR;
+        msg =HIR "突然" HIR "$N" HIR "雙掌搓了幾搓，只聽得嗤嗤聲響，「火焰刀」在" HIR "$N" HIR "極強內勁的斗然衝擊之下\n"
+             HIR "威勢大盛，激射而出的無形刀氣組成了一片刀網，宛如修羅降世，向着" HIR "$n" HIR "直劈而下! \n" NOR;
 
         message_combatd(msg,me,target);
         i = me->query_skill("force") / 4;

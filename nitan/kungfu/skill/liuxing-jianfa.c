@@ -9,7 +9,7 @@ mapping *action = ({
         "dodge" : -5,
         "damage": 21,
         "lvl"   : 0,
-        "skill_name" : "群星閃耀",
+        "skill_name" : "羣星閃耀",
         "damage_type":  "刺傷"
 ]),
 ([      "action": "$N劍式突然變緩，劍身發出濃重的殺氣，刷地一下突然刺向$n的$l",
@@ -18,7 +18,7 @@ mapping *action = ({
         "dodge" : -10,
         "damage": 25,
         "lvl"   : 30,
-        "skill_name" : "明星千裡",
+        "skill_name" : "明星千里",
         "damage_type":  "割傷"
 ]),
 ([      "action": "$N縱身躍起，手中$w化做流星，直刺向$n的$l",

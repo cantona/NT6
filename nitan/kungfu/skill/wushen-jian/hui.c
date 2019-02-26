@@ -1,7 +1,7 @@
 #include <ansi.h>
 #include <combat.h>
 
-#define HUI "「" HIG "回峰蜿蜒勢" NOR "」"
+#define HUI "「" HIG "回峯蜿蜒勢" NOR "」"
 
 inherit F_SSERVER;
 
@@ -41,10 +41,10 @@ int perform(object me, object target)
                 return notify_fail("你現在的真氣不夠，難以施展" HUI "。\n");
 
         if (! living(target))
-                return notify_fail("對方都已經這樣了，用不著這麼費力吧？\n");
+                return notify_fail("對方都已經這樣了，用不着這麼費力吧？\n");
 
-        msg = HIG "\n$N" HIG "使出衡山五神劍「" HIC "回峰蜿蜒勢" HIG "」，"
-              "手中" + weapon->name() + HIG "猛然反轉，劍勢迂回詭異，連"
+        msg = HIG "\n$N" HIG "使出衡山五神劍「" HIC "回峯蜿蜒勢" HIG "」，"
+              "手中" + weapon->name() + HIG "猛然反轉，劍勢迂迴詭異，連"
               "連襲向$n" HIG "。" NOR;
 
         message_sort(msg, me, target);
@@ -52,7 +52,7 @@ int perform(object me, object target)
         addn("neili", -100, me);
         if (level + random(level) > target->query_skill("dodge", 1))
         {
-                msg = HIR "劍勢迂回間$N" HIR "招式陡然變快，$n已被$N"
+                msg = HIR "劍勢迂迴間$N" HIR "招式陡然變快，$n已被$N"
                       HIR "攻的目不暇接，手忙腳亂！\n" NOR;
                 target->start_busy(level / 18 + 2);
                 me->start_busy(1);

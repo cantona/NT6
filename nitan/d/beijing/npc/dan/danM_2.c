@@ -39,7 +39,7 @@ int do_effect(object me)
         if (me->improve_neili(2))
                 message_vision(WHT "$N" WHT "吃下一粒龜苓丹，感到內力又雄厚了一些。\n" NOR, me);
         else
-                message_vision(WHT "$N" WHT "吃下一粒龜苓丹，感覺好象沒什麼效果。\n" NOR, me);
+                message_vision(WHT "$N" WHT "吃下一粒龜苓丹，感覺好像沒什麼效果。\n" NOR, me);
 
 //        me->start_busy(6);
         me->start_busy(1);

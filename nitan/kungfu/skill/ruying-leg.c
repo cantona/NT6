@@ -7,7 +7,7 @@ string type() { return "martial"; }
 string martialtype() { return "skill"; }
 
 mapping *action = ({
-([        "action" : "$N縱身向前，忽然凌空伸出左腿，一式"HIC"「見和同解」"NOR"，卷起飛砂直踢$n的$l",
+([        "action" : "$N縱身向前，忽然凌空伸出左腿，一式"HIC"「見和同解」"NOR"，捲起飛砂直踢$n的$l",
         "lvl"   : 0,
         "skill_name" : "見和同解"
 ]),
@@ -19,13 +19,13 @@ mapping *action = ({
         "lvl"   : 30,
         "skill_name" : "身和同住"
 ]),
-([        "action" : "$N一言不發，左足倏地彈出，連環三腿，分踢$n的頭，胸，腹，正是一式"HIB"「口和無凈」"NOR"",
+([        "action" : "$N一言不發，左足倏地彈出，連環三腿，分踢$n的頭，胸，腹，正是一式"HIB"「口和無淨」"NOR"",
         "lvl"   : 60,
-        "skill_name" : "口和無凈"
+        "skill_name" : "口和無淨"
 ]),
-([        "action" : "$N左足獨立，身體旋轉，右腿隨身形反轉橫掃，一招"HIR"「意和同悅」"NOR"，拉起勁風掃向$n$l",
+([        "action" : "$N左足獨立，身體旋轉，右腿隨身形反轉橫掃，一招"HIR"「意和同悦」"NOR"，拉起勁風掃向$n$l",
         "lvl"   : 100,
-        "skill_name" : "意和同悅"
+        "skill_name" : "意和同悦"
 ]),                                                                                                
 ([        "action" : "$N躍起在半空，雙足帶起無數勁風，一式"HIW"「利和同均」"NOR"，全身旋轉而下，迅捷無倫地轟向$n",
         "lvl"   : 150,
@@ -37,7 +37,7 @@ int valid_enable(string usage) { return usage=="leg" || usage=="parry"; }
 int valid_learn(object me)
 {
         if( query_temp("weapon", me) || query_temp("secondary_weapon", me) )
-                return notify_fail("學如影隨形腿時手裡不能拿武器。\n");
+                return notify_fail("學如影隨形腿時手裏不能拿武器。\n");
         if ((int)me->query_skill("zhanzhuang-gong", 1) < 120)
                 return notify_fail("你的站樁功火候不夠，無法學如影隨形腿。\n");
         if( query("max_neili", me)<1500 )

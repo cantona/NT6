@@ -63,7 +63,7 @@ void remove_effect(object me)
         addn_temp("apply/damage", -30, me);
         delete_temp("cbs/xiongdan", me);
         if( wizardp(me) )
-                tell_object(me, "過了一會兒，熊膽帶來的余熱都沒了。\n");
+                tell_object(me, "過了一會兒，熊膽帶來的餘熱都沒了。\n");
 }
 void destroy()
 {

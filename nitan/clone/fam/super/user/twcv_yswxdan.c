@@ -41,7 +41,7 @@ int do_use(string arg)
 
 	if (arg != "金" && arg != "木" && arg != "水" &&
 	    arg != "土" && arg !="火")
-	    	return notify_fail("五行輸入錯誤，范圍：金木水火土！\n");
+	    	return notify_fail("五行輸入錯誤，範圍：金木水火土！\n");
 
 	wuxing = arg;
 	
@@ -55,7 +55,7 @@ int do_use(string arg)
 
 
 	if (ob->query("owner") != me->query("id"))
-		return notify_fail(ob->name() + NOR "已經于其他玩家綁定！\n");
+		return notify_fail(ob->name() + NOR "已經於其他玩家綁定！\n");
 	
 
 	tell_object(me, HIG "恭喜！你服下" + ob->name() + HIG "後，元神五行變更為：" HIC + wuxing + HIG "！\n");

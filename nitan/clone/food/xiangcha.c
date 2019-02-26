@@ -1,4 +1,4 @@
-// 神話世界﹒西遊記﹒版本４．５０
+// 神話世界·西遊記·版本４．５０
 /* <SecCrypt CPL V3R05> */
  
 
@@ -13,7 +13,7 @@ void create()
   if( clonep() )
     set_default_object(__FILE__);
   else {
-    set("long", "一只楠木茶盅。\n");
+    set("long", "一隻楠木茶盅。\n");
     set("unit", "只");
     set("max_liquid", 2);
 }

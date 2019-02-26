@@ -13,7 +13,7 @@ void create()
         else {
                 set("material", "paper");
                 set("unit", "塊");
-                set("long", HIC "遠古巨獸的骸骨所制成的護身鏈。\n" NOR);
+                set("long", HIC "遠古巨獸的骸骨所製成的護身鏈。\n" NOR);
                 set("value", 1000000);
                 set("limit", ([
                         "exp"    :   2000000,

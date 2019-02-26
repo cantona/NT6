@@ -53,14 +53,14 @@ void init()
     ob = this_object();
     if(ob->query("setok")) return;
 	  if(!ob->query("party"))	ob->set("party",str_menpai[random(sizeof(str_menpai))]);  	 
-    ob->copy_menpai(({ob->query("party")}),1,random(2),50+random(50));	//復制npc的門派武功，			
+    ob->copy_menpai(({ob->query("party")}),1,random(2),50+random(50));	//複製npc的門派武功，			
 	  ob->copy_state();				//根據門派更新npc 的一些狀態
 		if (ob->query("f_skill2")) 
 				good_skills=to_chinese(ob->query("f_skill"))+"和"+to_chinese(ob->query("f_skill2"));
 		else	
 				good_skills=to_chinese(ob->query("f_skill"));
    	ob->set("long",HIW+ob->query("family/family_name")+"高手，成名絕技："+good_skills+"。"NOR);
-    message_vision(HIG"$N警惕地看著$n，神色極其慌張。\n"NOR,ob,this_player());
+    message_vision(HIG"$N警惕地看着$n，神色極其慌張。\n"NOR,ob,this_player());
     if(!ob->query("fight_id"))
     {
 		  ob->set_skills_level(350+random(200));
@@ -72,7 +72,7 @@ void init()
 		  ob->set_skills_level(350+random(200));
     	return;
     }
-        ob->set("long",HIW"黑風寨高手□□n"NOR);
+        ob->set("long",HIW"黑風寨高手n"NOR);
  		ob->set("setok",1);
 	  i=me->query("max_pot");
 	  if(i<350) i=350;
@@ -147,7 +147,7 @@ int checking(object me, object ob)
                 me->set("jing",100);
                 me->set("jingli",100);
           if(!random(3)) tell_room(environment(ob), HIB"\n"+ob->name()+"哼了一聲，轉身幾個起落就不見了。\n"NOR);
-        else tell_room(environment(ob), HIB"\n"+ob->name()+"嚷嚷道：不必理睬這種"+RANK_D->query_rude(me)+ "，還是盡快想辦法尋找寶藏。\n"NOR);
+        else tell_room(environment(ob), HIB"\n"+ob->name()+"嚷嚷道：不必理睬這種"+RANK_D->query_rude(me)+ "，還是儘快想辦法尋找寶藏。\n"NOR);
 		destruct(ob);
 		return 1;
 	}
@@ -173,7 +173,7 @@ void do_lost()
         me->set("quest/雪山飛狐/寶藏/combat_exp",me->query("combat_exp"));
   log_file("quest/FEIHU", sprintf("%s紀錄：%s(%s)尋找寶藏失敗。經驗%d。\n", ob->name(1),me->name(1),me->query("id"), me->query("combat_exp")) );
         if(!random(3)) tell_room(environment(ob), HIB"\n"+ob->name()+"哼了一聲，轉身幾個起落就不見了。\n"NOR);
-        else tell_room(environment(ob), HIB"\n"+ob->name()+"嚷嚷道：不必理睬這種"+RANK_D->query_rude(me)+ "，還是盡快想辦法尋找寶藏。\n"NOR);
+        else tell_room(environment(ob), HIB"\n"+ob->name()+"嚷嚷道：不必理睬這種"+RANK_D->query_rude(me)+ "，還是儘快想辦法尋找寶藏。\n"NOR);
 	destruct(ob);
 }
 

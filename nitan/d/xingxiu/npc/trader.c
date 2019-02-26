@@ -9,7 +9,7 @@ void create()
         set("gender", "男性");
         set("age", 40 + random(10));
 
-        set("long", "一個高鼻藍眼的波斯商人。他看著你臉上露出狡猾的笑容。\n");
+        set("long", "一個高鼻藍眼的波斯商人。他看着你臉上露出狡猾的笑容。\n");
 
         set("attitude", "friendly");
 
@@ -29,7 +29,7 @@ void create()
         set("chat_chance", 15);
         set("chat_msg", ({
 "波斯商人對你擠了一下眼睛。\n",
-"波斯商人對你說：阿拉阿可巴，穆罕默德瑞素阿拉。你沒聽懂。\n",
+"波斯商人對你説：阿拉阿可巴，穆罕默德瑞素阿拉。你沒聽懂。\n",
                 (: random_move :)
         }) );
         carry_object(__DIR__"obj/wandao")->wield();

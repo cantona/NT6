@@ -3,7 +3,7 @@ inherit NPC;
 void create()
 {
         set_name("劍僧", ({ "jian seng", "jian", "seng"}) );
-        set("long", "一個禿頂和尚，裸露著上身，肌肉結實。\n"
+        set("long", "一個禿頂和尚，裸露着上身，肌肉結實。\n"
                     "這便是汝陽王手下的十八金剛之一。\n");
         set("attitude", "heroism");
         set("title", "汝陽王座下十八金剛");

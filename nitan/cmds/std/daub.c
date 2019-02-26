@@ -47,7 +47,7 @@ int main(object me, string arg)
                 dest = present(target, me);
                 if (! dest) dest = present(target, environment(me));
                 if (! dest)
-                        return notify_fail("這裡沒有這樣東西。\n");
+                        return notify_fail("這裏沒有這樣東西。\n");
 
                 if (dest->is_character())
                 {
@@ -157,7 +157,7 @@ void check_poison(object me, object dest, int iknow)
                 else
                         tell_object(me, HIC "你發現這" + dest->name() + HIC "上的" +
                                         name + HIC "毒性甚"
-                                        "是猛烈，虧得你內功高深，才幸免無事。\n" NOR);
+                                        "是猛烈，虧得你內功高深，才倖免無事。\n" NOR);
         } else
         if( !iknow && query_temp("who_id", dest) != query("id", me) )
         {

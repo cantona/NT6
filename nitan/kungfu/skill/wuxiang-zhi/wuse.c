@@ -36,7 +36,7 @@ int perform(object me, object target)
         if (me->query_skill_mapped("finger") != "wuxiang-zhi")
                 return notify_fail("你沒有激發大力無相指，不能使用「無色無相」！\n");
 
-        msg = HIY "$N" HIY "聚起全身功力，匯聚于右指，縱身而上，"
+        msg = HIY "$N" HIY "聚起全身功力，匯聚於右指，縱身而上，"
               HIY "向$n撲去，同時一指劃出，如同流星一般擊向$n" + HIY "！\n" NOR;
 
         ap = attack_power(me, "finger") + me->query_skill("force");

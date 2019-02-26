@@ -11,7 +11,7 @@
 public string make_msg(mapping num);                        //數字點陣
 public string make_chn_msg(mapping num);                    //中文點陣
 public mapping get_question();                              //點陣產生
-public string *trouble(string *str_point);                  //點陣幹擾
+public string *trouble(string *str_point);                  //點陣干擾
 public string make_mask(string msg, string arg, int i);     //點陣遮罩
 public string *Get_Point(string src);                       //點陣取值
 
@@ -180,7 +180,7 @@ public mapping get_question()
     return quest;
 }
 
-//點陣幹擾
+//點陣干擾
 public string *trouble(string *str_point)
 {
     int i, j, random_col, random_line, get_it;

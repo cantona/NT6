@@ -9,7 +9,7 @@ void create()
     else {
             set("unit", "本");
             set("material", "paper");
-            set("long", "一本厚厚的賬本，裡面密密麻麻的記錄著一大堆帳目。\n");
+            set("long", "一本厚厚的賬本，裏面密密麻麻的記錄着一大堆帳目。\n");
           }
     set("owner", "楊永福");
     setup();

@@ -10,10 +10,10 @@ int exert(object me, object target)
         int i, skill, damage;
 
         if( query("neili", me)<150 )
-                return notify_fail("你長嘆一聲，大家嚇了一跳。\n");
+                return notify_fail("你長歎一聲，大家嚇了一跳。\n");
 
         if( query("no_fight", environment(me)) )
-                return notify_fail("這裡不能攻擊別人! \n");
+                return notify_fail("這裏不能攻擊別人! \n");
 
         skill = me->query_skill("force", 1);
 

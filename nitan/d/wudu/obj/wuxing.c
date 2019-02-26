@@ -11,7 +11,7 @@ void create()
                 set_default_object(__FILE__);
         else {
                 set("unit", "包");
-                set("long", "這是一包五毒教的秘制的毒藥，吃了它必死無疑。\n");
+                set("long", "這是一包五毒教的祕製的毒藥，吃了它必死無疑。\n");
                 set("value", 50);
                 set("poison_type", "poison");
                 set("can_pour", 1);

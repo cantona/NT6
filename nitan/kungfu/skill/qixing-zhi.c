@@ -22,7 +22,7 @@ mapping *action = ({
         "damage_type" : "點穴",
         "skill_name"  : "七星匯聚"
 ]),
-([      "action": "只見$N一轉身，正是一式「橫移北鬥」，一指由脅下穿出，疾刺$n的$l",
+([      "action": "只見$N一轉身，正是一式「橫移北斗」，一指由脅下穿出，疾刺$n的$l",
         "force" : 155,
         "attack": 10,
         "parry" : 7,
@@ -30,7 +30,7 @@ mapping *action = ({
         "damage": 30,
         "lvl"   : 40,
         "damage_type" : "點穴",
-        "skill_name"  : "橫移北鬥"
+        "skill_name"  : "橫移北斗"
 ]),
 ([      "action": "只見$N一招「偏花七星」，十指如穿花蝴蝶一般上下翻飛，全全籠罩$n",   
         "force" : 170,

@@ -69,7 +69,7 @@ int perform(object me, object target)
         } else
         {
                 me->start_busy(3);
-                msg += HIY "$p" HIY "急運內功，聚勁于外，挺身硬接了$P"
+                msg += HIY "$p" HIY "急運內功，聚勁於外，挺身硬接了$P"
                        HIY "這一招，“砰”的一聲巨響，雙方各自震退數步！\n" NOR;
         }
         message_combatd(msg, me, target);

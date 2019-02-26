@@ -1,7 +1,7 @@
 inherit SKILL;
 
 mapping *action = ({
-([        "action" : "$N一聲大喝，左掌疊于右掌之上，劈向$n",
+([        "action" : "$N一聲大喝，左掌疊於右掌之上，劈向$n",
         "force" : 100,
         "attack": 2,
         "dodge" : 30,
@@ -19,7 +19,7 @@ mapping *action = ({
         "lvl"   : 20,
         "damage_type" : "內傷"
 ]),
-([        "action" : "$N氣沉丹田，雙掌幻化一片掌影，將$n籠罩于內。",
+([        "action" : "$N氣沉丹田，雙掌幻化一片掌影，將$n籠罩於內。",
         "force" : 160,
         "attack": 12,
         "dodge" : 43,
@@ -64,7 +64,7 @@ mapping *action = ({
         "lvl"   : 120,
         "damage_type" : "內傷"
 ]),
-([        "action" : "$N左掌虛晃，右掌攜著千鈞之力猛然向$n的頭部擊落",
+([        "action" : "$N左掌虛晃，右掌攜着千鈞之力猛然向$n的頭部擊落",
         "force" : 330,
         "attack": 25,
         "dodge" : 77,

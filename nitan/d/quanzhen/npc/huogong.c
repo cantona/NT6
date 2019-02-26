@@ -9,7 +9,7 @@ void create()
         set("age", 35);
         set("class", "quanzhen");
         set("long",
-                "這裡全真教掌管廚房的火工道人。\n");
+                "這裏全真教掌管廚房的火工道人。\n");
         set("attitude", "friendly");
 
         set("str", 20);

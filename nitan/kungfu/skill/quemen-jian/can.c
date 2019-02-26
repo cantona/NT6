@@ -39,7 +39,7 @@ int perform(object me, object target)
                 return notify_fail("你沒有激發缺門劍法，難以施展" CAN "。\n");
 
         if (! living(target))
-                return notify_fail("對方都已經這樣了，用不著這麼費力吧？\n");
+                return notify_fail("對方都已經這樣了，用不着這麼費力吧？\n");
 
         msg = HIR "$N" HIR "施出缺門劍法天殘劍訣，手中" + weapon->name() +
               HIR "唰唰唰唰連續四劍，籠罩$n" HIR "周身！\n" NOR;

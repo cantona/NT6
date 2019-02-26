@@ -19,7 +19,7 @@ void create()
                 set("vegetable", 32);
                 set("value", 100);
                 set("nostrum", 16);
-                set("long", "這是一包麻黃，據說可以入藥。\n");
+                set("long", "這是一包麻黃，據説可以入藥。\n");
                 set("value", 1000);
         }
         set("pour_type", "1");
@@ -34,7 +34,7 @@ int do_eat(string arg)
         if(!present(this_object(), me))
                 return notify_fail("你要吃什麼？\n");
         if( me->is_busy() )
-                return notify_fail("別急，慢慢吃，小心別噎著了。\n");
+                return notify_fail("別急，慢慢吃，小心別噎着了。\n");
 
         write("麻黃不能這麼吃。\n");
         return 1;

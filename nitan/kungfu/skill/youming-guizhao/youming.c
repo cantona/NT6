@@ -57,8 +57,8 @@ int perform(object me, object target)
 
         skill = me->query_skill("claw");
 
-        message_combatd(HIR "突然$N咬破舌尖，高聲叫喚天地鬼神，如同瘋子一般！跟著地面變得有如水動，只見\n"
-                        "一條"HIB"鬼影"HIR"從地底冒出，飛于半空，身行飄渺不定，時而象一火球，時而象一黑影！\n\n" NOR,
+        message_combatd(HIR "突然$N咬破舌尖，高聲叫喚天地鬼神，如同瘋子一般！跟着地面變得有如水動，只見\n"
+                        "一條"HIB"鬼影"HIR"從地底冒出，飛於半空，身行飄渺不定，時而象一火球，時而象一黑影！\n\n" NOR,
                         me);
 
         addn("neili", -skill, me);
@@ -77,7 +77,7 @@ void checking(object me, object target)
 
         if( !living(me) || me->is_ghost() )
         {
-                message_combatd(HIR"那條"HIB"鬼影"HIR"于半空徘徊了一陣，就消失在地底了！\n"NOR, me);
+                message_combatd(HIR"那條"HIB"鬼影"HIR"於半空徘徊了一陣，就消失在地底了！\n"NOR, me);
                 addn_temp("apply/defense", -skill/2, me);
                 delete_temp("lingjiu/youming", me);
                 remove_call_out("remove_effect");
@@ -85,7 +85,7 @@ void checking(object me, object target)
         }
         if( !me->is_fighting() )
         {
-                message_combatd(HIR"那條"HIB"鬼影"HIR"于半空徘徊了一陣，就消失在地底了！\n"NOR, me);
+                message_combatd(HIR"那條"HIB"鬼影"HIR"於半空徘徊了一陣，就消失在地底了！\n"NOR, me);
                 addn_temp("apply/defense", -skill/2, me);
                 delete_temp("lingjiu/youming", me);
                 remove_call_out("remove_effect");
@@ -97,7 +97,7 @@ void checking(object me, object target)
         {
                 tell_object(me,"\n$N驟然變換招數，不能再繼續用幽冥鬼影牽制對手的攻擊！\n");
                 addn_temp("apply/defense", -skill/2, me);
-                message_combatd(HIR"那條"HIB"鬼影"HIR"于半空徘徊了一陣，就消失在地底了！\n"NOR, me);
+                message_combatd(HIR"那條"HIB"鬼影"HIR"於半空徘徊了一陣，就消失在地底了！\n"NOR, me);
                 delete_temp("lingjiu/youming", me);
                 remove_call_out("remove_effect");
                 return ;
@@ -114,7 +114,7 @@ void remove_effect(object me)
 
         skill = me->query_skill("claw");
 
-        message_combatd(HIR"地面的波動漸漸減弱，那條"HIB"鬼影"HIR"于半空徘徊了一陣，就消失在地底了！\n"NOR, me);
+        message_combatd(HIR"地面的波動漸漸減弱，那條"HIB"鬼影"HIR"於半空徘徊了一陣，就消失在地底了！\n"NOR, me);
         addn_temp("apply/defense", -skill/2, me);
         delete_temp("lingjiu/youming", me);
         return;

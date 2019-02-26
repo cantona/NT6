@@ -6,7 +6,7 @@ void create()
 {
         set_name("黃智強", ({ "huang zhiqiang", "zhiqiang", "huang" }));
         set("nickname", HIM "食人魔" NOR);
-        set("title", "雜貨舖老板");
+        set("title", "雜貨鋪老闆");
         set("long", @LONG
 
 LONG);
@@ -60,7 +60,7 @@ void greeting(object ob)
 {
         if( !ob || environment(ob) != environment() ) return;
 
-        say(CYN "黃智強笑著說道：這位" + RANK_D->query_respect(ob)+ "你需"
+        say(CYN "黃智強笑着説道：這位" + RANK_D->query_respect(ob)+ "你需"
             "買些什麼，請隨便看。\n" NOR);
 
         return;

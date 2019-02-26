@@ -30,7 +30,7 @@ int perform(object me, object target)
                 return notify_fail("你沒有激發穿心掌，無法使用" + name() + "！\n");
 
         if (! living(target))
-                return notify_fail("對方都已經這樣了，用不著這麼費力吧？\n");
+                return notify_fail("對方都已經這樣了，用不着這麼費力吧？\n");
 
         msg = HIY "\n$N" HIY "一聲冷笑，雙掌一錯，陡然施出一招"
               "「" HIW "穿心錐" HIY "」，幻出千百之手掌一齊"

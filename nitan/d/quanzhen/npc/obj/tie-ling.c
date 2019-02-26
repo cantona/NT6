@@ -9,7 +9,7 @@ void create()
                 set_default_object(__FILE__);
         else {
                 set("unit", "塊");
-                set("long", "這是一塊用于通行重陽宮的鐵鑄令牌。 由丹陽真人簽發，邀各路英雄入宮觀禮。\n");
+                set("long", "這是一塊用於通行重陽宮的鐵鑄令牌。 由丹陽真人簽發，邀各路英雄入宮觀禮。\n");
                 set("value", 100);
                 set("material", "iron");
         }

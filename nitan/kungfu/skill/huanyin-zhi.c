@@ -12,7 +12,7 @@ mapping *action = ({
         "lvl"   : 0,
         "damage_type" : "刺傷"
 ]),
-([      "action": "$N全身之力聚于一指，直指向$n的胸前",
+([      "action": "$N全身之力聚於一指，直指向$n的胸前",
         "force" : 270,
         "attack": 36,
         "parry" : 31,

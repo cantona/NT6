@@ -38,7 +38,7 @@ int exert(object me, object target)
         addn("neili", -300, me);
 
         message_combatd(HIW "$N" HIW "一聲冷笑，體內寒冰真氣迅速疾轉數個周"
-                        "天，將力聚于掌心。\n" NOR, me);
+                        "天，將力聚於掌心。\n" NOR, me);
         set_temp("freezing", 1, me);
 
         me->start_call_out((: call_other, __FILE__, "remove_effect",

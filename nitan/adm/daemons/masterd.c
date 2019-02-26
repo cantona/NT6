@@ -41,7 +41,7 @@ public mixed teach_pfm(object who, object ob, mapping b)
 {
         string name, perform;           // 絕招名稱及絕招進程記錄
         int i;                          // 導入主要技能升級的循環符
-        string msg;                     // 對于某些返回信息的描述
+        string msg;                     // 對於某些返回信息的描述
         string msg1, msg2;              // 顯示出的信息及回答信息
         string sk1, sk2, sk3, sk4, sk5; // 所需要的武功名稱
         int lv1, lv2, lv3, lv4, lv5;    // 所對應的武功等級
@@ -71,7 +71,7 @@ public mixed teach_pfm(object who, object ob, mapping b)
                 if( query("family/family_name", who) != family &&
                     (!arrayp(fams) || member_array(family, fams) == -1) )
                         return RANK_D->query_respect(who) + "與我" +
-                               family + "素無淵源，不知此話從何說起。";
+                               family + "素無淵源，不知此話從何説起。";
         }
 
         // 如果已經學會，則返回
@@ -92,7 +92,7 @@ public mixed teach_pfm(object who, object ob, mapping b)
                         break;
 
                 default :
-                        msg = "這招你不是已經會了麼，還纏著我做甚？";
+                        msg = "這招你不是已經會了麼，還纏着我做甚？";
                         break;
                 }
                 return msg;
@@ -108,12 +108,12 @@ public mixed teach_pfm(object who, object ob, mapping b)
         // 判斷正神或負神的要求
         if (intp(shen = b["shen"]))
         {
-                // 如果要求為負神，則作出大于判斷
+                // 如果要求為負神，則作出大於判斷
                 if( shen<0 && query("shen", who)>shen )
                         return "哼！像你這樣的心慈手軟之輩，又"
                                "能幹成什麼大事？";
 
-                // 如果要求為正神，則作出小于判斷
+                // 如果要求為正神，則作出小於判斷
                 if( shen>0 && query("shen", who)<shen )
                         return "你目前所做的俠義正事不夠，這招"
                                "暫時還不能傳你。";
@@ -162,27 +162,27 @@ public mixed teach_pfm(object who, object ob, mapping b)
 
                 if (who->query_skill(sk1, 1) < lv1)
                         return "你對" + to_chinese(sk1) + "的"
-                               "了解還不夠，尚且無法領悟此招。";
+                               "瞭解還不夠，尚且無法領悟此招。";
         }
 
         if (stringp(sk2 = b["sk2"]) && intp(lv2 = b["lv2"])
            && who->query_skill(sk2, 1) < lv2)
-                return "你對" + to_chinese(sk2) + "的了解還不"
+                return "你對" + to_chinese(sk2) + "的瞭解還不"
                        "夠，尚且無法領悟此招。";
 
         if (stringp(sk3 = b["sk3"]) && intp(lv3 = b["lv3"])
            && who->query_skill(sk3, 1) < lv3)
-                return "你對" + to_chinese(sk3) + "的了解還不"
+                return "你對" + to_chinese(sk3) + "的瞭解還不"
                        "夠，尚且無法領悟此招。";
 
         if (stringp(sk4 = b["sk4"]) && intp(lv4 = b["lv4"])
            && who->query_skill(sk4, 1) < lv4)
-                return "你對" + to_chinese(sk4) + "的了解還不"
+                return "你對" + to_chinese(sk4) + "的瞭解還不"
                        "夠，尚且無法領悟此招。";
 
         if (stringp(sk5 = b["sk5"]) && intp(lv5 = b["lv5"])
            && who->query_skill(sk5, 1) < lv5)
-                return "你對" + to_chinese(sk5) + "的了解還不"
+                return "你對" + to_chinese(sk5) + "的瞭解還不"
                        "夠，尚且無法領悟此招。";
 
         // 判斷絕招對內功的要求
@@ -220,7 +220,7 @@ public mixed teach_pfm(object who, object ob, mapping b)
                 case 0 :
                         msg = "$N微微點了點頭，伸手將$n" HIY "招"
                               "至身前，低聲在$n" HIY "耳畔講述了"
-                              "半天，還不時伸手比劃演示著什麼，所"
+                              "半天，還不時伸手比劃演示着什麼，所"
                               "講全是" + to_chinese(sk1) + "的精"
                               "微要詣。$n" HIY "聽後會心一笑，看"
                               "來對$N的教導大有所悟。";
@@ -228,7 +228,7 @@ public mixed teach_pfm(object who, object ob, mapping b)
 
                 case 1 :
                         msg = "$N凝視了$n" HIY "許久，方才微微點"
-                              "了點頭，說道：“我給你演示一遍，可"
+                              "了點頭，説道：“我給你演示一遍，可"
                               "看清楚了。”$N話音剛落，隨即起身而"
                               "立拉開架勢，慢慢的演示開" +
                               to_chinese(sk1) + "的招式。$n" HIY
@@ -237,11 +237,11 @@ public mixed teach_pfm(object who, object ob, mapping b)
                         break;
 
                 case 2 :
-                        msg = "$N看了看$n" HIY "，頗為讚許的說道"
+                        msg = "$N看了看$n" HIY "，頗為讚許的説道"
                               "：“想不到你的" + to_chinese(sk1) +
                               "進展如此神速，已達此般境界。不易，"
                               "不易。今日我便傳你這招，可記清楚了"
-                              "。”說完$N便將$n" HIY "招至跟前，"
+                              "。”説完$N便將$n" HIY "招至跟前，"
                               "耐心講述" + name + "的諸多精要，$n"
                               HIY "一邊聽一邊不住的點頭。";
                         break;
@@ -250,9 +250,9 @@ public mixed teach_pfm(object who, object ob, mapping b)
                         msg = "$N哈哈一笑，對$n" HIY "讚道：“不"
                               "錯，不錯。依照你現在" +
                               to_chinese(sk1) + "的造詣，我便傳授"
-                              "你" + name + "又有何妨？”說完便只"
+                              "你" + name + "又有何妨？”説完便只"
                               "見$N從懷中摸出一本頗為古舊的小冊子"
-                              "，指著其中一段對$n" HIY "仔細講解"
+                              "，指着其中一段對$n" HIY "仔細講解"
                               "。$n" HIY "聽後沉思良久，若有所悟。";
                         break;
                 }
@@ -325,7 +325,7 @@ public mixed teach_pfm(object who, object ob, mapping b)
                         break;
 
                 default :
-                        msg = "這招其實並不復雜，你自己下去練習吧。";
+                        msg = "這招其實並不複雜，你自己下去練習吧。";
                         break;
                 }
         }
@@ -337,7 +337,7 @@ public mixed give_item(object who, object ob, mapping b)
 {
         object obj, owner;              // 給予的物品及擁有者
         string item;                    // 給予物品的 base_name
-        string msg;                     // 對于某些返回信息的描述
+        string msg;                     // 對於某些返回信息的描述
         string sk1, sk2, sk3;           // 所需要的武功名稱
         int lv1, lv2, lv3;              // 所對應的武功等級
         int free;                       // 是否為公共物品派送
@@ -359,7 +359,7 @@ public mixed give_item(object who, object ob, mapping b)
 
                 if( query("family/family_name", who) != family )
                         return RANK_D->query_respect(who) + "與我" +
-                               family + "素無淵源，不知此話從何說起。";
+                               family + "素無淵源，不知此話從何説起。";
         //}
 
         // 查找對應的 base_name 呼出物件
@@ -389,13 +389,13 @@ public mixed give_item(object who, object ob, mapping b)
         // 判斷正神或負神的要求
         if (intp(shen = b["shen"]))
         {
-                // 如果要求為負神，則作出大于判斷
+                // 如果要求為負神，則作出大於判斷
                 if( shen<0 && query("shen", who)>shen )
                         return "哼！像你這樣的心慈手軟之輩，就"
-                               "算拿著" + obj->name() + CYN "也"
+                               "算拿着" + obj->name() + CYN "也"
                                "是無用。" NOR;
 
-                // 如果要求為正神，則作出小于判斷
+                // 如果要求為正神，則作出小於判斷
                 if( shen>0 && query("shen", who)<shen )
                         return "你目前所做的俠義正事不夠，這" +
                                obj->name() + CYN "暫時還不能交"
@@ -440,7 +440,7 @@ public mixed give_item(object who, object ob, mapping b)
 
                 if (who->query_skill(sk1, 1) < lv1)
                         return "你的" + to_chinese(sk1) + "火候未"
-                               "到，就算拿著" + obj->name() + CYN
+                               "到，就算拿着" + obj->name() + CYN
                                "也沒用。" NOR;
         }
 
@@ -453,7 +453,7 @@ public mixed give_item(object who, object ob, mapping b)
 
                 if (who->query_skill(sk2, 1) < lv2)
                         return "你的" + to_chinese(sk2) + "火候未"
-                               "到，就算拿著" + obj->name() + CYN
+                               "到，就算拿着" + obj->name() + CYN
                                "也沒用。" NOR;
         }
 
@@ -466,7 +466,7 @@ public mixed give_item(object who, object ob, mapping b)
 
                 if (who->query_skill(sk3, 1) < lv3)
                         return "你的" + to_chinese(sk3) + "火候未"
-                               "到，就算拿著" + obj->name() + CYN
+                               "到，就算拿着" + obj->name() + CYN
                                "也沒用。" NOR;
         }
 
@@ -482,7 +482,7 @@ public mixed give_item(object who, object ob, mapping b)
 
         if (owner == who)
                 return "那"+query("unit", obj)+obj->name()+
-                       CYN "不就是你拿著在用麼，怎麼反倒找我"
+                       CYN "不就是你拿着在用麼，怎麼反倒找我"
                        "來了？" NOR;
 
         if (objectp(owner) && owner != ob)

@@ -12,7 +12,7 @@ void create()
                 set_default_object(__FILE__);
         else {
                 set("unit", "架");
-                set("long", "這是一架看起來怪怪的儀器，上面貼著說明(help editor)。\n");
+                set("long", "這是一架看起來怪怪的儀器，上面貼着説明(help editor)。\n");
                 set("value", 1);
                 set("no_sell", 1);
         }
@@ -29,7 +29,7 @@ int do_help(string arg)
         if (! arg || ! id(arg))
                 return notify_fail("你要看什麼幫助？\n");
         write (@HELP
-關于表情動詞編輯器的說明：
+關於表情動詞編輯器的説明：
 
 可以使用的命令包括 edemote、cpemote、rnemote，具體請參見這
 些命令的幫助。

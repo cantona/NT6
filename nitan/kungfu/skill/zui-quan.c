@@ -1,7 +1,7 @@
 inherit SKILL;
 
 mapping *action = ({
-([      "action": "$N連續上步，腳下蹣跚，雙拳緩緩劃向$n的$l",
+([      "action": "$N連續上步，腳下蹣跚，雙拳緩緩划向$n的$l",
         "force" : 80,
         "attack": 12,
         "parry" : 14,
@@ -33,7 +33,7 @@ mapping *action = ({
         "lvl"   : 42,
         "damage_type" : "瘀傷"
 ]),
-([      "action": "$N搖搖晃晃，偏偏倒倒，可雙拳卻拳出如風，籠罩著$n頭，胸，腹三處要害",
+([      "action": "$N搖搖晃晃，偏偏倒倒，可雙拳卻拳出如風，籠罩着$n頭，胸，腹三處要害",
         "force" : 200,
         "attack": 25,
         "parry" : 24,

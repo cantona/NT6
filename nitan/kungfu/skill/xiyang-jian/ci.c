@@ -37,7 +37,7 @@ int perform(object me, object target)
                 return notify_fail("你沒有激發西洋劍術不夠嫻熟，不能使用「刺劍」。\n");
 
        if (! living(target))
-              return notify_fail("對方都已經這樣了，用不著這麼費力吧？\n");
+              return notify_fail("對方都已經這樣了，用不着這麼費力吧？\n");
 
         msg = HIC "\n$N" HIC "一聲呼哨，手中的" +
               weapon->name() + HIC "猶如一道電光閃向$n" HIC "的胸前。\n"NOR;

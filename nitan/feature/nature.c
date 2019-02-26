@@ -1,6 +1,6 @@
 // nature.c
 // by Find.
-// 此特性標準 room 和 npc 裡已經繼承，
+// 此特性標準 room 和 npc 裏已經繼承，
 // 區域編程可以直接引用這些函數。
 
 // 這個函數返回當前遊戲的年度數.
@@ -55,7 +55,7 @@ int query_day_in_month()
         return day;
 }
 
-// 這個函數返回當前處于一年中的第幾天(1 - 365).
+// 這個函數返回當前處於一年中的第幾天(1 - 365).
 int query_day(int *month_day)
 {
         object ob = find_object(NATURE_D);
@@ -124,7 +124,7 @@ int is_day()
 // day_or_night 為一個字串,值為 "day" 或者 "night" 反
 // 映目前是白天還是黑夜.
 // last_time 是一個 int,反映的是距離晝夜更替所剩的時間.
-// 比如返回值 "day 280" 說明目前是白天,距離夜晚還有280秒.
+// 比如返回值 "day 280" 説明目前是白天,距離夜晚還有280秒.
 // 中間以一個空格隔開.
 string day_night()
 {

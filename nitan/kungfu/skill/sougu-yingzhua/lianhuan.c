@@ -52,7 +52,7 @@ int perform(object me, object target)
 
         lzg_msg = HIY"\n$N突然間大喝一聲，縱身而上，雙手猶如狂風驟雨，";
 
-        if(hit >= 4)lzg_msg += "「推爪式」、「蓋爪式」、「掏爪式」、「托爪式」";
+        if(hit >= 4)lzg_msg += "「推爪式」、「蓋爪式」、「掏爪式」、「託爪式」";
         if(hit >= 6)lzg_msg += "、「撩爪式」、「鎖爪式」";
         if(hit >= 8)lzg_msg += "、「千爪式」、「飛爪式」";
 

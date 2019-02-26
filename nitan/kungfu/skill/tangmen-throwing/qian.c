@@ -22,7 +22,7 @@ int perform(object me, object target)
         if( !objectp(weapon=query_temp("handing", me)) ||
             (query("id", weapon) != "qianqian jie" &&
              query("skill_type", weapon) != "throwing") )
-                return notify_fail("你現在手中沒有拿著暗器心有千千結，難以施展" + name() + "。\n");
+                return notify_fail("你現在手中沒有拿着暗器心有千千結，難以施展" + name() + "。\n");
 
         if ((skill = me->query_skill("tangmen-throwing", 1)) < 140)
                 return notify_fail("你的唐門暗器不夠嫻熟，難以施展" + name() + "。\n");
@@ -43,12 +43,12 @@ int perform(object me, object target)
                 return notify_fail("你現在真氣不足，難以施展" + name() + "。\n");
 
         if (! living(target) || target->is_busy())
-                return notify_fail("對方都已經這樣了，用不著這麼費力吧？\n");
+                return notify_fail("對方都已經這樣了，用不着這麼費力吧？\n");
 
         addn("neili", -100, me);
 
         msg = HIR "\n$N" HIR "突然身行一止，從懷中摸出一條" + weapon->name() + HIR "，有無數個結，一揚手向$n " HIR "擲去。\n"
-              "只見$n" HIR "的周身飛舞著無數的光影，一條天網從空罩下。\n"NOR;
+              "只見$n" HIR "的周身飛舞着無數的光影，一條天網從空罩下。\n"NOR;
 
         ap = attack_power(me, "throwing");
         dp = defense_power(target, "dodge") +
@@ -69,8 +69,8 @@ int perform(object me, object target)
                 target->start_busy(ap / 80 + 2);
         } else
         {
-                tell_object(target, HIR "忽然那無數的光影一閃而沒，你心中一驚急忙提神運氣于足間。\n" NOR);
-                msg = HIR "$n" HIR "急忙向旁邊一縱，躲開著致命的" + weapon->name() + HIR "，但已顯得狼狽不堪。\n" NOR;
+                tell_object(target, HIR "忽然那無數的光影一閃而沒，你心中一驚急忙提神運氣於足間。\n" NOR);
+                msg = HIR "$n" HIR "急忙向旁邊一縱，躲開着致命的" + weapon->name() + HIR "，但已顯得狼狽不堪。\n" NOR;
                 message_combatd(msg, me, target);
                 if( query("neili", target)<1000 )
                         set("neili", 0, target);

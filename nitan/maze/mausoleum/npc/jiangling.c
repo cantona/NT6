@@ -11,11 +11,11 @@ void create()
         ::create();
         set_name( names[random(sizeof(names))], ({ "jiang ling", "jiang"}));
         set("long", @LONG
-這是一個沉睡在皇陵千年陶俑將領，身高八尺有余，由陶土燒制而成，看起來十分堅
+這是一個沉睡在皇陵千年陶俑將領，身高八尺有餘，由陶土燒製而成，看起來十分堅
 硬。他手持一柄青銅長劍，神情頗為威武。在機關消息的作用下，他的四肢可以活動，
 攻守進退也有模有樣，但總歸不算非常靈活。
 LONG);
-        set("title", YEL "皇陵二品侍衛" NOR);
+        set("title", YEL "皇陵二品侍衞" NOR);
 
         set("str", 120);
         set("con", 120);

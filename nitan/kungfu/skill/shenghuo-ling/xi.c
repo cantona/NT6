@@ -5,7 +5,7 @@
 
 inherit F_SSERVER;
 
-string name() { return HIM "吸燄令" NOR; }
+string name() { return HIM "吸焰令" NOR; }
 
 int perform(object me)
 {
@@ -41,9 +41,9 @@ int perform(object me)
                 return notify_fail("你的真氣不夠，不能使用聖火令法之" + name() + "。\n");
 
         if (! living(target))
-                return notify_fail("對方都已經這樣了，用不著這麼費力吧？\n");
+                return notify_fail("對方都已經這樣了，用不着這麼費力吧？\n");
 
-        msg = HIM "突然$N" HIM "詭異的一笑，使出聖火令法之吸燄"
+        msg = HIM "突然$N" HIM "詭異的一笑，使出聖火令法之吸焰"
               "令，手中" + weapon->name() + HIM "幻出數個小圈"
               "，將$n" HIM "的" + weapon2->name() + HIM "緊緊"
               "纏住。\n" NOR;

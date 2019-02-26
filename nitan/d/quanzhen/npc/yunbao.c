@@ -10,7 +10,7 @@ void create()
         set("gender", "雌性");
         set("age", 5);
         set("long", @LONG
-這是一只艾葉花皮的雲豹，它的毛皮極為雄美、厚實。
+這是一隻艾葉花皮的雲豹，它的毛皮極為雄美、厚實。
 LONG);
         set("attitude", "aggressive");
         set("shen_type", -1);

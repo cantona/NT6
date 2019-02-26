@@ -16,7 +16,7 @@
 #define IGNORED                 4       // 被本站屏蔽信息站點
 #define SHUTDOWN                8       // 關閉的站點
 #define ONLINE                  16      // 可連接站點
-#define DISCONNECT              32      // 失去聯系的站點
+#define DISCONNECT              32      // 失去聯繫的站點
 #define ENCODE_CONFIRM          64      // 系統自動判定gb/big5碼的站點
 ***********************************************************/
 
@@ -435,7 +435,7 @@ void analyze_mud_info(mapping info)
         case  1: set_mudlist(get_mud_name(info),info);break;
         }
 }
-// 用于大部分函式, 分析 Mud 是否為已通過認証, 尚未認証送 pin_q
+// 用於大部分函式, 分析 Mud 是否為已通過認證, 尚未認證送 pin_q
 int compare_mud_info(mapping info)
 {
         string mudname=get_mud_name(info);
@@ -489,7 +489,7 @@ protected void set_incoming_mudlist(string name,mapping info)
 
         // 更新資訊
         foreach(t, d in info) incoming_mudlist[name][t]=d;
-        // 每次更新資訊連線回應計算 + 1
+        // 每次更新資訊連線迴應計算 + 1
         incoming_mudlist[name]["CONNECTION"]+=1;
 }
 
@@ -573,7 +573,7 @@ varargs string *fetch_mudip(string arg)
         return result;
 }
 
-// 設定 mudlist 裡的 mud 設定
+// 設定 mudlist 裏的 mud 設定
 int set_status(string mud,int num)
 {
         int level;
@@ -718,7 +718,7 @@ int test_buffer(string mudname,int kind)
     Intermud2 ping_a 封包格式
         ([
                 "NAME":         (string)這 Mud 的網路名稱
-                "MUDGROUP":     (string)網路群組?
+                "MUDGROUP":     (string)網路羣組?
                 "HOST":         (string)Mud 主機名稱?(好像沒用, 花瓶一個)
                 "LOCATION":     (string)所在地?
                 "MUDLIB":       (string)mudlib, 如果不是Eastern Stories會收不到 es channel.
@@ -783,13 +783,13 @@ void receive_ping_request(mapping info)
 {
         int port;
 
-        if(debug) NCH_CHANNEL(sprintf("收到 PING 要求 , 送出回應到 %O", info));
+        if(debug) NCH_CHANNEL(sprintf("收到 PING 要求 , 送出迴應到 %O", info));
         // UDP_PORT 格式錯誤
         if( undefinedp(info["PORTUDP"]) || !sscanf(info["PORTUDP"],"%d",port) ) return;
         
         if( (info["HOSTADDRESS"]==localhost || info["HOSTADDRESS"]==my_address) && port == udp_port )
                 return;
-        // 如果我們 mudlist 裡還沒有此 mud , 我們也要求他回 ping.
+        // 如果我們 mudlist 裏還沒有此 mud , 我們也要求他回 ping.
         if(get_info_level(get_mud_name(info))<0)
                 compare_mud_info(info); // 發送ping要求
         // 送出 PING Answer
@@ -809,10 +809,10 @@ void receive_ping_request(mapping info)
                 "PORT":         ""+__PORT__,
             ]));
 
-        if(debug) NCH_CHANNEL("收到 PING 要求 , 送出回應到 "+info["HOSTADDRESS"]+":"+port+" .");
+        if(debug) NCH_CHANNEL("收到 PING 要求 , 送出迴應到 "+info["HOSTADDRESS"]+":"+port+" .");
 }
 
-// 收到 PING 回應
+// 收到 PING 迴應
 void receive_ping_answer(mapping info)
 {
         int status;
@@ -867,7 +867,7 @@ void send_mudlist_udp(string targ, int port,string info)
         socket_close(socket);
 }
 
-// 收到對方回應的 mudlist 列表
+// 收到對方迴應的 mudlist 列表
 void receive_mudlist_answer(mapping info)
 {
         string name,clip;
@@ -913,7 +913,7 @@ void receive_mudlist_request(mapping info)
 
         foreach(name,mudinfo in mudlist)
         {
-                // 沒有即時回應的就有可能不在, 不送出以免制造網路垃圾
+                // 沒有即時迴應的就有可能不在, 不送出以免製造網路垃圾
                 if(!(mudinfo["STATUS"]&ONLINE)) continue;
                 i++;
                 send_mudlist_udp(info["HOSTADDRESS"],info["PORTUDP"],
@@ -1221,7 +1221,7 @@ void receive_warning(mapping info)
         if(compare_mud_info(info)<1)
                 return;
 
-        msg=sprintf("自 %s(%s) 告知的警告: %s 于 %s",info["NAME"],info["HOSTADDRESS"],info["MSG"],info["FAKEHOST"]);
+        msg=sprintf("自 %s(%s) 告知的警告: %s 於 %s",info["NAME"],info["HOSTADDRESS"],info["MSG"],info["FAKEHOST"]);
 
         send_warning(info["HOSTADDRESS"],info["PORTUDP"],
             sprintf("Thank For Your Warning [%s], we have loged it , and will try to solve it soon :).",msg));

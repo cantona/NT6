@@ -12,7 +12,7 @@ string* names = ({
 
 string* longs = ({
         "這是一塊不太大的鵝卵石。\n",
-        "這是一塊有著棱角的石塊。\n",
+        "這是一塊有着稜角的石塊。\n",
         "這是一塊沉甸甸的大石頭。\n",
 });
 
@@ -50,7 +50,7 @@ int do_break(string arg)
         if( query("neili", me)<500 )
                 return notify_fail("你功力不足，不能擊石成粉！\n");
         message_vision(HIW"$N氣沉丹田，運足真氣，向石頭擊去！\n"NOR,me); 
-        write(HIW"只聽得“□”的一聲，石頭被擊成碎塊！\n"NOR);
+        write(HIW"只聽得“嘭”的一聲，石頭被擊成碎塊！\n"NOR);
         obj = new("/d/taohua/obj/shizi2");
         obj->move(me);
         addn("neili", -(100+random(100)), me);

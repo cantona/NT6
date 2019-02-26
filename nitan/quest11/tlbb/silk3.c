@@ -6,7 +6,7 @@ inherit ROOM;
 #include <wanted.h>
 
 #define QUESTDIR "quest/天龍八部/"
-#define QUESTDIR3 "quest/天龍八部/蕭峰身世篇/"
+#define QUESTDIR3 "quest/天龍八部/蕭峯身世篇/"
 #define QUESTDIR4 "quest/天龍八部/大遼救援篇/"
 
 void create()
@@ -15,7 +15,7 @@ void create()
         set("long", @LONG
 頌摩崖又名黃龍碑。周圍山勢陡峭，兩山對峙，一泓中流，兩峽旁有潭，
 淵深莫測。俗傳有黃龍自潭飛出，因名黃龍潭。潭左側摩崖成碑。漢隸真跡，
-筆觸遒勁，刀刻有力，記敘了開天井道的過程。往東南是仇池山，往西則是
+筆觸遒勁，刀刻有力，記敍了開天井道的過程。往東南是仇池山，往西則是
 石門。
 LONG);
         set("outdoors", "yili");
@@ -48,7 +48,7 @@ void init()
 	}
         if ((me->query(QUESTDIR3+"good")&&me->query_temp(QUESTDIR4+"dagouzhen") &&me->query_temp(QUESTDIR4+"shaolinzhen")&&!me->query(QUESTDIR4+"over"))||(me->query(QUESTDIR4+"start")&&!me->query(QUESTDIR4+"over"))) {
 		add_action("do_da", ({"da", "answer"}));
-    if (localtime(TIME_TICK)[2] <= 2) tell_object(me,HIB"天黑了，這裡黑黝黝一片，伸手不見五指，正是夜襲大營的好時候，怎麼接應的人還沒來呢？\n"NOR); 
+    if (localtime(TIME_TICK)[2] <= 2) tell_object(me,HIB"天黑了，這裏黑黝黝一片，伸手不見五指，正是夜襲大營的好時候，怎麼接應的人還沒來呢？\n"NOR); 
 		add_action("do_han", ({"han", "yell"}));
 	}
 }
@@ -61,14 +61,14 @@ int do_look(string arg)
 		set("long", @LONG
 頌摩崖又名黃龍碑。周圍山勢陡峭，兩山對峙，一泓中流，兩峽旁有潭，
 淵深莫測。俗傳有黃龍自潭飛出，因名黃龍潭。潭左側摩崖成碑。漢隸真跡，
-筆觸遒勁，刀刻有力，記敘了開天井道的過程。往東南是仇池山，往西則是
+筆觸遒勁，刀刻有力，記敍了開天井道的過程。往東南是仇池山，往西則是
 石門。山壁（cliff）上遠遠看去一塊地方光亮無比，似乎可以跳躍上去。
 LONG
 );
 		me->look(arg);
 	 }
 	 else if (arg == "cliff") {
-		tell_object(me,HIR"你仔細地觀察著峭壁，發現可以跳躍（jump）上去。\n"NOR);
+		tell_object(me,HIR"你仔細地觀察着峭壁，發現可以跳躍（jump）上去。\n"NOR);
 		return 1;
 	 }
 	}
@@ -77,7 +77,7 @@ LONG
 		set("long", @LONG
 頌摩崖又名黃龍碑。周圍山勢陡峭，兩山對峙，一泓中流，兩峽旁有潭，
 淵深莫測。俗傳有黃龍自潭飛出，因名黃龍潭。潭左側摩崖成碑。漢隸真跡，
-筆觸遒勁，刀刻有力，記敘了開天井道的過程。往東南是仇池山，往西則是
+筆觸遒勁，刀刻有力，記敍了開天井道的過程。往東南是仇池山，往西則是
 石門。
 LONG
 );
@@ -113,7 +113,7 @@ int do_jump(string arg)
 			{
 				player = all_inventory(room);
 				for (i = 0; i < sizeof(player); i++) {
-					if (player[i]->is_character()) return notify_fail(YEL"你突然發現這個落腳之處過于狹小，已經有"+player[i]->query("name")+"在上面，你更本無法站穩。\n你嘆了口氣，只能左腳一點崖壁，又跳了下來。"NOR);
+					if (player[i]->is_character()) return notify_fail(YEL"你突然發現這個落腳之處過於狹小，已經有"+player[i]->query("name")+"在上面，你更本無法站穩。\n你歎了口氣，只能左腳一點崖壁，又跳了下來。"NOR);
 				}         	 
 				tell_object(me,HIY"你沒有想到，這塊峭壁上竟然還有如此大的空間可以落腳，估計是當年中原高手埋伏的地點之一。\n"NOR);
 				me->move(room);
@@ -194,12 +194,12 @@ int do_da(string arg)
   if (me->query_temp(QUESTDIR4+"count")<3) return 0;
 
 	if (me->is_busy() || !arg )
-		return notify_fail("你要說什麼？先喘口氣吧。\n");
+		return notify_fail("你要説什麼？先喘口氣吧。\n");
 
   if (!present("gaibang dizi", this_object())){
 		message_vision(CYN"丐幫弟子在遠處喊道：“"+me->name()+""CYN"，我先走了！”\n"NOR, me);
 		me->delete_temp("quest/天龍八部");
-		me->delete_temp("quest/busy");//任務沖突標志取消 
+		me->delete_temp("quest/busy");//任務衝突標誌取消 
 		me->start_busy(1);
 		return 1;
 	}
@@ -212,7 +212,7 @@ int do_da(string arg)
   if (me->query_temp("out")){
 		message_vision(HIY"$N皺了皺眉頭道："+me->name()+HIY"，你身上這位是......！我先走了！”\n"NOR,ob,me);
 		me->delete_temp("quest/天龍八部");
-		me->delete_temp("quest/busy");//任務沖突標志取消 
+		me->delete_temp("quest/busy");//任務衝突標誌取消 
 		me->delete_temp("out");
 		me->start_busy(1);
 		destruct(ob);
@@ -228,18 +228,18 @@ int do_da(string arg)
 	  while(i--) {
 		  if ( obj[i]->query_temp(QUESTDIR4+"godaliao") && obj[i]!=me) 
 		  {
-			  message_vision(HIY"$N微笑著道：不用擔心了，已經有"+obj[i]->query("name")+RANK_D->query_respect(obj[i]) +"前往大遼營救去了！\n"NOR,ob,me);
+			  message_vision(HIY"$N微笑着道：不用擔心了，已經有"+obj[i]->query("name")+RANK_D->query_respect(obj[i]) +"前往大遼營救去了！\n"NOR,ob,me);
 			  message_vision(HIY"$N晃了晃頭道："+obj[i]->query("name")+RANK_D->query_respect(obj[i]) +"武功高牆，料想沒什麼問題！這樣的話，我先走了！\n"NOR,ob,me);
 			  message_vision(HIY"$N聳了聳肩，做了個揖，轉身離開了。\n"NOR,ob,me);
 			  me->delete_temp("quest/天龍八部");
-			  me->delete_temp("quest/busy");//任務沖突標志取消 
-			  log_file("quest/TLBB", sprintf("%s(%s)開始解救蕭峰，但和%s(%s)沖突失敗。經驗：%d。\n", me->name(1),me->query("id"), obj[i]->name(1),obj[i]->query("id"), me->query("combat_exp")) ); 
+			  me->delete_temp("quest/busy");//任務衝突標誌取消 
+			  log_file("quest/TLBB", sprintf("%s(%s)開始解救蕭峯，但和%s(%s)衝突失敗。經驗：%d。\n", me->name(1),me->query("id"), obj[i]->name(1),obj[i]->query("id"), me->query("combat_exp")) ); 
 			  destruct(ob);
 			  return 1;
 		  }
 	  }
       
-	  message_vision(HIC"$N說道：「"+me->name()+"，我們這就出發，且隨我來。」\n"NOR, ob,me);
+	  message_vision(HIC"$N説道：「"+me->name()+"，我們這就出發，且隨我來。」\n"NOR, ob,me);
 	  if (!(room = find_object(__DIR__"daliao/shulin")))
 		  room = load_object(__DIR__"daliao/shulin");
 	  if(!room)
@@ -249,7 +249,7 @@ int do_da(string arg)
 	  	  return 1;
 	  }
 
-	  tell_object(me,HIY"你跟著丐幫弟子疾步向北走去，你突然發現這丐幫弟子輕功確實不錯，丐幫不愧為天下第一幫。\n"NOR);
+	  tell_object(me,HIY"你跟着丐幫弟子疾步向北走去，你突然發現這丐幫弟子輕功確實不錯，丐幫不愧為天下第一幫。\n"NOR);
 	  message_vision(YEL"$N急急忙忙離開頌摩崖。\n"NOR,me);
 	  message_vision(YEL"$N急急忙忙離開頌摩崖。\n"NOR,ob);
 	  me->move(room);
@@ -257,17 +257,17 @@ int do_da(string arg)
 	  message_vision(YEL"$N急急忙忙來到"+room->query("short")+YEL"。\n"NOR,me);
 	  message_vision(YEL"$N急急忙忙來到"+room->query("short")+YEL"。\n"NOR,ob);
 	  message_vision(HIC"\n$N對$n點了點頭。\n"NOR, ob,me);
-	  message_vision(CYN"$N說道：「一直北行就是遼兵大營。我先行告退，還有幾批武林人士需要接應。"+me->name()+CYN"還請小心，這一路恐怕不免一路廝殺。」\n"NOR, ob,me);
-	  message_vision(CYN"$N說道：「"+RANK_D->query_respect(me) +"最好先去糧倉所在，可以點火（dianhuo），引起混亂，之後伺機營救蕭大俠。蕭大俠據說在遼營左堂附近。」\n"NOR, ob,me);
-	  message_vision(HIC"$N對著$n揮了揮手。\n"NOR, ob,me);
+	  message_vision(CYN"$N説道：「一直北行就是遼兵大營。我先行告退，還有幾批武林人士需要接應。"+me->name()+CYN"還請小心，這一路恐怕不免一路廝殺。」\n"NOR, ob,me);
+	  message_vision(CYN"$N説道：「"+RANK_D->query_respect(me) +"最好先去糧倉所在，可以點火（dianhuo），引起混亂，之後伺機營救蕭大俠。蕭大俠據説在遼營左堂附近。」\n"NOR, ob,me);
+	  message_vision(HIC"$N對着$n揮了揮手。\n"NOR, ob,me);
 	  message_vision(YEL"$N急急忙忙離開"+room->query("short")+YEL"。\n"NOR,ob);
-	  log_file("quest/TLBB", sprintf("%s(%s)已經深入大遼，開始解救蕭峰。經驗：%d。\n", me->name(1),me->query("id"), me->query("combat_exp")) ); 
+	  log_file("quest/TLBB", sprintf("%s(%s)已經深入大遼，開始解救蕭峯。經驗：%d。\n", me->name(1),me->query("id"), me->query("combat_exp")) ); 
 	  me->set_temp(QUESTDIR4+"godaliao",1);
 	  me->set(QUESTDIR4+"start",1);
 	  destruct(ob);
 	  return 1;
 	}
-	message_vision(HIY"$N抓耳撓腮，想了半天說道：“"+arg+"”。\n"NOR, me);
+	message_vision(HIY"$N抓耳撓腮，想了半天説道：“"+arg+"”。\n"NOR, me);
 	message_vision(HIY"$N皺了皺眉頭道："+me->query("name")+HIY"，你的意思是......"+arg+"”\n"NOR,ob,me);
 	message_vision(HIY"$N皺了皺眉頭。\n"NOR,ob);
 	me->start_busy(1);
@@ -288,7 +288,7 @@ int do_da(string arg)
                 return notify_fail("護鏢鏢師閃身攔住你的去路，看來是想把你給廢了！\n");  
  
         if(me->query_temp("xx_rob") && objectp(present("shangdui", environment(me))))
-                return notify_fail("商隊在這裡呢，快搶(qiang)啊！\n");  
+                return notify_fail("商隊在這裏呢，快搶(qiang)啊！\n");  
  
         return ::valid_leave(me, dir);
  }

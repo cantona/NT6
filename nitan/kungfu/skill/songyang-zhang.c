@@ -41,7 +41,7 @@ mapping *action = ({
         "damage_type" : "瘀傷",
         "skill_name"  : "風雲手"
 ]),
-([      "action" : "$N雙掌不斷反轉，使出一式「折手式」，雙掌並攏，筆直地向$n的$l襲去",
+([      "action" : "$N雙掌不斷反轉，使出一式「折手式」，雙掌併攏，筆直地向$n的$l襲去",
         "force"  : 52,
         "attack" : 18,
         "dodge"  : 33,
@@ -51,7 +51,7 @@ mapping *action = ({
         "damage_type" : "瘀傷",
         "skill_name"  : "折手式"
 ]),
-([      "action" : "$N身形一變，使一式「齊掌式」，雙掌帶著蕭剎的勁氣，猛地擊往$n的$l",
+([      "action" : "$N身形一變，使一式「齊掌式」，雙掌帶着蕭剎的勁氣，猛地擊往$n的$l",
         "force"  : 90,
         "attack" : 20,
         "dodge"  : 38,
@@ -81,7 +81,7 @@ mapping *action = ({
         "damage_type" : "瘀傷",
         "skill_name"  : "流水式"
 ]),
-([      "action" : "$N突地一招「天雷手」，雙掌挾著一陣風雷之勢，猛地劈往$n的$l",
+([      "action" : "$N突地一招「天雷手」，雙掌挾着一陣風雷之勢，猛地劈往$n的$l",
         "force"  : 160,
         "attack" : 26,
         "dodge"  : 50,

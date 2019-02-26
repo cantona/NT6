@@ -34,7 +34,7 @@ int update_condition(object me, int duration)
                 {
                         set_temp("jun_quest/last_jiang", time(), me);
                         tell_object(me,
-                                    HIR "新征一批的宋軍到了，趕快加緊訓練吧！！！\n" NOR); 
+                                    HIR "新徵一批的宋軍到了，趕快加緊訓練吧！！！\n" NOR); 
                         liangcao = liangcao - 50;
                         temp = sprintf("%d", liangcao);
                         write_file("/d/city2/song/liangcao", temp, 1);
@@ -47,7 +47,7 @@ int update_condition(object me, int duration)
         if (duration == 1)  
         {
                 WAR_D->remove_enemy();     
-                tell_object(me, HIR "蒙古大軍久攻不下，終于撤軍了！！！\n" NOR);
+                tell_object(me, HIR "蒙古大軍久攻不下，終於撤軍了！！！\n" NOR);
                 tell_object(me, HIR "恭喜你勝利完成此次出征任務，擊敗來犯蒙軍實乃我朝之棟樑啊！！！\n" NOR);    
                 WAR_D->give_bouns();
         }

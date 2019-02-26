@@ -24,7 +24,7 @@
 
                 這個函數的目的是能夠自動判斷是否可以 replace_program().
 
-                注意：由于默認是忽略 create() 不檢查，只有當你
+                注意：由於默認是忽略 create() 不檢查，只有當你
                 不打算 clone 這個物件時，replaceable() 函數返回
                 TRUE 才可以安全地呼叫 replace_program() 函數。
 

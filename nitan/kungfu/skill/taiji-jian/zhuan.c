@@ -34,7 +34,7 @@ int perform(object me, object target)
                 return notify_fail("你沒有激發太極劍法，難以施展" + name() + "。\n");
 
         if (! living(target))
-                return notify_fail("對方都已經這樣了，用不著這麼費力吧？\n");
+                return notify_fail("對方都已經這樣了，用不着這麼費力吧？\n");
 
         msg = HIW "$N" HIW "一聲清嘯，手中" + weapon->name() +
               HIW "龍吟不定，化出一個個圓圈，把$n" HIW "圈在當"

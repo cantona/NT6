@@ -8,9 +8,9 @@ void create()
         set_name("時九公", ({ "shi jiugong", "shi", "jiugong"}));
         set("str", 20);
         set("gender", "男性");
-        set("title", "藥舖掌櫃");
+        set("title", "藥鋪掌櫃");
         set("age", 66);
-        set("long", "據說時九公原是江湖中的名醫。\n");
+        set("long", "據説時九公原是江湖中的名醫。\n");
         set("combat_exp", 250);
         set("attitude", "friendly");
         set("vendor_goods", ({

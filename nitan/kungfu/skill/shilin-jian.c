@@ -23,7 +23,7 @@ mapping *action = ({
         "skill_name"  : "歲歲青蒼",
 ]),
 ([     
-        "action" : "$N手中$w連續刺出三劍「劍出三生」，分向$n的面門，嚥喉，和$l刺去",
+        "action" : "$N手中$w連續刺出三劍「劍出三生」，分向$n的面門，咽喉，和$l刺去",
         "force"  : 120,
         "dodge"  : 55,
         "parry"  : 45,
@@ -34,7 +34,7 @@ mapping *action = ({
         "skill_name"  : "劍出三生",
 ]),
 ([      
-        "action" : "$N輕嘯一聲，一招「舖天蓋地」，$w挽出一個劍花，劍光四射，洒向$n",
+        "action" : "$N輕嘯一聲，一招「鋪天蓋地」，$w挽出一個劍花，劍光四射，灑向$n",
         "force"  : 150, 
         "dodge"  : 65,
         "parry"  : 50,
@@ -42,7 +42,7 @@ mapping *action = ({
         "damage" : 45,
         "lvl"    : 75,
         "damage_type" : "刺傷",
-        "skill_name"  : "舖天蓋地",
+        "skill_name"  : "鋪天蓋地",
 ]),
 ([      
         "action" : "$N凝神聚氣，猛然一劍刺出，不偏不倚，一招「石廩書聲」直指$n$l",
@@ -145,7 +145,7 @@ void skill_improved(object me)
         if( lvl > 120 &&
             !query("can_perform/shilin-jian/luo", me) ) 
         {
-                tell_object(me, WHT "你通曉了石廩劍法「" HIC "落英紛飛" WHT "」的奧秘。\n" NOR);    
+                tell_object(me, WHT "你通曉了石廩劍法「" HIC "落英紛飛" WHT "」的奧祕。\n" NOR);    
                 set("can_perform/shilin-jian/luo", 1, me);
                 me->improve_skill("martial-cognize", 1500000);  
                 me->improve_skill("martial-cognize", 1500000); 

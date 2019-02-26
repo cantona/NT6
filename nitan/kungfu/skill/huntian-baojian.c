@@ -22,7 +22,7 @@ mapping *action = ({
     "damage_type": "割傷"
 ]),
 ([  "action" : "$N錯步上前，一招" HIB "靛滄海" NOR "之「" HIB "深淵勢" NOR
-               "」，雙掌猛然卷一股滔天寒流，席卷$n全身",
+               "」，雙掌猛然卷一股滔天寒流，席捲$n全身",
     "dodge"  : 138,
     "attack" : 180,
     "parry"  : 121,
@@ -32,7 +32,7 @@ mapping *action = ({
     "damage_type": "割傷"
 ]),
 ([  "action" : "$N陡然使出" HIB "靛滄海" NOR "「" HIB "鯨吞勢" NOR "」，雙掌"
-               "上下交錯，繽紛貫出，舖天掌影頓時籠罩$n",
+               "上下交錯，繽紛貫出，鋪天掌影頓時籠罩$n",
     "dodge"  : 121,
     "attack" : 193,
     "parry"  : 113,
@@ -62,7 +62,7 @@ mapping *action = ({
     "damage_type": "割傷"
 ]),
 ([  "action" : "$N陡然使出" HIR "血穹蒼" NOR "之「" HIR "蒼穹無崖" NOR "」，雙掌"
-               "高舉過頂，一聲悶喝，千萬掌鋒澎湃湧出，舖天蓋地席卷$n",
+               "高舉過頂，一聲悶喝，千萬掌鋒澎湃湧出，鋪天蓋地席捲$n",
     "dodge"  : 261,
     "attack" : 103,
     "parry"  : 241,
@@ -72,7 +72,7 @@ mapping *action = ({
     "damage_type": "割傷"
 ]),
 ([  "action" : "$N施出一招" HIR "血穹蒼" NOR "之「" HIR "血陽撕天" NOR "」，凌空"
-               "飛躍，雙爪攜著天穹之勁幻出兩道血光襲出，直攻$n$l",
+               "飛躍，雙爪攜着天穹之勁幻出兩道血光襲出，直攻$n$l",
     "dodge"  : 272,
     "attack" : 239,
     "parry"  : 254,
@@ -102,7 +102,7 @@ mapping *action = ({
     "damage_type": "刺傷"
 ]),
 ([  "action" : "$N陡然使出" HIY "金晨曦" NOR "之「" HIY "十陽歸一" NOR "」，雙掌"
-               "連環使出，舖天蓋地的攻向$n",
+               "連環使出，鋪天蓋地的攻向$n",
     "dodge"  : 321,
     "attack" : 393,
     "parry"  : 513,
@@ -112,7 +112,7 @@ mapping *action = ({
     "damage_type": "刺傷"
 ]),
 ([  "action" : "$N施出一招" HIY "金晨曦" NOR "之「" HIY "金陽破嶺" NOR "」，雙手"
-               "作錐，攜帶著無比凌厲的內勁猛然貫出，直鑽$n的$l",
+               "作錐，攜帶着無比凌厲的內勁猛然貫出，直鑽$n的$l",
     "dodge"  : 312,
     "attack" : 398,
     "parry"  : 454,
@@ -139,12 +139,12 @@ mapping query_action(object me)
 
 int valid_learn(object me)
 {
-        return notify_fail("%……─（%＄﹒！﹒！﹒*#─\n");
+        return notify_fail("%……—（%￥·！·！·*#—\n");
 }
 
 int practice_skill(object me)
 {
-        return notify_fail("%……─（%＄﹒！﹒！﹒*#─\n");
+        return notify_fail("%……—（%￥·！·！·*#—\n");
 }
 
 int difficult_level()

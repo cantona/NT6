@@ -7,7 +7,7 @@ void create()
         set_name("農夫",({ "nong fu", "fu" }) );
         set("gender", "男性" );
         set("age", 22);
-        set("long", "一位烏夷族的農夫，束發總于腦後，用布紗包著，上半身裸露，下著獸皮。\n");
+        set("long", "一位烏夷族的農夫，束髮總於腦後，用布紗包着，上半身裸露，下著獸皮。\n");
         set_temp("apply/defense", 15);
         set("combat_exp", 1700);
         set("shen_type", 1);

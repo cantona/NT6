@@ -23,7 +23,7 @@ void create()
         set_name("冷無風", ({ "leng wufeng", "leng","wufeng" }));
         set("gender", "男性");
         set("age", 32);
-        set("long", "他看起來冷冷的，面部好象僵住了一般，沒有一點表情變化。他就是" + bunch_bad["bunch_name"] + "的成都壇主。\n");
+        set("long", "他看起來冷冷的，面部好像僵住了一般，沒有一點表情變化。他就是" + bunch_bad["bunch_name"] + "的成都壇主。\n");
         set("title",HIB"修羅門成都壇主"NOR);
         set("per",20);
         set("combat_exp", 1000000);

@@ -6,7 +6,7 @@
 inherit SHAOLIN_SKILL;
  
 mapping *action = ({
-([      "action": "$N身形稍退，一招「大鬧閻羅府」，手中$w迎風一抖，朝著$n劈頭蓋臉地砸將下",
+([      "action": "$N身形稍退，一招「大鬧閻羅府」，手中$w迎風一抖，朝着$n劈頭蓋臉地砸將下",
         "dodge" : 31,
         "attack": 31,
         "force" : 289,
@@ -33,7 +33,7 @@ mapping *action = ({
         "lvl"   : 50,
         "damage_type": "砸傷"
 ]),
-([      "action": "$N一聲巨喝，一招「脫困老君爐」！$n一愣之間，$N手中$w已呼嘯而至，掃向$n的$l",
+([      "action": "$N一聲巨喝，一招「脱困老君爐」！$n一愣之間，$N手中$w已呼嘯而至，掃向$n的$l",
         "dodge" : 31,
         "attack": 48,
         "force" : 331,
@@ -42,7 +42,7 @@ mapping *action = ({
         "lvl"   : 75,
         "damage_type": "砸傷"
 ]),
-([      "action": "$N身形稍退，一招「大鬧閻羅府」，手中$w迎風一抖，朝著$n劈頭蓋臉地砸將下",
+([      "action": "$N身形稍退，一招「大鬧閻羅府」，手中$w迎風一抖，朝着$n劈頭蓋臉地砸將下",
         "dodge" : 49,
         "attack": 63,
         "force" : 391,
@@ -60,7 +60,7 @@ mapping *action = ({
         "lvl"   : 130,
         "damage_type": "砸傷"
 ]),
-([      "action": "$N連翻幾個筋鬥，使出「三打白骨精」，手中$w轉得如風車一般，一連三棒直擊$n頂門",
+([      "action": "$N連翻幾個筋斗，使出「三打白骨精」，手中$w轉得如風車一般，一連三棒直擊$n頂門",
         "dodge" : 31,
         "attack": 83,
         "force" : 503,
@@ -132,7 +132,7 @@ mapping query_action(object me, object weapon)
                 addn("neili", -300, me);
                 return ([
                 "action": HIY "$N" HIY "將" + wn + HIY "一揮，使出取經棍法絕技「"
-                          HIR "玉宇澄清萬裡埃" HIY "」，霎時" + wn + HIY "頂端紫"
+                          HIR "玉宇澄清萬里埃" HIY "」，霎時" + wn + HIY "頂端紫"
                           "芒閃耀，直襲$n" HIY,
                 "force" : 800,
                 "attack": 180,

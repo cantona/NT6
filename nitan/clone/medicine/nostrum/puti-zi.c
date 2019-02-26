@@ -41,7 +41,7 @@ int do_eat(string arg)
         if(!present(this_object(), me))
                 return notify_fail("你要吃什麼？\n");
         if( me->is_busy() )
-                return notify_fail("別急，慢慢吃，小心別噎著了。\n");
+                return notify_fail("別急，慢慢吃，小心別噎着了。\n");
 
         if ( (int)me->query_condition("putizi_drug" ) > 0 )
         {
@@ -60,7 +60,7 @@ int do_eat(string arg)
                 addn("max_neili", 100, me);
                 addn("neili", 100, me);
 
-                message_vision(HIY "$N吃下一顆菩提子，頓然間只覺一股浩盪無比的真氣直沖頂門...\n" NOR, this_player());
+                message_vision(HIY "$N吃下一顆菩提子，頓然間只覺一股浩蕩無比的真氣直衝頂門...\n" NOR, this_player());
                 me->apply_condition("putizi_drug", 1000);
         }
         me->unconcious();

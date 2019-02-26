@@ -7,8 +7,8 @@ int ask_naogui();
 void create()
 {
         set_name("裘千丈", ({ "qiu qianzhang", "qiu", "qianzhang", "zhang" }));
-        set("long", "這是一個白須老頭，身穿黃葛短衫，足穿麻鞋，右\n"
-                    "手揮著一把大蒲扇。滿臉的油滑無賴的表情。\n");
+        set("long", "這是一個白鬚老頭，身穿黃葛短衫，足穿麻鞋，右\n"
+                    "手揮着一把大蒲扇。滿臉的油滑無賴的表情。\n");
 
         set("gender", "男性");
         set("age", 60);
@@ -68,8 +68,8 @@ void create()
 
 
         set("inquiry", ([
-                "name" : "記得先父曾給我起過一個名，叫甚麼‘千丈’。我念著不好聽，也就難得用它。\n",
-                "here" : "這裡就是鐵掌幫的總壇所在，你如沒事，不要四處亂走，免招殺身之禍！！！\n",
+                "name" : "記得先父曾給我起過一個名，叫甚麼‘千丈’。我念着不好聽，也就難得用它。\n",
+                "here" : "這裏就是鐵掌幫的總壇所在，你如沒事，不要四處亂走，免招殺身之禍！！！\n",
                 "鬧鬼" : (: ask_naogui :),
         ]));
 
@@ -81,9 +81,9 @@ void create()
 
         set("chat_chance", 10);
         set("chat_msg", ({
-                CYN "裘千丈大大咧咧的說道：“鐵掌幫上上下下的事情，沒有爺爺不"
+                CYN "裘千丈大大咧咧的説道：“鐵掌幫上上下下的事情，沒有爺爺不"
                 "知道的！”\n" NOR,
-                CYN "裘千丈神秘的說道：“一旦內功基礎有成，就可以從花草樹木"
+                CYN "裘千丈神祕的説道：“一旦內功基礎有成，就可以從花草樹木"
                 "中採氣來提高了！”\n" NOR,
         }) );
 }
@@ -101,7 +101,7 @@ void attempt_apprentice(object me)
                 command("say 我道是誰，原來是三妹的弟子，我們本來就是一家人。");
                 command("sigh");
                 command("say 這個事情我做不了主，你還是去找二弟吧。");
-                set("move_party/絕情谷─鐵掌幫", 1, me);
+                set("move_party/絕情谷—鐵掌幫", 1, me);
                 return;
         }
 
@@ -112,7 +112,7 @@ void attempt_apprentice(object me)
                 return;
         }
 
-        command("say 爺爺我武功蓋世，你這娃娃好好跟著我學，準沒錯！");
+        command("say 爺爺我武功蓋世，你這娃娃好好跟着我學，準沒錯！");
         command("recruit "+query("id", me));
 }
 
@@ -127,10 +127,10 @@ int accept_ask(object me, string topic)
 {
         switch (topic)
         {
-        case "孤雁出群" :
+        case "孤雁出羣" :
                 return MASTER_D->teach_pfm(me, this_object(),
                         ([ "perform" : "can_perform/tongbi-zhang/chu",
-                           "name"    : "孤雁出群",
+                           "name"    : "孤雁出羣",
                            "sk1"     : "tongbi-zhang",
                            "lv1"     : 80,
                            "force"   : 40,
@@ -173,7 +173,7 @@ void unconcious()
 
 int ask_naogui()
 {
-        say( "聽一些幫眾說，經常聽見無名峰上的墳墓中，傳出響聲！嘿嘿！一定有什麼蹊蹺在裡面！\n");
+        say( "聽一些幫眾説，經常聽見無名峯上的墳墓中，傳出響聲！嘿嘿！一定有什麼蹊蹺在裏面！\n");
         set_temp("marks/鬧1", 1, this_player());
         return 1;
 }

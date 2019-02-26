@@ -12,7 +12,7 @@ void create()
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("long", "這件黃色的綢衫上面繡著幾只紅花，聞起來還有一股淡香。\n");
+                set("long", "這件黃色的綢衫上面繡着幾隻紅花，聞起來還有一股淡香。\n");
                 set("unit", "件");
                 set("material", "cloth");
                 set("armor_prop/armor", 1);

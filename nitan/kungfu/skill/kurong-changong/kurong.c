@@ -28,8 +28,8 @@ int exert(object me, object target)
 
         skill=me->query_skill("kurong-changong",1)+me->query_skill("buddhism",1);
 
-        message("vision",HIW"\n"+query("name", me)+"雙掌合十，氣息流轉下，一張臉片刻間變得血肉全無只剩枯骨！再片刻，又回復血肉充盈的模樣。\n\n"NOR,environment(me),me);
-        tell_object(me, HIW "\n你雙掌合十，運轉枯榮心法，一股真氣自丹田而生，沿心脈流轉不息，臉上一枯一榮閃現，片刻即回復正常。\n\n" NOR);
+        message("vision",HIW"\n"+query("name", me)+"雙掌合十，氣息流轉下，一張臉片刻間變得血肉全無只剩枯骨！再片刻，又回覆血肉充盈的模樣。\n\n"NOR,environment(me),me);
+        tell_object(me, HIW "\n你雙掌合十，運轉枯榮心法，一股真氣自丹田而生，沿心脈流轉不息，臉上一枯一榮閃現，片刻即回覆正常。\n\n" NOR);
 
         set_temp("kurong", skill*4*query("max_neili", me)/2000, me);
 

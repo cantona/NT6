@@ -37,7 +37,7 @@ int perform(object me, object target)
                 return notify_fail("你現在真氣太弱，難以施展" DAN "。\n");
 
         if (! living(target))
-                return notify_fail("對方都已經這樣了，用不著這麼費力吧？\n");
+                return notify_fail("對方都已經這樣了，用不着這麼費力吧？\n");
 
         msg = HIM "$N" HIM "凝聚內力，深深吸入一口氣，掌勁吞吐，對準$n"
               HIM "平平拍出。\n" NOR;

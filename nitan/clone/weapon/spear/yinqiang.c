@@ -13,7 +13,7 @@ void create()
                 set_default_object(__FILE__);
         else {
                 set("unit", "把");
-                set("long","這是把沉重的長槍，槍尖是純銀打制，鋒利無比．\n");
+                set("long","這是把沉重的長槍，槍尖是純銀打製，鋒利無比．\n");
                 set("value", 18000);
                 set("material", "silver");
                 set("wield_msg","$N拿出一把$n握在手中，眼前閃過一道寒光．\n");

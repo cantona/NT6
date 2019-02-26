@@ -34,7 +34,7 @@ int perform(object me, object target)
                 return notify_fail("你的內力不夠，不能使用聖火令法之" + name() + "。\n");
 
         if (! living(target))
-                return notify_fail("對方都已經這樣了，用不著這麼費力吧？\n");
+                return notify_fail("對方都已經這樣了，用不着這麼費力吧？\n");
 
         msg = HIY "$N" HIY "猛吸一口氣，使出聖火令法之「" HIW "光華令" HIY "」，手中"
               + weapon->name() + NOR + HIY "御駕如飛，幻出無數道金"
@@ -49,7 +49,7 @@ int perform(object me, object target)
 
                 addn("neili", -100, me);
                 msg += COMBAT_D->do_damage(me, target, WEAPON_ATTACK, damage, 60,
-                       HIR "$n" HIR "只覺萬道金芒舖天蓋地席卷而來，"
+                       HIR "$n" HIR "只覺萬道金芒鋪天蓋地席捲而來，"
                        "完全無法阻擋。頓時只感全身幾處刺痛，鮮血飛"
                        "濺而出！\n" NOR);
 
@@ -57,7 +57,7 @@ int perform(object me, object target)
         } else
         {
                 msg += CYN "可是$n" CYN "看準$N" CYN "的破綻，猛地向"
-                       "前一躍，跳出了$N" CYN "的攻擊范圍。\n"NOR;
+                       "前一躍，跳出了$N" CYN "的攻擊範圍。\n"NOR;
                 addn("neili", -150, me);
                 me->start_busy(4);
         }

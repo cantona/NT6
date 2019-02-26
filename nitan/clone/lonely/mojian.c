@@ -10,7 +10,7 @@ void create()
         if (clonep())
                 destruct(this_object());
         else {
-                set("long", WHT "一柄通體墨黑的長劍，劍身透著奇異的光澤。\n" NOR);
+                set("long", WHT "一柄通體墨黑的長劍，劍身透着奇異的光澤。\n" NOR);
                 set("unit", "柄");
                 set("value", 800000);
                 set("no_sell", 1);

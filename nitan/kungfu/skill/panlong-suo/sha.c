@@ -40,7 +40,7 @@ int perform(object me, object target)
                 return notify_fail("你的真氣不夠，難以施展" SHA "。\n");
 
         if (! living(target))
-                return notify_fail("對方都已經這樣了，用不著這麼費力吧？\n");
+                return notify_fail("對方都已經這樣了，用不着這麼費力吧？\n");
 
         msg = HIR "突然間$N" HIR "猛的猱身撲上，手中" + weapon->name() +
               HIR "急轉，便似不要命般地向$n" HIR "猛攻過去。\n" NOR;

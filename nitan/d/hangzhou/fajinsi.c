@@ -4,9 +4,9 @@
 inherit ROOM;
 void create()
 {
-        set("short", "法凈寺");
+        set("short", "法淨寺");
         set("long", @LONG
-法凈寺依山而立，寺前小溪流水。進香的遊客不時的進進出出。
+法淨寺依山而立，寺前小溪流水。進香的遊客不時的進進出出。
 南上往上天竺。朝北是下山的路。
 LONG);
         set("exits", ([

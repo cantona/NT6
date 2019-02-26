@@ -20,7 +20,7 @@ int perform(object me, object target)
 
         if( !objectp(weapon=query_temp("handing", me)) || 
             ! weapon->is_arrow())
-                return notify_fail("你現在手中並沒有拿著箭，怎麼施展百步穿楊？\n");
+                return notify_fail("你現在手中並沒有拿着箭，怎麼施展百步穿楊？\n");
 
         if (weapon->query_amount() < 3)
                 return notify_fail("至少要有一支箭你才能施展百步穿楊。\n");
@@ -34,9 +34,9 @@ int perform(object me, object target)
         addn("neili", -80, me);
         weapon->add_amount(-1);
 
-        msg= HIY "突然間，$N" HIY "幾個筋鬥倒翻而去，已在$n" HIY
+        msg= HIY "突然間，$N" HIY "幾個筋斗倒翻而去，已在$n" HIY
              "數丈之外。$n" HIY "正待追擊，$N" HIY "忽然轉身，好一個「百步穿楊」！\n"
-             HIY "說時遲，那時快，" HIY + weapon->name() + HIY "已帶著破空之聲，直射$n"
+             HIY "説時遲，那時快，" HIY + weapon->name() + HIY "已帶着破空之聲，直射$n"
              HIY "面門！\n" NOR;
 
         me->start_busy(2);

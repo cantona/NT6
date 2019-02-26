@@ -1,7 +1,7 @@
 inherit SKILL;
 
 mapping *action = ({
-([      "action" : "$N斜裡沖前一步，身法詭異，手中$w急速橫掃$n的$l",
+([      "action" : "$N斜裏衝前一步，身法詭異，手中$w急速橫掃$n的$l",
         "force"  : 220,
         "damage" : 40,
         "dodge"  : 50,
@@ -19,13 +19,13 @@ mapping *action = ({
         "dodge"  : 60,
         "damage_type" : "挫傷"
 ]),
-([      "action" : "$N突然一個急轉身，$w橫掃一圈後挾著猛烈的勁道打向$n而去",
+([      "action" : "$N突然一個急轉身，$w橫掃一圈後挾着猛烈的勁道打向$n而去",
         "force"  : 200,
         "damage" : 45,
         "dodge"  : 65,
         "damage_type" : "挫傷"
 ]),
-([      "action" : "$N向前順勢一滾，接著翻身跳起，手裡$w斜向上擊向$n的$l",
+([      "action" : "$N向前順勢一滾，接着翻身跳起，手裏$w斜向上擊向$n的$l",
         "force"  : 220,
         "damage" : 30,
         "dodge"  : 55,

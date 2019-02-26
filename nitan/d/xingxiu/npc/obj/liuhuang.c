@@ -17,7 +17,7 @@ void create()
                 set_default_object(__FILE__);
         else {
                 set("unit", "塊");
-                set("long", "一塊硫磺，通常用來制作火藥。\n");
+                set("long", "一塊硫磺，通常用來製作火藥。\n");
                 set("value", 200);
         }
 }
@@ -29,7 +29,7 @@ int do_make(string arg)
         if( !arg || arg!="lianxin dan" )
                 return notify_fail("你要做什麼？\n");
         if( me->query_skill("poison", 1) < 120)
-                return notify_fail("你的毒技火侯不夠，不能制作煉心彈。\n");
+                return notify_fail("你的毒技火侯不夠，不能製作煉心彈。\n");
         if(! present("wugong ke", me) && !present("xiezi ke", me)
         && !present("shedan", me) && !present("du zhusi", me)
         && !present("shachong ke", me))

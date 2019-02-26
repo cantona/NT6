@@ -20,7 +20,7 @@ int do_effect(object me)
         my = me->query_entire_dbase();
 
         if( me->is_busy() )
-                return notify_fail("急什麼，小心別噎著了。\n");
+                return notify_fail("急什麼，小心別噎着了。\n");
 
         me->set_temp("last_eat/dan(full)", time());
 

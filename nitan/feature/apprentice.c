@@ -69,7 +69,7 @@ int recruit_apprentice(object ob)
         if( !mapp(my_family = query("family")) )
                 return 0;
 
-        // 這裡處理判師的bug
+        // 這裏處理判師的bug
         family_name = query("family/family_name", ob);
         if( family_name && family_name != my_family["family_name"] )
         {

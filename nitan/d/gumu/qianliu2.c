@@ -8,7 +8,7 @@ void create()
 {
         set("short", HIR"潛流"NOR);
         set("long", @LONG
-你沒在水中，只覺水勢甚急，沖得你無法立足。你氣悶異常，只得屏氣摸
+你沒在水中，只覺水勢甚急，衝得你無法立足。你氣悶異常，只得屏氣摸
 索潛行，當真是進退維谷。
 LONG        );
 
@@ -44,13 +44,13 @@ int do_qian(string arg)
         object me;      
         me=this_player();       
         if ( !arg || arg != "down" )    
-                return notify_fail("你要往哪裡潛？\n"); 
+                return notify_fail("你要往哪裏潛？\n"); 
         if ( me->is_busy() || me->is_fighting())        
-                return notify_fail("你正忙著哪！\n");   
+                return notify_fail("你正忙着哪！\n");   
         if (arg =="down")
         {       
                 if ((int)me->query_encumbrance() * 100 / (int)me->query_max_encumbrance() <= 50)        
-                        return notify_fail("由于重力不夠，你無法繼續下潛!\n");  
+                        return notify_fail("由於重力不夠，你無法繼續下潛!\n");  
                 message_vision(HIG"$N一個猛栽，潛了下去。\n"NOR, me);   
                 me->receive_damage("jing", 500);        
                 me->receive_damage("qi", 500);          

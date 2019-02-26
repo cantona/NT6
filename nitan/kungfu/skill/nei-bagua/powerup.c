@@ -23,7 +23,7 @@ int exert(object me, object target)
         addn("neili", -100, me);
         me->receive_damage("qi", 0);
         message_combatd(HIY "$N" HIY "凝神聚氣，運起內八卦神功，真氣頓時灌滿"
-                        "全身，衣衫欲裂，氣勢磅礡。\n" NOR, me);
+                        "全身，衣衫欲裂，氣勢磅礴。\n" NOR, me);
 
         addn_temp("apply/attack", skill/3, me);
         addn_temp("apply/defense", skill/3, me);

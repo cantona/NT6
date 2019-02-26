@@ -24,7 +24,7 @@ int exert(object me, object target)
                 return notify_fail( target->name() +
                         "已經受傷過重，經受不起你的真氣震盪！\n");
 
-        message_combatd(HIY "$N坐了下來運起內功，將手掌貼在$n背心，緩緩地將真氣輸入$n體內....\n\n過了不久，$N額頭上冒出豆大的汗珠，$n吐出一口瘀血，臉色看起來紅潤多了。\n$n慢慢的蘇醒過來。\n" NOR, me, target );
+        message_combatd(HIY "$N坐了下來運起內功，將手掌貼在$n背心，緩緩地將真氣輸入$n體內....\n\n過了不久，$N額頭上冒出豆大的汗珠，$n吐出一口瘀血，臉色看起來紅潤多了。\n$n慢慢的甦醒過來。\n" NOR, me, target );
 
         target->receive_curing("qi", 10 + (int)me->query_skill("force")/3 );
         addn("qi", 10+me->query_skill("force")/3, target);

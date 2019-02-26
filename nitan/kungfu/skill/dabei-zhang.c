@@ -2,7 +2,7 @@
 inherit SKILL;
 
 mapping *action = ({
-([      "action" : "$N身形急晃，施出大悲掌「" HIG "浪濤勢" NOR "」，右掌帶著切骨之勁砍向$n",
+([      "action" : "$N身形急晃，施出大悲掌「" HIG "浪濤勢" NOR "」，右掌帶着切骨之勁砍向$n",
         "force" : 180,
         "attack": 23,
         "dodge" : 25,
@@ -12,7 +12,7 @@ mapping *action = ({
         "skill_name"  : "浪濤勢",
         "damage_type" : "內傷"
 ]),
-([      "action" : "$N一招「" HIG "深淵勢" NOR "」，雙掌斜出，萬千道掌寒勁從四面八方席卷$n",
+([      "action" : "$N一招「" HIG "深淵勢" NOR "」，雙掌斜出，萬千道掌寒勁從四面八方席捲$n",
         "force" : 240,
         "attack": 41,
         "dodge" : 25,

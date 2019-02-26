@@ -101,7 +101,7 @@ mixed hit_ob(object me, object victim, int damage_bonus)
 
         if (! living(victim) || victim->is_busy() || random(4))return 0;
 
-        message_vision(HIR "\n$N一招攻出，竟卷起千層氣浪，太玄內勁頓時源源不絕湧入$n體內！\n" NOR, me, victim);
+        message_vision(HIR "\n$N一招攻出，竟捲起千層氣浪，太玄內勁頓時源源不絕湧入$n體內！\n" NOR, me, victim);
 
         addn("neili", -50, me);
 

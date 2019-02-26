@@ -9,8 +9,8 @@ void create()
     else { 
         set("unit", "本");  
         set("material", "book"); 
-        set("long", "張三豐自創武功太極劍的心法。\n");   
+        set("long", "張三丰自創武功太極劍的心法。\n");   
      } 
-     set("owner", "張三豐"); 
+     set("owner", "張三丰"); 
         setup();  
 }

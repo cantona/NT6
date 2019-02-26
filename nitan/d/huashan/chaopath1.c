@@ -2,9 +2,9 @@ inherit ROOM;
 
 void create()
 {
-      set("short","朝陽峰小路");
+      set("short","朝陽峯小路");
         set("long", @LONG
-這裡是朝陽峰小路，山勢陡峭，兩邊下臨深谷，一不小心都會掉
+這裏是朝陽峯小路，山勢陡峭，兩邊下臨深谷，一不小心都會掉
 了下去。
 LONG );
       set("outdoors", "huashan");

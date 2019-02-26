@@ -26,7 +26,7 @@ mapping *action = ({
         "lvl" : 0,
         "skill_name" : "初露星芒"
 ]),
-([        "action" : "$N右手微向前一伸，使出『乍見星辰』，手裡$w徑直射向$n的雙眼",
+([        "action" : "$N右手微向前一伸，使出『乍見星辰』，手裏$w徑直射向$n的雙眼",
         "damage": 40,
         "dodge" : 15,
         "post_action": (: call_other, "/adm/daemons/weapond", "throw_weapon" :),
@@ -47,11 +47,11 @@ mapping *action = ({
         "damage": 55,
         "dodge" : 25,
         "post_action": (: call_other, "/adm/daemons/weapond", "throw_weapon" :),
-        "damage_type": "紮傷",
+        "damage_type": "扎傷",
         "lvl" : 27,
         "skill_name" : "星光閃爍"
 ]),
-([        "action" : "$N右手一揮，一招『星芒不定』，$n明明看見$N手裡的$w已射向自己
+([        "action" : "$N右手一揮，一招『星芒不定』，$n明明看見$N手裏的$w已射向自己
 的胸前大穴，到了近處卻突然轉攻向自己的後心",
         "damage": 60,
         "dodge" : 20,
@@ -60,7 +60,7 @@ mapping *action = ({
         "lvl" : 36,
         "skill_name" : "星芒不定"
 ]),
-([        "action" : "$N不急不緩地一矮身，使出『墜落之星』，手中$w平直地射向$n的嚥
+([        "action" : "$N不急不緩地一矮身，使出『墜落之星』，手中$w平直地射向$n的咽
 喉，卻又加上暗勁使之中途改向，射向$n的下盤",
         "damage": 70,
         "dodge" : 30,
@@ -69,7 +69,7 @@ mapping *action = ({
         "lvl" : 45,
         "skill_name" : "墜落之星"
 ]),
-([        "action" : "$N騰身一躍而起，施展出『黎明之星』，手裡的$w從上往下筆直地射
+([        "action" : "$N騰身一躍而起，施展出『黎明之星』，手裏的$w從上往下筆直地射
 向$n的頭部",
         "damage": 85,
         "dodge" : 30,
@@ -96,8 +96,8 @@ mapping *action = ({
         "lvl" : 72,
         "skill_name" : "星光頓滅"
 ]),
-([        "action" : "$N突然騰身向後急退，使出『星空炸雷』，雙手向前一推，手裡$w就
-隱隱帶著雷聲疾射向$n",
+([        "action" : "$N突然騰身向後急退，使出『星空炸雷』，雙手向前一推，手裏$w就
+隱隱帶着雷聲疾射向$n",
         "damage": 240,
         "dodge" : 45,
         "post_action": (: call_other, "/adm/daemons/weapond", "throw_weapon" :),
@@ -105,7 +105,7 @@ mapping *action = ({
         "lvl" : 81,
         "skill_name" : "星空炸雷"
 ]),
-([        "action" : "$N施展出『"+HIW"星劃長空"NOR+"』，原地側身飛起，右手微微向前一洒，手中$w
+([        "action" : "$N施展出『"+HIW"星劃長空"NOR+"』，原地側身飛起，右手微微向前一灑，手中$w
 幻作一點寒光呈圓弧形射向$n",
         "damage": 260,
         "dodge" : 50,
@@ -115,7 +115,7 @@ mapping *action = ({
         "skill_name" : "星劃長空"
 ]),
 ([        "action" : "$N微微凝神，使出『"+HIY"星光萬丈"NOR+"』，身影飄忽不定，$n頓覺十分刺眼，卻
-見$N手裡的$w已挾著地上的沙石以及周圍的樹頁攻向自己",
+見$N手裏的$w已挾着地上的沙石以及周圍的樹頁攻向自己",
         "damage": 190,
         "dodge" : 55,
         "post_action": (: call_other, "/adm/daemons/weapond", "throw_weapon" :),
@@ -123,7 +123,7 @@ mapping *action = ({
         "lvl" : 99,
         "skill_name" : "星光萬丈"
 ]),
-([        "action" : "$N忽然輕嘆一聲，轉身而行，$n正遲疑間，卻見眼前已盡是$w的影子，
+([        "action" : "$N忽然輕歎一聲，轉身而行，$n正遲疑間，卻見眼前已盡是$w的影子，
 眼看無處可躲了！只怕這招就是『"+HIC"滿天星雨"NOR+"』了，$n不由大驚失色",
         "damage": 220,
         "dodge" : 70,

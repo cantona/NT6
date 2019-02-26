@@ -19,7 +19,7 @@ void create()
                set_default_object(__FILE__);
        else{
        set("unit", "具");
-       set("long", "這副骸骨躺在這裡已經很久了。\n");
+       set("long", "這副骸骨躺在這裏已經很久了。\n");
        set("value", 0);
        set("material","wood");
        set("no_get",1);

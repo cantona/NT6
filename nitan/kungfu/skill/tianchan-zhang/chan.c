@@ -42,10 +42,10 @@ int perform(object me)
                 return notify_fail("你的內力不夠，，難以施展" + name() + "。\n");
 
         if (! living(target))
-                return notify_fail("對方都已經這樣了，用不著這麼費力吧？\n");
+                return notify_fail("對方都已經這樣了，用不着這麼費力吧？\n");
 
-        msg = HIR "$N" HIR "一聲冷笑，聚氣于掌，飛身一躍而起，一招"
-                  "攜滿劇毒的「毒蟾掌」對著$n" HIR "凌空拍下！\n"NOR;
+        msg = HIR "$N" HIR "一聲冷笑，聚氣於掌，飛身一躍而起，一招"
+                  "攜滿劇毒的「毒蟾掌」對着$n" HIR "凌空拍下！\n"NOR;
 
         ap = attack_power(me, "strike") + lvl;
         dp = defense_power(target, "parry");
@@ -61,7 +61,7 @@ int perform(object me)
                 ]));
                 msg += COMBAT_D->do_damage(me, target, REMOTE_ATTACK, damage, 70,
                         HIR "只聽$n" HIR "慘叫一聲，被$N" HIR "這一掌"
-                        "拍個正著，頓時毒氣攻心，“哇”地噴出一大口鮮血。\n" NOR);
+                        "拍個正着，頓時毒氣攻心，“哇”地噴出一大口鮮血。\n" NOR);
 
                 me->start_busy(2);
         } else

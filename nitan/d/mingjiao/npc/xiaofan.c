@@ -39,7 +39,7 @@ void greeting(object ob)
         if( !ob || environment(ob) != environment() ) return;
         switch(random(2)){
           case 0:
-          say(CYN"小販子笑咪咪地說道：這位"+RANK_D->query_respect(ob)+"，要明教簡史嗎？\n"NOR);
+          say(CYN"小販子笑咪咪地説道：這位"+RANK_D->query_respect(ob)+"，要明教簡史嗎？\n"NOR);
           break;
           case 1:
           break;

@@ -37,7 +37,7 @@ int perform(object me, object target)
                 return notify_fail("你內力不足，無法施展" + name() + "。\n");
 
         if (! living(target))
-               return notify_fail("對方都已經這樣了，用不著這麼費力吧？\n");
+               return notify_fail("對方都已經這樣了，用不着這麼費力吧？\n");
 
         msg = HIR "$N" HIR "一聲陰笑，使出纏魂索鎖魂絕跡，揮舞出滿天鞭影，將$n"
               HIR "全全籠罩！\n\n" NOR;
@@ -47,7 +47,7 @@ int perform(object me, object target)
 
         if (ap / 2 + random(ap) > dp)
         {
-                msg += HIY "結果$n" HIY "被這排山倒海般的攻擊攻了個措手不及，陷如困境，完全無法脫身！\n" NOR;
+                msg += HIY "結果$n" HIY "被這排山倒海般的攻擊攻了個措手不及，陷如困境，完全無法脱身！\n" NOR;
                 target->start_busy(ap/120 + 2);
                 me->start_busy(1 + random(2));
         } else

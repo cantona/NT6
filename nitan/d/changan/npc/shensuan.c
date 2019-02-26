@@ -28,7 +28,7 @@ void create()
 
         set("inquiry", ([
                 "算命": (: ask_suanming :),
-                "秘密": (: ask_mimi :),
+                "祕密": (: ask_mimi :),
                 "信": (: ask_letter :),
         ]));
 
@@ -68,7 +68,7 @@ string ask_mimi()
         if( !query_temp("mimi", me))return "這個嘛，我不知道也！";
         delete_temp("mimi", me);
         set_temp("letter", 1, me);
-        return "很多年前，我的爺爺的爺爺給我留下一封信，我知道信中隱藏著一個大秘密。";
+        return "很多年前，我的爺爺的爺爺給我留下一封信，我知道信中隱藏着一個大祕密。";
 }
 
 int ask_letter()
@@ -76,15 +76,15 @@ int ask_letter()
         object ob,me=this_player();
         int p1;
         if (query("letter") < 1)
-                say("神算子很遺憾的說道：這樣東西我已經給人了。\n");
+                say("神算子很遺憾的説道：這樣東西我已經給人了。\n");
         if( query("passwd1", me) )
         {
-                say("神算子很不耐煩的說道：我把我知道的都告訴你了，還問什麼嘛！\n");
+                say("神算子很不耐煩的説道：我把我知道的都告訴你了，還問什麼嘛！\n");
         }else
         if( query_temp("letter", me) )
         {
-                say("神算子嘿嘿的姦笑了幾聲，道：你想要這封手信嗎？\n");
-                write("神算子歪頭想了會，說道：好吧！\n");
+                say("神算子嘿嘿的奸笑了幾聲，道：你想要這封手信嗎？\n");
+                write("神算子歪頭想了會，説道：好吧！\n");
                 p1=random(6)+1;
                 set("passwd1", p1, me);
                 write("這封信的後面已經看不到了，但我隱約記得曾多次提到"+CHINESE_D->chinese_number(p1)+"樣什麼東西的。\n");
@@ -96,7 +96,7 @@ int ask_letter()
                         ob=new("/d/changan/obj/letter.c");
                 ob->move(me);
         } else {
-                message("vision","神算子不知道你在說什麼也！！\n", me);
+                message("vision","神算子不知道你在説什麼也！！\n", me);
         }
         return 1;
 }
@@ -167,7 +167,7 @@ int do_suan(string arg)
                         command("say "+ob->name()+"福緣深厚，吉人自有天相。");
                 }else {
                         command("hmm");
-                        command("say "+ob->name()+"這一生看來是注定要多歷磨難了。");
+                        command("say "+ob->name()+"這一生看來是註定要多歷磨難了。");
                 }
                 break;
                 case 2 :
@@ -176,7 +176,7 @@ int do_suan(string arg)
                         command("say "+ob->name()+"天資過人，若能多加努力，必定能出人頭地。");
                 } else {
                         command("shake");
-                        command("say "+ob->name()+"如果知道〝笨鳥先飛〝的道理，還是有機會的。");
+                        command("say "+ob->name()+"如果知道＂笨鳥先飛＂的道理，還是有機會的。");
                 }
                 break;
                 case 3 :

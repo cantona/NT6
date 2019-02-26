@@ -17,7 +17,7 @@ int main(object me, string arg)
         int i;
         
         if(me->is_busy())
-                return notify_fail("什麼事都得等你忙完再說吧！\n");
+                return notify_fail("什麼事都得等你忙完再説吧！\n");
 
         if (! arg)
                 return notify_fail("指令格式：buy <物品> from <玩家>\n");
@@ -35,7 +35,7 @@ int main(object me, string arg)
         env = environment(me);
 
         if (! (obj = find_player(my_id)) || ! (present(query("id", obj), env))) 
-                return notify_fail("這裡沒有這個商人。\n");
+                return notify_fail("這裏沒有這個商人。\n");
 
         if (obj == me)
                 return notify_fail("問自己買東西？吃飽了撐的？\n");
@@ -50,7 +50,7 @@ int main(object me, string arg)
                 return notify_fail(obj->name(1) + "並沒有兜售任何貨物。\n");
 
         if (me->is_busy())
-                return notify_fail("你現在正忙著呢。\n");
+                return notify_fail("你現在正忙着呢。\n");
 
         ob = present(arg, obj);
 
@@ -74,7 +74,7 @@ int main(object me, string arg)
         {
         case 0:
                 write(CYN + obj->name(1) + CYN "冷笑一聲，罵道：窮"
-                      "光蛋，一邊呆著去。\n" NOR);
+                      "光蛋，一邊呆着去。\n" NOR);
                 return 1;
         case 2:
                 write(CYN + obj->name(1) + CYN "皺眉道：您還有沒有"
@@ -83,11 +83,11 @@ int main(object me, string arg)
         default:
                 if (ob->query_amount())
                 {
-                        message_vision("$N從$n那裡買下了" + ob->short() + "。\n",
+                        message_vision("$N從$n那裏買下了" + ob->short() + "。\n",
                                         me, obj);
                 } else
                 {
-                        message_vision("$N從$n那裡買下了一"+query("unit", ob)+
+                        message_vision("$N從$n那裏買下了一"+query("unit", ob)+
                                        query("name", ob)+"。\n",
                                        me, obj);
                 }

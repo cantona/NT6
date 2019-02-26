@@ -10,7 +10,7 @@ void create()
         set("int", 28);
         set("per", 23);
         set("long", 
-"這是個飽讀詩書的南洋書生，他一直向往中土文化，特來趕考。\n");
+"這是個飽讀詩書的南洋書生，他一直嚮往中土文化，特來趕考。\n");
 
         set("attitude", "peaceful");
         set_skill("literate", 40);

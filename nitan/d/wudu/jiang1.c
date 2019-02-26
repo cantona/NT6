@@ -5,9 +5,9 @@ void create()
 {
         set ("short", "桃花江西岸");
         set ("long", @LONG
-這裡是桃花江 (river)邊，江水清澈，水流平緩，兩岸都
+這裏是桃花江 (river)邊，江水清澈，水流平緩，兩岸都
 是無邊的桃樹，不斷有桃花隨風飄入江中，隨波逐流。江邊停
-泊著一條渡船。
+泊着一條渡船。
 LONG);
         set("to", "/d/wudu/jiang2");
         set("exits", ([

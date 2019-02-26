@@ -192,7 +192,7 @@ varargs int identify_ultimate_ob(object item, int close)
 
                 if (!close)
                 CHANNEL_D->do_channel(find_object(ITEM_D), "rumor",
-                              "聽說上古神品" + item->name() + HIM +
+                              "聽説上古神品" + item->name() + HIM +
                               "來到了人間。");
 
 
@@ -243,7 +243,7 @@ varargs int identify_ultimate_ob(object item, int close)
 
                         if (!close)
                         CHANNEL_D->do_channel(find_object(ITEM_D), "rumor",
-                                "聽說上古神品" + item->name() + HIM +
+                                "聽説上古神品" + item->name() + HIM +
                                 "來到了人間。");
 
                 } else
@@ -286,7 +286,7 @@ varargs int identify_ultimate_ob(object item, int close)
 
                         if (!close)
                         CHANNEL_D->do_channel(find_object(ITEM_D), "rumor",
-                                "聽說遠古神品" + item->name() + HIM +
+                                "聽説遠古神品" + item->name() + HIM +
                                 "來到了人間。");
                 }
 
@@ -339,7 +339,7 @@ varargs int identify_ultimate_ob(object item, int close)
                 item->save();
                 if (!close)
                 CHANNEL_D->do_channel(find_object(ITEM_D), "rumor",
-                              "聽說遠古神品" + item->name() + HIM +
+                              "聽説遠古神品" + item->name() + HIM +
                               "來到了人間。");
 
                 log_file("static/ultimate", sprintf("%s Have 105 SN. Wash %d Times. %s\n",
@@ -413,7 +413,7 @@ varargs int identify_ultimate_ob(object item, int close)
                 item->save();
                 if (!close)
                 CHANNEL_D->do_channel(find_object(ITEM_D), "rumor",
-                              "聽說太古神品" + item->name() + HIM +
+                              "聽説太古神品" + item->name() + HIM +
                               "來到了人間。");
 
                 log_file("static/ultimate", sprintf("%s Have 121 SN. Wash %d Times. %s\n",

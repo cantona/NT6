@@ -14,7 +14,7 @@ void  create()
     set("race",  "野獸");
     set("gender",  "雄性");
     set("age",  2);
-    set("long",  "一只慢騰騰的賽龜。\n");
+    set("long",  "一隻慢騰騰的賽龜。\n");
     set("attitude",  "friendly");
     set("str",  20+random2(2));
     set("spi",  20+random2(2));

@@ -31,10 +31,10 @@ int do_push(string arg) {
                 return notify_fail("你要推什麼？\n");
                 
         if(query_generate_taoist()) {
-                message_vision("$N推開了棺材，但是裡面什麼都沒有。\n",this_player());
+                message_vision("$N推開了棺材，但是裏面什麼都沒有。\n",this_player());
                 return 1;
         } else {
-                message_vision("$N推開了棺材，裡面滾出個人來。\n",this_player());
+                message_vision("$N推開了棺材，裏面滾出個人來。\n",this_player());
                 taoist = new("/maze/necropolis/npc/taoist");
                 taoist->move(environment(this_player()));
                 set_generate_taoist(1);

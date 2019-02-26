@@ -44,7 +44,7 @@ int perform(object me, object target)
                 return notify_fail("你現在的真氣不足，，難以施展" ZHUI "。\n");
 
         if (! living(target))
-                return notify_fail("對方都已經這樣了，用不著這麼費力吧？\n");
+                return notify_fail("對方都已經這樣了，用不着這麼費力吧？\n");
 
         ap = me->query_skill("sword");
         dp = target->query_skill("parry");
@@ -61,11 +61,11 @@ int perform(object me, object target)
                                            "頓時破體鑽入，鮮血四濺！\n" NOR);
         } else
         {
-                msg += CYN "可是$n" CYN "奮力格擋，終于架開了$N"
+                msg += CYN "可是$n" CYN "奮力格擋，終於架開了$N"
                        CYN "的這一劍。\n" NOR;
         }
 
-        msg += HIM "\n$N" HIM "隨即抽劍回轉，撩下劈上，手中" + weapon->name() + HIM 
+        msg += HIM "\n$N" HIM "隨即抽劍迴轉，撩下劈上，手中" + weapon->name() + HIM 
                "劍尖一顫，又激盪出一股旋渦勁鑽向$n" HIM "。\n" NOR;
         if (ap * 2 / 5 + random(ap) > dp)
         {
@@ -76,7 +76,7 @@ int perform(object me, object target)
         } else
         {
                 msg += CYN "可是$n" CYN "凝神聚氣，飛身一躍而起，避開了$N"
-                       CYN "的殺著。\n" NOR;
+                       CYN "的殺着。\n" NOR;
         }
         me->start_busy(2 + random(3));
         addn("neili", -350, me);

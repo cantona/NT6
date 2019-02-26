@@ -1,4 +1,4 @@
-// chan.c 鬆風劍法「纏」字訣
+// chan.c 松風劍法「纏」字訣
 // Last Modified by winder on Aug. 13 2000
 
 #include <ansi.h>
@@ -55,7 +55,7 @@ int perform(object me, object target)
         if( query("neili", me)<300 )
                 return notify_fail("你的內力不夠，不會使用「纏」字訣。\n");
 
-        msg = HIG"$N"HIG"使出鬆風劍法「纏」字訣，將手中劍搭在$n"HIG"兵刃上，劍隨意轉，連綿不絕，使$n"HIG"一時無法變招。\n";
+        msg = HIG"$N"HIG"使出松風劍法「纏」字訣，將手中劍搭在$n"HIG"兵刃上，劍隨意轉，連綿不絕，使$n"HIG"一時無法變招。\n";
         
         if( random(query("combat_exp", me))>query("combat_exp", target)/4 )
         {
@@ -84,7 +84,7 @@ int help(object me)
 
         出手要求：
                 青冥玄功50級
-                鬆風劍法40級
+                松風劍法40級
                 內力300
 HELP
         );

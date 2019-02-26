@@ -14,32 +14,32 @@ int query_neili_improve(object me)
         return lvl /10 * lvl /10 * 15 * 28 / 10 / 20;
 }
 string *dodge_msg = ({
-        "$N身形加速，電光挪移，饒是$n攻擊范圍既廣且厲，卻總能在間不容發的空隙避過",
-        "$N空中快速轉折，在$n每次攻擊前又倏乎消失，一下子就脫出$n的攻擊范圍",        
+        "$N身形加速，電光挪移，饒是$n攻擊範圍既廣且厲，卻總能在間不容髮的空隙避過",
+        "$N空中快速轉折，在$n每次攻擊前又倏乎消失，一下子就脱出$n的攻擊範圍",        
         "$N只覺眼前一花，只見到$n身形一幌，自己的招數居然莫名其妙就落空了", 
-        "$N憑著高速身法，在$n的攻擊范圍內進退趨避，險險閃過一道又一道的攻擊",
+        "$N憑著高速身法，在$n的攻擊範圍內進退趨避，險險閃過一道又一道的攻擊",
         "$N騰挪快速，竟然在空中形成身影殘像，有如無數$N一起挪動",
         "$n眼前忽然一花，眼前$N的身影似乎有些淡化，而另外一個$N竟爾出現在面前不足一尺的近處",
 });
 
 string *parry_msg = ({
-        "眼看$n轉眼已攻至，$N輕描淡寫，卻又快絕無比，把$n的招式化于無形",
+        "眼看$n轉眼已攻至，$N輕描淡寫，卻又快絕無比，把$n的招式化於無形",
         "$n眼看得手之際，突覺一股陰柔勁道蝕$W急上，沒等接觸，整條手臂已劇痛起來，忙叫一聲不好，慌然急退",
-        "$n陡覺手上勁力如泥牛入海，摸不著底處，暗叫不妙，$N卻又已經攻至",
-        "$n心下一凜，但見對手守勢，如萬裡長空，曠遠不知其深，包容萬物，無從下手",
+        "$n陡覺手上勁力如泥牛入海，摸不着底處，暗叫不妙，$N卻又已經攻至",
+        "$n心下一凜，但見對手守勢，如萬里長空，曠遠不知其深，包容萬物，無從下手",
 });
 
 
 string *action_msg = ({
-        "$N十指微張，看似簡單的，卻在張開的同時，爆發了沛然莫敵的沖擊力擊向$n",
+        "$N十指微張，看似簡單的，卻在張開的同時，爆發了沛然莫敵的衝擊力擊向$n",
         "$N運起明玉功，身體逐漸變得透明，森寒殺意如有實質，隔空鎖鎮住$n",
-        "$N雙手一張一收，平實的一招卻讓$n有如處于漩渦之中，動彈不得",
+        "$N雙手一張一收，平實的一招卻讓$n有如處於漩渦之中，動彈不得",
         "$N將明玉功提至極限，一招一式，神妙無方，如天外神龍，縱橫來去",
-        "$N手中$w幻化出點點星雨，逕自往四面八方洒去，形成無數小氣旋",
+        "$N手中$w幻化出點點星雨，逕自往四面八方灑去，形成無數小氣旋",
         "$n陡覺一股氣旋急壓而下，扯得自己身形不定，同時一股陰柔內勁夾於其，盡數封死了$n周遭退路",
         "$N一招擊中$n，同時一股陰柔內勁綿綿不絕的湧入$n的體內，侵筋蝕脈",
         "$N催運明玉功，，進似神龍矯捷，退若靈蛇竄動，$n只覺得眼花撩亂",
-        "$N微一揚手，繞身明玉勁如毒蛇洪水似地爆起，群蛇亂舞，亂攻向$n",
+        "$N微一揚手，繞身明玉勁如毒蛇洪水似地爆起，羣蛇亂舞，亂攻向$n",
         "$n只覺得股陰柔內勁傳來，跟著便是手上一沉，好似有什麼東西，讓手臂變成千斤重物，拖的自己直往前跌",
 });
 
@@ -80,7 +80,7 @@ int valid_learn(object me)
                 return notify_fail("修煉明玉功必須是處子之身。\n");
 
         if( query("int", me)<30 )
-                return notify_fail("你覺得明玉功過于艱深，難以理解。\n");
+                return notify_fail("你覺得明玉功過於艱深，難以理解。\n");
 
         if( query("max_neili", me)<3500 )
             return notify_fail("你的內力修為太淺，無法運轉明玉功。\n");
@@ -88,7 +88,7 @@ int valid_learn(object me)
         level = me->query_skill("mingyu-gong", 1);
 
         if ((int)me->query_skill("martial-cognize", 1) < 100)
-                return notify_fail("你覺得明玉功過于深奧，以自己的武學修養"
+                return notify_fail("你覺得明玉功過於深奧，以自己的武學修養"
                                    "全然無法明白。\n");
 
         if ((int)me->query_skill("force", 1) < 200)
@@ -133,7 +133,7 @@ mixed valid_damage(object ob, object me, int damage, object weapon)
                 switch (random(2))
                 {
                 case 0:
-                        result += (["msg" : HIR "$n" HIR "默念明玉功總訣，收斂"
+                        result += (["msg" : HIR "$n" HIR "默唸明玉功總訣，收斂"
                                             "內勁，承下$N" + HIR "這一招，$N" HIR
                                             "只覺猶如進入綿綿長河中，絲毫不起作用。\n"
                                             NOR]);
@@ -255,7 +255,7 @@ void skill_improved(object me)
         if( lvl > 200 &&
             !query("can_perform/mingyu-gong/qiong", me) ) 
         {
-                tell_object(me, HIC "你通曉了明玉功「" HIR "瓊樓玉宇" HIC "」的奧秘。\n" NOR);    
+                tell_object(me, HIC "你通曉了明玉功「" HIR "瓊樓玉宇" HIC "」的奧祕。\n" NOR);    
                 set("can_perform/mingyu-gong/qiong", 1, me);
                 me->improve_skill("martial-cognize", 1500000);  
                 me->improve_skill("martial-cognize", 1500000);  
@@ -265,7 +265,7 @@ void skill_improved(object me)
         if( lvl > 300 &&
             !query("can_perform/mingyu-gong/gua", me) ) 
         {
-                tell_object(me, HIC "你通曉了明玉功「" HIR "冰河倒掛" HIC "」的奧秘。\n" NOR);    
+                tell_object(me, HIC "你通曉了明玉功「" HIR "冰河倒掛" HIC "」的奧祕。\n" NOR);    
                 set("can_perform/mingyu-gong/gua", 1, me);
                 me->improve_skill("martial-cognize", 1500000);  
                 me->improve_skill("martial-cognize", 1500000);  
@@ -275,7 +275,7 @@ void skill_improved(object me)
         if( lvl > 500 &&
             !query("can_perform/mingyu-gong/moqi", me) ) 
         {
-                tell_object(me, HIC "你通曉了明玉功「" HIR "魔氣血殺" HIC "」的奧秘。\n" NOR);    
+                tell_object(me, HIC "你通曉了明玉功「" HIR "魔氣血殺" HIC "」的奧祕。\n" NOR);    
                 set("can_perform/mingyu-gong/moqi", 1, me);
                 me->improve_skill("martial-cognize", 1500000);  
                 me->improve_skill("martial-cognize", 1500000);  

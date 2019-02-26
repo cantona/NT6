@@ -7,7 +7,7 @@ void create()
         set_name("老祭司", ({ "lao jisi", "jisi" }));
         set("age", 62);
         set("gender", "男性");
-        set("long", "一個頗老朽的擺夷老人，穿戴齊整，是本村的祭司，權力頗大，相當于族長。\n"); set("attitude", "peaceful");
+        set("long", "一個頗老朽的擺夷老人，穿戴齊整，是本村的祭司，權力頗大，相當於族長。\n"); set("attitude", "peaceful");
 
         set("str", 20);
         set("per", 12);

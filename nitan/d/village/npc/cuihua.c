@@ -7,7 +7,7 @@ void create()
         set_name("翠花",({ "cui hua", "hua" }) );
         set("gender", "女性" );
         set("age", 25);
-        set("long", "這是個打扮很妖艷的少婦，時不時的用眼角向你掃一眼。\n");
+        set("long", "這是個打扮很妖豔的少婦，時不時的用眼角向你掃一眼。\n");
 
 //      set("shen", -100);
         set("shen_type", -1);

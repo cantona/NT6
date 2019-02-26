@@ -41,7 +41,7 @@ void init()
 
         if( interactive(ob=this_player()) && query_temp("mazei", ob) )
         {
-                say( "馬賊對著你大吼：你竟敢不交！老子宰了你！\n");
+                say( "馬賊對着你大吼：你竟敢不交！老子宰了你！\n");
                 remove_call_out("kill_ob");
                 call_out("kill_ob", 1, ob);
         }
@@ -57,7 +57,7 @@ void greeting(object ob)
         if( !ob || environment(ob) != environment() ) return;
         say( "馬賊橫刀當道，一聲大喊：此山是我開，此樹是我栽，若要
 從此過，留下買路財 !\n");
-        say( "馬賊說道：識相點兒，寶貝兒留下來就讓你小子走！\n");
+        say( "馬賊説道：識相點兒，寶貝兒留下來就讓你小子走！\n");
         set_temp("mazei", 1, ob);
 }
 

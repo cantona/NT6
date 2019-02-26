@@ -5,10 +5,10 @@ void create ()
 {
   set ("short","海防碼頭");
   set ("long", @LONG
-這裡是安南的碼頭。北方最大港口，第二大城，軍事要地。位于紅河
+這裏是安南的碼頭。北方最大港口，第二大城，軍事要地。位於紅河
 三角洲東北部，東臨北部灣。靠在岸邊的船密密麻麻，有魚家用的小魚船、
 運貨用的商船、還有普通人用不起的官船，船上船下人們忙落異常。旁
-邊好象有搭客的商船。有船(chuan) 可以去中國海南。
+邊好像有搭客的商船。有船(chuan) 可以去中國海南。
 LONG);
 
   set("exits", ([ 
@@ -40,8 +40,8 @@ int do_enter ( string arg )
          return 1 ;
        }
     ob = this_player () ;
-    message_vision("船夫一見有人上船，忙叫了一聲：開船嘍！\n", ob);
-    message_vision("船夫升起帆，船就向東北方航行。\n", ob);
+    message_vision("船伕一見有人上船，忙叫了一聲：開船嘍！\n", ob);
+    message_vision("船伕升起帆，船就向東北方航行。\n", ob);
     ob ->move("/d/quanzhou/dahai") ;
     tell_object(ob, BLU "你在海上航行了很久很久.......\n" NOR ) ;
     call_out("tpenghu", 10 , ob );
@@ -49,6 +49,6 @@ int do_enter ( string arg )
 }
 void tpenghu(object ob )
 {
-    tell_object(ob , "大船終于抵達了中國海南。你走下船來。\n" ) ;
+    tell_object(ob , "大船終於抵達了中國海南。你走下船來。\n" ) ;
     ob->move ("/d/hainan/haibian") ;
 }

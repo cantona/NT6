@@ -18,7 +18,7 @@ void create()
 {
         set_name("胡桂南", ({ "hu guinan", "hu" }) );
         set("nickname", "聖手神偷");
-        set("long","這是一個身材瘦小的漢子。\n他上唇留了兩撇鼠須，眸子一翻，精光逼人。\n");
+        set("long","這是一個身材瘦小的漢子。\n他上脣留了兩撇鼠須，眸子一翻，精光逼人。\n");
         set("gender", "男性" );
         set("age", 35);
         set("attitude", "peaceful");
@@ -110,7 +110,7 @@ int stealing(object ob, object* inv)
         if( !ob || environment(ob) != environment() ) return 1;
         if( !query("no_fight", environment(ob)) )
         {
-//                if(tester) tell_object(tester,"胡桂南告訴你：這裡可以戰鬥，我好怕怕，不偷了。\n");
+//                if(tester) tell_object(tester,"胡桂南告訴你：這裏可以戰鬥，我好怕怕，不偷了。\n");
                 return 1;
         }
         obj = inv[random(sizeof(inv))];
@@ -139,7 +139,7 @@ int stealing(object ob, object* inv)
                 return random_walk();
         }
 
-//        if(tester) tell_object(tester, "胡桂南告訴你：真倒霉，沒偷到。\n");
+//        if(tester) tell_object(tester, "胡桂南告訴你：真倒黴，沒偷到。\n");
         remove_call_out("stealing");
         call_out("stealing", 60, ob, inv);
         // if fail, will try to steal again  -winder

@@ -37,7 +37,7 @@ int perform(object me, object target)
                 return notify_fail("你沒有準備伏虎拳法，難以施展" YOU "。\n");
 
        if (! living(target))
-              return notify_fail("對方都已經這樣了，用不著這麼費力吧？\n");
+              return notify_fail("對方都已經這樣了，用不着這麼費力吧？\n");
 
         msg = HIW "\n$N" HIW "步成弓形，大喝一聲施出絕招「" HIG "伏虎式" HIW "」，"
               "一拳猛地擊向$n" NOR"。\n" NOR;

@@ -78,7 +78,7 @@ void send_to_fight (object me, object who)
 {
         object yupei = new("/d/changan/npc/obj/yupei");
         yupei->move(who);
-        message_vision("$N對$n說道：還請這位" +
+        message_vision("$N對$n説道：還請這位" +
                        RANK_D->query_respect(who) +
                        "再幫幫忙，將我女兒搭救出來！\n\n",
                        me, who);
@@ -126,7 +126,7 @@ void cry_daughter(object me, object xiangxiang, object who, object yupei)
         destruct(yupei);
         command("thank "+query("id", who));
         command("say 這位" + RANK_D->query_respect(who) +
-                "救我兒湘湘逃出魔掌！老夫這裡有一本書，\n是"
+                "救我兒湘湘逃出魔掌！老夫這裏有一本書，\n是"
                 "祖上傳下來的，就送給" + RANK_D->query_respect(who) +
                 "吧！\n");
         carry_object("/d/changan/npc/obj/book");

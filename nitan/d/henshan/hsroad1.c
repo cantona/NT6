@@ -7,7 +7,7 @@ void create()
 {
         set("short", "黃土路");
         set("long", @LONG
-你走在一條塵土飛揚的黃土路上，兩旁是陰森森的樹林。這裡向北通往
+你走在一條塵土飛揚的黃土路上，兩旁是陰森森的樹林。這裏向北通往
 揚州，往南就進入湖南地界了。
 LONG );
         set("outdoors", "hengyang");

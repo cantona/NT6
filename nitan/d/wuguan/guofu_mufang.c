@@ -5,9 +5,9 @@ void create()
 {
     	set("short", "木房");
     	set("long", @LONG
-一進屋，你就被巨大的轟鳴聲吵住了，這裡堆了好多長的
+一進屋，你就被巨大的轟鳴聲吵住了，這裏堆了好多長的
 木頭，準備要做柴火用的，但是在送去柴房前先得把長木頭鋸
-短成一截截的。你看見幾個人在費力的鋸著。
+短成一截截的。你看見幾個人在費力的鋸着。
 LONG);
         set("no_fight", 1);
         set("exits", ([
@@ -33,13 +33,13 @@ int do_pi(string arg)
 
         if( query_temp("mark/鋸完了", me) )
             	return notify_fail(CYN "木房管事嚷嚷道：喂喂喂，讓你去覆命，還留"
-                                   "在這裡幹嘛？\n" NOR);
+                                   "在這裏幹嘛？\n" NOR);
 
         if( query_temp("job_name", me) != "鋸木頭" )
             	return notify_fail(CYN "木房管事對你喝道：沒事你瞎折騰什麼？\n" NOR);
 
         if (me->is_busy())
-		return notify_fail("你現在正忙著呢。\n");
+		return notify_fail("你現在正忙着呢。\n");
 
         if (me->is_fighting())
 		return notify_fail("你正在戰鬥中，無法專心幹活！\n");
@@ -73,7 +73,7 @@ int do_pi(string arg)
            && present("mufang guanshi", environment(me)))
 	{
                 set_temp("mark/鋸完了", 1, me);
-                message_vision(CYN "\n木房管事對$N" CYN "說：幹的不錯，好了，你可"
+                message_vision(CYN "\n木房管事對$N" CYN "説：乾的不錯，好了，你可"
                                "以去向耶律大爺覆命(" HIY "fuming" NOR + CYN ")了"
                                "。\n" NOR, me);
                 return 1;

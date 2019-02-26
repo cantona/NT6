@@ -4,8 +4,8 @@ void create()
 {
         set("short", "小巷");
         set("long", @LONG
-洛陽東城的一條由碎石舖砌的小巷，非常僻靜。剛下過雨，路面看起
-來還滿幹凈的。
+洛陽東城的一條由碎石鋪砌的小巷，非常僻靜。剛下過雨，路面看起
+來還滿乾淨的。
 LONG);
         set("outdoors", "luoyang");
         set("no_clean_up", 0);

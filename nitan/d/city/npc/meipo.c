@@ -19,8 +19,8 @@ void create()
 
         set("chat_chance", 15); 
         set("chat_msg", ({ 
-                "花媒婆神秘兮兮的說道：據說靈山上有傳說中的雪蓮花，那可是送給心上人最好的禮物哦。\n",
-                "花媒婆訕訕的說：這個～～他是個瘸子，老婆子我可沒說他不是啊，這嫁都嫁了，還能怪我？\n",
+                "花媒婆神祕兮兮的説道：據説靈山上有傳説中的雪蓮花，那可是送給心上人最好的禮物哦。\n",
+                "花媒婆訕訕的説：這個～～他是個瘸子，老婆子我可沒説他不是啊，這嫁都嫁了，還能怪我？\n",
                 "花媒婆偷偷一笑：這雪蓮花戴上了真是花容月貌啊，我老婆子可要想個法子留下，不能就這麼給了那小娘子。\n"
         }) ); 
 
@@ -49,7 +49,7 @@ void greeting(object ob)
       {
            if( query("gender", ob) == "無性" )
            {
-                 message_vision("$N對$n搖頭嘆道：可惜是個太監，不然也到" +
+                 message_vision("$N對$n搖頭歎道：可惜是個太監，不然也到" +
                                 "娶媳婦的時候了。\n", this_object(), ob);
                  return;
            }
@@ -71,7 +71,7 @@ void greeting(object ob)
            {
                  if( query("per", ob)<20 )
 
-                 message_vision("$N看見$n，嘆了口氣：這位姑娘雖不愁嫁，可要找" +
+                 message_vision("$N看見$n，歎了口氣：這位姑娘雖不愁嫁，可要找" +
                                 "個好人家卻非易事！\n", this_object(), ob);
                  else
 
@@ -139,7 +139,7 @@ int do_agree()
            return 1;
       }
 
-      tell_object(ob, HIC"花媒婆對你道：既如此，老婆子就給你把這好事兒跟對方說說。\n"NOR);
+      tell_object(ob, HIC"花媒婆對你道：既如此，老婆子就給你把這好事兒跟對方説説。\n"NOR);
       who=find_player(query_temp("mameipo/who", ob));
       if (!who)
       {
@@ -147,9 +147,9 @@ int do_agree()
            return 1;
       }
 
-      tell_object(who,query("name", ob)+"托花媒婆給你送來朵"+HIR+"紅玫瑰"NOR+"。\n");
+      tell_object(who,query("name", ob)+"託花媒婆給你送來朵"+HIR+"紅玫瑰"NOR+"。\n");
       command("tell"+query_temp("mameipo/who", ob)+""+query("name", ob)+"("+
-              query("id", ob)+")對你很有意思，托老婆子給你說說。\n");
+              query("id", ob)+")對你很有意思，託老婆子給你説説。\n");
       new("/d/city/obj/rrose")->move(who);
       tell_object(ob, HIC"花媒婆對你道：老婆子已經把你的意思轉告了，你這就去提親吧。\n"NOR);
       delete_temp("mameipo/who", ob);

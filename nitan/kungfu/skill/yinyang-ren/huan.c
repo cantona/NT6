@@ -40,10 +40,10 @@ int perform(object me, object target)
                 return notify_fail("你沒有激發陰陽刃法，難以施展" HUAN "。\n");
 
         if (! living(target))
-                return notify_fail("對方都已經這樣了，用不著這麼費力吧？\n");
+                return notify_fail("對方都已經這樣了，用不着這麼費力吧？\n");
 
         msg = HIY "$N" HIY "長嘯一聲，手中" + weapon->name() + HIY "化出"
-              "無數光環，猛然間光芒瀑漲，連連洒向$n" HIY "。\n" NOR;
+              "無數光環，猛然間光芒瀑漲，連連灑向$n" HIY "。\n" NOR;
 
         // 根據所激發的是sword或blade來判斷ap值。
         if (me->query_skill_mapped("sword") == "yinyang-ren")

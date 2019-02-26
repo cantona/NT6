@@ -8,7 +8,7 @@ void create()
                 set_default_object(__FILE__);
         else {
                 set("unit", "塊");
-                set("long", "這是一塊用于通行少林寺的鐵鑄令牌。 由方丈簽發，邀各路英雄入寺觀禮。\n");
+                set("long", "這是一塊用於通行少林寺的鐵鑄令牌。 由方丈簽發，邀各路英雄入寺觀禮。\n");
                 set("value", 100);
                 set("material", "iron");
         }

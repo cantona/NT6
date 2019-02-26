@@ -5,7 +5,7 @@ void create()
 {
         set_name("精靈獵人", ({ "spirit hunter", "hunter"}));
         set("long",
-                "他眉目清秀，手持弓箭，似乎正在等待著什麼。\n");
+                "他眉目清秀，手持弓箭，似乎正在等待着什麼。\n");
         set("gender", "男性");
         set("age", 30);
         set("attitude", "peaceful");
@@ -37,7 +37,7 @@ void create()
 
         set("chat_chance",3);
         set("chat_msg", ({
-            "精靈獵人說道：這裡是個大獵場，只要耐心打獵(hunting)，一定會有大收獲。\n"
+            "精靈獵人説道：這裏是個大獵場，只要耐心打獵(hunting)，一定會有大收穫。\n"
         }));
 
         setup();
@@ -61,7 +61,7 @@ void greeting(object ob)
 { 
 int change=0;
 if( !ob || environment(ob) != environment() ) return;
-message_vision( "\n$N微笑道：這位"+RANK_D->query_respect(ob) + "，來到這裡一定很辛苦，歇歇再走吧。\n",this_object());
+message_vision( "\n$N微笑道：這位"+RANK_D->query_respect(ob) + "，來到這裏一定很辛苦，歇歇再走吧。\n",this_object());
 }
 
 int do_hunting()
@@ -71,12 +71,12 @@ int do_hunting()
         int i;
 
         if( query_temp("in_hunting", me) )
-           return notify_fail("精靈獵人對你說：專心狩獵，不要東張西望。\n");
+           return notify_fail("精靈獵人對你説：專心狩獵，不要東張西望。\n");
         ob = users();
         for (i=sizeof(ob); i>0; i--)
         {
                 if (query_temp("in_hunting", ob[i-1]))
-                return notify_fail("精靈獵人對你說：已經有人在狩獵了，你先休息一下吧。\n");
+                return notify_fail("精靈獵人對你説：已經有人在狩獵了，你先休息一下吧。\n");
         }
         tell_room(environment(me),query("name", me)+"開始隱藏起來，準備狩獵。\n");
         set("hunter", HIY"獵人"NOR, me);
@@ -92,7 +92,7 @@ void clone_beast(object me)
 {
         object ob;
         if (! me) return;
-        tell_room(environment(me),"幾只野獸從樹林裡警惕地走出來，要打獵就是現在了！\n");
+        tell_room(environment(me),"幾隻野獸從樹林裏警惕地走出來，要打獵就是現在了！\n");
         switch (random(6)) {
          case 0: 
         ob=new("/quest/tulong/npc/wolf");

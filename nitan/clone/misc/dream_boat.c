@@ -23,12 +23,12 @@ void create()
                 set("value", 1);
                                 
                                 if (query("running"))
-                                    set("long", HIR "\n船夫(chuanfu)吆喝道：我們的船正在行使中，請耐心等候。\n" NOR);
+                                    set("long", HIR "\n船伕(chuanfu)吆喝道：我們的船正在行使中，請耐心等候。\n" NOR);
                                 else
-                                        set("long", HIC "\n船夫(chuanfu)吆喝道：我們的船正在等待中，你可以先在船上休息（enter）。\n" NOR);
+                                        set("long", HIC "\n船伕(chuanfu)吆喝道：我們的船正在等待中，你可以先在船上休息（enter）。\n" NOR);
 
                                 set("item_desc", ([
-                                        "chuanfu" : "這是一位經驗豐富船夫，正忙得不可開焦。\n",
+                                        "chuanfu" : "這是一位經驗豐富船伕，正忙得不可開焦。\n",
                                 ]));
                                 set("no_flyto", 1);
                                 set("no_clean_up", 1);
@@ -44,7 +44,7 @@ void create()
 
                 set("unit", "艘");
                 set("material", "wood");
-                set("no_get", "船夫(chuanfu)喝道：好家伙，這你也想扛在肩上？\n");
+                set("no_get", "船伕(chuanfu)喝道：好傢伙，這你也想扛在肩上？\n");
                                 
         }
         setup();        
@@ -70,11 +70,11 @@ int do_enter ( string arg )
         }
 
                 if (environment(ob) == this_object())
-                        return notify_fail("船夫(chuanfu)道：你已經在船上了。\n");
+                        return notify_fail("船伕(chuanfu)道：你已經在船上了。\n");
                 
         ob ->move(this_object());
 
-                tell_object(ob, HIG "船夫(chuanfu)對你說道：要下船請輸入 out 。\n" NOR);
+                tell_object(ob, HIG "船伕(chuanfu)對你説道：要下船請輸入 out 。\n" NOR);
 
         return 1 ;
 }
@@ -110,12 +110,12 @@ void heart_beat()
                 if (query("running"))
                 {
                         if (time() - query("start_time") >= query("running_time") / 2 )                        
-                                set("long", HIR "\n船夫(chuanfu)吆喝道：我們的船正在行使中，已行使超過路程的一半，請耐心等候。\n" NOR);                        
+                                set("long", HIR "\n船伕(chuanfu)吆喝道：我們的船正在行使中，已行使超過路程的一半，請耐心等候。\n" NOR);                        
                         else
-                                set("long", HIR "\n船夫(chuanfu)吆喝道：我們的船正在行使中，請耐心等候。\n" NOR);
+                                set("long", HIR "\n船伕(chuanfu)吆喝道：我們的船正在行使中，請耐心等候。\n" NOR);
                 }
                 else
-                        set("long", HIC "\n船夫(chuanfu)吆喝道：我們的船正在等待中(開船剩余" + sprintf("%d", left_time) + "分鐘)，你可以先在船上休息（enter）。\n" NOR);
+                        set("long", HIC "\n船伕(chuanfu)吆喝道：我們的船正在等待中(開船剩餘" + sprintf("%d", left_time) + "分鐘)，你可以先在船上休息（enter）。\n" NOR);
                 
                 inv = all_inventory(this_object());
                 obs = filter_array(inv, (: userp($1) :)); // 過濾掉非玩家物件
@@ -129,7 +129,7 @@ void heart_beat()
                                         set("stop_time", time()); // 設置到站時間
                                         this_object()->move(query("dest_place"));
                                         delete("running");
-                                        message_vision(HIC "船夫(chuanfu)吆喝道：客官們小心喲，船靠岸了 ……\n" NOR, this_object());
+                                        message_vision(HIC "船伕(chuanfu)吆喝道：客官們小心喲，船靠岸了 ……\n" NOR, this_object());
                                         foreach(ob in obs)
                                         {
                                                 ob->move(environment(this_object()));                                                
@@ -155,7 +155,7 @@ void heart_beat()
                         {
                                 set("start_time", time());
                                 set("running", 1);
-                                message_vision(HIC "船夫(chuanfu)吆喝道：小心啦，船起航了 ……\n" NOR, this_object());
+                                message_vision(HIC "船伕(chuanfu)吆喝道：小心啦，船起航了 ……\n" NOR, this_object());
                                 this_object()->move("/clone/misc/sea");
                         }
                         return;

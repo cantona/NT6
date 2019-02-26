@@ -24,7 +24,7 @@ void create()
         //set("shen_type", -1);        
         //set("chat_chance", 2);
         //set("chat_msg", ({
-        //               "骷髏空洞的眼眶裡閃爍著可怕的熒光。\n"
+        //               "骷髏空洞的眼眶裏閃爍着可怕的熒光。\n"
         //}) ); 
         set("death_msg",BLU"\n$N消失不見了。\n\n"NOR);
         set("chat_chance_combat", 100);
@@ -73,7 +73,7 @@ void do_fire() {
         enemies = query_enemy();
         if(!enemies || sizeof(enemies)==0)
                 return;
-        message_vision(HIB"$N突然消失，同時無數幽幽的藍火仿佛受到召喚從地下升騰而起， \n$N周圍頓時變成了恐怖的人間煉獄。 \n"NOR, this_object()); 
+        message_vision(HIB"$N突然消失，同時無數幽幽的藍火彷彿受到召喚從地下升騰而起， \n$N周圍頓時變成了恐怖的人間煉獄。 \n"NOR, this_object()); 
         foreach(enemy in enemies) {
                 if(enemy) {
                         message_vision(HIC "\n一條條蠕動的藍火如蟒蛇般纏上了$N。\n"NOR, enemy, this_object()); 

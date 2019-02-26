@@ -63,7 +63,7 @@ int perform(object me, object target)
                 target->receive_damage("qi", damage,me);
                 target->receive_wound("qi", damage/2,me);
                 addn("neili", -(damage/4), me);
-                msg += HIR "$n只覺劍勢如夜幕般舖天蓋地般壓來，一時間眼前一花，兩耳轟鳴，無從招架！！\n"NOR;
+                msg += HIR "$n只覺劍勢如夜幕般鋪天蓋地般壓來，一時間眼前一花，兩耳轟鳴，無從招架！！\n"NOR;
                 me->start_busy(1);
         } else 
         {

@@ -43,7 +43,7 @@ int do_enter(string arg)
                 write("你想幹什麼呀?\n");
                 return 1;
         }
-        message_vision("$N深吸了一口氣，慢慢沿著洞壁往外爬。\n", me);
+        message_vision("$N深吸了一口氣，慢慢沿着洞壁往外爬。\n", me);
         me->move(__DIR__"pingtai");
         return 1;
 }

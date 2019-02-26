@@ -8,7 +8,7 @@ void create()
         set("gender", "女性" );
         set("age", 16);
         set("long", 
-"這是個十六、七歲的江南女孩，清秀可人，一臉溫柔的神情。\n");
+"這是個十六、七歲的江南女孩，清秀可人，一臉温柔的神情。\n");
         set_temp("apply/defense", 5);
         set("combat_exp", 200);
 //        set("shen", 100);

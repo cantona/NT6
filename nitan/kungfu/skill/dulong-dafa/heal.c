@@ -13,7 +13,7 @@ int exert(object me, object target)
         if( me->is_fighting() )
                 return notify_fail("戰鬥中運功療傷？找死嗎？\n");
         if( me->is_busy() )
-                return notify_fail("你現在正忙著呢，哪有空運功？\n");
+                return notify_fail("你現在正忙着呢，哪有空運功？\n");
         if( (int)me->query_skill("dulong-dafa", 1) < 20)
                 return notify_fail("你的毒龍大法修為還不夠。\n");
         if( query("neili", me)<50 )

@@ -4,10 +4,10 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "回廊");
+        set("short", "迴廊");
         set("long", @LONG
-這是御花園外的回廊，兩旁是朱紅的廊柱，廊頂是飛檐琉璃瓦，地
-上舖著白玉石板。
+這是御花園外的迴廊，兩旁是硃紅的廊柱，廊頂是飛檐琉璃瓦，地
+上鋪着白玉石板。
 LONG
         );
         set("exits", ([ /* sizeof() == 2 */

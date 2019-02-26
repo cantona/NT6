@@ -97,7 +97,7 @@ varargs int up_skill(object who)
 
 mapping levels = ([
 //      combat_exp   skill_level    頂經驗武功  頂武功經驗   研究武功經驗(60純研究4項武功4:1任務)
-//      保証五十萬以前任務容易完成，八十萬之前簡單完成。                    研究經驗武功
+//      保證五十萬以前任務容易完成，八十萬之前簡單完成。                    研究經驗武功
         50000      : 20,                // level 1    80           586          3080          52
         100000     : 30,                // level 2    100          2701         10116         65
         200000     : 40,                // level 3    126          6401         23656         83
@@ -256,7 +256,7 @@ object get_random_master(object me)
                 err = catch(thief_master = new(CLASS_D(masters[random(sizeof(masters))])));
                 if (stringp(err))
                 {
-                        message("channel:wiz",HIR"【調試】系統精靈：NPC_D 新建復制對象失敗返回錯誤"+err+NOR,users());
+                        message("channel:wiz",HIR"【調試】系統精靈：NPC_D 新建複製對象失敗返回錯誤"+err+NOR,users());
                         thief_master = new(CLASS_D("xiaoyao/suxinghe"));
                 }
         return thief_master;
@@ -275,7 +275,7 @@ varargs void copy_skill(object tob,object thief_master)
                 flag = 1;
                 thief_master = get_random_master(tob);
         }
-// 復制master武功開始
+// 複製master武功開始
         if ( mapp(skill_status = thief_master->query_skills()) )
         {
                 sname = keys(skill_status);
@@ -515,7 +515,7 @@ void random_move(object ob)
         object dest;
 
         moved=query_temp("moved", ob);
-//        return; //看一下是不是這裡造成lag
+//        return; //看一下是不是這裏造成lag
         if (! moved) moved = ({ });
         if (sizeof(moved) >= MAX_MOVED)
         {

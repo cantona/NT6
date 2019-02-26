@@ -74,9 +74,9 @@ int do_arrest(string arg)
    if(!arg)
    return notify_fail("你想抓誰？\n");
    if(!objectp(who = present(arg, environment(ob))))
-   return notify_fail("這裡沒有你想抓的人。\n");
-   message_vision("$N拿起一條鐵鏈子，抖動著...\n",ob); 
-   message_vision("對著$N大聲喝道：“大膽賊人，看你往哪裡逃！拿命來吧！”\n",this_object());
+   return notify_fail("這裏沒有你想抓的人。\n");
+   message_vision("$N拿起一條鐵鏈子，抖動着...\n",ob); 
+   message_vision("對着$N大聲喝道：“大膽賊人，看你往哪裏逃！拿命來吧！”\n",this_object());
    set_temp("arrest", 1, ob);
    this_object()->kill_ob(ob);
    return 1;

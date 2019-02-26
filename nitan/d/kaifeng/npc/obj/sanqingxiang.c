@@ -10,7 +10,7 @@ void create()
                 set_default_object(__FILE__);
         else {
                 set("unit", "座");
-                set("long", "道家的三清神像，據說老子一氣化三清。\n");
+                set("long", "道家的三清神像，據説老子一氣化三清。\n");
                 set("value", 50);
         }
 }

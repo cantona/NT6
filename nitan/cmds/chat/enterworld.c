@@ -23,7 +23,7 @@ int main(object me, mapping info)
         if (! me->move(startroom))
                 return MESSAGE_D->error_msg("系統出現故障，無法讓你進入世界。\n");
 
-        message("vision", HIC "空氣中悄然彌漫出一股青煙，漸漸的凝成了" +
+        message("vision", HIC "空氣中悄然瀰漫出一股青煙，漸漸的凝成了" +
                me->name() + HIC "的樣子。\n" NOR, environment(me), ({ me }));
 
         return 1;

@@ -17,7 +17,7 @@ void create()
         object zhenwu;
 
         set_name("武士", ({ "wu shi", "shi" }));
-        set("long","這是位武士，身披鋼甲，手執長劍，雙目精光炯炯，警惕地巡視著四周的情形。\n");
+        set("long","這是位武士，身披鋼甲，手執長劍，雙目精光炯炯，警惕地巡視着四周的情形。\n");
         set("gender", "男性");
         set("age", 50);
         set("attitude", "heroism");
@@ -119,12 +119,12 @@ string do_huqi()
 
         if( !query("flag", environment(me)) )
         {
-                message_vision(HIG"$N疑惑地四下望望，說道：“可是這裡沒有旗可護！”\n"NOR,me);
+                message_vision(HIG"$N疑惑地四下望望，説道：“可是這裏沒有旗可護！”\n"NOR,me);
                 return "別搞錯了！";
         }
         else
         {
-                message_vision(HIG"$N看了看$n，痛快地說道：“好吧！我就留下來護旗。”\n"NOR,me,ob);
+                message_vision(HIG"$N看了看$n，痛快地説道：“好吧！我就留下來護旗。”\n"NOR,me,ob);
                 command("halt");
                 command("follow none");
         }

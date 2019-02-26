@@ -4,12 +4,12 @@ inherit NPC;
 
 void create()
 {
-        set_name("皇宮衛士", ({ "wei shi", "shi" }));
+        set_name("皇宮衞士", ({ "wei shi", "shi" }));
         set("gender", "男性");
         set("age", random(10) + 20);
         set("str", 25);
         set("dex", 16);
-        set("long", "這是皇宮的大內衛士，身披鋼甲，手執長劍。\n");
+        set("long", "這是皇宮的大內衞士，身披鋼甲，手執長劍。\n");
         set("combat_exp", 90000);
         set("shen_type", 1);
         set("attitude", "peaceful");

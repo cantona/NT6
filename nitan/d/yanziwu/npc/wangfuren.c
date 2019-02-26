@@ -8,7 +8,7 @@ void create()
         set("gender", "女性" );
         set("title", HIM"蔓陀山莊莊主"NOR );
         set("age", 35);
-        set("long", "她身穿鵝黃綢衫，眉目口鼻均美艷無倫，臉上卻頗有風霜歲月的痕跡。\n");
+        set("long", "她身穿鵝黃綢衫，眉目口鼻均美豔無倫，臉上卻頗有風霜歲月的痕跡。\n");
         set("shen_type", -1);
         set("combat_exp", 100000);
         set("per", 30);

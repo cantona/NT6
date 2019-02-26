@@ -54,7 +54,7 @@ mapping *action = ({
         "lvl" : 80,
         "damage_type" : "瘀傷",
 ]),
-([      "action" : "$N飛身一躍，使出一招「制勝」，一拳猛擊$n嚥喉  ",
+([      "action" : "$N飛身一躍，使出一招「制勝」，一拳猛擊$n咽喉  ",
         "skill_name" : "制勝",
         "force" : 260,
         "dodge" : 5,

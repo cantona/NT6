@@ -10,7 +10,7 @@ void create()
         set("title", HIY "來自遠方的禽獸" NOR);
         set("gender", "變態");
         set("age", 99);
-        set("long", HIY "一只巨大的禽獸，長相無比醜陋，據說來自遠方的東瀛國。\n" NOR);
+        set("long", HIY "一隻巨大的禽獸，長相無比醜陋，據説來自遠方的東瀛國。\n" NOR);
 
         set("combat_exp", 10000000);
         set("attitude", "heroism");

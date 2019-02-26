@@ -79,7 +79,7 @@ LONG);
         set("inquiry", ([
                 "黑血神針" : (: ask_me :),
                 "破靛神砂" : (: ask_skill1 :),
-                "星羅棋布" : (: ask_skill2 :),
+                "星羅棋佈" : (: ask_skill2 :),
                 "天蠍藏針" : (: ask_skill3 :),
         ]));
 
@@ -126,7 +126,7 @@ void attempt_apprentice(object ob)
                 return;
         }
 
-        command("say 。……嗯……那你就跟著我吧。");
+        command("say 。……嗯……那你就跟着我吧。");
         command("say 日月神教內規矩眾多，可少給我惹事。");
         command("recruit "+query("id", ob));
         return;
@@ -149,7 +149,7 @@ mixed ask_me()
                 return "你黑血神針的手法還不到家，拿了這神針去也沒什麼用。";
 
         if (query("zhen_count") < 1)
-                return "我又不是賣這個的，哪裡帶得了那麼多。";
+                return "我又不是賣這個的，哪裏帶得了那麼多。";
 
         addn("zhen_count", -1);
         ob = new("/d/heimuya/npc/obj/shenzhen");
@@ -234,13 +234,13 @@ mixed ask_skill2()
                 return "你的黑血神針還練得不到家，自己下去練練再來吧！";
 
         message_sort(HIY "\n$n" HIY "陰陰一笑，將$N" HIY "招至跟前，輕"
-                     "聲在耳旁秘密說了些什麼。隨後又伸出右手，十指箕張"
+                     "聲在耳旁祕密説了些什麼。隨後又伸出右手，十指箕張"
                      "，一伸一縮，看樣子是一種很特別的暗器法門。\n\n"
                      NOR, me, this_object()); 
 
         command("nod");
-        command("say 剛才我說的全是精要，你可要記清楚了。");
-        tell_object(me, HIC "你學會了「星羅棋布」。\n" NOR);
+        command("say 剛才我説的全是精要，你可要記清楚了。");
+        tell_object(me, HIC "你學會了「星羅棋佈」。\n" NOR);
         if (me->can_improve_skill("throwing"))
                 me->improve_skill("throwing", 1500000);
         if (me->can_improve_skill("heixue-shenzhen"))

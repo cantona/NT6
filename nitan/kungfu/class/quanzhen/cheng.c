@@ -12,7 +12,7 @@ void create()
         set("age", 24);
         set("class", "taoist");
         set("long",
-                "她是清凈散人孫不二的弟子。\n");
+                "她是清淨散人孫不二的弟子。\n");
         set("attitude", "friendly");
         set("shen_type",1);
         set("per", 26);

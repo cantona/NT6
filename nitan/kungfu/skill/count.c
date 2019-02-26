@@ -56,7 +56,7 @@ int help(object me)
         write(@HELP
 
     桃花島弟子可以憑此技能查知玩家目前所在的位置。可以通過
-閱讀《河圖》、《洛書》提高。
+閲讀《河圖》、《洛書》提高。
     請help location。
 
         學習要求：

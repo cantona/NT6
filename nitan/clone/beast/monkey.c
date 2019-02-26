@@ -9,7 +9,7 @@ void create()
         set("gender", "男性");
         set("age", 25);
         set("long",
-                "這只猴子在在桃樹間跳上跳下，還不時津津有味地啃幾口著蜜桃。\n");
+                "這隻猴子在在桃樹間跳上跳下，還不時津津有味地啃幾口着蜜桃。\n");
         set("combat_exp", 5000);
         set("shen_type", -1);
         set("attitude", "peaceful");

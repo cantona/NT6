@@ -2,9 +2,9 @@ inherit ROOM;
 
 void create()
 {
-        set("short","五老峰");
+        set("short","五老峯");
         set("long", @LONG
-這裡便是武當山五老峰。只見那五座奇峰突兀，驚險無比，行人
+這裏便是武當山五老峯。只見那五座奇峯突兀，驚險無比，行人
 多不敢放膽在此玩賞風景。
 LONG );
         set("exits", ([

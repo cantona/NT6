@@ -9,7 +9,7 @@ void create()
                 set_default_object(__FILE__);
         else {
                 set("unit", "只");
-                set("long","這是一只漂亮的繡花鞋。\n");
+                set("long","這是一隻漂亮的繡花鞋。\n");
                 set("value", 50);
                 set("material", "cloth");
                 set("female_only", 1);

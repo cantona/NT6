@@ -7,7 +7,7 @@ void create()
         set_name("小蜜蜂", ({ "little bee", "bee"}) );
         set("race", "野獸");
         set("age", 2);
-        set("long", "一只飛來飛去的小蜜蜂。\n");
+        set("long", "一隻飛來飛去的小蜜蜂。\n");
         
         set("str", 30);
         set("dex", 40);

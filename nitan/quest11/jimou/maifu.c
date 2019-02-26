@@ -30,7 +30,7 @@ void main(object ob)
 	// add the exp of this jimou, reduce mp, etc.
 
 	ob->simple_action(SG_SKILL_D->query_use("maifu"));
-	ob->start_busy(10, "你正忙于使用埋伏之計。");
+	ob->start_busy(10, "你正忙於使用埋伏之計。");
 	load_object("/daemons/cast_d.c")->reg_player(ob->query_primary_id(),"maifu");
         ob->award_exp(ob->query_sk_level("sk_zhimou")/2+random(20), "maifu");
 	call_out("show_result", 5+random(5), ob, p_skill, p_id);

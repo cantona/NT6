@@ -34,7 +34,7 @@ mapping *sgjobs = ({
                 "score":                 1
         ]),
 
-        ([      "sgjob":          "紫霞秘笈",
+        ([      "sgjob":          "紫霞祕笈",
                 "sgjob_type":           "尋",
                 "exp_bonus":             200,
                 "pot_bonus":             50,

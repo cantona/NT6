@@ -27,17 +27,17 @@ void say_question(object me, object ob)
         switch(random(5)) {
                 case 0:
                         answer = a + b;
-                        oper = chinese_number(a) + "加" + chinese_number(b)+ "等于多少？";
+                        oper = chinese_number(a) + "加" + chinese_number(b)+ "等於多少？";
                         break;
                 case 1:
                         if (a < b) { c = b; b = a; a = c;}
                         answer = a - b;
-                        oper = chinese_number(a) + "減去" + chinese_number(b)+ "等于多少？";
+                        oper = chinese_number(a) + "減去" + chinese_number(b)+ "等於多少？";
                         break;
                 case 2:
                         if( a * b < 200 ) {
                                 answer = a * b;
-                                oper = chinese_number(a) + "乘" + chinese_number(b)+ "等于多少？";
+                                oper = chinese_number(a) + "乘" + chinese_number(b)+ "等於多少？";
                         } else {
                                 answer = (a * b) % 10;
                                 oper = chinese_number(a) + "乘" + chinese_number(b)+ "，個位數等於多少？";
@@ -45,7 +45,7 @@ void say_question(object me, object ob)
                         break;
                 case 3:
                         answer = a % b;
-                        oper = chinese_number(a) + "除以" + chinese_number(b)+ "的余數是多少？";
+                        oper = chinese_number(a) + "除以" + chinese_number(b)+ "的餘數是多少？";
                         break;
                 case 4:
                         oper = chinese_number(a) + "和" + chinese_number(b)+ "的最大公因數是多少？";
@@ -78,7 +78,7 @@ void say_answer(object me, object ob)
         addn("robot_check_wrong", 1, ob);
         call_out("ans_wrong", 1, me, ob);
 
-        message_vision("$N說道：這麼簡單都不會？答案等于" + chinese_number(answer) + "。\n",me);
+        message_vision("$N説道：這麼簡單都不會？答案等於" + chinese_number(answer) + "。\n",me);
         in_ask = 0;
         remove_call_out("say_question");
         call_out("say_question", 1, me, ob);
@@ -93,7 +93,7 @@ int do_answer(string arg)
         int ans;
 
         if( !query_temp("partner", ob) || !query_temp("partner_id", ob) || !(partner=present(query_temp("partner_id", ob),environment(ob))) )
-                return notify_fail("這裡沒有你想要與之討論的人。\n");
+                return notify_fail("這裏沒有你想要與之討論的人。\n");
 
 
         if( !in_ask ) return notify_fail("你必須等下一題。\n");
@@ -104,13 +104,13 @@ int do_answer(string arg)
         if( sscanf(arg, "%d", ans)==1 ) {
                 if( ans==answer ) {
                         addn("robot_check", 1, ob);
-                        message_vision("$N說道：答對了！\n",partner);
+                        message_vision("$N説道：答對了！\n",partner);
                         partner->command("pat"+query("id", this_player()));
 
                         remove_call_out("say_answer");
                         in_ask = 0;
                         if( query("robot_check", this_player()) >= 3){
-                                message_vision(HIG"$N說道：很好，你果然對算法頗有研究，佩服！佩服！我們繼續討論武功吧。\n\n"NOR,partner);
+                                message_vision(HIG"$N説道：很好，你果然對算法頗有研究，佩服！佩服！我們繼續討論武功吧。\n\n"NOR,partner);
                                 delete("robot_check", ob);
                                 delete("robot_check_wrong", ob);
                                 delete("robot_checking", ob);
@@ -127,7 +127,7 @@ int do_answer(string arg)
                         }
 
                 } else {
-                        message_vision("$N說道：錯！\n",partner);
+                        message_vision("$N説道：錯！\n",partner);
                         addn("robot_check_wrong", 1, this_player());
                         addn_temp("wrong/"+query("id", this_player()),1);
                         call_out("ans_wrong", 0, partner,ob);
@@ -135,7 +135,7 @@ int do_answer(string arg)
                                 message_vision(HIG"只見青光一閃，黃藥師突然出現在$N的眼前。\n"NOR,ob);
                                 message_vision(HIY"黃藥師很生氣地對$N喝道：你這不肖之徒，連這麼簡單問題都答不出，去死吧。\n"NOR,ob);
                                 message_vision(HIR"黃藥師彈指一彈，一股內勁破空而出，向$n襲來，$N只覺得透不過氣來，撲的一聲倒在地上。\n"NOR,ob,ob);
-                                message_vision(HIC"黃藥師袖袍一揮，把$N凌空卷起，走到屋外，對啞僕喊道：“你們把這不肖之徒扔到外島去，越遠越好！”\n\n黃藥師氣哼哼的走了。\n\n"NOR,ob);
+                                message_vision(HIC"黃藥師袖袍一揮，把$N凌空捲起，走到屋外，對啞僕喊道：“你們把這不肖之徒扔到外島去，越遠越好！”\n\n黃藥師氣哼哼的走了。\n\n"NOR,ob);
 
                                 this_player()->receive_wound("qi", 100, this_object());
                                 set("jingli", -1, this_player());
@@ -163,7 +163,7 @@ int ans_wrong(object partner,object ob)
                 message_vision(HIG"只見青光一閃，黃藥師突然出現在$N的眼前。\n"NOR,ob);
                 message_vision(HIY"黃藥師很生氣地對$N喝道：你這不肖之徒，連這麼簡單問題都答不出，去死吧。\n"NOR,ob);
                 message_vision(HIR"黃藥師彈指一彈，一股內勁破空而出，向$n襲來，$N只覺得透不過氣來，撲的一聲倒在地上。\n"NOR,ob,ob);
-                message_vision(HIC"黃藥師袖袍一揮，把$N凌空卷起，走到屋外，對啞僕喊道：“你們把這不肖之徒扔到外島去，越遠越好！”\n\n黃藥師氣哼哼的走了。\n\n"NOR,ob);
+                message_vision(HIC"黃藥師袖袍一揮，把$N凌空捲起，走到屋外，對啞僕喊道：“你們把這不肖之徒扔到外島去，越遠越好！”\n\n黃藥師氣哼哼的走了。\n\n"NOR,ob);
 
                 ob->move("/d/island/icefire_land");
                 delete("robot_check_wrong", ob);
@@ -191,7 +191,7 @@ int do_discuss(string arg)
                   if (me->is_busy()
                    || query_temp("pending/exercising", me )
                    || query_temp("exit_blocked", me) )
-                                         return notify_fail("你現在正忙著呢。\n");
+                                         return notify_fail("你現在正忙着呢。\n");
 
         if( !arg || arg == getuid(me))
                 return notify_fail("沒有你想要與之討論的人。\n");
@@ -206,13 +206,13 @@ int do_discuss(string arg)
         if (sscanf(arg, "%s %d", target ,times)!=2 ) {
                 times = 1;
             if (sscanf(arg, "%s", target )!=1 )
-                return notify_fail("這裡沒有你想要與之討論的人。\n");
+                return notify_fail("這裏沒有你想要與之討論的人。\n");
         }
         
         if (times < 1) 
                 return notify_fail("你要討論多少次？\n");
         if( !(partner = present(target, environment(me))) || !partner->is_character() || me == partner)
-                return notify_fail("這裡沒有你想要與之討論的人。\n");
+                return notify_fail("這裏沒有你想要與之討論的人。\n");
 
 
         exp1=query_temp("exp_gain", me);
@@ -247,7 +247,7 @@ int do_discuss(string arg)
                 return notify_fail("對方還沒處理完師父交代的事。\n");
 */
         if( (exp1 < times || exp2 < times ) && times > 1)
-                return notify_fail("□怕你們討論不了這麼大范圍。\n");
+                return notify_fail("怕你們討論不了這麼大範圍。\n");
 
         if( query("jing", me)<20 || query("jingli", me)<20 )
                 return notify_fail("你太累了，無法繼續討論下去。\n");
@@ -255,9 +255,9 @@ int do_discuss(string arg)
                                          return notify_fail("你的同伴一副昏昏欲睡的樣子，看來無法繼續討論下去。\n");
 
         if( query("jing", me)<10+10*times || query("jingli", me)<10+10*times )
-                return notify_fail("以你目前的精神狀況，□怕一次討論不了這麼多東西。\n");
+                return notify_fail("以你目前的精神狀況，怕一次討論不了這麼多東西。\n");
                   if( query("jing", partner)<10+10*times || query("jingli", partner)<10+10*times )
-                                         return notify_fail("以對方目前的精神狀況，□怕一次討論不了這麼多東西。\n");
+                                         return notify_fail("以對方目前的精神狀況，怕一次討論不了這麼多東西。\n");
 
         addn("jing", -10*times, me);
         addn("jing", -10*times, partner);
@@ -265,8 +265,8 @@ int do_discuss(string arg)
         addn("jingli", -10*times, partner);
 
         if( exp1 < 1 && exp2 < 1) {
-                tell_object(me,CYN"你和"+name2+"窮聊了一陣，感覺腦袋空盪盪的，一無所得。\n"NOR);
-                tell_object(partner,CYN"你和"+name1+"窮聊了一陣，感覺腦袋空盪盪的，一無所得。\n"NOR);
+                tell_object(me,CYN"你和"+name2+"窮聊了一陣，感覺腦袋空蕩蕩的，一無所得。\n"NOR);
+                tell_object(partner,CYN"你和"+name1+"窮聊了一陣，感覺腦袋空蕩蕩的，一無所得。\n"NOR);
                 message_vision(CYN"$N和$n正有一搭，沒一搭的擺空龍門陣。\n"NOR,me,partner);
                 delete_temp("exp_gain", me);
                 delete_temp("exp_gain", partner);
@@ -276,7 +276,7 @@ int do_discuss(string arg)
         }
 
         if( exp1 < 1 ) {
-                tell_object(me,CYN"你想要和"+name2+"探討一下武功心得，但卻覺得沒啥好說的...\n"NOR);
+                tell_object(me,CYN"你想要和"+name2+"探討一下武功心得，但卻覺得沒啥好説的...\n"NOR);
                 tell_object(partner,CYN""+name1+"似乎想和你討論點什麼的樣子...\n"NOR);
                 message_vision(CYN"$N對$n一副欲言又止的尷尬模樣。\n"NOR,me,partner);
                 delete_temp("exp_gain", me);
@@ -285,7 +285,7 @@ int do_discuss(string arg)
 
                   if( exp2 < 1 ) {
                                          tell_object(me,CYN"你想要和"+name2+"探討一下武功心得，但"+name2+"卻一副心不在焉的樣子...\n"NOR);
-                                         tell_object(partner,CYN""+name1+"似乎想和你討論點什麼的樣子，但你卻覺得沒啥好說的...\n"NOR);
+                                         tell_object(partner,CYN""+name1+"似乎想和你討論點什麼的樣子，但你卻覺得沒啥好説的...\n"NOR);
                                          message_vision(CYN"$n對$N一副欲言又止的尷尬模樣。\n"NOR,me,partner);
                                          delete_temp("exp_gain", me);
                                          return 1;
@@ -308,7 +308,7 @@ int do_discuss(string arg)
                 bCheckingRobot = 1;
                 call_out("say_question",1,me,partner);
         }
-        return notify_fail("還是等人家先把問題答完再說吧! \n");
+        return notify_fail("還是等人家先把問題答完再説吧! \n");
   }
 
 //discuss變成discuss xxx <次數>後，下指令機會減少，check robot機會減低太多，暫時取消
@@ -316,9 +316,9 @@ int do_discuss(string arg)
 /*
   if( random( 150 ) == 1 && bCheckingRobot == 0)
   {
-        message_vision(HIG"$N說道：本桃花島派不但以武功稱譽天下，而且師父對奇門八卦、諸子百家無所不精、無所不通。\n",me);
-        message_vision("$N說道：我等弟子若能學到師父一成兩成學問，就此生無憾了。\n",me);
-        message_vision("$N說道：今天練功這麼久，不如休息休息，讓我們來探討探討一些算法問題。\n"NOR,me);
+        message_vision(HIG"$N説道：本桃花島派不但以武功稱譽天下，而且師父對奇門八卦、諸子百家無所不精、無所不通。\n",me);
+        message_vision("$N説道：我等弟子若能學到師父一成兩成學問，就此生無憾了。\n",me);
+        message_vision("$N説道：今天練功這麼久，不如休息休息，讓我們來探討探討一些算法問題。\n"NOR,me);
         set("robot_checking", 1, partner);
         bCheckingRobot = 1;
         call_out("say_question",1,me,partner);
@@ -334,9 +334,9 @@ int do_discuss(string arg)
         }
 */
 
-        message_vision(CYN"$N和$n熱烈的探討著各自武功的得失，及其對武學的理解。\n"NOR,me,partner);
-        tell_object(me,HIY"你一邊和"+name2+"印証武學，一邊回想著與"+name3+"的比武經過，對武學的認識又深了一層！\n"NOR);
-                  tell_object(partner,HIY"你一邊和"+name1+"印証武學，一邊回想著與"+name4+"的比武經過，對武學的認識又深了一層！\n"NOR);
+        message_vision(CYN"$N和$n熱烈的探討着各自武功的得失，及其對武學的理解。\n"NOR,me,partner);
+        tell_object(me,HIY"你一邊和"+name2+"印證武學，一邊回想着與"+name3+"的比武經過，對武學的認識又深了一層！\n"NOR);
+                  tell_object(partner,HIY"你一邊和"+name1+"印證武學，一邊回想着與"+name4+"的比武經過，對武學的認識又深了一層！\n"NOR);
         //me->start_busy(1+random(2));
         //partner->start_busy(1+random(2));
 

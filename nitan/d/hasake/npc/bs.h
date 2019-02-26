@@ -3,7 +3,7 @@ void init()
         object ob, me;
         me = this_object();
         if (interactive(ob = this_player()) && present("shou juan", ob)){
-           message_vision(HIY"$N突然攔身在$n前，眼睛直盯著$n懷裡的手絹！\n"NOR,me,ob); 
+           message_vision(HIY"$N突然攔身在$n前，眼睛直盯着$n懷裏的手絹！\n"NOR,me,ob); 
            set("chat_chance", 0, me);
            remove_call_out("do_kill");
            call_out("do_kill", 0, me, ob);

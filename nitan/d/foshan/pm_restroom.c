@@ -9,11 +9,11 @@ void create()
 {
         set("short", "英雄會館");
         set("long", @LONG
-英雄會館也是鳳老爺的家業。常來這裡的人，都是有能耐有來頭
-的。英雄會館裡圍著黑壓壓的一群人，南方有一扇緊緊關閉的小門。
-只有在每月一次的店舖拍賣時「南霸天」鳳天南才會將它打開，在那
-裡會見各處的商賈。小門旁掛著的一塊紅木牌子(paizi)上標寫著各家
-店舖拍賣的底價。
+英雄會館也是鳳老爺的家業。常來這裏的人，都是有能耐有來頭
+的。英雄會館裏圍着黑壓壓的一羣人，南方有一扇緊緊關閉的小門。
+只有在每月一次的店鋪拍賣時「南霸天」鳳天南才會將它打開，在那
+裏會見各處的商賈。小門旁掛着的一塊紅木牌子(paizi)上標寫着各家
+店鋪拍賣的底價。
 LONG );
 
         set("no_beg", 1);
@@ -63,7 +63,7 @@ int do_open()
         object me = this_player();
 
         if (query("exits/south"))
-                return notify_fail("門已經是開著的了。\n");
+                return notify_fail("門已經是開着的了。\n");
 
         set("exits/south", __DIR__"pmc");
 
@@ -71,10 +71,10 @@ int do_open()
                        "小門開啟了。\n" NOR, me);
 
         shout(HIY "【商界傳聞】" NOR + WHT + me->name() + WHT "[" +
-              query("id", me)+WHT"]開啟了佛山英雄會館的店舖拍"
+              query("id", me)+WHT"]開啟了佛山英雄會館的店鋪拍"
               "賣會的大門。\n" NOR);
 
-        write("你開通了店舖拍賣會的路徑。\n");
+        write("你開通了店鋪拍賣會的路徑。\n");
         return 1;
 }
 
@@ -83,7 +83,7 @@ int do_close()
         object me = this_player();
 
         if (! query("exits/south"))
-                return notify_fail("門已經是關著的了。\n");
+                return notify_fail("門已經是關着的了。\n");
 
         delete("exits/south");
         message_vision(WHT "$N" WHT "順手一帶，將通向拍賣後廳的"
@@ -102,18 +102,18 @@ int do_look(string arg)
 
         if (! query("exits/south"))
         {
-                write("現在尚未到拍賣店舖的時間。\n");
+                write("現在尚未到拍賣店鋪的時間。\n");
                 return 1;
         }
 
         shop_record = SHOP_D->query_shop();
 
-        msg = LOCAL_MUD_NAME() + "店舖拍賣底價表：\n"NOR;
+        msg = LOCAL_MUD_NAME() + "店鋪拍賣底價表：\n"NOR;
         msg += HIY "┌─────────────────────────┐\n" NOR;
 
         msg += sprintf(HIY "│" NOR + WHT " %-18s%-18s%-13s" HIY "│\n" NOR,
-                       "店舖位置",
-                       "店舖名稱",
+                       "店鋪位置",
+                       "店鋪名稱",
                        "拍賣底價");
 
         msg += HIY "├─────────────────────────┤\n" NOR;
@@ -121,7 +121,7 @@ int do_look(string arg)
         for (i = 0; i < sizeof(shop_record); i++)
         {
                 g = shop_record[i]["price"];
-                msg += sprintf(HIY "│" HIC " %s店舖           "
+                msg += sprintf(HIY "│" HIC " %s店鋪           "
                                HIG "%-16s" NOR +
                                YEL "黃金" + chinese_number(g) +
                                "兩    " HIY "│\n" NOR,
@@ -130,7 +130,7 @@ int do_look(string arg)
         }
         msg += HIY "└─────────────────────────┘\n" NOR;
         msg += WHT "總共有" + chinese_number(sizeof(shop_record)) +
-               WHT "家店舖等待拍賣。\n";
+               WHT "家店鋪等待拍賣。\n";
         write(msg);
         return 1;
 }

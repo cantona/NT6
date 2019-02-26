@@ -31,7 +31,7 @@ int perform(object me, object target)
                 return notify_fail("你現在真氣不夠，無法施展" + name() + "。\n");
 
        if (! living(target))
-              return notify_fail("對方都已經這樣了，用不著這麼費力吧？\n");
+              return notify_fail("對方都已經這樣了，用不着這麼費力吧？\n");
 
         msg = HIC "\n只見$N" HIC "左掌虛探，右拳颼的一聲從掌風中\n"
               "猛穿過來，正是劈石破玉拳法的絕招之一「" HIG "封閉手" HIC "」。\n" NOR;

@@ -5,7 +5,7 @@ void create()
    set_name("小男孩",({ "boy" }) );
         set("gender", "男性" );
         set("age", 12);
-   set("long", "這是一個小男孩，看起來稚氣未脫，童心閃現。\n");
+   set("long", "這是一個小男孩，看起來稚氣未脱，童心閃現。\n");
        
    set("combat_exp", 50);
    set("str", 10);

@@ -55,7 +55,7 @@ void fight_ob(object ob)
                 return;
 
         message_vision(HIC "$N" HIC "嘯叫一聲，渾身雲氣大盛，"
-                       "霧氣彌漫。\n" NOR, this_object(), ob);
+                       "霧氣瀰漫。\n" NOR, this_object(), ob);
 
         ::fight_ob(ob);
         if (! is_killing(ob->query("id")))

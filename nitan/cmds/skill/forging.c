@@ -30,7 +30,7 @@ int main(object me, string arg)
                 return notify_fail("你只能鍛造自己的兵器或防具！\n");
 
         if( query("equipped", item) )
-                return notify_fail("你先解除" + item->name() + "的裝備再說！\n"); 
+                return notify_fail("你先解除" + item->name() + "的裝備再説！\n"); 
                 
         if (! objectp(obj = present("forging stone", me)))
                 return notify_fail("你身上沒有鍛造石，鍛造道具需要一塊鍛造石。\n");
@@ -45,7 +45,7 @@ int help(object me)
         write(@HELP
 指令格式 : forging <道具>
 
-這個指令可以讓你鍛造道具，以鍛煉那種道具的等級，每次消耗
+這個指令可以讓你鍛造道具，以鍛鍊那種道具的等級，每次消耗
 鍛造石一塊。
 
 HELP

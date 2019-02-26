@@ -119,7 +119,7 @@ int perform2(object me, object target, int p)
                 return 1;
         }
 
-        msg = RED"\n$N左掌勁力未消，右掌也跟著劈出，勁力相疊，鐵蒲扇掌狂飆般湧向$n！\n"NOR;
+        msg = RED"\n$N左掌勁力未消，右掌也跟着劈出，勁力相疊，鐵蒲扇掌狂飆般湧向$n！\n"NOR;
         if(random(me->query_skill("force")) > target->query_skill("force")/4 &&
                 me->query_skill("strike", 1) > 199 )
         {
@@ -176,7 +176,7 @@ int perform3(object me, object target, int p)
                 call_out("remove_effect", me->query_con()/4, me);
                 return 1;
         }
-        msg = RED"\n$N雙腿一蹬，雙掌相並向前和身撲出，$n連同身前身後的方圓數丈全在鐵蒲扇掌勁力籠罩之下！\n"NOR;
+        msg = RED"\n$N雙腿一蹬，雙掌相併向前和身撲出，$n連同身前身後的方圓數丈全在鐵蒲扇掌勁力籠罩之下！\n"NOR;
         if(random(me->query_skill("force")) > target->query_skill("force")/4 &&
                 me->query_skill("strike", 1) > 249 )
         {

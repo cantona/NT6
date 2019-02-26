@@ -22,9 +22,9 @@ mapping *action = ({
         "lvl" : 24,
         "skill_name" : "鐵索攔江"
 ]),
-([      "action" : "$N使一式"HIY"「狂風卷地」"NOR"，全身飛速旋轉，雙掌一前一後，猛地拍向$n的胸口",
+([      "action" : "$N使一式"HIY"「狂風捲地」"NOR"，全身飛速旋轉，雙掌一前一後，猛地拍向$n的胸口",
         "lvl" : 30,
-        "skill_name" : "狂風卷地"
+        "skill_name" : "狂風捲地"
 ]),
 ([      "action" : "$N合掌抱球，猛吸一口氣，一式"HIW"「懷中抱月」"NOR"，雙掌疾推向$n的肩頭",
         "lvl" : 36,
@@ -34,7 +34,7 @@ mapping *action = ({
         "lvl" : 42,
         "skill_name" : "高山流水"
 ]),
-([      "action" : "$N使一式"CYN"「摘星換鬥」"NOR"，勁氣彌漫，雙掌如輪，一環環向$n的$l斫去",
+([      "action" : "$N使一式"CYN"「摘星換鬥」"NOR"，勁氣瀰漫，雙掌如輪，一環環向$n的$l斫去",
         "lvl" : 48,
         "skill_name" : "摘星換鬥"
 ]),
@@ -42,7 +42,7 @@ mapping *action = ({
         "lvl" : 54,
         "skill_name" : "翻江攪海"
 ]),
-([      "action" : "$N一式"HIY"「金剛伏魔」"NOR"，雙手合十，對著$n微微一揖，全身內勁如巨浪般洶湧而出",
+([      "action" : "$N一式"HIY"「金剛伏魔」"NOR"，雙手合十，對着$n微微一揖，全身內勁如巨浪般洶湧而出",
         "lvl" : 60,
         "skill_name" : "金剛伏魔"
 ])
@@ -105,8 +105,8 @@ mapping query_action(object me, object weapon)
         int i, lvl, seq, ttl = sizeof(action);
         string *msg = ({
                 "喝道：“吃我一掌！”",
-                "雙手合什，說道：“阿彌陀佛！”",
-                "說道：“罪過罪過！”這四字一出口，忽地",
+                "雙手合什，説道：“阿彌陀佛！”",
+                "説道：“罪過罪過！”這四字一出口，忽地",
                 "",
         });
 
@@ -115,7 +115,7 @@ mapping query_action(object me, object weapon)
         {
                 i = me->query_skill("force") + lvl;
                 return([
-                        "action": HIW"$N"+ msg[random(sizeof(msg))] +"雙掌自外向裡轉了個圓圈，緩緩向$n推了過來。\n"
+                        "action": HIW"$N"+ msg[random(sizeof(msg))] +"雙掌自外向裏轉了個圓圈，緩緩向$n推了過來。\n"
                                         "$P掌力未到，$n已感胸口呼吸不暢，頃刻之間，$N的掌力如怒潮般洶湧而至！"NOR,
                         "force" : i + random(i),
                         "damage": 300,
@@ -183,7 +183,7 @@ int help(object me)
     可與一指禪互備。
     般若掌有一招兇猛的絕招，喚做“一拍兩散”。所謂“兩散”，是
 指拍在石上，石屑四“散”、拍在人身，魂飛魄“散”。這路掌法就只
-這麼一招，只因掌力太過雄渾，臨敵時用不著使第二招，敵人便已斃命，
+這麼一招，只因掌力太過雄渾，臨敵時用不着使第二招，敵人便已斃命，
 而這一掌以如此排山倒海般的內力為根基，要想變招換式，亦非人力之
 所能。
 

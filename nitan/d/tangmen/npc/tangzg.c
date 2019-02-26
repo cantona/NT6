@@ -7,7 +7,7 @@ inherit F_VENDOR;
 void create()
 {
         set_name("唐掌櫃", ({ "tang zhanggui", "tang" }));
-        set("title", "唐家舖子老板");
+        set("title", "唐家鋪子老闆");
         set("shen_type", 1);
 
         set("gender", "男性");

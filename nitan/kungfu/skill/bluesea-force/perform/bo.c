@@ -21,7 +21,7 @@ int perform(object me, object target)
                 return notify_fail("你的南海玄功不夠深厚，不會使用碧海清波。\n");
 
        if (! living(target))
-              return notify_fail("對方都已經這樣了，用不著這麼費力吧？\n");
+              return notify_fail("對方都已經這樣了，用不着這麼費力吧？\n");
 
         msg = HIC "$N" HIC "掌力忽左忽右，形成一個個氣旋，如波浪一般接連向$n"
               HIC "逼去！\n" NOR;

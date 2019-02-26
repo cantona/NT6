@@ -36,6 +36,6 @@ void init()
 
 void greeting(object ob)
 {
-        say ("小女孩天真地笑著說：去桃花島呀，要從嘉興出海的。\n");
+        say ("小女孩天真地笑着説：去桃花島呀，要從嘉興出海的。\n");
         return;
 }

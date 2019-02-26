@@ -1,7 +1,7 @@
 //                標準描述長度示例                                   |
 // 幻境內人物  其他型
 // 包括 教授技能、恢復體力、尋求寶物（有獎勵）
-// by naihe  2002-10-29  于茂名
+// by naihe  2002-10-29  於茂名
 
 #include <ansi.h>
 
@@ -41,7 +41,7 @@ void setme( int iii )
 
     set("job_times", job_times[ iii ] );
 
-    set("long","這是一個常見于山野的小精靈，只有正常人的手掌大小，模樣甚是可愛。\n");
+    set("long","這是一個常見於山野的小精靈，只有正常人的手掌大小，模樣甚是可愛。\n");
     set("hj_game/npc","other");
 
     set("gender","女性");
@@ -158,7 +158,7 @@ void random_teach()
         if( query_temp("hj_game_damages/"+skills_ids[i], target)<99 )
         {
         addn_temp("hj_game_damages/"+skills_ids[i], 2+random(2), target);
-        message_vision(CYN"$N"NOR+CYN"仔細想著，似乎覺得自己「"+skills_names[i]+"」的修為又有所提升了。\n"NOR,target);
+        message_vision(CYN"$N"NOR+CYN"仔細想着，似乎覺得自己「"+skills_names[i]+"」的修為又有所提升了。\n"NOR,target);
         if( query_temp("hj_game_damages/"+skills_ids[i], target)>99 )
             set_temp("hj_game_damages/"+skills_ids[i], 99, target);
         }
@@ -205,7 +205,7 @@ void random_heal()
         hp_max=query_temp("hj_hp_max", target);
 
         command("idle2"+query("id", target));
-        message_vision("$n"NOR+CYN"對著$N"NOR+CYN"輕輕地念了句什麼，只見$N"NOR+CYN"的臉色頓時大為好轉！\n"NOR,target, ob );
+        message_vision("$n"NOR+CYN"對着$N"NOR+CYN"輕輕地念了句什麼，只見$N"NOR+CYN"的臉色頓時大為好轉！\n"NOR,target, ob );
         addn("job_times", -1, ob);
         hp+=30+random(hp_max/10);
         if(hp>hp_max) hp = hp_max;
@@ -262,7 +262,7 @@ void random_find()
     if(!query("me_find_id") && random(5) == 1)
     {
 
-find_names=({"定向水晶","飛翔之石","脫離水晶","回歸之鏡","祈禱之石","召喚之盒",
+find_names=({"定向水晶","飛翔之石","脱離水晶","迴歸之鏡","祈禱之石","召喚之盒",
 "發呆之旗","驅逐之旗","尋人水晶","定位之儀",
 "紅色寶石","藍色寶石","綠色寶石",
 "呼風之石","喚雨之石","落雷之石","引電之石","滾石之石","飛火之石","奪魂之石","復活之石",
@@ -318,7 +318,7 @@ int ask_find()
     }
     if( !query("hj_game/obj", find) )
     {
-        command("say 哎呀，你帶著的這個不是真的啦！我要找那個真的呀！");
+        command("say 哎呀，你帶着的這個不是真的啦！我要找那個真的呀！");
         command("giggle");
         return 1;
     }

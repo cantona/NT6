@@ -19,20 +19,20 @@ int study(object me, string arg)
     if (!me->query_skill("literate", 1)||me->query_skill("literate",1) < 100)
         return notify_fail("對照劍譜，你什麼都讀不懂。\n");
     if (me->is_busy())
-        return notify_fail("你現在正忙著呢。\n");
+        return notify_fail("你現在正忙着呢。\n");
     if (me->is_fighting() )
         return notify_fail("你無法在戰鬥中專心下來研讀新知！\n");
     if( query("combat_exp", me)<50000 )
         return notify_fail("你的實戰經驗不足，不能學獨孤九劍。\n");
     if (myskill>299)
-        return notify_fail("你研讀了一會兒，發現上面所說的對你而言都太淺了。\n");
+        return notify_fail("你研讀了一會兒，發現上面所説的對你而言都太淺了。\n");
     if (myskill<75)
-        return notify_fail("你讀了一會書,可是卻毫無收獲。\n");
+        return notify_fail("你讀了一會書,可是卻毫無收穫。\n");
     if( query("jing", me)>cost )
     {
        if( myskill*myskill*myskill/10>query("combat_exp", me) )
        {
-          printf("也許是缺乏實戰經驗，你對獨孤九劍劍譜面所說的東西總是無法領會。\n");
+          printf("也許是缺乏實戰經驗，你對獨孤九劍劍譜面所説的東西總是無法領會。\n");
        }
        else
        {
@@ -43,7 +43,7 @@ int study(object me, string arg)
     else
     {
        cost=query("jing", me);
-       write("你現在過于疲倦，無法專心下來研讀新知。\n");
+       write("你現在過於疲倦，無法專心下來研讀新知。\n");
     }
     me->receive_damage("jing", cost );
     return 1;
@@ -96,6 +96,6 @@ void autoload(string arg)
 }
 void owner_is_killed()
 {
-        write(HIY"只見眼前金光一閃...好象是.....\n"NOR);
+        write(HIY"只見眼前金光一閃...好像是.....\n"NOR);
         destruct(this_object());
 }

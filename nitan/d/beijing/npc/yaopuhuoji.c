@@ -3,11 +3,11 @@ inherit F_DEALER;
 
 void create()
 {
-        set_name("藥舖伙計", ({ "yaopu huoji", "huoji" }));
+        set_name("藥鋪夥計", ({ "yaopu huoji", "huoji" }));
         set("str", 20);
         set("gender", "男性");
         set("age", 18);
-        set("long", "他十分強壯，看上去會幾分武功，對藥舖生意似乎並不在乎。\n");
+        set("long", "他十分強壯，看上去會幾分武功，對藥鋪生意似乎並不在乎。\n");
         set("combat_exp", 15000);
         set("attitude", "friendly");
         set("vendor_goods", ({

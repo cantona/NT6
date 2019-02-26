@@ -10,7 +10,7 @@ void create()
         set("gender", "男性");
         set("age", 25);
         set("long",
-"一個白凈面皮的漢子。\n"
+"一個白淨面皮的漢子。\n"
 "他是岳飛麾下名將楊再興的後代。\n");
         set("combat_exp", 180000);
         set("shen_type",  1);

@@ -12,13 +12,13 @@ inherit F_DBASE;
 #define EQUIP_LIST      CONFIG_DIR "equiplist/"
 
 // 破防提高：我的理解是在目前破防的技術上增加一個比例。比如破防提高10％，那麼如果你破防10點，就變成了11點。
-// 命中加強：說實話，我看不出它有什麼作用來。
+// 命中加強：説實話，我看不出它有什麼作用來。
 // 雙倍打擊：在你造成傷害的基礎上，加2倍，重要的一個屬性。比例越高越好。
 // 致命打擊：非常重要的屬性，造成比例打血效果。
 // 比如火代表眩暈 水代表招式變慢 金代表持續傷害命中 木代表致盲
-// 殺戮-攻擊時有幾率對當前房間所有人進行一次攻擊
+// 殺戮-攻擊時有機率對當前房間所有人進行一次攻擊
 // 還有 5行可以是 急速 暴擊 格擋（減免傷害） 精通  命中
-// 急速就是增加出招的幾率 暴擊是雙倍傷害幾率 格擋是減免30%傷害幾率。命中是無視閃避招架的幾率 精通是perform傷害加成
+// 急速就是增加出招的機率 暴擊是雙倍傷害機率 格擋是減免30%傷害機率。命中是無視閃避招架的機率 精通是perform傷害加成
 // 7個防具5孔，2個兵器7孔，3個飾品3孔
 
 // 所有屬性
@@ -63,18 +63,18 @@ mapping all_props = ([
         "attack"        : "攻擊",       // weapon
         "parry"         : "招架",       // armor
         "dodge"         : "躲閃",       // armor
-        "defense"       : "防御",       // armor
+        "defense"       : "防禦",       // armor
 
         "ref_neili"     : "內力恢復",   // armor/rings
         "ref_qi"        : "生命恢復",   // armor/rings
         "ref_jing"      : "精氣恢復",   // armor/rings
-        "suck_neili"    : "偷取內力",   // weapon/rings 命中偷取內力：命中敵人時有一定概率按傷害值的一定比率回復內力
-        "suck_qi"       : "偷取生命",   // weapon/rings 命中偷取生命：命中敵人時有一定概率按傷害值的一定比率回復生命
+        "suck_neili"    : "偷取內力",   // weapon/rings 命中偷取內力：命中敵人時有一定概率按傷害值的一定比率回覆內力
+        "suck_qi"       : "偷取生命",   // weapon/rings 命中偷取生命：命中敵人時有一定概率按傷害值的一定比率回覆生命
 
-        "gold_find"     : "獲取黃金幾率",       // weapon/rings
+        "gold_find"     : "獲取黃金機率",       // weapon/rings
         "magic_find"    : "尋寶率(MF值)",       // weapon/rings
                 
-        // 火燄傷害，冷凍傷害，閃電傷害，毒素傷害，抗火，抗寒，抗閃電，抗毒
+        // 火焰傷害，冷凍傷害，閃電傷害，毒素傷害，抗火，抗寒，抗閃電，抗毒
         "add_poison"    : "毒傷害",     // weapon
         "add_metal"     : "金傷害",     // weapon
         "add_wood"      : "木傷害",     // weapon
@@ -102,21 +102,21 @@ mapping all_props = ([
         // 以上都是基本屬性 
         
         "ap_power"      : "絕招攻擊力",         // weapon/rings
-        "dp_power"      : "絕招防御力",         // armor
+        "dp_power"      : "絕招防禦力",         // armor
         "da_power"      : "絕招傷害力",         // weapon/rings
-        "avoid_defense" : "攻擊無視目標防御",   // weapon/rings
+        "avoid_defense" : "攻擊無視目標防禦",   // weapon/rings
         "avoid_parry"   : "攻擊無視目標招架",   // weapon/rings
         "avoid_dodge"   : "攻擊無視目標躲閃",   // weapon/rings
-        "avoid_force"   : "攻擊無視內功防御",   // weapon/rings
+        "avoid_force"   : "攻擊無視內功防禦",   // weapon/rings
         "avoid_attack"  : "無視目標特殊攻擊",   // armor
         
         //"trace"         : "擒蹤",       // weapon/rings 無視對方招架
-        //"escape"        : "遁隱",       // armor 躲閃幾率
+        //"escape"        : "遁隱",       // armor 躲閃機率
         //"proficient"    : "精通",       // weapon/rings 精通是perform傷害加成
         //"fatal_chance"  : "暴擊",       // weapon/rings 會心一擊
         //"antifatal_chance": "防暴擊",   // armor
    
-        "attack_chance" : "連擊率",             // weapon/rings 急速就是增加出招的幾率
+        "attack_chance" : "連擊率",             // weapon/rings 急速就是增加出招的機率
         "double_damage" : "雙倍傷害",           // weapon/rings 增加殺氣：加一點殺氣，暴擊（雙倍傷害）的概率增加1%
         "through_armor" : "破甲",               // weapon/rings 破甲-攻擊時無視目標防具的保護力through_armor
         
@@ -135,7 +135,7 @@ mapping all_props = ([
         // 對怪物的debuff
         
         "add_blind"     : "致盲",                       // weapon 終極兵器 致盲-讓對手失明
-        "add_freeze"    : "冰凍",                       // weapon 終極兵器 冰凍-遲緩，減緩對方攻擊，攻擊pfm速度降低，無任何防御，無躲閃，無招架，就是挨打
+        "add_freeze"    : "冰凍",                       // weapon 終極兵器 冰凍-遲緩，減緩對方攻擊，攻擊pfm速度降低，無任何防禦，無躲閃，無招架，就是捱打
         "add_burning"   : "灼燒",                       // weapon 終極兵器 灼燒-一定時間內目標不停的減少內力和氣血condition
         "add_dizziness" : "眩暈",                       // weapon 終極兵器 昏睡-眩暈，不能進行任何行動，但生命通常會加速回復，受到攻擊會醒來，否則15秒內一直不動，解除戰鬥狀態，昏睡本來就是一個混戰時，先把一個敵人排除出戰鬥，專心對付其他人的技能
         "add_forget"    : "遺忘",                       // weapon 終極防具 遺忘-使對方忘記所有技能的絕招add_oblivion   
@@ -151,15 +151,15 @@ mapping all_props = ([
         "avoid_busy"    : "忽視忙亂",                   // armor/rings 終極防具
         "reduce_busy"   : "化解忙亂",                   // armor/rings 終極防具
 
-        "fatal_blow"    : "必殺",                       // weapon 終極兵器 必殺率-擁有20%的幾率損傷目標的生命x%     
-        "slaughter"     : "殺戮",                       // weapon 殺戮-攻擊時有幾率對當前房間所有敵人進行一次攻擊     
+        "fatal_blow"    : "必殺",                       // weapon 終極兵器 必殺率-擁有20%的機率損傷目標的生命x%     
+        "slaughter"     : "殺戮",                       // weapon 殺戮-攻擊時有機率對當前房間所有敵人進行一次攻擊     
         //"anti_fatal"    : "防必殺率",
         "add_skill"     : "所有技能",                   // weapon/rings 終極兵器
         "add_damage"    : "追加傷害",                   // weapon 終極兵器
         "reduce_damage" : "化解傷害",                   // armor 終極防具 
         "full_self"     : "戰神附體",                   // armor 終極防具 戰神附體-氣血自動恢復
         "avoid_call"    : "忽視致命",                   // armor/rings 終極防具
-        "counter_damage": "傷害反射",                   // armor 終極防具 受到傷害時30%幾率的傷害x%反射給對方
+        "counter_damage": "傷害反射",                   // armor 終極防具 受到傷害時30%機率的傷害x%反射給對方
 ]);
 
 
@@ -297,7 +297,7 @@ mapping steady_values = ([
 
 // 裝備的品級有6級，前2個品級屬性沒有特殊，從稀有（第三個）品級開始有特殊屬性
 // 寶石的等級有3級，寶石的屬性應該和裝備前2個品級的屬性一樣
-// qlvl1只有基本屬性，qlvl2才有寶石屬性，qlvl3擁有寶石屬性，qlvl4擁有史詩屬性，qlvl5擁有傳說屬性，qlvl6擁有神奇屬性
+// qlvl1只有基本屬性，qlvl2才有寶石屬性，qlvl3擁有寶石屬性，qlvl4擁有史詩屬性，qlvl5擁有傳説屬性，qlvl6擁有神奇屬性
 mixed weapon_props = ({
         ({ "damage1", "int", "str", "con", "dex", "kar", "skill", "attack", 
            "suck_neili", "suck_qi", "gold_find", "magic_find", "add_poison",
@@ -347,7 +347,7 @@ mixed armor_props = ({
         }),
 });
 
-// 項鏈amulet、戒指ring、護身符屬性charm
+// 項鍊amulet、戒指ring、護身符屬性charm
 mixed ring_props = ({
         ({ "per", "attribute", "max_neili", "max_qi", "max_jing", "max_jingli", "max_potential",
            "max_experience", "ref_neili", "ref_jing", "ref_qi", "suck_neili", "suck_qi", "gold_find",
@@ -474,8 +474,8 @@ mapping apply_ultimate_prop(object ob, string type, int ilvl)
         else
         if( type == "rings"
         ||  type == "charm"
-        ||  type == "myheart"   // 護身符﹒左
-        ||  type == "myheart2"  // 護身符﹒右
+        ||  type == "myheart"   // 護身符·左
+        ||  type == "myheart2"  // 護身符·右
         ||  type == "neck" )
                 props = suit_ring_props;
         else
@@ -520,8 +520,8 @@ varargs mapping apply_gem_prop(string type, int ilvl, int n)
         else
         if( type == "rings"
         ||  type == "charm"
-        ||  type == "myheart"   // 護身符﹒左
-        ||  type == "myheart2"  // 護身符﹒右
+        ||  type == "myheart"   // 護身符·左
+        ||  type == "myheart2"  // 護身符·右
         ||  type == "neck" )
                 props = ring_props[0];
         else
@@ -958,7 +958,7 @@ public varargs object create_dynamic(string obj_type, int ilvl, int mf, int flag
 
         if( base_type != "gem" ) // 掉落裝備，非寶石
         {
-                // 凹槽數量：普通0、精制1、珍稀2、史詩3、傳說4、神器5
+                // 凹槽數量：普通0、精製1、珍稀2、史詩3、傳説4、神器5
                 // 武器6孔，防具4孔，護身符3孔，盾牌4孔
                 
                 if( !mf ) mf = 0;
@@ -966,7 +966,7 @@ public varargs object create_dynamic(string obj_type, int ilvl, int mf, int flag
                 if( mf <= 10 )
                         uf = sf = rf = mf;
                 
-                uf = mf*20/(mf+20);  // 傳說品級
+                uf = mf*20/(mf+20);  // 傳説品級
                 sf = mf*200/(mf+200);  // 史詩品級
                 rf = mf*600/(mf+600);  // 珍稀品級
                                      
@@ -980,7 +980,7 @@ public varargs object create_dynamic(string obj_type, int ilvl, int mf, int flag
                         else // 護身符
                                 n = 3;
                         qlvl = 5; 
-                        color = HIY; // 傳說
+                        color = HIY; // 傳説
                 } else
                 if( rate < sf )
                 {
@@ -999,7 +999,7 @@ public varargs object create_dynamic(string obj_type, int ilvl, int mf, int flag
                 {
                         n = 1;
                         qlvl = 2;
-                        color = HIB; // 精制
+                        color = HIB; // 精製
                 }
                 else
                 {
@@ -1035,7 +1035,7 @@ public varargs object create_dynamic(string obj_type, int ilvl, int mf, int flag
                         else
                                 applied_prop[prop] += query_prop_value(prop, ilvl);               
                 }
-                if( qlvl > 4 ) // 傳說
+                if( qlvl > 4 ) // 傳説
                 {
                         if( base_type == "weapon" )    
                                 props = weapon_props[2];
@@ -1121,7 +1121,7 @@ public varargs object create_dynamic(string obj_type, int ilvl, int mf, int flag
         else // 掉落寶石
         {
                 // 寶石分為4個等級，碎片，完好1，稀有1+1，神之1+2，寶石擁有兵器和防具以及飾品3種屬性？
-                // 掉落未鑒定的寶石代替
+                // 掉落未鑑定的寶石代替
                 ob = new("/clone/tessera/gem.c");
                 //file = map_array(get_dir("/inherit/template/gem/"), (: "/inherit/template/gem/" + $1 :)); 
                 //filename = file[random(sizeof(file))]; 
@@ -1155,7 +1155,7 @@ public varargs void killer_reward(object killer, object victim, mapping drops)
         if( mf <= 10 )
                 uf = sf = rf = mf;
                 
-        uf = mf*250/(mf+250);  // 傳說品級
+        uf = mf*250/(mf+250);  // 傳説品級
         sf = mf*500/(mf+500);  // 史詩品級
         rf = mf*600/(mf+600);  // 珍稀品級
         
@@ -1170,7 +1170,7 @@ public varargs void killer_reward(object killer, object victim, mapping drops)
                 value = drops[ks[i]];
                 value += value * mf/100;
                 
-                // 掉落幾率公式                
+                // 掉落機率公式                
                 if( team_size >= 5 )
                         value = value * 220 / 100;
                 else if( team_size == 4 )
@@ -1234,9 +1234,9 @@ public varargs void killer_reward(object killer, object victim, mapping drops)
                                         else if( query("quality_level", ob) == 4 ) // 史詩
                                                 CHANNEL_D->channel_broadcast("news",  
                                                         killer->name() + "殺死" + victim->name() + NOR YEL"，從其屍體上撿起了一"+query("unit", ob)+HIM" 史"NOR MAG"詩"HIW"級 "NOR YEL+ob->name()+YEL"。\n"NOR);
-                                        else if( query("quality_level", ob) == 5 ) // 傳說
+                                        else if( query("quality_level", ob) == 5 ) // 傳説
                                                 CHANNEL_D->channel_broadcast("news",  
-                                                        killer->name() + "殺死" + victim->name() + NOR YEL"，從其屍體上撿起了一"+query("unit", ob)+HIY" 傳"NOR YEL"說"HIW"級 "NOR YEL+ob->name()+YEL"。\n"NOR);
+                                                        killer->name() + "殺死" + victim->name() + NOR YEL"，從其屍體上撿起了一"+query("unit", ob)+HIY" 傳"NOR YEL"説"HIW"級 "NOR YEL+ob->name()+YEL"。\n"NOR);
                                         else if( query("quality_level", ob) == 6 ) // 神器
                                                 CHANNEL_D->channel_broadcast("news",  
                                                         killer->name() + "殺死" + victim->name() + NOR YEL"，從其屍體上撿起了一"+query("unit", ob)+HIY" 神"NOR YEL"器"HIW"級 "NOR YEL+ob->name()+YEL"。\n"NOR);

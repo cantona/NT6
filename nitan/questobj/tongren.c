@@ -13,10 +13,10 @@ void create()
                 set_default_object(__FILE__);
         else {
                 set("unit", "只");
-                set("long", "這是一只沉重的獨腳銅人，打造的相當粗大堅實。\n");
+                set("long", "這是一隻沉重的獨腳銅人，打造的相當粗大堅實。\n");
                 set("value", 3);
                 set("material", "iron");
-                set("wield_msg", "$N拿出一只$n，試了試重量，然後握在手中。\n");
+                set("wield_msg", "$N拿出一隻$n，試了試重量，然後握在手中。\n");
                 set("unwield_msg", "$N放下手中的$n。\n");
         }
         setup();

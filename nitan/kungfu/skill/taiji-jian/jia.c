@@ -44,7 +44,7 @@ int perform(object me, object target)
                 return notify_fail(target->name() + "目前正自顧不暇，放膽攻擊吧。\n");
 
         if (! living(target))
-                return notify_fail("對方都已經這樣了，用不著這麼費力吧？\n");
+                return notify_fail("對方都已經這樣了，用不着這麼費力吧？\n");
 
         wn1 = weapon->name();
         wn2 = weapon2->name();
@@ -72,7 +72,7 @@ int perform(object me, object target)
                 me->start_busy(2);
         } else
         {
-                msg += CYN "$n" CYN "不禁大驚失色，急忙躍開數步，方才擺脫$N"
+                msg += CYN "$n" CYN "不禁大驚失色，急忙躍開數步，方才擺脱$N"
                        CYN "的力道。\n" NOR;
                 addn("neili", -10, me);
                 me->start_busy(2);

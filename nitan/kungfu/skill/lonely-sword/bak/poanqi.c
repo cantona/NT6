@@ -48,7 +48,7 @@ int perform(object me)
           {
              if(userp(me))
                   addn("neili", -50, me);
-             msg = "$n頓時覺得舖天蓋地的";
+             msg = "$n頓時覺得鋪天蓋地的";
              msg += weapon2->name();
              msg += "反而向自己襲來！全身上下立刻被打得跟馬蜂窩似的\n" NOR;
 

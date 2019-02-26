@@ -4,7 +4,7 @@ void create()
 {
         set("short", "後殿");
         set("long", @LONG
-後殿是南岳大廟的第八進，也是南岳大帝的寢宮。
+後殿是南嶽大廟的第八進，也是南嶽大帝的寢宮。
 LONG );
         set("exits", ([
                "south"  : __DIR__"dadian",

@@ -6,7 +6,7 @@ inherit F_DEALER;
 void create()
 {
         set_name("阿芳", ({ "afang", "fang" }));
-        set("title", "茶僚老板");
+        set("title", "茶僚老闆");
         set("nickname", "荊州老姑娘");
         set("shen_type", 1);
 
@@ -52,11 +52,11 @@ void greeting(object ob)
         switch(random(2))
         {
         case 0 :
-                say(CYN "阿芳笑眯眯地說道：這位" + RANK_D->query_respect(ob)
+                say(CYN "阿芳笑眯眯地説道：這位" + RANK_D->query_respect(ob)
                     + CYN + "，快請進來喝杯熱茶。\n" NOR);
                 break;
         case 1 :
-                say(CYN "阿芳說道：喲！這位" + RANK_D->query_respect(ob)
+                say(CYN "阿芳説道：喲！這位" + RANK_D->query_respect(ob)
                     + CYN + "您來了啊！\n" NOR);
                 break;
         }

@@ -1,4 +1,4 @@
-// jingtie.c 百煉精鐵
+// jingtie.c 百鍊精鐵
 
 #include <ansi.h>
 
@@ -6,7 +6,7 @@ inherit ITEM;
 
 void create()
 {
-        set_name(WHT "百煉精鐵" NOR, ({"iron", "tie"}));
+        set_name(WHT "百鍊精鐵" NOR, ({"iron", "tie"}));
         set_weight(4500);
         if (clonep())
                 set_default_object(__FILE__);

@@ -42,7 +42,7 @@ int perform(object me, object target)
                 return notify_fail("你現在沒有準備使用手印，無法使用天劫！\n");
 
         msg = HIW "$N" HIW "一聲暴喝，雙手猛然翻滾，"
-              "剎那間只見無數的手印舖天蓋地蜂擁而出，"
+              "剎那間只見無數的手印鋪天蓋地蜂擁而出，"
               "氣勢恢弘，無與倫比。\n" NOR;
         ap=me->query_skill("strike")+query("str", me)*10;
         dp=target->query_skill("parry")+query("dex", target)*6;

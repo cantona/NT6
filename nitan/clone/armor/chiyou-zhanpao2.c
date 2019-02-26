@@ -14,7 +14,7 @@ void create()
                 set_default_object(__FILE__);
         else {
                 set("unit", "件");
-                set("long", HIR "一件外型奇異的長袍，上面繪制著魔神蚩尤的標志。\n" NOR);
+                set("long", HIR "一件外型奇異的長袍，上面繪製着魔神蚩尤的標誌。\n" NOR);
                 set("material", "steel");
                 set("value", 800000);
                 set("armor_prop/armor", 600);

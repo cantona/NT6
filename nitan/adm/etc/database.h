@@ -4,7 +4,7 @@
 #define STATIC_LINK
 // 是否調試狀態
 // #define DEBUG
-// 是否允許分站新玩家注冊
+// 是否允許分站新玩家註冊
 // #define REFUSE_NEW_PLAYER
 
 protected mapping all_others_db = ([
@@ -12,7 +12,7 @@ protected mapping all_others_db = ([
 ]);
 
 protected mapping stations = ([
-        "113.31.21.157" : "《泥潭﹒王者歸來》",
+        "113.31.21.157" : "《泥潭·王者歸來》",
 ]);
 
 #ifndef DATABASE

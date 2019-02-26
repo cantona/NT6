@@ -67,21 +67,21 @@ int main(object me, string arg)
         {
                 dir = SECURITY_D->query_site_privilege("edit");
                 if( !dir && !sscanf(dst, "/u/%*s") )
-                        return notify_fail("你只能復制文件到你自己的目錄下。\n");
+                        return notify_fail("你只能複製文件到你自己的目錄下。\n");
                         
                 if( dir != "all" && !sscanf(dst, "/%s/%*s", dir) )
-                        return notify_fail("你只能復制文件到你自己目錄下以及" + dir + "目錄下。\n");
+                        return notify_fail("你只能複製文件到你自己目錄下以及" + dir + "目錄下。\n");
         }
         switch (file_size(src))
         {
         case -1:
                 if (copy_filter) break;
-                write("沒有這個(" + src + ")文件或目錄，無法復制。\n");
+                write("沒有這個(" + src + ")文件或目錄，無法複製。\n");
                 return 1;
 
         case -2:
                 if (copy_dir) break;
-                write("沒有指定 -R 參數，不能復制目錄(" + src + ")。\n");
+                write("沒有指定 -R 參數，不能複製目錄(" + src + ")。\n");
                 return 1;
         default:
                 // copy file, not directory.
@@ -105,16 +105,16 @@ int main(object me, string arg)
                 else
                 {
                         if (! SECURITY_D->valid_read(src, me, "ls"))
-                                write("沒有這個(" + src + ")文件或目錄，無法復制。\n");
+                                write("沒有這個(" + src + ")文件或目錄，無法複製。\n");
                         else
-                                write("你沒有權限復制這個文件。\n");
+                                write("你沒有權限複製這個文件。\n");
                 }
                 return 1;
         }
 
         if (strlen(dst) >= strlen(src) && dst[0..strlen(src) - 1] == src)
         {
-                write("你不能將一個路徑復制到自身或者是子路徑中。\n");
+                write("你不能將一個路徑複製到自身或者是子路徑中。\n");
                 return 1;
         }
 
@@ -133,15 +133,15 @@ int main(object me, string arg)
 
         default:
                 // destition is a file, error
-                write("目錄不能復制到文件內，請修正你的目的路徑。\n");
+                write("目錄不能複製到文件內，請修正你的目的路徑。\n");
                 return 1;
         }
 
-        message_system(HIC "復制目錄中，請稍候..." NOR);
+        message_system(HIC "複製目錄中，請稍候..." NOR);
 
         count = copy_dir(src, dst, DIR_MAY_NOT_EXISTED, copy_filter);
         if (count)
-                write(HIY "總共有" + count + "個文件被成功復制。\n" NOR);
+                write(HIY "總共有" + count + "個文件被成功複製。\n" NOR);
         return 1;
 }
 
@@ -172,9 +172,9 @@ int copy_dir(string src, string dst, int dir_existed, int copy_filter)
                 
                 if (idx == -1 || idx == 0) return count;
                 src = src[0..idx]; 
-                write (HIC "復制目錄(" + src + ")中符合條件文件 -- > (" + dst + ")。\n" NOR);
+                write (HIC "複製目錄(" + src + ")中符合條件文件 -- > (" + dst + ")。\n" NOR);
         } else        
-                write (HIC "復制目錄(" + src + ") -- > (" + dst + ")。\n" NOR);
+                write (HIC "複製目錄(" + src + ") -- > (" + dst + ")。\n" NOR);
                 
         i = sizeof(file);
         while (i--)
@@ -205,8 +205,8 @@ int help(object me)
         write(@HELP
 指令格式 : cp [-R|-F] <文件|路徑名> <目的文件|目的路徑名>
  
-這個指令可以復制源文件成目的文件或復制到目的路徑。如果使用了參數-R則
-可以復制一個目錄，沒有這個參數則不能復制路徑。
+這個指令可以複製源文件成目的文件或複製到目的路徑。如果使用了參數-R則
+可以複製一個目錄，沒有這個參數則不能複製路徑。
 
 see also: rm, mv
 HELP );

@@ -38,7 +38,7 @@ int perform(object me, object target)
 
         n = 4 + skill / 100;
 
-        msg = HIW "$N" HIW "手中" + weapon->name() + HIW "連連晃動，頓時盪起一陣"
+        msg = HIW "$N" HIW "手中" + weapon->name() + HIW "連連晃動，頓時蕩起一陣"
               HIW "低沉的有如滾滾雷音的海嘯聲……\n突然間$N" HIW "手中的" +
               weapon->name() + HIW "如一道閃電劃過，瞬間已向$n"
               HIW "唰唰唰連刺" + chinese_number(n) + "劍。\n" NOR;

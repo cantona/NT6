@@ -11,7 +11,7 @@ void create()
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("long", "一顆園園的火紅仙丹，據說吃了可以增強身法。增加先天屬性至五點\n");
+                set("long", "一顆園園的火紅仙丹，據説吃了可以增強身法。增加先天屬性至五點\n");
                 set("value", 10000);
                 set("unit", "顆");
                 set("only_do_effect", 1);

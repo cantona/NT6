@@ -3,7 +3,7 @@
 inherit ITEM;
 
 string* titles = ({
-                 "昆侖派秘籍",
+                 "崑崙派祕籍",
 });
 
 void create()
@@ -14,7 +14,7 @@ void create()
                                          set_default_object(__FILE__);
                   else {
                   set("unit", "本");
-                  set("long", "這是昆侖派內功心法的秘籍。\n");
+                  set("long", "這是崑崙派內功心法的祕籍。\n");
                   set("value", 500);
                   set("material", "paper");
                   set("skill", ([

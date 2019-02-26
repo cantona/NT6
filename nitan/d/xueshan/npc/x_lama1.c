@@ -3,7 +3,7 @@ inherit NPC;
 void create()
 {
         set_name("小喇嘛", ({ "xiao lama", "xiao", "lama" }));
-        set("long", "這是大輪寺的小喇嘛，臉上掛著天真的笑容。\n");
+        set("long", "這是大輪寺的小喇嘛，臉上掛着天真的笑容。\n");
         set("gender", "男性");
         set("attitude", "peaceful");
         set("class", "bonze");

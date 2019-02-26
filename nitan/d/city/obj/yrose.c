@@ -20,7 +20,7 @@ void create()
                 set("armor_prop/per", 3);
                 set("wear_msg", HIC "$N" HIC "輕輕地把一朵$n"
                                 HIC "戴在頭上，襯得明眸皓齒更加動人。\n");
-                set("remove_msg", HIC "$N" HIC "輕輕的嘆了"
+                set("remove_msg", HIC "$N" HIC "輕輕的歎了"
                                   "口氣，把$n" HIC "從頭上摘了下來。\n");
         }
         setup();

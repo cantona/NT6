@@ -98,7 +98,7 @@ int accept_kill(object ob)
 
         fam_info = query("fam_info");
 
-        // 檢查是否處于正在攻打狀態
+        // 檢查是否處於正在攻打狀態
         if ("/adm/daemons/story/familywar"->query_status() != ATTACKING)
         {
                 if( query("family/family_name", ob) == fam_info["family"] )
@@ -166,7 +166,7 @@ void die(object killer)
         int exp;                // 需要瓜分的經驗
         int pot;                // 需要瓜分的潛能
         int weiwang;            // 需要瓜分的威望
-        int score;              // 需要瓜分的閱歷
+        int score;              // 需要瓜分的閲歷
         int gongxian;           //
         object *t;              // 殺死我的人的隊伍列表
         object tob;
@@ -246,7 +246,7 @@ void random_move()
         {
                 message_vision("$N急急忙忙的走了。\n", this_object());
                 CHANNEL_D->do_channel(this_object(), "rumor",
-                                      sprintf("聽說%s在攻打%s之後，從此銷聲匿跡，被江湖中人所遺忘。",
+                                      sprintf("聽説%s在攻打%s之後，從此銷聲匿跡，被江湖中人所遺忘。",
                                               name(), fam_info["family"]));
                 log_file("static/killed_die", sprintf("%s %s(%s) vanished because timeout(%d:%d).\n",
                                                       log_time(), name(), query("id"),
@@ -261,7 +261,7 @@ void random_move()
                 listeners = filter_array(users(), (: filter_listener :));
 
                 if (query("is_leader") && random(3) == 0)
-                         message_vision(HIW "$N" HIW "說道：“弟兄們，不要著急，等下咱們攻入" + 
+                         message_vision(HIW "$N" HIW "説道：“弟兄們，不要着急，等下咱們攻入" + 
                                         fam_info["family"] + "，大開殺戒~！”\n" NOR, this_object());
                 else if (random(10) == 0)
                          message_vision(HIC "$N" HIC "嚷嚷道：“怎麼首領還不下令攻打" + 
@@ -282,7 +282,7 @@ void random_move()
                       {
 
                              CHANNEL_D->do_channel(this_object(), "rumor", 
-                                        "聽說神秘組織攻到" + fam_info["family"] + "的" + fam_info["tar_room_nm"] + 
+                                        "聽説神祕組織攻到" + fam_info["family"] + "的" + fam_info["tar_room_nm"] + 
                                         "，" + fam_info["family"] + "自此元氣大傷。\n");
 
                              "/adm/daemons/story/familywar"->change_status(OVER);
@@ -295,7 +295,7 @@ void random_move()
         // 按照路由列表移動
         if (stringp(dir = route[query("move")]))
         {
-              command("say 兄弟們沖啊，殺得他們落花流水，片甲不留！");
+              command("say 兄弟們衝啊，殺得他們落花流水，片甲不留！");
               if (GO_CMD->main(this_object(), dir))addn("move", 1);
 
               else if (stringp(fam_info["spe_cmds"]))

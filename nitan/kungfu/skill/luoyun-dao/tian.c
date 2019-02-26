@@ -34,11 +34,11 @@ int perform(object me, object target)
                 return notify_fail("你目前的真氣不夠，難以施展" LIAN "。\n");
 
         if (! living(target))
-                return notify_fail("對方都已經這樣了，用不著這麼費力吧？\n");
+                return notify_fail("對方都已經這樣了，用不着這麼費力吧？\n");
 
         wn = weapon->name();
 
-        msg = HIY "\n$N" HIY "將手中" + wn + HIY "立于胸前，施出絕招「" HIW "天"
+        msg = HIY "\n$N" HIY "將手中" + wn + HIY "立於胸前，施出絕招「" HIW "天"
               "刀落雲式" HIY "」，$N身法陡然加快，手中" + wn + HIY "連連揮出，猶"
               "如萬馬奔騰般襲向$n" HIY "。" NOR;
 

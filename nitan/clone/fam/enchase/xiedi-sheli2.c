@@ -8,7 +8,7 @@ void create()
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("long", HIM "傳說乃邪帝蚩尤所化，散放著五彩光芒。\n" NOR);
+                set("long", HIM "傳説乃邪帝蚩尤所化，散放着五彩光芒。\n" NOR);
                 set("unit", "顆");
                 set("value", 5000);
                 set("enchase/name", "邪帝舍利");

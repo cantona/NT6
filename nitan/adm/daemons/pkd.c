@@ -1,4 +1,4 @@
-// 增加獲取積分，積分可兌換物品，及可以到特殊地點或接受傳承等
+// 增加獲取積分，積分可兑換物品，及可以到特殊地點或接受傳承等
 // pkd.c
 
 #include <ansi.h>
@@ -85,7 +85,7 @@ int join_competition(object ob)
         mapping cnd;
 
         if (state != SLEEPING)
-                return notify_fail("現在屠人場正在舉行活動，你還是等等再說吧。\n");
+                return notify_fail("現在屠人場正在舉行活動，你還是等等再説吧。\n");
 
         if( query("combat_exp", ob)<800000 )
                 return notify_fail("你這點本事就別進去啦。\n");
@@ -93,13 +93,13 @@ int join_competition(object ob)
         if (mapp(cnd = ob->query_condition()) && sizeof(cnd))
         {
                 if (! undefinedp(cnd["hunger"]))
-                        return notify_fail("你還是先找點吃的東西再說吧。\n");
+                        return notify_fail("你還是先找點吃的東西再説吧。\n");
 
                 if (! undefinedp(cnd["killer"]))
                         return notify_fail("官府正在通緝你，你還敢在這兒拋頭露面？\n");
 
                 if (! undefinedp(cnd["bandage"]))
-                        return notify_fail("你還是等包紮的傷口止住了血再說吧！\n");
+                        return notify_fail("你還是等包紮的傷口止住了血再説吧！\n");
 
                 if (! undefinedp(cnd["putizi_drug"]))
                         return notify_fail("你剛服完菩提子不久，好好運功夫吸納吧！\n");
@@ -187,7 +187,7 @@ private void change_state(int new_state)
                 kickout_players();
 
                 ready_time = time();
-                message_competition("聽說一年一度的" + tlist[selected]["name"] + "馬上就要"
+                message_competition("聽説一年一度的" + tlist[selected]["name"] + "馬上就要"
                                     "舉行了，不知道今年的冠軍是誰？");
                 set_heart_beat(1);
                 send_invite_message();
@@ -196,12 +196,12 @@ private void change_state(int new_state)
         case STARTING:
                 if (! (n = start_competition()))
                 {
-                        message_competition("聽說今年的" + tlist[selected]["name"] + "因故"
+                        message_competition("聽説今年的" + tlist[selected]["name"] + "因故"
                                             "取消了，真是沒勁。");
                         new_state = SLEEPING;
                 } else
                 {
-                        message_competition("聽說今年的" + tlist[selected]["name"] +
+                        message_competition("聽説今年的" + tlist[selected]["name"] +
                                             "吸引了" + chinese_number(n) +
                                             "名高手！走...看看熱鬧去。");
                         set_heart_beat(1);
@@ -370,18 +370,18 @@ private void auto_check()
 
         if (sizeof(total) < 1)
         {
-                msg = "聽說屠人大賽參賽者死的死，逃的逃，現在一個人都沒有啦！";
+                msg = "聽説屠人大賽參賽者死的死，逃的逃，現在一個人都沒有啦！";
         } else
         if (sizeof(total) == 1)
         {
                 // change the daemon's state
-                msg = "聽說本次屠人大賽圓滿結束，" +
+                msg = "聽説本次屠人大賽圓滿結束，" +
                       total[0]->name(1) + "成為屠人冠軍！";
                 give_bouns(total[0]);
         } else
         if( sizeof(total) == query("couple/couple_id", 2 && total[0]) == query("id", total[1]) )
         {
-                msg = "聽說本次屠人大賽圓滿結束，" +
+                msg = "聽説本次屠人大賽圓滿結束，" +
                       total[0]->name(1) + "和" + total[1]->name(1) +
                       "夫妻雙雙把家還。";
                 give_bouns(total[0]);
@@ -404,7 +404,7 @@ private void give_bouns(object me)
         restore_status(me);
         tell_object(me, "這次真是爽呆了...\n");
         me->move(ENTRY_ROOM);
-        message("vision", me->name() + "慢慢的走了過來，一臉姦笑。\n",
+        message("vision", me->name() + "慢慢的走了過來，一臉奸笑。\n",
                 environment(me), ({ me }));
 
         // bouns
@@ -509,8 +509,8 @@ object *query_all_competitor()
 // overide function of quit
 int check_quit(object me)
 {
-        message_competition("聽說" + me->name(1) +
-                            "臨陣脫逃，溜走了。");
+        message_competition("聽説" + me->name(1) +
+                            "臨陣脱逃，溜走了。");
         restore_status(me);
         if (arrayp(total))
                 total -= ({ me });
@@ -519,7 +519,7 @@ int check_quit(object me)
 
         // continue run quit function
         me->move(ENTRY_ROOM);
-        message("vision", "只見" + me->name() + "慌裡慌張的跑了出來。\n",
+        message("vision", "只見" + me->name() + "慌里慌張的跑了出來。\n",
                 environment(me), ({ me }));
         return 1;
 }
@@ -549,9 +549,9 @@ int check_out(object me)
         tell_object(me, HIR "\n你覺得眼前一陣模糊...這下完了！\n" NOR);
         if (ob = me->query_last_damage_from())
         {
-                msg = "聽說" + me->name(1) + "慘遭" + ob->name(1) + "的毒手，被無情淘汰。";
+                msg = "聽説" + me->name(1) + "慘遭" + ob->name(1) + "的毒手，被無情淘汰。";
         } else
-                msg = "聽說" + me->name(1) + "運氣不佳，本領有限、已經慘遭淘汰。";
+                msg = "聽説" + me->name(1) + "運氣不佳，本領有限、已經慘遭淘汰。";
         message_competition(msg);
 
         restore_status(me);

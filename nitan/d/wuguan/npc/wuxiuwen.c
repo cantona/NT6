@@ -92,7 +92,7 @@ string give_tools()
 		return "我不是已經給你了嗎，怎麼那麼羅嗦？";
 
        	if( query_temp("mark/還了", ob) )
-		return "你還是先到耶律師兄那覆命了再說吧。";
+		return "你還是先到耶律師兄那覆命了再説吧。";
 
        	if( !((query_temp("job_name", ob) == "鋸木頭" )
 	 || (query_temp("job_name", ob) == "鋤草" )
@@ -188,7 +188,7 @@ void greeting(object ob)
 	 || (query_temp("job_name", ob) == "打掃馬房") )
 	{
        		command("nod "+query("id", ob));
-       		command("say 你是來我這裡領工具(" HIY "ask wu xiuwen about 工具"
+       		command("say 你是來我這裏領工具(" HIY "ask wu xiuwen about 工具"
                         NOR + CYN ")的吧。" NOR);
        	}
 }

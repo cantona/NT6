@@ -9,7 +9,7 @@ void create()
     else {
             set("unit", "本");
             set("material", "paper");
-            set("long", "一撮金黃色的毛發。\n");
+            set("long", "一撮金黃色的毛髮。\n");
           }
     set("owner", "謝遜");
     setup();

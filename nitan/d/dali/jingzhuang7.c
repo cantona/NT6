@@ -6,7 +6,7 @@ void create()
 {
         set("short","第七層");
         set("long", @LONG
-這裡是經幢的頂部，圓弧形頂篷，向徵天穹。上面刻有諸天神佛，
+這裏是經幢的頂部，圓弧形頂篷，向徵天穹。上面刻有諸天神佛，
 飛天力士等。
 LONG );
         set("outdoors", "dalic");

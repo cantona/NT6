@@ -25,31 +25,31 @@ void play_sound_0(object speaker,int index) {
                 return;
         switch (index)  {
                 case(0):
-                        tell_room(environment(),CYN"丁一說道：我乃當今三清宮掌門丁乘風的師叔......\n"NOR);
+                        tell_room(environment(),CYN"丁一説道：我乃當今三清宮掌門丁乘風的師叔......\n"NOR);
                         break;
                 case(1):
-                        tell_room(environment(),CYN"丁一說道：近來此處墓園發生異變，我帶領門下弟子來察看，不想遭遇不測......\n"NOR);
+                        tell_room(environment(),CYN"丁一説道：近來此處墓園發生異變，我帶領門下弟子來察看，不想遭遇不測......\n"NOR);
                         break;
                 case(2):
-                        tell_room(environment(),CYN"丁一說道：這個墓園深處裡有一處聚靈法陣，其下鎮壓了一個上古血魔。\n"NOR);
+                        tell_room(environment(),CYN"丁一説道：這個墓園深處裏有一處聚靈法陣，其下鎮壓了一個上古血魔。\n"NOR);
                         break;
                 case(3):
-                        tell_room(environment(),CYN"丁一說道：我等發現，無數死靈已經從法陣中逃逸，血魔亦有脫困的跡象。\n"NOR);
+                        tell_room(environment(),CYN"丁一説道：我等發現，無數死靈已經從法陣中逃逸，血魔亦有脱困的跡象。\n"NOR);
                         break;
                 case(4):
-                        tell_room(environment(),CYN"丁一說道：就在我們重新布置法陣的時候，一群少林和尚殺了過來。\n"NOR);
+                        tell_room(environment(),CYN"丁一説道：就在我們重新佈置法陣的時候，一羣少林和尚殺了過來。\n"NOR);
                         break;
                 case(5):
-                        tell_room(environment(),CYN"丁一說道：這些和尚一定是受到了血魔的詛咒，喪心病狂了。\n"NOR);
+                        tell_room(environment(),CYN"丁一説道：這些和尚一定是受到了血魔的詛咒，喪心病狂了。\n"NOR);
                         break;
                 case(6):
-                        tell_room(environment(),CYN"丁一說道：我們兩方鬥了個兩敗俱傷，弟子們拚死保護我，如今只剩我一個重傷逃離至此......\n"NOR);
+                        tell_room(environment(),CYN"丁一説道：我們兩方鬥了個兩敗俱傷，弟子們拚死保護我，如今只剩我一個重傷逃離至此......\n"NOR);
                         break;
                 case(7):
                         tell_room(environment(),YEL"丁一嗚嗚的哭起來......\n"NOR);
                         break;
                 case(8):
-                        tell_room(environment(),CYN"丁一說道：你可願意幫我們對付血魔？(accept yes/no)\n"NOR);
+                        tell_room(environment(),CYN"丁一説道：你可願意幫我們對付血魔？(accept yes/no)\n"NOR);
                         set_temp("開場白結束", 1, speaker);
                         break;
                 default: 
@@ -69,16 +69,16 @@ void play_sound_1(object speaker,int index) {
                 return;
         switch (index)  {
                 case(0):
-                        tell_room(environment(),CYN"丁一說道：嗯......多謝......\n"NOR);
+                        tell_room(environment(),CYN"丁一説道：嗯......多謝......\n"NOR);
                         break;
                 case(1):
-                        tell_room(environment(),CYN"丁一說道：血魔實在是法力無邊......他最擅長誘惑......我已經分不清敵我！\n"NOR);
+                        tell_room(environment(),CYN"丁一説道：血魔實在是法力無邊......他最擅長誘惑......我已經分不清敵我！\n"NOR);
                         break;
                 case(2):
-                        tell_room(environment(),CYN"丁一說道：就請你証明尚未被血魔誘惑: 殺八個骷髏，八個幽靈，八個僵屍。\n"NOR);
+                        tell_room(environment(),CYN"丁一説道：就請你證明尚未被血魔誘惑: 殺八個骷髏，八個幽靈，八個殭屍。\n"NOR);
                         break;
                 case(3):
-                        tell_room(environment(),CYN"丁一說道：完成後再來找我(report)。\n"NOR);
+                        tell_room(environment(),CYN"丁一説道：完成後再來找我(report)。\n"NOR);
                         set_temp("任務", 1, speaker);
                         break;
                 default: 
@@ -86,12 +86,12 @@ void play_sound_1(object speaker,int index) {
                         if(mazeobj) {
                                 set("quest/maze_code", "necropolis", mazeobj);
                                 set("quest/quest_index", 1, mazeobj);
-                                set("quest/quest_name", "証明忠誠", mazeobj);
-                                set("quest/quest_desc", "殺八個骷髏，八個幽靈，八個僵屍", mazeobj);
+                                set("quest/quest_name", "證明忠誠", mazeobj);
+                                set("quest/quest_desc", "殺八個骷髏，八個幽靈，八個殭屍", mazeobj);
                                 set("quest/quest_branch", "taoist", mazeobj);
                                 set("quest/to_kill/骷髏", 8, mazeobj);
                                 set("quest/to_kill/幽靈", 8, mazeobj);
-                                set("quest/to_kill/僵屍", 8, mazeobj);
+                                set("quest/to_kill/殭屍", 8, mazeobj);
                         }
                         delete_temp("in_speech", speaker);
                         destruct(this_object());
@@ -108,19 +108,19 @@ void play_sound_2(object speaker,int index) {
                 return;
         switch (index)  {
                 case(0):
-                        tell_room(environment(),CYN"丁一說道：好...做得不錯!\n"NOR);
+                        tell_room(environment(),CYN"丁一説道：好...做得不錯!\n"NOR);
                         break;
                 case(1):
-                        tell_room(environment(),CYN"丁一說道：想要挑戰血魔, 先要了解血魔的能力......\n"NOR);
+                        tell_room(environment(),CYN"丁一説道：想要挑戰血魔, 先要了解血魔的能力......\n"NOR);
                         break;
                 case(2):
-                        tell_room(environment(),CYN"丁一說道：這個墓園有很多血魔的手下......他的每個手下代表了他的一種能力！\n"NOR);
+                        tell_room(environment(),CYN"丁一説道：這個墓園有很多血魔的手下......他的每個手下代表了他的一種能力！\n"NOR);
                         break;
                 case(3):
-                        tell_room(environment(),CYN"丁一說道：去嘗試著殺掉三個骷髏武士，三個骷髏法師，三個幽靈之眼，三個幽靈之火，三個血僵屍，和三個屍煞。\n"NOR);
+                        tell_room(environment(),CYN"丁一説道：去嘗試着殺掉三個骷髏武士，三個骷髏法師，三個幽靈之眼，三個幽靈之火，三個血殭屍，和三個屍煞。\n"NOR);
                         break;
                 case(4):
-                        tell_room(environment(),CYN"丁一說道：完成後再來找我(report)。\n"NOR);
+                        tell_room(environment(),CYN"丁一説道：完成後再來找我(report)。\n"NOR);
                         set_temp("任務", 2, speaker);
                         break;
                 default: 
@@ -129,14 +129,14 @@ void play_sound_2(object speaker,int index) {
                                 delete("quest/to_kill", mazeobj);
                                 set("quest/maze_code", "necropolis", mazeobj);
                                 set("quest/quest_index", 2, mazeobj);
-                                set("quest/quest_name", "証明實力", mazeobj);
-                                set("quest/quest_desc", "殺三個骷髏武士，三個骷髏法師，三個幽冥之眼，三個幽冥之火，三個血僵屍，三個屍煞", mazeobj);
+                                set("quest/quest_name", "證明實力", mazeobj);
+                                set("quest/quest_desc", "殺三個骷髏武士，三個骷髏法師，三個幽冥之眼，三個幽冥之火，三個血殭屍，三個屍煞", mazeobj);
                                 set("quest/quest_branch", "taoist", mazeobj);
                                 set("quest/to_kill/骷髏武士", 3, mazeobj);
                                 set("quest/to_kill/骷髏法師", 3, mazeobj);
                                 set("quest/to_kill/幽冥之眼", 3, mazeobj);
                                 set("quest/to_kill/幽冥之火", 3, mazeobj);
-                                set("quest/to_kill/血僵屍", 3, mazeobj);
+                                set("quest/to_kill/血殭屍", 3, mazeobj);
                                 set("quest/to_kill/屍煞", 3, mazeobj);
                         }
                         delete_temp("in_speech", speaker);
@@ -154,16 +154,16 @@ void play_sound_3(object speaker,int index) {
                 return;
         switch (index)  {
                 case(0):
-                        tell_room(environment(),CYN"丁一說道：做得很好!\n"NOR);
+                        tell_room(environment(),CYN"丁一説道：做得很好!\n"NOR);
                         break;
                 case(1):
-                        tell_room(environment(),CYN"丁一說道：你有這樣的實力我就放心了！\n"NOR);
+                        tell_room(environment(),CYN"丁一説道：你有這樣的實力我就放心了！\n"NOR);
                         break;
                 case(2):
-                        tell_room(environment(),CYN"丁一說道：去找到那些墮落的少林和尚，殺了他們。他們手中有個法器，可以對付血魔。\n"NOR);
+                        tell_room(environment(),CYN"丁一説道：去找到那些墮落的少林和尚，殺了他們。他們手中有個法器，可以對付血魔。\n"NOR);
                         break;
                 case(3):
-                        tell_room(environment(),CYN"丁一說道：完成後再來找我(report)。\n"NOR);
+                        tell_room(environment(),CYN"丁一説道：完成後再來找我(report)。\n"NOR);
                         set_temp("任務", 3, speaker);
                         break;
                 default: 
@@ -193,16 +193,16 @@ void play_sound_4(object speaker,int index) {
                 return;
         switch (index)  {
                 case(0):
-                        tell_room(environment(),CYN"丁一說道：太好了!可惡的和尚，跟我爭......哈哈.....哦...那個...咳咳...\n"NOR);
+                        tell_room(environment(),CYN"丁一説道：太好了!可惡的和尚，跟我爭......哈哈.....哦...那個...咳咳...\n"NOR);
                         break;
                 case(1):
-                        tell_room(environment(),CYN"丁一說道：啟動聚靈法陣需要一些陰氣較盛的東西為引，\n"NOR);
+                        tell_room(environment(),CYN"丁一説道：啟動聚靈法陣需要一些陰氣較盛的東西為引，\n"NOR);
                         break;
                 case(2):
-                        tell_room(environment(),CYN"丁一說道：巫妖的骨杖，幽冥魔的幽冥之火，僵屍王的僵屍血，各取一樣來！\n"NOR);
+                        tell_room(environment(),CYN"丁一説道：巫妖的骨杖，幽冥魔的幽冥之火，殭屍王的殭屍血，各取一樣來！\n"NOR);
                         break;
                 case(3):
-                        tell_room(environment(),CYN"丁一說道：完成後再來找我(report)。\n"NOR);
+                        tell_room(environment(),CYN"丁一説道：完成後再來找我(report)。\n"NOR);
                         set_temp("任務", 4, speaker);
                         break;
                 default: 
@@ -213,11 +213,11 @@ void play_sound_4(object speaker,int index) {
                                 set("quest/maze_code", "necropolis", mazeobj);
                                 set("quest/quest_index", 4, mazeobj);
                                 set("quest/quest_name", "尋找法引", mazeobj);
-                                set("quest/quest_desc", "找到巫妖的骨杖，幽冥魔的幽冥之火，僵屍王的僵屍血各一樣", mazeobj);
+                                set("quest/quest_desc", "找到巫妖的骨杖，幽冥魔的幽冥之火，殭屍王的殭屍血各一樣", mazeobj);
                                 set("quest/quest_branch", "taoist", mazeobj);
                                 set("quest/to_find/骨杖", 1, mazeobj);
                                 set("quest/to_find/幽冥之火", 1, mazeobj);
-                                set("quest/to_find/僵屍血", 1, mazeobj);
+                                set("quest/to_find/殭屍血", 1, mazeobj);
                         }
                         delete_temp("in_speech", speaker);
                         destruct(this_object());
@@ -239,13 +239,13 @@ void play_sound_5(object speaker,object leader,int index) {
         }
         switch (index)  {
                 case(0):
-                        tell_room(environment(),CYN"丁一說道：這樣所有需要的法器就全了！\n"NOR);
+                        tell_room(environment(),CYN"丁一説道：這樣所有需要的法器就全了！\n"NOR);
                         break;
                 case(1):
-                        tell_room(environment(),CYN"丁一說道：我們到聚靈法陣那裡，我來作法，重新召喚...哦不，重新封印血魔！\n"NOR);
+                        tell_room(environment(),CYN"丁一説道：我們到聚靈法陣那裏，我來作法，重新召喚...哦不，重新封印血魔！\n"NOR);
                         break;
                 case(2):
-                        tell_room(environment(),CYN"丁一說道：法陣那裡可能還有些血魔的手下......你從前面帶路吧！\n"NOR);
+                        tell_room(environment(),CYN"丁一説道：法陣那裏可能還有些血魔的手下......你從前面帶路吧！\n"NOR);
                         set_temp("任務", 5, speaker);
                         break;
                 default: 
@@ -255,7 +255,7 @@ void play_sound_5(object speaker,object leader,int index) {
                                 set("quest/maze_code", "necropolis", mazeobj);
                                 set("quest/quest_index", 5, mazeobj);
                                 set("quest/quest_name", "清理法陣", mazeobj);
-                                set("quest/quest_desc", "把丁一帶到聚靈法陣，並清理那裡的血魔手下", mazeobj);
+                                set("quest/quest_desc", "把丁一帶到聚靈法陣，並清理那裏的血魔手下", mazeobj);
                                 set("quest/quest_branch", "taoist", mazeobj);
                                 speaker->set_leader(leader);
                         }
@@ -274,19 +274,19 @@ void play_sound_6(object speaker,int index) {
                 return;
         switch (index)  {
                 case(0):
-                        tell_room(environment(),CYN"丁一說道：好，我可以開始作法了！\n"NOR);
+                        tell_room(environment(),CYN"丁一説道：好，我可以開始作法了！\n"NOR);
                         break;
                 case(1):
-                        tell_room(environment(),CYN"丁一說道：聚靈塔需要吸收十個亡靈才能發揮作用。！\n"NOR);
+                        tell_room(environment(),CYN"丁一説道：聚靈塔需要吸收十個亡靈才能發揮作用。！\n"NOR);
                         break;
                 case(2):
-                        tell_room(environment(),CYN"丁一說道：在我施法期間，會有很多亡靈被吸引來，幫我殺夠十個！\n"NOR);
+                        tell_room(environment(),CYN"丁一説道：在我施法期間，會有很多亡靈被吸引來，幫我殺夠十個！\n"NOR);
                         break;
                 case(3):
-                        tell_room(environment(),HIW"丁一將骨杖、幽冥之火和僵屍血投入到聚靈法陣中...法陣頓時亮了起來！\n"NOR);
+                        tell_room(environment(),HIW"丁一將骨杖、幽冥之火和殭屍血投入到聚靈法陣中...法陣頓時亮了起來！\n"NOR);
                         break;
                 case(4):
-                        tell_room(environment(),HIY"丁一拿出聚靈塔，大聲的念著咒語......\n"NOR);
+                        tell_room(environment(),HIY"丁一拿出聚靈塔，大聲的念着咒語......\n"NOR);
                         set_temp("任務", 6, speaker);
                         break;
                 default: 
@@ -295,7 +295,7 @@ void play_sound_6(object speaker,int index) {
                                 set("quest/maze_code", "necropolis", mazeobj);
                                 set("quest/quest_index", 6, mazeobj);
                                 set("quest/quest_name", "超度亡靈", mazeobj);
-                                set("quest/quest_desc", "護衛丁一，同時在聚靈法陣處殺死十個亡靈", mazeobj);
+                                set("quest/quest_desc", "護衞丁一，同時在聚靈法陣處殺死十個亡靈", mazeobj);
                                 set("quest/quest_branch", "taoist", mazeobj);
                                 set("quest/to_kill/亡靈", 10, mazeobj);
                                 speaker->summon_undead(environment(),mazeobj);
@@ -317,7 +317,7 @@ void play_sound_7(object speaker,int index) {
                 return;
         switch (index)  {
                 case(0):
-                        tell_room(environment(),HIC"\n丁一說道：成敗在此一舉！\n\n"NOR);
+                        tell_room(environment(),HIC"\n丁一説道：成敗在此一舉！\n\n"NOR);
                         tell_room(environment(),BLINK HIC"\n聚靈塔升上天空，聚靈法陣發出耀眼的五彩光芒。\n\n"NOR);
                         objs = all_inventory(environment());
                         foreach(obj in objs) {
@@ -351,7 +351,7 @@ void play_sound_7(object speaker,int index) {
                         moon->hurt();
                         break;
                 case(6):
-                        tell_room(environment(),HIR"\n\n丁一說道：朋友們，現在是我報答你們的時候了！就是把你們變成血魔的一部分！哈哈！\n\n"NOR);
+                        tell_room(environment(),HIR"\n\n丁一説道：朋友們，現在是我報答你們的時候了！就是把你們變成血魔的一部分！哈哈！\n\n"NOR);
                         set_temp("任務", 7, speaker);
                         mazeobj = FUBEN_D->query_maze_mainobj(speaker);
                         if(mazeobj) {

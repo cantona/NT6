@@ -37,9 +37,9 @@ int perform(object me, object target)
                 return notify_fail("你沒有激發柔雲劍法，難以施展" TAO "。\n");
 
         if (! living(target))
-                return notify_fail("對方都已經這樣了，用不著這麼費力吧？\n");
+                return notify_fail("對方都已經這樣了，用不着這麼費力吧？\n");
 
-        msg = HIC "$N" HIC "使出柔雲劍法「三環套月」，一招之中另蘊三招，舖天"
+        msg = HIC "$N" HIC "使出柔雲劍法「三環套月」，一招之中另藴三招，鋪天"
               "蓋地罩向$n" HIC "！\n" NOR;
         message_combatd(msg, me, target);
         addn("neili", -150, me);

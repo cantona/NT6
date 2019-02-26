@@ -11,8 +11,8 @@ void create()
         set("short", "暗道");
         set("long", @LONG
 這是一個陰暗潮濕的地道，四壁用粗糙的片巖壘垛而成，一顆顆
-水珠沿著牆壁滾下來，濺在地上。也許是因為長時間無人通行的緣故，
-整個地道彌漫著一股腐屍般的惡臭。
+水珠沿着牆壁滾下來，濺在地上。也許是因為長時間無人通行的緣故，
+整個地道瀰漫着一股腐屍般的惡臭。
 LONG );
         set("exits", ([
                 "up" : __DIR__"zhonglou1",
@@ -29,7 +29,7 @@ int valid_leave(object me, string dir)
         {
                 if ( me->query_skill("jiuyang-shengong", 1) < 80 )
                 {
-                        return notify_fail("你試著推了推頂上的磚蓋，觸手冰涼，紋絲不動。\n" 
+                        return notify_fail("你試着推了推頂上的磚蓋，觸手冰涼，紋絲不動。\n" 
                         + "看來已被鐵汁澆透，堅如鐵板一般。看來你只能另想辦法了。\n");
                 }                
 
@@ -43,5 +43,5 @@ int valid_leave(object me, string dir)
         return ::valid_leave(me, dir);
 }
 
-//坎; 離; 震; 艮; 艮; 兌; 巽; 震; 乾; 震; 兌; 巽; 離; 坎; 兌; 艮; 兌; 坎
+//坎; 離; 震; 艮; 艮; 兑; 巽; 震; 乾; 震; 兑; 巽; 離; 坎; 兑; 艮; 兑; 坎
 

@@ -83,7 +83,7 @@ mapping *quest = ({
         ]),
         ([
                 "id":          "golden necklace",
-                "name":        "金項鏈",
+                "name":        "金項鍊",
                 "type":        "尋",
                 "bonus":       59,
                 "msg1":        "",
@@ -211,7 +211,7 @@ mapping *quest = ({
         ]),
         ([
                 "id":          "mini-ao",
-                "name":        "[34m彩緞緊身襖[2;37;0m",
+                "name":        "[34m綵緞緊身襖[2;37;0m",
                 "type":        "尋",
                 "bonus":       50,
                 "msg1":        "",
@@ -307,7 +307,7 @@ mapping *quest = ({
         ]),
         ([
                 "id":          "golden necklace",
-                "name":        "金項鏈",
+                "name":        "金項鍊",
                 "type":        "尋",
                 "bonus":       82,
                 "msg1":        "",

@@ -36,7 +36,7 @@ int do_fire(string arg)
                 return notify_fail("你要幹什麼？\n");
 
         if (me->is_busy())
-                return notify_fail("慢慢吸，小心別嗆著了。\n");
+                return notify_fail("慢慢吸，小心別嗆着了。\n");
 
         if (! objectp(ob))
                 return notify_fail("你已經沒有煙了。\n");

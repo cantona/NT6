@@ -66,11 +66,11 @@ string user_list(object *ob, int flag)
                 return "沒有任何符合條件的玩家。\n";
         me = this_player();
         admin = me->is_admin() || (SECURITY_D->query_site_privilege("finger") == "enable");
-        msg = "────────────────────────"
-              "─────────\n" +
+        msg = "————————————————————————"
+              "—————————\n" +
               BBLU WHT "姓名          帳號          年齡          發呆   連線             \n" NOR +
-              "────────────────────────"
-              "─────────\n";
+              "————————————————————————"
+              "—————————\n";
         for(i = 0; i < sizeof(ob); i++)
         {
                 if (me && ! me->visible(ob[i])) continue;
@@ -84,8 +84,8 @@ string user_list(object *ob, int flag)
                         (interactive(ob[i])?(query_idle(ob[i])+"s"):query("doing", ob[i]) == "closed"?"閉關":"斷線"),ipname);
         }
 
-        msg += "────────────────────────"
-               "─────────\n";
+        msg += "————————————————————————"
+               "—————————\n";
         return msg;
 }
 
@@ -111,11 +111,11 @@ varargs string finger_all(int idle)
                                 (interactive(ob[i]) ? (query_idle(ob[i]) + "s") : HIR "斷線中" NOR));
                 }
                 return "◎ " + MUD_NAME + "\n" +
-                       "──────────────────\n"
+                       "——————————————————\n"
                        + "姓名          帳號          發呆\n" +
-                       "──────────────────\n"
+                       "——————————————————\n"
                        + msg +
-                       "──────────────────\n";
+                       "——————————————————\n";
         } else         // wizard finger
         {
                 string *counter;

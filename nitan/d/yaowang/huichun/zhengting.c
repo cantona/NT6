@@ -5,8 +5,8 @@ void create()
 {
         set("short", "正廳");
         set("long", @LONG
-這裡是回春堂的正廳，寬敞的房間內放著幾張桌椅，每天都有藥王谷
-的醫師在這裡坐堂，為人看病療傷。
+這裏是回春堂的正廳，寬敞的房間內放着幾張桌椅，每天都有藥王谷
+的醫師在這裏坐堂，為人看病療傷。
 LONG );
         set("no_fight", 1);
         set("exits", ([
@@ -33,23 +33,23 @@ int do_zhiliao(string arg)
 
         if( query("family/family_name", me) != "藥王谷" )
         {               
-                return notify_fail("你不能在這裡給人療傷！\n");
+                return notify_fail("你不能在這裏給人療傷！\n");
         }
 
         if( !arg )
                 return notify_fail("指令格式：zhiliao <ID> \n");
 
         if(!objectp(ob = present(arg, environment(me))))
-                return notify_fail("這裡沒有這個人！\n");
+                return notify_fail("這裏沒有這個人！\n");
 
         if( me->is_fighting() || me->is_busy() )
-                return notify_fail("你正忙著呢！\n");
+                return notify_fail("你正忙着呢！\n");
 
         if( ob->is_fighting() || ob->is_busy() )
-                return notify_fail("他正忙著呢！\n");
+                return notify_fail("他正忙着呢！\n");
 
         if( me==ob )
-                return notify_fail("你不需要在這裡給自己療傷！\n");
+                return notify_fail("你不需要在這裏給自己療傷！\n");
 
         obj=(query("max_qi", ob)-query("eff_qi", ob));
 

@@ -34,24 +34,24 @@ mapping *action = ({
         "skill_name" : "神劍佛威",
         "damage_type" : "刺傷"
 ]),
-([      "action": "$N揮劍分擊，劍勢自胸前躍出，$w一式「群邪辟易」，毫無留戀之勢，刺向$n",
+([      "action": "$N揮劍分擊，劍勢自胸前躍出，$w一式「羣邪辟易」，毫無留戀之勢，刺向$n",
         "force" : 290,
         "attack": 231,
         "dodge" : 81,
         "parry" : 83,
         "damage": 155,
         "lvl"   : 80,
-        "skill_name" : "群邪辟易",
+        "skill_name" : "羣邪辟易",
         "damage_type" : "刺傷"
 ]),
-([      "action": "$N左手劍指劃轉，腰部一扭，右手$w一記「盪妖除魔」自下而上刺向$n的$l",
+([      "action": "$N左手劍指劃轉，腰部一扭，右手$w一記「蕩妖除魔」自下而上刺向$n的$l",
         "force" : 300,
         "attack": 275,
         "dodge" : 95,
         "parry" : 95,
         "damage": 193,
         "lvl"   : 150,
-        "skill_name" : "盪妖除魔",
+        "skill_name" : "蕩妖除魔",
         "damage_type" : "刺傷"
 ]),
 (["action": HIR "$N臉色凝重凝重，緩緩舉起$w"NOR""HIR"，突然躍起身劍合一，使出一招“倚天不出”，\n手中$w"NOR""HIR"由下至上劃出一條美麗的弧線刺向$n的$l" NOR,
@@ -82,7 +82,7 @@ int valid_enable(string usage)
 int valid_learn(object me)
 {
         if( query("character", me) == "心狠手辣" ||
-            query("character", me) == "陰險姦詐" ||
+            query("character", me) == "陰險奸詐" ||
             query("character", me) == "狡黠多變" )
                 return notify_fail("以你的性格不適合修煉此劍術。\n");
 

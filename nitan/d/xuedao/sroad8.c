@@ -7,9 +7,9 @@ void create()
 {
         set("short", "雪山山谷");
         set("long", @LONG
-一個寬大山谷，群山環繞，山頂上全是白閃閃的積雪，山谷南方
-有兩個山洞。附近有幾棵說不出什麼名字的古樹，下面有一些亂七八
-糟的零碎(mash)堆擺在那裡。
+一個寬大山谷，羣山環繞，山頂上全是白閃閃的積雪，山谷南方
+有兩個山洞。附近有幾棵説不出什麼名字的古樹，下面有一些亂七八
+糟的零碎(mash)堆擺在那裏。
 LONG );
         set("exits", ([
                 "enter"    : __DIR__"shandong1",
@@ -30,7 +30,7 @@ void init()
         if (! environment(ob))
         {
                 set("item_desc", ([
-                        "mash": HIR "\n這是一些亂七八糟的零碎，散發出陣陣惡心的"
+                        "mash": HIR "\n這是一些亂七八糟的零碎，散發出陣陣噁心的"
                                 "臭味。你定睛看\n去，零碎中居然有本" NOR + CYN
                                 "「中平槍譜」" HIR "(zhongping qiangpu)" HIR "。"
                                 "\n\n" NOR,
@@ -49,7 +49,7 @@ void init()
         } else
         {
                 set("item_desc", ([
-                        "mash": HIR "\n這是一些亂七八糟的零碎，散發出陣陣惡心的"
+                        "mash": HIR "\n這是一些亂七八糟的零碎，散發出陣陣噁心的"
                                 "臭味。\n" NOR,
                 ]));
         }
@@ -80,7 +80,7 @@ int do_get(string arg)
                                "\n" NOR, me);
 
                 set("item_desc", ([
-                        "mash": HIR "\n這是一些亂七八糟的零碎，散發出陣陣惡心的"
+                        "mash": HIR "\n這是一些亂七八糟的零碎，散發出陣陣噁心的"
                                 "臭味。\n" NOR,
                 ]));
                 return 1;

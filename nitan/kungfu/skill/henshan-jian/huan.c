@@ -39,11 +39,11 @@ int perform(object me, object target)
                 return notify_fail("你現在的真氣不夠，難以施展" HUAN "。\n");
 
         if (! living(target))
-                return notify_fail("對方都已經這樣了，用不著這麼費力吧？\n");
+                return notify_fail("對方都已經這樣了，用不着這麼費力吧？\n");
 
         wn = weapon->name();
                            
-        msg = HIC "\n$N" HIC "將真氣運于劍身，身法陡然加快，手中" + wn +
+        msg = HIC "\n$N" HIC "將真氣運於劍身，身法陡然加快，手中" + wn +
               HIC "劍隨人動，霎那間劍光四散，如夢如幻，像有無數柄" + wn +
               HIC "一齊襲向$n" HIC "。" NOR;
 

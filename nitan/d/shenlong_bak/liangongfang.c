@@ -7,9 +7,9 @@ void create()
 {
         set("short", "練功房");
         set("long", @LONG
-這裡是神龍教秘密的練功房，地下整整齊齊放著幾個蒲團，幾位神
-龍教長老正盤膝坐在上面練功。四壁列著一些櫃子，抽屜中放滿了各類
-藥酒。櫃子上放著幾本神龍教從各處獵獲的內功心法冊子。
+這裏是神龍教祕密的練功房，地下整整齊齊放着幾個蒲團，幾位神
+龍教長老正盤膝坐在上面練功。四壁列着一些櫃子，抽屜中放滿了各類
+藥酒。櫃子上放着幾本神龍教從各處獵獲的內功心法冊子。
 LONG
         );
         set("exits", ([
@@ -47,6 +47,6 @@ int do_practice(string arg)
         if(arg == "strike" && me->query_skill_mapped(arg) == "huagu-mianzhang" )
                 return 0;
 
-        write("這裡是修習化骨綿掌的場所。\n");
+        write("這裏是修習化骨綿掌的場所。\n");
         return 1;
 }

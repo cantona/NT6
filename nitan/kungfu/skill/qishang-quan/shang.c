@@ -37,7 +37,7 @@ int perform(object me, object target)
                 return notify_fail("你沒有準備使用七傷拳，無法施展" + name() + "。\n");
 
         if (! living(target))
-              return notify_fail("對方都已經這樣了，用不著這麼費力吧？\n");
+              return notify_fail("對方都已經這樣了，用不着這麼費力吧？\n");
 
         msg = HIY "$N" HIY "怒喝一聲，施出絕招「" HIW "傷字訣" HIY "」，雙拳迅猛無比"
               "的襲向$n" HIY "。\n" NOR;

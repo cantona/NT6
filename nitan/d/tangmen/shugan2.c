@@ -1,4 +1,4 @@
-//shugan2.c                四川唐門─裂星崖古樹
+//shugan2.c                四川唐門—裂星崖古樹
 
 #include <ansi.h>
 #include <room.h>
@@ -8,8 +8,8 @@ void create()
 {
         set("short", "參天古樹");
         set("long",
-      "這是萬年古鬆的樹頂。當年祖師爺？？？曾在這裡日觀雲動，夜觀星\n" 
-      "變，最終悟出了？？？？的唐門絕學，因此很多弟子常常在這裡日夜靜坐。\n" 
+      "這是萬年古鬆的樹頂。當年祖師爺？？？曾在這裏日觀雲動，夜觀星\n" 
+      "變，最終悟出了？？？？的唐門絕學，因此很多弟子常常在這裏日夜靜坐。\n" 
 );
         set("area", "tangmen");
         setup();
@@ -29,7 +29,7 @@ int do_climb(string arg)
 
         if ( arg && arg=="up" )
         {
-                message_vision(HIC "$N攀著繁茂的樹枝一步步爬了上去。\n" NOR, ob);
+                message_vision(HIC "$N攀着繁茂的樹枝一步步爬了上去。\n" NOR, ob);
 
                 if ( (int)ob->query_skill("dodge", 1) < 41 && (int)ob->query_skill("finger", 1) < 41 )
                 {
@@ -44,10 +44,10 @@ int do_climb(string arg)
         else
                 if ( arg && arg=="down" )
                 {
-                        message_vision(HIC "$N攀著繁茂的樹枝小心翼翼的爬了下去。\n" NOR, ob);
+                        message_vision(HIC "$N攀着繁茂的樹枝小心翼翼的爬了下去。\n" NOR, ob);
                         ob->move(__DIR__"shugan1");
                         return 1;
                 }
                 else
-                        return notify_fail("你要向哪裡爬？\n");
+                        return notify_fail("你要向哪裏爬？\n");
 }

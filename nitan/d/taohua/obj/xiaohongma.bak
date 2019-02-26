@@ -12,12 +12,12 @@ void create()
         set("race", "家畜");
         set("age", 10);
         set("long", 
-"這是一匹神駿非凡的汗血寶馬，傳說是天馬下凡，但實際上是大宛山中野馬\n"
+"這是一匹神駿非凡的汗血寶馬，傳説是天馬下凡，但實際上是大宛山中野馬\n"
 "與五色母馬交配的後代。\n"
 "漢武帝曾為此種良馬大發兵卒，勞師遠征西域。\n");
 
-/*        set("msg_fail", "$n沖著$N怒嘶一聲，豎立起來！");
-        set("msg_succ", "$n搖著頭打轉，蹄子擊打著地面，似乎打不定主意");
+/*        set("msg_fail", "$n衝着$N怒嘶一聲，豎立起來！");
+        set("msg_succ", "$n搖着頭打轉，蹄子擊打着地面，似乎打不定主意");
         set("msg_trained","$n低嘶一聲，走到$N身邊挨挨擦擦，顯得十分高興！");
  */
        set("attitude", "peaceful");
@@ -50,7 +50,7 @@ void init()
         my_mj=query("max_jingli", me);
         addjing = (my_mj - my_jingli)/2;
         if(my_jingli <= my_mj/3){
-        say(me->name() +"大口大口地喘著粗氣。\n");
+        say(me->name() +"大口大口地喘着粗氣。\n");
         return;
         }
         if(my_jingli <=30 && my_jingli > 20){
@@ -98,7 +98,7 @@ int return_home(object home) {
 
 int do_tame()
 {
-        return notify_fail("小紅馬已脫獸籍，不再受馭獸術控制了。\n");
+        return notify_fail("小紅馬已脱獸籍，不再受馭獸術控制了。\n");
 }
 
 int do_duhe()
@@ -120,7 +120,7 @@ int do_duhe()
         case "宣和堡":
                 dest = "/d/xixia/oldwall";
                 break;
-        case "解脫坡":
+        case "解脱坡":
                 dest = "/d/emei/baoguoxi";
                 break;
         case "報國寺西牆":
@@ -133,7 +133,7 @@ int do_duhe()
                 dest = "/d/taihu/taihu";
                 break;
         default:
-                return notify_fail("這裡沒有小紅馬可以渡的河。\n");
+                return notify_fail("這裏沒有小紅馬可以渡的河。\n");
         }
         message_vision("\n$N雙腿一夾小紅馬，小紅馬長嘶一聲，躍入水中將$N帶到對岸。\n",who);
         message("vision", who->name() +"縱馬過河去了。\n",

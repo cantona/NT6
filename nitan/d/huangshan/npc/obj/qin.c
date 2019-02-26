@@ -10,7 +10,7 @@ void create()
                 set_default_object(__FILE__);
         else {
                 set("unit", "把");
-                set("long", "這是一把外表古色古香，但是內包精鐵的六弦琴。\n");
+                set("long", "這是一把外表古色古香，但是內包精鐵的六絃琴。\n");
                 set("value", 3);
                 set("material", "iron");
         }

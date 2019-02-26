@@ -51,7 +51,7 @@ int do_effect(object me)
         set_temp("last_eat/tianmo", time(), me);
 
         message_vision(YEL "$N" YEL "吃下一包" + name() +
-                       YEL "，內息運行一小周天，感覺身體發生了一些變化。\n", me);
+                       YEL "，內息運行一小週天，感覺身體發生了一些變化。\n", me);
 
         my["jing"]     = my["max_jing"];
         my["qi"]       = my["max_qi"];

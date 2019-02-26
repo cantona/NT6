@@ -8,7 +8,7 @@ void create()
         set("gender", "雄性");
         set("race", "走獸");
         set("age", 65);
-        set("long","這是一只白猿，它身手極為敏捷。\n");
+        set("long","這是一隻白猿，它身手極為敏捷。\n");
         set("combat_exp", 50000);
         set("shen_type", 1);
         set("attitude", "peaceful");

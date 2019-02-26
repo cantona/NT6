@@ -34,7 +34,7 @@ int perform(object me, object target)
                 return notify_fail("你沒有激發原始劍法，難以施展" GUI "。\n");
 
         if (! living(target))
-                return notify_fail("對方都已經這樣了，用不著這麼費力吧？\n");
+                return notify_fail("對方都已經這樣了，用不着這麼費力吧？\n");
 
         msg = HIY "$N" HIY "運轉內勁，手中" + weapon->name() + HIY "頓時青光閃"
               "爍，出劍嗤然有聲，朝$n" HIY "電射而去！\n" NOR;
@@ -56,7 +56,7 @@ int perform(object me, object target)
         } else 
         {
                 msg += CYN "可是$n" CYN "猛地向前一躍，跳出了$N"
-                       CYN "的攻擊范圍。\n"NOR;
+                       CYN "的攻擊範圍。\n"NOR;
                 addn("neili", -100, me);
                 me->start_busy(3);
         }

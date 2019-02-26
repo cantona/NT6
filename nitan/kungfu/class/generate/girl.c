@@ -223,7 +223,7 @@ mixed accept_ask(object who, string topic)
         {
                 if (who == owner)
                 {
-                        message_vision("$N抿著嘴嘻嘻一笑，對$n道：“你"
+                        message_vision("$N抿着嘴嘻嘻一笑，對$n道：“你"
                                        "就不要逗我開心拉！”\n", me, who);
                         return 1;
                 }
@@ -243,15 +243,15 @@ mixed accept_ask(object who, string topic)
 
         if (who != owner)
         {
-                // 和主人是夫妻關系
+                // 和主人是夫妻關係
                 if( query("id", who) == query("couple/id", owner) )
                 {
-                        message_vision("$N盈盈對著$n道了一個萬福。\n",
+                        message_vision("$N盈盈對着$n道了一個萬福。\n",
                                        me, who);        
                         return 1;
                 }
 
-                // 和主人是結拜兄弟關系
+                // 和主人是結拜兄弟關係
                 if (who->is_brother(owner))
                 {
                         message_vision("$N嘻嘻一笑，道：“" +
@@ -265,7 +265,7 @@ mixed accept_ask(object who, string topic)
                 switch (random(5))
                 {
                 case 0:
-                        message_vision("$N眨著大眼睛，無辜的望著$n，一副"
+                        message_vision("$N眨着大眼睛，無辜的望着$n，一副"
                                        "天真無邪的樣子。\n", me, who);
                         break;
                 case 1:
@@ -273,7 +273,7 @@ mixed accept_ask(object who, string topic)
                         break;
                 case 2:
                         message_vision("$N道：“" + owner->name(1) +
-                                       "說啦，不讓我和你們說話，外面壞人"
+                                       "説啦，不讓我和你們説話，外面壞人"
                                        "可多了。”\n", me, who);
                         break;
                 case 3:
@@ -281,7 +281,7 @@ mixed accept_ask(object who, string topic)
                                        "您別逗我啦。”\n", me, who);
                         break;
                 default:
-                        message_vision("$N聽了$n的話，什麼也沒有說，只是"
+                        message_vision("$N聽了$n的話，什麼也沒有説，只是"
                                        "用那雙清澈的目光掃了$n一眼。\n", me, who);
                         break;
                 }
@@ -304,7 +304,7 @@ mixed accept_ask(object who, string topic)
                 foreach (cob in obs)
                         if (! count || member_array(cob->name(), names) == -1)
                                 names[count++] = cob->name();
-                tell_object(who, sort_string(name() + "悄悄地告訴你：“我身上現在帶著" +
+                tell_object(who, sort_string(name() + "悄悄地告訴你：“我身上現在帶着" +
                                              implode(names, "、") + "呢。”\n", 60));
                 return "你現在要用什麼？";
         }
@@ -320,7 +320,7 @@ mixed accept_ask(object who, string topic)
                         continue;
 
                 // 找到了
-                message_vision("$N道：“等一下，在這兒呢。”說完掏出" +
+                message_vision("$N道：“等一下，在這兒呢。”説完掏出" +
                                cob->name() + "遞給$n。\n", me, who);
                 if (! cob->move(who))
                         message_vision("可是$n身上帶的東西太多，沒能接住$N的" +
@@ -331,11 +331,11 @@ mixed accept_ask(object who, string topic)
         switch (random(3))
         {
         case 0:
-                return "你說什麼？我沒聽清楚呀。";
+                return "你説什麼？我沒聽清楚呀。";
         case 1:
                 return "哦？你是想要東西嗎？要什麼呢？";
         default:
-                return "等...等一下，你說什麼？";
+                return "等...等一下，你説什麼？";
         }
 }
 
@@ -393,14 +393,14 @@ int accept_touxi(object ob)
 
 int accept_fight(object ob)
 {
-        message_vision("$N往後一縮，楚楚可憐的望著$n。\n",
+        message_vision("$N往後一縮，楚楚可憐的望着$n。\n",
                        this_object(), ob);
         return -1;
 }
 
 int accept_hit(object ob)
 {
-        message_vision("$N往後一縮，楚楚可憐的望著$n，讓$n心中不由得一軟。\n",
+        message_vision("$N往後一縮，楚楚可憐的望着$n，讓$n心中不由得一軟。\n",
                        this_object(), ob);
         return -1;
 }
@@ -415,7 +415,7 @@ int accept_kill(object ob)
         {
                 message_vision("$N向後一退，委屈的喊道：“為什麼，為什麼"
                                "要這樣對我？\n$n心中一軟，沒有下手，眼睜"
-                               "睜的看著$N跑掉了。\n", me, ob);
+                               "睜的看着$N跑掉了。\n", me, ob);
                 obs = all_inventory(me);
                 obs=filter_array(obs,(:!query("equipped", $1):));
                 if (sizeof(obs))
@@ -427,7 +427,7 @@ int accept_kill(object ob)
                 return -1;
         }
 
-        message_vision("$N連忙往後避去，委屈的沖$n喊道：“這位" +
+        message_vision("$N連忙往後避去，委屈的衝$n喊道：“這位" +
                        RANK_D->query_respect(ob) +"，你認錯人了吧！”\n",
                        me, ob);
         return -1;
@@ -535,7 +535,7 @@ void scan()
 
         env = environment(ob);
         if (environment() == env || ob->is_ghost())
-                // 和主人在的地點相同，或是主人處于鬼魂狀態
+                // 和主人在的地點相同，或是主人處於鬼魂狀態
                 return;
 
         if (is_busy() || is_fighting() || ! living(this_object()))
@@ -555,7 +555,7 @@ void scan()
         {
         case 0:
                 message_vision("$N慢慢走了過來，站在$n的身邊，一雙清澈"
-                               "的眼睛巡視著周圍。\n", me, ob);
+                               "的眼睛巡視着周圍。\n", me, ob);
                 break;
 
         case 1:
@@ -564,7 +564,7 @@ void scan()
                 break;
 
         default:
-                message_vision("$N悄悄地走了過來，站在$n的身後，望著大"
+                message_vision("$N悄悄地走了過來，站在$n的身後，望着大"
                                "家。\n", me, ob);
                 break;
         }
@@ -577,7 +577,7 @@ string description()
         int per;
 
         per = query_per();
-        if (per >= 30) return "她有傾國傾城之貌，容色麗鬱，嬌艷絕倫，堪稱人間仙子！\n";
+        if (per >= 30) return "她有傾國傾城之貌，容色麗鬱，嬌豔絕倫，堪稱人間仙子！\n";
         if (per >= 28) return "她清麗絕俗，風姿動人。俏臉生春，妙目含情，輕輕一笑，不覺讓人怦然心動。\n";
         if (per >= 26) return "她膚如凝脂，眉目如畫，風情萬種，楚楚動人。當真是我見猶憐！\n";
         if (per >= 24) return "她容色秀麗，面帶暈紅，眼含秋波。舉手投足之間，確有一番風韻。\n";

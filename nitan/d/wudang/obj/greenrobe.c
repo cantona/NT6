@@ -14,7 +14,7 @@ void create()
     else {
             set("female_only", 1);
         set("unit", "件");
-                set("long", "這是件質地輕軟的青色道袍，邊上還鏤著花呢。\n");
+                set("long", "這是件質地輕軟的青色道袍，邊上還鏤着花呢。\n");
         set("material", "cloth");
         set("armor_prop/armor", 1);
     }

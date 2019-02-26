@@ -80,7 +80,7 @@ void get_jiguo(string arg,object me,int total)
               ob->apply_condition("tmjob2",3);
               me->apply_condition("tmjob",5);
               ob->move(where);
-              tell_object(me,HIC"一只蚊子，猛然在你的眼前掠過，定睛一看......\n"NOR);
+              tell_object(me,HIC"一隻蚊子，猛然在你的眼前掠過，定睛一看......\n"NOR);
               return;
       }  
       write(HIG"好可憐啊！\n"NOR);

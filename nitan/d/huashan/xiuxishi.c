@@ -11,8 +11,8 @@ void create()
 {
         set("short", "華山小築");
         set("long", @LONG
-這是間整潔的廂房，因門窗常閉著，光線很昏暗。房裡別無他物，
-只有中間放著一張收拾得舒舒服服的大床，看著就讓人想睡覺。
+這是間整潔的廂房，因門窗常閉着，光線很昏暗。房裏別無他物，
+只有中間放着一張收拾得舒舒服服的大牀，看着就讓人想睡覺。
 LONG );
 
         set("sleep_room", 1);
@@ -54,7 +54,7 @@ int do_close(string arg)
                 return notify_fail("你要關什麼？\n");
 
         if (!query("exits/west"))
-                return notify_fail("門已經是關著的了。\n");
+                return notify_fail("門已經是關着的了。\n");
 
         message_vision("$N一伸手，把門關上了。\n", this_player());
 
@@ -63,7 +63,7 @@ int do_close(string arg)
 
         if(objectp(room))
         {
-                message("vision", "門被人從裡面關上了。\n", room);
+                message("vision", "門被人從裏面關上了。\n", room);
                 delete("exits/west");
                 delete("exits/east", room);
         }
@@ -80,7 +80,7 @@ int do_open(string arg)
                 return notify_fail("你要開什麼？\n");
 
         if (query("exits/west"))
-                return notify_fail("大門已經是開著了。\n");
+                return notify_fail("大門已經是開着了。\n");
 
         if(!( room = find_object(__DIR__"xiaolu2")) )
                 room = load_object(__DIR__"xiaolu2");
@@ -93,12 +93,12 @@ int do_open(string arg)
                 if( query_temp("sleeped", me) )
                 {
                 message("vision","吱地一聲，"+query("name", me)+
-                                  "精神煥發地從裡面把門打開了。\n",
+                                  "精神煥發地從裏面把門打開了。\n",
                 room);
                 } else 
                 {
                 message("vision","梆地一聲，"+query("name", me)+
-                                  "從裡面把門打開，一臉的不耐煩。\n",
+                                  "從裏面把門打開，一臉的不耐煩。\n",
                          room);
                 }        
                 

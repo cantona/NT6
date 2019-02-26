@@ -1,4 +1,4 @@
-//shusha-zhang.c 朱砂掌
+//shusha-zhang.c 硃砂掌
 // Last Modified by sir 10.22.2001
 
 #include <ansi.h>;
@@ -15,7 +15,7 @@ mapping *action = ({
         "lvl"    : 20,
         "skill_name"  : "雙封掌"
 ]),
-([        "action" : "$N使一式"HIC"「破風穿雲」"NOR"，身形前沖，雙掌向前插出，直取$n的$l",
+([        "action" : "$N使一式"HIC"「破風穿雲」"NOR"，身形前衝，雙掌向前插出，直取$n的$l",
         "lvl"    : 40,
         "skill_name"  : "破風穿雲"
 ]),
@@ -27,7 +27,7 @@ mapping *action = ({
         "lvl"    : 80,
         "skill_name"  : "反摔掌"
 ]),
-([        "action" : "$N突然身形一緩，使出一式"MAG"「偷漏掌」"NOR"，右腳前扣，右掌向外圈手，又外向裡拍向$n的$l",
+([        "action" : "$N突然身形一緩，使出一式"MAG"「偷漏掌」"NOR"，右腳前扣，右掌向外圈手，又外向裏拍向$n的$l",
         "lvl"    : 100,
         "skill_name"  : "偷漏掌"
 ]),
@@ -45,11 +45,11 @@ int valid_enable(string usage) { return usage=="strike" || usage=="parry" ; }
 int valid_learn(object me)
 {
         if( query_temp("weapon", me) || query_temp("secondary_weapon", me) )
-                return notify_fail("練朱砂掌必須空手。\n");
+                return notify_fail("練硃砂掌必須空手。\n");
         if ((int)me->query_skill("guiyuan-tunafa", 1) < 10)
-                return notify_fail("你的歸元吐納法火候不夠，無法學朱砂掌。\n");
+                return notify_fail("你的歸元吐納法火候不夠，無法學硃砂掌。\n");
         if( query("max_neili", me)<20 )
-                return notify_fail("你的內力太弱，無法練朱砂掌。\n");
+                return notify_fail("你的內力太弱，無法練硃砂掌。\n");
         return 1;
 }
 int practice_skill(object me)
@@ -57,7 +57,7 @@ int practice_skill(object me)
         if( query("qi", me)<30 )
                 return notify_fail("你的體力太低了。\n");
         if( query("neili", me)<40 )
-                return notify_fail("你的內力不夠練朱砂掌。\n");
+                return notify_fail("你的內力不夠練硃砂掌。\n");
         me->receive_damage("qi", 25);
         addn("neili", -10, me);
         return 1;
@@ -109,10 +109,10 @@ int power_point(object me) { return 1.0; }
 
 int help(object me)
 {
-        write(HIC"\n朱砂掌："NOR"\n");
+        write(HIC"\n硃砂掌："NOR"\n");
         write(@HELP
 
-    朱砂掌是鐵掌幫入門掌法。掌中蘊毒，幫中弟子在習得鐵掌之前，
+    硃砂掌是鐵掌幫入門掌法。掌中藴毒，幫中弟子在習得鐵掌之前，
 仗此遊走江湖。
 
         學習要求：

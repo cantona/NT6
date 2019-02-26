@@ -11,7 +11,7 @@ void create()
         set("gender", "男性");
         set("age", 26);
         set("long", 
-                "他看上去沒有一絲表情，感情對他來說早已不存在了。\n");
+                "他看上去沒有一絲表情，感情對他來説早已不存在了。\n");
         set("gender", "男性");
         set("age", 32);
         set("class", "tangmen");

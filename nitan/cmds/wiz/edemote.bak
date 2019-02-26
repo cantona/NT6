@@ -47,7 +47,7 @@ private string replace_keys(string description)
 }
 private string emotion_detail_description(string emotion, mixed info)
 {
-        string msg = "── 表情 "HIY+emotion+NOR+" 之詳細敘述如下："+repeat_string("─", 13-(strlen(emotion)/2))+"\n";
+        string msg = "── 表情 "HIY+emotion+NOR+" 之詳細敍述如下："+repeat_string("─", 13-(strlen(emotion)/2))+"\n";
 
         msg += NOR WHT"1.無對象無附加文字    ："NOR+replace_keys(info[NONE_ALL])+"\n";
         msg += NOR WHT"2.無對象有附加文字    ："NOR+replace_keys(info[NONE_ALL_ARG])+"\n";
@@ -55,7 +55,7 @@ private string emotion_detail_description(string emotion, mixed info)
         msg += NOR WHT"4.對象為自己有附加文字："NOR+replace_keys(info[ME_ALL_ARG])+"\n";
         msg += NOR WHT"5.對象為某人無附加文字："NOR+replace_keys(info[YOU_ALL])+"\n";
         msg += NOR WHT"6.對象為某人有附加文字："NOR+replace_keys(info[YOU_ALL_ARG])+"\n";
-        msg += NOR WHT"7.表情注解            ："NOR+(info[NOTE] || "尚未設定")+"\n";
+        msg += NOR WHT"7.表情註解            ："NOR+(info[NOTE] || "尚未設定")+"\n";
         msg += NOR WHT"8.使用次數            ："NOR+info[USE]+" 次\n";
         msg += "───────────────────────────\n";
         return msg;
@@ -92,12 +92,12 @@ private void setup_emotion(object me, string emotion, mapping modifying_info, in
         switch(arg)
         {
                 case "cancel":
-                        tell(me, "取消輸入敘述。\n"+emotion_detail_description(emotion, modifying_info)+"請輸入欲設定之項目(設定完畢 save, 取消設定 exit)：\n>");
+                        tell(me, "取消輸入敍述。\n"+emotion_detail_description(emotion, modifying_info)+"請輸入欲設定之項目(設定完畢 save, 取消設定 exit)：\n>");
                         input_to( (: choose_option, me, emotion, modifying_info :) );
                         break;
 
                 case ".":
-                        // 最佳化敘述
+                        // 最佳化敍述
                         if(multi_line_arg[<1..] == "\n") multi_line_arg = multi_line_arg[0..<2];
                         multi_line_arg = kill_repeat_ansi(trim(ansi(multi_line_arg)) + NOR);
                         modifying_info[option-1] = multi_line_arg;
@@ -121,7 +121,7 @@ private void choose_option(object me, string emotion, mapping modifying_info, st
                 case "save":
                         if( sizeof(modifying_info) != 8 )
                         {
-                                tell(me, "必須設定完所有表情敘述才能儲存設定。\n請輸入欲設定之項目(設定完畢 save, 取消設定 exit)：\n>");
+                                tell(me, "必須設定完所有表情敍述才能儲存設定。\n請輸入欲設定之項目(設定完畢 save, 取消設定 exit)：\n>");
                                 input_to( (: choose_option, me, emotion, modifying_info :) );
                                 return;
                         }
@@ -165,7 +165,7 @@ private void choose_option(object me, string emotion, mapping modifying_info, st
         }
         else
         {
-                tell(me, "\n按 ENTER 可持續輸入多行，輸入 '.' 結束，輸入 'cancel' 取消。\n請輸入標準格式敘述 "HIC"$ME(代表自己) "HIG"$YOU(代表對象) "HIY"$T(代表附加文字)"NOR"：\n>");
+                tell(me, "\n按 ENTER 可持續輸入多行，輸入 '.' 結束，輸入 'cancel' 取消。\n請輸入標準格式敍述 "HIC"$ME(代表自己) "HIG"$YOU(代表對象) "HIY"$T(代表附加文字)"NOR"：\n>");
                 input_to( (: setup_emotion, me, emotion, modifying_info, option, "" :) );
         }
 }

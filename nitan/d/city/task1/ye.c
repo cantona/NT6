@@ -5,14 +5,14 @@ inherit NPC;
 
 void create()
 {
-        set_name("葉二娘", ({ "ye  erniang"}));
+        set_name("葉二孃", ({ "ye  erniang"}));
         set("gender", "女性");
         set("nickname", HIR"無惡不作"NOR);
         set("age", 43);
         set("str", 25);
         set("dex", 16);
         set("per", 21);
-        set("long", "一個中年女子，身穿淡青色長袍，左右臉頰上各有三條血痕。\n");
+        set("long", "一箇中年女子，身穿淡青色長袍，左右臉頰上各有三條血痕。\n");
         set("combat_exp", 3000000+ random(1000000));
         set("attitude", "peaceful");
         set("neili", 2000);

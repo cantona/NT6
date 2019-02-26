@@ -20,7 +20,7 @@ int dispel(object me, object ob, int duration)
 
         if (me->query_skill_mapped("force") != "yijinjing")
         {
-                tell_object(me, "你覺得異種真氣左突右沖，內息"
+                tell_object(me, "你覺得異種真氣左突右衝，內息"
                             "大亂，根本無法將內力凝聚起來。\n");
                 return -1;
         }

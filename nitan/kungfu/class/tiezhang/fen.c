@@ -95,7 +95,7 @@ void attempt_apprentice(object me)
                 command("consider");
                 command("say 這個事情我做不了主，你還是直接去找幫主吧。");
 
-                set("move_party/絕情谷─鐵掌幫", 1, me);
+                set("move_party/絕情谷—鐵掌幫", 1, me);
                 return;
         }
 
@@ -143,7 +143,7 @@ void init()
         if (interactive(ob) 
              && !query("no_fight", environment(ob) )
             && ! present("tiezhang ling", ob)
-             && !query("move_party/絕情谷─鐵掌幫", ob )
+             && !query("move_party/絕情谷—鐵掌幫", ob )
              && ((fam=query("family", ob) )
             && fam["family_name"] != "鐵掌幫" ) )
         {

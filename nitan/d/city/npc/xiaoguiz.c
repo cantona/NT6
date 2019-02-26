@@ -8,7 +8,7 @@ void create()
         set("gender", "無性" );
         set("age", 13);
         set("long",
-                "這位小太監在一旁小心侍侯著，手裡拿著一包藥。\n");
+                "這位小太監在一旁小心侍侯着，手裏拿着一包藥。\n");
         set("combat_exp", 1000);
         set_skill("unarmed", 20);
         set_skill("parry", 20);
@@ -23,7 +23,7 @@ void create()
         setup();
         set("chat_chance", 5);
         set("chat_msg", ({
-"小桂子說道：公公，再服一劑藥，好不好？\n",
+"小桂子説道：公公，再服一劑藥，好不好？\n",
 "小桂子道: 再服半劑，多半不打緊。\n",
         }) );
         carry_object("/d/city/npc/obj/cloth")->wear();

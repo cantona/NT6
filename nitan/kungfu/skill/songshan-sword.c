@@ -8,8 +8,8 @@ string type() { return "martial"; }
 string martialtype() { return "skill"; }
 
 mapping *action = ({
-([        "skill_name" : "萬岳朝宗",
-        "action" : "$N右手$w一立，舉劍過頂，彎腰躬身，使一招"HIY"「萬岳朝宗」"NOR"正是\n嫡系正宗的嵩山劍法",
+([        "skill_name" : "萬嶽朝宗",
+        "action" : "$N右手$w一立，舉劍過頂，彎腰躬身，使一招"HIY"「萬嶽朝宗」"NOR"正是\n嫡系正宗的嵩山劍法",
         "lvl" : 0
 ]),
 ([        "skill_name" : "開門見山",
@@ -17,7 +17,7 @@ mapping *action = ({
         "lvl" : 10
 ]),
 ([        "skill_name" : "獨劈華山",
-        "action" : "$N手中$w自上而下的向$n直劈下去，一招"HIB"「獨劈華山」"NOR"，真有石\n破天驚的氣勢，將嵩山劍法之所長發揮得淋漓盡致",
+        "action" : "$N手中$w自上而下的向$n直劈下去，一招"HIB"「獨劈華山」"NOR"，真有石\n破天驚的氣勢，將嵩山劍法之所長髮揮得淋漓盡致",
         "lvl" : 20
 ]),
 ([        "skill_name" :"千古人龍",
@@ -118,8 +118,8 @@ int help(object me)
         write(HIC"\n嵩山劍法："NOR"\n");
         write(@HELP
 
-    嵩山劍法是五岳盟主、嵩山掌門左冷禪整理本派劍譜，集其大
-成，重新厘定的劍法。
+    嵩山劍法是五嶽盟主、嵩山掌門左冷禪整理本派劍譜，集其大
+成，重新釐定的劍法。
 
         學習要求：
                 寒冰真氣

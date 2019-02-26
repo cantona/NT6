@@ -4,7 +4,7 @@
 
 inherit F_SHADOW;
 
-nosave string from_user;        // 用戶發送來的信息
+nosave string from_user;        // 用户發送來的信息
 nosave int fd;                  // 連接遠端機器的套接字
 nosave int port;                // 連接遠端機器的端口號
 
@@ -22,7 +22,7 @@ void telnet_input(string str)
 {
         if (str == "CLOSE")
         {
-                write("用戶斷開了連接。\n");
+                write("用户斷開了連接。\n");
                 destruct(this_object());
                 return;
         }
@@ -213,7 +213,7 @@ void remove_interactive()
         destruct(this_object());
 }
 
-// 將用戶發送來的數據發送到遠端服務器上去
+// 將用户發送來的數據發送到遠端服務器上去
 private void send_to_remote()
 {
         switch (socket_write(fd, from_user))

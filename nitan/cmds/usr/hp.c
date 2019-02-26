@@ -305,7 +305,7 @@ int main(object me, string arg)
                 if (me->is_most_craze())
                         sp += HIR "【 憤 " BLINK "怒" NOR HIR " 】  " +
                               sprintf("%-22s",query("character", me) == "光明磊落"?
-                                               "豎發沖冠" : "怒火中燒");
+                                               "豎發衝冠" : "怒火中燒");
                 else
                         sp += sprintf(HIR "【 憤 怒 】 %5d/ %5d (+%-3d)    ",
                                       craze, me->query_max_craze(),

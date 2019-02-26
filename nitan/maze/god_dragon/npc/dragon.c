@@ -16,9 +16,9 @@ void create()
         set("gender", "男性");
         set("age", 8888);
         set("long", @LONG
-這是一只全身泛著藍光的神龍，長年居住于聖湖之底，乃龍中只王。
+這是一隻全身泛着藍光的神龍，長年居住於聖湖之底，乃龍中只王。
 聖龍乃龍中王，自有盤古神的時候就有了聖龍，千萬年來，聖龍遊梭
-于天、地、神三界，眾生百態盡收眼底。
+於天、地、神三界，眾生百態盡收眼底。
 聖龍不受任何挪移、致命一擊、致暈攻擊、忙亂的效果影響。
 LONG );
         set("combat_exp", 5000000000);
@@ -233,7 +233,7 @@ void death_msg()
         command("chat 人間居然有如此厲害的角色，看來我龍族在人間無立身之地了！");
         message_vision("$N長嘯一聲，響徹天地，然後身體慢慢變得透明，消失在聖湖之中。\n", this_object());
         CHANNEL_D->do_channel(this_object(), "rumor",
-                        "聽說" + name() + HIM "在人間受辱後，回到了聖湖，從此不再出沒人間。" NOR);
+                        "聽説" + name() + HIM "在人間受辱後，回到了聖湖，從此不再出沒人間。" NOR);
 }
 
 void random_move()
@@ -242,7 +242,7 @@ void random_move()
         {
                 message_vision("$N長嘯一聲，響徹天地，然後身體慢慢變得透明，消失在聖湖之中。\n", this_object());
                 CHANNEL_D->do_channel(this_object(), "rumor",
-                        "聽說" + name() + HIM "在人間走了一遭後，百無聊奈，又返回了聖湖。" NOR);
+                        "聽説" + name() + HIM "在人間走了一遭後，百無聊奈，又返回了聖湖。" NOR);
                 destruct(this_object());
                 return;
         }

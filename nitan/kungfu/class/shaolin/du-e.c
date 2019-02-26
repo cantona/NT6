@@ -115,7 +115,7 @@ mixed ask_me()
 
         if( !query_temp("valid_in_fumoquan", this_player()) )
         {
-                command("say 大膽鼠輩，乳臭未幹，竟敢偷入金剛伏魔圈，且讓老衲來超度與你！");
+                command("say 大膽鼠輩，乳臭未乾，竟敢偷入金剛伏魔圈，且讓老衲來超度與你！");
                 kill_ob(this_player());
                 return 1;
         }
@@ -132,14 +132,14 @@ mixed ask_me()
 
         if (present("fumo zhang", environment()) )
                 return RANK_D->query_respect(this_player()) +
-                "寶杖只有一把，而且就在這裡任你取走，真是貪得無饜！";
+                "寶杖只有一把，而且就在這裏任你取走，真是貪得無饜！";
 
         ob = get_object("/d/shaolin/obj/fumo-zhang");
         if (! ob || environment(ob) && environment(ob) != this_object())
                 return "抱歉，你來晚了，伏魔杖已經給人取走了。";
         ob->move(this_player());
 
-        message_vision("\n渡厄長笑一聲，點點頭，從身後的樹洞裡取出伏魔杖交給$N。\n\n", this_player());
+        message_vision("\n渡厄長笑一聲，點點頭，從身後的樹洞裏取出伏魔杖交給$N。\n\n", this_player());
 
         return "你既然能闖進金剛伏魔圈來，必然是當今武林中的非凡人物，這伏魔杖是適逢其主了！";
 }
@@ -260,7 +260,7 @@ int accept_ask(object me, string topic)
         {
         case "歷練" :
         case "歷煉" :
-        case "鍛煉" :
+        case "鍛鍊" :
                 return QUEST_D->accept_ask(this_object(), me, topic);
                 break;
 

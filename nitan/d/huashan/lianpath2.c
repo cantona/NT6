@@ -1,12 +1,12 @@
-//Roon: lianpath1.c 蓮花峰小路
+//Roon: lianpath1.c 蓮花峯小路
 //Date: Oct. 2 1997 by Venus
 inherit ROOM;
 
 void create()
 {
-      set("short","蓮花峰小路");
+      set("short","蓮花峯小路");
         set("long", @LONG
-小路通往蓮花峰，周圍靜靜悄悄，微聞蟬鳴。四望密林幽谷，讓
+小路通往蓮花峯，周圍靜靜悄悄，微聞蟬鳴。四望密林幽谷，讓
 人膽寒。
 LONG );
       set("outdoors", "huashan");

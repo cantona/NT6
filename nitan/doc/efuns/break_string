@@ -23,7 +23,7 @@
                 不見得會如你預期的一樣. 我的經驗是: 您應該在句號之後
                 加一個空白, 也別加上 '\n' , 然後再使用 break_string()
                 . 您也許不會喜歡用 break_string() 提供的格式. 在往後
-                MudOS 的版本裡, 也許會讓 break_string() 認得 '\n' .
+                MudOS 的版本里, 也許會讓 break_string() 認得 '\n' .
         參考:
                 implode(3), explode(3), sprintf(3)
         作者:

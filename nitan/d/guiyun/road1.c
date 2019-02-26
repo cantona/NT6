@@ -8,7 +8,7 @@ void create()
         set("short", "湖濱小路");
         set("long", @LONG
 一條湖濱的荒野小路，岸堤長滿長草，風過處，一陣陣搖頭晃腦。
-往西邊遠處看似乎橫著一條小河。東邊是無錫的泰伯廟。
+往西邊遠處看似乎橫着一條小河。東邊是無錫的泰伯廟。
 LONG);
         set("outdoors", "guiyun");
         set("objects",([

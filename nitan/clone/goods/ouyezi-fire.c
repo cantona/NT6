@@ -47,7 +47,7 @@ int do_integrate(string arg)
         set("magic/type", "fire", ob);
         ob->save();
   
-        tell_object(me, "你把" + name() + "蓋在" + ob->name() + "上，然後口中念念有詞，\n"
+        tell_object(me, "你把" + name() + "蓋在" + ob->name() + "上，然後口中唸唸有詞，\n"
                         "只見聖符化作一道紅光飛入" + ob->name() + "體內！\n");
 
         tell_object(me, HIC "你感受" + ob->name() + HIC"發生了不可言喻的變化。\n" NOR);

@@ -4,7 +4,7 @@ inherit QUARRY;
 void create()
 {
         set_name("斑鳩", ({ "ban jiu", "ban", "jiu" }));
-        set("long", WHT "這是一只小斑鳩，在田地間跳上跳下。\n" NOR);
+        set("long", WHT "這是一隻小斑鳩，在田地間跳上跳下。\n" NOR);
         set("no_auto_kill", 1);
         set("aves", 1);
 

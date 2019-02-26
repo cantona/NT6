@@ -15,7 +15,7 @@ void create()
         set_name("殷梨亭", ({ "yin litin", "yin" }));
         set("nickname", "武當六俠");
         set("long",
-                "他就是張三豐的六弟子殷梨亭。\n"
+                "他就是張三丰的六弟子殷梨亭。\n"
                 "他今年三十歲，精明能幹，嫉惡如仇，性如烈火。\n");
         set("gender", "男性");
         set("age", 30);
@@ -112,14 +112,14 @@ void attempt_apprentice(object ob)
         if ((int)ob->query_skill("yinyun-ziqi",1) < 70)
         {
                 command("say 我武當派最注重內功心法" + RANK_D->query_respect(ob)+
-                        "是否應該在氤氳紫氣上多下點功夫啊?");
+                        "是否應該在氤氲紫氣上多下點功夫啊?");
                 return;
         }
 
         if ((int)ob->query_skill("taoism", 1) < 70)
         {
                 command("say 習武是為了強身健體，一味的練武是不可取的。");
-                command("say 我看你還需要在修身養性方面多鍛煉鍛煉，以提"
+                command("say 我看你還需要在修身養性方面多鍛鍊鍛鍊，以提"
                         "高你的道德心法。");
                 return;
         }
@@ -203,9 +203,9 @@ mixed ask_skill()
 
         message_sort(HIY "$n" HIY "點了點頭道：既然$N" HIY "也是"
                      "我輩中人，那麼我就將自曉芙去後，我所參捂出"
-                     "來的「天地同壽」傳于你，切記，非萬不得以時"
-                     "千萬不要使用！緊接著，$n開始詳細講解其中奧"
-                     "秘。\n" NOR, me, this_object());
+                     "來的「天地同壽」傳於你，切記，非萬不得以時"
+                     "千萬不要使用！緊接着，$n開始詳細講解其中奧"
+                     "祕。\n" NOR, me, this_object());
         command("say 你可明白了？");
         tell_object(me, HIC "你學會了「天地同壽」。\n" NOR);
         if (me->can_improve_skill("sword"))

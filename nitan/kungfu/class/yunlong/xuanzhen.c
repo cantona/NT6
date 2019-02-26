@@ -64,7 +64,7 @@ void create()
                 "陳近南" :  "這是我們的總舵主。",
                 "天地會" :  "只要是英雄好漢，都可以入我天地會(join tiandihui)。\n",
                 "入會" :  "加入了我們天地會吧！\n",
-                "反清復明" : "去藥舖和棺材店仔細瞧瞧吧！\n",
+                "反清復明" : "去藥鋪和棺材店仔細瞧瞧吧！\n",
                 "威望" :  (: ask_weiwang :),
                 "江湖威望" : (: ask_weiwang :),
                 "雲龍經" : (: ask_me :),
@@ -164,9 +164,9 @@ void init()
 int ask_weiwang()
 {
         command("tell "+query("id", this_player())+"你現在的江湖威望是"+(query("weiwang", this_player())));
-        say("\n玄貞說道：如果你威望值很高，有些人見了你不但不會殺你，還會教你武功，送你寶貝。\n"
+        say("\n玄貞説道：如果你威望值很高，有些人見了你不但不會殺你，還會教你武功，送你寶貝。\n"
         +"而且你還可以加入幫會，率領會眾去攻打目標，就連去錢莊取錢也會有利息 。。。。。\n");
-        say("玄貞又說：殺某些壞人或救某些好人可以提高江湖威望。\n");
+        say("玄貞又説：殺某些壞人或救某些好人可以提高江湖威望。\n");
         return 1;
 }
 
@@ -184,7 +184,7 @@ void greeting(object ob)
                         message_vision("$N來到了大廳。\n",ob);
                         break;
                 default:
-                        say("玄貞說道：這位" + RANK_D->query_respect(ob) + "，請自便。\n");
+                        say("玄貞説道：這位" + RANK_D->query_respect(ob) + "，請自便。\n");
                         break;
         }
         else say( "玄貞笑道：這位" + RANK_D->query_respect(ob)

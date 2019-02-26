@@ -1,31 +1,31 @@
 // luban.c 魯班
 // Written by Doing Lu 1998/11/17
-// 魯班是負責建造房間的NPC， 首先，玩家去魯班那裡索要圖紙，然後到想建房
+// 魯班是負責建造房間的NPC， 首先，玩家去魯班那裏索要圖紙，然後到想建房
 // 的地點描繪圖紙，必須要有30級以上的繪畫技巧才可以，如果不到30級，可以
-// 和魯班學習。然後玩家要把圖紙給魯班，魯班詢問房屋的名稱，不能和那裡已
+// 和魯班學習。然後玩家要把圖紙給魯班，魯班詢問房屋的名稱，不能和那裏已
 // 有的房屋重名，然後再詢問房屋的類型（房屋的類型都定義在roomtype.h）中，
 // 並且詢問每個房間的描述，每個描述不能超過三百二十個字符（即最多四行），
 // 其中所有的房間的short 都由房屋名稱生成，不需要玩家輸入，然後魯班記錄
-// 所有的信息，並提示玩家等待巫師（權限在arch以上）的批準。
+// 所有的信息，並提示玩家等待巫師（權限在arch以上）的批准。
 //
-// 巫師上線後到魯班處，魯班提示巫師處理玩家的信息，如果巫師批準了，就更
-// 新信息，等玩家再上線後到魯班處，魯班提示玩家可以建房（如果沒有被批準，
+// 巫師上線後到魯班處，魯班提示巫師處理玩家的信息，如果巫師批准了，就更
+// 新信息，等玩家再上線後到魯班處，魯班提示玩家可以建房（如果沒有被批准，
 // 就顯示原因，清除信息），玩家交一定的費用，就可以生成房屋文件，並修改
 // 玩家的檔案，記錄玩家已經建過房，並贈送一把鑰匙，然後清除記錄的信息。
 //
-// 如果玩家丟了鑰匙，可以到魯班處重新配一把鑰匙，如果玩家需要復制鑰匙，
+// 如果玩家丟了鑰匙，可以到魯班處重新配一把鑰匙，如果玩家需要複製鑰匙，
 // 也可以向魯班要求。
 //
 // 如果玩家需要拆除房屋，可以向魯班提出，經過確認後，刪除房屋檔案。
 
-// 生成房屋的說明
+// 生成房屋的説明
 // 在選擇好房屋類型時，魯班將紀錄需要建設的房屋原型的所有文件，這些文件
 // 一定要在/d/room/XXXX/內，比如玩家選用了獨樂居，則房屋文件都在/d/room
 // /dule/內。在生成房屋文件時，魯班將把這些文件拷貝到/data/room/playerid/，
 // 同時原型房屋必須由一個出口：/d/room/xiaoyuan魯班將將這個出口替換成玩
 // 家建房的地點，所以原型房還必須有一個以xiaoyuan命名的小院。
 //
-// 對于原型房還有一些其他要求，比如原型房繼承的是ROOM類型，而建造的房將
+// 對於原型房還有一些其他要求，比如原型房繼承的是ROOM類型，而建造的房將
 // 繼承PRIVATE_ROOM類型，因此在原型房的文件中，inherit ROOM那一句要求包
 // 含有/**/的字樣，或是/* EXAMPLE */，而在inhert PRIVATE_ROOM之前需要有
 // //**的字樣，因為魯班會自動的將包含/**/的行去掉，並去掉//**的字樣。另
@@ -33,13 +33,13 @@
 // 這是為了給建好的房子添加鑰匙。同時原型房中最好有主人set ("room_owner_id",
 // "ROOM_OWNER_ID")和類型的設置。
 
-// 關于鑰匙的一點說明
+// 關於鑰匙的一點説明
 // 每個玩家房屋鑰匙要生成一個文件，其實這完全可以用一個通用的鑰匙文件在
 // 每次AUTOLOAD的時候自動的更新，之所以不這麼做是因為為了使玩家的房屋數
-// 據能夠保持一個獨立性，不至于過于分散，而且在一個人身上帶多把鑰匙的時
-// 候不至于過于繁瑣。
+// 據能夠保持一個獨立性，不至於過於分散，而且在一個人身上帶多把鑰匙的時
+// 候不至於過於繁瑣。
 
-// 一些變量的說明
+// 一些變量的説明
 // 玩家在商談時紀錄的數據
 // contract/luban          : 紀錄商談數據的mapping，這記錄在玩家的臨時變量
 // contract/luban/room     : 紀錄房屋描述信息的mapping
@@ -59,7 +59,7 @@
 // form/player/status   : 表單的狀態 - 申請/允許/拒絕
 // form/player/time     : 申請的時間
 // form/player/wizard   : 處理表單的巫師
-// form/player/memo     : 巫師填寫的備注
+// form/player/memo     : 巫師填寫的備註
 // form/player/descs    : 玩家填寫的描述
 
 // 玩家自身數據的修改
@@ -71,11 +71,11 @@
 // private_room/type    : 房屋類型名稱
 
 // 實現方法
-// 商談過程是一個簡單的自動機，其狀態儲存在用戶的數據結構中的contract/
+// 商談過程是一個簡單的自動機，其狀態儲存在用户的數據結構中的contract/
 // luban字段，接收消息的函數是do_answer， 這個函數根據狀態處理接收的消
 // 息即字符串，最要是調用不同的判斷函數，如果返回1則已記錄輸入的信息，
-// 如果返回0則表示不與處理或是終止商談。如果用戶在商談過程輸入了stop，
-// 則清除自動機的狀態和用戶數據庫中記錄的商談信息。
+// 如果返回0則表示不與處理或是終止商談。如果用户在商談過程輸入了stop，
+// 則清除自動機的狀態和用户數據庫中記錄的商談信息。
 
 // 數據存放
 // 階段1 - 商談
@@ -92,7 +92,7 @@
 
 // 相關文件
 // inherit::PRIVATE_ROOM(/inherit/room/privateroom.c)
-// 這是用戶建造的房屋所具有的屬性，主要是用鑰匙開門和存放物品
+// 這是用户建造的房屋所具有的屬性，主要是用鑰匙開門和存放物品
 //
 // inherit::BUILD_ROOM(/inherit/room/buildroom.c)
 // 這是建房處的環境所具有的屬性，主要是可以記錄增加的出口，並修改LONG描述
@@ -102,15 +102,15 @@
 inherit NPC;
 inherit F_SAVE;
 
-// 這裡記錄了各種樣式房屋
-// 這裡是一個mapping數組，其中每一個mapping指明了一種型號的房屋。 每一個mapping中有三個
-// 元素，一是名字、二是類型、三是房屋字符串數組：字符串數組指明了這種房屋所擁有的文件。
+// 這裏記錄了各種樣式房屋
+// 這裏是一個mapping數組，其中每一個mapping指明瞭一種型號的房屋。 每一個mapping中有三個
+// 元素，一是名字、二是類型、三是房屋字符串數組：字符串數組指明瞭這種房屋所擁有的文件。
 // files中的必須有一個是入口文件(既有到/d/room/xiaoyuan的出口)，否則建房時將產生錯誤。
 
-// 另外：type 和 name 都可以作為房屋類型的標志，只不過一個是中文，另一個是英文的而已，
+// 另外：type 和 name 都可以作為房屋類型的標誌，只不過一個是中文，另一個是英文的而已，
 // 在最終保存在玩家數據庫中的是中文的類型名即name字段。
 
-// 注意：由于魯班是一個需要保存數據的NPC，在改動魯班的文件後可能會發生一些問題，這時可以
+// 注意：由於魯班是一個需要保存數據的NPC，在改動魯班的文件後可能會發生一些問題，這時可以
 // 將他的存盤文件刪除。
 nosave mapping *room_example = ({
 ([      "name"     : "獨樂居",
@@ -249,7 +249,7 @@ private string  file_dir(mixed me);
 private string  to_player(string player_id, string file_name);
 private void    create_room(object me);
 
-// 下面這個函數將提供給外部調用(/adm/daemons/updated)，用于更新玩家
+// 下面這個函數將提供給外部調用(/adm/daemons/updated)，用於更新玩家
 // 的數據(數據故障或是玩家自殺，被PURGE)
 int     demolish_room(object me);
 
@@ -258,7 +258,7 @@ private int     create_new_key(object me);
 private object  get_user_key(object me);
 
 mapping* forms;
-mapping my_form;        // 一個表單，用來存放用戶提交的建房信息
+mapping my_form;        // 一個表單，用來存放用户提交的建房信息
 
 // 這是提供的函數，之所以用宏定義，僅僅是為了減小運行時的開銷
 // 查詢form
@@ -416,13 +416,13 @@ void greeting(object me)
         {
                 if (query("form") && sizeof(query("form")) >= 1)
                 {
-                        message_vision("魯班對$N道，來的正好，我這裡有"
+                        message_vision("魯班對$N道，來的正好，我這裏有"
                                        "些單子正要處理呢。\n", me);
                         tell_object(me, HIG "魯班告訴你：請用" HIW "list" HIG "察看，" +
                                         HIW "type" HIG "顯示詳細信息，" HIW "agree" HIG +
                                         "同意，" HIW "reject" HIG "拒絕，" HIW "delete" HIG
                                         "刪除表單。\n            使用" HIW "help" HIG
-                                        "可以查看上述命令的說明和使用幫助。\n" NOR);
+                                        "可以查看上述命令的説明和使用幫助。\n" NOR);
                 } else
                         message_vision("魯班對$N點點頭，道：公輸班正在授課，不及遠迎，失禮了！\n", me);
                 return ;
@@ -436,12 +436,12 @@ void greeting(object me)
         {
                 message_vision("魯班對$N笑道：這位" +
                                RANK_D->query_respect(me) +
-                               "，剛才怎麼談著談著就走了？若是有"
+                               "，剛才怎麼談着談着就走了？若是有"
                                "意，咱們繼續談嘛。\n", me);
         } else
         switch(random(3)) {
         case 0 :
-                message_vision("魯班對$N說道：這位" +
+                message_vision("魯班對$N説道：這位" +
                                RANK_D->query_respect(me) +
                                "，可是對建房有興趣？\n", me);
                 break;
@@ -451,20 +451,20 @@ void greeting(object me)
                                "，若是沒有個落腳之處怎麼行啊！\n", me);
                 break;
         case 2 :
-                message_vision("魯班對$N一拱手，說道：這位" +
+                message_vision("魯班對$N一拱手，説道：這位" +
                                RANK_D->query_respect(me) +
                                "，很久沒見啊，別來無恙？\n", me);
                 break;
         }
 }
 
-// 認証學習
+// 認證學習
 int recognize_apprentice(object me)
 {
         if( query_temp("mark/魯班", me) && 
             !query_temp("learnd_from/魯班", me) )
         {
-                message_vision("魯班對$N說：好，你既然有心學，我就"
+                message_vision("魯班對$N説：好，你既然有心學，我就"
                                "教你一點吧。\n", me);
                 set_temp("learnd_from/魯班", 1, me);
         }
@@ -484,7 +484,7 @@ int accept_object(object me, object ob)
                 // 如果接收的是鑰匙，就收下
                 message_vision("$N把" + ob->name() + "遞給了魯班，魯班"
                                "點點頭，接過來隨手把它扔到了一邊的箱子"
-                               "裡。\n", me);
+                               "裏。\n", me);
                 destruct(ob);
                 return 1;
         }
@@ -556,7 +556,7 @@ int accept_object(object me, object ob)
                 }
                 if( query_temp("contract/luban", me) )
                 {
-                        message_vision("魯班疑惑的對$N說道：幹什麼？剛"
+                        message_vision("魯班疑惑的對$N説道：幹什麼？剛"
                                        "才不是給過我了麼？若是有什麼想"
                                        "法，可以改日再談(stop)。\n", me);
                         return 0;
@@ -564,7 +564,7 @@ int accept_object(object me, object ob)
 
                 if( !query("draw", ob) )
                 {
-                        message_vision("魯班看了一下，對$N說道：你給我"
+                        message_vision("魯班看了一下，對$N説道：你給我"
                                        "一張白紙幹什麼？你要是不會就和"
                                        "我學學繪畫技巧(drawing)吧。\n", me);
                         return 0;
@@ -580,7 +580,7 @@ int accept_object(object me, object ob)
 
                 if( query("draw/type", ob) != "風景" )
                 {
-                        message_vision("魯班對$N嘆道：我說你建房得把那"
+                        message_vision("魯班對$N歎道：我説你建房得把那"
                                        "地方畫給我看啊，你現在畫" +
                                        query("draw/type", ob)+
                                        "給我有什麼用？\n", me);
@@ -593,7 +593,7 @@ int accept_object(object me, object ob)
                 build=get_object(query("draw/info", ob));
                 if (! objectp(build))
                 {
-                        message_vision("魯班仔細看了看，嘆了口氣說道："
+                        message_vision("魯班仔細看了看，歎了口氣説道："
                                        "那個地方現在好像已經不存在了.."
                                        ".\n", me);
                         return 0;
@@ -602,7 +602,7 @@ int accept_object(object me, object ob)
                 if (! build->is_build_room())
                 {
                         message_vision("魯班仔細看了看，不禁皺了皺眉，"
-                                       "對$N說道：那個地方好像不能建房"
+                                       "對$N説道：那個地方好像不能建房"
                                        "吧...\n", me);
                         return 0;
                 }
@@ -631,7 +631,7 @@ int accept_object(object me, object ob)
                 if( query("form/"+query("id", me)+"/status") != "同意" )
                 {
                         message_vision("魯班搖搖頭，對$N道：巫師還沒有"
-                                       "批準你的申請，你先請回吧。\n", me);
+                                       "批准你的申請，你先請回吧。\n", me);
                         return 0;
                 }
 
@@ -677,14 +677,14 @@ int accept_object(object me, object ob)
                         return 0;
                 }
                 message_vision("魯班接過" + ob->name() + "，在手中掂了"
-                               "掂，滿意的對$N說道：很好，我就給你記錄"
+                               "掂，滿意的對$N説道：很好，我就給你記錄"
                                "在案，若是有了消息，一定通知你。\n", me);
                 record_contract(me);
                 delete_temp("contract", me);
 
                 if (ob->id("fee free card"))
                 {
-                        message_vision("魯班又道：這張免費卡你先留著吧"
+                        message_vision("魯班又道：這張免費卡你先留着吧"
                                        "，建房的時候再給我。\n", me);
                         return -1;
                 } else
@@ -693,7 +693,7 @@ int accept_object(object me, object ob)
                         return 1;
                 }
         }
-        message_vision("魯班擺擺手，對$N道：你還是自己留著吧，我可用不著。\n", me);
+        message_vision("魯班擺擺手，對$N道：你還是自己留着吧，我可用不着。\n", me);
         return 0;
 }
 
@@ -704,7 +704,7 @@ private void tell_user_status(object me)
         // 該玩家提交了表單，根據表單的狀態返回提示信息
         switch(query("form/"+query("id", me)+"/status")){
         case "申請" :
-                luban_say("巫師還沒有查閱你的申請，要想查看你提"
+                luban_say("巫師還沒有查閲你的申請，要想查看你提"
                           "交的表單可以用show，如果想修改可以問我。\n");
                 break;
 
@@ -717,12 +717,12 @@ private void tell_user_status(object me)
                 value=query("form/"+query("id", me)+"/value");
                 if (! value)
                 {
-                        luban_say("你的申請已經被批準了，隨便意思意思"
+                        luban_say("你的申請已經被批准了，隨便意思意思"
                                   "給點錢即可建房，查看詳情請用show，"
                                   "如果想修改可以問我。\n");
                 } else
                 {
-                        luban_say("你的申請已經被批準了，繳納" +
+                        luban_say("你的申請已經被批准了，繳納" +
                                   MONEY_D->price_str(value) +
                                   "即可建房，查看詳情請用show，如果想"
                                   "修改可以問我。\n");
@@ -731,7 +731,7 @@ private void tell_user_status(object me)
         }
 }
 
-// 制作新的鑰匙
+// 製作新的鑰匙
 private int create_new_key(object me)
 {
         string key_short;
@@ -773,7 +773,7 @@ private int create_new_key(object me)
         if (! sizeof(file))
         {
                 message_vision("魯班聳聳肩，無奈的對$N道：我幫不了你了，"
-                               "你的房間我找不著了，你問問巫師吧。\n", me);
+                               "你的房間我找不着了，你問問巫師吧。\n", me);
                 rm(key_file + ".c");
                 return 0;
         }
@@ -799,13 +799,13 @@ private int create_new_key(object me)
 
                 // 提示信息
                 message("vision", @LONG
-一個垂髫童子拎著箱子走了過來，摸出工具，三下五除二，你還沒能
-明白過來是怎麼回事，他就“□□”幾下把鎖換掉了，飛也似的走了。
+一個垂髫童子拎着箱子走了過來，摸出工具，三下五除二，你還沒能
+明白過來是怎麼回事，他就“咔咔”幾下把鎖換掉了，飛也似的走了。
 LONG, room);
 
         }
 
-        // 更新配制鑰匙的信息
+        // 更新配製鑰匙的信息
         set("private_room/key_no", n, me);
 
         clone_object(key_file)->move(me);
@@ -815,7 +815,7 @@ LONG, room);
         return 1;
 }
 
-// 復制玩家的鑰匙
+// 複製玩家的鑰匙
 private object get_user_key(object me)
 {
         string key_file;
@@ -838,7 +838,7 @@ private int ask_me()
 
         if( mapp(query("private_room", me)) )
         {
-                message_vision("魯班點點頭，對$N說道：怎麼樣，住得可滿"
+                message_vision("魯班點點頭，對$N説道：怎麼樣，住得可滿"
                                "意？若是不滿意，可以找我重建哦。\n", me);
                 return 1;
         }
@@ -850,8 +850,8 @@ private int ask_me()
         }
 
         message_vision(@SAY
-魯班微一嘆氣，說道：想江湖兒女，一劍縱橫，快意恩仇，馳騁天下，若
-是沒有個落腳之處怎生得了？或隱身于鬧市，或遁跡于險川，你若有意何
+魯班微一歎氣，説道：想江湖兒女，一劍縱橫，快意恩仇，馳騁天下，若
+是沒有個落腳之處怎生得了？或隱身於鬧市，或遁跡於險川，你若有意何
 不畫張圖紙給我，若是地點合適，你且挑個滿意的樣式，我給你建個住房。
 今生今世，不再懼那風雨。
 SAY , me);
@@ -868,7 +868,7 @@ private int ask_paper()
 
         if (is_busy())
         {
-                tell_object(me, "魯班正忙著呢，沒功夫理你...\n");
+                tell_object(me, "魯班正忙着呢，沒功夫理你...\n");
                 return 1;
         }
 
@@ -878,7 +878,7 @@ private int ask_paper()
                 message_vision("魯班翻出一張紙，遞給$N道：自個兒玩去吧。\n", me);
         } else
         {
-                message_vision("魯班點點頭，對$N說道：很好，你拿這份圖"
+                message_vision("魯班點點頭，對$N説道：很好，你拿這份圖"
                                "紙，到了想要建房的地點，畫下來(draw)拿"
                                "回給我看看。\n", me);
         }
@@ -889,7 +889,7 @@ private int ask_paper()
                 ob->move(me);
         } else
         {
-                message_vision("魯班翻了半天也沒找到，不禁一呆，說道："
+                message_vision("魯班翻了半天也沒找到，不禁一呆，説道："
                                "怎麼回事，沒有了？你去找巫師問問吧！\n", me);
         }
 
@@ -900,7 +900,7 @@ private int ask_paper()
 // 回答有關繪畫技巧的信息
 private int ask_drawing()
 {
-        message_sort("魯班對$N說道：要想畫張好點的圖紙，不會"
+        message_sort("魯班對$N説道：要想畫張好點的圖紙，不會"
                      "點繪畫技巧是不行的，沒有人天生就會作畫"
                      "，都得學習，你若有意，不妨和我學學。\n",
                      this_player());
@@ -915,7 +915,7 @@ private int ask_demolish()
         me = this_player();
         if( query_temp("contract/luban", me) )
         {
-                message_vision("魯班對$N說：你不是要建房麼，怎麼還沒建"
+                message_vision("魯班對$N説：你不是要建房麼，怎麼還沒建"
                                "好就要拆房了？真是未雨綢繆啊！\n", me);
                 return 1;
         }
@@ -938,12 +938,12 @@ private int ask_demolish()
 
         if( query_temp("demolish_room", me) )
         {
-                message_vision("魯班對$N說：你要是真的想拆屋，就請下決"
+                message_vision("魯班對$N説：你要是真的想拆屋，就請下決"
                                "心(demolish)！\n", me);
                 return 1;
         }
 
-        message_vision("魯班睜大了眼睛，奇怪的看著$N，過了良久才說：你"
+        message_vision("魯班睜大了眼睛，奇怪的看着$N，過了良久才説：你"
                        "若是真到要拆屋，就下決心吧(demolish)！\n", me);
         set_temp("demolish_room", 1, me);
         return 1;
@@ -957,11 +957,11 @@ private int ask_rebuild()
         me = this_player();
         if( !mapp(query("private_room", me)) )
         {
-                message_vision("魯班搖搖頭，對$N說：你還沒有房子呢，"
+                message_vision("魯班搖搖頭，對$N説：你還沒有房子呢，"
                                "談什麼重建！\n", me);
                 return 1;
         }
-        message_vision("魯班嘆了口氣，對$N說：你若是要重建，就先把房"
+        message_vision("魯班歎了口氣，對$N説：你若是要重建，就先把房"
                        "拆了吧！\n", me);
         return 1;
 }
@@ -975,20 +975,20 @@ private int ask_key()
 
         if (is_busy())
         {
-                write("魯班正忙著呢，沒空理你...\n");
+                write("魯班正忙着呢，沒空理你...\n");
                 return 1;
         }
 
         if( !mapp(query("private_room", me)) )
         {
-                message_vision("魯班看了$N半天，才說：沒有房子你要鑰"
+                message_vision("魯班看了$N半天，才説：沒有房子你要鑰"
                                "匙幹什麼？\n", me);
                 return 1;
         }
 
         if( query_temp("ask_for_key", me) )
         {
-                message_vision("魯班對$N怒道：你羅不羅唆，我說了配鑰"
+                message_vision("魯班對$N怒道：你羅不羅唆，我説了配鑰"
                                "匙十兩紋銀，換鎖五兩黃金！\n", me);
                 return 1;
         }
@@ -1021,10 +1021,10 @@ $WHT$ - 淺灰色          $HIW$ - 白色
 這是一間小院。
 院子邊上的牆很矮。
 
-說明：
+説明：
 系統自動會在描述字符串的尾端加一個 $NOR$ 和 \n。因此描述最好不要以\n結束，以免
-空行太多。另外，系統會自動的規范你輸入的描述信息，因此你不需要在描述信息前面添
-加段落起始的空格，同時也不需要在一個段落內部插入\n以實現換行，對于過長的段落系
+空行太多。另外，系統會自動的規範你輸入的描述信息，因此你不需要在描述信息前面添
+加段落起始的空格，同時也不需要在一個段落內部插入\n以實現換行，對於過長的段落系
 統會自動的添加換行符。
 
 
@@ -1041,12 +1041,12 @@ private int ask_modify()
         if( !submit_form(query("id", me)) && 
             query_temp("contract/luban/questing", me) != "quest_desc" )
         {
-                message_vision("魯班搖搖頭，對$N說：你只有描述時或是提"
-                               "交了申請以後才用得著修改。\n", me);
+                message_vision("魯班搖搖頭，對$N説：你只有描述時或是提"
+                               "交了申請以後才用得着修改。\n", me);
                 return 1;
         }
 
-        message_vision("魯班點點頭，對$N說：你可以修改你提交的申請中的各種信息：\n" +
+        message_vision("魯班點點頭，對$N説：你可以修改你提交的申請中的各種信息：\n" +
                 "\n你可以通過以下指令修改房屋的各種信息：\n" +
                 HIW "changename " NOR "name : 修改房屋的中文名字。\n" +
                 HIW "changeid   " NOR "id   : 修改房屋的英文代號。\n" +
@@ -1055,28 +1055,28 @@ private int ask_modify()
         return 1;
 }
 
-// 輸出魯班說話時的表情
+// 輸出魯班説話時的表情
 private void luban_say(string msg)
 {
         object me;
         me = this_player();
-        message("vision","魯班對"+query("name", me)+"嘀嘀咕咕說了"
+        message("vision","魯班對"+query("name", me)+"嘀嘀咕咕説了"
                 "些話。\n", environment(me), ({ me }));
-        tell_object(me, "魯班說道：" + msg);
+        tell_object(me, "魯班説道：" + msg);
 }
 
-// 輸出用戶說話時的表情
+// 輸出用户説話時的表情
 private void user_say(string msg)
 {
         object me;
 
         me = this_player();
         tell_object(me, "你對魯班小聲道：" + msg);
-        message("vision",query("name", me)+"對魯班嘀嘀咕咕說了些話。"
+        message("vision",query("name", me)+"對魯班嘀嘀咕咕説了些話。"
                 "\n", environment(me), ({ me }));
 }
 
-// 用戶中止商談
+// 用户中止商談
 private int do_stop()
 {
         object me;
@@ -1087,12 +1087,12 @@ private int do_stop()
                 return 1;
         }
         delete_temp("contract/luban", me);
-        message_vision("魯班對$N點點頭，說道：既然如此，改日再談也不妨"
+        message_vision("魯班對$N點點頭，説道：既然如此，改日再談也不妨"
                        "。\n", me);
         return 1;
 }
 
-// 用戶回答問題
+// 用户回答問題
 // 根據當前狀態做出相應的反應
 private int do_answer(string arg)
 {
@@ -1133,7 +1133,7 @@ private int do_answer(string arg)
         return 1;
 }
 
-// 記錄用戶輸入的描述信息
+// 記錄用户輸入的描述信息
 private int do_desc(string arg)
 {
         object me;
@@ -1163,7 +1163,7 @@ private int do_desc(string arg)
         return 1;
 }
 
-// 顯示用戶自己輸入的描述信息
+// 顯示用户自己輸入的描述信息
 private int do_show(string arg)
 {
         show_desc(this_player(), arg);
@@ -1254,7 +1254,7 @@ private int do_changetype(string arg)
 
         if (! arg)
         {
-                user_say("慢著... 我看看是不是換個房型更好...\n\n");
+                user_say("慢着... 我看看是不是換個房型更好...\n\n");
                 check_type(me, arg);
                 return 1;
         }
@@ -1282,7 +1282,7 @@ private int do_changetype(string arg)
                 return 0;
 
         // 正在商談
-        user_say("慢著... 我得改改房型，就換成" HIC + arg + NOR "吧。\n\n");
+        user_say("慢着... 我得改改房型，就換成" HIC + arg + NOR "吧。\n\n");
 
         if (! check_type(me, arg))
                 write("你沒有改變房屋類型。\n");
@@ -1346,8 +1346,8 @@ private int do_finish()
         user_say("好了，我弄完了，你們這就開始麼？\n\n");
         if (value)
         {
-                msg = "金臨撥拉撥拉算盤，慢條斯理的對$N說道：要造這樣"
-                      "的房子，少說也得" + MONEY_D->price_str(value) +
+                msg = "金臨撥拉撥拉算盤，慢條斯理的對$N説道：要造這樣"
+                      "的房子，少説也得" + MONEY_D->price_str(value) +
                       "，不二價！\n";
                 if (wizardp(me))
                 {
@@ -1356,11 +1356,11 @@ private int do_finish()
                 }
         } else
         {
-                msg = "金臨拉撥拉算盤，對$N說道：便宜你了，造這個房子"
+                msg = "金臨拉撥拉算盤，對$N説道：便宜你了，造這個房子"
                       "免費，不要錢！\n";
         }
 
-        msg += "魯班略一沉吟，然後說道：你看看有沒有什麼問題麼？若是沒"
+        msg += "魯班略一沉吟，然後説道：你看看有沒有什麼問題麼？若是沒"
                "有，請先交"HIR"五兩黃金的手續費。\n\n"NOR;
         message_vision(msg, me);
 
@@ -1380,14 +1380,14 @@ private int do_withdraw()
         }
         if( !query("form/"+query("id", me)) )
         {
-                message_vision("魯班一臉茫然......對$N說道：現在你好像"
+                message_vision("魯班一臉茫然......對$N説道：現在你好像"
                                "沒有提交的申請吧！\n", me);
                 return 1;
         }
 
         if( query_temp("decide_withdraw", me) )
         {
-                message_vision("魯班對$N說道：你若是要撤消申請，就請下"
+                message_vision("魯班對$N説道：你若是要撤消申請，就請下"
                                "決定(decide)！\n", me);
                 return 1;
         }
@@ -1403,11 +1403,11 @@ private int do_withdraw()
                 break;
 
         case "拒絕":
-                luban_say("唉！沒能被批準也別就打退堂鼓麼，看看怎麼回"
-                          "事再說麼。\n");
+                luban_say("唉！沒能被批准也別就打退堂鼓麼，看看怎麼回"
+                          "事再説麼。\n");
                 break;
         }
-        message_vision("魯班嘆了口氣，對$N說道：既然如此，此事也不必勉"
+        message_vision("魯班歎了口氣，對$N説道：既然如此，此事也不必勉"
                        "強，如果你想好了，就下決定(decide)吧！\n", me);
         set_temp("decide_withdraw", 1, me);
         return 1;
@@ -1438,7 +1438,7 @@ private int do_demolish()
 
         me = this_player();
         if( !query_temp("demolish_room", me) )
-                return notify_fail("你要拆什麼？拆屋可要先和魯班說一聲。\n");
+                return notify_fail("你要拆什麼？拆屋可要先和魯班説一聲。\n");
 
         delete_temp("demolish_room", me);
         demolish_room(me);
@@ -1474,8 +1474,8 @@ int demolish_room(object me)
         // 先清除所有的鑰匙，以免留在當前玩家手中出問題。
         room_name=query("private_room/name", me)+"("+
                     query("private_room/id", me)+")";
-       command("chat 手裡有"+query("name", me)+"的"+
-                room_name + "鑰匙的，請你把鑰匙交回到我這裡來。");
+       command("chat 手裏有"+query("name", me)+"的"+
+                room_name + "鑰匙的，請你把鑰匙交回到我這裏來。");
 
         // updated by Lonely@nitan3
         n=query("private_room/key_no", me);
@@ -1517,8 +1517,8 @@ int demolish_room(object me)
         // 防止執行時間過長而發生錯誤
         reset_eval_cost();
 
-        // 刪除用戶創建的所有文件
-        // 同時刪除鑰匙文件，鑰匙有可能留在某些玩家手裡，所以登錄的
+        // 刪除用户創建的所有文件
+        // 同時刪除鑰匙文件，鑰匙有可能留在某些玩家手裏，所以登錄的
         // 時候可能會產生一些問題。
         file = get_dir(file_dir(me), -1);
         seteuid(getuid());
@@ -1536,7 +1536,7 @@ int demolish_room(object me)
                         if (room)
                         {
                                 message("vision", "突然幾個童子飛也似"
-                                        "的沖了過來，手裡操著各種家伙"
+                                        "的衝了過來，手裏操着各種傢伙"
                                         "，嚷嚷道：閃開！都閃開！\n",
                                         room);
                                 catch(DBASE_D->clear_object(room));
@@ -1559,7 +1559,7 @@ int demolish_room(object me)
         if (! objectp(ob))
         {
                 write("有關房屋的信息已經被刪除。但是建房的地點已經找"
-                      "不到了！你和巫師聯系吧。\n");
+                      "不到了！你和巫師聯繫吧。\n");
                 delete("private_room", me);
                 me->save();
                 return 0;
@@ -1572,18 +1572,18 @@ int demolish_room(object me)
         if (environment(me) == environment(this_object()))
         {
                 // 玩家在現場
-                message_vision("魯班點點頭，對$N說：好了，剩下的事情"
+                message_vision("魯班點點頭，對$N説：好了，剩下的事情"
                                "我會辦妥的！你可以走了。\n", me);
         }
 
         return 1;
 }
 
-// 顯示用戶輸入的描述信息
-// 如果用戶正在商談，就顯示用戶剛輸入的描述信息，如果用戶在等待審批，則顯示用戶
+// 顯示用户輸入的描述信息
+// 如果用户正在商談，就顯示用户剛輸入的描述信息，如果用户在等待審批，則顯示用户
 // 以前輸入的描述信息
 // 獲得一個player對房屋的描述
-// room_name是用戶指定的房屋中的某一間的short描述
+// room_name是用户指定的房屋中的某一間的short描述
 private void show_desc(mixed player, string room_name)
 {
         mapping filesp;         // 原型房屋描述的文件mapping
@@ -1605,7 +1605,7 @@ private void show_desc(mixed player, string room_name)
         string ids;             // 查詢時使用
 
         string info;            // 最後給出的提示信息
-        string msg;             // 臨時變量，用于顯示信息
+        string msg;             // 臨時變量，用於顯示信息
 
         me = this_player();
         info = "";
@@ -1634,7 +1634,7 @@ private void show_desc(mixed player, string room_name)
                 if (! mapp(filesp))
                 {
                         write("你申請的房屋類型(" + room_type + ")已經"
-                              "不存在了，請和巫師聯系。\n");
+                              "不存在了，請和巫師聯繫。\n");
                         return;
                 }
                 descsp = query(ids + "descs");
@@ -1646,7 +1646,7 @@ private void show_desc(mixed player, string room_name)
                 msg = query(ids + "wizard");
                 switch (query(ids + "status")) {
                 case "申請" :
-                        info = "巫師還沒有查閱這份申請。";
+                        info = "巫師還沒有查閲這份申請。";
                         break;
 
                 case "拒絕" :
@@ -1666,12 +1666,12 @@ private void show_desc(mixed player, string room_name)
                         {
                                 info += HIW "\n你現在可以建造房屋了。"
                                         "如果這時修改了房屋的信息，就"
-                                        "要得到巫師的再次批準。" NOR;
+                                        "要得到巫師的再次批准。" NOR;
                         } else
                         if (query(ids + "status") == "拒絕")
                         {
                                 info += HIR "\n你現在最好修改房屋的信"
-                                        "息以獲得巫師的批準，否則請撤"
+                                        "息以獲得巫師的批准，否則請撤"
                                         "消申請。" NOR;
                         }
                         info += "\n你可以撤消(withdraw)你提交的申請。";
@@ -1700,12 +1700,12 @@ private void show_desc(mixed player, string room_name)
         if (! objectp(ob))
         {
                 write("你申請的建造房屋的地方(" + position + ")已經不"
-                      "存在了，請和巫師聯系!\n");
+                      "存在了，請和巫師聯繫!\n");
                 return;
         }
 
         user_say("來，讓我我看看" + room_nameid + "究竟打算怎麼建。\n\n");
-        msg = "好，你看看吧：" + "這裡選用的是" + room_type +
+        msg = "好，你看看吧：" + "這裏選用的是" + room_type +
               "這種類型的房屋。\n它的名字是" + room_nameid +
               "，將建築在"+query("short", ob);
         if (wizardp(me) && wiz_level(me) >= WIZLEVEL)
@@ -1721,19 +1721,19 @@ private void show_desc(mixed player, string room_name)
                 ob = get_object(filesp[names[i]]);
                 if (! objectp(ob))
                 {
-                        write(HIR "找不到示例的房屋(" + names[i] + "::" + filesp[names[i]] + ")，請和巫師聯系。\n" NOR);
+                        write(HIR "找不到示例的房屋(" + names[i] + "::" + filesp[names[i]] + ")，請和巫師聯繫。\n" NOR);
                         continue;
                 }
                 if (! room_name || room_name == "" ||
                     query("short", ob) == room_name || names[i] == room_name )
                 {
-                        // 查找用戶輸入的描述信息
+                        // 查找用户輸入的描述信息
                         desc = descsp[names[i]];
                         write(YEL "───────────────────────────────────────\n" NOR);
-                        write(YEL+"關于"+query("short", ob)+"("+names[i]+")"+YEL+"的描述：\n"+NOR);
+                        write(YEL+"關於"+query("short", ob)+"("+names[i]+")"+YEL+"的描述：\n"+NOR);
                         if (! desc)
                         {
-                                // 用戶沒有輸入描述信息，顯示缺省信息
+                                // 用户沒有輸入描述信息，顯示缺省信息
                                 desc = CYN "現在還沒有輸入描述信息，使"
                                        "用缺省的描述信息。如下：\n";
                                 desc += "    ";
@@ -1753,7 +1753,7 @@ private void show_desc(mixed player, string room_name)
 
         if (! count)
         {
-                write("但是這裡沒有" + room_name + "這個房間，請用show查看所有的房間！\n");
+                write("但是這裏沒有" + room_name + "這個房間，請用show查看所有的房間！\n");
                 return ;
         }
 
@@ -1801,7 +1801,7 @@ private void promote_type(object me)
 // 詢問玩家必要的建房信息，然後記錄，留給巫師審批
 private int quest_user(object me)
 {
-        message_vision("魯班對$N說道：好，來，咱們仔細談談！\n", me);
+        message_vision("魯班對$N説道：好，來，咱們仔細談談！\n", me);
         // 詢問房屋名稱
         luban_say("先告訴我你想建的房子叫什麼名字(answer name)。\n"
                   "你若是不想談了(stop)，告訴我也無妨。\n");
@@ -1812,7 +1812,7 @@ private int quest_user(object me)
 // 詢問描述信息
 private int quest_info(object me)
 {
-        message_vision("魯班對$N說道：好，看來你喜歡" +
+        message_vision("魯班對$N説道：好，看來你喜歡" +
                        query_temp("contract/luban/room/name", me)+
                        "這種樣式的。\n", me);
         // 顯示房屋樣式信息
@@ -1823,14 +1823,14 @@ private int quest_info(object me)
 若一切都輸入好了以後鍵入finish或是ok就可以了。如果想修改輸入的房屋名
 字，代號，類型的信息可以向我詢問<修改>的方法。
 
-舉個描述的例子：“desc 小院 這裡是一間別致的小院。”這樣就給小院添加
+舉個描述的例子：“desc 小院 這裏是一間別致的小院。”這樣就給小院添加
 了一行描述。如果想取消小院的描述可以鍵入：“desc 小院”就可以了。
 
-描述還可以使用顏色，可以多行，具體細節可以問我 <規則> 這裡要需要注意
+描述還可以使用顏色，可以多行，具體細節可以問我 <規則> 這裏要需要注意
 的是：系統自動會在描述字符串的尾端加一個 $NOR$ 和 \n。因此描述不要以
-\n結束，以免空行太多，觀之不雅。另外，系統會自動的規范你輸入的描述信
+\n結束，以免空行太多，觀之不雅。另外，系統會自動的規範你輸入的描述信
 息，因此你不需要在描述信息前面添加段落起始的空格，同時也不需要在一個
-段落內部插入\n以實現換行，對于過長的段落系統會自動的添加換行符。
+段落內部插入\n以實現換行，對於過長的段落系統會自動的添加換行符。
 
 另外，在描述的字符串內部不要輸入空格，跳格，這些輸入都會被抹掉。
 INFORMATION );
@@ -1843,12 +1843,12 @@ INFORMATION );
         return 1;
 }
 
-// 判斷用戶輸入的房屋名字
+// 判斷用户輸入的房屋名字
 private int check_name(object me, string arg)
 {
         if (! arg)
         {
-                luban_say("你怎麼不說話？要是不想談了(stop)，明說就是！\n");
+                luban_say("你怎麼不説話？要是不想談了(stop)，明説就是！\n");
                 return 0;
         }
 
@@ -1864,12 +1864,12 @@ private int check_name(object me, string arg)
         return 1;
 }
 
-// 判斷用戶輸入的房屋代號
+// 判斷用户輸入的房屋代號
 private int check_id(object me, string arg)
 {
         if (! arg)
         {
-                luban_say("你怎麼不說話？要是不想談了(stop)，明說就是！\n");
+                luban_say("你怎麼不説話？要是不想談了(stop)，明説就是！\n");
                 return 0;
         }
 
@@ -1886,7 +1886,7 @@ private int check_id(object me, string arg)
         return 1;
 }
 
-// 判斷用戶輸入的房屋類型
+// 判斷用户輸入的房屋類型
 private int check_type(object me, string arg)
 {
        mixed example;
@@ -1906,7 +1906,7 @@ private int check_type(object me, string arg)
                           "再告訴我。\n");
                 return 0;
         }
-        // 記錄用戶選定的房屋類型
+        // 記錄用户選定的房屋類型
         set_temp("contract/luban/room", example, me);
 
         // 計算房屋的價值
@@ -1918,14 +1918,14 @@ private int check_type(object me, string arg)
         return 1;
 }
 
-// 判斷用戶輸入的房屋名是否合法
+// 判斷用户輸入的房屋名是否合法
 // 同時判斷該處是否已經有住房
 private int check_legal_name(string name, string position)
 {
         object ob;
 
         if ((strlen(name) < 4) || (strlen(name) > 12 )) {
-                write("對不起，你房屋的名字必須是 2 到 6 個中文字。\n");
+                write("對不起，你房屋的名字必須是 2 到 6 箇中文字。\n");
                 return 0;
         }
 
@@ -1940,7 +1940,7 @@ private int check_legal_name(string name, string position)
 
         if (ob->query_room_name(name))
         {
-                luban_say("對不起，據我所知，那裡已經有一個住房叫這個"
+                luban_say("對不起，據我所知，那裏已經有一個住房叫這個"
                           "名字了！請另外起一個名字。\n");
                 return 0;
         }
@@ -1948,7 +1948,7 @@ private int check_legal_name(string name, string position)
         return 1;
 }
 
-// 判斷用戶輸入的房屋代號是否合法
+// 判斷用户輸入的房屋代號是否合法
 private int check_legal_id(string roomid, string position)
 {
         object ob;
@@ -1982,7 +1982,7 @@ private int check_legal_id(string roomid, string position)
 
         if (ob->query_room_id(roomid))
         {
-                luban_say("對不起，據我所知，那裡已經有一個住房使用了"
+                luban_say("對不起，據我所知，那裏已經有一個住房使用了"
                           "這個英文代號了，請另選一個。\n");
                 return 0;
         }
@@ -1990,7 +1990,7 @@ private int check_legal_id(string roomid, string position)
         return 1;
 }
 
-// 判斷用戶輸入的房屋類型是否存在
+// 判斷用户輸入的房屋類型是否存在
 // 如果存在則返回那個房屋類型對應的mapping的指針
 private mixed check_legal_type(string type)
 {
@@ -2018,7 +2018,7 @@ private object get_object(string file_name)
         return ob;
 }
 
-// 記錄用戶描述某一間房間的信息
+// 記錄用户描述某一間房間的信息
 private int record_desc(object me, string room_name, string desc)
 {
         mapping filesp;
@@ -2040,7 +2040,7 @@ private int record_desc(object me, string room_name, string desc)
                 ob = get_object(filesp[names[i]]);
                 if( query("short", ob) == room_name || names[i] == room_name )
                 {
-                        // 查找用戶輸入的描述信息
+                        // 查找用户輸入的描述信息
                         if (! desc || desc =="")
                         {
                                 string msg;
@@ -2063,11 +2063,11 @@ private int record_desc(object me, string room_name, string desc)
                         return 1;
                 }
         }
-        write("沒有找到" + room_name + "，請查証再輸入描述信息。\n");
+        write("沒有找到" + room_name + "，請查證再輸入描述信息。\n");
         return 0;
 }
 
-// 保存用戶輸入的建房信息
+// 保存用户輸入的建房信息
 private void record_contract(object me)
 {
         string id;
@@ -2114,7 +2114,7 @@ private int modify_desc_in_form(string player_id, string room_name, string desc)
 
         if (! (example = check_legal_type(query_form(player_id, "type"))))
         {
-                write("這種房屋的類型已經不存在了，所以沒有改變房屋的描述，請和巫師聯系。\n");
+                write("這種房屋的類型已經不存在了，所以沒有改變房屋的描述，請和巫師聯繫。\n");
                 return 1;
         }
 
@@ -2128,7 +2128,7 @@ private int modify_desc_in_form(string player_id, string room_name, string desc)
                 ob = get_object(filesp[names[i]]);
                 if( query("short", ob) == room_name || names[i] == room_name )
                 {
-                        // 查找用戶輸入的描述信息
+                        // 查找用户輸入的描述信息
                         if (! desc || desc =="")
                         {
                                 write("你沒有輸入描述" + room_name +
@@ -2146,7 +2146,7 @@ private int modify_desc_in_form(string player_id, string room_name, string desc)
                         return 1;
                 }
         }
-        write("沒有找到" + room_name + "，所以沒有修改描述信息。請查証再修改描述信息。\n");
+        write("沒有找到" + room_name + "，所以沒有修改描述信息。請查證再修改描述信息。\n");
         return 0;
 }
 
@@ -2200,7 +2200,7 @@ private int do_help(string arg)
                 write(@WRITE
 列出所有或者是部分玩家提交的表單。如果參數是all 或者沒有，就
 將所有的表單列出；如果參數是apply， 就列出所有申請中的表單；
-如果參數是agree， 就列出所有已經批準的表單；如果參數是reject
+如果參數是agree， 就列出所有已經批准的表單；如果參數是reject
 則列出所有已經被巫師拒絕的表單；參數old 將把所有長期沒有執行
 的表單列出來。
 
@@ -2210,8 +2210,8 @@ WRITE );
 
         case "type":
                 write(@WRITE
-顯示某個玩家提交表單中的具體描述信息，如果指明了房屋名稱，就
-只顯示該玩家對于該房屋的描述。
+顯示某個玩家提交表單中的具體描述信息，如果指明瞭房屋名稱，就
+只顯示該玩家對於該房屋的描述。
 
 命令規則：type 玩家ID [房屋名稱]
 WRITE );
@@ -2219,7 +2219,7 @@ WRITE );
 
         case "agree":
                 write(@WRITE
-批準某個玩家提交的表單，批準以後玩家只需要繳納現金即可建房。
+批准某個玩家提交的表單，批准以後玩家只需要繳納現金即可建房。
 
 命令規則：agree 玩家ID
 WRITE );
@@ -2227,8 +2227,8 @@ WRITE );
 
         case "reject":
                 write(@WRITE
-拒絕某個玩家提交的表單，可以在拒絕的時候說明原因，原因將紀錄
-在表單中的備注中。
+拒絕某個玩家提交的表單，可以在拒絕的時候説明原因，原因將紀錄
+在表單中的備註中。
 
 命令規則：reject 玩家ID [原因]
 WRITE );
@@ -2267,14 +2267,14 @@ private int do_list(string arg)
 
         case "agree":
         case "同意":
-        case "批準":
+        case "批准":
                 show_agree();
                 return 1;
 
         case "reject":
         case "否決":
-        case "不批準":
-        case "沒批準":
+        case "不批准":
+        case "沒批准":
                 show_reject();
                 return 1;
 
@@ -2284,13 +2284,13 @@ private int do_list(string arg)
                 return 1;
         }
 
-        write("list的使用說明：\nlist all   : 顯示所有的表單。\nlist apply : 顯示申請的表單。\n" +
-              "list agree : 顯示巫師已經批準的表單。\nlist reject : 顯示巫師已經否決的表單。\n" +
+        write("list的使用説明：\nlist all   : 顯示所有的表單。\nlist apply : 顯示申請的表單。\n" +
+              "list agree : 顯示巫師已經批准的表單。\nlist reject : 顯示巫師已經否決的表單。\n" +
               "list old   : 顯示過期很久的表單。\n\n");
         return 1;
 }
 
-// 顯示表單的詳細信息
+// 顯示錶單的詳細信息
 // 格式：type player_id room_name 顯示該player描述的某間房屋
 //   或：type player_id           顯示該player的所有描述
 // 此時如果由其他玩家正在輸入，也可以察看
@@ -2302,7 +2302,7 @@ private int do_type(string arg)
 
         if (! wizardp(this_player()) || wiz_level(this_player()) < WIZLEVEL)
         {
-                write("你無權察看表單中的描述信息！\n");
+                write("你無權察看錶單中的描述信息！\n");
                 return 1;
         }
         if (! arg)
@@ -2321,7 +2321,7 @@ private int do_type(string arg)
         return 1;
 }
 
-// 顯示一個申請的簡要說明
+// 顯示一個申請的簡要説明
 private void show_brief(string player_id)
 {
         mapping form;
@@ -2374,7 +2374,7 @@ private int exist_form()
 {
         if (! mapp(query("form")) || sizeof(query("form")) < 1)
         {
-                write("現在魯班這裡並沒有任何表單需要處理。\n");
+                write("現在魯班這裏並沒有任何表單需要處理。\n");
                 return 0;
         }
         if (! wizardp(this_player()) || wiz_level(this_player()) < WIZLEVEL)
@@ -2385,7 +2385,7 @@ private int exist_form()
         return 1;
 }
 
-// 批準表單
+// 批准表單
 // 巫師使用
 private int do_agree(string arg)
 {
@@ -2400,18 +2400,18 @@ private int do_agree(string arg)
 
         if (query("form/" + arg + "/status") == "同意")
         {
-                write("此表單已經被批準了。\n");
+                write("此表單已經被批准了。\n");
                 return 1;
         }
         set("form/" + arg + "/status", "同意");
         set("form/"+arg+"/wizard",query("name", this_player()));
         set("form/" + arg + "/memo", "無");
-        write("你批準了" + query("form/" + arg + "/player") + "(" + arg + ")的申請。\n");
+        write("你批准了" + query("form/" + arg + "/player") + "(" + arg + ")的申請。\n");
         save();
 
         if (objectp(ob = find_player(arg)) && ob != this_player())
                 tell_object(ob, HIG + name() + "告訴你：你的表單已經被" +
-                            this_player()->name() + "批準了，快來交錢吧。\n" + NOR);
+                            this_player()->name() + "批准了，快來交錢吧。\n" + NOR);
 
         return 1;
 }
@@ -2443,7 +2443,7 @@ private int do_reject(string arg)
 
         if (memo == "無")
         {
-                write("你可以添加備注信息(reject player 備注信息)，說明拒絕的理由。\n");
+                write("你可以添加備註信息(reject player 備註信息)，説明拒絕的理由。\n");
         }
 
         set("form/" + player + "/status", "拒絕");
@@ -2491,10 +2491,10 @@ private void show_apply()
         show_brief_list("申請", HIW + "以下是玩家提交的申請的表單" + NOR);
 }
 
-// 顯示被批準的表單
+// 顯示被批准的表單
 private void show_agree()
 {
-        show_brief_list("同意", HIY + "以下是巫師已經批準申請的表單" + NOR);
+        show_brief_list("同意", HIY + "以下是巫師已經批准申請的表單" + NOR);
 }
 
 // 顯示被拒絕的表單
@@ -2546,7 +2546,7 @@ private void show_old()
 
 // 顯示列表
 // info是顯示的表單的類型 - info為空表示顯示所有表單
-// msg是顯示的列表的名稱 - 如“這是巫師批準的表單”
+// msg是顯示的列表的名稱 - 如“這是巫師批准的表單”
 private void show_brief_list(string info, string msg)
 {
         int i;
@@ -2644,7 +2644,7 @@ private void create_room(object me)
         if (! mapp(filesp))
         {
                 write("你申請的房屋類型(" + room_type + ")已經不存在了"
-                      "，請和巫師聯系。\n");
+                      "，請和巫師聯繫。\n");
                 return;
         }
 
@@ -2661,13 +2661,13 @@ private void create_room(object me)
         ob = get_object(position);
         if (! objectp(ob))
         {
-                write ("你建房的地點已經不存在了，請和巫師聯系！\n");
+                write ("你建房的地點已經不存在了，請和巫師聯繫！\n");
                 return ;
         }
         position_short=query("short", ob);
         if( !(outdoors=query("outdoors", ob)) )
                 outdoors = "unknow";
-        message("vision", HIY "魯班拍拍手，說道：弟子們，生意來了！賺金子"
+        message("vision", HIY "魯班拍拍手，説道：弟子們，生意來了！賺金子"
                               "銀子的時候到了！！！\n" NOR +
                           YEL "霎時天昏地暗，你只覺得眼前模模糊糊，什麼也"
                               "看不清楚，渾然不知道發生了什麼事情。\n" NOR,
@@ -2676,7 +2676,7 @@ private void create_room(object me)
         // 讀入並處理所有的文件
         for (i = 0; i < sizeof(names); i++)
         {
-                // long_flag 是為了將原型房文件中出現在@LONG和LONG之間的字符串去掉而使用的標志。
+                // long_flag 是為了將原型房文件中出現在@LONG和LONG之間的字符串去掉而使用的標誌。
                 int long_flag;
 
                 // enter_receive 是為了消除過多的空行使用的
@@ -2685,7 +2685,7 @@ private void create_room(object me)
                 if (file_size(filesp[names[i]]) <= 0)
                 {
                         write("缺少文件:" + filesp[names[i]] +
-                              "，不能生成房屋，請和巫師聯系。\n");
+                              "，不能生成房屋，請和巫師聯繫。\n");
                         // 刪除已經產生的文件
                         for (k = i - 1; k >= 0; k--)
                                 rm(to_player(player_id, filesp[names[k]]));
@@ -2699,7 +2699,7 @@ private void create_room(object me)
                           " of " + player_id + "'s room\n// Create by LUBAN written by Doing Lu\n";
                 for (k = 0; k < sizeof(content); k++)
                 {
-                        if (strsrch(content[k], "LONG") != -1)  // 查到了一個LONG標志
+                        if (strsrch(content[k], "LONG") != -1)  // 查到了一個LONG標誌
                         {
                                 long_flag = ! long_flag;
                                 if (! long_flag)
@@ -2730,7 +2730,7 @@ private void create_room(object me)
                         // 去除語句中的//**
                         content[k] = replace_string(content[k], "//**", "    ");
 
-                        // 如果該句以//開頭，表示注釋，則忽略
+                        // 如果該句以//開頭，表示註釋，則忽略
                         if (content[k][0..1] == "//") continue;
 
                         // 判斷該文件是否是入口文件，即該文件是否有到建房處(position)的出口
@@ -2759,7 +2759,7 @@ private void create_room(object me)
                 if (long_flag)
                 {
                         write("文件:" + filesp[names[i]] + "格式錯誤，"
-                              "LONG不匹配，不能生成房屋，請和巫師聯系。\n");
+                              "LONG不匹配，不能生成房屋，請和巫師聯繫。\n");
                         // 刪除已經產生的文件
                         for (k = i - 1; k >= 0; k--)
                                 rm(to_player(player_id, filesp[names[k]]));
@@ -2792,7 +2792,7 @@ private void create_room(object me)
         if (! entry || entry == "")
         {
                 message("vision", "\n過了一會，魯班和眾弟子踉踉蹌蹌的"
-                                  "趕了回來。魯班苦著臉說：這是怪事，"
+                                  "趕了回來。魯班苦着臉説：這是怪事，"
                                   "居然找不到入口！你去問問巫師究竟是"
                                   "怎麼搞的！\n", environment());
                 // 刪除已經產生的文件
@@ -2805,7 +2805,7 @@ private void create_room(object me)
         if (! ob || ! ob->create_room(room_name, room_id, entry))
         {
                 message("vision", "\n過了一會，魯班和眾弟子踉踉蹌蹌的"
-                                  "趕了回來。\n魯班一臉霉樣，苦著臉說"
+                                  "趕了回來。\n魯班一臉黴樣，苦着臉説"
                                   "：真邪門了，居然沒有建成房子，\n奶"
                                   "奶的頭，我公輸班活了一千多年還是頭"
                                   "次遇到這種事！\n",
@@ -2869,8 +2869,8 @@ KEY;
 
         // 生成鑰匙
         ob = clone_object(filename);
-        message_vision("魯班拿出一把鑰匙，對$N說：諾，這是鑰匙，收好了！"
-                       "若是丟了可以到我這裡再配一把。\n", me);
+        message_vision("魯班拿出一把鑰匙，對$N説：諾，這是鑰匙，收好了！"
+                       "若是丟了可以到我這裏再配一把。\n", me);
         ob->move(this_object());
        command("give key to "+query("id", me));
 
@@ -2909,7 +2909,7 @@ private string file_dir(mixed me)
         return dir;
 }
 
-// 將原型房的文件名轉化成為用戶房屋的文件名
+// 將原型房的文件名轉化成為用户房屋的文件名
 private string to_player(string player_id, string file_name)
 {
         string typestr;
@@ -2929,8 +2929,8 @@ private string to_player(string player_id, string file_name)
 // 判斷字符串首部是否是中文字符
 #define IS_HEAD_CHN(s1)   (s1[i] > 160)
 
-// 規范描述信息
-// 這個函數主要為講用戶輸入的描述信息添加回車和跳格
+// 規範描述信息
+// 這個函數主要為講用户輸入的描述信息添加回車和跳格
 private string sort_desc(mixed me, string desc)
 {
         string res;

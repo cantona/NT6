@@ -18,7 +18,7 @@ void create()
         else
         {
                 set("unit", "粒");
-                set("long", "這是一粒非常奇異的藥丸，據說一吃就死，但也或許有某些奇效。\n");
+                set("long", "這是一粒非常奇異的藥丸，據説一吃就死，但也或許有某些奇效。\n");
         }
         setup();
 }
@@ -41,7 +41,7 @@ int do_eat(string arg)
                 return notify_fail("什麼？\n");
 
         if( !query("me_id") || query("me_id") != query("id", me) )
-                return notify_fail("你用力朝一吃就死丹一口咬下去，“哎呀！”燙得趕緊吐出來，嘴裡起了一圈泡！\n");
+                return notify_fail("你用力朝一吃就死丹一口咬下去，“哎呀！”燙得趕緊吐出來，嘴裏起了一圈泡！\n");
 
         sname = keys(skill_status);
         for(i = 0; i < sizeof(skill_status); i++)

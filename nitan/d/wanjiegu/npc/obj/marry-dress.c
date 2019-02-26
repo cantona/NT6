@@ -18,6 +18,6 @@ void create()
                 set("armor_prop/per", 5);
                 set("armor_prop/armor", 3);
                 set("wear_msg","$N穿上一件$n。\n");
-                set("remove_msg","$將$n脫了下來。\n");
+                set("remove_msg","$將$n脱了下來。\n");
         }
 }

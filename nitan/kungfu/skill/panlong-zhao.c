@@ -2,7 +2,7 @@
 inherit SKILL;
 
 mapping *action = ({
-([      "action": "在呼呼風聲中，$N使一招「越爪攀陽勢」，雙手如鉤如戢，插向$n的$l",
+([      "action": "在呼呼風聲中，$N使一招「越爪攀陽勢」，雙手如鈎如戢，插向$n的$l",
         "force" : 100,
         "attack": 28,
         "dodge" : 17,
@@ -12,14 +12,14 @@ mapping *action = ({
         "skill_name" : "越爪攀陽勢" ,
         "damage_type" : "抓傷"
 ]),
-([      "action": "$N身形一躍，費神撲上，使出一招「赤影舖天」，右手直直抓向$n的$l",
+([      "action": "$N身形一躍，費神撲上，使出一招「赤影鋪天」，右手直直抓向$n的$l",
         "force" : 130,
         "attack": 35,
         "dodge" : 20,
         "parry" : 5,
         "damage": 20,
         "lvl"   : 10,
-        "skill_name" : "赤影舖天" ,
+        "skill_name" : "赤影鋪天" ,
         "damage_type" : "抓傷"
 ]),
 ([      "action": "$N雙手平伸，十指微微上下抖動，一招「崩雷勁」打向$n的$l",    

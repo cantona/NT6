@@ -6,9 +6,9 @@ void create()
 {
         set_name("錢伯", ({ "qian bo", "qian", "bo" }));
         set("nickname", HIM "見利忘義" NOR);
-        set("title", "雜貨舖老板");
+        set("title", "雜貨鋪老闆");
         set("long", @LONG
-一個胖胖的老板，賣一些普通的物品。可使用 list 查看可購買的物品。
+一個胖胖的老闆，賣一些普通的物品。可使用 list 查看可購買的物品。
 LONG);
         set("gender", "男性");
         set("age", 44);
@@ -54,7 +54,7 @@ void greeting(object ob)
 {
         if( !ob || environment(ob) != environment() ) return;
 
-        say(CYN "錢伯笑著說道：這位" + RANK_D->query_respect(ob)+ "你需"
+        say(CYN "錢伯笑着説道：這位" + RANK_D->query_respect(ob)+ "你需"
             "買些什麼，請隨便看（輸入指令 list 查看）。\n" NOR);
 
         return;

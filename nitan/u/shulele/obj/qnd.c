@@ -9,11 +9,11 @@ void init();
 void init()
 {
   if (!wizardp(this_player())) {
-    set("no_get","你手裡一鬆，獎勵丹從指間滑落！\n");
+    set("no_get","你手裏一鬆，獎勵丹從指間滑落！\n");
     set("no_give","這麼珍貴的藥，哪能隨便給人？\n");
     set("no_drop","這麼寶貴的丹藥，扔了多可惜呀！\n");
   set("no_put","每個人只有一個，你都這麼大方！\n");
-    set("no_sell","凡人哪裡知道"+this_object()->query("name")+"的價值？還是自己留著吧。\n");
+    set("no_sell","凡人哪裏知道"+this_object()->query("name")+"的價值？還是自己留着吧。\n");
   }
   add_action("do_eat", "eat");
 }

@@ -32,7 +32,7 @@ int perform(object me, object target)
                 return notify_fail("你現在的真氣不足，難以施展" + name() + "。\n");
 
         if (! living(target))
-                return notify_fail("對方都已經這樣了，用不著這麼費力吧？\n");
+                return notify_fail("對方都已經這樣了，用不着這麼費力吧？\n");
 
         ap = attack_power(me, "sword");
         dp = defense_power(target, "force");
@@ -53,7 +53,7 @@ int perform(object me, object target)
         } else
         {
                 msg += CYN "可是$p" CYN "猛地向前一躍,跳出了$P"
-                       CYN "的攻擊范圍。\n"NOR;
+                       CYN "的攻擊範圍。\n"NOR;
                 addn("neili", -80, me);
                 me->start_busy(3);
         }

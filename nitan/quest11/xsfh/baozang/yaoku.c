@@ -10,7 +10,7 @@ void create()
         set("short",YEL"藥庫"NOR);
         set("long", @long
 可以看出這本來是一個藥房，經過幾百年，幾乎所有的藥材都已腐爛，但
-是整個房間還依然散發出濃鬱的古香。這裡看來還是保留了一些名貴中藥。
+是整個房間還依然散發出濃郁的古香。這裏看來還是保留了一些名貴中藥。
 long);
         set("exits", ([
                 "south" : __DIR__"tiantan",
@@ -54,14 +54,14 @@ int do_search(string arg)
           if(random(2)) obj = new("/clone/medicine/neili/puti-zi.c");
           else obj = new("/clone/medicine/neili/qnshouwu.c");
           message_vision(HIB"$N翻開一塊石板，竟然發現一顆"+obj->name()+"。\n"NOR,me);
-          //標志
+          //標誌
           me->set(QUESTDIR5+"yaoku",1);
           obj->set("owner",me->query("id"));
           obj->move(me);
           log_file("quest/FEIHU", sprintf("%s(%s)獲得寶藏寶物：%s。經驗%d。\n", me->name(1),me->query("id"),obj->name(1), me->query("combat_exp")) );
           j=me->query_skill("force");
           obj=new("/d/sld/npc/dushe");
-          message_vision(HIC"突然，草叢中鑽出一只"+obj->name()+"。\n"NOR,me);
+          message_vision(HIC"突然，草叢中鑽出一隻"+obj->name()+"。\n"NOR,me);
 		      obj->set("combat_exp", me->query("combat_exp"));
 		      obj->set("max_qi", me->query("max_qi")*3);
 		      obj->set("eff_qi", me->query("max_qi")*3);

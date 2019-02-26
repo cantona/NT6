@@ -11,10 +11,10 @@ void create()
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("long", "一顆星宿派特制的煙霧彈。它可以用(apply)。\n");
+                set("long", "一顆星宿派特製的煙霧彈。它可以用(apply)。\n");
                 set("unit", "個");
                 set("value", 10000);
-                set("no_drop", RED"難道你想制造混亂嗎？\n"NOR);
+                set("no_drop", RED"難道你想製造混亂嗎？\n"NOR);
         }
 }
 
@@ -53,7 +53,7 @@ int do_apply(string arg)
         }
         set_temp("no_follow", 1, me);
 //      GO_CMD->do_flee(me);
-        tell_room(environment(me),HIM"地面突然騰出一股桃紅色的煙霧，大家什麼也看
+        tell_room(environment(me),HIM"地面突然騰出一股桃紅色的煙霧，大傢什麼也看
 不見，陷入混亂之中。\n"NOR);
 
         GO_CMD->do_flee(me);

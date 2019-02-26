@@ -9,8 +9,8 @@ void create()
 {
 	set("short", "練武場");
 	set("long", @LONG
-這裡是一個破舊的練武場。上千年的踩踏已使得這些石板如同鏡子般平
-整光滑。正中央放著一塊大牌子(paizi)。
+這裏是一個破舊的練武場。上千年的踩踏已使得這些石板如同鏡子般平
+整光滑。正中央放着一塊大牌子(paizi)。
 LONG
 	);
   set("no_death", 1);
@@ -125,7 +125,7 @@ void check(object me)
 		    me->revive();
     		me->reincarnate();
 
-	  	  message_vision(HIW"\n突然一道神光籠罩著$N，$N的精氣神竟然全部恢復了！\n"NOR, me);
+	  	  message_vision(HIW"\n突然一道神光籠罩着$N，$N的精氣神竟然全部恢復了！\n"NOR, me);
      	 	message_vision(HIY"$N急急忙忙地離開了練武場。\n"NOR, me);
         if(me->query_temp("quest/雪山飛狐/武功/fight_id")=="miao renfeng") me->move("/d/lanzhou/zhenting");
         else me->move("/d/huanghe/fendi");
@@ -151,7 +151,7 @@ void check(object me)
       me->remove_all_killer();
 	  me->revive();
     	me->reincarnate();
-	  	message_vision(HIW"\n突然一道神光籠罩著$N，$N的精氣神竟然全部恢復了！\n\n"NOR, me);
+	  	message_vision(HIW"\n突然一道神光籠罩着$N，$N的精氣神竟然全部恢復了！\n\n"NOR, me);
      	message_vision(HIR"$N急急忙忙地離開了練武場。\n"NOR, me);
 	  	if(me->query_temp("quest/雪山飛狐/武功/fight_id")=="hu fei")
 	  	{
@@ -195,7 +195,7 @@ int do_leave()
   me->set("quest/雪山飛狐/武功/time",time());
   me->remove_all_killer();
 	me->reincarnate();
-	message_vision(HIW"\n$N深嘆了一口氣，退出比武場！\n\n"NOR, me);
+	message_vision(HIW"\n$N深歎了一口氣，退出比武場！\n\n"NOR, me);
 	remove_call_out("check");
 	if((ob=present("hu fei",this_object())))
 	{

@@ -88,18 +88,18 @@ void create()
 
         set("inquiry", ([
                 "風清揚" : "唉，已經很久沒有見到他老人家了。你問這幹嘛？",
-                "任盈盈" : "你真有她的消息嗎，說罷，以見他神情激動，好象眼睛紅紅的！\n",
+                "任盈盈" : "你真有她的消息嗎，説罷，以見他神情激動，好像眼睛紅紅的！\n",
                 "清心普善咒" : "這可是盈盈交給我的...",
                 "笑傲江湖"   : "這是曲洋長老和劉正風師叔留下來的...唉！",
                 "琴譜"       : (: ask_me :),
-                "沖靈劍法"   : (: learn_chongling :),
+                "衝靈劍法"   : (: learn_chongling :),
                 "寶劍"       : (: ask_ylj3 :),
                 // "墨紋玄鐵"   : (: ask_ylj2 :),
                 // "遇見尼姑，逢賭必輸" : (: ask_ylj1 :),
         ]));
 
         set("no_teach", ([
-                "yijinjing"    : "此乃少林秘傳，蒙方正大師傳授，我不能擅自教你。",
+                "yijinjing"    : "此乃少林祕傳，蒙方正大師傳授，我不能擅自教你。",
                 "lonely-sword" : "風老先生傳我九劍的時候我立下誓言不得私"
                                  "自傳授，你還是學習其他武功吧！",
         ]));
@@ -203,17 +203,17 @@ mixed learn_chongling()
                return "你不是已經會了嗎？\n";
 
         if( query("family/family_name", me) != "華山派" )
-               return "你說什麼，我不明白！\n";
+               return "你説什麼，我不明白！\n";
 
         if (lv < 100)
-               return "你沖靈劍法修為不夠，我還不能傳你這招！\n";
-        message_vision(HIW "$N" HIW "說道：“這套劍法是我和小師妹練劍的時候突發奇想"
-                       "創出來的，乃是從華山劍法中演化出來！你可看好了！”說完將「沖"
-                       "靈劍法」沖頭到尾地給$n" HIW "演示了一遍！\n" NOR,
+               return "你衝靈劍法修為不夠，我還不能傳你這招！\n";
+        message_vision(HIW "$N" HIW "説道：“這套劍法是我和小師妹練劍的時候突發奇想"
+                       "創出來的，乃是從華山劍法中演化出來！你可看好了！”説完將「衝"
+                       "靈劍法」衝頭到尾地給$n" HIW "演示了一遍！\n" NOR,
                        this_object(), me);
 
         command("haha");
-        tell_object(me, HIG "你學會了「沖靈劍法」！\n" NOR);
+        tell_object(me, HIG "你學會了「衝靈劍法」！\n" NOR);
 
         if( !query("have_ask_chongling", me)){
         if (me->can_improve_skill("sword"))
@@ -252,7 +252,7 @@ int accept_object(object who, object ob)
             query("id", ob) != "qingxin" )
                 return notify_fail("令狐沖不需要這件東西。\n");
 
-        say("令狐沖雙手捧著任盈盈的信，淚如雨下，這塊白虎堂令牌你拿去還給盈盈，告訴她我就去找她!");
+        say("令狐沖雙手捧着任盈盈的信，淚如雨下，這塊白虎堂令牌你拿去還給盈盈，告訴她我就去找她!");
         obn = new("/d/heimuya/npc/obj/card2");
         obn->set_amount(1);
         obn->move(who);
@@ -280,12 +280,12 @@ string ask_ylj2()
 
         me = this_player();
         if( !query_temp("ylj/step1", me) )
-                return "這可是個天大的秘密。\n";
+                return "這可是個天大的祕密。\n";
 
         set_temp("ylj/step2", 1, me);
         delete_temp("ylj/step1", me);
 
-        return "說來這墨紋玄鐵也是一個寶物，我一直找不到鑄劍名師，不想浪費了這塊玄鐵...。\n";
+        return "説來這墨紋玄鐵也是一個寶物，我一直找不到鑄劍名師，不想浪費了這塊玄鐵...。\n";
 }
 
 string ask_ylj3()
@@ -294,7 +294,7 @@ string ask_ylj3()
 
         me = this_player();
         if( !query_temp("ylj/step2", me) )
-                return "這可是個天大的秘密。\n";
+                return "這可是個天大的祕密。\n";
 
         delete_temp("ylj/step2", me);
         command("look"+query("id", me));
@@ -307,5 +307,5 @@ string ask_ylj3()
                 return "看兄台一身正氣，這塊玄鐵就送與兄台，望兄台能找到鑄\n"
                        "劍名師，鑄成寶劍，行俠江湖，也不枉費定靜師伯的一翻苦心.....\n";
         }
-        return "這可是個天大的秘密。\n";
+        return "這可是個天大的祕密。\n";
 }

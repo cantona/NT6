@@ -4,7 +4,7 @@ inherit __DIR__"bhd_npc.c";
 void create()
 {
         set_name(NOR + WHT "巨型野豬" NOR, ({ "juxing shanzhu", "juxing", "shanzhu" }));
-        set("long", HIW "這是一只巨大的野豬，大得令人難以想象，個頭似乎超過兩頭老虎大，兇猛異常。\n" NOR);
+        set("long", HIW "這是一隻巨大的野豬，大得令人難以想象，個頭似乎超過兩頭老虎大，兇猛異常。\n" NOR);
 
         set("age", 500);
         set("str",800);

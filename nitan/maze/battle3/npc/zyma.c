@@ -13,7 +13,7 @@ void create()
 
         set("combat_exp", 2000000);
         set("long",
-                "一匹高頭大馬，全身雪白的毛發，煞是神俊。\n");
+                "一匹高頭大馬，全身雪白的毛髮，煞是神俊。\n");
 
         set("limbs", ({ "頭部", "身體", "蹄子", "尾巴" }) );
         set("verbs", ({ "bite", "hoof" }) );
@@ -37,7 +37,7 @@ void create()
 
         set("chat_chance", 5);
         set("chat_msg", ({
-                 HIC "照玉獅子馬不住地低鳴，蹄子不停地刨打著地面。\n" NOR,
+                 HIC "照玉獅子馬不住地低鳴，蹄子不停地刨打着地面。\n" NOR,
         }) );
 
         setup();
@@ -81,7 +81,7 @@ void heading_for(object me)
 {
         if (! objectp(me)) return;
         message_vision(
-                HIW "$N快馬加鞭，連夜飛弛，終于趕到了宋軍大營！\n" NOR, me);
+                HIW "$N快馬加鞭，連夜飛弛，終於趕到了宋軍大營！\n" NOR, me);
         me->move("/maze/battle3/sying1");
         return;
 }

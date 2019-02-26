@@ -17,7 +17,7 @@ int exert(object me, object target)
                 return notify_fail("你要吸取誰的內力？\n");
 
        if( query("no_fight", environment(me)) )
-              return notify_fail("這裡不能戰鬥，你不可以使用化功大法吸人的內力。\n");
+              return notify_fail("這裏不能戰鬥，你不可以使用化功大法吸人的內力。\n");
 
         if( query_temp("sucked", me) )
                 return notify_fail("你剛剛吸取過內力！\n");

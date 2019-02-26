@@ -52,7 +52,7 @@ mapping *action = ({
         "damage_type": "刺傷",
         "post_action": (: call_other, WEAPON_D, "throw_weapon" :),
 ]),
-([        "action":"$N手扣$w,憑空一指，一招「巴山夜雨」洒向$n的$l",
+([        "action":"$N手扣$w,憑空一指，一招「巴山夜雨」灑向$n的$l",
         "force":160,
         "dodge": 20,
         "damage":50,
@@ -61,7 +61,7 @@ mapping *action = ({
         "damage_type": "刺傷",
         "post_action": (: call_other, WEAPON_D, "throw_weapon" :),
 ]),
-([        "action":"$N身形一晃，使一招「彗星橫空」$w脫手而出，襲向$n的$l",
+([        "action":"$N身形一晃，使一招「彗星橫空」$w脱手而出，襲向$n的$l",
         "force":220,
         "dodge": 50,
         "damage":60,
@@ -75,7 +75,7 @@ mapping *action = ({
         "dodge": 55,
         "damage":140,
         "lvl" : 100,
-        "skill_name": "後羿射日",
+        "skill_name": "后羿射日",
         "damage_type": "刺傷",
         "post_action": (: call_other, WEAPON_D, "throw_weapon" :),
 ]),
@@ -107,7 +107,7 @@ int practice_skill(object me)
                 return notify_fail("你的內力或氣不夠，沒有辦法練習寒星八打。\n");
         me->receive_damage("qi", 30);
         addn("neili", -3, me);
-//        write("你按著所學練了一遍寒星八打。\n");
+//        write("你按着所學練了一遍寒星八打。\n");
         return 1;
 }
 string query_skill_name(int level)

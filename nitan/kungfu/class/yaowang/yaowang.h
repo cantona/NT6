@@ -81,7 +81,7 @@ void check()
         {        
         case 0:
         {
-        message_vision(HIR"$N雙手一揮，一支斷腸花直沖$n而去！\n",ob,me);
+        message_vision(HIR"$N雙手一揮，一支斷腸花直衝$n而去！\n",ob,me);
 
         if(random(2))
         
@@ -111,7 +111,7 @@ void check()
         if(random(2))
 
                 {
-                message_vision(HIR"只見冰塊自空中直沖而下，鑽入$N體中不見了！\n"NOR,me);
+                message_vision(HIR"只見冰塊自空中直衝而下，鑽入$N體中不見了！\n"NOR,me);
                 me->receive_damage("jing",query("jing", me)/15);
                 me->receive_wound("jing",query("jing", me)/20);
                 me->receive_damage("qi",query("qi", me)/15);
@@ -122,7 +122,7 @@ void check()
                 }
         else
                 {
-                message_vision(HIR"$N迎著冰塊而去，用內力將冰塊擊得粉碎!\n"NOR,me);
+                message_vision(HIR"$N迎着冰塊而去，用內力將冰塊擊得粉碎!\n"NOR,me);
                 call_out("check",2+random(3));
                 
                 }
@@ -150,12 +150,12 @@ void check()
                                     (int)me->query_condition("hunger"));
                 remove_call_out("check");
                 message_vision(HIR"$N餓得快死了。\n"NOR,me);
-                message_vision(HIR"$N渴得要虛脫了。\n"NOR,me);
+                message_vision(HIR"$N渴得要虛脱了。\n"NOR,me);
                 }
         else
                 {
                 message_vision(HIR"$N接過養生丹，吃了下去！\n"NOR,me);
-                message_vision(HIR"$N只感疲勞一掃而空，再也不覺得饑餓。\n"NOR,me);
+                message_vision(HIR"$N只感疲勞一掃而空，再也不覺得飢餓。\n"NOR,me);
                 if( query("food", me)<400 )
                         set("food", 400, me);
 
@@ -185,7 +185,7 @@ void check()
                 }
         else
                 {
-                message_vision(HIR"$N順著透骨針的方向，縱身躍起，躲過這致命一擊！\n"NOR,me);
+                message_vision(HIR"$N順着透骨針的方向，縱身躍起，躲過這致命一擊！\n"NOR,me);
                 call_out("check",2+random(3));
                 
                 }

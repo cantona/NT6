@@ -21,7 +21,7 @@ int help(object me)
         write(@HELP
 指令格式 : gmanage 
 
-這條指令用于管理博彩系統。
+這條指令用於管理博彩系統。
 
 HELP );
     return 1;

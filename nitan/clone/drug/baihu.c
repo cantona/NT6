@@ -40,7 +40,7 @@ int cure_ob(object me)
         set("neili",query("max_neili",  me), me);
 
    
-       message_vision(HIW"$N吃下一顆" + name() + HIW"，只覺一股真氣從丹田上升，瞬間便已周行全身經脈回歸丹田。\n"NOR, me);
+       message_vision(HIW"$N吃下一顆" + name() + HIW"，只覺一股真氣從丹田上升，瞬間便已周行全身經脈迴歸丹田。\n"NOR, me);
        me->apply_condition("bonze_drug", 60);
        destruct(this_object());
        return 1;

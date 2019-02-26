@@ -20,7 +20,7 @@ int accept_object( object me, object ob)
     if ( food && food == ob->name() )
     {
         command( "grin " + id );
-        command( "tell " + id + " 我的秘密是：我老爸叫" 
+        command( "tell " + id + " 我的祕密是：我老爸叫" 
         + query( "papa_name" ) + "。" );
         command( "laugh1 " + id );
         delete_temp("kid_ask/"+query("id"), me);

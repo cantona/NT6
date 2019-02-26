@@ -10,7 +10,7 @@ void create()
         if (clonep()) 
                 set_default_object(__FILE__); 
         else {
-                set("long", HIC "一支溫瑩剔透的玉壁，上面雕紋著一條蛟龍。\n" NOR);
+                set("long", HIC "一支温瑩剔透的玉壁，上面雕紋着一條蛟龍。\n" NOR);
                 set("unit", "支");
                 set("value", 80000);
                 set("no_sell", 1);

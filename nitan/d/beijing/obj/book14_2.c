@@ -15,7 +15,7 @@ void create()
                 set_default_object(__FILE__);
         else {
                 set("long", 
-"\n一本正黃旗的經書，封皮(binding)很精致。
+"\n一本正黃旗的經書，封皮(binding)很精緻。
 翻了開來，第一頁寫著「永不加賦」四個大字，
 筆致圓柔，是順治帝的手筆。\n");
                 set("unit", "本");

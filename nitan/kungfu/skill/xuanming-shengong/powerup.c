@@ -22,7 +22,7 @@ int exert(object me, object target)
         addn("neili", -100, me);
         me->receive_damage("qi", 0);
 
-        message_combatd(MAG "$N微一凝神，運起玄冥神功，全身頓時升起一層氤氳寒氣，將$N籠罩其中。\n" NOR, me);
+        message_combatd(MAG "$N微一凝神，運起玄冥神功，全身頓時升起一層氤氲寒氣，將$N籠罩其中。\n" NOR, me);
 
         addn_temp("apply/attack", skill/3, me);
         addn_temp("apply/defense", skill/3, me);

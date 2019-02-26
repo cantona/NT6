@@ -14,7 +14,7 @@ void create()
         set_name(HIR"聖誕老人"NOR, ({ "shengdan laoren","santa","laoren"}) );
         set("gender", "男性" );
         set("age", 63);
-        set("long", HIR"一位紅光滿面，笑呵呵的白胡子老爺爺。\n"NOR);
+        set("long", HIR"一位紅光滿面，笑呵呵的白鬍子老爺爺。\n"NOR);
         set("attitude", "peaceful");
 
         set("str", 25);
@@ -45,9 +45,9 @@ void create()
 
         set("chat_chance", 20);
         set("chat_msg", ({
-                "聖誕老人笑呵呵說道: 聖誕快樂！快樂！~~\n",
+                "聖誕老人笑呵呵説道: 聖誕快樂！快樂！~~\n",
                 "聖誕老人快活地唱道: 叮叮鐺，叮叮鐺，鈴兒響叮鐺~~\n",
-                "聖誕老人笑呵呵說道: 想要禮物嗎？我就是神派來送聖誕禮物的。 \n",
+                "聖誕老人笑呵呵説道: 想要禮物嗎？我就是神派來送聖誕禮物的。 \n",
                 "聖誕老人笑道: 只要是乖孩子，就有聖誕禮物。 \n",
                 (: random_move :),
                 (: greeting :),
@@ -86,7 +86,7 @@ string ask_gift()
 
         if( ppl->query_condition("santa") )
         {
-                message_vision("$N對著$n笑道：你才拿到禮物，就又想要啦？\n",santa,ppl);
+                message_vision("$N對着$n笑道：你才拿到禮物，就又想要啦？\n",santa,ppl);
                 random_move();
                 return "呵呵呵\n";
         }
@@ -168,7 +168,7 @@ void greeting()
 
         if( strsrch(ctime(time()), "Dec 25") == -1 )
         {
-                message_vision(HIY"$N"+HIY"凄婉地說：聖誕節結束了，我也該回天堂了.\n"NOR,me);
+                message_vision(HIY"$N"+HIY"悽婉地説：聖誕節結束了，我也該回天堂了.\n"NOR,me);
                 command("goodbye");
                 message_vision(HIY"$N"+HIY"乘坐風車凌空飛去，轉眼就不見了.\n"NOR,me);
                 call_out("destroy_me",1,me);
@@ -193,7 +193,7 @@ int accept_object(object me, object obj)
 
 int accept_fight(object me)
 {
-        command("say " + RANK_D->query_respect(me) + "，老頭子我是不打架的:)□\n");
+        command("say " + RANK_D->query_respect(me) + "，老頭子我是不打架的:)ⅵ\n");
         return 0;
 }
 

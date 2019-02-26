@@ -11,7 +11,7 @@ void create()
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("long","這是一只香甜的汨羅粽子。每到端午，這裡的百姓都要劃龍舟洒粽子，數千年來相沿成俗。\n");
+                set("long","這是一隻香甜的汨羅粽子。每到端午，這裏的百姓都要划龍舟灑粽子，數千年來相沿成俗。\n");
                 set("unit", "只");
                 set("value", 300);
                 set("food_remaining", 15);

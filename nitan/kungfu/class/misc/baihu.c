@@ -11,7 +11,7 @@ void create()
         set("gender", "男性");
         set("age", 5);
         set("long", @LONG
-這是一只巨大的白虎，雄壯無比。乃為太白金星的坐騎。
+這是一隻巨大的白虎，雄壯無比。乃為太白金星的坐騎。
 LONG );
         set("combat_exp", 10000000);
         set("shen_type", 0);
@@ -111,7 +111,7 @@ varargs void die(object killer)
         command("chat 盎~！盎~~！！");
         CHANNEL_D->do_channel(this_object(), "rumor", HIW "畜生，快快跟我回去吧！" NOR);
         command("chat 盎~！盎~~！！");
-        CHANNEL_D->do_channel(this_object(), "rumor", HIM "聽說白虎被太白金星抓回天庭！\n" NOR);
+        CHANNEL_D->do_channel(this_object(), "rumor", HIM "聽説白虎被太白金星抓回天庭！\n" NOR);
         message_sort(HIR "$N" HIR "身子一扭，消失在雲氣中，"
                      "只聽叮玲玲的一聲，從$N" HIR "身上掉下了一" +
                      query("unit", ob)+ob->name()+
@@ -136,7 +136,7 @@ varargs void die(object killer)
                 }
         }
 
-        // 1/800幾率掉出無名銅人
+        // 1/800機率掉出無名銅人
         if (random(800) < 1)
         {
                 object ob_tongren;
@@ -155,7 +155,7 @@ void random_move()
         {
                 message_vision("$N急急忙忙的走了。\n", this_object());
                 CHANNEL_D->channel_broadcast("rumor",
-                        "聽說" + name() + HIM "逍遙世間，後來終于被太白金星抓回天庭。" NOR);
+                        "聽説" + name() + HIM "逍遙世間，後來終於被太白金星抓回天庭。" NOR);
                 destruct(this_object());
                 return;
         }

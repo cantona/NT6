@@ -1,4 +1,4 @@
-//Room: ssyb.c 舍身崖壁
+//Room: ssyb.c 捨身崖壁
 
 inherit ROOM;
 
@@ -6,9 +6,9 @@ inherit ROOM;
 
 void create()
 {
-      set("short","舍身崖壁");
+      set("short","捨身崖壁");
         set("long", @LONG
-你終于遊到崖壁。抬頭上望，微見天光。壁面潮濕，裂縫中微有
+你終於游到崖壁。抬頭上望，微見天光。壁面潮濕，裂縫中微有
 水滲出。腳下是污濁的臭水，旁邊不遠出有一個墳墓(fenmu)， 向東
 就是你來時的水潭。
 LONG );
@@ -21,7 +21,7 @@ LONG );
                  "east" : __DIR__"st0",
          ]));
       set("item_desc", ([
-            "fenmu" : NOR + WHT "看來這個墳墓已經在這裡很久了，上面已長滿了青苔，令人一看不禁"
+            "fenmu" : NOR + WHT "看來這個墳墓已經在這裏很久了，上面已長滿了青苔，令人一看不禁"
                       "滄然之意頓生。\n" NOR,
       ]));
       set("no_clean_up", 0);
@@ -41,7 +41,7 @@ int do_climb()
     me = this_player();
     message("vision", me->name()+"使勁爬上去，花了九牛二虎之力。\n", environment(me), ({me}) );
     me->move(__DIR__"gudelin1");
-    message("vision", me->name()+"花了九牛二虎之力，到了這個地方，卻不知道在哪裡？\n", environment(me), ({me}) );
+    message("vision", me->name()+"花了九牛二虎之力，到了這個地方，卻不知道在哪裏？\n", environment(me), ({me}) );
 
     return 1;
 }
@@ -55,7 +55,7 @@ int do_bai(string arg)
             return 0;
      if (me->is_busy() || me->is_fighting())
      {
-            write("你忙完了再說吧！\n");
+            write("你忙完了再説吧！\n");
             return 1;
      }
      if( query("jing", me)<130 )
@@ -78,11 +78,11 @@ int do_bai(string arg)
 
      if (random(500) != 1)
      {
-             write(HIG "磕頭完畢，你緩緩站起身來。默默地注視著墳墓，不禁思緒萬千。\n" NOR);
+             write(HIG "磕頭完畢，你緩緩站起身來。默默地注視着墳墓，不禁思緒萬千。\n" NOR);
              return 1;
      }
 
-     write(HIG "猛然間你覺得一個硬硬的東西碰在頭上，于是你猛地挖開墳墓 ……\n" NOR);
+     write(HIG "猛然間你覺得一個硬硬的東西碰在頭上，於是你猛地挖開墳墓 ……\n" NOR);
      write(HIG "一個木盒出現在你眼前，你趕忙打開木盒，「嗖」地一聲！一枚暗器從中飛出……\n" NOR);
      if (this_player()->query_skill("dodge", 1) < 220 || 
          this_player()->query_skill("martial-cognize", 1) < 220)
@@ -98,7 +98,7 @@ int do_bai(string arg)
           write(HIG "你回頭一看，卻發現盒子是空的！\n" NOR);
           return 1;
      }
-     write(HIG "你趕忙將盒子裡的東西拿了出來。\n" NOR);
+     write(HIG "你趕忙將盒子裏的東西拿了出來。\n" NOR);
      book->move(this_player());
      return 1;
                   

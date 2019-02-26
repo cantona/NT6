@@ -114,7 +114,7 @@ string ask_npc(object knower, object me)
         if (! objectp(NPC_OB))
                 return CYN "哎，這年頭，出頭就沒有好事，小命都要送掉了。" NOR;
 
-        return CYN "哎，都說他在" + PLACE + "，找他的人好像可多了。" NOR;
+        return CYN "哎，都説他在" + PLACE + "，找他的人好像可多了。" NOR;
 }
 
 // 任務介紹
@@ -125,11 +125,11 @@ string query_introduce(object knower)
         switch (TYPE)
         {
         case 0:
-                return "聽說朝廷正在通緝反賊" + NPC_NAME +
+                return "聽説朝廷正在通緝反賊" + NPC_NAME +
                        "，嘖嘖，膽子大了，敢造反。";
         case 1:
-                return "據說官府正在捉拿飛賊" + NPC_NAME +
-                       "，這家伙，可不是好人啊。";
+                return "據説官府正在捉拿飛賊" + NPC_NAME +
+                       "，這傢伙，可不是好人啊。";
         }
 }
 
@@ -141,7 +141,7 @@ void do_say(object knower)
                        NPC_NAME + "這麼狠，不也把小命送掉了？\n", knower);
 }
 
-// 這個消息能夠被散布嗎？
+// 這個消息能夠被散佈嗎？
 int can_know_by(object knower)
 {
         mapping my = query_entire_dbase();

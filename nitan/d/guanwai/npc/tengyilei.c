@@ -7,7 +7,7 @@ void create()
 {
         set_name("滕一雷", ({ "teng yilei", "teng" }));
         set("long",@LONG
-他是關外六魔中的大魔滕一雷。手中一只獨腳銅人，看來大是不輕。
+他是關外六魔中的大魔滕一雷。手中一隻獨腳銅人，看來大是不輕。
 LONG );
         set("nickname", HIY "關外大魔" NOR);
         set("gender", "男性");

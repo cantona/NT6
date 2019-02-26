@@ -16,7 +16,7 @@ int main(object me, string arg)
                 return notify_fail("只有 (arch) 以上的巫師才能恢復被封住的時空\n");
         
         seteuid(getuid());
-        message("system", "\n*** " + RANK_D->query_rank(me) + me->short(1) + "正在將被鎖時空解封 ***\n*** 世界好象正在慢慢恢復成以前的樣子... ***\n", users());
+        message("system", "\n*** " + RANK_D->query_rank(me) + me->short(1) + "正在將被鎖時空解封 ***\n*** 世界好像正在慢慢恢復成以前的樣子... ***\n", users());
         write("處理中：");
 
         ob = users();
@@ -31,7 +31,7 @@ int main(object me, string arg)
                         ob[i]->restore();
                 }
 //                else {
-//                        return notify_fail("時空解封失敗了！！□n?);
+//                        return notify_fail("時空解封失敗了！！n?);
 //                }
         }
         

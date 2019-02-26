@@ -6,7 +6,7 @@ void create()
         set("short","馬廄");
         set("long", @LONG
 這是嘉興城的馬廄，常年供應新鮮草料。馬廄雨檐下的爛木柱上
-釘著一塊破木牌(paizi)。    
+釘着一塊破木牌(paizi)。    
     馬廄中堆放著幾堆草料，正中有一口泔槽。
 LONG );
         set("outdoors", "jiaxing");

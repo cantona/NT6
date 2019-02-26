@@ -59,7 +59,7 @@ string query_save_file()
 void create()
 {
         seteuid(getuid());
-        set("name","泥潭﹒江湖論壇");
+        set("name","泥潭·江湖論壇");
         mkdir(DIR);
         mkdir(REGISTER);
         restore();
@@ -152,16 +152,16 @@ void m_display()
  {
      set_temp("select", "main", this_player());
      view_main();
-     write("                        "BRED+HIG"(I)"NOR"ntro   □  遊戲概況  □\n");
-     write("                        "BRED+HIG"(M)"NOR"ap     □  泥潭地圖  □\n");
-     write("                        "BRED+HIG"(F)"NOR"amily  □  門派介紹  □\n");
-//     write("                        "BRED+HIG"(S)"NOR"kills  □  武功介紹  □\n");
-     write("                        "BRED+HIG"(N)"NOR"ews    □  泥潭新聞  □\n");
-     write("                        "BRED+HIG"(O)"NOR"ther   □  其他內容  □\n");
-     write("                        "BRED+HIG"(B)"NOR"oard   □  論壇精華  □\n");
-     write("                        "BRED+HIG"(X)"NOR"yz     □  好好學習  □\n");
-     write("                        "BRED+HIG"(P)"NOR"ost    □  灌水天地  □\n");
-     write("                        "BRED+HIG"(U)"NOR"ser    □  個人設定  □\n");
+     write("                        "BRED+HIG"(I)"NOR"ntro   〖  遊戲概況  〗\n");
+     write("                        "BRED+HIG"(M)"NOR"ap     〖  泥潭地圖  〗\n");
+     write("                        "BRED+HIG"(F)"NOR"amily  〖  門派介紹  〗\n");
+//     write("                        "BRED+HIG"(S)"NOR"kills  〖  武功介紹  〗\n");
+     write("                        "BRED+HIG"(N)"NOR"ews    〖  泥潭新聞  〗\n");
+     write("                        "BRED+HIG"(O)"NOR"ther   〖  其他內容  〗\n");
+     write("                        "BRED+HIG"(B)"NOR"oard   〖  論壇精華  〗\n");
+     write("                        "BRED+HIG"(X)"NOR"yz     〖  好好學習  〗\n");
+     write("                        "BRED+HIG"(P)"NOR"ost    〖  灌水天地  〗\n");
+     write("                        "BRED+HIG"(U)"NOR"ser    〖  個人設定  〗\n");
      write("                        "BRED+HIG"(G)"NOR"oodbye 【  "HIM"回到江湖"NOR"  】\n");
      view_main_1();
 }
@@ -255,11 +255,11 @@ int wizlist()
                         break;
             }
         }
-        write(HIG"           【 仙□人 】: "NOR+str1+"\n");
-        write(HIB"           【 學□徒 】: "NOR+str2+"\n");
-        write(HIC"           【 巫□師 】: "NOR+str3+"\n");
+        write(HIG"           【 仙人 】: "NOR+str1+"\n");
+        write(HIB"           【 學徒 】: "NOR+str2+"\n");
+        write(HIC"           【 巫師 】: "NOR+str3+"\n");
         write(HIY"           【 大巫師 】: "NOR+str4+"\n");
-        write(HIW"           【 天□神 】: "NOR+str5+"\n");
+        write(HIW"           【 天神 】: "NOR+str5+"\n");
 }
 
 protected void confirm_main_choice(string arg)
@@ -570,7 +570,7 @@ varargs void view2(int line,string *text,object ob,int i)
         int w=line;
         if(i) w=w+17;
         write( YEL"－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－\n"NOR);
-             printf("   總行數:"HIR+"%5d "NOR+"已閱讀行數:"HIC+"%5d "+NOR CYN"(T"NOR"x"CYN")"NOR"翻到x行 "CYN"(U)"NOR"向上 "
+             printf("   總行數:"HIR+"%5d "NOR+"已閲讀行數:"HIC+"%5d "+NOR CYN"(T"NOR"x"CYN")"NOR"翻到x行 "CYN"(U)"NOR"向上 "
              CYN"(D)"NOR"向下 "CYN"(R)"NOR"退出 "CYN"(B)"NOR"返回  \n",sizeof(text),w);
              write( YEL"－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－\n"NOR);
              write(YEL"您的選擇："NOR);
@@ -658,14 +658,14 @@ int register()
            me = this_player();
            if( !query("register", me)){
                 write(CLR"\n");
-                 write(WHT"【使用者設定】        "YEL"【"+MUD_NAME+"注冊單】\n"NOR);
+                 write(WHT"【使用者設定】        "YEL"【"+MUD_NAME+"註冊單】\n"NOR);
                  write("\n");
                  write(YEL"目前選擇：\n\n"NOR);
                  write(WHT"    您的代號     : "NOR);
                  input_to((:a:),this_player());
                  return 1;
         }
-            write("你已經填寫過注冊單啦。\n");
+            write("你已經填寫過註冊單啦。\n");
              input_to("confirm_u_choice",this_player());
              return 1;
 }
@@ -687,12 +687,12 @@ protected void c(string arg, string register)
 {
            register = "姓名     : "+arg+"\n";
            set_temp("register", register, this_player());
-           write(WHT"    聯系地址     : "NOR);
+           write(WHT"    聯繫地址     : "NOR);
            input_to((:d:),this_player());
 }
 protected void d(string arg, string register)
 {
-           register = "聯系地址     : "+arg+"\n";
+           register = "聯繫地址     : "+arg+"\n";
            set_temp("register", register, this_player());
            write(WHT"    工作單位/學校: "NOR);
            input_to((:e:),this_player());
@@ -708,14 +708,14 @@ protected void f(string arg, string register)
 {
            register = "電子信箱: "+arg+"\n";
            set_temp("register", register, this_player());
-           write(WHT"    聯系電話: "NOR);
+           write(WHT"    聯繫電話: "NOR);
            input_to((:g:),this_player());
 }
 protected void g(string arg, string register)
 {
-           register = "聯系電話: "+arg+"\n";
+           register = "聯繫電話: "+arg+"\n";
            set_temp("register", register, this_player());
-           write(WHT"\n\n\n\n\n\n以上資料是否正確(Y/N)？(Q)取消注冊 [N]:"NOR);
+           write(WHT"\n\n\n\n\n\n以上資料是否正確(Y/N)？(Q)取消註冊 [N]:"NOR);
            input_to((:y:),this_player());
 }
 protected void y(string arg, string register)
@@ -798,7 +798,7 @@ int lock()
             object me,ob;
             me = this_player();
             ob=query_temp("link_ob", me);
-            write(WHT"▲ 請輸入注冊密碼，以解除螢幕鎖定："NOR);
+            write(WHT"▲ 請輸入註冊密碼，以解除螢幕鎖定："NOR);
             input_to("get_old_pass", 1, ob);
             return 1;
 }
@@ -862,7 +862,7 @@ void u_display()
               if (wizardp(this_player()))
               write("                       "CYN"(Ｃ)"NOR"loak       隱身術\n");
               write("                       "CYN"(Ｌ)"NOR"ockScreen  鎖定螢幕\n");
-              write("                       "CYN"(Ｒ)"NOR"egister    江湖注冊\n");
+              write("                       "CYN"(Ｒ)"NOR"egister    江湖註冊\n");
               write("                       "CYN"(Ｐ)"NOR"ager       呼叫器開關\n");
               write("                       "CYN"(Ｇ)"NOR"return     返回主菜單\n");
               view_main_1();
@@ -1241,7 +1241,7 @@ protected void confirm_choice(string arg)
                      case "A":
                 if(wiz_level(me)<wiz_level(WIZLEVEL))
                 {
-                        write(RED"你的權限不足，不能修改這裡的檔案！\n");
+                        write(RED"你的權限不足，不能修改這裏的檔案！\n");
                         return;
                 }
                 write(CYN"請輸入鏈接名稱："NOR);
@@ -1252,7 +1252,7 @@ protected void confirm_choice(string arg)
                      case "D":
                 if(wiz_level(me)<wiz_level(WIZLEVEL))
                 {
-                        write(RED"你的權限不足，不能修改這裡的檔案！\n");
+                        write(RED"你的權限不足，不能修改這裏的檔案！\n");
                         return;
                 }
                 write(CYN"你要刪除第幾號鏈接:"NOR"(“Q”取消)");
@@ -1277,7 +1277,7 @@ protected void confirm_choice(string arg)
                      case "M":
                 if(wiz_level(me)<wiz_level(WIZLEVEL))
                 {
-                        write(RED"你的權限不足，不能修改這裡的檔案！\n");
+                        write(RED"你的權限不足，不能修改這裏的檔案！\n");
                         return;
                 }
                 write(CYN"請輸入目錄名稱："NOR);

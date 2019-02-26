@@ -37,7 +37,7 @@ int perform(object me, object target)
         if( query("neili", me)<1000 )
                 return notify_fail("你的真氣不夠！\n");
                 
-        msg = HIR  "$N猛吸一口真氣，眼中神光大盛，手中的"+ weapon->name()+  HIR"急速揮舞，化作萬道金虹向$n卷來！" NOR;
+        msg = HIR  "$N猛吸一口真氣，眼中神光大盛，手中的"+ weapon->name()+  HIR"急速揮舞，化作萬道金虹向$n捲來！" NOR;
         message_combatd(msg,me,target);
         addn_temp("apply/attack", extra/5, me);
         addn_temp("apply/damage", extra/5, me);

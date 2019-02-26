@@ -42,7 +42,7 @@ int main(object me,string arg)
 
     // 選擇前100個
     msg = "目前系統中佔用內存超過" + chinese_number(large) + "K的物品如下：\n";
-    msg += sprintf(HIY "%-40s%-10s%s\n" NOR, "物品文件", "復制數量", "耗用內存");
+    msg += sprintf(HIY "%-40s%-10s%s\n" NOR, "物品文件", "複製數量", "耗用內存");
     for (i = 0; i < sizeof(obj_ind) && i < 100; i++)
         msg += sprintf("%-40s %-10d %s\n",
                    obj_ind[i],

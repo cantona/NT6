@@ -9,7 +9,7 @@ void create()
 {
         set("short", "精舍");
         set("long", @LONG
-這座精舍全是以綠色大方竹搭成，屋外攀滿青籐，使人一見之下心中
+這座精舍全是以綠色大方竹搭成，屋外攀滿青藤，使人一見之下心中
 頓生涼意。周圍環以奇花異草，聞之足可忘俗。精舍雖看似粗糙，但細觀
 之下，卻發覺精舍竟與四周景物渾然天成，如同自然生成的一般，當真是
 巧奪天工，好一片清涼洞天。西面有條小徑通向桃花深處，門前有一對白
@@ -50,7 +50,7 @@ int valid_leave(object me, string dir)
          && (!query_temp("shagu_pass", me) )
         && (dir == "enter")
         && present("sha gu", this_object()) )
-        return notify_fail("\n傻姑傻笑了幾聲，伸開雙手一攔，說到：要進去先陪我玩一會兒吧，\n這裡人都不理我，悶死了！\n");
+        return notify_fail("\n傻姑傻笑了幾聲，伸開雙手一攔，説到：要進去先陪我玩一會兒吧，\n這裏人都不理我，悶死了！\n");
         return ::valid_leave(me, dir);
 }
 
@@ -76,7 +76,7 @@ int do_ride(string arg)
         }
 */
         if( (int)query("sb_ride") ) 
-                return notify_fail("現在白雕正忙著,請過一會再乘坐!\n" ) ;
+                return notify_fail("現在白雕正忙着,請過一會再乘坐!\n" ) ;
         addn("sb_ride", 1) ;
         message_vision("$N一躍身跨上了白雕。只見白雕仰天長唳，突然展翅高飛。\n\n"
                        "但看一雕一人身形漸漸縮小，終至不見。\n" , ob );
@@ -90,6 +90,6 @@ void taohua( object ob )
 {
         if (base_name(environment(ob)) != "/d/taohua/lantian")
                 return;
-        tell_object(ob, "你終于飛到了中原，白雕落了下來。\n\n"  ) ;
+        tell_object(ob, "你終於飛到了中原，白雕落了下來。\n\n"  ) ;
         ob -> move ("/d/guiyun/dayuan");
 }

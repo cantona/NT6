@@ -28,10 +28,10 @@ int fire(object me, object ob)
                 return 0;
 
         if( query_temp("warm", environment()) >= 40 )
-                return notify_fail("這裡已經太熱了，你還是換個地方點火吧。\n");
+                return notify_fail("這裏已經太熱了，你還是換個地方點火吧。\n");
 
         message_vision("$N費了好大勁，總算用" + ob->name() + "把" + name() +
-                       "點著了，一片紅紅的火光映紅了四周。\n", me);
+                       "點着了，一片紅紅的火光映紅了四周。\n", me);
 
         fire = new("/clone/misc/needfire");
         fire->move(environment(me));

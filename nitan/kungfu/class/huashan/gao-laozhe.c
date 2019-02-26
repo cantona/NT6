@@ -69,8 +69,8 @@ void create()
         create_family("華山派", 12, "弟子");
 
         set("inquiry", ([
-                "紫霞神功" : "那是本門無上的內功心法。據說紫霞有個大秘密，可惜已失傳多年了。\n",
-                "密室"     : "你胡說八道些甚麼？\n",
+                "紫霞神功" : "那是本門無上的內功心法。據説紫霞有個大祕密，可惜已失傳多年了。\n",
+                "密室"     : "你胡説八道些甚麼？\n",
         ]));
 
         set("chat_chance_combat", 60);
@@ -96,7 +96,7 @@ void attempt_apprentice(object ob)
         if (ob_fam == "華山派" && ob->query_skill("zixia-shengong", 1) < 100)
         {
                 command("say 我看你的紫霞神功還沒學到家吧，本派有本的"
-                        "紫霞秘籍，你可曾研讀？");
+                        "紫霞祕籍，你可曾研讀？");
                 return;
         }
 

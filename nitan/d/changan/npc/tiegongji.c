@@ -6,7 +6,7 @@ inherit F_BANKER;
 void create()
 {
         set_name("鐵公雞", ({"tie gongji", "tie", "gongji"}));
-        set("title", "錢莊老板");
+        set("title", "錢莊老闆");
         set("gender", "男性");
         set("age", 46);
         set("kee", 800); 
@@ -19,7 +19,7 @@ void create()
         set("chat_chance", 10);
         set("chat_msg", ({
                 "鐵公雞嘿嘿嘿地笑了幾聲：我這把算盤幾十年來可從來沒算錯過。\n",
-                "鐵公雞驕傲的說道：本銀號已經有上百年的歷史，在長安城可以說是第一家。\n"
+                "鐵公雞驕傲的説道：本銀號已經有上百年的歷史，在長安城可以説是第一家。\n"
         }));
         set_skill("unarmed", 60);
         set_skill("parry", 60);

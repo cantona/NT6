@@ -7,7 +7,7 @@ void create()
         set("age", 5);
         set("maze_get",1);
         set("combat_exp",1000000);
-        set("long", "一只身上長滿疙瘩，難看之極的癩蛤蟆。\n");
+        set("long", "一隻身上長滿疙瘩，難看之極的癩蛤蟆。\n");
         set("verbs", ({ "bite" }) );
         set("limbs", ({
                 "頭部", "頸部", "胸部", "後背", "腹部",

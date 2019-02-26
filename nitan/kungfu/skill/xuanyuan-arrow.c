@@ -10,7 +10,7 @@ void throw_weapon(object,object,object,int);
 
 mapping *action = ({
 ([
-        "action": "$N忽然縱聲長嘯，橫躍于空，取箭上弦。\n"
+        "action": "$N忽然縱聲長嘯，橫躍於空，取箭上弦。\n"
 "只聽弓弦響處，$w已到$n左肩，眼看就要對穿而過！\n"
 "這招「李廣射石」果然有穿石之力",
         "damage":  25,
@@ -30,9 +30,9 @@ mapping *action = ({
         "name":     "廉頗負荊",
 ]),
 ([
-        "action": "突然間，$N幾個筋鬥倒翻而去，已在$n數丈之外。\n"
+        "action": "突然間，$N幾個筋斗倒翻而去，已在$n數丈之外。\n"
 "$n正待追擊，$N忽然轉身，好一個「百步穿楊」，\n"
-"$w已帶著破空之聲，直射$n面門",
+"$w已帶着破空之聲，直射$n面門",
         "damage":   20,
         "dodge":       -10,
         "parry":       -10,
@@ -62,7 +62,7 @@ mapping *action = ({
         "name":     "後翌落日",
 ]),
 ([
-        "action": "$N馬步站穩，勁力透背，拉的弓如滿月，$w飛一般沖向$n的$l",
+        "action": "$N馬步站穩，勁力透背，拉的弓如滿月，$w飛一般衝向$n的$l",
         "damage":   40,
         "dodge":   20,
         "parry":   20,

@@ -11,7 +11,7 @@ void create()
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("long", HIR "\n這是一顆火紅色的仙果，據說服用後能增強元神經驗。\n"
+                set("long", HIR "\n這是一顆火紅色的仙果，據説服用後能增強元神經驗。\n"
                                       "*服用(eatysg yuanshen guo)後，元神可獲得20萬經驗。\n" NOR);
                 set("unit", "顆");
                 set("value", 1);

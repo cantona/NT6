@@ -21,7 +21,7 @@ int main(object me, string arg)
                 return notify_fail("你身上沒有這樣道具。\n");
 
         if( query("equipped", ob) )
-                return notify_fail("你先解除" + ob->name() + CYN "的裝備再說！\n");
+                return notify_fail("你先解除" + ob->name() + CYN "的裝備再説！\n");
 
         if( !ob->is_item_make() && !query("unique", ob) )
                 return notify_fail("這類物品無須清理凹槽。\n");
@@ -38,7 +38,7 @@ int main(object me, string arg)
         if( !query("enchase/used", ob) )
                 return notify_fail("這上面沒有鑲嵌過東西。\n");
 
-        notify_fail(ob->name() + "的凹槽物品沒有辦法被熔煉。\n");
+        notify_fail(ob->name() + "的凹槽物品沒有辦法被熔鍊。\n");
 
         return ob->do_wash(me);
 }
@@ -48,7 +48,7 @@ int help(object me)
 write(@HELP
 指令格式 : melt <物品名稱>
 
-這個指令可以讓你運用內力將道具凹槽裡的物品溶化掉。
+這個指令可以讓你運用內力將道具凹槽裏的物品溶化掉。
 HELP
     );
     return 1;

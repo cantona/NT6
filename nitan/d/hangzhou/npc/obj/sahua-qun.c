@@ -14,7 +14,7 @@ void create()
                 set_default_object(__FILE__);
         else {
                 set("unit", "件");
-                set("long", "一件鮮艷奪目的百褶裙，式樣簡單大方。\n");
+                set("long", "一件鮮豔奪目的百褶裙，式樣簡單大方。\n");
                 set("material", "cloth");
                 set("value", 0);
                 set("armor_prop/armor", 3);

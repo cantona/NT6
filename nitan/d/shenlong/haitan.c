@@ -7,14 +7,14 @@ void create()
 {
         set("short", "海灘");
         set("long", @LONG
-這裡就是神龍島了。南邊是一望無際的大海；往北則是片
-灌木林。島上的空氣似乎又熱又悶，咸濕的海風中帶著一股腥
+這裏就是神龍島了。南邊是一望無際的大海；往北則是片
+灌木林。島上的空氣似乎又熱又悶，鹹濕的海風中帶着一股腥
 臭，又夾雜了一縷奇特的花香，讓人聞起來十分怪異。海邊泊
-著一艘大船(chuan)。
+着一艘大船(chuan)。
 LONG);
 
         set("item_desc", ([
-                "chuan" : "這是靈蛇島對外聯系的大船。島上的客人或弟子只要\n"
+                "chuan" : "這是靈蛇島對外聯繫的大船。島上的客人或弟子只要\n"
                           "上船(enter)就可以回中原。\n",
         ]));
         set("exits",([
@@ -52,8 +52,8 @@ int do_enter ( string arg )
                 return 1 ;
         }
         ob = this_player () ;
-        message_vision("船夫一見有人上船，忙叫了一聲：開船嘍！\n", ob);
-        message_vision("船夫升起帆，船就向西方航行。\n", ob);
+        message_vision("船伕一見有人上船，忙叫了一聲：開船嘍！\n", ob);
+        message_vision("船伕升起帆，船就向西方航行。\n", ob);
         ob->move(__DIR__"dahai") ;
         tell_object(ob, BLU "你在海上航行了很久很久.......\n" NOR ) ;
         call_out("home", 10 , ob );
@@ -65,7 +65,7 @@ void home( object ob )
 	        return;
         if (base_name(environment(ob)) != "/d/shenlong/dahai")
                 return;
-        tell_object(ob , "大船終于抵達了中原的一個繁華城市。你走下船來。\n" ) ;
+        tell_object(ob , "大船終於抵達了中原的一個繁華城市。你走下船來。\n" ) ;
         ob->move ("/d/beijing/haigang") ;
 }
 

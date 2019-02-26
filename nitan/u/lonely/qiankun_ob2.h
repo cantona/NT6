@@ -28,7 +28,7 @@ void create()
 {
         set_name(HIC"如意"HIM"乾坤袋" NOR, ({ "qiankun bag", "qiankun", "bag" }));
         set_weight(100);
-        set("long", "一個四周邊緣環繞著神秘光環的如意乾坤袋，大千世界盡可藏在其中。據說"
+        set("long", "一個四周邊緣環繞着神祕光環的如意乾坤袋，大千世界儘可藏在其中。據説"
                     "可以將東西無限制的存（store）進去,不會丟失，且無論什麼時候都可以取"
                     "（take）出來，最關鍵是還可以使用它將物品漫遊到其他站。");
 
@@ -49,7 +49,7 @@ string extra_long()
         string msg;
 
         if( !all || sizeof(all) < 1 )
-                return "目前沒有存放任何物品在如意乾坤袋裡。\n";
+                return "目前沒有存放任何物品在如意乾坤袋裏。\n";
 
         msg = HIW "\n目前你存放的物品有：\n編號  物品                                      數量\n"
                   "────────────────────────────────\n" NOR;
@@ -87,18 +87,18 @@ int do_take(string arg)
 
         me = this_player();
 
-        if( me->is_busy() ) return notify_fail("你正忙著呢。\n");
+        if( me->is_busy() ) return notify_fail("你正忙着呢。\n");
 
         if( !arg || sscanf(arg, "%d %d", n, amount) != 2 )
                 return notify_fail("格式錯誤，請用 take 編號 數量 來取回物品。\n");
 
         if( amount < 1 || amount > 10000 )
-                return notify_fail("每次取物品的數量不得小于一同時也不能大于一萬。\n");
+                return notify_fail("每次取物品的數量不得小於一同時也不能大於一萬。\n");
 
         if( n < 1 ) return notify_fail("你要取第幾號物品？\n");
 
         if( !all || sizeof(all) < 1 || n > sizeof(all) )
-                return notify_fail("你的如意乾坤袋裡沒有存放這項物品。\n");
+                return notify_fail("你的如意乾坤袋裏沒有存放這項物品。\n");
         n--;
         if( amount > all[n]->amount )
                 // return notify_fail("這樣物品你沒有那麼多個。\n");
@@ -132,7 +132,7 @@ int do_take(string arg)
                 ob->move(me, 1);
                 save();
 
-                message_vision("$N從如意乾坤袋裡取出一" +
+                message_vision("$N從如意乾坤袋裏取出一" +
                                 query("unit", ob)+query("name", ob)+"。\n",me);
                 return 1;
         }
@@ -176,7 +176,7 @@ int do_take(string arg)
                 ob->move(me, 1);
         }
 
-        message_vision("$N從如意乾坤袋裡取出" + chinese_number(amount) +
+        message_vision("$N從如意乾坤袋裏取出" + chinese_number(amount) +
                         query("unit", ob)+query("name", ob)+"。\n",me);
 
         if( !wizardp(me) && random(2) )
@@ -200,7 +200,7 @@ int do_store(string arg)
 
         if( !arg ) return notify_fail("你要存放什麼東西？\n");
 
-        if( me->is_busy() ) return notify_fail("你正在忙著呢！\n");
+        if( me->is_busy() ) return notify_fail("你正在忙着呢！\n");
 
         n = 100;
         if( MEMBER_D->is_valid_member(me) )
@@ -209,7 +209,7 @@ int do_store(string arg)
                 n += 200;
         if( sizeof(all) >= n )
         {
-                return notify_fail("如意乾坤袋最多只能存入 " + n + " 個格子，請整理你的如意乾坤袋。\n");
+                return notify_fail("如意乾坤袋最多隻能存入 " + n + " 個格子，請整理你的如意乾坤袋。\n");
         }
 
         if( arg == "all" ) {
@@ -318,7 +318,7 @@ int store_item(object me, object ob, int amount)
 
         switch(query("equipped", ob)){
         case "worn":
-                tell_object(me, ob->name() + "必須先脫下來才能存放。\n");
+                tell_object(me, ob->name() + "必須先脱下來才能存放。\n");
                 return 0;
         case "wielded":
                 tell_object(me, ob->name() + "必須先解除裝備才能存放。\n");
@@ -326,7 +326,7 @@ int store_item(object me, object ob, int amount)
         }
 
         if( sizeof(all_inventory(ob)) ) {
-                tell_object(me,"請你先把"+query("name", ob)+"裡面的東西先拿出來。\n");
+                tell_object(me,"請你先把"+query("name", ob)+"裏面的東西先拿出來。\n");
                 return 0;
         }
 
@@ -353,7 +353,7 @@ int store_item(object me, object ob, int amount)
                                         all[i]->amount += amount;
                                         save();
                                         message_vision("$N存入"+chinese_number(amount)+query("unit", ob)+
-                                                        query("name", ob)+"到如意乾坤袋裡。\n",me);
+                                                        query("name", ob)+"到如意乾坤袋裏。\n",me);
                                         destruct(ob);
                                         return 1;
                                 }
@@ -371,7 +371,7 @@ int store_item(object me, object ob, int amount)
                 all += ({ item });
                 save();
                 message_vision("$N存入"+chinese_number(amount)+query("unit", ob)+
-                                query("name", ob)+"到如意乾坤袋裡。\n",me);
+                                query("name", ob)+"到如意乾坤袋裏。\n",me);
                 destruct(ob);
                 return 1;
         }
@@ -385,7 +385,7 @@ int store_item(object me, object ob, int amount)
                         all[i]->amount += amount;
                         save();
                         message_vision("$N存入"+chinese_number(amount)+query("unit", ob)+
-                                        query("name", ob)+"到如意乾坤袋裡。\n",me);
+                                        query("name", ob)+"到如意乾坤袋裏。\n",me);
                         destruct(ob);
                         return 1;
                 }
@@ -400,7 +400,7 @@ int store_item(object me, object ob, int amount)
         all += ({ item });
         save();
         message_vision("$N存入"+chinese_number(amount)+query("unit", ob)+
-                        query("name", ob)+"到如意乾坤袋裡。\n",me);
+                        query("name", ob)+"到如意乾坤袋裏。\n",me);
         destruct(ob);
         return 1;
 }
@@ -439,7 +439,7 @@ int receive_summon(object me)
 
         //move(me, 1);
         if( !this_object()->move(me) )
-                tell_object(me, HIR "由于你的負重太高，"+this_object()->name()+HIR "化作一道光芒，已然了無蹤跡。\n" NOR);
+                tell_object(me, HIR "由於你的負重太高，"+this_object()->name()+HIR "化作一道光芒，已然了無蹤跡。\n" NOR);
         return 1;
 }
 

@@ -10,7 +10,7 @@ void create()
 {
         set("short", HIM "試劍亭" NOR);
         set("long", @LONG
-這裡是天神用來調試程序的地方。
+這裏是天神用來調試程序的地方。
 LONG );
 
         set("exits", ([

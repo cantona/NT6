@@ -42,7 +42,7 @@ int do_eat(string arg)
         if (!present(this_object(), this_player()))
                 return notify_fail("你要吃什麼？\n");
         if( me->is_busy() )
-                return notify_fail("別急，慢慢吃，小心別噎著了。\n");
+                return notify_fail("別急，慢慢吃，小心別噎着了。\n");
 
         if ( (int)me->query_condition("quanzhen_drug" ) > 0 )
                 return notify_fail("你是否才煉丹藥或才服食了丹藥？你的全身氣血未歸位，不宜吃丹藥。\n");
@@ -60,10 +60,10 @@ int do_eat(string arg)
                 if ( neili_limit <= force_limit  )
                 {
                         addn("max_neili", 5, me);
-                        message_vision(HIG "$N吃下一顆玄門定陽丹，只覺得體內真力源源滋生，過紫宮，入泥丸透十二重樓，遍布奇筋八脈，全身功力頓然提高！\n"NOR,me);
+                        message_vision(HIG "$N吃下一顆玄門定陽丹，只覺得體內真力源源滋生，過紫宮，入泥丸透十二重樓，遍佈奇筋八脈，全身功力頓然提高！\n"NOR,me);
                 }
                 else
-                        message_vision(HIG "$N吃下一顆玄門定陽丹，不過好象沒什麼作用。\n" NOR, me);
+                        message_vision(HIG "$N吃下一顆玄門定陽丹，不過好像沒什麼作用。\n" NOR, me);
 
                 me->apply_condition("quanzhen_drug", 60);
         }

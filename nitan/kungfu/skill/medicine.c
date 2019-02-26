@@ -33,7 +33,7 @@ int valid_learn(object me)
                 }
         }
         if( lvl>29 && query("medicine", me) == 1 )
-                return notify_fail("限于天資，你只能修習這個程度了。今後還是努力練功，自求多福吧。\n");
+                return notify_fail("限於天資，你只能修習這個程度了。今後還是努力練功，自求多福吧。\n");
         else return 1;
 }
 

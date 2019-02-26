@@ -13,7 +13,7 @@ void create()
         else {
                 set("material", "paper");
                 set("unit", "根");
-                set("long", HIM "公元二零零八年春節，于蓬萊仙島麒麟崖下斬殺蓬萊仙鼠後獲得的靈尾，異常珍貴，限量珍藏。\n" NOR);
+                set("long", HIM "公元二零零八年春節，於蓬萊仙島麒麟崖下斬殺蓬萊仙鼠後獲得的靈尾，異常珍貴，限量珍藏。\n" NOR);
                 set("value", 1000000);
                 set("limit", ([
                         "exp"    :   1000000,

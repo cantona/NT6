@@ -5,8 +5,8 @@ void create()
         set_name("魚怪", ({ "fish monster", "fish" }) );
         set("race", "野獸");
         set("age", 300);
-        set("long", "這是一只身形很大，已成精怪的魚，渾身覆滿絢麗的鱗片，\n"
-            "一口鋒利的牙齒，正虎視耽耽的看著你\n");
+        set("long", "這是一隻身形很大，已成精怪的魚，渾身覆滿絢麗的鱗片，\n"
+            "一口鋒利的牙齒，正虎視耽耽的看着你\n");
         set("attitude", "aggressive");
 
         set("max_qi",10000); 

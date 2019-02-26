@@ -33,10 +33,10 @@ set("use_count", 6);}
 }
 int do_trans(string arg){
         object me,obj;string msg,str;str=where_map[arg];
-        if( !arg||!stringp(str)) return notify_fail("你要去哪裡？\n");
+        if( !arg||!stringp(str)) return notify_fail("你要去哪裏？\n");
 me=this_player();
              if( !query("outdoors", environment(me)) )
- return notify_fail("在這房間裡無法使用魔法傳送。\n");
+ return notify_fail("在這房間裏無法使用魔法傳送。\n");
  if (me->is_fighting())
 return notify_fail("戰鬥中無法使用魔法傳送！");
 str+=".c";

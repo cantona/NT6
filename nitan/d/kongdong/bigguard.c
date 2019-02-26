@@ -2,7 +2,7 @@
 //  等級：
 //  【丙等】大門派的二級師傅、中等門派的一級師傅，江湖上知名的豪客
 //  ★★★★☆
-//  □一級□四級修為（１５０１－１９００）五級武功（  ８０－１２０）
+//  〖一級〗四級修為（１５０１－１９００）五級武功（  ８０－１２０）
 //          經驗（  １００萬－  ２００萬）聲望（  １００００－  ２００００）
 //          內力（  ２２００－  ３０００）體能、生命（  ７５０－    ９５０）
 //  By Lin
@@ -70,7 +70,7 @@ LONG
     set_hp( "sen",      875 );
 
     set( "combat_exp",  1000000 );          //戰鬥經驗：100萬
-    set( "social_exp",   170000 );          //江湖閱歷：17萬
+    set( "social_exp",   170000 );          //江湖閲歷：17萬
     set( "talk_msg", ({
         "“這位英雄來我鏢局有何貴幹？”",
     }) );
@@ -107,7 +107,7 @@ void Greeting( object ppl )
         return;
     if( ppl->query_temp( "marks_lin/kill_wang" ) )       //如果此人殺過王太醫
     {
-        message_vision( "秦天彪向$N憤怒地說道：“想不到有人竟敢欺負到我的頭上"
+        message_vision( "秦天彪向$N憤怒地説道：“想不到有人竟敢欺負到我的頭上"
             "？！”\n", ppl );
         message_vision( "秦天彪對$N大喝道：“今天為王老丈報仇！”\n", ppl );
         kill_ob( ppl );
@@ -144,8 +144,8 @@ int killed_enemy( object ppl )              //殺死敵人的反應
 
 int valid_teach( object ppl, string skill )
 {
-	command( "say “以後要多替為師押鏢，閒著多練練般若心法。”" );
-    if ( ppl->query( "marks/lin/蘭州秘密B/送官" )!=1)      //如果沒有學功夫的標記
+	command( "say “以後要多替為師押鏢，閒着多練練般若心法。”" );
+    if ( ppl->query( "marks/lin/蘭州祕密B/送官" )!=1)      //如果沒有學功夫的標記
     {
         command( "say “武林中人，要多為朝廷辦事？”" );
         return 0;

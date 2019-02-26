@@ -1,6 +1,6 @@
 //                標準描述長度示例                                   |
 // “幻境”系列主題內巫師工具
-// by naihe  2002-10-26  于茂名
+// by naihe  2002-10-26  於茂名
 // 添加更強力的統計數據功能函數，可分類把幻境內物件列表顯示，具體參看其函數  02-11-03
 
 #include <ansi.h>
@@ -26,13 +26,13 @@ int errs( string arg )
 
 void create()
 {
-    set_name(HIR"幻境2003﹒巫師工具"NOR, ({"hj wiz_tools","hj tools", "ht", }));
+    set_name(HIR"幻境2003·巫師工具"NOR, ({"hj wiz_tools","hj tools", "ht", }));
     set_weight(100);
     if (clonep())
         set_default_object(__FILE__);
     else
     {
-        set("long", "這是一個用于“幻境”系列主題內的巫師工具。\n它具體支持的指令請用 <clcl> 命令查詢。\n");
+        set("long", "這是一個用於“幻境”系列主題內的巫師工具。\n它具體支持的指令請用 <clcl> 命令查詢。\n");
         set("unit", "個");
         set("value", 0);
     }
@@ -75,18 +75,18 @@ int do_delall()
 
 int shows()
 {
-    write(HIR"下面是本工具所支持的指令詳細說明："NOR"
-<cl>           自身備好準許進入 幻境 的標記，並移動至 1 號房間
-<cl sks / sksall /!sks>  call 幻境裡現行的基本技能(隨機call) / 全部 /  清除技能
+    write(HIR"下面是本工具所支持的指令詳細説明："NOR"
+<cl>           自身備好准許進入 幻境 的標記，並移動至 1 號房間
+<cl sks / sksall /!sks>  call 幻境裏現行的基本技能(隨機call) / 全部 /  清除技能
 <cl qxd/!qxd>  備好遊戲內七星燈(做不了回答問題的支線任務)  /  清除身上的燈
-<cl ?>         查詢可供復制的物品（各類遊戲內道具）名單
+<cl ?>         查詢可供複製的物品（各類遊戲內道具）名單
 <cl ?? 參數>   列出 參數 號房間內所有 NPC/道具/玩家 列表 (參數默認888)
                888 所有物件清單  111 NPC 清單  222 道具清單
                333 玩家清單  444 非遊戲內物品或NPC之清單\n");
     write("<cl go 房間號> 移動至幾號房間
 <cl gr 參數>   移動至其他房間，分別有： enter / master / ready / out
-<cl 其他>      將符合名稱的道具復制至當前環境，"HIR"本指令僅奈何可用。"NOR"
-<cl piao>      復制一張 門票 到當前環境，"HIR"本指令僅奈何可用。"NOR"
+<cl 其他>      將符合名稱的道具複製至當前環境，"HIR"本指令僅奈何可用。"NOR"
+<cl piao>      複製一張 門票 到當前環境，"HIR"本指令僅奈何可用。"NOR"
 <cl msg 信息>  將你輸入的信息發送給所有境內房間
 <hjck ID / all>    查詢 ID / all(境內玩家) 的幻境氣息等資料。
 <hjfull ID>    full 該 ID hj氣息，省略 id 時，full 自身氣息
@@ -100,8 +100,8 @@ int do_hjfull( string id )
     object me = this_player(), v;
     if( !id ) v = me;
     else v = present( id, environment(me) );
-    if( !v ) return notify_fail("這裡沒有這個人。\n");
-    if( !userp(v) ) return notify_fail("這裡沒有這個玩家。\n");
+    if( !v ) return notify_fail("這裏沒有這個人。\n");
+    if( !userp(v) ) return notify_fail("這裏沒有這個玩家。\n");
 
     if( query_temp("huanjing", v) != "start" )
         return notify_fail(query("name", v)+"並不在幻境遊戲中。\n");
@@ -117,8 +117,8 @@ int do_del_yun( string id )
     object me = this_player(), v;
     if( !id ) v = me;
     else v = present( id, environment(me) );
-    if( !v ) return notify_fail("這裡沒有這個人。\n");
-    if( !userp(v) ) return notify_fail("這裡沒有這個玩家。\n");
+    if( !v ) return notify_fail("這裏沒有這個人。\n");
+    if( !userp(v) ) return notify_fail("這裏沒有這個玩家。\n");
 
     if( query_temp("huanjing", v) != "start" )
         return notify_fail(query("name", v)+"並不在幻境遊戲中。\n");
@@ -287,7 +287,7 @@ int do_cl(string arg)
         }
 
         write(sprintf("
-共有 %d 個房間存在著各式物件，總計 %d 個。其中：
+共有 %d 個房間存在着各式物件，總計 %d 個。其中：
 
 非遊戲內物品 %d 個。
 玩家 %d 位，其中 %d 位巫師，共有 %d 個IP。
@@ -304,7 +304,7 @@ NPC  %d 個 -- 怪物 %d 個，小精靈 %d 個，商販及特殊型 %d 個，�
             obj_amount - ( box_amount+tools_amount
                 +weapon_amount+stone_amount+guo_amount) ));
 
-        return errs("這裡顯示了所有在幻境裡的物品。\n");
+        return errs("這裏顯示了所有在幻境裏的物品。\n");
         }
 
         if(room_list == 111)
@@ -343,7 +343,7 @@ NPC  %d 個 -- 怪物 %d 個，小精靈 %d 個，商販及特殊型 %d 個，�
             if(all_amount > 0)
             { write("\n"); room_amount++; }
         }
-        write(sprintf("\n共有 %d 個房間存在著遊戲內NPC ，總計 %d 個。\n其中怪物 %d 個，小精靈 %d 個，商販及特殊型 %d 個，小矮人 %d 個，其他人等 %d 個。\n",
+        write(sprintf("\n共有 %d 個房間存在着遊戲內NPC ，總計 %d 個。\n其中怪物 %d 個，小精靈 %d 個，商販及特殊型 %d 個，小矮人 %d 個，其他人等 %d 個。\n",
             room_amount,npc_amount, kill_amount, jingling_amount, 
             quest_amount,ashman_amount,
             npc_amount-(kill_amount+jingling_amount+quest_amount+ashman_amount) ));
@@ -388,7 +388,7 @@ NPC  %d 個 -- 怪物 %d 個，小精靈 %d 個，商販及特殊型 %d 個，�
             if(all_amount > 0)
             { write("\n"); room_amount++; }
         }
-        write(sprintf("\n共有 %d 個房間存在著遊戲內道具 ，總計 %d 個。\n
+        write(sprintf("\n共有 %d 個房間存在着遊戲內道具 ，總計 %d 個。\n
   其中寶箱 %d 個，道具類 %d 個，劍和水晶 %d 個，
   技能石 %d 顆，果品或寶石 %d 顆，其他各類 %d 個。\n",
             room_amount,obj_amount,
@@ -479,7 +479,7 @@ NPC  %d 個 -- 怪物 %d 個，小精靈 %d 個，商販及特殊型 %d 個，�
         return 1;
         }
 
-        write("指令有誤。請參閱 shows 查詢正確用法。\n");
+        write("指令有誤。請參閲 shows 查詢正確用法。\n");
         return 1;
     }
 
@@ -571,19 +571,19 @@ NPC  %d 個 -- 怪物 %d 個，小精靈 %d 個，商販及特殊型 %d 個，�
     if(arg=="?")
     {
         write(HIG"
-*************************** 可供復制的物件有： *****************************\n"NOR);
+*************************** 可供複製的物件有： *****************************\n"NOR);
         for(i=0;i<sizeof(can_copy);i++)
         {
             write(can_copy[i]+"    ");
         }
         write(HIG"\n\n
-****************** 全部可供本工具復制的遊戲物件顯示完畢。 ******************\n"NOR);
+****************** 全部可供本工具複製的遊戲物件顯示完畢。 ******************\n"NOR);
         return 1;
     }
 
-    if( !all[arg] || !all_dir[arg] || !all_set[arg] ) return notify_fail("現在並沒有這個物品可以復制。\n");
+    if( !all[arg] || !all_dir[arg] || !all_set[arg] ) return notify_fail("現在並沒有這個物品可以複製。\n");
 
-    write("將要復制的是："+ all[arg] +" .\n");
+    write("將要複製的是："+ all[arg] +" .\n");
 
     if( getuid(me) != "lonely" )
         return errs("cl 物品，本指令只能由奈何執行。\n");
@@ -592,7 +592,7 @@ NPC  %d 個 -- 怪物 %d 個，小精靈 %d 個，商販及特殊型 %d 個，�
     if(all_set[arg] == 111) i = 0;
     else i = all_set[arg];
 
-//  這個條件有什麼用？？？我怎麼看不見哪裡有這個，當時想什麼忘記了，暈
+//  這個條件有什麼用？？？我怎麼看不見哪裏有這個，當時想什麼忘記了，暈
 //    if( i != 123)
 
     obj->setme( i );
@@ -730,7 +730,7 @@ int do_ck(string arg)
     string msg,hi;
     int i, j, a;
 
-    if(!arg) return notify_fail("本指令可查看某玩家的幻境內的各類詳細狀態。\n指令：<hjck ID> 查看該ID狀態，查看自己時可以\"me\"代替\n指令：<hjck all> 可查閱所有境內玩家的詳細狀態。\n");
+    if(!arg) return notify_fail("本指令可查看某玩家的幻境內的各類詳細狀態。\n指令：<hjck ID> 查看該ID狀態，查看自己時可以\"me\"代替\n指令：<hjck all> 可查閲所有境內玩家的詳細狀態。\n");
 
     if( arg == query("id", me) || arg == "me" )
         target = me;

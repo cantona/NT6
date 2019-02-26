@@ -30,9 +30,9 @@ int perform(object me, object target)
                 return notify_fail("你的陰陽九轉十二重天還不夠熟練，無法使用" +name()+ "！\n");
 
         if (! living(target))
-                return notify_fail("對方都已經這樣了，用不著這麼費力吧？\n");
+                return notify_fail("對方都已經這樣了，用不着這麼費力吧？\n");
 
-        message_combatd(HIM "\n$N" HIM "運起陰陽九轉十二重天，仿佛九天神龍翱翔天際，"
+        message_combatd(HIM "\n$N" HIM "運起陰陽九轉十二重天，彷彿九天神龍翱翔天際，"
                      HIM "正是無上絕學" +name()+ HIM "！\n" NOR, me, target);
 
         ap = attack_power(me, "force");
@@ -43,7 +43,7 @@ int perform(object me, object target)
                 if (! me->is_fighting(target))
                         break;
 
-                message_combatd(HIW "\n$N" HIW "身若遊龍，挾風雷之力，從空中向$n"
+                message_combatd(HIW "\n$N" HIW "身若游龍，挾風雷之力，從空中向$n"
                                 HIW "猛撲下來！\n" NOR, me, target);
 
                 if (ap * 3 / 2 + random(ap) > dp)

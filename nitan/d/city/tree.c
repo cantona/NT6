@@ -6,7 +6,7 @@ void create()
 {
         set("short", "大榕樹上");
         set("long", @LONG
-這裡是大樹的頂端，四周全是濃密的枝葉和濕漉漉的苔蘚。一陣
+這裏是大樹的頂端，四周全是濃密的枝葉和濕漉漉的苔蘚。一陣
 微風吹來，樹葉發出唰啦啦的聲音。從上面望下去你只覺得一陣眼暈，
 心想還是趕快下去吧。
 LONG );
@@ -47,7 +47,7 @@ int do_climb(string arg)
         if (arg == "tree" || arg == "up")
         {
                 if( objectp(query_temp("is_riding", me)) )
-                        return notify_fail("沒聽說過有人能騎坐騎還能爬樹的。\n");
+                        return notify_fail("沒聽説過有人能騎坐騎還能爬樹的。\n");
 
                 if (me->is_busy())
                 {
@@ -57,7 +57,7 @@ int do_climb(string arg)
 
                 if( query("gender", me) != "女性" )
                         message("vision",
-                                me->name() + "戰戰兢兢地拉著大榕樹的盤根，屁股一扭一扭地往上爬。\n",
+                                me->name() + "戰戰兢兢地拉着大榕樹的盤根，屁股一扭一扭地往上爬。\n",
                                 environment(me), ({me}) );
                 else 
                 if( query("age", me)<40 && query("per", me)>24 )
@@ -96,10 +96,10 @@ int do_jump(string arg)
         if( !arg || arg != "down") return notify_fail("你要往哪跳？\n");
         
         if( me->is_busy() )  
-                return notify_fail("你正忙著呢！\n");
+                return notify_fail("你正忙着呢！\n");
         
         message("vision",
-                me->name() + "猶豫了一下，鼓起勇氣，跳了下去。\n“□”的一巨響，似乎聽到"+me->name()+"慘嚎了一聲!\n",
+                me->name() + "猶豫了一下，鼓起勇氣，跳了下去。\n“嘭”的一巨響，似乎聽到"+me->name()+"慘嚎了一聲!\n",
                 environment(me), ({me}) );
         
         me->move(__DIR__"guangchang");
@@ -114,10 +114,10 @@ int valid_leave(object me, string dir)
 {
 
         if ( dir=="down" && !wizardp(me))
-                return notify_fail("盤根不知道給哪個壞家伙砍斷了猓□蠢粗荒跳爬(tiao)下去！\n");
+                return notify_fail("盤根不知道給哪個壞傢伙砍斷了猓蠢粗荒跳爬(tiao)下去！\n");
 
         if ( dir=="up" && !wizardp(me))
-                return notify_fail("這裡沒法直接走，看來你只能爬(climb)上去！\n");
+                return notify_fail("這裏沒法直接走，看來你只能爬(climb)上去！\n");
 
         return 1;
 }

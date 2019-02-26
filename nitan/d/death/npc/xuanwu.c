@@ -7,8 +7,8 @@ void create()
         set_name(WHT "玄武" NOR,({"xuan wu", "xuan", "wu"}));
 
         set("race", "野獸");
-        set("long", WHT "\n\n一只龍頭龜身的龐然大物，乃四神獸之一的玄武。\n"
-                        "它全身被厚厚的甲殼保護著。\n" NOR);
+        set("long", WHT "\n\n一隻龍頭龜身的龐然大物，乃四神獸之一的玄武。\n"
+                        "它全身被厚厚的甲殼保護着。\n" NOR);
         set("age", 10000);
         set("attitude", "peaceful");
 
@@ -65,7 +65,7 @@ mixed hit_ob(object me, object ob, int damage_bouns)
         ob->receive_wound("qi", 200 + random(200), me);
         set("neili",query("max_neili",  me), me);
         return WHT "玄武雙足猛踏地面，頓時地動山搖，山崩地裂，"
-               "四處飛沙走石，仿佛天地都要崩潰了一般。\n" NOR;
+               "四處飛沙走石，彷彿天地都要崩潰了一般。\n" NOR;
 }
 
 void die()
@@ -91,7 +91,7 @@ void die()
                 addn("combat_exp", exp, me);
                 addn("potential", pot, me);
 
-                tell_object(me, HIC "由于你斬殺神獸玄武，你獲得了" + chinese_number(exp)
+                tell_object(me, HIC "由於你斬殺神獸玄武，你獲得了" + chinese_number(exp)
                                 + "點經驗和" + chinese_number(pot) + "點潛能。\n" NOR);
         }
         ::die();

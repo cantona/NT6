@@ -19,7 +19,7 @@ void create()
         set("gender", "男性");
         set("age", 39);
         set("long", "馮鐵匠想是常年彎腰打鐵，背已駝了，雙眼被煙火薰的又紅又細，\n"
-                    "左腿殘廢，肩窩下撐著一根拐杖。\n");
+                    "左腿殘廢，肩窩下撐著一根枴杖。\n");
         /*          "馮默風是黃藥師最小的一個徒弟，他的根基不錯，但性子\n"
                     "較為愚魯。他的基本功紮實，一副忠厚老實的樣子。\n");
         */
@@ -80,8 +80,8 @@ void create()
         /*
         set("chat_chance", 1);
         set("chat_msg", ({
-                CYN "馮默風說道：師父疼愛小師妹，他的軟□甲一直由小師妹穿著。\n" NOR,
-                CYN "馮默風自言自語地說道：家師所布置的這個桃花陣真是不簡單！\n" NOR,
+                CYN "馮默風説道：師父疼愛小師妹，他的軟蝟甲一直由小師妹穿着。\n" NOR,
+                CYN "馮默風自言自語地説道：家師所佈置的這個桃花陣真是不簡單！\n" NOR,
         }));
         */
 
@@ -96,7 +96,7 @@ void create()
                 "投師" : (: ask_me :),
                 "東邪" : "家師人稱東邪！呵呵。",
                 "西毒" : "歐陽鋒是與家師並世齊名的高手，人稱老毒物。",
-                "南帝" : "聽家師說段王爺現在出家當了和尚，法名一燈。",
+                "南帝" : "聽家師説段王爺現在出家當了和尚，法名一燈。",
                 "北丐" : "北丐洪七公是丐幫幫主，現在揚州城外。",
                 "黃蓉" : "她是師父的愛女。",
                 "黃藥師" : "你要拜訪家師？",
@@ -104,13 +104,13 @@ void create()
                 "桃花陣" : "往南就是了。",
                 "碧浪滔天" : (: ask_skill1 :),
                 */
-                "name"    : "小人姓馮，村裡人都叫我馮鐵匠。",
-                "here"    : "這裡是小人糊口的舖子，小人就住在後邊的屋子。",
+                "name"    : "小人姓馮，村裏人都叫我馮鐵匠。",
+                "here"    : "這裏是小人餬口的鋪子，小人就住在後邊的屋子。",
                 "鋤頭"    : "鋤頭... 抱歉，鋤頭已經賣光了...",
                 "鐵錘"    : "鐵錘？小人做的鐵錘堅固又耐用，一把只要三百文錢。",
-                "劍"      : "哦，那是給華山派岳掌門打的，小人用了三個月，總算沒浪費那塊好鐵。\n"
-                            "嗯，岳掌門前不久率門徒下山去了，不知什麼時候才會派人來取劍。",
-                "取劍"    : "小人一定要見了岳掌門的手信才能給劍。",
+                "劍"      : "哦，那是給華山派嶽掌門打的，小人用了三個月，總算沒浪費那塊好鐵。\n"
+                            "嗯，嶽掌門前不久率門徒下山去了，不知什麼時候才會派人來取劍。",
+                "取劍"    : "小人一定要見了嶽掌門的手信才能給劍。",
                 "馮默風"  : "唉～，這個名字小人已經好久沒有聽到過了...",
                 "奇門遁甲": "那都是小時候學的，平時沒事解解悶罷了。",
                 "工作"    : (: ask_me :),
@@ -134,7 +134,7 @@ void init()
 
 int ask_me()
 {
-        say("馮鐵匠咳了一聲，說道：想幹活？好！不過我這裡廢鐵不夠了，你先去找幾十斤廢鐵來吧。\n");
+        say("馮鐵匠咳了一聲，説道：想幹活？好！不過我這裏廢鐵不夠了，你先去找幾十斤廢鐵來吧。\n");
         set_temp("marks/鐵", 1, this_player());
         return 1;
 }
@@ -150,18 +150,18 @@ int accept_object(object who, object ob)
                         sword = new(__DIR__"obj/youlong");
                         if (! sword)
                         {
-                                say("馮鐵匠說道：那劍早被拿走了，怎麼又來一封信，一定是假的。\n");
+                                say("馮鐵匠説道：那劍早被拿走了，怎麼又來一封信，一定是假的。\n");
                                 call_out("destroy", 1, ob);
                                 return 1;
                         }
                         say(
-                            "馮鐵匠說道：這把劍雖不起眼，可也是小人的心血，總算對得起岳掌門。\n"
+                            "馮鐵匠説道：這把劍雖不起眼，可也是小人的心血，總算對得起嶽掌門。\n"
                             "馮鐵匠把"+query("name", sword)+"交給了"+query("name", who)+"。\n");
                         sword->move(who);
-                        command("rumor"+query("name", who)+"弄到了一柄遊龍劍。");
+                        command("rumor"+query("name", who)+"弄到了一柄游龍劍。");
                         set("yl_trigger", 1);
                 } else
-                        say("馮鐵匠眼也不抬，說道：要劍自己進去拿。\n");
+                        say("馮鐵匠眼也不抬，説道：要劍自己進去拿。\n");
                 call_out("destroy", 1, ob);
                 return 1;
         }
@@ -186,7 +186,7 @@ int accept_obj(object me, object obj)
 {
         if( query("name", obj) == "鐵八卦" )
         {
-                message_vision(CYN "$N摩挲著鐵八卦，漸漸熱淚盈眶！\n" NOR, this_object());
+                message_vision(CYN "$N摩挲着鐵八卦，漸漸熱淚盈眶！\n" NOR, this_object());
                 command("cry");
                 command("say 默風不肖，累師傅擔憂，同門牽掛，有勞" + RANK_D->query_respect(me) + "了。\n");
                 set("help_mofeng", 1, me);
@@ -202,7 +202,7 @@ int do_sell(string arg)
                 return notify_fail("你要賣什麼？\n");
 
         if( query("material", ob) != "steel" && query("material", ob) != "iron" )
-                return notify_fail("我這裡只收廢鐵。\n");
+                return notify_fail("我這裏只收廢鐵。\n");
 
         else {
                 message_vision("$N賣掉了一"+query("unit", ob)+
@@ -227,7 +227,7 @@ int do_hit(string arg)
 
         if( !objectp(weapon=query_temp("weapon", me) )
          || query("skill_type", weapon) != "hammer" )
-                return notify_fail("沒有合適的家伙，你怎麼打鐵？\n");
+                return notify_fail("沒有合適的傢伙，你怎麼打鐵？\n");
 
         if( query("jing", me)<50 )
                 return notify_fail("你的精氣太低了，歇一會吧。\n");
@@ -309,7 +309,7 @@ void halt_fight(object me)
         }
         message_vision(CYN "$N哈哈大笑道：馮默風，你所用功夫全是我桃花一派，難道你還要裝下去嗎？！\n" NOR, me);
         message_vision(CYN "$N一楞，手下不由得慢了下來，向後一躍，跳出戰圈不打了。\n" NOR, this_object());
-        message_vision(CYN "$N長嘆一聲，道：不想我馮默風有生之年還能見到桃花同門，不知恩師他老人家近來可好？\n",
+        message_vision(CYN "$N長歎一聲，道：不想我馮默風有生之年還能見到桃花同門，不知恩師他老人家近來可好？\n",
                        this_object());
         set("accept_bagua", 1, this_object());
 }
@@ -360,13 +360,13 @@ mixed ask_skill1()
                 return "師父吩咐過，不傳功給無功勞的弟子。";
 
         if (me->query_skill("force") < 120)
-                return "你的內功修為不夠，還是多鍛煉鍛煉吧。";
+                return "你的內功修為不夠，還是多鍛鍊鍛鍊吧。";
 
         if (me->query_skill("canglang-zhi", 1) < 80)
                 return "你的滄浪指法還不夠熟練，練高了再來找我。";
 
         message_sort(HIY "\n$n" HIY "點了點頭，道：“既然家師吩咐過，今日我就"
-                     "傳你這招，可要看好了。”說完只見$n" HIY "陡然伸出一指，"
+                     "傳你這招，可要看好了。”説完只見$n" HIY "陡然伸出一指，"
                      "紛翻不定，頓聽指氣嗤然作響，全全籠罩$N" HIY "四周。\n\n"
                      NOR, me, this_object());
 

@@ -7,9 +7,9 @@ inherit F_DEALER;
 
 void create()
 {
-       set_name("李老板", ({"li laoban","li","laoban"}));
+       set_name("李老闆", ({"li laoban","li","laoban"}));
        set("shop_id",({"li laoban","li","laoban"}));
-       set("shop_title","小吃店老板");
+       set("shop_title","小吃店老闆");
        set("gender", "男性");
         set("combat_exp", 1000);
        set("age", 26);

@@ -7,8 +7,8 @@ void create()
 {
         set("short", "絲綢之路");
         set("long", @LONG
-這是一條中原和西域之間的商道。西面是一望無際的大沙漠，傳說
-那裡常有盜匪出沒。西北則通向一片連綿的山脈，東面就是通向中原的
+這是一條中原和西域之間的商道。西面是一望無際的大沙漠，傳説
+那裏常有盜匪出沒。西北則通向一片連綿的山脈，東面就是通向中原的
 路。路邊有一塊石碑(shibei)。
 LONG );
         set("outdoors", "xiyu");
@@ -50,7 +50,7 @@ int valid_leave(object me, string dir)
                 query("target", ob) == me )
                 return notify_fail("護鏢鏢師閃身攔住你的去路，看來是想把你給廢了！\n");  
         if( query_temp("xx_rob", me) && objectp(present("shangdui",environment(me))) )
-                return notify_fail("商隊在這裡呢，快搶(qiang)啊！\n");  
+                return notify_fail("商隊在這裏呢，快搶(qiang)啊！\n");  
         return ::valid_leave(me, dir);
 }
 
@@ -65,9 +65,9 @@ int do_push(string arg)
                 if( (fam=query("family", me)) && fam["family_name"] == "丐幫" )
                 {
                         message_vision("$N推開石碑，只見泥沙紛紛跌落，地面上露出一個小洞。\n", me);
-                        message("vision", me->name() + "運起丐幫縮骨功，一彎腰往洞裡鑽了進去。\n", environment(me), ({me}) );
+                        message("vision", me->name() + "運起丐幫縮骨功，一彎腰往洞裏鑽了進去。\n", environment(me), ({me}) );
                         me->move("/d/gaibang/underxx");
-                        message("vision", me->name() + "從洞裡走了進來。\n", environment(me), ({me}) );
+                        message("vision", me->name() + "從洞裏走了進來。\n", environment(me), ({me}) );
                         return 1;
                 }
                 else return notify_fail("這麼小的洞，你鑽得進去嗎？\n");

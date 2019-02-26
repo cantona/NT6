@@ -6,10 +6,10 @@ void create()
 {
         set("short", "廣場");
         set("long", @LONG
-山路行到這裡，忽然變得開闊，你眼前出現了一片很大的廣場。一些鐵
-掌幫的弟子來回穿梭于其間，顯得很忙碌。在廣場的周圍有很多巖石建的房
+山路行到這裏，忽然變得開闊，你眼前出現了一片很大的廣場。一些鐵
+掌幫的弟子來回穿梭於其間，顯得很忙碌。在廣場的周圍有很多巖石建的房
 子。正面的這間尤其顯得高大雄偉。左面的房子中不時的湧出陣陣熱氣，其
-間還加雜著鼓風的聲音。
+間還加雜着鼓風的聲音。
 LONG    );
         set("exits", ([
                 "south" : __DIR__"shanlu-2",
@@ -42,8 +42,8 @@ int valid_leave(object me, string dir)
         {
                 if( query("family/family_name", me) != "鐵掌幫"
                    & objectp(present("feng yong", environment(me)))
-                   &!query("move_party/絕情谷─鐵掌幫", me) )
-                        return notify_fail(CYN "馮勇身形一晃，忽然擋住你，厲聲說道：這位" +
+                   &!query("move_party/絕情谷—鐵掌幫", me) )
+                        return notify_fail(CYN "馮勇身形一晃，忽然擋住你，厲聲説道：這位" +
                                            RANK_D->query_respect(me) + CYN "不是本幫弟子，"
                                            "休得在本幫亂闖。\n" NOR);
         }

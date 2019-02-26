@@ -28,10 +28,10 @@ int perform(object me, object target)
                 return notify_fail("你現在沒有激發不敗神功為劍法，難以施展天花亂墜。\n"); 
                 
        if (! living(target))
-              return notify_fail("對方都已經這樣了，用不著這麼費力吧？\n");
+              return notify_fail("對方都已經這樣了，用不着這麼費力吧？\n");
 
         msg = HIC "$N" HIC "手中的" + weapon->name() + HIC
-              "一勾一劃，簡單明了的壓向$n" HIC "！\n" NOR;
+              "一勾一劃，簡單明瞭的壓向$n" HIC "！\n" NOR;
 
         ap = attack_power(me, "sword");
         dp = defense_power(target, "parry");

@@ -12,11 +12,11 @@ int main(object me, string arg)
                 return notify_fail("你要向誰領取任務獎勵？\n");
         
         if (! objectp(ob = present(arg, environment(me))))
-                return notify_fail("這裡沒有這個人，你怎麼領獎勵？\n");
+                return notify_fail("這裏沒有這個人，你怎麼領獎勵？\n");
 
         if (! living(ob))
                 return notify_fail("你還是等" + ob->name() +
-                                   "醒了再說吧！\n");
+                                   "醒了再説吧！\n");
 
         if (me->is_fighting())
                 return notify_fail("專心打你的架！\n");
@@ -27,13 +27,13 @@ int main(object me, string arg)
 
         if (ob->is_fighting())
                 return notify_fail("你還是等" + ob->name() +
-                                   "打完架再說吧！\n");
+                                   "打完架再説吧！\n");
 
         if (ob->is_busy())
                 return notify_fail(ob->name() +
-                                   "正忙著呢，沒功夫理你。\n");
+                                   "正忙着呢，沒功夫理你。\n");
 
-        notify_fail(ob->name() + "望著你呵呵的傻笑。\n");
+        notify_fail(ob->name() + "望着你呵呵的傻笑。\n");
         return ob->ask_finish(me);
 }
 

@@ -47,7 +47,7 @@ int perform(object me, object target)
                 return notify_fail("你沒有準備使用辟邪劍法，難以施展" PO "。\n");
 
         if (! living(target))
-                return notify_fail("對方都已經這樣了，用不著這麼費力吧？\n");
+                return notify_fail("對方都已經這樣了，用不着這麼費力吧？\n");
 
         if( query_temp("no_perform", target) )
                 return notify_fail("對方現在已經無法控制真氣，放膽攻擊吧。\n");

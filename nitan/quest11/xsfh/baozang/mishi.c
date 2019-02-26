@@ -6,7 +6,7 @@ void create()
 {
           set("short",HIC"密室"NOR);
 	  set("long",@LONG
-明顯這是一個密室，狹小的空間很難確定當年這裡的用途。
+明顯這是一個密室，狹小的空間很難確定當年這裏的用途。
 LONG
            );
 
@@ -33,7 +33,7 @@ int do_search(string arg)
   object me,obj;
   me = this_player();
   if (me->is_busy() || me->is_fighting())
-		      return notify_fail("你正忙著哪！\n");
+		      return notify_fail("你正忙着哪！\n");
   message_vision(HIY"$N蹲在地上，四處尋找。\n"NOR, me);
   if(!wizardp(me)) me->start_busy(1);
   if(me->query(QUESTDIR5+"shuku")>=4||random(2)||present("zhi tuan",me))
@@ -52,8 +52,8 @@ int do_search(string arg)
   me->start_busy(2);
    if(!me->query(QUESTDIR4+"lengquanshengong")&&((me->query(QUESTDIR5+"shuku")>=4 && me->query("registered")>=3)||(me->query(QUESTDIR5+"shuku")==3)))
 {
-	  message_vision(HIG"$N打開"+obj->name()+HIG"竟然發現裡面有一張紙團。\n"NOR, me);
-	  tell_object(me,HIY"你展開紙團，仔細看了看似乎是武功秘籍之類的介紹。\n"NOR);
+	  message_vision(HIG"$N打開"+obj->name()+HIG"竟然發現裏面有一張紙團。\n"NOR, me);
+	  tell_object(me,HIY"你展開紙團，仔細看了看似乎是武功祕籍之類的介紹。\n"NOR);
 	  destruct(obj);
 	  obj=unew("/d/xingxiu/baozang/obj/zhituan");
 	  if(!clonep(obj)){

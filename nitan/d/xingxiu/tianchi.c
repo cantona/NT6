@@ -7,8 +7,8 @@ void create()
 {
         set("short", "天池");
         set("long", @LONG
-靈山上白雪皚皚，冰川縱橫，舖銀蓋玉。大大小小的冰面湖、冰
-洞，廣為分布。高懸在冰峰峽谷裡的天池，恰似一面巨大的銀鏡，溢
+靈山上白雪皚皚，冰川縱橫，鋪銀蓋玉。大大小小的冰面湖、冰
+洞，廣為分佈。高懸在冰峯峽谷裏的天池，恰似一面巨大的銀鏡，溢
 彩流光，閃爍耀眼。迷人的山色湖光，山風習習，空氣清涼如水。 山
 前的峭壁(cliff)上刻有幾行字跡，入石三分。
 LONG );
@@ -31,7 +31,7 @@ string look_cliff()
         return
         "\n"
         "              冰    雪    四    三\n\n"
-        "              池    嶺    壁    峰\n\n"
+        "              池    嶺    壁    峯\n\n"
         "              耀    界    橫    並\n\n"
         "      長      日    天    陳    起\n"
         "      春                          \n"
@@ -55,11 +55,11 @@ int do_climb(string arg)
                 return notify_fail("你要跟哪兒爬？\n");
 
         if (me->query_busy())
-                return notify_fail("你正忙著呢。\n");
+                return notify_fail("你正忙着呢。\n");
 
         if( arg=="cliff")
         {
-        message_vision("$N手腳並用順著峭壁往峰頂上爬去。\n", me);
+        message_vision("$N手腳並用順着峭壁往峯頂上爬去。\n", me);
         me->start_busy(5);
 
         if (random(me->query_skill("dodge")) < 50){
@@ -68,7 +68,7 @@ int do_climb(string arg)
         return 1;
         }
         
-        message("vision", me->name()+"一會兒便消失在雲氣裡了。\n", environment(me), ({me}) );
+        message("vision", me->name()+"一會兒便消失在雲氣裏了。\n", environment(me), ({me}) );
         remove_call_out("climb_up");
         call_out("climb_up", 5, me);
         return 1;
@@ -84,7 +84,7 @@ void drop_down(object me)
 }
 void climb_up(object me)
 {
-        tell_object(me, "你深吸一口氣縱身躍起，幾個起落間，已竄上了峰頂。\n");
+        tell_object(me, "你深吸一口氣縱身躍起，幾個起落間，已竄上了峯頂。\n");
         addn("jingli", -50, me);
         me->move("/d/xingxiu/lingshan");
         message("vision", me->name() + "氣喘吁吁地從下面爬了上來。\n",

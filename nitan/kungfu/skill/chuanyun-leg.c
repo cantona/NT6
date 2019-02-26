@@ -11,7 +11,7 @@ mapping *action = ({
         "lvl" : 0,
         "skill_name" : "劃地為牢"
 ]),
-([        "action" : "$N左腿踢出，不待左腿落下，右腳緊跟著凌空踢出，一式"GRN"「追風逐電」"NOR"，雙腳先後踢向$n的$l",
+([        "action" : "$N左腿踢出，不待左腿落下，右腳緊跟着凌空踢出，一式"GRN"「追風逐電」"NOR"，雙腳先後踢向$n的$l",
         "lvl" : 15,
         "skill_name" : "追風逐電"
 ]),
@@ -19,9 +19,9 @@ mapping *action = ({
         "lvl" : 30,
         "skill_name" : "左右穿花"
 ]),
-([        "action" : "$N突然一個後翻，一式"HIW"「倒踢北鬥」"NOR"，雙腿晃動，向$n的$l踢去",
+([        "action" : "$N突然一個後翻，一式"HIW"「倒踢北斗」"NOR"，雙腿晃動，向$n的$l踢去",
         "lvl" : 45,
-        "skill_name" : "倒踢北鬥"
+        "skill_name" : "倒踢北斗"
 ]),
 ([        "action" : "$N使一式"HIC"「登雲步月」"NOR"，拔地而起，雙腿連續踢出，擊向$n的胸口",
         "lvl" : 60,
@@ -35,7 +35,7 @@ mapping *action = ({
         "lvl" : 90,
         "skill_name" : "無影無蹤"
 ]),
-([        "action" : "$N使一式"HIR"「雷霆天下」"NOR"，身體凌空而起，雙腿連環，只見漫天腿影籠罩著$n",
+([        "action" : "$N使一式"HIR"「雷霆天下」"NOR"，身體凌空而起，雙腿連環，只見漫天腿影籠罩着$n",
         "lvl" : 100,
         "skill_name" : "雷霆天下"
 ]),
@@ -118,7 +118,7 @@ int help(object me)
         write(HIC"\n穿雲腿："NOR"\n");
         write(@HELP
 
-    穿雲腿是昆侖派側重女弟子的武功。
+    穿雲腿是崑崙派側重女弟子的武功。
 
         學習要求：
                 玄天無極功20級

@@ -47,7 +47,7 @@ int perform(object me, object target)
                 return notify_fail("你沒有激發疾風刺穴法，難以施展" CANG "。\n");
 
         if (! living(target))
-                return notify_fail("對方都已經這樣了，用不著這麼費力吧？\n");
+                return notify_fail("對方都已經這樣了，用不着這麼費力吧？\n");
 
         msg = HIY "$N" HIY "一聲叱喝，手中" + weapon->name() + HIY "連環五刺，招數"
               "層出不窮，閃電般朝$n" HIY "射去！\n" NOR;

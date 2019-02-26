@@ -14,7 +14,7 @@ void create()
         else {
                 set("unit", "本");
                 set("long", "這是一本泛黃的書籍，上面用古篆書"
-                            "寫著“魔教醫術”幾個字。\n",
+                            "寫着“魔教醫術”幾個字。\n",
 
                 );
                 set("material", "paper");

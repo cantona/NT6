@@ -9,15 +9,15 @@ void random_move();
 
 void create()
 {
-        set_name(HIY "僵屍道長" NOR, ({ "jiangshi daozhang", "jiangshi", "daozhang" }));
+        set_name(HIY "殭屍道長" NOR, ({ "jiangshi daozhang", "jiangshi", "daozhang" }));
         set("title", HIR "" NOR);
         set("gender", "男性");
         set("age", 32);
         set("long", @LONG
-據說中原僵屍橫行，收服僵屍也便成了一種職業，由于長期
-跟僵屍打交道，部分道士在被僵屍咬傷後也失去了理智，變
+據説中原殭屍橫行，收服殭屍也便成了一種職業，由於長期
+跟殭屍打交道，部分道士在被殭屍咬傷後也失去了理智，變
 為半人半屍，具有非常大的殺傷性。這些道士也就被人們稱
-之為僵屍道長。中原僵屍在若幹年後已經基本被殺盡，其余
+之為殭屍道長。中原殭屍在若干年後已經基本被殺盡，其餘
 被趕至高昌迷宮內。
 LONG);
         set("attitude", "friendly");
@@ -194,7 +194,7 @@ varargs void die(object killer)
                 if( query("qi") > query("max_qi") ) set("qi", query("max_qi"));
                 addn("eff_qi", query("max_qi") / 10);
                 if( query("eff_qi") > query("max_qi") ) set("eff_qi", query("max_qi"));
-                message_vision(HIR "\n$N" HIR "大喝一聲，運用秘法，氣血有所回升！\n\n" NOR, this_object());
+                message_vision(HIR "\n$N" HIR "大喝一聲，運用祕法，氣血有所回升！\n\n" NOR, this_object());
                 return;
         }
 

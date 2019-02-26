@@ -73,8 +73,8 @@ void give_intercession()
 
         me = query_leader();
         message("vision", HIC + sort_msg(name() + "看見" + ob->name() +
-                          HIC "，驀地沖上前去，大叫道：“老天開眼啊，兄弟今"
-                          "天終于尋到你了！”說罷只見兩人擁在一起，熱淚縱橫"
+                          HIC "，驀地衝上前去，大叫道：“老天開眼啊，兄弟今"
+                          "天終於尋到你了！”説罷只見兩人擁在一起，熱淚縱橫"
                           "，場面煞是感人。\n" NOR), environment());
         if (objectp(me))
         {
@@ -89,7 +89,7 @@ void give_intercession()
                                      "prompt"  : "通過這次助人尋友" ]));
 
 /*
-                CHANNEL_D->do_channel(this_object(), "rumor", "聽說" + me->name(1) +
+                CHANNEL_D->do_channel(this_object(), "rumor", "聽説" + me->name(1) +
                                                      "("+query("id", me)+")幫"+
                                                      name() + HIM "找到了失散的兄弟"
                                                      + ob->name() + HIM "。" NOR);

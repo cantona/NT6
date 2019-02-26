@@ -16,11 +16,11 @@ void create()
         set("age", 21);
         set("shen_type", -1);
         set("long", "
-穿著一身淡青色的衣服，就像是春天晴朗的天空，
-晴空下清澈的湖水，湖水中倒映著的遠山，美得
-神秘而朦朧。笑容清新，甜柔，純潔，高貴。腰
-上掛著一柄彎刀，彎刀是用純銀作刀鞘，刀柄上
-鑲著一粒光澤圓潤的明珠。");
+穿着一身淡青色的衣服，就像是春天晴朗的天空，
+晴空下清澈的湖水，湖水中倒映着的遠山，美得
+神祕而朦朧。笑容清新，甜柔，純潔，高貴。腰
+上掛着一柄彎刀，彎刀是用純銀作刀鞘，刀柄上
+鑲着一粒光澤圓潤的明珠。");
 
         set("attitude", "peaceful");
 
@@ -161,7 +161,7 @@ int recognize_apprentice(object ob, string skill)
 
         if (ob->query_skill(skill, 1) >= 600)
         {
-                command("say 夠了！我就教你到這裡吧，武功還是"
+                command("say 夠了！我就教你到這裏吧，武功還是"
                         "要靠自己多研究才是！");
                 return -1;
         }
@@ -209,7 +209,7 @@ mixed ask_blade()
    if( query("family/first", me) ) cost = 250; 
              else cost = 500; 
              if( query("family/gongji", me) < cost ) 
-                     return "你為我魔教效力還不夠，等你擁有足夠的師門功績再來兌換圓月彎刀使用時間吧。";
+                     return "你為我魔教效力還不夠，等你擁有足夠的師門功績再來兑換圓月彎刀使用時間吧。";
 
         call_other(MOON_BLADE, "???");
         ob = find_object(MOON_BLADE);

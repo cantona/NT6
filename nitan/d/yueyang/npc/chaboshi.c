@@ -1,4 +1,5 @@
-// chaboshi.c 茶博士□
+// chaboshi.c 茶博士
+
 
 inherit NPC;
 inherit F_DEALER;
@@ -8,7 +9,7 @@ void create()
         set_name("茶博士", ({ "cha boshi", "chaboshi", "boshi" }) );
         set("gender", "男性" );
         set("age", 22);
-        set("long", "這位茶博士一手提著大茶壺，一手拎著抹布，笑咪咪地忙著。\n");
+        set("long", "這位茶博士一手提着大茶壺，一手拎着抹布，笑咪咪地忙着。\n");
         set("combat_exp", 100);
         set("attitude", "friendly");
         set("no_get", "1");
@@ -54,10 +55,10 @@ void greeting(object ob)
         if( !ob || environment(ob) != environment() ) return;
         switch( random(2) ) {
                 case 0:
-                        say( "店小二笑咪咪地說道：這位" + RANK_D->query_respect(ob) + "，進來喝杯茶，歇歇腿吧。\n");
+                        say( "店小二笑咪咪地説道：這位" + RANK_D->query_respect(ob) + "，進來喝杯茶，歇歇腿吧。\n");
                         break;
                 case 1:
-                        say( "店小二用脖子上的毛巾抹了抹手，說道：這位" + RANK_D->query_respect(ob) + "，請進請進。\n");
+                        say( "店小二用脖子上的毛巾抹了抹手，説道：這位" + RANK_D->query_respect(ob) + "，請進請進。\n");
                         break;
         }
 }
@@ -77,5 +78,5 @@ void kicking(object ob)
         if (!ob || environment(ob) != environment()) return;
 
         ob->move("/d/yueyang/nanjie");
-        message("vision","只聽“乒”地一聲，"+query("name", ob)+"被人從洞賓樓裡一腳踢了出來，狼狽萬狀的逃開了。\n",environment(ob),ob);
+        message("vision","只聽“乒”地一聲，"+query("name", ob)+"被人從洞賓樓裏一腳踢了出來，狼狽萬狀的逃開了。\n",environment(ob),ob);
 }

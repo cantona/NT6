@@ -10,7 +10,7 @@ mapping *action = ({
         "skill_name" : BLK "潮泛銀海" NOR,
         "damage_type":  "割傷"
 ]),
-([      "action":"$N錯步上前，使出「"+RED+"銀雨飛花"+NOR+"」，手中$w登時劍芒暴射，宛如漫天瑞雪飛洒向$n的$l",
+([      "action":"$N錯步上前，使出「"+RED+"銀雨飛花"+NOR+"」，手中$w登時劍芒暴射，宛如漫天瑞雪飛灑向$n的$l",
         "force" : 140,
         "lvl" : 20,
         "skill_name" : RED "銀雨飛花" NOR,
@@ -22,7 +22,7 @@ mapping *action = ({
         "skill_name" : GRN "花影濱飛" NOR,
         "damage_type":  "割傷"
 ]),
-([      "action":"$N手中$w鏘啷啷長吟一聲，一式「"+BLU+"神龍尋食"+NOR+"」，$w頭上腳下洒攻而下，攻勢之疾，無以倫比向$n的$l",
+([      "action":"$N手中$w鏘啷啷長吟一聲，一式「"+BLU+"神龍尋食"+NOR+"」，$w頭上腳下灑攻而下，攻勢之疾，無以倫比向$n的$l",
         "force" : 180,
         "lvl" : 47,
         "skill_name" : BLU "神龍尋食" NOR,
@@ -34,7 +34,7 @@ mapping *action = ({
         "skill_name" : MAG "西風倒卷" NOR,
         "damage_type":  "刺傷"
 ]),
-([      "action":"$N手中$w,一式「"+BLU+"天羅地網"+NOR+"」，仿佛一面無形的黑網向$n的$l斜斜擊出",
+([      "action":"$N手中$w,一式「"+BLU+"天羅地網"+NOR+"」，彷彿一面無形的黑網向$n的$l斜斜擊出",
         "force" : 260,
         "lvl" : 80,
         "skill_name" : BLU "天羅地網" NOR,

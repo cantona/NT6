@@ -36,7 +36,7 @@ int do_kan(string arg)
                 return 0;
 
         if (me->is_busy()) {
-                write("你現在正忙著呢。\n");
+                write("你現在正忙着呢。\n");
                 return 1;
         }
         if ( !me->query_skill("medicine", 1) )
@@ -50,7 +50,7 @@ int do_kan(string arg)
                 return 1;
         }
         write(HIR"                   【黃帝內經】\n");
-        write(YEL" □江湖珍藥秘方□\n\n");
+        write(YEL" 〖江湖珍藥祕方〗\n\n");
                 write(HIG"金創藥           川貝、生地、血竭\n");
         if (lvl >= 10)
                 write("養精丹           川貝，枸枳子，菊梗\n");
@@ -73,17 +73,17 @@ int do_kan(string arg)
         if (lvl >= 100)
                 write("黑石玉洞丹       豹胎、防風、熊膽、天山雪蓮\n");
         if (lvl >= 110)
-                write("九轉結氣丸       牛黃、蟬蛻、枸枳子、荷葉\n");
+                write("九轉結氣丸       牛黃、蟬蜕、枸枳子、荷葉\n");
         if (lvl >= 120)
                 write("九花玉露丸       天山雪蓮、甘草、桃花瓣、荷葉\n");
         if (lvl >= 130)
                 write("玉露清新散       荷葉、當歸、白薇、金銀花\n");
         if (lvl >= 140)
-                write("三黃寶蠟丸       麻黃、籐黃、雄黃、靈脂\n");
+                write("三黃寶蠟丸       麻黃、藤黃、雄黃、靈脂\n");
         if (lvl >= 150)
                 write("大還丹           荷葉、當歸、天山雪蓮、藿香\n");
         if (lvl >= 160)
-                write("續命八丸         人參、茯苓、靈芝、鹿茸、何首烏、靈脂、熊膽、三七、麝香\n");
+                write("續命八丸         人蔘、茯苓、靈芝、鹿茸、何首烏、靈脂、熊膽、三七、麝香\n");
                 write("\n"NOR);
         return 1;
 }

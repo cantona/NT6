@@ -33,7 +33,7 @@ int perform(object me, object target)
                 return notify_fail("你現在真氣不足，難以施展" + name() + "。\n");
 
         if (! living(target))
-                return notify_fail("對方都已經這樣了，用不著這麼費力吧？\n");
+                return notify_fail("對方都已經這樣了，用不着這麼費力吧？\n");
 
         msg = HIW "$N" HIW "微微一笑，單掌施出飄絮掌法絕技「飛絮飄零」，頓時掌"
               "影重重，虛實難辨，全全籠罩$n" HIW "而去。\n" NOR;
@@ -51,7 +51,7 @@ int perform(object me, object target)
         } else
         {
                 msg += HIC "可是$n" HIC "凝神頓氣，奮力抵擋，絲"
-                       "毫不受掌影的幹擾，。\n" NOR;
+                       "毫不受掌影的干擾，。\n" NOR;
                 count = 0;
         }
         message_combatd(msg, me, target);

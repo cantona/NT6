@@ -37,7 +37,7 @@ int exert(object me, object target)
         addn("jing", -jing, me);
         addn("jingli", jingli, me);
 
-        write( HIY "你暗運龍鶴兩莊，啟天門，閉地戶，聚精成力，頓覺氣力倍增。\n" NOR);
+        write( HIY "你暗運龍鶴兩莊，啟天門，閉地户，聚精成力，頓覺氣力倍增。\n" NOR);
         message("vision",
                 HIY + "只見" + me->name() + "稍顯疲乏，但轉瞬間便精神抖擻。\n" NOR,
                 environment(me), me);

@@ -38,7 +38,7 @@ int perform(object me, object target)
                 return notify_fail("你的真氣不夠，難以施展"+name()+"。\n");
 
         if (! living(target))
-                return notify_fail("對方都已經這樣了，用不著這麼費力吧？\n");
+                return notify_fail("對方都已經這樣了，用不着這麼費力吧？\n");
 
         msg = HIW "$N" HIW "手中的" + weapon->name() +  HIW "吞吐不定，接連"
               "變換了數種方位，最後呼的一聲朝$n" HIW "砍落！\n" NOR;
@@ -56,7 +56,7 @@ int perform(object me, object target)
                 me->start_busy(2);
         } else
         {
-                msg += CYN "可是$p" CYN "凝神聚氣，護住門戶，無論$P"
+                msg += CYN "可是$p" CYN "凝神聚氣，護住門户，無論$P"
                        CYN "怎樣變招，始終奈何不得。\n" NOR;
                 addn("neili", -50, me);
                 me->start_busy(3);

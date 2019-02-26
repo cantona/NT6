@@ -44,11 +44,11 @@ int do_study(string arg)
                 return notify_fail("你要參悟什麼？\n");
         if( query("jing", me)<25 )
         {
-                write("你現在過于疲倦，無法專心下來研讀新知。\n");
+                write("你現在過於疲倦，無法專心下來研讀新知。\n");
                 return 1;
         }
         if( query("short", where) != "達摩院二樓" )
-                return notify_fail("洗髓經只能在達摩院裡參悟！\n");
+                return notify_fail("洗髓經只能在達摩院裏參悟！\n");
         if (!me->query_skill("literate",1)||me->query_skill("literate",1)<100)
         {
                 write("你把紙筒翻來翻去，就是什麼都讀不懂。\n");                
@@ -65,7 +65,7 @@ int do_study(string arg)
                 return 1;
         }  
         if (me->is_busy())
-                return notify_fail("你現在正忙著呢。\n");
+                return notify_fail("你現在正忙着呢。\n");
         if (me->is_fighting() )
                 return notify_fail("你無法在戰鬥中專心下來研讀新知！\n");
         exp=query("combat_exp", me);
@@ -90,7 +90,7 @@ me->improve_skill(skill[i-1],(me->query_skill("literate",1)+query("int", me))/2)
         else
         {
                 cost=query("jing", me);
-                write("你現在過于疲倦，無法專心下來參悟洗髓經。\n");
+                write("你現在過於疲倦，無法專心下來參悟洗髓經。\n");
         }
         return 1;
 }

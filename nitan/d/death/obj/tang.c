@@ -15,7 +15,7 @@ void create()
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("long", HIW "一碗熱氣騰騰的孟婆湯，散發著濃烈的草藥氣味。\n");
+                set("long", HIW "一碗熱氣騰騰的孟婆湯，散發着濃烈的草藥氣味。\n");
                 set("unit", "碗");
                 set("only_do_effect", 1);
         }
@@ -29,7 +29,7 @@ int do_eat(string arg)
         int max;
 
         if( me->is_busy() )
-                return notify_fail("急什麼，小心別噎著了。\n");
+                return notify_fail("急什麼，小心別噎着了。\n");
 
         set_temp("last_eat/mengpo_tang", time(), me);
 

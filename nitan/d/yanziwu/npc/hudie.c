@@ -8,7 +8,7 @@ void create()
         set("race", "昆蟲");
         set("subrace", "飛蟲");
         set("age", 8);
-        set("long", "這是一只在花間翩翩飛舞的蝴蝶，似乎不怕人呢。\n");
+        set("long", "這是一隻在花間翩翩飛舞的蝴蝶，似乎不怕人呢。\n");
 
         set("str", 20);
         set("dex", 50);
@@ -22,7 +22,7 @@ void create()
         set("chat_chance", 5);
         set("chat_msg", ({
                 (: this_object(), "random_move" :),
-        "蝴蝶飛過來，繞著你的身體飛舞起來。等你伸出手來想抓住它時，它又飛走了。\n",
+        "蝴蝶飛過來，繞着你的身體飛舞起來。等你伸出手來想抓住它時，它又飛走了。\n",
          }) );
 
         setup();

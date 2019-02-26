@@ -13,7 +13,7 @@
 //         水利       water       根骨 + 定力   增加民忠 
 //         商業       business    福緣 + 容貌   增加人口 減低民忠
 //         技術       technology  悟性 + 靈性   增加開發速度
-//         稅率       tax_rate    0-100 之間    
+//         税率       tax_rate    0-100 之間    
 //                    0-15  之間   非常滿意 增加人口 增加民忠
 //                    15-30 之間    滿意    增加人口 民忠不變
 //                    30-40 之間   微有怨言 人口不變  減低民忠 農業,治安受到破壞 
@@ -43,12 +43,12 @@ int do_kaifa(string);
 void create()
 {        set_name(HIY"官府通告"NOR, ({ "guanfu tonggao", "tonggao"}) );
         set("long","這是一張記錄"+CNAMEOFCITY+"開發情況的官府通告。\n
-想查看目前的情況，請先 help ms_city 了解具體操作。\n");
+想查看目前的情況，請先 help ms_city 瞭解具體操作。\n");
         set("LAST_KAIFA_PLAYER","none of us"); //最後開發過城市的玩家
         set("city_name", NAMEOFCITY); //城市名
         set("city_level", LEVEL_OF_CITY);// 綜合評價
         set("fealty", LEVEL/10);  // 民忠
-        set("tax_rate",LEVEL/10); // 稅率
+        set("tax_rate",LEVEL/10); // 税率
         set("people", LEVEL*10000);        // 人口
         set("water", LEVEL*10); // 水利 
         set("water_pro", LEVEL*2); // 水利熟練度  
@@ -90,7 +90,7 @@ string long()
         HIY"─────────────────────────────────────\n"NOR;
         msg+=sprintf(HIC"\n 城市:" HIY "%8s" NOR HIC"\t\t城市規模: " HIY "%8s\n" NOR,
         CNAMEOFCITY,query("city_level", ob),);
-        msg+=sprintf(HIC"\n 稅率:  " HIW "%5d" NOR HIC"\t\t城中人口: " HIG "%8d\n" NOR,
+        msg+=sprintf(HIC"\n 税率:  " HIW "%5d" NOR HIC"\t\t城中人口: " HIG "%8d\n" NOR,
         query("tax_rate", ob),query("people", ob),);
         msg+=sprintf(HIC"\n 治安: " HIW "%8d" NOR HIC"\t\t治安指數: " HIG "%8d\n" NOR,
         query("peace", ob),query("peace_pro", ob),);
@@ -125,13 +125,13 @@ int do_kaifa(string arg)
         if( !query("CITY_KAIFA", me)) )
                 return notify_fail("你沒有得到康親王的許可，無法協助開發朝廷所屬地盤。\n");
         if( query("CITY_KAIFA/name", me) != query("city_name", ob) )
-                return notify_fail("你要協助開發的城市好象不是這裡吧？\n");
+                return notify_fail("你要協助開發的城市好像不是這裏吧？\n");
 */
-//江湖閱歷小于1000就不讓繼續開發        
+//江湖閲歷小於1000就不讓繼續開發        
          
         if (me_score<1000)
-                return notify_fail("你的江湖閱歷不夠，還是多積累點閱歷再來吧!\n");
-//存款小于100 gold 就不讓繼續開發
+                return notify_fail("你的江湖閲歷不夠，還是多積累點閲歷再來吧!\n");
+//存款小於100 gold 就不讓繼續開發
         if(me_balance<1000000)
                 return notify_fail("你的存款不夠，無法滿足開發所需要的資金要求!\n");
         if( query_temp("busy", ob) )
@@ -147,7 +147,7 @@ int do_kaifa(string arg)
               lvl_num=query("business", ob);
               if(lvl_num >= MAX_LEVEL*10)
                 { 
-                 return notify_fail(CNAMEOFCITY+"的商業已經足夠發達了，你可以試著去開發其他項目了！\n"); 
+                 return notify_fail(CNAMEOFCITY+"的商業已經足夠發達了，你可以試着去開發其他項目了！\n"); 
                 }
               else
               { 
@@ -177,7 +177,7 @@ int do_kaifa(string arg)
               lvl_num=query("farming", ob);
               if(lvl_num >= MAX_LEVEL*10)
                 { 
-                 return notify_fail(CNAMEOFCITY+"的農業已經足夠發達了，你可以試著去開發其他項目了！\n"); 
+                 return notify_fail(CNAMEOFCITY+"的農業已經足夠發達了，你可以試着去開發其他項目了！\n"); 
                 }
               else
               { 
@@ -207,7 +207,7 @@ int do_kaifa(string arg)
               lvl_num=query("peace", ob);
               if(lvl_num >= MAX_LEVEL*10)
                 { 
-                 return notify_fail(CNAMEOFCITY+"的治安已經足夠發達了，你可以試著去開發其他項目了！\n"); 
+                 return notify_fail(CNAMEOFCITY+"的治安已經足夠發達了，你可以試着去開發其他項目了！\n"); 
                 }
               else
               { 
@@ -236,7 +236,7 @@ int do_kaifa(string arg)
               lvl_num=query("water", ob);
               if(lvl_num >= MAX_LEVEL*10)
                 { 
-                 return notify_fail(CNAMEOFCITY+"的水利已經足夠發達了，你可以試著去開發其他項目了！\n"); 
+                 return notify_fail(CNAMEOFCITY+"的水利已經足夠發達了，你可以試着去開發其他項目了！\n"); 
                 }
               else
               { 
@@ -265,7 +265,7 @@ int do_kaifa(string arg)
               lvl_num=query("technology", ob);
               if(lvl_num >= MAX_LEVEL*10)
                 { 
-                 return notify_fail(CNAMEOFCITY+"的技術已經足夠發達了，你可以試著去開發其他項目了！\n"); 
+                 return notify_fail(CNAMEOFCITY+"的技術已經足夠發達了，你可以試着去開發其他項目了！\n"); 
                 }
               else
               { 
@@ -284,7 +284,7 @@ int do_kaifa(string arg)
                  
                 }         
            }                                   
-//每次執行開發指令，都要考慮到城市稅率對本輪開發的影響 這樣感覺才有點動態性 呵呵
+//每次執行開發指令，都要考慮到城市税率對本輪開發的影響 這樣感覺才有點動態性 呵呵
 //         0-15  之間   非常滿意 增加人口 增加民忠
 //         15-30 之間    滿意    增加人口 民忠不變
 //      30-40 之間   微有怨言 人口不變  減低民忠 農業,治安受到破壞 
@@ -297,14 +297,14 @@ int do_kaifa(string arg)
              if(ob_fealty>100) ob_fealty=100;
              if(ob_people<MAX_LEVEL*10000)
              ob_people=ob_people+(100-ob_taxrate)*(10+random(5));
-             message_vision( MAG"由于城市的稅率定的相當低，這裡百姓非常滿意，並有很多外地的人口來這裡謀生。\n"NOR,me);
+             message_vision( MAG"由於城市的税率定的相當低，這裏百姓非常滿意，並有很多外地的人口來這裏謀生。\n"NOR,me);
             }
            
        else if( ob_taxrate>=16&&ob_taxrate<=30)
             {  
              if(ob_people<MAX_LEVEL*10000)
              ob_people=ob_people+(100-ob_taxrate)*(10+random(5));
-             message_vision( GRN"由于城市的稅率定的相對較低，百姓還算滿意，經常有一些外地的人口來這裡謀生。\n"NOR,me);
+             message_vision( GRN"由於城市的税率定的相對較低，百姓還算滿意，經常有一些外地的人口來這裏謀生。\n"NOR,me);
              }
 
        else if( ob_taxrate>=31&&ob_taxrate<=40)
@@ -323,7 +323,7 @@ int do_kaifa(string arg)
                       pro_num = (int)pro_num-random(100);
                       set("peace_pro", pro_num, ob);
                     }      
-               message_vision( CYN"城中的一些人認為官府的稅率定的不太合理，微有怨言，有人在城裡發現小偷和一些不願種田的農民。\n"NOR,me);
+               message_vision( CYN"城中的一些人認為官府的税率定的不太合理，微有怨言，有人在城裏發現小偷和一些不願種田的農民。\n"NOR,me);
                }
         else if( ob_taxrate>=41&&ob_taxrate<=60)
              {
@@ -347,7 +347,7 @@ int do_kaifa(string arg)
                       pro_num = (int)pro_num-random(100);
                       set("business_pro", pro_num, ob);
                      }     
-                     message_vision( YEL"城中百姓怨聲載道，大部分商人也認為官府收的稅太高了，有人在城中搞起小破壞，來抱怨對官府的不滿。\n"NOR,me);
+                     message_vision( YEL"城中百姓怨聲載道，大部分商人也認為官府收的税太高了，有人在城中搞起小破壞，來抱怨對官府的不滿。\n"NOR,me);
                      }
          else if( ob_taxrate>=61&&ob_taxrate<=80)
              {
@@ -363,7 +363,7 @@ int do_kaifa(string arg)
                           addn("technology", -1, ob);
                      if( query("peace", ob)>5 && random(2) == 1 )
                           addn("peace", -1, ob);
-                     message_vision( BLU"城中民怨沸騰，百姓一致認為官府收的稅太高了，並逐漸對這裡的地方官員失去信心。\n"NOR,me);
+                     message_vision( BLU"城中民怨沸騰，百姓一致認為官府收的税太高了，並逐漸對這裏的地方官員失去信心。\n"NOR,me);
              }  
         else
              {
@@ -379,14 +379,14 @@ int do_kaifa(string arg)
                           addn("technology", -2, ob);
                      if( query("peace", ob)>5 && random(2) == 1 )
                           addn("peace", -2, ob);
-                     message_vision( RED"苛政猛于虎，城中百姓無法忍受官府的盤剝，紛紛背井離鄉。\n"NOR,me);
+                     message_vision( RED"苛政猛於虎，城中百姓無法忍受官府的盤剝，紛紛背井離鄉。\n"NOR,me);
                      }  
-// 每次執行指令消耗50的江湖閱歷 和一定的存款（與本城的稅率有關 如果稅率達100就不花錢）
+// 每次執行指令消耗50的江湖閲歷 和一定的存款（與本城的税率有關 如果税率達100就不花錢）
         me_score = me_score-50;
         me_balance = me_balance-2000*(100-ob_taxrate);
         set("score", me_score, me);
         set("balance", me_balance, me);
-//防止執行過程中出現負人口 和民忠值超過范圍
+//防止執行過程中出現負人口 和民忠值超過範圍
         if( ob_people<0) ob_people=1;
         set("people", ob_people, ob);
         if (ob_fealty<0) ob_fealty=0;
@@ -406,9 +406,9 @@ int do_tax(string arg)
         return notify_fail("有人剛下過開發命令，稍候........\n");
    if( !arg
         ||      !sscanf(arg, "%d", taxrate) )
-      return notify_fail("你想將稅率定為多少？\n");
+      return notify_fail("你想將税率定為多少？\n");
    if(taxrate>100||taxrate<0)
-      return notify_fail("稅率只能在0到100之間！\n");
+      return notify_fail("税率只能在0到100之間！\n");
    ob_taxrate=taxrate;
    set("tax_rate", ob_taxrate, ob);
    save();

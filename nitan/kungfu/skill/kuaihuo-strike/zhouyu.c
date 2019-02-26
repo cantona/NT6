@@ -60,7 +60,7 @@ int perform(object me, object target)
         }
         
         skill = me->query_skill(bskill, 1);
-                msg = HIC"\n$N"HIC"一反平常快活逍逸的神情，口中大喝了一聲，施展出「暴風驟雨」，雙掌上下翻飛，\n$n只覺得四周都是$N"HIC"雙掌的影子，根本不知如何招架，更不用說躲閃了！\n\n" NOR;
+                msg = HIC"\n$N"HIC"一反平常快活逍逸的神情，口中大喝了一聲，施展出「暴風驟雨」，雙掌上下翻飛，\n$n只覺得四周都是$N"HIC"雙掌的影子，根本不知如何招架，更不用説躲閃了！\n\n" NOR;
 
         ap = skill;
         ap=(ap*ap*ap/(4*400))+query("qi", me);

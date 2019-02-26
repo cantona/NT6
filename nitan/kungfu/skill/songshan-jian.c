@@ -25,7 +25,7 @@ mapping *action = ({
         "damage_type":  "刺傷",
 ]),
 ([      
-        "action" :  "$N手中$w化出一道弧線，緊接著劍勢收回，卻平平一劍刺向$n$l",
+        "action" :  "$N手中$w化出一道弧線，緊接着劍勢收回，卻平平一劍刺向$n$l",
         "force"  :  100, 
         "dodge"  :  30,
         "damage" :  25,

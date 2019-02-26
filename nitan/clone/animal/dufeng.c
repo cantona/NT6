@@ -9,7 +9,7 @@ void create()
         set("race", "昆蟲");
         set("subrace", "飛蟲");
         set("age", 5);
-        set("long", "這是一只毒蜂，正向你襲擊。\n");
+        set("long", "這是一隻毒蜂，正向你襲擊。\n");
         set("str", 50);
         set("dex", 60);
 
@@ -30,7 +30,7 @@ void unconcious()
         {
                 ob = new(__FILE__);
                  ob->move(environment());
-                 message_vision("\n嗡，嗡，嗡，又飛來一只毒蜂。\n", this_object());
+                 message_vision("\n嗡，嗡，嗡，又飛來一隻毒蜂。\n", this_object());
         } else {
                  message_vision("\n一陣風把死蜂吹走了。\n", this_object());
         }
@@ -45,7 +45,7 @@ void die()
         if( base_name(environment(this_object())) == "/d/dali/chhill4" && random(6) > 0 ) {
                  ob = new(__FILE__);
                  ob->move(environment());
-                 message_vision("\n嗡，嗡，嗡，又飛來一只毒蜂。\n", this_object());
+                 message_vision("\n嗡，嗡，嗡，又飛來一隻毒蜂。\n", this_object());
         } else {
                  message_vision("\n一陣風把死蜂吹走了。\n", this_object());
         }

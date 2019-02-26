@@ -3,12 +3,12 @@
 inherit NPC;
 void create()
 {
-        set_name("溫方山", ({ "wen fangshan", "wen" }) );
+        set_name("温方山", ({ "wen fangshan", "wen" }) );
         set("gender", "男性");
-        set("title", "溫家老三");
+        set("title", "温家老三");
         set("age", 45);
         set("long",
-                "這位便是溫家老三：溫方山。\n");
+                "這位便是温家老三：温方山。\n");
         set("combat_exp", 1000000);
         set("shen_type", 1);
         set("attitude", "heroism");
@@ -28,7 +28,7 @@ void create()
         set("chat_chance", 15);
         set("inquiry", ([
                 "金蛇郎君" : "夏雪宜這個大淫賊，我一定要把他碎屍萬斷！" ,
-                "溫儀"   : "這個小丫頭中了邪了，被我關了起來，我也是為她好啊。",
+                "温儀"   : "這個小丫頭中了邪了，被我關了起來，我也是為她好啊。",
         ]) );
         set_temp("apply/attack",  50);
         set_temp("apply/defense", 50);

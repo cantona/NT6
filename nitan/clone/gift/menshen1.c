@@ -42,7 +42,7 @@ void init()
                 return;
 
         message_vision("門神大喝一聲：“何方妖孽，也"
-                       "敢來此？”說罷手中銅錘一盪，"
+                       "敢來此？”説罷手中銅錘一蕩，"
                        "將$N一錘打得飛了出去！\n", me);
         me->move(query("startroom", env));
         me->start_busy(3);

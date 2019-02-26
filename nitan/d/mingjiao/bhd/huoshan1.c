@@ -7,7 +7,7 @@ void create()
 {
 	set("short", HIR"火山"NOR);
         set("long", @LONG
-到這裡一什麼也看不見了。。。。只是有火燒身的感覺。
+到這裏一什麼也看不見了。。。。只是有火燒身的感覺。
 LONG );
 	set("exits",([
 		"northup" : __DIR__"huoshan2",

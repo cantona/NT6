@@ -9,7 +9,7 @@ void create()
     else {
             set("unit", "個");
             set("material", "iron");
-            set("long", "一個普通的鐵水桶，桶身刻著“少林寺”的字樣，看來是少林寺之物。\n");
+            set("long", "一個普通的鐵水桶，桶身刻着“少林寺”的字樣，看來是少林寺之物。\n");
           }
     set("owner", "覺遠");
     setup();

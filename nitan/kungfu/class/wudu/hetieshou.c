@@ -30,8 +30,8 @@ void create()
         set("nickname", HIR "五毒仙子" NOR);
         set("long",@LONG
 你對面的是一個一身粉紅紗裙，笑靨如花的少女。
-她長得肌膚雪白，眉目如畫，赤著一雙白嫩的秀
-足，手腳上都戴著閃閃的金鐲。誰能想到她就是
+她長得肌膚雪白，眉目如畫，赤着一雙白嫩的秀
+足，手腳上都戴着閃閃的金鐲。誰能想到她就是
 五毒教的教主何鐵手，武林人士提起她無不膽顫
 心驚。
 LONG);
@@ -115,7 +115,7 @@ LONG);
         setup();
 
         set("inquiry", ([
-                "金蜈鉤"   : (: ask_gou :),
+                "金蜈鈎"   : (: ask_gou :),
                 "軟紅蛛索" : (: ask_suo :),
                 "含沙射影" : (: ask_she :),
                 "毒經"     : "你是要毒經上篇、中篇還是下篇？",
@@ -133,7 +133,7 @@ LONG);
                 "盤鷹訣"   : (: ask_skill1 :),
                 "搏虎訣"   : (: ask_skill2 :),
                 "鎖龍訣"   : (: ask_skill3 :),
-                "金鉤奪魄" : (: ask_skill4 :),
+                "金鈎奪魄" : (: ask_skill4 :),
                 "無影針"   : (: ask_skill5 :),
                 "萬毒穿心" : (: ask_skill6 :),
         ]));
@@ -185,7 +185,7 @@ void attempt_apprentice(object ob)
 
         if( query("shen", ob)>-1000 )
         {
-                command("say 我越看你越象六扇門派來的臥底。");
+                command("say 我越看你越象六扇門派來的卧底。");
                 return;
         }
 
@@ -231,10 +231,10 @@ mixed ask_gou()
                 if( query("family/family_name", me) == "五毒教" )
                         message_vision(CYN "$N" CYN "冷哼一聲，對$n" CYN "道："
                                        "“你身為我五毒教弟子，反而學起假仁假義"
-                                       "來了，居然還有臉問我要金鉤？”\n" NOR,
+                                       "來了，居然還有臉問我要金鈎？”\n" NOR,
                                        this_object(), me);
                 else
-                        message_vision(CYN "$N" CYN "冷笑一聲，對$n" CYN "說道"
+                        message_vision(CYN "$N" CYN "冷笑一聲，對$n" CYN "説道"
                                        "：“你是什麼人？居然敢在我面前打聽這個"
                                        "！”\n" NOR,
                                        this_object(), me);
@@ -245,13 +245,13 @@ mixed ask_gou()
                 return "你不是我們五毒教的，打聽它幹什麼？";
 
         if( query("family/master_id", me) != query("id") )
-                return "只有我的弟子才能用金蜈鉤，你拿去用只會替我丟臉。";
+                return "只有我的弟子才能用金蜈鈎，你拿去用只會替我丟臉。";
 
         if( query("shen", me)>-35000 )
-                return "你這樣心慈手軟，這金鉤你不用也罷。";
+                return "你這樣心慈手軟，這金鈎你不用也罷。";
 
         if (me->query_skill("jinwu-goufa", 1) < 120)
-                return "你連金蜈鉤法都沒學好，就算用金鉤也是白搭。";
+                return "你連金蜈鈎法都沒學好，就算用金鈎也是白搭。";
 
         ob = find_object(JINWUGOU);
         if (! ob) ob = load_object(JINWUGOU);
@@ -264,18 +264,18 @@ mixed ask_gou()
         }
 
         if (owner == me)
-                return "嗯？金蜈鉤現在不是你拿著在用嗎？";
+                return "嗯？金蜈鈎現在不是你拿着在用嗎？";
 
         if (objectp(owner) && owner != this_object())
         {
                 if (! owner->is_character())
-                        return "你來晚了一步，我已經把金蜈鉤借給你同門師兄弟用去了。";
+                        return "你來晚了一步，我已經把金蜈鈎借給你同門師兄弟用去了。";
 
                 if( query("family/family_name", owner) == "五毒教" )
-                        return "金蜈鉤現在暫時是你同門師兄弟"+query("name", owner)+
+                        return "金蜈鈎現在暫時是你同門師兄弟"+query("name", owner)+
                                "在用，你要用就去找他吧。";
                 else
-                        return "本門的金蜈鉤現在落在"+query("name", owner)+
+                        return "本門的金蜈鈎現在落在"+query("name", owner)+
                                "手中，你去把它搶回來吧！";
         }
 
@@ -285,8 +285,8 @@ mixed ask_gou()
         ob->move(this_object());
         ob->wield();
 
-        message_vision(CYN "$N" CYN "微微一笑，道：“這柄金蜈鉤你就"
-                       "拿去，讓那些正派人士嘗嘗咱五毒教的厲害！”\n" NOR,
+        message_vision(CYN "$N" CYN "微微一笑，道：“這柄金蜈鈎你就"
+                       "拿去，讓那些正派人士嚐嚐咱五毒教的厲害！”\n" NOR,
                        this_object(), me);
           command("give jinwu gou to "+query("id", me));
         return 1;
@@ -307,7 +307,7 @@ mixed ask_suo()
                                        "來了，居然還有臉問我要軟紅蛛索？”\n" NOR,
                                        this_object(), me);
                 else
-                        message_vision(CYN "$N" CYN "冷笑一聲，對$n" CYN "說道"
+                        message_vision(CYN "$N" CYN "冷笑一聲，對$n" CYN "説道"
                                        "：“你是什麼人？居然敢在我面前打聽這個"
                                        "！”\n" NOR,
                                        this_object(), me);
@@ -337,7 +337,7 @@ mixed ask_suo()
         }
 
         if (owner == me)
-                return "嗯？軟紅蛛索現在不是你拿著在用嗎？";
+                return "嗯？軟紅蛛索現在不是你拿着在用嗎？";
 
         if (objectp(owner) && owner != this_object())
         {
@@ -359,7 +359,7 @@ mixed ask_suo()
         ob->wield();
 
         message_vision(CYN "$N" CYN "微微一笑，道：“這根軟紅蛛索你就"
-                       "拿去，讓那些正派人士嘗嘗咱五毒教的厲害！”\n" NOR,
+                       "拿去，讓那些正派人士嚐嚐咱五毒教的厲害！”\n" NOR,
                        this_object(), me);
           command("give ruanhong zhusuo to "+query("id", me));
         return 1;
@@ -380,7 +380,7 @@ mixed ask_she()
                                        "來了，居然還有臉問我要含沙射影？”\n" NOR,
                                        this_object(), me);
                 else
-                        message_vision(CYN "$N" CYN "冷笑一聲，對$n" CYN "說道"
+                        message_vision(CYN "$N" CYN "冷笑一聲，對$n" CYN "説道"
                                        "：“你是什麼人？居然敢在我面前打聽這個"
                                        "！”\n" NOR,
                                        this_object(), me);
@@ -408,12 +408,12 @@ mixed ask_she()
         }
 
         if (owner == me)
-                return "嗯？含沙射影現在不是你拿著在用嗎？";
+                return "嗯？含沙射影現在不是你拿着在用嗎？";
 
         if (objectp(owner) && owner != this_object())
         {
                 if (! owner->is_character())
-                        return "含沙射影現在不在我這裡。";
+                        return "含沙射影現在不在我這裏。";
 
                 if( query("family/family_name", owner) == "五毒教" )
                         return "含沙射影現在暫時是你同門"+query("name", owner)+
@@ -424,10 +424,10 @@ mixed ask_she()
         }
         ob->move(this_object());
 
-        message_vision(CYN "$N" CYN "微微一笑，道：含沙射影你拿去吧，叫他們嘗嘗我"
+        message_vision(CYN "$N" CYN "微微一笑，道：含沙射影你拿去吧，叫他們嚐嚐我"
                        "們五毒教的厲害！\n" NOR, this_object(), me);
           command("give hansha sheying to "+query("id", me));
-        command("whisper"+query("id", me)+"這含沙射影裡的毒針用完了，可以拿"
+        command("whisper"+query("id", me)+"這含沙射影裏的毒針用完了，可以拿"
                 "(show)回來讓我給你裝。");
         return 1;
 }
@@ -500,8 +500,8 @@ mixed ask_skill2()
                 return "你的軟紅蛛索還練得不到家，自己下去練練再來吧！";
 
         message_sort(HIY "\n$n" HIY "點了點頭，道：“本姑娘今天便傳你這招，你可"
-                     "看好了！”$n" HIY "說罷，從腰間取下長索，一聲嬌喝，手中長"
-                     "索狂舞，漫天鞭影頓時幻作無數小圈，舖天蓋地罩向$N" HIY "。"
+                     "看好了！”$n" HIY "説罷，從腰間取下長索，一聲嬌喝，手中長"
+                     "索狂舞，漫天鞭影頓時幻作無數小圈，鋪天蓋地罩向$N" HIY "。"
                      "\n\n" NOR, me, this_object());
 
         command("nod");
@@ -544,10 +544,10 @@ mixed ask_skill3()
                 return "你的軟紅蛛索還練得不到家，自己下去練練再來吧！";
 
         message_sort(HIY "\n$n" HIY "對$N" HIY "讚許地點了點頭，道：“既然你如"
-                     "此有心，本姑娘就再傳你這招！”說完$n" HIY "招了招手，$N"
-                     HIY "連忙湊上前去，只見$n" HIY "輕聲在$N" HIY "說了些話，"
-                     "接著手中長索一抖，登時幻出漫天鞭影，宛如蛟龍通天，無數鞭"
-                     "影一齊向四面八方席卷而去！\n\n" NOR, me, this_object());
+                     "此有心，本姑娘就再傳你這招！”説完$n" HIY "招了招手，$N"
+                     HIY "連忙湊上前去，只見$n" HIY "輕聲在$N" HIY "説了些話，"
+                     "接着手中長索一抖，登時幻出漫天鞭影，宛如蛟龍通天，無數鞭"
+                     "影一齊向四面八方席捲而去！\n\n" NOR, me, this_object());
 
         command("sweat");
         command("nod");
@@ -577,7 +577,7 @@ mixed ask_skill4()
                 return RANK_D->query_respect(me) + "和本教素無瓜葛，何出此言？";
 
         if (me->query_skill("jinwu-goufa", 1) < 1)
-                return "你連金蜈鉤法都沒學，何談此言？";
+                return "你連金蜈鈎法都沒學，何談此言？";
 
         if( query("family/gongji", me)<1300 )
                 return "你在教中所作的貢獻還不夠，這招我不忙傳你。";
@@ -586,16 +586,16 @@ mixed ask_skill4()
                 return "哼！你這樣心慈手軟能幹成什麼事？這招你不學也罷！";
 
         if (me->query_skill("jinwu-goufa", 1) < 160)
-                return "你的金蜈鉤法還練得不到家，自己下去練練再來吧！";
+                return "你的金蜈鈎法還練得不到家，自己下去練練再來吧！";
 
-        message_sort(HIY "\n$n" HIY "微微點了點頭，在$N" HIY "耳邊輕聲說了些話"
-                     "，一邊說還一邊比劃著些什麼。如此這般，過了良久……\n\n"
+        message_sort(HIY "\n$n" HIY "微微點了點頭，在$N" HIY "耳邊輕聲説了些話"
+                     "，一邊説還一邊比劃着些什麼。如此這般，過了良久……\n\n"
                      NOR, me, this_object());
 
         command("say 剛才那些便是這招的口訣和練功的要領，你可要記牢了。");
         command("nod");
-        command("say 這招金鉤奪魄比較難練，你自己下來後要多加研究。");
-        tell_object(me, HIC "你學會了「金鉤奪魄」。\n" NOR);
+        command("say 這招金鈎奪魄比較難練，你自己下來後要多加研究。");
+        tell_object(me, HIC "你學會了「金鈎奪魄」。\n" NOR);
         if (me->can_improve_skill("sword"))
                 me->improve_skill("sword", 1500000);
         if (me->can_improve_skill("jinwu-goufa"))
@@ -635,7 +635,7 @@ mixed ask_skill5()
                      "心的一笑，看來大有所悟。\n\n" NOR, me, this_object());
 
         command("nod");
-        command("say 這招並不復雜，但是用來偷襲和暗算敵人卻很有效，你多練練吧！");
+        command("say 這招並不複雜，但是用來偷襲和暗算敵人卻很有效，你多練練吧！");
         tell_object(me, HIC "你學會了「無影針」。\n" NOR);
         if (me->can_improve_skill("throwing"))
                 me->improve_skill("throwing", 1500000);
@@ -675,7 +675,7 @@ mixed ask_skill6()
                      "心的一笑，看來大有所悟。\n\n" NOR, me, this_object());
 
         command("nod");
-        command("say 這招可是本門秘傳，極為博大精深，你下去後可得多練習練習！");
+        command("say 這招可是本門祕傳，極為博大精深，你下去後可得多練習練習！");
         tell_object(me, HIC "你學會了「萬毒穿心」。\n" NOR);
         if (me->can_improve_skill("qianzhu-wandushou"))
                 me->improve_skill("qianzhu-wandushou", 1500000);
@@ -723,7 +723,7 @@ mixed ask_jing()
                 return "你這人心腸那麼好，又去學毒做甚？";
 
         if( query("combat_exp", me)<150000 )
-                return "你現在經驗太淺，不用忙著去閱讀毒經。";
+                return "你現在經驗太淺，不用忙着去閲讀毒經。";
 
         if (me->query_skill("wudu-qishu", 1) > 149)
                 return "你對本門的毒技已經通曉得比較透徹了，還是自己多研究吧。";
@@ -739,12 +739,12 @@ mixed ask_jing()
         }
 
         if (owner == me)
-                return "不就是你拿著麼？怎麼反倒問我來了？";
+                return "不就是你拿着麼？怎麼反倒問我來了？";
 
         if (objectp(owner) && owner != this_object())
         {
                 if (! owner->is_character())
-                        return "…嗯…毒經下篇現在不在我手裡。";
+                        return "…嗯…毒經下篇現在不在我手裏。";
 
                 if( query("family/family_name", owner) == "五毒教" )
                         return "毒經現在是你同門"+query("name", owner)+
@@ -778,21 +778,21 @@ int do_show(string arg)
                 return notify_fail(CYN "何鐵手冷冷望了你一眼，沒理你。\n" NOR);
 
         if( query("id", ob) != "hanshasheying" )
-                return notify_fail(CYN "何鐵手皺了皺眉頭，說道：你給我看這個"
+                return notify_fail(CYN "何鐵手皺了皺眉頭，説道：你給我看這個"
                                    "幹嘛？\n" NOR);
 
         if( query("equipped", ob) )
-                return notify_fail(CYN "何鐵手說道：你不把含沙射影脫下來，叫"
+                return notify_fail(CYN "何鐵手説道：你不把含沙射影脱下來，叫"
                                    "我怎麼幫你裝針？\n" NOR);
 
         if( query("zhen", ob)>5 )
-                return notify_fail(CYN "何鐵手說道：含沙射影裡的毒針用了一半"
+                return notify_fail(CYN "何鐵手説道：含沙射影裏的毒針用了一半"
                                    "還不到，你瞎急什麼！\n" NOR);
 
         message_vision(HIC "\n何鐵手微微一笑，從$N" HIC "手中接過含沙射影，輕"
                        "輕撥弄幾下，又還給了$N" HIC "。\n\n" NOR, me);
 
-        command("say 行了，含沙射影裡的毒針已經補滿了。");
+        command("say 行了，含沙射影裏的毒針已經補滿了。");
         set("zhen", 10, ob);
         return 1;
 }

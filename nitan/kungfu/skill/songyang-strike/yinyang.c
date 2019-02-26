@@ -54,7 +54,7 @@ int perform(object me, object target)
                 return notify_fail("你的內力不夠。\n"); 
 
         skill = me->query_skill(bskill, 1);
-        msg = HIY"使出大嵩陽掌的絕技「陰陽掌」，雙掌遠遠一推一拉，$n頓覺一股\n"HIB"寒氣"HIY"襲上身來，登時機伶伶打了個冷戰。$n只一呆，一股"HIR"炙熱的掌風"HIY"跟著撲到，擊得$n幾乎窒息，身子晃了幾晃。\n";
+        msg = HIY"使出大嵩陽掌的絕技「陰陽掌」，雙掌遠遠一推一拉，$n頓覺一股\n"HIB"寒氣"HIY"襲上身來，登時機伶伶打了個冷戰。$n只一呆，一股"HIR"炙熱的掌風"HIY"跟着撲到，擊得$n幾乎窒息，身子晃了幾晃。\n";
 
         damage=query("jiali", me)*3+100;
 
@@ -70,7 +70,7 @@ int perform(object me, object target)
           } 
           else
           {
-                        msg += HIB"這一陰一陽兩股掌力打在$n身上，$n體內真氣自然而然生出相應之力，護住心脈內臟，不受損傷。但霎時間全身劇震，說不出的難受。\n"NOR;
+                        msg += HIB"這一陰一陽兩股掌力打在$n身上，$n體內真氣自然而然生出相應之力，護住心脈內臟，不受損傷。但霎時間全身劇震，説不出的難受。\n"NOR;
                         target->receive_damage("qi", (int)(damage/2),me);
                         target->receive_damage("jing", damage,me);
                         me->start_busy(2);

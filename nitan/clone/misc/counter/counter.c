@@ -1,7 +1,7 @@
 // counter.c
-//wsw于2004年2月20日
-//玩家櫃台
-//玩家有此櫃台後，可把物品擺在櫃台上出售，重啟後保留。
+//wsw於2004年2月20日
+//玩家櫃枱
+//玩家有此櫃枱後，可把物品擺在櫃枱上出售，重啟後保留。
 //如果是隨機屬性物品，物品->set("changed",1)
 
 #include "counter.h"   
@@ -9,7 +9,7 @@
 void create()
 {        
         seteuid(0);
-        set_name(HIC"櫃台"NOR,({"counter" }) );   
+        set_name(HIC"櫃枱"NOR,({"counter" }) );   
         set_weight(50000);   
         if( clonep() )   
                 set_default_object(__FILE__); 
@@ -23,7 +23,7 @@ void create()
                 set("no_get",1);   
                 set("no_give",1);   
                 set("no_drop",1);   
-                set("long",HIB"玩家之城的櫃台。\n"NOR);   
+                set("long",HIB"玩家之城的櫃枱。\n"NOR);   
         }   
         setup();     
 }   

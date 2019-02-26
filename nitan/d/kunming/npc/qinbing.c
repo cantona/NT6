@@ -5,7 +5,7 @@ void create()
         set_name("王府親兵", ({ "qin bing", "qin", "bing" }));
         set("age", 32);
         set("gender", "男性");
-        set("long", "一名盡忠職守的親兵，警惕的注視著過往的人。\n");
+        set("long", "一名盡忠職守的親兵，警惕的注視着過往的人。\n");
         set("attitude", "peaceful");
         set("str", 24);
         set("dex", 23);

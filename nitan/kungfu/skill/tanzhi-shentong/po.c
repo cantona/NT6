@@ -22,7 +22,7 @@ int perform(object me, object target)
 
         if( !objectp(weapon=query_temp("handing", me) )
             || query("skill_type", weapon) != "throwing" )
-                return notify_fail("你手中沒有拿著暗器，難以施展" + name() + "。\n");
+                return notify_fail("你手中沒有拿着暗器，難以施展" + name() + "。\n");
 
         if ((int)me->query_skill("tanzhi-shentong", 1) < 180)
                 return notify_fail("你彈指神通修為不夠，難以施展" + name() + "。\n");
@@ -43,7 +43,7 @@ int perform(object me, object target)
                 return notify_fail("你現在的真氣不夠，難以施展" + name() + "。\n");
 
         if (! living(target))
-                return notify_fail("對方都已經這樣了，用不著這麼費力吧？\n");
+                return notify_fail("對方都已經這樣了，用不着這麼費力吧？\n");
 
         addn("neili", -300, me);
         weapon->add_amount(-1);
@@ -73,7 +73,7 @@ int perform(object me, object target)
                 && ap / 3 + random(ap) + fmsk / 2 > dp) 
                 {
                         msg += HIW "$n" HIW "手腕一麻，手中" + weapon2->name() +
-                               HIW "不由脫手而出！\n" NOR;
+                               HIW "不由脱手而出！\n" NOR;
                         weapon2->move(environment(me));
                 }
 
@@ -85,7 +85,7 @@ int perform(object me, object target)
         } else
         {
                 me->start_busy(3);
-                msg += CYN "可是$p" CYN "早料得$P" CYN "有此一著，急"
+                msg += CYN "可是$p" CYN "早料得$P" CYN "有此一着，急"
                        "忙飛身躍起，躲閃開來。\n" NOR;
                 message_combatd(msg, me, target);
         }

@@ -31,7 +31,7 @@ int vote(object me, object victim)
 
   if( base_name(environment(victim)) == JAIL) 
   {
-          return notify_fail(victim->name()+"已經被關在刑部大牢裡了。\n");
+          return notify_fail(victim->name()+"已經被關在刑部大牢裏了。\n");
   }
 
   if (reason <= 0)

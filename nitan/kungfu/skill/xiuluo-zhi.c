@@ -57,14 +57,14 @@ mapping *action = ({
        "damage_type" : "刺傷"
 ]),
 ([
-       "action": "$N提起身形，一招「挖眼布施」,居高臨下，以訊雷不及掩耳的速度功向$n",
+       "action": "$N提起身形，一招「挖眼佈施」,居高臨下，以訊雷不及掩耳的速度功向$n",
        "force" : 180,
        "attack": 35,
        "parry" : 0,
        "dodge" : -15,
        "damage" : 100,
        "lvl"   : 100,
-       "skill_name" : "挖眼布施",
+       "skill_name" : "挖眼佈施",
        "damage_type" : "割傷"
 ]),
 ([

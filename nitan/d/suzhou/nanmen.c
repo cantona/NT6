@@ -9,7 +9,7 @@ void create()
         set("short", "吳門");
         set("long", @LONG
 這是蘇州府的南城門。進進出出的吳儂軟語，聽來特讓人舒服。門
-口的官兵開口喝罵，也是這種軟綿聲氣。門上貼著一份告示(gaoshi)。
+口的官兵開口喝罵，也是這種軟綿聲氣。門上貼着一份告示(gaoshi)。
 南北一條筆直的官道。
 LONG );
         set("outdoors", "suzhou");

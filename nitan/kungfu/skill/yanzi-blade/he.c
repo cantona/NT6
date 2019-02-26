@@ -55,11 +55,11 @@ int perform(object me, object target)
                 return notify_fail("你現在的真氣不夠，難以施展" + name() + "。\n");
 
         if (! living(target))
-                return notify_fail("對方都已經這樣了，用不著這麼費力吧？\n");
+                return notify_fail("對方都已經這樣了，用不着這麼費力吧？\n");
 
-        msg = HIW "$N" HIW "手持兩把刀，攻向$n " HIW "。可是在這一剎那間，兩把刀仿佛忽然變成了一把刀。\n"
+        msg = HIW "$N" HIW "手持兩把刀，攻向$n " HIW "。可是在這一剎那間，兩把刀彷彿忽然變成了一把刀。\n"
               HIW "雙刀合壁，力量竟增加了一倍，本該是一千斤的力量，竟增加為兩千斤。力量增加了一倍，速度當然也要增加一倍。\n"
-              HIW "$N" HIW "雙刀合壁，兩把刀明明已合而為一，卻又偏偏仿佛是從兩個不同的方向劈下來的。\n"
+              HIW "$N" HIW "雙刀合壁，兩把刀明明已合而為一，卻又偏偏彷彿是從兩個不同的方向劈下來的。\n"
               HIW "明明是砍向$n" HIW "的右邊，可是$n" HIW "往左閃避，還是閃不開。$n" HIW "往右閃，更閃不開。\n" NOR;
 
         ap = attack_power(me, "blade");

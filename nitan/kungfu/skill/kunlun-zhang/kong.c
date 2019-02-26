@@ -32,21 +32,21 @@ int perform(object me)
                 return notify_fail(target->name() + "目前正自顧不暇，放膽攻擊吧。\n");
 
         if (skill < 120)
-                return notify_fail("你昆侖掌法等級不夠，難以施展" KONG "。\n");
+                return notify_fail("你崑崙掌法等級不夠，難以施展" KONG "。\n");
  
         if (me->query_skill_mapped("strike") != "kunlun-zhang")
-                return notify_fail("你沒有激發昆侖掌法，難以施展" KONG "。\n");
+                return notify_fail("你沒有激發崑崙掌法，難以施展" KONG "。\n");
 
         if (me->query_skill_prepared("strike") != "kunlun-zhang")
-                return notify_fail("你沒有準備昆侖掌法，難以施展" KONG "。\n");
+                return notify_fail("你沒有準備崑崙掌法，難以施展" KONG "。\n");
 
         if( query("neili", me)<200 )
                 return notify_fail("你現在的真氣不夠，難以施展" KONG "。\n");
 
         if (! living(target))
-                return notify_fail("對方都已經這樣了，用不著這麼費力吧？\n");
+                return notify_fail("對方都已經這樣了，用不着這麼費力吧？\n");
 
-        msg = HIW "$N" HIW "陡然施出昆侖掌法絕技「" NOR + HIR "日入空山"
+        msg = HIW "$N" HIW "陡然施出崑崙掌法絕技「" NOR + HIR "日入空山"
               NOR + HIW "」，一掌猛然拍出，掌影重重疊疊，籠罩$n" HIW "四"
               "面八方。\n" NOR;
 

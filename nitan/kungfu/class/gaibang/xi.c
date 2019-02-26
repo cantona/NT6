@@ -147,7 +147,7 @@ mixed ask_skill1()
                 return "這招我不是已經教會你了嗎？";
 
         if( query("family/family_name", me) != query("family/family_name") )
-                return "閣下與在下素不相識，不知此話從何說起？";
+                return "閣下與在下素不相識，不知此話從何説起？";
 
         if (me->query_skill("fumo-zhang", 1) < 1)
                 return "你連伏魔杖法都沒學，何談絕招可言？";
@@ -164,11 +164,11 @@ mixed ask_skill1()
         if (me->query_skill("force") < 150)
                 return "你現在的內功修為不足，還是練高點再來吧。";
 
-        message_sort(HIY "\n$n" HIY "微笑著對$N" HIY "點了點頭，驀"
+        message_sort(HIY "\n$n" HIY "微笑着對$N" HIY "點了點頭，驀"
                      "地起身而立，陡然一聲暴喝，手中竹棒揮轉如輪，"
                      "殘影化出無數個大圈，瞬間已將$N" HIY "團團裹罩"
                      "其中，便似那風火輪一般，氣勢如虹，招式精奇，"
-                     "令人嘆為觀止。\n\n" NOR, me, this_object());
+                     "令人歎為觀止。\n\n" NOR, me, this_object());
 
         command("haha");
         command("say 你自己去領悟吧。");

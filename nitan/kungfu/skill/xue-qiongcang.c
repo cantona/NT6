@@ -1,4 +1,4 @@
-// huntian-baojian.c 渾天寶鑒 血穹蒼
+// huntian-baojian.c 渾天寶鑑 血穹蒼
 // modified by Vin 2000
 
 #include <ansi.h>
@@ -31,7 +31,7 @@ mapping *action = ({
     "damage_type": "震傷"
 ]),
 ([  "action" : "$N陡然使出" HIR "血穹蒼" NOR "之「" HIR "蒼穹無崖" NOR "」，雙掌"
-               "高舉過頂，一聲悶喝，千萬掌鋒澎湃湧出，舖天蓋地席卷$n",
+               "高舉過頂，一聲悶喝，千萬掌鋒澎湃湧出，鋪天蓋地席捲$n",
     "dodge"  : -61,
     "attack" : 103,
     "parry"  : -41,
@@ -42,7 +42,7 @@ mapping *action = ({
     "damage_type": "割傷"
 ]),
 ([  "action" : "$N施出一招" HIR "血穹蒼" NOR "之「" HIR "血陽撕天" NOR "」，凌空"
-               "飛躍，雙爪攜著天穹之勁幻出兩道血光襲出，直攻$n$l",
+               "飛躍，雙爪攜着天穹之勁幻出兩道血光襲出，直攻$n$l",
     "dodge"  : -72,
     "attack" : 139,
     "parry"  : -54,
@@ -72,13 +72,13 @@ int valid_enable(string usage) { return usage=="unarmed" ||  usage=="parry" ||  
 int valid_learn(object me)
 {
         if (me->query_skill("huntian-baojian", 1) > 0)
-                return notify_fail("你已經將渾天寶鑒神功合一，不必再單獨學習。\n");
+                return notify_fail("你已經將渾天寶鑑神功合一，不必再單獨學習。\n");
 
         if( query_temp("weapon", me) || query_temp("secondary_weapon", me) )
                 return notify_fail("修行" HIR "血穹蒼" NOR "心法必須空手。\n");
 
         if( query("con", me)<35 )
-                return notify_fail("你身子骨太弱，無法練習渾天寶鑒神功。\n");
+                return notify_fail("你身子骨太弱，無法練習渾天寶鑑神功。\n");
 
         if ((int)me->query_skill("unarmed", 1) < 240)
                 return notify_fail("你的拳腳火候無法學習" HIR "血穹蒼" NOR "心法。\n");
@@ -102,7 +102,7 @@ mapping query_action(object me, object weapon)
 
 int practice_skill(object me)
 {
-        return notify_fail( HIR "血穹蒼" NOR "心法只能通過閱讀" HIR "血穹蒼" NOR "天晶" NOR "來提高。\n");
+        return notify_fail( HIR "血穹蒼" NOR "心法只能通過閲讀" HIR "血穹蒼" NOR "天晶" NOR "來提高。\n");
 }
 
 

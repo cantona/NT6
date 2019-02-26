@@ -4,7 +4,7 @@ inherit SKILL;
 string *parry_msg = ({
         "卻見$n雙手輪轉，護住周身，頓時將$N的招數全全封鎖。\n",
         "但是$n身形急變，內勁迸發，將$N的攻勢阻隔開來。\n",
-        "但是$n身子微側，雙手同時一撥，已將$N的招數卸于無形。\n",
+        "但是$n身子微側，雙手同時一撥，已將$N的招數卸於無形。\n",
 });
 
 string query_parry_msg(object weapon)
@@ -53,7 +53,7 @@ mixed valid_damage(object ob, object me, int damage, object weapon)
         ap = ob->query_skill("force", 1) + mp;
         dp = me->query_skill("jinguan-yusuo", 1);
 
-        // 因為後期可以練習，所以保証出現卸招的幾率低
+        // 因為後期可以練習，所以保證出現卸招的機率低
         if (ap / 2 + random(ap) < dp)
         {
                 result = ([ "damage" : -damage ]);
@@ -74,7 +74,7 @@ mixed valid_damage(object ob, object me, int damage, object weapon)
                 default:
                         result += ([ "msg" : YEL "卻見$n" YEL "掌出如風，飄"
                                              "忽不定，輕描淡寫將$N" YEL "的"
-                                             "攻擊卸之于無形。\n" NOR ]);
+                                             "攻擊卸之於無形。\n" NOR ]);
                         break;
                 }
                 return result;
@@ -84,8 +84,8 @@ mixed valid_damage(object ob, object me, int damage, object weapon)
                 switch (random(3))
                 {
                 case 0:
-                        result = HIY "$n" HIY "雙手回圈，企圖鎖死$N" HIY "的"
-                                 "招數，可陡然間卻見$N" HIY "撤手回轉，再攻出"
+                        result = HIY "$n" HIY "雙手迴圈，企圖鎖死$N" HIY "的"
+                                 "招數，可陡然間卻見$N" HIY "撤手迴轉，再攻出"
                                  "一招。\n" NOR;
                         break;
 
@@ -107,7 +107,7 @@ mixed valid_damage(object ob, object me, int damage, object weapon)
 int practice_skill(object me)
 {
         if (me->query_skill("jinguan-yusuo", 1) < 200)
-                return notify_fail("你對金關玉鎖了解甚淺，不足以自行鍛煉。\n");
+                return notify_fail("你對金關玉鎖瞭解甚淺，不足以自行鍛鍊。\n");
 
         if( query("qi", me)<100 )
                 return notify_fail("你的體力太低了。\n");

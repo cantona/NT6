@@ -4,7 +4,7 @@ void create()
 {
         set("short",  "小西門" );
         set("long", @LONG
-這裡是昆明的西城門，俗稱小西門，來來往往各色人出出
+這裏是昆明的西城門，俗稱小西門，來來往往各色人出出
 進進，有遊客，有做買賣的，也不乏些江湖人士。
 LONG);
         set("outdoors", "kunming");

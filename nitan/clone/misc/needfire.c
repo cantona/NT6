@@ -45,7 +45,7 @@ void light()
 void destroy()
 {
         if (environment())
-                message("visoin", RED "火燄最後掙紮著跳動了幾下，"
+                message("visoin", RED "火焰最後掙扎着跳動了幾下，"
                         "漸漸的熄滅了，只留下了一點灰燼。\n" NOR,
                         environment());
         destruct(this_object());

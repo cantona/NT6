@@ -20,7 +20,7 @@ void create()
         set("age", 62);
         set("class", "taoist");
         set("nickname",HIY "老頑童" NOR);
-        set("long", "他看上去須眉皆白，一副得道模樣，然而眼神卻透露出一股狡黠。\n");
+        set("long", "他看上去鬚眉皆白，一副得道模樣，然而眼神卻透露出一股狡黠。\n");
         set("attitude", "peaceful");
         set("shen_type",1);
         set("str", 31);
@@ -81,7 +81,7 @@ void create()
                 "全真教" :  "我全真教是天下道家玄門正宗。\n",
                 "九陰真經" : "嘿嘿嘿嘿...",
                 "段皇爺" : "段... 段皇爺？人家是皇爺，我不認識！",
-                "瑛姑"   : "你，你說啥？",
+                "瑛姑"   : "你，你説啥？",
                 "劉瑛"   : "嗯...嗯...嗯？",
                 "空明若玄" : (: ask_skill1 :),
                 "空空如也" : (: ask_skill2 :),
@@ -128,7 +128,7 @@ int recognize_apprentice(object ob, string skill)
 {
         if( !query("can_learn/zhou", ob) )
         {
-                message_vision("$N眨眨眼睛，看著$n，嘻嘻笑個不停。\n",
+                message_vision("$N眨眨眼睛，看着$n，嘻嘻笑個不停。\n",
                                this_object(), ob);
                 return -1;
         }
@@ -136,7 +136,7 @@ int recognize_apprentice(object ob, string skill)
         if (skill != "kongming-quan" &&
             skill != "zuoyou-hubo")
         {
-                command("say 我...這裡可沒有什麼好教你的！");
+                command("say 我...這裏可沒有什麼好教你的！");
                 return -1;
         }
 
@@ -149,7 +149,7 @@ int accept_fight(object ob)
         if( query("combat_exp", ob)<500000 )
         {
                 message_vision("$N嘻嘻一笑，對$n道：“你還是"
-                               "把功夫練好了再說吧！”\n",
+                               "把功夫練好了再説吧！”\n",
                                this_object(), ob);
                 return -1;
         }
@@ -167,7 +167,7 @@ int accept_fight(object ob)
             query("neili") < 4000)
         {
                 message_vision("$N搖搖頭對$n道：“我現在"
-                               "太累了，等會兒再說吧！”\n",
+                               "太累了，等會兒再説吧！”\n",
                                this_object(), ob);
                 return -1;
         }
@@ -206,7 +206,7 @@ void lost()
 
         message_vision("$N哎呀一聲，抹了抹頭上的汗，喜道：“這位" +
                        RANK_D->query_respect(ob) + "，你的武功真厲害，\n"
-                       "這樣吧，我拜你為師好了，你教我點功夫，我這裡有一套"
+                       "這樣吧，我拜你為師好了，你教我點功夫，我這裏有一套"
                        "空明拳法和左右互博\n的小伎倆，你有興趣也可以學學，怎麼樣。”\n",
                        this_object(), ob);
         set("can_learn/zhou", 1, ob);
@@ -235,15 +235,15 @@ mixed ask_skill1()
                 return "你這人心地還不夠好，暫時我還不能教你。";
 
         if (me->query_skill("kongming-quan", 1) < 100)
-                return "你的空明拳還練得不夠好，下次再說吧。";
+                return "你的空明拳還練得不夠好，下次再説吧。";
 
         if( query("max_neili", me)<1000 )
                 return "你的內力差成這樣，真不知道你是怎麼練功的。";
 
         message_sort(HIY "\n$n" HIY "抓了抓頭，滿不情願的嘀咕了兩句，這"
-                     "才說道：“小子，我把口訣說給你聽，然後你就自己下去"
-                     "練，別再來煩我了。”說完便一把將$N" HIY "楸到身邊"
-                     "，在$N" HIY "耳旁唧唧咕咕說了半天。\n\n" NOR, me,
+                     "才説道：“小子，我把口訣説給你聽，然後你就自己下去"
+                     "練，別再來煩我了。”説完便一把將$N" HIY "楸到身邊"
+                     "，在$N" HIY "耳旁唧唧咕咕説了半天。\n\n" NOR, me,
                      this_object());
 
         command("bite");
@@ -282,14 +282,14 @@ mixed ask_skill2()
                 return "你這人心地還不夠好，暫時我還不能教你。";
 
         if (me->query_skill("kongming-quan", 1) < 150)
-                return "你的空明拳還練得不夠好，下次再說吧。";
+                return "你的空明拳還練得不夠好，下次再説吧。";
 
         if( query("max_neili", me)<2000 )
                 return "你的內力差成這樣，真不知道你是怎麼練功的。";
 
-        message_sort(HIY "\n$n" HIY "雙目一瞪，對$N" HIY "說道：“你怎麼"
-                     "這麼煩，沒看見我正在玩嗎？”接著$n" HIY "搖了搖頭，"
-                     "又道：“真是後悔當初收了你，看好了！”說話間右手一"
+        message_sort(HIY "\n$n" HIY "雙目一瞪，對$N" HIY "説道：“你怎麼"
+                     "這麼煩，沒看見我正在玩嗎？”接着$n" HIY "搖了搖頭，"
+                     "又道：“真是後悔當初收了你，看好了！”説話間右手一"
                      "陡，輕飄飄揮出一拳，拳勁虛實難測，周圍登時被激得塵"
                      "土飛揚。\n\n" NOR, me, this_object());
 

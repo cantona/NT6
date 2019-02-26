@@ -75,7 +75,7 @@ void create()
                 "張無忌"    :   "哼，臭小子屢次壞我大事！我非殺了他不可！\n",
                 "趙敏"      :   "那丫頭詭計多端，忘恩負義，枉我兄弟為她出生入死。\n",
                 "百損道人"  :   "他是我恩師，你問這幹什麼？\n",
-                "鶴筆翁"    :   "他是我師弟，我們從小跟著師父學藝，親同手足。\n",
+                "鶴筆翁"    :   "他是我師弟，我們從小跟着師父學藝，親同手足。\n",
         ]));
 
         set_temp("apply/attack", 120);
@@ -146,10 +146,10 @@ int accept_ask(object me, string topic)
                            "shen"    : -23000, ]));
                 break;
 
-        case "只手遮天" :
+        case "隻手遮天" :
                 return MASTER_D->teach_pfm(me, this_object(),
                         ([ "perform" : "can_perform/xuanming-zhang/zhe",
-                           "name"    : "只手遮天",
+                           "name"    : "隻手遮天",
                            "sk1"     : "xuanming-zhang",
                            "lv1"     : 150,
                            "sk2"     : "xuanming-shengong",

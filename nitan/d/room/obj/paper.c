@@ -39,13 +39,13 @@ int do_draw(string arg)
         int lvl;
 
         if (! arg)
-                return notify_fail("你想畫什麼？如果要畫這裡的風景，"
+                return notify_fail("你想畫什麼？如果要畫這裏的風景，"
                                    "可以draw here。\n");
 
         me = this_player();
         lvl = me->query_skill("drawing", 1);
         if (arg != "here" && ! objectp(ob = present(arg, environment(me))))
-                return notify_fail("這裡沒有你想要畫的東西。\n");
+                return notify_fail("這裏沒有你想要畫的東西。\n");
 
         if (query("draw"))
                 return notify_fail("這張紙已經畫了東西，如果想再畫需要"
@@ -56,7 +56,7 @@ int do_draw(string arg)
 
         if (arg == "here")
         {
-                tell_object(me, "你拿出一支筆，仔細的臨摹這裡的風景。\n");
+                tell_object(me, "你拿出一支筆，仔細的臨摹這裏的風景。\n");
                 if (lvl < 30)
                 {
                         tell_object(me, "可是你的畫畫技巧實在是太差了，"
@@ -75,7 +75,7 @@ int do_draw(string arg)
                         set("draw/info", base_name(environment(me)));
                 } else
                 {
-                        tell_object(me, "你隨意揮洒，風景登時飄然躍在紙"
+                        tell_object(me, "你隨意揮灑，風景登時飄然躍在紙"
                                         "上。\n");
                         set("draw/content", "上面畫的是" + environment(me)->short() +
                             "的風景，極為傳神，宛若親臨。\n");
@@ -117,7 +117,7 @@ int do_draw(string arg)
                         string msg;
                         object cloth;
 
-                        tell_object(me, "你隨意揮洒，" + ob->name() +
+                        tell_object(me, "你隨意揮灑，" + ob->name() +
                                         "登時飄然躍在紙上。\n");
                         msg = "攤看紙來，";
                         if (userp(ob))
@@ -126,13 +126,13 @@ int do_draw(string arg)
                                 if( query("gender", ob) == "女性" )
                                 {
                                         if (cloth)
-                                                msg += "只見上面一名女子身著" + cloth->name() + "，";
+                                                msg += "只見上面一名女子身着" + cloth->name() + "，";
                                         else
-                                                msg += "只見上面一名女子一絲不掛、未著寸縷，";
+                                                msg += "只見上面一名女子一絲不掛、未着寸縷，";
                                 } else
                                 {
                                         if (cloth)
-                                                msg += "只見上面一名男子身著" + cloth->name() + "，";
+                                                msg += "只見上面一名男子身着" + cloth->name() + "，";
                                         else
                                                 msg += "只見上面一名男子坦胸露乳，赤身裸體，";
                                 }
@@ -168,7 +168,7 @@ int do_draw(string arg)
                         string msg;
                         object cloth;
 
-                        tell_object(me, "你隨意揮洒，" + me->name() +
+                        tell_object(me, "你隨意揮灑，" + me->name() +
                                         "登時飄然躍在紙上。\n");
                         msg = "上面畫的是" + ob->name() +
                             "，逼真之極。\n";
@@ -190,15 +190,15 @@ int do_clear(string arg)
         object me = this_player();
 
         if (! arg || ! id(arg))
-                return notify_fail("你要擦幹凈什麼東西？\n");
+                return notify_fail("你要擦乾淨什麼東西？\n");
 
         if (! query("draw/type"))
         {
-                write ("上面幹幹凈凈的什麼也沒有，不用再擦了。\n");
+                write ("上面乾乾淨淨的什麼也沒有，不用再擦了。\n");
                 return 1;
         }
 
-        message_vision("$N輕輕的將紙插抹幹凈。\n", me);
+        message_vision("$N輕輕的將紙插抹乾淨。\n", me);
         delete("draw");
         delete("no_sell");
         delete("value");

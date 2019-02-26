@@ -1,7 +1,7 @@
 #include <ansi.h>
 #include <combat.h>
 
-#define SHAN "「" HIY "七弦黃龍閃" NOR "」"
+#define SHAN "「" HIY "七絃黃龍閃" NOR "」"
 
 inherit F_SSERVER;
 
@@ -32,13 +32,13 @@ int perform(object me, object target)
         skill = me->query_skill("qixian-wuxingjian", 1);
 
         if (skill < 160)
-                return notify_fail("你的七弦無形劍修為有限，難以施展" SHAN "。\n");
+                return notify_fail("你的七絃無形劍修為有限，難以施展" SHAN "。\n");
 
         if (weapon && me->query_skill_mapped("sword") != "qixian-wuxingjian")
-                return notify_fail("你沒有準備七弦無形劍，難以施展" SHAN "。\n");
+                return notify_fail("你沒有準備七絃無形劍，難以施展" SHAN "。\n");
 
         if (! weapon && me->query_skill_prepared("unarmed") != "qixian-wuxingjian")
-                return notify_fail("你沒有準備七弦無形劍，難以施展" SHAN "。\n");
+                return notify_fail("你沒有準備七絃無形劍，難以施展" SHAN "。\n");
 
         if (me->query_skill("force") < 250)
                 return notify_fail("你的內功修為不夠，難以施展" SHAN "。\n");
@@ -47,7 +47,7 @@ int perform(object me, object target)
                 return notify_fail("你現在的真氣不夠，難以施展" SHAN "。\n");
 
         if (! living(target))
-                return notify_fail("對方都已經這樣了，用不著這麼費力吧？\n");
+                return notify_fail("對方都已經這樣了，用不着這麼費力吧？\n");
 
         if (weapon)
         {
@@ -56,7 +56,7 @@ int perform(object me, object target)
                       "之響，一束無形劍氣澎湃射出，直貫$n" HIY "而去。\n" NOR;
         } else
         {
-                msg = HIY "只見$N" HIY "一聲暴喝，陡然間十指一並箕張，頓時琴音"
+                msg = HIY "只見$N" HIY "一聲暴喝，陡然間十指一併箕張，頓時琴音"
                       "錚錚大響，只聽“啵”的一聲破空之\n響，一束無形劍氣澎湃"
                       "射出，直貫$n" HIY "而去。\n" NOR;
         }
@@ -84,7 +84,7 @@ int perform(object me, object target)
         if (ap / 2 + random(ap) < dp)
         {
                 msg += CYN "可是$n" CYN "急忙凝神聚氣，努力使自己"
-                       "不受琴音的幹擾，終于化解了這一招。\n" NOR;
+                       "不受琴音的干擾，終於化解了這一招。\n" NOR;
 
                 me->start_busy(2);
                 addn("neili", -100, me);

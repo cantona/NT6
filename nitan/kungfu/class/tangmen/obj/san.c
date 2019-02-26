@@ -11,7 +11,7 @@ void create()
                 set_default_object(__FILE__);
         else
         {
-                set("long", "這是一枚四川唐門秘制的暗器散花天女，威力無比。\n");
+                set("long", "這是一枚四川唐門祕製的暗器散花天女，威力無比。\n");
                 set("unit", "枚");
                 set("value", 21);         
         }

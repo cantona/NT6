@@ -79,10 +79,10 @@ LONG);
         set("inquiry", ([
                 "王重陽"     :  "大膽後輩小子，也敢直呼重陽祖師之名？\n",
                 "重陽祖師"   :  "重陽是全真教的掌教，自號“活死人”。\n",
-                "古墓派"     :  "是啊，這裡就是我一手創下的古墓派\n",
+                "古墓派"     :  "是啊，這裏就是我一手創下的古墓派\n",
                 "玉蜂針"     :  "我這兒沒有，別問我。\n",
                 "玉女心經"   :  ( : ask_xinjing :),
-                "玉女心經秘籍" : (: ask_yunv :),
+                "玉女心經祕籍" : (: ask_yunv :),
         ]));
 
         set_temp("apply/attack", 150);
@@ -141,7 +141,7 @@ int accept_ask(object me, string topic)
         {
         case "歷練" :
         case "歷煉" :
-        case "鍛煉" :
+        case "鍛鍊" :
                 return QUEST_D->accept_ask(this_object(), me, topic);
                 break;
 
@@ -185,10 +185,10 @@ int accept_ask(object me, string topic)
                            "gongxian": 700, ]));
                 break;
 
-        case "開天辟地" :
+        case "開天闢地" :
                 return MASTER_D->teach_pfm(me, this_object(),
                         ([ "perform" : "can_perform/yinsuo-jinling/kai",
-                           "name"    : "開天辟地",
+                           "name"    : "開天闢地",
                            "sk1"     : "yinsuo-jinling",
                            "lv1"     : 130,
                            "force"   : 180,
@@ -222,7 +222,7 @@ int ask_xinjing()
         }
 
         command("nod");
-        msg = HIC"林朝英說道：“好吧，現在我就將玉女心經的口訣傳授給你，你可記好了！”";
+        msg = HIC"林朝英説道：“好吧，現在我就將玉女心經的口訣傳授給你，你可記好了！”";
         msg += HIY"\n林朝英在悄悄地將玉女心經的口訣傳授給$N。\n" NOR;
 
         message_vision(msg, me);

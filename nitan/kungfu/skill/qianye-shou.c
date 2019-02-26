@@ -14,13 +14,13 @@ mapping *action = ({
         "lvl" : 10,
         "skill_name" : "金玉瓦礫"
 ]),
-([        "action" : "$N一式"HIG"「人命呼吸」"NOR"，右手環攏成爪，一出手就向扣$n的嚥喉要害",
+([        "action" : "$N一式"HIG"「人命呼吸」"NOR"，右手環攏成爪，一出手就向扣$n的咽喉要害",
         "lvl" : 20,
         "skill_name" : "人命呼吸"
 ]),
-([        "action" : "$N左手虛招，右掌直立，一式"HIW"「鏡裡觀影」"NOR"，錯步飄出，疾拍$n的面門",
+([        "action" : "$N左手虛招，右掌直立，一式"HIW"「鏡裏觀影」"NOR"，錯步飄出，疾拍$n的面門",
         "lvl" : 30,
-        "skill_name" : "鏡裡觀影"
+        "skill_name" : "鏡裏觀影"
 ]),
 ([        "action" : "$N使一式"CYN"「水中捉月」"NOR"，左拳上格，右手探底突出，抓向$n的襠部",
         "lvl" : 38,
@@ -34,9 +34,9 @@ mapping *action = ({
         "lvl" : 51,
         "skill_name" : "水泡出沒"
 ]),
-([        "action" : "$N雙手抱拳，一式"RED"「夢裡明明」"NOR"，掌影翻飛，同時向$n施出九九八十一招",
+([        "action" : "$N雙手抱拳，一式"RED"「夢裏明明」"NOR"，掌影翻飛，同時向$n施出九九八十一招",
         "lvl" : 56,
-        "skill_name" : "夢裡明明"
+        "skill_name" : "夢裏明明"
 ]),
 ([        "action" : "$N一式"HIR"「覺後空空」"NOR"，拳招若隱若現，若有若無，緩緩地拍向$n的丹田",
         "lvl" : 60,

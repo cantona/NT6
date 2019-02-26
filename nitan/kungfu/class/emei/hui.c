@@ -13,7 +13,7 @@ void create()
 {
         set_name("靜慧師太", ({ "jinghui shitai","jinghui","shitai"}));
         set("long",
-           "她是峨嵋派四師姐，只見她兩眼爍爍有神，不停的掃視著四周。。\n");
+           "她是峨嵋派四師姐，只見她兩眼爍爍有神，不停的掃視着四周。。\n");
         set("gender", "女性");
         set("age", 45);
         set("attitude", "peaceful");
@@ -94,19 +94,19 @@ int do_nod(string arg)
         command("smile");
         command("say 我講個故事你聽：\n");
 
-        message("vision", "靜慧師太對著"+me->name()+"講了幾句話。\n", environment(me), ({me}) );
+        message("vision", "靜慧師太對着"+me->name()+"講了幾句話。\n", environment(me), ({me}) );
 
         switch(random(2)) {
                 case 0:
-                write("靜慧師太說：趙州從諗，乃是禪宗著名高師。
+                write("靜慧師太説：趙州從諗，乃是禪宗著名高師。
             有一次一個官員曾問他：和尚還入地獄嗎？　趙州從諗答：我馬上就入。
-            那官員頗有些幸災樂禍，說：大善知識為什麼還入地獄呢？
+            那官員頗有些幸災樂禍，説：大善知識為什麼還入地獄呢？
             趙州從諗是怎樣回答他的呢？\n\n");
 
                 if ((int)me->query_skill("mahayana", 1) > 60 +random(5)) {
-                        write("你忽然想起在一部經書裡讀到過這個故事。\n");
-                        write("你說：趙州從諗回答他道：我不入地獄，誰去教化你？\n\n");
-                        message("vision", me->name()+"想了一下，跟靜慧師太說了幾句話。\n",
+                        write("你忽然想起在一部經書裏讀到過這個故事。\n");
+                        write("你説：趙州從諗回答他道：我不入地獄，誰去教化你？\n\n");
+                        message("vision", me->name()+"想了一下，跟靜慧師太説了幾句話。\n",
                                 environment(me), ({me}) );
 
                         command("say 阿彌陀佛，善哉！善哉！好吧，我就收下你了。");
@@ -120,15 +120,15 @@ int do_nod(string arg)
                 break;
 
                 case 1:
-                write("靜慧師太說：趙州從諗，乃是禪宗著名高師。
-            有一次一個僧人問他：狗子還有佛性沒有？　趙州說：無。　
-            僧人說：上至諸佛，下至螻蟻，都有佛性，為什麼狗子卻沒有？
+                write("靜慧師太説：趙州從諗，乃是禪宗著名高師。
+            有一次一個僧人問他：狗子還有佛性沒有？　趙州説：無。　
+            僧人説：上至諸佛，下至螻蟻，都有佛性，為什麼狗子卻沒有？
             趙州從諗是怎樣回答他的呢？\n\n");
 
                 if ((int)me->query_skill("mahayana", 1) > 60 +random(5)) {
                         write("你靈機一動，想起這個典故。\n");
-                        write("你說：趙州從諗回答道：因為他有業識，即識神之業力在。\n\n");
-                        message("vision", me->name()+"想了一下，跟靜慧師太說了幾句話。\n",
+                        write("你説：趙州從諗回答道：因為他有業識，即識神之業力在。\n\n");
+                        message("vision", me->name()+"想了一下，跟靜慧師太説了幾句話。\n",
                                 environment(me), ({me}) );
 
                         command("say 阿彌陀佛，善哉！善哉！好吧，我就收下你了。");

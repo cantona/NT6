@@ -10,7 +10,7 @@ int exert(object me, object target)
                 return notify_fail("你還沒有領悟利用真氣激勵精神的訣竅。\n");
 
         if (me->is_fighting())
-                return notify_fail("現在你正在戰鬥中？還是等打完了再說吧！\n");
+                return notify_fail("現在你正在戰鬥中？還是等打完了再説吧！\n");
 
         force = me->query_skill_mapped("force");
         if (! stringp(force))
@@ -49,7 +49,7 @@ int inspiring(object me)
                 tell_object(me, "你一時難以定奪如何運用內力，只好先暫停療傷。\n");
                 set_temp("pending/inspiring", 0, me);
                 me->set_short_desc(0);
-                message_vision("$N嘆了口氣，搖搖晃晃的站了起來。\n", me);
+                message_vision("$N歎了口氣，搖搖晃晃的站了起來。\n", me);
                 return 0;
         }
 
@@ -61,7 +61,7 @@ int inspiring(object me)
                         tell_object(me, "你覺得真氣不濟，難以在經脈中繼續運轉振奮。\n");
                         set_temp("pending/healing", 0, me);
                         me->set_short_desc(0);
-                        message_vision("$N嘆了口氣，搖搖晃晃的站了起來。\n", me);
+                        message_vision("$N歎了口氣，搖搖晃晃的站了起來。\n", me);
                         return 0;
                 }
 
@@ -71,11 +71,11 @@ int inspiring(object me)
                 switch (random(10))
                 {
                 case 0:
-                        tell_object(me, "你運用" + to_chinese(force) + "沿著"
+                        tell_object(me, "你運用" + to_chinese(force) + "沿着"
                                     "諸大穴慢慢運轉，振奮精神。\n");
                         break;
                 case 1:
-                        tell_object(me, "你將內力納入丹田，再上行沖頂，透泥宮"
+                        tell_object(me, "你將內力納入丹田，再上行衝頂，透泥宮"
                                     "，頓覺精神爽快。\n");
                         break;
                 case 2:

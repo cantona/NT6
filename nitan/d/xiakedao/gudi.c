@@ -9,8 +9,8 @@ void create()
 {
         set("short", "谷底");
         set("long", @LONG
-這就是懸崖谷底了，三面是高聳的山峰，一面是大海，四周沒有
-出口，谷底的煙霧很大，走著走著，你隱隱約約見到前面盤膝坐著一
+這就是懸崖谷底了，三面是高聳的山峯，一面是大海，四周沒有
+出口，谷底的煙霧很大，走着走着，你隱隱約約見到前面盤膝坐着一
 位老者(Oldman)。
 LONG );
         set("outdoors", "xiakedao");
@@ -18,7 +18,7 @@ LONG );
                 "feng"     : "看什麼呀? 這麼高的山你是爬不上去的。\n",
                 "shanfeng" : "看什麼呀? 這麼高的山你是爬不上去的。\n",
                 "oldman"   : "你仔細一看，這位老者已經仙去很多年了，留下的只是他的遺骨(gu)，好可憐呀!\n",
-                "sea"      : "看什麼呀? 你難道想遊泳嗎? \n",
+                "sea"      : "看什麼呀? 你難道想游泳嗎? \n",
         ]));
         set("no_clean_up", 0);
         set("coor/x", -4000);
@@ -77,7 +77,7 @@ int do_swim(string arg)
                 write("你想幹什麼呀?\n");
                 return 1;
         }
-        message_vision("$N深吸了一口氣，跳進海裡，奮力的遊了起來。\n", me);
+        message_vision("$N深吸了一口氣，跳進海里，奮力的遊了起來。\n", me);
         if( random(query("kar", me))>9 )
         {
                 message_vision("海上的風浪太大，$N逐漸的失去了知覺。\n", me);
@@ -85,7 +85,7 @@ int do_swim(string arg)
                 me->receive_wound("qi", 50);
                 me->move(__DIR__"haitan");
                 tell_object(me,HIR"你醒來發現你渾身疼痛，還受了幾處傷。\n" NOR);
-                message("vision",HIR"只見"+query("name", me)+"被海浪沖到海灘上。\n"NOR,environment(me),me);
+                message("vision",HIR"只見"+query("name", me)+"被海浪衝到海灘上。\n"NOR,environment(me),me);
         }
         else
         {

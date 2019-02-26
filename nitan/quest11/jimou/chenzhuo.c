@@ -1,4 +1,4 @@
-// 沉著
+// 沉着
 #include <mudlib.h>
 #include <daemons.h>
 #include <ansi.h>

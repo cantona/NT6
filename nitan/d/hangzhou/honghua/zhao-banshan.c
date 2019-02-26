@@ -19,10 +19,10 @@ void create()
         set("gender", "男性");
         set("age", 48);
         set("long", "只見他一張胖胖的臉，笑起來給人一副很慈\n"
-                    "祥的感覺。他原是溫州王氏太極門掌門大弟\n"
+                    "祥的感覺。他原是温州王氏太極門掌門大弟\n"
                     "子。豪邁豁達，行俠江湖，一手暗器功夫和\n"
                     "太極劍少有能匹敵。屠龍幫風流雲散之後，\n"
-                    "投入紅花會。很得被紅花會老當家于萬亭賞\n"
+                    "投入紅花會。很得被紅花會老當家於萬亭賞\n"
                     "識。\n");
         set("attitude", "peaceful");
         set("shen_type", 1);
@@ -116,7 +116,7 @@ void attempt_apprentice(object me)
 
         if( query("combat_exp", me)<200000 )
         {
-                command("say 你的江湖經驗太淺，還是先跟著其它幾位當家練練吧。");
+                command("say 你的江湖經驗太淺，還是先跟着其它幾位當家練練吧。");
                 return;
         }
 
@@ -159,7 +159,7 @@ mixed ask_skill1()
                 return "你的回龍璧法還練得不到家，自己下去練練再來吧！";
 
         message_vision(HIY "$n" HIY "哈哈一笑，將$N" HIY "招至跟前，輕"
-                       "聲在耳旁秘密說了些什麼。隨後又伸出右\n手，十指"
+                       "聲在耳旁祕密説了些什麼。隨後又伸出右\n手，十指"
                        "箕張，一伸一縮，看樣子是一種很特別的暗器法門。\n"
                        NOR, me, this_object());
 
@@ -186,13 +186,13 @@ mixed ask_bi()
         me = this_player();
 
         if( query("family/family_name", me) != "紅花會" )
-                return "嘿，你是哪裡來的？我可不認識你。";
+                return "嘿，你是哪裏來的？我可不認識你。";
 
         if( query("family/master_id", me) != "chenjialuo" && 
            query("family/master_id", me) != "wuchendaozhang" && 
            query("family/master_id", me) != "zhaobanshan" )
                 return "這個…你師父"+query("family/master_name", me)+CYN
-                       "說了，不能太寵著你，過些日子吧。";
+                       "説了，不能太寵着你，過些日子吧。";
 
         if (me->query_skill("huilong-bifa", 1) < 150)
                 return "等你回龍璧法練成後再來找我，快下去練練。";
@@ -201,7 +201,7 @@ mixed ask_bi()
                 return "哎呀呀，我這倒不是吝嗇，可是你的德行也……";
 
         if (present("huilong bi", me))
-                return "我的回龍璧不正是你拿著在用嗎，為何還反倒問起我來了？";
+                return "我的回龍璧不正是你拿着在用嗎，為何還反倒問起我來了？";
 
         ob = present("huilong bi", this_object());
 

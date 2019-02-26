@@ -48,7 +48,7 @@ int main(object me)
 
 
          if (me->is_busy() || me->is_fighting())
-                 return notify_fail("等你忙完再說吧！\n");
+                 return notify_fail("等你忙完再説吧！\n");
 
          if( query_temp("reflect", me) )
                  return notify_fail("你正在冥思。\n");

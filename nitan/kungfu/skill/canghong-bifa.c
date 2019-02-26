@@ -31,7 +31,7 @@ mapping *action = ({
         "skill_name" : "傷字訣",
         "damage_type" : "刺傷"
 ]),
-([      "action":"$N飛身躍起，一式「卷」字訣，卷起漫天筆影，$w向$n電射而去",
+([      "action":"$N飛身躍起，一式「卷」字訣，捲起漫天筆影，$w向$n電射而去",
         "force" : 240,
         "attack": 60,
         "dodge" : 10,
@@ -61,7 +61,7 @@ mapping *action = ({
         "skill_name" : "悲字訣",
         "damage_type" : "刺傷"
 ]),
-([      "action":"$N側身斜刺一筆，一招「蒼」字訣卷帶著呼呼筆風，將$n包圍緊裹",
+([      "action":"$N側身斜刺一筆，一招「蒼」字訣卷帶着呼呼筆風，將$n包圍緊裹",
         "force" : 310,
         "attack": 75,
         "dodge" : 5,

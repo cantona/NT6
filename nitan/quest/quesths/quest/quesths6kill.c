@@ -91,7 +91,7 @@ mapping *quest = ({
         ]),
         ([
                 "id":          "yu yutong",
-                "name":        "余魚同",
+                "name":        "餘魚同",
                 "type":        "殺",
                 "bonus":       77,
                 "msg":        "",
@@ -219,7 +219,7 @@ mapping *quest = ({
         ]),
         ([
                 "id":          "fan yao",
-                "name":        "范遙",
+                "name":        "範遙",
                 "type":        "殺",
                 "bonus":       77,
                 "msg":        "",
@@ -299,7 +299,7 @@ mapping *quest = ({
         ]),
         ([
                 "id":          "zhang songxi",
-                "name":        "張鬆溪",
+                "name":        "張松溪",
                 "type":        "殺",
                 "bonus":       91,
                 "msg":        "",
@@ -355,7 +355,7 @@ mapping *quest = ({
         ]),
         ([
                 "id":          "wen cangsong",
-                "name":        "聞蒼鬆",
+                "name":        "聞蒼松",
                 "type":        "殺",
                 "bonus":       71,
                 "msg":        "",

@@ -9,7 +9,7 @@ void create()
         set("race", "昆蟲");
         set("subrace", "飛蟲");
         set("age", 5);
-        set("long", "這是一只蜜蜂，正忙著採蜜。\n");
+        set("long", "這是一隻蜜蜂，正忙着採蜜。\n");
         
         set("str", 40);
         set("dex", 50);
@@ -21,7 +21,7 @@ void create()
         set("chat_msg", ({
                 (: this_object(), "random_move" :),
                 "蜜蜂嗡嗡嗡飛過來，在你頭上轉了一圈，又飛走了。\n",
-                "蜜蜂飛到路邊的一朵鮮艷的野花上，忙忙碌碌地採著蜜。\n",
+                "蜜蜂飛到路邊的一朵鮮豔的野花上，忙忙碌碌地採着蜜。\n",
          }) );
 
         setup();

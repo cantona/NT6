@@ -11,6 +11,6 @@ void create()
             set("material", "stone");
             set("long", "一本醉仙樓菜譜\n");
           }
-    set("owner", "冼老板");
+    set("owner", "冼老闆");
     setup();
 }

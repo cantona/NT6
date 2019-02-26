@@ -12,7 +12,7 @@ int ask_poison();
 void create()
 {
         set_name("薛慕華", ({ "xue muhua", "xue", "muhua" }));
-        set("long", "他就是號稱閻王敵的神醫薛慕華，據說他\n"
+        set("long", "他就是號稱閻王敵的神醫薛慕華，據説他\n"
                     "精通醫理，可以起死回生。\n");
         set("gender", "男性");
         set("title", "逍遙派函谷八友");
@@ -88,7 +88,7 @@ void attempt_apprentice(object ob)
         if (ob->query_int() < 26)
         {
                 command("sigh");
-                command("say 雖然都說勤能補拙，可是……我看你還是走吧。");
+                command("say 雖然都説勤能補拙，可是……我看你還是走吧。");
                 return;
         }
 
@@ -127,7 +127,7 @@ int ask_me()
         }
         if( query("score", ob)<300 && query("combat_exp", ob)>100500 )
         {
-                command("say 你這點江湖閱歷，也想讓我為你療傷？");
+                command("say 你這點江湖閲歷，也想讓我為你療傷？");
                 return 1;
         }
         if( query("eff_qi", ob) == query("max_qi", ob )
@@ -139,7 +139,7 @@ int ask_me()
         }
         else
         {
-                message_vision("薛慕華喂$N服下一顆藥丸，然後盤膝坐下，雙掌貼著$N的背心。\n", ob);
+                message_vision("薛慕華喂$N服下一顆藥丸，然後盤膝坐下，雙掌貼着$N的背心。\n", ob);
                 if( query("combat_exp", ob)>100500 )
                 {
                         if( query("family/family_name", ob) != "逍遙派" )
@@ -200,7 +200,7 @@ int ask_heal()
         }
         if( query("score", ob)<300 && query("combat_exp", ob)>100000 )
         {
-                command("say 你這點江湖閱歷，也想讓我為你治病？");
+                command("say 你這點江湖閲歷，也想讓我為你治病？");
                 return 1;
         }
 
@@ -210,7 +210,7 @@ int ask_heal()
             ||ob->query_condition("ill_dongshang")
             ||ob->query_condition("ill_fashao"))
         {
-                message_vision("薛慕華輕扣$N脈門，略一思索，隨後轉身從藥簍裡取出幾味草藥，開始為$N熬藥。\n", ob);
+                message_vision("薛慕華輕釦$N脈門，略一思索，隨後轉身從藥簍裏取出幾味草藥，開始為$N熬藥。\n", ob);
                 if( query("combat_exp", ob)>100000 )
                 {
                         if( query("family/family_name", ob) != "逍遙派" )
@@ -271,7 +271,7 @@ int ask_poison()
         }
         if( query("score", ob)<500 && query("combat_exp", ob)>100000 )
         {
-                command("say 你這點江湖閱歷，也想讓我為你解毒？");
+                command("say 你這點江湖閲歷，也想讓我為你解毒？");
                 return 1;
         }
 
@@ -292,7 +292,7 @@ int ask_poison()
             || ob->query_condition("zhua_poison")
             ||ob->query_condition("ice_sting"))
         {
-                message_vision("薛慕華輕扣$N脈門，雙眉深鎖，隨後喂$N服下一顆藥丸，盤膝坐下，雙掌貼著$N的背心，開始為$N解毒。\n", ob);
+                message_vision("薛慕華輕釦$N脈門，雙眉深鎖，隨後喂$N服下一顆藥丸，盤膝坐下，雙掌貼着$N的背心，開始為$N解毒。\n", ob);
                 if( query("combat_exp", ob)>100000 )
                 {
                         if( query("family/family_name", ob) != "逍遙派" )

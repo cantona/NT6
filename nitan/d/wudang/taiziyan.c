@@ -7,7 +7,7 @@ void create()
 {
       set("short","太子巖");
         set("long", @LONG
-這裡是群山環抱中的太子巖，巖上有一塊三清石和一座太子亭。
+這裏是羣山環抱中的太子巖，巖上有一塊三清石和一座太子亭。
 LONG );
       set("exits",([ /* sizeof() == 1 */
            "northdown":__DIR__"shanlu4",

@@ -10,7 +10,7 @@ void create()
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("long", "一套青紗布的褂子，略小了點，好象是童裝。\n");
+                set("long", "一套青紗布的褂子，略小了點，好像是童裝。\n");
                 set("value", 60);
                 set("unit", "套");
                 set("material", "cloth");

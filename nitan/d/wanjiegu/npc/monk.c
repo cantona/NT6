@@ -76,6 +76,6 @@ int savemu()
             this_object()->kill_ob(obj);
             obj->kill_ob(this_object() );
         } else
-            command("say 木姑娘在裡面，快拿解藥給她。\n");
+            command("say 木姑娘在裏面，快拿解藥給她。\n");
         return 1;
 }

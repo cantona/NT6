@@ -16,7 +16,7 @@ LONG );
      本錢莊提供以下服務：
       存錢        deposit或者cun
       取錢        withdraw或者qu
-      錢幣兌換    convert或者duihuan
+      錢幣兑換    convert或者duihuan
       查帳        check或者chazhang
 TEXT
         ]) );

@@ -6,8 +6,8 @@ inherit BOSS;
 void sp_attack();
 void create()
 {
-        set_name(HIB "秦始皇僵屍" NOR, ({ "qin shihuang", "king", "qin" }));
-        set("long", HIB "這曾是一位統一六國的王者，現在只是僵屍一個。\n" NOR);
+        set_name(HIB "秦始皇殭屍" NOR, ({ "qin shihuang", "king", "qin" }));
+        set("long", HIB "這曾是一位統一六國的王者，現在只是殭屍一個。\n" NOR);
         set("title", HIY "皇帝" NOR);
         set("attitude", "aggressive");
         set("str", 120);
@@ -133,8 +133,8 @@ void sp_attack()
         enemy = enemies[random(sizeof(enemies))];
            obs=filter_array(all_inventory(environment(this_object())),(:query("id", $1) == "skeleton fighter":)); 
         if( sizeof(obs) < 7 && !random(5) ) {
-                msg = HIY"$N展開手中的黑色幡布，頓時陰風呼號，慘霧彌漫，召喚出數個骷髏武士，\n"
-                         "這些骷髏生前是秦皇身邊的護衛，死後仍然受他驅策，慘嘯著向$n撲來！\n"NOR;
+                msg = HIY"$N展開手中的黑色幡布，頓時陰風呼號，慘霧瀰漫，召喚出數個骷髏武士，\n"
+                         "這些骷髏生前是秦皇身邊的護衞，死後仍然受他驅策，慘嘯着向$n撲來！\n"NOR;
                 message_vision(append_color(msg, HIY),this_object(),enemy);
                 for( i=0;i<3;i++ ) {
                         ob = new(__DIR__"skeleton");
@@ -145,25 +145,25 @@ void sp_attack()
                 return;
         }
         if( !enemy->is_busy() && sizeof(ob) > 3 && !random(5) ) {
-                msg = HIY"$N祭起手中的五色石印，只見那石印飛到空中，射出一道蒙蒙青光，把$n籠罩在內。\n"
-                         "$n只覺得身體仿佛被一座大山壓住，四肢動彈不得，就連呼吸都十分艱難，只能眼\n"
-                         "睜睜地看著骷髏獰笑著一步步走近！\n" NOR;
+                msg = HIY"$N祭起手中的五色石印，只見那石印飛到空中，射出一道濛濛青光，把$n籠罩在內。\n"
+                         "$n只覺得身體彷彿被一座大山壓住，四肢動彈不得，就連呼吸都十分艱難，只能眼\n"
+                         "睜睜地看着骷髏獰笑着一步步走近！\n" NOR;
                 message_vision(append_color(msg, HIY),this_object(),enemy);
                 enemy->start_busy(5);
                 return;
         }
         /*
-        秦皇僵屍久攻不下，感到十分不耐煩，于是把河圖虎符都仍在一旁，從身邊的劍鞘中
-        拔出一把青光閃閃的寶劍，雖然在棺中歷經千年歲月，這把寶劍仍然光可鑒人，鋒利
-        無匹。燭光跳動間你赫然看見，劍鞘上刻著兩個篆字：鹿盧。
+        秦皇殭屍久攻不下，感到十分不耐煩，於是把河圖虎符都仍在一旁，從身邊的劍鞘中
+        拔出一把青光閃閃的寶劍，雖然在棺中歷經千年歲月，這把寶劍仍然光可鑑人，鋒利
+        無匹。燭光跳動間你赫然看見，劍鞘上刻着兩個篆字：鹿盧。
         */
         switch( random(5) ){
                 case 4: msg = HIY "$N"HIY"手一揮，一道金光化作一把利劍射從$n"HIY"穿體而過！\n"NOR; break;
                 case 3: msg = HIW "$N"HIW"張開大口，一道道冰刀迅猛而至，$n"HIW"只覺自己氣血凝滯，頓受重創。\n"NOR; break;
-                case 2: msg = HIR "$N"HIR"雙掌並力將一巨大的火球推向$n"HIR"，$n"HIR"被燒的體無完膚。\n"NOR; break;
+                case 2: msg = HIR "$N"HIR"雙掌併力將一巨大的火球推向$n"HIR"，$n"HIR"被燒的體無完膚。\n"NOR; break;
                 case 1: msg = MAG "$N"MAG"一聲嚎叫，口中吐出黃沙，狂風呼嘯，那尖利的嘯聲夾雜這黃沙如刀，如劍，越來越尖... 越來越急...\n"
                                   "$n"MAG"全身頓時千創百孔，鮮血直湧而出。\n"NOR;break;
-                default: msg= HIG "$N"HIG"腳一跺地，只見$n"HIG"腳邊的地上快速生長出樹籐緊緊包裹這$n"HIG"，$n"HIG"頓時呼吸不暢，頭暈眼花。\n"NOR; break;
+                default: msg= HIG "$N"HIG"腳一跺地，只見$n"HIG"腳邊的地上快速生長出樹藤緊緊包裹這$n"HIG"，$n"HIG"頓時呼吸不暢，頭暈眼花。\n"NOR; break;
         }
         message_vision(msg,this_object(),enemy);
         if( !random(20) ) enemy->unconcious(); 

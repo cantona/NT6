@@ -18,11 +18,11 @@ void create()
 {
         set_name("彭有敬", ({ "peng youjing", "peng", "youjing" }));
         set("long", @LONG
-彭有敬是丐幫中凈衣派的首領，衣著幹凈華麗
-不象叫化子。他臉上掛著慈祥的笑容，一雙眼
+彭有敬是丐幫中淨衣派的首領，衣着乾淨華麗
+不象叫化子。他臉上掛着慈祥的笑容，一雙眼
 睛有攝人心魄的力量。
 LONG);
-        set("nickname", WHT "掌砵龍頭" NOR);
+        set("nickname", WHT "掌缽龍頭" NOR);
         set("title", "丐幫九袋長老");
         set("gender", "男性");
         set("age", 48);
@@ -86,7 +86,7 @@ LONG);
         }));
 
         set("inquiry", ([
-                "群魔亂舞" : (: ask_skill1 :),
+                "羣魔亂舞" : (: ask_skill1 :),
                 "懾心術"   : (: ask_skill2 :),
         ]));
 
@@ -133,7 +133,7 @@ void attempt_apprentice(object ob)
                 return;
         }
         command("grin");
-        command("say 那你以後就跟著我吧。");
+        command("say 那你以後就跟着我吧。");
         command("recruit "+query("id", ob));
 
         if( query("class", ob) != "beggar" )
@@ -156,7 +156,7 @@ mixed ask_skill1()
                 return "這招我不是已經教會你了嗎？";
 
         if( query("family/family_name", me) != query("family/family_name") )
-                return "閣下與在下素不相識，不知此話從何說起？";
+                return "閣下與在下素不相識，不知此話從何説起？";
 
         if (me->query_skill("fengmo-zhang", 1) < 1)
                 return "你連瘋魔杖法都沒學，何談絕招可言？";
@@ -170,14 +170,14 @@ mixed ask_skill1()
         if (me->query_skill("force") < 150)
                 return "你現在的內功修為不足，還是練高點再來吧。";
 
-        message_sort(HIY "\n$n" HIY "點了點頭，對$N" HIY "說道：“給"
+        message_sort(HIY "\n$n" HIY "點了點頭，對$N" HIY "説道：“給"
                      "我看清楚了。”突然陡聽$n" HIY "一聲暴喝，手中鐵"
                      "杖一陣亂舞，竟似毫無章理，揮舞出數道杖影，氣勢"
                      "澎湃，力不可擋。正是瘋魔杖法的精要所在。\n\n" NOR,
                      me, this_object());
 
         command("say 明白了麼。");
-        tell_object(me, HIC "你學會了「群魔亂舞」。\n" NOR);
+        tell_object(me, HIC "你學會了「羣魔亂舞」。\n" NOR);
         if (me->can_improve_skill("staff"))
                 me->improve_skill("staff", 1500000);
         if (me->can_improve_skill("fengmo-zhang"))
@@ -199,7 +199,7 @@ mixed ask_skill2()
                 return "這招我不是已經教會你了嗎？";
 
         if( query("family/family_name", me) != query("family/family_name") )
-                return "閣下與在下素不相識，不知此話從何說起？";
+                return "閣下與在下素不相識，不知此話從何説起？";
 
         if( query("family/gongji", me)<400 )
                 return "你在我們丐幫內甚無作為，這招我暫時還不能傳你。";
@@ -210,7 +210,7 @@ mixed ask_skill2()
         if (me->query_skill("force") < 150)
                 return "你現在的內功修為不足，還是練高點再來吧。";
 
-        message_sort(HIY "\n$n" HIY "點了點頭，對$N" HIY "鬼祟的說道：“給"
+        message_sort(HIY "\n$n" HIY "點了點頭，對$N" HIY "鬼祟的説道：“給"
                      "我聽清楚了”。然後開始小聲地對$N講解攝心術的精要所在。\n\n" NOR,
                      me, this_object());
 
@@ -233,7 +233,7 @@ int accept_ask(object me, string topic)
         {
         case "歷練" :
         case "歷煉" :
-        case "鍛煉" :
+        case "鍛鍊" :
                 return QUEST_D->accept_ask(this_object(), me, topic);
                 break;
 

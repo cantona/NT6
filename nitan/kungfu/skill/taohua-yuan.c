@@ -11,7 +11,7 @@ int valid_enable(string usage) { return usage == "chuixiao-jifa"; }
 int valid_learn(object me)
 {
         if (me->query_skill("chuixiao-jifa", 1) < 50)
-                return notify_fail("你的吹蕭技法水平太差，還是先練好再說吧！\n");
+                return notify_fail("你的吹蕭技法水平太差，還是先練好再説吧！\n");
 
         if (me->query_skill("chuixiao-jifa", 1) < me->query_skill("taohua-yuan", 1))
                 return notify_fail("你的吹蕭技法水平有限，無法領會更精妙的桃花怨。\n");
@@ -31,7 +31,7 @@ int practice_skill(object me)
                 return notify_fail("你的精神不夠好，沒法練習了。\n");
 
         if( query("qi", me)<30 )
-                return notify_fail("你現在口幹舌燥，實在是太累了。\n");
+                return notify_fail("你現在口乾舌燥，實在是太累了。\n");
 
         me->receive_damage("jing", 25);
         me->receive_damage("qi", 10);

@@ -47,7 +47,7 @@ int perform(object me, object target)
                 return notify_fail("你沒有激發正兩儀劍法，難以施展" SUI "。\n");
 
         if (! living(target))
-                return notify_fail("對方都已經這樣了，用不著這麼費力吧？\n");
+                return notify_fail("對方都已經這樣了，用不着這麼費力吧？\n");
 
         msg = HIY "$N" HIY "仰天一聲慘笑，將" + weapon->name() + HIY
               "劍尖指向自己胸口，劍柄斜斜向外，連人帶劍電射而出，直"
@@ -83,7 +83,7 @@ int perform(object me, object target)
                    query("max_neili", me)>query("max_neili", target) )
                 {
                         msg += HIR "$n" HIR "眼見$N" HIR "來勢如此兇悍，這一招決計無"
-                               "法抵擋，駭怖達于極點，竟致僵立，束手待斃。\n只聽“噗"
+                               "法抵擋，駭怖達於極點，竟致僵立，束手待斃。\n只聽“噗"
                                "嗤”一聲，" + weapon->name() + HIR "已然透過$n" HIR
                                "前胸而入，噴出一股血雨。\n" NOR;
                         message_combatd(msg, me, target);
@@ -95,15 +95,15 @@ int perform(object me, object target)
                 if (ap / 2 + random(ap * 2 / 3) > dp)
                 {
                         msg += HIR "$n" HIR "眼見$N" HIR "來勢如此兇悍，只覺這一招決"
-                               "計無法抵擋，駭怖達于極點，慌亂之中一掌猛拍而出，擊\n"
-                               "向$N" HIR "面門，竟也是同歸于盡的招數。只聽“噗嗤”一"
+                               "計無法抵擋，駭怖達於極點，慌亂之中一掌猛拍而出，擊\n"
+                               "向$N" HIR "面門，竟也是同歸於盡的招數。只聽“噗嗤”一"
                                "聲，" + weapon->name() + HIR "已然透過$n" HIR "前胸，"
                                "噴出一股血雨。\n同時$n" HIR "那一掌也正好打在$N" HIR
                                "頭頂，聽得“喀嚓”一聲，$N" HIR "頭蓋骨完全碎裂，軟軟"
                                "的癱倒。\n" NOR;
                         message_combatd(msg, me, target);
                         me->set_temp("die_reason","使用一招玉碎昆岡與"+
-                                     target->name() + "同歸于盡了");
+                                     target->name() + "同歸於盡了");
                         target->set_temp("die_reason","被"+me->name()+"使一招玉"
                                          "碎昆岡，兩人一塊去見了黑白無常");
                         target->die(me);
@@ -131,8 +131,8 @@ int perform(object me, object target)
         {
                 me->start_busy(8);
                 msg += HIY "可是$n" HIY "早已料到$N"
-                       HIY "有此一著，身形急動，躲開"
-                       "了這一殺著。\n" NOR;
+                       HIY "有此一着，身形急動，躲開"
+                       "了這一殺着。\n" NOR;
         }
         message_combatd(msg, me, target);
         return 1;

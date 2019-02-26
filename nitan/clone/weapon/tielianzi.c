@@ -10,7 +10,7 @@ void create()
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("long", "精鐵打制的蓮子狀暗器。\n");
+                set("long", "精鐵打製的蓮子狀暗器。\n");
                 set("unit", "把");
                 set("value", 0);
                 set("base_unit", "粒");

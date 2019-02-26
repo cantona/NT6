@@ -5,15 +5,15 @@ string martialtype() { return "dodge"; }
 
 string *dodge_msg = ({
         "$n輕輕巧巧地往前一步，衣袂飄忽，一式"HIW"「輕雲蔽月」"NOR"身影恍惚如浮雲，\n$N只覺眼花繚亂。\n",
-        "$n袍袖輕拂，拔地而起，在空中轉了一圈，一式"HIW"「流風回雪」"NOR"有如漫天\n瓊花飛舞，$N目眩神迷，辨不清方向。\n",
-        "$n抬手掩面，嫣然一笑，左一步，右二步，斜刺裡又三步，一式"MAG"「羅襪生塵」"NOR"\n輕捷婀娜，只見地上纖塵紛揚，$N呆立半晌，渾忘了如何出招。\n",
+        "$n袍袖輕拂，拔地而起，在空中轉了一圈，一式"HIW"「流風迴雪」"NOR"有如漫天\n瓊花飛舞，$N目眩神迷，辨不清方向。\n",
+        "$n抬手掩面，嫣然一笑，左一步，右二步，斜刺裏又三步，一式"MAG"「羅襪生塵」"NOR"\n輕捷婀娜，只見地上纖塵紛揚，$N呆立半晌，渾忘了如何出招。\n",
         "$n待$N攻近面門，突然身形後仰，後退幾步，一式"MAG"「輕裾曳霧」"NOR"施施然\n躲過了$N這一招。\n",
         "$n一式"HIM"「驚鴻回眸」"NOR"，一個側身飄然掠起，轉眼已在$N身後。\n",
-        "$n舒展身體，抖擻精神，一式"HIY"「遊龍翩飛」"NOR"迅捷如電，側身讓過了$N這招。\n",
-        "$n回眸粲然，一式"HIG"「清流弄履」"NOR"有如流水濺濕文履，剎那間滑出丈余許，\n$N這一招撲了個空。\n",
-        "$n泰然自若，左足上挑，右足力蹬，一式"HIG"「神渚濯足」"NOR"縱躍于幾丈開外。\n",
+        "$n舒展身體，抖擻精神，一式"HIY"「游龍翩飛」"NOR"迅捷如電，側身讓過了$N這招。\n",
+        "$n回眸粲然，一式"HIG"「清流弄履」"NOR"有如流水濺濕文履，剎那間滑出丈餘許，\n$N這一招撲了個空。\n",
+        "$n泰然自若，左足上挑，右足力蹬，一式"HIG"「神渚濯足」"NOR"縱躍於幾丈開外。\n",
         "$n氣定神閒，籠袖不動，足下卻是風生水起，一式"HIB"「屏翳收風」"NOR"飄然避過\n$N這招。\n",
-        "$n身形將傾未傾，若往若還，一式"HIC"「川後靜波」"NOR"如微風輕掠水面，倏忽已\n不見人影。\n",
+        "$n身形將傾未傾，若往若還，一式"HIC"「川后靜波」"NOR"如微風輕掠水面，倏忽已\n不見人影。\n",
 });
 
 int valid_enable(string usage)
@@ -32,7 +32,7 @@ int valid_learn(object me)
                 return notify_fail("你先天身法太差，無法學習凌波微步。\n");
 
         if( query("max_neili", me)<3000+lvl*20 )
-                return notify_fail("你試著走了兩步，頓覺胸"
+                return notify_fail("你試着走了兩步，頓覺胸"
                                    "口煩惡之極，看來是內力不濟。\n");
         return 1;
 }
@@ -75,7 +75,7 @@ mixed valid_damage(object ob, object me, int damage, object weapon)
                         break;
                 case 1:
                         result += (["msg" : HIW "$n" HIW "往旁邊歪歪斜斜的邁出一步，卻恰"
-                                            "好令$N" HIW "的攻擊失之毫厘。\n" NOR]);
+                                            "好令$N" HIW "的攻擊失之毫釐。\n" NOR]);
                         break;
                 case 2:
                         result += (["msg" : HIW "$N" HIW "這一招來的好快，然後$n"
@@ -101,7 +101,7 @@ mixed valid_damage(object ob, object me, int damage, object weapon)
                         break;
                 case 1:
                         result = HIY "$n" HIY "往旁邊歪歪斜斜的邁出一步，然而$N"
-                                 HIY "錯步跟隨，方位毫厘不差。\n" NOR;
+                                 HIY "錯步跟隨，方位毫釐不差。\n" NOR;
                         break;
                 case 2:
                         result = HIY "$n" HIY "一閃，似乎不費半點力氣，卻將$N"
@@ -168,14 +168,14 @@ void skill_improved(object me)
         if( me->query_skill("lingboweibu",1) == 160 && query("lbwb", me) == 2
         &&  me->query_skill("literate", 1) > 120)
         {
-                tell_object(me, CYN "$N越走越快，內息隨著步法不住運轉，隱隱然自己的內力已經有了提高！\n" NOR);
+                tell_object(me, CYN "$N越走越快，內息隨着步法不住運轉，隱隱然自己的內力已經有了提高！\n" NOR);
                 addn("max_neili", random(30)+20, me);
                 addn("lbwb", 1, me);
         }
         if( me->query_skill("lingboweibu",1) == 200 && query("lbwb", me) == 3
         &&  me->query_skill("literate", 1) > 140)
         {
-                message_vision(RED "$N步法嫻熟，隨意踏出，腳步成圓，只感神清氣爽，全身精力彌漫！\n" NOR, me);
+                message_vision(RED "$N步法嫻熟，隨意踏出，腳步成圓，只感神清氣爽，全身精力瀰漫！\n" NOR, me);
                 addn("max_neili", random(30)+20, me);
                 addn("lbwb", 1, me);
         }
@@ -195,13 +195,13 @@ int help(object me)
         write(@HELP
 
     洛神賦：“凌波微步，羅襪生塵……轉盼流精，光潤玉顏。含
-辭未吐，氣若幽蘭。華容婀娜，令我忘餐。﹝禾農﹞纖得衷，修短
+辭未吐，氣若幽蘭。華容婀娜，令我忘餐。［禾農］纖得衷，修短
 合度，肩若削成，腰如紅素，延頸秀項，皓質呈露，芳澤無加，鉛
-華弗御。雲髻峨峨，修眉連娟。丹唇外朗，皓齒內鮮。明眸善睞，
-輔薜承權。環姿艷逸，儀靜體閒。柔情綽態，媚于語言……皎若太
+華弗御。雲髻峨峨，修眉連娟。丹脣外朗，皓齒內鮮。明眸善睞，
+輔薜承權。環姿豔逸，儀靜體閒。柔情綽態，媚於語言……皎若太
 陽升朝霞，灼若芙蓉出綠波”。
-    凌波微步原載于北冥神功帛卷卷末，按伏羲六十四卦而排，內
-勁行遍一周天，腳步亦踏遍六十四卦一周天。步法輕靈迅捷，有如
+    凌波微步原載於北冥神功帛卷卷末，按伏羲六十四卦而排，內
+勁行遍一週天，腳步亦踏遍六十四卦一週天。步法輕靈迅捷，有如
 凌波而行，羅襪生塵，巧妙已極。
     凌波微步乃逃命之妙法，非害人之本領也，練之有百利而無一
 害。

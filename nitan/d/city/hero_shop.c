@@ -8,8 +8,8 @@ void create()
 {
         set("short", "英雄商店");
         set("long", @LONG
-這裡是英雄商店，沒有店舖的玩家可以在這裡寄售物品，價格以
-王者金幣(NT)作為單位，店裡掛著一個醒目的牌子(paizi)。
+這裏是英雄商店，沒有店鋪的玩家可以在這裏寄售物品，價格以
+王者金幣(NT)作為單位，店裏掛着一個醒目的牌子(paizi)。
 LONG );
         set("region", "yangzhou");
         set("exits", ([

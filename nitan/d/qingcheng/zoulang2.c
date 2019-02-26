@@ -4,12 +4,12 @@
 inherit ROOM;
 void create()
 {
-        set("short", "鬆風東廊");
+        set("short", "松風東廊");
         set("long", @LONG
-這裡是鬆風觀中連貫操練場和東廂的走廊，鬆風觀高矗山頂，從走
+這裏是松風觀中連貫操練場和東廂的走廊，松風觀高矗山頂，從走
 廊望去，青山鳥寂，幽谷風生，漫天薄霧時時彌散在長林翠竹之間。自
-古號稱：“青城天下幽”，不妨在此體味。這裡的南邊是書房，北邊是
-兵器室，東邊一直關著門的是本派的庫房。
+古號稱：“青城天下幽”，不妨在此體味。這裏的南邊是書房，北邊是
+兵器室，東邊一直關着門的是本派的庫房。
 LONG );
         set("outdoors", "qingcheng");
         set("exits", ([
@@ -33,7 +33,7 @@ int valid_leave(object me, string dir)
 
         if((!myfam || myfam["family_name"] != "青城派") && dir != "west" &&
                 objectp(present("hong renxiong", environment(me))))
-        return notify_fail("洪人雄攔住你說：此處乃本派禁地，請止步。\n");
+        return notify_fail("洪人雄攔住你説：此處乃本派禁地，請止步。\n");
 
         if( me->query_skill("qingming-xuangong", 1) < 10 && dir != "west" &&
                 objectp(present("hong renxiong", environment(me))))
@@ -71,7 +71,7 @@ int do_open(string arg)
         object ob;
 
         if (query("exits/east"))
-                return notify_fail("庫門已經是開著了。\n");
+                return notify_fail("庫門已經是開着了。\n");
 
         if (!arg || (arg != "men" && arg != "east" && arg != "door"))
                 return notify_fail("你要開什麼？\n");

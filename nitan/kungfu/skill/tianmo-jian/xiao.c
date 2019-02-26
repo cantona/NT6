@@ -35,7 +35,7 @@ int perform(object me, object target)
             query("skill_type", weapon) != "sword" )
                 return notify_fail("你只有裝備劍才能施展「魔笑」！\n");
 
-        msg = HIR "$N" HIR "突然間身形連轉，口中發出陣陣凄厲的怪笑，$n"
+        msg = HIR "$N" HIR "突然間身形連轉，口中發出陣陣淒厲的怪笑，$n"
               HIR "只覺耳中有如針刺，不禁心亂神迷，攻勢頓緩。\n$N"
               HIR "驀的撲到$n" HIR "近前，手中的" + weapon->name() +
               HIR "一振，瞬間已向$p刺出數劍。\n" NOR;

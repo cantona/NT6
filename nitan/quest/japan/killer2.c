@@ -9,7 +9,7 @@ void create()
         int i;
         set_name("東瀛武官", ({ "dongying wuguan", "dongyin", "wuguan", "guan" }));
         set("gender", "男性");
-        set("long", "　　來自于東瀛的武官，帶領著一群武士燒殺劫略無惡不作。\n");
+        set("long", "　　來自於東瀛的武官，帶領着一羣武士燒殺劫略無惡不作。\n");
         set("age", random(38) + 10);
         set("str", 22 + random(10));
         set("int", 22 + random(10));
@@ -42,7 +42,7 @@ void init()
         ob = this_object();
 
         if( interactive(me=this_player()) && query_temp("japan/job", me)){
-                message_vision(HIR "$N對$n說道：「□□□，□□！」\n" NOR, ob, me);
+                message_vision(HIR "$N對$n説道：「グイス，プタ！」\n" NOR, ob, me);
                 ob->kill_ob(me);
                 me->fight_ob(ob);
                 me->start_busy(1);
@@ -136,7 +136,7 @@ void die()
                 else inv[i]->move(corpse);
         }
         if ( obj ) obj->move(corpse);
-        set("long", victim->long(1) + "然而，" + gender_pronoun(query("gender", victim)) + "已經死了，只剩下一具屍體靜靜地躺在這裡。\n", corpse);
+        set("long", victim->long(1) + "然而，" + gender_pronoun(query("gender", victim)) + "已經死了，只剩下一具屍體靜靜地躺在這裏。\n", corpse);
         corpse->move(environment(victim));
         destruct(victim);
 }

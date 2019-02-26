@@ -16,7 +16,7 @@ LONG );
 		"west"  :  __DIR__"shishan",
 	]));
         set("item_desc", ([
-                "dong" : "這是一個山洞，裡面不知道有些什麼古怪。\n",
+                "dong" : "這是一個山洞，裏面不知道有些什麼古怪。\n",
         ]));
 	setup();
 }
@@ -31,7 +31,7 @@ int do_enter(string arg)
         object me;
         me = this_player();
         if( arg=="dong") {
-            message("vision",me->name()+"一彎腰往洞裡走了進去。\n",environment(me), ({me}) );
+            message("vision",me->name()+"一彎腰往洞裏走了進去。\n",environment(me), ({me}) );
             me->move(__DIR__"xdong");
             message("vision",me->name()+"從洞外走了進來。\n",environment(me), ({me}) );
             return 1;

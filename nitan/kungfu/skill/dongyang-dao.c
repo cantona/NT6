@@ -12,7 +12,7 @@ mapping *action = ({
         "damage": 95,
         "damage_type" : "割傷"
 ]),
-([      "action": "$N突然橫切，劃向$n的$l",
+([      "action": "$N突然橫切，划向$n的$l",
         "force" : 80,
         "attack": 35,
         "dodge" : 33,

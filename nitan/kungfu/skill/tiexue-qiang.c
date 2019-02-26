@@ -7,17 +7,17 @@ string type() { return "martial"; }
 string martialtype() { return "skill"; }
 
 mapping *action = ({
-([        "action":"$N暴喝一聲，眶齜欲裂，手中$w狂野揮出，正是一式"RED"「血戰千裡」"NOR"",
+([        "action":"$N暴喝一聲，眶齜欲裂，手中$w狂野揮出，正是一式"RED"「血戰千里」"NOR"",
         "lvl"   : 0,
-        "skill_name" : "血戰千裡"
+        "skill_name" : "血戰千里"
 ]),
-([        "action":"$N腳下玄奧地連踏幾步，使出"CYN"「怒揮北鬥」"NOR"，手中$w橫掃$n的$l",
+([        "action":"$N腳下玄奧地連踏幾步，使出"CYN"「怒揮北斗」"NOR"，手中$w橫掃$n的$l",
         "lvl"   : 10,
-        "skill_name" : "怒揮北鬥"
+        "skill_name" : "怒揮北斗"
 ]),
-([        "action":"$N雙腿微蹲，使出一式"YEL"「幹戈刺天」"NOR"，手中$w遙搖指向$n的頭部",
+([        "action":"$N雙腿微蹲，使出一式"YEL"「干戈刺天」"NOR"，手中$w遙搖指向$n的頭部",
         "lvl"   : 20,
-        "skill_name" : "幹戈刺天"
+        "skill_name" : "干戈刺天"
 ]),
 ([        "action":"$N縱身躍起，一式"HIR"「屍橫遍野」"NOR"，手中$w帶起一團嘯聲揮向$n",
         "lvl"   : 30,
@@ -31,7 +31,7 @@ mapping *action = ({
         "lvl"   : 80,
         "skill_name" : "拔山舉鼎"
 ]),
-([        "action":"$N手中$w幻起一團白芒，一式"HIC"「破釜沉舟」"NOR"，脫手飛刺$n胸口",
+([        "action":"$N手中$w幻起一團白芒，一式"HIC"「破釜沉舟」"NOR"，脱手飛刺$n胸口",
         "lvl"   : 100,
         "skill_name" : "破釜沉舟"
 ]),

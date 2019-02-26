@@ -1,4 +1,4 @@
-// Npc: /d/kunlun/npc/weibi.c 衛璧
+// Npc: /d/kunlun/npc/weibi.c 衞璧
 // Last Modified by winder on Jun. 29 2001
 
 #include <ansi.h>
@@ -6,7 +6,7 @@ inherit NPC;
 
 void create()
 {
-        set_name("衛璧", ({ "wei bi", "wei"}));
+        set_name("衞璧", ({ "wei bi", "wei"}));
         set("long","他容貌英俊，長身玉立，雖在這等大寒天候，卻只\n穿了一件薄薄的淡黃色緞袍，顯是內功不弱。\n");
         set("gender", "男性");
         set("per", 30);

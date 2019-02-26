@@ -13,7 +13,7 @@ void create()
         set("gender", "男性");
         set("age", 60);
         set("long",
-              "這是個看起來五十來歲的漢子，面眉全面，臉色紅潤，著一襲黃袍，昂然挺立。\n"
+              "這是個看起來五十來歲的漢子，面眉全面，臉色紅潤，着一襲黃袍，昂然挺立。\n"
         );
 
         set_temp("apply/attack", 600);
@@ -84,17 +84,17 @@ void greeting(object ob)
                 return;
 
         if( query("combat_exp", ob)<10000 )
-              say("龍島主抬頭望了你一眼，說道：”經驗尚淺。”\n");
+              say("龍島主抬頭望了你一眼，説道：”經驗尚淺。”\n");
         else
         if( query("combat_exp", ob)<100000 )
-              say("龍島主瞟了你一眼，說道：“未到火候。”\n");
+              say("龍島主瞟了你一眼，説道：“未到火候。”\n");
 
         return;
 }
 
 int ask_zhou()
 {
-        message_sort("$N對$n說：“這是本島特有的東西，它主要"
+        message_sort("$N對$n説：“這是本島特有的東西，它主要"
                      "由一味“斷腸獨骨腐心草”構成，要開花後"
                      "效力方著，但這種草每十年才開一次花，所"
                      "以一般人很難得到的，小兄弟想要就要看你"
@@ -114,10 +114,10 @@ int ask_back()
                 return 1;
         }
 
-        message_vision("$N嘆了口氣，道：“既然這樣！還是讓李四送你出島吧！”\n",
+        message_vision("$N歎了口氣，道：“既然這樣！還是讓李四送你出島吧！”\n",
                        this_object());
         me->move("/d/xiakedao/haitan");
-        message("vision", "李四陪著" + me->name() + "走了過來，說了幾句話，陰著臉離去了。\n",
+        message("vision", "李四陪着" + me->name() + "走了過來，説了幾句話，陰着臉離去了。\n",
                 environment(me), me);
         tell_object(me, HIR "李四送你到海灘，冷冷道：“你這廢物！"
                         "好好練好功夫，別總麻煩我們家島主。”\n" NOR
@@ -142,7 +142,7 @@ int accept_object(object who, object ob)
         if (zhou)
                 zhou->move(who, 1);
 
-        message_vision("$N對$n道：“這臘八粥服後于我輩練武之士大有補益，閣下趁熱喝吧！”\n",
+        message_vision("$N對$n道：“這臘八粥服後於我輩練武之士大有補益，閣下趁熱喝吧！”\n",
                        this_object(), who);
         destruct(ob);
         return 1;
@@ -162,7 +162,7 @@ int accept_object(object who, object ob)
         {
                 if( random(query("kar", who)) <= 25 )
                 {
-                        message_vision("龍島主搖頭道：我看小兄弟今生于此無緣。\n",who);
+                        message_vision("龍島主搖頭道：我看小兄弟今生於此無緣。\n",who);
                         return 1;
                 }
                 else
@@ -196,7 +196,7 @@ int accept_object(object who, object ob)
         {
                 if( random(query("kar", who)) <= 25 )
                 {
-                        message_vision("龍島主搖頭道：我看小兄弟今生于此無緣。\n",who);
+                        message_vision("龍島主搖頭道：我看小兄弟今生於此無緣。\n",who);
                         return 1;
                 }
                 else

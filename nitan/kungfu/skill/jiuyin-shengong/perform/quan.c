@@ -38,7 +38,7 @@ int perform(object me, object target)
                 return notify_fail("你沒有準備使用九陰神功，無法施展" QUAN "。\n");
  
        if (! living(target))
-              return notify_fail("對方都已經這樣了，用不著這麼費力吧？\n");
+              return notify_fail("對方都已經這樣了，用不着這麼費力吧？\n");
 
         msg = HIC "$N" HIC "一聲冷哼，握拳擊出，招式雄渾，難擢其威！\n" NOR;
  
@@ -55,7 +55,7 @@ int perform(object me, object target)
                 addn("neili", -90, me);
                 damage = damage_power(me, "unarmed");
                 msg += COMBAT_D->do_damage(me, target, REMOTE_ATTACK, damage, 95 + random(5),
-                                           HIR "$n" HIR "連忙格擋，可是這一拳力道何等之重，哪裡抵"
+                                           HIR "$n" HIR "連忙格擋，可是這一拳力道何等之重，哪裏抵"
                                            "擋得住？只被打得吐血三尺，連退數步！\n" NOR);
         }
 

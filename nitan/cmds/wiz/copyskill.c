@@ -31,7 +31,7 @@ int main(object me, string arg)
                 tob = me;
 
         if (wiz_level(me) <= wiz_level(tob) && me != tob)
-                return notify_fail("你只能給權限比自己低的人復制武功。\n");
+                return notify_fail("你只能給權限比自己低的人複製武功。\n");
 
         if (arg == "me")
                 ob = me;
@@ -40,7 +40,7 @@ int main(object me, string arg)
                 return notify_fail("你眼前沒有 " + arg + " 這個人。\n");
 
         if (! is_root(me) && playerp(tob) && ! wizardp(tob))
-                return notify_fail("只有天神才能給普通玩家復制武功。\n");
+                return notify_fail("只有天神才能給普通玩家複製武功。\n");
 
         if (! me->is_admin())
         {
@@ -48,21 +48,21 @@ int main(object me, string arg)
                 {
                 case "me":
                         if (tob != me)
-                                return notify_fail("你只能給自己復制武功。\n");
+                                return notify_fail("你只能給自己複製武功。\n");
                 case "wizard":
                         if (wiz_level(tob) < 1)
-                                return notify_fail("你只能給巫師復制武功。\n");
+                                return notify_fail("你只能給巫師複製武功。\n");
 
                 case "all":
                         break;
 
                 default:
-                        return notify_fail("你不能復制武功。\n");
+                        return notify_fail("你不能複製武功。\n");
                 }
         }
 
         if (ob == tob)
-                return notify_fail("不需要復制吧。\n");
+                return notify_fail("不需要複製吧。\n");
 
         if (me != tob)
                 log_file("static/copyskill", sprintf("%s %s copy %s(%s)'s skill to %s(%s).\n",
@@ -71,7 +71,7 @@ int main(object me, string arg)
                                                      tob->name(1), query("id", tob)));
 
         copy_skill(tob, ob);
-        message_vision(HIM + me->name(1) + HIM "口中念念有詞，只見一道紅光籠罩了$N"
+        message_vision(HIM + me->name(1) + HIM "口中唸唸有詞，只見一道紅光籠罩了$N"
                        HIM "和$n" HIM "。\n" NOR, tob, ob);
         return 1;
 }
@@ -195,7 +195,7 @@ int help()
         write(@TEXT
 指令格式：copyskill <對象> [to <目的對象>]
 
-這個指令讓你復制對象的戰鬥經驗和所有的武功技能。
+這個指令讓你複製對象的戰鬥經驗和所有的武功技能。
 
 該命令在可以被授權使用的信息包括：me、wizard、all。
 TEXT );

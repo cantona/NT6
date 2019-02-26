@@ -76,7 +76,7 @@ mixed select_bunch(object me, string arg)
                 }
 
                 if (! stringp(fam))
-                        return notify_fail("沒有這個玩家，不能查閱相關的同盟。\n");
+                        return notify_fail("沒有這個玩家，不能查閲相關的同盟。\n");
         }
 
         if (! fam)
@@ -164,7 +164,7 @@ int do_area_kaifa(object me, string arg)
                 return notify_fail("你必須到實地才能進行地盤開發！\n");
 
         if (BUNCH_D->query_area_info(area, "bunch_name") != fam)
-                return notify_fail("這裡不屬于你的幫派地盤，你費什麼勁啊！\n");
+                return notify_fail("這裏不屬於你的幫派地盤，你費什麼勁啊！\n");
 
         if (BUNCH_D->query_area_info(area, "npc_id"))
                 npc = present(BUNCH_D->query_area_info(area, "npc_id"), environment(me));
@@ -271,7 +271,7 @@ int do_area_tisheng(object me, string arg)
                 return notify_fail("命令錯誤，請查看此命令。\n");
 
         if (amount < 0 || amount > 10)
-                return notify_fail("每次提升的值不能小于零也不能大于十點。\n");
+                return notify_fail("每次提升的值不能小於零也不能大於十點。\n");
 
         if (! ob = present(someone, environment(me)))
                 return notify_fail("這兒沒有這麼個人。\n");
@@ -283,10 +283,10 @@ int do_area_tisheng(object me, string arg)
                 return notify_fail("你只能提升本幫ＮＰＣ幫眾的技能。\n");
 
         if (! living(ob))
-                return notify_fail("你得先把"+query("name", ob)+"弄醒再說。\n");
+                return notify_fail("你得先把"+query("name", ob)+"弄醒再説。\n");
 
         if (ob->is_fighting() || ob->is_busy())
-                return notify_fail(query("name", ob)+"正忙著呢。\n");
+                return notify_fail(query("name", ob)+"正忙着呢。\n");
 
         if( bunch != query("bunch/bunch_name", ob) )
                 return notify_fail("你只能提升本幫會內的ＮＰＣ幫眾。\n");

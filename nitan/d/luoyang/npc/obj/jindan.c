@@ -16,9 +16,9 @@ void create()
                 set("base_weight", 300);
                 set("base_value", 0);
                 set("material", "gold");
-                set("long", HIW"黃澄澄的金膽，比之鐵膽固重了一倍有余，而且大顯華貴之氣。\n"NOR);
+                set("long", HIW"黃澄澄的金膽，比之鐵膽固重了一倍有餘，而且大顯華貴之氣。\n"NOR);
                 set("wield_msg", HIC"$N迅速地從暗器袋中掏出一些金膽，捏在手中就待發出！\n"NOR);
-                set("unwield_msg",HIC"$N將手裡剩下的金膽盡數放回暗器袋中。\n"NOR);
+                set("unwield_msg",HIC"$N將手裏剩下的金膽盡數放回暗器袋中。\n"NOR);
         }
         set_amount(50);
         init_throwing(25);

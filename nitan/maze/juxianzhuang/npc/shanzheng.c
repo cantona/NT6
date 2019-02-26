@@ -10,7 +10,7 @@ void create()
 
         set("gender", "男性");
         set("age", 62);
-        set("long", "他體態魁梧，相貌威嚴，長的一副童顏鶴發。\n");
+        set("long", "他體態魁梧，相貌威嚴，長的一副童顏鶴髮。\n");
         set("attitude", "peaceful");
 
         set("nickname", HIR "鐵面判官" NOR);

@@ -13,7 +13,7 @@ void create()
        set_default_object(__FILE__);
     else {
         set("unit", "件");
-                set("long", "這是件素雅潔凈的白色道袍。\n");
+                set("long", "這是件素雅潔淨的白色道袍。\n");
         set("material", "cloth");
         set("armor_prop/armor", 3);
     }

@@ -24,7 +24,7 @@ LONG );
         ]));
 
         set("outdoors", "xiyu");
-        set("no_map", "這裡的地形令人迷惑，無法繪制地圖。\n");
+        set("no_map", "這裏的地形令人迷惑，無法繪製地圖。\n");
 
         setup();
 }
@@ -53,7 +53,7 @@ int do_drink(string arg)
                         environment(me), ({me}) );
                 write("你喝了一口井中從天山上流淌下來的雪水，簡直比蜜還甜。\n");
         } else
-                write("逮著不要錢的水就這麼喝，至于嗎？\n");
+                write("逮着不要錢的水就這麼喝，至於嗎？\n");
 
         return 1;
 }

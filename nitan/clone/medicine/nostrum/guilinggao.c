@@ -31,7 +31,7 @@ int do_eat(string arg)
         if (!present(this_object(), this_player()))
                 return notify_fail("你要吃什麼？\n");
         if( me->is_busy() )
-                return notify_fail("別急，慢慢吃，小心別噎著了。\n");
+                return notify_fail("別急，慢慢吃，小心別噎着了。\n");
 
         me->start_busy(2);
         if ( jingli_limit <= taoism_limit && jingli_limit < 500 )
@@ -40,7 +40,7 @@ int do_eat(string arg)
                 addn("max_jingli", 20, me);
                 addn("jingli", 20, me);
         }
-        else write("你吃下了一塊龜苓膏，但是好象沒什麼用。\n");
+        else write("你吃下了一塊龜苓膏，但是好像沒什麼用。\n");
 
         destruct(this_object());
         return 1;

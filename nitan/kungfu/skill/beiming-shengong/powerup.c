@@ -23,7 +23,7 @@ int exert(object me, object target)
         me->receive_damage("qi", 0);
 
         message_combatd(MAG "$N" MAG "長長吸了口氣，神凝丹田，息遊紫府，身若"
-                        "凌虛而超華岳，氣如沖霄而撼北辰。\n" NOR, me);
+                        "凌虛而超華嶽，氣如沖霄而撼北辰。\n" NOR, me);
 
         addn_temp("apply/attack", skill/5, me);
         addn_temp("apply/defense", skill/5, me);

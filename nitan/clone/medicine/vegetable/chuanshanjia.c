@@ -17,7 +17,7 @@ void create()
         set("value", 1000);
         set("nostrum", 1);
         set("unit", "只");
-        set("long", "這是一只烤制過的穿山甲，看來可以入藥。\n");
+        set("long", "這是一隻烤制過的穿山甲，看來可以入藥。\n");
         set("pour_type", "1");
         setup();
 }
@@ -30,7 +30,7 @@ int do_eat(string arg)
         if(!present(this_object(), me))
                 return notify_fail("你要吃什麼？\n");
         if( me->is_busy() )
-                return notify_fail("別急，慢慢吃，小心別噎著了。\n");
+                return notify_fail("別急，慢慢吃，小心別噎着了。\n");
 
         write("穿山甲吃不得。\n");
         return 1;

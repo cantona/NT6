@@ -17,8 +17,8 @@ void create()
         set_skill("literate", 60);
         set("chat_chance",3);
         set("chat_msg",({
-                CYN"遊客大叫道：倒霉！真倒霉！\n"NOR,
-                CYN"遊客看著你惡狠狠的說道：你！小心點！這事沒這麼容易了結！\n"NOR,
+                CYN"遊客大叫道：倒黴！真倒黴！\n"NOR,
+                CYN"遊客看着你惡狠狠的説道：你！小心點！這事沒這麼容易了結！\n"NOR,
         }) );
         setup();
         carry_object("/clone/cloth/cloth")->wear();

@@ -21,7 +21,7 @@ int perform(object me, object target)
                 return notify_fail("你的真氣不夠！\n");
 
        if (! living(target))
-              return notify_fail("對方都已經這樣了，用不著這麼費力吧？\n");
+              return notify_fail("對方都已經這樣了，用不着這麼費力吧？\n");
 
         msg = HIR "$N" HIR "進步欺前，隨即一指無聲無息的向$n" HIR "的要害刺出！\n";
 
@@ -45,7 +45,7 @@ int perform(object me, object target)
         } else
         {
                 msg += HIM "$n" HIM "大吃一驚，連忙退後，居然"
-                      "僥幸躲開著這一招！\n" NOR;
+                      "僥倖躲開着這一招！\n" NOR;
         }
 
         message_combatd(msg, me, target);

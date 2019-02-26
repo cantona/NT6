@@ -9,7 +9,7 @@ void create()
         set("age", random(10) + 60);
         set("str", 25);
         set("dex", 16);
-        set("long", "一個烏夷族的祭司，身披烏夷大麾，戴著頗多金銀飾物，顯示其地位不凡。\n");
+        set("long", "一個烏夷族的祭司，身披烏夷大麾，戴着頗多金銀飾物，顯示其地位不凡。\n");
         set("combat_exp", 3000);
         set("shen_type", 1);
         set("attitude", "peaceful");

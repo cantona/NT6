@@ -13,7 +13,7 @@ void create()
 {
         set_name("康廣陵", ({ "kang guangling", "kang", "guangling" }));
         set("long", "只見他高額凸顙，容貌奇古，笑眯眯的臉\n"
-                    "色極為和謨，手中抱著一具瑤琴。\n");
+                    "色極為和謨，手中抱着一具瑤琴。\n");
         set("gender", "男性");
         set("title", "逍遙派函谷八友");
         set("nickname", YEL "琴顛" NOR);
@@ -101,7 +101,7 @@ void attempt_apprentice(object ob)
                 return;
         }
 
-        command("say 好吧，我收你為徒，多學些東西，別整天就想著練武。");
+        command("say 好吧，我收你為徒，多學些東西，別整天就想着練武。");
         command("recruit "+query("id", ob));
 }
 
@@ -115,7 +115,7 @@ mixed ask_me()
 
         addn("book_count", -1);
         command("say 好吧，那我就把它送給你了。\n");
-        message_vision(HIY "康廣陵微笑著從懷中拿出了一本書，交了給$N\n\n" NOR, ob);
+        message_vision(HIY "康廣陵微笑着從懷中拿出了一本書，交了給$N\n\n" NOR, ob);
         me = new("/clone/book/hand_book");
         me->move(ob);
         return "這本棋譜可千萬不要隨便給別人。\n";

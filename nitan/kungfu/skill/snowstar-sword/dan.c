@@ -66,7 +66,7 @@ int perform(object me, object target)
                         set("weapon_prop", 0, weapon2);
                         target->reset_action();
                 }
-                msg += HIR "$n" HIR "面對這大巧若拙的一劍，頓時呆立當場，眼睜睜看著" + weapon->name() + HIR "從自己的胸口穿過，目光中透出一種不可思議的神色。\n" NOR;
+                msg += HIR "$n" HIR "面對這大巧若拙的一劍，頓時呆立當場，眼睜睜看着" + weapon->name() + HIR "從自己的胸口穿過，目光中透出一種不可思議的神色。\n" NOR;
                 
                 target->receive_damage("qi",damage,me);
                 target->receive_wound("qi",damage/2 + random(damage/2),me);
@@ -78,7 +78,7 @@ int perform(object me, object target)
                
         } else 
         {
-                msg += HIR "$n" HIR "急忙左右跳躍，終于脫出了劍光的包圍。\n" NOR;
+                msg += HIR "$n" HIR "急忙左右跳躍，終於脱出了劍光的包圍。\n" NOR;
 
                 addn("neili", -100, me);
                 me->start_busy(3);

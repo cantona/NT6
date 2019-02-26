@@ -37,7 +37,7 @@ mapping *action = ({
         "skill_name"  : "泉鳴芙蓉"
 ]),
 ([
-        "action" : "$N手中$w倏地刺出，劍勢穿插迂回，如夢如幻，正是一招「花香四溢」，向\n"
+        "action" : "$N手中$w倏地刺出，劍勢穿插迂迴，如夢如幻，正是一招「花香四溢」，向\n"
                    "$n$l刺去",
         "force"  : 120, 
         "dodge"  : 50,
@@ -162,7 +162,7 @@ void skill_improved(object me)
         if( lvl > 100 &&
             !query("can_perform/furong-jian/luan", me) ) 
         {
-                tell_object(me, WHT "你通曉了芙蓉劍法「" HIC "亂劍覆花" WHT "」的奧秘。\n" NOR);    
+                tell_object(me, WHT "你通曉了芙蓉劍法「" HIC "亂劍覆花" WHT "」的奧祕。\n" NOR);    
                 set("can_perform/furong-jian/luan", 1, me);
                 me->improve_skill("martial-cognize", 1500000);  
                 me->improve_skill("martial-cognize", 1500000); 

@@ -8,7 +8,7 @@ void create()
                 set_default_object(__FILE__);
         else {
                 set("unit", "本");
-                set("long", "這便是四大奇書之一的長生決，傳說可以修煉至高無上的武學。\n");
+                set("long", "這便是四大奇書之一的長生決，傳説可以修煉至高無上的武學。\n");
                 set("value", 300);
                 set("material", "paper");
                 set("skill", ([

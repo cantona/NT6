@@ -7,7 +7,7 @@ void create()
 {
 	set("short", "賭場");
         set("long", @LONG
-這裡有四條走廊通向不同的房間。四周是拱豬小屋。
+這裏有四條走廊通向不同的房間。四周是拱豬小屋。
 LONG );
 	set("exits", ([
 		"east"  : __DIR__ "eproom",

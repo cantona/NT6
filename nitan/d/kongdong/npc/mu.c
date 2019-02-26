@@ -75,7 +75,7 @@ void attempt_apprentice(object ob)
          //Hydra 19980507 for 出師
         if( ob->query("hydra/出師/崆峒派") )
         {
-            message_vision(CYN"$N對$n說道：“你既已離開師門，怎麼又回來"
+            message_vision(CYN"$N對$n説道：“你既已離開師門，怎麼又回來"
 "了呢？”\n"NOR,this_object(),ob);
             return 0;
         }
@@ -115,7 +115,7 @@ string leave_kongdong( object me )
     if( me->query("family/family_name") != "崆峒派" )
     {
         command( "? "+me->query("id") );
-        return "你好象不是我崆峒派門人啊？";
+        return "你好像不是我崆峒派門人啊？";
     }
     if( me->query_temp("出師比劃"))
     {
@@ -135,11 +135,11 @@ string leave_kongdong( object me )
     {
         if( me->query("age") < 20 )
         {
-            message_vision(CYN"$N對$n說道：“你年紀輕輕就出去，人家會以為我崆峒派"
+            message_vision(CYN"$N對$n説道：“你年紀輕輕就出去，人家會以為我崆峒派"
 "無人的。”\n"NOR,this,me);
             if(me->query("class_score/崆峒派") > -50 )
                 me -> add( "class_score/崆峒派",-10);            
-            return "過兩年再說吧。\n";
+            return "過兩年再説吧。\n";
         }
         else
         {
@@ -149,7 +149,7 @@ string leave_kongdong( object me )
     }
     else
     {
-        return "以你現在的實力，難于在江湖上獨擋一面，還是跟為師再學學吧！";
+        return "以你現在的實力，難於在江湖上獨擋一面，還是跟為師再學學吧！";
     }
     return "";
 }        
@@ -187,8 +187,8 @@ int lose_bihua( object ppl)
     if( ppl->query_temp("出師比劃"))
     {
         command( "chat* haha" );
-        command( "chat 我崆峒終于也出了一個人才。");
-        command( "say 真是青出于藍勝于藍啊，你的功夫已經比為師的高了。");
+        command( "chat 我崆峒終於也出了一個人才。");
+        command( "say 真是青出於藍勝於藍啊，你的功夫已經比為師的高了。");
         command( "say 如此，你就另謀高就去吧。");  
         ppl -> delete_temp("出師比劃");    
         ppl -> set("title","普通百姓");
@@ -196,7 +196,7 @@ int lose_bihua( object ppl)
         ppl -> delete("class");
         ppl -> set("hydra/出師/崆峒派",1);
              LOG_D->do_log(ppl,sprintf("你獲得了木靈子的允許，從崆峒出師。\n"));
-        log_file("chushi",sprintf("%s(%s)于%s順利從崆峒出師。\n",ppl->query("name"),
+        log_file("chushi",sprintf("%s(%s)於%s順利從崆峒出師。\n",ppl->query("name"),
             getuid(ppl),ctime(time()) ) );
         message_vision("$N恭恭敬敬地跪了下來，向$n磕了四個響頭。\n",ppl,this);
     }

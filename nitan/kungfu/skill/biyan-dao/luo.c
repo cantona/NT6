@@ -37,10 +37,10 @@ int perform(object me, object target)
                 return notify_fail(HIC"你現在真氣不夠，難以施展" LUO "。\n");
 
         if (! living(target))
-                return notify_fail("對方都已經這樣了，用不著這麼費力吧？\n");
+                return notify_fail("對方都已經這樣了，用不着這麼費力吧？\n");
 
         msg = HIW "$N" HIW "大喝一聲，手中" + weapon->name() + HIW
-              "一振，便如飛瀑一般向$n" HIW "席卷而去！\n" NOR;
+              "一振，便如飛瀑一般向$n" HIW "席捲而去！\n" NOR;
         message_combatd(msg, me, target);
 
         for (i = 0; i < 5; i++)

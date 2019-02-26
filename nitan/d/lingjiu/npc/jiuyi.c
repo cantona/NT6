@@ -12,7 +12,7 @@ void create()
             "他輕功極高，擅使雷公擋，憑一手雷公擋功夫，成為江湖的一流高手。\n");
         set("title", "西夏一品堂高手");
         set("gender", "男性");
-        set("nickname", HIR "雷動于九天之上" NOR);
+        set("nickname", HIR "雷動於九天之上" NOR);
         set("age", 40);
         set("shen_type", -1);
         set("attitude", "peaceful");

@@ -6,7 +6,7 @@ void create()
 {
         set_name("巡邏親兵",({"qin bing","bing"}));
         set("gender","男性");
-        set("long","在營帳中巡邏的親衛兵!\n");
+        set("long","在營帳中巡邏的親衞兵!\n");
         set("combat_exp", 80000);
         
         set("age",18+random(30));

@@ -22,7 +22,7 @@ string help = @HELP
 顯示檔案中有相符樣式的的行, <樣式> 可為正規表示法(regular expression)
 欲知正規表示法的用法可 help regexp() 以取得更進一步資訊。
 
-詳關參數說明如下：
+詳關參數説明如下：
 
 -l      顯示行號
 -r      顯示不符合 <樣式> 行
@@ -94,7 +94,7 @@ private void command(object me, string arg)
         if( !sizeof(files) )
                 return tell(me, "fgrep: 在 " + path + " 目錄中沒有任何檔案。\n", CMDMSG);
 
-        tell(me, sprintf(HIY"搜尋樣式"HIW" %s "NOR + HIY"于 %s ... \n\n"NOR, arg, path), CMDMSG);
+        tell(me, sprintf(HIY"搜尋樣式"HIW" %s "NOR + HIY"於 %s ... \n\n"NOR, arg, path), CMDMSG);
         
         match_files = grep(path, files, arg, flag);
         foreach(string file, mixed match in match_files)

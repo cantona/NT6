@@ -8,7 +8,7 @@ void create()
 {
         set_name(HIW "雪中蓮" NOR, ({"xuezhong lian", "lian"}));
         set("unit", "朵");
-        set("long","這是一朵生長在雪山上的雪蓮，它潔白的花瓣上附著幾顆晶瑩的露珠，正散發著淡淡的幽香。\n");
+        set("long","這是一朵生長在雪山上的雪蓮，它潔白的花瓣上附着幾顆晶瑩的露珠，正散發着淡淡的幽香。\n");
         set("pour_type", "1");
         setup();
 }
@@ -25,7 +25,7 @@ int do_eat(string arg)
         if(!present(this_object(), me))
                 return notify_fail("你要吃什麼？\n");
         if( me->is_busy() )
-                return notify_fail("別急，慢慢吃，小心別噎著了。\n");
+                return notify_fail("別急，慢慢吃，小心別噎着了。\n");
 
         if( neili_limit>force_limit)addn("max_neili", -10, me);
         addn("max_neili", random(10), me);
@@ -44,6 +44,6 @@ void init()
 }
 void destlian()
 {
-        message_vision("$N慢慢幹枯萎縮，一會就溶化消失掉了。\n", this_object());
+        message_vision("$N慢慢乾枯萎縮，一會就溶化消失掉了。\n", this_object());
         destruct(this_object());
 }

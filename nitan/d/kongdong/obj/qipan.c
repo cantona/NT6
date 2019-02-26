@@ -4,7 +4,7 @@ inherit ITEM;
 void create()
 {
         set_name("石刻棋盤", ({ "qi pan", "pan" }));
-        set("long","這是一塊刻在巨石上的棋盤，上面放著一些棋子。\n");
+        set("long","這是一塊刻在巨石上的棋盤，上面放着一些棋子。\n");
         set_weight(1000);
         if (clonep())
                 set_default_object(__FILE__);

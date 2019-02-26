@@ -26,22 +26,22 @@ int perform(object me, object target)
                 return notify_fail("你的內功的修為不夠，無法施展" + name() + "。\n");
 
         if (skill = me->query_skill("huoyan-dao", 1) < 150)
-                return notify_fail("你的火燄刀修為不夠，無法施展" + name() + "。\n");
+                return notify_fail("你的火焰刀修為不夠，無法施展" + name() + "。\n");
 
         if( query("neili", me)<600 || query("max_neili", me)<2000 )
                 return notify_fail("你的真氣不夠，無法施展" + name() + "。\n");
 
         if (me->query_skill_mapped("strike") != "huoyan-dao")
-                return notify_fail("你沒有激發火燄刀，無法施展" + name() + "。\n");
+                return notify_fail("你沒有激發火焰刀，無法施展" + name() + "。\n");
 
         if (me->query_skill_prepared("strike") != "huoyan-dao")
-                return notify_fail("你沒有準備火燄刀，無法施展" + name() + "。\n");
+                return notify_fail("你沒有準備火焰刀，無法施展" + name() + "。\n");
 
         if (me->query_skill_prepared("hand") == "dashou-yin")
-                return notify_fail("施展" + name() + "時火燄刀不宜和密宗大手印互背！\n");
+                return notify_fail("施展" + name() + "時火焰刀不宜和密宗大手印互背！\n");
 
         if (! living(target))
-               return notify_fail("對方都已經這樣了，用不著這麼費力吧？\n");
+               return notify_fail("對方都已經這樣了，用不着這麼費力吧？\n");
 
         msg = HIR "$N" HIR "一聲怒嚎，狂催真氣注入單掌，掌緣頓時騰起一道烈炎，接二連三朝$n"
               HIR "劈去。\n" NOR;

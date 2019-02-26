@@ -1,7 +1,7 @@
 backend.c
 
- efun query_load_av() 褫枑鼎笢恅訧蹋珆尨
-求求求求求求求求求求求求求求求求求求求求求求求求求求求求求求求求求求求求求求求
+讓 efun query_load_av() 可提供中文資料顯示
+―――――――――――――――――――――――――――――――――――――――
 static double load_av = 0.0;
 static int load_now = 0;
 
@@ -59,10 +59,10 @@ char *query_load_av()
 {
     static char buff[100];
 
-    sprintf(buff, "%.2f(%d)硌鍔狟湛/鏃ㄛ%.2f(%d)晤祒俴杅/鏃", load_av, load_now, compile_av, compile_now);
+    sprintf(buff, "%.2f(%d)指令下達/秒，%.2f(%d)編譯行數/秒", load_av, load_now, compile_av, compile_now);
     return (buff);
 }                               /* query_load_av() */
-求求求求求求求求求求求求求求求求求求求求求求求求求求求求求求求求求求求求求求求
+―――――――――――――――――――――――――――――――――――――――
 
-By Clode@RW on 2002/6/3 04:01狟敁
+By Clode@RW on 2002/6/3 04:01下午
 

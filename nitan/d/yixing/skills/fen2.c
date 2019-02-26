@@ -27,13 +27,13 @@ int perform(object me, object target)
 */
         
         if( (int)me->query_skill("huoyan-dao", 1) < 120 )
-                return notify_fail("你的火燄刀修為不夠。\n");
+                return notify_fail("你的火焰刀修為不夠。\n");
         if ( me->query_skill_mapped("force") != "xiaowuxiang" &&
                 me->query_skill_mapped("force") != "longxiang-banruo")
                 return notify_fail("你所用內功不對！\n");
         if( query("neili", me) <= 500 )
                 return notify_fail("你的內力不夠！\n");
-        message_vision(HIR "$N長吸一口氣，身上衣衫緩緩漲起，兩掌變得通紅，射出一股灼人熱氣。$n的身影被籠罩在一團火燄之中。\n\n" NOR, me,target);
+        message_vision(HIR "$N長吸一口氣，身上衣衫緩緩漲起，兩掌變得通紅，射出一股灼人熱氣。$n的身影被籠罩在一團火焰之中。\n\n" NOR, me,target);
 //        tell_object(target, BLU "你只覺一股熱浪撲面，霍的胸口一陣劇痛。\n"NOR);
         addn("neili", -100, me);
 

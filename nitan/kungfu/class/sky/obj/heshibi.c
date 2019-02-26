@@ -16,9 +16,9 @@ void create()
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("long", HIW "一塊晶瑩剔透的寶玉，其中一角鑲嵌著一塊黃\n"
-                                "金，寶玉上雕刻著盤龍，這便是傳說可以號令\n"
-                                "天下的何氏壁。相傳寶玉中蘊藏著奇異的能源，\n"
+                set("long", HIW "一塊晶瑩剔透的寶玉，其中一角鑲嵌着一塊黃\n"
+                                "金，寶玉上雕刻着盤龍，這便是傳説可以號令\n"
+                                "天下的何氏壁。相傳寶玉中藴藏着奇異的能源，\n"
                                 "武功高強者可以吸取(xi)其中的能量來增強功\n"
                                 "力。\n" NOR);
                 set("value", 3000000);
@@ -41,10 +41,10 @@ int do_eat(string arg)
                 return notify_fail("你要幹什麼？\n");
 
         if( me->is_busy() )
-                return notify_fail("你現在正忙著呢。\n");
+                return notify_fail("你現在正忙着呢。\n");
 
         if( me->query("power/何氏壁") )
-                return notify_fail("你已經吸取過一次了，恐怕不能再次經受能量的沖擊。\n");
+                return notify_fail("你已經吸取過一次了，恐怕不能再次經受能量的衝擊。\n");
 
         message_vision (HIW "\n$N" HIW "將雙手緊緊貼住何氏壁一側，"
                         "只見一股白色光芒從寶玉中澎湃而出，奪目"
@@ -72,7 +72,7 @@ void xiqu2(string arg)
         object me = this_player();
 
         message_vision(HIW "\n幾許後，又一股光芒從$N" HIW "的身"
-                       "體裡流出，進入何氏壁……\n" NOR, me);
+                       "體裏流出，進入何氏壁……\n" NOR, me);
         remove_call_out("xiqu3");
         call_out("xiqu3", 4, me);
 }
@@ -118,7 +118,7 @@ void xiqu6(string arg)
 
         message_vision(HIY "\n只見$N" HIY "和何氏壁同時發出無"
                         "比耀眼的光華。剎那間空氣熾熱，幾欲"
-                        "沸騰，仿佛連天地都快被燒焦一般……\n" NOR, me);
+                        "沸騰，彷彿連天地都快被燒焦一般……\n" NOR, me);
         remove_call_out("xiqu7");
         call_out("xiqu7", 2, me);
 }
@@ -151,7 +151,7 @@ void xiqu7(string arg)
                 me->set("potential", me->query_potential_limit());
 
                 tell_object(me, HIY "你感到何氏壁中的能量源源不絕的流"
-                                "入了你的丹田，全身暖洋洋的，說不出的"
+                                "入了你的丹田，全身暖洋洋的，説不出的"
                                 "舒服受用。\n" NOR); 
 
                 me->improve_skill("force", 20000);
@@ -179,7 +179,7 @@ void xiqu7(string arg)
         } else
         {
                 message_vision(HIR "\n只聽$N" HIR "一聲慘叫，經受不住能"
-                               "量的沖擊，頓時全身筋脈盡斷，鮮血狂噴，身"
+                               "量的衝擊，頓時全身筋脈盡斷，鮮血狂噴，身"
                                "體被炸了個粉碎。\n" NOR, me);
                 me->set_temp("die_reason", "妄圖吸取何氏壁，結果全身筋脈盡斷而亡。");
                 me->die(); 

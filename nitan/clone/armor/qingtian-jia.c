@@ -11,8 +11,8 @@ void create()
                 set("long", HIW "這是一張普普通通的護甲，護甲周圍散發出淡淡的霧氣將其周身籠罩"
                         "什麼也看不清。\n" HIC
                     HIC "有效招架修正：+ 100        有效輕功修正：+ 100\n" NOR
-                    HIC "抗毒效果修正：+ 30%        防御效果等級：  300\n" NOR
-                    HIC "抗毒回避修正：+ 30%\n" NOR);
+                    HIC "抗毒效果修正：+ 30%        防禦效果等級：  300\n" NOR
+                    HIC "抗毒迴避修正：+ 30%\n" NOR);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
@@ -28,7 +28,7 @@ void create()
                 set("material", "tian jing");
                 set("wear_msg", HIC "青天甲破空而響，陣陣霧氣隨之而出，卻早已與$N" HIC "合而為一。[2;37;0m\n" NOR);
                 set("remove_msg", HIC "$N" HIC "仰天長嘯，青天甲叮呤做響，剎那間周圍霧氣漸散，但青天甲早已"
-                                                        "消失于天際。\n" NOR);
+                                                        "消失於天際。\n" NOR);
 
         setup();
 }
@@ -64,8 +64,8 @@ mixed valid_damage(object ob, object me, int damage, object weapon)
                 switch (random(4))
                 {
                 case 0:
-                        result += (["msg" : HIR "$n" HIR "輕輕一嘆，身上" HIC "青天甲" HIR "叮呤"
-                                            "做響，$N" HIR "只覺心頭一陣凄苦。這一招居然打不下去。\n" NOR]);
+                        result += (["msg" : HIR "$n" HIR "輕輕一歎，身上" HIC "青天甲" HIR "叮呤"
+                                            "做響，$N" HIR "只覺心頭一陣悽苦。這一招居然打不下去。\n" NOR]);
                         break;
                 case 1:
                         result += (["msg" : HIM "只見$n" HIM "身上" HIC "青天甲" HIM "一顫，有"

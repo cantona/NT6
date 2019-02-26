@@ -20,7 +20,7 @@ void create()
         //每次吃的msg,沒有也可以的。
         set("eat_msg", "$N拿起$n，大大的咬了一口。\n"); 
         //最後一口的msg，沒有亦可
-        set("end_msg", "$N把剩下的$n吃了個幹凈。\n");  
+        set("end_msg", "$N把剩下的$n吃了個乾淨。\n");  
         //吃飽了的msg, 沒有亦可，但不能有代詞。
         set("over_msg", "吃這麼多？小心撐破肚皮！！！！\n"); 
         set("gifts", ([

@@ -10,7 +10,7 @@ mapping *action = ({
         "lvl" : 0,
         "damage_type" : "割傷"
 ]),
-([      "action" : "$N左掌虛托右肘，手中$w筆直劃向$n的$l",
+([      "action" : "$N左掌虛託右肘，手中$w筆直划向$n的$l",
         "force" : 217,
         "dodge" : 9,
         "parry" : 7,
@@ -73,7 +73,7 @@ mapping *action = ({
         "lvl" : 140,
         "damage_type" : "割傷"
 ]),
-([      "action" : "$N手中$w的刀光仿佛化成一簇簇烈燄，將$n團團圍繞",
+([      "action" : "$N手中$w的刀光彷彿化成一簇簇烈焰，將$n團團圍繞",
         "force" : 323,
         "dodge" : 29,
         "parry" : 23,
@@ -99,7 +99,7 @@ int valid_enable(string usage) { return (usage == "blade") || (usage == "parry")
 int valid_learn(object me)
 {
         if( query("character", me) != "心狠手辣" )
-                return notify_fail("你覺得這霸刀刀法實在過于狠毒，自己委實學不會。\n");
+                return notify_fail("你覺得這霸刀刀法實在過於狠毒，自己委實學不會。\n");
 
         if( query("max_neili", me)<2000 )
                 return notify_fail("你的內力不足，沒有辦法練霸刀刀法，多練些內力再來吧。\n");

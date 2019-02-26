@@ -6,13 +6,13 @@ inherit RINGS;
 
 void create()
 {
-        set_name(HIY "天降﹒醒世環" NOR, ({ "xingshi huan2" }));
+        set_name(HIY "天降·醒世環" NOR, ({ "xingshi huan2" }));
         set_weight(30);
         if (clonep())
                 set_default_object(__FILE__);
         else {
                 set("unit", "枚");
-                set("long", HIY "傳說中狐仙所佩帶的指環。\n" NOR);
+                set("long", HIY "傳説中狐仙所佩帶的指環。\n" NOR);
                 set("value", 200000);
                 set("material", "gold");
                 set("armor_prop/con", 30);

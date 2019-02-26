@@ -141,8 +141,8 @@ int accept_ask(object me, string topic)
                                        "欲聾，悲痛欲絕，頓感萬念俱灰"
                                        "，猛然間雙掌瘋狂般的拍向長空"
                                        "，看似雜亂無章，但內中卻隱藏"
-                                       "無限殺機。你看得心中不由地讚"
-                                       "嘆。",
+                                       "無限殺機。你看得心中不由地贊"
+                                       "歎。",
                            "sk1"     : "jueqing-zhang",
                            "lv1"     : 100,
                            "dodge"   : 80,
@@ -177,8 +177,8 @@ int accept_ask(object me, string topic)
                         ([ "perform" : "can_perform/guhong-zhang/qian",
                            "name"    : "千山孤鴻影",
                            "msg1"    : this_object()->name() + "略微點"
-                                       "了點頭，說道：“你可看清楚了。"
-                                       "”說罷雙掌陡然連續拍出，剛中帶"
+                                       "了點頭，説道：“你可看清楚了。"
+                                       "”説罷雙掌陡然連續拍出，剛中帶"
                                        "柔，雙掌帶風，已你籠罩在掌風之"
                                        "中，你呆立當場卻也不敢妄動。",
                            "sk1"     : "guhong-zhang",

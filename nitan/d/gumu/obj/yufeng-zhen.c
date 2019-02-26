@@ -9,7 +9,7 @@ void create()
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("long", HIC "這是一根細長的銀針，散發著淡淡的清香。\n" NOR);
+                set("long", HIC "這是一根細長的銀針，散發着淡淡的清香。\n" NOR);
                 set("unit", "些");
                 set("base_unit", "根");
                 set("base_weight", 500);

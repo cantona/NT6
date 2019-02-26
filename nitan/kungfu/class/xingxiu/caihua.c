@@ -6,7 +6,7 @@ void create()
 {
         set_name("採花子", ({ "caihua zi", "caihua", "zi" }) );
         set("gender", "男性" );
-        set("nickname", "賽昆侖");
+        set("nickname", "賽崑崙");
         set("age", 38);
         set("long", 
                 "採花子是星宿派的一個小嘍羅，武功雖不好，但生性淫邪，"
@@ -33,7 +33,7 @@ void create()
         set("inquiry", ([
                 "name" : "我也記不清我姓甚名誰了，江湖朋友送我雅號採花子。",
                 "採花" : "那可是學問，我不能隨便教。",
-                "學問" : "嘿嘿，娘兒們閒著，豈不是浪費了？",
+                "學問" : "嘿嘿，娘兒們閒着，豈不是浪費了？",
         ]) );
         setup();
         carry_object(CLOTH_DIR"male-cloth")->wear();
@@ -57,7 +57,7 @@ void greeting(object me)
         myfam=query("family", me);
         if (myfam && myfam["family_name"] == "星宿派" &&
                 (query("gender", me) == "男性") )
-                command("say 我昨天從山下又捉了個小妞來。水靈極了，就關在我的逍遙洞裡，\n折騰了一夜，大爺我爽夠了，你要不要進去試試？");
+                command("say 我昨天從山下又捉了個小妞來。水靈極了，就關在我的逍遙洞裏，\n折騰了一夜，大爺我爽夠了，你要不要進去試試？");
         set_temp("marks/花", 0, me);
 }
 

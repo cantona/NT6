@@ -13,7 +13,7 @@ void create()
         else
         {
                 set("unit", "張");
-                set("long", HIR "這是一張鉛鐵所鑄，舞鳳雕紋，制作非常精細的弩。\n" NOR);
+                set("long", HIR "這是一張鉛鐵所鑄，舞鳳雕紋，製作非常精細的弩。\n" NOR);
                 set("no_sell", "我的天…郡王府的東西你也敢拿來賣？");
                 set("value", 80000);
                 set("power", 200000);   // 攻擊威力

@@ -43,7 +43,7 @@ int perform(object me, object target)
                 return notify_fail("你必須是空手才能施展" + name() + "！\n");
 
         if (! living(target))
-              return notify_fail("對方都已經這樣了，用不著這麼費力吧？\n");
+              return notify_fail("對方都已經這樣了，用不着這麼費力吧？\n");
 
         msg = HIY "$N" HIY "攤開雙手，手指連彈，霎時間空氣炙熱，幾"
               "欲沸騰，六道劍氣分自六穴，一起殺向$n" HIY "！\n" NOR;

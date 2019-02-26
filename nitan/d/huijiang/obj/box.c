@@ -13,7 +13,7 @@ void create()
                 set_default_object(__FILE__);
         else {
                 set("unit", "個");
-                set("long","一個裝錢的箱子，紅花會從各地劫來的不義之財全放在這裡。\n");
+                set("long","一個裝錢的箱子，紅花會從各地劫來的不義之財全放在這裏。\n");
                 set("value", 1000);
                 set("material", "wood");
                 set("no_get",1);

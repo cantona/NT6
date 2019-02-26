@@ -19,7 +19,7 @@ mapping *action = ({
         "lvl"   : 30,
         "damage_type": "瘀傷"
 ]),
-([      "action": "$N將內力運至左手，一招「萬裡雪飄」，迅疾無比地抓向$n的$l",
+([      "action": "$N將內力運至左手，一招「萬里雪飄」，迅疾無比地抓向$n的$l",
         "force" : 250,
         "attack": 35,
         "dodge" : 50,
@@ -28,7 +28,7 @@ mapping *action = ({
         "lvl"   : 60,
         "damage_type": "瘀傷"
 ]),
-([      "action": "$N後退一步，突然一招「千裡冰封」，掌力拍向$n的$l",
+([      "action": "$N後退一步，突然一招「千里冰封」，掌力拍向$n的$l",
         "force" : 330,
         "attack": 42,
         "dodge" : 40,
@@ -55,16 +55,16 @@ mapping query_action(object me, object weapon)
 int valid_learn(object me)
 {
         if( query_temp("weapon", me) || query_temp("secondary_weapon", me) )
-                return notify_fail("練烈燄寒冰掌必須空手。\n");
+                return notify_fail("練烈焰寒冰掌必須空手。\n");
 
         if ((int)me->query_skill("force") < 100)
-                return notify_fail("你的內功火候不夠，無法練烈燄寒冰掌。\n");
+                return notify_fail("你的內功火候不夠，無法練烈焰寒冰掌。\n");
 
         if( query("max_neili", me)<450 )
-                return notify_fail("你的內力太弱，無法練烈燄寒冰掌。\n");
+                return notify_fail("你的內力太弱，無法練烈焰寒冰掌。\n");
 
         if (me->query_skill("strike", 1) < me->query_skill("fireice-strike", 1))
-                return notify_fail("你的基本掌法水平有限，無法領會更高深的烈燄寒冰掌。\n");
+                return notify_fail("你的基本掌法水平有限，無法領會更高深的烈焰寒冰掌。\n");
 
         return 1;
 }
@@ -76,7 +76,7 @@ int practice_skill(object me)
                 return notify_fail("你的體力太低了，先休息一下吧。\n");
 
         if( query("neili", me)<60 )
-                return notify_fail("你的內力不夠練烈燄寒冰掌。\n");
+                return notify_fail("你的內力不夠練烈焰寒冰掌。\n");
 
         if (me->query_skill("fireice-strike", 1) < 50)
                 me->receive_damage("qi", 30);

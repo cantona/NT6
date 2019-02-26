@@ -15,11 +15,11 @@ void create()
 {
     set("short", "日月坪");
         set("long", @LONG
-這裡是半山的一片小土坪，離崖頂還有一段路途，可到這已經沒
-有路上去，面前是如境般的峭壁，仰頭而望，但見崖頂依稀聳立著樓
+這裏是半山的一片小土坪，離崖頂還有一段路途，可到這已經沒
+有路上去，面前是如境般的峭壁，仰頭而望，但見崖頂依稀聳立着樓
 閣，宛如仙境。可雲煙繚繞，看不清晰。從懸崖上垂下一條繩索(rop
 e)，看上去象是懸崖上下互通消息的工具，繩索的上面似乎隱約有一
-個吊籃(basket)。懸崖的牆上似乎有一個匣子(xiazi) ，你似乎走入
+個弔籃(basket)。懸崖的牆上似乎有一個匣子(xiazi) ，你似乎走入
 一個霧宅，真不知如何是好。
 LONG );
 
@@ -63,7 +63,7 @@ void check_trigger()
                 message("vision", "“叭”的一聲，你手中的令牌已被折斷，只見一個"
                         "掉籃(basket)從天而降，你不禁一怔！\n", this_object());
                 set("item_desc", ([
-                    "basket" : "這是一個掉籃，是傳說中的交通工具。\n",
+                    "basket" : "這是一個掉籃，是傳説中的交通工具。\n",
                 ]));
 
                 remove_call_out("on_board");
@@ -82,7 +82,7 @@ void on_board()
     object room, me = this_player();
     if( !query("exits/enter") ) return;
     tell_object(me, HIG"只見掉籃緩緩向上，四周無限美好，"
-                "你似乎置身于一處人間仙境無異。\n"NOR);
+                "你似乎置身於一處人間仙境無異。\n"NOR);
 
     if( room = find_object(__DIR__"basket") )
     {
@@ -99,7 +99,7 @@ void arrive()
     if( room = find_object(__DIR__"basket") )
     {
         set("exits/out", __DIR__"up2", room);
-        message("vision", "□的一聲，你似乎一下從天上到了地上。\n",room );
+        message("vision", "噔的一聲，你似乎一下從天上到了地上。\n",room );
     }
     remove_call_out("close_passage");
     call_out("close_passage", 20);
@@ -141,7 +141,7 @@ int do_insert(string arg)
         }
         else    {
                 addn_temp("mark/cards", 1, me);
-                message("vision", "□的一聲，你看到掉籃向下一節。\n",me );
+                message("vision", "噔的一聲，你看到掉籃向下一節。\n",me );
         }
     }
     else
@@ -163,8 +163,8 @@ int do_push(string arg)
 
     if( query("family/family_name", ob) == "日月神教" )
     {
-         message_vision("$N把匣子按了幾下，只聽“吱扭吱扭”幾聲，從崖上落下一個大吊籃。\n", ob);
-         message_vision("$N一彎腰進了吊籃，吊籃緩緩地絞上崖去......\n", ob);
+         message_vision("$N把匣子按了幾下，只聽“吱扭吱扭”幾聲，從崖上落下一個大弔籃。\n", ob);
+         message_vision("$N一彎腰進了弔籃，弔籃緩緩地絞上崖去......\n", ob);
          myenv = environment(ob);
          ob->move (__DIR__"basket");
          call_out("goto_heimuya", 10, ob);
@@ -189,13 +189,13 @@ int do_float()
 
         if (me->query_skill("juechen-shenfa", 1) < 180)
         {
-                message_vision("$N遙望山崖，沉思良久，嘆了口氣。\n", me);
+                message_vision("$N遙望山崖，沉思良久，歎了口氣。\n", me);
                 return 1;
         }
 
         if( query("neili", me)<100 )
         {
-                tell_object(me, "你的內力不夠，還是休息一下再說吧。\n");
+                tell_object(me, "你的內力不夠，還是休息一下再説吧。\n");
                 return 1;
         }
 
@@ -205,9 +205,9 @@ int do_float()
                      "山崖上飄去。\n\n" NOR, me);
 
         me->move(__DIR__"shanya3");
-        tell_object(me, "你順著崖壁飄上了黑木崖。\n");
+        tell_object(me, "你順着崖壁飄上了黑木崖。\n");
         message("vision", HIC "\n忽聽一聲清嘯由遠及近，" + me->name() +
-                          HIC "順著崖壁飄然而上，落定身形。\n" NOR,
+                          HIC "順着崖壁飄然而上，落定身形。\n" NOR,
                           environment(me), ({ me }));
         return 1;
 }

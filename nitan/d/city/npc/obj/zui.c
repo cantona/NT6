@@ -15,7 +15,7 @@ void create()
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("long", HIB"一只外型奇特的酒杯，裡面裝的似乎是一種烈性白酒。\n"NOR);
+                set("long", HIB"一隻外型奇特的酒杯，裏面裝的似乎是一種烈性白酒。\n"NOR);
                 set("unit", "杯");
                 set("value", 5000);
                 

@@ -1,7 +1,7 @@
 inherit SKILL;
 
 mapping *action = ({
-([      "action" : "$N將內勁貫住指尖，攜帶著絲絲陰風一擊凌空射向$n的$l",
+([      "action" : "$N將內勁貫住指尖，攜帶着絲絲陰風一擊凌空射向$n的$l",
         "force" : 140,
         "attack": 25,
         "dodge" : -15,
@@ -11,7 +11,7 @@ mapping *action = ({
         "skill_name" : "絲絲陰風",
         "damage_type" : "刺傷"
 ]),
-([      "action" : "$N表情麻木，陡的躍身而起，右手食指帶著極寒之氣直射$n的$l",
+([      "action" : "$N表情麻木，陡的躍身而起，右手食指帶着極寒之氣直射$n的$l",
         "force" : 180,
         "attack": 40,
         "dodge" : -20,
@@ -21,7 +21,7 @@ mapping *action = ({
         "skill_name" : "極寒之氣",
         "damage_type" : "刺傷"
 ]),
-([      "action" : "$N怪叫一聲，頓在半空翻個筋鬥，將要落下之時，突然對準$n的$l處“颼”的一指射出",
+([      "action" : "$N怪叫一聲，頓在半空翻個筋斗，將要落下之時，突然對準$n的$l處“颼”的一指射出",
         "force" : 220,
         "attack": 50,
         "dodge" : -20,
@@ -124,7 +124,7 @@ mixed hit_ob(object me, object victim, int damage_bonus, int factor)
                                  "id"    : query("id", me),
                                  "duration" : lvl / 100 + random(lvl / 10) ])))
         {
-                return "$n只感到從傷口處傳來一陣切骨之痛，看來是受了對方透骨針內勁的幹擾。\n";
+                return "$n只感到從傷口處傳來一陣切骨之痛，看來是受了對方透骨針內勁的干擾。\n";
         }
 }
 

@@ -4,7 +4,7 @@
 inherit SHIELD;
 void create()
 {
-        set_name(HIR "輪回生死簿" NOR, ({ "shengsi bu" }) );
+        set_name(HIR "輪迴生死簿" NOR, ({ "shengsi bu" }) );
         set_weight(1);
         if( clonep() )
                 set_default_object(__FILE__);

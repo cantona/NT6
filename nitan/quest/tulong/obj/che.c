@@ -11,7 +11,7 @@ void create()
                 set_default_object(__FILE__);
         else{ 
                 set("unit", "輛");
-                set("long", "一輛紅木鏢車，扯出一個幡子，上面寫著“福威鏢局”四個大字。\n");
+                set("long", "一輛紅木鏢車，扯出一個幡子，上面寫着“福威鏢局”四個大字。\n");
                 set("value", 0);
               }
 }       

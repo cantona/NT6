@@ -25,7 +25,7 @@ void get_inventory(object ob, int deep)
                 if( !inv[i]->is_character() && !inv[i]->is_no_clone() && !query("maze_item", inv[i]) && !inv[i]->is_task() &&
                     !inv[i]->query_unique() && !query("no_save", inv[i]) ) {
                         //if( mapping_eqv(get_object(inv[i])->query_entire_dbase(), inv[i]->query_entire_dbase()) ) {
-                        if( query("set_data", inv[i]) || query("equipped", inv[i]) ) { // 降低計算復雜度
+                        if( query("set_data", inv[i]) || query("equipped", inv[i]) ) { // 降低計算複雜度
                                 file = save_variable(inv[i]->query_entire_dbase());
                                 file = replace_string(file, "\n", ex2);
                         } else  file = ORIGINAL_DATA;

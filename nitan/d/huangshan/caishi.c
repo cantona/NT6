@@ -4,12 +4,12 @@
 inherit ROOM;
 void create()
 {
-        set("short", "採石峰");
+        set("short", "採石峯");
         set("long", @LONG
 相傳是女媧採石補天所取天下山石中精英所在，山色與別山迥異，
-竟似有五色，山上樹木也分外茂密，山籐蔓繞，由于遊人到鬆谷庵後多
-半力竭，加之這裡山籐環繞，甚是難走，所以以無遊人到此。遠遠看見
-軒轅峰，卻已無力過去。
+竟似有五色，山上樹木也分外茂密，山藤蔓繞，由於遊人到鬆谷庵後多
+半力竭，加之這裏山藤環繞，甚是難走，所以以無遊人到此。遠遠看見
+軒轅峯，卻已無力過去。
 LONG
         );
         set("exits", ([ 
@@ -36,11 +36,11 @@ int do_chop(string arg)
                 write("你要砍開什麼？\n");
                 return 1;
         }
-        if( arg == "vine" || arg == "山籐")
+        if( arg == "vine" || arg == "山藤")
         {
                 if( !objectp(obj=query_temp("weapon", me)) )
                 {
-                        write("你空著手，砍什麼砍？\n");
+                        write("你空着手，砍什麼砍？\n");
                         return 1;
                 }
                 if( query("skill_type", obj) == "sword" || 
@@ -54,10 +54,10 @@ int do_chop(string arg)
                                 me->start_busy(1);
                         }
                         else
-                                message_vision(sprintf("$N用手中的%s砍向環繞的山籐。\n",obj->name()), me);
+                                message_vision(sprintf("$N用手中的%s砍向環繞的山藤。\n",obj->name()), me);
                 }
                 else
-                        message_vision(sprintf("$N用手中的%s向蔓繞的山籐一頓亂砍。\n",obj->name()), me);
+                        message_vision(sprintf("$N用手中的%s向蔓繞的山藤一頓亂砍。\n",obj->name()), me);
         }
         else write("你要砍開什麼？\n");
         return 1;

@@ -11,8 +11,8 @@ inherit ITEM;
 
 #define FILE_DIR "/d/gumu/obj/"
 
-#define _DES "一只古墓派特制藥爐，青玉石制成，樸實無華。\n爐頂有個石蓋(lip)，蓋中偏左有一孔，爐下有炭盆，盆內的木炭(coal)看來是新加的。\n"
-#define _FIRE HIR"\n藥爐下正燃著火。\n"NOR
+#define _DES "一隻古墓派特製藥爐，青玉石製成，樸實無華。\n爐頂有個石蓋(lip)，蓋中偏左有一孔，爐下有炭盆，盆內的木炭(coal)看來是新加的。\n"
+#define _FIRE HIR"\n藥爐下正燃着火。\n"NOR
 #define _OPEN "藥爐蓋子已經揭開。\n"
 
 void create()
@@ -86,13 +86,13 @@ int do_addyao(string arg)
         if (!query("open")) return notify_fail("你先把蓋子打開吧。\n"); 
 
         if (!arg || sscanf(arg, "%s in %s", item, target) != 2 )
-                return notify_fail("你要將什麼東西放進哪裡？\n");
+                return notify_fail("你要將什麼東西放進哪裏？\n");
 
         if (item == "all" ) return notify_fail("這小小藥爐怎麼裝得下這麼多東西？\n");
                 
         if (!objectp(obj = present(item, me))) return notify_fail("東西呢？\n");
                                                                 
-        if( !query("yaocai", obj))return notify_fail("藥爐裡只能放用以煉制的藥材。\n");
+        if( !query("yaocai", obj))return notify_fail("藥爐裏只能放用以煉製的藥材。\n");
                         
         if (query("is_burning")) return notify_fail("火已點燃，不要亂動。\n");
                 
@@ -148,12 +148,12 @@ int do_pour(string arg)
         if ( arg == "玉蜂毒" ){
                 if ( !box = present("beehive",me) )        return notify_fail("你的玉蜂呢？\n");
                 if( query("escaped", box) )
-                        return notify_fail("剩下的玉蜂嚇得東躲西藏，你一只也抓不到！\n");
+                        return notify_fail("剩下的玉蜂嚇得東躲西藏，你一隻也抓不到！\n");
                 set("escaped", 1, box);
                 addn("cure_s",0);
                 addn("cure_d",0);
                 addn("cure_n",-80);
-                message_vision("$N從"+query("name", box)+"中抓了幾只玉蜂，滴了幾滴玉蜂毒在藥爐裡。\n",me);
+                message_vision("$N從"+query("name", box)+"中抓了幾隻玉蜂，滴了幾滴玉蜂毒在藥爐裏。\n",me);
                 return 1;
         }
 
@@ -184,7 +184,7 @@ int do_pour(string arg)
                 addn("cure_d",90);
                 addn("cure_n",-30);
         }
-        message_vision("$N從"+query("name", ping)+"中倒了一些"+arg+"在藥爐裡。\n",me);
+        message_vision("$N從"+query("name", ping)+"中倒了一些"+arg+"在藥爐裏。\n",me);
         return 1;
 }
 
@@ -218,7 +218,7 @@ int do_burn(string arg)
 
         if (!present("fire",me)) return notify_fail("你用什麼點火？\n");
 
-        if (!(query("ready"))) return notify_fail("藥爐裡什麼都沒有。\n");
+        if (!(query("ready"))) return notify_fail("藥爐裏什麼都沒有。\n");
 
         if (query("is_burning")) return notify_fail("火已經點燃了。\n");
                 
@@ -260,7 +260,7 @@ int do_miehuo(string arg)
 void burning(object me)
 {
         if (!query("mi")){
-                set("long","一只小巧玲瓏的煉藥爐。\n");
+                set("long","一隻小巧玲瓏的煉藥爐。\n");
                 message_vision(HIR"突然間藥爐內火光大盛，黑煙冒出，$N急忙將火頭撲滅。\n"NOR,me);
                 message_vision(HIR"$N取出藥材一看，已經燒成一團焦炭。\n"NOR,me);
                 remove_call_out("renewing");
@@ -315,7 +315,7 @@ int do_aoyao()
                 return notify_fail("你的玉女心經修為不夠！");
 
         message_vision(HIC"$N一手靠近爐火一抽一放，借內力操控火勢；一手握住藥杵，從蓋上孔中伸入\n不停攪拌。\n"NOR,me);
-        message_vision(HIR"\n$N不停的重復運動，一會兒已是滿身大汗。\n"NOR,me);
+        message_vision(HIR"\n$N不停的重複運動，一會兒已是滿身大汗。\n"NOR,me);
 
     if (time == 0) time = 20;
         if (time > 30) me->start_busy(time-random(10));
@@ -374,7 +374,7 @@ int do_quyao(string arg)
                 destruct(zhen1);
                 zhen2->move(me);
                 message_vision("$N取出金針蘸了蘸藥爐中熬好的玉蜂毒，放到火上淬火……\n", me);
-                message_vision("只聽得□……，一縷青煙裊裊升起，$N詭異的笑容映著爐火忽明忽暗。\n\n", me);
+                message_vision("只聽得嗞……，一縷青煙裊裊升起，$N詭異的笑容映着爐火忽明忽暗。\n\n", me);
         }
         else if ( query("drug_name") == "古墓玉漿" || query("drug_name") == "古墓聖漿" ) {
                 inv = all_inventory(me);
@@ -387,7 +387,7 @@ int do_quyao(string arg)
                 if (!ping) return notify_fail("你需要一個空瓶！\n");
                 set("liquid/name", query("drug_name"), ping);
                 set("liquid/remaining", 10, ping);
-                message_vision("$N將小心地把藥爐裡的"+query("drug_name")+"斟入青瓷瓶。\n\n", me);
+                message_vision("$N將小心地把藥爐裏的"+query("drug_name")+"斟入青瓷瓶。\n\n", me);
         }
         else{
                 ob = new(FILE_DIR+query("drug"));

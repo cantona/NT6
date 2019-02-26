@@ -38,7 +38,7 @@ int perform(object me, object target)
                 return notify_fail("你目前的真氣不足，難以施展" + name() + "。\n");
 
         if (! living(target))
-                return notify_fail("對方都已經這樣了，用不著這麼費力吧？\n");
+                return notify_fail("對方都已經這樣了，用不着這麼費力吧？\n");
 
         msg = HIR "$N" HIR "殺氣大盛，手中" + weapon->name() +
               HIR "一振，頓時一道血光從刀鋒閃過，將$n"

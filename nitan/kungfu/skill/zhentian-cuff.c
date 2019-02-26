@@ -26,7 +26,7 @@ mapping *action = ({
         "lvl" : 60,
         "skill_name" : "一臂擎天"
 ]),
-([        "action" : "$N一聲長嘯，雙拳交錯擊出，一招"BLU"「石破天驚」"NOR"，拳風密布$n的前後左右",
+([        "action" : "$N一聲長嘯，雙拳交錯擊出，一招"BLU"「石破天驚」"NOR"，拳風密佈$n的前後左右",
         "lvl" : 70,
         "skill_name" : "石破天驚"
 ]),
@@ -117,7 +117,7 @@ int help(object me)
         write(HIC"\n震天拳法："NOR"\n");
         write(@HELP
 
-    震天拳法為昆侖派側重男弟子的武技。
+    震天拳法為崑崙派側重男弟子的武技。
 
         學習要求：
                 玄天無極功25級

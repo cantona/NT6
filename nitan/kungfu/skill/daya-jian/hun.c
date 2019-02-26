@@ -41,7 +41,7 @@ int perform(object me, object target)
         dp = target->query_skill("parry",1) + target->query_skill("dodge",1);
         dp = dp*3/2;
 
-        msg = HIC "\n$N" HIC "先行存念，內勁真氣勃發，" NOR CYN "大雅古劍法" HIC "頓時揮洒得淋漓盡致！\n" +
+        msg = HIC "\n$N" HIC "先行存念，內勁真氣勃發，" NOR CYN "大雅古劍法" HIC "頓時揮灑得淋漓盡致！\n" +
               weapon->name() + HIC "如同活了一樣，幻化出滿天劍影，向$n" HIC "撲面罩來！\n\n" NOR;
 
         message_combatd(msg, me, target);
@@ -63,7 +63,7 @@ int perform(object me, object target)
               "$n" HIM "被這犀利的目光嚇得一哆嗦，不解$N" HIM "是何意，心頭一陣迷惘。\n"
               "忽聞$N" HIM "大喝一聲:\n"
               HIW "風蕭蕭兮易水寒，壯士一去兮不復還!\n"
-              HIM "歌聲中混雜著強勁的" HIR + to_chinese(force)+ HIM"，$n" HIM "不由心神大亂。\n"
+              HIM "歌聲中混雜着強勁的" HIR + to_chinese(force)+ HIM"，$n" HIM "不由心神大亂。\n"
               "此時，只見$N" HIM "人劍合一，如流星、似閃電，刺向$n" HIM "，正是" NOR CYN "大雅古劍法" HIM "的" HIW "『不歸式』" HIM"！！\n\n" NOR;
 
         weapon2=query_temp("weapon", target);
@@ -75,7 +75,7 @@ int perform(object me, object target)
                                "$N" HIM "竟是置若罔聞，" HIW "『不歸式』" HIM "仍舊一往直前，$n" HIM "手中" + weapon2->name() + HIM "為$N內力侵灌而入，渾身振顫！\n" NOR;
                 else
                         msg += HIM "$n" HIM "見$N" HIM "來勢兇猛，不敢正面抵擋，側身進步雙掌奮力側擊$N" HIM "\n"
-                               "$N" HIM "竟是置若罔聞，" HIW "『不歸式』" HIM "仍舊一往直前，$n" HIM "無可奈何，被擊個正著！\n" NOR;
+                               "$N" HIM "竟是置若罔聞，" HIW "『不歸式』" HIM "仍舊一往直前，$n" HIM "無可奈何，被擊個正着！\n" NOR;
 
                 target->receive_damage("qi", damage, me);
                 target->receive_wound("qi", damage/2, me);

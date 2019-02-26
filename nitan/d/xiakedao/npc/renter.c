@@ -93,7 +93,7 @@ mapping *info = ({
 void create()
 {
         set_name("黃衣使者", ({ "xiake dizi", "dizi", "renter" }));
-        set("long", "他身著黃衫，表情鬱鬱，似乎身有武功。\n");
+        set("long", "他身着黃衫，表情鬱郁，似乎身有武功。\n");
 
         set("gender", "男性");
         set("age", 25);
@@ -144,7 +144,7 @@ mixed ask_rent()
         switch (random(5))
         {
         case 0:
-                msg += "$N看了看$n，道：“你想找誰幫你的忙，不妨和我說說。”\n";
+                msg += "$N看了看$n，道：“你想找誰幫你的忙，不妨和我説説。”\n";
                 break;
         case 1:
                 msg += "$N對$n道：“我的師兄弟水平各有高下，你找一個派得上用場的吧！”\n";
@@ -169,7 +169,7 @@ int accept_object(object me, object ob)
 
         if( !objectp(helper=query_temp("pending/rent/helper", me)) )
         {
-                command("say 你給我錢幹什麼？讚助我們俠客島麼？");
+                command("say 你給我錢幹什麼？贊助我們俠客島麼？");
                 return 0;
         }
 
@@ -177,11 +177,11 @@ int accept_object(object me, object ob)
         n = ob->value() / 10000;
         if (n < cost)
         {
-                command("say 我們這裡可不能打折，你還是免了吧！");
+                command("say 我們這裏可不能打折，你還是免了吧！");
                 if( n*2 >= cost && query("special_skill/treat", me) )
-                        message_vision("$N跪在地上，抱著$n，哭喊道：“你就"
+                        message_vision("$N跪在地上，抱着$n，哭喊道：“你就"
                                        "可憐可憐我這窮鬼吧！”\n$n看了，頗"
-                                       "為無奈，搖搖頭，嘆口氣道：“好吧好"
+                                       "為無奈，搖搖頭，歎口氣道：“好吧好"
                                        "吧，算了。”\n", me, this_object());
                 else
                         return 0;
@@ -200,8 +200,8 @@ int accept_object(object me, object ob)
         message_vision("$n點點頭，和$N寒暄兩句，跟在了$P的身後。\n",
                        me, helper);
 
-        // 初始化雇傭的人
-        // 設置雇傭開始的時間，主人，去掉目前的正在雇傭的狀
+        // 初始化僱傭的人
+        // 設置僱傭開始的時間，主人，去掉目前的正在僱傭的狀
         // 態，跟隨主人，開始並維持心跳。
         set_temp("help_time", time(), helper);
         set_temp("owner", me, helper);
@@ -266,7 +266,7 @@ mixed try_to_hire(object me, object ob)
                 return "你這點名頭也能使喚人？算了吧！"; 
 
         if( query("score", me)<10000 )
-                return "你江湖閱歷太淺，還是免了。"; 
+                return "你江湖閲歷太淺，還是免了。"; 
 
         if( query("combat_exp", me)<50000 )
                 return "你的武功太差，想支使誰呀？"; 

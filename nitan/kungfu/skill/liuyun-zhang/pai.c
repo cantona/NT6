@@ -38,13 +38,13 @@ int perform(object me, object target)
                 return notify_fail("你現在的真氣不夠，難以施展" PAI "。\n");
 
         if (! living(target))
-                return notify_fail("對方都已經這樣了，用不著這麼費力吧？\n");
+                return notify_fail("對方都已經這樣了，用不着這麼費力吧？\n");
 
         ap = me->query_skill("strike");
         dp = target->query_skill("parry");
 
-        msg = HIC "\n$N" HIC "運轉真氣，將內力注于掌風之中，雙掌猛"
-              "然拍向$n" HIC "，雄渾有力，氣勢磅礡，毫無滯帶，正是"
+        msg = HIC "\n$N" HIC "運轉真氣，將內力注於掌風之中，雙掌猛"
+              "然拍向$n" HIC "，雄渾有力，氣勢磅礴，毫無滯帶，正是"
               "衡山派絕學「" HIM "排山倒海" HIC "」。" NOR;
 
         message_sort(msg, me, target); 

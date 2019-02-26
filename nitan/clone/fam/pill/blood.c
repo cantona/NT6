@@ -16,9 +16,9 @@ void create()
                 set("pill_skill", "force");
                 set("pill_point", 5000);
                 set("force_point", 20);
-                set("pill_msg1", HIG "你只覺一股熱線從嚥喉直通到腹中，全"
+                set("pill_msg1", HIG "你只覺一股熱線從咽喉直通到腹中，全"
                                  "身經脈舒泰無比。\n" NOR);
-                set("pill_msg2", HIY "你只覺一股熱線從嚥喉直通到腹中，內"
+                set("pill_msg2", HIY "你只覺一股熱線從咽喉直通到腹中，內"
                                  "息得到完全補充。\n" NOR);
         }
         setup();

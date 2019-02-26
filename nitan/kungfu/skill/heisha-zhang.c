@@ -11,17 +11,17 @@ mapping *action = ({
         "lvl"    : 0,
         "skill_name"  : "無常抖索"
 ]),
-([        "action" : "$N身形一轉，一式"BLU"「小鬼扶腰」"NOR"，左掌斜側，右掌虛托，封向$n的腰部",
+([        "action" : "$N身形一轉，一式"BLU"「小鬼扶腰」"NOR"，左掌斜側，右掌虛託，封向$n的腰部",
         "lvl"    : 20,
         "skill_name"  : "小鬼扶腰"
 ]),
-([        "action" : "$N使一式"HIB"「夜叉破浪」"NOR"，身形前沖，雙掌向前帶著風聲，盡力拍出，直取$n的$l",
+([        "action" : "$N使一式"HIB"「夜叉破浪」"NOR"，身形前衝，雙掌向前帶着風聲，盡力拍出，直取$n的$l",
         "lvl"    : 40,
         "skill_name"  : "夜叉破浪"
 ]),
-([        "action" : "$N一式"BLU"「酆都沖沙」"NOR"，左右兩掌往$n周身不絕連拍，虛實不定",
+([        "action" : "$N一式"BLU"「酆都衝沙」"NOR"，左右兩掌往$n周身不絕連拍，虛實不定",
         "lvl"    : 60,
-        "skill_name"  : "酆都沖沙"
+        "skill_name"  : "酆都衝沙"
 ]),
 ([        "action" : "$N左掌作勢側過，右掌順勢拍下，一式"BLU"「油錘灌頂」"NOR"，猛劈$n的頭部",
         "lvl"    : 80,
@@ -78,7 +78,7 @@ mixed hit_ob(object me, object victim, int damage_bonus, int factor)
                    "id":query("id", me),
                    "duration" : lvl / 50 + random(lvl / 20) ])))
         {
-                return WHT "$n" WHT "忽然感到一股莫名的惡心，全身癱軟，嘴皮烏紫。\n" NOR;
+                return WHT "$n" WHT "忽然感到一股莫名的噁心，全身癱軟，嘴皮烏紫。\n" NOR;
         }
 }
 
@@ -126,7 +126,7 @@ int help(object me)
         write(HIC"\n黑砂掌："NOR"\n");
         write(@HELP
 
-    黑砂掌是川西黑白無常常氏二傑的獨門掌法。掌中蘊毒，無常奪命。
+    黑砂掌是川西黑白無常常氏二傑的獨門掌法。掌中藴毒，無常奪命。
 
         學習要求：
                 紅花神功10級

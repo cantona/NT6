@@ -10,8 +10,8 @@ void create()
 一進洞，便聽見了泉水（quanshui）流動的聲音，只見這口泉水
 從洞中一角落處湧出來，旁邊卻立有一碑（bei）。 山洞正前是個大
 石壁（bi），壁上刻有圖畫，石壁旁卻插有一把木劍（mu jian）， 
-像是有人曾經在這裡練過劍。山洞西面是一張石床（bed），由此斷定
-曾經有人在這裡住過。
+像是有人曾經在這裏練過劍。山洞西面是一張石牀（bed），由此斷定
+曾經有人在這裏住過。
 LONG );
 
         set("exits",([
@@ -20,9 +20,9 @@ LONG );
 
         set("item_desc",([
               "mu jian":"\n一把木劍深深地插在石壁中，直至劍柄，可見當初插劍之人功力何等深厚，實屬罕見。\n",
-              "bed":"\n一張非常粗陋的石床，上面卻沾滿了灰塵。\n",
+              "bed":"\n一張非常粗陋的石牀，上面卻沾滿了灰塵。\n",
               "quanshui":"\n一股清泉源源地從底下湧出，水質清澈，令人忍不住想喝(he)上兩口。\n",
-              "bei":"\n上書："HIR"天 泉 之 水"NOR" 字峰遒勁有力。\n",
+              "bei":"\n上書："HIR"天 泉 之 水"NOR" 字峯遒勁有力。\n",
               "bi":( : look_bi :),
         ]));
 
@@ -48,12 +48,12 @@ string look_bi(object me)
         furong=me->query_skill("furong-jianfa",1);
         zigai=me->query_skill("zigai-jianfa",1);
 
-        msg=HIC"\n你仔細一看，石壁上刻著五個手持長劍的小人，每人各使一招，細看下像是一套劍法。\n"NOR;
+        msg=HIC"\n你仔細一看，石壁上刻着五個手持長劍的小人，每人各使一招，細看下像是一套劍法。\n"NOR;
 
         if(zigai&&furong)msg+=HIY"你仔細琢磨，隱約覺得這套劍法像是[紫蓋劍法]和[芙蓉劍法]的招式。\n"NOR;
         if(zigai&&!furong)msg+=HIY"你仔細琢磨，隱約覺得這套劍法像是有[紫蓋劍法]的招式。\n"NOR;
         if(!zigai&&furong)msg+=HIY"你仔細琢磨，隱約覺得這套劍法像是有[芙蓉劍法]的招式。\n"NOR;
-        msg+=HIC"你越看越起勁，忍不住想跟著學(xue)起來。\n"NOR;
+        msg+=HIC"你越看越起勁，忍不住想跟着學(xue)起來。\n"NOR;
         
         write(msg);
                 
@@ -81,7 +81,7 @@ int do_he(string arg)
                 return notify_fail("你想喝什麼？\n");
 
         if(me->is_fighting()||me->is_busy())
-                return notify_fail("你現在正忙著呢。\n");
+                return notify_fail("你現在正忙着呢。\n");
        
         if( query("D_TIANQUAN", me) )
                 return notify_fail("你已經喝過天泉水了。\n");
@@ -112,7 +112,7 @@ int do_xue(string arg)
 
         if(me->is_fighting()||me->is_busy())
         {
-        write("你現在正忙著呢。\n");
+        write("你現在正忙着呢。\n");
         return 1;
         }
                 

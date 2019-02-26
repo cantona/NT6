@@ -38,9 +38,9 @@ void create()
         set("gender", "男性" );
         set("age", 21);
         set("long",@LONG
-狂風來自神秘的精意山莊，最近突然出現在揚州城，並出售
-人們從沒有見過的魔幻獸，傳說這個魔幻獸具有神奇的功能，
-你如果喜歡的話，不妨也選(choose)一只。
+狂風來自神祕的精意山莊，最近突然出現在揚州城，並出售
+人們從沒有見過的魔幻獸，傳説這個魔幻獸具有神奇的功能，
+你如果喜歡的話，不妨也選(choose)一隻。
 LONG );
         set("title",HIW"煉器師"NOR);
         set("combat_exp", 5000000);
@@ -77,11 +77,11 @@ void greeting(object ob)
         if( !ob || environment(ob) != environment() ) return;
         switch( random(5) ) {
                 case 0:
-                        say( "狂風說道：這位" + RANK_D->query_respect(ob)
+                        say( "狂風説道：這位" + RANK_D->query_respect(ob)
                                 + "，要魔幻獸麼？\n");
                         break;
                 case 1:
-                        say( "狂風說道：這位" + RANK_D->query_respect(ob)
+                        say( "狂風説道：這位" + RANK_D->query_respect(ob)
                                 + "，魔幻獸可以保護主人的哦。\n");
                         break;
         }
@@ -114,7 +114,7 @@ int do_choose()
 
         if( !query_temp("warcraft/money", me) )
         {
-                command("say 這位" + RANK_D->query_respect(me) + "，每只魔幻獸一百兩黃金，你必須先給錢！");
+                command("say 這位" + RANK_D->query_respect(me) + "，每隻魔幻獸一百兩黃金，你必須先給錢！");
                 return 1;
         }
 
@@ -169,7 +169,7 @@ void get_gender(string arg, object ob)
         write("\n");
 
         write(sort_string(CYN "你按照狂風的指點開始飛快的念道：“在天的見"
-                "証之下，集勇氣、智慧、與美麗于一身的強大生物，幻獸呀！請"
+                "證之下，集勇氣、智慧、與美麗於一身的強大生物，幻獸呀！請"
                 "你以最深的靈性，聆聽我的傾訴，我－"+query("name", ob)+
                 "－將與你締結永生的血之盟約，終此生惟有你與我為終生之盟友"
                 "，契。”\n" NOR, 64));
@@ -355,7 +355,7 @@ int accept_object(object me, object ob)
                         return 0;
                 }
 
-                command("say 這可是制作如意乾坤袋的特殊材料，既然你我有緣，我就免費幫你制作一個吧！");
+                command("say 這可是製作如意乾坤袋的特殊材料，既然你我有緣，我就免費幫你製作一個吧！");
                 if (1)
                 {
                         file = read_file(CRUISE_OB);
@@ -411,7 +411,7 @@ int accept_object(object me, object ob)
         {
                 if (ob->value() < 10000)
                 {
-                        command("say 這位給的未免少了點！每只魔幻獸要一兩黃金！");
+                        command("say 這位給的未免少了點！每隻魔幻獸要一兩黃金！");
                         return 0;
                 }
 
@@ -425,7 +425,7 @@ int accept_object(object me, object ob)
                         set_temp("warcraft/money", 1, me);
                         command("say 好我收下了！");
                         command("say " + me->name() +
-                                     "，現在我這裡有各種魔幻獸！");
+                                     "，現在我這裏有各種魔幻獸！");
                         command("say 請選擇你要的魔幻獸 < choose >");
                         destruct(ob);
                         return 1;
@@ -482,7 +482,7 @@ int check_legal_name(string name, int max_len)
         i = strlen(name);
         if ((strlen(name) < 2) || (strlen(name) > max_len ))
         {
-                write(sprintf("對不起，魔幻獸中文字必須是 1 到 %d 個中文字。\n",
+                write(sprintf("對不起，魔幻獸中文字必須是 1 到 %d 箇中文字。\n",
                       max_len / 2));
                 return 0;
         }

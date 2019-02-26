@@ -15,13 +15,13 @@ int main(object me, string arg)
         if(!arg || arg == " ")
                 return notify_fail("你要給誰喂水？\n");
         if(!objectp(pet = present(arg, environment(me))) || !living(pet))
-                return notify_fail("這裡沒有這動物。\n");
+                return notify_fail("這裏沒有這動物。\n");
         if( query("race", pet) == "人類" )
                 return notify_fail(pet->name()+"是寵物麼？瞪大眼睛看看！\n");
         if(pet->is_busy() )
-                return notify_fail(pet->name()+"正忙著呢，哪喝得下什麼！\n");
+                return notify_fail(pet->name()+"正忙着呢，哪喝得下什麼！\n");
         if(me->is_busy() )
-                return notify_fail("你正忙著呢，什麼也做不了！\n");
+                return notify_fail("你正忙着呢，什麼也做不了！\n");
         if(pet->is_fighting() )
                 return notify_fail("你沒看道它正在打架嗎？！\n");
         if(me->is_fighting() )
@@ -50,7 +50,7 @@ int main(object me, string arg)
                         }
                 }
                 if( i == sizeof(obj) )
-                        return notify_fail("這裡沒啥東西可以給"+pet->name()+"喂水。\n");
+                        return notify_fail("這裏沒啥東西可以給"+pet->name()+"喂水。\n");
 // 寵物飲水狀態改變。
                 addn("water", 10+query("liquid/drunk_apply", obj[i]), pet);
 // 容器容量改變。
@@ -59,14 +59,14 @@ int main(object me, string arg)
                 if( query("liquid/busy", obj[i]) )
                         me->start_busy(query("liquid/busy", obj[i]));
                 if( query("liquid/remaining", obj[i]) )
-                        message_vision("$N伸長脖頸對著$n，唏唏嗦嗦地喝了幾口"+query("liquid/name", obj[i])+"。\n",pet,obj[i]);
+                        message_vision("$N伸長脖頸對着$n，唏唏嗦嗦地喝了幾口"+query("liquid/name", obj[i])+"。\n",pet,obj[i]);
                 else
-                        message_vision("$N伸長脖頸對著$n，唏唏嗦嗦就把"+query("liquid/name", obj[i])+"喝了個精光。\n",pet,obj[i]);
+                        message_vision("$N伸長脖頸對着$n，唏唏嗦嗦就把"+query("liquid/name", obj[i])+"喝了個精光。\n",pet,obj[i]);
 // 喝到毒藥啦。
                 if( query("liquid/poisontime", obj[i])>1 )
                 {
                         pet->apply_condition(query("liquid/poison", obj[i]), query("liquid/poisontime", obj) );
-                        write(query("name", pet)+"突然覺得很難受地扭著腰掙紮了兩下，好象喝的東西有點不對勁。\n");
+                        write(query("name", pet)+"突然覺得很難受地扭着腰掙扎了兩下，好像喝的東西有點不對勁。\n");
                 }
 // 喝到酒啦。
                 switch(query("liquid/type", obj[i]) )
@@ -85,11 +85,11 @@ int main(object me, string arg)
                 j=query("level", pet);
                 if(i>=2+j*j)
                 {
-                        tell_object(me,HIY"你喂了這一次飲水後，發覺"+query("name", pet)+"似乎更聽話了！\n"NOR);
-// 喂養長級別。
+                        tell_object(me,HIY"你餵了這一次飲水後，發覺"+query("name", pet)+"似乎更聽話了！\n"NOR);
+// 餵養長級別。
                         addn("level", 1, pet);
                         set("feed", 0, pet);
-// 喂養長馴服度。
+// 餵養長馴服度。
                         addn("obe", 1, pet);
                         lvl=query("level", pet);
                 }
@@ -105,9 +105,9 @@ int help(object me)
         write(@HELP
 指令格式 : imbibe <動物>
 
-    此指令可用于喂養你所馴服的動物。
+    此指令可用於餵養你所馴服的動物。
 
-    對于已經馴服的動物，可以進行下述指令：
+    對於已經馴服的動物，可以進行下述指令：
 
 基本指令：
         come <動物名>:                  讓動物跟隨主人行動。
@@ -119,7 +119,7 @@ int help(object me)
 特殊指令：（只對某些動物適用）
         ride <動物名>:                  騎，如騎馬，虎，雕，鯊等。
         unride <動物名>:                下，離開坐騎。
-        feed <飼料> to <動物名>:        替動物喂食。
+        feed <飼料> to <動物名>:        替動物餵食。
         imbibe <動物名>:                給動物飲水。
 
 HELP

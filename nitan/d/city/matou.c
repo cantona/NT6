@@ -30,11 +30,11 @@ void create()
 {
         set("short","碼頭");
         set("long",@LONG
-這裡是大運河上最大的碼頭，南方的糧食，兩淮的鹽鐵在此卸下由
-漕運署的官員抽查，或轉運或暫時儲存。這裡人員繁雜，有小販在叫賣，
+這裏是大運河上最大的碼頭，南方的糧食，兩淮的鹽鐵在此卸下由
+漕運署的官員抽查，或轉運或暫時儲存。這裏人員繁雜，有小販在叫賣，
 有工人在搬運糧袋，有官員手持長鞭在監工，有幾個潑皮在轉來轉去，
 不知打些什麼主意。
-    岸邊停靠著一條客船。客船醒目處，掛著一個牌子(sign)。
+    岸邊停靠着一條客船。客船醒目處，掛着一個牌子(sign)。
 LONG );
         set("region", "yangzhou_zone");
         set("outdoors", "yangzhou");
@@ -70,7 +70,7 @@ int do_work()
                 return notify_fail("碼頭上現在不需要人幹活，下次吧！\n");
         if( query("combat_exp", me)<MIN_EXP )
         {
-             tell_object(me,"這裡都是重活，你現在還幹不了,需要攢夠5萬經驗再來吧。\n");
+             tell_object(me,"這裏都是重活，你現在還幹不了,需要攢夠5萬經驗再來吧。\n");
                 return 1;
         }
 
@@ -80,18 +80,18 @@ int do_work()
                 return 1;
         }
         if (me->is_busy() || me->is_fighting())
-                return notify_fail("你正忙著呢！\n");
+                return notify_fail("你正忙着呢！\n");
         if( query("jing", me)<10 || query("qi", me)<10 )
         {
                 message_vision(
-                        "監工沖著$N就是一鞭子，$N身上頓時起了一道血痕，$N踉踉蹌蹌躲到一\n"
+                        "監工衝着$N就是一鞭子，$N身上頓時起了一道血痕，$N踉踉蹌蹌躲到一\n"
                         "邊去了。“媽的，你小子這副萎靡不振的樣子還想幹活？！！”監工罵\n"
                         "到：“滾！！”\n", me);
                 me->receive_damage("qi", 11);
                 me->receive_wound("qi", 11);
                 return 1;
         }
-        write("監工拿鞭子指了指，說道：“去那裡搬麻袋吧。”\n");
+        write("監工拿鞭子指了指，説道：“去那裏搬麻袋吧。”\n");
         write("你搬起一個麻袋，開始幹活。\n");
         addn("worktimes", -1);
         me->start_busy(3);
@@ -108,8 +108,8 @@ int work_end(object me)
 
         if( !objectp(me) ) return 1;
 
-        write("終于做完苦工了，搬了一天的麻袋，累個半死。\n"
-              "監工過來拍了拍你的肩膀，說道：“小子，好樣的，這是你的工錢。”\n");
+        write("終於做完苦工了，搬了一天的麻袋，累個半死。\n"
+              "監工過來拍了拍你的肩膀，説道：“小子，好樣的，這是你的工錢。”\n");
         me->receive_damage("jing",10);
         me->receive_damage("qi",10);
                 add_exp=60+random(50);
@@ -155,7 +155,7 @@ int do_go(string arg)
 
         if (!arg) return 0;
         if (ob->is_busy() || ob->is_fighting())
-                return notify_fail("你正忙著呢！\n");
+                return notify_fail("你正忙着呢！\n");
         while(i--)
         {
                 if (arg == sign[i]["id"])
@@ -163,7 +163,7 @@ int do_go(string arg)
                         switch (MONEY_D->player_pay(ob, sign[i]["value"]))
                         {
                                 case 0:
-                                        return notify_fail("窮光蛋，一邊呆著去！\n");
+                                        return notify_fail("窮光蛋，一邊呆着去！\n");
                                 case 2:
                                         return notify_fail("有零錢嗎？\n");
                         }
@@ -176,5 +176,5 @@ int do_go(string arg)
                         return 1;
                 }
         }
-        return notify_fail("你要去哪裡？\n");
+        return notify_fail("你要去哪裏？\n");
 }

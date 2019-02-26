@@ -6,7 +6,7 @@ void create()
 {
         set_name(HIW "冰" HIR "火" HIC"守護神" NOR, ({ "binghuo shouhushen", "binghuo", "shouhushen" }));
         set("title", HIB "暗夜流星" NOR); 
-        set("long", HIC "傳說他就是冰火島的守護神，在這裡已經守護了千萬年。\n" NOR);
+        set("long", HIC "傳説他就是冰火島的守護神，在這裏已經守護了千萬年。\n" NOR);
 
         set("gender", "男性");
         set("age", 9999);
@@ -102,7 +102,7 @@ void create()
 
         }));
 
-        set("my_life", 1); // 當氣血低于10%的時候補滿一次，設置該參數為0
+        set("my_life", 1); // 當氣血低於10%的時候補滿一次，設置該參數為0
 
         setup();
 

@@ -54,7 +54,7 @@ int perform(object me, object target)
 
         msg = HIY "$N" HIY "十指連動，忽伸忽縮，或點或按，空中氣流激盪，劍氣自"
               HIY "$N" HIY "指中洶湧而出，驚震四方！！\n"
-              HIR "六劍連出，劍氣回盪，直割得$n眉毛削落，臉面生通，再也不能前進半分！\n" NOR;
+              HIR "六劍連出，劍氣迴盪，直割得$n眉毛削落，臉面生通，再也不能前進半分！\n" NOR;
 
         message_combatd(msg, me,target);
 
@@ -68,7 +68,7 @@ int perform(object me, object target)
         addn_temp("apply/attack", i, me);
         addn_temp("apply/unarmed_damage", damage, me);
         {
-                msg =  HIC "-------------------------少沖劍 \n"NOR;
+                msg =  HIC "-------------------------少衝劍 \n"NOR;
                 message_combatd(msg,me,target);
                 COMBAT_D->do_attack(me,target,weapon,TYPE_REGULAR,msg);
 
@@ -78,12 +78,12 @@ int perform(object me, object target)
                 COMBAT_D->do_attack(me,target,weapon,TYPE_REGULAR,msg);
 
 
-                msg =  HIY "------------------------ 中沖劍 \n"NOR;
+                msg =  HIY "------------------------ 中衝劍 \n"NOR;
                 message_combatd(msg,me,target);
                 COMBAT_D->do_attack(me,target,weapon,TYPE_REGULAR,msg);
 
 
-                msg =  HIG "-------------------------關沖劍 \n"NOR;
+                msg =  HIG "-------------------------關衝劍 \n"NOR;
                 message_combatd(msg,me,target);
                 COMBAT_D->do_attack(me,target,weapon,TYPE_REGULAR,msg);
 

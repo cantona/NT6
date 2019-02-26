@@ -13,7 +13,7 @@ int perform(object me)
 
       if( !objectp(weapon=query_temp("weapon", me)) || 
           query("skill_type", weapon) != "blade" )
-                return notify_fail("你先找把刀再說吧！\n");
+                return notify_fail("你先找把刀再説吧！\n");
 
         if( query_temp("honglian", me) )
                 return notify_fail("你正在使用「紅蓮火」。\n");  
@@ -44,8 +44,8 @@ int perform(object me)
                 return notify_fail("「紅蓮火」全以內力為本。你不加力，是無法發揮出它的威力的。\n");
 
         message_vision(RED "\n$N祭起戒塵刀之「紅蓮火」絕技，精純的內力呈紅色緩緩湧出，\n"
-                           "于身前三尺之處，便即停住不動，將這飄盪無定的真氣定在半空，\n"
-                           "它雖是虛無縹緲，不可捉摸，卻能殺人于無形，實是厲害不過！\n" NOR, me);
+                           "於身前三尺之處，便即停住不動，將這飄蕩無定的真氣定在半空，\n"
+                           "它雖是虛無縹緲，不可捉摸，卻能殺人於無形，實是厲害不過！\n" NOR, me);
         me->start_busy(1);
         set_temp("honglian", 1, me);
         addn("neili", -300, me);
@@ -106,7 +106,7 @@ int check_fight(object me)
 int remove_effect(object me)
 {
    string msg;
-   message_vision(HIY "\n$N回手一招紅蓮火使完，雙手合十立于當地，示慈悲為懷。\n\n"NOR, me);
+   message_vision(HIY "\n$N回手一招紅蓮火使完，雙手合十立於當地，示慈悲為懷。\n\n"NOR, me);
    addn_temp("apply/parry", -me->query_skill("jiechen-dao",1)/3, me);
    addn_temp("apply/armor", -me->query_skill("jiechen-dao",1)/3, me);
    delete_temp("honglian", me);

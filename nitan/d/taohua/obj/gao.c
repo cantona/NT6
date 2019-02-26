@@ -8,7 +8,7 @@ void create()
     if( clonep() )
             set_default_object(__FILE__);
     else {
-          set("long", "這是一塊粉紅色的點心，做成了桃花狀，引人食欲大增。\n");
+          set("long", "這是一塊粉紅色的點心，做成了桃花狀，引人食慾大增。\n");
           set("unit", "塊");
           set("value", 50);
           set("food_remaining", 6);

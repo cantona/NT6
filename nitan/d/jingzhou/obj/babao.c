@@ -9,7 +9,7 @@ void create()
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("long", "以精選糯米和各種果料烹制而成的八寶飯。\n");
+                set("long", "以精選糯米和各種果料烹製而成的八寶飯。\n");
                 set("unit", "碗");
                 set("value", 100);
                 set("food_remaining", 3);

@@ -1,5 +1,5 @@
  //ruanweijia.c
- //桃花島寶物-軟□甲
+ //桃花島寶物-軟蝟甲
  //PLZW 2003-12-22
  
 #include <ansi.h>
@@ -9,7 +9,7 @@ inherit CLOTH;
 
 void create()
 {
-        set_name(NOR + CYN "軟□甲" NOR, ({ "ruanwei jia", "ruanwei", "jia" }));
+        set_name(NOR + CYN "軟蝟甲" NOR, ({ "ruanwei jia", "ruanwei", "jia" }));
         set_weight(8000);
         if (clonep())
                 destruct(this_object());
@@ -17,7 +17,7 @@ void create()
                 set("unit", "件");
                 set("long", NOR + CYN "
 這是一件黑黝黝的軟甲，粗看下毫不起眼。這便是桃花島至寶
-軟□甲，只見整個甲身烏黑亮澤，著手柔軟，卻又是堅硬勝鐵，
+軟蝟甲，只見整個甲身烏黑亮澤，着手柔軟，卻又是堅硬勝鐵，
 寶甲外圍還生滿了倒刺，尖利無比。\n" NOR);
                 set("value", 100000);
                 set("no_sell", "這是啥？黑不溜秋的。");
@@ -70,12 +70,12 @@ void return_to_huang()
               } 
 
               message_vision("忽然一個桃花弟子走了過來，看到$N，忙招呼道：“黃島主讓我來找你拿回" 
-                             "軟□甲，你現在不用了麼？”\n" 
+                             "軟蝟甲，你現在不用了麼？”\n" 
                              "$N道：“好了，好了，你就拿回去吧。”\n" 
-                             "$N將軟□甲脫下交給桃花弟子帶走。\n", me); 
+                             "$N將軟蝟甲脱下交給桃花弟子帶走。\n", me); 
       } else 
       { 
-              message("visoin", "忽然一個桃花弟子走了過來，撿起軟□甲，嘆了口氣，搖搖頭走了。\n", 
+              message("visoin", "忽然一個桃花弟子走了過來，撿起軟蝟甲，歎了口氣，搖搖頭走了。\n", 
                       me); 
       } 
 

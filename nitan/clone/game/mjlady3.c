@@ -199,13 +199,13 @@ int do_addin()
         ||  me->query("id")==P3Data["Id"]
         ||  me->query("id")==P4Data["Id"]){
             if (!Playing) message_vision("$N大喊: [欠腳啊～～] 不停的哭哭啼啼.....。\n",me);
-            else message_vision("$N對著大家說: 今天自摸"+(random(12)+1)+"次就好。\n",me);
+            else message_vision("$N對著大家説: 今天自摸"+(random(12)+1)+"次就好。\n",me);
             return 1;
         }
        if (Playing){
                 if (random(2))
                 message_vision(this_object()->name()+
-                "對著"+me->name()+"說： 牌局正在進行中請到旁邊坐一下...。\n",me);
+                "對著"+me->name()+"説： 牌局正在進行中請到旁邊坐一下...。\n",me);
                 else  message_vision("$N喊著: [我也要玩啦～～] 不停的哭哭啼啼.....。\n",me);
                 return 1;
         }
@@ -215,21 +215,21 @@ int do_addin()
                         case 1:
                                 if(me->query("bank/past")<BetAmount*5) {
                                         message_vision(this_object()->name()+
-                                        "對著"+me->name(1)+"說： 你的帳戶裡面沒有足夠的賭資。\n",me);
+                                        "對著"+me->name(1)+"説： 你的帳户裏面沒有足夠的賭資。\n",me);
                                         return 1;
                                 }
                                 break;        
                         case 2:
                                 if(me->query("bank/now")<BetAmount*5) {
                                         message_vision(this_object()->name()+
-                                        "對著"+me->name(1)+"說： 你的帳戶裡面沒有足夠的賭資。\n",me);
+                                        "對著"+me->name(1)+"説： 你的帳户裏面沒有足夠的賭資。\n",me);
                                         return 1;
                                 }
                                 break;
                         case 3:
                                 if(me->query("bank/future")<BetAmount*5) {
                                         message_vision(this_object()->name()+
-                                        "對著"+me->name(1)+"說： 你的帳戶裡面沒有足夠的賭資。\n",me);
+                                        "對著"+me->name(1)+"説： 你的帳户裏面沒有足夠的賭資。\n",me);
                                         return 1;
                                 }
                                 break;
@@ -284,7 +284,7 @@ int do_dump(string str,object me)
         if (check_id(me->query("id"),"player")!="");
         else {
            command("stare "+me->query("id"));
-           command("say 這牌局跟你沒關系。");
+           command("say 這牌局跟你沒關係。");
            return 1;
         }
         if (!Playing){
@@ -305,7 +305,7 @@ int do_dump(string str,object me)
            return 1;
         }
         if (Goned==5){
-           message_vision("$N說道：此局因"+HIR+"五槓合牌"+NOR+"請再重新開始 start 。\n",this_object());
+           message_vision("$N説道：此局因"+HIR+"五槓合牌"+NOR+"請再重新開始 start 。\n",this_object());
            Playing=0;
            Count++;
            if (Play>=RECORD_PLAYERS){
@@ -333,8 +333,8 @@ int do_dump(string str,object me)
         if (check==0) return notify_fail("沒有["+str+"]這種代碼。\n");
         check=do_check_Mj(who["Mj"],str);
         if (check==0) return notify_fail("你沒"+do_check_num(str,0)+"這張牌。\n");
-        tell_object(me,"你說道："+do_check_num(str,0)+"\n");
-        tell_room(environment(this_object()),YEL+me->name()+"說："+do_check_num(str,0)+"。\n"+NOR,me);
+        tell_object(me,"你説道："+do_check_num(str,0)+"\n");
+        tell_room(environment(this_object()),YEL+me->name()+"説："+do_check_num(str,0)+"。\n"+NOR,me);
 //        command("say "+me->name()+"打出了一張.."+do_check_num(str,0));
         message_vision("$N打出了一張.."+do_check_num(str,3)+"\n",me);
         who["Mj"]=do_delete_Mj(who["Mj"],str,1);
@@ -344,7 +344,7 @@ int do_dump(string str,object me)
         Touched=0;
         NowPlayer++;
         NowPlayer%=Play;
-        message_vision(YEL+"$N說：還剩下["HIC+(end-count-16-Goned)/2+NOR+YEL+"]張牌可摸，現在輪到 "+HIY+capitalize(NowPlayerId[NowPlayer])+NOR+YEL+" 摸牌。\n"+NOR,this_object());
+        message_vision(YEL+"$N説：還剩下["HIC+(end-count-16-Goned)/2+NOR+YEL+"]張牌可摸，現在輪到 "+HIY+capitalize(NowPlayerId[NowPlayer])+NOR+YEL+" 摸牌。\n"+NOR,this_object());
         if(user = present(NowPlayerId[NowPlayer], environment(this_object())))
         {
                 tell_object(user,HIW+"< 該你羅!! >\n"+NOR);
@@ -379,7 +379,7 @@ int do_dump(string str,object me)
         if (count==(end-16-Goned)){
            Playing=0;
            Count++;
-           message_vision(YEL+"$N說：此局"+HIC+"流局"+NOR+YEL+"請再重新開始 "+HIR+"start"+NOR+YEL+" 。\n"+NOR,this_object());
+           message_vision(YEL+"$N説：此局"+HIC+"流局"+NOR+YEL+"請再重新開始 "+HIR+"start"+NOR+YEL+" 。\n"+NOR,this_object());
            //str="所剩下的牌只有:"+show_mj(List[count..end],2)+"\n";
            //tell_room(environment(this_object()),str);
            if (Play>=RECORD_PLAYERS){
@@ -421,7 +421,7 @@ int do_eat(string str)
         if (check_id(me->query("id"),"player")!="");
         else {
            command("stare "+me->query("id"));
-           command("say 這牌局跟你沒關系。");
+           command("say 這牌局跟你沒關係。");
            return 1;
         }
         if (!Playing){
@@ -492,7 +492,7 @@ int do_gon(string str,object me)
         if (check_id(me->query("id"),"player")!="");
         else {
            command("stare "+me->query("id"));
-           command("say 這牌局跟你沒關系。");
+           command("say 這牌局跟你沒關係。");
            return 1;
         }
         if (!Playing){
@@ -522,7 +522,7 @@ int do_gon(string str,object me)
            i=do_check_Mj(who["OutPon"],str);
            if (!i) return notify_fail("你只有一張不能槓。\n");
            if (NO_GON) return notify_fail("這樣無法槓牌。\n");
-              message_vision("\n$N說道："+HIB+"【 ～ 槓 ～ 】"+NOR+"\n\n",me);
+              message_vision("\n$N説道："+HIB+"【 ～ 槓 ～ 】"+NOR+"\n\n",me);
               who["Mj"]=do_delete_Mj(who["Mj"],str,1);
               sort_data(who["OutPon"]+=str);
               str=List[end..end+1];
@@ -553,8 +553,8 @@ int do_gon(string str,object me)
         who["AutoGon"]=do_delete_Mj(who["AutoGon"],str,1);
         if (Touched && NowPlayerId[NowPlayer]==me->query("id")){
            NO_HU=0;
-           if(random(2)) message_vision("\n$N臉上露出邪惡的笑容說：不好意思..我暗槓..hehe...\n\n",me);
-           else message_vision("\n$N面無表情的說：這次暗槓大概會槓死一堆人。\n\n",me);
+           if(random(2)) message_vision("\n$N臉上露出邪惡的笑容説：不好意思..我暗槓..hehe...\n\n",me);
+           else message_vision("\n$N面無表情的説：這次暗槓大概會槓死一堆人。\n\n",me);
            who["Mj"]=do_delete_Mj(who["Mj"],str,1);
            for (i=0;i<4;i++) who["Out"]+="xx";
            for (i=0;i<4;i++) who["OutGon"]+=str;
@@ -590,7 +590,7 @@ varargs int do_win(string str,object me)
         if (check_id(me->query("id"),"player")!="");
         else {
            command("stare "+me->query("id"));
-           command("say 這牌局跟你沒關系。");
+           command("say 這牌局跟你沒關係。");
            return 1;
         }
         if (!Playing){
@@ -604,7 +604,7 @@ varargs int do_win(string str,object me)
              tell_object(me,"\n你大叫："+HIW+"我～胡～啦～"+NOR+"\n\n");
         }
         if (Touched&&NowPlayerId[NowPlayer]==me->query("id"))
-           message_vision("$N說道：胡家"+me->name()+HIG+"自摸"+NOR+"～～～～～～～"+HIR+"吃紅"+NOR+"～～～～～\n",this_object());
+           message_vision("$N説道：胡家"+me->name()+HIG+"自摸"+NOR+"～～～～～～～"+HIR+"吃紅"+NOR+"～～～～～\n",this_object());
         else if ( LastDumpId==me->query("id") ) {
                 command("slap "+me->query("id"));
                 //return notify_fail("你要胡你自己打的牌??\n");
@@ -685,7 +685,7 @@ varargs int do_win(string str,object me)
                       b=1+Count*2;
               }
            }
-           str+=sprintf("\t\t\t基本台            三 台\n\t\t\t%20s\n","總台數:"+chinese_number(j+3)+" 台");
+           str+=sprintf("\t\t\t基本台            三 台\n\t\t\t%20s\n","總枱數:"+chinese_number(j+3)+" 台");
            str+="\t\t\t≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡\n";
            if(b!=0 && (Touched || LastDumpId==NowPlayerId[0]))
            {
@@ -836,7 +836,7 @@ varargs int do_win(string str,object me)
          }
         }else{
            command("sigh "+who["Id"]);
-           message_vision(YEL+"$N說：玩家 ["+HIY+who["Id"]+NOR+YEL+"] "+HIR+" 言乍 ～ 古月 ～～"+NOR+YEL+"。\n"+NOR,this_object());
+           message_vision(YEL+"$N説：玩家 ["+HIY+who["Id"]+NOR+YEL+"] "+HIR+" 言乍 ～ 古月 ～～"+NOR+YEL+"。\n"+NOR,this_object());
            Times++;
            Count=0;
            if (Play>=RECORD_PLAYERS){
@@ -856,7 +856,7 @@ varargs int do_win(string str,object me)
 ////////////////
               str="\t\t\t≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡\n";
               str+=sprintf("\t\t\t%-12s%8s 台\n","言乍古月",chinese_number(j));
-              str+=sprintf("\t\t\t%-12s%8s 台\n","倒扣總台數:",chinese_number(j));
+              str+=sprintf("\t\t\t%-12s%8s 台\n","倒扣總枱數:",chinese_number(j));
               str+="\t\t\t≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡\n";
               tell_room(environment(this_player()),str);
 /////////////
@@ -1106,7 +1106,7 @@ int do_touch(string str,object me)
         if (check_id(me->query("id"),"player")!="");
         else {
            command("stare "+me->query("id"));
-           command("say 這牌局跟你沒關系。");
+           command("say 這牌局跟你沒關係。");
            return 1;
         }
         if (!Playing){
@@ -1148,8 +1148,8 @@ int do_touch(string str,object me)
               for (i=0;i<1;i++){
                    who["OutFlower"]+=str;
                    HU_F=1;
-                   tell_room(environment(this_object()),YEL+me->name()+"說："+HIB+"花牌"+NOR+YEL+"補花!!。\n\n"+NOR+me->name()+"往後面補了一張牌。\n",me);
-                   tell_object(me,"你說："+HIB+"花牌"+NOR+"補花!!。\n\n你往後面補了一張牌。\n");
+                   tell_room(environment(this_object()),YEL+me->name()+"説："+HIB+"花牌"+NOR+YEL+"補花!!。\n\n"+NOR+me->name()+"往後面補了一張牌。\n",me);
+                   tell_object(me,"你説："+HIB+"花牌"+NOR+"補花!!。\n\n你往後面補了一張牌。\n");
                    str=List[end..end+1];
                    end-=2;
                    tell_object(me,"你摸到了一張"+do_check_num(str,3)+"\n");
@@ -1181,7 +1181,7 @@ int do_pon(string str,object me)
         if (check_id(me->query("id"),"player")!="");
         else {
            command("stare "+me->query("id"));
-           command("say 這牌局跟你沒關系。");
+           command("say 這牌局跟你沒關係。");
            return 1;
         }
         if (!Playing){
@@ -1282,12 +1282,12 @@ int do_restart(string str)
            else 
            {
               command("stare "+me->query("id"));
-              command("say 這牌局跟你沒關系。");
+              command("say 這牌局跟你沒關係。");
               return 1;
            }
         }
         message_vision("$N把牌局重新設定。\n",me);
-        message_vision(YEL+"$N說：$n將牌局重新設定, 請用"+HIR+" addin "+NOR+YEL+"加入牌局。\n"+NOR,this_object(),this_player());
+        message_vision(YEL+"$N説：$n將牌局重新設定, 請用"+HIR+" addin "+NOR+YEL+"加入牌局。\n"+NOR,this_object(),this_player());
         NowPlayerId[0]="";
         NowPlayerId[1]="";
         NowPlayerId[2]="";
@@ -1449,7 +1449,7 @@ int wash_mj(int amount)
                         }
                 }
         }
-        message_vision(YEL+"$N說：莊家 "+HIY+NowPlayerId[0]+NOR+YEL+" 請開門牌。\n"+NOR,this_object());
+        message_vision(YEL+"$N説：莊家 "+HIY+NowPlayerId[0]+NOR+YEL+" 請開門牌。\n"+NOR,this_object());
         return 1;
 }
 int do_setmj(string str)
@@ -1465,7 +1465,7 @@ int do_setmj(string str)
         else if (me->query("id")==P4Data["Id"]) who=P4Data;
         else return 0;
         if (!str){
-           numstr=this_object()->name()+"對著你說: 你目前的設定有:\n";
+           numstr=this_object()->name()+"對著你説: 你目前的設定有:\n";
           if (who["AutoTin"]!="") numstr+="遇到"+HIB+show_mj(who["AutoTin"],2)+NOR+"會自動"+HIB+"[胡牌]"+NOR+"。\n";
           if (who["AutoGon"]!="") numstr+="遇到"+HIY+show_mj(who["AutoGon"],2)+NOR+"會自動"+HIY+"[槓牌]"+NOR+"。\n";
           if (who["AutoPon"]!="") numstr+="遇到"+HIG+show_mj(who["AutoPon"],2)+NOR+"會自動"+HIG+"[碰牌]"+NOR+"。\n";
@@ -1473,7 +1473,7 @@ int do_setmj(string str)
           if (who["Show"]=="color")   numstr+="顯示方式為"+HIG+"[彩色]"+NOR+"。\n";
           if (who["Auto"]=="auto")    numstr+="你設定"+HIR+"[自動聽牌]"+NOR+"。\n";
           if (who["AutoTin"]==""&&who["AutoGon"]==""&&who["AutoPon"]==""&&who["Show"]==""&&who["Auto"]=="") numstr+="你沒有任何設定。\n";
-           tell_room(environment(me),this_object()->name()+"在"+me->name()+"耳邊說了一些話。\n",me);
+           tell_room(environment(me),this_object()->name()+"在"+me->name()+"耳邊説了一些話。\n",me);
            tell_object(me,numstr);
            return 1;
         }
@@ -1853,8 +1853,8 @@ void check_flower(mapping who)
            if (temp=="f1"||temp=="f2"||temp=="f3"||temp=="f4"||
                temp=="f5"||temp=="f6"||temp=="f7"||temp=="f8"){
               if (Playing){
-                 tell_room(environment(this_object()),YEL+this_player()->name()+"說："+HIC+"花牌"+NOR+YEL+"補花!!。\n\n"+NOR+this_player()->name()+"往後面補了一張牌。\n",this_player());
-                 tell_object(this_player(),"你說："+HIC+"花牌"+NOR+"補花!!。\n\n你往後面補了一張牌。\n");
+                 tell_room(environment(this_object()),YEL+this_player()->name()+"説："+HIC+"花牌"+NOR+YEL+"補花!!。\n\n"+NOR+this_player()->name()+"往後面補了一張牌。\n",this_player());
+                 tell_object(this_player(),"你説："+HIC+"花牌"+NOR+"補花!!。\n\n你往後面補了一張牌。\n");
                  tell_object(this_player(),"你摸到了一張"+do_check_num(List[end..end+1],0)+"\n");
               }
               HU_F=1;
@@ -2106,7 +2106,7 @@ write(@HELP_TIN
 2: setmj auto tin      設定自動聽牌。
 3: setmj tin none      取消會自動胡牌設定。
 
-范例:
+範例:
      摸牌之後發現打掉三萬之後可以聽二萬及五萬，自動聽牌步驟如下:
      1. setmj tin 2w     (設定聽二萬)
      2. setmj tin 5w     (設定聽五萬)
@@ -2205,7 +2205,7 @@ string to_say_play()
 {
 return @HELP
 
-        指  令    例          子                             說    明
+        指  令    例          子                             説    明
     ┌────────────────────────────────┐
     │  bet       bet 100 設定每台為100貨幣                  設定賭注 │
     │  addin     ----------                                 加入排局 │
@@ -2230,7 +2230,7 @@ string to_say_rule()
 {
 return @HELP
  
-　　每胡就有底台３，在加上所得的台就是總台，要是自摸就＊３，相當于三一的算法。
+　　每胡就有底台３，在加上所得的台就是總枱，要是自摸就＊３，相當於三一的算法。
 放槍就由總戰績那扣掉所失的台數。胡者則加上去。
  
 HELP;
@@ -2529,11 +2529,11 @@ int do_bet(string arg)
                 return 1;
         }
         if(bet_amount < BASIC_BET ){
-//                command("say 賭注不可以小于"+price_string(BASIC_BET,this_player()->money_type())+"。");
+//                command("say 賭注不可以小於"+price_string(BASIC_BET,this_player()->money_type())+"。");
                 return 1;
         }
         if(bet_amount > BET_LIMIT ){
-//                command("say 賭注不可以大于"+price_string(BET_LIMIT,this_player()->money_type())+"。");
+//                command("say 賭注不可以大於"+price_string(BET_LIMIT,this_player()->money_type())+"。");
                 return 1;
         }
         if(Play>0) {
@@ -2584,7 +2584,7 @@ int do_showmj(string str)
         if (check_id(me->query("id"),"player")!="");
         else {
            command("slap "+me->query("id"));
-           command("say 這牌局跟你沒關系。");
+           command("say 這牌局跟你沒關係。");
            return 1;
         }
         if (!Playing){
@@ -2601,7 +2601,7 @@ int do_showmj(string str)
         else if (me->query("id")==P4Data["Id"]) who=P4Data;
         else return 0;
         if(!target=present(str, environment(me))){
-                write("這裡沒有這個人可以幫你看牌。\n");
+                write("這裏沒有這個人可以幫你看牌。\n");
                 return 1;
         }
         if(target == me) {

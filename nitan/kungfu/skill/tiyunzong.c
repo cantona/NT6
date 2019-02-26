@@ -6,9 +6,9 @@ string type() { return "martial"; }
 string martialtype() { return "dodge"; }
 
 string *dodge_msg = ({
-        "只見$n一招"HIW"「白鶴沖天」"NOR"，身體向上筆直地縱起丈余，躲過了$N這一招。\n",
+        "只見$n一招"HIW"「白鶴沖天」"NOR"，身體向上筆直地縱起丈餘，躲過了$N這一招。\n",
         "$n一個"BLU"「鷂子翻身」"NOR"，向後縱出數丈之遠，避開了$N的凌厲攻勢。\n",
-        "$n使出"HIY"「大鵬展翅」"NOR"，向一旁飄然縱出，輕輕著地。\n",
+        "$n使出"HIY"「大鵬展翅」"NOR"，向一旁飄然縱出，輕輕着地。\n",
         "但是$n一招"HIC"「白鶴沖天」"NOR"身形飄忽，輕輕一縱，早已避開。\n",
         "$n身隨意轉，一招"HIB"「鷂子翻身」"NOR"倏地往一旁挪開了三尺，避過了這一招。\n",
         "可是$n一招"YEL"「大鵬展翅」"NOR"側身一讓，$N這一招撲了個空。\n",
@@ -78,7 +78,7 @@ mixed valid_damage(object ob, object me, int damage, object weapon)
                 switch (random(3))
                 {
                 case 0:
-                        result += (["msg" : HIC "$n" HIC "一招「白鶴沖天」，身體向上筆直地縱起丈余，"
+                        result += (["msg" : HIC "$n" HIC "一招「白鶴沖天」，身體向上筆直地縱起丈餘，"
                                             "$N頓然失去目標，勁招失手！\n" NOR]);
                         break;
                 case 1:
@@ -89,7 +89,7 @@ mixed valid_damage(object ob, object me, int damage, object weapon)
                         break;
                 default:
                         result += (["msg" : HIC "$n" HIC "使出「大鵬展翅」，向一旁飄然縱出，"
-                                            "已然毫發無損地輕輕著地。\n" NOR]);
+                                            "已然毫髮無損地輕輕着地。\n" NOR]);
                         break;
                 }
                 return result;
@@ -99,7 +99,7 @@ mixed valid_damage(object ob, object me, int damage, object weapon)
                 switch (random(3))
                 {
                 case 0:
-                        result = HIY "$n" HIY "一招「白鶴沖天」，身體向上筆直地縱起丈余，"
+                        result = HIY "$n" HIY "一招「白鶴沖天」，身體向上筆直地縱起丈餘，"
                                  "可是$N" HIY "早以看破$n的企圖。\n" NOR;
                         break;
                 case 1:

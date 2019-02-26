@@ -62,7 +62,7 @@ void init()
                                 NOR + HIW "你成功的找到了葵花寶典！\n" NOR + HIC
                                 "通過這次的歷練，你獲得了" + chinese_number(exp) +
                                 "點經驗、" + chinese_number(pot) + "點潛\n能以及"
-                                + chinese_number(sc) + "點江湖閱歷。\n\n" NOR);
+                                + chinese_number(sc) + "點江湖閲歷。\n\n" NOR);
                 set("skybook/xiaoao/baodian", 1, me);
         } else
                 tell_object(me, HIY "\n你剛躍上房樑，頓時發現一件袈裟擺放其中。\n\n" NOR);

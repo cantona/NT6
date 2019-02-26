@@ -193,13 +193,13 @@ int help(object me)
     不管你是第幾次使用，要使用 im 時，必需先打 im login 作
 登入的動作。
 
-    因為網路傳輸的關系，有些訊息可能會延遲一些時間才會收到。
+    因為網路傳輸的關係，有些訊息可能會延遲一些時間才會收到。
      
      im login           - 登入 im 系統。
      im quit            - 登出 im 系統。
      im who             - 列出你的好友名單。
-     im register msn    - 注冊 msn 帳號。
-     im register yahoo  - 注冊 yahoo 帳號。
+     im register msn    - 註冊 msn 帳號。
+     im register yahoo  - 註冊 yahoo 帳號。
      im add <protocol> <account> - 新增好友。
      im remove <account>- 移除好友。
      im no              - 不同意他人把你加入好友名單。

@@ -29,7 +29,7 @@ mapping *action = ({
         "force": 140,
         "damage_type":  "砸傷"
 ]),
-([      "action": "只見$N拉開架式，一招「折轉東來」使得虎虎有風，數只手掌一齊擊向$n的$l",
+([      "action": "只見$N拉開架式，一招「折轉東來」使得虎虎有風，數隻手掌一齊擊向$n的$l",
         "dodge": 20,
         "parry": 20,
         "attack": 25,
@@ -82,7 +82,7 @@ mapping query_action(object me, object weapon)
 int practice_skill(object me)
 {
         if( query("qi", me)<100 )
-                return notify_fail("你現在手足酸軟，休息一下再練吧。\n");
+                return notify_fail("你現在手足痠軟，休息一下再練吧。\n");
 
         if( query("neili", me)<80 )
                 return notify_fail("你的內力不夠了。\n");

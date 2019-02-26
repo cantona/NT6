@@ -241,7 +241,7 @@ mapping *first_name=({
 ([      "name":"楊",      "id":"yang"   ]),
 ([      "name":"王",      "id":"wang"   ]),
 ([      "name":"樑",      "id":"liang"  ]),
-([      "name":"于",      "id":"yu"     ]),
+([      "name":"於",      "id":"yu"     ]),
 ([      "name":"黃",      "id":"huang"  ]),
 ([      "name":"林",      "id":"lin"    ]),
 ([      "name":"陳",      "id":"chen"   ]),
@@ -280,7 +280,7 @@ mapping *second_name1=({
 ([      "name":"宏",    "id":"hong"  ]),
 ([      "name":"榮",    "id":"rong"  ]),
 ([      "name":"鵬",    "id":"peng"  ]),
-([      "name":"沖",    "id":"chong" ]),
+([      "name":"衝",    "id":"chong" ]),
 ([      "name":"灝",    "id":"hao"   ]),
 ([      "name":"思",    "id":"si"    ]),
 ([      "name":"理",    "id":"li"    ]),
@@ -313,7 +313,7 @@ mapping *second_name2=({
 });
 
 mapping *third_name1=({
-([      "name":"峰",    "id":"feng"  ]),
+([      "name":"峯",    "id":"feng"  ]),
 ([      "name":"華",    "id":"hua"   ]),
 ([      "name":"奇",    "id":"qi"    ]),
 ([      "name":"歌",    "id":"ge"    ]),
@@ -406,7 +406,7 @@ void create()
         if (query("gender")=="女性") set_name(name2,({id2,idf2}));
         if (mp["class"]) set("class",mp["class"]);
         if (mp["family"]) set("family/family_name",mp["family"]);
-        title=CYN+mp["family"]+"姦邪"+NOR;
+        title=CYN+mp["family"]+"奸邪"+NOR;
         ratio=90+random(50);
 
 //here begin to set_skill of this_object()
@@ -502,7 +502,7 @@ void create()
         else if(exp>6000000) title+=MAG"   雄霸一方"NOR;
         else if(exp>4000000) title+=HIB"   惡貫滿盈"NOR;
         else if(exp>2000000) title+=RED"   臭名昭著"NOR;
-        else if(exp>1000000) title+=HIC"   江湖余孽"NOR;
+        else if(exp>1000000) title+=HIC"   江湖餘孽"NOR;
         else title+=HIW"   江湖宵小"NOR;     
         set("title",title);  
         set("env/wimpy", 60);
@@ -597,11 +597,11 @@ void init()
         }
         } else
         if( killer->query("combat_exp")*2/5 > ob->query("combat_exp") && random(5)>3)
-        message_vision(HIC"$N對$n喝道: “殺你這種小角色怕臟了我的手，"
+        message_vision(HIC"$N對$n喝道: “殺你這種小角色怕髒了我的手，"
         +"還不快給我滾！\n"NOR,killer,ob); 
         else
         if(killer->query("combat_exp")<ob->query("combat_exp")*2/5 && random(5)>3)
-        message_vision(HIW"$N對$n大義凜然道: “撞到前輩手裡我也認了，"
+        message_vision(HIW"$N對$n大義凜然道: “撞到前輩手裏我也認了，"
         +"要殺要剮悉聽尊便！\n"NOR,killer,ob);
 
         return;
@@ -647,7 +647,7 @@ void escape_me()
         object ob=this_object(); 
         message_vision(
         HIB"$N大笑了幾聲：“今天痛痛快快地教訓了這幫所謂的正道偽君子們一頓，\n"+
-        "也算沒有辜負掌門的重托了，哈哈哈哈！”\n說罷，一個筋鬥跳出戰圈，不知去向。\n"NOR,ob);
+        "也算沒有辜負掌門的重託了，哈哈哈哈！”\n説罷，一個筋斗跳出戰圈，不知去向。\n"NOR,ob);
         remove_call_out("escape_me");
         destruct(ob);
 }
@@ -711,7 +711,7 @@ void die()
              && team[n]->is_killing(me) )   
           {
 
-           tell_object(team[n],HIW"你所參加的隊伍獎勵你奮勇殺敵之戰功──"
+           tell_object(team[n],HIW"你所參加的隊伍獎勵你奮勇殺敵之戰功——"
            +"你獲得了"+CHINESE_D->chinese_number(team_exp)+"點實戰經驗和\n"
            +CHINESE_D->chinese_number(team_pot)+"點潛能獎勵！\n"NOR);
                    team[n]->add("chousha_quest/reward_exp",team_exp);

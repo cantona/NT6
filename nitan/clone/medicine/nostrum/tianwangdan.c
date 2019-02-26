@@ -18,9 +18,9 @@ void create()
         else {
                 set("unit", "顆");
                 set("value", 4000);
-                set("long", "這天王保命丹是由三百年老山人參、白熊膽、雪蓮等物煉成的靈丹。\n");
+                set("long", "這天王保命丹是由三百年老山人蔘、白熊膽、雪蓮等物煉成的靈丹。\n");
                 set("medicine", 1);
-                set("no_drop", "天王保命丹煉制，哪能亂扔！ \n");
+                set("no_drop", "天王保命丹煉製，哪能亂扔！ \n");
         }
 
         setup();
@@ -34,7 +34,7 @@ int do_eat(string arg)
         if(!present(this_object(), me))
                 return notify_fail("你要吃什麼？\n");
         if( me->is_busy() )
-                return notify_fail("別急，慢慢吃，小心別噎著了。\n");
+                return notify_fail("別急，慢慢吃，小心別噎着了。\n");
 
         if( query("eff_jing", me) >= query("max_jing", me) && 
                 query("eff_qi", me) >= query("max_qi", me) )

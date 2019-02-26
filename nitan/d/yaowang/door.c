@@ -5,11 +5,11 @@ void create()
 {
         set("short", "大門");
         set("long", @LONG
-這裡是一處莊正高大石門，與眾不同的是門兩旁各擺著一個
-青石雕刻的臥虎，門上還有不少的小孔，也不知道是做什麼用的，
-門的正上方的牆裡嵌著一塊石板，石板上刻著“藥王谷”三個蒼
-勁的大字，原來這裡就是令武林人士變色的藥王谷。在門的右邊
-立著一塊石碑(bei)。
+這裏是一處莊正高大石門，與眾不同的是門兩旁各擺着一個
+青石雕刻的卧虎，門上還有不少的小孔，也不知道是做什麼用的，
+門的正上方的牆裏嵌着一塊石板，石板上刻着“藥王谷”三個蒼
+勁的大字，原來這裏就是令武林人士變色的藥王谷。在門的右邊
+立着一塊石碑(bei)。
 LONG
         );
         set("exits", ([
@@ -19,20 +19,20 @@ LONG
         "south" : __DIR__"tiandi2",
 ]));
         set("item_desc", ([
-                "bei" :  HIW"\n     □□□□\n"+
-                   HIW"     □ "HIB"藥"HIW" □\n"+
-                   HIW"     □ "HIB"王"HIW" □\n"+
-                   HIW"     □ "HIB"谷"HIW" □\n"+
-                   HIW"     □ "HIB"重"HIW" □\n"+
-                   HIW"     □ "HIB"地"HIW" □\n"+
-                   HIW"     □ "HIB"擅"HIW" □\n"+
-                   HIW"     □ "HIB"闖"HIW" □\n"+
-                   HIW"     □ "HIB"者"HIW" □\n"+
-                   HIW"     □    □\n"+
-                   HIW"     □ "HIR"殺"HIW" □\n"+
-                   HIW"     □ "HIR"無"HIW" □\n"+
-                   HIW"     □ "HIR"赦"HIW" □\n"+
-                   HIW"     □□□□\n"NOR,
+                "bei" :  HIW"\n     ┏━━┓\n"+
+                   HIW"     ┃ "HIB"藥"HIW" ┃\n"+
+                   HIW"     ┃ "HIB"王"HIW" ┃\n"+
+                   HIW"     ┃ "HIB"谷"HIW" ┃\n"+
+                   HIW"     ┃ "HIB"重"HIW" ┃\n"+
+                   HIW"     ┃ "HIB"地"HIW" ┃\n"+
+                   HIW"     ┃ "HIB"擅"HIW" ┃\n"+
+                   HIW"     ┃ "HIB"闖"HIW" ┃\n"+
+                   HIW"     ┃ "HIB"者"HIW" ┃\n"+
+                   HIW"     ┃    ┃\n"+
+                   HIW"     ┃ "HIR"殺"HIW" ┃\n"+
+                   HIW"     ┃ "HIR"無"HIW" ┃\n"+
+                   HIW"     ┃ "HIR"赦"HIW" ┃\n"+
+                   HIW"     ┗━━┛\n"NOR,
         ]));
         set("outdoors", "yaowang");
 

@@ -85,7 +85,7 @@ string challenge()
         switch (random(2))
         {
         case 0:
-                return "我乃" + query("nation") + "人士，不遠萬裡"
+                return "我乃" + query("nation") + "人士，不遠萬里"
                         "來到中原，特地向諸位高手請教武學。";
 
         default:
@@ -125,7 +125,7 @@ void lost()
         else
                un=query("unit", ob);
 
-        message_vision(CYN "$N" CYN "雙手合十，嘆道：中原武學真是博大"
+        message_vision(CYN "$N" CYN "雙手合十，歎道：中原武學真是博大"
                        "精深，這" + un + ob->name() + CYN "就算是我求"
                        "學的贈禮吧。\n" NOR, this_object());
 

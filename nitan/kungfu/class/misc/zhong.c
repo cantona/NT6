@@ -6,11 +6,11 @@ inherit "/inherit/char/punisher";
 
 void create()
 {
-        set_name("鐘志靈", ({ "pang toutuo", "pang" ,"toutuo"}));
+        set_name("鍾志靈", ({ "pang toutuo", "pang" ,"toutuo"}));
         set("title", HIY "神龍教" NOR "左護法");
         set("nickname",HIR "遼東胖尊者" NOR);
         set("long", "這頭陀身材奇高，而且瘦得出奇；臉上皮包骨頭、雙\n"
-                    "目深陷，當真便如僵屍一般。\n" );
+                    "目深陷，當真便如殭屍一般。\n" );
         set("gender", "男性");
         set("age", 44);
 

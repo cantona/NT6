@@ -12,7 +12,7 @@ void create()
         set("title", "鐵劍門掌門人");
         set("nickname", HIC"護國真人"NOR);
         set("age", 44);
-        set("long", "這是一位頗有仙風道骨的瀟洒全真，手握長劍，目視前方。\n");
+        set("long", "這是一位頗有仙風道骨的瀟灑全真，手握長劍，目視前方。\n");
 
         set("str", 25);
         set("int", 27);

@@ -9,7 +9,7 @@ void create()
                 set_default_object(__FILE__);
         else
         {
-                set("long", "這是一個銀制的餐具。\n");
+                set("long", "這是一個銀製的餐具。\n");
                 set("base_unit", "個");
                 set("base_weight", 10000);
                 set("no_sell", 1);

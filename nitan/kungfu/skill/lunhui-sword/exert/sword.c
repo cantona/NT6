@@ -11,13 +11,13 @@ int exert(object me, object target)
         object weapon;
 
         if (target != me)
-                return notify_fail("你只能用六道輪回劍來提升自己的戰鬥力。\n");
+                return notify_fail("你只能用六道輪迴劍來提升自己的戰鬥力。\n");
 
         if( query_temp("sword", me) )
                 return notify_fail("你已經在運功中了。\n");
 
         if (me->query_skill_mapped("sword") != "lunhui-sword")
-                return notify_fail("你還沒有激發六道輪回劍為劍法，無法運功。\n");
+                return notify_fail("你還沒有激發六道輪迴劍為劍法，無法運功。\n");
                 
         if( !objectp(weapon=query_temp("weapon", me)) )
                 return notify_fail("你還沒有裝備上你的寶劍，無法運功。\n");
@@ -57,7 +57,7 @@ void remove_effect(object me, int amount)
                 addn_temp("apply/sword", -amount/8, me);
 
                 delete_temp("sword", me);
-                tell_object(me, HIW "你的六道輪回劍「輪回劍氣」運行完畢，將內力收回丹田。\n" NOR);
+                tell_object(me, HIW "你的六道輪迴劍「輪迴劍氣」運行完畢，將內力收回丹田。\n" NOR);
         }
 
 

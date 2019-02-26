@@ -88,7 +88,7 @@ mixed hit_ob(object me, object ob, int damage_bouns)
 {
         ob->receive_wound("qi", 200 + random(200), me);
         set("neili",query("max_neili",  me), me);
-        return HIR "$N" HIR "身上騰起一股火燄，登時逼得$n"
+        return HIR "$N" HIR "身上騰起一股火焰，登時逼得$n"
                HIR "退後幾步，悶哼一聲。\n" NOR;
 }
 
@@ -116,8 +116,8 @@ void random_move()
         {
                 message_vision("$N急急忙忙的走了。\n", this_object());
                 CHANNEL_D->channel_broadcast("rumor",
-                        "聽說" + name() + HIM "找上花果山水簾洞，慘"
-                        "遭猴兵戲辱，已經逃回火燄山。" NOR);
+                        "聽説" + name() + HIM "找上花果山水簾洞，慘"
+                        "遭猴兵戲辱，已經逃回火焰山。" NOR);
                 destruct(this_object());
                 return;
         }

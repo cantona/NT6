@@ -47,7 +47,7 @@ int accept_object(object who, object ob)
         object me=this_player();
 
         if (me->is_busy())
-                return notify_fail("你還在忙著呢，等一會吧。");
+                return notify_fail("你還在忙着呢，等一會吧。");
         me->start_busy(5);
         if (query("book_count"))
         {
@@ -55,17 +55,17 @@ int accept_object(object who, object ob)
                 {
                         if( query_temp("tmark/押", ob) )
                         {
-                                message_vision( HIG"牌童詫異地對$N說：你已經下過注了呀！\n"NOR,who);
+                                message_vision( HIG"牌童詫異地對$N説：你已經下過注了呀！\n"NOR,who);
                                 return 0;
                         }
                         if (ob->value()<100)
                         {
-                                message_vision( HIR"牌童不屑一顧地看著$N，說道：要下注至少一兩銀子！\n"NOR,who);
+                                message_vision( HIR"牌童不屑一顧地看着$N，説道：要下注至少一兩銀子！\n"NOR,who);
                                 return 0;
                         }
                         if (ob->value()>20000)
                         {
-                                message_vision( HIR"牌童搖了搖頭，對$N說道：這裡不歡迎孤注一擲，最多下二兩黃金。\n"NOR,who);
+                                message_vision( HIR"牌童搖了搖頭，對$N説道：這裏不歡迎孤注一擲，最多下二兩黃金。\n"NOR,who);
                                 return 0;
                         }
                         addn("book_count",-1);
@@ -131,7 +131,7 @@ int do_deal()
 
         if (summ>21)
         {
-                message_vision( WHT"牌童笑嘻嘻地說：不好意思，你的牌漲爆了，我又贏了。\n"NOR,me);
+                message_vision( WHT"牌童笑嘻嘻地説：不好意思，你的牌漲爆了，我又贏了。\n"NOR,me);
         }
         else
         {
@@ -152,7 +152,7 @@ int do_deal()
                         if (sumi>21 || sumi<summ)
                         {
                                 if (sumi>21)
-                                        message_vision( HIY"牌童喪氣地說：我的"HIG+cstr(i1)+cstr(i2)+cstr(i3)+HIY"漲爆了，天災人禍，賠你！\n"NOR,me);
+                                        message_vision( HIY"牌童喪氣地説：我的"HIG+cstr(i1)+cstr(i2)+cstr(i3)+HIY"漲爆了，天災人禍，賠你！\n"NOR,me);
                                 else
                                         message_vision( HIY"牌童氣得一把把牌扔在桌上：我"HIG+cstr(i1)+cstr(i2)+cstr(i3)+HIY"，你點大，給你錢！撐死你！\n"NOR,me);
                                 pieqian(me);
@@ -165,7 +165,7 @@ int do_deal()
                                 }
                                 else
                                 {
-                                        message_vision( HIG"牌童笑嘻嘻地說：我的牌是"HIR+cstr(i1)+cstr(i2)+cstr(i3)+"\n"NOR,me);
+                                        message_vision( HIG"牌童笑嘻嘻地説：我的牌是"HIR+cstr(i1)+cstr(i2)+cstr(i3)+"\n"NOR,me);
                                         message_vision( HIG"牌童滿臉遺憾的表情：大家這麼熟的朋友了，怎麼能老贏你的錢呢？怪不好意思！\n"NOR,me);
                                 }
                         }
@@ -200,7 +200,7 @@ int do_turn()
         if (sumi>21 || sumi<summ)
         {
                 if (sumi>21)
-                        message_vision( HIY"牌童喪氣地說：我的牌"HIG+cstr(i1)+cstr(i2)+cstr(i3)+HIY"漲爆了，虧大了人家我，賠你！\n"NOR,me);
+                        message_vision( HIY"牌童喪氣地説：我的牌"HIG+cstr(i1)+cstr(i2)+cstr(i3)+HIY"漲爆了，虧大了人家我，賠你！\n"NOR,me);
                 else
                         message_vision( HIY"牌童氣得一把把牌扔在桌上：我是"HIG+cstr(i1)+cstr(i2)+cstr(i3)+HIY"，算你走運！\n"NOR,me);
                 pieqian(me);
@@ -213,7 +213,7 @@ int do_turn()
                 }
                 else
                 {
-                        message_vision( HIG"牌童笑嘻嘻地說：我的牌是"HIR+cstr(i1)+cstr(i2)+cstr(i3)+"\n"NOR,me);
+                        message_vision( HIG"牌童笑嘻嘻地説：我的牌是"HIR+cstr(i1)+cstr(i2)+cstr(i3)+"\n"NOR,me);
                         message_vision( HIG"牌童滿臉遺憾的表情：大家這麼熟的朋友了，贏你的錢別不開心了！\n"NOR,me);
                 }
         }
@@ -287,23 +287,23 @@ int yesorno()
         {
 /* 似乎這個概率不太對 by xmmy
 
-是關于押牌房(就是賭21點)的一個大bug。
-在賭21點的時候，系統是設置讓牌童在拿到的牌在小于15點的時候就繼續要牌，
-大于等于15點的話：
-                如果玩家兩張牌的點數大于牌童的點數，還是繼續要牌，
+是關於押牌房(就是賭21點)的一個大bug。
+在賭21點的時候，系統是設置讓牌童在拿到的牌在小於15點的時候就繼續要牌，
+大於等於15點的話：
+                如果玩家兩張牌的點數大於牌童的點數，還是繼續要牌，
                 如果玩家的點數比牌童的點數小，牌童就直接攤牌。
 這個算法其實並不是最優策略。
-通過計算可以發現（具體計算太復雜，因為要考慮A既可以算1點，也可以算11點
-的情況，我是先不考慮A可以算11點的情況，算出有問題，再通過實踐來驗証的），
-在大于等于16點的時候才攤牌是最佳的選擇。呵呵，具體的計算過程我就不發過來了，
+通過計算可以發現（具體計算太複雜，因為要考慮A既可以算1點，也可以算11點
+的情況，我是先不考慮A可以算11點的情況，算出有問題，再通過實踐來驗證的），
+在大於等於16點的時候才攤牌是最佳的選擇。呵呵，具體的計算過程我就不發過來了，
 
 如果你要的話，我再打給你（因為我是在紙上算的）。
 附上我實踐的一些數據：
-   我的機器人是設置成如果我的牌小于16點就繼續要牌，大于等于16點就攤派。
+   我的機器人是設置成如果我的牌小於16點就繼續要牌，大於等於16點就攤派。
    長安、揚州兩處押牌房一起掛，從晚上12點到早上7點，一般可以賺七萬到八萬gold。
    我掛機紀錄的數據：win=39655,lost=37310,
    win就是贏的次數(如果剛好21點贏雙份的話我是算贏兩次的)， lost就是輸的次數。
-建議吧押牌的程序改成牌童在大于等于16點的時候才攤牌，這樣子就不會再有bug了。
+建議吧押牌的程序改成牌童在大於等於16點的時候才攤牌，這樣子就不會再有bug了。
 btw:呵呵，我的bug沒有讓別人知道的，所以不用擔心會出現舊站的時候cash滿天飛的情
 況。
     我的錢現在有二三十萬吧（因為我只用過幾次，賺太多了也沒意思），我會注意控

@@ -91,7 +91,7 @@ void greeting(object ob)
         myfam = (mapping)query("family", ob);
         if( myfam["master_id"] == "yideng dashi")
         {
-message_vision(HIY"點蒼漁隱對$N說：你回來了。自己上去見師父吧。\n"NOR, ob);
+message_vision(HIY"點蒼漁隱對$N説：你回來了。自己上去見師父吧。\n"NOR, ob);
                 set_temp("yu_allow", 1, ob);
         }
         return;
@@ -105,7 +105,7 @@ int accept_object(object who, object ob)
 
         if( query("id", ob) != "hongbu" )
                 return notify_fail("點蒼漁隱不想要這件東西。\n");
-        say( "點蒼漁隱沖你點了點頭：進屋去吧。\n");
+        say( "點蒼漁隱衝你點了點頭：進屋去吧。\n");
         set_temp("yu_allow", 1, who);
         return 1;
 }

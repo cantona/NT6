@@ -29,7 +29,7 @@ int perform(object me, object target)
 
         if( objectp(weapon=query_temp("weapon", me)) || 
             objectp(weapon=query_temp("handing", me)) )
-                return notify_fail("你必須空著雙手才能使用指法絕招。\n");
+                return notify_fail("你必須空着雙手才能使用指法絕招。\n");
 
         if ((int)me->query_skill("qiluo-finger", 1) < 200)
                 return notify_fail("你的七羅神訣不夠嫻熟，不會使用「雙絕指」。\n");
@@ -40,11 +40,11 @@ int perform(object me, object target)
         if( query("neili", me)<800 )
                 return notify_fail("你現在內力太弱，不能使用「雙絕指」。\n");
                         
-        msg = HIB "\n$N" HIB "口中默讀著汽車說明書，忽然招式一緩，車身急退，須臾已在丈許之外。\n"
+        msg = HIB "\n$N" HIB "口中默讀着汽車説明書，忽然招式一緩，車身急退，須臾已在丈許之外。\n"
               HIB "$n" HIB "見$N" HIB "力有不繼，正要反擊，卻見$N" HIB "加大油門反擊雙手緊扣，雙指急轉，遙指$n。 \n"
               HIB "$n" HIB "一時亂了陣腳，不知$N" HIB "所出何招，心頭一陣迷惘。\n"
               HIW " 萬 車 奔 騰 !\n"
-              HIB "喝聲中混雜著強勁的" HIB + to_chinese(me->query_skill_mapped("force"))+ HIB "，$n" HIB "不由心神大亂，\n"
+              HIB "喝聲中混雜着強勁的" HIB + to_chinese(me->query_skill_mapped("force"))+ HIB "，$n" HIB "不由心神大亂，\n"
               HIB "只感到對方此車化身萬千，汽車真氣滔滔不絕從四面八方湧來，即使協生雙翼，還是避無可避！\n\n" NOR;
 
         ap = me->query_skill("finger") + me->query_skill("force");

@@ -24,8 +24,8 @@ void create()
 
         set("attitude", "peaceful");
         set("inquiry", ([
-                "寫信" : "李鐵嘴說道：代客寫信，每頁五十文。\n",
-                "寫條幅" : "李鐵嘴說道：可以用各家字跡寫條幅，每幅五兩白銀。\n",
+                "寫信" : "李鐵嘴説道：代客寫信，每頁五十文。\n",
+                "寫條幅" : "李鐵嘴説道：可以用各家字跡寫條幅，每幅五兩白銀。\n",
                 "偽造" : (: do_forge :),
         ]) );
 
@@ -35,8 +35,8 @@ void create()
 
 int do_forge()
 {
-        say("李鐵嘴兩只眼睛四下掃了掃，「嘿嘿嘿」的幹笑了幾聲...\n");
-        write("李鐵嘴輕聲跟你說道：不是我吹牛，保証驀的跟原來"
+        say("李鐵嘴兩隻眼睛四下掃了掃，「嘿嘿嘿」的乾笑了幾聲...\n");
+        write("李鐵嘴輕聲跟你説道：不是我吹牛，保證驀的跟原來"
               "字體一模一樣，每封信\n"
               "                           五十兩白銀，不二價。\n");
         set_temp("marks/李", 1, this_player());
@@ -54,14 +54,14 @@ int accept_object(object who, object ob)
                 if( query_temp("marks/李", who) )
                 {
                         set_temp("marks/李3", 1, this_player());
-                        write("李鐵嘴對你說道：造封信容易，先拿五十兩銀子來。\n");
+                        write("李鐵嘴對你説道：造封信容易，先拿五十兩銀子來。\n");
                         set_temp("marks/李", 0, this_player());
                         call_out("destroy", 1, ob);
                         return 1;
                 }else if( query_temp("marks/李2", who) )
                 {
-                        write("李鐵嘴皮笑肉不笑的對你說道：偽造這"
-                              "封信可是關系重大啊，得多收五十兩。\n");
+                        write("李鐵嘴皮笑肉不笑的對你説道：偽造這"
+                              "封信可是關係重大啊，得多收五十兩。\n");
                         set_temp("marks/李4", 1, this_player());
                         set_temp("marks/李2", 0, this_player());
                         call_out("destroy", 1, ob);
@@ -74,9 +74,9 @@ int accept_object(object who, object ob)
         {
                 if( query_temp("marks/李4", who) )
                 {
-                        write("李鐵嘴對你說道：這封信是造好了，但" +
+                        write("李鐵嘴對你説道：這封信是造好了，但" +
                               RANK_D->query_respect(who) + 
-                              "要是出了事，千萬別把我說出來呀。\n");
+                              "要是出了事，千萬別把我説出來呀。\n");
                         say("李鐵嘴給了"+query("name", who)+"一封手信。\n");
                         set_temp("marks/李4", 0, this_player());
                         letter->move(who);
@@ -85,8 +85,8 @@ int accept_object(object who, object ob)
 
                 if( query_temp("marks/李3", who) )
                 {
-                        write("李鐵嘴皮笑肉不笑的對你說道：偽造這封信"
-                              "可是關系重大啊，得多收五十兩。\n");
+                        write("李鐵嘴皮笑肉不笑的對你説道：偽造這封信"
+                              "可是關係重大啊，得多收五十兩。\n");
                         set_temp("marks/李4", 1, this_player());
                         set_temp("marks/李3", 0, this_player());
                         return 1;
@@ -94,27 +94,27 @@ int accept_object(object who, object ob)
 
                 if( query_temp("marks/李", who) )
                 {
-                        write("李鐵嘴對你說道：你想偽造什麼啊? 總"
+                        write("李鐵嘴對你説道：你想偽造什麼啊? 總"
                               "得拿個樣子來吧。\n");
                         set_temp("marks/李2", 1, this_player());
                         set_temp("marks/李", 0, this_player());
                         return 1;
                 }
-                say("李鐵嘴一面急忙把錢收起來，一面笑嘻嘻說道：" +
+                say("李鐵嘴一面急忙把錢收起來，一面笑嘻嘻説道：" +
                     RANK_D->query_respect(ob) + "，這怎麼敢當。\n");
                 return 1;
         }
 
         if (ob->value() >= 500)
         {
-                say("李鐵嘴笑嘻嘻說道：條幅寫好了，請"
+                say("李鐵嘴笑嘻嘻説道：條幅寫好了，請"
                     "您收起來吧，多謝關照。\n");
                 return 1;
         }
 
         if (ob->value() >= 50)
         {
-                say("李鐵嘴笑嘻嘻說道：信寫完了，您收好了，多謝關照。\n");
+                say("李鐵嘴笑嘻嘻説道：信寫完了，您收好了，多謝關照。\n");
                 return 1;
         }
         return 0;

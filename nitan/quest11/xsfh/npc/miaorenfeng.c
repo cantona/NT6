@@ -2,7 +2,7 @@
 //by tangfeng@SJ
 //修改雷同hu-fei.c
 //增加冷泉神功部分
-// Update by lsxk@hsbbs add通寶物品增加解mjjf quest成功幾率 2007/7/20
+// Update by lsxk@hsbbs add通寶物品增加解mjjf quest成功機率 2007/7/20
 // By Spiderii@ty 加入天賦
 
 inherit F_MASTER;
@@ -193,7 +193,7 @@ void greeting(object me)
   	  tell_object(me,HIY"\n你上前將內服藥送給了苗人鳳服下，並幫他將外敷藥附在眼睛上。\n"NOR);
   	  command("thank "+me->query("id"));
 	  tell_room(environment(me),HIC"\n"+me->query("name")+"走到苗人鳳跟前，似是在給他敷藥。\n"NOR, ({}));
-  	  tell_object(me,HIY"你順手拉過一把椅子，坐在苗大俠位身邊，輕輕地咳了一聲，且不知道從何說起。\n"NOR);
+  	  tell_object(me,HIY"你順手拉過一把椅子，坐在苗大俠位身邊，輕輕地咳了一聲，且不知道從何説起。\n"NOR);
       destruct(jieyao);
       remove_call_out("zhenxiang");
       call_out("zhenxiang", 6, me);
@@ -204,8 +204,8 @@ void greeting(object me)
   {
   	command("haha");
 	me->start_busy(3);
-  	tell_object(me,HIG"\n你剛進大廳，就聽到一陣爽朗的笑聲，“是哪位朋友前來助陣？苗某先是感激了！”你不由胸口一盪。\n"NOR);
-  	tell_object(me,HIC"你躊躇了一下，嘴裡回答道：在下"+me->query("name")+"，不過恰巧正過此地，苗大俠可好？\n"NOR);
+  	tell_object(me,HIG"\n你剛進大廳，就聽到一陣爽朗的笑聲，“是哪位朋友前來助陣？苗某先是感激了！”你不由胸口一蕩。\n"NOR);
+  	tell_object(me,HIC"你躊躇了一下，嘴裏回答道：在下"+me->query("name")+"，不過恰巧正過此地，苗大俠可好？\n"NOR);
   	remove_call_out("zhenxiang");
     call_out("zhenxiang", 3, me);
     return;
@@ -223,12 +223,12 @@ void zhenxiang(object me)
   }
   if(me->query(QUESTDIR3+"start") && me->query_temp(QUESTDIR3+"getjieyao"))
   {
- 	  tell_object(me,HIW"\n苗大風不愧為當世高手，一會工夫用內力化開，這眼睛也就好了。你正要感謝，卻聽到苗人鳳嘆道：“當年若不\n"NOR);
+ 	  tell_object(me,HIW"\n苗大風不愧為當世高手，一會工夫用內力化開，這眼睛也就好了。你正要感謝，卻聽到苗人鳳歎道：“當年若不\n"NOR);
   	tell_object(me,HIW"不是一招失手，今日與胡氏夫婦三騎漫遊天下，教貪官惡吏、土豪巨寇，無不心驚膽落，那是何等的快事？”\n"NOR);
   	tell_object(me,HIY"卻聽到苗大俠悲笑起來，聞者無不心酸。所謂英雄豪情不多如此，而可恨天道造化。\n"NOR);
     me->delete_temp(QUESTDIR3+"getjieyao");
     me->set(QUESTDIR3+"over",1);
-   	tell_object(me,HIR"你想了一會，也是莫名感嘆。也罷，這故事總算告一段節，你不由長嘆一口氣。\n"NOR);
+   	tell_object(me,HIR"你想了一會，也是莫名感歎。也罷，這故事總算告一段節，你不由長歎一口氣。\n"NOR);
 	p=10+random(10);
         me->add("max_neili",p);
         me->add("combat_exp",me->query_skill("force")+500);
@@ -236,26 +236,26 @@ void zhenxiang(object me)
    	me->add("mana",i);
     me->set(QUESTDIR+"time",time());
     me->set(QUESTDIR+"combat_exp",me->query("combat_exp"));
-        tell_object(me,HBYEL"\n你于"+NATURE_D->game_time()+"解開雪山飛狐解藥篇，獲得"+p+"點最大內力、"+((int)me->query_skill("force")+500)+"點經驗獎勵、"+i+"點聲望。\n\n"NOR);
+        tell_object(me,HBYEL"\n你於"+NATURE_D->game_time()+"解開雪山飛狐解藥篇，獲得"+p+"點最大內力、"+((int)me->query_skill("force")+500)+"點經驗獎勵、"+i+"點聲望。\n\n"NOR);
     log_file("quest/FEIHU", sprintf("%s(%s) 解藥篇完成。獎勵：%d點最大內力，%d點經驗，%d點聲望。\n", me->name(1),me->query("id"), p,(me->query_skill("force")+500),i ) );
    	return;
   }
   if(me->query(QUESTDIR2+"start") && me->query_temp(QUESTDIR2+"kill")&& !me->query_temp(QUESTDIR2+"kill_")&& !me->query_temp(QUESTDIR2+"huyidao") && !me->query(QUESTDIR2+"over") )
   {
   	message_vision(HIY"突然$N發現一陣掌風撲面而來，$N驚懼萬分，卻不敢硬接硬架，當下使出師門武功想卸開對方掌力。豈知雙手與$n\n"
-  	                  "手掌甫接，登時眼前一黑，胸口氣塞，$N騰騰騰連退三步。$n的掌力只卸去了一半，余一半還是硬接了過來。\n"NOR,me,this_object());
+  	                  "手掌甫接，登時眼前一黑，胸口氣塞，$N騰騰騰連退三步。$n的掌力只卸去了一半，餘一半還是硬接了過來。\n"NOR,me,this_object());
     command("heng");
     if(!me->query("family"))
 	{
   	message_vision(HIC"\n$N叫道：“苗大俠，我幫你拿賊……”卻聽$n道：“原來是"+me->query("name")+"。”\n"NOR,me,this_object());
   	message_vision(HIC"$N回答道：“還好，多謝關懷。”卻發現$n雙目突然緊閉，像是毒性發作，$N問道：“苗大俠，現在感覺如何？”\n\n"NOR,me,this_object());
-        message_vision(HIC"$N猶豫了一下，沉聲說道：“我與這位"+RANK_D->query_respect(me) +"俗不來往，今天來我苗家莊，怕是有什麼問題吧？”\n\n"NOR,me,this_object());
+        message_vision(HIC"$N猶豫了一下，沉聲説道：“我與這位"+RANK_D->query_respect(me) +"俗不來往，今天來我苗家莊，怕是有什麼問題吧？”\n\n"NOR,me,this_object());
 	}
 	else
 	{
   	message_vision(HIC"\n$N叫道：“苗大俠，我幫你拿賊……”卻聽$n道：“原來是"+me->query("family/family_name")+"弟子，"+me->query("family/master_name")+"師傅最近可好？”\n"NOR,me,this_object());
   	message_vision(HIC"$N回答道：“還好，多謝關懷。”卻發現$n雙目突然緊閉，像是毒性發作，$N問道：“苗大俠，現在感覺如何？”\n\n"NOR,me,this_object());
-        message_vision(HIC"$n猶豫了一下，沉聲說道：“我與"+me->query("family/master_name")+"俗不來往，這位"+RANK_D->query_respect(me) +"且不管我，來我苗家莊，怕是有什麼問題吧？”\n\n"NOR,me,this_object());
+        message_vision(HIC"$n猶豫了一下，沉聲説道：“我與"+me->query("family/master_name")+"俗不來往，這位"+RANK_D->query_respect(me) +"且不管我，來我苗家莊，怕是有什麼問題吧？”\n\n"NOR,me,this_object());
 	}
     me->set_temp(QUESTDIR2+"kill_",1);
 	me->start_busy(3);
@@ -265,8 +265,8 @@ void zhenxiang(object me)
   if(me->query(QUESTDIR2+"start") && me->query_temp(QUESTDIR2+"kill")&& !me->query_temp(QUESTDIR2+"huyidao") && !me->query(QUESTDIR2+"over") && me->query_temp(QUESTDIR2+"kill_"))
   {
   	command("say");
-  	tell_object(me,HIG"苗人鳳果然心思敏捷，你沉默了一下，腦子裡一邊盤想著如何開口詢問這20年前的故事......\n"NOR);
-	  tell_room(environment(me),HIC"\n"+me->query("name")+"似是沉吟不定，好像思考著什麼。\n"NOR, ({}));
+  	tell_object(me,HIG"苗人鳳果然心思敏捷，你沉默了一下，腦子裏一邊盤想着如何開口詢問這20年前的故事......\n"NOR);
+	  tell_room(environment(me),HIC"\n"+me->query("name")+"似是沉吟不定，好像思考着什麼。\n"NOR, ({}));
     log_file("quest/FEIHU", sprintf("%s(%s) 拜見苗人鳳。經驗：%d。\n",me->name(1),me->query("id"),me->query("combat_exp")) );
     me->set_temp(QUESTDIR2+"ask_",1);
     me->delete_temp(QUESTDIR2+"kill_");
@@ -321,7 +321,7 @@ int ask_biwu()
   if(me->query(QUESTDIR2+"over"))
   {
 	  command("sigh "+me->query("id"));
-	  command("say 20年前的比武，現在已經完全明了。只是可恨胡兄竟然被陰險小人所暗算。");
+	  command("say 20年前的比武，現在已經完全明瞭。只是可恨胡兄竟然被陰險小人所暗算。");
 	  return 1;
   }
   if(me->query(QUESTDIR2+"start")&& me->query_temp(QUESTDIR2+"zhenxiang"))
@@ -332,15 +332,15 @@ int ask_biwu()
   }
  if(me->query(QUESTDIR2+"start")&& me->query_temp(QUESTDIR2+"zhenxiang_"))
   {
-	  command("say 你聽我說阿，別著急。");
+	  command("say 你聽我説阿，彆着急。");
 	  return 1;
   }
   if(me->query(QUESTDIR2+"start")&& me->query_temp(QUESTDIR2+"huyidao") )
   {
 	  command("nod "+me->query("id"));
-	  command("say 當年我確實和胡一刀比過武，我們從初識到相交，後來更是同床而眠，徹夜切磋武功，真是好令人懷念。");
+	  command("say 當年我確實和胡一刀比過武，我們從初識到相交，後來更是同牀而眠，徹夜切磋武功，真是好令人懷念。");
 	  command("say 只是到第五天上，胡大嫂瞧出我背後的破綻，一聲咳嗽，胡一刀竟然使出八方藏刀式，不及提防將我制住。");
-	  tell_object(me,YEL"\n你聽到這裡，感覺和閻基所說不同，不由問道：“那後來呢？難不成胡一刀不是自殺？”\n\n"NOR);
+	  tell_object(me,YEL"\n你聽到這裏，感覺和閻基所説不同，不由問道：“那後來呢？難不成胡一刀不是自殺？”\n\n"NOR);
     message_vision(HIC"$N露出疑惑的神色。\n"NOR,me);
 	  me->start_busy(3);
 	  remove_call_out("jieshuo1");
@@ -350,7 +350,7 @@ int ask_biwu()
   }
 
 	command("heng");
-	command("say 我號稱打遍天下無敵手，不知你說的是什麼比武？");
+	command("say 我號稱打遍天下無敵手，不知你説的是什麼比武？");
 	return 1;
 }
 void jieshuo1(object me)
@@ -363,7 +363,7 @@ void jieshuo1(object me)
   {
     command("consider");
 	  command("say 但下一招我當時用的胡家刀法，胡兄用的是苗家劍法，我臨時變招，新創一式，一個措手不及將胡兄所傷。");
-	  message_vision(YEL"\n$N驚異的問道：“如果傷勢不是很嚴重，怎麼立刻斃命的呢？”$n聞言道：“刀上有毒。”說著，嘆了口氣。\n"NOR,me,this_object());
+	  message_vision(YEL"\n$N驚異的問道：“如果傷勢不是很嚴重，怎麼立刻斃命的呢？”$n聞言道：“刀上有毒。”説着，歎了口氣。\n"NOR,me,this_object());
 	  command("say 而且大嫂竟然也自殺，之後場面很亂，胡兄之子也被亂中砍死，20年來我一直懷疑追查真相，只是沒有任何線索。");
 	  remove_call_out("jieshuo2");
     call_out("jieshuo2",6, me);
@@ -380,7 +380,7 @@ void jieshuo2(object me)
   if(me->query(QUESTDIR2+"start")&& me->query_temp(QUESTDIR2+"huyidao"))
   {
     command("sigh");
-    tell_object(me,HIW"\n你聽完解說一陣沉默，不由被胡與苗的豪情所感動，只怕其中真有別情！你想了一會兒，只有閻基這個線索了！\n"NOR);
+    tell_object(me,HIW"\n你聽完解説一陣沉默，不由被胡與苗的豪情所感動，只怕其中真有別情！你想了一會兒，只有閻基這個線索了！\n"NOR);
     me->delete_temp(QUESTDIR2+"huyidao");
     me->delete_temp(QUESTDIR2+"zhenxiang_",1);
     me->set_temp(QUESTDIR2+"zhenxiang",1);
@@ -454,7 +454,7 @@ int ask_miaojiajianfa()
 	if(me->query(QUESTDIR4+"time") && time()-me->query(QUESTDIR4+"time")<86400)
 	{
 	  command("shake "+me->query("id"));
-	  command("say 今天先切磋到這裡吧，明天吧。");
+	  command("say 今天先切磋到這裏吧，明天吧。");
 	  return 1;
   }
 	if(me->query(QUESTDIR4+"combat_exp") && me->query("combat_exp")-me->query(QUESTDIR4+"combat_exp")<500000)
@@ -468,7 +468,7 @@ int ask_miaojiajianfa()
     ob->set_temp("busy",1);
     remove_call_out("busy_pass");
 		call_out("busy_pass",600, ob);
-    //難度稍微大于刀法，不過關系不大。
+    //難度稍微大於刀法，不過關係不大。
     power_condition(me,ob,350+random(150));
     for ( i = 0; i < 6+random(6);i++)
     {
@@ -494,10 +494,10 @@ int ask_miaojiajianfa()
     ob->delete_temp("quest/雪山飛狐/武功/lengquan");
     start_condition(ob);
     command("haha "+me->query("id"));
-    message_vision(HIC"\n\n猶如電光雷閃，一晃數招已過，$n微笑著對$N說道：「剛才我使用的招數可看清楚了？」\n"NOR,me,ob);
+    message_vision(HIC"\n\n猶如電光雷閃，一晃數招已過，$n微笑着對$N説道：「剛才我使用的招數可看清楚了？」\n"NOR,me,ob);
     remove_call_out("thinking");
 		call_out("thinking",0, me, ob);
-    tell_object(me,YEL"你拼命地回憶瞬間交手的一幕，回憶著剛才的招數，你開始認真思索著.........\n"NOR);
+    tell_object(me,YEL"你拼命地回憶瞬間交手的一幕，回憶着剛才的招數，你開始認真思索着.........\n"NOR);
     me->start_busy(2);
 	  return 1;
 }
@@ -509,7 +509,7 @@ int thinking(object me, object ob)
   if(environment(me)!=environment(ob))
   {
   	start_condition(ob);
-    if(random(2)) message_vision(HIC"\n$N伸了伸懶腰，道：$n竟然臨陣逃脫，沒料得蠢材一個。\n"NOR,ob,me);
+    if(random(2)) message_vision(HIC"\n$N伸了伸懶腰，道：$n竟然臨陣逃脱，沒料得蠢材一個。\n"NOR,ob,me);
     else message_vision(HIC"\n$N疑惑問道：夷~~~人呢？$n，人呢？\n"NOR,ob,me);
   	return 1;
   }
@@ -523,7 +523,7 @@ int thinking(object me, object ob)
 		me->add_temp(QUESTDIR4+"thinking",1);
     if(random(2)) tell_object(me,HIG"\n你努力地回憶剛才的每一招每一式，似有無數人影交相互動，每一招每一式你都努力去看清楚...\n"NOR);
     else tell_object(me,HIY"\n突然間，你似乎抓到了什麼，你努力地回憶剛才的每一招每一式，你能充分感覺招數的凌厲和急速...\n"NOR);
-	  tell_room(environment(me),HIC""+me->query("name")+"似乎在思索著什麼，一服愁眉不展的樣子。\n"NOR, ({}));
+	  tell_room(environment(me),HIC""+me->query("name")+"似乎在思索着什麼，一服愁眉不展的樣子。\n"NOR, ({}));
 	  remove_call_out("thinking");
 		call_out("thinking",3+random(3), me, ob);
 	}
@@ -532,7 +532,7 @@ int thinking(object me, object ob)
     me->delete_temp(QUESTDIR4+"thinking");
 
 	 //難度降低，畢竟單純的苗家劍法威力一般
-   //有特殊通寶物品,提高幾率.
+   //有特殊通寶物品,提高几率.
    if(me->query_temp("sj_credit/quest/public/mjjf"))
         p=random(58);
    else
@@ -545,7 +545,7 @@ int thinking(object me, object ob)
          if(p > 37&& me->query("kar")<31)
     {
        tell_object(me,HIG"\n你明悟其中，突然間明白了一切。\n"NOR);
-       message_vision(HIC"\n$N「哈哈哈」大笑幾聲，說道：“原來如此，原來如此。”\n"NOR,me);
+       message_vision(HIC"\n$N「哈哈哈」大笑幾聲，説道：“原來如此，原來如此。”\n"NOR,me);
        tell_object(me,HIR"你聽了苗人鳳的指點，對苗家劍法的奧妙似乎有些心得。\n"NOR);
 	   if(me->query(QUESTDIR4+"hujiadaofa"))
 		    tell_object(me,HIR"你發現苗家劍法如果能夠與胡家刀法相互融合，威力當可加倍。\n"NOR);
@@ -553,19 +553,19 @@ int thinking(object me, object ob)
        me->set(QUESTDIR4+"miaojiajianfa",1);
        i=180+random(40);
    	   me->add("mana",i);
-  	   tell_object(me,HBYEL"\n你于"+NATURE_D->game_time()+"解開雪山飛狐苗家劍法篇，並獲得"+i+"點聲望。\n\n"NOR);
+  	   tell_object(me,HBYEL"\n你於"+NATURE_D->game_time()+"解開雪山飛狐苗家劍法篇，並獲得"+i+"點聲望。\n\n"NOR);
      log_file("quest/FEIHU", sprintf(HIR"%s(%s) 失敗%d次後揭開苗家劍法,獲得%d點聲望。random（40）取值%d。"NOR, me->name(1),me->query("id"),me->query(QUESTDIR4+"miaojiajianfa_fail"),i,p) );
     }
     else
     {
-       tell_object(me,HIG"\n你腦海裡似乎抓住了什麼，可是依然不是很明白。\n"NOR);
-       message_vision(HIC"\n$N搖了搖頭，道：“好像還是很困難的。”說罷，深深地嘆了口氣。\n"NOR,me);
+       tell_object(me,HIG"\n你腦海裏似乎抓住了什麼，可是依然不是很明白。\n"NOR);
+       message_vision(HIC"\n$N搖了搖頭，道：“好像還是很困難的。”説罷，深深地歎了口氣。\n"NOR,me);
        command("poor "+me->query("id"));
        me->add(QUESTDIR4+"miaojiajianfa_fail",1);
 	   log_file("quest/FEIHU", sprintf(HIR"%s(%s) 苗家劍法失敗次數：%d次,random（30）取值%d。\n"NOR, me->name(1),me->query("id"),me->query(QUESTDIR4+"miaojiajianfa_fail"),p) );
        if(me->query(QUESTDIR4+"miaojiajianfa_fail")>=3 && me->query("registered")<3)
        {
-      	tell_object(me,HBYEL"\n你于"+NATURE_D->game_time()+"最後一次嘗試揭開雪山飛狐苗家劍法，卻沒有成功。\n\n"NOR);
+      	tell_object(me,HBYEL"\n你於"+NATURE_D->game_time()+"最後一次嘗試揭開雪山飛狐苗家劍法，卻沒有成功。\n\n"NOR);
    		log_file("quest/FEIHU", sprintf("%s(%s) 最後一次嘗試揭開雪山飛狐苗家劍法，卻沒有成功。時間 %s。\n", me->name(1),me->query("id"), ctime(time()) ) );
        }
     }
@@ -596,7 +596,7 @@ int ask_hujiadaofa()
 	   if(me->query(QUESTDIR4+"time") && time()-me->query(QUESTDIR4+"time")<86400)
 	   {
 	     command("shake "+me->query("id"));
-	     command("say 今天先切磋到這裡吧，明天吧。");
+	     command("say 今天先切磋到這裏吧，明天吧。");
 	     return 1;
      }
      if(me->query(QUESTDIR4+"combat_exp") && me->query("combat_exp")-me->query(QUESTDIR4+"combat_exp")<500000)
@@ -608,16 +608,16 @@ int ask_hujiadaofa()
   	 command("nod "+me->query("id"));
   	 if(me->query(QUESTDIR4+"ronghe"))
   	 {
-      	command("say 你已經刀劍融合，可惜缺少內功支持。傳說：冷泉神功可能在闖王寶藏裡！");
+      	command("say 你已經刀劍融合，可惜缺少內功支持。傳説：冷泉神功可能在闖王寶藏裏！");
 	      return 1;
       }
       me->set(QUESTDIR4+"time",time());
       me->set(QUESTDIR4+"combat_exp",me->query("combat_exp"));
- 	    command("say 胡家刀法的確可以與苗家劍法融合，但是需要冷泉神功支持，這裡我可以先教給你融合的口訣！");
+ 	    command("say 胡家刀法的確可以與苗家劍法融合，但是需要冷泉神功支持，這裏我可以先教給你融合的口訣！");
 
  	    //難度也很大，其實這也是這門武功的關鍵
-		//這裡增加門檻，不希望每個玩家都能夠學會
-		//假設富源random之後取28的話，int隨機應該大于22
+		//這裏增加門檻，不希望每個玩家都能夠學會
+		//假設富源random之後取28的話，int隨機應該大於22
 		//int 假設25 bili 20的話，con和dex之和35 400等級exp 那麼就是75
       if((random(me->query("kar"))+random(me->query("int")))>50
 		  && (random(me->query_con())+random(me->query_dex()))>60
@@ -626,23 +626,23 @@ int ask_hujiadaofa()
             &&QUEST_D->questing(me, 1, 0, 1))
       {
            tell_object(me,HIR"你聽了苗人鳳的指點，對苗家劍法和胡家刀法的奧妙似乎更加明白。\n"NOR);
-           message_vision(HIC"\n$N當即左刀右劍比劃一招，「哈哈哈」大笑幾聲，說道：“原來如此。”\n"NOR,me);
+           message_vision(HIC"\n$N當即左刀右劍比劃一招，「哈哈哈」大笑幾聲，説道：“原來如此。”\n"NOR,me);
            me->set(QUESTDIR4+"ronghe",1);
            i=180+random(40);
    	       me->add("mana",i);
-  	       tell_object(me,HBYEL"\n你于"+NATURE_D->game_time()+"解開雪山飛狐刀劍融合的奧秘，並獲得"+i+"點聲望。\n\n"NOR);
+  	       tell_object(me,HBYEL"\n你於"+NATURE_D->game_time()+"解開雪山飛狐刀劍融合的奧祕，並獲得"+i+"點聲望。\n\n"NOR);
 		   log_file("quest/FEIHU", sprintf(HIR"%s(%s) 失敗%d次後，揭開刀劍融合，獲得%d點聲望。kar%d/int%d/後天con%d/dex%d。\n"NOR, me->name(1),me->query("id"),me->query(QUESTDIR4+"ronghe_fail"),i ,me->query("kar"),me->query("int"),me->query_con(),me->query_dex()) );
        }
        else
        {
-           tell_object(me,HIG"\n你聽了苗人鳳的指點，腦海裡似乎抓住了什麼，可是依然不是很明白。\n"NOR);
-           message_vision(HIC"\n$N搖了搖頭，道：“好像還是很困難的。”說罷，深深地嘆了口氣。\n"NOR,me);
+           tell_object(me,HIG"\n你聽了苗人鳳的指點，腦海裏似乎抓住了什麼，可是依然不是很明白。\n"NOR);
+           message_vision(HIC"\n$N搖了搖頭，道：“好像還是很困難的。”説罷，深深地歎了口氣。\n"NOR,me);
            command("poor "+me->query("id"));
            me->add(QUESTDIR4+"ronghe_fail",1);
            if(me->query(QUESTDIR4+"ronghe_fail")>=3 && me->query("registered")<3)
            {
-          	tell_object(me,HBYEL"\n你于"+NATURE_D->game_time()+"最後一次嘗試揭開雪山飛狐刀劍融合的奧秘，卻沒有成功。\n\n"NOR);
-   		      log_file("quest/FEIHU", sprintf("%s(%s) 最後一次嘗試揭開雪山飛狐刀劍融合的奧秘，卻沒有成功。\n", me->name(1),me->query("id")) );
+          	tell_object(me,HBYEL"\n你於"+NATURE_D->game_time()+"最後一次嘗試揭開雪山飛狐刀劍融合的奧祕，卻沒有成功。\n\n"NOR);
+   		      log_file("quest/FEIHU", sprintf("%s(%s) 最後一次嘗試揭開雪山飛狐刀劍融合的奧祕，卻沒有成功。\n", me->name(1),me->query("id")) );
            }
         }
 	  return 1;
@@ -667,7 +667,7 @@ int ask_huyidao()
   }
   if(me->query(QUESTDIR2+"start")&& me->query_temp(QUESTDIR2+"kill"))
   {
-  	tell_object(me,YEL"苗人鳳突然看起來蒼老了很多，不知沉默了多久，才緩緩嘆了口氣。\n"NOR);
+  	tell_object(me,YEL"苗人鳳突然看起來蒼老了很多，不知沉默了多久，才緩緩歎了口氣。\n"NOR);
     command("nod "+me->query("id"));
     command("say 關東大俠胡一刀正是我的至交好友啊！不知道這位"+RANK_D->query_respect(me) +"為什麼提起他？");
     me->set_temp(QUESTDIR2+"huyidao",1);
@@ -730,7 +730,7 @@ int ask_jiaoliang()
     if(me->query(QUESTDIR4+"time") && time()-me->query(QUESTDIR4+"time")<(3600*3))
 	{
 	  command("shake "+me->query("id"));
-	  command("say 今天先切磋到這裡吧，稍後吧。");
+	  command("say 今天先切磋到這裏吧，稍後吧。");
 	  return 1;
   }
 	if((me->query(QUESTDIR4+"fight_miao")>=3 && me->query(QUESTDIR4+"fight_exp") && me->query("combat_exp")-me->query(QUESTDIR4+"fight_exp")<500000)
@@ -759,17 +759,17 @@ int ask_jiaoliang()
     if( !room )
  	  {
 	     command("shake "+me->query("id"));
-	     command("say 暫時沒有空余的場地較量，稍後吧，或者通知巫師一下。");
+	     command("say 暫時沒有空餘的場地較量，稍後吧，或者通知巫師一下。");
 	     return 1;
     }
     if(room->query_temp("biwu"))
  	  {
 	     command("shake "+me->query("id"));
-	     command("say 暫時沒有空余的場地較量，稍後吧，或者通知巫師一下。");
+	     command("say 暫時沒有空餘的場地較量，稍後吧，或者通知巫師一下。");
 	     return 1;
     }
 
-    //標志
+    //標誌
     me->set(QUESTDIR4+"time",time());
 	me->set(QUESTDIR4+"fight_exp",me->query("combat_exp"));
     me->set_temp(QUESTDIR4+"fight_id",ob->query("id"));
@@ -823,7 +823,7 @@ int killing()
 
   if (!present("changjian",ob))
   {
-	  message_vision(HIR"\n$N身行向後一躍，不知道從哪裡竟然又拿出一把鋼劍。\n"NOR,ob);
+	  message_vision(HIR"\n$N身行向後一躍，不知道從哪裏竟然又拿出一把鋼劍。\n"NOR,ob);
   	carry_object(BINGQI_D("sword"))->wield();
   }
 	else command("wield changjian");
@@ -908,17 +908,17 @@ int ask_zhiliao()
   if(me->query(QUESTDIR3+"start"))
   {
 	  command("sigh "+me->query("id"));
-	  command("say 如此說來，治療我這毒，怕是只有程靈素了。");
+	  command("say 如此説來，治療我這毒，怕是隻有程靈素了。");
 	  return 1;
   }
   if(me->query(QUESTDIR2+"over"))
   {
-	  tell_object(me,HIW"你也將真相告訴苗人鳳，顯然現在不是悲傷的時候，這毒性越發得厲害。你說服苗人鳳，親自上前仔細觀察中毒症狀。\n\n"NOR);
-	  tell_object(me,CYN"你說道：“苗大俠眼中所染的毒藥，乃是斷腸草的粉末，只怕是從毒手藥王那裡得來的。”說話期間，苗人鳳已經痛楚不忍。\n"NOR);
-	  tell_object(me,CYN"苗人鳳聽道：“恩，如此說來，要治這毒只有藥王谷的人了”你點了點頭，當前之急還是趕快尋找程靈素，這毒看似好兇猛。\n\n"NOR);
-	  tell_object(me,CYN"苗人鳳聽言，停頓了一下：“現在藥王谷就在苗疆之內，那就拜托"+RANK_D->query_respect(me) +"走一趟了。只是聽說藥王谷的人......”\n"NOR);
+	  tell_object(me,HIW"你也將真相告訴苗人鳳，顯然現在不是悲傷的時候，這毒性越發得厲害。你説服苗人鳳，親自上前仔細觀察中毒症狀。\n\n"NOR);
+	  tell_object(me,CYN"你説道：“苗大俠眼中所染的毒藥，乃是斷腸草的粉末，只怕是從毒手藥王那裏得來的。”説話期間，苗人鳳已經痛楚不忍。\n"NOR);
+	  tell_object(me,CYN"苗人鳳聽道：“恩，如此説來，要治這毒只有藥王谷的人了”你點了點頭，當前之急還是趕快尋找程靈素，這毒看似好凶猛。\n\n"NOR);
+	  tell_object(me,CYN"苗人鳳聽言，停頓了一下：“現在藥王谷就在苗疆之內，那就拜託"+RANK_D->query_respect(me) +"走一趟了。只是聽説藥王谷的人......”\n"NOR);
 	  command("sigh");
-	  tell_object(me,HIC"\n你當即說道：“咱們好歹也得將他請到，他要什麼便給他什麼。我這就去一趟苗疆藥王谷。”\n"NOR);
+	  tell_object(me,HIC"\n你當即説道：“咱們好歹也得將他請到，他要什麼便給他什麼。我這就去一趟苗疆藥王谷。”\n"NOR);
 	  command("addoil "+me->query("id"));
 	  me->set(QUESTDIR3+"start",1);
 	  return 1;
@@ -972,7 +972,7 @@ int ask_tian()
   if(me->query(QUESTDIR3+"start"))
   {
 	  command("heng");
-	  command("say 確實沒有想到事情如此復雜。天龍門現在一門盡亡，也算是天網恢恢阿。");
+	  command("say 確實沒有想到事情如此複雜。天龍門現在一門盡亡，也算是天網恢恢阿。");
 	  return 1;
   }
 	command("say 上任天龍門掌門，很久不知下落了。現在天龍門大不如以前了。");
@@ -989,7 +989,7 @@ int ask_hunjia()
   }
   if(me->query(QUESTDIR3+"over"))
   {
-  	tell_object(me,CYN"你說道：苗大俠，你可知道你家苗大姑娘和雪山飛狐胡斐情投意合這碼子事情？\n"NOR);
+  	tell_object(me,CYN"你説道：苗大俠，你可知道你家苗大姑娘和雪山飛狐胡斐情投意合這碼子事情？\n"NOR);
 	  command("say 不知是真是假，如此甚好，哈哈，苗胡兩家恩怨終得圓滿啊。");
 	  command("haha");
 	  command("say 這位"+RANK_D->query_respect(me) +"為胡苗兩家出盡大力，不慎感激啊。無以為報，這是我一點心意，還請收下！");
@@ -1000,7 +1000,7 @@ int ask_hunjia()
 	  if(!present(obj,me)) obj->move(me);
 	  return 1;
   }
-	command("say 這事和我說來無用，小女自有自己主張。");
+	command("say 這事和我説來無用，小女自有自己主張。");
 	return 1;
 }
 int ask_chuangwang()
@@ -1030,7 +1030,7 @@ int ask_chuangwang()
 	    if(random(2))
 		{
 			command("consider");
-			command("say 寶藏圖在哪裡呢。");
+			command("say 寶藏圖在哪裏呢。");
 			if(random(2)) command("pat "+me->query("id"));
 			else command("papaya");
 			command("addoil");
@@ -1039,14 +1039,14 @@ int ask_chuangwang()
 		else if(random(2))
 		{
 			command("consider");
-			command("say 剛才還在這裡啊。我再找找看。");
+			command("say 剛才還在這裏啊。我再找找看。");
 			command("papaya");
 			return 1;
 		}
 		else if(random(2))
 		{
 			command("consider");
-			command("say 寶藏圖.....寶什麼來著，啊，我忘記了。");
+			command("say 寶藏圖.....寶什麼來着，啊，我忘記了。");
 			command("pat "+me->query("id"));
 			command("say 這樣吧，你還是抓緊時間練功去吧，過一會再來問吧，我這就找找看。");
 			command("addoil "+me->query("id"));
@@ -1056,7 +1056,7 @@ int ask_chuangwang()
 		{
 			command("?");
 			command("makeup");
-			command("say 啊呀，你久等了，你要什麼來著？");
+			command("say 啊呀，你久等了，你要什麼來着？");
 			command("say 這樣吧，你還是抓緊時間練功去吧，過一會再來問吧，我這就找找看。");
 			command("addoil "+me->query("id"));
 			return 1;
@@ -1066,7 +1066,7 @@ int ask_chuangwang()
 
 	if(!clonep(obj)){
 	      command("pat");
-	      command("say 寶藏圖不在我這裡，真是老了糊塗了。");
+	      command("say 寶藏圖不在我這裏，真是老了糊塗了。");
 	      command("pat "+me->query("id"));
 	      command("say 這樣吧，你還是抓緊時間練功去吧，過一會再來問吧，我這就找找看。");
 	      command("addoil "+me->query("id"));
@@ -1074,23 +1074,23 @@ int ask_chuangwang()
 	}
 
 	if(clonep(obj) && obj->violate_unique()){
-	  	  if(objectp(environment(obj))) tell_object(environment(obj),HIC""+obj->query("name")+"被一陣風刮走了。\n"NOR, ({}));
+	  	  if(objectp(environment(obj))) tell_object(environment(obj),HIC""+obj->query("name")+"被一陣風颳走了。\n"NOR, ({}));
 		  destruct(obj);
 	      command("pat");
-	      command("say 寶藏圖不在我這裡，真是老了糊塗了。");
+	      command("say 寶藏圖不在我這裏，真是老了糊塗了。");
 	      command("pat "+me->query("id"));
 	      command("say 這樣吧，你還是抓緊時間練功去吧，過一會再來問吧，我這就找找看。");
 	      command("addoil "+me->query("id"));
 		  return 1;
 	}
   	tell_object(me,HIR"苗人鳳偷偷告訴你："HIG"當年闖王破了北京之後，明朝的皇親國戚、大臣大將盡數投降。這些人無不家資豪富，闖王部下的將領\n"NOR);
-  	tell_object(me,HIG"數日之間，財寶山積，那裡數得清了。後來闖王退出北京，派了親信將領，逼他們獻出金銀珠寶贖命。押著財寶去藏在一個極\n"NOR);
-  	tell_object(me,HIG"穩妥的所在，以便將來卷土重來之時作為軍餉。他將藏寶的所在繪成一圖，而看圖尋寶的關鍵，卻置在軍刀之中。九宮山兵敗\n"NOR);
-  	tell_object(me,HIG"逃亡，闖王將寶藏之圖與軍刀都交給了飛天狐貍。後來飛天狐貍被殺，一圖一刀落入三位義弟手中，但不久又被飛天狐貍的兒\n"NOR);
-  	tell_object(me,HIG"子奪去。百年來輾轉爭奪，終于軍刀由天龍門田氏掌管，藏寶之圖卻由我苗家家傳。只是苗田兩家不知其中有這樣一個大秘密，\n"NOR);
-  	tell_object(me,HIG"是以沒去發掘寶藏。這秘密由胡家世代相傳，可是姓胡的沒軍刀地圖，自也無法找到寶藏。是胡大哥將這事告知我的，請我去\n"NOR);
-  	tell_object(me,HIG"掘出寶藏，救濟天下窮人。其實這個秘密到今天早已經公開，今天告訴了你，你大可去尋找一下這個寶藏。這便是藏寶圖，至\n"NOR);
-  	tell_object(me,HIG"于藏寶的秘密你還是去自己挖掘吧。\n"NOR);
+  	tell_object(me,HIG"數日之間，財寶山積，那裏數得清了。後來闖王退出北京，派了親信將領，逼他們獻出金銀珠寶贖命。押著財寶去藏在一個極\n"NOR);
+  	tell_object(me,HIG"穩妥的所在，以便將來捲土重來之時作為軍餉。他將藏寶的所在繪成一圖，而看圖尋寶的關鍵，卻置在軍刀之中。九宮山兵敗\n"NOR);
+  	tell_object(me,HIG"逃亡，闖王將寶藏之圖與軍刀都交給了飛天狐狸。後來飛天狐狸被殺，一圖一刀落入三位義弟手中，但不久又被飛天狐狸的兒\n"NOR);
+  	tell_object(me,HIG"子奪去。百年來輾轉爭奪，終於軍刀由天龍門田氏掌管，藏寶之圖卻由我苗家家傳。只是苗田兩家不知其中有這樣一個大祕密，\n"NOR);
+  	tell_object(me,HIG"是以沒去發掘寶藏。這祕密由胡家世代相傳，可是姓胡的沒軍刀地圖，自也無法找到寶藏。是胡大哥將這事告知我的，請我去\n"NOR);
+  	tell_object(me,HIG"掘出寶藏，救濟天下窮人。其實這個祕密到今天早已經公開，今天告訴了你，你大可去尋找一下這個寶藏。這便是藏寶圖，至\n"NOR);
+  	tell_object(me,HIG"於藏寶的祕密你還是去自己挖掘吧。\n"NOR);
     tell_object(me,HIR"\n苗人鳳偷偷告訴你："HIG"探險的時候，一定要注意安全，帶好藥物，另外類似繩子、火折等常備工具不要遺漏。\n"NOR);
     command("smile");
     tell_object(me,HIR"\n苗人鳳交給你一張寶藏圖。\n"NOR);
@@ -1101,7 +1101,7 @@ int ask_chuangwang()
     me->set(QUESTDIR+"寶藏/start",1);
 	return 1;
   }
-	command("say 李闖王當年確實威震朝野，可惜時不逢時，也聽說留有一大寶藏，不知道是真是假。");
+	command("say 李闖王當年確實威震朝野，可惜時不逢時，也聽説留有一大寶藏，不知道是真是假。");
 	return 1;
 }
 int start_condition(object ob)
@@ -1182,12 +1182,12 @@ int accept_object(object who, object ob,object me)
      if(who->query(QUESTDIR4+"lengquanshengong") && !who->query(QUESTDIR4+"lengquanshengong_teach"))
      {
      	command("ah "+(string)who->query("id"));
-     	command("whisper "+(string)who->query("id")+" 這是我爹爹的東西？你從哪裡得來的？");
-        tell_object(who,CYN"\n你在苗人鳳的耳邊悄聲說道：我剛才去過闖王寶藏，在那裡撿到的。\n"NOR);
+     	command("whisper "+(string)who->query("id")+" 這是我爹爹的東西？你從哪裏得來的？");
+        tell_object(who,CYN"\n你在苗人鳳的耳邊悄聲説道：我剛才去過闖王寶藏，在那裏撿到的。\n"NOR);
      	who->set_temp(QUESTDIR4+"lengquanshengong_teach",1);
      	command("hehe");
-     	command("say 30年前，田安豹與我爹爹結伴同去關外，當時我們不知為了何事，但見他二人興高採烈，歡歡喜喜而去，可是從此不見歸來。");
-     	command("say 武林中朋友後來傳言，說道他們兩位為胡一刀所害，所以我與田師弟才大舉向胡一刀尋仇，那知道這一切全是誤會，全錯了！");
+     	command("say 30年前，田安豹與我爹爹結伴同去關外，當時我們不知為了何事，但見他二人興高采烈，歡歡喜喜而去，可是從此不見歸來。");
+     	command("say 武林中朋友後來傳言，説道他們兩位為胡一刀所害，所以我與田師弟才大舉向胡一刀尋仇，那知道這一切全是誤會，全錯了！");
      	who->start_busy(1);
      }
      else  command("thank "+(string)who->query("id"));
@@ -1216,7 +1216,7 @@ int ask_lengquanshengong()
       if(skill_check(me))
       {
           tell_object(me,HIC"你聽了苗人鳳的指點，可是領悟起來速度極慢。\n"NOR);
-          tell_object(me,HIC"也許是因為其他內功的幹擾，無法全心領悟冷泉神功。\n"NOR);
+          tell_object(me,HIC"也許是因為其他內功的干擾，無法全心領悟冷泉神功。\n"NOR);
         me->add("potential",-(random(3)+3));
         if( me->query("potential")<0)
             me->set("potential",0);
@@ -1255,7 +1255,7 @@ int ask_lengquanshengong()
     if(skill_check(me))
     {
         tell_object(me,HIC"你聽了苗人鳳的指點，可是總感覺領悟起來極其困難。\n"NOR);
-      tell_object(me,HIC"也許是因為其他內功的幹擾，無法全心領悟冷泉神功。\n"NOR);
+      tell_object(me,HIC"也許是因為其他內功的干擾，無法全心領悟冷泉神功。\n"NOR);
       me->improve_skill("lengquan-shengong", random(me->query_int()*2/3));
       me->delete_temp(QUESTDIR4+"lengquanshengong_teach");
       me->set(QUESTDIR4+"lengquanshengong_teach",1);
@@ -1279,7 +1279,7 @@ int ask_lengquanshengong()
   if(me->query(QUESTDIR3+"over"))
   {
 	  command("nod "+me->query("id"));
-	  command("say 冷泉神功是闖王時期四大護衛的招牌功夫，這門武功也是我苗家武功的基礎。");
+	  command("say 冷泉神功是闖王時期四大護衞的招牌功夫，這門武功也是我苗家武功的基礎。");
 	  return 1;
   }
 	command("hehe");

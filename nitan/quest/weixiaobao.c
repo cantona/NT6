@@ -33,7 +33,7 @@ void create()
   set("long", 
 "這位少年將軍頭戴紅頂子，身穿黃馬褂，眉花眼笑，賊忒兮
 兮，左手輕搖羽扇，宛若諸葛之亮，右手倒拖大刀，儼然關
-雲之長，正乃韋公小寶是也。見你看著他，“哈哈哈”，仰
+雲之長，正乃韋公小寶是也。見你看着他，“哈哈哈”，仰
 天大笑三聲，學足了戲文中曹操的模樣，你頓時忍不住湊個
 趣，問一句：“將軍為何發笑？”\n");
   set("combat_exp", 50000);
@@ -69,11 +69,11 @@ void create()
       "小桂子" : "別提這個名字了，我怕怕！\n",
       "阿珂"   : "她是我明媒正娶的大老婆！\n",
       "雙兒"   : "你認識她？大功告成，親個嘴兒！\n",
-      "曾柔"   : "我老婆你問那麼多幹嘛？皇上洪福齊天，我艷福齊天！\n",
-      "方怡"   : "我老婆你問那麼多幹嘛？皇上洪福齊天，我艷福齊天！\n",
-      "蘇荃"   : "我老婆你問那麼多幹嘛？皇上洪福齊天，我艷福齊天！\n",
-      "沐劍屏" : "我老婆你問那麼多幹嘛？皇上洪福齊天，我艷福齊天！\n",
-      "建寧公主" : "這個騷娘皮，親厚不及雙兒、美貌不及阿珂、武功不及蘇荃、機巧不及方怡、天真純善不及沐劍屏、溫柔斯文不及曾柔，差有一日之長者，不過橫蠻潑辣而已！\n",
+      "曾柔"   : "我老婆你問那麼多幹嘛？皇上洪福齊天，我豔福齊天！\n",
+      "方怡"   : "我老婆你問那麼多幹嘛？皇上洪福齊天，我豔福齊天！\n",
+      "蘇荃"   : "我老婆你問那麼多幹嘛？皇上洪福齊天，我豔福齊天！\n",
+      "沐劍屏" : "我老婆你問那麼多幹嘛？皇上洪福齊天，我豔福齊天！\n",
+      "建寧公主" : "這個騷娘皮，親厚不及雙兒、美貌不及阿珂、武功不及蘇荃、機巧不及方怡、天真純善不及沐劍屏、温柔斯文不及曾柔，差有一日之長者，不過橫蠻潑辣而已！\n",
       "取消任務":  (: do_cancel :),
       "cancel" :   (: do_cancel :),
       "功勞"   :   (: do_gonglao :),
@@ -155,7 +155,7 @@ int accept_reply(object me,object ob,string arg)
                 }
                 if ( mysc < me->query_temp("quest_gift/need") )
                         return notify_fail("你就這麼點"+need+"，也好意思問"+ob->name()+"要東西？\n");
-      message_vision(CYN "\n$N" CYN "急忙點點頭，說道：這東西正好我也需要，就交給我吧。\n" NOR, me);
+      message_vision(CYN "\n$N" CYN "急忙點點頭，説道：這東西正好我也需要，就交給我吧。\n" NOR, me);
       arg=me->query_temp("quest_gift/obj");
       obj = new(arg);
       if (!objectp(obj))
@@ -176,7 +176,7 @@ int accept_reply(object me,object ob,string arg)
     else if (living(me) && living(ob) && ans==2)
       {
         me->delete_temp("quest_gift/got");
-        tell_object(me,HIW+ob->name()+"嘆氣道：也罷，既然你不需要，這東西我"
+        tell_object(me,HIW+ob->name()+"歎氣道：也罷，既然你不需要，這東西我"
                                        "就留給別人吧。\n"NOR);
         return 1;
       }
@@ -198,22 +198,22 @@ int give_quest()
   }
 /*  if(combatexp>10000000)
   {
-    tell_object(me,"韋小寶對你哼了一聲道：“辣塊媽媽，花差大爺我忙著呢，沒空理你！”\n");
+    tell_object(me,"韋小寶對你哼了一聲道：“辣塊媽媽，花差大爺我忙着呢，沒空理你！”\n");
     return 1;
   }
 */  if (me->query("meili") < 0 || me->query("weiwang") < 0)
   {
-    tell_object(me,"韋小寶對你哼了一聲道：“你是個什麼東西，也來這裡搗亂。\n");
+    tell_object(me,"韋小寶對你哼了一聲道：“你是個什麼東西，也來這裏搗亂。\n");
     return 1;
   }
   if (me->query("combat_exp") <= me->query("quest_wei/busy_exp"))
   {
-    tell_object(me,"韋小寶對你說道：我暫時不需要你幫忙，你先去其它地方歷練一下再來。\n");
+    tell_object(me,"韋小寶對你説道：我暫時不需要你幫忙，你先去其它地方歷練一下再來。\n");
     return 1;
   }
   if (me->query_temp("quest_gift/got"))
   {
-     tell_object(me,"韋小寶對你說道：我正問你話呢，你快點回答(answer y|n)啊。\n");
+     tell_object(me,"韋小寶對你説道：我正問你話呢，你快點回答(answer y|n)啊。\n");
       return 1;
     }
 // Let's see if this player still carries an un-expired task
@@ -221,16 +221,16 @@ int give_quest()
   {
     if( ((int) me->query("quest_wei/time")) > time() )
     {
-      tell_object(me,"韋小寶對你笑道：說你不行吧，還不服氣？\n");
+      tell_object(me,"韋小寶對你笑道：説你不行吧，還不服氣？\n");
       return 1;
     }
     else
     {
-      tell_object(me,"韋小寶對著你嘆了一口氣：沒關系去拿別的也成。\n");
+      tell_object(me,"韋小寶對着你歎了一口氣：沒關係去拿別的也成。\n");
 //      me->add("qi",-(int)(me->query("qi")/5));
 //      quest_failed( me, "wei" );
 
-//      tell_object(me,HIW"韋小寶對你說道：不是讓你去拿『"+me->query("quest_wei/quest")+HIW+"』嗎？時間已經過了，我要的東西呢。\n"NOR);
+//      tell_object(me,HIW"韋小寶對你説道：不是讓你去拿『"+me->query("quest_wei/quest")+HIW+"』嗎？時間已經過了，我要的東西呢。\n"NOR);
 //      return 1;
     }
   }
@@ -238,7 +238,7 @@ int give_quest()
 //    if ( me->query("quest_wei/time") + 90 + random(60) > time())   
       if ( me->query("quest_wei/time") + 2 > time())   
     {
-      tell_object(me,"韋小寶對你微微一笑道：你過于勞累，歇息會兒再上路吧。\n");
+      tell_object(me,"韋小寶對你微微一笑道：你過於勞累，歇息會兒再上路吧。\n");
       return 1;
     }
 
@@ -254,7 +254,7 @@ int give_quest()
   else if ( num%50 == 0)
   {
     quest = __DIR__"qwlist1"->query_quest("hard_quest");
-    tell_object(me,"韋小寶微微一笑：做得不錯嘛，看來我可以托付你個難一些的任務。\n");
+    tell_object(me,"韋小寶微微一笑：做得不錯嘛，看來我可以託付你個難一些的任務。\n");
   } 
   else
     quest = __DIR__"qwlist1"->query_quest("normal_quest");
@@ -318,7 +318,7 @@ int accept_object(object who, object ob)
             return notify_fail("去去去，哪兒找的假貨，想來蒙韋爵爺我？！\n");               
     if (ob->query("owner") != who->query("id") )
     {
-      tell_object(who,HIW"韋小寶高興地說，我正想要" + ob->query("name")+ HIW"呢，多謝你把別人的寶物轉送給我。\n"NOR);
+      tell_object(who,HIW"韋小寶高興地説，我正想要" + ob->query("name")+ HIW"呢，多謝你把別人的寶物轉送給我。\n"NOR);
     }
     else
     {
@@ -328,12 +328,12 @@ int accept_object(object who, object ob)
       who->add("score",score);
       who->add_temp("baowunum",-1);
       who->add("marks/baowu",1);
-      tell_object(who,HIW"韋小寶高興地說，我正想要" + ob->query("name")+ HIW"呢，蒙你見愛，我也送你些東西吧。\n");
+      tell_object(who,HIW"韋小寶高興地説，我正想要" + ob->query("name")+ HIW"呢，蒙你見愛，我也送你些東西吧。\n");
      if ((who->query("combat_exp") < MAX_BAOWU_EXP)  || who->query_temp("invite"))
       {
         who->add("combat_exp",exp);
         who->add("potential", pot);
-        tell_object(who,"（"+ chinese_number(exp) + "點經驗，" + chinese_number(pot) + "點潛能，"+ chinese_number(score) + "點江湖閱歷。)\n"NOR);
+        tell_object(who,"（"+ chinese_number(exp) + "點經驗，" + chinese_number(pot) + "點潛能，"+ chinese_number(score) + "點江湖閲歷。)\n"NOR);
                   }
                   else 
                   {
@@ -341,7 +341,7 @@ int accept_object(object who, object ob)
                           pot = 1;
         who->add("combat_exp",exp);
         who->add("potential", pot);
-        tell_object(who,"（"+ chinese_number(exp) + "點經驗，" + chinese_number(pot) + "點潛能，"+ chinese_number(score) + "點江湖閱歷。)\n"NOR);
+        tell_object(who,"（"+ chinese_number(exp) + "點經驗，" + chinese_number(pot) + "點潛能，"+ chinese_number(score) + "點江湖閲歷。)\n"NOR);
             }
     }
     return 1;
@@ -370,10 +370,10 @@ int accept_object(object who, object ob)
       }
     else
     {
-      tell_object(who, "韋小寶嘆了口氣說道：那好，咱們買賣不成仁義在。想要好處再找我吧！\n");
+      tell_object(who, "韋小寶歎了口氣説道：那好，咱們買賣不成仁義在。想要好處再找我吧！\n");
       if(random(20)==1 && who->query("combat_exp") > 150000) 
         {
-        tell_object(who,HIR"由于你經常完不成任務，韋小寶開始不信任你了。\n"NOR);
+        tell_object(who,HIR"由於你經常完不成任務，韋小寶開始不信任你了。\n"NOR);
         who->add("weiwang",-10);
         who->set("quest_wei/busy_exp",who->query("combat_exp")+300);
         if (who->query("meili")>100)
@@ -391,17 +391,17 @@ int accept_object(object who, object ob)
   if (  (!quest = who->query( "quest_wei/quest" ))  ||
     who->query( "quest_wei/finished" ) )
   {
-    tell_object( who,"韋小寶說道：你給我這個幹嘛？\n" );
+    tell_object( who,"韋小寶説道：你給我這個幹嘛？\n" );
     return 0;
   }
   if( ob->query("name") != quest || ob->is_character() )
   {
-    tell_object(who, "韋小寶說道：這是什麼東西？我叫你辦的事你就這樣糊弄我？！\n");
+    tell_object(who, "韋小寶説道：這是什麼東西？我叫你辦的事你就這樣糊弄我？！\n");
     return 0;
   }
   if ((int) who->query("quest_wei/time") <= time() )
   {
-    tell_object(who,"韋小寶說道：你是怎麼搞得，現在才把東西弄來！這次就算了，以後要注意。\n");
+    tell_object(who,"韋小寶説道：你是怎麼搞得，現在才把東西弄來！這次就算了，以後要注意。\n");
 //    quest_failed( who, "wei" );
     who->delete("quest_wei/quest");
 //    who->delete("quest_num/wei");
@@ -414,7 +414,7 @@ int accept_object(object who, object ob)
   }
   else
   {
-    tell_object(who,"韋小寶讚許地點頭說道：不錯！差使辦得不錯！\n");
+    tell_object(who,"韋小寶讚許地點頭説道：不錯！差使辦得不錯！\n");
     who->set("quest_wei/finished",1);
 
     num = (int)who->query("quest_num/wei");
@@ -440,7 +440,7 @@ int accept_object(object who, object ob)
         who->set_temp("can_give_prize",1);
         who->set_temp("prize_exp",exp);
         who->set_temp("prize_pot",pot);
-    tell_object(who,HIW"經過一番辛苦奔波，你增長了：" + chinese_number(exp) + "點實戰經驗，"+ chinese_number(pot) + "點潛能，" + chinese_number(score)+"點江湖閱歷。\n"NOR);
+    tell_object(who,HIW"經過一番辛苦奔波，你增長了：" + chinese_number(exp) + "點實戰經驗，"+ chinese_number(pot) + "點潛能，" + chinese_number(score)+"點江湖閲歷。\n"NOR);
     tell_object(who,HIW"恭喜你完成第"+chinese_number(who->query("quest_num/wei"))+"個差使！\n"NOR);   
 
     who->delete("quest_wei/busy_exp");
@@ -460,7 +460,7 @@ int accept_object(object who, object ob)
     who->set("quest_wei/busy_exp",who->query("combat_exp")+1000);
     gift=new("/clone/money/gold");
     gift->set_amount(50);
-    message_vision("$N笑道：這位"+RANK_D->query_respect(who)+"實在是我的得力助手，這裡有些黃金你先拿著。下去好好歇息歇息，別累壞了身子。\n" NOR,this_object()); 
+    message_vision("$N笑道：這位"+RANK_D->query_respect(who)+"實在是我的得力助手，這裏有些黃金你先拿着。下去好好歇息歇息，別累壞了身子。\n" NOR,this_object()); 
     gift->move(this_object());
     command("give 50 gold to "+who->query("id"));
     }
@@ -655,7 +655,7 @@ void special_bonus(object me, object who,string type)
         else mysc = who->query(type);
         if (mysc >= cost)
         {
-                message_vision(CYN "$n" CYN "對$N" CYN "微笑道：我這裡剛剛得到一"
+                message_vision(CYN "$n" CYN "對$N" CYN "微笑道：我這裏剛剛得到一"
                                + un + ob->name() + CYN "，你要的話，送你也無妨。\n" NOR, who, me);
 
                 if (type == "meili") need = "江湖魅力";
@@ -678,7 +678,7 @@ void special_bonus(object me, object who,string type)
         else 
         {                
                 message_vision(CYN "$n" CYN "對$N" CYN "微笑道：我剛剛拿到。。"+
-                       "嗯，算了，想來你也用不著。\n" NOR, who, me);
+                       "嗯，算了，想來你也用不着。\n" NOR, who, me);
         }
         destruct(ob);
 }

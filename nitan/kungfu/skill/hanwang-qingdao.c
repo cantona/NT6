@@ -23,7 +23,7 @@ mapping *action = ({
         "skill_name" : "萬水千山",
         "damage_type" : "割傷"
 ]),
-([      "action":  "$N縱身躍落，一招「橫掃千軍」，$w帶著疾風呼的一聲便向$n橫掃過去",
+([      "action":  "$N縱身躍落，一招「橫掃千軍」，$w帶着疾風呼的一聲便向$n橫掃過去",
         "force" : 110,
         "attack": 25,
         "dodge" : -5,

@@ -43,11 +43,11 @@ int perform(object me, object target)
                 return notify_fail("你現在的真氣不足，難以施展" ZONG "。\n");
 
         if (! living(target))
-                return notify_fail("對方都已經這樣了，用不著這麼費力吧？\n");
+                return notify_fail("對方都已經這樣了，用不着這麼費力吧？\n");
 
         msg = HIY "\n$N" HIY "當下更不耽擱，高呼佛號，輕飄飄拍出一掌，招式"
               "甚為尋常。但掌到中途，忽然微微搖晃，登時一掌變兩掌，兩掌變四"
-              "掌，四掌變八掌！舖天蓋地拍向$n" HIY "。" NOR;
+              "掌，四掌變八掌！鋪天蓋地拍向$n" HIY "。" NOR;
 
         ap=me->query_skill("strike")+query("str", me)*10;
         dp=target->query_skill("parry")+query("dex", target)*10;
@@ -61,7 +61,7 @@ int perform(object me, object target)
                         addn("neili", -100, me);
                         msg += HIY "隨即又聽$N" HIY "高聲喝道：「" HIR "我佛如來" HIY
                                "」頃刻間，但見$N" HIY "八掌又變為十六掌，進而再幻化為"
-                               "三十二掌，掌勢層層疊疊，波瀾壯闊，氣勢磅礡，盪氣回腸"
+                               "三十二掌，掌勢層層疊疊，波瀾壯闊，氣勢磅礴，蕩氣迴腸"
                                "。如海潮般向$n" HIY "湧去。\n\n" HIR "$n" HIR "面對這"
                                "無窮無盡的掌勢，竟然放棄了抵抗，面如死灰坐以待斃。\n" NOR;
 

@@ -30,12 +30,12 @@ int do_study(string arg)
                if( query("combat_exp", me)<dugulevel*dugulevel*dugulevel/10 )
                         return notify_fail("你只覺得石頭的紋理暗合「獨孤九劍」的劍意，可是就是理不出\n頭緒，看來是實戰經驗不夠。\n");
                if( query("jing", me)<25 )
-                        return notify_fail("你現在過于疲倦，無法專心下來研讀新知。\n");
+                        return notify_fail("你現在過於疲倦，無法專心下來研讀新知。\n");
                 me->receive_damage("jing", 25);
                 me->improve_skill("dugu-jiujian-sword",(query("int", me))*(query("combat_exp", me)/20000));
                 message("vision","你拿出長石條仔細研究，竟從石條的紋理上領悟出「獨孤九劍」\n的劍意，「獨孤九劍」大有長進。\n",me);
                 message("vision",query("name", me)+"仔細研讀一塊石片。\n",environment(me),me);
                 return 1;
         }
-        return notify_fail("你對著石頭看來看去，沒看出什麼道理出來。\n");
+        return notify_fail("你對着石頭看來看去，沒看出什麼道理出來。\n");
 }

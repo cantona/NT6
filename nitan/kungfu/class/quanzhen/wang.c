@@ -23,9 +23,9 @@ void create()
         set_name("王重陽", ({ "wang chongyang", "wang", "chongyang" }));
         set("long", @LONG
 他就是全真教的開山祖師、首代掌教王重陽王
-真人。他白須飄飄，寬袍緩袖，眉目清□，頗
+真人。他白鬚飄飄，寬袍緩袖，眉目清癯，頗
 有些仙風道骨的味道。他本來一腔熱血欲報效
-國家力抗金兵，可惜朝廷腐敗，于是便心灰意
+國家力抗金兵，可惜朝廷腐敗，於是便心灰意
 冷，兼此時又從道德經中悟得了天地萬物滋生
 的大道，從而手創全真教。
 LONG);
@@ -102,7 +102,7 @@ LONG);
         map_skill("whip",   "duanyun-bian");
         prepare_skill("unarmed", "xiantian-gong");
 
-        set("no_teach/sun-finger", "一陽指乃是段家秘傳，我不能教你。");
+        set("no_teach/sun-finger", "一陽指乃是段家祕傳，我不能教你。");
 
         create_family("全真教", 1, "掌教");
 
@@ -117,7 +117,7 @@ LONG);
                 "化三清"     : (: ask_skill2 :),
                 "天地混元"   : (: ask_skill3 :),
                 "五陰焚滅"   : (: ask_skill4 :),
-                "神威浩盪"   : (: ask_skill5 :),
+                "神威浩蕩"   : (: ask_skill5 :),
                 "三連環"     : (: ask_skill6 :),
                 "一陽指"     : (: ask_zhipu :),
         ]));
@@ -177,7 +177,7 @@ void attempt_apprentice(object ob)
                         "義之事，我方能收你為徒。");
                 return;
         }
-        command("say 不錯，以你資質定可傳我衣砵！我就收下你這個徒弟了。");
+        command("say 不錯，以你資質定可傳我衣缽！我就收下你這個徒弟了。");
         command("recruit "+query("id", ob));
 }
 
@@ -192,7 +192,7 @@ mixed ask_skill1()
                 return "這招我不是已經教會你了嗎？";
 
         if( query("family/family_name", me) != query("family/family_name") )
-                return "閣下與貧道素不相識，不知此話從何說起？";
+                return "閣下與貧道素不相識，不知此話從何説起？";
 
         if (me->query_skill("xiantian-gong", 1) < 1)
                 return "你連先天功都沒學，何談絕招可言？";
@@ -210,7 +210,7 @@ mixed ask_skill1()
                 return "你的內力修為仍不足，還是練高點再來吧。";
 
         message_sort(HIY "\n$n" HIY "微微一笑，從懷中輕輕取出了一本"
-                     "小冊子，指著其中的一段對$N" HIY "細說良久，$N"
+                     "小冊子，指着其中的一段對$N" HIY "細説良久，$N"
                      HIY "一邊聽一邊點頭。\n\n" NOR, me,
                      this_object());
 
@@ -242,7 +242,7 @@ mixed ask_skill2()
                 return "你全真劍法已達如此造詣，我已沒什麼可教的了。";
 
         if( query("family/family_name", me) != query("family/family_name") )
-                return "閣下與貧道素不相識，不知此話從何說起？";
+                return "閣下與貧道素不相識，不知此話從何説起？";
 
         if (me->query_skill("quanzhen-jian", 1) < 1)
                 return "你連全真劍法都沒學，何談絕招可言？";
@@ -254,7 +254,7 @@ mixed ask_skill2()
                 return "你的俠義正事還做得不夠，這招我暫時還不能傳你。";
 
         if (me->query_skill("quanzhen-jian", 1) < 200)
-                return "你對我派劍法的了解還不夠透徹，研究透了再來找我吧。";
+                return "你對我派劍法的瞭解還不夠透徹，研究透了再來找我吧。";
 
         if (me->query_skill("xiantian-gong", 1) < 100 &&
             me->query_skill("quanzhen-xinfa", 1) < 100)
@@ -306,7 +306,7 @@ mixed ask_skill6()
                 return "你全真劍法已達如此造詣，我已沒什麼可教的了。";
 
         if( query("family/family_name", me) != query("family/family_name") )
-                return "閣下與貧道素不相識，不知此話從何說起？";
+                return "閣下與貧道素不相識，不知此話從何説起？";
 
         if (me->query_skill("quanzhen-jian", 1) < 1)
                 return "你連全真劍法都沒學，何談絕招可言？";
@@ -318,7 +318,7 @@ mixed ask_skill6()
                 return "你的俠義正事還做得不夠，這招我暫時還不能傳你。";
 
         if (me->query_skill("quanzhen-jian", 1) < 200)
-                return "你對我派劍法的了解還不夠透徹，研究透了再來找我吧。";
+                return "你對我派劍法的瞭解還不夠透徹，研究透了再來找我吧。";
 
         if (me->query_skill("quanzhen-xinfa", 1) < 100)
                 return "你全真心法的修為不夠，還是練高了再來吧。";
@@ -355,7 +355,7 @@ mixed ask_skill3()
                 return "這招你不是已經學會了嗎？";
 
         if( query("family/family_name", me) != query("family/family_name") )
-                return "閣下與貧道素不相識，不知此話從何說起？";
+                return "閣下與貧道素不相識，不知此話從何説起？";
 
         if (me->query_skill("xiantian-gong", 1) < 1)
                 return "你連先天功都沒學，何談絕招可言？";
@@ -372,9 +372,9 @@ mixed ask_skill3()
         if( query("max_neili", me)<6800 )
                 return "你的內力修為仍不足，還是練高點再來吧。";
 
-        message_sort(HIY "\n$n" HIY "哈哈一笑，對$N" HIY "說道：“你的"
+        message_sort(HIY "\n$n" HIY "哈哈一笑，對$N" HIY "説道：“你的"
                      "先天功達此境界，實屬不凡，今日為師傳你這招又有何"
-                     "妨？”說罷$n" HIY "便擺開架勢，慢慢地演示招數。\n"
+                     "妨？”説罷$n" HIY "便擺開架勢，慢慢地演示招數。\n"
                      "\n" NOR, me, this_object());
 
         command("nod");
@@ -415,7 +415,7 @@ mixed ask_skill4()
                 return "這招你不是已經學會了嗎？";
 
         if( query("family/family_name", me) != query("family/family_name") )
-                return "閣下與貧道素不相識，不知此話從何說起？";
+                return "閣下與貧道素不相識，不知此話從何説起？";
 
         if (me->query_skill("xiantian-gong", 1) < 1)
                 return "你連先天功都沒學，何談絕招可言？";
@@ -432,7 +432,7 @@ mixed ask_skill4()
         if( query("max_neili", me)<6800 )
                 return "你的內力修為仍不足，還是練高點再來吧。";
 
-        message_sort(HIY "\n$n" HIY "微微一笑，對$N" HIY "說道：“難得"
+        message_sort(HIY "\n$n" HIY "微微一笑，對$N" HIY "説道：“難得"
                      "你有如此造詣，今日師父就傳你這招，可看好了！”$n"
                      HIY "隨即一聲清哮，全身真氣急速運轉，引得周圍氣流"
                      "波動不已。左掌微微一抖，先天真氣隨招式而盪漾，激"
@@ -478,7 +478,7 @@ mixed ask_skill5()
                 return "這招你不是已經學會了嗎？";
 
         if( query("family/family_name", me) != query("family/family_name") )
-                return "閣下與貧道素不相識，不知此話從何說起？";
+                return "閣下與貧道素不相識，不知此話從何説起？";
 
         if (me->query_skill("xiantian-gong", 1) < 1)
                 return "你連先天功都沒學，何談絕招可言？";
@@ -496,16 +496,16 @@ mixed ask_skill5()
                 return "你的內力修為仍不足，還是練高點再來吧。";
 
         if( !query("can_perform/xiantian-gong/fen", me) )
-                return "此招乃是由「五陰焚滅」升華而來，你還是逐步學習吧？";
+                return "此招乃是由「五陰焚滅」昇華而來，你還是逐步學習吧？";
 
         message_sort(HIY "\n$n" HIY "微微點了點頭，隨手搭在$N" HIY "的"
                      "肩上，突然$N" HIY "陡覺全身筋脈劇震，內息澎湃洶湧"
-                     "之極，猶如江河絕堤，便欲沖關破出一般，不由大驚。"
+                     "之極，猶如江河絕堤，便欲衝關破出一般，不由大驚。"
                      "\n\n" NOR, me, this_object());
 
         command("haha");
         command("say 你可明白了？");
-        tell_object(me, HIC "你學會了「神威浩盪」。\n" NOR);
+        tell_object(me, HIC "你學會了「神威浩蕩」。\n" NOR);
         if (me->can_improve_skill("force"))
                 me->improve_skill("force", 1800000);
         if (me->can_improve_skill("force"))
@@ -539,7 +539,7 @@ string ask_jiuyin()
         if( !(fam=query("family", this_player()) )
             || fam["family_name"] != "全真教")
                 return RANK_D->query_respect(this_player()) +
-                "與本教毫無瓜葛，這話從何說起？";
+                "與本教毫無瓜葛，這話從何説起？";
         if (!(lvl_force = this_player()->query_skill("force", 1))
             || lvl_force < 50)
                 return RANK_D->query_respect(this_player()) +
@@ -589,7 +589,7 @@ int accept_ask(object me, string topic)
         { 
         case "歷練" : 
         case "歷煉" : 
-        case "鍛煉" : 
+        case "鍛鍊" : 
                 return QUEST_D->accept_ask(this_object(), me, topic); 
                 break; 
         case "先天罡氣" : 

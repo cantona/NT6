@@ -5,7 +5,7 @@ void create()
 {
     	set("short", "柴房");
     	set("long", @LONG
-這間屋裡叮叮□□的，你進屋內仔細一看，幾個人在劈柴
+這間屋裏叮叮哐哐的，你進屋內仔細一看，幾個人在劈柴
 火，屋子特別大，屋子一邊堆滿了已經鋸短的木頭，但另一邊
 劈好的柴火卻沒有多少。
 LONG);
@@ -35,13 +35,13 @@ int do_pi(string arg)
 
         if( query_temp("mark/劈完了", me) )
             	return notify_fail(CYN "柴房管事嚷嚷道：喂喂喂，讓你去覆命，還留"
-                                   "在這裡幹嘛？\n" NOR);
+                                   "在這裏幹嘛？\n" NOR);
 
         if( query_temp("job_name", me) != "劈柴" )
             	return notify_fail(CYN "柴房管事對你喝道：沒事你瞎折騰什麼？\n" NOR);
 
         if (me->is_busy())
-		return notify_fail("你現在正忙著呢！\n");
+		return notify_fail("你現在正忙着呢！\n");
 
         if (me->is_fighting())
 		return notify_fail("你正在戰鬥中，無法專心幹活！\n");
@@ -75,7 +75,7 @@ int do_pi(string arg)
            && present("chaifang guanshi", environment(me)))
 	{
                 set_temp("mark/劈完了", 1, me);
-                message_vision(CYN "\n柴房管事對$N" CYN "說：幹的不錯，好了，你可"
+                message_vision(CYN "\n柴房管事對$N" CYN "説：乾的不錯，好了，你可"
                                "以去向耶律大爺覆命(" HIY "fuming" NOR + CYN ")了"
                                "。\n" NOR, me);
                 return 1;
@@ -89,7 +89,7 @@ int do_pi(string arg)
            && me->can_improve_skill("blade")
            && me->can_improve_skill("strike"))
 	{  
-                write(HIC "你在劈柴過程中對于刀法及掌法有些體會。\n" NOR);
+                write(HIC "你在劈柴過程中對於刀法及掌法有些體會。\n" NOR);
                 me->improve_skill("blade",(query("int", me)/6));
                 me->improve_skill("strike",(query("int", me)/6));
         }

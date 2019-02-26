@@ -19,7 +19,7 @@ mapping query_quesths()
                 } else 
                 if (random(5) == 2)
                 {
-                        quesths["type"] = "征";
+                        quesths["type"] = "徵";
                 }
         } 
         return quesths;

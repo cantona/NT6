@@ -40,10 +40,10 @@ int perform(object me, object target)
                 return notify_fail("你沒有準備使用七傷拳，無法施展" + name() + "。\n");
 
         if (! living(target))
-              return notify_fail("對方都已經這樣了，用不著這麼費力吧？\n");
+              return notify_fail("對方都已經這樣了，用不着這麼費力吧？\n");
 
-        msg = HIY "\n$N" HIY "深吸一口起，將真氣運于雙拳之上，施出絕招「" HIR "魂魄飛揚" HIY
-              "」，右拳平平一拳直出，\n但見普通一拳之中蘊涵了無窮的力量，拳未到風先至，猛然"
+        msg = HIY "\n$N" HIY "深吸一口起，將真氣運於雙拳之上，施出絕招「" HIR "魂魄飛揚" HIY
+              "」，右拳平平一拳直出，\n但見普通一拳之中藴涵了無窮的力量，拳未到風先至，猛然"
               "間襲向$n" HIY "。\n" NOR;
 
         ap = attack_power(me, "cuff") +

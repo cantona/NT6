@@ -23,7 +23,7 @@ int main(object me, string arg)
                 return notify_fail("你還是專心拱豬吧！\n");
 
         if( me->is_busy() || query_temp("pending/deriving", me) )
-                return notify_fail("你現在正忙著呢。\n");
+                return notify_fail("你現在正忙着呢。\n");
 
         if (me->is_fighting())
                 return notify_fail("戰鬥中還是好好的凝神對敵吧。\n");
@@ -38,7 +38,7 @@ int main(object me, string arg)
                 return notify_fail("你現在沒有充足的體力用來吸收實戰的心得。\n");
 
         if( query("jing", me)*100/query("max_jing", me)<70 )
-                return notify_fail("你現在精神不濟，難以抓住實戰體會中的秘要！\n");
+                return notify_fail("你現在精神不濟，難以抓住實戰體會中的祕要！\n");
 
         if( query("no_fight", environment(me)) && 
             (query("doing", me) != "scheme" || this_player(1)) )
@@ -97,7 +97,7 @@ int deriving(object me)
         {
                 write("你感覺自己的實戰經驗還有欠缺，還無法"
                       "領會更高境界的" + skl_name + "。\n");
-                message("vision", me->name() + "輕輕的嘆了口氣，怔怔"
+                message("vision", me->name() + "輕輕的歎了口氣，怔怔"
                         "的發了一會兒的呆。\n", environment(me), ({ me }));
                 delete_temp("pending/deriving", me);
                 me->set_short_desc(0);
@@ -129,7 +129,7 @@ int deriving(object me)
         if( query("jingmai/finish", me) )
                 improve += improve * ZHOUTIAN_D->query_jingmai_effect("derive_effect")/100;
                 
-        // 轉世技能群邪辟易提升汲取效果
+        // 轉世技能羣邪辟易提升汲取效果
         if( query("special_skill/nopoison", me) )
                 improve += improve * 50 / 100; 
 
@@ -159,7 +159,7 @@ int deriving(object me)
         if( me->add("learned_experience",cost) >= query("experience", me) )
         {
                 write("你將實戰中獲得的體會心得充分的消化吸收了。\n");
-                message("vision", me->name() + "微微一笑，看來內心頗為喜悅。\n",
+                message("vision", me->name() + "微微一笑，看來內心頗為喜悦。\n",
                         environment(me), ({ me }));
                 delete_temp("pending/deriving", me);
                 delete_temp("derived_point", me);
@@ -173,7 +173,7 @@ int deriving(object me)
                 if( me->add_temp("derived_point",-cost)<1 )
                 {
                         write("你消化吸收了一些實戰中獲得的體會心得。\n");
-                        message("vision", me->name() + "微微一笑，看來內心頗為喜悅。\n",
+                        message("vision", me->name() + "微微一笑，看來內心頗為喜悦。\n",
                                 environment(me), ({ me }));
                         delete_temp("pending/deriving", me);
                         delete_temp("derived_point", me);
@@ -201,7 +201,7 @@ int deriving(object me)
                         break;
         
                 case 3:
-                        write("你總結了見識過的種種兵器功夫，又想通了其中的一些奧秘。\n");
+                        write("你總結了見識過的種種兵器功夫，又想通了其中的一些奧祕。\n");
                         break;
                 }
                 break;
@@ -218,7 +218,7 @@ int deriving(object me)
                         break;
         
                 case 2:
-                        write("你靜心琢磨，仿佛又明白了一點劍術上攻守進退的技巧。\n");
+                        write("你靜心琢磨，彷彿又明白了一點劍術上攻守進退的技巧。\n");
                         break;
         
                 case 3:
@@ -242,7 +242,7 @@ int deriving(object me)
 
 int halt_deriving(object me)
 {
-        tell_object(me, "你心隨意轉，收回念頭，不再思索武學秘奧。\n");
+        tell_object(me, "你心隨意轉，收回念頭，不再思索武學祕奧。\n");
         tell_room(environment(me), me->name() + "唯一皺眉，收住了姿勢。\n", me);
         delete_temp("pending/deriving", me);
         delete_temp("derived_point", me);
@@ -257,7 +257,7 @@ int help(object me)
 指令格式 : derive [<點數>] [ 技能 ]
 
     這個指令可以讓你吸收汲取實戰中的體會，當你充分的消化了其
-中的秘奧以後，可以提升自己的武學修養。這是一門艱深的學問，是
+中的祕奧以後，可以提升自己的武學修養。這是一門艱深的學問，是
 所有武學的基礎，身為一代宗師，武學修養是必不可少的。如果你裝
 備了劍這種武器，而且指定了技能名為 sword-cognize，則將獲得劍
 道修養。

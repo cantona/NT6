@@ -7,8 +7,8 @@ void create()
 {
         set("short", "天山山路");
         set("long", @LONG
-這裡是天山東麓，山風從山上吹來，你冷得瑟瑟發抖。路邊是一片
-針葉林。西邊望去，頂峰遙遙可見。
+這裏是天山東麓，山風從山上吹來，你冷得瑟瑟發抖。路邊是一片
+針葉林。西邊望去，頂峯遙遙可見。
 LONG );
         set("exits", ([
                 "westup"   : __DIR__"tianroad6",
@@ -19,7 +19,7 @@ LONG );
                 __DIR__"npc/caiyaoren" : 1, 
         ]));
         set("item_desc", ([
-                "cave" : "黑□□的山洞裡飄出一陣陰風，嚇得你直打哆嗦。\n"
+                "cave" : "黑黢黢的山洞裏飄出一陣陰風，嚇得你直打哆嗦。\n"
         ]) );
 //        set("no_clean_up", 0);
         set("outdoors", "xingxiu");

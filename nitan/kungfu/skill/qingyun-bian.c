@@ -40,7 +40,7 @@ mapping *action = ({
         "skill_name" : "移電",
         "damage_type":  "刺傷"
 ]),
-([      "action":"$N手持$w,力貫鞭稍，一招"HIR" 剪虹 "NOR"手中$w猶如彩虹般擊向$n,已將$n籠罩于鞭下。",
+([      "action":"$N手持$w,力貫鞭稍，一招"HIR" 剪虹 "NOR"手中$w猶如彩虹般擊向$n,已將$n籠罩於鞭下。",
         "force":query("max_neili", this_player())/4,
         "dodge":        -20,
         "damage":query("shen", this_player())/2500,
@@ -61,7 +61,7 @@ mapping *action = ({
         "skill_name" : "斷雲",
         "damage_type":  "內傷"
 ]),
-([      "action":"$N手中$w晃出滿天鞭影，一招"HIB" 遮月 "NOR"虛虛實實的鞭影，舖天蓋地的擊向$n",
+([      "action":"$N手中$w晃出滿天鞭影，一招"HIB" 遮月 "NOR"虛虛實實的鞭影，鋪天蓋地的擊向$n",
         "force":query("max_neili", this_player())/4,
         "dodge":        50,
         "damage":query("shen", this_player())/2500,

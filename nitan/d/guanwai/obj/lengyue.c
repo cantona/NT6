@@ -16,7 +16,7 @@ void create()
                 set("value", 1000000);
                 set("no_sell", "這...這玩藝怪嚇人的...\n");
                 set("material", "steel");
-                set("long", "這是胡家祖傳的寶刀，冷氣森森，銳利無比。\n" );
+                set("long", "這是胡家祖傳的寶刀，冷氣森森，鋭利無比。\n" );
                 set("wield_msg", HIG "$N" HIG "抓起刀柄，眾人只覺眼前青光一"
                                  "閃，寒氣逼人，$N" HIG "手中已經多了一柄$n"
                                  HIG "，刀光如水，流轉不定。\n" NOR);

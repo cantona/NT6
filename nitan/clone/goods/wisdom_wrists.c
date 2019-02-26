@@ -9,7 +9,7 @@ void create()
                 set_default_object(__FILE__);
         else
         {
-                set("long", "蘊含了文曲星的精元和無上智慧(神)。\n"); 
+                set("long", "藴含了文曲星的精元和無上智慧(神)。\n"); 
                 set("unit", "件");
                 set("value", 2000000);
                 set("material", "cloth");

@@ -22,8 +22,8 @@ mapping default_dirs = ([
         "up":           "上",
         "down":         "下",
         "out":          "外",
-        "in" :          "裡",
-        "enter" :       "裡面",
+        "in" :          "裏",
+        "enter" :       "裏面",
 ]);
 
 int main(object me, string arg)
@@ -64,26 +64,26 @@ int main(object me, string arg)
         if (ob)
         {
                 if (ob == me)
-                        return notify_fail("守衛自己？不用說你也會"
+                        return notify_fail("守衞自己？不用説你也會"
                                            "做，對吧。\n");
                 if( query("jing", me)*100/query("max_jing", me)<60 )
-                        return notify_fail("你現在無法集中精神守衛" + ob->name() + "。\n");
+                        return notify_fail("你現在無法集中精神守衞" + ob->name() + "。\n");
                 set_temp("guardfor", ob, me);
         } else
         if( query("exits/"+arg, env) )
         {
                 if ((base_name(env))[0..10]=="/data/room/")
-                        return notify_fail("這裡是別人家裡，不準你撒野！\n");
+                        return notify_fail("這裏是別人家裏，不准你撒野！\n");
                 if( query("no_fight", env) )
-                        return notify_fail("這裡不準戰鬥──也不準堵住別人去路！\n");
+                        return notify_fail("這裏不準戰鬥——也不準堵住別人去路！\n");
                 if( query("max_room", env) )
-                        return notify_fail("這裡是住宅區，不準堵住別人去路！\n");
+                        return notify_fail("這裏是住宅區，不準堵住別人去路！\n");
                 if( query("jing", me)*100/query("max_jing", me)<75 )
-                        return notify_fail("你現在無法集中精神守衛這個方向。\n");
+                        return notify_fail("你現在無法集中精神守衞這個方向。\n");
                 set_temp("guardfor", arg, me);
         } else
         if (arg != "cancel")
-                return notify_fail("你要守衛誰，什麼，或是哪個方向？\n");
+                return notify_fail("你要守衞誰，什麼，或是哪個方向？\n");
 
         if (objectp(old_target))
         {
@@ -179,10 +179,10 @@ guard <某個出口>  守住某個出口防止所有人從這個出口離開，�
 
 guard cancel      取消先前的 guard 對象。
 
-注意，只要你一移動，對物品和出口的守衛狀態就會解除，但是對人
+注意，只要你一移動，對物品和出口的守衞狀態就會解除，但是對人
 物的保護狀態仍然有效，只要你到了保護對象的身邊仍然發揮作用。
-另外，當你在守衛狀態的時候，會消耗精，如果精不夠了，則會自動
-解除守衛狀態。
+另外，當你在守衞狀態的時候，會消耗精，如果精不夠了，則會自動
+解除守衞狀態。
 TEXT );
         return 1;
 }

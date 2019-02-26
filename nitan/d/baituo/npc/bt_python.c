@@ -154,7 +154,7 @@ void chaning(object me, object ob)
                 HIR"\n$n被$N纏住，除了呻吟怒罵，再無反抗的能為。\n"NOR,
         });
         string *chan_beast_msg = ({
-                HIR"\n$N猛力纏緊，不讓$n有機會逃脫。\n"NOR,
+                HIR"\n$N猛力纏緊，不讓$n有機會逃脱。\n"NOR,
                 HIR"\n$N身子一卷到$n，越收越緊，再也不放，$n漸漸給$N纏得喘不過氣來。\n"NOR,
                 HIR"\n$n被$N纏住，慢慢失了抗拒之力，氣息越來越是微弱。\n"NOR,
         });
@@ -162,12 +162,12 @@ void chaning(object me, object ob)
         string *chan_snake_msg = ({
                 HIR"\n$N猛力纏緊，牢牢箍住$n的七寸。\n"NOR,
                 HIR"\n$N身子一卷到$n，越收越緊，再也不放，$n漸漸給$N纏得喘不過氣來。\n"NOR,
-                HIR"\n$N將$n緊緊纏住，慢慢施力，$n雖然不斷扭動蛇身，卻也無法脫困。\n"NOR,
+                HIR"\n$N將$n緊緊纏住，慢慢施力，$n雖然不斷扭動蛇身，卻也無法脱困。\n"NOR,
         });
         string *chan_bird_msg = ({
                 HIR"\n$N猛力纏緊，只箍得$n雙翅幾欲折斷。\n"NOR,
                 HIR"\n$n被$N纏住，吱吱亂叫，翅膀不停撲打。\n"NOR,
-                HIR"\n$N癒盤癒緊，$n毛羽賁張，竭力相抗，眼見不支。\n"NOR,
+                HIR"\n$N愈盤愈緊，$n毛羽賁張，竭力相抗，眼見不支。\n"NOR,
         });
 
         string chan;
@@ -280,14 +280,14 @@ int do_struggle(string arg)
         ap = jingli + random(jingli);
 
         if( query_temp("struggle_snake", me)>4){
-                message_vision(HIW"\n$N用力掙了一掙，想擺脫纏住身子的$n.....\n"NOR, me, snake);
-                message_vision(HIR"\n不料$N身子動得太厲害，激怒了纏住了$P的$n，一口便咬住$P的嚥喉！\n"NOR, me, snake);
+                message_vision(HIW"\n$N用力掙了一掙，想擺脱纏住身子的$n.....\n"NOR, me, snake);
+                message_vision(HIR"\n不料$N身子動得太厲害，激怒了纏住了$P的$n，一口便咬住$P的咽喉！\n"NOR, me, snake);
                 me->receive_wound("qi", random(ap/2), "被"+me->name()+"咬死了");
                 me->receive_damage("qi", ap/2, "被"+me->name()+"咬死了");
                 me->unconcious();
         }
         else {
-                message_vision(HIW"\n$N用力掙了一掙，想擺脫纏住身子的$n.....\n"NOR, me, snake);
+                message_vision(HIW"\n$N用力掙了一掙，想擺脱纏住身子的$n.....\n"NOR, me, snake);
                 addn("neili", -jiali, me);
                 addn("jingli", -jiali*2, snake);
                 addn_temp("struggle_snake", 1, me);

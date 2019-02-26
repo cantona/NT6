@@ -16,13 +16,13 @@ int main(object me, string arg)
 
         if( query("no_fight", environment(me)) && 
             (query("doing", me) != "scheme" || this_player(1)) )
-                return notify_fail("這裡太紛雜，你沒法安心靜坐。\n");
+                return notify_fail("這裏太紛雜，你沒法安心靜坐。\n");
 
         if( query("eff_jing", me)<50 )
                 return notify_fail("你受傷太重，無法定心靜坐。\n");
 
         if (me->is_busy())
-                return notify_fail("你正忙著呢！\n");
+                return notify_fail("你正忙着呢！\n");
 
         if (me->is_fighting())
                 return notify_fail("戰鬥中想靜坐？你不要命啦！\n");

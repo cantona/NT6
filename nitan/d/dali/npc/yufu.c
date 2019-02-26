@@ -7,7 +7,7 @@ void create()
         set_name("漁夫", ({ "yu fu", "yu", "fu" }));
         set("age", 22);
         set("gender", "男性");
-        set("long", "一位台夷族的漁夫，扛這兩條竹槳，提著一個魚簍。\n");
+        set("long", "一位台夷族的漁夫，扛這兩條竹槳，提着一個魚簍。\n");
         set("attitude", "peaceful");
 
         set("str", 24);

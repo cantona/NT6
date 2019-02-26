@@ -3,7 +3,7 @@
 #include <ansi.h>
 #include <combat.h>
 
-string name() { return HIR "絕戶神抓" NOR; }
+string name() { return HIR "絕户神抓" NOR; }
 
 inherit F_SSERVER;
 
@@ -25,19 +25,19 @@ int perform(object me, object target)
                                    "的一番告誡，不得不中途放棄了攻擊。\n" NOR);
 
         if ((int)me->query_skill("huzhua-shou", 1) < 120)
-                return notify_fail("你的虎爪絕戶手不夠嫻熟，難以施展" + name() + "。\n");
+                return notify_fail("你的虎爪絕户手不夠嫻熟，難以施展" + name() + "。\n");
 
         if (me->query_skill_mapped("claw") != "huzhua-shou")
-                return notify_fail("你沒有激發虎爪絕戶手，難以施展" + name() + "。\n");
+                return notify_fail("你沒有激發虎爪絕户手，難以施展" + name() + "。\n");
 
         if (me->query_skill_prepared("claw") != "huzhua-shou")
-                return notify_fail("你沒有準備使用虎爪絕戶手，無法使用" + name() + "。\n");
+                return notify_fail("你沒有準備使用虎爪絕户手，無法使用" + name() + "。\n");
 
         if( query("neili", me)<300 )
                 return notify_fail("你現在真氣不夠，難以施展" + name() + "。\n");
 
         if (! living(target))
-                return notify_fail("對方都已經這樣了，用不著這麼費力吧？\n");
+                return notify_fail("對方都已經這樣了，用不着這麼費力吧？\n");
 
         msg = HIR "$N" HIR "大喝一聲，變掌為爪，雙爪化出漫天爪影，如狂風驟雨一般向$n"
               HIR "的要害抓去！\n" NOR;
@@ -60,7 +60,7 @@ int perform(object me, object target)
                 addn("neili", -100, me);
                 addn("shen", -3000, me);
                 msg += CYN "可是$p" CYN "看破了$N"
-                       CYN "的企圖，躲開了這招殺著。\n" NOR;
+                       CYN "的企圖，躲開了這招殺着。\n" NOR;
         }
         message_combatd(msg, me, target);
 

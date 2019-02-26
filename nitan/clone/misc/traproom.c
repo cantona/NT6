@@ -87,7 +87,7 @@ void falldown(object me)
         if( !objectp(rum_ob = find_object("/d/city/npc/aqingsao")) )
                 rum_ob = load_object("/d/city/npc/aqingsao");
         CHANNEL_D->do_channel(rum_ob, "rumor",
-                sprintf("%s掉進陷阱裡了。", me->name(1)));
+                sprintf("%s掉進陷阱裏了。", me->name(1)));
 //
         message("vision", HIY "只聽哇地一聲喊，從上邊掉下一團黑影來！\n" NOR, environment(me), me);
         tell_object(me, HIR "你只覺得腳下一虛，大叫一聲，摔了下去！\n" NOR);
@@ -117,7 +117,7 @@ int valid_leave(object me, string dir)
         depth=query("depth", roomtrap);
         power = trap_power(me);
         if(me->is_busy())
-                return notify_fail("你現在正忙著呢。\n");
+                return notify_fail("你現在正忙着呢。\n");
 
         if( depth / 3 > power )
         {
@@ -140,7 +140,7 @@ int valid_leave(object me, string dir)
        }
                         else
                         {
-                                me->receive_damage("qi", depth/20, "在陷阱裡累死了");
+                                me->receive_damage("qi", depth/20, "在陷阱裏累死了");
                                 message_vision("$N長袖飄飄，姿態美妙地從陷阱上方飛躍而過。\n", me);
                                 return ::valid_leave(me, dir);
                         }
@@ -162,16 +162,16 @@ int do_jump(string arg)
         if( !(roomto=find_object(query("exits/"+arg, roomtrap))) )
                 roomto=load_object(query("exits/"+arg, roomtrap));
         if( depth < power )
-                return notify_fail("以你的本領，用得著這麼費事嗎？\n");
+                return notify_fail("以你的本領，用得着這麼費事嗎？\n");
         if(me->is_busy())
-                return notify_fail("你現在正忙著呢。\n");
+                return notify_fail("你現在正忙着呢。\n");
         if( depth>power && depth/2<power && query("qi", me) >= depth/10 )
         {
-                me->receive_damage("qi", depth/10, "在陷阱裡累死了");
+                me->receive_damage("qi", depth/10, "在陷阱裏累死了");
                 if( random(me->query_kar() + me->query_dex()) >= 15 )
                 {
                         me->move(roomto);
-                        message_vision("$N展開輕功，猛一縱身，嗖地從陷阱裡躍了出去。\n", me);
+                        message_vision("$N展開輕功，猛一縱身，嗖地從陷阱裏躍了出去。\n", me);
                         return 1;
                 }
                 else
@@ -203,10 +203,10 @@ int do_climb(string arg)
         if( !(roomto=find_object(query("exits/"+arg, roomtrap))) )
                 roomto=load_object(query("exits/"+arg, roomtrap));
         if( depth < power )
-                return notify_fail("以你的本領，用得著這麼費事嗎？\n");
+                return notify_fail("以你的本領，用得着這麼費事嗎？\n");
         if( depth > power && depth / 2 < power )
                 return notify_fail("陷阱並不深，不妨施展輕功，試試能不能跳上去？\n");
-        if(me->is_busy()) return notify_fail("你現在正忙著呢。\n");
+        if(me->is_busy()) return notify_fail("你現在正忙着呢。\n");
         if( depth/2>power && depth/3<power && query("qi", me) >= depth/5 )
         {
                 me->receive_damage("qi", depth/5, "爬陷阱累死了");
@@ -218,7 +218,7 @@ int do_climb(string arg)
                 }
                 else
                 {
-                        message_vision("$N慢慢地往上爬著爬著，忽然坪的一聲，狼狽不堪地摔了下來。\n", me);
+                        message_vision("$N慢慢地往上爬着爬着，忽然坪的一聲，狼狽不堪地摔了下來。\n", me);
                         return 1;
                 }
         }
@@ -240,7 +240,7 @@ int do_push(string arg)
         if( !objectp(ob = present(who, environment(me))) || !living(ob))
                 return notify_fail("你要推誰上去？\n");
         if( query("id", me) == who )
-                return notify_fail("自己推自己上去？好象不行吧。\n");
+                return notify_fail("自己推自己上去？好像不行吧。\n");
 
         depth=query("depth", roomtrap);
         power_me = trap_power(me);
@@ -253,13 +253,13 @@ int do_push(string arg)
         if( depth>power_me || query("qi", me)<depth/5 )
                 return notify_fail("你沒這個本事推"+ob->name()+"上去吧？\n");
         if(me->is_busy())
-                return notify_fail("你現在正忙著呢。\n");
+                return notify_fail("你現在正忙着呢。\n");
         me->receive_damage("qi", depth/5, "救人出陷阱時累死了");
         if( random(me->query_str() + ob->query_kar()) >= 15 )
         {
                 ob->move(roomto);
                 me->move(roomto);
-                message_vision("$N輕輕托起$n，鼓足內力，一下就把$n送出了陷阱。接著一縱身，自己也躍了出去。\n", me, ob);
+                message_vision("$N輕輕托起$n，鼓足內力，一下就把$n送出了陷阱。接着一縱身，自己也躍了出去。\n", me, ob);
                 return 1;
         }
         else
@@ -343,7 +343,7 @@ void maintaining(object roomtrap, int count)
                 delete("exits/jump"+query("from", roomtrap), roomfrom);
                 delete("exits/jump"+query("to", roomtrap), roomto);
                 inv=all_inventory(roomtrap);
-    tell_room(roomtrap,"這時候走過來一個中年漢子，見你掉在陷阱裡面，就找了條繩子把你拉了上來。\n隨後你們一起把這個害人的陷阱嚴嚴實實地填了起來。\n");
+    tell_room(roomtrap,"這時候走過來一箇中年漢子，見你掉在陷阱裏面，就找了條繩子把你拉了上來。\n隨後你們一起把這個害人的陷阱嚴嚴實實地填了起來。\n");
                 for (i=0;i<sizeof(inv);i++)
                         if (!living(inv[i])) continue;
                         else inv[i]->move(roomfrom);

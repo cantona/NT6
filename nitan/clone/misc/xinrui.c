@@ -43,7 +43,7 @@ void create()
         ::create();
         id = XINRUI_D->query_top_id();
         if( !id ) id = "test";
-        set_name( "泥潭新銳" , ({ id }) );
+        set_name( "泥潭新鋭" , ({ id }) );
         setup();        
 
         restore();

@@ -23,7 +23,7 @@ void create()
         set("nickname",MAG"丹陽子"NOR);
         set("long",
                 "他就是王重陽的大弟子，全真七子之首，丹陽子馬鈺馬真人。\n"
-                "他慈眉善目，和藹可親，正笑著看著你。\n");
+                "他慈眉善目，和藹可親，正笑着看着你。\n");
         set("attitude", "peaceful");
         set("shen_type",1);
         set("str", 28);
@@ -93,13 +93,13 @@ void create()
         set("miji_count",1);
         set("inquiry", ([
                 "全真教" :  "我全真教是天下道家玄門正宗。\n",
-                "秘籍" : (: ask_miji :),
+                "祕籍" : (: ask_miji :),
                 "金雁功" : (: ask_me :),
                 "金雁圖譜" : (: ask_me :),
                 "鷹飛雁舞" : (: ask_skill1 :),
-                "天罡北鬥陣" : (: ask_array :),
-                "北鬥七星陣" : (: ask_array :),
-                "秘籍"      : (: ask_shu :),
+                "天罡北斗陣" : (: ask_array :),
+                "北斗七星陣" : (: ask_array :),
+                "祕籍"      : (: ask_shu :),
                 "鞭法總訣"   : (: ask_shu :),
                 "shu" : (: ask_shu :),
                 "玄門金鎖" : (: ask_skill2 :),
@@ -158,7 +158,7 @@ string ask_shu()
                 return RANK_D->query_respect(this_player()) +
                 "非我弟子，不知此話從何談起？";
         if (query("shu_count") < 1)
-                return "你來晚了，本派的秘籍不在此處。";
+                return "你來晚了，本派的祕籍不在此處。";
         addn("shu_count", -1);
         ob = new("/clone/book/whip");
         ob->move(this_player());
@@ -175,11 +175,11 @@ string ask_miji()
                 "與本派素無來往，不知此話從何談起？";
 
         if (query("miji_count") < 1)
-                return "你來晚了，本派的鞭法秘籍不在此處。";
+                return "你來晚了，本派的鞭法祕籍不在此處。";
 
         obs = filter_array(children("/d/quanzhen/obj/whip_book"), (: clonep :));
                   if (sizeof(obs) > 5)
-                return "你來晚了，本派的鞭法秘籍不在此處。";
+                return "你來晚了，本派的鞭法祕籍不在此處。";
 
         ob=new("/d/quanzhen/obj/whip_book");
         ob->move(this_player());
@@ -198,7 +198,7 @@ mixed ask_skill1()
                 return "這招我不是已經教會你了嗎？";
 
         if( query("family/family_name", me) != query("family/family_name") )
-                return "閣下與貧道素不相識，不知此話從何說起？";
+                return "閣下與貧道素不相識，不知此話從何説起？";
 
         if (me->query_skill("jinyan-gong", 1) < 1)
                 return "你連金雁功都沒學，何談絕招可言？";
@@ -216,7 +216,7 @@ mixed ask_skill1()
                 return "你的內功修為不夠，修煉高後再來找我吧。";
 
         message_sort(HIY "\n$n" HIY "對$N" HIY "點了點頭，當下更不答"
-                     "話，但見身影時如鷹擊長空、時如群雁飛舞，令人眼"
+                     "話，但見身影時如鷹擊長空、時如羣雁飛舞，令人眼"
                      "花撩亂，煞是好看。\n\n" NOR, me,
                      this_object());
 
@@ -244,7 +244,7 @@ mixed ask_skill2()
                 return "這招我不是已經教會你了嗎？";
 
         if( query("family/family_name", me) != query("family/family_name") )
-                return "閣下與貧道素不相識，不知此話從何說起？";
+                return "閣下與貧道素不相識，不知此話從何説起？";
 
         if (me->query_skill("jinguan-yusuo", 1) < 1)
                 return "你連金關玉鎖都沒學，何談絕招可言？";
@@ -261,10 +261,10 @@ mixed ask_skill2()
         if (me->query_skill("force") < 200)
                 return "你的內功修為不夠，修煉高後再來找我吧。";
 
-        message_sort(HIY "\n$n" HIY "點了點頭，說道：“我給你演示一遍，可"
+        message_sort(HIY "\n$n" HIY "點了點頭，説道：“我給你演示一遍，可"
                      "看仔細了。”只聽$n" HIY "話音剛落，頓時起身而立，雙"
-                     "手驀的回圈，暗含天罡北鬥星位，朝$N" HIY "攻去。霎時"
-                     "$N" HIY "只覺招數一緊，接著雙臂癱軟，全身力道竟似被"
+                     "手驀的迴圈，暗含天罡北斗星位，朝$N" HIY "攻去。霎時"
+                     "$N" HIY "只覺招數一緊，接着雙臂癱軟，全身力道竟似被"
                      "$n" HIY "鎖住一般。\n\n" NOR, me, this_object()); 
 
         command("nod");
@@ -293,30 +293,30 @@ string ask_array()
 
         if (sizeof(skl) <= 1)
                 return RANK_D->query_respect(ob) +
-                "功力不夠，不夠資格闖天罡北鬥陣。";
+                "功力不夠，不夠資格闖天罡北斗陣。";
         if( query("score", ob)<20000 )
                 return RANK_D->query_respect(ob) +
-                "閱歷不足，不夠資格闖天罡北鬥陣。";
+                "閲歷不足，不夠資格闖天罡北斗陣。";
 
         skillname  = keys(skl);
         for(i=0; i<sizeof(skl); i++) {
                 if ((skl[skillname[i]] < 80) || (sizeof(skl) == 0))
                 return RANK_D->query_respect(ob) +
-                "功力不夠，不夠資格闖天罡北鬥陣。";
+                "功力不夠，不夠資格闖天罡北斗陣。";
         }
         if( query("qixing", ob) )
                 return RANK_D->query_respect(ob) +
-                "已然闖過天罡北鬥陣，可不要拿老道開這等玩笑。";
+                "已然闖過天罡北斗陣，可不要拿老道開這等玩笑。";
 /*
         if ( ob_fam["family_name"] != "全真教" || ob_fam["generation"] != 3)
-                return RANK_D->query_respect(ob) + "，你沒資格闖天罡北鬥陣。";
+                return RANK_D->query_respect(ob) + "，你沒資格闖天罡北斗陣。";
 */
         if( query("assigned_qixing", me) )
-                return RANK_D->query_respect(ob) + "，今日有人挑戰天罡北鬥陣，你過一段時間再來吧。";
+                return RANK_D->query_respect(ob) + "，今日有人挑戰天罡北斗陣，你過一段時間再來吧。";
 
         set("assigned_qixing",query("id",  ob), me);
         command("smile");
-        say("\n馬鈺道長說道：好吧，我去召集眾師弟。稍候在大校場上等你。\n");
+        say("\n馬鈺道長説道：好吧，我去召集眾師弟。稍候在大校場上等你。\n");
         message_vision("\n馬鈺道長往南離開。\n\n", ob);
 
 /* 譚處端 */
@@ -327,9 +327,9 @@ string ask_array()
         {
                 me->move("/d/quanzhen/shiweishi");
                 message_vision("\n馬鈺道長走了過來。\n\n", ob);
-                return "真是對不起，全真七子有人不在，無法布天罡北鬥陣。\n";
+                return "真是對不起，全真七子有人不在，無法布天罡北斗陣。\n";
         }
-        message("vision","\n馬鈺道長走了過來，跟譚處端說了幾句。\n", room, obj);
+        message("vision","\n馬鈺道長走了過來，跟譚處端説了幾句。\n", room, obj);
         obj->move("/d/quanzhen/daxiaochang");
         message("vision", "譚處端點了點頭，快步跟了出去。\n", room, obj);
 
@@ -341,9 +341,9 @@ string ask_array()
         {
                 me->move("/d/quanzhen/shiweishi");
                 message_vision("\n馬鈺道長走了過來。\n\n", ob);
-                return "真是對不起，全真七子有人不在，無法布天罡北鬥陣。\n";
+                return "真是對不起，全真七子有人不在，無法布天罡北斗陣。\n";
         }
-        message("vision","\n馬鈺道長走了過來，跟劉處玄說了幾句。\n", room, obj);
+        message("vision","\n馬鈺道長走了過來，跟劉處玄説了幾句。\n", room, obj);
         obj->move("/d/quanzhen/daxiaochang");
         message("vision", "劉處玄點了點頭，快步跟了出去。\n", room, obj);
 
@@ -355,9 +355,9 @@ string ask_array()
         {
                 me->move("/d/quanzhen/shiweishi");
                 message_vision("\n馬鈺道長走了過來。\n\n", ob);
-                return "真是對不起，全真七子有人不在，無法布天罡北鬥陣。\n";
+                return "真是對不起，全真七子有人不在，無法布天罡北斗陣。\n";
         }
-        message("vision","\n馬鈺道長走了過來，跟丘處機說了幾句。\n", room, obj);
+        message("vision","\n馬鈺道長走了過來，跟丘處機説了幾句。\n", room, obj);
         obj->move("/d/quanzhen/daxiaochang");
         message("vision", "丘處機點了點頭，快步跟了出去。\n", room, obj);
 
@@ -369,9 +369,9 @@ string ask_array()
         {
                 me->move("/d/quanzhen/shiweishi");
                 message_vision("\n馬鈺道長走了過來。\n\n", ob);
-                return "真是對不起，全真七子有人不在，無法布天罡北鬥陣。\n";
+                return "真是對不起，全真七子有人不在，無法布天罡北斗陣。\n";
         }
-        message("vision","\n馬鈺道長走了過來，跟王處一說了幾句。\n", room, obj);
+        message("vision","\n馬鈺道長走了過來，跟王處一説了幾句。\n", room, obj);
         obj->move("/d/quanzhen/daxiaochang");
         message("vision", "王處一點了點頭，快步跟了出去。\n", room, obj);
 
@@ -383,9 +383,9 @@ string ask_array()
         {
                 me->move("/d/quanzhen/shiweishi");
                 message_vision("\n馬鈺道長走了過來。\n\n", ob);
-                return "真是對不起，全真七子有人不在，無法布天罡北鬥陣。\n";
+                return "真是對不起，全真七子有人不在，無法布天罡北斗陣。\n";
         }
-        message("vision","\n馬鈺道長走了過來，跟郝大通說了幾句。\n", room, obj);
+        message("vision","\n馬鈺道長走了過來，跟郝大通説了幾句。\n", room, obj);
         obj->move("/d/quanzhen/daxiaochang");
         message("vision", "郝大通點了點頭，快步跟了出去。\n", room, obj);
 
@@ -397,9 +397,9 @@ string ask_array()
         {
                 me->move("/d/quanzhen/shiweishi");
                 message_vision("\n馬鈺道長走了過來。\n\n", ob);
-                return "真是對不起，全真七子有人不在，無法布天罡北鬥陣。\n";
+                return "真是對不起，全真七子有人不在，無法布天罡北斗陣。\n";
         }
-        message("vision","\n馬鈺道長走了過來，跟孫不二說了幾句。\n", room, obj);
+        message("vision","\n馬鈺道長走了過來，跟孫不二説了幾句。\n", room, obj);
         obj->move("/d/quanzhen/daxiaochang");
         message("vision", "孫不二點了點頭，快步跟了出去。\n", room, obj);
         set_temp("pre_qixing", 1, ob);
@@ -415,7 +415,7 @@ int waiting(object me,int wait_time)
 
         if( wait_time == 300 )
         {
-                say( "馬鈺說道：看來他不會來了，我們回去罷！\n\n");
+                say( "馬鈺説道：看來他不會來了，我們回去罷！\n\n");
                 call_out("do_back", 0, me);
                 addn("score", -5000, ob);
         }
@@ -459,7 +459,7 @@ int preparing(object me, object ob)
         me->add_team_member(obj5);
         me->add_team_member(obj6);
 
-        say( "馬鈺說道：不相幹的人，如不欲觀摩天罡北鬥陣，請即刻離開。\n");
+        say( "馬鈺説道：不相干的人，如不欲觀摩天罡北斗陣，請即刻離開。\n");
 
 
   obs=me->query_team();
@@ -471,9 +471,9 @@ int preparing(object me, object ob)
                         message_vision(myname+"道："+query("name", obs[i])+"請做好準備！\n",me);
         }
 //        command("say chat " + ob->query("title") + ob->query("name") +
-//                "于今日" + NATURE_D->game_time() + "挑戰全真天罡北鬥陣！\n");
+//                "於今日" + NATURE_D->game_time() + "挑戰全真天罡北斗陣！\n");
         message("channel:snow",HIC"【闖陣】馬鈺[Mayu]："+query("title", ob)+query("name", ob)+
-                HIC+"于今日" + NATURE_D->game_time() + "挑戰全真天罡北鬥陣！\n"NOR,users());
+                HIC+"於今日" + NATURE_D->game_time() + "挑戰全真天罡北斗陣！\n"NOR,users());
         say(HIC"馬鈺吟道：“一住行窩幾十年。”\n");
         say("譚處端吟道：“蓬頭長日走如顛。”\n");
         say("劉處玄吟道：“海棠亭下重陽子。”\n");
@@ -483,10 +483,10 @@ int preparing(object me, object ob)
         say("孫不二吟道：“出門一笑無拘礙。”\n");
         say("馬鈺收句道：“雲在西湖月在天！”\n\n\n"NOR);
 
-        message_vision(myname+ "清了清喉嚨，大聲說道：好，時辰已到，現在開始啟動「天罡北鬥陣」！\n",me);
-        message_vision(myname+ "突然身形移動，發動眾全真弟子搶佔位置，左邊四人，右邊三人，正是擺的「天罡北鬥陣」陣法。\n",me);
-        say("馬鈺位當天樞，譚處端位當天璇，劉處玄位當天璣，丘處機位當天權，四人組成鬥魁；\n");
-        say("王處一位當玉衡，郝大通位當開陽，孫不二位當搖光，三人組成鬥柄。\n");
+        message_vision(myname+ "清了清喉嚨，大聲説道：好，時辰已到，現在開始啟動「天罡北斗陣」！\n",me);
+        message_vision(myname+ "突然身形移動，發動眾全真弟子搶佔位置，左邊四人，右邊三人，正是擺的「天罡北斗陣」陣法。\n",me);
+        say("馬鈺位當天樞，譚處端位當天璇，劉處玄位當天璣，丘處機位當天權，四人組成斗魁；\n");
+        say("王處一位當玉衡，郝大通位當開陽，孫不二位當搖光，三人組成斗柄。\n");
         remove_call_out("do_qixing");
         call_out("do_qixing", 2, me, ob);
         return 1;
@@ -512,16 +512,16 @@ int do_qixing(object me, object en)
         switch (random (4))
         {
                 case 0:
-message_vision("天罡北鬥陣氣勢宏大，前攻後擊，連環相接，讓人眼花撩亂，方寸頓失。\n",me);
+message_vision("天罡北斗陣氣勢宏大，前攻後擊，連環相接，讓人眼花撩亂，方寸頓失。\n",me);
                         break;
                 case 1:
-message_vision("天罡北鬥陣法滾滾推動，攻勢連綿不絕，瞬間將敵人圍在垓心。\n",me);
+message_vision("天罡北斗陣法滾滾推動，攻勢連綿不絕，瞬間將敵人圍在垓心。\n",me);
                         break;
                 case 2:
-message_vision("天罡北鬥陣越縮越小，無形劍氣象浪潮一般逼向中央，令人有窒息之感。\n",me);
+message_vision("天罡北斗陣越縮越小，無形劍氣象浪潮一般逼向中央，令人有窒息之感。\n",me);
                         break;
                 case 3:
-message_vision("只見天罡北鬥陣暗合五行八卦之理，陣中人步法精妙，攻守配合得天衣無縫，威力之大，讓人嘆為觀止。\n",me);
+message_vision("只見天罡北斗陣暗合五行八卦之理，陣中人步法精妙，攻守配合得天衣無縫，威力之大，讓人歎為觀止。\n",me);
                         break;
         }
         for(i=0;i<sizeof(obs);i++)
@@ -543,7 +543,7 @@ message_vision("\n"+where[i]+"位上的"+query("name", obs[i])+"挺身而出，�
           err=catch(COMBAT_D->do_attack(obs[i],en,weapon,0));
           if (err)
           {
-                  message("channel:debug","天罡北鬥陣攻擊出錯 err="+err,users());
+                  message("channel:debug","天罡北斗陣攻擊出錯 err="+err,users());
                   return 1;
           }
                 addn_temp("apply/attack", -power, obs[i]);
@@ -564,7 +564,7 @@ message_vision("\n"+where[i]+"位上的"+query("name", obs[i])+"挺身而出，�
           COMBAT_D->do_attack(en,obs[j], enweapon);
         if( query("qi", obs[j])*2 <= query("max_qi", obs[j]) )
         {
-                message_vision(HIR+query("name", obs[j])+"一跤趴在地上，摔出北鬥陣。\n"NOR,me);
+                message_vision(HIR+query("name", obs[j])+"一跤趴在地上，摔出北斗陣。\n"NOR,me);
                 en->remove_all_enemy();
                 remove_call_out("do_end");
                 call_out("do_end", 1, me, en, 1);
@@ -572,7 +572,7 @@ message_vision("\n"+where[i]+"位上的"+query("name", obs[i])+"挺身而出，�
         }
         else if( query("qi", obs[j])*3 <= query("max_qi", obs[j])*2 )
         {
-                message_vision(query("name", obs[j])+"踉蹌了一步，差點摔出北鬥陣。\n",me);
+                message_vision(query("name", obs[j])+"踉蹌了一步，差點摔出北斗陣。\n",me);
         }
         else if( query("qi", obs[j])*5 <= query("max_qi", obs[j])*4 )
                 message_vision(query("name", obs[j])+"被打得晃了幾晃，不過又站穩了步子。\n",me);
@@ -593,14 +593,14 @@ int do_end(object me, object en, int result)
                 addn("combat_exp", 50000, en);
                 addn("score", 30000, en);
                 addn("potential", 10000, en);
-                message_vision(HIR"\n天罡北鬥陣被"+query("name", en)+"打破了。\n\n"NOR,me);
-                message("channel:snow",HIR"【通告】"HIY+query("name", en)+"打破天罡北鬥陣了！\n"NOR,users());
+                message_vision(HIR"\n天罡北斗陣被"+query("name", en)+"打破了。\n\n"NOR,me);
+                message("channel:snow",HIR"【通告】"HIY+query("name", en)+"打破天罡北斗陣了！\n"NOR,users());
         }
         else
         {
                 delete_temp("pre_qixing", en);
-                message("channel:snow",HIR"【通告】"HIY+query("name", en)+"沒能闖出天罡北鬥陣！\n"NOR,users());
-    message_vision(HIR"\n$N笑了笑：天罡北鬥陣不愧為全真鎮教之寶。\n"NOR,me);
+                message("channel:snow",HIR"【通告】"HIY+query("name", en)+"沒能闖出天罡北斗陣！\n"NOR,users());
+    message_vision(HIR"\n$N笑了笑：天罡北斗陣不愧為全真鎮教之寶。\n"NOR,me);
                 addn("score", -3000, en);
         }
         remove_call_out("do_back");
@@ -618,11 +618,11 @@ int do_back(object me)
                 {
                         if( objectp(weapon=query_temp("weapon", obs[i]) )
                                  && query("skill_type", weapon) == "sword" )
-message_vision("$N身子向後一縱，使一招『收劍式』，將劍挽了一個劍花，往懷中一抱，退出「天罡北鬥陣」。\n", obs[i]);
+message_vision("$N身子向後一縱，使一招『收劍式』，將劍挽了一個劍花，往懷中一抱，退出「天罡北斗陣」。\n", obs[i]);
                         else
-message_vision("$N身子向後一縱，使一招『收山式』，右拳劃了一圈，左掌往懷中一抱，退出「天罡北鬥陣」。\n", obs[i]);
+message_vision("$N身子向後一縱，使一招『收山式』，右拳劃了一圈，左掌往懷中一抱，退出「天罡北斗陣」。\n", obs[i]);
 
-message_vision("$N作了個楫道：貧道先告退了！說完就快步離開了。\n", obs[i]);
+message_vision("$N作了個楫道：貧道先告退了！説完就快步離開了。\n", obs[i]);
                         if( query("name", obs[i]) == "馬鈺" )
                                 obs[i]->move("/d/quanzhen/shiweishi");
                         if( query("name", obs[i]) == "譚處端" )

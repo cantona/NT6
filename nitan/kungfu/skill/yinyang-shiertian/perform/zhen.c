@@ -36,7 +36,7 @@ int perform(object me, object target)
                 return notify_fail("你的陰陽九轉十二重天還不夠熟練，無法使用" +name()+ "！\n");
 
         if (! living(target))
-                return notify_fail("對方都已經這樣了，用不著這麼費力吧？\n");
+                return notify_fail("對方都已經這樣了，用不着這麼費力吧？\n");
 
         message_combatd(HIM "\n$N" HIM "運起陰陽九轉十二重天，左手" HIB "陰"
                      HIM "，右手" HIR "陽" HIM "，澎湃的內勁由體內而發，"
@@ -107,7 +107,7 @@ int perform(object me, object target)
                 dp += dp1;
 
         message_combatd(HIR "\n$N" HIR "右手金光萬道，灼熱的真氣澎湃激盪，"
-                     HIR "所到之處散發著一股焦臭的味道！\n" NOR, me, target);
+                     HIR "所到之處散發着一股焦臭的味道！\n" NOR, me, target);
 
         if (ap * 2 / 3 + random(ap) > dp)
         {
@@ -115,7 +115,7 @@ int perform(object me, object target)
                 msg = COMBAT_D->do_damage(me, target, UNARMED_ATTACK, damage, 80 + random(40),
                                           HIR "$n" HIR "急忙抽身後退，忽然金光暴漲，"
                                           HIR "只見$n" HIR "跌跌撞撞向後連退數步，伏倒"
-                                          "在地。須眉、衣衫都發出一股焦臭。\n" NOR);
+                                          "在地。鬚眉、衣衫都發出一股焦臭。\n" NOR);
         } else
         {
                 msg = CYN "可是$n" CYN "看透$P" CYN "此招之中的破綻，鎮"

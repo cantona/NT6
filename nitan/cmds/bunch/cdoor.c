@@ -25,13 +25,13 @@ int main(object me, string arg)
 	exits = env->query("exits");
 
 	if(!mapp(exits) || !sizeof(exits))
-		return notify_fail("這裡沒有可用于創建門的出口。\n");
+		return notify_fail("這裏沒有可用於創建門的出口。\n");
 
 	ye = keys(exits);
 
 	if(!mapp(doors = env->query_doors()) || !sizeof(doors))
 	{
-		out = sprintf("這裡可用于創建門的出口有：\n%s\n請設定欲創建門的中文名[1-5個漢字](q 退出)：\n",
+		out = sprintf("這裏可用於創建門的出口有：\n%s\n請設定欲創建門的中文名[1-5個漢字](q 退出)：\n",
 			implode(ye,",") );
 		write(out);
 		input_to( (: get_door_cname :), me, env, ye, yd);
@@ -39,7 +39,7 @@ int main(object me, string arg)
 	}
 
 	yd = keys(doors);
-	out = "這裡的出口情況：\n";
+	out = "這裏的出口情況：\n";
 
 	foreach(string tmp in ye)
 		out += sprintf("  %s%s\n", tmp, (member_array(tmp,yd) == -1)?"":" [有門]");
@@ -76,7 +76,7 @@ protected void decide_action_do(string str, object who, object env, string *ye, 
 	{
 		if(sizeof(yd) >= sizeof(ye))
 		{
-			tell_object(who, "這裡已經沒有可用于創建門的出口。\n非法操作。\n");
+			tell_object(who, "這裏已經沒有可用於創建門的出口。\n非法操作。\n");
 			return;
 		}
 		tell_object(who, "請設定欲創建門的中文名[1-5個漢字](q 退出)：\n");
@@ -84,7 +84,7 @@ protected void decide_action_do(string str, object who, object env, string *ye, 
 		return;
 	}
 
-	out = "這裡的出口情況：\n";
+	out = "這裏的出口情況：\n";
 
 	foreach(string tmp in ye)
 		out += sprintf("  %s%s\n", tmp, member_array(tmp,yd) == -1?"":" [有門]");

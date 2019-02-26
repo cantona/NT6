@@ -3,15 +3,15 @@ inherit NPC;
 
 void create()
 {
-        set_name("岳不群--空", ({ "yue buqun shadow", "shadow" }) );
+        set_name("嶽不羣--空", ({ "yue buqun shadow", "shadow" }) );
         set("title", "華山派掌門");
         set("nickname", "君子劍");
         set("gender", "男性");
         set("class", "swordsman");
         set("age", 55);
         set("long",
-                "岳不群自幼執掌華山派，乃當今武林中一等一的高手。不過面前這個\n"
-    +"岳不群，似乎讓人有些不真實感。\n");
+                "嶽不羣自幼執掌華山派，乃當今武林中一等一的高手。不過面前這個\n"
+    +"嶽不羣，似乎讓人有些不真實感。\n");
         set("attitude", "peaceful");
         set("str", 126);
         set("con", 130);

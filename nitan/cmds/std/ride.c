@@ -33,7 +33,7 @@ int main(object me, string arg)
                                 return notify_fail("你連坐騎都沒有，怎麼要求別人上坐騎？\n");
 
                         if( !objectp(person = present(who, env)) )
-                                return notify_fail("這裡沒有這個人！\n");
+                                return notify_fail("這裏沒有這個人！\n");
 
                         if( query_temp("is_riding", person) )
                                 return notify_fail("別人已經有坐騎了。\n");
@@ -41,7 +41,7 @@ int main(object me, string arg)
                         if( objectp(query_temp("is_rided_follow", horse)) )
                                 return notify_fail("你的坐騎上已經有人了。\n");
 
-                        message_vision(HIW "$N勒坐騎于前，對$n說道：請上坐騎一敘！\n" NOR, me, person);
+                        message_vision(HIW "$N勒坐騎於前，對$n説道：請上坐騎一敍！\n" NOR, me, person);
                         set_temp("ride_up",query("id", me), person);
                         tell_object(person, HIG + me->name() + "邀請你上坐騎，如果同意請輸入 ride ok 。\n" NOR);                  
                         return 1;
@@ -57,14 +57,14 @@ int main(object me, string arg)
                         return notify_fail("沒有人邀請你上坐騎。\n");
 
                 if( query_temp("is_riding_follow", me) )
-                        return notify_fail("你還是先下坐騎（ride down）再說吧。\n");
+                        return notify_fail("你還是先下坐騎（ride down）再説吧。\n");
         
                 person = find_player(who);
         
-                if( !objectp(person) ) return notify_fail("這裡沒有這個人。\n");
+                if( !objectp(person) ) return notify_fail("這裏沒有這個人。\n");
 
                 if( environment(me) != environment(person) )
-                        return notify_fail("這裡沒有這個人。\n");
+                        return notify_fail("這裏沒有這個人。\n");
                 
                 if( !objectp(horse=query_temp("is_riding", person)) )
                         return notify_fail(person->name() + "似乎沒有坐騎吧！\n");
@@ -158,7 +158,7 @@ int main(object me, string arg)
                 if( rec_n >= max_rec )
                 {
                         write(HIR "你的記錄已達到 " + sprintf("%d", rec_n) + " 條，已滿！\n" NOR);
-                        write(HIR "你可以嘗試使用以獻□錁徑來增加你的記錄數：\n\n" NOR);
+                        write(HIR "你可以嘗試使用以獻錁徑來增加你的記錄數：\n\n" NOR);
 
                         write(HIC "普通玩家：         Max = 0 條\n" NOR);
                         write(HIM "普通會員：         Max = 1 條\n" NOR);
@@ -171,7 +171,7 @@ int main(object me, string arg)
                 }
  
                 if( !objectp(horse=query_temp("is_riding", me)) )
-                        return notify_fail("你還是先找匹坐騎再說吧？\n"); 
+                        return notify_fail("你還是先找匹坐騎再説吧？\n"); 
 
                 if( stringp(MAP_D->get_trans_path(who)) )
                         return notify_fail("對不起，編號 " + who + " 已經存在，請另取一個編號。\n");
@@ -210,7 +210,7 @@ int main(object me, string arg)
         if( sscanf(arg, "unrec %s", who) == 1 )
         {
                 if( !objectp(horse=query_temp("is_riding", me)) )
-                        return notify_fail("你還是先找匹坐騎再說吧？\n"); 
+                        return notify_fail("你還是先找匹坐騎再説吧？\n"); 
 
                 if( !stringp(query("horse/flags/"+who, me)) )
                         return notify_fail("對不起，編號 " + who + " 不存在，請使用 rideto 查看。\n");
@@ -228,7 +228,7 @@ int main(object me, string arg)
                 return notify_fail("你已經有座騎了！\n");
 
         if( query_temp("is_riding_follow", me) )
-                return notify_fail("你先下馬（ride down）再說吧！\n");
+                return notify_fail("你先下馬（ride down）再説吧！\n");
 
         if( me->is_busy() )
                 return notify_fail("你上一個動作還沒有完成！\n");

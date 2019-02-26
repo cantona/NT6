@@ -33,7 +33,7 @@ int main(object me, string file)
         
         foreach (object user in users())
         if (file == in_edit(user))
-                return notify_fail(HIM "共享沖突：" + user->name(1) + HIM "(" +
+                return notify_fail(HIM "共享衝突：" + user->name(1) + HIM "(" +
                         capitalize(query("id", user)) + ")" +
                         HIM "正在編輯該文件(" + file + ")。\n" NOR);
 
@@ -79,7 +79,7 @@ int help(object me)
                 n標記行號
                 O同'i'
                 o同 'a'
-                p列出一定范圍的行
+                p列出一定範圍的行
                 q退出
                 Q退出，而且不存
                 r在文件尾部或指定行後讀入其它文件

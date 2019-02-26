@@ -14,7 +14,7 @@ void create()
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("long", HIR "一塊光彩照人的大瑪瑙，美侖"
+                set("long", HIR "一塊光彩照人的大瑪瑙，美崙"
                             "美奐，世所罕有。\n" NOR);
                 set("value", 100000);
                 set("unit", "塊");

@@ -53,7 +53,7 @@ int perform(object me, object target)
         if( query_temp("bixie/cizu", target) )
                 return notify_fail(HIR"對方已經身中"PNAME"了！\n"NOR);
 
-        msg = HIC "$N"HIC"突然前身一探，"+weapon->name()+HIC"如流星追月，迅捷異常地紮向$n"HIC"腳踝，\n"NOR;
+        msg = HIC "$N"HIC"突然前身一探，"+weapon->name()+HIC"如流星追月，迅捷異常地扎向$n"HIC"腳踝，\n"NOR;
         if (random(me->query_dex()) > target->query_dex()/2)
         {
                 msg += HIC"$n"HIC"只覺得腳踝一痛，一趔怯，跌在地下！\n"NOR;
@@ -74,7 +74,7 @@ int perform(object me, object target)
 
 void cizu_end(object me, object target)
 {
-        message_combatd(HIR"$N強忍腳上劇痛，終于顫顫巍巍地站了起來。\n"NOR, target);
+        message_combatd(HIR"$N強忍腳上劇痛，終於顫顫巍巍地站了起來。\n"NOR, target);
         delete_temp("bixie/cizu", target);
         return;
 }

@@ -11,7 +11,7 @@ int exert(object me, object target)
         int skill;
 
         if (target != me)
-                return notify_fail("你只能用明玉功來提升自己的防御力。\n");
+                return notify_fail("你只能用明玉功來提升自己的防禦力。\n");
 
         if( query("neili", me)<100 )
                 return notify_fail("你的真氣不夠。\n");
@@ -26,7 +26,7 @@ int exert(object me, object target)
         addn("neili", -100, me);
         me->receive_damage("qi", 0);
 
-        message_combatd(HIR "$N" HIR "默念明玉功的口訣，全身頓時浮現出一層柔亮的光環"
+        message_combatd(HIR "$N" HIR "默唸明玉功的口訣，全身頓時浮現出一層柔亮的光環"
                         HIR "，將$P" HIR "全全籠罩。\n" NOR, me);
 
         addn_temp("apply/armor", skill/2, me);

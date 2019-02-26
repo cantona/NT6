@@ -3,8 +3,8 @@ inherit __DIR__"bhd_npc.c";
 
 void create()
 {
-        set_name(HIR "火燄麒麟" NOR, ({ "huoyan qilin", "huoyan", "qilin" }));
-        set("long", HIR "一只渾身吞吐著火燄的巨獸，不停地嚎叫著。\n" NOR);
+        set_name(HIR "火焰麒麟" NOR, ({ "huoyan qilin", "huoyan", "qilin" }));
+        set("long", HIR "一隻渾身吞吐着火焰的巨獸，不停地嚎叫着。\n" NOR);
 
         set("age", 99999);
         set("str",500);

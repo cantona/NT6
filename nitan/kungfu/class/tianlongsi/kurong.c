@@ -95,7 +95,7 @@ int remove_killer(object ob)
         env = environment();
         if( query("exits", env))return 1;
 
-        message_vision("$N嘆了一口氣，道：出家人豈能濫殺無"
+        message_vision("$N歎了一口氣，道：出家人豈能濫殺無"
                        "辜？然而降妖除魔，也是無法。\n",
                        this_object());
 
@@ -249,7 +249,7 @@ varargs void die(object killer)
         {
                 ob = new(SIX_BOOK);
                 ob->move(this_object(), 1);
-                CHANNEL_D->do_channel(this_object(), "rumor", "聽說" +
+                CHANNEL_D->do_channel(this_object(), "rumor", "聽説" +
                         (objectp(killer) ? killer->name(1) : "某人") +
                         "闖入天龍寺，力戰眾僧，奪走六脈神劍譜。");
         } else
