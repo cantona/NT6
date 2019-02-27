@@ -889,8 +889,8 @@
 /* USE_ICONV: Use iconv to translate input and output from/to the users char
  * encoding
  */
-#define USE_ICONV "GBK"
-#undef USE_ICONV_UTF8
+#undef USE_ICONV
+#define USE_ICONV_UTF8
 
 /* WOMBLES: don't allow spaces between start/end of array/mapping/functional token chars so ({1,2,3}) still works, but ( { 1 , 2 , 3 } ) doesn't and ({ 1 , 2 , 3 }) does.*/
 #undef WOMBLES
