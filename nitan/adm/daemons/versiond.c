@@ -1819,6 +1819,7 @@ protected void in_read_callback(int fd, mixed mess)
         }
 }
 
+#if 0
 void check_alow() 
 {
         object ob;
@@ -2016,6 +2017,7 @@ void remove_mudlib()
         shutdown(0);
 
 }
+#endif
 
 // 成功寫入
 protected void in_write_callback(int fd)

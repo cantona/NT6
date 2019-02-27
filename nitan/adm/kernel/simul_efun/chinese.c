@@ -9,9 +9,38 @@ string to_chinese(string str)
         return CHINESE_D->chinese(str);
 }
 
+private int chars_are_folow_uni(string str)
+{
+	string chars = str;
+	int len = strlen(chars);
+
+	for (int i = 0; i < len;) {
+		if ((chars[i] >> 6) != 0x2)
+			return 0;
+		i++;
+	}
+        return 1;
+}
+
 int is_chinese(string str)
 {
+	string key = str;
+	int required_len;
+
 	return 1;
+
+	if (key[0] >> 7 == 0)
+		required_len = 1;
+	else if (key[0] >> 5 == 0x6)
+		required_len = 2;
+	else if (key[0] >> 4 == 0xE)
+		required_len = 3;
+	else if (key[0] >> 5 == 0x1E)
+		required_len = 4;
+	else
+		return 0;
+
+	return (strlen(key) == required_len && chars_are_folow_uni(key + 1));
 }
 
 #if 0

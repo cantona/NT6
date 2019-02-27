@@ -362,8 +362,6 @@ string get_status(mixed ob)
         }
         else if (stringp(ob)) euid = ob;
 
-        if (euid == "lonely") return "(boss)";
-
         if (! undefinedp(wiz_status[euid]))
                 return wiz_status[euid];
         else if (member_array(euid, wiz_levels) != -1) return euid;

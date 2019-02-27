@@ -273,7 +273,7 @@ varargs string clear_user_data(string user, string cat, int raw)
         // only root uid can does it
         if (previous_object() &&
             getuid(previous_object()) != ROOT_UID &&
-            geteuid(previous_object()) != "lonely" &&
+            geteuid(previous_object()) != "cantona" &&
             geteuid(previous_object()) != user)
                 return "你無權清除該玩家的數據。\n";
 
@@ -616,7 +616,7 @@ varargs string remove_user(string user, int raw)
         string result;
         string flogin, fuser, fpackage;
 
-        if (user == "lonely") return "好像不可以耶！";
+        if (user == "cantona") return "好像不可以耶！";
 
         // destruct the user object
         if (ob = find_player(user))
